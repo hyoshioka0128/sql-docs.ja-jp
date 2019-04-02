@@ -32,19 +32,19 @@ ms.locfileid: "56662776"
 # <a name="binary-and-varbinary-transact-sql"></a>binary と varbinary (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-all-md](../../includes/tsql-appliesto-ss2008-all-md.md)]
 
-固定長または可変長のバイナリ データ型です。
+固定長または可変長のbinary データ型です。
   
 ## <a name="arguments"></a>引数  
-**binary** [ ( _n_ ) ]。長さ _n_ バイトの固定長のバイナリ データです。_n_ は 1 ～ 8,000 の値になります。 ストレージのサイズは _n_ バイトです。
+**binary** [ ( _n_ ) ]。長さ _n_ バイトの固定長のbinary データです。_n_ は 1 ～ 8,000 の値になります。 ストレージのサイズは _n_ バイトです。
   
-**varbinary** [ ( _n_ | **max**) ] 可変長のバイナリ データ。 _n_ には 1 ～ 8,000 の値を指定できます。 **max** 記憶域の最大サイズが 2 であることを示します。 ^ 31-1 バイトです。 格納サイズは、入力したデータの実際の長さ + 2 バイトとなります。 入力するデータの長さは 0 バイトでもかまいません。 ANSI SQL シノニム **varbinary** は **バイナリのさまざまなです**。
+**varbinary** [ ( _n_ | **max**) ] 可変長のbinary データ。 _n_ には 1 ～ 8,000 の値を指定できます。 **max** 記憶域の最大サイズが 2 であることを示します。 ^ 31-1 バイトです。 格納サイズは、入力したデータの実際の長さ + 2 バイトとなります。 入力するデータの長さは 0 バイトでもかまいません。 ANSI SQL シノニム **varbinary** は **binaryのさまざまなです**。
   
 ## <a name="remarks"></a>Remarks  
 データ定義または変数宣言ステートメントで _n_ を指定しないと、既定の長さは 1 になります。 CAST 関数で _n_ を指定しないと、既定の長さは 30 になります。
 
 | データ型 | 次の場合に使用 |
 | --- | --- |
-| **[バイナリ]** | 列データ エントリのサイズが一定である。|
+| **binary** | 列データ エントリのサイズが一定である。|
 | **varbinary** | 列データ エントリのサイズが大幅に変化する。|
 | **varbinary(max)** | 列データ エントリのサイズが 8,000 バイトを超える。|
 
@@ -56,17 +56,17 @@ ms.locfileid: "56662776"
 * **varchar**
 * **nchar**
 * **nvarchar**
-* **[バイナリ]**
+* **binary**
 * **varbinary**
 * **text**
 * **ntext**
 * **image**
 
-他のデータ型が変換される場合 **バイナリ** または **varbinary**, 、データが埋め込まれるか、左側に切り捨てられます。 桁の埋め込みには 16 進数の 0 が使用されます。
+他のデータ型が変換される場合 **binary** または **varbinary**, 、データが埋め込まれるか、左側に切り捨てられます。 桁の埋め込みには 16 進数の 0 が使用されます。
   
-データの **binary** データ型と **varbinary** データ型への変換は、データ間を移動するもっとも簡単な方法が**バイナリ** データである場合に便利です。 ある時点で、値の型をサイズが十分に大きなバイナリ値に変換し、その後、元に戻すことがあります。 両方の変換が同じバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で行われる場合、この変換では常に結果的に同じ値が生成されます。 値の 2 進表現は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のバージョン間で異なる場合があります。
+データの **binary** データ型と **varbinary** データ型への変換は、データ間を移動するもっとも簡単な方法が**binary** データである場合に便利です。 ある時点で、値の型をサイズが十分に大きなbinary値に変換し、その後、元に戻すことがあります。 両方の変換が同じバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で行われる場合、この変換では常に結果的に同じ値が生成されます。 値の 2 進表現は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のバージョン間で異なる場合があります。
   
-**int**、**smallint**、**tinyint** を **binary** または **varbinary** に変換できます。 **binary** 型の値を再度 integer 型の値に戻した場合、切り捨てが行われていると、この値は元の integer の値とは同じになりません。 たとえば、次の SELECT ステートメントは整数値 `123456` をバイナリ値 `0x0001e240` として格納することを示しています。
+**int**、**smallint**、**tinyint** を **binary** または **varbinary** に変換できます。 **binary** 型の値を再度 integer 型の値に戻した場合、切り捨てが行われていると、この値は元の integer の値とは同じになりません。 たとえば、次の SELECT ステートメントは整数値 `123456` をbinary値 `0x0001e240` として格納することを示しています。
   
 ```sql
 SELECT CAST( 123456 AS BINARY(4) );  
@@ -93,7 +93,7 @@ GO
 最終的な値は `57921` ではなく `123457` になります。
   
 > [!NOTE]  
->  すべてのデータ間の変換の入力と **バイナリ** データ型は、バージョンの間で同じであるとは限りません [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]です。  
+>  すべてのデータ間の変換の入力と **binary** データ型は、バージョンの間で同じであるとは限りません [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]です。  
   
 ## <a name="see-also"></a>参照
 [CAST および CONVERT &#40;Transact-SQL&#41;](../../t-sql/functions/cast-and-convert-transact-sql.md)  
