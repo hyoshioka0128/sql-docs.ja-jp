@@ -5,6 +5,6 @@
 2018 年 11 月以降、これらのアーカイブには少なくとも次のドキュメントが含まれます。
 - SQL Server 2012
 - SQL Server 2008 R2
-- SQL Server 2008:
+- SQL Server 2008
 - SQL Server 2005
 
