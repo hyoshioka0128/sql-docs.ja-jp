@@ -49,7 +49,7 @@ ms.locfileid: "65947489"
   
  `FORMAT` 以外の組み込みの文字列関数はすべて、決定的です。 つまり、特定の一連の入力値を使用して呼び出されるたびに、同じ値を返します。 関数の決定性の詳細については、次を参照してください。[決定的関数と非決定的関数です](../../relational-databases/user-defined-functions/deterministic-and-nondeterministic-functions.md)。  
   
- 文字列関数に文字列値以外の引数を渡すと、暗黙的に入力型が text データ型に変換されます。 詳細については、次を参照してください[ データ型の変換 (&) #40";"データベース エンジン"&"#41;](../../t-sql/data-types/data-type-conversion-database-engine.md)。  
+ 文字列関数に文字列値以外の引数を渡すと、暗黙的に入力型が text データ型に変換されます。 詳細については、[データ型の変換 &#40;Database Engine&#41;](../../t-sql/data-types/data-type-conversion-database-engine.md) を参照してください。  
   
 ## <a name="see-also"></a>参照  
  [組み込み関数 &#40;Transact-SQL&#41;](~/t-sql/functions/functions.md)  
