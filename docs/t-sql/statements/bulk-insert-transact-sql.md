@@ -283,7 +283,7 @@ CSV ファイルで引用符文字として使用される文字を指定しま�
 
  BULK INSERT で使用される文字列から 10 進数へのデータ型変換には、[!INCLUDE[tsql](../../includes/tsql-md.md)] の [CONVERT](../../t-sql/functions/cast-and-convert-transact-sql.md) 関数と同じ規則が適用されるので、科学的表記法を使用した数値を表す文字列は拒否されます。 したがって、BULK INSERT では、そのような文字列は無効な値として処理され、変換エラーが報告されます。  
   
- この問題を回避するには、科学的表記法の **float** 型のデータを 10 進数の列に一括インポートするフォーマット ファイルを使用します。 フォーマット ファイルには、列のデータを明示的に **real** または **float** 型として記述します。 これらのデータ型の詳細については、を参照してください。 [float、real および #40 です。TRANSACT-SQL と #41;](../../t-sql/data-types/float-and-real-transact-sql.md).  
+ この問題を回避するには、科学的表記法の **float** 型のデータを 10 進数の列に一括インポートするフォーマット ファイルを使用します。 フォーマット ファイルには、列のデータを明示的に **real** または **float** 型として記述します。 これらのデータ型の詳細については、[float 型と real 型 &#40;Transact-SQL&#41;](../../t-sql/data-types/float-and-real-transact-sql.md)を参照してください。 
   
 > [!NOTE]  
 >  フォーマット ファイル **real** データとして、 **SQLFLT4** データ型と **float** データとして、 **SQLFLT8** データ型。 XML 以外のフォーマット ファイルについては、「[bcp を使用したファイル ストレージ型の指定 &#40;SQL Server&#41;](../../relational-databases/import-export/specify-file-storage-type-by-using-bcp-sql-server.md)」をご覧ください。  
