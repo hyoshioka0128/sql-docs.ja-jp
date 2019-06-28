@@ -30,13 +30,13 @@ ms.locfileid: "34021729"
   
 |トピック|Description|  
 |-----------|-----------------|  
-|[基本的な MDX スクリプト & #40 です。MDX と #41 です。](../../../analysis-services/multidimensional-models/mdx/the-basic-mdx-script-mdx.md)|MDX スクリプトの基礎を詳しく説明します。各キューブに付属している既定の MDX スクリプトについて、[!INCLUDE[ssASnoversion](../../../includes/ssasnoversion-md.md)] のキューブ内で MDX スクリプトが一般的にどのように機能するかについての説明が含まれます。|  
-|[管理スコープとコンテキスト (&) #40 です。MDX と #41 です。](../../../analysis-services/multidimensional-models/mdx/managing-scope-and-context-mdx.md)|MDX スクリプト内でコンテキストとスコープを管理するために [CALCULATE](../../../mdx/mdx-scripting-calculate.md) ステートメント、[SCOPE](../../../mdx/mdx-scripting-scope.md) ステートメント、および [This](../../../mdx/this-mdx.md) 関数を使用する方法について説明します。|  
-|[変数とパラメーター & #40; を使用します。MDX と #41 です。](../../../analysis-services/multidimensional-models/mdx/using-variables-and-parameters-mdx.md)|MDX スクリプト内で変数やパラメーターを使用する方法について説明します。|  
-|[エラー処理と #40 です。MDX と #41 です。](../../../analysis-services/multidimensional-models/mdx/error-handling-mdx.md)|MDX スクリプト内でのエラー処理について説明します。|  
-|[サポートされる MDX & #40 です。MDX と #41 です。](../../../analysis-services/multidimensional-models/mdx/supported-mdx-mdx.md)|MDX スクリプト内でサポートされる MDX 演算子、ステートメント、関数の一覧を示します。|  
+|[基本的な MDX スクリプト &#40;MDX&#41;](../../../analysis-services/multidimensional-models/mdx/the-basic-mdx-script-mdx.md)|MDX スクリプトの基礎を詳しく説明します。各キューブに付属している既定の MDX スクリプトについて、[!INCLUDE[ssASnoversion](../../../includes/ssasnoversion-md.md)] のキューブ内で MDX スクリプトが一般的にどのように機能するかについての説明が含まれます。|  
+|[スコープとコンテキストの管理 &#40;MDX&#41;](../../../analysis-services/multidimensional-models/mdx/managing-scope-and-context-mdx.md)|MDX スクリプト内でコンテキストとスコープを管理するために [CALCULATE](../../../mdx/mdx-scripting-calculate.md) ステートメント、[SCOPE](../../../mdx/mdx-scripting-scope.md) ステートメント、および [This](../../../mdx/this-mdx.md) 関数を使用する方法について説明します。|  
+|[変数とパラメーターの使用 &#40;MDX&#41;](../../../analysis-services/multidimensional-models/mdx/using-variables-and-parameters-mdx.md)|MDX スクリプト内で変数やパラメーターを使用する方法について説明します。|  
+|[エラー処理 &#40;MDX&#41;](../../../analysis-services/multidimensional-models/mdx/error-handling-mdx.md)|MDX スクリプト内でのエラー処理について説明します。|  
+|[サポートされる MDX &#40;MDX&#41;](../../../analysis-services/multidimensional-models/mdx/supported-mdx-mdx.md)|MDX スクリプト内でサポートされる MDX 演算子、ステートメント、関数の一覧を示します。|  
   
 ## <a name="see-also"></a>参照  
- [MDX 言語リファレンス & #40 です。MDX と #41 です。](../../../mdx/mdx-language-reference-mdx.md)  
+ [MDX 言語リファレンス &#40;MDX&#41;](../../../mdx/mdx-language-reference-mdx.md)  
   
   
