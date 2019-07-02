@@ -94,7 +94,7 @@ ms.locfileid: "65982338"
 |{ *unary_operator* }|単項演算子を適用できるのは、数値型に属するいずれかのデータ型に評価される式だけです。 1 つの数値オペランドだけを含む演算子を指定します。<br /><br /> + は正の値を示します。<br /><br /> - は負の値を示します。<br /><br /> ~ は 1 の補数演算子を示します。|  
 |{ *binary_operator* }|2 つの式を結合して 1 つの結果を生成する方法を定義する演算子を指定します。 *binary_operator* には、算術演算子、代入演算子 (=)、ビットごとの演算子、比較演算子、論理演算子、文字列の連結演算子 (+)、または単項演算子を指定できます。 演算子の詳細については、「[演算子 &#40;Transact-SQL&#41;](../../t-sql/language-elements/operators-transact-sql.md)」を参照してください。|  
 |*ranking_windowed_function*|任意の [!INCLUDE[tsql](../../includes/tsql-md.md)] 順位付け関数です。 詳細については、「[順位付け関数 &#40;Transact-SQL&#41;](../../t-sql/functions/ranking-functions-transact-sql.md)」を参照してください。|  
-|*aggregate_windowed_function*|OVER 句を含む任意の [!INCLUDE[tsql](../../includes/tsql-md.md)] 集計関数です。 詳細については、を参照してください。 [経由句 (&) #40 です。TRANSACT-SQL と #41;](../../t-sql/queries/select-over-clause-transact-sql.md).|  
+|*aggregate_windowed_function*|OVER 句を含む任意の [!INCLUDE[tsql](../../includes/tsql-md.md)] 集計関数です。 詳細については、[OVER 句 &#40;Transact-SQL&#41;](../../t-sql/queries/select-over-clause-transact-sql.md)を参照してください。|  
   
 ## <a name="expression-results"></a>式の結果  
  1 つの定数、変数、スカラー関数、または列名で構成される単純式の場合、式のデータ型、照合順序、有効桁数、小数点以下桁数、および値は、参照される要素のデータ型、照合順序、有効桁数、小数点以下桁数、および値になります。  
