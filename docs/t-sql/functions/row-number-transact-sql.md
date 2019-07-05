@@ -54,7 +54,7 @@ ROW_NUMBER ( )
  [FROM](../../t-sql/queries/from-transact-sql.md) 句で生成された結果セットを、ROW_NUMBER 関数が適用されるパーティションに分割します。 *value_expression* は、結果セットをパーティションに分割するときに使用する列を指定します。 `PARTITION BY` を指定しない場合、関数ではクエリ結果セットのすべての行を 1 つのグループとして扱います。 詳しくは、[OVER 句 &#40;Transact-SQL&#41;](../../t-sql/queries/select-over-clause-transact-sql.md) に関する記事をご覧ください。  
   
  *order_by_clause*  
- `ORDER BY` 句は、指定したパーティション内の行に一意の `ROW_NUMBER` を割り当てる順序を決定します。 この引数は必須です。 詳細については、を参照してください。 [経由句 (&) #40 です。TRANSACT-SQL と #41;](../../t-sql/queries/select-over-clause-transact-sql.md).  
+ `ORDER BY` 句は、指定したパーティション内の行に一意の `ROW_NUMBER` を割り当てる順序を決定します。 この引数は必須です。 詳細については、[OVER 句 &#40;Transact-SQL&#41;](../../t-sql/queries/select-over-clause-transact-sql.md)を参照してください。  
   
 ## <a name="return-types"></a>戻り値の型  
  **bigint**  
