@@ -13,23 +13,22 @@ helpviewer_keywords:
 ms.assetid: c07abbc6-fc6a-470b-8fa3-532f2e06b16a
 author: stevestein
 ms.author: sstein
-manager: craigg
-ms.openlocfilehash: a682f0d3c8373ea7fc96dd82796108d5d71f26ef
-ms.sourcegitcommit: 1a5448747ccb2e13e8f3d9f04012ba5ae04bb0a3
+ms.openlocfilehash: a31f23d4de02bd4554d997364a3a5aa26b3d4ef3
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51558289"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68134492"
 ---
 # <a name="create-a-database-mail-account"></a>データベース メール アカウントの作成
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
   データベース メール アカウントの作成には、 **データベース メール構成ウィザード** または [!INCLUDE[tsql](../../includes/tsql-md.md)] を使用します。  
   
--   **作業を開始する準備:**  [前提条件](#Prerequisites)  
+-   **作業を開始する準備:** [前提条件](#Prerequisites)  
   
--   **データベース メール アカウントの作成:**  [データベース メール構成ウィザード](#SSMSProcedure)、 [Transact-SQL の使用](#TsqlProcedure)  
+-   **データベース メール アカウントを作成するには、** を使用[データベース メール構成ウィザード](#SSMSProcedure)、[Transact-SQL](#TsqlProcedure)  
   
--   **補足情報:**  [データベース メールを構成する次の手順](#FollowUp)  
+-   **補足情報:** [データベース メールを構成する次の手順](#FollowUp)  
   
 ##  <a name="BeforeYouBegin"></a> はじめに  
   
@@ -86,7 +85,7 @@ EXECUTE msdb.dbo.sysmail_add_account_sp
     @mailserver_name = 'smtp.Adventure-Works.com' ;  
 ```  
   
-##  <a name="FollowUp"></a> 補足情報: データベース メールを構成する次の手順  
+##  <a name="FollowUp"></a>補足情報: データベース メールを構成する次の手順  
   
 -   [データベース メール プロファイルの作成](../../relational-databases/database-mail/create-a-database-mail-profile.md)  
   

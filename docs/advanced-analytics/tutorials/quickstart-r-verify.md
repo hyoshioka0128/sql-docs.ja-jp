@@ -7,12 +7,13 @@ ms.date: 01/04/2019
 ms.topic: quickstart
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: 951ffc07a32434b2f8d333140445f12c2971b811
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: 072a6f34a7cb91505d77356d6ec3835915c310d0
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68470615"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715401"
 ---
 # <a name="quickstart-verify-r-exists-in-sql-server"></a>クイック スタート: SQL Server に R が存在することを確認する 
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -24,13 +25,13 @@ SQL Server には、データサイエンス分析のための R 言語サポー
 + 組み込みの[sp_execute_external_script](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql)ストアドプロシージャ。入力パラメーターとして R スクリプトを渡します。
 + 作成した[カスタムストアドプロシージャ](sqldev-in-database-r-for-sql-developers.md)に R スクリプトをラップします。
 
-このクイックスタートでは、 [SQL Server 2017 Machine Learning Services](../what-is-sql-server-machine-learning.md)または[SQL Server 2016 R Services](../r/sql-server-r-services.md)がインストールおよび構成されていることを確認します。
+このクイックスタートでは、 [SQL Server Machine Learning Services](../what-is-sql-server-machine-learning.md)または[SQL Server 2016 R Services](../r/sql-server-r-services.md)がインストールおよび構成されていることを確認します。
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a>必須コンポーネント
 
 この演習では、次のいずれかが既にインストールされている SQL Server のインスタンスにアクセスする必要があります。
 
-+ R 言語がインストールされている[SQL Server 2017 Machine Learning Services](../install/sql-machine-learning-services-windows-install.md)
++ R 言語がインストールされている[SQL Server Machine Learning Services](../install/sql-machine-learning-services-windows-install.md)
 + [SQL Server 2016 R Services](../install/sql-r-services-windows-install.md)
 
 SQL Server インスタンスは、Azure 仮想マシンまたはオンプレミスに配置できます。 外部スクリプト機能が既定で無効になっているため、[外部スクリプトを有効](../install/sql-machine-learning-services-windows-install.md#bkmk_enableFeature)にし、開始する前に**SQL Server Launchpad サービス**が実行されていることを確認する必要がある場合があることに注意してください。
@@ -73,7 +74,7 @@ SQL Server インスタンスで Machine Learning Services (R) が有効にな�
     nickname       Another Canoe               
     ```
 
-このクエリからエラーが発生した場合は、インストールの問題をすべて除外します。 外部コードライブラリを使用できるようにするには、インストール後の構成が必要です。 [SQL Server 2017 Machine Learning Services をインストール](../install/sql-machine-learning-services-windows-install.md)するか、 [SQL Server 2016 R Services をインストール](../install/sql-r-services-windows-install.md)してください。 同様に、スタートパッドサービスが実行されていることを確認します。
+このクエリからエラーが発生した場合は、インストールの問題をすべて除外します。 外部コードライブラリを使用できるようにするには、インストール後の構成が必要です。 「 [Install SQL Server Machine Learning Services](../install/sql-machine-learning-services-windows-install.md) 」または「 [SQL Server 2016 R Services のインストール](../install/sql-r-services-windows-install.md)」を参照してください。 同様に、スタートパッドサービスが実行されていることを確認します。
 
 環境によっては、SQL Server に接続するための R ワーカー アカウントの有効化、追加のネットワーク ライブラリのインストール、リモートでのコード実行の有効化、すべてを構成した後のインスタンスの再起動が必要な場合があります。 詳細については、「 [R Services のインストールとアップグレード](../r/upgrade-and-installation-faq-sql-server-r-services.md)に関する FAQ」を参照してください。
 

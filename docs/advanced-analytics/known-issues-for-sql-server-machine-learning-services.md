@@ -6,17 +6,18 @@ ms.date: 06/13/2019
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: be55e779f335277a1c0f03fe871b8dcb952e088f
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: 93b2871fa60d6a7c7a41fae202e960440b53c11e
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68470403"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715192"
 ---
 # <a name="known-issues-in-machine-learning-services"></a>Machine Learning Services の既知の問題
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
 
-この記事では、既知の問題またはオプションとして提供される machine learning コンポーネントと制限事項について説明します[SQL Server 2016 R Services](install/sql-r-services-windows-install.md)と[SQL Server マシン 2017 Learning Services の R と Python](install/sql-machine-learning-services-windows-install.md)。
+この記事では、 [SQL Server 2016 r Services](r/sql-server-r-services.md)でオプションとして提供される機械学習コンポーネントの既知の問題または制限事項について説明し、 [r と Python で Machine Learning Services SQL Server](what-is-sql-server-machine-learning.md)します。
 
 ## <a name="setup-and-configuration-issues"></a>セットアップと構成に関する問題
 
@@ -76,7 +77,7 @@ CU8 が使用可能になったときに適用します。 または、管理者
 
 ### <a name="3-unable-to-install-sql-server-machine-learning-features-on-a-domain-controller"></a>3.SQL Server machine learning 機能をドメインコントローラーにインストールできない
 
-SQL Server 2016 R Services または SQL Server 2017 Machine Learning Services をドメインコントローラーにインストールしようとすると、次のエラーが発生し、セットアップが失敗します。
+SQL Server 2016 R Services または SQL Server Machine Learning Services をドメインコントローラーにインストールしようとすると、次のエラーが発生し、セットアップが失敗します。
 
 > *機能のセットアップ処理中にエラーが発生しました*
 > 

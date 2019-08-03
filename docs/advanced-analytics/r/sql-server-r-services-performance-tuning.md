@@ -6,12 +6,13 @@ ms.date: 04/15/2018
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: 9d6dbc55281a725dea0373f2a4d61293b2ddb9c0
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: dd12e38e0d1f01cd142cc4c11efe43346dd1f8ce
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68469939"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715618"
 ---
 # <a name="performance-tuning-for-r-in-sql-server"></a>SQL Server での R のパフォーマンスチューニング
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -29,7 +30,7 @@ ms.locfileid: "68469939"
 + 3番目の記事では、R コードの最適化と運用化に関するリソースについて説明します。
 + 4番目の記事では、テストメソッドについて詳しく説明し、結果と結論を報告します。
 
-**適用対象:** SQL Server 2016 R Services、SQL Server 2017 Machine Learning Services
+**適用対象:** SQL Server 2016 R Services、SQL Server Machine Learning Services
 
 ## <a name="performance-goals-and-targeted-scenarios"></a>パフォーマンス目標と対象となるシナリオ
 

@@ -20,18 +20,17 @@ helpviewer_keywords:
 ms.assetid: c79a220d-e178-4091-a330-c924cc0f0ae0
 author: VanMSFT
 ms.author: vanto
-manager: craigg
-ms.openlocfilehash: ec90c3ca632a917bd0905063d2fee94f4c0dfa32
-ms.sourcegitcommit: c6e71ed14198da67afd7ba722823b1af9b4f4e6f
+ms.openlocfilehash: cbfc9ffa9ba188506e887201ca17ef630f1d04ae
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54326763"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68065939"
 ---
 # <a name="alter-column-encryption-key-transact-sql"></a>ALTER COLUMN ENCRYPTION KEY (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2016-asdb-xxxx-xxx-md](../../includes/tsql-appliesto-ss2016-asdb-xxxx-xxx-md.md)]
 
-  データベースでは、追加、または暗号化された値を削除する列の暗号化キーを変更します。 CEK は、対応する列マスター キーのローテーションで最大 2 つの値を持つことができます。 CEK は、[Always Encrypted &#40;Database Engine&#41;](../../relational-databases/security/encryption/always-encrypted-database-engine.md) 機能を使って列を暗号化するときに使われます。 CEK 値を追加する前を使用して、値の暗号化に使用された列のマスター_キーを定義する必要があります [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] または [CREATE MASTER KEY](../../t-sql/statements/create-column-master-key-transact-sql.md) ステートメントです。  
+  データベースで、暗号化された値を追加または削除する列暗号化キーを変更します。 CEK は、対応する列マスター キーのローテーションで最大 2 つの値を持つことができます。 CEK は、[Always Encrypted &#40;Database Engine&#41;](../../relational-databases/security/encryption/always-encrypted-database-engine.md) 機能を使って列を暗号化するときに使われます。 CEK 値を追加する前を使用して、値の暗号化に使用された列のマスター_キーを定義する必要があります [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] または [CREATE MASTER KEY](../../t-sql/statements/create-column-master-key-transact-sql.md) ステートメントです。  
   
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -48,7 +47,7 @@ ALTER COLUMN ENCRYPTION KEY key_name
   
 ## <a name="arguments"></a>引数  
  *key_name*  
- 変更する列の暗号化キー。  
+ 変更する、列の暗号化キー。  
   
  *column_master_key_name*  
  列の暗号化キー (CEK) を暗号化するために使用される列マスター キー (CMK) の名前を指定します。  
@@ -57,13 +56,13 @@ ALTER COLUMN ENCRYPTION KEY key_name
  値を暗号化するために使用する暗号化アルゴリズムの名前です。 システム プロバイダーのアルゴリズムは、**RSA_OAEP** である必要があります。 列の暗号化キーの値を削除するときに、この引数は有効ではありません。  
   
  *varbinary_literal*  
- CEK BLOB は、暗号化キーを指定されたマスターで暗号化されます。 列の暗号化キーの値を削除するときに、この引数は有効ではありません。  
+ 指定されたマスター暗号化キーを使用して暗号化された CEK BLOB。 列の暗号化キーの値を削除するときに、この引数は有効ではありません。  
   
 > [!WARNING]  
->  ありませんプレーン テキスト CEK 値で渡す次のステートメント。 そうと、この機能のメリットを構成します。  
+>  このステートメントでは、プレーンテキストの CEK 値を渡さないでください。 そうすれば、この機能の利点が得られます。  
   
 ## <a name="remarks"></a>Remarks  
- 通常、1 つだけの暗号化された値は、列の暗号化キーが作成されます。 列のマスター_キーが必要な場合は、(現在列マスター_キーのニーズに新しい列のマスター_キーに置き換えられます) を回転する、列の暗号化キーの新しい値を追加する列の新しいマスター_キーで暗号化します。 このワークフローにより、クライアント アプリケーションが新しい列マスター キーを使用できるようになるまでの間、クライアント アプリケーションが列暗号化キーを使用して暗号化されたデータにアクセスできるようになります。 常に暗号化するには、新しいマスター_キーにアクセスできない、列の古いマスター_キーで暗号化された列の暗号化のキー値を使用して機密データにアクセスできるクライアント アプリケーションでのドライバーを有効になっています。 暗号化アルゴリズム、常に暗号化のサポートでは、256 ビットをプレーン テキストの値が必要です。 列のマスター キーを押しながらキー ストアをカプセル化するキー ストア プロバイダーを使用して、暗号化された値を生成する必要があります。  
+ 通常、列暗号化キーは、暗号化された値を 1 つだけ使用して作成されます。 列マスター キーを回転する必要がある場合 (現在の列マスター キーを新しい列マスター キーと置き換える必要がある場合)、新しい列マスター キーで暗号化された新しい値の列暗号化キーを追加できます。 このワークフローにより、クライアント アプリケーションが新しい列マスター キーを使用できるようになるまでの間、クライアント アプリケーションが列暗号化キーを使用して暗号化されたデータにアクセスできるようになります。 新しいマスター キーにアクセスできないクライアント アプリケーションでも、Always Encrypted が有効にされたドライバーは、古い列マスター キーで暗号化された列暗号化キー値を使用して機密データにアクセスできます。 Always Encrypted でサポートされる暗号化アルゴリズムでは、プレーンテキスト値が 256 ビットである必要があります。 暗号化された値は、列のマスター キーを保持するキー ストアをカプセル化するキー ストア プロバイダーを使用して生成する必要があります。  
 
  列マスター キーは、次の理由でローテーションされます。
 - 法令に遵守するためにキーを定期的にローテーションする必要があります。
@@ -78,7 +77,7 @@ ALTER COLUMN ENCRYPTION KEY key_name
   
 ## <a name="examples"></a>使用例  
   
-### <a name="a-adding-a-column-encryption-key-value"></a>A. 列の暗号化キーの値を追加します。  
+### <a name="a-adding-a-column-encryption-key-value"></a>A. 列の暗号化キーの値を追加する  
  次の例と呼ばれる列の暗号化キーを変更する `MyCEK`です。  
   
 ```  
@@ -93,7 +92,7 @@ GO
   
 ```  
   
-### <a name="b-dropping-a-column-encryption-key-value"></a>B. 列の暗号化キーの値を削除します。  
+### <a name="b-dropping-a-column-encryption-key-value"></a>B. 列の暗号化キーの値を削除する  
  次の例と呼ばれる列の暗号化キーを変更する `MyCEK` 値を削除することによりします。  
   
 ```  

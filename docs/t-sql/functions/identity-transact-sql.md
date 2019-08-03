@@ -19,13 +19,12 @@ helpviewer_keywords:
 ms.assetid: 912e4485-683c-41c2-97b3-8831c0289ee4
 author: VanMSFT
 ms.author: vanto
-manager: craigg
-ms.openlocfilehash: 5763042dd9fa0bb757b66727f9e04b4b81aee85c
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: 06421410c6cb0f6d80b9f8e67446a17d4e84864d
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "63037378"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68024364"
 ---
 # <a name="x40x40identity-transact-sql"></a>&#x40;&#x40;IDENTITY (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
@@ -56,7 +55,7 @@ ms.locfileid: "63037378"
   
  @@IDENTITY 関数のスコープは、実行されるローカル サーバーの現在のセッションです。 この関数は、リモート サーバーまたはリンク サーバーには適用できません。 別のサーバーで ID 値を取得するには、そのリモート サーバーまたはリンク サーバーでストアド プロシージャを実行し、(リモート サーバーまたはリンク サーバーのコンテキスト内で実行されている) そのストアド プロシージャが ID 値を収集し、ローカル サーバー上の呼び出し元の接続にこれを返すようにします。  
   
- @@IDENTITY の値はレプリケーション トリガーやストアド プロシージャ内で使用されるため、レプリケーションによって影響を受けることがあります。 列がレプリケーション アーティクルの一部である場合、ユーザーが作成した最新の ID として @@IDENTITY を信頼することはできません。 @@IDENTITY の代わりに、SCOPE_IDENTITY() 関数の構文を使用できます。 詳細については、を参照してください。[ SCOPE_IDENTITY &#40;Transact-SQL&#41;](../../t-sql/functions/scope-identity-transact-sql.md)  
+ @@IDENTITY の値はレプリケーション トリガーやストアド プロシージャ内で使用されるため、レプリケーションによって影響を受けることがあります。 列がレプリケーション アーティクルの一部である場合、ユーザーが作成した最新の ID として @@IDENTITY を信頼することはできません。 @@IDENTITY の代わりに、SCOPE_IDENTITY() 関数の構文を使用できます。 詳細については、「[SCOPE_IDENTITY &#40;Transact-SQL&#41;](../../t-sql/functions/scope-identity-transact-sql.md)」を参照してください。  
   
 > [!NOTE]  
 >  呼び出し元のストアド プロシージャまたは [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントは、そのユーザーのステートメントのスコープ内で使用される最新の id と、レプリケーションで使用する入れ子になったトリガーのスコープ内での id ではなく返す `SCOPE_IDENTITY()` 関数を使用して書き直す必要があります。  

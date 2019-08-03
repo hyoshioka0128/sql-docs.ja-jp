@@ -16,13 +16,12 @@ helpviewer_keywords:
 ms.assetid: c9fa81b1-6c81-4c11-927b-fab16301a8f5
 author: MashaMSFT
 ms.author: mathoma
-manager: craigg
-ms.openlocfilehash: aface984e9cc370ed906ab5abef65ac6f4bb6bd0
-ms.sourcegitcommit: 61381ef939415fe019285def9450d7583df1fed0
+ms.openlocfilehash: 1962546b83926f1ff189ece6757ebbf3659976ec
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47787260"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68073577"
 ---
 # <a name="replicate-partitioned-tables-and-indexes"></a>パーティション テーブルとパーティション インデックスのレプリケート
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -51,7 +50,7 @@ ms.locfileid: "47787260"
   
  レプリケーションでは、初期同期中にオブジェクトがサブスクライバーにコピーされます。 パーティション構成で PRIMARY 以外のファイル グループを使用する場合、そのファイル グループは初期同期の前にサブスクライバーに存在している必要があります。  
   
- サブスクライバーが初期化された後、データ変更がサブスクライバーに反映され、適切なパーティションに適用されます。 ただし、パーティション構成に対する変更はサポートされていません。 トランザクション レプリケーションとマージ レプリケーションでは、ALTER PARTITION FUNCTION コマンド、ALTER PARTITION SCHEME コマンド、ALTER INDEX コマンドの REBUILD WITH PARTITION ステートメントのレプリケートはサポートされません。 これらに関連付けられた変更は、サブスクライバーに自動的にレプリケートされません。 ユーザーがサブスクライバー側で同様の変更を手動で行う必要があります。  
+ サブスクライバーが初期化された後、データ変更がサブスクライバーに反映され、適切なパーティションに適用されます。 ただし、パーティション構成に対する変更はサポートされていません。 トランザクション レプリケーションとマージ レプリケーションでは、次のコマンドのレプリケーションはサポートされていません。ALTER PARTITION FUNCTION、ALTER PARTITION SCHEME、または ALTER INDEX の REBUILD WITH PARTITION ステートメント。 これらに関連付けられた変更は、サブスクライバーに自動的にレプリケートされません。 ユーザーがサブスクライバー側で同様の変更を手動で行う必要があります。  
   
 ## <a name="replication-support-for-partition-switching"></a>レプリケーションによるパーティション切り替えのサポート  
  テーブル分割の主な利点の 1 つは、パーティション間でデータのサブセットをすばやく効率的に移動できることです。 データは SWITCH PARTITION コマンドを使用して移動します。 既定では、テーブルのレプリケーションが有効な場合、SWITCH PARTITION 操作は次の理由でブロックされます。  
@@ -72,9 +71,9 @@ ms.locfileid: "47787260"
 ### <a name="enabling-partition-switching"></a>パーティション切り替えの有効化  
  トランザクション パブリケーションの次のプロパティを使用すると、レプリケーション環境でのパーティション切り替えの動作を制御できます。  
   
--   **@allow_partition_switch**を **[テーブル分割構成のコピー]** に設定すると、パブリケーション データベースに対して SWITCH PARTITION を実行できます。  
+-   **@allow_partition_switch** を **[テーブル分割構成のコピー]** に設定すると、パブリケーション データベースに対して SWITCH PARTITION を実行できます。  
   
--   **@replicate_partition_switch** は、SWITCH PARTITION DDL ステートメントをサブスクライバーにレプリケートするかどうかを決定します。 このオプションは、 **@allow_partition_switch** が **[テーブル分割構成のコピー]**」を参照してください。  
+-   **@replicate_partition_switch** は、SWITCH PARTITION DDL ステートメントをサブスクライバーにレプリケートするかどうかを決定します。 このオプションは、 **@allow_partition_switch** が **[テーブル分割構成のコピー]** 」を参照してください。  
   
  これらのプロパティは、パブリケーションの作成時に [sp_addpublication](../../../relational-databases/system-stored-procedures/sp-addpublication-transact-sql.md) を使用するか、パブリケーションの作成後に [sp_changepublication](../../../relational-databases/system-stored-procedures/sp-changepublication-transact-sql.md) を使用することによって設定できます。 既に述べたとおり、マージ レプリケーションではパーティション切り替えがサポートされません。 マージ レプリケーションが有効になっているテーブルで SWITCH PARTITION を実行するには、パブリケーションからテーブルを削除します。  
   

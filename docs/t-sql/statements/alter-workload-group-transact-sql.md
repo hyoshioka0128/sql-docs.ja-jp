@@ -17,13 +17,12 @@ helpviewer_keywords:
 ms.assetid: 957addce-feb0-4e54-893e-5faca3cd184c
 author: CarlRabeler
 ms.author: carlrab
-manager: craigg
-ms.openlocfilehash: bac81675ce0469fe39d11745462f2a3376aed73f
-ms.sourcegitcommit: 61381ef939415fe019285def9450d7583df1fed0
+ms.openlocfilehash: 6563abe72382cb912e3d71851398e5d778b47a19
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47724652"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68091750"
 ---
 # <a name="alter-workload-group-transact-sql"></a>ALTER WORKLOAD GROUP (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
@@ -68,7 +67,7 @@ ALTER WORKLOAD GROUP { group_name | "default" }
 -   HIGH  
   
 > [!NOTE]  
-> 内部的には、各重要度の設定は計算に使用される数値として格納されます。  
+> 各重要度の設定は、内部に計算用の数値として格納されます。  
   
  IMPORTANCE は、リソース プールに対してローカルです。同じリソース プール内の異なる重要度のワークロード グループは互いに影響しますが、別のリソース プールのワークロード グループには影響しません。  
   
@@ -76,7 +75,7 @@ ALTER WORKLOAD GROUP { group_name | "default" }
  1 つの要求にプールから割り当てられる最大メモリ量を指定します。 このパーセンテージは、MAX_MEMORY_PERCENT で指定したリソース プールのサイズが基準になります。  
   
 > [!NOTE]  
-> 指定した量だけがクエリ実行許可メモリに割り当てられます。  
+> 指定した量のみがクエリの実行時に許可されるメモリとして割り当てられます。  
   
  *value* は、0 または正の整数にする必要があります。 *value* の許容範囲は 0 から 100 です。 *value* の既定の設定は 25 です。  
   
@@ -84,7 +83,7 @@ ALTER WORKLOAD GROUP { group_name | "default" }
   
 -   *value* を 0 に設定すると、ユーザー定義のワークロード グループでは SORT と HASH JOIN 操作を含むクエリが実行されなくなります。  
   
--   同時に他のクエリが実行されているとサーバーが空きメモリを十分に確保できない可能性があるため、*value* を 70 より大きな値に設定することはお勧めしません。 空きメモリを十分に確保できないと、クエリの時間切れエラー 8645 が発生します。  
+-   同時に他のクエリが実行されているとサーバーが空きメモリを十分に確保できない可能性があるため、*value* を 70 より大きな値に設定することはお勧めしません。 これによってやがては、クエリの時間切れエラー 8645 が発生します。  
   
 > [!NOTE]  
 >  クエリのメモリ要求がこのパラメーターによって指定されている制限を超えると、サーバーは次のように対応します。  
@@ -156,9 +155,9 @@ ALTER WORKLOAD GROUP { group_name | "default" }
 > [!CAUTION]  
 > 複数のワークロード グループに関連付けられているリソース プールからキャッシュされているプランを消去すると、ユーザー定義のリソース プールが *pool_name* で識別されているすべてのワークロード グループに影響します。  
   
- DDL ステートメントを実行する場合、リソース ガバナーの状態について詳しく理解しておくことをお勧めします。 詳細については、「[リソース ガバナー](../../relational-databases/resource-governor/resource-governor.md)」を参照してください。  
+ DDL ステートメントを実行する場合、Resource Governor の状態について詳しく理解しておくことをお勧めします。 詳細については、「[リソース ガバナー](../../relational-databases/resource-governor/resource-governor.md)」を参照してください。  
   
- REQUEST_MEMORY_GRANT_PERCENT: [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] のインデックス作成では、パフォーマンスを向上させるため、最初に許可されたメモリ量を超えるワークスペース メモリの使用が許可されます。 この特別な処理は、今後のバージョンのリソース ガバナーでもサポートされますが、最初のメモリ許可も追加のメモリ許可もリソース プール設定とワークロード グループ設定によって制限されます。  
+ REQUEST_MEMORY_GRANT_PERCENT:[!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)]インデックスの作成では、パフォーマンスの改善のために最初に付与されたのよりも多くのワークスペース メモリを使用することが許可されています。 この特別な処理は、今後のバージョンのリソース ガバナーでもサポートされますが、最初のメモリ許可も追加のメモリ許可もリソース プール設定とワークロード グループ設定によって制限されます。  
   
  **パーティション テーブルのインデックス作成**  
   
@@ -189,7 +188,7 @@ GO
 ```  
   
 ## <a name="see-also"></a>参照  
- [[リソース ガバナー]](../../relational-databases/resource-governor/resource-governor.md)   
+ [リソース ガバナー](../../relational-databases/resource-governor/resource-governor.md)   
  [CREATE WORKLOAD GROUP &#40;Transact-SQL&#41;](../../t-sql/statements/create-workload-group-transact-sql.md)   
  [DROP WORKLOAD GROUP &#40;Transact-SQL&#41;](../../t-sql/statements/drop-workload-group-transact-sql.md)   
  [CREATE RESOURCE POOL &#40;Transact-SQL&#41;](../../t-sql/statements/create-resource-pool-transact-sql.md)   

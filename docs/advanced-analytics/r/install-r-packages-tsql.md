@@ -1,18 +1,19 @@
 ---
 title: T-sql (EXTERNAL LIBRARY の作成) を使用して R パッケージをインストールする
-description: SQL Server 2016 R Services または SQL Server 2017 Machine Learning Services (データベース内) に新しい R パッケージを追加します。
+description: SQL Server 2016 R Services または SQL Server Machine Learning Services (データベース内) に新しい R パッケージを追加します。
 ms.prod: sql
 ms.technology: machine-learning
 ms.date: 06/12/2019
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: 80af3f93eb84c7b78c5cb1e5395175501931e24c
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: 1acaae39d71abd1cbd68781c0edec76308b85760
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68470089"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715734"
 ---
 # <a name="use-t-sql-create-external-library-to-install-r-packages-on-sql-server"></a>T-sql (CREATE EXTERNAL LIBRARY) を使用して SQL Server に R パッケージをインストールする
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]

@@ -7,17 +7,18 @@ ms.date: 03/29/2019
 ms.topic: tutorial
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: d901d11b11019a19d5e26e12956e9ba520e33e8f
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: 5e05a62be604b9d1a3feeaea1ed4f05dc3538493
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68469626"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715470"
 ---
 # <a name="sql-server-machine-learning-tutorials-in-r-and-python"></a>R と Python での Machine Learning チュートリアルの SQL Server
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
 
-この記事では、 [SQL Server 2016 R Services](../install/sql-r-services-windows-install.md)または[SQL Server 2017 Machine Learning Services](../install/sql-machine-learning-services-windows-install.md)の機械学習機能をデモンストレーションするチュートリアルとコードサンプルの包括的な一覧を示します。 
+この記事では、 [SQL Server 2016 R Services](../install/sql-r-services-windows-install.md)または[SQL Server Machine Learning Services](../install/sql-machine-learning-services-windows-install.md)の機械学習機能をデモンストレーションするチュートリアルとコードサンプルの包括的な一覧を示します。 
 
 + クイックスタートは、組み込みデータを使用するか、最小限の労力で迅速な探索を行うためのデータを使用しません。
 + チュートリアルでは、より多くのタスク、大規模なデータセット、さらに詳しい説明をより深く掘り下げていきます。

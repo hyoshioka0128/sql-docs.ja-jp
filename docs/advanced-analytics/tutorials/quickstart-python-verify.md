@@ -7,12 +7,13 @@ ms.date: 01/04/2019
 ms.topic: quickstart
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: 0dd5714f47c90c0091daacbd792b80c05ec68675
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: 98e89cf61e5c53793108a455873382da00a8ea35
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68469696"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715456"
 ---
 # <a name="quickstart-verify-python-exists-in-sql-server"></a>クイック スタート: SQL Server に Python が存在することを確認する 
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -22,11 +23,11 @@ SQL Server には、常駐 SQL Server データに対するデータサイエン
 + 組み込みの[sp_execute_external_script](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql)ストアドプロシージャ。入力パラメーターとして Python スクリプトを渡します。
 + 作成した[カスタムストアドプロシージャ](sqldev-in-database-r-for-sql-developers.md)に Python スクリプトをラップします。
 
-このクイックスタートでは、 [SQL Server 2017 Machine Learning Services](../what-is-sql-server-machine-learning.md)がインストールおよび構成されていることを確認します。
+このクイックスタートでは、 [SQL Server Machine Learning Services](../what-is-sql-server-machine-learning.md)がインストールおよび構成されていることを確認します。
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a>必須コンポーネント
 
-この演習では、 [SQL Server 2017 Machine Learning Services](../install/sql-machine-learning-services-windows-install.md)がインストールされている SQL Server のインスタンスにアクセスする必要があります。
+この演習では、 [SQL Server Machine Learning Services](../install/sql-machine-learning-services-windows-install.md)がインストールされている SQL Server のインスタンスにアクセスする必要があります。
 
 SQL Server インスタンスは、Azure 仮想マシンまたはオンプレミスに配置できます。 外部スクリプト機能が既定で無効になっているため、[外部スクリプトを有効](../install/sql-machine-learning-services-windows-install.md#bkmk_enableFeature)にし、開始する前に**SQL Server Launchpad サービス**が実行されていることを確認する必要がある場合があることに注意してください。
 
@@ -59,7 +60,7 @@ Machine Learning Services (が SQL Server インスタンスで有効になっ�
 
 エラーが発生した場合は、インスタンスと Python が通信できるように、さまざまなことが可能です。
 
-まず、インストールに関する問題をすべて除外します。 外部コードライブラリを使用できるようにするには、インストール後の構成が必要です。 「 [Install SQL Server 2017 Machine Learning Services](../install/sql-machine-learning-services-windows-install.md)」を参照してください。 同様に、スタートパッドサービスが実行されていることを確認します。
+まず、インストールに関する問題をすべて除外します。 外部コードライブラリを使用できるようにするには、インストール後の構成が必要です。 「 [Install SQL Server Machine Learning Services](../install/sql-machine-learning-services-windows-install.md)」を参照してください。 同様に、スタートパッドサービスが実行されていることを確認します。
 
 また、スタートパッドが Python と SQL Server `SQLRUserGroup`間の通信を確実に提供できるように、インスタンスでログインとして Windows ユーザーグループを追加する必要があります。 (R と Python の両方のコードの実行に同じグループが使用されます)。詳細については、「 [Create a login For SQLRUserGroup](../security/create-a-login-for-sqlrusergroup.md)」を参照してください。
 

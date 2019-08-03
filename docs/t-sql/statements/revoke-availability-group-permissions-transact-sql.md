@@ -17,13 +17,12 @@ helpviewer_keywords:
 ms.assetid: 02c77378-a36d-4286-9235-d8867a2b92ad
 author: VanMSFT
 ms.author: vanto
-manager: craigg
-ms.openlocfilehash: 201e7de473a344d0d41269b259c503dc34f2a78c
-ms.sourcegitcommit: c6e71ed14198da67afd7ba722823b1af9b4f4e6f
+ms.openlocfilehash: adbceb87d5191cd279130ca53209265cdc1c14d4
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54327801"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68082352"
 ---
 # <a name="revoke-availability-group-permissions-transact-sql"></a>可用性グループの権限の取り消し (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2012-asdb-xxxx-xxx-md](../../includes/tsql-appliesto-ss2012-asdb-xxxx-xxx-md.md)]
@@ -53,8 +52,8 @@ REVOKE [ GRANT OPTION FOR ] permission  [ ,...n ]
  *permission*  
  可用性グループに対して取り消すことができる権限を指定します。 権限の一覧については、後の「解説」を参照してください。  
   
- ON AVAILABILITY GROUP **::**_availability_group_name_  
- 権限を取り消す可用性グループを指定します。 スコープ修飾子 (**::**) が必要です。  
+ ON AVAILABILITY GROUP **::** _availability_group_name_  
+ 権限を取り消す可用性グループを指定します。 スコープ修飾子 ( **::** ) が必要です。  
   
  { FROM | TO } \<server_principal> 取り消される権限の対象となる [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ログインを指定します。  
   
@@ -71,7 +70,7 @@ REVOKE [ GRANT OPTION FOR ] permission  [ ,...n ]
  非対称キーにマップされている [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ログインの名前を指定します。  
   
  GRANT OPTION  
- 指定した権限を他のプリンシパルに許可するための権利が、取り消されます。 権限自体は取り消されません。  
+ 指定した権限を他のプリンシパルに許可するための権利が、取り消されることを示します。 権限自体は取り消されません。  
   
 > [!IMPORTANT]  
 >  指定した権限が GRANT オプションなしでプリンシパルに許可されている場合は、その権限自体が取り消されます。  
@@ -90,7 +89,7 @@ REVOKE [ GRANT OPTION FOR ] permission  [ ,...n ]
   
  可用性グループに関する情報は、[sys.availability_groups &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-availability-groups-transact-sql.md) カタログ ビューで表示できます。 サーバー権限に関する情報は [sys.server_permissions](../../relational-databases/system-catalog-views/sys-server-permissions-transact-sql.md) カタログ ビュー、サーバー プリンシパルに関する情報は [sys.server_principals](../../relational-databases/system-catalog-views/sys-server-principals-transact-sql.md) カタログ ビューでそれぞれ確認できます。  
   
- 可用性グループは、サーバー レベルのセキュリティ保護可能なリソースです。 次の表に、可用性グループで取り消すことができる権限のうち最も限定的なものを、それらを暗黙的に含む一般的な権限と共に示します。  
+ 可用性グループは、サーバー レベルでセキュリティ保護可能なリソースです。 次の表に、可用性グループで取り消すことができる権限のうち最も限定的なものを、それらを暗黙的に含む一般的な権限と共に示します。  
   
 |可用性グループの権限|権限が含まれる可用性グループ権限|権限が含まれるサーバー権限|  
 |-----------------------------------|----------------------------------------------|----------------------------------|  

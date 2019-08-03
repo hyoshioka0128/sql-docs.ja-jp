@@ -3,21 +3,22 @@ title: R および Python コンポーネントのコマンドプロンプトイ
 description: SQL Server コマンドラインセットアップを実行して、R 言語と Python の統合を SQL Server データベースエンジンインスタンスに追加します。
 ms.prod: sql
 ms.technology: machine-learning
-ms.date: 03/13/2019
+ms.date: 07/30/2019
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: 86f17e9775108e9b075b3733df59202654888d62
-ms.sourcegitcommit: c1382268152585aa77688162d2286798fd8a06bb
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: 3e1e74c9d14c93cf44a7da5db4795a1524d238be
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68345025"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715272"
 ---
 # <a name="install-sql-server-machine-learning-r-and-python-components-from-the-command-line"></a>コマンドラインから machine learning R および Python コンポーネントをインストール SQL Server
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md-winonly](../../includes/appliesto-ss-xxxx-xxxx-xxx-md-winonly.md)]
 
-この記事では、コマンドラインから SQL Server machine learning コンポーネントを intalling する手順について説明します。
+この記事では、コマンドラインから SQL Server machine learning コンポーネントをインストールする手順について説明します。
 
 + [データベース内の新しいインスタンス](#indb)
 + [既存のデータベースエンジンインスタンスに追加する](#add-existing)
@@ -45,19 +46,31 @@ ms.locfileid: "68345025"
 
 コマンド プロンプトを使用してインストールする場合、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、/Q パラメーターを使用した非表示モード、または /QS パラメーターを使用した簡易非表示モードがサポートされます。 /QS スイッチでは、進捗状況のみが表示され、入力はできません。また、該当する場合でもエラー メッセージは表示されません。 /QS パラメーターは、/Action=install を指定した場合にのみサポートされます。
 
+::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
 | 引数 | 説明 |
 |-----------|-------------|
-| /FEATURES = AdvancedAnalytics | データベース内のバージョンをインストールします。SQL Server 2017 Machine Learning Services (データベース内) または SQL Server 2016 R Services (データベース内)。  |
-| /FEATURES = SQL_INST_MR | SQL Server 2017 にのみ適用されます。 これをアドバンス分析と組み合わせます。 Microsoft R Open および独自の R パッケージを含む (データベース内) R 機能をインストールします。 SQL Server 2016 R Services の機能は R のみなので、そのリリースのパラメーターはありません。|
-| /FEATURES = SQL_INST_MPY | SQL Server 2017 にのみ適用されます。 これをアドバンス分析と組み合わせます。 (データベース内) Python 機能 (Anaconda や独自の Python パッケージなど) をインストールします。 |
-| /FEATURES = SQL_SHARED_MR | スタンドアロンバージョンの R 機能をインストールします。SQL Server 2017 Machine Learning Server (スタンドアロン) または SQL Server 2016 R Server (スタンドアロン)。 スタンドアロンサーバーは、データベースエンジンインスタンスにバインドされていない "共有機能" です。|
-| /FEATURES = SQL_SHARED_MPY | SQL Server 2017 にのみ適用されます。 では、スタンドアロンバージョンの Python 機能がインストールされます。SQL Server 2017 Machine Learning Server (スタンドアロン)。 スタンドアロンサーバーは、データベースエンジンインスタンスにバインドされていない "共有機能" です。|
+| /FEATURES = AdvancedAnalytics | データベース内のバージョンをインストールします。SQL Server R Services (データベース内)。  |
+| /FEATURES = SQL_SHARED_MR | スタンドアロンバージョンの R 機能をインストールします。R Server (スタンドアロン) を SQL Server します。 スタンドアロンサーバーは、データベースエンジンインスタンスにバインドされていない "共有機能" です。|
+| /IACCEPTROPENLICENSETERMS  | オープンソース R コンポーネントを使用するためのライセンス条項に同意したことを示します。 |
+| /IACCEPTPYTHONLICENSETERMS | Python コンポーネントを使用するためのライセンス条項に同意したことを示します。 |
+| /IACCEPTSQLSERVERLICENSETERMS | SQL Server を使用するためのライセンス条項に同意したことを示します。|
+| /MRCACHEDIRECTORY | オフラインセットアップでは、R コンポーネントの CAB ファイルを含むフォルダーを設定します。 |
+::: moniker-end
+
+::: moniker range=">=sql-server-2017||=sqlallproducts-allversions"
+| 引数 | 説明 |
+|-----------|-------------|
+| /FEATURES = AdvancedAnalytics | データベース内のバージョンをインストールします。SQL Server Machine Learning Services (データベース内)。  |
+| /FEATURES = SQL_INST_MR | これをアドバンス分析と組み合わせます。 Microsoft R Open および独自の R パッケージを含む (データベース内) R 機能をインストールします。 |
+| /FEATURES = SQL_INST_MPY | これをアドバンス分析と組み合わせます。 (データベース内) Python 機能 (Anaconda や独自の Python パッケージなど) をインストールします。 |
+| /FEATURES = SQL_SHARED_MR | スタンドアロンバージョンの R 機能をインストールします。SQL Server Machine Learning Server (スタンドアロン) です。 スタンドアロンサーバーは、データベースエンジンインスタンスにバインドされていない "共有機能" です。|
+| /FEATURES = SQL_SHARED_MPY | では、スタンドアロンバージョンの Python 機能がインストールされます。SQL Server Machine Learning Server (スタンドアロン) です。 スタンドアロンサーバーは、データベースエンジンインスタンスにバインドされていない "共有機能" です。|
 | /IACCEPTROPENLICENSETERMS  | オープンソース R コンポーネントを使用するためのライセンス条項に同意したことを示します。 |
 | /IACCEPTPYTHONLICENSETERMS | Python コンポーネントを使用するためのライセンス条項に同意したことを示します。 |
 | /IACCEPTSQLSERVERLICENSETERMS | SQL Server を使用するためのライセンス条項に同意したことを示します。|
 | /MRCACHEDIRECTORY | オフラインセットアップでは、R コンポーネントの CAB ファイルを含むフォルダーを設定します。 |
 | /MPYCACHEDIRECTORY | 将来使用するために予約されています。 インターネットに接続されていないコンピューターにインストールする Python コンポーネントの CAB ファイルを格納するには、% TEMP% を使用します。 |
-
+::: moniker-end
 
 ## <a name="indb"></a>データベース内インスタンスのインストール
 
@@ -68,7 +81,8 @@ ms.locfileid: "68345025"
 > [!IMPORTANT]
 > インストール後、2つの追加の構成手順が残ります。 統合は、これらのタスクが実行されるまで完了しません。 手順については[、「インストール後のタスク](#post-install)」を参照してください。
 
-### <a name="sql-server-2017-database-engine-advanced-analytics-with-python-and-r"></a>SQL Server 2017: データベースエンジン、Python および R を使用した高度な分析
+::: moniker range=">=sql-server-2017||=sqlallproducts-allversions"
+### <a name="sql-server-machine-learning-services-database-engine-advanced-analytics-with-python-and-r"></a>SQL Server Machine Learning Services: データベースエンジン、Python および R を使用した高度な分析
 
 データベースエンジンインスタンスの同時インストールの場合は、インスタンス名と管理者 (Windows) ログインを指定します。 コアおよび言語コンポーネントをインストールするための機能だけでなく、すべてのライセンス条項に同意することもできます。
 
@@ -93,16 +107,19 @@ Setup.exe /qs /ACTION=Install /FEATURES=SQLEngine,ADVANCEDANALYTICS,SQL_INST_MPY
 /INSTANCENAME=MSSQLSERVER /SQLSYSADMINACCOUNTS="<username>" 
 /IACCEPTSQLSERVERLICENSETERMS  /IACCEPTPYTHONLICENSETERMS
 ```
+::: moniker-end
 
-### <a name="sql-server-2016-database-engine-and-advanced-analytics-with-r"></a>SQL Server 2016: データベースエンジンと R を使用した高度な分析
+::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+### <a name="sql-server-r-services-database-engine-and-advanced-analytics-with-r"></a>SQL Server R Services: R を使用したデータベースエンジンと高度な分析
 
-このコマンドは SQL Server 2017 と同じですが、SQL Server 2016 セットアップでは使用できない Python 要素は含まれていません。
+データベースエンジンインスタンスの同時インストールの場合は、インスタンス名と管理者 (Windows) ログインを指定します。 コアおよび言語コンポーネントをインストールするための機能だけでなく、すべてのライセンス条項に同意することもできます。
 
 ```cmd  
 Setup.exe /qs /ACTION=Install /FEATURES=SQLEngine,ADVANCEDANALYTICS,SQL_INST_MR
 /INSTANCENAME=MSSQLSERVER /SQLSYSADMINACCOUNTS="<Windows-username>" 
 /IACCEPTSQLSERVERLICENSETERMS /IACCEPTROPENLICENSETERMS 
 ```
+::: moniker-end
 
 ## <a name="post-install"></a>インストール後の構成 (必須)
 
@@ -112,11 +129,18 @@ Setup.exe /qs /ACTION=Install /FEATURES=SQLEngine,ADVANCEDANALYTICS,SQL_INST_MR
 
 インストールを完了するには、次の2つのタスクが必要です。
 
+
+::: moniker range=">=sql-server-2017||=sqlallproducts-allversions"
 1. データベースエンジンサービスを再起動します。
 
-1. 機能を使用する前に、外部スクリプトを有効にしてください。 次の手順に従って、 [SQL Server 2017 Machine Learning Services (データベース内) のインストール](sql-machine-learning-services-windows-install.md)に関する手順に従います。 
+1. Machine Learning Services の SQL Server:機能を使用する前に、外部スクリプトを有効にしてください。 次の手順として[SQL Server Machine Learning Services (データベース内) のインストール](sql-machine-learning-services-windows-install.md)に関する説明に従ってください。 
+::: moniker-end
 
-SQL Server 2016 の場合は、 [SQL Server 2016 R Services (データベース内) をインストール](sql-r-services-windows-install.md)するのではなく、この記事を使用してください。
+::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+1. データベースエンジンサービスを再起動します。
+
+1. SQL Server R Services:機能を使用する前に、外部スクリプトを有効にしてください。 次の手順に従って[SQL Server R Services (データベース内) をインストール](sql-r-services-windows-install.md)する手順に従います。 
+::: moniker-end
 
 ## <a name="add-existing"></a>既存のデータベースエンジンインスタンスに高度な分析を追加する
 
@@ -126,8 +150,6 @@ SQL Server 2016 の場合は、 [SQL Server 2016 R Services (データベース�
 Setup.exe /qs /ACTION=Install /FEATURES=SQL_INST_MR /INSTANCENAME=MSSQLSERVER 
 /IACCEPTSQLSERVERLICENSETERMS  /IACCEPTROPENLICENSETERMS
 ```
-
-
 
 ## <a name="silent"></a>サイレントインストール
 
@@ -142,27 +164,30 @@ Setup.exe /q /ACTION=Install /FEATURES=SQLEngine,ADVANCEDANALYTICS,SQL_INST_MR,S
 
 ## <a name="shared-feature"></a>スタンドアロンサーバーのインストール
 
-スタンドアロンサーバーは、データベースエンジンインスタンスにバインドされていない "共有機能" です。 次の例は、両方のリリースの有効な構文を示しています。
+スタンドアロンサーバーは、データベースエンジンインスタンスにバインドされていない "共有機能" です。 次の例は、スタンドアロンサーバーをインストールするための有効な構文を示しています。
 
-SQL Server 2017 では、スタンドアロンサーバーで Python と R がサポートされています。
+::: moniker range=">=sql-server-2017||=sqlallproducts-allversions"
+SQL Server Machine Learning Server は、スタンドアロンサーバー上で Python と R をサポートしています。
 
 ```cmd
 Setup.exe /q /ACTION=Install /FEATURES=SQL_SHARED_MR,SQL_SHARED_MPY  
 /IACCEPTROPENLICENSETERMS /IACCEPTPYTHONLICENSETERMS /IACCEPTSQLSERVERLICENSETERMS
 ```
-
-SQL Server 2016 は R のみです。
+::: moniker-end
+::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+R Server の SQL Server は R のみです。
 
 ```cmd
 Setup.exe /q /ACTION=Install /FEATURES=SQL_SHARED_MR 
 /IACCEPTROPENLICENSETERMS /IACCEPTSQLSERVERLICENSETERMS
 ```
+::: moniker-end
 
 セットアップが完了すると、サーバー、Microsoft パッケージ、R と Python のオープンソースディストリビューション、ツール、サンプル、およびディストリビューションの一部であるスクリプトが作成されます。 
 
-R コンソールウィンドウを開くには、\R_SERVER\bin\x64 にアクセスし、 **[Rgui]** をダブルクリックします。 R の新機能 次のチュートリアルをお試しください。[基本的な R コマンドと RevoScaleR 関数:25一般的な](https://docs.microsoft.com/machine-learning-server/r/tutorial-r-to-revoscaler)例。
+R コンソールウィンドウを開くには、に`\Program files\Microsoft SQL Server\150 (or 140/130)\R_SERVER\bin\x64`アクセスし、 **rgui .exe**をダブルクリックします。 R の新機能 次のチュートリアルをお試しください。[基本的な R コマンドと RevoScaleR 関数:25一般的な](https://docs.microsoft.com/machine-learning-server/r/tutorial-r-to-revoscaler)例。
 
-Python コマンドを開くには、Server\140\PYTHON_SERVER\bin\x64 にアクセスし、 **[python .exe]** をダブルクリックします。
+Python コマンドを開くには、に`\Program files\Microsoft SQL Server\150 (or 140)\PYTHON_SERVER\bin\x64`アクセスして、 **[python .exe]** をダブルクリックします。
 
 ## <a name="get-help"></a>ヘルプの参照
 
@@ -172,7 +197,7 @@ Python コマンドを開くには、Server\140\PYTHON_SERVER\bin\x64 にアク�
 
 インスタンスのインストール状態を確認し、一般的な問題を解決するには、これらのカスタムレポートを試してください。
 
-* [SQL Server R Services のカスタムレポート](../r/monitor-r-services-using-custom-reports-in-management-studio.md)
+* [SQL Server のカスタムレポート](../r/monitor-r-services-using-custom-reports-in-management-studio.md)
 
 ## <a name="next-steps"></a>次の手順
 

@@ -1,18 +1,18 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: SQL Server Machine Learning Services (R および Python) のドキュメント
+title: SQL Server Machine Learning Services (Python および R) ドキュメント
 metadata:
-  title: SQL Server Machine Learning Services (R、Python) のドキュメント-チュートリアル、クイックスタート、インストールガイド |Microsoft Docs
+  title: SQL Server Machine Learning Services (Python、R) のドキュメント-チュートリアル、クイックスタート、およびインストールガイド |Microsoft Docs
   titleSuffix: ''
-  description: SQL Server Machine Learning Services を使用して、リレーショナルデータに対して R および Python スクリプトを実行する方法について説明します。 チュートリアル、コード例、インストールガイドなどのドキュメントでは、その方法を紹介します。
+  description: SQL Server Machine Learning Services を使用して、リレーショナルデータに対して Python および R スクリプトを実行する方法について説明します。 チュートリアル、コード例、インストールガイドなどのドキュメントでは、その方法を紹介します。
   ms.prod: sql
   ms.technology: machine-learning
   ms.topic: landing-page
   author: dphansen
   ms.author: davidph
-  ms.date: 06/22/2019
+  ms.date: 08/01/2019
 abstract:
-  description: SQL Server Machine Learning Services を使用して、リレーショナルデータで R および Python スクリプトを実行する方法について説明します。 チュートリアル、コード例、インストールガイドなどのドキュメントでは、その方法を紹介します。
+  description: リレーショナルデータに対して Python および R スクリプトを実行するために SQL Server Machine Learning Services を使用する方法について説明します。 チュートリアル、コード例、インストールガイドなどのドキュメントでは、その方法を紹介します。
   aside:
     image:
       alt: null
@@ -30,8 +30,8 @@ sections:
       - type: list
         style: unordered
         items:
-          - html: <a href="tutorials/quickstart-r-run-using-tsql">R</a>または<a href="tutorials/quickstart-python-run-using-t-sql">Python で</a>"Hello world" スクリプトを実行する
-          - html: <a href="tutorials/quickstart-r-create-predictive-model">R</a>または<a href="tutorials/quickstart-python-train-score-in-tsql">Python で</a>予測モデルを作成する
+          - html: <a href="tutorials/quickstart-python-run-using-t-sql">Python</a>または<a href="tutorials/quickstart-r-run-using-tsql">R</a>で "Hello world" スクリプトを実行する
+          - html: <a href="tutorials/quickstart-python-train-score-in-tsql">Python</a>または<a href="tutorials/quickstart-r-create-predictive-model">R</a>で予測モデルを作成する
   - title: ステップ バイ ステップ チュートリアル
     items:
       - type: paragraph
@@ -39,9 +39,9 @@ sections:
       - type: list
         style: unordered
         items:
+          - html: '<a href="tutorials/sqldev-in-database-python-for-sql-developers">T-sql で Python を使用する</a>:データ</a>の探索、特徴エンジニアリングの実行、モデルのトレーニングとデプロイ、予測の作成 (5 部構成シリーズ)'
           - html: '<a href="tutorials/sqldev-in-database-r-for-sql-developers">T-sql で R を使用する</a>:データの探索、特徴エンジニアリングの実行、モデルのトレーニングとデプロイ、予測の作成 (5 部構成シリーズ)'
           - html: '<a href="tutorials/walkthrough-data-science-end-to-end-walkthrough">R ツールで Machine Learning Services を使用する</a>:データの探索、グラフとプロットの作成、特徴エンジニアリングの実行、モデルのトレーニングとデプロイ、予測の作成 (6 部構成シリーズ)'
-          - html: '<a href="tutorials/sqldev-in-database-python-for-sql-developers">T-sql で Python を使用する</a>:データ</a>の探索、特徴エンジニアリングの実行、モデルのトレーニングとデプロイ、予測の作成 (5 部構成シリーズ)'
   - title: 解決策
     items:
       - type: paragraph
@@ -49,16 +49,16 @@ sections:
   - title: リファレンス
     items:
       - type: paragraph
-        text: SQL Server Machine Learning Services には、R と Python の両方に対して複数のパッケージがあります。
+        text: SQL Server Machine Learning Services では、オープンソースパッケージとフレームワーク、および Microsoft Python および R パッケージの両方を使用します。
       - type: list
         style: unordered
         items:
-          - html: '<a href="r/ref-r-revoscaler">R の RevoScaleR</a>:R タスクの分散および並列処理: データ変換、探索、視覚化、統計および予測分析。'
-          - html: '<a href="r/ref-r-microsoftml">R の MicrosoftML</a>: Microsoft AI アルゴリズムに基づく関数 (R に適合)'
-          - html: '<a href="r/ref-r-olapr">R の olapR</a>:OLAP キューブからデータをインポートします'
+          - html: '<a href="python/ref-py-revoscalepy">Python での revoscalepy</a>:Python タスクの分散および並列処理: データ変換、探索、視覚化、統計および予測分析'
+          - html: '<a href="python/ref-py-microsoftml">Python での microsoft ml</a>:Python 用 Microsoft AI アルゴリズムに基づく関数'
+          - html: '<a href="r/ref-r-revoscaler">R の RevoScaleR</a>:R タスクの分散および並列処理: データ変換、探索、視覚化、統計および予測分析'
+          - html: '<a href="r/ref-r-microsoftml">R の Microsoft ml</a>:R 用 Microsoft AI アルゴリズムに基づく関数'
+          - html: '<a href="r/ref-r-olapr">R の Olapr</a>:OLAP キューブからデータをインポートします'
           - html: '<a href="r/ref-r-sqlrutils">R の sqlRUtils</a>:R と T-sql をカプセル化するためのヘルパー関数'
-          - html: '<a href="python/ref-py-revoscalepy">Python の revoscalepy</a>:Python タスクの分散および並列処理: データ変換、探索、視覚化、統計および予測分析'
-          - html: '<a href="python/ref-py-microsoftml">Python の microsoftml</a>:Python に適合する Microsoft AI アルゴリズムに基づく関数'
   - title: その他の Machine Learning テクノロジ
     items:
       - type: list

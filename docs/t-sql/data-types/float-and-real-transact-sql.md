@@ -22,14 +22,13 @@ helpviewer_keywords:
 ms.assetid: 08ea66b7-624e-4d8b-86bc-750ff76cdfc5
 author: MikeRayMSFT
 ms.author: mikeray
-manager: craigg
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: abf461a516371b78a74989ac26f6b79ebbe4853b
-ms.sourcegitcommit: dfb1e6deaa4919a0f4e654af57252cfb09613dd5
+ms.openlocfilehash: 9811fdb3f7199e3a4cf10053f0f8c2f850a57845
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56020183"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68086749"
 ---
 # <a name="float-and-real-transact-sql"></a>float 型と real 型 (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-all-md](../../includes/tsql-appliesto-ss2008-all-md.md)]
@@ -39,9 +38,9 @@ ms.locfileid: "56020183"
 ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)
   
 ## <a name="syntax"></a>構文  
-**float** [ **(**_n_**)** ]。*n* は、科学的表記法で **float** 数の仮数部を格納するために使用されるビット数であるため、精度と格納サイズを指示します。 *n* を指定する場合、**1** から **53** までの値にする必要があります。 *n* の既定値は **53** です。
+**float** [ **(** _n_ **)** ]。*n* は、科学的表記法で **float** 数の仮数部を格納するために使用されるビット数であるため、精度と格納サイズを指示します。 *n* を指定する場合、**1** から **53** までの値にする必要があります。 *n* の既定値は **53** です。
   
-|*n* 値|有効桁数|ストレージのサイズ|  
+|*n* 値|有効桁数|ストレージ サイズ|  
 |---|---|---|
 |**1 ～ 24**|7 桁|4 バイト|  
 |**25-53**|15 桁|8 バイト|  
@@ -55,8 +54,8 @@ ms.locfileid: "56020183"
   
 |データ型|範囲|ストレージ|  
 |---|---|---|
-|**float**|- 1.79E+308 ～ -2.23E-308、0、および 2.23E-308 ～ 1.79E+308|*n* の値により異なります|  
-|**real**|- 3.40E+38 ～ -1.18E-38、0、および 1.18E-38 ～ 3.40E+38|4 バイト|  
+|**float**|- 1.79E+308 から -2.23E-308、0、および 2.23E-308 から 1.79E+308|*n* の値により異なります|  
+|**real**|- 3.40E + 38 から -1.18E - 38、0、および 1.18E - 38 から 3.40E + 38|4 バイト|  
   
 ##  <a name="converting-float-and-real-data"></a>float 型データと real 型データの変換  
 **float** の値は、任意の整数型への変換時に切り捨てられます。
@@ -69,7 +68,7 @@ ms.locfileid: "56020183"
 [ALTER TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/alter-table-transact-sql.md)  
 [CAST および CONVERT &#40;Transact-SQL&#41;](../../t-sql/functions/cast-and-convert-transact-sql.md)  
 [CREATE TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/create-table-transact-sql.md)  
-[データ型の変換 &#40;データベース エンジン&#41;](../../t-sql/data-types/data-type-conversion-database-engine.md)  
+[データ型の変換&#40;Transact-SQL&#41;](../../t-sql/data-types/data-type-conversion-database-engine.md)  
 [データ型 &#40;Transact-SQL&#41;](../../t-sql/data-types/data-types-transact-sql.md)  
 [DECLARE @local_variable &#40;Transact-SQL&#41;](../../t-sql/language-elements/declare-local-variable-transact-sql.md)  
 [SET @local_variable &#40;Transact-SQL&#41;](../../t-sql/language-elements/set-local-variable-transact-sql.md)

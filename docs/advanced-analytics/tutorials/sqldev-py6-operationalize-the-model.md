@@ -7,12 +7,13 @@ ms.date: 11/02/2018
 ms.topic: tutorial
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: b04e57c45c6113d4a0404a3a338e6beba4cda813
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: be80892db818bafdb45da974a064a0c5cf1fdc3f
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68468597"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715349"
 ---
 # <a name="run-predictions-using-python-embedded-in-a-stored-procedure"></a>ストアドプロシージャに埋め込まれた Python を使用した予測の実行
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -45,7 +46,7 @@ ms.locfileid: "68468597"
 
 次の T-sql ステートメントを実行して、ストアドプロシージャを作成します。 このストアドプロシージャでは、そのパッケージに固有の関数が使用されるため、scikit-learn パッケージに基づくモデルが必要です。
 
-+ 入力を含むデータフレームは、ロジスティック回帰`predict_proba` `mod`モデルの関数に渡されます。 関数 (`probArray = mod.predict_proba(X)`) は、チップ (任意の金額) が指定される確率を表す float を返します。  `predict_proba`
++ 入力を含むデータフレームは、ロジスティック回帰`predict_proba` `mod`モデルの関数に渡されます。 関数 (`probArray = mod.predict_proba(X)`) は、チップ (任意の金額) が指定される確率を表す float を返します。 `predict_proba`
 
 ```sql
 DROP PROCEDURE IF EXISTS PredictTipSciKitPy;

@@ -21,19 +21,18 @@ helpviewer_keywords:
 ms.assetid: fe830577-11ca-44e5-953b-2d589d54d045
 author: VanMSFT
 ms.author: vanto
-manager: craigg
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=aps-pdw-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 84a2318f89872f490d8d3fc08902438f7a189443
-ms.sourcegitcommit: c6e71ed14198da67afd7ba722823b1af9b4f4e6f
+ms.openlocfilehash: 1c5bd7fef54ee28993472bd6b3f4e4df3bba739f
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54326493"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68060981"
 ---
-# <a name="create-database-scoped-credential-transact-sql"></a>データベース スコープ ベースの資格情報 (TRANSACT-SQL) の作成します。
+# <a name="create-database-scoped-credential-transact-sql"></a>CREATE DATABASE SCOPED CREDENTIAL (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-all-md](../../includes/tsql-appliesto-ss2008-all-md.md)]
 
-  データベースの資格情報を作成します。 データベースの資格情報は、サーバー ログインまたはデータベース ユーザーにマップされません。 データベースは、資格情報を使用して、外部の場所へのアクセスをいつでも、データベースでは、アクセスが必要な操作を実行します。  
+  データベースの資格情報を作成します。 データベースの資格情報は、サーバー ログインまたはデータベース ユーザーにマップされません。 アクセスを必要とする操作がデータベースで実行されている場合はいつも、データベースでは資格情報を使用して外部の場所へのアクセスが行われます。  
   
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -49,12 +48,12 @@ WITH IDENTITY = 'identity_name'
   
 ## <a name="arguments"></a>引数  
  *credential_name*  
- 作成するデータベース スコープの資格情報の名前を指定します。 *credential_name* はシャープ (#) 記号で始めることはできません。 ## で始まる資格情報はシステム資格情報です。  
+ 作成するデータベース スコープの資格情報の名前を指定します。 *credential_name* はシャープ (#) 記号で始めることはできません。 システム資格情報は ## で始まります。  
   
- IDENTITY **='**_identity\_name_**'**  
+ IDENTITY **='** _identity\_name_ **'**  
  サーバーの外部に接続するときに使用するアカウントの名前を指定します。 共有キーを使用して Azure Blob Storage からファイルをインポートするには、ID 名が `SHARED ACCESS SIGNATURE` である必要があります。 データを SQL DW に読み込むには、任意の有効な値を ID に使用できます。 Shared Access Signature の詳細については、「[Shared Access Signatures (SAS) の使用](https://docs.microsoft.com/azure/storage/storage-dotnet-shared-access-signature-part-1)」をご覧ください。  
   
- SECRET **='**_secret_**'**  
+ SECRET **='** _secret_ **'**  
  送信の認証に必要なシークレットを指定します。 `SECRET` は、Azure Blob Storage からファイルをインポートするために必要です。 Azure Blob Storage から SQL DW または Parallel Data Warehouse に読み込むには、シークレットが Azure Storage キーである必要があります。  
 > [!WARNING]
 >  SAS キーの値は '?' (疑問符) で始まる可能性があります。 SAS キーを使用する場合は、先頭の '?' を削除する必要があります。 そうしないと、作業がブロックされる可能性があります。  
@@ -64,7 +63,7 @@ WITH IDENTITY = 'identity_name'
   
  データベース スコープ資格情報を作成する前に、データベースに資格情報を保護するためのマスター キーが必要です。 詳細については、[CREATE MASTER KEY &#40;Transact-SQL&#41;](../../t-sql/statements/create-master-key-transact-sql.md)を参照してください。  
   
- IDENTITY が Windows ユーザーの場合、このシークレットにはパスワードを指定できます。 シークレットはサービス マスター キーを使用して暗号化されます。 サービス マスター キーが再生成された場合、シークレットは新しいサービス マスター キーを使用して再度暗号化されます。  
+ IDENTITY が Windows ユーザーの場合、このシークレットはパスワードにすることができます。 シークレットはサービス マスター キーを使用して暗号化されます。 サービス マスター キーが再生成された場合、シークレットは新しいサービス マスター キーを使用して再度暗号化されます。  
    
  データベース スコープの資格情報に関する情報は、[sys.database_scoped_credentials](../../relational-databases/system-catalog-views/sys-database-scoped-credentials-transact-sql.md) カタログ ビューで確認できます。  
   

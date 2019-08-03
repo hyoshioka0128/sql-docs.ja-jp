@@ -6,20 +6,18 @@ ms.date: 05/31/2018
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: 268b3df72d468170fbefae2557892c49fd15515c
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: 10ec78bf8627bfef3232dfc72d7ef7f638604b15
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68470294"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715750"
 ---
 # <a name="r-scripting-errors-in-sql-server"></a>SQL Server での R スクリプトエラー
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
 
-この記事では、SQL Server で R コードを実行するときのエラーのいくつかのスクリプトについて説明します。 この一覧は包括的なものではありません。 パッケージは多数あり、同じパッケージのバージョンによってエラーが異なる場合があります。 [Machine Learning Server フォーラム](https://social.msdn.microsoft.com/Forums/en-US/home?category=MicrosoftR)では、R Services (データベース内)、Microsoft R Client、および Microsoft R Server で使用される機械学習コンポーネントをサポートするスクリプトエラーを投稿することをお勧めします。
-
-**適用対象:** SQL Server 2016 R Services、SQL Server 2017 Machine Learning Services
-
+この記事では、SQL Server で R コードを実行する際のいくつかのスクリプトエラーについて説明します。 この一覧は包括的なものではありません。 パッケージは多数あり、同じパッケージのバージョンによってエラーが異なる場合があります。 [Machine Learning Server フォーラム](https://social.msdn.microsoft.com/Forums/en-US/home?category=MicrosoftR)では、R Services (データベース内)、Microsoft R Client、および Microsoft R Server で使用される機械学習コンポーネントをサポートするスクリプトエラーを投稿することをお勧めします。
 
 ## <a name="valid-script-fails-in-t-sql-or-in-stored-procedures"></a>T-sql またはストアドプロシージャで有効なスクリプトが失敗する
 

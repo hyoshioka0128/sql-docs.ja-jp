@@ -158,7 +158,7 @@ fn_get_audit_file ( file_pattern,
   GO  
   ```  
 
-  この例で、追加の T-SQL 句を使用した前述のように、同じファイルから読み取ります (**上部**、 **ORDER BY**、および**場所**句によって返される監査レコードをフィルター処理するため、関数の場合):
+  この例で、追加の T-SQL 句を使用した前述のように、同じファイルから読み取ります (**TOP**、 **ORDER BY**、および**WHERE**句によって返される監査レコードをフィルター処理するため、関数の場合):
   
   ```  
   SELECT TOP 10 * FROM sys.fn_get_audit_file ('https://mystorage.blob.core.windows.net/sqldbauditlogs/ShiraServer/MayaDB/SqlDbAuditing_Audit/2017-07-14/10_45_22_173_1.xel',default,default)

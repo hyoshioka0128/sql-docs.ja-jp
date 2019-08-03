@@ -37,14 +37,13 @@ helpviewer_keywords:
 ms.assetid: 40e63302-0c68-4593-af3e-6d190181fee7
 author: VanMSFT
 ms.author: vanto
-manager: craigg
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: b408c61d265506f19c7c9c5a115381fe6b438a7b
-ms.sourcegitcommit: 670082cb47f7d3d82e987b549b6f8e3a8968b5db
+ms.openlocfilehash: b856ee0218f7b4909ad9c62a42b95dfd96c93abc
+ms.sourcegitcommit: 2efb0fa21ff8093384c1df21f0e8910db15ef931
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57334679"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68317106"
 ---
 # <a name="update-transact-sql"></a>UPDATE (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-all-md](../../includes/tsql-appliesto-ss2008-all-md.md)]
@@ -121,7 +120,7 @@ SET { column_name = { expression | NULL } } [ ,...n ]
   
  共通テーブル式は、SELECT、INSERT、DELETE、CREATE VIEW の各ステートメントでも使用できます。 詳細については、「[WITH common_table_expression &#40;Transact-SQL&#41;](../../t-sql/queries/with-common-table-expression-transact-sql.md)」を参照してください。  
   
- TOP **(** _expression_**)** [ PERCENT ]  
+ TOP **(** _expression_ **)** [ PERCENT ]  
  更新する行の数または比率 (%) を指定します。 *expression* は行数または行の比率 (%) にすることができます。  
   
  INSERT、UPDATE、または DELETE を使用する TOP 式で参照される行は、順序付けされません。  
@@ -159,7 +158,7 @@ SET { column_name = { expression | NULL } } [ ,...n ]
  変更するデータを含む列です。 *column_name* は *table_or view_name* 内に存在する必要があります。 ID 列は更新できません。  
   
  *式 (expression)*  
- 変数、リテラル値、式、または 1 つの値を返すかっこで囲んだサブセレクト ステートメントです。 *expression* で返される値で *column_name* または *@variable* の既存の値が置き換えられます。  
+ 変数、リテラル値、式、または 1 つの値を返すかっこで囲んだサブセレクト ステートメントです。 *expression* で返される値で *column_name* または @*variable* の既存の値が置き換えられます。  
   
 > [!NOTE]  
 >  Unicode 文字データ型 **nchar**、**nvarchar**、**ntext** を参照している場合は、'expression' の前に大文字の 'N' を付ける必要があります。 'N' が指定されていない場合、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、文字列はデータベースまたは列の既定の照合順序に対応するコード ページに変換されます。 文字列がこのコード ページにない場合は、失われます。  
@@ -167,7 +166,7 @@ SET { column_name = { expression | NULL } } [ ,...n ]
  DEFAULT  
  列に格納された値を列に定義された既定値で置き換えることを指定します。 列に既定値が定義されておらず、NULL 値が許されている場合は、この句を使用して列を NULL に変更できます。  
   
- { **+=** | **-=** | **\*=** | **/=** | **%=** | **&=** | **^=** | **|=** }  
+ { **+=**  |  **-=**  |  **\*=**  |  **/=**  |  **%=**  |  **&=**  |  **^=**  |  **|=** }  
  複合代入演算子です。  
  +=                       加算して、割り当てる  
  -=                        減算して代入  
@@ -184,27 +183,27 @@ SET { column_name = { expression | NULL } } [ ,...n ]
  *property_name* | *field_name*  
  ユーザー定義型のパブリック プロパティまたはパブリック データ メンバーです。  
   
- *method_name* **(** *argument* [ **,**... *n*] **)**  
+ *method_name* **(** *argument* [ **,** ... *n*] **)**  
  1 つ以上の引数を使用する *udt_column_name* の静的でないパブリック ミューテーター メソッドです。  
   
- **.** WRITE **(**_expression_**,**_@Offset_**,**_@Length_**)**  
- *column_name* の値のセクションを変更することを指定します。 *expression* で *column_name* の *@Offset* から始まる *@Length* 単位が置き換えられます。 **varchar(max)**、**nvarchar(max)**、**varbinary(max)** の列だけこの句で指定できます。 *column_name* では NULL 値は許容されません。また、テーブル名やテーブル別名で修飾することもできません。  
+ **.** WRITE **(** _expression_ **,** @_Offset_ **,** @_Length_ **)**  
+ *column_name* の値のセクションを変更することを指定します。 *expression* で *column_name* の @*Offset* から始まる @*Length* 単位が置き換えられます。 **varchar(max)** 、**nvarchar(max)** 、**varbinary(max)** の列だけこの句で指定できます。 *column_name* では NULL 値は許容されません。また、テーブル名やテーブル別名で修飾することもできません。  
   
- *expression* は *column_name* にコピーされる値です。 *expression* は、*column_name* 型に評価されるか、この型に暗黙的にキャストできる必要があります。 *expression* に NULL が設定されている場合、*@Length* は無視され、*column_name* 内の値は指定された *@Offset* で切り捨てられます。  
+ *expression* は *column_name* にコピーされる値です。 *expression* は、*column_name* 型に評価されるか、この型に暗黙的にキャストできる必要があります。 *expression* に NULL が設定されている場合、@*Length* は無視され、*column_name* 内の値は指定された @*Offset* で切り捨てられます。  
   
- *@Offset* は、*expression* が書き込まれる、*column_name* の値の開始位置です。 *@Offset* は、0 から始まる序数の位置であり、データ型は **bigint** で、負の数は指定できません。 *@Offset* が NULL の場合、更新操作により *expression* は既存の *column_name* 値の最後に追加され、*@Length* は無視されます。 @Offset が *column_name* 値の長さよりも大きい場合は、[!INCLUDE[ssDE](../../includes/ssde-md.md)] によってエラーが返されます。 *@Offset* と *@Length* の和が列の基になる値の終点を超える場合、値の最後の文字までが削除されます。 *@Offset* と LEN(*expression*) の和が宣言された基になるサイズを超える場合、エラーが発生します。  
+ @*Offset* は、*expression* が書き込まれる、*column_name* の値の開始位置です。 @*Offset* は、0 から始まる序数の位置です。**bigint** で、負の数は指定できません。 @*Offset* が NULL の場合、更新操作により *expression* は既存の *column_name* 値の最後に追加され、@*Length* は無視されます。 @Offset が *column_name* 値の長さよりも大きい場合は、[!INCLUDE[ssDE](../../includes/ssde-md.md)] によってエラーが返されます。 *Offset* と @*Length* の和が列の基になる値の終点を超える場合、値の最後の文字までが削除されます。 @*Offset* と LEN(*expression*) の和が宣言された基になるサイズを超える場合、エラーが発生します。  
   
- *@Length* は列内のセクションの長さです。このセクションは *@Offset* から始まり、*expression* で置き換えられます。 *@Length* のデータ型は **bigint** で、負の数は指定できません。 *@Length* が NULL の場合、更新操作により *column_name* の値の *@Offset* から最後までのすべてのデータが削除されます。  
+ @*Length* は列内のセクションの長さです。このセクションは @*Offset* から始まり、*expression* で置き換えられます。 @*Length* は **bigint** で、負の数は指定できません。 @*Length* が NULL の場合、更新操作により *column_name* の値の @*Offset* から最後までのすべてのデータが削除されます。  
   
  詳細については、「解説」を参照してください。  
   
  **@** *variable*  
  *expression* で返される値を設定する、宣言された変数です。  
   
- SET **@**_variable_ = *column* = *expression* は、列と同じ値に変数を設定します。 一方、SET **@**_variable_ = _column_, _column_ = _expression_ は、列の更新前の値に変数を設定します。  
+ SET **@** _variable_ = *column* = *expression* は、列と同じ値に変数を設定します。 一方、SET **@** _variable_ = _column_, _column_ = _expression_ は、列の更新前の値に変数を設定します。  
   
  \<OUTPUT_Clause>  
- 更新されたデータまたはそれに基づく式を、UPDATE 操作の一部として返します。 OUTPUT 句は、リモート テーブルまたはリモート ビューを対象とした DML ステートメントではサポートされません。 詳細については、を参照してください。 [OUTPUT 句と #40 です。TRANSACT-SQL と #41;](../../t-sql/queries/output-clause-transact-sql.md).  
+ 更新されたデータまたはそれに基づく式を、UPDATE 操作の一部として返します。 OUTPUT 句は、リモート テーブルまたはリモート ビューを対象とした DML ステートメントではサポートされません。 詳細については、「[OUTPUT 句 &#40;Transact-SQL&#41;](../../t-sql/queries/output-clause-transact-sql.md)」を参照してください。  
   
  FROM \<table_source>  
  別のテーブル、ビュー、または派生テーブルのソースを使用して更新操作の基になる値を提供することを指定します。 詳細については、「[FROM &#40;Transact-SQL&#41;](../../t-sql/queries/from-transact-sql.md)」を参照してください。  
@@ -240,7 +239,7 @@ GLOBAL
 *cursor_variable_name*  
  カーソル変数の名前を指定します。 *cursor_variable_name* は、更新可能なカーソルを参照する必要があります。  
   
-OPTION **(** \<query_hint> [ **,**... *n* ] **)**  
+OPTION **(** \<query_hint> [ **,** ... *n* ] **)**  
  オプティマイザー ヒントを使用して、[!INCLUDE[ssDE](../../includes/ssde-md.md)]がステートメントを処理する方法をカスタマイズすることを指定します。 詳細については、「[クエリ ヒント &#40;Transact-SQL&#41;](../../t-sql/queries/hints-transact-sql-query.md)」を参照してください。  
   
 ## <a name="best-practices"></a>ベスト プラクティス  
@@ -331,21 +330,21 @@ GO
 >  **ntext**、**text**、**image** データ型は、将来の [!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] バージョンで削除される予定です。 新しい開発作業では、これらのデータ型の使用は避け、現在これらのデータ型を使用しているアプリケーションは修正するようにしてください。 代わりに、 [nvarchar(max)](../../t-sql/data-types/nchar-and-nvarchar-transact-sql.md)、 [varchar(max)](../../t-sql/data-types/char-and-varchar-transact-sql.md)、 [varbinary(max)](../../t-sql/data-types/binary-and-varbinary-transact-sql.md) を使用してください。  
   
 ### <a name="updating-large-value-data-types"></a>大きな値のデータ型を更新する  
- **\.** WRITE (_expression_**,** _@Offset_**,**_@Length_) 句を使用し、**varchar(max)**、**nvarchar(max)**、**varbinary(max)** データ型の部分または完全更新を実行します。 たとえば、**varchar(max)** 列の部分的な更新では、列の最初の 200 文字だけを削除または変更しますが、完全な更新では、列のすべてのデータを削除または変更します。 データベースの復旧モデルに一括ログ復旧モデルまたは単純復旧モデルが設定されている場合、**.** WRITE で新しいデータを挿入または追加する際には、最小限しかログに記録されません。 既存の値を更新するときには、最小限のログ記録は使用されません。 詳細については、「 [トランザクション ログ &#40;SQL Server&#41;](../../relational-databases/logs/the-transaction-log-sql-server.md)」を参照してください。  
+ **.** WRITE **(** _expression_ **,** @_Offset_ **,** @_Length_ **)** 句を使用し、**varchar(max)** 、**nvarchar(max)** 、**varbinary(max)** データ型の部分または完全更新を実行します。 たとえば、**varchar(max)** 列の部分的な更新では、列の最初の 200 文字だけを削除または変更しますが、完全な更新では、列のすべてのデータを削除または変更します。 データベースの復旧モデルに一括ログ復旧モデルまたは単純復旧モデルが設定されている場合、 **.WRITE** で新しいデータを挿入または追加する際には、最小限しかログに記録されません。 既存の値を更新するときには、最小限のログ記録は使用されません。 詳細については、「 [トランザクション ログ &#40;SQL Server&#41;](../../relational-databases/logs/the-transaction-log-sql-server.md)」を参照してください。  
   
  [!INCLUDE[ssDE](../../includes/ssde-md.md)] では、UPDATE ステートメントで次のいずれかのアクションが発生するとき、部分更新が完全更新に変更されます。  
 -   パーティション ビューまたはパーティション テーブルのキー列が変更される場合。  
 -   複数の行が変更され、定数以外の値に対する一意でないクラスター化インデックスのキーも更新される場合。  
   
-**.** WRITE 句を使用して NULL 列を更新したり、*column_name* の値を NULL に設定したりすることはできません。  
+**.WRITE** 句を使用して NULL 列を更新したり、*column_name* の値を NULL に設定したりすることはできません。  
   
-*@Offset* と *@Length* は、**varbinary** 型と **varchar** 型の場合はバイト数で、**nvarchar** 型の場合は文字数で指定します。 2 バイト文字セット (DBCS) の照合順序では、適切なオフセットが計算されます。  
+@*Offset* と @*Length* は、**varbinary** と **varchar** データ型の場合はバイト数で、**nvarchar** データ型の場合は文字数で指定します。 2 バイト文字セット (DBCS) の照合順序では、適切なオフセットが計算されます。  
   
 最高のパフォーマンスが得られるよう、8,040 バイトの倍数の単位でデータを挿入または更新することをお勧めします。  
   
-**.** WRITE 句で変更される列が OUTPUT 句で参照されている場合は、列の完全な値 (**deleted.**_column\_name_ の前イメージまたは **inserted.**_column\_name_ の後イメージのどちらか) が、テーブル変数内の指定された列に返されます。 後述する例 R を参照してください。  
+**\.WRITE** 句で変更される列が OUTPUT 句で参照されている場合は、列の完全な値 (**deleted.** _column\_name_ の前イメージまたは **inserted.** _column\_name_ の後イメージのどちらか) が、テーブル変数内の指定された列に返されます。 後述する例 R を参照してください。  
   
-他の文字型またはバイナリ データ型で **.** WRITE と同じ機能を実現するには、[STUFF &#40;Transact-SQL&#41;](../../t-sql/functions/stuff-transact-sql.md) を使用します。  
+他の文字型またはバイナリ データ型で **\.WRITE** と同じ機能を実現するには、[STUFF &#40;Transact-SQL&#41;](../../t-sql/functions/stuff-transact-sql.md) を使用します。  
   
 ### <a name="updating-user-defined-type-columns"></a>ユーザー定義型の列を更新する  
  ユーザー定義型の列の値を更新するには、次のいずれかの方法を使用します。  
@@ -459,7 +458,7 @@ ID     Value
  UPDATE ステートメントでは、常に、そのステートメントで変更するテーブルについて排他 (X) ロックを獲得し、トランザクションが完了するまでそのロックを保持します。 排他ロックをかけたトランザクション以外はデータを変更できません。 別のロック手法を指定することにより、UPDATE ステートメントの存続期間におけるこの既定の動作をオーバーライドするためのテーブル ヒントを指定できます。ただし、このヒントは、経験豊富な開発者およびデータベース管理者が最後の手段としてのみ使用することを推奨します。 詳細については、「[テーブル ヒント &#40;Transact-SQL&#41;](../../t-sql/queries/hints-transact-sql-table.md)」を参照してください。  
   
 ## <a name="logging-behavior"></a>ログ記録の動作  
- UPDATE ステートメントはログに記録されますが、**.** WRITE 句を使用して値の大きなデータ型の一部を更新する場合には、最低限の内容だけがログに記録されます。 詳細については、前のセクション「データ型」の「大きな値のデータ型を更新する」を参照してください。  
+ UPDATE ステートメントはログに記録されますが、 **.** WRITE 句を使用して値の大きなデータ型の一部を更新する場合には、最低限の内容だけがログに記録されます。 詳細については、前のセクション「データ型」の「大きな値のデータ型を更新する」を参照してください。  
   
 ## <a name="security"></a>Security  
   
@@ -882,7 +881,7 @@ WHERE Title = N'Crank Arm and Tire Maintenance';
 GO  
 ```  
   
-#### <a name="t-using-update-with-openrowset-to-modify-a-varbinarymax-column"></a>T.  UPDATE を OPENROWSET と共に使用し、varbinary(max) 列を変更する  
+#### <a name="t-using-update-with-openrowset-to-modify-a-varbinarymax-column"></a>T. UPDATE を OPENROWSET と共に使用し、varbinary(max) 列を変更する  
  次の例では、**varbinary(max)** 列に格納されている既存のイメージを新しいイメージで置換します。 [OPENROWSET](../../t-sql/functions/openrowset-transact-sql.md) 関数を BULK オプションと共に使用し、列にイメージを読み込みます。 この例では、`Tires.jpg` という名前のファイルが指定されたファイル パスに存在することを前提としています。  
   
 ```sql  
@@ -896,7 +895,7 @@ WHERE ProductPhotoID = 1;
 GO  
 ```  
   
-#### <a name="u-using-update-to-modify-filestream-data"></a>U.  UPDATE を使用して FILESTREAM データを変更する  
+#### <a name="u-using-update-to-modify-filestream-data"></a>U. UPDATE を使用して FILESTREAM データを変更する  
  次の例では、UPDATE ステートメントを使用して、ファイル システムのファイルのデータを変更します。 大量のデータをファイルにストリーミングする場合、この方法はお勧めできません。 適切な Win32 インターフェイスを使用してください。 ファイル レコード内の任意のテキストを、 `Xray 1`というテキストに置換する例を次に示します。 詳細については、「[FILESTREAM &#40;SQL Server&#41;](../../relational-databases/blob/filestream-sql-server.md)」をご覧ください。  
   
 ```sql  
@@ -908,7 +907,7 @@ WHERE [SerialNumber] = 2;
 ###  <a name="UDTs"></a> ユーザー定義型を更新する  
  次の例では、CLR ユーザー定義型 (UDT) の列の値を変更します。 3 つの方法が示されています。 ユーザー定義の列に関する詳細については、「[CLR ユーザー定義型](../../relational-databases/clr-integration-database-objects-user-defined-types/clr-user-defined-types.md)」を参照してください。  
   
-#### <a name="v-using-a-system-data-type"></a>V.  システム データ型を使用する  
+#### <a name="v-using-a-system-data-type"></a>V. システム データ型を使用する  
  ユーザー定義型で [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] システム データ型からの暗黙的または明示的な変換がサポートされている場合は、そのシステム データ型の値を指定することによって、UDT を更新できます。 次の例は、文字列からの明示的な変換によって、ユーザー定義型 `Point` の列の値を更新する方法を示します。  
   
 ```sql  

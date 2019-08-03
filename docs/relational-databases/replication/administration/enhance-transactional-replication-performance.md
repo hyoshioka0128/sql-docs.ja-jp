@@ -21,13 +21,12 @@ helpviewer_keywords:
 ms.assetid: 67084a67-43ff-4065-987a-3b16d1841565
 author: MashaMSFT
 ms.author: mathoma
-manager: craigg
-ms.openlocfilehash: e526bbe9191aa83cedd45c2115b3cb4b54a937d2
-ms.sourcegitcommit: 7aa6beaaf64daf01b0e98e6c63cc22906a77ed04
+ms.openlocfilehash: ebedefdd7e11f7ff3edcd884674092aeaf3b4f9b
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54136082"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67939158"
 ---
 # <a name="enhance-transactional-replication-performance"></a>トランザクション レプリケーションのパフォーマンスの向上
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -58,7 +57,7 @@ ms.locfileid: "54136082"
   
 -   複数のパブリケーションにアーティクルを分散する。  
   
-     [**-SubscriptionStreams** パラメーター](#subscriptionstreams)を使用できない場合は、複数のパブリケーションを作成することを検討してください。 これらのパブリケーションにアーティクルを分散させると、サブスクライバーに対する変更をレプリケーションで並列的に適用できます。  
+     [ **-SubscriptionStreams** パラメーター](#subscriptionstreams)を使用できない場合は、複数のパブリケーションを作成することを検討してください。 これらのパブリケーションにアーティクルを分散させると、サブスクライバーに対する変更をレプリケーションで並列的に適用できます。  
   
 ## <a name="subscription-considerations"></a>サブスクリプションに関する注意点  
   
@@ -68,7 +67,7 @@ ms.locfileid: "54136082"
   
      エージェントを連続的に実行するようにし、高い頻度のスケジュール、たとえば毎分などのスケジュールの作成を避けることで、レプリケーションのパフォーマンスが向上します。これは、エージェントが開始および停止する必要がなくなるからです。 ディストリビューション エージェントを連続的に実行するように設定すると、トポロジ内で接続しているその他のサーバーに、短い待機時間で変更が反映されます。 詳細については、以下をご覧ください。  
   
-    -   [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)]:[同期スケジュールの指定](../../../relational-databases/replication/specify-synchronization-schedules.md)  
+    -   [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)][ ] :[同期スケジュールの指定](../../../relational-databases/replication/specify-synchronization-schedules.md)  
   
 ## <a name="distribution-agent-and-log-reader-agent-parameters"></a>ディストリビューション エージェントおよびログ リーダー エージェントのパラメーター  
 トラフィックが多い OLTP システムでは、ログ リーダーとディストリビューション エージェントのスループットを増やすため、エージェント プロファイルのパラメーターが調節されることがよくあります。 
@@ -91,7 +90,7 @@ ms.locfileid: "54136082"
 #### <a name="readbatchsize"></a>ReadBatchSize
 - ログ リーダー エージェントの **-ReadBatchSize** パラメーターの値を大きくする。  
   
-ログ リーダー エージェントとディストリビューション エージェントは、トランザクションの読み取りとコミット操作のバッチ サイズをサポートしています。 バッチ サイズの既定値は 500 トランザクションです。 ログ リーダー エージェントは、レプリケーション用にマークが付けられているかどうかにかかわらず、一定の数のトランザクションをログから読み取ります。 多数のトランザクションがパブリケーション データベースに書き込まれているが、その中のごくわずかなサブセットだけにレプリケーションのマークが付いている場合、**-ReadBatchSize** パラメーターでログ リーダー エージェントの読み取りバッチ サイズを増やす必要があります。 このパラメーターは、Oracle パブリッシャーには適用されません。  
+ログ リーダー エージェントとディストリビューション エージェントは、トランザクションの読み取りとコミット操作のバッチ サイズをサポートしています。 バッチ サイズの既定値は 500 トランザクションです。 ログ リーダー エージェントは、レプリケーション用にマークが付けられているかどうかにかかわらず、一定の数のトランザクションをログから読み取ります。 多数のトランザクションがパブリケーション データベースに書き込まれているが、その中のごくわずかなサブセットだけにレプリケーションのマークが付いている場合、 **-ReadBatchSize** パラメーターでログ リーダー エージェントの読み取りバッチ サイズを増やす必要があります。 このパラメーターは、Oracle パブリッシャーには適用されません。  
 
    - 小さいトランザクション (500 コマンド未満) のワークロードでは、**ReadBatchSize** を大きくすると (最大 5000)、1 秒間に処理されるコマンドの数が増えます。 
    - 大きいワークロード (500 ～ 1000 コマンドのトランザクション) では、**ReadBatchSize** を大きくしてもパフォーマンスはあまり向上しません。 **ReadBatchSize** を大きくすると、1 回のラウンドトリップでディストリビューション データベースに書き込まれるトランザクションの数が増えます。 これにより、トランザクションとコマンドがディストリビューション エージェントによって処理される時間が長くなり、レプリケーション処理の待ち時間が増えます。  

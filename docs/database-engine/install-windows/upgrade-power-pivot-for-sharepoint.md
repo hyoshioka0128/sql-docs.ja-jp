@@ -11,12 +11,12 @@ author: Minewiskan
 ms.author: owend
 monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
 manager: erikre
-ms.openlocfilehash: 99e6a0b600dfe7adfe173176b69cd2b45ffdd223
-ms.sourcegitcommit: 6443f9a281904af93f0f5b78760b1c68901b7b8d
+ms.openlocfilehash: 8afd4b49a5dddd4ea9806dddd9c1cf30cd04e603
+ms.sourcegitcommit: e7d921828e9eeac78e7ab96eb90996990c2405e9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53209211"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68265656"
 ---
 # <a name="upgrade-power-pivot-for-sharepoint"></a>Power Pivot for SharePoint のアップグレード
 
@@ -102,9 +102,9 @@ ms.locfileid: "53209211"
   
          または  
   
-         **[スタート]** ボタンをクリックし、 **[すべてのプログラム]** をポイントして、[ [!INCLUDE[ssCurrentUI](../../includes/sscurrentui-md.md)]]、 **[構成ツール]**、 **[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] For SharePoint 2013 構成**の順にクリックします。 このツールは、 [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)] がローカル サーバーにインストールされている場合にのみ表示されることに注意してください。  
+         **[スタート]** ボタンをクリックし、 **[すべてのプログラム]** をポイントして、[ [!INCLUDE[ssCurrentUI](../../includes/sscurrentui-md.md)]]、 **[構成ツール]** 、 **[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] For SharePoint 2013 構成**の順にクリックします。 このツールは、 [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)] がローカル サーバーにインストールされている場合にのみ表示されることに注意してください。  
   
-    2.  起動時、構成ツールにより、 [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] ファーム ソリューションと [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] Web アプリケーション ソリューションのアップグレード状態がチェックされます。 これらのソリューションの古いバージョンが検出されると、メッセージ "**新しいバージョンの [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] ソリューション ファイルが検出されました。ファームをアップグレードするために、アップグレード オプションを選択してください。**" と表示されます。 **[OK]** をクリックし、システムの検証メッセージを閉じます。  
+    2.  起動時、構成ツールにより、 [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] ファーム ソリューションと [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] Web アプリケーション ソリューションのアップグレード状態がチェックされます。 これらのソリューションの古いバージョンが検出されると、メッセージ "**新しいバージョンの [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] ソリューション ファイルが検出されました。ファームをアップグレードするために、アップグレード オプションを選択してください。** " と表示されます。 **[OK]** をクリックし、システムの検証メッセージを閉じます。  
   
     3.  **[機能、サービス、アプリケーション、およびソリューションのアップグレード]** をクリックし、 **[OK]** をクリックします。  
   
@@ -121,7 +121,7 @@ ms.locfileid: "53209211"
         > [!IMPORTANT]  
         >  最初のアクションである **[ファーム ソリューションのアップグレード]** は、常に最初に処理する必要があります。 このアクションを実行すると、サーバーの構成に使用する PowerShell コマンドレットを登録できます。 このアクションを実行したときにエラーが発生する場合は、続行しないでください。 タスク一覧の残りのアクションを処理する前に、エラーとして返された情報に基づいて問題を診断し、解決してください。  
   
-    7.  **[実行]** をクリックして、このタスクで有効なすべてのアクションを実行します。 **[実行]** は、検証チェックに合格した後でのみ使用可能になります。 **[実行]** をクリックすると、アクションがバッチ モードで処理されることを示す次の警告が表示されます: "**ツールで有効としてフラグが立てられている構成設定はすべて SharePoint ファームに適用されます。続行しますか?**"  
+    7.  **[実行]** をクリックして、このタスクで有効なすべてのアクションを実行します。 **[実行]** は、検証チェックに合格した後でのみ使用可能になります。 **[実行]** をクリックすると、アクションがバッチ モードで処理されることを示す次の警告が表示されます: "**ツールで有効としてフラグが立てられている構成設定はすべて SharePoint ファームに適用されます。続行しますか?** "  
   
     8.  **[はい]** をクリックして続行します。  
   
@@ -164,7 +164,7 @@ ms.locfileid: "53209211"
     Get-Service | where {$_.displayname -like "*powerpivot*"}  
     ```  
   
-5.  **SQL Server Analysis Services ([!INCLUDE[ssGemini](../../includes/ssgemini-md.md)])** Windows サービスを実行する最初の SharePoint アプリケーション サーバーで、**[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] セットアップを実行**して、POWERPIVOT インスタンスをアップグレードします。 SQL Server セットアップ ウィザードの [インストール] ページで、アップグレード オプションを選択します。 詳細については、「 [インストール ウィザードを使用した SQL Server 2016 へのアップグレード &#40;セットアップ&#41;](../../database-engine/install-windows/upgrade-sql-server-using-the-installation-wizard-setup.md)」を参照してください。  
+5.  **SQL Server Analysis Services ([!INCLUDE[ssGemini](../../includes/ssgemini-md.md)])** Windows サービスを実行する最初の SharePoint アプリケーション サーバーで、 **[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] セットアップを実行**して、POWERPIVOT インスタンスをアップグレードします。 SQL Server セットアップ ウィザードの [インストール] ページで、アップグレード オプションを選択します。 詳細については、「 [インストール ウィザードを使用した SQL Server 2016 へのアップグレード &#40;セットアップ&#41;](../../database-engine/install-windows/upgrade-sql-server-using-the-installation-wizard-setup.md)」を参照してください。  
   
 6.  構成ツールを実行する前に**サーバーを再起動します** 。 これにより、SQLServer セットアップによってインストールされた更新プログラムや必須コンポーネントがシステムで完全に構成されます。  
   
@@ -219,9 +219,9 @@ ms.locfileid: "53209211"
         Stsadm -o enumdeployments  
         ```  
   
-    2.  既存の配置について、**[種類]** が "取り消し" または "展開" であり、**[ファイル]** が powerpivotwebapp.wsp または powerpivotfarm.wsp であることを確認します。  
+    2.  既存の配置について、 **[種類]** が "取り消し" または "展開" であり、 **[ファイル]** が powerpivotwebapp.wsp または powerpivotfarm.wsp であることを確認します。  
   
-    3.  [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] ソリューションに関連するデプロイまたは取り消しの場合、**[JobId]** の GUID 値をコピーし、次のコマンドに貼り付けます (シェルの [編集] メニューの [マーク]、[コピー]、および [貼り付け] を使用して GUID をコピーします)。  
+    3.  [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] ソリューションに関連するデプロイまたは取り消しの場合、 **[JobId]** の GUID 値をコピーし、次のコマンドに貼り付けます (シェルの [編集] メニューの [マーク]、[コピー]、および [貼り付け] を使用して GUID をコピーします)。  
   
         ```  
         Stsadm -o canceldeployment -id "<GUID>"  

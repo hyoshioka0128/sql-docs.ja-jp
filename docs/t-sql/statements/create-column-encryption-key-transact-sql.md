@@ -28,13 +28,12 @@ helpviewer_keywords:
 ms.assetid: 517fe745-d79b-4aae-99a7-72be45ea6acb
 author: CarlRabeler
 ms.author: carlrab
-manager: craigg
-ms.openlocfilehash: 4c99c5348b5ba0f3638fd3eaaaf261caa984a6fd
-ms.sourcegitcommit: c61c7b598aa61faa34cd802697adf3a224aa7dc4
+ms.openlocfilehash: ed1fb6d31d22f04657288e2c924316b891841946
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56154817"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68061080"
 ---
 # <a name="create-column-encryption-key-transact-sql"></a>CREATE COLUMN ENCRYPTION KEY (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2016-asdb-xxxx-xxx-md](../../includes/tsql-appliesto-ss2016-asdb-xxxx-xxx-md.md)]
@@ -71,17 +70,17 @@ _algorithm\_name_
 列の暗号化キーの値を暗号化するために使用する暗号化アルゴリズムの名前です。 システム プロバイダーのアルゴリズムは、**RSA_OAEP** である必要があります。  
   
 _varbinary\_literal_  
-暗号化のように CEK 値 BLOB です。  
+暗号化された CEK 値 BLOB です。  
   
 > [!WARNING]  
->  ありませんプレーン テキスト CEK 値で渡す次のステートメント。 そうと、この機能のメリットを構成します。  
+>  このステートメントでは、プレーンテキストの CEK 値を渡さないでください。 そうすれば、この機能の利点が得られます。  
   
 ## <a name="remarks"></a>Remarks  
-列の暗号化キーの作成ステートメントでは、少なくとも 1 つの VALUES 句を含める必要があります、2 つまでことがあります。 提供されているだけの場合は、2 番目の値を後で追加するのに列の暗号化キーの ALTER ステートメントを使用できます。 VALUES 句を削除するのに列の暗号化キーの ALTER ステートメントを使用することもできます。  
+列の暗号化キーの作成ステートメントでは、少なくとも 1 つの VALUES 句を含める必要があり、最大 2 つまで含めることができます。 1 つしか指定されていない場合は、後で ALTER COLUMN ENCRYPTION KEY ステートメントを使用して 2 番目の値を追加できます。 ALTER COLUMN ENCRYPTION KEY ステートメントを使用して、VALUES 句を削除することもできます。  
   
 通常、CEK は、1 つの暗号化された値のみを使用して作成されます。 CMK は、ときどきローテーションする必要があります。 現在の CMK を新しい CMK に置き換えます。 キーをローテーションする必要がある場合は、新しい CMK を使用して暗号化された列暗号化キーの値を追加します。 このローテーションにより、クライアント アプリケーションが CEK を使用して暗号化されたデータに確実にアクセスでき、新しい CMK を使用できるようになります。 クライアント アプリケーション内の新しいマスター キーにアクセスできない Always Encrypted 対応ドライバーでは、古い CMK を使用して暗号化された CEK を使用して、重要なデータのアクセスします。  
   
-暗号化アルゴリズム、常に暗号化のサポートでは、256 ビットをプレーン テキストの値が必要です。  
+Always Encrypted でサポートされる暗号化アルゴリズムでは、プレーンテキスト値が 256 ビットである必要があります。  
   
 暗号化された値は、CMK を保持するキー ストアをカプセル化するキー ストア プロバイダーを使用して生成する必要があります。 詳しくは、「[Always Encrypted &#40;クライアント開発&#41;](../../relational-databases/security/encryption/always-encrypted-client-development.md)」をご覧ください。  
   
@@ -92,7 +91,7 @@ _varbinary\_literal_
   
 ## <a name="examples"></a>使用例  
   
-### <a name="a-creating-a-column-encryption-key"></a>A. 列の暗号化キーを作成します。  
+### <a name="a-creating-a-column-encryption-key"></a>A. 列の暗号化キーを作成します  
 次の例では、列の暗号化キー `MyCEK` を作成します。  
   
 ```  

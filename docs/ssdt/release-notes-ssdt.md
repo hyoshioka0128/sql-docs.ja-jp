@@ -10,14 +10,13 @@ ms.topic: conceptual
 ms.assetid: b071f8b8-c8e5-44e0-bbb6-04804dd1863a
 author: stevestein
 ms.author: sstein
-manager: craigg
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||=azuresqldb-mi-current'
-ms.openlocfilehash: ef3cd72348cc93eee37716007c7975731b2da333
-ms.sourcegitcommit: 65ceea905030582f8d89e75e97758abf3b1f0bd6
+ms.openlocfilehash: 4676b4d17dc2de9118623037e6725c2b3c637c7e
+ms.sourcegitcommit: 40f3b1f2340098496d8428f50616095a190ae94b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67400091"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68290368"
 ---
 # <a name="release-notes-for-sql-server-data-tools-ssdt"></a>SQL Server Data Tools (SSDT) リリース ノート
 
@@ -44,6 +43,37 @@ GeneMi , 2019/03/22.
 
 P.S.  There is no need to keep this large HTML comment indefinitely.
 -->
+## <a name="1592nbsp-ssdt-for-vs-2017"></a>15.9.2、&nbsp; VS 2017 用 SSDT
+
+_リリース済み:_ &nbsp; 2019 年 7 月 17 日  
+_ビルド番号:_ &nbsp; 14.0.16194.0  
+_Visual Studio 2017 用 SSDT。_
+
+### <a name="whats-new"></a>新機能
+
+#### <a name="ssis"></a>SSIS
+
+| 新しい項目 | 詳細 |
+| :------- | :------ |
+| AzureEnabled 機能を追加しました。 Azure Data Factory で、プロジェクトのパッケージを SSIS のサービスとしてのプラットフォーム (PaaS) で実行できるようにしました | &nbsp; |
+| Oracle コネクタのプロパティを変数式から設定できない問題を修正しました | &nbsp; |
+| SQL Server 2019 より前を対象とするパッケージをデバッグするときに Oracle コネクタで VS_NEEDSNEWMETATDATA エラーが発生する問題を修正しました | &nbsp; |
+| パッケージ/プロジェクトで接続マネージャーのプロパティに式を使用している場合に、Oracle コネクタがパッケージ/プロジェクトのアップグレード/ダウングレードに失敗した問題を修正しました | &nbsp; |
+| Web サービス タスク エディターの [WSDL のダウンロード] ボタンが、TLS 1.1 & 1.2 プロトコルをサポートしていない問題を修正しました (SQL Server 2019 を対象とする) | &nbsp; |
+| DQS 接続マネージャーを含むパッケージを保存後に再度読み込むことができない問題を修正しました | &nbsp; |
+
+### <a name="known-issues"></a>既知の問題
+
+| 既知の問題 | 詳細 |
+| :---------- | :------ |
+| ExecuteOutOfProcess が True に設定されていると、SSIS パッケージ実行タスクはデバッグをサポートしません。 | この問題はデバッグにのみ該当します。 DTExec.exe または SSIS カタログを介した保存、展開、実行は影響を受けません。 |
+| SSDT for Visual Studio 2017 (15.8 以降) では、Teradata のソース/変換先を含むパッケージを設計することはサポートされていません。 | SSDT for Visual Studio 2017 (15.8) を使用します。 |
+| パッケージ配置モデルのデータ ソースを作成または編集できません。 | データ ソース ウィザードを開くことができません。 |
+| SSIS と SSAS が同じ Visual Studio インスタンスにインストールされている場合、Power Query ソースは OData v4 をサポートしない可能性があります。 | &nbsp; |
+| SSIS と SSAS が同じ Visual Studio インスタンスにインストールされている場合、Power Query ソースでは Oracle への接続に ODBC を使用できない可能性があります。 | &nbsp; |
+| Power Query ソースはローカライズされていません | &nbsp; |
+| &nbsp; | &nbsp; |
+
 ## <a name="1591nbsp-ssdt-for-vs-2017"></a>15.9.1、&nbsp; VS 2017 用 SSDT
 
 _リリース済み:_ &nbsp; 2019 年 4 月 27 日  

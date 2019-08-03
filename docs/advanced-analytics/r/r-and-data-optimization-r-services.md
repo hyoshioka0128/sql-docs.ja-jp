@@ -6,12 +6,13 @@ ms.date: 04/15/2018
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: 95cbcd152e9f7665191e44b7c6d704d2b0c63037
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: a65afba9455fb475b760439e92ad8d4d38a70be8
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68470033"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715656"
 ---
 # <a name="performance-for-r-services---data-optimization"></a>R Services のパフォーマンス-データの最適化
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -32,7 +33,7 @@ SQL Server 2016 および2017では、R または Python スクリプトを実�
 
 R 言語には、カテゴリデータに対する特殊な変数である*要素*の概念があります。 多くの場合、データ科学者は、カテゴリ変数を要因として処理することで、データが機械学習関数によって適切に処理されるようにするため、因子変数を式で使用します。 詳細については[、「R for ダミー」を参照してください。Factor 変数](https://www.dummies.com/programming/r/how-to-look-at-the-structure-of-a-factor-in-r/)。
 
-仕様により、係数変数を文字列から整数に変換し、ストレージまたは処理のために再度返すことができます。 引数 stringsAsFactors `data.frame`が**False**に設定されていない限り、  R 関数はすべての文字列を factor 変数として処理します。 これは、文字列が処理のために自動的に整数に変換され、元の文字列にマップされることを意味します。
+仕様により、係数変数を文字列から整数に変換し、ストレージまたは処理のために再度返すことができます。 引数 stringsAsFactors `data.frame`が**False**に設定されていない限り、 R 関数はすべての文字列を factor 変数として処理します。 これは、文字列が処理のために自動的に整数に変換され、元の文字列にマップされることを意味します。
 
 係数のソースデータが整数として格納されている場合、R は実行時に係数整数を文字列に変換してから、独自の内部文字列から整数への変換を実行するため、パフォーマンスが低下する可能性があります。
 

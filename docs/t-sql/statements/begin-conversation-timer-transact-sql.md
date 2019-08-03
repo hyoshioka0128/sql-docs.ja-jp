@@ -32,13 +32,12 @@ helpviewer_keywords:
 ms.assetid: 98e49b3f-a38f-4180-8171-fa9cb30db4cb
 author: CarlRabeler
 ms.author: carlrab
-manager: craigg
-ms.openlocfilehash: d21158a65edf2000d122850e0966d7ffb582a41f
-ms.sourcegitcommit: 50b60ea99551b688caf0aa2d897029b95e5c01f3
+ms.openlocfilehash: 09b935ccc5f8ac1d357168f2032e822c9c0bcd8c
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51699970"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68141199"
 ---
 # <a name="begin-conversation-timer-transact-sql"></a>BEGIN CONVERSATION TIMER (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
@@ -57,7 +56,7 @@ BEGIN CONVERSATION TIMER ( conversation_handle )
 ```  
   
 ## <a name="arguments"></a>引数  
- BEGIN CONVERSATION TIMER **(**_conversation\_handle_**)**  
+ BEGIN CONVERSATION TIMER **(** _conversation\_handle_ **)**  
  メッセージ交換を定刻に指定します。 *conversation_handle* は型 **uniqueidentifier** にする必要があります。  
   
  TIMEOUT  

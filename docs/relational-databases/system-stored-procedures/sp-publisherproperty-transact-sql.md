@@ -1,5 +1,5 @@
 ---
-title: sp_publisherproperty (TRANSACT-SQL) |Microsoft Docs
+title: sp_publisherproperty (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 0ed1ebc1-a1bd-4aed-9f46-615c5cf07827
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 5c4ba291619ae756fa9803606eda4427a155ae39
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 185ad0ad33419b20fffae9bff3e5562761ea7b31
+ms.sourcegitcommit: 728a4fa5a3022c237b68b31724fce441c4e4d0ab
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67896493"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68771174"
 ---
-# <a name="sppublisherproperty-transact-sql"></a>sp_publisherproperty (TRANSACT-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+# <a name="sppublisherproperty-transact-sql"></a>sp_publisherproperty (Transact-sql)
+[!INCLUDE[appliesto-ss-asdbmi-xxxx-xxx-md](../../includes/appliesto-ss-asdbmi-xxxx-xxx-md.md)]
 
-  表示、またはパブリッシャーのプロパティの変更以外[!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]パブリッシャーです。 このストアド プロシージャは、ディストリビューターで実行されます。  
+  [!INCLUDE[msCoName](../../includes/msconame-md.md)] 以外[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のパブリッシャーのパブリッシャーのプロパティを表示または変更します。 このストアドプロシージャは、ディストリビューター側で実行されます。  
   
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -43,42 +43,42 @@ sp_publisherproperty [ @publisher = ] 'publisher'
  異種パブリッシャーの名前を指定します。 *パブリッシャー* は **sysname** 、既定値はありません。  
   
  [ **@propertyname** =] **'***propertyname***'**  
- プロパティの名前は設定されています。 *propertyname*は**sysname**値は次のいずれかを指定できます。  
+ 設定するプロパティの名前を指定します。 *propertyname*は**sysname**で、次のいずれかの値を指定できます。  
   
 |値|説明|  
 |-----------|-----------------|  
-|**xactsetbatching**|パブリッシャーのトランザクションが、後続の処理のために、トランザクション全体で一貫性のあるセット (Xactsets と呼ばれます) にまとめられるかどうかを示します。 値**有効になっている**Xactsets を作成できること、既定値であることを意味します。 値**無効になっている**ない新しい Xactsets 既存の Xactsets は処理する手段が作成されます。|  
-|**xactsetjob**|Xactsets を作成するために Xactset ジョブを有効にするかどうかを示します。 値**有効になっている**パブリッシャー側で Xactsets を作成する Xactset ジョブが定期的に実行されることを意味します。 値**無効になっている**Xactsets がポーリングするときは、パブリッシャーの変更時に、ログ リーダー エージェントによってに作成しただけのことを意味します。|  
+|**xactsetbatching**|パブリッシャーのトランザクションが、後続の処理のために、トランザクション全体で一貫性のあるセット (Xactsets と呼ばれます) にまとめられるかどうかを示します。 値が**enabled**の場合は、既定の Xactsets を作成できます。 値**disabled**は、既存の Xactsets が新しい Xactsets を作成せずに処理されることを意味します。|  
+|**xactsetjob**|Xactsets を作成するために Xactset ジョブを有効にするかどうかを示します。 値が**enabled**の場合は、Xactset ジョブが定期的に実行され、パブリッシャーで Xactsets が作成されます。 値が**disabled**の場合は、パブリッシャーに変更をポーリングするときに、ログリーダーエージェントによってのみ Xactsets が作成されることを意味します。|  
 |**xactsetjobinterval**|Xactset ジョブの実行間隔 (分単位) です。|  
   
- ときに*propertyname*を省略するとすべての設定可能なプロパティが返されます。  
+ *Propertyname*を省略すると、設定可能なすべてのプロパティが返されます。  
   
  [ **@propertyvalue** =] **'***propertyvalue***'**  
- プロパティ設定の新しい値を指定します。 *propertyvalue*は**sysname**既定値は NULL です。 ときに*propertyvalue*を省略すると、現在の設定、プロパティが返されます。  
+ プロパティ設定の新しい値を指定します。 *propertyvalue*は**sysname**,、既定値は NULL です。 *Propertyvalue*を省略すると、プロパティの現在の設定が返されます。  
   
 ## <a name="result-sets"></a>結果セット  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
-|**propertyname**|**sysname**|設定できる次のパブリケーションのプロパティが返されます。<br /><br /> **xactsetbatching**<br /><br /> **xactsetjob**<br /><br /> **xactsetjobinterval**|  
-|**propertyvalue**|**sysname**|内のプロパティの現在の設定は、 **propertyname**列。|  
+|**propertyname**|**sysname**|設定可能な次のパブリケーションプロパティを返します。<br /><br /> **xactsetbatching**<br /><br /> **xactsetjob**<br /><br /> **xactsetjobinterval**|  
+|**propertyvalue**|**sysname**|**Propertyname**列のプロパティの現在の設定です。|  
   
 ## <a name="return-code-values"></a>リターン コードの値  
  **0** (成功) または**1** (失敗)  
   
 ## <a name="remarks"></a>コメント  
- **sp_publisherproperty**のトランザクション レプリケーションで使用が非[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]パブリッシャー。  
+ **sp_publisherproperty**は、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]以外のパブリッシャーのトランザクションレプリケーションで使用します。  
   
- のみ*パブリッシャー*を指定すると、結果セットに設定できるすべてのプロパティの現在の設定が含まれています。  
+ *パブリッシャー*だけを指定した場合、結果セットには、設定可能なすべてのプロパティの現在の設定が含まれます。  
   
- ときに*propertyname*を指定すると、結果セットの名前付きのプロパティのみが表示されます。  
+ *Propertyname*を指定した場合、結果セットには名前付きプロパティだけが表示されます。  
   
  すべてのパラメーターを指定した場合は、プロパティが変更され、結果セットは返されません。  
   
- 変更するときに、 **xactsetjobinterval**実行中のジョブのプロパティと新しい間隔を有効にするジョブを再起動する必要があります。  
+ 実行中のジョブの**xactsetjobinterval**プロパティを変更する場合は、新しい間隔を有効にするためにジョブを再起動する必要があります。  
   
 ## <a name="permissions"></a>アクセス許可  
- メンバーのみ、 **sysadmin** 、ディストリビューター側の固定サーバー ロールが実行できる**sp_publisherproperty**します。  
+ **Sp_publisherproperty**を実行できるのは、ディストリビューター側の固定サーバーロール**sysadmin**のメンバーだけです。  
   
 ## <a name="see-also"></a>関連項目  
  [Oracle パブリッシャー用のトランザクション セット ジョブの構成 &#40;レプリケーション Transact-SQL プログラミング&#41;](../../relational-databases/replication/administration/configure-the-transaction-set-job-for-an-oracle-publisher.md)   

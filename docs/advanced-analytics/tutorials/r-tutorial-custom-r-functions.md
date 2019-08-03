@@ -7,12 +7,13 @@ ms.date: 11/27/2018
 ms.topic: tutorial
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: d90e2d4887154d3545884a77d0290e632f04a569
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: 439b21bce4e081025db1db53ab44498415ca44af
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68470599"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715415"
 ---
 # <a name="run-custom-r-functions-on-sql-server-using-rxexec"></a>RxExec を使用して SQL Server でカスタム R 関数を実行する
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -23,9 +24,9 @@ ms.locfileid: "68470599"
 
 このチュートリアルでは、シミュレートされたデータを使用して、リモートサーバーで実行されるカスタム R 関数の実行を示します。
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a>必須コンポーネント
 
-+ [SQL Server 2017 Machine Learning Services (R)](../install/sql-machine-learning-services-windows-install.md)または[SQL Server 2016 R Services (データベース内)](../install/sql-r-services-windows-install.md)
++ [SQL Server Machine Learning Services (r)](../install/sql-machine-learning-services-windows-install.md)または[SQL Server 2016 R Services (データベース内)](../install/sql-r-services-windows-install.md)
   
 + [データベース権限](../security/user-permission.md)と SQL Server データベースユーザーログイン
 
@@ -145,7 +146,7 @@ ms.locfileid: "68470599"
 
 この演習は単純ですが、SQL Server で実行されている R スクリプトで任意の R 関数を統合するための重要なメカニズムを示しています。 この手法を可能にする主なポイントをまとめるには、次のようにします。
 
-+ SQL Server は、machine learning と R の統合用に構成する必要があります。[SQL Server 2017 Machine Learning Services](../install/sql-machine-learning-services-windows-install.md) r 機能を使用して、または[SQL Server 2016 r Services (データベース内) を](../install/sql-r-services-windows-install.md)します。
++ SQL Server は、machine learning と R の統合用に構成する必要があります。R 機能を使用して[Machine Learning Services を SQL Server](../install/sql-machine-learning-services-windows-install.md)するか、または[2016 r Services (データベース内) を SQL Server](../install/sql-r-services-windows-install.md)します。
 
 + 依存関係も含め、関数で使用されているオープンソースまたはサードパーティのライブラリを SQL Server にインストールする必要があります。 詳細については、「 [Install New R packages](../r/install-additional-r-packages-on-sql-server.md)」を参照してください。
 

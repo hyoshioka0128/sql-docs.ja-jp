@@ -7,18 +7,23 @@ ms.date: 08/28/2018
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 0abf14fa61d9408f8403a493b7559148f0f5a775
-ms.sourcegitcommit: c1382268152585aa77688162d2286798fd8a06bb
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: 94ca7b3646b9005e11b3ee4968cbfaaa65d42264
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68344984"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715845"
 ---
 # <a name="install-machine-learning-server-standalone-or-r-server-standalone-using-sql-server-setup"></a>SQL Server セットアップを使用して Machine Learning Server (スタンドアロン) または R Server (スタンドアロン) をインストールする
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md-winonly](../../includes/appliesto-ss-xxxx-xxxx-xxx-md-winonly.md)]
 
-SQL Server セットアップには、SQL Server の外部で実行される、インスタンス対応ではないスタンドアロン機械学習サーバーをインストールするための**共有機能**オプションが用意されています。 SQL Server 2016 では、この機能は**R Server (スタンドアロン)** と呼ばれます。 SQL Server 2017 では**Machine Learning Server (スタンドアロン)** と呼ばれ、R と Python が含まれています。 
+::: moniker range=">=sql-server-2017||=sqlallproducts-allversions"
+SQL Server セットアップには、SQL Server の外部で実行される、インスタンス対応ではないスタンドアロン機械学習サーバーをインストールするための**共有機能**オプションが用意されています。 これは**Machine Learning Server (スタンドアロン)** と呼ばれ、R と Python を含みます。 
+::: moniker-end
+::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+SQL Server セットアップには、SQL Server の外部で実行される、インスタンス対応ではないスタンドアロン機械学習サーバーをインストールするための**共有機能**オプションが用意されています。 SQL Server 2016 では、この機能は**R Server (スタンドアロン)** と呼ばれます。  
+::: moniker-end
 
 SQL Server セットアップによってインストールされるスタンドアロンサーバーは、機能的には、次のような同じユースケースとシナリオをサポートする、SQL 以外の[Microsoft Machine Learning Server](https://docs.microsoft.com/machine-learning-server/what-is-machine-learning-server)のバージョンと同等です。
 
@@ -39,7 +44,7 @@ SQL Server 2016 R Server (スタンドアロン) や Microsoft R Server など�
 
 一般的なルールとして、スタンドアロンサーバーとデータベースエンジンのインスタンス対応インストールは、リソースの競合を避けるために相互に排他的に扱うことをお勧めしますが、十分なリソースがある場合は、両方にインストールする禁止はありません。同じ物理コンピューター。
 
-コンピューターには、1台のスタンドアロンサーバーだけを含めることができます。 SQL Server 2017 Machine Learning Server または SQL Server 2016 R Server (スタンドアロン) のいずれかです。 新しいバージョンを追加する前に、必ず1つのバージョンをアンインストールしてください。
+コンピューターには、スタンドアロンサーバーを1つだけ含めることができます。 SQL Server Machine Learning Server (スタンドアロン) または SQL Server R Server (スタンドアロン) のいずれかです。 新しいバージョンを追加する前に、必ず1つのバージョンをアンインストールしてください。
 
 ::: moniker range="=sql-server-2016"
 <a name="bkmk_ga_instalpatch"></a> 
@@ -152,7 +157,7 @@ R と Python の開発では、同じコンピューターに複数のバージ�
 |----|----|----|
 |SQL Server 2017 Machine Learning Server (スタンドアロン) |  SQL Server 2017 セットアップウィザード |`C:\Program Files\Microsoft SQL Server\140\R_SERVER` <br/>`C:\Program Files\Microsoft SQL Server\140\PYTHON_SERVER`|
 |Microsoft Machine Learning Server (スタンドアロン) |  Windows スタンドアロンインストーラー |`C:\Program Files\Microsoft\ML Server\R_SERVER`<br/>`C:\Program Files\Microsoft\ML Server\PYTHON_SERVER`|
-|SQL Server 2017 Machine Learning Services (データベース内) |SQL Server 2017 セットアップウィザード、R 言語オプション|`C:\Program Files\Microsoft SQL Server\MSSQL14.<instance_name>\R_SERVICES`  <br/>`C:\Program Files\Microsoft SQL Server\MSSQL14.<instance_name>\PYTHON_SERVICES` |
+|SQL Server Machine Learning Services (データベース内) |SQL Server 2017 セットアップウィザード、R 言語オプション|`C:\Program Files\Microsoft SQL Server\MSSQL14.<instance_name>\R_SERVICES`  <br/>`C:\Program Files\Microsoft SQL Server\MSSQL14.<instance_name>\PYTHON_SERVICES` |
 |SQL Server 2016 R Server (スタンドアロン) |  SQL Server 2016 セットアップウィザード |`C:\Program Files\Microsoft SQL Server\130\R_SERVER`|
 |SQL Server 2016 R Services (データベース内) |SQL Server 2016 セットアップウィザード|`C:\Program Files\Microsoft SQL Server\MSSQL13.<instance_name>\R_SERVICES`|
 

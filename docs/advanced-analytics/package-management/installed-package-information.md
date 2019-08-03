@@ -7,12 +7,13 @@ ms.date: 06/13/2019
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: 2a149b4a98ec6c3a1d35cb499dcd391d87216752
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: e49b843b0b32969bd440177cf445916487ad2670
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68470270"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715203"
 ---
 # <a name="default-r-and-python-packages-in-sql-server"></a>SQL Server の既定の R および Python パッケージ
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -21,7 +22,7 @@ ms.locfileid: "68470270"
 
 ## <a name="r-package-list-for-sql-server"></a>SQL Server の R パッケージの一覧
 
-R パッケージは、セットアップ時に R 機能を選択したときに[SQL Server 2016 r Services](../install/sql-r-services-windows-install.md)と[SQL Server 2017 Machine Learning Services](../install/sql-machine-learning-services-windows-install.md)と共にインストールされます。 
+R パッケージは、セットアップ時に R 機能を選択したときに[SQL Server 2016 r Services](../install/sql-r-services-windows-install.md)と[SQL Server Machine Learning Services](../install/sql-machine-learning-services-windows-install.md)と共にインストールされます。 
 
 |パッケージ         | 2016 | 2017 | 説明 |
 |----------------|--------------|--------------|-------------|
@@ -30,11 +31,11 @@ R パッケージは、セットアップ時に R 機能を選択したときに
 | [MicrosoftML](https://docs.microsoft.com/r-server/r-reference/microsoftml/microsoftml-package)| n.a. | 9.2 | R に機械学習アルゴリズムを追加します。 | 
 | [olapR](https://docs.microsoft.com/machine-learning-server/r-reference/olapr/olapr) | n.a.  | 9.2 | R で MDX ステートメントを記述するために使用されます。 |
 
-SQL Server 2017 Machine Learning Services では、既定で Microsoft Ml と olapR を使用できます。 SQL Server 2016 R Services インスタンスでは、[コンポーネントをアップグレード](../install/upgrade-r-and-python.md)することで、これらのパッケージを追加できます。 コンポーネントのアップグレードでは、パッケージの新しいバージョンも取得されます (たとえば、新しいバージョンの RevoScaleR には、SQL Server でのパッケージ管理用の関数が含まれています)。
+SQL Server Machine Learning Services では、既定で Microsoft Ml と olapR を利用できます。 SQL Server 2016 R Services インスタンスでは、[コンポーネントをアップグレード](../install/upgrade-r-and-python.md)することで、これらのパッケージを追加できます。 コンポーネントのアップグレードでは、パッケージの新しいバージョンも取得されます (たとえば、新しいバージョンの RevoScaleR には、SQL Server でのパッケージ管理用の関数が含まれています)。
 
 ## <a name="python-package-list-for-sql-server"></a>SQL Server の Python パッケージ一覧
 
-Python パッケージは、 [SQL Server 2017 Machine Learning Services](../install/sql-machine-learning-services-windows-install.md)をインストールし、python 機能を選択した場合に SQL Server 2017 でのみ使用できます。
+Python パッケージは、 [SQL Server Machine Learning Services](../install/sql-machine-learning-services-windows-install.md)をインストールし、python 機能を選択した場合に SQL Server 2017 でのみ使用できます。
 
 | パッケージ         | 2017    |  説明 |
 | -----------------|-------------|------------|
@@ -52,7 +53,7 @@ R サポートにはオープンソースが含まれているので、base R �
 |リリース             | R バージョン       |
 |--------------------|-----------------|
 | [SQL Server 2016 R Services](../install/sql-r-services-windows-install.md) | 3.2.2   | 
-| [SQL Server 2017 Machine Learning Services](../install/sql-machine-learning-services-windows-install.md) | 3.3.3 |
+| [SQL Server Machine Learning Services](../install/sql-machine-learning-services-windows-install.md) | 3.3.3 |
 
 新しいバージョンの web で SQL Server セットアップによってインストールされた R のバージョンを手動で上書きすることは避けてください。 Microsoft R パッケージは、R の特定のバージョンに基づいています。インストールを変更すると、それが不安定になる可能性があります。
 
@@ -64,7 +65,7 @@ SQL Server 2017 Machine Learning は、R と Python の両方をサポートす�
 
 |リリース             | Anaconda のバージョン| Microsoft パッケージ    |
 |--------------------|-----------------|-----------------------|
-| SQL Server 2017 Machine Learning サービス  | 4.2 over Python 3.5 | revoscalepy、microsoft ml |
+| SQL Server Machine Learning サービス  | 4.2 over Python 3.5 | revoscalepy、microsoft ml |
 
 新しいバージョンの web で SQL Server セットアップによってインストールされた Python のバージョンを手動で上書きすることは避けてください。 Microsoft Python パッケージは、Anaconda の特定のバージョンに基づいています。 インストールを変更すると、それが不安定になる可能性があります。
 

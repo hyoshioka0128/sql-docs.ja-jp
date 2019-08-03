@@ -9,14 +9,13 @@ ms.topic: conceptual
 ms.assetid: bf4c4922-80b3-4be3-bf71-228247f97004
 author: craigg-msft
 ms.author: craigg
-manager: jhubbard
 monikerRange: = sql-server-2014 || = sqlallproducts-allversions
-ms.openlocfilehash: df99a74b9c26e13c9fc2037c9d540ee844bfebfb
-ms.sourcegitcommit: 706f3a89fdb98e84569973f35a3032f324a92771
+ms.openlocfilehash: 1fb7e3e0a261c0cf518dda93610b721af14a3472
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58658276"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68136490"
 ---
 # <a name="sql-server-2014-release-notes"></a>SQL Server 2014 リリース ノート
 [!INCLUDE[tsql-appliesto-ss2014-xxxx-xxxx-xxx-md](../includes/tsql-appliesto-ss2014-xxxx-xxxx-xxx-md.md)]
@@ -95,7 +94,7 @@ SQL Server 2014 SP1 には、SQL Server 2014 CU 1 から CU 5 までで提供さ
 2.  SQL Server 2014 CTP 1 と SQL Server 2014 RTM のサイド バイ サイド インストールはサポートされていません。  
 3.  SQL Server 2014 RTM への SQL Server 2014 CTP 1 データベースのアタッチまたは復元はサポートされていません。  
 
-**回避策:**[なし] :
+**回避策:** [なし] :
 
 #### <a name="upgrading-from-sql-server-2014-ctp-2-to-sql-server-rtm"></a>SQL Server 2014 CTP 2 から SQL Server RTM へのアップグレード
 アップグレードは完全にサポートされています。 具体的には、次のことを実行できます。
@@ -114,7 +113,7 @@ SQL Server 2014 SP1 には、SQL Server 2014 CU 1 から CU 5 までで提供さ
 #### <a name="incorrect-version-of-streaminsight-client-on-sql-server-2014-mediaisocab"></a>SQL Server 2014 メディア/ISO/CAB 上の不正なバージョンの StreamInsight クライアント  
 SQL Server メディア/ISO/CAB 上に間違ったバージョンの StreamInsight.msi および StreamInsightClient.msi があります (パスは StreamInsight\\\<Architecture\>\\\<Language ID\>)。  
   
-**回避策:**[SQL Server 2014 Feature Pack のダウンロード ページ](https://go.microsoft.com/fwlink/?LinkID=306709)から正しいバージョンをダウンロードしてインストールします。  
+**回避策:** [SQL Server 2014 Feature Pack のダウンロード ページ](https://go.microsoft.com/fwlink/?LinkID=306709)から正しいバージョンをダウンロードしてインストールします。  
   
 ### <a name="ProdDoc"></a>製品ドキュメント RTM
   
@@ -129,7 +128,7 @@ SQL Server メディア/ISO/CAB 上に間違ったバージョンの StreamInsig
   
 [!INCLUDE[ssSQL11](../includes/sssql11-md.md)]では、このコンテンツは製品に付属する CHM ファイルから入手でき、上記の言語でも使用可能でした。 現在 CHM ファイルは製品に付属しておらず、レポート ビルダーのコンテンツは MSDN でのみ使用できます。 MSDN では、これらの言語はサポートされていません。 レポート ビルダーは TechNet からも削除され、上記のサポートされる言語では使用できなくなりました。  
   
-**回避策:**[なし] :  
+**回避策:** [なし] :  
   
 **問題点:** Power Pivot のコンテンツは、次の言語では使用できません。
   
@@ -147,7 +146,7 @@ SQL Server メディア/ISO/CAB 上に間違ったバージョンの StreamInsig
   
 [!INCLUDE[ssSQL11](../includes/sssql11-md.md)]では、このコンテンツは TechNet から入手でき、上記の言語でも使用可能でした。 このコンテンツは TechNet から削除され、上記のサポートされる言語では使用できなくなりました。  
   
-**回避策:**[なし] :  
+**回避策:** [なし] :  
   
 ### <a name="DBEngine"></a>データベース エンジン (RTM)
   
@@ -177,7 +176,7 @@ memory-optimized table DLLs.
 ```  
 実際は、このメッセージは情報提供だけを目的としており、ユーザーが対応する必要はありません。  
   
-**回避策:**[なし] : これは情報メッセージです。  
+**回避策:** [なし] : これは情報メッセージです。  
   
 #### <a name="missing-index-details-incorrectly-report-included-columns-for-memory-optimized-table"></a>欠落インデックスの詳細で、メモリ最適化テーブルに対応する付加列が誤って報告される  
 **問題点:** SQL Server 2014 がメモリ最適化テーブルに対するクエリで欠落インデックスを検出した場合は、SHOWPLAN_XML 内で欠落インデックスが報告され、sys.dm_db_missing_index_details などでも欠落インデックス DMV が報告されます。 場合によっては、欠落インデックスの詳細に、付加列が含まれています。 メモリ最適化テーブルのすべてのインデックスにはすべての列が暗黙的に含まれているため、メモリ最適化インデックスで付加列を明示的に指定することは許可されません。  
@@ -212,7 +211,7 @@ SET MEMORY_OPTIMIZED_ELEVATE_TO_SNAPSHOT=ON
 #### <a name="procedure-and-query-execution-statistics-for-natively-compiled-stored-procedures-record-worker-time-in-multiples-of-1000"></a>ネイティブ コンパイル ストアド プロシージャに関するプロシージャとクエリ実行の統計で、ワーカー時間が 1,000 の倍数で記録される  
 **問題点:** sp_xtp_control_proc_exec_stats または sp_xtp_control_query_exec_stats を使用してネイティブ コンパイル ストアド プロシージャに対するプロシージャまたはクエリ実行の統計の収集を有効にした後、DMV sys.dm_exec_procedure_stats と sys.dm_exec_query_stats 内で、*_worker_time が 1,000 の倍数で報告されます。 ワーカー時間が 500 ミリ秒未満のクエリ実行では、worker_time として 0 が報告されます。  
   
-**回避策:**[なし] : ネイティブ コンパイル ストアド プロシージャの実行時間が短いクエリに対応する実行統計 DMV 内で報告された worker_time を信頼しないでください。  
+**回避策:** [なし] : ネイティブ コンパイル ストアド プロシージャの実行時間が短いクエリに対応する実行統計 DMV 内で報告された worker_time を信頼しないでください。  
   
 #### <a name="error-with-showplanxml-for-natively-compiled-stored-procedures-that-contain-long-expressions"></a>長い式を含むネイティブ コンパイル ストアド プロシージャに対応する SHOWPLAN_XML にエラーが出力される  
 **問題点:** ネイティブ コンパイル ストアド プロシージャに長い式が含まれていて、そのプロシージャに対応する SHOWPLAN_XML を取得する状況で、T-SQL オプション SET SHOWPLAN_XML ON を使用する場合、または Management Studio で "Display Estimated Execution Plan" オプションを使用する場合は、次のエラーが発生する可能性があります。  
@@ -265,7 +264,7 @@ DATEPART(weekday, @d)
 #### <a name="native-compilation-advisor-flags-delete-from-clauses-incorrectly"></a>ネイティブ コンパイル アドバイザーが DELETE FROM 句に対して誤ってフラグを設定する  
 **問題点:** ネイティブ コンパイル アドバイザーが、ストアド プロシージャ内の DELETE FROM 句に対して互換性なしのフラグを誤って設定します。  
   
-**回避策:**[なし] :  
+**回避策:** [なし] :  
   
 #### <a name="register-through-ssms-adds-dac-meta-data-with-mismatched-instance-ids"></a>SSMS を使用して登録を行うと、不一致のインスタンス ID を持つ DAC メタデータが追加される  
 **問題点:** SQL Server Management Studio を使用してデータ層アプリケーション パッケージ (.dacpac) を登録または削除すると、sysdac* テーブルが正しく更新されず、データベースに対して dacpac 履歴のクエリを実行できません。  sysdac_history_internal と sysdac_instances_internal の instance_id が一致せず、結合が許可されません。  
@@ -292,9 +291,9 @@ instance_id の値の不一致という問題が既に発生している場合�
 ### <a name="SSRS"></a>Reporting Services (RTM)
   
 #### <a name="the-sql-server-2012-reporting-services-native-mode-report-server-cannot-run-side-by-side-with-sql-server-2014-reporting-services-sharepoint-components"></a>SQL Server 2012 Reporting Services ネイティブ モード レポート サーバーを SQL Server 2014 Reporting Services SharePoint コンポーネントとサイド バイ サイドで実行できない  
-**問題点:**[!INCLUDE[ssSQL14](../includes/sssql14-md.md)] [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] SharePoint コンポーネントが同じサーバーにインストールされている場合、[!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] ネイティブ モードの Windows サービス SQL Server Reporting Services (ReportingServicesService.exe) の起動に失敗します。  
+**問題点:** [!INCLUDE[ssSQL14](../includes/sssql14-md.md)] [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] SharePoint コンポーネントが同じサーバーにインストールされている場合、[!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] ネイティブ モードの Windows サービス SQL Server Reporting Services (ReportingServicesService.exe) の起動に失敗します。  
   
-**回避策:**[!INCLUDE[ssSQL14](../includes/sssql14-md.md)] [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] SharePoint コンポーネントをアンインストールし、Microsoft SQL Server 2012 Reporting Services の Windows サービスを再起動します。  
+**回避策:** [!INCLUDE[ssSQL14](../includes/sssql14-md.md)] [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] SharePoint コンポーネントをアンインストールし、Microsoft SQL Server 2012 Reporting Services の Windows サービスを再起動します。  
   
 **詳細情報:**  
   
@@ -328,7 +327,7 @@ Description:   Report Server (DENALI) cannot connect to the report server databa
 #### <a name="required-upgrade-order-for-multi-node-sharepoint-farm-to-sql-server-2014-reporting-services"></a>SQL Server 2014 Reporting Services を使用する複数ノードの SharePoint ファームで必要なアップグレードの順序  
 **問題点:** SharePoint 製品用 [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] アドインのすべてのインスタンスをアップグレードする前に、[!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] SharePoint 共有サービスのインスタンスをアップグレードした場合は、複数ノード ファームでのレポートの表示に失敗します。  
   
-**回避策:** 複数ノードの SharePoint ファームで、次の手順を実行します。  
+**回避策:** 複数ノードの SharePoint ファームで、次の手順を行います。  
   
 1.  最初に、SharePoint 製品用 [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] アドインのすべてのインスタンスをアップグレードします。    
 2.  次に、 [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] SharePoint 共有サービスのすべてのインスタンスをアップグレードします。  

@@ -7,12 +7,13 @@ ms.date: 11/27/2018
 ms.topic: tutorial
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: dab52381def03394fc8c1bf0836c9c1a1a9f8e92
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: 8c7e837f9ed4392a8ecfc9e7c237b95f3fdde3d3
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68469655"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68714851"
 ---
 #  <a name="visualize-sql-server-data-using-r-sql-server-and-revoscaler-tutorial"></a>R を使用した SQL Server データの視覚化 (SQL Server と RevoScaleR のチュートリアル)
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -122,7 +123,7 @@ ms.locfileid: "68469655"
     cubePlot <- rxResultsDF(cube1)
     ```
   
-    **RxCube**関数には、結果をデータフレームに直接変換するために使用できる、省略可能な引数*returnDataFrame* = **TRUE**が含まれています。 以下に例を示します。
+    **RxCube**関数には、結果をデータフレームに直接変換するために使用できる、省略可能な引数*returnDataFrame* = **TRUE**が含まれています。 例:
     
     `print(rxCube(fraudRisk~F(numTrans):F(numIntlTrans), data = sqlFraudDS, returnDataFrame = TRUE))`
        

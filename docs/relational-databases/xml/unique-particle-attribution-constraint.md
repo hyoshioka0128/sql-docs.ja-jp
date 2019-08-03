@@ -17,13 +17,12 @@ helpviewer_keywords:
 ms.assetid: 6bb879e9-a5ee-402e-94e4-fe8cec5966b0
 author: MightyPen
 ms.author: genemi
-manager: craigg
-ms.openlocfilehash: c213f8923fcdc4751b2944b2e62d4e565a509285
-ms.sourcegitcommit: 2827d19393c8060eafac18db3155a9bd230df423
+ms.openlocfilehash: b09c2392f49bdfb8a86c33ce16679ec02c232310
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58510169"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68078014"
 ---
 # <a name="unique-particle-attribution-constraint"></a>一意のパーティクル属性の制約
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
@@ -82,11 +81,11 @@ ms.locfileid: "58510169"
 ## <a name="finding-more-information"></a>詳細情報  
  次のドキュメントは W3C (World Wide Web Consortium) が発行したもので、一意のパーティクル属性の制約に関する技術的な説明が含まれています。  
   
- 「XML Schema Part 1:Structures Second Edition, W3C Proposed Edited Recommendation」:  
+ "XML Schema Part 1: Structures Second Edition, W3C Proposed Edited Recommendation":  
   
--   Section 3.8.6:Constraints on Model Group Schema Components  
+-   Section 3.8.6: Constraints on Model Group Schema Components  
   
--   Appendix H:Analysis of the Unique Particle Attribution Constraint (non-normative)  
+-   Appendix H: Analysis of the Unique Particle Attribution Constraint (non-normative)  
   
  ドキュメントを表示するには、[http://www.w3.org/TR/xmlschema-1](https://go.microsoft.com/fwlink/?linkid=48881) を参照してください。  
   

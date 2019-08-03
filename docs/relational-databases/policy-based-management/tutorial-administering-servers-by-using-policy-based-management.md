@@ -1,5 +1,5 @@
 ---
-title: 'チュートリアル : ポリシー ベースの管理を使用したサーバーの管理 | Microsoft Docs'
+title: チュートリアル:ポリシー ベースの管理を使用したサーバーの管理 | Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
@@ -13,15 +13,14 @@ helpviewer_keywords:
 ms.assetid: 7de96e7b-9fb8-4cc8-8d85-61345d68a1e8
 author: VanMSFT
 ms.author: vanto
-manager: craigg
-ms.openlocfilehash: 8447a2e6b6364c702e9f800810fd6295d5641fe7
-ms.sourcegitcommit: ef6e3ec273b0521e7c79d5c2a4cb4dcba1744e67
+ms.openlocfilehash: d98e1f1332d75514887858a11087e94bca4caf32
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "51512427"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68021490"
 ---
-# <a name="tutorial-administering-servers-by-using-policy-based-management"></a>チュートリアル : ポリシー ベースの管理を使用したサーバーの管理
+# <a name="tutorial-administering-servers-by-using-policy-based-management"></a>チュートリアル:ポリシー ベースの管理を使用したサーバーの管理
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
 「ポリシー ベースの管理を使用したサーバーの管理」チュートリアルへようこそ。 このチュートリアルは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] については理解しているが、ポリシー ベースの管理を初めて使用するユーザーを対象としています。  
   
@@ -30,10 +29,10 @@ ms.locfileid: "51512427"
   
 このチュートリアルは、次の 2 つのレッスンで構成されています。  
   
-[レッスン 1 : "既定でオフ" ポリシーの作成と適用](../../relational-databases/policy-based-management/lesson-1-create-and-apply-an-off-by-default-policy.md)  
+[レッスン 1:"既定でオフ" ポリシーの作成と適用](../../relational-databases/policy-based-management/lesson-1-create-and-apply-an-off-by-default-policy.md)  
 このレッスンでは、データベース メールをサーバーで有効化しないように指定するポリシーを作成します。 さらに、サーバーがポリシーに準拠しているかどうかを確認し、データベース メールを無効にしてサーバーを構成します。  
   
-[レッスン 2: 名前付け基準ポリシーの作成と適用](../../relational-databases/policy-based-management/lesson-2-create-and-apply-a-naming-standards-policy.md)  
+[レッスン 2:名前付け基準ポリシーの作成と適用](../../relational-databases/policy-based-management/lesson-2-create-and-apply-a-naming-standards-policy.md)  
 このレッスンでは、テーブルの名前付け基準を定義して適用するポリシーを作成します。  
   
 ## <a name="requirements"></a>必要条件  
@@ -42,7 +41,7 @@ ms.locfileid: "51512427"
 このチュートリアルを使用するには、システムに [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] がインストールされている必要があります。  
   
 ## <a name="start-the-tutorial"></a>チュートリアルを開始する  
-[レッスン 1 : "既定でオフ" ポリシーの作成と適用](../../relational-databases/policy-based-management/lesson-1-create-and-apply-an-off-by-default-policy.md)  
+[レッスン 1:"既定でオフ" ポリシーの作成と適用](../../relational-databases/policy-based-management/lesson-1-create-and-apply-an-off-by-default-policy.md)  
   
 ## <a name="see-also"></a>参照  
 [ポリシー ベースの管理を使用したサーバーの管理](../../relational-databases/policy-based-management/administer-servers-by-using-policy-based-management.md)  

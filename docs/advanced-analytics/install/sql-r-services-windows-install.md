@@ -7,19 +7,20 @@ ms.date: 05/03/2019
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: 9cc14328e0e43106f9fec0779f073bcd1568e888
-ms.sourcegitcommit: c1382268152585aa77688162d2286798fd8a06bb
+monikerRange: =sql-server-2016||=sqlallproducts-allversions
+ms.openlocfilehash: 61dd49191e85d9fd4685904ae01b72d754d43318
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68345011"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715808"
 ---
 # <a name="install-sql-server-2016-r-services"></a>SQL Server 2016 R Services のインストール
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md-winonly](../../includes/appliesto-ss-xxxx-xxxx-xxx-md-winonly.md)]
 
 この記事では、 **SQL Server 2016 R Services**をインストールして構成する方法について説明します。 SQL Server 2016 を使用している場合は、SQL Server で R コードの実行を有効にするために、この機能をインストールします。
 
-SQL Server 2017 では、Python の追加を反映する[Machine Learning Services](../r/r-server-standalone.md)で R 統合が提供されています。 R との統合が必要で、インストールメディアが SQL Server 2017 の場合は、「 [SQL Server 2017 Machine Learning Services をインストール](sql-machine-learning-services-windows-install.md)して機能を追加する」を参照してください。 
+SQL Server 2017 では、Python の追加を反映する[Machine Learning Services](../r/r-server-standalone.md)で R 統合が提供されています。 R の統合が必要で、SQL Server 2017 のインストールメディアがある場合は、「 [SQL Server Machine Learning Services をインストール](sql-machine-learning-services-windows-install.md)して機能を追加する」を参照してください。 
 
 <a name="bkmk_prereqs"> </a> 
 
@@ -27,7 +28,7 @@ SQL Server 2017 では、Python の追加を反映する[Machine Learning Servic
 
 + データベースエンジンのインスタンスが必要です。 R だけをインストールすることはできませんが、既存のインスタンスに段階的に追加することはできます。
 
-+ ビジネス継続性のために、R Services では[Always On 可用性グループ](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server)がサポートされています。 各ノードで R Services をインストールし、パッケージを構成する必要があります。
++ ビジネス継続性のために、 [Always On 可用性グループ](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server)は R Services でサポートされています。 各ノードで R Services をインストールし、パッケージを構成する必要があります。
 
 + フェールオーバークラスターに R Services をインストールしないでください。 R プロセスを分離するために使用されるセキュリティメカニズムは、Windows Server フェールオーバークラスター環境と互換性がありません。
 

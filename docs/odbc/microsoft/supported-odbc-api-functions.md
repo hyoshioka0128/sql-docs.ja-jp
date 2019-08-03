@@ -27,7 +27,7 @@ ms.locfileid: "68080701"
   
  ODBC API 関数のサポートは、使用するドライバーに依存することができます。 次の表では、関数のサポートをまとめたものです。 左端の列は、各関数の一般的なリファレンス ページへのリンクを提供します。 これらの参照ページがでアルファベット順に一覧表示、 [ODBC API リファレンス](../../odbc/reference/syntax/odbc-api-reference.md)セクションの[ODBC プログラマ リファレンス](../../odbc/reference/odbc-programmer-s-reference.md)します。 ドライバー固有の注意事項については、それぞれに適切な指定のリンクを列には、関数がサポートされています。 これらのドライバー固有のトピックは、各ドライバーの他のプログラミングの詳細」セクションに表示されます。 または、関数に関する同じ注釈は、すべての ODBC デスクトップ データベース ドライバーに適用される場合、右端の列はその関数のデスクトップ データベース ドライバーのサポートを要約したトピックへのリンクを提供します。 これらのトピックは、現在のセクションでは、("サポートされている ODBC API 関数") の最後に一覧表示されます。  
   
-|ODBC 関数|Access ドライバー 固有の 注意事項|dBASE ドライバー 固有の 注意事項|Paradox ドライバー 固有の 注意事項|テキスト ファイル ドライバー固有の 注意事項|Excel ドライバー 固有の 注意事項|すべての ドライバーに 関連する 注意事項|  
+|ODBC 関数|Access<br/>ドライバー<br/>固有の<br/>注意事項|dBASE<br/>ドライバー<br/>固有の<br/>注意事項|Paradox<br/>ドライバー<br/>固有の<br/>注意事項|テキスト<br/>ファイル<br/>ドライバー<br/>固有の<br/>注意事項|Excel<br/>ドライバー<br/>固有の<br/>注意事項|すべての<br/>ドライバーに<br/>関連する<br/>注意事項|  
 |-------------------|-----------------------------------|----------------------------------|------------------------------------|--------------------------------------|----------------------------------|-----------------------------------|  
 |[SQLBindParameter](../../odbc/reference/syntax/sqlbindparameter-function.md)|||||[Excel](../../odbc/microsoft/sqlbindparameter-excel-driver.md)||  
 |[SQLColAttributes](../../odbc/reference/syntax/sqlcolattributes-function.md)|[Access](../../odbc/microsoft/sqlcolattributes-access-driver.md)|[dBASE](../../odbc/microsoft/sqlcolattributes-dbase-driver.md)|[Paradox](../../odbc/microsoft/sqlcolattributes-paradox-driver.md)|[テキスト ファイル](../../odbc/microsoft/sqlcolattributes-text-file-driver.md)|[Excel](../../odbc/microsoft/sqlcolattributes-excel-driver.md)||  

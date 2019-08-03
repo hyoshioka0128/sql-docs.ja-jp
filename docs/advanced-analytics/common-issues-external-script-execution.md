@@ -2,21 +2,22 @@
 title: スタートパッドサービスと外部スクリプトの実行に関する一般的な問題
 ms.prod: sql
 ms.technology: ''
-ms.date: 06/13/2019
+ms.date: 07/30/2019
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: 84c7c8f10c6a5b0da69d24389e12633df3774ffb
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: c90c59f3b59850bb0e2d1cf4cf40eb569e965eba
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68470490"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715286"
 ---
 # <a name="common-issues-with-launchpad-service-and-external-script-execution-in-sql-server"></a>スタートパッドサービスと SQL Server での外部スクリプトの実行に関する一般的な問題
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
 
- SQL Server の信頼されたスタートパッドサービスは、R および Python の外部スクリプトの実行をサポートします。 SQL Server 2016 R Services では、SP1 によってサービスが提供されます。 SQL Server 2017 には、初期インストールの一部としてスタートパッドサービスが含まれています。
+SQL Server の信頼されたスタートパッドサービスは、R および Python の外部スクリプトの実行をサポートします。 
 
 複数の問題により、構成の問題や変更、ネットワークプロトコルの不足など、スタートパッドが起動しないことがあります。 この記事では、多くの問題のトラブルシューティングの指針を示します。 問題が発生した場合は、 [Machine Learning Server フォーラム](https://social.msdn.microsoft.com/Forums/en-US/home?category=MicrosoftR)に質問を投稿できます。
 
@@ -76,6 +77,7 @@ GRANT EXECUTE ANY EXTERNAL SCRIPT TO <username>
 
 ここでは、スタートパッドが返す最も一般的なエラーメッセージの一覧を示します。
 
+::: moniker range=">=sql-server-2016||=sqlallproducts-allversions"
 ## <a name="unable-to-launch-runtime-for-r-script"></a>"R スクリプトのランタイムを起動できません"
 
 R ユーザーの Windows グループ (Python にも使用) が R Services を実行しているインスタンスにログオンできない場合は、次のエラーが表示されることがあります。
@@ -94,10 +96,11 @@ R ユーザーの Windows グループ (Python にも使用) が R Services を�
 
     * *セキュリティログは、アカウント NT サービスがログオンできなかったことを示します。*
 
-このユーザーグループに必要なアクセス許可を付与する方法については、「 [Install SQL Server 2016 R Services](install/sql-r-services-windows-install.md)」を参照してください。
+このユーザーグループに必要なアクセス許可を付与する方法については、「 [Install SQL Server R Services](install/sql-r-services-windows-install.md)」を参照してください。
 
 > [!NOTE]
 > SQL ログインを利用し、リモート ワークステーションから R スクリプトを実行する場合、この制限は適用されません。
+::: moniker-end
 
 ## <a name="logon-failure-the-user-has-not-been-granted-the-requested-logon-type"></a>"ログオンに失敗しました: ユーザーは要求されたログオンの種類を許可されていません"
 
@@ -183,9 +186,12 @@ EXEC sp_execute_external_script @language = N'R',
 
 この問題を解決するには、パッケージを SQL Server インスタンスライブラリに再インストールする必要があります。
 
+::: moniker range=">=sql-server-2016||=sqlallproducts-allversions"
 >[!NOTE]
 >最新バージョンの Microsoft R を使用するように SQL Server 2016 のインスタンスをアップグレードした場合、既定のライブラリの場所は異なります。 詳細については、「 [SqlBindR を使用して R Services のインスタンスをアップグレードする](install/upgrade-r-and-python.md)」を参照してください。
+::: moniker-end
 
+::: moniker range=">=sql-server-2016||=sqlallproducts-allversions"
 ## <a name="launchpad-shuts-down-due-to-mismatched-dlls"></a>Dll が一致しないため、スタートパッドがシャットダウンする
 
 その他の機能を使用してデータベースエンジンをインストールする場合は、サーバーに修正プログラムを適用した後、元のメディアを使用して Machine Learning 機能を追加すると、正しくないバージョンの Machine Learning コンポーネントがインストールされる可能性があります。 スタートパッドがバージョンの不一致を検出すると、シャットダウンしてダンプファイルを作成します。
@@ -224,7 +230,7 @@ R をインストールするボリュームが短いファイル名をサポー
 3. Fsutil ユーティリティと*file*引数を使用して、WORKING_DIRECTORY で指定されたフォルダーの短いファイルパスを指定します。
 
 4. 構成ファイルを編集して、WORKING_DIRECTORY プロパティで入力したものと同じ作業ディレクトリを指定します。 または、別の作業ディレクトリを指定して、既に8dot3 表記と互換性のある既存のパスを選択することもできます。
-
+::: moniker-end
 
 ## <a name="next-steps"></a>次のステップ
 

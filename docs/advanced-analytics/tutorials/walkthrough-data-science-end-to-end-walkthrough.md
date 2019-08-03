@@ -7,12 +7,13 @@ ms.date: 11/26/2018
 ms.topic: tutorial
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: 072d2c2e8843b17b3a4ccfeed16bd0916ce501e7
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: 7d494329a52f73d489350792b6f43e138f3618a8
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68468640"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68714660"
 ---
 # <a name="tutorial-sql-development-for-r-data-scientists"></a>チュートリアル:R データ科学者向け SQL 開発
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -25,9 +26,9 @@ R コード、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]デー�
 
 このチュートリアルは r 開発者[!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)]向けに設計されているため、可能な限り r を使用します。 ただし、これは、各タスクで必ずしも R が最適なツールであるという意味ではありません。 多くの場合、特にデータ集計と機能エンジニアリングについては、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の方が優れたパフォーマンスを示す可能性があります。  このようなタスクでは、特に [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]の新機能 (メモリ最適化列ストア インデックスなど) のメリットが得られます。 考えられる最適化について説明します。
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a>必須コンポーネント
 
-+ R 統合または[SQL Server 2016 r Services](../install/sql-r-services-windows-install.md) [を使用した SQL Server 2017 Machine Learning Services](../install/sql-machine-learning-services-windows-install.md#verify-installation)
++ R 統合または[SQL Server 2016 r Services](../install/sql-r-services-windows-install.md) [での Machine Learning Services の SQL Server](../install/sql-machine-learning-services-windows-install.md#verify-installation)
 
 + [データベース権限](../security/user-permission.md)と SQL Server データベースユーザーログイン
 

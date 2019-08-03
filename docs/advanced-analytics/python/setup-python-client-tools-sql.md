@@ -7,12 +7,13 @@ ms.date: 06/13/2019
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: b5f406ec4b6cfbd65db7a4ecd3a1ad14dff6d8e1
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: a37f0eb62ec0483b8c73bd5cc4d6d29221e8082f
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68470240"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715182"
 ---
 # <a name="set-up-a-data-science-client-for-python-development-on-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services での Python 開発用のデータサイエンスクライアントの設定
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -49,9 +50,9 @@ SSMS は、Python コードが含まれているものを含め、SQL Server で
 
 1. インストールスクリプトをダウンロードします。
 
-  + [https://aka.ms/mls-py](https://aka.ms/mls-py)Microsoft Python パッケージのバージョン9.2.1 をインストールします。 このバージョンは、既定の SQL Server 2017 インスタンスに対応します。 
+  + [https://aka.ms/mls-py](https://aka.ms/mls-py)Microsoft Python パッケージのバージョン9.2.1 をインストールします。 このバージョンは、既定の SQL Server インスタンスに対応します。 
 
-  + [https://aka.ms/mls93-py](https://aka.ms/mls93-py)Microsoft Python パッケージのバージョン9.3 をインストールします。 このバージョンは、リモート SQL Server 2017 インスタンスが[Machine Learning Server 9.3 にバインド](../install/upgrade-r-and-python.md)されている場合に適しています。
+  + [https://aka.ms/mls93-py](https://aka.ms/mls93-py)Microsoft Python パッケージのバージョン9.3 をインストールします。 このバージョンは、リモート SQL Server インスタンスが[Machine Learning Server 9.3 にバインド](../install/upgrade-r-and-python.md)されている場合に適しています。
 
 2. 管理者特権を使用して PowerShell ウィンドウを開きます ( **[管理者として実行]** を右クリックします)。
 

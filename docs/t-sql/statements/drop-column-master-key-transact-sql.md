@@ -19,18 +19,17 @@ helpviewer_keywords:
 ms.assetid: fd5e77c8-a3ae-4795-bb46-b322c0500041
 author: VanMSFT
 ms.author: vanto
-manager: craigg
-ms.openlocfilehash: 89ff78ad0c8cd82b4235adaa247a34a4a6442db5
-ms.sourcegitcommit: 9c99f992abd5f1c174b3d1e978774dffb99ff218
+ms.openlocfilehash: 6d3be4cb1c92f964d914c782abfa6a46caf47a48
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54361402"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68073151"
 ---
 # <a name="drop-column-master-key-transact-sql"></a>DROP COLUMN MASTER KEY (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2016-asdb-xxxx-xxx-md](../../includes/tsql-appliesto-ss2016-asdb-xxxx-xxx-md.md)]
 
-  データベースからには、列のマスター_キーを削除します。 これは、メタデータの操作です。  
+  データベースから、列のマスター キーを削除します。 これはメタデータの操作です。  
   
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -43,17 +42,17 @@ DROP COLUMN MASTER KEY key_name;
   
 ## <a name="arguments"></a>引数  
  *key_name*  
- 列のマスター_キーの名前です。  
+ 列のマスター キーの名前です。  
   
 ## <a name="remarks"></a>Remarks  
- 列のマスター_キーは、列の暗号化キーの値がない列のマスター_キーで暗号化された場合にのみ削除できます。 列の暗号化キーの値を削除するには、[DROP COLUMN ENCRYPTION KEY](../../t-sql/statements/drop-column-encryption-key-transact-sql.md) ステートメントを使います。  
+ 列マスター キーできるのは、その列マスター キーを使用して暗号化された列暗号化キー値がない場合に限られます。 列の暗号化キーの値を削除するには、[DROP COLUMN ENCRYPTION KEY](../../t-sql/statements/drop-column-encryption-key-transact-sql.md) ステートメントを使います。  
   
 ## <a name="permissions"></a>アクセス許可  
  データベースに対する **ALTER ANY COLUMN MASTER KEY** 権限が必要です。  
   
 ## <a name="examples"></a>使用例  
   
-### <a name="a-dropping-a-column-master-key"></a>A. 列のマスター_キーを削除します。  
+### <a name="a-dropping-a-column-master-key"></a>A. 列のマスター キーを削除します  
  次の例では、`MyCMK` という名前の列マスター キーを削除します。  
   
 ```  

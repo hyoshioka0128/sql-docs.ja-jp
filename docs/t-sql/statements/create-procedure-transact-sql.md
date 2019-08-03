@@ -45,14 +45,13 @@ helpviewer_keywords:
 ms.assetid: afe3d86d-c9ab-44e4-b74d-4e3dbd9cc58c
 author: CarlRabeler
 ms.author: carlrab
-manager: craigg
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a9bd4b93d90bc75e7dfc97a526cee544cb71b69a
-ms.sourcegitcommit: a13256f484eee2f52c812646cc989eb0ce6cf6aa
+ms.openlocfilehash: 14597122e586aca0290a4823f07dbb17e5cccda2
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56801897"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68006529"
 ---
 # <a name="create-procedure-transact-sql"></a>CREATE PROCEDURE (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-all-md](../../includes/tsql-appliesto-ss2008-all-md.md)]
@@ -157,7 +156,7 @@ OR ALTER
   
  プロシージャに名前を付けるときは、**sp_** プレフィックスを使用しないでください。 このプレフィックスは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] でシステム プロシージャを指定するために使用されるものです。 このプレフィックスを使用すると、同じ名前のシステム プロシージャがある場合にアプリケーション コードが機能しなくなる可能性があります。  
   
- ローカルまたはグローバルの一時プロシージャを作成するには、*procedure_name* の前に、ローカル一時プロシージャの場合は番号記号 (#) を 1 つ付加し (*#procedure_name*)、グローバル一時プロシージャの場合は番号記号を 2 つ付加します (*##procedure_name*)。 ローカル一時プロシージャは、そのプロシージャが作成された接続のみで表示でき、その接続が閉じられると削除されます。 グローバル一時プロシージャは、すべての接続で使用でき、そのプロシージャを使用する最後のセッションが終了すると削除されます。 CLR プロシージャには一時名は指定できません。  
+ ローカルまたはグローバルの一時プロシージャを作成するには、*procedure_name* の前に、ローカル一時プロシージャの場合は番号記号 (#) を 1 つ付加し ( *#procedure_name*)、グローバル一時プロシージャの場合は番号記号を 2 つ付加します ( *##procedure_name*)。 ローカル一時プロシージャは、そのプロシージャが作成された接続のみで表示でき、その接続が閉じられると削除されます。 グローバル一時プロシージャは、すべての接続で使用でき、そのプロシージャを使用する最後のセッションが終了すると削除されます。 CLR プロシージャには一時名は指定できません。  
   
  プロシージャまたはグローバル一時プロシージャの名前は、## を含め最大で半角 128 文字です。 ローカル一時プロシージャの名前は、# を含め最大で半角 116 文字です。  
   
@@ -172,13 +171,13 @@ OR ALTER
  番号付きプロシージャでは **xml** または CLR ユーザー定義型を使用できません。また、番号付きプロシージャはプラン ガイドでは使用できません。  
   
  **@** *parameter*  
- プロシージャ内で宣言されているパラメーターを指定します。 最初の文字をアット マーク (**@**) にしてパラメーター名を指定します。 パラメーター名は[識別子](../../relational-databases/databases/database-identifiers.md)のルールに従っている必要があります。 パラメーターはプロシージャに対してローカルです。同じパラメーター名を他のプロシージャで使用できます。  
+ プロシージャ内で宣言されているパラメーターを指定します。 最初の文字をアット マーク ( **@** ) にしてパラメーター名を指定します。 パラメーター名は[識別子](../../relational-databases/databases/database-identifiers.md)のルールに従っている必要があります。 パラメーターはプロシージャに対してローカルです。同じパラメーター名を他のプロシージャで使用できます。  
   
  1 つ以上のパラメーター (最大 2,100 個) を宣言できます。 宣言される各パラメーターの値は、パラメーターに既定値が定義されていない場合、または別のパラメーターと同じ値を使用するよう設定されていない場合は、プロシージャの呼び出し時にユーザーが指定する必要があります。 プロシージャに[テーブル値パラメーター](../../relational-databases/tables/use-table-valued-parameters-database-engine.md)が含まれていて、そのパラメーターが呼び出しに含まれてない場合、空のテーブルが渡されます。 パラメーターは定数式の代わりにのみ使用することができます。テーブル名、列名、またはその他のデータベース オブジェクト名の代わりにパラメーターを使用することはできません。 詳細については、「 [EXECUTE &#40;Transact-SQL&#41;](../../t-sql/language-elements/execute-transact-sql.md)」を参照してください。  
   
  FOR REPLICATION を指定した場合、パラメーターは宣言できません。  
   
- [ _type\_schema\_name_**.** ] *data_type*  
+ [ _type\_schema\_name_ **.** ] *data_type*  
  パラメーターのデータ型とそのデータ型が属するスキーマを指定します。  
   
 **[!INCLUDE[tsql](../../includes/tsql-md.md)] プロシージャに関するガイドライン**:  
@@ -242,10 +241,10 @@ FOR REPLICATION
  { [ BEGIN ] *sql_statement* [;] [ ...*n* ] [ END ] }  
  プロシージャの本体を構成する 1 つ以上の [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントを指定します。 省略可能な BEGIN キーワードと END キーワードを使用して、ステートメントを囲むことができます。 詳細については、後で説明する「ベスト プラクティス」、「全般的な解説」、および「制限事項と制約事項」をご覧ください。  
   
-EXTERNAL NAME _assembly\_name_**.**_class\_name_**.**_method\_name_  
+EXTERNAL NAME _assembly\_name_ **.** _class\_name_ **.** _method\_name_  
  **適用対象**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] から [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]、[!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
   
- CLR プロシージャで参照する [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] アセンブリのメソッドを指定します。 *class_name* は、有効な [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 識別子であること、およびアセンブリにクラスとして存在していることが必要です。 名前空間部分を区切るためにピリオド (**.**) を使う名前空間修飾名がクラスにある場合は、クラス名をかっこ (**[ ]**) または引用符 (**""**) で区切る必要があります。 指定するメソッドは、クラスの静的メソッドであることが必要です。  
+ CLR プロシージャで参照する [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] アセンブリのメソッドを指定します。 *class_name* は、有効な [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 識別子であること、およびアセンブリにクラスとして存在していることが必要です。 名前空間部分を区切るためにピリオド ( **.** ) を使う名前空間修飾名がクラスにある場合は、クラス名をかっこ ( **[ ]** ) または引用符 ( **""** ) で区切る必要があります。 指定するメソッドは、クラスの静的メソッドであることが必要です。  
   
  既定では、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は CLR コードを実行できません。 共通言語ランタイム モジュールを参照するデータベース オブジェクトを作成、変更、および削除することはできますが、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] でこれらの参照を実行するには、[clr enabled オプション](../../database-engine/configure-windows/clr-enabled-server-configuration-option.md)を有効にする必要があります。 このオプションを有効にするには、[sp_configure](../../relational-databases/system-stored-procedures/sp-configure-transact-sql.md) を使用します。  
   
@@ -344,7 +343,7 @@ SELECT DB_NAME() AS ThisDB;
 ```   
 `EXEC What_DB_is_this;` というステートメントを使ってストアド プロシージャを呼び出します。   
 
-もう少し複雑な例として、プロシージャの柔軟性を高めるために入力パラメーターを提供します。 例 :  
+もう少し複雑な例として、プロシージャの柔軟性を高めるために入力パラメーターを提供します。 例:  
 ```sql   
 CREATE PROC What_DB_is_that @ID int   
 AS    
@@ -456,7 +455,7 @@ GO
 ||Cache Pages|  
 ||Cache Object Counts*|  
   
- * アドホック [!INCLUDE[tsql](../../includes/tsql-md.md)]、準備された [!INCLUDE[tsql](../../includes/tsql-md.md)]、プロシージャ、トリガーなど、キャッシュ オブジェクトの種類別にオブジェクトの数を調べることができます。 詳しくは、「[SQL Server の Plan Cache オブジェクト](../../relational-databases/performance-monitor/sql-server-plan-cache-object.md)」をご覧ください。  
+ \* アドホック [!INCLUDE[tsql](../../includes/tsql-md.md)]、準備された [!INCLUDE[tsql](../../includes/tsql-md.md)]、プロシージャ、トリガーなど、キャッシュ オブジェクトの種類別にオブジェクトの数を調べることができます。 詳しくは、「[SQL Server の Plan Cache オブジェクト](../../relational-databases/performance-monitor/sql-server-plan-cache-object.md)」をご覧ください。  
   
 ## <a name="security"></a>Security  
   
@@ -659,7 +658,7 @@ SET @ComparePrice = @MaxPrice;
 GO  
 ```  
   
- `uspGetList` を実行し、`$700` より安い [!INCLUDE[ssSampleDBCoShort](../../includes/sssampledbcoshort-md.md)] 製品 (バイク) の一覧を返します。 ここではフロー制御言語と共に `OUTPUT` パラメーターの `@Cost` および `@ComparePrices` を使用して、**[メッセージ]** ウィンドウにメッセージを返します。  
+ `uspGetList` を実行し、`$700` より安い [!INCLUDE[ssSampleDBCoShort](../../includes/sssampledbcoshort-md.md)] 製品 (バイク) の一覧を返します。 ここではフロー制御言語と共に `OUTPUT` パラメーターの `@Cost` および `@ComparePrices` を使用して、 **[メッセージ]** ウィンドウにメッセージを返します。  
   
 > [!NOTE]  
 >  OUTPUT 変数は、プロシージャの作成時と変数の使用時に定義する必要があります。 パラメーター名と変数名は一致する必要はありませんが、データ型とパラメーターの位置は一致する必要があります。ただし、`@ListPrice` = *variable* が使用されている場合を除きます。  
@@ -969,7 +968,7 @@ AS TRUNCATE TABLE MyDB..MyTable;
   
 ## <a name="examples-includesssdwfullincludessssdwfull-mdmd-and-includesspdwincludessspdw-mdmd"></a>例: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] および [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  
   
-### <a name="o-create-a-stored-procedure-that-runs-a-select-statement"></a>O.  SELECT ステートメントを実行するストアド プロシージャを作成します。  
+### <a name="o-create-a-stored-procedure-that-runs-a-select-statement"></a>O. SELECT ステートメントを実行するストアド プロシージャを作成します。  
  この例では、プロシージャを作成して実行するための基本構文を示します。 バッチを実行する場合は、CREATE PROCEDURE を最初のステートメントにする必要があります。 たとえば、[!INCLUDE[ssawPDW](../../includes/ssawpdw-md.md)] で次のストアド プロシージャを作成するには、最初にデータベース コンテキストを設定した後、CREATE PROCEDURE ステートメントを実行します。  
   
 ```sql  
@@ -998,7 +997,7 @@ EXEC Get10TopResellers;
  [DECLARE @local_variable &#40;Transact-SQL&#41;](../../t-sql/language-elements/declare-local-variable-transact-sql.md)   
  [DROP PROCEDURE &#40;Transact-SQL&#41;](../../t-sql/statements/drop-procedure-transact-sql.md)   
  [EXECUTE &#40;Transact-SQL&#41;](../../t-sql/language-elements/execute-transact-sql.md)   
- [実行 AS (& a) #40 です。TRANSACT-SQL と #41 です。](../../t-sql/statements/execute-as-transact-sql.md)   
+ [EXECUTE AS &#40;Transact-SQL&#41;](../../t-sql/statements/execute-as-transact-sql.md)   
  [ストアド プロシージャ &#40;データベース エンジン&#41;](../../relational-databases/stored-procedures/stored-procedures-database-engine.md)   
  [sp_procoption &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-procoption-transact-sql.md)   
  [sp_recompile &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-recompile-transact-sql.md)   

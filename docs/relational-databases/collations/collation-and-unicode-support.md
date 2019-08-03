@@ -28,14 +28,13 @@ helpviewer_keywords:
 ms.assetid: 92d34f48-fa2b-47c5-89d3-a4c39b0f39eb
 author: stevestein
 ms.author: sstein
-manager: craigg
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: bcff15423fb1ab3f1f05347bddba6eab09fae713
-ms.sourcegitcommit: ab867100949e932f29d25a3c41171f01156e923d
+ms.openlocfilehash: af749bdb7050d9e71fdfe698fe295255a4603add
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67419198"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68118485"
 ---
 # <a name="collation-and-unicode-support"></a>Collation and Unicode Support
 [!INCLUDE[appliesto-ss-asdb-asdw-pdw-md](../../includes/appliesto-ss-asdb-asdw-pdw-md.md)]
@@ -271,10 +270,14 @@ Unicode Consortium では、各文字に一意のコード ポイント (000000 
 
 <sup>2</sup> [補助文字](#Supplementary_Characters)のコード ポイント範囲。
 
-上記のように、使われている文字セットによっては、適切な Unicode エンコードとデータ型を選択することで、ストレージを大幅に節約できます。 たとえば、ASCII 文字の既存の列データ型を、UTF-8 対応の照合順序を使って `NCHAR(10)` から `CHAR(10)` に変更すると、必要なストレージが 50% 削減されます。 このように減るのは、`NCHAR(10)` を保存するには 20 バイト必要であるのに対し、`CHAR(10)` では同じ Unicode 文字列表現に 10 バイトしか必要ないためです。
+> [!TIP]   
+> [CHAR(*n*) および VARCHAR(*n*)](../../t-sql/data-types/char-and-varchar-transact-sql.md)、または[NCHAR(*n*) および NVARCHAR(*n*)](../../t-sql/data-types/nchar-and-nvarchar-transact-sql.md) では *n* は文字数を定義すると考えるのが一般的です。 これは、CHAR (10) 列の例では、0 から 127 の範囲の 10 個の ASCII 文字を Latin1_General_100_CI_AI などの照合順序を使用して格納できるためで、この範囲内の各文字が 1 バイトのみを使用するためです。    
+> ただし、[CHAR(*n*) および VARCHAR(*n*)](../../t-sql/data-types/char-and-varchar-transact-sql.md) では、*n* は **bytes** (0-8,000) の文字列サイズを定義し、[NCHAR(*n*) および NVARCHAR(*n*)](../../t-sql/data-types/nchar-and-nvarchar-transact-sql.md) では *n* は**byte-pairs** (0-4,000) の文字列の長さを定義します。 *n* は、格納できる文字数を定義しません。
+
+上記のように、使われている文字セットによっては、適切な Unicode エンコードとデータ型を選択することで、ストレージを大幅に節約したり、現在のストレージの占有領域を増やしたりする可能性があります。 たとえば、Latin1_General_100_CI_AI_SC_UTF8 など、UTF-8 対応のラテン語の照合順序を使用する場合、`CHAR(10)` 列に 10 バイトが格納され、0-127 の範囲に 10 個の ASCII 文字を保持できますが、128-2047 の範囲では 5 文字のみ、2048-65535 の範囲には 3 文字のみ保持できます。 これに対して、`NCHAR(10)` 列には 10 バイトペア (20 バイト) が格納されるため、0-65535 の範囲に 10 文字を保持できます。  
 
 データベースまたは列に UTF-8 または UTF-16 のどちらのエンコードを使うかを選択する前に、格納される文字列データの分布を考慮してください。
--  主に ASCII 範囲の場合は (英語など)、各文字に UTF-8 では 1 バイト、UTF-16 では 2 バイトが必要です。 UTF-8 を使う方がストレージに関してメリットがあります。 
+-  主に 0-127 の ASCII 範囲の場合は (英語など)、各文字に UTF-8 では 1 バイト、UTF-16 では 2 バイトが必要です。 UTF-8 を使う方がストレージに関してメリットがあります。 0-127 の範囲の ASCII 文字の既存の列データ型を、UTF-8 対応の照合順序を使って `NCHAR(10)` から `CHAR(10)` に変更すると、必要なストレージが 50% 削減されます。 このように減るのは、`NCHAR(10)` を保存するには 20 バイト必要であるのに対し、`CHAR(10)` では同じ Unicode 文字列表現に 10 バイトしか必要ないためです。    
 -  ASCII の範囲の上の、ほぼすべてのラテン語系スクリプト、およびギリシャ語、キリル語、コプト語、アルメニア語、ヘブライ語、アラビア語、シリア語、Tāna、N’Ko では、UTF-8 および UTF-16 のどちらでも、1 文字あたり 2 バイトが必要です。 これらの場合は、対応するデータ型で大きなストレージの違いはありません (たとえば、**char** または **nchar** を使う場合)。
 -  主に東アジア言語のスクリプト (韓国語、中国語、日本語) の場合は、各文字に UTF-8 では 3 バイト、UTF-16 では 2 バイトが必要です。 UTF-16 を使う方がストレージに関してメリットがあります。 
 -  010000 から 10FFFF の範囲の文字には、UTF-8 と UTF-16 のどちらでも 4 バイト必要です。 これらの場合は、対応するデータ型でストレージの違いはありません (たとえば、**char** または **nchar** を使う場合)。

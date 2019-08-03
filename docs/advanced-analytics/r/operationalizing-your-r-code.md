@@ -7,12 +7,13 @@ ms.date: 03/15/2019
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: 1ac89b23d9b027c8f5fd02daa28a4246cddf48f1
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: adcac48bc7d90aae5f05a9b671f05e34cc8cf554
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68470134"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715685"
 ---
 # <a name="operationalize-r-code-using-stored-procedures-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services のストアドプロシージャを使用した R コードの運用化
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -42,7 +43,7 @@ R または Python コードで事前にいくつかの最適化を実行する�
 
 スコアリングは、外部アプリケーションから簡単に自動化または開始できる重要なタスクです。 R または Python またはストアドプロシージャを使用してモデルを事前にトレーニングし、[モデルをバイナリ形式で](../tutorials/walkthrough-build-and-save-the-model.md)テーブルに保存します。 次に、次のいずれかのオプションを使用して、ストアドプロシージャの呼び出しの一部としてモデルを変数に読み込むことができます。
 
-+ 小規模なバッチ用に最適化された[リアルタイム](../real-time-scoring.md)スコアリング
++ [リアルタイムスコアリング、小規模なバッチ用に最適化
 + 単一行スコアリング、アプリケーションからの呼び出し
 + [ネイティブスコアリング](../sql-native-scoring.md)(R を呼び出さずに SQL Server からの高速バッチ予測用)
 

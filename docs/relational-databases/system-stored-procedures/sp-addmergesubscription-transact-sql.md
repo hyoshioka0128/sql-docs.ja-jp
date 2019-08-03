@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: a191d817-0132-49ff-93ca-76f13e609b38
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 1215ee5b90729237117599edc747dc68b04f0575
-ms.sourcegitcommit: 97e94b76f9f48d161798afcf89a8c2ac0f09c584
+ms.openlocfilehash: b501a2c06a6d9e8e3573ef5d5814c3318c4e623b
+ms.sourcegitcommit: 728a4fa5a3022c237b68b31724fce441c4e4d0ab
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68661484"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68769135"
 ---
 # <a name="spaddmergesubscription-transact-sql"></a>sp_addmergesubscription (Transact-sql)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[appliesto-ss-asdbmi-xxxx-xxx-md](../../includes/appliesto-ss-asdbmi-xxxx-xxx-md.md)]
 
   プッシュ マージ サブスクリプションまたはプル マージ サブスクリプションを作成します。 このストアド プロシージャは、パブリッシャー側でパブリケーション データベースについて実行されます。  
   
@@ -74,7 +74,7 @@ sp_addmergesubscription [ @publication= ] 'publication'
   
 `[ @subscriber_type = ] 'subscriber_type'`サブスクライバーの種類を示します。 *subscriber_type*は**nvarchar (15)** ,、値は次のいずれかを指定することができます。  
   
-|[値]|説明|  
+|値|説明|  
 |-----------|-----------------|  
 |**ローカル**標準|パブリッシャーだけが認識しているサブスクライバー。|  
 |**global**|すべてのサーバーが認識しているサブスクライバー。|  
@@ -83,7 +83,7 @@ sp_addmergesubscription [ @publication= ] 'publication'
   
 `[ @subscription_priority = ] subscription_priority`サブスクリプションの優先度を示す数値です。 *subscription_priority*は**real**,、既定値は NULL です。 ローカルサブスクリプションと匿名サブスクリプションの場合、優先度は0.0 です。 グローバル サブスクリプションの場合は、優先度を 100.0 未満にする必要があります。  
   
-`[ @sync_type = ] 'sync_type'`サブスクリプションの同期の種類を示します。 *sync_type*は**nvarchar (15)** ,、既定値は**automatic**です。 **Automatic**または**none**を指定できます。 **自動**の場合、パブリッシュされたテーブルのスキーマと初期データが最初にサブスクライバーに転送されます。 存在し**ない場合は**、パブリッシュされたテーブルのスキーマと初期データがサブスクライバーに既に存在していると見なされます。 システム テーブルとデータは常に転送されます。  
+`[ @sync_type = ] 'sync_type'`サブスクリプションの同期の種類を示します。 *sync_type*は**nvarchar (15)** ,、既定値は**automatic**です。 **Automatic**または**none**を指定できます。 **自動**の場合、パブリッシュされたテーブルのスキーマと初期データが最初にサブスクライバーに転送されます。 存在しない場合は、パブリッシュされたテーブルのスキーマと初期データがサブスクライバーに既に存在していると見なされます。 システム テーブルとデータは常に転送されます。  
   
 > [!NOTE]  
 >  値を**none**に指定しないことをお勧めします。  
@@ -118,7 +118,7 @@ sp_addmergesubscription [ @publication= ] 'publication'
   
 `[ @frequency_relative_interval = ] frequency_relative_interval`スケジュールされたマージの実行間隔を月単位で指定します。 *frequency_relative_interval*は**int**,、これらの値のいずれかを指定することができます。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |**1**|First|  
 |**2**|第 2 週|  
@@ -131,7 +131,7 @@ sp_addmergesubscription [ @publication= ] 'publication'
   
 `[ @frequency_subday = ] frequency_subday`*Frequency_subday_interval*の単位を示します。 *frequency_subday*は**int**,、値は次のいずれかを指定することができます。  
   
-|値|説明|  
+|[値]|説明|  
 |-----------|-----------------|  
 |**1**|1 回。|  
 |**2**|第 2 週|  

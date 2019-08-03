@@ -1,5 +1,5 @@
 ---
-title: sp_repldone (TRANSACT-SQL) |Microsoft Docs
+title: sp_repldone (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/03/2017
 ms.prod: sql
@@ -15,20 +15,20 @@ helpviewer_keywords:
 ms.assetid: 045d3cd1-712b-44b7-a56a-c9438d4077b9
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 5ed4502b7f3e737b8e3adbfae852c2a513e2ccd4
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 35cd38269fabba59d257e41141141764b6d4919d
+ms.sourcegitcommit: 728a4fa5a3022c237b68b31724fce441c4e4d0ab
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68006885"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68771115"
 ---
 # <a name="sprepldone-transact-sql"></a>sp_repldone (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[appliesto-ss-asdbmi-xxxx-xxx-md](../../includes/appliesto-ss-asdbmi-xxxx-xxx-md.md)]
 
   サーバーで最後にディストリビュートされたトランザクションを識別するレコードを更新します。 このストアド プロシージャは、パブリッシャー側でパブリケーション データベースについて実行されます。  
   
 > [!CAUTION]  
->  実行する場合**sp_repldone**順序や配信されたトランザクションの一貫性を無効にできる、手動でします。 **sp_repldone**サポート プロフェッショナルの経験豊富なレプリケーションのレプリケーションのトラブルシューティングにのみ使用する必要があります。  
+>  **Sp_repldone**を手動で実行する場合は、配信されたトランザクションの順序と一貫性を無効にすることができます。 **sp_repldone**は、レプリケーションのサポート担当者によって指示されたレプリケーションのトラブルシューティングにのみ使用してください。  
   
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -44,45 +44,45 @@ sp_repldone [ @xactid= ] xactid
 ```  
   
 ## <a name="arguments"></a>引数  
-`[ @xactid = ] xactid` 最後に、サーバーの分散トランザクションの最初のレコードのログ シーケンス番号 (LSN) は、します。 *xactid*は**binary (10)** 、既定値はありません。  
+`[ @xactid = ] xactid`サーバーの最後に分散されたトランザクションの最初のレコードのログシーケンス番号 (LSN) を指定します。 *xactid*は**binary (10)** ,、既定値はありません。  
   
-`[ @xact_seqno = ] xact_seqno` 最後に、サーバーの分散トランザクションの最後のレコードの LSN です。 *xact_seqno*は**binary (10)** 、既定値はありません。  
+`[ @xact_seqno = ] xact_seqno`サーバーの最後に分散されたトランザクションの最後のレコードの LSN を示します。 *xact_seqno*は**binary (10)** ,、既定値はありません。  
   
-`[ @numtrans = ] numtrans` 分散トランザクションの数です。 *numtrans*は**int**、既定値はありません。  
+`[ @numtrans = ] numtrans`分散されているトランザクションの数を指定します。 *numtrans*は**int**,、既定値はありません。  
   
-`[ @time = ] time` (ミリ秒単位) の指定した場合、必要な数のトランザクションの最後のバッチを配布します。 *時間*は**int**、既定値はありません。  
+`[ @time = ] time`トランザクションの最後のバッチを配布するために必要な時間 (ミリ秒単位) を指定します。 *time*は**int**,、既定値はありません。  
   
-`[ @reset = ] reset` リセット状態です。 *リセット*は**int**、既定値はありません。 場合**1**、レプリケートされたすべてのログ内のトランザクションがマークされているディストリビュート済み。 場合**0**、トランザクション ログは、最初のレプリケートされたトランザクションにリセットし、レプリケートされたトランザクションがマークされていないと分散します。 *リセット*場合のみ有効ですが両方*xactid*と*xact_seqno*は NULL です。  
+`[ @reset = ] reset`リセットの状態を示します。 *reset*は**int**,、既定値はありません。 **1**の場合、ログ内のすべてのレプリケートされたトランザクションは、分散としてマークされます。 **0**の場合、トランザクションログは最初のレプリケートされたトランザクションにリセットされ、レプリケートされたトランザクションは配信済みとしてマークされません。 *reset*は、 *xactid*と*xact_seqno*の両方が NULL の場合にのみ有効です。  
   
 ## <a name="return-code-values"></a>リターン コードの値  
  **0** (成功) または**1** (失敗)  
   
 ## <a name="remarks"></a>コメント  
- **sp_repldone**はトランザクション レプリケーションで使用します。  
+ **sp_repldone**は、トランザクションレプリケーションで使用します。  
   
- **sp_repldone**ログ読み取りプロセスで配布されたトランザクションを追跡するために使用します。  
+ **sp_repldone**は、配布されたトランザクションを追跡するために、ログリーダープロセスによって使用されます。  
   
- **Sp_repldone**、手動でわかりますサーバー (ディストリビューターに送られます)、トランザクションがレプリケートされることです。 次のものとしてマークされたトランザクションを変更することもできますレプリケーションを待機しています。 レプリケートされたトランザクションの一覧で前方または後方を移動することができます。 このトランザクションおよびそれ以前のトランザクションはすべてディストリビュートされたことを示すマークが付きます。  
+ **Sp_repldone**を使用すると、トランザクションがレプリケートされた (ディストリビューターに送信された) ことをサーバーに手動で通知できます。 また、レプリケーションを待機しているトランザクションを次のように変更することもできます。 レプリケートされたトランザクションの一覧で、前方または後方に移動できます。 このトランザクションおよびそれ以前のトランザクションはすべてディストリビュートされたことを示すマークが付きます。  
   
- 必要なパラメーター *xactid*と*xact_seqno*を使用して取得できる**sp_repltrans**または**sp_replcmds**します。  
+ 必要なパラメーター *xactid*と*xact_seqno*は、 **sp_repltrans**または**sp_replcmds**を使用して取得できます。  
   
 ## <a name="permissions"></a>アクセス許可  
- メンバー、 **sysadmin**固定サーバー ロールまたは**db_owner**固定データベース ロールが実行できる**sp_repldone**します。  
+ **Sysadmin**固定サーバーロールまたは**db_owner**固定データベースロールのメンバーは、 **sp_repldone**を実行できます。  
   
 ## <a name="examples"></a>使用例  
- ときに*xactid*が null の場合、 *xact_seqno*が null の場合、および*リセット*は**1**、レプリケートされたすべて、ログ内のトランザクションがマークされているディストリビュート済み。 これは、機能は、レプリケートされたトランザクションがトランザクション ログに無効になっていると、たとえば、ログを切り捨てるときに便利です。  
+ *Xactid*が null の場合、 *xact_seqno*が null で、 *reset*が**1**の場合、ログ内のすべてのレプリケートされたトランザクションが配布済みとしてマークされます。 これは、トランザクションログに有効ではなく、ログを切り捨てる必要があるトランザクションがレプリケートされている場合に便利です。次に例を示します。  
   
 ```  
 EXEC sp_repldone @xactid = NULL, @xact_segno = NULL, @numtrans = 0,     @time = 0, @reset = 1  
 ```  
   
 > [!CAUTION]  
->  このプロシージャは、レプリケーション保留中のトランザクションが存在する場合は、トランザクション ログの切り捨てを許可する緊急の状況で使用できます。  
+>  このプロシージャは、レプリケーションを保留しているトランザクションが存在するときにトランザクションログが切り捨てられるように、緊急の場合に使用できます。  
   
 ## <a name="see-also"></a>関連項目  
  [sp_replcmds &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-replcmds-transact-sql.md)   
- [sp_replflush &#40;TRANSACT-SQL&#41;](../../relational-databases/system-stored-procedures/sp-replflush-transact-sql.md)   
- [sp_repltrans &#40;TRANSACT-SQL&#41;](../../relational-databases/system-stored-procedures/sp-repltrans-transact-sql.md)   
+ [sp_replflush &#40;transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-replflush-transact-sql.md)   
+ [sp_repltrans &#40;transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-repltrans-transact-sql.md)   
  [システム ストアド プロシージャ &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/system-stored-procedures-transact-sql.md)  
   
   

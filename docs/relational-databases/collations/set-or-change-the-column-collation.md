@@ -12,20 +12,19 @@ helpviewer_keywords:
 ms.assetid: d7a9638b-717c-4680-9b98-8849081e08be
 author: stevestein
 ms.author: sstein
-manager: craigg
 monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: bf856f9ae013dd2f19cb72b04c0c2296d0185511
-ms.sourcegitcommit: 61381ef939415fe019285def9450d7583df1fed0
+ms.openlocfilehash: 5d49dbce19b0d2c7ce1fa1337eb6cbdc58da08f7
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47661910"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68140860"
 ---
 # <a name="set-or-change-the-column-collation"></a>列の照合順序の設定または変更
 [!INCLUDE[appliesto-ss-asdb-xxxx-xxx-md](../../includes/appliesto-ss-asdb-xxxx-xxx-md.md)]
   **char** 型、**varchar** 型、**text** 型、**nchar** 型、**nvarchar** 型、および **ntext** 型のデータのデータベース照合順序は、テーブルの列ごとに異なる照合順序を指定し、次のいずれかを使用することでオーバーライドできます。  
   
--   [CREATE TABLE](../../t-sql/statements/create-table-transact-sql.md) と [ALTER TABLE](../../t-sql/statements/alter-table-transact-sql.md)の COLLATE 句。 例 :  
+-   [CREATE TABLE](../../t-sql/statements/create-table-transact-sql.md) と [ALTER TABLE](../../t-sql/statements/alter-table-transact-sql.md)の COLLATE 句。 例:  
   
     ```  
     CREATE TABLE dbo.MyTable  
@@ -70,7 +69,7 @@ USE TestDB;
 CREATE TABLE TestPermTab (PrimaryKey int PRIMARY KEY, Col1 nchar );  
 ```  
   
- このシステムでは、 **tempdb** データベースにコード ページ 1252 の Latin1_General_CS_AS 照合順序が使用され、 `TestDB` と `TestPermTab.Col1` にコード ページ 1257 の `Estonian_CS_AS` 照合順序が使用されることになります。 例 :  
+ このシステムでは、 **tempdb** データベースにコード ページ 1252 の Latin1_General_CS_AS 照合順序が使用され、 `TestDB` と `TestPermTab.Col1` にコード ページ 1257 の `Estonian_CS_AS` 照合順序が使用されることになります。 例:  
   
 ```  
 USE TestDB;  
@@ -83,13 +82,13 @@ INSERT INTO #TestTempTab
 GO  
 ```  
   
- 上記の例では、 **tempdb** データベースで Latin1_General_CS_AS 照合順序が使用され、 `TestDB` と `TestTab.Col1` では `Estonian_CS_AS` 照合順序が使用されます。 例 :  
+ 上記の例では、 **tempdb** データベースで Latin1_General_CS_AS 照合順序が使用され、 `TestDB` と `TestTab.Col1` では `Estonian_CS_AS` 照合順序が使用されます。 例:  
   
 ```  
 SELECT * FROM TestPermTab AS a INNER JOIN #TestTempTab on a.Col1 = #TestTempTab.Col1;  
 ```  
   
- **tempdb** ではサーバーの既定照合順序が使用され、 `TestPermTab.Col1` では異なる照合順序が使用されるので、"Cannot resolve collation conflict between 'Latin1_General_CI_AS_KS_WS' and 'Estonian_CS_AS' in equal to operation. " (equal to 操作の 'Latin1_General_CI_AS_KS_WS' と 'Estonian_CS_AS' 間での照合順序の競合を解決できません。) というエラーが SQL Server から返されます。  
+ **ttempdbt** で既定のサーバー照合順序が使用され、`TestPermTab.Col1` で別の照合順序が使用されるため、SQL Server は次のエラーを返します。"equal to 操作の Latin1_General_CI_AS_KS_WS' と 'Estonian_CS_AS' 間での照合順序の競合を解決できません。"  
   
  このエラーを回避するには、次のいずれかを行います。  
   

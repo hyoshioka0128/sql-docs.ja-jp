@@ -13,13 +13,12 @@ f1_keywords:
 ms.assetid: 68bd1d04-d20f-4357-a34e-7c9c76457062
 author: janinezhang
 ms.author: janinez
-manager: craigg
-ms.openlocfilehash: 03acf5db82c21a66e2fbd8337713b6989ce36a31
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: 8a115dafb386323bc1f4738720e7576657d22543
+ms.sourcegitcommit: 2efb0fa21ff8093384c1df21f0e8910db15ef931
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "66403069"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68316686"
 ---
 # <a name="azure-storage-connection-manager"></a>Azure Storage 接続マネージャー
 
@@ -38,6 +37,6 @@ ms.locfileid: "66403069"
 - **認証:** 使用する認証方法を指定します。 **AccessKey** と **ServicePrincipal** の認証がサポートされています。
     - **AccessKey:** この認証方法には、**アカウント キー**を指定します。
     - **ServicePrincipal:** この認証方法には、サービス プリンシパルの**アプリケーション ID**、**アプリケーション キー**、**テナント ID** を指定します。
-      サービス プリンシパルにはストレージ アカウントに対する**ストレージ BLOB データ共同作成者**の役割を割り当てる必要があります。
+      **テスト接続**が機能するためには、サービス プリンシパルには少なくともストレージ アカウントに対する**ストレージ BLOB データ閲覧者**の役割を割り当てる必要があります。
       詳細については、[この](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal#assign-rbac-roles-using-the-azure-portal)ページを参照してください。
 - **環境:** ストレージ アカウントをホストするクラウド環境を指定します。

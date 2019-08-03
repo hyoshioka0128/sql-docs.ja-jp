@@ -18,17 +18,18 @@ helpviewer_keywords:
 ms.assetid: 00179314-f23e-47cb-a35c-da6f180f86d3
 author: stevestein
 ms.author: sstein
-manager: craigg
-ms.openlocfilehash: 4507a56146b6324e065d6d24a19855292ebf5276
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: 724511cb3a60278c6642eb31cbb3481fe92f0d72
+ms.sourcegitcommit: ef7834ed0f38c1712f45737018a0bfe892e894ee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "62861236"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68300438"
 ---
 # <a name="database-snapshots-sql-server"></a>データベース スナップショット (SQL Server)
+
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
-  データベース スナップショットは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベース (*ソース データベース*) の読み取り専用の静的ビューです。 データベース スナップショットには、そのスナップショットを作成した時点でのソース データベースに対するトランザクションが反映されています。 データベース スナップショットは、常にそのソース データベースと同じサーバー インスタンス上に存在します。 ソース データベースが更新されると、データベース スナップショットが更新されます。 したがって、データベース スナップショットが長期間にわたって存在するほど、使用可能なディスク領域が使い尽くされる可能性が高くなります。  
+
+データベース スナップショットは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベース (*ソース データベース*) の読み取り専用の静的ビューです。 データベース スナップショットには、そのスナップショットを作成した時点でのソース データベースに対するトランザクションが反映されています。 データベース スナップショットは、常にそのソース データベースと同じサーバー インスタンス上に存在します。 データベース スナップショットは、スナップショットが作成されたときと同じ状態でデータの読み取り専用ビューを提供しますが、ソース データベースに変更が加えられると、スナップショット ファイルのサイズは大きくなります。 詳細については、後述の「[機能の概要](#FeatureOverview)」セクションを参照してください。
   
  1 つのソース データベースには複数のスナップショットが存在できます。 各データベース スナップショットは、データベースの所有者によって明示的に削除されるまで保持されます。  
   

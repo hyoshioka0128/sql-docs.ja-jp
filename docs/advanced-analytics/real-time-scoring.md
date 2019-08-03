@@ -3,16 +3,17 @@ title: Sp_rxPredict ストアドプロシージャを使用したリアルタイ
 description: Sp_rxPredict を使用して予測を生成し、SQL Server で R で記述された事前トレーニング済みモデルに対してデータ入力をスコア付けします。
 ms.prod: sql
 ms.technology: machine-learning
-ms.date: 03/29/2019
+ms.date: 07/26/2019
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: b4284d77464597857eca500b4a8ad29e1f4d06ee
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: 26701ac6e538d195a5a85ad66af9578848889d23
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68469967"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715645"
 ---
 # <a name="real-time-scoring-with-sprxpredict-in-sql-server-machine-learning"></a>SQL Server machine learning での sp_rxPredict を使用したリアルタイムのスコアリング
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -21,7 +22,7 @@ ms.locfileid: "68469967"
 
 ## <a name="how-real-time-scoring-works"></a>リアルタイムスコアリングのしくみ
 
-リアルタイムスコアリングは、RevoScaleR または[rxLinMod (RevoScaleR)](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxlinmod)[rxNeuralNet (microsoft ml)](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/rxneuralnet)などの microsoft ml 関数に基づく特定のモデルの種類で、SQL Server 2017 と SQL Server 2016 の両方でサポートされています。 また、ネイティブC++ライブラリを使用して、特別なバイナリ形式で格納された機械学習モデルに提供されるユーザー入力に基づいてスコアを生成します。
+リアルタイムスコアリングは、RevoScaleR または[rxLinMod (RevoScaleR)](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxlinmod)[RxNeuralNet (microsoft ml)](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/rxneuralnet)などの microsoft ml 関数に基づく特定のモデルの種類でサポートされています。 また、ネイティブC++ライブラリを使用して、特別なバイナリ形式で格納された機械学習モデルに提供されるユーザー入力に基づいてスコアを生成します。
 
 トレーニング済みのモデルは、外部言語ランタイムを呼び出すことなくスコアリングに使用できるため、複数のプロセスのオーバーヘッドが削減されます。 これにより、運用スコアリングシナリオでの予測パフォーマンスが格段に速くなります。 データが SQL Server から出ることはないため、R と SQL の間でデータを変換しなくても、結果を生成して新しいテーブルに挿入することができます。
 

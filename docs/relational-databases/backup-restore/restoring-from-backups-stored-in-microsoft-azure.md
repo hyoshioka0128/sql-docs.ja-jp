@@ -10,13 +10,12 @@ ms.topic: conceptual
 ms.assetid: 6ae358b2-6f6f-46e0-a7c8-f9ac6ce79a0e
 author: MikeRayMSFT
 ms.author: mikeray
-manager: craigg
-ms.openlocfilehash: e12e2b8d1578d85420d7a5f3ddd61a85fdd6de7d
-ms.sourcegitcommit: 9c6a37175296144464ffea815f371c024fce7032
+ms.openlocfilehash: 51e1ce454a2b6d0309a33d155cc0e069b5a17a29
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51663061"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68041464"
 ---
 # <a name="restoring-from-backups-stored-in-microsoft-azure"></a>Microsoft Azure に格納されたバックアップからの復元
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -42,7 +41,7 @@ ms.locfileid: "51663061"
   
  復元時間を短縮するには、圧縮されたバックアップを使用することをお勧めします。  バックアップ サイズが 25 GB を超える場合は、 [AzCopy ユーティリティ](https://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx) を使用してローカル ドライブにダウンロードしてから復元を実行します。 バックアップに関するその他のベスト プラクティスと推奨事項については、「 [SQL Server Backup to URL のベスト プラクティスとトラブルシューティング](../../relational-databases/backup-restore/sql-server-backup-to-url-best-practices-and-troubleshooting.md)」を参照してください。  
   
- 復元を実行するときに詳細ログを生成するために、トレース フラグ 3051 を有効にすることもできます。 このログ ファイルはログ ディレクトリに配置され、BackupToUrl-\<instancename>-\<dbname>-action-\<PID>.log という形式を使用してファイル名が割り当てられます。 このログ ファイルには、問題の診断に役に立つタイミングも含め、Windows Azure ストレージへの各ラウンド トリップが記録されます。  
+ 復元を実行するときに詳細ログを生成するために、トレース フラグ 3051 を有効にすることもできます。 このログ ファイルはログ ディレクトリに配置され、次の形式を使用して名前が付けられます: BackupToUrl-\<インスタンス名>-\<DB 名>-action-\<PID>.log。 このログ ファイルには、問題の診断に役に立つタイミングも含め、Windows Azure ストレージへの各ラウンド トリップが記録されます。  
   
 ### <a name="topics-on-performing-restore-operations"></a>復元操作の実行に関するトピック  
   

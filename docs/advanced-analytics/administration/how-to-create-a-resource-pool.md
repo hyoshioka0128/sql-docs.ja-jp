@@ -1,20 +1,21 @@
 ---
 title: R および Python 用のリソースプールを作成する方法
-description: SQL Server 2016 または SQL Server 2017 データベースエンジンインスタンス上の R または Python プロセスの SQL Server リソースプールを定義します。
+description: SQL Server データベースエンジンインスタンス上の R または Python プロセスの SQL Server リソースプールを定義します。
 ms.prod: sql
 ms.technology: machine-learning
-ms.date: 04/15/2018
+ms.date: 07/30/2019
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: 5b58c2a42334352d64aa2cea61a75585f29996c3
-ms.sourcegitcommit: c1382268152585aa77688162d2286798fd8a06bb
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: 882b9b15fbba567f30172d625af3867b27ae387e
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68344071"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715903"
 ---
-# <a name="how-to-create-a-resource-pool-for-machine-learning-in-sql-server"></a>SQL Server で machine learning 用のリソースプールを作成する方法
+# <a name="how-to-create-a-resource-pool-for-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services のリソースプールを作成する方法
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md-winonly](../../includes/appliesto-ss-xxxx-xxxx-xxx-md-winonly.md)]
 
 この記事では、SQL Server で R および Python machine learning ワークロードの管理専用のリソースプールを作成して使用する方法について説明します。 Machine learning の機能が既にインストールされ、有効になっていることを前提としています。また、R や Python などの外部プロセスで使用されるリソースの詳細な管理をサポートするようにインスタンスを再構成する必要があります。
@@ -188,7 +189,7 @@ ms.locfileid: "68344071"
   
      ここでは、プールは、AUTO のアフィニティで作成されたため、情報は表示されません。 詳細については、「 [sys.dm_resource_governor_resource_pool_affinity &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-resource-pool-affinity-transact-sql.md)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="next-steps"></a>次の手順
 
 サーバーリソースの管理の詳細については、以下を参照してください。
 

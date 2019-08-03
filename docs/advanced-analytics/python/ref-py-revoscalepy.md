@@ -1,18 +1,19 @@
 ---
 title: revoscalepy Python パッケージ
-description: Python での SQL Server 2017 Machine Learning Services での revoscalepy モジュールの概要について説明します。
+description: Python での SQL Server Machine Learning Services での revoscalepy モジュールの概要について説明します。
 ms.prod: sql
 ms.technology: machine-learning
 ms.date: 12/12/2018
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: 297e58fe089b0f68670a9d2a994f05d9c8bf4344
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: 76c68d0753c4ba29387b3378c1086ce9bce4f53b
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68470324"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715776"
 ---
 # <a name="revoscalepy-python-module-in-sql-server"></a>revoscalepy (SQL Server の Python モジュール)
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -34,7 +35,7 @@ ms.locfileid: "68470324"
 
 **Revoscalepy**モジュールは Python 3.5 に基づいており、次のいずれかの Microsoft 製品またはダウンロードをインストールした場合にのみ使用できます。
 
-+ [SQL Server 2017 Machine Learning Services](../install/sql-machine-learning-services-windows-install.md)
++ [SQL Server Machine Learning Services](../install/sql-machine-learning-services-windows-install.md)
 + [Microsoft Machine Learning Server 9.2.0 以降](https://docs.microsoft.com/machine-learning-server/)
 + [データサイエンスクライアント用の Python クライアントライブラリ](setup-python-client-tools-sql.md)
 
@@ -89,7 +90,7 @@ SQL Server と Python は、場合によっては異なるデータ型を使用�
 
 | 関数| 説明|
 | ------- | ---------- |
-| [rx_predict](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-predict) | トレーニング済みのモデルから予測を生成する|) | トレーニング済みのモデルから予測を生成し、リアルタイムスコアリングに使用できます。 |
+| [rx_predict](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-predict) | トレーニング済みのモデルから予測を生成する|) | トレーニング済みのモデルから予測を生成し、リアルタイムのスコアリングに使用できます。 |
 |[rx_predict_default](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-predict-default) | Rx_lin_mod および rx_logit オブジェクトを使用して予測値と残余を計算します。 |
 |[rx_predict_rx_dforest](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-predict-rx-dforest) | Rx_dforest または rx_btrees オブジェクトからのデータセットの予測値または値を計算します。 |
 |[rx_predict_rx_dtree](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-predict-rx-dtree) | Rx_dtree オブジェクトからデータセットの予測値または値を計算します。 |

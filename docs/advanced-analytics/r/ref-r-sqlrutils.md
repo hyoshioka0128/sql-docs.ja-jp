@@ -1,18 +1,19 @@
 ---
 title: sqlrutils ヘルパー関数
-description: SQL Server 2016 R Services の sqlrutils 関数ライブラリを使用し、r を使用して 2017 Machine Learning Services SQL Server して、R スクリプトを含むストアドプロシージャを生成します。
+description: SQL Server 2016 R Services の sqlrutils 関数ライブラリを使用し、r を Machine Learning Services SQL Server して、R スクリプトを含むストアドプロシージャを生成します。
 ms.prod: sql
 ms.technology: machine-learning
 ms.date: 12/15/2018
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: b4218a1b30aedacdab73d08c7b76e3e19d17511c
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: 3de8d438691afb7ebf1aabe15265227b7876b837
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68469944"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715029"
 ---
 # <a name="sqlrutils-r-library-in-sql-server"></a>sqlrutils (SQL Server の R ライブラリ)
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -62,7 +63,7 @@ R コードを変換して 1 つのストアド プロシージャ内で実行�
 + ストアドプロシージャの生成と登録    
 + ストアド プロシージャを実行する  
 
-R セッションで、「」 と入力`library(sqlrutils)`してコマンドラインから sqlrutils を読み込みます。
+R セッションで、「」と入力`library(sqlrutils)`してコマンドラインから sqlrutils を読み込みます。
 
 > [!Note]
 > このライブラリは、コンピューティングコンテキストを SQL Server に変更し、その計算コンテキストでコードを実行する場合に、SQL Server がない (たとえば、R クライアントインスタンス上に) コンピューターに読み込むことができます。

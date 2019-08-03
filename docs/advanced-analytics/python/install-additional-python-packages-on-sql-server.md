@@ -1,29 +1,30 @@
 ---
 title: 新しい Python 言語パッケージをインストールする
-description: SQL Server 2017 Machine Learning Services (データベース内) と Machine Learning Server (スタンドアロン) に新しい Python パッケージを追加します。
+description: 新しい Python パッケージを SQL Server Machine Learning Services (データベース内) と Machine Learning Server (スタンドアロン) に追加します。
 ms.prod: sql
 ms.technology: machine-learning
 ms.date: 06/16/2019
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: fc8c7148369ec1a501106e573e195a8f0b7f060a
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: e107622655d5f00d27de6abcea46a92526f47ada
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68470253"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715801"
 ---
 # <a name="install-new-python-packages-on-sql-server"></a>SQL Server に新しい Python パッケージをインストールする
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
 
-この記事では、SQL Server 2017 Machine Learning Services のインスタンスに新しい Python パッケージをインストールする方法について説明します。 一般に、新しいパッケージをインストールするプロセスは、標準の Python 環境の場合と似ています。 ただし、サーバーにインターネット接続がない場合は、いくつかの追加の手順が必要になります。
+この記事では、SQL Server Machine Learning Services のインスタンスに新しい Python パッケージをインストールする方法について説明します。 一般に、新しいパッケージをインストールするプロセスは、標準の Python 環境の場合と似ています。 ただし、サーバーにインターネット接続がない場合は、いくつかの追加の手順が必要になります。
 
 パッケージの場所とインストールパスの詳細について[は、「Get R Or Python package information](../package-management/installed-package-information.md)」を参照してください。
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a>必須コンポーネント
 
-+ [SQL Server 2017 Machine Learning Services (データベース内)](../install/sql-machine-learning-services-windows-install.md)を Python 言語オプションと共に使用します。 
++ Python 言語オプションを使用して[Machine Learning Services (データベース内) を SQL Server](../install/sql-machine-learning-services-windows-install.md)します。 
 
 + パッケージは Python 3.5 に準拠し、Windows 上で実行する必要があります。 
 
@@ -128,7 +129,7 @@ Python コマンドラインを使用している場合は、SQL Server セッ�
 
 1. **[**  > **管理者として実行**] を右クリックし、 `conda list` 「」と入力して、現在の環境にインストールされているパッケージの一覧を返します。
 
-1. 同様に、 **[管理者として実行]** を右クリック`pip list`  > し、「」と入力して同じ情報を返します。 
+1. 同様に、 **[管理者として実行]** を右クリック`pip list` > し、「」と入力して同じ情報を返します。 
 
 **Conda**と、それを使用して複数の Python 環境を作成および管理する方法の詳細については、「 [conda を使用した環境の管理](https://conda.io/docs/user-guide/tasks/manage-environments.html)」を参照してください。
 

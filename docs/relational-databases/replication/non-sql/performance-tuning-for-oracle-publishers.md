@@ -12,13 +12,12 @@ helpviewer_keywords:
 ms.assetid: 32c0b4ec-c166-45a3-b41e-38a30fd56813
 author: MashaMSFT
 ms.author: mathoma
-manager: craigg
-ms.openlocfilehash: a5ae003e6d8a9d13ac9b0d6b9dfa99a497a26c23
-ms.sourcegitcommit: 61381ef939415fe019285def9450d7583df1fed0
+ms.openlocfilehash: 31ee9136f4c2b0f0864db0ecd3931e2e45ea4fdb
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47595513"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67942740"
 ---
 # <a name="performance-tuning-for-oracle-publishers"></a>Oracle パブリッシャーのパフォーマンス チューニング
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -26,7 +25,7 @@ ms.locfileid: "47595513"
   
  それに加えて、Oracle パブリッシャーには、パフォーマンスに関連するオプションが 2 つあります。  
   
--   パブリッシング オプションとして、[Oracle (完全)] または [Oracle (ゲートウェイ)] のいずれか適切な方を指定します。  
+-   適切なパブリッシング オプションの指定: [Oracle] または [Oracle (ゲートウェイ)]。  
   
 -   パブリッシャーの変更を適切な間隔で処理するようにトランザクション セット ジョブを構成します。  
   

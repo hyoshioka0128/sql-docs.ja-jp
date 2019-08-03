@@ -43,7 +43,7 @@ sp_posttracertoken [ @publication = ] 'publication'
 ## <a name="arguments"></a>引数  
 `[ @publication = ] 'publication'` 待機時間が測定されているパブリケーションの名前です。 *パブリケーション* は **sysname** 、既定値はありません。  
   
-`[ @tracer_token_id = ] _tracer_token_idOUTPUT` 挿入されたトレーサー トークンの ID です。 *@tracer_token_id*は**int**既定値は null には、出力パラメーター。 この値を実行するために使用できます[sp_helptracertokenhistory (& a) #40 です。TRANSACT-SQL と #41 です。](../../relational-databases/system-stored-procedures/sp-helptracertokenhistory-transact-sql.md)または[sp_deletetracertokenhistory (& a) #40 です。TRANSACT-SQL と #41 です。](../../relational-databases/system-stored-procedures/sp-deletetracertokenhistory-transact-sql.md)最初実行することがなく[sp_helptracertokens (& a) #40 です。TRANSACT-SQL と #41 です](../../relational-databases/system-stored-procedures/sp-helptracertokens-transact-sql.md)。  
+`[ @tracer_token_id = ] _tracer_token_idOUTPUT` は挿入されたトレーサー トークンの ID です。 *@tracer_token_id*は**int**既定値は null には、出力パラメーター。 この値を実行するために使用できます[sp_helptracertokenhistory (& a) #40 です。TRANSACT-SQL と #41 です。](../../relational-databases/system-stored-procedures/sp-helptracertokenhistory-transact-sql.md)または[sp_deletetracertokenhistory (& a) #40 です。TRANSACT-SQL と #41 です。](../../relational-databases/system-stored-procedures/sp-deletetracertokenhistory-transact-sql.md)最初実行することがなく[sp_helptracertokens (& a) #40 です。TRANSACT-SQL と #41 です](../../relational-databases/system-stored-procedures/sp-helptracertokens-transact-sql.md)。  
   
 `[ @publisher = ] 'publisher'` 以外を指定[!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]パブリッシャーです。 *パブリッシャー*は**sysname**、既定値は NULL を指定する必要があります、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]パブリッシャーです。  
   

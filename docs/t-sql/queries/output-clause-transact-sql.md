@@ -30,13 +30,12 @@ helpviewer_keywords:
 ms.assetid: 41b9962c-0c71-4227-80a0-08fdc19f5fe4
 author: VanMSFT
 ms.author: vanto
-manager: craigg
-ms.openlocfilehash: b9058fcb7ffff72620c6560fbe81df6f33fa327d
-ms.sourcegitcommit: 670082cb47f7d3d82e987b549b6f8e3a8968b5db
+ms.openlocfilehash: 13afbab4c154b39fe7762d39c0d431ce17848213
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57334739"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67901873"
 ---
 # <a name="output-clause-transact-sql"></a>OUTPUT 句 (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
@@ -134,13 +133,13 @@ DELETE Sales.ShoppingCartItem
 ```  
   
  *column_name*  
- 明示的な列参照です。 変更するテーブルへのすべての参照は、たとえばINSERTED **.**_column\_name_ のように、INSERTED プレフィックスまたは DELETED プレフィックスで正しく修飾されている必要があります。  
+ 明示的な列参照です。 変更するテーブルへのすべての参照は、たとえばINSERTED **.** _column\_name_ のように、INSERTED プレフィックスまたは DELETED プレフィックスで正しく修飾されている必要があります。  
   
  $action  
- MERGE ステートメントでのみ使用できます。 MERGE ステートメントの OUTPUT 句に **nvarchar(10)** 型の列を指定します。この MERGE ステートメントは、行に対して実行されたアクションに従って、次のいずれかの値をそれぞれの行について返します。"INSERT"、"UPDATE"、または "DELETE"。  
+ MERGE ステートメントでのみ使用できます。 MERGE ステートメントの OUTPUT 句に **nvarchar(10)** 型の列を指定します。この MERGE ステートメントは、行に対して実行されたアクションに従って、次のいずれかの値をそれぞれの行について返します。'INSERT'、'UPDATE'、または 'DELETE'。  
   
 ## <a name="remarks"></a>Remarks  
- OUTPUT \<dml_select_list> 句と OUTPUT \<dml_select_list> INTO { **\@**_table\_variable_ | _output\_table_ } 句を単一の INSERT ステートメント、UPDATE ステートメント、DELETE ステートメント、または MERGE ステートメントで定義することができます。  
+ OUTPUT \<dml_select_list> 句と OUTPUT \<dml_select_list> INTO { **\@** _table\_variable_ | _output\_table_ } 句を単一の INSERT ステートメント、UPDATE ステートメント、DELETE ステートメント、または MERGE ステートメントで定義することができます。  
   
 > [!NOTE]  
 >  特に指定しない限り、OUTPUT 句への参照は、OUTPUT 句と OUTPUT INTO 句の両方を参照します。  
@@ -227,7 +226,7 @@ DELETE Sales.ShoppingCartItem
  sp_configure オプション disallow results from triggers が設定されている場合に、INTO 句なしの OUTPUT 句をトリガー内で呼び出すと、ステートメントが失敗します。  
   
 ## <a name="data-types"></a>データ型  
- OUTPUT 句は、ラージ オブジェクト データ型 **nvarchar(max)**、**varchar(max)**、**varbinary(max)**、**text**、**ntext**、**image**、および **xml** をサポートしています。 UPDATE ステートメント内で .WRITE 句を使用して 、**nvarchar(max)**、**varchar(max)**、または **varbinary(max)** の列を変更すると、参照されていれば、値の完全な前イメージと後イメージが返されます。 TEXTPTR( ) 関数を、OUTPUT 句内の **text**、**ntext**、または **image** 列に対する式の一部として使用することはできません。  
+ OUTPUT 句は、ラージ オブジェクト データ型 **nvarchar(max)** 、**varchar(max)** 、**varbinary(max)** 、**text**、**ntext**、**image**、および **xml** をサポートしています。 UPDATE ステートメント内で .WRITE 句を使用して 、**nvarchar(max)** 、**varchar(max)** 、または **varbinary(max)** の列を変更すると、参照されていれば、値の完全な前イメージと後イメージが返されます。 TEXTPTR( ) 関数を、OUTPUT 句内の **text**、**ntext**、または **image** 列に対する式の一部として使用することはできません。  
   
 ## <a name="queues"></a>キュー  
  OUTPUT を、テーブルをキューとして使用するアプリケーションで使用したり、中間結果セットを保持するために使用することができます。 つまり、アプリケーションは、テーブルに対して、常に行の追加または削除を行っています。 次の例では、DELETE ステートメント内で OUTPUT 句を使用し、削除された行を呼び出し元アプリケーションに返します。  

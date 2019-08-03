@@ -30,13 +30,12 @@ helpviewer_keywords:
 ms.assetid: dd6cc2ba-631f-4adf-89dc-29ef449c6933
 author: janinezhang
 ms.author: janinez
-manager: craigg
-ms.openlocfilehash: 504e17e0cb7d377f4b5567d705b9efb4647091aa
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: 62521d308c361b8ea6dc8abdabedd8386d07b933
+ms.sourcegitcommit: 2efb0fa21ff8093384c1df21f0e8910db15ef931
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "66403044"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68316654"
 ---
 # <a name="foreach-loop-container"></a>Foreach ループ コンテナー
 
@@ -508,7 +507,19 @@ Azure Data Lake 接続マネージャーを指定するか、ADLS アカウン�
 ファイルを列挙するフォルダーのパスを指定します。
 
 **[SearchRecursively]**  
-指定されたフォルダー内で再帰的に検索するかどうかを指定します。  
+指定されたフォルダー内で再帰的に検索するかどうかを指定します。
+
+***サービス プリンシパルのアクセス許可の構成に関する注意事項***
+
+Data Lake Storage Gen2 アクセス許可は [RBAC](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal#assign-rbac-roles-using-the-azure-portal) と [ACL](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-how-to-set-permissions-storage-explorer) の両方によって決定されます。
+[こちら](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control#how-do-i-set-acls-correctly-for-a-service-principal)に説明されているように、アプリ登録に対応するサービス プリンシパルのオブジェクト ID (OID) を使用して ACL を構成することに注意してください。
+これは、RBAC 構成で使用されるアプリケーション (クライアント) ID とは異なります。
+組み込みロールまたはカスタム ロールを使用してセキュリティ プリンシパルに RBAC データ アクセス許可が付与されると、これらのアクセス許可は、要求の認可時に最初に評価されます。
+要求された操作がセキュリティ プリンシパルの RBAC 割り当てによって認可された場合、認可はすぐに解決され、追加の ACL チェックは実行されません。
+また、セキュリティ プリンシパルに RBAC 割り当てがない場合、または要求の操作が割り当てられたアクセス許可と一致しない場合、ACL チェックが実行され、要求された操作を実行する権限がセキュリティ プリンシパルに付与されているかどうかが判断されます。
+列挙子が機能するためには、少なくともルート ファイル システムから開始する**実行**アクセス許可を、ターゲット フォルダーに対する**読み取り**アクセス許可と共に付与します。
+または、少なくとも**ストレージ BLOB データ閲覧者**の役割を RBAC を使用して付与します。
+詳細については、[この記事](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control)を参照してください。
 
 ## <a name="variable-mappings-page---foreach-loop-editor"></a>[変数のマッピング] ページ - [ForEach ループ エディター]
  **[Foreach ループ エディター]** ダイアログ ボックスの **[変数のマッピング]** ページを使用すると、コレクションの値に変数をマップできます。 変数の値は、ループの各反復処理でコレクションの値を使用して更新されます。  

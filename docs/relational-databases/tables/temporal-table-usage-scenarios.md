@@ -10,13 +10,12 @@ ms.topic: conceptual
 ms.assetid: 4b8fa2dd-1790-4289-8362-f11e6d63bb09
 author: CarlRabeler
 ms.author: carlrab
-manager: craigg
-ms.openlocfilehash: f25c7527000cb95878b60f4dfe05be4b47f943bb
-ms.sourcegitcommit: 2429fbcdb751211313bd655a4825ffb33354bda3
+ms.openlocfilehash: 621387ca62340818cbe8d5529de17bcdf7e96884
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52532745"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67999368"
 ---
 # <a name="temporal-table-usage-scenarios"></a>テンポラル テーブルの使用シナリオ
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
@@ -140,7 +139,7 @@ FROM Employee
 > AT TIME ZONE を期間列に適用すると、SQL Server は非常に負荷のかかるテーブルおよびインデックス スキャンを実行します。 また、  
 > \<期間列>  AT TIME ZONE '\<タイム ゾーン>'  >  {< | > | =, ...} date_condition のような条件は、クエリでは避けてください。  
   
- 関連項目: 「 [システム バージョン管理されたテンポラル テーブルのデータのクエリ](../../relational-databases/tables/querying-data-in-a-system-versioned-temporal-table.md)」  
+ 関連項目:[システム バージョン管理されたテンポラル テーブルのデータのクエリ](../../relational-databases/tables/querying-data-in-a-system-versioned-temporal-table.md)  
   
 ## <a name="point-in-time-analysis-time-travel"></a>特定の時点の分析 (タイム トラベル)  
  個々のレコードに発生した変更が注目されるデータの監査とは異なり、タイム トラベルのシナリオでは、ユーザーは、時間の経過とともにデータ セット全体がどのように変わったかを確認したいと考えます。 タイム トラベルには、それぞれが別のペースで変更される、次に示すような分析すべき関連するテンポラル テーブルが含まれることがあります。  
@@ -429,7 +428,7 @@ FROM CTE
   
 -   タイプ 0: 履歴を保持しません。 ディメンション属性は元の値です。  
   
--   タイプ 1: ディメンション属性は最新の値です (前の値は上書きされます)。  
+-   タイプ 1: ディメンション属性には最新の値が反映されます (前の値は上書きされます)。  
   
 -   タイプ 2: ディメンション メンバーのすべてのバージョンは、通常は有効期間を示す列と共にテーブルに別の行に示されます。  
   

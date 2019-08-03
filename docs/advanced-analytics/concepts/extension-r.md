@@ -1,25 +1,26 @@
 ---
 title: R プログラミング言語拡張機能
-description: SQL Server 2016 R Services または SQL Server 2017 Machine Learning Services の R コードの実行と組み込み R ライブラリについて説明します。
+description: SQL Server R Services または SQL Server Machine Learning Services での R コードの実行と組み込み R ライブラリについて説明します。
 ms.prod: sql
 ms.technology: machine-learning
-ms.date: 09/05/2018
+ms.date: 07/30/2019
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: 300b5d25d62be24c1e5590f5cd9795d08da7f2c1
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: fa39240da51d0b7a9269777f751944104d703d59
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68470496"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715241"
 ---
 # <a name="r-language-extension-in-sql-server"></a>SQL Server の R 言語拡張機能
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
 
 R 拡張機能は、リレーショナルデータベースエンジンにアドオン Machine Learning Services SQL Server の一部です。 R 実行環境、標準ライブラリとツールを使用した base R ディストリビューション、および Microsoft R ライブラリが追加されます。[RevoScaleR](../r/ref-r-revoscaler.md)は、大規模な分析、機械学習アルゴリズム用の[microsoft ml](../r/ref-r-microsoftml.md) 、SQL Server のデータまたは R コードにアクセスするためのその他のライブラリを対象としています。
 
-R 統合は SQL Server 2016 から開始し、 [r Services](../r/sql-server-r-services.md)を使用して SQL Server、 [SQL Server Machine Learning Services](../what-is-sql-server-machine-learning.md)の一部として継続しています。
+R 統合は、 [SQL Server R Services](../r/sql-server-r-services.md)と[SQL Server Machine Learning Services](../what-is-sql-server-machine-learning.md)で利用できます。
 
 ## <a name="r-components"></a>R コンポーネント
 
@@ -27,7 +28,7 @@ SQL Server には、オープンソースパッケージと専用パッケージ
 
 SQL Server では、基本の R 実行可能ファイルは変更されませんが、セットアップによってインストールされたバージョンの R を使用する必要があります。これは、独自のパッケージがビルドおよびテストされているバージョンであるためです。 CRAN によって取得される可能性のある R の基本分布と MRO の違いについては、「 [r 言語と Microsoft r の製品および機能との相互運用性](https://docs.microsoft.com/r-server/what-is-r-server-interoperability)」を参照してください。
 
-セットアップによってインストールされた R base package ディストリビューションは、インスタンスに関連付けられているフォルダーにあります。 たとえば、SQL Server 2016 の既定のインスタンスに R Services をインストールした場合、既定`C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES\library`では、r ライブラリがこのフォルダーに配置されます。 同様に、既定のインスタンスに関連付けられている R ツールは、既定`C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES\bin`ではこのフォルダーに配置されます。
+セットアップによってインストールされた R base package ディストリビューションは、インスタンスに関連付けられているフォルダーにあります。 たとえば、SQL Server の既定のインスタンスに R Services をインストールした場合、既定`C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES\library`では、r ライブラリがこのフォルダーに配置されます。 同様に、既定のインスタンスに関連付けられている R ツールは、既定`C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES\bin`ではこのフォルダーに配置されます。
 
 Microsoft によって並列ワークロードと分散ワークロードに追加される R パッケージには、次のライブラリが含まれます。
 

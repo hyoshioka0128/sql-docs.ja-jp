@@ -6,19 +6,18 @@ ms.date: 05/31/2018
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: 86c698420a64832e49cd6cbff5e6727896ec45f4
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: 1573c260c3d34ba3f733316fbae2672b2f9adfb1
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68470277"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715157"
 ---
 # <a name="troubleshoot-machine-learning-in-sql-server"></a>SQL Server での機械学習のトラブルシューティング
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
 
 このページは、既知の問題に対処するための出発点として使用します。
-
-**適用対象:** SQL Server 2016 R Services、SQL Server 2017 Machine Learning Services (R および Python)
 
 ## <a name="known-issues"></a>既知の問題
 
@@ -38,10 +37,8 @@ ms.locfileid: "68470277"
 
 SQL Server で machine learning を設定していない場合、または機能を追加する場合は、ここから開始します。
 
-+ [SQL Server 2017 Machine Learning Services (データベース内) のインストール](install/sql-machine-learning-services-windows-install.md)
-+ [SQL Server 2017 Machine Learning Server (スタンドアロン) のインストール](install/sql-machine-learning-standalone-windows-install.md)
-+ [SQL Server 2016 R Services (データベース内) のインストール](install/sql-r-services-windows-install.md)
-+ [SQL Server 2016 R Server (スタンドアロン) のインストール](install/sql-r-standalone-windows-install.md)
++ [SQL Server Machine Learning Services のインストール (データベース内)](install/sql-machine-learning-services-windows-install.md)
++ [SQL Server Machine Learning Server をインストールする (スタンドアロン)](install/sql-machine-learning-standalone-windows-install.md)
 + [コマンドプロンプトのセットアップ](install/sql-ml-component-commandline-install.md)
 + [オフラインのセットアップ (インターネットなし)](install/sql-ml-component-install-without-internet-access.md)
 

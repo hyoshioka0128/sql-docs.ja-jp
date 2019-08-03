@@ -9987,22 +9987,8 @@
           items:
             - name: SSMS のサポート ポリシー
               href: ssms/support-policy.md
-            - name: 法人のお客様向けサポート オプション
-              href: 'https://support.microsoft.com/gp/support-options-for-business'
-            - name: Microsoft へのお問い合わせ
-              href: 'https://support.microsoft.com/gp/contactus81?Audience=Commercial'
-            - name: さまざまなヘルプの利用方法
+            - name: フィードバックとヘルプ
               href: 'https://docs.microsoft.com/sql/sql-server/sql-server-get-help'
-            - name: UserVoice - SQL Server 機能強化のためのご提案
-              href: 'https://feedback.azure.com/forums/908035-sql-server'
-            - name: セットアップとアップグレード - MSDN フォーラム
-              href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=sqlsetupandupgrade&filter=alltypes&sort=lastpostdesc'
-            - name: Transact-SQL - MSDN フォーラム
-              href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=transactsql'
-            - name: Stack Overflow
-              href: 'https://stackoverflow.com/questions/tagged/sql-server'
-            - name: Microsoft SQL Server ライセンス条項および情報
-              href: 'https://www.microsoft.com/download/details.aspx?id=39299'
             - name: SSMS のユーザー サポート
               href: ssms/user-assistance-in-sql-server-management-studio.md
             - name: 匿名の利用状況データ
@@ -10444,28 +10430,12 @@
           href: 'https://mva.microsoft.com/product-training/sql-server'
         - name: Channel 9 での SQL >
           href: 'https://channel9.msdn.com/Search'
-    - name: ブログ
-      items:
-        - name: SQL Server >
-          href: 'https://blogs.technet.microsoft.com/dataplatforminsider/'
-        - name: SQL Server データベース エンジン >
-          href: 'https://blogs.msdn.microsoft.com/sqlserverstorageengine/'
-        - name: SQL Server セキュリティ >
-          href: 'https://blogs.msdn.microsoft.com/sqlsecurity/'
-        - name: SQL Server Data Tools >
-          href: 'https://blogs.msdn.microsoft.com/ssdt/'
-    - name: フィードバックとヘルプ
+    - name: ヘルプ
       items:
         - name: ヘルプの参照
           href: sql-server/sql-server-get-help.md
-        - name: SQL ドキュメントのフィードバック >
-          href: 'https://aka.ms/sqldocsfeedback'
-        - name: SQL Server のフィードバック (UserVoice) >
-          href: 'https://feedback.azure.com/forums/908035-sql-server'
-        - name: SQL ドキュメントのアンケート >
-          href: 'https://aka.ms/sqldocsurvey'
-        - name: SQL ドキュメントへの投稿
-          href: sql-server/sql-server-docs-contribute.md
+        - name: SQL ドキュメントのナビゲーションに関するヒント
+          href: sql-server/sql-docs-navigation-guide.md
         - name: DBA Stack Exchange >
           href: 'https://dba.stackexchange.com/questions/tagged/sql-server'
         - name: Stack Overflow >
@@ -10474,6 +10444,24 @@
           href: 'https://social.msdn.microsoft.com/Forums/home'
         - name: Reddit >
           href: 'https://www.reddit.com/r/SQLServer'
+    - name: ブログ
+      items:
+        - name: SQL Server >
+          href: 'https://blogs.technet.microsoft.com/dataplatforminsider/'
+        - name: データベース エンジン >
+          href: 'https://blogs.msdn.microsoft.com/sqlserverstorageengine/'
+        - name: セキュリティ >
+          href: 'https://blogs.msdn.microsoft.com/sqlsecurity/'
+        - name: Data Tools >
+          href: 'https://blogs.msdn.microsoft.com/ssdt/'
+    - name: フィードバック
+      items:
+        - name: SQL ドキュメント >
+          href: 'https://aka.ms/sqldocsfeedback'
+        - name: SQL Server >
+          href: 'https://feedback.azure.com/forums/908035-sql-server'
+        - name: SQL ドキュメントの編集
+          href: sql-server/sql-server-docs-contribute.md
     - name: パートナー
       items:
         - name: 監視
@@ -10488,8 +10476,6 @@
       href: sql-server/sql-server-help-installation.md
 - name: リファレンス
   items:
-    - name: SQL ドキュメントのインクルード ファイル
-      href: sql-server/applies-to-includes.md
     - name: アーカイブ コンテンツ (SQL 2005 から 2012) >
       displayName: '2005, 2008, 2008 r2, 2012, previous-versions'
       href: 'https://docs.microsoft.com/previous-versions/sql/'

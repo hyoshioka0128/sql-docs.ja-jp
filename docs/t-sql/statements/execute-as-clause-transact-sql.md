@@ -25,13 +25,12 @@ helpviewer_keywords:
 ms.assetid: bd517aa3-f06e-4356-87d8-70de5df4494a
 author: VanMSFT
 ms.author: vanto
-manager: craigg
-ms.openlocfilehash: 8b20360492be7a7667f8f43b686bc04c723bd5e9
-ms.sourcegitcommit: c6e71ed14198da67afd7ba722823b1af9b4f4e6f
+ms.openlocfilehash: 7adffba6294d2639f94f8ebe753248bcb58f39dc
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54326533"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68084474"
 ---
 # <a name="execute-as-clause-transact-sql"></a>EXECUTE AS 句 (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
@@ -89,7 +88,7 @@ DDL Triggers with Database Scope
 >  **sys.service_queues** カタログ ビューの **execute_as_principal_id** 列のユーザー ID を変更するには、ALTER QUEUE ステートメントで EXECUTE AS 設定を明示的に指定する必要があります。  
   
  OWNER  
- モジュール内のステートメントを、モジュールの現在の所有者のコンテキストで実行します。 モジュールの所有者が指定されていない場合、そのモジュールのスキーマの所有者が使用されます。 OWNER は、DDL トリガーまたはログオン トリガーに対しては指定できません。  
+ モジュール内のステートメントがモジュールの現在の所有者のコンテキストで実行されるように指定します。 モジュールの所有者が指定されていない場合、そのモジュールのスキーマの所有者が使用されます。 OWNER は、DDL トリガーまたはログオン トリガーに対しては指定できません。  
   
 > [!IMPORTANT]  
 >  OWNER は、単一アカウントにマップする必要があります。ロールまたはグループにはマップできません。  

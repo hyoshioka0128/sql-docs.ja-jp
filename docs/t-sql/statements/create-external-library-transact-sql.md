@@ -1,10 +1,10 @@
 ---
 title: CREATE EXTERNAL LIBRARY (Transact-SQL) - SQL Server | Microsoft Docs
 ms.custom: ''
-ms.date: 05/22/2019
+ms.date: 07/24/2019
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: t-sql
+ms.technology: machine-learning
 ms.topic: language-reference
 f1_keywords:
 - CREATE EXTERNAL LIBRARY
@@ -18,22 +18,29 @@ helpviewer_keywords:
 author: dphansen
 ms.author: davidph
 manager: cgronlund
-monikerRange: '>=sql-server-2017||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 852b98c1ee0eecba21b426c74397985208fd2178
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=azuresqldb-current||=sqlallproducts-allversions'
+ms.openlocfilehash: 090e854f59e1d2be7291c8c759ef89c8311fd0a0
+ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67140799"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68471125"
 ---
 # <a name="create-external-library-transact-sql"></a>CREATE EXTERNAL LIBRARY (Transact-SQL)  
 
-[!INCLUDE[tsql-appliesto-ss2017-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2017-xxxx-xxxx-xxx-md.md)]  
+[!INCLUDE[appliesto-ss-asdb-xxxx-xxx-md](../../includes/appliesto-ss-asdb-xxxx-xxx-md.md)]
 
 指定したバイト ストリームまたはファイル パスから R、Python、Java パッケージ ファイルをデータベースにアップロードします。 このステートメントは、データベース管理者が新しい外部言語ランタイムに必要な成果物および [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] でサポートされる OS プラットフォームをアップロードする汎用メカニズムとして機能します。 
 
+::: moniker range=">=sql-server-2017||>=sql-server-linux-ver15||sqlallproducts-allversions"
 > [!NOTE]
-> SQL Server 2017 では、R 言語と Windows プラットフォームがサポートされています。 Windows および Linux プラットフォームの R、Python、外部言語は SQL Server 2019 CTP 3.0 でサポートされています。
+> SQL Server 2017 では、R 言語と Windows プラットフォームがサポートされています。 Windows および Linux プラットフォームの R、Python、外部言語は SQL Server 2019 CTP 2.4 以降でサポートされています。
+::: moniker-end
+
+::: moniker range="=azuresqldb-current||=sqlallproducts-allversions"
+> [!NOTE]
+> Azure SQL Database では、**sqlmlutils** を使用してライブラリをインストールすることができます。 詳細については、「[sqlmlutils を使用してパッケージを追加する](/azure/sql-database/sql-database-machine-learning-services-add-r-packages#add-a-package-with-sqlmlutils)」を参照してください。
+::: moniker-end
 
 ::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
 ## <a name="syntax-for-sql-server-2019"></a>SQL Server 2019 の構文
@@ -106,6 +113,29 @@ WITH ( LANGUAGE = 'R' )
 ```
 ::: moniker-end
 
+::: moniker range="=azuresqldb-current||=sqlallproducts-allversions"
+## <a name="syntax-for-azure-sql-database"></a>Azure SQL Database の構文
+
+```text
+CREATE EXTERNAL LIBRARY library_name  
+[ AUTHORIZATION owner_name ]  
+FROM <file_spec> [ ,...2 ]  
+WITH ( LANGUAGE = 'R' )  
+[ ; ]  
+
+<file_spec> ::=  
+{  
+    (CONTENT = <library_bits>)  
+}  
+
+<library_bits> :: =  
+{ 
+      varbinary_literal 
+    | varbinary_expression 
+}
+```
+::: moniker-end
+
 ### <a name="arguments"></a>引数
 
 **library_name**
@@ -122,6 +152,7 @@ WITH ( LANGUAGE = 'R' )
 
 ユーザー **RUser1** が外部スクリプトを実行するときに、`libPath` の値に複数のパスを含めることができます。 最初のパスは常に、データベースの所有者によって作成された共有のライブラリへのパスになります。 `libPath` の 2 番目の部分では、**RUser1** によって個別にアップロードされたパッケージを含むパスを指定します。
 
+::: moniker range=">=sql-server-2017||>=sql-server-linux-ver15||=sqlallproducts-allversions"
 **file_spec**
 
 特定のプラットフォーム用のパッケージのコンテンツを指定します。 プラットフォームごとに 1 つのファイル成果物のみがサポートされます。
@@ -131,6 +162,7 @@ WITH ( LANGUAGE = 'R' )
 **<client_library_specifier>** で指定したファイルにアクセスしようとすると、SQL Server では現在の Windows ログインのセキュリティ コンテキストの権限が借用されます。 **<client_library_specifier>** でネットワーク上の場所 (UNC パス) を指定した場合は、委任制限があり、現在のログインの権限借用範囲はネットワーク上の場所まで拡大されません。 この場合、アクセスは SQL Server サービス アカウントのセキュリティ コンテキストを使って行われます。 詳しくは、「[資格情報 (データベース エンジン)](../../relational-databases/security/authentication-access/credentials-database-engine.md)」をご覧ください。
 
 必要に応じて、ファイルの OS プラットフォームを指定できます。 特定の言語またはランタイムの OS プラットフォームごとに 1 つのファイル成果物またはコンテンツのみが許可されます。
+::: moniker-end
 
 **library_bits**
 
@@ -141,26 +173,42 @@ WITH ( LANGUAGE = 'R' )
 ::: moniker range=">=sql-server-2017 <=sql-server-2017||=sqlallproducts-allversions"
 **PLATFORM = WINDOWS**
 
-ライブラリのコンテンツのプラットフォームを指定します。 既定値は、SQL Server が実行されているホスト プラットフォームに設定されます。 そのため、ユーザーが値を指定する必要はありません。 複数のプラットフォームがサポートされている場合、またはユーザーが別のプラットフォームを指定する必要がある場合に必要です。 
-
+ライブラリのコンテンツのプラットフォームを指定します。 既定値は、SQL Server が実行されているホスト プラットフォームに設定されます。 そのため、ユーザーが値を指定する必要はありません。 複数のプラットフォームがサポートされている場合、またはユーザーが別のプラットフォームを指定する必要がある場合に必要です。
 SQL Server 2017 では、サポートされているプラットフォームは Windows のみです。
 ::: moniker-end
+
 ::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
 **PLATFORM**
 
 ライブラリのコンテンツのプラットフォームを指定します。 既定値は、SQL Server が実行されているホスト プラットフォームに設定されます。 そのため、ユーザーが値を指定する必要はありません。 複数のプラットフォームがサポートされている場合、またはユーザーが別のプラットフォームを指定する必要がある場合に必要です。
-
 SQL Server 2019 でサポートされているプラットフォームは、Windows と Linux です。
+::: moniker-end
 
+::: moniker range=">=sql-server-2017 <=sql-server-2017||=sqlallproducts-allversions"
+**LANGUAGE = 'R'**
+
+パッケージの言語を指定します。
+R は SQL Server 2017 でサポートされています。
+::: moniker-end
+
+::: moniker range="=azuresqldb-current||=sqlallproducts-allversions"
+**LANGUAGE = 'R'**
+
+パッケージの言語を指定します。
+R は Azure SQL Database でサポートされています。
+::: moniker-end
+
+::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
 **language**
 
-パッケージの言語を指定します。 値は `R`、`Python`、または[作成した外部言語](create-external-language-transact-sql.md)の名前にできます。
+パッケージの言語を指定します。 値は `R`、`Python`、または外部言語の名前にできます (「[CREATE EXTERNAL LANGUAGE](create-external-language-transact-sql.md)」を参照してください)。
 ::: moniker-end
 
 ## <a name="remarks"></a>Remarks
 
 ::: moniker range=">=sql-server-2017 <=sql-server-2017||=sqlallproducts-allversions"
-R 言語の場合、ファイルを使用するときに、Windows の .ZIP 拡張子を使用して、ZIP アーカイブ ファイルの形式でパッケージを準備する必要があります。 SQL Server 2017 では、Windows プラットフォームのみがサポートされています。
+R 言語の場合、ファイルを使用するときに、Windows の .ZIP 拡張子を使用して、ZIP アーカイブ ファイルの形式でパッケージを準備する必要があります。 
+SQL Server 2017 では、Windows プラットフォームのみがサポートされています。
 ::: moniker-end
 
 ::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
@@ -193,7 +241,8 @@ GRANT CREATE EXTERNAL LIBRARY to user
 
 ## <a name="examples"></a>使用例
 
-### <a name="a-add-an-external-library-to-a-database"></a>A. 外部ライブラリをデータベースに追加する  
+::: moniker range=">=sql-server-2017||>=sql-server-linux-ver15||sqlallproducts-allversions"
+### <a name="add-an-external-library-to-a-database"></a>外部ライブラリをデータベースに追加する  
 
 次の例では、`customPackage` と呼ばれる外部ライブラリをデータベースに追加します。
 
@@ -209,12 +258,13 @@ EXEC sp_execute_external_script
 @language =N'R', 
 @script=N'library(customPackage)'
 ```
+::: moniker-end
 
 ::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
 SQL Server 2019 の Python 言語の場合、`'R'` を `'Python'` に替えてもこの例は機能します。
 ::: moniker-end
 
-### <a name="b-installing-packages-with-dependencies"></a>B. 依存関係を持つパッケージをインストールする
+### <a name="installing-packages-with-dependencies"></a>依存関係を持つパッケージをインストールする
 
 インストールするパッケージに依存関係がある場合は、ターゲットのパッケージをインストールする_前に_、最 1 レベルと第 2 レベルの両方の依存関係を分析し、必要なすべてのパッケージが利用できることを確認することが非常に重要です。
 
@@ -228,6 +278,8 @@ SQL Server 2019 の Python 言語の場合、`'R'` を `'Python'` に替えて�
 実際には、一般的なパッケージのパッケージの依存関係は、通常、この単純な例よりもはるかに複雑です。 たとえば、**ggplot2** には 30 を超えるパッケージが必要で、それらのパッケージには、サーバーで入手できない追加のパッケージが必要な場合があります。 パッケージが不足していたり、パッケージのバージョンが違っていたりすると、インストールが失敗する可能性があります。
 
 パッケージ マニフェストを見ただけでは、すべての依存関係を判断するのは難しいため、[miniCRAN](https://cran.r-project.org/web/packages/miniCRAN/index.html) などのパッケージを使用して、インストールを正常に完了させるために必要なすべてのパッケージを特定することをお勧めします。
+
+::: moniker range=">=sql-server-2017||>=sql-server-linux-ver15||=sqlallproducts-allversions"
 
 + ターゲット パッケージとその依存関係をアップロードします。 すべてのファイルは、サーバーからアクセスできるフォルダー内にある必要があります。
 
@@ -262,17 +314,18 @@ SQL Server 2019 の Python 言語の場合、`'R'` を `'Python'` に替えて�
     library(packageA)
     '
     ```
+::: moniker-end
 
 ::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
 SQL Server 2019 の Python 言語の場合、`'R'` を `'Python'` に替えてもこの例は機能します。
 ::: moniker-end
 
-### <a name="c-create-a-library-from-a-byte-stream"></a>C. バイト ストリームからライブラリを作成する
+### <a name="create-a-library-from-a-byte-stream"></a>バイト ストリームからライブラリを作成する
 
 パッケージ ファイルをサーバー上の場所に保存できない場合は、パッケージのコンテンツを変数で渡すことができます。 次の例では、ビットを 16 進数リテラルとして渡して、ライブラリを作成します。
 
 ```SQL
-CREATE EXTERNAL LIBRARY customLibrary FROM (CONTENT = 0xabc123) WITH (LANGUAGE = 'R');
+CREATE EXTERNAL LIBRARY customLibrary FROM (CONTENT = 0xABC123...) WITH (LANGUAGE = 'R');
 ```
 
 ::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
@@ -282,14 +335,14 @@ SQL Server 2019 の Python 言語の場合、 **'R'** を **'Python'** に替え
 > [!NOTE]
 > このコード サンプルは構文のみを示しています。`CONTENT =` のバイナリ値は読みやすさのため切り捨てられており、作業ライブラリを作成しません。 バイナリ変数の実際の内容はこれよりも長くなります。
 
-### <a name="d-change-an-existing-package-library"></a>D. 既存のパッケージ ライブラリを変更する
+### <a name="change-an-existing-package-library"></a>既存のパッケージ ライブラリを変更する
 
 `ALTER EXTERNAL LIBRARY` DDL ステートメントは、新しいライブラリのコンテンツを追加または既存のライブラリのコンテンツを変更するために使用できます。 既存のライブラリを変更するには、`ALTER ANY EXTERNAL LIBRARY` アクセス許可が必要です。
 
 詳細については、「[ALTER EXTERNAL LIBRARY](alter-external-library-transact-sql.md)」を参照してください。
 
 ::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
-### <a name="e-add-a-java-jar-file-to-a-database"></a>E. Java .jar ファイルをデータベースに追加する  
+### <a name="add-a-java-jar-file-to-a-database"></a>Java .jar ファイルをデータベースに追加する  
 
 次の例では、`customJar` と呼ばれる外部 jar ファイルをデータベースに追加します。
 
@@ -309,7 +362,7 @@ EXEC sp_execute_external_script
 WITH RESULT SETS ((column1 int))
 ```
 
-### <a name="f-add-an-external-package-for-both-windows-and-linux"></a>F. Windows と Linux の両方の外部のパッケージを追加する
+### <a name="add-an-external-package-for-both-windows-and-linux"></a>Windows と Linux の両方の外部のパッケージを追加する
 
 最大 2 つの `<file_spec>` を指定できます。1 つは Windows 用、1 つは Linux 用です。
 

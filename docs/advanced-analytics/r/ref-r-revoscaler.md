@@ -1,18 +1,19 @@
 ---
 title: RevoScaleR R 関数ライブラリ
-description: SQL Server 2016 R Services の RevoScaleR 関数ライブラリの概要と、R を使用した SQL Server 2017 Machine Learning Services について説明します。
+description: SQL Server 2016 R Services での RevoScaleR 関数ライブラリの概要と SQL Server R を使用した Machine Learning Services。
 ms.prod: sql
 ms.technology: machine-learning
 ms.date: 12/04/2018
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: d73399522966a132b025244a1739afa01a194116
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: b5dcd2f14d1a1d8e23a62be299b1ff6f41814041
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68470010"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715060"
 ---
 # <a name="revoscaler-r-library-in-sql-server"></a>RevoScaleR (SQL Server の R ライブラリ)
 
@@ -35,7 +36,7 @@ RevoScaleR は、分散データサイエンスのプラットフォームとし
 **RevoScaleR**ライブラリは R 3.4.3 に基づいており、次のいずれかの Microsoft 製品またはダウンロードをインストールした場合にのみ使用できます。
 
 + [SQL Server 2016 R Services](../install/sql-r-services-windows-install.md)
-+ [SQL Server 2017 Machine Learning Services](../install/sql-machine-learning-services-windows-install.md)
++ [SQL Server Machine Learning Services](../install/sql-machine-learning-services-windows-install.md)
 + [Microsoft Machine Learning Server 9.2.0 以降](https://docs.microsoft.com/machine-learning-server/)
 + [Microsoft R クライアント](set-up-a-data-science-client.md)
 

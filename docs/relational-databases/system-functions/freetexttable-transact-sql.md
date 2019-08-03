@@ -96,7 +96,7 @@ FREETEXTTABLE (table , { column_name | (column_list) | * }
   
  FREETEXTTABLE では、FREETEXT 述語と同じ検索条件が使用されます。  
   
- 返されたテーブルがという名前の列を作成のような**キー**と**ランク**、適切な行を取得し、行の値のランク付けを使用するクエリ内で参照されています。  
+ 返されたテーブルがという名前の列を作成のような**KEY**と**RANK**、適切な行を取得し、行の値のランク付けを使用するクエリ内で参照されています。  
   
 ## <a name="permissions"></a>アクセス許可  
  FREETEXTTABLE を呼び出すには、指定されるテーブルまたは参照されるテーブル列に対して適切な SELECT 権限が必要です。  
@@ -104,7 +104,7 @@ FREETEXTTABLE (table , { column_name | (column_list) | * }
 ## <a name="examples"></a>使用例  
   
 ### <a name="a-simple-example"></a>A. 簡単な例  
- 次の例では、作成し、3 つの郡およびそのフラグの色の一覧を表示する 2 つの列の単純なテーブルを入力します。 It では、作成し、テーブルのインデックス、フルテキスト カタログを設定します。 **できません**の構文を説明します。  
+ 次の例では、作成し、3 つの郡およびそのフラグの色の一覧を表示する 2 つの列の単純なテーブルを入力します。 It では、作成し、テーブルのインデックス、フルテキスト カタログを設定します。 **FREETEXTTABLE**の構文を説明します。  
   
 ```  
 CREATE TABLE Flags (Country nvarchar(30) NOT NULL, FlagColors varchar(200));  

@@ -1,18 +1,19 @@
 ---
 title: R から SQL へのデータ型の変換
-description: データサイエンスと機械学習ソリューションで、R と SQL Server の間で暗黙的および明示的なデータ型の切り替えを確認します。
+description: データサイエンスと機械学習ソリューションで、R と SQL Server 間の暗黙的および明示的なデータ型変換を確認します。
 ms.prod: sql
 ms.technology: machine-learning
 ms.date: 12/10/2019
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: 5606997e26aa006e102a2cc60f5635702500e53f
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: 7c829f39ee9c80d1bad3a4fb33c10635897cfb98
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68470055"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715089"
 ---
 # <a name="data-type-mappings-between-r-and-sql-server"></a>R と SQL Server 間のデータ型マッピング
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -21,7 +22,7 @@ SQL Server Machine Learning Services の R 統合機能で実行される R ソ�
 
 ## <a name="base-r-version"></a>Base R バージョン
 
-R を使用した SQL Server 2016 R Services と SQL Server 2017 Machine Learning Services は、Microsoft R Open の特定のリリースに合わせて調整されます。 たとえば、最新リリース (SQL Server 2017 Machine Learning Services) は、Microsoft R Open 3.3.3 に基づいて構築されています。
+R を使用した SQL Server 2016 R Services と SQL Server Machine Learning Services は、Microsoft R Open の特定のリリースに合わせて調整されます。 たとえば、最新リリースの SQL Server Machine Learning Services は、Microsoft R Open 3.3.3 に基づいて構築されています。
 
 SQL Server の特定のインスタンスに関連付けられている R バージョンを表示するには、 **Rgui**を開きます。 既定のインスタンスの場合、パスは次のようになります。`C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\R_SERVICES\bin\x64\`
 

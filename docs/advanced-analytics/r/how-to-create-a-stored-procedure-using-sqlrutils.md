@@ -7,14 +7,15 @@ ms.date: 04/15/2018
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: a224bed65cd7d3fd1b6dda4ed10d56f79ecc12ee
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: 22faeb2ea9f3e2104c2c1921b91a26ec5068079e
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68470146"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715702"
 ---
-# <a name="create-a-stored-pprocedure-using-sqlrutils"></a>Sqlrutils を使用してストアドプロシージャを作成する
+# <a name="create-a-stored-procedure-using-sqlrutils"></a>sqlrutils を使用してストアド プロシージャを作成する
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
 
 この記事では、T-sql ストアドプロシージャとして実行するように R コードを変換する手順について説明します。 考えられる最良の結果を得るために、コードを少し変更し、すべての入力をパラメーター化できるようにする必要がある場合があります。
@@ -29,7 +30,7 @@ ms.locfileid: "68470146"
 
 ### <a name="inputs"></a>入力
 
-入力パラメーターで使用できるデータ フレームは最大で 1 つです。
+入力パラメーターの中には、最大で1つのデータフレームを使用できます。
 
 データ フレーム内のオブジェクトと、関数の他のすべての入力パラメーターは、次の R データ型でなければなりません。
 - POSIXct
@@ -116,7 +117,7 @@ StoredProcedure (foosql, sp_rsample, queryinput, sqloutput, filePath = "C:\\Temp
 
 ストアドプロシージャは、R を使用して登録することも、T-sql で CREATE PROCEDURE ステートメントを実行して登録することもできます。
 
-- T-sql を使用します。  T-sql に慣れている場合は、sql Server Management Studio (または sql DDL コマンドを実行できるその他のクライアント) を開き、 `StoredProcedure`関数によって準備されたコードを使用して CREATE PROCEDURE ステートメントを実行します。
+- T-sql を使用します。  T-sql に慣れている場合は、SQL Server Management Studio (または SQL DDL コマンドを実行できるその他のクライアント) を開き、 `StoredProcedure`関数によって準備されたコードを使用して CREATE PROCEDURE ステートメントを実行します。
 - R を使用します。まだ R 環境では、 `registerStoredProcedure` **sqlrutils**の関数を使用して、ストアドプロシージャをデータベースに登録できます。
 
   たとえば、次の R 呼び出しを行うことで、 *Sqlconnstr*で定義されているインスタンスとデータベースにストアドプロシージャ**sp_rsample**を登録できます。

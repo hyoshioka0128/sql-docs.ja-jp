@@ -7,12 +7,13 @@ ms.date: 11/27/2018
 ms.topic: tutorial
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: c326d51e9b3ac4edac61f97bf5f7fa3143d8d350
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: 4db5debf4ba71f29a8870c8674a5422e9ffd334a
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68470631"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68714882"
 ---
 # <a name="tutorial-use-revoscaler-r-functions-with-sql-server-data"></a>チュートリアル:SQL Server データでの RevoScaleR R 関数の使用
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -21,9 +22,9 @@ ms.locfileid: "68470631"
 
 このマルチパートチュートリアルでは、データサイエンスに関連するタスクのためのさまざまな**RevoScaleR**関数について紹介します。 このプロセスでは、リモートの計算コンテキストを作成する方法、ローカルとリモートの計算コンテキストの間でデータを移動する方法、およびリモート SQL Server で R コードを実行する方法について説明します。 また、ローカルとリモートサーバーの両方でデータを分析してプロットする方法と、モデルを作成して配置する方法についても説明します。
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a>必須コンポーネント
 
-+ R 機能を使用した[SQL Server 2017 Machine Learning Services](../install/sql-machine-learning-services-windows-install.md) 、または[SQL Server 2016 r Services (データベース内)](../install/sql-r-services-windows-install.md)
++ R 機能を使用した[SQL Server Machine Learning Services](../install/sql-machine-learning-services-windows-install.md) 、または[SQL Server R Services (データベース内)](../install/sql-r-services-windows-install.md)
   
 + [データベース権限](../security/user-permission.md)と SQL Server データベースユーザーログイン
 
@@ -31,7 +32,7 @@ ms.locfileid: "68470631"
 
 + RStudio などの IDE、または R に付属する組み込みの RSTUDIO ツール
 
-ローカルとリモートの両方の計算コンテキストを切り替えるには、2つのシステムが必要です。 ローカルは、通常、データサイエンスワークロードのための十分なパワーを備えた開発ワークステーションです。 この場合、Remote は、R 機能が有効になっている2017または SQL Server 2016 SQL Server ます。 
+ローカルとリモートの両方の計算コンテキストを切り替えるには、2つのシステムが必要です。 ローカルは、通常、データサイエンスワークロードのための十分なパワーを備えた開発ワークステーションです。 この場合、Remote は R 機能が有効になっている SQL Server ます。 
 
 コンピューティングコンテキストの切り替えは、ローカルとリモートの両方のシステムで同じバージョンの**RevoScaleR**を持つ必要があります。 ローカルワークステーションでは、Microsoft R Client をインストールすることによって、 **RevoScaleR**パッケージと関連プロバイダーを取得できます。
 

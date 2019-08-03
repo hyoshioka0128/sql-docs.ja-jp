@@ -1,5 +1,5 @@
 ---
-title: sp_removedbreplication (TRANSACT-SQL) |Microsoft Docs
+title: sp_removedbreplication (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/04/2017
 ms.prod: sql
@@ -15,20 +15,20 @@ helpviewer_keywords:
 ms.assetid: cb98d571-d1eb-467b-91f7-a6e091009672
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 7d3931ff867ef1475165eb6cbac97f4ba4564bf9
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: fdae843c3918013ec850c5d807853c10a8f3f190
+ms.sourcegitcommit: 728a4fa5a3022c237b68b31724fce441c4e4d0ab
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68006955"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68771037"
 ---
 # <a name="spremovedbreplication-transact-sql"></a>sp_removedbreplication (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[appliesto-ss-asdbmi-xxxx-xxx-md](../../includes/appliesto-ss-asdbmi-xxxx-xxx-md.md)]
 
   このストアド プロシージャにより、SQL Server のパブリッシャー インスタンス側のパブリケーション データベース、または SQL Server のサブスクライバー インスタンス側のサブスクリプション データベースから、すべてのレプリケーション オブジェクトが削除されます。 適切なデータベースで実行するか、または同じインスタンスにある別のデータベースのコンテキストで実行する場合は、レプリケーション オブジェクトを削除するデータベースを指定します。 このプロシージャでは、ディストリビューション データベースなどその他のデータベースからオブジェクトが削除されることはありません。  
   
 > [!NOTE]  
->  レプリケーション オブジェクトを削除するには、その他の方法が失敗した場合にのみ、この手順を使用する必要があります。  
+>  この手順は、レプリケーションオブジェクトを削除する他の方法が失敗した場合にのみ使用してください。  
   
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -41,31 +41,31 @@ sp_removedbreplication [ [ @dbname = ] 'dbname' ]
 ```  
   
 ## <a name="arguments"></a>引数  
-`[ @dbname = ] 'dbname'` データベースの名前です。 *dbname* のデータ型は **sysname**で、既定値は NULL です。 NULL の場合は、現在のデータベースが使用されます。  
+`[ @dbname = ] 'dbname'`データベースの名前を指定します。 *dbname* のデータ型は **sysname**で、既定値は NULL です。 NULL の場合は、現在のデータベースが使用されます。  
   
-`[ @type = ] type` オブジェクトを削除するデータベースのレプリケーションの種類です。 *型*は**nvarchar (5)** 値は次のいずれかを指定できます。  
+`[ @type = ] type`データベースオブジェクトを削除するレプリケーションの種類を指定します。 *種類*は**nvarchar (5)** で、次のいずれかの値を指定できます。  
   
 |||  
 |-|-|  
-|**tran**|トランザクション レプリケーション パブリッシング オブジェクトを削除。|  
+|**さん**|トランザクション レプリケーション パブリッシング オブジェクトを削除。|  
 |**merge**|マージ レプリケーション パブリッシング オブジェクトを削除。|  
-|**どちらも**(既定値)|すべてのレプリケーション パブリッシング オブジェクトを削除。|  
+|**両方**標準|すべてのレプリケーション パブリッシング オブジェクトを削除。|  
   
 ## <a name="return-code-values"></a>リターン コードの値  
  **0** (成功) または**1** (失敗)  
   
 ## <a name="remarks"></a>コメント  
- **sp_removedbreplication**はあらゆる種類のレプリケーションで使用します。  
+ **sp_removedbreplication**は、すべての種類のレプリケーションで使用されます。  
   
- **sp_removedbreplication**を復元するが必要なレプリケーション オブジェクトを持たないレプリケートされたデータベースを復元する場合に便利です。  
+ **sp_removedbreplication**は、復元する必要のあるレプリケーションオブジェクトを持たないレプリケートされたデータベースを復元する場合に便利です。  
   
- **sp_removedbreplication**読み取り専用とマークされているデータベースに対しては使用できません。  
+ **sp_removedbreplication**は、読み取り専用としてマークされているデータベースに対しては使用できません。  
   
 ## <a name="example"></a>例  
  [!code-sql[HowTo#sp_removedbreplication](../../relational-databases/replication/codesnippet/tsql/sp-removedbreplication-t_1.sql)]  
   
 ## <a name="permissions"></a>アクセス許可  
- メンバーのみ、 **sysadmin**固定サーバー ロールが実行できる**sp_removedbreplication**します。  
+ **Sp_removedbreplication**を実行できるのは、 **sysadmin**固定サーバーロールのメンバーだけです。  
   
 ## <a name="example"></a>例  
   

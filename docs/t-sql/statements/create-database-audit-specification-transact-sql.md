@@ -22,13 +22,12 @@ helpviewer_keywords:
 ms.assetid: 0544da48-0ca3-4a01-ba4c-940e23dc315b
 author: VanMSFT
 ms.author: vanto
-manager: craigg
-ms.openlocfilehash: f691bd99036ea6b27f9f20cd53e8d6bc72312224
-ms.sourcegitcommit: c6e71ed14198da67afd7ba722823b1af9b4f4e6f
+ms.openlocfilehash: e1340fd34fe452babf96a3bcd7fcd205a0aa85b6
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54326303"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68061003"
 ---
 # <a name="create-database-audit-specification-transact-sql"></a>CREATE DATABASE AUDIT SPECIFICATION (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
@@ -66,13 +65,13 @@ CREATE DATABASE AUDIT SPECIFICATION audit_specification_name
  監査で記録する、セキュリティ保護可能なリソースに対するプリンシパルによるアクションの仕様を指定します。  
   
  *action*  
- データベース レベルの 1 つ以上の監査可能なアクションの名前を指定します。 監査アクションの一覧については、「[SQL Server 監査のアクション グループとアクション](../../relational-databases/security/auditing/sql-server-audit-action-groups-and-actions.md)」をご覧ください。  
+ データベース レベルの 1 つまたは複数の監査可能なアクションの名前を指定します。 監査アクションの一覧については、「[SQL Server 監査のアクション グループとアクション](../../relational-databases/security/auditing/sql-server-audit-action-groups-and-actions.md)」をご覧ください。  
   
  *audit_action_group_name*  
  データベース レベルの 1 つ以上の監査可能なアクション グループの名前を指定します。 監査アクション グループの一覧については、「[SQL Server 監査のアクション グループとアクション](../../relational-databases/security/auditing/sql-server-audit-action-groups-and-actions.md)」をご覧ください。  
   
  *class*  
- セキュリティ保護可能なリソースのクラス名 (該当する場合) を指定します。  
+ セキュリティ保護可能なリソースのクラス名 (該当する場合) です。  
   
  *securable*  
  監査アクションまたは監査アクション グループを適用するデータベース内のテーブル、ビュー、またはその他のセキュリティ保護可能なオブジェクトを指定します。 詳細については、「 [セキュリティ保護可能](../../relational-databases/security/securables.md)」を参照してください。  

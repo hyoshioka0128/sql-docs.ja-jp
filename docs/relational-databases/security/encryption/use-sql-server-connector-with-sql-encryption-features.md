@@ -1,7 +1,7 @@
 ---
 title: SQL 暗号化機能への SQL Server コネクタの使用 | Microsoft Docs
 ms.custom: ''
-ms.date: 04/04/2017
+ms.date: 07/18/2019
 ms.prod: sql
 ms.reviewer: vanto
 ms.technology: security
@@ -12,17 +12,15 @@ helpviewer_keywords:
 ms.assetid: 58fc869e-00f1-4d7c-a49b-c0136c9add89
 author: aliceku
 ms.author: aliceku
-manager: craigg
-monikerRange: = azuresqldb-current || = sqlallproducts-allversions
-ms.openlocfilehash: b6f47c0b1139e78119a345cfbb7565500dc346a1
-ms.sourcegitcommit: 1ab115a906117966c07d89cc2becb1bf690e8c78
+ms.openlocfilehash: 965980bcfe765f291b232a48af946db5f8f4f230
+ms.sourcegitcommit: 73dc08bd16f433dfb2e8406883763aabed8d8727
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52401085"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68329266"
 ---
 # <a name="use-sql-server-connector-with-sql-encryption-features"></a>SQL 暗号化機能への SQL Server コネクタの使用
-[!INCLUDE[appliesto-xx-asdb-xxxx-xxx-md](../../../includes/appliesto-xx-asdb-xxxx-xxx-md.md)]
+[!INCLUDE[appliesto-xx-asdb-xxxx-xxx-md](../../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
   [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] の暗号化に関して、Azure Key Vault の保護下にある非対称キーを使用した一般的な作業は、次の 3 つの領域に分けられます。  
   
 -   Azure Key Vault からの非対称キーを使用した透過的データ暗号化  
@@ -34,7 +32,7 @@ ms.locfileid: "52401085"
  このトピックの手順に着手する前に、「 [Azure Key Vault を使用した拡張キー管理のセットアップ手順](../../../relational-databases/security/encryption/setup-steps-for-extensible-key-management-using-the-azure-key-vault.md)」のトピックのパート I からパート IV を実行してください。  
  
 > [!NOTE]  
->  1.0.0.440 以前のバージョンは置き換えられ、実稼働環境ではサポートされなくなりました。 [Microsoft ダウンロード センター](https://www.microsoft.com/download/details.aspx?id=45344)にアクセスし、[[SQL Server コネクタのメンテナンスとトラブルシューティング]](../../../relational-databases/security/encryption/sql-server-connector-maintenance-troubleshooting.md) ページの "SQL Server コネクタのアップグレード" に示されている手順を使用して、バージョン 1.0.1.0 以降にアップグレードしてください。  
+>  1\.0.0.440 以前のバージョンは置き換えられ、実稼働環境ではサポートされなくなりました。 [Microsoft ダウンロード センター](https://www.microsoft.com/download/details.aspx?id=45344)にアクセスし、[[SQL Server コネクタのメンテナンスとトラブルシューティング]](../../../relational-databases/security/encryption/sql-server-connector-maintenance-troubleshooting.md) ページの "SQL Server コネクタのアップグレード" に示されている手順を使用して、バージョン 1.0.1.0 以降にアップグレードしてください。  
   
 ## <a name="transparent-data-encryption-by-using-an-asymmetric-key-from-azure-key-vault"></a>Azure Key Vault からの非対称キーを使用した透過的データ暗号化  
  「Azure Key Vault を使用した拡張キー管理のセットアップ手順」のトピックのパート I からパート IV を終えたら、Azure Key Vault キーを使用し、データベースの暗号化キーを TDE で暗号化します。  
@@ -49,8 +47,8 @@ ms.locfileid: "52401085"
      [!INCLUDE[tsql](../../../includes/tsql-md.md)] スクリプトを以下のように変更します。  
   
     -   `IDENTITY` 引数 (`ContosoDevKeyVault`) を編集し、Azure Key Vault を参照するようにします。
-        - **パブリック Azure**を使用している場合は、 `IDENTITY` 引数をパート II で使用した実際の Azure Key Vault の名前に置き換えます。
-        - **プライベート Azure クラウド** ( Azure Government、Azure China、Azure Germany など) を使用している場合は、 `IDENTITY` 引数をパート II のステップ 3 で返された Vault URI に置き換えます。 Vault URI に "https://" は含めないでください。   
+        - **グローバル Azure** を使用している場合は、`IDENTITY` 引数をパート II で使用した実際の Azure Key Vault の名前に置き換えます。
+        - **プライベート Azure クラウド** ( Azure Government、Azure China 21Vianet、Azure Germany など) を使用している場合は、`IDENTITY` 引数をパート II の手順 3 で返された Vault URI に置き換えます。 Vault URI に "https://" は含めないでください。   
   
     -   `SECRET` 引数の最初の部分を、パート I で使用した Azure Active Directory の **クライアント ID** に置き換えます。この例の **クライアント ID** は `EF5C8E094D2A4A769998D93440D8115D`です。  
   
@@ -62,9 +60,9 @@ ms.locfileid: "52401085"
     ```sql  
     USE master;  
     CREATE CREDENTIAL Azure_EKM_TDE_cred   
-        WITH IDENTITY = 'ContosoDevKeyVault', -- for public Azure
+        WITH IDENTITY = 'ContosoDevKeyVault', -- for global Azure
         -- WITH IDENTITY = 'ContosoDevKeyVault.vault.usgovcloudapi.net', -- for Azure Government
-        -- WITH IDENTITY = 'ContosoDevKeyVault.vault.azure.cn', -- for Azure China
+        -- WITH IDENTITY = 'ContosoDevKeyVault.vault.azure.cn', -- for Azure China 21Vianet
         -- WITH IDENTITY = 'ContosoDevKeyVault.vault.microsoftazure.de', -- for Azure Germany   
         SECRET = 'EF5C8E094D2A4A769998D93440D8115DReplace-With-AAD-Client-Secret'   
     FOR CRYPTOGRAPHIC PROVIDER AzureKeyVault_EKM_Prov;  
@@ -146,8 +144,8 @@ ms.locfileid: "52401085"
      [!INCLUDE[tsql](../../../includes/tsql-md.md)] スクリプトを以下のように変更します。  
   
     -   `IDENTITY` 引数 (`ContosoDevKeyVault`) を編集し、Azure Key Vault を参照するようにします。
-        - **パブリック Azure**を使用している場合は、 `IDENTITY` 引数をパート II で使用した実際の Azure Key Vault の名前に置き換えます。
-        - **プライベート Azure クラウド** ( Azure Government、Azure China、Azure Germany など) を使用している場合は、 `IDENTITY` 引数をパート II のステップ 3 で返された Vault URI に置き換えます。 Vault URI に "https://" は含めないでください。    
+        - **グローバル Azure** を使用している場合は、`IDENTITY` 引数をパート II で使用した実際の Azure Key Vault の名前に置き換えます。
+        - **プライベート Azure クラウド** ( Azure Government、Azure China 21Vianet、Azure Germany など) を使用している場合は、`IDENTITY` 引数をパート II の手順 3 で返された Vault URI に置き換えます。 Vault URI に "https://" は含めないでください。    
   
     -   `SECRET` 引数の最初の部分を、パート I で使用した Azure Active Directory の **クライアント ID** に置き換えます。この例の **クライアント ID** は `EF5C8E094D2A4A769998D93440D8115D`です。  
   
@@ -160,9 +158,9 @@ ms.locfileid: "52401085"
         USE master;  
   
         CREATE CREDENTIAL Azure_EKM_Backup_cred   
-            WITH IDENTITY = 'ContosoDevKeyVault', -- for public Azure
+            WITH IDENTITY = 'ContosoDevKeyVault', -- for global Azure
             -- WITH IDENTITY = 'ContosoDevKeyVault.vault.usgovcloudapi.net', -- for Azure Government
-            -- WITH IDENTITY = 'ContosoDevKeyVault.vault.azure.cn', -- for Azure China
+            -- WITH IDENTITY = 'ContosoDevKeyVault.vault.azure.cn', -- for Azure China 21Vianet
             -- WITH IDENTITY = 'ContosoDevKeyVault.vault.microsoftazure.de', -- for Azure Germany   
             SECRET = 'EF5C8E094D2A4A769998D93440D8115DReplace-With-AAD-Client-Secret'   
         FOR CRYPTOGRAPHIC PROVIDER AzureKeyVault_EKM_Prov;    

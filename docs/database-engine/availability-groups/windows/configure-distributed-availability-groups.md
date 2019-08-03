@@ -10,13 +10,12 @@ ms.topic: conceptual
 ms.assetid: f7c7acc5-a350-4a17-95e1-e689c78a0900
 author: MashaMSFT
 ms.author: mathoma
-manager: jroth
-ms.openlocfilehash: 2963dd3f867b4080d383f51dc9f41baf0a1733ec
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: a90f9b303fa285c5fc826aab232abe3e07166992
+ms.sourcegitcommit: 67261229b93f54f9b3096890b200d1aa0cc884ac
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "66793742"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68354605"
 ---
 # <a name="configure-a-distributed-always-on-availability-group"></a>分散型 Always On 可用性グループの構成  
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -82,10 +81,10 @@ GO
 ```  
   
 >[!NOTE]
->上記の例では、直接シード処理を使用しています。レプリカと分散型可用性グループの両方について、**SEEDING_MODE** は **AUTOMATIC** に設定されます。 この構成では、確立後に、セカンダリ レプリカとセカンダリ可用性グループは自動的に設定されます。プライマリ データベースの手動バックアップと復元を実行する必要はありません。  
+>上記の例では、自動シード処理を使用しています。レプリカと分散型可用性グループの両方について、**SEEDING_MODE** は **AUTOMATIC** に設定されます。 この構成では、確立後に、セカンダリ レプリカとセカンダリ可用性グループは自動的に設定されます。プライマリ データベースの手動バックアップと復元を実行する必要はありません。  
   
 ### <a name="join-the-secondary-replicas-to-the-primary-availability-group"></a>セカンダリ レプリカをプライマリ可用性グループに追加する  
-**ALTER AVAILABILITY GROUP** に **JOIN** オプションを指定して、すべてのセカンダリ レプリカを可用性グループに追加する必要があります。 この例では直接シード処理を使用しているため、  **ALTER AVAILABILITY GROUP** に **GRANT CREATE ANY DATABASE** オプションを指定して呼び出す必要があります。 この設定では、可用性グループでデータベースを作成し、プライマリ レプリカから自動的にシード処理を開始できるようになります。  
+**ALTER AVAILABILITY GROUP** に **JOIN** オプションを指定して、すべてのセカンダリ レプリカを可用性グループに追加する必要があります。 この例では自動シード処理を使用しているため、**ALTER AVAILABILITY GROUP** に **GRANT CREATE ANY DATABASE** オプションを指定して呼び出す必要もあります。 この設定では、可用性グループでデータベースを作成し、プライマリ レプリカから自動的にシード処理を開始できるようになります。  
   
 この例では、セカンダリ レプリカ `server2`で次のコマンドが実行され、 `ag1` 可用性グループに追加されます。 この可用性グループは、セカンダリ上にデータベースを作成できるようになります。  
   
@@ -136,7 +135,7 @@ GO
 > セカンダリ可用性グループは、同じデータベース ミラーリング エンドポイント (この例ではポート 5022) を使用する必要があります。 そうしないと、ローカルのフェールオーバー後にレプリケーションは停止します。  
   
 ### <a name="join-the-secondary-replicas-to-the-secondary-availability-group"></a>セカンダリ レプリカをセカンダリ可用性グループに追加する  
- この例では、セカンダリ レプリカ `server4`で次のコマンドが実行され、 `ag2` 可用性グループに追加されます。 この可用性グループは、直接シード処理をサポートするデータベースをセカンダリ上に作成できるようになります。  
+ この例では、セカンダリ レプリカ `server4`で次のコマンドが実行され、 `ag2` 可用性グループに追加されます。 この可用性グループは、自動シード処理をサポートするデータベースをセカンダリ上に作成できるようになります。  
   
 ```sql  
 ALTER AVAILABILITY GROUP [ag2] JOIN   

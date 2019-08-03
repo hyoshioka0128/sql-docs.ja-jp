@@ -9,14 +9,13 @@ ms.topic: conceptual
 ms.assetid: 9fb8656b-0e4e-4ada-b404-4db4d3eea995
 author: MikeRayMSFT
 ms.author: mikeray
-manager: craigg
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 874bedd5e6f8eec03941fa3d3fc957351166500b
-ms.sourcegitcommit: a13256f484eee2f52c812646cc989eb0ce6cf6aa
+ms.openlocfilehash: aa027f58bd673539dd09f118ea1b9433c42c7990
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56801146"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68000277"
 ---
 # <a name="lesson-1-create-and-query-database-objects"></a>レッスン 1: データベース オブジェクトの作成とクエリ
 [!INCLUDE[tsql-appliesto-ss2008-all-md](../includes/tsql-appliesto-ss2008-all-md.md)]
@@ -106,7 +105,7 @@ SQL Server インスタンスへのアクセス権を持っていない場合は
 |75|Tire Bar||Tool for changing tires|  
 |3000|3mm Bracket|.52||  
   
-基本構文は次のとおりです。INSERT、テーブル名、列一覧、VALUES、および挿入する値の一覧。 行の先頭にある 2 つのハイフンは、その行がコメントであることを示します。この行のテキストはコンパイラによって無視されます。 この場合、コメントは構文に許可されているバリエーションを記述します。  
+基本構文は次のとおりです。INSERT、テーブル名、列一覧、VALUES、挿入する値の一覧。 行の先頭にある 2 つのハイフンは、その行がコメントであることを示します。この行のテキストはコンパイラによって無視されます。 この場合、コメントは構文に許可されているバリエーションを記述します。  
   
 ### <a name="insert-data-into-a-table"></a>データをテーブルに挿入  
   

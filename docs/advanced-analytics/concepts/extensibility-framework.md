@@ -3,16 +3,17 @@ title: R 言語と Python スクリプトの拡張性アーキテクチャ
 description: 外部コードは、リレーショナルデータに対して R および Python スクリプトを実行するためのデュアルアーキテクチャを使用して、SQL Server データベースエンジンをサポートします。
 ms.prod: sql
 ms.technology: machine-learning
-ms.date: 10/17/2018
+ms.date: 07/30/2019
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: a5c49172ed23867f95e383878f792092bd762177
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: 49c45fa39cd271140ba78c2b1b32ee8a2f9c1a7a
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68470455"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715254"
 ---
 # <a name="extensibility-architecture-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services の機能拡張アーキテクチャ 
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -21,7 +22,7 @@ SQL Server には、サーバー上で R や Python などの外部スクリプ�
 
 ## <a name="background"></a>背景情報
 
-拡張フレームワークは、R ランタイムをサポートするために SQL Server 2016 で導入されました。 SQL Server 2017 では Python のサポートが追加されます。
+拡張フレームワークは、R ランタイムをサポートするために SQL Server 2016 で導入されました。 SQL Server 2017 以降では、Python がサポートされています。
 
 拡張性フレームワークの目的は、SQL Server とデータサイエンス言語 (R、Python など) の間にインターフェイスを提供し、データサイエンスソリューションを運用環境に移行するときの混乱を軽減し、開発中に公開されたデータを保護することです。process. SQL Server によって管理されるセキュリティで保護されたフレームワーク内で信頼できるスクリプト言語を実行することで、データベース管理者はセキュリティを維持しながら、データ科学者が企業データにアクセスできるようになります。
 
@@ -55,8 +56,8 @@ SQL Server には、サーバー上で R や Python などの外部スクリプ�
 
 | 信頼できるランチャー | 拡張子 | SQL Server のバージョン |
 |-------------------|-----------|---------------------|
-| R 言語用の RLauncher .dll | [R 拡張機能](extension-r.md) | SQL Server 2016、SQL Server 2017 |
-| Python ランチャー .dll (Python 3.5 用) | [Python 拡張機能](extension-python.md) | SQL Server 2017 |
+| R 言語用の RLauncher .dll | [R 拡張機能](extension-r.md) | SQL Server 2016 以降 |
+| Python ランチャー .dll (Python 3.5 用) | [Python 拡張機能](extension-python.md) | SQL Server 2017 以降 |
 
 [!INCLUDE[rsql_launchpad_md](../../includes/rsql-launchpad-md.md)] サービスは、独自のユーザー アカウント下で実行されます。 スタートパッドを実行するアカウントを変更する場合は、必ず SQL Server 構成マネージャーを使用して、変更内容が関連ファイルに書き込まれるようにしてください。
 
@@ -70,7 +71,7 @@ SQL Server Machine Learning Services [!INCLUDE[rsql_launchpad_md](../../includes
 
 実際には、BxlServer は、SQL Server と連携してデータを転送し、タスクを管理する言語ランタイム環境に関連しています。 BXL はバイナリ交換言語を表し、SQL Server と外部プロセス間で効率的にデータを移動するために使用されるデータ形式を表します。 BxlServer は、Microsoft R Client や Microsoft R Server などの関連製品の重要な部分でもあります。
 
-**SQL サテライト**は、SQL Server 2016 以降のデータベースエンジンに含まれる機能拡張 API です。これは、C またはC++を使用して実装された外部コードまたは外部ランタイムをサポートします。
+**SQL サテライト**は、データベースエンジンに含まれる拡張 API で、C またはC++を使用して実装された外部コードまたは外部ランタイムをサポートします。
 
 BxlServer は、次のタスクに SQL サテライトを使用します。
 

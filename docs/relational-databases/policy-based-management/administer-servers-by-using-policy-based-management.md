@@ -20,13 +20,12 @@ helpviewer_keywords:
 ms.assetid: ef2a7b3b-614b-405d-a04a-2464a019df40
 author: VanMSFT
 ms.author: vanto
-manager: craigg
-ms.openlocfilehash: f984cd0e2c01e9a4913387b8266ddc40202e0b13
-ms.sourcegitcommit: 9c6a37175296144464ffea815f371c024fce7032
+ms.openlocfilehash: c62c2372b0a61d0a09a0e15998f2340b995fc919
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51671091"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68109935"
 ---
 # <a name="administer-servers-by-using-policy-based-management"></a>ポリシー ベースの管理を使用したサーバーの管理
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -59,15 +58,15 @@ ms.locfileid: "51671091"
   
 -   評価モード。 実行モードには次の 4 種類があり、そのうち 3 つは自動化できます。  
   
-    -   **[要求時]**: このモードでは、ユーザーが直接指定した場合にポリシーが評価されます。  
+    -   **[要求時]** : このモードでは、ユーザーが直接指定した場合にポリシーが評価されます。  
   
-    -   **[変更時: 回避]**: この自動モードでは、DDL トリガーを使用してポリシー違反が防止されます。  
+    -   **[変更時: 回避]** : この自動モードでは、DDL トリガーを使用してポリシー違反が防止されます。  
   
         > **重要:** nested triggers サーバー構成オプションが無効になっている場合、 **[変更時: 回避]** は正しく動作しません。 ポリシー ベースの管理では、この評価モードを使用するポリシーに準拠しない DDL 操作の検出およびロールバックに DDL トリガーが使用されます。 ポリシー ベースの管理の DDL トリガーを削除するか、nested triggers を無効にすると、この評価モードが失敗したり、予期しない動作をすることがあります。  
   
-    -   **[変更時: ログのみ]**: この自動モードでは、関連する変更が行われたときにイベント通知を使用してポリシーが評価されます。  
+    -   **[変更時: ログのみ]** : この自動モードでは、関連する変更が行われたときにイベント通知を使用してポリシーが評価されます。  
   
-    -   **[スケジュールで実行]**: この自動モードでは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェント ジョブを使用してポリシーが定期的に評価されます。  
+    -   **[スケジュールで実行]** : この自動モードでは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェント ジョブを使用してポリシーが定期的に評価されます。  
   
      自動ポリシーが有効になっていない場合、ポリシー ベースの管理はシステム パフォーマンスに影響しません。  
   
@@ -118,8 +117,8 @@ ms.locfileid: "51671091"
 
 ## <a name="see-also"></a>参照  
  
- - [チュートリアル: "既定でオフ" ポリシーを作成して適用する](lesson-1-create-and-apply-an-off-by-default-policy.md)
- - [チュートリアル: 名前付け基準ポリシーを作成して適用する](lesson-2-create-and-apply-a-naming-standards-policy.md)
+ - [チュートリアル: "既定でオフ" ポリシーの作成と適用](lesson-1-create-and-apply-an-off-by-default-policy.md)
+ - [チュートリアル: 名前付け基準ポリシーの作成と適用](lesson-2-create-and-apply-a-naming-standards-policy.md)
  - [ポリシーベースの管理ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/policy-based-management-views-transact-sql.md)  
  
 

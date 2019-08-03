@@ -8,13 +8,12 @@ ms.prod: sql
 ms.technology: ''
 ms.author: mikeray
 author: MikeRayMSFT
-manager: craigg
-ms.openlocfilehash: 35243a3f983f711968f8012eaa23eefdacb11a31
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: 1e4d29fb73c11b727c21730a71eb8d97331296f6
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "63003403"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68049782"
 ---
 # <a name="sql-server-managing-partners"></a>SQL Server 管理のパートナー
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -24,10 +23,10 @@ SQL Server サービスを管理するためのツールを、業界をリード
 
 | Partner | [説明] | リンク |
 | --- | --- | --- | --- |
-|![idera][1] |**IDERA**<br>SQL コンプライアンス マネージャーは SQL Server に対してどのユーザーが何を、いつ、どのように行ったかを表示する包括的な監査ソリューションで、規制とデータ セキュリティの要件への準拠に役立ちます。<br><br>[システム要件][idera_requirements]|<!--[Marketplace][idera_marketplace]<br>-->[Web サイト][idera_website]<br>[Twitter][idera_twitter]<br>[ビデオ][idera_youtube] | |
+|![idera][1] |**IDERA**<br>SQL コンプライアンス マネージャーは SQL Server に対してどのユーザーが何を、いつ、どのように行ったかを表示する包括的な監査ソリューションで、規制とデータ セキュリティの要件への準拠に役立ちます。<br><br>[システム要件][idera_requirements]|<!--[Marketplace][idera_marketplace]<br>-->[Web サイト][idera_website]<br>[Twitter][idera_twitter]<br>[ビデオ][idera_youtube]<br>次の手順 | |
 
-## <a name="next-steps"></a>次の手順
-その他のパートナーの詳細については、[高可用性、ディザスター リカバリーのパートナー][hadr_partners]、[管理パートナー][monitor_partners]、[開発パートナー][dev_partners]をご確認ください。
+## <a name="next-steps"></a>その他のパートナーの詳細については、[高可用性とディザスター リカバリーのパートナー][hadr_partners], [management partners][monitor_partners]、管理パートナー、[開発パートナー][dev_partners]に関する各ページを参照してください。
+To learn more about some of our other partners, see <bpt id="p1">[</bpt>High availability, and disaster recovery partners<ept id="p1">][hadr_partners]</ept>, <bpt id="p2">[</bpt>management partners<ept id="p2">][monitor_partners]</ept>, and <bpt id="p3">[</bpt>development partners<ept id="p3">][dev_partners]</ept>.
 
 <!--Image references-->
 [1]: ./media/partner-hadr-sql-server/idera_logo.png

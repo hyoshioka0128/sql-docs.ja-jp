@@ -3,24 +3,22 @@ title: SQL Server Machine Learning Services の概要 (R、Python)
 description: SQL Server の Machine Learning Services 機能の概要。ここでは、Python と R を、データサイエンスと統計モデリング、機械学習モデル、予測分析、データ可視化などのためのリレーショナルデータと統合できます。
 ms.prod: sql
 ms.technology: machine-learning
-ms.date: 06/13/2019
+ms.date: 07/24/2019
 ms.topic: overview
 author: dphansen
 ms.author: davidph
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: ead0dd3d9ba69a4bf0079fe8065a2d5aa7a11d3e
-ms.sourcegitcommit: 63c6f3758aaacb8b72462c2002282d3582460e0b
+monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: 4ab4cd7c93cfd1a98a819a849e643d590450cd28
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68495396"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68714668"
 ---
 # <a name="sql-server-machine-learning-services-r-python"></a>SQL Server Machine Learning Services (R、Python)
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
 
 Machine Learning Services は SQL Server の機能であり、データベース内の R および Python スクリプトの実行に使用されます。 この機能には、高パフォーマンスの予測分析と機械学習を行うための[Microsoft R と Python のパッケージ](#components)が含まれています。 リレーショナルデータは、ストアドプロシージャ、R および Python ステートメントを含む T-sql スクリプト、T-sql を含む R および Python コードを使用して、R および Python スクリプトで使用できます。
-
-[SQL Server 2016 R Services](r/sql-server-r-services.md)を以前に使用していた場合は、SQL Server 2017 以降の Machine Learning Services が r サポートの次世代であり、base r、RevoScaleR、microsoft ml、および2016で導入されたその他のライブラリのバージョンが更新されています。
 
 Azure SQL Database では、 [Machine Learning Services (R)](https://docs.microsoft.com/azure/sql-database/sql-database-machine-learning-services-overview)は現在パブリックプレビューの段階にあります。
 
@@ -39,7 +37,7 @@ Machine Learning Services の主な価値の提案は、高度な分析を大規
 
 ## <a name="components"></a>コンポーネント
 
-SQL Server 2017 では、R と Python がサポートされています。 次の表で、コンポーネントについて説明します。
+SQL Server では、R と Python がサポートされています。 次の表で、コンポーネントについて説明します。
 
 | コンポーネント | 説明 |
 |-----------|-------------|
@@ -128,19 +126,6 @@ SQL Server のリソース管理機能とセキュリティ機能を活用する
 + リソースガバナンスを有効にする (Enterprise edition が必要)
 
 詳細については、「 [r のリソースガバナンス](r/resource-governance-for-r-services.md)」および「 [SQL Server の r Package Management](r/install-additional-r-packages-on-sql-server.md)」を参照してください。
-
-## <a name="version-history"></a>バージョン履歴
-
-SQL Server 2017 Machine Learning Services は SQL Server 2016 R Services の次世代であり、Python を含むように強化されています。 次の表は、すべての製品バージョンの、開始から現在のリリースまでの完全な一覧です。 
-
-| [製品名] | エンジンのバージョン | リリース日 |
-|--------------|---------|--------------|
-| SQL Server 2017 Machine Learning Services (データベース内) | R Server 9.2.1 <br/> Python Server 9.2 | 2017 年 10 月 |
-| SQL Server 2017 Machine Learning Server (スタンドアロン) | R Server 9.2.1 <br/> Python Server 9.2 | 2017 年 10 月 |
-| SQL Server 2016 R Services (データベース内) | R Server 9.1  | 2017 年 7 月  |
-| SQL Server 2016 R Server (スタンドアロン)  |  R Server 9.1 | 2017 年 7 月 |
-
-リリース別のパッケージバージョンについては、「 [Upgrade R And Python components](install/upgrade-r-and-python.md#version-map)」の「バージョンマップ」を参照してください。
 
 ## <a name="portability-and-related-products"></a>移植性と関連製品
 

@@ -1,5 +1,5 @@
 ---
-title: 'チュートリアル: レプリケーション用の SQL Server の準備 (パブリッシャー、ディストリビューター、サブスクライバー) | Microsoft Docs'
+title: チュートリアル:レプリケーション用の SQL Server の準備 (パブリッシャー、ディストリビューター、サブスクライバー) | Microsoft Docs
 ms.custom: ''
 ms.date: 04/02/2018
 ms.prod: sql
@@ -12,15 +12,14 @@ helpviewer_keywords:
 ms.assetid: ce30a095-2975-4387-9377-94a461ac78ee
 author: MashaMSFT
 ms.author: mathoma
-manager: craigg
-ms.openlocfilehash: 39eac1be5a9e6479a7607364bb194b5aa5b8716f
-ms.sourcegitcommit: 9c6a37175296144464ffea815f371c024fce7032
+ms.openlocfilehash: 1900d3d447dd7974fb9afbbd83f17ca375bfbe81
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51672591"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67895431"
 ---
-# <a name="tutorial-prepare-sql-server-for-replication-publisher-distributor-subscriber"></a>チュートリアル: レプリケーション用の SQL Server の準備 (パブリッシャー、ディストリビューター、サブスクライバー)
+# <a name="tutorial-prepare-sql-server-for-replication-publisher-distributor-subscriber"></a>チュートリアル:レプリケーション用の SQL Server の準備 (パブリッシャー、ディストリビューター、サブスクライバー)
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
 レプリケーション トポロジを構成するには、事前にセキュリティ計画を立てることが重要です。 このチュートリアルでは、レプリケーション トポロジのセキュリティを向上する方法について説明します。 また、データのレプリケーションの最初の手順である配布の構成方法についても説明します。 他のチュートリアルを行う前に、まずこのチュートリアルを実行してください。  
   
@@ -80,7 +79,7 @@ ms.locfileid: "51672591"
   
 3. **[ユーザー]** を右クリックし、 **[新しいユーザー]** を選択します。  
      
-4. **[ユーザー名]** ボックスに「**repl_snapshot**」と入力し、パスワードおよびその他の必要な情報を入力し、**[作成]** を選択して repl_snapshot アカウントを作成します。 
+4. **[ユーザー名]** ボックスに「**repl_snapshot**」と入力し、パスワードおよびその他の必要な情報を入力し、 **[作成]** を選択して repl_snapshot アカウントを作成します。 
 
    ![[新しいユーザー] ダイアログ ボックス](media/tutorial-preparing-the-server-for-replication/newuser.png)
   
@@ -115,19 +114,19 @@ ms.locfileid: "51672591"
   
 2. **repldata**という名前の新しいフォルダーを作成します。  
   
-3. フォルダーを右クリックし、**[プロパティ]** を選択します。  
+3. フォルダーを右クリックし、 **[プロパティ]** を選択します。  
   
-   A. **[repldata のプロパティ]** ダイアログ ボックスの **[共有]** タブで、**[詳細な共有]** を選択します。  
+   A. **[repldata のプロパティ]** ダイアログ ボックスの **[共有]** タブで、 **[詳細な共有]** を選択します。  
   
-   B. **[詳細な共有]** ダイアログ ボックスで、**[このフォルダーを共有する]** を選択し、**[アクセス許可]** を選択します。  
+   B. **[詳細な共有]** ダイアログ ボックスで、 **[このフォルダーを共有する]** を選択し、 **[アクセス許可]** を選択します。  
 
    ![repldata フォルダーを共有する選択](media/tutorial-preparing-the-server-for-replication/repldata.png)
 
-6. **[repldata のアクセス許可]** ダイアログ ボックスで **[追加]** を選択します。 **[ユーザー、コンピューター、サービス アカウントまたはグループの選択]** ボックスに、前に作成したスナップショット エージェント アカウントの名前 (<*パブリッシャー コンピューター名*>**\repl_snapshot**) を入力します。 **[名前の確認]** を選択し、**[OK]** を選択します。  
+6. **[repldata のアクセス許可]** ダイアログ ボックスで **[追加]** を選択します。 **[ユーザー、コンピューター、サービス アカウントまたはグループの選択]** ボックスに、前に作成したスナップショット エージェント アカウントの名前 (<*パブリッシャー コンピューター名*> **\repl_snapshot**) を入力します。 **[名前の確認]** を選択し、 **[OK]** を選択します。  
 
    ![共有アクセス許可を追加する選択](media/tutorial-preparing-the-server-for-replication/addshareperms.png)
 
-7. 手順 6 を繰り返して以前に作成したその他の 2 つのアカウント <*パブリッシャー コンピューター名*>**\repl_merge** と <*パブリッシャー コンピューター名*>**\repl_distribution** を追加します。
+7. 手順 6 を繰り返して以前に作成したその他の 2 つのアカウント <*パブリッシャー コンピューター名*> **\repl_merge** と <*パブリッシャー コンピューター名*> **\repl_distribution** を追加します。
 
 8. 3 つのアカウントを追加したら、次のアクセス許可を割り当てます。      
    - repl_distribution: **読み取り**  
@@ -136,18 +135,18 @@ ms.locfileid: "51672591"
 
    ![各アカウントの共有のアクセス許可](media/tutorial-preparing-the-server-for-replication/sharedpermissions.png)
 
-9. 共有のアクセス許可が正しく構成されたら、**[OK]** を選択して、**[repldata のアクセス許可]** ダイアログ ボックスを閉じます。 **[OK]** を選択して **[詳細な共有]** ダイアログ ボックスを閉じます。 
+9. 共有のアクセス許可が正しく構成されたら、 **[OK]** を選択して、 **[repldata のアクセス許可]** ダイアログ ボックスを閉じます。 **[OK]** を選択して **[詳細な共有]** ダイアログ ボックスを閉じます。 
 
-10. **[repldata のプロパティ]** ダイアログ ボックスで、**[セキュリティ]** タブを選択し、**[編集]** を選択します。  
+10. **[repldata のプロパティ]** ダイアログ ボックスで、 **[セキュリティ]** タブを選択し、 **[編集]** を選択します。  
 
     ![[セキュリティ] タブの [編集] ボタン](media/tutorial-preparing-the-server-for-replication/editsecurity.png)   
 
-11. **[repldata のアクセス許可]** ダイアログ ボックスで **[追加]** を選択します。 **[ユーザー、コンピューター、サービス アカウントまたはグループの選択]** ボックスに、前に作成したスナップショット エージェント アカウントの名前 (<*パブリッシャー コンピューター名*>**\repl_snapshot**) を入力します。 **[名前の確認]** を選択し、**[OK]** を選択します。  
+11. **[repldata のアクセス許可]** ダイアログ ボックスで **[追加]** を選択します。 **[ユーザー、コンピューター、サービス アカウントまたはグループの選択]** ボックスに、前に作成したスナップショット エージェント アカウントの名前 (<*パブリッシャー コンピューター名*> **\repl_snapshot**) を入力します。 **[名前の確認]** を選択し、 **[OK]** を選択します。  
 
     ![セキュリティ アクセス許可を追加する選択](media/tutorial-preparing-the-server-for-replication/addsecuritypermissions.png)
 
   
-12. 前の手順を繰り返して、ディストリビューション エージェント (<*パブリッシャー コンピューター名*>**\repl_distribution**) とマージ エージェント (<*パブリッシャー コンピューター名*>**\repl_merge**) のアクセス許可を追加します。  
+12. 前の手順を繰り返して、ディストリビューション エージェント (<*パブリッシャー コンピューター名*> **\repl_distribution**) とマージ エージェント (<*パブリッシャー コンピューター名*> **\repl_merge**) のアクセス許可を追加します。  
     
   
 13. 次のアクセス許可が与えられていることを確認します。  
@@ -181,18 +180,18 @@ ms.locfileid: "51672591"
    ![ショートカット メニューの [ディストリビューションの構成] コマンド](media/tutorial-preparing-the-server-for-replication/configuredistribution.png)
   
    > [!NOTE]  
-   > 実際のサーバー名ではなく **localhost** を使用して [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] に接続すると、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] が **localhost** に接続できないことを示す警告が表示されます。 警告ダイアログで **[OK]** を選択します。 **[サーバーへの接続]** ダイアログ ボックスで、**[サーバー名]** を **localhost** から使用しているサーバーの名前に変更します。 **[接続]** を選択します。  
+   > 実際のサーバー名ではなく **localhost** を使用して [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] に接続すると、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] が **localhost** に接続できないことを示す警告が表示されます。 警告ダイアログで **[OK]** を選択します。 **[サーバーへの接続]** ダイアログ ボックスで、 **[サーバー名]** を **localhost** から使用しているサーバーの名前に変更します。 **[接続]** を選択します。  
   
    ディストリビューション構成ウィザードが起動します。  
   
-3. **[ディストリビューター]** ページで、[<*'サーバー名'*>  **を独自のディストリビューターとする (SQL Server はディストリビューション データベースとログを作成します)]** を選択します。 **[次へ]** を選択します。  
+3. **[ディストリビューター]** ページで、[< *'サーバー名'* >  **を独自のディストリビューターとする (SQL Server はディストリビューション データベースとログを作成します)]** を選択します。 **[次へ]** を選択します。  
 
    ![サーバーを独自のディストリビューターとするオプション](media/tutorial-preparing-the-server-for-replication/serverdistributor.png)
   
-4. [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントが実行されていない場合は、**[[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントの起動]** ページで **[はい、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェント サービスを自動的に開始するように構成します]** を選択します。 **[次へ]** を選択します。  
+4. [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントが実行されていない場合は、 **[[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントの起動]** ページで **[はい、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェント サービスを自動的に開始するように構成します]** を選択します。 **[次へ]** を選択します。  
 
      
-5. **[スナップショット フォルダー]** ボックスにパス \\\\<*パブリッシャー コンピューター名*>**\repldata** を入力し、**[次へ]** を選択します。 このパスは、共有のプロパティを構成した後に repldata のプロパティ フォルダーの **[ネットワーク パス]** に以前表示されていたパスと一致する必要があります。 
+5. **[スナップショット フォルダー]** ボックスにパス \\\\<*パブリッシャー コンピューター名*> **\repldata** を入力し、 **[次へ]** を選択します。 このパスは、共有のプロパティを構成した後に repldata のプロパティ フォルダーの **[ネットワーク パス]** に以前表示されていたパスと一致する必要があります。 
 
    ![[repldata のプロパティ] ダイアログ ボックスとディストリビューション構成ウィザードのネットワークパスの比較](media/tutorial-preparing-the-server-for-replication/repldatasnapshot.png)
   
@@ -211,15 +210,15 @@ SQL Server Management Studio インスタンスが管理者権限で実行され
 ![SSMS のエージェントのショートカット メニューで [開始] を選択する](media/tutorial-preparing-the-server-for-replication/ssmsstartagent.png) 
 
 >[!NOTE]
-> SQL エージェントが自動的に起動しない場合は、SSMS で SQL Server エージェントを右クリックし、**[更新]** を選択します。 それでも停止状態である場合、SQL Server 構成マネージャーから手動で起動します。    
+> SQL エージェントが自動的に起動しない場合は、SSMS で SQL Server エージェントを右クリックし、 **[更新]** を選択します。 それでも停止状態である場合、SQL Server 構成マネージャーから手動で起動します。    
   
 ### <a name="set-database-permissions-at-the-publisher"></a>パブリッシャー側のデータベース権限を設定する  
   
-1. [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]で、**[セキュリティ]** を展開して **[ログイン]** を右クリックし、**[新しいログイン]** をクリックします。  
+1. [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]で、 **[セキュリティ]** を展開して **[ログイン]** を右クリックし、 **[新しいログイン]** をクリックします。  
 
    ![ショートカット メニューの [新しいログイン] コマンド](media/tutorial-preparing-the-server-for-replication/newlogin.png)
   
-2. **[全般]** ページで、**[検索]** を選択します。 **[選択するオブジェクト名を入力します]** ボックスに「<*パブリッシャー コンピューター名*>**\repl_snapshot**」と入力し、**[名前の確認]** を選択して、**[OK]** を選択します。  
+2. **[全般]** ページで、 **[検索]** を選択します。 **[選択するオブジェクト名を入力します]** ボックスに「<*パブリッシャー コンピューター名*> **\repl_snapshot**」と入力し、 **[名前の確認]** を選択して、 **[OK]** を選択します。  
 
    ![オブジェクト名を入力する際の選択](media/tutorial-preparing-the-server-for-replication/addsnapshotlogin.png)
   

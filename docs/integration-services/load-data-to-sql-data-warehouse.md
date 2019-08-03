@@ -10,13 +10,12 @@ ms.custom: loading
 ms.date: 08/09/2018
 ms.author: janinez
 author: janinezhang
-manager: craigg
-ms.openlocfilehash: 8a2d8444e0b19ed4672e9582ef9802d0cd6f6fe7
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: 29668550dc64d4c782101f2690058bb465764c90
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "65720745"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67908633"
 ---
 # <a name="load-data-into-azure-sql-data-warehouse-with-sql-server-integration-services-ssis"></a>SQL Server Integration Services (SSIS) を使用して Azure SQL Data Warehouse にデータを読み込む
 
@@ -53,8 +52,8 @@ SQL Server Integration Services (SSIS) とは、SQL Data Warehouse に接続す�
 このチュートリアルの手順を実行するには、以下の要素が必要です。
 
 1. **SQL Server Integration Services (SSIS)** . SSIS は SQL Server のコンポーネントであり、使用するには SQL Server のライセンス版、開発者版、または評価版が必要です。 SQL Server の評価版を取得するには、[SQL Server の評価](https://www.microsoft.com/evalcenter/evaluate-sql-server-2017-rtm)に関するページを参照してください。
-2. **Visual Studio** (省略可能)。 無料の Visual Studio Community Edition を取得するには、「[Visual Studio Community][Visual Studio Community]」を参照してください。 Visual Studio をインストールしない場合は、SQL Server Data Tools (SSDT) のみをインストールできます。 SSDT をインストールすると、機能が制限されたバージョンの Visual Studio がインストールされます。
-3. **Visual Studio 用 SQL Server Data Tools (SSDT)** 。 Visual Studio 用 SQL Server Data Tools を取得するには、「[SQL Server Data Tools (SSDT) のダウンロード][Download SQL Server Data Tools (SSDT)]」を参照してください。
+2. **Visual Studio** (省略可能)。 無料の Visual Studio Community Edition を取得するには、[Visual Studio Community][Visual Studio Community] に関するページを参照してください。 Visual Studio をインストールしない場合は、SQL Server Data Tools (SSDT) のみをインストールできます。 SSDT をインストールすると、機能が制限されたバージョンの Visual Studio がインストールされます。
+3. **Visual Studio 用 SQL Server Data Tools (SSDT)** 。 Visual Studio 用 SQL Server Data Tools を取得するには、[SQL Server Data Tools (SSDT) のダウンロード][Download SQL Server Data Tools (SSDT)]に関するページを参照してください。
 4. **Azure SQL Data Warehouse データベースとアクセス許可**。 このチュートリアルでは、SQL Data Warehouse のインスタンスに接続し、そのインスタンスにデータを読み込みます。 接続し、テーブルを作成し、データを読み込むことができるアクセス許可が必要です。
 
 ## <a name="create-a-new-integration-services-project"></a>新しい Integration Services プロジェクトを作成する
@@ -115,7 +114,7 @@ SQL Server と SQL Data Warehouse に接続するには、ADO.NET 接続マネ�
 
 このオプションを選択してチュートリアルを続行するには、次の要素が必要です。
 
-1. **サンプル データ**。 このチュートリアルでは、SQL Data Warehouse に読み込むソース データとして、SQL Server の AdventureWorks サンプル データベースに格納されているサンプル データを使用します。 AdventureWorks サンプル データベースを取得するには、[AdventureWorks サンプル データベース][AdventureWorks 2014 Sample Databases]のページを参照してください。
+1. **サンプル データ**。 このチュートリアルでは、SQL Data Warehouse に読み込むソース データとして、SQL Server の AdventureWorks サンプル データベースに格納されているサンプル データを使用します。 AdventureWorks サンプル データベースを取得するには、「[AdventureWorks Sample Databases][AdventureWorks 2014 Sample Databases]」 (AdventureWorks サンプル データベース) を参照してください。
 
 2. **ファイアウォール規則**。 SQL Data Warehouse にデータをアップロードするには、事前にローカル コンピューターの IP アドレスを使用して SQL Data Warehouse に対してファイアウォール規則を作成しておく必要があります。
 
@@ -190,7 +189,7 @@ SQL Server と SQL Data Warehouse に接続するには、ADO.NET 接続マネ�
    
    1. 変換先テーブルの名前を **SalesOrderDetail** に変更します。
    2. **rowguid** 列を削除します。 SQL Data Warehouse では、**uniqueidentifier** データ型はサポートされていません。
-   3. **[LineTotal]** 列のデータ型を **[money]** に変更します。 SQL Data Warehouse では、**decimal** データ型はサポートされていません。 サポートされるデータ型については、[CREATE TABLE (Azure SQL Data Warehouse、Parallel Data Warehouse)][CREATE TABLE (Azure SQL Data Warehouse, Parallel Data Warehouse)] に関するページを参照してください。
+   3. **[LineTotal]** 列のデータ型を **[money]** に変更します。 SQL Data Warehouse では、**decimal** データ型はサポートされていません。 サポートされるデータ型に関する情報については、[CREATE TABLE (Azure SQL Data Warehouse、Parallel Data Warehouse)][CREATE TABLE (Azure SQL Data Warehouse, Parallel Data Warehouse)] に関するページを参照してください。
       
        ![][12b]
    4. **[OK]** をクリックして、テーブルを作成し、**ADO.NET 変換先エディター**に戻ります。

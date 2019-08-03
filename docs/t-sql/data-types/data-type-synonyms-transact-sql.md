@@ -16,13 +16,12 @@ helpviewer_keywords:
 ms.assetid: 390eef67-1a49-4185-a971-e07765be9717
 author: MikeRayMSFT
 ms.author: mikeray
-manager: craigg
-ms.openlocfilehash: 74fe3be365919d61a7b32587f910f083cc5e846d
-ms.sourcegitcommit: dfb1e6deaa4919a0f4e654af57252cfb09613dd5
+ms.openlocfilehash: 30a66dbcf9126031caa84cdf0ff7623d2dd16046
+ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "56034213"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67927778"
 ---
 # <a name="data-type-synonyms-transact-sql"></a>データ型のシノニム (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
@@ -35,17 +34,17 @@ ISO との互換性を保つために、[!INCLUDE[ssNoVersion](../../includes/ss
 |**char varying**|**varchar**|  
 |**character**|**char**|  
 |**character**|**char(1)**|  
-|**character(**_n_**)**|**char(n)**|  
-|**character varying(**_n_**)**|**varchar(n)**|  
+|**character(** _n_ **)**|**char(n)**|  
+|**character varying(** _n_ **)**|**varchar(n)**|  
 |**dec**|**decimal**|  
 |**DOUBLE PRECISION**|**float**|  
-|**float**[**(**_n_**)**] for _n_ = 1-7|**real**|  
-|**float**[**(**_n_**)**] for _n_ = 8-15|**float**|  
+|**float**[ **(** _n_ **)** ] for _n_ = 1-7|**real**|  
+|**float**[ **(** _n_ **)** ] for _n_ = 8-15|**float**|  
 |**整数 (integer)**|**int**|  
-|**national character(**_n_**)**|**nchar(n)**|  
-|**national char(**_n_**)**|**nchar(n)**|  
-|**national character varying(**_n_**)**|**nvarchar(n)**|  
-|**national char varying(**_n_**)**|**nvarchar(n)**|  
+|**national character(** _n_ **)**|**nchar(n)**|  
+|**national char(** _n_ **)**|**nchar(n)**|  
+|**national character varying(** _n_ **)**|**nvarchar(n)**|  
+|**national char varying(** _n_ **)**|**nvarchar(n)**|  
 |**national text**|**ntext**|  
 |**timestamp**|rowversion|  
   

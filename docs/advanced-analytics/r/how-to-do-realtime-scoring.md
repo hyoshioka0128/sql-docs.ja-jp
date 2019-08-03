@@ -1,18 +1,19 @@
 ---
 title: 機械学習モデルを使用して予測と予測を生成する
-description: リアルタイムスコアリングには rxPredict または sp_rxPredict を使用します。または、SQL Server Machine Learning の R および Pythin で予測と予測を行うために T-sql を予測します。
+description: リアルタイムスコアリングには rxPredict または sp_rxPredict を使用し、SQL Server Machine Learning での R および Python の予測と予測については、ネイティブスコアリングのために T-sql を予測します。
 ms.prod: sql
 ms.technology: machine-learning
 ms.date: 08/30/2018
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
-ms.openlocfilehash: 39edb40da1ebbddfff805aca321b99ea766f085c
-ms.sourcegitcommit: 9062c5e97c4e4af0bbe5be6637cc3872cd1b2320
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
+ms.openlocfilehash: d01be0f7d7a18091b965ad73b9bf035558b34864
+ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68470112"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68715694"
 ---
 # <a name="how-to-generate-forecasts-and-predictions-using-machine-learning-models-in-sql-server"></a>SQL Server で機械学習モデルを使用して予測と予測を生成する方法
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]

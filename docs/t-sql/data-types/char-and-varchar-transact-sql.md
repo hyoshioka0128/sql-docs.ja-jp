@@ -1,7 +1,7 @@
 ---
 title: char および varchar (Transact-SQL) | Microsoft Docs
 ms.custom: ''
-ms.date: 10/22/2018
+ms.date: 07/19/2019
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
@@ -23,33 +23,36 @@ helpviewer_keywords:
 ms.assetid: 282cd982-f4fb-4b22-b2df-9e8478f13f6a
 author: MikeRayMSFT
 ms.author: mikeray
-manager: craigg
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 60bec45b4feacff0390bfb359010767dc3bcd2af
-ms.sourcegitcommit: a13256f484eee2f52c812646cc989eb0ce6cf6aa
+ms.openlocfilehash: a7e625e1d532f42f2e72e57590943de7e5834dbf
+ms.sourcegitcommit: 67261229b93f54f9b3096890b200d1aa0cc884ac
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56801406"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68354612"
 ---
 # <a name="char-and-varchar-transact-sql"></a>char および varchar (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-all-md](../../includes/tsql-appliesto-ss2008-all-md.md)]
 
-固定長 (**char**)、または可変長 (**varchar**) の文字データ型です。 [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降、UTF-8 が有効になっている照合順序を使用する場合、これらのデータ型には [Unicode](../../relational-databases/collations/collation-and-unicode-support.md#Unicode_Defn) 文字データの全範囲が格納され、[UTF-8](https://www.wikipedia.org/wiki/UTF-8) 文字エンコードが使用されます。 UTF-8 が無効の照合順序を指定する場合、これらのデータ型には、対応するその照合順序のコード ページでサポートされている文字のサブセットのみが格納されます。
+固定サイズ (**char**)、または可変サイズ (**varchar**) の文字データ型です。 [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降、UTF-8 が有効になっている照合順序を使用する場合、これらのデータ型には [Unicode](../../relational-databases/collations/collation-and-unicode-support.md#Unicode_Defn) 文字データの全範囲が格納され、[UTF-8](https://www.wikipedia.org/wiki/UTF-8) 文字エンコードが使用されます。 UTF-8 が無効の照合順序を指定する場合、これらのデータ型には、対応するその照合順序のコード ページでサポートされている文字のサブセットのみが格納されます。
   
 ## <a name="arguments"></a>引数  
-**char** [ ( *n* ) ] 固定長の文字列データです。 *n* によってバイト単位での文字列の長さが定義されます。1 から 8,000 までの値にする必要があります。 *Latin* などの 1 バイト エンコード文字セットの場合、ストレージのサイズは *n* バイトとなり、格納できる文字数もまた *n* となります。 マルチバイト エンコード文字セットの場合、ストレージのサイズは引き続き *n* バイトですが、格納できる文字数が *n* よりも少なくなる場合があります。 **char** の ISO シノニムは、**character** です。 文字セットについて詳しくは、「[1 バイト文字セットとマルチバイト文字セット](/cpp/c-runtime-library/single-byte-and-multibyte-character-sets)」をご覧ください。
+**char** [ ( *n* ) ] 固定サイズの文字列データです。 *n* によってバイト単位での文字列のサイズが定義されます。1 から 8,000 までの値にする必要があります。 *Latin* などの 1 バイト エンコード文字セットの場合、ストレージのサイズは *n* バイトとなり、格納できる文字数もまた *n* となります。 マルチバイト エンコード文字セットの場合、ストレージのサイズは引き続き *n* バイトですが、格納できる文字数が *n* よりも少なくなる場合があります。 **char** の ISO シノニムは、**character** です。 文字セットについて詳しくは、「[1 バイト文字セットとマルチバイト文字セット](/cpp/c-runtime-library/single-byte-and-multibyte-character-sets)」をご覧ください。
 
-**varchar** [ ( *n* | **max** ) ] 可変長の文字列データです。 *n* によってバイト単位での文字列の長さが定義されます。1 から 8,000 までの値を指定できます。 **max** は最大格納サイズが 2^31-1 バイト (2 GB) であることを示します。 *Latin* などの 1 バイト エンコード文字セットの場合、ストレージのサイズは *n* バイト + 2 バイトとなり、格納できる文字数もまた *n* となります。 マルチバイト エンコード文字セットの場合、ストレージのサイズは引き続き *n* バイト + 2 バイトですが、格納できる文字数が *n* よりも少なくなる場合があります。 **varchar** の ISO シノニムは、**charvarying** または **charactervarying** です。 文字セットについて詳しくは、「[1 バイト文字セットとマルチバイト文字セット](/cpp/c-runtime-library/single-byte-and-multibyte-character-sets)」をご覧ください。
+**varchar** [ ( *n* | **max** ) ] 可変サイズの文字列データです。 *n* によってバイト単位での文字列のサイズが定義されます。1 から 8,000 までの値を指定できます。 **max** は最大格納サイズが 2^31-1 バイト (2 GB) であることを示します。 *Latin* などの 1 バイト エンコード文字セットの場合、ストレージのサイズは *n* バイト + 2 バイトとなり、格納できる文字数もまた *n* となります。 マルチバイト エンコード文字セットの場合、ストレージのサイズは引き続き *n* バイト + 2 バイトですが、格納できる文字数が *n* よりも少なくなる場合があります。 **varchar** の ISO シノニムは、**charvarying** または **charactervarying** です。 文字セットについて詳しくは、「[1 バイト文字セットとマルチバイト文字セット](/cpp/c-runtime-library/single-byte-and-multibyte-character-sets)」をご覧ください。
 
 ## <a name="remarks"></a>Remarks  
+一般的な誤解として、[CHAR(*n*) および VARCHAR(*n*)](../../t-sql/data-types/char-and-varchar-transact-sql.md) では *n* によって文字数が定義されると考えられています。 実際には、[CHAR(*n*) および VARCHAR(*n*)](../../t-sql/data-types/char-and-varchar-transact-sql.md) では、*n* によって文字長が**バイト** (0-8,000) で定義されます。 *n* は、格納できる文字数を定義しません。 これは、[NCHAR(*n*) および NVARCHAR(*n*)](../../t-sql/data-types/nchar-and-nvarchar-transact-sql.md) の定義と同様です。    
+この誤解が生じるのは、1 バイト エンコードを使用すると、CHAR と VARCHAR の格納サイズが *n* バイトとなり、文字の数も *n* となるためです。 しかしながら、[UTF-8](https://www.wikipedia.org/wiki/UTF-8) などのマルチバイト エンコードの場合、より高い Unicode 範囲 (128-1,114,111) では 1 文字に 2 バイト以上が使用されることになります。 たとえば、CHAR(10) として定義された列では、[!INCLUDE[ssde_md](../../includes/ssde_md.md)]で格納できる文字は、1 バイト エンコード (Unicode 範囲 0-127) を使用する文字は 10 個ですが、マルチバイト エンコード (Unicode 範囲 128-1,114,111) を使用する場合は 10 個未満です。 Unicode の格納と文字の範囲の詳細については、「[UTF-8 と UTF-16 でのストレージの相違点](../../relational-databases/collations/collation-and-unicode-support.md#storage_differences)」を参照してください。      
+
+
 データ定義または変数宣言ステートメントで *n* を指定しないと、既定の長さは 1 になります。 CAST 関数および CONVERT 関数で *n* を指定しないと、既定の長さは 30 になります。
   
 COLLATE 句で特定の照合順序を指定しない限り、**char** 型または **varchar** 型を使用するオブジェクトにはデータベースの既定の照合順序が割り当てられます。 照合順序によって、文字型データの格納に使用されるコード ページが制御されます。
 
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のマルチバイト エンコードには以下が含まれます。
 -   一部の東アジア言語に向けた 2 バイト文字セット (DBCS)。コード ページ 936 および 950 (中国語)、932 (日本語)、または 949 (韓国語) を使用します。
--   コード ページ 65001 を使用する UTF 8。 **適用対象:**[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降)
+-   コード ページ 65001 を使用する UTF 8。 **適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降)
 
 複数言語をサポートするサイトがある場合:
 - [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降、Unicode をサポートして文字変換の問題を最小限に抑えるために、UTF-8 が有効になっている照合順序の使用を検討してください。 
@@ -163,7 +166,7 @@ String                                       TruncatedValue
 [nchar および nvarchar &#40;Transact-SQL&#41;](../../t-sql/data-types/nchar-and-nvarchar-transact-sql.md)  
 [CAST および CONVERT &#40;Transact-SQL&#41;](../../t-sql/functions/cast-and-convert-transact-sql.md)  
 [COLLATE &#40;Transact-SQL&#41;](../../t-sql/statements/collations.md)  
-[データ型の変換 &#40;データベース エンジン&#41;](../../t-sql/data-types/data-type-conversion-database-engine.md)  
+[データ型の変換&#40;Transact-SQL&#41;](../../t-sql/data-types/data-type-conversion-database-engine.md)  
 [データ型 &#40;Transact-SQL&#41;](../../t-sql/data-types/data-types-transact-sql.md)  
 [データベース サイズの見積もり](../../relational-databases/databases/estimate-the-size-of-a-database.md)     
 [照合順序と Unicode のサポート](../../relational-databases/collations/collation-and-unicode-support.md)    
