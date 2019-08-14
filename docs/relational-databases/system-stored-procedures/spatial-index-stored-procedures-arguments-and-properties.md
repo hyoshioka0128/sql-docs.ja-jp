@@ -59,7 +59,7 @@ ms.locfileid: "67950406"
 `[ @xml_output = ] 'xml_output'` XML フラグメントで結果を返す出力パラメーターが設定されます。 *xml_output*は**xml**既定値はありません。  
   
 ## <a name="properties"></a>Properties  
- 設定 **@verboseoutput** = 0; 次の表に示すように、コア プロパティを返す **@verboseoutput** > 0 を空間インデックスのすべてのプロパティを返します。  
+ 設定 **\@verboseoutput** = 0; 次の表に示すように、コア プロパティを返す **\@verboseoutput** > 0 を空間インデックスのすべてのプロパティを返します。  
   
  **Base_Table_Rows**  
  ベース テーブルの行の数。 値は**bigint**します。  
