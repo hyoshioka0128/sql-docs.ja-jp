@@ -1,5 +1,5 @@
 ---
-title: MSreplication_options (TRANSACT-SQL) |Microsoft Docs
+title: MSreplication_options (Transact-SQL) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/04/2017
 ms.prod: sql
@@ -24,10 +24,10 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/15/2019
 ms.locfileid: "68063004"
 ---
-# <a name="msreplicationoptions-transact-sql"></a>MSreplication_options (TRANSACT-SQL)
+# <a name="msreplicationoptions-transact-sql"></a>MSreplication_options (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
-  **MSreplication_options**テーブルがレプリケーションによって内部的に使用されるメタデータを格納します。 このテーブルに格納されます、**マスター**データベース。  
+  **MSreplication_options**テーブルには、レプリケーションで内部的に使用されるメタデータが格納されます。 このテーブルは**master**データベースに保存されます。
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
