@@ -62,7 +62,7 @@ sp_mergecleanupmetadata [ [ @publication = ] 'publication' ]
   
 1.  推奨必須ではありませんが、パブリケーションおよびサブスクリプション データベースにすべての更新プログラムを停止すること。 更新を続行する場合、パブリケーションが再初期化が、データの収束は保持されます、前回のマージ以降にサブスクライバー側で行われた更新は失われます。  
   
-2.  マージ エージェントを実行してマージを実行します。 使用することをお勧め、 **-検証**マージ エージェントを実行すると、各サブスクライバーでエージェントのコマンド ライン オプション。 連続モードのマージを実行している場合は、次を参照してください。*連続モードのマージに関する注意事項*このセクションで後述します。  
+2.  マージ エージェントを実行してマージを実行します。 使用することをお勧め、 **-Validate**マージ エージェントを実行すると、各サブスクライバーでエージェントのコマンド ライン オプション。 連続モードのマージを実行している場合は、次を参照してください。*連続モードのマージに関する注意事項*このセクションで後述します。  
   
 3.  すべてのマージが完了すると、実行**sp_mergecleanupmetadata**します。  
   
@@ -74,11 +74,11 @@ sp_mergecleanupmetadata [ [ @publication = ] 'publication' ]
   
 7.  パブリケーション データベースをバックアップします。 そのためにはエラーには、パブリケーション データベースの復元後のマージが失敗する可能性があります。  
   
- **Sp_mergecleanupmetadata の実行@reinitialize_subscriber= FALSE。**  
+ **Executing sp_mergecleanupmetadata with @reinitialize_subscriber = FALSE**  
   
 1.  停止**すべて**パブリケーションおよびサブスクリプション データベースを更新します。  
   
-2.  マージ エージェントを実行してマージを実行します。 使用することをお勧め、 **-検証**マージ エージェントを実行すると、各サブスクライバーでエージェントのコマンド ライン オプション。 連続モードのマージを実行している場合は、次を参照してください。*連続モードのマージに関する注意事項*このセクションで後述します。  
+2.  マージ エージェントを実行してマージを実行します。 使用することをお勧め、 **-Validate**マージ エージェントを実行すると、各サブスクライバーでエージェントのコマンド ライン オプション。 連続モードのマージを実行している場合は、次を参照してください。*連続モードのマージに関する注意事項*このセクションで後述します。  
   
 3.  すべてのマージが完了すると、実行**sp_mergecleanupmetadata**します。  
   
@@ -94,7 +94,7 @@ sp_mergecleanupmetadata [ [ @publication = ] 'publication' ]
   
  連続モードのマージを実行している場合は、いずれかが必要です。  
   
--   マージ エージェントを停止し、せずに別のマージを実行、 **-継続的な**パラメーターを指定します。  
+-   マージ エージェントを停止し、せずに別のマージを実行、 **-Continuous**パラメーターを指定します。  
   
 -   パブリケーションを非アクティブ化**sp_changemergepublication**にパブリケーションの状態をポーリングしている連続モードのマージが失敗することを確認します。  
   
@@ -104,9 +104,9 @@ sp_mergecleanupmetadata [ [ @publication = ] 'publication' ]
   
  完了したときの実行手順 3. **sp_mergecleanupmetadata**、停止した方法に基づいて、連続モードのマージを再開します。 次のいずれかの操作を行います。  
   
--   追加、 **-継続的な**マージ エージェントのパラメーター。  
+-   追加、 **-Continuous**マージ エージェントのパラメーター。  
   
--   パブリケーションを再アクティブ化**sp_changemergepublication します。**  
+-   パブリケーションを再アクティブ化**sp_changemergepublication** します。  
   
     ```  
     EXEC central..sp_changemergepublication @publication = 'dynpart_pubn', @property = 'status', @value = 'active'  
@@ -118,8 +118,8 @@ sp_mergecleanupmetadata [ [ @publication = ] 'publication' ]
  このストアド プロシージャを使用するには、パブリッシャーが [!INCLUDE[ssVersion2000](../../includes/ssversion2000-md.md)] を実行していることが必要です。 いずれかのサブスクライバーを実行する必要があります[!INCLUDE[ssVersion2000](../../includes/ssversion2000-md.md)]または[!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 7.0 では、Service Pack 2。  
   
 ## <a name="see-also"></a>参照  
- [MSmerge_genhistory &#40;TRANSACT-SQL&#41;](../../relational-databases/system-tables/msmerge-genhistory-transact-sql.md)   
- [MSmerge_contents &#40;TRANSACT-SQL&#41;](../../relational-databases/system-tables/msmerge-contents-transact-sql.md)   
- [MSmerge_tombstone &#40;TRANSACT-SQL&#41;](../../relational-databases/system-tables/msmerge-tombstone-transact-sql.md)  
+ [MSmerge_genhistory &#40;Transact-SQL&#41;](../../relational-databases/system-tables/msmerge-genhistory-transact-sql.md)   
+ [MSmerge_contents &#40;Transact-SQL&#41;](../../relational-databases/system-tables/msmerge-contents-transact-sql.md)   
+ [MSmerge_tombstone &#40;Transact-SQL&#41;](../../relational-databases/system-tables/msmerge-tombstone-transact-sql.md)  
   
   
