@@ -21,13 +21,13 @@ ms.assetid: 765fde44-1f95-4015-80a4-45388f18a42c
 author: MikeRayMSFT
 ms.author: mikeray
 ms.openlocfilehash: 4af840298c0e17b61dd073c982e6dec440ec67d7
-ms.sourcegitcommit: 1f222ef903e6aa0bd1b14d3df031eb04ce775154
+ms.sourcegitcommit: 594cee116fa4ee321e1f5e5206f4a94d408f1576
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2019
+ms.lasthandoff: 08/26/2019
 ms.locfileid: "68419596"
 ---
-# <a name="columnsupdated-transact-sql"></a>COLUMNS_UPDATED (Transact-SQL)
+# <a name="columns_updated-transact-sql"></a>COLUMNS_UPDATED (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
 
 この関数は、テーブルまたはビューの挿入または更新された列を示す **varbinary** ビット パターンを返します。 `COLUMNS_UPDATED` は [!INCLUDE[tsql](../../includes/tsql-md.md)] の INSERT または UPDATE トリガーの内部のどこでも使用でき、そのトリガーが特定の動作を実行すべきかどうかをテストすることができます。
@@ -74,7 +74,7 @@ WHERE TABLE_NAME = 'Person';
   
 ## <a name="examples"></a>使用例  
   
-### <a name="a-using-columnsupdated-to-test-the-first-eight-columns-of-a-table"></a>A. COLUMNS_UPDATED を使用して、テーブルの最初の 8 列をテストする  
+### <a name="a-using-columns_updated-to-test-the-first-eight-columns-of-a-table"></a>A. COLUMNS_UPDATED を使用して、テーブルの最初の 8 列をテストする  
 この例では、`employeeData` と `auditEmployeeData` という 2 つのテーブルを作成します。 `employeeData` テーブルには、機密扱いの従業員給与支払い名簿情報が格納されており、人事部のメンバーが修正できます。 従業員の社会保障番号 (SSN)、年間給与、または銀行口座番号に変更があると、監査レコードが生成され、`auditEmployeeData` 監査テーブルに挿入されます。
   
 `COLUMNS_UPDATED()` 関数を使用すると、従業員の機密情報を含む列に加えられた変更をすばやくテストできます。 この方法で `COLUMNS_UPDATED()` が正しく動作するのは、テーブルの最初の 8 列に対する変更を検出する場合だけです。
@@ -183,7 +183,7 @@ SELECT * FROM dbo.auditEmployeeData;
 GO  
 ```  
   
-### <a name="b-using-columnsupdated-to-test-more-than-eight-columns"></a>B. COLUMNS_UPDATED を使用して、9 列以上をテストする  
+### <a name="b-using-columns_updated-to-test-more-than-eight-columns"></a>B. COLUMNS_UPDATED を使用して、9 列以上をテストする  
 最初の 8 つのテーブル列以外の列に影響を与える更新をテストするには、`SUBSTRING` 関数を使用して、`COLUMNS_UPDATED` から返された正しいビットをテストします。 この例では、`AdventureWorks2012.Person.Person` テーブルの列 `3`、`5`、および `9` に影響を与える更新をテストしています。
   
 ```sql

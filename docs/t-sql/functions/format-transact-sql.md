@@ -18,16 +18,16 @@ ms.assetid: dad6f24c-b8d9-4dbe-a561-9b167b8f20c8
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: = azuresqldb-current||>= sql-server-2016||>= sql-server-linux-2017||= sqlallproducts-allversions
-ms.openlocfilehash: 33f7c840b69e8101c3452d33884015b52a031212
-ms.sourcegitcommit: 316c25fe7465b35884f72928e91c11eea69984d5
+ms.openlocfilehash: 9b7ce2b7a9374579255974ae110f4d9167fc8fa8
+ms.sourcegitcommit: a1ddeabe94cd9555f3afdc210aec5728f0315b14
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68969426"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70123203"
 ---
 # <a name="format-transact-sql"></a>FORMAT (Transact-SQL)
 
-[!INCLUDE[tsql-appliesto-ss2012-asdb-xxxx-xxx-md](../../includes/tsql-appliesto-ss2012-asdb-xxxx-xxx-md.md)]
+[!INCLUDE[tsql-appliesto-ss2012-asdb-asdw-xxx-md](../../includes/tsql-appliesto-ss2012-asdb-asdw-xxx-md.md)]
 
 指定した形式とオプションのカルチャを使用して書式設定された値を返します。 文字列としての日付/時刻と数値のロケール依存の書式指定には FORMAT 関数を使用します。 一般的なデータ型変換では、引き続き CAST または CONVERT を使用します。  
   

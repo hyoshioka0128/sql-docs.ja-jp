@@ -1,5 +1,5 @@
 ---
-title: セキュリティ カタログ ビュー (TRANSACT-SQL) |Microsoft Docs
+title: セキュリティカタログビュー (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 02/27/2017
 ms.prod: sql
@@ -17,28 +17,27 @@ helpviewer_keywords:
 ms.assetid: 4d5cf1bf-09a7-4ee0-9dbb-5c584750fc67
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 5986d2e9c6e61f3d0fa73e1f9460f6a056a4d211
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 2b36067bc90bfb78ead35bf0aac8647e241828fe
+ms.sourcegitcommit: a1ddeabe94cd9555f3afdc210aec5728f0315b14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68018308"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70123064"
 ---
 # <a name="security-catalog-views-transact-sql"></a>セキュリティ カタログ ビュー (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
-  セキュリティ情報は、パフォーマンスおよびユーティリティ用に最適化されたカタログ ビューで公開されます。 可能な場合は、次のカタログ ビューを使用して、カタログ メタデータにアクセスできます。  
+  セキュリティ情報は、パフォーマンスとユーティリティ用に最適化されたカタログビューで公開されます。 可能な場合は、次のカタログ ビューを使用して、カタログ メタデータにアクセスできます。  
   
-## <a name="database-level-views"></a>データベース レベルのビュー  
+## <a name="database-level-views"></a>データベースレベルのビュー  
   
 |||  
 |-|-|  
 |[sys.database_permissions](../../relational-databases/system-catalog-views/sys-database-permissions-transact-sql.md)|[sys.database_scoped_credentials](../../relational-databases/system-catalog-views/sys-database-scoped-credentials-transact-sql.md) |  
 |[sys.database_principals](../../relational-databases/system-catalog-views/sys-database-principals-transact-sql.md)|[sys.master_key_passwords](../../relational-databases/system-catalog-views/sys-master-key-passwords-transact-sql.md) |  
 |[sys.database_role_members](../../relational-databases/system-catalog-views/sys-database-role-members-transact-sql.md)|[sys.user_token](../../relational-databases/system-catalog-views/sys-user-token-transact-sql.md) |  
-|[sys.sql_feature_restrictions](sys-sql-feature-restrictions.md)|
   
-## <a name="server-level-views"></a>サーバー レベルのビュー  
+## <a name="server-level-views"></a>サーバーレベルのビュー  
   
 |||  
 |-|-|  
@@ -54,7 +53,7 @@ ms.locfileid: "68018308"
 |[sys.asymmetric_keys](../../relational-databases/system-catalog-views/sys-asymmetric-keys-transact-sql.md)|[sys.cryptographic_providers](../../relational-databases/system-catalog-views/sys-cryptographic-providers-transact-sql.md)|  
 |[sys.certificates](../../relational-databases/system-catalog-views/sys-certificates-transact-sql.md)|[sys.key_encryptions](../../relational-databases/system-catalog-views/sys-key-encryptions-transact-sql.md)|  
 |[sys.column_encryption_key_values](../../relational-databases/system-catalog-views/sys-column-encryption-key-values-transact-sql.md)|[sys.openkeys](../../relational-databases/system-catalog-views/sys-openkeys-transact-sql.md)|  
-|[sys.column_encryption_keys](../../relational-databases/system-catalog-views/sys-column-encryption-keys-transact-sql.md)|[sys.security_policies &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-security-policies-transact-sql.md)|  
+|[column_encryption_keys](../../relational-databases/system-catalog-views/sys-column-encryption-keys-transact-sql.md)|[sys.security_policies &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-security-policies-transact-sql.md)|  
 |[sys.column_master_key_definitions](../../relational-databases/system-catalog-views/sys-column-master-keys-transact-sql.md)|[sys.security_predicates &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-security-predicates-transact-sql.md)|  
 |[sys.crypt_properties](../../relational-databases/system-catalog-views/sys-crypt-properties-transact-sql.md)|[sys.symmetric_keys](../../relational-databases/system-catalog-views/sys-symmetric-keys-transact-sql.md)|  
   
@@ -64,7 +63,7 @@ ms.locfileid: "68018308"
 |-|-|  
 |[sys.server_audits](../../relational-databases/system-catalog-views/sys-server-audits-transact-sql.md)|[sys.server_file_audits](../../relational-databases/system-catalog-views/sys-server-file-audits-transact-sql.md)|  
 |[sys.server_audit_specifications](../../relational-databases/system-catalog-views/sys-server-audit-specifications-transact-sql.md)|[sys.server_audit_specifications_details](../../relational-databases/system-catalog-views/sys-server-audit-specification-details-transact-sql.md)|  
-|[sys.database_ audit_specifications](../../relational-databases/system-catalog-views/sys-database-audit-specifications-transact-sql.md)|[sys.audit_database_specification_details](../../relational-databases/system-catalog-views/sys-database-audit-specification-details-transact-sql.md)|  
+|[sys.database_ audit_specifications](../../relational-databases/system-catalog-views/sys-database-audit-specifications-transact-sql.md)|[audit_database_specification_details](../../relational-databases/system-catalog-views/sys-database-audit-specification-details-transact-sql.md)|  
   
 ## <a name="permissions"></a>アクセス許可  
  [!INCLUDE[ssCatViewPerm](../../includes/sscatviewperm-md.md)] 詳細については、「 [Metadata Visibility Configuration](../../relational-databases/security/metadata-visibility-configuration.md)」を参照してください。  

@@ -23,12 +23,12 @@ author: dnethi
 ms.author: dinethi
 ms.custom: ''
 ms.date: 07/26/2019
-ms.openlocfilehash: cb379078fe5d8c2436b220871d84d352a8619155
-ms.sourcegitcommit: 2604e13627fbc9f3bda3926b67045fceb7b04e37
+ms.openlocfilehash: 46174db6dc0008dbeb9490cc96cf41cdef1bc3ed
+ms.sourcegitcommit: a1ddeabe94cd9555f3afdc210aec5728f0315b14
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68823124"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70123105"
 ---
 # <a name="download-sql-server-management-studio-ssms"></a>SQL Server Management Studio (SSMS) のダウンロード
 
@@ -81,7 +81,6 @@ SQL Server Management Studio 18.2:
 | クエリの実行または結果 | 指定したクエリでその実行を完了したときに、追跡するメッセージに "完了時刻" を追加しました。 |
 | クエリの実行または結果  | より多くのデータを表示し (結果をテキストで表示)、セルに格納することを許可します (結果をグリッドに表示)。 SSMS では、どちらも最大 200 万文字まで許可されるようになりました (それぞれ 256 および 64,000 から増加)。 これにより、ユーザーがグリッドのセルから 43,680 文字を超えて取得できないという問題にも対処しました。 |
 | プラン表示 | インライン スカラー UDF 機能が有効な場合、QueryPlan に新しい属性を追加しました (ContainsInlineScalarTsqlUdfs)。 |
-| SMO | "機能の制限"* に対するサポートが追加されました。 この機能自体については、「[機能の制限](https://docs.microsoft.com/sql/relational-databases/security/feature-restrictions)」を参照してください。 評価拡張機能については、「[Introducing SQL Assessment API](https://techcommunity.microsoft.com/t5/SQL-Server/Introducing-SQL-Assessment-API-Public-Preview/ba-p/778570)」(SQL Assessment API の概要) を参照してください。 |
 | Integration Services (SSIS) | Azure の SSIS パッケージ スケジューラに対するパフォーマンスの最適化 |
 |  |  |
 

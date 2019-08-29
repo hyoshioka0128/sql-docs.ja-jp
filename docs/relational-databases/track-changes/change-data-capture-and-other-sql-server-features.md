@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 7dfcb362-1904-4578-8274-da16681a960e
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 558923684f88688a4b364157341957cbce7b6013
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 2eb827cbb971195a89a2cd5bdd26dad1bd9f196b
+ms.sourcegitcommit: cdbb0ee5ee5259119ad21695f549207457990f71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68006115"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621787"
 ---
 # <a name="change-data-capture-and-other-sql-server-features"></a>変更データ キャプチャとその他の SQL Server 機能
 [!INCLUDE[tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md.md)]
@@ -69,7 +69,7 @@ ms.locfileid: "68006115"
   
 -   データベースをデタッチしてから、同じサーバーまたは別のサーバーにアタッチした場合、変更データ キャプチャは有効のままです。  
   
--   **KEEP_CDC** オプションを使用してデータベースを Enterprise 以外のエディションにアタッチまたは復元しようとすると、操作がブロックされます。これは変更データ キャプチャが [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Enterprise を必要とするためです。 エラー メッセージ 934 が表示されます。  
+-   **KEEP_CDC** オプションを使用してデータベースを Standard または Enterprise 以外のエディションにアタッチまたは復元しようとすると、操作がブロックされます。これは変更データ キャプチャを使用するには、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Standard または Enterprise Edition が必要であるためです。 エラー メッセージ 934 が表示されます。  
   
      `SQL Server cannot load database '%.*ls' because Change Data Capture is enabled. The currently installed edition of SQL Server does not support Change Data Capture. Either restore database without KEEP_CDC option, or upgrade the instance to one that supports Change Data Capture.`  
   

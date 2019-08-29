@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: bd20fd3a-414b-4581-959d-ebba4ddf5a55
 author: janinezhang
 ms.author: janinez
-ms.openlocfilehash: 143bba36c1f85877fd3a0504dd8345c754ec055d
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: a9cbb85bafae51929676de93e4de285472bc5443
+ms.sourcegitcommit: cdbb0ee5ee5259119ad21695f549207457990f71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68023591"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621703"
 ---
 # <a name="install-integration-services"></a>Integration Services のインストール
 
@@ -44,9 +44,9 @@ ms.locfileid: "68023591"
 -   [SQL Server インストールにおけるセキュリティの考慮事項](../../sql-server/install/security-considerations-for-a-sql-server-installation.md)    
     
 ## <a name="install-standalone-or-side-by-side"></a>スタンドアロンまたはサイド バイ サイドでインストールする    
-次の構成で [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)][!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] をインストールできます。    
+次の構成で [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] をインストールできます。    
     
--   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)][!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] の以前のインスタンスが存在しないコンピューターに [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]をインストールできます。    
+-   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の以前のインスタンスが存在しないコンピューターに [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] をインストールできます。    
     
 -   [!INCLUDE[ssISCurrent](../../includes/ssiscurrent-md.md)] は、[!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] の既存のインスタンスとサイド バイ サイドでインストールできます。    
     
@@ -122,6 +122,6 @@ ETL (抽出、変換、読み込み) プロセス専用のサーバーを使う�
 
 -   **オプションの追加コンポーネント**。 必要に応じて、SQL Server Feature Package から追加のサードパーティ コンポーネントをダウンロードできます。
 
-    -   Microsoft SQL ServerÂ® 用 MicrosoftÂ® Connector for SAP BW。 これらのコンポーネントを入手するには、[MicrosoftÂ® SQL ServerÂ® 2017 Feature Pack](https://www.microsoft.com/download/details.aspx?id=55992) に関するページをご覧ください。
+    -   Microsoft SQL Server® 用 Microsoft® Connector for SAP BW。 これらのコンポーネントを入手するには、「[Microsoft® SQL Server® 2017 Feature Pack](https://www.microsoft.com/download/details.aspx?id=55992)」をご覧ください。
 
     -   Microsoft Connector Version 5.0 for Oracle by Attunity および Microsoft Connector Version 5.0 for Teradata by Attunity。 これらのコンポーネントを入手するには、「[Microsoft Connectors v5.0 for Oracle and Teradata](https://www.microsoft.com/download/details.aspx?id=55179)」をご覧ください。

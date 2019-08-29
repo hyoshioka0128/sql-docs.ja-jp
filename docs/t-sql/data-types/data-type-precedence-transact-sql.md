@@ -18,15 +18,15 @@ helpviewer_keywords:
 ms.assetid: f4c804ab-ed3f-43b1-a024-c9ac6944b66b
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: a1421c43f050e438898289a34e86ec4b87185a13
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: bcf14745af6da26cc625e928d75f510e0da9a2e8
+ms.sourcegitcommit: 823d7bdfa01beee3cf984749a8c17888d4c04964
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68020870"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70030353"
 ---
 # <a name="data-type-precedence-transact-sql"></a>データ型の優先順位 (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[tsql-appliesto-ss2012-all-md.md](../../includes/tsql-appliesto-ss2012-all-md.md)]
 
 演算子でデータ型が異なる 2 つの式を結合すると、最初に優先順位の低いデータ型が優先順位の高いデータ型に変換されます。 暗黙的な変換がサポートされていない場合は、エラーが返されます。 同じデータ型を持つオペランド式を結合する演算子の場合、演算の結果も同じデータ型になります。
   

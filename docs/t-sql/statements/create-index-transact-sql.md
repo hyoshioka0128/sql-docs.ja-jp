@@ -1,7 +1,7 @@
 ---
 title: CREATE INDEX (Transact-SQL) | Microsoft Docs
 ms.custom: ''
-ms.date: 06/26/2019
+ms.date: 08/21/2019
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
@@ -51,15 +51,15 @@ helpviewer_keywords:
 - secondary indexes [SQL Server]
 - XML indexes [SQL Server], creating
 ms.assetid: d2297805-412b-47b5-aeeb-53388349a5b9
-author: CarlRabeler
+author: pmasl
 ms.author: carlrab
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 9fdc5ee7428aec65c96755eb9a1c0e013de80d01
-ms.sourcegitcommit: 495913aff230b504acd7477a1a07488338e779c6
+ms.openlocfilehash: a2e6a20ac4fb319119692ce41eeef80b1912de33
+ms.sourcegitcommit: 594cee116fa4ee321e1f5e5206f4a94d408f1576
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68809772"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70009325"
 ---
 # <a name="create-index-transact-sql"></a>CREATE INDEX (Transact-SQL)
 
@@ -272,7 +272,8 @@ WHERE StartDate IN ('20000404', '20000905') AND EndDate IS NOT NULL
 
 フィルター選択されたインデックスは、XML インデックスおよびフルテキスト インデックスには適用されません。 UNIQUE インデックスの場合、一意のインデックス値を持つ必要があるのは選択した行のみです。 フィルター選択されたインデックスでは IGNORE_DUP_KEY オプションを使用できません。
 
-ON *partition_scheme_name* **( _column_name_ )**       
+ON *partition_scheme_name* **( _column_name_ )**      
+
 **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] から [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
 
 ファイル グループが定義されているパーティション構成を指定します。このファイル グループは、パーティション インデックスのパーティションのマップ先となります。 [CREATE PARTITION SCHEME](../../t-sql/statements/create-partition-scheme-transact-sql.md) または [ALTER PARTITION SCHEME](../../t-sql/statements/alter-partition-scheme-transact-sql.md) を実行して、パーティション構成がデータベース内に存在するようにする必要があります。 *column_name* には、パーティション インデックスがパーティション分割される対象の列を指定します。 この列は、*partition_scheme_name* で使用されているパーティション関数の引数のデータ型、長さ、および有効桁数に一致する必要があります。 *column_name* インデックス定義内の列に限定されません。 UNIQUE インデックスをパーティション分割する場合、*column_name* は一意のキーとして使用されている列から選択する必要がありますが、それ以外の場合はベース テーブルの任意の列を指定できます。 この制限により、[!INCLUDE[ssDE](../../includes/ssde-md.md)]では、単一のパーティション内だけでキー値の一意性を確認できます。
@@ -288,11 +289,13 @@ _partition_scheme_name_ または _filegroup_ が指定されないまま、テ�
 パーティション分割の詳細については、「[パーティション テーブルとパーティション インデックス](../../relational-databases/partitions/partitioned-tables-and-indexes.md)」を参照してください。
 
 ON _filegroup_name_      
+
 **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] から [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]まで)
 
 指定したファイル グループに、指定したインデックスを作成します。 位置の指定がなく、テーブルまたはビューがパーティション分割されていない場合、インデックスには、基になるテーブルまたはビューと同じファイル グループが使用されます。 ファイル グループは既に存在している必要があります。
 
-ON **"** default **"**       
+ON **"** default **"**      
+
 **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] から [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
 
 テーブルまたはビューと同じファイルグループまたはパーティション スキームに対して、指定されたインデックスを作成します。
@@ -303,6 +306,7 @@ ON **"** default **"**
 > "default" は、CREATE INDEX のコンテキストでは、データベースの既定のファイル グループを示していません。 これは、"default" でデータベースの既定のファイルグループに対してテーブルを検索する CREATE TABLE とは異なります。
 
 [ FILESTREAM_ON { *filestream_filegroup_name* | *partition_scheme_name* | "NULL" } ]      
+
 **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] から [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]まで)
 
 クラスター化インデックスの作成時に、テーブルの FILESTREAM データの配置を指定します。 FILESTREAM_ON 句を使用すると、異なる FILESTREAM ファイル グループやパーティション構成に FILESTREAM データを移動できます。
@@ -340,6 +344,7 @@ _database_name_
 インデックスを作成するときに使用するオプションを指定します。
 
 PAD_INDEX = { ON | **OFF** }      
+
 **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] から [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
 
 インデックスの埋め込みを指定します。 既定値は OFF です。
@@ -355,6 +360,7 @@ PAD_INDEX では FILLFACTOR で指定されるパーセンテージが使用さ�
 旧バージョンと互換性のある構文では、WITH PAD_INDEX は WITH PAD_INDEX = ON と同じです。
 
 FILLFACTOR **=** _fillfactor_      
+
 **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] から [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
 
 インデックスの作成時または再構築時に、[!INCLUDE[ssDE](../../includes/ssde-md.md)] が各インデックス ページのリーフ レベルをどの程度まで埋めるかを、パーセント値で指定します。 *fillfactor* 値には、1 ～ 100 の整数値を指定してください。 *fillfactor* が 100 の場合、[!INCLUDE[ssDE](../../includes/ssde-md.md)] では全容量を使用するリーフ ページでインデックスが作成されます。
@@ -367,6 +373,7 @@ FILLFACTOR 設定は、インデックスが作成または再構築されると
 詳細については、「 [インデックスの FILL FACTOR の指定](../../relational-databases/indexes/specify-fill-factor-for-an-index.md)」を参照してください。
 
 SORT_IN_TEMPDB = { ON | **OFF** }      
+
 **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] から [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
 
 **tempdb** に一時的な並べ替え結果を格納するかどうかを指定します。 既定値は OFF です。
@@ -412,7 +419,10 @@ OFF
 
 旧バージョンと互換性のある構文では、WITH STATISTICS_NORECOMPUTE は WITH STATISTICS_NORECOMPUTE = ON と同じです。
 
-STATISTICS_INCREMENTAL = { ON | **OFF** }      
+STATISTICS_INCREMENTAL = { ON | **OFF** }     
+
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
+
 **ON** の場合、作成される統計はパーティションごとの統計です。 **OFF** の場合、統計ツリーが削除され、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によって統計が再計算されます。 既定値は **OFF** です。
 
 パーティションごとの統計がサポートされていない場合、このオプションは無視され、警告が生成されます。 次の種類の統計では、増分統計がサポートされていません。
@@ -448,7 +458,7 @@ DROP_EXISTING では、以下を変更できません。
 ONLINE = { ON | **OFF** }      
 インデックス操作時に、基になるテーブルや関連するインデックスをクエリやデータ変更で使用できるかどうかを指定します。 既定値は OFF です。
 
-> [!NOTE]
+> [!IMPORTANT]
 > オンラインでのインデックス操作は、 [!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のすべてのエディションで使用できるわけではありません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の各エディションでサポートされる機能の一覧については、「[Editions and Supported Features for SQL Server 2016](../../sql-server/editions-and-supported-features-for-sql-server-2016.md)」 (SQL Server 2016 のエディションとサポートされる機能) を参照してください。
 
 ON      
@@ -456,6 +466,18 @@ ON
 
 OFF      
 テーブル ロックは、インデックス操作の間適用されます。 クラスター化インデックスを作成、再構築、または削除するオフライン インデックス操作や、非クラスター化インデックスを再構築または削除するオフライン インデックス操作では、テーブル上のスキーマ修正 (Sch-M) ロックが取得されます。 このため、操作中は、すべてのユーザーは基になるテーブルにアクセスできません。 非クラスター化インデックスを作成するオフライン インデックス操作では、テーブルの共有 (S) ロックが取得されます。 この場合は、基になるテーブルに対して更新は許可されませんが、SELECT ステートメントなどの読み取り操作は許可されます。
+
+詳しくは、「 [Perform Index Operations Online](../../relational-databases/indexes/perform-index-operations-online.md)」をご覧ください。  
+
+インデックスは、グローバル一時テーブル上のインデックスを含めてオンラインで作成できます。ただし次の場合は例外です。
+
+- XML インデックス
+- ローカル一時テーブルのインデックス
+- ビューの最初の一意クラスター化インデックス
+- 無効なクラスター化インデックス
+- 列ストア インデックス
+- 基になるテーブルに LOB データ型 (**image**、**ntext**、**text**) および空間データ型が含まれる場合のクラスター化インデックス。
+- **varchar(max)** 列と **varbinary(max)** 列は、インデックスの一部にすることはできません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] では、テーブルに **varchar(max)** 列または **varbinary(max)** 列が含まれている場合、他の列を含むクラスター化インデックスは、**ONLINE** オプションを使用して作成または再作成できます。 ベース テーブルに **varchar(max)** 列または **varbinary(max)** 列が含まれている場合、[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] では **ONLINE** オプションが許可されません
 
 詳細については、「[オンライン インデックス操作の動作原理](../../relational-databases/indexes/how-online-index-operations-work.md)」を参照してください。
 
@@ -471,25 +493,17 @@ RESUMABLE **=** { ON | **OFF**}
  OFF      
 インデックス操作は再開可能ではありません。
 
-MAX_DURATION **=** *time* **[MINUTES]** は **RESUMABLE = ON** (**ONLINE = ON** が必須) と共に使用      
+MAX_DURATION **=** *time* **[MINUTES]** は **RESUMABLE = ON** (**ONLINE = ON** が必須) と共に使用   
 
 **適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] (パブリック プレビュー)
 
 再開可能なオンラインでのインデックス操作が、一時停止までに実行される時間 (分単位で指定する整数値) を示します。
 
-> [!WARNING]
+> [!IMPORTANT]
 > オンラインで実行できるインデックス操作の詳細については、「[オンライン インデックス操作のガイドライン](../../relational-databases/indexes/guidelines-for-online-index-operations.md)」を参照してください。
 
- インデックスは、グローバル一時テーブル上のインデックスを含めてオンラインで作成できます。ただし次のインデックスは例外です。
-
-- XML インデックス
-- ローカル一時テーブル上のインデックス。
-- ビュー上の最初の一意のクラスター化インデックス。
-- 無効なクラスター化インデックス。
-- 基になるテーブルに LOB データ型 (**image**、**ntext**、**text**、および空間型) が含まれる場合のクラスター化インデックス。
-- **varchar(max)** 列と **varbinary(max)** 列は、インデックスの一部にすることはできません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] で始まる) および [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] では、テーブルに **varchar(max)** 列または **varbinary(max)** 列が含まれている場合、他の列を含むクラスター化インデックスは、**ONLINE** オプションを使用して作成または再作成できます。 ベース テーブルに **varchar(max)** 列または **varbinary(max)** 列が含まれている場合、[!INCLUDE[ssSDS](../../includes/sssds-md.md)] では **ONLINE** オプションが許可されません。
-
-詳しくは、「 [Perform Index Operations Online](../../relational-databases/indexes/perform-index-operations-online.md)」をご覧ください。
+> [!NOTE] 
+> 再開可能なオンライン インデックスのリビルドは、列ストア インデックスではサポートされていません。
 
 ALLOW_ROW_LOCKS = { **ON** | OFF }      
 **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] から [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
@@ -513,18 +527,17 @@ ON
 OFF      
 ページ ロックは使用されません。
 
-
 OPTIMIZE_FOR_SEQUENTIAL_KEY = { ON | **OFF** }      
 **適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降)
 
 最終ページ挿入競合に対して最適化するかどうかを指定します。 既定値は OFF です。 詳細については、「[シーケンシャル キー](#sequential-keys)」セクションを参照してください。
 
-MAXDOP = _max_degree_of_parallelism_      
+MAXDOP = *max_degree_of_parallelism*      
 **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] から [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
 
 インデックス操作の間、**max degree of parallelism** 構成オプションをオーバーライドします。 詳細については、「 [max degree of parallelism サーバー構成オプションの構成](../../database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option.md)」を参照してください。 並列プランの実行で使用されるプロセッサ数を制限するには、MAXDOP を使用します。 最大数は 64 プロセッサです。
 
-_max_degree_of_parallelism_ は次のように指定できます。
+*max_degree_of_parallelism* は次のように指定できます。
 
 1      
 並列プラン生成を抑制します。
@@ -1127,6 +1140,7 @@ CREATE CLUSTERED INDEX IX_ProductVendor_VendorID
 
 ## <a name="see-also"></a>参照
 [SQL Server のインデックスのアーキテクチャとデザイン ガイド](../../relational-databases/sql-server-index-design-guide.md)     
+[オンラインでのインデックス操作の実行](../../relational-databases/indexes/perform-index-operations-online.md)  
 [インデックスと ALTER TABLE](../../t-sql/statements/alter-table-transact-sql.md#indexes-and-alter-table)     
 [ALTER INDEX](../../t-sql/statements/alter-index-transact-sql.md)     
 [CREATE PARTITION FUNCTION](../../t-sql/statements/create-partition-function-transact-sql.md)     

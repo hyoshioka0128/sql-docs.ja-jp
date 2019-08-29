@@ -1,5 +1,5 @@
 ---
-title: MSdistpublishers (TRANSACT-SQL) |Microsoft Docs
+title: MSdistpublishers (Transact-SQL) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
@@ -24,7 +24,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/15/2019
 ms.locfileid: "67907424"
 ---
-# <a name="msdistpublishers-transact-sql"></a>MSdistpublishers (TRANSACT-SQL)
+# <a name="msdistpublishers-transact-sql"></a>MSdistpublishers (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
   **MSdistpublishers**テーブルには、ローカル ディストリビューターによってサポートされている各リモート パブリッシャーに 1 つの行が含まれています。 このテーブルに格納されます、 **msdb**データベース。  
   
@@ -36,15 +36,15 @@ ms.locfileid: "67907424"
 |**security_mode**|**int**|ディストリビューターで実装されているセキュリティ モード。<br /><br /> **0**  =  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]認証します。<br /><br /> **1** = Windows 認証。|  
 |**login**|**sysname**|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 認証のログイン ID です。|  
 |**password**|**nvarchar(524)**|(暗号化) パスワード[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]認証します。|  
-|**アクティブ**|**bit**|ローカルのディストリビューターがリモート パブリッシャーによって使用するかどうかを示します。|  
-|**信頼されています。**|**bit**|リモート パブリッシャーがローカル ディストリビューターと同じパスワードを使用するかどうかを示します。<br /><br /> **0** = A、ディストリビューターに接続するリモートのパブリッシャーでパスワードが必要です。<br /><br /> **1** = No パスワードが必要です。|  
+|**active**|**bit**|ローカルのディストリビューターがリモート パブリッシャーによって使用するかどうかを示します。|  
+|**trusted**|**bit**|リモート パブリッシャーがローカル ディストリビューターと同じパスワードを使用するかどうかを示します。<br /><br /> **0** = A、ディストリビューターに接続するリモートのパブリッシャーでパスワードが必要です。<br /><br /> **1** = No パスワードが必要です。|  
 |**third_party**|**bit**|パブリッシャーがのインストールであるかどうか[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]:<br /><br /> **0**  =  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]インストール **。1** = 異種データ ソース。|  
 |**publisher_type**|**sysname**|パブリッシャーの種類:<br /><br /> **MSSQLSERVER**  =  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]パブリッシャーです。<br /><br /> **ORACLE**標準の Oracle パブリッシャーを = です。<br /><br /> **ORACLE GATEWAY** = Oracle ゲートウェイ パブリッシャーです。|  
 |**storage_connection_string**|**nvarchar(779)**|Azure SQL Database ストレージ接続文字列の値。|  
 
   
 ## <a name="see-also"></a>関連項目  
- [レプリケーション テーブル &#40; です。TRANSACT-SQL と &#41; です。](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
+ [レプリケーション テーブル &#40;Transact-SQL&#41;](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
  [レプリケーション ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-views/replication-views-transact-sql.md)  
   
   

@@ -1,7 +1,7 @@
 ---
 title: ALTER INDEX (Transact-SQL) | Microsoft Docs
 ms.custom: ''
-ms.date: 06/26/2019
+ms.date: 08/21/2019
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
@@ -43,20 +43,20 @@ helpviewer_keywords:
 - index rebuild [SQL Server]
 - index reorganize [SQL Server]
 ms.assetid: b796c829-ef3a-405c-a784-48286d4fb2b9
-author: CarlRabeler
+author: pmasl
 ms.author: carlrab
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a9228530dcf0204987feda98083ba3a16c946093
-ms.sourcegitcommit: 495913aff230b504acd7477a1a07488338e779c6
+ms.openlocfilehash: 66e4ecf9e2858c37145a7b6bd63bbfa8511349a4
+ms.sourcegitcommit: 594cee116fa4ee321e1f5e5206f4a94d408f1576
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68809806"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70009391"
 ---
 # <a name="alter-index-transact-sql"></a>ALTER INDEX (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-all-md](../../includes/tsql-appliesto-ss2008-all-md.md)]
 
-  インデックスの無効化、再構築、再構成によって、またはインデックスに関するオプションの設定によって、既存のテーブルやビュー インデックス (リレーショナルまたは XML) を変更します。  
+  インデックスの無効化、再構築、再構成によって、またはインデックスに関するオプションの設定によって、既存のテーブルやビュー インデックス (行ストア、列ストア、または XML) を変更します。  
   
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -185,16 +185,16 @@ ALTER INDEX { index_name | ALL }
   
 |キーワード ALL を使用する操作|テーブル内に存在すると操作が失敗するインデックスの種類|  
 |----------------------------------------|----------------------------------------|  
-|REBUILD WITH ONLINE = ON|XML インデックス<br /><br /> 空間インデックス<br /><br /> 列ストア インデックス:**適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。|  
+|REBUILD WITH ONLINE = ON|XML インデックス<br /><br /> 空間インデックス<br /><br /> 列ストア インデックス:**適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]|  
 |REBUILD PARTITION = *partition_number*|非パーティション インデックス、XML インデックス、空間インデックス、または無効化されたインデックス|  
 |REORGANIZE|ALLOW_PAGE_LOCKS が OFF に設定されたインデックス|  
 |REORGANIZE PARTITION = *partition_number*|非パーティション インデックス、XML インデックス、空間インデックス、または無効化されたインデックス|  
-|IGNORE_DUP_KEY = ON|XML インデックス<br /><br /> 空間インデックス<br /><br /> 列ストア インデックス:**適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。|  
-|ONLINE = ON|XML インデックス<br /><br /> 空間インデックス<br /><br /> 列ストア インデックス:**適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。|
-|RESUMABLE = ON  | **All** キーワードでサポートされていない再開可能なインデックス。 <br /><br /> **適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)] |   
+|IGNORE_DUP_KEY = ON|XML インデックス<br /><br /> 空間インデックス<br /><br /> 列ストア インデックス:**適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]|  
+|ONLINE = ON|XML インデックス<br /><br /> 空間インデックス<br /><br /> 列ストア インデックス:**適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]|
+|RESUMABLE = ON| **All** キーワードでサポートされていない再開可能なインデックス。 <br /><br /> **適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] |   
   
 > [!WARNING]
->  オンラインで実行できるインデックス操作の詳細については、「[オンライン インデックス操作のガイドライン](../../relational-databases/indexes/guidelines-for-online-index-operations.md)」を参照してください。
+> オンラインで実行できるインデックス操作の詳細については、「[オンライン インデックス操作のガイドライン](../../relational-databases/indexes/guidelines-for-online-index-operations.md)」を参照してください。
 
  ALL を PARTITION = *partition_number* と共に指定する場合、すべてのインデックスを固定する必要があります。 つまり、すべてのインデックスは、等価パーティション関数に基づいてパーティション分割されます。 ALL を PARTITION と共に使用すると、同じ *partition_number* を持つすべてのインデックス パーティションが再構築または再構成されることになります。 パーティション インデックスの詳細については、「 [Partitioned Tables and Indexes](../../relational-databases/partitions/partitioned-tables-and-indexes.md)」を参照してください。  
   
@@ -210,30 +210,29 @@ ALTER INDEX { index_name | ALL }
  [!INCLUDE[ssSDS](../../includes/sssds-md.md)] では、database_name が現在のデータベースの場合、または database_name が tempdb であり、table_or_view_name が # で始まる場合に、3 つの要素で構成された名前形式 database_name.[schema_name].table_or_view_name をサポートします。  
   
  REBUILD [ WITH **(** \<rebuild_index_option> [ **,** ... *n*] **)** ]  
- 同じ列、インデックスの種類、一意性属性、および並べ替え順に従って、インデックスを再構築します。 この句には [DBCC DBREINDEX](../../t-sql/database-console-commands/dbcc-dbreindex-transact-sql.md) と同じ機能があります。 REBUILD では、無効化されたインデックスが有効になります。 クラスター化インデックスを再構築しても、キーワード ALL を指定しない限り、関連付けられている非クラスター化インデックスは再構築されません。 インデックス オプションを指定しない場合は、[sys.indexes](../../relational-databases/system-catalog-views/sys-indexes-transact-sql.md) に格納されている既存のインデックス オプション値が適用されます。 値が **sys.indexes** に格納されていないインデックス オプションについては、オプションの引数に定義されている既定値が適用されます。  
+  
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 
+
+同じ列、インデックスの種類、一意性属性、および並べ替え順に従って、インデックスを再構築します。 この句には [DBCC DBREINDEX](../../t-sql/database-console-commands/dbcc-dbreindex-transact-sql.md) と同じ機能があります。 REBUILD では、無効化されたインデックスが有効になります。 クラスター化インデックスを再構築しても、キーワード ALL を指定しない限り、関連付けられている非クラスター化インデックスは再構築されません。 インデックス オプションを指定しない場合は、[sys.indexes](../../relational-databases/system-catalog-views/sys-indexes-transact-sql.md) に格納されている既存のインデックス オプション値が適用されます。 値が **sys.indexes** に格納されていないインデックス オプションについては、オプションの引数に定義されている既定値が適用されます。  
   
  ALL を指定した場合で、基になるテーブルがヒープの場合、テーブルは再構築操作の影響を受けません。 テーブルに関連付けられている非クラスター化インデックスは再構築されます。  
   
  データベース復旧モデルが一括ログ復旧モデルまたは単純復旧モデルのいずれかに設定されている場合、再構築操作のログへの記録は最小限にできます。  
   
 > [!NOTE]
->  プライマリ XML インデックスを再構築するとき、基になるユーザー テーブルはインデックス操作の間使用できなくなります。  
+> プライマリ XML インデックスを再構築するとき、基になるユーザー テーブルはインデックス操作の間使用できなくなります。  
+ 
+列ストア インデックスの場合、再構築操作。  
   
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。
-  
- 列ストア インデックスの場合、再構築操作。  
-  
-1.  並べ替え順序を使用しません。  
-  
-2.  再構築が行われている間、テーブルまたはパーティションを排他的にロックします。  データは、NOLOCK、RCSI、または SI を使用する場合でも、"オフライン" であり、再構築中に使用できません。  
-  
-3.  すべてのデータを列ストアに再圧縮します。 再構築が行われている間、列ストア インデックスのコピーが 2 つ存在します。 再構築が完了したら、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] により、元の列ストア インデックスが削除されます。  
-  
- 列ストア インデックスの再構築の詳細については、「[列ストア インデックス - 最適化](../../relational-databases/indexes/columnstore-indexes-defragmentation.md)」を参照してください。  
+-  並べ替え順序を使用しません。  
+-  再構築が行われている間、テーブルまたはパーティションを排他的にロックします。  データは、NOLOCK、RCSI、または SI を使用する場合でも、"オフライン" であり、再構築中に使用できません。  
+-  すべてのデータを列ストアに再圧縮します。 再構築が行われている間、列ストア インデックスのコピーが 2 つ存在します。 再構築が完了したら、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] により、元の列ストア インデックスが削除されます。  
+
+詳細については、「 [インデックスの再編成と再構築](../../relational-databases/indexes/reorganize-and-rebuild-indexes.md)」を参照してください。 
   
 PARTITION  
 
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。  
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]  
   
  インデックスの 1 つのパーティションのみを再構築または再構成します。 PARTITION は、*index_name* がパーティション インデックス以外の場合は指定できません。  
   
@@ -244,54 +243,51 @@ PARTITION
   
  *partition_number*  
    
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
   
  再構築または再構成するパーティション インデックスのパーティション番号を指定します。 *partition_number* は変数を参照できる定数式です。 これにはユーザー定義型の変数または関数、およびユーザー定義関数が含まれますが、[!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントを参照することはできません。 *partition_number* は必須であり、指定しないとステートメントは失敗します。  
   
  WITH **(** \<single_partition_rebuild_index_option> **)**  
    
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。  
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]  
   
- SORT_IN_TEMPDB、MAXDOP、および DATA_COMPRESSION は、単一のパーティションを再構築するとき (PARTITION = *n*) に指定できるオプションです。 XML インデックスは、単一のパーティションの再構築操作では指定できません。  
+ `SORT_IN_TEMPDB`、`MAXDOP`、および `DATA_COMPRESSION` は、単一のパーティション (PARTITION = *partition_number*) をリビルドするときに指定できるオプションです。 XML インデックスは、単一のパーティションの再構築操作では指定できません。  
   
  DISABLE  
  インデックスを無効とマークし、[!INCLUDE[ssDE](../../includes/ssde-md.md)]で使用されないようにします。 どのインデックスも無効にできます。 無効になったインデックスのインデックス定義は、基になるインデックス データがなくてもシステム カタログに残ります。 クラスター化インデックスを無効にすると、基になるテーブル データをユーザーのアクセスができなくなります。 インデックスを有効にするには、ALTER INDEX REBUILD または CREATE INDEX WITH DROP_EXISTING を使用します。 詳細については、「[インデックスと制約の無効化](../../relational-databases/indexes/disable-indexes-and-constraints.md)」および「[インデックスと制約の有効化](../../relational-databases/indexes/enable-indexes-and-constraints.md)」を参照してください。  
   
- REORGANIZE (行ストア インデックスの再構成)  
+ REORGANIZE (**行ストア** インデックスの再構成)  
  行ストア インデックスの場合、REORGANIZE ではインデックス リーフ レベルを再構成するように指定します。 REORGANIZE 操作は次のとおりです。  
   
 -   常にオンラインで実行されます。 つまり、ALTER INDEX REORGANIZE トランザクション中は、長期にわたって他をブロックするテーブル ロックは保持されず、基になるテーブルへのクエリまたは更新を続行できます。  
 -   無効なインデックスに対しては指定できません。  
 -   ALLOW_PAGE_LOCKS が OFF に設定されている場合は指定できません。  
 -   トランザクション内で実行されている場合、トランザクションがロールバックされても、REORGANIZE はロールバックされません。  
-  
+
+詳細については、「 [インデックスの再編成と再構築](../../relational-databases/indexes/reorganize-and-rebuild-indexes.md)」を参照してください。 
+
 REORGANIZE WITH **(** LOB_COMPACTION = { **ON** | OFF } **)**  
  行ストア インデックスに適用されます。  
   
 LOB_COMPACTION = ON  
   
 -   これらのラージ オブジェクト (LOB) データ型のデータを含むすべてのページを圧縮するように指定します。LOB データ型には image、text、ntext、varchar (max)、nvarchar (max)、varbinary (max)、xml があります。 このデータを圧縮すると、ディスク上のデータ サイズを縮小できます。  
-  
 -   クラスター化インデックスの場合、テーブルに含まれているすべての LOB 列が圧縮されます。  
-  
 -   非クラスター化インデックスの場合、そのインデックス内で非キー列 (付加列) となっているすべての LOB 列が圧縮されます。  
-  
 -   REORGANIZE ALL はすべてのインデックスに対して LOB_COMPACTION を実行します。 インデックスごとに、クラスター化インデックス内のすべての LOB 列、基になるテーブル、または非クラスター化インデックス内の付加列が圧縮されます。  
   
 LOB_COMPACTION = OFF  
   
 -   ラージ オブジェクト データを含むページは圧縮されません。  
-  
 -   OFF の指定は、ヒープには影響しません。  
   
- REORGANIZE (列ストア インデックスの再構成)  
- 列ストア インデックスごとに、REORGANIZE は各 CLOSED デルタ行グループを圧縮し、圧縮された行グループとして列ストアに移動します。 REORGANIZE 操作は常にオンラインで実行されます。 つまり、ALTER INDEX REORGANIZE トランザクション中は、長期にわたって他をブロックするテーブル ロックは保持されず、基になるテーブルへのクエリまたは更新を続行できます。 
+ REORGANIZE (**列ストア** インデックスの再構成)  
+ 列ストア インデックスごとに、REORGANIZE は各 CLOSED デルタ行グループを圧縮し、圧縮された行グループとして列ストアに移動します。 REORGANIZE 操作は常にオンラインで実行されます。 つまり、ALTER INDEX REORGANIZE トランザクション中は、長期にわたって他をブロックするテーブル ロックは保持されず、基になるテーブルへのクエリまたは更新を続行できます。 詳細については、「 [インデックスの再編成と再構築](../../relational-databases/indexes/reorganize-and-rebuild-indexes.md)」を参照してください。 
   
 -   CLOSED デルタ行グループを圧縮された行グループに移動する場合、REORGANIZE は必須ではありません。 CLOSED デルタ行グループを圧縮するために、組ムーバー (TM) バックグラウンド プロセスが定期的に起動します。 組ムーバーに遅延がある場合は、REORGANIZE の使用をお勧めします。 REORGANIZE では、行グループをより積極的に圧縮できます。  
+-   すべての OPEN 行グループと CLOSED 行グループを圧縮するには、このセクションの `REORGANIZE WITH (COMPRESS_ALL_ROW_GROUPS)` オプションを参照してください。  
   
--   すべての OPEN 行グループと CLOSED 行グループを圧縮するには、このセクションで説明している REORGANIZE WITH (COMPRESS_ALL_ROW_GROUPS) オプションを参照してください。  
-  
-[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)](2016 以降) および[!INCLUDE[ssSDS](../../includes/sssds-md.md)] における列ストア インデックスの場合、REORGANIZE は、次の追加の最適化をオンラインで実行します。  
+[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] における列ストア インデックスの場合、REORGANIZE では、次の追加のデフラグ最適化がオンラインで実行されます。  
   
 -   行の 10% 以上が論理的に削除されたとき、行グループから行を物理的に削除します。 削除されたバイトは、物理メディア上で解放されます。 たとえば、100 万行から成る圧縮された行グループで 10 万行が論理的に削除された場合、SQL Server は、削除された行を物理的に削除し、90 万行を含む行グループを圧縮し直します。 削除された行を解放することで、記憶域が節約されます。  
   
@@ -300,22 +296,24 @@ LOB_COMPACTION = OFF
 -   行グループの 10% 以上の行が論理的に削除された場合、SQL Server ではこのような行グループを 1 つまたは複数の行グループと結合することを試みます。 たとえば、行グループ 1 は 500,000 行の圧縮された行グループであり、行グループ 21 は最大 1,048, 576 行の圧縮された行グループであるとします。  行グループ 21 は行の 60% が削除され、残りが 409,830 行になっています。 SQL Server では、優先的にこの 2 つの行グループを結合して、909,830 行の新しい行グループを圧縮します。  
   
 REORGANIZE WITH ( COMPRESS_ALL_ROW_GROUPS = { ON | **OFF** } )  
+ 列ストア インデックスに適用されます。 
 
- **適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]
+ **適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
 
 COMPRESS_ALL_ROW_GROUPS では、OPEN デルタ行グループまたは CLOSED デルタ行グループを強制的に列ストアに移動することができます。 このオプションを使用すると、デルタ行グループを空にするために列ストア インデックスを再構築する必要がありません。  このオプションを他の削除およびマージ最適化機能と組み合わせて使用すれば、ほとんどの状況でインデックスを再構築する必要はなくなります。    
 
 -   ON を指定すると、サイズおよび状態 (CLOSED または OPEN) に関係なく、すべての行グループが強制的に列ストアに移動されます。  
-  
 -   OFF を指定すると、すべての CLOSED 行グループが強制的に列ストアに移動されます。  
-  
+
+詳細については、「 [インデックスの再編成と再構築](../../relational-databases/indexes/reorganize-and-rebuild-indexes.md)」を参照してください。 
+
 SET **(** \<set_index option> [ **,** ... *n*] **)**  
  インデックスを再構築または再構成しないでインデックス オプションを指定します。 無効化されたインデックスには、SET は指定できません。  
   
 PAD_INDEX = { ON | OFF }  
    
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。  
-  
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]  
+
  インデックスの埋め込みを指定します。 既定値は OFF です。  
   
  ON  
@@ -328,7 +326,7 @@ PAD_INDEX = { ON | OFF }
   
 FILLFACTOR = *fillfactor*  
  
- **適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。
+ **適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
   
  インデックスの作成時または変更時に、[!INCLUDE[ssDE](../../includes/ssde-md.md)] が各インデックス ページのリーフ レベルをどの程度まで埋めるかを、パーセント値で指定します。 *fillfactor* 値には、1 ～ 100 の整数値を指定してください。 既定値は 0 です。 FILL FACTOR 値 0 と 100 の機能は、まったく同じです。  
   
@@ -341,7 +339,7 @@ FILLFACTOR = *fillfactor*
   
  SORT_IN_TEMPDB = { ON | **OFF** }  
  
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。  
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]  
   
  **tempdb** に並べ替え結果を格納するかどうかを指定します。 既定値は OFF です。  
   
@@ -384,28 +382,29 @@ FILLFACTOR = *fillfactor*
 > [!IMPORTANT]
 > 分布統計の自動再計算を無効にすると、クエリ オプティマイザーで、テーブルに関連するクエリの最適実行プランが選択されなくなる場合があります。  
   
- STATISTICS_INCREMENTAL = { ON | **OFF** }  
- **ON** の場合、作成される統計はパーティションごとの統計です。 **OFF** の場合、統計ツリーが削除され、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によって統計が再計算されます。 既定値は **OFF** です。  
+STATISTICS_INCREMENTAL = { ON | **OFF** }  
+
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
+
+**ON** の場合、作成される統計はパーティションごとの統計です。 **OFF** の場合、統計ツリーが削除され、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によって統計が再計算されます。 既定値は **OFF** です。  
   
  パーティションごとの統計がサポートされていない場合、このオプションは無視され、警告が生成されます。 次の種類の統計では、増分統計がサポートされていません。  
   
--   ベース テーブルにパーティションで固定されていないインデックスを使用して作成された統計。  
--   Always On の読み取り可能なセカンダリ データベースに対して作成された統計。  
--   読み取り専用のデータベースに対して作成された統計。  
--   フィルター選択されたインデックスに対して作成された統計。  
--   ビューに対して作成された統計。  
--   内部テーブルに対して作成された統計。  
--   空間インデックスまたは XML インデックスを使用して作成された統計。  
- 
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。  
+-   ベース テーブルにパーティションで固定されていないインデックスを使用して作成された統計  
+-   Always On の読み取り可能なセカンダリ データベースに対して作成された統計  
+-   読み取り専用のデータベースに対して作成された統計  
+-   フィルター選択されたインデックスに対して作成された統計  
+-   ビューに対して作成された統計  
+-   内部テーブルに対して作成された統計  
+-   空間インデックスまたは XML インデックスを使用して作成された統計  
   
  ONLINE **=** { ON | **OFF** } \<rebuild_index_option に適用する場合>  
  インデックス操作時に、基になるテーブルや関連するインデックスをクエリやデータ変更で使用できるかどうかを指定します。 既定値は OFF です。  
   
- XML インデックスまたは空間インデックスの場合、ONLINE = OFF だけがサポートされます。ONLINE を ON に設定すると、エラーが発生します。  
+ XML インデックスまたは空間インデックスの場合、`ONLINE = OFF` だけがサポートされます。ONLINE を ON に設定すると、エラーが発生します。  
   
-> [!NOTE]
->  オンラインでのインデックス操作は、[!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のすべてのエディションで使用できるわけではありません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の各エディションでサポートされる機能の一覧については、「[[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] の各エディションとサポートされている機能](../../sql-server/editions-and-supported-features-for-sql-server-2016.md)」および「[SQL Server 2017 の各エディションとサポートされている機能](../../sql-server/editions-and-components-of-sql-server-2017.md)」を参照してください。  
+> [!IMPORTANT]
+> オンラインでのインデックス操作は、[!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のすべてのエディションで使用できるわけではありません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の各エディションでサポートされる機能の一覧については、「[[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] の各エディションとサポートされている機能](../../sql-server/editions-and-supported-features-for-sql-server-2016.md)」および「[SQL Server 2017 の各エディションとサポートされている機能](../../sql-server/editions-and-components-of-sql-server-2017.md)」を参照してください。  
   
  ON  
  長期のテーブル ロックは、インデックス操作の間は保持されません。 インデックス操作の主なフェーズの間は、基になるテーブル上に、インテント共有 (IS) ロックのみが保持されます。 これによって、基になるテーブルおよびインデックスに対してクエリや更新を続けることができます。 操作の開始時、非常に短い時間、ソース オブジェクトでは共有 (S) ロックが保持されます。 操作の終了時、非クラクタ化インデックスが作成される場合は、短い時間、ソース オブジェクト上で S ロックが保持されます。また、クラスター化インデックスがオンラインで作成または削除されるか、クラスター化または非クラスター化インデックスが再構築される場合は、SCH-M (スキーマ修正) ロックが取得されます。 インデックスがローカルの一時テーブルに作成される場合、ONLINE は ON にできません。  
@@ -413,21 +412,21 @@ FILLFACTOR = *fillfactor*
  OFF  
  テーブル ロックは、インデックス操作の間適用されます。 オフラインのインデックス操作で、クラスター化インデックス、空間インデックス、XML インデックスの作成、再構築、削除を行う場合や、非クラスター化インデックスの再構築、削除を行う場合は、テーブルで Sch-M (スキーマ修正) ロックが取得されます。 このため、操作中は、すべてのユーザーは基になるテーブルにアクセスできません。 非クラスター化インデックスを作成するオフライン インデックス操作では、テーブルの共有 (S) ロックが取得されます。 この場合は、基になるテーブルに対して更新は許可されませんが、SELECT ステートメントなどの読み取り操作は許可されます。  
   
- 詳細については、「[オンライン インデックス操作の動作原理](../../relational-databases/indexes/how-online-index-operations-work.md)」を参照してください。  
+詳しくは、「 [Perform Index Operations Online](../../relational-databases/indexes/perform-index-operations-online.md)」をご覧ください。  
   
- インデックスは、グローバル一時テーブル上のインデックスを含めてオンラインで再構築できます。ただし、次のインデックスは例外です。  
-  
--   XML インデックス数  
-  
--   ローカル一時テーブル上のインデックス  
-  
--   パーティション インデックスのサブセット (パーティション インデックス全体の再構築はオンラインで実行できます)  
+インデックスは、グローバル一時テーブル上のインデックスを含めてオンラインでリビルドできます。ただし次の場合は例外です。
+- XML インデックス
+- ローカル一時テーブルのインデックス
+- ビューの最初の一意クラスター化インデックス
+- 列ストア インデックス
+- 基になるテーブルに LOB データ型 (**image**、**ntext**、**text**) および空間データ型が含まれる場合のクラスター化インデックス。
+- **varchar(max)** 列と **varbinary(max)** 列は、インデックスの一部にすることはできません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] では、テーブルに **varchar(max)** 列または **varbinary(max)** 列が含まれている場合、他の列を含むクラスター化インデックスは、**ONLINE** オプションを使用して作成または再作成できます。 ベース テーブルに **varchar(max)** 列または **varbinary(max)** 列が含まれている場合、[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] では **ONLINE** オプションが許可されません
 
--  V12 より前の [!INCLUDE[ssSDS](../../includes/sssds-md.md)] および [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] より前の SQL Server では、ベース テーブルに **varchar(max)** 列または **varbinary(max)** 列が含まれている場合、クラスター化インデックスの構築操作または再構築操作に `ONLINE` オプションを指定することはできません。
+詳細については、「[オンライン インデックス操作の動作原理](../../relational-databases/indexes/how-online-index-operations-work.md)」を参照してください。
 
 RESUMABLE **=** { ON | **OFF**}
 
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]   
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]   
 
  オンラインでのインデックス操作が再開可能かどうかを指定します。
 
@@ -436,14 +435,20 @@ RESUMABLE **=** { ON | **OFF**}
  OFF の場合、インデックス操作は再開可能ではありません。
 
 MAX_DURATION **=** *time* **[MINUTES]** は **RESUMABLE = ON** (**ONLINE = ON** が必須) と共に使用。
- 
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 
+
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 
 
 再開可能なオンラインでのインデックス操作が、一時停止までに実行される時間 (分単位で指定する整数値) を示します。 
 
+> [!IMPORTANT]
+> オンラインで実行できるインデックス操作の詳細については、「[オンライン インデックス操作のガイドライン](../../relational-databases/indexes/guidelines-for-online-index-operations.md)」を参照してください。
+
+> [!NOTE] 
+> 再開可能なオンライン インデックスのリビルドは、列ストア インデックスではサポートされていません。
+
 ALLOW_ROW_LOCKS **=** { **ON** | OFF }  
- 
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。  
+
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]  
   
  行ロックを許可するかどうかを指定します。 既定値は ON です。  
   
@@ -455,7 +460,7 @@ ALLOW_ROW_LOCKS **=** { **ON** | OFF }
   
 ALLOW_PAGE_LOCKS **=** { **ON** | OFF }  
   
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
   
  ページ ロックを許可するかどうかを指定します。 既定値は ON です。  
   
@@ -466,17 +471,17 @@ ALLOW_PAGE_LOCKS **=** { **ON** | OFF }
  ページ ロックは使用されません。  
   
 > [!NOTE]
->  ALLOW_PAGE_LOCKS を OFF に設定した場合、インデックスを再構成することはできません。  
+> ALLOW_PAGE_LOCKS を OFF に設定した場合、インデックスを再構成することはできません。  
 
  OPTIMIZE_FOR_SEQUENTIAL_KEY = { ON | **OFF** }
 
-**適用対象**: [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降。
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降)。
 
 最終ページ挿入競合に対して最適化するかどうかを指定します。 既定値は OFF です。 詳細については、CREATE INDEX のページの「[シーケンシャル キー](./create-index-transact-sql.md#sequential-keys)」セクションを参照してください。
 
  MAXDOP **=** max_degree_of_parallelism  
  
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。  
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]  
   
  インデックス操作の間、**max degree of parallelism** 構成オプションをオーバーライドします。 詳細については、「 [max degree of parallelism サーバー構成オプションの構成](../../database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option.md)」を参照してください。 並列プランの実行で使用されるプロセッサ数を制限するには、MAXDOP を使用します。 最大数は 64 プロセッサです。  
   
@@ -497,17 +502,18 @@ ALLOW_PAGE_LOCKS **=** { **ON** | OFF }
  詳細については、「 [並列インデックス操作の構成](../../relational-databases/indexes/configure-parallel-index-operations.md)」を参照してください。  
   
 > [!NOTE]
-> 並列インデックス操作は、[!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のすべてのエディションで使用できるわけではありません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の各エディションでサポートされる機能の一覧については、「[[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] の各エディションがサポートする機能](../../sql-server/editions-and-supported-features-for-sql-server-2016.md)」を参照してください。  
+> 並列インデックス操作は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の一部のエディションで使用できません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の各エディションでサポートされる機能の一覧については、「[Editions and Supported Features for SQL Server 2016](../../sql-server/editions-and-supported-features-for-sql-server-2016.md)」 (SQL Server 2016 のエディションとサポートされる機能) を参照してください。  
   
- COMPRESSION_DELAY **=** { **0** |*期間 [分]* }  
- この機能は [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降のバージョンで使用できます。  
+COMPRESSION_DELAY **=** { **0** |*期間 [分]* }  
+
+**適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降)  
   
  ディスク ベースのテーブルの場合は、CLOSED 状態のデルタ行グループがそのデルタ行グループに留まる必要がある最低限の分数が遅延によって指定され、その時間が経過すると、SQL Server は行グループを、圧縮された行グループに圧縮できるようになります。 ディスク ベース テーブルでは個々の行において挿入時間および更新時間が追跡されないため、SQL Server は CLOSED 状態のデルタ行グループに遅延を適用します。  
 既定値は、0 分です。  
   
  既定値は、0 分です。  
   
- COMPRESSION_DELAY を使用する場合の推奨事項については、リアルタイム運用分析のための列ストア インデックスに関するページを参照してください。  
+ COMPRESSION_DELAY を使用する場合の推奨事項については、「[列ストアを使用したリアルタイム運用分析の概要](../../relational-databases/indexes/get-started-with-columnstore-for-real-time-operational-analytics.md)」をご覧ください。  
   
  DATA_COMPRESSION  
  指定したインデックス、パーティション番号、またはパーティション範囲に、データ圧縮オプションを指定します。 次のオプションがあります。  
@@ -523,13 +529,13 @@ ALLOW_PAGE_LOCKS **=** { **ON** | OFF }
   
  COLUMNSTORE  
    
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
   
  非クラスター化列ストアとクラスター化列ストア インデックスの両方を含む列ストア インデックスにのみ適用されます。 COLUMNSTORE は、COLUMNSTORE_ARCHIVE オプションで圧縮されたインデックスまたは指定のパーティションを解凍するように指定します。 復元されるデータは、すべての列ストア インデックスに使用された列ストア圧縮を使用して引き続き圧縮されます。  
   
  COLUMNSTORE_ARCHIVE  
   
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
   
  非クラスター化列ストアとクラスター化列ストア インデックスの両方を含む列ストア インデックスにのみ適用されます。 COLUMNSTORE_ARCHIVE は、指定したパーティションをより小さなサイズにさらに圧縮します。 これは、アーカイブ用や、ストレージのサイズを減らす必要があり、かつ保存と取得に時間をかける余裕があるその他の状況で使用できます。  
   
@@ -537,19 +543,17 @@ ALLOW_PAGE_LOCKS **=** { **ON** | OFF }
   
  ON PARTITIONS **(** { \<partition_number_expression> | \<range> } [ **,** ...n] **)**  
     
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。 
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 
   
  DATA_COMPRESSION 設定を適用するパーティションを指定します。 インデックスがパーティション分割されていない場合に ON PARTITIONS 引数を使用すると、エラーが発生します。 ON PARTITIONS 句を指定しないと、パーティション インデックスのすべてのパーティションに対して DATA_COMPRESSION オプションが適用されます。  
   
  \<partition_number_expression> は以下の方法で指定できます。  
   
--   パーティション番号を指定します。たとえば次のとおりです。ON PARTITIONS (2)。  
+-   パーティション番号を指定します (例: `ON PARTITIONS (2)`)。  
+-   コンマで区切った複数の個別のパーティションのパーティション番号を指定します (例: `ON PARTITIONS (1, 5)`)。  
+-   次のように範囲と個別のパーティションの両方を指定します: `ON PARTITIONS (2, 4, 6 TO 8)`。  
   
--   コンマで区切った複数の個別のパーティションのパーティション番号を指定します。たとえば次のとおりです。ON PARTITIONS (1, 5)。  
-  
--   次のように範囲と個別のパーティションの両方を指定します。ON PARTITIONS (2, 4, 6 TO 8)。  
-  
- \<範囲> はパーティション番号として、TO で区切って指定できます。たとえば次のとおりです。ON PARTITIONS (6 TO 8)。  
+ \<範囲> はパーティション番号として、TO で区切って指定できます (例: `ON PARTITIONS (6 TO 8)`)。  
   
  さまざまなパーティションにさまざまな種類のデータ圧縮を設定するには、DATA_COMPRESSION オプションを複数回指定します。例:  
   
@@ -576,19 +580,19 @@ DATA_COMPRESSION = PAGE ON PARTITIONS (3, 5)
   
  WAIT_AT_LOW_PRIORITY は **ONLINE = ON** の場合にのみ使用。  
  
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
   
  オンライン インデックス再構築では、このテーブルに対する操作がブロックされるまで待機する必要があります。 **WAIT_AT_LOW_PRIORITY** は、オンライン インデックス再構築操作が優先度の低いロックを待機して、オンライン インデックス構築操作が待機している間、他の操作を続行可能にすることを示します。 **WAIT AT LOW PRIORITY** オプションを省略すると、WAIT_AT_LOW_PRIORITY (MAX_DURATION = 0 minutes, ABORT_AFTER_WAIT = NONE) と同等になります。 詳細については、「[WAIT_AT_LOW_PRIORITY](alter-index-transact-sql.md)」を参照してください。 
   
  MAX_DURATION = *time* **[MINUTES]**  
   
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
   
  オンライン インデックス再構築のロックが、DDL コマンドの実行時に低い優先度で待機する時間 (分単位で指定した整数値) です。 操作が **MAX_DURATION** の期間ブロックされると、**ABORT_AFTER_WAIT** アクションのいずれかが実行されます。 **MAX_DURATION** の期間は常に分単位なので、**MINUTES** という単語は省略できます。  
  
  ABORT_AFTER_WAIT = [**NONE** | **SELF** | **BLOCKERS** } ]  
    
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
   
  なし  
  通常の (標準) 優先度のロックを待機し続けます。  
@@ -601,33 +605,31 @@ DATA_COMPRESSION = PAGE ON PARTITIONS (3, 5)
  
  RESUME 
  
-**適用対象**:[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 以降  
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]  
 
 手動で一時停止、またはエラーのために一時停止されたインデックス操作を再開します。
 
 MAX_DURATION は **RESUMABLE=ON** と共に使用
-
  
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
 
 再開可能なオンラインでのインデックス操作が、再開後に実行される時間 (分単位で指定する整数値) を示します。 その時間が経過すると、再開可能な操作はまだ実行中であっても一時停止されます。
 
 WAIT_AT_LOW_PRIORITY は **RESUMABLE=ON** および **ONLINE = ON** と共に使用。  
   
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 
   
  一時停止の後でオンラインでのインデックス再構築を再開するには、このテーブルに対する操作がブロックされるまで待機する必要があります。 **WAIT_AT_LOW_PRIORITY** は、オンライン インデックス再構築操作が優先度の低いロックを待機して、オンライン インデックス構築操作が待機している間、他の操作を続行可能にすることを示します。 **WAIT AT LOW PRIORITY** オプションを省略すると、WAIT_AT_LOW_PRIORITY (MAX_DURATION = 0 minutes, ABORT_AFTER_WAIT = NONE) と同等になります。 詳細については、「[WAIT_AT_LOW_PRIORITY](alter-index-transact-sql.md)」を参照してください。 
 
-
 PAUSE
  
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 
   
 再開可能なオンラインでのインデックス再構築操作を一時停止します。
 
 ABORT
 
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]   
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]   
 
 再開可能として宣言されている実行中または一時停止中のインデックス操作を中止します。 再開可能なインデックス再構築操作を終了するには、**ABORT** コマンドを明示的に実行する必要があります。 障害が発生しても再開可能なインデックス操作を一時停止しても、操作の実行は終了しません。操作は無期限の一時停止状態のままとなります。
   
@@ -636,9 +638,9 @@ ABORT
   
 オプションを明示的に指定しない場合は、現在の設定が適用されます。 たとえば、REBUILD 句で FILLFACTOR 設定を指定しなかった場合、再構築処理では、システム カタログに格納されている FILL FACTOR 値が使用されます。 現在のインデックス オプション設定を表示するには、[sys.indexes](../../relational-databases/system-catalog-views/sys-indexes-transact-sql.md) を使用します。  
   
-ONLINE、MAXDOP、および SORT_IN_TEMPDB の値は、システム カタログに格納されません。 インデックス ステートメントでオプション値を指定しない限り、各オプションの既定値が使用されます。
+`ONLINE`、`MAXDOP`、`SORT_IN_TEMPDB` の値はシステム カタログに保存されません。 インデックス ステートメントでオプション値を指定しない限り、各オプションの既定値が使用されます。
   
-マルチプロセッサ コンピューター上では、ALTER INDEX ...REBUILD は他のクエリと同様、自動的に使用プロセッサの数を増やしてインデックスの変更に関連するスキャンや並べ替え操作を実行します。 ALTER INDEX ...REORGANIZE を実行すると、LOB_COMPACTION の有無に関係なく、**max degree of parallelism** の値は単一スレッドの操作になります。 詳細については、「 [並列インデックス操作の構成](../../relational-databases/indexes/configure-parallel-index-operations.md)」を参照してください。  
+マルチプロセッサ コンピューター上では、`ALTER INDEX REBUILD` は他のクエリと同様、自動的に使用プロセッサの数を増やしてインデックスの変更に関連するスキャンや並べ替え操作を実行します。 `ALTER INDEX REORGANIZE` を実行すると、LOB_COMPACTION の有無に関係なく、**並列処理の最大限度**の値は単一スレッドの操作になります。 詳細については、「 [並列インデックス操作の構成](../../relational-databases/indexes/configure-parallel-index-operations.md)」を参照してください。  
   
 > [!IMPORTANT]
 > インデックスのあるファイル グループがオフラインであるか、または読み取り専用に設定されている場合、インデックスを再構成または再構築することはできません。 キーワード ALL を指定した場合で、1 つ以上のインデックスがオフラインまたは読み取り専用のファイル グループにある場合、ステートメントは失敗します。  
@@ -648,40 +650,14 @@ ONLINE、MAXDOP、および SORT_IN_TEMPDB の値は、システム カタログ
  
 詳細については、「 [インデックスの再編成と再構築](../../relational-databases/indexes/reorganize-and-rebuild-indexes.md)」を参照してください。 
   
-> [!NOTE]
-> 小さなインデックスを再構築または再構成しても、多くの場合、断片化が解消することはありません。 小さなインデックスのページは、混合エクステントに格納される場合もあります。 混合エクステントは最大 8 つのオブジェクトで共有されるため、小さなインデックスを再構成または再構築しても、その断片化は解消されない場合があります。  
-  
-> [!IMPORTANT]
-> [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、インデックスが作成または再構築されたとき、テーブル内のすべての行をスキャンして統計が作成または更新されます。
-> 
-> ただし、[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降では、パーティション インデックスが作成または再構築されたとき、テーブル内のすべての行をスキャンして統計が作成されることはありません。 代わりに、クエリ オプティマイザーが既定のサンプリング アルゴリズムを使用してこれらの統計を生成します。 テーブル内のすべての行をスキャンしてパーティション インデックスの統計を作成するには、FULLSCAN 句で CREATE STATISTICS または UPDATE STATISTICS を使用します。  
-  
-以前のバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、非クラスター化インデックスを再構築することで、ハードウェア障害により発生した不一致を修正できる場合がありました。    
-[!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降でも、非クラスター化インデックスをオフラインで再構築することで、インデックスとクラスター化インデックス間の不一致を修正できますが、 オンラインでインデックスを再構築する場合、既存の非クラスター化インデックスを基に再構築が行われるので、不一致を維持してしまい非クラスター化インデックスの不一致を修復できません。 オフラインでインデックスを再構築すると、強制的にクラスター化インデックス (ヒープ) のスキャンがなされ、不一致が解消されることがあります。 クラスター化インデックスからの再構築を保証するため、非クラスター化インデックスを削除および再作成します。 不一致を解消する場合、以前のバージョンと同様に影響を受けたデータをバックアップから復元することをお勧めします。ただし、非クラスター化インデックスをオフラインで再構築しても、インデックスの不一致を修復できます。 詳細については、「[DBCC CHECKDB (Transact-SQL)](../../t-sql/database-console-commands/dbcc-checkdb-transact-sql.md)」を参照してください。  
-  
-クラスター化列ストア インデックスを再構築する際、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は以下のように動作します。  
-  
-1. 再構築が行われている間、テーブルまたはパーティションを排他的にロックします。 再構築の間、データは "オフライン" になって使用できません。  
-  
-1. テーブルから論理的に削除された行を物理的に削除することで、列ストアをデフラグします。削除されたバイトは物理メディアで再利用されます。  
-  
-1. 元の列ストア インデックスから、デルタストアを含むすべてのデータを読み取ります。 データを新しい行グループに結合し、行グループを列ストアに圧縮します。  
-  
-1. 再構築中に、物理メディア上の領域を要求して列ストア インデックスのコピーを 2 つ格納します。 再構築が完了すると、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は元のクラスター化列ストア インデックスを削除します。
-
-1. 順序付けされたクラスター化列ストア インデックスを使用しての Azure SQL Data Warehouse テーブルでは、ALTER INDEX REBUILD がデータを再度並べ替えます。 再構築操作中に tempdb を監視します。 tempdb 領域がさらに必要な場合は、データ ウェアハウスをスケール アップすることができます。 インデックスの再構築が完了したら、スケール ダウンで戻します。
-  
 ## <a name="reorganizing-indexes"></a> インデックスの再構成
-インデックスの再構成では、最小のシステム リソースが使用されます。 この操作では、リーフ レベル ページをリーフ ノードの論理順序 (左から右) に合わせて物理的に並べ替えることにより、テーブルやビュー上にあるクラスター化および非クラスター化インデックスのリーフ レベルをデフラグします。 再構成でも、インデックス ページは圧縮されます。 圧縮は既存の FILL FACTOR 値に基づいて行われます。 FILL FACTOR 設定を表示するには、[sys.indexes](../../relational-databases/system-catalog-views/sys-indexes-transact-sql.md) を使用します。  
+インデックスの再構成では、最小のシステム リソースが使用されます。 この操作では、リーフ レベル ページをリーフ ノードの論理順序 (左から右) に合わせて物理的に並べ替えることにより、テーブルやビュー上にあるクラスター化および非クラスター化インデックスのリーフ レベルをデフラグします。 再構成でも、インデックス ページは圧縮されます。 圧縮は既存の FILL FACTOR 値に基づいて行われます。 
   
-ALL を指定した場合、テーブル上のクラスター化および非クラスター化両方のリレーショナル インデックスと XML インデックスが再構成されます。 ALL を指定した場合は、いくつかの制限が適用されます。本記事の「引数」セクションの ALL の定義を参照してください。  
+`ALL` を指定した場合、テーブル上のクラスター化と非クラスター化の両方のリレーショナル インデックスと XML インデックスが再構成されます。 ALL を指定した場合は、いくつかの制限が適用されます。本記事の「引数」セクションの ALL の定義を参照してください。  
   
 詳細については、「 [インデックスの再編成と再構築](../../relational-databases/indexes/reorganize-and-rebuild-indexes.md)」を参照してください。  
 
 > [!IMPORTANT]
-> [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] でインデックスが再編成されるとき、統計は更新されません。
-
->[!IMPORTANT]
 > 順序付けされたクラスター化列ストア インデックスを使用しての Azure SQL Data Warehouse テーブルでは、`ALTER INDEX REORGANIZE` がデータを再度並べ替えません。 データを再度並べ替えるには `ALTER INDEX REBUILD` を使用します。
   
 ## <a name="disabling-indexes"></a> インデックスの無効化  
@@ -689,15 +665,15 @@ ALL を指定した場合、テーブル上のクラスター化および非ク�
   
 テーブルがトランザクション レプリケーション パブリケーション内にある場合、主キー列に関連付けられているインデックスを無効にすることはできません。 これらのインデックスはレプリケーションで必要です。 インデックスを無効にするには、まずパブリケーションからテーブルを削除する必要があります。 詳細については、「[Publish Data and Database Objects](../../relational-databases/replication/publish/publish-data-and-database-objects.md)」(データとデータベース オブジェクトのパブリッシュ) をご覧ください。  
   
-インデックスを有効にするには、ALTER INDEX REBUILD ステートメントまたは CREATE INDEX WITH DROP_EXISTING ステートメントを使用します。 ONLINE オプションが ON に設定されていると、無効化されたクラスター化インデックスを再構築できません。 詳細については、「 [インデックスと制約の無効化](../../relational-databases/indexes/disable-indexes-and-constraints.md)」を参照してください。  
+インデックスを有効にするには、`ALTER INDEX REBUILD` ステートメントまたは `CREATE INDEX WITH DROP_EXISTING` ステートメントを使用します。 ONLINE オプションが ON に設定されていると、無効化されたクラスター化インデックスを再構築できません。 詳細については、「 [インデックスと制約の無効化](../../relational-databases/indexes/disable-indexes-and-constraints.md)」を参照してください。  
   
 ## <a name="setting-options"></a>オプションの設定  
-特定のインデックスに対して、再構築または再構成を行わずに ALLOW_ROW_LOCKS、ALLOW_PAGE_LOCKS、OPTIMIZE_FOR_SEQUENTIAL_KEY、IGNORE_DUP_KEY、および STATISTICS_NORECOMPUTE オプションを設定できます。 変更された値はすぐにインデックスに適用されます。 これらの設定を表示するには、**sys.indexes** を使用します。 詳細については、「 [インデックス オプションの設定](../../relational-databases/indexes/set-index-options.md)」を参照してください。  
+指定のインデックスに対して、そのインデックスを再構築したり、再編成したりすることなく、オプション `ALLOW_ROW_LOCKS`、`ALLOW_PAGE_LOCKS`、`OPTIMIZE_FOR_SEQUENTIAL_KEY`、`IGNORE_DUP_KEY`、`STATISTICS_NORECOMPUTE` を設定できます。 変更された値はすぐにインデックスに適用されます。 これらの設定を表示するには、**sys.indexes** を使用します。 詳細については、「 [インデックス オプションの設定](../../relational-databases/indexes/set-index-options.md)」を参照してください。  
   
 ### <a name="row-and-page-locks-options"></a>行およびページ ロック オプション  
-ALLOW_ROW_LOCKS = ON かつ ALLOW_PAGE_LOCK = ON の場合は、インデックスにアクセスするとき、行レベル、ページ レベル、およびテーブル レベルのロックが許可されます。 [!INCLUDE[ssDE](../../includes/ssde-md.md)]は適切なロックを選択し、行ロックまたはページ ロックをテーブル ロックにエスカレートすることができます。  
+`ALLOW_ROW_LOCKS = ON` と `ALLOW_PAGE_LOCK = ON` の場合、インデックスにアクセスするとき、行レベル、ページ レベル、テーブル レベルのロックが許可されます。 [!INCLUDE[ssDE](../../includes/ssde-md.md)]は適切なロックを選択し、行ロックまたはページ ロックをテーブル ロックにエスカレートすることができます。  
   
-ALLOW_ROW_LOCKS = OFF かつ ALLOW_PAGE_LOCK = OFF の場合は、インデックスにアクセスするときにテーブル レベルのロックだけが許可されます。  
+`ALLOW_ROW_LOCKS = OFF` と `ALLOW_PAGE_LOCK = OFF` の場合、インデックスにアクセスするとき、テーブル レベルのロックのみが許可されます。  
   
 行またはページ ロック オプションが設定されている場合に ALL を指定すると、この設定はすべてのインデックスに適用されます。 基になるテーブルがヒープの場合、この設定は次のように適用されます。  
   
@@ -722,7 +698,7 @@ ALLOW_ROW_LOCKS = OFF かつ ALLOW_PAGE_LOCK = OFF の場合は、インデッ�
 
 ### <a name="resumable-indexes"></a>再開可能なインデックス操作
 
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 
 
 オンライン インデックス再構築は、RESUMABLE = ON オプションを使用し、再開可能として指定できます。 
 -  RESUMABLE オプションは特定のインデックス用のメタデータ内に保持されるのではなく、現在の DDL ステートメントの実行中にのみ適用されます。 したがって、再開機能を有効にするには、RESUMABLE = ON 句を明示的に指定する必要があります。
@@ -788,7 +764,7 @@ ALLOW_ROW_LOCKS = OFF かつ ALLOW_PAGE_LOCK = OFF の場合は、インデッ�
   
 -  [!INCLUDE[ssSDS](../../includes/sssds-md.md)] で、filegroup オプションおよび filestream オプションは使用されません。  
 -  [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] より前のバージョンで列ストア インデックスを使用することはできません。 
--  再開可能なインデックス操作は、[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] および [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 以降のバージョンで使用できます。   
+-  再開可能なインデックス操作は、[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 以降のバージョンで使用できます。   
   
 ## <a name="basic-syntax-example"></a>基本構文例:   
   
@@ -894,7 +870,7 @@ ALTER INDEX cci_FactInternetSales2 ON FactInternetSales2 REORGANIZE PARTITION = 
 ```  
   
 ### <a name="c-compress-all-open-and-closed-delta-rowgroups-into-the-columnstore"></a>C. すべての OPEN デルタ行グループおよび CLOSED デルタ行グループを列ストアに圧縮する  
- **適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 
+ **適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 
   
  コマンド REORGANIZE WITH ( COMPRESS_ALL_ROW_GROUPS = ON ) では、OPEN および CLOSED のデルタ行グループをそれぞれ圧縮し、圧縮された行グループとして列ストアに移動します。 これにより、デルタストアは空になり、すべての行が強制的に列ストアに圧縮されます。 これは多くの挿入操作を実行した後で特に便利です。挿入操作を多く実行すると行が 1 つまたは複数のデルタ行グループに格納されるからです。  
   
@@ -1019,7 +995,7 @@ ALTER INDEX PK_Employee_EmployeeID ON HumanResources.Employee REBUILD;
 ### <a name="b-rebuilding-all-indexes-on-a-table-and-specifying-options"></a>B. テーブルですべてのインデックスを再構築し、オプションを指定する  
  次の例では、キーワード ALL を指定します。 これにより、[!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] データベースの Production.Product テーブルに関連付けられたすべてのインデックスが再構築されます。 3 つのオプションが指定されます。  
   
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。  
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]  
   
 ```sql  
 ALTER INDEX ALL ON Production.Product  
@@ -1028,7 +1004,7 @@ REBUILD WITH (FILLFACTOR = 80, SORT_IN_TEMPDB = ON, STATISTICS_NORECOMPUTE = ON)
   
 次の例は、優先度の低いロック オプションを含めて ONLINE オプションを追加し、行の圧縮オプションを追加します。  
   
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。  
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]  
   
 ```sql  
 ALTER INDEX ALL ON Production.Product  
@@ -1052,7 +1028,7 @@ ALTER INDEX PK_ProductPhoto_ProductPhotoID ON Production.ProductPhoto REORGANIZE
 ### <a name="d-setting-options-on-an-index"></a>D. インデックスにオプションを設定する  
  次の例では、[!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] データベースのインデックス `AK_SalesOrderHeader_SalesOrderNumber` にいくつかのオプションを設定します。  
   
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。  
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]  
   
 ```sql  
 ALTER INDEX AK_SalesOrderHeader_SalesOrderNumber ON  
@@ -1107,7 +1083,7 @@ GO
 ### <a name="h-rebuilding-a-partitioned-index"></a>H. パーティション インデックスを再構築する  
  次の例では、[!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] データベースのパーティション インデックス `5` のパーティション番号 `IX_TransactionHistory_TransactionDate` の単一パーティションを再構築します。 パーティション 5 はオンラインで再構築され、優先度の低いロックの 10 分間の待機時間が、インデックスの再構築操作によって取得された各ロックに個別に適用されます。 この期間中に、インデックスの再構築を完了するためのロックを取得できない場合は、再構築操作のステートメントが中止されます。  
   
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。  
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]  
   
 ```sql  
 -- Verify the partitioned indexes.  
@@ -1137,7 +1113,7 @@ GO
  
 ### <a name="j-online-resumable-index-rebuild"></a>J. オンラインでの再開可能なインデックス再構築
 
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]) および [!INCLUDE[ssSDS](../../includes/sssds-md.md)]   
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (開始値 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]   
 
  次の例では、オンラインでの再開可能なインデックス再構築を使用する方法を示します。 
 
@@ -1178,15 +1154,15 @@ GO
    ``` 
   
 ## <a name="see-also"></a>参照  
- [CREATE INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-index-transact-sql.md)   
- [CREATE SPATIAL INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-spatial-index-transact-sql.md)   
- [CREATE XML INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-xml-index-transact-sql.md)   
- [DROP INDEX (Transact-SQL)](../../t-sql/statements/drop-index-transact-sql.md)   
- [インデックスと制約の無効化](../../relational-databases/indexes/disable-indexes-and-constraints.md)   
- [XML インデックス &#40;SQL Server&#41;](../../relational-databases/xml/xml-indexes-sql-server.md)   
- [オンラインでのインデックス操作の実行](../../relational-databases/indexes/perform-index-operations-online.md)   
- [インデックスの再構成と再構築](../../relational-databases/indexes/reorganize-and-rebuild-indexes.md)   
- [sys.dm_db_index_physical_stats &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-index-physical-stats-transact-sql.md)   
- [EVENTDATA &#40;Transact-SQL&#41;](../../t-sql/functions/eventdata-transact-sql.md)  
-  
+[SQL Server のインデックスのアーキテクチャとデザイン ガイド](../../relational-databases/sql-server-index-design-guide.md)     
+[オンラインでのインデックス操作の実行](../../relational-databases/indexes/perform-index-operations-online.md)    
+[CREATE INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-index-transact-sql.md)     
+[CREATE SPATIAL INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-spatial-index-transact-sql.md)   
+[CREATE XML INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-xml-index-transact-sql.md)   
+[DROP INDEX (Transact-SQL)](../../t-sql/statements/drop-index-transact-sql.md)   
+[インデックスと制約の無効化](../../relational-databases/indexes/disable-indexes-and-constraints.md)   
+[XML インデックス &#40;SQL Server&#41;](../../relational-databases/xml/xml-indexes-sql-server.md)   
+[インデックスの再構成と再構築](../../relational-databases/indexes/reorganize-and-rebuild-indexes.md)   
+[sys.dm_db_index_physical_stats &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-index-physical-stats-transact-sql.md)   
+[EVENTDATA &#40;Transact-SQL&#41;](../../t-sql/functions/eventdata-transact-sql.md)    
   

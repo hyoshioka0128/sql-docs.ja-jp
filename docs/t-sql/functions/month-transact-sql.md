@@ -55,7 +55,7 @@ MONTH ( date )
  **int**  
   
 ## <a name="return-value"></a>戻り値  
- \* * 月には、同じの値が返されます [DATEPART](../../t-sql/functions/datepart-transact-sql.md) (**月**、*日*)。 * *。  
+ MONTH は [DATEPART](../../t-sql/functions/datepart-transact-sql.md) (**month**、*date*) と同じ値を返します。  
   
  *日付*に時刻部分のみが含まれている場合、戻り値は 1、基本の月です。  
   

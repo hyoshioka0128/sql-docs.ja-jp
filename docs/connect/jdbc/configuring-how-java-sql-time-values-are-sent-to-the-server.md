@@ -1,7 +1,7 @@
 ---
 title: java.sql.Time の値をサーバーに送信する方法の構成 | Microsoft Docs
 ms.custom: ''
-ms.date: 07/11/2018
+ms.date: 08/12/2019
 ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: 07eb00dd-621a-46f9-a5a5-8cab4d6058b5
 author: MightyPen
 ms.author: genemi
-ms.openlocfilehash: f22382db2ab6cd9c6f055b8143500e2062721df1
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 8fe6969d51834d0798a530b9cc9926af1b27fec2
+ms.sourcegitcommit: 9348f79efbff8a6e88209bb5720bd016b2806346
 ms.translationtype: MTE75
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67956935"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69028235"
 ---
 # <a name="configuring-how-javasqltime-values-are-sent-to-the-server"></a>java.sql.Time の値をサーバーに送信する方法の構成
 [!INCLUDE[Driver_JDBC_Download](../../includes/driver_jdbc_download.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "67956935"
   
  **sendTimeAsDatetime** 接続プロパティの値は、[SQLServerDataSource.setSendTimeAsDatetime](../../connect/jdbc/reference/setsendtimeasdatetime-method-sqlserverdatasource.md) を使用してプログラムから変更できます。  
   
- より[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 前のバージョンのでは、**time** データ型がサポートされないので、java を使用するアプリケーションでは、通常、**datetime** または[!INCLUDE[ssKatmai](../../includes/sskatmai_md.md)] **smalldatetime**データ型[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 。  
+ より[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 前のバージョンのでは、**time** データ型がサポートされていないため、**smalldatetime** を使用するアプリケーションでは、通常、**datetime** またはデータ型として java.sql.time 値を格納します。 [!INCLUDE[ssKatmai](../../includes/sskatmai_md.md)]  
   
  **Smalldatetime** 値を使用するときに**datetime**データ型と [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]データ型を使用する場合は、 **sendTimeAsDatetime**接続プロパティを**true**に設定する必要があります。 **SendTimeAsDatetime**接続プロパティを**false**に設定して、 **time** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]データ型を使用する場合は、time データ型を使用する必要があります。  
   
@@ -61,7 +61,7 @@ ms.locfileid: "67956935"
   public void setSendTimeAsDatetime(boolean sendTimeAsDateTimeValue)
 ```
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>参照
  [JDBC ドライバーのデータ型について](../../connect/jdbc/understanding-the-jdbc-driver-data-types.md)  
   
   

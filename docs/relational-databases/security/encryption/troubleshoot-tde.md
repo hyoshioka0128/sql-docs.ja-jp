@@ -10,35 +10,32 @@ ms.prod: sql
 ms.technology: security
 ms.reviewer: vanto
 ms.topic: conceptual
-ms.date: 04/26/2019
+ms.date: 08/20/2019
 ms.author: aliceku
 monikerRange: = azuresqldb-current || = azure-sqldw-latest || = sqlallproducts-allversions
-ms.openlocfilehash: f67d1ed9bf809baaa4d934947e86d3fd1b7ed0b9
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: f60f95f3fdd9ca31574e4e0052c83ae72bd8a9b4
+ms.sourcegitcommit: 676458a9535198bff4c483d67c7995d727ca4a55
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68111529"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69903619"
 ---
 # <a name="common-errors-for-transparent-data-encryption-with-customer-managed-keys-in-azure-key-vault"></a>Azure Key Vault のカスタマー マネージド キーを使った透過的なデータ暗号化に関する一般的なエラー
 
 [!INCLUDE[appliesto-xx-asdb-asdw-xxx-md.md](../../../includes/appliesto-xx-asdb-asdw-xxx-md.md)]
-この記事では、Azure Key Vault のカスタマー マネージド キーによる透過的なデータ暗号化 (TDE) を使うための要件と、一般的なエラーを識別して解決する方法について説明します。
+この記事では、[Azure Key Vault のカスタマー マネージド キーで Transparent Data Encryption (TDE)](https://docs.microsoft.com/en-us/azure/sql-database/transparent-data-encryption-byok-azure-sql) を使用するように構成されたデータベースがアクセスできなくなる原因となった、Azure Key Vault キーのアクセスに関する問題を特定して解決する方法について説明します。
 
-## <a name="requirements"></a>必要条件
+## <a name="introduction"></a>概要
+Azure Key Vault のカスタマー マネージド キーを使用するように TDE が構成されている場合、データベースをオンラインに保つには、この TDE 保護機能への継続的なアクセスが必要です。  論理 SQL サーバーが Azure Key Vault のカスタマー マネージド TDE 保護機能にアクセスできなくなった場合、データベースではすべての接続が拒否され、Azure portal でデータベースにアクセスできない状態になります。
 
-Key Vault のカスタマー マネージド TDE プロテクターを使って TDE のトラブルシューティングを行うには、次の要件を満たしている必要があります。
+最初の 48 時間以内に基になっている Azure Key Vault のキー アクセスの問題が解決されると、データベースは自動修復され、自動的にオンラインになります。  つまり、間欠的および一時的なネットワーク停止のシナリオでは、ユーザーによる対応は必要なく、データベースは自動的にオンラインになります。  ほとんどの場合、基になっている Key Vault のキー アクセスの問題を解決するには、ユーザーによる対応が必要です。 
 
-- 論理 SQL Server インスタンスとキー コンテナーは、同じリージョンに配置する必要がある。
-- Azure Active Directory (Azure AD) により提供される論理 SQL Server インスタンス ID (Azure Key Vault の AppId) は、元のサブスクリプションのテナントである必要がある。 サーバーが、作成されたのとは別のサブスクリプションに移動された場合、サーバー ID (AppId) を再作成する必要がある。
-- キー コンテナーが稼働している必要がある。 キー コンテナーの状態を確認する方法については、[Azure Resource Health](https://docs.microsoft.com/azure/service-health/resource-health-overview) に関する記事をご覧ください。 通知にサインアップするには、[アクション グループ](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups)に関する記事をご覧ください。
-- geo ディザスター リカバリーのシナリオでは、フェールオーバーを機能させるために、両方のキー コンテナーに同じキー マテリアルを含める必要がある。
-- 論理サーバーには、キー コンテナーへの認証のための Azure AD ID (AppId) がある必要がある。
-- AppId にはキー コンテナーへのアクセス権がある必要がある。また、TDE プロテクターとして選択されたキーに対する取得、ラップ、ラップ解除のアクセス許可がある必要がある。
+アクセスできないデータベースがもう必要ない場合は、すぐに削除してコストを抑えることができます。  Azure Key Vault キーへのアクセスが復元され、データベースがオンラインに戻るまで、データベースに対する他のすべての操作は許可されません。   カスタマー マネージド キーで暗号化されたデータベースにアクセスできない間は、サーバーで TDE のオプションをカスタマー マネージド キーからサービス マネージド キーに変更することもできません。 これは、TDE 保護機能へのアクセス許可が取り消されているときに、データを不正アクセスから保護するために必要です。 
 
-詳細については、「[TDE と Azure Key Vault の構成に関するガイドライン](https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-byok-azure-sql#guidelines-for-configuring-tde-with-azure-key-vault)」をご覧ください。
+データベースにアクセスできない期間が 48 時間を超えると、自動修復は行われなくなります。  必要な Azure Key Vault のキー アクセスが復元された場合は、手動でアクセスを再検証して、データベースをオンラインに戻す必要があります。  48 時間より長くアクセス不能になった後でデータベースをオンラインに戻す場合は、データベースのサイズによってはかなり時間がかかることがあり、現在はサポート チケットが必要になります。 データベースがオンラインに戻ると、Geo-DR が構成されていた場合の geo リンク、PITR 履歴、タグなどの以前に構成した設定は失われます。  そのため、基になっている Key Vault の問題を 48 時間以内に解決できるように、[アクション グループ](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups)を使用して通知システムを実装することをお勧めします。 
 
-## <a name="common-misconfigurations"></a>一般的な構成ミス
+
+## <a name="common-errors-causing-databases-to-become-inaccessible"></a>データベースにアクセスできなくなる原因となる一般的なエラー
 
 Key Vault による TDE を使用しているときに発生する問題のほとんどは、次の構成ミスのいずれかが原因です。
 
@@ -46,10 +43,11 @@ Key Vault による TDE を使用しているときに発生する問題のほ�
 
 - キー コンテナーが誤って削除された。
 - Azure Key Vault に対してファイアウォールが構成されたが、そこで Microsoft サービスへのアクセスが許可されていない。
+- 間欠的なネットワーク エラーのために、キー コンテナーを使用できない。
 
 ### <a name="no-permissions-to-access-the-key-vault-or-the-key-doesnt-exist"></a>キー コンテナーへのアクセス許可がない、またはキーが存在しない
 
-- キーが誤って削除された。
+- キーが誤って削除された、無効にされた、またはキーの有効期限が切れた。
 - 論理 SQL Server インスタンスの AppId が誤って削除された。
 - 論理 SQL Server インスタンスが別のサブスクリプションに移動された。 論理サーバーが別のサブスクリプションに移動された場合、新しい AppId を作成する必要があります。
 - キー用の AppId に付与されているアクセス許可が不十分 (取得、ラップ、ラップ解除が含まれていない)。
@@ -89,7 +87,7 @@ Azure portal では、キー コンテナーに移動してから、 **[アク�
 詳細については、「[サーバーに Azure AD ID を割り当てる](https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-byok-azure-sql-configure?view=sql-server-2017&viewFallbackFrom=azuresqldb-current#step-1-assign-an-azure-ad-identity-to-your-server)」をご覧ください。
 
 > [!IMPORTANT]
-> Key Vault による TDE の初期構成後に論理 SQL Server インスタンスが新しいサブスクリプションに移動された場合、Azure AD ID を構成する手順を繰り返して、新しい AppId を作成します。 その後、その AppId をキー コンテナーに追加し、キーに適切なアクセス許可を割り当てます。 
+> Key Vault による TDE の初期構成後に論理 SQL Server インスタンスが新しいテナントに移動された場合、Azure AD ID を構成する手順を繰り返して、新しい AppId を作成します。 その後、その AppId をキー コンテナーに追加し、キーに適切なアクセス許可を割り当てます。 
 >
 
 ### <a name="missing-key-vault"></a>キー コンテナーがない
@@ -164,8 +162,82 @@ TDE プロテクターが Key Vault に存在することを確認します。
 - AppId が存在する場合は、その AppId に次のキー アクセス許可があることを確認します。取得、ラップ、ラップ解除。
 - AppId が存在しない場合は、 **[新規追加]** ボタンを使用して、それを追加します。 
 
+## <a name="getting-tde-status-from-the-activity-log"></a>アクティビティ ログから TDE の状態を取得する
+
+Azure Key Vault のキー アクセスの問題によるデータベースの状態を監視できるように、Azure Resource Manager の URL と Subscription+Resourcegroup+ServerName+DatabseName に基づいて、次のイベントがリソース ID の[アクティビティ ログ](https://docs.microsoft.com/azure/service-health/alerts-activity-log-service-notifications)に記録されます。 
+
+**サービスが Azure Key Vault のキーにアクセスできなくなったときのイベント**
+
+イベント名: MakeDatabaseInaccessible 
+
+状態:Started 
+
+説明:データベースは、Azure Key Vault のキーにアクセスできなくなったため、現在はアクセスできません: <error message>   
+
+ 
+
+**自己修復の 48 時間の待機時間が開始したときのイベント** 
+
+イベント名: MakeDatabaseInaccessible 
+
+状態:InProgress 
+
+説明:データベースは、48 時間以内にユーザーによって Azure Key Vault のキー アクセスが再確立されるのを待機しています。   
+
+ 
+
+**データベースが自動的にオンラインに戻ったときのイベント**
+
+イベント名: MakeDatabaseAccessible 
+
+状態:成功 
+
+説明:Azure Key Vault のキーへのデータベース アクセスが再確立され、データベースがオンラインになりました。 
+
+ 
+
+**48 時間以内に問題が解決されず、Azure Key Vault のキーのアクセスを手動で検証する必要がある場合のイベント** 
+
+イベント名: MakeDatabaseInaccessible 
+
+状態:成功 
+
+説明:データベースはアクセスできない状態であり、ユーザーは Azure Key Vault のエラーを解決し、再検証キーを使用して Azure Key Vault のキーへのアクセスを再確立する必要があります。 
+
+ 
+
+**手動によるキーの再検証後にデータベースがオンラインになったときのイベント**
+
+イベント名: MakeDatabaseAccessible 
+
+状態:成功 
+
+説明:Azure Key Vault のキーへのデータベース アクセスが再確立され、データベースがオンラインになりました。 
+
+ 
+
+**Azure Key Vault のキー アクセスの再検証が成功し、データベースがオンラインに戻ったときのイベント**
+
+イベント名: MakeDatabaseAccessible 
+
+状態:Started 
+
+説明:Azure Key Vault のキーへのデータベース アクセスの復元が開始されました。 
+
+ 
+
+**Azure Key Vault のキー アクセスの再検証が失敗したときのイベント**
+
+イベント名: MakeDatabaseAccessible 
+
+状態:失敗 
+
+説明:Azure Key Vault のキーへのデータベース アクセスの復元が失敗しました。 
+
+
 ## <a name="next-steps"></a>次の手順
 
-- 「[TDE と Azure Key Vault の構成に関するガイドライン](https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-byok-azure-sql#guidelines-for-configuring-tde-with-azure-key-vault)」を確認する。
 - [Azure Resource Health](https://docs.microsoft.com/azure/service-health/resource-health-overview) について学習する。
-- [サーバーに Azure AD ID を割り当てる](https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-byok-azure-sql-configure?view=sql-server-2017&viewFallbackFrom=azuresqldb-current#step-1-assign-an-azure-ad-identity-to-your-server)方法を再確認する。
+- 電子メール/SMS/プッシュ/音声、ロジック アプリ、Webhook、ITSM、Automation Runbook などの設定に基づいて、通知とアラートを受け取る[アクション グループ](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups)を設定します。 
+
+

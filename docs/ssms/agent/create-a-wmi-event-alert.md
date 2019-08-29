@@ -13,12 +13,12 @@ ms.assetid: b8c46db6-408b-484e-98f0-a8af3e7ec763
 author: markingmyname
 ms.author: maghan
 monikerRange: = azuresqldb-mi-current || >= sql-server-2016 || = sqlallproducts-allversions
-ms.openlocfilehash: 81cc2d0c16847b6d46bfec11d71380b3cc58f79b
-ms.sourcegitcommit: 57e20b7d02853ec9af46b648106578aed133fb45
+ms.openlocfilehash: f1f092ba4facfe166c8be67a21e6f20d414466e5
+ms.sourcegitcommit: cbbb210c0315f9e2be2b9cd68db888ac53429814
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69553081"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69890929"
 ---
 # <a name="create-a-wmi-event-alert"></a>Create a WMI Event Alert
 [!INCLUDE[appliesto-ss-asdbmi-xxxx-xxx-md](../../includes/appliesto-ss-asdbmi-xxxx-xxx-md.md)]
@@ -35,7 +35,7 @@ WMI Provider を使用して [!INCLUDE[ssNoVersion](../../includes/ssnoversion-m
   
 -   [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] は、警告システム全体を簡単に管理できるグラフィカルなツールです。警告の基本構成を設定するには、SQL Server Management Studio を使用することをお勧めします。  
   
--   **xp_logevent** で生成されたイベントは master データベースで発生します。 このため、 **xp_logevent** では、警告の **@database_name** が **'master'** または NULL になっていないと、警告が起動されません。  
+-   **xp_logevent** で生成されたイベントは master データベースで発生します。 このため、**xp_logevent** では、警告の **\@database_name** が **'master'** または NULL になっていないと、警告はトリガーされません。  
   
 -   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントが実行されているコンピューター上の WMI 名前空間だけがサポートされます。  
   

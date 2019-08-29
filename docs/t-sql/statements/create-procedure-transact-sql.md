@@ -46,12 +46,12 @@ ms.assetid: afe3d86d-c9ab-44e4-b74d-4e3dbd9cc58c
 author: CarlRabeler
 ms.author: carlrab
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 14597122e586aca0290a4823f07dbb17e5cccda2
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 4004ba36ffbcaf5cf96a6e4d9c95761b054e9abc
+ms.sourcegitcommit: 01c8df19cdf0670c02c645ac7d8cc9720c5db084
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68006529"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70000829"
 ---
 # <a name="create-procedure-transact-sql"></a>CREATE PROCEDURE (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-all-md](../../includes/tsql-appliesto-ss2008-all-md.md)]
@@ -356,7 +356,7 @@ SELECT DB_NAME(@ID) AS ThatDB;
 ## <a name="best-practices"></a>ベスト プラクティス  
  ここではベスト プラクティスをすべて網羅しているわけではありませんが、次の推奨事項に従うと、プロシージャのパフォーマンスが向上する場合があります。  
   
--   プロシージャの本体の最初のステートメントとして SET NOCOUNT ON ステートメントを使用する。 つまり、このステートメントを AS キーワードの直後に配置します。 これにより、SELECT、INSERT、UPDATE、MERGE、および DELETE ステートメントの実行後に、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] がクライアントに返すメッセージが表示されません。 この不要なネットワーク オーバーヘッドを軽減することにより、データベースとアプリケーションの全体的なパフォーマンスが向上します。 詳しくは、「[SET NOCOUNT &#40;Transact-SQL&#41;](../../t-sql/statements/set-nocount-transact-sql.md)」をご覧ください。  
+-   プロシージャの本体の最初のステートメントとして SET NOCOUNT ON ステートメントを使用する。 つまり、このステートメントを AS キーワードの直後に配置します。 これにより、SELECT、INSERT、UPDATE、MERGE、および DELETE ステートメントの実行後に、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] がクライアントに返すメッセージが表示されません。 これにより、生成される出力が最小限になってわかりやすくなります。 ただし、今日のハードウェアでは、測定できるほどのパフォーマンス上の利点はありません。 詳しくは、「[SET NOCOUNT &#40;Transact-SQL&#41;](../../t-sql/statements/set-nocount-transact-sql.md)」をご覧ください。  
   
 -   プロシージャ内のデータベース オブジェクトを作成または参照するときにスキーマ名を使用する。 これにより、複数のスキーマを検索する必要がない場合に、[!INCLUDE[ssDE](../../includes/ssde-md.md)]でオブジェクト名の解決に要する時間が短縮されます。 また、スキーマを指定せずにオブジェクトを作成したときに割り当てられるユーザーの既定のスキーマが原因で発生する権限とアクセスの問題を防ぐこともできます。  
   

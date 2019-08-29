@@ -5,17 +5,17 @@ author: dphansen
 ms.author: davidph
 ms.reviewer: vanto
 manager: cgronlun
-ms.date: 06/26/2019
+ms.date: 08/21/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: language-extensions
 monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: de5ca4f46513999c1473eed77503b59cc94c3a22
-ms.sourcegitcommit: db9bed6214f9dca82dccb4ccd4a2417c62e4f1bd
+ms.openlocfilehash: 3f4f4bad8bbe72681b699af25b87eb4a533b7002
+ms.sourcegitcommit: 5e838bdf705136f34d4d8b622740b0e643cb8d96
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68476019"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69653528"
 ---
 # <a name="install-sql-server-2019-language-extensions-java-on-linux"></a>SQL Server 2019 の言語拡張 (Java) を Linux 上にインストールする
 
@@ -29,9 +29,9 @@ Java 拡張機能のパッケージは、SQL Server Linux ソース リポジト
 
 また、言語拡張は Linux コンテナー上でもサポートされます。 言語拡張には、ビルド済みのコンテナーは付属していませんが、[GitHub 上で入手できるサンプル テンプレート](https://github.com/Microsoft/mssql-docker/tree/master/linux/preview/examples/mssql-mlservices)を使用して、SQL Server コンテナーから作成できます。
 
-## <a name="uninstall-previous-ctp"></a>以前の CTP をアンインストールする
+## <a name="uninstall-previous-ctp-version"></a>CTP の以前のバージョンをアンインストールする
 
-パッケージ一覧は、最新のいくつかの CTP リリースによって変更されており、パッケージ数は減少しています。 CTP 3.2 をインストールする前に、以前のすべてのパッケージを削除するために、CTP 2.x をアンインストールすることをお勧めします。 複数のバージョンの並列インストールはサポートされていません。
+パッケージ一覧は、最新のいくつかの CTP リリースによって変更されており、パッケージ数は減少しています。 RC 1 をインストールする前に、以前のすべてのパッケージを削除するために、CTP バージョンをアンインストールすることをお勧めします。 複数のバージョンの並列インストールはサポートされていません。
 
 ### <a name="1-confirm-package-installation"></a>1.パッケージのインストールを確認する
 
@@ -41,7 +41,7 @@ Java 拡張機能のパッケージは、SQL Server Linux ソース リポジト
 ls /opt/microsoft/mssql/bin
 ```
 
-### <a name="2-uninstall-previous-ctp-2x-packages"></a>2.以前の CTP 2.x パッケージをアンインストールする
+### <a name="2-uninstall-previous-ctp-packages"></a>2.以前の CTP パッケージをアンインストールする
 
 最下位のパッケージ レベルでアンインストールを行います。 より下位のパッケージに依存しているアップストリーム パッケージがすべて、自動的にアンインストールされます。
 
@@ -55,7 +55,7 @@ ls /opt/microsoft/mssql/bin
 | SLES  | `sudo zypper remove msssql-server-extensibility-java` |
 | Ubuntu    | `sudo apt-get remove msssql-server-extensibility-java`|
 
-### <a name="3-proceed-with-ctp-32-install"></a>3.CTP 3.2 のインストールを続行する
+### <a name="3-install-release-candidate-1-rc-1"></a>3.リリース候補 1 (RC 1) をインストールする
 
 この記事の手順を使用して、お使いのオペレーティング システムに最上位のパッケージ レベルでインストールを行います。
 
@@ -85,14 +85,14 @@ OS 固有の一連のインストール手順ごとに、"*最上位のパッケ
 
 | パッケージ名 | 適用先 | [説明] |
 |--------------|----------|-------------|
-|mssql-server-extensibility  | すべての言語 | Java コードを実行するために使用される拡張機能のフレームワーク。 |
-|mssql-server-extensibility-java | Java | Java の実行環境を読み込むための Java の拡張機能。 Java 用の追加のライブラリやパッケージはありません。 |
+|mssql-server-extensibility  | すべての言語 | Java 言語拡張機能に使用される拡張性フレームワーク |
+|mssql-server-extensibility-java | Java | Java 言語拡張機能に使用され、サポートされている Java ランタイムが含まれる拡張性フレームワーク |
 
 <a name="RHEL"></a>
 
 ## <a name="install-language-extensions"></a>言語拡張をインストールする
 
-**mssql-server-extensibility-java** をインストールすることによって、Linux 上に言語拡張と Java をインストールできます。 **mssql-server-extensibility-java** をインストールすると、JRE 8 がまだインストールされていない場合は、パッケージによって自動的にインストールされます。 また、JVM パスが JRE_HOME という環境変数に追加されます。
+**mssql-server-extensibility-java** をインストールすることによって、Linux 上に言語拡張と Java をインストールできます。 **mssql-server-extensibility-java** をインストールすると、JRE 11 がまだインストールされていない場合は、パッケージによって自動的にインストールされます。 また、JVM パスが JRE_HOME という環境変数に追加されます。
 
 > [!Note]
 > インターネットに接続されたサーバー上では、パッケージの依存関係がダウンロードされ、メイン パッケージのインストールの一部としてインストールされます。 サーバーがインターネットに接続されていない場合は、[オフライン セットアップ](#offline-install)に関するページで詳細を確認してください。
@@ -275,7 +275,7 @@ Java 機能の統合には、ライブラリは含まれませんが、`grep -r 
 
 #### <a name="package-list"></a>パッケージ一覧
 
-使用する拡張機能に応じて、特定の言語に必要なパッケージをダウンロードします。 正確なファイル名には、サフィックスにプラットフォーム情報が含まれますが、以下でのファイル名は、取得するファイルを十分に判断できる程度に近いものにしておく必要があります。
+使用する拡張機能に応じて、特定の言語に必要なパッケージをダウンロードします。 正確なファイル名にはサフィックス内のプラットフォーム情報が含まれますが、以下のファイル名では、取得するファイルを十分に判断できる程度に近いものにしておく必要があります。
 
 ```
 # Core packages 
@@ -286,7 +286,7 @@ mssql-server-extensibility-15.0.1000
 mssql-server-extensibility-java-15.0.1000
 ```
 
-## <a name="limitations-in-ctp-releases"></a>CTP リリースにおける制限事項
+## <a name="limitations-in-the-rc-1-release"></a>RC 1 リリースでの制限事項
 
 Linux 上での言語拡張と Java 拡張機能は、今も開発が進められています。 プレビュー バージョンでは、次の機能がまだ有効になっていません。
 
@@ -295,7 +295,7 @@ Linux 上での言語拡張と Java 拡張機能は、今も開発が進めら�
 
 ### <a name="resource-governance"></a>リソース管理
 
-外部リソース プールに対する[リソース管理](../t-sql/statements/create-external-resource-pool-transact-sql.md)では、Linux と Windows 間で一致していますが、[sys.dm_resource_governor_external_resource_pools](../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-external-resource-pools.md) に対する統計では、現時点では、Linux 上に異なるユニットがあります。 今後の CTP では、ユニットが調整される予定です。
+外部リソース プールに対する[リソースのガバナンス](../t-sql/statements/create-external-resource-pool-transact-sql.md)では、Linux と Windows 間に一致がありますが、[sys.dm_resource_governor_external_resource_pools](../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-external-resource-pools.md) の統計では、現在は Linux 上に異なるユニットがあります。 
  
 | 列名   | [説明] | Linux 上の値 | 
 |---------------|--------------|---------------|

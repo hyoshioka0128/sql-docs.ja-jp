@@ -14,12 +14,12 @@ ms.assetid: 6ad23de1-2bab-4933-9122-c09f5565028d
 author: MashaMSFT
 ms.author: mathoma
 monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 86b63bd2ccdb3cb4d8f2c73c2298cce1803e5ee9
-ms.sourcegitcommit: c5e2aa3e4c3f7fd51140727277243cd05e249f78
+ms.openlocfilehash: bb521f3c71dc1f72a6225cb10a375c91f476b07d
+ms.sourcegitcommit: 594cee116fa4ee321e1f5e5206f4a94d408f1576
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68742915"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70009383"
 ---
 # <a name="install-sql-server-from-the-installation-wizard-setup"></a>SQL Server をインストール ウィザードからインストールする (セットアップ)
 
@@ -54,8 +54,7 @@ ms.locfileid: "68742915"
 
 SQL Server 2016 および 2017 の前提条件としてインストールされる Microsoft Visual C++ 2013 ランタイム バイナリに問題が見つかりました。 更新プログラムを利用してこの問題を修正できます。 Visual C++ ランタイム バイナリに対するこの更新プログラムをインストールしないと、特定のシナリオにおいて、SQL Server で安定性の問題が発生する可能性があります。 SQL Server をインストールする前に、「[SQL Server リリース ノート](../../sql-server/sql-server-2016-release-notes.md#bkmk_ga_instalpatch)」にある手順に従って、ご使用のコンピューターに Visual C++ ランタイム バイナリのパッチが必要かどうかを確認してください。 
 
-これは、SQL Server 2019 には適用されません。  
-  
+これは、[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] には適用されません。
 
 ## <a name="to-install-sql-server-2016-and-2017"></a>SQL Server 2016 および 2017 をインストールするには  
 
@@ -280,9 +279,9 @@ SQL Server 2016 および 2017 の前提条件としてインストールされ�
   
      インストールの残りの部分のワークフローは、インストールするように指定した機能に応じて異なります。 選択によっては、表示されないページもあります。 
 
-1. SQL Server 2019 以降では、Polybase の機能をインストールする前に、コンピューターに (少なくとも) Oracle JRE 7 Update 51 を事前にインストールしておく必要がなくなりました。 Polybase 機能をインストールすることを選択すると、 **[インスタンスの構成]** ページの後に表示される SQL Server の設定に **[Java のインストール場所]** ページが追加されます。 [Java のインストール場所] ページでは、SQL Server 2019 インストールに含まれる Azul Zulu Open JRE をインストールすることも、コンピューターに既にインストールされている別の JRE または JDK の場所を指定することも選択できます。
+1. [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降では、Polybase の機能をインストールする前に、コンピューターに (少なくとも) Oracle JRE 7 Update 51 を事前にインストールしておく必要がなくなりました。 Polybase 機能をインストールすることを選択すると、 **[インスタンスの構成]** ページの後に表示される SQL Server の設定に **[Java のインストール場所]** ページが追加されます。 [Java のインストール場所] ページでは、[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] のインストールに含まれる Azul Zulu Open JRE をインストールすることも、コンピューターに既にインストールされている別の JRE または JDK の場所を指定することも選択できます。
 
-1. SQL Server 2019 以降では、言語拡張機能と共に Java が追加されています。 Java 機能をインストールすることを選択すると、SQL Server 設定ダイアログ ウィンドウに **[Java のインストール場所]** ページが追加されます。このページは、 **[インスタンスの構成]** ページの後に表示されます。 **[Java のインストール場所]** ページでは、SQL Server 2019 インストールに含まれる Zulu Open JRE をインストールすることも、コンピューターに既にインストールされている別の JRE または JDK の場所を指定することも選択できます。
+1. [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降では、言語拡張機能と共に Java が追加されています。 Java 機能をインストールすることを選択すると、SQL Server 設定ダイアログ ウィンドウに **[Java のインストール場所]** ページが追加されます。このページは、 **[インスタンスの構成]** ページの後に表示されます。 **[Java のインストール場所]** ページでは、[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] のインストールに含まれる Zulu Open JRE をインストールすることも、コンピューターに既にインストールされている別の JRE または JDK の場所を指定することも選択できます。
 
 1. **[サーバーの構成] - [サービス アカウント]** ページを使用して、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] サービスのログイン アカウントを指定します。 このページで構成する実際のサービスは、インストール時に選択した機能によって異なります。 構成設定の詳細については、「[インストール ウィザードのヘルプ](../../sql-server/install/instance-configuration.md#serverconfig)」を参照してください。
   
@@ -314,13 +313,29 @@ SQL Server 2016 および 2017 の前提条件としてインストールされ�
      詳細については、「[[データベース エンジンの構成] - [データ ディレクトリ] ページ](../../sql-server/install/instance-configuration.md#datadir)」を参照してください。
 
      **[データベース エンジンの構成] - [TempDB]** ページを使用して、ファイル サイズ、ファイルの数、既定以外のインストール ディレクトリ、および **tempdb** のファイル拡張設定を構成します。 詳細については、「[[データベース エンジンの構成] - [TempDB] ページ](../../sql-server/install/instance-configuration.md#tempdb)」を参照してください。
-
+<<<<<<< HEAD
   
-     **[[!INCLUDE[ssDE](../../includes/ssde-md.md)]の構成 - MaxDOP]** タブを使用して、並列処理の最大限度を指定します。 この設定により、1 つのステートメントが実行中に使用できるプロセッサの数が決まります。 推奨値はインストール時に自動的に計算されます。 詳細については、[並列処理の最大限度](../../database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option.md#Guidelines)に関する記事を参照してください。 このオプションは、SQL Server 2019 以降でのみ使用できます。 
+     **[[!INCLUDE[ssDE](../../includes/ssde-md.md)]の構成 - MaxDOP]** ページを使用して、並列処理の最大限度を指定します。 この設定により、1 つのステートメントが実行中に使用できるプロセッサの数が決まります。 推奨値はインストール時に自動的に計算されます。 このページは、[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降のセットアップでのみ使用できます。 詳細については、「[[データベース エンジンの構成] - [MAXDOP] ページ](https://docs.microsoft.com/sql/sql-server/install/instance-configuration?view=sql-server-ver15#maxdop)」を参照してください。 
 
-     **[データベース エンジンの構成] - [メモリ]** タブを使用して、SQL Server のこのインスタンスが起動後に使用する最小および最大のメモリ値を指定します。 **[推奨]** オプションを選択した後、既定値を使用するか、計算された推奨値を使用するか、独自の値を手動で指定することができます。 この機能は、SQL Server 2019 以降のセットアップでのみ使用できます。 
+     **[データベース エンジンの構成] - [メモリ]** ページを使用して、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のこのインスタンスで起動後に使用される**最小サーバー メモリ**および**最大サーバー メモリ**の値を指定します。 **[推奨]** オプションを選択した後、既定値を使用するか、計算された推奨値を使用するか、独自の値を手動で指定することができます。 このページは、[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降のセットアップでのみ使用できます。 詳細については、「[[データベース エンジンの構成] - [メモリ] ページ](https://docs.microsoft.com/sql/sql-server/install/instance-configuration?view=sql-server-ver15#memory)」を参照してください。 
+=======
 
-     **[データベース エンジンの構成] - [FILESTREAM]** ページを使用して、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスに対する FILESTREAM を有効にします。 詳細については、「[[データベース エンジンの構成] - [FILESTREAM] ページ](../../sql-server/install/instance-configuration.md#database-engine-configuration---filestream-page)」を参照してください。  
+     **[[!INCLUDE[ssDE](../../includes/ssde-md.md)]の構成 - MaxDOP]** ページを使用して、並列処理の最大限度を指定します。 この設定により、1 つのステートメントが実行中に使用できるプロセッサの数が決まります。 推奨値はインストール時に自動的に計算されます。 
+     
+    > [!NOTE]  
+    > このページは、[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降のセットアップでのみ使用できます。 
+    
+    詳細については、「[[データベース エンジンの構成] - [MAXDOP] ページ](https://docs.microsoft.com/sql/sql-server/install/instance-configuration?view=sql-server-ver15#maxdop)」を参照してください。 
+
+     **[データベース エンジンの構成] - [メモリ]** ページを使用して、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のこのインスタンスで起動後に使用される**最小サーバー メモリ**および**最大サーバー メモリ**の値を指定します。 **[推奨]** オプションを選択した後、既定値を使用するか、計算された推奨値を使用するか、独自の値を手動で指定することができます。
+     
+    > [!NOTE]  
+    > このページは、[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降のセットアップでのみ使用できます。 
+    
+    詳細については、「[[データベース エンジンの構成] - [メモリ] ページ](https://docs.microsoft.com/sql/sql-server/install/instance-configuration?view=sql-server-ver15#memory)」を参照してください。 
+>>>>>>> 1d82c7efe18f86136247fb366df5030843199c19
+
+     Use the **Database Engine Configuration - FILESTREAM** page to enable FILESTREAM for your instance of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]. For more information, see [Database Engine Configuration - FILESTREAM page](../../sql-server/install/instance-configuration.md#database-engine-configuration---filestream-page).  
   
 1. **[Analysis Services の構成] - [アカウントの準備]** ページを使用して、サーバー モードと [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] の管理者権限を持つユーザーまたはアカウントを指定します。 サーバー モードによって、サーバーで使用されるメモリとストレージ サブシステムが決まります。 サーバー モードによって、実行されるソリューションの種類も異なります。 サーバーで多次元キューブ データベースを実行する場合は、既定のサーバー モード オプション **[多次元およびデータ マイニング モード]** を選択します。
 

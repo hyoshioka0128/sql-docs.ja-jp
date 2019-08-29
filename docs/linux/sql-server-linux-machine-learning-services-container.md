@@ -1,5 +1,5 @@
 ---
-title: コンテナーで SQL Server Machine Learning サービスを実行する | Microsoft Docs
+title: コンテナーで SQL Server Machine Learning Services を実行する | Microsoft Docs
 description: このチュートリアルでは、Docker で実行されている Linux コンテナーで SQL Server Machine Learning サービスを使用する方法について説明します。
 author: uc-msft
 ms.author: umajay
@@ -9,46 +9,46 @@ ms.prod: sql
 ms.technology: linux
 ms.collection: linux-container
 moniker: '>= sql-server-linux-ver15 || =sqlallproducts-allversions'
-ms.openlocfilehash: f3d3774adf4bee07269b25c3359b031ca24eb99e
-ms.sourcegitcommit: db9bed6214f9dca82dccb4ccd4a2417c62e4f1bd
+ms.openlocfilehash: 4fa470ce5b35cf8e78f919080988b5091af6e04e
+ms.sourcegitcommit: cbbb210c0315f9e2be2b9cd68db888ac53429814
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68300423"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69890908"
 ---
-# <a name="run-sql-server-machine-learning-services-in-a-container"></a>コンテナーで SQL Server Machine Learning サービスを実行する
+# <a name="run-sql-server-machine-learning-services-in-a-container"></a>コンテナーで SQL Server Machine Learning Services を実行する
 
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md-linuxonly](../includes/appliesto-ss-xxxx-xxxx-xxx-md-linuxonly.md)]
 
-このチュートリアルでは、SQL Server Machine Learning サービスを使用して Docker コンテナーをビルドし、Transact-SQL から Machine Learning スクリプトを実行する方法について説明します。
+このチュートリアルでは、SQL Server Machine Learning Services を使用して Docker コンテナーをビルドする方法、および Transact-SQL から Machine Learning スクリプトを実行する方法について説明します。 次のタスクが含まれます。
 
 > [!div class="checklist"]
 > * mssql-docker リポジトリをクローンする。
-> * Machine Learning サービスを使用して SQL Server Linux コンテナー イメージをビルドする。
-> * Machine Learning サービスを使用して SQL Server Linux コンテナー イメージを実行する。
+> * Machine Learning Services を使用して SQL Server Linux コンテナー イメージをビルドする。
+> * Machine Learning Services を使用して SQL Server Linux コンテナー イメージを実行する。
 > * Transact-SQL ステートメントを使用して R または Python スクリプトを実行する。
-> * SQL Server Linux コンテナーを停止して削除する。 
+> * SQL Server Linux コンテナーを停止して削除する。
 
 ## <a name="prerequisites"></a>Prerequisites
 
 * Git のコマンド ライン インターフェイス。
-* サポートされているいずれかの Linux ディストリビューションの Docker エンジン 1.8+ または Mac/Windows 用 Docker。 詳細については、「[Install Docker](https://docs.docker.com/engine/installation/)」(Docker をインストールする) を参照してください。
-* 2 GB 以上のディスク領域。
+* サポートされているいずれかの Linux ディストリビューションの Docker エンジン 1.8 以降 または Mac/Windows 用 Docker。 詳細については、「[Install Docker](https://docs.docker.com/engine/installation/)」(Docker をインストールする) を参照してください。
+* 2 ギガバイト (GB) 以上のディスク領域。
 * 2 GB 以上の RAM。
 * [SQL Server on Linux のシステム要件](sql-server-linux-setup.md#system)。
 
 ## <a name="clone-the-mssql-docker-repository"></a>mssql-docker リポジトリをクローンする
 
-1. Linux/Mac または Windows の WSL ターミナルで bash ターミナルを開きます。
+1. Linux または Mac で Bash ターミナルを開くか、または Windows で WSL ターミナルを開きます。
 
-1. mssql-docker リポジトリのコピーをローカルに保持するローカル ディレクトリを作成します。
-1. mssql-docker リポジトリをクローンする、git の clone コマンドを実行します。
+1. mssql-docker リポジトリのローカル コピーを保持するローカル ディレクトリを作成します。
+1. git clone コマンドを実行して、mssql-docker リポジトリを複製します。
 
     ```bash
     git clone https://github.com/microsoft/mssql-docker mssql-docker
     ```
 
-## <a name="build-sql-server-linux-container-image-with-machine-learning-services"></a>Machine Learning サービスを使用して SQL Server Linux コンテナー イメージをビルドする
+## <a name="build-a-sql-server-linux-container-image-with-machine-learning-services"></a>Machine Learning Services を使用して SQL Server Linux コンテナー イメージをビルドする
 
 1. ディレクトリを mssql-mlservices ディレクトリに変更します。
 
@@ -63,9 +63,9 @@ ms.locfileid: "68300423"
    ```
 
    > [!NOTE]
-   > Docker イメージをビルドするには、サイズが数 GB のパッケージをインストールする必要があります。 このスクリプトは、ネットワークの帯域幅によって、完了までに最大 20 分かかります。
+   > Docker イメージをビルドするには、サイズが数 GB のパッケージをいくつかインストールする必要があります。 このスクリプトは、ネットワークの帯域幅によって、完了までに最大 20 分かかります。
 
-## <a name="run-sql-server-linux-container-image-with-machine-learning-services"></a>Machine Learning サービスを使用して SQL Server Linux コンテナー イメージを実行する
+## <a name="run-the-sql-server-linux-container-image-with-machine-learning-services"></a>Machine Learning Services を使用して SQL Server Linux コンテナー イメージを実行する
 
 1. コンテナーを実行する前に環境変数を設定します。 PATH_TO_MSSQL 環境変数をホスト ディレクトリに設定します。
 
@@ -82,18 +82,18 @@ ms.locfileid: "68300423"
    ./run.sh
    ```
 
-   このコマンドにより、Developer エディション (既定) の Machine Learning サービスがある SQL Server コンテナーが作成されます。 SQL Server のポート **1433** は、ホスト上ではポート **1401** として公開されています。
+   このコマンドでは、Developer エディション (既定) を使用して、Machine Learning Services を含む SQL Server コンテナーが作成されます。 SQL Server のポート **1433** は、ホスト上ではポート **1401** として公開されています。
 
    > [!NOTE]
    > SQL Server の実稼働エディションをコンテナーで実行するプロセスは、若干異なります。 詳細については、「[Docker で SQL Server コンテナーイメージを構成する](sql-server-linux-configure-docker.md)」を参照してください。 同じコンテナー名とポートを使う場合でも、このチュートリアルの残りの部分は実稼働のコンテナーで機能します。
 
-1. Docker コンテナーを表示するには、`docker ps` コマンドを使用します。
+1. Docker コンテナーを表示するには、`docker ps` コマンドを実行します。
 
    ```bash
    sudo docker ps -a
    ```
 
-1. **[STATUS]** 列に **[Up]** の状態が表示されている場合、SQL Server はコンテナーで実行されており、 **[PORTS]** 列に指定されたポートでリッスンしています。 SQL Server コンテナーの **[STATUS]** 列に **[Exited]** と表示されている場合は、[構成ガイドのトラブルシューティングのセクション](sql-server-linux-configure-docker.md#troubleshooting)を参照してください。
+1. **[STATUS]** 列に表示されている状態が **[Up]** の場合、SQL Server はコンテナーで実行されており、 **[PORTS]** 列で指定されているポートでリッスンしています。 SQL Server コンテナーの **[STATUS]** 列に **[Exited]** と表示されている場合は、[構成ガイドのトラブルシューティングのセクション](sql-server-linux-configure-docker.md#troubleshooting)を参照してください。
 
    ```bash
    $ sudo docker ps -a
@@ -120,7 +120,7 @@ ms.locfileid: "68300423"
     go
     ```
 
-1. 次の単純な R または Python の sp_execute_external_script を実行し、Machine Learning サービスが機能していることを確認します。
+1. 次の簡単な R/Python の sp_execute_external_script を実行し、Machine Learning Services が機能していることを確認します。
 
     ```sql
     execute sp_execute_external_script 
@@ -153,11 +153,11 @@ ms.locfileid: "68300423"
 このチュートリアルでは、次を学習しました。
 
 > [!div class="checklist"]
-> * mssql-docker リポジトリをクローンする。
-> * Machine Learning サービスを使用して SQL Server Linux コンテナー イメージをビルドする。
-> * Machine Learning サービスを使用して SQL Server Linux コンテナー イメージを実行する。
-> * Transact-SQL ステートメントを使用して R または Python スクリプトを実行する。
-> * SQL Server Linux コンテナーを停止して削除する。
+> * mssql-docker リポジトリをクローンする
+> * Machine Learning サービスを使用して SQL Server Linux コンテナー イメージをビルドする
+> * Machine Learning サービスを使用して SQL Server Linux コンテナー イメージを実行する
+> * Transact-SQL ステートメントを使用して R または Python スクリプトを実行する
+> * SQL Server Linux コンテナーを停止して削除する
 
 次に、その他の Docker の構成とトラブルシューティングのシナリオを確認します。
 

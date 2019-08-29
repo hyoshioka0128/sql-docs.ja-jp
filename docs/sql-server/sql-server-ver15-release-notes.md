@@ -1,6 +1,6 @@
 ---
 title: SQL Server 2019 リリース ノート | Microsoft Docs
-ms.date: 07/24/2019
+ms.date: 08/21/2019
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: release-landing
@@ -9,26 +9,30 @@ ms.assetid: 13942af8-5a40-4cef-80f5-918386767a47
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: = sql-server-ver15 || = sqlallproducts-allversions
-ms.openlocfilehash: 40040948b56190a3ce94d9484e09a3386548bd31
-ms.sourcegitcommit: 9348f79efbff8a6e88209bb5720bd016b2806346
+ms.openlocfilehash: d9d6f1f0bdf1a0e38bf26fdc18bc91c5825ca412
+ms.sourcegitcommit: 5e838bdf705136f34d4d8b622740b0e643cb8d96
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69028852"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69653045"
 ---
 # <a name="sql-server-2019-preview-release-notes"></a>SQL Server 2019 プレビュー リリース ノート
 [!INCLUDE[tsql-appliesto-ssver15-xxxx-xxxx-xxx](../includes/tsql-appliesto-ssver15-xxxx-xxxx-xxx.md)]
 
-この記事では、[!INCLUDE[SQL Server 2019](../includes/sssqlv15-md.md)] Community Technology Preview (CTP) リリースに関する制限事項と既知の問題について説明します。 関連情報については、次を参照してください。
-- [SQL Server 2019 の新機能](../sql-server/what-s-new-in-sql-server-ver15.md)
+この記事では、[!INCLUDE[SQL Server 2019](../includes/sssqlv15-md.md)] の制限事項と既知の問題について説明します。 関連情報については、次を参照してください。
 
-## <a name="ctp-32"></a>CTP 3.2
+>[SQL Server 2019 の新機能](../sql-server/what-s-new-in-sql-server-ver15.md)
 
-[!INCLUDE[SQL Server 2019](../includes/sssqlv15-md.md)] CTP 3.2 は [!INCLUDE[SQL Server 2019](../includes/sssqlv15-md.md)] の最新のパブリック リリースです。
+>[!NOTE]
+>内容は [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] リリース候補に関するものです。 リリース候補はプレリリース版ソフトウェアです。 情報は変更される可能性があります。 サポートのシナリオについては、「[サポート](#support)」を参照してください。
 
-[!INCLUDE[SQL Server 2019](../includes/sssqlv15-md.md)] CTP 3.2 は評価版としてのみ使用可能です。 他のエディションは提供されません。
+## <a name="includesql-server-2019includessssqlv15-mdmd-release-candidate-rc"></a>[!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] リリース候補 (RC)
 
-CTP リリースのサポートとライセンスに関するすべての詳細情報については、インストール メディアの `license_Eval.rtf` に記載されています。
+[!INCLUDE[SQL Server 2019](../includes/sssqlv15-md.md)] RC は、[!INCLUDE[SQL Server 2019](../includes/sssqlv15-md.md)] の最新のパブリック リリースです。
+
+[!INCLUDE[SQL Server 2019](../includes/sssqlv15-md.md)] RC は、評価版としてのみ使用可能です。 他のエディションは提供されません。
+
+リリース候補ソフトウェアのサポートとライセンスに関するすべての詳細情報については、インストール メディアの `license_Eval.rtf` に記載されています。
 
 [!INCLUDE[ctp-support-exclusion](../includes/ctp-support-exclusion.md)]
 
@@ -58,19 +62,18 @@ CTP リリースのサポートとライセンスに関するすべての詳細�
   - SQL Server Analysis Services (SQL Server Analysis Services)
   - SQL Server Reporting Services (SQL Server Reporting Services)
   - Kubernetes での Always On 可用性グループ
-  - 高速データベース復旧
 
 - **回避策**:[なし] : 除外は、SQL 早期導入者プログラムの参加者を含む、すべてのお客様に適用されます。
 
-- **適用対象**:すべての CTP リリース
+- **適用対象**:リリース候補
 
 ## <a name="updated-compiler"></a>更新されたコンパイラ
 
-- **問題およびユーザーへの影響**: [!INCLUDE[SQL Server 2019](../includes/sssqlv15-md.md)] は更新されたコンパイラで構築されています。 コンパイラの更新の結果、CTP 2.1 には浮動小数点数の結果と他の変換シナリオで、前のバージョンとは異なる値が返される場合があるという既知の問題がありました。 CTP 2.2 には、影響のあるシナリオで [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] の前のバージョンと同じ結果が返されるようにする作業が含まれています。 CTP 3.2 リリースでは、もう問題は解決されたと考えています。 [!INCLUDE[ss2017](../includes/sssqlv14-md.md)] と比較した結果に異常がある場合、[[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] チーム](https://aka.ms/sqlfeedback)にすぐに報告してください。
+- **問題およびユーザーへの影響**: [!INCLUDE[SQL Server 2019](../includes/sssqlv15-md.md)] は更新されたコンパイラで構築されています。 コンパイラの更新の結果、CTP 2.1 には浮動小数点数の結果と他の変換シナリオで、前のバージョンとは異なる値が返される場合があるという既知の問題がありました。 CTP 2.2 には、影響のあるシナリオで [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] の前のバージョンと同じ結果が返されるようにする作業が含まれています。 リリース候補リリースでは、もう問題は解決されたと考えています。 [!INCLUDE[ss2017](../includes/sssqlv14-md.md)] と比較した結果に異常がある場合、[[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] チーム](https://aka.ms/sqlfeedback)にすぐに報告してください。
 
 - **回避策**:なし
 
-- **適用対象**:すべての CTP リリース
+- **適用対象**:リリース候補
 
 ## <a name="installation-wizard-may-wait-between-eula-pages"></a>インストール ウィザードが使用許諾契約ページの間で待機状態になることがある
 
@@ -78,22 +81,24 @@ CTP リリースのサポートとライセンスに関するすべての詳細�
 
 - **回避策**:インストール ウィザードが動くまで待ちます。 待つ時間は 30 分を超える可能性があります。
 
-- **適用対象**:SQL Server 2019 CTP 3.0
+- **適用対象**:[!INCLUDE[SQL Server 2019](../includes/sssqlv15-md.md)] CTP 3.0
 
 ## <a name="utf-8-collations"></a>UTF-8 対応の照合順序
 
 - **問題およびユーザーへの影響**:UTF-8 対応の照合順序は、他の [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 機能とは併用できない場合があります。 UTF-8 は、次の [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 機能が使用されている場合にはサポートされません。
 
   - インメモリ OLTP
-  - PolyBase 用の外部テーブル
-  - Always Encrypted
+  - PolyBase 用の外部テーブル ([!INCLUDE[SQL Server 2019](../includes/sssqlv15-md.md)] RC 1)
+  - Always Encrypted ([!INCLUDE[SQL Server 2019](../includes/sssqlv15-md.md)] RC 1 以前)
+  - リンク サーバー ([!INCLUDE[SQL Server 2019](../includes/sssqlv15-md.md)] CTP 3.2 以前)
 
   > [!Note]
   > Azure Data Studio および SQL Server Data Tools (SSDT) では、UTF-8 対応の照合順序を選択するための UI は現在のところサポートされていません。 最新の [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)] (SSMS) バージョン 18 では、UTF-8 対応の照合順序を UI で選択することができます。
  
 - **回避策**:[!INCLUDE[SQL Server 2019](../includes/sssqlv15-md.md)] CTP には回避策はありません。
 
-- **適用対象**:[!INCLUDE[SQL Server 2019](../includes/sssqlv15-md.md)] CTP 3.2、CTP 3.1、CTP 3.0、CTP 2.5、CTP 2.4、CTP 2.3、CTP 2.2、CTP 2.1、CTP 2.0。
+
+- **適用対象**:すべての CTP リリース。
 
 ## <a name="always-encrypted-with-secure-enclaves"></a>セキュア エンクレーブを使用する Always Encrypted
 
@@ -107,9 +112,8 @@ CTP リリースのサポートとライセンスに関するすべての詳細�
 
 - **問題およびユーザーへの影響**:SQL Server 構成マネージャー (SSCM) は、VCRuntime 140 がないマシンでは起動しません。 SSCM を開始するときに、次のダイアログ ボックスが表示される場合があります。 
 
-  `
-  MMC could not create the snap-in. The snap-in might not have been installed correctly.
-  `
+
+  `MMC could not create the snap-in. The snap-in might not have been installed correctly.`
 
 - **回避策**:最新の VC ランタイム 2013 (x86) をインストールします。
 
@@ -117,6 +121,14 @@ CTP リリースのサポートとライセンスに関するすべての詳細�
   - [直接](https://support.microsoft.com/en-us/help/4032938/update-for-visual-c-2013-redistributable-package)
 
 - **適用対象**:[!INCLUDE[SQL Server 2019](../includes/sssqlv15-md.md)] CTP 3.1、CTP 3.0、CTP 2.5。
+
+## <a name="always-on-availability-group-kubernetes-operator-not-supported"></a>Always On 可用性グループの Kubernetes 演算子はサポートされていない
+
+- **問題およびユーザーへの影響**:Always On 可用性グループの Kubernetes 演算子は、このリリース候補ではサポートされておらず、RTM では使用できません。 
+
+- **回避策**:なし
+
+- **適用対象**:[!INCLUDE[SQL Server 2019](../includes/sssqlv15-md.md)] リリース候補
 
 [!INCLUDE[get-help-options-msft-only](../includes/paragraph-content/get-help-options.md)]
 

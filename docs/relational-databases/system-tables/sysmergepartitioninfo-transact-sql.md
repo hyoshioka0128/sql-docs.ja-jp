@@ -49,7 +49,7 @@ ms.locfileid: "68029830"
 |**partition_options**|**tinyint**|アーティクル内のデータをパーティション分割する方法を定義します。パーティション分割することにより、すべての行が 1 つのパーティションまたは 1 つのサブスクリプションに属している場合に、パフォーマンスを最適化できます。 *partition_options*値は次のいずれかを指定できます。<br /><br /> **0** =、フィルタ リング、情報の記事が静的か、つまり「重複する」パーティションまたは各パーティションのデータの一意なサブセットは生成されません。<br /><br /> **1** = パーティションが重複していると、サブスクライバーで実行された DML 更新は、行が属するパーティションを変更できません。<br /><br /> **2**記事、重複しないパーティションが得られますが、複数のサブスクライバーが同じパーティションを受け取ることができます = フィルター選択します。<br /><br /> **3** =、フィルタ リング、情報の記事には、サブスクリプションごとに固有の重複しないパーティションが得られます。|  
   
 ## <a name="see-also"></a>関連項目  
- [レプリケーション テーブル &#40; です。TRANSACT-SQL と &#41; です。](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
+ [レプリケーション テーブル &#40;Transact-SQL&#41;](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
  [レプリケーション ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-views/replication-views-transact-sql.md)  
   
   

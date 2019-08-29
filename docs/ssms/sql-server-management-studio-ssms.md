@@ -16,12 +16,12 @@ helpviewer_keywords:
 - SQL Server Management Studio for Analysis Services
 ms.custom: ''
 ms.date: 05/29/2019
-ms.openlocfilehash: 8632bd86a19bdce57114e36247f0b805da6804e7
-ms.sourcegitcommit: a1adc6906ccc0a57d187e1ce35ab7a7a951ebff8
+ms.openlocfilehash: 3def38b576103a7343816d0dc1c472d3bd64e1a1
+ms.sourcegitcommit: 7e63c612047f2bb1779c872b5180a3ea9afe7e80
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68893263"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69976127"
 ---
 # <a name="what-is-sql-server-management-studio-ssms"></a>SQL Server Management Studio (SSMS) とは何か? 
 
@@ -87,8 +87,8 @@ SQL Server Management Studio では、Reporting Services の機能の有効化�
 ## <a name="support-policy-for-ssms"></a>SSMS のサポート ポリシー
 
 - SSMS 17.0 以降、SQL Tools チームは [Microsoft モダン ライフサイクル ポリシー](https://support.microsoft.com/help/30881/modern-lifecycle-policy)を採用しました。
-- 元の[モダン ライフサイクル ポリシーに関するお知らせ](https://support.microsoft.com/help/447912/announcing-microsoft-modern-lifecycle-policy)を参照してください。
-- 詳細については、「[モダン ライフサイクル ポリシーに関する FAQ](https://support.microsoft.com/help/30882/modern-lifecycle-policy-faq)」を参照してください。
+- 元の[モダン ライフサイクル ポリシーに関するお知らせ](https://support.microsoft.com/help/447912/announcing-microsoft-modern-lifecycle-policy)を参照してください。 詳細については、「[モダン ライフサイクル ポリシーに関する FAQ](https://support.microsoft.com/help/30882/modern-lifecycle-policy-faq)」を参照してください。
+- 診断データの収集と機能の使用方法について詳しくは、「[SQL Server のプライバシーの補足情報](https://docs.microsoft.com/sql/sql-server/sql-server-privacy)」を参照してください。
 
 [!INCLUDE[get-help-options](../includes/paragraph-content/get-help-options.md)]
 

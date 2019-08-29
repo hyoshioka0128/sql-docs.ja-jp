@@ -10,12 +10,12 @@ author: markingmyname
 ms.author: maghan
 ms.custom: ''
 ms.date: 07/31/2019
-ms.openlocfilehash: e499f58eff6c09ac8d32d4cd630afc4c7855c299
-ms.sourcegitcommit: 495913aff230b504acd7477a1a07488338e779c6
+ms.openlocfilehash: 3ed3f08232b3811ad57ae37d8be6ed93af3572de
+ms.sourcegitcommit: a1ddeabe94cd9555f3afdc210aec5728f0315b14
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68809865"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70122994"
 ---
 # <a name="release-notes-for-sql-server-management-studio-ssms"></a>SQL Server Management Studio (SSMS) のリリース ノート
 
@@ -62,7 +62,6 @@ SSMS 18.2 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | クエリの実行または結果 | 指定したクエリによってその実行が完了したときを指す "*完了時刻*" を、追跡するメッセージに追加しました。 |
 | クエリの実行または結果 | より多くのデータを表示し (結果をテキストで表示)、セルに格納することを許可します (結果をグリッドに表示)。 SSMS では、どちらも最大 200 万文字まで許可されるようになりました (それぞれ 256 および 64,000 から増加)。 これにより、ユーザーがグリッドのセルから 43,680 文字を超えて取得できないという問題にも対処しました。 |
 | プラン表示 | [インライン スカラー UDF 機能](../relational-databases/performance/intelligent-query-processing.md#scalar-udf-inlining)が有効な場合、QueryPlan に新しい属性を追加しました (ContainsInlineScalarTsqludfs)。 |
-| SMO | "*機能の制限*" に対するサポートが追加されました。 この機能自体の詳細については、「[機能の制限](https://docs.microsoft.com/sql/relational-databases/security/feature-restrictions)」を参照してください。 |
 | SMO | *SQL Assessment API* のサポートが追加されました。 詳細については、「[SQL Assessment API](https://docs.microsoft.com/sql/sql-assessment-api/sql-assessment-api-overview)」を参照してください。 |
 |  |  |
 
@@ -141,7 +140,7 @@ SSMS 18.1 は SSMS の最新の一般公開 (GA) リリースです。 SSMS の�
 | 新しい項目 | 詳細 |
 |---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ユーザー補助 | エージェント ジョブ UI のユーザー補助が改善されました。 |
-| ユーザー補助 | [Stretch Monitor](ストレッチ モニター) ページに *[自動更新]* ボタンのアクセス可能な名前が追加され、どのボタンがオンの状態であるかだけでなく、そのボタンを押すことによる影響がユーザーにわかるインテリジェントでアクセス可能な名前も追加され、ユーザー補助が改善されました。 |
+| ユーザー補助 | [Stretch Monitor]\(ストレッチ モニター\) ページに *[自動更新]* ボタンのアクセス可能な名前が追加され、どのボタンがオンの状態であるかだけでなく、そのボタンを押すことによる影響がユーザーにわかるインテリジェントなアクセス可能な名前も追加され、ユーザー補助が改善されました。 |
 | ADS 統合| ADS 登録サーバーの使用にあたり発生する恐れのある SSMS のクラッシュを修正しました。|
 | データベース デザイナー | Latin1_General_100_BIN2_UTF8 照合順序に対するサポートが追加されました (SQL Server 2019 CTP3.0 で使用できます)。 |
 | データ分類 | 履歴テーブルの列への機密ラベルの追加はサポートされていないため、これが阻止されます。 |
@@ -239,7 +238,6 @@ SSMS 18.1 は SSMS の最新の一般公開 (GA) リリースです。 SSMS の�
 |Always Encrypted| [サーバーに接続] ダイアログの新しい [Always Encrypted] タブにある [Always Encrypted を有効にする] チェックボックスで、データベース接続での Always Encrypted の有効化/無効化を簡単に切り替えられるようになりました。|
 |セキュア エンクレーブを使用する Always Encrypted| SQL Server 2019 プレビューでは、セキュリティで保護されたエンクレーブが設定された Always Encrypted をサポートするためにいくつかの機能強化が加えられました。[サーバーに接続] ダイアログ (新しい [Always Encrypted] タブ) にエンクレーブの構成証明の URL を指定するテキスト フィールド。  [新しい列マスター キー] ダイアログに、新しい列マスターキーでエンクレーブ計算を許可するかどうかを制御する新しいチェックボックスが追加されました。  他の Always Encrypted キー管理ダイアログに、エンクレーブ計算を許可する列マスター キーの情報が表示されるようになりました。|
 |監査ファイル|認証方法をストレージ アカウント キー ベースから Azure AD ベースの認証に変更しました。|
-|監査ファイル|既知の監査アクションの一覧に FEATURE RESTRICTION ADD/CHANGE GROUP/DROP を含め更新しました。|
 |データ分類| データ分類タスク メニューを再構成しました。データベース タスク メニューにサブメニューが追加され、最初に分類データ ウィンドウを開かなくても、メニューからレポートを開くためのオプションが追加されました。|
 |データ分類|SMO に新機能 'データ分類' が追加されました。 Column オブジェクトで新たに公開されたプロパティ:SensitivityLabelName、SensitivityLabelId、SensitivityInformationTypeName、SensitivityInformationTypeId、IsClassified (読み取り専用)。 詳細については、「[ADD SENSITIVITY CLASSIFICATION (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/add-sensitivity-classification-transact-sql)」を参照してください。|
 |データ分類|[データ分類] ポップアップに新しい [Classification Report]\(分類レポート\) メニュー項目が追加されました。|

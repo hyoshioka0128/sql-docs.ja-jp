@@ -30,12 +30,12 @@ helpviewer_keywords:
 ms.assetid: dd6cc2ba-631f-4adf-89dc-29ef449c6933
 author: janinezhang
 ms.author: janinez
-ms.openlocfilehash: 62521d308c361b8ea6dc8abdabedd8386d07b933
-ms.sourcegitcommit: 2efb0fa21ff8093384c1df21f0e8910db15ef931
+ms.openlocfilehash: 6285426e0503433157632dddeb71b57a9452154f
+ms.sourcegitcommit: cdbb0ee5ee5259119ad21695f549207457990f71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68316654"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621688"
 ---
 # <a name="foreach-loop-container"></a>Foreach ループ コンテナー
 
@@ -52,7 +52,7 @@ ms.locfileid: "68316654"
   
 -   Foreach ADO.NET Schema Rowset 列挙子は、データ ソースに関するスキーマ情報を列挙します。 たとえば、 [!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベース内のテーブルを列挙して一覧を取得できます。  
   
--   Foreach File 列挙子は、フォルダー内のファイルを列挙します。 この列挙子は、サブフォルダーをスキャンできます。 たとえば、Windows フォルダーとそのサブフォルダー内から、ファイル名に拡張子 *.log が付いたファイルをすべて読み取ることができます。  
+-   Foreach File 列挙子は、フォルダー内のファイルを列挙します。 この列挙子は、サブフォルダーをスキャンできます。 たとえば、Windows フォルダーとそのサブフォルダー内から、ファイル名に拡張子 *.log が付いたファイルをすべて読み取ることができます。 ファイルを取得する順序は指定できないことに注意してください。  
   
 -   Foreach From Variable 列挙子は、指定した変数に含まれる列挙可能なオブジェクトを列挙します。 列挙可能なオブジェクトは、配列、ADO.NET **DataTable**、 [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] 列挙子などです。 たとえば、サーバーの名前を含む配列の値を列挙できます。  
   
@@ -558,7 +558,7 @@ Data Lake Storage Gen2 アクセス許可は [RBAC](https://docs.microsoft.com/a
   
  **関連トピック:** [Integration Services &#40;SSIS&#41; の変数](../../integration-services/integration-services-ssis-variables.md)、[変数の追加](https://msdn.microsoft.com/library/d09b5d31-433f-4f7c-8c68-9df3a97785d5)  
   
- **テキスト**  
+ **[テキスト]**  
  制限を定義するテキストを入力します。  
  
 ## <a name="for-each-item-columns-dialog-box"></a>[For Each Item 列] ダイアログ ボックス

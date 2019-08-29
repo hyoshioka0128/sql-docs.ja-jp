@@ -8,19 +8,33 @@ ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: conceptual
 ms.assetid: 76326eeb-1144-4b9f-85db-50524c655d30
-author: MightyPen
+author: v-makouz
 ms.author: genemi
-ms.openlocfilehash: 8088334f4bc9cfd03c23af654fbef9eb478aa9a3
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 6e3f7929c17b161d3534474d3d9ad99e559714d2
+ms.sourcegitcommit: 5e838bdf705136f34d4d8b622740b0e643cb8d96
 ms.translationtype: MTE75
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67989451"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69653804"
 ---
 # <a name="features-of-the-microsoft-odbc-driver-for-sql-server-on-windows"></a>Microsoft ODBC Driver for SQL Server on Windows の機能
 [!INCLUDE[Driver_ODBC_Download](../../../includes/driver_odbc_download.md)]
 
     
+## <a name="microsoft-odbc-driver-174-for-sql-server-on-windows"></a>Windows の Microsoft ODBC Driver 17.4 for SQL Server
+
+ODBC ドライバー17.4 には、TCP Keep-alive 設定を調整する機能が含まれています。 これらは、ドライバーまたは DSN のレジストリキーに値を追加することによって変更できます。 キーは、システムデータ`HKEY_LOCAL_MACHINE\Software\ODBC\`ソース`HKEY_CURRENT_USER\Software\ODBC\`の場合はに、ユーザーデータソースの場合はにあります。 DSN の場合は、 `...\Software\ODBC\ODBC.INI\<DSN Name>` `...\Software\ODBC\ODBCINST.INI\ODBC Driver 17 for SQL Server`ドライバーのに対して値をに追加する必要があります。
+
+詳細については、「 [ODBC コンポーネントのレジストリエントリ](../../../odbc/reference/install/registry-entries-for-odbc-components.md)」を参照してください。
+
+その値は `REG_SZ` で、次のとおりです。
+
+- `KeepAlive`キープアライブパケットを送信して、アイドル状態の接続がまだ破損していないことを TCP が確認する頻度を制御します。 既定値は 30 秒です。
+
+- `KeepAliveInterval`応答が受信されるまで、キープアライブの再送信を分離する間隔を決定します。 既定値は 1 秒です。
+
+
+
 ## <a name="microsoft-odbc-driver-131-for-sql-server-on-windows"></a>Windows の Microsoft ODBC Driver 13.1 for SQL Server
 
 ODBC Driver 13.1 for SQL Server には、以前のバージョン (11) のすべての機能が含まれており、Microsoft SQL Server 2016 と組み合わせて使用する場合に Always Encrypted と Azure Active Directory 認証のサポートが追加されます。  

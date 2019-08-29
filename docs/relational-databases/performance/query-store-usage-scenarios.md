@@ -13,12 +13,12 @@ ms.assetid: f5309285-ce93-472c-944b-9014dc8f001d
 author: julieMSFT
 ms.author: jrasnick
 monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||= azure-sqldw-latest||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 3a5a909e31d289b7b9739059fd2f870578a923a6
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 3a33a45be38ad49b2ecef68fe64be21b94c08f85
+ms.sourcegitcommit: a1ddeabe94cd9555f3afdc210aec5728f0315b14
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68113438"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70123208"
 ---
 # <a name="query-store-usage-scenarios"></a>クエリ ストアの使用シナリオ
 [!INCLUDE[appliesto-ss-asdb-asdw-xxx-md](../../includes/appliesto-ss-asdb-asdw-xxx-md.md)]
@@ -134,7 +134,7 @@ ms.locfileid: "68113438"
     B.  クエリ プランの適用に失敗した場合、またはパフォーマンスが依然として十分ではない場合は、[データベースの互換性レベル](../../relational-databases/databases/view-or-change-the-compatibility-level-of-a-database.md)を前の設定に戻し、Microsoft カスタマー サポートにお問い合わせください。  
     
 > [!TIP]
-> [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] *データベースのアップグレード* タスクを使用して、データベースの[データベース互換レベル](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md#compatibility-levels-and-sql-server-upgrades)をアップグレードします。 詳細については、「[クエリ調整アシスタントを使用したデータベースのアップグレード](../../relational-databases/performance/upgrade-dbcompat-using-qta.md)」を参照してください。
+> [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] *データベースのアップグレード* タスクを使用して、データベースの[データベース互換レベル](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md#compatibility-levels-and-database-engine-upgrades)をアップグレードします。 詳細については、「[クエリ調整アシスタントを使用したデータベースのアップグレード](../../relational-databases/performance/upgrade-dbcompat-using-qta.md)」を参照してください。
   
 ## <a name="identify-and-improve-ad-hoc-workloads"></a>アドホック ワークロードを識別して改善する  
 一部のワークロードには、アプリケーション全体のパフォーマンスを向上させるために調整できる支配的なクエリはありません。 通常、これらのワークロードは、それぞれがシステムリソースの一部を消費する、比較的多数の異なるクエリに分類されます。 これらのクエリは非常にまれに実行される一意のクエリである (通常は 1 回のみ実行されます。このためアドホックという名前がついています) ため、それらのランタイム消費は重要ではありません。 一方で、アプリケーションが常に新しいクエリを生成する場合、システム リソースのかなりの部分がクエリのコンパイルで消費され、これは最適な状況ではありません。 このような状況はクエリ ストアにとって理想的ではなく、大量のクエリとプランが予約済みの領域に殺到した場合、クエリ ストアが非常に短時間で読み取り専用モードに至る可能性があることを意味します。 **サイズ ベース クリーンアップ ポリシー** がアクティブな場合 (クエリ ストアを常に稼働させるために[強くお勧めします](best-practice-with-the-query-store.md) )、バックグラウンド プロセスによってほぼ常にクエリ ストア構造がクリーンアップされますが、この動作もシステム リソースを大幅に消費します。  
@@ -223,5 +223,4 @@ ALTER DATABASE [QueryStoreTest] SET QUERY_STORE = ON
  [クエリのストアを使用した、パフォーマンスの監視](../../relational-databases/performance/monitoring-performance-by-using-the-query-store.md)   
  [クエリ ストアを使用する際の推奨事項](../../relational-databases/performance/best-practice-with-the-query-store.md)         
  [クエリ調整アシスタントを使用したデータベースのアップグレード](../../relational-databases/performance/upgrade-dbcompat-using-qta.md)           
-  
   

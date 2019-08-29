@@ -1,7 +1,7 @@
 ---
 title: Kerberos 統合認証による SQL Server への接続 | Microsoft Docs
 ms.custom: ''
-ms.date: 01/21/2019
+ms.date: 08/12/2019
 ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
@@ -10,14 +10,14 @@ ms.topic: conceptual
 ms.assetid: 687802dc-042a-4363-89aa-741685d165b3
 author: MightyPen
 ms.author: genemi
-ms.openlocfilehash: 894da21c079b776524c07cab8b8f223bae769aee
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 2215e9f6b6c8cd0e19c220d16ebc7a1520550a42
+ms.sourcegitcommit: 9348f79efbff8a6e88209bb5720bd016b2806346
 ms.translationtype: MTE75
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67916231"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69026190"
 ---
-# <a name="using-kerberos-integrated-authentication-to-connect-to-sql-server"></a>Kerberos 統合認証による SQL Server への接続」を参照してください。
+# <a name="using-kerberos-integrated-authentication-to-connect-to-sql-server"></a>Kerberos 統合認証による SQL Server への接続
 
 [!INCLUDE[Driver_JDBC_Download](../../includes/driver_jdbc_download.md)]
 
@@ -37,7 +37,7 @@ Java **Krb5LoginModule** で統合認証を使用する場合、[Krb5LoginModule
 
 ## <a name="remarks"></a>Remarks
 
-より前[!INCLUDE[jdbc_40](../../includes/jdbc_40_md.md)]のアプリケーションでは、**統合認証** (使用可能なものに応じて Kerberos または NTLM を使用 します) を指定できます。そのためには、**sqljdbc_auth** を参照してください。 「[接続 URL を作成する](../../connect/jdbc/building-the-connection-url.md)」を参照してください。
+より前[!INCLUDE[jdbc_40](../../includes/jdbc_40_md.md)]のアプリケーションでは、統合認証 (使用可能なものに応じて Kerberos または NTLM を使用 **** します) を指定できます。そのためには、sqljdbc_auth を参照して**ください。** 「[接続 URL を作成する](../../connect/jdbc/building-the-connection-url.md)」を参照してください。
 
 [!INCLUDE[jdbc_40](../../includes/jdbc_40_md.md)] 以降、アプリケーションは、**authenticationScheme** 接続プロパティを使用して、ピュア Java Kerberos 実装を使用した Kerberos 統合認証を使用してデータベースに接続することを示すことができます。
 
@@ -45,11 +45,11 @@ Java **Krb5LoginModule** で統合認証を使用する場合、[Krb5LoginModule
 
 - **Sqljdbc_auth**で統合認証を引き続き使用するには、[Integrated **atedsecurity = true** ] 接続プロパティ (および必要に応じて**authenticationscheme = [認証**]) を指定するだけです。
 
-- **Authenticationscheme = JavaKerberos**を指定して**も、** を指定しない場合、ドライバーは**authenticationscheme**接続プロパティを無視し、ユーザー名とパスワードが求められます。接続文字列の資格情報。
+- **Authenticationscheme = JavaKerberos**を指定しても、を **** 指定しない場合、ドライバーは**authenticationscheme**接続プロパティを無視し、ユーザー名とパスワードが求められます。接続文字列の資格情報。
 
 データソースを使用して接続を作成する場合、**setAuthenticationScheme** を使用して認証スキームをプログラムで設定できます。また、(必要に応じて) **setServerSpn** を使用して Kerberos 接続用の SPN を設定できます。
 
-Kerberos 認証をサポートするために、新しいロガー com.microsoft.sqlserver.jdbc.internals.KerbAuthentication が追加されました。 詳細については、「[ドライバー操作のトレース](../../connect/jdbc/tracing-driver-operation.md)」を参照してください。
+Kerberos 認証をサポートするために、新しいロガー com.microsoft.sqlserver.jdbc.internals.KerbAuthentication が追加されました。 詳細については、「[ドライバー操作のトレース](../../connect/jdbc/tracing-driver-operation.md)」をご覧ください。
 
 Kerberos を構成する場合は、次のガイドラインに従ってください。
 
@@ -159,7 +159,7 @@ Java.exe -Djava.security.auth.login.config=SQLJDBCDriver.conf -Djava.security.kr
 
 ```
 
-## <a name="verifying-that-sql-server-can-be-accessed-via-kerberos"></a>Kerberos を介して SQL Server にアクセスできるかどうかの確認
+## <a name="verifying-that-sql-server-can-be-accessed-via-kerberos"></a>Kerberos を介して SQL Server にアクセスできることを確認する
 
 SQL Server Management Studio で次のクエリを実行します。
 

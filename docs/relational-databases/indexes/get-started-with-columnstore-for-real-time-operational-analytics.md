@@ -11,12 +11,12 @@ ms.assetid: e1328615-6b59-4473-8a8d-4f360f73187d
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 2f3ce558bb9e5856e0cd5828f8facce28dc2c729
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: f44e5c43a3abbf9338d74c04be98a9d5d8902034
+ms.sourcegitcommit: 594cee116fa4ee321e1f5e5206f4a94d408f1576
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68107077"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70009491"
 ---
 # <a name="get-started-with-columnstore-for-real-time-operational-analytics"></a>列ストアを使用したリアルタイム運用分析の概要
 [!INCLUDE[appliesto-ss-asdb-xxxx-xxx-md](../../includes/appliesto-ss-asdb-xxxx-xxx-md.md)]
@@ -107,8 +107,6 @@ ms.locfileid: "68107077"
   
 -   [メモリ最適化テーブルによるリアルタイム運用分析](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2016/03/07/real-time-operational-analytics-memory-optimized-table-and-columnstore-index/)  
   
--   [列ストア インデックスによるインデックス断片化の最小化](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2016/03/07/columnstore-index-defragmentation-using-reorganize-command/)  
-  
 -   [列ストア インデックスと行グループのマージ ポリシー](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2016/03/08/columnstore-index-merge-policy-for-reorganize/)  
   
 ## <a name="performance-tip-1-use-filtered-indexes-to-improve-query-performance"></a>パフォーマンス ヒント 1:フィルター処理されたインデックスを使用したクエリ パフォーマンスの改善  
@@ -175,7 +173,7 @@ Group By customername
  列ストア インデックスのメンテナンスはフィルター処理された列ストア インデックスを使用して最小限に抑えることはできますが、それでも分析クエリには多大なコンピューティング リソース (CPU、IO、メモリ) が必要であり、運用ワークロードのパフォーマンスに影響します。 ほとんどのミッション クリティカルなワークロードについては、AlwaysOn 構成を使用することをお勧めします。 この構成では、負荷を読み取り可能セカンダリにオフロードすることで、実行中の分析の影響を除去できます。  
   
 ## <a name="performance-tip-3-reducing-index-fragmentation-by-keeping-hot-data-in-delta-rowgroups"></a>パフォーマンス ヒント 3:ホット データを DELTA 行グループに保持することでインデックスの断片化を削減する  
- 列ストア インデックスのあるテーブルは、圧縮された行をワークロードが更新/削除する場合に、(削除された行によって) 大幅に断片化されることがあります。 断片化された列ストア インデックスは、メモリと記憶域の非効率的な使用につながります。 リソースの非効率的な使用だけでなく、余分な IO と結果セットから削除された行をフィルター処理する必要があるため、分析クエリのパフォーマンスにも悪影響を及ぼします。  
+ 圧縮された行がワークロードによって更新/削除された場合、列ストア インデックスのあるテーブルは (削除された行によって) 大幅に断片化されることがあります。 断片化された列ストア インデックスは、メモリと記憶域の非効率的な使用につながります。 リソースの非効率的な使用だけでなく、余分な IO と結果セットから削除された行をフィルター処理する必要があるため、分析クエリのパフォーマンスにも悪影響を及ぼします。  
   
  削除された行は、REORGANIZE コマンドを使用してインデックスのデフラグを実行するか、テーブル全体または影響を受けているパーティションの列ストア インデックスを再構築するまで、物理的には削除されません。 REORGANIZE とインデックスの REBUILD は高コストな操作であり、ワークロードに使用されるリソースを取り除きます。 さらに、行の圧縮が早すぎる場合は、更新により何度も再圧縮する必要性が出てくるため、無駄な圧縮によるオーバーヘッドにつながる可能性があります。  
 インデックスの断片化は、COMPRESSION_DELAY オプションを使用して最小限に抑えることができます。  
@@ -226,6 +224,5 @@ ORDER BY created_time DESC
  [列ストア インデックス データの読み込み](../../relational-databases/indexes/columnstore-indexes-data-loading-guidance.md)   
  [列ストア インデックスのクエリ パフォーマンス](../../relational-databases/indexes/columnstore-indexes-query-performance.md)   
  [データ ウェアハウスの列ストア インデックス](../../relational-databases/indexes/columnstore-indexes-data-warehouse.md)   
- [列ストア インデックスの最適化](../../relational-databases/indexes/columnstore-indexes-defragmentation.md)  
-  
+ [インデックスの再編成と再構築](../../relational-databases/indexes/reorganize-and-rebuild-indexes.md)
   

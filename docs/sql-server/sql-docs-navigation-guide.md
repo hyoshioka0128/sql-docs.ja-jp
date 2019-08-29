@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
 monikerRange: '>= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017 || = sqlallproducts-allversions'
-ms.openlocfilehash: 31bdddab8dce33d8bf0e59d3abf7384231a13e53
-ms.sourcegitcommit: 9348f79efbff8a6e88209bb5720bd016b2806346
+ms.openlocfilehash: 42bf8211f8b5907d21f98e12bd058eedb658bbe2
+ms.sourcegitcommit: cdbb0ee5ee5259119ad21695f549207457990f71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69028835"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621716"
 ---
 # <a name="sql-server-docs-navigation-guide"></a>SQL Server ドキュメント ナビゲーション ガイド 
 
@@ -39,16 +39,15 @@ PDF を作成する場合は、すべての目次の下部にある **[Download 
 
 ## <a name="toc-navigation-hints"></a>目次のナビゲーションのヒント
 
-エントリの末尾に `>` がある目次のエントリは、docs.microsoft.com 以外にリンクされていることを示します。 
+エントリの最後に `>` がある目次 (TOC) のエントリは、別の目次を含む技術ドキュメントにリンクされていることを示します。 
 
 ![目次のシングル キャロット](media/sql-server-docs-navigation-guide/single-carrots-in-sql-docs-toc.png)
 
-
-`>>` がある目次のエントリは、別の目次を含む技術ドキュメントにリンクされていることを示します。 
+`>>` がある目次のエントリは、docs.microsoft.com 以外にリンクされていることを示します。 
 
 ![目次のナビゲーション マーカー](media/sql-server-docs-navigation-guide/double-carrots-in-sql-docs-toc.png)
 
-このようなページのいずれかに移動した場合、メインの SQL Server 技術ページと目次に戻るには、各目次の上部にある「Welcome to SQL Server >>」(SQL Server へようこそ >>) エントリを選択します。 
+このようなページのいずれかに移動した場合、メインの SQL Server 技術ページと目次に戻るには、各目次の上部にある「Welcome to SQL Server >」(SQL Server へようこそ >) エントリを選択します。 
 
 ![SQL の目次に戻る](media/sql-server-docs-navigation-guide/navigate-back-to-sql-toc.png)
 
@@ -64,7 +63,7 @@ SQL Server 技術ドキュメントには、SQL Server のいくつかのサポ�
 
 ![SQL ドキュメントのバージョン フィルター](media/sql-server-docs-navigation-guide/sql-docs-version-filter.gif)
 
-**[All SQL]\(すべての SQL\)** \> **[Hide nothing]\(すべて表示\)** を選択すると、すべてのコンテンツが表示され、バージョン フィルターによる非表示が解除されます。 [ **[Hide nothing]\(すべて表示\)** オプションは、定型的な使用にはお勧めしません](versioning-system-monikers-ui-sql-server.md#anchor-allsql-hidenothing)。
+**[All SQL]\(すべての SQL\)** \> **[Hide nothing]\(すべて表示\)** を選択すると、すべてのコンテンツが表示され、バージョン フィルターによる非表示が解除されます。 「**Hide nothing**」オプションを選択すると、同じ記事内に複数の異なるバージョンの SQL Server に関連するコンテンツが表示されることがあり、矛盾したり、不明確であったり、紛らわしいことがあります。 そのため、[「**Hide nothing**」オプションは、通常の使用にはお勧めしません](versioning-system-monikers-ui-sql-server.md#anchor-allsql-hidenothing)。 
 
 ## <a name="breadcrumbs"></a>階層リンク
 

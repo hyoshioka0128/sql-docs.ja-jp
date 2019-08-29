@@ -1,7 +1,7 @@
 ---
 title: インストール ウィザードのヘルプ | Microsoft Docs
 ms.custom: ''
-ms.date: 05/22/2019
+ms.date: 08/16/2019
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: install
@@ -15,12 +15,12 @@ ms.assetid: 5bf822fc-6dec-4806-a153-e200af28e9a5
 author: MashaMSFT
 ms.author: mathoma
 robots: noindex,nofollow
-ms.openlocfilehash: edd2c17b106e536f1a2694fe0cb25e34b10d1138
-ms.sourcegitcommit: a1adc6906ccc0a57d187e1ce35ab7a7a951ebff8
+ms.openlocfilehash: b32ad209651c30f810f239b0c14689be497c4378
+ms.sourcegitcommit: 8d01698e779a536093dd637e84c52f3ff0066a2c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68894064"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69609295"
 ---
 # <a name="installation-wizard-help"></a>インストール ウィザードのヘルプ
 
@@ -399,7 +399,7 @@ SMB ファイル共有をディレクトリとして指定するには、サポ�
   
 * SMB ファイル サーバーを使用する場合、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] サービス アカウントはドメイン アカウントである必要があります。  
   
-* [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインストールに使用するアカウントには、データ ディレクトリとして使用する SMB ファイル共有フォルダーに対するフル コントロールの NTFS 権限が必要です。  
+* [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインストールに使用するアカウントには、データ ディレクトリとして使用する SMB ファイル共有フォルダーに対する**フル コントロール**の NTFS 権限が必要です。  
   
 * [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインストールに使用するアカウントには、SMB ファイル サーバーに対する SeSecurityPrivilege 特権を付与する必要があります。 この特権を付与するには、ファイル サーバーで [ローカル セキュリティ ポリシー] コンソールを使用して、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 監査とセキュリティ ログの管理 **ポリシーに** セットアップ アカウントを追加します。 この設定は、[ローカル セキュリティ ポリシー] コンソールの **[ローカル ポリシー]** の **[ユーザー権利の割り当て]** セクションにあります。  
   
@@ -417,11 +417,35 @@ The MaxDOP setting applies only to SQL Server 2019 and later.
 
 ::: moniker range=">=sql-server-ver15||=sqlallproducts-allversions"
 
-## <a name="database-engine-configuration---maxdop-page"></a>[データベース エンジンの構成] - [MAXDOP] ページ
+## <a name="a-namemaxdopa-database-engine-configuration---maxdop-page"></a><a name="maxdop"><a/> [データベース エンジンの構成] - [MAXDOP] ページ
 
-**並列処理の最大限度 (MaxDOP)** により、1 つのステートメントで使用できるプロセッサの最大数が決まります。 SQL Server 2019 では、インストール時にこのオプションを構成する機能が導入されています。 SQL Server 2019 では、また、サーバー用の推奨される MaxDOP 設定が、コア数に基づいて自動的に検出されます。 既定の最大値は 8 です。  
+**並列処理の最大限度 (MaxDOP)** により、1 つのステートメントで使用できるプロセッサの最大数が決まります。 [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] では、インストール時にこのオプションを構成する機能が導入されています。 [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] では、また、サーバー用の推奨される MaxDOP 設定が、コア数に基づいて自動的に検出されます。  
 
-このページでこの設定を手動で構成し、インストール後にこの設定を変更することができます。 詳細については、[並列処理の最大限度](../../database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option.md)に関するページを参照してください。
+セットアップ中にこのページをスキップした場合、MaxDOP の既定値は、以前のバージョン (0) に対する [!INCLUDE[ssde_md](../../includes/ssde_md.md)] の既定値ではなく、このページに表示される推奨値になります。 また、このページでこの設定を手動で構成し、インストール後にこの設定を変更することができます。 
+
+### <a name="uielement-list"></a>UIElement の一覧
+
+* **[並列処理の最大限度] (MaxDOP)** は、1 つのステートメントの並列実行中に使用するプロセッサの最大数の値です。 既定値は、「[max degree of parallelism サーバー構成オプションの構成](../../database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option.md#Guidelines)」の並列処理の最大限度ガイドラインと一致します。
+
+## <a name="a-namememorya-database-engine-configuration---memory-page"></a><a name="memory"><a/> [データベース エンジンの構成] - [メモリ] ページ
+
+**[最小サーバー メモリ]** では、[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] でバッファー プールとその他のキャッシュに使用されるメモリの下限が決まります。 既定値は 0 で、推奨値も 0 です。 **最小サーバー メモリ**の効果について詳しくは、「[メモリ管理アーキテクチャ ガイド](../../relational-databases/memory-management-architecture-guide.md#effects-of-min-and-max-server-memory)」をご覧ください。
+
+**[最大サーバー メモリ]** では、[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] でバッファー プールとその他のキャッシュに使用されるメモリの上限が決まります。 既定値は 2,147,483,647 メガバイト (MB) であり、計算された推奨値は、「[サーバー メモリの構成オプション](../../database-engine/configure-windows/server-memory-server-configuration-options.md#setting-the-memory-options-manually)」の、既存のシステム メモリに基づくスタンドアロン [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスに対するメモリ構成ガイドラインと一致します。 **最大サーバー メモリ**の効果について詳しくは、「[メモリ管理アーキテクチャ ガイド](../../relational-databases/memory-management-architecture-guide.md#effects-of-min-and-max-server-memory)」をご覧ください。
+
+セットアップの間にこのページをスキップした場合に使用される既定の**最大サーバー メモリ**の値は、[!INCLUDE[ssde_md](../../includes/ssde_md.md)] の既定値 (2,147,483,647 メガバイト) です。 **[推奨]** ラジオ ボタンを選択すると、このページでこれらの設定を手動で構成でき、インストール後にこれらの設定を変更できます。 詳細については、 [サーバー メモリ構成オプション](../../database-engine/configure-windows/server-memory-server-configuration-options.md)の設定を参照してください。
+
+### <a name="uielement-list"></a>UIElement の一覧
+  
+**Default**:このラジオ ボタンは既定で選択されており、**最小サーバー メモリ**と**最大サーバー メモリ**の設定は [!INCLUDE[ssde_md](../../includes/ssde_md.md)] の既定値に設定されます。 
+
+**[推奨]** : 計算された推奨値を受け入れる場合、または計算された値をユーザー構成値に変更する場合は、このラジオ ボタンを選択する必要があります。  
+  
+**[最小サーバー メモリ (MB)]** : 計算された推奨値からユーザー構成値に変更する場合は、**最小サーバー メモリ**の値を入力します。  
+  
+**[最大サーバー メモリ (MB)]** : 計算された推奨値からユーザー構成値に変更する場合は、**最大サーバー メモリ**の値を入力します。  
+
+**[SQL Server データベース エンジン用に推奨されているメモリ構成を受け入れるには、ここをクリックします]** : このサーバーで計算された推奨メモリ構成を受け入れるには、このチェック ボックスをオンにします。 **[推奨]** ラジオ ボタンを選択した場合、このチェック ボックスをオンにしないとセットアップを続行できません。
 
 ::: moniker-end
 

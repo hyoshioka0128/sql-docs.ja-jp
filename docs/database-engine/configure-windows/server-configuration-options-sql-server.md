@@ -29,12 +29,12 @@ helpviewer_keywords:
 ms.assetid: 9f38eba6-39b1-4f1d-ba24-ee4f7e2bc969
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 7d0e379cf9d3bc6391e6c2c921824c7162b88def
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 985f5fb80f9879470f0f9a1740bd7a4b7bee2b2a
+ms.sourcegitcommit: 8d01698e779a536093dd637e84c52f3ff0066a2c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68025626"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69609630"
 ---
 # <a name="server-configuration-options-sql-server"></a>サーバー構成オプション (SQL Server)
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -56,7 +56,7 @@ ms.locfileid: "68025626"
   
 オプションの中には、新しい構成を有効にするために、サーバーを再起動する必要があるものもあります。 新しい値を設定し sp_configure を実行した後にサーバーを再起動した場合、新しい値は構成オプションの **value_in_use** 列ではなく **value** 列に表示されます。 サーバーの再起動後は、新しい値が **value_in_use** 列に表示されます。  
   
-自己構成オプションは、システムのニーズに合わせて [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] が調整するオプションです。 このため、ほとんどの場合、値を手動で変更する必要はありません。 たとえば、 **min server memory** 、 **max server memory** 、user connections などの各オプションがあります。  
+自己構成オプションは、システムのニーズに合わせて [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] が調整するオプションです。 このため、ほとんどの場合、値を手動で変更する必要はありません。 例には、**ワーカー スレッドの最大数**オプションとユーザー接続オプションが含まれます。  
   
 ## <a name="configuration-options-table"></a>構成オプションの表  
  次の表は、使用可能なすべての構成オプション、設定可能範囲、および既定値を示しています。 構成オプションには文字コードを付けています。その内容を次に示します。  

@@ -46,12 +46,12 @@ helpviewer_keywords:
 ms.assetid: 1e068443-b9ea-486a-804f-ce7b6e048e8b
 author: CarlRabeler
 ms.author: carlrab
-ms.openlocfilehash: 5e7c6e170def3a51bc85c80e485370e3520d73d7
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 8be2e837ff71237cf6d39f8593e8b852cc08ed2e
+ms.sourcegitcommit: 5e838bdf705136f34d4d8b622740b0e643cb8d96
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68089861"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69653374"
 ---
 # <a name="create-table-transact-sql"></a>CREATE TABLE (Transact-SQL)
 
@@ -1009,7 +1009,7 @@ Test1Col
 > この機能は、[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] で使用できます。
 
 ### <a name="troubleshooting-global-temporary-tables-for-azure-sql-database"></a>Azure SQL Database のグローバル一時テーブルのトラブルシューティング
-tempdb のトラブルシューティングについては、「[tempdb のディスク領域の不足に関するトラブルシューティング](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms176029(v=sql.105))」をご覧ください。
+tempdb のトラブルシューティングについては、「[tempdb の使用状況を監視する方法](../../relational-databases/databases/tempdb-database.md#how-to-monitor-tempdb-use)」を参照してください。
 
 > [!NOTE]
 > [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] の DMV のトラブルシューティングにアクセスできるのは、サーバー管理者のみです。
@@ -1297,7 +1297,7 @@ CREATE TABLE UDTypeTable
     ( u utf8string, ustr AS u.ToString() PERSISTED ) ;
 ```
 
-### <a name="l-using-the-username-function-for-a-computed-column"></a>L. 計算列に対する USER_NAME 関数の使用
+### <a name="l-using-the-user_name-function-for-a-computed-column"></a>L. 計算列に対する USER_NAME 関数の使用
 次の例では、`myuser_name` 列で `USER_NAME()` 関数を使用します。
 
 ```sql

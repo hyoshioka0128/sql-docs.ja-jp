@@ -17,12 +17,12 @@ ms.assetid: 4addd426-7523-4067-8d7d-ca6bae4c9e34
 author: MashaMSFT
 ms.author: mathoma
 monikerRange: =azuresqldb-mi-current||>=sql-server-2014||=sqlallproducts-allversions
-ms.openlocfilehash: 31e5f5e89a6421c72ecb381685f9450ac9ba9331
-ms.sourcegitcommit: 728a4fa5a3022c237b68b31724fce441c4e4d0ab
+ms.openlocfilehash: c349569d2f0973a3085337eb171a17d9cee21c82
+ms.sourcegitcommit: 632ff55084339f054d5934a81c63c77a93ede4ce
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68770562"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69633402"
 ---
 # <a name="measure-latency-and-validate-connections-for-transactional-replication"></a>トランザクション レプリケーションの待機時間の計測および接続の検証
 [!INCLUDE[appliesto-ss-asdbmi-xxxx-xxx-md](../../../includes/appliesto-ss-asdbmi-xxxx-xxx-md.md)]
@@ -113,21 +113,21 @@ ms.locfileid: "68770562"
   
 2.  (省略可) パブリッシャー側のパブリケーション データベースに対して、[sp_helpsubscription &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-helpsubscription-transact-sql.md) を実行します。 サブスクリプションが存在すること、および状態がアクティブであることを確認します。  
   
-3.  パブリッシャー側のパブリケーション データベースに対して、[sp_posttracertoken &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-posttracertoken-transact-sql.md) を実行して、 **@publication** を指定します。 **@tracer_token_id** 出力パラメーターの値をメモします。  
+3.  パブリッシャー側のパブリケーション データベースに対して、[sp_posttracertoken &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-posttracertoken-transact-sql.md) を実行して、 **\@publication** を指定します。 **\@tracer_token_id** 出力パラメーターの値を確認します。  
   
 #### <a name="to-determine-latency-and-validate-connections-for-a-transactional-publication"></a>待機時間を決定し、トランザクション パブリケーションの接続を確認するには  
   
 1.  上述の手順を使用して、トレーサー トークンをパブリケーションに通知します。  
   
-2.  パブリッシャー側のパブリケーション データベースに対して、 **@publication** を指定して、[sp_helptracertokens &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-helptracertokens-transact-sql.md) を実行します。 パブリケーションに通知されたすべてのトレーサー トークンのリストが返されます。 結果セットの目的の **tracer_id** を確認します。  
+2.  パブリッシャー側のパブリケーション データベースに対して、 **\@publication** を指定して、[sp_helptracertokens &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-helptracertokens-transact-sql.md) を実行します。 パブリケーションに通知されたすべてのトレーサー トークンのリストが返されます。 結果セットの目的の **tracer_id** を確認します。  
   
-3.  パブリッシャー側のパブリケーション データベースで、 **@publication** を指定し、 **@tracer_id** に手順 2 のトレーサー トークン ID を指定して、[sp_helptracertokenhistory &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-helptracertokenhistory-transact-sql.md) を実行します。 選択したトレーサー トークンの待機情報が返されます。  
+3.  パブリッシャー側のパブリケーション データベースで、 **\@publication** を指定し、 **\@tracer_id** に手順 2 のトレーサー トークン ID を指定して、[sp_helptracertokenhistory &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-helptracertokenhistory-transact-sql.md) を実行します。 選択したトレーサー トークンの待機情報が返されます。  
   
 #### <a name="to-remove-tracer-tokens"></a>トレーサー トークンを削除するには  
   
-1.  パブリッシャー側のパブリケーション データベースに対して、 **@publication** を指定して、[sp_helptracertokens &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-helptracertokens-transact-sql.md) を実行します。 パブリケーションに通知されたすべてのトレーサー トークンのリストが返されます。 結果セットの削除するトレーサー トークンの **tracer_id** を確認します。  
+1.  パブリッシャー側のパブリケーション データベースに対して、 **\@publication** を指定して、[sp_helptracertokens &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-helptracertokens-transact-sql.md) を実行します。 パブリケーションに通知されたすべてのトレーサー トークンのリストが返されます。 結果セットの削除するトレーサー トークンの **tracer_id** を確認します。  
   
-2.  パブリッシャー側のパブリケーション データベースで、 **@publication** を指定し、 **@tracer_id** に手順 2 の削除するトレーサー トークン ID を指定して、[sp_deletetracertokenhistory &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-deletetracertokenhistory-transact-sql.md) を実行します。  
+2.  パブリッシャー側のパブリケーション データベースで、 **\@publication** を指定し、 **@tracer_id** に手順 2 の削除するトレーサー トークン ID を指定して、[sp_deletetracertokenhistory &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-deletetracertokenhistory-transact-sql.md) を実行します。  
   
 ###  <a name="TsqlExample"></a> 例 (Transact-SQL)  
  次の例では、トレーサー トークン レコードを通知し、返された通知済みトレーサー トークンの ID を使用して待機時間情報を表示します。  

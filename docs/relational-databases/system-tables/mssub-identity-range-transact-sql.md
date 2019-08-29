@@ -1,5 +1,5 @@
 ---
-title: MSsub_identity_range (TRANSACT-SQL) |Microsoft Docs
+title: MSsub_identity_range (Transact-SQL) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/06/2017
 ms.prod: sql
@@ -24,7 +24,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/15/2019
 ms.locfileid: "68221962"
 ---
-# <a name="mssubidentityrange-transact-sql"></a>MSsub_identity_range (Transact-SQL)
+# <a name="mssub_identity_range-transact-sql"></a>MSsub_identity_range (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
   **MSsub_identity_range**テーブルは、サブスクリプションの id 範囲管理サポートを提供します。 このテーブルは、subscription データベースに保存されます。  

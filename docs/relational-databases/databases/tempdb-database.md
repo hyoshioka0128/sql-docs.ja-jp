@@ -2,7 +2,7 @@
 title: tempdb データベース | Microsoft Docs
 description: このトピックでは、SQL Server と Azure SQL Database で tempdb データベースを構成し、使用する方法について説明します。
 ms.custom: P360
-ms.date: 05/22/2019
+ms.date: 08/21/2019
 ms.prod: sql
 ms.prod_service: database-engine
 ms.technology: ''
@@ -17,12 +17,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
 monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 3e921c5b95a3d7fd4eb1e8c5b0cb9010c7d2344c
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 8197b243bc0789da9acb0e94069585d8619d5fa0
+ms.sourcegitcommit: 5e838bdf705136f34d4d8b622740b0e643cb8d96
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68127139"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69653773"
 ---
 # <a name="tempdb-database"></a>tempdb データベース
 
@@ -217,7 +217,7 @@ tempdb でのパフォーマンスの向上の詳細については、次のブ�
 
 ## <a name="memory-optimized-tempdb-metadata"></a>メモリ最適化 tempdb メタデータ
 
-tempdb メタデータの競合は、従来から、SQL Server 上で実行されている多くのワークロードのスケーラビリティに対するボトルネックになっていました。 [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] では、[メモリ内データベース](../in-memory-database.md)機能ファミリの一部として、メモリ最適化 tempdb メタデータという新機能が導入されています。この機能により、効果的にこのボトルネックが除去され、tempdb が多用されるワークロードに対して新たなレベルのスケーラビリティが実現されます。 [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] では、一時テーブルのメタデータの管理に関連するシステム テーブルを、ラッチ フリーの非持続的メモリ最適化テーブルに移動できます。 この新しい機能にオプトインするには、次のスクリプトを使用します。
+tempdb メタデータの競合は、従来から、SQL Server 上で実行されている多くのワークロードのスケーラビリティに対するボトルネックになっていました。 [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] では、[メモリ内データベース](../in-memory-database.md)機能ファミリの一部として、メモリ最適化 tempdb メタデータという新機能が導入されています。この機能により、効果的にこのボトルネックが除去され、tempdb が多用されるワークロードに対して新たなレベルのスケーラビリティが実現されます。 [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] では、一時テーブルのメタデータの管理に関連するシステム テーブルを、ラッチ フリーの非持続的メモリ最適化テーブルに移動できます。  [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] では、[メモリ内データベース](../in-memory-database.md)機能ファミリの一部として、メモリ最適化 tempdb メタデータという新機能が導入されています。この機能により、効果的にこのボトルネックが除去され、tempdb が多用されるワークロードに対して新たなレベルのスケーラビリティが実現されます。 [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] では、一時テーブルのメタデータの管理に関連するシステム テーブルを、ラッチ フリーの非持続的メモリ最適化テーブルに移動できます。この新しい機能にオプトインするには、次のスクリプトを使用します。
 
 ```sql
 ALTER SERVER CONFIGURATION SET MEMORY_OPTIMIZED TEMPDB_METADATA = ON 
@@ -319,7 +319,3 @@ GROUP BY R2.session_id, R1.internal_objects_alloc_page_count,
 - [sys.master_files](../../relational-databases/system-catalog-views/sys-master-files-transact-sql.md)  
 - [データベース ファイルの移動](../../relational-databases/databases/move-database-files.md)  
   
-## <a name="see-also"></a>参照
-
-- [SQL Server 2005 での tempdb の使用](https://technet.microsoft.com/library/cc966545.aspx)  
-- [tempdb のディスク領域の不足に関するトラブルシューティング](https://msdn.microsoft.com/library/ms176029.aspx)

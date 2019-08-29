@@ -11,12 +11,12 @@ ms.assetid: 83acbcc4-c51e-439e-ac48-6d4048eba189
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: c1e2d8f01370978074a07eaa0e5f784927bef511
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: a2786ebcf87f5af0ed9abcb9adaf0a85253327fa
+ms.sourcegitcommit: 594cee116fa4ee321e1f5e5206f4a94d408f1576
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68024958"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70009375"
 ---
 # <a name="columnstore-indexes---query-performance"></a>列ストア インデックス - クエリ パフォーマンス
 
@@ -110,7 +110,7 @@ ms.locfileid: "68024958"
 |Top Sort||いいえ|いいえ|はい||    
 |Window Aggregates||NA|NA|はい|[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] の新しいオペレーター。|    
     
-<sup>1</sup>[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]、[!INCLUDE[ssSDS](../../includes/sssds-md.md)] Premium 層、Standard 層 - S3 以上、およびすべての仮想コア層と [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] に適用されます    
+<sup>1</sup> [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]、[!INCLUDE[ssSDS](../../includes/sssds-md.md)] Premium 層、Standard 層 - S3 以上、およびすべての仮想コア層と [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] に適用されます。    
     
 ### <a name="aggregate-pushdown"></a>集計プッシュ ダウン    
  SCAN ノードから条件を満たす行をフェッチしてバッチ モードで値を集計する、集計計算の通常の実行パスです。 パフォーマンスは良好ですが、[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] では、次の条件を満たしていれば、集計操作を SCAN ノードにプッシュして、集計計算のパフォーマンスを大幅に (バッチ モードでの実行に加えてさらに) 向上できます。 
@@ -166,7 +166,7 @@ FROM FactResellerSalesXL_CCI
  [列ストア インデックスのデータ読み込みガイダンス](../../relational-databases/indexes/columnstore-indexes-data-loading-guidance.md)   
  [列ストアを使用したリアルタイム運用分析の概要](../../relational-databases/indexes/get-started-with-columnstore-for-real-time-operational-analytics.md)     
  [データ ウェアハウスの列ストア インデックス](../../relational-databases/indexes/columnstore-indexes-data-warehouse.md)   
- [列ストア インデックスの最適化](../../relational-databases/indexes/columnstore-indexes-defragmentation.md)    
+ [インデックスの再構成と再構築](../../relational-databases/indexes/reorganize-and-rebuild-indexes.md)    
  [列ストア インデックスのアーキテクチャ](../../relational-databases/sql-server-index-design-guide.md#columnstore_index)   
  [CREATE INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-index-transact-sql.md)    
  [ALTER INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/alter-index-transact-sql.md)     

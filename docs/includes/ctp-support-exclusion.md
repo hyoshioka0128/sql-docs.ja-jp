@@ -1,25 +1,25 @@
 ---
-ms.openlocfilehash: b51f93b12c51bd7bc9659ee1661a7fdc068dd2bd
-ms.sourcegitcommit: 9348f79efbff8a6e88209bb5720bd016b2806346
+ms.openlocfilehash: ffd608faf64818a7acd9e38d9c502f575be6716a
+ms.sourcegitcommit: 5e838bdf705136f34d4d8b622740b0e643cb8d96
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69028865"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69653052"
 ---
 ## <a name="enabled-deployment-scenarios"></a>有効なデプロイ シナリオ
 
-CTP 3.2 により、次のシナリオが有効にされます。
+SQL Server 2019 リリース候補 (RC) では、次のシナリオが可能になります。
 
-- サイド バイ サイド インストール。 SQL Server 2019 CTP 3.2 のインスタンスを、SQL Server 2012 から SQL Server 2017 までのインスタンス、または SQL Server 2019 CTP 3.0 以降のインスタンスと一緒にインストールします。
+- サイド バイ サイド インストール。 SQL Server 2019 RC のインスタンスを、SQL Server 2012 から SQL Server 2017 までのインスタンス、または SQL Server 2019 CTP 3.0 以降のインスタンスと一緒にインストールします。
    >[!NOTE]
    >サイド バイ サイドは、SQL Server 2008 および 2008 R2 ではブロックされていませんが、これらと SQL Server 2019 の間で、一般的にサポートされている Windows オペレーティングシステムのバージョンはありません。
-- インプレース アップグレード。 SQL Server 2019 CTP 3.2 のインスタンスを、SQL Server 2012 から SQL Server 2017 までのインスタンスおよび SQL Server CTP 3.0 からアップグレードします。 3\.0 より下の SQL Server 2019 CTP からのアップグレードはサポートされていないため、新しいインストールを実行する必要があります。
+- インプレース アップグレード。 SQL Server 2019 RC のインスタンスを、SQL Server 2012 から SQL Server 2017 までのインスタンスおよび SQL Server CTP 3.0 からアップグレードします。 3\.0 より下の SQL Server 2019 CTP からのアップグレードはサポートされていないため、新しいインストールを実行する必要があります。
    >[!NOTE]
    >SQL Server 2008 と 2008 R2 からのインプレース アップグレードはブロックされませんが、これらと SQL Server 2019 の間で、一般的にサポートされている Windows オペレーティングシステムのバージョンはありません。
 
 ## <a name="support"></a>サポート
 
-SQL Server 2019 CTP 3.2 はプレビュー ソフトウェアです。 この操作は、公式にはサポートされていません。 [SQL 早期導入プログラム](https://aka.ms/sqleap)を使用しているお客様は、Microsoft と相談して特別な契約を結び、SQL Server 2019 CTP 3.2 の実行がサポートされている場合があります。
+SQL Server 2019 RC はプレビュー ソフトウェアです。 この操作は、公式にはサポートされていません。 [SQL 早期導入プログラム](http://aka.ms/sqleap)を使用しているお客様は、Microsoft と相談して特別な契約を結び、SQL Server 2019 RC の実行がサポートされている場合があります。
 
 早期導入プログラムを使用されていないお客様の制限付きサポートについては、次のいずれかで見つかる可能性があります。
 

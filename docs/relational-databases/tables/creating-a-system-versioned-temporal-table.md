@@ -11,12 +11,12 @@ ms.assetid: 21e6d74f-711f-40e6-a8b7-85f832c5d4b3
 author: CarlRabeler
 ms.author: carlrab
 monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: a2daf65d8c080700767fc4c94c5e4e9e0aeafa9e
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 7031157b993fbe1605e7ee2aee7d479a848f21bd
+ms.sourcegitcommit: 676458a9535198bff4c483d67c7995d727ca4a55
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68058660"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69903586"
 ---
 # <a name="creating-a-system-versioned-temporal-table"></a>システム バージョン管理されたテンポラル テーブルの作成
 [!INCLUDE[tsql-appliesto-ss2016-asdb-xxxx-xxx-md](../../includes/tsql-appliesto-ss2016-asdb-xxxx-xxx-md.md)]
@@ -148,8 +148,8 @@ WITH (SYSTEM_VERSIONING = ON (HISTORY_TABLE = dbo.DepartmentHistory))
   
 -   最小限のメンテナンス コスト  
   
- 既存のテーブルを変換するときは、新しい列を処理するように設計されていない既存のアプリケーションに影響しないように、 **HIDDEN** 句を使用して新しい **PERIOD** 列を非表示にすることを検討します。  
-  
+ 既存のテーブルを変換するときは、新しい列を処理するように設計されていない既存のアプリケーションに影響しないように、**HIDDEN** 句を使用して新しい **PERIOD** 列 (datetime2 列の **SysStartTime** と **SysEndTime**) を非表示にすることを検討します。  
+
 ### <a name="adding-versioning-to-non-temporal-tables"></a>非テンポラル テーブルへのバージョン管理の追加  
  データを含む非テンポラル テーブルの変更の追跡を開始する場合は、 **PERIOD** 定義を追加する必要があり、必要に応じて、SQL Server で作成される空の履歴テーブルの名前を指定します。  
   

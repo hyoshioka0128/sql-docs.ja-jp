@@ -19,12 +19,12 @@ ms.assetid: 7a34be46-15b4-4b6b-8497-cfd8f9f14234
 author: rothja
 ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 3299d13c2ff371f0194c501f34d5615486decc84
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 88cfc841f3e8cdf2a04cccdc76eb3bbf7f5e2147
+ms.sourcegitcommit: cdbb0ee5ee5259119ad21695f549207457990f71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68006104"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69621775"
 ---
 # <a name="track-data-changes-sql-server"></a>データ変更の追跡 (SQL Server)
 [!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
@@ -132,7 +132,7 @@ ms.locfileid: "68006104"
   
 -   データベースをデタッチしてから、同じサーバーまたは別のサーバーにアタッチした場合、変更データ キャプチャは有効のままです。  
   
--   **KEEP_CDC** オプションを使用してデータベースを Enterprise 以外のエディションにアタッチまたは復元しようとすると、操作がブロックされます。これは変更データ キャプチャが [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Enterprise を必要とするためです。 エラー メッセージ 932 が表示されます。  
+-   **KEEP_CDC** オプションを使用してデータベースを Standard または Enterprise 以外のエディションにアタッチまたは復元しようとすると、操作がブロックされます。これは変更データ キャプチャを使用するには、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Standard または Enterprise Edition が必要であるためです。 エラー メッセージ 932 が表示されます。  
   
      `SQL Server cannot load database '%.*ls' because change data capture is enabled. The currently installed edition of SQL Server does not support change data capture. Either disable change data capture in the database by using a supported edition of SQL Server, or upgrade the instance to one that supports change data capture.`  
   

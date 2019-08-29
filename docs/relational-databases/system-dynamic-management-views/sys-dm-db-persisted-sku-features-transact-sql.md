@@ -14,19 +14,19 @@ f1_keywords:
 dev_langs:
 - TSQL
 helpviewer_keywords:
-- editions [SQL Server], feature restrictions
+- editions [SQL Server]
 - sys.dm_db_persisted_sku_features dynamic management view
 ms.assetid: b4b29e97-b523-41b9-9528-6d4e84b89e09
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: cd8c4d6fb71e98a13cab1b01f34b7c5dc7e99331
-ms.sourcegitcommit: c1382268152585aa77688162d2286798fd8a06bb
+ms.openlocfilehash: b1e9f56c4321ca0289f6e6a456586f418c1e4dbb
+ms.sourcegitcommit: a1ddeabe94cd9555f3afdc210aec5728f0315b14
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68345069"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70123075"
 ---
-# <a name="sysdmdbpersistedskufeatures-transact-sql"></a>sys.dm_db_persisted_sku_features (Transact-SQL)
+# <a name="sysdm_db_persisted_sku_features-transact-sql"></a>sys.dm_db_persisted_sku_features (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
   の一部の機能[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)]は、データベースファイル[!INCLUDE[ssDE](../../includes/ssde-md.md)]に情報を格納する方法を変更します。 これらの機能は、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]の特定のエディションでのみ使用できます。 これらの機能を備えたデータベースを、それらをサポートしない [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のエディションに移動することはできません。 現在のデータベースで有効になっているエディション固有の機能を一覧表示するには、_db_persisted_sku_features 動的管理ビューを使用します。

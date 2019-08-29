@@ -54,9 +54,9 @@ DATABASEPROPERTYEX ( database , property )
   
 |プロパティ|[説明]|返される値|  
 |---|---|---|
-|Collation|データベースの既定の照合順序名です。|照合順序名<br /><br /> NULL: データベースは開始していません<br /><br /> 基本データ型: **nvarchar(128)**|  
+|照合順序|データベースの既定の照合順序名です。|照合順序名<br /><br /> NULL: データベースは開始していません<br /><br /> 基本データ型: **nvarchar(128)**|  
 |ComparisonStyle|照合順序の Windows 比較形式です。 次のスタイルの値を使用し、完全な ComparisonStyle 値のビットマップを構築します。<br /><br /> 大文字と小文字を区別しない: 1<br /><br /> アクセントを無視する: 2<br /><br /> ひらがなとカタカナを区別しない: 65536<br /><br /> 全角と半角を区別しない: 131072<br /><br /> <br /><br /> たとえば、既定値 196609 は、大文字と小文字を区別しない、ひらがなとカタカナを区別しない、全角と半角を区別しないという 3 つのオプションを足した値を表しています。|比較スタイルを返します。<br /><br /> バイナリ照合順序ではすべて 0 が返されます。<br /><br /> 基本データ型: **int**|  
-|のエディション|データベースのエディションまたはサービス レベルです。|**適用対象**: [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]、[!INCLUDE[ssSDW](../../includes/sssdw-md.md)]。<br /><br /> <br /><br /> General Purpose<br /><br /> Business Critical<br /><br /> Basic<br /><br /> Standard<br /><br /> Premium<br /><br /> System (マスター データベース向け)<br /><br /> NULL: データベースは開始していません<br /><br /> 基本データ型: **nvarchar**(64)|  
+|Edition|データベースのエディションまたはサービス レベルです。|**適用対象**: [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]、[!INCLUDE[ssSDW](../../includes/sssdw-md.md)]。<br /><br /> <br /><br /> General Purpose<br /><br /> Business Critical<br /><br /> Basic<br /><br /> Standard<br /><br /> Premium<br /><br /> System (マスター データベース向け)<br /><br /> NULL: データベースは開始していません<br /><br /> 基本データ型: **nvarchar**(64)|  
 |IsAnsiNullDefault|データベースは、ISO のルールに従い NULL 値を許可します。|1:TRUE<br /><br /> 0:FALSE<br /><br /> NULL: 無効な入力<br /><br /> 基本データ型: **int**|  
 |IsAnsiNullsEnabled|NULL 値との比較はすべて、不明として評価されます。|1:TRUE<br /><br /> 0:FALSE<br /><br /> NULL: 無効な入力<br /><br /> 基本データ型: **int**|  
 |IsAnsiPaddingEnabled|比較または挿入を行う前に、対象の文字列が同じ長さになるようにパディングを行います。|1:TRUE<br /><br /> 0:FALSE<br /><br /> NULL: 無効な入力<br /><br /> 基本データ型: **int**|  

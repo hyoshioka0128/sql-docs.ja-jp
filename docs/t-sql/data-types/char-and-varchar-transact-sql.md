@@ -24,12 +24,12 @@ ms.assetid: 282cd982-f4fb-4b22-b2df-9e8478f13f6a
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a7e625e1d532f42f2e72e57590943de7e5834dbf
-ms.sourcegitcommit: 67261229b93f54f9b3096890b200d1aa0cc884ac
+ms.openlocfilehash: 8162c14620143aa70ea2e87f582ec99e613f234c
+ms.sourcegitcommit: a154b3050b6e1993f8c3165ff5011ff5fbd30a7e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68354612"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "69653662"
 ---
 # <a name="char-and-varchar-transact-sql"></a>char および varchar (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-all-md](../../includes/tsql-appliesto-ss2008-all-md.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "68354612"
 ## <a name="arguments"></a>引数  
 **char** [ ( *n* ) ] 固定サイズの文字列データです。 *n* によってバイト単位での文字列のサイズが定義されます。1 から 8,000 までの値にする必要があります。 *Latin* などの 1 バイト エンコード文字セットの場合、ストレージのサイズは *n* バイトとなり、格納できる文字数もまた *n* となります。 マルチバイト エンコード文字セットの場合、ストレージのサイズは引き続き *n* バイトですが、格納できる文字数が *n* よりも少なくなる場合があります。 **char** の ISO シノニムは、**character** です。 文字セットについて詳しくは、「[1 バイト文字セットとマルチバイト文字セット](/cpp/c-runtime-library/single-byte-and-multibyte-character-sets)」をご覧ください。
 
-**varchar** [ ( *n* | **max** ) ] 可変サイズの文字列データです。 *n* によってバイト単位での文字列のサイズが定義されます。1 から 8,000 までの値を指定できます。 **max** は最大格納サイズが 2^31-1 バイト (2 GB) であることを示します。 *Latin* などの 1 バイト エンコード文字セットの場合、ストレージのサイズは *n* バイト + 2 バイトとなり、格納できる文字数もまた *n* となります。 マルチバイト エンコード文字セットの場合、ストレージのサイズは引き続き *n* バイト + 2 バイトですが、格納できる文字数が *n* よりも少なくなる場合があります。 **varchar** の ISO シノニムは、**charvarying** または **charactervarying** です。 文字セットについて詳しくは、「[1 バイト文字セットとマルチバイト文字セット](/cpp/c-runtime-library/single-byte-and-multibyte-character-sets)」をご覧ください。
+**varchar** [ ( *n* | **max** ) ] 可変サイズの文字列データです。 *n* (1 から 8,000 の値を指定可能) を使用して文字列のサイズをバイト単位で定義するか、または **max** を使用して列の制約サイズが最大ストレージである 2^31-1 バイト (2 GB) までであることを指定します。 *Latin* などの 1 バイト エンコード文字セットの場合、ストレージのサイズは *n* バイト + 2 バイトとなり、格納できる文字数もまた *n* となります。 マルチバイト エンコード文字セットの場合、ストレージのサイズは引き続き *n* バイト + 2 バイトですが、格納できる文字数が *n* よりも少なくなる場合があります。 **varchar** の ISO シノニムは、**charvarying** または **charactervarying** です。 文字セットについて詳しくは、「[1 バイト文字セットとマルチバイト文字セット](/cpp/c-runtime-library/single-byte-and-multibyte-character-sets)」をご覧ください。
 
 ## <a name="remarks"></a>Remarks  
 一般的な誤解として、[CHAR(*n*) および VARCHAR(*n*)](../../t-sql/data-types/char-and-varchar-transact-sql.md) では *n* によって文字数が定義されると考えられています。 実際には、[CHAR(*n*) および VARCHAR(*n*)](../../t-sql/data-types/char-and-varchar-transact-sql.md) では、*n* によって文字長が**バイト** (0-8,000) で定義されます。 *n* は、格納できる文字数を定義しません。 これは、[NCHAR(*n*) および NVARCHAR(*n*)](../../t-sql/data-types/nchar-and-nvarchar-transact-sql.md) の定義と同様です。    

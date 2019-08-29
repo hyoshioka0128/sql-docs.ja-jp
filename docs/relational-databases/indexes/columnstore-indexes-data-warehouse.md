@@ -11,12 +11,12 @@ ms.assetid: 21fd153b-116d-47fc-a926-f1528299a391
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6d632934b3b350077606d93ca162e8f859f0a533
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 7644e38995d7afb7493ed3bfec20f2049beb9055
+ms.sourcegitcommit: 594cee116fa4ee321e1f5e5206f4a94d408f1576
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67912149"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70009451"
 ---
 # <a name="columnstore-indexes---data-warehouse"></a>列ストア インデックス - データ ウェアハウス
 [!INCLUDE[appliesto-ss-asdb-asdw-pdw-md](../../includes/appliesto-ss-asdb-asdw-pdw-md.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "67912149"
 -   データベース互換性レベル 130 以上でのスナップショット分離。  
   
 ## <a name="improve-performance-by-combining-nonclustered-and-columnstore-indexes"></a>非クラスター化インデックスと列ストア インデックスを組み合わせてパフォーマンスを改善する  
- [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]以降では、クラスター化列ストア インデックスに非クラスター化インデックスを定義できます。   
+ [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降では、クラスター化列ストア インデックスに非クラスター化インデックスを定義できます。   
   
 ### <a name="example-improve-efficiency-of-table-seeks-with-a-nonclustered-index"></a>例:非クラスター化インデックスを使用してテーブルの検索効率を改善する  
  データ ウェアハウスでのテーブルの検索効率を改善するために、テーブルの検索でクエリが最高のパフォーマンスを発揮するように設計された非クラスター化インデックスを作成できます。 たとえば、一致する値を見つけるクエリや、値の小さな範囲を返すクエリは、列ストア インデックスではなく B ツリー インデックスに対して実行したほうが高いパフォーマンスを発揮します。 このようなクエリでは、列ストア インデックスを介したフル テーブル スキャンは必要ありません。B ツリー インデックスを介したバイナリ検索を実行すると、よりすばやく正しい結果が返されます。  
@@ -131,6 +131,6 @@ END TRAN
  [列ストア インデックスのデータ読み込みガイダンス](../../relational-databases/indexes/columnstore-indexes-data-loading-guidance.md)   
  [列ストア インデックスのクエリ パフォーマンス](../../relational-databases/indexes/columnstore-indexes-query-performance.md)   
  [列ストアを使用したリアルタイム運用分析の概要](../../relational-databases/indexes/get-started-with-columnstore-for-real-time-operational-analytics.md)   
- [列ストア インデックスの最適化](../../relational-databases/indexes/columnstore-indexes-defragmentation.md)  
+ [インデックスの再構成と再構築](../../relational-databases/indexes/reorganize-and-rebuild-indexes.md)    
  [列ストア インデックスのアーキテクチャ](../../relational-databases/sql-server-index-design-guide.md#columnstore_index) 
   

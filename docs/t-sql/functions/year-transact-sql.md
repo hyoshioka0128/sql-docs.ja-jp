@@ -53,7 +53,7 @@ YEAR ( date )
  **int**  
   
 ## <a name="return-value"></a>戻り値  
- \* * 年と同じ値を返す [DATEPART](../../t-sql/functions/datepart-transact-sql.md) (**年**、*日*). * *  
+ YEAR は [DATEPART](../../t-sql/functions/datepart-transact-sql.md) (**year**、*date*) と同じ値を返します。  
   
  *日付*には、時刻部分のみが含まれる、戻り値は基準年を 1900 年にです。  
   

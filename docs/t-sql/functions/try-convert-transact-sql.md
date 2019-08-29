@@ -3,7 +3,7 @@ title: TRY_CONVERT (Transact-SQL) | Microsoft Docs
 ms.custom: ''
 ms.date: 03/06/2017
 ms.prod: sql
-ms.prod_service: database-engine, sql-database
+ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: language-reference
@@ -17,15 +17,15 @@ helpviewer_keywords:
 ms.assetid: 3e6e7825-6482-4cb2-a8c2-9abc99e265a6
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 02e4b66b1f215e513b005c770aebf9afc256ea8a
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 73f0b159230f89503aac00b4cc0b4ec5d0da5e39
+ms.sourcegitcommit: a1ddeabe94cd9555f3afdc210aec5728f0315b14
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68098765"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70123176"
 ---
-# <a name="tryconvert-transact-sql"></a>TRY_CONVERT (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2012-asdb-xxxx-xxx-md](../../includes/tsql-appliesto-ss2012-asdb-xxxx-xxx-md.md)]
+# <a name="try_convert-transact-sql"></a>TRY_CONVERT (Transact-SQL)
+[!INCLUDE[tsql-appliesto-ss2012-all-md](../../includes/tsql-appliesto-ss2012-all-md.md)]
 
   指定されたデータ型へのキャストが成功した場合は、キャストされる値が返されます。それ以外の場合は、null が返されます。  
   
@@ -64,7 +64,7 @@ TRY_CONVERT ( data_type [ ( length ) ], expression [, style ] )
   
 ## <a name="examples"></a>使用例  
   
-### <a name="a-tryconvert-returns-null"></a>A. TRY_CONVERT は null を返します。  
+### <a name="a-try_convert-returns-null"></a>A. TRY_CONVERT は null を返します。  
  次の例は、キャストが失敗した場合に TRY_CONVERT から null が返されることを示しています。  
   
 ```sql  
@@ -104,7 +104,7 @@ NULL
 (1 row(s) affected)  
 ```  
   
-### <a name="b-tryconvert-fails-with-an-error"></a>B. TRY_CONVERT でエラーが発生して失敗する  
+### <a name="b-try_convert-fails-with-an-error"></a>B. TRY_CONVERT でエラーが発生して失敗する  
  次の例では、キャストが明示的に許可されていない場合に TRY_CONVERT がエラーを返すことを示します。  
   
 ```sql  
@@ -118,7 +118,7 @@ GO
 Explicit conversion from data type int to xml is not allowed.  
 ```  
   
-### <a name="c-tryconvert-succeeds"></a>C. TRY_CONVERT が成功する  
+### <a name="c-try_convert-succeeds"></a>C. TRY_CONVERT が成功する  
  この例は、式を求められている形式にする必要があることを示しています。  
   
 ```  
