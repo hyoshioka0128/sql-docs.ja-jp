@@ -1,5 +1,5 @@
 ---
-title: sp_mergecleanupmetadata (Transact-sql) |Microsoft Docs
+title: sp_mergecleanupmetadata (Transact-SQL) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
@@ -22,7 +22,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 08/28/2019
 ms.locfileid: "70123090"
 ---
-# <a name="sp_mergecleanupmetadata-transact-sql"></a>sp_mergecleanupmetadata (Transact-sql)
+# <a name="sp_mergecleanupmetadata-transact-sql"></a>sp_mergecleanupmetadata (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
   は、 [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssVersion2000](../../includes/ssversion2000-md.md)] Service Pack 1 より前のバージョンの[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]を実行しているサーバーを含むレプリケーショントポロジでのみ使用してください。**sp_mergecleanupmetadata**を使用すると、管理者は**MSmerge_genhistory**、 **MSmerge_contents** 、 **MSmerge_tombstone**の各システムテーブルでメタデータをクリーンアップできます。 このストアド プロシージャは、パブリッシャー側でパブリケーション データベースについて実行されます。  
