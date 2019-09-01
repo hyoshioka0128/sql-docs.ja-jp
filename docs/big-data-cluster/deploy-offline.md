@@ -5,16 +5,16 @@ description: SQL Server ビッグ データ クラスターのオフライン展
 author: mihaelablendea
 ms.author: mihaelab
 ms.reviewer: mikeray
-ms.date: 08/21/2019
+ms.date: 08/28/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 061e3c39f3cbcfd7e15367bbe9b37f8fc0aebb31
-ms.sourcegitcommit: 5e838bdf705136f34d4d8b622740b0e643cb8d96
+ms.openlocfilehash: 243771141bbd255e045ef0a1667235f1c414777b
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69652368"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155269"
 ---
 # <a name="perform-an-offline-deployment-of-a-sql-server-big-data-cluster"></a>SQL Server ビッグ データ クラスターのオフライン展開を実行する
 
@@ -33,7 +33,7 @@ ms.locfileid: "69652368"
 > [!TIP]
 > 次の手順では、このプロセスについて説明します。 ただし、タスクを簡略化するために、これらのコマンドを手動で実行する代わりに、[自動スクリプト](#automated)を使用できます。
 
-1. 次のコマンドを繰り返して、ビッグ データ クラスター コンテナー イメージをプルします。 `<SOURCE_IMAGE_NAME>` をそれぞれの[イメージ名](#images)で置き換えます。 `<SOURCE_DOCKER_TAG>` をビッグ データ クラスター リリースのタグ (**2019-CTP3.2-ubuntu** など) で置き換えます。  
+1. 次のコマンドを繰り返して、ビッグ データ クラスター コンテナー イメージをプルします。 `<SOURCE_IMAGE_NAME>` をそれぞれの[イメージ名](#images)で置き換えます。 `<SOURCE_DOCKER_TAG>` **2019-RC1-ubuntu**など、ビッグデータクラスターのリリースのタグで置き換えます。  
 
    ```PowerShell
    docker pull mcr.microsoft.com/mssql/bdc/<SOURCE_IMAGE_NAME>:<SOURCE_DOCKER_TAG>
@@ -60,27 +60,31 @@ ms.locfileid: "69652368"
 ### <a id="images"></a> ビッグ データ クラスター コンテナー イメージ
 
 オフライン インストールには、次のビッグ データ クラスター コンテナー イメージが必要です。
+- **mssql-app-service-proxy**
+- **mssql-コントロール-ウォッチドッグ**
+- **mssql-controller**
+- **mssql-dns**
+- **mssql-hadoop**
+- **mssql-mleap-serving-runtime**
+- **mssql-mlserver-py-runtime**
+- **mssql-mlserver-r-runtime**
+- **mssql-monitor-collectd**
+- **mssql-monitor-elasticsearch**
+- **mssql-monitor-fluentbit**
+- **mssql-monitor-grafana**
+- **mssql-monitor-influxdb**
+- **mssql-monitor-kibana**
+- **mssql-monitor-telegraf**
+- **mssql-security-domainctl**
+- **mssql-security-knox**
+- **mssql-security-support**
+- **mssql-server**
+- **mssql-server-controller**
+- **mssql-server-data**
+- **mssql-サーバー-ha**
+- **mssql-service-proxy**
+- **mssql-ssis-app-runtime**
 
- - **mssql-appdeploy-init**
- - **mssql-monitor-fluentbit**
- - **mssql-monitor-collectd**
- - **mssql-server-data**
- - **mssql-hadoop**
- - **mssql-monitor-elasticsearch**
- - **mssql-monitor-influxdb**
- - **mssql-security-knox**
- - **mssql-mlserver-r-runtime**
- - **mssql-mlserver-py-runtime**
- - **mssql-controller**
- - **mssql-server-controller**
- - **mssql-monitor-grafana**
- - **mssql-monitor-kibana**
- - **mssql-service-proxy**
- - **mssql-app-service-proxy**
- - **mssql-ssis-app-runtime**
- - **mssql-monitor-telegraf**
- - **mssql-mleap-serving-runtime**
- - **mssql-security-support**
 
 ## <a id="automated"></a> 自動スクリプト
 
@@ -113,7 +117,7 @@ ms.locfileid: "69652368"
 
 ## <a name="install-tools-offline"></a>ツールをオフラインでインストールする
 
-ビッグ データ クラスターの展開には、**Python**、**azdata**、**kubectl** など、いくつかのツールが必要です。 これらのツールをオフライン サーバーにインストールするには、次の手順に従います。
+ビッグデータクラスターのデプロイには、 **Python**、 `azdata`、 **kubectl**など、いくつかのツールが必要です。 これらのツールをオフライン サーバーにインストールするには、次の手順に従います。
 
 ### <a id="python"></a> Python をオフラインでインストールする
 
@@ -135,13 +139,13 @@ ms.locfileid: "69652368"
 
 ### <a id="azdata"></a> azdata をオフラインでインストールする
 
-1. インターネット アクセスと [Python](https://wiki.python.org/moin/BeginnersGuide/Download) があるコンピューターで、次のコマンドを実行して、すべての **azdata** パッケージを現在のフォルダーにダウンロードします。
+1. インターネットアクセスと[Python](https://wiki.python.org/moin/BeginnersGuide/Download)が搭載されたコンピューターで、次のコマンドを実行し`azdata`て、すべてのパッケージを現在のフォルダーにダウンロードします。
 
    ```PowerShell
    pip download -r https://aka.ms/azdata
    ```
 
-1. ダウンロードしたパッケージと **requirements.txt** ファイルをターゲット コンピューターにコピーします。
+1. ダウンロードしたパッケージと`requirements.txt`ファイルをターゲットコンピューターにコピーします。
 
 1. ターゲット コンピューターで、前のファイルをコピーしたフォルダーを指定して次のコマンドを実行します。
 
@@ -159,7 +163,7 @@ ms.locfileid: "69652368"
 
 ## <a name="deploy-from-private-repository"></a>プライベート リポジトリから展開する
 
-プライベート リポジトリから展開するには、[展開ガイド](deployment-guidance.md)に記載されている手順を使用しますが、プライベート Docker リポジトリ情報を指定するカスタムの展開構成ファイルを使用します。 次の **azdata** コマンドは、**control. json** という名前のカスタム展開構成ファイルの Docker 設定を変更する方法を示しています。
+プライベート リポジトリから展開するには、[展開ガイド](deployment-guidance.md)に記載されている手順を使用しますが、プライベート Docker リポジトリ情報を指定するカスタムの展開構成ファイルを使用します。 次`azdata`のコマンドは、という名前`control.json`のカスタム展開構成ファイルの Docker 設定を変更する方法を示しています。
 
 ```bash
 azdata bdc config replace --config-file custom/control.json --json-values "$.spec.docker.repository=<your-docker-repository>"
@@ -167,7 +171,7 @@ azdata bdc config replace --config-file custom/control.json --json-values "$.spe
 azdata bdc config replace --config-file custom/control.json --json-values "$.spec.docker.imageTag=<your-docker-image-tag>"
 ```
 
-展開により、docker のユーザー名とパスワードの入力が求められます。または、**DOCKER_USERNAME** 環境変数と **DOCKER_PASSWORD** 環境変数でこれらを指定することもできます。
+デプロイによって、docker のユーザー名とパスワードの入力が求められます`DOCKER_USERNAME` 。 `DOCKER_PASSWORD`また、との環境変数で指定することもできます。
 
 ## <a name="next-steps"></a>次の手順
 

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: 158009e9-8069-4741-8085-c14a5518d3fc
 author: lrtoyou1223
 ms.author: lle
-ms.openlocfilehash: 5e2a949511eea455c20880e053b64659b8f9c15f
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 76bb6ec47b0cfce0fb8e5f5e98f9e208f3b678b3
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67992350"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70152729"
 ---
 # <a name="cleanse-data-using-reference-data-external-knowledge"></a>参照データ (外部) のナレッジを使用したデータのクレンジング
 
@@ -56,7 +56,7 @@ ms.locfileid: "67992350"
  データ クレンジングを実行するには、DQS_MAIN データベースの dqs_kb_editor ロールまたは dqs_kb_operator ロールが必要です。  
   
 ##  <a name="Cleanse"></a> 参照データのナレッジを使用したデータのクレンジング  
- このトピックでは、引き続き、前のトピック「[参照データへのドメインまたは複合ドメインのアタッチ](../data-quality-services/attach-domain-or-composite-domain-to-reference-data.md)」で Windows Azure Marketplace の Melissa Data サービスにマップしたドメインを例として使います。 ここでは、同じドメインを使用して、いくつかのサンプルの米国の住所をクレンジングします。 データをクレンジングする手順は、「[DQS &#40;内部&#41; ナレッジを使用したデータのクレンジング](../data-quality-services/cleanse-data-using-dqs-internal-knowledge.md)」で説明されているものと同じです。 処理中に注意が必要な箇所には説明を補足しています。  
+ ここでは、Azure Marketplace の Melissa Data service を使用して、前のトピック「[ドメインまたは複合ドメインを参照データにアタッチする](../data-quality-services/attach-domain-or-composite-domain-to-reference-data.md)」でマップしたドメインを使用する例についても説明します。 ここでは、同じドメインを使用して、いくつかのサンプルの米国の住所をクレンジングします。 データをクレンジングする手順は、「[DQS &#40;内部&#41; ナレッジを使用したデータのクレンジング](../data-quality-services/cleanse-data-using-dqs-internal-knowledge.md)」で説明されているものと同じです。 処理中に注意が必要な箇所には説明を補足しています。  
   
 1.  データ品質プロジェクトを作成し、 **[クレンジング]** アクティビティを選択します。 「 [Create a Data Quality Project](../data-quality-services/create-a-data-quality-project.md)」を参照してください。  
   

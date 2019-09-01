@@ -26,12 +26,12 @@ ms.assetid: 736d8d9a-39f1-4bf8-b81f-2e56c134d12e
 author: stevestein
 ms.author: sstein
 manager: craigg
-ms.openlocfilehash: 12e5d699615018c2d9e20a8fd49953931850a106
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: 892ea01693d696508ec9dd5286d7b0a89306775e
+ms.sourcegitcommit: 3b1f873f02af8f4e89facc7b25f8993f535061c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "62918186"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70175934"
 ---
 # <a name="import-a-bacpac-file-to-create-a-new-user-database"></a>BACPAC ファイルのインポートによる新しいユーザー データベースの作成
   データ層アプリケーション (DAC) ファイル (.bacpac ファイル) をインポートすると、データを含んだ元のデータベースのコピーを、[!INCLUDE[ssDE](../../includes/ssde-md.md)] の新しいインスタンス上または [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] に作成することができます。 エクスポートとインポートという操作を組み合わせることで、DAC またはデータベースをインスタンス間で移行したり論理バックアップを作成したりすることが可能です。たとえば、 [!INCLUDE[ssSDS](../../includes/sssds-md.md)]に配置されているデータベースの社内用コピーを作成することもできます。  
@@ -101,9 +101,9 @@ ms.locfileid: "62918186"
   
 -   **[ローカル ディスクからインポート]** : **[参照]** をクリックしてローカル コンピューター内を参照するか、用意されている領域にパスを指定します。 パス名には、ファイル名および .bacpac 拡張子を含める必要があります。  
   
--   **Windows Azure からインポート**-Windows Azure コンテナーから BACPAC ファイルをインポートします。 このオプションを検証するためには、Windows Azure コンテナーに接続する必要があります。 このオプションでは、一時ファイル用のローカル ディレクトリを指定する必要もあります。 一時ファイルは、指定した場所に作成され、操作の完了後も残ります。  
+-   **Azure からインポート**-BACPAC ファイルを azure コンテナーからインポートします。 このオプションを検証するには、Azure コンテナーに接続する必要があります。 このオプションでは、一時ファイル用のローカル ディレクトリを指定する必要もあります。 一時ファイルは、指定した場所に作成され、操作の完了後も残ります。  
   
-     Windows Azure を参照するときに、1 つのアカウント内のコンテナーを切り替えることができます。 インポート操作を続行するには、1 つの .bacpac ファイルを指定する必要があります。 列は、 **名前**、 **サイズ**、または **更新日時**で並べ替えることができます。  
+     Azure を参照するときに、1 つのアカウント内のコンテナーを切り替えることができます。 インポート操作を続行するには、1 つの .bacpac ファイルを指定する必要があります。 列は、 **名前**、 **サイズ**、または **更新日時**で並べ替えることができます。  
   
      続行するには、インポートする .bacpac ファイルを指定し、 **[開く]** をクリックします。  
   
@@ -120,13 +120,13 @@ ms.locfileid: "62918186"
   
  続行するには、 **[次へ]** をクリックします。  
   
- **SQL database の場合。**  
+ **SQL Database の場合:**  
   
 -   **[新しいデータベース名]** : インポートするデータベースの名前を指定します。  
   
--   **エディションの[!INCLUDE[ssSDS](../../includes/sssds-md.md)]**  -指定[!INCLUDE[ssSDS](../../includes/sssds-md.md)]ビジネスまたは[!INCLUDE[ssSDS](../../includes/sssds-md.md)]Web です。 [!INCLUDE[ssSDS](../../includes/sssds-md.md)]のエディションの詳細については、Web サイト「 [SQL データベース](http://www.windowsazure.com/home/tour/database/) 」を参照してください。  
+-   エディション-Business また[!INCLUDE[ssSDS](../../includes/sssds-md.md)]は[!INCLUDE[ssSDS](../../includes/sssds-md.md)] Web を指定します。 **[!INCLUDE[ssSDS](../../includes/sssds-md.md)]** [!INCLUDE[ssSDS](../../includes/sssds-md.md)]のエディションの詳細については、Web サイト「 [SQL データベース](http://www.windowsazure.com/home/tour/database/) 」を参照してください。  
   
--   **データベースの最大サイズ (GB)** -ドロップダウン メニューを使用して、データベースの最大サイズを指定します。  
+-   **[データベースの最大サイズ (GB)]** : ドロップダウンメニューを使用して、データベースの最大サイズを指定します。  
   
  続行するには、 **[次へ]** をクリックします。  
   

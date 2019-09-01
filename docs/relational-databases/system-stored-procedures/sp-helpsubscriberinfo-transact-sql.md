@@ -1,5 +1,5 @@
 ---
-title: sp_helpsubscriberinfo (Transact-sql) |Microsoft Docs
+title: sp_helpsubscriberinfo (Transact-SQL) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
@@ -22,7 +22,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 08/03/2019
 ms.locfileid: "68771486"
 ---
-# <a name="sphelpsubscriberinfo-transact-sql"></a>sp_helpsubscriberinfo (Transact-sql)
+# <a name="sp_helpsubscriberinfo-transact-sql"></a>sp_helpsubscriberinfo (Transact-SQL)
 [!INCLUDE[appliesto-ss-asdbmi-xxxx-xxx-md](../../includes/appliesto-ss-asdbmi-xxxx-xxx-md.md)]
 
   サブスクライバーに関する情報を表示します。 このストアドプロシージャは、パブリッシャー側で任意のデータベースに対して実行されます。  
@@ -49,8 +49,8 @@ sp_helpsubscriberinfo [ [ @subscriber =] 'subscriber']
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
-|**パブリッシャー**|**sysname**|パブリッシャーの名前。|  
-|**サブスクライバー**|**sysname**|サブスクライバーの名前。|  
+|**publisher**|**sysname**|パブリッシャーの名前。|  
+|**subscriber**|**sysname**|サブスクライバーの名前。|  
 |**type**|**tinyint**|サブスクライバーの種類:<br /><br /> **0**  = データベース1 = ODBC データソース[!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]|  
 |**login**|**sysname**|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 認証のログイン ID。|  
 |**password**|**sysname**|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 認証のパスワード。|  

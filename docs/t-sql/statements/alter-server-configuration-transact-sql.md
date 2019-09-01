@@ -437,7 +437,7 @@ GO
   
 ```  
 
-### <a name="MemoryOptimized">メモリ内データベース オプションの設定</a>
+### <a name="MemoryOptimized"></a>メモリ内データベース オプションの設定
 
 **適用対象**: [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降
 

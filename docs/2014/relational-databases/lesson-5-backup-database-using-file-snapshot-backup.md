@@ -1,5 +1,5 @@
 ---
-title: 'レッスン 6: ソースからデータベースの移行のターゲット コンピューターに Windows Azure にオンプレミスのマシン |Microsoft Docs'
+title: 'レッスン 6: オンプレミスのソースマシンから Azure のターゲットコンピューターにデータベースを移行する |Microsoft Docs'
 ms.custom: ''
 ms.date: 03/06/2017
 ms.prod: sql-server-2014
@@ -10,29 +10,29 @@ ms.assetid: d9134ade-7b03-4c5c-8ed3-3bc369a61691
 author: MikeRayMSFT
 ms.author: mikeray
 manager: craigg
-ms.openlocfilehash: 1a5787a3f5aecd746ac9aafd5850e6109ebcd999
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: 3c91512bcc254a1ff778606726d54a9cdff7f67f
+ms.sourcegitcommit: 3b1f873f02af8f4e89facc7b25f8993f535061c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "66090696"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70175563"
 ---
-# <a name="lesson-6-migrate-a-database-from-a-source-machine-on-premises-to-a-destination-machine-in-windows-azure"></a>レッスン 6: 内部設置型のソース コンピューターから Windows Azure のターゲット コンピューターにデータベースを移行する
-  このレッスンでは、別の内部設置型コンピューターまたは Windows Azure 仮想マシンに存在している別の SQL Server が既にあるものと仮定します。 Windows Azure で SQL Server の仮想マシンを作成する方法については、次を参照してください。 [Windows Azure で SQL Server 仮想マシンのプロビジョニング](http://www.windowsazure.com/manage/windows/common-tasks/install-sql-server/)します。 Windows Azure で SQL Server 仮想マシンを準備した後、別のコンピューターの SQL Server Management Studio 経由でこの仮想マシンの SQL Server インスタンスに接続できることを確認します。  
+# <a name="lesson-6-migrate-a-database-from-a-source-machine-on-premises-to-a-destination-machine-in-azure"></a>レッスン 6: オンプレミスのソースマシンから Azure のターゲットコンピューターにデータベースを移行する
+  このレッスンでは、別のオンプレミスコンピューターまたは Azure の仮想マシンに存在する可能性がある別の SQL Server が既にあることを前提としています。 Azure で SQL Server 仮想マシンを作成する方法の詳細については、「 [azure での SQL Server 仮想マシンのプロビジョニング](http://www.windowsazure.com/manage/windows/common-tasks/install-sql-server/)」を参照してください。 Azure に SQL Server 仮想マシンをプロビジョニングした後、別のコンピューターの SQL Server Management Studio を使用して、この仮想マシンの SQL Server のインスタンスに接続できることを確認してください。  
   
  このレッスンは、次の手順を完了済みであることも前提としています。  
   
--   Windows Azure ストレージ アカウントを入手しました。  
+-   Azure Storage アカウントを持っています。  
   
--   Windows Azure ストレージ アカウントにコンテナーを作成しました。  
+-   Azure Storage アカウントでコンテナーを作成しました。  
   
 -   読み取り、書き込み、一覧表示の権限のあるコンテナーに対するポリシーを作成しました。 SAS キーも生成しました。  
   
 -   ソース コンピューターで SQL Server 資格情報を作成しました。  
   
--   Windows Azure で対象の SQL Server 仮想マシンを既に作成しました。 仮想マシンは、SQL Server 2014 を含んでいるプラットフォーム イメージを選択して作成することをお勧めします。  
+-   Azure に仮想マシン SQL Server 仮想マシンが既に作成されています。 仮想マシンは、SQL Server 2014 を含んでいるプラットフォーム イメージを選択して作成することをお勧めします。  
   
- 内部設置型 SQL Server から Windows Azure の別の仮想マシンにデータベースを移行するには、次の手順を実行します。  
+ オンプレミスの SQL Server から Azure の別の仮想マシンにデータベースを移行するには、次の手順を実行します。  
   
 1.  ソース コンピューター (このチュートリアルでは内部設置型コンピューター) で、SQL Server Management Studio のクエリ ウィンドウを開きます。 次のステートメントを実行して、データベースをデタッチし、別のコンピューターに移動します。  
   
@@ -48,9 +48,9 @@ ms.locfileid: "66090696"
   
         1.  ソース コンピューターの SQL Server Management Studio 経由でターゲット コンピューターに接続します。  または、ターゲット コンピューターで SQL Server Management Studio を直接起動します。  
   
-        2.  標準のツール バーで、**新しいクエリ**します。  
+        2.  標準ツールバーで、 **[新しいクエリ]** をクリックします。  
   
-        3.  次の例をコピーしてクエリ ウィンドウに貼り付け、必要に応じて変更します。 次のステートメントは、ストレージ コンテナーの共有アクセス証明書を格納する SQL Server の資格情報を作成します。  
+        3.  次の例をコピーしてクエリ ウィンドウに貼り付け、必要に応じて変更します。 次のステートメントは、ストレージコンテナーの共有アクセス証明書を格納するための SQL Server 資格情報を作成します。  
   
             ```sql  
   
@@ -91,7 +91,7 @@ ms.locfileid: "66090696"
   
              この手順が終了すると、ソース コンピューターからバックアップされた暗号化証明書がターゲット コンピューターにインポートされます。 次に、ターゲット コンピューターでデータ ファイルをアタッチできます。  
   
-    2.  次に、FOR ATTACH オプションを使用して Windows Azure ストレージの既存のファイルを指すデータ ファイルとログ ファイルを持つデータベースを作成します。 クエリ ウィンドウで、次のステートメントを実行します。  
+    2.  次に、FOR ATTACH オプションを使用して Azure Storage 内の既存のファイルを指すデータファイルとログファイルを含むデータベースを作成します。 クエリ ウィンドウで、次のステートメントを実行します。  
   
         ```sql  
   
@@ -124,7 +124,7 @@ ms.locfileid: "66090696"
   
  暗号化されたデータベースがデータ移動なしで別のコンピューター インスタンスに転送されたことに注意してください。  
   
- SQL Server Management Studio を使用して、Windows Azure ストレージの既存のファイルを指すデータ ファイルとログ ファイルを持つデータベースを作成するには、次の手順を実行します。  
+ SQL Server Management Studio ユーザーインターフェイスを使用して Azure Storage 内の既存のファイルを指すデータファイルとログファイルを含むデータベースを作成するには、次の手順を実行します。  
   
 1.  **オブジェクト エクスプローラー**で、SQL Server データベース エンジンのインスタンスに接続し、そのインスタンスを展開します。  
   
@@ -132,13 +132,13 @@ ms.locfileid: "66090696"
   
 3.  SQL Server 2014 CTP2 以降がインストールされたターゲット コンピューターに接続します。 ターゲット コンピューターを準備するには、ターゲット コンピューターで、TestDB1 を格納した同じコンテナーを指す SQL Server 資格情報を作成する必要があります。 同じコンピューターで再アタッチする場合、別の資格情報を作成する必要はありません。  
   
-4.  **オブジェクト エクスプ ローラー**を右クリックして**データベース**クリック**アタッチ**。  
+4.  **オブジェクトエクスプローラー**で、 **[データベース]** を右クリックし、 **[アタッチ]** をクリックします。  
   
-5.  **データベースのアタッチ**ダイアログ ボックスで、アタッチするデータベースを指定する をクリックして**追加**します。 **データベース ファイルの検索**ダイアログ ウィンドウ。  
+5.  **[データベースのアタッチ]** ダイアログボックスで、アタッチするデータベースを指定するために、 **[追加]** をクリックします。 **[データベースファイルの検索]** ダイアログウィンドウで次のようにします。  
   
-     データベース データ ファイルの場所を入力:`https://teststorageaccnt.blob.core.windows.net/testcontainer/`します。  
+     [データベースデータファイルの場所] に`https://teststorageaccnt.blob.core.windows.net/testcontainer/`、「」と入力します。  
   
-     ファイル名を入力:`TestDB1Data.mdf`します。  
+     [ファイル名] に「 `TestDB1Data.mdf`」と入力します。  
   
 6.  **[OK]** をクリックします。  
   
@@ -146,6 +146,6 @@ ms.locfileid: "66090696"
   
  **次のレッスン:**  
   
- [レッスン 7: Windows Azure ストレージにデータ ファイルを移動します。](../relational-databases/lesson-6-generate-activity-and-backup-log-using-file-snapshot-backup.md)  
+ [レッスン 7: データファイルを Azure Storage に移動する](../relational-databases/lesson-6-generate-activity-and-backup-log-using-file-snapshot-backup.md)  
   
   

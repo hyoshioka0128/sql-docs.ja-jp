@@ -10,12 +10,12 @@ ms.assetid: 32bd8af8-a832-4dc8-afff-01668e6b2b51
 author: rothja
 ms.author: jroth
 manager: craigg
-ms.openlocfilehash: b1a6158dca30d6419be59cf5eb68dff9892cc2dc
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: 1b2f4b080287dd4481a121def388f327112f21ae
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "62872668"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70154612"
 ---
 # <a name="database-engine-tutorials"></a>データベース エンジンのチュートリアル
   このセクションには [!INCLUDE[ssDECurrent](../includes/ssdecurrent-md.md)]のチュートリアルが含まれます。  
@@ -44,17 +44,17 @@ ms.locfileid: "62872668"
  [チュートリアル: ポリシー ベースの管理を使用したサーバーの管理](policy-based-management/tutorial-administering-servers-by-using-policy-based-management.md)  
  このチュートリアルでは、サイト管理の基準を適用するポリシーを作成する方法を説明します。  
   
- [チュートリアル: ポリシー ベースの管理を使用して、ベスト プラクティスの評価](../tutorials/tutorial-evaluating-best-practices-by-using-policy-based-management.md)  
+ [チュートリアル: ポリシーベースの管理を使用したベストプラクティスの評価](../tutorials/tutorial-evaluating-best-practices-by-using-policy-based-management.md)  
  このチュートリアルでは、既知の問題について [!INCLUDE[ssDE](../includes/ssde-md.md)] のインスタンスを分析するために使用できるポリシーを作成する方法を説明します。  
   
- [チュートリアル: Windows Azure BLOB ストレージ サービスへの SQL Server のバックアップと復元](tutorial-sql-server-backup-and-restore-to-azure-blob-storage-service.md)  
- このチュートリアルでは、Windows Azure BLOB ストレージ サービスへの SQL Server のバックアップと復元を実行する方法について説明します。  
+ [チュートリアル: Azure Blob Storage サービスへのバックアップと復元の SQL Server](tutorial-sql-server-backup-and-restore-to-azure-blob-storage-service.md)  
+ このチュートリアルでは、SQL Server バックアップを実行し、Azure Blob Storage サービスに復元する方法について説明します。  
   
- [チュートリアル: Windows Azure ストレージ サービスでは、SQL Server データ ファイル](tutorial-use-azure-blob-storage-service-with-sql-server-2016.md)  
- このチュートリアルにより、Windows Azure BLOB ストレージ サービスに SQL Server データ ファイルを直接格納する方法について把握できます。  
+ [チュートリアル: Azure Storage サービスのデータファイルの SQL Server](tutorial-use-azure-blob-storage-service-with-sql-server-2016.md)  
+ このチュートリアルでは、Azure Blob ストレージサービスに SQL Server データファイルを直接格納する方法について説明します。  
   
-## <a name="see-also"></a>参照  
- [SQL Server 2014 チュートリアル](../tutorials/tutorials-for-sql-server-2014.md)   
+## <a name="see-also"></a>関連項目  
+ [SQL Server 2014 のチュートリアル](../tutorials/tutorials-for-sql-server-2014.md)   
  [TechNet WIKI:SQL Server 2012 サンプル](https://go.microsoft.com/fwlink/?linkID=220734)  
   
   

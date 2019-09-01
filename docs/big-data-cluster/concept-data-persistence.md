@@ -5,16 +5,16 @@ description: SQL Server 2019 ビック データ クラスターでのデータ�
 author: mihaelablendea
 ms.author: mihaelab
 ms.reviewer: mikeray
-ms.date: 07/24/2019
+ms.date: 08/28/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: ad5efd9c6d7a3750dcf3e35ae4d651e646060ed5
-ms.sourcegitcommit: 9348f79efbff8a6e88209bb5720bd016b2806346
+ms.openlocfilehash: 7a12afd88f0eb83de7d5c5bd4a3735e71e037138
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69028591"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155347"
 ---
 # <a name="data-persistence-with-sql-server-big-data-cluster-on-kubernetes"></a>Kubernetes 上の SQL Server ビッグ データ クラスターでのデータ永続化
 
@@ -83,7 +83,7 @@ Kubeadm には、組み込みのストレージ クラスは付属していま�
 azdata bdc config init --source aks-dev-test --target custom
 ```
 
-これにより、**cluster.json** および **control.json** という 2 つのファイルが作成され、手動で編集するか、または **azdata bdc config** コマンドを使用してカスタマイズすることができます。 jsonpath および jsonpatch ライブラリを組み合わせて使用すると、構成ファイルを編集する手段を提供できます。
+これにより、 **bdc**と**control. json**が2つ作成されます。これらのファイルは、手動で編集するか、 **azdata bdc config**コマンドを使用してカスタマイズできます。 jsonpath および jsonpatch ライブラリを組み合わせて使用すると、構成ファイルを編集する手段を提供できます。
 
 
 ### <a id="config-samples"></a>ストレージ クラス名および要求サイズを構成する
@@ -109,7 +109,7 @@ azdata bdc config replace --config-file custom/control.json --json-values "$.spe
   "patch": [
     {
       "op": "replace",
-      "path": "$.spec.pools[?(@.spec.type == 'Storage')].spec",
+      "path": "$.spec.resources.storage-0.spec",
       "value": {
         "type":"Storage",
         "replicas":2,
@@ -134,7 +134,7 @@ azdata bdc config replace --config-file custom/control.json --json-values "$.spe
 パッチ ファイルを適用します。 **azdata bdc config patch** コマンドを使用して、JSON パッチ ファイルでの変更を適用します。 次の例では、patch.json ファイルをターゲットの展開構成ファイルである custom.json に適用します。
 
 ```bash
-azdata bdc config patch --config-file custom/cluster.json --patch-file ./patch.json
+azdata bdc config patch --config-file custom/bdc.json --patch-file ./patch.json
 ```
 
 ## <a name="next-steps"></a>次の手順

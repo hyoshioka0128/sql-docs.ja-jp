@@ -5,27 +5,39 @@ description: この記事では、(プレビュー) の最新[!INCLUDE[big-data-
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: mihaelab
-ms.date: 08/21/2019
+ms.date: 08/28/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 66a317fb68dff2dc4914b80f2e70655e1bba2773
-ms.sourcegitcommit: 5e838bdf705136f34d4d8b622740b0e643cb8d96
+ms.openlocfilehash: 63caee60bc96c5ff8579471ae0a98322e4fc99b7
+ms.sourcegitcommit: 71fac5fee00e0eca57e555f44274dd7e08d47e1e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69653439"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70160690"
 ---
-# <a name="release-notes-for-big-data-clusters-on-sql-server"></a>SQL Server 上のビッグ データ クラスターのリリース ノート
+# <a name="release-notes-for-sql-server-big-data-clusters"></a>SQL Server ビッグデータクラスターのリリースノート
 
 [!INCLUDE[tsql-appliesto-ssver15-xxxx-xxxx-xxx](../includes/tsql-appliesto-ssver15-xxxx-xxxx-xxx.md)]
 
 この記事では、の[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]最新リリースに関する更新プログラムと既知の問題の一覧を示します。
 
-[!INCLUDE [Limited public preview note](../includes/big-data-cluster-preview-note.md)]
+## <a id="rc"></a>リリース候補 (8 月)
 
->[!NOTE]
->[!INCLUDE[ssbdc-rcnote](../includes/ssbigdataclusters-ver15-rcnote.md)]
+以下のセクションでは、SQL Server 2019 リリース候補のビッグデータクラスターの新機能と既知の問題について説明します。
+
+### <a name="whats-new"></a>新機能
+
+|新機能または更新 | 詳細 |
+|:---|:---|
+|Always On 可用性グループの SQL Server |SQL Server ビッグデータクラスターをデプロイするときに、次の機能を提供する可用性グループを作成するようにデプロイを構成できます。<br/><br/>-高可用性 <br/><br/>-読み取り-スケールアウト <br/><br/>-データプールへのデータ挿入のスケールアウト<br/><br>「[高可用性を使用したデプロイ」を](../big-data-cluster/deployment-high-availability.md)参照してください。 |
+|`azdata` |[インストールマネージャー](./deploy-install-azdata-linux-package.md)を使用したツールのインストールの簡略化<br/><br/>[`azdata notebook`メニュー](./reference-azdata-notebook.md)<br/><br/>[`azdata bdc status`メニュー](./reference-azdata-bdc-status.md) |
+|Azure Data Studio|[Azure Data Studio のリリース候補ビルドをダウンロード](deploy-big-data-tools.md#download-and-install-azure-data-studio-sql-server-2019-release-candidate-rc)します。<br/><br/>SQL Server 2019 ガイド Jupyter Book を通じて、トラブルシューティングノートブックを追加しました。<br/><br/>コントローラーのログインエクスペリエンスが追加されました。<br/><br/>サービスエンドポイントを表示したり、クラスターの正常性状態を表示したり、トラブルシューティングノートブックにアクセスしたりするためのコントローラーダッシュボードを追加しました。<br/><br/>ノートブックセルの出力/編集のパフォーマンスが向上しました。|
+| &nbsp; | &nbsp; |
+
+### <a name="known-issues"></a>既知の問題
+
+SQL Server 2019 ビッグデータクラスターリリース候補更新ビルド番号は`15.0.1900.47`です。
 
 ## <a id="ctp32"></a> CTP 3.2 (7 月)
 
@@ -48,13 +60,13 @@ ms.locfileid: "69653439"
 
 #### <a name="polybase"></a>PolyBase
 
-- カウントが 1000 を超える場合の TOP 句のプッシュダウンは、このリリースではサポートされません。 このような場合は、リモート データ ソースからすべての行が読み取られます。
+- カウントが 1000 を超える場合の TOP 句のプッシュダウンは、このリリースではサポートされません。 このような場合は、リモート データ ソースからすべての行が読み取られます。 (リリース候補で修正済み)
 
 - 外部データ ソースへの併置結合のプッシュダウンは、このリリースではサポートされません。 たとえば、分布の種類が ROUND_ROBIN である 2 つのデータ プール テーブルをプッシュダウンすると、そのデータは、結合操作を実行する SQL マスター インスタンスまたはコンピューティング プール インスタンスに渡されます。
 
 #### <a name="compute-pool"></a>コンピューティング プール
 
-- ビッグ データ クラスターのデプロイでは、1 つのインスタンスを持つコンピューティング プールのみがサポートされます。
+- ビッグ データ クラスターのデプロイでは、1 つのインスタンスを持つコンピューティング プールのみがサポートされます。 (リリース候補で修正済み)
 
 #### <a name="storage-pool"></a>記憶域プール
 

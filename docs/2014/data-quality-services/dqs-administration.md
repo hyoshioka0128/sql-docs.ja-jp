@@ -14,12 +14,12 @@ ms.assetid: 9940ef5d-f6f6-4dec-9414-1077a4d7f12b
 author: lrtoyou1223
 ms.author: lle
 manager: craigg
-ms.openlocfilehash: cc8f84eb268fab041b65e4fc2faced7ee9b0103a
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: 7f4ddc16bdfcc7e0d3acdfabe83e81f3d06c0b93
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "65480621"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70154439"
 ---
 # <a name="dqs-administration"></a>DQS 管理
   [!INCLUDE[ssDQSnoversion](../includes/ssdqsnoversion-md.md)] (DQS) では、 [!INCLUDE[ssDQSServer](../includes/ssdqsserver-md.md)]で実行されるさまざまな DQS アクティビティを管理し、DQS アクティビティに関連するサーバー レベルのプロパティを構成し、参照データ サービスの設定を構成し、DQS ログの設定を構成できます。 これらの作業は、 **の** 管理 [!INCLUDE[ssDQSClient](../includes/ssdqsclient-md.md)]機能を使用して行います。 DQS でのセキュリティ アクセス (ロール) に基づいて、特定の管理機能へのアクセスが許可/禁止されます。  
@@ -32,7 +32,7 @@ ms.locfileid: "65480621"
   
 -   DQS 管理者は、 [!INCLUDE[ssDQSServer](../includes/ssdqsserver-md.md)] から [!INCLUDE[ssDQSClient](../includes/ssdqsclient-md.md)]での DQS アクティビティを監視でき、必要に応じて、実行中のアクティビティを *終了* させたり、アクティビティ内で実行中のプロセスを *停止* させたりできます。  
   
--   Windows Azure Marketplace との接続の設定や、ダイレクト サード パーティ参照データ サービス プロバイダーの管理など、参照データ サービスの設定を構成します。  
+-   Azure Marketplace との接続の設定や、ダイレクトサードパーティ参照データサービスプロバイダーの管理など、参照データサービスの設定を構成します。  
   
 -   クレンジングおよび照合アクティビティのしきい値を構成します。  
   
@@ -49,7 +49,7 @@ ms.locfileid: "65480621"
 ### <a name="configuration"></a>構成  
  **の** [構成] [!INCLUDE[ssDQSClient](../includes/ssdqsclient-md.md)] 画面では、DQS 管理者は次のことを行うことができます。  
   
--   **[参照データ]** : 参照データ サービス プロバイダー(Windows Azure Marketplace プロバイダーまたはダイレクト参照データ サービス プロバイダー) を構成します。 参照データ サービス プロバイダーを設定した後は、ナレッジ ベースでのドメイン管理アクティビティの間にドメイン/複合ドメインと参照データをマップし、データ品質プロジェクトでのクレンジング アクティビティに同じナレッジ ベースを使用できます。 また、インターネットに接続して Windows Azure Marketplace を使用するためのプロキシ設定を指定できます。  
+-   **[参照データ]** : 参照データ サービス プロバイダーAzure Marketplace またはダイレクト参照データサービスプロバイダー。 参照データ サービス プロバイダーを設定した後は、ナレッジ ベースでのドメイン管理アクティビティの間にドメイン/複合ドメインと参照データをマップし、データ品質プロジェクトでのクレンジング アクティビティに同じナレッジ ベースを使用できます。 また、Azure Marketplace を使用するためにインターネットに接続するためのプロキシ設定を指定することもできます。  
   
 -   **[全般設定]** :データ クレンジングおよびデータ照合のしきい値、および [!INCLUDE[ssDQSClient](../includes/ssdqsclient-md.md)] でのプロファイリングに対する通知を有効にするかどうかを指定できます。 これらのしきい値は、データ品質プロジェクトでのコンピューター支援型のクレンジングおよび照合アクティビティの間に、DQS によって使用されます。  
   

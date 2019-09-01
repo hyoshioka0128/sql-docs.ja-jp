@@ -8,13 +8,13 @@ author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: ''
 ms.custom: ''
-ms.date: 05/08/2019
-ms.openlocfilehash: be255547163bb37d1222e1c9b21e123f35d2888e
-ms.sourcegitcommit: 01c8df19cdf0670c02c645ac7d8cc9720c5db084
+ms.date: 08/27/2019
+ms.openlocfilehash: 81c9af6b8d4b711c8e8511b94364bbe498470007
+ms.sourcegitcommit: a1ddeabe94cd9555f3afdc210aec5728f0315b14
 ms.translationtype: MTE75
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70000290"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70123109"
 ---
 # <a name="whats-new-in-sql-server-reporting-services-ssrs"></a>SQL Server Reporting Services (SSRS) の新機能
 
@@ -32,9 +32,21 @@ SQL Server 2017 Reporting Services をダウンロードするには、「 **[Mi
 
 ::: moniker range=">=sql-server-ver15||=sqlallproducts-allversions"
 
-## <a name="sql-server-2019-preview-reporting-services"></a>SQL Server 2019 プレビュー Reporting Services
+## <a name="sql-server-2019-reporting-services-preview"></a>SQL Server 2019 Reporting Services プレビュー
 
-[!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)]プレビュー Reporting Services は、 **[Microsoft ダウンロードセンター](https://www.microsoft.com/download/details.aspx?id=100122)** からダウンロードできます。
+[!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)]Reporting Services プレビューは、 [Microsoft ダウンロードセンター](https://www.microsoft.com/download/details.aspx?id=100122)からダウンロードできます。
+
+### <a name="azure-sql-managed-instance-support"></a>Azure SQL Managed Instance のサポート
+
+VM またはデータセンターでホストされている Azure SQL Managed Instance (MI) で SQL Server Reporting Services (SSRS) に使用されるデータベースカタログをホストできるようになりました。 SQL MI への接続には、データベース資格情報の使用に制限されています。
+
+### <a name="power-bi-premium-dataset-support"></a>データセットのサポートの Power BI Premium
+
+Microsoft レポートビルダーまたは SQL Server Data Tools (SSDT) を使用して、Power BI データセットに接続できます。 次に、SQL Server Analysis Services 接続を使用してこれらのレポートを SSRS 2019 に発行できます。 ユーザーは、保存されている Windows ユーザー名とパスワードを使用してシナリオを有効にする必要があります。
+
+### <a name="alttext-alternative-text-support-for-report-elements"></a>AltText (代替テキスト) レポート要素のサポート
+
+レポート作成時に、ツールヒントを使用してレポートの各要素のテキストを指定できます。 スクリーンリーダーテクノロジは、これらのヒントを適切に識別します。
 
 ::: moniker-end
 
@@ -67,7 +79,8 @@ SQL Server 2017 Reporting Services をダウンロードするには、「 **[Mi
 * [Microsoft SQL Server レポート ビルダー](https://go.microsoft.com/fwlink/?LinkId=734968)のダウンロード
 * [SQL Server Data Tools - リリース候補](https://docs.microsoft.com/sql/ssdt/sql-server-data-tools-ssdt-release-candidate)のダウンロード
 
-> **注**: DAX のクエリ デザイナーは、SQL Server 2016+ に組み込まれた SSAS 表形式のデータ ソースでのみ使用できます。
+> [!NOTE]
+> DAX のクエリ デザイナーは、SQL Server 2016+ に組み込まれた SSAS 表形式のデータ ソースでのみ使用できます。
 ::: moniker-end
 
 ## <a name="ssrs-2016"></a>SSRS 2016

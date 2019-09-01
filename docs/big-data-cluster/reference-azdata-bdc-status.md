@@ -5,37 +5,51 @@ description: azdata bdc status コマンドに関するリファレンス記事�
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: mihaelab
-ms.date: 08/21/2019
+ms.date: 08/28/2019
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 2b8a11c912304690f6bfb4580017bb28da29444f
-ms.sourcegitcommit: 5e838bdf705136f34d4d8b622740b0e643cb8d96
+ms.openlocfilehash: 712a5ac51f13450fe5cf6b8cc13400d5666eb4a0
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69653475"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155196"
 ---
 # <a name="azdata-bdc-status"></a>azdata bdc status
 
-[!INCLUDE[tsql-appliesto-ssver15-xxxx-xxxx-xxx](../includes/tsql-appliesto-ssver15-xxxx-xxxx-xxx.md)]
+[!INCLUDE[tsql-appliesto-ssver15-xxxx-xxxx-xxx](../includes/tsql-appliesto-ssver15-xxxx-xxxx-xxx.md)]  
 
-以下の記事では、**azdata** ツールでの **bdc hdfs** コマンドのリファレンスを提供します。 他の **azdata** コマンドの詳細については、[azdata リファレンス](reference-azdata.md)に関するページを参照してください。
+この記事は、 **azdata**のリファレンス記事です。 
 
 ## <a name="commands"></a>コマンド
 |     |     |
 | --- | --- |
-[azdata bdc status show](#azdata-bdc-status-show) | ビッグ データ クラスターの状態が表示されます。
+[azdata bdc status show](#azdata-bdc-status-show) | BDC の状態を表示します。
 ## <a name="azdata-bdc-status-show"></a>azdata bdc status show
-ビッグ データ クラスターの状態が表示されます。
+BDC の状態を表示します。
 ```bash
-azdata bdc status show 
+azdata bdc status show [--resource -r] 
+                       [--all -a]
 ```
 ### <a name="examples"></a>使用例
 ユーザーがログインしている BDC の状態。
 ```bash
 azdata bdc status show
 ```
+すべてのリソースのインスタンスを含む BDC の状態。
+```bash
+azdata bdc status show --all
+```
+制御リソースを含むサービスの BDC の状態。
+```bash
+azdata bdc status show --resource control
+```
+### <a name="optional-parameters"></a>省略可能なパラメーター
+#### `--resource -r`
+このリソースに関連付けられているサービスを取得します。
+#### `--all -a`
+サービス内の各リソースのすべてのインスタンスを表示します。
 ### <a name="global-arguments"></a>グローバル引数
 #### `--debug`
 すべてのデバッグ ログを表示するようにログの詳細レベルを上げます。
@@ -50,4 +64,6 @@ JMESPath クエリ文字列。 詳細と例については、[http://jmespath.or
 
 ## <a name="next-steps"></a>次の手順
 
-他の **azdata** コマンドの詳細については、[azdata リファレンス](reference-azdata.md)に関するページを参照してください。 **Azdata**ツールをインストールする方法の詳細については、「[管理[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ver15.md)]する azdata をインストール](deploy-install-azdata.md)する」を参照してください。
+- 他の **azdata** コマンドの詳細については、[azdata リファレンス](reference-azdata.md)に関するページを参照してください。 
+
+- **azdata** ツールをインストールする方法の詳細については、[SQL Server 2019 ビッグ データ クラスターを管理する azdata のインストール](deploy-install-azdata.md)に関するページを参照してください。

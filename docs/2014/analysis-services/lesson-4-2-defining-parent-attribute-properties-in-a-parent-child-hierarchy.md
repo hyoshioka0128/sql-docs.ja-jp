@@ -101,7 +101,7 @@ ms.locfileid: "69494017"
   
      次の図は、Employees 階層を変更したようすを示しています。 Stephen Y. Jiang は、本人自身の部下として表示されなくなっています。  
   
-     変更された![Employees 階層]変更された(../../2014/tutorials/media/l4-employee-2.png "Employees 階層")  
+     ![Employees 階層](../../2014/tutorials/media/l4-employee-2.png "Employees 階層")  
   
 ## <a name="next-task-in-lesson"></a>このレッスンの次の作業  
  [属性メンバーの自動的なグループ化](lesson-4-3-automatically-grouping-attribute-members.md)  

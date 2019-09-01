@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.assetid: f6cd850f-b01b-491f-972c-f966b9fe4190
 author: lrtoyou1223
 ms.author: lle
-ms.openlocfilehash: e3d9346d301357fff052566cf66b7ce133b5e4ef
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 6c1fc5dd3dd59ccde2a1d95ab0940cfdadde7198
+ms.sourcegitcommit: 3b1f873f02af8f4e89facc7b25f8993f535061c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67985283"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70176295"
 ---
 # <a name="master-data-services-installation-and-configuration"></a>マスター データ サービスのイントールと構成
 
@@ -45,8 +45,8 @@ ms.locfileid: "67985283"
 - Windows Server 2012 マシンに [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] をインストールするときに、Web アプリケーション サイトでスクリプトを許可するように Internet Explorer セキュリティ強化を構成しなければならない場合があります。 そうしないと、サーバー コンピューター上のサイトの参照が失敗します。
 - Web アプリケーションで作業するには、Silverlight 5 をクライアント コンピューターにインストールする必要があります。 Silverlight の必要なバージョンがない場合、Web アプリケーションで Silverlight を使用する部分に移動したときに、Silverlight をインストールするよう要求されます。 Silverlight 5 は **[ここ](https://www.microsoft.com/silverlight/)** からインストールできます。
 
-## <a name="includessmdsshortmdincludesssmdsshort-mdmd-on-an-azure-virtual-machine"></a>Azure 仮想マシン上の [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]
-既定では、[!INCLUDE[ssCurrent_md](../includes/sscurrent-md.md)] が既にインストールされている Azure 仮想マシンを起動すると、[!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] もインストールされます。 
+## <a name="includessmdsshort_mdincludesssmdsshort-mdmd-on-an-azure-virtual-machine"></a>Azure 仮想マシン上の [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]
+既定では、が[!INCLUDE[ssCurrent_md](../includes/sscurrent-md.md)]既にインストールされている Azure 仮想マシンを起動すると、 [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]もインストールされます。 
 
 次の手順として、インターネット インフォメーション サービス (IIS) をインストールします。 「[IIS のインストールと構成](#InstallIIS)」を参照してください。 
 
@@ -127,18 +127,18 @@ ms.locfileid: "67985283"
   
 2.  **[データベースの作成]** をクリックして、 **データベースの作成ウィザード** で **[次へ]** をクリックします。  
   
-3.  **データベース サーバー**  ページで、SQL Server インスタンスを指定します。 
+3.  **[データベースサーバー]** ページで、SQL Server インスタンスを指定します。 
 
-    >  [!INCLUDE[sqlv15](../includes/sssqlv15-md.md)] SQL Server マネージ インスタンスのサポートを追加します。 値を設定**SQL Server インスタンス**を Azure SQL Database のホスト インスタンスを管理します。 たとえば、`xxxxxx.xxxxxx.database.windows.net` のようにします。
+    >  [!INCLUDE[sqlv15](../includes/sssqlv15-md.md)]SQL Server Managed Instance のサポートを追加します。 **SQL Server インスタンス**の値を、Azure SQL Database マネージインスタンスのホストに設定します。 たとえば、`xxxxxx.xxxxxx.database.windows.net` のようにします。
 
-4. 選択、**認証の種類**順にクリックします**Test-connection**を選択した認証の種類の資格情報を使用してデータベースに接続できることを確認します。 **[次へ]** をクリックします。
+4. 認証の**種類**を選択し、 **[接続のテスト]** をクリックして、選択した認証の種類の資格情報を使用してデータベースに接続できることを確認します。 **[次へ]** をクリックします。
 
-    >[!INCLUDE[sqlv15](../includes/sssqlv15-md.md)]、Azure SQL Database に接続するためのマネージ インスタンス、次の認証の種類のいずれかを使用します。
+    >[!INCLUDE[sqlv15](../includes/sssqlv15-md.md)]で Azure SQL Database マネージインスタンスに接続するには、次のいずれかの認証の種類を使用します。
     >
-    >- Azure Active Directory 統合認証:**現在のユーザー-Active Directory 統合**
-    >- SQL Server 認証:**SQL Server アカウント**します。
+    >- Azure Active Directory 統合認証:**現在のユーザー– Active Directory 統合**
+    >- 認証の SQL Server:**SQL Server アカウント**。
     >
-    >ユーザーの Azure SQL Database マネージ インスタンスのメンバーである必要があります、`sysadmin`固定サーバー ロール。
+    >Azure SQL Database マネージインスタンスでは、ユーザーは`sysadmin`固定サーバーロールのメンバーである必要があります。
 
     > [!NOTE]  
     >  認証の種類に **[現在のユーザー - 統合セキュリティ]** を選択すると、 **[ユーザー名]** ボックスは読み取り専用で、コンピューターにログオンした Windows ユーザー アカウント名が表示されます。 Azure 仮想マシン (VM) 上で [!INCLUDE[ssCurrent_md](../includes/sscurrent-md.md)] [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] が実行されている場合、 **[ユーザー名]** ボックスに、VM の名前と、VM 上のローカル管理者アカウントのユーザー名が表示されます。 

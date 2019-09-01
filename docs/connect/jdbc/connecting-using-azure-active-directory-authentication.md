@@ -1,7 +1,7 @@
 ---
 title: Azure Active Directory 認証を利用した接続 | Microsoft Docs
 ms.custom: ''
-ms.date: 01/29/2019
+ms.date: 08/12/2019
 ms.reviewer: ''
 ms.prod: sql
 ms.prod_service: connectivity
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: 9c9d97be-de1d-412f-901d-5d9860c3df8c
 author: MightyPen
 ms.author: genemi
-ms.openlocfilehash: a194338a41e64e18076ad37a4f895180a7d9e448
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: b596936010fcdce4eb5c0701c5f0c6631cd9687e
+ms.sourcegitcommit: 9348f79efbff8a6e88209bb5720bd016b2806346
 ms.translationtype: MTE75
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67956821"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69028120"
 ---
 # <a name="connecting-using-azure-active-directory-authentication"></a>Azure Active Directory 認証を利用した接続
 
@@ -30,9 +30,9 @@ Microsoft JDBC Driver for SQL Server での Azure Active Directory 認証をサ�
     * **ActiveDirectoryMSI**
         * ドライバーバージョン version **7.2**以降でサポート`authentication=ActiveDirectoryMSI`されています。これは、"Identity" サポートが有効になっている Azure リソース内から Azure SQL Database/データウェアハウスに接続するために使用できます。 必要に応じて、接続/データソースのプロパティで**msiClientId**を指定することもできます。この認証モードには、確立のために**accessToken**を取得するために使用されるマネージドサービス ID のクライアント ID が含まれている必要があります。接続です。
     * **ActiveDirectoryIntegrated**
-        * ドライバー**バージョン v2.0**以降でサポートさ`authentication=ActiveDirectoryIntegrated`れているは、統合認証を使用して Azure SQL Database/データウェアハウスに接続するために使用できます。 この認証モードを使用するには、オンプレミスの Active Directory フェデレーションサービス (AD FS) (ADFS) をクラウドで Azure Active Directory とフェデレーションする必要があります。 セットアップが完了したら、ネイティブライブラリ "sqljdbc_auth" を Windows OS のアプリケーションクラスパスに追加するか、クロスプラットフォーム認証をサポートするための Kerberos チケットを設定して接続できます。 ドメインに参加しているコンピューターにログインしているときに資格情報の入力を求められることなく、Azure SQL DB/DW にアクセスできるようになります。
+        * ドライバーバージョン **v2.0** 以降でサポートさ`authentication=ActiveDirectoryIntegrated`れているは、統合認証を使用して Azure SQL Database/データウェアハウスに接続するために使用できます。 この認証モードを使用するには、オンプレミスの Active Directory フェデレーションサービス (AD FS) (ADFS) をクラウドで Azure Active Directory とフェデレーションする必要があります。 セットアップが完了したら、ネイティブライブラリ "sqljdbc_auth" を Windows OS のアプリケーションクラスパスに追加するか、クロスプラットフォーム認証をサポートするための Kerberos チケットを設定して接続できます。 ドメインに参加しているコンピューターにログインしているときに資格情報の入力を求められることなく、Azure SQL DB/DW にアクセスできるようになります。
     * **ActiveDirectoryPassword**
-        * ドライバー**バージョン v2.0**以降でサポートさ`authentication=ActiveDirectoryPassword`れているは、Azure AD プリンシパル名とパスワードを使用して、Azure SQL Database/データウェアハウスに接続するために使用できます。
+        * ドライバーバージョン **v2.0** 以降でサポートさ`authentication=ActiveDirectoryPassword`れているは、Azure AD プリンシパル名とパスワードを使用して、Azure SQL Database/データウェアハウスに接続するために使用できます。
     * **SqlPassword**
         * ユーザー `authentication=SqlPassword`名/ユーザーとパスワードのプロパティを使用して SQL Server に接続するには、を使用します。
     * **NotSpecified**
@@ -175,7 +175,7 @@ JDK には`kinit`が付属しています。これを使用すると、Azure Act
 #### <a name="linux-and-mac"></a>Linux と Mac
 
 ##### <a name="requirements"></a>必要条件
-Windows ドメインに参加しているコンピューターにアクセスして、Kerberos ドメインコントローラーにクエリを実行します。
+Kerberos ドメイン コントローラーのクエリを実行するための、Windows ドメインに参加しているコンピューターへのアクセス権。
 
 ##### <a name="step-1-find-kerberos-kdc"></a>手順 1: Kerberos KDC を検索する
 - データベース参照または接続を選択して**実行**Windows コマンドライン
@@ -204,9 +204,9 @@ Windows ドメインに参加しているコンピューターにアクセスし
   次に、krb5.conf ファイルを保存して終了します。
 
 > [!NOTE]
->  ドメインはすべて大文字である必要があります。
+>  ドメインはすべて大文字にする必要があります。
 
-##### <a name="step-3-testing-the-ticket-granting-ticket-retrieval"></a>手順 3: チケット交付チケット取得のテスト
+##### <a name="step-3-testing-the-ticket-granting-ticket-retrieval"></a>手順 3: チケット保証チケットの取得をテストする
 - データベース参照または接続を選択して**実行**Linux または Mac
 - **アクション**:
   - コマンド`kinit username@DOMAIN.COMPANY.COM`を使用して KDC から TGT を取得すると、ドメインパスワードの入力を求めるメッセージが表示されます。

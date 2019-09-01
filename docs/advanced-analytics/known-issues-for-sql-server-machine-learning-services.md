@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: dphansen
 ms.author: davidph
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: d56e3109c0820b800bbd72c9cc86bed9b7a09eea
-ms.sourcegitcommit: 823d7bdfa01beee3cf984749a8c17888d4c04964
+ms.openlocfilehash: 8cf0441397c8c3a6d743b08692a6d2bac289a03f
+ms.sourcegitcommit: 3b1f873f02af8f4e89facc7b25f8993f535061c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70030300"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70176195"
 ---
 # <a name="known-issues-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services の既知の問題
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -166,7 +166,7 @@ SQL Server 2016 のコンピューティングコンテキストで R コード�
 
 ### <a name="9-remote-compute-contexts-are-blocked-by-a-firewall-in-sql-server-instances-that-are-running-on-azure-virtual-machines"></a>9.リモートコンピューティングコンテキストは、Azure virtual machines で実行されている SQL Server インスタンスのファイアウォールによってブロックされます。
 
-が Windows Azure 仮想[!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]マシンにインストールされている場合は、仮想マシンのワークスペースを使用する必要がある計算コンテキストを使用できない可能性があります。 その理由は、既定では、Azure 仮想マシンのファイアウォールに、ローカルの R ユーザーアカウントのネットワークアクセスをブロックする規則が含まれているためです。
+が Azure 仮想マシン[!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]にインストールされている場合は、仮想マシンのワークスペースを使用する必要がある計算コンテキストを使用できないことがあります。 その理由は、既定では、Azure 仮想マシンのファイアウォールに、ローカルの R ユーザーアカウントのネットワークアクセスをブロックする規則が含まれているためです。
 
 回避策として、Azure VM で **[セキュリティが強化された Windows ファイアウォール]** を開き、 **[送信の規則]** を選択して、次の規則を無効にします。**SQL Server インスタンス MSSQLSERVER の R ローカルユーザーアカウントのネットワークアクセスをブロック**します。 また、規則を有効のままにしておくこともできますが、セキュリティを有効にするにはセキュリティプロパティを変更します。
 

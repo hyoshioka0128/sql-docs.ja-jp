@@ -24,12 +24,12 @@ ms.assetid: 61915bc5-0f5f-45ac-8cfe-3452bc185558
 author: stevestein
 ms.author: sstein
 manager: craigg
-ms.openlocfilehash: 6ceac86445154648b946148d6267f6e8949af423
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: 3335c5a7fcb46b901777de0404b5206aa6a876f6
+ms.sourcegitcommit: 3b1f873f02af8f4e89facc7b25f8993f535061c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "62918041"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70175977"
 ---
 # <a name="export-a-data-tier-application"></a>データ層アプリケーションのエクスポート
   配置されているデータ層アプリケーション (DAC) またはデータベースをエクスポートすると、エクスポート ファイルが作成されます。このファイルには、データベース内のオブジェクトの定義に加え、テーブルに格納されているすべてのデータが含まれています。 さらに、このエクスポート ファイルを[!INCLUDE[ssDE](../../includes/ssde-md.md)]の別のインスタンスまたは [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] にインポートすることもできます。 エクスポートとインポートという操作を組み合わせることで、DAC をインスタンス間で移行したり論理バックアップを作成したりすることが可能です。または、[!INCLUDE[ssSDS](../../includes/sssds-md.md)] に配置されているデータベースの社内用コピーを作成することもできます。  
@@ -93,7 +93,7 @@ ms.locfileid: "62918041"
   
 -   **[ローカル ディスクに保存]** : BACPAC ファイルをローカル コンピューター上のディレクトリに作成します。 **[参照]** をクリックしてローカル コンピューター内を参照するか、用意されている領域にパスを指定します。 パス名には、ファイル名および .bacpac 拡張子を含める必要があります。  
   
--   **[Windows Azure に保存]** : BACPAC ファイルを Windows Azure コンテナーに作成します。 このオプションを検証するためには、Windows Azure コンテナーに接続する必要があります。 このオプションでは、一時ファイル用のローカル ディレクトリを指定する必要もあります。 一時ファイルは、指定した場所に作成され、操作の完了後も残ります。  
+-   **Azure に保存する**-BACPAC ファイルを azure コンテナーに作成します。 このオプションを検証するには、Azure コンテナーに接続する必要があります。 このオプションでは、一時ファイル用のローカル ディレクトリを指定する必要もあります。 一時ファイルは、指定した場所に作成され、操作の完了後も残ります。  
   
  エクスポートするテーブルのサブセットを指定するには、 **[詳細]** オプションを使用します。  
   
@@ -124,7 +124,7 @@ ms.locfileid: "62918041"
   
 3.  `Export` 型の `Microsoft.SqlServer.Management.Dac.DacStore` メソッドを使用して、DAC をエクスポートします。 エクスポートする DAC の名前と、エクスポート ファイルの出力先となるフォルダーのパスを指定します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [[データ層アプリケーション]](data-tier-applications.md)   
  [データベースからの DAC の抽出](extract-a-dac-from-a-database.md)  
   

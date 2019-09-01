@@ -12,12 +12,12 @@ ms.assetid: 5350214c-7333-41d0-ae83-1b7d8454ebec
 author: lrtoyou1223
 ms.author: lle
 manager: craigg
-ms.openlocfilehash: 3c5898910a5280e797080c99fde978bb3da1c3c6
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: 19ef3eacc2fc1dbe6408ea1b51c5135ba37740e5
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "65484214"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70154469"
 ---
 # <a name="introduction-to-data-quality-services"></a>Data Quality Services の概要
   [!INCLUDE[ssDQSnoversion](../includes/ssdqsnoversion-md.md)] (DQS) で提供されているデータ品質ソリューションを使用すると、データ スチュワードまたは IT プロフェッショナルは、データの品質を維持し、データをビジネス使用に適したものにすることができます。 DQS は、データ ソースの整合性と品質を管理する、コンピューター支援型のインタラクティブなナレッジ ドリブン ソリューションです。 DQS を利用すると、データについてのナレッジを発見し、構築して、管理できます。 その後、そのナレッジを使用して、データのクレンジング、マッチング、プロファイリングを実行できます。 また、DQS データ品質プロジェクトに含まれる参照データ プロバイダーのクラウド ベースのサービスを利用することもできます。  
@@ -29,7 +29,7 @@ ms.locfileid: "65484214"
   
  DQS を利用すると、データベースの専門家やプログラマでないビジネス ユーザー、インフォメーション ワーカー、IT プロフェッショナルが、最小限のセットアップで (つまり、準備にかかる時間を最小限に抑えて)、組織のデータの品質に関する操作を作成、管理、および実行できます。  
   
-##  <a name="Answer"></a> DQS でのニーズへの対応  
+##  <a name="Answer"></a>DQS を使用したニーズへの回答  
  データ品質を絶対的に定義する用語はありません。 データ品質は、データが意図された目的に対して適切かどうかに依存します。 DQS は、正しくない可能性のあるデータを識別し、データが実際に正しくない可能性の評価を提供します。 DQS は、ユーザーがデータの妥当性を判断できるように、データのセマンティックな理解を提供します。 DQS を利用することで、不完全性、適合性の欠如、矛盾、不正確、無効、およびデータ重複に関連する問題を解決できます。  
   
  DQS は、データ品質の問題を解決するための以下の機能を備えています。  
@@ -38,7 +38,7 @@ ms.locfileid: "65484214"
   
 -   **マッチング:** 一致を構成するものを決定して重複除去を実行できるようにするルール ベースのプロセスで、セマンティックな重複を識別します。 詳細については、「 [Data Matching](../../2014/data-quality-services/data-matching.md)」をご参照ください。  
   
--   **参照データ サービス:** 参照データ プロバイダーのサービスを使用して、データの品質を検証します。 Windows Azure Marketplace DataMarket の参照データ サービスを使用すると、データのクレンジング、検証、マッチング、補強を簡単に行うことができます。 詳細については、「 [Reference Data Services in DQS](../../2014/data-quality-services/reference-data-services-in-dqs.md)」をご参照ください。  
+-   **参照データ サービス:** 参照データ プロバイダーのサービスを使用して、データの品質を検証します。 Azure Marketplace DataMarket の参照データサービスを使用して、データのクレンジング、検証、照合、および強化を簡単に行うことができます。 詳細については、「 [Reference Data Services in DQS](../../2014/data-quality-services/reference-data-services-in-dqs.md)」をご覧ください。  
   
 -   **プロファイリング:** ナレッジ発見、ドメイン管理、マッチング、データ クレンジングの各プロセスのすべてのステージにおいて、データ ソースを分析してデータの品質の内部状況がわかる情報を提供します。 プロファイリングは DQS データ品質ソリューションの強力なツールです。 ナレッジ管理、マッチング、データ クレンジングと同程度にプロファイリングが重要性を持つデータ品質ソリューションを作成できます。 詳細については、「 [Data Profiling and Notifications in DQS](../../2014/data-quality-services/data-profiling-and-notifications-in-dqs.md)」をご参照ください。  
   
@@ -85,7 +85,7 @@ ms.locfileid: "65484214"
   
  Data Quality Services の機能はマスター データ サービス (MDS) に統合されているので、Microsoft Excel 用 Microsoft SQL Server 2014 Master Data Services アドインでソース データおよびマスター データに対して重複除去を実行できます。 マッチングを実行するには、MDS によって管理されているデータを Excel ワークシートに読み込み、MDS によって管理されていないデータと結合してから、Excel 内でマッチングを実行します。 [!INCLUDE[ssDQSServer](../includes/ssdqsserver-md.md)] コンポーネントを MDS と共にインストールする必要があります。 詳細については、「  [Excel 用 MDS アドインでのデータ品質照合](../master-data-services/microsoft-excel-add-in/data-quality-matching-in-the-mds-add-in-for-excel.md)」をご覧ください。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [SQL Server 2014 の各エディションがサポートする機能](../../2014/getting-started/features-supported-by-the-editions-of-sql-server-2014.md)  
   
   

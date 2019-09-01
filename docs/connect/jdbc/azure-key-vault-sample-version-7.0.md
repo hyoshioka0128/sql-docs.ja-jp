@@ -1,7 +1,7 @@
 ---
 title: Azure Key Vault のサンプル |Microsoft Docs
 ms.custom: ''
-ms.date: 01/21/2019
+ms.date: 08/12/2019
 ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
@@ -9,12 +9,12 @@ ms.technology: connectivity
 ms.topic: conceptual
 author: MightyPen
 ms.author: genemi
-ms.openlocfilehash: 734d69388f644af93d794287174c19c036d278fc
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: b1ef38ec5175d97c3896c3e6450d6e403f7850fa
+ms.sourcegitcommit: 9348f79efbff8a6e88209bb5720bd016b2806346
 ms.translationtype: MTE75
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67957433"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69028440"
 ---
 # <a name="azure-key-vault-sample"></a>Azure Key Vault サンプル
 
@@ -22,7 +22,7 @@ ms.locfileid: "67957433"
 
 ## <a name="sample-application-using-azure-key-vault-feature"></a>Azure Key Vault 機能を使用したサンプルアプリケーション
 
-このアプリケーションは、JDBC Driver 7.0 以降と Azure-Keyvault (バージョン 1.0.0)、Adal4j (バージョン 1.6.0)、およびそれらの依存関係を使用して実行できます。  基になる依存関係を解決するには、次に示すように、プロジェクトの pom ファイルにこれらのライブラリを追加し[ます。](../../connect/jdbc/feature-dependencies-of-microsoft-jdbc-driver-for-sql-server.md)
+このアプリケーションは、JDBC Driver 7.0 以降と Azure-Keyvault (バージョン 1.0.0)、Adal4j (バージョン 1.6.0)、およびそれらの依存関係を使用して実行できます。  基になる依存関係を解決するには、次に示すように、[プロジェクトの](../../connect/jdbc/feature-dependencies-of-microsoft-jdbc-driver-for-sql-server.md)pom ファイルにこれらのライブラリを追加します。
 
 ```java
 import java.net.URISyntaxException;

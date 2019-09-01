@@ -15,18 +15,18 @@ ms.assetid: 586561fc-dfbb-4842-84f8-204a9100a534
 author: MikeRayMSFT
 ms.author: mikeray
 manager: craigg
-ms.openlocfilehash: c43fbe12b8449fb231ee9a2f479ff17ac0281493
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: ec94f8387d7b833a80cd4df09f7d4208974d40a7
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "62922276"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70154821"
 ---
 # <a name="create-a-full-database-backup-sql-server"></a>データベースの完全バックアップの作成 (SQL Server)
   このトピックでは、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] で [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]、 [!INCLUDE[tsql](../../includes/tsql-md.md)]、または PowerShell を使用して、データベースの完全バックアップを作成する方法について説明します。  
   
 > [!NOTE]  
->  Windows Azure BLOB ストレージ サービスへの SQL Server のバックアップについては、「 [Windows Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」を参照してください。  
+>  Azure Blob ストレージサービスへの SQL Server のバックアップの詳細については、「」 SQL Server、「 [Azure Blob Storage サービスを使用したバックアップと復元](sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」を参照してください。  
   
  **このトピックの内容**  
   
@@ -38,7 +38,7 @@ ms.locfileid: "62922276"
   
      [Security](#Security)  
   
--   **完全なデータベースを作成するを使用して、バックアップします。**  
+-   **次のものを使用してデータベースの完全バックアップを作成するには:**  
   
      [SQL Server Management Studio](#SSMSProcedure)  
   
@@ -69,7 +69,7 @@ ms.locfileid: "62922276"
 ###  <a name="Security"></a> セキュリティ  
  データベースをバックアップすると、TRUSTWORTHY は OFF に設定されます。 TRUSTWORTHY を ON に設定する方法については「[ALTER DATABASE の SET オプション &#40;Transact-SQL&#41;](/sql/t-sql/statements/alter-database-transact-sql-set-options)」を参照してください。  
   
- 以降で[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]、`PASSWORD`と`MEDIAPASSWORD`バックアップを作成するためのオプションは廃止されました。 パスワード付きで作成されたバックアップを復元することは、引き続き可能です。  
+ 以降で[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]は`PASSWORD` 、 `MEDIAPASSWORD`バックアップを作成するためのオプションとオプションが廃止されました。 パスワード付きで作成されたバックアップを復元することは、引き続き可能です。  
   
 ####  <a name="Permissions"></a> Permissions  
  BACKUP DATABASE 権限と BACKUP LOG 権限は、既定では、 **sysadmin** 固定サーバー ロール、 **db_owner** 固定データベース ロール、および **db_backupoperator** 固定データベース ロールのメンバーに与えられています。  
@@ -89,7 +89,7 @@ ms.locfileid: "62922276"
   
 3.  データベースを右クリックして **[タスク]** をポイントし、 **[バックアップ]** をクリックします。 **[データベースのバックアップ]** ダイアログ ボックスが表示されます。  
   
-4.  `Database`リスト ボックスで、データベース名を確認します。 必要に応じて、このボックスの一覧から別のデータベースを選択することもできます。  
+4.  `Database`リストボックスで、データベース名を確認します。 必要に応じて、このボックスの一覧から別のデータベースを選択することもできます。  
   
 5.  どの復旧モデル ( **[FULL]** 、 **[BULK_LOGGED]** 、 **[SIMPLE]** ) でも、データベースのバックアップを実行できます。  
   
@@ -102,7 +102,7 @@ ms.locfileid: "62922276"
     > [!NOTE]  
     >  **[差分]** オプションが選択されている場合、コピーのみのバックアップは作成できません。  
   
-8.  **Backup コンポーネント**、 をクリック`Database`します。  
+8.  **[バックアップコンポーネント]** で`Database`、[] をクリックします。  
   
 9. **[名前]** ボックスに表示された既定のバックアップ セット名をそのまま使用するか、または別のバックアップ セット名を入力します。  
   
@@ -134,7 +134,7 @@ ms.locfileid: "62922276"
          このオプションでは、 **[新しいメディア セット名]** ボックスに名前を入力し、必要に応じて **[新しいメディア セットの説明]** ボックスにメディア セットの説明を入力します。  
   
         > [!IMPORTANT]  
-        >  **[全般]** ページで **[URL]** を選択した場合、このオプションは無効になります。 Windows Azure ストレージにバックアップするときには、これらのアクションはサポートされません。  
+        >  **[全般]** ページで **[URL]** を選択した場合、このオプションは無効になります。 これらのアクションは、Azure storage へのバックアップ時にはサポートされません。  
   
 14. **[信頼性]** セクションで、必要に応じて以下のチェック ボックスをオンにします。  
   
@@ -161,7 +161,7 @@ ms.locfileid: "62922276"
   
 18. [!INCLUDE[ssEnterpriseEd10](../../../includes/ssenterpriseed10-md.md)] 以降では、 [バックアップの圧縮](backup-compression-sql-server.md)がサポートされています。 既定では、バックアップが圧縮されるかどうかは、 **[バックアップ圧縮の既定]** サーバー構成オプションの値によって決まります。 ただし、現在のサーバー レベルの既定の設定にかかわらず、 **[バックアップを圧縮する]** をオンにしてバックアップを圧縮することも、 **[バックアップを圧縮しない]** をオンにして圧縮しないようにすることもできます。  
   
-     **表示または現在の backup compression default を変更するには**  
+     **現在のバックアップの圧縮の既定値を表示または変更するには**  
   
     -   [backup compression default サーバー構成オプションの表示または構成](../../database-engine/configure-windows/view-or-configure-the-backup-compression-default-server-configuration-option.md)  
   
@@ -188,7 +188,7 @@ ms.locfileid: "62922276"
   
      [ WITH *with_options* [ **,** ...*o* ] ] ;  
   
-    |オプション|説明|  
+    |OPTION|説明|  
     |------------|-----------------|  
     |*database*|バックアップするデータベースです。|  
     |*backup_device* [ **,** ...*n* ]|バックアップ操作に使用する 1 ～ 64 個のバックアップ デバイスの一覧を指定します。 物理バックアップ デバイスを指定したり、対応する論理バックアップ デバイス (既に定義されている場合) を指定したりできます。 物理バックアップ デバイスを指定するには、DISK オプションまたは TAPE オプションを使用します。<br /><br /> { DISK &#124; TAPE } **=** _physical_backup_device_name_<br /><br /> 詳細については、「 [バックアップ デバイス &#40;SQL Server&#41;](backup-devices-sql-server.md)の別のインスタンスで作成された場合、これは必須です。|  
@@ -272,7 +272,7 @@ GO
   
 ##  <a name="PowerShellProcedure"></a> PowerShell の使用  
   
-1.  `Backup-SqlDatabase` コマンドレットを使用します。 これはデータベースの完全バックアップであることを明示的に示す、指定、 **-backupaction**パラメーターにその既定値`Database`します。 このパラメーターは、データベースの完全バックアップでは省略可能です。  
+1.  `Backup-SqlDatabase` コマンドレットを使用します。 データベースの完全バックアップであることを明示するには、 **-backupaction**パラメーターに既定値を`Database`指定します。 このパラメーターは、データベースの完全バックアップでは省略可能です。  
   
      次の例では、 `MyDB` データベースの完全なバックアップを、サーバー インスタンス `Computer\Instance`の既定のバックアップ場所に作成します。 オプションで、`-BackupAction Database` を指定します。  
   
@@ -291,7 +291,7 @@ GO
   
 -   [データベースの差分バックアップの作成 &#40;SQL Server&#41;](create-a-differential-database-backup-sql-server.md)  
   
--   [データベースのバックアップを復元&#40;SQL Server Management Studio&#41;](restore-a-database-backup-using-ssms.md)  
+-   [データベースバックアップ&#40;の復元 SQL Server Management Studio&#41;](restore-a-database-backup-using-ssms.md)  
   
 -   [単純復旧モデルでのデータベース バックアップの復元 &#40;Transact-SQL&#41;](restore-a-database-backup-under-the-simple-recovery-model-transact-sql.md)  
   
@@ -301,7 +301,7 @@ GO
   
 -   [メンテナンス プラン ウィザードの使用](../maintenance-plans/use-the-maintenance-plan-wizard.md)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [バックアップの概要 &#40;SQL Server&#41;](backup-overview-sql-server.md)   
  [トランザクション ログのバックアップ &#40;SQL Server&#41;](transaction-log-backups-sql-server.md)   
  [メディア セット、メディア ファミリ、およびバックアップ セット &#40;SQL Server&#41;](media-sets-media-families-and-backup-sets-sql-server.md)   

@@ -68,7 +68,7 @@
           href: object/delete-objects.md
         - name: '[オブジェクトの依存関係]'
           href: object/object-dependencies.md
-        - name: '[オブジェクトの選択]\(オブジェクト エクスプローラー)'
+        - name: '[オブジェクトの選択] (オブジェクト エクスプローラー)'
           href: object/select-objects-object-explorer.md
         - name: '[オブジェクトの追加]'
           href: object/add-objects.md
@@ -249,7 +249,7 @@
       href: ../database-engine/connection-properties-dialog-box.md
     - name: '[パスワードの有効期限が切れました]'
       href: ../database-engine/password-expired.md
-    - name: Windows Azure ストレージへの接続
+    - name: Azure Storage への接続
       href: ../database-engine/connect-to-windows-azure-storage.md
 - name: Visual Database Tools +
   href: visual-db-tools/visual-database-tools.md

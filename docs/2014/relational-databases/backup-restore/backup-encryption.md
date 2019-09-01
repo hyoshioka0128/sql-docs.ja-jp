@@ -10,12 +10,12 @@ ms.assetid: 334b95a8-6061-4fe0-9e34-b32c9f1706ce
 author: MikeRayMSFT
 ms.author: mikeray
 manager: craigg
-ms.openlocfilehash: 13fa1ce6411f2ce4de1526e847bc5a6191d698c7
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: 6e007dfaf2e14b488fb538f6b0c0ad958988a4c0
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "62922173"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70154842"
 ---
 # <a name="backup-encryption"></a>バックアップの暗号化
   このトピックでは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] バックアップの暗号化オプションについて概説します。 バックアップ時の暗号化の使用、利点、および推奨される操作の詳細が含まれています。  
@@ -26,20 +26,20 @@ ms.locfileid: "62922173"
   
  バックアップ時に暗号化を行うには、暗号化アルゴリズムを指定し、暗号化キーを保護するための暗号化機能を指定する必要があります。 サポートされている暗号化オプションは次のとおりです。  
   
--   **暗号化アルゴリズム:** サポートされている暗号化アルゴリズムは次のとおりです。AES 128、AES 192、AES 256、Triple DES、  
+-   **暗号化アルゴリズム:** サポートされている暗号化アルゴリズムは、AES 128、AES 192、AES 256、および Triple DES です  
   
--   **暗号化機能:** 証明書または非対称キー  
+-   **暗号化機能:** 証明書キーまたは非対称キー  
   
 > [!CAUTION]  
 >  証明書または非対称キーをバックアップすることが非常に重要であり、これらを使用して暗号化したバックアップ ファイルとは別の場所に保存することをお勧めします。 証明書または非対称キーがないと、バックアップ ファイルが使用不可能になり、バックアップを復元することができません。  
   
- **暗号化されたバックアップを復元するには。** SQL Server の復元では、復元時に指定する暗号化パラメーターは必要ありません。 ただし、バックアップ ファイルの暗号化に使用された証明書または非対称キーを復元先のインスタンスで使用できる必要があります。 復元を実行するユーザー アカウントには、証明書またはキーに対する `VIEW DEFINITION` 権限が必要です。 暗号化されたバックアップを別のインスタンスに復元する場合は、そのインスタンスで証明書を使用できるようにする必要があります。  
+ **暗号化されたバックアップの復元:** SQL Server の復元では、復元時に暗号化パラメーターを指定する必要はありません。 ただし、バックアップ ファイルの暗号化に使用された証明書または非対称キーを復元先のインスタンスで使用できる必要があります。 復元を実行するユーザー アカウントには、証明書またはキーに対する `VIEW DEFINITION` 権限が必要です。 暗号化されたバックアップを別のインスタンスに復元する場合は、そのインスタンスで証明書を使用できるようにする必要があります。  
   
  TDE で暗号化されたデータベースからバックアップを復元する場合、復元先のインスタンスで TDE の証明書を使用できる必要があります。  
   
 ##  <a name="Benefits"></a> 利点  
   
-1.  データベース バックアップの暗号化、データの保護に役立ちます。SQL Server では、バックアップを作成するときに、バックアップ データの暗号化オプションを提供します。  
+1.  データベースのバックアップを暗号化することは、データの保護に役立ちます。SQL Server では、バックアップの作成時にバックアップ データを暗号化するためのオプションが提供されます。  
   
 2.  暗号化は、TDE を使用して暗号化されたデータベースにも使用できます。  
   
@@ -53,7 +53,7 @@ ms.locfileid: "62922173"
 ##  <a name="Prerequisites"></a> 前提条件  
  バックアップを暗号化するための前提条件は次のとおりです。  
   
-1.  **Master データベースのデータベース マスター _ キーを作成します。** データベース マスター キーは対称キーで、証明書の秘密キーやデータベース内にある非対称キーを保護するときに使用されます。 詳細については、「[SQL Server とデータベースの暗号化キー &#40;データベース エンジン&#41;](../security/encryption/sql-server-and-database-encryption-keys-database-engine.md)」を参照してください。  
+1.  **master データベースのデータベース マスター キーの作成:** データベース マスター キーは対称キーで、証明書の秘密キーやデータベース内にある非対称キーを保護するときに使用されます。 詳細については、「[SQL Server とデータベースの暗号化キー &#40;データベース エンジン&#41;](../security/encryption/sql-server-and-database-encryption-keys-database-engine.md)」を参照してください。  
   
 2.  バックアップの暗号化に使用する証明書または非対称キーを作成します。 証明書の作成の詳細については、「[CREATE CERTIFICATE &#40;Transact-SQL&#41;](/sql/t-sql/statements/create-certificate-transact-sql)」を参照してください。 証明書の作成の詳細については、「[CREATE ASYMMETRIC KEY &#40;Transact-SQL&#41;](/sql/t-sql/statements/create-asymmetric-key-transact-sql)」を参照してください。  
   
@@ -135,10 +135,10 @@ C:\PS>Backup-SqlDatabase -ServerInstance . -Database "MyTestDB" -BackupFile "MyT
 |トピック/タスク|説明|  
 |-----------------|-----------------|  
 |[暗号化されたバックアップの作成](create-an-encrypted-backup.md)|暗号化されたバックアップを作成するために必要な基本手順について説明します。|  
-|[Windows Azure への SQL Server マネージ バックアップ - 保有期間とストレージの設定](../../database-engine/sql-server-managed-backup-to-windows-azure-retention-and-storage-settings.md)|指定された暗号化オプションで [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)]を構成するために必要な基本手順について説明します。|  
+|[Azure へのマネージバックアップの SQL Server-保有期間とストレージの設定](../../database-engine/sql-server-managed-backup-to-windows-azure-retention-and-storage-settings.md)|指定された暗号化オプションで [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)]を構成するために必要な基本手順について説明します。|  
 |[Azure Key Vault を使用する拡張キー管理 &#40;SQL Server&#41;](../security/encryption/extensible-key-management-using-azure-key-vault-sql-server.md)|Azure Key Vault のキーで保護される暗号化されたバックアップを作成する例を示します。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [バックアップの概要 &#40;SQL Server&#41;](backup-overview-sql-server.md)  
   
   

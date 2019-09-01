@@ -1,5 +1,5 @@
 ---
-title: MScached_peer_lsns (TRANSACT-SQL) |Microsoft Docs
+title: MScached_peer_lsns (Transact-SQL) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/03/2017
 ms.prod: sql
@@ -24,7 +24,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/15/2019
 ms.locfileid: "68078149"
 ---
-# <a name="mscachedpeerlsns-transact-sql"></a>MScached_peer_lsns (TRANSACT-SQL)
+# <a name="mscached_peer_lsns-transact-sql"></a>MScached_peer_lsns (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
   **MScached_peer_lsns**テーブルはピア ツー ピア レプリケーションで任意のサブスクライバーに返されるコマンドを判断するために使用されるトランザクション ログに LSN 値を追跡するために使用します。 このテーブルは、ディストリビューション データベースに格納されます。  

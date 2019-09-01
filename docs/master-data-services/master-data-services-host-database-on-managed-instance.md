@@ -13,12 +13,12 @@ author: v-redu
 ms.author: lle
 manager: craigg
 monikerRange: '>=sql-server-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: b4ca791a1a0ce46929f4d409d234f8dbc7efdec3
-ms.sourcegitcommit: bcc3b2c7474297aba17b7a63b17c103febdd0af9
+ms.openlocfilehash: 0081ea193452e4e92938051bc7b4a40bc8631eaa
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68794839"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155378"
 ---
 # <a name="host-database-on-managed-instance"></a>マネージインスタンスのホストデータベース
 
@@ -108,29 +108,29 @@ ms.locfileid: "68794839"
 
 **データベースと Web サイトの設定**
 
-1. Windows Azure Virtual Network に接続して、マネージインスタンスに接続できることを確認します。
+1. Azure Virtual Network に接続して、マネージインスタンスに接続できることを確認します。
 
     ![mds-SQLServer2019-P2SVPNConnect](../master-data-services/media/mds-sqlserver2019-config-mi-p2svpnconnect.png "SQLServer2019-MI_P2SVPNConnect")  
 
-2. を[!INCLUDE[ssMDScfgmgr](../includes/ssmdscfgmgr-md.md)]起動します。 左側のウィンドウで、[**データベースの構成**] をクリックします。
+2. を[!INCLUDE[ssMDScfgmgr](../includes/ssmdscfgmgr-md.md)]起動します。 左側のウィンドウで、 **[データベースの構成]** をクリックします。
 
-3. [**データベースの作成**] をクリックし、**データベースの作成**ウィザードで [次へ] をクリックします。
+3. **[データベースの作成]** をクリックし、**データベースの作成**ウィザードで [次へ] をクリックします。
 
-4. [**データベースサーバー** ] ページで**SQL Server インスタンス**に入力し、**認証の種類**を選択します。次に、[接続の**テスト**] をクリックして、認証の種類の資格情報を使用してデータベースに接続できることを確認します。オフ. [次へ] をクリックします。
+4. **[データベースサーバー]** ページで**SQL Server インスタンス**に入力し、**認証の種類**を選択します。次に、接続の **[テスト]** をクリックして、認証の種類の資格情報を使用してデータベースに接続できることを確認します。オフ. [次へ] をクリックします。
 
    > [!NOTE]
    > - マネージインスタンスの SQL Server インスタンス ("xxxxxxx.xxxxxxx.database.windows.net" など)
    > - マネージインスタンスでは、 **"SQL Server アカウント"** と **"現在のユーザー– Active Directory 統合"** 認証の種類がサポートされています。
-   > - 認証の種類として [**現在のユーザー-Active Directory 統合**] を選択すると、[**ユーザー名**] ボックスは読み取り専用になり、コンピューターにログオンしている Windows ユーザーアカウントの名前が表示されます。 Azure 仮想マシン (vm) [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]で SQL Server 2019 を実行している場合は、[**ユーザー名**] ボックスに、vm の名前と、vm 上のローカル管理者アカウントのユーザー名が表示されます。
+   > - 認証の種類として **[現在のユーザー-Active Directory 統合]** を選択すると、 **[ユーザー名]** ボックスは読み取り専用になり、コンピューターにログオンしている Windows ユーザーアカウントの名前が表示されます。 Azure 仮想マシン (vm) [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]で SQL Server 2019 を実行している場合は、 **[ユーザー名]** ボックスに、vm の名前と、vm 上のローカル管理者アカウントのユーザー名が表示されます。
 
     認証にマネージインスタンスの **"sysadmin"** 規則が含まれていることを確認してください。
 ![SQLServer2019-MI-CreateDBConnect](../master-data-services/media/mds-sqlserver2019-config-mi-createdbconnect.png "SQLServer2019-MI_CreateDBConnect")  
 
-5. **[データベース名]** フィールドに名前を入力します。 必要に応じて、Windows 照合順序を選択して、 **[SQL Server の既定の照合順序]** チェック ボックスをオフにし、 **[大文字小文字を区別する]** などの利用可能なオプションを 1 つ以上クリックします。 [**次へ**] をクリックします。
+5. **[データベース名]** フィールドに名前を入力します。 必要に応じて、Windows 照合順序を選択して、 **[SQL Server の既定の照合順序]** チェック ボックスをオフにし、 **[大文字小文字を区別する]** などの利用可能なオプションを 1 つ以上クリックします。 **[次へ]** をクリックします。
 
     ![SQLServer2019] ---//(../master-data-services/media/mds-sqlserver2019-config-mi-createddbname.png "SQLServer2019-MI_CreatedDBName")  
 
-6. [**ユーザー名**] フィールドに、の[!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]既定のスーパーユーザーになるユーザーの Windows アカウントを指定します。 スーパー ユーザーには、すべての機能領域へのアクセス権があり、すべてのモデルを追加、削除、および更新できます。
+6. **[ユーザー名]** フィールドに、の[!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]既定のスーパーユーザーになるユーザーの Windows アカウントを指定します。 スーパー ユーザーには、すべての機能領域へのアクセス権があり、すべてのモデルを追加、削除、および更新できます。
 
     ![SQLServer2019] ------//(../master-data-services/media/mds-sqlserver2019-config-mi-createdbusername.png "SQLServer2019-MI_createDBUserName")
 
@@ -140,9 +140,9 @@ ms.locfileid: "68794839"
 
     **データベースの作成ウィザード**の設定の詳細については、 [「データベースの&#40; [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]作成&#41;ウィザード Configuration Manager](../master-data-services/create-database-wizard-master-data-services-configuration-manager.md)」を参照してください。
 
-9. の [**データベースの構成**] ページ[!INCLUDE[ssMDScfgmgr](../includes/ssmdscfgmgr-md.md)]で、[**データベースの選択**] をクリックします。
+9. の **[データベースの構成]** ページ[!INCLUDE[ssMDScfgmgr](../includes/ssmdscfgmgr-md.md)]で、 **[データベースの選択]** をクリックします。
 
-10. [**接続**] をクリック[!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]し、手順8で作成したデータベースを選択して、[ **OK]** をクリックします。
+10. **[接続]** をクリック[!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]し、手順8で作成したデータベースを選択して、[ **OK]** をクリックします。
 
     ![SQLServer2019-MI-connectDBName](../master-data-services/media/mds-sqlserver2019-config-mi-connectdbname.png "SQLServer2019-MI_connectDBName")
 
@@ -156,7 +156,7 @@ ms.locfileid: "68794839"
 
     
 
-13. [**アプリケーションプール**] セクションで、別のユーザー名を入力し、パスワードを入力して、[OK] をクリックします。
+13. **アプリケーションプール** セクションで、別のユーザー名を入力し、パスワードを入力して、OK をクリックします。
 ![SQLServer2019--Config-MI-CreateWebApplication](../master-data-services/media/mds-sqlserver2019-config-mi-createwebapplication.png "SQLServer2019-MI_CreateWebApplication")
 
    > [!NOTE]
@@ -164,13 +164,13 @@ ms.locfileid: "68794839"
 
     
 
-14. [ **Web アプリケーションの作成**] ダイアログボックスの詳細については、「[ [web&#41;アプリケーションの作成] ダイアログボックス&#40; [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] Configuration Manager](../master-data-services/create-web-application-dialog-box-master-data-services-configuration-manager.md)」を参照してください。
+14. **[Web アプリケーションの作成]** ダイアログボックスの詳細については、「[ [web&#41;アプリケーションの作成] ダイアログボックス&#40; [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] Configuration Manager](../master-data-services/create-web-application-dialog-box-master-data-services-configuration-manager.md)」を参照してください。
 
-15. [Web**アプリケーション**] ボックスの [ **web 構成**] ページで、作成したアプリケーションをクリックし、[**アプリケーションとデータベースの関連付け**] セクションで [**選択**] をクリックします。
+15. Web **[アプリケーション]** ボックスの **[web 構成]** ページで、作成したアプリケーションをクリックし、 **[アプリケーションとデータベースの関連付け]** セクションで **[選択]** をクリックします。
 
 16. **[接続]** をクリックして、Web アプリケーションと関連付けする必要がある [!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] データベースを選択し、 **[OK]** をクリックします。
 
-    Web サイトの設定が完了しました。 [ **Web 構成**] ページに、選択した web サイト、作成した web アプリケーション[!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] 、およびアプリケーションに関連付けられているデータベースが表示されるようになります。
+    Web サイトの設定が完了しました。 **[Web 構成]** ページに、選択した web サイト、作成した web アプリケーション[!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)] 、およびアプリケーションに関連付けられているデータベースが表示されるようになります。
 
     ![mds-SQLServer2019-WebConfigSelectDB](../master-data-services/media/mds-sqlserver2019-config-mi-webconfigselectdb.png "SQLServer2019-MI_WebConfigSelectDB")
 
@@ -212,23 +212,23 @@ SQL Server 2019 の**累積的な更新プログラム**をインストールす
 
 ![SQLServer2019--Config-MI-UpgradeDBPage](../master-data-services/media/mds-sqlserver2019-config-mi-upgradedbpage.png "SQLServer2019-MI_UpgradeDBPage")
 
-1. を[!INCLUDE[ssMDScfgmgr](../includes/ssmdscfgmgr-md.md)]起動します。 左側のウィンドウで、[**データベースの構成**] をクリックします。
+1. を[!INCLUDE[ssMDScfgmgr](../includes/ssmdscfgmgr-md.md)]起動します。 左側のウィンドウで、 **[データベースの構成]** をクリックします。
 
-2. の [**データベースの構成**] ページ[!INCLUDE[ssMDScfgmgr](../includes/ssmdscfgmgr-md.md)]で、[**データベースの選択**] をクリックします。
+2. の **[データベースの構成]** ページ[!INCLUDE[ssMDScfgmgr](../includes/ssmdscfgmgr-md.md)]で、 **[データベースの選択]** をクリックします。
 
-3. [**接続**] をクリック[!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]し、web アプリケーションに関連付けられているデータベースを選択して、[ **OK]** をクリックします。
+3. **[接続]** をクリック[!INCLUDE[ssMDSshort_md](../includes/ssmdsshort-md.md)]し、web アプリケーションに関連付けられているデータベースを選択して、[ **OK]** をクリックします。
 
     ![SQLServer2019-MI-ConnectDBName](../master-data-services/media/mds-sqlserver2019-config-mi-connectdbname.png "SQLServer2019-MI_ConnectDBName")
 
-4. [**データベースのアップグレード**] をクリックします。 ボタン
+4. **[データベースのアップグレード]** をクリックします。 ボタン
 
     ![SQLServer2019--Config-MI-SelectUpgradeDB](../master-data-services/media/mds-sqlserver2019-config-mi-selectupgradedb.png "SQLServer2019-MI_SelectUpgradeDB")
 
-5. データベースのアップグレードウィザードの [**ようこそ**] ページで [**次へ**] をクリックし、[**アップグレードの確認**] ページをクリックします。
+5. データベースのアップグレードウィザードの **[ようこそ]** ページで **[次へ]** をクリックし、 **[アップグレードの確認]** ページをクリックします。
 
     ![SQLServer2019--MI-UpgradeDBWizard](../master-data-services/media/mds-sqlserver2019-config-mi-upgradedbwizard.png "SQLServer2019-MI_UpgradeDBWizard")
 
-6. すべてのタスクが完了したら、[**完了**] をクリックします。
+6. すべてのタスクが完了したら、 **[完了]** をクリックします。
 
 ## <a name="see-also"></a>関連項目
 

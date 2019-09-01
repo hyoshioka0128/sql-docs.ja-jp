@@ -1,5 +1,5 @@
 ---
-title: ADO NET 変換先エディター ([接続マネージャー] ページ) |Microsoft Docs
+title: '[ADO NET 変換先エディター] ([接続マネージャー] ページ) |Microsoft Docs'
 ms.custom: ''
 ms.date: 06/13/2017
 ms.prod: sql-server-2014
@@ -12,12 +12,12 @@ ms.assetid: a3b11286-32c8-40e1-8ae7-090e2590345a
 author: janinezhang
 ms.author: janinez
 manager: craigg
-ms.openlocfilehash: ae5cc8303fa09eae7a4af6ef9ae6d589f43bcb2b
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: faeb72f875fd5427536ddd72db03ca71a25b293e
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "66061739"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70154030"
 ---
 # <a name="ado-net-destination-editor-connection-manager-page"></a>[ADO NET 変換先エディター] ([接続マネージャー] ページ)
   **[ADO NET 変換先エディター]** ダイアログ ボックスの **[接続マネージャー]** ページを使用すると、変換先の [!INCLUDE[vstecado](../includes/vstecado-md.md)] 接続を選択できます。 さらにこのページを使用して、データベースのテーブルやビューを選択できます。  
@@ -66,9 +66,9 @@ ms.locfileid: "66061739"
 >  詳細については、「[SET IDENTITY_INSERT &#40;Transact-SQL&#41;](/sql/t-sql/statements/set-identity-insert-transact-sql)」および「[IDENTITY &#40;プロパティ&#41; &#40;Transact-SQL&#41;](/sql/t-sql/statements/create-table-transact-sql-identity-property)」を参照してください。  
   
 ## <a name="external-resources"></a>外部リソース  
- sqlcat.com の技術記事「 [Windows Azure SQL データベースへのデータの高速な読み込み](https://go.microsoft.com/fwlink/?LinkId=244333)」  
+ Sqlcat.com の技術記事「[データをすばやく Azure SQL Database に読み込む](https://go.microsoft.com/fwlink/?LinkId=244333)」  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [[ADO NET 変換先エディター] &#40;[マッピング] ページ&#41;](../../2014/integration-services/ado-net-destination-editor-mappings-page.md)   
  [[ADO NET 変換先エディター] &#40;[エラー出力] ページ&#41;](../../2014/integration-services/ado-net-destination-editor-error-output-page.md)   
  [ADO.NET 接続マネージャー](connection-manager/ado-net-connection-manager.md)   

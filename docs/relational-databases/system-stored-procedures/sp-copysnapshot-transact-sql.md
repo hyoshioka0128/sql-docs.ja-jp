@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: a012a32f-6f26-45bf-8046-b51cd7fec455
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 30e96ad145abdb123e5bc5540f74f23251d1a69e
-ms.sourcegitcommit: 728a4fa5a3022c237b68b31724fce441c4e4d0ab
+ms.openlocfilehash: d8b34915371b164a4167058729d2720d9e60cdcd
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68768887"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70154606"
 ---
-# <a name="spcopysnapshot-transact-sql"></a>sp_copysnapshot (Transact-SQL)
+# <a name="sp_copysnapshot-transact-sql"></a>sp_copysnapshot (Transact-SQL)
 [!INCLUDE[appliesto-ss-asdbmi-xxxx-xxx-md](../../includes/appliesto-ss-asdbmi-xxxx-xxx-md.md)]
 
-  指定したパブリケーションのスナップショットフォルダーを、 **@destination_folder** に表示されているフォルダーにコピーします。 このストアド プロシージャは、パブリッシャー側でパブリケーション データベースについて実行されます。 このストアド プロシージャは、スナップショットを CD-ROM などのリムーバブル メディアにコピーするときに効果的です。  
+  指定されたパブリケーションのスナップショットフォルダーを、  **\@destination_folder**に一覧表示されているフォルダーにコピーします。 このストアド プロシージャは、パブリッシャー側でパブリケーション データベースについて実行されます。 このストアド プロシージャは、スナップショットを CD-ROM などのリムーバブル メディアにコピーするときに効果的です。  
   
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -39,7 +39,7 @@ sp_copysnapshot [ @publication = ] 'publication', [ @destination_folder = ] 'des
 ```  
   
 ## <a name="arguments"></a>引数  
-`[ @publication = ] 'publication'`スナップショットの内容をコピーするパブリケーションの名前を指定します。 *パブリケーション* は **sysname** 、既定値はありません。  
+`[ @publication = ] 'publication'`スナップショットの内容をコピーするパブリケーションの名前を指定します。 *publication* は **sysname** 、既定値はありません。  
   
 `[ @destination_folder = ] 'destination_folder'`パブリケーションスナップショットの内容をコピーするフォルダーの名前を指定します。 *destination_folder*は**nvarchar (255)** ,、既定値はありません。 *Destination_folder*は、別のサーバー、ネットワークドライブ、またはリムーバブルメディア (cd-rom やリムーバブルディスクなど) 上の別の場所にすることができます。  
   

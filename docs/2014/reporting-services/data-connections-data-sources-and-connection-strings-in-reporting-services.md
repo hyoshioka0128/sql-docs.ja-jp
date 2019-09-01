@@ -19,12 +19,12 @@ ms.assetid: 4d8f0ae1-102b-4b3d-9155-fa584c962c9e
 author: maggiesMSFT
 ms.author: maggies
 manager: kfile
-ms.openlocfilehash: 8147471dc662b651ac9c99cc9290a383cc235ee8
-ms.sourcegitcommit: a1adc6906ccc0a57d187e1ce35ab7a7a951ebff8
+ms.openlocfilehash: fc918b390cedbca9016e4d14f72dea8c9ce8d148
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68891568"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70154594"
 ---
 # <a name="data-connections-data-sources-and-connection-strings-in-reporting-services"></a>Reporting Services でのデータ接続、データ ソース、および接続文字列
   [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] レポートにデータを含めるには、最初に *データ ソース* および *データセット*を作成する必要があります。 このトピックでは、データ ソースの種類、データ ソースの作成方法、およびデータ ソースの資格情報に関連する重要な情報について説明します。 データ ソースには、データ ソースの種類、接続情報、および使用する資格情報の種類が含まれています。 データ ソースには、埋め込みと共有の 2 種類があります。 埋め込みデータ ソースは、レポート内で定義され、そのレポートでのみ使用されます。 共有データ ソースは、レポートとは別のアイテムとして定義され、複数のレポートで使用できます。 詳細については、「[埋め込みおよび共有のデータ接続またはデータ ソース (レポート ビルダーおよび SSRS)](../../2014/reporting-services/embedded-and-shared-data-connections-or-data-sources-report-builder-and-ssrs.md)」および「[埋め込みデータセットと共有データセット (レポート ビルダーおよび SSRS)](report-data/embedded-and-shared-datasets-report-builder-and-ssrs.md)」を参照してください。  
@@ -130,7 +130,7 @@ ms.locfileid: "68891568"
 |ローカル サーバーの SQL Server データベース|`data source="(local)";initial catalog=AdventureWorks`|データソースの種類を`Microsoft SQL Server`に設定します。|  
 |SQL Server インスタンス<br /><br /> [データベース]|`Data Source=localhost\MSSQL10_50.InstanceName; Initial Catalog=AdventureWorks`|データソースの種類を`Microsoft SQL Server`に設定します。|  
 |SQL Server Express データベース|`Data Source=localhost\MSSQL10_50.SQLEXPRESS; Initial Catalog=AdventureWorks`|データソースの種類を`Microsoft SQL Server`に設定します。|  
-|クラウド内の [!INCLUDE[ssSDS](../includes/sssds-md.md)]|`Data Source=<host>;Initial Catalog=AdventureWorks; Encrypt=True`|データソースの種類を`Windows Azure SQL Database`に設定します。 詳細については、「[SQL Azure の接続の種類 (SSRS)](report-data/sql-azure-connection-type-ssrs.md)」を参照してください。|  
+|クラウド内の [!INCLUDE[ssSDS](../includes/sssds-md.md)]|`Data Source=<host>;Initial Catalog=AdventureWorks; Encrypt=True`|データソースの種類を`Azure SQL Database`に設定します。 詳細については、「[SQL Azure の接続の種類 (SSRS)](report-data/sql-azure-connection-type-ssrs.md)」を参照してください。|  
 |SQL Server 並列データ ウェアハウス|`HOST=<IP address>;database= AdventureWorks; port=<port>`|データソースの種類を`Microsoft SQL Server Parallel Data Warehouse`に設定します。 詳細については、「[SQL Server 並列データ ウェアハウスの接続の種類 &#40;SSRS&#41;](report-data/sql-server-parallel-data-warehouse-connection-type-ssrs.md)」を参照してください。|  
 |ローカル サーバーの Analysis Services データベース|`data source=localhost;initial catalog=Adventure Works DW`|データソースの種類を`Microsoft SQL Server Analysis Services`に設定します。 詳細については、「[MDX のための Analysis Services の接続の種類 &#40;SSRS&#41;](report-data/analysis-services-connection-type-for-mdx-ssrs.md)」または「[DMX のための Analysis Services の接続の種類 &#40;SSRS&#41;](report-data/analysis-services-connection-type-for-dmx-ssrs.md)」を参照してください。|  
 |Sales パースペクティブを持つ Analysis Services テーブル モデル データベース|`Data source=<servername>;initial catalog= Adventure Works DW;cube='Sales'`|データソースの種類を`Microsoft SQL Server Analysis Services`に設定します。 cube= 設定にパースペクティブの名前を指定します。 詳しくは、「 [パースペクティブ &#40;SSAS テーブル&#41;](https://docs.microsoft.com/analysis-services/tabular-models/perspectives-ssas-tabular)」をご覧ください。|  

@@ -42,9 +42,9 @@ ms.locfileid: "68893069"
   
      この場合は、データ ドメインであるマイニング構造にドリルスルーして、Gender、Bike Buyer などの列の各行を確認します。  
   
- **重要:** 式リストまたは**WHERE**句に含まれるすべてのものは、 **from**句で定義されたデータドメインから取得する必要があります。 データドメインを混在させることはできません。  
+ **重要:** 式の一覧または **WHERE** 句に含まれているものは全て、 **FROM** 句で定義されているデータ ドメインから取得する必要があります。データ ドメインを混在させることはできません。 データ ドメインを混在させることはできません。  
   
-##  <a name="Select_Types"></a>種類の選択  
+##  <a name="Select_Types"></a>SELECT型  
  **SELECT**ステートメントの構文は、さまざまなタスクをサポートしています。 これらのタスクを実行するには、以下のパターンを使用します。  
   
 -   [予測](#Predicting)  
@@ -95,7 +95,7 @@ ms.locfileid: "68893069"
 |----------------|-----------------|  
 |*\<モデル >* から選択します。場合|マイニングモデルのトレーニングに使用するケースを返します。<br /><br /> このクエリの種類のドメインは、データマイニングモデルです。<br /><br /> [[モデル&#60;&#62;から] を選択します。DMX &#40;のケース&#41;](../dmx/select-from-model-cases-dmx.md)<br /><br /> [DMX を使用したドリルスルー クエリの作成](https://docs.microsoft.com/analysis-services/data-mining/create-drillthrough-queries-using-dmx)|  
 |*\<モデル >* から選択します。SAMPLE_CASES|マイニング モデルのトレーニングに使用されたケースを表すサンプル ケースを返します。<br /><br /> このクエリの種類のドメインは、データマイニングモデルです。<br /><br /> [[モデル&#60;&#62;から] を選択します。SAMPLE_CASES &#40;DMX&#41;](../dmx/select-from-model-sample-cases-dmx.md)|  
-| *\<構造 >* から選択します。 場合|マイニングモデルのトレーニングで一部の詳細が使用されていない場合でも、基になるマイニング構造から詳細なデータ行を返します。<br /><br /> [[構造&#60;&#62;から] を選択します。場合](../dmx/select-from-structure-cases.md)<br /><br /> [ドリルスルー クエリ &#40;データ マイニング&#41;](https://docs.microsoft.com/analysis-services/data-mining/drillthrough-queries-data-mining)|  
+|*\<構造 >* から選択します。 場合|マイニングモデルのトレーニングで一部の詳細が使用されていない場合でも、基になるマイニング構造から詳細なデータ行を返します。<br /><br /> [[構造&#60;&#62;から] を選択します。場合](../dmx/select-from-structure-cases.md)<br /><br /> [ドリルスルー クエリ &#40;データ マイニング&#41;](https://docs.microsoft.com/analysis-services/data-mining/drillthrough-queries-data-mining)|  
   
  [Select 型に戻る](#Select_Types)  
   

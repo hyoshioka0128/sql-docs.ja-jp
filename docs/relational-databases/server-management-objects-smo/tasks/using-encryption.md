@@ -1,5 +1,5 @@
 ---
-title: 暗号化を使用して |Microsoft Docs
+title: Encryption | を使用するMicrosoft Docs
 ms.custom: ''
 ms.date: 08/06/2017
 ms.prod: sql
@@ -17,15 +17,15 @@ helpviewer_keywords:
 - certificates [SMO]
 - service master key [SMO]
 ms.assetid: 405e0ed7-50a9-430e-a343-471f54b4af76
-author: stevestein
-ms.author: sstein
+author: markingmyname
+ms.author: maghan
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: d9c08c7eaeb6d29a9c9fe5c3fc7ea42fd55025f0
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: fceb0baa62b7998534a5b7620d2c99fd1afc1f8f
+ms.sourcegitcommit: f3f83ef95399d1570851cd1360dc2f072736bef6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68030062"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "70148313"
 ---
 # <a name="using-encryption"></a>暗号化の使用
 [!INCLUDE[appliesto-ss-asdb-asdw-xxx-md](../../../includes/appliesto-ss-asdb-asdw-xxx-md.md)]
@@ -43,7 +43,7 @@ ms.locfileid: "68030062"
  SMO では、証明書は <xref:Microsoft.SqlServer.Management.Smo.Certificate> オブジェクトで表現します。 <xref:Microsoft.SqlServer.Management.Smo.Certificate> オブジェクトには、公開キー、サブジェクト名、有効期間、および発行者に関する情報を指定するプロパティがあります。 証明書にアクセスする権限は、 **Grant**メソッド、 **Revoke** メソッド、および **Deny** メソッドを使用して制御されます。  
   
 ## <a name="example"></a>例  
- 次のコード例では、アプリケーションを作成するプログラミング環境、プログラミング テンプレート、およびプログラミング言語を選択する必要があります。 詳細については、次を参照してください。 [Visual C の作成&#35;Visual Studio .NET での SMO プロジェクト](../../../relational-databases/server-management-objects-smo/how-to-create-a-visual-csharp-smo-project-in-visual-studio-net.md)します。  
+ 次のコード例では、アプリケーションを作成するプログラミング環境、プログラミング テンプレート、およびプログラミング言語を選択する必要があります。 詳細については、「 [Visual Studio&#35; .Net での Visual C SMO プロジェクトの作成](../../../relational-databases/server-management-objects-smo/how-to-create-a-visual-csharp-smo-project-in-visual-studio-net.md)」を参照してください。  
   
 ## <a name="adding-a-certificate-in-visual-c"></a>Visual C# での証明書の追加  
  コード例では、暗号化パスワードを持つ簡単な証明書を作成します。 他のオブジェクトと異なり、<xref:Microsoft.SqlServer.Management.Smo.Certificate.Create%2A> メソッドには複数のオーバーロードがあります。 この例で使用するオーバーロードは、暗号化パスワードを持つ新しい証明書を作成しています。  
@@ -94,6 +94,6 @@ $c.Create("pGFD4bb925DGvbd2439587y")
 ```  
   
 ## <a name="see-also"></a>参照  
- [暗号化キーを使用します。](../../../relational-databases/server-management-objects-smo/tasks/using-encryption.md)  
+ [暗号化キーの使用](../../../relational-databases/server-management-objects-smo/tasks/using-encryption.md)  
   
   

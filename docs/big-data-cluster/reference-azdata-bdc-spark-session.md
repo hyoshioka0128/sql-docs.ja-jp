@@ -5,22 +5,22 @@ description: azdata bdc spark session コマンドの参照記事。
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: mihaelab
-ms.date: 08/21/2019
+ms.date: 08/28/2019
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 1573c5b95eeaf314db08acc60d6fe5e1e2c4b753
-ms.sourcegitcommit: 5e838bdf705136f34d4d8b622740b0e643cb8d96
+ms.openlocfilehash: 820dadee39c4d68455b8c609b512a6504eb5fbad
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69653429"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70154426"
 ---
 # <a name="azdata-bdc-spark-session"></a>azdata bdc spark session
 
-[!INCLUDE[tsql-appliesto-ssver15-xxxx-xxxx-xxx](../includes/tsql-appliesto-ssver15-xxxx-xxxx-xxx.md)] 
+[!INCLUDE[tsql-appliesto-ssver15-xxxx-xxxx-xxx](../includes/tsql-appliesto-ssver15-xxxx-xxxx-xxx.md)]  
 
-次の記事では、**azdata** ツールでの **bdc spark session** コマンドのリファレンスを提供します。 他の **azdata** コマンドの詳細については、[azdata リファレンス](reference-azdata.md)に関するページを参照してください。
+この記事は、 **azdata**のリファレンス記事です。 
 
 ## <a name="commands"></a>コマンド
 |     |     |
@@ -52,7 +52,7 @@ azdata bdc spark session create [--session-kind -k]
 ### <a name="examples"></a>使用例
 セッションを作成します。
 ```bash
-azdata bdc spark session create --session-kind pyspark
+azdata spark session create --session-kind pyspark
 ```
 ### <a name="optional-parameters"></a>省略可能なパラメーター
 #### `--session-kind -k`
@@ -102,7 +102,7 @@ azdata bdc spark session list
 ### <a name="examples"></a>使用例
 すべてのアクティブなセッションを一覧表示します。
 ```bash
-azdata bdc spark session list
+azdata spark session list
 ```
 ### <a name="global-arguments"></a>グローバル引数
 #### `--debug`
@@ -124,7 +124,7 @@ azdata bdc spark session info --session-id -i
 ### <a name="examples"></a>使用例
 0 の ID を持つセッションのセッション情報を取得します。
 ```bash
-azdata bdc spark session info --session-id 0
+azdata spark session info --session-id 0
 ```
 ### <a name="required-parameters"></a>必要なパラメーター
 #### `--session-id -i`
@@ -149,7 +149,7 @@ azdata bdc spark session log --session-id -i
 ### <a name="examples"></a>使用例
 0 の ID を持つセッションのセッション ログを取得します。
 ```bash
-azdata bdc spark session log --session-id 0
+azdata spark session log --session-id 0
 ```
 ### <a name="required-parameters"></a>必要なパラメーター
 #### `--session-id -i`
@@ -174,7 +174,7 @@ azdata bdc spark session state --session-id -i
 ### <a name="examples"></a>使用例
 0 の ID を持つセッションのセッション状態を取得します。
 ```bash
-azdata bdc spark session state --session-id 0
+azdata spark session state --session-id 0
 ```
 ### <a name="required-parameters"></a>必要なパラメーター
 #### `--session-id -i`
@@ -199,7 +199,7 @@ azdata bdc spark session delete --session-id -i
 ### <a name="examples"></a>使用例
 セッションを削除します。
 ```bash
-azdata bdc spark session delete --session-id 0
+azdata spark session delete --session-id 0
 ```
 ### <a name="required-parameters"></a>必要なパラメーター
 #### `--session-id -i`
@@ -218,4 +218,6 @@ JMESPath クエリ文字列。 詳細と例については、[http://jmespath.or
 
 ## <a name="next-steps"></a>次の手順
 
-他の **azdata** コマンドの詳細については、[azdata リファレンス](reference-azdata.md)に関するページを参照してください。 **Azdata**ツールをインストールする方法の詳細については、「[管理[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ver15.md)]する azdata をインストール](deploy-install-azdata.md)する」を参照してください。
+- 他の **azdata** コマンドの詳細については、[azdata リファレンス](reference-azdata.md)に関するページを参照してください。 
+
+- **azdata** ツールをインストールする方法の詳細については、[SQL Server 2019 ビッグ データ クラスターを管理する azdata のインストール](deploy-install-azdata.md)に関するページを参照してください。

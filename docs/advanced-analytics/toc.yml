@@ -43,7 +43,7 @@
       href: ../advanced-analytics/r/set-up-a-data-science-client.md
     - name: Azure VM でのインストール
       href: ../advanced-analytics/install/sql-machine-learning-azure-virtual-machine.md
-- name: クイック スタート
+- name: クイックスタート
   items:
     - name: Python
       items:
@@ -240,9 +240,9 @@
             - name: R パッケージのインストール
               href: ../advanced-analytics/package-management/install-additional-r-packages-on-sql-server.md
             - name: miniCRAN リポジトリの作成
-              href: ../advanced-analytics/r/create-a-local-package-repository-using-minicran.md
+              href: ../advanced-analytics/package-management/create-a-local-package-repository-using-minicran.md
             - name: R パッケージを使用するためのヒント
-              href: ../advanced-analytics/r/packages-installed-in-user-libraries.md
+              href: ../advanced-analytics/package-management/tips-for-using-r-packages.md
     - name: 管理
       items:
         - name: 統合の管理

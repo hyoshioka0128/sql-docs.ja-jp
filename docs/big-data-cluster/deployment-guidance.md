@@ -5,16 +5,16 @@ description: Kubernetes にデプロイ[!INCLUDE[big-data-clusters-2019](../incl
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: mihaelab
-ms.date: 08/21/2019
+ms.date: 08/28/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 1520254a8a7817db612bf5e42706113495a832de
-ms.sourcegitcommit: 5e838bdf705136f34d4d8b622740b0e643cb8d96
+ms.openlocfilehash: 9a1953ecb17dba3894afe15e88690fbb150fb5a3
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69652357"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70153454"
 ---
 # <a name="how-to-deploy-includebig-data-clusters-2019includesssbigdataclusters-ss-novermd-on-kubernetes"></a>Kubernetes にデプロイ[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]する方法
 
@@ -39,7 +39,7 @@ SQL Server 2019 ビッグ データ クラスターを展開する前に、ま�
 
 ## <a id="prereqs"></a> Kubernetes の前提条件
 
-[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]サーバーとクライアント (kubectl) の両方に対して、少なくとも v 1.10 の Kubernetes の最小バージョンを必要とします。
+[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]サーバーとクライアント (kubectl) の両方に対して、少なくとも Kubernetes の最小バージョンを必要とします。
 
 > [!NOTE]
 > クライアントとサーバーでの Kubernetes のバージョンは、マイナー バージョンが +1 または -1 の範囲内になっている必要があることに注意してください。 詳細については、[Kubernetes のリリース ノートとバージョン スキューの SKU ポリシー](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/release/versioning.md#supported-releases-and-component-skew)に関するページを参照してください。
@@ -77,7 +77,7 @@ Kubernetes クラスターを構成したら、新しい SQL Server ビッグ �
 
 ## <a id="configfile"></a> 既定の構成
 
-ビッグ データ クラスターの展開オプションは、JSON 構成ファイルに定義されています。 開発/テスト環境に対する既定の設定では、3 つの標準の展開プロファイルがあります。
+ビッグ データ クラスターの展開オプションは、JSON 構成ファイルに定義されています。 組み込みの展開プロファイルから、開発/テスト環境の既定の設定を使用して、クラスターの展開のカスタマイズを開始できます。
 
 | 展開プロファイル | Kubernetes 環境 |
 |---|---|
@@ -115,7 +115,7 @@ azdata bdc create --accept-eula=yes
    ```
 
    azdata
-   > `--target` には、`--source` パラメータ―に基づいて、構成ファイル **cluster.json** および **control.json** を含むディレクトリを指定します。
+   > は`--target` 、 `--source`パラメーターに基づいて、構成ファイル ( **bdc**と**control. json**) を格納するディレクトリを指定します。
 
 1. 展開構成プロファイルでの設定をカスタマイズするために、VS Code などの JSON ファイルの編集に適したツール上で、展開構成ファイルを編集できます。 スクリプト化されたオートメーションの場合、**azdata bdc config**  コマンドを使用してカスタムの展開プロファイルを編集することもできます。 たとえば、次のコマンドでは、カスタムの展開プロファイルを変更して、展開されたクラスターの名前を既定 (**mssql-cluster**) から **test-cluster** に変えています。  
 
@@ -123,8 +123,8 @@ azdata bdc create --accept-eula=yes
    azdata bdc config replace --config-file custom/cluster.json --json-values "metadata.name=test-cluster"
    ```
    
-> [!TIP]
-> また、*azdata create bdc* コマンドに *--name* パラメータ―を使用して、展開時にクラスター名を渡すことも可能です。 コマンド内のパラメーターは、構成ファイルでの値よりも優先されます。
+   > [!TIP]
+   > また、*azdata create bdc* コマンドに *--name* パラメータ―を使用して、展開時にクラスター名を渡すことも可能です。 コマンド内のパラメーターは、構成ファイルでの値よりも優先されます。
 
    > JSON パスを検索するための便利なツールとして、[JSONPath Online Evaluator](https://jsonpath.com/) があります。
 
@@ -276,7 +276,7 @@ minikube ip
 展開後に、[azdata bdc status show](reference-azdata-bdc-status.md) コマンドを使用して、クラスターの状態を確認できます。
 
 ```bash
-azdata bdc status show -o table
+azdata bdc status show
 ```
 
 > [!TIP]
@@ -285,22 +285,119 @@ azdata bdc status show -o table
 このコマンドからの出力例を、次に示します。
 
 ```output
-Kind     Name           State
--------  -------------  -------
-BDC      mssql-cluster  Ready
-Control  default        Ready
-Master   default        Ready
-Compute  default        Ready
-Data     default        Ready
-Storage  default        Ready
+Bdc: ready                                                                                                                                                                                                          Health Status:  healthy
+ ===========================================================================================================================================================================================================================================
+ Services: ready                                                                                                                                                                                                     Health Status:  healthy
+ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Servicename    State    Healthstatus    Details
+
+ sql            ready    healthy         -
+ hdfs           ready    healthy         -
+ spark          ready    healthy         -
+ control        ready    healthy         -
+ gateway        ready    healthy         -
+ app            ready    healthy         -
+
+
+ Sql Services: ready                                                                                                                                                                                                 Health Status:  healthy
+ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Resourcename    State    Healthstatus    Details
+
+ master          ready    healthy         StatefulSet master is healthy
+ compute-0       ready    healthy         StatefulSet compute-0 is healthy
+ data-0          ready    healthy         StatefulSet data-0 is healthy
+ storage-0       ready    healthy         StatefulSet storage-0 is healthy
+
+
+ Hdfs Services: ready                                                                                                                                                                                                Health Status:  healthy
+ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Resourcename    State    Healthstatus    Details
+
+ nmnode-0        ready    healthy         StatefulSet nmnode-0 is healthy
+ storage-0       ready    healthy         StatefulSet storage-0 is healthy
+ sparkhead       ready    healthy         StatefulSet sparkhead is healthy
+
+
+ Spark Services: ready                                                                                                                                                                                               Health Status:  healthy
+ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Resourcename    State    Healthstatus    Details
+
+ sparkhead       ready    healthy         StatefulSet sparkhead is healthy
+ storage-0       ready    healthy         StatefulSet storage-0 is healthy
+
+
+ Control Services: ready                                                                                                                                                                                             Health Status:  healthy
+ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Resourcename    State    Healthstatus    Details
+
+ controldb       ready    healthy         -
+ control         ready    healthy         -
+ metricsdc       ready    healthy         DaemonSet metricsdc is healthy
+ metricsui       ready    healthy         ReplicaSet metricsui is healthy
+ metricsdb       ready    healthy         StatefulSet metricsdb is healthy
+ logsui          ready    healthy         ReplicaSet logsui is healthy
+ logsdb          ready    healthy         StatefulSet logsdb is healthy
+ mgmtproxy       ready    healthy         ReplicaSet mgmtproxy is healthy
+
+
+ Gateway Services: ready                                                                                                                                                                                             Health Status:  healthy
+ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Resourcename    State    Healthstatus    Details
+
+ gateway         ready    healthy         StatefulSet gateway is healthy
+
+
+ App Services: ready                                                                                                                                                                                                 Health Status:  healthy
+ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Resourcename    State    Healthstatus    Details
+
+ appproxy        ready    healthy         ReplicaSet appproxy is healthy
 ```
 
-この概要の状態に加えて、次のコマンドを使用してさらに詳しい状態を取得することもできます。
+次のコマンドを使用して、より詳細なステータスを取得することもできます。
 
-- [azdata bdc control status](reference-azdata-bdc-control-status.md)
-- [azdata bdc pool status](reference-azdata-bdc-pool-status.md)
+- [azdata bdc control status show](reference-azdata-bdc-control-status.md)は、コントロール管理サービスに関連付けられているすべてのコンポーネントの正常性状態を返します
+```
+azdata bdc control status show
+```
+サンプル出力:
+```output
+Control: ready                                                                                                                                                                                                      Health Status:  healthy
+ ===========================================================================================================================================================================================================================================
+ Resources: ready                                                                                                                                                                                                    Health Status:  healthy
+ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Resourcename    State    Healthstatus    Details
 
-これらのコマンドからの出力には、より詳細な分析のための Kibana および Grafana ダッシュボードへの URL が含まれています。
+ controldb       ready    healthy         -
+ control         ready    healthy         -
+ metricsdc       ready    healthy         DaemonSet metricsdc is healthy
+ metricsui       ready    healthy         ReplicaSet metricsui is healthy
+ metricsdb       ready    healthy         StatefulSet metricsdb is healthy
+ logsui          ready    healthy         ReplicaSet logsui is healthy
+ logsdb          ready    healthy         StatefulSet logsdb is healthy
+ mgmtproxy       ready    healthy         ReplicaSet mgmtproxy is healthy
+```
+
+- **azdata bdc sql status show**は、SQL Server サービスを持つすべてのリソースの正常性状態を返します
+```
+azdata bdc sql status show
+```
+サンプル出力:
+```output
+Sql: ready                                                                                                                                                                                                          Health Status:  healthy
+ ===========================================================================================================================================================================================================================================
+ Resources: ready                                                                                                                                                                                                    Health Status:  healthy
+ -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Resourcename    State    Healthstatus    Details
+
+ master          ready    healthy         StatefulSet master is healthy
+ compute-0       ready    healthy         StatefulSet compute-0 is healthy
+ data-0          ready    healthy         StatefulSet data-0 is healthy
+ storage-0       ready    healthy         StatefulSet storage-0 is healthy
+```
+
+> [!IMPORTANT]
+> **--All**パラメーターを使用する場合、これらのコマンドからの出力には、詳細な分析のための Kibana および Grafana ダッシュボードへの url が含まれます。
 
 **azdata** を使用するほかに、Azure Data Studio を利用してエンドポイントと状態情報の両方を検索することも可能です。 **azdata** および Azure Data Studio を利用したクラスターの状態の表示に関する詳細については、「[ビッグ データ クラスターの状態を表示する方法](view-cluster-status.md)」を参照してください。
 

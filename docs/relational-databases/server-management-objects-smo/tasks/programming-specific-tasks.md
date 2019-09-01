@@ -16,15 +16,15 @@ helpviewer_keywords:
 - SMO [SQL Server], programming
 - SMO [SQL Server], tasks
 ms.assetid: a15949ef-88d9-4205-892e-0b66588b4fcc
-author: stevestein
-ms.author: sstein
+author: markingmyname
+ms.author: maghan
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: c2da3cb344573731c70839612381aeb07485850f
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: f23b7844bcff234594db87875e89a89f0f073be9
+ms.sourcegitcommit: f3f83ef95399d1570851cd1360dc2f072736bef6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68030230"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "70148395"
 ---
 # <a name="programming-specific-tasks"></a>プログラミング特有のタスク
 [!INCLUDE[appliesto-ss-asdb-asdw-xxx-md](../../../includes/appliesto-ss-asdb-asdw-xxx-md.md)]
@@ -54,6 +54,6 @@ ms.locfileid: "68030230"
 |[フルテキスト検索の実装](../../../relational-databases/server-management-objects-smo/tasks/implementing-full-text-search.md)|SMO でフルテキスト検索カタログおよびインデックスを実装する方法について説明します。|  
 |[エンドポイントの実装](../../../relational-databases/server-management-objects-smo/tasks/implementing-endpoints.md)|データベース ミラーリング、SOAP 要求、および Service Broker のペイロードを処理するためのエンドポイントを作成する方法について説明します。|  
 |[統計の作成と更新](../../../relational-databases/server-management-objects-smo/tasks/creating-and-updating-statistics.md)|SMO でデータベース上の統計を設定および監視する方法について説明します。|  
-|[イベントのトレースおよび再生](../../../relational-databases/server-management-objects-smo/tasks/tracing-and-replaying-events.md)|使用する方法について説明します、**トレース**と**再生**trace および replay イベントに SMO のオブジェクト。|  
+|[イベントのトレースおよび再生](../../../relational-databases/server-management-objects-smo/tasks/tracing-and-replaying-events.md)|SMO で**trace**オブジェクトと**replay**オブジェクトを使用してイベントをトレースおよび再生する方法について説明します。|  
   
   

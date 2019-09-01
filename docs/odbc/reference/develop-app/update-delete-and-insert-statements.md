@@ -24,16 +24,15 @@ ms.lasthandoff: 07/15/2019
 ms.locfileid: "67942838"
 ---
 # <a name="update-delete-and-insert-statements"></a>UPDATE、DELETE、INSERT ステートメント
-
 SQL ベースのアプリケーションでは、 **UPDATE**、**DELETE**、および **INSERT** ステートメントを実行してテーブルに変更を加えます。 これらのステートメントは、Minimum SQL 文法準拠レベルの一部であり、すべてのドライバーとデータ ソースによってサポートされている必要があります。  
   
  これらのステートメントの構文です。  
   
  **UPDATE** _table-name_  
   
- **SET** _列識別子_  **=** {*式*  | **NULL**}   
+ **SET** _列識別子_ **=** {*式* | **NULL**}  
   
- [ **, ** _列識別子_ **=** {*式* | **NULL**}]. 
+ [ **,**  _列識別子_ **=** {*式* | **NULL**}].  
   
  [**WHERE** _search-condition_]  
   

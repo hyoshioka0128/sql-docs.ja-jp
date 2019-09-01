@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9940ef5d-f6f6-4dec-9414-1077a4d7f12b
 author: lrtoyou1223
 ms.author: lle
-ms.openlocfilehash: a84ff61d1656743953f5f854a1b658b303a7acf1
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: b801dd3792755c93006c1c6a48cfa9dc5af9cc37
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67992133"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70152462"
 ---
 # <a name="dqs-administration"></a>DQS 管理
 
@@ -35,7 +35,7 @@ ms.locfileid: "67992133"
   
 -   DQS 管理者は、 [!INCLUDE[ssDQSServer](../includes/ssdqsserver-md.md)] から [!INCLUDE[ssDQSClient](../includes/ssdqsclient-md.md)]での DQS アクティビティを監視でき、必要に応じて、実行中のアクティビティを *終了* させたり、アクティビティ内で実行中のプロセスを *停止* させたりできます。  
   
--   Windows Azure Marketplace との接続の設定や、ダイレクト サード パーティ参照データ サービス プロバイダーの管理など、参照データ サービスの設定を構成します。  
+-   Azure Marketplace との接続の設定や、ダイレクトサードパーティ参照データサービスプロバイダーの管理など、参照データサービスの設定を構成します。  
   
 -   クレンジングおよび照合アクティビティのしきい値を構成します。  
   
@@ -52,7 +52,7 @@ ms.locfileid: "67992133"
 ### <a name="configuration"></a>構成  
  **の** [構成] [!INCLUDE[ssDQSClient](../includes/ssdqsclient-md.md)] 画面では、DQS 管理者は次のことを行うことができます。  
   
--   **[参照データ]** : 参照データ サービス プロバイダー(Windows Azure Marketplace プロバイダーまたはダイレクト参照データ サービス プロバイダー) を構成します。 参照データ サービス プロバイダーを設定した後は、ナレッジ ベースでのドメイン管理アクティビティの間にドメイン/複合ドメインと参照データをマップし、データ品質プロジェクトでのクレンジング アクティビティに同じナレッジ ベースを使用できます。 また、インターネットに接続して Windows Azure Marketplace を使用するためのプロキシ設定を指定できます。  
+-   **[参照データ]** : 参照データ サービス プロバイダーAzure Marketplace またはダイレクト参照データサービスプロバイダー。 参照データ サービス プロバイダーを設定した後は、ナレッジ ベースでのドメイン管理アクティビティの間にドメイン/複合ドメインと参照データをマップし、データ品質プロジェクトでのクレンジング アクティビティに同じナレッジ ベースを使用できます。 また、Azure Marketplace を使用するためにインターネットに接続するためのプロキシ設定を指定することもできます。  
   
 -   **[全般設定]** :データ クレンジングおよびデータ照合のしきい値、および [!INCLUDE[ssDQSClient](../includes/ssdqsclient-md.md)] でのプロファイリングに対する通知を有効にするかどうかを指定できます。 これらのしきい値は、データ品質プロジェクトでのコンピューター支援型のクレンジングおよび照合アクティビティの間に、DQS によって使用されます。  
   

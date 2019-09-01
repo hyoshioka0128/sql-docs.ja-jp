@@ -1,5 +1,5 @@
 ---
-title: Visual Studio .NET で Visual c# SMO プロジェクトの作成 |Microsoft Docs
+title: Visual Studio .NET C#で Visual SMO プロジェクトを作成する |Microsoft Docs
 ms.custom: ''
 ms.date: 08/06/2017
 ms.prod: sql
@@ -10,40 +10,40 @@ ms.topic: reference
 helpviewer_keywords:
 - Visual C# [SMO]
 ms.assetid: 1e7abb16-23a0-4a18-91ad-253261e6bf84
-author: stevestein
-ms.author: sstein
+author: markingmyname
+ms.author: maghan
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: e2a5b158a33bf678cd285bcd408379a3f0abb907
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 11fb5e8aec7f61c83ec2b3edecdb3aa027cf2693
+ms.sourcegitcommit: f3f83ef95399d1570851cd1360dc2f072736bef6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68098015"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "70148641"
 ---
 # <a name="how-to-create-a-visual-c-smo-project-in-visual-studio-net"></a>Visual Studio .NET で Visual C# SMO プロジェクトを作成する方法
 [!INCLUDE[appliesto-ss-asdb-asdw-xxx-md](../../includes/appliesto-ss-asdb-asdw-xxx-md.md)]
 
   このセクションでは、簡単な SMO コンソール アプリケーションを構築する方法について説明します。  
   
- この例では、プログラムが SMO の型を参照できるように、名前空間をインポートします。 インポート、**エージェント**名前空間は省略可能です。 使用するプログラムを記述するときに使用[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]エージェント。 **共通**名前空間がのインスタンスへのセキュリティで保護された接続を確立するために必要な[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]します。 **SqlClient**名前空間は、SQL 例外エラーの処理に使用されます。  
+ この例では、プログラムが SMO の型を参照できるように、名前空間をインポートします。 **エージェント**の名前空間のインポートは任意です。 エージェントを使用[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]するプログラムを作成するときに使用します。 **共通**の名前空間は、のインスタンスへの[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]セキュリティで保護された接続を確立するために必要です。 **SqlClient**名前空間は、SQL 例外エラーを処理するために使用されます。  
   
-### <a name="creating-a-visual-c-smo-project-in-visual-studionet"></a>Visual studio.net で Visual c# SMO プロジェクトを作成します。  
+### <a name="creating-a-visual-c-smo-project-in-visual-studionet"></a>Visual Studio.NET でC#の visual SMO プロジェクトの作成  
   
 1. Visual Studio の起動
   
-2. **ファイル** メニューのをクリックして**新規**し**プロジェクト**します。  **[新しいプロジェクト]** ダイアログ ボックスが表示されます。   
+2. **[ファイル]** メニューの **[新規作成]** をポイントし、 **[プロジェクト]** をクリックします。  **[新しいプロジェクト]** ダイアログ ボックスが表示されます。   
   
-3. [!INCLUDE[vsprvs](../../includes/vsprvs-md.md)] **インストール済み**ウィンドウに移動します**テンプレート**\\**Visual c#** \\**Windows**選択と**コンソール アプリケーション**します。  
+3. \\ \\**C#** [インストール済み] ウィンドウで、[テンプレート] [ビジュアルウィンドウ] に移動し、[コンソールアプリケーション] を選択します。 [!INCLUDE[vsprvs](../../includes/vsprvs-md.md)]  
   
-4. (省略可能)**名前**テキスト ボックスに、新しいアプリケーションの名前を入力します。  
+4. Optional **[名前]** テキストボックスに、新しいアプリケーションの名前を入力します。  
 
-5. をクリックして**OK**コンソール アプリケーション テンプレートを読み込めません。  
+5. **[OK]** をクリックして、コンソールアプリケーションテンプレートを読み込みます。  
 
-6. 指示に従って、 [SMO のインストール](installing-smo.md)を参照するプロジェクトのパッケージをインストールします。
+6. [SMO のインストール](installing-smo.md)に関する手順に従って、参照するプロジェクトのパッケージをインストールします。
   
 7. **[表示]** メニューの **[コード]** をクリックします。
     
-8. 名前空間のステートメントの前に、のコードで、次の入力**を使用して**SMO 名前空間の型を修飾するステートメント。
+8. コードの namespace ステートメントの前に、次の using ステートメントを入力し**て**、SMO 名前空間の型を修飾します。
   
     ```  
     using Microsoft.SqlServer.Management.Smo;  

@@ -1,5 +1,5 @@
 ---
-title: Windows に接続する Azure Storage |Microsoft Docs
+title: Azure Storage | に接続します。Microsoft Docs
 ms.custom: ''
 ms.date: 06/13/2017
 ms.prod: sql-server-2014
@@ -12,18 +12,18 @@ ms.assetid: 8e23845e-97f0-4907-9d57-f1acd338b1f0
 author: mashamsft
 ms.author: mathoma
 manager: craigg
-ms.openlocfilehash: 3525f28864c3260bd2b50d98f441f6ed5072accb
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: 172c8cbf13b76c23cd9f4768aaf5162e923bc28d
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "62808573"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70154304"
 ---
-# <a name="connect-to-windows-azure-storage"></a>Windows Azure ストレージへの接続
-  **[Microsoft Azure Storage 接続]** ダイアログを使用して、ストレージ アカウントを指定したり、Microsoft Azure への接続を検証します。  
+# <a name="connect-to-azure-storage"></a>Azure Storage への接続
+  **[Azure Storage 接続]** ダイアログボックスを使用して、ストレージアカウントを指定し、Azure への接続を検証します。  
   
 ## <a name="options"></a>および  
- Microsoft Azure のアカウントに関する次の情報を指定し、 **[次へ]** をクリックして続行します。  
+ Azure アカウントに関する次の情報を指定し、 **[次へ]** をクリックして続行します。  
   
 1.  **[ストレージ アカウント]** : ストレージ アカウント名を指定します。  
   

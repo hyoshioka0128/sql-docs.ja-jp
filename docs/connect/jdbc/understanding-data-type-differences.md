@@ -1,7 +1,7 @@
 ---
 title: データ型の違いについて |Microsoft Docs
 ms.custom: ''
-ms.date: 01/19/2017
+ms.date: 08/12/2019
 ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: ab8fa00f-cb16-47e2-94b8-3a76f56c2b84
 author: MightyPen
 ms.author: genemi
-ms.openlocfilehash: 0cec994768fb5c3a49257da0fb310937c79c25b5
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 906a4abf0768fcad2e5ac31a0ee93345dcc8b30c
+ms.sourcegitcommit: 9348f79efbff8a6e88209bb5720bd016b2806346
 ms.translationtype: MTE75
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68004162"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69027380"
 ---
 # <a name="understanding-data-type-differences"></a>データ型の違いについて
 
@@ -39,7 +39,7 @@ JDBC バイナリ文字列型は、 **binary**、 **VARBINARY**、および**lon
   
 | 型            | [説明]                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 固定長    | [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] **バイナリ**型は、JDBC**バイナリ**型に直接マップされます。 列が SET ANSI_PADDING ON の場合、これはサーバーが埋め込みを行う固定長の型です。 サーバーの char 列に埋め込みが行われていない場合は、JDBC ドライバーが埋め込みを行います。<br /><br /> **タイムスタンプ**型は、8バイトの固定長を持つ JDBC**バイナリ**型です。  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] |
+| 固定長    | [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] **バイナリ**型は、JDBC**バイナリ**型に直接マップされます。 列が SET ANSI_PADDING ON の場合、これはサーバーが埋め込みを行う固定長の型です。 サーバーの char 列に埋め込みが行われていない場合は、JDBC ドライバーが埋め込みを行います。<br /><br /> タイムスタンプ型は、8バイトの固定長を持つ JDBC**バイナリ**型です。 **** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] |
 | 可変長 | [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] **Varbinary**型は、JDBC **varbinary**型にマップされます。<br /><br /> の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] **udt** 型は、 **VARBINARY**型として JDBC にマップされます。                                                                                                                                                                                                                                 |
 | Long            | [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] **イメージ**の種類は、JDBC **longvarbinary**型にマップされます。 この型は [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 以降では非推奨とされるため、代わりに大きな値の型である **varbinary(max)** を使用する必要があります。                                                                                                                                                                                           |
   
@@ -54,7 +54,7 @@ JDBC の真数型は、対応する SQL Server 型に直接マップされます
 | SMALLINT | JDBC の **SMALLINT** 型は、符号付きの 16 ビット整数を表します。 これは[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] **smallint**型にマップされます。                                                                                                                                                                                                                                                                                                                                     |
 | INTEGER  | JDBC の **INTEGER** 型は、符号付きの 32 ビット整数を表します。 これは[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] **int**型にマップされます。                                                                                                                                                                                                                                                                                                                                           |
 | bigint   | JDBC の **BIGINT** 型は、符号付きの 64 ビット整数を表します。 これは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] **bigint**型にマップされます。                                                                                                                                                                                                                                                                                                                                         |
-| NUMERIC  | JDBC の **NUMERIC** 型は、同一有効桁数の値を保持する固定長の有効桁数の 10 進値を表します。 数値**型は** **数値**型に[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]マップされます。                                                                                                                                                                                                                                                                   |
+| NUMERIC  | JDBC の **NUMERIC** 型は、同一有効桁数の値を保持する固定長の有効桁数の 10 進値を表します。 **数値** 型は**数値**型に[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]マップされます。                                                                                                                                                                                                                                                                   |
 | DECIMAL  | JDBC の **DECIMAL** 型は、指定された有効桁数以上の値を保持する固定長の有効桁数の 10 進値を表します。 **Decimal**型は**10 進数**型[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]にマップされます。<br /><br /> JDBC の **DECIMAL** 型は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の **money** 型と **smallmoney** 型にもマップされます。これらはそれぞれ、8 バイトと 4 バイトで格納される固定長の有効桁数の decimal 型です。 |
   
 ## <a name="approximate-numeric-types"></a>概数型

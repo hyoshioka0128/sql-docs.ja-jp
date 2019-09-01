@@ -1,5 +1,5 @@
 ---
-title: sys.dm_user_db_resource_governance (TRANSACT-SQL) |Microsoft Docs
+title: SQL server の管理 (Transact-sql) (_d) |。Microsoft Docs
 ms.custom: ''
 ms.date: 03/27/2019
 ms.prod: sql
@@ -20,74 +20,74 @@ ms.assetid: ''
 author: joesackmsft
 ms.author: josack
 monikerRange: =azuresqldb-current||=sqlallproducts-allversions
-ms.openlocfilehash: eebc22fa4f17680b843f195777d7cc5f4b2835ba
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: ea07ba28efc4ac50fdeef04bb1b3643c359ead28
+ms.sourcegitcommit: 3b1f873f02af8f4e89facc7b25f8993f535061c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68090447"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70176257"
 ---
-# <a name="sysdmuserdbresourcegovernance-transact-sql"></a>sys.dm_user_db_resource_governance (TRANSACT-SQL)
+# <a name="sysdm_user_db_resource_governance-transact-sql"></a>システムの管理 (Transact-sql) (_d) (_c)
 
 [!INCLUDE[appliesto-xx-asdb-xxxx-xxx-md](../../includes/appliesto-xx-asdb-xxxx-xxx-md.md)]
 
-リソース ガバナンスの Azure SQL Database データベースの構成と容量の設定を返します。  
+Azure SQL Database データベースのリソースガバナンスの構成と容量の設定を返します。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
-|**database_id**|ssNoversion|データベース、Azure SQL Database サーバー内で一意の ID。|
-|**logical_database_guid**|UNIQUEIDENTIFIER|ユーザー データベースとユーザー データベースの有効期間にわたって維持の論理の guid です。  名前を変更またはを別のデータベースの設定 SLO は変更されません、GUID。 |
-|**physical_database_guid**|UNIQUEIDENTIFIER|物理の guid はユーザー データベースがユーザー データベースの物理インスタンスの有効期間にわたって維持されます。 さまざまな SLO に設定を変更するには、この列になります。|
-|**server_name**|NVARCHAR|論理サーバーの名前。|
+|**database_id**|ssNoversion|データベースの ID。 Azure SQL Database サーバー内で一意です。|
+|**logical_database_guid**|UNIQUEIDENTIFIER|ユーザーデータベースの論理 guid であり、ユーザーデータベースの有効期間中は維持されます。  データベースの名前を変更するか、別の SLO に設定すると、GUID は変更されません。 |
+|**physical_database_guid**|UNIQUEIDENTIFIER|ユーザーデータベースの物理インスタンスが存続しているユーザーデータベースの物理 guid。 を別の SLO に設定すると、この列が変更されます。|
+|**server_name**|NVARCHAR|論理サーバー名。|
 |**database_name**|NVARCHAR|論理データベース名。|
-|**slo_name**|NVARCHAR|サービス レベル目標とハードウェアの世代。|
-|**dtu_limit**|ssNoversion|(仮想コアの場合は NULL) のデータベースの DTU の上限。|
-|**cpu_limit**|ssNoversion|データベース (データベースの DTU の場合は NULL) の vCore の最大数。|
-|**min_cpu**|TINYINT|ユーザーのワークロードで使用できる最小の CPU % です。|
-|**max_cpu**|TINYINT|ユーザーのワークロードで使用できる最大 CPU % です。|
-|**cap_cpu**|TINYINT|ユーザーのワークロード グループの CPU 使用率の上限です。|
-|**min_cores**|SMALLINT|SQL で使用される Cpu の数。|
-|**max_dop**|SMALLINT|ユーザーのワークロードで使用される並列処理の最大限度。|
+|**slo_name**|NVARCHAR|サービスレベル目標とハードウェアの生成。|
+|**dtu_limit**|ssNoversion|データベースの DTU 制限 (vCore の場合は NULL)。|
+|**cpu_limit**|ssNoversion|データベースの vCore の制限 (DTU データベースの場合は NULL)。|
+|**min_cpu**|TINYINT|ユーザーワークロードで使用できる最小 CPU%。|
+|**max_cpu**|TINYINT|ユーザーワークロードで使用できる最大 CPU パーセント。|
+|**cap_cpu**|TINYINT|ユーザーワークロードグループの CPU 使用率の上限。|
+|**min_cores**|SMALLINT|SQL によって使用されている Cpu の数。|
+|**max_dop**|SMALLINT|ユーザーワークロードで使用される並列処理の最大限度。|
 |**min_memory**|ssNoversion|ユーザーのワークロードで使用できる最小メモリの割合。|
-|**max_memory**|ssNoversion|ユーザーのワークロードで使用できる最大メモリの割合。|
-|**max_sessions**|ssNoversion|ユーザー グループに対するセッションの制限。|
-|**max_memory_grant**|ssNoversion|最大メモリは、% で、ユーザーのワークロードでは、各クエリに対して付与します。|
-|**max_db_memory**|ssNoversion|ユーザーの DB ワークロードの最大バッファー プール メモリ上限|
-|**govern_background_io**|bit|ユーザー グループに、バック グラウンド書き込みが課金されるかどうかを示します。|
-|**min_db_max_size_in_mb**|BIGINT|データベースの最小最大ファイル サイズ (mb)。|
-|**max_db_max_size_in_mb**|BIGINT|最大最大データベース ファイル (MB 単位)。|
-|**default_db_max_size_in_mb**|BIGINT|既定の (mb) の最大データベース ファイル サイズ。|
-|**db_file_growth_in_mb**|BIGINT|MB で、azure のデータベース ファイルの既定の増加。|
-|**initial_db_file_size_in_mb**|BIGINT|既定のデータベース ファイル サイズを mb 単位で。|
-|**log_size_in_mb**|BIGINT|既定のログ ファイル サイズ、(MB 単位)。|
-|**instance_cap_cpu**|ssNoversion|インスタンス レベルでの CPU 上限です。|
-|**instance_max_log_rate**|BIGINT|ログの世代 (1 秒あたりのバイト単位) のインスタンス レベルで率の上限。|
-|**instance_max_worker_threads**|ssNoversion|インスタンス レベルでのワーカー スレッドの上限。|
-|**replica_type**|ssNoversion|レプリカの種類、0 はプライマリ、および 1 が、セカンダリです。|
-|**max_transaction_size**|BIGINT|最大ログの領域 (KB 単位) のすべてのトランザクションで使用します。|
-|**checkpoint_rate_mbps**|ssNoversion|チェックポイント帯域幅 (mbps)。|
-|**checkpoint_rate_io**|ssNoversion|IOs で 1 秒あたりの IO の速度がチェックポイントします。|
-|**last_updated_date_utc**|DATETIME|最後の設定の変更または再構成の日時。|
-|**primary_group_id**|ssNoversion|ワークロード グループのプライマリ ユーザーの id。|
-|**primary_group_max_workers**|ssNoversion|プライマリ ユーザーのワークロード グループ レベルでのワーカーの上限。|
-|**primary_min_log_rate**|BIGINT|プライマリ ユーザーのワークロード グループ レベルで最小のログの速度 (1 秒あたりのバイト単位)。|
-|**primary_max_log_rate**|BIGINT|プライマリ ユーザーのワークロード グループ レベルでログの最大レート (1 秒あたりのバイト単位)。|
-|**primary_group_min_io**|ssNoversion|プライマリ ユーザーのワークロード グループ レベルで最小 IO。|
-|**primary_group_max_io**|ssNoversion|プライマリ ユーザーのワークロード グループ レベルで最大 IO。|
-|**primary_group_min_cpu**|FLOAT|最小 CPU 使用率は、プライマリ ユーザーのワークロード グループ レベルで制限します。|
-|**primary_group_max_cpu**|FLOAT|プライマリ ユーザーのワークロード グループ レベルで最大 CPU 使用率を制限します。|
-|**primary_log_commit_fee**|ssNoversion|プライマリ ユーザーのワークロード グループ レベルでは、レート ガバナンスのコミット手数料ログ。|
-|**primary_pool_max_workers**|ssNoversion|プライマリ ユーザー プール レベルでのワーカーの上限。
-|**pool_max_io**|ssNoversion|プライマリ ユーザー プール レベルで最大 IO 制限。|
-|**govern_db_memory_in_resource_pool**|bit|バッファー プールの最大サイズは、リソース プール レベルで適用されるかどうかを示しています。 通常、エラスティック プール内のデータベースを設定します。|
-|**volume_local_iops**|ssNoversion|ローカル ボリューム (例: c:、d:) の 2 つ目の cap ごと IOs。|
-|**volume_managed_xstore_iops**|ssNoversion|IOs リモート ストレージ アカウントの 2 つ目の cap ごと。|
-|**volume_external_xstore_iops**|ssNoversion|Azure SQL DB のバックアップとテレメトリによって使用されるリモート ストレージ アカウントの 2 つ目の cap ごと IOs。|
-|**volume_type_local_iops**|ssNoversion|IOs は、すべてのローカル ボリュームの 2 つ目の cap ごと。|
-|**volume_type_managed_xstore_iops**|ssNoversion|IOs のインスタンスで使用されるすべてのリモート ストレージ アカウントの 2 つ目の cap ごと。|
-|**volume_type_external_xstore_iops**|ssNoversion|IOs のインスタンスの Azure SQL DB のバックアップとテレメトリで使用されるすべてのリモート ストレージ アカウントの 2 つ目の cap ごと。|
-|**volume_pfs_iops**|ssNoversion|IOs premium file storage 用の 2 つ目の cap ごと。|
-|**volume_type_pfs_iops**|ssNoversion|インスタンスによって使用されるすべての premium file storage 用の 2 つ目の cap ごと IOs。|
+|**max_memory**|ssNoversion|ユーザーワークロードで使用できる最大メモリ割合 (%)。|
+|**max_sessions**|ssNoversion|ユーザーグループのセッション数の制限。|
+|**max_memory_grant**|ssNoversion|ユーザーワークロード内の各クエリに対する最大メモリ許可 (%)。|
+|**max_db_memory**|ssNoversion|ユーザー DB ワークロードの最大バッファープールメモリ上限|
+|**govern_background_io**|bit|バックグラウンド書き込みがユーザーグループに対して課金されるかどうかを示します。|
+|**min_db_max_size_in_mb**|BIGINT|最小データベースファイルの最大サイズ (MB 単位)。|
+|**max_db_max_size_in_mb**|BIGINT|最大データベースファイルの最大サイズ (MB 単位)。|
+|**default_db_max_size_in_mb**|BIGINT|既定の最大データベースファイルサイズ (MB 単位)。|
+|**db_file_growth_in_mb**|BIGINT|Azure データベースファイルの既定の拡張 (MB 単位)。|
+|**initial_db_file_size_in_mb**|BIGINT|既定のデータベースファイルのサイズ (MB 単位)。|
+|**log_size_in_mb**|BIGINT|既定のログファイルのサイズ (MB 単位)。|
+|**instance_cap_cpu**|ssNoversion|インスタンスレベルの CPU 上限。|
+|**instance_max_log_rate**|BIGINT|インスタンスレベルでのログ生成率の上限 (バイト/秒)。|
+|**instance_max_worker_threads**|ssNoversion|インスタンスレベルでのワーカースレッドの制限。|
+|**replica_type**|ssNoversion|レプリカの種類。ここで、0はプライマリ、1はセカンダリです。|
+|**max_transaction_size**|BIGINT|任意のトランザクションで使用される最大ログ領域 (KB 単位)。|
+|**checkpoint_rate_mbps**|ssNoversion|チェックポイントの帯域幅 (Mbps)。|
+|**checkpoint_rate_io**|ssNoversion|1秒あたりの IOs のチェックポイント IO 率。|
+|**last_updated_date_utc**|DATETIME|最後に設定を変更または再構成した日付と時刻。|
+|**primary_group_id**|ssNoversion|プライマリユーザーワークロードグループ ID。|
+|**primary_group_max_workers**|ssNoversion|プライマリユーザーワークロードグループレベルでのワーカー制限。|
+|**primary_min_log_rate**|BIGINT|プライマリユーザーワークロードグループレベルでの最小ログレート (1 秒あたりのバイト数)。|
+|**primary_max_log_rate**|BIGINT|プライマリユーザーワークロードグループレベルでの最大ログ速度 (1 秒あたりのバイト数)。|
+|**primary_group_min_io**|ssNoversion|プライマリユーザーワークロードグループレベルでの最小 IO。|
+|**primary_group_max_io**|ssNoversion|プライマリユーザーワークロードグループレベルでの最大 IO 数。|
+|**primary_group_min_cpu**|FLOAT|プライマリユーザーワークロードグループレベルの CPU の割合の最小値。|
+|**primary_group_max_cpu**|FLOAT|プライマリユーザーワークロードグループレベルでの CPU の割合の最大値。|
+|**primary_log_commit_fee**|ssNoversion|プライマリユーザーワークロードグループレベルでのログレートガバナンスコミット料金。|
+|**primary_pool_max_workers**|ssNoversion|プライマリユーザープールレベルでのワーカー制限。
+|**pool_max_io**|ssNoversion|プライマリユーザープールレベルでの最大 IO 制限。|
+|**govern_db_memory_in_resource_pool**|bit|バッファープールの最大サイズがリソースプールレベルで管理されているかどうかを示します。 通常、エラスティックプール内のデータベースに対して設定します。|
+|**volume_local_iops**|ssNoversion|ローカルボリュームの1秒あたりの Io 数 (例: C:、D:)。|
+|**volume_managed_xstore_iops**|ssNoversion|リモートストレージアカウントの Io/秒の上限。|
+|**volume_external_xstore_iops**|ssNoversion|Azure SQL DB のバックアップとテレメトリで使用されるリモートストレージアカウントの1秒あたりの Io 数。|
+|**volume_type_local_iops**|ssNoversion|すべてのローカルボリュームの1秒あたりの Io 数の上限。|
+|**volume_type_managed_xstore_iops**|ssNoversion|インスタンスによって使用されるすべてのリモートストレージアカウントの1秒あたりの Io 数。|
+|**volume_type_external_xstore_iops**|ssNoversion|インスタンスの Azure SQL DB のバックアップとテレメトリによって使用されるすべてのリモートストレージアカウントの1秒あたりの Io 数。|
+|**volume_pfs_iops**|ssNoversion|Premium file storage の Io/秒の上限。|
+|**volume_type_pfs_iops**|ssNoversion|インスタンスによって使用されているすべての premium file ストレージの Io/秒の上限。|
 |||
 
 ## <a name="permissions"></a>アクセス許可
@@ -96,14 +96,14 @@ ms.locfileid: "68090447"
 
 ## <a name="remarks"></a>コメント
 
-ユーザーは、リソース ガバナンスの構成の場合は、この動的管理ビューと Azure SQL Database データベースの容量の設定にアクセスできます。 
+ユーザーは、この動的管理ビューにアクセスして、Azure SQL Database データベースのリソースガバナンスの構成と容量の設定を確認できます。 
 
 > [!IMPORTANT]
-> この DMV によって表示されるデータのほとんどは、社内従量課金プラン向けで、変更される可能性があります。
+> この DMV によって提示されるデータのほとんどは、内部使用を目的としており、変更される可能性があります。
 
 ## <a name="examples"></a>使用例
 
-次の例では、インスタンス最大ログ比率データを単一またはプールされたデータベースのデータベース サーバー内のデータベース名で順序付けを返します。
+次の例では、1つまたはプールされたデータベースのデータベースサーバー内のデータベース名によって並べ替えられた、インスタンスの最大ログレートデータを返します。
 
 ```
 SELECT database_name,
@@ -114,6 +114,6 @@ ORDER BY database_name DESC;
 
 ## <a name="see-also"></a>関連項目
 
-- [トランザクション ログのレートのガバナンス](https://docs.microsoft.com/azure/sql-database/sql-database-resource-limits-database-server#transaction-log-rate-governance)
-- [1 つのデータベースの DTU のリソース制限](https://docs.microsoft.com/azure/sql-database/sql-database-dtu-resource-limits-single-databases)
-- [1 つのデータベースの vCore のリソース制限](https://docs.microsoft.com/azure/sql-database/sql-database-vcore-resource-limits-single-databases)
+- [トランザクションログレートガバナンス](https://docs.microsoft.com/azure/sql-database/sql-database-resource-limits-database-server#transaction-log-rate-governance)
+- [単一データベースの DTU リソースの制限](https://docs.microsoft.com/azure/sql-database/sql-database-dtu-resource-limits-single-databases)
+- [単一データベースの仮想コアリソースの制限](https://docs.microsoft.com/azure/sql-database/sql-database-vcore-resource-limits-single-databases)

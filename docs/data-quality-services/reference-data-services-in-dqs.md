@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: ef217717-6d05-443e-af26-44dc745a349d
 author: lrtoyou1223
 ms.author: lle
-ms.openlocfilehash: 48a878473a356677fb3d322fc63bb2d346f9346c
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 97003159192ce36c685323028b7112fdc4d00573
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67935031"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70152373"
 ---
 # <a name="reference-data-services-in-dqs"></a>DQS の参照データ サービス
 
@@ -31,10 +31,10 @@ ms.locfileid: "67935031"
   
 -   参照データ処理は、DQS ナレッジ ベースの構築およびデータ品質プロジェクトに組み込まれているので、包括的なデータ品質プロセスを確立できます。  
   
--   Windows Azure Marketplace から、またはサード パーティ参照データ プロバイダーから直接、参照データを使用することができます。  
+-   は、サードパーティ参照データプロバイダーから直接、または Azure Marketplace からの参照データの使用をサポートしています。  
   
-##  <a name="Marketplace"></a> Windows Azure Marketplace から参照データを使用する  
- DQS では、Windows Azure Marketplace の参照データを使用して、Marketplace を通じたコンテンツ プロバイダーからの参照データ サービスの提供を有効化することができます。 Marketplace は、高品質データおよびアプリケーションの単一のマーケットプレイスと配信チャネルをクラウド サービスとして提供するマイクロソフトのサービスです。 Marketplace の詳細については、次を参照してください。 [Microsoft Azure Marketplace について](https://azuremarketplace.microsoft.com/about)(https://azuremarketplace.microsoft.com/about) します。
+##  <a name="Marketplace"></a>Azure Marketplace から参照データを使用する  
+ DQS では、Azure Marketplace の参照データを使用して、コンテンツプロバイダーが Marketplace を通じて参照データサービスを提供できるようにします。 Marketplace は、高品質データおよびアプリケーションの単一のマーケットプレイスと配信チャネルをクラウド サービスとして提供するマイクロソフトのサービスです。 Marketplace の詳細については、「 [Microsoft Azure Marketplace につい](https://azuremarketplace.microsoft.com/about)て (https://azuremarketplace.microsoft.com/about) 」を参照してください。
   
  Marketplace と DQS のシームレスな統合により、DQS 内からのデータ品質プロジェクトに関する情報の検出、検索、および取得に関連付けられている手順が簡素化されます。 このデータは DQS から使用され、DQS ユーザーはこのデータを使用して DQS、Marketplace、および参照データ サービス プロバイダーを革新的な方法で 1 つにまとめて、データの品質を高めることができます。  
   
@@ -58,7 +58,7 @@ ms.locfileid: "67935031"
   
 1.  **DQS で参照データ プロバイダーの詳細を構成する**: DQS で参照データを使用する前に、DQS で参照データ サービスの詳細を構成する必要があります。  
   
-    1.  Marketplace を使用している場合は、有効な Marketplace アカウント キーを入力を参照、 [Data Services](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps?page=1&subcategories=data-services) Marketplace では、データに分類し、必要なプロバイダーをサブスクライブします。  
+    1.  Marketplace を使用している場合は、有効な Marketplace アカウントキーを指定し、Marketplace の[Data Services](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps?page=1&subcategories=data-services)データカテゴリを参照して、必要なプロバイダーをサブスクライブします。  
   
     2.  ダイレクト オンライン参照データ プロバイダーを使用する場合は、ダイレクト参照データ プロバイダーを DQS に追加してから使用する必要があります。  
   

@@ -1,5 +1,5 @@
 ---
-title: MSdbms (TRANSACT-SQL) |Microsoft Docs
+title: MSdbms (Transact-SQL) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/06/2017
 ms.prod: sql
@@ -24,7 +24,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/15/2019
 ms.locfileid: "67907482"
 ---
-# <a name="msdbms-transact-sql"></a>MSdbms (TRANSACT-SQL)
+# <a name="msdbms-transact-sql"></a>MSdbms (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
   **MSdbms**テーブルには、異種データベース レプリケーションのサポートされているデータベース管理システム (DBMS) のすべてのバージョンのマスター リストが含まれています。 このテーブルに格納されます、 **msdb**データベース。  

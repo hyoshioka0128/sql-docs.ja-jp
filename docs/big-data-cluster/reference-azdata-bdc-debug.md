@@ -5,22 +5,22 @@ description: azdata bdc debug コマンドのリファレンス記事です。
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: mihaelab
-ms.date: 08/21/2019
+ms.date: 08/28/2019
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: d2cdb04cfc0bf98e2143b8e7b5ae67a7b0db9069
-ms.sourcegitcommit: 5e838bdf705136f34d4d8b622740b0e643cb8d96
+ms.openlocfilehash: 9e14528baf80d08841f6e9e17a0476dfa81fd48d
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69653361"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70153198"
 ---
 # <a name="azdata-bdc-debug"></a>azdata bdc debug
 
-[!INCLUDE[tsql-appliesto-ssver15-xxxx-xxxx-xxx](../includes/tsql-appliesto-ssver15-xxxx-xxxx-xxx.md)]
+[!INCLUDE[tsql-appliesto-ssver15-xxxx-xxxx-xxx](../includes/tsql-appliesto-ssver15-xxxx-xxxx-xxx.md)]  
 
-以下の記事では、**azdata** ツールの **bdc debug** コマンドに関するリファレンスを提供します。 他の **azdata** コマンドの詳細については、[azdata のリファレンス](reference-azdata.md)に関するページをご覧ください。
+この記事は、 **azdata**のリファレンス記事です。 
 
 ## <a name="commands"></a>コマンド
 |     |     |
@@ -28,7 +28,7 @@ ms.locfileid: "69653361"
 [azdata bdc debug copy-logs](#azdata-bdc-debug-copy-logs) | ログをコピーします。
 [azdata bdc debug dump](#azdata-bdc-debug-dump) | ダンプのログ記録を開始します。
 ## <a name="azdata-bdc-debug-copy-logs"></a>azdata bdc debug copy-logs
-ビッグ データ クラスターからデバッグ ログをコピーします。システム上に Kube 構成が必要です。
+ビッグデータクラスターからデバッグログをコピーする-システムで Kubernetes 構成が必要です。
 ```bash
 azdata bdc debug copy-logs --namespace -n 
                            [--container -c]  
@@ -60,7 +60,7 @@ JMESPath クエリ文字列。 詳細と例については、[http://jmespath.or
 #### `--verbose`
 ログの詳細レベルを上げます。 完全なデバッグ ログを表示するには --debug を使います。
 ## <a name="azdata-bdc-debug-dump"></a>azdata bdc debug dump
-ダンプのログ記録を開始し、それをコンテナーからコピーします。システム上に Kube 構成が必要です。
+システムでは、トリガーログダンプをトリガーし、Kubernetes 構成からコピーします。
 ```bash
 azdata bdc debug dump --namespace -n 
                       --container -c  
@@ -88,4 +88,6 @@ JMESPath クエリ文字列。 詳細と例については、[http://jmespath.or
 
 ## <a name="next-steps"></a>次の手順
 
-他の **azdata** コマンドの詳細については、[azdata リファレンス](reference-azdata.md)に関するページを参照してください。 **Azdata**ツールをインストールする方法の詳細については、「[管理[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ver15.md)]する azdata をインストール](deploy-install-azdata.md)する」を参照してください。
+- 他の **azdata** コマンドの詳細については、[azdata リファレンス](reference-azdata.md)に関するページを参照してください。 
+
+- **azdata** ツールをインストールする方法の詳細については、[SQL Server 2019 ビッグ データ クラスターを管理する azdata のインストール](deploy-install-azdata.md)に関するページを参照してください。

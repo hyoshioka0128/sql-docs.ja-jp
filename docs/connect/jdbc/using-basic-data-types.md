@@ -1,7 +1,7 @@
 ---
 title: 基本データ型を使用する |Microsoft Docs
 ms.custom: ''
-ms.date: 07/19/2018
+ms.date: 08/12/2019
 ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: d7044936-5b8c-4def-858c-28a11ef70a97
 author: MightyPen
 ms.author: genemi
-ms.openlocfilehash: 83bbe2c28e9b353e5a82fa630660756174ad0dab
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: abbd2aa3c277ad36f419de849b02433f17d27403
+ms.sourcegitcommit: 9348f79efbff8a6e88209bb5720bd016b2806346
 ms.translationtype: MTE75
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67916359"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69026509"
 ---
 # <a name="using-basic-data-types"></a>基本データ型の使用
 
@@ -68,7 +68,7 @@ ms.locfileid: "67916359"
   
 (1) 時刻の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データ型を持つ java.sql.Time を使用する場合は、**sendTimeAsDatetime** 接続プロパティを false に設定します。  
   
-(2) **datetimeoffset の値**には、 [datetimeoffset クラス](../../connect/jdbc/reference/datetimeoffset-class.md)を使用してプログラムでアクセスできます。  
+(2) **datetimeoffset** の値には、 [datetimeoffset クラス](../../connect/jdbc/reference/datetimeoffset-class.md)を使用してプログラムでアクセスできます。  
   
 以下のセクションでは、JDBC ドライバーと基本データ型の使用方法の例を示します。 Java アプリケーションの基本データ型の使用方法の詳細例については、「[基本データ型のサンプル](../../connect/jdbc/basic-data-types-sample.md)」をご覧ください。  
   
@@ -124,7 +124,7 @@ ms.locfileid: "67916359"
 > [!NOTE]  
 > out パラメーターが返されるだけでなく、ストアド プロシージャの実行結果により作成された結果セットが返されることもあります。  
   
-JDBC driver とストアドプロシージャおよび出力パラメーターを使用する方法の詳細については、「 [Output パラメーターを](../../connect/jdbc/using-a-stored-procedure-with-output-parameters.md)使用したストアドプロシージャの使用」を参照してください。  
+JDBC driver とストアドプロシージャおよび出力パラメーターを使用する方法の詳細については、「 [output パラメーターを](../../connect/jdbc/using-a-stored-procedure-with-output-parameters.md)使用したストアドプロシージャの使用」を参照してください。  
 
 ## <a name="see-also"></a>参照
 

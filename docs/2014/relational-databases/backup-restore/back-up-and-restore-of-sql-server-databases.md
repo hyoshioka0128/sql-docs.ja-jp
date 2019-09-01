@@ -22,19 +22,19 @@ ms.assetid: 570a21b3-ad29-44a9-aa70-deb2fbd34f27
 author: MikeRayMSFT
 ms.author: mikeray
 manager: craigg
-ms.openlocfilehash: 586a1315c2d8e73d5010964864560db0fc0012fd
-ms.sourcegitcommit: a1adc6906ccc0a57d187e1ce35ab7a7a951ebff8
+ms.openlocfilehash: a94ec756e86cb814d0e3b3f624b4a9b3eb180533
+ms.sourcegitcommit: 3b1f873f02af8f4e89facc7b25f8993f535061c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68890816"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70176027"
 ---
 # <a name="back-up-and-restore-of-sql-server-databases"></a>SQL Server データベースのバックアップと復元
   このトピックでは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースをバックアップする利点、バックアップと復元に関する基本的な用語、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のバックアップと復元の方法を紹介します。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のバックアップと復元のセキュリティに関する考慮事項についても取り上げます。  
   
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のバックアップと復元コンポーネントは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースに格納されている大切なデータを保護するうえで不可欠な保護対策を提供します。 致命的なデータ損失のリスクを最小限に抑えるには、データベースをバックアップして、データに対する変更内容を定期的に保存しておく必要があります。 バックアップと復元方法を十分に計画することで、さまざまな障害に起因するデータの損失からデータベースを保護できます。 バックアップを復元し、データベースを復旧するテストを実施することで、障害発生時に適切に対応できるようになります。  
   
- バックアップを格納するローカル ストレージに加えて、SQL Server では、バックアップおよび Windows Azure BLOB ストレージ サービスからの復元がサポートされます。 詳しくは、「 [Windows Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」をご覧ください。  
+ バックアップを格納するためのローカルストレージに加えて、SQL Server は、Azure Blob Storage サービスからのバックアップと復元もサポートします。 詳細については、「 [Azure Blob Storage サービスを使用したバックアップと復元の SQL Server](sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」を参照してください。  
   
 
   
@@ -53,7 +53,7 @@ ms.locfileid: "68890816"
   
     -   ハードウェア障害 (ディスク ドライブの損傷や、復旧の可能性のないサーバー障害など)  
   
-    -   自然災害。 Windows Azure BLOB ストレージ サービスへの SQL Server バックアップを使用すると、内部設置環境に影響する自然災害が発生した場合に使用できるように、内部設置の場所とは異なる地域にオフサイト バックアップを作成できます。  
+    -   自然災害。 Azure Blob ストレージサービスへの SQL Server バックアップを使用すると、オンプレミスの場所とは異なるリージョンにオフサイトのバックアップを作成し、オンプレミスの場所に影響する自然災害が発生した場合に使用することができます。  
   
 -   また、データベースのバックアップは、サーバー間でのデータベースのコピー、 [!INCLUDE[ssHADR](../../includes/sshadr-md.md)] やデータベース ミラーリングのセットアップ、およびアーカイブなど、日常的な管理作業を行ううえでも便利です。  
   
@@ -67,7 +67,7 @@ ms.locfileid: "68890816"
  障害の発生後、データの復元と復旧に使用できるデータのコピー。 データベースのバックアップを使用して、コピー (データベース) を新しい場所に復元することもできます。  
   
  バックアップ デバイス (backup device)  
- SQL Server のバックアップの書き込みと復元に使用されるディスクまたはテープ デバイス。 SQL Server のバックアップは、Windows Azure BLOB ストレージ サービスに書き込むことができます。バックアップ先とバックアップ ファイルの名前を指定するには **URL** 形式を使用します。 詳しくは、「 [Windows Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」をご覧ください。  
+ SQL Server のバックアップの書き込みと復元に使用されるディスクまたはテープ デバイス。 SQL Server バックアップを Azure Blob ストレージサービスに書き込むこともできます。 **URL**形式を使用して、バックアップ先とバックアップファイルの名前を指定します。 詳細については、「 [Azure Blob Storage サービスを使用したバックアップと復元の SQL Server](sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」を参照してください。  
   
  バックアップ メディア (backup media)  
  バックアップの書き込み先となる 1 つまたは複数のテープまたはディスク ファイル。  

@@ -1,5 +1,5 @@
 ---
-title: 'レッスン 2: コンテナーのポリシーを作成し、Shared Access Signature (SAS) キーの生成 |Microsoft Docs'
+title: 'レッスン 2: コンテナーでポリシーを作成し、Shared Access Signature (SAS) キーを生成する |Microsoft Docs'
 ms.custom: ''
 ms.date: 06/13/2017
 ms.prod: sql-server-2014
@@ -10,12 +10,12 @@ ms.assetid: 41674d9d-8132-4bff-be4d-85a861419f3d
 author: MikeRayMSFT
 ms.author: mikeray
 manager: craigg
-ms.openlocfilehash: 23e80a2bf02ee6b97449ea3acff38a3937d37000
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: c9efb23d15b4f72375077f4bbf1450d8c47fddf4
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "67046737"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70153846"
 ---
 # <a name="lesson-2-create-a-policy-on-container-and-generate-a-shared-access-signature-sas-key"></a>レッスン 2: コンテナーのポリシーを作成し、Shared Access Signature (SAS) キーを生成する
   このレッスンでは、BLOB コンテナーのポリシーを作成する方法と、SAS キーを生成する方法について学習します。  
@@ -24,9 +24,9 @@ ms.locfileid: "67046737"
   
  次の方法の 1 つを使用してポリシーと Shared Access Signature を作成できます。  
   
--   Windows Azure REST API 操作:[コンテナーを作成する](https://msdn.microsoft.com/library/azure/dd179468.aspx)、[コンテナー ACL の設定](https://msdn.microsoft.com/library/azure/dd179391.aspx)、および[コンテナー ACL の取得](https://msdn.microsoft.com/library/azure/dd179469.aspx)します。  
+-   Azure REST API の操作:コンテナーを[作成](https://msdn.microsoft.com/library/azure/dd179468.aspx)し、[コンテナーの acl を設定](https://msdn.microsoft.com/library/azure/dd179391.aspx)して、コンテナーの acl を[取得](https://msdn.microsoft.com/library/azure/dd179469.aspx)します。  
   
--   [CloudBlobContainer.GetSharedAccessSignature メソッド](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.getsharedaccesssignature)windows Azure SDK。  
+-   Azure SDK の[CloudBlobContainer メソッド](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.getsharedaccesssignature)を呼び出します。  
   
     ```  
   
@@ -40,10 +40,10 @@ ms.locfileid: "67046737"
   
     ```  
   
--   などのサード パーティの Windows Azure エクスプ ローラー ツール[Azure ストレージ エクスプ ローラー](http://azurestorageexplorer.codeplex.com/)します。  
+-   [Azure Storage Explorer](http://azurestorageexplorer.codeplex.com/)などのサードパーティの Azure explorer ツール。  
   
  **次のレッスン:**  
   
- [レッスン 3:SQL Server 資格情報を作成します。](../relational-databases/lesson-2-create-a-sql-server-credential-using-a-shared-access-signature.md)  
+ [レッスン 3:SQL Server 資格情報の作成](../relational-databases/lesson-2-create-a-sql-server-credential-using-a-shared-access-signature.md)  
   
   

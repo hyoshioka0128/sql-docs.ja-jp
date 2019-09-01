@@ -9,7 +9,7 @@ ms.topic: conceptual
 helpviewer_keywords:
 - Data sync
 - SQL Database
-- Windows Azure Training Kit
+- Azure Training Kit
 - Database development
 - Database backup
 - Database connection management
@@ -17,7 +17,7 @@ helpviewer_keywords:
 - Backup and restore
 - Database import and export
 - SQL Data Sync
-- Windows Azure Service Dashboard
+- Azure Service Dashboard
 - SQL Server Management Studio
 - Database management
 - Database export
@@ -30,12 +30,12 @@ ms.assetid: 91da13a4-0eea-4e88-b608-dada881ff5f2
 author: MashaMSFT
 ms.author: mathoma
 manager: craigg
-ms.openlocfilehash: 07710fbf649037843479de94057f2efcf2a8f558
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: a1a82d94e1a2dbf3f2155a93c8a3e8c46383dbde
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "62872172"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70154551"
 ---
 # <a name="database-lifecycle-management"></a>データベースのライフサイクル管理
   データベース ライフ サイクル管理 (DLM) は、データベースとデータ資産を管理するためのポリシー ベースのアプローチです。 DLM は製品ではなく、データベース アプリケーションのデータベース スキーマ、データ、およびメタデータを管理するための包括的なアプローチです。 DLM に対するよく考えられた積極的なアプローチにより、組織では、パフォーマンス、保護、可用性、およびコストの適切なレベルに応じてデータ リソースを管理できます。  
@@ -44,11 +44,11 @@ ms.locfileid: "62872172"
   
  トピック全体を確認するには、「 [データベース ライフ サイクル管理 (DLM)](https://go.microsoft.com/fwlink/?LinkId=276949)」を参照してください。  
   
-## <a name="see-also"></a>参照  
- [Microsoft Azure ホーム ページ](http://www.windowsazure.com/)   
- [Microsoft Azure デベロッパー センター](http://www.windowsazure.com/develop/overview/)   
- [Microsoft Azure の管理のセンター](http://www.windowsazure.com/manage/overview/)   
- [Windows Azure チーム ブログ](http://www.windowsazure.com/community/blog/)   
- [Microsoft Azure のサポート オプション](http://www.windowsazure.com/support/contact/)  
+## <a name="see-also"></a>関連項目  
+ [Azure ホームページ](http://www.windowsazure.com/)   
+ [Azure デベロッパーセンター](http://www.windowsazure.com/develop/overview/)   
+ [Azure 管理センター](http://www.windowsazure.com/manage/overview/)   
+ [Azure チームのブログ](http://www.windowsazure.com/community/blog/)   
+ [Azure のサポートオプション](http://www.windowsazure.com/support/contact/)  
   
   

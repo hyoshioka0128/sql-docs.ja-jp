@@ -10,11 +10,11 @@ ms.author: garye
 ms.reviewer: davidph
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
 ms.openlocfilehash: 68f86d673b944a029c7bd0f74c9594692bd579f4
-ms.sourcegitcommit: 632ff55084339f054d5934a81c63c77a93ede4ce
+ms.sourcegitcommit: 00350f6ffb73c2c0d99beeded61c5b9baa63d171
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69634177"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70196335"
 ---
 # <a name="create-a-local-r-package-repository-using-minicran"></a>MiniCRAN を使用してローカル R パッケージリポジトリを作成する
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]

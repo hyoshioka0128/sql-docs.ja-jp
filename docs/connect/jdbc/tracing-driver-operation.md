@@ -1,7 +1,7 @@
 ---
 title: ドライバー操作のトレース |Microsoft Docs
 ms.custom: ''
-ms.date: 07/11/2018
+ms.date: 08/12/2019
 ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
@@ -10,14 +10,14 @@ ms.topic: conceptual
 ms.assetid: 723aeae7-6504-4585-ba8b-3525115bea8b
 author: MightyPen
 ms.author: genemi
-ms.openlocfilehash: a8e04fe67605c97e12c688e0b05b8c437b6aa182
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 18bfd63a8cf3255a62b6aef5c4c31573c60e76b0
+ms.sourcegitcommit: 9348f79efbff8a6e88209bb5720bd016b2806346
 ms.translationtype: MTE75
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67916684"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69027594"
 ---
-# <a name="tracing-driver-operation"></a>ドライバー操作のトレース」を参照してください。
+# <a name="tracing-driver-operation"></a>ドライバー操作のトレース
 [!INCLUDE[Driver_JDBC_Download](../../includes/driver_jdbc_download.md)]
 
   [!INCLUDE[jdbcNoVersion](../../includes/jdbcnoversion_md.md)] をアプリケーションで使用すると、トレース (またはログ記録) を使用して JDBC Driver で発生した問題の解決に役立てることができます。 トレースを有効にするため、JDBC Driver では java.util.logging でログ記録 API を使用しています。この API には、Logger および LogRecord オブジェクトを作成するための一連のクラスが用意されています。  
@@ -79,7 +79,7 @@ ms.locfileid: "67916684"
   
 |[オブジェクト名]|[説明]|  
 |----------|-----------------|  
-|AuthenticationJNI|Windows 統合認証の問題に関するメッセージをログに記録します ( **Authenticationscheme**接続プロパティが暗黙的または明示的にに設定されている**場合)。**<br /><br /> アプリケーションは、ログ記録レベルを FINEST および FINE として設定できます。|  
+|AuthenticationJNI|Windows 統合認証の問題に関するメッセージをログに記録します ( **Authenticationscheme**接続プロパティが暗黙的 **** または明示的にに設定されている場合)。<br /><br /> アプリケーションは、ログ記録レベルを FINEST および FINE として設定できます。|  
 |SQLServerConnection|[SQLServerConnection](../../connect/jdbc/reference/sqlserverconnection-class.md) クラスのメッセージを記録します。 アプリケーションは、ログ記録レベルを FINE および FINER として設定できます。|  
 |SQLServerDataSource|[SQLServerDataSource](../../connect/jdbc/reference/sqlserverdatasource-class.md)、[SQLServerConnectionPoolDataSource](../../connect/jdbc/reference/sqlserverconnectionpooldatasource-class.md)、および [SQLServerPooledConnection](../../connect/jdbc/reference/sqlserverpooledconnection-class.md) クラスのメッセージを記録します。<br /><br /> アプリケーションは、ログ記録レベルを FINER として設定できます。|  
 |InputStream|java.io.InputStream、java.io.Reader のほか、max 指定子を持つデータ型 (varchar、nvarchar、varbinary など) に関するメッセージを記録します。<br /><br /> アプリケーションは、ログ記録レベルを FINER として設定できます。|  
@@ -103,7 +103,7 @@ ms.locfileid: "67916684"
 |SQLServerDriver|[SQLServerDriver](../../connect/jdbc/reference/sqlserverdriver-class.md) クラスのメッセージを記録します。 アプリケーションは、ログ記録レベルを FINE として設定できます。|  
 |SQLServerNClob|[SQLServerNClob](../../connect/jdbc/reference/sqlservernclob-class.md) クラスのメッセージを記録します。 アプリケーションは、ログ記録レベルを FINE として設定できます。|  
   
-## <a name="enabling-tracing-programmatically"></a>トレースをプログラムで有効にする  
+## <a name="enabling-tracing-programmatically"></a>プログラムによるトレースの有効化  
  トレースは、Logger オブジェクトを作成し、ログ記録するカテゴリを指定することにより、プログラムで有効にすることができます。 たとえば、次のコードは SQL ステートメントのログ記録を有効にする方法を示しています。  
   
 ```java
@@ -131,7 +131,7 @@ Logger logger = Logger.getLogger("com.microsoft.sqlserver.jdbc.Statement");
 logger.setLevel(Level.OFF);  
 ```  
   
-## <a name="enabling-tracing-by-using-the-loggingproperties-file"></a>Logging.Properties ファイルを使用してトレースを有効にする  
+## <a name="enabling-tracing-by-using-the-loggingproperties-file"></a>logging.properties ファイルを使用してトレースを有効にする  
  `logging.properties` ファイルを使用してトレースを有効にすることもできます。このファイルは、Java ランタイム環境 (JRE) のインストール ディレクトリ `lib` にあります。 このファイルを使用すると、トレースが有効になったときに使用されるロガーやハンドラーに既定値を設定することができます。  
   
  次は、`logging.properties` ファイルで行うことができる設定の一例です。  
@@ -159,6 +159,6 @@ com.microsoft.sqlserver.jdbc.level=FINEST
 >  java.util.logging に含まれる LogManager オブジェクトを使用して、`logging.properties` ファイルでプロパティを設定することができます。  
   
 ## <a name="see-also"></a>参照  
- [JDBC ドライバーで発生した問題の診断](../../connect/jdbc/diagnosing-problems-with-the-jdbc-driver.md)  
+ [JDBC ドライバーに関する問題の診断](../../connect/jdbc/diagnosing-problems-with-the-jdbc-driver.md)  
   
   

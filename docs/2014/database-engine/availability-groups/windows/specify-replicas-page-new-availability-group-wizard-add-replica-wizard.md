@@ -14,12 +14,12 @@ ms.assetid: 2d90fc12-a67b-4bd0-b0ab-899b73017196
 author: MashaMSFT
 ms.author: mathoma
 manager: craigg
-ms.openlocfilehash: be6ddc45dd2f37b5a4a29f0e3fee4a9c44f723ba
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: 5ab74dc982416e3c18f2a0ad649e52de23770c5a
+ms.sourcegitcommit: 3b1f873f02af8f4e89facc7b25f8993f535061c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "62788355"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70176048"
 ---
 # <a name="specify-replicas-page-new-availability-group-wizard-add-replica-wizard"></a>[レプリカの指定] ページ (新しい可用性グループ ウィザード:レプリカの追加ウィザード)
   このトピックでは、 **[レプリカの指定]** ページのオプションについて説明します。 このページの対象は、 [!INCLUDE[ssAoNewAgWiz](../../../includes/ssaonewagwiz-md.md)] の [!INCLUDE[ssAoAddRepWiz](../../../includes/ssaoaddrepwiz-md.md)] および [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)]です。 **[レプリカの指定]** ページを使用して、1 つまたは複数の可用性レプリカを指定および構成して可用性グループを追加します。 このページには、次の表に示す 4 つのタブが含まれます。 この表でタブの名前をクリックすると、このトピックの対応するセクションに移動します。  
@@ -35,7 +35,7 @@ ms.locfileid: "62788355"
  **サーバー インスタンス**  
  可用性レプリカをホストするサーバー インスタンスの名前を表示します。  
   
- セカンダリ レプリカをホストするために使用するサーバー インスタンスが **[可用性レプリカ]** グリッドに表示されていない場合は、 **[レプリカの追加]** をクリックします。 ハイブリッド IT 環境で可用性グループを構成する場合は (「 [Windows Azure の仮想マシン内の SQL Server の高可用性と災害復旧](https://msdn.microsoft.com/library/windowsazure/jj870962.aspx)」を参照)、 **[Azure のレプリカ追加]** をクリックして、セカンダリ レプリカを備えた仮想マシンを Windows Azure に作成できます。  
+ セカンダリ レプリカをホストするために使用するサーバー インスタンスが **[可用性レプリカ]** グリッドに表示されていない場合は、 **[レプリカの追加]** をクリックします。 ハイブリッド IT 環境で可用性グループを構成する場合は (「 [azure Virtual Machines での SQL Server の高可用性とディザスターリカバリー](https://msdn.microsoft.com/library/windowsazure/jj870962.aspx)」を参照)、 **[Azure レプリカの追加]** ボタンをクリックしてセカンダリを含む仮想マシンを作成できます。Azure のレプリカ。  
   
  **[初期ロール]**  
  新しいレプリカが初期状態で実行するロール(**プライマリ** または **セカンダリ**) を示します。  
@@ -43,12 +43,12 @@ ms.locfileid: "62788355"
  **自動フェールオーバー (上限 2)**  
  この可用性レプリカを自動フェールオーバー パートナーにする場合のみ、このチェック ボックスをオンにします。 自動フェールオーバーを構成するには、最初のプライマリ レプリカと 1 つのセカンダリ レプリカに対してこのオプションを選択する必要があります。 どちらのレプリカでも同期コミット可用性モードが使用されます。 2 つのレプリカのみが自動フェールオーバーをサポートできます。  
   
- 同期コミット可用性モードの詳細については、次を参照してください。[可用性モード (AlwaysOn 可用性グループ)](availability-modes-always-on-availability-groups.md)します。 自動フェールオーバーの詳細については、「[フェールオーバーとフェールオーバー モード &#40;AlwaysOn 可用性グループ&#41;](failover-and-failover-modes-always-on-availability-groups.md)」を参照してください。  
+ 同期コミット可用性モードの詳細については、「[可用性モード (AlwaysOn 可用性グループ)](availability-modes-always-on-availability-groups.md)」を参照してください。 自動フェールオーバーの詳細については、「[フェールオーバーとフェールオーバー モード &#40;AlwaysOn 可用性グループ&#41;](failover-and-failover-modes-always-on-availability-groups.md)」を参照してください。  
   
  **[同期コミット (上限 3)]**  
  レプリカに **[自動フェールオーバー (最大 2)]** を選択した場合、 **[同期コミット (最大 3)]** も選択されます。 このチェック ボックスがオフになっている場合は、このレプリカで同期コミット モードを計画的な手動フェールオーバーでのみ使用する場合に限り、オンにしてください。 3 つのレプリカのみが同期コミット モードを使用できます。  
   
- このレプリカで非同期コミット可用性モードを使用する場合、このチェック ボックスはオフのままにします。 レプリカは、強制手動フェールオーバー (データ損失の可能性あり) のみをサポートします。 非同期コミット可用性モードの詳細については、次を参照してください。[可用性モード (AlwaysOn 可用性グループ)](availability-modes-always-on-availability-groups.md)します。 計画的な手動フェールオーバーと強制手動フェールオーバーの詳細については、「[フェールオーバーとフェールオーバー モード &#40;AlwaysOn 可用性グループ&#41;](failover-and-failover-modes-always-on-availability-groups.md)」を参照してください。  
+ このレプリカで非同期コミット可用性モードを使用する場合、このチェック ボックスはオフのままにします。 レプリカは、強制手動フェールオーバー (データ損失の可能性あり) のみをサポートします。 非同期コミット可用性モードの詳細については、「[可用性モード (AlwaysOn 可用性グループ)](availability-modes-always-on-availability-groups.md)」を参照してください。 計画的な手動フェールオーバーと強制手動フェールオーバーの詳細については、「[フェールオーバーとフェールオーバー モード &#40;AlwaysOn 可用性グループ&#41;](failover-and-failover-modes-always-on-availability-groups.md)」を参照してください。  
   
  **[読み取り可能セカンダリ ロール]**  
  **[読み取り可能セカンダリ]** ボックスの一覧から値を選択します。値は次のとおりです。  
@@ -66,7 +66,7 @@ ms.locfileid: "62788355"
  クリックすると、セカンダリ レプリカが可用性グループに追加されます。  
   
  **[Azure のレプリカ追加]**  
- 可用性グループのセカンダリ レプリカを実行する Windows Azure 仮想マシンを作成する場合にクリックします。 このオプションは、内部設置型レプリカが含まれるハイブリッド IT 環境の可用性グループに対してのみ適用できます。 詳細については、「 [Windows Azure 仮想マシン内の SQL Server の高可用性と災害復旧](https://msdn.microsoft.com/library/windowsazure/jj870962.aspx)」を参照してください。  
+ 可用性グループのセカンダリレプリカを実行している Azure 仮想マシンを作成する場合にクリックします。 このオプションは、内部設置型レプリカが含まれるハイブリッド IT 環境の可用性グループに対してのみ適用できます。 詳細については、「 [Azure Virtual Machines での SQL Server の高可用性とディザスターリカバリー](https://msdn.microsoft.com/library/windowsazure/jj870962.aspx)」を参照してください。  
   
  **[レプリカの削除]**  
  クリックすると、選択したセカンダリ レプリカが可用性グループから削除されます。  
@@ -122,7 +122,7 @@ ms.locfileid: "62788355"
  バックアップを実行するレプリカを選択するときにバックアップ ジョブが可用性レプリカのロールを無視するように指定します。 バックアップ ジョブは、動作状態および接続状態と組み合わせて、各可用性レプリカのバックアップ優先順位などの他の要素を評価する場合があります。  
   
 > [!IMPORTANT]  
->  バックアップに関するユーザー設定は適用されません。 この優先設定の解釈は、特定の可用性グループのデータベースに対するバックアップ ジョブのスクリプトでのロジックに依存します (ある場合)。 詳細については、「[アクティブなセカンダリ:セカンダリ レプリカ (AlwaysOn 可用性グループ) でバックアップ](active-secondaries-backup-on-secondary-replicas-always-on-availability-groups.md)します。  
+>  バックアップに関するユーザー設定は適用されません。 この優先設定の解釈は、特定の可用性グループのデータベースに対するバックアップ ジョブのスクリプトでのロジックに依存します (ある場合)。 詳細については、「[アクティブなセカンダリ:セカンダリレプリカでのバックアップ (AlwaysOn 可用性グループ](active-secondaries-backup-on-secondary-replicas-always-on-availability-groups.md))。  
   
 ### <a name="replica-backup-priorities-grid"></a>[レプリカのバックアップの優先順位] グリッド  
  **[レプリカのバックアップの優先順位]** グリッドを使用して、可用性グループのレプリカごとに、バックアップの優先順位を指定します。 このグリッドに含まれる列は、次のとおりです。  
@@ -206,11 +206,11 @@ ms.locfileid: "62788355"
   
 -   [CREATE ENDPOINT &#40;Transact-SQL&#41;](/sql/t-sql/statements/create-endpoint-transact-sql)  
   
--   [データベース ミラーリング エンドポイントの AlwaysOn 可用性グループの作成&#40;SQL Server PowerShell&#41;](database-mirroring-always-on-availability-groups-powershell.md)  
+-   [AlwaysOn 可用性グループ&#40;SQL Server PowerShell のデータベースミラーリングエンドポイントを作成する&#41;](database-mirroring-always-on-availability-groups-powershell.md)  
   
 ## <a name="see-also"></a>参照  
- [AlwaysOn 可用性グループの概要&#40;SQL Server&#41;](overview-of-always-on-availability-groups-sql-server.md)   
+ [AlwaysOn 可用性グループ&#40;SQL Server の概要&#41;](overview-of-always-on-availability-groups-sql-server.md)   
  [CREATE AVAILABILITY GROUP &#40;Transact-SQL&#41;](/sql/t-sql/statements/create-availability-group-transact-sql)   
- [前提条件、制限事項、および AlwaysOn 可用性グループの推奨事項&#40;SQL Server&#41;](prereqs-restrictions-recommendations-always-on-availability.md)  
+ [AlwaysOn 可用性グループ&#40;SQL Server の前提条件、制限事項、および推奨事項&#41;](prereqs-restrictions-recommendations-always-on-availability.md)  
   
   

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/18/2018
 ms.author: murshedz
 ms.reviewer: martinle
-ms.openlocfilehash: e0f4fc55632b4effbe04776542b35aa54dcd9462
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 08f70ff74c5743f202867ae2a57adc1c6b9d677d
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67960846"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70153359"
 ---
 # <a name="microsoft-analytics-platform-system"></a>Microsoft Analytics Platform System
 
@@ -23,7 +23,7 @@ ms.locfileid: "67960846"
 
 Analytics Platform System は、超並列処理 (MPP) データ ウェアハウスを実行するソフトウェアである SQL Server 並列データ ウェアハウス (PDW) をホストしています。
 
-PolyBase テクノロジは、Windows Server の Hortonworks、Linux の Hortonworks、Linux の Cloudera、HDInsight の Microsoft Azure BLOB Storage など、複数のソースから得られるリレーショナル PDW データと Hadoop データを結合します。 データを高度に統合できるこれらの機能に加え、ビジネス インテリジェンス ツールとの密な統合により、ビジネスの意思決定者が、よりよい洞察を備えたビジネス上の意思決定を下せるようにする分析を Analytics Platform System が返すことができます。
+PolyBase テクノロジは、Windows Server 上の Hortonworks、Linux 上の Hortonworks、Cloudera on Linux、HDInsight の Azure blob storage など、複数のソースの Hadoop データとリレーショナル PDW データを結合します。 データを高度に統合できるこれらの機能に加え、ビジネス インテリジェンス ツールとの密な統合により、ビジネスの意思決定者が、よりよい洞察を備えたビジネス上の意思決定を下せるようにする分析を Analytics Platform System が返すことができます。
 
 Analytics Platform System は、ハードウェアとソフトウェアが事前にインストールされ、複数のワークロードを実行できるように構成されたアプライアンスとしてデータ センターに出荷されます。 Analytics Platform System を購入する場合、ビジネス要件に応じて PDW 用のコンピューティング ノードを購入します。
 
@@ -38,13 +38,13 @@ PDW は、エンド ツー エンドのビジネス インテリジェンス ソ
 
 PDW では、画期的なパフォーマンスを得られるだけではなく、次も容易にします。
 
-- 任意の場所に、データ ウェアハウスを拡張する「スケール ユニット」を既存のシステムに追加することで 1 つのアプライアンス内のデータのペタバイトを超える 6 テラバイトから。
+- 既存のシステムに "スケールユニット" を追加することで、1つのアプライアンスで、数テラバイトから6ペタバイトを超えるデータウェアハウスを拡張します。
 
-- 組み込みの高い冗長性と高可用性のために必要なとき、データが存在するを信頼します。
+- 組み込みの高冗長性と高可用性によって、データが必要になったときに信頼されます。
 
-- 読み込みとデータの統合の最新のデータの課題を解決します。
+- データの読み込みと統合に関する最新のデータの課題を解決します。
 
-- 高速の分析のためのリレーショナル データと PDW の高度に並列化された PolyBase テクノロジを使用して Hadoop データを統合します。
+- PDW の高度に並列化された PolyBase テクノロジを使用して、Hadoop データをリレーショナルデータと統合し、高速分析を行うことができます。
 
 - ビジネス インテリジェンス ツールを使用して、包括的なエンド ツー エンド ソリューションを構築できます。
 

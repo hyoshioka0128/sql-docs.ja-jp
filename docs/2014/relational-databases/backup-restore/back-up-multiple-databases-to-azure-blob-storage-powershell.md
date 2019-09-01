@@ -1,5 +1,5 @@
 ---
-title: PowerShell を使用して、Windows Azure Blob ストレージ サービスへの複数のデータベースのバックアップ |Microsoft Docs
+title: PowerShell を使用して複数のデータベースを Azure Blob Storage サービスにバックアップする |Microsoft Docs
 ms.custom: ''
 ms.date: 06/13/2017
 ms.prod: sql-server-2014
@@ -10,18 +10,18 @@ ms.assetid: f7008339-e69d-4e20-9265-d649da670460
 author: MikeRayMSFT
 ms.author: mikeray
 manager: craigg
-ms.openlocfilehash: 03a747825c20b1183977b6c5b8e7f46ef2aa034f
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: f8d1917798137ed8aa96ddf106392ffd311ed9b1
+ms.sourcegitcommit: 3b1f873f02af8f4e89facc7b25f8993f535061c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "62922576"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70176009"
 ---
-# <a name="use-powershell-to-backup-multiple-databases-to-windows-azure-blob-storage-service"></a>PowerShell の使用による Windows Azure BLOB ストレージ サービスへの複数データベースのバックアップ
-  このトピックには、PowerShell コマンドレットを使用して Windows Azure BLOB ストレージ サービスへのバックアップを自動化するためのサンプル スクリプトを掲載しています。  
+# <a name="use-powershell-to-backup-multiple-databases-to-azure-blob-storage-service"></a>PowerShell を使用して複数のデータベースを Azure Blob Storage サービスにバックアップする
+  このトピックでは、PowerShell コマンドレットを使用して Azure Blob storage サービスへのバックアップを自動化するために使用できるサンプルスクリプトについて説明します。  
   
 ## <a name="overview-of-powershell-cmdlets-for-backup-and-restore"></a>バックアップと復元用の PowerShell コマンドレットの概要  
- バックアップ操作と復元操作を行うために使用できる 2 つの主要なコマンドレットは、`Backup-SqlDatabase` と `Restore-SqlDatabase` です。 さらに、一連の **SqlCredential** コマンドレットのように、Windows Azure BLOB ストレージへのバックアップを自動化するために必要な他のコマンドレットもあります。バックアップおよび復元操作用として [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] に用意されている PowerShell コマンドレットを次に示します。  
+ バックアップ操作と復元操作を行うために使用できる 2 つの主要なコマンドレットは、`Backup-SqlDatabase` と `Restore-SqlDatabase` です。 さらに、次に示す一連の**sqlcredential**コマンドレットのように、Azure Blob storage へのバックアップを自動化するために必要な他のコマンドレットも[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]あります。これは、バックアップ操作と復元操作で使用される PowerShell コマンドレットの一覧です。  
   
  Backup-SqlDatabase  
  このコマンドレットは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] バックアップを作成するために使用します。  
@@ -30,7 +30,7 @@ ms.locfileid: "62922576"
  データベースを復元するために使用します。  
   
  New-SqlCredential  
- このコマンドレットは、Windows Azure ストレージへの SQL Server バックアップに使用する SQL 資格情報を作成するために使用します。 SQL Server のバックアップと復元における資格情報およびその使用方法の詳細については、「 [SQL Server Backup and Restore with Windows Azure Blob Storage Service](sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」を参照してください。  
+ このコマンドレットは、Azure Storage への SQL Server バックアップに使用する SQL 資格情報を作成するために使用されます。 SQL Server のバックアップと復元における資格情報とその使用方法の詳細については、「 [Azure Blob Storage サービスを使用したバックアップと復元の SQL Server](sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」を参照してください。  
   
  Get-SqlCredential  
  このコマンドレットは、資格情報オブジェクトとそのプロパティを取得するために使用します。  
@@ -42,7 +42,7 @@ ms.locfileid: "62922576"
  このコマンドレットは、SQL 資格情報オブジェクトのプロパティを変更または設定するために使用します。  
   
 > [!TIP]  
->  資格情報コマンドレットは、Windows Azure BLOB ストレージへのバックアップと復元で使用します。  
+>  資格情報コマンドレットは、Azure Blob ストレージへのバックアップと復元のシナリオで使用されます。  
   
 ### <a name="powershell-for-multi-database-multi-instance-backup-operations"></a>複数データベース/複数インスタンス バックアップ操作用の PowerShell  
  以下のセクションでは、SQL Server の複数インスタンスでの SQL 資格情報の作成、特定の SQL Server インスタンスにあるすべてのユーザー データベースのバックアップなど、さまざまな操作用のスクリプトを掲載します。 これらのスクリプトでは、使用している環境の要件に従ってバックアップ操作を自動化またはスケジュールすることができます。 ここに示すスクリプトは例であり、環境に合わせて変更または拡張することができます。  
@@ -51,11 +51,11 @@ ms.locfileid: "62922576"
   
 1.  **SQL Server PowerShell パスの移動:** Windows PowerShell では、PowerShell プロバイダーによってサポートされているオブジェクトの階層を表すパス構造を移動するコマンドレットが実装されています。 そのパス内のノードへ移動したときに、他のコマンドレットを使用して、現在のオブジェクトの基本的な操作を実行することができます。  
   
-2.  `Get-ChildItem` コマンドレット:によって返される情報、 `Get-ChildItem` SQL Server PowerShell パス内の場所によって異なります。 たとえば、場所がコンピューター レベルである場合、このコマンドレットはコンピューターにインストールされているすべての SQL Server データベース エンジン インスタンスを返します。 もう 1 つの例として、場所がデータベースなどのオブジェクト レベルである場合、このコマンドレットはデータベース オブジェクトのリストを返します。  既定では、`Get-ChildItem` コマンドレットはシステム オブジェクトを返しません。  -Force パラメーターを使用すると、システム オブジェクトを表示できます。  
+2.  `Get-ChildItem`コマンドレットによって返される`Get-ChildItem`情報は、SQL Server PowerShell パス内の場所によって異なります。 たとえば、場所がコンピューター レベルである場合、このコマンドレットはコンピューターにインストールされているすべての SQL Server データベース エンジン インスタンスを返します。 もう 1 つの例として、場所がデータベースなどのオブジェクト レベルである場合、このコマンドレットはデータベース オブジェクトのリストを返します。  既定では、`Get-ChildItem` コマンドレットはシステム オブジェクトを返しません。  -Force パラメーターを使用すると、システム オブジェクトを表示できます。  
   
      詳細については、「 [Navigate SQL Server PowerShell Paths](../../powershell/navigate-sql-server-powershell-paths.md)」をご参照ください。  
   
-3.  各コード サンプルは変数値を変更して個別に試すことができますが、Windows Azure ストレージ アカウントおよび SQL 資格情報の作成は前提条件であり、Windows Azure BLOB ストレージ サービスへのすべてのバックアップ操作と復元操作に必要です。  
+3.  各コードサンプルは変数の値を変更することによって個別に試すことができますが、Azure Storage アカウントの作成と SQL 資格情報は、Azure Blob ストレージサービスへのすべてのバックアップ操作と復元操作に必要な前提条件となります。  
   
 ### <a name="create-a-sql-credential-on-all-the-instances-of-sql-server"></a>SQL Server のすべてのインスタンスで SQL 資格情報を作成する  
  2 種類のサンプル スクリプトがあり、いずれもコンピューター上のすべての SQL Server インスタンスで SQL 資格情報 "mybackupToURL" を作成します。 最初の例では単純に資格情報を作成し、例外をトラップしません。  たとえば、コンピューター上のいずれかのインスタンスに同じ名前の資格情報が既に存在する場合、このスクリプトは失敗します。 2 番目の例ではエラーをトラップし、スクリプトを続行できます。  
@@ -264,8 +264,8 @@ Backup-SqlDatabase -Database $s -BackupContainer $backupUrlContainer -SqlCredent
   
 ```  
   
-## <a name="see-also"></a>参照  
- [SQL Server Backup and Restore with Windows Azure Blob Storage Service](sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)   
+## <a name="see-also"></a>関連項目  
+ [Azure Blob Storage サービスを使用したバックアップと復元の SQL Server](sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)   
  [SQL Server Backup to URL に関するベスト プラクティスとトラブルシューティング](sql-server-backup-to-url-best-practices-and-troubleshooting.md)  
   
   
