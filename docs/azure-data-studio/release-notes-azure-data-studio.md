@@ -10,12 +10,12 @@ ms.author: maghan
 ms.reviewer: alayu; sstein
 ms.custom: seodec18
 ms.date: 08/15/2019
-ms.openlocfilehash: cad91dc5b48a60746b4f8ef1f4831a1aa9dc2c40
-ms.sourcegitcommit: 57e20b7d02853ec9af46b648106578aed133fb45
+ms.openlocfilehash: fd10408eb976dd40383c058489a971b557a2acd4
+ms.sourcegitcommit: 2bc15f81d7a238c6fc409440800f1d6c7943a4b5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69553105"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70059265"
 ---
 # <a name="release-notes-for-azure-data-studio"></a>Azure Data Studio のリリース ノート
 
@@ -33,7 +33,7 @@ ms.locfileid: "69553105"
 | ノートブックの機能強化 | &bull; &nbsp; コードまたはテキスト セルのインラインでの追加 <br/>&bull; &nbsp; SQL 結果グリッドを右クリックして結果を CSV、JSON などとして保存する機能を追加しました <br/> &bull; &nbsp; JSON をより高速に読み込むためのノートブック読み込みのパフォーマンスの向上 <br/> &bull; &nbsp; 機能強化の完全な一覧については、[こちら](https://github.com/microsoft/azuredatastudio/issues?q=is%3Aissue+label%3A%22Area%3A+Notebooks%22+milestone%3A%22August+2019+Release%22+is%3Aclosed)を参照してください |
 | SQL Server 2019 のサポート |  このリリースには、次のような追加の SQL Server 2019 ビッグ データ クラスター機能のサポートが含まれています。 <br/> &bull; &nbsp; オブジェクト マッピング ページ上でテーブルと列の情報の読み込みにかかる時間が短縮されました。 <br/> &bull; &nbsp; 接続の詳細ページ上で、既存のデータベース スコープの資格情報の読み込みに関するバグを修正しました。 <br/> &bull; &nbsp; PROSE の解析に使用される既定のサンプル サイズが増加しました。 | 
 | Dacpac 拡張機能での AAD のサポート | 
-| Visual Studio Code May Release Merge 1.37 | 最新の機能強化については、[こちら](https://code.visualstudio.com/updates/v1_37)を参照してください。 |
+| Visual Studio Code July Release Merge 1.37 | 最新の機能強化については、[こちら](https://code.visualstudio.com/updates/v1_37)を参照してください。 |
 | バグと問題が解決されました | 修正の完全な一覧については、[GitHubの「バグと問題」](https://github.com/microsoft/azuredatastudio/milestone/39?closed=1)を参照してください。 |
 | &nbsp; | &nbsp; |
 
@@ -69,7 +69,7 @@ ms.locfileid: "69553105"
 | スキーマ比較の機能強化 | &bull; &nbsp; [除外]/[含める] オプションが追加されました <br/>&bull; &nbsp; [スクリプトの生成] で、生成後にスクリプトが開くようになりました <br/>&bull; &nbsp; 二重のスクロール バーが削除されました  <br/>&bull; &nbsp; 書式設定とレイアウトの機能強化 <br/>&bull; &nbsp; 詳細な変更内容については、[こちら](https://github.com/microsoft/azuredatastudio/issues?q=is%3Aissue+milestone%3A%22June+2019+Release%22+label%3A%22Area%3A+Schema+Compare%22+is%3Aclosed)を参照してください|
 | [メッセージ] セクションが独自のタブに移動されました | 以前は、ユーザーが SQL クエリを実行すると、結果とメッセージがスタック パネルに表示されていました。 これからは、SSMS のように、1 つのパネル内で個別のタブに表示されます。 |
 | SQL ノートブックの機能強化 | &bull; &nbsp; ユーザーが、ノートブックで独自の Python 3 または Anaconda インストールを使用できるようになりました <br/>&bull; &nbsp; 安定性とフィット感/仕上げ感に関する複数の修正 <br/> &bull; &nbsp; 機能強化の完全な一覧については、[こちら](https://github.com/microsoft/azuredatastudio/issues?q=is%3Aissue+milestone%3A%22June+2019+Release%22+is%3Aclosed+label%3A%22Area%3A+Notebooks%22)を参照してください|
-| Visual Studio Code May Release Merge 1.34 | 最新の機能強化については、[こちら](https://code.visualstudio.com/updates/v1_34)を参照してください |
+| Visual Studio Code April Release Merge 1.34 | 最新の機能強化については、[こちら](https://code.visualstudio.com/updates/v1_34)を参照してください |
 | バグと問題が解決されました。 | [GitHub の「バグと問題」](https://github.com/microsoft/azuredatastudio/milestone/32?closed=1)を参照してください。 |
 | &nbsp; | &nbsp; |
 

@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: cb883990-d875-4d8b-b868-45f9f15ebeae
 author: janinezhang
 ms.author: janinez
-ms.openlocfilehash: 987ce3d90159a83d141a241579e5cbfc727277c8
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: eef20d5dce1d76d6870a39e34a3da1404838917f
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68045475"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155177"
 ---
 # <a name="ado-net-destination"></a>ADO NET 変換先
 
@@ -32,7 +32,7 @@ ms.locfileid: "68045475"
 
   ADO NET 変換先では、データベースのテーブルやビューを使用する、さまざまな [!INCLUDE[vstecado](../../includes/vstecado-md.md)]互換データベースにデータを読み込みます。 このデータを既存のテーブルやビューに読み込むことができますが、新しいテーブルを作成して、そこにデータを読み込むこともできます。  
   
- ADO NET 変換先を使用して [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssSDSFull](../../includes/sssdsfull-md.md)]に接続できます。 OLE DB を使用した [!INCLUDE[ssSDS](../../includes/sssds-md.md)] への接続はサポートされていません。 [!INCLUDE[ssSDS](../../includes/sssds-md.md)]の詳細については、「 [一般的なガイドラインと制限事項 (Windows Azure SQL データベース)](https://go.microsoft.com/fwlink/?LinkId=248228)」を参照してください。  
+ ADO NET 変換先を使用して [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssSDSFull](../../includes/sssdsfull-md.md)]に接続できます。 OLE DB を使用した [!INCLUDE[ssSDS](../../includes/sssds-md.md)] への接続はサポートされていません。 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] の詳細については、「[一般的な制限事項とガイドライン (Azure SQL Database)](https://go.microsoft.com/fwlink/?LinkId=248228)」を参照してください。  
   
 ## <a name="troubleshooting-the-ado-net-destination"></a>ADO NET 変換先のトラブルシューティング  
  ADO NET 変換先による外部データ プロバイダーの呼び出しをログに記録できます。 このログ機能を使用すると、ADO NET 変換先による外部データ ソースへのデータ保存に関するトラブルシューティングを行えます。 ADO NET 変換先による外部データ プロバイダーの呼び出しのログを記録するには、パッケージ ログ記録を有効にして、パッケージ レベルで **Diagnostic** イベントを選択します。 詳細については、「 [パッケージ実行のトラブルシューティング ツール](../../integration-services/troubleshooting/troubleshooting-tools-for-package-execution.md)」を参照してください。  
@@ -110,7 +110,7 @@ ms.locfileid: "68045475"
 >  詳細については、「[SET IDENTITY_INSERT &#40;Transact-SQL&#41;](../../t-sql/statements/set-identity-insert-transact-sql.md)」および「[IDENTITY &#40;プロパティ&#41; &#40;Transact-SQL&#41;](../../t-sql/statements/create-table-transact-sql-identity-property.md)」を参照してください。  
   
 ## <a name="external-resources"></a>外部リソース  
- sqlcat.com の技術記事「 [Windows Azure SQL データベースへのデータの高速な読み込み](https://go.microsoft.com/fwlink/?LinkId=244333)」  
+ sqlcat.com の技術記事「[Azure SQL Database へのデータの高速な読み込み](https://go.microsoft.com/fwlink/?LinkId=244333)」  
   
 ## <a name="ado-net-destination-editor-mappings-page"></a>[ADO NET 変換先エディター] ([マッピング] ページ)
   **[ADO NET 変換先エディター]** ダイアログ ボックスの **[マッピング]** ページを使用すると、入力列を変換先列にマップできます。  

@@ -61,7 +61,7 @@ fn_get_audit_file ( file_pattern,
  
     この引数は、blob の URL を (ストレージ エンドポイントとコンテナーを含む) を指定するに使用されます。 アスタリスクのワイルドカードはサポートされません、中には、このプレフィックスで始まる複数のファイル (blob) を収集する (完全な blob 名) ではなく、部分的なファイル (blob) 名のプレフィックスを使用できます。 以下に例を示します。
  
-      - **\<Storage_endpoint\>/\<\<Container\>\>/\<ServerName\>/\<DatabaseName\> /**  -特定のデータベースのすべての監査ファイル (blob) を収集します。    
+      - **\<Storage_endpoint\>/\<Container\>/\<ServerName\>/\<DatabaseName\>/** -特定のデータベースのすべての監査ファイル (blob) を収集します。    
       
       - **\<Storage_endpoint\>/\<\<Container\>\>/\<ServerName\>/\<DatabaseName\> / \<AuditName\>/\<CreationDate\>/\<FileName\>.xel** -特定の監査ファイル (blob) を収集します。
   

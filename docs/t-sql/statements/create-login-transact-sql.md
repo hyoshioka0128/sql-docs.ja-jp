@@ -27,12 +27,12 @@ ms.assetid: eb737149-7c92-4552-946b-91085d8b1b01
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 818bb9690153d862211739bcd134ba9fbdf11ae1
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 3b28cde8935c3a2c4b25f20ef727358b918e6680
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67912652"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155656"
 ---
 # <a name="create-login-transact-sql"></a>CREATE LOGIN (Transact-SQL)
 
@@ -308,7 +308,7 @@ SQL Server ルールを使用すると、\<loginname>@\<servername> 形式の SQ
 
 SQL Database では、接続の認証に必要なログイン データおよびサーバー レベルのファイアウォール規則は、各データベースで一時的にキャッシュされます。 このキャッシュは定期的に更新されます。 認証キャッシュを強制的に更新し、データベースに最新バージョンのログイン テーブルがあることを確認するには、[DBCC FLUSHAUTHCACHE](../../t-sql/database-console-commands/dbcc-flushauthcache-transact-sql.md) を実行します。
 
-SQL Database ログインの詳細については、[Windows Azure SQL Database におけるデータベースとログインの管理](https://docs.microsoft.com/azure/sql-database/sql-database-manage-logins)に関する記事を参照してください。
+SQL Database ログインの詳細については、[Azure SQL Database でのデータベースとログインの管理](https://docs.microsoft.com/azure/sql-database/sql-database-manage-logins)に関する記事を参照してください。
 
 ## <a name="permissions"></a>アクセス許可
 
@@ -607,7 +607,7 @@ SQL Server ルールを使用すると、\<loginname>@\<servername> 形式の SQ
 
 SQL Data Warehouse では、接続の認証に必要なログイン データおよびサーバー レベルのファイアウォール規則は、各データベースで一時的にキャッシュされます。 このキャッシュは定期的に更新されます。 認証キャッシュを強制的に更新し、データベースに最新バージョンのログイン テーブルがあることを確認するには、[DBCC FLUSHAUTHCACHE](../../t-sql/database-console-commands/dbcc-flushauthcache-transact-sql.md) を実行します。
 
-SQL Data Warehouse ログインの詳細については、[Windows Azure SQL Database におけるデータベースとログインの管理](https://docs.microsoft.com/azure/sql-database/sql-database-manage-logins)に関する記事を参照してください。
+SQL Data Warehouse のログインの詳細については、[Azure SQL Database でのデータベースとログインの管理](https://docs.microsoft.com/azure/sql-database/sql-database-manage-logins)に関する記事を参照してください。
 
 ## <a name="permissions"></a>アクセス許可
 

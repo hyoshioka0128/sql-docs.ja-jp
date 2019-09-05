@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: 38ffd9c2-18a5-43d2-b674-e425addec4e4
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 2c423f3df3f2dce99caa8ec085ab12f5eac8060c
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: a658c990296de88ebdf8f9d3fb6373ea6a9a2c18
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68127158"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70153103"
 ---
 # <a name="sql-server-data-files-in-microsoft-azure"></a>Microsoft Azure 内の SQL Server データ ファイル
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -46,7 +46,7 @@ ms.locfileid: "68127158"
 ## <a name="concepts-and-requirements"></a>概念と要件  
   
 ### <a name="azure-storage-concepts"></a>Azure Storage の概念  
- Microsoft Azure 機能で SQL Server データ ファイルを使用する場合は、Microsoft Azure 内でストレージ アカウントとコンテナーを作成する必要があります。 次に、SQL Server 資格情報を作成する必要があります。これには、コンテナーのポリシーに関する情報と、コンテナーにアクセスするために必要な Shared Access Signature が含まれます。  
+ Azure の機能で SQL Server データ ファイルを使用する場合は、Azure 内でストレージ アカウントとコンテナーを作成する必要があります。 次に、SQL Server 資格情報を作成する必要があります。これには、コンテナーのポリシーに関する情報と、コンテナーにアクセスするために必要な Shared Access Signature が含まれます。  
   
  [Microsoft Azure](https://azure.microsoft.com)の [Azure Storage](https://azure.microsoft.com/services/storage/) アカウントは、BLOB にアクセスするための名前空間の最高レベルを表します。 ストレージ アカウントには、合計サイズがストレージの制限内であれば、無制限の数のコンテナーを含めることができます。 ストレージの制限に関する最新情報については、「 [Azure のサブスクリプションとサービスの制限、クォータ、および制約](https://docs.microsoft.com/azure/azure-subscription-service-limits)」をご覧ください。 コンテナーでは、一連の [BLOB](https://docs.microsoft.com/azure/storage/common/storage-introduction#blob-storage)をグループ化することができます。 BLOB はすべて、コンテナー内に存在する必要があります。 アカウントには、無制限の数のコンテナーを含めることができます。 同様に、コンテナーには、無制限の数の BLOB を格納できます。 Azure Storage に格納できる BLOB には、ブロック BLOB とページ BLOB の 2 種類があります。 この新しい機能ではページ BLOB が使用されます。ファイル内のバイト範囲が頻繁に変更される場合はこちらの方が効率的です。 BLOB には、 `https://storageaccount.blob.core.windows.net/<container>/<blob>`という URL 形式を使用してアクセスできます。  
   
@@ -124,7 +124,7 @@ ON
  ファイル パスの代わりに BLOB ストレージの URL パスを参照することにより、SQL Server データ ファイルを Azure BLOB ストレージ サービスに格納するには、PowerShell コマンドレットを使用します。 BLOB には、`https://storageaccount.blob.core.windows.net/<container>/<blob>` という URL 形式を使用してアクセスします。  
   
 ### <a name="sql-server-object-and-performance-counters-support"></a>SQL Server オブジェクトとパフォーマンス カウンターのサポート  
- SQL Server 2014 以降では、Azure Storage 機能内の SQL Server データ ファイルと組み合わせて使用する目的で、1 つの新しい SQL Server オブジェクトが追加されました。 新しい SQL Server オブジェクトは [SQL Server, HTTP_STORAGE_OBJECT](../../relational-databases/performance-monitor/sql-server-http-storage-object.md) と呼ばれます。これをシステム モニターで使用すると、SQL Server を Microsoft Azure Storage と共に使用する場合のアクティビティを監視できます。  
+ SQL Server 2014 以降では、Azure Storage 機能内の SQL Server データ ファイルと組み合わせて使用する目的で、1 つの新しい SQL Server オブジェクトが追加されました。 新しい SQL Server オブジェクトは [SQL Server, HTTP_STORAGE_OBJECT](../../relational-databases/performance-monitor/sql-server-http-storage-object.md) という名前です。これをシステム モニターで使用すると、SQL Server を Azure Storage と共に使用する場合のアクティビティを監視できます。  
   
 ### <a name="sql-server-management-studio-support"></a>SQL Server Management Studio のサポート  
  SQL Server Management Studio では、複数のダイアログ ウィンドウでこの機能を使用することができます。 たとえば、ストレージ コンテナーの URL パスを入力します (たとえば、 https://teststorageaccnt.blob.core.windows.net/testcontainer/ )。

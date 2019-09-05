@@ -17,12 +17,12 @@ ms.assetid: 3ec89119-7314-43ef-9e91-12e72bb63d62
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: bbdb412284c67fdccce8c3628aed41b6be0cae04
-ms.sourcegitcommit: e7d921828e9eeac78e7ab96eb90996990c2405e9
+ms.openlocfilehash: de9d2f1c06704e7bedc4592aa7062dbc8a4b8569
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68267634"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155751"
 ---
 # <a name="sqlcmd---use-the-utility"></a>sqlcmd - ユーティリティの使用
 [!INCLUDE[appliesto-ss-asdb-asdw-pdw-md](../../includes/appliesto-ss-asdb-asdw-pdw-md.md)]
@@ -473,7 +473,7 @@ ms.locfileid: "68267634"
   
  `SQLCMD returned 100 to the command shell`  
   
-### <a name="g-using-sqlcmd-to-set-encryption-on-windows-azure-sql-database"></a>G. sqlcmd を使用した Windows Azure SQL データベースでの暗号化の設定  
+### <a name="g-using-sqlcmd-to-set-encryption-on-azure-sql-database"></a>G. sqlcmd を使用した Azure SQL Database での暗号化の設定  
  **データへの接続時に**sqlcmd [!INCLUDE[ssSDS](../../includes/sssds-md.md)] を実行して、通信を暗号化するかどうか、および証明書を信頼するかどうかを指定できます。 次の 2 つの **sqlcmd**``オプションを使用できます。  
   
 -   暗号化された接続を要求するには、クライアント側で -N スイッチを使用します。 このオプションは、ADO.net オプションの `ENCRYPT = true`と同等です。  

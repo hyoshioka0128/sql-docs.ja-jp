@@ -51,11 +51,11 @@ sp_MSchange_merge_agent_properties [ @publisher = ] 'publisher'
   
 `[ @subscriber = ] 'subscriber'` サブスクライバーの名前です。 *subscriber*は**sysname**、既定値はありません。  
   
-`[ @subscriber_db = ] 'subscriber_db'` サブスクリプション データベースの名前です。 *@subscriber_db*は**sysname**、既定値はありません。  
+`[ @subscriber_db = ] 'subscriber_db'` サブスクリプション データベースの名前です。 *subscriber_db*は**sysname**、既定値はありません。  
   
 `[ @property = ] 'property'` 変更するパブリケーションのプロパティです。 *プロパティ*は**sysname**、既定値はありません。  
   
-`[ @value = ] 'value'` 新しいプロパティ値です。 *値*は**nvarchar (524)** 、既定値は NULL です。  
+`[ @value = ] 'value'` 新しいプロパティ値です。 *value*は**nvarchar (524)** 、既定値は NULL です。  
   
  次の表では、これらのプロパティの値を変更できるマージ エージェント ジョブと制約事項のプロパティについて説明します。  
   
@@ -69,7 +69,7 @@ sp_MSchange_merge_agent_properties [ @publisher = ] 'publisher'
 |**publisher_security_mode**|**1**|Windows 認証。<br /><br /> [!INCLUDE[ssNoteWinAuthentication](../../includes/ssnotewinauthentication-md.md)]|  
 ||**0**|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 認証。|  
 |**subscriber_login**||サブスクリプションを同期するサブスクライバーに接続するときに使用するログイン。|  
-|**@subscriber_password**||サブスクライバーのパスワード。<br /><br /> [!INCLUDE[ssNoteStrongPass](../../includes/ssnotestrongpass-md.md)]|  
+|**subscriber_password**||サブスクライバーのパスワード。<br /><br /> [!INCLUDE[ssNoteStrongPass](../../includes/ssnotestrongpass-md.md)]|  
 |**subscriber_security_mode**|**1**|Windows 認証。<br /><br /> [!INCLUDE[ssNoteWinAuthentication](../../includes/ssnotewinauthentication-md.md)]|  
 ||**0**|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 認証。|  
   

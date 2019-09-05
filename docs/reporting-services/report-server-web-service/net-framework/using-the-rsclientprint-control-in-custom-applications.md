@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 8c0bdd18-8905-4e22-9774-a240fc81a8a7
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: b0da6d086754b63a2d796c4f7ff8e1b7fd2d2cad
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: 5304a540e3f1af6930e982ceaff01063a7c0f432
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MTE75
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "63249807"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155730"
 ---
 # <a name="using-the-rsclientprint-control-in-custom-applications"></a>カスタム アプリケーション内での RSClientPrint コントロールの使用
   [!INCLUDE[msCoName](../../../includes/msconame-md.md)] ActiveX コントロールである **RSPrintClient** を使用すると、HTML ビューアーで表示されたレポートをクライアント側で印刷することができます。 このコントロールには **[印刷]** ダイアログ ボックスがあり、印刷ジョブの開始、レポートのプレビュー、印刷するページの指定、余白の変更を行うことができます。 クライアント側での印刷操作の間、レポート サーバーが画像 (EMF) 表示拡張機能でレポートを表示し、オペレーティング システムの印刷機能を使用して印刷ジョブを作成し、そのジョブをプリンターに送ります。  
@@ -91,7 +91,7 @@ ms.locfileid: "63249807"
   
 -   60677965-AB8B-464f-9B04-4BA871A2F17F  
   
- レポートを Windows Azure SQL Reporting で実行している場合は、次の CLSID 値を使用します。  
+ レポートを Azure SQL Reporting で実行している場合は、次の CLSID 値を使用します。  
   
 -   3DD32426-554D-48C0-A200-65D3BF880E38  
   

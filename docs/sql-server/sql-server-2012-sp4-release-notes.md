@@ -10,12 +10,12 @@ ms.assetid: 67cb8b3e-3d82-47f4-840d-0f12a3bff565
 author: craigg-msft
 ms.author: craigg
 monikerRange: = sql-server-2014 || = sqlallproducts-allversions
-ms.openlocfilehash: 1198933f5dd996b2cf050ea0fbb7960410095869
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 67c7ab63fcc152778add51725e5962028651345b
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68136518"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155694"
 ---
 # <a name="sql-server-2012-service-pack-release-notes"></a>SQL Server 2012 Service Pack のリリース ノート
 [!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx-md](../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]
@@ -225,11 +225,11 @@ DACFx は、すべての DAC シナリオとクライアント ツールで、SX
   
 **SqlPackage.exe (DACFx コマンド ライン ツール) に対する更新**  
   
--   データを含む DACPAC の抽出: データベース スキーマの他にユーザー テーブルのデータを含むライブ SQL Server または Windows Azure SQL データベースから、データベース スナップショット ファイル (.dacpac) を作成します。 これらのパッケージは、SqlPackage.exe の Publish 操作を使用して、新規または既存の SQL Server または Windows Azure SQL データベースにパブリッシュできます。 パッケージに含まれているデータによって、ターゲット データベースの既存のデータは置き換えられます。  
+-   データを含む DACPAC の抽出 - データベース スキーマの他にユーザー テーブルのデータを含むライブ SQL Server または Azure SQL Database から、データベース スナップショット ファイル (.dacpac) を作成します。 これらのパッケージは、SqlPackage.exe の Publish 操作を使用して、新規または既存の SQL Server または Azure SQL Database にパブリッシュできます。 パッケージに含まれているデータによって、ターゲット データベースの既存のデータは置き換えられます。  
   
--   BACPAC のエクスポート: オンプレミス SQL Server から Windows Azure SQL データベースへのデータベースの移行に使用できる、データベース スキーマおよびユーザー データを含むライブ SQL Server または Windows Azure SQL データベースの論理バックアップ ファイル (.bacpac) を作成します。 サポートされているバージョンの SQL Server 間で、Azure と互換性のあるデータベースをエクスポートし、後でインポートできます。  
+-   BACPAC のエクスポート - オンプレミスの SQL Server から Azure SQL Database へのデータベースの移行に使用できる、データベース スキーマおよびユーザー データを含むライブ SQL Server または Azure SQL Database の論理バックアップ ファイル (.bacpac) を作成します。 サポートされているバージョンの SQL Server 間で、Azure と互換性のあるデータベースをエクスポートし、後でインポートできます。  
   
--   BACPAC のインポート: .bacpac ファイルをインポートして、SQL Server または Windows Azure SQL データベースを新規に作成したり、空のデータベースにデータを入力したりできます。  
+-   BACPAC のインポート - .bacpac ファイルをインポートして、SQL Server または Azure SQL Database を新規に作成したり、空のデータベースにデータを入力したりできます。  
   
 SqlPackage.exe の完全なドキュメントは、MSDN の [ここ](https://msdn.microsoft.com/library/hh550080%28v=vs.103%29.aspx)にあります。  
   

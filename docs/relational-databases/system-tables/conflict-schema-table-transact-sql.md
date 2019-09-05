@@ -24,7 +24,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/15/2019
 ms.locfileid: "68084769"
 ---
-# <a name="conflictltschemagtlttablegt-transact-sql"></a>conflict _&lt;スキーマ&gt;_&lt;テーブル&gt;(TRANSACT-SQL)
+# <a name="conflict_ltschemagt_lttablegt-transact-sql"></a>conflict _&lt;スキーマ&gt;_&lt;テーブル&gt;(TRANSACT-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
   conflict_\<schema>_\<table> テーブルには、ピア ツー ピア レプリケーションで競合する行に関する情報が含まれています。 競合テーブルはパブリケーション内のレプリケートされたテーブルごとに存在し、競合テーブルの名前にはスキーマとアーティクルの名前が付加されます。 このアーティクル固有の競合テーブルは、各パブリケーション データベースに保存されます。  

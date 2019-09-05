@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.assetid: 198198e2-7cf4-4a21-bda4-51b36cb4284b
 author: pensivebrian
 ms.author: broneill
-ms.openlocfilehash: 52d3a6f14042a5208803c84557d6b3b7e4e4f37e
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 89f6139861b971eb6c1f5771bd4ee77cf379f56f
+ms.sourcegitcommit: 00350f6ffb73c2c0d99beeded61c5b9baa63d171
 ms.translationtype: MTE75
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67986229"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70190374"
 ---
 # <a name="sqlpackageexe"></a>SqlPackage.exe
 
@@ -219,7 +219,8 @@ SqlPackage.exe の公開操作では、ソース データベースの構造に�
 |**/p:**|ScriptNewConstraintValidation = (ブール値 ' True ')|Publish の最後に、すべての制約が1つのセットとして検証されます。これは、publish の途中で check 制約または foreign key 制約が原因で発生したデータエラーを回避します。 False に設定すると、対応するデータを確認せずに制約が公開されます。|
 |**/p:**|ScriptRefreshModule=(BOOLEAN 'True')|公開スクリプトの末尾に更新ステートメントを追加します。|
 |**/p:**|Storage=({File&#124;Memory})|データベース モデルの構築時に要素をどのように格納するかを指定します。 パフォーマンス上の理由から、既定値は InMemory です。 大規模なデータベースの場合は、File バックアップ ストレージが必要です。|
-|**/p:**|TreatVerificationErrorsAsWarnings = (ブール値)|発行の検証中に発生したエラーを警告として扱うかどうかを指定します。 配置計画をターゲット データベースに対して実行する前に、生成された配置計画がチェックされます。 計画の検証では、変更を加えるためには取り除く必要のある、ターゲットのみのオブジェクト (インデックスなど) の損失などの問題が検出されます。 また、複合プロジェクトへの参照のためテーブルやビューなどに依存関係が存在するのに、その関係がターゲット データベースに存在しない状況も検出されます。 これを選択すると、最初のエラーに対して発行アクションを停止するのではなく、すべての問題の完全な一覧を取得できます。|**/p:**|UnmodifiableObjectWarnings = (ブール値 ' True ')|修正できない相違がオブジェクトで見つかった場合 (たとえば、同じファイルのファイル サイズまたはファイル パスが異なる場合) に警告を生成するかどうかを指定します。|
+|**/p:**|TreatVerificationErrorsAsWarnings = (ブール値)|発行の検証中に発生したエラーを警告として扱うかどうかを指定します。 配置計画をターゲット データベースに対して実行する前に、生成された配置計画がチェックされます。 計画の検証では、変更を加えるためには取り除く必要のある、ターゲットのみのオブジェクト (インデックスなど) の損失などの問題が検出されます。 また、複合プロジェクトへの参照のためテーブルやビューなどに依存関係が存在するのに、その関係がターゲット データベースに存在しない状況も検出されます。 これを選択すると、最初のエラーに対して発行アクションを停止するのではなく、すべての問題の完全な一覧を取得できます。
+|**/p:**|UnmodifiableObjectWarnings = (ブール値 ' True ')|修正できない相違がオブジェクトで見つかった場合 (たとえば、同じファイルのファイル サイズまたはファイル パスが異なる場合) に警告を生成するかどうかを指定します。|
 |**/p:**|VerifyCollationCompatibility = (ブール値 ' True ')|照合順序の互換性を検証するかどうかを指定します。|
 |**/p:**|VerifyDeployment=(BOOLEAN 'True')|公開前にチェックを実行して、正常な公開をブロックする可能性のある問題が存在する場合は公開操作を停止するかどうかを指定します。 たとえば、ターゲット データベースの外部キーがデータベース プロジェクトに存在せず、公開時にエラーが発生する場合は、公開操作が停止することがあります。|
 |

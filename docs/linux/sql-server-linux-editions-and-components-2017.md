@@ -24,12 +24,12 @@ helpviewer_keywords:
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: vanto
-ms.openlocfilehash: 249fb623945c1e086a677268d857f3bb16362a2e
-ms.sourcegitcommit: 495913aff230b504acd7477a1a07488338e779c6
+ms.openlocfilehash: 110348981ad756b489afcbdb5c098a4c0f290c30
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68811193"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70154653"
 ---
 # <a name="editions-and-supported-features-of-sql-server-2017-on-linux"></a>Linux 上の SQL Server 2017 のエディションとサポートされる機能
 
@@ -110,7 +110,7 @@ Developer Edition は引き続き [SQL Server Distributed Replay](../tools/distr
 |ミラー化バックアップ|はい|いいえ|いいえ|いいえ|
 |ホット アド メモリと CPU|はい|いいえ|いいえ|いいえ|
 |暗号化されたバックアップ|はい|はい|いいえ|いいえ|
-|Windows Azure へのハイブリッド バックアップ (URL へのバックアップ)|はい|はい|いいえ|いいえ|
+|Azure へのハイブリッド バックアップ (URL へのバックアップ)|はい|はい|いいえ|いいえ|
   
 <sup>1</sup> Enterprise Edition では、ノードの数はオペレーティング システムの最大容量です。 Standard Edition では、2 つのノードがサポートされます。 
 

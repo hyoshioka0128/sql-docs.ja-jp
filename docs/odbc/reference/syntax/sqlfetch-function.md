@@ -50,7 +50,7 @@ SQLRETURN SQLFetch(
  SQL_SUCCESS、SQL_SUCCESS_WITH_INFO、SQL_NO_DATA、SQL_STILL_EXECUTING、SQL_ERROR、または SQL_INVALID_HANDLE。  
   
 ## <a name="diagnostics"></a>診断  
- **Sqlfetch**が SQL_ERROR または SQL_SUCCESS_WITH_INFO のいずれかを返す場合、SQL_HANDLE_STMT の*Handletype*と StatementHandle の*ハンドル*を指定して[SQLGetDiagRec Function](../../../odbc/reference/syntax/sqlgetdiagrec-function.md)を呼び出すことによって、関連する SQLSTATE 値を取得できます。 . 次の表に、 **Sqlfetch**によって通常返される SQLSTATE 値と、この関数のコンテキストでのそれぞれについて説明します。"(DM)" という表記は、ドライバーマネージャーによって返される SQLSTATEs の説明の前にあります。 特に記載がない限り、各 SQLSTATE 値に関連付けられているリターンコードは SQL_ERROR です。 1つの列でエラーが発生した場合は、SQL_DIAG_COLUMN_NUMBER の*DiagIdentifier*を使用して[SQLGetDiagField](../../../odbc/reference/syntax/sqlgetdiagfield-function.md)を呼び出して、エラーが発生した列を特定することができます。と**SQLGetDiagField**は、 *DiagIdentifier*の SQL_DIAG_ROW_NUMBER を使用して呼び出すことで、その列を含む行を特定できます。  
+ **Sqlfetch**が SQL_ERROR または SQL_SUCCESS_WITH_INFO のいずれかを返す場合、SQL_HANDLE_STMT の*Handletype*と StatementHandle の*ハンドル*を指定して[SQLGetDiagRec Function](../../../odbc/reference/syntax/sqlgetdiagrec-function.md)を呼び出すことによって、関連する SQLSTATE 値を取得できます。 次の表に、 **Sqlfetch**によって通常返される SQLSTATE 値と、この関数のコンテキストでのそれぞれについて説明します。"(DM)" という表記は、ドライバーマネージャーによって返される SQLSTATEs の説明の前にあります。 特に記載がない限り、各 SQLSTATE 値に関連付けられているリターンコードは SQL_ERROR です。 1つの列でエラーが発生した場合は、SQL_DIAG_COLUMN_NUMBER の*DiagIdentifier*を使用して[SQLGetDiagField](../../../odbc/reference/syntax/sqlgetdiagfield-function.md)を呼び出して、エラーが発生した列を特定することができます。と**SQLGetDiagField**は、 *DiagIdentifier*の SQL_DIAG_ROW_NUMBER を使用して呼び出すことで、その列を含む行を特定できます。  
   
  SQL_SUCCESS_WITH_INFO または SQL_ERROR を返すことができるすべての SQLSTATEs (01xxx SQLSTATEs を除く) では、複数行操作のすべての行ではなく、1つ以上の行でエラーが発生すると SQL_SUCCESS_WITH_INFO が返され、エラーが発生した場合は SQL_ERROR が返されます。単一行演算。  
   
@@ -107,7 +107,7 @@ SQLRETURN SQLFetch(
 |条件|新しい行セットの最初の行|  
 |---------------|-----------------------------|  
 |開始前|1|  
-|*CurrRowsetStart*Lastresultrow-RowsetSize [1]  \< = |CurrRowsetStart + *RowsetSize*[2]|  
+|*CurrRowsetStart*Lastresultrow-RowsetSize [1] \< = |CurrRowsetStart + *RowsetSize*[2]|  
 |CurrRowsetStart > *lastresultrow-RowsetSize*[1]|終了後|  
 |終了後|終了後|  
   

@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: 41313809-e970-449c-bc35-85da2ef96e48
 author: CarlRabeler
 ms.author: carlrab
-ms.openlocfilehash: 97c28b53a15f1123acd8c22480743b64741229b6
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 78dd9533a33d3b28f4fffcb2bb0ff4cd6604713f
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68117082"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155822"
 ---
 # <a name="create-synonym-transact-sql"></a>CREATE SYNONYM (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
@@ -82,7 +82,7 @@ CREATE SYNONYM [ schema_name_1. ] synonym_name FOR < object >
  *object_name*  
  シノニムが参照するベース オブジェクトの名前です。  
   
- Windows Azure SQL データベースでは、database_name が現在のデータベースの場合、または database_name が tempdb で、object_name が # で始まる場合に、3 つの要素で構成された名前形式 database_name.[schema_name].object_name をサポートします。  
+ Azure SQL Database では、database_name が現在のデータベースの場合、または database_name が tempdb で、object_name が # で始まる場合に、3 つの要素で構成された名前形式 database_name.[schema_name].object_name がサポートされます。  
   
 ## <a name="remarks"></a>Remarks  
  シノニムの作成時にベース オブジェクトが存在している必要はありません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は、ベース オブジェクトが存在することを実行時に確認します。  

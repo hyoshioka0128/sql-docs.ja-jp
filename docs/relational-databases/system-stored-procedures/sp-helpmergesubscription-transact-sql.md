@@ -87,7 +87,7 @@ sp_helpmergesubscription [ [ @publication=] 'publication']
 |**hostname**|**sysname**|値によってサブスクリプションがフィルター選択するときに指定された値、 [HOST_NAME](../../t-sql/functions/host-name-transact-sql.md)関数。|  
 |**subscriber_security_mode**|**smallint**|セキュリティ モードをサブスクライバーで、場所**1** Windows 認証では、ことを意味と**0**意味[!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]認証します。|  
 |**subscriber_login**|**sysname**|サブスクライバーのログイン名です。|  
-|**@subscriber_password**|**sysname**|実際のサブスクライバー パスワードは返されません。 によってマスクされる結果は、" **\*\*\*\*\*\*** "文字列。|  
+|**subscriber_password**|**sysname**|実際のサブスクライバー パスワードは返されません。 によってマスクされる結果は、" **\*\*\*\*\*\*** "文字列。|  
   
 ## <a name="return-code-values"></a>リターン コードの値  
  **0** (成功) または**1** (失敗)  

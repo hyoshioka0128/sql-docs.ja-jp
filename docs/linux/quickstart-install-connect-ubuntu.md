@@ -10,12 +10,12 @@ ms.prod: sql
 ms.custom: sqlfreshmay19
 ms.technology: linux
 ms.assetid: 31c8c92e-12fe-4728-9b95-4bc028250d85
-ms.openlocfilehash: 23597e4937f279694d7e4286e5aec3d714b54afa
-ms.sourcegitcommit: db9bed6214f9dca82dccb4ccd4a2417c62e4f1bd
+ms.openlocfilehash: e21761c221ec83770be7c9aa19f8a4ec971617e2
+ms.sourcegitcommit: 823d7bdfa01beee3cf984749a8c17888d4c04964
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "67910466"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70030314"
 ---
 # <a name="quickstart-install-sql-server-and-create-a-database-on-ubuntu"></a>クイック スタート: Ubuntu に SQL Server をインストールし、データベースを作成する
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md-linuxonly](../includes/appliesto-ss-xxxx-xxxx-xxx-md-linuxonly.md)]
@@ -47,6 +47,9 @@ Ubuntu 16.04 マシンには**少なくとも 2 GB** のメモリが必要です
 > 現時点では、Windows 10 用の [Windows Subsystem for Linux](https://msdn.microsoft.com/commandline/wsl/about) はインストール先としてサポートされていません。
 
 他のシステム要件については、[SQL Server on Linux のシステム要件](sql-server-linux-setup.md#system)に関する記事を参照してください。
+
+> [!NOTE]
+> Ubuntu 18.04 はまだ正式にサポートされていませんが、[修正](https://blogs.msdn.microsoft.com/sql_server_team/installing-sql-server-2017-for-linux-on-ubuntu-18-04-lts/)を加えることで SQL Server を実行できます。
 
 <!--SQL Server 2017 on Linux-->
 ::: moniker range="= sql-server-linux-2017 || = sql-server-2017"

@@ -27,21 +27,21 @@ ms.locfileid: "68023296"
   
  位置指定更新を使用して、または delete ステートメントは、アプリケーションは結果セットを作成する必要があります、**選択更新**ステートメント。 このステートメントの構文です。  
   
- **選択**[**すべて**&#124; です。**DISTINCT**]*選択リスト*  
+ **SELECT** [**ALL** &#124; **DISTINCT**]*elect-list*  
   
  **FROM** *table-reference-list*  
   
  [**WHERE** *search-condition*]  
   
- **FOR UPDATE OF** [*列名*[ **、** *列名*]...]  
+ **FOR UPDATE OF** [*column-name* [ **,** *column-name*]...]  
   
  次に、アプリケーションは、更新または削除する行にカーソルを位置付けます。 呼び出してそのこの**SQLFetchScroll**必要な行を格納していると、呼び出しの行セットを取得する**SQLSetPos**をその行に行セットのカーソルを配置します。 その後、アプリケーションは、結果セットで使用されているステートメントよりも別のステートメントで、位置指定の update または delete ステートメントを実行します。 これらのステートメントの構文です。  
   
  **UPDATE** *table-name*  
   
- **設定** *列識別子*  **=** {*式* &#124; です。**NULL**}  
+ **SET** *column-identifier* **=** {*expression* &#124; **NULL**}  
   
- [ **、** *列識別子* **=** {*式*&#124; です。**NULL**}].  
+ [ **,** *column-identifier* **=** {*expression* &#124; **NULL**}]...  
   
  **WHERE CURRENT OF** *cursor-name*  
   

@@ -8,12 +8,12 @@ ms.technology: connectivity
 ms.topic: conceptual
 author: MightyPen
 ms.author: genemi
-ms.openlocfilehash: 05936a9555cacfc88c9219e19bc57772109ed047
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: c0fcc2172cca192c8c7580450ab50b4416f9ec2d
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MTE75
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67957512"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70154184"
 ---
 # <a name="driver-history-for-microsoft-sql-server"></a>Microsoft SQL Server のドライバー履歴
 
@@ -57,7 +57,7 @@ ADO.NET は Microsoft .NET Framework で導入されたものであり、引き�
 
 ### <a name="microsoft-driver-for-nodejs-for-sql-server"></a>Microsoft Driver for node.js for SQL Server
 
-Microsoft Driver for node.js for SQL Server を使用すると、Microsoft Windows および Microsoft Windows Azure 上の node.js アプリケーションで Microsoft SQL Server および Microsoft Windows Azure SQL Database にアクセスできます。 開発作業は、このドライバーに焦点が当てられていません。 SQL Server 用の Microsoft Driver for node.js を使用して新しいアプリケーションを作成することはお勧めしません。
+Microsoft Driver for node.js for SQL Server を使用すると、Microsoft Windows および Microsoft Azure の node.js アプリケーションは Microsoft SQL Server および Microsoft Azure SQL Database にアクセスできます。 開発作業は、このドライバーに焦点が当てられていません。 SQL Server 用の Microsoft Driver for node.js を使用して新しいアプリケーションを作成することはお勧めしません。
 
 SQL Server 用 Microsoft Driver for node.js の詳細については、「 [windowsazure.servicebus/node-sqlserver](https://github.com/Azure/node-sqlserver)」を参照してください。
 

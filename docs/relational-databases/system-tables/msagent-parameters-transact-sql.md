@@ -24,7 +24,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/15/2019
 ms.locfileid: "68095702"
 ---
-# <a name="msagentparameters-transact-sql"></a>MSagent_parameters (TRANSACT-SQL)
+# <a name="msagent_parameters-transact-sql"></a>MSagent_parameters (TRANSACT-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
   **MSagent_parameters**テーブルには、エージェント プロファイルに関連付けられているパラメーターが含まれています。 パラメーター名は、エージェントでサポートされているものと同じです。 このテーブルに格納されます、 **msdb**データベース。  

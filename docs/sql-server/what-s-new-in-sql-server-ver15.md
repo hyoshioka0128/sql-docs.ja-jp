@@ -1,6 +1,6 @@
 ---
 title: SQL Server 2019 の新機能 | Microsoft Docs
-ms.date: 08/21/2019
+ms.date: 08/28/2019
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: release-landing
@@ -8,12 +8,12 @@ ms.topic: article
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=sql-server-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 275ef0ef83c073726cebf80b63e1d8f9640eca81
-ms.sourcegitcommit: 676458a9535198bff4c483d67c7995d727ca4a55
+ms.openlocfilehash: 718f0c6c5fa6b517f2b60bbca0f06f58310c6d22
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69903643"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155480"
 ---
 # <a name="whats-new-in-includesql-server-2019includessssqlv15-mdmd"></a>[!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] の新機能
 
@@ -40,15 +40,12 @@ ms.locfileid: "69903643"
 
 | 新機能または更新 | 詳細 |
 |:---|:---|
-| スケーラブルなビッグ データ ソリューション | Kubernetes で実行している SQL Server、Spark、HDFS コンテナーの[スケーラブルなクラスターを配置する](../big-data-cluster/deploy-get-started.md) <br/><br/> Transact-SQL または Spark からビッグ データの読み取り、書き込み、処理を行う<br/><br/> 大量のビッグ データを使用して、価値の高いリレーショナル データを簡単に組み合わせて分析する<br/><br/>外部データ ソースを照会する<br/><br/>SQL Server によって管理される HDFS にビッグ データを格納する<br/><br/>クラスターを介して複数の外部データ ソースからデータを照会する<br/><br/> AI、機械学習、その他の分析タスクにデータを使用する<br/><br/> [!INCLUDE[big-data-clusters](../includes/ssbigdataclusters-nover.md)] にアプリケーションをデプロイして実行する <br/>|
+| スケーラブルなビッグ データ ソリューション | Kubernetes で実行している SQL Server、Spark、HDFS コンテナーの[スケーラブルなクラスターを配置する](../big-data-cluster/deploy-get-started.md) <br/><br/> Transact-SQL または Spark からビッグ データの読み取り、書き込み、処理を行う<br/><br/> 大量のビッグ データを使用して、価値の高いリレーショナル データを簡単に組み合わせて分析する<br/><br/>外部データ ソースを照会する<br/><br/>SQL Server によって管理される HDFS にビッグ データを格納する<br/><br/>クラスターを介して複数の外部データ ソースからデータを照会する<br/><br/> AI、機械学習、その他の分析タスクにデータを使用する<br/><br/> [!INCLUDE[big-data-clusters](../includes/ssbigdataclusters-nover.md)] にアプリケーションをデプロイして実行する <br/><br/> SQL Server マスター インスタンス データベースで Always On 可用性グループを使用する<br/>|
 | &nbsp; | &nbsp; |
 
 詳細については、「[SQL Server [!INCLUDE[big-data-clusters](../includes/ssbigdataclusters-nover.md)] とは](../big-data-cluster/big-data-cluster-overview.md)」を参照してください。
 
 [[!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] (CTP) アナウンス アーカイブ](what-s-new-in-sql-server-ver15-prerelease.md)には、この機能の以前のすべての CTP リリースで発表および変更された機能の一覧が含まれています。
-
->[!NOTE]
->[!INCLUDE[ssbdc-rcnote](../includes/ssbigdataclusters-ver15-rcnote.md)]
 
 ## <a name="database-engine"></a>データベース エンジン
 
@@ -91,7 +88,7 @@ ms.locfileid: "69903643"
 
 |新機能または更新 | 詳細 |
 |:---|:---|
-|UTF-8 文字エンコードのサポート |インポート エンコードとエクスポート エンコードに対する UTF-8 文字、および文字列データのデータベース レベルまたは列レベルの照合順序がサポートされます。 これにより、グローバルな多言語データベース アプリケーションとサービスを提供する必要性が、顧客の要求と特定の市場規制を満たすために重要である、グローバルなスケールへのアプリケーションの拡張がサポートされます。 「[照合順序と Unicode のサポート](../relational-databases/collations/collation-and-unicode-support.md)」を参照してください<br/><br/>[[!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] リリース候補では、Polybase 外部テーブルおよび Always Encrypted に対する UTF-8 のサポートが有効になります。|
+|UTF-8 文字エンコードのサポート |インポート エンコードとエクスポート エンコードに対する UTF-8 文字、および文字列データのデータベース レベルまたは列レベルの照合順序がサポートされます。 これにより、グローバルな多言語データベース アプリケーションとサービスを提供する必要性が、顧客の要求と特定の市場規制を満たすために重要である、グローバルなスケールへのアプリケーションの拡張がサポートされます。 「[照合順序と Unicode のサポート](../relational-databases/collations/collation-and-unicode-support.md)」を参照してください<br/><br/> [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] リリース候補では、Polybase 外部テーブルおよび Always Encrypted に対する UTF-8 のサポートが有効になります。|
 | &nbsp; | &nbsp; |
 
 ### <a name="polybase"></a>PolyBase
@@ -99,7 +96,7 @@ ms.locfileid: "69903643"
 |新機能または更新 | 詳細 |
 |:---|:---|
 |外部テーブルのクエリを実行する |外部テーブルの列名は、SQL Server、Oracle、Teradata、MongoDB および ODBC データ ソースのクエリに使用されるようになりました。 「[PolyBase とは](../relational-databases/polybase/polybase-guide.md)」を参照してください。|
-|UTF-8 文字エンコードのサポート|外部テーブルでの UTF-8 文字がサポートされます。 「[照合順序と Unicode のサポート](../relational-databases/collations/collation-and-unicode-support.md)」を参照してください|
+|UTF-8 文字エンコードのサポート|外部テーブルでの UTF-8 文字がサポートされます。 [照合順序と Unicode のサポート](../relational-databases/collations/collation-and-unicode-support.md)に関するページを参照してください。|
 | &nbsp; | &nbsp; |
 
 ### <a name="server-settings"></a>サーバーの設定
@@ -147,6 +144,7 @@ ms.locfileid: "69903643"
 |:---|:---|
 |高速データベース復旧 | データベースごとに高速データベース復旧を有効にする [高速データベース復旧](../relational-databases/backup-restore/restore-and-recovery-overview-sql-server.md#adr)に関するページを参照してください。|
 |高速順方向カーソルと静的カーソルを強制する | 高速順方向カーソルと静的カーソルのサポートを強制するクエリ ストア プラン [高速順方向カーソルと静的カーソルのサポートを強制するプラン](../relational-databases/performance/monitoring-performance-by-using-the-query-store.md#ctp23)に関するページを参照してください。|
+|リソース管理| `CREATE WORKLOAD GROUP` と `ALTER WORKLOAD GROUP` の `REQUEST_MAX_MEMORY_GRANT_PERCENT` オプションの構成可能値が整数から float データ型に変更されており、メモリ上限をさらに細かく制御できます。 「[ALTER WORKLOAD GROUP](../t-sql/statements/alter-workload-group-transact-sql.md)」と「[CREATE WORKLOAD GROUP](../t-sql/statements/create-workload-group-transact-sql.md)」を参照してください。|
 |ワークロードの再コンパイルの削減| 複数のスコープを超えて一時テーブルを使用して改善します。 [ワークロードの再コンパイルの削減](../relational-databases/tables/tables.md#ctp23)に関するページを参照してください。 |
 |間接チェックポイントのスケーラビリティ |[間接チェックポイントのスケーラビリティの向上](../relational-databases/logs/database-checkpoints-sql-server.md#ctp23)に関するページを参照してください。|
 |メモリ最適化 `tempdb` メタデータ| [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] では、[メモリ内データベース](../relational-databases/in-memory-database.md)機能ファミリの一部として、メモリ最適化 `tempdb` メタデータという新機能が導入されています。この機能により、効果的にこのボトルネックが除去され、`tempdb` が多用されるワークロードに対して新たなレベルのスケーラビリティが実現されます。 [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] では、一時テーブルのメタデータの管理に関連するシステム テーブルを、ラッチ フリーの非持続的メモリ最適化テーブルに移動できます。 「[メモリ最適化 `tempdb` メタデータ](../relational-databases/databases/tempdb-database.md#memory-optimized-tempdb-metadata)」を参照してください。|
@@ -155,7 +153,7 @@ ms.locfileid: "69903643"
 |テーブル変数の遅延コンパイル|テーブル変数を参照するクエリのプランの品質および全体的なパフォーマンスが向上します。 最適化と最初のコンパイルの実行中に、この機能は実際テーブル変数の行数に基づくカーディナリティの推定を反映します。 この正確な行数の情報によって、ダウンストリーム プラン操作が最適化されます。 「[テーブル変数の遅延コンパイル](../relational-databases/performance/intelligent-query-processing.md#table-variable-deferred-compilation)」を参照してください。 |
 |`APPROX_COUNT_DISTINCT `|絶対精度は重要でないが応答性は重要であるシナリオでは、優れたコンカレンシーのための `COUNT(DISTINCT())` よりリソース使用量が少ない `APPROX_COUNT_DISTINCT` で大規模なデータセットを集計します。 「[概数クエリ処理](../relational-databases/performance/intelligent-query-processing.md#approximate-query-processing)」を参照してください。|
 |行ストアでのバッチ モード|行ストアのバッチ モードでは、列ストア インデックスを必要とせずに、バッチ モードで実行できます。 バッチ モードの実行では、分析ワークロードの間の CPU 使用効率が向上しますが、[!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] までは、クエリに列ストア インデックスを使用する操作が含まれている場合にのみ使用されました。 ただし、一部のアプリケーションでは、列ストア インデックスでサポートされていない機能が使用されている可能性があるため、バッチ モードを利用できませんでした。 [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] 以降では、任意の種類のインデックス (行ストアまたは列ストア) を使用する操作がクエリに含まれる適格な分析ワークロードで、バッチ モードが有効になります。 「[行ストアでのバッチ モード](../relational-databases/performance/intelligent-query-processing.md#batch-mode-on-rowstore)」を参照してください。 |
-|スカラー UDF のインライン化|スカラー UDF が関係式に自動的に変換され、それらが呼び出し元の SQL クエリに埋め込まれます。 この変換により、スカラー UDF を利用するワークロードのパフォーマンスが向上します。 「[スカラー UDF のインライン化](../relational-databases/performance/intelligent-query-processing.md#scalar-udf-inlining)」を参照してください。|
+|スカラー UDF のインライン化|スカラー UDF が関係式に自動的に変換され、それらが呼び出し元の SQL クエリに埋め込まれます。 この変換により、スカラー UDF を利用するワークロードのパフォーマンスが向上します。 [スカラー UDF のインライン化](../relational-databases/performance/intelligent-query-processing.md#scalar-udf-inlining)に関するページを参照してください。|
 | &nbsp; | &nbsp; |
 
 ### <a name="availability-groups"></a>可用性グループ
@@ -193,14 +191,6 @@ ms.locfileid: "69903643"
 |`tempdb` の強化機能 | 既定では、Linux 上に SQL Server を新しくインストールすると、論理コアの数に基づいて複数の `tempdb` データ ファイルが作成されます (最大で 8 個のデータ ファイル)。 これは、マイナー バージョンまたはメジャー バージョンのインプレース アップグレードには適用されません。 各 `tempdb` ファイルは 8 MB で、64 MB まで自動拡張されます。 この動作は、Windows への SQL Server の既定のインストールに似ています。 |
 | Linux での PolyBase | 非 Hadoop コネクタ向けに Linux に [PolyBase をインストール](../relational-databases/polybase/polybase-linux-setup.md)します。<br/><br/>[PolyBase 型のマッピング](../relational-databases/polybase/polybase-type-mapping.md) |
 | 変更データ キャプチャ (CDC) のサポート | SQL Server 2019 では、変更データ キャプチャ (CDC) が Linux でサポートされるようになりました。 |
-| &nbsp; | &nbsp; |
-
-### <a name="setup"></a>セットアップ
-
-|新機能または更新 | 詳細 |
-|:---|:---|
-|新しいメモリ セットアップ オプション | インストール中に "*最小サーバー メモリ (MB)* " および "*最大サーバー メモリ (MB)* " のサーバー構成を設定します。 詳細については、「[コマンド プロンプトからの SQL Server のインストール](../database-engine/install-windows/install-sql-server-from-the-command-prompt.md#Install)」の `USESQLRECOMMENDEDMEMORYLIMITS`、`SQLMINMEMORY`、および `SQLMAXMEMORY` パラメーターを参照してください。 提案される値は、「[サーバー メモリ構成オプション](../database-engine/configure-windows/server-memory-server-configuration-options.md#setting-the-memory-options-manually)」のメモリ構成ガイドラインと一致します。|
-|新しい並列処理セットアップ オプション | インストールの間に "*並列処理の最大限度*" サーバー構成オプションを設定します。 詳細については、「[コマンド プロンプトからの SQL Server のインストール](../database-engine/install-windows/install-sql-server-from-the-command-prompt.md#Install)」の `SQLMAXDOP` パラメーターを参照してください。 既定値は、「[max degree of parallelism サーバー構成オプションの構成](../database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option.md#Guidelines)」の並列処理の最大限度ガイドラインと一致します。|
 | &nbsp; | &nbsp; |
 
 ## <a id="ml"></a> SQL Server Machine Learning Services
@@ -247,7 +237,7 @@ ms.locfileid: "69903643"
 
 ## <a name="next-steps"></a>次の手順
 
-- [[!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] リリース ノート](sql-server-ver15-release-notes.md)
+- [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] リリース ノート](sql-server-ver15-release-notes.md)。
 
 - [Microsoft [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)]:テクニカル ホワイト ペーパー](http://info.microsoft.com/rs/157-GQE-382/images/EN-US-CNTNT-white-paper-DBMod-Microsoft-SQL-Server-2019-Technical-white-paper.pdf)<br />2018 年 9 月に公開されました。 Windows、Linux、Docker コンテナー向けの Microsoft [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] CTP 2.0 に適用されます。
 

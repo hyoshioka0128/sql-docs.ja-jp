@@ -47,12 +47,10 @@ SELECT FLATTENED <select list> FROM ...
 ```  
   
 ## <a name="top-n-and-order-by"></a>TOP \<n > および ORDER BY  
- 式を使用してクエリの結果を並べ替えてから、**ORDER BY** 句と **TOP** 句の組み合わせを使用して結果のサブセットを返すことができます。 これは、最も可能性の高い回答者にのみ結果を配信するような配信先指定メーリングなどのシナリオで役に立ちます。 ターゲットメーリング予測クエリの結果を予測確率順に並べてから、上位の\<n >個の結果のみを返すことができます。  
+ 式を使用してクエリの結果を並べ替えてから、**ORDER BY** 句と **TOP** 句の組み合わせを使用して結果のサブセットを返すことができます。 これは、最も可能性の高い回答者にのみ結果を配信するような配信先指定メーリングなどのシナリオで役に立ちます。 ターゲットメーリング予測クエリの結果を予測確率順に並べてから、上位の \<n > 個の結果のみを返すことができます。  
   
 ## <a name="select-list"></a>SELECTリスト  
-
- *\<SELECTリスト >* スカラー列参照、予測関数、および式に含めることができます。 使用できるオプションは、アルゴリズムと以下のコンテキストに依存します。  
-
+ *\<SELECTリスト>* スカラー列参照、予測関数、および式に含めることができます。 使用できるオプションは、アルゴリズムと以下のコンテキストに依存します。  
   
 -   クエリの対象がマイニング構造であるかマイニング モデルであるか  
   
@@ -78,15 +76,13 @@ JOIN <source data query>
 ```  
   
 ## <a name="where"></a>WHERE  
- **WHERE** 句を使用して、クエリから返されるケースを制限できます。**WHERE** 句では、**WHERE** 式内の列参照が **SELECT** ステートメントの *\<SELECTリスト >* の列参照と同じ意味を持つ必要があり、ブール式のみを返すことができることを指定します。**WHERE** 句の構文は次のとおりです。  
+ **WHERE** 句を使用して、クエリから返されるケースを制限できます。 **WHERE** 句では、**WHERE** 式内の列参照が **SELECT** ステートメントの *\<SELECTリスト>* の列参照と同じ意味を持つ必要があり、ブール式のみを返すことができることを指定します。 **WHERE** 句の構文は次のとおりです。  
   
 ```  
 WHERE < condition expression >  
 ```  
   
-
- **SELECT**ステートメントの SELECTリストと**WHERE**句は、次の規則に従う必要があります。
-
+ **SELECT**ステートメントの SELECTリストと**WHERE**句は、次の規則に従う必要があります。  
   
 -   SELECTリストには、ブール型の結果を返さない式が含まれている必要があります。 この式は変更することができますが、式はブール型ではない結果を返す必要があります。  
   
@@ -112,25 +108,23 @@ SELECT FROM PREDICTION JOIN (<SELECT statement>) AS t, WHERE <SELECT statement>
  予測クエリの作成の詳細については、次を参照してください。[構造と DMX 予測クエリの使用状況](../dmx/structure-and-usage-of-dmx-prediction-queries.md)します。  
   
 ## <a name="clause-syntax"></a>句の構文  
-
- **SELECT** ステートメントを使用した参照は複雑なため、詳細な構文要素と引数は句ごとに示されます。それぞれの句の詳細については、次のリストのトピックをクリックしてください。 
-
+ **SELECT** ステートメントを使用した参照は複雑なため、詳細な構文要素と引数は句ごとに示されます。 それぞれの句の詳細については、次のリストのトピックをクリックしてください。  
   
  [SELECT DISTINCT FROM&#60;モデル&#62; &#40;DMX&#41;](../dmx/select-distinct-from-model-dmx.md)  
   
- [SELECT FROM<モデル> CONTENT(DMX)](../dmx/select-from-model-content-dmx.md)
+ [SELECT FROM<モデル> CONTENT(DMX)](../dmx/select-from-model-content-dmx.md)  
   
- [SELECT FROM<モデル> .CASES(DMX)](../dmx/select-from-model-cases-dmx.md)
+ [SELECT FROM<モデル> .CASES(DMX)](../dmx/select-from-model-cases-dmx.md)  
   
- [SELECT FROM<モデル>SAMPLE_CASES(DMX)](../dmx/select-from-model-sample-cases-dmx.md)
+ [SELECT FROM<モデル>SAMPLE_CASES(DMX)](../dmx/select-from-model-sample-cases-dmx.md)  
   
- [SELECT FROM<モデル>.DIMENSION_CONTENT(DMX)](../dmx/select-from-model-dimension-content-dmx.md)
+ [SELECT FROM<モデル>.DIMENSION_CONTENT(DMX)](../dmx/select-from-model-dimension-content-dmx.md)  
   
  [SELECT FROM&#60;モデル&#62;PREDICTION JOIN &#40;DMX&#41;](../dmx/select-from-model-prediction-join-dmx.md)  
   
  [SELECT FROM&#60;モデル&#62; &#40;DMX&#41;](../dmx/select-from-model-dmx.md)  
   
- [SELECT FROM<構造>.CASES](../dmx/select-from-structure-cases.md)
+ [SELECT FROM<構造>.CASES](../dmx/select-from-structure-cases.md)  
   
 ## <a name="see-also"></a>参照  
  [データ マイニング拡張機能&#40;DMX&#41;データ定義ステートメント](../dmx/dmx-statements-data-definition.md)   

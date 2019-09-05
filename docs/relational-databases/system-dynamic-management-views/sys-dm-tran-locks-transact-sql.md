@@ -47,7 +47,7 @@ ms.locfileid: "68262623"
 |**resource_lock_partition**|**Int**|ロック リソースがパーティション分割されている場合の、ロック パーティションの ID。 パーティション分割されていないロック リソースの値は 0 です。|  
 |**request_mode**|**nvarchar(60)**|要求のモード。 許可された要求については許可モード、待機中の要求については要求中モードになります。|  
 |**request_type**|**nvarchar(60)**|要求の種類。 値は LOCK です。|  
-|**request_status**|**nvarchar(60)**|この要求の現在の状態。 使用できる値は、GRANTED、CONVERT、WAIT、LOW_PRIORITY_CONVERT、LOW_PRIORITY_WAIT、または ABORT_BLOCKERS です。 優先度の低い待機とアボート ブロッカーの詳細については、、 *low_priority_lock_wait*のセクション[ALTER INDEX & #40 を参照してください。TRANSACT-SQL と #41 です](../../t-sql/statements/alter-index-transact-sql.md)。|  
+|**request_status**|**nvarchar(60)**|この要求の現在の状態。 使用できる値は、GRANTED、CONVERT、WAIT、LOW_PRIORITY_CONVERT、LOW_PRIORITY_WAIT、または ABORT_BLOCKERS です。 優先度の低い待機とアボート ブロッカーの詳細については、[ALTER INDEX(Transact-SQL)](../../t-sql/statements/alter-index-transact-sql.md)の*low_priority_lock_wait*のセクションを参照してください。|  
 |**request_reference_count**|**smallint**|同じ要求元がこのリソースを要求した回数の概数。|  
 |**request_lifetime**|**int**|[!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]|  
 |**request_session_id**|**int**|要求を現在所有するセッション ID。 所有セッション ID は、分散トランザクションとバインドされたトランザクションでは異なります。 値が -2 の場合、その要求が孤立した分散トランザクションに属することを示します。 値が -3 の場合、その要求が遅延復旧トランザクションに属することを示します。遅延復旧トランザクションとは、たとえば、ロールバックが正常に完了しなかったためにロールバックの復旧を遅延したトランザクションのことです。|  
@@ -273,7 +273,7 @@ ms.locfileid: "68262623"
 |METADATA.XML_COMPONENT|xml_component_id = X|[!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]|  
 |METADATA.XML_INDEX_QNAME|object_id = O, $qname_id = Q|[!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]|  
   
- 次の Xevent は、パーティションに関連する**スイッチ**とオンライン インデックス再構築します。 構文については、次を参照してください。 [ALTER TABLE &#40;TRANSACT-SQL&#41; ](../../t-sql/statements/alter-table-transact-sql.md)と[ALTER INDEX &#40;TRANSACT-SQL&#41;](../../t-sql/statements/alter-index-transact-sql.md)します。  
+ 次の Xevent は、パーティションに関連する**SWITCH**とオンライン インデックス再構築します。 構文については、[ALTER TABLE (Transact-SQL)](../../t-sql/statements/alter-table-transact-sql.md)と[ALTER INDEX (Transact-SQL)](../../t-sql/statements/alter-index-transact-sql.md) を参照してください。  
   
 -   lock_request_priority_state  
   
@@ -383,7 +383,7 @@ GO
 ```  
   
 ## <a name="see-also"></a>参照  
- [sys.dm_tran_database_transactions &#40;TRANSACT-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-tran-database-transactions-transact-sql.md)   
+ [sys.dm_tran_database_transactions (Transact-SQL)](../../relational-databases/system-dynamic-management-views/sys-dm-tran-database-transactions-transact-sql.md)   
  [動的管理ビューと動的管理関数 &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/system-dynamic-management-views.md)   
  [トランザクション関連の動的管理ビューおよび関数  &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/transaction-related-dynamic-management-views-and-functions-transact-sql.md)  
   

@@ -11,12 +11,12 @@ ms.assetid: 32bd8af8-a832-4dc8-afff-01668e6b2b51
 author: rothja
 ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 0bf9d15a7816f7e51691146fc0ba927e45b7250f
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 5e78b5e1efbcc082c49cd80737b35d76cd1aeddb
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68134613"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155498"
 ---
 # <a name="database-engine-tutorials"></a>データベース エンジンのチュートリアル
 [!INCLUDE[appliesto-ss-asdb-xxxx-xxx-md](../includes/appliesto-ss-asdb-xxxx-xxx-md.md)]
@@ -46,11 +46,11 @@ ms.locfileid: "68134613"
 [チュートリアル: ポリシー ベースの管理を使用したサーバーの管理](../relational-databases/policy-based-management/tutorial-administering-servers-by-using-policy-based-management.md)  
 このチュートリアルでは、サイト管理の基準を適用するポリシーを作成する方法を説明します。  
   
-[チュートリアル: Windows Azure BLOB ストレージ サービスへの SQL Server のバックアップと復元](~/relational-databases/tutorial-sql-server-backup-and-restore-to-azure-blob-storage-service.md)  
-このチュートリアルでは、Windows Azure BLOB ストレージ サービスへの SQL Server のバックアップと復元を実行する方法について説明します。  
+[チュートリアル: Azure Blob Storage サービスへの SQL Server のバックアップと復元](~/relational-databases/tutorial-sql-server-backup-and-restore-to-azure-blob-storage-service.md)  
+このチュートリアルでは、Azure Blob Storage サービスへの SQL Server のバックアップと復元を実行する方法について説明します。  
   
 [チュートリアル: Azure Blob Storage サービスと SQL Server 2016 データベースの使用](tutorial-use-azure-blob-storage-service-with-sql-server-2016.md)  
-このチュートリアルにより、Windows Azure BLOB ストレージ サービスに SQL Server データ ファイルを直接格納する方法について把握できます。  
+このチュートリアルを読むと、Azure Blob Storage サービスに SQL Server データ ファイルを直接格納する方法がわかります。  
   
 ## <a name="see-also"></a>参照  
 [SQL Server 2016 チュートリアル](../sql-server/tutorials-for-sql-server-2016.md)  

@@ -40,7 +40,7 @@ ms.locfileid: "68092662"
 |**logical_record_lineage**|**varbinary(501)**|サブスクライバーのニックネームとバージョン番号のペアのこの行が属する論理レコードの削除の履歴を維持するために使用されます。|  
   
 ## <a name="see-also"></a>関連項目  
- [レプリケーション テーブル &#40; です。TRANSACT-SQL と &#41; です。](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
+ [レプリケーション テーブル &#40;Transact-SQL&#41;](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
  [レプリケーション ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-views/replication-views-transact-sql.md)  
   
   

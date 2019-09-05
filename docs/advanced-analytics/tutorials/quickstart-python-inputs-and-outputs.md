@@ -24,7 +24,7 @@ ms.locfileid: "68715466"
 
 その他の種類の入力は SQL 変数として渡すことができます。たとえば、 [pickle](https://docs.python.org/3.0/library/pickle.html)や[rx_serialize_model](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-serialize-model)などのシリアル化関数を使用して、モデルをバイナリ形式で書き込むことで、トレーニング済みのモデルを変数として渡すことができます。
 
-このストアドプロシージャでは、出力として1つの Python[パンダ](https://pandas.pydata.org/pandas-docs/stable/index.html)データフレームが返されますが、スカラーおよびモデルを変数として出力することもできます。 たとえば、トレーニング済みのモデルをバイナリ変数として出力し、それを T-sql INSERT ステートメントに渡して、そのモデルをテーブルに書き込むことができます。 また、プロット (バイナリ形式) またはスカラー (日付と時刻、モデルのトレーニングに要した時間など) を生成することもできます。
+このストアドプロシージャでは、出力として1つの Python [pandas](https://pandas.pydata.org/pandas-docs/stable/index.html) データフレームが返されますが、スカラーおよびモデルを変数として出力することもできます。 たとえば、トレーニング済みのモデルをバイナリ変数として出力し、それを T-sql INSERT ステートメントに渡して、そのモデルをテーブルに書き込むことができます。 また、プロット (バイナリ形式) またはスカラー (日付と時刻、モデルのトレーニングに要した時間など) を生成することもできます。
 
 ## <a name="prerequisites"></a>必須コンポーネント
 

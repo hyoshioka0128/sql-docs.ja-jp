@@ -30,12 +30,12 @@ ms.assetid: f76fbd84-df59-4404-806b-8ecb4497c9cc
 author: CarlRabeler
 ms.author: carlrab
 monikerRange: =azuresqldb-current||=azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azure-sqldw-latest||=azuresqldb-mi-current
-ms.openlocfilehash: ecd914603883f83d5434327c5528688936aee420
-ms.sourcegitcommit: 63c6f3758aaacb8b72462c2002282d3582460e0b
+ms.openlocfilehash: 1a1e8fe19b952f2cc4a72f651dfea53c2177e6c1
+ms.sourcegitcommit: 52d3902e7b34b14d70362e5bad1526a3ca614147
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68495462"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70110279"
 ---
 # <a name="alter-database-set-options-transact-sql"></a>ALTER DATABASE の SET オプション (Transact-SQL)
 
@@ -2912,6 +2912,7 @@ SET
 <option_spec>::=
 {
 <RESULT_SET_CACHING>
+|<snapshot_option>
 }
 ;
 
@@ -2919,6 +2920,12 @@ SET
 {
 RESULT_SET_CACHING {ON | OFF}
 }
+
+<snapshot_option>::=
+{
+READ_COMMITTED_SNAPSHOT {ON | OFF }
+}
+
 
 ```
 
@@ -2929,7 +2936,7 @@ RESULT_SET_CACHING {ON | OFF}
 変更するデータベースの名前です。
 
 <a name="result_set_caching"></a> RESULT_SET_CACHING { ON | OFF }   
-適用対象: Azure SQL Data Warehouse (プレビュー)
+**適用先**: Azure SQL Data Warehouse (プレビュー)
 
 このコマンドは、`master` データベースに接続しているときに実行する必要があります。  このデータベースの設定変更はすぐに適用されます。  クエリの結果セットをキャッシュすることでストレージ コストが発生します。 データベースの結果キャッシュを無効にすると、直後に、前に永続させた結果キャッシュが Azure SQL Data Warehouse ストレージから削除されます。 is_result_set_caching_on という新しい列が `sys.databases` に導入され、データベースの結果キャッシュ設定を示します。  
 
@@ -2947,6 +2954,21 @@ OFF
 command|Like|%DWResultCacheDb%|
 | | |
 
+
+<a name="snapshot_option"></a> READ_COMMITTED_SNAPSHOT  { ON | OFF }   
+**適用先**: Azure SQL Data Warehouse (プレビュー)
+
+ON: データベース レベルで READ_COMMITTED_SNAPSHOT オプションを有効にします。
+
+OFF: データベース レベルで READ_COMMITTED_SNAPSHOT オプションをオフにします。
+
+データベースの READ_COMMITTED_SNAPSHOT のオン/オフを切り替えると、このデータベースにつながっている接続がすべて切断されます。  この変更はデータベースのメンテナンス期間中に行うか、ALTER DATABSE コマンドを実行している接続を除き、データベースへのアクティブな接続がなくなるまで待つことをお勧めします。  データベースをシングル ユーザー モードにする必要はありません。  セッションレベルで READ_COMMITTED_SNAPSHOT 設定を変更することはできません。  データベースのこの設定は、sys.databases の is_read_committed_snapshot_on 列で確認します。
+
+データベースで READ_COMMITTED_SNAPSHOT が有効になっている場合、複数のデータ バージョンが存在するとき、各バージョンのスキャンのため、クエリのパフォーマンスが遅くなることがあります。 トランザクションが長時間開いている状態になるときも、トランザクションによってデータが変更され、バージョンのクリーンアップが阻止される場合、データベースのサイズが増えることがあります。  
+
+
+
+
 ## <a name="remarks"></a>Remarks
 
 次の要件がすべて満たされる場合、キャッシュされた結果セットはクエリに再利用されます。
@@ -2959,12 +2981,9 @@ command|Like|%DWResultCacheDb%|
 
 ## <a name="permissions"></a>アクセス許可
 
-以下のアクセス許可が必要です。
+RESULT_SET_CACHING オプションを設定するには、ユーザーにサーバーレベルのプリンシプル ログインを与えるか (プロビジョニング プロセスで作成されるもの)、ユーザーが `dbmanager` データベース ロールのメンバーになる必要があります。  
 
-- サーバー レベル プリンシパル ログイン (プロビジョニング処理で作成されたもの) または
-- `dbmanager` データベース ロールのメンバー。
-
-所有者が dbmanager ロールのメンバーである場合を除き、データベースの所有者はデータベースを変更することはできません。
+READ_COMMITTED_SNAPSHOT オプションを設定するには、ユーザーにデータベースの ALTER 権限を与える必要があります。
 
 ## <a name="examples"></a>使用例
 
@@ -3027,6 +3046,12 @@ SELECT 0 as is_cache_hit;
 SELECT *  
 FROM sys.dm_pdw_request_steps  
 WHERE command like '%DWResultCacheDb%' and step_index = 0;
+```
+
+### <a name="enable-read_committed_snapshot-option-for-a-database"></a>データベースの Read_Committed_Snapshot オプションを有効にする
+```sql
+ALTER DATABASE MyDatabase  
+SET READ_COMMITTED_SNAPSHOT ON
 ```
 
 ## <a name="see-also"></a>参照

@@ -1,7 +1,7 @@
 ---
 title: COLLATE (Transact-SQL) | Microsoft Docs
 ms.custom: ''
-ms.date: 02/21/2019
+ms.date: 08/30/2019
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
@@ -19,12 +19,12 @@ ms.assetid: 76763ac8-3e0d-4bbb-aa53-f5e7da021daa
 author: CarlRabeler
 ms.author: carlrab
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 77b3b6a7987e4d02640bc1daadfd4cffe77b3354
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: fbf588e3c9922f9b76363db64e9d4afade040b7f
+ms.sourcegitcommit: 00350f6ffb73c2c0d99beeded61c5b9baa63d171
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68141143"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70190392"
 ---
 # <a name="collate-transact-sql"></a>COLLATE (Transact-SQL)
 
@@ -97,8 +97,6 @@ FROM fn_helpcollations();
 - データベースの復元または接続を行う場合、データベースの既定の照合順序、およびデータベース内の **char** 型、**varchar** 型、および **text** 型の任意の列またはパラメーターの照合順序は、オペレーティング システムでサポートされている必要があります。
 
 > [!NOTE]
-> [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] マネージド インスタンス サーバーの照合順序は、**SQL_Latin1_General_CP1_CI_AS** であり、変更できません。
->
 > コード ページ変換は **char** および **varchar** データ型に対してはサポートされていますが、**text** データ型に対してはサポートされていません。 コード ページ変換時のデータ損失はレポートされません。
 >
 > 指定した照合順序、または参照先のオブジェクトで使用される照合順序で、Windows でサポートされていないコード ページが使用されていると、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] でエラーが表示されます。

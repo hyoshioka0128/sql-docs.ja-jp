@@ -10,23 +10,23 @@ ms.topic: conceptual
 ms.assetid: de676bea-cec7-479d-891a-39ac8b85664f
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: c4c93f36ca78bbd6cdeedf8d88314f7374f34a9a
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 2d5ca430aa06e3f8a0072bff474e67e6f9defc74
+ms.sourcegitcommit: 3b1f873f02af8f4e89facc7b25f8993f535061c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68041382"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70176367"
 ---
 # <a name="sql-server-backup-to-url-best-practices-and-troubleshooting"></a>SQL Server Backup to URL に関するベスト プラクティスとトラブルシューティング
 [!INCLUDE[appliesto-ss-asdbmi-xxxx-xxx-md](../../includes/appliesto-ss-asdbmi-xxxx-xxx-md.md)]
 
-  このトピックには、Windows Azure BLOB サービスとの間の SQL Server のバックアップと復元に関するベスト プラクティスとトラブルシューティングのヒントを示しています。  
+  このトピックでは、Azure Blob service との間の SQL Server のバックアップと復元に関するベスト プラクティスとトラブルシューティングのヒントを示します。  
   
- SQL Server のバックアップ操作または復元操作に Windows Azure BLOB スレージ サービスを使用する方法の詳細については、次のトピックを参照してください。  
+ SQL Server のバックアップ操作または復元操作に Azure Blob Storage サービスを使用する方法の詳細については、次のトピックを参照してください。  
   
 -   [Microsoft Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)  
   
--   [チュートリアル: Windows Azure BLOB ストレージ サービスへの SQL Server のバックアップと復元](../../relational-databases/tutorial-sql-server-backup-and-restore-to-azure-blob-storage-service.md)  
+-   [チュートリアル: Azure Blob Storage サービスへの SQL Server のバックアップと復元](../../relational-databases/tutorial-sql-server-backup-and-restore-to-azure-blob-storage-service.md)  
   
 ## <a name="managing-backups"></a>バックアップの管理  
  バックアップを管理するための一般的な推奨事項を次に示します。  
@@ -35,7 +35,7 @@ ms.locfileid: "68041382"
   
 -   コンテナーを作成する際は、アクセス レベルを **private**に設定し、必要な認証情報を指定できるユーザーまたはアカウントだけがコンテナー内の BLOB の読み取りや書き込みを実行できるようにすることをお勧めします。  
   
--   Windows Azure 仮想マシンで実行している [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンス上の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースの場合、仮想マシンと同じ地域のストレージ アカウントを使用して、地域間のデータ転送コストを回避してください。 また、同じ地域を使用すると、バックアップ操作と復元操作で最適なパフォーマンスを得ることができます。  
+-   Azure 仮想マシンで実行されている [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンス上の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースの場合、仮想マシンと同じリージョンのストレージ アカウントを使用して、リージョン間のデータ転送のコストがかからないようにします。 また、同じ地域を使用すると、バックアップ操作と復元操作で最適なパフォーマンスを得ることができます。  
   
 -   バックアップ処理に失敗すると、無効なバックアップ ファイルが生成されます。 失敗したバックアップを定期的に確認し、BLOB ファイルを削除することをお勧めします。 詳細については、「 [Deleting Backup Blob Files with Active Leases](../../relational-databases/backup-restore/deleting-backup-blob-files-with-active-leases.md)」をご覧ください。  
   
@@ -45,18 +45,18 @@ ms.locfileid: "68041382"
   
 ## <a name="handling-large-files"></a>大きなファイルの処理  
   
--   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のバックアップ操作では、複数のスレッドを使用して、Windows Azure BLOB ストレージ サービスへのデータ転送を最適化します。  ただし、パフォーマンスは ISV の帯域幅やデータベースのサイズなどのさまざまな要因によって異なります。 内部設置型の SQL Server データベースから大きなデータベースまたはファイル グループをバックアップする場合は、最初にスループットのテストを行うことをお勧めします。 [SLA for Storage](https://azure.microsoft.com/support/legal/sla/storage/v1_0/) には BLOB の最大処理時間が示されているため、考慮に入れておくことができます。  
+-   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のバックアップ操作では、複数のスレッドを使用して、Azure Blob Storage サービスへのデータ転送が最適化されます。  ただし、パフォーマンスは ISV の帯域幅やデータベースのサイズなどのさまざまな要因によって異なります。 内部設置型の SQL Server データベースから大きなデータベースまたはファイル グループをバックアップする場合は、最初にスループットのテストを行うことをお勧めします。 [SLA for Storage](https://azure.microsoft.com/support/legal/sla/storage/v1_0/) には BLOB の最大処理時間が示されているため、考慮に入れておくことができます。  
   
 -   「[バックアップの管理](##managing-backups)」セクションで推奨されているように `WITH COMPRESSION` オプションを使用することは、大きなファイルをバックアップするときに非常に重要です。  
   
 ## <a name="troubleshooting-backup-to-or-restore-from-url"></a>BACKUP TO URL または RESTORE FROM URL のトラブルシューティング  
- ここでは、Windows Azure BLOB ストレージ サービスへのバックアップまたは Windows Azure BLOB ストレージ サービスからの復元を実行する際に発生するエラーを簡単にトラブルシューティングする方法をいくつか示します。  
+ ここでは、Azure Blob Storage サービスへのバックアップまたは Azure Blob Storage サービスからの復元を実行するときに発生するエラーを簡単にトラブルシューティングする方法をいくつか示します。  
   
  サポートされないオプションまたは制限事項によるエラーを回避するには、「 [Microsoft Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md) 」の記事で、制限事項の一覧および BACKUP コマンドと RESTORE コマンドのサポート情報を確認してください。  
   
  **認証エラー:**  
   
--   `WITH CREDENTIAL` は新しいオプションで、Windows Azure BLOB ストレージ サービスへのバックアップまたは Windows Azure BLOB ストレージ サービスからの復元に必要です。 資格情報に関連するエラーには、次のようなものがあります。  
+-   `WITH CREDENTIAL` は新しいオプションで、Azure Blob Storage サービスへのバックアップまたは Azure Blob Storage サービスからの復元に必要です。 資格情報に関連するエラーには、次のようなものがあります。  
   
      **BACKUP** コマンドまたは **RESTORE** コマンドで指定された資格情報が存在しません。 この問題を回避するには、資格情報が BACKUP ステートメントに存在しない場合に資格情報を作成する T-SQL ステートメントを含めることができます。 使用可能な例を次に示します。  
   
@@ -70,7 +70,7 @@ ms.locfileid: "68041382"
   
 -   資格情報は存在しますが、BACKUP コマンドの実行に使用されるログイン アカウントに資格情報へのアクセス権限がありません。 **Alter any credential** 権限がある ***db_backupoperator*** ロールのログイン アカウントを使用してください。  
   
--   ストレージ アカウントの名前とキーの値を確認してください。 資格情報に格納されている情報は、バックアップ操作と復元操作で使用する Windows Azure ストレージ アカウントのプロパティ値と一致する必要があります。  
+-   ストレージ アカウントの名前とキーの値を確認してください。 資格情報に格納されている情報は、バックアップ操作と復元操作で使用する Azure ストレージ アカウントのプロパティの値と一致する必要があります。  
   
  **バックアップ エラー/障害:**  
   

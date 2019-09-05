@@ -10,20 +10,20 @@ ms.topic: conceptual
 ms.assetid: f7008339-e69d-4e20-9265-d649da670460
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 8d5fa3b8a91147789dfafad6a69ac6210dfd8119
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 2a8ee23c8eb8a51328ccc9808207f04823e9b980
+ms.sourcegitcommit: 3b1f873f02af8f4e89facc7b25f8993f535061c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67940882"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70176308"
 ---
 # <a name="back-up-multiple-databases-to-azure-blob-storage---powershell"></a>Azure BLOB ストレージへの複数のデータベースのバックアップ - PowerShell
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
 
-  このトピックには、PowerShell コマンドレットを使用して Windows Azure BLOB ストレージ サービスへのバックアップを自動化するためのサンプル スクリプトを掲載しています。  
+  このトピックでは、PowerShell コマンドレットを使用して Azure Blob Storage サービスへのバックアップを自動化するために使用できるサンプル スクリプトを提供します。  
   
 ## <a name="overview-of-powershell-cmdlets-for-backup-and-restore"></a>バックアップと復元用の PowerShell コマンドレットの概要  
- バックアップ操作と復元操作を行うために使用できる 2 つの主要なコマンドレットは、 **Backup-SqlDatabase** と **Restore-SqlDatabase** です。 さらに、一連の **SqlCredential** コマンドレットのように、Windows Azure BLOB ストレージへのバックアップを自動化するために必要な他のコマンドレットもあります。バックアップおよび復元操作用として [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] に用意されている PowerShell コマンドレットを次に示します。  
+ バックアップ操作と復元操作を行うために使用できる 2 つの主要なコマンドレットは、 **Backup-SqlDatabase** と **Restore-SqlDatabase** です。 さらに、一連の **SqlCredential** コマンドレットのように、Azure Blob Storage へのバックアップを自動化するために必要な他のコマンドレットもあります。バックアップおよび復元操作用として [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] に用意されている PowerShell コマンドレットを次に示します。  
   
  Backup-SqlDatabase  
  このコマンドレットは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] バックアップを作成するために使用します。  
@@ -32,7 +32,7 @@ ms.locfileid: "67940882"
  データベースを復元するために使用します。  
   
  New-SqlCredential  
- このコマンドレットは、Windows Azure ストレージへの SQL Server バックアップに使用する SQL 資格情報を作成するために使用します。 SQL Server のバックアップと復元における資格情報およびその使用方法の詳細については、「 [Windows Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」を参照してください。  
+ このコマンドレットは、Azure Storage の SQL Server バックアップに使用する SQL 資格情報を作成するために使用します。 SQL Server のバックアップと復元における資格情報およびその使用方法の詳細については、「 [Windows Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」を参照してください。  
   
  Get-SqlCredential  
  このコマンドレットは、資格情報オブジェクトとそのプロパティを取得するために使用します。  
@@ -44,7 +44,7 @@ ms.locfileid: "67940882"
  このコマンドレットは、SQL 資格情報オブジェクトのプロパティを変更または設定するために使用します。  
   
 > [!TIP]  
->  資格情報コマンドレットは、Windows Azure BLOB ストレージへのバックアップと復元で使用します。  
+>  Credential コマンドレットは、Azure Blob Storage へのバックアップと復元のシナリオで使用します。  
   
 ### <a name="powershell-for-multi-database-multi-instance-backup-operations"></a>複数データベース/複数インスタンス バックアップ操作用の PowerShell  
  以下のセクションでは、SQL Server の複数インスタンスでの SQL 資格情報の作成、特定の SQL Server インスタンスにあるすべてのユーザー データベースのバックアップなど、さまざまな操作用のスクリプトを掲載します。 これらのスクリプトでは、使用している環境の要件に従ってバックアップ操作を自動化またはスケジュールすることができます。 ここに示すスクリプトは例であり、環境に合わせて変更または拡張することができます。  
@@ -59,7 +59,7 @@ ms.locfileid: "67940882"
   
      詳細については、「 [Navigate SQL Server PowerShell Paths](../../relational-databases/scripting/navigate-sql-server-powershell-paths.md)」をご参照ください。  
   
-3.  各コード サンプルは変数値を変更して個別に試すことができますが、Windows Azure ストレージ アカウントおよび SQL 資格情報の作成は前提条件であり、Windows Azure BLOB ストレージ サービスへのすべてのバックアップ操作と復元操作に必要です。  
+3.  各コード サンプルは変数値を変更して個別に試すことができますが、Azure ストレージ アカウントおよび SQL 資格情報の作成が前提条件であり、Azure Blob Storage サービスへのすべてのバックアップ操作と復元操作に必要です。  
   
 ### <a name="create-a-sql-credential-on-all-the-instances-of-sql-server"></a>SQL Server のすべてのインスタンスで SQL 資格情報を作成する  
  2 種類のサンプル スクリプトがあり、いずれもコンピューター上のすべての SQL Server インスタンスで SQL 資格情報 "mybackupToURL" を作成します。 最初の例では単純に資格情報を作成し、例外をトラップしません。  たとえば、コンピューター上のいずれかのインスタンスに同じ名前の資格情報が既に存在する場合、このスクリプトは失敗します。 2 番目の例ではエラーをトラップし、スクリプトを続行できます。  

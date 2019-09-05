@@ -23,12 +23,12 @@ ms.assetid: a0455b71-ca25-476e-a7a8-0770f1860bb7
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 66d10ee997949d8415ebe3ed582f63b1994840cd
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 699d7779c3409a69d4389a96b93feab1cae3f9e0
+ms.sourcegitcommit: a154b3050b6e1993f8c3165ff5011ff5fbd30a7e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68086757"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "70148838"
 ---
 # <a name="datetimeoffset-transact-sql"></a>datetimeoffset (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-all-md](../../includes/tsql-appliesto-ss2008-all-md.md)]
@@ -43,9 +43,9 @@ ms.locfileid: "68086757"
 |使用方法|DECLARE \@MyDatetimeoffset **datetimeoffset(7)**<br /><br /> CREATE TABLE Table1 ( Column1 **datetimeoffset(7)** )|  
 |既定の文字列リテラル形式 (下位クライアント用)|YYYY-MM-DD hh:mm:ss[.nnnnnnn] [{+&#124;-}hh:mm]<br /><br /> 詳細については、後述の「下位クライアントの下位互換性」セクションを参照してください。|  
 |日付範囲|0001-01-01 ～ 31.12.99<br /><br /> 1 月 1 日 1 CE ～12 月 31 日 9999 CE|  
-|時間の範囲|00:00:00 ～ 23:59:59.9999999 (Informatica では秒の小数部はサポートされていません)|  
-|タイム ゾーンのオフセット範囲|-14:00 ～ +14:00 (Informatica ではタイム ゾーン オフセットは無視されます)|  
-|要素範囲|YYYY は、0001 ～ 9999 の年を表す 4 桁の数字です。<br /><br /> MM は、指定された年の 01 ～ 12 の月を表す 2 桁の数字です。<br /><br /> DD は、指定された月の (月に応じて) 01 ～ 31 の日を表す 2 桁の数字です。<br /><br /> hh は、00 ～ 23 の時を表す 2 桁の数字です。<br /><br /> mm は、分を表す 00 から 59 の 2 桁の数字です。<br /><br /> ss は、秒を表す 00 から 59 の 2 桁の数字です。<br /><br /> n* は、秒の有効桁数を表す 0 ～ 7 桁の数字です (0 ～ 9999999)。 Informatica では、秒の小数部はサポートされていません。<br /><br /> hh は、-14 から +14 までの 2 桁の数字です。 Informatica ではタイム ゾーン オフセットは無視されます。<br /><br /> mm は、00 ～ 59 の 2 桁の数字です。 Informatica ではタイム ゾーン オフセットは無視されます。|  
+|時間の範囲|00:00:00 から 23:59:59.9999999|  
+|タイム ゾーンのオフセット範囲|-14:00 ～ +14:00|  
+|要素範囲|YYYY は、0001 ～ 9999 の年を表す 4 桁の数字です。<br /><br /> MM は、指定された年の 01 ～ 12 の月を表す 2 桁の数字です。<br /><br /> DD は、指定された月の (月に応じて) 01 ～ 31 の日を表す 2 桁の数字です。<br /><br /> hh は、00 ～ 23 の時を表す 2 桁の数字です。<br /><br /> mm は、分を表す 00 から 59 の 2 桁の数字です。<br /><br /> ss は、秒を表す 00 から 59 の 2 桁の数字です。<br /><br /> n* は、秒の有効桁数を表す 0 ～ 7 桁の数字です (0 ～ 9999999)。<br /><br /> hh は、-14 から +14 までの 2 桁の数字です。 <br /><br /> mm は、00 ～ 59 の 2 桁の数字です。|  
 |文字長|26 文字 (YYYY-MM-DD hh:mm:ss {+&#124;-}hh:mm) 以上、34 文字 (YYYY-MM-DD hh:mm:ss.nnnnnnn {+&#124;-}hh:mm) 以下|  
 |有効桁数、小数点以下桁数|次の表を参照してください。|  
 |ストレージ サイズ|既定では 10 バイト固定 (秒部分の既定の有効桁数は 100 ns) です。|  
@@ -103,7 +103,7 @@ ms.locfileid: "68086757"
 |[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のデータ型|下位クライアントに渡される既定の文字列リテラル形式|下位 ODBC|下位 OLEDB|下位 JDBC|下位 SQLCLIENT|  
 |---|---|---|---|---|---|
 |**time**|hh:mm:ss[.nnnnnnn]|SQL_WVARCHAR または SQL_VARCHAR|DBTYPE_WSTR または DBTYPE_STR|Java.sql.String|String または SqString|  
-|**date**|-YYYY-MM-DD|SQL_WVARCHAR または SQL_VARCHAR|DBTYPE_WSTR または DBTYPE_STR|Java.sql.String|String または SqString|  
+|**date**|YYYY-MM-DD|SQL_WVARCHAR または SQL_VARCHAR|DBTYPE_WSTR または DBTYPE_STR|Java.sql.String|String または SqString|  
 |**datetime2**|YYYY-MM-DD hh:mm:ss[.nnnnnnn]|SQL_WVARCHAR または SQL_VARCHAR|DBTYPE_WSTR または DBTYPE_STR|Java.sql.String|String または SqString|  
 |**datetimeoffset**|YYYY-MM-DD hh:mm:ss[.nnnnnnn] [+&#124;-]hh:mm|SQL_WVARCHAR または SQL_VARCHAR|DBTYPE_WSTR または DBTYPE_STR|Java.sql.String|String または SqString|  
   

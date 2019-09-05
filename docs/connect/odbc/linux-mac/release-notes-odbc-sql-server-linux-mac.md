@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: v-makouz
 ms.author: v-jizho2
 manager: kenvh
-ms.openlocfilehash: 5d2587a6150807841edc9773478f1b798ee60d84
-ms.sourcegitcommit: c5e2aa3e4c3f7fd51140727277243cd05e249f78
+ms.openlocfilehash: a22cf1c2da261805309c8ac223a8535afbcd34d1
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MTE75
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68742812"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70152739"
 ---
 # <a name="release-notes-for-the-microsoft-odbc-driver-to-sql-server-on-linux-and-macos"></a>Linux および macOS 上の Microsoft ODBC Driver for SQL Server のリリース ノートです
 
@@ -35,7 +35,7 @@ NOW NEW FILE NAME:    linux-mac/release-notes-odbc-sql-server-linux-mac.md
 Thank you.
 GeneMi.  2019/04/03.
 -->
-## <a name="174-august-2019"></a>17.4、8月2019
+## <a name="174-august-2019"></a>17.4、2019 年 8 月
 
 | 追加された機能 | 詳細 |
 | :------------ | :------ |
@@ -133,6 +133,6 @@ ODBC Driver on SUSE Linux (Preview) は、64 ビット SUSE Linux Enterprise 11 
 
 Linux 上の ODBC ドライバーは、[!INCLUDE[ssHADR](../../../includes/sshadr_md.md)]をサポートしています。 詳細については、[Linux 上の ODBC ドライバーでの高可用性とディザスター リカバリーのサポート](../../../connect/odbc/linux-mac/odbc-driver-on-linux-support-for-high-availability-disaster-recovery.md)に関するページを参照してください。  
 
-ODBC Driver on Linux は、Microsoft Azure SQL Database への接続をサポートします。 詳細については、「 [How to: Connect to Windows Azure SQL Database Using ODBC (方法: ODBC を使用して Windows Azure SQL Database に接続する)](https://msdn.microsoft.com/library/hh974312.aspx)」を参照してください。  
+ODBC Driver on Linux は、Microsoft Azure SQL Database への接続をサポートします。 詳細については、[ODBC を使って Azure SQL Database に接続する方法](https://msdn.microsoft.com/library/hh974312.aspx)に関するページをご覧ください。  
 
 `-l` オプション (ログインのタイムアウト) が `bcp` に追加されました。 詳しくは、「[Connecting with **bcp**](../../../connect/odbc/linux-mac/connecting-with-bcp.md)」(bcp による接続) をご覧ください。

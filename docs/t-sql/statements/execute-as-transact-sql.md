@@ -1,9 +1,9 @@
 ---
 title: EXECUTE AS (Transact-SQL) | Microsoft Docs
 ms.custom: ''
-ms.date: 08/10/2017
+ms.date: 08/27/2019
 ms.prod: sql
-ms.prod_service: database-engine, sql-database
+ms.prod_service: database-engine, sql-database, sql-data-warehouse
 ms.reviewer: ''
 ms.technology: t-sql
 ms.topic: language-reference
@@ -20,17 +20,19 @@ helpviewer_keywords:
 - execution context [SQL Server]
 - switching execution context
 ms.assetid: 613b8271-7f7d-4378-b7a2-5a7698551dbd
-author: VanMSFT
-ms.author: vanto
-ms.openlocfilehash: 1908228b12db7256351945b474016a707db56b3c
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+author: CarlRabeler
+ms.author: carlrab
+manager: craigg
+monikerRange: = azuresqldb-current || >= sql-server-2016 || >= sql-server-linux-2017 || = sqlallproducts-allversions||=azure-sqldw-latest
+ms.openlocfilehash: d9ec87979d0f91653d5f287749ccfb5b7f806dc4
+ms.sourcegitcommit: 71fac5fee00e0eca57e555f44274dd7e08d47e1e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68084441"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70161336"
 ---
 # <a name="execute-as-transact-sql"></a>EXECUTE AS (Transact-SQL)
-[!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
+[!INCLUDE[tsql-appliesto-ss2008-asdb-asdw-xxx-md](../../includes/tsql-appliesto-ss2008-asdb-asdw-xxx-md.md)]
 
   セッションの実行コンテキストを設定します。  
   
@@ -59,7 +61,7 @@ ms.locfileid: "68084441"
  権限を借用する実行コンテキストがログインであることを指定します。 権限借用のスコープはサーバー レベルです。  
   
 > [!NOTE]  
->  このオプションは、包含データベースまたは SQL Database では使用できません。  
+>  このオプションは、包含データベース、SQL Database、SQL Data Warehouse では使用できません。  
   
  User  
  権限を借用するコンテキストが、現在のデータベース内のユーザーであることを指定します。 権限借用のスコープは、現在のデータベースに限定されます。 コンテキスト スイッチの対象がデータベース ユーザーであっても、そのユーザーのサーバー レベルの権限は継承されません。  
@@ -67,7 +69,7 @@ ms.locfileid: "68084441"
 > [!IMPORTANT]  
 >  データベース ユーザーに対するコンテキスト スイッチがアクティブであるときに、データベース外部のリソースへアクセスを試みると、ステートメントが失敗する原因となります。 たとえば、USE *database* ステートメントや分散クエリ、3 部または 4 部構成の識別子を使用する別のデータベースを参照するクエリなどは実行しないでください。  
   
- **'** _name_ **'**  
+ **'** *name* **'**  
  有効なユーザーまたはログイン名を指定します。 *name* は、**sysadmin** 固定サーバー ロールのメンバーであるか、[sys.database_principals](../../relational-databases/system-catalog-views/sys-database-principals-transact-sql.md) または [sys.server_principals](../../relational-databases/system-catalog-views/sys-server-principals-transact-sql.md) のプリンシパルとして存在する必要があります。  
   
  *name* はローカル変数として指定できます。  
@@ -77,22 +79,23 @@ ms.locfileid: "68084441"
  詳しくは、後の「[ユーザーまたはログイン名の指定](#_user)」をご覧ください。  
   
  NO REVERT  
- コンテキスト スイッチを以前のコンテキストに戻せないことを示します。 **NO REVERT** オプションを使用できるのは、アドホック レベルでのみです。
+ コンテキスト スイッチを以前のコンテキストに戻せないことを示します。 **NO REVERT** オプションを使用できるのは、アドホック レベルでのみです。  
   
  以前のコンテキストに戻す方法について詳しくは、「[REVERT &#40;Transact-SQL&#41;](../../t-sql/statements/revert-transact-sql.md)」をご覧ください。  
   
- COOKIE INTO **@** _varbinary_variable_  
- REVERT WITH COOKIE ステートメントの呼び出し時に適切な **@** _varbinary_variable_ 値が含まれている場合にのみ、実行コンテキストを以前のコンテキストに戻せることを示します。 [!INCLUDE[ssDE](../../includes/ssde-md.md)]は、Cookie を **@** _varbinary_variable_ に渡します。 **COOKIE INTO** オプションを使用できるのは、アドホック レベルでのみです。  
+ COOKIE INTO * *@***varbinary_variable*  
+ REVERT WITH COOKIE ステートメントの呼び出し時に適切な * *@***varbinary_variable* 値が含まれている場合にのみ、実行コンテキストを以前のコンテキストに戻せることを示します。 [!INCLUDE[ssDE](../../includes/ssde-md.md)] は、Cookie を * *@***varbinary_variable* に渡します。 **COOKIE INTO** オプションを使用できるのは、アドホック レベルでのみです。  
   
- **@** _varbinary_variable_ は **varbinary(8000)** です。  
+ **@** *varbinary_variable* は **varbinary(8000)** です。  
   
 > [!NOTE]  
 >  Cookie の **OUTPUT** パラメーターは現在、適切な最大長である **varbinary(8000)** としてドキュメントに記載されています。 ただし、現在の実装では **varbinary(100)** を返します。 将来のリリースでクッキーの戻り値のサイズが増えた場合にアプリケーションが引き続き正常に動作するように、アプリケーションでは **varbinary(8000)** を予約しておく必要があります。  
   
  CALLER  
- モジュール内で使用した場合、モジュールの呼び出し元のコンテキストで、モジュール内のステートメントが実行されます。  
-  
- モジュール外で使用した場合、このステートメントでは何も処理されません。  
+ モジュール内で使用した場合、モジュールの呼び出し元のコンテキストで、モジュール内のステートメントが実行されます。
+モジュール外で使用した場合、このステートメントでは何も処理されません。
+ > [!NOTE]  
+>  SQL Data Warehouse では、このオプションは使用できません。  
   
 ## <a name="remarks"></a>Remarks  
  実行コンテキストでの変更は、次のいずれかが行われるまで有効です。  
@@ -125,9 +128,7 @@ ms.locfileid: "68084441"
 >  EXECUTE AS ステートメントは、[!INCLUDE[ssDE](../../includes/ssde-md.md)]が名前を解決できる限り、正常に実行できます。 ドメイン ユーザーが存在する場合、Windows ユーザーに [!INCLUDE[ssDE](../../includes/ssde-md.md)] へのアクセス権がなくても、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のユーザーを解決できることがあります。 これにより、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] へのアクセス権のないログインがログインしているように見える場合もありますが、権限借用したログインの権限が public または guest に付与されているだけの場合があります。  
   
 ## <a name="using-with-no-revert"></a>WITH NO REVERT の使用  
- EXECUTE AS ステートメントにオプションの WITH NO REVERT 句が含まれている場合、REVERT を使用、または別の EXECUTE AS ステートメントを実行して、セッションの実行コンテキストを元に戻すことはできません。 ステートメントで設定されたコンテキストはセッションが削除されるまで有効です。   接続プールが有効になっている場合、`sp_reset_connection` は失敗して、接続が削除されることに注意してください。  イベント ログのエラー メッセージは次のようなものです。
- 
-> 接続が削除されました。その接続を開いたプリンシパルが、その後新しいセキュリティ コンテキストを想定し、権限を借用したセキュリティ コンテキストの管理下に接続を再設定しようとしました。 このシナリオはサポートされません。 オンライン ブックの「権限借用の概要」を参照してください。
+ EXECUTE AS ステートメントにオプションの WITH NO REVERT 句が含まれている場合、REVERT を使用、または別の EXECUTE AS ステートメントを実行して、セッションの実行コンテキストを元に戻すことはできません。 ステートメントで設定されたコンテキストはセッションが削除されるまで有効です。  
   
  WITH NO REVERT COOKIE = @*varbinary_variable* 句を指定した場合、[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)]はクッキー値を @*varbinary_variable* に渡します。 そのステートメントで設定された実行コンテキストを以前のコンテキストに戻すことができるのは、REVERT WITH COOKIE = @*varbinary_variable* ステートメントの呼び出し時に、同じ *@varbinary_variable* 値が含まれている場合だけです。  
   

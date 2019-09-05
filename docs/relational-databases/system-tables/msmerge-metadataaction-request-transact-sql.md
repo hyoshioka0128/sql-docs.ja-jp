@@ -35,11 +35,11 @@ ms.locfileid: "68106369"
 |**rowguid**|**uniqueidentifier**|特定の行の行識別子。|  
 |**action**|**tinyint**|必要な補正アクションの識別子。|  
 |**generation**|**bigint**|補正アクションを必要とする生成の値。|  
-|**変更されました。**|**int**|内部使用のみ。|  
+|**changed**|**int**|内部使用のみ。|  
   
 ## <a name="see-also"></a>関連項目  
- [レプリケーション テーブル &#40; です。TRANSACT-SQL と &#41; です。](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
- [レプリケーション ビュー &#40;TRANSACT-SQL&#41;](../../relational-databases/system-views/replication-views-transact-sql.md)   
+ [レプリケーション テーブル &#40;Transact-SQL&#41;](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
+ [レプリケーション ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-views/replication-views-transact-sql.md)   
  [マージ レプリケーションの Web 同期](../../relational-databases/replication/web-synchronization-for-merge-replication.md)  
   
   

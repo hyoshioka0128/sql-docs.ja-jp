@@ -80,7 +80,7 @@ ms.locfileid: "68029778"
 |**snapshot_jobid**|**binary(16)**|サブスクライバーによるスナップショット生成処理の開始が可能な場合のスナップショットを生成するエージェント ジョブを示します。|  
 |**allow_web_synchronization**|**bit**|Web 同期では、パブリケーションが有効になっているかどうかを指定します、 **1**パブリケーションに対して Web 同期が有効であることを意味します。|  
 |**web_synchronization_url**|**nvarchar(500)**|Web 同期で使用するインターネット URL の既定値を指定します。|  
-|**allow_partition_realignment**|**bit**|パブリッシャーでの行の変更がパーティションの変更を伴う場合、削除をサブスクライバーに送信するかどうかを示します。<br /><br /> **0** = データ、古いからパーティションは、パブリッシャーでこのデータに加えられた変更は、このサブスクライバーにレプリケートされませんが、サブスクライバーで加えられた変更は、パブリッシャーにレプリケートされます、サブスクライバーで残ります。<br /><br /> **1** = サブスクライバーのパーティションの長い一部でないデータを削除して、パーティション変更の結果を反映するためにサブスクライバーを削除します。<br /><br /> 詳細については、次を参照してください。 [sp_addmergepublication &#40;TRANSACT-SQL&#41;](../../relational-databases/system-stored-procedures/sp-addmergepublication-transact-sql.md)します。<br /><br /> 注:この値がサブスクライバーに残るデータ**0**読み取り専用であるかのように扱う必要がある。 ただし、これは厳密に適用されません、レプリケーション システムです。|  
+|**allow_partition_realignment**|**bit**|パブリッシャーでの行の変更がパーティションの変更を伴う場合、削除をサブスクライバーに送信するかどうかを示します。<br /><br /> **0** = データ、古いからパーティションは、パブリッシャーでこのデータに加えられた変更は、このサブスクライバーにレプリケートされませんが、サブスクライバーで加えられた変更は、パブリッシャーにレプリケートされます、サブスクライバーで残ります。<br /><br /> **1** = サブスクライバーのパーティションの長い一部でないデータを削除して、パーティション変更の結果を反映するためにサブスクライバーを削除します。<br /><br /> 詳細については、次を参照してください。 [sp_addmergepublication &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-addmergepublication-transact-sql.md)します。<br /><br /> 注:この値がサブスクライバーに残るデータ**0**読み取り専用であるかのように扱う必要がある。 ただし、これは厳密に適用されません、レプリケーション システムです。|  
 |**retention_period_unit**|**tinyint**|定義するときに使用する単位を定義します。*保有*、これらの値のいずれかを指定することができます。<br /><br /> **0** = 日。<br /><br /> **1**週を = です。<br /><br /> **2** = 月。<br /><br /> **3**年を = です。|  
 |**decentralized_conflicts**|**int**|競合の原因となったサブスクライバーで競合レコードを保存するかどうかを示します。<br /><br /> **0** = 競合レコードはサブスクライバー側では保存されません。<br /><br /> **1** = 競合レコードはサブスクライバーで格納されます。|  
 |**generation_leveling_threshold**|**int**|生成結果に含まれる変更の数を指定します。 生成とは、パブリッシャーまたはサブスクライバーに配信される変更のコレクションです。|  
@@ -90,7 +90,7 @@ ms.locfileid: "68029778"
  [レプリケーション テーブル &#40;Transact-SQL&#41;](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
  [レプリケーション ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-views/replication-views-transact-sql.md)   
  [sp_addmergepublication &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-addmergepublication-transact-sql.md)   
- [sp_changemergepublication (Transact-SQL)](../../relational-databases/system-stored-procedures/sp-changemergepublication-transact-sql.md)   
+ [sp_changemergepublication &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-changemergepublication-transact-sql.md)   
  [sp_helpmergepublication &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-helpmergepublication-transact-sql.md)  
   
   

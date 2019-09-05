@@ -23,12 +23,12 @@ ms.assetid: 61915bc5-0f5f-45ac-8cfe-3452bc185558
 author: stevestein
 ms.author: sstein
 monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 367815ef719b9a44462afc41f62e69d3c1f6fb26
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: f4fafacc6dc11415ed691fdf64b494daebc8cc64
+ms.sourcegitcommit: 3b1f873f02af8f4e89facc7b25f8993f535061c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68134799"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70176346"
 ---
 # <a name="export-a-data-tier-application"></a>データ層アプリケーションのエクスポート
 [!INCLUDE[appliesto-ss-asdb-xxxx-xxx-md](../../includes/appliesto-ss-asdb-xxxx-xxx-md.md)]
@@ -98,7 +98,7 @@ Azure SQL DB で、**データベースごとに**、すべてのテーブルま
   
 -   **[ローカル ディスクに保存]** : BACPAC ファイルをローカル コンピューター上のディレクトリに作成します。 **[参照]** をクリックしてローカル コンピューター内を参照するか、用意されている領域にパスを指定します。 パス名には、ファイル名および .bacpac 拡張子を含める必要があります。  
   
--   **[Windows Azure に保存]** : BACPAC ファイルを Windows Azure コンテナーに作成します。 このオプションを検証するためには、Windows Azure コンテナーに接続する必要があります。 このオプションでは、一時ファイル用のローカル ディレクトリを指定する必要もあります。 一時ファイルは、指定した場所に作成され、操作の完了後も残ります。  
+-   **[Save to Azure]\(Azure に保存\)** : BACPAC ファイルを Azure コンテナーに作成します。 このオプションを検証するためには、Azure コンテナーに接続する必要があります。 このオプションでは、一時ファイル用のローカル ディレクトリを指定する必要もあります。 一時ファイルは、指定した場所に作成され、操作の完了後も残ります。  
   
  エクスポートするテーブルのサブセットを指定するには、 **[詳細]** オプションを使用します。  
   

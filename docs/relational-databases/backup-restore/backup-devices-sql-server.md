@@ -25,12 +25,12 @@ helpviewer_keywords:
 ms.assetid: 35a8e100-3ff2-4844-a5da-dd088c43cba4
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 5a44b8b9c4ae4c70ec41a7c699572ecf4adcc224
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: f7ae7d1cddf05ce05c71c6a95f64266eae835aff
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68103770"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70152132"
 ---
 # <a name="backup-devices-sql-server"></a>バックアップ デバイス (SQL Server)
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -46,7 +46,7 @@ ms.locfileid: "68103770"
  物理バックアップ デバイス (physical backup device)  
  オペレーティング システムによって提供されるテープ ドライブまたはディスク ファイル。 バックアップは 1 ～ 64 個のバックアップ デバイスに書き込むことができます。 バックアップに複数のバックアップ デバイスが必要な場合、デバイスはすべて 1 種類のデバイス (ディスクまたはテープ) に対応する必要があります。  
   
- ディスクまたはテープに加えて SQL Server のバックアップも Microsoft Azure BLOB ストレージ サービスに書き込むことができます。  
+ SQL Server のバックアップは、ディスクやテープだけでなく、Azure Blob Storage サービスに書き込むこともできます。  
  
   
 ##  <a name="DiskBackups"></a> ディスク バックアップ デバイスの使用  
@@ -181,8 +181,8 @@ GO
  テープが誤って開いたままになっている場合、最も迅速にテープを解放するには、RESTORE REWINDONLY FROM TAPE **=** _backup_device_name_ コマンドを使用します。 詳細については、「[RESTORE REWINDONLY &#40;Transact-SQL&#41;](../../t-sql/statements/restore-statements-rewindonly-transact-sql.md)」を参照してください。  
   
   
-## <a name="using-the-windows-azure-blob-storage-service"></a>Microsoft Azure Blob Storage サービスの使用  
- SQL Server のバックアップを Windows Azure BLOB ストレージ サービスに書き込むことができます。  Microsoft Azure BLOB ストレージ サービスを使用したバックアップについては、「 [Microsoft Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」をご覧ください。  
+## <a name="using-the-azure-blob-storage-service"></a>Azure Blob Storage サービスの使用  
+ SQL Server のバックアップを Azure Blob Storage サービスに書き込むことができます。  Azure Blob Storage サービスを使用したバックアップについては、「[Microsoft Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」をご覧ください。  
   
 ##  <a name="LogicalBackupDevice"></a> 論理バックアップ デバイスを使用する  
  " *論理バックアップ デバイス* " とは、特定の物理バックアップ デバイス (ディスク ファイルやテープ ドライブ) を示す、省略可能なユーザー定義名です。 論理バックアップ デバイスにより、対応する物理バックアップ デバイスを参照する際に間接指定を使用できます。  
@@ -218,7 +218,7 @@ GO
   
   
 ##  <a name="Archiving"></a> SQL Server のバックアップをアーカイブする  
- ファイル システム バックアップ ユーティリティを使用してディスクのバックアップをアーカイブし、アーカイブをオフサイトに保存することをお勧めします。 ディスクを使用することには、アーカイブしたバックアップをネットワーク経由でオフサイトのディスクに書き込めるという利点があります。 Microsoft Azure BLOB ストレージ サービスは、オフサイト保存のオプションとして使用できます。  ディスク バックアップをアップロードするか、Microsoft Azure BLOB ストレージ サービスにバックアップを直接書き込むことができます。  
+ ファイル システム バックアップ ユーティリティを使用してディスクのバックアップをアーカイブし、アーカイブをオフサイトに保存することをお勧めします。 ディスクを使用することには、アーカイブしたバックアップをネットワーク経由でオフサイトのディスクに書き込めるという利点があります。 Azure Blob Storage サービスは、オフサイト保存のオプションとして使用できます。  ディスク バックアップをアップロードするか、Azure Blob Storage サービスにバックアップを直接書き込むことができます。  
   
  もう 1 つの一般的なアーカイブ方法は、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] バックアップをローカルのバックアップ ディスクに書き込み、そのバックアップをテープにアーカイブして、そのテープをオフサイトで保存するという形態です。  
 

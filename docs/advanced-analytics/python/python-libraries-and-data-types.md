@@ -22,7 +22,7 @@ SQL Server Machine Learning Services の Python 統合機能で実行される P
 
 ## <a name="python-version"></a>Python のバージョン
 
-RevoScaleR 機能 (rxLinMod、rxLogit、rxPredict、rxDTrees、rxBTrees など) のサブセットは、Python Api を使用して、新しい Python パッケージ**revoscalepy**を使用して提供されます。 このパッケージを使用して、パンダのデータフレーム、XDF ファイル、または SQL データクエリを使用してデータを操作できます。
+RevoScaleR 機能 (rxLinMod、rxLogit、rxPredict、rxDTrees、rxBTrees など) のサブセットは、Python Api を使用して、新しい Python パッケージ**revoscalepy**を使用して提供されます。 このパッケージを使用して、pandas のデータフレーム、XDF ファイル、または SQL データクエリを使用してデータを操作できます。
 
 詳細については、「 [revoscalepy module in SQL Server](ref-py-revoscalepy.md) and [revoscalepy 関数リファレンス](https://docs.microsoft.com/r-server/python-reference/revoscalepy/revoscalepy-package)」を参照してください。
 

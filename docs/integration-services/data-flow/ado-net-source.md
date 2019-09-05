@@ -21,12 +21,12 @@ helpviewer_keywords:
 ms.assetid: 2a2f1750-2cda-4dda-9dca-623a96a6b3c0
 author: janinezhang
 ms.author: janinez
-ms.openlocfilehash: 262d28de4c765a6bc6edaf89db52e57a79ff0c85
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: e3881b16729a1999b3be47dafd2fec396d495c29
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67901832"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155161"
 ---
 # <a name="ado-net-source"></a>ADO NET ソース
 
@@ -35,7 +35,7 @@ ms.locfileid: "67901832"
 
   ADO NET ソースは .NET プロバイダーのデータを呼び出し、そのデータをデータ フローで使用できるようにします。  
   
- ADO NET 変換元を使用して [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssSDSFull](../../includes/sssdsfull-md.md)]に接続できます。 OLE DB を使用した [!INCLUDE[ssSDS](../../includes/sssds-md.md)] への接続はサポートされていません。 [!INCLUDE[ssSDS](../../includes/sssds-md.md)]の詳細については、「 [Azure SQL Database の一般的な制限事項とガイドライン](https://go.microsoft.com/fwlink/?LinkId=248228)」を参照してください。  
+ ADO NET 変換元を使用して [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssSDSFull](../../includes/sssdsfull-md.md)]に接続できます。 OLE DB を使用した [!INCLUDE[ssSDS](../../includes/sssds-md.md)] への接続はサポートされていません。 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] の詳細については、「[一般的な制限事項とガイドライン (Azure SQL Database)](https://go.microsoft.com/fwlink/?LinkId=248228)」を参照してください。  
   
 ## <a name="data-type-support"></a>データ型のサポート  
  ソースは、特定の [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] データ型にマップされないデータ型を DT_NTEXT [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] データ型に変換します。 この変換はデータ型が **System.Object**である場合でも行われます。  

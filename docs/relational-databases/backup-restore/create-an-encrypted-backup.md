@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: e29061d3-c2ab-4d98-b9be-8e90a11d17fe
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 90dd03d9db824204bc4904e90af4e74055f6fa79
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 19556dc84e916598e63f6df7b101f4f495ac3855
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68076030"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155384"
 ---
 # <a name="create-an-encrypted-backup"></a>暗号化されたバックアップの作成
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -74,12 +74,12 @@ ms.locfileid: "68076030"
   
  EKM で保護されているバックアップの暗号化の例については、「[Azure Key Vault を使用する拡張キー管理 &#40;SQL Server&#41;](../../relational-databases/security/encryption/extensible-key-management-using-azure-key-vault-sql-server.md)」を参照してください。  
   
-### <a name="backup-to-windows-azure-storage-with-encryption"></a>暗号化の使用による Windows Azure ストレージへのバックアップ  
- **[SQL Server Backup to URL]** オプションを使用して Windows Azure ストレージへのバックアップを作成する場合、暗号化の手順は同じですが、バックアップ先として URL を使用し、Windows Azure ストレージへの認証用に SQL 資格情報を指定する必要があります。 暗号化のオプションを使用して [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] を構成する場合は、「[Microsoft Azure への SQL Server マネージド バックアップを有効にする](../../relational-databases/backup-restore/enable-sql-server-managed-backup-to-microsoft-azure.md)」を参照してください。  
+### <a name="backup-to-azure-storage-with-encryption"></a>暗号化して Azure Storage にバックアップする  
+ **[SQL Server Backup to URL]** オプションを使用して Azure Storage へのバックアップを作成する場合、暗号化の手順は同じですが、バックアップ先として URL を使用し、Azure Storage への認証用に SQL 資格情報を指定する必要があります。 暗号化のオプションを使用して [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] を構成する場合は、「[Microsoft Azure への SQL Server マネージド バックアップを有効にする](../../relational-databases/backup-restore/enable-sql-server-managed-backup-to-microsoft-azure.md)」を参照してください。  
   
  **前提条件:**  
   
--   Windows ストレージ アカウントとコンテナー。 詳細については、以下を参照してください。 [レッスン 1:Windows Azure ストレージ オブジェクトの作成](https://msdn.microsoft.com/library/74edd1fd-ab00-46f7-9e29-7ba3f1a446c5)。  
+-   Windows ストレージ アカウントとコンテナー。 詳細については、以下を参照してください。 [レッスン 1:Azure ストレージ オブジェクトの作成](https://msdn.microsoft.com/library/74edd1fd-ab00-46f7-9e29-7ba3f1a446c5)。  
   
 -   master データベースのデータベース マスター キー、SQL Server インスタンス上の証明書または非対称キー。 暗号化の要件と権限については、「 [バックアップの暗号化](../../relational-databases/backup-restore/backup-encryption.md)」を参照してください。  
   

@@ -18,19 +18,19 @@ ms.assetid: 07f8f594-75b4-4591-8c29-d63811e7753e
 author: pmasl
 ms.author: pelopes
 manager: amitban
-ms.openlocfilehash: 4af50c6df7ef8ea451f38a038d19e39491604308
-ms.sourcegitcommit: 3026c22b7fba19059a769ea5f367c4f51efaf286
+ms.openlocfilehash: 28390d824e04287264b328878f888dbcfac1cdb1
+ms.sourcegitcommit: a1ddeabe94cd9555f3afdc210aec5728f0315b14
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2019
-ms.locfileid: "68231622"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70123127"
 ---
 # <a name="upgrading-databases-by-using-the-query-tuning-assistant"></a>クエリ調整アシスタントを使用したデータベースのアップグレード
 [!INCLUDE[tsql-appliesto-ss2016-asdb-xxxx-xxx-md.md](../../includes/tsql-appliesto-ss2016-asdb-xxxx-xxx-md.md)]
 
 古いバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] から [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降に移行する場合、および[データベース互換性レベル](../../relational-databases/databases/view-or-change-the-compatibility-level-of-a-database.md)を使用可能な最新のものにアップグレードする場合、ワークロードのパフォーマンスが低下するリスクにさらされる可能性があります。 程度はかなり低くなりますが、[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] と新しいバージョン間のアップグレード時にもその可能性はあります。
 
-[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降、およびすべての新しいバージョンでは、クエリ オプティマイザーのすべての変更が最新のデータベース互換レベルにゲーティングされるため、実行プランの変更は、アップグレードの時点ではなく、ユーザーが `COMPATIBILITY_LEVEL` データベース オプションを使用可能な最新のものに変更したときに発生します。 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] で導入されたクエリ オプティマイザーの変更の詳細については、[カーディナリティ推定機能](../../relational-databases/performance/cardinality-estimation-sql-server.md)に関するページを参照してください。 互換性レベルとそれがアップグレードにどのように影響する可能性があるかについて詳しくは、「[Compatibility Levels and SQL Server Upgrades](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md#compatibility-levels-and-sql-server-upgrades)」 (互換性レベルと SQL Server アップグレード) を参照してください。
+[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降、およびすべての新しいバージョンでは、クエリ オプティマイザーのすべての変更が最新のデータベース互換レベルにゲーティングされるため、実行プランの変更は、アップグレードの時点ではなく、ユーザーが `COMPATIBILITY_LEVEL` データベース オプションを使用可能な最新のものに変更したときに発生します。 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] で導入されたクエリ オプティマイザーの変更の詳細については、[カーディナリティ推定機能](../../relational-databases/performance/cardinality-estimation-sql-server.md)に関するページを参照してください。 互換性レベルとそれがアップグレードにどのように影響する可能性があるかについて詳しくは、「[互換性レベルとデータベース エンジンのアップグレード](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md#compatibility-levels-and-database-engine-upgrades)」を参照してください。
 
 データベース互換レベルによって提供されるこのゲーティング機能と、クエリ ストアを組み合わせることで、アップグレードで以下の推奨されるワークフローに従う場合に、アップグレード プロセスのクエリ パフォーマンスを高いレベルで制御できます。 互換性レベルをアップグレードする場合に推奨されるワークフローの詳細については、「[Change the Database Compatibility Mode and Use the Query Store](../../database-engine/install-windows/change-the-database-compatibility-mode-and-use-the-query-store.md)」 (データベース互換モードの変更とクエリ ストアの使用) を参照してください。 
 
@@ -210,7 +210,7 @@ QTA はセッション ベースの機能であり、セッションが初めて
 **db_owner** ロールのメンバーシップが必要です。
   
 ## <a name="see-also"></a>参照  
- [互換性レベルと SQL Server アップグレード](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md#compatibility-levels-and-sql-server-upgrades)    
+ [互換性レベルとデータベース エンジンのアップグレード](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md#compatibility-levels-and-database-engine-upgrades)    
  [パフォーマンス監視およびチューニング ツール](../../relational-databases/performance/performance-monitoring-and-tuning-tools.md)     
  [クエリのストアを使用した、パフォーマンスの監視](../../relational-databases/performance/monitoring-performance-by-using-the-query-store.md)     
  [データベース互換性モードの変更とクエリ ストアの使用](../../database-engine/install-windows/change-the-database-compatibility-mode-and-use-the-query-store.md)       

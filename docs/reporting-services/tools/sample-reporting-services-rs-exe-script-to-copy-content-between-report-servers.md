@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.assetid: d81bb03a-a89e-4fc1-a62b-886fb5338150
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 716768027c855b86a0cffdee4bf64c5d1c66badd
-ms.sourcegitcommit: 5d839dc63a5abb65508dc498d0a95027d530afb6
+ms.openlocfilehash: 18d10f94696f901efd4f3938bf9b5e06d1c7078d
+ms.sourcegitcommit: 3b1f873f02af8f4e89facc7b25f8993f535061c9
 ms.translationtype: MTE75
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67686705"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70176289"
 ---
 # <a name="sample-reporting-services-rsexe-script-to-copy-content-between-report-servers"></a>レポート サーバー間でコンテンツをコピーするサンプル Reporting Services rs.exe スクリプト
 
@@ -253,26 +253,26 @@ rs.exe -i ssrs_migration.rss -e Mgmt2010 -s https://SourceServer/ReportServer -u
 rs.exe -i ssrs_migration.rss -e Mgmt2010 -s https://SourceServer/_vti_bin/reportserver -v st="sites/bi" -v f="Shared Documents" -u Domain\User1 -p Password -v ts="https://TargetServer/sites/bi/_vti_bin/reportserver" -v tst="sites/bi" -v tf="Shared Documents" -v tu="Domain\User" -v tp="Password"  
 ```  
   
-###  <a name="bkmk_native_to_native_Azure_vm"></a> ネイティブ モードからネイティブ モード (Windows Azure 仮想マシン)  
+###  <a name="bkmk_native_to_native_Azure_vm"></a> ネイティブ モードからネイティブ モード (Azure 仮想マシン)  
  この例では、次のようにコンテンツを移行します。  
   
 -   ネイティブ モード レポート サーバー **SourceServer**から。  
   
--   Windows Azure 仮想マシンで実行されているネイティブ モード レポート サーバー **TargetServer** に。 **TargetServer** は **SourceServer** のドメインに参加していません。 **User2** は Windows Azure 仮想マシン **TargetServer**の管理者です。  
+-   Azure 仮想マシン上で実行されているネイティブ モード レポート サーバー **TargetServer** に。 **TargetServer** は **SourceServer** のドメインに参加していません。**User2** は Azure 仮想マシン **TargetServer** の管理者です。  
   
 ```  
 rs.exe -i ssrs_migration.rss -e Mgmt2010 -s https://SourceServer/ReportServer -u Domain\user1 -p Password -v ts="https://ssrsnativeazure.cloudapp.net/ReportServer" -v tu="user2" -v tp="Password2"  
 ```  
   
 > [!TIP]  
-> Windows PowerShell を使用して Windows Azure 仮想マシン上に [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] レポート サーバーを作成する方法については、「 [ネイティブ モードのレポート サーバーを実行する Windows Azure VM を PowerShell を使用して作成する](https://docs.microsoft.com/azure/virtual-machines/windows/sqlclassic/virtual-machines-windows-classic-ps-sql-report)」をご覧ください。  
+> Windows PowerShell を使用して Azure 仮想マシン上に [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] レポート サーバーを作成する方法については、「[PowerShell を使用したネイティブ モードのレポート サーバーを含む Azure VM の作成](https://docs.microsoft.com/azure/virtual-machines/windows/sqlclassic/virtual-machines-windows-classic-ps-sql-report)」をご覧ください。  
   
-##  <a name="bkmk_sharepoint_site_to_native_Azure_vm"></a> SharePoint モード ("bi" サイト コレクション) から ネイティブ モード サーバー (Windows Azure 仮想マシン) 
+##  <a name="bkmk_sharepoint_site_to_native_Azure_vm"></a> SharePoint モード ("bi" サイト コレクションから Azure 仮想マシン上のネイティブ モード サーバー) 
  この例では、次のようにコンテンツを移行します。  
   
 -   "sites/bi" サイト コレクションおよび共有ドキュメント ライブラリを含む SharePoint モード レポート サーバー **SourceServer** から。  
   
--   Windows Azure 仮想マシンで実行されているネイティブ モード レポート サーバー **TargetServer** に。 **TargetServer** は **SourceServer** のドメインに参加していません。 **User2** は Windows Azure 仮想マシン **TargetServer**の管理者です。  
+-   Azure 仮想マシン上で実行されているネイティブ モード レポート サーバー **TargetServer** に。 **TargetServer** は **SourceServer** のドメインに参加していません。**User2** は Azure 仮想マシン **TargetServer** の管理者です。  
   
 ```  
 rs.exe -i ssrs_migration.rss -e Mgmt2010 -s https://uetesta02/_vti_bin/reportserver -u user1 -p Password -v ts="https://ssrsnativeazure.cloudapp.net/ReportServer" -v tu="user2" -v tp="Passowrd2"  

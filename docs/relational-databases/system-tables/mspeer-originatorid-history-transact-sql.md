@@ -40,7 +40,7 @@ ms.locfileid: "68069047"
 |inserted_date|**datetime**|発信元 ID の行がこのテーブルに挿入された日時です。|  
   
 ## <a name="see-also"></a>参照  
- [レプリケーション テーブル &#40; です。TRANSACT-SQL と &#41; です。](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
+ [レプリケーション テーブル &#40;Transact-SQL&#41;](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
  [レプリケーション ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-views/replication-views-transact-sql.md)  
   
   

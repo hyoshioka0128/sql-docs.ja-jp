@@ -72,7 +72,7 @@ SQLRETURN SQLMoreResults(
 ## <a name="comments"></a>コメント  
  **SELECT**ステートメントの結果セットを返します。 **UPDATE**、**INSERT**、および**削除**ステートメントが影響を受ける行の数を返します。 これらのステートメントのいずれかがバッチ処理されて、プロシージャ、または (昇順にバッチ内で出現する順序で、パラメーターの順序番号付き) パラメーターの配列で送信された場合は、複数の結果セットを返すことまたは行をカウントします。 ステートメントのバッチおよびパラメーターの配列については、次を参照してください。 [SQL ステートメントのバッチ](../../../odbc/reference/develop-app/batches-of-sql-statements.md)と[パラメーター値の配列](../../../odbc/reference/develop-app/arrays-of-parameter-values.md)します。  
   
- バッチを実行した後、アプリケーションは最初の結果セットに配置されます。 アプリケーションを呼び出して**SQLBindCol**、 **SQLBulkOperations**、 **SQLFetch**、 **SQLGetData**、 **SQLFetchScroll**、 **SQLSetPos**、および最初またはそれ以降の結果セットでは、1 つの結果セットだけがあった場合と同様に、すべてのメタデータ関数。 完了すると、最初の結果セットで、アプリケーションを呼び出す**SQLMoreResults**次の結果セットに移動します。 もう 1 つの結果セットまたは count が使用可能な場合**SQLMoreResults** SQL_SUCCESS を返し、結果セットまたは追加の処理の数を初期化します。 結果セットを生成するステートメント間にあるすべての行の数を生成するステートメントが表示されない場合は、キーを呼び出す場所を空けるステップを実行できる**SQLMoreResults**します。呼び出した後**SQLMoreResults**の**UPDATE**、**挿入**、または**削除**ステートメントでは、アプリケーションはを呼び出すことができます**SQLRowCount**します。  
+ バッチを実行した後、アプリケーションは最初の結果セットに配置されます。 アプリケーションを呼び出して**SQLBindCol**、 **SQLBulkOperations**、 **SQLFetch**、 **SQLGetData**、 **SQLFetchScroll**、 **SQLSetPos**、および最初またはそれ以降の結果セットでは、1 つの結果セットだけがあった場合と同様に、すべてのメタデータ関数。 完了すると、最初の結果セットで、アプリケーションを呼び出す**SQLMoreResults**次の結果セットに移動します。 もう 1 つの結果セットまたは count が使用可能な場合**SQLMoreResults** SQL_SUCCESS を返し、結果セットまたは追加の処理の数を初期化します。 結果セットを生成するステートメント間にあるすべての行の数を生成するステートメントが表示されない場合は、キーを呼び出す場所を空けるステップを実行できる**SQLMoreResults**します。呼び出した後**SQLMoreResults**の**UPDATE**、**INSERT**、または**DELETE**ステートメントでは、アプリケーションはを呼び出すことができます**SQLRowCount**します。  
   
  現在の結果が取り出されていない行は、セットがあった場合**SQLMoreResults**その結果セットを破棄し、次の結果セットまたは使用可能なカウントを使用します。 すべての結果が処理された場合**SQLMoreResults** sql_no_data が返されます。 一部のドライバーでは、出力パラメーターと戻り値は使用できませんすべての結果セットと行の数が処理されるまでです。 このようなドライバーは、出力パラメーターと戻り値のときに使用可能になる**SQLMoreResults** sql_no_data が返されます。  
   
@@ -88,9 +88,9 @@ SQLRETURN SQLMoreResults(
   
  ステートメントのバッチにデータ ソースで行が削除されない場合は、検索結果をupdate、insert、または delete ステートメントで**SQLMoreResults** SQL_SUCCESS を返します。 異なる検索のUPDATEの場合、INSERT、または delete ステートメントで実行される**SQLExecDirect**、 **SQLExecute**、または**SQLParamData**をデータ ソースの行には影響しない場合は、SQL_NO_DATA を返します。 アプリケーションを呼び出す場合**SQLRowCount**呼び出しの後に行の数を取得する**SQLMoreResults** 、どの行が影響を受けません**SQLRowCount** SQL_NO_DATA が返されます。  
   
- 結果の処理関数の有効なシーケンス処理に関する詳細については、次を参照してください[付録 b:。ODBC の状態遷移テーブル](../../../odbc/reference/appendixes/appendix-b-odbc-state-transition-tables.md)します。  
+ 結果の処理関数の有効なシーケンス処理に関する詳細については、[付録 b:。ODBC の状態遷移テーブル](../../../odbc/reference/appendixes/appendix-b-odbc-state-transition-tables.md)を参照してください。  
   
- SQL_PARAM_DATA_AVAILABLE とストリーミングされる出力パラメーターの詳細については、次を参照してください。 [SQLGetData を使用して出力パラメーターを取得する](../../../odbc/reference/develop-app/retrieving-output-parameters-using-sqlgetdata.md)します。  
+ SQL_PARAM_DATA_AVAILABLE とストリーミングされる出力パラメーターの詳細については、 [SQLGetData を使用して出力パラメーターを取得する](../../../odbc/reference/develop-app/retrieving-output-parameters-using-sqlgetdata.md)を参照してください。  
   
 ## <a name="availability-of-row-counts"></a>行の数の可用性  
  バッチに複数の連続する行の数を生成するステートメントが含まれている場合は、これらの行カウントが 1 つの行の数にロール アップすることができます。 たとえば、このバッチの場合は、特定のデータ ソースが 5 つの個別の行の数を返すことのできるステートメントの 5 つは挿入します。 その他の特定のデータ ソースは、5 つの個別の行の数の合計を表す 1 つだけの行の数を返します。  
@@ -101,7 +101,7 @@ SQLRETURN SQLMoreResults(
   
 -   2 つに対応する行のカウント**INSERT**ステートメントは個別に使用できます。 (呼び出し**SQLGetInfo** SQL_BRC_ROLLED_UP ビット SQL_BATCH_ROW_COUNT 情報の種類には返されません)。最初の呼び出し**SQLMoreResults**最初の行の数に位置する**INSERT**、2 番目の呼び出しの位置で 2 番目の行の数と**INSERT**します。 3 番目の呼び出し**SQLMoreResults** 、2 つ目の結果セットに位置する**SELECT**ステートメント。  
   
--   2 つに対応する行のカウント**挿入**使用できる 1 つの 1 つの行の数にロール アップされます。 (呼び出し**SQLGetInfo** SQL_BATCH_ROW_COUNT 情報の種類のビット SQL_BRC_ROLLED_UP を返します)。最初の呼び出し**SQLMoreResults**ロールアップされた行の数と、2 番目の呼び出しに位置する**SQLMoreResults** 、2 つ目の結果セットに位置する**選択**.  
+-   2 つに対応する行のカウント**INSERT**使用できる 1 つの 1 つの行の数にロール アップされます。 (呼び出し**SQLGetInfo** SQL_BATCH_ROW_COUNT 情報の種類のビット SQL_BRC_ROLLED_UP を返します)。最初の呼び出し**SQLMoreResults**ロールアップされた行の数と、2 番目の呼び出しに位置する**SQLMoreResults** 、2 つ目の結果セットに位置する**SELECT**.  
   
  特定のドライバーは、ストアド プロシージャではないおよび明示的なバッチに対してのみ使用可能な行数を作成します。  
   

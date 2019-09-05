@@ -37,7 +37,7 @@ ms.locfileid: "70000439"
 |**publication_id**|**int**|パブリケーションの ID です。|  
 |**article_id**|**int**|アーティクルの ID です。|  
 |**subscriber_id**|**smallint**|サブスクライバーの ID です。|  
-|**subscriber_db**|**sysname**|サブスクリプションデータベースの名前。|  
+|**subscriber_db**|**sysname**|サブスクリプション データベースの名前。|  
 |**subscription_type**|**int**|サブスクリプションの種類です。<br /><br /> **0** = プッシュ。<br /><br /> **1** = プル。<br /><br /> **2** = 匿名。|  
 |**sync_type**|**tinyint**|同期の種類。<br /><br /> **1** = 自動。<br /><br /> **2** = 同期なし。|  
 |**status**|**tinyint**|サブスクリプションの状態。<br /><br /> **0** = 非アクティブ。<br /><br /> **1** = サブスクライブ済み。<br /><br /> **2** = アクティブ。|  
@@ -54,6 +54,6 @@ ms.locfileid: "70000439"
 ## <a name="see-also"></a>関連項目  
  [レプリケーション テーブル &#40; です。TRANSACT-SQL と &#41; です。](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
  [レプリケーションビュー &#40;transact-sql&#41;](../../relational-databases/system-views/replication-views-transact-sql.md)   
- [sp_helpsubscription &#40;transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-helpsubscription-transact-sql.md)  
+ [sp_helpsubscription &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-helpsubscription-transact-sql.md)  
   
   

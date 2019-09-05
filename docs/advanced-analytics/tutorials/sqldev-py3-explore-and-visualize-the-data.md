@@ -75,7 +75,7 @@ _Hack_license_列には、タクシードライバーのライセンス番号 (�
 
     - 変数`@query`は、クエリテキスト`SELECT tipped FROM nyctaxi_sample`を定義し`@input_data_1`ます。これは、スクリプト入力変数の引数として Python コードブロックに渡されます。
     - Python スクリプトは非常に単純です。 **matplotlib** `figure`オブジェクトを使用してヒストグラムと散布図を作成し、これらのオブジェクトを`pickle`ライブラリを使用してシリアル化します。
-    - Python グラフィックスオブジェクトは、出力用に**パンダ**データフレームにシリアル化されます。
+    - Python グラフィックスオブジェクトは、出力用に **pandas** データフレームにシリアル化されます。
   
     ```sql
     DROP PROCEDURE IF EXISTS PyPlotMatplotlib;

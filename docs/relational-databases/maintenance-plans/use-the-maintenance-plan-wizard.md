@@ -34,12 +34,12 @@ helpviewer_keywords:
 ms.assetid: db65c726-9892-480c-873b-3af29afcee44
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 402c417de43637f810366423fb4e66b9cb3c507c
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 8f7a42e7885e2c985cd8d0b65e336b912014c40f
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68115713"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155569"
 ---
 # <a name="use-the-maintenance-plan-wizard"></a>メンテナンス プラン ウィザードの使用
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -366,12 +366,12 @@ ms.locfileid: "68115713"
      自動的に作成されたデータベース ファイルを格納するフォルダーを指定します。 バックアップ先として [URL] を選択した場合、このオプションは無効になります。  
   
      **[SQL 資格情報]**  
-     Windows Azure ストレージへの認証に使用する SQL 資格情報を選択します。 使用できる既存の SQL 資格情報がない場合は、 **[作成]** ボタンをクリックして新しい SQL 資格情報を作成します。  
+     Azure Storage への認証に使用する SQL 資格情報を選択します。 使用できる既存の SQL 資格情報がない場合は、 **[作成]** ボタンをクリックして新しい SQL 資格情報を作成します。  
   
     > **重要:** **[作成]** をクリックすると開くダイアログでは、サブスクリプションの管理証明書または公開プロファイルが求められます。 管理証明書または公開プロファイルにアクセスできない場合は、Transact-SQL または SQL Server Management Studio を使用してストレージ アカウント名とアクセス キーの情報を指定し、SQL 資格情報を作成することができます。 Transact-SQL を使用して資格情報を作成するには、「 [資格情報の作成](../../relational-databases/backup-restore/sql-server-backup-to-url.md#credential) 」のサンプル コードを参照してください。 または SQL Server Management Studio を使用して、データベース エンジン インスタンスから、 **[セキュリティ]** を右クリックし、 **[新規作成]** 、 **[資格情報]** の順にクリックします。 **[ID]** にストレージ アカウント名、 **[パスワード]** にアクセス キーを指定します。  
   
      **[Azure ストレージ コンテナー]**  
-     Windows Azure ストレージ コンテナーの名前を指定します。  
+     Azure ストレージ コンテナーの名前を指定します  
   
      **[URL プレフィックス]**  
      これは、SQL 資格情報に格納されているストレージ アカウント情報と、指定した Azure ストレージ コンテナー名に基づいて自動的に生成されます。 **\<storage account>.blob.core.windows.net** 以外の形式を使ったドメインを使用している場合を除き、このフィールドの情報は編集しないことをお勧めします。  

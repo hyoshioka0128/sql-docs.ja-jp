@@ -24,16 +24,16 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/15/2019
 ms.locfileid: "68080015"
 ---
-# <a name="msreplication_queue-transact-sql"></a>MSreplication_queue (TRANSACT-SQL)
+# <a name="msreplication_queue-transact-sql"></a>MSreplication_queue (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
   **MSreplication_queue** SQL ベースを使用するキュー更新サブスクリプションのキューに置かれたすべてによって発行されたキューに登録されたコマンドを格納する、テーブルがレプリケーション プロセスによって使用されます。 このテーブルは、サブスクリプション データベースに格納されます。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
-|**パブリッシャー**|**sysname**|パブリッシャーの名前。|  
+|**publisher**|**sysname**|パブリッシャーの名前。|  
 |**publisher_db**|**sysname**|パブリケーション データベースの名前です。|  
-|**パブリケーション**|**sysname**|パブリケーションの名前を指定します。|  
+|**publication**|**sysname**|パブリケーションの名前を指定します。|  
 |**tranid**|**sysname**|キューに入れられたコマンドが実行されたときのトランザクション ID。|  
 |**data**|**varbinary(8000)**|キューに登録されたコマンドに関する情報を格納するパック バイト ストリームです。|  
 |**datalen**|**int**|データのバイト単位の長さ。|  
@@ -43,7 +43,7 @@ ms.locfileid: "68080015"
 |**cmdstate**|**bit**|コマンドの状態:<br /><br /> 0 = 完了します。<br /><br /> 1 = 部分です。|  
   
 ## <a name="see-also"></a>関連項目  
- [レプリケーション テーブル &#40; です。TRANSACT-SQL と &#41; です。](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
+ [レプリケーション テーブル &#40;Transact-SQL&#41;](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
  [レプリケーション ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-views/replication-views-transact-sql.md)  
   
   

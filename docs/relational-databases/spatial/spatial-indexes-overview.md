@@ -12,12 +12,12 @@ ms.assetid: b1ae7b78-182a-459e-ab28-f743e43f8293
 author: MladjoA
 ms.author: mlandzic
 monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 9094f5335fc3978ba2e5018873dc2cdd8b455347
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: a19d934fcc8b6d190b762b170117722fe4e29b6e
+ms.sourcegitcommit: 00350f6ffb73c2c0d99beeded61c5b9baa63d171
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68048470"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70190415"
 ---
 # <a name="spatial-indexes-overview"></a>空間インデックスの概要
 [!INCLUDE[appliesto-ss-asdb-xxxx-xxx-md](../../includes/appliesto-ss-asdb-xxxx-xxx-md.md)]
@@ -123,7 +123,7 @@ ms.locfileid: "68048470"
 >  空間インデックスの **tessellation_scheme** 設定は、 [sys.spatial_index_tessellations](../../relational-databases/system-catalog-views/sys-spatial-index-tessellations-transact-sql.md) カタログ ビューで確認できます。  
   
 #### <a name="geometry-grid-tessellation-scheme"></a>ジオメトリ グリッド テセレーション スキーム  
- GEOMETRY_AUTO_GRID テセレーションは、 **以降の** geometry [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データ型用の既定のテセレーション スキームです。  GEOMETRY_GRID テセレーションは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]の geometry データ型で使用できる唯一のテセレーション スキームです。 ここでは、空間インデックスの操作に関連するジオメトリ グリッド テセレーションの特徴 (サポートされるメソッドと境界ボックス) について説明します。  
+ GEOMETRY_AUTO_GRID テセレーションは、 **以降の** geometry [!INCLUDE[ssNoVersion](../../includes/sssql11-md.md)] データ型用の既定のテセレーション スキームです。  GEOMETRY_GRID テセレーションは、 [!INCLUDE[ssNoVersion](../../includes/sskatmai-md.md)]の geometry データ型で使用できる唯一のテセレーション スキームです。 ここでは、空間インデックスの操作に関連するジオメトリ グリッド テセレーションの特徴 (サポートされるメソッドと境界ボックス) について説明します。  
   
 > [!NOTE]  
 >  このテセレーション スキームを明示的に指定するには、[CREATE SPATIAL INDEX](../../t-sql/statements/create-spatial-index-transact-sql.md) [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントの USING (GEOMETRY_AUTO_GRID/GEOMETRY_GRID) 句を使用します。  

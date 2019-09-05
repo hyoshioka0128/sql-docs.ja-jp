@@ -65,7 +65,7 @@ ms.locfileid: "62513278"
   
 ### <a name="controlling-transactions"></a>トランザクションの制御  
 
- アプリケーションは、主にトランザクションの開始タイミングと終了タイミングを指定してトランザクションを制御します。 これについては、[!INCLUDE[tsql](../includes/tsql-md.md)] ステートメントまたはデータベース アプリケーション プログラミング インターフェイス (API) 関数を使用して指定できます。 また、トランザクションが完了せずに終了した場合、その原因となったエラーがシステムによって正しく処理される必要があります。 詳細については、次を参照してください[トランザクション ステートメント&#40;TRANSACT-SQL&#41;](/sql/t-sql/language-elements/transactions-transact-sql)、 [ODBC でのトランザクション](https://technet.microsoft.com/library/ms131281.aspx)と[トランザクション SQL Server Native Client (OLEDB)](https://msdn.microsoft.com/library/ms130918.aspx).  
+ アプリケーションは、主にトランザクションの開始タイミングと終了タイミングを指定してトランザクションを制御します。 これについては、[!INCLUDE[tsql](../includes/tsql-md.md)] ステートメントまたはデータベース アプリケーション プログラミング インターフェイス (API) 関数を使用して指定できます。 また、トランザクションが完了せずに終了した場合、その原因となったエラーがシステムによって正しく処理される必要があります。 詳細については、[トランザクション ステートメント&#40;TRANSACT-SQL&#41;](/sql/t-sql/language-elements/transactions-transact-sql)、 [ODBC でのトランザクション](https://technet.microsoft.com/library/ms131281.aspx)と[トランザクション SQL Server Native Client (OLEDB)](https://msdn.microsoft.com/library/ms130918.aspx) を参照してください。  
   
  既定では、トランザクションは接続レベルで管理されます。 接続時にトランザクションが開始すると、その接続で実行されるすべての [!INCLUDE[tsql](../includes/tsql-md.md)] ステートメントが、トランザクションが終了するまでそのトランザクションの一部になります。 ただし、複数のアクティブな結果セット (MARS) セッションでは、[!INCLUDE[tsql](../includes/tsql-md.md)] の明示的または暗黙的なトランザクションは、バッチ レベルで管理されるバッチスコープのトランザクションになります。 バッチの完了時にバッチスコープのトランザクションがコミットまたはロールバックされていない場合、[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] により、トランザクションは自動的にロールバックされます。 詳細については、次を参照してください。[複数アクティブな結果セット (MARS) SQL Server で](https://msdn.microsoft.com/library/ms345109(v=SQL.90).aspx)します。  
   
@@ -1250,7 +1250,7 @@ BEGIN TRANSACTION
   
  sys.dm_tran_top_version_generators。 バージョン ストア内で最も高いバージョンを生成しているオブジェクトの仮想テーブルを返します。 集計済みのレコード長について、長いものから順に 256 位までを database_id と rowset_id でグループ化しています。 この関数を使用して、バージョン ストアを最も多く使用しているレコードを見つけます。 詳しくは、「[sys.dm_tran_top_version_generators &#40;Transact-SQL&#41;](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-top-version-generators-transact-sql)」をご覧ください。  
   
- sys.dm_tran_version_store。 共通バージョン ストア内のすべてのバージョン レコードを表す仮想テーブルを返します。 詳細については、[sys.dm_tran_version_store &#40;Transact-SQL&#41;](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-version-store-transact-sql)を参照してください。 
+ sys.dm_tran_version_store。 共通バージョン ストア内のすべてのバージョン レコードを表す仮想テーブルを返します。 詳細については、[sys.dm_tran_version_store &#40;Transact-SQL&#41;](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-version-store-transact-sql)を参照してください。  
   
 > [!NOTE]  
 >  sys.dm_tran_top_version_generators と sys.dm_tran_version_store では、非常に大きくなる可能性があるバージョン ストア全体に対してクエリが実行されるので、これらの関数を実行すると非常に多くのリソースが使用される可能性があります。  

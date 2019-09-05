@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: 94d52169-384e-4885-84eb-2304e967d9f7
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 20c6b4a4235e384f9a5c32ee6cef28d0f136f106
-ms.sourcegitcommit: 728a4fa5a3022c237b68b31724fce441c4e4d0ab
+ms.openlocfilehash: 5a2475de5c318a937c1290d9f235f074909a7954
+ms.sourcegitcommit: 823d7bdfa01beee3cf984749a8c17888d4c04964
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68768688"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70030329"
 ---
 # <a name="set-up-replication-distribution-database-in-always-on-availability-group"></a>Always On 可用性グループのレプリケーション ディストリビューション データベースを設定する
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -54,12 +54,13 @@ AG のディストリビューション データベースを下記の手順に�
 
 ## <a name="limitations-or-exclusions"></a>制限事項または適用除外事項
 
-- ローカル ディストリビューターはサポートされていません。 たとえば、パブリッシャーとディストリビューターは、別々の SQL Server インスタンスでなければなりません。 自身をディストリビューターとして使用するパブリッシャー ( ローカル ディストリビューターとも呼ばれる) では、AG のディストリビューション データベースをサポートすることはできません。
+- ローカル ディストリビューターはサポートされていません。 たとえば、パブリッシャーとディストリビューターは、別々の SQL Server インスタンスでなければなりません。 これらのインスタンスは、同じノード セットでホストできます。  自身をディストリビューターとして使用するパブリッシャー ( ローカル ディストリビューターとも呼ばれる) では、AG のディストリビューション データベースをサポートすることはできません。
 - Oracle パブリッシャーはサポートされていません。
 - マージ レプリケーションはサポートされていません。
 - 即時更新サブスクライバーまたはキュー更新サブスクライバーでのトランザクション レプリケーションはサポートされていません。
 - ピア ツー ピア レプリケーションはサポートされていません。
-- ディストリビューション データベースのレプリカをホストする SQL Server インスタンスはすべて、SQL Server 2017 CU 6 以降とする必要があります。 
+- ディストリビューション データベースのレプリカをホストする SQL Server 2017 インスタンスはすべて、SQL Server 2017 CU 6 以降とする必要があります。 
+- ディストリビューション データベースのレプリカをホストする SQL Server 2016 インスタンスはすべて、SQL Server 2016 SP2-CU3 以降とする必要があります。
 - ディストリビューション データベースのレプリカをホストする SQL Server インスタンスはすべて、同じバージョンである必要があります。ただし、アップグレードが実行される狭いタイムフレームの期間中は例外です。
 - ディストリビューション データベースは、完全復旧モードである必要があります。
 - 復旧の場合に、トランザクション ログの切り捨てを許可するには、完全バックアップとトランザクション ログ バックアップを構成します。

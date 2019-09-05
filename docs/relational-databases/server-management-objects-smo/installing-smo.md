@@ -1,5 +1,5 @@
 ---
-title: SMO のインストール |Microsoft Docs
+title: SMO | をインストールするMicrosoft Docs
 ms.custom: ''
 ms.date: 08/06/2017
 ms.prod: sql
@@ -12,36 +12,36 @@ helpviewer_keywords:
 - SMO [SQL Server], installing
 - SQL Server Management Objects, installing
 ms.assetid: 140e9971-4940-4866-89b9-5cec938e2a16
-author: stevestein
-ms.author: sstein
+author: markingmyname
+ms.author: maghan
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: f57fc3ea1a677a2655f5358a1d5c4b27045ea6ab
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 2785054fa9cc445b6ff03c46f7f145b4f422cb60
+ms.sourcegitcommit: f3f83ef95399d1570851cd1360dc2f072736bef6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68098019"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "70148636"
 ---
 # <a name="installing-smo"></a>SMO のインストール
 
 [!INCLUDE[appliesto-ss-asdb-asdw-xxx-md](../../includes/appliesto-ss-asdb-asdw-xxx-md.md)]
 
-このページでは、アプリケーションと SMO を使用するためのシステム要件で使用するための SMO をインストールする方法について説明します。
+このページでは、アプリケーションで使用する SMO をインストールする方法と、SMO を使用するためのシステム要件について説明します。
 
-## <a name="smo-nuget-package"></a>SMO の NuGet パッケージ
+## <a name="smo-nuget-package"></a>SMO NuGet パッケージ
 
-以降で[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]2017 SMO はで配布されて、 [Microsoft.SqlServer.SqlManagementObjects](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) SMO でアプリケーションを開発できるようにする NuGet パッケージ。
+[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 2017以降、smo は [SqlManagementObjects NuGet](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) パッケージとして配布され、ユーザーは smo を使用してアプリケーションを開発できるようになります。
 
-これは、SharedManagementObjects.msi で、SQL Server の各リリースの SQL の Feature Pack の一部としてリリースされていたに代わるものです。 SMO を使用するアプリケーションでは、代わりに、NuGet パッケージを更新する必要があり、アプリケーションを開発すると、バイナリがインストールされていることを確認する負担になります。
+これは、SQL Server の各リリースの SQL Feature Pack の一部としてリリースされた SharedManagementObjects の後継です。 SMO を使用するアプリケーションは、代わりに NuGet パッケージを使用するように更新する必要があり、開発中のアプリケーションと共にバイナリが確実にインストールされるようにします。
 
 >>[!Important]
->>説明したように、[ファイルとバージョン番号](files-and-version-numbers.md) ページで、SMO アセンブリを GAC にインストールしないでください。 SMO のこれらのバージョンを使用しても他のアプリケーションで問題を引き起こすそうでした (など[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Management Studio)。
+>>「[ファイルとバージョン番号](files-and-version-numbers.md)」ページで説明したように、SMO アセンブリを GAC にインストールすることはできません。 これを行うと、他のアプリケーションで問題が発生する可能性があります。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]これらのアプリケーションは、これらのバージョンの SMO (Management Studio など) も使用します。
 
-## <a name="installing-the-package"></a>パッケージをインストールします。
+## <a name="installing-the-package"></a>パッケージのインストール
 
-参照してください[NuGet クイック スタート - パッケージを使用して](https://docs.microsoft.com/nuget/quickstart/use-a-package)手順と例についてをインストールすると、NuGet パッケージを使用します。 
+Nuget パッケージのインストールと使用の手順と例については、「 [nuget クイックスタート-パッケージを使用](https://docs.microsoft.com/nuget/quickstart/use-a-package)する」を参照してください。 
   
 ## <a name="system-requirements"></a>システム要件
   
- SMO が必要です[!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)]4.0 を使用して任意のアプリケーションは、クライアント コンピューターがそのバージョンがあること、または以降がインストールされていることを確認する必要がありますので、実行します。 NetFx SMO ライブラリにインストールされているいくつかのネイティブ バイナリでは、VC 2013 ランタイムをインストールする必要もあります。そのランタイムがパッケージに含まれていません。 ターゲット アーキテクチャに適切な再頒布可能パッケージをダウンロードします。 https://www.microsoft.com/download/details.aspx?id=40784
+ SMO で[!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)]は、4.0 を実行する必要があるため、これを使用するアプリケーションでは、クライアントコンピューターでそのバージョン以降がインストールされていることを確認する必要があります。 NetFx SMO ライブラリと共にインストールされる一部のネイティブバイナリでは、VC 2013 ランタイムもインストールする必要があります。このランタイムはパッケージに含まれていません。 ターゲットアーキテクチャに適した再頒布可能ファイルは、 https://www.microsoft.com/download/details.aspx?id=40784
   

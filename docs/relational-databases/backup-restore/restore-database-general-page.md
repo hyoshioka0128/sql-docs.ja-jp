@@ -12,12 +12,12 @@ f1_keywords:
 ms.assetid: 160cf58c-b06a-475f-9a69-2b051e5767ab
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 4ba9c414aa28455b15ef46fb9d334f40ee4a6b6b
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 050fb8ed2364066dfe0a6a41e41ec295590d7895
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67944793"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155519"
 ---
 # <a name="restore-database-general-page"></a>[データベースの復元] \([全般] ページ)
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -46,7 +46,7 @@ ms.locfileid: "67944793"
 |項目|定義|  
 |----------|----------------|  
 |**[データベース]**|復元するデータベースをドロップダウン リストから選択します。 このリストには、 **msdb** バックアップ履歴に従ってバックアップされたデータベースのみが含まれます。|  
-|**[デバイス]**|復元対象のバックアップを含む論理バックアップ デバイスまたは物理バックアップ デバイス (テープ、URL、またはファイル) を選択します。 データベース バックアップが [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]の別のインスタンスで作成された場合、これは必須です。<br /><br /> 1 つ以上の論理バックアップ デバイスまたは物理バックアップ デバイスを選択するには、参照ボタンをクリックして、 **[バックアップ デバイスの選択]** ダイアログ ボックスを開きます。 このダイアログ ボックスで、1 つのメディア セットに属する最大 64 個のデバイスを選択できます。 テープ デバイスは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のインスタンスが動作しているコンピューターに物理的に接続している必要があります。 バックアップ ファイルは、ローカルまたはリモートのディスク デバイスに配置できます。 詳細については、「 [バックアップ デバイス &#40;SQL Server&#41;](../../relational-databases/backup-restore/backup-devices-sql-server.md)の別のインスタンスで作成された場合、これは必須です。 Windows Azure ストレージに格納されるバックアップ ファイルのデバイスの種類として **[URL]** を選択することもできます。<br /><br /> **[バックアップ デバイスの選択]** ダイアログ ボックスを終了すると、選択したデバイスが **[デバイス]** の一覧に読み取り専用の値として表示されます。|  
+|**[デバイス]**|復元対象のバックアップを含む論理バックアップ デバイスまたは物理バックアップ デバイス (テープ、URL、またはファイル) を選択します。 データベース バックアップが [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]の別のインスタンスで作成された場合、これは必須です。<br /><br /> 1 つ以上の論理バックアップ デバイスまたは物理バックアップ デバイスを選択するには、参照ボタンをクリックして、 **[バックアップ デバイスの選択]** ダイアログ ボックスを開きます。 このダイアログ ボックスで、1 つのメディア セットに属する最大 64 個のデバイスを選択できます。 テープ デバイスは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のインスタンスが動作しているコンピューターに物理的に接続している必要があります。 バックアップ ファイルは、ローカルまたはリモートのディスク デバイスに配置できます。 詳細については、「 [バックアップ デバイス &#40;SQL Server&#41;](../../relational-databases/backup-restore/backup-devices-sql-server.md)」を参照してください。 Azure Storage に格納されるバックアップ ファイルのデバイスの種類として、 **[URL]** を選択することもできます。<br /><br /> **[バックアップ デバイスの選択]** ダイアログ ボックスを終了すると、選択したデバイスが **[デバイス]** の一覧に読み取り専用の値として表示されます。|  
 |**[データベース]**|ドロップダウン リストから、バックアップを復元するデータベース名を選択します。<br /><br /> 注:この一覧は **[デバイス]** を選択した場合にのみ使用できます。 選択されたデバイスにバックアップを持つデータベースのみが使用できるようになります。|  
   
 ### <a name="destination"></a>[Destination]  

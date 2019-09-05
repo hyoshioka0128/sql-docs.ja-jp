@@ -62,7 +62,7 @@ DAY ( date )
 **int**
   
 ## <a name="return-value"></a>戻り値  
-\* * 1 日には、同じの値が返されます [DATEPART](../../t-sql/functions/datepart-transact-sql.md) (**日**、*日付*など)。 * *。
+DAY は [DATEPART](../../t-sql/functions/datepart-transact-sql.md)(**day**, *date*) と同じ値を返します。
   
 *date* に時刻部分のみが含まれる場合、`DAY` は基本の日である 1 を返します。
   

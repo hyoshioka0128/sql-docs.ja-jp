@@ -13,19 +13,19 @@ f1_keywords:
 ms.assetid: ''
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 3e7f3a8d7168e9e1b9e321a83e7e1d7143b5bcf1
-ms.sourcegitcommit: e7d921828e9eeac78e7ab96eb90996990c2405e9
+ms.openlocfilehash: 8f4b05cc0ebd3c3d230b5f42bb46b74885e8e1e6
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68265079"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155676"
 ---
 # <a name="connect-to-microsoft-azure-storage"></a>Microsoft Azure Storage への接続
 [!INCLUDE[appliesto-ss-asdb-asdw-pdw-md](../../includes/appliesto-ss-asdb-asdw-pdw-md.md)]
-**[Microsoft Azure Storage 接続]** ダイアログを使用して、ストレージ アカウントを指定したり、Microsoft Azure への接続を検証します。  
+ストレージ アカウントを指定したり、Azure への接続を検証したりするには、 **[Azure Storage Connection]\(Azure Storage の接続\)** ダイアログを使用します。  
   
 ## <a name="options"></a>オプション  
-Microsoft Azure のアカウントに関する次の情報を指定し、 **[次へ]** をクリックして続行します。  
+Azure アカウントに関する次の情報を指定し、 **[次へ]** をクリックして続行します。  
   
 1.  **[ストレージ アカウント]** : ストレージ アカウント名を指定します。
 

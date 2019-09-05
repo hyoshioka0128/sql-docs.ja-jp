@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: 9e1d94ce-2c93-45d1-ae2a-2a7d1fa094c4
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: d3ded19a91aba627a9d69d711a1d1640dc042a56
-ms.sourcegitcommit: a1adc6906ccc0a57d187e1ce35ab7a7a951ebff8
+ms.openlocfilehash: ae4d9cd9333e8dd42582f972a0d19260b2c9a3ee
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68893636"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155710"
 ---
 # <a name="quickstart-sql-server-backup-and-restore-to-azure-blob-storage-service"></a>クイック スタート: Azure Blob Storage サービスへの SQL Server のバックアップと復元
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -90,7 +90,7 @@ GO
 
 
 ## <a name="create-a-sql-server-credential"></a>SQL Server 資格情報の作成
-SQL Server 資格情報は、SQL Server の外部にあるリソースへの接続に必要な認証情報を保存するために使用されるオブジェクトです。 ここでは、SQL Server のバックアップおよび復元プロセスで資格情報を使用して、Windows Azure Blob Storage サービスを認証します。 資格情報には、ストレージ アカウントの名前とその **アクセス キー** 値が格納されます。 作成した資格情報は、BACKUP/RESTORE ステートメントの実行時に WITH CREDENTIAL オプションで指定する必要があります。 資格情報について詳しくは、[資格情報](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/credentials-database-engine)に関する記事をご覧ください。 
+SQL Server 資格情報は、SQL Server の外部にあるリソースへの接続に必要な認証情報を保存するために使用されるオブジェクトです。 ここでは、SQL Server のバックアップおよび復元プロセスで資格情報を使用して、Azure Blob Storage サービスでの認証を行います。 資格情報には、ストレージ アカウントの名前とその **アクセス キー** 値が格納されます。 作成した資格情報は、BACKUP/RESTORE ステートメントの実行時に WITH CREDENTIAL オプションで指定する必要があります。 資格情報について詳しくは、[資格情報](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/credentials-database-engine)に関する記事をご覧ください。 
 
   > [!IMPORTANT]
   > 以下で説明する SQL Server 資格情報の作成要件は、SQL Server バックアップ プロセス ([SQL Server Backup to URL](backup-restore/sql-server-backup-to-url.md) および [Microsoft Azure への SQL Server マネージド バックアップ](backup-restore/sql-server-managed-backup-to-microsoft-azure.md)) に固有です。 SQL Server では、Azure ストレージにアクセスしてバックアップの書き込みまたは読み取りを行う場合、ストレージ アカウント名とアクセス キーの情報が使用されます。
@@ -119,8 +119,8 @@ SQL Server 資格情報は、SQL Server の外部にあるリソースへの接�
 
 1. 次のステートメントを実行して、資格情報を作成します。 
 
-## <a name="back-up-database-to-the-windows-azure-blob-storage-service"></a>Windows Azure Blob Storage サービスへのデータベースのバックアップ
-このセクションでは、T-SQL ステートメントを使用して Windows Azure Blob Storage サービスにデータベースの完全バックアップを実行します。 
+## <a name="back-up-database-to-the-azure-blob-storage-service"></a>Azure Blob Storage サービスにデータベースをバックアップする
+このセクションでは、T-SQL ステートメントを使用して Azure Blob Storage サービスにデータベースの完全バックアップを実行します。 
 
 1. SQL Server Management Studio を使用して、SQL Server に接続します。 
 1. **SQLTestDB** データベースを選択し、 **[新しいクエリ]** ウィンドウを開きます。 
@@ -138,7 +138,7 @@ SQL Server 資格情報は、SQL Server の外部にあるリソースへの接�
 1. URL に SQLTestDB データベースをバックアップするステートメントを実行します。 
 
  
-## <a name="restore-database-from-windows-azure-blob-storage-service"></a>Windows Azure Blob Storage サービスからのデータベースの復元
+## <a name="restore-database-from-azure-blob-storage-service"></a>Azure Blob Storage サービスからデータベースを復元する
 このセクションでは、T-SQL ステートメントを使用して、データベースの完全バックアップを復元します。 
 
 1. SQL Server Management Studio を使用して、SQL Server に接続します。 

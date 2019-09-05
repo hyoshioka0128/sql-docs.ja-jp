@@ -1,5 +1,5 @@
 ---
-title: MSdbms_map (TRANSACT-SQL) |Microsoft Docs
+title: MSdbms_map (Transact-SQL) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/06/2017
 ms.prod: sql
@@ -24,7 +24,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/15/2019
 ms.locfileid: "67907491"
 ---
-# <a name="msdbmsmap-transact-sql"></a>MSdbms_map (Transact-SQL)
+# <a name="msdbms_map-transact-sql"></a>MSdbms_map (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
   **MSdbms_map**テーブルには、元とコピー先の DBMS の組の既定の変換先データ型の情報へのリンクだけでなく、ソース データの型情報が含まれています。 このテーブルに格納されます、 **msdb**データベース、異種パブリッシングに使用されます。  
@@ -47,7 +47,7 @@ ms.locfileid: "67907491"
 ## <a name="see-also"></a>関連項目  
  [異種データベース レプリケーション](../../relational-databases/replication/non-sql/heterogeneous-database-replication.md)   
  [Oracle パブリッシャーのデータ型マッピングを指定します。](../../relational-databases/replication/publish/specify-data-type-mappings-for-an-oracle-publisher.md)   
- [レプリケーション テーブル &#40; です。TRANSACT-SQL と &#41; です。](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
+ [レプリケーション テーブル &#40;Transact-SQL&#41](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
  [レプリケーション ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-views/replication-views-transact-sql.md)  
   
   

@@ -24,7 +24,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/15/2019
 ms.locfileid: "67907228"
 ---
-# <a name="msmergecurrentpartitionmappings"></a>MSmerge_current_partition_mappings
+# <a name="msmerge_current_partition_mappings"></a>MSmerge_current_partition_mappings
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
   **MSmerge_current_partition_mappings**テーブルが変更された行が属する各パーティションの id の 1 つの行を格納します。 このテーブルは、パブリケーション データベース内に保存されます。  

@@ -11,12 +11,12 @@ ms.assetid: 62c964c5-eae4-4cf1-9024-d5a19adbd652
 author: jodebrui
 ms.author: jodebrui
 monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: f1f8f4937efa5db9de76d6e111d5a0abf0223d23
-ms.sourcegitcommit: 321497065ecd7ecde9bff378464db8da426e9e14
+ms.openlocfilehash: b6448718ce9e9cea380c352a57c3e824709de848
+ms.sourcegitcommit: 2bc15f81d7a238c6fc409440800f1d6c7943a4b5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68715292"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70059280"
 ---
 # <a name="overview-and-usage-scenarios"></a>概要と使用シナリオ
 [!INCLUDE[appliesto-ss-asdb-xxxx-xxx-md](../../includes/appliesto-ss-asdb-xxxx-xxx-md.md)]
@@ -93,7 +93,7 @@ ms.locfileid: "68715292"
 
 - [Quorum は、Azure SQL Database でインメモリ OLTP を利用することで、主要なデータベースのワークロードを 2 倍にしながら、使用率を 70% 削減しました](https://customers.microsoft.com/story/quorum-doubles-key-databases-workload-while-lowering-dtu-with-sql-database)
 - EdgeNet は、[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] のインメモリ OLTP を使用して、バッチ データ読み込みのパフォーマンスを改善し、中間層キャッシュを維持する必要がなくなりました:[データ サービス企業が、インメモリ テクノロジを使用して製品データへのリアルタイム アクセスを実現](https://customers.microsoft.com/story/data-services-firm-gains-real-time-access-to-product-d)
-- Beth Israel Deaconess Medical Center は、[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] のインメモリ OLTP でデータ取り込み率を大幅に改善し、ワークロードの急増を処理できました ([https://customers.microsoft.com/story/strengthening-data-security-and-creating-more-time-for ])。
+- Beth Israel Deaconess Medical Center は、[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] のインメモリ OLTP でデータ取り込み率を大幅に改善し、ワークロードの急増を処理できました (https://customers.microsoft.com/story/strengthening-data-security-and-creating-more-time-for )。
 
 ### <a name="caching-and-session-state"></a>キャッシュとセッションの状態
 

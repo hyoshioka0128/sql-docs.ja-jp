@@ -103,7 +103,7 @@ SQL Server と Python は、場合によっては異なるデータ型を使用�
 
 Python スクリプトをストアドプロシージャ[sp_execute_external_script](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql)内にカプセル化する準備ができたら、明確に定義された入力と出力を持つ単一の関数としてコードを書き直すことをお勧めします。 
 
-入力と出力は、**パンダ**のデータフレームである必要があります。 この処理が完了すると、T-sql をサポートする任意のクライアントからストアドプロシージャを呼び出し、SQL クエリを入力として簡単に渡すことができ、結果を SQL テーブルに保存できます。 例については、「 [SQL 開発者向けのデータベース内 Python analytics につい](../tutorials/sqldev-in-database-python-for-sql-developers.md)て」を参照してください。
+入力と出力は、**pandas** のデータフレームである必要があります。 この処理が完了すると、T-sql をサポートする任意のクライアントからストアドプロシージャを呼び出し、SQL クエリを入力として簡単に渡すことができ、結果を SQL テーブルに保存できます。 例については、「 [SQL 開発者向けのデータベース内 Python analytics につい](../tutorials/sqldev-in-database-python-for-sql-developers.md)て」を参照してください。
 
 ### <a name="using-revoscalepy-with-microsoftml"></a>Microsoft ml での revoscalepy の使用
 

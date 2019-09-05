@@ -22,7 +22,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/15/2019
 ms.locfileid: "68124870"
 ---
-# <a name="spchangemergesubscription-transact-sql"></a>sp_changemergesubscription (TRANSACT-SQL)
+# <a name="sp_changemergesubscription-transact-sql"></a>sp_changemergesubscription (TRANSACT-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
   マージのプッシュ サブスクリプションについて、選択したプロパティを変更します。 このストアド プロシージャは、パブリッシャー側でパブリケーション データベースについて実行されます。  

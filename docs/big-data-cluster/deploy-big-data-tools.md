@@ -9,12 +9,12 @@ ms.date: 08/28/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 84c7181bfd7c0ee014b382052bb6493d68251331
-ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
+ms.openlocfilehash: afd036dfe33ab538d3d845e73f45e804052a9903
+ms.sourcegitcommit: ecb19d0be87c38a283014dbc330adc2f1819a697
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70153609"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70238700"
 ---
 # <a name="install-sql-server-2019-big-data-tools"></a>SQL Server 2019 のビッグ データ ツールをインストールする
 
@@ -40,7 +40,7 @@ ms.locfileid: "70153609"
 | **sqlcmd** | 一部のスクリプトの場合 | SQL Server のクエリを実行するための従来のコマンドライン ツールです ([詳細情報](https://docs.microsoft.com/sql/tools/sqlcmd-utility?view=sql-server-ver15))。 | [Windows](https://www.microsoft.com/download/details.aspx?id=36433) \| [Linux](../linux/sql-server-linux-setup-tools.md) |
 | **curl** <sup>3</sup> | 一部のスクリプトの場合 | URL でデータを転送するためのコマンドライン ツールです。 | [Windows](https://curl.haxx.se/windows/) \| Linux: curl パッケージのインストール |
 
-<sup>1</sup> kubectl バージョン 1.10 以降を使う必要があります。 また、kubectl のバージョンは、Kubernetes クラスターより 1 つ上または下のマイナー バージョンにする必要があります。 特定のバージョンの Kubectl クライアントをインストールする場合は、「[curl を使用して kubectl バイナリをインストールする](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-binary-using-curl)」を参照してください (windows 10 では、Windows PowerShell ではなく cmd.exe を使って、curl を実行してください)。
+<sup>1</sup> kubectl バージョン1.13 以降を使用する必要があります。 また、kubectl のバージョンは、Kubernetes クラスターより 1 つ上または下のマイナー バージョンにする必要があります。 特定のバージョンの Kubectl クライアントをインストールする場合は、「[curl を使用して kubectl バイナリをインストールする](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-binary-using-curl)」を参照してください (windows 10 では、Windows PowerShell ではなく cmd.exe を使って、curl を実行してください)。
 
 > [!TIP]
 > Azure Kubernetes Service (AKS) に以前に展開されたクラスターで kubectl を使うには、次の Azure CLI コマンドを使ってクラスター コンテキストを設定する必要があります。

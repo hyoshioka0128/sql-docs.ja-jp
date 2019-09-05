@@ -25,12 +25,12 @@ ms.assetid: 344fc6ce-a008-47c8-a02e-47fae66cc590
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: f15ddbb8a8a58fad194750ad88f36b397aba1d22
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 3ae71b89e4dff780e8d01aa137b020665a9c8602
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67911765"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155646"
 ---
 # <a name="alter-user-transact-sql"></a>ALTER USER (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-all-md](../../includes/tsql-appliesto-ss2008-all-md.md)]
@@ -114,7 +114,7 @@ ALTER USER userName
  LOGIN **=** _loginName_  
  ユーザーのセキュリティ識別子 (SID) を別のログインの SID に一致するように変更することで、ユーザーを別のログインに再マップします。  
   
- ALTER USER ステートメントが SQL のバッチ内の唯一のステートメントである場合、Windows Azure SQL データベースでは WITH LOGIN 句がサポートされます。 ALTER USER ステートメントが SQL のバッチ内の唯一のステートメントではない場合、または動的 SQL で実行されていない場合、WITH LOGIN 句はサポートされません。  
+ ALTER USER ステートメントが SQL のバッチ内の唯一のステートメントである場合、Azure SQL Database では WITH LOGIN 句がサポートされます。 ALTER USER ステートメントが SQL のバッチ内の唯一のステートメントではない場合、または動的 SQL で実行されていない場合、WITH LOGIN 句はサポートされません。  
   
  NAME **=** _newUserName_  
  このユーザーの新しい名前を指定します。 *newUserName* は現在のデータベースに存在しない名前にする必要があります。  

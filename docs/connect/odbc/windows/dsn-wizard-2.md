@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: 76326eeb-1144-4b9f-85db-50524c655d30
 author: MightyPen
 ms.author: v-jizho2
-ms.openlocfilehash: c997dd30b6d1e9844843ff4fa626c46b42fed463
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 4ab8be02351a23c78251a99ca707e946ee8944c8
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: MTE75
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67936573"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70152568"
 ---
 # <a name="data-source-wizard-screen-2"></a>データ ソース ウィザード画面 2
 
@@ -43,17 +43,17 @@ ms.locfileid: "67936573"
 
 ### <a name="with-active-directory-interactive-authentication"></a>Active Directory 対話型認証を使用する
 
-ログイン ID を指定することによって、ドライバーが Azure Active Directory 対話モードで SQL Server を認証するように指定します。 これにより、Windows Azure 認証プロンプトダイアログがトリガーされます。
+ログイン ID を指定することによって、ドライバーが Azure Active Directory 対話モードで SQL Server を認証するように指定します。 これにより、Azure 認証プロンプトダイアログがトリガーされます。
 
 ### <a name="login-id"></a>Login ID
 
 ユーザーが入力した**ログイン id とパスワード**、または**ユーザーが入力したログイン id とパスワードを使用して Active Directory パスワード認証を使用して SQL Server 認証を使用している場合に、SQL Server に接続するときにドライバーが使用するログイン id を指定します。** または**Active Directory ユーザーが入力したログイン ID を使用した対話型認証**が選択されています。 これは、サーバーの既定の設定を確認するために確立された接続のみに適用されます。そのため、データ ソースが作成された後にそのデータ ソースを使用して確立された以降の接続には適用されません。
 
-### <a name="password"></a>パスワード
+### <a name="password"></a>Password
 
 ユーザーが入力した**ログイン id とパスワード**、または**ユーザーが入力したログイン id とパスワードを使用して Active Directory パスワード認証を使用して SQL Server 認証を使用している場合に、SQL Server に接続するときにドライバーが使用するパスワードを指定します。** が選択されています。 これは、サーバーの既定の設定を確認するために確立された接続のみに適用されます。そのため、新しいデータ ソースを使用して確立された以降の接続には適用されません。
 
-[**ログイン ID** ] ボックスと [**パスワード**] ボックスは、[**統合 Windows 認証**] または [ **Active Directory 統合認証**を使用] が選択されている場合は無効になります。
+**[ログイン ID]** ボックスと **[パスワード]** ボックスは、 **[統合 Windows 認証]** または **[Active Directory 統合認証]** を使用 が選択されている場合は無効になります。
 
 ### <a name="next"></a>Next
 

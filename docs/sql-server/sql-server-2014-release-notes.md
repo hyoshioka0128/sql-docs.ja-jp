@@ -10,12 +10,12 @@ ms.assetid: bf4c4922-80b3-4be3-bf71-228247f97004
 author: craigg-msft
 ms.author: craigg
 monikerRange: = sql-server-2014 || = sqlallproducts-allversions
-ms.openlocfilehash: 1fb7e3e0a261c0cf518dda93610b721af14a3472
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 94175594fe2539320941b5a83c1a7aa4b127783f
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68136490"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155686"
 ---
 # <a name="sql-server-2014-release-notes"></a>SQL Server 2014 リリース ノート
 [!INCLUDE[tsql-appliesto-ss2014-xxxx-xxxx-xxx-md](../includes/tsql-appliesto-ss2014-xxxx-xxxx-xxx-md.md)]
@@ -190,7 +190,7 @@ memory-optimized table DLLs.
   
 **回避策:** ハッシュ インデックスを使用している場合は、クエリとクエリ プランを検討し、インデックス キーのサブセットに対する Index Seek 操作や、不等値述語に対する Index Seek 操作によってクエリに利点がもたらされるかどうかを判断します。 インデックス キーのサブセットに対するシークを実行する必要がある場合は、NONCLUSTERED インデックスを使用するか、シークする必要のある正確な列に対応する HASH インデックスを使用します。 不等値述語に対するシークを実行する必要がある場合は、HASH の代わりに NONCLUSTERED インデックスを使用します。  
   
-#### <a name="failure-when-using-a-memory-optimized-table-and-memory-optimized-table-variable-in-the-same-query-if-the-database-option-readcommittedsnapshot-is-set-to-on"></a>データベース オプション READ_COMMITTED_SNAPSHOT を ON に設定した場合、メモリ最適化テーブルとメモリ最適化テーブル変数を同じクエリで使用したときにエラーが発生する  
+#### <a name="failure-when-using-a-memory-optimized-table-and-memory-optimized-table-variable-in-the-same-query-if-the-database-option-read_committed_snapshot-is-set-to-on"></a>データベース オプション READ_COMMITTED_SNAPSHOT を ON に設定した場合、メモリ最適化テーブルとメモリ最適化テーブル変数を同じクエリで使用したときにエラーが発生する  
 **問題点:** データベース オプション READ_COMMITTED_SNAPSHOT を ON に設定し、ユーザー トランザクションのコンテキスト外にある同じステートメントで、メモリ最適化テーブルとメモリ最適化されたテーブル変数の両方にアクセスした場合は、このエラー メッセージが表示される可能性があります。  
   
 ```  
@@ -213,7 +213,7 @@ SET MEMORY_OPTIMIZED_ELEVATE_TO_SNAPSHOT=ON
   
 **回避策:** [なし] : ネイティブ コンパイル ストアド プロシージャの実行時間が短いクエリに対応する実行統計 DMV 内で報告された worker_time を信頼しないでください。  
   
-#### <a name="error-with-showplanxml-for-natively-compiled-stored-procedures-that-contain-long-expressions"></a>長い式を含むネイティブ コンパイル ストアド プロシージャに対応する SHOWPLAN_XML にエラーが出力される  
+#### <a name="error-with-showplan_xml-for-natively-compiled-stored-procedures-that-contain-long-expressions"></a>長い式を含むネイティブ コンパイル ストアド プロシージャに対応する SHOWPLAN_XML にエラーが出力される  
 **問題点:** ネイティブ コンパイル ストアド プロシージャに長い式が含まれていて、そのプロシージャに対応する SHOWPLAN_XML を取得する状況で、T-SQL オプション SET SHOWPLAN_XML ON を使用する場合、または Management Studio で "Display Estimated Execution Plan" オプションを使用する場合は、次のエラーが発生する可能性があります。  
   
 ```  
@@ -334,10 +334,10 @@ Description:   Report Server (DENALI) cannot connect to the report server databa
   
 詳細については、「 [SQL Server 2014 Reporting Services の役立つヒントおよびトラブルシューティング](https://go.microsoft.com/fwlink/?LinkID=391254)」を参照してください。  
   
-### <a name="AzureVM"></a>Microsoft Azure Virtual Machines 上の SQL Server 2014 RTM  
+### <a name="AzureVM"></a>Azure Virtual Machines 上の SQL Server 2014 RTM  
   
-#### <a name="the-add-azure-replica-wizard-returns-an-error-when-configuring-an-availability-group-listener-in-windows-azure"></a>Windows Azure で可用性グループ リスナーを構成するときに Azure のレプリカ追加ウィザードでエラーが返される  
-**問題点:** 可用性グループにリスナーが存在する場合は、Windows Azure でリスナーを構成しようとしたときに、Azure のレプリカ追加ウィザードでエラーが返されます。  
+#### <a name="the-add-azure-replica-wizard-returns-an-error-when-configuring-an-availability-group-listener-in-azure"></a>Azure で可用性グループ リスナーを構成するときに Azure のレプリカ追加ウィザードでエラーが返される  
+**問題点:** 可用性グループにリスナーが存在する場合は、Azure でリスナーを構成しようとしたときに、Azure のレプリカ追加ウィザードでエラーが返されます。  
   
 Azure サブネットを含め、可用性グループのレプリカをホストしているすべてのサブネットで、可用性グループ リスナーに 1 つの IP アドレスを割り当てることが必要とされるのが、この問題の原因です。  
   
@@ -345,9 +345,9 @@ Azure サブネットを含め、可用性グループのレプリカをホス�
   
 1.  リスナーのページで、可用性グループ レプリカをホストする Azure サブネット内にある未使用の静的 IP アドレスを、可用性グループ リスナーに割り当てます。  
   
-    この回避策により、ウィザードは Windows Azure 内でレプリカの追加を完了することができます。  
+    この回避策により、ウィザードは Azure 内でレプリカの追加を完了することができます。  
   
-2.  ウィザードが完了した後、 [チュートリアル: Windows Azure AlwaysOn 可用性グループのリスナー構成](https://msdn.microsoft.com/library/dn376546.aspx)で説明されているように、Windows Azure 内のリスナー構成を完了する必要があります。  
+2.  ウィザードが完了した後、「[Azure での AlwaysOn 可用性グループに対するリスナーの構成](https://msdn.microsoft.com/library/dn376546.aspx)」で説明されているように、Azure でリスナーの構成を完了する必要があります  
   
 ### <a name="SSAS"></a>Analysis Services (RTM)
   

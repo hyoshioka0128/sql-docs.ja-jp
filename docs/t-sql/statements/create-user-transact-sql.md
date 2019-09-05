@@ -29,12 +29,12 @@ ms.assetid: 01de7476-4b25-4d58-85b7-1118fe64aa80
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: db74b6381962d200242f1db912a18404d67ef06a
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 5cc065dc6f7b8e5b3d7ac5e84867029c9bd50f0f
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67938895"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155837"
 ---
 # <a name="create-user-transact-sql"></a>CREATE USER (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-all-md](../../includes/tsql-appliesto-ss2008-all-md.md)]
@@ -178,7 +178,7 @@ CREATE USER user_name
  LOGIN *login_name*  
  作成するデータベース ユーザーのログインを指定します。 *login_name* は、サーバーで有効なログインである必要があります。 Windows プリンシパルに基づくログイン (ユーザーまたはグループ) か、または [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 認証を使用したログインを指定できます。 この SQL Server ログインをデータベースに対して入力すると、データベースでは、作成されるデータベース ユーザーの名前と ID が取得されます。 Windows プリンシパルからマップされたログインを作成する場合は、 **[** _\<domainName\>_ **\\** _\<loginName\>_ **]** という形式を使用します。 例については、「[構文の概要](#SyntaxSummary)」を参照してください。  
   
- CREATE USER ステートメントが SQL のバッチ内の唯一のステートメントである場合、Windows Azure SQL Database では WITH LOGIN 句がサポートされます。 CREATE USER ステートメントが SQL のバッチ内の唯一のステートメントではない場合、または動的 SQL 内で実行される場合、WITH LOGIN 句はサポートされません。  
+ CREATE USER ステートメントが SQL のバッチ内の唯一のステートメントである場合、Azure SQL Database では WITH LOGIN 句がサポートされます。 CREATE USER ステートメントが SQL のバッチ内の唯一のステートメントではない場合、または動的 SQL 内で実行される場合、WITH LOGIN 句はサポートされません。  
   
  WITH DEFAULT_SCHEMA = *schema_name*  
  このデータベース ユーザー用のオブジェクトの名前を解決するときに、サーバーで最初に検索されるスキーマを指定します。  

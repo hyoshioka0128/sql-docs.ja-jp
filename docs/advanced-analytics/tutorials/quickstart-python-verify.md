@@ -70,7 +70,7 @@ Machine Learning Services (が SQL Server インスタンスで有効になっ�
 
 **Revoscalepy**が使用可能であることを確認するには、統計概要データを生成する[rx_summary](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-summary)を含むサンプルスクリプトを実行します。 次のスクリプトは、revoscalepy に含まれている組み込みサンプルからサンプルの xdf データファイルを取得する方法を示しています。 RxOptions 関数は、サンプルファイルの場所を返す**sampleDataDir**パラメーターを提供します。
 
-Rx_summary は、複数の要素を`class revoscalepy.functions.RxSummary.RxSummaryResults`含む型のオブジェクトを返すため、パンダを使用して、データフレームだけを表形式で抽出することができます。
+Rx_summary は、複数の要素を`class revoscalepy.functions.RxSummary.RxSummaryResults`含む型のオブジェクトを返すため、pandas を使用して、データフレームだけを表形式で抽出することができます。
 
 ```sql
 EXEC sp_execute_external_script @language = N'Python', 

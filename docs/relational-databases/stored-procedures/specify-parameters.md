@@ -15,12 +15,12 @@ ms.assetid: 902314fe-5f9c-4d0d-a0b7-27e67c9c70ec
 author: stevestein
 ms.author: sstein
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 2997665339c2326b1fd99f8d2e09ba48089b9f2d
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 6b2ac27ecf2ca02acde1cefba87aaf828f8a3317
+ms.sourcegitcommit: 52d3902e7b34b14d70362e5bad1526a3ca614147
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68136647"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70110271"
 ---
 # <a name="specify-parameters"></a>パラメーターの指定
 [!INCLUDE[appliesto-ss-asdb-asdw-pdw-md](../../includes/appliesto-ss-asdb-asdw-pdw-md.md)]
@@ -83,6 +83,9 @@ GO
   
 > [!NOTE]  
 >  既定値が空白または句読点を含む文字列の場合、または数字で始まる場合 (たとえば 6xxx)、単一引用符で囲む必要があります。  
+
+> [!NOTE] 
+> 既定のパラメーターは、Azure SQL Data Warehouse または Parallel Data Warehouse ではサポートされていません。 
   
  パラメーターに対して既定値として適切に値を指定できない場合は、NULL を既定値として指定してください。 パラメーターの値なしでプロシージャを実行する場合は、プロシージャからカスタマイズされたメッセージが返されるようにすることをお勧めします。  
   

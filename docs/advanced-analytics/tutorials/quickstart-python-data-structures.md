@@ -20,7 +20,7 @@ ms.locfileid: "68714800"
 
 このクイックスタートでは、SQL Server Machine Learning Services で Python を使用するときのデータ構造の使用方法を示します。
 
-SQL Server は、表形式のデータを操作するのに最適な Python**パンダ**パッケージに依存しています。 ただし、スカラーを Python から SQL Server に渡すことはできません。 このクイックスタートでは、いくつかの基本的なデータ型の定義を確認し、Python と SQL Server の間で表形式のデータを渡すときに発生する可能性のある追加の問題を準備します。
+SQL Server は、表形式のデータを操作するのに最適な Python **pandas** パッケージに依存しています。 ただし、スカラーを Python から SQL Server に渡すことはできません。 このクイックスタートでは、いくつかの基本的なデータ型の定義を確認し、Python と SQL Server の間で表形式のデータを渡すときに発生する可能性のある追加の問題を準備します。
 
 + データフレームは、_複数_の列を含むテーブルです。
 + データフレームの1つの列は、系列と呼ばれるリストのようなオブジェクトです。
@@ -116,7 +116,7 @@ SQL Server は、表形式のデータを操作するのに最適な Python**パ
 
 スカラー数値演算の結果を表形式構造に変換した後も、SQL Server が処理できる形式に変換する必要があります。 
 
-1. 系列をデータフレームに変換するには、パンダの[データフレーム](https://pandas.pydata.org/pandas-docs/stable/dsintro.html#dataframe)メソッドを呼び出します。
+1. 系列をデータフレームに変換するには、pandas の[データフレーム](https://pandas.pydata.org/pandas-docs/stable/dsintro.html#dataframe)メソッドを呼び出します。
 
     ```sql
     execute sp_execute_external_script 

@@ -24,7 +24,7 @@ ms.locfileid: "67897746"
   
  **{fn** _スカラー関数_ **}**  
   
- 場所*スカラー関数*に示す関数の 1 つ[付録 e:スカラー関数](../../../odbc/reference/appendixes/appendix-e-scalar-functions.md)します。 スカラー関数のエスケープ シーケンスの詳細については、次を参照してください[スカラー関数エスケープ シーケンス](../../../odbc/reference/appendixes/scalar-function-escape-sequence.md)付録 c:。SQL 文法。  
+ ここで、*スカラー関数* は、[付録 e:スカラー関数](../../../odbc/reference/appendixes/appendix-e-scalar-functions.md) ににリストされている関数の1つです。 スカラー関数のエスケープ シーケンスの詳細については、付録C：SQL文法の [スカラー関数エスケープ シーケンス](../../../odbc/reference/appendixes/scalar-function-escape-sequence.md) を参照してください。SQL 文法。  
   
  たとえば、次の SQL ステートメントは、名前、同じ結果セットの大文字の顧客の作成します。 最初のステートメントでは、エスケープ シーケンス構文を使用します。 2 番目のステートメントでは、OS/2 の Ingres のネイティブの構文を使用して、相互運用可能なではありません。  
   

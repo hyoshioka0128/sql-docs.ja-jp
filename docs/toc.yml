@@ -64,7 +64,11 @@
             - name: ビッグ データ ツールをインストールする
               href: big-data-cluster/deploy-big-data-tools.md
             - name: azdata をインストールする
-              href: big-data-cluster/deploy-install-azdata.md
+              items:
+                - name: Linux パッケージ マネージャーを使う
+                  href: big-data-cluster/deploy-install-azdata-linux-package.md
+                - name: pip を使う
+                  href: big-data-cluster/deploy-install-azdata.md
         - name: 配置
           items:
             - name: 展開のガイダンス
@@ -77,6 +81,8 @@
               href: big-data-cluster/concept-data-persistence.md
             - name: オフライン展開
               href: big-data-cluster/deploy-offline.md
+            - name: 高可用性で展開する
+              href: big-data-cluster/deployment-high-availability.md
             - name: Kubernetes クラスター
               items:
                 - name: Azure Kubernetes Service
@@ -169,6 +175,8 @@
               href: big-data-cluster/cluster-troubleshooting-commands.md
             - name: ノートブックを使用して管理する
               href: big-data-cluster/manage-notebooks.md
+            - name: コントローラー ダッシュボードを使って管理する
+              href: big-data-cluster/manage-with-controller-dashboard.md
         - name: ノートブック
           items:
             - name: ノートブックの概要
@@ -196,7 +204,15 @@
         - name: azdata リファレンス
           items:
             - name: azdata
-              href: big-data-cluster/reference-azdata.md
+              items:
+                - name: azdata
+                  href: big-data-cluster/reference-azdata.md
+                - name: control
+                  href: big-data-cluster/reference-azdata-control.md
+                - name: ノートブック
+                  href: big-data-cluster/reference-azdata-notebook.md
+                - name: sql
+                  href: big-data-cluster/reference-azdata-sql.md
             - name: アプリ配置
               items:
                 - name: アプリ
@@ -207,6 +223,10 @@
               items:
                 - name: bdc
                   href: big-data-cluster/reference-azdata-bdc.md
+                - name: bdc app
+                  href: big-data-cluster/reference-azdata-bdc-app.md
+                - name: bdc app status
+                  href: big-data-cluster/reference-azdata-bdc-app-status.md
                 - name: bdc の構成
                   href: big-data-cluster/reference-azdata-bdc-config.md
                 - name: bdc コントロール
@@ -217,10 +237,16 @@
                   href: big-data-cluster/reference-azdata-bdc-debug.md
                 - name: bdc エンドポイント
                   href: big-data-cluster/reference-azdata-bdc-endpoint.md
+                - name: bdc gateway
+                  href: big-data-cluster/reference-azdata-bdc-gateway.md
+                - name: bdc gateway status
+                  href: big-data-cluster/reference-azdata-bdc-gateway-status.md
                 - name: bdc hdfs
                   href: big-data-cluster/reference-azdata-bdc-hdfs.md
                 - name: bdc hdfs のマウント
                   href: big-data-cluster/reference-azdata-bdc-hdfs-mount.md
+                - name: bdc hdfs status
+                  href: big-data-cluster/reference-azdata-bdc-hdfs-status.md
                 - name: bdc プール
                   href: big-data-cluster/reference-azdata-bdc-pool.md
                 - name: bdc プールの状態
@@ -233,6 +259,10 @@
                   href: big-data-cluster/reference-azdata-bdc-spark-session.md
                 - name: bdc spark ステートメント
                   href: big-data-cluster/reference-azdata-bdc-spark-statement.md
+                - name: bdc spark status
+                  href: big-data-cluster/reference-azdata-bdc-spark-status.md
+                - name: bdc sql
+                  href: big-data-cluster/reference-azdata-bdc-sql.md
                 - name: bdc の状態
                   href: big-data-cluster/reference-azdata-bdc-status.md
 - name: ビジネス継続性
@@ -2510,7 +2540,7 @@
           items:
             - name: Components
               href: relational-databases/native-client/applications/components-of-sql-server-native-client.md
-            - name: Windows Azure への接続
+            - name: Native Client を使って Azure SQL に接続する
               href: relational-databases/native-client/applications/connecting-to-a-windows-azure-sql-database-using-sql-server-native-client.md
             - name: dbmslpcn.dll 共有メモリの ConnectionValidSharedMemory 関数
               href: relational-databases/native-client/applications/connectionvalidsharedmemory-function-in-dbmslpcn-dll-shared-memory.md

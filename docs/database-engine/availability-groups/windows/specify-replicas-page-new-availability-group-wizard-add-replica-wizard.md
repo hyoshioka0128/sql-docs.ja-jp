@@ -13,12 +13,12 @@ f1_keywords:
 ms.assetid: 2d90fc12-a67b-4bd0-b0ab-899b73017196
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: a793ddb2f1b16c8b2f7596c348966e24d2785345
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: 190ff2f2f7fe510722f73c03bdc4beba18273d2b
+ms.sourcegitcommit: 3b1f873f02af8f4e89facc7b25f8993f535061c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68013990"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70176214"
 ---
 # <a name="specify-replicas-page-new-availability-group-wizard-add-replica-wizard"></a>[レプリカの指定] ページ (新しい可用性グループ ウィザード:レプリカの追加ウィザード)
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "68013990"
  **サーバー インスタンス**  
  可用性レプリカをホストするサーバー インスタンスの名前を表示します。  
   
- セカンダリ レプリカをホストするために使用するサーバー インスタンスが **[可用性レプリカ]** グリッドに表示されていない場合は、 **[レプリカの追加]** をクリックします。 ハイブリッド IT 環境で可用性グループを構成する場合は (「 [Windows Azure の仮想マシン内の SQL Server の高可用性と災害復旧](https://msdn.microsoft.com/library/windowsazure/jj870962.aspx)」を参照)、 **[Azure のレプリカ追加]** をクリックして、セカンダリ レプリカを備えた仮想マシンを Windows Azure に作成できます。  
+ セカンダリ レプリカをホストするために使用するサーバー インスタンスが **[可用性レプリカ]** グリッドに表示されていない場合は、 **[レプリカの追加]** をクリックします。 ハイブリッド IT 環境で可用性グループを構成する場合は (「[Azure Virtual Machines での SQL Server の高可用性とディザスター リカバリー](https://msdn.microsoft.com/library/windowsazure/jj870962.aspx)」を参照)、 **[Azure のレプリカ追加]** ボタンをクリックして、セカンダリ レプリカを備えた仮想マシンを Azure に作成できます。  
   
  **[初期ロール]**  
  新しいレプリカが初期状態で実行するロール(**プライマリ** または **セカンダリ**) を示します。  
@@ -66,7 +66,7 @@ ms.locfileid: "68013990"
  クリックすると、セカンダリ レプリカが可用性グループに追加されます。  
   
  **[Azure のレプリカ追加]**  
- 可用性グループのセカンダリ レプリカを実行する Windows Azure 仮想マシンを作成する場合にクリックします。 このオプションは、内部設置型レプリカが含まれるハイブリッド IT 環境の可用性グループに対してのみ適用できます。 詳細については、「 [Windows Azure 仮想マシン内の SQL Server の高可用性と災害復旧](https://msdn.microsoft.com/library/windowsazure/jj870962.aspx)」を参照してください。  
+ 可用性グループのセカンダリ レプリカを実行する Azure 仮想マシンを作成する場合にクリックします。 このオプションは、内部設置型レプリカが含まれるハイブリッド IT 環境の可用性グループに対してのみ適用できます。 詳細については、「[Azure Virtual Machines での SQL Server の高可用性とディザスター リカバリー](https://msdn.microsoft.com/library/windowsazure/jj870962.aspx)」を参照してください。  
   
  **[レプリカの削除]**  
  クリックすると、選択したセカンダリ レプリカが可用性グループから削除されます。  

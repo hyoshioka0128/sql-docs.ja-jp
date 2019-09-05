@@ -43,12 +43,12 @@ ms.assetid: 5ee520ba-ec7e-4199-a441-189e9e264b37
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 05d3dab8585dd62716a9846ab591c7d70479e1c3
-ms.sourcegitcommit: e7d921828e9eeac78e7ab96eb90996990c2405e9
+ms.openlocfilehash: 0671a283261a6c0867e4349f8cd0f2baadf0cbd7
+ms.sourcegitcommit: a1ddeabe94cd9555f3afdc210aec5728f0315b14
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68265488"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70123000"
 ---
 # <a name="generate-and-publish-scripts-wizard"></a>スクリプトの生成とパブリッシュ ウィザード
 [!INCLUDE[appliesto-ss-asdb-asdw-pdw-md](../../includes/appliesto-ss-asdb-asdw-pdw-md.md)]
@@ -154,7 +154,7 @@ ms.locfileid: "68265488"
   
 -   **[ファイルに追加]** : **True**の場合、 **[スクリプト作成オプションの設定]** ページで指定した既存のスクリプトの末尾に、このスクリプトを追加します。 **False**の場合、以前のスクリプトが新しいスクリプトで上書きされます。 既定値は **False**です。  
   
--   **[エラー発生時にスクリプトを続行]** : **True**の場合、エラーが発生した時点でスクリプトの生成を停止します。 **False**の場合は、スクリプトの生成を続行します。 既定値は **False**です。  
+-   **[エラー発生時にスクリプトを続行]** : **False** の場合、エラーが発生した時点でスクリプトの生成を停止します。 **True** の場合は、スクリプトの生成を続行します。 既定値は **False**です。  
   
 -   **[UDDT を基本型に変換]** : **True**の場合、ユーザー定義データ型 (UDDT) を、その UDDT の作成に使用された基本データ型に変換します。 スクリプトを実行するデータベースに UDDT が存在しない場合は、 **True** を使用します。 **False**の場合は、UDDT が使用されます。 既定値は **False**です。  
   

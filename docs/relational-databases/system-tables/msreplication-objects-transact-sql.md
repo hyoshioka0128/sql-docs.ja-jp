@@ -24,16 +24,16 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/15/2019
 ms.locfileid: "68079078"
 ---
-# <a name="msreplication_objects-transact-sql"></a>MSreplication_objects (TRANSACT-SQL)
+# <a name="msreplication_objects-transact-sql"></a>MSreplication_objects (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
   **MSreplication_objects**テーブルには、サブスクライバー データベースのレプリケーションに関連付けられているオブジェクトごとに 1 つの行が含まれています。 このテーブルは、サブスクリプション データベースに格納されます。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
-|**パブリッシャー**|**sysname**|パブリッシャーの名前。|  
+|**publisher**|**sysname**|パブリッシャーの名前。|  
 |**publisher_db**|**sysname**|パブリッシャー データベースの名前。|  
-|**パブリケーション**|**sysname**|パブリケーションの名前を指定します。|  
+|**publication**|**sysname**|パブリケーションの名前を指定します。|  
 |**object_name**|**sysname**|オブジェクトの名前。|  
 |**object_type**|**char(2)**|オブジェクトの種類:<br /><br /> **u**テーブルを = です。<br /><br /> **t** = トリガーします。<br /><br /> **p**ストアド プロシージャを = です。|  
 |**article**|**sysname**|オブジェクトが関連付けられているアーティクルの名前。|  

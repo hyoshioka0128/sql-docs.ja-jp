@@ -15,12 +15,12 @@ ms.assetid: ''
 author: s-r-k
 ms.author: karam
 monikerRange: = azuresqldb-current || >= sql-server-ver15 || = sqlallproducts-allversions
-ms.openlocfilehash: fc60a102a56aa5cb8c749db93290d20ec4b7f30e
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: e73a03eae61601f28578b23ac2f2afc1a80f5f76
+ms.sourcegitcommit: 823d7bdfa01beee3cf984749a8c17888d4c04964
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68126248"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70030335"
 ---
 # <a name="scalar-udf-inlining"></a>スカラー UDF のインライン化
 
@@ -123,7 +123,7 @@ SQL Server 2017 (互換性レベル 140 およびそれ以前) でのこのク�
 
 ![インライン化のないクエリ プラン](./media/query-plan-without-udf-inlining.png)
 
-プランで示されているように、ここでは SQL Server はシンプルな戦略を採用しています。`CUSTOMER` テーブル内のすべてのタプルについて、UDF を呼び出して結果を出力します。 この方法は、単純で非効率的です。 インライン化を使用すると、このような UDF は同等のスカラー サブクエリに変換されて、呼び出し元のクエリで UDF の代わりに置き換えられます。
+プランで示されているように、ここでは SQL Server はシンプルな戦略を採用しています。`CUSTOMER` テーブル内のすべてのタプルについて、UDF を呼び出して結果を出力します。 この方法は単純で非効率的です。 インライン化を使用すると、このような UDF は同等のスカラー サブクエリに変換されて、呼び出し元のクエリで UDF の代わりに置き換えられます。
 
 同じクエリに対し、UDF のインライン化を使用したプランは次のようになります。
 

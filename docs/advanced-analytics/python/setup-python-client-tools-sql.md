@@ -199,7 +199,7 @@ print("Sklearn Iris sample loaded into Iris table")
 
 ### <a name="define-a-function"></a>関数を定義する
 
-次のコードでは、後の手順で SQL Server に送信する関数を定義しています。 実行すると、リモートサーバー上のデータとライブラリ (revoscalepy、パンダ、matplotlib) を使用して、虹彩データセットの散布図が作成されます。 このファイルは、ブラウザーに表示するために、バイトストリームの .png を Jupyter Notebook に戻します。
+次のコードでは、後の手順で SQL Server に送信する関数を定義しています。 実行すると、リモートサーバー上のデータとライブラリ (revoscalepy、pandas、matplotlib) を使用して、虹彩データセットの散布図が作成されます。 このファイルは、ブラウザーに表示するために、バイトストリームの .png を Jupyter Notebook に戻します。
 
 ```python
 def send_this_func_to_sql():

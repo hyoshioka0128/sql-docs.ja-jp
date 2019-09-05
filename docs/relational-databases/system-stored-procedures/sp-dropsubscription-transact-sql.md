@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7551f345-5510-4684-ab53-f9057249d13a
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 21d90c94c73eb6e49fcfedf997fffe2881146a22
-ms.sourcegitcommit: 676458a9535198bff4c483d67c7995d727ca4a55
+ms.openlocfilehash: 3d324d5f26f847488af8cec480cce6c699a5f473
+ms.sourcegitcommit: 734529a6f108e6ee6bfce939d8be562d405e1832
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69903631"
+ms.lasthandoff: 09/02/2019
+ms.locfileid: "70212278"
 ---
 # <a name="sp_dropsubscription-transact-sql"></a>sp_dropsubscription (Transact-SQL)
 [!INCLUDE[appliesto-ss-asdbmi-xxxx-xxx-md](../../includes/appliesto-ss-asdbmi-xxxx-xxx-md.md)]
@@ -46,13 +46,15 @@ sp_dropsubscription [ [ @publication= ] 'publication' ]
   
 `[ @article = ] 'article'`アーティクルの名前を指定します。 *アーティクル*は**sysname**で、既定値は NULL です。 **All**を指定すると、指定された各パブリケーションおよびサブスクライバーのすべてのアーティクルに対するサブスクリプションが削除されます。 即時更新が可能なパブリケーションの場合は、 **all**を使用します。  
   
-`[ @subscriber = ] 'subscriber'`サブスクリプションを削除するサブスクライバーの名前を指定します。 *サブスクライバー*は**sysname**,、既定値はありません。 **All**を使用すると、すべてのサブスクライバーのすべてのサブスクリプションが削除されます。  
+`[ @subscriber = ] 'subscriber'`サブスクリプションを削除するサブスクライバーの名前を指定します。 *subscriber*は**sysname**、既定値はありません。 **All**を使用すると、すべてのサブスクライバーのすべてのサブスクリプションが削除されます。  
   
 `[ @destination_db = ] 'destination_db'`転送先データベースの名前を指定します。 *destination_db*は**sysname**,、既定値は NULL です。 NULL の場合、そのサブスクライバーからのすべてのサブスクリプションが削除されます。  
   
-`[ @ignore_distributor = ] ignore_distributor` [!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]  
+`[ @ignore_distributor = ] ignore_distributor`  
+ [!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]  
   
-`[ @reserved = ] 'reserved'` [!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]  
+`[ @reserved = ] 'reserved'`  
+ [!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]  
   
 ## <a name="return-code-values"></a>リターン コードの値  
  **0** (成功) または**1** (失敗)  

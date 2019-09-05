@@ -26,15 +26,15 @@ helpviewer_keywords:
 ms.assetid: d280d359-08f0-47b5-a07e-67dd2a58ad73
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: a2bbb7465b3d012d5aa786a0e8c614a9d4689074
-ms.sourcegitcommit: 73dc08bd16f433dfb2e8406883763aabed8d8727
+ms.openlocfilehash: 69d548d6d6682a1bdd999bf2b9a4fdba4cefd669
+ms.sourcegitcommit: 734529a6f108e6ee6bfce939d8be562d405e1832
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68329329"
+ms.lasthandoff: 09/02/2019
+ms.locfileid: "70212446"
 ---
 # <a name="clr-integration-architecture---clr-hosted-environment"></a>CLR 統合のアーキテクチャ - CLR ホスト環境
-[!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
+[!INCLUDE[appliesto-ss-asdbmi-xxxx-xxx-md](../../includes/appliesto-ss-asdbmi-xxxx-xxx-md.md)]
   データベース プログラマは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] と .NET Framework CLR (共通言語ランタイム) との統合により、Visual C#、Visual Basic .NET、Visual C++ などの言語を使用できます。 プログラマがこれらの言語を使用して記述できるビジネス ロジックには、関数、ストアド プロシージャ、トリガー、データ型、集計などがあります。  
   
   CLR は、ガベージコレクトされたメモリ、プリエンプティブスレッド処理、メタデータサービス (型リフレクション)、コードの検証可能性、およびコードアクセスセキュリティを特徴としています。 CLR では、クラスの検索と読み込み、メモリ内でのインスタンスのレイアウト、メソッド呼び出しの解決、ネイティブ コードの生成、セキュリティの設定、およびランタイム コンテキスト境界の設定にメタデータが使用されます。  

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: 11be89e9-ff2a-4a94-ab5d-27d8edf9167d
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 6be8d736294df50a5ca3d288b77e4b0daac556b8
-ms.sourcegitcommit: c2052b2bf7261b3294a3a40e8fed8b9e9c588c37
+ms.openlocfilehash: 534907b49e5139f57f8b008742cf76346f7838ec
+ms.sourcegitcommit: 3b1f873f02af8f4e89facc7b25f8993f535061c9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68941124"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70176359"
 ---
 # <a name="sql-server-backup-to-url"></a>SQL Server Backup to URL
 [!INCLUDE[appliesto-ss-asdbmi-xxxx-xxx-md](../../includes/appliesto-ss-asdbmi-xxxx-xxx-md.md)]
@@ -41,22 +41,22 @@ ms.locfileid: "68941124"
   
 -   [メンテナンス プラン ウィザードを使用した SQL Server Backup to URL](../../relational-databases/backup-restore/sql-server-backup-to-url.md#MaintenanceWiz)  
   
--   [SQL Server Management Studio を使用した Windows Azure ストレージからの復元](../../relational-databases/backup-restore/sql-server-backup-to-url.md#RestoreSSMS)  
+-   [SQL Server Management Studio を使用した Azure ストレージからの復元](../../relational-databases/backup-restore/sql-server-backup-to-url.md#RestoreSSMS)  
   
 ###  <a name="security"></a> セキュリティ  
  Microsoft Azure BLOB ストレージ サービスとの間でバックアップまたは復元を実行する際のセキュリティに関する考慮事項と要件は次のとおりです。  
   
--   Microsoft Azure BLOB ストレージ サービスのコンテナーを作成するときは、アクセス権を **private**に設定することをお勧めします。 アクセス権を private に設定すると、Windows Azure アカウントの認証に必要な情報を指定できるユーザーまたはアカウントだけがアクセスできるようになります。  
+-   Microsoft Azure BLOB ストレージ サービスのコンテナーを作成するときは、アクセス権を **private**に設定することをお勧めします。 アクセス権を private に設定すると、Azure アカウントの認証に必要な情報を指定できるユーザーまたはアカウントだけがアクセスできるようになります。  
   
     > [!IMPORTANT]  
-    >  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、Windows Azure のアカウント名とアクセス キーの認証または Shared Access Signature とアクセス トークンを [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 資格情報に保存する必要があります。 この情報は、バックアップ操作または復元操作の実行時に、Windows Azure アカウントに対する認証に使用されます。  
+    >  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、Azure のアカウント名とアクセス キーの認証または Shared Access Signature とアクセス トークンを [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 資格情報に保存する必要があります。 この情報は、バックアップ操作または復元操作の実行時に、Azure アカウントに対する認証に使用されます。  
   
 -   BACKUP コマンドまたは RESTORE コマンドの発行に使用するユーザー アカウントは、 **資格情報の変更** 権限を持つ **db_backup operator** データベース ロールに属している必要があります。  
   
 ###  <a name="intorkeyconcepts"></a> 主なコンポーネントと概念の概要  
  次の 2 つのセクションでは、Microsoft Azure BLOB ストレージ サービスと、Microsoft Azure BLOB ストレージ サービスとの間でバックアップまたは復元を実行するときに使用する [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] コンポーネントについて説明します。 Microsoft Azure BLOB ストレージ サービスとの間でバックアップまたは復元を実行するには、各コンポーネントと、コンポーネント間のやり取りを理解しておくことが重要です。  
   
- このプロセスでは、まず、Azure サブスクリプション内に Windows Azure ストレージ アカウントを作成します。 このストレージ アカウントは、このストレージ アカウントで作成されたすべてのコンテナーとオブジェクトに対する完全な管理者権限を持つ管理者アカウントです。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、Windows Azure ストレージ アカウントの名前とアクセス キー値を使用して認証し、Microsoft Azure BLOB ストレージ サービスに対して BLOB の書き込みと読み取りを実行することも、特定のコンテナーで生成された Shared Access Signature トークンを使用して読み取り/書き込み権限を付与することもできます。 Azure Storage アカウントの詳細については、「[Azure ストレージ アカウントについて](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/)」をご覧ください。Shared Access Signature の詳細については、「[Shared Access Signature、第 1 部:SAS モデルについて](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)」をご覧ください。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 資格情報はこの認証情報を格納するため、バックアップ操作または復元操作中に使用されます。  
+ このプロセスでは、まず、Azure サブスクリプション内に Azure ストレージ アカウントを作成します。 このストレージ アカウントは、このストレージ アカウントで作成されたすべてのコンテナーとオブジェクトに対する完全な管理者権限を持つ管理者アカウントです。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、Azure ストレージ アカウントの名前とアクセス キー値を使用して認証し、Microsoft Azure Blob Storage サービスに対して BLOB の書き込みと読み取りを実行することも、特定のコンテナーで生成された Shared Access Signature トークンを使用して読み取り/書き込み権限を付与することもできます。 Azure Storage アカウントの詳細については、「[Azure ストレージ アカウントについて](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/)」をご覧ください。Shared Access Signature の詳細については、「[Shared Access Signature、第 1 部:SAS モデルについて](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)」をご覧ください。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 資格情報はこの認証情報を格納するため、バックアップ操作または復元操作中に使用されます。  
   
 ###  <a name="blockbloborpageblob"></a> ブロック BLOB とページ BLOB へのバックアップ 
  Microsoft Azure BLOB ストレージ サービスに格納できる BLOB には、ブロック BLOB とページ BLOB の 2 種類があります。 SQL Server のバックアップでは、使用されている Transact-SQL 構文に応じていずれかの BLOB タイプを使用できます。資格情報内でストレージ キーが使用されている場合は、ページ BLOB が使用されます。Shared Access Signature が使用されている場合は、ブロック BLOB が使用されます。
@@ -71,7 +71,7 @@ ms.locfileid: "68941124"
 - 複数のブロック BLOB へのバックアップ
 
 ###  <a name="Blob"></a> Microsoft Azure BLOB ストレージ サービス  
- **ストレージ アカウント:** ストレージ アカウントは、すべてのストレージ サービスの開始点となります。 Microsoft Azure BLOB ストレージ サービスにアクセスするには、まず Windows Azure ストレージ アカウントを作成します。 詳細については、「 [ストレージ アカウントの作成](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/)」を参照してください。  
+ **ストレージ アカウント:** ストレージ アカウントは、すべてのストレージ サービスの開始点となります。 Microsoft Azure Blob Storage サービスにアクセスするには、まず Azure ストレージ アカウントを作成します。 詳細については、「 [ストレージ アカウントの作成](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/)」を参照してください。  
   
  **コンテナー:** コンテナーは一連の BLOB をグループ化します。コンテナーには BLOB を無制限に格納できます。 Microsoft Azure BLOB ストレージ サービスに [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] バックアップを書き込むには、少なくともルート コンテナーを作成しておく必要があります。 コンテナーで Shared Access Signature トークンを生成し、特定のコンテナーでのみオブジェクトへのアクセス権を付与できます。  
   
@@ -211,7 +211,7 @@ SQL Server 資格情報を使用して SQL Server Management Studio のバック
 > [!NOTE]  
 >  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ファイル スナップショット バックアップを作成するには、または既存のメディア セットを上書きするには、SQL Server Management Studio のバックアップ タスクではなく、Transact-SQL、PowerShell、または C# を使用する必要があります。  
   
- 次の手順では、Microsoft Azure Storage へのバックアップを可能にするために SQL Server Management Studio でデータベースのバックアップ タスクに対して行う変更について説明します。  
+ 次の手順では、Azure Storage へのバックアップを可能にするために SQL Server Management Studio でデータベースのバックアップ タスクに対して行う変更について説明します。  
   
 1.  **オブジェクト エクスプローラー**で、SQL Server データベース エンジンのインスタンスに接続し、そのインスタンスを展開します。
 
@@ -242,7 +242,7 @@ SQL Server 資格情報を使用して SQL Server Management Studio のバック
  [資格情報の作成- Azure ストレージに対する認証](../../relational-databases/backup-restore/create-credential-authenticate-to-azure-storage.md)  
   
 ##  <a name="MaintenanceWiz"></a> メンテナンス プラン ウィザードを使用した SQL Server Backup to URL  
- 前述のバックアップ タスクと同様に、SQL Server Management Studio のメンテナンス プラン ウィザードでも、バックアップ先として **URL** も選択できるようになりました。また、SQL 資格情報など、Microsoft Azure Storage へのバックアップに必要な他のサポート オブジェクトも追加されました。 詳細については、「 **メンテナンス プラン ウィザードの使用** 」の「 [バックアップ タスクを定義する](../../relational-databases/maintenance-plans/use-the-maintenance-plan-wizard.md#SSMSProcedure)」を参照してください。  
+ 前述のバックアップ タスクと同様に、SQL Server Management Studio のメンテナンス プラン ウィザードでも、バックアップ先として **URL** も選択できるようになりました。また、SQL 資格情報など、Azure Storage へのバックアップに必要な他のサポート オブジェクトも追加されました。 詳細については、「 **メンテナンス プラン ウィザードの使用** 」の「 [バックアップ タスクを定義する](../../relational-databases/maintenance-plans/use-the-maintenance-plan-wizard.md#SSMSProcedure)」を参照してください。  
   
 > [!NOTE]  
 >  Shared Access トークンを使用して、ストライプ バックアップ セット、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ファイル スナップショット バックアップ、または SQL 資格情報を作成するには、メンテナンス プラン ウィザードのバックアップ タスクではなく、Transact-SQL、PowerShell、または C# を使用する必要があります。  

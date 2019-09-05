@@ -1,5 +1,5 @@
 ---
-title: MSreplication_subscriptions (Transact-SQL) |Microsoft Docs
+title: MSreplication_subscriptions (TRANSACT-SQL) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/04/2017
 ms.prod: sql
@@ -31,13 +31,13 @@ ms.locfileid: "68079994"
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
-|**パブリッシャー**|**sysname**|パブリッシャーの名前。|  
+|**publisher**|**sysname**|パブリッシャーの名前。|  
 |**publisher_db**|**sysname**|パブリッシャー データベースの名前。|  
-|**パブリケーション**|**sysname**|パブリケーションの名前を指定します。|  
+|**publication**|**sysname**|パブリケーションの名前を指定します。|  
 |**independent_agent**|**bit**|このパブリケーションに対して、スタンドアロンのディストリビューション エージェントがあるかどうかを示します。|  
 |**subscription_type**|**int**|サブスクリプションの種類です。<br /><br /> 0 = プッシュ。<br /><br /> 1 = プル<br /><br /> 2 = 匿名です。|  
 |**distribution_agent**|**sysname**|ディストリビューション エージェントの名前。|  
-|**時刻**|**smalldatetime**|ディストリビューション エージェントによって最後に更新された時刻。|  
+|**Time**|**smalldatetime**|ディストリビューション エージェントによって最後に更新された時刻。|  
 |**description**|**nvarchar (255)**|サブスクリプションの説明。|  
 |**transaction_timestamp**|**varbinary(16)**|内部使用のみ。|  
 |**update_mode**|**tinyint**|更新の種類。|  
@@ -47,8 +47,8 @@ ms.locfileid: "68079994"
 |**immediate_sync**|**bit**|同期ファイルが作成またはスナップショット エージェントを実行するたびに再作成するかどうかを示します。|  
   
 ## <a name="see-also"></a>関連項目  
- [レプリケーション テーブル &#40; です。TRANSACT-SQL と &#41; です。](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
- [レプリケーション ビュー &#40;TRANSACT-SQL&#41;](../../relational-databases/system-views/replication-views-transact-sql.md)   
- [sp_helpsubscription &#40;TRANSACT-SQL&#41;](../../relational-databases/system-stored-procedures/sp-helpsubscription-transact-sql.md)  
+ [レプリケーション テーブル &#40;Transact-SQL&#41;](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
+ [レプリケーション ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-views/replication-views-transact-sql.md)   
+ [sp_helpsubscription &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-helpsubscription-transact-sql.md)  
   
   

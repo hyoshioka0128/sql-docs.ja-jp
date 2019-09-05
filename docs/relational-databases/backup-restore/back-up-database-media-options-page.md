@@ -13,12 +13,12 @@ f1_keywords:
 ms.assetid: eff36228-710c-4ed5-9af5-95859575dc0f
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 4c515da38e0218d1026019b718411a0b56d61c07
-ms.sourcegitcommit: b2464064c0566590e486a3aafae6d67ce2645cef
+ms.openlocfilehash: efbd8b811b9dda44a4cc4609704291b9469edec3
+ms.sourcegitcommit: 5e45cc444cfa0345901ca00ab2262c71ba3fd7c6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67940910"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70155557"
 ---
 # <a name="back-up-database-media-options-page"></a>[データベースのバックアップ]\([メディア オプション] ページ)
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "67940910"
 ## <a name="options"></a>オプション  
   
 ### <a name="overwrite-media"></a>[メディアに上書きします]  
- **[メディアに上書きします]** パネルのオプションでは、バックアップをメディアに書き込む方法を制御します。 [データベースのバックアップ] ダイアログ ボックスの [全般] ページでバックアップ先として [URL]\(Windows Azure ストレージ) を選択した場合、[メディアに上書きします] セクションのオプションは無効になります。 Transact-SQL の **BACKUP TO URL.WITH FORMAT** ステートメントを使用して、バックアップを上書きすることができます。 詳細については、「 [SQL Server Backup to URL](../../relational-databases/backup-restore/sql-server-backup-to-url.md)」を参照してください。  
+ **[メディアに上書きします]** パネルのオプションでは、バックアップをメディアに書き込む方法を制御します。 [データベースのバックアップ] ダイアログ ボックスの [全般] ページでバックアップ先として [URL] (Azure Storage) を選択した場合、[メディアに上書きします] セクションのオプションは無効になります。 Transact-SQL の **BACKUP TO URL.WITH FORMAT** ステートメントを使用して、バックアップを上書きすることができます。 詳細については、「 [SQL Server Backup to URL](../../relational-databases/backup-restore/sql-server-backup-to-url.md)」を参照してください。  
 
  **[全般]** ページでバックアップ先として **[URL]** を選択した場合、 **[メディアを上書きする]** オプションは無効になります。
   
