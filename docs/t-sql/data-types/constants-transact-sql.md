@@ -199,7 +199,7 @@ $542023.14
 ```
   
 ## <a name="enhanced-collations"></a>拡張照合順序  
-SQL Server は、拡張照合順序をサポートする文字および Unicode 文字列定数をサポートしています。 詳細については、を参照してください #40。 [部単位で印刷する (& a)。TRANSACT-SQL と #41; ](https://msdn.microsoft.com/library/4ba6b7d8-114a-4f4e-bb38-fe5697add4e9)句。
+SQL Server は、拡張照合順序をサポートする文字および Unicode 文字列定数をサポートしています。 詳細については、[COLLATE &#40;Transact-SQL&#41;](https://msdn.microsoft.com/library/4ba6b7d8-114a-4f4e-bb38-fe5697add4e9) を参照してください。
   
 ## <a name="see-also"></a>参照
 [データ型 &#40;Transact-SQL&#41;](../../t-sql/data-types/data-types-transact-sql.md)  
