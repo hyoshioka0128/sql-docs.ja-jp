@@ -1,5 +1,5 @@
 ---
-title: MSdistributor (TRANSACT-SQL) |Microsoft Docs
+title: MSdistributor (Transact-SQL) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/04/2017
 ms.prod: sql
@@ -24,7 +24,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/15/2019
 ms.locfileid: "67907382"
 ---
-# <a name="msdistributor-transact-sql"></a>MSdistributor (TRANSACT-SQL)
+# <a name="msdistributor-transact-sql"></a>MSdistributor (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
   **MSdistributor**テーブルには、ディストリビューターのプロパティが含まれています。 このテーブルに格納されます、 **msdb**データベース。  
@@ -35,7 +35,7 @@ ms.locfileid: "67907382"
 |**value**|**nvarchar(3000)**|プロパティの値|  
   
 ## <a name="see-also"></a>関連項目  
- [レプリケーション テーブル &#40; です。TRANSACT-SQL と &#41; です。](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
+ [レプリケーション テーブル &#40;Transact-SQL&#41;](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
  [レプリケーション ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-views/replication-views-transact-sql.md)  
   
   
