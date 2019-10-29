@@ -1,5 +1,5 @@
 ---
-title: sp_helppublication (Transact-sql) |Microsoft Docs
+title: sp_helppublication (Transact-SQL) |Microsoft Docs
 ms.custom: ''
 ms.date: 10/18/2019
 ms.prod: sql
@@ -22,7 +22,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/21/2019
 ms.locfileid: "72689046"
 ---
-# <a name="sp_helppublication-transact-sql"></a>sp_helppublication (Transact-sql)
+# <a name="sp_helppublication-transact-sql"></a>sp_helppublication (Transact-SQL)
 [!INCLUDE[appliesto-ss-asdbmi-xxxx-xxx-md](../../includes/appliesto-ss-asdbmi-xxxx-xxx-md.md)]
 
   パブリケーションに関する情報を返します。 @No__t_0 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] パブリケーションの場合、このストアドプロシージャはパブリッシャー側でパブリケーションデータベースに対して実行されます。 Oracle パブリケーションの場合、このストアド プロシージャは、任意のデータベース上のディストリビューター側で実行されます。  
@@ -55,10 +55,10 @@ sp_helppublication [ [ @publication = ] 'publication' ]
 |pubid|**int**|パブリケーションの ID。|  
 |NAME|**sysname**|パブリケーションの名前。|  
 |restricted|**int**|[!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]|  
-|ステータス|**tinyint**|パブリケーションの現在の状態です。<br /><br /> **0** = 非アクティブ。<br /><br /> **1** = アクティブ。|  
-|タスク (task)||旧バージョンとの互換性のために用意されています。|  
-|レプリケーションの頻度|**tinyint**|レプリケーション周期の種類。<br /><br /> **0** = トランザクション<br /><br /> **1** = スナップショット|  
-|同期方法|**tinyint**|同期化モード。<br /><br /> **0** = ネイティブ一括コピープログラム (**bcp**ユーティリティ)<br /><br /> **1** = 文字一括コピー<br /><br /> **3** = 同時実行。ネイティブ一括コピー (**bcp**ユーティリティ) が使用されますが、スナップショットの実行中にテーブルがロックされることはありません。<br /><br /> **4** = Concurrent_c。文字一括コピーが使用されますが、スナップショットの実行中にテーブルがロックされないことを意味します。|  
+|status|**tinyint**|パブリケーションの現在の状態です。<br /><br /> **0** = 非アクティブ。<br /><br /> **1** = アクティブ。|  
+|task||旧バージョンとの互換性のために用意されています。|  
+|replication frequency|**tinyint**|レプリケーション周期の種類。<br /><br /> **0** = トランザクション<br /><br /> **1** = スナップショット|  
+|synchronization method|**tinyint**|同期化モード。<br /><br /> **0** = ネイティブ一括コピープログラム (**bcp**ユーティリティ)<br /><br /> **1** = 文字一括コピー<br /><br /> **3** = 同時実行。ネイティブ一括コピー (**bcp**ユーティリティ) が使用されますが、スナップショットの実行中にテーブルがロックされることはありません。<br /><br /> **4** = Concurrent_c。文字一括コピーが使用されますが、スナップショットの実行中にテーブルがロックされないことを意味します。|  
 |description|**nvarchar (255)**|パブリケーションの説明です (省略可)。|  
 |immediate_sync|**bit**|スナップショット エージェントを実行するたびに、同期ファイルを作成または再作成するかどうかを示します。|  
 |enabled_for_internet|**bit**|ファイル転送プロトコル (FTP) やその他のサービスによって、パブリケーション用の同期ファイルをインターネット上で公開するかどうかを示します。|  
@@ -70,7 +70,7 @@ sp_helppublication [ [ @publication = ] 'publication' ]
 |allow_sync_tran|**bit**|パブリケーションで即時更新サブスクリプションが許可されているかどうか。|  
 |autogen_sync_procs|**bit**|サブスクリプションの即時更新をサポートするストアド プロシージャを自動的に生成するかどうかを示します。|  
 |snapshot_jobid|**binary(16)**|スケジュールされたタスク ID。|  
-|保有|**int**|指定されたパブリケーションに対して保存する変更の量 (時間単位)。|  
+|retention|**int**|指定されたパブリケーションに対して保存する変更の量 (時間単位)。|  
 |has subscription|**bit**|パブリケーションにアクティブなサブスクリプションがあるかどうかを示します。 **1**はパブリケーションにアクティブなサブスクリプションがあることを示し、 **0**はパブリケーションにサブスクリプションがないことを示します。|  
 |allow_queued_tran|**bit**|パブリッシャーで適用できるようになるまで、サブスクライバーでの変更のキューを無効にするかどうかを指定します。 **0**の場合、サブスクライバーでの変更はキューに登録されません。|  
 |snapshot_in_defaultfolder|**bit**|スナップショットファイルを既定のフォルダーに格納するかどうかを指定します。 **0**の場合、スナップショットファイルは*alternate_snapshot_folder*で指定された別の場所に格納されています。 **1**の場合、スナップショットファイルは既定のフォルダーにあります。|  
@@ -121,7 +121,7 @@ sp_helppublication [ [ @publication = ] 'publication' ]
  [パブリケーション プロパティの表示および変更](../../relational-databases/replication/publish/view-and-modify-publication-properties.md)   
  [sp_addpublication &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-addpublication-transact-sql.md)   
  [sp_changepublication (Transact-SQL)](../../relational-databases/system-stored-procedures/sp-changepublication-transact-sql.md)   
- [sp_droppublication &#40;transact-sql&#41; ](../../relational-databases/system-stored-procedures/sp-droppublication-transact-sql.md)    
+ [sp_droppublication &#40;Transact-SQL&#41; ](../../relational-databases/system-stored-procedures/sp-droppublication-transact-sql.md)    
  [レプリケーション ストアド プロシージャ &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/replication-stored-procedures-transact-sql.md)  
   
   
