@@ -1,5 +1,5 @@
 ---
-title: セキュリティカタログビュー (Transact-sql) |Microsoft Docs
+title: Security Catalog Views (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 02/27/2017
 ms.prod: sql
@@ -24,7 +24,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 08/28/2019
 ms.locfileid: "70123064"
 ---
-# <a name="security-catalog-views-transact-sql"></a>セキュリティ カタログ ビュー (Transact-SQL)
+# <a name="security-catalog-views-transact-sql"></a>Security Catalog Views (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
   セキュリティ情報は、パフォーマンスとユーティリティ用に最適化されたカタログビューで公開されます。 可能な場合は、次のカタログ ビューを使用して、カタログ メタデータにアクセスできます。  
