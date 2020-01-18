@@ -15,7 +15,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 08/09/2019
 ms.locfileid: "68887728"
 ---
-# <a name="ltsource-data-querygt---openquery"></a>&lt;ソースデータクエリ&gt; -OPENQUERY
+# <a name="ltsource-data-querygt---openquery"></a>&lt;source data query&gt; -OPENQUERY
 [!INCLUDE[ssas-appliesto-sqlas](../includes/ssas-appliesto-sqlas.md)]
 
   ソース データ クエリを既存のデータ ソースへのクエリで置き換えます。 INSERT、SELECT FROM 予測結合、および SELECT FROM ナチュラル予測結合ステートメントでは、 **OPENQUERY**がサポートされています。  
