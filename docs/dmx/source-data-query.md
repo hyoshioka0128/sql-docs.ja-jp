@@ -1,5 +1,5 @@
 ---
-title: '&lt;ソースデータクエリ&gt; |Microsoft Docs'
+title: '&lt;source data query&gt; |Microsoft Docs'
 ms.date: 06/07/2018
 ms.prod: sql
 ms.technology: analysis-services
@@ -15,7 +15,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 08/09/2019
 ms.locfileid: "68892341"
 ---
-# <a name="ltsource-data-querygt"></a>&lt;ソースデータクエリ&gt;
+# <a name="ltsource-data-querygt"></a>&lt;source data query&gt;
 [!INCLUDE[ssas-appliesto-sqlas](../includes/ssas-appliesto-sqlas.md)]
 
   データマイニングモデルをトレーニングし、マイニングモデルから予測を作成するには、データベースの[!INCLUDE[msCoName](../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)]外部にあるデータにアクセスする必要があります。 この外部データ\<を定義するには、データマイニング拡張機能 (DMX) でソースデータクエリ > 句を使用します。 [ &#40;Dmx&#41;への挿入](../dmx/insert-into-dmx.md)、[モデル&#60;&#62;予測からの選択&#40;、&#41;dmx](../dmx/select-from-model-prediction-join-dmx.md)の選択、および[[自然予測 join ステートメントからの選択]](../dmx/select-from-model-prediction-join-dmx.md)では、すべて **\<ソースデータクエリが使用され >** .  
