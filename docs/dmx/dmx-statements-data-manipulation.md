@@ -22,10 +22,10 @@ ms.locfileid: "72890498"
   
 |トピック|[説明]|  
 |-----------|-----------------|  
-|[削除&#40;DMX&#41;](../dmx/delete-dmx.md)|マイニング モデルからトレーニング済みのコンテンツを消去します。|  
-|[挿入&#40;DMX&#41;](../dmx/insert-into-dmx.md)|マイニング モデルを学習します。|  
+|[DELETE&#40;DMX&#41;](../dmx/delete-dmx.md)|マイニング モデルからトレーニング済みのコンテンツを消去します。|  
+|[INSERT&#40;DMX&#41;](../dmx/insert-into-dmx.md)|マイニング モデルを学習します。|  
 |[SELECT&#40;DMX&#41;](../dmx/select-dmx.md)|マイニング モデルを参照します。|  
-|[&#60;ソースデータクエリ&#62;](../dmx/source-data-query.md)|両方のデータ ソースにクエリ**INSERT INTO**と**SELECT**ステートメント。|  
+|[&#60;source data query&#62;](../dmx/source-data-query.md)|両方のデータ ソースにクエリ**INSERT INTO**と**SELECT**ステートメント。|  
 |[UPDATE &#40;DMX&#41;](../dmx/update-dmx.md)|マイニング モデルの内容を変更します。|  
   
 ## <a name="see-also"></a>参照  
