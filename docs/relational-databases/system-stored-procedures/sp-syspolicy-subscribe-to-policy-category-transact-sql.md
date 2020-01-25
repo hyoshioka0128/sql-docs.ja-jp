@@ -1,5 +1,5 @@
 ---
-title: sp_syspolicy_subscribe_to_policy_category は (TRANSACT-SQL) |Microsoft Docs
+title: sp_syspolicy_subscribe_to_policy_category (TRANSACT-SQL) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
@@ -24,7 +24,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/15/2019
 ms.locfileid: "68035407"
 ---
-# <a name="spsyspolicysubscribetopolicycategory-transact-sql"></a>sp_syspolicy_subscribe_to_policy_category は (TRANSACT-SQL)
+# <a name="spsyspolicysubscribetopolicycategory-transact-sql"></a>sp_syspolicy_subscribe_to_policy_category (TRANSACT-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-xxxx-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-xxxx-xxxx-xxx-md.md)]
 
   指定したデータベースのポリシー カテゴリ サブスクリプションを追加します。  
