@@ -94,7 +94,7 @@ BOOL SQLGetTranslator(
   
  ![[トランスレーターの選択] ダイアログ ボックス](../../../odbc/reference/syntax/media/ch23j.gif "CH23J")  
   
- *Lpszname*に有効な変換者名が含まれている場合は、それが選択されます。 それ以外\<の場合は、[トランスレーター> が選択されていません。  
+ *Lpszname*に有効な変換名が含まれている場合は、それが選択されます。 それ以外\<の場合は、[トランスレーター> が選択されていません。  
   
  ユーザーがトランスレーター> \<を選択しなかった場合、 *lpszname*、 *Lpszname*、および*pvoption*の内容には影響しません。 **Sqlgettranslator**は*pcbnameout*と*pcbnameout*を0に設定し、TRUE を返します。  
   
