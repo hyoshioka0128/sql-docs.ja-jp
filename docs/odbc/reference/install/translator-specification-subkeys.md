@@ -27,8 +27,8 @@ ODBC トランスレーターのサブキーに記載されている各トラン
   
 |名前|データの種類|データ|  
 |----------|---------------|----------|  
-|[変換者]|REG_SZ|*translator-DLL-パス*|  
-|セットアップ|REG_SZ|*setup.exe-path*|  
+|Translator|REG_SZ|*translator-DLL-path*|  
+|Setup|REG_SZ|*setup.exe-path*|  
 |UsageCount|REG_DWORD|*count*|  
   
  使用量の詳細については、このセクションで前述した[使用量のカウント](../../../odbc/reference/install/usage-counting.md)に関するセクションを参照してください。  
