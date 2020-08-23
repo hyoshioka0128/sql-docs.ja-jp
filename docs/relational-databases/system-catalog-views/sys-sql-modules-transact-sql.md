@@ -38,7 +38,7 @@ ms.locfileid: "88447797"
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
 |**object_id**|**int**|このオブジェクトが属するオブジェクトの ID です。 データベース内で一意です。|  
-|**カスタム**|**nvarchar(max)**|このモジュールを定義する SQL テキスト。 この値は [OBJECT_DEFINITION](../../t-sql/functions/object-definition-transact-sql.md) 組み込み関数を使用して取得することもできます。<br /><br /> NULL = 暗号化されています。|  
+|**definition**|**nvarchar(max)**|このモジュールを定義する SQL テキスト。 この値は [OBJECT_DEFINITION](../../t-sql/functions/object-definition-transact-sql.md) 組み込み関数を使用して取得することもできます。<br /><br /> NULL = 暗号化されています。|  
 |**uses_ansi_nulls**|**bit**|モジュールは、SET ANSI_NULLS ON で作成されました。<br /><br /> ルールと既定値の場合、は常に0になります。|  
 |**uses_quoted_identifier**|**bit**|モジュールは QUOTED_IDENTIFIER ON に設定して作成されました。|  
 |**is_schema_bound**|**bit**|モジュールは SCHEMABINDING オプションを使用して作成されました。<br /><br /> ネイティブコンパイルストアドプロシージャの場合は、常に値1が格納されます。|  
@@ -54,7 +54,7 @@ ms.locfileid: "88447797"
 ## <a name="remarks"></a>解説  
  既定の制約の SQL 式、D 型のオブジェクトは、 [default_constraints](../../relational-databases/system-catalog-views/sys-default-constraints-transact-sql.md) カタログビューにあります。 CHECK 制約の SQL 式、C 型のオブジェクトは、 [check_constraints](../../relational-databases/system-catalog-views/sys-check-constraints-transact-sql.md) カタログビューにあります。  
   
- この情報については、「 [sys. dm_db_uncontained_entities &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-uncontained-entities-transact-sql.md)」を参照してください。  
+ この情報については、「 [sys. dm_db_uncontained_entities &#40;transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-uncontained-entities-transact-sql.md)」を参照してください。  
   
 ## <a name="permissions"></a>アクセス許可  
  [!INCLUDE[ssCatViewPerm](../../includes/sscatviewperm-md.md)] 詳細については、「 [Metadata Visibility Configuration](../../relational-databases/security/metadata-visibility-configuration.md)」を参照してください。  
