@@ -38,7 +38,7 @@ ms.locfileid: "85889824"
 |**changecount**|**int**|パーティションが変更された回数。|  
   
 ## <a name="see-also"></a>関連項目  
- [レプリケーションテーブル &#40;Transact-sql&#41;](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
+ [レプリケーションテーブル &#40;Transact-&#41;](../../relational-databases/system-tables/replication-tables-transact-sql.md)   
  [レプリケーション ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-views/replication-views-transact-sql.md)  
   
   
