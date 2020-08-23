@@ -1,6 +1,6 @@
 ---
 description: sp_adddistpublisher (Transact-SQL)
-title: sp_adddistpublisher (Transact-sql) |Microsoft Docs
+title: sp_adddistpublisher (Transact-SQL) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/09/2020
 ms.prod: sql
@@ -26,7 +26,7 @@ ms.locfileid: "88447434"
 # <a name="sp_adddistpublisher-transact-sql"></a>sp_adddistpublisher (Transact-SQL)
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
 
-  指定されたディストリビューション データベースを使用するように、パブリッシャーを構成します。 このストアドプロシージャは、ディストリビューター側で任意のデータベースに対して実行されます。 このストアドプロシージャを使用する前に、transact-sql [&#41;&#40;](../../relational-databases/system-stored-procedures/sp-adddistributor-transact-sql.md) ストアドプロシージャを sp_adddistributor し、 [transact-sql &#40;を sp_adddistributiondb ](../../relational-databases/system-stored-procedures/sp-adddistributiondb-transact-sql.md) する必要があることに注意してください。  
+  指定されたディストリビューション データベースを使用するように、パブリッシャーを構成します。 このストアドプロシージャは、ディストリビューター側で任意のデータベースに対して実行されます。 このストアドプロシージャを使用する前に、ストアドプロシージャ [sp_adddistributor &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-adddistributor-transact-sql.md) および [sp_adddistributiondb &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-adddistributiondb-transact-sql.md) を実行しておく必要があります。  
   
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -112,10 +112,10 @@ sp_adddistpublisher [ @publisher= ] 'publisher'
   
 ## <a name="see-also"></a>参照  
  [パブリッシングとディストリビューションの構成](../../relational-databases/replication/configure-publishing-and-distribution.md)   
- [sp_changedistpublisher &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-changedistpublisher-transact-sql.md)   
- [sp_dropdistpublisher &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-dropdistpublisher-transact-sql.md)   
+ [sp_changedistpublisher &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-changedistpublisher-transact-sql.md)   
+ [sp_dropdistpublisher &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-dropdistpublisher-transact-sql.md)   
  [sp_helpdistpublisher &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-helpdistpublisher-transact-sql.md)   
- [システムストアドプロシージャ &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/system-stored-procedures-transact-sql.md)   
+ [システムストアドプロシージャ &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/system-stored-procedures-transact-sql.md)   
  [[ディストリビューションの構成]](../../relational-databases/replication/configure-distribution.md)  
   
   
