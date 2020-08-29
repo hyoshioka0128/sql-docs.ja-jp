@@ -50,7 +50,7 @@ ms.locfileid: "88379088"
 |**is_read_only**|**bit**|1 = データベースは READ_ONLY です。<br /> 0 = データベースは READ_WRITE です。|  
 |**is_auto_close_on**|**bit**|1 = AUTO_CLOSE は ON です。<br /> 0 = AUTO_CLOSE は OFF です。|  
 |**is_auto_shrink_on**|**bit**|1 = AUTO_SHRINK は ON です。<br /> 0 = AUTO_SHRINK は OFF です。|  
-|**状態**|**tinyint**|**Value**<br /> 0 = ONLINE <br /> 1 = 復元中 <br /> 2 = 回復 <sup>1</sup><br /> 3 = RECOVERY_PENDING <sup>1</sup><br /> 4 = 問題あり <br /> 5 = 緊急 <sup>1</sup><br /> 6 = オフライン <sup>1</sup><br /> 7 = コピー <sup>2</sup> <br /> 10 = OFFLINE_SECONDARY <sup>2</sup> <br /><br /> **注:** Always On データベースの場合は、 `database_state` `database_state_desc` [dm_hadr_database_replica_states](../../relational-databases/system-dynamic-management-views/sys-dm-hadr-database-replica-states-transact-sql.md)の列または列に対してクエリを実行します。<br /><br /><sup>1</sup> **に適用さ**れます: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (以降 [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] ) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]<br /><sup>2</sup> **に適用さ**れます。 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)][!INCLUDE[ssGeoDR](../../includes/ssgeodr-md.md)]|  
+|**state**|**tinyint**|**Value**<br /> 0 = ONLINE <br /> 1 = 復元中 <br /> 2 = 回復 <sup>1</sup><br /> 3 = RECOVERY_PENDING <sup>1</sup><br /> 4 = 問題あり <br /> 5 = 緊急 <sup>1</sup><br /> 6 = オフライン <sup>1</sup><br /> 7 = コピー <sup>2</sup> <br /> 10 = OFFLINE_SECONDARY <sup>2</sup> <br /><br /> **注:** Always On データベースの場合は、 `database_state` `database_state_desc` [dm_hadr_database_replica_states](../../relational-databases/system-dynamic-management-views/sys-dm-hadr-database-replica-states-transact-sql.md)の列または列に対してクエリを実行します。<br /><br /><sup>1</sup> **に適用さ**れます: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (以降 [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] ) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]<br /><sup>2</sup> **に適用さ**れます。 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)][!INCLUDE[ssGeoDR](../../includes/ssgeodr-md.md)]|  
 |**state_desc**|**nvarchar(60)**|データベースの状態の説明。 「状態」を参照してください。|  
 |**is_in_standby**|**bit**|データベースは、復元ログに対し、読み取り専用です。|  
 |**is_cleanly_shutdown**|**bit**|1 = データベースはクリーンにシャットダウンされ、起動時に復旧処理は必要ありません。<br /> 0 = データベースはクリーンにシャットダウンされなかったため、起動時に復旧処理が必要です。|  
@@ -179,6 +179,6 @@ FROM sys.databases AS a;
 
 - [ALTER DATABASE &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-transact-sql.md)
 - [sys.database_mirroring_witnesses &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/database-mirroring-witness-catalog-views-sys-database-mirroring-witnesses.md)
-- [database_recovery_status &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-database-recovery-status-transact-sql.md)
+- [database_recovery_status &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-database-recovery-status-transact-sql.md)
 - [データベースとファイルのカタログ ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/databases-and-files-catalog-views-transact-sql.md)
 - [sys.dm_database_copies &#40;Azure SQL Database&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-database-copies-azure-sql-database.md)  
