@@ -1,6 +1,6 @@
 ---
-description: query_store_wait_stats (Transact-sql)
-title: query_store_wait_stats (Transact-sql) |Microsoft Docs
+description: query_store_wait_stats (Transact-SQL)
+title: query_store_wait_stats (Transact-SQL) |Microsoft Docs
 ms.custom: ''
 ms.date: 11/19/2019
 ms.prod: sql
