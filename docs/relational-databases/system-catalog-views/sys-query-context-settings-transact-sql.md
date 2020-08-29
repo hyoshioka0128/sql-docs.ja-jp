@@ -28,7 +28,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 08/17/2020
 ms.locfileid: "88447904"
 ---
-# <a name="sysquery_context_settings-transact-sql"></a>query_context_settings (Transact-sql)
+# <a name="sysquery_context_settings-transact-sql"></a>query_context_settings (Transact-SQL)
 [!INCLUDE [sqlserver2016-asdb-asdbmi-asa](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa.md)]
 
   クエリに関連付けられたコンテキスト設定に影響するセマンティクスに関する情報を格納します。 では、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] クエリのセマンティクスに影響を与える (クエリの正しい結果を定義する) いくつかのコンテキスト設定が使用できます。 異なる設定でコンパイルされた同じクエリテキストでは、(基になるデータに応じて) 異なる結果が生成される場合があります。  
