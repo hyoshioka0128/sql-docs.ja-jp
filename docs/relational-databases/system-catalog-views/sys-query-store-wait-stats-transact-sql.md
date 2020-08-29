@@ -27,7 +27,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 08/17/2020
 ms.locfileid: "88447845"
 ---
-# <a name="sysquery_store_wait_stats-transact-sql"></a>query_store_wait_stats (Transact-sql)
+# <a name="sysquery_store_wait_stats-transact-sql"></a>query_store_wait_stats (Transact-SQL)
 
 [!INCLUDE[sqlserver2017-asdb](../../includes/applies-to-version/sqlserver2017-asdb.md)]
 
