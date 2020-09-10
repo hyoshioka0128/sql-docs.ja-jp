@@ -23,7 +23,7 @@ Azure Data Studio では、統合ターミナルを開くことができ、最�
 ターミナルを開くには:
 
 * **Ctrl + '** キーボード ショートカットとバッククォート文字を使用します。
-* **[表示** | **Integrated Terminal]\(統合端末\)** メニュー コマンドを使用します。
+* **[View** | **Integrated Terminal]\(統合端末\)** メニュー コマンドを使用します。
 * **コマンド パレット** (**Ctrl + Shift + P**) から、 **[View:Toggle Integrated Terminal]\(表示:統合ターミナルの切り替え\)** コマンドを使用します。
 
 ![ターミナル](media/integrated-terminal/terminal-screen.png)
@@ -88,7 +88,8 @@ Windows 上でシェルを正しく構成することは、適切な実行可能
 
 ## <a name="terminal-key-bindings"></a><a id="key-bindings"></a>ターミナル キーのバインド
 
-**[ビュー]:[Toggle Integrated Terminal]\(統合ターミナルの切り替え\)** コマンドは **Ctrl + `** キーにバインドされており、統合ターミナル パネルの表示と非表示をすばやく切り替えます。
+**[View]:[Toggle Integrated Terminal]\(統合ターミナルの切り替え\)** コマンドは **Ctrl + `** キーにバインドされており、統合ターミナル パネルの
+と非表示をすばやく切り替えます。
 
 統合ターミナル内をすばやく移動するためのキーボード ショートカットを次に示します。
 
