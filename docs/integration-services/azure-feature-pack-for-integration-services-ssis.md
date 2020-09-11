@@ -232,4 +232,4 @@ Expand-Archive zulu8.33.0.1-jdk8.0.192-win_x64.zip -DestinationPath C:\
 #### <a name="bugfixes"></a>バグ修正
 
 1. 特定のケースで、"配列と互換性のない型の要素にアクセスしようとしました" というエラー メッセージと共に発生する Data Lake Storage Gen2 の接続障害がテストされます
-1. Azure Storage エミュレーターのサポートが再開されます
+1. Azure Storage Emulator のサポートが再開されます
