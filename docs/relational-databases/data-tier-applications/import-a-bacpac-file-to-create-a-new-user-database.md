@@ -120,7 +120,7 @@ ms.locfileid: "88412438"
   
  続行するには、 **[次へ]** をクリックします。  
   
- **Azure SQL データベースの場合**  
+ **Azure SQL Database の場合**  
   
  - 「 **[BACPAC ファイルをインポートして新しい Azure SQL Database を作成する](https://azure.microsoft.com/documentation/articles/sql-database-import/)** 」を参照してください。Azure portal、PowerShell、SSMS、または SqlPackage を使用する場合の詳しい手順が記載されています。  
  - 「 **[SQL Database のオプションとパフォーマンス: 各サービス階層で使用できる内容について理解する](https://azure.microsoft.com/documentation/articles/sql-database-service-tiers/)** 」を参照してください。さまざまなサービス階層について、詳しく説明されています。  
