@@ -1,5 +1,5 @@
 ---
-title: Azure SQL データベースに対する接続およびクエリ
+title: Azure SQL Database に対する接続およびクエリ
 description: クイックスタートで Azure Data Studio を使用して Azure SQL Database サーバーに接続し、データベースを作成してクエリを実行します。
 ms.prod: azure-data-studio
 ms.technology: azure-data-studio
@@ -154,4 +154,4 @@ Azure Data Studio を使用して、Azure SQL Database サーバーへの接続�
 
 ## <a name="next-steps"></a>次のステップ
 
-Azure SQL データベースに正常に接続してクエリを実行したので、[コード エディターのチュートリアル](tutorial-sql-editor.md)をお試しください。
+Azure SQL Database に正常に接続してクエリを実行したので、[コード エディターのチュートリアル](tutorial-sql-editor.md)をお試しください。
