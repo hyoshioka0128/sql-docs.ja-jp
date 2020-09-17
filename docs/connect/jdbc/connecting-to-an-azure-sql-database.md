@@ -1,6 +1,6 @@
 ---
 title: Azure SQL Database への接続
-description: この記事では、Microsoft JDBC Driver for SQL Server を使用して Azure SQL データベースに接続する際の問題について説明します。
+description: この記事では、Microsoft JDBC Driver for SQL Server を使用して Azure SQL Database に接続する際の問題について説明します。
 ms.custom: ''
 ms.date: 08/12/2019
 ms.prod: sql
