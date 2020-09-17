@@ -53,7 +53,7 @@ landingContent:
   linkLists:
   - linkListType: overview
     links:
-    - text: Azure SQL データベース
+    - text: Azure SQL Database
       url: /azure/sql-database/sql-database-technical-overview
     - text: Azure SQL Server 仮想マシン
       url: /azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-iaas-overview
