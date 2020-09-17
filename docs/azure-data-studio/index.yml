@@ -35,9 +35,9 @@ landingContent:
     links:
     - text: SQL Server に対する接続およびクエリ
       url: quickstart-sql-server.md
-    - text: Azure SQL データベースに対する接続およびクエリ
+    - text: Azure SQL Database に対する接続およびクエリ
       url: quickstart-sql-database.md
-    - text: Azure SQL データ ウェアハウスのデータに対する接続およびクエリ
+    - text: Azure SQL Data Warehouse のデータに対する接続およびクエリ
       url: quickstart-sql-dw.md
     - text: PostgreSQL のデータに対する接続およびクエリ
       url: quickstart-postgres.md
