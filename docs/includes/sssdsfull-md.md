@@ -1,1 +1,1 @@
- Azure SQL データベース 
+ Azure SQL Database 
