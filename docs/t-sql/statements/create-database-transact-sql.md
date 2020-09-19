@@ -189,7 +189,7 @@ CONTAINMENT = { NONE | PARTIAL }
 
 ON: データベースのデータ部分の格納に使用するディスク ファイル (データ ファイル) を明示的に定義するように指定します。 プライマリ ファイル グループのデータ ファイルを定義する \<filespec> 項目のコンマ区切りリストが続く場合は、ON にします。 プライマリ ファイル グループ内のファイルのリストに続き、ユーザー ファイル グループおよびそれらのファイルを定義する省略可能な \<filegroup> 項目のコンマ区切りリストを記述できます。
 
-PRIMARY: 関連付けられた \<filespec> リストによってプライマリ ファイルを定義するように指定します。 プライマリ ファイル グループ内の \<filespec> エントリに最初に指定されたファイルが、プライマリ ファイルとなります。 データベースはプライマリ ファイルを 1 つだけ保有することができます。 詳細については、「 [Database Files and Filegroups](../../relational-databases/databases/database-files-and-filegroups.md)」を参照してください。
+PRIMARY: 関連付けられた \<filespec> リストによってプライマリ ファイルを定義するように指定します。 プライマリ ファイル グループ内の \<filespec> エントリに最初に指定されたファイルが、プライマリ ファイルとなります。 データベースはプライマリ ファイルを 1 つだけ保有することができます。 詳細については、「[Database Files and Filegroups](../../relational-databases/databases/database-files-and-filegroups.md)」を参照してください。
 
 PRIMARY を指定しないと、CREATE DATABASE ステートメント内に記述された最初のファイルがプライマリ ファイルになります。
 
@@ -414,7 +414,7 @@ CONTAINS MEMORY_OPTIMIZED_DATA
 
 **適用対象**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降
 
-ファイル グループで memory_optimized データをファイル システムに格納することを指定します。 詳細については、「 [インメモリ OLTP - インメモリ最適化](../../relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization.md)」を参照してください。 MEMORY_OPTIMIZED_DATA ファイル グループは、1 つのデータベースにつき 1 つしか許可されません。 メモリ最適化データを格納するファイルグループを作成するコード サンプルについては、「[メモリ最適化テーブルおよびネイティブ コンパイル ストアド プロシージャの作成](../../relational-databases/in-memory-oltp/creating-a-memory-optimized-table-and-a-natively-compiled-stored-procedure.md)」を参照してください。
+ファイル グループで memory_optimized データをファイル システムに格納することを指定します。 詳細については、「[インメモリ OLTP - インメモリ最適化](../../relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization.md)」を参照してください。 MEMORY_OPTIMIZED_DATA ファイル グループは、1 つのデータベースにつき 1 つしか許可されません。 メモリ最適化データを格納するファイルグループを作成するコード サンプルについては、「[メモリ最適化テーブルおよびネイティブ コンパイル ストアド プロシージャの作成](../../relational-databases/in-memory-oltp/creating-a-memory-optimized-table-and-a-natively-compiled-stored-procedure.md)」を参照してください。
 
 DEFAULT: 指定されたファイル グループが、データベースの既定のファイル グループであることを指定します。
 
@@ -1123,7 +1123,7 @@ SERVICE_OBJECTIVE
 
   - コンピューティング サイズ (サービス目標) を指定します。 サービスの目標に使用できる値は、`HS_GEN4_1`、`HS_GEN4_2`、`HS_GEN4_4`、`HS_GEN4_8`、`HS_GEN4_16`、`HS_GEN4_24`、`HS_Gen5_2`、`HS_Gen5_4`、`HS_Gen5_8`、`HS_Gen5_16`、`HS_Gen5_24`、`HS_Gen5_32`、`HS_Gen5_48`、`HS_Gen5_80` です。
 
-サービス目標に関する説明およびサイズ、エディション、サービス目標の組み合わせの詳細については、「[Azure SQL データベースのサービス階層](https://docs.microsoft.com/azure/sql-database/sql-database-service-tiers)」をご覧ください。 指定した SERVICE_OBJECTIVE が EDITION によってサポートされていない場合は、エラーが返されます。 SERVICE_OBJECTIVE の値をある階層から別の階層に変更する場合 (たとえば、S1 から P1) は、EDITION の値も変更する必要があります。 サービス目標に関する説明およびサイズ、エディション、サービス目標の組み合わせの詳細については、[Azure SQL Database サービス レベルとパフォーマンス レベル](https://azure.microsoft.com/documentation/articles/sql-database-service-tiers/)、[DTU リソースの制限](https://docs.microsoft.com/azure/sql-database/sql-database-dtu-resource-limits)、[仮想コア リソースの制限](https://docs.microsoft.com/azure/sql-database/sql-database-dtu-resource-limits)に関する記事を参照してください。 PRS サービスの目標のサポートはなくなりました。 質問については、電子メール エイリアス premium-rs@microsoft.com を使用してください。
+サービス目標に関する説明およびサイズ、エディション、サービス目標の組み合わせの詳細については、「[Azure SQL Database のサービス階層](https://docs.microsoft.com/azure/sql-database/sql-database-service-tiers)」をご覧ください。 指定した SERVICE_OBJECTIVE が EDITION によってサポートされていない場合は、エラーが返されます。 SERVICE_OBJECTIVE の値をある階層から別の階層に変更する場合 (たとえば、S1 から P1) は、EDITION の値も変更する必要があります。 サービス目標に関する説明およびサイズ、エディション、サービス目標の組み合わせの詳細については、[Azure SQL Database サービス レベルとパフォーマンス レベル](https://azure.microsoft.com/documentation/articles/sql-database-service-tiers/)、[DTU リソースの制限](https://docs.microsoft.com/azure/sql-database/sql-database-dtu-resource-limits)、[仮想コア リソースの制限](https://docs.microsoft.com/azure/sql-database/sql-database-dtu-resource-limits)に関する記事を参照してください。 PRS サービスの目標のサポートはなくなりました。 質問については、電子メール エイリアス premium-rs@microsoft.com を使用してください。
 
 ELASTIC_POOL (name = \<elastic_pool_name>) **適用対象:** 単一のデータベースおよびプールされたデータベースのみ。 ハイパースケール サービス層のデータベースには適用されません。
 弾力性のあるデータベース プールで新しいデータベースを作成するには、データベースの SERVICE_OBJECTIVE を ELASTIC_POOL に設定し、プールの名前を指定します。 詳しくは、[SQL Database エラスティック プールの作成と管理](https://azure.microsoft.com/documentation/articles/sql-database-elastic-pool-portal/)に関するページをご覧ください。
