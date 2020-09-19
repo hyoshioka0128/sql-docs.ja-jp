@@ -1,6 +1,6 @@
 ---
 title: SQL ツールの概要
-description: SQL Server、Azure SQL (Azure SQL データベース、Azure SQL マネージド インスタンス、SQL 仮想マシン)、および Azure SQL データ ウェアハウス用の SQL クエリおよび管理ツール。
+description: SQL Server、Azure SQL (Azure SQL Database、Azure SQL Managed Instance、SQL 仮想マシン)、および Azure SQL データ ウェアハウス用の SQL クエリおよび管理ツール。
 ms.prod: sql
 ms.prod_service: sql-tools
 ms.technology: tools-other
@@ -38,7 +38,7 @@ ms.locfileid: "86009605"
 |:--|:--|:--|
 | [ **![ADS の画像](../tools/media/overview-sql-tools/azure-data-studio.svg)</br></br>Azure Data Studio**](../azure-data-studio/download.md) | 必要に応じて SQL クエリを実行し、テキスト、JSON、または Excel 形式で結果を表示および保存できる軽量のエディターです。 使い慣れたオブジェクト ブラウズ エクスペリエンスで、データの編集、お気に入りのデータベース接続の整理、データベース オブジェクトの参照を行います。 | **Windows</br>macOS</br>Linux** |
 | [ **![SSMS の画像](../tools/media/overview-sql-tools/ssms.svg)</br></br>SQL Server Management Studio (SSMS)** ](../ssms/download-sql-server-management-studio-ssms.md) | GUI を完全にサポートし、SQL Server インスタンスまたはデータベースを管理します。 SQL Server、Azure SQL Database、および SQL Data Warehouse のすべてコンポーネントのアクセス、構成、管理、運営、および開発を行います。 さまざまなグラフィック ツールと、機能の豊富な多くのスクリプト エディターを結合して、あらゆるスキル レベルの開発者やデータベース管理者が SQL にアクセスできる包括的なユーティリティが 1 つ用意されています。 | **Windows** |
-| [ **![SSDT の画像](../tools/media/overview-sql-tools/ssdt.svg)</br>SQL Server Data Tools (SSDT)** ](../ssdt/download-sql-server-data-tools-ssdt.md) | SQL Server リレーショナル データベース、Azure SQL データベース、Analysis Services (AS) データ モデル、Integration Services (IS) パッケージ、Reporting Services (RS) レポートをビルドするための、最新の開発ツールです。 SSDT を使うと、 **[Visual Studio](https://visualstudio.microsoft.com/downloads/)** でアプリケーションを開発する場合と同じくらい簡単に、任意の SQL Server コンテンツ タイプを設計および展開できます。 | **Windows** |
+| [ **![SSDT の画像](../tools/media/overview-sql-tools/ssdt.svg)</br>SQL Server Data Tools (SSDT)** ](../ssdt/download-sql-server-data-tools-ssdt.md) | SQL Server リレーショナル データベース、Azure SQL Database、Analysis Services (AS) データ モデル、Integration Services (IS) パッケージ、Reporting Services (RS) レポートをビルドするための、最新の開発ツールです。 SSDT を使うと、 **[Visual Studio](https://visualstudio.microsoft.com/downloads/)** でアプリケーションを開発する場合と同じくらい簡単に、任意の SQL Server コンテンツ タイプを設計および展開できます。 | **Windows** |
 | [ **![VS Code の画像](../tools/media/overview-sql-tools/visual-studio-code.svg)</br></br>Visual Studio Code**](https://code.visualstudio.com/) | Visual Studio Code 用の **[mssql 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql)** は、SQL Server への接続と、Visual Studio Code での T-SQL の豊富な編集エクスペリエンスをサポートする公式の SQL Server 拡張機能です。 軽量エディターで T-SQL スクリプトを作成できます。 | **Windows</br>macOS</br>Linux** |
 
 ## <a name="command-line-tools"></a>コマンドライン ツール
