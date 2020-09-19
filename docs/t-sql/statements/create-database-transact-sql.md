@@ -399,7 +399,7 @@ FILEGROWTH が指定されていない場合、既定値は次のとおりです
 |-------------|--------------------|
 |[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降|データ 64 MB。 ログ ファイル 64 MB。|
 |[!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 以降|データ 1 MB。 ログ ファイル 10%。|
-|[!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] の前|データ 10%。 ログ ファイル 10%。|
+|[!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 以前|データ 10%。 ログ ファイル 10%。|
 
 \<filegroup>: ファイル グループ プロパティを制御します。 ファイル グループは、データベース スナップショットでは指定できません。
 
