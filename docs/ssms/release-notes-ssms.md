@@ -544,7 +544,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 |Azure Data Studio との統合|OE でデータベース ノードを右クリックすると、Azure Data Studio でクエリを実行するか新しいノートブックを作成するためのコンテキスト メニューがユーザーに表示されます。|
 |Azure SQL サポート| SLO/Edition/MaxSize データベース プロパティにカスタム名を使用できるようになり、Azure SQL データベースの今後のエディションのサポートが簡単になりました。|
 |Azure SQL サポート| 最近追加された仮想コア SKU (General Purpose および Business Critical) のサポートの追加:Gen4_24 およびすべての Gen5|
-|Azure SQL マネージド インスタンス|SMO と SSMS で、Azure SQL マネージド インスタンスに接続した場合の新しいログインの種類として、新しい "AAD ログイン" が追加されました。|
+|Azure SQL Managed Instance|SMO と SSMS で、Azure SQL Managed Instance に接続した場合の新しいログインの種類として、新しい "AAD ログイン" が追加されました。|
 |常時接続|SSMS の Always on ダッシュボードで RTO (推定復旧時間) と RPO (推定データ損失) を再ハッシュします。 [https://docs.microsoft.com/sql/database-engine/availability-groups/windows/monitor-performance-for-always-on-availability-groups](../database-engine/availability-groups/windows/monitor-performance-for-always-on-availability-groups.md) の更新されたドキュメントを参照してください。|
 |Always Encrypted| [サーバーに接続] ダイアログの新しい [Always Encrypted] タブにある [Always Encrypted を有効にする] チェックボックスで、データベース接続での Always Encrypted の有効化/無効化を簡単に切り替えられるようになりました。|
 |セキュア エンクレーブを使用する Always Encrypted| SQL Server 2019 では、セキュリティで保護されたエンクレーブが設定された Always Encrypted をサポートするためにいくつかの機能強化が加えられました。[サーバーに接続] ダイアログ (新しい [Always Encrypted] タブ) にエンクレーブの構成証明の URL を指定するテキスト フィールド。  [新しい列マスター キー] ダイアログに、新しい列マスターキーでエンクレーブ計算を許可するかどうかを制御する新しいチェックボックスが追加されました。  他の Always Encrypted キー管理ダイアログに、エンクレーブ計算を許可する列マスター キーの情報が表示されるようになりました。|
@@ -557,7 +557,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 |データ層アプリケーションのウィザード|グラフ テーブルを使用したデータ層アプリケーションのインポート/エクスポートのサポートが追加されました。|
 |フラット ファイルのインポート ウィザード|インポートで列の名前が変更された可能性があることをユーザーに通知するロジックが追加されました。|
 |Integration Services (SSIS)|顧客が Azure Government クラウド内にある Azure-SSIS IR で SSIS パッケージをスケジュールできるようにするためのサポートが追加されました。|
-|Integration Services (SSIS)|Azure SQL マネージド インスタンスの SQL エージェントを SSMS を介して使用するときに、SSIS エージェント ジョブ ステップでパラメーターと接続マネージャーを構成できます。|
+|Integration Services (SSIS)|Azure SQL Managed Instance の SQL エージェントを SSMS を介して使用するときに、SSIS エージェント ジョブ ステップでパラメーターと接続マネージャーを構成できます。|
 |Integration Services (SSIS)|Azure SQL DB/マネージド インスタンスに接続するときに、*既定*を初期データベースとして使用して接続できます。|
 |Integration Services (SSIS)|[Integration Services カタログ] の下に新しい項目 **[Try SSIS in Azure Data Factory]\(Azure Data Factory で SSIS を試す\)** が追加されました。これは、統合ランタイムの作成ウィザードを起動して Azure-SSIS Integration Runtime をすばやく作成するのに使用できます。
 |Integration Services (SSIS)|カタログ作成ウィザードに **[Create SSIS IR]\(SSIS IR の作成\)** ボタンが追加されました。これは、統合ランタイムの作成ウィザードを起動して Azure-SSIS Integration Runtime をすばやく作成するのに使用できます。|
@@ -585,7 +585,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 |SMO|SMO と SSMS の両方に "エッジ制約" の連鎖削除のサポートを追加しました。|
 |SMO|データ分類の "読み書き" のアクセス許可のサポートを追加しました。|
 |脆弱性評価| Azure SQL DW で脆弱性評価タスク メニューが有効化されました。|
-|脆弱性評価|"脆弱性評価" スキャンの結果が Azure SQL DB での結果と一致するように、Azure SQL マネージド インスタンス サーバーで実行される一連の脆弱性評価規則を変更しました。|
+|脆弱性評価|"脆弱性評価" スキャンの結果が Azure SQL DB での結果と一致するように、Azure SQL Managed Instance サーバーで実行される一連の脆弱性評価規則を変更しました。|
 |脆弱性評価| "脆弱性評価" で Azure SQL DW がサポートされるようになりました。|
 |脆弱性評価|脆弱性評価スキャンの結果を Excel にエクスポートする、新しいエクスポート機能が追加されました。|
 |XEvent ビューアー|XEvent ビューアー: より多くの XEvent のプラン表示のウィンドウが有効化されました。|
