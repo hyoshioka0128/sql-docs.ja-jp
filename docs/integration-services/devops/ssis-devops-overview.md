@@ -150,7 +150,7 @@ cat log.txt
 SSIS Deploy タスクでは、現在、次のシナリオはサポートされていません。
 
 - SSIS カタログで環境を構成する。
-- 多要素認証 (MFA) のみが許可される Azure SQL Server または Azure SQL マネージド インスタンスに ispac をデプロイする。
+- 多要素認証 (MFA) のみが許可される Azure SQL Server または Azure SQL Managed Instance に ispac をデプロイする。
 - MSDB または SSIS パッケージ ストアにパッケージをデプロイする。
 
 ## <a name="ssis-catalog-configuration-task"></a>SSIS Catalog Configuration タスク
