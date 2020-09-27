@@ -40,7 +40,7 @@ ms.locfileid: "91024344"
   > [!IMPORTANT]
   > `tempdb` に保存され、データベース レベルまで調べられるグローバル一時テーブルとグローバル一時ストアド プロシージャは、Azure SQL Database 単一データベースおよびエラスティック プールによってサポートされています。 
   >
-  > グローバル一時テーブルとグローバル一時ストアド プロシージャは、同じ SQL データベース内のすべてのユーザーのセッションで共有されます。 他の SQL データベースからのユーザー セッションは、グローバル一時テーブルにアクセスできません。 詳細については、「[Database scoped global temporary tables (Azure SQL Database)](../../t-sql/statements/create-table-transact-sql.md#database-scoped-global-temporary-tables-azure-sql-database)」(データベース スコープ グローバル一時テーブル (Azure SQL Database)) を参照してください。 [Azure SQL Managed Instance](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) では、SQL Server と同じ一時オブジェクトがサポートされます。
+  > グローバル一時テーブルとグローバル一時ストアド プロシージャは、同じ SQL Database 内のすべてのユーザーのセッションで共有されます。 他の SQL Database からのユーザー セッションは、グローバル一時テーブルにアクセスできません。 詳細については、「[Database scoped global temporary tables (Azure SQL Database)](../../t-sql/statements/create-table-transact-sql.md#database-scoped-global-temporary-tables-azure-sql-database)」(データベース スコープ グローバル一時テーブル (Azure SQL Database)) を参照してください。 [Azure SQL Managed Instance](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) では、SQL Server と同じ一時オブジェクトがサポートされます。
   >
   > Azure SQL Database の単一データベースとエラスティック プールでは、master データベースと `tempdb` データベースのみが適用されます。 詳細については、[Azure SQL Database サーバーの概要](https://docs.microsoft.com/azure/sql-database/sql-database-servers-databases#what-is-an-azure-sql-database-server)に関する記事を参照してください。 Azure SQL Database の単一データベースとエラスティック プールのコンテキストでの `tempdb` については、[Azure SQL Database の単一データベースとエラスティック プールでの tempdb データベース](#tempdb-database-in-sql-database)に関する説明を参照してください。 
   >
