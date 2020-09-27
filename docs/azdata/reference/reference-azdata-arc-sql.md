@@ -26,7 +26,7 @@ ms.locfileid: "90942814"
 
 |command|説明|
 | --- | --- |
-[azdata arc sql mi](reference-azdata-arc-sql-mi.md) | SQL マネージド インスタンスを作成、削除、および管理します。
+[azdata arc sql mi](reference-azdata-arc-sql-mi.md) | SQL Managed Instance を作成、削除、および管理します。
 
 ## <a name="next-steps"></a>次のステップ
 
