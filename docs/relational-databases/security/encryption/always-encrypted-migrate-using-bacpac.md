@@ -34,7 +34,7 @@ BACPAC をデータベースにインポートすると、BACPAC からの暗号
 データベースのエクスポートおよびインポート方法の詳細については、以下をご覧ください。
 - [データ層アプリケーションのエクスポート](../../data-tier-applications/export-a-data-tier-application.md)
 - [BACPAC ファイルのインポートによる新しいユーザー データベースの作成](../../data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database.md)
-- [Azure SQL データベースを BACPAC ファイルにエクスポートする](https://docs.microsoft.com/azure/sql-database/sql-database-export)
+- [Azure SQL Database を BACPAC ファイルにエクスポートする](https://docs.microsoft.com/azure/sql-database/sql-database-export)
 - [BACPAC ファイルを Azure SQL Database のデータベースにインポートする](https://docs.microsoft.com/azure/sql-database/sql-database-import)
 - [SqlPackage.exe](../../../tools/sqlpackage.md)
 
