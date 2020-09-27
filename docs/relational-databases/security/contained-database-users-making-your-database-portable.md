@@ -62,8 +62,8 @@ ms.locfileid: "87988793"
   
 - [Azure SQL Database ファイアウォール](https://msdn.microsoft.com/library/azure/ee621782.aspx)  
 - [方法: ファイアウォール設定を構成する (Azure SQL Database)](https://msdn.microsoft.com/library/azure/jj553530.aspx)  
-- [sp_set_firewall_rule &#40;Azure SQL データベース&#41;](../../relational-databases/system-stored-procedures/sp-set-firewall-rule-azure-sql-database.md)  
-- [sp_set_database_firewall_rule &#40;Azure SQL データベース&#41;](../../relational-databases/system-stored-procedures/sp-set-database-firewall-rule-azure-sql-database.md)  
+- [sp_set_firewall_rule &#40;Azure SQL Database&#41;](../../relational-databases/system-stored-procedures/sp-set-firewall-rule-azure-sql-database.md)  
+- [sp_set_database_firewall_rule &#40;Azure SQL Database&#41;](../../relational-databases/system-stored-procedures/sp-set-database-firewall-rule-azure-sql-database.md)  
   
 ## <a name="syntax-differences"></a>構文上の違い  
   
@@ -115,5 +115,5 @@ WHERE name='test'
  [包含データベース](../../relational-databases/databases/contained-databases.md)   
  [包含データベースでのセキュリティのベスト プラクティス](../../relational-databases/databases/security-best-practices-with-contained-databases.md)   
  [CREATE USER &#40;Transact-SQL&#41;](../../t-sql/statements/create-user-transact-sql.md)   
- [Azure Active Directory の認証を使用して、SQL データベースに接続します。](https://azure.microsoft.com/documentation/articles/sql-database-aad-authentication/)  
+ [Azure Active Directory の認証を使用して、SQL Database に接続します。](https://azure.microsoft.com/documentation/articles/sql-database-aad-authentication/)  
   
