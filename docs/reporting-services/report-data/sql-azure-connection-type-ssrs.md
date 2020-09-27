@@ -154,7 +154,7 @@ WHERE EmployeeID = (@EmpID)
 
 ::: moniker range=">=sql-server-2016||=sqlallproducts-allversions"
 
-## <a name="azure-sql-database-and-aad"></a>Azure SQL データベースと AAD
+## <a name="azure-sql-database-and-aad"></a>Azure SQL Database と AAD
 
 Azure SQL Database は Azure Active Directory (AAD) パススルー認証と共に使用できます。
 
