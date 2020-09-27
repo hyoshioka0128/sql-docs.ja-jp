@@ -283,7 +283,7 @@ WITH (STATE = OFF);
 
 これで、Sales1 と Sales2 のユーザーに 6 つの行すべてが表示されます。
 
-リソースをクリーンアップする SQL データベースに接続します
+リソースをクリーンアップする SQL Database に接続します
 
 ```sql
 DROP USER Sales1;
