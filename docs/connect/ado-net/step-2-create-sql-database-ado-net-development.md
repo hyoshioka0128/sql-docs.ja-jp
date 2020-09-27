@@ -18,7 +18,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/30/2020
 ms.locfileid: "87435413"
 ---
-# <a name="step-2-create-a-sql-database-for-adonet-development"></a>ステップ 2: ADO.NET 開発用の SQL データベースを作成する
+# <a name="step-2-create-a-sql-database-for-adonet-development"></a>ステップ 2: ADO.NET 開発用の SQL Database を作成する
 
 [!INCLUDE[Driver_ADONET_Download](../../includes/driver_adonet_download.md)]
 
