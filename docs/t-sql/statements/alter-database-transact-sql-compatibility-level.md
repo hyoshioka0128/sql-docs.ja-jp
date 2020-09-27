@@ -221,7 +221,7 @@ SELECT name, compatibility_level FROM sys.databases;
 |T-SQL スカラー UDF を参照するクエリでは、反復呼び出しが使用され、コストが不足するため、シリアル実行が強制的に実施されます。 |T-SQL スカラー UDF は同等のリレーショナル式に変換され、この式は呼び出し側クエリに "インライン化" されます。これにより、多くの場合、パフォーマンスが大幅に向上します。 詳細については、「[T-SQL scalar UDF inlining (T-SQL スカラー UDF のインライン化)](../../relational-databases/performance/intelligent-query-processing.md#scalar-udf-inlining)」を参照してください。|
 |テーブル変数では、カーディナリティの推定で固定推定値が使用されます。  実際の行数が推定値よりはるかに大きい場合は、ダウン ストリーム操作のパフォーマンスが低下する場合があります。 |新しいプランでは、固定推定値ではなく、最初のコンパイルで発生したテーブル変数の実際のカーディナリティが使用されます。 詳細については、「[table variable deferred compilation (テーブル変数の遅延コンパイル)](../../relational-databases/performance/intelligent-query-processing.md#table-variable-deferred-compilation)」を参照してください。|
 
-データベース互換レベル 150 で有効なクエリ処理機能の詳細については、「[SQL Server 2019 (15.x) の新機能](../../sql-server/what-s-new-in-sql-server-ver15.md)」と「[SQL データベースでのインテリジェントなクエリ処理](../../relational-databases/performance/intelligent-query-processing.md)」を参照してください。
+データベース互換レベル 150 で有効なクエリ処理機能の詳細については、「[SQL Server 2019 (15.x) の新機能](../../sql-server/what-s-new-in-sql-server-ver15.md)」と「[SQL Database でのインテリジェントなクエリ処理](../../relational-databases/performance/intelligent-query-processing.md)」を参照してください。
 
 ## <a name="differences-between-compatibility-level-130-and-level-140"></a>互換性レベル 130 とレベル 140 の相違点
 
@@ -254,7 +254,7 @@ SQL Server 2017 より前の SQL Server の初期のバージョンのトレー�
 |レベル 120 の場合、統計情報はシングルスレッド プロセスによってサンプリングされます。|レベル 130 の場合、統計情報はマルチスレッド プロセスによってサンプリングされます (並行処理)。 |
 |253 の入力方向の外部キーは制限です。| 指定されたテーブルは、最大 10,000 個の入力方向の外部キーまたは類似の参照方法によって参照することができます。 制限については、「 [Create Foreign Key Relationships](../../relational-databases/tables/create-foreign-key-relationships.md)」を参照してください。 |
 |非推奨の MD2、MD4、MD5、SHA、SHA1 のハッシュ アルゴリズムは許可されます。|SHA2_256 と SHA2_512 のハッシュ アルゴリズムのみが許可されます。|
-||[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] では、一部のデータ型変換と一部の (大抵は一般的ではない) 操作に改良が加えられました。 詳細については、「[いくつかのデータ型と一般的でない操作を処理するときの SQL Server と Azure の SQL データベースの機能強化](https://support.microsoft.com/help/4010261/sql-server-2016-improvements-in-handling-some-data-types-and-uncommon)」をご覧ください。|
+||[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] では、一部のデータ型変換と一部の (大抵は一般的ではない) 操作に改良が加えられました。 詳細については、「[いくつかのデータ型と一般的でない操作を処理するときの SQL Server と Azure SQL Database の機能強化](https://support.microsoft.com/help/4010261/sql-server-2016-improvements-in-handling-some-data-types-and-uncommon)」をご覧ください。|
 |`STRING_SPLIT` 関数は使用できません。|`STRING_SPLIT` 関数は、互換性レベル 130 以上で利用できます。 データベース互換レベルが 130 未満の場合、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で `STRING_SPLIT` 関数を見つけて実行することができません。|
 
 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] より前の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の初期のバージョンのトレース フラグ 4199 での修正プログラムは、既定で有効になりました。 互換モードは 130 です。 トレース フラグ 4199 は、[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] の後にリリースされる、クエリ オプティマイザーの新しい修正プログラムに対しても引き続き適用することができます。 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] で古いクエリ オプティマイザーを使用するには、互換性レベル 110 を選択する必要があります。 トレース フラグ 4199 については、「[トレース フラグ 4199](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md#4199)」を参照してください。
