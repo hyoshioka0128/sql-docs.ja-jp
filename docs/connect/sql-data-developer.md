@@ -29,7 +29,7 @@ Microsoft の SQL データ プラットフォームを使用して、Web サー
 
 ## <a name="sql-data-tools"></a>SQL Data Tools
 * [Azure Data Studio](../azure-data-studio/download-azure-data-studio.md):Windows、macOS、Linux で Azure Data Studio を使用し、SQL Server、Azure SQL Database、PostgreSQL、Jupyter Notebook などを実行します。
-* [SQL Server Data Tools](../ssdt/download-sql-server-data-tools-ssdt.md):Visual Studio 内で SSDT を使用し、リレーショナル データベース、Azure SQL データベース、Integration Services パッケージ、Analysis Services データ モデル、Reporting Services レポートを作成します。
+* [SQL Server Data Tools](../ssdt/download-sql-server-data-tools-ssdt.md):Visual Studio 内で SSDT を使用し、リレーショナル データベース、Azure SQL Database、Integration Services パッケージ、Analysis Services データ モデル、Reporting Services レポートを作成します。
 * [SQL Server 管理ツール](../ssms/download-sql-server-management-studio-ssms.md):Windows で SSMS を使用し、SQL Server のインスタンスを構成、監視、管理します。
 
 ## <a name="sql-data-access"></a>SQL データ アクセス
