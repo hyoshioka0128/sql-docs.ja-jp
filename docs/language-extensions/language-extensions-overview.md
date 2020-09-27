@@ -4,24 +4,27 @@ titleSuffix: ''
 description: 言語拡張は、外部コードの実行に使用される SQL Server の機能です。 SQL Server 2019 では、Java がサポートされています。 リレーショナル データは、機能拡張フレームワークを使用して外部コードで使用できます。
 author: dphansen
 ms.author: davidph
-ms.date: 11/05/2019
+ms.date: 08/19/2020
 ms.topic: overview
 ms.prod: sql
 ms.technology: language-extensions
 monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: f5ef0b9dd1023f662850e6e680507f5bf4041051
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+ms.openlocfilehash: 3877e08c3f8976fc6a5c0aedfca594b8dee165a6
+ms.sourcegitcommit: 331b8495e4ab37266945c81ff5b93d250bdaa6da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86921069"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88645929"
 ---
 # <a name="what-is-sql-server-language-extensions"></a>SQL Server 言語拡張とは?
-[!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2019 and later](../includes/applies-to-version/sqlserver2019.md)]
 
 言語拡張は、外部コードの実行に使用される SQL Server の機能です。 リレーショナル データは、[機能拡張フレームワーク](concepts/extensibility-framework.md)を使用して外部コードで使用できます。
 
 SQL Server 2019 では、Java がサポートされています。 既定の Java ランタイムは Zulu Open JRE です。 別の Java JRE または SDK を使用することもできます。
+
+> [!NOTE]
+> SQL Server での Python または R の実行については、[Machine Learning Services](../machine-learning/sql-server-machine-learning-services.md) のドキュメントを参照してください。
 
 ## <a name="what-you-can-do-with-language-extensions"></a>言語拡張でできること
 

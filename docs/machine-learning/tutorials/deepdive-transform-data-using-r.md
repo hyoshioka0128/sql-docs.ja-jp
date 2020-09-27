@@ -1,6 +1,6 @@
 ---
 title: RevoScaleR を使用してデータを変換する
-description: RevoScaleR チュートリアル 9:SQL Server で R 言語を使用してデータを変換する方法。
+description: 分析のさまざまな段階でデータを変換するための RevoScaleR 関数と、SQL Server で R 言語を使用してデータを変換する方法について説明します。
 ms.prod: sql
 ms.technology: machine-learning-services
 ms.date: 11/27/2018
@@ -9,15 +9,15 @@ author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 7ed1884b1d4dc6f2b1b32a06d348307171edd592
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 1d8f4419e468bfd0f82f064f59d9b3bdd1036f15
+ms.sourcegitcommit: 9b41725d6db9957dd7928a3620fe4db41eb51c6e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85757112"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88178646"
 ---
 # <a name="transform-data-using-r-sql-server-and-revoscaler-tutorial"></a>R を使用してデータを変換する (SQL Server と RevoScaleR のチュートリアル)
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
 これは、SQL Server で [RevoScaleR 関数](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)を使用する方法についての [RevoScaleR チュートリアル シリーズ](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)のチュートリアル 9 です。
 

@@ -1,20 +1,20 @@
 ---
 title: サポート終了のオプション
 description: SQL Server 2005、SQL Server 2008、SQL Server 2008 R2 など、サポート終了に達した SQL Server 製品で使用できるさまざまなオプションについて学習します。
-ms.date: 12/18/2019
+ms.date: 08/12/2020
 ms.prod: sql
 ms.technology: install
 ms.topic: conceptual
 author: markingmyname
 ms.author: maghan
 ms.reviewer: pmasl
-monikerRange: =sql-server-previousversions||>=sql-server-2016||=sqlallproducts-allversions
-ms.openlocfilehash: d3143a586c54f0c908e80ca9e78041c9f1996931
-ms.sourcegitcommit: 768f046107642f72693514f51bf2cbd00f58f58a
+monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
+ms.openlocfilehash: 378af311994d2aa478df0c673e0a1f0162d4dbfd
+ms.sourcegitcommit: bf5acef60627f77883249bcec4c502b0205300a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87112106"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88200295"
 ---
 # <a name="sql-server-end-of-support-options"></a>SQL Server のサポート終了オプション 
 [!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
@@ -80,7 +80,7 @@ ms.locfileid: "87112106"
 - [SQL Server 2019](../install/hardware-and-software-requirements-for-installing-sql-server-ver15.md)    
 
 サポートされているバージョンとエディションのアップグレード:
-- [SQL Server 2016](../../database-engine/install-windows/supported-version-and-edition-upgrades.md?view=sql-server-2016) 
+- [SQL Server 2016](../../database-engine/install-windows/supported-version-and-edition-upgrades.md?view=sql-server-2016&preserve-view=true) 
 - [SQL Server 2017](../../database-engine/install-windows/supported-version-and-edition-upgrades-2017.md)
 - [SQL Server 2019](../../database-engine/install-windows/supported-version-and-edition-upgrades-version-15.md)
 
@@ -165,7 +165,7 @@ ms.locfileid: "87112106"
 
 - **コスト**: 単一データベースは、ハードウェア、ソフトウェア、およびメンテナンスがオフロードされるため、コスト効率に優れ、秒単位または時間単位の使用量に対して料金をお支払いいただけます。 
 - **柔軟性**: 単一データベースは、開発者の生産性およびソリューションの迅速な市場投入が重要になる場合や、外部アクセスを必要とする場合に、クラウド用に設計されたアプリケーションに特に適しています。  
-- **一般的な機能**:最もよく使用される [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] の機能をご利用いただけますが、Azure SQL Database マネージド インスタンスの場合ほど多くはありません。  
+- **一般的な機能**:最もよく使用される [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] の機能をご利用いただけますが、SQL Managed Instance の場合ほど多くはありません。  
 - **迅速なデプロイ**:単一データベースをすばやくデプロイできます。 
 - **スケーラビリティ**:ビジネスに合わせ、必要に応じて迅速かつ簡単にスケール アップおよびダウンできるため、コストをさらに節約できるという利点が得られます。 
 - **稼働率**:サービスのコストには、ストレージと高可用性の両方が含まれ、99.995% の稼働率が保証されます。  
@@ -177,7 +177,7 @@ ms.locfileid: "87112106"
 ### <a name="considerations"></a>考慮事項
 
 - **限定された移行オプション**:インスタンス全体ではなく、一度に単一のデータベースのみを移行できます。   
-- **機能の制限**:最もよく使用される [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] の機能を利用できますが、単一データベースの機能セットは、[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] マネージド インスタンス、または [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の場合ほど完全ではありません。 
+- **機能の制限**:最もよく使用される Azure SQL Database の機能を利用できますが、単一データベースの機能セットは、Azure SQL Managed Instance、または [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の場合ほど完全ではありません。 
 - **Transact-SQL の相違点**:単一データベースとオンプレミスの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] には、[!INCLUDE[tsql](../../includes/tsql-md.md)] (T-SQL) の違いがいくつかあります。 
 - **サイズの制限**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のサイズが 524 PB であるのに対し、単一データベースの最大データベース サイズは 100 TB となります。 
 - **メンテナンス時間**:正確なメンテナンス時間は保証されませんが、ほぼ透過的です。 
@@ -197,9 +197,9 @@ ms.locfileid: "87112106"
 - [Data Migration Assistant](../../dma/dma-overview.md)
 - [Database Migration Service](/azure/dms/dms-overview)
 
-## <a name="azure-sql-database-managed-instance"></a>Azure SQL Database マネージド インスタンス
+## <a name="sql-managed-instance"></a>SQL Managed Instance
 
-メンテナンスとコストのオフロードを利用したいが、[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] の単一データベースの機能セットに制限がありすぎることがわかった場合は、[Azure SQL Database マネージド インスタンス](/azure/sql-database/sql-database-managed-instance)に移動できます。 マネージド インスタンスは、オンプレミスの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によく似ており、ハードウェア障害や修正プログラムの適用を心配する必要はありません。 マネージド インスタンスは、リフト アンド シフトの準備ができている、共有リソース セットを含むシステムおよびユーザー データベースのコレクションであり、クラウドへのほとんどの移行に使用できます。 このオプションは、最新の安定した [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] 機能を使用する必要があり、最小限の変更でクラウドに移行する新しいアプリケーションまたは既存のオンプレミス アプリケーションに最適です。 
+メンテナンスとコストのオフロードを活用したいが、[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] の単一データベースの機能セットの制限が多すぎると思われる場合は、[SQL Managed Instance](/azure/sql-database/sql-database-managed-instance) に移動できます。 マネージド インスタンスは、オンプレミスの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によく似ており、ハードウェア障害や修正プログラムの適用を心配する必要はありません。 マネージド インスタンスは、リフト アンド シフトの準備ができている、共有リソース セットを含むシステムおよびユーザー データベースのコレクションであり、クラウドへのほとんどの移行に使用できます。 このオプションは、最新の安定した [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] 機能を使用する必要があり、最小限の変更でクラウドに移行する新しいアプリケーションまたは既存のオンプレミス アプリケーションに最適です。 
 
 ### <a name="benefits"></a>メリット
 
@@ -225,10 +225,10 @@ ms.locfileid: "87112106"
 
 ### <a name="resources"></a>リソース
 
-[Azure SQL Database マネージド インスタンスの概要](/azure/sql-database/sql-database-managed-instance)       
+[SQL Managed Instance の概要](/azure/sql-database/sql-database-managed-instance)       
 [Azure SQL オプションの選択](/azure/sql-database/sql-database-paas-vs-sql-server-iaas)       
 [SQL Database 機能の比較](/azure/sql-database/sql-database-features)       
-[SQL Server からマネージド インスタンスに移行する](/azure/sql-database/sql-database-managed-instance-migrate)       
+[SQL Server を Azure SQL Managed Instance に移行する](/azure/sql-database/sql-database-managed-instance-migrate)       
 [より広範な移行プロセス](/azure/cloud-adoption-framework/migrate/expanded-scope/sql-migration)       
 
 ツール:

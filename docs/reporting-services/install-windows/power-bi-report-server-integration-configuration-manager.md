@@ -1,4 +1,5 @@
 ---
+description: Power BI レポート サーバーの統合 (構成マネージャー)
 title: Power BI Report Server の統合 (構成マネージャー) | Microsoft Docs
 author: maggiesMSFT
 ms.author: maggies
@@ -6,12 +7,12 @@ ms.prod: reporting-services
 ms.prod_service: reporting-services-native
 ms.topic: conceptual
 ms.date: 09/17/2017
-ms.openlocfilehash: c2013e99f5e222c50d954e292cbc0b48b39cb7c9
-ms.sourcegitcommit: ff82f3260ff79ed860a7a58f54ff7f0594851e6b
+ms.openlocfilehash: d0eb3bcdd62d7f78799f754b668544cfdd01fcd9
+ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "68265644"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88991871"
 ---
 # <a name="power-bi-report-server-integration-configuration-manager"></a>Power BI レポート サーバーの統合 (構成マネージャー)
 
@@ -25,7 +26,7 @@ ms.locfileid: "68265644"
 
 - **Azure Active Directory:** 組織で Azure Active Directory を使用する必要があります。Azure Active Directory では、Azure サービスと Web アプリケーションのディレクトリと ID を管理できます。 詳細については、「[Azure Active Directory とは](https://azure.microsoft.com/documentation/articles/active-directory-whatis/)」を参照してください。
 
-- **管理対象テナント:** レポート アイテムをピン留めする [!INCLUDE[sspowerbi](../../includes/sspowerbi-md.md)] ダッシュボードは、Azure AD 管理対象テナントに属している必要があります。  管理対象テナントは、組織が Office 365 や Microsoft Intune などの Azure サービスに初めてサブスクライブしたときに自動的に作成されます。   バイラル テナントは現在サポートされていません。  詳細については、「 [Azure AD ディレクトリとは](https://msdn.microsoft.com/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant)」の「Azure AD テナントとは」および「Azure AD ディレクトリを取得する方法」を参照してください。
+- **管理対象テナント:** レポート アイテムをピン留めする [!INCLUDE[sspowerbi](../../includes/sspowerbi-md.md)] ダッシュボードは、Azure AD 管理対象テナントに属している必要があります。  管理対象テナントは、組織が Microsoft 365 や Microsoft Intune などの Azure サービスに初めてサブスクライブしたときに自動的に作成されます。   バイラル テナントは現在サポートされていません。  詳細については、「 [Azure AD ディレクトリとは](https://msdn.microsoft.com/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant)」の「Azure AD テナントとは」および「Azure AD ディレクトリを取得する方法」を参照してください。
 
 - [!INCLUDE[sspowerbi](../../includes/sspowerbi-md.md)] 統合を実行するユーザーは、Azure AD テナントのメンバーで、 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] システム管理者であり、ReportServer カタログ データベースのシステム管理者でもある必要があります。
 
@@ -112,7 +113,7 @@ ms.locfileid: "68265644"
 
 1. ユーザーが [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] [!INCLUDE[ssRSWebPortal](../../includes/ssrswebportal.md)] でレポートをプレビューし、[!INCLUDE[ssRSWebPortal](../../includes/ssrswebportal.md)]でレポート アイテムをクリックして初めてピン留めすると、
 
-2. Azure AD サインイン ページにリダイレクトされます。 ユーザーは、[!INCLUDE[ssRSWebPortal](../../includes/ssrswebportal.md)] の **[個人用設定]** ページからサインインすることもできます。 ユーザーが Azure 管理対象テナントにサインインすると、Azure アカウントと [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] のアクセス許可の間に関係が確立されます。  詳細については、「 [Power BI 統合の個人用設定 &#40;Web ポータル&#41;](../my-settings-for-power-bi-integration-web-portal.md)」を参照してください。
+2. Azure AD サインイン ページにリダイレクトされます。 ユーザーは、 の [!INCLUDE[ssRSWebPortal](../../includes/ssrswebportal.md)] **[個人用設定]** ページからサインインすることもできます。 ユーザーが Azure 管理対象テナントにサインインすると、Azure アカウントと [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] のアクセス許可の間に関係が確立されます。  詳細については、「 [Power BI 統合の個人用設定 &#40;Web ポータル&#41;](../my-settings-for-power-bi-integration-web-portal.md)」を参照してください。
 
 3. ユーザーのセキュリティ トークンがレポート サーバーに返されます。
 

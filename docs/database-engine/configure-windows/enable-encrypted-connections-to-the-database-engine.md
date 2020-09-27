@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: e1e55519-97ec-4404-81ef-881da3b42006
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 952f527b248d6491c3a6f3acf3c4e5570e3ad54e
-ms.sourcegitcommit: 19ae05bc69edce1e3b3d621d7fdd45ea5f74969d
+ms.openlocfilehash: ba50d65054b0a72424955f5d669a15d2c1846b67
+ms.sourcegitcommit: 780a81c02bc469c6e62a9c307e56a973239983b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88564662"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90027293"
 ---
 # <a name="enable-encrypted-connections-to-the-database-engine"></a>データベース エンジンへの暗号化接続の有効化
 
@@ -84,7 +84,7 @@ TLS 暗号化を有効にすると、[!INCLUDE[ssNoVersion](../../includes/ssnov
 
 - [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のサービス アカウントに、TLS 証明書にアクセスするアクセス許可があること。
 
-- 現在のシステム時刻が証明書の **Valid from** プロパティから証明書の Valid to プロパティまでの範囲であること。
+- 現在のシステム時刻が証明書の **[有効期間の開始]** プロパティから証明書の **[有効期間の終了]** プロパティまでの範囲にあること。
 
 - 証明書がサーバー認証に使用されていること。 つまり、証明書の **[拡張キー使用法]** プロパティで **[サーバー認証] (1.3.6.1.5.5.7.3.1)** が指定されている必要があります。
 

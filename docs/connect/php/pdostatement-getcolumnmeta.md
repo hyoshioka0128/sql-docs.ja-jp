@@ -1,21 +1,22 @@
 ---
-title: PDOStatement::getColumnMeta | Microsoft Docs
+title: PDOStatement::getColumnMeta
+description: SQL Server 用 Microsoft PDO_SQLSRV Driver for PHP の PDOStatement::getColumnMeta 関数の API リファレンス。
 ms.custom: ''
-ms.date: 01/31/2020
+ms.date: 08/10/2020
 ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: conceptual
 ms.assetid: c92a21cc-8e53-43d0-a4bf-542c77c100c9
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: cb7e9e37d568659a71917df66016f2333ed4be46
-ms.sourcegitcommit: ff82f3260ff79ed860a7a58f54ff7f0594851e6b
+author: David-Engel
+ms.author: v-daenge
+ms.openlocfilehash: e29418276e6209f669ae57160809120d61e19a05
+ms.sourcegitcommit: 331b8495e4ab37266945c81ff5b93d250bdaa6da
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "76918800"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88645080"
 ---
 # <a name="pdostatementgetcolumnmeta"></a>PDOStatement::getColumnMeta
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]
@@ -38,15 +39,15 @@ array PDOStatement::getColumnMeta ( $column );
 ## <a name="remarks"></a>解説  
 次の表では、getColumnMeta によって返される配列内のフィールドについて説明します。  
   
-|NAME|VALUES|  
+|名前|VALUES|  
 |--------|----------|  
 |native_type|列の PHP 型を指定します。 常に文字列です。|  
 |driver:decl_type|データベースで列の値を表すために使用される SQL 型を指定します。 結果セット内の列が関数の結果である場合、この値は PDOStatement::getColumnMeta では返されません。|  
 |flags|この列に設定されているフラグを指定します。 常に 0 です。|  
 |name|データベースでの列の名前を指定します。|  
-|テーブル|データベースで列を含むテーブルの名前を指定します。 常に空白です。|  
+|table|データベースで列を含むテーブルの名前を指定します。 常に空白です。|  
 |len|列の長さを指定します。|  
-|precision|この列の数値の有効桁数を指定します。|  
+|精度|この列の数値の有効桁数を指定します。|  
 |pdo_type|PDO::PARAM_* 定数によって表される、この列の型を指定します。 常に PDO::PARAM_STR (2) です。|  
   
 PDO のサポートは [!INCLUDE[ssDriverPHP](../../includes/ssdriverphp_md.md)]のバージョン 2.0 で追加されました。  

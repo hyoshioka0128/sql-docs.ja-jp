@@ -1,6 +1,7 @@
 ---
+description: 完全メモリ ダンプの取得
 title: SSMS のトラブルシューティングを行うために完全メモリ ダンプを取得する
-Description: 完全メモリ ダンプを収集して SSMS の応答停止やクラッシュの問題のトラブルシューティングを行う
+Description: クラッシュやシステムが応答しない問題を解決できるように、SQL Server Management Studio (SSMS) から診断情報を取得します。
 ms.prod: sql
 ms.prod_service: sql-tools
 ms.technology: ssms
@@ -8,15 +9,15 @@ ms.topic: conceptual
 ms.assetid: c28ffa44-7b8b-4efa-b755-c7a3b1c11ce4
 author: markingmyname
 ms.author: maghan
-ms.reviewer: dineth, sstein
+ms.reviewer: drskwier, sstein
 ms.custom: seo-lt-2019
 ms.date: 05/17/2019
-ms.openlocfilehash: 7b55e8e68076ad14f874306ffdb578f619af1cf0
-ms.sourcegitcommit: 8515bb2021cfbc7791318527b8554654203db4ad
+ms.openlocfilehash: a15ce5e05e54b6196d363e8967c33fa4ad190295
+ms.sourcegitcommit: c74bb5944994e34b102615b592fdaabe54713047
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86091260"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990268"
 ---
 # <a name="get-full-memory-dump"></a>完全メモリ ダンプの取得
 
@@ -32,7 +33,7 @@ ms.locfileid: "86091260"
 
 3. コマンド プロンプトを開き (`cmd.exe` など)、次のコマンドを実行します。
 
-    ```
+    ```console
     <PathToProcDumpFolder>\procdump.exe -e -h -ma -w ssms.exe
     ```
 

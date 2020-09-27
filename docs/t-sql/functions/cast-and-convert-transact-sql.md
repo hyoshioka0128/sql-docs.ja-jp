@@ -12,9 +12,6 @@ f1_keywords:
 - CONVERT_TSQL
 - CAST
 - CONVERT
-- CONVERT()_TSQL
-- sql13.swb.tsqlresults.f1
-- sql13.swb.tsqlquery.f1
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -38,12 +35,12 @@ ms.assetid: a87d0850-c670-4720-9ad5-6f5a22343ea8
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 0d97f6e94ce7a9eb80656aa03a42b3479506ea5f
-ms.sourcegitcommit: b80364e31739d7b08cc388c1f83bb01de5dd45c1
+ms.openlocfilehash: 858e479346231fdce6b41e402b0fd7e606a76bbd
+ms.sourcegitcommit: 76d31f456982dabb226239b424eaa7139d8cc6c1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87565640"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90570612"
 ---
 # <a name="cast-and-convert-transact-sql"></a>CAST および CONVERT (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -52,7 +49,7 @@ ms.locfileid: "87565640"
 
 ## <a name="syntax"></a>構文  
   
-```
+```sqlsyntax 
 -- CAST Syntax:  
 CAST ( expression AS data_type [ ( length ) ] )  
   
@@ -236,11 +233,11 @@ CAST または CONVERT 関数が文字列を入出力する場合、出力では
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、元のデータから別のデータ型に変換し、再度元のデータ型に戻すラウンド トリップ変換の場合にだけ、異なるバージョンでも同じ結果が生成されることが保証されています。 次にラウンド トリップ変換の例を示します。
   
 ```sql
-DECLARE @myval decimal (5, 2);  
+DECLARE @myval DECIMAL (5, 2);  
 SET @myval = 193.57;  
-SELECT CAST(CAST(@myval AS varbinary(20)) AS decimal(10,5));  
+SELECT CAST(CAST(@myval AS VARBINARY(20)) AS DECIMAL(10,5));  
 -- Or, using CONVERT  
-SELECT CONVERT(decimal(10,5), CONVERT(varbinary(20), @myval));  
+SELECT CONVERT(DECIMAL(10,5), CONVERT(VARBINARY(20), @myval));  
 ```  
   
 > [!WARNING]  
@@ -255,7 +252,7 @@ SELECT p.FirstName, p.LastName, SUBSTRING(p.Title, 1, 25) AS Title,
     CAST(e.SickLeaveHours AS char(1)) AS [Sick Leave]  
 FROM HumanResources.Employee e JOIN Person.Person p 
     ON e.BusinessEntityID = p.BusinessEntityID  
-WHERE NOT e.BusinessEntityID >5;  
+WHERE NOT e.BusinessEntityID > 5;  
 ```  
   
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
@@ -289,10 +286,10 @@ Gail        Erickson      Ms.    *
 たとえば、値 10.6496 と -10.6496 を **int** または **numeric** 型に変換すると、切り捨てや丸め処理が行われる可能性があります。
   
 ```sql
-SELECT  CAST(10.6496 AS int) as trunc1,
-         CAST(-10.6496 AS int) as trunc2,
-         CAST(10.6496 AS numeric) as round1,
-         CAST(-10.6496 AS numeric) as round2;
+SELECT  CAST(10.6496 AS INT) as trunc1,
+        CAST(-10.6496 AS INT) as trunc2,
+        CAST(10.6496 AS NUMERIC) as round1,
+        CAST(-10.6496 AS NUMERIC) as round2;
  ```
 クエリ結果を次の表に示します。
  
@@ -411,7 +408,7 @@ HL Road Tire                   32.60
 ```sql
 USE AdventureWorks2012;  
 GO  
-SELECT CAST(ROUND(SalesYTD/CommissionPCT, 0) AS int) AS Computed  
+SELECT CAST(ROUND(SalesYTD/CommissionPCT, 0) AS INT) AS Computed  
 FROM Sales.SalesPerson   
 WHERE CommissionPCT != 0;  
 GO  
@@ -443,7 +440,7 @@ Computed
 この例では、CAST を使用して文字型ではない式を連結します。 AdventureWorksDW データベースを使用します。
   
 ```sql
-SELECT 'The list price is ' + CAST(ListPrice AS varchar(12)) AS ListPrice  
+SELECT 'The list price is ' + CAST(ListPrice AS VARCHAR(12)) AS ListPrice  
 FROM dbo.DimProduct  
 WHERE ListPrice BETWEEN 350.00 AND 400.00;  
 ```  
@@ -464,7 +461,7 @@ The list price is 364.09
 この例では、SELECT リストの中で CAST を使用し、`Name` 列を **char(10)** 型の列に変換します。 AdventureWorksDW データベースを使用します。
   
 ```sql
-SELECT DISTINCT CAST(EnglishProductName AS char(10)) AS Name, ListPrice  
+SELECT DISTINCT CAST(EnglishProductName AS CHAR(10)) AS Name, ListPrice  
 FROM dbo.DimProduct  
 WHERE EnglishProductName LIKE 'Long-Sleeve Logo Jersey, M';  
 ```  
@@ -489,7 +486,7 @@ SELECT p.FirstName, p.LastName, s.SalesYTD, s.BusinessEntityID
 FROM Person.Person AS p   
 JOIN Sales.SalesPerson AS s   
     ON p.BusinessEntityID = s.BusinessEntityID  
-WHERE CAST(CAST(s.SalesYTD AS int) AS char(20)) LIKE '2%';  
+WHERE CAST(CAST(s.SalesYTD AS INT) AS char(20)) LIKE '2%';  
 GO  
 ```  
   
@@ -534,7 +531,7 @@ SELECT CAST('<Name><FName>Carol</FName><LName>Elliot</LName></Name>'  AS XML)
 ```sql
 SELECT   
    GETDATE() AS UnconvertedDateTime,  
-   CAST(GETDATE() AS nvarchar(30)) AS UsingCast,  
+   CAST(GETDATE() AS NVARCHAR(30)) AS UsingCast,  
    CONVERT(nvarchar(30), GETDATE(), 126) AS UsingConvertTo_ISO8601  ;  
 GO  
 ```  
@@ -574,7 +571,7 @@ UnconvertedText         UsingCast               UsingConvertFrom_ISO8601
   
 ```sql
 --Convert the binary value 0x4E616d65 to a character value.  
-SELECT CONVERT(char(8), 0x4E616d65, 0) AS [Style 0, binary to character];  
+SELECT CONVERT(CHAR(8), 0x4E616d65, 0) AS [Style 0, binary to character];  
 ```  
   
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
@@ -589,7 +586,7 @@ Name
  
 この例では、Style 1 が結果の切り捨てを強制できることを示します。 結果セット内の文字 0x は、切り捨てを強制します。  
 ```sql  
-SELECT CONVERT(char(8), 0x4E616d65, 1) AS [Style 1, binary to character];  
+SELECT CONVERT(CHAR(8), 0x4E616d65, 1) AS [Style 1, binary to character];  
 ```  
   
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
@@ -604,7 +601,7 @@ Style 1, binary to character
  
 この例は、結果に文字 0x が含まれていないため、Style 2 は結果を切り捨てないことを示しています。  
 ```sql  
-SELECT CONVERT(char(8), 0x4E616d65, 2) AS [Style 2, binary to character];  
+SELECT CONVERT(CHAR(8), 0x4E616d65, 2) AS [Style 2, binary to character];  
 ```  
   
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
@@ -619,7 +616,7 @@ Style 2, binary to character
   
 文字値 'Name' をバイナリ値に変換します。  
 ```sql
-SELECT CONVERT(binary(8), 'Name', 0) AS [Style 0, character to binary];  
+SELECT CONVERT(BINARY(8), 'Name', 0) AS [Style 0, character to binary];  
 ```  
   
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
@@ -633,7 +630,7 @@ Style 0, character to binary
 ```
   
 ```sql
-SELECT CONVERT(binary(4), '0x4E616D65', 1) AS [Style 1, character to binary];  
+SELECT CONVERT(BINARY(4), '0x4E616D65', 1) AS [Style 1, character to binary];  
 ```  
   
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
@@ -647,7 +644,7 @@ Style 1, character to binary
 ```  
 
 ```sql
-SELECT CONVERT(binary(4), '4E616D65', 2) AS [Style 2, character to binary];  
+SELECT CONVERT(BINARY(4), '4E616D65', 2) AS [Style 2, character to binary];  
 ```  
   
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
@@ -664,19 +661,19 @@ Style 2, character to binary
 この例では、date、time、および datetime データ型の変換の例を示します。
   
 ```sql
-DECLARE @d1 date, @t1 time, @dt1 datetime;  
+DECLARE @d1 DATE, @t1 TIME, @dt1 DATETIME;  
 SET @d1 = GETDATE();  
 SET @t1 = GETDATE();  
 SET @dt1 = GETDATE();  
 SET @d1 = GETDATE();  
 -- When converting date to datetime the minutes portion becomes zero.  
-SELECT @d1 AS [date], CAST (@d1 AS datetime) AS [date as datetime];  
+SELECT @d1 AS [DATE], CAST (@d1 AS DATETIME) AS [date as datetime];  
 -- When converting time to datetime the date portion becomes zero   
 -- which converts to January 1, 1900.  
-SELECT @t1 AS [time], CAST (@t1 AS datetime) AS [time as datetime];  
+SELECT @t1 AS [TIME], CAST (@t1 AS DATETIME) AS [time as datetime];  
 -- When converting datetime to date or time non-applicable portion is dropped.  
-SELECT @dt1 AS [datetime], CAST (@dt1 AS date) AS [datetime as date], 
-   CAST (@dt1 AS time) AS [datetime as time];  
+SELECT @dt1 AS [DATETIME], CAST (@dt1 AS DATE) AS [datetime as date], 
+   CAST (@dt1 AS TIME) AS [datetime as time];  
 ```  
 
 ### <a name="j-using-convert-with-datetime-data-in-different-formats"></a>J. 異なる形式で CONVERT と datetime データを使用する  
@@ -684,48 +681,48 @@ SELECT @dt1 AS [datetime], CAST (@dt1 AS date) AS [datetime as date],
 
 |形式番号|クエリの例|サンプルの結果|
 |--------|------------------------------------|------------------|
-|0|`SELECT CONVERT(nvarchar, GETDATE(), 0)`|Aug 23 2019  1:39PM|
-|1|`SELECT CONVERT(nvarchar, GETDATE(), 1)`|08/23/19|
-|2|`SELECT CONVERT(nvarchar, GETDATE(), 2)`|19.08.23|
-|3|`SELECT CONVERT(nvarchar, GETDATE(), 3)`|23/08/19|
-|4|`SELECT CONVERT(nvarchar, GETDATE(), 4)`|23.08.19|
-|5|`SELECT CONVERT(nvarchar, GETDATE(), 5)`|23-08-19|
-|6|`SELECT CONVERT(nvarchar, GETDATE(), 6)`|23 Aug 19|
-|7|`SELECT CONVERT(nvarchar, GETDATE(), 7)`|Aug 23, 19|
-|8 または 24 または 108|`SELECT CONVERT(nvarchar, GETDATE(), 8)`|13:39:17|
-|9 または 109|`SELECT CONVERT(nvarchar, GETDATE(), 9)`|Aug 23 2019  1:39:17:090PM|
-|10|`SELECT CONVERT(nvarchar, GETDATE(), 10)`|08-23-19|
-|11|`SELECT CONVERT(nvarchar, GETDATE(), 11)`|19/08/23|
-|12|`SELECT CONVERT(nvarchar, GETDATE(), 12)`|190823|
-|13 または 113|`SELECT CONVERT(nvarchar, GETDATE(), 13)`|23 Aug 2019 13:39:17:090|
-|14 または 114|`SELECT CONVERT(nvarchar, GETDATE(), 14)`|13:39:17:090|
-|20 または 120|`SELECT CONVERT(nvarchar, GETDATE(), 20)`|2019-08-23 13:39:17|
-|21 または 25 または 121|`SELECT CONVERT(nvarchar, GETDATE(), 21)`|2019-08-23 13:39:17.090|
-|22|`SELECT CONVERT(nvarchar, GETDATE(), 22)`|08/23/19  1:39:17 PM|
-|23|`SELECT CONVERT(nvarchar, GETDATE(), 23)`|2019-08-23|
-|101|`SELECT CONVERT(nvarchar, GETDATE(), 101)`|08/23/2019|
-|102|`SELECT CONVERT(nvarchar, GETDATE(), 102)`|2019.08.23|
-|103|`SELECT CONVERT(nvarchar, GETDATE(), 103)`|23/08/2019|
-|104|`SELECT CONVERT(nvarchar, GETDATE(), 104)`|23.08.2019|
-|105|`SELECT CONVERT(nvarchar, GETDATE(), 105)`|23-08-2019|
-|106|`SELECT CONVERT(nvarchar, GETDATE(), 106)`|23 Aug 2019|
-|107|`SELECT CONVERT(nvarchar, GETDATE(), 107)`|2019 年 8 月 23 日|
-|110|`SELECT CONVERT(nvarchar, GETDATE(), 110)`|08-23-2019|
-|111|`SELECT CONVERT(nvarchar, GETDATE(), 111)`|2019/08/23|
-|112|`SELECT CONVERT(nvarchar, GETDATE(), 112)`|20190823|
-|113|`SELECT CONVERT(nvarchar, GETDATE(), 113)`|23 Aug 2019 13:39:17.090|
-|120|`SELECT CONVERT(nvarchar, GETDATE(), 120)`|2019-08-23 13:39:17|
-|121|`SELECT CONVERT(nvarchar, GETDATE(), 121)`|2019-08-23 13:39:17.090|
-|126|`SELECT CONVERT(nvarchar, GETDATE(), 126)`|2019-08-23T13:39:17.090|
-|127|`SELECT CONVERT(nvarchar, GETDATE(), 127)`|2019-08-23T13:39:17.090|
-|130|`SELECT CONVERT(nvarchar, GETDATE(), 130)`|22 ذو الحجة 1440  1:39:17.090P|
-|131|`SELECT CONVERT(nvarchar, GETDATE(), 131)`|22/12/1440  1:39:17.090PM|
+|0|`SELECT CONVERT(NVARCHAR, GETDATE(), 0)`|Aug 23 2019  1:39PM|
+|1|`SELECT CONVERT(NVARCHAR, GETDATE(), 1)`|08/23/19|
+|2|`SELECT CONVERT(NVARCHAR, GETDATE(), 2)`|19.08.23|
+|3|`SELECT CONVERT(NVARCHAR, GETDATE(), 3)`|23/08/19|
+|4|`SELECT CONVERT(NVARCHAR, GETDATE(), 4)`|23.08.19|
+|5|`SELECT CONVERT(NVARCHAR, GETDATE(), 5)`|23-08-19|
+|6|`SELECT CONVERT(NVARCHAR, GETDATE(), 6)`|23 Aug 19|
+|7|`SELECT CONVERT(NVARCHAR, GETDATE(), 7)`|Aug 23, 19|
+|8 または 24 または 108|`SELECT CONVERT(NVARCHAR, GETDATE(), 8)`|13:39:17|
+|9 または 109|`SELECT CONVERT(NVARCHAR, GETDATE(), 9)`|Aug 23 2019  1:39:17:090PM|
+|10|`SELECT CONVERT(NVARCHAR, GETDATE(), 10)`|08-23-19|
+|11|`SELECT CONVERT(NVARCHAR, GETDATE(), 11)`|19/08/23|
+|12|`SELECT CONVERT(NVARCHAR, GETDATE(), 12)`|190823|
+|13 または 113|`SELECT CONVERT(NVARCHAR, GETDATE(), 13)`|23 Aug 2019 13:39:17:090|
+|14 または 114|`SELECT CONVERT(NVARCHAR, GETDATE(), 14)`|13:39:17:090|
+|20 または 120|`SELECT CONVERT(NVARCHAR, GETDATE(), 20)`|2019-08-23 13:39:17|
+|21 または 25 または 121|`SELECT CONVERT(NVARCHAR, GETDATE(), 21)`|2019-08-23 13:39:17.090|
+|22|`SELECT CONVERT(NVARCHAR, GETDATE(), 22)`|08/23/19  1:39:17 PM|
+|23|`SELECT CONVERT(NVARCHAR, GETDATE(), 23)`|2019-08-23|
+|101|`SELECT CONVERT(NVARCHAR, GETDATE(), 101)`|08/23/2019|
+|102|`SELECT CONVERT(NVARCHAR, GETDATE(), 102)`|2019.08.23|
+|103|`SELECT CONVERT(NVARCHAR, GETDATE(), 103)`|23/08/2019|
+|104|`SELECT CONVERT(NVARCHAR, GETDATE(), 104)`|23.08.2019|
+|105|`SELECT CONVERT(NVARCHAR, GETDATE(), 105)`|23-08-2019|
+|106|`SELECT CONVERT(NVARCHAR, GETDATE(), 106)`|23 Aug 2019|
+|107|`SELECT CONVERT(NVARCHAR, GETDATE(), 107)`|2019 年 8 月 23 日|
+|110|`SELECT CONVERT(NVARCHAR, GETDATE(), 110)`|08-23-2019|
+|111|`SELECT CONVERT(NVARCHAR, GETDATE(), 111)`|2019/08/23|
+|112|`SELECT CONVERT(NVARCHAR, GETDATE(), 112)`|20190823|
+|113|`SELECT CONVERT(NVARCHAR, GETDATE(), 113)`|23 Aug 2019 13:39:17.090|
+|120|`SELECT CONVERT(NVARCHAR, GETDATE(), 120)`|2019-08-23 13:39:17|
+|121|`SELECT CONVERT(NVARCHAR, GETDATE(), 121)`|2019-08-23 13:39:17.090|
+|126|`SELECT CONVERT(NVARCHAR, GETDATE(), 126)`|2019-08-23T13:39:17.090|
+|127|`SELECT CONVERT(NVARCHAR, GETDATE(), 127)`|2019-08-23T13:39:17.090|
+|130|`SELECT CONVERT(NVARCHAR, GETDATE(), 130)`|22 ذو الحجة 1440  1:39:17.090P|
+|131|`SELECT CONVERT(NVARCHAR, GETDATE(), 131)`|22/12/1440  1:39:17.090PM|
 
 ### <a name="k-effects-of-data-type-precedence-in-allowed-conversions"></a><a name="precedence-example"></a> K. 許可される変換におけるデータ型の優先順位の影響  
 次の例では型 VARCHAR の変数が定義され、整数値が変数に代入された後、文字列型の変数の連結が選択されます。
 
 ```sql
-DECLARE @string varchar(10);
+DECLARE @string VARCHAR(10);
 SET @string = 1;
 SELECT @string + ' is a string.' AS Result
 ```
@@ -743,7 +740,7 @@ int 値 1 は VARCHAR に変換されました。
 次の例では、同様のクエリで代わりに int 変数を利用しています。
 
 ```sql
-DECLARE @notastring int;
+DECLARE @notastring INT;
 SET @notastring = '1';
 SELECT @notastring + ' is not a string.' AS Result
 ```
@@ -760,7 +757,7 @@ Conversion failed when converting the varchar value ' is not a string.' to data 
 変換可能な文字列を指定する場合、ステートメントが成功します。次に例を示します。
 
 ```SQL
-DECLARE @notastring int;
+DECLARE @notastring INT;
 SET @notastring = '1';
 SELECT @notastring + '1'
 ```
@@ -783,7 +780,7 @@ CAST ではなく CONVERT を使用した同じクエリの例を次に示しま
 ```sql
 SELECT EnglishProductName AS ProductName, ListPrice  
 FROM dbo.DimProduct  
-WHERE CONVERT(int, ListPrice) LIKE '3%';  
+WHERE CONVERT(INT, ListPrice) LIKE '3%';  
 ```  
   
 ### <a name="m-using-cast-with-arithmetic-operators"></a>M. CAST を算術演算子と共に使用する  
@@ -815,7 +812,7 @@ ProductKey  UnitPrice  UnitPriceDiscountPct  DiscountPrice
 ```sql
 SELECT EnglishProductName AS Name, ListPrice  
 FROM dbo.DimProduct  
-WHERE CAST(CAST(ListPrice AS int) AS char(20)) LIKE '2%';  
+WHERE CAST(CAST(ListPrice AS INT) AS CHAR(20)) LIKE '2%';  
 ```  
   
 ### <a name="o-using-cast-and-convert-with-datetime-data"></a>O. CAST および CONVERT を datetime データと共に使用する  
@@ -824,8 +821,8 @@ WHERE CAST(CAST(ListPrice AS int) AS char(20)) LIKE '2%';
 ```sql
 SELECT TOP(1)  
    SYSDATETIME() AS UnconvertedDateTime,  
-   CAST(SYSDATETIME() AS nvarchar(30)) AS UsingCast,  
-   CONVERT(nvarchar(30), SYSDATETIME(), 126) AS UsingConvertTo_ISO8601  
+   CAST(SYSDATETIME() AS NVARCHAR(30)) AS UsingCast,  
+   CONVERT(NVARCHAR(30), SYSDATETIME(), 126) AS UsingConvertTo_ISO8601  
 FROM dbo.DimCustomer;  
 ```  
   
@@ -842,8 +839,8 @@ UnconvertedDateTime     UsingCast                     UsingConvertTo_ISO8601
 ```sql
 SELECT TOP(1)   
    '2010-07-25T13:50:38.544' AS UnconvertedText,  
-CAST('2010-07-25T13:50:38.544' AS datetime) AS UsingCast,  
-   CONVERT(datetime, '2010-07-25T13:50:38.544', 126) AS UsingConvertFrom_ISO8601  
+CAST('2010-07-25T13:50:38.544' AS DATETIME) AS UsingCast,  
+   CONVERT(DATETIME, '2010-07-25T13:50:38.544', 126) AS UsingConvertFrom_ISO8601  
 FROM dbo.DimCustomer;  
 ```  
   

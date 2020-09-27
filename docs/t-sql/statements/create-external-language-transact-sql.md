@@ -10,12 +10,12 @@ author: dphansen
 ms.author: davidph
 manager: cgronlun
 monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 6a32e4c18096aefc88342104ae54124d6e88cefa
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 24bdf85af4a165a77694af5e65c262fdf5b97edd
+ms.sourcegitcommit: e3460309b301a77d0babec032f53de330da001a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88426684"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91136390"
 ---
 # <a name="create-external-language-transact-sql"></a>CREATE EXTERNAL LANGUAGE (Transact-SQL)
 [!INCLUDE [SQL Server 2019 and later](../../includes/applies-to-version/sqlserver2019.md)]
@@ -23,11 +23,11 @@ ms.locfileid: "88426684"
 指定したファイル パスまたはバイト ストリームから、データベースに外部言語拡張機能を登録します。 このステートメントは、データベース管理者が SQL Server によってサポートされている任意の OS プラットフォームで新しい外部言語拡張機能を登録する汎用メカニズムとして機能します。 詳細については、[Language Extensions (言語拡張)](https://docs.microsoft.com/sql/language-extensions/language-extensions-overview) に関する記事を参照してください。
 
 > [!NOTE]
-> 現在、外部言語としては **Java** のみがサポートされています。 **R** と **Python** は予約済みの名前であり、それらの特定の名前で外部言語を作成することはできません。 **R** および **Python** を使う方法について詳しくは、「[SQL Server Machine Learning Services (SQL Server Machine Learning Services)](https://docs.microsoft.com/sql/machine-learning/)」をご覧ください。
+> **R** と **Python** は予約済みの名前であり、それらの特定の名前で外部言語を作成することはできません。 **R** および **Python** を使う方法について詳しくは、「[SQL Server Machine Learning Services (SQL Server Machine Learning Services)](https://docs.microsoft.com/sql/machine-learning/)」をご覧ください。
 
 ## <a name="syntax"></a>構文
 
-```text
+```syntaxsql
 CREATE EXTERNAL LANGUAGE language_name  
 [ AUTHORIZATION owner_name ]  
 FROM <file_spec> [ ,...2 ]  

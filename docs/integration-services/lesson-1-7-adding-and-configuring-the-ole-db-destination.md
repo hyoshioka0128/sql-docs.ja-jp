@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.assetid: 442c841d-d528-4bf0-8724-7156f909ee50
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: ebfca5c6b25f16bb4f86ca692b09bbc5d0beaaa9
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 8c30d9c27550913f5c83334ff33ff3a1cc08e1bc
+ms.sourcegitcommit: c74bb5944994e34b102615b592fdaabe54713047
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88462067"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990413"
 ---
 # <a name="lesson-1-7-add-and-configure-the-ole-db-destination"></a>レッスン 1-7:OLE DB 変換先を追加し、構成する
 
@@ -43,20 +43,22 @@ ms.locfileid: "88462067"
 6.  **[OLE DB 変換先エディター]** ダイアログの **[OLE DB 接続マネージャー]** ボックスで確実に **localhost.AdventureWorksDW2012** が選択されているようにします。  
   
 7.  **[テーブル名またはビュー名]** ボックスで **[dbo].[FactCurrencyRate]** を入力するか、選択します。  
+ 
+8.  **NewFactCurrencyRate** という名前のテーブルが現存する場合、すぐに削除します。 次の手順でテーブルを作成します。
+ 
+9.  **[新規作成]** ボタンを選択して新しいテーブルを作成します。  スクリプトのテーブル名を **Sample OLE DB Destination** から **NewFactCurrencyRate** に変更します。  **[OK]** を選択します。  
+ 
+10. **[OK]** を選択すると、ダイアログが閉じ、**[テーブル名またはビュー名]** が自動的に「**NewFactCurrencyRate**」に変更されます。  
   
-8.  **[新規作成]** ボタンを選択して新しいテーブルを作成します。  スクリプトのテーブル名を **Sample OLE DB Destination** から **NewFactCurrencyRate** に変更します。  **[OK]** を選択します。  
+11. **[マッピング]** を選択します。  
   
-9. **[OK]** を選択すると、ダイアログが閉じ、**[テーブル名またはビュー名]** が自動的に「**NewFactCurrencyRate**」に変更されます。  
+12. **AverageRate**、 **CurrencyKey**、 **EndOfDayRate**、および **DateKey** の各入力列が変換先列に正しくマップされていることを確認します。 同じ名前の列がマップされていれば、マッピングは適切です。  
   
-10. **[マッピング]** を選択します。  
+13. **[OK]** を選択します。  
   
-11. **AverageRate**、 **CurrencyKey**、 **EndOfDayRate**、および **DateKey** の各入力列が変換先列に正しくマップされていることを確認します。 同じ名前の列がマップされていれば、マッピングは適切です。  
+14. **[Sample OLE DB Destination]** 変換先を右クリックし、**[プロパティ]** を選択します。  
   
-12. **[OK]** を選択します。  
-  
-13. **[Sample OLE DB Destination]** 変換先を右クリックし、**[プロパティ]** を選択します。  
-  
-14. **[プロパティ]** ウィンドウで、**LocaleID** プロパティが **[英語 (米国)]** に、**[DefaultCodePage]** プロパティが **[1252]** に設定されていることを確認します。  
+15. **[プロパティ]** ウィンドウで、**LocaleID** プロパティが **[英語 (米国)]** に、**[DefaultCodePage]** プロパティが **[1252]** に設定されていることを確認します。  
   
 ## <a name="go-to-next-task"></a>次のタスクに進む
 [手順 8: レッスン 1 パッケージに注釈を付け、書式を設定する](../integration-services/lesson-1-8-making-the-lesson-1-package-easier-to-understand.md)  

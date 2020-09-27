@@ -1,53 +1,44 @@
 ---
-title: Python および R コンポーネントのアップグレード
-description: SQL Server Machine Learning Services または SQL Server R Services で、sqlbindr.exe を使用した Machine Learning Server へのバインドにより、Python および R をアップグレードします。
+title: Upgrade Python および R ランタイムをアップグレードする (バインド)
+description: SQL Server Machine Learning Services または SQL Server R Services で、sqlbindr.exe を使用した Machine Learning Server へのバインドにより、Python および R ランタイムをアップグレードします。
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 04/03/2020
+ms.date: 09/16/2020
 ms.topic: how-to
 author: cawrites
 ms.author: chadam
 monikerRange: =sql-server-2016||=sql-server-2017||=sqlallproducts-allversions
-ms.openlocfilehash: 918ab8c2b1e643196e99cd11ff92c07c3978e078
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+ms.openlocfilehash: f6b7d5b0dbff20961b6f719e0e0f3360433712f8
+ms.sourcegitcommit: c74bb5944994e34b102615b592fdaabe54713047
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85900072"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990116"
 ---
-# <a name="upgrade-machine-learning-python-and-r-components-in-sql-server-instances"></a>SQL Server のインスタンス内の機械学習 (Python および R) コンポーネントをアップグレードする
-[!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
+# <a name="upgrade-python-and-r-runtime-with-binding-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services でバインドを使用して Python および R ランタイムをアップグレードする
+[!INCLUDE [SQL Server 2016 and 2017](../../includes/applies-to-version/sqlserver2016-2017-only.md)]
 
-SQL Server での Python および R の統合には、オープンソースのパッケージと Microsoft 独自のパッケージが含まれます。
-                                                                               
-標準の SQL Server サービス:
-                                                                               
-- パッケージは、SQL Server のリリース サイクルに従って更新されます。
-- バグ修正は、現在のバージョンの既存のパッケージに適用されます。
-- メジャー バージョンのアップグレードはありません。
+この記事では**バインド**と呼ばれるインストール プロセスを使用して、[SQL Server 2016 R Services](../r/sql-server-r-services.md) または [SQL Server 2017 Machine Learning Services](../sql-server-machine-learning-services.md) で R または Python ランタイムをアップグレードする方法について説明します。 [Microsoft Machine Learning Server](https://docs.microsoft.com/machine-learning-server) に "*バインドする*" ことで、[より新しいバージョンの Python および R](#version-map) を入手できます。
 
-**Microsoft Machine Learning Server** に "*バインドする*" ことで、[より新しいバージョンの Python および R](#version-map) を入手できます。 このバージョンは、SQL Server Machine Learning Services (データベース内) と SQL Server R Services (データベース内) の両方に適用されます。
-
-データ サイエンティストなど、データ関連のフィールドで作業する場合は、より新しいパッケージを取得する機能をお勧めします。
+> [!IMPORTANT]
+> この記事では、*バインド*と呼ばれる、R および Python ランタイムをアップグレードする古い方法について説明します。 **SQL Server 2016 Services Pack (SP) 2 の累積的な更新プログラム (CU) 14 以降**または **SQL Server 2017 の累積的更新プログラム (CU) 22 以降**をインストールしている場合は、代わりに[既定の R または Python 言語ランタイムを新しいバージョンに変更する](change-default-language-runtime-version.md)方法をご覧ください。
 
 ## <a name="what-is-binding"></a>バインドとは
 
-バインドは、R_SERVICES と PYTHON_SERVICES のフォルダーの内容を、[Microsoft Machine Learning Server](https://docs.microsoft.com/machine-learning-server/index) の新しい実行可能ファイル、ライブラリ、およびツールを使用して交換するインストール プロセスです。
+バインドは、**R_SERVICES** と **PYTHON_SERVICES** のフォルダーの内容を、[Microsoft Machine Learning Server](https://docs.microsoft.com/machine-learning-server) の新しい実行可能ファイル、ライブラリ、およびツールを使用して交換するインストール プロセスです。
 
-サービス モデルに付属するアップロード済みのコンポーネントが変更されました。
-
-サービスの更新は、[モダン ライフサイクル](https://support.microsoft.com/help/30881/modern-lifecycle-policy)の [Microsoft R Server および Machine Learning Server のサポート タイムライン](https://docs.microsoft.com/machine-learning-server/resources-servicing-support)と一致します。
+サービス モデルに付属するアップロード済みのコンポーネントが変更されました。 サービスの更新は、[モダン ライフサイクル](https://support.microsoft.com/help/30881/modern-lifecycle-policy)の [Microsoft R Server および Machine Learning Server のサポート タイムライン](https://docs.microsoft.com/machine-learning-server/resources-servicing-support)と一致します。
 
 コンポーネントのバージョンとサービスの更新を除き、バインドによってインストールの基本が変更されることはありません。
 
 - Python および R の統合は、引き続きデータベース エンジンのインスタンスの一部です。
 - ライセンスは変更されません (バインドに関連する追加コストはありません)。
-- SQL Server サポート ポリシーは、データベース エンジンに対して引き続き維持されます。 
+- SQL Server サポート ポリシーは、データベース エンジンに対して引き続き維持されます。
 
 この記事の残りの部分では、バインド メカニズムと SQL Server の各バージョンでの動作について説明します。
 
 > [!NOTE]
-> バインドは、SQL Server のインスタンスにバインドされている (データベース内の) インスタンスにのみ適用されます。 この場合、(スタンドアロンの) インストールにはバインドは必要ありません。
+> バインドは、SQL Server のインスタンスにバインドされている、データベース内インスタンスにのみ適用されます。 この場合、スタンドアロン インストールにはバインドは必要ありません。
 
 ::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
 **SQL Server 2016 のバインドに関する考慮事項**
@@ -55,7 +46,7 @@ SQL Server での Python および R の統合には、オープンソースの�
 SQL Server 2016 R Services のお客様の場合は、バインドによって次が提供されます。
 
 - 更新された R パッケージ。
-- 元のインストールに含まれていない新しいパッケージ ([MicrosoftML](https://  docs.microsoft.com/machine-learning-server/r-reference/microsoftml/microsoftml-package))
+- 元のインストールに含まれていない新しいパッケージ ([MicrosoftML](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/microsoftml-package))
 - 感情分析と画像検出用の事前トレーニング済みの機械学習[モデル](https://docs.microsoft.com/machine-learning-server/install/microsoftml-install-pretrained-models)。
 
 [Microsoft Machine Learning Server](https://docs.microsoft.com/machine-learning-server/index) の新しいメジャー リリースとマイナー リリースごとに、すべてのバインドをさらに更新することができます。
@@ -83,17 +74,17 @@ R 上の Microsoft R Open (MRO) | R 3.2.2     | R 3.3.2   |R 3.3.3   | R 3.4.1  
 ::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
 [**SQL Server 2017 Machine Learning Services**](../install/sql-machine-learning-services-windows-install.md)
 
-コンポーネント |最初のリリース | Machine Learning Server 9.3 | | | |
-----------|----------------|---------|-|-|-|-|
-R 上の Microsoft R Open (MRO) | R 3.3.3 | R 3.4.3 | | | |
-[RevoScaleR](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler) |   9.2 |  9.3 | | | |
-[MicrosoftML](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/microsoftml-package) | 9.2  | 9.3| | | |
-[sqlrutils](https://docs.microsoft.com/machine-learning-server/r-reference/sqlrutils/sqlrutils)| 1.0 |  1.0 | | | |
-[olapR](https://docs.microsoft.com/machine-learning-server/r-reference/olapr/olapr) | 1.0 |  1.0 | | | |
-Python 3.5 上の Anaconda 4.2  | 4.2/3.5.2 | 4.2/3.5.2 | | | |
-[revoscalepy](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/revoscalepy-package) | 9.2  | 9.3| | | |
-[microsoftml](https://docs.microsoft.com/machine-learning-server/python-reference/microsoftml/microsoftml-package) | 9.2  | 9.3| | | |
-[事前トレーニング済みモデル](https://docs.microsoft.com/machine-learning-server/install/microsoftml-install-pretrained-models) | 9.2 | 9.3| | | |
+コンポーネント |最初のリリース | Machine Learning Server 9.3 |
+----------|----------------|---------|
+R 上の Microsoft R Open (MRO) | R 3.3.3 | R 3.4.3 |
+[RevoScaleR](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler) |   9.2 |  9.3 |
+[MicrosoftML](https://docs.microsoft.com/machine-learning-server/r-reference/microsoftml/microsoftml-package) | 9.2  | 9.3|
+[sqlrutils](https://docs.microsoft.com/machine-learning-server/r-reference/sqlrutils/sqlrutils)| 1.0 |  1.0 |
+[olapR](https://docs.microsoft.com/machine-learning-server/r-reference/olapr/olapr) | 1.0 |  1.0 |
+Python 3.5 上の Anaconda 4.2  | 4.2/3.5.2 | 4.2/3.5.2 |
+[revoscalepy](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/revoscalepy-package) | 9.2  | 9.3|
+[microsoftml](https://docs.microsoft.com/machine-learning-server/python-reference/microsoftml/microsoftml-package) | 9.2  | 9.3|
+[事前トレーニング済みモデル](https://docs.microsoft.com/machine-learning-server/install/microsoftml-install-pretrained-models) | 9.2 | 9.3|
 ::: moniker-end
 
 ## <a name="how-component-upgrade-works"></a>コンポーネントのアップグレードのしくみ

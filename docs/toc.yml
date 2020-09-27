@@ -10124,6 +10124,18 @@
       href: /azure/sql-data-warehouse/sql-data-warehouse-overview-what-is
     - name: Azure VM 上の SQL Server >
       href: /azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-iaas-overview
+- name: Azure Arc 対応 SQL Server (プレビュー)
+  items:
+    - name: 概要
+      href: sql-server/azure-arc/overview.md
+    - name: 接続する
+      href: sql-server/azure-arc/connect.md
+    - name: 大規模な接続
+      href: sql-server/azure-arc/connect-at-scale.md
+    - name: アクセス
+      href: sql-server/azure-arc/assess.md
+    - name: 高度なデータ セキュリティの構成
+      href: sql-server/azure-arc/configure-advanced-data-security.md
 - name: リソース
   items:
     - name: オフライン SQL Server のドキュメント

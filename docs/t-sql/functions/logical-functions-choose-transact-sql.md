@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 1c382c83-7500-4bae-bbdc-c1dbebd3d83f
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: cc63fcaa6e7419a37005817f3121a2b8851dc749
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 68ad50b69fefd541e083ecab096732d549d171d1
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88363798"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91116007"
 ---
 # <a name="logical-functions---choose-transact-sql"></a>論理関数 - CHOOSE (Transact-SQL)
 [!INCLUDE [SQL Server Azure SQL Database ](../../includes/applies-to-version/sql-asdb.md)]
@@ -35,7 +35,6 @@ ms.locfileid: "88363798"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 CHOOSE ( index, val_1, val_2 [, val_n ] )  
 ```  
   
@@ -62,7 +61,7 @@ CHOOSE ( index, val_1, val_2 [, val_n ] )
 
  次の例では、入力される値のリストの 3 番目の項目が返されます。  
  
-```  
+```sql 
 SELECT CHOOSE ( 3, 'Manager', 'Director', 'Developer', 'Tester' ) AS Result;  
 ```  
   
@@ -80,7 +79,7 @@ Developer
 
  次の例では、`ProductCategoryID` 列の値に基づく単純な文字列が返されます。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 SELECT ProductCategoryID, CHOOSE (ProductCategoryID, 'A','B','C','D','E') AS Expression1  
@@ -106,7 +105,7 @@ ProductCategoryID Expression1
   
  次の例では、従業員が採用された季節が返されます。 `HireDate` 列から月の値を返すために MONTH 関数が使用されています。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 SELECT JobTitle, HireDate, CHOOSE(MONTH(HireDate),'Winter','Winter', 'Spring','Spring','Spring','Summer','Summer',   

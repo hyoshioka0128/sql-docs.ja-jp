@@ -1,6 +1,6 @@
 ---
 title: RevoScaleR コンピューティング コンテキストを使用する
-description: RevoScaleR チュートリアル 4:SQL Server 上で R 言語を使用してコンピューティング コンテキストを定義する方法。
+description: RxInSqlServer 関数について説明します。この関数では、リモート SQL Server のコンピューティング コンテキストを定義できます。
 ms.prod: sql
 ms.technology: machine-learning-services
 ms.date: 11/27/2018
@@ -9,15 +9,15 @@ author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 07e576bd8c2a57d7eca599ab24be88f3d615cceb
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 62b18fbdd0a4c59b8458b2bc1f757ef189db5de3
+ms.sourcegitcommit: 9b41725d6db9957dd7928a3620fe4db41eb51c6e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85680343"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88178779"
 ---
 # <a name="define-and-use-compute-contexts-sql-server-and-revoscaler-tutorial"></a>コンピューティング コンテキストの定義と使用 (SQL Server と RevoScaleR のチュートリアル)
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
 これは、SQL Server で [RevoScaleR 関数](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)を使用する方法についての [RevoScaleR チュートリアル シリーズ](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)のチュートリアル 4 です。
 

@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: 57eb9f4b-548f-4212-9684-a11d831c4732
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 061f293673e76fcf9d979d5bb63b21c7806dc632
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 3ded3cd350efe55a80ef47c28608a25f75ddbabf
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88422686"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91116700"
 ---
 # <a name="x40x40max_connections-transact-sql"></a>&#x40;&#x40;MAX_CONNECTIONS (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "88422686"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 @@MAX_CONNECTIONS  
 ```  
   
@@ -55,7 +55,7 @@ ms.locfileid: "88422686"
 ## <a name="examples"></a>例  
  次の例では、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスにおけるユーザー接続の最大数を返します。 この例では、接続数が少なくなるよう [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] を再構成していないことを前提としています。  
   
-```  
+```sql 
 SELECT @@MAX_CONNECTIONS AS 'Max Connections';  
 ```  
   

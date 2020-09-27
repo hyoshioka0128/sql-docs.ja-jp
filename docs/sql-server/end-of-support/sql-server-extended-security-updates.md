@@ -10,12 +10,12 @@ author: markingmyname
 ms.author: maghan
 ms.reviewer: pmasl
 monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 3e585b0314b6306bdff84b07f2d12514ee015936
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+ms.openlocfilehash: a4c032315ef6fb17578ffcdfc7116f3a93293ac8
+ms.sourcegitcommit: 21bedbae28840e2f96f5e8b08bcfc794f305c8bc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85900544"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87862898"
 ---
 # <a name="what-are-extended-security-updates-for-sql-server"></a>SQL Server 用の延長セキュリティ更新プログラムとは
 [!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
@@ -281,17 +281,17 @@ Microsoft ライフサイクル ポリシーでは、ビジネスおよび開発
 
 **SQL Server 2008 および 2008 R2 のユーザーが、自分のライセンスを持ち込む (BYOL) 必要がある場合、ソフトウェア アシュアランスを保有している必要がありますか?**
 
-はい。お客様がライセンス モビリティ プログラムの一部として Azure Virtual Machines 上の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で BYOL プログラムを活用するためには、ソフトウェア アシュアランスをご利用いただく必要があります。 ソフトウェア アシュアランスをお持ちでないお客様には、[!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)] 環境を対象に Azure SQL Database Managed Instance への移行をお勧めします。 お客様は、従量課金制の Azure Virtual Machines に移行することもできます。 SQL をコア単位でライセンスするソフトウェア アシュアランスのお客様は、Azure ハイブリッド特典 (AHB) を使用して Azure に移行することもできます。
+はい。お客様がライセンス モビリティ プログラムの一部として Azure Virtual Machines 上の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で BYOL プログラムを活用するためには、ソフトウェア アシュアランスをご利用いただく必要があります。 ソフトウェア アシュアランスをお持ちでないお客様には、[!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)] 環境を対象に Azure SQL Managed Instance への移行をお勧めします。 お客様は、従量課金制の Azure Virtual Machines に移行することもできます。 SQL をコア単位でライセンスするソフトウェア アシュアランスのお客様は、Azure ハイブリッド特典 (AHB) を使用して Azure に移行することもできます。
 
-Azure SQL Database Managed Instance は、オンプレミス [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] とのほぼ 100% の互換性を提供する Azure のサービスです。 Managed Instance には、組み込みの高可用性およびディザスター リカバリー機能に加え、インテリジェントなパフォーマンス機能と、即座にスケーリングする機能が用意されています。 また Managed Instance では、手動でのセキュリティ修正プログラムの適用やアップグレードの必要性を解消する、バージョンに関係しないエクスペリエンスが提供されます。 BYOL プログラムの詳細については、Azure の料金ガイダンスのページを参照してください。
+Azure SQL Managed Instance は、オンプレミス [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] とのほぼ 100% の互換性を提供する Azure のサービスです。 Managed Instance には、組み込みの高可用性およびディザスター リカバリー機能に加え、インテリジェントなパフォーマンス機能と、即座にスケーリングする機能が用意されています。 また Managed Instance では、手動でのセキュリティ修正プログラムの適用やアップグレードの必要性を解消する、バージョンに関係しないエクスペリエンスが提供されます。 BYOL プログラムの詳細については、Azure の料金ガイダンスのページを参照してください。
 
 **Azure で SQL Server を実行するには、どのようなオプションがありますか?**
 
-お客様は、従来の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 環境をフル マネージドのデータ プラットフォーム サービス (PaaS) である Azure SQL Database Managed Instance (サポート終了日に関する懸念が解消される "バージョンに関係しない" オプションが提供されます) に移行するか、セキュリティ更新プログラムにアクセスできる Azure Virtual Machines に移行することができます。 移行したデータベースとレガシ システムとの互換性が維持されます。 詳細については、「[Compatibility Certification](../../database-engine/install-windows/compatibility-certification.md)」 (互換性証明書) を参照してください。
+お客様は、従来の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 環境をフル マネージドのデータ プラットフォーム サービス (PaaS) である Azure SQL Managed Instance (サポート終了日に関する懸念が解消される "バージョンに関係しない" オプションが提供されます) に移行するか、セキュリティ更新プログラムにアクセスできる Azure Virtual Machines に移行することができます。 移行したデータベースとレガシ システムとの互換性が維持されます。 詳細については、「[Compatibility Certification](../../database-engine/install-windows/compatibility-certification.md)」 (互換性証明書) を参照してください。
 
 延長セキュリティ更新プログラムは、2019 年 7 月 9 日のサポート終了日後の次の 3 年間、Azure Virtual Machines の [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)] と [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] で利用できます。 [!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)] と [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] からアップグレードしようとしているお客様については、以降のすべてのバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] がサポートされます。 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] については、お客様はサポートされている最新の Service Pack を適用済みである必要があります。 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 以降では、最新の累積更新プログラムを適用することが推奨されます。 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 以降では、Service Pack を使用できず、累積更新プログラムと一般配布リリース (GDR) のみを利用できることに注意してください。
 
-Azure SQL Database Managed Instance は、[!INCLUDE[ssSDS](../../includes/sssds-md.md)] でのインスタンスをスコープとするデプロイ オプションで、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エンジンの互換性とネイティブ仮想ネットワーク (VNET) の最も幅広いサポートを提供するものです。そのため、アプリを変更することなく [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースを Managed Instance に移行できます。 充実した [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のセキュリティと、インテリジェントなフル マネージド サービスの運用上および財務上の利点が組み合わされています。 新しい Azure Database Migration Service を利用すると、アプリケーション コードの変更をほとんどまたはまったく行わずに、[!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)] と [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] を Azure SQL Database Managed Instance に移行できます。
+Azure SQL Managed Instance は、[!INCLUDE[ssSDS](../../includes/sssds-md.md)] でのインスタンスをスコープとするデプロイ オプションで、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エンジンの互換性とネイティブ仮想ネットワーク (VNET) の最も幅広いサポートを提供するものです。そのため、アプリを変更することなく [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースを Managed Instance に移行できます。 充実した [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のセキュリティと、インテリジェントなフル マネージド サービスの運用上および財務上の利点が組み合わされています。 新しい Azure Database Migration Service を利用すると、アプリケーション コードの変更をほとんどまたはまったく行わずに、[!INCLUDE[ssKatmai](../../includes/ssKatmai-md.md)] と [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] を Azure SQL Managed Instance に移行できます。
 
 **SQL Server 2008 バージョンと 2008 R2 バージョンの Azure ハイブリッド特典を利用することはできますか?**
 

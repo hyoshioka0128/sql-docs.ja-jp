@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: e06d2cab-f1ff-42f1-8550-6aaec57be36f
 author: julieMSFT
 ms.author: jrasnick
-ms.openlocfilehash: b3d0648e3e017179ff91ae7e2d951967cb7517cc
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 4fe754848be676d40387d4887a5a7e519da697f7
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88445716"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91111051"
 ---
 # <a name="newsequentialid-transact-sql"></a>NEWSEQUENTIALID (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -53,16 +53,16 @@ NEWSEQUENTIALID ( )
 ## <a name="return-type"></a>戻り値の型  
  **uniqueidentifier**  
   
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>解説  
  NEWSEQUENTIALID() は、型のテーブル列の既定の制約でのみ使用できます **uniqueidentifier**です。 次に例を示します。  
   
-```  
+```sql  
 CREATE TABLE myTable (ColumnA uniqueidentifier DEFAULT NEWSEQUENTIALID());   
 ```  
   
  NEWSEQUENTIALID() を DEFAULT 式で使用する場合、他のスカラー演算子と組み合わせることはできません。 たとえば、次を実行することはできません。  
   
-```  
+```sql 
 CREATE TABLE myTable (ColumnA uniqueidentifier DEFAULT dbo.myfunction(NEWSEQUENTIALID()));  
 ```  
   
@@ -74,7 +74,7 @@ CREATE TABLE myTable (ColumnA uniqueidentifier DEFAULT dbo.myfunction(NEWSEQUENT
   
  NEWSEQUENTIALID を使用して生成された各 GUID は、そのコンピューター上で一意です。 NEWSEQUENTIALID を使用して生成された GUID は、ソース コンピューターにネットワーク カードがある場合にのみ、複数のコンピューター間で一意になります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [NEWID &#40;Transact-SQL&#41;](../../t-sql/functions/newid-transact-sql.md)   
  [比較演算子 &#40;Transact-SQL&#41;](../../t-sql/language-elements/comparison-operators-transact-sql.md)  
   

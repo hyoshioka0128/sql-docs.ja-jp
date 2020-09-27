@@ -1,7 +1,8 @@
 ---
-title: 既定の SQL Server のデータ型 | Microsoft Docs
+title: Default SQL Server データ型
+description: このトピックでは、Microsoft SQLSRV Driver for PHP for SQL Server の使用時の既定の全 SQL Server データ型を PHP データ型に基づいてリストアップします
 ms.custom: ''
-ms.date: 01/19/2017
+ms.date: 08/10/2020
 ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
@@ -13,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 65c7c211-96d3-4e65-a1de-1fe8d21348e7
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: dcfe4dd998f320da7e23ea28df99a28c48d2abba
-ms.sourcegitcommit: fe5c45a492e19a320a1a36b037704bf132dffd51
+ms.openlocfilehash: a5f60111e8a98e3f187e4db39eec06ab35e38195
+ms.sourcegitcommit: d1051f05a7db81ec62d9785bb6af572408f3d4e0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80928015"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88680777"
 ---
 # <a name="default-sql-server-data-types"></a>既定の SQL Server のデータ型
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]
@@ -28,8 +29,8 @@ ms.locfileid: "80928015"
 |PHP のデータ型|SQLSRV ドライバーの SQL Server の既定の型|PDO_SQLSRV ドライバーの SQL Server の既定の型|  
 |-----------------|------------------------------------------------|-----------------------------------------------------|  
 |NULL|varchar (1)|サポート対象外|  
-|Boolean|bit|bit|  
-|整数|INT|INT|  
+|ブール型|bit|bit|  
+|Integer|INT|INT|  
 |Float|float(24)|サポート対象外|  
 |文字列 (長さ 8000 バイト未満)|varchar(<string length>)|varchar(<string length>)|  
 |文字列 (8000 バイトを超える長さ)|varchar(max)|varchar(max)|  
@@ -37,7 +38,7 @@ ms.locfileid: "80928015"
 |ストリーム (エンコード: バイナリではない)|varchar(max)|varchar(max)|  
 |ストリーム (エンコード: バイナリ)|varbinary|varbinary|  
 |Array|サポートされていません。|サポートされていません。|  
-|Object|サポートされていません。|サポートされていません。|  
+|オブジェクト|サポートされていません。|サポートされていません。|  
 |DateTime (1)|DATETIME|サポートされていません。|  
   
 ## <a name="see-also"></a>参照  

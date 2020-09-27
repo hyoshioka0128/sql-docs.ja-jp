@@ -1,7 +1,7 @@
 ---
 title: アプリケーション展開とは
 titleSuffix: SQL Server Big Data Clusters
-description: この記事では、SQL Server 2019 ビッグ データ クラスターへのアプリケーションの展開について説明します。
+description: SQL Server 2019 ビッグ データ クラスターでアプリケーションを作成、管理、実行するためのインターフェイスがアプリケーションの展開時に提供されます。そのしくみについて説明します。
 author: cloudmelon
 ms.author: melqin
 ms.reviewer: mikeray
@@ -10,12 +10,12 @@ ms.date: 06/22/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 4423e6fe624c27c0b9c06d3ff59c56648762af99
-ms.sourcegitcommit: d973b520f387b568edf1d637ae37d117e1d4ce32
+ms.openlocfilehash: 4bde49046ab8d4f4ea7217970ec85c7a7966f487
+ms.sourcegitcommit: 7345e4f05d6c06e1bcd73747a4a47873b3f3251f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85215451"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88765331"
 ---
 # <a name="what-is-application-deployment-on-a-big-data-cluster"></a>ビッグ データ クラスターへのアプリケーション展開とは
 
@@ -57,7 +57,7 @@ ReplicaSet が作成され、ポッドが開始されると、`spec.yaml` ファ
 
 SQL Server 2019 CU5 により、Red Hat OpenShift でのビッグ データ クラスターの展開、および BDC の更新されたセキュリティ モデルがサポートされるため、特権コンテナーは不要になります。 SQL Server 2019 CU5 を使用するすべての新しいデプロイでは、非特権だけでなく、コンテナーも既定では非ルート ユーザーとして実行されます。
 
-CU5 リリースの時点では、[アプリ展開](concept-application-deployment.md)インターフェイスを使用して展開されたアプリケーションのセットアップ手順は、引き続き *ルート* ユーザーとして実行されます。 これは、セットアップ中に、アプリケーションで使用する追加のパッケージがインストールされるために必要です。 アプリケーションの一部として展開された他のユーザー コードは、特権の低いユーザーとして実行されます。 
+CU5 リリースの時点では、[アプリ展開]()インターフェイスを使用して展開されたアプリケーションのセットアップ手順は、引き続き *ルート* ユーザーとして実行されます。 これは、セットアップ中に、アプリケーションで使用する追加のパッケージがインストールされるために必要です。 アプリケーションの一部として展開された他のユーザー コードは、特権の低いユーザーとして実行されます。 
 
 また、**CAP_AUDIT_WRITE** 機能は、cron ジョブを使用して SSIS アプリケーションをスケジュールするために必要なオプションの機能です。 アプリケーションの yaml 仕様ファイルでスケジュールが指定されている場合、アプリケーションは cron ジョブによってトリガーされるため、追加の機能が必要になります。  または、Web サービスの呼び出しを使用して *azdata app run* で必要に応じてアプリケーションをトリガーすることもできます。この場合、CAP_AUDIT_WRITE 機能は必要ありません。 
 
@@ -78,18 +78,18 @@ allowedCapabilities:
 ## <a name="how-to-work-with-application-deployment"></a>アプリケーション展開を使用する方法
 
 アプリケーション展開には、次の 2 つの主要なインターフェイスがあります。 
-- [コマンド ライン インターフェイス `azdata`](big-data-cluster-create-apps.md)
+- [コマンド ライン インターフェイス `azdata`](app-create.md)
 - [Visual Studio Code と Azure Data Studio 拡張機能](app-deployment-extension.md)
 
-RESTful Web サービスを使用してアプリケーションを実行することもできます。 詳細については、[ビッグ データ クラスターでのアプリケーションの使用](big-data-cluster-consume-apps.md)に関するページを参照してください。
+RESTful Web サービスを使用してアプリケーションを実行することもできます。 詳細については、[ビッグ データ クラスターでのアプリケーションの使用](app-consume.md)に関するページを参照してください。
 
 ## <a name="next-steps"></a>次のステップ
 
 [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]でアプリケーションを作成して実行する方法の詳細については、次を参照してください。
 
-- [azdata を使用してアプリケーションを展開する](big-data-cluster-create-apps.md)
+- [azdata を使用してアプリケーションを展開する](app-create.md)
 - [アプリケーション展開の拡張機能を使用してアプリケーションを展開する](app-deployment-extension.md)
-- [ビッグ データ クラスターでアプリケーションを使用する](big-data-cluster-consume-apps.md)
+- [ビッグ データ クラスターでアプリケーションを使用する](app-consume.md)
 
 [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]の詳細については、次の概要を参照してください。
 

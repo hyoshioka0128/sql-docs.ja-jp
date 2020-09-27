@@ -1,4 +1,5 @@
 ---
+description: Microsoft Drivers for PHP for SQL Server における高可用性とディザスター リカバリーのサポート
 title: Microsoft SQL Server 用 Drivers for PHP における高可用性とディザスター リカバリーのサポート | Microsoft Docs
 ms.custom: ''
 ms.date: 07/31/2018
@@ -10,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 73a80821-d345-4fea-b076-f4aabeb4af3e
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 19c042e784185e2dbbc3415732f3ab05be04e097
-ms.sourcegitcommit: fe5c45a492e19a320a1a36b037704bf132dffd51
+ms.openlocfilehash: 8e0386a6aba186924ee345bd9d5b470bd0bd6c56
+ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80927238"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88478004"
 ---
 # <a name="support-for-high-availability-disaster-recovery"></a>高可用性、障害復旧のサポート
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]
@@ -59,7 +60,7 @@ try {
 ?>
 ```
 
-## <a name="upgrading-to-use-multi-subnet-clusters-from-database-mirroring"></a>データベース ミラーリングの使用からマルチサブネット クラスターの使用へのアップグレード  
+## <a name="upgrading-to-use-multi-subnet-clusters-from-database-mirroring"></a>データベース ミラーリングから複数のサブネット クラスターを使用するためのアップグレード  
 接続文字列に **MultiSubnetFailover** および **Failover_Partner** の接続キーワードが存在する場合、接続エラーが発生します。 また、**MultiSubnetFailover** が使用されており、データベース ミラーリング ペアに属していることを示すフェールオーバー パートナーの応答が SQL Server から返された場合にも、エラーが発生します。  
   
 現在データベース ミラーリングを使用している PHP アプリケーションをマルチサブネットのシナリオにアップグレードする場合は、**Failover_Partner** 接続プロパティを削除して **True** に設定した **MultiSubnetFailover** に置き換え、接続文字列内のサーバー名を可用性グループ リスナーに置き換えます。 接続文字列で **Failover_Partner** および **MultiSubnetFailover=true** が使用されている場合、ドライバーでエラーが発生します。 ただし、接続文字列に **Failover_Partner** と **MultiSubnetFailover=false** (または **ApplicationIntent=ReadWrite**) が使用されている場合、アプリケーションではデータベース ミラーリングが使用されます。  

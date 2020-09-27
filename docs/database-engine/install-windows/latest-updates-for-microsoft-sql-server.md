@@ -13,12 +13,12 @@ author: tmichael-ms
 ms.author: tmichael
 ms.reviewer: hristins
 mtps_version: v=MSDN.10
-ms.openlocfilehash: cd0d9ca299a9905ba16f6a4e8f7daf3efef12087
-ms.sourcegitcommit: c5f0c59150c93575bb2bd6f1715b42716001126b
+ms.openlocfilehash: 2640a32faa56e938101880791ab6422ad3782ee0
+ms.sourcegitcommit: 658c2e0ad958009ce7f041ba1ec0b4af06887497
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89392200"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91145411"
 ---
 # <a name="latest-updates-for-microsoft-sql-server"></a>Microsoft SQL Server の最新の更新プログラム
 
@@ -36,8 +36,8 @@ SQL Server 製品の更新プログラムを 1 か所で検索して管理しま
 
 |製品のバージョン   | 最新の Service Pack |  最新の GDR | 最新の累積的な更新プログラム | CU のリリース日 | 一般的なガイダンス  |
 |--|--|--|--|--|--|
-|SQL Server 2019|該当なし|[KB 4517790](https://support.microsoft.com/help/4517790)|CU 7 [(KB 4570012)](https://support.microsoft.com/help/4570012)|2020 年 9 月 2 日|[SQL Server 2019 のインストール](https://docs.microsoft.com/sql/database-engine/install-windows/installation-for-sql-server)|
-|SQL Server 2017|該当なし|[KB 4505224](https://support.microsoft.com/help/4505224)|CU 21 [(KB 4557397)](https://support.microsoft.com/help/4557397)|2020 年 7 月 1 日|[SQL Server 2017 のインストール](https://docs.microsoft.com/sql/database-engine/install-windows/installation-for-sql-server)|
+|SQL Server 2019|該当なし|[KB 4517790](https://support.microsoft.com/help/4517790)|CU 6 [(KB 4563110)](https://support.microsoft.com/help/4563110)|2020 年 8 月 4 日|[SQL Server 2019 のインストール](https://docs.microsoft.com/sql/database-engine/install-windows/installation-for-sql-server)|
+|SQL Server 2017|該当なし|[KB 4505224](https://support.microsoft.com/help/4505224)|CU 22 [(KB 4577467)](https://support.microsoft.com/help/4577467)|2020 年 9 月 10 日|[SQL Server 2017 のインストール](https://docs.microsoft.com/sql/database-engine/install-windows/installation-for-sql-server)|
 |SQL Server 2016|SP2 [(KB 4052908)](https://support.microsoft.com/help/4052908)|[KB 4532097](https://support.microsoft.com/help/4532097)|CU 14 [(KB 4564903)](https://support.microsoft.com/kb/4564903)|2020 年 8 月 6 日|[SQL Server 2016 のインストール](https://technet.microsoft.com/library/bb500469.aspx)|
 |SQL Server 2016|SP1 [(KB 3182545)](https://support.microsoft.com/help/3182545/sql-server-2016-service-pack-1-release-information)|[KB 4505219](https://support.microsoft.com/help/4505219)|CU 15 + GDR [(KB 4505221)](https://support.microsoft.com/help/4505221)|2019/7/9|[SQL Server 2016 のインストール](https://technet.microsoft.com/library/bb500469.aspx)|
 |SQL Server 2016|該当なし|[KB4058560](https://support.microsoft.com/help/4058560)|CU 9 [(KB 4058559)](https://support.microsoft.com/help/4058559)|2017/11/22|[SQL Server 2016 のインストール](https://technet.microsoft.com/library/bb500469.aspx)|

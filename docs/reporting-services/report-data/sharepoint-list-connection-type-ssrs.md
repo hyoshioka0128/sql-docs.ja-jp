@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: 2c4adf2f-e9c4-4fae-bd3c-97fe64436caf
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 5d98e13b0d42dd61ae87e52ef3cc757d12093f4b
-ms.sourcegitcommit: 9470c4d1fc8d2d9d08525c4f811282999d765e6e
+ms.openlocfilehash: d01a7cdd6d81d0c27e9c8d8562f71f5605ed4df2
+ms.sourcegitcommit: df1f0f2dfb9452f16471e740273cd1478ff3100c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86455684"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87396691"
 ---
 # <a name="sharepoint-list-connection-type-ssrs"></a>SharePoint リストの接続の種類 (SSRS)
 
@@ -40,7 +40,7 @@ Microsoft SharePoint リストのデータをレポートに含めるには、�
   
  **表 1**  
   
-||サポートされる資格情報|クラシック モードの Windows 認証|*要求認証|  
+|取得の種類|サポートされる資格情報|クラシック モードの Windows 認証|*要求認証|  
 |-|---------------------------|-----------------------------------------|-----------------------------|  
 |ローカル ファームの SharePoint リスト|Windows 認証 (統合セキュリティ) または SharePoint ユーザー トークン|はい|はい|  
 ||保存、要求、なし (Windows 資格情報を使用)<br /><br /> Windows 以外の資格情報を使用した場合、保存されている資格情報や資格情報の要求はサポートされません。|はい|いいえ|  
@@ -51,7 +51,7 @@ Microsoft SharePoint リストのデータをレポートに含めるには、�
   
  **表 2**  
   
-||サポートされる資格情報|クラシック モードの Windows 認証|*要求認証|  
+|取得の種類|サポートされる資格情報|クラシック モードの Windows 認証|*要求認証|  
 |-|---------------------------|-----------------------------------------|-----------------------------|  
 |ローカル ファームの SharePoint リスト|Windows 認証 (統合セキュリティ) または SharePoint ユーザー トークン|はい|はい|  
 ||保存、要求、なし (Windows 資格情報を使用)<br /><br /> Windows 以外の資格情報を使用した場合、保存されている資格情報や資格情報の要求はサポートされません。|いいえ|いいえ|  

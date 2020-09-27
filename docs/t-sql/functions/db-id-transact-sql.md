@@ -24,12 +24,12 @@ ms.assetid: 7b3aef89-a6fd-4144-b468-bf87ebf381b8
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6742ad9d5dae61ffcdbefe5d8f66bcbe8cd5078e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 4322d70fe60182116a47b35d005f2dae3a449e8a
+ms.sourcegitcommit: 76d31f456982dabb226239b424eaa7139d8cc6c1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88310938"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90570662"
 ---
 # <a name="db_id-transact-sql"></a>DB_ID (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "88310938"
   
 ## <a name="syntax"></a>構文  
   
-```sql
+```syntaxsql
 DB_ID ( [ 'database_name' ] )   
 ```  
   
@@ -87,8 +87,8 @@ GO
 この例では、`DB_ID` を使用して、[!INCLUDE[ssSampleDBobject](../../includes/sssampledbobject-md.md)] データベースのデータベース ID をシステム関数 `sys.dm_db_index_operational_stats` で返します。 この関数はデータベース ID を最初のパラメーターとしてとります。
   
 ```sql
-DECLARE @db_id int;  
-DECLARE @object_id int;  
+DECLARE @db_id INT;  
+DECLARE @object_id INT;  
 SET @db_id = DB_ID(N'AdventureWorks2012');  
 SET @object_id = OBJECT_ID(N'AdventureWorks2012.Person.Address');  
 IF @db_id IS NULL   

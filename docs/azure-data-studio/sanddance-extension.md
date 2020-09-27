@@ -1,22 +1,23 @@
 ---
 title: SandDance for Azure Data Studio
 description: Azure Data Studio 拡張機能を使用し、データを短時間で視覚化し、分析情報を得る方法について説明します。
-ms.custom: seodec18
-ms.date: 07/03/2019
 ms.prod: azure-data-studio
 ms.technology: azure-data-studio
-ms.reviewer: alayu, maghan, sstein
 ms.topic: conceptual
 author: yualan
 ms.author: alayu
-ms.openlocfilehash: 6369224595efffa83eb1bd3bed370f76030efe38
-ms.sourcegitcommit: dc8a30a4a27e15fc6671ca2674da9b7c637ec255
+ms.reviewer: maghan, sstein
+ms.custom: seodec18
+ms.date: 07/03/2019
+ms.openlocfilehash: 3035369f651111a228081bf2093c56eadb131456
+ms.sourcegitcommit: d56f1eca807c55cf606a6316f3872585f014fec1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88745642"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90913835"
 ---
 # <a name="sanddance-for-azure-data-studio-preview"></a>SandDance for Azure Data Studio (プレビュー)
+
 Azure Data Studio では、データを簡単に視覚化する方法を提供できるようになりました。 この拡張機能は、データを確認し、何が起こっているかを把握しようとするときに役立ちます。 マイクロソフト リサーチの SandDance と呼ばれるテクノロジを使用します。これにより、データのインプレース視覚化を作成することができます。
 
 ![sanddance-animation](https://user-images.githubusercontent.com/11507384/54236654-52d42800-44d1-11e9-859e-6c5d297a46d2.gif)

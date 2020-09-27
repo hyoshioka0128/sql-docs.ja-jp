@@ -22,12 +22,12 @@ ms.assetid: ee53c5c8-e36c-40f9-8cd1-d933791b98fa
 author: rothja
 ms.author: jroth
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: bc6e54c2e820794e3346842d748c4bc0c7384b9b
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 6b0a6f3b475e09a0a154bc6bcee83ca21167295f
+ms.sourcegitcommit: 8f062015c2a033f5a0d805ee4adabbe15e7c8f94
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88361168"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91227225"
 ---
 # <a name="expressions-transact-sql"></a>式 (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -50,7 +50,7 @@ ms.locfileid: "88361168"
 ```  
   
 ```syntaxsql
--- Syntax for Azure SQL Data Warehouse and Parallel Data Warehouse  
+-- Syntax for Azure Synapse Analytics and Parallel Data Warehouse  
 
 -- Expression in a SELECT statement  
 <expression> ::=   
@@ -132,7 +132,7 @@ GO
   
  式 `1+2` は、結果セット内の各行で `3` と評価されます。 式 `ProductID` は、結果セットの各行で一意な値をとりますが、各行に格納される `ProductID` の値は 1 つだけです。  
  
-- Azure SQL Data Warehouse では各スレッドに固定された最大メモリ量が割り当てられるため、スレッドによってすべてのメモリが使い尽くされることはありません。  このメモリの一部は、クエリの式を格納するために使用されます。  クエリに含まれる式が多すぎて、必要なメモリが内部制限を超えた場合、そのクエリはエンジンによって実行されません。  この問題を回避するために、ユーザーはクエリを複数のクエリに変更して、それぞれのクエリに含まれる式の数を減らすことができます。 たとえば、次のように WHERE 句に式の長いリストを含むクエリがあるとします。 
+- [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] によって各スレッドに固定された最大メモリ量が割り当てられるため、スレッドによってすべてのメモリが使い尽くされることはありません。  このメモリの一部は、クエリの式を格納するために使用されます。  クエリに含まれる式が多すぎて、必要なメモリが内部制限を超えた場合、そのクエリはエンジンによって実行されません。  この問題を回避するために、ユーザーはクエリを複数のクエリに変更して、それぞれのクエリに含まれる式の数を減らすことができます。 たとえば、次のように WHERE 句に式の長いリストを含むクエリがあるとします。 
 
 ```sql
 DELETE FROM dbo.MyTable 

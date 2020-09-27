@@ -5,16 +5,16 @@ description: SQL Server ビッグ データ クラスターを新しいリリー
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: mihaelab
-ms.date: 02/13/2020
+ms.date: 09/02/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: dedae90b5242282fb550ebc59c5a4d98d21506f3
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 009853cd960a49ec559edd1d8a619e458102364d
+ms.sourcegitcommit: c5f0c59150c93575bb2bd6f1715b42716001126b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85764067"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89392178"
 ---
 # <a name="how-to-upgrade-big-data-clusters-2019"></a>[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]をアップグレードする方法
 
@@ -36,20 +36,28 @@ ms.locfileid: "85764067"
 
 このセクションでは、SQL Server BDC を、サポートされているリリース (SQL Server 2019 GDR1 以降) から新しいサポートされているリリースにアップグレードする方法について説明します。
 
+1. アクティブな Livy セッションがないことを確認します。
+
+   Azure Data Studio でアクティブな Livy セッションまたはバッチ ジョブが実行されていないことを確認します。 これを確認する簡単な方法は、`curl` コマンドまたはブラウザーを使用して、次の URL を要求するというものです。
+
+    - `<your-gateway-endpoint>/gateway/default/livy/v1/sessions`
+    - `<your-gateway-endpoint>/gateway/default/livy/v1/batches`
+
 1. SQL Server マスター インスタンスをバックアップします。
-2. HDFS をバックアップします。
+
+1. HDFS をバックアップします。
 
    ```
    azdata bdc hdfs cp --from-path <path> --to-path <path>
    ```
    
-   次に例を示します。 
+   たとえば、次のように入力します。 
 
    ```
    azdata bdc hdfs cp --from-path hdfs://user/hive/warehouse/%%D --to-path ./%%D
    ```
 
-3. `azdata` を更新します。
+1. `azdata` を更新します。
 
    `azdata` のインストール手順に従います。 
    - [Windows インストーラー](deploy-install-azdata-installer.md)
@@ -66,10 +74,10 @@ ms.locfileid: "85764067"
    azdata bdc upgrade -n <clusterName> -t <imageTag> -r <containerRegistry>/<containerRepository>
    ```
 
-   たとえば、次のスクリプトでは `2019-CU4-ubuntu-16.04` イメージ タグを使用しています。
+   たとえば、次のスクリプトでは `2019-CU6-ubuntu-16.04` イメージ タグを使用しています。
 
    ```
-   azdata bdc upgrade -n bdc -t 2019-CU4-ubuntu-16.04 -r mcr.microsoft.com/mssql/bdc
+   azdata bdc upgrade -n bdc -t 2019-CU6-ubuntu-16.04 -r mcr.microsoft.com/mssql/bdc
    ```
 
 >[!NOTE]
@@ -93,10 +101,10 @@ ms.locfileid: "85764067"
    Control plane upgrade failed. Failed to upgrade controller.
    ```
 
-アップグレードのタイムアウトを増やすには、 **--controller-timeout** と **--component-timeout** パラメーターを使用して、アップグレードの発行時に高い値を指定します。 このオプションは、SQL Server 2019 CU2 リリース以降でのみ使用できます。 次に例を示します。
+アップグレードのタイムアウトを増やすには、 **--controller-timeout** と **--component-timeout** パラメーターを使用して、アップグレードの発行時に高い値を指定します。 このオプションは、SQL Server 2019 CU2 リリース以降でのみ使用できます。 たとえば、次のように入力します。
 
    ```bash
-   azdata bdc upgrade -t 2019-CU4-ubuntu-16.04 --controller-timeout=40 --component-timeout=40 --stability-threshold=3
+   azdata bdc upgrade -t 2019-CU6-ubuntu-16.04 --controller-timeout=40 --component-timeout=40 --stability-threshold=3
    ```
 **--controller-timeout** では、コントローラーまたはコントローラー db のアップグレードが完了するまでの待機時間を分単位で指定します。
 **--component-timeout** では、これ以降のアップグレードの各フェーズの完了時間を指定します。
@@ -123,7 +131,7 @@ SQL Server ビッグ データ クラスターの CTP またはリリース候�
 
 ### <a name="backup-and-delete-the-old-cluster"></a>以前のクラスターをバックアップして削除する
 
-SQL Server 2019 GDR1 リリースの前に展開されたビッグ データ クラスターのインプレース アップグレードはありません。 新しいリリースにアップグレードする唯一の方法は、クラスターを手動で削除して再作成することです。 各リリースには、以前のバージョンと互換性のない固有のバージョンの `azdata` があります。 また、別の以前のバージョンで展開されたクラスターに新しいコンテナー イメージをダウンロードした場合、最新のイメージはクラスター上の以前のイメージと互換性がない可能性があります。 コンテナー設定の展開構成ファイルで `latest` イメージ タグを使用している場合は、新しいイメージがプルされます。 既定では、各リリースには、SQl Server のリリース バージョンに対応する固有のイメージ タグがあります。 最新のリリースにアップグレードするには、次の手順に従います。
+SQL Server 2019 GDR1 リリースの前に展開されたビッグ データ クラスターのインプレース アップグレードはありません。 新しいリリースにアップグレードする唯一の方法は、クラスターを手動で削除して再作成することです。 各リリースには、以前のバージョンと互換性のない固有のバージョンの `azdata` があります。 また、別の以前のバージョンで展開されたクラスターに新しいコンテナー イメージをダウンロードした場合、最新のイメージはクラスター上の以前のイメージと互換性がない可能性があります。 コンテナー設定の展開構成ファイルで `latest` イメージ タグを使用している場合は、新しいイメージがプルされます。 既定では、各リリースには、SQL Server のリリース バージョンに対応する固有のイメージ タグがあります。 最新のリリースにアップグレードするには、次の手順に従います。
 
 1. 以前のクラスターを削除する前に、SQL Server マスター インスタンス上と HDFS 上のデータをバックアップします。 SQL Server マスター インスタンスの場合は、[SQL Server のバックアップと復元](data-ingestion-restore-database.md)を使用できます。 HDFS の場合は、[`curl` を使用してデータをコピーできます](data-ingestion-curl.md)。
 

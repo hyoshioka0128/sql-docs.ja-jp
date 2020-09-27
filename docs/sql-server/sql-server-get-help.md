@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017 || = sqlallproducts-allversions'
-ms.openlocfilehash: 49bf5ae8b9ab88859bedaf114242b1dcf64bb641
-ms.sourcegitcommit: 903856818acc657e5c42faa16d1c770aeb4e1d1b
+ms.openlocfilehash: ed931eb7a77026e4902f5591def3496eb30851bf
+ms.sourcegitcommit: 04fb4c2d7ccddd30745b334b319d9d2dd34325d6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83732181"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89569942"
 ---
 # <a name="sql-server-help-and-feedback"></a>SQL Server のヘルプとフィードバック
 
@@ -29,23 +29,11 @@ ms.locfileid: "83732181"
 
 ## <a name="ask-community-for-help"></a>コミュニティに支援を求める
 
-活気のある SQL Server コミュニティに参加してそのサポートを受けたい場合は、様々な方法を選ぶことができます。
+活気のある SQL Server コミュニティに参加してそのサポートを受けたい場合は、さまざまな方法を選ぶことができます。
 
+### <a name="microsoft-q--a"></a>Microsoft Q & A
 
-### <a name="msdn-forums"></a>MSDN フォーラム
-
-SQL Server の問題に役立つ可能性がある MSDN フォーラムが多数あります。 
-- [SQL Server データベース エンジン](https://social.msdn.microsoft.com/Forums/en-US/home?forum=sqldatabaseengine&filter=alltypes&sort=lastpostdesc)
-- [セットアップとアップグレード](https://social.msdn.microsoft.com/Forums/en-US/home?forum=sqlsetupandupgrade&filter=alltypes&sort=lastpostdesc)
-- [高可用性とディザスター リカバリー](https://social.msdn.microsoft.com/Forums/en-US/home?forum=sqldisasterrecovery%2Csqldatabasemirroring&filter=alltypes&sort=lastpostdesc)
-- [SQL Server ツール](https://social.msdn.microsoft.com/Forums/en-US/home?forum=sqltools%2Cssdt&filter=alltypes&sort=lastpostdesc) 
-- [Security](https://social.msdn.microsoft.com/Forums/en-US/home?forum=sqlsecurity&filter=alltypes&sort=lastpostdesc)
-- [レプリケーション](https://social.msdn.microsoft.com/Forums/en-US/home?forum=sqlreplication&filter=alltypes&sort=lastpostdesc)
-- [Transact-SQL (T-SQL)](https://social.msdn.microsoft.com/Forums/en-US/home?forum=transactsql)
-- [SQL Server Integration Services (SSIS)](https://social.msdn.microsoft.com/Forums/en-US/home?forum=sqlintegrationservices&filter=alltypes&sort=lastpostdesc)
-- [SQL Server Reporting Services (SSRS)](https://social.msdn.microsoft.com/Forums/en-US/home?forum=sqlreportingservices&filter=alltypes&sort=lastpostdesc)
-- [SQL Server Analysis Services (SSAS)](https://social.msdn.microsoft.com/Forums/en-US/home?forum=sqlanalysisservices&filter=alltypes&sort=lastpostdesc)
-- [SQL Server データ ウェアハウス](https://social.msdn.microsoft.com/Forums/en-US/home?forum=sqldatawarehousing&filter=alltypes&sort=lastpostdesc)
+[Microsoft Q & A](https://docs.microsoft.com/answers/products/sql-server) で疑問点を検索し投稿することで、ヘルプを得ることもできます。
 
 ### <a name="communities"></a>コミュニティ
 
@@ -56,7 +44,7 @@ SQL Server の問題に役立つコミュニティがいくつかあります。
 - [Reddit](https://www.reddit.com/r/SQLServer/)
 - [Twitter で #sqlhelp ハッシュタグを使用して、コミュニティからサポートを得る](https://twitter.com/hashtag/sqlhelp?src=hash) 
  
-## <a name="feedback"></a>フィードバック
+## <a name="feedback-suggestions"></a>フィードバックの提案
 
 改善のための提案を送信するだけでなく、バグを送信することもできます。
 
@@ -91,8 +79,8 @@ SQL Server コンテンツ チームに連絡する最善の方法は、Git Issu
 
 次の SQL Server ブログでは、SQL Server に関する更新情報を提供しています。 
 
-- [SQL Server ブログ](https://cloudblogs.microsoft.com/sqlserver/)
-- [SQL Repl Talk](https://blogs.msdn.microsoft.com/repltalk/)
+- [SQL Server のブログ](https://cloudblogs.microsoft.com/sqlserver/)
+- [SQL ReplTalk](https://blogs.msdn.microsoft.com/repltalk/)
 - [SQL Tiger チーム](https://blogs.msdn.microsoft.com/sql_server_team/)
 - [SQL サポート チーム](https://techcommunity.microsoft.com/t5/SQL-Server-Support/bg-p/SQLServerSupport/)
 

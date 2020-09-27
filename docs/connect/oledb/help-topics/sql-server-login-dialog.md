@@ -1,6 +1,6 @@
 ---
 title: '[SQL Server ログイン] ダイアログ ボックス (OLE DB) | Microsoft Docs'
-description: '[SQL Server ログイン] ダイアログ ボックスの使用'
+description: 十分な情報を指定せずに接続しようとすると、OLE DB Driver for SQL Server によって [SQL Server ログイン] ダイアログ ボックスが表示され、入力が求められます。
 ms.custom: ''
 ms.date: 10/11/2019
 ms.prod: sql
@@ -10,12 +10,12 @@ ms.technology: connectivity
 ms.topic: reference
 ms.author: v-beaziz
 author: bazizi
-ms.openlocfilehash: a05dc6221aee2dbd3b7b97c28e7bfecc9ce325bf
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+ms.openlocfilehash: af86eae9866960c58ec9967f32a45998e5a91106
+ms.sourcegitcommit: e4c36570c34cd7d7ae258061351bce6e54ea49f6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85987097"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88147583"
 ---
 # <a name="sql-server-login-dialog-box"></a>[SQL Server ログイン] ダイアログ ボックス
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

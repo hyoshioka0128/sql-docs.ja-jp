@@ -3,21 +3,21 @@ title: ストアド プロシージャで R コードをデプロイする
 description: R 言語コードを SQL Server ストアド プロシージャに埋め込んで、SQL Server データベースにアクセスできる任意のクライアント アプリケーションで使用できるようにします。
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 03/15/2019
+ms.date: 08/28/2020
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 9790f5a5d82584bb0d09fda92c1a7048d384e119
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+ms.openlocfilehash: 81cc8f392275093f370a0dda12d1aaf1fca542e5
+ms.sourcegitcommit: b6ee0d434b3e42384b5d94f1585731fd7d0eff6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87242326"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89288266"
 ---
 # <a name="operationalize-r-code-using-stored-procedures-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services でストアド プロシージャを使用して R コードを運用可能にする
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
 SQL Server Machine Learning Services の R および Python 機能を使用しているとき、ソリューションを運用環境に移行するアプローチとして最も一般的なのは、コードをストアド プロシージャに埋め込むことです。 この記事では、SQL Server を使用して R コードを運用可能にするときの SQL 開発者を対象とした重要な考慮事項についてまとめます。
 
@@ -28,14 +28,13 @@ SQL Server Machine Learning Services の R および Python 機能を使用し�
 + [SQL Server でシンプルな R スクリプトを作成して実行する](../tutorials/quickstart-r-create-script.md)
 + [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md)
 
-ストアド プロシージャを使用して R コードを運用環境にデプロイするより包括的な例については、「[チュートリアル: SQL 開発者向けの R data analytics](../../machine-learning/tutorials/sqldev-in-database-r-for-sql-developers.md)」を参照してください
+ストアド プロシージャを使用して R コードを運用環境にデプロイするより包括的な例については、「[チュートリアル: SQL 開発者向けの R data analytics](../../machine-learning/tutorials/r-taxi-classification-introduction.md)」を参照してください
 
 ## <a name="guidelines-for-optimizing-r-code-for-sql"></a>SQL 向け R コードを最適化するためのガイドライン
 
 R または Python コードで事前に最適化をいくつか行うと、お使いの R コードを SQL で変換しやすくなります。 これには、問題の原因となるデータ型を回避する、不要なデータ変換が行われないようにする、簡単にパラメーター化できる 1 つの関数呼び出しとして R コードを再生成する、などの作業が含まれます。 詳細については、次を参照してください。
 
 + [R ライブラリとデータ型](r-libraries-and-data-types.md)
-+ [R Services で使用する R コードの変換](converting-r-code-for-use-in-sql-server.md)
 + [sqlrutils ヘルパー関数を使用する](ref-r-sqlrutils.md)
 
 ## <a name="integrate-r-and-python-with-applications"></a>R および Python をアプリケーションと統合する
@@ -52,11 +51,6 @@ R または Python コードで事前に最適化をいくつか行うと、お�
 
 + [SQL Server における R 用エンド ツー エンド データ サイエンスのチュートリアル](../tutorials/walkthrough-data-science-end-to-end-walkthrough.md)
 
-アプリケーションでスコアリングを統合する方法の例については、次のソリューション テンプレートを参照してください。
-
-+ [小売予測](https://github.com/Microsoft/SQL-Server-R-Services-Samples/blob/master/RetailForecasting/README.md)
-+ [不正行為の検出](https://github.com/Microsoft/r-server-fraud-detection)
-+ [顧客クラスタリング](https://github.com/Microsoft/sql-server-samples/tree/master/samples/features/r-services/getting-started/customer-clustering)
 
 ## <a name="boost-performance-and-scale"></a>パフォーマンスとスケールの向上
 
@@ -64,22 +58,8 @@ R または Python コードで事前に最適化をいくつか行うと、お�
 
 R ソリューションで複雑な集計が使用されている場合、または大規模なデータセットが含まれる場合は、SQL Server の非常に効率的なインメモリ集計と列ストア インデックスを利用して、R コードで統計の計算結果とスコア付けを処理できます。
 
-SQL Server Machine Learning Services でパフォーマンスを向上させる方法の詳細については、以下をご覧ください。
-
-+ [SQL Server R Services のパフォーマンス チューニング](../../machine-learning/r/sql-server-r-services-performance-tuning.md)
-+ [パフォーマンス最適化のヒントとテクニック](https://gallery.cortanaintelligence.com/Tutorial/SQL-Server-Optimization-Tips-and-Tricks-for-Analytics-Services)
-
 ## <a name="adapt-r-code-for-other-platforms-or-compute-contexts"></a>他のプラットフォームまたはコンピューティング コンテキストに合わせて R コードを調整する
 
 SQL Server セットアップで[スタンドアロン サーバー オプション](../install/sql-machine-learning-standalone-windows-install.md)を使用する場合、または SQL 以外の製品、Microsoft Machine Learning Server (以前の **Microsoft R Server**) をインストールする場合、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データに対して実行する R コードと同じものを、Spark over HDFS などの他のデータ ソースに対して使用できます。
 
 + [Machine Learning Server のドキュメント](https://docs.microsoft.com/r-server/)
-
-+ [R および RevoScaleR について調べる](https://docs.microsoft.com/r-server/r/tutorial-r-to-revoscaler)
-
-+ [チャンク アルゴリズムを記述する](https://docs.microsoft.com/r-server/r/how-to-developer-write-chunking-algorithms)
-
-+ [ビッグデータを使用した R でのコンピューティング](https://docs.microsoft.com/r-server/r/tutorial-large-data-tips)
-
-+ [独自の並列アルゴリズムを開発する](https://docs.microsoft.com/r-server/r-reference/revopemar/pemar)
-

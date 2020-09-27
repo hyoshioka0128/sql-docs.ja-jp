@@ -1,7 +1,7 @@
 ---
 title: pip を使用して azdata をインストールする
-titleSuffix: SQL Server big data clusters
-description: pip を使用して、ビッグ データ クラスターをインストールおよび管理するための azdata ツールをインストールする方法について説明します。
+titleSuffix: ''
+description: pip で azdata ツールをインストールする方法について説明します。
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: mihaelab
@@ -9,16 +9,16 @@ ms.date: 01/07/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 51faf26a6414854ad3b2b1c2d205304e9b3dfb36
-ms.sourcegitcommit: 883435b4c7366f06ac03579752093737b098feab
+ms.openlocfilehash: 6bf2bbff5f1d048895515f18b600cd05acd8ae6f
+ms.sourcegitcommit: d56f1eca807c55cf606a6316f3872585f014fec1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89733865"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90914943"
 ---
 # <a name="install-azdata-with-pip"></a>`azdata` の `pip` でのインストール
 
-[!INCLUDE[SQL Server 2019](../../includes/applies-to-version/sqlserver2019.md)]
+[!INCLUDE[SQL Server 2019](../../includes/applies-to-version/azdata.md)]
 
 この記事では、`pip` を使用して Windows または Linux 用の `azdata` ツールをインストールする方法について説明します。
 
@@ -26,7 +26,7 @@ Windows および Linux (Ubuntu ディストリビューション) の場合は�
 
 ## <a name="prerequisites"></a><a id="prerequisites"></a> 前提条件
 
-`azdata` は Python で記述されたコマンドライン ユーティリティです。クラスター管理者はこれを使用すると、REST API 経由でビッグ データ クラスターをブートストラップし、管理できるようになります。 最低限必要な Python バージョンは v3.5 です。 `pip` は、`azdata` ツールをダウンロードしてインストールするために必要です。 以下の手順は、Windows と Ubuntu の例です。 他のプラットフォームに Python をインストールする方法については、[Python のドキュメント](https://wiki.python.org/moin/BeginnersGuide/Download)を参照してください。
+`azdata` は Python で記述されたコマンドライン ユーティリティです。クラスター管理者はこれを使用すると、REST API 経由でデータをブートストラップし、管理できるようになります。 最低限必要な Python バージョンは v3.5 です。 `pip` は、`azdata` ツールをダウンロードしてインストールするために必要です。 以下の手順は、Windows と Ubuntu の例です。 他のプラットフォームに Python をインストールする方法については、[Python のドキュメント](https://wiki.python.org/moin/BeginnersGuide/Download)を参照してください。
 さらに、最新バージョンの `requests` Python パッケージをインストールして更新します。
 
 ```bash
@@ -143,3 +143,5 @@ macOS または OS X に `azdata` をインストールするには、次の手�
 ## <a name="next-steps"></a>次のステップ
 
 ビッグ データ クラスターの詳細については、「[[!INCLUDE[big-data-clusters-2019](../../includes/ssbigdataclusters-ver15.md)]とは](../../big-data-cluster/big-data-cluster-overview.md)」を参照してください。
+
+[Azure Arc 対応データ サービス](/azure/azure-arc/data/)で azdata を使用する

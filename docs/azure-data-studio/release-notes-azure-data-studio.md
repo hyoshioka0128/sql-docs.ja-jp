@@ -8,17 +8,33 @@ author: yualan
 ms.author: alayu
 ms.reviewer: maghan
 ms.custom: seodec18
-ms.date: 08/12/2020
-ms.openlocfilehash: 39deeb94ffa5fb3292f3402c836ec55eb826ebd3
-ms.sourcegitcommit: 7345e4f05d6c06e1bcd73747a4a47873b3f3251f
+ms.date: 09/22/2020
+ms.openlocfilehash: 1eaeb177fbd4cdc16190cbbc40efc76a3b468ac5
+ms.sourcegitcommit: c74bb5944994e34b102615b592fdaabe54713047
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88766191"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90989985"
 ---
 # <a name="release-notes-for-azure-data-studio"></a>Azure Data Studio のリリース ノート
 
-**[最新リリースのダウンロードとインストール](./download-azure-data-studio.md?view=sql-server-ver15)**
+**[最新リリースのダウンロードとインストール](./download-azure-data-studio.md)**
+
+## <a name="september-2020"></a>2020 年 9 月
+
+2020 年 9 月 22 日 &nbsp; / &nbsp; バージョン:1.22.0
+
+&nbsp;
+
+| Change | 詳細 |
+| ------ | ------- |
+| ノートブックの新機能 | <br/> &bull; &nbsp; リッチ テキストの書式設定とマークダウンへのシームレスな変換に基づいたまったく新しいテキスト セル編集エクスペリエンスをサポートします (WYSIWYG (What You See Is What You Get) ツールバーとも呼ばれます) <br/> &bull; &nbsp; Kusto カーネルをサポートします <br/> &bull; &nbsp; ノートブックのピン留めをサポートします <br/> &bull; &nbsp; Jupyter ブックの新しいバージョンのサポートを追加しました <br/> &bull; &nbsp; Jupyter のショートカットを強化しました <br/> &bull; &nbsp; パフォーマンスの読み込みの強化を導入しました |
+| SQL Database プロジェクトの拡張機能 | SQL Database プロジェクトの拡張機能を使用すると、Azure Data Studio でプロジェクトベースのデータベースを開発できるようになります。 このプレビュー リリースでは、SQL プロジェクトを Azure Data Studio から作成し、発行することができます。 |
+| Kusto (KQL) の拡張機能 | Azure Data Studio にネイティブの Kusto エクスペリエンスを提供し、Azure Data Explorer で、格納されている大量のリアルタイム ストリーミング データに対してデータ探索とデータ分析を実行できるようになります。 このプレビュー リリースは、Azure Data Explorer クラスターの接続と参照、KQL クエリの作成、Kusto カーネルを使用したノートブックの作成をサポートしています。 |
+| Azure Arc の拡張機能 | ユーザーは、Azure Data Studio を通じて Azure Arc パブリック プレビューを試すことができます。 これには次のものが含まれます <br/> &bull; &nbsp; データ コントローラーをデプロイする <br/> &bull; &nbsp; Postgres をデプロイする <br/> &bull; &nbsp; Azure Arc 用 Managed Instance をデプロイする <br/> &bull; &nbsp; データ コントローラーに接続する <br/> &bull; &nbsp; データ サービス ダッシュボードにアクセスする <br/> &bull; &nbsp; Azure Arc Jupyter ブック |
+| デプロイ オプション | <br/> &bull; &nbsp; Azure SQL Database Edge <br/> (Edge には Azure SQL Edge デプロイの拡張機能が必要です) |
+| SQL Server インポート拡張機能の一般提供 | SQL Server インポート拡張機能の一般提供が発表され、機能はプレビュー段階ではなくなりました。 この拡張機能を使用すると、csv/txt ファイルのインポートが簡単になります。 拡張機能の詳細については、[この記事](sql-server-import-extension.md)を参照してください。 |
+| バグと問題が解決されました | 修正の完全な一覧については、[GitHubの「バグと問題」](https://github.com/microsoft/azuredatastudio/issues?q=is%3Aissue+milestone%3A%22September+2020+Release%22+is%3Aclosed)を参照してください。 |
 
 ## <a name="august-2020"></a>2020 年 8 月
 
@@ -29,7 +45,7 @@ ms.locfileid: "88766191"
 | Change | 詳細 |
 | :----- | :------ |
 | ノートブックの新機能 | &bull; &nbsp; セルの場所を移動する <br/> &bull; &nbsp; セルをテキスト セルまたはコード セルに変換する
-| Jupyter Book ピッカー | ユーザーは、GitHub リリースから Jupyter Book を選択し、Azure Data Studio でシームレスに開くことができるようになりました |
+| Jupyter Book ピッカー | ユーザーは、GitHub リリースから Jupyter ブックを選択し、Azure Data Studio でシームレスに開くことができるようになりました |
 | Notebooks Viewlet に追加された検索 | ユーザーは、ノートブックや Jupyter Book 全体でコンテンツを簡単に検索できます |
 | バグと問題が解決されました | 修正の完全な一覧については、[GitHubの「バグと問題」](https://github.com/microsoft/azuredatastudio/issues?q=is%3Aissue+milestone%3A%22August+2020+Release%22+is%3Aclosed)を参照してください。 |
 | &nbsp; | &nbsp; |
@@ -76,7 +92,7 @@ ms.locfileid: "88766191"
 | :----- | :------ |
 | Azure portal 統合に Azure Data Studio が追加されました | ユーザーは Azure SQL Database 接続、Azure Postgres などから、Azure portal を直接起動できるようになりました。 |
 | ノートブックの新機能 | &bull; &nbsp; 新しいノートブック ツール バー <br/> &bull; &nbsp; 新しい [セルの編集] ツールバー <br/> &bull; &nbsp; Python 依存関係ウィザード UX の更新 <br/> &bull; &nbsp; ノートブック間のスペースの向上 |
-| SQL Assessment API 拡張機能の発表 | この拡張機能は、ADS における SQL Server ベスト プラクティス評価を追加します。 以前は PowerShell SqlServer モジュールおよび SMO でしか使用できなかった SQL Assessment API が公開されています。これにより SQL Server インスタンスを評価したり、SQL Server チームによるそれらの推奨事項を受け取ったりすることができるようになります。 [こちらの記事](../tools/sql-assessment-api/sql-assessment-api-overview.md?view=sql-server-ver15)で、SQL Assessment API の詳細と、この拡張機能でできることについて説明します。 |
+| SQL Assessment API 拡張機能の発表 | この拡張機能は、ADS における SQL Server ベスト プラクティス評価を追加します。 以前は PowerShell SqlServer モジュールおよび SMO でしか使用できなかった SQL Assessment API が公開されています。これにより SQL Server インスタンスを評価したり、SQL Server チームによるそれらの推奨事項を受け取ったりすることができるようになります。 [こちらの記事](../tools/sql-assessment-api/sql-assessment-api-overview.md)で、SQL Assessment API の詳細と、この拡張機能でできることについて説明します。 |
 | [Machine Learning 拡張機能の改善点](https://go.microsoft.com/fwlink/?linkid=2129918) | Azure SQL Managed Instance がサポートされるようになりました。 |
 | データ仮想化拡張機能の改善点 | MongoDB と Teradata がサポートされるようになりました |
 | Postgres 拡張機能のバグの修正 | Azure MFA が修正されました |
@@ -417,10 +433,10 @@ ms.locfileid: "88766191"
 | :----- | :------ |
 | [Azure Data Studio 用の PostgreSQL 拡張機能](postgres-extension.md)が追加されました | サポートされている機能: <br/>&bull; &nbsp; 接続ダイアログ <br/>&bull; &nbsp; オブジェクト エクスプローラー <br/>&bull; &nbsp; クエリ エディター <br/>&bull; &nbsp; グラフ作成 <br/>&bull; &nbsp; ダッシュボード <br/>&bull; &nbsp; スニペット <br/>&bull; &nbsp; データの編集 <br/>&bull; &nbsp; ノートブック |
 | 追加された SQL ノートブック | 組み込みの Notebook ビューアーに SQL カーネルのサポートが追加されました。 <br/>&bull; &nbsp; T-SQL のサポート <br/>&bull; &nbsp; PGSQL のサポート |
-| 追加された PowerShell 拡張機能  | VS Code から [PowerShell 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)を利用できます。  |
+| 追加された PowerShell 拡張機能 | VS Code から [PowerShell 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)を利用できます。  |
 | 追加された SQL Server dacpac の拡張機能  | SQL Server インポート拡張機能からデータ層アプリケーション ウィザードが削除され、新しい拡張機能が導入されました。  |
 | 追加されたコミュニティ拡張機能 QueryPlan.show | クエリ プランを視覚化するための統合サポートが追加されました  |
-| 更新された SQL Server 2019 Preview 拡張機能 | &bull; &nbsp; Jupyter Notebook のサポート (特に Python3 と Spark カーネル) が、コアの Azure Data Studio ツールに移動されました。 <br/>&bull; &nbsp; 外部データ ウィザードのバグ修正  |
+| 更新された SQL Server 2019 Preview 拡張機能 | &bull; &nbsp; Jupyter Notebook のサポート (特に Python3 と Spark カーネル) が、コアの Azure Data Studio ツールに移動されました。 <br/>&bull; &nbsp; 外部データ ウィザードのバグ修正 |
 | バグと問題が解決されました。 | [GitHub の「バグと問題」](https://github.com/Microsoft/azuredatastudio/milestone/25?closed=1)を参照してください。 |
 | &nbsp; | &nbsp; |
 
@@ -446,11 +462,11 @@ ms.locfileid: "88766191"
 
 | Change | 詳細 |
 | :----- | :------ |
-| 拡張パック **Admin pack for SQL Server** が追加されました。 | これにより、SQL Server の管理に関連する拡張機能がインストールしやすくなります。 これには次のものが含まれます<br/>&bull; &nbsp; [SQL Server エージェント](sql-server-agent-extension.md?view=sql-server-2017)<br/>&bull; &nbsp; [SQL Server プロファイラー](./sql-server-profiler-extension.md)<br/>&bull; &nbsp; [SQL Server インポート](sql-server-import-extension.md?view=sql-server-2017) |
+| 拡張パック **Admin pack for SQL Server** が追加されました。 | これにより、SQL Server の管理に関連する拡張機能がインストールしやすくなります。 これには次のものが含まれます<br/>&bull; &nbsp; [SQL Server エージェント](sql-server-agent-extension.md)<br/>&bull; &nbsp; [SQL Server プロファイラー](./sql-server-profiler-extension.md)<br/>&bull; &nbsp; [SQL Server インポート](sql-server-import-extension.md) |
 | プロファイラー拡張機能に、拡張イベントのフィルター処理のサポートが追加されました。 | &nbsp; |
 | T-SQL の結果を XML として保存できる "XML として保存" 機能が追加されました。 | &nbsp; |
 | データ層アプリケーション ウィザードの機能強化が追加されました。 | &bull; &nbsp; [スクリプトの生成] ボタンが追加されました<br/>&bull; &nbsp; デプロイ中にデータ損失の可能性があることを警告するためのビューが追加されました。 |
-| SQL Server 2019 Preview 拡張機能が更新されました。 | 「[データ仮想化の拡張機能](data-virtualization-extension.md?view=sql-server-ver15)」を参照してください。 |
+| SQL Server 2019 Preview 拡張機能が更新されました。 | 「[データ仮想化の拡張機能](data-virtualization-extension.md)」を参照してください。 |
 | 実行時間の長いクエリでは、結果のストリーミングが既定で有効になります。 | &nbsp; |
 | バグと問題が解決されました。 | [GitHub の「バグと問題」](https://github.com/Microsoft/azuredatastudio/milestone/23?closed=1)を参照してください。 |
 | &nbsp; | &nbsp; |
@@ -478,7 +494,7 @@ ms.locfileid: "88766191"
 | Azure Active Directory 認証のサポートが追加されました。 | &nbsp; |
 | Idera SQL DM Performance Insights (プレビュー) の発表。 | &nbsp; |
 | SQL Server インポート拡張機能でのデータ層アプリケーション ウィザードのサポート。 | &nbsp; |
-| SQL Server 2019 Preview 拡張機能への更新。 | 「[データ仮想化の拡張機能](data-virtualization-extension.md?view=sql-server-ver15)」を参照してください。 |
+| SQL Server 2019 Preview 拡張機能への更新。 | 「[データ仮想化の拡張機能](data-virtualization-extension.md)」を参照してください。 |
 | SQL Server プロファイラーの機能強化。 | &nbsp; |
 | 大規模なクエリの結果のストリーミング (プレビュー)。 | &nbsp; |
 | コミュニティ拡張機能: sp_executesql から sql および新規データベースへ。 | &nbsp; |
@@ -493,7 +509,7 @@ ms.locfileid: "88766191"
 
 | Change | 詳細 |
 | :----- | :------ |
-| SQL Server 2019 Preview 拡張機能への更新。 | 「[データ仮想化の拡張機能](data-virtualization-extension.md?view=sql-server-ver15)」を参照してください。 |
+| SQL Server 2019 Preview 拡張機能への更新。 | 「[データ仮想化の拡張機能](data-virtualization-extension.md)」を参照してください。 |
 | Paste the Plan 拡張機能の導入。 | &nbsp; |
 | High Color クエリ拡張機能の導入 (SSMS エディター テーマを含む)。 | &nbsp; |
 | SQL Server エージェント、プロファイラー、およびインポート拡張機能の修正。 | &nbsp; |
@@ -523,7 +539,7 @@ ms.locfileid: "88766191"
 | Azure SQL Database を参照するための Azure Resource Explorer の導入。 | &nbsp; |
 | オブジェクト エクスプローラーとクエリ エディターの接続性の堅牢性が向上しました。 | &nbsp; |
 | SQL エージェント拡張機能の強化。 | &nbsp; |
-| SQL Server 2019 Preview 拡張機能への更新。 | 「[データ仮想化の拡張機能](data-virtualization-extension.md?view=sql-server-ver15)」を参照してください。 |
+| SQL Server 2019 Preview 拡張機能への更新。 | 「[データ仮想化の拡張機能](data-virtualization-extension.md)」を参照してください。 |
 | &nbsp; | &nbsp; |
 
 ### <a name="bug-fixes-october-2018"></a>バグの修正、2018 年 10 月

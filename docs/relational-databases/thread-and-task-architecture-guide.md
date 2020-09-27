@@ -2,7 +2,7 @@
 title: スレッドおよびタスクのアーキテクチャ ガイド | Microsoft Docs
 description: SQL Server のスレッドとタスクのアーキテクチャについて説明します。これには、タスクのスケジューリング、ホット アド CPU、64 個を超える CPU を搭載したコンピューターの使用に関するベスト プラクティスが含まれます。
 ms.custom: ''
-ms.date: 07/06/2020
+ms.date: 09/23/2020
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
@@ -11,16 +11,24 @@ ms.topic: conceptual
 helpviewer_keywords:
 - guide, thread and task architecture
 - thread and task architecture guide
+- task scheduling
+- working threads
+- Large Deficit First scheduling
+- LDF scheduling
+- scheduling, SQL Server
+- tasks, SQL Server
+- threads, SQL Server
+- quantum, SQL Server
 ms.assetid: 925b42e0-c5ea-4829-8ece-a53c6cddad3b
 author: pmasl
 ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 3efda2f67cc2772739a7eaf0a8f1b0dbf947d421
-ms.sourcegitcommit: 1126792200d3b26ad4c29be1f561cf36f2e82e13
+ms.openlocfilehash: f2500a95946ee1a8226763ebd7983edd2a9f81c6
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90076807"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91114593"
 ---
 # <a name="thread-and-task-architecture-guide"></a>スレッドおよびタスクのアーキテクチャ ガイド
 [!INCLUDE [SQL Server Azure SQL Database](../includes/applies-to-version/sql-asdb.md)]
@@ -59,6 +67,14 @@ ms.locfileid: "90076807"
 **スケジューラ** (SOS スケジューラとも呼ばれます) では、タスクに代わって作業を実行するために処理時間を必要とするワーカー スレッドが管理されます。 各スケジューラは、個々のプロセッサ (CPU) にマップされます。 ワーカーがスケジューラでアクティブな状態を維持できる時間は、OS クォンタムと呼ばれ、最大 4 ミリ秒です。 クォンタム時間が経過したワーカーは、CPU リソースへのアクセスを必要とする他のワーカーに時間を明け渡し、その状態を変更します。 CPU リソースへのアクセスを最大化するためのワーカー間のこのような連携は、**協調スケジューリング** (または非プリエンプティブ スケジューリング) と呼ばれます。 その後、ワーカーの状態の変化は、そのワーカーに関連付けられたタスクと、タスクに関連付けられた要求に伝達されます。 ワーカーの状態の詳細については、「[sys.dm_os_workers](../relational-databases/system-dynamic-management-views/sys-dm-os-workers-transact-sql.md)」を参照してください。 スケジューラの詳細については、「[sys.dm_os_schedulers](../relational-databases/system-dynamic-management-views/sys-dm-os-schedulers-transact-sql.md)」を参照してください。 
 
 要約すると、**要求**によって、作業単位を実行するための 1 つ以上の**タスク**が生成される場合があります。 各タスクは、タスクを実行する**ワーカー スレッド**に割り当てられます。 タスクをアクティブに実行するために、各ワーカー スレッドをスケジュールする (**スケジューラ**に配置する) 必要があります。 
+
+> [!NOTE]
+> 次のシナリオについて検討してください。   
+> -  ワーカー 1 は長時間実行のタスクです。たとえば、メモリ内ベース テーブルで先行読み取りを利用する読み取りクエリです。 ワーカー 1 は、必要なデータ ページがバッファー プールに既にあることを見つけます。そのため、I/O 操作を待つ目的で一時停止する必要があります。一時停止前にそのクォンタムを完全に使用できます。   
+> -  ワーカー 2 はミリ秒未満の短時間タスクを行います。そのため、そのクォンタムが完全に使用される前に一時停止する必要があります。     
+>
+> このシナリオおよび [!INCLUDE[ssSQL14](../includes/sssql14-md.md)] までは、ワーカー 1 には、全体的クォンタム時間を増やすことで、基本的にスケジューラーを独占することが許可されます。   
+> [!INCLUDE[ssSQL15](../includes/sssql15-md.md)] 以降、共同作業スケジューリングには、Large Deficit First (LDF) スケジューリングが含まれます。 LDF スケジューリングにより、クォンタム使用パターンが監視されており、1 つのワーカー スレッドでスケジューラーが独占されることがありません。 同じシナリオで、ワーカー 2 には、ワーカー 1 にクォンタムを増やすことが許可される前に、クォンタムを繰り返し使用することが許可されます。そのため、ワーカー 1 では、好ましくないパターンでスケジューラーを独占することができません。
 
 ### <a name="scheduling-parallel-tasks"></a>並列タスクのスケジューリング
 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] が MaxDOP 8 で構成され、CPU アフィニティが NUMA ノード 0 と 1 で 24 個の CPU (スケジューラ) 用に構成されているとします。 スケジューラ 0 から 11 は NUMA ノード 0 に属しており、スケジューラ 12 から 23 は NUMA ノード 1 に属しています。 アプリケーションは、次のクエリ (要求) を[!INCLUDE[ssde_md](../includes/ssde_md.md)]に送信します。
@@ -228,8 +244,8 @@ SQL トレースおよび SQL Profiler は、運用環境で使用しないこ�
 > [!NOTE]
 > Analysis Services のワークロード用の [!INCLUDE[ssSqlProfiler](../includes/sssqlprofiler-md.md)] は非推奨とされず、引き続きサポートされます。
 
-### <a name="setting-the-number-of-tempdb-data-files"></a>TempDB データ ファイルの数の設定
-ファイルの数は、コンピューター上の (論理) プロセッサの数に依存します。 一般的なルールとして、論理プロセッサの数が 8 以下の場合、論理プロセッサと同じ数のデータ ファイルを使用します。 論理プロセッサの数が 8 より大きい場合、8 つのデータ ファイルを使用し、競合が続く場合、競合が許容できるレベルに減少するまでデータ ファイルの数を 4 の倍数分ずつ増やすか、ワークロード/コードを変更します。 また、「[SQL Server の TempDB のパフォーマンスの最適化](../relational-databases/databases/tempdb-database.md#optimizing-tempdb-performance-in-sql-server)」で説明されている TempDB に対する他の推奨事項についても留意してください。 
+### <a name="setting-the-number-of-tempdb-data-files"></a>tempdb データ ファイルの数を設定する
+ファイルの数は、コンピューター上の (論理) プロセッサの数に依存します。 一般的なルールとして、論理プロセッサの数が 8 以下の場合、論理プロセッサと同じ数のデータ ファイルを使用します。 論理プロセッサの数が 8 より大きい場合、8 つのデータ ファイルを使用し、競合が続く場合、競合が許容できるレベルに減少するまでデータ ファイルの数を 4 の倍数分ずつ増やすか、ワークロード/コードを変更します。 また、「[SQL Server の tempdb のパフォーマンスの最適化](../relational-databases/databases/tempdb-database.md#optimizing-tempdb-performance-in-sql-server)」で説明されている tempdb に対する他の推奨事項についても留意してください。 
 
 ただし、tempdb のコンカレンシーの必要性を慎重に検討することにより、データベース管理のオーバーヘッドを減らすことができます。 たとえば、64 個の CPU が搭載されているシステムにおいて通常 tempdb を使用するクエリの数が 32 個に限られている場合、tempdb ファイルの数を 64 に増やしてもパフォーマンスは改善されません。
 

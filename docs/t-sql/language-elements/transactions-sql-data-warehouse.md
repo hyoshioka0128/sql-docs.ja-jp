@@ -1,6 +1,6 @@
 ---
-description: トランザクション (SQL Data Warehouse)
-title: トランザクション (SQL データ ウェアハウス) | Microsoft Docs
+title: トランザクション (Azure Synapse Analytics)
+description: トランザクションは、完全にコミットされた、または完全にロールバックされた 1 つ以上のデータベース ステートメントのグループです。
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
@@ -13,14 +13,15 @@ ms.assetid: 87e5e593-a121-4428-9d3c-3af876224e35
 author: ronortloff
 ms.author: rortloff
 monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest || = sqlallproducts-allversions'
-ms.openlocfilehash: 4e2912d3bb0608a105c4f68c857b2ea679a86c2f
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 4898ed6ddf50e75565d13be5f35b6f833f78d929
+ms.sourcegitcommit: 8f062015c2a033f5a0d805ee4adabbe15e7c8f94
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88417068"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91227476"
 ---
-# <a name="transactions-sql-data-warehouse"></a>トランザクション (SQL Data Warehouse)
+# <a name="transactions-azure-synapse-analytics"></a>トランザクション (Azure Synapse Analytics)
+
 [!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
 
   トランザクションは、完全にコミットされた、または完全にロールバックされた 1 つ以上のデータベース ステートメントのグループです。 各トランザクションには、原子性、一貫性、分離性、持続性 (ACID) があります。 トランザクションが成功すると、その中のすべてのステートメントがコミットされます。 トランザクションが失敗した場合、つまりグループ内の少なくとも 1 つのステートメントが失敗した場合は、グループ全体がロールバックされます。  
@@ -93,7 +94,7 @@ SET IMPLICIT_TRANSACTIONS { ON | OFF } [;]
 ## <a name="limitations-and-restrictions"></a>制限事項と制約事項  
  COMMIT ステートメントを発行した後は、データの変更がデータベースの永続的な部分になるので、トランザクションをロールバックできなくなります。  
   
- [CREATE DATABASE &#40;Azure SQL Data Warehouse&#41;](../../t-sql/statements/create-database-azure-sql-data-warehouse.md) コマンドと [DROP DATABASE &#40;Transact-SQL&#41;](../../t-sql/statements/drop-database-transact-sql.md) コマンドは、明示的なトランザクション内で使用することはできません。  
+ [CREATE DATABASE &#40;Azure Synapse Analytics&#41;](../../t-sql/statements/create-database-azure-sql-data-warehouse.md) と [DROP DATABASE &#40;Transact-SQL&#41;](../../t-sql/statements/drop-database-transact-sql.md) のコマンドは、明示的なトランザクション内で使用することができません。  
   
  [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] にはトランザクションの共有メカニズムはありません。 これは、ある時点で、システム内のどのトランザクションでも、作業を実行できるのは 1 つのセッションのみであることを示します。  
   

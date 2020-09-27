@@ -11,12 +11,12 @@ ms.author: drskwier
 ms.reviewer: maghan
 ms.custom: seo-lt-2019
 ms.date: 07/22/2020
-ms.openlocfilehash: 0a9b93190f0240c917c6331ae69d1e8461cb7ea2
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+ms.openlocfilehash: 7df66b1102a315dc80eac9ac989f3cb8067e3a27
+ms.sourcegitcommit: 9b41725d6db9957dd7928a3620fe4db41eb51c6e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87243785"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88180049"
 ---
 # <a name="release-notes-for-sql-server-management-studio-ssms"></a>SQL Server Management Studio (SSMS) のリリース ノート
 
@@ -84,14 +84,15 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | SSMS 全般 | SSMS の 3 つの一般的なハングの原因が解決されました。 |
 | SSMS 全般 | SSMS 接続ダイアログのエントリ (サーバー/ユーザー/パスワード) を*忘れる*ことに関連するいくつかの問題が修正されました。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/40256401)と [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/40015519)を参照してください。 |
 | SSMS 全般 | **[統計のプロパティ]** ダイアログで、 **[この列の統計を更新する]** チェックボックスをオンにして、 **[OK]** を選択しても効果がない問題が修正されました。 統計が更新されず、アクションをスクリプト化しようとすると、*スクリプトを作成するアクションはありません*メッセージが生成されます。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/37799992)を参照してください。 |
+| SSMS 全般 | [CVE-2020-1455](https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-1455) に関連する問題が対処されました。 | 
 | データ層アプリケーションのインポート/エクスポート | bacpac ファイルのインポート時に SSMS がエラーをスローしていた問題が修正されました。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/40229137)を参照してください。 |
 | Integration Services | ユーザーが SSMS バージョン 18.4 以前を使用して Azure SQL Managed Instance で SSIS パッケージを実行するときに、SQL エージェント ジョブ ステップを編集できないというバグが修正されました。 |
 | Integration Services | **[実行オプション]** タブに、オンプレミスの SQL Server の SQL エージェント ジョブ ステップで SSIS パッケージを実行するための **[32 ビット ランタイムを使用する]** オプションがなくなるバグが修正されました。 |
 | Intellisense/エディター | [ファイル] > [新規作成] > [データベース エンジン クエリ] を実行すると、エラー ダイアログが表示されることがある問題が修正されました。 |
-| オブジェクト エクスプローラー | オブジェクト エクスプローラーのテーブルまたはインデックス ノードを右クリックしたときに、SQL Azure データベースに対して、*プロパティ ウィンドウ*を使用できなかった問題が修正されました。 |
+| オブジェクト エクスプローラー | オブジェクト エクスプローラーのテーブルまたはインデックス ノードを右クリックしたときに、Azure SQL Database に対して、"*プロパティ ウィンドウ*" を使用できなかった問題が修正されました。 |
 | オブジェクト エクスプローラー | sys.database_service_objectives に影響するコントロール プレーンの停止がある場合、SSMS が Azure でマスターのデータベース ノードを展開できない問題が対処されました。 |
 | Reports | Linux で破損したいくつかの標準レポートが修正されました </br></br> 例:メモリ消費量レポートが、"/var/opt/mssql/log/log_116.trc\log.trc' は無効です..." というようなエラーで失敗します。 |
-| SMO/スクリプト作成 | 既定の SLO として Gen5_2 を使用する新しい SQL Azure データベースを作成するようにロジックが更新されました。 |
+| SMO/スクリプト作成 | 既定の SLO として Gen5_2 を使用するために新しいデータベースを Azure SQL Database に作成するようにロジックが更新されました。 |
 | XEvent の UI | "XEL ファイルに保存..." でエラーをスローしていた長い間未解決だった問題 (SSMS 18.0 で発生) が修正されました。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/37695592)を参照してください。 |
 
 #### <a name="known-issues-186"></a>既知の問題 (18.6)
@@ -102,6 +103,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | SSMS 全般 | 新しい [サーバー監査の仕様] ダイアログにより、SSMS がアクセス違反エラーでクラッシュする場合があります。 | 該当なし |
 | SSMS 全般 | SMO を使用する SSMS 拡張機能は、新しい SSMS 固有の SMO v161 パッケージを対象とするように再コンパイルする必要があります。 https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects.SSMS/ で新しいバージョンが利用できるようになりました </br></br> 以前の 160 バージョンの Microsoft.SqlServer.SqlManagementObjects パッケージに対してコンパイルされた拡張機能は、引き続き機能します。 | 該当なし |
 | Integration Services | Integration Services でパッケージをインポートまたはエクスポートするとき、または Azure-SSIS Integration Runtime でパッケージをエクスポートするときに、スクリプト タスク/コンポーネントを含むパッケージのスクリプトが失われます。 対処法:フォルダー "C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\CommonExtensions\MSBuild" を削除します。 | 該当なし|
+| Integration Services | Integration Services へのリモート接続が新しいオペレーティング システムで、"The specified service does not exist as an installed service." (指定されたサービスはインストールされたサービスとして存在しません。) で 失敗する場合があります。 対処法:Integration Services に関連するレジストリの場所を Computer\HKEY_CLASSES_ROOT\AppID & Computer\HKEY_CLASSES_ROOT\ WOW6432Node\AppID の下とこれらのハイブ内で特定し、接続しようとしている Integration Services の特定のバージョンについて 'LocalService' という名前のレジストリ キーの名前を 'LocalService_A' に変更します。 | 該当なし|
 
 
 他の既知の問題について、および製品チームにフィードバックを提供するには、[SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035-sql-server)を参照できます。
@@ -144,6 +146,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 ### <a name="known-issues-1851"></a>既知の問題 18.5.1
 
 | 新しい項目 | 詳細 | 回避策 | |----------|---------||-----------| | SSMS 全般 | ダイアグラム デザインに既存のダイアグラムを破損させる既知のバグがあります。 たとえば、SSMS 17.9.1 でダイアグラム デザインを作成してから、SSMS 18.x でそれを更新/保存し、さらに後で 17.9.1 でそれを開こうとします。 詳細については、[SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/37992649)を参照してください。 | N/A | | SSMS 全般 | 新しい [サーバー監査の仕様] ダイアログにより、SSMS がアクセス違反エラーでクラッシュする場合があります。 | N/A || | SMO/スクリプト | SMO を使用した SSMS 拡張機能は、新しい SMO v160 を対象として再コンパイルする必要があります。 | N/A | | Integration Services | Integration Services でパッケージをインポートまたはエクスポートするとき、または Azure-SSIS Integration Runtime でパッケージをエクスポートするときに、スクリプト タスク/コンポーネントを含むパッケージに対するスクリプトが失われます。 回避策: | フォルダー"C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\CommonExtensions\MSBuild" を削除します。 |
+
 
 ### <a name="185"></a>18.5
 
@@ -227,7 +230,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | SMO/スクリプト作成 | SqlOnDemand のスクリプト作成が修正される、明示的な sqlvariant キャスト (SqlOnDemand に対して無効な T-SQL) を削除しました。 |
 | SMO/スクリプト作成 | SQL Azure のインデックスに対する FILLFACTOR がスキップされた問題を修正しました。 |
 | SMO/スクリプト作成 | 外部オブジェクトのスクリプト作成に関連する問題を修正した。 |
-| SMO/スクリプト作成 | *[スクリプトの生成]* で、SQL DB に対して拡張プロパティのスクリプト作成オプションを選択することが許可されていなかった問題を修正しました。 また、このような拡張プロパティのスクリプト作成を修正しました。 |
+| SMO/スクリプト作成 | *[スクリプトの生成]* で、SQL Database に対して拡張プロパティのスクリプト作成オプションを選択することが許可されていなかった問題を修正しました。 また、このような拡張プロパティのスクリプト作成を修正しました。 |
 | SMO/スクリプト作成 | [SQL Assessment API](../sql-assessment-api/sql-assessment-api-overview.md) - XTPHashAvgChainBuckets ルールの間違ったヘルプ リンク。 |
 | XEvent の UI | グリッド内の項目がホバー時に選択される問題を修正しました。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/38262124)と [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035-sql-server/suggestions/37873921)を参照してください。 |
 
@@ -316,10 +319,10 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | Intellisense/エディター | SQL Server 2019 に最近追加された機能のサポートを更新しました (たとえば、*ALTER SERVER CONFIGURATION*)。 |
 | Integration Services | 新しい選択メニュー項目 `Tools > Migrate to Azure > Configure Azure-enabled DTExec` が追加されます。これにより、Azure-SSIS Integration Runtime 上で、SSIS パッケージ実行が、ADF パイプラインでの SSIS パッケージの実行アクティビティとして呼び出されます。 |
 | SMO/スクリプト作成 | Azure SQL DW 固有の制約のスクリプト作成サポートに対するサポートを追加しました。 |
-| SMO/スクリプト作成 | データ分類 </br> - SQL バージョン 10 (SQL 2008) 以降のサポートを追加しました。 </br> - SQL バージョン 15 (SQL 2019) 以降および Azure SQL DB に新しい機密属性 ' rank' を追加しました。 |
+| SMO/スクリプト作成 | データ分類 </br> - SQL バージョン 10 (SQL 2008) 以降のサポートを追加しました。 </br> - SQL バージョン 15 (SQL 2019) 以降および Azure SQL Database に新しい機密属性 'rank' を追加しました。 |
 | SMO/スクリプト作成 | [SQL Assessment API](../sql-assessment-api/sql-assessment-api-overview.md) - ルールセットの形式にバージョン管理を追加しました。 |
 | SMO/スクリプト作成 | [SQL Assessment API](../sql-assessment-api/sql-assessment-api-overview.md) - 新しいチェックを追加しました。 |
-| SMO/スクリプト作成 | [SQL Assessment API](../sql-assessment-api/sql-assessment-api-overview.md) - Azure SQL Database Managed Instance のサポートを追加しました。 |
+| SMO/スクリプト作成 | [SQL Assessment API](../sql-assessment-api/sql-assessment-api-overview.md) - Azure SQL Managed Instance のサポートを追加しました。 |
 | SMO/スクリプト作成 | [SQL Assessment API](../sql-assessment-api/sql-assessment-api-overview.md) - 結果を表で表示するようコマンドレットの既定のビューを更新しました。 |
 
 #### <a name="bug-fixes-in-1831"></a>18.3.1 でのバグの修正
@@ -342,7 +345,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | Integration Services | Azure 対応の `DTExec` ユーティリティによって生成される Azure Data Factory パイプラインの問題を修正して、適切なパラメーターの型が使用されるようにしました。 (18.3.1 の場合は明示的) |
 | SMO/スクリプト作成 | **SMO.Server.SetDefaultInitFields(true)** が使用されているときにプロパティをフェッチすると SMO からエラーがスローされる原因となっていた問題を修正しました。|
 | クエリ ストア UI | *[追跡対象クエリ]* ビューで *[実行回数]* メトリックが選択されている場合に Y 軸がスケーリングされない問題を修正しました。 |
-| 脆弱性評価 | Azure SQL DB のベースラインのクリアと承認が無効になりました。|
+| 脆弱性評価 | Azure SQL Database のベースラインのクリアと承認が無効になりました。|
 
 #### <a name="known-issues-1831"></a>既知の問題 (18.3.1)
 
@@ -407,7 +410,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | SMO/スクリプト作成 | 数千のテーブルを持つデータベースに対して "*スクリプトの生成*" を実行しようとしたときの問題 (進行状況ダイアログが停止しているように見える) を修正しました。 |
 | SMO/スクリプト作成 | SQL 2019 で "*外部テーブル*" のスクリプトが機能しない問題を修正しました。 |
 | SMO/スクリプト作成 | SQL 2019 で "*外部データ ソース*" のスクリプトが機能しない問題を修正しました。 詳細については、[SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/34295080)を参照してください。 |
-| SMO/スクリプト作成 | Azure SQL DB をターゲットにしているときに列の "*拡張プロパティ*" がスクリプト化されない問題を修正しました。 詳細については「[stackoverflow](https://stackoverflow.com/questions/56952337/how-can-i-script-the-descriptions-of-columns-in-ms-sql-server-management-studio)」を参照してください。 |
+| SMO/スクリプト作成 | Azure SQL Database をターゲットにしているときに列の "*拡張プロパティ*" がスクリプト化されない問題を修正しました。 詳細については「[stackoverflow](https://stackoverflow.com/questions/56952337/how-can-i-script-the-descriptions-of-columns-in-ms-sql-server-management-studio)」を参照してください。 |
 | SMO/スクリプト作成 | 最後のページ挿入:SMO - Add property *Index.IsOptimizedForSequentialKey* |
 |**SSMS セットアップ**| **SSMS のセットアップで、言語の不一致を報告する SSMS のインストールが誤ってブロックされていた問題を軽減しました。これは、セットアップの中止や SSMS の以前のバージョンの誤ったアンインストールなど、一部の異常な状況で問題になる可能性がありました。詳細については、[SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/37483594/)を参照してください。** |
 | XEvent プロファイラー | ビューアーが閉じられるときのクラッシュを修正しました。 |
@@ -440,7 +443,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | :-------| :------|
 | データベース ダイアグラム | [データベース ダイアグラムが SSMS に戻りました](https://feedback.azure.com/forums/908035/suggestions/37507828)。
 | SSBDIAGNOSE.EXE |SQL Server Diagnose (コマンドライン ツール) が SSMS パッケージに戻りました。|
-| Integration Services (SSIS) | Azure で、Azure またはファイル システムの SSIS カタログにある SSIS パッケージのスケジュールがサポートされます。 [新しいスケジュール] ダイアログを起動するためのエントリが 3 つあります。Azure の SSIS カタログにある SSIS パッケージを右クリックしたときに表示される *[新しいスケジュール]* メニュー項目、 *[ツール]* メニュー項目の *[Azure への移行]* メニュー項目にある *[Azure での SSIS パッケージのスケジュール設定]* メニュー項目、Azure SQL Database マネージド インスタンスの SQL Server エージェントの下で [ジョブ] フォルダーを右クリックしたときに表示される [Azure での SSIS のスケジュール設定] です。|
+| Integration Services (SSIS) | Azure で、Azure またはファイル システムの SSIS カタログにある SSIS パッケージのスケジュールがサポートされます。 [新しいスケジュール] ダイアログを起動するためのエントリが 3 つあります。Azure の SSIS カタログにある SSIS パッケージを右クリックしたときに表示される *[新しいスケジュール]* メニュー項目、 *[ツール]* メニュー項目の *[Azure への移行]* メニュー項目にある *[Azure での SSIS パッケージのスケジュール設定]* メニュー項目、Azure SQL Managed Instance の SQL Server エージェントの下で [ジョブ] フォルダーを右クリックしたときに表示される [Azure での SSIS のスケジュール設定] です。|
 
 #### <a name="bug-fixes-in-181"></a>18.1 でのバグの修正
 
@@ -462,7 +465,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | 高 DPI | SSMS のローカライズ版の一部にある、 *[新しい可用性グループ]* ページ内のコントロールのレイアウトを修正しました。 |
 | 高 DPI | *[新しいジョブ スケジュール]* ページのレイアウトを修正しました。 詳細については、[SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/37632094)を参照してください。 |
 | フラット ファイルのインポート | インポート中に通知なく行が失われる場合がある問題を修正しました。|
-| Intellisense/エディター | IntelliSense の Azure SQL データベースに対する SMO ベースのクエリ トラフィックを削減しました。 |
+| Intellisense/エディター | IntelliSense の Azure SQL Database に対する SMO ベースのクエリ トラフィックを削減しました。 |
 | Intellisense/エディター | ユーザー作成のために T-SQL を入力しているときに表示されるヒントの文法エラーを修正しました。 また、ユーザーとログインの間を明確に区別するためのエラー メッセージを修正しました。 |
 | ログ ビューアー | オブジェクト エクスプローラーで古いアーカイブ サインインをダブルクリックしたときであっても、SSMS で常に現在のサーバー (またはエージェント) のログが開かれる問題を修正しました。 詳細については、[SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/37633648)を参照してください。 |
 | SSMS セットアップ | セットアップ ログのパスにスペースが含まれている場合 SSMS セットアップが失敗する原因となっていた問題を修正しました。 詳細については、[SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/37496110)を参照してください。 |
@@ -509,7 +512,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | [新しい項目]| 詳細|
 | :-------| :------|
 |SQL Server 2019 のサポート|SSMS 18.0 は、SQL Server 2019 (compatLevel 150). を完全に*認識*する最初のリリースです。|
-|SQL Server 2019 のサポート|SQL Server 2019 および SQL マネージド インスタンスでの "BATCH_STARTED_GROUP" と "BATCH_COMPLETED_GROUP" のサポート。|
+|SQL Server 2019 のサポート|SQL Server 2019 および SQL Managed Instance での "BATCH_STARTED_GROUP" と "BATCH_COMPLETED_GROUP" のサポート。|
 |SQL Server 2019 のサポート|SMO:UDF のインライン化のサポートが追加されました。|
 |SQL Server 2019 のサポート|GraphDB:Graph TC Sequence のプラン表示にフラグが追加されます。|
 |SQL Server 2019 のサポート|Always Encrypted: AEv2 / エンクレーブのサポートが追加されました。|
@@ -542,7 +545,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 |Azure Data Studio との統合|Azure Data Studio を起動またはダウンロードするためのメニュー項目が追加されました。|
 |Azure Data Studio との統合|オブジェクト エクスプローラーに [Azure Data Studio の起動] メニュー項目が追加されました。|
 |Azure Data Studio との統合|OE でデータベース ノードを右クリックすると、Azure Data Studio でクエリを実行するか新しいノートブックを作成するためのコンテキスト メニューがユーザーに表示されます。|
-|Azure SQL サポート| SLO/Edition/MaxSize データベース プロパティにカスタム名を使用できるようになり、Azure SQL データベースの今後のエディションのサポートが簡単になりました。|
+|Azure SQL サポート| SLO/Edition/MaxSize データベース プロパティにカスタム名を使用できるようになり、今後の Azure SQL Database のエディションのサポートが簡単になりました。|
 |Azure SQL サポート| 最近追加された仮想コア SKU (General Purpose および Business Critical) のサポートの追加:Gen4_24 およびすべての Gen5|
 |Azure SQL Managed Instance|SMO と SSMS で、Azure SQL Managed Instance に接続した場合の新しいログインの種類として、新しい "AAD ログイン" が追加されました。|
 |常時接続|SSMS の Always on ダッシュボードで RTO (推定復旧時間) と RPO (推定データ損失) を再ハッシュします。 [https://docs.microsoft.com/sql/database-engine/availability-groups/windows/monitor-performance-for-always-on-availability-groups](../database-engine/availability-groups/windows/monitor-performance-for-always-on-availability-groups.md) の更新されたドキュメントを参照してください。|
@@ -558,7 +561,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 |フラット ファイルのインポート ウィザード|インポートで列の名前が変更された可能性があることをユーザーに通知するロジックが追加されました。|
 |Integration Services (SSIS)|顧客が Azure Government クラウド内にある Azure-SSIS IR で SSIS パッケージをスケジュールできるようにするためのサポートが追加されました。|
 |Integration Services (SSIS)|Azure SQL Managed Instance の SQL エージェントを SSMS を介して使用するときに、SSIS エージェント ジョブ ステップでパラメーターと接続マネージャーを構成できます。|
-|Integration Services (SSIS)|Azure SQL DB/マネージド インスタンスに接続するときに、*既定*を初期データベースとして使用して接続できます。|
+|Integration Services (SSIS)|Azure SQL Database または Azure SQL Managed Instance に接続するときに、"*既定*" を初期データベースとして使用して接続できます。|
 |Integration Services (SSIS)|[Integration Services カタログ] の下に新しい項目 **[Try SSIS in Azure Data Factory]\(Azure Data Factory で SSIS を試す\)** が追加されました。これは、統合ランタイムの作成ウィザードを起動して Azure-SSIS Integration Runtime をすばやく作成するのに使用できます。
 |Integration Services (SSIS)|カタログ作成ウィザードに **[Create SSIS IR]\(SSIS IR の作成\)** ボタンが追加されました。これは、統合ランタイムの作成ウィザードを起動して Azure-SSIS Integration Runtime をすばやく作成するのに使用できます。|
 |Integration Services (SSIS)|ISDeploymentWizard で、SQL 認証、Azure Active Directory 統合認証、および Azure Active Directory パスワード認証がコマンド ライン モードでサポートされるようになりました。|
@@ -596,7 +599,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | :-------| :------|
 |クラッシュとフリーズ|GDI オブジェクトに関連する一般的な SSMS クラッシュの原因を修正しました。|
 |クラッシュとフリーズ|[Script as Create/Update/Drop]\(作成/更新/ドロップとしてスクリプト化\) を選択したときの停止とパフォーマンス低下の一般的な原因を修正しました (SMO オブジェクトの不要なフェッチを削除しました)。|
-|クラッシュとフリーズ|ADAL トレースが有効なときに MFA を使用して Azure SQL DB に接続すると、システムが応答を停止する問題を修正しました。|
+|クラッシュとフリーズ|ADAL トレースが有効なときに MFA を使用して Azure SQL Database に接続すると、システムが応答を停止する問題を修正しました。|
 |クラッシュとフリーズ|アクティビティ モニターから呼び出されたときにライブ クエリの統計情報でシステムが応答を停止する (またはハングが認識された) 問題を修正しました ([セキュリティ情報を保持する] を設定せずに SQL Server 認証を使用するときにマニフェストに含まれる問題)。|
 |クラッシュとフリーズ|オブジェクト エクスプローラーで [レポート] を選択したときにシステムが応答を停止した問題を修正しました。この問題で、長い接続の待機時またはリソースの一時的にアクセス不能に関するマニフェストが含まれる可能性があります。|
 |クラッシュとフリーズ|中央管理サーバーと Azure SQL サーバーを使用しようとすると SSMS でクラッシュが発生していた問題を修正しました。 詳細については、「[SMSS 17.5 application error and crash when using Central Management Server](https://feedback.azure.com/forums/908035/suggestions/33374884)」 (中央管理サーバーを使用するときの SMSS 17.5 アプリケーションのエラーとクラッシュ) を参照してください。|
@@ -613,31 +616,31 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 |SSMS 全般|正しいモニターでダイアログを開くことで SSMS のマルチモニター対応を高度化させるよう、再度修正を行いました。|
 |Analysis Services (AS)|AS XEvent UI に対する [詳細設定] がクリップされてしまう問題を修正しました。|
 |Analysis Services (AS)|DAX の解析でファイルが見つからないことを示す例外がスローされる問題を修正しました。|
-|Azure SQL データベース|Azure SQL Database でマスター データベースではなくユーザー データベースに接続したときに、Azure SQL DB クエリ ウィンドウにデータベース リストが正しく入力されない問題を修正しました。|
+|Azure SQL データベース|Azure SQL Database でマスターではなくユーザー データベースに接続したときに、Azure SQL Database クエリ ウィンドウにデータベース リストが正しく入力されない問題を修正しました。|
 |Azure SQL データベース|Azure SQL Database に "テンポラル テーブル" を追加できない問題を修正しました。|
 |Azure SQL データベース|Azure の [統計] メニューの下にある統計プロパティのサブメニュー オプションを有効にしました。これは、もうだいぶ前から完全にサポートされていたためです。|
 |Azure SQL - 一般的なサポート|(50 を超える場合に) Azure サブスクリプションを表示できない一般的な Azure UI コントロールの問題を修正しました。 また、サブスクリプション ID ではなく名前による並べ替えに変更されました。 たとえば、URL からバックアップを復元するときに、ユーザーはこれを実行できます。|
 |Azure SQL - 一般的なサポート|サブスクリプションを列挙するときに発生する一般的な Azure UI コントロールの問題を修正しました。この問題で "インデックスが範囲を超えています。 負でない値で、コレクションのサイズよりも小さくなければなりません" エラーがユーザーが一部のテナントについてサブスクリプションがない場合に表示されることがあります。 たとえば、URL からバックアップを復元するときに、ユーザーはこれを実行できます。|
 |Azure SQL - 一般的なサポート|SSMS による新しい Azure SQL SLO のサポートを困難にしていた、サービス レベルの目標のハードコードの問題を修正しました。 これでユーザーは Azure にサインインし、SSMS では該当するすべての SLO データ (エディションおよび最大サイズ) を取得できるようになりました。|
-|Azure SQL DB マネージド インスタンスのサポート|マネージド インスタンスのサポートの改善/調整: UI でサポートされていないオプションが無効になり、URL 監査ターゲットを処理するために [監査ログの表示] オプションが修正されました。|
-|Azure SQL DB マネージド インスタンスのサポート|[スクリプトの生成とパブリッシュ] ウィザードでサポートされていない CREATE DATABASE 句のスクリプトが生成されます。|
-|Azure SQL DB マネージド インスタンスのサポート|マネージド インスタンスのライブ クエリ統計が有効になりました。|
-|Azure SQL DB マネージド インスタンスのサポート|[データベースのプロパティ] -> [ファイル] で ALTER DB ADD FILE が誤ってスクリプトされていました。|
-|Azure SQL DB マネージド インスタンスのサポート|他のスケジュールの種類が選択されている場合でも、ONIDLE スケジュールが選択される SQL エージェント スケジューラによる回帰を修正しました。|
-|Azure SQL DB マネージド インスタンスのサポート|Azure Storage でバックアップを行う MAXTRANSFERRATE、MAXBLOCKSIZE の調整。|
-|Azure SQL DB マネージド インスタンスのサポート|RESTORE 操作の前にテール ログ バックアップがスクリプト化される問題 (これは CL ではサポートされていません)。|
-|Azure SQL DB マネージド インスタンスのサポート|[データベースの作成] ウィザードで CREATE DATABASE ステートメントが正しくスクリプト化されない。|
-|Azure SQL DB マネージド インスタンスのサポート|マネージド インスタンスに接続しているときの SSMS 内の SSIS パッケージの特殊処理。|
-|Azure SQL DB マネージド インスタンスのサポート|マネージド インスタンスに接続するときに "利用状況モニター" を使用しようとしたときにエラーが表示される問題を修正しました。|
-|Azure SQL DB マネージド インスタンスのサポート|(SSMS エクスプローラーでの) AAD ログインのサポートの強化。|
-|Azure SQL DB マネージド インスタンスのサポート|SMO ファイル グループ オブジェクトのスクリプト作成の改善。|
-|Azure SQL DB マネージド インスタンスのサポート|資格情報のための UI が改善されました。|
-|Azure SQL DB マネージド インスタンスのサポート|論理レプリケーションのサポートが追加されました。|
-|Azure SQL DB マネージド インスタンスのサポート|データベースを右クリックして [データ層アプリケーションのインポート] を選択するとエラーになる問題を修正しました。|
-|Azure SQL DB マネージド インスタンスのサポート|"TempDB" を右クリックするとエラーが表示される問題を修正しました。|
-|Azure SQL DB マネージド インスタンスのサポート|SMO で ALTER DB ADD FILE ステートメントをスクリプト作成しようとすると、生成された T-SQL スクリプトが空になる問題を修正しました。|
-|Azure SQL DB マネージド インスタンスのサポート|マネージド インスタンスのサーバー固有のプロパティ (ハードウェア生成、Service レベル、使用および予約されているストレージ) の表示を改善しました。|
-|Azure SQL DB マネージド インスタンスのサポート|データベースのスクリプト作成 ("作成としてスクリプト...") で、追加のファイル グループとファイルがスクリプト作成されない問題を修正しました。 詳細については、[https://feedback.azure.com/forums/908035/suggestions/37326799](https://feedback.azure.com/forums/908035/suggestions/37326799) を参照してください。 |
+|Azure SQL Managed Instance のサポート|マネージド インスタンスのサポートの改善/調整: UI でサポートされていないオプションが無効になり、URL 監査ターゲットを処理するために [監査ログの表示] オプションが修正されました。|
+|Azure SQL Managed Instance のサポート|[スクリプトの生成とパブリッシュ] ウィザードでサポートされていない CREATE DATABASE 句のスクリプトが生成されます。|
+|Azure SQL Managed Instance のサポート|マネージド インスタンスのライブ クエリ統計が有効になりました。|
+|Azure SQL Managed Instance のサポート|[データベースのプロパティ] -> [ファイル] で ALTER DB ADD FILE が誤ってスクリプトされていました。|
+|Azure SQL Managed Instance のサポート|他のスケジュールの種類が選択されている場合でも、ONIDLE スケジュールが選択される SQL エージェント スケジューラによる回帰を修正しました。|
+|Azure SQL Managed Instance のサポート|Azure Storage でバックアップを行う MAXTRANSFERRATE、MAXBLOCKSIZE の調整。|
+|Azure SQL Managed Instance のサポート|RESTORE 操作の前にテール ログ バックアップがスクリプト化される問題 (これは CL ではサポートされていません)。|
+|Azure SQL Managed Instance のサポート|[データベースの作成] ウィザードで CREATE DATABASE ステートメントが正しくスクリプト化されない。|
+|Azure SQL Managed Instance のサポート|マネージド インスタンスに接続しているときの SSMS 内の SSIS パッケージの特殊処理。|
+|Azure SQL Managed Instance のサポート|マネージド インスタンスに接続するときに "利用状況モニター" を使用しようとしたときにエラーが表示される問題を修正しました。|
+|Azure SQL Managed Instance のサポート|(SSMS エクスプローラーでの) AAD ログインのサポートの強化。|
+|Azure SQL Managed Instance のサポート|SMO ファイル グループ オブジェクトのスクリプト作成の改善。|
+|Azure SQL Managed Instance のサポート|資格情報のための UI が改善されました。|
+|Azure SQL Managed Instance のサポート|論理レプリケーションのサポートが追加されました。|
+|Azure SQL Managed Instance のサポート|データベースを右クリックして [データ層アプリケーションのインポート] を選択するとエラーになる問題を修正しました。|
+|Azure SQL Managed Instance のサポート|"TempDB" を右クリックするとエラーが表示される問題を修正しました。|
+|Azure SQL Managed Instance のサポート|SMO で ALTER DB ADD FILE ステートメントをスクリプト作成しようとすると、生成された T-SQL スクリプトが空になる問題を修正しました。|
+|Azure SQL Managed Instance のサポート|マネージド インスタンスのサーバー固有のプロパティ (ハードウェア生成、Service レベル、使用および予約されているストレージ) の表示を改善しました。|
+|Azure SQL Managed Instance のサポート|データベースのスクリプト作成 ("作成としてスクリプト...") で、追加のファイル グループとファイルがスクリプト作成されない問題を修正しました。 詳細については、[https://feedback.azure.com/forums/908035/suggestions/37326799](https://feedback.azure.com/forums/908035/suggestions/37326799) を参照してください。 |
 |DB のバックアップ/復元/アタッチ/デタッチ|.mdf ファイルの物理ファイル名が元のファイル名と一致しない場合に、ユーザーがデータベースをアタッチできない問題を修正しました。|
 |DB のバックアップ/復元/アタッチ/デタッチ|SSMS で有効な復元プランを見つけられない問題、または最適ではない復元プランが見つかることがある問題を修正しました。 詳細については、[https://feedback.azure.com/forums/908035-sql-server/suggestions/32897752](https://feedback.azure.com/forums/908035-sql-server/suggestions/32897752) を参照してください。 |
 |DB のバックアップ/復元/アタッチ/デタッチ|"データベースのアタッチ" ウィザードで名前が変更されたセカンダリ ファイルが表示されない問題を修正しました。 現在は、ファイルが表示され、そのファイルについてのコメント ("見つかりません" など) が追加されています。 詳細については、[https://feedback.azure.com/forums/908035/suggestions/32897434](https://feedback.azure.com/forums/908035/suggestions/32897434) を参照してください。 |
@@ -688,8 +691,8 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 |オブジェクト スクリプト作成|オブジェクトのスクリプト作成時に、既定値がある DB のスコープ設定の構成は省略されています。|
 |オブジェクト スクリプト作成|スクリプト作成時に動的 T-SQL を生成しないでください。 詳細については、[https://feedback.azure.com/forums/908035-sql-server/suggestions/32898391](https://feedback.azure.com/forums/908035-sql-server/suggestions/32898391) を参照してください。 |
 |オブジェクト スクリプト作成|SQL Server 2016 以前のテーブルをスクリプト化するときに、"エッジとして" および "ノードとして" のグラフ構文を省略します。|
-|オブジェクト スクリプト作成|MFA で AAD を使用して Azure SQL DB に接続している場合、データベース オブジェクトのスクリプト作成が失敗する問題を修正しました。|
-|オブジェクト スクリプト作成|Azure SQL DB で GEOMETRY_AUTO_GRID/GEOGRAPHY_AUTO_GRID を使用して、空間インデックスのスクリプトを作成しようとするとエラーがスローされていた問題を修正しました。|
+|オブジェクト スクリプト作成|MFA で AAD を使用して Azure SQL Database に接続している場合、データベース オブジェクトのスクリプト作成が失敗する問題が修正されました。|
+|オブジェクト スクリプト作成|Azure SQL Database で GEOMETRY_AUTO_GRID/GEOGRAPHY_AUTO_GRID を使用して、空間インデックスのスクリプトを作成しようとするとエラーがスローされていた問題が修正されました。|
 |オブジェクト スクリプト作成|"オブジェクト エクスプローラー" のスクリプト設定がソースと一致するように設定されている場合でも、(Azure SQL Database の) データベース スクリプトが常にオンプレミスの SQL をターゲットとする問題を修正しました。|
 |オブジェクト スクリプト作成|不適切な T-SQL ステートメントを生成する、クラスター化されたインデックスおよびクラスター化されていないインデックスを含む SQL DW データベース内にテーブルをスクリプト作成しようとする問題を修正しました。|
 |オブジェクト スクリプト作成|不適切な T-SQL ステートメント (重複したステートメント) を生成する、"クラスター化された列ストア インデックス" と "クラスター化されたインデックス" の両方を持つ SQL DW データベース内にテーブルをスクリプト作成しようとする問題を修正しました。|

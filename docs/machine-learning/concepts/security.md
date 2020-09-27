@@ -1,6 +1,6 @@
 ---
-title: 機能拡張のセキュリティの概要
-description: SQL Server Machine Learning Services の機能拡張フレームワークのセキュリティの概要。 ログイン アカウントとユーザー アカウント、SQL Server スタート パッド サービス、ワーカー アカウント、実行中の複数のスクリプト、およびファイルのアクセス許可のセキュリティ。
+title: 機能拡張に関するセキュリティ アーキテクチャ
+description: この記事では、SQL Server Machine Learning Services の機能拡張フレームワークに関するセキュリティ アーキテクチャについて説明します。 これには、ログインとユーザー アカウント、SQL Server スタート パッド サービス、ワーカー アカウント、実行中の複数のスクリプト、およびファイルのアクセス許可に関するセキュリティが含まれます。
 ms.prod: sql
 ms.technology: machine-learning-services
 ms.date: 07/14/2020
@@ -8,24 +8,26 @@ ms.topic: conceptual
 author: garyericson
 ms.author: garye
 ms.reviewer: davidph
-ms.custom: seo-lt-2019
+ms.custom: contperfq1, seo-lt-2019
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 5110f96b654847a0288471d28c72afa37d3df8c2
-ms.sourcegitcommit: 9b41725d6db9957dd7928a3620fe4db41eb51c6e
+ms.openlocfilehash: 61294897524a0e260e457cbf98e892cad940ca54
+ms.sourcegitcommit: c74bb5944994e34b102615b592fdaabe54713047
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88179851"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90989839"
 ---
-# <a name="security-overview-for-the-extensibility-framework-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services の機能拡張フレームワークのセキュリティの概要
+# <a name="security-architecture-for-the-extensibility-framework-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services の機能拡張フレームワークに関するセキュリティ アーキテクチャ
 
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
-この記事では、[SQL Server Machine Learning Services](../sql-server-machine-learning-services.md) で SQL Server データベース エンジンおよび関連するコンポーネントと機能拡張フレームワークを統合するために使用されるセキュリティ アーキテクチャ全体について説明します。 セキュリティ保護可能なリソース、サービス、プロセス ID、およびアクセス許可について詳しく説明します。 SQL Server での機能拡張の主要概念とコンポーネントの詳細については、「[SQL Server Machine Learning Services の機能拡張アーキテクチャ](extensibility-framework.md)」を参照してください。
+この記事では、[SQL Server Machine Learning Services](../sql-server-machine-learning-services.md) で SQL Server データベース エンジンおよび関連するコンポーネントと機能拡張フレームワークを統合するために使用されるセキュリティ アーキテクチャについて説明します。 セキュリティ保護可能なリソース、サービス、プロセス ID、およびアクセス許可について詳しく説明します。 この記事で取り上げた主なポイントは、スタート パッド、SQLRUserGroup、およびワーカー アカウントの目的、外部スクリプトのプロセス分離、ユーザー ID をワーカーアカウントにマップする方法です。
+
+SQL Server での機能拡張の主要概念とコンポーネントの詳細については、「[SQL Server Machine Learning Services の機能拡張アーキテクチャ](extensibility-framework.md)」を参照してください。
 
 ## <a name="securables-for-external-script"></a>外部スクリプトでのセキュリティ保護可能リソース
 
-R、Python、または外部言語 (Java や .NET など) で記述された外部スクリプトは、この目的のために作成された[システム ストアド プロシージャ](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md)に入力パラメーターとして送信されるか、または定義したストアド プロシージャでラップされます。 または、事前にトレーニングされ、バイナリ形式でデータベース テーブルに格納され、T-SQL [PREDICT](../../t-sql/queries/predict-transact-sql.md) 関数で呼び出し可能なモデルを使用することもできます。
+外部スクリプトは、この目的のために作成された[システム ストアド プロシージャ](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md)に入力パラメーターとして送信されるか、または定義したストアド プロシージャでラップされます。 このスクリプトは、R、Python、または Java や .NET などの外部言語で記述されています。 または、事前にトレーニングされ、バイナリ形式でデータベース テーブルに格納され、T-SQL [PREDICT](../../t-sql/queries/predict-transact-sql.md) 関数で呼び出し可能なモデルを使用することもできます。
 
 スクリプトは、既存のデータベース スキーマ オブジェクト、ストアド プロシージャ、およびテーブルによって提供されるため、SQL Server Machine Learning Services では新しい[セキュリティ保護可能なリソース](../../relational-databases/security/securables.md)はありません。
 
@@ -35,7 +37,7 @@ R、Python、または外部言語 (Java や .NET など) で記述された外�
 
 ## <a name="permissions"></a>アクセス許可
 
-SQL Server のデータベース ログインとロールのデータ セキュリティ モデルは、外部スクリプトにまで拡張されています。 SQL Server データを使用する外部スクリプトまたはコンピューティング コンテキストとして SQL Server で実行される外部スクリプトを実行する場合、SQL Server ログインまたは Windows ユーザー アカウントが必要です。 アドホック クエリを実行するアクセス許可を持つデータベース ユーザーは、外部スクリプトから同じデータにアクセスできます。
+SQL Server のデータベース ログインとロールのデータ セキュリティ モデルは、外部スクリプトにまで拡張されています。 SQL Server データを使用する外部スクリプトまたはコンピューティング コンテキストとして SQL Server で実行される外部スクリプトを実行する場合、SQL Server ログインまたは Windows ユーザー アカウントが必要です。 クエリを実行するアクセス許可を持つデータベース ユーザーは、外部スクリプトから同じデータにアクセスできます。
 
 ログインまたはユーザー アカウントによって、外部スクリプトの要件に応じて、複数レベルのアクセスを必要とする場合のある*セキュリティ プリンシパル*が特定されます。
 
@@ -78,7 +80,7 @@ SQL Server のデータベース ログインとロールのデータ セキュ�
 機能拡張フレームワークによって、SQL Server のインストールで[サービスの一覧](../../database-engine/configure-windows/configure-windows-service-accounts-and-permissions.md#Service_Details)に次の新しい NT サービスが追加されます:[**SQL Server Launchpad (MSSSQLSERVER)** ](extensibility-framework.md#launchpad)。
 
 データベース エンジンでは、SQL Server **スタート パッド** サービスを使用して、外部スクリプト セッションが別個のプロセスとしてインスタンス化されます。 
-プロセスは、SQL Server、スタート パッド自体、およびストアド プロシージャまたはホスト クエリの実行に使用されたユーザー ID とは異なる低い特権のアカウントで実行されます。 スクリプトを、低い特権のアカウント下の別のプロセスで実行することは、SQL Server での外部スクリプトのセキュリティおよび分離モデルの基礎です。
+このプロセスは低い特権のアカウントで実行されます。 このアカウントは、SQL Server、スタート パッド自体、およびストアド プロシージャまたはホスト クエリの実行に使用されたユーザー ID とは異なります。 スクリプトを、低い特権のアカウント下の別のプロセスで実行することは、SQL Server での外部スクリプトのセキュリティおよび分離モデルの基礎です。
 
 また SQL Server では、サテライト プロセスを開始するために使用される低い特権のワーカー アカウントへの、呼び出し元ユーザーの ID のマッピングも維持されます。 スクリプトまたはコードによって、データおよび操作のために SQL Server に対してコールバックが行われる一部の状況では、SQL Server によって、通常、ID 転送をシームレスに管理できます。 SELECT ステートメントや呼び出し元関数、およびその他のプログラミング オブジェクトを含むスクリプトは通常、呼び出し元のユーザーが十分な権限を持っていれば成功します。
 
@@ -133,7 +135,7 @@ SQL Server のデータベース ログインとロールのデータ セキュ�
 
 ### <a name="permissions-granted-to-sqlrusergroup"></a>SQLRUserGroup に付与されるアクセス許可
 
-既定では、**SQLRUserGroup** のメンバーには、SQL Server の **Binn**、**R_SERVICES**、および **PYTHON_SERVICES** ディレクトリ内のファイルに対する読み取りおよび実行アクセス許可が付与され、さらに SQL Server とともにインストールされる R および Python ディストリビューションの実行可能ファイル、ライブラリ、および組み込みデータセットへのアクセス権が付与されます。 
+既定では、**SQLRUserGroup** のメンバーには、SQL Server **Binn**、**R_SERVICES**、および **PYTHON_SERVICES** ディレクトリのファイルに対する読み取りと実行のアクセス許可が付与されます。 これには、SQL Server とともにインストールされる R および Python ディストリビューションの実行可能ファイル、ライブラリ、および組み込みデータセットへのアクセス権が含まれます。 
 
 SQL Server の機密性の高いリソースを保護するために、**SQLRUserGroup** へのアクセスを拒否するアクセス制御リスト (ACL) を必要に応じて定義できます。 逆に、SQL Server 自体とは別のホスト コンピューターに存在するローカル データ リソースへのアクセス許可を付与することもできます。 
 

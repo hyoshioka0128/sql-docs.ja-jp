@@ -21,12 +21,12 @@ helpviewer_keywords:
 ms.assetid: 01229779-8bc1-4c7d-890a-8246d4899250
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: a1b6f93654e312f8c7a0266b3500c18a38ff511a
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: d6d5bac616d1c83cda53a055b00951cced2de19f
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88445921"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91111207"
 ---
 # <a name="sql_variant-transact-sql"></a>sql_variant (Transact-SQL)
 
@@ -128,13 +128,13 @@ ODBC でサポートされていません **sql_variant**です。 クエリで�
  次の例では、sql_variant データ型でテーブルを作成します。 次の例では、`colA` の `colB` =`1689` 値 `46279.1` に関する `SQL_VARIANT_PROPERTY` 情報を取得しています。 `tableA` には `sql_variant` 型の `colA` と、`colB` が含まれているものとします。  
   
 ```sql    
-CREATE   TABLE tableA(colA sql_variant, colB int)  
-INSERT INTO tableA values ( cast (46279.1 as decimal(8,2)), 1689)  
+CREATE TABLE tableA(colA sql_variant, colB INT)  
+INSERT INTO tableA values ( CAST(46279.1 as decimal(8,2)), 1689)  
 SELECT   SQL_VARIANT_PROPERTY(colA,'BaseType') AS 'Base Type',  
          SQL_VARIANT_PROPERTY(colA,'Precision') AS 'Precision',  
          SQL_VARIANT_PROPERTY(colA,'Scale') AS 'Scale'  
 FROM      tableA  
-WHERE      colB = 1689  
+WHERE     colB = 1689  
 ```  
   
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)] これら 3 つの値の各ことに注意してください、 **sql_variant**です。  

@@ -1,5 +1,6 @@
 ---
-title: Azure Active Directory の使用 | SQL Server に関する Microsoft Docs
+title: Azure Active Directory の使用
+description: Microsoft OLE DB Driver for SQL Server で利用できて、Azure SQL データベースへの接続を可能にする Azure Active Directory 認証方法について説明します。
 ms.custom: ''
 ms.date: 10/11/2019
 ms.prod: sql
@@ -9,12 +10,12 @@ ms.technology: connectivity
 ms.topic: reference
 author: bazizi
 ms.author: v-beaziz
-ms.openlocfilehash: 9c3586c8b51495ed3c49dd88f9f85a2b60d09aa0
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+ms.openlocfilehash: e4591d74ba5e11b65cc3ede83533d72a11dbec96
+ms.sourcegitcommit: a4ee6957708089f7d0dda15668804e325b8a240c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86007255"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87899060"
 ---
 # <a name="using-azure-active-directory"></a>Azure Active Directory の使用
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -31,7 +32,7 @@ ms.locfileid: "86007255"
 
 バージョン 18.3 では、次の認証方法のサポートが追加されています。
 - Azure Active Directory 対話型認証
-- Azure Active Directory MSI 認証
+- Azure Active Directory マネージド ID 認証
 
 > [!NOTE]
 > `DataTypeCompatibility` (またはそれに対応するプロパティ) が `80` に設定された状態での次の認証モードの使用は、サポート**されていません**。
@@ -39,12 +40,12 @@ ms.locfileid: "86007255"
 > - アクセス トークンを使用する Azure Active Directory 認証
 > - Azure Active Directory 統合認証
 > - Azure Active Directory 対話型認証
-> - Azure Active Directory MSI 認証
+> - Azure Active Directory マネージド ID 認証
 
 ## <a name="connection-string-keywords-and-properties"></a>接続文字列キーワードとプロパティ
 次の接続文字列キーワードが、Azure Active Directory 認証をサポートするために導入されています。
 
-|接続文字列キーワード|接続プロパティ|説明|
+|接続文字列キーワード|Connection プロパティ|説明|
 |---               |---                |---        |
 |Access Token|SSPROP_AUTH_ACCESS_TOKEN|Azure Active Directory に対する認証を行うためのアクセス トークンを指定します。 |
 |認証|SSPROP_AUTH_MODE|使用する認証方法を指定します。|
@@ -118,7 +119,7 @@ ms.locfileid: "86007255"
 ### <a name="azure-active-directory-authentication-using-an-access-token"></a>アクセス トークンを使用する Azure Active Directory 認証
 
 - `IDataInitialize::GetDataSource`の使用
-    > Provider=MSOLEDBSQL;Data Source=[サーバー];Initial Catalog=[データベース];**Access Token=[アクセス トークン]** ;Use Encryption for Data=true
+    > Provider=MSOLEDBSQL;Data Source=[サーバー];Initial Catalog=[データベース];**Access Token=[アクセス トークン]**;Use Encryption for Data=true
 - `DBPROP_INIT_PROVIDERSTRING`の使用
     > `DBPROP_INIT_PROVIDERSTRING` を使用したアクセス トークンの提供はサポートされていません
 
@@ -129,7 +130,7 @@ ms.locfileid: "86007255"
 - `DBPROP_INIT_PROVIDERSTRING`の使用
     > Server=[サーバー];Database=[データベース];**Authentication=ActiveDirectoryInteractive**;UID=[ユーザー名];Encrypt=yes
 
-### <a name="azure-active-directory-msi-authentication"></a>Azure Active Directory MSI 認証
+### <a name="azure-active-directory-managed-identity-authentication"></a>Azure Active Directory マネージド ID 認証
 
 - `IDataInitialize::GetDataSource`の使用
     - ユーザー割り当てマネージド ID:

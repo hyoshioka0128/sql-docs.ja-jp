@@ -28,12 +28,12 @@ ms.assetid: eb737149-7c92-4552-946b-91085d8b1b01
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 75866a02dee75aaaccb77e2f870b38222471d8c1
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 6b21487a6cfbe896dd81194710784a6cc148d389
+ms.sourcegitcommit: 3efd8bbf91f4f78dce3a4ac03348037d8c720e6a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88444812"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91024264"
 ---
 # <a name="create-login-transact-sql"></a>CREATE LOGIN (Transact-SQL)
 
@@ -316,7 +316,7 @@ CREATE LOGIN login_name
 
 ## <a name="arguments"></a>引数
 
-*login_name*: 作成するログインの名前を指定します。 Azure SQL Database 内の単一データベースとプールされたデータベース、および Azure Synapse Analytics (旧称 Azure SQL Data Warehouse) 内のデータベースでは、SQL ログインのみがサポートされます。 Azure Active Directory ユーザー用のアカウントを作成する、またはログインに関連付けられていないユーザー アカウントを作成するには、[CREATE USER](create-user-transact-sql.md) ステートメントを使用します。 詳細については、[Azure SQL Database でのログインの管理](https://docs.microsoft.com/azure/sql-database/sql-database-manage-logins)に関する記事を参照してください。
+*login_name*: 作成するログインの名前を指定します。 Azure SQL Database のシングル データベースとプールされたデータベース、および [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] のデータベースでは SQL ログインのみがサポートされています。 Azure Active Directory ユーザー用のアカウントを作成する、またはログインに関連付けられていないユーザー アカウントを作成するには、[CREATE USER](create-user-transact-sql.md) ステートメントを使用します。 詳細については、[Azure SQL Database でのログインの管理](https://docs.microsoft.com/azure/sql-database/sql-database-manage-logins)に関する記事を参照してください。
 
 PASSWORD **='** password* *'* : 作成する SQL ログインのパスワードを指定します。 強力なパスワードを使用してください。 詳細については、「[強力なパスワード](../../relational-databases/security/strong-passwords.md)」と「[パスワード ポリシー](../../relational-databases/security/password-policy.md)」を参照してください。 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降では、保存されたパスワード情報は salt 化パスワードの SHA-512 を使用して計算されます。
 

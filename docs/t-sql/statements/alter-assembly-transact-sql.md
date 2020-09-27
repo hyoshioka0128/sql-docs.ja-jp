@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: 87bca678-4e79-40e1-bb8b-bd5ed8f34853
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: c617d405aed8f9144ab7d85b16bb3c428f4ae541
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: 9edfba19ad84a0334f85e6990f0e3cd1c2ccee81
+ms.sourcegitcommit: ac9feb0b10847b369b77f3c03f8200c86ee4f4e0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540790"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90688682"
 ---
 # <a name="alter-assembly-transact-sql"></a>ALTER ASSEMBLY (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -203,7 +203,7 @@ ALTER ASSEMBLY assembly_name
 > [!NOTE]  
 >  アセンブリ `ComplexNumber` は、サンプル スクリプト UserDefinedDataType を実行することによって作成できます。 詳細については、「[ユーザー定義型](https://msdn.microsoft.com/library/a9b75f36-d7f5-47f7-94d6-b4448c6a2191)」を参照してください。  
   
- ```
+ ```sql
  ALTER ASSEMBLY ComplexNumber 
  FROM 'C:\Program Files\Microsoft SQL Server\130\Tools\Samples\1033\Engine\Programmability\CLR\UserDefinedDataType\CS\ComplexNumber\obj\Debug\ComplexNumber.dll' 
   ```
@@ -214,7 +214,7 @@ ALTER ASSEMBLY assembly_name
 ### <a name="b-adding-a-file-to-associate-with-an-assembly"></a>B. ファイルを追加してアセンブリに関連付ける  
  次の例では、ソース コード ファイル `Class1.cs` をアップロードして、アセンブリ `MyClass` に関連付けます。 この例では、アセンブリ `MyClass` がデータベースに既に作成されていることを前提としています。  
   
-```  
+```sql  
 ALTER ASSEMBLY MyClass   
 ADD FILE FROM 'C:\MyClassProject\Class1.cs';  
 ```  
@@ -225,7 +225,7 @@ ADD FILE FROM 'C:\MyClassProject\Class1.cs';
 ### <a name="c-changing-the-permissions-of-an-assembly"></a>C. アセンブリの権限を変更する  
  次の例では、アセンブリ `ComplexNumber` の権限セットを、SAFE から `EXTERNAL ACCESS` に変更します。  
   
-```  
+```sql  
 ALTER ASSEMBLY ComplexNumber WITH PERMISSION_SET = EXTERNAL_ACCESS;  
 ```  
   

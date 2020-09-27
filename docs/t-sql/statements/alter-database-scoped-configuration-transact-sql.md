@@ -3,7 +3,7 @@ title: ALTER DATABASE SCOPED CONFIGURATION
 description: 複数のデータベース構成を個別データベース レベルで設定できます。
 titleSuffix: SQL Server (Transact-SQL)
 ms.custom: seo-lt-2019
-ms.date: 10/31/2019
+ms.date: 09/15/2020
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
@@ -24,12 +24,12 @@ ms.assetid: 63373c2f-9a0b-431b-b9d2-6fa35641571a
 author: markingmyname
 ms.author: maghan
 monikerRange: = azuresqldb-current || = azuresqldb-mi-current || >= sql-server-2016 || >= sql-server-linux-2017 ||=azure-sqldw-latest|| = sqlallproducts-allversions
-ms.openlocfilehash: f395ef15f82b4975a3df677abea227e181835e83
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: 9b3710606df63baaf85134be47fb0fe1643c72f3
+ms.sourcegitcommit: 6d9b6eb2437e780c7881cc516e03c1182fb6892e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89537092"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90565087"
 ---
 # <a name="alter-database-scoped-configuration-transact-sql"></a>ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)
 
@@ -153,7 +153,7 @@ MAXDOP オプションを使用すると、並列プラン実行で使用する�
 インスタンス レベルでこのオプションを設定する方法については、「[max degree of parallelism サーバー構成オプションの構成](../../database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option.md)」を参照してください。
 
 > [!NOTE]
-> [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] では、サーバーレベルの**並列処理の最大限度**構成は常に 0 に設定されます。 MAXDOP は、現在の記事で説明されているように、データベースごとに構成できます。 MAXDOP の最適な構成に関する推奨事項については、「[その他のリソース](#additional-resources)」を参照してください。
+> [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] では、新しいシングル データベースとエラスティック プール データベースのデータベース スコープ構成 MAXDOP が既定で 8 に設定されています。 MAXDOP は、現在の記事で説明されているように、データベースごとに構成できます。 MAXDOP の最適な構成に関する推奨事項については、「[その他のリソース](#additional-resources)」を参照してください。
 
 > [!TIP]
 > これをクエリ レベルで行うには、**MAXDOP** [クエリ ヒント](../../t-sql/queries/hints-transact-sql-query.md)を使用します。    

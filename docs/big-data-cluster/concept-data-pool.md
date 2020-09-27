@@ -1,7 +1,7 @@
 ---
 title: データ プールとは
 titleSuffix: SQL Server big data clusters
-description: この記事では、SQL Server 2019 ビッグ データ クラスターのデータ プールについて説明します。
+description: SQL Server ビッグ データ クラスター内の SQL Server データ プールの役割、および SQL データ プールのアーキテクチャと機能について説明します。
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: mihaelab
@@ -9,12 +9,12 @@ ms.date: 08/21/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 547f3e14d0e73b944cc7bde31f657dbf4ad49d41
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 4d9eaba636c2567d60dfc62ce37080717e9c32e9
+ms.sourcegitcommit: d1051f05a7db81ec62d9785bb6af572408f3d4e0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85773658"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88680577"
 ---
 # <a name="what-are-data-pools-in-a-sql-server-big-data-cluster"></a>SQL Server ビッグ データ クラスターのデータ プールとは
 

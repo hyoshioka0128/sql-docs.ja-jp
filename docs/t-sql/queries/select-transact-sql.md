@@ -26,12 +26,12 @@ ms.assetid: dc85caea-54d1-49af-b166-f3aa2f3a93d0
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 575cff8e61661fc9fccb973b7ab83f455c2ec074
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 1d3bc17bec08636983f5a8c85395da758720a3e0
+ms.sourcegitcommit: 8f062015c2a033f5a0d805ee4adabbe15e7c8f94
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88422446"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91227206"
 ---
 # <a name="select-transact-sql"></a>SELECT (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -82,7 +82,7 @@ SELECT [ ALL | DISTINCT ]
 ```  
   
 ```syntaxsql
--- Syntax for Azure SQL Data Warehouse and Parallel Data Warehouse  
+-- Syntax for Azure Synapse Analytics and Parallel Data Warehouse  
   
 [ WITH <common_table_expression> [ ,...n ] ]  
 SELECT <select_criteria>  
@@ -191,7 +191,7 @@ SELECT <select_criteria>
 > たとえば、ビューにクラスター化インデックスがいくつかあり、ビューがいくつかのテーブル行を除外しており、ビューの SELECT 列リストがデータ型を *varchar* から *integer* に変更するために CONVERT を使用しているとします。 このような状況では、WHERE 句が実行される前に CONVERT が実行される場合があります。 実際に珍しいです。 これが問題となる場合、しばしばビューを変更して、異なるシーケンスを回避する方法があります。 
 
 ## <a name="permissions"></a>アクセス許可  
- データの選択にはテーブルまたはビューに対する **SELECT** 権限が必要です。この権限は、スキーマに対する **SELECT** 権限やテーブルに対する **CONTROL** 権限など上位スコープから継承されます。 または、**db_datareader** または **db_owner** 固定データベース ロールまたは **sysadmin** 固定サーバー ロールのメンバーシップが必要です。 **SELECTINTO** を使用した新しいテーブルの作成には、**CREATETABLE** 権限、および新しいテーブルを所有するスキーマに対する **ALTERSCHEMA** 権限も必要です。  
+ データの選択にはテーブルまたはビューに対する **SELECT** 権限が必要です。この権限は、スキーマに対する **SELECT** 権限やテーブルに対する **CONTROL** 権限など上位スコープから継承されます。 または、**db_datareader** または **db_owner** 固定データベース ロールまたは **sysadmin** 固定サーバー ロールのメンバーシップが必要です。 **SELECT INTO** を使用した新しいテーブルの作成には、**CREATE TABLE** 権限、および新しいテーブルを所有するスキーマに対する **ALTER SCHEMA** 権限も必要です。  
   
 ## <a name="examples"></a>例 :   
 次の例では、[!INCLUDE[ssawPDW](../../includes/ssawpdw-md.md)] データベースを使用します。

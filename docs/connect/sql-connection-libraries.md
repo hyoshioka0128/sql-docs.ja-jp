@@ -1,5 +1,5 @@
 ---
-title: Microsoft SQL データベースの接続ライブラリ | Microsoft Docs
+title: Microsoft SQL Database の接続ライブラリ | Microsoft Docs
 description: 各種のクライアント プログラミング言語から Microsoft SQL Server および Azure SQL Database への接続を可能にするモジュールのダウンロード リンクを示します。
 author: David-Engel
 ms.prod: sql
@@ -8,14 +8,14 @@ ms.custom: ''
 ms.topic: article
 ms.date: 03/06/2020
 ms.author: v-daenge
-ms.openlocfilehash: f6f75adc047f39ae3e0e0c21143f64cf57d2803a
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+ms.openlocfilehash: c2f282e9ba4c3b182640989e2365e9be70a258da
+ms.sourcegitcommit: 822d4b3cfa53269535500a3db5877a82b5076728
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87244053"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87988508"
 ---
-# <a name="connection-modules-for-microsoft-sql-databases"></a>Microsoft SQL データベースの接続モジュール
+# <a name="connection-modules-for-microsoft-sql-database"></a>Microsoft SQL Database の接続モジュール
 
 この記事では、クライアント プログラムが [Microsoft SQL Server](../relational-databases/database-features.md)、およびそれとよく似たクラウド版 [Azure SQL Database](/azure/sql-database/) との対話に使用できる接続モジュール (*ドライバー*) のダウンロード リンクを示します。 次のオペレーティング システムで実行されるさまざまなプログラミング言語用のドライバーが用意されています。
 
@@ -50,7 +50,7 @@ ms.locfileid: "87244053"
 
 ## <a name="drivers-for-orm-access"></a>ORM アクセス用のドライバー
 
-次の表は、クライアントアプリケーションが Microsoft SQL データベースに接続するために使用するオブジェクト リレーショナル マッピング (ORM) フレームワークの例を示しています。
+次の表は、クライアントアプリケーションが Microsoft SQL Database に接続するために使用するオブジェクト リレーショナル マッピング (ORM) フレームワークの例を示しています。
 
 | Language | ORM ドライバーのダウンロード |
 | :------- | :------------------ |

@@ -1,6 +1,6 @@
 ---
 title: dbSqlPackage プロバイダーでの MSDeploy の使用
-description: MSDeploy プロバイダーの古い DbSqlPackage について説明します。 パラメーター、例、および SQL Server と SQL Azure の各代替データベース発行ツールを確認します。
+description: MSDeploy プロバイダーの古い DbSqlPackage について説明します。 パラメーター、例、SQL Server と Azure SQL Database の代替公開ツールを確認します。
 ms.prod: sql
 ms.technology: ssdt
 ms.topic: conceptual
@@ -10,18 +10,18 @@ ms.author: maghan
 ms.reviewer: “”
 ms.custom: seo-lt-2019
 ms.date: 04/26/2017
-ms.openlocfilehash: 5a0bda3b935a7123de3c8766a40e7d7f8df5a0d0
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+ms.openlocfilehash: daeff5e44e714354cb8e0edc525779b197ec7d19
+ms.sourcegitcommit: e8f6c51d4702c0046aec1394109bc0503ca182f0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85899744"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87934087"
 ---
 # <a name="using-msdeploy-with-dbsqlpackage-provider"></a>dbSqlPackage プロバイダーでの MSDeploy の使用
 
-**DbSqlPackage** は SQL Server/SQL Azure データベースとのやり取りを可能にする **MSDeploy** プロバイダーです。 **DbSqlPackage** は次の操作をサポートしています。  
+**DbSqlPackage** は SQL Server と Azure SQL Azure データベースとのやりとりを可能にする **MSDeploy** プロバイダーです。 **DbSqlPackage** は次の操作をサポートしています。  
   
--   **Extract**: ライブ SQL Server または SQL Azure の各データベースからデータベース スナップショット (.dacpac) ファイルを作成します。  
+-   **Extract**: ライブ SQL Server または Azure SQL Database からデータベース スナップショット (.dacpac) ファイルを作成します。  
   
 -   **発行**:ソース .dacpac ファイルのスキーマに合わせてデータベース スキーマの増分更新を行います。  
   
@@ -57,7 +57,7 @@ MS-Deploy 動詞は、MS-Deploy コマンド ラインに **-verb** スイッチ
 |---------|-----------|---------------|  
 |**-source:dbSqlPackage=** {*input*}|**N/A**|*input* は、有効な SQL Server または SQL Azure 接続文字列か、ディスク上にある .dacpac ファイルのパスです。<br /><br />**注:** 入力ソースとして接続文字列を使用する場合、サポートされる接続文字列プロパティは *InitialCatalog、DataSource、UserID、Password、IntegratedSecurity、Encrypt、TrustServerCertificate* および *ConnectionTimeout* のみです。|  
   
-入力ソースがライブ SQL Server/Azure データベースへの接続文字列の場合、**dbSqlPackage** はライブ SQL Server/Azure データベースから .dacpac ファイルの形式でデータベース スナップショットを抽出します。  
+入力ソースが SQL Server と Azure SQL データベースへの接続文字列の場合、**dbSqlPackage** は SQL Server と Azure SQL データベースから .dacpac ファイルの形式でデータベース スナップショットを抽出します。  
   
 **Source** パラメーターは次のとおりです。  
   

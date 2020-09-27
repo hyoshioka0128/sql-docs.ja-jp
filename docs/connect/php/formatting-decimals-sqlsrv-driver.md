@@ -1,22 +1,22 @@
 ---
-title: 10 進数文字列と金額の書式設定 (SQLSRV ドライバー) | Microsoft Docs
+title: 10 進数文字列と金額の書式設定 (SQLSRV ドライバー)
+description: Microsoft SQLSRV Driver for PHP for SQL Server を使用する場合に FormatDecimals オプションと DecimalPlaces オプションを使用して 10 進数または金額を書式設定する方法について説明します。
 ms.custom: ''
-ms.date: 02/11/2019
+ms.date: 08/10/2020
 ms.prod: sql
 ms.prod_service: connectivity
 ms.technology: connectivity
 ms.topic: conceptual
 helpviewer_keywords:
 - formatting, decimal types, money values
-author: yitam
-ms.author: v-yitam
-manager: v-mabarw
-ms.openlocfilehash: 4a5ac641a98077c09bb38a5fc8fbd3fb1a4bf73d
-ms.sourcegitcommit: ff82f3260ff79ed860a7a58f54ff7f0594851e6b
+author: David-Engel
+ms.author: v-daenge
+ms.openlocfilehash: c6d77fb9fcfdc720c4053688f8f0dcf759af15c8
+ms.sourcegitcommit: d1051f05a7db81ec62d9785bb6af572408f3d4e0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "68265144"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88680727"
 ---
 # <a name="formatting-decimal-strings-and-money-values-sqlsrv-driver"></a>10 進数文字列と金額の書式設定 (SQLSRV ドライバー)
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]

@@ -1,6 +1,6 @@
 ---
 title: ブックマークを使用した行の取得 (OLE DB ドライバー)
-description: ブックマークを使用した行の取得 (OLE DB)
+description: この例では、コンシューマーが OLE DB Driver for SQL Server でブックマークを使用して行を取得する方法について説明します。
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
@@ -11,14 +11,14 @@ ms.topic: reference
 helpviewer_keywords:
 - bookmarks [OLE DB]
 - rows [OLE DB]
-author: pmasl
-ms.author: pelopes
-ms.openlocfilehash: 51d4b45e42aa9545825ef6c59be6d82b8945e799
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+author: David-Engel
+ms.author: v-daenge
+ms.openlocfilehash: 01adeff5f66d1d37309967147b00f63b1d5b75a4
+ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87244661"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88860254"
 ---
 # <a name="retrieve-rows-using-bookmarks-ole-db"></a>ブックマークを使用した行の取得 (OLE DB)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

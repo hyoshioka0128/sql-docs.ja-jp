@@ -26,33 +26,33 @@ ms.assetid: 0e09d210-6f23-4129-aedb-3d56b2980683
 author: pmasl
 ms.author: umajay
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: d8b3b9733500dc56f4994dd13fd42939b0885a02
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: ac0ff0ea8a07aaa5f08d8c1ccbf0fb0094448310
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88367788"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91116922"
 ---
 # <a name="dbcc-freeproccache-transact-sql"></a>DBCC FREEPROCCACHE (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
 プラン キャッシュからすべての要素を削除するか、プラン ハンドルまたは SQL ハンドルを指定して特定のプランを削除するか、指定したリソース プールに関連付けられたすべてのキャッシュ エントリを削除します。
 
->[!NOTE]
->DBCC FREEPROCCACHE では、ネイティブ コンパイル ストアド プロシージャの実行統計は消去されません。 プロシージャ キャッシュには、ネイティブ コンパイル ストアド プロシージャに関する情報は含まれていません。 プロシージャの実行から収集された実行統計は、実行統計の DMV に表示されます。「[sys.dm_exec_procedure_stats &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-procedure-stats-transact-sql.md)」と「[sys.dm_exec_query_plan &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-transact-sql.md)」を参照してください。  
+> [!NOTE]
+> DBCC FREEPROCCACHE では、ネイティブ コンパイル ストアド プロシージャの実行統計は消去されません。 プロシージャ キャッシュには、ネイティブ コンパイル ストアド プロシージャに関する情報は含まれていません。 プロシージャの実行から収集された実行統計は、実行統計の DMV に表示されます。「[sys.dm_exec_procedure_stats &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-procedure-stats-transact-sql.md)」と「[sys.dm_exec_query_plan &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-transact-sql.md)」を参照してください。  
   
 ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)
   
 ## <a name="syntax"></a>構文  
-SQL Server の構文:
+[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の構文:
 
-```sql
+```syntaxsql
 DBCC FREEPROCCACHE [ ( { plan_handle | sql_handle | pool_name } ) ] [ WITH NO_INFOMSGS ]  
 ```  
 
-Azure SQL Data Warehouse と Parallel Data Warehouse の構文:
+[!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] および [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] の構文:
   
-```sql
+```syntaxsql
 DBCC FREEPROCCACHE [ ( COMPUTE | ALL ) ] 
      [ WITH NO_INFOMSGS ]   
 [;]  

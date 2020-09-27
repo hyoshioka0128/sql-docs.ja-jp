@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: pensivebrian
 ms.author: broneill
 manager: kenvh
-ms.openlocfilehash: 84a7a8261e2fc3d2031b1b38b8ee7709ad015e39
-ms.sourcegitcommit: 48d60fe6b6991303a88936fb32322c005dfca2d8
+ms.openlocfilehash: 67e30169af049cbf9c3ac7ee3d06d779b77f67c6
+ms.sourcegitcommit: c74bb5944994e34b102615b592fdaabe54713047
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85353099"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90989435"
 ---
 # <a name="release-notes-for-sqlpackageexe"></a>SqlPackage.exe のリリース ノート
 
@@ -34,6 +34,41 @@ Or, if there is no relationship, remove 'DacFx' from the metadata 'title:'.
 I discussed this with SStein (SteveStein).
 Thanks.  GeneMi (MightyPen in GitHub).  2019-03-27
 -->
+
+## <a name="186-sqlpackage"></a>18.6 sqlpackage
+
+|プラットフォーム|ダウンロード|リリース日|Version|Build
+|:---|:---|:---|:---|:---|
+|Windows|[MSI インストーラー](https://go.microsoft.com/fwlink/?linkid=2143544)|2020 年 9 月 18 日|18.6|15.0.4897.1|
+|macOS .NET Core |[zip ファイル](https://go.microsoft.com/fwlink/?linkid=2143659)|2020 年 9 月 18 日| 18.6|15.0.4897.1|
+|Linux .NET Core |[zip ファイル](https://go.microsoft.com/fwlink/?linkid=2143497)|2020 年 9 月 18 日| 18.6|15.0.4897.1|
+|Windows .NET Core |[zip ファイル](https://go.microsoft.com/fwlink/?linkid=2143496)|2020 年 9 月 18 日| 18.6|15.0.4897.1|
+
+### <a name="features"></a>特徴
+| 機能 | 詳細 |
+| :------ | :------ |
+| プラットフォーム | .NET Core バージョン用の sqlpackage を .NET Core 3.1 に更新しました |
+| Always Encrypted | SQL Server 2019 向けセキュア エンクレーブ インポートおよびエクスポートのサポートが追加されました |
+| デプロイ | Azure SQL Database からエクスポートするとき、変更データ キャプチャ対応テーブルを無視するサポートが追加されました |
+| デプロイ | Azure SQL Database のインデックス オプション OPTIMIZE_FOR_SEQUENTIAL_KEY 向けサポートが追加されました |
+| デプロイ | Azure SQL Data Warehouse の ID 列のサポートが追加されました | 
+| ヘルプ | ヘルプ (/?) で sqlpackage バージョンを出力し、/version パラメーターをサポートします | 
+
+### <a name="fixes"></a>修正
+| 機能 | 詳細 |
+| :------ | :------ | 
+| デプロイ | Azure SQL Database Managed Instance を非 sysadmin ユーザーとしてターゲットにすると、正しくないデプロイ スクリプトが生成される問題を解消しました  | 
+| デプロイ | スクリプト アクションを実行するとき、デプロイの共同作成者を読み込む問題を解消しました | 
+| ヘルプ | 操作に 1 日以上かかるとき、sqlpackage に正しい経過時間を出力します | 
+| デプロイ | .NET Core に対してデプロイするときの dacpac 登録の問題を解消しました | 
+| デプロイ | /accessToken (/at) パラメーターの .NET Core 処理の sqlpackage を修正しました | 
+| デプロイ | 最上位ではないステートメントとしてストアド プロシージャで ALTER TABLE ステートメントを許可します | 
+| デプロイ | 具体化されたビューの Azure SQL Data Warehouse 検証で大文字と小文字を区別しないように修正しました | 
+
+### <a name="known-issues"></a>既知の問題
+| 機能 | 詳細 |
+| :------ | :------ |
+| デプロイ | Azure SQL Data Warehouse Workload Management 機能 (Workload Groups と Workload Classifiers) はまだサポートされていません | 
 
 ## <a name="1851-sqlpackage"></a>18.5.1 sqlpackage
 
@@ -133,7 +168,7 @@ Thanks.  GeneMi (MightyPen in GitHub).  2019-03-27
 | プラットフォーム | macOS、Linux、および Windows 用の sqlpackage .NET Core GA。 | 
 | セキュリティ | SHA1 コード署名を削除しました。 |
 | デプロイ | 新たに次の Azure データベース エディションのサポートを追加しました: GeneralPurpose、BusinessCritical、および Hyperscale |
-| デプロイ | AAD ユーザーとグループに対する Managed Instance のサポートを追加しました。 |
+| デプロイ | Azure Active Directory ユーザーとグループに対する Managed Instance のサポートを追加しました。 |
 | デプロイ | .NET Core で sqlpackage の /AccessToken パラメーターをサポートします。 |
 | &nbsp; | &nbsp; |
 
@@ -166,7 +201,7 @@ Thanks.  GeneMi (MightyPen in GitHub).  2019-03-27
 
 ### <a name="features"></a>特徴
 
-| 機能 | 詳細 |
+| 特徴量 | 詳細 |
 | :------ | :------ |
 | デプロイ | Azure SQL Data Warehouse (プレビュー) に配置できるようにサポートを追加しました。 | 
 | デプロイ | /p:DatabaseLockTimeout=(INT32 '60') パラメーターを sqlpackage に追加しました。 | 
@@ -226,7 +261,7 @@ Thanks.  GeneMi (MightyPen in GitHub).  2019-03-27
 
 ### <a name="features"></a>特徴
 
-| 機能 | 詳細 |
+| 特徴量 | 詳細 |
 | :------ | :------ |
 | デプロイ | UTF8 照合順序のサポートが追加されました。 |
 | デプロイ | インデックス付きビューでの非クラスター化列ストア インデックスが有効になりました。 |
@@ -263,7 +298,7 @@ Thanks.  GeneMi (MightyPen in GitHub).  2019-03-27
 
 ### <a name="features"></a>特徴
 
-| 機能 | 詳細 |
+| 特徴量 | 詳細 |
 | :------ | :------ |
 | デプロイ | データベース互換性レベル 150 のサポートが追加されました。 | 
 | デプロイ | マネージ インスタンスのサポートが追加されました。 | 
@@ -290,7 +325,7 @@ Thanks.  GeneMi (MightyPen in GitHub).  2019-03-27
 
 ### <a name="features"></a>特徴
 
-| 機能 | 詳細 |
+| 特徴量 | 詳細 |
 | :------ | :------ |
 | 診断 | SqlClient の例外メッセージを含めて、接続エラーのエラー メッセージが改良されました。 |
 | デプロイ | 単一パーティション インデックスのインポート/エクスポートで、インデックスの圧縮がサポートされます。 |
@@ -311,7 +346,7 @@ Thanks.  GeneMi (MightyPen in GitHub).  2019-03-27
 
 ### <a name="features"></a>特徴
 
-| 機能 | 詳細 |
+| 特徴量 | 詳細 |
 | :------ | :------ |
 | インポート/エクスポート | 入れ子になったステートメントの数が多い Transact-SQL を解析するための ThreadMaxStackSize コマンドライン パラメーターが追加されました。 |
 | デプロイ | データベース カタログ照合順序のサポート。 | 
@@ -333,7 +368,7 @@ Thanks.  GeneMi (MightyPen in GitHub).  2019-03-27
 
 ### <a name="features"></a>特徴
 
-| 機能 | 詳細 |
+| 特徴量 | 詳細 |
 | :------ | :------ |
 | デプロイ |  SQL 2017 以降と Azure SQL Database での_テンポラル保持ポリシー_のサポートが追加されました。 | 
 | 診断 | 診断情報を保存するファイル パスを指定する /DiagnosticsFile:"C:\Temp\sqlpackage.log" コマンドライン パラメーターが追加されました。 | 

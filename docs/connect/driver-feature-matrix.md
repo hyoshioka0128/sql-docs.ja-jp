@@ -2,19 +2,19 @@
 title: ドライバー機能のサポート マトリックス
 description: SQL Server のドライバーでサポートされている一般的な機能と、それらに関する情報の入手先について説明します。
 ms.custom: ''
-ms.date: 06/17/2020
+ms.date: 08/05/2020
 ms.prod: sql
 ms.technology: connectivity
 ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
 ms.reviewer: v-daenge
-ms.openlocfilehash: a879b3784b19de4e7d30e1af213953b8e592abf9
-ms.sourcegitcommit: f71e523da72019de81a8bd5a0394a62f7f76ea20
+ms.openlocfilehash: 4071353214f7ffde54ecd1097defaa6c60aa19d6
+ms.sourcegitcommit: 777704aefa7e574f4b7d62ad2a4c1b10ca1731ff
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84947892"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87823357"
 ---
 # <a name="driver-feature-support-matrix-for-microsoft-sql-server"></a>Microsoft SQL Server のドライバー機能のサポート マトリックス
 
@@ -60,13 +60,13 @@ Microsoft では、すべてのドライバーですべての機能がサポー�
 | [常に暗号化](../relational-databases/security/encryption/always-encrypted-database-engine.md) | [あり](odbc/using-always-encrypted-with-the-odbc-driver.md) | [あり](odbc/using-always-encrypted-with-the-odbc-driver.md) | [あり](jdbc/using-always-encrypted-with-the-jdbc-driver.md) |
 | [セキュリティで保護されたエンクレーブが設定された Always Encrypted](../relational-databases/security/encryption/always-encrypted-enclaves.md) | [あり](odbc/using-always-encrypted-with-the-odbc-driver.md#enabling-always-encrypted-with-secure-enclaves) | [あり](odbc/using-always-encrypted-with-the-odbc-driver.md#enabling-always-encrypted-with-secure-enclaves) | [あり](jdbc/using-always-encrypted-with-the-jdbc-driver.md) | |
 | [Azure Active Directory アクセス トークン認証](/azure/active-directory/develop/access-tokens) | [あり](odbc/using-azure-active-directory.md#authenticating-with-an-access-token) | [あり](odbc/using-azure-active-directory.md#authenticating-with-an-access-token) | [あり](jdbc/connecting-using-azure-active-directory-authentication.md#connecting-using-access-token) | [あり](oledb/features/using-azure-active-directory.md) |
-| [Azure Active Directory パスワード認証](/azure/sql-database/sql-database-aad-authentication) |  [はい](odbc/using-azure-active-directory.md) | [あり](odbc/using-azure-active-directory.md)<sup>[1](#note1)</sup> | [あり](jdbc/connecting-using-azure-active-directory-authentication.md) | [あり](oledb/features/using-azure-active-directory.md) |
-| [Azure Active Directory 統合認証](/azure/sql-database/sql-database-aad-authentication) | [あり](odbc/using-azure-active-directory.md) | | [あり](jdbc/connecting-using-azure-active-directory-authentication.md) | [あり](oledb/features/using-azure-active-directory.md) |
+| [Azure Active Directory パスワード認証](/azure/sql-database/sql-database-aad-authentication) |  [はい](odbc/using-azure-active-directory.md) | [はい](odbc/using-azure-active-directory.md) | [あり](jdbc/connecting-using-azure-active-directory-authentication.md) | [あり](oledb/features/using-azure-active-directory.md) |
+| [Azure Active Directory 統合認証](/azure/sql-database/sql-database-aad-authentication) | [あり](odbc/using-azure-active-directory.md) | [あり](odbc/using-azure-active-directory.md) | [あり](jdbc/connecting-using-azure-active-directory-authentication.md) | [あり](oledb/features/using-azure-active-directory.md) |
 | [Azure Active Directory (MFA) 対話型認証](/azure/sql-database/sql-database-aad-authentication) | [あり](odbc/using-azure-active-directory.md) | | | [あり](oledb/features/using-azure-active-directory.md) |
 | [Azure Active Directory マネージド ID 認証](/azure/active-directory/managed-identities-azure-resources/overview) | [あり](odbc/using-azure-active-directory.md) | [あり](odbc/using-azure-active-directory.md) | [あり](jdbc/connecting-using-azure-active-directory-authentication.md) | [あり](oledb/features/using-azure-active-directory.md) |
 | [Azure Active Directory サービス プリンシパル認証](/azure/active-directory/develop/app-objects-and-service-principals) | | | | |
 | [Windows 統合認証](/windows-server/security/windows-authentication/windows-authentication-overview) | はい | [はい](odbc/linux-mac/using-integrated-authentication.md) | [はい](jdbc/using-kerberos-integrated-authentication-to-connect-to-sql-server.md) | はい |
-| [一括コピー](../relational-databases/import-export/bulk-import-and-export-of-data-sql-server.md) | [あり](../relational-databases/native-client-odbc-extensions-bulk-copy-functions/sql-server-driver-extensions-bulk-copy-functions.md) | [あり](../relational-databases/native-client-odbc-extensions-bulk-copy-functions/sql-server-driver-extensions-bulk-copy-functions.md) | [あり](jdbc/using-bulk-copy-with-the-jdbc-driver.md) | [あり](oledb/features/performing-bulk-copy-operations.md) |
+| [一括コピー](../relational-databases/import-export/bulk-import-and-export-of-data-sql-server.md) | [あり](../relational-databases/native-client-odbc-extensions-bulk-copy-functions/sql-server-driver-extensions-bulk-copy-functions.md) | [あり](../relational-databases/native-client-odbc-extensions-bulk-copy-functions/sql-server-driver-extensions-bulk-copy-functions.md) | [あり](jdbc/using-bulk-copy-with-the-jdbc-driver.md) | [はい](oledb/features/performing-bulk-copy-operations.md) |
 | [データの検出と分類メタデータ](../relational-databases/security/sql-data-discovery-and-classification.md) | [あり](odbc/data-classification.md) | [あり](odbc/data-classification.md) | [あり](jdbc/data-discovery-classification-sample.md) | |
 | [複数のアクティブな結果セット (MARS)](../relational-databases/native-client/features/using-multiple-active-result-sets-mars.md) | [あり](../relational-databases/native-client/features/using-multiple-active-result-sets-mars.md) | [あり](../relational-databases/native-client/features/using-multiple-active-result-sets-mars.md) | | [あり](oledb/features/using-multiple-active-result-sets-mars.md) |
 | [空間データ型](../relational-databases/spatial/spatial-data-sql-server.md) | | | [はい](jdbc/use-spatial-datatypes.md) | |
@@ -75,31 +75,29 @@ Microsoft では、すべてのドライバーですべての機能がサポー�
 | [透過的なネットワーク IP の解決](odbc/using-transparent-network-ip-resolution.md) | [あり](odbc/using-transparent-network-ip-resolution.md) | [あり](odbc/using-transparent-network-ip-resolution.md) | [あり](jdbc/setting-the-connection-properties.md) | [あり](oledb/features/using-transparent-network-ip-resolution.md) |
 | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; |
 
-| <a id="table3"></a>機能 | [Windows 上の PHP for SQL Server 用ドライバー](php/microsoft-php-driver-for-sql-server.md)<sup>[2](#note2)</sup> | [Linux および macOS 上の PHP for SQL Server 用ドライバー](php/microsoft-php-driver-for-sql-server.md)<sup>[2](#note2)</sup> | [Tedious (Node.js)](node-js/node-js-driver-for-sql-server.md) | [pyODBC (Python)](python/pyodbc/python-sql-driver-pyodbc.md)<sup>[2](#note2)</sup> |
+| <a id="table3"></a>機能 | [Windows 上の PHP for SQL Server 用ドライバー](php/microsoft-php-driver-for-sql-server.md)<sup>[1](#note1)</sup> | [Linux および macOS 上の PHP for SQL Server 用ドライバー](php/microsoft-php-driver-for-sql-server.md)<sup>[1](#note1)</sup> | [Tedious (Node.js)](node-js/node-js-driver-for-sql-server.md) | [pyODBC (Python)](python/pyodbc/python-sql-driver-pyodbc.md)<sup>[1](#note1)</sup> |
 | :-- | :-- | :-- | :-- | :-- |
-| [常に暗号化](../relational-databases/security/encryption/always-encrypted-database-engine.md) | [あり](php/using-always-encrypted-php-drivers.md) | [はい](php/using-always-encrypted-php-drivers.md) | | はい |
-| [セキュリティで保護されたエンクレーブが設定された Always Encrypted](../relational-databases/security/encryption/always-encrypted-enclaves.md) | [あり](php/always-encrypted-secure-enclaves.md) | [はい](php/always-encrypted-secure-enclaves.md) | | はい |
-| [Azure Active Directory アクセス トークン認証](/azure/active-directory/develop/access-tokens) | [あり](php/azure-active-directory.md) | [あり](php/azure-active-directory.md) | [はい](https://tediousjs.github.io/tedious/api-connection.html#function_newConnection) | はい |
-| [Azure Active Directory パスワード認証](/azure/sql-database/sql-database-aad-authentication) | [はい](php/azure-active-directory.md) | [あり](php/azure-active-directory.md)<sup>[1](#note1)</sup> | [はい](https://tediousjs.github.io/tedious/api-connection.html#function_newConnection) | はい |
-| [Azure Active Directory 統合認証](/azure/sql-database/sql-database-aad-authentication) | | | | あり<sup>[3](#note3)</sup> |
-| [Azure Active Directory (MFA) 対話型認証](/azure/sql-database/sql-database-aad-authentication) | | | | あり<sup>[3](#note3)</sup> |
-| [Azure Active Directory マネージド ID 認証](/azure/active-directory/managed-identities-azure-resources/overview) | [あり](php/azure-active-directory.md) | [あり](php/azure-active-directory.md) | [はい](https://tediousjs.github.io/tedious/api-connection.html#function_newConnection) | はい |
+| [常に暗号化](../relational-databases/security/encryption/always-encrypted-database-engine.md) | [はい](php/using-always-encrypted-php-drivers.md) | [はい](php/using-always-encrypted-php-drivers.md) | | はい |
+| [セキュリティで保護されたエンクレーブが設定された Always Encrypted](../relational-databases/security/encryption/always-encrypted-enclaves.md) | [はい](php/always-encrypted-secure-enclaves.md) | [はい](php/always-encrypted-secure-enclaves.md) | | はい |
+| [Azure Active Directory アクセス トークン認証](/azure/active-directory/develop/access-tokens) | [あり](php/azure-active-directory.md) | [はい](php/azure-active-directory.md) | [はい](https://tediousjs.github.io/tedious/api-connection.html#function_newConnection) | はい |
+| [Azure Active Directory パスワード認証](/azure/sql-database/sql-database-aad-authentication) | [はい](php/azure-active-directory.md) | [はい](php/azure-active-directory.md) | [はい](https://tediousjs.github.io/tedious/api-connection.html#function_newConnection) | はい |
+| [Azure Active Directory 統合認証](/azure/sql-database/sql-database-aad-authentication) | [あり](php/azure-active-directory.md) | [はい](php/azure-active-directory.md) | | はい |
+| [Azure Active Directory (MFA) 対話型認証](/azure/sql-database/sql-database-aad-authentication) | | | | はい<sup>[2](#note2)</sup> |
+| [Azure Active Directory マネージド ID 認証](/azure/active-directory/managed-identities-azure-resources/overview) | [あり](php/azure-active-directory.md) | [はい](php/azure-active-directory.md) | [はい](https://tediousjs.github.io/tedious/api-connection.html#function_newConnection) | はい |
 | [Azure Active Directory サービス プリンシパル認証](/azure/active-directory/develop/app-objects-and-service-principals) | | | | |
 | [Windows 統合認証](/windows-server/security/windows-authentication/windows-authentication-overview) | [あり](php/how-to-connect-using-windows-authentication.md) | [はい](odbc/linux-mac/using-integrated-authentication.md) | | はい |
 | [一括コピー](../relational-databases/import-export/bulk-import-and-export-of-data-sql-server.md) | | | [はい](https://tediousjs.github.io/tedious/bulk-load.html) | |
 | [データの検出と分類メタデータ](../relational-databases/security/sql-data-discovery-and-classification.md) | ○ | はい | | |
 | [複数のアクティブな結果セット (MARS)](../relational-databases/native-client/features/using-multiple-active-result-sets-mars.md) | [あり](php/how-to-disable-multiple-active-resultsets-mars.md) | [はい](php/how-to-disable-multiple-active-resultsets-mars.md) | | はい |
 | [空間データ型](../relational-databases/spatial/spatial-data-sql-server.md) | | | | |
-| [テーブル値パラメーター (TVP)](../relational-databases/tables/use-table-valued-parameters-database-engine.md) | | | [はい](https://tediousjs.github.io/tedious/parameters.html) | はい |
+| [テーブル値パラメーター (TVP)](../relational-databases/tables/use-table-valued-parameters-database-engine.md) | | | [あり](https://tediousjs.github.io/tedious/parameters.html) | はい |
 | [MultiSubnetFailover](../relational-databases/native-client/features/sql-server-native-client-support-for-high-availability-disaster-recovery.md#connecting-with-multisubnetfailover) | [あり](php/php-driver-for-sql-server-support-for-high-availability-disaster-recovery.md) | [あり](php/php-driver-for-sql-server-support-for-high-availability-disaster-recovery.md) | | [あり](../relational-databases/native-client/features/sql-server-native-client-support-for-high-availability-disaster-recovery.md#connecting-with-multisubnetfailover) |
-| [透過的なネットワーク IP の解決](odbc/using-transparent-network-ip-resolution.md) | [あり](php/php-driver-for-sql-server-support-for-high-availability-disaster-recovery.md) | [あり](php/php-driver-for-sql-server-support-for-high-availability-disaster-recovery.md) | | [あり](odbc/using-transparent-network-ip-resolution.md) |
+| [透過的なネットワーク IP の解決](odbc/using-transparent-network-ip-resolution.md) | [あり](php/php-driver-for-sql-server-support-for-high-availability-disaster-recovery.md) | [はい](php/php-driver-for-sql-server-support-for-high-availability-disaster-recovery.md) | | [はい](odbc/using-transparent-network-ip-resolution.md) |
 | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; |
 
-<a id="note1"></a><sup>1</sup> パスワード ハッシュ同期またはパススルー認証を使用しない Active Directory フェデレーション認証は、Linux および macOS ではサポートされていません。
+<a id="note1"></a><sup>1</sup> これらのドライバーは Microsoft ODBC Driver for SQL Server に依存しているため、その機能をサポートするドライバーのバージョンも使用する必要があります。
 
-<a id="note2"></a><sup>2</sup> これらのドライバーは Microsoft ODBC Driver for SQL Server に依存しているため、その機能をサポートするドライバーのバージョンも使用する必要があります。
-
-<a id="note3"></a><sup>3</sup> Windows 上のみ。
+<a id="note2"></a><sup>2</sup> Windows 上のみ。
 
 [!INCLUDE[get-help-options](../includes/paragraph-content/get-help-options.md)]
 

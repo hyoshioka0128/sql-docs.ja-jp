@@ -1,4 +1,5 @@
 ---
+description: 管理タスクの自動化 (SQL Server エージェント)
 title: 管理タスクの自動化 (SQL Server エージェント)
 ms.custom: seo-lt-2019
 ms.date: 01/19/2017
@@ -16,18 +17,18 @@ author: markingmyname
 ms.author: maghan
 ms.reviewer: ''
 monikerRange: = azuresqldb-mi-current || >= sql-server-2016 || = sqlallproducts-allversions
-ms.openlocfilehash: 8aac5f30a8ec5c1fddae0137eceebeef449626b4
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: c3cb9af36adb7ea1212b23684ed335c26ce3fd53
+ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85726991"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88418368"
 ---
 # <a name="automated-administration-tasks-sql-server-agent"></a>管理タスクの自動化 (SQL Server エージェント)
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
 
 > [!IMPORTANT]  
-> [Azure SQL Database Managed Instance](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) では現在、すべてではありませんがほとんどの SQL Server エージェントの機能がサポートされています。 詳細については、「[Azure SQL Database Managed Instance と SQL Server の T-SQL の相違点](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-transact-sql-information#sql-server-agent)」を参照してください。
+> 現在、[Azure SQL Managed Instance](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) によって、すべてではありませんが、ほとんどの SQL Server エージェントの機能がサポートされています。 詳細については、[Azure SQL Managed Instance と SQL Server の T-SQL の相違点](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-transact-sql-information#sql-server-agent)に関するページを参照してください。
 
 Microsoft [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、管理タスクを自動化することができます。 管理を自動化するには、予想される管理タスクを明確にして、それぞれのタスクが発生する条件を指定します。 定型的なタスクやイベントを自動管理によって処理することで、ユーザーは他の管理業務に時間を充てることができます。  
   

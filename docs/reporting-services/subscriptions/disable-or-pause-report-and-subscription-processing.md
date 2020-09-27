@@ -20,19 +20,19 @@ helpviewer_keywords:
 ms.assetid: 3cf9a240-24cc-46d4-bec6-976f82d8f830
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: f82420b687c3714c75b69e778c1bcc881aad8e82
-ms.sourcegitcommit: c6a2efe551e37883c1749bdd9e3c06eb54ccedc9
+ms.openlocfilehash: ffdfc6e3a2141eddb484bc4dde3b25bda5a8b70a
+ms.sourcegitcommit: df1f0f2dfb9452f16471e740273cd1478ff3100c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80742088"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87396111"
 ---
 # <a name="disable-or-pause-report-and-subscription-processing"></a>レポートとサブスクリプションの処理を無効化または一時停止する  
 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] のレポートやサブスクリプションの処理を無効化または一時停止するには、複数の方法があります。 この記事では、サブスクリプションの無効化からデータ ソース接続の中断までの方法を扱います。 すべての方法をどちらの [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] サーバー モードでも使用できるわけではありません。 次の表では、方法とサポートされている [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] サーバー モードについて概要を示します。  
   
 ##  <a name="in-this-article"></a><a name="bkmk_top"></a> この記事の内容  
   
-||サポートされるサーバー モード|  
+|アプローチ|サポートされるサーバー モード|  
 |-|---------------------------|  
 |[サブスクリプションを有効または無効にする](#bkmk_disable_subscription)|ネイティブ モード|  
 |[共有スケジュールを一時停止する](#bkmk_pause_schedule)|ネイティブ モードと SharePoint モード|  

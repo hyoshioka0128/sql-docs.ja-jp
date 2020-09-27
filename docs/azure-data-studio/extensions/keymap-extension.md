@@ -3,18 +3,18 @@ title: キーマップ拡張機能の作成
 description: このチュートリアルでは、カスタム機能を Azure Data Studio に追加するキーマップ拡張機能を作成する方法について説明します。
 ms.prod: azure-data-studio
 ms.technology: azure-data-studio
-ms.reviewer: alayu, maghan
 ms.topic: how-to
 author: markingmyname
 ms.author: maghan
-ms.custom: seodec18
+ms.reviewer: alayu
+ms.custom: ''
 ms.date: 08/28/2020
-ms.openlocfilehash: 45aeb2a27b74f62af711843db6d3cb1727bb093d
-ms.sourcegitcommit: 5da46e16b2c9710414fe36af9670461fb07555dc
+ms.openlocfilehash: b1e1b5fb4d21e153133e76ff612f54c8153e0772
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89285084"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91111659"
 ---
 # <a name="create-an-azure-data-studio-keymap-extension"></a>Azure Data Studio キーマップ拡張機能を作成する
 

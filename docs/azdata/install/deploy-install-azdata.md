@@ -1,26 +1,25 @@
 ---
 title: azdata をインストールする
-titleSuffix: SQL Server big data clusters
-description: ビッグ データ クラスターをインストールおよび管理する azdata ツールをインストールする方法について説明します。
+titleSuffix: ''
+description: azdata ツールをインストールする方法について説明します。
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: mihaelab
 ms.date: 01/07/2020
 ms.topic: conceptual
 ms.prod: sql
-ms.technology: big-data-cluster
-ms.openlocfilehash: 408dec76480a36ff2280926147b948859fa7088d
-ms.sourcegitcommit: 883435b4c7366f06ac03579752093737b098feab
+ms.openlocfilehash: 7939aa1575aaeec8edff33a9a9f7101a1014abc2
+ms.sourcegitcommit: d56f1eca807c55cf606a6316f3872585f014fec1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89733897"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90914918"
 ---
 # <a name="install-azdata"></a>`azdata` のインストール
 
-[!INCLUDE[SQL Server 2019](../../includes/applies-to-version/sqlserver2019.md)]
+[!INCLUDE[SQL Server 2019](../../includes/applies-to-version/azdata.md)]
 
-`azdata` は、REST API 経由でビッグ データ クラスターをブートストラップし管理できる、Python で記述されたコマンドライン ユーティリティです。 
+`azdata` は、REST API 経由でデータ サービスをブートストラップし管理できる、Python で記述されたコマンドライン ユーティリティです。 
 
 ## <a name="find-latest-version"></a>最新バージョンを探す
 
@@ -42,4 +41,6 @@ ms.locfileid: "89733897"
 
 ## <a name="next-steps"></a>次のステップ
 
-ビッグ データ クラスターの詳細については、「[[!INCLUDE[big-data-clusters-2019](../../includes/ssbigdataclusters-ver15.md)]とは](../../big-data-cluster/big-data-cluster-overview.md)」を参照してください。
+ビッグ データ クラスターで azdata を使用する方法については、「[[!INCLUDE[big-data-clusters-2019](../../includes/ssbigdataclusters-ver15.md)] とは](../../big-data-cluster/big-data-cluster-overview.md)」を参照してください。
+
+[Azure Arc 対応データ サービス](/azure/azure-arc/data/)で azdata を使用する

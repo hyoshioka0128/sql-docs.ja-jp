@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
 ms.assetid: 31ddfb80-f75c-4f51-8540-de6213cb68b8
-ms.openlocfilehash: 44c4cfb05af24d91b392dab78b20d464b9c0384b
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+ms.openlocfilehash: 1d917c3f205f6b4b8d5872cf0b853316ed6e913d
+ms.sourcegitcommit: c74bb5944994e34b102615b592fdaabe54713047
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85897768"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990135"
 ---
 # <a name="quickstart-install-sql-server-and-create-a-database-on-suse-linux-enterprise-server"></a>クイック スタート:SUSE Linux Enterprise Server で SQL Server をインストールし、データベースを作成する
 
@@ -89,6 +89,12 @@ SLES 上で SQL Server を構成するには、ターミナルで次のコマン
    sudo zypper --gpg-auto-import-keys refresh 
    ```
    
+   Microsoft パッケージの署名キーが確実にシステムにインストールされるようにするために、次のコマンドを使用してインポートしてください。 
+   
+   ```bash
+   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+   ```
+   
 3. 次のコマンドを実行して SQL Server をインストールします。
 
    ```bash
@@ -139,6 +145,12 @@ SLES 上で SQL Server を構成するには、ターミナルで次のコマン
 
    ```bash
    sudo zypper --gpg-auto-import-keys refresh 
+   ```
+   
+   Microsoft パッケージの署名キーをシステムに確実にインストールするには、次のコマンドでキーをインポートします。 
+   
+   ```bash
+   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
    ```
    
 3. 次のコマンドを実行して SQL Server をインストールします。

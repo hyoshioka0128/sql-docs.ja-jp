@@ -4,26 +4,27 @@ titleSuffix: SQL Server big data clusters
 description: azdata context コマンドのリファレンス記事です。
 author: MikeRayMSFT
 ms.author: mikeray
-ms.reviewer: mihaelab
-ms.date: 06/22/2020
+ms.reviewer: seanw
+ms.date: 09/22/2020
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: d3506d3ab1b2fad9d07496d1041773d26aae6d68
-ms.sourcegitcommit: 883435b4c7366f06ac03579752093737b098feab
+ms.openlocfilehash: 1d48ef786389c5ef32b1f3fd49c88b0a9d3aac18
+ms.sourcegitcommit: d56f1eca807c55cf606a6316f3872585f014fec1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89733705"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90914734"
 ---
 # <a name="azdata-context"></a>azdata context
 
-[!INCLUDE[SQL Server 2019](../../includes/applies-to-version/sqlserver2019.md)]
+`azdata` への適用
 
-以下の記事では、`azdata` ツールの `sql` コマンドに関するリファレンスを提供します。 `azdata` の他のコマンドに関する詳細については、[azdata のリファレンス](reference-azdata.md)に関するページをご覧ください。
+以下の記事では、**azdata** ツールの **sql** コマンドに関するリファレンスを提供します。 他の **azdata** コマンドの詳細については、[azdata リファレンス](reference-azdata.md)に関するページを参照してください。
 
 ## <a name="commands"></a>コマンド
-| command | 説明 |
+
+|command|説明|
 | --- | --- |
 [azdata context list](#azdata-context-list) | ユーザー プロファイルで使用可能なコンテキストの一覧を表示します。
 [azdata context delete](#azdata-context-delete) | 指定した名前空間のコンテキストをユーザー プロファイルから削除します。
@@ -60,7 +61,7 @@ JMESPath クエリ文字列。 詳細と例については、[http://jmespath.or
 ## <a name="azdata-context-delete"></a>azdata context delete
 アクティブなコンテキストを削除した場合、ユーザーは新しいアクティブなコンテキストを設定する必要があります。 設定または削除できるコンテキストを表示するには、`azdata context list` を使用します
 ```bash
-azdata context delete --namespace -n 
+azdata context delete --namespace -ns 
                       
 ```
 ### <a name="examples"></a>例
@@ -69,7 +70,7 @@ azdata context delete --namespace -n
 azdata context delete -n contextNamespace
 ```
 ### <a name="required-parameters"></a>必須のパラメーター
-#### `--namespace -n`
+#### `--namespace -ns`
 削除するコンテキストの名前空間。
 ### <a name="global-arguments"></a>グローバル引数
 #### `--debug`
@@ -85,7 +86,7 @@ JMESPath クエリ文字列。 詳細と例については、[http://jmespath.or
 ## <a name="azdata-context-set"></a>azdata context set
 設定できるコンテキストを表示するには、`azdata context list` を使用します。 コンテキストが表示されない場合は、`azdata login` を使用してログインし、ユーザー プロファイルにコンテキストを作成する必要があります。 ログインしたコンテキストが、アクティブなコンテキストになります。 複数のエンティティにログインした場合は、このコマンドを使用してアクティブなコンテキストを切り替えることができます。 現在アクティブなコンテキストを表示するには、`azdata context list --active` を使用します
 ```bash
-azdata context set --namespace -n 
+azdata context set --namespace -ns 
                    
 ```
 ### <a name="examples"></a>例
@@ -94,7 +95,7 @@ contextNamespace をユーザー プロファイルでのアクティブなコ�
 azdata context set -n contextNamespace
 ```
 ### <a name="required-parameters"></a>必須のパラメーター
-#### `--namespace -n`
+#### `--namespace -ns`
 設定するコンテキストの名前空間。
 ### <a name="global-arguments"></a>グローバル引数
 #### `--debug`
@@ -110,4 +111,7 @@ JMESPath クエリ文字列。 詳細と例については、[http://jmespath.or
 
 ## <a name="next-steps"></a>次のステップ
 
-`azdata` の他のコマンドに関する詳細については、[azdata のリファレンス](reference-azdata.md)に関するページをご覧ください。 `azdata` ツールのインストール方法の詳細については、[SQL Server 2019 ビッグ データ クラスターを管理する azdata のインストール](../install/deploy-install-azdata.md)に関するページを参照してください。
+他の **azdata** コマンドの詳細については、[azdata リファレンス](reference-azdata.md)に関するページを参照してください。 
+
+**azdata** ツールをインストールする方法の詳細については、「[azdata のインストール](..\install\deploy-install-azdata.md)」を参照してください。
+

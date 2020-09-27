@@ -22,12 +22,12 @@ ms.assetid: f47e2f3f-9302-4711-9d66-16b1a2a7ffe3
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 362909e9cd98536d97751787820a5df0c08ed101
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 468ffd5a95bcb0bf6fa2c5d4cb9a1cb343102acd
+ms.sourcegitcommit: 8f062015c2a033f5a0d805ee4adabbe15e7c8f94
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88459159"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91227177"
 ---
 # <a name="option-clause-transact-sql"></a>OPTION 句 (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -47,7 +47,7 @@ ms.locfileid: "88459159"
 ```  
   
 ```syntaxsql
--- Syntax for Azure SQL Data Warehouse and Parallel Data Warehouse  
+-- Syntax for Azure Synapse Analytics and Parallel Data Warehouse  
   
 OPTION ( <query_option> [ ,...n ] )  
   
@@ -74,7 +74,7 @@ OPTION ( <query_option> [ ,...n ] )
 ### <a name="a-using-an-option-clause-with-a-group-by-clause"></a>A. OPTION 句を GROUP BY 句と共に使用する  
  次の例では、`OPTION` 句と共に `GROUP BY` 句を使用する方法を示します。  
   
-```  
+```sql
 USE AdventureWorks2012;  
 GO  
 SELECT ProductID, OrderQty, SUM(LineTotal) AS Total  
@@ -91,7 +91,7 @@ GO
 ### <a name="b-select-statement-with-a-label-in-the-option-clause"></a>B. SELECT ステートメントと OPTION 句のラベル  
  次は、単純な [!INCLUDE[ssDW](../../includes/ssdw-md.md)] SELECT ステートメントと OPTION 句のラベルの例です。  
   
-```  
+```sql
 -- Uses AdventureWorks  
   
 SELECT * FROM FactResellerSales  
@@ -101,7 +101,7 @@ SELECT * FROM FactResellerSales
 ### <a name="c-select-statement-with-a-query-hint-in-the-option-clause"></a>C. SELECT ステートメントと OPTION 句のクエリ ヒント  
  次は、OPTION 句で HASH JOIN クエリ ヒントを使用する SELECT ステートメントの例です。  
   
-```  
+```sql
 -- Uses AdventureWorks  
   
 SELECT COUNT (*) FROM dbo.DimCustomer a  
@@ -113,7 +113,7 @@ OPTION (HASH JOIN);
 ### <a name="d-select-statement-with-a-label-and-multiple-query-hints-in-the-option-clause"></a>D. SELECT ステートメントと OPTION 句のラベルと複数のクエリ ヒント  
  次は、ラベルと複数のクエリ ヒントを含む [!INCLUDE[ssDW](../../includes/ssdw-md.md)] SELECT ステートメントの例です。 クエリが計算ノードで実行されるとき、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で最適であると判断された方針に基づいて、ハッシュ結合またはマージ結合を適用します。  
   
-```  
+```sql
 -- Uses AdventureWorks  
   
 SELECT COUNT (*) FROM dbo.DimCustomer a  
@@ -125,7 +125,7 @@ OPTION ( Label = 'CustJoin', HASH JOIN, MERGE JOIN);
 ### <a name="e-using-a-query-hint-when-querying-a-view"></a>E. ビューにクエリを実行するとき、クエリ ヒントを使用する  
  次の例では、CustomerView という名前のビューを作成し、ビューとテーブルを参照するクエリで HASH JOIN クエリ ヒントを使用します。  
   
-```  
+```sql
 -- Uses AdventureWorks  
   
 CREATE VIEW CustomerView  
@@ -137,14 +137,13 @@ INNER JOIN dbo.FactInternetSales b
 ON (a.CustomerKey = b.CustomerKey)  
 OPTION (HASH JOIN);  
   
-DROP VIEW CustomerView;  
-  
+DROP VIEW CustomerView;
 ```  
   
 ### <a name="f-query-with-a-subselect-and-a-query-hint"></a>F. サブセレクトとクエリ ヒントを含むクエリ  
  次は、サブセレクトとクエリ ヒントの両方が含まれるクエリの例です。 クエリ ヒントはグローバルに適用されます。 クエリ ヒントはサブセレクト ステートメントに追加できません。  
   
-```  
+```sql
 -- Uses AdventureWorks  
   
 CREATE VIEW CustomerView AS  
@@ -160,7 +159,7 @@ OPTION (HASH JOIN);
 ### <a name="g-force-the-join-order-to-match-the-order-in-the-query"></a>G. クエリの順序どおりの結合順序を強制する  
  次の例では、FORCE ORDER ヒントを使用し、クエリで指定されている結合順序を使用するようにクエリ プランに強制します。 これですべてではありませんが、一部のクエリでパフォーマンスが改善されます。  
   
-```  
+```sql
 -- Uses AdventureWorks  
   
 -- Obtain partition numbers, boundary values, boundary value types, and rows per boundary  
@@ -181,7 +180,7 @@ OPTION ( FORCE ORDER )
 ### <a name="h-using-externalpushdown"></a>H. EXTERNALPUSHDOWN の使用  
  次の例では、外部 Hadoop テーブルで MapReduce ジョブに WHERE 句を強制的にプッシュダウンします。  
   
-```  
+```sql
 SELECT ID FROM External_Table_AS A   
 WHERE ID < 1000000  
 OPTION (FORCE EXTERNALPUSHDOWN);  
@@ -189,7 +188,7 @@ OPTION (FORCE EXTERNALPUSHDOWN);
   
  次の例では、外部 Hadoop テーブルで MapReduce ジョブに WHERE 句を強制的にプッシュダウンする行為を防止します。 すべての行は、WHERE 句が適用される PDW に戻ります。  
   
-```  
+```sql
 SELECT ID FROM External_Table_AS A   
 WHERE ID < 10  
 OPTION (DISABLE EXTERNALPUSHDOWN);  

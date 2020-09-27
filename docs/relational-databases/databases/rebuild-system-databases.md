@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: af457ecd-523e-4809-9652-bdf2e81bd876
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 439c723463516ad046c6a37a6d327b289efc9eb6
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 6d263df7b2b76684f121ce9e699fc619370e3ee1
+ms.sourcegitcommit: c0f92739c81221fbcdb7c40b53a71038105df44f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88471173"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91210627"
 ---
 # <a name="rebuild-system-databases"></a>システム データベースの再構築
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -29,21 +29,23 @@ ms.locfileid: "88471173"
   
  **このトピックの内容**  
   
--   **作業を開始する準備:**  
+   - **作業を開始する準備:**  
   
      [制限事項と制約事項](#Restrictions)  
   
      [前提条件](#Prerequisites)  
   
--   **手順:**  
+   - **手順:**  
   
      [システム データベースの再構築](#RebuildProcedure)  
   
      [resource データベースの再構築](#Resource)  
   
-     [新しい msdb データベースの作成](#CreateMSDB)  
+     [新しい msdb データベースの作成](#CreateMSDB) 
+
+     [tempdb データベースをリビルドする](#RebuildTempdb)  
   
--   **補足情報:**  
+   - **補足情報:**  
   
      [再構築エラーのトラブルシューティング](#Troubleshoot)  
   
@@ -55,15 +57,15 @@ ms.locfileid: "88471173"
 ###  <a name="prerequisites"></a><a name="Prerequisites"></a> 前提条件  
  システム データベースを再構築する前に次の作業を行い、システム データベースを現在の設定に復元できるようにしておいてください。  
   
-1.  サーバー全体のすべての構成値を記録します。  
+1. サーバー全体のすべての構成値を記録します。  
   
-    ```  
+    ```SQL  
     SELECT * FROM sys.configurations;  
     ```  
   
 2.  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスと現在の照合順序に適用されているすべての修正プログラムを記録します。 システム データベースの再構築後にこれらの修正プログラムを再適用する必要があります。  
   
-    ```  
+    ```SQL  
     SELECT  
     SERVERPROPERTY('ProductVersion ') AS ProductVersion,  
     SERVERPROPERTY('ProductLevel') AS ProductLevel,  
@@ -74,7 +76,7 @@ ms.locfileid: "88471173"
   
 3.  システム データベースのすべてのデータとログ ファイルの現在の場所を記録します。 システム データベースを再構築すると、すべてのシステム データベースがそれぞれ元の場所にインストールされます。 システム データベースのデータまたはログ ファイルを別の場所に移動していた場合は、そのファイルを再度移動する必要があります。  
   
-    ```  
+    ```SQL  
     SELECT name, physical_name AS current_file_location  
     FROM sys.master_files  
     WHERE database_id IN (DB_ID('master'), DB_ID('model'), DB_ID('msdb'), DB_ID('tempdb'));  
@@ -158,6 +160,7 @@ ms.locfileid: "88471173"
 6.  **[修復の準備完了]** ページで **[修復]** をクリックします。 [完了] ページでは、操作が完了したことが示されます。  
   
 ##  <a name="create-a-new-msdb-database"></a><a name="CreateMSDB"></a> 新しい msdb データベースの作成  
+
  **msdb** データベースが破損した場合に、 **msdb** データベースのバックアップがなければ、 **instmsdb** スクリプトを使用して新しい **msdb** データベースを作成することができます。  
   
 > [!WARNING]  
@@ -186,6 +189,33 @@ ms.locfileid: "88471173"
 9. ジョブや警告など、 **msdb** データベースに格納されていたユーザー コンテンツを再作成します。  
   
 10. **msdb** データベースをバックアップします。  
+
+##  <a name="rebuild-the-tempdb-database"></a><a name="RebuildTempdb"></a> Tempdb データベースをリビルドする  
+
+**tempdb** データベースが破損していて、データベース エンジンを起動できない場合に、すべてのシステム データベースをリビルドすることなく、**tempdb** をリビルドすることができます。
+  
+1. 現在の Tempdb.mdf および Templog.ldf ファイルが欠落しいていない場合は、名前を変更します。 
+1. 次のコマンドを使用して、コマンド プロンプトから [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] を開始します。 
+
+   ```sql
+   sqlservr -c -f -T3608 -T4022 -s <instance> -mSQLCMD
+   ```
+
+   既定のインスタンス名には、MSSQLSERVER を使用します。名前付きインスタンスには、MSSQL$<instance_name> を使用します。 トレース フラグ 4022 によって、スタートアップ ストアド プロシージャの実行が無効になります。 -mSQLCMD を使用すると、[sqlcmd.exe](../../ssms/scripting/sqlcmd-use-the-utility.md) のみがサーバーに接続できるようになります (「[他のスタートアップ オプション](../../database-engine/configure-windows/database-engine-service-startup-options.md#other-startup-options)」を参照)
+
+   > [!Note] 
+   > [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] が開始された後も、コマンド プロンプト ウィンドウが開いたままになっていることを確認してください。 コマンド プロンプト ウィンドウを閉じると、プロセスが終了します。
+
+1. **sqlcmd** を使用してサーバーに接続し、次のストアド プロシージャを使用して tempdb データベースの状態をリセットします。
+
+   ```sql
+   exec master..sp_resetstatus Tempdb
+   ```
+
+1. コマンド プロンプト ウィンドウで Ctrl + C を押してサーバーをシャットダウンします
+
+1. [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] サービスを再開します。 これにより、tempdb データベース ファイルの新しいセットが作成され、tempdb データベースが復旧します。
+
   
 ##  <a name="troubleshoot-rebuild-errors"></a><a name="Troubleshoot"></a> 再構築エラーのトラブルシューティング  
  コマンド プロンプト ウィンドウには、構文エラーおよびその他の実行時エラーが表示されます。 セットアップ ステートメントに次の構文エラーがないか調査してください。  

@@ -23,12 +23,12 @@ helpviewer_keywords:
 ms.assetid: 059a39a6-9d32-4d3f-965b-0a1ce75229c7
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: b1a12f2c53409148854b806f1141bf46acad8a4e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 1b1ae5e016d407a0aeee6c34fcc75dd71e8fa229
+ms.sourcegitcommit: ac9feb0b10847b369b77f3c03f8200c86ee4f4e0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88467260"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90688092"
 ---
 # <a name="create-cryptographic-provider-transact-sql"></a>CREATE CRYPTOGRAPHIC PROVIDER (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -39,8 +39,7 @@ ms.locfileid: "88467260"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql  
 CREATE CRYPTOGRAPHIC PROVIDER provider_name   
     FROM FILE = path_of_DLL  
 ```  
@@ -73,7 +72,7 @@ CREATE CRYPTOGRAPHIC PROVIDER provider_name
 ## <a name="examples"></a>例  
  次の例では、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で .dll ファイルから `SecurityProvider` という暗号化サービス プロバイダーを作成します。 この .dll ファイルは `c:\SecurityProvider\SecurityProvider_v1.dll` という名前でサーバーにインストールされています。 最初にプロバイダーの証明書をサーバーにインストールする必要があります。  
   
-```  
+```sql  
 -- Install the provider  
 CREATE CRYPTOGRAPHIC PROVIDER SecurityProvider  
     FROM FILE = 'C:\SecurityProvider\SecurityProvider_v1.dll';  

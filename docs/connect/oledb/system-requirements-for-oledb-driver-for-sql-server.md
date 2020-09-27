@@ -1,6 +1,6 @@
 ---
 title: OLE DB Driver for SQL Server のシステム要件
-description: OLE DB Driver for SQL Server のシステム要件について説明します。
+description: OLE DB Driver for SQL Server で SQL Server のデータ アクセス機能 (MARS など) を使用するために必要なソフトウェアの前提条件について説明します。
 ms.custom: ''
 ms.date: 03/18/2020
 ms.prod: sql
@@ -13,14 +13,14 @@ helpviewer_keywords:
 - data access [OLE DB Driver for SQL Server], system requirements
 - OLE DB Driver for SQL Server, system requirements
 - MSOLEDBSQL, system requirements
-author: pmasl
-ms.author: pelopes
-ms.openlocfilehash: 9c9bbda0480d4d1e85da3962392fe14a241e4840
-ms.sourcegitcommit: cb620c77fe6bdefb975968837706750c31048d46
+author: David-Engel
+ms.author: v-daenge
+ms.openlocfilehash: c86f62f98e81ce3c4fdd86e1e79e8f73e1422851
+ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86393020"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88861816"
 ---
 # <a name="system-requirements-for-ole-db-driver-for-sql-server"></a>OLE DB Driver for SQL Server のシステム要件
 

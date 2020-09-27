@@ -1,6 +1,6 @@
 ---
 title: R チュートリアル:モデルの配置
-description: データベース内分析のために SQL Server に R モデルを配置する方法を示すチュートリアル。
+description: ストアド プロシージャからトレーニング済みのモデルを呼び出すことによって、運用環境に R モデルを配置する方法について説明します。
 ms.prod: sql
 ms.technology: machine-learning-services
 ms.date: 11/26/2018
@@ -9,15 +9,15 @@ author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: bdf7446497d242d3cc2773daad0adfa8d3a700e3
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 8eccd11403f93b1307995a44d38100d680fa8149
+ms.sourcegitcommit: 9b41725d6db9957dd7928a3620fe4db41eb51c6e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85781785"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88179760"
 ---
 # <a name="deploy-the-r-model-and-use-it-in-sql-server-walkthrough"></a>R モデルを配置して SQL Server で使用する (チュートリアル)
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2016](../../includes/applies-to-version/sqlserver2016.md)]
 
 このレッスンでは、ストアド プロシージャからトレーニング済みのモデルを呼び出すことによって、運用環境に R モデルを配置する方法について説明します。 R または [!INCLUDE[tsql](../../includes/tsql-md.md)] をサポートするアプリケーション プログラミング言語 (C#、Java、Python など) からストアド プロシージャを呼び出し、モデルを使用して新しい観察結果を予測することができます。
 
@@ -228,6 +228,6 @@ ms.locfileid: "85781785"
 次の追加のサンプルとリソースを調べることもできます。
 
 + [データ サイエンスのシナリオとソリューション テンプレート](data-science-scenarios-and-solution-templates.md)
-+ [高度な分析 (データベース内)](sqldev-in-database-r-for-sql-developers.md)
++ [高度な分析 (データベース内)](r-taxi-classification-introduction.md)
 + [Machine Learning Server に関するハウツー ガイド](https://docs.microsoft.com/machine-learning-server/r/how-to-introduction)
 + [Machine Learning Server のその他のリソース](https://docs.microsoft.com//machine-learning-server/resources-more)

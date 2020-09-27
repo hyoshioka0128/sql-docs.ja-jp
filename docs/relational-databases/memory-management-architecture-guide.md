@@ -11,16 +11,28 @@ ms.topic: conceptual
 helpviewer_keywords:
 - guide, memory management architecture
 - memory management architecture guide
+- PMO
+- Partitioned Memory Objects
+- cmemthread
+- AWE
+- SPA, Single Page Allocator
+- MPA, Multi Page Allocator
+- memory allocation, SQL Server
+- memory pressure, SQL Server
+- stack size, SQL Server
+- buffer manager, SQL Server
+- buffer pool, SQL Server
+- resource monitor, SQL Server
 ms.assetid: 7b0d0988-a3d8-4c25-a276-c1bdba80d6d5
 author: rothja
 ms.author: jroth
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 4681cdb7dbca293501902caec456a3e08eac5ba7
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+ms.openlocfilehash: 8677c1e3fff32a5ea2ae43f6437f0d219180123c
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87243706"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91116223"
 ---
 # <a name="memory-management-architecture-guide"></a>メモリ管理アーキテクチャ ガイド
 
@@ -62,7 +74,7 @@ AWE および Locked Pages in Memory 特権を使用して、 [!INCLUDE[ssNoVers
 |Lock Pages in Memory オペレーティング システム (OS) 特権 (物理メモリのロックを許可し、ロックされたメモリの OS ページングを回避する)<sup>6</sup> |[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Standard、Enterprise、および Developer エディション:AWE メカニズムを使用する [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] プロセスで必要です。 AWE メカニズムによって割り当てられたメモリは、ページ アウトできません。 <br> AWE を有効にせずにこの特権を許可しても、サーバーに対する影響はありません。 | 必要なときにのみ、具体的には、sqlservr プロセスがページ アウトされているという兆候があるときにのみ使用します。その場合、次のようなエラー 17890 がエラー ログに報告されます。`A significant part of sql server process memory has been paged out. This may result in a performance degradation. Duration: #### seconds. Working set (KB): ####, committed (KB): ####, memory utilization: ##%.`|
 
 <sup>1</sup>[!INCLUDE[ssSQL14](../includes/sssql14-md.md)]から続けて 32 ビット バージョンを利用することはできません。  
-<sup>2</sup> /3gb は、オペレーティング システムのブート パラメーターです。 詳細については、MSDN ライブラリを参照してください。  
+<sup>2</sup> /3gb は、オペレーティング システムのブート パラメーターです。  
 <sup>3</sup> WOW64 (Windows on Windows 64) は、32 ビットの [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] が 64 ビットのオペレーティング システムで実行される場合のモードです。  
 <sup>4</sup> [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Standard Edition は、最大 128 GB をサポートします。 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Enterprise Edition は、オペレーティング システムの最大容量をサポートします。  
 <sup>5</sup> sp_configure awe enabled オプションは、64 ビットの [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]に存在しますが、無視されます。    
@@ -93,9 +105,9 @@ AWE および Locked Pages in Memory 特権を使用して、 [!INCLUDE[ssNoVers
 |-------|-------|-------|
 |単一ページ割り当て|はい|はい。"あらゆるサイズの" ページ割り当てに統合。|
 |複数ページ割り当て|いいえ|はい。"あらゆるサイズの" ページ割り当てに統合。|
-|CLR 割り当て|×|はい|
-|スレッド スタック メモリ|いいえ|×|
-|Windows からの直接割り当て|いいえ|×|
+|CLR 割り当て|いいえ|はい|
+|スレッド スタック メモリ|いいえ|いいえ|
+|Windows からの直接割り当て|いいえ|いいえ|
 
 [!INCLUDE[ssSQL11](../includes/sssql11-md.md)] 以降、[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] は、max server memory 設定に指定されている値より多いメモリを割り当てる場合があります。 そのような動作は、**_Total Server Memory (KB)_** の値が (max server memory によって指定される) **_Target Server Memory (KB)_** の設定に既に到達しているときに発生することがあります。 メモリの断片化によって、複数ページ メモリ要求 (8 KB 超) を満たすだけの連続した空き容量がない場合、[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] はメモリ要求を拒否せず、オーバーコミットを実行できます。 
 
@@ -213,7 +225,7 @@ min server memory と max server memory の両方に同じ値を指定した場�
 -  使用できるメモリ内にビルド入力が収まらないときに、ハッシュの再帰が発生します。その結果、入力が複数のパーティションに分割され、個別に処理されます。 複数のパーティションに分割されても使用できるメモリ内に収まらない場合は、さらにサブパーティションに分割され、個別に処理されます。 この分割プロセスは、使用できるメモリ内に各パーティションが収まるようになるまで、または最大再帰レベルに到達するまで続きます。
 -  ハッシュ演算が最大再帰レベルに到達するとハッシュの保留が発生し、パーティション分割された残りのデータを処理するための代替プランに移行されます。 これらのイベントが原因となって、サーバー内のパフォーマンスが低下する可能性があります。
 
-**バッチ モード実行**の場合、初期のメモリ許可は既定では特定の内部しきい値まで動的に増加することができます。 この動的なメモリ許可メカニズムは、バッチ モードで実行されている**ハッシュ**操作または**並べ替え**操作のメモリ常駐実行を可能にするように設計されています。 これらの操作がまだメモリ内に収まらない場合は、ディスクへの書き込みが行われます。
+**バッチ モード実行**の場合、初期のメモリ許可は既定では特定の内部しきい値まで動的に増加することができます。 この動的なメモリ許可メカニズムは、バッチ モードで実行されている**ハッシュ**または**並べ替え**操作のメモリ常駐実行を可能にするように設計されています。 これらの操作がまだメモリ内に収まらない場合は、ディスクへの書き込みが行われます。
 
 実行モードの詳細については、「[クエリ処理アーキテクチャ ガイド](../relational-databases/query-processing-architecture-guide.md#execution-modes)」を参照してください。
 
@@ -314,11 +326,24 @@ min server memory と max server memory の両方に同じ値を指定した場�
 チェックサム保護は、[!INCLUDE[ssVersion2005](../includes/ssversion2005-md.md)] から導入されたもので、今まで以上に強力なデータ整合性チェックを提供します。 チェックサムは各ページに書き込まれるデータから算出され、ページ ヘッダーに書き込まれます。 ページにチェックサムが書き込まれている場合は、そのページをディスクから読み取るたびにデータのチェックサムが再計算されます。そして、新しく計算されたチェックサムと、現在書き込まれているチェックサムが異なる場合は、エラー 824 が生成されます。 チェックサム保護はページの各バイトの影響を受けるので、破損ページ保護よりも多くのエラーをキャッチできますが、使用されるリソースがやや多くなります。 チェックサムが有効になっている場合、電源障害、欠陥のあるハードウェアやソフトウェアが原因で発生するエラーは、バッファー マネージャーがディスクからページを読み取るたびに検出できます。 チェックサム設定の詳細については、「[ALTER DATABASE の SET オプション &#40;Transact-SQL&#41;](../t-sql/statements/alter-database-transact-sql-set-options.md#page_verify)」を参照してください。
 
 > [!IMPORTANT]
-> ユーザー データベースまたはシステム データベースを [!INCLUDE[ssVersion2005](../includes/ssversion2005-md.md)] 以降のバージョンにアップグレードしても、[PAGE_VERIFY](../t-sql/statements/alter-database-transact-sql-set-options.md#page_verify) 値 (NONE または TORN_PAGE_DETECTION) が保持されます。 CHECKSUM の使用をお勧めします。
+> ユーザー データベースまたはシステム データベースを [!INCLUDE[ssVersion2005](../includes/ssversion2005-md.md)] 以降のバージョンにアップグレードしても、[PAGE_VERIFY](../t-sql/statements/alter-database-transact-sql-set-options.md#page_verify) 値 (NONE または TORN_PAGE_DETECTION) が保持されます。 CHECKSUM の使用を強くお勧めします。
 > TORN_PAGE_DETECTION は、使用するリソースが比較的少なくて済みますが、CHECKSUM による保護の最小限のサブセットしか利用できません。
 
 ## <a name="understanding-non-uniform-memory-access"></a>Non-Uniform Memory Access について
 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] は Non-Uniform Memory Access (NUMA) に対応しているので、特殊な構成を行わなくても NUMA ハードウェアで適切に実行されます。 プロセッサのクロック速度や数が増加するにつれて処理能力が向上しますが、その一方で、向上した能力の活用に必要となるメモリの待機時間を減らすことが困難になります。 ハードウェア ベンダーはメモリの待機時間をなくすために、大容量の L3 キャッシュを搭載していますが、この解決策にも限界があります。 この問題に対する、拡張性に優れた解決方法が NUMA アーキテクチャです。 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] は、アプリケーションを変更しなくても NUMA ベースのコンピューターを活用できるように設計されています。 詳細については、「[SQL Server を構成する方法](../database-engine/configure-windows/soft-numa-sql-server.md)」をご覧ください。
+
+## <a name="dynamic-partition-of-memory-objects"></a>メモリ オブジェクトの動的パーティション
+[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] のメモリ オブジェクトと呼ばれるヒープ アロケーターを使用すると、[!INCLUDE[ssde_md](../includes/ssde_md.md)] で、ヒープからメモリを割り当てることができます。 これらは [sys.dm_os_memory_objects](../relational-databases/system-dynamic-management-views/sys-dm-os-memory-objects-transact-sql.md) DMV を使用して追跡できます。 CMemThread とは、複数のスレッドから同時にメモリを割り当てることを可能にするスレッドセーフなメモリ オブジェクトの種類です。 追跡を正確に行うために、CMemThread オブジェクトは、同期コンストラクト (ミューテックス) に依存し、一度に 1 つのスレッドのみで重要な情報が確実に更新されるようになっています。 
+
+> [!NOTE]
+> CMemThread オブジェクトの種類は、[!INCLUDE[ssde_md](../includes/ssde_md.md)] コード ベース全体でさまざまな割り当てに使用され、ノードごとまたは CPU ごとにグローバルに分割することができます。   
+
+ただし、ミューテックスを使用すると、多数のスレッドが同じメモリ オブジェクトから同時性の高い方法で割り当てられる場合に競合が発生する可能性があります。 したがって、[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] にはパーティション分割されたメモリ オブジェクト (PMO) という概念があり、各パーティションはそれぞれ 1 つの CMemThread オブジェクトによって表されます。 メモリ オブジェクトのパーティション分割は静的に定義され、作成後に変更することはできません。 メモリ割り当てパターンは、ハードウェアやメモリの使用状況などの側面に大きく左右されるので、完全なパーティション分割パターンを事前に取得することは不可能です。 ほとんどの場合は、1 つのパーティションを使用するだけで十分ですが、シナリオによっては、高度にパーティション分割されたメモリ オブジェクトのみが回避できる競合が発生する可能性があります。 各メモリ オブジェクトをパーティション分割することは望ましくありません。パーティションが増えると他の非効率性が生じ、メモリの断片化が増す可能性があるからです。
+
+> [!NOTE]
+> [!INCLUDE[ssSQL15](../includes/sssql15-md.md)] より前は、トレース フラグ 8048 を使用して、ノードベースの PMO を強制的に CPU ベースの PMO にすることができました。 [!INCLUDE[ssSQL14](../includes/sssql14-md.md)] SP2 および [!INCLUDE[ssSQL15](../includes/sssql15-md.md)] 以降は、この動作は動的であり、エンジンによって制御されます。
+
+[!INCLUDE[ssSQL14](../includes/sssql14-md.md)] SP2 および [!INCLUDE[ssSQL15](../includes/sssql15-md.md)] 以降は、[!INCLUDE[ssde_md](../includes/ssde_md.md)] が特定の CMemThread オブジェクトでの競合を動的に検出し、そのオブジェクトをノードごと、または CPU ごとに基づく実装に昇格させることができます。 昇格すると、[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] プロセスが再開されるまで、PMO は昇格されたままになります。 CMemThread の競合は、[sys.dm_os_wait_stats](../relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql.md) DMV 内に CMEMTHREAD の長い待機時間が存在すること、および [sys.dm_os_memory_objects](../relational-databases/system-dynamic-management-views/sys-dm-os-memory-objects-transact-sql.md) DMV 列 *contention_factor*、*partition_type*、*exclusive_allocations_count*、*waiting_tasks_count* を観察することで検出できます。
 
 ## <a name="see-also"></a>参照
 [サーバー メモリに関するサーバー構成オプション](../database-engine/configure-windows/server-memory-server-configuration-options.md)   

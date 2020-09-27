@@ -6,16 +6,16 @@ ms.date: 05/02/2018
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: high-availability
-ms.topic: conceptual
+ms.topic: how-to
 ms.assetid: ''
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: 78db83e29b7fe8671d1cf048275f379592bd0d95
-ms.sourcegitcommit: 58158eda0aa0d7f87f9d958ae349a14c0ba8a209
+ms.openlocfilehash: bc9b71fc08356731cdc3e536cea9c6ad17b651fe
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "75254056"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91116983"
 ---
 # <a name="mechanics-and-guidelines-of-lease-cluster-and-health-check-timeouts-for-always-on-availability-groups"></a>Always On 可用性グループのリース、クラスター、正常性チェック タイムアウトのしくみとガイドライン。 
 
@@ -95,13 +95,13 @@ WSFC 構成には、クラスター タイムアウト値を判断する必要�
 
 遅延値では、クラスター サービスからのハートビート間の待機時間を判断します。スレッド値では、ターゲット ノードまたはリソースから受信確認を受け取ることができない、ハートビートの数が設定されます。この値を超えるとオブジェクトがクラスターによって停止と宣言されます。 `SameSubnetDelay \* SameSubnetThreshold` ミリ秒より長い時間、同じサブネット内のノード間の正常なハートビートが存在しない場合、ノードは停止と判断されます。 クロス サブネット値を使用するクロス サブネット通信でも同様です。 
 
-現在のクラスター値をすべて一覧表示するには、ターゲット クラスターの任意のノードで、管理者特権の PowerShell ターミナルを開きます。 次のコマンドを実行します。
+現在のクラスター値をすべて一覧表示するには、ターゲット クラスターの任意のノードで、管理者特権の PowerShell 端末を開きます。 次のコマンドを実行します。
 
 ```PowerShell
  Get-Cluster | fl \
 ``` 
 
-これらの値のいずれかを更新するには、管理者特権の PowerShell ターミナルで以下のコマンドを実行します。
+これらの値のいずれかを更新するには、管理者特権の PowerShell 端末で以下のコマンドを実行します。
 
 ```PowerShell
 (Get-Cluster).<ValueName> = <NewValue>

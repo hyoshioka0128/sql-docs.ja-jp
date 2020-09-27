@@ -22,12 +22,12 @@ ms.assetid: ffacf45e-a488-48d0-9bb0-dcc7fd365299
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: e778bdf4adc24b95d5ffa1d8eb438222117c07c3
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 2b99cb9371269b70dc36eae6361f2d6a805da774
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88368558"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91115042"
 ---
 # <a name="data-type-conversion-database-engine"></a>データ型の変換 (データベース エンジン)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -64,7 +64,7 @@ CAST ( $157.27 AS VARCHAR(10) )
 例として、次のスクリプトでは型 `varchar` の変数が定義され、`int` 型の値が変数に代入された後、文字列型の変数の連結が選択されます。
 
 ```sql
-DECLARE @string varchar(10);
+DECLARE @string VARCHAR(10);
 SET @string = 1;
 SELECT @string + ' is a string.'
 ```
@@ -74,7 +74,7 @@ SELECT @string + ' is a string.'
 次の例は、代わりに `int` 変数を使用した同様のスクリプトを示しています。
 
 ```sql
-DECLARE @notastring int;
+DECLARE @notastring INT;
 SET @notastring = '1';
 SELECT @notastring + ' is not a string.'
 ```
@@ -87,7 +87,7 @@ SELECT @notastring + ' is not a string.'
 式 `@notastring + ' is not a string.'` を評価するために、SQL Server では、式の結果を計算する前に、データ型の優先順位の規則に従って暗黙的な変換を完了します。 `int` は `varchar` よりも優先順位が高いため、SQL Server では文字列の整数への変換が試行され、その文字列を整数に変換できないため失敗します。 式に変換可能な文字列が指定されている場合は、ステートメントが成功します。次に例を示します。
 
 ```sql
-DECLARE @notastring int;
+DECLARE @notastring INT;
 SET @notastring = '1';
 SELECT @notastring + '1'
 ```

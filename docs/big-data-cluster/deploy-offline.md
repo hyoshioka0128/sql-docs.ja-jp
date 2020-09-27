@@ -1,7 +1,7 @@
 ---
 title: オフラインで展開する
 titleSuffix: SQL Server big data clusters
-description: SQL Server ビッグ データ クラスターのオフライン展開を実行する方法について説明します。
+description: SQL Server 2019 ビッグ データ クラスターのオフライン デプロイを実行する方法と、プライベート リポジトリにコンテナー イメージを読み込む方法について説明します。
 author: mihaelablendea
 ms.author: mihaelab
 ms.reviewer: mikeray
@@ -9,12 +9,12 @@ ms.date: 11/04/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: a3e437e722665cb156fbd4c1bb474e1d9f095f95
-ms.sourcegitcommit: dc6ea6665cd2fb58a940c722e86299396b329fec
+ms.openlocfilehash: c0218bd24bd24ee17a8d6addfbcf071788a48156
+ms.sourcegitcommit: e274d51df09f9163fa6e22b36d48c60bc3d7c7d1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84423161"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89875561"
 ---
 # <a name="perform-an-offline-deployment-of-a-sql-server-big-data-cluster"></a>SQL Server ビッグ データ クラスターのオフライン展開を実行する
 
@@ -80,7 +80,6 @@ ms.locfileid: "84423161"
 - **mssql-security-domainctl**
 - **mssql-security-knox**
 - **mssql-security-support**
-- **mssql-server**
 - **mssql-server-controller**
 - **mssql-server-data**
 - **mssql-ha-operator**

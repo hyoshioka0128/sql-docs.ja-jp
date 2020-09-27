@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: ab66441f-e2d2-4e3a-bcae-bcc09e12f3c1
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 6368b5a1e030a8abd5bc1512a653d5f05631ccda
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: cbfb3932f86f7fc120ed9d2c2693848e769d2aa3
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88459747"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91116072"
 ---
 # <a name="encryptbycert-transact-sql"></a>ENCRYPTBYCERT (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -37,7 +37,6 @@ ms.locfileid: "88459747"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 EncryptByCert ( certificate_ID , { 'cleartext' | @cleartext } )  
 ```  
   
@@ -69,7 +68,7 @@ _cleartext_
 ## <a name="examples"></a>例  
 次の例では、`@cleartext` という証明書を使用して、`JanainaCert02` に格納されているプレーン テキストを暗号化します。 暗号化されたデータは、テーブル `ProtectedData04` に挿入されます。  
   
-```  
+```sql  
 INSERT INTO [AdventureWorks2012].[ProtectedData04]   
     VALUES ( N'Data encrypted by certificate ''Shipping04''',  
     EncryptByCert(Cert_ID('JanainaCert02'), @cleartext) );  

@@ -1,5 +1,6 @@
 ---
 title: miniCRAN を使用してリポジトリを作成する
+titleSuffix: SQL machine learning
 description: miniCRAN パッケージを使用して R パッケージをオフラインでインストールし、パッケージと依存関係のローカル リポジトリを作成する方法について説明します。
 ms.prod: sql
 ms.technology: machine-learning
@@ -10,12 +11,12 @@ ms.author: garye
 ms.reviewer: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: bf93d618ad03122cc7eecf641573d70b2b72158e
-ms.sourcegitcommit: 9b41725d6db9957dd7928a3620fe4db41eb51c6e
+ms.openlocfilehash: 685d82d043d3041c375b9d1fe67962b698e8723a
+ms.sourcegitcommit: 8f062015c2a033f5a0d805ee4adabbe15e7c8f94
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88173526"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91227125"
 ---
 # <a name="create-a-local-r-package-repository-using-minicran"></a>miniCRAN を使用してローカル R パッケージ リポジトリを作成する
 [!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]

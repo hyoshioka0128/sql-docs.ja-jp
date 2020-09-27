@@ -40,12 +40,12 @@ ms.author: maghan
 ms.reviewer: “”
 ms.custom: seo-lt-2019
 ms.date: 02/09/2017
-ms.openlocfilehash: fd90e97a8703e4d4a11f082b864555621542f745
-ms.sourcegitcommit: b860fe41b873977649dca8c1fd5619f294c37a58
+ms.openlocfilehash: 2a96f6ae82354d243b4c95561e7fdd7b11c58441
+ms.sourcegitcommit: e8f6c51d4702c0046aec1394109bc0503ca182f0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/29/2020
-ms.locfileid: "85518852"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87934113"
 ---
 # <a name="database-project-settings"></a>データベース プロジェクトの設定
 
@@ -87,7 +87,7 @@ ms.locfileid: "85518852"
 |フィールド|既定値|説明|  
 |---------|-----------------|---------------|  
 |対象プラットフォーム|Microsoft SQL Server 2012|このデータベース プロジェクトの対象となる SQL Server のバージョンを指定します。|  
-|共通オブジェクトに対する拡張 Transact\-SQL 検証を有効にします。|新しいオブジェクトを作成するときは有効になりません。<br /><br />SQL Azure に接続された SQL Server オブジェクト エクスプローラーからプロジェクトを作成するとき、SQL Azure データベースをプロジェクトにインポートするとき、またはプロジェクトのターゲット プラットフォームを SQL Azure に変更するときに有効になります。|このオプションを有効にすると、SQL Server コンパイラの検証に失敗したプロジェクト内で見つかったエラーが報告されます。 ターゲット プラットフォームを SQL Azure に変更すると、拡張検証が有効になります。 ターゲット プラットフォームを変更した場合、オプションはオフになりません。<br /><br />このオプションは他のバージョンの SQL Server に対して有効にすることができますが、検証は Microsoft SQL Server 2012 の部分的包含データベースと SQL Azure に限定されます。 すべての Transact\-SQL 構文がすべてのバージョンの SQL Server でサポートされているわけではありません。<br /><br />詳しくは、このトピックの後半の「[拡張 Transact-SQL 検証](#bkmk_evf)」をご覧ください|  
+|共通オブジェクトに対する拡張 Transact\-SQL 検証を有効にします。|新しいオブジェクトを作成するときは有効になりません。<br /><br />SQL Azure に接続された SQL Server オブジェクト エクスプローラーからプロジェクトを作成するとき、Azure SQL Database をプロジェクトにインポートするとき、またはプロジェクトのターゲット プラットフォームを SQL Azure に変更するときに有効になります。|このオプションを有効にすると、SQL Server コンパイラの検証に失敗したプロジェクト内で見つかったエラーが報告されます。 ターゲット プラットフォームを SQL Azure に変更すると、拡張検証が有効になります。 ターゲット プラットフォームを変更した場合、オプションはオフになりません。<br /><br />このオプションは他のバージョンの SQL Server に対して有効にすることができますが、検証は Microsoft SQL Server 2012 の部分的包含データベースと SQL Azure に限定されます。 すべての Transact\-SQL 構文がすべてのバージョンの SQL Server でサポートされているわけではありません。<br /><br />詳しくは、このトピックの後半の「[拡張 Transact-SQL 検証](#bkmk_evf)」をご覧ください|  
 |出力の種類|||  
 |データ層アプリケーション (.dacpac ファイル)|有効な状態でロックされています。 データベース プロジェクトのビルド出力により、プロジェクトのビルド時に .dacpac パッケージが必ず生成されます。|[追加のダウンレベル .dacpac ファイル (v2.0) を作成する] チェック ボックスがある SQL Server Data Tools (SSDT) のバージョンを使用している場合、パッケージに SQL Server Management Studio または SQL Azure Management Portal との互換性を持たせるには、このチェック ボックスをオンにします。 .dacpac パッケージは SSDT から直接配置できますが、SQL Server Data Tools のリリース時点では、SQL Server Management Studio を使用して配置できるのはバージョン 2.0 の .dacpac ファイルのみです。|  
 |スクリプト (.sql ファイル) を作成する||プロジェクト内のすべてのオブジェクトを対象に完全な .sql の CREATE スクリプトを生成し、プロジェクトのビルド時にそれを bin\debug フォルダーに保存するかどうかを指定します。 **[プロジェクトの公開]** または SQL Compare ユーティリティを使用して、増分更新スクリプトを作成できます。|  
@@ -132,7 +132,7 @@ Transact-SQL コンパイラ サービスは、Microsoft SQL Server 2012 デー�
 -   SQL Azure メタデータ照合順序 (コンパイラ サービスでは、SQL Server 2012 部分的包含データベースのメタデータ照合順序を使用します - Latin1_General_100_CI_AS_KS_WS_SC)  
   
 ### <a name="enablingdisabling-extended-verification"></a>拡張検証の有効化/無効化  
-拡張 Transact-SQL 検証は、SQL Azure データベースから、またはターゲット プラットフォームが SQL Azure に設定されているプロジェクトから直接作成されるデータベース プロジェクトで既定で有効になっています。 SQL Azure 向け、または SQL Server 2012 を対象とするアプリケーション スコープ データベース向けの開発をする際には、拡張検証を使用することをお勧めします。 アプリケーション スコープ データベースの詳細については、「 [部分的包含データベース](https://msdn.microsoft.com/library/ff929071%28v=SQL.110%29.aspx)」を参照してください。  
+拡張 Transact-SQL 検証は、Azure SQL Database から、またはターゲット プラットフォームが SQL Azure に設定されているプロジェクトから直接作成されるデータベース プロジェクトで既定では有効になっています。 SQL Azure 向け、または SQL Server 2012 を対象とするアプリケーション スコープ データベース向けの開発をする際には、拡張検証を使用することをお勧めします。 アプリケーション スコープ データベースの詳細については、「 [部分的包含データベース](https://msdn.microsoft.com/library/ff929071%28v=SQL.110%29.aspx)」を参照してください。  
   
 SQL Server 2008/R2 用のアプリケーション スコープ データベースを開発する際に、拡張検証の機能を使用して Microsoft SQL Server 2012 および SQL Azure との互換性を実現することもできます。  
   
@@ -151,7 +151,7 @@ SQL Server 2008/R2 用のアプリケーション スコープ データベー�
   
 2.  **[プロパティ]** で、**拡張 T-SQL 検証**プロパティを **[False]** に変更します。  
   
-![ファイルのプロパティ](../ssdt/media/ssdt-evf.gif "ファイルのプロパティ")  
+    ![ファイルのプロパティ](../ssdt/media/ssdt-evf.gif "ファイルのプロパティ")  
   
 ### <a name="special-considerations-for-collations"></a>照合順序に関する注意事項  
 部分的包含データベースでの照合順序に関する詳細については、「 [包含データベースの照合順序](https://msdn.microsoft.com/library/ff929080%28v=sql.110%29.aspx)」を参照してください。  

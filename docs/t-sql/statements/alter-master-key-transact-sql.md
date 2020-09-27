@@ -28,12 +28,12 @@ ms.assetid: 8ac501c3-4280-4d5b-b58a-1524fa715b50
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 02c4d4eb6b3e96a65af77bf0c0d5ca749d2d201b
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 8c59acf58ce6816ebdcb7bf04fcb81df7c125693
+ms.sourcegitcommit: 3efd8bbf91f4f78dce3a4ac03348037d8c720e6a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88458917"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91024424"
 ---
 # <a name="alter-master-key-transact-sql"></a>ALTER MASTER KEY (Transact-SQL)
 
@@ -81,7 +81,7 @@ ALTER MASTER KEY <alter_option>
 ```
 
 ```syntaxsql
--- Syntax for Azure SQL Data Warehouse and Analytics Platform System
+-- Syntax for Azure Synapse Analytics and Analytics Platform System
 
 ALTER MASTER KEY <alter_option>
 
@@ -119,7 +119,7 @@ ADD ENCRYPTION BY SERVICE MASTER KEY を指定すると、マスター キーの
 
 データベースに対する CONTROL 権限が必要です。 データベース マスター キーがパスワードで暗号化されている場合は、パスワードの情報も必要です。
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
 次の例では、`AdventureWorks` の新しいデータベースのマスター キーを作成し、暗号化階層でこのマスター キーの下位にあるキーを再暗号化します。
 
@@ -139,7 +139,7 @@ ALTER MASTER KEY REGENERATE WITH ENCRYPTION BY PASSWORD = 'dsjdkflJ435907NnmM#sX
 GO
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [CREATE MASTER KEY](../../t-sql/statements/create-master-key-transact-sql.md)
 - [OPEN MASTER KEY](../../t-sql/statements/open-master-key-transact-sql.md)

@@ -1,7 +1,7 @@
 ---
 title: COPY INTO (Transact-SQL) (プレビュー)
-titleSuffix: (SQL Data Warehouse) - SQL Server
-description: Azure SQL Data Warehouse で COPY ステートメントを使用して、外部ストレージ アカウントからの読み込みを行います。
+titleSuffix: (Azure Synapse Analytics) - SQL Server
+description: Azure Synapse Analytics で COPY ステートメントを使用して、外部ストレージ アカウントからの読み込みを行います。
 ms.date: 08/05/2020
 ms.prod: sql
 ms.prod_service: database-engine, sql-data-warehouse
@@ -18,18 +18,18 @@ dev_langs:
 author: kevinvngo
 ms.author: kevin
 monikerRange: =sqlallproducts-allversions||=azure-sqldw-latest
-ms.openlocfilehash: e2f225a66be811b3cafe13c0ccf89eb81700a1aa
-ms.sourcegitcommit: 6d53ecfdc463914f045c20eda96da39dec22acca
+ms.openlocfilehash: 68c4e1d526a1385dee1a5868bbf382b25e21d797
+ms.sourcegitcommit: 3efd8bbf91f4f78dce3a4ac03348037d8c720e6a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88901571"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91024561"
 ---
-# <a name="copy-transact-sql-preview"></a>COPY (Transact-SQL) (プレビュー)
+# <a name="copy-transact-sql"></a>COPY (Transact-SQL)
 
 [!INCLUDE [asa](../../includes/applies-to-version/asa.md)]
 
-この記事では、Azure SQL Data Warehouse で COPY ステートメントを使用して、外部ストレージ アカウントからの読み込みを行う方法について説明します。 COPY ステートメントを使用すると、SQL Data Warehouse への高スループットのデータ インジェストで最大の柔軟性が確保されます。 次の機能に COPY を使用します。
+この記事では、[!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] で COPY ステートメントを使用して、外部ストレージ アカウントからの読み込みを行う方法について説明します。 COPY ステートメントを使用すると、[!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] への高スループットのデータ インジェストで最大の柔軟性が確保されます。 次の機能に COPY を使用します。
 
 - データ ウェアハウスに対する厳格な CONTROL アクセス許可を使用せずに、低い特権のユーザーを使用して読み込むことができます。
 - 追加のデータベース オブジェクトを作成することなく、1 つの T-SQL ステートメントを実行できます。
@@ -40,9 +40,6 @@ ms.locfileid: "88901571"
 - CSV ファイルのカスタム行ターミネータを指定できます。
 - CSV ファイルで SQL Server の日付形式を活用できます。
 - 保存場所のパスにワイルドカードや複数のファイルを指定できます。
-
-> [!NOTE]  
-> COPY ステートメントは、現在、パブリック プレビュー段階にあります。
 
 COPY ステートメントを使用した包括的な例とクイックスタートについては、次のドキュメントを参照してください。
 
@@ -274,7 +271,7 @@ IDENTITY_INSERT は、インポートしたデータ ファイルの ID 値 (複
 - [ADMINISTER DATABASE BULK OPERATIONS](grant-database-permissions-transact-sql.md?view=azure-sqldw-latest#remarks)
 - [INSERT ](grant-database-permissions-transact-sql.md?view=azure-sqldw-latest#remarks)
 
-INSERT 権限および ADMINISTER BULK OPERATIONS 権限が必要です。 Azure SQL Data Warehouse では、INSERT 権限と ADMINISTER DATABASE BULK OPERATIONS 権限が必要です。
+INSERT 権限および ADMINISTER BULK OPERATIONS 権限が必要です。 [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] では、INSERT および ADMINISTER DATABASE BULK OPERATIONS 権限が必要です。
 
 ## <a name="examples"></a>例  
 
@@ -398,7 +395,7 @@ WITH (
 ## <a name="faq"></a>よく寄せられる質問
 
 ### <a name="what-is-the-performance-of-the-copy-command-compared-to-polybase"></a>PolyBase と比較した場合の COPY コマンドのパフォーマンスについて教えてください。
-ワークロードによっては、COPY コマンドのパフォーマンスが向上します。 パブリック プレビュー中に最適な読み込みパフォーマンスを得るには、CSV の読み込み時に複数のファイルに入力を分割することを検討してください。 プレビュー期間中にパフォーマンスの結果をチームと共有してください。 sqldwcopypreview@service.microsoft.com
+ワークロードによっては、COPY コマンドのパフォーマンスが向上します。 最適な読み込みパフォーマンスを得るには、CSV の読み込み時に複数のファイルに入力を分割することを検討してください。
 
 ### <a name="what-is-the-file-splitting-guidance-for-the-copy-command-loading-csv-files"></a>CSV ファイルを読み込む COPY コマンドに関するファイルの分割ガイダンスについて教えてください。
 ファイル数に関するガイダンスを、次の表で説明します。 推奨されるファイル数に到達すると、大きいファイル程パフォーマンスが向上します。 単純なファイル分割エクスペリエンスについては、次の[ドキュメント](https://techcommunity.microsoft.com/t5/azure-synapse-analytics/how-to-maximize-copy-load-throughput-with-file-splits/ba-p/1314474)を参照してください。 
@@ -446,4 +443,4 @@ COPY コマンドは、この暦年 (2020) の終わりまでに一般提供さ�
 
 ## <a name="see-also"></a>関連項目  
 
- [SQL Data Warehouse を使用した読み込みの概要](/azure/sql-data-warehouse/design-elt-data-loading)
+ [[!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] で概要を読み込む](/azure/sql-data-warehouse/design-elt-data-loading)

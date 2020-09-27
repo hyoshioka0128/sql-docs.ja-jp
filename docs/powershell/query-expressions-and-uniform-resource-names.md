@@ -5,7 +5,7 @@ ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: scripting
+ms.technology: sql-server-powershell
 ms.topic: conceptual
 helpviewer_keywords:
 - query expressions
@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: e0d30dbe-7daf-47eb-8412-1b96792b6fb9
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 84c9067c00962878d058871151eb0e47d06294f2
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+ms.openlocfilehash: 26483454e805bf8dcaa780fed352cbe984c61f71
+ms.sourcegitcommit: a9f16d7819ed0e2b7ad8f4a7d4d2397437b2bbb2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86921228"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88714120"
 ---
 # <a name="query-expressions-and-uniform-resource-names"></a>クエリ式と Uniform Resource Name
 
@@ -93,7 +93,7 @@ Object1[<FilterExpression1>]/ ... /ObjectN[<FilterExpressionN>]
  \@*DatePropertyName*= datetime('*DateString*')  
  指定した日付プロパティの値が '*DateString*' に指定した日付と一致するすべてのオブジェクトを列挙します。 *DateString* は、yyyy-mm-dd hh:mi:ss.mmm 形式で指定する必要があります。  
   
-|||  
+|DateString コンポーネント|説明|  
 |-|-|  
 |yyyy|年を表す 4 桁の数字。|  
 |mm|月を表す 2 桁の数字 (01 ～ 12)。|  

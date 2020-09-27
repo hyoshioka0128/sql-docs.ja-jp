@@ -33,12 +33,12 @@ helpviewer_keywords:
 ms.assetid: b34df777-79b0-49a5-88db-b99998479a5d
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: c3014a8d57602dc80b7faeec26dbc85d43f91c44
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 0daf074f9aff7c9e27c5b06744048ebc6af2e5ed
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88479620"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91116002"
 ---
 # <a name="loginproperty-transact-sql"></a>LOGINPROPERTY (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -49,8 +49,7 @@ ms.locfileid: "88479620"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 LOGINPROPERTY ( 'login_name' , 'property_name' )  
 ```  
   
@@ -125,7 +124,7 @@ LOGINPROPERTY ( 'login_name' , 'property_name' )
 ### <a name="a-checking-whether-a-login-must-change-its-password"></a>A. ログインがパスワードを変更する必要があるかどうかを確認する  
  次の例では、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ログイン `John3` が、次回 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスに接続するときにパスワードを変更する必要があるかどうかを確認します。  
   
-```  
+```sql  
 SELECT LOGINPROPERTY('John3', 'IsMustChange');  
 GO  
 ```  
@@ -133,7 +132,7 @@ GO
 ### <a name="b-checking-whether-a-login-is-locked-out"></a>B. ログインがロックアウトされているかどうかを確認する  
  次の例では、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ログイン `John3` がロックされているかどうかを確認します。  
   
-```  
+```sql  
 SELECT LOGINPROPERTY('John3', 'IsLocked');  
 GO  
 ```  

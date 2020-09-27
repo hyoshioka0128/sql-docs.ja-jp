@@ -13,12 +13,12 @@ ms.assetid: 390225cc-23e8-4051-a5f6-221e33e4c0b4
 author: XiaoyuMSFT
 ms.author: xiaoyul
 monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest || = sqlallproducts-allversions'
-ms.openlocfilehash: 2892e881434cad1fca2686b6522938584b221045
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 4deccd8bcfd4650a8f670969d1ec112f9f99d08d
+ms.sourcegitcommit: c74bb5944994e34b102615b592fdaabe54713047
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88447471"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90990245"
 ---
 # <a name="sysdm_pdw_exec_requests-transact-sql"></a>dm_pdw_exec_requests (Transact-sql)
 
@@ -41,20 +41,20 @@ ms.locfileid: "88447471"
 |database_id|**int**|明示的なコンテキストによって使用されるデータベースの識別子 (たとえば、DB_X を使用します)。|「 [Transact-sql&#41;&#40;](../../relational-databases/system-catalog-views/sys-databases-transact-sql.md)の ID」を参照してください。|  
 |command|**nvarchar (4000)**|ユーザーによって送信された要求の完全なテキストを保持します。|任意の有効なクエリまたは要求テキスト。 4000バイトを超えるクエリは切り捨てられます。|  
 |resource_class|**nvarchar (20)**|この要求に使用するワークロードグループ。 |静的リソース クラス</br>staticrc10</br>staticrc20</br>staticrc30</br>staticrc40</br>staticrc50</br>staticrc60</br>staticrc70</br>staticrc80</br>            </br>動的リソース クラス</br>SmallRC</br>MediumRC</br>LargeRC</br>XLargeRC|
-|importance|**nvarchar(128)**|要求を実行するときの重要度を設定します。  これは、このワークロードグループでの要求の相対的な重要度であり、共有リソースの複数のワークロードグループにまたがっています。  分類子で指定された重要度は、ワークロードグループの重要度の設定よりも優先されます。</br>適用対象: Azure SQL Data Warehouse|NULL</br>low</br>below_normal</br>標準 (既定値)</br>above_normal</br>high|
-|group_name|**sysname** |リソースを利用する要求の場合、group_name は、要求が実行されているワークロードグループの名前です。  要求でリソースが使用されない場合、group_name は null になります。</br>適用対象: Azure SQL Data Warehouse|
+|importance|**nvarchar(128)**|要求を実行するときの重要度を設定します。  これは、このワークロードグループでの要求の相対的な重要度であり、共有リソースの複数のワークロードグループにまたがっています。  分類子で指定された重要度は、ワークロードグループの重要度の設定よりも優先されます。</br>適用対象:Azure SQL Data Warehouse|NULL</br>low</br>below_normal</br>標準 (既定値)</br>above_normal</br>high|
+|group_name|**sysname** |リソースを利用する要求の場合、group_name は、要求が実行されているワークロードグループの名前です。  要求でリソースが使用されない場合、group_name は null になります。</br>適用対象:Azure SQL Data Warehouse|
 |classifier_name|**sysname**|リソースを利用する要求の場合、リソースの割り当てに使用される分類子の名前と重要度。||
-|resource_allocation_percentage|**decimal (5, 2)**|要求に割り当てられたリソースの割合。</br>適用対象: Azure SQL Data Warehouse|
-|result_cache_hit|**decimal**|完了したクエリで結果セットキャッシュが使用されたかどうかを詳細に表示します。  </br>適用対象: Azure SQL Data Warehouse| 1 = 結果セットのキャッシュヒット </br> 0 = 結果セットのキャッシュミス </br> 負の値 = 結果セットのキャッシュが使用されなかった理由。  詳細については、「解説」を参照してください。|
+|resource_allocation_percentage|**decimal (5, 2)**|要求に割り当てられたリソースの割合。</br>適用対象:Azure SQL Data Warehouse|
+|result_cache_hit|**int**|完了したクエリで結果セットキャッシュが使用されたかどうかを詳細に表示します。  </br>適用対象:Azure SQL Data Warehouse| 1 = 結果セットのキャッシュヒット </br> 0 = 結果セットのキャッシュミス </br> 負の整数値 = 結果セットのキャッシュが使用されなかった理由。  詳細については、「解説」を参照してください。|
 ||||
   
-## <a name="remarks"></a>解説 
+## <a name="remarks"></a>注釈 
  このビューで保持される最大行数の詳細については、「 [容量制限](/azure/sql-data-warehouse/sql-data-warehouse-service-capacity-limits#metadata) 」トピックの「メタデータ」セクションを参照してください。
 
- Result_cache_hit は、クエリが結果セットキャッシュを使用するビットマスクです。  この列は [|(ビットごとの OR)](../../t-sql/language-elements/bitwise-or-transact-sql.md) 次の1つまたは複数の値の積:  
+Result_cache_hit 列の負の整数値は、適用されているすべての理由のビットマップ値で、クエリの結果セットをキャッシュすることはできません。  この列は [|(ビットごとの OR)](../../t-sql/language-elements/bitwise-or-transact-sql.md) 次の1つまたは複数の値の積。  
   
-|値の16進数 (10 進数)|説明|  
-|-----------|-----------------|  
+|値            |説明  |  
+|-----------------|-----------------|  
 |**1**|結果セットのキャッシュヒット|  
 |**0x00** (**0**)|結果セットのキャッシュミス|  
 |-**0x01** (**-1**)|結果セットのキャッシュがデータベースで無効になっています。|  
@@ -63,20 +63,22 @@ ms.locfileid: "88447471"
 |-**0x08** (**-8**)|行レベルのセキュリティ述語により、結果セットのキャッシュが無効になっています。|  
 |-**0x10** (**-16**)|クエリでシステムテーブル、一時テーブル、または外部テーブルが使用されているため、結果セットのキャッシュが無効になっています。|  
 |-**0x20** (**-32**)|クエリにはランタイム定数、ユーザー定義関数、または非決定的関数が含まれているので、結果セットのキャッシュは無効になっています。|  
-|-**0x40** (**-64**)|結果セットのキャッシュは、推定結果セットのサイズが 10 GB >ため、無効になっています。|  
-|-**0x80** (**-128**)|結果セットに大きなサイズ (>64 kb) の行が含まれているため、結果セットのキャッシュが無効になっています。|  
+|-**0x40**(**-64**)|結果セットのキャッシュは、推定結果セットのサイズが 10 GB >ため、無効になっています。|  
+|-**0x80**(**-128**) |結果セットに大きなサイズ (>64 kb) の行が含まれているため、結果セットのキャッシュが無効になっています。|  
+|-**0x100**(**-256**) |詳細な動的データマスクが使用されているため、結果セットのキャッシュが無効になっています。|  
+
   
 ## <a name="permissions"></a>アクセス許可
 
  VIEW SERVER STATE 権限が必要です。  
   
-## <a name="security"></a>Security
+## <a name="security"></a>セキュリティ
 
  dm_pdw_exec_requests は、データベース固有のアクセス許可に従ってクエリ結果をフィルター処理しません。 VIEW SERVER STATE 権限を持つログインは、すべてのデータベースの結果のクエリ結果を取得できます。  
   
 >[!WARNING]  
 >攻撃者は、dm_pdw_exec_requests を使用して、VIEW SERVER STATE 権限を持ち、データベース固有の権限がないことで、特定のデータベースオブジェクトに関する情報を取得できます。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
  [SQL Data Warehouse および並列データウェアハウスの動的管理ビュー &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sql-and-parallel-data-warehouse-dynamic-management-views.md)

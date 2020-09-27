@@ -4,26 +4,27 @@ titleSuffix: SQL Server big data clusters
 description: azdata 拡張機能コマンドのリファレンス記事です。
 author: MikeRayMSFT
 ms.author: mikeray
-ms.reviewer: mihaelab
-ms.date: 06/22/2020
+ms.reviewer: seanw
+ms.date: 09/22/2020
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: de222d502cb7caf6faa3118ae39b679e47f3577e
-ms.sourcegitcommit: 883435b4c7366f06ac03579752093737b098feab
+ms.openlocfilehash: 16facb611565f02d1b07ae8a46f53ba2b83b3bfc
+ms.sourcegitcommit: d56f1eca807c55cf606a6316f3872585f014fec1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89733697"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90914399"
 ---
 # <a name="azdata-extension"></a>azdata 拡張機能
 
-[!INCLUDE[SQL Server 2019](../../includes/applies-to-version/sqlserver2019.md)]
+`azdata` への適用
 
-以下の記事では、`azdata` ツールの `sql` コマンドに関するリファレンスを提供します。 `azdata` の他のコマンドに関する詳細については、[azdata のリファレンス](reference-azdata.md)に関するページをご覧ください。
+以下の記事では、**azdata** ツールの **sql** コマンドに関するリファレンスを提供します。 他の **azdata** コマンドの詳細については、[azdata リファレンス](reference-azdata.md)に関するページを参照してください。
 
 ## <a name="commands"></a>コマンド
-| command | 説明 |
+
+|command|説明|
 | --- | --- |
 [azdata extension add](#azdata-extension-add) | 拡張機能を追加します。
 [azdata extension remove](#azdata-extension-remove) | 拡張機能を削除します。
@@ -43,13 +44,11 @@ azdata extension add --source -s
 ### <a name="examples"></a>例
 URL から拡張機能を追加します。
 ```bash
-azdata extension add --source https://contoso.com/some_ext-0.0.1-py2.py3-none-any.whl
-```
-ローカル ディスクから拡張機能を追加します。
+azdata extension add --source https://contoso.com/some_ext-0.0.1-py2.py3-none-any.whl```
+Add extension from local disk.
 ```bash
-azdata extension add --source ~/some_ext-0.0.1-py2.py3-none-any.whl
-```
-ローカル ディスクから拡張機能を追加し、依存関係に pip プロキシを使用します。
+azdata extension add --source ~/some_ext-0.0.1-py2.py3-none-any.whl```
+Add extension from local disk and use pip proxy for dependencies.
 ```bash
 azdata extension add --source ~/some_ext-0.0.1-py2.py3-none-any.whl --pip-proxy https://user:pass@proxy.server:8080
 ```
@@ -128,4 +127,7 @@ JMESPath クエリ文字列。 詳細と例については、[http://jmespath.or
 
 ## <a name="next-steps"></a>次のステップ
 
-`azdata` の他のコマンドに関する詳細については、[azdata のリファレンス](reference-azdata.md)に関するページをご覧ください。 `azdata` ツールのインストール方法の詳細については、[SQL Server 2019 ビッグ データ クラスターを管理する azdata のインストール](../install/deploy-install-azdata.md)に関するページを参照してください。
+他の **azdata** コマンドの詳細については、[azdata リファレンス](reference-azdata.md)に関するページを参照してください。 
+
+**azdata** ツールをインストールする方法の詳細については、「[azdata のインストール](..\install\deploy-install-azdata.md)」を参照してください。
+

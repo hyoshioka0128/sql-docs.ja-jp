@@ -12,12 +12,12 @@ ms.reviewer: maghan
 ms.custom: seo-lt-2019
 ms.date: 12/15/2019
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||=azuresqldb-mi-current'
-ms.openlocfilehash: 212cf0c286ec0f55a76d16c27a66fac6a6f1f5e4
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+ms.openlocfilehash: 83d50d14f47c5b25de4bc3749bd2fd06dffff3df
+ms.sourcegitcommit: fe5dedb2a43516450696b754e6fafac9f5fdf3cf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86003950"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89195128"
 ---
 # <a name="release-notes-for-sql-server-data-tools-ssdt"></a>SQL Server Data Tools (SSDT) リリース ノート
 
@@ -44,6 +44,35 @@ GeneMi , 2019/03/22.
 
 P.S.  there's no need to keep this large HTML comment indefinitely.
 -->
+
+## <a name="1596nbsp-ssdt-for-vs-2017"></a>15.9.6、VS&nbsp;2017 用 SSDT
+
+_リリース済み:_ &nbsp;2020 年 8 月 31 日  
+_ビルド番号:_ &nbsp;14.0.16222.0  
+_Visual Studio 2017 用 SSDT。_
+
+### <a name="whats-new"></a>新機能
+
+| New Item | 詳細 |
+|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Integration Services (SSIS) | SQL Server Analysis Services (SSAS) データソースへの接続時に OLE DB ソースで **[プレビュー]** ボタンが機能しないという問題を修正しました。 |
+| Integration Services (SSIS) | 関連付けられたパスを削除する前にデータ フロー コンポーネントの入力または出力を削除すると COMException エラーが発生するという問題を修正しました。 |
+| Integration Services (SSIS) | SSAS 処理タスクが Power BI ワークスペースに接続してそのモデルを更新できないという問題を修正しました。 |
+| Integration Services (SSIS) | x64 ランタイムを使用し、SQL Server 2017 をターゲットとしている場合に、Visual Studio がデバッグ スクリプト タスク/コンポーネントでハングするという問題を修正しました。 |
+| Integration Services (SSIS) | 一部の環境で MySQL ドライバーを選択したときにインポート/エクスポート ウィザードがクラッシュするという問題を修正しました。 |
+| Integration Services (SSIS) | アクセシビリティと高 DPI に関連するいくつかの問題を修正しました。 |
+| Integration Services (SSIS) | ユーザーがパッケージを開くときに、検証をスキップしてパフォーマンスを向上させることができるようになりました。 詳しくは、[SSDT での SSIS パッケージのオープンを高速化する](https://techcommunity.microsoft.com/t5/sql-server-integration-services/accelerate-the-opening-of-ssis-package-in-ssdt/ba-p/1607099)方法に関する記事を参照してください。 |
+| Integration Services (SSIS) | ターゲット サーバーのバージョンが SQL Server 2017 ではない場合に、Azure-SSIS へのデプロイをブロックします。 |
+
+### <a name="known-issues"></a>既知の問題
+
+| 既知の問題 | 詳細 |
+| :---------- | :------ |
+| ExecuteOutOfProcess が True に設定されていると、SSIS パッケージ実行タスクはデバッグをサポートしません。 | この問題はデバッグにのみ該当します。 DTExec.exe または SSIS カタログを介した保存、展開、実行は影響を受けません。 |
+| SSIS と SSAS が同じ Visual Studio インスタンスにインストールされている場合、Power Query ソースは OData v4 をサポートしない可能性があります。 | &nbsp; |
+| SSIS と SSAS が同じ Visual Studio インスタンスにインストールされている場合、Power Query ソースでは Oracle への接続に ODBC を使用できない可能性があります。 | &nbsp; |
+| Power Query ソースはローカライズされていません。 | &nbsp; |
+| &nbsp; | &nbsp; |
 
 ## <a name="1595nbsp-ssdt-for-vs-2017"></a>15.9.5、VS 2017 用 &nbsp; SSDT
 
@@ -989,7 +1018,7 @@ _SQL Server 2016 の場合。_
 **更新と修正点**
 * **データベース ツール:**
     * 今後、SSDT がデータベースで Transparent Data Encryption (TDE) を無効にすることはありません。 これまでは、プロジェクトのデータベース設定における既定の暗号化オプションが無効であると、暗号化がオフになっていました。 この修正により、暗号化を有効にすることができ、発行中に無効になることはありません。 
-    * 初期接続時の Azure SQL DB 接続の再試行の回数が増えて、回復性が向上しました。
+    * 初期接続時の Azure SQL データベース接続の再試行の回数が増えて、回復性が向上しました。
     * 既定のファイル グループが PRIMARY でない場合は、Azure V12 へのインポート/発行が失敗していました。 現在では、発行時にこの設定が無視されるようになりました。
     * 引用符で囲まれた識別子がオンになっているオブジェクトを含むデータベースのエクスポート時に、一部のインスタンスでエクスポートの検証が失敗する問題を修正しました。
     * Hekaton テーブルの作成用の TEXTIMAGE_ON オプションが許可されていない場合に正しく追加されない問題を修正しました。

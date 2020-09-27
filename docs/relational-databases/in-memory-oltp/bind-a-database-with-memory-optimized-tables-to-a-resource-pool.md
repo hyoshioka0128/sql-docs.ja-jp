@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: f222b1d5-d2fa-4269-8294-4575a0e78636
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: b51ae675af9c37cf7a347830520f0782d801cfea
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: ff3d2de93c28d106cf24cd72b72c5d2e3346d287
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89537745"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91111000"
 ---
 # <a name="bind-a-database-with-memory-optimized-tables-to-a-resource-pool"></a>メモリ最適化テーブルを持つデータベースのリソース プールへのバインド
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -166,7 +166,7 @@ GO
 ##  <a name="percent-of-memory-available-for-memory-optimized-tables-and-indexes"></a><a name="bkmk_PercentAvailable"></a> メモリ最適化テーブルおよびインデックスで使用可能なメモリの割合  
  メモリ最適化テーブルを持つデータベースと [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ワークロードを同じリソース プールにマップした場合は、プールのユーザー間でプール使用に関する競合が生じないように、リソース ガバナーによって [!INCLUDE[hek_2](../../includes/hek-2-md.md)] 用の内部しきい値が設定されます。 一般に、 [!INCLUDE[hek_2](../../includes/hek-2-md.md)] 用のしきい値はプールの約 80% です。 さまざまなメモリ サイズに対する実際のしきい値を次の表に示します。  
   
- [!INCLUDE[hek_2](../../includes/hek-2-md.md)] データベースの専用リソース プールを作成するときは、行のバージョンとデータの増加を確認した後で、インメモリ テーブルに必要な物理メモリ量を推定する必要があります。 必要なメモリ量を推定したら、DMV の `sys.dm_os_sys_info` の列 "committed_target_kb" を反映する SQL インスタンスのコミット ターゲット メモリの割合でリソース プールを作成します ([sys.dm_os_sys_info](../../relational-databases/system-dynamic-management-views/sys-dm-os-sys-info-transact-sql.md) を参照)。 たとえば、インスタンスで使用できる合計メモリ量の 40% を含むリソース プール P1 を作成できます。 この 40% から、 [!INCLUDE[hek_2](../../includes/hek-2-md.md)] エンジンは [!INCLUDE[hek_2](../../includes/hek-2-md.md)] データを格納するためにこれより少ない割合のメモリを取得します。  この処理は、 [!INCLUDE[hek_2](../../includes/hek-2-md.md)] がこのプールのすべてのメモリを消費しないようにするために行います。  この少ない割合の値は、ターゲットのコミット済みメモリによって異なります。 次の表に、OOM のエラーが発生する前にリソース プール (既定または名前付き) の [!INCLUDE[hek_2](../../includes/hek-2-md.md)] データベースに使用可能なメモリを示します。  
+ [!INCLUDE[hek_2](../../includes/hek-2-md.md)] データベースの専用リソース プールを作成するときは、行のバージョンとデータの増加を確認した後で、インメモリ テーブルに必要な物理メモリ量を推定する必要があります。 必要なメモリ量を推定したら、DMV の [`sys.dm_os_sys_info`](../../relational-databases/system-dynamic-management-views/sys-dm-os-sys-info-transact-sql.md) の列 "committed_target_kb" を反映する SQL インスタンスのコミット ターゲット メモリの割合でリソース プールを作成します。 たとえば、インスタンスで使用できる合計メモリ量の 40% を含むリソース プール P1 を作成できます。 この 40% から、 [!INCLUDE[hek_2](../../includes/hek-2-md.md)] エンジンは [!INCLUDE[hek_2](../../includes/hek-2-md.md)] データを格納するためにこれより少ない割合のメモリを取得します。  この処理は、 [!INCLUDE[hek_2](../../includes/hek-2-md.md)] がこのプールのすべてのメモリを消費しないようにするために行います。  この少ない割合の値は、ターゲットのコミット済みメモリによって異なります。 次の表に、OOM のエラーが発生する前にリソース プール (既定または名前付き) の [!INCLUDE[hek_2](../../includes/hek-2-md.md)] データベースに使用可能なメモリを示します。  
   
 |ターゲットのコミット済みメモリ|インメモリ テーブルで使用可能な割合|  
 |-----------------------------|---------------------------------------------|  

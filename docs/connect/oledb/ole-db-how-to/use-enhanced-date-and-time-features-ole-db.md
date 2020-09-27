@@ -1,6 +1,6 @@
 ---
-title: 強化された日付/時刻機能の使用 (OLE DB) | Microsoft Docs
-description: 強化された日付/時刻機能の使用 (OLE DB)
+title: 強化された日付/時刻機能の使用 (OLE DB ドライバー)
+description: OLE DB Driver for SQL Server で日付/時刻機能 (date、time、datetime2、datetimeoffset) を使用してコマンドを実行し、行セットの結果を取得する方法について説明します。
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
@@ -8,14 +8,14 @@ ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: reference
-author: pmasl
-ms.author: pelopes
-ms.openlocfilehash: 013e933fe4aeab69abf28148949dfcb0b5b4d47d
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+author: David-Engel
+ms.author: v-daenge
+ms.openlocfilehash: 25fe260204a1cf95f5d6a1ed93c0b2fb1b0bab06
+ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86012026"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88861980"
 ---
 # <a name="use-enhanced-date-and-time-features-ole-db"></a>強化された日付/時刻機能の使用 (OLE DB)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

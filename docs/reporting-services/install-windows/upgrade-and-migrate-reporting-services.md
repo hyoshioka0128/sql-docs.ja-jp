@@ -1,4 +1,5 @@
 ---
+description: Upgrade and Migrate Reporting Services
 title: Reporting Services のアップグレードと移行 | Microsoft Docs
 ms.prod: reporting-services
 ms.prod_service: reporting-services-native
@@ -11,12 +12,12 @@ author: maggiesMSFT
 ms.author: maggies
 ms.topic: conceptual
 ms.date: 05/01/2020
-ms.openlocfilehash: ca9ffd01b7553cb343a83565615a786467371891
-ms.sourcegitcommit: b72c9fc9436c44c6a21fd96223c73bf94706c06b
+ms.openlocfilehash: 41add7a1ac27a0fba9eb364ec5e5da3dde37585c
+ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719528"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88446089"
 ---
 # <a name="upgrade-and-migrate-reporting-services"></a>Upgrade and Migrate Reporting Services
 
@@ -114,7 +115,7 @@ ms.locfileid: "82719528"
   
 3.  アップグレードを続行できる場合は、アップグレード処理を進めるように求められます。  
   
-4.  SQL Server Reporting Services プログラム ファイルの新しいフォルダーが作成されます。 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] のインストール用のプログラム フォルダーには、MSRS13.\<*インスタンス名*> が含まれます。  
+4.  SQL Server Reporting Services プログラム ファイルの新しいフォルダーが作成されます。 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] のインストール用のプログラム フォルダーには、MSRS13.\<*instance name*> が含まれます。  
   
 5.  SQL Server Reporting Services レポート サーバーのプログラム ファイル、構成ツール、およびレポート サーバー機能の一部であるコマンド ライン ユーティリティが追加されます。  
   

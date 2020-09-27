@@ -25,12 +25,12 @@ helpviewer_keywords:
 ms.assetid: c17996d6-56a6-482f-80d8-086a3423eecc
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 63770bce9243775e8c9c218371f016a23555b146
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: c0e716d7405580dcda3cd4f3aa4d175141469b2b
+ms.sourcegitcommit: 8f062015c2a033f5a0d805ee4adabbe15e7c8f94
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89549018"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91227303"
 ---
 # <a name="merge-transact-sql"></a>MERGE (Transact-SQL)
 
@@ -483,6 +483,9 @@ GO
 ### <a name="e-using-merge-to-do-insert-or-update-on-a-target-edge-table-in-a-graph-database"></a>E. MERGE を使用して、グラフ データベース内のターゲット エッジ テーブルに対する INSERT または UPDATE を実行する
 
 この例では、ノード テーブル `Person` および `City` と、エッジ テーブル `livesIn` を作成します。 `livesIn` エッジに対して MERGE ステートメントを使用し、`Person` と `City` の間にエッジがまだ存在していなければ、新しい行を挿入します。 エッジが既に存在する場合は、`livesIn` エッジに対して StreetAddress 属性の更新を行います。
+
+> [!NOTE]
+> 次の例は 2019 以降の SQL Server に適用されます。
 
 ```sql
 -- CREATE node and edge tables

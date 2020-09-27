@@ -3,7 +3,7 @@ title: スクリプトの生成とパブリッシュ ウィザード
 description: スクリプトの生成とパブリッシュ ウィザードを使用して、データベースのインスタンス間でデータベースを転送するスクリプトを作成する方法について説明します。 インスタンスは、SQL Server データベース エンジンまたは Azure SQL Database のインスタンスなどです。
 ms.prod: sql
 ms.prod_service: sql-tools
-ms.technology: scripting
+ms.technology: ssms
 ms.reviewer: ''
 ms.topic: conceptual
 f1_keywords:
@@ -44,12 +44,12 @@ ms.author: maghan
 ms.custom: seo-lt-2019
 ms.date: 04/07/2020
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 2e6b5619628bd9974a2b690fc9c8472543d3ca12
-ms.sourcegitcommit: d855def79af642233cbc3c5909bc7dfe04c4aa23
+ms.openlocfilehash: bf51bcec55fbd11e386eb127a3bec57f37ec7f37
+ms.sourcegitcommit: 6d53ecfdc463914f045c20eda96da39dec22acca
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87122623"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88901374"
 ---
 # <a name="generate-and-publish-scripts-wizard"></a>スクリプトの生成とパブリッシュ ウィザード
 
@@ -128,7 +128,7 @@ ms.locfileid: "87122623"
 
 **[スクリプトを指定した場所に保存]** : 1 つまたは複数の Transact-SQL スクリプト ファイルを指定した場所に保存します。
 
-![保存](media/generate-and-publish-scripts-wizard/save.png)
+![ノートブックとして保存](media/generate-and-publish-scripts-wizard/save.png)
 
 - **[[ファイルに保存]](../../azure-data-studio/notebooks-guidance.md)** - スクリプトを 1 つ以上の .sql ファイルに保存します。 参照ボタン ( **…** ) を選択して、ファイルの名前と場所を指定します。
 
@@ -222,7 +222,7 @@ ms.locfileid: "87122623"
 
 ### <a name="summary-page"></a><a name="Summary"></a> [概要] ページ
 
-![まとめ](media/generate-and-publish-scripts-wizard/summary.png)
+![スクリプト生成の概要](media/generate-and-publish-scripts-wizard/summary.png)
 
 このページには、このウィザードで選択したオプションがまとめて表示されます。 オプションを変更するには、 **[前へ]** を選択します。 保存またはパブリッシュするスクリプトの生成を開始するには、 **[次へ]** を選択します。
 

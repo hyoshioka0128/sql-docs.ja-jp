@@ -25,12 +25,12 @@ ms.assetid: b81edbf0-856a-498f-ba87-48ff1426d980
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 46cfbc293d9808b98e75883d4031c7b7ffb2363d
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: a62baf237cef1e0a918068e60d9267d6e0097fd5
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88417388"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91116774"
 ---
 # <a name="error_procedure-transact-sql"></a>ERROR_PROCEDURE (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]  
@@ -43,7 +43,7 @@ ms.locfileid: "88417388"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 ERROR_PROCEDURE ( )  
 ```  
   
@@ -69,7 +69,7 @@ CATCH ブロックで呼び出された場合、`ERROR_PROCEDURE` はエラー�
 ### <a name="a-using-error_procedure-in-a-catch-block"></a>A. CATCH ブロックで ERROR_PROCEDURE を使用する  
 この例では、0 除算エラーを生成したストアド プロシージャを示します。 `ERROR_PROCEDURE` は、エラーが発生したストアド プロシージャの名前を返します。  
   
-```  
+```sql  
 -- Verify that the stored procedure does not already exist.  
 IF OBJECT_ID ( 'usp_ExampleProc', 'P' ) IS NOT NULL   
     DROP PROCEDURE usp_ExampleProc;  
@@ -90,7 +90,10 @@ BEGIN CATCH
     SELECT ERROR_PROCEDURE() AS ErrorProcedure;  
 END CATCH;  
 GO  
+```  
 
+[!INCLUDE[ssResult](../../includes/ssresult-md.md)]
+```  
 -----------
 
 (0 row(s) affected)
@@ -100,14 +103,13 @@ ErrorProcedure
 usp_ExampleProc
 
 (1 row(s) affected)
-
 ```  
+
   
 ### <a name="b-using-error_procedure-in-a-catch-block-with-other-error-handling-tools"></a>B. CATCH ブロックで、別のエラー処理ツールと一緒に ERROR_PROCEDURE を使用する  
 この例では、0 除算エラーを生成したストアド プロシージャを示します。 ストアド プロシージャは、エラーが発生したストアド プロシージャの名前と共に、エラーに関する情報を返します。  
   
-```  
-  
+```sql
 -- Verify that the stored procedure does not already exist.  
 IF OBJECT_ID ( 'usp_ExampleProc', 'P' ) IS NOT NULL   
     DROP PROCEDURE usp_ExampleProc;  
@@ -133,8 +135,11 @@ BEGIN CATCH
         ERROR_MESSAGE() AS ErrorMessage,  
         ERROR_LINE() AS ErrorLine;  
         END CATCH;  
-GO  
+GO
+``` 
 
+[!INCLUDE[ssResult](../../includes/ssresult-md.md)]
+``` 
 -----------
 
 (0 row(s) affected)
@@ -144,8 +149,8 @@ ErrorNumber ErrorSeverity ErrorState  ErrorProcedure   ErrorMessage             
 8134        16            1           usp_ExampleProc  Divide by zero error encountered.  6
 
 (1 row(s) affected)
-
-```  
+``` 
+ 
   
 ## <a name="see-also"></a>参照  
  [sys.messages &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/messages-for-errors-catalog-views-sys-messages.md)   

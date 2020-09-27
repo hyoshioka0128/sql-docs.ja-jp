@@ -1,6 +1,6 @@
 ---
-title: SQL Server エラーの詳細 | Microsoft Docs
-description: SQL Server エラーの詳細
+title: SQL Server エラーの詳細 (OLE DB ドライバー)
+description: OLE DB Driver for SQL Server のプロバイダー固有のエラー インターフェイス ISQLServerErrorInfo について説明します。このインターフェイスは SQL Server エラーの詳細を返します。
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
@@ -15,21 +15,21 @@ helpviewer_keywords:
 - IErrorInfo interface
 - OLE DB error handling, error details
 - ISQLServerErrorInfo interface
-author: pmasl
-ms.author: pelopes
-ms.openlocfilehash: 6488a8f266a9d72f4f7522a2428a9a38c2027f42
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+author: David-Engel
+ms.author: v-daenge
+ms.openlocfilehash: f532b124fa23a65a71480b4bcb1bf31272a3081e
+ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85998295"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88862226"
 ---
 # <a name="sql-server-error-detail"></a>SQL Server エラーの詳細
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
 [!INCLUDE[Driver_OLEDB_Download](../../../includes/driver_oledb_download.md)]
 
-  OLE DB Driver for SQL Server では、プロバイダー固有のエラー インターフェイス [ISQLServerErrorInfo](https://msdn.microsoft.com/library/a8323b5c-686a-4235-a8d2-bda43617b3a1) が定義されます。 このインターフェイスにより、[!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] エラーの詳細が返されるので、コマンドの実行や行セットの操作が失敗したときに役立ちます。  
+  OLE DB Driver for SQL Server では、プロバイダー固有のエラー インターフェイス [ISQLServerErrorInfo](https://docs.microsoft.com/sql/connect/oledb/ole-db-interfaces/isqlservererrorinfo-geterrorinfo-ole-db?view=sql-server-ver15) が定義されます。 このインターフェイスにより、[!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] エラーの詳細が返されるので、コマンドの実行や行セットの操作が失敗したときに役立ちます。  
   
  **ISQLServerErrorInfo** インターフェイスにアクセスする方法は 2 つあります。  
   

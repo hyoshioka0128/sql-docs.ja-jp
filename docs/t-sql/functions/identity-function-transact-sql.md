@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: ebec77eb-fc02-4feb-b6c5-f0098d43ccb6
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 6f8cd22140dd78ace01d685498306885b0081f21
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 364bcd6eb68ca7c529c56fae70109b79cbc1dc18
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88365238"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91114731"
 ---
 # <a name="identity-function-transact-sql"></a>IDENTITY (関数) (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -42,7 +42,6 @@ ms.locfileid: "88365238"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 IDENTITY (data_type [ , seed , increment ] ) AS column_name  
 ```  
   
@@ -67,7 +66,7 @@ IDENTITY (data_type [ , seed , increment ] ) AS column_name
 ## <a name="remarks"></a>注釈  
  この関数ではテーブルに列が作成されるので、次のいずれかの方法で選択リストから列名を指定する必要があります。  
   
-```  
+```sql  
 --(1)  
 SELECT IDENTITY(int, 1,1) AS ID_Num  
 INTO NewTable  
@@ -77,13 +76,12 @@ FROM OldTable;
 SELECT ID_Num = IDENTITY(int, 1, 1)  
 INTO NewTable  
 FROM OldTable;  
-  
 ```  
   
 ## <a name="examples"></a>例  
  次の例では、[!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] データベースの `Contact` テーブルにあるすべての行を、`NewContact` という新しいテーブルに追加します。 IDENTITY 関数を使用して、`NewContact` テーブルの識別番号を 1 ではなく 100 から開始するようにします。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 IF OBJECT_ID (N'Person.NewContact', N'U') IS NOT NULL  
@@ -101,7 +99,6 @@ ALTER DATABASE AdventureWorks2012 SET RECOVERY FULL;
 GO  
 SELECT ContactNum, First, Last FROM Person.NewContact;  
 GO  
-  
 ```  
   
 ## <a name="see-also"></a>参照  

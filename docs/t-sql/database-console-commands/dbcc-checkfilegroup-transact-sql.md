@@ -26,12 +26,12 @@ helpviewer_keywords:
 ms.assetid: 8c70bf34-7570-4eb6-877a-e35064a1380a
 author: pmasl
 ms.author: umajay
-ms.openlocfilehash: 15b156950ff752e96dc332c4071dbc748013aa3f
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 4b7a386f058a442a984ba45b3be58bba5e9bb2e1
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88459896"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91116153"
 ---
 # <a name="dbcc-checkfilegroup-transact-sql"></a>DBCC CHECKFILEGROUP (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -41,7 +41,6 @@ ms.locfileid: "88459896"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 DBCC CHECKFILEGROUP   
 [  
     [ ( { filegroup_name | filegroup_id | 0 }   
@@ -156,7 +155,7 @@ DBCC CHECKFILEGROUP は次の結果セットを返します (値は異なるこ�
 -   ESTIMATEONLY または NO_INFOMSGS が指定されている場合は除きます。  
 -   データベースが指定されていない場合は、オプション (NOINDEX を除く) が指定されているかどうかに関係なく、現在のデータベースが対象になります。  
   
-```sql
+```
 DBCC results for 'master'.  
 DBCC results for 'sys.sysrowsetcolumns'.  
 There are 630 rows in 7 pages for object 'sys.sysrowsetcolumns'.  
@@ -174,12 +173,12 @@ DBCC execution completed. If DBCC printed error messages, contact your system ad
   
 NO_INFOMSGS が指定されている場合、DBCC CHECKFILEGROUP は次の結果セットを返します。
   
-```sql
+```
 DBCC execution completed. If DBCC printed error messages, contact your system administrator.  
 ```  
  ESTIMATEONLY が指定されている場合、DBCC CHECKFILEGROUP は次の結果セットを返します (値は異なることがあります)。  
 
-```sql
+```
 Estimated TEMPDB space needed for CHECKALLOC (KB)
 -------------------------------------------------   
 15  
@@ -202,8 +201,7 @@ DBCC execution completed. If DBCC printed error messages, contact your system ad
 ### <a name="a-checking-the-primary-filegroup-in-the-a-database"></a>A. データベース内の PRIMARY ファイル グループをチェックする  
 次の例では、現在のデータベースのプライマリ ファイル グループをチェックします。
   
-```sql  
-  
+```sql
 DBCC CHECKFILEGROUP;  
 GO  
 ```  
@@ -211,7 +209,7 @@ GO
 ### <a name="b-checking-the-adventureworks-primary-filegroup-without-nonclustered-indexes"></a>B. 非クラスター化インデックスを除く AdventureWorks データベースの PRIMARY ファイル グループをチェックする  
 次の例では、プライマリ ファイル グループの ID 番号を指定し、`NOINDEX` オプションを指定することによって、非クラスター化インデックスを除く `AdventureWorks2012` データベースのプライマリ ファイル グループをチェックします。
   
-```sql  
+```sql
 USE AdventureWorks2012;  
 GO  
 DBCC CHECKFILEGROUP (1, NOINDEX);  
@@ -221,7 +219,7 @@ GO
 ### <a name="c-checking-the-primary-filegroup-with-options"></a>C. オプションを指定してプライマリ ファイル グループをチェックする  
 次の例では、`master` データベースのプライマリ ファイル グループをチェックします。このとき、オプション `ESTIMATEONLY` を指定します。
   
-```sql  
+```sql
 USE master;  
 GO  
 DBCC CHECKFILEGROUP (1)  

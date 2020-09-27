@@ -1,6 +1,6 @@
 ---
 title: RxSqlServerData オブジェクトを作成する
-description: RevoScaleR チュートリアル 2:SQL Server 上で R 言語を使用してデータ オブジェクトを作成する方法。
+description: SQL Server で RevoScaleR 関数を使用する方法について説明します。 このチュートリアルは、データベースの作成の続きであり、テーブルの追加とデータの読み込みについて説明します。
 ms.prod: sql
 ms.technology: machine-learning-services
 ms.date: 11/26/2018
@@ -9,15 +9,15 @@ author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: a2c7daa106429f4db1382a3e73aa6b280b14dc57
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 664deeae61b664d3818f7d748ad6177b79917d86
+ms.sourcegitcommit: 9b41725d6db9957dd7928a3620fe4db41eb51c6e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85728615"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88178809"
 ---
 # <a name="create-sql-server-data-objects-using-rxsqlserverdata-sql-server-and-revoscaler-tutorial"></a>RxSqlServerData を使用した SQL Server のデータ オブジェクトを作成する (SQL Server および RevoScaleR チュートリアル)
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
 これは、SQL Server で [RevoScaleR 関数](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)を使用する方法についての [RevoScaleR チュートリアル シリーズ](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)のチュートリアル 2 です。
 
@@ -145,7 +145,7 @@ R から、SQL Server に接続し、**RevoScaleR** 関数を使用して次の�
     
     接続文字列に問題がなければ、しばらくすると、次のような結果が表示されます。
   
-    *合計書き込み行数:10000、合計時間:0.466* *読み取られた行:10000、処理された行数の合計:10000、合計チャンク時間:0.577 秒*
+    *Total Rows written: 10000, Total time: 0.466* *Rows Read: 10000, Total Rows Processed: 10000, Total Chunk Time: 0.577 seconds*
   
 5. テーブルの一覧を更新します。 各変数に適切なデータ型が格納されていること、また各変数が正常にインポートされたことを確認するには、[!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] でテーブルを右クリックして、 **[上位 1000 行の選択]** を選択してもかまいません。
 

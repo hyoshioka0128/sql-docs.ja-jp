@@ -23,12 +23,12 @@ helpviewer_keywords:
 ms.assetid: 47335734-0baf-45a6-8b3b-6c4fd80d2cb8
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 928cdcd92ceb2bfc6ace1be7d5cd6b1c785d5f48
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: c914c69646f99fdcb3ff4a214d37faa61feef3b6
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88366268"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91116732"
 ---
 # <a name="error_line-transact-sql"></a>ERROR_LINE (Transact-SQL)
 
@@ -56,7 +56,7 @@ CATCH ブロック内で呼び出されると、`ERROR_LINE` は次の値を返�
 -   ストアド プロシージャまたはトリガー内でエラーが発生した場合は、ルーチン内の行番号  
 -   CATCH ブロックの範囲外で呼び出された場合は、NULL  
   
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>解説  
 `ERROR_LINE` は、CATCH ブロックのスコープ内の任意の場所で呼び出すことができます。  
   
 `ERROR_LINE` はエラーが発生した行番号を返します。 これは、CATCH ブロックのスコープ内で `ERROR_LINE` が呼び出された位置に関係なく、また `ERROR_LINE` の呼び出し回数に関係なく発生します。 これは @@ERROR などの関数とは対照的です。 @@ERROR は、エラーが発生したステートメントの直後のステートメントまたは CATCH ブロックの最初のステートメントでエラー番号を返します。  
@@ -68,7 +68,7 @@ CATCH ブロック内で呼び出されると、`ERROR_LINE` は次の値を返�
 ### <a name="a-using-error_line-in-a-catch-block"></a>A. CATCH ブロックで ERROR_LINE を使用する  
 このコード例は、0 除算エラーを生成する `SELECT` ステートメントを示しています。 `ERROR_LINE` は、エラーが発生した行番号を返します。  
   
-```  
+```sql  
 BEGIN TRY  
     -- Generate a divide-by-zero error.  
     SELECT 1/0;  
@@ -82,7 +82,7 @@ GO
 ### <a name="b-using-error_line-in-a-catch-block-with-a-stored-procedure"></a>B.  CATCH ブロックで ERROR_LINE をストアド プロシージャと一緒に使用する  
 この例では、0 除算エラーを生成したストアド プロシージャを示します。 `ERROR_LINE` は、エラーが発生した行番号を返します。  
   
-```  
+```sql  
 -- Verify that the stored procedure does not already exist.  
 IF OBJECT_ID ( 'usp_ExampleProc', 'P' ) IS NOT NULL   
     DROP PROCEDURE usp_ExampleProc;  
@@ -109,7 +109,7 @@ GO
 ### <a name="c-using-error_line-in-a-catch-block-with-other-error-handling-tools"></a>C. CATCH ブロックで ERROR_LINE を他のエラー処理ツールと一緒に使用する  
 このコード例は、0 除算エラーを生成する `SELECT` ステートメントを示しています。 `ERROR_LINE` は、エラーが発生した行番号と、そのエラー自体に関する情報を返します。  
   
-```  
+```sql  
 BEGIN TRY  
     -- Generate a divide-by-zero error.  
     SELECT 1/0;  
@@ -126,7 +126,7 @@ END CATCH;
 GO  
 ``` 
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [TRY...CATCH &#40;Transact-SQL&#41;](../../t-sql/language-elements/try-catch-transact-sql.md)   
  [sys.messages &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/messages-for-errors-catalog-views-sys-messages.md)   
  [ERROR_NUMBER &#40;Transact-SQL&#41;](../../t-sql/functions/error-number-transact-sql.md)   

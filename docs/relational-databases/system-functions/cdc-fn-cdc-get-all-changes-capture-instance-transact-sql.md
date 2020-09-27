@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: c6bad147-1449-4e20-a42e-b51aed76963c
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: c3877214c5df16b8c9bf48f9ee20bd2ec83109d7
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: aa461859dcc7d2adc359139e4740ea9272161bf8
+ms.sourcegitcommit: c74bb5944994e34b102615b592fdaabe54713047
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88397568"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90989945"
 ---
 # <a name="cdcfn_cdc_get_all_changes_ltcapture_instancegt--transact-sql"></a>cdc. fn_cdc_get_all_changes_ &lt; capture_instance &gt;  (transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -54,7 +54,7 @@ cdc.fn_cdc_get_all_changes_capture_instance ( from_lsn , to_lsn , '<row_filter_o
  *to_lsn*  
  結果セットに含める LSN 範囲の上端を表す LSN 値を指定します。 *to_lsn* は **binary (10)** です。  
   
- 結果セットに含まれるのは、 [&#91;capture_instance&#93;_CT](../../relational-databases/system-tables/cdc-capture-instance-ct-transact-sql.md)変更テーブルの行のうち、 **__ start_lsn $** の*値が* *from_lsn 以下 to_lsn または*等しい場合のみです。  
+ 結果セットに含まれるのは、 [&#91;capture_instance&#93;_CT](../../relational-databases/system-tables/cdc-capture-instance-ct-transact-sql.md) 変更テーブルの行のうち、 **__ start_lsn $** の値が *from_lsn* 以上で *to_lsn* 以下である場合のみです。  
   
  <row_filter_option>:: = {all | update old}  
  メタデータ列の内容と、結果セットで返される行を制御するオプション。  
@@ -80,12 +80,12 @@ cdc.fn_cdc_get_all_changes_capture_instance ( from_lsn , to_lsn , '<row_filter_o
 ## <a name="permissions"></a>アクセス許可  
  **Sysadmin**固定サーバーロールまたは**db_owner**固定データベースロールのメンバーシップが必要です。 他のすべてのユーザーに対して、ソーステーブルのすべてのキャプチャ対象列に対する SELECT 権限が必要です。また、キャプチャインスタンスのゲートロールが定義されている場合は、そのデータベースロールのメンバーシップが必要です。 呼び出し元にソースデータを表示するアクセス許可がない場合、関数はエラー 229 ("オブジェクト ' fn_cdc_get_all_changes_... '、データベース ' \<DatabaseName> '、スキーマ ' cdc ') で SELECT 権限が拒否されました。" を返します。  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>注釈  
  指定した LSN 範囲がキャプチャインスタンスの変更追跡タイムライン内に収まらない場合、関数はエラー 208 ("プロシージャまたは関数 cdc. fn_cdc_get_all_changes に指定された引数の数が不足しています。") を返します。  
   
  **__ $ Operation** = 1 または **__ $ operation** = 3 の場合、データ型**image**、 **text**、および**ntext**の列には常に NULL 値が割り当てられます。 データ型 **varbinary (max)**、 **varchar (max)**、または **nvarchar (max)** の列は、更新中に列が変更されない限り、 **__ $ operation** = 3 の場合は NULL 値が割り当てられます。 **__ $ Operation** = 1 の場合、これらの列には削除時に値が割り当てられます。 キャプチャ インスタンスに含まれる計算列の値は、常に NULL になります。  
   
-## <a name="examples"></a>例  
+## <a name="examples"></a>使用例  
  [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]変更データキャプチャのクエリ関数の使用方法を示すいくつかのテンプレートが用意されています。 これらのテンプレートは、の [ **表示** ] メニューで使用でき [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] ます。 詳細については、「 [テンプレートエクスプローラー](../../ssms/template/template-explorer.md)」を参照してください。  
   
  この例は、`Enumerate All Changes for Valid Range Template` を示しています。 この例では、関数 `cdc.fn_cdc_get_all_changes_HR_Department` を使用して、[!INCLUDE[ssSampleDBobject](../../includes/sssampledbobject-md.md)] データベース内の HumanResources.Department ソース テーブルに対して定義されているキャプチャ インスタンス `HR_Department` で現在使用できる変更をすべてレポートします。  

@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: d54aa325-8761-4cd4-8da7-acf33df12296
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: fa1828f1a6c684c0028ed3ada229aca3811a88a0
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: 5a8ba9a6a1dbc0f1c6e6c6312c627f83335bbe09
+ms.sourcegitcommit: ac9feb0b10847b369b77f3c03f8200c86ee4f4e0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89541495"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90688226"
 ---
 # <a name="alter-queue-transact-sql"></a>ALTER QUEUE (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -76,7 +76,6 @@ WITH
 {  
    ( MAXDOP = max_degree_of_parallelism )  
 }  
-  
 ```  
   
 
@@ -180,14 +179,14 @@ WITH
 ### <a name="a-making-a-queue-unavailable"></a>A. キューを利用できないようにする  
  次の例では、`ExpenseQueue` キューをメッセージの受信に利用できないようにします。  
   
-```  
+```sql  
 ALTER QUEUE ExpenseQueue WITH STATUS = OFF ;  
 ```  
   
 ### <a name="b-changing-the-activation-stored-procedure"></a>B. アクティブ化ストアド プロシージャを変更する  
  次の例では、キューによって開始されるストアド プロシージャを変更します。 このストアド プロシージャは、`ALTER QUEUE` ステートメントを実行したユーザーとして実行されます。  
   
-```  
+```sql  
 ALTER QUEUE ExpenseQueue  
     WITH ACTIVATION (  
         PROCEDURE_NAME = new_stored_proc,  
@@ -197,14 +196,14 @@ ALTER QUEUE ExpenseQueue
 ### <a name="c-changing-the-number-of-queue-readers"></a>C. キュー リーダーの数を変更する  
  次の例では、このキュー用に [!INCLUDE[ssSB](../../includes/sssb-md.md)] で起動されるストアド プロシージャ インスタンスの最大数を `7` に設定します。  
   
-```  
+```sql  
 ALTER QUEUE ExpenseQueue WITH ACTIVATION (MAX_QUEUE_READERS = 7) ;  
 ```  
   
 ### <a name="d-changing-the-activation-stored-procedure-and-the-execute-as-account"></a>D. アクティブ化ストアド プロシージャと EXECUTE AS アカウントを変更する  
  次の例では、[!INCLUDE[ssSB](../../includes/sssb-md.md)] によって開始されるストアド プロシージャを変更します。 このストアド プロシージャは、ユーザー `SecurityAccount` として実行されます。  
   
-```  
+```sql  
 ALTER QUEUE ExpenseQueue  
     WITH ACTIVATION (  
         PROCEDURE_NAME = AdventureWorks2012.dbo.new_stored_proc ,  
@@ -214,7 +213,7 @@ ALTER QUEUE ExpenseQueue
 ### <a name="e-setting-the-queue-to-retain-messages"></a>E. メッセージを保持するようキューを設定する  
  次の例では、メッセージを保持するようキューを設定します。 このキューでは、キューを使用するサービス間で送信または受信されるすべてのメッセージが、そのメッセージ交換が終わるまで保持されます。  
   
-```  
+```sql  
 ALTER QUEUE ExpenseQueue WITH RETENTION = ON ;  
 ```  
   
@@ -231,7 +230,7 @@ ALTER QUEUE ExpenseQueue WITH ACTIVATION (DROP) ;
   
  次の例では、キュー インデックスを再構築します。  
   
-```  
+```sql  
 ALTER QUEUE ExpenseQueue REBUILD WITH (MAXDOP = 2)   
 ```  
   
@@ -241,7 +240,7 @@ ALTER QUEUE ExpenseQueue REBUILD WITH (MAXDOP = 2)
   
  次の例では、キュー インデックスを再構成します。  
   
-```  
+```sql  
 ALTER QUEUE ExpenseQueue REORGANIZE   
 ```  
   
@@ -249,7 +248,7 @@ ALTER QUEUE ExpenseQueue REORGANIZE
   
 **適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降。  
   
-```  
+```sql  
 ALTER QUEUE ExpenseQueue MOVE TO [NewFilegroup]   
 ```  
   

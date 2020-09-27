@@ -29,12 +29,12 @@ ms.assetid: fc976afd-1edb-4341-bf41-c4a42a69772b
 author: pmasl
 ms.author: umajay
 monikerRange: = azuresqldb-current ||>= sql-server-2016 ||>= sql-server-linux-2017||=azure-sqldw-latest||= sqlallproducts-allversions
-ms.openlocfilehash: 48181379c0ad20f5e9d8dc1ac8a9dd304fbc5e81
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 82a558d445d93e007b9402425426815922c7043b
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88479815"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91115588"
 ---
 # <a name="dbcc-shrinkdatabase-transact-sql"></a>DBCC SHRINKDATABASE (Transact-SQL)
 [!INCLUDE [sql-asdb-asa.md](../../includes/applies-to-version/sql-asdb-asa.md)]
@@ -75,14 +75,14 @@ _target\_percent_
 データベースを圧縮した後、データベース ファイル内に残す空き領域のパーセンテージを指定します。  
   
 NOTRUNCATE  
-ファイル末尾の割り当て済みページをファイル先頭の未割り当てページに移動します。 この操作により、ファイル内のデータが圧縮されます。 _target\_percent_ は省略可能です。 Azure SQL Data Warehouse では、このオプションはサポートされていません。 
+ファイル末尾の割り当て済みページをファイル先頭の未割り当てページに移動します。 この操作により、ファイル内のデータが圧縮されます。 _target\_percent_ は省略可能です。 [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] では、このオプションはサポートされません。 
   
 ファイル末尾の空き領域はオペレーティング システムに返されず、ファイルの物理サイズは変わりません。 そのため、NOTRUNCATE を指定した場合、データベースが圧縮されていないように見えます。  
   
 NOTRUNCATE はデータ ファイルにのみ適用され、 NOTRUNCATE はログ ファイルには影響しません。  
   
 TRUNCATEONLY  
-ファイル末尾のすべての空き領域をオペレーティング システムに解放します。 ファイル内でのページの移動は行いません。 データ ファイルは、最後に割り当てられたエクステントを限度として圧縮されます。 _target\_percent_ が TRUNCATEONLY と共に指定された場合は、無視します。 Azure SQL Data Warehouse では、このオプションはサポートされていません。
+ファイル末尾のすべての空き領域をオペレーティング システムに解放します。 ファイル内でのページの移動は行いません。 データ ファイルは、最後に割り当てられたエクステントを限度として圧縮されます。 _target\_percent_ が TRUNCATEONLY と共に指定された場合は、無視します。 [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] では、このオプションはサポートされません。
   
 TRUNCATEONLY はログ ファイルに影響します。 データ ファイルのみを切り捨てるには、DBCC SHRINKFILE を使用します。  
   
@@ -152,7 +152,7 @@ DBCC SHRINKDATABASE では、各物理ログ ファイルの目標サイズへ�
 ## <a name="troubleshooting"></a>トラブルシューティング  
 [行のバージョン管理に基づく分離レベル](../../t-sql/statements/set-transaction-isolation-level-transact-sql.md)で実行されているトランザクションによって圧縮操作がブロックされる可能性があります。 たとえば、DBCC SHRINK DATABASE 操作を実行するときに、行のバージョン管理に基づく分離レベルでの大規模な削除操作が進行中であるとします。 このような状況の場合、圧縮操作はファイルを圧縮する前に、削除操作が完了するまで待機します。 圧縮操作が待機しているとき、DBCC SHRINKFILE および DBCC SHRINKDATABASE 操作によって、情報メッセージ (SHRINKDATABASE は 5202、SHRINKFILE は 5203) が出力されます。 このメッセージは、最初の 1 時間は 5 分おきに、それ以降は 1 時間おきに [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エラー ログに書き込まれます。 たとえば、エラー ログに次のエラー メッセージが含まれているとします。  
   
-```sql
+```
 DBCC SHRINKDATABASE for database ID 9 is waiting for the snapshot   
 transaction with timestamp 15 and other snapshot transactions linked to   
 timestamp 15 or with timestamps older than 109 to finish.  
@@ -186,7 +186,7 @@ DBCC SHRINKDATABASE (AdventureWorks2012, TRUNCATEONLY);
 ```  
 ### <a name="c-shrinking-an-azure-synapse-analytics-database"></a>C. Azure Synapse Analytics データベースを縮小する
 
-```
+```sql
 DBCC SHRINKDATABASE (database_A);
 DBCC SHRINKDATABASE (database_B, 10); 
 

@@ -47,12 +47,12 @@ ms.assetid: 89a4658a-62f1-4289-8982-f072229720a1
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current||>=aps-pdw-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 7b2c1984b18596a8c1c527113232c7637d309359
-ms.sourcegitcommit: 827ad02375793090fa8fee63cc372d130f11393f
+ms.openlocfilehash: afcf2e560b5fd4300c02ddf6bcc548ef68fdc05b
+ms.sourcegitcommit: 3efd8bbf91f4f78dce3a4ac03348037d8c720e6a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89480860"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91024571"
 ---
 # <a name="backup-transact-sql"></a>BACKUP (Transact-SQL)
 
@@ -1209,7 +1209,7 @@ DIFFERENTIAL: ユーザー データベースの差分バックアップを実�
 
 **BACKUP DATABASE** 許可または **db_backupoperator** 固定データベース ロールのメンバーシップが必要です。 master データベースは、**db_backupoperator** 固定データベース ロールに追加された標準ユーザーではバックアップできません。 master データベースをバックアップできるのは、**sa**、ファブリック管理者、または **sysadmin** 固定サーバー ロールのメンバーに限られます。
 
-バックアップ ディレクトリにアクセスし、作成や書き込みを行うことが許可された Windows アカウントが必要です。 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] に Windows アカウント名とパスワードを保存する必要もあります。 これらのネットワーク資格情報を [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] に追加するには、[sp_pdw_add_network_credentials - SQL Data Warehouse](../../relational-databases/system-stored-procedures/sp-pdw-add-network-credentials-sql-data-warehouse.md) ストアド プロシージャを使用します。
+バックアップ ディレクトリにアクセスし、作成や書き込みを行うことが許可された Windows アカウントが必要です。 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] に Windows アカウント名とパスワードを保存する必要もあります。 これらのネットワーク資格情報を [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] に追加するには、[sp_pdw_add_network_credentials - [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)]](../../relational-databases/system-stored-procedures/sp-pdw-add-network-credentials-sql-data-warehouse.md) ストアド プロシージャを使用します。
 
 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] の資格情報を管理する方法については、「[セキュリティ](#Security)」セクションをご覧ください。
 
@@ -1222,14 +1222,14 @@ DIFFERENTIAL: ユーザー データベースの差分バックアップを実�
 - データベースが存在しません。
 - ターゲット ディレクトリがネットワーク共有に既に存在します。
 - ターゲット ネットワーク共有が利用できません。
-- ターゲット ネットワーク共有には、バックアップのための領域が十分にありません。 BACKUP DATABASE コマンドは、バックアップの開始前に十分なディスク領域があることを確認しません。BACKUP DATABASE の実行中、ディスク容量不足エラーが生成されます。 ディスク容量不足が発生すると、[!INCLUDE[ssPDW](../../includes/sspdw-md.md)] は BACKUP DATABASE コマンドをロールバックします。 データベースのサイズを減らすには、[DBCC SHRINKLOG (Azure SQL Data Warehouse)](../../t-sql/database-console-commands/dbcc-shrinklog-azure-sql-data-warehouse.md) を実行します。
+- ターゲット ネットワーク共有には、バックアップのための領域が十分にありません。 BACKUP DATABASE コマンドは、バックアップの開始前に十分なディスク領域があることを確認しません。BACKUP DATABASE の実行中、ディスク容量不足エラーが生成されます。 ディスク容量不足が発生すると、[!INCLUDE[ssPDW](../../includes/sspdw-md.md)] は BACKUP DATABASE コマンドをロールバックします。 データベースのサイズを減らすには、[DBCC SHRINKLOG ([!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)])](../../t-sql/database-console-commands/dbcc-shrinklog-azure-sql-data-warehouse.md) を実行します
 - トランザクション内でバックアップを開始しようとします。
 
 ::: moniker-end
 ::: moniker range=">=aps-pdw-2016||>=sql-server-2016||>=sql-server-linux-2017||=sqlallproducts-allversions"
 ## <a name="general-remarks"></a>全般的な解説
 
-データベース バックアップを実行する前に、[DBCC SHRINKLOG (Azure SQL Data Warehouse)](../../t-sql/database-console-commands/dbcc-shrinklog-azure-sql-data-warehouse.md) を使用し、データベースのサイズを減らします。
+データベース バックアップを実行する前に、[DBCC SHRINKLOG ([!INCLUDE[ssPDW](../../includes/sspdw-md.md)])](../../t-sql/database-console-commands/dbcc-shrinklog-azure-sql-data-warehouse.md) を使用し、データベースのサイズを減らします。 
 
 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] バックアップは、同じディレクトリ内で複数のファイルのセットとして保存されます。
 
@@ -1288,9 +1288,9 @@ DATABASE オブジェクトに ExclusiveUpdate ロックを実行します。
 > [!IMPORTANT]
 > データのセキュリティ リスクを緩和するために、バックアップ操作と復元操作を実行する目的のためだけに Windows アカウントを 1 つ用意することをお勧めします。 そのアカウントのアクセス許可をバックアップの場所に限定します。
 
-[sp_pdw_add_network_credentials - SQL Data Warehouse](../../relational-databases/system-stored-procedures/sp-pdw-add-network-credentials-sql-data-warehouse.md) ストアド プロシージャを実行し、[!INCLUDE[ssPDW](../../includes/sspdw-md.md)] にユーザー名とパスワードを保存する必要があります。 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] では Windows Credential Manager を利用し、計算ノードにユーザー名とパスワードを保存し、復号します。 資格情報は BACKUP DATABASE コマンドでバックアップされません。
+[sp_pdw_add_network_credentials - [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)]](../../relational-databases/system-stored-procedures/sp-pdw-add-network-credentials-sql-data-warehouse.md) ストアド プロシージャを実行し、[!INCLUDE[ssPDW](../../includes/sspdw-md.md)] にユーザー名とパスワードを保存する必要があります。 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] では Windows Credential Manager を利用し、計算ノードにユーザー名とパスワードを保存し、復号します。 資格情報は BACKUP DATABASE コマンドでバックアップされません。
 
-[!INCLUDE[ssPDW](../../includes/sspdw-md.md)] からネットワーク資格情報を削除する方法については、「[sp_pdw_remove_network_credentials - SQL Data Warehouse](../../relational-databases/system-stored-procedures/sp-pdw-remove-network-credentials-sql-data-warehouse.md)」をご覧ください。
+[!INCLUDE[ssPDW](../../includes/sspdw-md.md)] からネットワーク資格情報を削除する方法については、「[sp_pdw_remove_network_credentials - [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)]](../../relational-databases/system-stored-procedures/sp-pdw-remove-network-credentials-sql-data-warehouse.md)」をご覧ください。
 
 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] に保存されているネットワーク資格情報を一覧表示するには、[sys.dm_pdw_network_credentials](../../relational-databases/system-dynamic-management-views/sys-dm-pdw-network-credentials-transact-sql.md) 動的管理ビューを使用してください。
 

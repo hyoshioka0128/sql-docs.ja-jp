@@ -1,26 +1,26 @@
 ---
-title: SQL ループバック接続
+title: Pyrhon と R の SQL ループバック接続
 description: sp_execute_external_script から実行される Python または R スクリプトからデータの読み取りまたは書き込みを行うために、ループバック接続を使用して ODBC 経由で SQL Server に接続する方法について説明します。
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 08/21/2019
+ms.date: 08/20/2020
 ms.topic: conceptual
 author: Aniruddh25
 ms.author: anmunde
 ms.reviewer: dphansen
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 00938d1fe628c4984a55cb5c0b76e6910293808a
-ms.sourcegitcommit: edba1c570d4d8832502135bef093aac07e156c95
+ms.openlocfilehash: 21c32a27a94dcf8a1981f1fde2eb4db0b71b1b8a
+ms.sourcegitcommit: a9f16d7819ed0e2b7ad8f4a7d4d2397437b2bbb2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86482663"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88714140"
 ---
 # <a name="loopback-connection-to-sql-server-from-a-python-or-r-script"></a>Python または R スクリプトからの SQL Server へのループバック接続
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2019 and later](../../includes/applies-to-version/sqlserver2019.md)]
 
-`sp_execute_external_script` から実行される Python または R スクリプトからデータの読み取りまたは書き込みを行うために、ループバック接続を使用して [ODBC](../../connect/odbc/microsoft-odbc-driver-for-sql-server.md) 経由で SQL Server に接続する方法について説明します。 この方法は、`sp_execute_external_script` の **InputDataSet** 引数と **OutputDataSet** 引数を使用できない場合に使用できます。
+[sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) から実行される Python または R スクリプトからデータの読み取りまたは書き込みを行うために、ループバック接続と [Machine Learning Services](../sql-server-machine-learning-services.md) を使用して [ODBC](../../connect/odbc/microsoft-odbc-driver-for-sql-server.md) 経由で SQL Server に接続する方法について説明します。 この方法は、`sp_execute_external_script` の **InputDataSet** 引数と **OutputDataSet** 引数を使用できない場合に使用できます。
 
 ## <a name="connection-string"></a>接続文字列
 

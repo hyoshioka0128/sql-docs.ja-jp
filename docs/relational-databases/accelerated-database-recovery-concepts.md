@@ -13,18 +13,24 @@ author: mashamsft
 ms.author: mathoma
 ms.reviewer: kfarlee
 monikerRange: '>=sql-server-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: da1baba9e50007358bd7a0f4d550282ee130e4a7
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: b6c05db7b6022aec3b7f6123f0a070f238560db8
+ms.sourcegitcommit: c74bb5944994e34b102615b592fdaabe54713047
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88491475"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90989889"
 ---
 # <a name="accelerated-database-recovery"></a>高速データベース復旧
 
 [!INCLUDE [SQL Server ASDB, ASDBMI, ASDW ](../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
 
-高速データベース復旧 (ADR) では、SQL データベース エンジンの復旧プロセスの再設計により、データベースの可用性が向上します (実行時間の長いトランザクションが存在する場合は特に)。 ADR は SQL Server 2019 の新しい機能です。また、Azure SQL Database の単一データベースとプールされたデータベースや Azure SQL Data Warehouse (現在、プレビュー段階) のデータベースで利用できます。 ADR の主な利点:
+高速データベース復旧 (ADR) では、SQL データベース エンジンの復旧プロセスの再設計により、データベースの可用性が向上します (実行時間の長いトランザクションが存在する場合は特に)。 ADR は SQL Server 2019 の新機能です。 
+
+ADR は、Azure SQL Database、Azure SQL Managed Instance、Azure Synapse SQL のデータベースでも使用可能です。 ADR は SQL Database と SQL Managed Instance で既定で有効になっており、無効にすることはできません。 
+
+## <a name="overview"></a>概要
+
+ADR の主な利点:
 
 - **高速かつ一貫性のあるデータベース復旧**
 

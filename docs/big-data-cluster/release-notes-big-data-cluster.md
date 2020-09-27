@@ -5,16 +5,16 @@ description: この記事では、SQL Server ビッグ データ クラスター
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: mihaelab
-ms.date: 06/22/2020
+ms.date: 09/02/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 212c80adf64c9991aaf80cb422ded8fcbd1266ef
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: d9c08893006e0b2edf093477259ebed788d49097
+ms.sourcegitcommit: c74bb5944994e34b102615b592fdaabe54713047
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85772903"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90989995"
 ---
 # <a name="sql-server-2019-big-data-clusters-release-notes"></a>SQL Server 2019 ビッグ データ クラスターのリリース ノート
 
@@ -47,7 +47,7 @@ ms.locfileid: "85772903"
 
 |Edition|Notes|
 |---------|---------|
-|Enterprise<br/>Standard<br/>Developer| ビッグ データ クラスターのエディションは、SQL Server マスター インスタンスのエディションによって決まります。 展開時に、Developer エディションが既定で展開されます。 エディションは、展開後に変更できます。 [SQL Server マスター インスタンスの構成](../big-data-cluster/configure-sql-server-master-instance.md)に関するページを参照してください。 |
+|Enterprise<br/>Standard<br/>Developer| ビッグ データ クラスターのエディションは、SQL Server マスター インスタンスのエディションによって決まります。 展開時に、Developer エディションが既定で展開されます。 エディションは、展開後に変更できます。 [SQL Server マスター インスタンスの構成](./configure-sql-server-master-instance.md)に関するページを参照してください。 |
 
 ## <a name="tools"></a>ツール
 
@@ -62,18 +62,42 @@ ms.locfileid: "85772903"
 
 [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ver15.md)] のリリース履歴の一覧を次の表に示します。
 
-| Release          | BDC のバージョン    | `azdata` のバージョン| リリース日 |
-|------------------|----------------|-----------------|--------------|
-| [CU5](#cu5)      | 15.0.4043.16   | 20.0.0          | 2020-06-22   |
-| [CU4](#cu4)      | 15.0.4033.1    | 15.0.4033       | 2020-03-31   |
-| [CU3](#cu3)      | 15.0.4023.6    | 15.0.4023       | 2020-03-12   |
-| [CU2](#cu2)      | 15.0.4013.40   | 15.0.4013       | 2020-02-13   |
-| [CU1](#cu1)      | 15.0.4003.23   | 15.0.4003       | 2020-01-07   |
-| [GDR1](#rtm)     | 15.0.2070.34   | 15.0.2070       | 2019-11-04   |
+| リリース <sup>1</sup> | BDC のバージョン  | `azdata` バージョン <sup>2</sup> | リリース日 |
+|----------------------|--------------|-------------------------------|--------------|
+| [CU6](#cu6)          | 15.0.4053.23 | 20.0.1                        | 2020-08-04   |
+| [CU5](#cu5)          | 15.0.4043.16 | 20.0.0                        | 2020-06-22   |
+| [CU4](#cu4)          | 15.0.4033.1  | 15.0.4033                     | 2020-03-31   |
+| [CU3](#cu3)          | 15.0.4023.6  | 15.0.4023                     | 2020-03-12   |
+| [CU2](#cu2)          | 15.0.4013.40 | 15.0.4013                     | 2020-02-13   |
+| [CU1](#cu1)          | 15.0.4003.23 | 15.0.4003                     | 2020-01-07   |
+| [GDR1](#rtm)         | 15.0.2070.34 | 15.0.2070                     | 2019-11-04   |
+
+<sup>1</sup> CU7 の SQL Server 2019 ビッグ データ クラスター更新プログラムはありません。
+
+<sup>2</sup> `azdata` バージョンは、CU リリース時のツールのバージョンを反映しています。 `azdata` はサーバー リリースとは無関係でリリースされることもあります。そのため、最新のパッケージをインストールするとき、新しいバージョンが取得されることがあります。 新しいバージョンは、前にリリースされた CU との間に互換性があります。
 
 ## <a name="how-to-install-updates"></a>更新プログラムのインストール方法
 
 更新プログラムをインストールする方法については、「[[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]をアップグレードする方法](deployment-upgrade.md)」を参照してください。
+
+## <a name="cu6-july-2020"></a><a id="cu6"></a> CU6 (2020 年 7 月)
+
+SQL Server 2019 の累積的な更新プログラム 6 (CU6) リリース。
+
+|パッケージ バージョン | イメージ タグ |
+|-----|-----|
+|15.0.4053.23 |[2019-CU6-ubuntu-16.04]
+
+このリリースには、軽微な修正と機能強化が含まれています。 次の記事には、これらの更新プログラムに関連する情報が記されています。
+
+- [Active Directory モードでビッグ データ クラスター アクセスを管理する](manage-user-access.md)
+- [Active Directory モードで [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]を展開する](deploy-active-directory.md)
+- [高可用性を使用して SQL Server ビッグ データ クラスターを展開する](deployment-high-availability.md)
+- [SQL Server ビッグ データ クラスターを構成する](configure-cluster.md)
+- [ビッグ データ クラスターで Apache Spark と Apache Hadoop を構成する](configure-spark-hdfs.md)
+- [SQL Server マスター インスタンスの構成プロパティ。](reference-config-master-instance.md)
+- [Apache Spark と Apache Hadoop (HDFS) の構成プロパティ](reference-config-spark-hadoop.md)
+- [Kubernetes RBAC モデルと BDC を管理するユーザーおよびサービス アカウントへの影響](kubernetes-rbac.md)
 
 ## <a name="cu5-june-2020"></a><a id="cu5"></a> CU5 (2020 年 6 月)
 
@@ -89,7 +113,7 @@ SQL Server 2019 の累積的な更新プログラム 5 (CU5) リリース。
 - BDC のデプロイ セキュリティ モデルが更新されたため、BDC の一部としてデプロイされた特権コンテナーが "*必要*" なくなりました。 SQL Server 2019 CU5 を使用するすべての新しいデプロイでは、非特権だけでなく、コンテナーも既定では非ルート ユーザーとして実行されます。 
 - Active Directory ドメインに対して複数のビッグ データ クラスターをデプロイするためのサポートが追加されました。
 - `azdata` CLI には、サーバーから独立した独自のセマンティック バージョンがあります。 azdata のクライアントとサーバー バージョンの間の依存関係はすべて削除されます。 最新の拡張機能と修正プログラムの利点が確実に得られるように、クライアントとサーバーの両方に最新バージョンを使用することをお勧めします。
-- 特定の外部データ ソースのイントロスペクションをサポートするために、sp_data_source_objects と sp_data_source_columns という 2 つの新しいストアド プロシージャが導入されました。 これらは、お客様が T-SQL を介して直接使用し、スキーマを検出したり、仮想化が可能なテーブルを確認したりすることができます。 これらの変更は、Azure Data Studio 用の[データ仮想化拡張機能](../azure-data-studio/data-virtualization-extension.md)の外部テーブル ウィザードで活用されます。これにより、SQL Server、Oracle、MongoDB、Teradata から外部テーブルを作成することができます。
+- 特定の外部データ ソースのイントロスペクションをサポートするために、sp_data_source_objects と sp_data_source_table_columns という 2 つの新しいストアド プロシージャが導入されました。 これらは、お客様が T-SQL を介して直接使用し、スキーマを検出したり、仮想化が可能なテーブルを確認したりすることができます。 これらの変更は、Azure Data Studio 用の[データ仮想化拡張機能](../azure-data-studio/data-virtualization-extension.md)の外部テーブル ウィザードで活用されます。これにより、SQL Server、Oracle、MongoDB、Teradata から外部テーブルを作成することができます。
 - Grafana で実行されたカスタマイズを永続化するためのサポートが追加されました。 CU5 より前のお客様は、Grafana 構成でのすべての編集が、(Grafana ダッシュボードをホストする) `metricsui` ポッドの再起動時に失われることにお気付きかもしれません。 この問題は修正され、すべての構成が永続化されるようになりました。 
 - (`metricsdc` ポッドでホストされている) Telegraf を使ってポッドとノードのメトリックを収集するために使用される、API に関するセキュリティの問題が修正されました。 この変更の結果として、Telegraf を使用する場合、ポッドとノードのメトリックを収集するために必要なアクセス許可をサービス アカウント、クラスター ロールおよびクラスター バインドに付与することが必要になりました。 詳細については、「[ポッドとノードのメトリックの収集に必要なクラスター ロール](kubernetes-rbac.md#cluster-role-required-for-pods-and-nodes-metrics-collection)」を参照してください。
 - ポッドとノードのメトリックの収集を制御するために、2 つの機能スイッチが追加されました。 Kubernetes インフラストラクチャの監視に別のソリューションを使用する場合は、control.json 展開構成ファイルで *allowNodeMetricsCollection* と *allowPodMetricsCollection* を false に設定し、ポッドとホスト ノードに対する組み込みのメトリック収集を無効にすることができます。 OpenShift 環境の場合、組み込みのデプロイ プロファイルではこれらの設定が既定では false に設定されます。これは、ポッドとノードのメトリックを収集するには特権機能が必要であるためです。
@@ -144,6 +168,28 @@ SQL Server 2019 一般配布リリース 1 (GDR1) で [!INCLUDE[big-data-cluster
 [!INCLUDE [sql-server-servicing-updates-version-15](../includes/sql-server-servicing-updates-version-15.md)]
 
 ## <a name="known-issues"></a>既知の問題
+
+### <a name="empty-livy-jobs-before-you-apply-cumulative-updates"></a>累積更新プログラムを適用する前の空の Livy ジョブ
+
+- **影響を受けるリリース**: 現在の累積的な更新プログラム全体
+
+- **問題およびユーザーへの影響**:アップグレード中、sparkhead は 404 エラーを返します。
+
+- **回避策**:BDC をアップグレードする前に、アクティブな Livy セッションまたはバッチ ジョブがないことを確認してください。 これを回避するには、「[サポートされているリリースからのアップグレード](deployment-upgrade.md#upgrade-from-supported-release)」の手順に従ってください。 
+
+   アップグレード処理中に Livy から 404 エラーが返された場合は、両方の sparkhead ノードで Livy サーバーを再起動します。 次に例を示します。
+
+   ```console
+   kubectl -n <clustername> exec -it sparkhead-0/sparkhead-1 -c hadoop-livy-sparkhistory -- exec supervisorctl restart livy
+   ```
+
+### <a name="big-data-cluster-generated-service-accounts-passwords-expiration"></a>ビッグ データ クラスターによって生成されたサービスアカウントのパスワードの有効期限
+
+- **影響を受けるリリース**: Active Directory 統合を使用したすべてのビッグ データ クラスターのデプロイ (リリースには無関係)
+
+- **問題およびユーザーへの影響**:ビッグ データ クラスターのデプロイ中に、ワークフローによって一連の[サービス アカウント](active-directory-objects.md)が生成されます。ドメイン コントローラーで設定されているパスワードの有効期限ポリシーによっては、これらのアカウントのパスワードの有効期限が切れることがあります (既定値は 42 日)。 現時点では、BDC 内のすべてのアカウントの資格情報をローテーションするメカニズムはないため、有効期限が切れるとクラスターは動作しなくなります。
+
+- **回避策**:ドメイン コントローラーで、BDC サービス アカウントの有効期限ポリシーを "パスワードを無期限にする" に更新します。 これらのアカウントの完全な一覧については、「[Active Directory オブジェクトの自動生成](active-directory-objects.md)」をご覧ください。 この操作は、有効期限の前または後に行うことができます。 後者の場合、Active Directory によって、期限切れのパスワードが再アクティブ化されます。
 
 ### <a name="credentials-for-accessing-services-through-gateway-endpoint"></a>ゲートウェイ エンドポイント経由でサービスにアクセスするための資格情報
 

@@ -1,7 +1,7 @@
 ---
 title: インストーラーを使用して azdata を Linux にインストールする
-titleSuffix: SQL Server big data clusters
-description: SQL Server ビッグ データ クラスターをインストールおよび管理するためにインストーラー (Linux) を使用して azdata ツールをインストールする方法について説明します。
+titleSuffix: ''
+description: インストーラーで azdata ツールをインストールする方法について説明します (Linux)。
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: mihaelab
@@ -9,18 +9,18 @@ ms.date: 01/07/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 767268e11519d6ec3a4c3af4325870361a92cfc7
-ms.sourcegitcommit: 883435b4c7366f06ac03579752093737b098feab
+ms.openlocfilehash: 2dc1c3d58ee5f7b6ea032a2e41f7c18431229881
+ms.sourcegitcommit: d56f1eca807c55cf606a6316f3872585f014fec1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89733873"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90914963"
 ---
 # <a name="install-azdata-with-apt"></a>apt での `azdata` のインストール
 
-[!INCLUDE[SQL Server 2019](../../includes/applies-to-version/sqlserver2019.md)]
+[!INCLUDE[SQL Server 2019](../../includes/applies-to-version/azdata.md)]
 
-この記事では、Linux に SQL Server 2019 ビッグ データ クラスター用の `azdata` をインストールする方法について説明します。 これらのパッケージ マネージャーが使用可能になる前は、`azdata` をインストールするために `pip` が必要でした。
+この記事では、Linux に `azdata` をインストールする方法について説明します。 これらのパッケージ マネージャーが使用可能になる前は、`azdata` をインストールするために `pip` が必要でした。
 
 [!INCLUDE [azdata-package-installation-remove-pip-install](../../includes/azdata-package-installation-remove-pip-install.md)]
 
@@ -52,12 +52,12 @@ Ubuntu で使用可能な `azdata` インストール パッケージは `apt` �
 
    Ubuntu 16.04 クライアントには次を実行します。
     ```bash
-    sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/16.04/mssql-server-2019.list)"
+    sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/16.04/prod.list)"
     ```
 
    Ubuntu 18.04 クライアントには次を実行します。
     ```bash
-    sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/18.04/mssql-server-2019.list)"
+    sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/18.04/prod.list)"
     ```
 
 4. リポジトリ情報を更新し、`azdata` をインストールします。
@@ -113,3 +113,5 @@ sudo apt-get update && sudo apt-get install --only-upgrade -y azdata-cli
 ## <a name="next-steps"></a>次のステップ
 
 ビッグ データ クラスターの詳細については、「[[!INCLUDE[big-data-clusters-2019](../../includes/ssbigdataclusters-ver15.md)]とは](../../big-data-cluster/big-data-cluster-overview.md)」を参照してください。
+
+[Azure Arc 対応データ サービス](/azure/azure-arc/data/)で azdata を使用する

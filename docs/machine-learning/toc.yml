@@ -35,9 +35,15 @@
       href: ../machine-learning/install/sql-ml-component-commandline-install.md
     - name: 事前トレーニング済みモデルのインストール
       href: ../machine-learning/install/sql-pretrained-models-install.md
+    - name: カスタム ランタイムをインストールする
+      items:
+        - name: Python カスタム ランタイムをインストールする
+          href: ../machine-learning/install/custom-runtime-python.md
+        - name: R カスタム ランタイムをインストールする
+          href: ../machine-learning/install/custom-runtime-r.md
     - name: 既定の Python および R ランタイムの変更
       href: ../machine-learning/install/change-default-language-runtime-version.md
-    - name: Python と R のアップグレード
+    - name: バインドを使用した Python と R ランタイムのアップグレード
       href: ../machine-learning/install/upgrade-r-and-python.md
     - name: Azure Data Studio ノートブック
       href: ../machine-learning/install/sql-machine-learning-azure-data-studio.md

@@ -1,5 +1,6 @@
 ---
-title: PDO::prepare | Microsoft Docs
+title: PDO::prepare
+description: SQL Server 用 Microsoft PDO_SQLSRV Driver for PHP の PDO::prepare 関数の API リファレンス。
 ms.custom: ''
 ms.date: 01/31/2020
 ms.prod: sql
@@ -8,14 +9,14 @@ ms.reviewer: ''
 ms.technology: connectivity
 ms.topic: conceptual
 ms.assetid: a8b16fdc-c748-49be-acf2-a6ac7432d16b
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 902a1e986f79205dfd676c635ac54814382c2ec3
-ms.sourcegitcommit: ff82f3260ff79ed860a7a58f54ff7f0594851e6b
+author: David-Engel
+ms.author: v-daenge
+ms.openlocfilehash: 92e2e9093c5435512f853c9680640784f82e9db6
+ms.sourcegitcommit: 129f8574eba201eb6ade1f1620c6b80dfe63b331
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "76941204"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87435207"
 ---
 # <a name="pdoprepare"></a>PDO::prepare
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]
@@ -29,9 +30,9 @@ PDOStatement PDO::prepare ( $statement [, array(key_pair)] )
 ```
 
 #### <a name="parameters"></a>パラメーター
-$*statement*: SQL ステートメントを含む文字列。
+$*ステートメント*:SQL ステートメントを含む文字列。
 
-*key_pair*: 属性の名前と値を含む配列。 詳細については、「解説」を参照してください。
+*key_pair*:属性の名前と値を含む配列。 詳細については、次の「解説」を参照してください。
 
 ## <a name="return-value"></a>戻り値
 成功した場合は、PDOStatement オブジェクトを返します。 失敗した場合は、PDOException オブジェクトを、または `PDO::ATTR_ERRMODE` の値によっては false を返します。
@@ -49,7 +50,7 @@ $*statement*: SQL ステートメントを含む文字列。
 |PDO::SQLSRV_ATTR_DECIMAL_PLACES|フェッチされた通貨値の書式設定時に、小数点以下の桁数を指定します。 このオプションは `PDO::SQLSRV_ATTR_FORMAT_DECIMALS` が true の場合のみ機能します。 詳細については、「[10 進数文字列と金額の書式設定 (PDO_SQLSRV ドライバー)](../../connect/php/formatting-decimals-pdo-sqlsrv-driver.md)」を参照してください。|
 |PDO::SQLSRV_ATTR_DIRECT_QUERY|True の場合、直接クエリの実行を指定します。 False は、準備されたステートメントの実行です。 `PDO::SQLSRV_ATTR_DIRECT_QUERY` に関する詳細については、「[Direct Statement Execution and Prepared Statement Execution in the PDO_SQLSRV Driver](../../connect/php/direct-statement-execution-prepared-statement-execution-pdo-sqlsrv-driver.md)」 (PDO_SQLSRV ドライバーでの直接ステートメント実行と準備されたステートメントの実行) を参照してください。|
 |PDO::SQLSRV_ATTR_ENCODING|PDO::SQLSRV_ENCODING_UTF8 (既定値)<br /><br />PDO::SQLSRV_ENCODING_SYSTEM<br /><br />PDO::SQLSRV_ENCODING_BINARY|
-|PDO::SQLSRV_ATTR_FETCHES_DATETIME_TYPE|日付型と時刻型を [PHP DateTime](http://php.net/manual/en/class.datetime.php) オブジェクトを使用して取得するかどうかを指定します。 詳細については、「[方法: PDO_SQLSRV ドライバーを使用して日付/時刻型を PHP DateTime オブジェクトとして取得する](../../connect/php/how-to-retrieve-datetime-objects-using-pdo-sqlsrv-driver.md)」を参照してください。|  
+|PDO::SQLSRV_ATTR_FETCHES_DATETIME_TYPE|日付型と時刻型を [PHP DateTime](http://php.net/manual/en/class.datetime.php) オブジェクトを使用して取得するかどうかを指定します。 詳細については、「[PDO_SQLSRV ドライバーを使用して日付と時刻の型を PHP DateTime オブジェクトとして取得する](../../connect/php/how-to-retrieve-datetime-objects-using-pdo-sqlsrv-driver.md)」を参照してください。|  
 |PDO::SQLSRV_ATTR_FETCHES_NUMERIC_TYPE|数値の SQL 型の列からの数値フェッチを処理します。 詳細については、「 [PDO::setAttribute](../../connect/php/pdo-setattribute.md)」を参照してください。|
 |PDO::SQLSRV_ATTR_FORMAT_DECIMALS|該当する場合に 10 進文字列の前にゼロを追加するかどうかを指定します。 このオプションを設定すると、`PDO::SQLSRV_ATTR_DECIMAL_PLACES` オプションが money 型の書式設定用に有効となります。 詳細については、「[10 進数文字列と金額の書式設定 (PDO_SQLSRV ドライバー)](../../connect/php/formatting-decimals-pdo-sqlsrv-driver.md)」を参照してください。| 
 |PDO::SQLSRV_ATTR_QUERY_TIMEOUT|詳細については、「 [PDO::setAttribute](../../connect/php/pdo-setattribute.md)」を参照してください。|
@@ -60,7 +61,7 @@ array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL, PDO::SQLSRV_ATTR_CURSOR_SCROLL_TYP
 ```
 `PDO::SQLSRV_ATTR_CURSOR_SCROLL_TYPE` に指定可能な値を次の表に示します。 スクロール可能なカーソルの詳細については、「[カーソルの種類 &#40;PDO_SQLSRV ドライバー&#41;](../../connect/php/cursor-types-pdo-sqlsrv-driver.md)」を参照してください。
 
-|値|説明|
+|[値]|説明|
 |---------|---------------|
 |PDO::SQLSRV_CURSOR_BUFFERED|クライアント側の (バッファー処理された) 静的カーソルを作成します。これは、クライアント マシンのメモリ内に結果セットをバッファー処理します。|
 |PDO::SQLSRV_CURSOR_DYNAMIC|サーバー側 (バッファーなし) の動的カーソルを作成します。これは、任意の順序で行にアクセスすることができ、変更内容がデータベースに反映されます。|

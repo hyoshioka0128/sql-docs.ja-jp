@@ -2,7 +2,7 @@
 title: tempdb データベース | Microsoft Docs
 description: このトピックでは、SQL Server と Azure SQL Database で tempdb データベースを構成し、使用する方法について説明します。
 ms.custom: P360
-ms.date: 04/17/2020
+ms.date: 09/16/2020
 ms.prod: sql
 ms.prod_service: database-engine
 ms.technology: ''
@@ -15,14 +15,13 @@ helpviewer_keywords:
 ms.assetid: ce4053fb-e37a-4851-b711-8e504059a780
 author: stevestein
 ms.author: sstein
-ms.reviewer: carlrab
 monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: eafc98ea91b60ec21396e1b25eca2684e24f5cfc
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: 30e481590a41e5c5670360bac265a0d7656fff9f
+ms.sourcegitcommit: 3efd8bbf91f4f78dce3a4ac03348037d8c720e6a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88861363"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91024344"
 ---
 # <a name="tempdb-database"></a>tempdb データベース
 
@@ -116,6 +115,8 @@ ms.locfileid: "88861363"
 
 ### <a name="tempdb-sizes-for-dtu-based-service-tiers"></a>DTU に基づくサービス層の tempdb のサイズ
 
+<!-- tempdb being larger for Basic and 50 eDTU pools than for 100-400 eDTU pools reflects actual config (historical reasons) --> 
+
 |サービス レベルの目標|`tempdb` の最大データ ファイル サイズ (GB)|`tempdb` のデータ ファイルの数|`tempdb` の最大データ サイズ (GB)|
 |---|---:|---:|---:|
 |Basic|13.9|1|13.9|
@@ -134,10 +135,16 @@ ms.locfileid: "88861363"
 |P6|13.9|12|166.7|
 |P11|13.9|12|166.7|
 |P15|13.9|12|166.7|
-|Premium エラスティック データベース プール数 (すべて DTU 構成)|13.9|12|166.7|
-|Standard エラスティック データベース プール数 (S0 - S2)|13.9|12|166.7|
-|Standard エラスティック データベース プール数 (S3 以上) |32|12|384|
-|Basic エラスティック データベース プール数 (すべて DTU 構成)|13.9|12|166.7|
+|Basic エラスティック プール (すべての DTU 構成)|13.9|12|166.7|
+|Standard エラスティック プール (50 eDTU)|13.9|12|166.7|
+|Standard エラスティック プール (100 eDTU)|32|1|32|
+|Standard エラスティック プール (200 eDTU)|32|2|64|
+|Standard エラスティック プール (300 eDTU)|32|3|96|
+|Standard エラスティック プール (400 eDTU)|32|3|96|
+|Standard エラスティック プール (800 eDTU)|32|6|192|
+|Standard エラスティック プール (1200 eDTU)|32|10|320|
+|Standard エラスティック プール (1600-3000 eDTU)|32|12|384|
+|Premium エラスティック プール (すべての DTU 構成)|13.9|12|166.7|
 ||||
 
 ### <a name="tempdb-sizes-for-vcore-based-service-tiers"></a>vCore に基づくサービス層の tempdb のサイズ
@@ -228,15 +235,33 @@ GO
 > [!VIDEO https://channel9.msdn.com/Shows/Data-Exposed/How-and-When-To-Memory-Optimized-TempDB-Metadata/player?WT.mc_id=dataexposed-c9-niner]
 
 
+### <a name="configuring-and-using-memory-optimized-tempdb-metadata"></a>メモリ最適化 tempdb メタデータの構成と使用
+
 この新しい機能にオプトインするには、次のスクリプトを使用します。
 
 ```sql
-ALTER SERVER CONFIGURATION SET MEMORY_OPTIMIZED TEMPDB_METADATA = ON 
+ALTER SERVER CONFIGURATION SET MEMORY_OPTIMIZED TEMPDB_METADATA = ON;
 ```
 
 この構成の変更を有効にするには、サービスの再起動が必要です。
 
-この実装にはいくつかの制限があります。
+次の T-SQL コマンドを使用して、`tempdb` がメモリ最適化かどうかを確認できます。
+
+```sql
+SELECT SERVERPROPERTY('IsTempdbMetadataMemoryOptimized');
+```
+
+メモリ最適化 `tempdb` メタデータを有効にした後に、何らかの理由でサーバーの起動に失敗した場合は、 **-f** スタートアップ オプションを使用して[最小構成](../../database-engine/configure-windows/start-sql-server-with-minimal-configuration.md)で SQL Server インスタンスを開始することで、この機能を回避できます。 その後、この機能を無効にして、通常モードで SQL Server を再起動できます。
+
+サーバーを潜在的なメモリ不足の状態から保護するために、`tempdb` を[リソース プール](../in-memory-oltp/bind-a-database-with-memory-optimized-tables-to-a-resource-pool.md)にバインドすることができます。 これは、リソース プールをデータベースにバインドするために通常実行する手順の代わりに [`ALTER SERVER`](../../t-sql/statements/alter-server-configuration-transact-sql.md) コマンドを使用して行います。
+
+```sql
+ALTER SERVER CONFIGURATION SET MEMORY_OPTIMIZED TEMPDB_METADATA = ON (RESOURCE_POOL = 'pool_name');
+```
+
+メモリ最適化 tempdb メタデータが既に有効になっている場合でも、この変更を有効にするには再起動も必要です。
+
+### <a name="memory-optimized-tempdb-limitations"></a>メモリ最適化 tempdb メタデータの制限
 
 - 機能のオンとオフの切り替えは、動的ではありません。 `tempdb` の構造を根本的に変更する必要があるため、この機能を有効または無効にするには再起動が必要です。
 
@@ -249,12 +274,15 @@ ALTER SERVER CONFIGURATION SET MEMORY_OPTIMIZED TEMPDB_METADATA = ON
   例:
     
   ```sql
-  BEGIN TRAN
+  BEGIN TRAN;
+  
   SELECT *
-  FROM tempdb.sys.tables  -----> Creates a user in-memory OLTP transaction on tempdb
+  FROM tempdb.sys.tables;  -----> Creates a user in-memory OLTP transaction in tempdb
+  
   INSERT INTO <user database>.<schema>.<mem-optimized table>
-  VALUES (1)  ----> Tries to create user in-memory OLTP transaction but will fail
-   COMMIT TRAN
+  VALUES (1); ----> Tries to create a user in-memory OLTP transaction in the user database but will fail
+  
+  COMMIT TRAN;
   ```
     
 - メモリ最適化テーブルに対するクエリではロックと分離のヒントがサポートされていないため、メモリ最適化 `tempdb` カタログ ビューに対するクエリでは、ロックと分離のヒントは適用されません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 内の他のシステム カタログ ビューと同じように、システム ビューに対するすべてのトランザクションは、`READ COMMITTED` (または、このケースでは `READ COMMITTED SNAPSHOT`) の分離になります。
@@ -265,14 +293,6 @@ ALTER SERVER CONFIGURATION SET MEMORY_OPTIMIZED TEMPDB_METADATA = ON
 
 > [!NOTE] 
 > これらの制限は、`tempdb` システム ビューを参照している場合にのみ適用されます。 必要に応じて、ユーザー データベース内のメモリ最適化テーブルにアクセスするときに、同じトランザクションで一時テーブルを作成できます。
-
-次の T-SQL コマンドを使用して、`tempdb` がメモリ最適化かどうかを確認できます。
-
-```
-SELECT SERVERPROPERTY('IsTempdbMetadataMemoryOptimized')
-```
-
-メモリ最適化 `tempdb` メタデータを有効にした後に、何らかの理由でサーバーの起動に失敗した場合は、 **-f** スタートアップ オプションを使用して[最小構成](../../database-engine/configure-windows/start-sql-server-with-minimal-configuration.md)で SQL Server インスタンスを開始することで、この機能を回避できます。 その後、この機能を無効にして、通常モードで SQL Server を再起動できます。
 
 ## <a name="capacity-planning-for-tempdb-in-sql-server"></a>SQL Server での tempdb の容量計画
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 運用環境での `tempdb` の適切なサイズを判断するには、多くの要因が関係します。 前に説明したように、これらの要因には既存のワークロードや使用されている [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の機能などがあります。 SQL Server のテスト環境で次のタスクを実行して、既存のワークロードを分析することをお勧めします。

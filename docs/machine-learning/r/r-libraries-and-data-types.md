@@ -9,15 +9,15 @@ author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: bf08045adba7298d5a5b8e261c406915b44effe0
-ms.sourcegitcommit: fd7b268a34562d70d46441f689543ecce7df2e4d
+ms.openlocfilehash: a200917a21e664a21b4186ca1d643bfb0e275869
+ms.sourcegitcommit: 9b41725d6db9957dd7928a3620fe4db41eb51c6e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86411640"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88179981"
 ---
 # <a name="data-type-mappings-between-r-and-sql-server"></a>R と SQL Server の間のデータ型マッピング
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
 SQL Server Machine Learning Services の R 統合機能で実行される R ソリューションについて、サポートされないデータ型の一覧と、R ライブラリと SQL Server の間でデータが受け渡されるときに暗黙的に実行される可能性のあるデータ型の変換について確認します。
 
@@ -136,19 +136,20 @@ outputDataSet <- inputDataSet'
 
 **結果**
 
-||||||
+|行 \#|C1|C2|C3|C4|
 |-|-|-|-|-|
-||C1|C2|C3|C4|
 |1|1|こんにちは|6e225611-4b58-4995-a0a5-554d19012ef1|4|
-|1|-11|world|6732ea46-2d5d-430b-8ao1-86e7f3351c3e|2|
+|2|-11|world|6732ea46-2d5d-430b-8ao1-86e7f3351c3e|2|
 
 R で `str` 関数を使用すると、出力データのスキーマが取得されます。 この関数からは、次の情報が返されます。
 
-<code>'data.frame':2 obs. of  4 variables:</code>
-<code> $ c1: int  1 -11</code>
-<code> $ c2: Factor w/ 2 levels "Hello","world": 1 2</code>
-<code> $ c3: Factor w/ 2 levels "6732EA46-2D5D-430B-8A01-86E7F3351C3E",..: 2 1</code>
-<code> $ cR: num  4 2</code>
+```output
+'data.frame':2 obs. of  4 variables:
+ $ c1: int  1 -11
+ $ c2: Factor w/ 2 levels "Hello","world": 1 2
+ $ c3: Factor w/ 2 levels "6732EA46-2D5D-430B-8A01-86E7F3351C3E",..: 2 1
+ $ cR: num  4 2
+```
 
 その結果から、次のデータ型の変換がこのクエリの一部として暗黙的に実行されたことがわかります。
 

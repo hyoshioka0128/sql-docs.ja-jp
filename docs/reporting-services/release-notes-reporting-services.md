@@ -1,7 +1,7 @@
 ---
 title: Reporting Services のリリース ノート (2017 以降) | Microsoft Docs
 description: バージョン 2017 以降の SQL Server Reporting Services (SSRS) での変更点の詳細について説明します。
-ms.date: 04/28/2020
+ms.date: 08/31/2020
 ms.prod: reporting-services
 ms.prod_service: reporting-services-native
 ms.technology: reporting-services
@@ -10,12 +10,12 @@ ms.reviewer: maggies
 author: casualoak
 ms.author: rhys
 monikerRange: '>=sql-server-2017||=sqlallproducts-allversions'
-ms.openlocfilehash: 4a97ab8d68a1b265a25eb3b97a5146a402aa9b3b
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+ms.openlocfilehash: a3b1984133387f1cbf5405f0c90b4532e56e776b
+ms.sourcegitcommit: 5da46e16b2c9710414fe36af9670461fb07555dc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87247511"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89282396"
 ---
 # <a name="release-notes-for-sql-server-reporting-services-ssrs-2017-and-later"></a>SQL Server Reporting Services (SSRS) 2017 以降のリリース ノート
 
@@ -53,12 +53,39 @@ GeneMi, DevOps = 1467988 (MsEng > TechnicalContent) , 2019/03/19
 -->
 ## <a name="sql-server-2019-reporting-services"></a>SQL Server 2019 Reporting Services
 
+## <a name="15075454810-20200831"></a>15.0.7545.4810、2020 年 8 月 31 日 
+
+| 修正された問題 | 詳細 |
+| :---------- | :------ |
+| セキュリティ更新プログラム  | &nbsp; |
+| PDF ドキュメントを許可しないようにコメントの添付ファイルのサポートを制限  | &nbsp; |
+| 名前にピリオドを含むレポートをエクスポートするときのファイル名の切り捨てを修正  | &nbsp; |
+| 無効な日付形式のエラーが発生するサブスクリプションと zh-TW カルチャに関連する問題を修正  | &nbsp; |
+| 特定のレポートでパラメーター オプションにアクセスすると値が不定になるという問題を修正  | &nbsp; |
+| レポート名の一重引用符に関連する問題を修正  | &nbsp; |
+| URL アクセスの FindString で一致が見つからないという問題を修正  | &nbsp; |
+| PDF エクスポートの代替テキストがマルチバイト文字に対して正しくエンコードされないという問題を修正  | &nbsp; |
+| 線形要素の下にある空の画像が不必要に表示される問題を修正  | &nbsp; |
+| Web Edition でカスタム認証に対して誤って表示される未サポート エラーを修正  | &nbsp; |
+| スクリーン リーダーが Tablix 内の余分な行と余分な列を読み取っていた問題を修正  | &nbsp; |
+| ページ全体にズームしたときにサイズに合わせて画像が切り捨てられていた問題を修正  | &nbsp; |
+| コマンド ラインのアップグレードで EULA フラグが不要になった  | &nbsp; |
+
 ## <a name="150724337714-20191101"></a>15.0.7243.37714、2019/11/01
 
 最初のリリース。
 
 
 ## <a name="sql-server-2017-reporting-services"></a>SQL Server 2017 Reporting Services
+
+## <a name="1406001669-20200831"></a>14.0.600.1669、2020 年 8 月 31 日 
+
+| 修正された問題 | 詳細 |
+| :---------- | :------ |
+| セキュリティ更新プログラム  | &nbsp; |
+| PDF ドキュメントを許可しないようにコメントの添付ファイルのサポートを制限  | &nbsp; |
+| 名前にピリオドを含むレポートをエクスポートするときのファイル名の切り捨てを修正  | &nbsp; |
+| 無効な日付形式のエラーが発生するサブスクリプションと zh-TW カルチャに関連する問題を修正  | &nbsp; |
 
 ## <a name="1406001572-20200406"></a>14.0.600.1572、2020/04/06 
 

@@ -21,12 +21,12 @@ helpviewer_keywords:
 ms.assetid: 03eba220-13e2-49e3-bd9d-ea9df84dc28c
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: ddbf9a7d6d6ce28764c572d22fd5829ce4f46ada
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: 9aa2c82f83e20017778a9e5096977dedeb38646d
+ms.sourcegitcommit: ac9feb0b10847b369b77f3c03f8200c86ee4f4e0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89538148"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90688601"
 ---
 # <a name="alter-view-transact-sql"></a>ALTER VIEW (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -57,7 +57,6 @@ AS select_statement
 ALTER VIEW [ schema_name . ] view_name [  ( column_name [ ,...n ] ) ]   
 AS <select_statement>   
 [;]  
-
 ``` 
   
 [!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
@@ -120,7 +119,7 @@ AS <select_statement>
 ## <a name="examples"></a>例  
  次の例では、すべての従業員とその雇用日を含んだ `EmployeeHireDate` というビューを作成します。 ビューには権限が与えられますが、必要条件が変更されて、雇用日が特定の日付よりも古い従業員を選択することになりました。 そこで、`ALTER VIEW` を使用してビューを変更します。  
   
-```  
+```sql 
 USE AdventureWorks2012 ;  
 GO  
 CREATE VIEW HumanResources.EmployeeHireDate  
@@ -129,12 +128,11 @@ SELECT p.FirstName, p.LastName, e.HireDate
 FROM HumanResources.Employee AS e JOIN Person.Person AS  p  
 ON e.BusinessEntityID = p.BusinessEntityID ;  
 GO  
-  
 ```  
   
  `2002` 年より前に雇用された従業員のみを含むようにビューを変更する必要があります。 ALTER VIEW を使用せずに、ビューを削除して再作成する場合は、以前に使用されていた GRANT ステートメント、およびこのビューに関係する権限を処理するその他すべてのステートメントを再入力する必要があります。  
   
-```  
+```sql  
 ALTER VIEW HumanResources.EmployeeHireDate  
 AS  
 SELECT p.FirstName, p.LastName, e.HireDate  
@@ -142,7 +140,6 @@ FROM HumanResources.Employee AS e JOIN Person.Person AS p
 ON e.BusinessEntityID = p.BusinessEntityID  
 WHERE HireDate < CONVERT(DATETIME,'20020101',101) ;  
 GO  
-  
 ```  
   
 ## <a name="see-also"></a>参照  

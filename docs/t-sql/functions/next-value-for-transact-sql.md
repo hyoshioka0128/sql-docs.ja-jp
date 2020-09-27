@@ -23,12 +23,12 @@ helpviewer_keywords:
 ms.assetid: 92632ed5-9f32-48eb-be28-a5e477ef9076
 author: julieMSFT
 ms.author: jrasnick
-ms.openlocfilehash: 8d383cc1530835635cc4c25957c25221a653dbfa
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 02eaf8552bdbd25788d5a436230b58e3d14d6f9e
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88417278"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91116657"
 ---
 # <a name="next-value-for-transact-sql"></a>NEXT VALUE FOR (Transact-SQL)
 [!INCLUDE [SQL Server Azure SQL Database ](../../includes/applies-to-version/sql-asdb.md)]
@@ -41,8 +41,7 @@ ms.locfileid: "88417278"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 NEXT VALUE FOR [ database_name . ] [ schema_name . ]  sequence_name  
    [ OVER (<over_order_by_clause>) ]  
 ```  
@@ -174,7 +173,7 @@ NEXT VALUE FOR [ database_name . ] [ schema_name . ]  sequence_name
   
  次の例では、`CountBy1` という名前のスキーマの `Test` という名前のシーケンスを使用します。 次のステートメントを実行して、`Test.CountBy1` シーケンスを作成します。 例 C および E では、[!INCLUDE[ssSampleDBobject](../../includes/sssampledbobject-md.md)] データベースを使用します。そのため、`CountBy1` シーケンスはそのデータベースに作成されます。  
   
-```  
+```sql  
 USE AdventureWorks2012 ;  
 GO  
   
@@ -190,7 +189,7 @@ GO
 ### <a name="a-using-a-sequence-in-a-select-statement"></a>A. SELECT ステートメントでシーケンスを使用する  
  次の例では、使用されるたびに 1 つずつ増加する `CountBy1` という名前のシーケンスを作成します。  
   
-```  
+```sql  
 SELECT NEXT VALUE FOR Test.CountBy1 AS FirstUse;  
 SELECT NEXT VALUE FOR Test.CountBy1 AS SecondUse;  
 ```  
@@ -208,10 +207,10 @@ SecondUse
 ### <a name="b-setting-a-variable-to-the-next-sequence-value"></a>B. 変数に次のシーケンス値を設定する  
  次の例では、変数にシーケンス番号の次の値を設定する 3 つの方法を示します。  
   
-```  
-DECLARE @myvar1 bigint = NEXT VALUE FOR Test.CountBy1  
-DECLARE @myvar2 bigint ;  
-DECLARE @myvar3 bigint ;  
+```sql  
+DECLARE @myvar1 BIGINT = NEXT VALUE FOR Test.CountBy1  
+DECLARE @myvar2 BIGINT ;  
+DECLARE @myvar3 BIGINT ;  
 SET @myvar2 = NEXT VALUE FOR Test.CountBy1 ;  
 SELECT @myvar3 = NEXT VALUE FOR Test.CountBy1 ;  
 SELECT @myvar1 AS myvar1, @myvar2 AS myvar2, @myvar3 AS myvar3 ;  
@@ -220,7 +219,7 @@ GO
   
 ### <a name="c-using-a-sequence-with-a-ranking-window-function"></a>C. 順位付け関数と共にシーケンスを使用する  
   
-```  
+```sql  
 USE AdventureWorks2012 ;  
 GO  
   
@@ -233,16 +232,16 @@ GO
 ### <a name="d-using-the-next-value-for-function-in-the-definition-of-a-default-constraint"></a>D. 既定の制約の定義で NEXT VALUE FOR 関数を使用する  
  使用して、 **NEXT VALUE FOR** 関数は、既定の制約の定義ではサポートされています。 **CREATE TABLE** ステートメントでの **NEXT VALUE FOR** の使用例については、「[シーケンス番号](../../relational-databases/sequence-numbers/sequence-numbers.md)」を参照してください。 次の例では、`ALTER TABLE` を使用して、シーケンスを既定値として現在のテーブルに追加します。  
   
-```  
+```sql
 CREATE TABLE Test.MyTable  
 (  
-    IDColumn nvarchar(25) PRIMARY KEY,  
-    name varchar(25) NOT NULL  
+    IDColumn NVARCHAR(25) PRIMARY KEY,  
+    name VARCHAR(25) NOT NULL  
 ) ;  
 GO  
   
 CREATE SEQUENCE Test.CounterSeq  
-    AS int  
+    AS INT  
     START WITH 1  
     INCREMENT BY 1 ;  
 GO  
@@ -265,10 +264,10 @@ GO
 ### <a name="e-using-the-next-value-for-function-in-an-insert-statement"></a>E. INSERT ステートメントで NEXT VALUE FOR 関数を使用する  
  次の例では、`TestTable` という名前のテーブルを作成した後、`NEXT VALUE FOR` 関数を使用して、行を挿入します。  
   
-```  
+```sql  
 CREATE TABLE Test.TestTable  
-     (CounterColumn int PRIMARY KEY,  
-    Name nvarchar(25) NOT NULL) ;   
+     (CounterColumn INT PRIMARY KEY,  
+    Name NVARCHAR(25) NOT NULL) ;   
 GO  
   
 INSERT Test.TestTable (CounterColumn,Name)  
@@ -277,13 +276,12 @@ GO
   
 SELECT * FROM Test.TestTable;   
 GO  
-  
 ```  
   
 ### <a name="e-using-the-next-value-for-function-with-select--into"></a>E. SELECT ... INTO と共に NEXT VALUE FOR 関数を使用するINTO  
  次の例では、`SELECT ... INTO` ステートメントを使用して `Production.NewLocation` という名前のテーブルを作成し、`NEXT VALUE FOR` 関数を使用して各行に番号を付けます。  
   
-```  
+```sql  
 USE AdventureWorks2012 ;   
 GO  
   
@@ -299,7 +297,7 @@ GO
 ### <a name="f-granting-permission-to-execute-next-value-for"></a>F. NEXT VALUE FOR を実行する権限を付与する  
  次の例では、`Test.CounterSeq` シーケンスを使用して、`NEXT VALUE FOR` を実行できるように、 という名前のユーザーに **UPDATE**`AdventureWorks\Larry`権限を付与します。  
   
-```  
+```sql  
 GRANT UPDATE ON OBJECT::Test.CounterSeq TO [AdventureWorks\Larry] ;  
 ```  
   

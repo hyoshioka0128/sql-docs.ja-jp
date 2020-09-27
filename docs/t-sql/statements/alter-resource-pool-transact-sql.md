@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 9c1c4cfb-0e3b-4f01-bf57-3fce94c7d1d4
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 6ce08b332255d43f1912454c7695b36998578a4b
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: 3e1e705930e31cec8fa6b7b4913e3643cc25227e
+ms.sourcegitcommit: ac9feb0b10847b369b77f3c03f8200c86ee4f4e0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89544305"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90688202"
 ---
 # <a name="alter-resource-pool-transact-sql"></a>ALTER RESOURCE POOL (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -94,7 +94,7 @@ ALTER RESOURCE POOL { pool_name | "default" }
   
  AFFINITY NAMANODE = (NUMA_node_range_spec) を使用すると、リソース プールは、指定した NUMA ノードまたはノードの範囲に対応する物理 CPU にマップされた [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のスケジューラに関連付けられます。 次の Transact-SQL クエリを使用して、物理 NUMA 構成と [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] スケジューラ ID のマッピングを検出できます。  
   
-```  
+```sql  
 SELECT osn.memory_node_id AS [numa_node_id], sc.cpu_id, sc.scheduler_id  
 FROM sys.dm_os_nodes AS osn  
 INNER JOIN sys.dm_os_schedulers AS sc 
@@ -144,7 +144,7 @@ INNER JOIN sys.dm_os_schedulers AS sc
 ## <a name="examples"></a>例  
  次の例では、`MAX_CPU_PERCENT` を `25` に変更する以外は、すべて `default` プールの既定のリソース プール設定が保持されます。  
   
-```  
+```sql  
 ALTER RESOURCE POOL "default"  
 WITH  
      ( MAX_CPU_PERCENT = 25);  
@@ -157,7 +157,7 @@ GO
   
 **適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降。  
   
-```  
+```sql  
 ALTER RESOURCE POOL Pool25  
 WITH(   
      MIN_CPU_PERCENT = 5,  
@@ -171,7 +171,6 @@ WITH(
 GO  
 ALTER RESOURCE GOVERNOR RECONFIGURE;  
 GO  
-  
 ```  
   
 ## <a name="see-also"></a>参照  

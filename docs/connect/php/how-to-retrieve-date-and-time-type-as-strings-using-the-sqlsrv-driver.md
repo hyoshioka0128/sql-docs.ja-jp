@@ -1,5 +1,6 @@
 ---
-title: SQLSRV ドライバーを使用して日付/時刻型を文字列として取得する | Microsoft Docs
+title: SQLSRV ドライバーを使用して日付/時刻型を文字列として取得する
+description: SQL Server 用 SQLSRV Driver for PHP を使用し、日付と時間の型を文字列として取得する方法について説明します。
 ms.custom: ''
 ms.date: 02/11/2019
 ms.prod: sql
@@ -12,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 58a974ea-4daf-4e3b-98ed-9731b9c9250f
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 3b8cd038579c471891e6e9ae0d81075b22016f6d
-ms.sourcegitcommit: fe5c45a492e19a320a1a36b037704bf132dffd51
+ms.openlocfilehash: 51135c202b40cbae5a251a2ab36a695f6981c68e
+ms.sourcegitcommit: 620a868e623134ad6ced6728ce9d03d7d0038fe0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80916135"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87410966"
 ---
 # <a name="how-to-retrieve-date-and-time-types-as-strings-using-the-sqlsrv-driver"></a>方法:SQLSRV ドライバーを使用して日付/時刻型を文字列として取得する
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]
@@ -194,4 +195,4 @@ sqlsrv_close($conn);
 ## <a name="see-also"></a>参照
 [データの取得](../../connect/php/retrieving-data.md)
 
-[方法: PDO_SQLSRV を使用して日付/時刻型を PHP DateTime オブジェクトとして取得する](../../connect/php/how-to-retrieve-datetime-objects-using-pdo-sqlsrv-driver.md)」を参照してください
+[方法: PDO_SQLSRV を使用して日付/時刻型を PHP DateTime オブジェクトとして取得する](../../connect/php/how-to-retrieve-datetime-objects-using-pdo-sqlsrv-driver.md)

@@ -9,12 +9,12 @@ ms.author: maghan
 ms.reviewer: alayu, maghan, sstein
 ms.custom: seodec18, sqlfreshmay19
 ms.date: 01/15/2020
-ms.openlocfilehash: b58a54e99c269db113bdd1e1821ba55ce3d83ff5
-ms.sourcegitcommit: 7345e4f05d6c06e1bcd73747a4a47873b3f3251f
+ms.openlocfilehash: ae2f5e45d9de660c8c03bd3b71a9e18864df5aa8
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88765511"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91114407"
 ---
 # <a name="what-is-azure-data-studio"></a>Azure Data Studio とは
 
@@ -24,7 +24,7 @@ Azure Data Studio では、IntelliSense、コード スニペット、ソース�
 
 Azure Data Studio のソース コードとそのデータ プロバイダーは、ソース コード EULA の下の GitHub で利用できます。この EULA では、ソフトウェアを変更および使用する権利が提供されますが、ソフトウェアを再配布したりクラウドサービス内でホストしたりすることはできません。 詳細については、「[Azure Data Studio FAQ](faq.md)」(Azure Data Studio の FAQ) を参照してください。
 
-**[Azure Data Studio のダウンロードとインストール](./download-azure-data-studio.md?view=sql-server-ver15)**
+**[Azure Data Studio のダウンロードとインストール](./download-azure-data-studio.md)**
 
 ## <a name="sql-code-editor-with-intellisense"></a>IntelliSense を使用した SQL コード エディター
 
@@ -53,7 +53,7 @@ Azure Data Studio ユーザー インターフェイス内の [統合ターミ�
 基本インストールの機能を拡張することで、Azure Data Studio のエクスペリエンスを向上させることができます。 Azure Data Studio では、データ管理アクティビティの機能拡張ポイントと、拡張機能の作成のサポートが提供されます。
 
 Azure Data Studio 機能拡張の詳細については、[拡張機能](extensibility.md)に関するページを参照してください。
-拡張機能の作成の詳細については、[拡張機能の作成](extension-authoring.md)に関するページを参照してください。
+拡張機能の作成の詳細については、[拡張機能の作成](extensions/extension-authoring.md)に関するページを参照してください。
 
 ## <a name="feature-comparison-with-sql-server-management-studio-ssms"></a>SQL Server Management Studio (SSMS) との機能の比較
 
@@ -165,7 +165,7 @@ Azure Data Studio 機能拡張の詳細については、[拡張機能](extensib
 
 ## <a name="next-steps"></a>次のステップ
 
-- [Azure Data Studio のダウンロードとインストール](./download-azure-data-studio.md?view=sql-server-ver15)
+- [Azure Data Studio のダウンロードとインストール](./download-azure-data-studio.md)
 - [SQL Server に対する接続およびクエリ](quickstart-sql-server.md)
 - [Azure SQL Database に対する接続およびクエリ](quickstart-sql-database.md)
 

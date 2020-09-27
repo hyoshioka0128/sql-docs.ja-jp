@@ -1,6 +1,6 @@
 ---
 title: RevoScaleR を使用して SQL データを変更する
-description: RevoScaleR チュートリアル 3:SQL Server で R 言語を使用してデータのクエリを実行し、データを変更する方法。
+description: SQL Server で R 言語を使用してデータのクエリを実行し、データを変更する方法について説明します。具体的には RevoScaleR 関数について説明します。
 ms.prod: sql
 ms.technology: machine-learning-services
 ms.date: 11/27/2018
@@ -9,15 +9,15 @@ author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 7fda48d4d59ab66ae285e4aeda1899a214a5b901
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 0120faa6d3989df7b7ae1c5da63c37423dead540
+ms.sourcegitcommit: 9b41725d6db9957dd7928a3620fe4db41eb51c6e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85679892"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88178607"
 ---
 # <a name="query-and-modify-the-sql-server-data-sql-server-and-revoscaler-tutorial"></a>SQL Server データのクエリを実行し、データを変更する (SQL Server と RevoScaleR のチュートリアル)
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
 これは、SQL Server で [RevoScaleR 関数](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)を使用する方法についての [RevoScaleR チュートリアル シリーズ](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)のチュートリアル 3 です。
 

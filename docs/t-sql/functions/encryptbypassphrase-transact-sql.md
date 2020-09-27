@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: f8dbb9e6-94d6-40d7-8b38-6833a409d597
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: c73f2fac57dbb73ce95a734a8382b8a8f7568edd
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: f8e11d7e9f36d6619c626d9387cce766fbce5b0d
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88366038"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91116779"
 ---
 # <a name="encryptbypassphrase-transact-sql"></a>ENCRYPTBYPASSPHRASE (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -37,7 +37,6 @@ ms.locfileid: "88366038"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 EncryptByPassPhrase ( { 'passphrase' | @passphrase }   
     , { 'cleartext' | @cleartext }  
   [ , { add_authenticator | @add_authenticator }  
@@ -82,15 +81,15 @@ EncryptByPassPhrase ( { 'passphrase' | @passphrase }
 ## <a name="examples"></a>例  
  次の例では、`SalesCreditCard` テーブルのレコードを更新し、認証子として主キーを使用して、列 `CardNumber_EncryptedbyPassphrase` に格納されるクレジット カードの番号を暗証化します。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 -- Create a column in which to store the encrypted data.  
 ALTER TABLE Sales.CreditCard   
-    ADD CardNumber_EncryptedbyPassphrase varbinary(256);   
+    ADD CardNumber_EncryptedbyPassphrase VARBINARY(256);   
 GO  
 -- First get the passphrase from the user.  
-DECLARE @PassphraseEnteredByUser nvarchar(128);  
+DECLARE @PassphraseEnteredByUser NVARCHAR(128);  
 SET @PassphraseEnteredByUser   
     = 'A little learning is a dangerous thing!';  
   

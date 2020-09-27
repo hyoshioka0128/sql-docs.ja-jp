@@ -1,4 +1,5 @@
 ---
+description: SQL Server エージェント サービスのアカウントの選択
 title: SQL Server エージェント サービスのアカウントの選択
 ms.prod: sql
 ms.prod_service: sql-tools
@@ -22,25 +23,25 @@ ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 05/04/2017
 monikerRange: = azuresqldb-mi-current || >= sql-server-2016 || = sqlallproducts-allversions
-ms.openlocfilehash: 4356764f50b816a05e9bcfbfb294c65cdc8080fe
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 0bab74ab5bbd51099ef8d38b7ad8471e1d7fee55
+ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85644687"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88318458"
 ---
 # <a name="select-an-account-for-the-sql-server-agent-service"></a>SQL Server エージェント サービスのアカウントの選択
 
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
 
 > [!IMPORTANT]  
-> [Azure SQL Database Managed Instance](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) では現在、すべてではありませんがほとんどの SQL Server エージェントの機能がサポートされています。 詳細については、「[Azure SQL Database Managed Instance と SQL Server の T-SQL の相違点](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-transact-sql-information#sql-server-agent)」を参照してください。
+> 現在、[Azure SQL Managed Instance](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) によって、すべてではありませんが、ほとんどの SQL Server エージェントの機能がサポートされています。 詳細については、[Azure SQL Managed Instance と SQL Server の T-SQL の相違点](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-transact-sql-information#sql-server-agent)に関するページを参照してください。
 
 サービス開始アカウントにより、 [!INCLUDE[msCoName](../../includes/msconame_md.md)] エージェントを実行する [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Windows アカウントとそのネットワーク権限が定義されます。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントは、指定されたユーザー アカウントで実行されます。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 構成マネージャーを使用して、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェント サービスのアカウントを選択します。構成マネージャーでは、次のオプションから選択できます。  
   
 -   **[ビルトイン アカウント]** 。 次のビルトイン Windows サービス アカウントの一覧から選択できます。  
   
-    -   **[ローカル システム]** アカウント。 このアカウントの名前は NT AUTHORITY\System です。 これは、すべてのローカル システム リソースに無制限にアクセスできる強力なアカウントです。 これは、ローカル コンピューターの Windows **Administrators** グループのメンバーです。つまり [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]**sysadmin** 固定サーバー ロールのメンバーです。  
+    -   **[ローカル システム]** アカウント。 このアカウントの名前は NT AUTHORITY\System です。 これは、すべてのローカル システム リソースに無制限にアクセスできる強力なアカウントです。 これは、ローカル コンピューターの Windows **Administrators** グループのメンバーです。つまり [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] **sysadmin** 固定サーバー ロールのメンバーです。  
   
         > [!IMPORTANT]  
         > **[ローカル システム アカウント]** オプションは、旧バージョンとの互換性のためだけに用意されています。 ローカル システム アカウントには、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントが必要としない権限があります。 ローカル システム アカウントとして [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントを実行するのは避けてください。 セキュリティを強化するには、次の「Windows ドメイン アカウントの権限」に示す権限のある Windows ドメイン アカウントを使用します。  
@@ -90,24 +91,24 @@ ms.locfileid: "85644687"
 |ローカル システム アカウント (NT AUTHORITY\System)|サポートされています<br /><br />以下に示す制限事項 2 を参照してください。|サポートされていません|サポートされています<br /><br />以下に示す制限事項 2 を参照してください。|  
 |ローカル サービス アカウント (NT AUTHORITY\LocalService)|サポートされていません|サポートされていません|サポートされていません|  
   
-### <a name="limitation-1-using-non-administrative-accounts-for-multiserver-administration"></a>制限事項 1: マルチサーバー管理での非管理者アカウントの使用  
-ターゲット サーバーをマスター サーバーに参加させると、次のエラー メッセージが表示されることがあります: "参加操作に失敗しました。"  
+### <a name="limitation-1-using-non-administrative-accounts-for-multiserver-administration"></a>制限事項 1 : マルチサーバー管理での非管理者アカウントの使用  
+ターゲット サーバーをマスター サーバーに参加させると、"参加操作に失敗しました" というエラー メッセージが表示されることがあります。  
   
 このエラーを解決するには、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] と [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェント サービスの両方を再起動します。 詳細については、「 [データベース エンジン、SQL Server エージェント、SQL Server Browser サービスの開始、停止、一時停止、再開、および再起動](https://msdn.microsoft.com/32660a02-e5a1-411a-9e57-7066ca459df6) 」を参照してください。  
   
-### <a name="limitation-2-using-the-local-system-account-for-multiserver-administration"></a>制限事項 2: マルチサーバー管理でのローカル システム アカウントの使用  
+### <a name="limitation-2-using-the-local-system-account-for-multiserver-administration"></a>制限事項 2 : マルチサーバー管理でのローカル システム アカウントの使用  
 マルチサーバー管理は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェント サービスがローカル システム アカウントで実行されるとき、同じコンピューターにマスター サーバーとターゲット サーバーの両方が存在する場合にのみサポートされます。 この構成を使用している場合に、ターゲット サーバーをマスター サーバーに参加させると、次のメッセージが返されます。  
   
-" *<target_server_computer_name>* のエージェント開始アカウントに対象サーバーとしてのログオン権限があることを確認します"  
+"*<target_server_computer_name>* のエージェント開始アカウントに対象サーバーとしてのログオン権限があることを確認します"  
   
 情報提供を目的としたこのメッセージは無視できます。 参加操作は、正常に完了します。 詳細については、「 [マルチサーバー環境の作成](../../ssms/agent/create-a-multiserver-environment.md)」を参照してください。  
   
-### <a name="limitation-3-using-the-network-service-account-when-it-is-a-sql-server-user"></a>制限事項 3: SQL Server ユーザーである場合のネットワーク サービス アカウントの使用  
+### <a name="limitation-3-using-the-network-service-account-when-it-is-a-sql-server-user"></a>制限事項 3 : SQL Server ユーザーであるネットワーク サービス アカウントの使用  
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェント サービスをネットワーク サービス アカウントで実行する場合、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスに [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ユーザーとしてログインするアクセス権がそのネットワーク サービス アカウントに明示的に与えられていると、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントが起動しないことがあります。  
   
 これを解決するには、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] が実行されているコンピューターを再起動します。 これは一度実行するだけで済みます。  
   
-### <a name="limitation-4-using-the-network-service-account-when-sql-server-reporting-services-is-running-on-the-same-computer"></a>制限事項 4: SQL Server Reporting Services が同じコンピューターで実行されている場合のネットワーク サービス アカウントの使用  
+### <a name="limitation-4-using-the-network-service-account-when-sql-server-reporting-services-is-running-on-the-same-computer"></a>制限事項 4 : SQL Server Reporting Services が同じコンピューターで実行されている場合のネットワーク サービス アカウントの使用  
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェント サービスをネットワーク サービス アカウントで実行する場合、同じコンピューターで [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] も動作していると、 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] エージェントが起動しないことがあります。  
   
 これを解決するには、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] が実行されているコンピューターを再起動し、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] と [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェント サービスの両方を再起動します。 これは一度実行するだけで済みます。  

@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: 81ae0e64-79fa-4a74-9aa5-37045c4cd211
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: ec94c40f39d2fe0dedfeef6d0b1edd37f40af5c1
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 8d921cdb5e8550942ade08f0e68d0337864d2e38
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88366478"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91114851"
 ---
 # <a name="x40x40cpu_busy-transact-sql"></a>&#x40;&#x40;CPU_BUSY (Transact-SQL)
 
@@ -61,7 +61,7 @@ CPU アクティビティなどの複数の [!INCLUDE[ssNoVersion](../../include
 この例では、現在の日付と時刻の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] CPU アクティビティを返します。 この例では、値の 1 つを `float` データ型に変換します。 こうすることで、マイクロ秒単位の値を計算する際の算術オーバーフローの問題を回避できます。
   
 ```sql
-SELECT @@CPU_BUSY * CAST(@@TIMETICKS AS float) AS 'CPU microseconds',   
+SELECT @@CPU_BUSY * CAST(@@TIMETICKS AS FLOAT) AS 'CPU microseconds',   
    GETDATE() AS 'As of' ;  
 ```  
   

@@ -21,12 +21,12 @@ helpviewer_keywords:
 ms.assetid: 442c54bf-a0a6-4108-ad20-db910ffa6e3c
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 5e14ff0dce201a195fa7a064cc7df604b52b8370
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: 0f798856f7074aef0318f98d5d9c7415fe3e2846
+ms.sourcegitcommit: ac9feb0b10847b369b77f3c03f8200c86ee4f4e0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89544325"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90688240"
 ---
 # <a name="alter-resource-governor-transact-sql"></a>ALTER RESOURCE GOVERNOR (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -117,14 +117,14 @@ ALTER RESOURCE GOVERNOR
 ### <a name="a-starting-the-resource-governor"></a>A. Resource Governor を起動する  
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の最初のインストール時には、リソース ガバナーは無効になっています。 Resource Governor を起動する例を次に示します。 このステートメントを実行した後、Resource Governor が実行され、定義済みのワークロード グループとリソース プールを使用できるようになります。  
   
-```  
+```sql  
 ALTER RESOURCE GOVERNOR RECONFIGURE;  
 ```  
   
 ### <a name="b-assigning-new-sessions-to-the-default-group"></a>B. 新しいセッションを既定のグループに割り当てる  
  次の例では、Resource Governor 構成から既存の分類関数を削除することによって、すべての新しいセッションを既定のワークロード グループに割り当てます。 関数が分類関数として指定されていない場合、新しいセッションはすべて既定のワークロード グループに割り当てられます。 この変更は新しいセッションにのみ適用されます。 既存のセッションは影響を受けません。  
   
-```  
+```sql  
 ALTER RESOURCE GOVERNOR WITH (CLASSIFIER_FUNCTION = NULL);  
 GO  
 ALTER RESOURCE GOVERNOR RECONFIGURE;  
@@ -133,7 +133,7 @@ ALTER RESOURCE GOVERNOR RECONFIGURE;
 ### <a name="c-creating-and-registering-a-classifier-function"></a>C. 分類関数を作成して登録する  
  次の例では、`dbo.rgclassifier_v1` という名前の分類子関数を作成します。 この関数によって、ユーザー名またはアプリケーション名に基づいてすべての新しいセッションが分類され、セッションの要求とクエリが、指定されたワークロード グループに割り当てられます。 指定されたユーザー名またはアプリケーション名にマップされていないセッションは、既定のワークロード グループに割り当てられます。 次に分類関数が登録され、構成の変更が適用されます。  
   
-```  
+```sql  
 -- Store the classifier function in the master database.  
 USE master;  
 GO  
@@ -178,14 +178,14 @@ GO
 ### <a name="d-resetting-statistics"></a>D. 統計をリセットする  
  次の例では、すべてのワークロード グループとリソース プールの統計をリセットします。  
   
-```  
+```sql 
 ALTER RESOURCE GOVERNOR RESET STATISTICS;  
 ```  
   
 ### <a name="e-setting-the-max_outstanding_io_per_volume-option"></a>E. MAX_OUTSTANDING_IO_PER_VOLUME オプションを設定する  
  次の例では、MAX_OUTSTANDING_IO_PER_VOLUME オプションが 20 に設定されます。  
   
-```  
+```sql  
 ALTER RESOURCE GOVERNOR  
 WITH (MAX_OUTSTANDING_IO_PER_VOLUME = 20);   
 ```  

@@ -19,12 +19,12 @@ ms.assetid: d1df8c15-ee73-49eb-9d13-6e98943c3e38
 author: markingmyname
 ms.author: maghan
 monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: c34e314e08f206ebfcf34956e7b4555f91166a3e
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: 79995dc681db76f3de5b6d6af200f6f57f087464
+ms.sourcegitcommit: c74bb5944994e34b102615b592fdaabe54713047
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89548285"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90989938"
 ---
 # <a name="sp_autostats-transact-sql"></a>sp_autostats (Transact-sql)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -69,13 +69,13 @@ sp_autostats [ @tblname = ] 'table_or_indexed_view_name'
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
-|**Index Name**|**varchar(60)**|インデックスまたは統計の名前。|  
+|**Index Name**|**sysname**|インデックスまたは統計の名前。|  
 |**AUTOSTATS**|**varchar (3)**|AUTO_UPDATE_STATISTICS オプションの現在の値。|  
 |**最終更新日**|**datetime**|統計の最終更新日。|  
   
  テーブルまたはインデックス付きビューの結果セットには、インデックスに対して作成された統計、AUTO_CREATE_STATISTICS オプションで生成された単一列統計、 [CREATE statistics](../../t-sql/statements/create-statistics-transact-sql.md) ステートメントで作成された統計が含まれます。  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>注釈  
  指定したインデックスが無効な場合、または指定したテーブルに無効なクラスター化インデックスがある場合は、エラー メッセージが表示されます。  
   
  AUTO_UPDATE_STATISTICS はメモリ最適化テーブルでは常に OFF です。  

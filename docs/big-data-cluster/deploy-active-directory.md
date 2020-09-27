@@ -5,16 +5,16 @@ description: Active Directory ドメインで SQL Server ビッグ データ ク
 author: mihaelablendea
 ms.author: mihaelab
 ms.reviewer: mikeray
-ms.date: 06/22/2020
+ms.date: 09/15/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 037c8bd26249ab3dc2cb3d0d8f4adf718f56000e
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+ms.openlocfilehash: 92c170e16a05d67f21931479f82f5edb1856b12f
+ms.sourcegitcommit: ac9feb0b10847b369b77f3c03f8200c86ee4f4e0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87243073"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90687788"
 ---
 # <a name="deploy-big-data-clusters-2019-in-active-directory-mode"></a>Active Directory モードで [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] を展開する
 
@@ -24,23 +24,49 @@ ms.locfileid: "87243073"
 
 >[!Note]
 >SQL Server 2019 CU5 リリースの前は、ビッグ データ クラスターに制限があるため、Active Directory ドメインに対してデプロイできるクラスターは 1 つだけでした。 この制限は、CU5 リリースで削除されています。新しい機能の詳細については、[概念: Active Directory モードで](active-directory-deployment-background.md) [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] をデプロイする方法に関するページを参照してください。 この記事の例は、デプロイの両方のユース ケースに対応するように調整されています。
+>
 
 ## <a name="background"></a>バックグラウンド
 
-Active Directory (AD) 認証を有効にするために、BDC では、クラスター内のさまざまなサービスで必要となるユーザー、グループ、コンピューター アカウント、サービス プリンシパル名 (SPN) が自動的に作成されます。 このようなアカウントを一部含め、スコーピングを許可するため、BDC 関連のあらゆる AD オブジェクトが作成されるデプロイ中に組織単位 (OU) を選択します。 クラスター展開前にこの OU を作成します。
+Active Directory (AD) 認証を有効にするために、BDC では、クラスター内のさまざまなサービスで必要となるユーザー、グループ、コンピューター アカウント、サービス プリンシパル名 (SPN) が自動的に作成されます。 このようなアカウントを一部含め、スコーピングを許可するために、クラスター デプロイの前に組織単位 (OU) を作成することをお勧めします。 すべての BDC 関連の AD オブジェクトは、デプロイ中に作成されます。 
 
-Active Directory で必須のオブジェクトをすべて自動作成するには、展開中、BDC に AD アカウントが必要になります。 このアカウントには、指定の OU 内でユーザー、グループ、コンピューター アカウントを作成する権限を与える必要があります。
+## <a name="pre-requisites"></a>前提条件
+
+### <a name="organizational-unit-ou"></a>組織単位 (OU)
+組織単位 (OU) は、ユーザー、グループ、およびその他の組織単位を配置する、Active Directory 内の区分です。 全体像としては、組織単位を使用して組織の機能やビジネスの構造を反映することができます。 この記事では、例として `bdc` という名前の OU を作成します。 
+
+>[!NOTE]
+>組織単位 (OU) は管理上の境界を表し、お客様がデータ管理者の権限の範囲を制御できるようになります。 
+
+
+[OU の設計原則](/windows-server/identity/ad-ds/plan/reviewing-ou-design-concepts)に従って、組織内で OU を使用する際の最適な構造を決定することができます。 
+
+### <a name="ad-account-for-bdc-domain-service-account"></a>BDC ドメイン サービス アカウントの AD アカウント
+
+BDC には、Active Directory で必要なすべてのオブジェクトを自動的に作成できるようにするために、指定した組織単位 (OU) 内にユーザー、グループ、およびコンピューター アカウントを作成するための特定のアクセス許可を持つ AD アカウントが必要です。 この記事では、この AD アカウントのアクセス許可を構成する方法について説明します。 この記事では、例として `bdcDSA` という AD アカウントを使用します。
+
+### <a name="auto-generated-active-directory-objects"></a>自動的に生成される Active Directory のオブジェクト
+BDC をデプロイすると、アカウントとグループ名が自動的に生成されます。 各アカウントは BDC 内の 1 つのサービスを表し、BDC クラスターが使用されている全有効期間にわたり BDC によって管理されます。 これらのアカウントにより、各サービスに必要なサービス プリンシパル名 (SPN) が所有されます。  AD の自動生成されるアカウント、グループ、およびそれらによって管理されるサービスの完全な一覧については、「[自動的に生成される Active Directory のオブジェクト](active-directory-objects.md)」をご覧ください。
+
+
+
+>[!IMPORTANT]
+>ドメイン コントローラーで設定されているパスワードの有効期限ポリシーによっては、これらのアカウントのパスワードの有効期限が切れることがあります。 既定の有効期限ポリシーは 42 日です。 BDC 内のすべてのアカウントの資格情報をローテーションするメカニズムはないため、有効期限が切れるとクラスターは動作しなくなります。 この問題を回避するには、ドメイン コントローラーで、BDC サービス アカウントの有効期限ポリシーを "パスワードを無期限にする" に更新します。 この操作は、有効期限の前または後に行うことができます。 後者の場合、Active Directory によって、期限切れのパスワードが再アクティブ化されます。
+>
+>次の図は、[Active Directory ユーザーとコンピューター] でこのプロパティを設定する場所を示しています。
+>
+>:::image type="content" source="media/deploy-active-directory/image25.png" alt-text="パスワードの有効期限のポリシーの設定":::
+
 
 次の手順では、Active Directory ドメイン コントローラーを既に用意していることを前提としています。 ドメイン コントローラーがない場合、[こちら](https://social.technet.microsoft.com/wiki/contents/articles/37528.create-and-configure-active-directory-domain-controller-in-azure-windows-server.aspx)のガイドに含まれる手順が参考になります。
 
-AD アカウントとグループの一覧については、「[Active Directory オブジェクトの自動生成](active-directory-objects.md)」を参照してください。
 
 ## <a name="create-ad-objects"></a>AD オブジェクトの作成
 
 AD 統合で BDC を展開する前に次の操作を行います。
 
-1. すべての BDC AD オブジェクトを格納する組織単位 (OU) を作成します。 または、デプロイ時に、既存の OU を選択することもできます。
-1. BDC の AD アカウントを作成するか、既存のアカウントを使用し、この BDC AD アカウントに正しい権限を付与します。
+1. すべての BDC 関連の AD オブジェクトを格納する組織単位 (OU) を作成します。 または、デプロイ時に、既存の OU を選択することもできます。
+1. BDC 用の AD アカウントを作成するか、既存のアカウントを使用し、この BDC の AD アカウントに指定した組織単位 (OU) の適切なアクセス許可を付与します。
 
 ### <a name="create-a-user-in-ad-for-bdc-domain-service-account"></a>BDC ドメイン サービス アカウントの AD でユーザーを作成する
 
@@ -180,6 +206,9 @@ AD 統合には次のパラメーターが必要です: この記事の後半に
 
 - `security.activeDirectory.realm` **省略可能なパラメーター**: ほとんどの場合、領域はドメイン名と同じです。 同じでない場合、このパラメーターを使用し、領域の名前を定義します (例: `CONTOSO.LOCAL`)。 このパラメーターに指定する値は、完全修飾されている必要があります。
 
+  > [!IMPORTANT]
+  > 現時点では、BDC では、Active Directory ドメイン名が Active Directory ドメインの **NETBIOS** 名と異なる構成はサポートされていません。
+
 - `security.activeDirectory.domainDnsName`:クラスターに使用される DNS ドメインの名前 (例: `contoso.local`)。
 
 - `security.activeDirectory.clusterAdmins`:このパラメーターは、1 つの AD グループを受け取ります。 AD グループのスコープは、ユニバーサルまたはグローバルである必要があります。 このグループのメンバーには、クラスターの管理者アクセス許可を付与する *bdcAdmin* クラスター ロールが割り当てられます。 これは、[SQL Server で `sysadmin` アクセス許可](../relational-databases/security/authentication-access/server-level-roles.md#fixed-server-level-roles)、[HDFS で `superuser` アクセス許可](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html#The_Super-User)、コントローラー エンドポイントに接続したときに管理者アクセス許可が与えられることを意味します。
@@ -192,6 +221,9 @@ AD 統合には次のパラメーターが必要です: この記事の後半に
 この一覧の AD グループは、*bdcUser* ビッグデータ クラスター ロールにマップされており、SQL Server ([SQL Server アクセス許可](../relational-databases/security/permissions-hierarchy-database-engine.md)を参照) または HDFS ([HDFS アクセス許可ガイド](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html#:~:text=Permission%20Checks%20%20%20%20Operation%20%20,%20%20N%2FA%20%2029%20more%20rows%20)を参照) へのアクセスが許可される必要があります。 コントローラー エンドポイントに接続されている場合、これらのユーザーは *azdata bdc endpoint list* コマンドを使用して、クラスターで使用可能なエンドポイントのみを一覧表示できます。
 
 この設定の AD グループを更新する方法の詳細については、「[Active Directory モードでビッグ データ クラスター アクセスを管理する](manage-user-access.md)」を参照してください。
+
+  >[!TIP]
+  >HDFS に接続するために必要な Knox ゲートウェイ エンドポイントを取得するために、Azure Data Studio では *sys.dm_cluster_endpoints* DMV を使用しています。そのため、Azure Data Studio で SQL Server マスターに接続したときの HDFS ブラウジング エクスペリエンスを有効にするには、bdcUser ロールを持つユーザーに VIEW SERVER STATE 権限を付与する必要があります。
 
   >[!IMPORTANT]
   >展開を開始する前に、これらのグループを AD 内に作成します。 これらの AD グループのいずれかのスコープがドメイン ローカルの場合、展開は失敗します。
@@ -261,9 +293,9 @@ AD 統合には次のパラメーターが必要です: この記事の後半に
 - `security.activeDirectory.accountPrefix`:**省略可能なパラメーター** このパラメーターは、同じドメインに対する複数のビッグ データ クラスターのデプロイをサポートするために SQL Server 2019 CU5 リリースで導入されました。 この設定により、さまざまなビッグ データ クラスター サービスに対してアカウント名の一意性が保証されます。それは 2 つのクラスター間で異なる必要があります。 アカウント プレフィックス名のカスタマイズは省略可能で、既定では、サブドメイン名がアカウント プレフィックスとして使用されます。 サブドメイン名が 12 文字より長い場合、サブドメイン名の最初の 12 文字がアカウント プレフィックスとして使用されます。  
 
   >[!NOTE]
-  >Active Directory では、アカウント名を 20 文字までに制限する必要があります。 BDC クラスターでは、ポッドと StatefulSet を区別するために、8 文字を使用する必要があります。 これにより、アカウント プレフィックスの制限として 12 文字が残されます
+  >Active Directory では、アカウント名を 20 文字までに制限する必要があります。 ポッドと StatefulSet を区別するために、BDC クラスターでは 8 文字を使用する必要があります。 これにより、アカウント プレフィックスの制限として 12 文字が残されます
 
-[AD グループのスコープを確認](https://docs.microsoft.com/powershell/module/activedirectory/get-adgroup?view=winserver2012-ps&viewFallbackFrom=winserver2012r2-ps)し、DomainLocal であるかどうかを確認します。
+[AD グループのスコープを確認](/powershell/module/activedirectory/get-adgroup?view=winserver2012-ps&viewFallbackFrom=winserver2012r2-ps)し、DomainLocal であるかどうかを確認します。
 
 展開構成ファイルをまだ初期化していない場合、このコマンドを実行して構成のコピーを取得できます。 次の例では、`kubeadm-prod` プロファイルを使用します。これは `openshift-prod` にも当てはまります。
 
@@ -422,7 +454,7 @@ curl -k -v --negotiate -u : https://<Gateway DNS name>:30443/gateway/default/web
 
 - SQL Server 2019 CU5 リリースより前は、ドメイン (Active Directory) につき BDC が 1 つしか許可されません。 CU5 リリース以降では、ドメインごとに複数の BDC を有効にすることができます。
 
-- セキュリティ構成で指定されているどの AD グループも、DomainLocal にスコープ指定できません。 AD グループのスコープは、[この手順](https://docs.microsoft.com/powershell/module/activedirectory/get-adgroup?view=winserver2012-ps&viewFallbackFrom=winserver2012r2-ps)に従って確認できます。
+- セキュリティ構成で指定されているどの AD グループも、DomainLocal にスコープ指定できません。 AD グループのスコープは、[この手順](/powershell/module/activedirectory/get-adgroup?view=winserver2012-ps&viewFallbackFrom=winserver2012r2-ps)に従って確認できます。
 
 - BDC へのログインに使用できる AD アカウントは、BDC 用に構成されたのと同じドメインから許可されます。 その他の信頼される側のドメインからのログインを有効にすることはサポートされていません。
 

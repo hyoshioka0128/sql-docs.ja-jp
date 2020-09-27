@@ -1,7 +1,7 @@
 ---
 title: Kubernetes でのデータ永続化
 titleSuffix: SQL Server big data clusters
-description: SQL Server 2019 ビック データ クラスターでのデータ永続化のしくみについて説明します。
+description: 永続ボリュームでは、Kubernetes のストレージ向けのプラグイン モデルが提供されます。そのしくみについて説明します。 SQL Server 2019 ビック データ クラスターのデータ永続化のしくみについても説明します。
 author: mihaelablendea
 ms.author: mihaelab
 ms.reviewer: mikeray
@@ -9,12 +9,12 @@ ms.date: 11/04/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 8a3ca863818d11471b0ae6aadd38458faf8b9daf
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 970b049ec7933af9fab1d213d7441f101e01f7c1
+ms.sourcegitcommit: 7345e4f05d6c06e1bcd73747a4a47873b3f3251f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85661078"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88765691"
 ---
 # <a name="data-persistence-with-sql-server-big-data-cluster-in-kubernetes"></a>Kubernetes の SQL Server ビッグ データ クラスターでのデータ永続化
 
@@ -28,7 +28,7 @@ SQL Server ビッグ データ クラスターでは、[ストレージ クラ�
 
 ここでは、ビッグ データ クラスターのストレージ構成を計画する際に考慮する重要な事項について説明します。
 
-- ビッグ データ クラスターの展開を成功させるには、必要な数の永続ボリュームが使用可能であることを確認する必要があります。 Azure Kubernetes Service (AKS) クラスターに展開していて、組み込みのストレージ クラス (`default` または `managed-premium`) を使用している場合、このクラスでは永続ボリュームの動的プロビジョニングがサポートされます。 そのため、永続ボリュームを事前に作成する必要はありませんが、AKS クラスター内で使用可能なワーカー ノードが、展開に必要な永続ボリュームと同じ数のディスクを接続できることを確認する必要があります。 ワーカー ノードに対して指定されている [VM サイズ](https://docs.microsoft.com/azure/virtual-machines/linux/sizes)によっては、各ノードが特定の数のディスクを接続できます。 既定のサイズのクラスター (高可用性なし) の場合は、少なくとも 24 個のディスクが必要です。 高可用性を有効にする場合、またはプールをスケール アップする場合は、スケール アップするリソースに関係なく、追加のレプリカごとに少なくとも 2 つの永続化ボリュームを確保する必要があります。
+- ビッグ データ クラスターの展開を成功させるには、必要な数の永続ボリュームが使用可能であることを確認する必要があります。 Azure Kubernetes Service (AKS) クラスターに展開していて、組み込みのストレージ クラス (`default` または `managed-premium`) を使用している場合、このクラスでは永続ボリュームの動的プロビジョニングがサポートされます。 そのため、永続ボリュームを事前に作成する必要はありませんが、AKS クラスター内で使用可能なワーカー ノードが、展開に必要な永続ボリュームと同じ数のディスクを接続できることを確認する必要があります。 ワーカー ノードに対して指定されている [VM サイズ](/azure/virtual-machines/linux/sizes)によっては、各ノードが特定の数のディスクを接続できます。 既定のサイズのクラスター (高可用性なし) の場合は、少なくとも 24 個のディスクが必要です。 高可用性を有効にする場合、またはプールをスケール アップする場合は、スケール アップするリソースに関係なく、追加のレプリカごとに少なくとも 2 つの永続化ボリュームを確保する必要があります。
 
 - 構成内で指定しているストレージ クラスのストレージ プロビジョナーによって動的プロビジョニングがサポートされていない場合は、永続化ボリュームを事前に作成する必要があります。 たとえば、`local-storage` プロビジョナーでは動的プロビジョニングが有効になりません。 `kubeadm` を使用して展開された Kubernetes クラスター内での作業の進め方に関するガイダンスについては、この[サンプル スクリプト](https://github.com/microsoft/sql-server-samples/tree/master/samples/features/sql-big-data-cluster/deployment/kubeadm/ubuntu)を参照してください。
 

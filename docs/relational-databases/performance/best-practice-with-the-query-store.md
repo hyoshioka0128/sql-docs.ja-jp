@@ -2,10 +2,9 @@
 title: クエリ ストアを使用する際のベスト プラクティス | Microsoft Docs
 description: 最新の SQL Server Management Studio や Query Performance Insight を使用するなど、ワークロードに SQL Server クエリ ストアを使用する際のベスト プラクティスについて説明します。
 ms.custom: ''
-ms.date: 03/04/2020
+ms.date: 09/02/2020
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
-ms.reviewer: carlrab
 ms.technology: performance
 ms.topic: conceptual
 helpviewer_keywords:
@@ -14,12 +13,12 @@ ms.assetid: 5b13b5ac-1e4c-45e7-bda7-ebebe2784551
 author: pmasl
 ms.author: jrasnick
 monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||= azure-sqldw-latest||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 721cb6dca81681fec19d30a30ae0067bb4df1745
-ms.sourcegitcommit: 205de8fa4845c491914902432791bddf11002945
+ms.openlocfilehash: c19088caa9942d3eafaf6ccf8c6195851f05c27f
+ms.sourcegitcommit: f7c9e562d6048f89d203d71685ba86f127d8d241
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86970083"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90042823"
 ---
 # <a name="best-practices-with-query-store"></a>クエリ ストアを使用する際のベスト プラクティス
 
@@ -421,7 +420,7 @@ WHERE is_forced_plan = 1;
 
 データベース名を変更すると、プランの強制適用が失敗し、その後のすべてのクエリ実行で再コンパイルが発生します。
 
-## <a name="use-trace-flags-on-mission-critical-servers"></a><a name="Recovery"></a> ミッション クリティカルなサーバーでトレース フラグを使用する
+## <a name="using-query-store-in-mission-critical-servers"></a><a name="Recovery"></a> ミッション クリティカルなサーバーでのクエリ ストアの使用
 
 グローバル トレース フラグ 7745 と 7752 を使用すると、クエリ ストアを使ってデータベースの可用性を向上させることができます。 詳しくは、「[トレース フラグ](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md)」をご覧ください。
 
@@ -432,7 +431,10 @@ WHERE is_forced_plan = 1;
 > [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降では、この動作はエンジンによって制御されるようになり、トレース フラグ 7752 に効力はありません。
 
 > [!IMPORTANT]
-> [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] で適宜、ワークロードを洞察するためにクエリ ストアを使用する場合は、[KB 4340759](https://support.microsoft.com/help/4340759) のパフォーマンス スケーラビリティの修正プログラムをできるだけ早くインストールするように計画してください。
+> [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] の Just-In-Time ワークロード分析情報のためにクエリ ストアを使用している場合は、[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 CU2 におけるパフォーマンス スケーラビリティの強化 ([KB 4340759](https://support.microsoft.com/help/4340759)) をできるだけ早くインストールするように計画してください。 これらの強化がない場合、データベースでワークロードが重いときにスピンロックの競合が発生し、サーバーのパフォーマンスが低速になる場合があります。 特に、`QUERY_STORE_ASYNC_PERSIST` スピンロックまたは `SPL_QUERY_STORE_STATS_COOKIE_CACHE` スピンロックで激しい競合が発生する場合があります。 この強化を適用すると、クエリ ストアによってスピンロックの競合が発生しなくなります。
+
+> [!IMPORTANT]
+> [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] の Just-In-Time ワークロード分析情報のためにクエリ ストアを使用している場合は、[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU22 におけるパフォーマンス スケーラビリティの向上をできるだけ早くインストールするように計画してください。 この強化がない場合、データベースでアドホック ワークロードが重いときにクエリ ストアによって大量のメモリが使用され、サーバーのパフォーマンスが低速になる場合があります。 この強化を適用すると、クエリ ストアでは、さまざまなコンポーネントが使用できるメモリ量に内部的な制限が設けられます。また、十分なメモリが [!INCLUDE[ssde_md](../../includes/ssde_md.md)] に返されるまでの間、動作モードを読み取り専用に自動的に変更できます。 クエリ ストアの内部的なメモリ制限は、変更の可能性があるため文書化されないことに注意してください。  
 
 ## <a name="see-also"></a>関連項目
 

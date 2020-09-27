@@ -1,24 +1,24 @@
 ---
 title: SQL Server の言語拡張を Windows にインストールする
 titleSuffix: ''
-description: SQL Server の言語拡張を Windows にインストールする方法について説明します。
+description: Windows で SQL Server セットアップ ウィザードを実行し、SQL Server に言語拡張機能をインストールする方法について説明します。
 author: dphansen
 ms.author: davidph
-ms.date: 11/06/2019
+ms.date: 09/17/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: language-extensions
 monikerRange: '>=sql-server-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: e32918309d2a51b6bf030d3287b4440d64ee34a6
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 41f0e9f1c4040e9d26432d8635667f045694e314
+ms.sourcegitcommit: c74bb5944994e34b102615b592fdaabe54713047
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85735100"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90989861"
 ---
 # <a name="install-sql-server-language-extensions-on-windows"></a>SQL Server の言語拡張を Windows にインストールする
 
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2019 and later](../../includes/applies-to-version/sqlserver2019.md)]
 
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] セットアップ ウィザードを実行することにより SQL Server に言語拡張コンポーネントをインストールする方法について説明します。
 
@@ -150,8 +150,11 @@ SQL Server に付属する既定の Zulu Open JRE も、プログラム ファ�
 2. AppContainer のアクセス許可を付与します
 
     ```cmd
-    icacls "<PATH to JRE>" /grant "ALL APPLICATION PACKAGES":(OI)(CI)RX /T
+    icacls “<PATH to JRE>” /grant *S-1-15-2-1:(OI)(CI)RX /T
     ```
+    
+    > [!NOTE]
+    > 上記のコマンドを実行すると、コンピューター SID **S-1-15-2-1** にアクセス許可が付与されます。これは、英語版の Windows における **ALL APPLICATION PACKAGES** と同等です。 または、英語版の Windows で `icacls "<PATH to JRE>" /grant "ALL APPLICATION PACKAGES":(OI)(CI)RX /T` を使用することもできます。
     
 ## <a name="enable-script-execution"></a>スクリプトの実行を有効にする
 
@@ -162,7 +165,7 @@ SQL Server に付属する既定の Zulu Open JRE も、プログラム ファ�
     > 
     > SQL Server に対する管理タスクとクエリをサポートする [Azure Data Studio](../../azure-data-studio/what-is.md) を使用することもできます。
   
-2. 言語拡張をインストールしたインスタンスに接続し、 **[新しいクエリ]** をクリックしてクエリ ウィンドウを開き、次のコマンドを実行します。
+2. 言語拡張をインストールしたインスタンスに接続し、**[新しいクエリ]** をクリックしてクエリ ウィンドウを開き、次のコマンドを実行します。
 
     ```sql
     sp_configure

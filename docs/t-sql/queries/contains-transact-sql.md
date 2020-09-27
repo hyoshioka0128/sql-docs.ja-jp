@@ -34,12 +34,12 @@ helpviewer_keywords:
 ms.assetid: 996c72fc-b1ab-4c96-bd12-946be9c18f84
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 30942bd7f9c5ff8180eb9adfddedff72d1d97f05
-ms.sourcegitcommit: b57d98e9b2444348f95c83a24b8eea0e6c9da58d
+ms.openlocfilehash: 04e11f27d26a7979dfc84b29d7c7de1b02eb02ab
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86552577"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91115433"
 ---
 # <a name="contains-transact-sql"></a>CONTAINS (Transact-SQL)
 
@@ -181,7 +181,7 @@ CONTAINS (
 ```sql  
 USE AdventureWorks2012;  
 GO  
-DECLARE @SearchWord varchar(30)  
+DECLARE @SearchWord VARCHAR(30)  
 SET @SearchWord ='performance'  
 SELECT Description   
 FROM Production.ProductDescription   
@@ -193,7 +193,7 @@ WHERE CONTAINS(Description, @SearchWord);
 ```sql  
 USE AdventureWorks2012;  
 GO  
-DECLARE @SearchWord nvarchar(30)  
+DECLARE @SearchWord NVARCHAR(30)  
 SET @SearchWord = N'performance'  
 SELECT Description   
 FROM Production.ProductDescription   
@@ -256,7 +256,7 @@ WHERE CONTAINS(Description, @SearchWord);
   
  カスタム近接語句の場合、既定では、語句の間の距離やその順序に関係なく、指定した語句が含まれているすべての行が返されます。 たとえば、次のクエリと一致するには、`term1` と "`term3 term4`" が任意の場所に任意の順序でドキュメントに含まれているだけで十分です。  
   
-```  
+```sql  
 CONTAINS(column_name, 'NEAR(term1,"term3 term4")')  
 ```  
   
@@ -270,13 +270,13 @@ CONTAINS(column_name, 'NEAR(term1,"term3 term4")')
   
  たとえば、次のクエリでは、最大距離が 5 語以内で `AA` と `BB` を任意の順序で検索します。  
   
-```  
+```sql  
 CONTAINS(column_name, 'NEAR((AA,BB),5)')  
 ```  
   
  文字列 `AA one two three four five BB` と一致します。 次の例のクエリでは、最大距離が 5 語以内で `AA`、`BB`、および `CC` の 3 つの検索語句を指定しています。  
   
-```  
+```sql  
 CONTAINS(column_name, 'NEAR((AA,BB,CC),5)')  
 ```  
   
@@ -304,7 +304,7 @@ CONTAINS(column_name, 'NEAR((AA,BB,CC),5)')
   
  たとえば、次の近接語句では、距離に関係なく、"`Monday`"、"`Tuesday`"、および "`Wednesday`" という単語を指定した順序で検索します。  
   
-```  
+```sql  
 CONTAINS(column_name, 'NEAR ((Monday, Tuesday, Wednesday), MAX, TRUE)')  
 ```  
   
@@ -468,7 +468,7 @@ GO
 ```sql  
 USE AdventureWorks2012;  
 GO  
-DECLARE @SearchWord nvarchar(30)  
+DECLARE @SearchWord NVARCHAR(30)  
 SET @SearchWord = N'Performance'  
 SELECT Description   
 FROM Production.ProductDescription   

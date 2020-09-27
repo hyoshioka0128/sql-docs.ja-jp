@@ -1,4 +1,5 @@
 ---
+description: RSExecRole を作成する
 title: RSExecRole を作成する | Microsoft Docs
 ms.date: 06/12/2019
 ms.prod: reporting-services
@@ -10,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 7ac17341-df7e-4401-870e-652caa2859c0
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 50347f9a975aeb4856a5ee140697f7b13de3e3b2
-ms.sourcegitcommit: ff82f3260ff79ed860a7a58f54ff7f0594851e6b
+ms.openlocfilehash: 08895328856056d01b927a8c80962ff0b90570f7
+ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "67140475"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88492635"
 ---
 # <a name="create-the-rsexecrole"></a>RSExecRole を作成する
 
@@ -208,15 +209,15 @@ ms.locfileid: "67140475"
   
 4.  **[既存のレポート サーバー データベースを選択する]** をクリックします。  
   
-5.  データベース エンジンのサーバー名を入力します。 レポート サーバー データベースを名前付きインスタンスにアタッチした場合は、\<サーバー名>\\<インスタンス名\> の形式でインスタンス名を入力する必要があります。  
+5.  データベース エンジンのサーバー名を入力します。 レポート サーバー データベースを名前付きインスタンスにアタッチした場合は、\<servername>\\<instancename\> の形式でインスタンス名を入力する必要があります。  
   
 6.  **[接続テスト]** をクリックします。 "接続テストに成功しました" というダイアログ ボックスが表示されるはずです。
   
-7.  **[OK]** を選択してダイアログ ボックスを閉じ、 **[次へ]** を選択します。  
+7.  **[OK]** を選択してダイアログ ボックスを閉じ、**[次へ]** を選択します。  
   
 8.  [データベース] で、レポート サーバー データベースを選択します。  
   
-9.  **[次へ]** をクリックし、ウィザードを終了します。  
+9.  **[次へ]** をクリックして、ウィザードを完了します。  
   
 10. **[暗号化キー]** をクリックします。  
   

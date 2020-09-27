@@ -1,6 +1,6 @@
 ---
 title: IRowsetFastLoad::InsertRow (OLE DB ドライバー) | Microsoft Docs
-description: IRowsetFastLoad::InsertRow (OLE DB)
+description: OLE DB Driver for SQL Server で IRowsetFastLoad::InsertRow メソッドを使用して一括コピー行セットに行を追加する方法について説明します。
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
@@ -13,14 +13,14 @@ apiname:
 apitype: COM
 helpviewer_keywords:
 - InsertRow method
-author: pmasl
-ms.author: pelopes
-ms.openlocfilehash: f56a44eb1e38ce98399ae546a20fb72e67846596
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+author: David-Engel
+ms.author: v-daenge
+ms.openlocfilehash: 3c48064ea8b75206d593f674335470ec6ae737dc
+ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87244470"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88860102"
 ---
 # <a name="irowsetfastloadinsertrow-ole-db"></a>IRowsetFastLoad::InsertRow (OLE DB)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: 675671ca-e6c9-48a2-82e9-386778f3a49f
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: db412b18a0189f9f68caff79f8e904db5424d673
-ms.sourcegitcommit: ff82f3260ff79ed860a7a58f54ff7f0594851e6b
+ms.openlocfilehash: 6c4ed5c985340e45b46b664dc4b6a53ff70f1b1a
+ms.sourcegitcommit: 83e5cfd2654233befd95e3ff37de936f9dc8549c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "75244322"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89468347"
 ---
 # <a name="lesson-1-create-a-report-server-project-reporting-services"></a>レッスン 1:レポート サーバー プロジェクトを作成する (Reporting Services)
 
@@ -36,23 +36,24 @@ ms.locfileid: "75244322"
     ![レポート サーバー プロジェクト テンプレートの選択](../reporting-services/media/lesson-1-creating-a-report-server-project-reporting-services/select-report-server-project-template.png)
 
     > [!IMPORTANT]
-    > VS の場合、左の列に [Reporting Services] が表示されていない場合は、SSDT ワークロードをインストールしてレポート デザイナーを追加します。 **[ツール]** メニューから **[ツールと機能を取得]** を選択し、表示されたワークロードから **[SQL Server Data Tools]** を選択します。 中央の列に [Reporting Services] オブジェクトが表示されていない場合は、Reporting Services 拡張機能を追加します。 **[ツール]** メニューから、 **[拡張機能と更新プログラム]**  >  **[オンライン]** の順に選択します。 中央の列で、表示された拡張機能から **[Microsoft Reporting Services Projects]**  >  **[ダウンロード]** を選択します。 SSDT については、[SQL Server Data Tools (SSDT) のダウンロード](../ssdt/download-sql-server-data-tools-ssdt.md)に関する記事を参照してください。
+    > VS の場合、左の列に [Reporting Services] が表示されていない場合は、SSDT ワークロードをインストールしてレポート デザイナーを追加します。 **[ツール]** メニューから **[ツールと機能を取得]** を選択し、表示されたワークロードから **[SQL Server Data Tools]** を選択します。 中央の列に [Reporting Services] オブジェクトが表示されていない場合は、Reporting Services 拡張機能を追加します。 **[ツール]** メニューから、 **[拡張機能と更新プログラム]**  >  **[オンライン]** の順に選択します。 中央の列で、表示された拡張機能から **[Microsoft Reporting Services Projects]**  >  **[ダウンロード]** を選択します。 SSDT については、[SQL Server Data Tools (SSDT) のダウンロード](../ssdt/download-sql-server-data-tools-ssdt.md)に関する記事を参照してください。 Visual Studio 2019 で、これまでの手順がうまくいかなかった場合は、[Microsoft Reporting Service Project 拡張機能](https://marketplace.visualstudio.com/items?itemName=ProBITools.MicrosoftReportProjectsforVisualStudio)をインストールしてみてください。
+
 
 3. **[新しいプロジェクト]** ダイアログ ボックスの中央の列で、 **[レポート サーバー プロジェクト]** アイコン &nbsp;&nbsp;![ssrs_ssdt_report_server_project](media/ssrs-ssdt-report-server-project.png)&nbsp;&nbsp; を選択します。
 
-4. **[名前]** ボックスに、プロジェクトの名前として「Tutorial」を入力します。 既定では、 **[場所]** ボックスに "Documents\Visual Studio 20xx\Projects\" フォルダーへのパスが表示されます。 レポート デザイナーにより Tutorial という名前のフォルダーがこのパスの下に作成され、このフォルダー内に Tutorial プロジェクトが作成されます。 プロジェクトが VS ソシューションに属していない場合は、VS によりソリューション ファイル (.sln) も作成されます。
+4. **[名前]** ボックスに、プロジェクトの名前として「Tutorial」を入力します。 既定では、**[場所]** ボックスに "Documents\Visual Studio 20xx\Projects\" フォルダーへのパスが表示されます。 レポート デザイナーにより Tutorial という名前のフォルダーがこのパスの下に作成され、このフォルダー内に Tutorial プロジェクトが作成されます。 プロジェクトが VS ソシューションに属していない場合は、VS によりソリューション ファイル (.sln) も作成されます。
 
 5. **[OK]** を選択すると、プロジェクトが作成されます。 Tutorial プロジェクトが右側の **[ソリューション エクスプローラー]** ウィンドウに表示されます。
   
 ## <a name="creating-a-report-definition-file-rdl"></a>レポート定義ファイル (RDL) を作成する  
   
-1. **[ソリューション エクスプローラー]** ウィンドウで、 **[レポート]** フォルダーを右クリックします。 **[ソリューション エクスプローラー]** ウィンドウが表示されない場合は、 **[表示]** メニュー > **[ソリューション エクスプローラー]** の順に選択します。
+1. **[ソリューション エクスプローラー]** ウィンドウで、**[レポート]** フォルダーを右クリックします。 **[ソリューション エクスプローラー]** ウィンドウが表示されない場合は、**[表示]** メニュー > **[ソリューション エクスプローラー]** の順に選択します。
 
 2. **[追加]**  >  **[新しい項目]** の順に選択します。
 
     ![ssrs_ssdt_add_report](../reporting-services/media/ssrs-ssdt-add-report.png)
 
-3. **[新しい項目の追加]** ウィンドウで、 **[レポート]** アイコンを選択します。
+3. **[新しい項目の追加]** ウィンドウで、**[レポート]** アイコンを選択します。
 
 4. **[名前]** ボックスに「Sales Orders.rdl」と入力します。
 
@@ -68,4 +69,4 @@ ms.locfileid: "75244322"
 - データ ソースからデータセットを作成する。
 - レポートのレイアウトをデザインし書式を設定する。
 
-「[レッスン 2: 接続情報の指定 &#40;Reporting Services&#41;](../reporting-services/lesson-2-specifying-connection-information-reporting-services.md)」を参照してください。
+「[レッスン 2: 接続情報の指定 &#40;Reporting Services&#41;](../reporting-services/lesson-2-specifying-connection-information-reporting-services.md)」に進みます。

@@ -55,12 +55,12 @@ ms.assetid: d2297805-412b-47b5-aeeb-53388349a5b9
 author: pmasl
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: b2fb1378d31721c0087ac42babdd642c5d0f8421
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: dbce72e7fc8e309700098424e7ca1830dab1b1af
+ms.sourcegitcommit: 8f062015c2a033f5a0d805ee4adabbe15e7c8f94
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89541444"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91227187"
 ---
 # <a name="create-index-transact-sql"></a>CREATE INDEX (Transact-SQL)
 
@@ -192,11 +192,11 @@ CREATE [ UNIQUE ] [ CLUSTERED | NONCLUSTERED ] INDEX index_name
 }
 ```
 
-### <a name="syntax-for-azure-sql-data-warehouse-and-parallel-data-warehouse"></a>Azure SQL Data Warehouse と Parallel Data Warehouse の構文
+### <a name="syntax-for-azure-synapse-analytics-and-parallel-data-warehouse"></a>Azure Synapse Analytics と Parallel Data Warehouse の構文
 
 ```syntaxsql
 
-CREATE CLUSTERED COLUMNSTORE INDEX INDEX index_name
+CREATE CLUSTERED COLUMNSTORE INDEX index_name
     ON [ database_name . [ schema ] . | schema . ] table_name
     [ORDER (column[,...n])]
     [WITH ( DROP_EXISTING = { ON | OFF } )]
@@ -897,7 +897,7 @@ INSERT INTO Production.UnitMeasure (UnitMeasureCode, Name, ModifiedDate)
 
 結果のエラー メッセージは次のようになります。
 
-```cmd
+```
 Server: Msg 2601, Level 14, State 1, Line 1
 Cannot insert duplicate key row in object 'UnitMeasure' with unique index 'AK_UnitMeasure_Name'. The statement has been terminated.
 ```
@@ -959,7 +959,7 @@ GO
 
 次は 2 番目の `INSERT` ステートメントの結果です。
 
-```cmd
+```
 Server: Msg 2601, Level 14, State 1, Line 5
 Cannot insert duplicate key row in object '#Test' with unique index
 'AK_Index'. The statement has been terminated.

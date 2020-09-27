@@ -22,12 +22,12 @@ ms.assetid: e2ea7a6d-3e2f-472c-afbc-437d3b835c03
 author: markingmyname
 ms.author: maghan
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: e0dfabccec3d2d5e914a31c4464ff71c1136b685
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: bb8aca979735819200d8b03c2c2f77a30f2c8398
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88417578"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91115608"
 ---
 # <a name="abs-transact-sql"></a>ABS (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -60,7 +60,7 @@ SELECT ABS(-1.0), ABS(0.0), ABS(1.0);
   
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
   
-```sql
+```
 ---- ---- ----  
 1.0  .0   1.0  
 ```  
@@ -68,7 +68,7 @@ SELECT ABS(-1.0), ABS(0.0), ABS(1.0);
 `ABS` 関数では、数値の絶対値が指定のデータ型で表現できる最大値を超えている場合に、オーバーフロー エラーを生成することができます。 たとえば、`int` データ型の値の範囲が `-2,147,483,648` から `2,147,483,647` だとします。 符号付き整数 `-2,147,483,648` の絶対値を計算すると、`int` データ型の正数範囲の上限を超えるため、オーバーフロー エラーが発生します。
   
 ```sql
-DECLARE @i int;  
+DECLARE @i INT;  
 SET @i = -2147483648;  
 SELECT ABS(@i);  
 GO  

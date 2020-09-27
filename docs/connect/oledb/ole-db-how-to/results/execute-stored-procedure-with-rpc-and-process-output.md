@@ -1,6 +1,6 @@
 ---
 title: RPC と処理の出力でのストアド プロシージャの実行 | Microsoft Docs
-description: RPC と処理の出力でのストアド プロシージャの実行
+description: この例では、RPC を使用して SQL Server ストアド プロシージャを実行し、リターン コードと出力パラメーターを処理する方法について説明します。
 ms.custom: ''
 ms.date: 06/14/2018
 ms.prod: sql
@@ -11,14 +11,14 @@ ms.topic: reference
 helpviewer_keywords:
 - RPC syntax
 - stored procedures [SQL Server], RPC syntax
-author: pmasl
-ms.author: pelopes
-ms.openlocfilehash: 26d944b3e6b040baa7f2105d09429f827b2094d0
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+author: David-Engel
+ms.author: v-daenge
+ms.openlocfilehash: b9e62ebb5b8060c3b19e06d4e0af71981a63660c
+ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86012503"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88860300"
 ---
 # <a name="execute-stored-procedure-with-rpc-and-process-output"></a>RPC と処理の出力でのストアド プロシージャの実行
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]

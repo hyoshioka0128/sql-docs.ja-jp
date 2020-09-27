@@ -16,12 +16,12 @@ ms.assetid: dbba47d7-e08e-4435-b876-35dced1f325d
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 362d2643557229b64961217d9a5b5b3c4f784bff
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 727dc40389d803cc81bb07011f799bc2d44365a0
+ms.sourcegitcommit: 1126792200d3b26ad4c29be1f561cf36f2e82e13
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88360698"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90076664"
 ---
 # <a name="transact-sql-reference-database-engine"></a>Transact-SQL リファレンス (データベース エンジン)
 [!INCLUDE[tsql-appliesto-ss2008-all-md](../includes/tsql-appliesto-ss2008-all-md.md)]
@@ -60,14 +60,14 @@ T-SQL のトピックを見つけるには、このページの右上にある�
   
  [!INCLUDE[tsql-appliesto-ss2008-all_md](../includes/tsql-appliesto-ss2008-all-md.md)]   
 
-次の例のラベルは、トピックが Azure SQL Data Warehouse と Parallel Data Warehouse だけに適用されることを示しています。
+次の例のラベルは、トピックが Azure Synapse Analytics と Parallel Data Warehouse だけに適用されることを示しています。
 
 [!INCLUDE[tsql-appliesto-xxxxxx-xxxx-asdw-pdw_md](../includes/applies-to-version/asa-pdw.md)]
 
 場合によっては、トピックがある製品またはサービスで使用されていても、引数のすべてがサポートされているわけではないこともあります。 この場合は、別の "**適用されます**" セクションが、そのトピック本文中の該当する引数の説明の中に挿入されます。  
  
-## <a name="get-help-from-the-msdn-forum"></a>MSDN フォーラムで支援を受ける  
-オンラインで支援を受けるには、[MSDN Transact-SQL フォーラム](https://social.msdn.microsoft.com/Forums/home)を参照してください。  
+## <a name="get-help-from-microsoft-q--a"></a>Microsoft Q & A から支援を受ける  
+オンラインで支援を受けるには、[Microsoft Q & A Transact-SQL フォーラム](https://docs.microsoft.com/answers/topics/sql-server-transact-sql.html)を参照してください。  
  
 ## <a name="see-other-language-references"></a>その他の言語リファレンス
 SQL のドキュメントには、他にも次のような言語リファレンスが含まれています。

@@ -10,12 +10,12 @@ metadata:
   author: markingmyname
   ms.author: maghan
   ms.date: 05/09/2020
-  ms.openlocfilehash: 3f6de8718576c3bd5d29303a218d9d7fae6d7dc7
-  ms.sourcegitcommit: dc8a30a4a27e15fc6671ca2674da9b7c637ec255
+  ms.openlocfilehash: c17887d2415fa5e7ea072426a1825aa7a51f73b0
+  ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/21/2020
-  ms.locfileid: "88745962"
+  ms.lasthandoff: 09/23/2020
+  ms.locfileid: "91111191"
 landingContent:
 - title: Azure Data Studio について
   linkLists:
@@ -68,10 +68,16 @@ landingContent:
   - linkListType: concept
     links:
     - text: Azure Data Studio の機能の拡張
-      url: extensions.md
+      url: extensions/add-extensions.md
     - text: Azure Data Studio 拡張機能を作成することで機能を拡張する
-      url: extension-authoring.md
+      url: extensions/extension-authoring.md
     - text: PostgreSQL の拡張機能
-      url: postgres-extension.md
+      url: extensions/postgres-extension.md
     - text: PowerShell エディターのサポート
-      url: powershell-extension.md
+      url: extensions/powershell-extension.md
+    - text: Azure Data Explorer
+      url: extensions/kusto-extension.md
+    - text: Notebook 拡張機能
+      url: extensions/notebook-extension.md
+    - text: Jupyter Book 拡張機能
+      url: extensions/jupyter-book-extension.md

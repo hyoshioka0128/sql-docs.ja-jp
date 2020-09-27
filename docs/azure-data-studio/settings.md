@@ -1,20 +1,20 @@
 ---
 title: ユーザーとワークスペースの設定
 description: 設定を使用し、Azure Data Studio のエディター、ユーザー インターフェイス、機能動作を自分の好みに合わせてカスタマイズする方法について説明します。
-ms.custom: seodec18
-ms.date: 09/24/2018
 ms.prod: azure-data-studio
 ms.technology: azure-data-studio
-ms.reviewer: alayu, maghan, sstein
 ms.topic: conceptual
 author: yualan
 ms.author: alayu
-ms.openlocfilehash: 2196bd9c4445f700fd1a697db3edcb5879b1f44b
-ms.sourcegitcommit: dc8a30a4a27e15fc6671ca2674da9b7c637ec255
+ms.reviewer: maghan, sstein
+ms.custom: seodec18
+ms.date: 09/24/2018
+ms.openlocfilehash: 05ed5f644b26c970383197376bce481a96ba5742
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88746162"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91114526"
 ---
 # <a name="modify-user-and-workspace-settings"></a>ユーザーとワークスペースの設定を変更する
 
@@ -55,7 +55,6 @@ Azure Data Studio には、次の 2 つの異なる設定のスコープがあ�
 既定で、終了時に保存されていないファイルの変更は Azure Data Studio によって記憶されます。 これは、Visual Studio Code の Hot Exit 機能と同じです。
 
 既定では、Hot Exit は無効になっています。 Hot Exit を有効にするには、`files.hotExit` 設定を編集します。 詳細については、「[Hot Exit (Visual Studio Code のドキュメント)](https://code.visualstudio.com/docs/editor/codebasics#_hot-exit)」を参照してください。
-
 
 ## <a name="tab-color"></a>タブの色
 

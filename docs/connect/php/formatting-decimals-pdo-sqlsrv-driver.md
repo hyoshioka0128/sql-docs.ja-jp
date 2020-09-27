@@ -1,22 +1,22 @@
 ---
-title: 10 進数文字列と金額の書式設定 (PDO_SQLSRV ドライバー) | Microsoft Docs
+title: 10 進数文字列と金額の書式設定 (PDO_SQLSRV ドライバー)
+description: PDO_SQLSRV ドライバーを使用する場合に PDO::SQLSRV_ATTR_FORMAT_DECIMALS と SQLSRV_ATTR_DECIMAL_PLACES 属性を使用して 10 進数または金額の書式設定を行う方法について説明します
 ms.custom: ''
-ms.date: 02/11/2019
+ms.date: 08/10/2020
 ms.prod: sql
 ms.prod_service: connectivity
 ms.technology: connectivity
 ms.topic: conceptual
 helpviewer_keywords:
 - formatting, decimal types, money values
-author: yitam
-ms.author: v-yitam
-manager: v-mabarw
-ms.openlocfilehash: 76c314159faf15e63bf77b17a8a45abf217b205c
-ms.sourcegitcommit: ff82f3260ff79ed860a7a58f54ff7f0594851e6b
+author: David-Engel
+ms.author: v-daenge
+ms.openlocfilehash: ae61b239fca2a923645b9de963309c62a3919b3d
+ms.sourcegitcommit: d1051f05a7db81ec62d9785bb6af572408f3d4e0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "68265149"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88680657"
 ---
 # <a name="formatting-decimal-strings-and-money-values-pdo_sqlsrv-driver"></a>10 進数文字列と金額の書式設定 (PDO_SQLSRV ドライバー)
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]

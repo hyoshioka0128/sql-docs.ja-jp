@@ -28,12 +28,12 @@ ms.assetid: 7e695364-1a98-4cfd-8ebd-137ac5a425b3
 author: markingmyname
 ms.author: maghan
 monikerRange: =azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017
-ms.openlocfilehash: 2c8b24889e99f5f0f3cdbaaad377a2d4e99f2da3
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: 5eea276766b848033fc0fd8cd7487e7451c779ca
+ms.sourcegitcommit: ac9feb0b10847b369b77f3c03f8200c86ee4f4e0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89549332"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90688338"
 ---
 # <a name="create-route-transact-sql"></a>CREATE ROUTE (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md.md )]
@@ -45,7 +45,6 @@ ms.locfileid: "89549332"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 CREATE ROUTE route_name  
 [ AUTHORIZATION owner_name ]  
 WITH    
@@ -73,7 +72,7 @@ WITH
  BROKER_INSTANCE = **'** _broker\_instance\_identifier_ **'**  
  発信先サービスをホストするデータベースを指定します。 *broker_instance_identifier* パラメーターは、リモート データベースのブローカー インスタンス識別子である必要があります。この識別子は選択したデータベースで、次のクエリを実行して取得できます。  
   
-```  
+```sql  
 SELECT service_broker_guid  
 FROM sys.databases  
 WHERE database_id = DB_ID()  
@@ -93,7 +92,7 @@ SQL Managed Instance の場合、`ADDRESS` はローカルである必要があ�
   
  指定した *port_number* は、指定したコンピューターにおける [!INCLUDE[ssSB](../../includes/sssb-md.md)] インスタンスの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エンドポイント用のポート番号と一致する必要があります。 これは選択したデータベースで次のクエリを実行することにより取得できます。  
   
-```  
+```sql  
 SELECT tcpe.port  
 FROM sys.tcp_endpoints AS tcpe  
 INNER JOIN sys.service_broker_endpoints AS ssbe  
@@ -114,7 +113,7 @@ WHERE ssbe.name = N'MyServiceBrokerEndpoint';
   
  指定した *port_number* は、指定したコンピューターにおける [!INCLUDE[ssSB](../../includes/sssb-md.md)] インスタンスの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エンドポイント用のポート番号と一致する必要があります。 これは選択したデータベースで次のクエリを実行することにより取得できます。  
   
-```  
+```sql  
 SELECT tcpe.port  
 FROM sys.tcp_endpoints AS tcpe  
 INNER JOIN sys.service_broker_endpoints AS ssbe  
@@ -145,7 +144,7 @@ WHERE ssbe.name = N'MyServiceBrokerEndpoint';
 ### <a name="a-creating-a-tcpip-route-by-using-a-dns-name"></a>A. DNS 名を使用して TCP/IP ルートを作成する  
  次の例では、サービス `//Adventure-Works.com/Expenses` へのルートを作成します。 このルートでは、このサービスへのメッセージが、TCP 経由で DNS 名 `1234` に対応するホスト上のポート `www.Adventure-Works.com` に伝達されるように指定します。 ターゲット サーバーにメッセージが到着すると、一意識別子 `D8D4D268-00A3-4C62-8F91-634B89C1E315` で指定されるブローカー インスタンスにメッセージが配信されます。  
   
-```  
+```sql 
 CREATE ROUTE ExpenseRoute  
     WITH  
     SERVICE_NAME = '//Adventure-Works.com/Expenses',  
@@ -156,7 +155,7 @@ CREATE ROUTE ExpenseRoute
 ### <a name="b-creating-a-tcpip-route-by-using-a-netbios-name"></a>B. NetBIOS 名を使用して TCP/IP ルートを作成する  
  次の例では、サービス `//Adventure-Works.com/Expenses` へのルートを作成します。 このルートでは、このサービスへのメッセージが、TCP 経由で NetBIOS 名 `1234` に対応するホスト上のポート `SERVER02` へ伝達されるように指定します。 対象の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] にメッセージが到着すると、一意識別子 `D8D4D268-00A3-4C62-8F91-634B89C1E315` で指定されるデータベース インスタンスにメッセージが配信されます。  
   
-```  
+```sql  
 CREATE ROUTE ExpenseRoute  
     WITH   
     SERVICE_NAME = '//Adventure-Works.com/Expenses',  
@@ -167,7 +166,7 @@ CREATE ROUTE ExpenseRoute
 ### <a name="c-creating-a-tcpip-route-by-using-an-ip-address"></a>C. IP アドレスを使用して TCP/IP ルートを作成する  
  次の例では、サービス `//Adventure-Works.com/Expenses` へのルートを作成します。 このルートでは、このサービスへのメッセージが、TCP 経由で IP アドレス `1234` にあるホスト上のポート `192.168.10.2` へ伝達されるように指定します。 対象の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] にメッセージが到着すると、一意識別子 `D8D4D268-00A3-4C62-8F91-634B89C1E315` で指定されるブローカー インスタンスにメッセージが配信されます。  
   
-```  
+```sql  
 CREATE ROUTE ExpenseRoute  
     WITH  
     SERVICE_NAME = '//Adventure-Works.com/Expenses',  
@@ -178,7 +177,7 @@ CREATE ROUTE ExpenseRoute
 ### <a name="d-creating-a-route-to-a-forwarding-broker"></a>D. 転送ブローカーへのルートを作成する  
  次の例では、サーバー `dispatch.Adventure-Works.com` の転送ブローカーへのルートを作成します。 サービス名とブローカー インスタンス識別子が両方とも指定されていないため、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、他のルートが定義されていないサービスに対してこのルートが使用されます。  
   
-```  
+```sql  
 CREATE ROUTE ExpenseRoute  
     WITH  
     ADDRESS = 'TCP://dispatch.Adventure-Works.com' ;   
@@ -187,7 +186,7 @@ CREATE ROUTE ExpenseRoute
 ### <a name="e-creating-a-route-to-a-local-service"></a>E. ローカル サービスへのルートを作成する  
  次の例では、ルートと同じインスタンスにあるサービス `//Adventure-Works.com/LogRequests` へのルートを作成します。  
   
-```  
+```sql  
 CREATE ROUTE LogRequests  
     WITH  
     SERVICE_NAME = '//Adventure-Works.com/LogRequests',  
@@ -197,7 +196,7 @@ CREATE ROUTE LogRequests
 ### <a name="f-creating-a-route-with-a-specified-lifetime"></a>F. 有効期間が指定されたルートを作成する  
  次の例では、サービス `//Adventure-Works.com/Expenses` へのルートを作成します。 ルートの有効期間は、`259200` 秒、つまり 72 時間です。  
   
-```  
+```sql  
 CREATE ROUTE ExpenseRoute  
     WITH  
     SERVICE_NAME = '//Adventure-Works.com/Expenses',  
@@ -208,7 +207,7 @@ CREATE ROUTE ExpenseRoute
 ### <a name="g-creating-a-route-to-a-mirrored-database"></a>G. ミラー化されたデータベースへのルートを作成する  
  次の例では、サービス `//Adventure-Works.com/Expenses` へのルートを作成します。 サービスは、ミラー化されたデータベースでホストされています。 ミラー化されたデータベースのうちの 1 つが置かれているアドレスは `services.Adventure-Works.com:1234`、もう 1 つが置かれているアドレスは `services-mirror.Adventure-Works.com:1234` です。  
   
-```  
+```sql  
 CREATE ROUTE ExpenseRoute  
     WITH  
     SERVICE_NAME = '//Adventure-Works.com/Expenses',  
@@ -220,7 +219,7 @@ CREATE ROUTE ExpenseRoute
 ### <a name="h-creating-a-route-that-uses-the-service-name-for-routing"></a>H. ルーティング用のサービス名を使用するルートを作成する  
  次の例では、メッセージの送信先となるネットワーク アドレスを決定するために、サービス名を使用するルートが作成されます。 ネットワーク アドレスとして `'TRANSPORT'` を指定するルートは、他のルートより照合の優先度が低いことに注意してください。  
   
-```  
+```sql  
 CREATE ROUTE TransportRoute  
     WITH ADDRESS = 'TRANSPORT' ;  
 ```  
