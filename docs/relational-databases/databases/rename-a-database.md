@@ -63,7 +63,7 @@ ms.locfileid: "88471182"
   
 ## <a name="rename-a-database-using-sql-server-management-studio"></a>SQL Server Management Studio を使用してデータベースの名前を変更する
 
-SQL Server Management Studio を使用して SQL Server または Azure SQL データベースの名前を変更するには、次の手順を使用します。
+SQL Server Management Studio を使用して SQL Server または Azure SQL Database の名前を変更するには、次の手順を使用します。
 
   
 1. **オブジェクト エクスプローラー**で、SQL インスタンスに接続します。  
@@ -101,7 +101,7 @@ SQL Server Management Studio で T-SQL を使用して SQL Server データベ�
 
 ### <a name="to-rename-an-azure-sql-database-database"></a>Azure SQL Database データベースの名前を変更するには
 
-SQL Server Management Studio で T-SQL を使用して Azure SQL データベースの名前を変更するには、次の手順を使用します。
+SQL Server Management Studio で T-SQL を使用して Azure SQL Database の名前を変更するには、次の手順を使用します。
   
 1. インスタンスの `master` データベースに接続します。  
 2. クエリ ウィンドウを開きます。
