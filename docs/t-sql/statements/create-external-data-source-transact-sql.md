@@ -441,7 +441,7 @@ WITH
 
 &nbsp;
 
-## <a name="overview-azure-sql-database"></a>概要:Azure SQL データベース
+## <a name="overview-azure-sql-database"></a>概要:Azure SQL Database
 
 エラスティック クエリ用の外部データ ソースを作成します。 外部データ ソースを使用して接続を確立し、次の主なユース ケースをサポートします。
 
