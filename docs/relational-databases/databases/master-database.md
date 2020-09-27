@@ -35,10 +35,10 @@ ms.locfileid: "88411368"
   
 |ファイル|論理名|物理名|ファイル拡張|  
 |----------|------------------|-------------------|-----------------|  
-|プライマリ データ|master|master.mdf|ディスクがいっぱいになるまで 10% ずつ自動拡張|  
-|ログ|mastlog|mastlog.ldf|最大 2 TB まで 10% ずつ自動拡張|  
+|Primary data|master|master.mdf|ディスクがいっぱいになるまで 10% ずつ自動拡張|  
+|Log|mastlog|mastlog.ldf|最大 2 TB まで 10% ずつ自動拡張|  
   
-**master** のデータ ファイルとログ ファイルの移動方法の詳細については、「 [システム データベースの移動](../../relational-databases/databases/move-system-databases.md)」を参照してください。  
+**master** のデータ ファイルとログ ファイルの移動方法の詳細については、「[システム データベースの移動](../../relational-databases/databases/move-system-databases.md)」を参照してください。  
 
 > [!IMPORTANT]
 > Azure SQL Database サーバーの場合、ユーザーが **master** データベースのサイズを制御することはできません。
@@ -67,7 +67,7 @@ SQL Server と Azure SQL Managed Instance に向けた **master** データベ�
 |CONCAT_NULL_YIELDS_NULL|OFF|はい|  
 |CURSOR_CLOSE_ON_COMMIT|OFF|はい|  
 |CURSOR_DEFAULT|GLOBAL|はい|  
-|データベース可用性オプション|ONLINE<br /><br /> MULTI_USER<br /><br /> READ_WRITE|いいえ<br /><br /> いいえ<br /><br /> いいえ|  
+|Database Availability Options|ONLINE<br /><br /> MULTI_USER<br /><br /> READ_WRITE|いいえ<br /><br /> いいえ<br /><br /> いいえ|  
 |DATE_CORRELATION_OPTIMIZATION|OFF|はい|  
 |DB_CHAINING|ON|いいえ|  
 |ENCRYPTION|OFF|いいえ|  
@@ -79,7 +79,7 @@ SQL Server と Azure SQL Managed Instance に向けた **master** データベ�
 |READ_COMMITTED_SNAPSHOT|OFF|いいえ|  
 |RECOVERY|SIMPLE|はい|  
 |RECURSIVE_TRIGGERS|OFF|はい|  
-|Service Broker のオプション|DISABLE_BROKER|いいえ|  
+|Service Broker Options|DISABLE_BROKER|いいえ|  
 |TRUSTWORTHY|OFF|はい|  
   
 これらのデータベース オプションの説明は、「[ALTER DATABASE &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-transact-sql.md)」を参照してください。  
@@ -124,7 +124,7 @@ SQL Server と Azure SQL Managed Instance に向けた **master** データベ�
   
 - **master** を完全に再構築します。  
   
-  **master** に深刻な破損があり、それが原因で [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]を起動できない場合、 **master**を再構築する必要があります。 詳細については、「 [システム データベースの再構築](../../relational-databases/databases/rebuild-system-databases.md)」を参照してください。  
+  **master** に深刻な破損があり、それが原因で [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]を起動できない場合、 **master**を再構築する必要があります。 詳細については、「[システム データベースの再構築](../../relational-databases/databases/rebuild-system-databases.md)」を参照してください。  
   
   > [!IMPORTANT]  
   >  **master** を再構築すると、すべてのシステム データベースが再構築されます。  
