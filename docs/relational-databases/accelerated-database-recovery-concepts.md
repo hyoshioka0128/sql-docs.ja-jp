@@ -24,7 +24,7 @@ ms.locfileid: "90989889"
 
 [!INCLUDE [SQL Server ASDB, ASDBMI, ASDW ](../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
 
-高速データベース復旧 (ADR) では、SQL データベース エンジンの復旧プロセスの再設計により、データベースの可用性が向上します (実行時間の長いトランザクションが存在する場合は特に)。 ADR は SQL Server 2019 の新機能です。 
+高速データベース復旧 (ADR) では、SQL Database エンジンの復旧プロセスの再設計により、データベースの可用性が向上します (実行時間の長いトランザクションが存在する場合は特に)。 ADR は SQL Server 2019 の新機能です。 
 
 ADR は、Azure SQL Database、Azure SQL Managed Instance、Azure Synapse SQL のデータベースでも使用可能です。 ADR は SQL Database と SQL Managed Instance で既定で有効になっており、無効にすることはできません。 
 
