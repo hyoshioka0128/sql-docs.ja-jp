@@ -26,14 +26,14 @@ ms.locfileid: "90942815"
 
 |command|説明|
 | --- | --- |
-[azdata arc sql mi create](#azdata-arc-sql-mi-create) | SQL マネージド インスタンスを作成します。
-[azdata arc sql mi edit](#azdata-arc-sql-mi-edit) | SQL マネージド インスタンスの構成を編集します。
-[azdata arc sql mi delete](#azdata-arc-sql-mi-delete) | SQL マネージド インスタンスを削除します。
-[azdata arc sql mi show](#azdata-arc-sql-mi-show) | SQL マネージド インスタンスの詳細を表示します。
-[azdata arc sql mi list](#azdata-arc-sql-mi-list) | SQL マネージド インスタンスの一覧を表示します。
+[azdata arc sql mi create](#azdata-arc-sql-mi-create) | SQL Managed Instance を作成します。
+[azdata arc sql mi edit](#azdata-arc-sql-mi-edit) | SQL Managed Instance の構成を編集します。
+[azdata arc sql mi delete](#azdata-arc-sql-mi-delete) | SQL Managed Instance を削除します。
+[azdata arc sql mi show](#azdata-arc-sql-mi-show) | SQL Managed Instance の詳細を表示します。
+[azdata arc sql mi list](#azdata-arc-sql-mi-list) | SQL Managed Instance の一覧を表示します。
 [azdata arc sql mi config](reference-azdata-arc-sql-mi-config.md) | 構成コマンド。
 ## <a name="azdata-arc-sql-mi-create"></a>azdata arc sql mi create
-SQL マネージド インスタンスのパスワードを設定するには、環境変数 AZDATA_PASSWORD を設定してください
+SQL Managed Instance のパスワードを設定するには、環境変数 AZDATA_PASSWORD を設定してください
 ```bash
 azdata arc sql mi create --name -n 
                          [--path]  
@@ -69,16 +69,16 @@ azdata arc sql mi create --name -n
 [--no-wait]
 ```
 ### <a name="examples"></a>使用例
-SQL マネージド インスタンスを作成します。
+SQL Managed Instance を作成します。
 ```bash
 azdata arc sql mi create -n sqlmi1
 ```
 ### <a name="required-parameters"></a>必須のパラメーター
 #### `--name -n`
-SQL マネージド インスタンスの名前。
+SQL Managed Instance の名前。
 ### <a name="optional-parameters"></a>省略可能のパラメーター
 #### `--path`
-SQL マネージド インスタンスの json ファイルに対する src ファイルへのパス。
+SQL Managed Instance の json ファイルに対する src ファイルへのパス。
 #### `--cores-limit -cl`
 マネージド インスタンスのコア数の制限 (整数)。
 #### `--cores-request -cr`
@@ -121,7 +121,7 @@ JMESPath クエリ文字列。 詳細と例については、[http://jmespath.or
 #### `--verbose`
 ログの詳細レベルを上げます。 詳細なデバッグ ログを表示するには --debug を使います。
 ## <a name="azdata-arc-sql-mi-edit"></a>azdata arc sql mi edit
-SQL マネージド インスタンスの構成を編集します。
+SQL Managed Instance の構成を編集します。
 ```bash
 azdata arc sql mi edit --name -n 
                        [--path]  
@@ -139,16 +139,16 @@ azdata arc sql mi edit --name -n
 [--no-wait]
 ```
 ### <a name="examples"></a>使用例
-SQL マネージド インスタンスの構成を編集します。
+SQL Managed Instance の構成を編集します。
 ```bash
 azdata arc sql mi edit --path ./spec.json -n sqlmi1
 ```
 ### <a name="required-parameters"></a>必須のパラメーター
 #### `--name -n`
-編集されている SQL マネージド インスタンスの名前。 インスタンスを配置するときに使用した名前を変更することはできません。
+編集されている SQL Managed Instance の名前。 インスタンスを配置するときに使用した名前を変更することはできません。
 ### <a name="optional-parameters"></a>省略可能のパラメーター
 #### `--path`
-SQL マネージド インスタンスの json ファイルに対する src ファイルへのパス。
+SQL Managed Instance の json ファイルに対する src ファイルへのパス。
 #### `--cores-limit -cl`
 マネージド インスタンスのコア数の制限 (整数)。
 #### `--cores-request -cr`
@@ -173,19 +173,19 @@ JMESPath クエリ文字列。 詳細と例については、[http://jmespath.or
 #### `--verbose`
 ログの詳細レベルを上げます。 詳細なデバッグ ログを表示するには --debug を使います。
 ## <a name="azdata-arc-sql-mi-delete"></a>azdata arc sql mi delete
-SQL マネージド インスタンスを削除します。
+SQL Managed Instance を削除します。
 ```bash
 azdata arc sql mi delete --name -n 
                          
 ```
 ### <a name="examples"></a>使用例
-SQL マネージド インスタンスを削除します。
+SQL Managed Instance を削除します。
 ```bash
 azdata arc sql mi delete -n sqlmi1
 ```
 ### <a name="required-parameters"></a>必須のパラメーター
 #### `--name -n`
-削除する SQL マネージド インスタンスの名前。
+削除する SQL Managed Instance の名前。
 ### <a name="global-arguments"></a>グローバル引数
 #### `--debug`
 すべてのデバッグ ログを表示するようにログの詳細レベルを上げます。
@@ -198,22 +198,22 @@ JMESPath クエリ文字列。 詳細と例については、[http://jmespath.or
 #### `--verbose`
 ログの詳細レベルを上げます。 詳細なデバッグ ログを表示するには --debug を使います。
 ## <a name="azdata-arc-sql-mi-show"></a>azdata arc sql mi show
-SQL マネージド インスタンスの詳細を表示します。
+SQL Managed Instance の詳細を表示します。
 ```bash
 azdata arc sql mi show --name -n 
                        [--path -p]
 ```
 ### <a name="examples"></a>使用例
-SQL マネージド インスタンスの詳細を表示します。
+SQL Managed Instance の詳細を表示します。
 ```bash
 azdata arc sql mi show -n sqlmi1
 ```
 ### <a name="required-parameters"></a>必須のパラメーター
 #### `--name -n`
-表示する SQL マネージド インスタンスの名前。
+表示する SQL Managed Instance の名前。
 ### <a name="optional-parameters"></a>省略可能のパラメーター
 #### `--path -p`
-SQL マネージド インスタンスの完全な仕様が書き込まれるパス。 省略した場合、仕様は標準出力に書き込まれます。
+SQL Managed Instance の完全な仕様が書き込まれるパス。 省略した場合、仕様は標準出力に書き込まれます。
 ### <a name="global-arguments"></a>グローバル引数
 #### `--debug`
 すべてのデバッグ ログを表示するようにログの詳細レベルを上げます。
@@ -226,12 +226,12 @@ JMESPath クエリ文字列。 詳細と例については、[http://jmespath.or
 #### `--verbose`
 ログの詳細レベルを上げます。 詳細なデバッグ ログを表示するには --debug を使います。
 ## <a name="azdata-arc-sql-mi-list"></a>azdata arc sql mi list
-SQL マネージド インスタンスの一覧を表示します。
+SQL Managed Instance の一覧を表示します。
 ```bash
 azdata arc sql mi list 
 ```
 ### <a name="examples"></a>使用例
-SQL マネージド インスタンスの一覧を表示します。
+SQL Managed Instance の一覧を表示します。
 ```bash
 azdata arc sql mi list
 ```
