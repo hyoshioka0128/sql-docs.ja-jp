@@ -145,7 +145,7 @@ SQL Server 2016 および 2017 の前提条件としてインストールされ�
   
        デバイスが [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] との接続を正常に確立した後のセキュリティ メカニズムは、Windows 認証モードでも混合モード認証でも同じです。 詳細については、「[[データベース エンジンの構成] - [サーバー構成] ページ](../../sql-server/install/instance-configuration.md#serverconfig)」を参照してください。
   
-    * **SQL サーバー管理者**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスの 1 人以上のシステム管理者を指定する必要があります。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のセットアップを実行しているアカウントを追加するには、 **[現在のユーザーの追加]** を選択します。 システム管理者の一覧に対してアカウントを追加または削除するには、 **[追加]** または **[削除]** を選択し、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスについて管理者特権を持っているユーザー、グループ、またはコンピューターの一覧を編集します。  
+    * **SQL Server 管理者**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスの 1 人以上のシステム管理者を指定する必要があります。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のセットアップを実行しているアカウントを追加するには、 **[現在のユーザーの追加]** を選択します。 システム管理者の一覧に対してアカウントを追加または削除するには、 **[追加]** または **[削除]** を選択し、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスについて管理者特権を持っているユーザー、グループ、またはコンピューターの一覧を編集します。  
   
      **[データベース エンジンの構成] - [データ ディレクトリ]** ページを使用して、既定以外のインストール ディレクトリを指定します。 既定のディレクトリにインストールする場合は、 **[次へ]** を選択します。  
   
@@ -310,7 +310,7 @@ SQL Server 2016 および 2017 の前提条件としてインストールされ�
   
        デバイスが [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] との接続を正常に確立した後のセキュリティ メカニズムは、Windows 認証モードでも混合モード認証でも同じです。 詳細については、「[[データベース エンジンの構成] - [サーバー構成] ページ](../../sql-server/install/instance-configuration.md#serverconfig)」を参照してください。
   
-    * **SQL サーバー管理者**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスの 1 人以上のシステム管理者を指定する必要があります。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のセットアップを実行しているアカウントを追加するには、 **[現在のユーザーの追加]** を選択します。 システム管理者の一覧に対してアカウントを追加または削除するには、 **[追加]** または **[削除]** を選択し、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスについて管理者特権を持っているユーザー、グループ、またはコンピューターの一覧を編集します。  
+    * **SQL Server 管理者**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスの 1 人以上のシステム管理者を指定する必要があります。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のセットアップを実行しているアカウントを追加するには、 **[現在のユーザーの追加]** を選択します。 システム管理者の一覧に対してアカウントを追加または削除するには、 **[追加]** または **[削除]** を選択し、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスについて管理者特権を持っているユーザー、グループ、またはコンピューターの一覧を編集します。  
   
      **[データベース エンジンの構成] - [データ ディレクトリ]** ページを使用して、既定以外のインストール ディレクトリを指定します。 既定のディレクトリにインストールする場合は、 **[次へ]** を選択します。  
   
