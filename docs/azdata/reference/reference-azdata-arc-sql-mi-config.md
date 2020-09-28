@@ -26,25 +26,25 @@ ms.locfileid: "90942870"
 
 |command|説明|
 | --- | --- |
-[azdata arc sql mi config init](#azdata-arc-sql-mi-config-init) | SQL マネージド インスタンスの CRD および仕様ファイルを初期化します。
+[azdata arc sql mi config init](#azdata-arc-sql-mi-config-init) | SQL Managed Instance の CRD および仕様ファイルを初期化します。
 [azdata arc sql mi config add](#azdata-arc-sql-mi-config-add) | 構成ファイル内の json パスの値を追加します。
 [azdata arc sql mi config remove](#azdata-arc-sql-mi-config-remove) | 構成ファイル内の json パスの値を削除します。
 [azdata arc sql mi config replace](#azdata-arc-sql-mi-config-replace) | 構成ファイル内の json パスの値を置き換えます。
 [azdata arc sql mi config patch](#azdata-arc-sql-mi-config-patch) | json 修正プログラム ファイルに基づいて、構成ファイルに修正プログラムを適用します。
 ## <a name="azdata-arc-sql-mi-config-init"></a>azdata arc sql mi config init
-SQL マネージド インスタンスの CRD および仕様ファイルを初期化します。
+SQL Managed Instance の CRD および仕様ファイルを初期化します。
 ```bash
 azdata arc sql mi config init --path -p 
                               
 ```
 ### <a name="examples"></a>使用例
-SQL マネージド インスタンスの CRD および仕様ファイルを初期化します。
+SQL Managed Instance の CRD および仕様ファイルを初期化します。
 ```bash
 azdata arc sql mi config init --path ./template
 ```
 ### <a name="required-parameters"></a>必須のパラメーター
 #### `--path -p`
-SQL マネージド インスタンスの CRD および仕様が書き込まれるパス。
+SQL Managed Instance の CRD および仕様が書き込まれるパス。
 ### <a name="global-arguments"></a>グローバル引数
 #### `--debug`
 すべてのデバッグ ログを表示するようにログの詳細レベルを上げます。
