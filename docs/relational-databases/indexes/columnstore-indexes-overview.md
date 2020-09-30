@@ -56,7 +56,7 @@ ms.locfileid: "88408868"
   
 高パフォーマンスと高い圧縮率を実現するために、列ストア インデックスは、テーブルを行グループにスライスし、各行グループを列方向に圧縮します。 行グループ内の行数は、高い圧縮率が実現される程度に多く、インメモリ操作の利点を得られる程度に少なくなければなりません。    
 
-すべてのデータが削除された行グループは、COMPRESSED 状態から TOMBSTONE 状態に移行し、後で組ムーバーというバックグラウンド プロセスによって削除されます。 行グループの状態の詳細については、「[sys.dm_db_column_store_row_group_physical_stats (Transact-SQL)](../../relational-databases/system-dynamic-management-views/sys-dm-db-column-store-row-group-physical-stats-transact-sql.md)」を参照してください。
+すべてのデータが削除された行グループは、COMPRESSED 状態から TOMBSTONE 状態に移行し、後で tuple-mover というバックグラウンド プロセスによって削除されます。 行グループの状態の詳細については、「[sys.dm_db_column_store_row_group_physical_stats (Transact-SQL)](../../relational-databases/system-dynamic-management-views/sys-dm-db-column-store-row-group-physical-stats-transact-sql.md)」を参照してください。
 
 > [!TIP]
 > 小さな行グループが多すぎると、列ストア インデックスの品質が低下します。 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] までは、削除された行を削除して圧縮された行グループを結合する方法を決定する内部しきい値ポリシーに従って、小さな COMPRESSED 行グループをマージするには、再編成操作が必要です。    
@@ -64,7 +64,7 @@ ms.locfileid: "88408868"
 > 小さい行グループをマージすると、インデックスの品質が改善されます。 
 
 > [!NOTE]
-> [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降、組ムーバーは、内部しきい値によってしばらくの間存在していると判断された小さな OPEN デルタ行グループを自動的に圧縮するか、多数の行が削除されている COMPRESSED 行グループをマージするバックグラウンド マージ タスクによってサポートされています。 これにより、時間の経過とともに、列ストア インデックスの品質が向上します。         
+> [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降、tuple-mover は、内部しきい値によってしばらくの間存在していると判断された小さな OPEN デルタ行グループを自動的に圧縮するか、多数の行が削除されている COMPRESSED 行グループをマージするバックグラウンド マージ タスクによってサポートされています。 これにより、時間の経過とともに、列ストア インデックスの品質が向上します。         
 
 #### <a name="column-segment"></a>列セグメント
 列セグメントは、行グループ内のデータ列です。  
@@ -84,14 +84,14 @@ ms.locfileid: "88408868"
 #### <a name="delta-rowgroup"></a>デルタ行グループ
 デルタ行グループは、列ストア インデックスでのみ使用されるクラスター化 B ツリー インデックスです。 これは、行数がしきい値 (1,048,576 行) に達して列ストアに移動できるまで行を格納することで、列ストアの圧縮とパフォーマンスを高めます。  
 
-デルタ行グループが行数の上限に達すると、OPEN 状態から CLOSED 状態に移行します。 組ムーバーというバックグラウンド プロセスによって、閉じられた行グループがチェックされます。 プロセスによって閉じられた行グループが検出されると、デルタ行グループは圧縮され、COMPRESSED 行グループとして列ストアに格納されます。 
+デルタ行グループが行数の上限に達すると、OPEN 状態から CLOSED 状態に移行します。 tuple-mover というバックグラウンド プロセスによって、閉じられた行グループがチェックされます。 プロセスによって閉じられた行グループが検出されると、デルタ行グループは圧縮され、COMPRESSED 行グループとして列ストアに格納されます。 
 
-デルタ行グループが圧縮されると、既存のデルタ行グループは TOMBSTONE 状態に移行し、参照がない場合は組ムーバーによって後で削除されます。 
+デルタ行グループが圧縮されると、既存のデルタ行グループは TOMBSTONE 状態に移行し、参照がない場合は tuple-mover によって後で削除されます。 
 
 行グループの状態の詳細については、「[sys.dm_db_column_store_row_group_physical_stats (Transact-SQL)](../../relational-databases/system-dynamic-management-views/sys-dm-db-column-store-row-group-physical-stats-transact-sql.md)」を参照してください。 
 
 > [!NOTE]
-> [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降、組ムーバーは、内部しきい値によってしばらくの間存在していると判断された小さな OPEN デルタ行グループを自動的に圧縮するか、多数の行が削除されている COMPRESSED 行グループをマージするバックグラウンド マージ タスクによってサポートされています。 これにより、時間の経過とともに、列ストア インデックスの品質が向上します。         
+> [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降、tuple-mover は、内部しきい値によってしばらくの間存在していると判断された小さな OPEN デルタ行グループを自動的に圧縮するか、多数の行が削除されている COMPRESSED 行グループをマージするバックグラウンド マージ タスクによってサポートされています。 これにより、時間の経過とともに、列ストア インデックスの品質が向上します。         
   
 #### <a name="deltastore"></a>デルタストア
 列ストア インデックスは、複数のデルタ行グループを持つことができます。 すべてのデルタ行グループを総称して、デルタストアと呼びます。   
