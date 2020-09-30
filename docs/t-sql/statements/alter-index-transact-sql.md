@@ -290,7 +290,7 @@ LOB_COMPACTION = OFF
  REORGANIZE (**列ストア** インデックスの再構成)  
  列ストア インデックスごとに、REORGANIZE は各 CLOSED デルタ行グループを圧縮し、圧縮された行グループとして列ストアに移動します。 REORGANIZE 操作は常にオンラインで実行されます。 つまり、ALTER INDEX REORGANIZE トランザクション中は、長期にわたって他をブロックするテーブル ロックは保持されず、基になるテーブルへのクエリまたは更新を続行できます。 詳細については、「 [インデックスの再編成と再構築](../../relational-databases/indexes/reorganize-and-rebuild-indexes.md)」を参照してください。 
   
--   CLOSED デルタ行グループを圧縮された行グループに移動する場合、REORGANIZE は必須ではありません。 CLOSED デルタ行グループを圧縮するために、組ムーバー (TM) バックグラウンド プロセスが定期的に起動します。 組ムーバーに遅延がある場合は、REORGANIZE の使用をお勧めします。 REORGANIZE では、行グループをより積極的に圧縮できます。  
+-   CLOSED デルタ行グループを圧縮された行グループに移動する場合、REORGANIZE は必須ではありません。 CLOSED デルタ行グループを圧縮するために、tuple-mover (TM) バックグラウンド プロセスが定期的に起動します。 tuple-mover に遅延がある場合は、REORGANIZE の使用をお勧めします。 REORGANIZE では、行グループをより積極的に圧縮できます。  
 -   すべての OPEN 行グループと CLOSED 行グループを圧縮するには、このセクションの `REORGANIZE WITH (COMPRESS_ALL_ROW_GROUPS)` オプションを参照してください。  
   
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降) および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] における列ストア インデックスの場合、REORGANIZE では、次の追加のデフラグ最適化がオンラインで実行されます。  
@@ -863,7 +863,7 @@ ALTER INDEX idxcci_cci_target ON cci_target REORGANIZE WITH (COMPRESS_ALL_ROW_GR
 ```  
   
 ### <a name="b-compress-closed-delta-rowgroups-into-the-columnstore"></a>B. CLOSED デルタ行グループを列ストアに圧縮する  
- この例では、REORGANIZE オプションを使用して、各 CLOSED デルタ行グループを圧縮し、圧縮された行グループとして列ストアに移動します。   これは必須ではありませんが、組ムーバーによる CLOSED 行グループの圧縮の速度が十分でない場合に使用すると便利です。  
+ この例では、REORGANIZE オプションを使用して、各 CLOSED デルタ行グループを圧縮し、圧縮された行グループとして列ストアに移動します。   これは必須ではありませんが、tuple-mover による CLOSED 行グループの圧縮の速度が十分でない場合に使用すると便利です。  
   
 ```sql  
 -- Uses AdventureWorksDW  
