@@ -364,7 +364,7 @@ ALTER INDEX ALL ON HumanResources.Employee
 > [!INCLUDE[ssManStudio](../../includes/ssManStudio-md.md)] を使用して列ストア インデックスを再構成すると、COMPRESSED 行グループが結合されますが、すべての行グループが列ストアに強制的に圧縮されることはありません。 CLOSED の行グループは圧縮されますが、OPEN の行グループは列ストアに圧縮されません。 すべての行グループを強制的に圧縮するには、[以下](#TsqlProcedureReorg)の [!INCLUDE[tsql](../../includes/tsql-md.md)] の例を使用してください。
 
 > [!NOTE]
-> [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降、組ムーバーは、内部しきい値によってしばらくの間存在していると判断された小さな OPEN デルタ行グループを自動的に圧縮するか、多数の行が削除されている COMPRESSED 行グループをマージするバックグラウンド マージ タスクによってサポートされています。 これにより、時間の経過とともに、列ストア インデックスの品質が向上します。    
+> [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降、tuple-mover は、内部しきい値によってしばらくの間存在していると判断された小さな OPEN デルタ行グループを自動的に圧縮するか、多数の行が削除されている COMPRESSED 行グループをマージするバックグラウンド マージ タスクによってサポートされています。 これにより、時間の経過とともに、列ストア インデックスの品質が向上します。    
 > 列ストアの用語と概念の詳細については、「[列ストア インデックス: 概要)](../../relational-databases/indexes/columnstore-indexes-overview.md) の下のステートメントを右クリックします。
 
 ### <a name="rebuild-a-partition-instead-of-the-entire-table"></a>テーブル全体ではなくパーティションを再構築する
