@@ -89,7 +89,7 @@ ms.locfileid: "86005615"
   
   
 ## <a name="related-tasks"></a>Related Tasks  
- 権限システムの設計の詳細については、「 [データベース エンジンの権限の概要](../../../relational-databases/security/authentication-access/getting-started-with-database-engine-permissions.md)」を参照してください。  
+ 権限システムの設計の詳細については、「[データベース エンジンの権限の概要](../../../relational-databases/security/authentication-access/getting-started-with-database-engine-permissions.md)」を参照してください。  
   
  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] オンライン ブックのこのセクションの内容は次のとおりです。  
   
