@@ -83,7 +83,7 @@ ms.locfileid: "88477776"
  **Order**  
  行を選択し、右側の矢印キーを使用して、式を評価する順序を変更します。  
   
- **[出力名]**  
+ **Output Name**  
  出力名を指定します。 既定は数字の付いた場合の一覧ですが、一意のわかりやすい名前を選択することもできます。  
   
  **Condition**  
@@ -91,12 +91,12 @@ ms.locfileid: "88477776"
   
  このプロパティの値は、プロパティ式を使用して指定することができます。  
   
- **: **  [Integration Services &#40;SSIS&#41; の式](../../../integration-services/expressions/integration-services-ssis-expressions.md)、[ &#40;SSIS 式&#41;](../../../integration-services/expressions/operators-ssis-expression.md)、および [ &#40;SSIS 式&#41;](../../../integration-services/expressions/functions-ssis-expression.md)  
+ **Related topics:**  [Integration Services &#40;SSIS&#41; の式](../../../integration-services/expressions/integration-services-ssis-expressions.md)、[ &#40;SSIS 式&#41;](../../../integration-services/expressions/operators-ssis-expression.md)、および [ &#40;SSIS 式&#41;](../../../integration-services/expressions/functions-ssis-expression.md)  
   
- **[既定の出力名]**  
+ **Default output name**  
  既定の出力の名前を入力するか、既定を使用します。  
   
- **[エラー出力の構成]**  
+ **Configure error output**  
  [[エラー出力の構成]](https://msdn.microsoft.com/library/5f8da390-fab5-44f8-b268-d8fa313ce4b9) ダイアログ ボックスを使用して、エラーの処理方法を指定します。  
   
 ## <a name="see-also"></a>参照  
