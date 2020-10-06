@@ -23,7 +23,7 @@ ms.locfileid: "88385738"
 ---
 # <a name="create-a-database-mail-account"></a>データベース メール アカウントの作成
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
-   データベース メール アカウントの作成には、** データベース メール構成ウィザード** または [!INCLUDE[tsql](../../includes/tsql-md.md)] を使用します。  
+   データベース メール アカウントの作成には、**データベース メール構成ウィザード** または [!INCLUDE[tsql](../../includes/tsql-md.md)] を使用します。  
   
 -   **作業を開始する準備:**  [前提条件](#Prerequisites)  
   
