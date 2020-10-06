@@ -24,7 +24,7 @@ ms.locfileid: "88368828"
 # <a name="numeric-types"></a>数値型
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 次のサポート** 数値 **型です。
+[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 次のサポート**数値**型です。
   
 ## <a name="in-this-section"></a>このセクションの内容
 
