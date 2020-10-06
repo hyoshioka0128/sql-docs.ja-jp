@@ -32,7 +32,7 @@ ms.locfileid: "88434334"
   
 |名前|説明|  
 |----------|-----------------|  
-|[getString (int)](../../../connect/jdbc/reference/getstring-method-int-sqlserverresultset.md)|[SQLServerResultSet](../../../connect/jdbc/reference/sqlserverresultset-class.md) オブジェクトの現在の行にある指定された列インデックスの値が、Java プログラミング言語の** String** として取得されます。|  
+|[getString (int)](../../../connect/jdbc/reference/getstring-method-int-sqlserverresultset.md)|[SQLServerResultSet](../../../connect/jdbc/reference/sqlserverresultset-class.md) オブジェクトの現在の行にある指定された列インデックスの値が、Java プログラミング言語の **String** として取得されます。|  
 |[getString (java.lang.String)](../../../connect/jdbc/reference/getstring-method-java-lang-string-sqlserverresultset.md))|[SQLServerResultSet](../../../connect/jdbc/reference/sqlserverresultset-class.md) オブジェクトの現在の行にある指定された列名の値が、Java プログラミング言語の **String** として取得されます。|  
   
 ## <a name="see-also"></a>参照  
