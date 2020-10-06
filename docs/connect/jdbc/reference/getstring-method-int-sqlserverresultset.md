@@ -26,7 +26,7 @@ ms.locfileid: "88434434"
 # <a name="getstring-method-int-sqlserverresultset"></a>getString (int) メソッド (SQLServerResultSet)
 [!INCLUDE[Driver_JDBC_Download](../../../includes/driver_jdbc_download.md)]
 
-  [SQLServerResultSet](../../../connect/jdbc/reference/sqlserverresultset-class.md) オブジェクトの現在の行にある指定された列インデックスの値が、Java プログラミング言語の** String** として取得されます。  
+  [SQLServerResultSet](../../../connect/jdbc/reference/sqlserverresultset-class.md) オブジェクトの現在の行にある指定された列インデックスの値が、Java プログラミング言語の **String** として取得されます。  
   
 ## <a name="syntax"></a>構文  
   
