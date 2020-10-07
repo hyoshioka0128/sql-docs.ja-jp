@@ -119,11 +119,11 @@ ms.locfileid: "86913180"
   
 1.  パブリッシャー側のパブリケーション データベースに対して、 [sp_addarticle](../../../relational-databases/system-stored-procedures/sp-addarticle-transact-sql.md)を実行します。 **\@publication**、 **\@article**、および **\@source_object** に、それぞれ、アーティクルが属しているパブリケーションの名前、アーティクルの名前、および、パブリッシュ対象のデータベース オブジェクトを指定します。さらに、 **\@schema_option** にビットマスク **0x02** (カスタム ストアド プロシージャの自動生成を有効にする) を指定し、次のいずれかのパラメーターを指定します。  
   
-    -   **\@ins_cmd** - **CALL sp_MSins_* article_name* ** を指定します。ここで、***article_name*** は **\@article** に指定した値です。  
+    -   **\@ins_cmd** - **CALL sp_MSins_*article_name*** を指定します。ここで、***article_name*** は **\@article** に指定した値です。  
   
-    -   **\@del_cmd** - **CALL sp_MSdel_*article_name*** または **XCALL sp_MSdel_* article_name*** を指定します。ここで、***article_name*** は **\@article** に指定した値です。  
+    -   **\@del_cmd** - **CALL sp_MSdel_*article_name*** または **XCALL sp_MSdel_*article_name** を指定します。ここで、***article_name*** は **\@article** に指定した値です。  
   
-    -   **\@upd_cmd** - **SCALL sp_MSupd_* article_name***、**CALL sp_MSupd_* article_name***、**XCALL sp_MSupd_* article_name***、または **MCALL sp_MSupd_* article_name*** を指定します。ここで、***article_name*** は **\@article** に指定した値です。  
+    -   **\@upd_cmd** - **SCALL sp_MSupd_*article_name***、**CALL sp_MSupd_* article_name***、**XCALL sp_MSupd_*article_name**、または **MCALL sp_MSupd_*article_name*** を指定します。ここで、***article_name*** は **\@article** に指定した値です。  
   
     > [!NOTE]  
     >  上記コマンド パラメーターのそれぞれについて、レプリケーションによって生成されるストアド プロシージャに独自の名前を指定できます。  
@@ -139,11 +139,11 @@ ms.locfileid: "86913180"
   
 1.  パブリッシャー側のパブリケーション データベースに対して、 [sp_addarticle](../../../relational-databases/system-stored-procedures/sp-addarticle-transact-sql.md)を実行します。 **\@publication**、 **\@article**、および **\@source_object** に、それぞれ、アーティクルが属しているパブリケーションの名前、アーティクルの名前、および、パブリッシュ対象のデータベース オブジェクトを指定します。さらに、 **\@schema_option** にビットマスク **0x02** (カスタム ストアド プロシージャの自動生成を有効にする) を指定し、次のいずれかのパラメーターを指定します。  
   
-    -   **\@ins_cmd** - **CALL sp_MSins_* article_name* ** を指定します。ここで、***article_name*** は **\@article** に指定した値です。  
+    -   **\@ins_cmd** - **CALL sp_MSins_*article_name*** を指定します。ここで、***article_name*** は **\@article** に指定した値です。  
   
-    -   **\@del_cmd** - **CALL sp_MSdel_*article_name*** または **XCALL sp_MSdel_* article_name*** を指定します。ここで、***article_name*** は **\@article** に指定した値です。  
+    -   **\@del_cmd** - **CALL sp_MSdel_*article_name*** または **XCALL sp_MSdel_*article_name*** を指定します。ここで、***article_name*** は **\@article** に指定した値です。  
   
-    -   **\@upd_cmd** - **SCALL sp_MSupd_* article_name* **、**CALL sp_MSupd_* article_name* **、**XCALL sp_MSupd_* article_name* **、**MCALL sp_MSupd_* article_name* ** を指定します。ここで、***article_name*** は **\@article** に指定した値です。  
+    -   **\@upd_cmd** - **SCALL sp_MSupd_*article_name***、**CALL sp_MSupd_* article_name* **、**XCALL sp_MSupd_*article_name***、**MCALL sp_MSupd_*article_name*** を指定します。ここで、***article_name*** は **\@article** に指定した値です。  
   
     > [!NOTE]  
     >  上記コマンド パラメーターのそれぞれについて、レプリケーションによって生成されるストアド プロシージャに独自の名前を指定できます。  
