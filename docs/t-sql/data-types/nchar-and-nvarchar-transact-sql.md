@@ -31,10 +31,10 @@ ms.locfileid: "88445944"
 
 ## <a name="arguments"></a>引数
 **nchar** [ ( n ) ]  
-固定サイズの文字列データです。 *n* によってバイト ペアでの文字列のサイズが定義されます。1 から 4,000 までの値にする必要があります。 ストレージのサイズは、*n* の 2 倍のバイト数です。 [UCS-2](https://www.wikipedia.org/wiki/UTF-16#U+0000_to_U+D7FF_and_U+E000_to_U+FFFF) エンコードの場合、ストレージのサイズは *n* の 2 倍のバイト数となり、格納できる文字数もまた *n* となります。 UTF-16 エンコードの場合、ストレージのサイズは引き続き *n* の 2 倍のバイト数ですが、補助文字によって 2 つのバイト ペア (または[サロゲート ペア](https://www.wikipedia.org/wiki/UTF-16#U+010000_to_U+10FFFF)) が使用されるため、格納できる文字数は *n* よりも少なくなる場合があります。 **nchar** の ISO シノニムは、**national char** および **national character** です。
+固定サイズの文字列データです。 *n* によってバイト ペアでの文字列のサイズが定義されます。1 から 4,000 までの値にする必要があります。 ストレージのサイズは、*n* の 2 倍のバイト数です。 [UCS-2](https://www.wikipedia.org/wiki/UTF-16#U+0000_to_U+D7FF_and_U+E000_to_U+FFFF) エンコードの場合、ストレージのサイズは *n* の 2 倍のバイト数となり、格納できる文字数もまた *n* となります。 UTF-16 エンコードの場合、ストレージのサイズは引き続き *n* の 2 倍のバイト数ですが、補助文字によって 2 つのバイト ペア (または[サロゲート ペア](https://www.wikipedia.org/wiki/UTF-16#U+010000_to_U+10FFFF)) が使用されるため、格納できる文字数は *n* よりも少なくなる場合があります。 **nchar** の ISO 同義語は、**national char** および **national character** です。
   
 **nvarchar** [ ( n | **max** ) ]  
-可変サイズの文字列データです。 *n* によってバイト ペアでの文字列のサイズが定義されます。1 から 4,000 までの値を指定できます。 **max** は、ストレージの最大サイズが 2^30-1 文字 (2 GB) であることを示します。 ストレージのサイズは、*n* の 2 倍のバイト数 + 2 バイトです。 [UCS-2](https://www.wikipedia.org/wiki/UTF-16#U+0000_to_U+D7FF_and_U+E000_to_U+FFFF) エンコードの場合、ストレージのサイズは *n* の 2 倍のバイト数 + 2 バイトとなり、格納できる文字数もまた *n* となります。 UTF-16 エンコードの場合、ストレージのサイズは引き続き *n* の 2 倍のバイト数 + 2 バイトですが、補助文字によって 2 つのバイト ペア (または[サロゲート ペア](https://www.wikipedia.org/wiki/UTF-16#U+010000_to_U+10FFFF)) が使用されるため、格納できる文字数は *n* よりも少なくなる場合があります。 ISO シノニム **nvarchar** は national char のさまざまな** と** 各国語文字がさまざまな**です**。
+可変サイズの文字列データです。 *n* によってバイト ペアでの文字列のサイズが定義されます。1 から 4,000 までの値を指定できます。 **max** は、ストレージの最大サイズが 2^30-1 文字 (2 GB) であることを示します。 ストレージのサイズは、*n* の 2 倍のバイト数 + 2 バイトです。 [UCS-2](https://www.wikipedia.org/wiki/UTF-16#U+0000_to_U+D7FF_and_U+E000_to_U+FFFF) エンコードの場合、ストレージのサイズは *n* の 2 倍のバイト数 + 2 バイトとなり、格納できる文字数もまた *n* となります。 UTF-16 エンコードの場合、ストレージのサイズは引き続き *n* の 2 倍のバイト数 + 2 バイトですが、補助文字によって 2 つのバイト ペア (または[サロゲート ペア](https://www.wikipedia.org/wiki/UTF-16#U+010000_to_U+10FFFF)) が使用されるため、格納できる文字数は *n* よりも少なくなる場合があります。 **nvarchar** の ISO シノニムは、**national char varying** と **national character varying** です。
   
 ## <a name="remarks"></a>注釈  
 一般的な誤解として、[NCHAR(*n*) および NVARCHAR(*n*)](../../t-sql/data-types/nchar-and-nvarchar-transact-sql.md) では *n* によって文字数が定義されると考えられています。 実際には、[NCHAR(*n*) および NVARCHAR(*n*)](../../t-sql/data-types/nchar-and-nvarchar-transact-sql.md) では、*n* によって文字長が**バイトペア** (0-4,000) で定義されます。 *n* は、格納できる文字数を定義しません。 これは、[CHAR(*n*) および VARCHAR(*n*)](../../t-sql/data-types/char-and-varchar-transact-sql.md) の定義と同様です。   
@@ -49,9 +49,9 @@ ms.locfileid: "88445944"
   
 **sysname** と機能的に等価であるシステム提供のユーザー定義データ型は、 **nvarchar (128)**, が許容されない点が異なります。 **sysname** データベース オブジェクト名を参照するために使用します。
   
-使用するオブジェクト** nchar** または **nvarchar** COLLATE 句を使用して、特定の照合順序が割り当てられていない限り、データベースの既定の照合順序は割り当てられます。
+使用するオブジェクト **nchar** または **nvarchar** COLLATE 句を使用して、特定の照合順序が割り当てられていない限り、データベースの既定の照合順序は割り当てられます。
   
-SET ANSI_PADDING が ON にでは常に **nchar** と** nvarchar**です。 SET ANSI_PADDING OFF には適用されませんが、 **nchar** または **nvarchar** データ型。
+SET ANSI_PADDING が ON にでは常に **nchar** と **nvarchar** です。 SET ANSI_PADDING OFF には適用されませんが、 **nchar** または **nvarchar** データ型。
   
 Unicode 文字の文字列定数には、プレフィックスとして文字 N を付けて UCS-2 または UTF-16 の入力を通知します。これは SC 照合順序が使用されているか使用されていないかによって異なります。 プレフィックス N がない場合、文字列はデータベースの既定のコード ページに変換され、特定の文字が認識されない場合があります。 [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降、UTF-8 が有効になっている照合順序を使用する場合、既定のコード ページでは UNICODE UTF-8 文字セットを格納させることができます。 
  
