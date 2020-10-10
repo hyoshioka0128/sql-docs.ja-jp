@@ -151,7 +151,7 @@ ms.locfileid: "88485308"
 :::row-end:::  
 :::row:::
     :::column:::
-        [DATEADD]
+        DATEADD
     :::column-end:::
     :::column:::
         NULLIF
