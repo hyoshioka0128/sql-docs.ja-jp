@@ -76,7 +76,7 @@ COUNT_BIG (ALL *expression*) はグループ内の各行に対して *expression
   
 COUNT_BIG (DISTINCT *expression*) はグループ内の各行に対して *expression* を評価し、一意の非 NULL 値の数を返します。
   
-COUNT_BIG は、OVER 句や ORDER BY 句**_なし_** で使用される場合は決定的関数です。 COUNT_BIG が OVER 句や ORDER BY 句と**_共に_** 使用される場合は、非決定的関数です。 詳細については、「[決定的関数と非決定的関数](../../relational-databases/user-defined-functions/deterministic-and-nondeterministic-functions.md)」を参照してください。
+COUNT_BIG は、OVER 句や ORDER BY 句***なし*** で使用される場合は決定的関数です。 COUNT_BIG が OVER 句や ORDER BY 句と***共に*** 使用される場合は、非決定的関数です。 詳細については、「[決定的関数と非決定的関数](../../relational-databases/user-defined-functions/deterministic-and-nondeterministic-functions.md)」を参照してください。
   
 ## <a name="examples"></a>例  
 例については、「[COUNT &#40;Transact-SQL&#41;](../../t-sql/functions/count-transact-sql.md)」を参照してください。
