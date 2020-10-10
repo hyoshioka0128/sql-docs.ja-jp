@@ -31,7 +31,7 @@ Visual Studio で **[SQL Server オブジェクト エクスプローラー]** (
 
 この記事では、[Azure クラウド](https://azure.microsoft.com/)の次の *Azure SQL 製品*を対象に Azure AD について説明します。
 
-- Azure SQL データベース
+- Azure SQL Database
 - Azure SQL Data Warehouse
 
 ## <a name="active-directory-password-authentication"></a>Active Directory パスワード認証
