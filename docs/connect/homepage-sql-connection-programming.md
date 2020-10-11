@@ -28,14 +28,14 @@ Microsoft SQL Server を操作するための、およびクラウドで Azure S
 - 特定の言語の階層型ドキュメントの区分とサブ区分を表示します (該当する場合)。
 
 
-#### <a name="azure-sql-database"></a>Azure SQL データベース
+#### <a name="azure-sql-database"></a>Azure SQL Database
 
 特定の言語については、SQL Server に接続するコードは、Azure SQL Database に接続するためのコードとほぼ同じです。
 
 Azure SQL Database に接続するための接続文字列の詳細については、以下を参照してください。
 
-- [.NET Core (C#) を使用して Azure SQL データベースに照会する](/azure/sql-database/sql-database-connect-query-dotnet-core)。
-- 目次の前の記事の近くにある、他の言語に関するその他の Azure SQL Database の記事。 たとえば、「[PHP を使用して Azure SQL データベースに照会する](/azure/sql-database/sql-database-connect-query-php)」を参照してください。
+- [.NET Core (C#) を使用して Azure SQL Database に照会する](/azure/sql-database/sql-database-connect-query-dotnet-core)。
+- 目次の前の記事の近くにある、他の言語に関するその他の Azure SQL Database の記事。 たとえば、「[PHP を使用して Azure SQL Database に照会する](/azure/sql-database/sql-database-connect-query-php)」を参照してください。
 
 
 #### <a name="build-an-app-webpages"></a>Build-an-app の Web ページ
