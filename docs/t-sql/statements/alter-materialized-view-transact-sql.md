@@ -32,7 +32,7 @@ ms.locfileid: "91670145"
 
 [!INCLUDE [asa](../../includes/applies-to-version/asa.md)]
 
-以前に作成された具体化されたビューが変更されます。 ALTER VIEW は、従属するストアド プロシージャやトリガーに影響を与えず、権限を変更することもありません。  
+以前に作成された Materialized View が変更されます。 ALTER VIEW は、従属するストアド プロシージャやトリガーに影響を与えず、権限を変更することもありません。  
   
 ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -54,13 +54,13 @@ ALTER MATERIALIZED VIEW [ schema_name . ] view_name
  ビューが所属するスキーマの名前を指定します。  
   
  *view_name*     
- 変更する具体化されたビューです。  
+ 変更する Materialized View です。  
   
 *REBUILD*   
-具体化されたビューが再開されます。
+Materialized View が再開されます。
 
 *DISABLE*   
-メタデータとアクセス許可を保守している間、具体化されたビューのメンテナンスを一時停止します。具体化されたビューが無効な状態の間、すべてのクエリは、基になるテーブルに照らして解決されます。
+メタデータとアクセス許可を保守している間、Materialized View のメンテナンスを一時停止します。Materialized View が無効な状態の間、すべてのクエリは、基になるテーブルに照らして解決されます。
   
 ## <a name="permissions"></a>アクセス許可
 
@@ -68,13 +68,13 @@ ALTER MATERIALIZED VIEW [ schema_name . ] view_name
   
 ## <a name="examples"></a>例
 
-この例では、具体化されたビューが無効化され、一時停止モードになります。
+この例では、Materialized View が無効化され、一時停止モードになります。
   
 ```sql
 ALTER MATERIALIZED VIEW My_Indexed_View DISABLE;  
 ```  
   
-この例では、具体化されたビューが、再構築されることによって再開されます。  
+この例では、Materialized View が、再構築されることによって再開されます。  
   
 ```sql
 ALTER MATERIALIZED VIEW My_Indexed_View REBUILD;  
@@ -82,7 +82,7 @@ ALTER MATERIALIZED VIEW My_Indexed_View REBUILD;
   
 ## <a name="see-also"></a>関連項目
 
-[具体化されたビューを使用したパフォーマンス チューニング](/azure/sql-data-warehouse/performance-tuning-materialized-views)   
+[Materialized View を使用したパフォーマンス チューニング](/azure/sql-data-warehouse/performance-tuning-materialized-views)   
 [CREATE MATERIALIZED VIEW AS SELECT &#40;Transact-SQL&#41;](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?view=azure-sqldw-latest)   
 [EXPLAIN &#40;Transact-SQL&#41;](/sql/t-sql/queries/explain-transact-sql?view=azure-sqldw-latest)   
 [sys.pdw_materialized_view_column_distribution_properties &#40;Transact-SQL&#41;](/sql/relational-databases/system-catalog-views/sys-pdw-materialized-view-column-distribution-properties-transact-sql?view=azure-sqldw-latest)   
