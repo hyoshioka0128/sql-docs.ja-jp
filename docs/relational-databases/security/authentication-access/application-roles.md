@@ -50,7 +50,7 @@ ms.locfileid: "87332218"
 
  アプリケーション ロールを使用して取得した権限は、接続している間のみ有効です。  
   
- 前のバージョンの [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]では、アプリケーション ロールの開始後にユーザーが元のセキュリティ コンテキストを再取得するには、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]を切断して再接続する以外にありませんでした。 [!INCLUDE[ssVersion2005](../../../includes/ssversion2005-md.md)]以降の **sp_setapprole** には、クッキーを作成するオプションがあります。 クッキーには、アプリケーション ロールが有効になる前のコンテキスト情報が格納されます。 **sp_unsetapprole** でクッキーを使用すると、元のコンテキストにセッションを戻すことができます。 この新しいオプションの詳細と例については、「 [sp_setapprole &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-setapprole-transact-sql.md)に許可された権限を介してのみ可能になります。  
+ 前のバージョンの [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]では、アプリケーション ロールの開始後にユーザーが元のセキュリティ コンテキストを再取得するには、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]を切断して再接続する以外にありませんでした。 [!INCLUDE[ssVersion2005](../../../includes/ssversion2005-md.md)]以降の **sp_setapprole** には、クッキーを作成するオプションがあります。 クッキーには、アプリケーション ロールが有効になる前のコンテキスト情報が格納されます。 **sp_unsetapprole** でクッキーを使用すると、元のコンテキストにセッションを戻すことができます。 この新しいオプションの詳細と例については、「[sp_setapprole &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-setapprole-transact-sql.md)に許可された権限を介してのみ可能になります。  
   
 > [!IMPORTANT]  
 >  **SqlClient** では、ODBC **encrypt**オプションはサポートされていません。 機密情報をネットワーク経由で送信する場合、トランスポート層セキュリティ (TLS) (旧称 Secure Sockets Layer (SSL)) または IPsec を使用してチャネルを暗号化します。 クライアント アプリケーション内に資格情報を保持しておく必要がある場合、暗号化 API (Crypto API) 関数を使用して資格情報を暗号化します。 [!INCLUDE[ssVersion2005](../../../includes/ssversion2005-md.md)] 以降のバージョンでは、パラメーター *password* は一方向のハッシュとして格納されます。  
