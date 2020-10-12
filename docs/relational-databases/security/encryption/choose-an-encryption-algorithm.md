@@ -64,7 +64,7 @@ ms.locfileid: "87332228"
   
 -   ALGORITHM = TRIPLE_DES を使用して作成された対称キーでは、128 ビット キーを使用した TRIPLE DES が使用されます。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
   
 | タスク | Type |
 | ---- | ---- |
