@@ -39,7 +39,7 @@ ms.locfileid: "88496000"
   
  プログラムによってこれらのプロパティを設定する方法については、 <xref:Microsoft.SqlServer.Dts.Runtime.TaskHost>」を参照してください。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
   
 -   [タスクまたはコンテナーのプロパティを設定する](https://msdn.microsoft.com/library/52d47ca4-fb8c-493d-8b2b-48bb269f859b)  
   
