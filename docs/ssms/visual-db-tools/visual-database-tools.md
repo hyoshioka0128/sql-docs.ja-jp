@@ -23,7 +23,7 @@ ms.locfileid: "88479932"
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] には、 [!INCLUDE[tsql](../../includes/tsql-md.md)] クエリやテーブルを構築したり、データベース ダイアグラムを作成したりするためのビジュアル デザイナーが備わっています。  
   
-## <a name="related-tasks"></a>Related Tasks
+## <a name="related-tasks"></a>関連タスク
 
 Visual Database Tools に関連したタスクを次に示します。  
   
