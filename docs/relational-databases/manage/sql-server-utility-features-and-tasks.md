@@ -37,7 +37,7 @@ ms.locfileid: "87242966"
   
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ユーティリティで管理される [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の各インスタンスおよびデータ層アプリケーションは、グローバルのポリシー定義または個々のポリシー定義に基づいて監視できます。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ユーティリティの基礎知識については、次の各トピックを参照してください。  
   
 |説明|トピック|  
