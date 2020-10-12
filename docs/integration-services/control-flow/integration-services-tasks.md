@@ -86,7 +86,7 @@ ms.locfileid: "88392648"
   
  タスクをグループ化して 1 つの作業単位として実行したり、ループ内で繰り返すことができます。 詳細については、「 [Foreach ループ コンテナー](../../integration-services/control-flow/foreach-loop-container.md)」、「 [For ループ コンテナー](../../integration-services/control-flow/for-loop-container.md)」、および「 [シーケンス コンテナー](../../integration-services/control-flow/sequence-container.md)」を参照してください。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
  [制御フローのタスクまたはコンテナーを追加または削除する](../../integration-services/control-flow/add-or-delete-a-task-or-a-container-in-a-control-flow.md)  
   
   
