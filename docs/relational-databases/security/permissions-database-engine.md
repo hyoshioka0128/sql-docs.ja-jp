@@ -157,7 +157,7 @@ REVOKE SELECT ON OBJECT::HumanResources.Employee TO Larry;
 |DATABASE|ALTER ANY ASSEMBLY|ALAS|SERVER|CONTROL SERVER|  
 |DATABASE|ALTER ANY ASYMMETRIC KEY|ALAK|SERVER|CONTROL SERVER|  
 |DATABASE|ALTER ANY CERTIFICATE|ALCF|SERVER|CONTROL SERVER|  
-|DATABASE|任意の列の暗号化キーを変更します。|ALCK<br /><br /> 適用対象 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から現在のバージョンまで)、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。|SERVER|CONTROL SERVER|  
+|DATABASE|ALTER ANY COLUMN ENCRYPTION KEY|ALCK<br /><br /> 適用対象 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から現在のバージョンまで)、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。|SERVER|CONTROL SERVER|  
 |DATABASE|ALTER ANY COLUMN MASTER KEY|ALCM<br /><br /> 適用対象 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から現在のバージョンまで)、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。|SERVER|CONTROL SERVER|  
 |DATABASE|ALTER ANY CONTRACT|ALSC|SERVER|CONTROL SERVER|  
 |DATABASE|ALTER ANY DATABASE AUDIT|ALDA|SERVER|ALTER ANY SERVER AUDIT|  
@@ -166,16 +166,16 @@ REVOKE SELECT ON OBJECT::HumanResources.Employee TO Larry;
 |DATABASE|ALTER ANY DATABASE EVENT SESSION|AADS<br /><br /> [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]に適用されます。|SERVER|ALTER ANY EVENT SESSION|  
 |DATABASE|ALTER ANY DATABASE SCOPED CONFIGURATION|ALDC<br /><br /> 適用対象 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から現在のバージョンまで)、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。|SERVER|CONTROL SERVER|  
 |DATABASE|ALTER ANY DATASPACE|ALDS|SERVER|CONTROL SERVER|  
-|DATABASE|すべての外部データ ソースを変更します。|AEDS|SERVER|CONTROL SERVER|  
-|DATABASE|任意の外部のファイル形式を変更します。|AEFF|SERVER|CONTROL SERVER|  
+|DATABASE|ALTER ANY EXTERNAL DATA SOURCE|AEDS|SERVER|CONTROL SERVER|  
+|DATABASE|ALTER ANY EXTERNAL FILE FORMAT|AEFF|SERVER|CONTROL SERVER|  
 |DATABASE|ALTER ANY FULLTEXT CATALOG|ALFT|SERVER|CONTROL SERVER|  
-|DATABASE|任意のマスクを変更します。|AAMK<br /><br /> 適用対象 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から現在のバージョンまで)、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。|SERVER|CONTROL SERVER|  
+|DATABASE|ALTER ANY MASK|AAMK<br /><br /> 適用対象 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から現在のバージョンまで)、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。|SERVER|CONTROL SERVER|  
 |DATABASE|ALTER ANY MESSAGE TYPE|ALMT|SERVER|CONTROL SERVER|  
 |DATABASE|ALTER ANY REMOTE SERVICE BINDING|ALSB|SERVER|CONTROL SERVER|  
 |DATABASE|ALTER ANY ROLE|ALRL|SERVER|CONTROL SERVER|  
 |DATABASE|ALTER ANY ROUTE|ALRT|SERVER|CONTROL SERVER|  
 |DATABASE|ALTER ANY SCHEMA|ALSM|SERVER|CONTROL SERVER|  
-|DATABASE|すべてのセキュリティ ポリシーを変更します。|ALSP<br /><br /> 適用対象 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から現在のバージョンまで)、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。|SERVER|CONTROL SERVER|  
+|DATABASE|ALTER ANY SECURITY POLICY|ALSP<br /><br /> 適用対象 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から現在のバージョンまで)、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。|SERVER|CONTROL SERVER|  
 |DATABASE|ALTER ANY SENSITIVITY CLASSIFICATION|ALSP<br />適用対象 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (SQL Server 2019 (15.x) から現在のバージョンまで)、[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。|DATABASE|CONTROL SERVER|
 |DATABASE|ALTER ANY SERVICE|ALSV|SERVER|CONTROL SERVER|  
 |DATABASE|ALTER ANY SYMMETRIC KEY|ALSK|SERVER|CONTROL SERVER|  
@@ -222,10 +222,10 @@ REVOKE SELECT ON OBJECT::HumanResources.Employee TO Larry;
 |DATABASE|SHOWPLAN|SPLN|SERVER|ALTER TRACE|  
 |DATABASE|SUBSCRIBE QUERY NOTIFICATIONS|SUQN|SERVER|CONTROL SERVER|  
 |DATABASE|TAKE OWNERSHIP|TO|SERVER|CONTROL SERVER|  
-|DATABASE|マスク解除します。|UMSK<br /><br /> 適用対象 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から現在のバージョンまで)、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。|SERVER|CONTROL SERVER|  
+|DATABASE|UNMASK|UMSK<br /><br /> 適用対象 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から現在のバージョンまで)、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。|SERVER|CONTROL SERVER|  
 |DATABASE|UPDATE|UP|SERVER|CONTROL SERVER|  
-|DATABASE|列の暗号化キーの定義を表示します。|VWCK<br /><br /> 適用対象 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から現在のバージョンまで)、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。|SERVER|VIEW SERVER STATE|  
-|DATABASE|任意の列のマスター_キーの定義の表示|vWCM<br /><br /> 適用対象 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から現在のバージョンまで)、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。|SERVER|VIEW SERVER STATE|  
+|DATABASE|VIEW ANY COLUMN ENCRYPTION KEY DEFINITION|VWCK<br /><br /> 適用対象 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から現在のバージョンまで)、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。|SERVER|VIEW SERVER STATE|  
+|DATABASE|VIEW ANY COLUMN MASTER KEY DEFINITION|vWCM<br /><br /> 適用対象 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から現在のバージョンまで)、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。|SERVER|VIEW SERVER STATE|  
 |DATABASE|VIEW DATABASE STATE|VWDS|SERVER|VIEW SERVER STATE|  
 |DATABASE|VIEW DEFINITION|VW|SERVER|VIEW ANY DEFINITION|  
 |DATABASE SCOPED CREDENTIAL|ALTER|AL|DATABASE|CONTROL|
