@@ -44,23 +44,23 @@ sqlsrv_field_metadata( resource $stmt)
   
 |Key|説明|  
 |-------|---------------|  
-|名前|フィールドが対応する列の名前。|  
-|種類|SQL 型に対応する数値。|  
-|サイズ|文字型 (char(n)、varchar(n)、nchar(n)、nvarchar(n)、XML) のフィールドの文字数。 バイナリ型 (binary(n)、varbinary(n)、UDT) のフィールドのバイト数。 他の SQL Server データ型の場合は**NULL** 。|  
-|有効桁数|可変精度の型 (real、numeric、decimal、datetime2、datetimeoffset、time) の有効桁数。 他の SQL Server データ型の場合は**NULL** 。|  
-|スケール|可変スケールの型 (numeric、decimal、datetime2、datetimeoffset、time) のスケール。 他の SQL Server データ型の場合は**NULL** 。|  
+|Name|フィールドが対応する列の名前。|  
+|Type|SQL 型に対応する数値。|  
+|Size|文字型 (char(n)、varchar(n)、nchar(n)、nvarchar(n)、XML) のフィールドの文字数。 バイナリ型 (binary(n)、varbinary(n)、UDT) のフィールドのバイト数。 他の SQL Server データ型の場合は**NULL** 。|  
+|Precision|可変精度の型 (real、numeric、decimal、datetime2、datetimeoffset、time) の有効桁数。 他の SQL Server データ型の場合は**NULL** 。|  
+|Scale|可変スケールの型 (numeric、decimal、datetime2、datetimeoffset、time) のスケール。 他の SQL Server データ型の場合は**NULL** 。|  
 |Nullable|列が null 値許容か (**SQLSRV_NULLABLE_YES**)、null 値許容ではないか (**SQLSRV_NULLABLE_NO**)、または null 値許容かどうかわからないか (**SQLSRV_NULLABLE_UNKNOWN**) を示す列挙値。|  
   
 次の表では、各サブ配列のキーについての詳細を示します (これらの型の詳細については、SQL Server のマニュアルを参照してください)。  
   
-|SQL Server 2008 のデータ型|種類|最小/最大有効桁数|最小/最大スケール|サイズ|  
+|SQL Server 2008 のデータ型|型|最小/最大有効桁数|最小/最大スケール|サイズ|  
 |-----------------------------|--------|----------------------|------------------|--------|  
 |bigint|SQL_BIGINT (-5)|||8|  
 |binary|SQL_BINARY (-2)|||0 < *n* < 8000 <sup>1</sup>|  
 |bit|SQL_BIT (-7)||||  
 |char|SQL_CHAR (1)|||0 < *n* < 8000 <sup>1</sup>|  
-|日付|SQL_TYPE_DATE (91)|10/10|0/0||  
-|DATETIME|SQL_TYPE_TIMESTAMP (93)|23/23|3/3||  
+|date|SQL_TYPE_DATE (91)|10/10|0/0||  
+|datetime|SQL_TYPE_TIMESTAMP (93)|23/23|3/3||  
 |datetime2|SQL_TYPE_TIMESTAMP (93)|19/27|0/7||  
 |datetimeoffset|SQL_SS_TIMESTAMPOFFSET (-155)|26/34|0/7||  
 |decimal|SQL_DECIMAL (3)|1/38|0/有効桁数の値||  
