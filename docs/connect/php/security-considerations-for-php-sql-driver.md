@@ -32,15 +32,15 @@ ms.locfileid: "91726729"
   
 -   **ユーザーは、アカウント管理を一元化される可能性があります。** パスワードの有効期限、パスワードの最小の長さ、および複数の無効なログイン要求後のアカウント ロックアウトなど、セキュリティ ポリシーが強制されます。  
   
-Windows 認証でサーバーに接続する方法については、「 [方法: Windows 認証を使用した接続](../../connect/php/how-to-connect-using-windows-authentication.md)」を参照してください。  
+Windows 認証でサーバーに接続する方法については、「[方法: Windows 認証を使用した接続](../../connect/php/how-to-connect-using-windows-authentication.md)」を参照してください。  
   
 Windows 認証を使用して接続する場合、SQL Server が Kerberos 認証プロトコルを使用できるように、お客様の環境を構成することをお勧めします。 詳細については、「[SQL Server 2005 のインスタンスへのリモート接続を作成するときに、Kerberos 認証を使用していることを確認する方法](https://support.microsoft.com/en-ca/help/909801/how-to-make-sure-that-you-are-using-kerberos-authentication-when-you-c)」または「[Kerberos 認証と SQL Server](/previous-versions/sql/sql-server-2008-r2/cc280744(v=sql.105))」を参照してください。  
   
 ## <a name="use-encrypted-connections-when-transferring-sensitive-data"></a>重要なデータの転送時に暗号化された接続を使用する  
-重要なデータを送信するとき、または SQL Server から取得するときは、暗号化された接続を使用する必要があります。 暗号化された接続を有効にする方法の詳細については、「[データベース エンジンへの暗号化接続を有効にする方法 (SQL Server 構成マネージャー)](../../database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine.md)」を参照してください。 セキュリティで保護された接続を [!INCLUDE[ssDriverPHP](../../includes/ssdriverphp_md.md)]と確立するには、サーバーに接続するときに暗号化接続の属性を使用します。 接続属性の詳細については、「 [Connection Options](../../connect/php/connection-options.md)」を参照してください。  
+重要なデータを送信するとき、または SQL Server から取得するときは、暗号化された接続を使用する必要があります。 暗号化された接続を有効にする方法の詳細については、「[データベース エンジンへの暗号化接続を有効にする方法 (SQL Server 構成マネージャー)](../../database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine.md)」を参照してください。 セキュリティで保護された接続を [!INCLUDE[ssDriverPHP](../../includes/ssdriverphp_md.md)]と確立するには、サーバーに接続するときに暗号化接続の属性を使用します。 接続属性の詳細については、「[接続オプション](../../connect/php/connection-options.md)」を参照してください。  
   
 ## <a name="use-parameterized-queries"></a>パラメーター化クエリの使用  
-パラメーター化クエリを使用して、SQL インジェクション攻撃のリスクを軽減します。 パラメーター化クエリを実行する例については、「 [How to: Perform Parameterized Queries](../../connect/php/how-to-perform-parameterized-queries.md)」を参照してください。  
+パラメーター化クエリを使用して、SQL インジェクション攻撃のリスクを軽減します。 パラメーター化クエリを実行する例については、「[方法:パラメーター化クエリを実行する](../../connect/php/how-to-perform-parameterized-queries.md)」を参照してください。  
   
 SQL インジェクション攻撃および関連するセキュリティの考慮事項の詳細については、「[SQL インジェクション](/previous-versions/sql/sql-server-2008-r2/ms161953(v=sql.105))」を参照してください。  
   
@@ -48,10 +48,10 @@ SQL インジェクション攻撃および関連するセキュリティの考�
 エンド ユーザーがアプリケーションにサーバーまたは接続文字列の情報を送信できないように、アプリケーションを作成します。 サーバーと接続文字列の情報に対する厳密な制御を維持すると、悪意のある活動の危険を回避できます。  
   
 ## <a name="turn-warningsaserrors-on-during-application-development"></a>アプリケーション開発時に WarningsAsErrors をオンにする  
-ドライバーで発行される警告がエラーとして処理されるように、 **WarningsAsErrors** 設定を **true** に設定してアプリケーションを開発します。 この設定を行うと、アプリケーションを展開する前に、警告に対処することができます。 詳細については、「 [Handling Errors and Warnings](../../connect/php/handling-errors-and-warnings.md)」を参照してください。  
+ドライバーで発行される警告がエラーとして処理されるように、 **WarningsAsErrors** 設定を **true** に設定してアプリケーションを開発します。 この設定を行うと、アプリケーションを展開する前に、警告に対処することができます。 詳細については、「[エラーおよび警告の処理](../../connect/php/handling-errors-and-warnings.md)」を参照してください。  
   
 ## <a name="secure-logs-for-deployed-application"></a>展開済みアプリケーションのログをセキュリティで保護する  
-展開済みアプリケーションでは、ログがセキュリティで保護された場所に書き込まれること、またはログ記録がオフになっていることを確認します。 この確認を行うと、エンドユーザーがログ ファイルに書き込まれた情報にアクセスすることを防ぐことができます。 詳細については、「 [Logging Activity](../../connect/php/logging-activity.md)」を参照してください。  
+展開済みアプリケーションでは、ログがセキュリティで保護された場所に書き込まれること、またはログ記録がオフになっていることを確認します。 この確認を行うと、エンドユーザーがログ ファイルに書き込まれた情報にアクセスすることを防ぐことができます。 詳細については、「[アクティビティのログ記録](../../connect/php/logging-activity.md)」を参照してください。  
   
 ## <a name="see-also"></a>参照  
 [SQL Server 用 Microsoft Drivers for PHP のためのプログラミング ガイド](../../connect/php/programming-guide-for-php-sql-driver.md)
