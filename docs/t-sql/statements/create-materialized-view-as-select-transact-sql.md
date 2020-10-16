@@ -51,7 +51,7 @@ ms.locfileid: "91671155"
 
 この記事では、ソリューション開発用の [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] の CREATE MATERIALIZED VIEW AS SELECT T-SQL ステートメントについて説明します。 この記事には、コード例も記載されています。
 
-具体化されたビューでは、ビュー定義クエリから返されるデータを保持し、基になるテーブルのデータが変更されると自動的に更新されます。   これによって、複雑なクエリ (一般に結合と集計を含むクエリ) のパフォーマンスが向上すると共に、メンテナンス操作が簡単になります。   実行プランの自動一致機能により、置換するビューをオプティマイザーで検討する際、具体化されたビューをクエリで参照する必要はありません。  この機能により、データ エンジニアは、クエリを変更せずにクエリの応答時間を短縮するメカニズムとして、具体化されたビューを実装できます。  
+Materialized View では、ビュー定義クエリから返されるデータを保持し、基になるテーブルのデータが変更されると自動的に更新されます。   これによって、複雑なクエリ (一般に結合と集計を含むクエリ) のパフォーマンスが向上すると共に、メンテナンス操作が簡単になります。   実行プランの自動一致機能により、置換するビューをオプティマイザーで検討する際、マテリアライズドビューをクエリで参照する必要はありません。  この機能により、データ エンジニアは、クエリを変更せずにクエリの応答時間を短縮するメカニズムとして、マテリアライズドビューを実装できます。  
   
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -89,13 +89,13 @@ CREATE MATERIALIZED VIEW [ schema_name. ] materialized_view_name
 サポートされる分布は、HASH および ROUND_ROBIN のみです。
 
 *select_statement*   
-具体化されたビューの定義の SELECT リストでは、以下の 2 つの条件の 1 つ以上が満たされている必要があります。
+マテリアライズドビューの定義の SELECT リストでは、以下の 2 つの条件の 1 つ以上が満たされている必要があります。
 - SELECT リストに集計関数が含まれています。
-- 具体化されたビューの定義で GROUP BY が使用されており、GROUP BY 内のすべての列が SELECT リストに含まれています。  GROUP BY 句では、最大 32 列使用できます。
+- マテリアライズドビューの定義で GROUP BY が使用されており、GROUP BY 内のすべての列が SELECT リストに含まれています。  GROUP BY 句では、最大 32 列使用できます。
 
-具体化されたビューの定義の SELECT リストには、集計関数が必要です。  サポートされる集計には、MAX、MIN、AVG、COUNT、COUNT_BIG、SUM、VAR、STDEV が含まれます。
+マテリアライズドビューの定義の SELECT リストには、集計関数が必要です。  サポートされる集計には、MAX、MIN、AVG、COUNT、COUNT_BIG、SUM、VAR、STDEV が含まれます。
 
-具体化されたビューの定義の SELECT リストで MIN/MAX 集計が使用される場合、以下の要件が適用されます。
+マテリアライズドビューの定義の SELECT リストで MIN/MAX 集計が使用される場合、以下の要件が適用されます。
  
 - FOR_APPEND が必要です。  次に例を示します。
   ```sql 
@@ -107,41 +107,41 @@ CREATE MATERIALIZED VIEW [ schema_name. ] materialized_view_name
   GROUP BY i.i_item_sk, i.i_item_id, i.i_category_id
   ```
 
-- 参照されるベース テーブルで UPDATE または DELETE が実行されると、具体化されたビューが無効になります。  この制限は、INSERT には適用されません。  具体化されたビューを再度有効にするには、REBUILD を指定して ALTER MATERIALIZED VIEW を実行します。
+- 参照されるベース テーブルで UPDATE または DELETE が実行されると、マテリアライズドビューが無効になります。  この制限は、INSERT には適用されません。  マテリアライズドビューを再度有効にするには、REBUILD を指定して ALTER MATERIALIZED VIEW を実行します。
   
 ## <a name="remarks"></a>注釈
 
-Azure データ ウェアハウスの具体化されたビューは、SQL Server のインデックス付きビューに似ています。具体化されたビューで集計関数がサポートされる点を除き、インデックス付きビューとほぼ同じ制限が共有されています (詳細については、「[Create Indexed Views (インデックス付きビューを作成する)](/sql/relational-databases/views/create-indexed-views)」 を参照してください)。   
+Azure データ ウェアハウスのマテリアライズドビューは、SQL Server のインデックス付きビューに似ています。マテリアライズドビューで集計関数がサポートされる点を除き、インデックス付きビューとほぼ同じ制限が共有されています (詳細については、「[Create Indexed Views (インデックス付きビューを作成する)](/sql/relational-databases/views/create-indexed-views)」 を参照してください)。   
 
-具体化されたビューでは、CLUSTERED COLUMNSTORE INDEX のみがサポートされます。 
+マテリアライズドビューでは、CLUSTERED COLUMNSTORE INDEX のみがサポートされます。 
 
-具体化されたビューでは、他のビューを参照できません。  
+マテリアライズドビューでは、他のビューを参照できません。  
 
-DDM 列が具体化されたビューの一部でない場合でも、動的データ マスク (DDM) を使用するテーブルに具体化されたビューを作成することはできません。  テーブル列が、アクティブな具体化されたビューの一部であるか、無効な具体化されたビューの一部である場合、DDM をこの列に追加することはできません。  
+DDM 列がマテリアライズドビューの一部でない場合でも、動的データ マスク (DDM) を使用するテーブルにマテリアライズドビューを作成することはできません。  テーブル列が、アクティブなマテリアライズドビューの一部であるか、無効なマテリアライズドビューの一部である場合、DDM をこの列に追加することはできません。  
 
-行レベルのセキュリティが有効になっているテーブルには具体化されたビューを作成できません。
+行レベルのセキュリティが有効になっているテーブルにはマテリアライズドビューを作成できません。
 
-具体化されたビューは、パーティション テーブル上で作成できます。  パーティションの SPLIT/MERGE は、具体化されたビューのベース テーブルでサポートされていますが、パーティションの SWITCH はサポートされていません。  
+マテリアライズドビューは、パーティション テーブル上で作成できます。  パーティションの SPLIT/MERGE は、マテリアライズドビューのベース テーブルでサポートされていますが、パーティションの SWITCH はサポートされていません。  
  
-具体化されたビューで参照されるテーブル上では、ALTER TABLE SWITCH はサポートされません。 ALTER TABLE SWITCH を使用する前に、具体化されたビューを無効にするか、ドロップします。 以下のシナリオでは、具体化されたビューを作成する際、このビューに新しい列を追加する必要があります。
+マテリアライズドビューで参照されるテーブル上では、ALTER TABLE SWITCH はサポートされません。 ALTER TABLE SWITCH を使用する前に、マテリアライズドビューを無効にするか、ドロップします。 以下のシナリオでは、マテリアライズドビューを作成する際、このビューに新しい列を追加する必要があります。
 
-|シナリオ|具体化されたビューに追加する新しい列|コメント|  
+|シナリオ|マテリアライズドビューに追加する新しい列|コメント|  
 |-----------------|---------------|-----------------|
-|具体化されたビューの定義の SELECT リストに COUNT_BIG() が欠落しています| COUNT_BIG (*) |具体化されたビューを作成する際に自動的に追加されます。  ユーザーによる操作は不要です。|
-|具体化されたビューの定義の SELECT リストでユーザーが SUM(a) を指定しています。また、"a" は null 許容式です |COUNT_BIG (a) |ユーザーは、具体化されたビューの定義で式 "a" を手動で追加する必要があります。|
-|具体化されたビューの定義の SELECT リストでユーザーが AVG(a) を指定しています。ここで "a" は式です。|SUM(a), COUNT_BIG(a)|具体化されたビューを作成する際に自動的に追加されます。  ユーザーによる操作は不要です。|
-|具体化されたビューの定義の SELECT リストでユーザーが STDEV(a) を指定しています。ここで "a" は式です。|SUM(a), COUNT_BIG(a), SUM(square(a))|具体化されたビューを作成する際に自動的に追加されます。  ユーザーによる操作は不要です。 |
+|COUNT_BIG() is missing in the SELECT list of a materialized view definition|マテリアライズドビューを作成する際に自動的に追加されます。  ユーザーによる操作は不要です。|
+|SUM(a) is specified by users in the SELECT list of a materialized view definition AND 'a' is a nullable expression |ユーザーは、マテリアライズドビューの定義で式 "a" を手動で追加する必要があります。|
+|AVG(a) is specified by users in the SELECT list of a materialized view definition where 'a' is an expression.|SUM(a), COUNT_BIG(a)|マテリアライズドビューを作成する際に自動的に追加されます。  ユーザーによる操作は不要です。|
+|STDEV(a) is specified by users in the SELECT list of a materialized view definition where 'a' is an expression.|SUM(a), COUNT_BIG(a), SUM(square(a))|マテリアライズドビューを作成する際に自動的に追加されます。  ユーザーによる操作は不要です。 |
 | | | |
 
-具体化されたビューは、一度作成されると、SQL Server Management Studio 内の [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] インスタンスのビュー フォルダーの下に表示されます。
+マテリアライズドビューは、一度作成されると、SQL Server Management Studio 内の [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] インスタンスのビュー フォルダーの下に表示されます。
 
-ユーザーは [SP_SPACEUSED](/sql/relational-databases/system-stored-procedures/sp-spaceused-transact-sql?view=azure-sqldw-latest) および [DBCC PDW_SHOWSPACEUSED](/sql/t-sql/database-console-commands/dbcc-pdw-showspaceused-transact-sql?view=azure-sqldw-latest) を実行して、具体化されたビューによって使用されている領域を確認できます。  
+ユーザーは [SP_SPACEUSED](/sql/relational-databases/system-stored-procedures/sp-spaceused-transact-sql?view=azure-sqldw-latest) および [DBCC PDW_SHOWSPACEUSED](/sql/t-sql/database-console-commands/dbcc-pdw-showspaceused-transact-sql?view=azure-sqldw-latest) を実行して、マテリアライズドビューによって使用されている領域を確認できます。  
 
-具体化されたビューは、DROP VIEW でドロップできます。  ALTER MATERIALIZED VIEW を使用して、具体化されたビューを無効にしたり、リビルドしたりできます。   
+マテリアライズドビューは、DROP VIEW でドロップできます。  ALTER MATERIALIZED VIEW を使用して、マテリアライズドビューを無効にしたり、リビルドしたりできます。   
 
-SQL Server Management Studio 内の説明プランとグラフィカルな推定実行プランを見ると、クエリ実行の際、具体化されたビューがクエリ オプティマイザーで考慮されるかどうかがわかります。 SQL Server Management Studio 内のグラフィカルな推定実行プランを見ると、クエリ実行の際、具体化されたビューがクエリ オプティマイザーで考慮されるかどうかがわかります。
+SQL Server Management Studio 内の説明プランとグラフィカルな推定実行プランを見ると、クエリ実行の際、マテリアライズドビューがクエリ オプティマイザーで考慮されるかどうかがわかります。 SQL Server Management Studio 内のグラフィカルな推定実行プランを見ると、クエリ実行の際、マテリアライズドビューがクエリ オプティマイザーで考慮されるかどうかがわかります。
 
-新しい具体化されたビューから SQL ステートメントでメリットが得られるかどうかを確認するには、`WITH_RECOMMENDATIONS` を指定して `EXPLAIN` コマンドを実行します。  詳細については、「[EXPLAIN (Transact-SQL)](/sql/t-sql/queries/explain-transact-sql?view=azure-sqldw-latest)」を参照してください。
+新しいマテリアライズドビューから SQL ステートメントでメリットが得られるかどうかを確認するには、`WITH_RECOMMENDATIONS` を指定して `EXPLAIN` コマンドを実行します。  詳細については、「[EXPLAIN (Transact-SQL)](/sql/t-sql/queries/explain-transact-sql?view=azure-sqldw-latest)」を参照してください。
 
 ## <a name="permissions"></a>アクセス許可
 
@@ -150,7 +150,7 @@ SQL Server Management Studio 内の説明プランとグラフィカルな推定
   
 ## <a name="see-also"></a>関連項目
 
-[具体化されたビューを使用したパフォーマンス チューニング](/azure/sql-data-warehouse/performance-tuning-materialized-views)   
+[Materialized View を使用したパフォーマンス チューニング](/azure/sql-data-warehouse/performance-tuning-materialized-views)   
 [ALTER MATERIALIZED VIEW &#40;Transact-SQL&#41;](/sql/t-sql/statements/alter-materialized-view-transact-sql?view=azure-sqldw-latest)      
 [DROP VIEW](/sql/t-sql/statements/drop-view-transact-sql?view=azure-sqldw-latest)  
 [EXPLAIN &#40;Transact-SQL&#41;](/sql/t-sql/queries/explain-transact-sql?view=azure-sqldw-latest)   
