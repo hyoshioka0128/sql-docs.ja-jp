@@ -64,7 +64,7 @@ ms.locfileid: "88477794"
 > [!NOTE]  
 >  変換先の種類に応じて、 **[OLE DB 変換先エディター]** ダイアログ ボックスによって生成される CREATE TABLE ステートメントの変更が必要になる場合があります。 たとえば、変換先によっては CREATE TABLE ステートメントで使用されるデータ型をサポートしない場合もあります。  
   
- OLE DB 変換先は、OLE DB 接続マネージャーを使用してデータ ソースに接続します。OLE DB 接続マネージャーでは、使用する OLE DB プロバイダーを指定します。 詳細については、「 [OLE DB 接続マネージャー](../../integration-services/connection-manager/ole-db-connection-manager.md)」を参照してください。  
+ OLE DB 変換先は、OLE DB 接続マネージャーを使用してデータ ソースに接続します。OLE DB 接続マネージャーでは、使用する OLE DB プロバイダーを指定します。 詳細については、「[OLE DB 接続マネージャー](../../integration-services/connection-manager/ole-db-connection-manager.md)」を参照してください。  
   
  [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] プロジェクトでは、OLE DB 接続マネージャーを作成できるデータ ソース オブジェクトも用意されています。このオブジェクトは、データ ソースとデータ ソース ビューを OLE DB 変換先で使用できるようにします。  
   
@@ -72,7 +72,7 @@ ms.locfileid: "88477794"
   
  OLE DB 変換先は、1 つの標準入力と 1 つのエラー出力をとります。  
   
- データ型について詳しくは、「 [Integration Services のデータ型](../../integration-services/data-flow/integration-services-data-types.md)」をご覧ください。  
+ データ型について詳しくは、「[Integration Services のデータ型](../../integration-services/data-flow/integration-services-data-types.md)」をご覧ください。  
   
 ## <a name="fast-load-options"></a>高速読み込みオプション  
  OLE DB 変換先で高速読み込みデータ アクセス モードが使用される場合、 **[OLE DB 変換先エディター]** のユーザー インターフェイスで、変換先に対して次の高速読み込みオプションを指定できます。  
@@ -96,7 +96,7 @@ ms.locfileid: "88477794"
   
 |高速読み込みオプション|説明|  
 |----------------------|-----------------|  
-|KILOBYTES_PER_BATCH|挿入するサイズを KB 単位で指定します。 このオプションの形式は、**KILOBYTES_PER_BATCH** = \<positive integer value**>** です。|  
+|KILOBYTES_PER_BATCH|挿入するサイズを KB 単位で指定します。 このオプションの形式は、**KILOBYTES_PER_BATCH** = *\<positive integer value>* です。|  
 |FIRE_TRIGGERS|挿入テーブルでトリガーを起動するかどうかを指定します。 このオプションの形式は、 **FIRE_TRIGGERS**です。 このオプションが指定されている場合は、トリガーが起動されます。|  
 |ORDER|入力データの並べ替え方法を指定します。 このオプションの形式は、ORDER \<column name> ASC&#124;DESC です。 並べ替える列のリストには任意の数列を指定できます。並べ替え順序の指定は省略することもできます。 並べ替え順序を指定しなかった場合は、データを並べ替えないと見なして挿入操作が実行されます。<br /><br /> 注:ORDER オプションを使用してテーブル上のクラスター化インデックスに従って入力データを並べ替えると、パフォーマンスが向上する可能性があります。|  
   
@@ -105,7 +105,7 @@ ms.locfileid: "88477794"
  高速読み込みオプションの詳細については、「[BULK INSERT &#40;Transact-SQL&#41;](../../t-sql/statements/bulk-insert-transact-sql.md)」を参照してください。  
   
 ## <a name="troubleshooting-the-ole-db-destination"></a>OLE DB 変換先のトラブルシューティング  
- OLE DB 変換先による外部データ プロバイダーの呼び出しをログに記録できます。 このログ機能を使用すると、OLE DB 変換先による外部データ ソースへのデータ保存に関するトラブルシューティングを行うことができます。 OLE DB 変換先による外部データ プロバイダーの呼び出しのログを記録するには、パッケージ ログ記録を有効にして、パッケージ レベルで **Diagnostic** イベントを選択します。 詳細については、「 [パッケージ実行のトラブルシューティング ツール](../../integration-services/troubleshooting/troubleshooting-tools-for-package-execution.md)」を参照してください。  
+ OLE DB 変換先による外部データ プロバイダーの呼び出しをログに記録できます。 このログ機能を使用すると、OLE DB 変換先による外部データ ソースへのデータ保存に関するトラブルシューティングを行うことができます。 OLE DB 変換先による外部データ プロバイダーの呼び出しのログを記録するには、パッケージ ログ記録を有効にして、パッケージ レベルで **Diagnostic** イベントを選択します。 詳細については、「[パッケージ実行のトラブルシューティング ツール](../../integration-services/troubleshooting/troubleshooting-tools-for-package-execution.md)」を参照してください。  
   
 ## <a name="configuring-the-ole-db-destination"></a>OLE DB 変換先の構成  
  プロパティを設定するには [!INCLUDE[ssIS](../../includes/ssis-md.md)] デザイナーから行うか、またはプログラムによって設定します。  
@@ -126,10 +126,10 @@ ms.locfileid: "88477794"
   **[OLE DB 変換先エディター]** ダイアログ ボックスの **[接続マネージャー]** ページを使用すると、変換先の OLE DB 接続を選択できます。 さらにこのページを使用して、データベースのテーブルやビューを選択できます。  
   
 > [!NOTE]  
->  データ ソースが [!INCLUDE[msCoName](../../includes/msconame-md.md)] Office Excel 2007 である場合、Excel の以前のバージョンとは異なる接続マネージャーが必要になります。 詳細については、「 [Excel ブックに接続する](../../integration-services/connection-manager/connect-to-an-excel-workbook.md)」を参照してください。  
+>  データ ソースが [!INCLUDE[msCoName](../../includes/msconame-md.md)] Office Excel 2007 である場合、Excel の以前のバージョンとは異なる接続マネージャーが必要になります。 詳細については、「[Excel ブックに接続する](../../integration-services/connection-manager/connect-to-an-excel-workbook.md)」を参照してください。  
   
 > [!NOTE]  
->  OLE DB 変換先の **CommandTimeout** プロパティは、 **[OLE DB 変換先エディター]** ではアクセスできませんが、 **[詳細エディター]** を使用して設定できます。 また、一部の高速読み込みオプションは **[詳細エディター]** でしか使用できません。 これらのプロパティの詳細については、「 [OLE DB カスタム プロパティ](../../integration-services/data-flow/ole-db-custom-properties.md)」の OLE DB 変換先に関するセクションを参照してください。  
+>  OLE DB 変換先の **CommandTimeout** プロパティは、 **[OLE DB 変換先エディター]** ではアクセスできませんが、 **[詳細エディター]** を使用して設定できます。 また、一部の高速読み込みオプションは **[詳細エディター]** でしか使用できません。 これらのプロパティの詳細については、「[OLE DB カスタム プロパティ](../../integration-services/data-flow/ole-db-custom-properties.md)」の OLE DB 変換先に関するセクションを参照してください。  
 > 
 >  **CommandTimeout** プロパティは、データ アクセス モードが **SQL コマンド**の場合にのみ有効です。
   
@@ -141,7 +141,7 @@ ms.locfileid: "88477794"
  **[OLE DB 接続マネージャーの構成]** ダイアログ ボックスを使用して、新しい接続マネージャーを作成します。  
   
  **[データ アクセス モード]**  
- データを変換先に読み込む方法を指定します。 2 バイト文字セット (DBCS) データを読み込むには、高速読み込みオプションのいずれかを使用する必要があります。 一括挿入用に最適化された高速読み込みデータ アクセス モードの詳細については、「 [OLE DB 変換先](../../integration-services/data-flow/ole-db-destination.md)」を参照してください。  
+ データを変換先に読み込む方法を指定します。 2 バイト文字セット (DBCS) データを読み込むには、高速読み込みオプションのいずれかを使用する必要があります。 一括挿入用に最適化された高速読み込みデータ アクセス モードの詳細については、「[OLE DB 変換先](../../integration-services/data-flow/ole-db-destination.md)」を参照してください。  
   
 |オプション|説明|  
 |------------|-----------------|  
