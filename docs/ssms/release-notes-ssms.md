@@ -262,7 +262,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | クエリ ストア | ダイアログのプロパティに "*クエリごとに最大プラン*" の値が追加されました。 |
 | クエリ ストア | 新しいカスタム キャプチャ ポリシーのサポートが追加されました。 |
 | クエリ ストア | **[クエリ ストア]** の **[データベースのプロパティ]** オプションに **[Wait Statistics Capture Mode]\(待機統計取り込みモード\)** を追加しました。 |
-| SMO/スクリプト作成 | SQL DW で具体化されたビューのスクリプトをサポートします。 |
+| SMO/スクリプト作成 | SQL DW でマテリアライズドビューのスクリプトをサポートします。 |
 | SMO/スクリプト作成 | *SQL On Demand* のサポートが追加されました。 |
 | SMO/スクリプト作成 | [SQL Assessment API](../sql-assessment-api/sql-assessment-api-overview.md) - 50 個の評価規則が追加されました (GitHub の詳細を参照)。 |
 | SMO/スクリプト作成 | [SQL Assessment API](../sql-assessment-api/sql-assessment-api-overview.md) - ルールの条件に基になる計算式と比較が追加されました。 |
