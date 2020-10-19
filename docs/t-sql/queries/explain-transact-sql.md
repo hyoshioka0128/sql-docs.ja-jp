@@ -74,7 +74,7 @@ SQL ステートメントのパフォーマンスを最適化するための推�
 |\<dsql_query>|最上位レベル/ドキュメントの要素。|
 |\<sql>|*SQL_statement* をエコーします。|  
 |\<params>|このタグは、この時点では使用されません。|
-|\<materialized_view_candidates> (プレビュー)|SQL ステートメントのパフォーマンスを向上させるために推奨される具体化されたビューの CREATE ステートメントが含まれます。| 
+|\<materialized_view_candidates> (プレビュー)|SQL ステートメントのパフォーマンスを向上させるために推奨されるマテリアライズドビューの CREATE ステートメントが含まれます。| 
 |\<dsql_operations>|クエリの手順がまとめられて含まれ、クエリのコスト情報が含まれます。 すべての `<dsql_operation>` ブロックも含まれます。 このタグには、全体のクエリのカウント情報が含まれています。<br /><br /> `<dsql_operations total_cost=total_cost total_number_operations=total_number_operations>`<br /><br /> *total_cost* は、クエリの実行にかかる推定合計時間 (ミリ秒) です。<br /><br /> *total_number_operations* は、クエリの操作の総数です。 並列化され複数のノードで実行される操作は、1 つの操作としてカウントされます。|  
 |\<dsql_operation>|クエリ プラン内の 1 つの操作について説明します。 \<dsql_operation> タグには、属性として操作の種類が含まれます。<br /><br /> `<dsql_operation operation_type=operation_type>`<br /><br /> *operation_type* は、[sys.dm_pdw_request_steps (Transact-SQL)](../../relational-databases/system-dynamic-management-views/sys-dm-pdw-request-steps-transact-sql.md) で見つかった値の 1 つです。<br /><br /> `\<dsql_operation>` ブロック内のコンテンツは、操作の種類によって異なります。<br /><br /> 次の表を参照してください。|  
   
@@ -331,7 +331,7 @@ from ((select distinct c_last_name, c_first_name, d_date
 
 **EXPLAIN WITH_RECOMMENDATIONS の出力例**  
 
-以下の出力には、View1 という名前の推奨される具体化されたビューの作成が含まれています。  
+以下の出力には、View1 という名前の推奨されるマテリアライズドビューの作成が含まれています。  
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
