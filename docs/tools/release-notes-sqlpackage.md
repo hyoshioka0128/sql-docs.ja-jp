@@ -63,7 +63,7 @@ Thanks.  GeneMi (MightyPen in GitHub).  2019-03-27
 | デプロイ | .NET Core に対してデプロイするときの dacpac 登録の問題を解消しました | 
 | デプロイ | /accessToken (/at) パラメーターの .NET Core 処理の sqlpackage を修正しました | 
 | デプロイ | 最上位ではないステートメントとしてストアド プロシージャで ALTER TABLE ステートメントを許可します | 
-| デプロイ | 具体化されたビューの Azure SQL Data Warehouse 検証で大文字と小文字を区別しないように修正しました | 
+| デプロイ | マテリアライズドビューの Azure SQL Data Warehouse 検証で大文字と小文字を区別しないように修正しました | 
 
 ### <a name="known-issues"></a>既知の問題
 | 機能 | 詳細 |
@@ -114,7 +114,7 @@ Thanks.  GeneMi (MightyPen in GitHub).  2019-03-27
 | デプロイ | AlterAnyDatabaseScopedConfiguration および AlterAnySensitivityClassification 権限の GRANT ステートメントの生成を修正しました。 |
 | デプロイ | 認識されない External Script 権限を修正しました。 |
 | デプロイ | インライン プロパティの修正 - プロパティの暗黙的な追加では、違いを示す必要はありませんが、明示的な言及ではスクリプトを通じて示す必要があります。 |
-| デプロイ | 具体化されたビュー (MV) によって参照されるテーブルを変更すると、Azure SQL Data Warehouse の MV でサポートされていない ALTER VIEW ステートメントが生成される問題を解決しました。 |
+| デプロイ | マテリアライズドビュー (MV) によって参照されるテーブルを変更すると、Azure SQL Data Warehouse の MV でサポートされていない ALTER VIEW ステートメントが生成される問題を解決しました。 |
 | デプロイ | Azure SQL Data Warehouse のデータを含むテーブルに列を追加したときの公開の失敗を修正しました。 |
 | デプロイ | Azure SQL Data Warehouse のディストリビューション列の種類を変更した場合に更新スクリプトでデータを新しいテーブルに移動する必要がある問題を修正しました。 |
 | ScriptDom | インライン インデックスの後に定義されたインライン制約を認識できない ScriptDom のバグを修正しました。 |
