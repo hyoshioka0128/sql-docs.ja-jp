@@ -29,9 +29,9 @@ ms.locfileid: "92036279"
   
 ### <a name="start-the-sqlcmd-utility-and-connect-to-a-default-instance-of-sql-server"></a>sqlcmd ユーティリティを起動し、SQL Server の既定のインスタンスに接続する  
   
-1.  **[スタート]** ボタンをクリックし、 **[ファイル名を指定して実行]** をクリックします。 **[名前]** ボックスに「 **cmd**」と入力して、 **[OK]** をクリックします。コマンド プロンプト ウィンドウが開きます ( [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] のこのインスタンスに接続したことがない場合、接続を受け入れるには [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の構成が必要になることがあります)。  
+1.  **[スタート]** ボタンをクリックし、 **[ファイル名を指定して実行]** をクリックします。 **[名前]** ボックスに「**cmd**」と入力して、 **[OK]** をクリックします。コマンド プロンプト ウィンドウが開きます ( [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] のこのインスタンスに接続したことがない場合、接続を受け入れるには [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の構成が必要になることがあります)。  
   
-2.  コマンド プロンプトで、「 **sqlcmd**」と入力します。  
+2.  コマンド プロンプトで、「**sqlcmd**」と入力します。  
   
 3.  Enter キーを押します。  
   
@@ -39,11 +39,11 @@ ms.locfileid: "92036279"
   
      **1>** は **sqlcmd** プロンプトであり、行番号を表しています。 Enter キーを押すたびに、この番号が 1 ずつ増えます。  
   
-4.  **sqlcmd** セッションを終了するには、 **sqlcmd** プロンプトで「 **EXIT** 」と入力します。  
+4.  **sqlcmd** セッションを終了するには、 **sqlcmd** プロンプトで「**EXIT**」と入力します。  
   
 ### <a name="start-the-sqlcmd-utility-and-connect-to-a-named-instance-of-sql-server"></a>sqlcmd ユーティリティを起動し、SQL Server の名前付きインスタンスに接続する  
   
-1.  コマンド プロンプト ウィンドウを開き、「 **sqlcmd -S**_myServer\instanceName_」と入力します。 *myServer\instanceName* には、コンピューターの実際の名前と、接続先の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスを指定してください。  
+1.  コマンド プロンプト ウィンドウを開き、「**sqlcmd -S**_myServer\instanceName_」と入力します。 *myServer\instanceName* には、コンピューターの実際の名前と、接続先の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスを指定してください。  
   
 2.  Enter キーを押します。  
   
