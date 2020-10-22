@@ -23,7 +23,7 @@ ms.locfileid: "89540466"
 
 [!INCLUDE[Driver_PHP_Download](../../includes/driver_php_download.md)]
 
-[!INCLUDE[ssDriverPHP](../../includes/ssdriverphp_md.md)] を使用して SQL サーバーまたは Azure SQL データベースのデータにアクセスするためにシステムにインストールする必要があるコンポーネントの一覧を示します。
+[!INCLUDE[ssDriverPHP](../../includes/ssdriverphp_md.md)] を使用して SQL Server または Azure SQL Database のデータにアクセスするためにシステムにインストールする必要があるコンポーネントの一覧を示します。
 
 Microsoft PHP Drivers for SQL Server のバージョン 3.2 以降が正式にサポートされます。 PHP ドライバーのサポートのライフサイクルと要件の詳細については、[サポート マトリックス](microsoft-php-drivers-for-sql-server-support-matrix.md)を参照してください。
 
