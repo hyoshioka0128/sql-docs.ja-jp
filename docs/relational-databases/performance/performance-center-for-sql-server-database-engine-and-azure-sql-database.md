@@ -75,7 +75,7 @@ ms.locfileid: "91890992"
  [クエリのストアを使用した、パフォーマンスの監視](../../relational-databases/performance/monitoring-performance-by-using-the-query-store.md)   
  [単一データベースの Azure SQL Database パフォーマンス ガイダンス](/azure/azure-sql/database/performance-guidance)   
  [エラスティック プールを使用した Azure SQL Database のパフォーマンスの最適化](/azure/azure-sql/database/elastic-pool-overview)   
- [Azure Query Performance Insight](/azure/azure-sql/database/query-performance-insight-use)  
+ [Azure SQL Database の Query Performance Insight](/azure/azure-sql/database/query-performance-insight-use)  
  [インデックスのデザイン ガイド](../../relational-databases/sql-server-index-design-guide.md)  
  [メモリ管理アーキテクチャ ガイド](../../relational-databases/memory-management-architecture-guide.md)  
  [ページとエクステントのアーキテクチャ ガイド](../../relational-databases/pages-and-extents-architecture-guide.md)  
