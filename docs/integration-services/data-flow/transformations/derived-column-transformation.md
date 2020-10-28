@@ -74,7 +74,7 @@ ms.locfileid: "92193218"
   
 -   [データ フロー コンポーネントのプロパティを設定する](../../../integration-services/data-flow/set-the-properties-of-a-data-flow-component.md)  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
   
 -   [派生列変換を使用して列の値を取得する](../../../integration-services/data-flow/transformations/derive-column-values-by-using-the-derived-column-transformation.md)  
   
