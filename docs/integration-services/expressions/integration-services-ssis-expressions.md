@@ -67,7 +67,7 @@ ms.locfileid: "92190840"
   
  変数にはスコープがあるため、式ビルダーの **[変数]** フォルダーにはスコープ内で使用できる変数のみが表示されます。 詳細については、「 [Integration Services &#40;SSIS&#41; の変数](../../integration-services/integration-services-ssis-variables.md)」を参照してください。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
  [データ フロー コンポーネントで式を使用する](/previous-versions/sql/sql-server-2016/ms141007(v=sql.130))  
   
 ## <a name="related-content"></a>関連コンテンツ  
