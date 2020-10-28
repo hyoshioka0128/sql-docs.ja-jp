@@ -77,7 +77,7 @@ ms.locfileid: "88496055"
   
 -   [CDC 制御タスクのカスタム プロパティ](../../integration-services/control-flow/cdc-control-task-custom-properties.md)  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
  [状態変数の定義](../../integration-services/data-flow/define-a-state-variable.md)  
   
 ## <a name="related-content"></a>関連コンテンツ  
