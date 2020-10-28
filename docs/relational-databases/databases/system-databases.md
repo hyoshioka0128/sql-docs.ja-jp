@@ -69,7 +69,7 @@ ms.locfileid: "92192842"
   
 -   [!INCLUDE[tsql](../../includes/tsql-md.md)] システム ストアド プロシージャと組み込み関数。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
  [システム データベースのバックアップと復元 &#40;SQL Server&#41;](../../relational-databases/backup-restore/back-up-and-restore-of-system-databases-sql-server.md)  
   
  [オブジェクト エクスプローラーのシステム オブジェクトの非表示](../../ssms/object/hide-system-objects-in-object-explorer.md)  
