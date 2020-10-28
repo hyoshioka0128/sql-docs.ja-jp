@@ -34,7 +34,7 @@ ms.locfileid: "92196554"
   
  式を使用してプロパティを設定する方法の例については、「 **Use Property Expressions in Packages** 」の「 [サンプルのプロパティ式](../../integration-services/expressions/use-property-expressions-in-packages.md)」を参照してください。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
  [データ フロー コンポーネントで式を使用する](/previous-versions/sql/sql-server-2016/ms141007(v=sql.130))  
   
 ## <a name="related-content"></a>関連コンテンツ  
