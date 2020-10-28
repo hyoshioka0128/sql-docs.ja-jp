@@ -80,7 +80,7 @@ ms.locfileid: "92195275"
   
  詳細については、「[関数 (SSIS 式)](../../integration-services/expressions/functions-ssis-expression.md)」を参照してください。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
  [データ フロー コンポーネントで式を使用する](/previous-versions/sql/sql-server-2016/ms141007(v=sql.130))  
   
 ## <a name="related-content"></a>関連コンテンツ  
