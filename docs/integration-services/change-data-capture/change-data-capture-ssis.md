@@ -104,7 +104,7 @@ ms.locfileid: "88496291"
   
 -   [Change Data Capture since Last Request パッケージ サンプルの Readme](https://go.microsoft.com/fwlink/?LinkId=133508)  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
   
 -   [変更データの間隔を指定する](../../integration-services/change-data-capture/specify-an-interval-of-change-data.md)  
   
