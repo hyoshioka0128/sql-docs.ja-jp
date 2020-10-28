@@ -107,7 +107,7 @@ ms.locfileid: "92195284"
   
 -   ディメンションの読み込みウィザードを使用すると、緩やかに変化するディメンション変換を構成し、変換出力用のデータ フローを構築できます。 緩やかに変化するディメンションの構成を変更するには、ディメンションの読み込みウィザードを再実行します。 詳細については、「 [緩やかに変化するディメンション ウィザードを使用して出力を構成する](../../../integration-services/data-flow/transformations/configure-outputs-using-the-slowly-changing-dimension-wizard.md)」を参照してください。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
  [データ フロー コンポーネントのプロパティを設定する](../../../integration-services/data-flow/set-the-properties-of-a-data-flow-component.md)  
   
 ## <a name="related-content"></a>関連コンテンツ  
