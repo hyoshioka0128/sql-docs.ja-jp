@@ -35,7 +35,7 @@ ms.locfileid: "85651107"
 > [!NOTE]  
 >  適切に操作するには、サービスに使用するアカウントに、正しいドメイン、ファイル システム、およびレジストリ権限を設定する必要があります。 必要なアクセス許可については、「 [Windows サービス アカウントと権限の構成](../../database-engine/configure-windows/configure-windows-service-accounts-and-permissions.md)」を参照してください。  
   
-## <a name="windows-management-instrumentation"></a>Windows Management Instrumentation (Windows Management Instrumentation)  
+## <a name="windows-management-instrumentation"></a>Windows Management Instrumentation  
  SQL Server 構成マネージャーと [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] では、一部のサーバー プロパティの表示および変更に Windows Management Instrumentation (WMI) が使用されます。 サービスを管理し、サービスの状態を取得するには、ユーザーは WMI オブジェクトにアクセスする権限を持っている必要があります。 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]では、次のサーバー プロパティ ページで WMI が使用されています。  
   
 -   サービスの自動開始  
@@ -46,7 +46,7 @@ ms.locfileid: "85651107"
   
 -   その他のサーバーの設定  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
  [SQL Server ツールでサーバーの状態を表示できるようにする WMI の構成](../../ssms/configure-wmi-to-show-server-status-in-sql-server-tools.md)  
   
 ## <a name="related-content"></a>関連コンテンツ  
