@@ -80,7 +80,7 @@ ms.locfileid: "88448555"
   
  オンライン インデックス操作では、行のバージョン管理を使用して、他のトランザクションによる変更がインデックス操作に影響を与えないようにしています。 そのため、読み取った行の共有ロックを要求する必要がなくなります。 オンライン インデックス操作と同時にユーザーの更新操作と削除操作を実行するには、 **tempdb**にバージョン レコード用の領域が必要になります。 詳細については、「 [オンラインでのインデックス操作の実行](../../relational-databases/indexes/perform-index-operations-online.md) 」を参照してください。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
  [インデックスのディスク領域の例](../../relational-databases/indexes/index-disk-space-example.md)  
   
  [インデックス操作用のトランザクション ログのディスク領域](../../relational-databases/indexes/transaction-log-disk-space-for-index-operations.md)  
