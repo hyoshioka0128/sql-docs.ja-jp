@@ -97,7 +97,7 @@ GO
 ## <a name="viewing-local-or-remote-server-properties"></a>ローカル サーバーまたはリモート サーバーのプロパティの表示  
  **xp_msver** 拡張ストアド プロシージャを使用すると、ローカル サーバーまたはリモート サーバーのサーバー属性を確認できます。 これらの属性には、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のバージョン番号、コンピューターのプロセッサの種類と数、およびオペレーティング システムのバージョンが格納されています。 リモート サーバーのデータベース、ファイル、ログイン、およびツールを、ローカル サーバーで表示できます。 詳細については、「[xp_msver &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/xp-msver-transact-sql.md)」を参照してください。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
  [リンク サーバー &#40;データベース エンジン&#41;](../../relational-databases/linked-servers/linked-servers-database-engine.md)  
   
 ## <a name="related-content"></a>関連コンテンツ  
