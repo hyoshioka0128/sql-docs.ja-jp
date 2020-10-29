@@ -29,7 +29,7 @@ ms.locfileid: "91724556"
 
   パッケージは、制御フローと、オプションで含まれる 1 つ以上のデータ フローから構成されます。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] に用意されている制御フロー要素は、パッケージ内の構造を提供するコンテナー、機能を提供するタスク、および優先順位制約の 3 種類です。優先順位制約は、実行ファイル、コンテナー、タスクを連結して正しく順序付けされた制御フローを作成するために使用されます。  
   
- 詳細については、「 [優先順位制約](../../integration-services/control-flow/precedence-constraints.md)」、「 [Integration Services コンテナー](../../integration-services/control-flow/integration-services-containers.md)」、および「 [Integration Services タスク](../../integration-services/control-flow/integration-services-tasks.md)」を参照してください。  
+ 詳細については、「[優先順位制約](../../integration-services/control-flow/precedence-constraints.md)」、「[Integration Services コンテナー](../../integration-services/control-flow/integration-services-containers.md)」、および「[Integration Services タスク](../../integration-services/control-flow/integration-services-tasks.md)」を参照してください。  
   
  次の図は、1 つのコンテナーと 6 つのタスクで構成される制御フローを示しています。 タスクのうち 5 つはパッケージ レベルで定義され、残りの 1 つのタスクはコンテナー レベルで定義されています。 タスクは、コンテナーの内部にあります。  
   
@@ -52,13 +52,13 @@ ms.locfileid: "91724556"
   
 -   データ フローのサポート、データの準備、ワークフローとビジネス インテリジェンス機能の実行、およびスクリプトの実装を行うタスクを追加します。  
   
-     [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] には、パッケージのビジネス要件を満たす制御フローを作成するための、さまざまなタスクが含まれています。 パッケージでデータを処理する必要がある場合、制御フローには少なくとも 1 つのデータ フロー タスクを含める必要があります。 たとえば、データの抽出、データ値の集計、およびデータ ソースへの結果の書き込みをパッケージで行う必要がある場合などです。  詳細については、「 [Integration Services タスク](../../integration-services/control-flow/integration-services-tasks.md) 」と「 [制御フローのタスクまたはコンテナーを追加または削除する](../../integration-services/control-flow/add-or-delete-a-task-or-a-container-in-a-control-flow.md)」を参照してください。  
+     [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] には、パッケージのビジネス要件を満たす制御フローを作成するための、さまざまなタスクが含まれています。 パッケージでデータを処理する必要がある場合、制御フローには少なくとも 1 つのデータ フロー タスクを含める必要があります。 たとえば、データの抽出、データ値の集計、およびデータ ソースへの結果の書き込みをパッケージで行う必要がある場合などです。  詳細については、「[Integration Services タスク](../../integration-services/control-flow/integration-services-tasks.md) 」と「[制御フローのタスクまたはコンテナーを追加または削除する](../../integration-services/control-flow/add-or-delete-a-task-or-a-container-in-a-control-flow.md)」を参照してください。  
   
 -   優先順位制約を使用してコンテナーとタスクを連結し、順序付けされた制御フローを作成します。  
   
      **[制御フロー]** タブのデザイン画面にタスクまたはコンテナーを追加すると、 [!INCLUDE[ssIS](../../includes/ssis-md.md)] デザイナーは、アイテムにコネクタを自動的に追加します。 パッケージに 2 つ以上のアイテム、つまりタスクまたはコンテナーが含まれている場合、コネクタを 1 つのアイテムから別のアイテムにドラッグすると、それらを制御フローに結合できます。  
   
-     2 つのアイテム間のコネクタは、優先順位制約を表します。 優先順位制約では、連結された 2 つのアイテムの関連性を定義します。 ここでは、実行時にタスクとコンテナーが実行される順序、およびタスクとコンテナーが実行される条件を指定します。 たとえば、優先順位制約は、あるタスクが成功した場合にのみ、制御フロー内の次のタスクが実行されるように指定できます。 詳細については、「 [優先順位制約](../../integration-services/control-flow/precedence-constraints.md)」を参照してください。  
+     2 つのアイテム間のコネクタは、優先順位制約を表します。 優先順位制約では、連結された 2 つのアイテムの関連性を定義します。 ここでは、実行時にタスクとコンテナーが実行される順序、およびタスクとコンテナーが実行される条件を指定します。 たとえば、優先順位制約は、あるタスクが成功した場合にのみ、制御フロー内の次のタスクが実行されるように指定できます。 詳細については、「[優先順位制約](../../integration-services/control-flow/precedence-constraints.md)」を参照してください。  
   
 -   接続マネージャーを追加します。  
   
@@ -66,7 +66,7 @@ ms.locfileid: "91724556"
   
  また、[!INCLUDE[ssIS](../../includes/ssis-md.md)] デザイナーには、デザイン画面を管理したり、制御フローを自己文書化するための、多数のデザイン時機能も含まれています。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
   
 -   [制御フローのタスクまたはコンテナーを追加または削除する](../../integration-services/control-flow/add-or-delete-a-task-or-a-container-in-a-control-flow.md)  
   
