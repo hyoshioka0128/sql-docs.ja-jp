@@ -1,5 +1,5 @@
 ---
-title: Microsoft Azure ストレージへの接続 (復元) | Microsoft Docs
+title: Microsoft Azure Storage への接続 (復元) | Microsoft Docs
 description: SQL Server では、[Azure ストレージ アカウント] ダイアログ ボックスで Azure ストレージ アカウント情報への接続を指定して、Azure アカウントのファイル ストレージを取得することができます。
 ms.custom: ''
 ms.date: 03/01/2017
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 07/01/2020
 ms.locfileid: "85748439"
 ---
-# <a name="connect-to-microsoft-azure-storage-restore"></a>Microsoft Azure ストレージへの接続 (復元)
+# <a name="connect-to-microsoft-azure-storage-restore"></a>Microsoft Azure Storage への接続 (復元)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   このダイアログ ボックスを使用すると、Azure ストレージ アカウントのファイル ストレージを取得するために、Azure ストレージ アカウント情報への接続を指定できます。 必要な情報を指定した後、 **[接続]** をクリックして Azure Storage への接続を確立します。  
   
