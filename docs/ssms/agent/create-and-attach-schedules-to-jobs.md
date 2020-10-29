@@ -86,9 +86,9 @@ CPU リソースを最大限に使用するために、 [!INCLUDE[ssNoVersion](.
   
 CPU アイドル時に実行するジョブを定義する前に、通常処理時の CPU の負荷を調べてください。 CPU の負荷を調べるには、 [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] またはパフォーマンス モニターを使用して、サーバー トラフィックを監視し、統計情報を収集します。 収集した情報を参考にして、CPU アイドル時の比率および時間を設定します。  
   
-CPU アイドル条件は、特定の時間にわたり、CPU 使用率が一定の割合を下回っている状態として定義します。 次に、この時間の長さを設定します。 指定された長さの時間にわたって CPU 使用率が指定の率を下回ると、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントは、CPU アイドル時スケジュールが設定されているすべてのジョブを開始します。 [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] またはパフォーマンス モニターを使用して CPU 使用率を監視する方法については、「 [CPU 使用率の監視](../../relational-databases/performance-monitor/monitor-cpu-usage.md)」を参照してください。  
+CPU アイドル条件は、特定の時間にわたり、CPU 使用率が一定の割合を下回っている状態として定義します。 次に、この時間の長さを設定します。 指定された長さの時間にわたって CPU 使用率が指定の率を下回ると、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントは、CPU アイドル時スケジュールが設定されているすべてのジョブを開始します。 [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] またはパフォーマンス モニターを使用して CPU 使用率を監視する方法については、「[CPU 使用率の監視](../../relational-databases/performance-monitor/monitor-cpu-usage.md)」を参照してください。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
   
 |説明|トピック|  
 |-|-|  
