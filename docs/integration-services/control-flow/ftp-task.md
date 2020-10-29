@@ -37,7 +37,7 @@ ms.locfileid: "92194262"
   
 -   データをデータベースに読み込む前に、FTP サイトからファイルをダウンロードし、変換を列データに適用します。  
   
- 実行時には、FTP タスクは FTP 接続マネージャーを使用してサーバーに接続します。 FTP 接続マネージャーは、FTP タスクとは別に構成され、FTP タスク内で参照されます。 FTP 接続マネージャーには、サーバーの設定、FTP サーバーへのアクセス資格情報、および、サーバーへの接続のタイムアウトや再試行回数などのオプションが含まれています。 詳細については、「 [FTP 接続マネージャー](../../integration-services/connection-manager/ftp-connection-manager.md)」を参照してください。  
+ 実行時には、FTP タスクは FTP 接続マネージャーを使用してサーバーに接続します。 FTP 接続マネージャーは、FTP タスクとは別に構成され、FTP タスク内で参照されます。 FTP 接続マネージャーには、サーバーの設定、FTP サーバーへのアクセス資格情報、および、サーバーへの接続のタイムアウトや再試行回数などのオプションが含まれています。 詳細については、「[FTP 接続マネージャー](../../integration-services/connection-manager/ftp-connection-manager.md)」を参照してください。  
   
 > [!IMPORTANT]  
 >  FTP 接続マネージャーでは、匿名認証と基本認証のみがサポートされています。 Windows 認証はサポートされていません。  
@@ -46,7 +46,7 @@ ms.locfileid: "92194262"
   
  したがって、FTP タスクは複数のファイルを受信し、複数のリモート ファイルを削除できます。ただし、FTP タスクが接続マネージャーを使用している場合には、1 つのファイルのみを送信し、1 つのローカル ファイルのみを削除できます。ファイル接続マネージャーがアクセスできるのは 1 ファイルのみであるためです。 複数のローカル ファイルにアクセスするには、FTP タスクで変数を使用してパス情報を指定する必要があります。 たとえば、"C:\Test\&#42;.txt" を含む変数は、Test ディレクトリ内で .txt 拡張子を持つすべてのファイルの削除または送信をサポートするパスを提供します。  
   
- 複数のファイルを送信したり、複数のローカル ファイルまたはディレクトリにアクセスするには、Foreach ループに FTP タスクを含めて、複数回実行する方法もあります。 Foreach ループは、For Each File 列挙子を使用して、ディレクトリ内のファイル全体を列挙します。 詳細については、「 [Foreach ループ コンテナー](../../integration-services/control-flow/foreach-loop-container.md)」を参照してください。  
+ 複数のファイルを送信したり、複数のローカル ファイルまたはディレクトリにアクセスするには、Foreach ループに FTP タスクを含めて、複数回実行する方法もあります。 Foreach ループは、For Each File 列挙子を使用して、ディレクトリ内のファイル全体を列挙します。 詳細については、「[Foreach ループ コンテナー](../../integration-services/control-flow/foreach-loop-container.md)」を参照してください。  
   
  FTP タスクでは、パス内で *?* および *\** ワイルドカード文字がサポートされます。 これによってタスクは複数のファイルにアクセスできます。 ただし、ワイルドカードが使用できるのは、パスのファイル名を指定する部分のみです。 たとえば、C:\MyDirectory\\*.txt は有効なパスですが、C:\\\*\MyText.txt は無効なパスです。  
   
@@ -74,10 +74,10 @@ ms.locfileid: "92194262"
 |**FTPConnectingToServer**|タスクで FTP サーバーへの接続が開始されたことを示します。|  
 |**FTPOperation**|タスクで実行された FTP 操作の開始および種類を報告します。|  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
  プロパティを設定するには [!INCLUDE[ssIS](../../includes/ssis-md.md)] デザイナーから行うか、またはプログラムによって設定します。  
   
- これらのプロパティを [!INCLUDE[ssIS](../../includes/ssis-md.md)] デザイナーで設定する方法の詳細については、「 [タスクまたはコンテナーのプロパティを設定する](./add-or-delete-a-task-or-a-container-in-a-control-flow.md)」を参照してください。  
+ これらのプロパティを [!INCLUDE[ssIS](../../includes/ssis-md.md)] デザイナーで設定する方法の詳細については、「[タスクまたはコンテナーのプロパティを設定する](./add-or-delete-a-task-or-a-container-in-a-control-flow.md)」を参照してください。  
   
  プログラムによってこれらのプロパティを設定する方法の詳細については、「 <xref:Microsoft.SqlServer.Dts.Tasks.FtpTask.FtpTask>」を参照してください。  
   
