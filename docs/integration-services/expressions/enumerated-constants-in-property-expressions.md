@@ -603,7 +603,7 @@ ms.locfileid: "88477586"
 |サポートされています|1|  
 |必須|2|  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
  [プロパティ式を追加または変更する](../../integration-services/expressions/add-or-change-a-property-expression.md)  
   
 ## <a name="see-also"></a>参照  
