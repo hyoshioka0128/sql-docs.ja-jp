@@ -84,10 +84,10 @@ ms.locfileid: "88449798"
   
 |エディターの種類|アクセス|  
 |-----------------|------------|  
-|コンテナー。 詳細については、「 [Integration Services コンテナー](../integration-services/control-flow/integration-services-containers.md)」を参照してください。|**[制御フロー]** タブのデザイン画面で、コンテナーをダブルクリックします。|  
-|タスク。 詳細については、「 [Integration Services のタスク](../integration-services/control-flow/integration-services-tasks.md)」を参照してください。|**[制御フロー]** タブのデザイン画面で、タスクをダブルクリックします。|  
+|コンテナー。 詳細については、「[Integration Services コンテナー](../integration-services/control-flow/integration-services-containers.md)」を参照してください。|**[制御フロー]** タブのデザイン画面で、コンテナーをダブルクリックします。|  
+|タスク。 詳細については、「[Integration Services のタスク](../integration-services/control-flow/integration-services-tasks.md)」を参照してください。|**[制御フロー]** タブのデザイン画面で、タスクをダブルクリックします。|  
 |ソース。|**[データ フロー]** タブのデザイン画面で、変換元をダブルクリックします。|  
-|変換。 詳しくは、「 [Integration Services の変換](../integration-services/data-flow/transformations/integration-services-transformations.md)」をご覧ください。|**[データ フロー]** タブのデザイン画面で、変換をダブルクリックします。|  
+|変換。 詳しくは、「[Integration Services の変換](../integration-services/data-flow/transformations/integration-services-transformations.md)」をご覧ください。|**[データ フロー]** タブのデザイン画面で、変換をダブルクリックします。|  
 |宛先。|**[データ フロー]** タブのデザイン画面で、変換先をダブルクリックします。|  
   
 ## <a name="advanced-editor"></a>[詳細エディター]  
@@ -118,8 +118,8 @@ ms.locfileid: "88449798"
   
  その他のウィンドウおよびメニューの詳細については、Visual Studio のマニュアルを参照してください。  
   
-## <a name="related-tasks"></a>Related Tasks  
- [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)]でパッケージを作成する方法については、「 [SQL Server データ ツールでのパッケージの作成](../integration-services/create-packages-in-sql-server-data-tools.md)」を参照してください。  
+## <a name="related-tasks"></a>関連タスク  
+ [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)]でパッケージを作成する方法については、「[SQL Server データ ツールでのパッケージの作成](../integration-services/create-packages-in-sql-server-data-tools.md)」を参照してください。  
   
 ## <a name="see-also"></a>参照  
  [SSIS デザイナー](../integration-services/ssis-designer.md)  
