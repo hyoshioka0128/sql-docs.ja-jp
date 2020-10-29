@@ -34,10 +34,10 @@ ms.locfileid: "91867848"
   
  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] の拡張キー管理では、サードパーティの EKM/HSM ベンダーがそれぞれのモジュールを [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]に登録できます。 登録すると、その EKM モジュールに格納されている暗号化キーを [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] ユーザーが使用できるようになります。 これにより、それらのモジュールでサポートされている一括暗号化/暗号化解除などの高度な暗号化機能や、キー エージングやキー ローテーションなどのキー管理機能を [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] から利用できます。  
   
- Azure 仮想マシンで [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] を実行している場合、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] は、 [Azure Key Vault](/azure/key-vault/general/basic-concepts)に格納されたキーを使用できます。 詳細については、「 [Azure Key Vault を使用する拡張キー管理 &#40;SQL Server&#41;](../../../relational-databases/security/encryption/extensible-key-management-using-azure-key-vault-sql-server.md)で処理できるようになります。  
+ Azure 仮想マシンで [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] を実行している場合、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] は、 [Azure Key Vault](/azure/key-vault/general/basic-concepts)に格納されたキーを使用できます。 詳細については、「[Azure Key Vault を使用する拡張キー管理 &#40;SQL Server&#41;](../../../relational-databases/security/encryption/extensible-key-management-using-azure-key-vault-sql-server.md)で処理できるようになります。  
   
 ## <a name="ekm-configuration"></a>EKM の構成  
- 拡張キー管理は [!INCLUDE[msCoName](../../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]のすべてのエディションでサポートされているわけではありません。 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]の各エディションでサポートされる機能の一覧については、「 [SQL Server 2016 の各エディションがサポートする機能](~/sql-server/editions-and-supported-features-for-sql-server-2016.md)」を参照してください。  
+ 拡張キー管理は [!INCLUDE[msCoName](../../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]のすべてのエディションでサポートされているわけではありません。 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]の各エディションでサポートされる機能の一覧については、「[SQL Server 2016 の各エディションがサポートする機能](~/sql-server/editions-and-supported-features-for-sql-server-2016.md)」を参照してください。  
   
  既定では、拡張キー管理は無効です。 この機能を有効にするには、次のオプションと値を使用して sp_configure コマンドを実行します。  
   
@@ -134,7 +134,7 @@ DECRYPTION BY EKM_AKey1
 >   
 >  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] では、EKM プロバイダーから生成された非対称キーを使用してモジュールに署名することをサポートしていません。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
  [EKM provider enabled サーバー構成オプション](../../../database-engine/configure-windows/ekm-provider-enabled-server-configuration-option.md)  
   
  [EKM の使用による TDE の有効化](../../../relational-databases/security/encryption/enable-tde-on-sql-server-using-ekm.md)  
