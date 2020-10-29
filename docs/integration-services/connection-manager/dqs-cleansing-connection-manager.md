@@ -25,13 +25,13 @@ ms.locfileid: "91726694"
 
   DQS クレンジング接続マネージャーを使用すると、パッケージから [!INCLUDE[ssDQSnoversion](../../includes/ssdqsnoversion-md.md)] サーバーに接続できます。 DQS クレンジング変換では、DQS クレンジング接続マネージャーを使用します。  
   
- Data Quality Services について詳しくは、「 [Data Quality Services の概念](../../data-quality-services/data-quality-services-concepts.md)」をご覧ください。  
+ Data Quality Services について詳しくは、「[Data Quality Services の概念](../../data-quality-services/data-quality-services-concepts.md)」をご覧ください。  
   
 > [!IMPORTANT]  
 >  DQS クレンジング接続マネージャーでは、Windows 認証のみがサポートされています。  
   
-## <a name="related-tasks"></a>Related Tasks  
- プロパティを設定するには [!INCLUDE[ssIS](../../includes/ssis-md.md)] デザイナーから行うか、またはプログラムによって設定します。 [!INCLUDE[ssIS](../../includes/ssis-md.md)] デザイナーで設定できるプロパティについて詳しくは、「 [[DQS クレンジング変換エディター] ダイアログ ボックス](../data-flow/transformations/dqs-cleansing-transformation.md)」をご覧ください。  
+## <a name="related-tasks"></a>関連タスク  
+ プロパティを設定するには [!INCLUDE[ssIS](../../includes/ssis-md.md)] デザイナーから行うか、またはプログラムによって設定します。 [!INCLUDE[ssIS](../../includes/ssis-md.md)] デザイナーで設定できるプロパティについて詳しくは、「[[DQS クレンジング変換エディター] ダイアログ ボックス](../data-flow/transformations/dqs-cleansing-transformation.md)」をご覧ください。  
   
  プログラムによる接続マネージャーの構成については、開発者ガイドの <xref:Microsoft.SqlServer.Dts.Runtime.ConnectionManager> クラスのドキュメントをご覧ください。  
   
