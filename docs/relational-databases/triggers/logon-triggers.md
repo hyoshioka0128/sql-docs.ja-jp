@@ -72,7 +72,7 @@ END;
 ## <a name="disabling-a-logon-trigger"></a>ログオン トリガーを無効にする  
  ログオン トリガーを使用すると、 [!INCLUDE[ssDE](../../includes/ssde-md.md)] sysadmin **固定サーバー ロールのメンバーを含むすべてのユーザーの** への接続を効率的に禁止できます。 ログオン トリガーによって接続が禁止されているときでも、 **sysadmin** 固定サーバー ロールのメンバーは、専用管理者接続を使用するか、または [!INCLUDE[ssDE](../../includes/ssde-md.md)] を最小構成モード (-f) で起動することにより、接続できます。 詳細については、「 [データベース エンジン サービスのスタートアップ オプション](../../database-engine/configure-windows/database-engine-service-startup-options.md)」を参照してください。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
   
 |タスク|トピック|  
 |----------|-----------|  
