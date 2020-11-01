@@ -35,15 +35,15 @@ ms.locfileid: "91868590"
   
  サーバー監査アクション グループをインスタンスごとに、データベース監査アクション グループまたはデータベース監査アクションをデータベースごとに、それぞれ記録できます。 監査可能なアクションが検出されるたびに監査イベントが発生します。  
   
- [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] のすべてのエディションでサーバー レベルの監査がサポートされます。 [!INCLUDE[ssSQL15_md](../../../includes/sssql15-md.md)] SP1 以降のすべてのエディションで、データベース レベルの監査がサポートされます。 これより前のデータベース レベルの監査は、Enterprise、Developer、および Evaluation Edition に限定されています。 詳細については、「 [SQL Server 2016 の各エディションがサポートする機能](~/sql-server/editions-and-supported-features-for-sql-server-2016.md)」を参照してください。  
+ [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] のすべてのエディションでサーバー レベルの監査がサポートされます。 [!INCLUDE[ssSQL15_md](../../../includes/sssql15-md.md)] SP1 以降のすべてのエディションで、データベース レベルの監査がサポートされます。 これより前のデータベース レベルの監査は、Enterprise、Developer、および Evaluation Edition に限定されています。 詳細については、「[SQL Server 2016 の各エディションがサポートする機能](~/sql-server/editions-and-supported-features-for-sql-server-2016.md)」を参照してください。  
   
 > [!NOTE]  
->  このトピックの対象は、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]です。  [!INCLUDE[ssSDS](../../../includes/sssds-md.md)]については、「 [SQL Database 監査の使用](/azure/azure-sql/database/auditing-overview)」を参照してください。  
+>  このトピックの対象は、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]です。  [!INCLUDE[ssSDS](../../../includes/sssds-md.md)]については、「[SQL Database 監査の使用](/azure/azure-sql/database/auditing-overview)」を参照してください。  
   
 ## <a name="sql-server-audit-components"></a>SQL Server 監査のコンポーネント  
  *監査* では、複数の要素が、サーバー アクションやデータベース アクションの特定のグループのための 1 つのパッケージに組み合わされています。 レポート定義がグラフィックやデータ要素と組み合わされてレポートが生成されるように、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 監査の複数のコンポーネントが組み合わされて、監査と呼ばれる出力が生成されます。  
   
- [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 監査では、 *拡張イベント* を使用して監査を作成できます。 拡張イベントの詳細については、「 [拡張イベント](../../../relational-databases/extended-events/extended-events.md)」を参照してください。  
+ [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 監査では、 *拡張イベント* を使用して監査を作成できます。 拡張イベントの詳細については、「[拡張イベント](../../../relational-databases/extended-events/extended-events.md)」を参照してください。  
   
 ### <a name="sql-server-audit"></a>SQL Server Audit  
  *SQL Server 監査* オブジェクトは、監視するサーバー レベルまたはデータベース レベルのアクションおよびアクションのグループの 1 つのインスタンスを収集します。 監査は [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] インスタンス レベルで行われます。 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] のインスタンスごとに複数の監査を使用できます。  
@@ -55,14 +55,14 @@ ms.locfileid: "91868590"
   
  サーバー監査の仕様は、拡張イベント機能によって発生するさまざまなサーバー レベルのアクション グループを収集します。 サーバー監査の仕様には、 *監査アクション グループ* を含めることができます。 監査アクション グループとは、 [!INCLUDE[ssDE](../../../includes/ssde-md.md)]で発生するアトミック イベントであるアクションの定義済みのグループです。 これらのアクションは監査に送信されて、ターゲットに記録されます。  
   
- データベース レベルの監査アクション グループと監査アクションの詳細については、「 [SQL Server 監査のアクション グループとアクション](../../../relational-databases/security/auditing/sql-server-audit-action-groups-and-actions.md)」を参照してください。  
+ データベース レベルの監査アクション グループと監査アクションの詳細については、「[SQL Server 監査のアクション グループとアクション](../../../relational-databases/security/auditing/sql-server-audit-action-groups-and-actions.md)」を参照してください。  
   
 ### <a name="database-audit-specification"></a>データベース監査の仕様  
  *Database Audit Specification* オブジェクトも、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 監査に属しています。 各監査では [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] データベースごとに 1 つのデータベース監査の仕様を作成できます。  
   
  データベース監査の仕様は、拡張イベント機能によって発生するデータベース レベルの監査アクションを収集します。 データベース監査の仕様には、監査アクション グループまたは監査イベントを追加できます。 *監査イベント* とは、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] エンジンで監査できるアトミックなアクションです。 *監査アクション グループ* とは、アクションの定義済みのグループです。 これらはいずれも、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] データベースのスコープにあります。 これらのアクションは監査に送信されて、ターゲットに記録されます。 ユーザーのデータベース監査の仕様に、システム ビューなどのサーバー スコープ オブジェクトは含めないでください。  
   
- データベース レベルの監査アクション グループと監査アクションの詳細については、「 [SQL Server 監査のアクション グループとアクション](../../../relational-databases/security/auditing/sql-server-audit-action-groups-and-actions.md)」を参照してください。  
+ データベース レベルの監査アクション グループと監査アクションの詳細については、「[SQL Server 監査のアクション グループとアクション](../../../relational-databases/security/auditing/sql-server-audit-action-groups-and-actions.md)」を参照してください。  
   
 ### <a name="target"></a>移行先  
  監査の結果はターゲットに送信されます。ターゲットには、ファイル、Windows セキュリティ イベント ログ、または Windows アプリケーション イベント ログを使用できます。 定期的にログをレビューおよびアーカイブして、ターゲットに追加のレコードを書き込むための十分なスペースを確保しておく必要があります。  
@@ -70,7 +70,7 @@ ms.locfileid: "91868590"
 > [!IMPORTANT]  
 >  Windows アプリケーション イベント ログの読み取りおよび書き込みは、認証されているユーザーならば、だれでも行うことができます。 アプリケーション イベント ログでは、Windows セキュリティ イベント ログほど高いアクセス許可は要求されません。したがって、Windows セキュリティ イベント ログに比べてセキュリティが低くなります。  
   
- Windows セキュリティ ログへの書き込みを行うには、"セキュリティ監査の生成 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] **" ポリシーに** サービス アカウントを追加する必要があります。 既定では、ローカル システム、ローカル サービス、およびネットワーク サービスがこのポリシーに追加されています。 この設定は、セキュリティ ポリシー スナップイン (secpol.msc) を使用して構成できます。 さらに、 **オブジェクト アクセスの監査** セキュリティ ポリシーを、 **成功** と **失敗**の両方について有効にする必要があります。 この設定は、セキュリティ ポリシー スナップイン (secpol.msc) を使用して構成できます。 [!INCLUDE[wiprlhext](../../../includes/wiprlhext-md.md)] または Windows Server 2008 では、コマンド ラインから監査ポリシー プログラム ( **AuditPol.exe** ) を使用して、より細かい**application generated**ポリシーを設定できます。 Windows セキュリティ ログへの書き込みを有効にする手順の詳細については、「 [セキュリティ ログへの SQL サーバー監査イベントの書き込み](../../../relational-databases/security/auditing/write-sql-server-audit-events-to-the-security-log.md)」を参照してください。 Auditpol.exe プログラムの詳細については、 [グループ ポリシーを使用して詳細なセキュリティの監査を構成する方法](https://support.microsoft.com/kb/921469/)に関するサポート技術情報の記事 921469 を参照してください。 Windows イベント ログは、すべての Windows オペレーティング システムで使用できます。 Windows イベント ログの詳細については、「 [イベント ビューアーの概要](/previous-versions/windows/it-pro/windows-server-2003/cc737015(v=ws.10))」を参照してください。 監査でより厳密なアクセス許可が必要な場合は、バイナリ ファイル ターゲットを使用します。  
+ Windows セキュリティ ログへの書き込みを行うには、"セキュリティ監査の生成 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] **" ポリシーに** サービス アカウントを追加する必要があります。 既定では、ローカル システム、ローカル サービス、およびネットワーク サービスがこのポリシーに追加されています。 この設定は、セキュリティ ポリシー スナップイン (secpol.msc) を使用して構成できます。 さらに、 **オブジェクト アクセスの監査** セキュリティ ポリシーを、 **成功** と **失敗**の両方について有効にする必要があります。 この設定は、セキュリティ ポリシー スナップイン (secpol.msc) を使用して構成できます。 [!INCLUDE[wiprlhext](../../../includes/wiprlhext-md.md)] または Windows Server 2008 では、コマンド ラインから監査ポリシー プログラム ( **AuditPol.exe** ) を使用して、より細かい**application generated**ポリシーを設定できます。 Windows セキュリティ ログへの書き込みを有効にする手順の詳細については、「 セキュリティ ログへの SQL Server 監査イベントの書き込み](../../../relational-databases/security/auditing/write-sql-server-audit-events-to-the-security-log.md)」を参照してください。 Auditpol.exe プログラムの詳細については、 [グループ ポリシーを使用して詳細なセキュリティの監査を構成する方法](https://support.microsoft.com/kb/921469/)に関するサポート技術情報の記事 921469 を参照してください。 Windows イベント ログは、すべての Windows オペレーティング システムで使用できます。 Windows イベント ログの詳細については、「[イベント ビューアーの概要](/previous-versions/windows/it-pro/windows-server-2003/cc737015(v=ws.10))」を参照してください。 監査でより厳密なアクセス許可が必要な場合は、バイナリ ファイル ターゲットを使用します。  
   
  改ざんを防止するために監査情報をファイルに保存している場合、次の方法でそのファイルの場所へのアクセスを制限できます。  
   
@@ -94,7 +94,7 @@ ms.locfileid: "91868590"
   
  Windows BitLocker ドライブ暗号化または Windows 暗号化ファイル システムを使用して監査ファイルが格納されているフォルダーを暗号化することにより、許可されていないアクセスに対する保護を強化することができます。  
   
- ターゲットに書き込まれる監査レコードの詳細については、「 [SQL Server Audit Records](../../../relational-databases/security/auditing/sql-server-audit-records.md)」を参照してください。  
+ ターゲットに書き込まれる監査レコードの詳細については、「[SQL Server Audit Records](../../../relational-databases/security/auditing/sql-server-audit-records.md)」を参照してください。  
   
 ## <a name="overview-of-using-sql-server-audit"></a>SQL Server 監査の使用の概要  
  監査は、 [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)] または [!INCLUDE[tsql](../../../includes/tsql-md.md)] を使用して定義することができます。 監査を作成して有効にすると、ターゲットがエントリを受け取るようになります。  
@@ -111,14 +111,14 @@ ms.locfileid: "91868590"
   
 4.  Windows **イベント ビューアー**、 **[ログ ファイルの表示]** 、または fn_get_audit_file 関数を使用して、監査イベントを閲覧します。  
 
- 詳細については、「 [サーバー監査およびサーバー監査の仕様を作成する](../../../relational-databases/security/auditing/create-a-server-audit-and-server-audit-specification.md) 」および「 [サーバー監査およびデータベース監査の仕様を作成する](../../../relational-databases/security/auditing/create-a-server-audit-and-database-audit-specification.md)」を参照してください。  
+ 詳細については、「[サーバー監査およびサーバー監査の仕様を作成する](../../../relational-databases/security/auditing/create-a-server-audit-and-server-audit-specification.md) 」および「[サーバー監査およびデータベース監査の仕様を作成する](../../../relational-databases/security/auditing/create-a-server-audit-and-database-audit-specification.md)」を参照してください。  
   
 ## <a name="considerations"></a>考慮事項  
  監査の開始時にエラーが発生すると、サーバーが起動しなくなります。 その場合にサーバーを起動するには、コマンド ラインで **-f** オプションを使用します。  
   
  監査に対して ON_FAILURE=SHUTDOWN が指定されているために監査エラーによってサーバーがシャットダウンしたり起動しなくなったりすると、MSG_AUDIT_FORCED_SHUTDOWN イベントがログに書き込まれます。 シャットダウンはこの設定が初めて検出されたときに生じるため、このイベントが書き込まれるのは 1 回だけです。 このイベントは、シャットダウンを引き起こした監査のエラー メッセージの後に書き込まれます。 管理者は、 **-m** フラグを使用して [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] をシングル ユーザー モードで起動することで、監査に伴うシャットダウンを回避することができます。 シングル ユーザー モードで起動すると、ON_FAILURE=SHUTDOWN が指定されているすべての監査がダウングレードされて、そのセッションでは ON_FAILURE=CONTINUE として実行されます。 **-m** フラグを使用して [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] を起動すると、エラー ログに MSG_AUDIT_SHUTDOWN_BYPASSED メッセージが書き込まれます。  
   
- スタートアップ オプションの詳細については、「 [データベース エンジン サービスのスタートアップ オプション](../../../database-engine/configure-windows/database-engine-service-startup-options.md)」を参照してください。  
+ スタートアップ オプションの詳細については、「[データベース エンジン サービスのスタートアップ オプション](../../../database-engine/configure-windows/database-engine-service-startup-options.md)」を参照してください。  
   
 ### <a name="attaching-a-database-with-an-audit-defined"></a>定義済みの監査を含むデータベースのインポート  
  監査の仕様が含まれていて、サーバーに存在しない GUID が指定されているデータベースをアタッチすると、 *孤立した* 監査の仕様が発生します。 この場合は、一致する GUID を持つ監査がサーバー インスタンスに存在しないため、監査イベントは記録されません。 この状況を修正するには、ALTER DATABASE AUDIT SPECIFICATION コマンドを使用して、孤立した監査の仕様を既存のサーバー監査に関連付けます。 または、CREATE SERVER AUDIT コマンドを使用して、指定されている GUID を持つ新しい Server 監査を作成します。  
@@ -207,7 +207,7 @@ ms.locfileid: "91868590"
  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]の C2 セキュリティ準拠の監査モードについて説明します。  
   
  [Security Audit イベント カテゴリ &#40;SQL Server Profiler&#41;](../../../relational-databases/event-classes/security-audit-event-category-sql-server-profiler.md)  
- [!INCLUDE[ssSqlProfiler](../../../includes/sssqlprofiler-md.md)]で使用できる監査イベントについて説明します。 詳細については、「 [SQL Server Profiler](../../../tools/sql-server-profiler/sql-server-profiler.md)」を参照してください。  
+ [!INCLUDE[ssSqlProfiler](../../../includes/sssqlprofiler-md.md)]で使用できる監査イベントについて説明します。 詳細については、「[SQL Server Profiler](../../../tools/sql-server-profiler/sql-server-profiler.md)」を参照してください。  
   
  [SQL トレース (SQL Trace)](../../../relational-databases/sql-trace/sql-trace.md)  
  SQL トレースを使用して、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Profiler からではなく、ユーザー独自のアプリケーションからトレースを手動で作成する方法について説明します。  
