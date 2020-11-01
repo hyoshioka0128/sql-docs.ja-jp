@@ -78,7 +78,7 @@ CREATE SERVER AUDIT audit_name
 [!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
 
 ## <a name="arguments"></a>引数
- TO { FILE \| APPLICATION_LOG \| SECURITY_LOG \| URL \| EXTERNAL_MONITOR } 監査ターゲットの場所を決定します。 オプションは、バイナリ ファイル、Windows アプリケーション ログ、または Windows セキュリティ ログです。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は、Windows で追加の設定を行わないと Windows セキュリティ ログに書き込むことができません。 詳細については、「 [セキュリティ ログへの SQL サーバー監査イベントの書き込み](../../relational-databases/security/auditing/write-sql-server-audit-events-to-the-security-log.md)」を参照してください。  
+ TO { FILE \| APPLICATION_LOG \| SECURITY_LOG \| URL \| EXTERNAL_MONITOR } 監査ターゲットの場所を決定します。 オプションは、バイナリ ファイル、Windows アプリケーション ログ、または Windows セキュリティ ログです。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は、Windows で追加の設定を行わないと Windows セキュリティ ログに書き込むことができません。 詳細については、「[セキュリティ ログへの SQL Server 監査イベントの書き込み](../../relational-databases/security/auditing/write-sql-server-audit-events-to-the-security-log.md)」を参照してください。  
 
 > [!IMPORTANT]
 > Azure SQL Managed Instance では、SQL 監査はサーバー レベルで動作します。 場所は `URL` または `EXTERNAL_MONITOR` にのみすることができます。
