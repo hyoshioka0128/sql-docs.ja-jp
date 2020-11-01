@@ -91,7 +91,7 @@ ms.locfileid: "85899085"
     >  監査が失敗状態のとき、専用管理者接続は、監査イベントの実行を継続できます。  
   
      **[監査の出力先]** の一覧  
-     監査データの出力先を指定します。 バイナリ ファイル、Windows アプリケーション ログ、または Windows セキュリティ ログを指定できます。 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] は、Windows で追加の設定を行わないと Windows セキュリティ ログに書き込むことができません。 詳細については、「 [セキュリティ ログへの SQL サーバー監査イベントの書き込み](../../../relational-databases/security/auditing/write-sql-server-audit-events-to-the-security-log.md)」を参照してください。  
+     監査データの出力先を指定します。 バイナリ ファイル、Windows アプリケーション ログ、または Windows セキュリティ ログを指定できます。 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] は、Windows で追加の設定を行わないと Windows セキュリティ ログに書き込むことができません。 詳細については、「[セキュリティ ログへの SQL Server 監査イベントの書き込み](../../../relational-databases/security/auditing/write-sql-server-audit-events-to-the-security-log.md)」を参照してください。  
   
      **[ファイル パス]**  
      **[監査の出力先]** にファイルが指定されている場合に、監査データが書き込まれるフォルダーの場所を指定します。  
@@ -137,7 +137,7 @@ ms.locfileid: "85899085"
      既存のサーバー監査の名前。 監査の名前を入力するか、一覧から選択します。  
   
      **[監査アクションの種類]**  
-     キャプチャするサーバー レベルの監査アクション グループと監査アクションを指定します。 サーバー レベルの監査アクション グループと監査アクションの一覧、およびそれらに含まれるイベントの説明については、「 [SQL Server 監査のアクション グループとアクション](../../../relational-databases/security/auditing/sql-server-audit-action-groups-and-actions.md)」を参照してください。  
+     キャプチャするサーバー レベルの監査アクション グループと監査アクションを指定します。 サーバー レベルの監査アクション グループと監査アクションの一覧、およびそれらに含まれるイベントの説明については、「[SQL Server 監査のアクション グループとアクション](../../../relational-databases/security/auditing/sql-server-audit-action-groups-and-actions.md)」を参照してください。  
   
      **[オブジェクト スキーマ]**  
      指定した **[オブジェクト名]** のスキーマを表示します。  
