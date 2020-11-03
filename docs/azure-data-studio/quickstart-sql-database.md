@@ -1,5 +1,5 @@
 ---
-title: Azure SQL データベースに対する接続およびクエリ
+title: Azure SQL Database に対する接続およびクエリ
 description: クイックスタートで Azure Data Studio を使用して Azure SQL Database サーバーに接続し、データベースを作成してクエリを実行します。
 ms.prod: azure-data-studio
 ms.technology: azure-data-studio
@@ -26,7 +26,7 @@ ms.locfileid: "92439296"
 
 - [Azure Data Studio をインストールする](./download-azure-data-studio.md?view=sql-server-ver15)
 
-Azure SQL サーバーがない場合は、次のいずれかの Azure SQL Database クイック スタートを完了します。 後の手順のために、完全修飾サーバー名とサインイン資格情報を覚えておいてください。
+Azure SQL Server がない場合は、次のいずれかの Azure SQL Database クイック スタートを完了します。 後の手順のために、完全修飾サーバー名とサインイン資格情報を覚えておいてください。
 
 - [DB の作成 - ポータル](/azure/sql-database/sql-database-get-started-portal)
 - [DB の作成 - CLI](/azure/sql-database/sql-database-get-started-cli)
@@ -41,7 +41,7 @@ Azure Data Studio を使用して、Azure SQL Database サーバーへの接続�
    
    ![[次の接続] オプションが選択されている Azure Delta Studio の [ようこそ] ダイアログ ボックスを示すスクリーンショット。](media/quickstart-sql-database/new-connection-icon.png)
 
-2. この記事では、SQL サインインを使用しますが、Windows 認証もサポートされています。 ご利用の Azure SQL サーバーのサーバー名、ユーザー名、パスワードを使用して、次のようにフィールドに入力します。
+2. この記事では、SQL サインインを使用しますが、Windows 認証もサポートされています。 ご利用の Azure SQL Server のサーバー名、ユーザー名、パスワードを使用して、次のようにフィールドに入力します。
 
    | 設定       | 推奨値 | 説明 |
    | ------------ | ------------------ | ------------------------------------------------- | 
@@ -67,7 +67,7 @@ Azure Data Studio を使用して、Azure SQL Database サーバーへの接続�
 
 次のセクションでは、他の Azure Data Studio チュートリアルで使用されている TutorialDB データベースを作成します。
 
-1. **[サーバー]** サイドバーで Azure SQL サーバーを右クリックし、 **[新しいクエリ]** を選択します。
+1. **[サーバー]** サイドバーで Azure SQL Server を右クリックし、 **[新しいクエリ]** を選択します。
 
 1. この SQL をクエリ エディターに貼り付けます。
 
@@ -154,4 +154,4 @@ Azure Data Studio を使用して、Azure SQL Database サーバーへの接続�
 
 ## <a name="next-steps"></a>次のステップ
 
-Azure SQL データベースに正常に接続してクエリを実行したので、[コード エディターのチュートリアル](tutorial-sql-editor.md)をお試しください。
+Azure SQL Database に正常に接続してクエリを実行したので、[コード エディターのチュートリアル](tutorial-sql-editor.md)をお試しください。
