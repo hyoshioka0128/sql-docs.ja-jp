@@ -25,7 +25,7 @@ ms.locfileid: "85659770"
 # <a name="configure-the-user-options-server-configuration-option"></a>user options サーバー構成オプションの構成
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  このトピックでは、 **または** を使用して、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] で [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] user options [!INCLUDE[tsql](../../includes/tsql-md.md)]サーバー構成オプションを構成する方法について説明します。 **user options** オプションは、すべてのユーザーに対するグローバルな既定値を指定します。 ユーザーの作業セッション中に、一連の既定のクエリ処理オプションが設定されます。 **user options** オプションを使用すると、SET オプションの既定値を変更できます (サーバーの既定の設定が適切でない場合)。  
+  このトピックでは、 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] または  [!INCLUDE[tsql](../../includes/tsql-md.md)]を使用して、[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] で **user options** サーバー構成オプションを構成する方法について説明します。 **user options** オプションは、すべてのユーザーに対するグローバルな既定値を指定します。 ユーザーの作業セッション中に、一連の既定のクエリ処理オプションが設定されます。 **user options** オプションを使用すると、SET オプションの既定値を変更できます (サーバーの既定の設定が適切でない場合)。  
   
  各ユーザーは、SET ステートメントを使用してこれらの既定値をオーバーライドできます。 新しいログインについては **user options** を動的に構成できます。 **user options**の設定を変更した場合、新しい設定は新しいログイン セッションで使用され、現在のログイン セッションには影響しません。  
   
