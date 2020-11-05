@@ -126,7 +126,7 @@ Visual Studio Code で **F5** を選択すると、Azure Data Studio がデバ�
 
 ## <a name="publish-your-extension-to-the-marketplace"></a>拡張機能をマーケットプレースに公開する
 
-Azure Data Studio 拡張機能マーケットプレースはまだ完成していません。 現在のプロセスでは、拡張機能 VSIX をどこか (GitHub リリース ページなど) でホストします。 次に、[こちらの JSON ファイル](https://github.com/Microsoft/azuredatastudio/blob/release/extensions/extensionsGallery.json)をご自分の拡張機能情報で更新するプル要求を送信します。
+Azure Data Studio 拡張機能マーケットプレースはまだ完成していません。 現在のプロセスでは、拡張機能 VSIX をどこか (GitHub リリース ページなど) でホストします。 次に、[こちらの JSON ファイル](https://github.com/Microsoft/azuredatastudio/blob/release/extensions/extensionsGallery.json)をご自分の拡張機能情報で更新するプルリクエストを送信します。
 
 ## <a name="next-steps"></a>次のステップ
 
