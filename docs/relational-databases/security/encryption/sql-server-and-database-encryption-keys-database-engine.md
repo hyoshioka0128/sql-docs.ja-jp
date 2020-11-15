@@ -74,7 +74,7 @@ ms.locfileid: "91866596"
  [拡張キー管理 &#40;EKM&#41;](../../../relational-databases/security/encryption/extensible-key-management-ekm.md)  
  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]でサード パーティのキー管理システムを使用する方法について説明します。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
  [サービス マスター キーのバックアップ](../../../relational-databases/security/encryption/back-up-the-service-master-key.md)  
   
  [サービス マスター キーの復元](../../../relational-databases/security/encryption/restore-the-service-master-key.md)  
