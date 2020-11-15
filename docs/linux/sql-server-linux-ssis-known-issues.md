@@ -86,7 +86,7 @@ SQL Server メンテナンス プランでは、通常、さまざまな SSIS �
 - Foreach ループ コンテナー
 
 ## <a name="supported-data-flow-sources-and-destinations"></a>サポートされているデータ フローの変換元と変換先
-- 生ファイルの変換元と接続先
+- RAW ファイルの変換元と接続先
 - XML ソース
 
 ## <a name="data-flow-sources-and-destinations-supported-with-limitations"></a>制限付きでサポートされているデータ フローの変換元と変換先
