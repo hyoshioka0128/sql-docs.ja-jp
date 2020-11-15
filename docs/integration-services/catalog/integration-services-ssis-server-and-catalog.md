@@ -52,7 +52,7 @@ ms.locfileid: "89480699"
   
      **[Integration Services カタログ]** ノードには、 [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] プロジェクトおよび環境のフォルダーが存在します。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
   
 -   [Integration Services サーバー上のパッケージの一覧を表示する](../../integration-services/catalog/view-the-list-of-packages-on-the-integration-services-server.md)  
   
