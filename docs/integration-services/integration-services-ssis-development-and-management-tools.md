@@ -52,7 +52,7 @@ ms.locfileid: "92193884"
   
 -   [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] の msdb データベース、[!INCLUDE[ssIS](../includes/ssis-md.md)] パッケージ ストア、およびファイル システムに、パッケージのコピーを保存します。  
   
- [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)]の詳細については、「 [SQL Server Data Tools](/previous-versions/sql/sql-server-data-tools/hh272686(v=vs.103))」を参照してください。  
+ [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)]の詳細については、「[SQL Server Data Tools](/previous-versions/sql/sql-server-data-tools/hh272686(v=vs.103))」を参照してください。  
   
 ## <a name="sql-server-management-studio"></a>SQL Server Management Studio  
  [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)] の [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] サービスを利用して、パッケージの管理、実行中のパッケージの監視、および [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] オブジェクトと [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] オブジェクトの影響とデータ系列の決定を行います。  
