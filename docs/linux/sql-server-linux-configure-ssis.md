@@ -27,7 +27,7 @@ Red Hat Enterprise Linux および Ubuntu 用の SQL Server Integration Services
 |-------------|---------------------------------------------------------------------|
 | set-edition | SQL Server のエディションを設定します。                                       |
 | telemetry   | SQL Server Integration Services のテレメトリ サービスを有効または無効にします。 |
-| セットアップ       | Microsoft SQL Server Integration Services を初期化して設定します。      |
+| setup       | Microsoft SQL Server Integration Services を初期化して設定します。      |
 |||
 
 ## <a name="run-ssis-conf"></a>ssis-conf を実行する
