@@ -150,10 +150,9 @@ setx /m PATH "path\to\installation\of\R\bin\x64;%PATH%"
 >[!NOTE]
 >The preceding command grants permissions to the computer **SID S-1-15-2-1**, which is equivalent to ALL APPLICATION PACKAGES on an English version of Windows. Alternatively, you can use `icacls "%R_HOME%" /grant "ALL APPLICATION PACKAGES":(OI)(CI)RX /T` on an English version of Windows.
 
-## Restart SQL Server Launchpad service
+## SQL Server Launchpad サービスを再起動する
 
-From an *elevated* command prompt, run the following commands. Replace "MSSQLSERVER" with the name of your SQL Server instance.
-
+*管理者特権*のコマンドプロンプトから、次のコマンドを実行します。 [MSSQLSERVER] を SQLServer インスタンスの名前に置き換えます。
 
 ```CMD
 net stop MSSQLLAUNCHPAD$MSSQLSERVER
