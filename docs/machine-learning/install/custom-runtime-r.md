@@ -104,7 +104,7 @@ install.packages("Rcpp", lib="%R_HOME%/library");
 ## <a name="update-the-system-environment-variables"></a>システム環境変数を更新する
 
 1. システム環境変数として **R_HOME** を追加または変更します。
-    + Windows の検索ボックスに「環境」と入力し、 **[Edit the system environment variables]\(システム環境変数の編集\)** を選択します。
+    + Windows の検索ボックスに「環境」と入力し、 **[Edit the system environment variables]\(環境変数の編集\)** を選択します。
     + **[詳細設定]** タブの **[環境変数]** を選択します。
 
     + **[システム変数]** で **[新規]** を選択して、R_HOME を作成します。
