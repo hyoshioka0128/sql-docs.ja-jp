@@ -97,7 +97,7 @@ python.exe -m pip install pandas
 
 システム環境変数として PYTHONHOME を追加または変更します。
 
-+ Windows の検索ボックスに「環境」と入力し、 **[Edit the system environment variables]\(システム環境変数の編集\)** を選択します。
++ Windows の検索ボックスに「環境」と入力し、 **[Edit the system environment variables]\(環境変数の編集\)** を選択します。
 + **[詳細設定]** タブの **[環境変数]** を選択します。
 + **[システム変数]** で **[新規]** を選択し、Python 3.7 のインストール場所を指す PYTHONHOME を作成します。
 PYTHONHOME が既に存在する場合は、 **[編集]** を選択し、Python 3.7 のインストール場所を指定します。
