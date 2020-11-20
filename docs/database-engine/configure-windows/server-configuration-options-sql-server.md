@@ -48,7 +48,7 @@ ms.locfileid: "86923613"
 
 構成オプションは、次のいずれかの場合に有効になります。
 
-- オプションを設定し、**RECONFIGURE** ステートメントまたは場合によっては **RECONFIGURE WITH OVERRIDE**ステートメントを実行した直後。 特定のオプションを再設定すると、プラン キャッシュのプランが無効になり、新しいプランがコンパイルされます。 詳細については、「 [DBCC FREEPROCCACHE &#40;Transact-SQL&#41;](../../t-sql/database-console-commands/dbcc-freeproccache-transact-sql.md)」を参照してください。
+- オプションを設定し、**RECONFIGURE** ステートメントまたは場合によっては **RECONFIGURE WITH OVERRIDE**ステートメントを実行した直後。 特定のオプションを再設定すると、プラン キャッシュのプランが無効になり、新しいプランがコンパイルされます。 詳細については、「[DBCC FREEPROCCACHE &#40;Transact-SQL&#41;](../../t-sql/database-console-commands/dbcc-freeproccache-transact-sql.md)」を参照してください。
 
   \- - または -
 
