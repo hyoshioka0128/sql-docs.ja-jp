@@ -28,7 +28,7 @@ ms.locfileid: "96125458"
   
  SQL Server では、次の方法で Microsoft Azure Blob ストレージ サービスにバックアップを格納できます。  
   
--   **Microsoft Azure へのバックアップを管理する方法:** ディスクまたはテープにバックアップする場合と同じ方法を使用して、バックアップ先として URL を指定することにより、Microsoft Azure ストレージにバックアップできます。 この機能を使用すると、手動でバックアップすることも、ローカル ストレージまたはその他のオフサイト オプションの場合と同じように独自のバックアップ方法を構成することもできます。 この機能は、 **SQL Server Backup to URL** とも呼ばれます。 詳細については、「 [SQL Server Backup to URL](../../relational-databases/backup-restore/sql-server-backup-to-url.md)」を参照してください。 この機能は、SQL Server 2012 SP1 CU2 以降で使用できます。 この機能は [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] で強化され、ブロック BLOB、Shared Access Signature、ストライピングを使用してパフォーマンスと機能が向上しました。  
+-   **Microsoft Azure へのバックアップを管理する方法:** ディスクまたはテープにバックアップする場合と同じ方法を使用して、バックアップ先として URL を指定することにより、Microsoft Azure Storage にバックアップできます。 この機能を使用すると、手動でバックアップすることも、ローカル ストレージまたはその他のオフサイト オプションの場合と同じように独自のバックアップ方法を構成することもできます。 この機能は、 **SQL Server Backup to URL** とも呼ばれます。 詳細については、「 [SQL Server Backup to URL](../../relational-databases/backup-restore/sql-server-backup-to-url.md)」を参照してください。 この機能は、SQL Server 2012 SP1 CU2 以降で使用できます。 この機能は [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] で強化され、ブロック BLOB、Shared Access Signature、ストライピングを使用してパフォーマンスと機能が向上しました。  
   
     > [!NOTE]  
     >  SQL Server 2012 SP1 CU2 より前の SQL Server バージョンでは、Microsoft Azure への SQL Server バックアップ ツール アドインを使用して、Microsoft Azure Storage へのバックアップをすばやく簡単に作成できます。 詳細については、 [ダウンロード センター](https://go.microsoft.com/fwlink/?LinkID=324399)を参照してください。  
@@ -55,7 +55,7 @@ ms.locfileid: "96125458"
 -   コスト面での利点: 使用するサービスにのみ料金がかかります。 オフサイトのバックアップ アーカイブ オプションとして、優れたコスト効果を得ることができます。 詳細とリンクについては、「 [Microsoft Azure の課金に関する注意点](#Billing) 」を参照してください。  
   
 ##  <a name="microsoft-azure-billing-considerations"></a><a name="Billing"></a> Microsoft Azure の課金に関する注意点:  
- Microsoft Azure ストレージのコストを把握しておくと、Microsoft Azure でバックアップを作成および格納するコストを予測できます。  
+ Microsoft Azure Storage のコストを把握しておくと、Microsoft Azure でバックアップを作成および格納するコストを予測できます。  
   
  [Microsoft Azure 料金計算ツール](https://go.microsoft.com/fwlink/?LinkId=277060) を使用すると、コストを見積もることができます。  
   
