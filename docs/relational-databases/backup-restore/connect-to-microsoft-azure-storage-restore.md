@@ -1,6 +1,6 @@
 ---
-title: Microsoft Azure ストレージへの接続 (復元) | Microsoft Docs
-description: SQL Server では、[Azure ストレージ アカウント] ダイアログ ボックスで Azure ストレージ アカウント情報への接続を指定して、Azure アカウントのファイル ストレージを取得することができます。
+title: Microsoft Azure Storage への接続 (復元) | Microsoft Docs
+description: SQL Server では、[Azure Storage アカウント] ダイアログ ボックスで Azure Storage アカウント情報への接続を指定して、Azure アカウントのファイル ストレージを取得することができます。
 ms.custom: ''
 ms.date: 03/01/2017
 ms.prod: sql
@@ -20,16 +20,16 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/23/2020
 ms.locfileid: "96130456"
 ---
-# <a name="connect-to-microsoft-azure-storage-restore"></a>Microsoft Azure ストレージへの接続 (復元)
+# <a name="connect-to-microsoft-azure-storage-restore"></a>Microsoft Azure Storage への接続 (復元)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
-  このダイアログ ボックスを使用すると、Azure ストレージ アカウントのファイル ストレージを取得するために、Azure ストレージ アカウント情報への接続を指定できます。 必要な情報を指定した後、 **[接続]** をクリックして Azure Storage への接続を確立します。  
+  このダイアログ ボックスを使用すると、Azure Storage アカウントのファイル ストレージを取得するために、Azure Storage アカウント情報への接続を指定できます。 必要な情報を指定した後、 **[接続]** をクリックして Azure Storage への接続を確立します。  
   
 ## <a name="azure-storage-account"></a>Azure Storage アカウント  
  **ストレージ アカウント**  
- 使用する Azure ストレージ アカウントの名前を選択、入力、または貼り付けます。 ドロップダウン リストに、以前に使用したアカウントが表示されます。  
+ 使用する Azure Storage アカウントの名前を選択、入力、または貼り付けます。 ドロップダウン リストに、以前に使用したアカウントが表示されます。  
   
  **アカウント キー**  
- Azure ストレージ アカウントのアクセス キーを指定します。  
+ Azure Storage アカウントのアクセス キーを指定します。  
   
  **[安全なエンドポイントを使用する (HTTPS)]** チェック ボックス  
  Azure Storage に対してセキュリティで保護された接続を確立するには、このオプションを選択します (推奨)。  
