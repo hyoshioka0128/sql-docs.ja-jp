@@ -26,7 +26,7 @@ ms.locfileid: "96130593"
 [!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
 
 
-Azure BLOB のダウンロード タスクを使うと、SSIS パッケージで Azure BLOB ストレージからファイルをダウンロードできます。
+Azure BLOB のダウンロード タスクを使うと、SSIS パッケージで Azure Blob Storage からファイルをダウンロードできます。
 
 **Azure BLOB のダウンロード タスク** を追加するには、SSIS デザイナーにドラッグ アンド ドロップし、ダブルクリックまたは右クリックして、 **[編集]** をクリックすると、次の **[Azure BLOB ダウンロード タスク エディター]** ダイアログ ボックスが表示されます。  
   
