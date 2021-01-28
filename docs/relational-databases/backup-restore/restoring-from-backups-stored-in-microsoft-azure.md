@@ -1,6 +1,6 @@
 ---
 title: Microsoft Azure に格納されたバックアップからの復元 | Microsoft Docs
-description: Azure BLOB ストレージに格納されているバックアップを使用して SQL Server データベースを復元する際の考慮事項について理解します。
+description: Azure Blob Storage に格納されているバックアップを使用して SQL Server データベースを復元する際の考慮事項について理解します。
 ms.custom: ''
 ms.date: 03/13/2017
 ms.prod: sql
@@ -29,7 +29,7 @@ ms.locfileid: "96125503"
   
 ### <a name="using-transact-sql"></a>Transact-SQL の使用  
   
--   SQL Server はバックアップ ファイルを取得するために外部ソースに接続する必要があるため、SQL 資格情報を使用してストレージ アカウントへの認証を行います。 そのため、RESTORE ステートメントには WITH CREDENTIAL オプションが必要です。 詳細については、「[Windows Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」を参照してください。  
+-   SQL Server はバックアップ ファイルを取得するために外部ソースに接続する必要があるため、SQL 資格情報を使用してストレージ アカウントへの認証を行います。 そのため、RESTORE ステートメントには WITH CREDENTIAL オプションが必要です。 詳細については、「[Windows Azure Blob Storage サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」を参照してください。  
   
 -   [!INCLUDE[ss_smartbackup](../../includes/ss-smartbackup-md.md)] を使用してクラウドへのバックアップを管理している場合は、 **smart_admin.fn_available_backups** システム関数を使用すると、ストレージ内の使用可能なバックアップをすべて確認できます。 このシステム関数により、テーブル内のデータベースの使用可能なすべてのバックアップが返されます。 結果はテーブルで返されるため、結果のフィルター処理または並べ替えが可能です。 詳細については、「[managed_backup.fn_available_backups &#40;Transact-SQL&#41;](../../relational-databases/system-functions/managed-backup-fn-available-backups-transact-sql.md)」を参照してください。  
   
