@@ -1,6 +1,6 @@
 ---
 title: Azure でのデータベース ファイルのファイル スナップショット バックアップ | Microsoft Docs
-description: SQL Server ファイル スナップショット バックアップでは、Azure BLOB ストレージ サービスを使用して格納したデータベース ファイルを対象に、Azure スナップショットを使用して迅速なバックアップとすばやい復元を行うことができます。
+description: SQL Server ファイル スナップショット バックアップでは、Azure Blob Storage サービスを使用して格納したデータベース ファイルを対象に、Azure スナップショットを使用して迅速なバックアップとすばやい復元を行うことができます。
 ms.custom: ''
 ms.date: 05/23/2016
 ms.prod: sql
@@ -20,7 +20,7 @@ ms.locfileid: "98172694"
 ---
 # <a name="file-snapshot-backups-for-database-files-in-azure"></a>Azure でのデータベース ファイルのスナップショット バックアップ
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
-  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ファイル スナップショット バックアップは、Azure BLOB ストレージ サービスを使用して格納したデータベース ファイルを、Azure スナップショットを使用してほぼ瞬時にバックアップし、迅速に復元できます。 この機能により、バックアップと復元のポリシーを簡素化することができます。 ライブ デモについては、 [特定の時点での復元に関するデモ](https://channel9.msdn.com/Blogs/Windows-Azure/File-Snapshot-Backups-Demo)を参照してください。 Azure Blob ストレージ サービスを使用してデータベース ファイルを格納する方法の詳細については、「[Microsoft Azure 内の SQL Server データ ファイル](../../relational-databases/databases/sql-server-data-files-in-microsoft-azure.md)」を参照してください。  
+  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ファイル スナップショット バックアップは、Azure Blob Storage サービスを使用して格納したデータベース ファイルを、Azure スナップショットを使用してほぼ瞬時にバックアップし、迅速に復元できます。 この機能により、バックアップと復元のポリシーを簡素化することができます。 ライブ デモについては、 [特定の時点での復元に関するデモ](https://channel9.msdn.com/Blogs/Windows-Azure/File-Snapshot-Backups-Demo)を参照してください。 Azure Blob ストレージ サービスを使用してデータベース ファイルを格納する方法の詳細については、「[Microsoft Azure 内の SQL Server データ ファイル](../../relational-databases/databases/sql-server-data-files-in-microsoft-azure.md)」を参照してください。  
   
  ![スナップショット バックアップのアーキテクチャの図](../../relational-databases/backup-restore/media/snapshotbackups.PNG "スナップショット バックアップのアーキテクチャの図")  
   
@@ -44,10 +44,10 @@ ms.locfileid: "98172694"
  **トランザクション ログのバックアップ**: ファイル スナップショット バックアップを使用してトランザクション ログのバックアップを実行すると、(トランザクション ログだけでなく) 各データベース ファイルのファイル スナップショットが作成され、バックアップ ファイルにファイル スナップショットの場所情報が記録されて、トランザクション ログ ファイルが切り捨てられす。  
   
 > [!IMPORTANT]  
->  トランザクション ログのバックアップ チェーンの確立に必要な最初の完全バックアップ (ファイル スナップショット バックアップの場合もあり) の後、各トランザクション ログのファイル スナップショット ファイルはすべて、データベースの復元やログの復元の実行に使用できるため、トランザクション ログのバックアップのみを実行するのみで済みます。 データベースの最初の完全バックアップの後は、各ファイル スナップショットや各データベース ファイルのベース BLOB の現在の状態の違いは Azure BLOB ストレージ サービスが処理するため、追加の完全バックアップや差分バックアップは不要です。  
+>  トランザクション ログのバックアップ チェーンの確立に必要な最初の完全バックアップ (ファイル スナップショット バックアップの場合もあり) の後、各トランザクション ログのファイル スナップショット ファイルはすべて、データベースの復元やログの復元の実行に使用できるため、トランザクション ログのバックアップのみを実行するのみで済みます。 データベースの最初の完全バックアップの後は、各ファイル スナップショットや各データベース ファイルのベース BLOB の現在の状態の違いは Azure Blob Storage サービスが処理するため、追加の完全バックアップや差分バックアップは不要です。  
   
 > [!NOTE]  
->  Microsoft Azure BLOB ストレージ サービスでの SQL Server 2016 の使用方法に関するチュートリアルについては、「[チュートリアル:Azure Blob Storage サービスと SQL Server 2016 データベースの使用](../tutorial-use-azure-blob-storage-service-with-sql-server-2016.md)  
+>  Microsoft Azure Blob Storage サービスでの SQL Server 2016 の使用方法に関するチュートリアルについては、「[チュートリアル:Azure Blob Storage サービスと SQL Server 2016 データベースの使用](../tutorial-use-azure-blob-storage-service-with-sql-server-2016.md)  
   
 ### <a name="restore-using-file-snapshot-backups"></a>ファイル スナップショット バックアップを使用した復元  
  各ファイル スナップショット バックアップ セットには各データベース ファイルのファイル スナップショットが含まれているため、復元プロセスには、最大で隣接する 2 つのファイル スナップショット バックアップ セットが必要です。 これは、バックアップ セットが完全バックアップまたはログ バックアップからのものであるかに関係なく当てはまります。 これは、従来のストリーミング バックアップ ファイルを使用して復元プロセスを実行するときとまったく異なります。 従来のストリーミング バックアップでは、復元プロセスにバックアップ セットのチェーン全体 (完全バックアップ、差分バックアップ、1 つ以上のトランザクション ログのバックアップ) を使用する必要があります。 復元プロセスの復旧の部分は、復元にファイル スナップショット バックアップまたはストリーミング バックアップ セットを使用しているかどうかに関係なく、同じです。  
