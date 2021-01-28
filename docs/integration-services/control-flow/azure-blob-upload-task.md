@@ -26,7 +26,7 @@ ms.locfileid: "96123667"
 [!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
 
 
-**Azure BLOB のアップロード タスク** を使うと、SSIS パッケージで Azure BLOB ストレージにファイルをアップロードできます。
+**Azure BLOB のアップロード タスク** を使うと、SSIS パッケージで Azure Blob Storage にファイルをアップロードできます。
     
 **Azure BLOB のアップロード タスク** を追加するには、SSIS デザイナーにドラッグ アンド ドロップし、ダブルクリックまたは右クリックして、 **[編集]** をクリックし、次の **[Azure Blob Upload Task Editor (Azure BLOB アップロード タスク エディター)]** ダイアログ ボックスを表示します。  
   
