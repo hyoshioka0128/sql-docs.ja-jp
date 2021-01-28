@@ -1,6 +1,6 @@
 ---
 title: URL へのバックアップに関するベスト プラクティスとトラブルシューティング
-description: Azure BLOB ストレージとの間の SQL Server のバックアップと復元に関するベスト プラクティスとトラブルシューティングのヒントを学習します。
+description: Azure Blob Storage との間の SQL Server のバックアップと復元に関するベスト プラクティスとトラブルシューティングのヒントを学習します。
 ms.custom: seo-lt-2019
 ms.date: 12/17/2019
 ms.prod: sql
@@ -26,7 +26,7 @@ ms.locfileid: "97639196"
   
  SQL Server のバックアップ操作または復元操作に Azure Blob Storage サービスを使用する方法の詳細については、次のトピックを参照してください。  
   
--   [Microsoft Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)  
+-   [Microsoft Azure Blob Storage サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)  
   
 -   [チュートリアル:Azure Blob Storage サービスへの SQL Server のバックアップと復元](../../relational-databases/tutorial-sql-server-backup-and-restore-to-azure-blob-storage-service.md)  
   
@@ -55,7 +55,7 @@ ms.locfileid: "97639196"
 
 ここでは、Azure Blob Storage サービスへのバックアップまたは Azure Blob Storage サービスからの復元を実行するときに発生するエラーを簡単にトラブルシューティングする方法をいくつか示します。  
   
-サポートされないオプションまたは制限事項によるエラーを回避するには、「 [Microsoft Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md) 」の記事で、制限事項の一覧および BACKUP コマンドと RESTORE コマンドのサポート情報を確認してください。  
+サポートされないオプションまたは制限事項によるエラーを回避するには、「 [Microsoft Azure Blob Storage サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md) 」の記事で、制限事項の一覧および BACKUP コマンドと RESTORE コマンドのサポート情報を確認してください。  
 
 **初期化に失敗しました** 
 
