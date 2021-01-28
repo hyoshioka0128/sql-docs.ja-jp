@@ -1,6 +1,6 @@
 ---
-title: Azure BLOB ストレージのデータに一括アクセスする
-description: BULK INSERT と OPENROWSET を使用して Azure BLOB ストレージ アカウントのデータにアクセスする Transact-SQL の例。
+title: Azure Blob Storage のデータに一括アクセスする
+description: BULK INSERT と OPENROWSET を使用して Azure Blob Storage アカウントのデータにアクセスする Transact-SQL の例。
 ms.date: 10/22/2019
 ms.prod: sql
 ms.prod_service: database-engine
@@ -24,13 +24,13 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 12/14/2020
 ms.locfileid: "97473993"
 ---
-# <a name="examples-of-bulk-access-to-data-in-azure-blob-storage"></a>Azure BLOB ストレージのデータに一括アクセスする例
+# <a name="examples-of-bulk-access-to-data-in-azure-blob-storage"></a>Azure Blob Storage のデータに一括アクセスする例
 
 [!INCLUDE[sqlserver2017-asdb](../../includes/applies-to-version/sqlserver2017-asdb.md)]
 
-`BULK INSERT` ステートメントと `OPENROWSET` ステートメントは、Azure BLOB ストレージのファイルに直接アクセスできます。 次の例では、`inv-2017-01-19.csv` という名前の CSV (コンマ区切り値) ファイルのデータを使用します。このファイルは `newinvoices` という名前のストレージ アカウントで `Week3` という名前のコンテナーに格納されています。 ファイルの書式を設定するパスを使用できますが、以下の例には含まれていません。
+`BULK INSERT` ステートメントと `OPENROWSET` ステートメントは、Azure Blob Storage のファイルに直接アクセスできます。 次の例では、`inv-2017-01-19.csv` という名前の CSV (コンマ区切り値) ファイルのデータを使用します。このファイルは `newinvoices` という名前のストレージ アカウントで `Week3` という名前のコンテナーに格納されています。 ファイルの書式を設定するパスを使用できますが、以下の例には含まれていません。
 
-SQL Server から Azure BLOB ストレージに一括アクセスする場合、[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] CTP 1.1 以上が必要になります。
+SQL Server から Azure Blob Storage に一括アクセスする場合、[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] CTP 1.1 以上が必要になります。
 
 > [!IMPORTANT]
 > コンテナーと BLOB 上のファイルへのパスはすべて、`CASE SENSITIVE` です。 正しくない場合は、"一括読み込みできません。 ファイル "file.csv" が存在しないか、ファイルへのアクセス権がありません。" などのエラーが返される可能性があります。
@@ -52,7 +52,7 @@ WITH IDENTITY = 'SHARED ACCESS SIGNATURE',
 SECRET = 'sv=2018-03-28&ss=b&srt=sco&sp=rwdlac&se=2019-08-31T02:25:19Z&st=2019-07-30T18:25:19Z&spr=https&sig=KS51p%2BVnfUtLjMZtUTW1siyuyd2nlx294tL0mnmFsOk%3D';
 ```
 
-## <a name="accessing-data-in-a-csv-file-referencing-an-azure-blob-storage-location"></a>Azure BLOB ストレージの場所を参照する CSV ファイルのデータにアクセスする
+## <a name="accessing-data-in-a-csv-file-referencing-an-azure-blob-storage-location"></aAzure Blob Storage の場所を参照する CSV ファイルのデータにアクセスする
 
 次の例では、`MyAzureInvoices` という名前の Azure ストレージ アカウントを指す外部データ ソースを使用します。
 
@@ -86,7 +86,7 @@ WITH (DATA_SOURCE = 'MyAzureInvoices',
       FORMAT = 'CSV');
 ```
 
-## <a name="accessing-data-in-a-csv-file-referencing-a-container-in-an-azure-blob-storage-location"></a>Azure BLOB ストレージの場所にあるコンテナーを参照する CSV ファイルのデータにアクセスする
+## <a name="accessing-data-in-a-csv-file-referencing-a-container-in-an-azure-blob-storage-location"></a>Azure Blob Storage の場所にあるコンテナーを参照する CSV ファイルのデータにアクセスする
 
 次の例では、Azure ストレージ アカウントにあるコンテナー (`week3` という名前) を指す外部データ ソースを使用します。
 
