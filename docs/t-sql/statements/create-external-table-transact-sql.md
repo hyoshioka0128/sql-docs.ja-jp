@@ -1105,7 +1105,7 @@ LOCATION をフォルダーとして指定した場合、外部テーブルか�
 
 既定値を変更して、読み取りをルート フォルダーからのみに限定するには、core-site.xml 構成ファイル内で属性\<polybase.recursive.traversal> を 'false' に設定します。 このファイルは `<SqlBinRoot>\PolyBase\Hadoop\Conf with SqlBinRoot the bin root of SQl Server` の配下に配置されます。 たとえば、「 `C:\\Program Files\\Microsoft SQL Server\\MSSQL13.XD14\\MSSQL\\Binn` 」のように入力します。
 
-DATA_SOURCE = *external_data_source_name*。外部データの場所を含む外部データ ソースの名前を指定します。 この場所は、Hadoop または Azure BLOB ストレージです。 外部データ ソースを作成するには、[CREATE EXTERNAL DATA SOURCE](../../t-sql/statements/create-external-data-source-transact-sql.md) を使用します。
+DATA_SOURCE = *external_data_source_name*。外部データの場所を含む外部データ ソースの名前を指定します。 この場所は、Hadoop または Azure Blob Storage です。 外部データ ソースを作成するには、[CREATE EXTERNAL DATA SOURCE](../../t-sql/statements/create-external-data-source-transact-sql.md) を使用します。
 
 FILE_FORMAT = *external_file_format_name*。外部データのファイルの種類と圧縮方法を格納する外部ファイル形式のオブジェクトの名前を指定します。 外部ファイル形式を作成するには、[CREATE EXTERNAL FILE FORMAT](../../t-sql/statements/create-external-file-format-transact-sql.md) を使用します。
 
