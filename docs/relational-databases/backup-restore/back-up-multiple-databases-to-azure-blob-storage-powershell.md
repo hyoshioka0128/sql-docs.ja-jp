@@ -19,7 +19,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/23/2020
 ms.locfileid: "96129358"
 ---
-# <a name="back-up-multiple-databases-to-azure-blob-storage---powershell"></a>Azure BLOB ストレージへの複数のデータベースのバックアップ - PowerShell
+# <a name="back-up-multiple-databases-to-azure-blob-storage---powershell"></a>Azure Blob Storage への複数のデータベースのバックアップ - PowerShell
 
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
@@ -34,7 +34,7 @@ ms.locfileid: "96129358"
 利用できるコマンドレットの一覧については、[SqlServer のコマンドレット](/powershell/module/sqlserver)に関するページを参照してください。
   
 > [!TIP]  
-> **SqlCredential** コマンドレットは、Azure Blob Storage へのバックアップと復元のシナリオで使用します。 資格情報とその使用方法の詳細については、[Microsoft Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)に関するページを参照してください。
+> **SqlCredential** コマンドレットは、Azure Blob Storage へのバックアップと復元のシナリオで使用します。 資格情報とその使用方法の詳細については、[Microsoft Azure Blob Storage サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)に関するページを参照してください。
   
 ### <a name="powershell-for-multi-database-multi-instance-backup-operations"></a>複数データベース/複数インスタンス バックアップ操作用の PowerShell
 
