@@ -252,7 +252,7 @@ CREDENTIAL
   
 **適用対象**:[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] SP1 CU2 以降
   
- Microsoft Azure Blob ストレージ サービスからバックアップを復元する場合にのみ使用されます。  
+ Microsoft Azure Blob Storage サービスからバックアップを復元する場合にのみ使用されます。  
   
 > [!NOTE]  
 >  [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] SP1 CU2 から [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] の場合、URL からの復元時にのみ、1 つのデバイスから復元できます。 URL からの復元時に複数のデバイスから復元するには、[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] から[現在のバージョン](../../sql-server/what-s-new-in-sql-server-2016.md)を使用する必要があります。また、Shared Access Signature (SAS) トークンを使用する必要があります。 詳細については、「[Microsoft Azure への SQL Server マネージド バックアップを有効にする](../../relational-databases/backup-restore/enable-sql-server-managed-backup-to-microsoft-azure.md)」と「[Simplifying creation of SQL Credentials with Shared Access Signature ( SAS ) tokens on Azure Storage with PowerShell](/archive/blogs/sqlcat/simplifying-creation-of-sql-credentials-with-shared-access-signature-sas-tokens-on-azure-storage-with-powershell)」 (PowerShell を使用する Azure ストレージにおける Shared Access Signature (SAS) トークンでの SQL 資格情報の作成の簡素化) を参照してください。  
