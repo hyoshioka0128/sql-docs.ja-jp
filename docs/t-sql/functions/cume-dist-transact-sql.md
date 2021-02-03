@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-data-warehouse, database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - CUME_DIST
 - CUME_DIST_TSQL
@@ -17,15 +17,15 @@ helpviewer_keywords:
 - CUME_DIST function
 - analytic functions, CUME_DIST
 ms.assetid: 491b07f3-9ffd-4cdd-93e5-5abb636fc5ef
-author: markingmyname
-ms.author: maghan
-monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: cee3a163b3fe08b59aab3542a8c3848626b63693
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 2f28c7c8039602d5892430b1c59a4f39e026a954
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88468148"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99184191"
 ---
 # <a name="cume_dist-transact-sql"></a>CUME_DIST (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
@@ -36,10 +36,9 @@ ms.locfileid: "88468148"
   
 ## <a name="syntax"></a>構文  
   
-```sql
+```syntaxsql
 CUME_DIST( )  
     OVER ( [ partition_by_clause ] order_by_clause )  
-  
 ```
 
 [!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
@@ -47,7 +46,7 @@ CUME_DIST( )
 ## <a name="arguments"></a>引数
 OVER **(** [ _partition\_by\_clause_ ] _order\_by\_clause_)  
 
-_partition\_by\_clause_ は、FROM 句の結果セットをパーティションに分割します。このパーティションに関数が適用されます。 _partition\_by\_clause_ 引数を指定しない場合、`CUME_DIST` ではクエリ結果セットのすべての行を 1 つのグループとして扱います。 _order\_by\_clause_ は、操作が実行される論理的順序を決定します。 `CUME_DIST` には _order\_by\_clause_が必要です。 `CUME_DIST` では、OVER 構文の \<rows or range clause> は受け入れられません。 詳細については、を参照してください。 [OVER 句 &#40;Transact-SQL&#41;](../../t-sql/queries/select-over-clause-transact-sql.md).
+_partition\_by\_clause_ は、FROM 句の結果セットをパーティションに分割します。このパーティションに関数が適用されます。 _partition\_by\_clause_ 引数を指定しない場合、`CUME_DIST` ではクエリ結果セットのすべての行を 1 つのグループとして扱います。 _order\_by\_clause_ は、操作が実行される論理的順序を決定します。 `CUME_DIST` には _order\_by\_clause_ が必要です。 `CUME_DIST` では、OVER 構文の \<rows or range clause> は受け入れられません。 詳細については、を参照してください。 [OVER 句 &#40;Transact-SQL&#41;](../../t-sql/queries/select-over-clause-transact-sql.md).
   
 ## <a name="return-types"></a>戻り値の型
 **float(53)**
@@ -75,8 +74,7 @@ ORDER BY Department, Rate DESC;
   
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
   
-```sql
-  
+```
 Department             LastName               Rate                  CumeDist               PctRank  
 ---------------------- ---------------------- --------------------- ---------------------- ----------------------  
 Document Control       Arifin                 17.7885               1                      1  

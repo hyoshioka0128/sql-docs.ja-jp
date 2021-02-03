@@ -17,13 +17,13 @@ helpviewer_keywords:
 ms.assetid: 2f3ce5f5-c81c-4470-8141-8144d4f218dd
 author: rothja
 ms.author: jroth
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: f2665ab9b5a30209a123056664921334ce3c8367
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: eebd2896dc1931e03dd121867ee09c1940d02d36
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88485308"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97466713"
 ---
 # <a name="deterministic-and-nondeterministic-functions"></a>決定的関数と非決定的関数
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -165,8 +165,8 @@ ms.locfileid: "88485308"
 |機能|説明|  
 |--------------|--------------|  
 |すべての集計関数|OVER 句および ORDER BY 句で指定されていない限り、集計関数はすべて決定的です。 集計関数の一覧については、「[集計関数 &#40;Transact-SQL&#41;](../../t-sql/functions/aggregate-functions-transact-sql.md)」を参照してください。|  
-|CAST|**datetime**、 **smalldatetime**、または **sql_variant**と共に使用しない場合は、決定的関数になります。|  
-|CONVERT|以下の条件に該当しない場合は決定的関数になります。<br /><br /> <br /><br /> ソースの型が **sql_variant**であること。<br /><br /> 変換先の型が **sql_variant** であり、変換元の型が非決定的であること。<br /><br /> 変換元または変換先の型が **datetime** または **smalldatetime**であり、他の変換元または変換先の型が文字列で、非決定的スタイルが指定されていること。 決定的にするには、スタイル パラメーターを定数にする必要があります。 また、スタイルが 20 および 21 以外で 100 以下の場合は非決定的です。 スタイルが 101 以上で、106、107、109、113 以外の場合は決定的です。|  
+|CAST|**datetime**、 **smalldatetime**、または **sql_variant** と共に使用しない場合は、決定的関数になります。|  
+|CONVERT|以下の条件に該当しない場合は決定的関数になります。<br /><br /> <br /><br /> ソースの型が **sql_variant** であること。<br /><br /> 変換先の型が **sql_variant** であり、変換元の型が非決定的であること。<br /><br /> 変換元または変換先の型が **datetime** または **smalldatetime** であり、他の変換元または変換先の型が文字列で、非決定的スタイルが指定されていること。 決定的にするには、スタイル パラメーターを定数にする必要があります。 また、スタイルが 20 および 21 以外で 100 以下の場合は非決定的です。 スタイルが 101 以上で、106、107、109、113 以外の場合は決定的です。|  
 |CHECKSUM|CHECKSUM(*) を除き、決定的関数になります。|  
 |ISDATE|CONVERT 関数と共に使用され、CONVERT スタイル パラメーターが指定されており、スタイルが 0、100、9、または 109 と等しくない場合にのみ決定的関数になります。|  
 |RAND|RAND は、 *seed* パラメーターが指定されている場合にのみ決定的です。|  

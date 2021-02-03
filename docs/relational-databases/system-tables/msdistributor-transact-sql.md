@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: replication
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - MSdistributor
 - MSdistributor_TSQL
@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSdistributor system table
 ms.assetid: 981e9903-0b4b-4508-ac6d-2ee4c813a3d0
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 2c38960fab8e1599af4ac74ca865092b09fbd178
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: c87acc9445317555444b8370d8d81a0c530555da
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89547134"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99160384"
 ---
 # <a name="msdistributor-transact-sql"></a>MSdistributor (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **Msdistributor**テーブルには、ディストリビューターのプロパティが含まれています。 このテーブルは、 **msdb** データベースに格納されます。  
+  **Msdistributor** テーブルには、ディストリビューターのプロパティが含まれています。 このテーブルは、 **msdb** データベースに格納されます。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - INDEX_COL_TSQL
 - INDEX_COL
@@ -20,14 +20,14 @@ helpviewer_keywords:
 - column names [SQL Server]
 - names [SQL Server], columns
 ms.assetid: 4db1fb3b-e46f-43fb-b269-a5b6e8b39ed0
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 29f6feeb045e3c8418bfb63fd28e784113dc629f
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 2419e111870e5dda5cc241ec82f328c162e8b801
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88364928"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99181239"
 ---
 # <a name="index_col-transact-sql"></a>INDEX_COL (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -38,8 +38,7 @@ ms.locfileid: "88364928"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 INDEX_COL ( '[ database_name . [ schema_name ] .| schema_name ]  
     table_or_view_name', index_id , key_id )   
 ```  
@@ -57,7 +56,7 @@ INDEX_COL ( '[ database_name . [ schema_name ] .| schema_name ]
  テーブルまたはインデックス付きビューのスキーマです。 *table_or_view_name* 単一引用符で区切る必要があるあり、データベース名とスキーマ名で完全に修飾することができます。  
   
  *index_id*  
- インデックスの ID です。 *index_ID* は** int**です。  
+ インデックスの ID です。 *index_ID* は **int** です。  
   
  *key_id*  
  インデックス キー列の位置です。 *key_ID* is **int**.  
@@ -75,7 +74,7 @@ INDEX_COL ( '[ database_name . [ schema_name ] .| schema_name ]
 ### <a name="a-using-index_col-to-return-an-index-column-name"></a>A. INDEX_COL を使用してインデックス列名を返す  
  この例では、インデックス `PK_SalesOrderDetail_SalesOrderID_LineNumber` の 2 つのキー列の列名を返します。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 SELECT   

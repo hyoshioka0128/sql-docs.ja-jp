@@ -25,13 +25,13 @@ helpviewer_keywords:
 ms.assetid: f47eda43-33aa-454d-840a-bb15a031ca17
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: =azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017
-ms.openlocfilehash: ea89fc76512a848dd0a2cd3cbfbc01c69c37d3c9
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017
+ms.openlocfilehash: 43f3bbae327731f6522b71c0fdaafbc9441fe9ca
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88459659"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98169751"
 ---
 # <a name="openrowset-transact-sql"></a>OPENROWSET (Transact-SQL)
 
@@ -249,7 +249,7 @@ SELECT *
 |ACP|**char**、**varchar**、または **text** データ型の列を、ANSI/[!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows コード ページ (ISO 1252) から [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] コード ページに変換します。|
 |OEM (既定値)|**char**、**varchar**、または **text** データ型の列を、システムの OEM コード ページから [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] コード ページに変換します。|
 |RAW|コード ページの変換は行われません。 これは最も高速なオプションです。|
-|*code_page*|データ ファイルの文字データのエンコードに使用されているソースのコード ページを示します (例 : 850)。<br /><br /> **重要**[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] より前のバージョンではコード ページ 65001 (UTF-8 エンコード) がサポートされません。|
+|*code_page*|データ ファイルの文字データのエンコードに使用されているソースのコード ページを示します (例 : 850)。<br /><br /> **重要**[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] より前のバージョンではコード ページ 65001 (UTF-8 エンコード) がサポートされません。|
 
 ##### <a name="format"></a>FORMAT
 `FORMAT` **=** 'CSV' **適用対象:** [!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] CTP 1.1.
@@ -283,7 +283,7 @@ CSV ファイルで引用符文字として使用される文字を指定しま�
 
 リモートの OLE DB データ ソースにアクセスするとき、信頼関係接続のログイン ID は、クライアントの接続先サーバーからクエリの対象サーバーに自動的に委任されるわけではありません。 したがって、認証の委任を構成する必要があります。
 
-指定したデータ ソースにおいて、OLE DB プロバイダーが複数のカタログとスキーマをサポートする場合は、カタログ名とスキーマ名を指定する必要があります。 _カタログ_と_スキーマ_の値は、OLE DB プロバイダーではサポートしていない場合は省略できます。 プロバイダーがスキーマ名しかサポートしていない場合は、_スキーマ_ **.** _オブジェクト_ という形式の 2 部構成の名前を指定する必要があります。 プロバイダーがカタログ名しかサポートしていない場合は、_カタログ_ **.** _スキーマ_ **.** _オブジェクト_ という形式の 3 部構成の名前を指定する必要があります。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB プロバイダーを使用するパススルー クエリには、3 つの部分で構成される名前を指定する必要があります。 詳しくは、「[Transact-SQL 構文表記規則 &#40;Transact-SQL&#41;](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)」をご覧ください。
+指定したデータ ソースにおいて、OLE DB プロバイダーが複数のカタログとスキーマをサポートする場合は、カタログ名とスキーマ名を指定する必要があります。 _カタログ_ と _スキーマ_ の値は、OLE DB プロバイダーではサポートしていない場合は省略できます。 プロバイダーがスキーマ名しかサポートしていない場合は、_スキーマ_ **.** _オブジェクト_ という形式の 2 部構成の名前を指定する必要があります。 プロバイダーがカタログ名しかサポートしていない場合は、_カタログ_ **.** _スキーマ_ **.** _オブジェクト_ という形式の 3 部構成の名前を指定する必要があります。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client OLE DB プロバイダーを使用するパススルー クエリには、3 つの部分で構成される名前を指定する必要があります。 詳しくは、「[Transact-SQL 構文表記規則 &#40;Transact-SQL&#41;](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)」をご覧ください。
 
 `OPENROWSET` の引数に変数は指定できません。
 
@@ -390,8 +390,8 @@ FROM Northwind.dbo.Customers AS c
  次の例では、小さなテーブルを作成し、ルート ディレクトリ `C:` にあるファイル `Text1.txt` から `varbinary(max)` 列にファイル データを挿入します。
 
 ```sql
-CREATE TABLE myTable(FileName nvarchar(60),
-  FileType nvarchar(60), Document varbinary(max));
+CREATE TABLE myTable(FileName NVARCHAR(60),
+  FileType NVARCHAR(60), Document VARBINARY(max));
 GO
 
 INSERT INTO myTable(FileName, FileType, Document)
@@ -410,7 +410,7 @@ GO
 
 次の例では、フォーマット ファイルを使用して、タブ区切りのテキスト ファイル `values.txt` から行を取得します。このテキスト ファイルには次のデータが含まれます。
 
-```sql
+```
 1     Data Item 1
 2     Data Item 2
 3     Data Item 3
@@ -418,7 +418,7 @@ GO
 
 フォーマット ファイル `values.fmt` では、`values.txt` の列が次のように表されています。
 
-```sql
+```
 9.0
 2  
 1  SQLCHAR  0  10 "\t"        1  ID                      SQL_Latin1_General_Cp437_BIN
@@ -469,8 +469,8 @@ SELECT * FROM OPENROWSET(
 ```
 
 ```sql
-select *
-from openrowset
+SELECT *
+FROM OPENROWSET
    (  'MSDASQL'
      ,'Driver={Microsoft Access Text Driver (*.txt, *.csv)}'
      ,'select * from E:\Tlog\TerritoryData.csv')
@@ -520,43 +520,18 @@ WITH ( TYPE = BLOB_STORAGE,
 );
 
 INSERT INTO achievements with (TABLOCK) (id, description)
-SELECT * FROM OPENROWSET(
-   BULK  'csv/achievements.csv',
-   DATA_SOURCE = 'MyAzureBlobStorage',
-   FORMAT ='CSV',
-   FORMATFILE='csv/achievements-c.xml',
-   FORMATFILE_DATA_SOURCE = 'MyAzureBlobStorage'
-    ) AS DataFile;
+SELECT * FROM OPENROWSET(
+   BULK  'csv/achievements.csv',
+   DATA_SOURCE = 'MyAzureBlobStorage',
+   FORMAT ='CSV',
+   FORMATFILE='csv/achievements-c.xml',
+   FORMATFILE_DATA_SOURCE = 'MyAzureBlobStorage'
+    ) AS DataFile;
 ```
 
 > [!IMPORTANT]
-> Azure SQL Database でサポートされるのは、Azure Blob Storage からの読み取りのみです。
+> Azure SQL Database でサポートされるのは、SAS トークンを使用した Azure Blob Storage からの読み取りのみです。
 
-ストレージ アカウントにアクセスする別の方法として、[マネージド ID](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) を使用することもできます。 これを行うには、[手順 1 から 3](https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview?toc=/azure/sql-data-warehouse/toc.json&bc=/azure/sql-data-warehouse/breadcrumb/toc.json#steps) に従って、マネージド ID を使用してストレージにアクセスするように SQL Database を構成します。その後、次のようにコード サンプルを実装できます。
-```sql
---> Optional - a MASTER KEY is not required if a DATABASE SCOPED CREDENTIAL is not required because the blob is configured for public (anonymous) access!
-CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'YourStrongPassword1';
-GO
-
---> Change to using Managed Identity instead of SAS key 
-CREATE DATABASE SCOPED CREDENTIAL msi_cred WITH IDENTITY = 'Managed Identity';
-GO
-
-CREATE EXTERNAL DATA SOURCE MyAzureBlobStorage
-WITH ( TYPE = BLOB_STORAGE,
-          LOCATION = 'https://****************.blob.core.windows.net/curriculum'
-          , CREDENTIAL= msi_cred --> CREDENTIAL is not required if a blob is configured for public (anonymous) access!
-);
-
-INSERT INTO achievements with (TABLOCK) (id, description)
-SELECT * FROM OPENROWSET(
-   BULK  'csv/achievements.csv',
-   DATA_SOURCE = 'MyAzureBlobStorage',
-   FORMAT ='CSV',
-   FORMATFILE='csv/achievements-c.xml',
-   FORMATFILE_DATA_SOURCE = 'MyAzureBlobStorage'
-    ) AS DataFile;
-```
 ### <a name="additional-examples"></a>その他の例
 
 `INSERT...SELECT * FROM OPENROWSET(BULK...)` のその他の使用例については、次のトピックをご覧ください。

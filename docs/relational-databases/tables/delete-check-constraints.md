@@ -17,13 +17,13 @@ helpviewer_keywords:
 ms.assetid: 5f86c1a6-f5fa-4e77-a892-f6ae96fc0ab3
 author: stevestein
 ms.author: sstein
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 557c791f0457ef31c1bf5aeca51787f2200a70ad
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 1b94d89738312548e187bf9b7ed637b37aeae95f
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88446465"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97462633"
 ---
 # <a name="delete-check-constraints"></a>CHECK 制約の削除
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -53,7 +53,7 @@ ms.locfileid: "88446465"
   
 #### <a name="to-delete-a-check-constraint"></a>CHECK 制約を削除するには  
   
-1.  **オブジェクト エクスプローラー**で、CHECK 制約が設定されたテーブルを展開します。  
+1.  **オブジェクト エクスプローラー** で、CHECK 制約が設定されたテーブルを展開します。  
   
 2.  **[制約]** を展開します。  
   
@@ -65,7 +65,7 @@ ms.locfileid: "88446465"
   
 #### <a name="to-delete-a-check-constraint"></a>CHECK 制約を削除するには  
   
-1.  **オブジェクト エクスプローラー**で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)]のインスタンスに接続します。  
+1.  **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)]のインスタンスに接続します。  
   
 2.  [標準] ツール バーの **[新しいクエリ]** をクリックします。  
   

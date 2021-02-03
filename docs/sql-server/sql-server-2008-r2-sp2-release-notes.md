@@ -13,25 +13,25 @@ helpviewer_keywords:
 ms.assetid: e2bd3de7-674c-4ea7-8d53-bb40bba86fae
 author: rothja
 ms.author: jroth
-monikerRange: = sql-server-2016 || = sqlallproducts-allversions
-ms.openlocfilehash: a8ed0a9892110f4469a9adeb4d586c8eec7f081c
-ms.sourcegitcommit: 768f046107642f72693514f51bf2cbd00f58f58a
+monikerRange: = sql-server-2016
+ms.openlocfilehash: 33d919b5536994da040ce4cca4d4ac32a0e735c2
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87111016"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97466683"
 ---
 # <a name="sql-server-2008-r2-sp2-release-notes"></a>SQL Server 2008 R2 SP2 Release Notes
 [!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
 このリリース ノートでは、Microsoft SQL Server 2008 R2 Service Pack 2 のインストールやトラブルシューティングを行う前に知っておく必要がある、既知の問題について説明しています。 このリリース ノート ドキュメントは、SQL Server 2008 R2 SP2 のすべてのエディションに適用され、オンラインでのみ利用できます。 このリリース ノート ドキュメントは定期的に更新されます。  
   
 ## <a name="10-whats-new-in-service-pack-2"></a>1.0 Service Pack 2 の新機能  
-**sys.dm_db_stats_properties**動的管理ビュー (DMV) が追加されました。 この DMV を使用して、現在のデータベース内にある指定されたテーブルまたはインデックス付きビューの統計プロパティを返すことができます。 たとえば、この DMV は、サンプルの行数およびヒストグラムのステップ数を返します。  
+**sys.dm_db_stats_properties** 動的管理ビュー (DMV) が追加されました。 この DMV を使用して、現在のデータベース内にある指定されたテーブルまたはインデックス付きビューの統計プロパティを返すことができます。 たとえば、この DMV は、サンプルの行数およびヒストグラムのステップ数を返します。  
   
 ## <a name="20-before-you-install"></a>2.0 インストールの準備  
-[!INCLUDE[ssKilimanjaro](../includes/sskilimanjaro-md.md)] の更新プログラムのインストール方法については、 [SQL Server 2008 R2 サービスのドキュメント](https://msdn.microsoft.com/library/dd638062(SQL.105).aspx)を参照してください。  
+[!INCLUDE[ssKilimanjaro](../includes/sskilimanjaro-md.md)] の更新プログラムのインストール方法については、 [SQL Server 2008 R2 サービスのドキュメント](/previous-versions/sql/sql-server-2008-r2/dd638062(v=sql.105))を参照してください。  
   
-SQL Server 2008 R2 のインストール方法の一般的な情報については、SQL Server 2008 R2 の Readme を参照してください。 この Readme ドキュメントは、インストール メディアにあります。 [SQL Server フォーラム](https://social.msdn.microsoft.com/Forums/category/sqlserver/)でも、詳細な情報を参照することができます。
+SQL Server 2008 R2 のインストール方法の一般的な情報については、SQL Server 2008 R2 の Readme を参照してください。 この Readme ドキュメントは、インストール メディアにあります。
   
 ### <a name="21-choose-the-correct-file-to-download-and-install"></a>2.1 ダウンロードとインストールに使用する正しいファイルの選択  
 ダウンロードとインストールに使用するファイルを確認するには、次の表を参照してください。 サービス パックをインストールする前に、システム要件を正しく満たしていることを確認します。 システム要件は、この表にあるリンクされたダウンロード ページに記載されています。  
@@ -43,7 +43,7 @@ SQL Server 2008 R2 のインストール方法の一般的な情報について�
 |SQL Server 2008 R2 または SQL Server 2008 R2 SP1 のクライアントと管理ツールのみの 32 ビット バージョン (SQL Server 2008 R2 Management Studio を含む)|SQL Server 2008 R2 SP2 の 32 ビット バージョンへクライアントと管理ツールをアップグレード|SQLServer2008R2SP2-KB2630458-x86-ENU.exe ( [こちら](https://go.microsoft.com/fwlink/p/?LinkId=251790)から)|  
 |SQL Server 2008 R2 Management Studio Express または SQL Server 2008 R2 SP1 Management Studio Express の 32 ビット バージョン|SQL Server 2008 R2 SP2 Management Studio Express の 32 ビット バージョンへアップグレード|SQLManagementStudio_x86_ENU.exe ( [こちら](https://go.microsoft.com/fwlink/p/?LinkId=251791)から)|  
 |SQL Server 2008 R2 または SQL Server 2008 R2 SP1 のいずれかのエディションの 32 ビット バージョン **および** クライアントと管理ツールの 32 ビット バージョン (SQL Server 2008 R2 RTM Management Studio 含む)|SQL Server 2008 R2 SP2 の 32 ビット バージョンへすべての製品をアップグレード|SQLServer2008R2SP2-KB2630458-x86-ENU.exe ( [こちら](https://go.microsoft.com/fwlink/p/?LinkId=251790)から)|  
-|[Microsoft SQL Server 2008 R2 用 Feature Pack](https://www.microsoft.com/download/details.aspx?id=44272)の 1 つ以上のツールの 32 ビット バージョン|Microsoft SQL Server 2008 R2 SP2 用 Feature Pack の 32 ビット バージョンへツールをアップグレード|[Microsoft SQL Server 2008 R2 SP2 用 Feature Pack](https://go.microsoft.com/fwlink/?LinkId=251792)の 1 つ以上のファイル|  
+|[Microsoft SQL Server 2008 R2 用 Feature Pack](https://www.microsoft.com/download/details.aspx?id=44272)の 1 つ以上のツールの 32 ビット バージョン|Microsoft SQL Server 2008 R2 SP2 用 Feature Pack の 32 ビット バージョンへツールをアップグレード|[Microsoft SQL Server 2008 R2 SP2 用 Feature Pack](https://www.microsoft.com/download/details.aspx?id=30438)の 1 つ以上のファイル|  
 |SQL Server 2008 R2 の 32 ビット インストールなし|Server 2008 R2 のインストール (SP2 含む)|[SQL Server 2008 R2 SP2 - Express Edition](https://go.microsoft.com/fwlink/?LinkId=251791) に移動して、指示に従ってください。|  
 |SQL Server 2008 R2 Management Studio の 32 ビット インストールなし|SQL Server 2008 R2 Management Studio のインストール (SP2 含む)|SQLManagementStudio_x86_ENU.exe ( [こちら](https://go.microsoft.com/fwlink/p/?LinkId=251791) から) を使用して無料の SQL Server 2008 R2 SP2 Management Studio Express Edition をインストールしてください。|  
 |SQL Server 2008 R2 または SQL Server 2008 R2 SP1 のいずれかのエディションの 64 ビット バージョン|SQL Server 2008 R2 SP2 の 64 ビット バージョンへアップグレード|SQLServer2008R2SP2-KB2630458-x64-ENU または SQLServer2008R2SP2-KB2630455-IA64-ENU.exe ( [こちら](https://go.microsoft.com/fwlink/p/?LinkId=251790)から)|  
@@ -51,7 +51,7 @@ SQL Server 2008 R2 のインストール方法の一般的な情報について�
 |SQL Server 2008 R2 または SQL Server 2008 R2 SP1 のクライアントと管理ツールのみの 64 ビット バージョン (SQL Server 2008 R2 Management Studio 含む)|SQL Server 2008 R2 SP2 の 64 ビット バージョンへクライアントと管理ツールをアップグレード|SQLServer2008R2SP2-KB2630458-x64-ENU.exe または SQLServer2008R2SP2-KB2630455-IA64-ENU.exe ( [こちら](https://go.microsoft.com/fwlink/p/?LinkId=251790)から)|  
 |SQL Server 2008 R2 Management Studio Express または SQL Server 2008 R2 SP1 Management Studio Express の 64 ビット バージョン|SQL Server 2008 R2 SP2 Management Studio Express の 64 ビット バージョンへアップグレード|SQLManagementStudio_x64_ENU.exe ( [こちら](https://go.microsoft.com/fwlink/p/?LinkId=251791)から)|  
 |SQL Server 2008 R2 または SQL Server 2008 R2 SP1 のいずれかのエディションの 64 ビット バージョン **および** クライアントと管理ツールの 64 ビット バージョン (SQL Server 2008 R2 RTM Management Studio 含む)|SQL Server 2008 R2 SP2 の 64 ビット バージョンへすべての製品をアップグレード|SQLServer2008R2SP2-KB2630458-x64-ENU.exe ( [こちら](https://go.microsoft.com/fwlink/p/?LinkId=251790)から)|  
-|[Microsoft SQL Server 2008 R2 用 Feature Pack](https://www.microsoft.com/download/details.aspx?id=44272)の 1 つ以上のツールの 64 ビット バージョン|Microsoft SQL Server 2008 R2 SP2 用 Feature Pack の 64 ビット バージョンへツールをアップグレード|[Microsoft SQL Server 2008 R2 SP2 用 Feature Pack](https://go.microsoft.com/fwlink/?LinkId=251792)の 1 つ以上のファイル|  
+|[Microsoft SQL Server 2008 R2 用 Feature Pack](https://www.microsoft.com/download/details.aspx?id=44272)の 1 つ以上のツールの 64 ビット バージョン|Microsoft SQL Server 2008 R2 SP2 用 Feature Pack の 64 ビット バージョンへツールをアップグレード|[Microsoft SQL Server 2008 R2 SP2 用 Feature Pack](https://www.microsoft.com/download/details.aspx?id=30438)の 1 つ以上のファイル|  
 |SQL Server 2008 R2 の 64 ビット インストールなし|Server 2008 R2 のインストール (SP2 含む)|[SQL Server 2008 R2 SP2 - Express Edition](https://go.microsoft.com/fwlink/?LinkId=251791) に移動して、指示に従ってください。|  
 |SQL Server 2008 R2 Management Studio の 64 ビット インストールなし|SQL Server 2008 R2 Management Studio のインストール (SP2 含む)|SQLManagementStudio_x64_ENU.exe ( [ここから](https://go.microsoft.com/fwlink/p/?LinkId=251791) ) を使用して無料の SQL Server 2008 R2 SP2 Management Studio Express Edition をインストールしてください。|  
   
@@ -65,4 +65,3 @@ SQL Server 2008 R2 のインストール方法の一般的な情報について�
   
 ## <a name="see-also"></a>参照  
 [SQL Server のバージョンとエディションを確認する方法](https://support.microsoft.com/kb/321185)  
-  

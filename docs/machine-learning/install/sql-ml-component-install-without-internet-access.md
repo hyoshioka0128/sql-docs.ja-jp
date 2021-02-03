@@ -1,23 +1,25 @@
 ---
-title: インターネットへのアクセスなしでのインストール
-description: ネットワーク ファイアウォールの背後に隔離されたコンピューターに SQL Server Machine Learning R および Python をインストールします。
+title: インターネットにアクセスしないオフラインでのインストール
+description: ネットワーク ファイアウォールの背後に隔離されたコンピューター上に Python および R を備えた SQL Server Machine Learning Services をオフラインでインストールします。
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 11/04/2019
+ms.date: 10/01/2020
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: d51ac079bf06938826bc343b1b3317e558964655
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 5190cc4e8525daf79354005132705ae1a27b32a3
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87247984"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471113"
 ---
-# <a name="install-sql-server-machine-learning-r-and-python-on-computers-with-no-internet-access"></a>インターネットにアクセスできないコンピューターに SQL Server Machine Learning R および Python をインストールする
-[!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
+# <a name="offline-install-sql-server-machine-learning-services-python-and-r-on-computers-with-no-internet-access"></a>インターネットに接続されていないコンピューター上に SQL Server Machine Learning (R および Python) をインストールする
+[!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
+
+この記事では、ネットワーク ファイアウォールの背後に隔離されたインターネットに接続されていないコンピューターに SQL Server Machine Learning Services をオフラインでインストールする方法について説明します。
 
 既定では、インストーラーは Microsoft ダウンロード サイトに接続して、SQL Server 上での機械学習に必要なコンポーネントおよび更新されたコンポーネントを取得します。 ファイアウォールの制約によって、インストーラーがこれらのサイトにアクセスできない場合は、インターネットに接続されたデバイスを使ってファイルをダウンロードし、オフラインのサーバーにファイルを転送してから、セットアップを実行できます。
 
@@ -29,7 +31,7 @@ ms.locfileid: "87247984"
 
 分離されたサーバーの場合、機械学習と R/Python 言語固有の機能は、CAB ファイルを通じて追加されます。 
 
-::: moniker range="=sql-server-ver15||=sqlallproducts-allversions"
+::: moniker range="=sql-server-ver15"
 ## <a name="sql-server-2019-offline-install"></a>SQL Server 2019 のオフライン インストール
 
 分離されたサーバーに SQL Server Machine Learning Services (R および Python) をインストールするには、まず、SQL Server の初回リリースと、R および Python サポート用の対応する CAB ファイルをダウンロードします。 サーバーをすぐに更新して、最新の累積的な更新プログラムを使用する予定の場合も、最初に初回リリースをインストールする必要があります。
@@ -61,7 +63,7 @@ Microsoft Python Server | [SPS_9.4.7.25_1033.cab](https://go.microsoft.com/fwlin
 
 ::: moniker-end
 
-::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2017"
 ## <a name="sql-server-2017-offline-install"></a>SQL Server 2017 のオフライン インストール
 
 分離されたサーバーに SQL Server Machine Learning Services (R および Python) をインストールするには、まず、SQL Server の初回リリースと、R および Python サポート用の対応する CAB ファイルをダウンロードします。 サーバーをすぐに更新して、最新の累積的な更新プログラムを使用する予定の場合も、最初に初回リリースをインストールする必要があります。
@@ -90,7 +92,7 @@ Microsoft Python Server    |[SPS_9.2.0.24_1033.cab](https://go.microsoft.com/fwl
 
 ::: moniker-end
 
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 
 ## <a name="sql-server-2016-offline-install"></a>SQL Server 2016 のオフライン インストール
 
@@ -140,7 +142,7 @@ Python の CAB ファイル用には %TEMP% フォルダーが必要です。 R 
 
 最新の累積的な更新プログラムをデータベース エンジンと機械学習コンポーネントの両方に適用することをお勧めします。 累積的な更新プログラムは、セットアップ プログラムによってインストールされます。 
 
-::: moniker range="=sql-server-ver15||=sqlallproducts-allversions"
+::: moniker range="=sql-server-ver15"
 1. ベースライン インスタンスを使用して開始します。 累積的な更新プログラムは、SQL Server の初回リリースの既存のインストールにのみ適用できます。
 
 2. インターネットに接続されているデバイスで、使用するバージョンの SQL Server 用の累積更新プログラムの一覧に移動します。
@@ -148,7 +150,7 @@ Python の CAB ファイル用には %TEMP% フォルダーが必要です。 R 
    + SQL Server 2019 更新プログラム " *(2019 用の更新プログラムはまだ利用できません)* "
 ::: moniker-end
 
-::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2017"
 1. ベースライン インスタンスを使用して開始します。 累積的な更新プログラムは、SQL Server の初回リリースの既存のインストールにのみ適用できます。
 
 2. インターネットに接続されているデバイスで、使用するバージョンの SQL Server 用の累積更新プログラムの一覧に移動します。
@@ -156,7 +158,7 @@ Python の CAB ファイル用には %TEMP% フォルダーが必要です。 R 
    + [SQL Server 2017 の更新プログラム](https://sqlserverupdates.com/sql-server-2017-updates/)
 ::: moniker-end
 
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 1. ベースライン インスタンスを使用して開始します。 累積的な更新プログラムは、SQL Server 2016 初回リリース、SQL Server 2016 SP 1、または SQL Server 2016 SP 2 の既存のインストールに対してのみ適用できます。
 
 2. インターネットに接続されているデバイスで、使用するバージョンの SQL Server 用の累積更新プログラムの一覧に移動します。
@@ -178,7 +180,7 @@ Python の CAB ファイル用には %TEMP% フォルダーが必要です。 R 
 
 ## <a name="set-environment-variables"></a>環境変数の設定
 
-R 機能の統合のみの場合、**MKL_CBWR** 環境変数を設定して、Intel Math Kernel Library (MKL) 計算からの[一貫した出力を保証](https://software.intel.com/articles/introduction-to-the-conditional-numerical-reproducibility-cnr)する必要があります。
+R 機能の統合のみの場合、**MKL_CBWR** 環境変数を設定して、Intel Math Kernel Library (MKL) 計算からの [一貫した出力を保証](https://software.intel.com/articles/introduction-to-the-conditional-numerical-reproducibility-cnr)する必要があります。
 
 1. コントロール パネルで、 **[システムとセキュリティ]**  >  **[システム]**  >  **[システムの詳細設定]**  >  **[環境変数]** の順にクリックします。
 
@@ -191,7 +193,7 @@ R 機能の統合のみの場合、**MKL_CBWR** 環境変数を設定して、In
 
 ## <a name="post-install-configuration"></a>インストール後の構成
 
-::: moniker range=">=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2017"
 インストールが完了したら、サービスを再起動した後、スクリプトの実行が有効になるようにサーバーを構成します。
 
 + [外部スクリプトの実行を有効にする](sql-machine-learning-services-windows-install.md#bkmk_enableFeature)
@@ -202,7 +204,7 @@ SQL Server Machine Learning Services の初回オフライン インストール
 + [必要に応じた追加の構成](sql-machine-learning-services-windows-install.md#additional-configuration)
 ::: moniker-end
 
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 インストールが完了したら、サービスを再起動した後、スクリプトの実行が有効になるようにサーバーを構成します。
 
 + [外部スクリプトの実行を有効にする](sql-r-services-windows-install.md#bkmk_enableFeature)
@@ -215,4 +217,4 @@ SQL Server R Services の初回オフライン インストールには、オン
 
 ## <a name="next-steps"></a>次のステップ
 
-見慣れないメッセージやログ エントリに関するヘルプについては、[アップグレードとインストールの FAQ - Machine Learning Services](../troubleshooting/upgrade-and-installation-faq-sql-server-r-services.md) に関する記事をご覧ください。
+Machine Learning Services を使用して、データベース内で Python または R スクリプトを実行するには、[SQL Server Machine Learning Services のインストール](../install/sql-machine-learning-services-windows-install.md)に関するページを参照してください。

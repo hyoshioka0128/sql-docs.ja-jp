@@ -9,15 +9,15 @@ ms.reviewer: ''
 ms.technology: table-view-index
 ms.topic: conceptual
 ms.assetid: 7a06785d-dbcb-44de-b95c-26b131471bee
-author: CarlRabeler
-ms.author: carlrab
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 386a4d1f3119744244d71a22355be643531a0b56
-ms.sourcegitcommit: 331b8495e4ab37266945c81ff5b93d250bdaa6da
+author: markingmyname
+ms.author: maghan
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: e593417e5b88037ad3fddbfba4a8cb99ddb50e94
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88646425"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97484464"
 ---
 # <a name="monitoring-memory-optimized-system-versioned-temporal-tables"></a>システムでバージョン管理されたメモリ最適化テンポラル テーブルの監視
 

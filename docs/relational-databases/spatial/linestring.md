@@ -13,16 +13,16 @@ helpviewer_keywords:
 ms.assetid: e50d0b86-8b31-4285-be71-ad05c7712cbd
 author: MladjoA
 ms.author: mlandzic
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 0e1a16547649ce07eadf15942da8cb548e8e10bb
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 0e9a48295949e973b4e371c68f23a000f0308c69
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88455394"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97462973"
 ---
 # <a name="linestring"></a>LineString
-[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
   **LineString** は、一連の点と、それらを結ぶ線分を表す 1 次元のオブジェクトです。  
   
 ## <a name="linestring-instances"></a>LineString インスタンス  
@@ -58,10 +58,10 @@ DECLARE @g geometry = 'LINESTRING(1 1)';
 ```  
   
 ### <a name="valid-instances"></a>有効なインスタンス  
-**LineString** インスタンスを有効にするためには、次の条件を満たす必要があります。  
+LineString インスタンスを有効にするためには、次の条件を満たす必要があります。  
   
 1.  **LineString** インスタンスが許容されていること。  
-2.  **LineString** インスタンスが空でない場合は、2 つ以上の異なる点が含まれていること。  
+2.  LineString インスタンスが空でない場合は、2 つ以上の異なる点が含まれていること。  
 3.  **LineString** インスタンスは、それ自体を 2 つ以上の連続する点の区間に重ねることはできない。  
   
 次に示す **LineString** インスタンスは有効です。  
@@ -103,7 +103,7 @@ SET @g = geometry::STGeomFromText('LINESTRING(1 1 NULL 0, 2 4 NULL 12.3, 3 9 NUL
 ```  
   
 ### <a name="example-c"></a>例 C。   
-次の例は、同じ 2 つの点を持つ `geometry LineString` インスタンスを作成する方法を示しています。 `IsValid` 呼び出しは、 **LineString** インスタンスが無効であることを示します。 `MakeValid` 呼び出しは、 **LineString** インスタンスを **Point**に変換します。  
+次の例は、同じ 2 つの点を持つ `geometry LineString` インスタンスを作成する方法を示しています。 `IsValid` 呼び出しは、 **LineString** インスタンスが無効であることを示します。 `MakeValid` 呼び出しは、 **LineString** インスタンスを **Point** に変換します。  
   
 ```sql  
 DECLARE @g geometry  

@@ -5,7 +5,7 @@ ms.custom: seo-lt-2019
 ms.date: 08/09/2018
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 f1_keywords:
 - sql13.swb.agdashboard.f1
@@ -13,19 +13,19 @@ helpviewer_keywords:
 - Availability Groups [SQL Server], policies
 - Availability Groups [SQL Server], dashboard
 ms.assetid: c9ba2589-139e-42bc-99e1-94546717c64d
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: 848ac8820ec5150c8c3fc058f77ffa4261ed8aa2
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: ea85d4be41b5f7dd5c4619cd4e2f6dd315cc3a99
+ms.sourcegitcommit: 2f3f5920e0b7a84135c6553db6388faf8e0abe67
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85902366"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98783069"
 ---
 # <a name="use-the-always-on-availability-group-dashboard-sql-server-management-studio"></a>Always On 可用性グループ ダッシュボードの使用 (SQL Server Management Studio)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
 
-  データベース管理者は Always On 可用性グループ ダッシュボードを使用して、[!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)] の可用性グループとその可用性レプリカおよび可用性データベースの正常性をひとめで確認できるビューを取得します。 可用性グループ ダッシュボードの一般的な用途をいくつか以下に示します。  
+  データベース管理者は Always On 可用性グループ ダッシュボードを使用して、[!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)] の可用性グループとその可用性レプリカおよび可用性データベースの正常性をひとめで確認できるビューを取得します。 可用性グループ ダッシュボードの一般的な用途をいくつか以下に示します。  
   
 -   手動フェールオーバー用のレプリカの選択。    
 -   フェールオーバーを強制した場合のデータ損失の推定。  
@@ -329,9 +329,9 @@ ms.locfileid: "85902366"
 ## <a name="always-on-availability-group-latency-reports"></a>Always On 可用性グループ待機時間レポート
 可用性グループ待機時間レポートは、可用性グループ ダッシュボードに組み込まれているレポート ツールであり、[SQL Server Management Studio 17.4](../../../ssms/download-sql-server-management-studio-ssms.md) リリースで使用できます。 この機能では、ログ転送プロセスのさまざまなフェーズで費やされる時間を詳細に示すわかりやすいレポートが提供されます。 これにより、同期プロセス中の待機時間の潜在的な原因を絞り込むことができます。 
 
-SQL エージェントではデータ収集を行います。プライマリ レプリカと、1 つ以上のセカンダリ レプリカの両方で SQL エージェントを有効にする必要があります。 SQL Server Management Studio の**オブジェクト エクスプローラー**で、可用性グループを右クリックし、[レポート]、[標準レポート] の順に選択してレポートを表示します。  
+SQL エージェントではデータ収集を行います。プライマリ レプリカと、1 つ以上のセカンダリ レプリカの両方で SQL エージェントを有効にする必要があります。 SQL Server Management Studio の **オブジェクト エクスプローラー** で、可用性グループを右クリックし、[レポート]、[標準レポート] の順に選択してレポートを表示します。  
 
-詳細については、[Always On 可用性グループの待機時間レポート](https://blogs.msdn.microsoft.com/sql_server_team/new-in-ssms-always-on-availability-group-latency-reports/)に関するページを参照してください。
+詳細については、[Always On 可用性グループの待機時間レポート](/archive/blogs/sql_server_team/new-in-ssms-always-on-availability-group-latency-reports)に関するページを参照してください。
 
 ## <a name="related-tasks"></a>Related Tasks  
   
@@ -340,5 +340,4 @@ SQL エージェントではデータ収集を行います。プライマリ レ
 ## <a name="see-also"></a>参照  
  [sys.dm_os_performance_counters &#40;Transact-SQL&#41;](../../../relational-databases/system-dynamic-management-views/sys-dm-os-performance-counters-transact-sql.md)   
  [可用性グループの監視 &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/monitoring-of-availability-groups-sql-server.md)  
-  
   

@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - DROP BROKER PRIORITY statement
 ms.assetid: 09ee6c5b-af94-4a4b-a0e2-f9eac50e43aa
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: 1159080251f5f3706f83d6351525c93db892e3d9
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: f5645014442ddeda800fdb5570ff76a96e943f62
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88496764"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095760"
 ---
 # <a name="drop-broker-priority-transact-sql"></a>DROP BROKER PRIORITY (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -35,7 +35,6 @@ ms.locfileid: "88496764"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 DROP BROKER PRIORITY ConversationPriorityName  
 [;]  
 ```  
@@ -46,7 +45,7 @@ DROP BROKER PRIORITY ConversationPriorityName
  *ConversationPriorityName*  
  削除するメッセージ交換の優先度の名前を指定します。  
   
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>解説  
  メッセージ交換の優先度を削除した場合、既存のメッセージ交換では、そのメッセージ交換の優先度から割り当てられた優先順位で操作が続行されます。  
   
 ## <a name="permissions"></a>アクセス許可  
@@ -55,9 +54,8 @@ DROP BROKER PRIORITY ConversationPriorityName
 ## <a name="examples"></a>例  
  次の例では、`InitiatorAToTargetPriority` という名前のメッセージ交換の優先度を削除します。  
   
-```  
-DROP BROKER PRIORITY InitiatorAToTargetPriority;  
-  
+```sql  
+DROP BROKER PRIORITY InitiatorAToTargetPriority;
 ```  
   
 ## <a name="see-also"></a>参照  

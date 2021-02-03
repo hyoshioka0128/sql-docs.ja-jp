@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - '@@OPTIONS'
 - '@@OPTIONS_TSQL'
@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 3d5c7f6e-157b-4231-bbb4-4645a11078b3
 author: julieMSFT
 ms.author: jrasnick
-ms.openlocfilehash: 12e2d3418a021a3ffee5db530d35f0fc8522dec1
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 43da748085a31a9d9f25ef20bdb690f2b94e4cb9
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88417228"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99183941"
 ---
 # <a name="x40x40options-transact-sql"></a>&#x40;&#x40;OPTIONS (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "88417228"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 @@OPTIONS  
 ```  
   
@@ -46,7 +46,7 @@ ms.locfileid: "88417228"
  **integer**  
   
 ## <a name="remarks"></a>解説  
- オプションは、**SET** コマンドの使用または **sp_configure ユーザー オプション**値からのものです。 **SET** コマンドで構成されているセッション値は、**sp_configure** オプションをオーバーライドします。 [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] などの多数のツールによって SET オプションは自動的に構成されます。 各ユーザーには、構成を表す @@OPTIONS 関数が用意されます。  
+ オプションは、**SET** コマンドの使用または **sp_configure ユーザー オプション** 値からのものです。 **SET** コマンドで構成されているセッション値は、**sp_configure** オプションをオーバーライドします。 [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] などの多数のツールによって SET オプションは自動的に構成されます。 各ユーザーには、構成を表す @@OPTIONS 関数が用意されます。  
   
  SET ステートメントを使用することにより、特定のユーザー セッションの言語とクエリ処理オプションを変更できます。 **\@\@OPTIONS** では、ON または OFF に設定されたオプションのみを検出できます。  
   
@@ -59,7 +59,7 @@ ms.locfileid: "88417228"
 ### <a name="a-demonstration-of-how-changes-affect-behavior"></a>A. 変更が動作に与える影響の例  
  次の例では、**CONCAT_NULL_YIELDS_NULL** オプションの 2 つの異なる設定による連結動作の違いを示します。  
   
-```  
+```sql  
 SELECT @@OPTIONS AS OriginalOptionsValue;  
 SET CONCAT_NULL_YIELDS_NULL OFF;  
 SELECT 'abc' + NULL AS ResultWhen_OFF, @@OPTIONS AS OptionsValueWhen_OFF;  
@@ -71,7 +71,7 @@ SELECT 'abc' + NULL AS ResultWhen_ON, @@OPTIONS AS OptionsValueWhen_ON;
 ### <a name="b-testing-a-client-nocount-setting"></a>B. クライアントの NOCOUNT 設定のテスト  
  次の例では、`NOCOUNT``ON` を設定し、`@@OPTIONS` の値を調べます。 `NOCOUNT``ON` オプションは、セッションで実行するすべてのステートメントごとに、要求するクライアントに対して影響を受ける行数に関するメッセージを戻さないようにします。 `@@OPTIONS` の値は、`512` (0x0200) に設定されます。 これは NOCOUNT オプションを表します。 この例では、クライアントで NOCOUNT オプションが有効になっているかどうかを調べます。 たとえば、これはクライアントにおけるパフォーマンスの違いを調べるのに役立ちます。  
   
-```  
+```sql  
 SET NOCOUNT ON  
 IF @@OPTIONS & 512 > 0   
 RAISERROR ('Current user has SET NOCOUNT turned on.', 1, 1)  

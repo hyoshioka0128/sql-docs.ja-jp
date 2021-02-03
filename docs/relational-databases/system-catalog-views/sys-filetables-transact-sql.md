@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - filetables
 - filetables_TSQL
@@ -18,19 +18,19 @@ dev_langs:
 helpviewer_keywords:
 - sys.filetables catalog view
 ms.assetid: a740be59-cd52-4707-9ad2-5203669a63ac
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: be56d53636a4916a402df709c5a7f7a0b3725dc8
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 144091f2574f428433c515bee2df13054f7eb5c6
+ms.sourcegitcommit: 38e055eda82d293bf5fe9db14549666cf0d0f3c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542542"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99250103"
 ---
 # <a name="sysfiletables-transact-sql"></a>sys.filetables (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  内の各 FileTable の行を返し [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] ますです。 FileTables について詳しくは、「[FileTables &#40;SQL Server&#41;](../../relational-databases/blob/filetables-sql-server.md)」をご覧ください。    
+  内の各 FileTable の行を返し [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] ますです。 FileTables について詳しくは、「[FileTables &#40;SQL Server&#41;](../../relational-databases/blob/filetables-sql-server.md)」をご覧ください。    
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

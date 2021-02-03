@@ -19,15 +19,15 @@ helpviewer_keywords:
 - current language in use
 - names [SQL Server], language in use
 ms.assetid: 3e13b477-7dfa-4da6-9948-da2050d42527
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: e917d294addc63724f104029b79cc076c59ad8c1
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: b8f1669b13b7fc9f50c8fc94ba7b6b8e3576f876
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88459686"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092274"
 ---
 # <a name="x40x40language-transact-sql"></a>&#x40;&#x40;LANGUAGE (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "88459686"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 @@LANGUAGE  
 ```  
   
@@ -53,7 +53,7 @@ ms.locfileid: "88459686"
 ## <a name="examples"></a>例  
  次の例では、現在のセッションの言語を返します。  
   
-```  
+```sql  
 SELECT @@LANGUAGE AS 'Language Name';  
 ```  
   

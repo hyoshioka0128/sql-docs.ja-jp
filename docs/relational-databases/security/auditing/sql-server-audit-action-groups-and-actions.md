@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: b7422911-7524-4bcd-9ab9-e460d5897b3d
 author: DavidTrigano
 ms.author: datrigan
-ms.openlocfilehash: 68943b7b57794d779656ca8537a7c59d4f486db8
-ms.sourcegitcommit: e08d28530e0ee93c78a4eaaee8800fd687babfcc
+ms.openlocfilehash: e435d8c94dfdfc8f989875d48440554e04405376
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86301901"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172494"
 ---
 # <a name="sql-server-audit-action-groups-and-actions"></a>SQL Server 監査のアクション グループとアクション
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -82,7 +82,7 @@ ms.locfileid: "86301901"
 |BATCH_STARTED_GROUP|このイベントは、バッチ テキスト、ストアド プロシージャ、またはトランザクション管理操作の実行が開始されるたびに発生します。 これは、実行前に発生し、クライアントから送信されたバッチまたはストアド プロシージャのテキスト全体を監査します。 **SQL Server 2019 で追加されました。**|  
 |BROKER_LOGIN_GROUP|このイベントは、Service Broker トランスポート セキュリティに関する監査メッセージを報告するために発生します。 [Audit Broker Login Event Class](../../../relational-databases/event-classes/audit-broker-login-event-class.md)と同じです。|  
 |DATABASE_CHANGE_GROUP|このイベントは、データベースが作成、変更、または削除されるときに発生します。 このイベントは、任意のデータベースが作成、変更、または削除されるたびに発生します。 [Audit Database Management Event Class](../../../relational-databases/event-classes/audit-database-management-event-class.md)と同じです。|  
-|DATABASE_LOGOUT_GROUP|このイベントは、包含データベースのユーザーがデータベースをログアウトするときに発生します。|  
+|DATABASE_LOGOUT_GROUP|このイベントは、包含データベースのユーザーが、[Audit Logout イベント クラス](../../../relational-databases/event-classes/audit-logout-event-class.md)と同等のデータベースをログアウトするときに発生します。|  
 |DATABASE_MIRRORING_LOGIN_GROUP|このイベントは、データベース ミラーリングのトランスポート セキュリティに関する監査メッセージを報告するために発生します。 [Audit Database Mirroring Login Event Class](../../../relational-databases/event-classes/audit-database-mirroring-login-event-class.md)と同じです。|  
 |DATABASE_OBJECT_ACCESS_GROUP|このイベントは、メッセージ型、アセンブリ、コントラクトなどのデータベース オブジェクトへのアクセスが行われるたびに発生します。 このイベントは、任意のデータベースへの任意のアクセスに対して発生します。 注:大量の監査レコードが生成される可能性があります。<br /><br /> [Audit Database Object Access Event Class](../../../relational-databases/event-classes/audit-database-object-access-event-class.md)と同じです。|  
 |DATABASE_OBJECT_CHANGE_GROUP|このイベントは、スキーマなどのデータベース オブジェクトで、CREATE、ALTER、または DROP ステートメントが実行されたときに発生します。 このイベントは、任意のデータベース オブジェクトが作成、変更、または削除されるたびに発生します。 注:非常に大量の監査レコードが生成される可能性があります。<br /><br /> [Audit Database Object Management Event Class](../../../relational-databases/event-classes/audit-database-object-management-event-class.md)と同じです。|  
@@ -126,7 +126,7 @@ ms.locfileid: "86301901"
  サーバー レベルのアクションでは、データベース レベルのアクションに対する詳細なフィルタリングは使用できません。 Employee グループのログインの Customers テーブルに対する SELECT アクションの監査などのデータベース レベルの監査では、アクションの詳細なフィルタリングを実装する必要があります。 ユーザーのデータベース監査の仕様に、システム ビューなどのサーバー スコープ オブジェクトは含めないでください。  
 
  > [!NOTE]
- > トランザクション レベルの監査を有効にするとオーバーヘッドが発生するため、[!INCLUDE[ssSQL15](../../../includes/sssql15-md.md)] SP2 CU3 および [!INCLUDE[ssSQL17](../../../includes/sssql17-md.md)] CU4 以降では、[情報セキュリティ国際評価基準 (Common Criteria) への準拠] を有効にしていない場合、トランザクション レベルの監査は既定で無効になります。  [情報セキュリティ国際評価基準 (Common Criteria) への準拠] が無効になっている場合でも、TRANSACTION_GROUP から監査の仕様にアクションを追加することはできますが、トランザクション アクションが実際に収集されることはありません。  [!INCLUDE[ssSQL15](../../../includes/sssql15-md.md)] SP2 CU3 および [!INCLUDE[ssSQL17](../../../includes/sssql17-md.md)] CU4 以降で、TRANSACTION_GROUP からの監査アクションを構成する場合は、[情報セキュリティ国際評価基準 (Common Criteria) への準拠] を有効にすることによって、トランザクション レベルの監査インフラストラクチャを有効にしてください。  なお、[!INCLUDE[ssSQL15](../../../includes/sssql15-md.md)] SP1 CU2 以降では、トレース フラグ 3427 でトランザクション レベルの監査を無効にすることもできます。
+ > トランザクション レベルの監査を有効にするとオーバーヘッドが発生するため、[!INCLUDE[ssSQL15](../../../includes/sssql16-md.md)] SP2 CU3 および [!INCLUDE[ssSQL17](../../../includes/sssql17-md.md)] CU4 以降では、[情報セキュリティ国際評価基準 (Common Criteria) への準拠] を有効にしていない場合、トランザクション レベルの監査は既定で無効になります。  [情報セキュリティ国際評価基準 (Common Criteria) への準拠] が無効になっている場合でも、TRANSACTION_GROUP から監査の仕様にアクションを追加することはできますが、トランザクション アクションが実際に収集されることはありません。  [!INCLUDE[ssSQL15](../../../includes/sssql16-md.md)] SP2 CU3 および [!INCLUDE[ssSQL17](../../../includes/sssql17-md.md)] CU4 以降で、TRANSACTION_GROUP からの監査アクションを構成する場合は、[情報セキュリティ国際評価基準 (Common Criteria) への準拠] を有効にすることによって、トランザクション レベルの監査インフラストラクチャを有効にしてください。  なお、[!INCLUDE[ssSQL15](../../../includes/sssql16-md.md)] SP1 CU2 以降では、トレース フラグ 3427 でトランザクション レベルの監査を無効にすることもできます。
   
 ## <a name="database-level-audit-action-groups"></a>データベース レベルの監査アクション グループ  
  データベース レベルの監査アクション グループは、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] セキュリティ監査イベント クラスに似ています。 イベント クラスの詳細については、「 [SQL Server イベント クラスの参照](../../../relational-databases/event-classes/sql-server-event-class-reference.md)」を参照してください。  
@@ -141,7 +141,7 @@ ms.locfileid: "86301901"
 |BATCH_COMPLETED_GROUP|このイベントは、バッチ テキスト、ストアド プロシージャ、またはトランザクション管理操作の実行が完了するたびに発生します。 これは、バッチが完了した後に発生し、クライアントから送信されたバッチまたはストアド プロシージャのテキスト全体 (結果を含む) を監査します。|  
 |BATCH_STARTED_GROUP|このイベントは、バッチ テキスト、ストアド プロシージャ、またはトランザクション管理操作の実行が開始されるたびに発生します。 これは、実行前に発生し、クライアントから送信されたバッチまたはストアド プロシージャのテキスト全体を監査します。|  
 |DATABASE_CHANGE_GROUP|このイベントは、データベースが作成、変更、または削除されるときに発生します。 [Audit Database Management Event Class](../../../relational-databases/event-classes/audit-database-management-event-class.md)と同じです。|  
-|DATABASE_LOGOUT_GROUP|このイベントは、包含データベースのユーザーがデータベースをログアウトするときに発生します。 [Audit Backup/Restore イベント クラス](../../../relational-databases/event-classes/audit-backup-and-restore-event-class.md)と同じです。|  
+|DATABASE_LOGOUT_GROUP|このイベントは、包含データベースのユーザーがデータベースをログアウトするときに発生します。|  
 |DATABASE_OBJECT_ACCESS_GROUP|このイベントは、証明書や非対称キーなどのデータベース オブジェクトへのアクセスが行われるたびに発生します。 [Audit Database Object Access Event Class](../../../relational-databases/event-classes/audit-database-object-access-event-class.md)と同じです。|  
 |DATABASE_OBJECT_CHANGE_GROUP|このイベントは、スキーマなどのデータベース オブジェクトで、CREATE、ALTER、または DROP ステートメントが実行されたときに発生します。 [Audit Database Object Management Event Class](../../../relational-databases/event-classes/audit-database-object-management-event-class.md)と同じです。|  
 |DATABASE_OBJECT_OWNERSHIP_CHANGE_GROUP|このイベントは、データベース スコープ内のオブジェクトの所有者が変更されたときに発生します。 [Audit Database Object Take Ownership Event Class](../../../relational-databases/event-classes/audit-database-object-take-ownership-event-class.md)と同じです。|  

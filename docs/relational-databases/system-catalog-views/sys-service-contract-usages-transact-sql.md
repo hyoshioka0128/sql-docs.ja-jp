@@ -1,13 +1,13 @@
 ---
-description: service_contract_usages (Transact-sql)
-title: service_contract_usages (Transact-sql) |Microsoft Docs
+description: sys.service_contract_usages (Transact-sql)
+title: sys.service_contract_usages (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - service_contract_usages
 - sys.service_contract_usages
@@ -18,16 +18,16 @@ dev_langs:
 helpviewer_keywords:
 - sys.service_contract_usages catalog view
 ms.assetid: 20af425e-1152-4a46-b1ac-94cff5fc9f02
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 1b44ee215023a33cb27c73e16933bfafd9839703
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 235f3439f31284756d008a4eff1ae47ec115cb81
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539547"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99211235"
 ---
-# <a name="sysservice_contract_usages-transact-sql"></a>service_contract_usages (Transact-sql)
+# <a name="sysservice_contract_usages-transact-sql"></a>sys.service_contract_usages (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   このカタログビューには、(サービス、コントラクト) のペアごとに1行が含まれています。  

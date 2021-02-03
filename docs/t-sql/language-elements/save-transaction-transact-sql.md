@@ -24,14 +24,14 @@ helpviewer_keywords:
 - marked transactions [SQL Server], SAVE TRANSACTION statement
 - duplicate savepoints
 ms.assetid: b953c3f1-f96d-42f1-95a2-30e314292b35
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 03af390ecf43a70d3d80ad876e1d9944cd9297bb
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 4f7d9aac54c323527c91f671d25e9ebdf436f6f7
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88445462"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98100319"
 ---
 # <a name="save-transaction-transact-sql"></a>SAVE TRANSACTION (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -43,7 +43,6 @@ ms.locfileid: "88445462"
  ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 SAVE { TRAN | TRANSACTION } { savepoint_name | @savepoint_variable }  
 [ ; ]  
 ```  
@@ -73,7 +72,7 @@ SAVE { TRAN | TRANSACTION } { savepoint_name | @savepoint_variable }
 ## <a name="examples"></a>例  
  次の例では、ストアド プロシージャの実行前にアクティブなトランザクションが開始された場合に、トランザクション セーブポイントを使用して、ストアド プロシージャによる変更だけをロールバックする方法を示します。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 IF EXISTS (SELECT name FROM sys.objects  

@@ -1,6 +1,6 @@
 ---
-description: dm_os_spinlock_stats (Transact-sql)
-title: dm_os_spinlock_stats (Transact-sql) |Microsoft Docs
+description: sys.dm_os_spinlock_stats (Transact-sql)
+title: sys.dm_os_spinlock_stats (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/03/2019
 ms.prod: sql-non-specified
@@ -9,7 +9,7 @@ ms.service: ''
 ms.suite: sql
 ms.technology: database-engine
 ms.tgt_pltfrm: ''
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_os_spinlock_stats_TSQL
 - dm_os_spinlock_stats_TSQL
@@ -21,16 +21,16 @@ helpviewer_keywords:
 - sys.dm_os_spinlock_stats dynamic management view
 author: bluefooted
 ms.author: pamela
-ms.reviewer: maghan
+ms.reviewer: wiassaf
 manager: amitban
-ms.openlocfilehash: df183fe9b6ee5365f623e59dd1c94738afe5df8d
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: fad0a1121d9d7d9e8cc37970022f1c5bbf028e10
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88447594"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99184777"
 ---
-# <a name="sysdm_os_spinlock_stats-transact-sql"></a>dm_os_spinlock_stats (Transact-sql)
+# <a name="sysdm_os_spinlock_stats-transact-sql"></a>sys.dm_os_spinlock_stats (Transact-sql)
 
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
@@ -42,20 +42,20 @@ ms.locfileid: "88447594"
 |name|**nvarchar (256)**|スピンロックの種類の名前。|  
 |発生|**bigint**|現在、別のスレッドがスピンロックを保持しているために、スレッドがスピンロックを取得しようとしてブロックされた回数。|  
 |スピン|**bigint**|スピンロックを取得しようとしているときに、スレッドがループを実行する回数。|  
-|spins_per_collision|**real**|競合ごとのスピンの比率。|  
+|spins_per_collision|**real**|競合あたりのスピン数の比率。|  
 |sleep_time|**bigint**|バックオフが発生した場合にスレッドがスリープに費やした時間 (ミリ秒単位)。|  
 |バックオフだけ|**int**|"スピンしている" スレッドがスピンロックの取得に失敗し、スケジューラが生成される回数。|  
 
 
 ## <a name="permissions"></a>アクセス許可  
 で [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] は、 `VIEW SERVER STATE` 権限が必要です。   
-[!INCLUDE[ssSDS_md](../../includes/sssds-md.md)]Premium レベルでは、データベースの権限が必要です `VIEW DATABASE STATE` 。 [!INCLUDE[ssSDS_md](../../includes/sssds-md.md)]Standard レベルおよび Basic レベルでは、**サーバー管理**者または**Azure Active Directory 管理者**アカウントが必要です。    
+SQL Database Basic、S0、S1 のサービス目標、およびエラスティックプール内のデータベースについて `Server admin` は、または `Azure Active Directory admin` アカウントが必要です。 その他のすべての SQL Database サービスの目的で `VIEW DATABASE STATE` は、データベースで権限が必要になります。    
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  
- スピンロックの競合の原因を特定するには、dm_os_spinlock_stats を使用できます。 場合によっては、スピンロックの競合を解決または減少させることができます。 ただし、場合によっては、カスタマーサポートサービスに問い合わせる必要があり [!INCLUDE[msCoName](../../includes/msconame-md.md)] ます。  
+ sys.dm_os_spinlock_stats は、スピンロックの競合の原因を特定するために使用できます。 場合によっては、スピンロックの競合を解決または減少させることができます。 ただし、場合によっては、カスタマーサポートサービスに問い合わせる必要があり [!INCLUDE[msCoName](../../includes/msconame-md.md)] ます。  
   
- 次のようにを使用して、dm_os_spinlock_stats の内容をリセットできます。 `DBCC SQLPERF`  
+ 次のようにを使用して sys.dm_os_spinlock_stats の内容をリセットでき `DBCC SQLPERF` ます。  
   
 ```  
 DBCC SQLPERF ('sys.dm_os_spinlock_stats', CLEAR);  
@@ -74,338 +74,338 @@ GO
   
 |スピンロックの種類|説明|  
 |-----------------|-----------------|  
-|ABR|内部使用のみです。|
-|ADB_CACHE|内部使用のみです。|
-|ALLOC_CACHES_HASH|内部使用のみです。|
-|APPENDONLY_STORAGE|内部使用のみです。|
-|APRC_BACK_OFF_STATS|内部使用のみです。|
-|APRC_EVENT_LIST|内部使用のみです。|
-|APRC_QUEUE_LIST|内部使用のみです。|
-|APRC_VALIDATION_QUEUE_LIST|内部使用のみです。|
-|ASYNC_OP_ADMIN_CLIENT_REGISTRATION_LIST|内部使用のみです。|
-|ASYNC_OP_ADMIN_WORK_REGISTRATION_HASH_TABLE|内部使用のみです。|
-|ASYNCSTATSLIST 場合|内部使用のみです。|
-|BACKUP|内部使用のみです。|
-|BACKUP_COPY_CONTEXT|内部使用のみです。|
-|BACKUP_CTX|内部使用のみです。|
-|BASE_XACT_HASH|内部使用のみです。|
-|BLOCKER_ENUM|内部使用のみです。|
-|BPREPARTITION|内部使用のみです。|
-|BPWORKFILE|内部使用のみです。|
-|BUF_HASH|内部使用のみです。|
-|BUF_LINK|内部使用のみです。|
-|BUF_WRITE_LOG|内部使用のみです。|
-|CACHEOBJ_DBG|内部使用のみです。|
-|CHANNELFORCECLOSEMANAGER|内部使用のみです。|
-|CHECK_AGGREGATE_STATE|内部使用のみです。|
-|CLR_HOSTTASK|内部使用のみです。|
-|CLR_SPIN_LOCK|内部使用のみです。|
-|CMED_DATABASE|内部使用のみです。|
-|CMED_HASH_SET|内部使用のみです。|
-|COLUMNDATASETSESSIONLIST|内部使用のみです。|
-|COLUMNSTORE_HASHTABLE|内部使用のみです。|
-|COLUMNSTOREBUILDSTATE_LIST|内部使用のみです。|
-|COM_INIT|内部使用のみです。|
-|コミットでき|内部使用のみです。|
-|COMPPLAN_SKELETON|内部使用のみです。|
-|CONNECTION_MANAGER|内部使用のみです。|
-|接続|内部使用のみです。|
-|CSIBUILDMEM|内部使用のみです。|
-|CURSOR|内部使用のみです。|
-|CURSQL|内部使用のみです。|
-|DATAPORTCONSUMER|内部使用のみです。|
-|DATAPORTSOURCEINFOCREDIT|内部使用のみです。|
-|DATAPORTSOURCEINFOQUEUE|内部使用のみです。|
-|DATASET_FREELIST|内部使用のみです。|
-|DBCC_CHECK|内部使用のみです。|
-|DBSEEDING_OPERATION|内部使用のみです。|
-|DBT_HASH|内部使用のみです。|
-|DBT_IO_LIST|内部使用のみです。|
+|ABR|内部使用のみ。|
+|ADB_CACHE|内部使用のみ。|
+|ALLOC_CACHES_HASH|内部使用のみ。|
+|APPENDONLY_STORAGE|内部使用のみ。|
+|APRC_BACK_OFF_STATS|内部使用のみ。|
+|APRC_EVENT_LIST|内部使用のみ。|
+|APRC_QUEUE_LIST|内部使用のみ。|
+|APRC_VALIDATION_QUEUE_LIST|内部使用のみ。|
+|ASYNC_OP_ADMIN_CLIENT_REGISTRATION_LIST|内部使用のみ。|
+|ASYNC_OP_ADMIN_WORK_REGISTRATION_HASH_TABLE|内部使用のみ。|
+|ASYNCSTATSLIST 場合|内部使用のみ。|
+|BACKUP|内部使用のみ。|
+|BACKUP_COPY_CONTEXT|内部使用のみ。|
+|BACKUP_CTX|内部使用のみ。|
+|BASE_XACT_HASH|内部使用のみ。|
+|BLOCKER_ENUM|内部使用のみ。|
+|BPREPARTITION|内部使用のみ。|
+|BPWORKFILE|内部使用のみ。|
+|BUF_HASH|内部使用のみ。|
+|BUF_LINK|内部使用のみ。|
+|BUF_WRITE_LOG|内部使用のみ。|
+|CACHEOBJ_DBG|内部使用のみ。|
+|CHANNELFORCECLOSEMANAGER|内部使用のみ。|
+|CHECK_AGGREGATE_STATE|内部使用のみ。|
+|CLR_HOSTTASK|内部使用のみ。|
+|CLR_SPIN_LOCK|内部使用のみ。|
+|CMED_DATABASE|内部使用のみ。|
+|CMED_HASH_SET|内部使用のみ。|
+|COLUMNDATASETSESSIONLIST|内部使用のみ。|
+|COLUMNSTORE_HASHTABLE|内部使用のみ。|
+|COLUMNSTOREBUILDSTATE_LIST|内部使用のみ。|
+|COM_INIT|内部使用のみ。|
+|コミットでき|内部使用のみ。|
+|COMPPLAN_SKELETON|内部使用のみ。|
+|CONNECTION_MANAGER|内部使用のみ。|
+|接続|内部使用のみ。|
+|CSIBUILDMEM|内部使用のみ。|
+|CURSOR|内部使用のみ。|
+|CURSQL|内部使用のみ。|
+|DATAPORTCONSUMER|内部使用のみ。|
+|DATAPORTSOURCEINFOCREDIT|内部使用のみ。|
+|DATAPORTSOURCEINFOQUEUE|内部使用のみ。|
+|DATASET_FREELIST|内部使用のみ。|
+|DBCC_CHECK|内部使用のみ。|
+|DBSEEDING_OPERATION|内部使用のみ。|
+|DBT_HASH|内部使用のみ。|
+|DBT_IO_LIST|内部使用のみ。|
 |DBTABLE|は、そのデータベースのプロパティを含む SQL Server 内のすべてのデータベースについて、メモリ内のデータ構造へのアクセスを制御します。 詳細については、[この記事](https://techcommunity.microsoft.com/t5/SQL-Server/Improving-Concurrency-Scalability-of-SQL-Server-workload-by/ba-p/384789)を参照してください。 |
-|DEFERRED_WF_EXT_DROP|内部使用のみです。|
-|DEK_INSTANCE|内部使用のみです。|
-|DELAYED_PARTITIONED_STACK|内部使用のみです。|
-|DELETEBITMAP|内部使用のみです。|
-|DIAG_MANAGER|内部使用のみです。|
-|DIAG_OBJECT|内部使用のみです。|
-|DIGEST_CACHE|内部使用のみです。|
-|DINPBUF|内部使用のみです。|
-|DIRECTLOGCONSUMER|内部使用のみです。|
+|DEFERRED_WF_EXT_DROP|内部使用のみ。|
+|DEK_INSTANCE|内部使用のみ。|
+|DELAYED_PARTITIONED_STACK|内部使用のみ。|
+|DELETEBITMAP|内部使用のみ。|
+|DIAG_MANAGER|内部使用のみ。|
+|DIAG_OBJECT|内部使用のみ。|
+|DIGEST_CACHE|内部使用のみ。|
+|DINPBUF|内部使用のみ。|
+|DIRECTLOGCONSUMER|内部使用のみ。|
 |DP_LIST|間接チェックポイントが有効になっているデータベースのダーティページの一覧へのアクセスを制御します。 詳細については、[この記事](https://techcommunity.microsoft.com/t5/SQL-Server/Indirect-Checkpoint-and-tempdb-8211-the-good-the-bad-and-the-non/ba-p/385510)を参照してください。|
-|DROP|内部使用のみです。|
-|DROP_TEMPO|内部使用のみです。|
-|DROPPED_ALLOC_UNIT|内部使用のみです。|
-|DTC_HASHTABLE|内部使用のみです。|
-|DTT_LIST|内部使用のみです。|
-|ENDD_LIST|内部使用のみです。|
-|EXT_CACHE|内部使用のみです。|
-|EXTENT_ACTIVATION|内部使用のみです。|
-|FABRIC_DB_MGR_PTR|内部使用のみです。|
-|FABRIC_LOG_MANAGEMENT_INPUT_VALUE|内部使用のみです。|
-|FABRIC_REPLICA_TRANSPORT|内部使用のみです。|
-|FABRIC_TVF_DATA_CONSUMER_LIST|内部使用のみです。|
-|FABRIC_TVF_LOAD_LIB|内部使用のみです。|
-|FCB_REPLICA_SYNC|内部使用のみです。|
-|FGCB_PRP_FILL|内部使用のみです。|
-|FILE_HANDLE_CACHE|内部使用のみです。|
-|FILE_TABLE|内部使用のみです。|
-|FILESTREAM_CHUNKER|内部使用のみです。|
-|FREE_SPACE_CACHE_ENTRY|内部使用のみです。|
-|FS_CONTAINER_LIST_WITH_DELETE|内部使用のみです。|
-|FS_DELETED_FOLDER_CLEANUP|内部使用のみです。|
-|FSAGENT|内部使用のみです。|
-|FSGHOST_STATUS|内部使用のみです。|
-|FT_INIT|内部使用のみです。|
-|GHOST_FREE|内部使用のみです。|
-|GHOST_HASH|内部使用のみです。|
-|GLOBAL_SCHEDULER_LIST|内部使用のみです。|
-|GLOBAL_TRACE_FLAGS|内部使用のみです。|
-|GLOBALTRANS|内部使用のみです。|
-|GROUP_COMMIT_FEEDBACK_LOOP|内部使用のみです。|
-|GUARDIAN|内部使用のみです。|
-|HADR_AGH_X_ACCESS|内部使用のみです。|
-|HADR_AR_CONTROLLER_COLLECTION|内部使用のみです。|
-|HADR_AR_DB_MGR|内部使用のみです。|
-|HADR_AR_TRANSPORT|内部使用のみです。|
-|HADR_COMPRESSION_MGR_POOL|内部使用のみです。|
-|HADR_FABRIC_FACTORY|内部使用のみです。|
-|HADR_PRIORITY_QUEUE|内部使用のみです。|
-|HADR_TRANSPORT_CONTROL|内部使用のみです。|
-|HADR_TRANSPORT_LIST|内部使用のみです。|
-|HADRSEEDINGLIST|内部使用のみです。|
-|HOBT_DROPPED|内部使用のみです。|
-|HOBT_HASH|内部使用のみです。|
-|HTTP|内部使用のみです。|
-|HTTP_CONNCACHE|内部使用のみです。|
-|HTTP_ENDPOINT|内部使用のみです。|
-|IDENTITY|内部使用のみです。|
-|INDEX_CREATE|内部使用のみです。|
-|IO_DISPENSER_PAUSE|内部使用のみです。|
-|IO_RG_VOLUME_HASHTABLE|内部使用のみです。|
-|IOREQ|内部使用のみです。|
-|ISSRESOURCE|内部使用のみです。|
-|KTM_ENLISTMENT|内部使用のみです。|
-|LANG_RES_LOAD|内部使用のみです。|
-|LIVE_TARGET_TVF|内部使用のみです。|
-|LOCK_FREE_LIST|内部使用のみです。|
+|DROP|内部使用のみ。|
+|DROP_TEMPO|内部使用のみ。|
+|DROPPED_ALLOC_UNIT|内部使用のみ。|
+|DTC_HASHTABLE|内部使用のみ。|
+|DTT_LIST|内部使用のみ。|
+|ENDD_LIST|内部使用のみ。|
+|EXT_CACHE|内部使用のみ。|
+|EXTENT_ACTIVATION|内部使用のみ。|
+|FABRIC_DB_MGR_PTR|内部使用のみ。|
+|FABRIC_LOG_MANAGEMENT_INPUT_VALUE|内部使用のみ。|
+|FABRIC_REPLICA_TRANSPORT|内部使用のみ。|
+|FABRIC_TVF_DATA_CONSUMER_LIST|内部使用のみ。|
+|FABRIC_TVF_LOAD_LIB|内部使用のみ。|
+|FCB_REPLICA_SYNC|内部使用のみ。|
+|FGCB_PRP_FILL|内部使用のみ。|
+|FILE_HANDLE_CACHE|内部使用のみ。|
+|FILE_TABLE|内部使用のみ。|
+|FILESTREAM_CHUNKER|内部使用のみ。|
+|FREE_SPACE_CACHE_ENTRY|内部使用のみ。|
+|FS_CONTAINER_LIST_WITH_DELETE|内部使用のみ。|
+|FS_DELETED_FOLDER_CLEANUP|内部使用のみ。|
+|FSAGENT|内部使用のみ。|
+|FSGHOST_STATUS|内部使用のみ。|
+|FT_INIT|内部使用のみ。|
+|GHOST_FREE|内部使用のみ。|
+|GHOST_HASH|内部使用のみ。|
+|GLOBAL_SCHEDULER_LIST|内部使用のみ。|
+|GLOBAL_TRACE_FLAGS|内部使用のみ。|
+|GLOBALTRANS|内部使用のみ。|
+|GROUP_COMMIT_FEEDBACK_LOOP|内部使用のみ。|
+|GUARDIAN|内部使用のみ。|
+|HADR_AGH_X_ACCESS|内部使用のみ。|
+|HADR_AR_CONTROLLER_COLLECTION|内部使用のみ。|
+|HADR_AR_DB_MGR|内部使用のみ。|
+|HADR_AR_TRANSPORT|内部使用のみ。|
+|HADR_COMPRESSION_MGR_POOL|内部使用のみ。|
+|HADR_FABRIC_FACTORY|内部使用のみ。|
+|HADR_PRIORITY_QUEUE|内部使用のみ。|
+|HADR_TRANSPORT_CONTROL|内部使用のみ。|
+|HADR_TRANSPORT_LIST|内部使用のみ。|
+|HADRSEEDINGLIST|内部使用のみ。|
+|HOBT_DROPPED|内部使用のみ。|
+|HOBT_HASH|内部使用のみ。|
+|HTTP|内部使用のみ。|
+|HTTP_CONNCACHE|内部使用のみ。|
+|HTTP_ENDPOINT|内部使用のみ。|
+|IDENTITY|内部使用のみ。|
+|INDEX_CREATE|内部使用のみ。|
+|IO_DISPENSER_PAUSE|内部使用のみ。|
+|IO_RG_VOLUME_HASHTABLE|内部使用のみ。|
+|IOREQ|内部使用のみ。|
+|ISSRESOURCE|内部使用のみ。|
+|KTM_ENLISTMENT|内部使用のみ。|
+|LANG_RES_LOAD|内部使用のみ。|
+|LIVE_TARGET_TVF|内部使用のみ。|
+|LOCK_FREE_LIST|内部使用のみ。|
 |LOCK_HASH|データベースに保持されているロックに関する情報を格納するロックマネージャーハッシュテーブルへのアクセスを保護します。 詳細については、[この記事](https://support.microsoft.com/kb/2926217)を参照してください。|
-|LOCK_NOTIFICATION|内部使用のみです。|
-|LOCK_RESOURCE_ID|内部使用のみです。|
-|LOCK_RW_ABTX_HASH_SET|内部使用のみです。|
-|LOCK_RW_AGDB_HEALTH_DIAG|内部使用のみです。|
-|LOCK_RW_CMED_HASH_SET|内部使用のみです。|
-|LOCK_RW_DPT_TABLE|内部使用のみです。|
-|LOCK_RW_IN_ROW_TRACKER|内部使用のみです。|
-|LOCK_RW_LOGIN_RATE_STATS|内部使用のみです。|
-|LOCK_RW_PVS_PAGE_TRACKER|内部使用のみです。|
-|LOCK_RW_RBIO_REQ|内部使用のみです。|
-|LOCK_RW_SECURITY_CACHE|内部使用のみです。|
-|LOCK_RW_TEST|内部使用のみです。|
-|LOCK_RW_WPR_BUCKET|内部使用のみです。|
-|LOCK_SORT_STREAM|内部使用のみです。|
-|LOCK_SQLSATELLITE_MESSAGE|内部使用のみです。|
-|LOG_CONSOLIDATION|内部使用のみです。|
-|LOG_RG_GOVERNOR|内部使用のみです。|
-|LOGCACHE_ACCESS|内部使用のみです。|
-|LOGFLUSHQ|内部使用のみです。|
-|LOGIOSEQ|内部使用のみです。|
-|LOGIOSEQMAPPENDINGMESSAGEQUEUE|内部使用のみです。|
-|LOGLC|内部使用のみです。|
-|LOGLFM|内部使用のみです。|
-|LOGON_TRIGGER_CACHE|内部使用のみです。|
-|LOGPOOL_HASHBUCKET|内部使用のみです。|
-|LOGPOOL_REFCOUNTEDOBJECT|内部使用のみです。|
-|LOGPOOL_SHAREDCACHEBUFFER|内部使用のみです。|
-|LOGPOOL_SIZEPERRESOURCEPOOL|内部使用のみです。|
-|LPE_BATCH|内部使用のみです。|
-|LPE_SESSION|内部使用のみです。|
-|LPE_SXTP|内部使用のみです。|
-|LSID|内部使用のみです。|
-|LSLIST|内部使用のみです。|
-|LSNREFLIST|内部使用のみです。|
-|LSS_SYNC_DTC|内部使用のみです。|
-|MD_CHANGE_NOTIFICATION|内部使用のみです。|
-|MDB_REMOTE_BATCH_STATS_HASH_TABLE|内部使用のみです。|
-|MDB_REMOTE_SESSION_HASH_TABLE|内部使用のみです。|
-|MEM_MGR|内部使用のみです。|
-|MGR_CACHE|内部使用のみです。|
-|MIGRATION_BUF_LIST|内部使用のみです。|
-|NETCONN_ADDRESS|内部使用のみです。|
-|ONDEMAND_TASK|内部使用のみです。|
-|ONE_PROC_SIM_NODE_CONTEXT|内部使用のみです。|
-|ONE_PROC_SIM_NODE_CONTEXT_LIST|内部使用のみです。|
-|ONE_PROC_SIM_REPLICA_CONTEXT|内部使用のみです。|
-|ONE_PROC_SIM_SERVICE_PARTITION|内部使用のみです。|
-|OPT_IDX_MISS_ID|内部使用のみです。|
-|OPT_IDX_MISS_KEY|内部使用のみです。|
-|OPT_IDX_STATS|内部使用のみです。|
-|OPT_INFO_MGR|内部使用のみです。|
-|PAGE_WORKITEMLIST|内部使用のみです。|
-|PAGECOPIER|内部使用のみです。|
-|PARALLELREDOCACHE|内部使用のみです。|
-|PARTITIONED_HEAP_FREE_LIST|内部使用のみです。|
-|PROGRESS_REPORT|内部使用のみです。|
-|QE_SHUTDOWN|内部使用のみです。|
-|QSCAN_CACHE|内部使用のみです。|
-|QUERY_EXEC_STATS|内部使用のみです。|
-|QUERY_STORE_ASYNC_PERSIST|内部使用のみです。|
-|QUERY_STORE_ASYNC_QUEUE_TLIST|内部使用のみです。|
-|QUERY_STORE_CAPTURE_POLICY_INTERVAL|内部使用のみです。|
-|QUERY_STORE_CAPTURE_POLICY_STATS|内部使用のみです。|
-|QUERY_STORE_CAPTURE_POLICY_THRESHOLD|内部使用のみです。|
-|QUERY_STORE_CURRENT_INTERVAL|内部使用のみです。|
-|QUERY_STORE_HT_CACHE|内部使用のみです。|
-|QUERY_STORE_LIST|内部使用のみです。|
-|QUERY_STORE_PLAN_COMP_AGG|内部使用のみです。|
-|QUERY_STORE_PLAN_LIST|内部使用のみです。|
-|QUERY_STORE_READ_ONLY_FLAGS|内部使用のみです。|
-|QUERY_STORE_SELF_AGG|内部使用のみです。|
-|QUERY_STORE_STMT_COMP_AGG|内部使用のみです。|
-|QUERYEXEC|内部使用のみです。|
-|QUERYSCAN|内部使用のみです。|
-|RANGE_GENERATION|内部使用のみです。|
-|READ_AHEAD|内部使用のみです。|
-|REDOMGRSTATE|内部使用のみです。|
-|REMOTE_SESSION_CACHE|内部使用のみです。|
-|REMOTEBLOCKIO|内部使用のみです。|
-|REMOTEOP|内部使用のみです。|
-|REPL_LOGREADER_HISTORY_CACHE|内部使用のみです。|
-|REPL_LOGREADER_PERDB_HISTORY_CACHE|内部使用のみです。|
-|RESMANAGER|内部使用のみです。|
-|リソース|内部使用のみです。|
-|RESQUEUE|内部使用のみです。|
-|RFS_THREAD_QUEUE|内部使用のみです。|
-|RG_TIMER|内部使用のみです。|
-|ROWGROUP_VERSIONS|内部使用のみです。|
-|RPCCHANNELPOOL|内部使用のみです。|
-|RPCPACKAGE|内部使用のみです。|
-|RPCREQUESTORCONTEXT|内部使用のみです。|
-|RWLOCK_LAST|内部使用のみです。|
-|SATELLITE_CONNECTION|内部使用のみです。|
-|SBS_CLIENT_ENDPOINTS|内部使用のみです。|
-|SBS_CLIENT_REQUESTS|内部使用のみです。|
-|SBS_DISPATCH|内部使用のみです。|
-|SBS_PENDING|内部使用のみです。|
-|SBS_SERVER_XACT_TASK_PROXY|内部使用のみです。|
-|SBS_TRANSPORT|内部使用のみです。|
-|SBS_UCS_DISPATCH|内部使用のみです。|
-|セキュリティ|内部使用のみです。|
-|SECURITY_CACHE|内部使用のみです。|
-|SECURITY_FEDAUTH_AAD_BECWSCONNS|内部使用のみです。|
-|SEMANTIC_TICACHE|内部使用のみです。|
-|SEQUENCED_OBJECT|内部使用のみです。|
-|SEQUEUE_SIZED_THREADSAFE|内部使用のみです。|
-|SESSION_KILLER|内部使用のみです。|
-|SESSION_MANAGER|内部使用のみです。|
-|SESSION_SEC_CONTEXT|内部使用のみです。|
-|SETRANGE_SYNC|内部使用のみです。|
-|SHARABLE_SESSION_OBJECTS|内部使用のみです。|
-|SLO_INFO_LIST|内部使用のみです。|
-|SNI|内部使用のみです。|
-|SNI_NODE_PENDING_IO_QUEUE|内部使用のみです。|
-|SOAPSESSIONS|内部使用のみです。|
-|SOS_ABORT_TASK|内部使用のみです。|
-|SOS_ACTIVEDESCRIPTOR|内部使用のみです。|
-|SOS_BLOCKALLOCPARTIALLIST|内部使用のみです。|
-|SOS_BLOCKDESCRIPTORBUCKET|内部使用のみです。|
+|LOCK_NOTIFICATION|内部使用のみ。|
+|LOCK_RESOURCE_ID|内部使用のみ。|
+|LOCK_RW_ABTX_HASH_SET|内部使用のみ。|
+|LOCK_RW_AGDB_HEALTH_DIAG|内部使用のみ。|
+|LOCK_RW_CMED_HASH_SET|内部使用のみ。|
+|LOCK_RW_DPT_TABLE|内部使用のみ。|
+|LOCK_RW_IN_ROW_TRACKER|内部使用のみ。|
+|LOCK_RW_LOGIN_RATE_STATS|内部使用のみ。|
+|LOCK_RW_PVS_PAGE_TRACKER|内部使用のみ。|
+|LOCK_RW_RBIO_REQ|内部使用のみ。|
+|LOCK_RW_SECURITY_CACHE|内部使用のみ。|
+|LOCK_RW_TEST|内部使用のみ。|
+|LOCK_RW_WPR_BUCKET|内部使用のみ。|
+|LOCK_SORT_STREAM|内部使用のみ。|
+|LOCK_SQLSATELLITE_MESSAGE|内部使用のみ。|
+|LOG_CONSOLIDATION|内部使用のみ。|
+|LOG_RG_GOVERNOR|内部使用のみ。|
+|LOGCACHE_ACCESS|内部使用のみ。|
+|LOGFLUSHQ|内部使用のみ。|
+|LOGIOSEQ|内部使用のみ。|
+|LOGIOSEQMAPPENDINGMESSAGEQUEUE|内部使用のみ。|
+|LOGLC|内部使用のみ。|
+|LOGLFM|内部使用のみ。|
+|LOGON_TRIGGER_CACHE|内部使用のみ。|
+|LOGPOOL_HASHBUCKET|内部使用のみ。|
+|LOGPOOL_REFCOUNTEDOBJECT|内部使用のみ。|
+|LOGPOOL_SHAREDCACHEBUFFER|内部使用のみ。|
+|LOGPOOL_SIZEPERRESOURCEPOOL|内部使用のみ。|
+|LPE_BATCH|内部使用のみ。|
+|LPE_SESSION|内部使用のみ。|
+|LPE_SXTP|内部使用のみ。|
+|LSID|内部使用のみ。|
+|LSLIST|内部使用のみ。|
+|LSNREFLIST|内部使用のみ。|
+|LSS_SYNC_DTC|内部使用のみ。|
+|MD_CHANGE_NOTIFICATION|内部使用のみ。|
+|MDB_REMOTE_BATCH_STATS_HASH_TABLE|内部使用のみ。|
+|MDB_REMOTE_SESSION_HASH_TABLE|内部使用のみ。|
+|MEM_MGR|内部使用のみ。|
+|MGR_CACHE|内部使用のみ。|
+|MIGRATION_BUF_LIST|内部使用のみ。|
+|NETCONN_ADDRESS|内部使用のみ。|
+|ONDEMAND_TASK|内部使用のみ。|
+|ONE_PROC_SIM_NODE_CONTEXT|内部使用のみ。|
+|ONE_PROC_SIM_NODE_CONTEXT_LIST|内部使用のみ。|
+|ONE_PROC_SIM_REPLICA_CONTEXT|内部使用のみ。|
+|ONE_PROC_SIM_SERVICE_PARTITION|内部使用のみ。|
+|OPT_IDX_MISS_ID|内部使用のみ。|
+|OPT_IDX_MISS_KEY|内部使用のみ。|
+|OPT_IDX_STATS|内部使用のみ。|
+|OPT_INFO_MGR|内部使用のみ。|
+|PAGE_WORKITEMLIST|内部使用のみ。|
+|PAGECOPIER|内部使用のみ。|
+|PARALLELREDOCACHE|内部使用のみ。|
+|PARTITIONED_HEAP_FREE_LIST|内部使用のみ。|
+|PROGRESS_REPORT|内部使用のみ。|
+|QE_SHUTDOWN|内部使用のみ。|
+|QSCAN_CACHE|内部使用のみ。|
+|QUERY_EXEC_STATS|内部使用のみ。|
+|QUERY_STORE_ASYNC_PERSIST|内部使用のみ。|
+|QUERY_STORE_ASYNC_QUEUE_TLIST|内部使用のみ。|
+|QUERY_STORE_CAPTURE_POLICY_INTERVAL|内部使用のみ。|
+|QUERY_STORE_CAPTURE_POLICY_STATS|内部使用のみ。|
+|QUERY_STORE_CAPTURE_POLICY_THRESHOLD|内部使用のみ。|
+|QUERY_STORE_CURRENT_INTERVAL|内部使用のみ。|
+|QUERY_STORE_HT_CACHE|内部使用のみ。|
+|QUERY_STORE_LIST|内部使用のみ。|
+|QUERY_STORE_PLAN_COMP_AGG|内部使用のみ。|
+|QUERY_STORE_PLAN_LIST|内部使用のみ。|
+|QUERY_STORE_READ_ONLY_FLAGS|内部使用のみ。|
+|QUERY_STORE_SELF_AGG|内部使用のみ。|
+|QUERY_STORE_STMT_COMP_AGG|内部使用のみ。|
+|QUERYEXEC|内部使用のみ。|
+|QUERYSCAN|内部使用のみ。|
+|RANGE_GENERATION|内部使用のみ。|
+|READ_AHEAD|内部使用のみ。|
+|REDOMGRSTATE|内部使用のみ。|
+|REMOTE_SESSION_CACHE|内部使用のみ。|
+|REMOTEBLOCKIO|内部使用のみ。|
+|REMOTEOP|内部使用のみ。|
+|REPL_LOGREADER_HISTORY_CACHE|内部使用のみ。|
+|REPL_LOGREADER_PERDB_HISTORY_CACHE|内部使用のみ。|
+|RESMANAGER|内部使用のみ。|
+|リソース|内部使用のみ。|
+|RESQUEUE|内部使用のみ。|
+|RFS_THREAD_QUEUE|内部使用のみ。|
+|RG_TIMER|内部使用のみ。|
+|ROWGROUP_VERSIONS|内部使用のみ。|
+|RPCCHANNELPOOL|内部使用のみ。|
+|RPCPACKAGE|内部使用のみ。|
+|RPCREQUESTORCONTEXT|内部使用のみ。|
+|RWLOCK_LAST|内部使用のみ。|
+|SATELLITE_CONNECTION|内部使用のみ。|
+|SBS_CLIENT_ENDPOINTS|内部使用のみ。|
+|SBS_CLIENT_REQUESTS|内部使用のみ。|
+|SBS_DISPATCH|内部使用のみ。|
+|SBS_PENDING|内部使用のみ。|
+|SBS_SERVER_XACT_TASK_PROXY|内部使用のみ。|
+|SBS_TRANSPORT|内部使用のみ。|
+|SBS_UCS_DISPATCH|内部使用のみ。|
+|セキュリティ|内部使用のみ。|
+|SECURITY_CACHE|内部使用のみ。|
+|SECURITY_FEDAUTH_AAD_BECWSCONNS|内部使用のみ。|
+|SEMANTIC_TICACHE|内部使用のみ。|
+|SEQUENCED_OBJECT|内部使用のみ。|
+|SEQUEUE_SIZED_THREADSAFE|内部使用のみ。|
+|SESSION_KILLER|内部使用のみ。|
+|SESSION_MANAGER|内部使用のみ。|
+|SESSION_SEC_CONTEXT|内部使用のみ。|
+|SETRANGE_SYNC|内部使用のみ。|
+|SHARABLE_SESSION_OBJECTS|内部使用のみ。|
+|SLO_INFO_LIST|内部使用のみ。|
+|SNI|内部使用のみ。|
+|SNI_NODE_PENDING_IO_QUEUE|内部使用のみ。|
+|SOAPSESSIONS|内部使用のみ。|
+|SOS_ABORT_TASK|内部使用のみ。|
+|SOS_ACTIVEDESCRIPTOR|内部使用のみ。|
+|SOS_BLOCKALLOCPARTIALLIST|内部使用のみ。|
+|SOS_BLOCKDESCRIPTORBUCKET|内部使用のみ。|
 |SOS_CACHESTORE|プランキャッシュや一時テーブルキャッシュなど、SQL Server 内のさまざまなメモリ内キャッシュへのアクセスを同期します。 このスピンロックの種類の競合が多い場合は、競合している特定のキャッシュに応じて、さまざまなことを意味します。 [!INCLUDE[msCoName](../../includes/msconame-md.md)]このスピンロックの種類のトラブルシューティングについては、カスタマーサポートサービスにお問い合わせください。 |
-|SOS_CACHESTORE_CLOCK|内部使用のみです。|
-|SOS_CLOCKALG_INTERNODE_SYNC|内部使用のみです。|
-|SOS_DEBUG_HOOK|内部使用のみです。|
-|SOS_DESCDATABUFFERLIST|内部使用のみです。|
-|SOS_LARGEPAGE_ALLOCATOR|内部使用のみです。|
-|SOS_MINITHREAD|内部使用のみです。|
-|SOS_NODE|内部使用のみです。|
-|SOS_OBJECT_POOL|内部使用のみです。|
-|SOS_OBJECT_STORE|内部使用のみです。|
-|SOS_OOM_CHECK|内部使用のみです。|
-|SOS_PHYS_PAGE_CACHE|内部使用のみです。|
-|SOS_RESOURCE_CLERK_LIST|内部使用のみです。|
-|SOS_RINGBUFFER_RECORD|内部使用のみです。|
-|SOS_RW|内部使用のみです。|
-|SOS_SATELLITE_USER_POOL|内部使用のみです。|
-|SOS_SCHEDULER|内部使用のみです。|
-|SOS_SELIST_SIZED_SLOCK|内部使用のみです。|
-|SOS_SUSPEND_QUEUE|内部使用のみです。|
-|SOS_SYSTHREAD|内部使用のみです。|
-|SOS_SYSTHREAD_DISPATCHER|内部使用のみです。|
-|SOS_TASK|内部使用のみです。|
-|SOS_TLIST|内部使用のみです。|
-|SOS_VM_LOW|内部使用のみです。|
-|SOS_WAIT_STATS|内部使用のみです。|
-|SOS_WAITABLE_ADDRESS_HASHBUCKET|内部使用のみです。|
-|SPIN_EVENT_MUTEX|内部使用のみです。|
-|SPL_DISPATCHER_LIST|内部使用のみです。|
-|SPL_DISPATCHER_QUEUE|内部使用のみです。|
-|SPL_NONYIELD_ANALYSIS|内部使用のみです。|
-|SPL_QUERY_STORE_CTX_INITIALIZED|内部使用のみです。|
-|SPL_QUERY_STORE_EXEC_STATS_AGG|内部使用のみです。|
-|SPL_QUERY_STORE_EXEC_STATS_READ|内部使用のみです。|
-|SPL_QUERY_STORE_STATS_COOKIE_CACHE|内部使用のみです。|
-|SPL_SOS_DISPATCHER|内部使用のみです。|
-|SPL_TDS_PKT_QUEUE|内部使用のみです。|
-|SPL_XE_BUFFER_MGR|内部使用のみです。|
-|SPL_XE_DISPATCHER_QUEUE|内部使用のみです。|
-|SPL_XE_NOTIFICATION_CALLBACK_LIST|内部使用のみです。|
-|SPL_XE_SESSION_EVENT_MGR|内部使用のみです。|
-|SPL_XE_SESSION_MGR|内部使用のみです。|
-|SPL_XE_SESSION_TARGET_MGR|内部使用のみです。|
-|SPT_PROFILE|内部使用のみです。|
-|SQL_MGR|内部使用のみです。|
-|SQL_NORM|内部使用のみです。|
-|SQLTRACE_FILE_BUFFER|内部使用のみです。|
-|SRVPROC|内部使用のみです。|
-|STACK_HASHER|内部使用のみです。|
-|SUBLATCH|内部使用のみです。|
-|SUBPDESC|内部使用のみです。|
-|SUBPDESC_LIST|内部使用のみです。|
-|SVC_BROKER_CTRL|内部使用のみです。|
-|SVC_BROKER_DEBUG_LIST|内部使用のみです。|
-|SVC_BROKER_LIST|内部使用のみです。|
-|SVC_BROKER_OBJECT|内部使用のみです。|
-|SYNCPOINT_RESOURCE|内部使用のみです。|
-|TaskElapsedExecutionMonitor|内部使用のみです。|
-|TDS_TVP|内部使用のみです。|
-|TESTTEAM|内部使用のみです。|
-|TESTTEAMEXPONENTIAL|内部使用のみです。|
-|TESTTEAMEXPONENTIALTASTAS|内部使用のみです。|
-|TESTTEAMTASTAS|内部使用のみです。|
-|TMP_SESS_KEY|内部使用のみです。|
-|TSQL_DEBUG|内部使用のみです。|
-|TXFRM_REPL|内部使用のみです。|
-|VDI_OPERATION|内部使用のみです。|
-|WINFAB_REPORT_FAULT|内部使用のみです。|
-|WRITE_PAGE_RECORDER|内部使用のみです。|
-|X_PACKET_LIST|内部使用のみです。|
-|X_PIPE|内部使用のみです。|
-|X_PIPE_DEMAND|内部使用のみです。|
-|X_PORT|内部使用のみです。|
-|XACT_LOCK_INFO|内部使用のみです。|
-|XACT_LOCKINFO_TASK|内部使用のみです。|
-|XACT_WORKSPACE|内部使用のみです。|
-|XCB|内部使用のみです。|
-|XCB_FREE_LIST|内部使用のみです。|
-|XCB_HASH|内部使用のみです。|
-|XCHNG_TRACE|内部使用のみです。|
-|XDES|内部使用のみです。|
-|XDES_HASH|内部使用のみです。|
-|XDESMGR|内部使用のみです。|
-|XDESTABLELIST|内部使用のみです。|
-|XE_RATE_LIMITER_STRETCHDB|内部使用のみです。|
-|XE_SESSION_STORAGE|内部使用のみです。|
-|XID_ARRAY|内部使用のみです。|
-|XIO_BLOCKLIST|内部使用のみです。|
-|XIO_REQSTR|内部使用のみです。|
-|XIO_SEQNUMBUMP|内部使用のみです。|
-|XIOSTATS|内部使用のみです。|
-|XTP_RT_DATA_LIST|内部使用のみです。|
-|XTS_MGR|内部使用のみです。|
-|XVB_CSN|内部使用のみです。|
-|XVB_LIST|内部使用のみです。|
+|SOS_CACHESTORE_CLOCK|内部使用のみ。|
+|SOS_CLOCKALG_INTERNODE_SYNC|内部使用のみ。|
+|SOS_DEBUG_HOOK|内部使用のみ。|
+|SOS_DESCDATABUFFERLIST|内部使用のみ。|
+|SOS_LARGEPAGE_ALLOCATOR|内部使用のみ。|
+|SOS_MINITHREAD|内部使用のみ。|
+|SOS_NODE|内部使用のみ。|
+|SOS_OBJECT_POOL|内部使用のみ。|
+|SOS_OBJECT_STORE|内部使用のみ。|
+|SOS_OOM_CHECK|内部使用のみ。|
+|SOS_PHYS_PAGE_CACHE|内部使用のみ。|
+|SOS_RESOURCE_CLERK_LIST|内部使用のみ。|
+|SOS_RINGBUFFER_RECORD|内部使用のみ。|
+|SOS_RW|内部使用のみ。|
+|SOS_SATELLITE_USER_POOL|内部使用のみ。|
+|SOS_SCHEDULER|内部使用のみ。|
+|SOS_SELIST_SIZED_SLOCK|内部使用のみ。|
+|SOS_SUSPEND_QUEUE|内部使用のみ。|
+|SOS_SYSTHREAD|内部使用のみ。|
+|SOS_SYSTHREAD_DISPATCHER|内部使用のみ。|
+|SOS_TASK|内部使用のみ。|
+|SOS_TLIST|内部使用のみ。|
+|SOS_VM_LOW|内部使用のみ。|
+|SOS_WAIT_STATS|内部使用のみ。|
+|SOS_WAITABLE_ADDRESS_HASHBUCKET|内部使用のみ。|
+|SPIN_EVENT_MUTEX|内部使用のみ。|
+|SPL_DISPATCHER_LIST|内部使用のみ。|
+|SPL_DISPATCHER_QUEUE|内部使用のみ。|
+|SPL_NONYIELD_ANALYSIS|内部使用のみ。|
+|SPL_QUERY_STORE_CTX_INITIALIZED|内部使用のみ。|
+|SPL_QUERY_STORE_EXEC_STATS_AGG|内部使用のみ。|
+|SPL_QUERY_STORE_EXEC_STATS_READ|内部使用のみ。|
+|SPL_QUERY_STORE_STATS_COOKIE_CACHE|内部使用のみ。|
+|SPL_SOS_DISPATCHER|内部使用のみ。|
+|SPL_TDS_PKT_QUEUE|内部使用のみ。|
+|SPL_XE_BUFFER_MGR|内部使用のみ。|
+|SPL_XE_DISPATCHER_QUEUE|内部使用のみ。|
+|SPL_XE_NOTIFICATION_CALLBACK_LIST|内部使用のみ。|
+|SPL_XE_SESSION_EVENT_MGR|内部使用のみ。|
+|SPL_XE_SESSION_MGR|内部使用のみ。|
+|SPL_XE_SESSION_TARGET_MGR|内部使用のみ。|
+|SPT_PROFILE|内部使用のみ。|
+|SQL_MGR|内部使用のみ。|
+|SQL_NORM|内部使用のみ。|
+|SQLTRACE_FILE_BUFFER|内部使用のみ。|
+|SRVPROC|内部使用のみ。|
+|STACK_HASHER|内部使用のみ。|
+|SUBLATCH|内部使用のみ。|
+|SUBPDESC|内部使用のみ。|
+|SUBPDESC_LIST|内部使用のみ。|
+|SVC_BROKER_CTRL|内部使用のみ。|
+|SVC_BROKER_DEBUG_LIST|内部使用のみ。|
+|SVC_BROKER_LIST|内部使用のみ。|
+|SVC_BROKER_OBJECT|内部使用のみ。|
+|SYNCPOINT_RESOURCE|内部使用のみ。|
+|TaskElapsedExecutionMonitor|内部使用のみ。|
+|TDS_TVP|内部使用のみ。|
+|TESTTEAM|内部使用のみ。|
+|TESTTEAMEXPONENTIAL|内部使用のみ。|
+|TESTTEAMEXPONENTIALTASTAS|内部使用のみ。|
+|TESTTEAMTASTAS|内部使用のみ。|
+|TMP_SESS_KEY|内部使用のみ。|
+|TSQL_DEBUG|内部使用のみ。|
+|TXFRM_REPL|内部使用のみ。|
+|VDI_OPERATION|内部使用のみ。|
+|WINFAB_REPORT_FAULT|内部使用のみ。|
+|WRITE_PAGE_RECORDER|内部使用のみ。|
+|X_PACKET_LIST|内部使用のみ。|
+|X_PIPE|内部使用のみ。|
+|X_PIPE_DEMAND|内部使用のみ。|
+|X_PORT|内部使用のみ。|
+|XACT_LOCK_INFO|内部使用のみ。|
+|XACT_LOCKINFO_TASK|内部使用のみ。|
+|XACT_WORKSPACE|内部使用のみ。|
+|XCB|内部使用のみ。|
+|XCB_FREE_LIST|内部使用のみ。|
+|XCB_HASH|内部使用のみ。|
+|XCHNG_TRACE|内部使用のみ。|
+|XDES|内部使用のみ。|
+|XDES_HASH|内部使用のみ。|
+|XDESMGR|内部使用のみ。|
+|XDESTABLELIST|内部使用のみ。|
+|XE_RATE_LIMITER_STRETCHDB|内部使用のみ。|
+|XE_SESSION_STORAGE|内部使用のみ。|
+|XID_ARRAY|内部使用のみ。|
+|XIO_BLOCKLIST|内部使用のみ。|
+|XIO_REQSTR|内部使用のみ。|
+|XIO_SEQNUMBUMP|内部使用のみ。|
+|XIOSTATS|内部使用のみ。|
+|XTP_RT_DATA_LIST|内部使用のみ。|
+|XTS_MGR|内部使用のみ。|
+|XVB_CSN|内部使用のみ。|
+|XVB_LIST|内部使用のみ。|
  
 
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  
  [DBCC SQLPERF &#40;Transact-SQL&#41;](../../t-sql/database-console-commands/dbcc-sqlperf-transact-sql.md)   
  
@@ -413,7 +413,7 @@ GO
 
  [スピンロックが SQL Server の CPU 使用率の重要なドライバーです。](https://techcommunity.microsoft.com/t5/SQL-Server-Support/When-is-Spinlock-a-Significant-Driver-of-CPU-utilization-in-SQL/ba-p/530142)
 
- [SQL Server でのスピンロックの競合の診断と解決](https://www.microsoft.com/download/details.aspx?id=26666)
+ [SQL Server でのスピンロックの競合の診断と解決](../diagnose-resolve-spinlock-contention.md)
   
   
 

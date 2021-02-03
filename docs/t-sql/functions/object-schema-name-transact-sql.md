@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - OBJECT_SCHEMA_NAME
 - OBJECT_SCHEMA_NAME_TSQL
@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: 5ba90bb9-d045-4164-963e-e9e96c0b1e8b
 author: julieMSFT
 ms.author: jrasnick
-ms.openlocfilehash: f68dea4c08218aeafd60c8cb4d951b60c8e1cdfa
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 9a92347498da6d200b5ef179c8c507e2e77ba683
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88479664"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99189858"
 ---
 # <a name="object_schema_name-transact-sql"></a>OBJECT_SCHEMA_NAME (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
@@ -39,7 +39,6 @@ ms.locfileid: "88479664"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 OBJECT_SCHEMA_NAME ( object_id [, database_id ] )  
 ```  
   
@@ -73,15 +72,13 @@ OBJECT_SCHEMA_NAME ( object_id [, database_id ] )
 ```sql
 SELECT DISTINCT OBJECT_SCHEMA_NAME(object_id)  
 FROM master.sys.objects;  
-  
 ```  
   
  次の例では、`master` 関数で `OBJECT_SCHEMA_NAME` データベースのデータベース ID を指定し、正確な結果を返します。  
   
 ```sql
 SELECT DISTINCT OBJECT_SCHEMA_NAME(object_id, 1) AS schema_name  
-FROM master.sys.objects;  
-  
+FROM master.sys.objects;   
 ```  
   
 ## <a name="examples"></a>例  

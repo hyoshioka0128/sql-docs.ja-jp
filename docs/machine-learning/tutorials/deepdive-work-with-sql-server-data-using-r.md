@@ -1,6 +1,6 @@
 ---
 title: RevoScaleR チュートリアルのデータベース
-description: RevoScaleR チュートリアル 1:R チュートリアル用の SQL Server データベースを作成する方法。
+description: SQL Server データベースを作成し、他の R チュートリアルを完了するために必要なアクセス許可を設定します。
 ms.prod: sql
 ms.technology: machine-learning-services
 ms.date: 11/27/2018
@@ -8,20 +8,20 @@ ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 5cd0d5e6706dc946ba5be34487edb72e4cbf996b
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: ae05adf9876b572bd01c9b7f239ef8aa08e67337
+ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85757121"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97489972"
 ---
 # <a name="create-a-database-and-permissions-sql-server-and-revoscaler-tutorial"></a>データベースとアクセス許可を作成する (SQL Server と RevoScaleR のチュートリアル)
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
-これは、SQL Server で [RevoScaleR 関数](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)を使用する方法についての [RevoScaleR チュートリアル シリーズ](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)のチュートリアル 1 です。
+これは、SQL Server で [RevoScaleR 関数](/machine-learning-server/r-reference/revoscaler/revoscaler)を使用する方法についての [RevoScaleR チュートリアル シリーズ](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)のチュートリアル 1 です。
 
-このチュートリアルでは、SQL Server データベースを作成し、このシリーズの他のチュートリアルを完了するために必要なアクセス許可を設定する方法について説明します。 [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) または別のクエリ エディターを使用して、次のタスクを完了します。
+このチュートリアルでは、SQL Server データベースを作成し、このシリーズの他のチュートリアルを完了するために必要なアクセス許可を設定する方法について説明します。 [SQL Server Management Studio](../../ssms/download-sql-server-management-studio-ssms.md) または別のクエリ エディターを使用して、次のタスクを完了します。
 
 > [!div class="checklist"]
 > * 2 つの R モデルのトレーニングとスコアリングに使用するデータを格納するための新しいデータベースを作成します
@@ -94,17 +94,17 @@ GO
 
 - **データベースの接続と SQL クエリを確認するにはどうすればよいですか。**
   
-    サーバーを使用して R コードを実行する前に、R の開発環境からデータベースにアクセスできることを確認したい場合があります。 [Visual Studio のサーバー エクスプローラー](https://docs.microsoft.com/previous-versions/x603htbk(v=vs.140)) と [SQL Server Management Studio](../../ssms/download-sql-server-management-studio-ssms.md) はどちらも、強力なデータベース接続と管理機能を持つ無償のツールです。
+    サーバーを使用して R コードを実行する前に、R の開発環境からデータベースにアクセスできることを確認したい場合があります。 [Visual Studio のサーバー エクスプローラー](/previous-versions/x603htbk(v=vs.140)) と [SQL Server Management Studio](../../ssms/download-sql-server-management-studio-ssms.md) はどちらも、強力なデータベース接続と管理機能を持つ無償のツールです。
   
-    新しいデータベース管理ツールをインストールしたくない場合は、コントロール パネルの [ODBC データ ソース アドミニストレーター](https://docs.microsoft.com/sql/odbc/admin/odbc-data-source-administrator?view=sql-server-2017) を使用して、SQL Server インスタンスへのテスト接続を作成できます。 データベースが正しく構成されていて、正しいユーザー名とパスワードを入力した場合は、先に作成したデータベースを表示し、既定のデータベースとして選択することができます。
+    新しいデータベース管理ツールをインストールしたくない場合は、コントロール パネルの [ODBC データ ソース アドミニストレーター](../../odbc/admin/odbc-data-source-administrator.md) を使用して、SQL Server インスタンスへのテスト接続を作成できます。 データベースが正しく構成されていて、正しいユーザー名とパスワードを入力した場合は、先に作成したデータベースを表示し、既定のデータベースとして選択することができます。
   
-    接続エラーの一般的な理由として、サーバーに対してリモート接続が有効になっていない、および名前付きパイプ プロトコルが有効になっていないことが挙げられます。 この記事では、その他のトラブルシューティングのヒントを得ることができます。[SQL Server データベース エンジンへの接続のトラブルシューティング](https://docs.microsoft.com/sql/database-engine/configure-windows/troubleshoot-connecting-to-the-sql-server-database-engine)。
+    接続エラーの一般的な理由として、サーバーに対してリモート接続が有効になっていない、および名前付きパイプ プロトコルが有効になっていないことが挙げられます。 この記事では、その他のトラブルシューティングのヒントを得ることができます。[SQL Server データベース エンジンへの接続のトラブルシューティング](../../database-engine/configure-windows/troubleshoot-connecting-to-the-sql-server-database-engine.md)。
   
 - **テーブル名に datareader というプレフィックスが付くのはなぜですか。**
   
-    このユーザーの既定のスキーマを **db_datareader** と指定すると、このユーザーが作成したすべてのテーブルとその他の新しいオブジェクトの名前の前に、この*スキーマ*名が付加されます。 スキーマは、オブジェクトを整理するためにデータベースに追加できるフォルダーのようなものです。 スキーマでは、データベース内でのユーザーの権限も定義されています。
+    このユーザーの既定のスキーマを **db_datareader** と指定すると、このユーザーが作成したすべてのテーブルとその他の新しいオブジェクトの名前の前に、この *スキーマ* 名が付加されます。 スキーマは、オブジェクトを整理するためにデータベースに追加できるフォルダーのようなものです。 スキーマでは、データベース内でのユーザーの権限も定義されています。
   
-    スキーマが 1 つの特定のユーザー名に関連付けられている場合は、そのユーザーが_スキーマの所有者_です。 オブジェクトを作成するときは、別のスキーマに作成することを明示的に要求しない限り、常に自分用のスキーマに作成されます。
+    スキーマが 1 つの特定のユーザー名に関連付けられている場合は、そのユーザーが _スキーマの所有者_ です。 オブジェクトを作成するときは、別のスキーマに作成することを明示的に要求しない限り、常に自分用のスキーマに作成されます。
   
     たとえば、**TestData** という名前のテーブルを作成し、既定のスキーマが **db_datareader** である場合、テーブルは `<database_name>.db_datareader.TestData` という名前で作成されます。
   

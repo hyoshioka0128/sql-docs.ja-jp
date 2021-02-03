@@ -2,21 +2,21 @@
 title: チュートリアル:レプリケーションの構成 (T-SQL)
 description: Transact-SQL (T-SQL) を使用し、SQL Server の 2 つのインスタンスで、Linux 上に SQL Server スナップショット レプリケーションを構成します。
 ms.custom: seo-dt-2019
-author: MikeRayMSFT
-ms.author: mikeray
+author: VanMSFT
+ms.author: vanto
 ms.reviewer: vanto
 ms.date: 12/09/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
 titleSuffix: SQL Server on Linux
-monikerRange: '>=sql-server-2017||>=sql-server-linux-2017||=sqlallproducts-allversions'
-ms.openlocfilehash: cc1a6ab577a471b69394cf35149f457972aece68
-ms.sourcegitcommit: 3ea082c778f6771b17d90fb597680ed334d3e0ec
+monikerRange: '>=sql-server-2017||>=sql-server-linux-2017'
+ms.openlocfilehash: 2e423c615d026c21c3a5cc3ecaec04aaf5a44a3c
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88088847"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471483"
 ---
 # <a name="configure-replication-with-t-sql"></a>T-SQL を使用してレプリケーションを構成する
 

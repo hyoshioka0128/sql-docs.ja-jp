@@ -1,4 +1,5 @@
 ---
+description: SQL Server エージェント
 title: SQL Server エージェント
 ms.prod: sql
 ms.prod_service: sql-tools
@@ -13,20 +14,20 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 01/19/2017
-monikerRange: = azuresqldb-mi-current || >= sql-server-2016 || = sqlallproducts-allversions
-ms.openlocfilehash: 9914ebe147344b24352b97d018166601077a8895
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: = azuresqldb-mi-current || >= sql-server-2016
+ms.openlocfilehash: 58d9f3921500e2fd7fd1fa02046d4f89d67ccbeb
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85755110"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97478793"
 ---
 # <a name="sql-server-agent"></a>SQL Server エージェント
 
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
 
 > [!IMPORTANT]  
-> [Azure SQL Database Managed Instance](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) では現在、すべてではありませんがほとんどの SQL Server エージェントの機能がサポートされています。 詳細については、「[Azure SQL Database Managed Instance と SQL Server の T-SQL の相違点](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-transact-sql-information#sql-server-agent)」を参照してください。
+> 現在、[Azure SQL Managed Instance](/azure/sql-database/sql-database-managed-instance) によって、すべてではありませんが、ほとんどの SQL Server エージェントの機能がサポートされています。 詳細については、[Azure SQL Managed Instance と SQL Server の T-SQL の相違点](/azure/sql-database/sql-database-managed-instance-transact-sql-information#sql-server-agent)に関するページを参照してください。
 
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントは、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] の *ジョブ* と呼ばれる管理タスクをスケジュールに従って実行する Microsoft Windows サービスです。  
 
@@ -39,7 +40,7 @@ ms.locfileid: "85755110"
 > [!NOTE]  
 > [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] がインストールされるときに、サービスを自動起動することをユーザーが明示的に選択しない限り、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] エージェント サービスは既定で無効になります。  
   
-## <a name="sql-server-agent-components"></a><a name="Components"></a>SQL Server エージェントのコンポーネント  
+## <a name="sql-server-agent-components"></a><a name="Components"></a>sysadmin  
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントでは、次のコンポーネントを使用して、実行するタスク、タスクを実行する時期、タスクの成功/失敗の報告方法を定義します。  
   
 ### <a name="jobs"></a>ジョブ  
@@ -56,7 +57,7 @@ ms.locfileid: "85755110"
   
 -   sp_start_job ストアド プロシージャの実行によって実行する。  
   
-ジョブ内の各処理を *ジョブ ステップ*といいます。 たとえば、ジョブ ステップは、 [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントの実行、 [!INCLUDE[ssIS](../../includes/ssis_md.md)] パッケージの実行、Analysis Services サーバーへのコマンドの発行などで構成されます。 ジョブ ステップはジョブの一部として管理されます。  
+ジョブ内の各処理を *ジョブ ステップ* といいます。 たとえば、ジョブ ステップは、 [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントの実行、 [!INCLUDE[ssIS](../../includes/ssis_md.md)] パッケージの実行、Analysis Services サーバーへのコマンドの発行などで構成されます。 ジョブ ステップはジョブの一部として管理されます。  
   
 各ジョブ ステップは、特定のセキュリティ コンテキストで実行されます。 [!INCLUDE[tsql](../../includes/tsql-md.md)]を使用するジョブ ステップでは、EXECUTE AS ステートメントを使用して、ジョブ ステップにセキュリティ コンテキストを設定します。 その他のジョブ ステップでは、プロキシ アカウントを使用して、ジョブ ステップにセキュリティ コンテキストを設定します。  
   
@@ -104,20 +105,20 @@ ms.locfileid: "85755110"
 -   **net send**  
   
 > [!NOTE]  
-> **net send**を使用して通知を送信するには、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントが置かれているコンピューターで Windows Messenger サービスを開始する必要があります。  
+> **net send** を使用して通知を送信するには、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントが置かれているコンピューターで Windows Messenger サービスを開始する必要があります。  
   
 > [!IMPORTANT]  
-> [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の今後のバージョンでは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントからポケットベル オプションと **net send** オプションが削除される予定です。 新しい開発作業では、これらの機能の使用を避け、現在これらの機能を使用しているアプリケーションは修正するようにしてください。  
+> [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の今後のバージョンでは、 エージェントからポケットベル オプションと **net send** オプションが削除される予定です。 新しい開発作業では、これらの機能の使用を避け、現在これらの機能を使用しているアプリケーションは修正するようにしてください。  
   
 電子メールまたはポケットベルを使用してオペレーターに通知を送信するには、データベース メールを使用するように [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントを構成する必要があります。 詳細については、「[データベース メール](../../relational-databases/database-mail/database-mail.md)」を参照してください。  
   
-オペレーターは、個人のグループを表す別名として定義できます。 その場合、その別名のすべてのメンバーが同時に通知を受け取ることになります。 詳細については、「 [オペレーター](../../ssms/agent/operators.md)」を参照してください。  
+オペレーターは、個人のグループを表す別名として定義できます。 その場合、その別名のすべてのメンバーが同時に通知を受け取ることになります。 詳細については、「[演算子](../../ssms/agent/operators.md)」を参照してください。  
   
 ## <a name="security-for-sql-server-agent-administration"></a><a name="Security"></a>SQL Server エージェントのセキュリティ管理  
-[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントでは **msdb**データベースの固定データベース ロールである **SQLAgentUserRole**、 **SQLAgentReaderRole** 、 **SQLAgentOperatorRole** を使用して、 **sysadmin** 固定サーバー ロールのメンバーではないユーザーの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントへのアクセスを制御します。 これらの固定データベース ロールに加え、サブシステムとプロキシを使用することで、タスクの実行に最低限必要な権限で各ジョブ ステップを実行できるようになります。  
+[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントでは **msdb** データベースの固定データベース ロールである **SQLAgentUserRole**、 **SQLAgentReaderRole** 、 **SQLAgentOperatorRole** を使用して、 **sysadmin** 固定サーバー ロールのメンバーではないユーザーの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントへのアクセスを制御します。 これらの固定データベース ロールに加え、サブシステムとプロキシを使用することで、タスクの実行に最低限必要な権限で各ジョブ ステップを実行できるようになります。  
   
-### <a name="roles"></a>ロール  
-**msdb**の **SQLAgentUserRole**、 **SQLAgentReaderRole** 、 **SQLAgentOperatorRole**の各固定データベース ロールのメンバーと **sysadmin** 固定サーバー ロールのメンバーは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントにアクセスできます。 どのロールのメンバーでもないユーザーは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントを使用できません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントによって使用されるロールの詳細については、「 [SQL Server エージェントのセキュリティの実装](../../ssms/agent/implement-sql-server-agent-security.md)」を参照してください。  
+### <a name="roles"></a>役割  
+**msdb** の **SQLAgentUserRole**、 **SQLAgentReaderRole** 、 **SQLAgentOperatorRole** の各固定データベース ロールのメンバーと **sysadmin** 固定サーバー ロールのメンバーは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントにアクセスできます。 どのロールのメンバーでもないユーザーは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントを使用できません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントによって使用されるロールの詳細については、「 [SQL Server エージェントのセキュリティの実装](../../ssms/agent/implement-sql-server-agent-security.md)」を参照してください。  
   
 ### <a name="subsystems"></a>サブシステム  
 サブシステムは事前に定義されたオブジェクトで、任意のジョブ ステップで使用できる機能を表します。 各プロキシは 1 つ以上のサブシステムにアクセスできます。 サブシステムはプロキシで使用できる機能へのアクセスを制限することによりセキュリティを提供します。 [!INCLUDE[tsql](../../includes/tsql-md.md)] ジョブ ステップ以外の各ジョブ ステップは、プロキシのコンテキストで実行されます。 [!INCLUDE[tsql](../../includes/tsql-md.md)] ジョブ ステップでは、EXECUTE AS コマンドを使用してセキュリティ コンテキストをジョブの所有者に設定します。  
@@ -135,7 +136,7 @@ ms.locfileid: "85755110"
 |レプリケーション スナップショット|レプリケーション スナップショット エージェントをアクティブにするジョブ ステップを実行します。|  
 |レプリケーション トランザクション ログ リーダー|レプリケーション ログ リーダー エージェントをアクティブにするジョブ ステップを実行します。|  
 |[!INCLUDE[ssASnoversion](../../includes/ssasnoversion_md.md)] コマンド|[!INCLUDE[ssASnoversion](../../includes/ssasnoversion_md.md)] コマンドを実行します。|  
-|[!INCLUDE[ssASnoversion](../../includes/ssasnoversion_md.md)] Query|[!INCLUDE[ssASnoversion](../../includes/ssasnoversion_md.md)] クエリを実行します。|  
+|[!INCLUDE[ssASnoversion](../../includes/ssasnoversion_md.md)] クエリ|[!INCLUDE[ssASnoversion](../../includes/ssasnoversion_md.md)] クエリを実行します。|  
 |[!INCLUDE[ssIS](../../includes/ssis_md.md)] パッケージ実行|[!INCLUDE[ssIS](../../includes/ssis_md.md)] パッケージを実行します。|  
   
 > [!NOTE]  
@@ -158,7 +159,7 @@ ms.locfileid: "85755110"
 3.  定義した [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェント ジョブを実行します。  
   
 > [!NOTE]  
-> [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]の既定のインスタンスの場合、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] サービスの名前は SQLSERVERAGENT です。 名前付きインスタンスの場合、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェント サービスの名前は SQLAgent$*instancename*です。  
+> [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]の既定のインスタンスの場合、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] サービスの名前は SQLSERVERAGENT です。 名前付きインスタンスの場合、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェント サービスの名前は SQLAgent$*instancename* です。  
   
 複数の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]インスタンスを実行している場合、すべてのインスタンスに共通なタスクをマルチサーバー管理を使用して自動化できます。 詳細については、「 [エンタープライズ全体の管理の自動化](../../ssms/agent/automated-administration-across-an-enterprise.md)」を参照してください。  
   
@@ -176,4 +177,3 @@ ms.locfileid: "85755110"
   
 ## <a name="see-also"></a>参照  
 [セキュリティ構成](../../relational-databases/security/surface-area-configuration.md)  
-  

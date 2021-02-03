@@ -14,21 +14,21 @@ helpviewer_keywords:
 ms.assetid: b82665be-8cb1-4ad3-ac15-2e590bdc1815
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 1d48f89b3de07a8350217aa6dee79cfab3e32fa3
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 64519400844ee3c114d564aaff561ac518202b0d
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88420606"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97483354"
 ---
 # <a name="metadata---catalog"></a>メタデータ - カタログ
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  このトピックでは、 **Sqlcolumns** と **SQLProcedureColumns**によって返される列のメタデータと、 **SQLGetTypeInfo**によって返されるデータ型のメタデータについて説明します。  
+  このトピックでは、 **Sqlcolumns** と **SQLProcedureColumns** によって返される列のメタデータと、 **SQLGetTypeInfo** によって返されるデータ型のメタデータについて説明します。  
   
 ## <a name="remarks"></a>解説  
- 次の列の値は、 **Sqlcolumns** および **SQLProcedureColumns**によって日付/時刻型に対して返されます。  
+ 次の列の値は、 **Sqlcolumns** および **SQLProcedureColumns** によって日付/時刻型に対して返されます。  
   
 |パラメーターの型|date|time|smalldatetime|DATETIME|datetime2|datetimeoffset|  
 |--------------------|----------|----------|-------------------|--------------|---------------|--------------------|  
@@ -42,7 +42,7 @@ ms.locfileid: "88420606"
 |CHAR_OCTET_LENGTH|NULL|NULL|NULL|NULL|NULL|NULL|  
 |SS_DATA_TYPE|0|0|111|111|0|0|  
   
- 次の列の値は、 **SQLGetTypeInfo**によって日付/時刻型に対して返されます。  
+ 次の列の値は、 **SQLGetTypeInfo** によって日付/時刻型に対して返されます。  
   
 |パラメーターの型|date|time|smalldatetime|DATETIME|datetime2|datetimeoffset|  
 |--------------------|----------|----------|-------------------|--------------|---------------|--------------------|  
@@ -68,6 +68,5 @@ ms.locfileid: "88420606"
 |USERTYPE|0|0|12|22|0|0|  
   
 ## <a name="see-also"></a>参照  
- [ODBC&#41;&#40;メタデータ ](https://msdn.microsoft.com/library/99133efc-b1f2-46e9-8203-d90c324a8e4c)  
-  
+ [ODBC&#41;&#40;メタデータ ](./date-and-time-improvements-odbc.md)  
   

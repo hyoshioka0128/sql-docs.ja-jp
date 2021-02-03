@@ -1,26 +1,28 @@
 ---
 title: エディターの表示 (SQL Server Management Studio)
 description: SQL Server Management Studio でデータベース エンジン クエリ、MDX、DMX、および XML/A エディターを開く方法について説明します。
-ms.custom: seo-lt-2019
-ms.date: 03/14/2017
 ms.prod: sql
-ms.technology: scripting
-ms.reviewer: ''
+ms.technology: ssms
 ms.topic: conceptual
 ms.assetid: 5d654a60-d205-49d2-a831-b3d986d60024
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: ab96c21c9ac7d6e8b90564d6759c85744adc27f8
-ms.sourcegitcommit: d855def79af642233cbc3c5909bc7dfe04c4aa23
+ms.reviewer: ''
+ms.custom: seo-lt-2019
+ms.date: 03/14/2017
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: d33b6442ef66a6be4d1ff600fe583947981a017f
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87122573"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97474263"
 ---
 # <a name="open-an-editor-sql-server-management-studio"></a>エディターの表示 (SQL Server Management Studio)
+
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
-  このトピックでは、 [!INCLUDE[ssDE](../../includes/ssde-md.md)] クエリ エディター、MDX エディター、DMX エディター、または XML/A エディターを [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]で開く方法について説明します。 エディターを開くと、 [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)]の中央のペインに、それぞれのエディター ウィンドウがタブとして表示されます。  
+
+このトピックでは、 [!INCLUDE[ssDE](../../includes/ssde-md.md)] クエリ エディター、MDX エディター、DMX エディター、または XML/A エディターを [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]で開く方法について説明します。 エディターを開くと、 [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)]の中央のペインに、それぞれのエディター ウィンドウがタブとして表示されます。  
   
 ## <a name="before-you-begin"></a>はじめに  
  [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] は、4 つのエディターをサポートしています。 [!INCLUDE[ssDE](../../includes/ssde-md.md)] スクリプトを編集するための [!INCLUDE[tsql](../../includes/tsql-md.md)] クエリ エディター、これらの言語を使用してスクリプトを編集するための DMX エディターと MDX エディター、そして、XML/A スクリプトまたは XML ファイルを編集するための XML/A エディターです。 テキスト ファイルの編集は、すべてのエディターで行うことができます。  
@@ -50,7 +52,7 @@ ms.locfileid: "87122573"
 ### <a name="using-the-fileopen-menu"></a>[ファイル] メニューの [開く] の使用  
  **[ファイル]** メニューの **[開く]** をクリックし、目的のファイルに移動して開きます。 [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] にはファイル拡張子に対応する適切な種類のエディターが表示されます。さらに、ファイルの内容がエディター ウィンドウにコピーされ、必要に応じて接続ダイアログが表示されます。 たとえば、.sql という拡張子のファイルを開いた場合、 [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] に [!INCLUDE[ssDE](../../includes/ssde-md.md)] クエリ エディター ウィンドウが開き、.sql ファイルの内容がコピーされて、接続ダイアログが表示されます。 開こうとするファイルの拡張子が特定のエディターに関連付けられていない場合、 [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] のテキスト エディター ウィンドウが開いて、ファイルの内容がコピーされます。  
   
- 詳細については、「 [ファイル拡張子をコード エディターに関連付ける方法](../../relational-databases/scripting/associate-file-extensions-to-a-code-editor.md)」を参照してください。  
+ 詳細については、「 [ファイル拡張子をコード エディターに関連付ける方法](./associate-file-extensions-to-a-code-editor.md)」を参照してください。  
   
 ### <a name="using-the-toolbar"></a>ツール バーの使用  
  **[標準]** ツール バーで、次のいずれかのボタンをクリックします。  
@@ -66,14 +68,14 @@ ms.locfileid: "87122573"
 -   **[Analysis Services XML/A クエリ]** : 新しい [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] XML/A クエリ エディターが開き、 [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)]のインスタンスに接続するために必要な情報を指定するためのダイアログが表示されます。  
   
 ### <a name="using-object-explorer"></a>オブジェクト エクスプローラーの使用  
- **オブジェクト エクスプローラー**から次の操作を行います。  
+ **オブジェクト エクスプローラー** から次の操作を行います。  
   
 -   [!INCLUDE[ssDE](../../includes/ssde-md.md)]のインスタンスに接続されたサーバー ノードを右クリックし、 **[新しいクエリ]** を選択します。 [!INCLUDE[ssDE](../../includes/ssde-md.md)] の同じインスタンスに接続された [!INCLUDE[ssDE](../../includes/ssde-md.md)] クエリ エディター ウィンドウが開いて、このウィンドウのデータベース コンテキストが、ログインの既定のデータベースに設定されます。  
   
 -   データベース ノードを右クリックし、 **[新しいクエリ]** を選択します。 [!INCLUDE[ssDE](../../includes/ssde-md.md)] の同じインスタンスに接続された [!INCLUDE[ssDE](../../includes/ssde-md.md)] クエリ エディター ウィンドウが開いて、このウィンドウのデータベース コンテキストが、同じデータベースに設定されます。  
   
 ### <a name="using-solution-explorer"></a>ソリューション エクスプローラーの使用  
- **ソリューション エクスプローラー**で、フォルダーを展開してフォルダー内の項目を右クリックし、 **[開く]** をクリックするか、項目またはファイルをダブルクリックします。  
+ **ソリューション エクスプローラー** で、フォルダーを展開してフォルダー内の項目を右クリックし、 **[開く]** をクリックするか、項目またはファイルをダブルクリックします。  
   
 ### <a name="using-template-browser-to-open-the-database-engine-query-editor"></a>テンプレート ブラウザーを使用してデータベース エンジン クエリ エディターを開く方法  
   
@@ -81,6 +83,4 @@ ms.locfileid: "87122573"
   
 -   右ペインに **[テンプレート ブラウザー]** ウィンドウが表示されます。  
   
--   テンプレートをダブルクリックして、データベース エンジン クエリ ウィンドウを開きます。このウィンドウには、テンプレートのテキストが表示されます。 たとえば、CREATE DATABASE テンプレートを開くには、 **[SQL Server テンプレート]** フォルダー、 **[Database]** フォルダーの順に開き、 **[create database]** をダブルクリックします。  
-  
-  
+-   テンプレートをダブルクリックして、データベース エンジン クエリ ウィンドウを開きます。このウィンドウには、テンプレートのテキストが表示されます。 たとえば、CREATE DATABASE テンプレートを開くには、 **[SQL Server テンプレート]** フォルダー、 **[Database]** フォルダーの順に開き、 **[create database]** をダブルクリックします。

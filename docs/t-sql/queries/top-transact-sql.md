@@ -21,13 +21,13 @@ helpviewer_keywords:
 ms.assetid: da983c0a-06c5-4cf8-a6a4-7f9d66f34f2c
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 7dbaf282383bfeb83efc1b7ccf6f74ad90ed1764
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: eb6024d0ad3ef6f34d170201c0fbacc3447dab26
+ms.sourcegitcommit: 2f3f5920e0b7a84135c6553db6388faf8e0abe67
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88445308"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98783594"
 ---
 # <a name="top-transact-sql"></a>TOP (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -40,16 +40,16 @@ ms.locfileid: "88445308"
  
  SQL Server および Azure SQL Database での構文は次のとおりです。
 
-```sql  
+```syntaxsql  
 [   
     TOP (expression) [PERCENT]  
     [ WITH TIES ]  
 ]  
 ```  
 
-Azure SQL Data Warehouse および Parallel Data Warehouse での構文は次のとおりです。
+[!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] と [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] の構文を次に示します。
 
-```sql  
+```syntaxsql  
 [   
     TOP ( expression )   
     [ WITH TIES ]  
@@ -80,10 +80,10 @@ SELECT ステートメントでは、必ず ORDER BY 句と TOP 句を使用し�
 -   クエリ オプティマイザーでは、クエリを最適化する際に、TOP 句または FETCH 句の *expression* の値を SELECT ステートメントの一部として認識できます。 SET ROWCOUNT はクエリを実行するステートメントの外部で使用するので、その値をクエリ プランで認識することはできません。  
   
 ## <a name="compatibility-support"></a>互換性サポート  
-下位互換性のため、SELECT ステートメントではかっこは省略可能です。 SELECT ステートメントの TOP では常にかっこを使用することをお勧めします。 そうすることで、かっこが必要な INSERT、UPDATE、MERGE、DELETE ステートメントとの一貫性を保つことができます。 
+下位互換性のために、式が整数の定数の場合、SELECT ステートメントではかっこは省略可能です。 SELECT ステートメントの TOP では常にかっこを使用することをお勧めします。 そうすることで、かっこが必要な INSERT、UPDATE、MERGE、DELETE ステートメントとの一貫性を保つことができます。 
   
 ## <a name="interoperability"></a>相互運用性  
-TOP 式は、トリガーによって実行される可能性があるステートメントには影響しません。 トリガーによって**挿入**および**削除**されたテーブルからは、INSERT、UPDATE、MERGE、または DELETE ステートメントによって実際に影響を受けた行のみが返されます。 たとえば、TOP 句が含まれる INSERT ステートメントの結果として INSERT TRIGGER が起動されるような場合です。  
+TOP 式は、トリガーによって実行される可能性があるステートメントには影響しません。 トリガーによって **挿入** および **削除** されたテーブルからは、INSERT、UPDATE、MERGE、または DELETE ステートメントによって実際に影響を受けた行のみが返されます。 たとえば、TOP 句が含まれる INSERT ステートメントの結果として INSERT TRIGGER が起動されるような場合です。  
   
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、ビューを使用した行の更新が可能です。 ビュー定義に TOP 句を含めることができるので、更新のために行が TOP 式の要件を満たさなくなると、特定の行がビューに表示されなくなる場合があります。  
   
@@ -92,7 +92,7 @@ MERGE ステートメントで指定した TOP 句は、ソース テーブル�
 UNION、UNION ALL、EXCEPT、または INTERSECT 演算子を含む TOP 句をクエリで指定する場合は注意が必要です。 これらの演算子を選択操作で使用するとき、TOP 句および ORDER BY 句が論理的に処理される順序は必ずしも直感的ではないため、記述したクエリによって予期しない結果が返される場合があります。 たとえば、次のテーブルとデータがある場合に、最も安価な赤色の自動車と青色の自動車  (つまり赤色のセダンと青色のバン) を取得する必要があるとします。  
   
 ```sql  
-CREATE TABLE dbo.Cars(Model varchar(15), Price money, Color varchar(10));  
+CREATE TABLE dbo.Cars(Model VARCHAR(15), Price MONEY, Color VARCHAR(10));  
 INSERT dbo.Cars VALUES  
     ('sedan', 10000, 'red'), ('convertible', 15000, 'blue'),   
     ('coupe', 20000, 'red'), ('van', 8000, 'blue');  
@@ -190,7 +190,7 @@ GO
 ```sql  
 USE AdventureWorks2012;  
 GO  
-DECLARE @p AS int = 10;  
+DECLARE @p AS INT = 10;  
 SELECT TOP(@p)JobTitle, HireDate, VacationHours  
 FROM HumanResources.Employee  
 ORDER BY VacationHours DESC;  
@@ -265,10 +265,10 @@ IF OBJECT_ID ('dbo.EmployeeSales', 'U') IS NOT NULL
     DROP TABLE dbo.EmployeeSales;  
 GO  
 CREATE TABLE dbo.EmployeeSales  
-( EmployeeID   nvarchar(11) NOT NULL,  
-  LastName     nvarchar(20) NOT NULL,  
-  FirstName    nvarchar(20) NOT NULL,  
-  YearlySales  money NOT NULL  
+( EmployeeID   NVARCHAR(11) NOT NULL,  
+  LastName     NVARCHAR(20) NOT NULL,  
+  FirstName    NVARCHAR(20) NOT NULL,  
+  YearlySales  MONEY NOT NULL  
  );  
 GO  
 INSERT TOP(5)INTO dbo.EmployeeSales  

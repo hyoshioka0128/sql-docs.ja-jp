@@ -23,12 +23,12 @@ helpviewer_keywords:
 ms.assetid: 6e929d09-ccb5-4855-a6af-b616022bc8f6
 author: pmasl
 ms.author: umajay
-ms.openlocfilehash: fc18c47d87ada5b60cb57aba79e1063ce1f38c3a
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 8e29696d30bc46a6e7c9fe644f7d4e19df6db622
+ms.sourcegitcommit: 00be343d0f53fe095a01ea2b9c1ace93cdcae724
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88417648"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98813402"
 ---
 # <a name="dbcc-dbreindex-transact-sql"></a>DBCC DBREINDEX (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "88417648"
 > [!IMPORTANT]  
 >  [!INCLUDE[ssNoteDepFutureDontUse](../../includes/ssnotedepfuturedontuse-md.md)] 代わりに [ALTER INDEX](../../t-sql/statements/alter-index-transact-sql.md) を使用してください。  
   
-**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] から[現在のバージョン](https://go.microsoft.com/fwlink/p/?LinkId=299658)まで)
+**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] から [現在のバージョン](/troubleshoot/sql/general/determine-version-edition-update-level)まで)
   
 ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)
   
@@ -56,7 +56,7 @@ DBCC DBREINDEX
 
 ## <a name="arguments"></a>引数
  *table_name*  
- 再構築するよう指定したインデックスが含まれているテーブルの名前です。 テーブル名は[識別子](../../relational-databases/databases/database-identifiers.md)*の規則に従っている必要があります。*  
+ 再構築するよう指定したインデックスが含まれているテーブルの名前です。 テーブル名は [識別子](../../relational-databases/databases/database-identifiers.md)*の規則に従っている必要があります。*  
   
  *index_name*  
  再構築するインデックスの名前です。 インデックス名は、識別子の規則に従っている必要があります。 *index_name* が指定されている場合、*table_name* を指定する必要があります。 *index_name* を指定しない場合、または " " である場合は、テーブルのすべてのインデックスが再構築されます。  
@@ -123,5 +123,3 @@ GO
 [sys.dm_db_index_physical_stats &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-index-physical-stats-transact-sql.md)  
 [ALTER INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/alter-index-transact-sql.md)  
   
-  
-

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DROP_ENDPOINT_TSQL
 - DROP ENDPOINT
@@ -20,14 +20,14 @@ helpviewer_keywords:
 - DROP ENDPOINT statement
 - dropping endpoints
 ms.assetid: 6aca7412-66a5-4fa4-86b2-061512ff2080
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: c9aabafbad425cf9f570a466bdb01283a141082d
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 1682eb03ed6f2997168ce0c4aa84ff5d1190ce6a
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88444688"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99171650"
 ---
 # <a name="drop-endpoint-transact-sql"></a>DROP ENDPOINT (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -38,8 +38,7 @@ ms.locfileid: "88444688"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 DROP ENDPOINT endPointName  
 ```  
   
@@ -49,7 +48,7 @@ DROP ENDPOINT endPointName
  *endPointName*  
  削除するエンドポイント名です。  
   
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>解説  
  ENDPOINT DDL ステートメントは、ユーザー トランザクション内部では実行できません。  
   
 ## <a name="permissions"></a>アクセス許可  
@@ -58,7 +57,7 @@ DROP ENDPOINT endPointName
 ## <a name="examples"></a>例  
  次の例では、以前に作成したエンドポイント `sql_endpoint` を削除します。  
   
-```  
+```sql  
 DROP ENDPOINT sql_endpoint;  
 ```  
   

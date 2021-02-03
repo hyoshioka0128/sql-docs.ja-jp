@@ -20,14 +20,14 @@ helpviewer_keywords:
 - current session application names
 - APP_NAME function
 ms.assetid: e491e192-9b30-4243-bc19-33c133fe08a8
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: c8522004e6852ebb3e874811ec7eb198cdf0416a
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 6d8c1095c140ce5146234dae4ede80adb9ea3b7c
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88417518"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98089827"
 ---
 # <a name="app_name-transact-sql"></a>APP_NAME (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -41,8 +41,7 @@ ms.locfileid: "88417518"
   
 ## <a name="syntax"></a>構文  
   
-```sql
-  
+```syntaxsql
 APP_NAME  ( )  
 ```  
   
@@ -51,7 +50,7 @@ APP_NAME  ( )
 ## <a name="return-types"></a>戻り値の型
 **nvarchar(128)**
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>注釈  
 `APP_NAME` は、アプリケーションごとに異なるアクションを実行する手段として、異なるアプリケーションを区別するために使用します。 たとえば、アプリケーションごとに異なる日付形式を使用するために、`APP_NAME` で異なるアプリケーションを区別することができます。 また、特定のアプリケーションに対して情報メッセージを返すこともできます。
   
 [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] でアプリケーション名を設定する場合、**[データベース エンジンへの接続]** ダイアログ ボックスで **[オプション]** をクリックします。 **[追加の接続パラメーター]** タブ上で、**app** 属性を `;app='application_name'` 形式で指定します。
@@ -63,9 +62,9 @@ APP_NAME  ( )
 USE AdventureWorks2012;  
 GO  
 IF APP_NAME() = 'Microsoft SQL Server Management Studio - Query'  
-PRINT 'This process was started by ' + APP_NAME() + '. The date is ' + CONVERT ( varchar(100) , GETDATE(), 101) + '.';  
+PRINT 'This process was started by ' + APP_NAME() + '. The date is ' + CONVERT ( VARCHAR(100) , GETDATE(), 101) + '.';  
 ELSE   
-PRINT 'This process was started by ' + APP_NAME() + '. The date is ' + CONVERT ( varchar(100) , GETDATE(), 102) + '.';  
+PRINT 'This process was started by ' + APP_NAME() + '. The date is ' + CONVERT ( VARCHAR(100) , GETDATE(), 102) + '.';  
 GO  
 ```  
   

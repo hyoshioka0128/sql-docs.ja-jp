@@ -3,20 +3,20 @@ title: スナップショット フォルダー共有の構成
 titleSuffix: SQL Server on Linux
 description: Linux 上の SQL Server レプリケーションでスナップショット フォルダーの共有を構成する方法について説明します。
 ms.custom: seo-lt-2019
-author: MikeRayMSFT
-ms.author: mikeray
+author: VanMSFT
+ms.author: vanto
 ms.reviewer: vanto
 ms.date: 09/24/2018
 ms.topic: article
 ms.prod: sql
 ms.technology: linux
-monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: e5f21fee3218977d22a5c3314fe82c5a3e508bfc
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15'
+ms.openlocfilehash: 1e0ace10e1a976128146b82d77660d1edc06040a
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85882672"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471493"
 ---
 # <a name="configure-replication-snapshot-folder-with-shares"></a>共有を含むレプリケーション スナップショット フォルダーを構成する
 

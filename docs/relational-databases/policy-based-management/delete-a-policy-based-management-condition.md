@@ -13,16 +13,16 @@ helpviewer_keywords:
 ms.assetid: e04148b8-f6dd-4c50-a5ef-c650b71dbf4d
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 3265e970fbad572e09527dedcb35397d811daefa
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: fb34d9ab423008e8b3fe2c8e926f0f397c14b5cb
+ms.sourcegitcommit: 04d101fa6a85618b8bc56c68b9c006b12147dbb5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88470333"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99049183"
 ---
 # <a name="delete-a-policy-based-management-condition"></a>ポリシー ベースの管理条件の削除
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
-  このトピックでは、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] を使用して、 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]でポリシー ベースの管理条件を削除する方法について説明します。  
+  このトピックでは、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] を使用して、 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]でポリシー ベースの管理条件を削除する方法について説明します。  
   
  **このトピックの内容**  
   
@@ -45,7 +45,7 @@ ms.locfileid: "88470333"
   
 #### <a name="to-delete-a-condition"></a>条件を削除するには  
   
-1.  **オブジェクト エクスプローラー**で、削除する条件を含むサーバーをプラス記号をクリックして展開します。  
+1.  **オブジェクト エクスプローラー** で、削除する条件を含むサーバーをプラス記号をクリックして展開します。  
   
 2.  プラス記号をクリックして **[管理]** フォルダーを展開します。  
   

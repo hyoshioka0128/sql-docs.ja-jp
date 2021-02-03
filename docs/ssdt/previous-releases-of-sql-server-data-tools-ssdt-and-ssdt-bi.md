@@ -10,13 +10,13 @@ ms.author: drskwier
 ms.reviewer: maghan
 ms.custom: seo-lt-2019
 ms.date: 06/17/2020
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||=azuresqldb-mi-current'
-ms.openlocfilehash: f6fea0264cdbd28c8f6665f5f0d67eda4a8da3c9
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=azuresqldb-mi-current'
+ms.openlocfilehash: 35c16a4184665052781ae88ad37635ede298d668
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86009943"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97440501"
 ---
 # <a name="previous-releases-of-sql-server-data-tools-ssdt-and-ssdt-bi"></a>以前のリリースの SQL Server Data Tools (SSDT と SSDT-BI)
 
@@ -26,7 +26,7 @@ SQL Server Data Tools (SSDT) には、SQL Server のコンテンツ タイプ (�
 
 SSDT には後方互換性があるため、[最新の SSDT](download-sql-server-data-tools-ssdt.md) でも古いバージョンの SQL Server を実行するデータベース、モデル、レポート、パッケージの設計と配置を行うことができます。
 
-SQL Server のコンテンツ タイプの作成に使用される Visual Studio シェルは、これまでにさまざまな名前でリリースされてきました。たとえば、 **SQL Server Data Tools**、 **SQL Server Data Tools - Business Intelligence**、 **Business Intelligence Development Studio**です。 以前のバージョンに付属しているプロジェクト テンプレート セットの内容は、バージョンごとに異なります。 すべてのプロジェクト テンプレートを 1 つの SSDT でまとめて入手するには、 [最新バージョン](download-sql-server-data-tools-ssdt.md)が必要です。 それがない場合は、以前のバージョンをいくつもインストールしなければ、SQL Server で使われるテンプレートのすべてをそろえることはできません。 インストールされるシェルは、Visual Studio のバージョンごとに 1 つだけです。別のバージョンの SSDT をインストールすると、不足しているテンプレートだけが追加されます。
+SQL Server のコンテンツ タイプの作成に使用される Visual Studio シェルは、これまでにさまざまな名前でリリースされてきました。たとえば、 **SQL Server Data Tools**、 **SQL Server Data Tools - Business Intelligence**、 **Business Intelligence Development Studio** です。 以前のバージョンに付属しているプロジェクト テンプレート セットの内容は、バージョンごとに異なります。 すべてのプロジェクト テンプレートを 1 つの SSDT でまとめて入手するには、 [最新バージョン](download-sql-server-data-tools-ssdt.md)が必要です。 それがない場合は、以前のバージョンをいくつもインストールしなければ、SQL Server で使われるテンプレートのすべてをそろえることはできません。 インストールされるシェルは、Visual Studio のバージョンごとに 1 つだけです。別のバージョンの SSDT をインストールすると、不足しているテンプレートだけが追加されます。
 
 ## <a name="previous-ssdt-releases"></a>以前の SSDT リリース
 
@@ -138,7 +138,7 @@ SQL Server のコンテンツ タイプの作成に使用される Visual Studio
 | [スペイン語](https://go.microsoft.com/fwlink/?linkid=518814&clcid=0x40a) | 6D81FB572A7003C54C29D2ACF076D2CED4A1CA80F329BFF9D41A806920D64EEE |
 
 > [!Note]
-> SSDT では、Visual Studio の 2 つの最新バージョンがサポートされています。 Visual Studio 2019 のリリースでは、Visual Studio 2015 およびそれ以前に対する SSDT バージョンが更新されなくなりました。 SSDT for Visual Studio 2010 は使用できなくなりました。 詳細については、[この SSDT チームのブログ投稿](https://blogs.msdn.microsoft.com/ssdt/2017/03/10/sql-server-data-tools-17-0-rc-and-ssdt-in-vs2017/)で *FAQ* のセクションをご覧ください。
+> SSDT では、Visual Studio の 2 つの最新バージョンがサポートされています。 Visual Studio 2019 のリリースでは、Visual Studio 2015 およびそれ以前に対する SSDT バージョンが更新されなくなりました。 SSDT for Visual Studio 2010 は使用できなくなりました。 詳細については、[この SSDT チームのブログ投稿](/archive/blogs/ssdt/sql-server-data-tools-17-0-rc-and-ssdt-in-vs2017)で *FAQ* のセクションをご覧ください。
 
 ## <a name="sql-bi-analysis-services-reporting-services-integration-services"></a>SQL BI: Analysis Services、Reporting Services、Integration Services
 
@@ -152,7 +152,7 @@ BI のテンプレートは、SSAS モデル、SSRS レポート、SSIS パッ�
 
 Business Intelligence Development Studio (BIDS) は SQL Server のセットアップを通じてインストールされます。 Web ダウンロードはありません (SQL Server 2008 および 2008 R2)。
 
-SQL Server 2012 または 2014 の場合は、 **Visual Studio 2012 用 SSDT-BI** と **SSDT-BI と Visual Studio 2013**です。 この 2 つの違いは、Visual Studio のバージョンだけです。
+SQL Server 2012 または 2014 の場合は、 **Visual Studio 2012 用 SSDT-BI** と **SSDT-BI と Visual Studio 2013** です。 この 2 つの違いは、Visual Studio のバージョンだけです。
 
 ## <a name="next-steps"></a>次のステップ
 

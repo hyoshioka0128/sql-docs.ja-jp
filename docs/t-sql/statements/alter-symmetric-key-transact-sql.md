@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - ALTER SYMMETRIC KEY
 - ALTER_SYMMETRIC_KEY_TSQL
@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: d3c776a4-7d71-4e6f-84fc-1db47400c465
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 6bc807fe68e1e4ba8ca1e92fe40e048a82a6307f
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: deb59e00ee0d95f7a4dc36b095cb73496b8a5261
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88426854"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99182158"
 ---
 # <a name="alter-symmetric-key-transact-sql"></a>ALTER SYMMETRIC KEY (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -39,7 +39,6 @@ ms.locfileid: "88426854"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 ALTER SYMMETRIC KEY Key_name <alter_option>  
   
 <alter_option> ::=  
@@ -98,7 +97,7 @@ ALTER SYMMETRIC KEY Key_name <alter_option>
 ## <a name="examples"></a>例  
  次の例では、対称キーの保護に使用されている暗号化の方法を変更します。 対称キー `JanainaKey043` は、作成時に証明書 `Shipping04` を使用して暗号化されています。 暗号化なしでキーを格納することはできないため、この例では、パスワードによる暗号化を追加した後、証明書による暗号化を削除します。  
   
-```  
+```sql  
 CREATE SYMMETRIC KEY JanainaKey043 WITH ALGORITHM = AES_256   
     ENCRYPTION BY CERTIFICATE Shipping04;  
 -- Open the key.   

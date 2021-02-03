@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - CREATE EVENT SESSION
 - SESSION
@@ -21,14 +21,14 @@ helpviewer_keywords:
 - event sessions [SQL Server]
 - CREATE EVENT SESSION statement
 ms.assetid: 67683027-2b0f-47aa-b223-604731af8b4d
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: 0f36aa2ea714e1055a350cc921ab043a23131ff7
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 7284b9c3d574a55dc67c99e500c7c7da69400e29
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88426774"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99186861"
 ---
 # <a name="create-event-session-transact-sql"></a>CREATE EVENT SESSION (Transact-SQL)
 
@@ -159,7 +159,7 @@ ADD TARGET [*event_module_guid*].*event_package_name*.*target_name* は、イベ
 SET { *target_parameter_name*= \<value> [, ...*n*] } によって、ターゲット パラメーターを設定します。 ターゲット パラメーターは、column_type 'customizable' および object_name = *target_name* として sys.dm_xe_object_columns ビューに表示されます。
 
 > [!IMPORTANT]
-> リング バッファー ターゲットを使用している場合、max_memory ターゲット パラメーターを 2048 KB に設定し、XML 出力のデータの切り捨てを回避することをお勧めします。 さまざまなターゲットの種類の使用について詳しくは、「[SQL Server 拡張イベント ターゲット](https://msdn.microsoft.com/library/e281684c-40d1-4cf9-a0d4-7ea1ecffa384)」をご覧ください。
+> リング バッファー ターゲットを使用している場合、max_memory ターゲット パラメーターを 2048 KB に設定し、XML 出力のデータの切り捨てを回避することをお勧めします。 さまざまなターゲットの種類の使用について詳しくは、「[SQL Server 拡張イベント ターゲット](/previous-versions/sql/sql-server-2016/bb630339(v=sql.130))」をご覧ください。
 
 WITH ( \<event_session_options> [ ,...*n*] ) では、イベント セッションで使用するオプションを指定します。
 
@@ -233,7 +233,7 @@ GO
 ```
 ### <a name="sql-database-example"></a>SQL Database の例
 
-Azure SQL Database の例については、[SQL Database の拡張イベントのためのイベント ファイル ターゲット コード](https://docs.microsoft.com/azure/sql-database/sql-database-xevent-code-event-file#transact-sql-code)に関連する記事に記載されている例をご覧ください
+Azure SQL Database の例については、[SQL Database の拡張イベントのためのイベント ファイル ターゲット コード](/azure/sql-database/sql-database-xevent-code-event-file#transact-sql-code)に関連する記事に記載されている例をご覧ください
 
 ### <a name="code-examples-can-differ-for-azure-sql-database"></a>Azure SQL Database では、コード例が異なる可能性があります。
 

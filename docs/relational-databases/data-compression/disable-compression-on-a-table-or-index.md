@@ -11,15 +11,15 @@ ms.topic: conceptual
 helpviewer_keywords:
 - data compression [SQL Server], disabling
 ms.assetid: bda1e452-397b-4757-82a4-181217361589
-author: MikeRayMSFT
-ms.author: mikeray
-monikerRange: '>= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || = sqlallproducts-allversions'
-ms.openlocfilehash: 0fd426cecf7fa74e3f45ee13e9d508c6f36a4bb7
-ms.sourcegitcommit: 9470c4d1fc8d2d9d08525c4f811282999d765e6e
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016'
+ms.openlocfilehash: 1a5de33ab7ee67f6c74ddff58219d779092cdcec
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86459044"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97485524"
 ---
 # <a name="disable-compression-on-a-table-or-index"></a>テーブルまたはインデックスの圧縮の無効化
 
@@ -196,7 +196,7 @@ ms.locfileid: "86459044"
   
 #### <a name="to-disable-compression-on-a-table"></a>テーブルで圧縮を無効にするには  
   
-1.  **オブジェクト エクスプローラー**で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)]のインスタンスに接続します。  
+1.  **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)]のインスタンスに接続します。  
   
 2.  [標準] ツール バーの **[新しいクエリ]** をクリックします。  
   
@@ -212,7 +212,7 @@ ms.locfileid: "86459044"
   
 #### <a name="to-disable-compression-on-an-index"></a>インデックスで圧縮を無効にするには  
   
-1.  **オブジェクト エクスプローラー**で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)]のインスタンスに接続します。  
+1.  **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)]のインスタンスに接続します。  
   
 2.  [標準] ツール バーの **[新しいクエリ]** をクリックします。  
   

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - CONTEXT_INFO_TSQL
 - CONTEXT_INFO
@@ -20,14 +20,14 @@ helpviewer_keywords:
 - MARS [SQL Server]
 - session context information [SQL Server]
 ms.assetid: 571320f5-7228-4b0e-9d01-ab732d2d1eab
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: c8b4f5b2fa72f6122f457f2b86ccfe7ec399e2bc
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 1bd11d94547782ffee117e6ed883158423c52180
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88445882"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99184221"
 ---
 # <a name="context_info--transact-sql"></a>CONTEXT_INFO  (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "88445882"
   
 ## <a name="syntax"></a>構文  
   
-```sql
+```syntaxsql
 CONTEXT_INFO()  
 ```  
 
@@ -49,9 +49,9 @@ CONTEXT_INFO()
   
 **Context_info** は設定されませんでした: 場合
 -   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は NULL を返します。  
--   [!INCLUDE[ssSDS](../../includes/sssds-md.md)] で  、一意のセッション固有 GUID.を返します。  
+-   [!INCLUDE[ssSDS](../../includes/sssds-md.md)] は一意のセッション固有 GUID を返します。  
   
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>解説  
 複数のアクティブな結果セット (MARS) 機能によって、アプリケーションは複数のバッチまたは要求を同じ接続上で同時に実行できます。 `CONTEXT_INFO` 関数が SET ステートメントと同じバッチで実行される場合、MARS 接続バッチの 1 つで SET CONTEXT_INFO を実行すると、`CONTEXT_INFO` 関数は新しいコンテキスト値を返します。 `CONTEXT_INFO` 関数が他の 1 つ以上の接続バッチで実行されている場合、SET ステートメントを実行したバッチの完了後にバッチが開始されない限り、`CONTEXT_FUNCTION` は新しい値を返しません。
   
 ## <a name="permissions"></a>アクセス許可  

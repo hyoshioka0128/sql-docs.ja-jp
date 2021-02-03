@@ -19,13 +19,13 @@ helpviewer_keywords:
 ms.assetid: 0ea6a4d1-313e-4f70-b939-dd2cd570f6d6
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 5c622d1c39668ee1e58c3eb1e60512d6f8d6f729
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: da6f1b1bdb357a6321207720d2ea64938f4ada41
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88422736"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170244"
 ---
 # <a name="hashbytes-transact-sql"></a>HASHBYTES (Transact-SQL)
 
@@ -48,7 +48,7 @@ HASHBYTES ( '<algorithm>', { @input | 'input' } )
 ## <a name="arguments"></a>引数
 
 `<algorithm>`  
-入力のハッシュに使用するハッシュ アルゴリズムを指定します。 これは必須の引数で、既定値はありません。 単一引用符で囲む必要があります。 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降、SHA2_256 と SHA2_512 以外のすべてのアルゴリズムは非推奨とされました。  
+入力のハッシュに使用するハッシュ アルゴリズムを指定します。 これは必須の引数で、既定値はありません。 単一引用符で囲む必要があります。 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降、SHA2_256 と SHA2_512 以外のすべてのアルゴリズムは非推奨とされました。  
   
 `@input`  
 ハッシュされるデータを含む変数を指定します。 `@input` は、**varchar**、**nvarchar**、または **varbinary** です。  
@@ -68,15 +68,15 @@ HASHBYTES ( '<algorithm>', { @input | 'input' } )
 ## <a name="remarks"></a>注釈  
 ハッシュ値を計算するための別の方法として、`CHECKSUM` または `BINARY_CHECKSUM` の使用を検討してください。
 
-[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降では、MD2、MD4、MD5、SHA、SHA1 のアルゴリズムは非推奨です。 代わりに SHA2_256 または SHA2_512 を使用してください。 以前のアルゴリズムは引き続き機能しますが、Deprecation イベントが発生します。
+[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降では、MD2、MD4、MD5、SHA、SHA1 のアルゴリズムは非推奨です。 代わりに SHA2_256 または SHA2_512 を使用してください。 以前のアルゴリズムは引き続き機能しますが、Deprecation イベントが発生します。
 
 ## <a name="examples"></a>例  
 ### <a name="return-the-hash-of-a-variable"></a>変数のハッシュを返す  
  次の例では、変数 `@HashThis` に格納されている **nvarchar** 型のデータの `SHA2_256` ハッシュを返します。  
   
 ```sql  
-DECLARE @HashThis nvarchar(32);  
-SET @HashThis = CONVERT(nvarchar(32),'dslfdkjLK85kldhnv$n000#knf');  
+DECLARE @HashThis NVARCHAR(32);  
+SET @HashThis = CONVERT(NVARCHAR(32),'dslfdkjLK85kldhnv$n000#knf');  
 SELECT HASHBYTES('SHA2_256', @HashThis);  
 ```  
   
@@ -84,7 +84,7 @@ SELECT HASHBYTES('SHA2_256', @HashThis);
  次の例では、テーブル `Test1` 内の列 `c1` の値の SHA2_256 ハッシュを返します。  
   
 ```sql  
-CREATE TABLE dbo.Test1 (c1 nvarchar(32));  
+CREATE TABLE dbo.Test1 (c1 NVARCHAR(32));  
 INSERT dbo.Test1 VALUES ('This is a test.');  
 INSERT dbo.Test1 VALUES ('This is test 2.');  
 SELECT HASHBYTES('SHA2_256', c1) FROM dbo.Test1;  

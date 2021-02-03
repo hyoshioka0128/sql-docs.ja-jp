@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
 ms.assetid: b2fcf858-21c3-462a-8d49-50c85647d092
-ms.openlocfilehash: 8520c3741102597ac3b7e93aceabc3ec6c114230
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+ms.openlocfilehash: f5ba3ea9260da9e278273ef39d0f5893b67c120e
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85883916"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596434"
 ---
 # <a name="use-sql-server-management-studio-on-windows-to-manage-sql-server-on-linux"></a>Windows で SQL Server Management Studio を使用して SQL Server on Linux を管理する
 
@@ -24,7 +24,7 @@ ms.locfileid: "85883916"
 > [!TIP]
 > SSMS を実行する Windows コンピューターがない場合は、新しい [Azure Data Studio](../azure-data-studio/index.yml) の使用を検討してください。 これは SQL Server を管理するためのグラフィカル ツールで、Linux と Windows の両方で実行できます。
 
-[SQL Server Management Studio (SSMS)](../ssms/sql-server-management-studio-ssms.md) は、開発や管理上のニーズに向けて Microsoft が無料で提供している一連の SQL ツールの一部です。 SSMS は、SQL Server のすべてのコンポーネントを構成、管理、開発し、それらのコンポーネントへアクセスするための統合環境です。 オンプレミス、Docker コンテナー、クラウドのいずれのプラットフォームで実行されている SQL Server にも接続できます。 また、Azure SQL Database と Azure SQL Data Warehouse にも接続できます。 SSMS では、さまざまなグラフィック ツールと、機能の豊富な多くのスクリプト エディターが用意されています。これにより、あらゆるスキル レベルの開発者や管理者が SQL Server にアクセスできるようになっています。
+[SQL Server Management Studio (SSMS)](../ssms/sql-server-management-studio-ssms.md) は、開発や管理上のニーズに向けて Microsoft が無料で提供している一連の SQL ツールの一部です。 SSMS は、SQL Server のすべてのコンポーネントを構成、管理、開発し、それらのコンポーネントへアクセスするための統合環境です。 オンプレミス、Docker コンテナー、クラウドのいずれのプラットフォームで実行されている SQL Server にも接続できます。 また、Azure SQL Database と Azure Synapse Analytics にも接続できます。 SSMS では、さまざまなグラフィック ツールと、機能の豊富な多くのスクリプト エディターが用意されています。これにより、あらゆるスキル レベルの開発者や管理者が SQL Server にアクセスできるようになっています。
 
 SSMS には、SQL Server 用のさまざまな開発機能や管理機能が用意されています。具体的には次のことが行なえます。
 
@@ -70,13 +70,13 @@ SQL Server を操作する際には、常に最新版の SQL Server Management S
     > [!TIP]
     > 接続エラーが発生した場合は、まずエラー メッセージから問題を診断します。 次に、[接続のトラブルシューティングに関する推奨事項](sql-server-linux-troubleshooting-guide.md#connection)を確認します。
  
-1. SQL Server に正常に接続すると**オブジェクト エクスプローラー**が開き、データベースにアクセスして管理タスクを実行したり、データを照会したりできるようになります。
+1. SQL Server に正常に接続すると **オブジェクト エクスプローラー** が開き、データベースにアクセスして管理タスクを実行したり、データを照会したりできるようになります。
 
 ## <a name="run-transact-sql-queries"></a>Transact-SQL クエリの実行
 
 サーバーに接続したら、データベースに接続して Transact-SQL クエリを実行できます。 Transact-SQL クエリは、ほぼすべてのデータベース タスクに使用できます。
 
-1. **オブジェクト エクスプローラー**で、サーバー上のターゲット データベースに移動します。 たとえば、**master** データベースを操作するには、 **[システム データベース]** を展開します。
+1. **オブジェクト エクスプローラー** で、サーバー上のターゲット データベースに移動します。 たとえば、**master** データベースを操作するには、 **[システム データベース]** を展開します。
 
 1. データベースを右クリックし、 **[新しいクエリ]** をクリックします。
 
@@ -107,7 +107,7 @@ Transact-SQL クエリはほとんどの管理タスクに使用できますが�
 
 3. *[新しいデータベース]* ダイアログで、新しいデータベースの名前を入力し、 *[OK]* をクリックします
 
-サーバーに新しいデータベースが正常に作成されます。 T-SQL を使用して新しいデータベースを作成する場合は、「[CREATE DATABASE (SQL Server Transact-SQL)](../t-sql/statements/create-database-sql-server-transact-sql.md)」を参照してください。
+サーバーに新しいデータベースが正常に作成されます。 T-SQL を使用して新しいデータベースを作成する場合は、「[CREATE DATABASE (SQL Server Transact-SQL)](../t-sql/statements/create-database-transact-sql.md)」を参照してください。
 
 ### <a name="drop-a-database"></a>データベースの削除
 
@@ -143,6 +143,6 @@ SQL Server Management Studio (SSMS) には、[利用状況モニター](../relat
 ## <a name="see-also"></a>関連項目
 - [SSMS とは](../ssms/sql-server-management-studio-ssms.md)
 - [SSMS を使用したデータベースのエクスポートとインポート](sql-server-linux-migrate-ssms.md)
-- [チュートリアル:SQL Server Management Studio](../ssms/tutorials/tutorial-sql-server-management-studio.md)
+- [チュートリアル:SQL Server Management Studio](../ssms/quickstarts/ssms-connect-query-sql-server.md)
 - [チュートリアル:Transact-SQL ステートメントの作成](../t-sql/tutorial-writing-transact-sql-statements.md)
 - [サーバーのパフォーマンスと利用状況の監視](../relational-databases/performance/server-performance-and-activity-monitoring.md)

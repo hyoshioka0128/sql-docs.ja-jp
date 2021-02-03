@@ -7,18 +7,18 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 ms.assetid: 1f510151-41d5-45c2-9cd0-b1ca0246fffe
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: e75a8511c8f706e8b92cbe2830b9f904f56c42b5
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 8e86fd5f90c2e30e3a6c496a70a063f575cd259f
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88444804"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99177827"
 ---
 # <a name="create-xml-index-selective-xml-indexes"></a>CREATE XML INDEX (選択的 XML インデックス)
 [!INCLUDE [SQL Server Azure SQL Database ](../../includes/applies-to-version/sql-asdb.md)]
@@ -30,7 +30,6 @@ ms.locfileid: "88444804"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 CREATE XML INDEX index_name  
     ON <table_object> ( xml_column_name )  
     USING XML INDEX sxi_index_name  
@@ -104,7 +103,7 @@ xmlnamespace_uri AS xmlnamespace_prefix
 ## <a name="examples"></a>例  
  次の例では、パス `pathabc`に選択的セカンダリ XML インデックスを作成します。 インデックスを作成するパスは、[CREATE SELECTIVE XML INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-selective-xml-index-transact-sql.md) で割り当てられた名前です。  
   
-```  
+```sql  
 CREATE XML INDEX filt_sxi_index_c  
 ON Tbl(xmlcol)  
 USING XML INDEX sxi_index  

@@ -7,16 +7,16 @@ ms.date: 10/17/2018
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 05531f1a64430acfb1b7fd52cacdb7542719cdd6
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 44fa8b361f74fb670dd5671bb9fbeaa9e635faad
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85756436"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470703"
 ---
 # <a name="firewall-configuration-for-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services のファイアウォール構成
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
 この記事では、Machine Learning Services を使用する場合に管理者またはアーキテクトが念頭に置く必要がある、ファイアウォールの構成に関する考慮事項を示します。
 

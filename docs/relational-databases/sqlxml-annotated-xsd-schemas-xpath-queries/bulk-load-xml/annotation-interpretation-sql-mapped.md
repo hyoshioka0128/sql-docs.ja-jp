@@ -18,19 +18,19 @@ ms.assetid: 7042741e-ce4d-4912-9c4a-d77194a028fc
 author: MightyPen
 ms.author: genemi
 ms.custom: seo-lt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: b38ef4e89db99239759ad0809a5b4828fd1906e3
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 199d39bb7d209fbfda5ca5a3f3907969b5ce7b2a
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85724707"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97479283"
 ---
 # <a name="annotation-interpretation---sqlmapped"></a>注釈の解釈 - sql:mapped
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
-  XML 一括読み込みでは、XSD スキーマの**sql: マップ**された注釈が想定どおりに処理されます。つまり、マッピングスキーマで任意の要素または属性に**sql: mapping = "false"** が指定されている場合、xml 一括読み込みでは、関連付けられているデータが対応する列に格納されません。  
+  XML 一括読み込みでは、XSD スキーマの **sql: マップ** された注釈が想定どおりに処理されます。つまり、マッピングスキーマで任意の要素または属性に **sql: mapping = "false"** が指定されている場合、xml 一括読み込みでは、関連付けられているデータが対応する列に格納されません。  
   
- XML 一括読み込みでは、マップされていない要素と属性が無視されます。これは、スキーマで記述されていないか、XSD スキーマで**sql: マップト = "false"** で注釈が付けられているためです。 このような列が**sql: overflow-field**を使用して指定されている場合は、マップされていないすべてのデータがオーバーフロー列に入ります。  
+ XML 一括読み込みでは、マップされていない要素と属性が無視されます。これは、スキーマで記述されていないか、XSD スキーマで **sql: マップト = "false"** で注釈が付けられているためです。 このような列が **sql: overflow-field** を使用して指定されている場合は、マップされていないすべてのデータがオーバーフロー列に入ります。  
   
  たとえば、次の XSD スキーマを考えてみます。  
   
@@ -56,11 +56,11 @@ ms.locfileid: "85724707"
 </xsd:schema>  
 ```  
   
- **HomePhone**属性は**sql: map = "false"** を指定しているため、XML 一括読み込みでは、この属性は対応する列にマップされません。 XSD スキーマでは、XML 一括読み込みでこの未使用データが格納されるオーバーフロー列 (**OverflowColumn**) が識別されます。  
+ **HomePhone** 属性は **sql: map = "false"** を指定しているため、XML 一括読み込みでは、この属性は対応する列にマップされません。 XSD スキーマでは、XML 一括読み込みでこの未使用データが格納されるオーバーフロー列 (**OverflowColumn**) が識別されます。  
   
 ### <a name="to-test-a-working-sample"></a>実際のサンプルをテストするには  
   
-1.  次のテーブルを**tempdb**データベースに作成します。  
+1.  次のテーブルを **tempdb** データベースに作成します。  
   
     ```  
     USE tempdb  

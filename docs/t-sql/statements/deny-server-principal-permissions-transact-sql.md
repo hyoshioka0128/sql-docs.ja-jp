@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: 859affa7-0567-47d1-9490-57c1abbd619b
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 0b3dbb2766d1e42fd1812e9eba5d92c40b324a25
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 8e3ea7c43e664883324f87f031ba47f985ef78bd
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88478929"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99177684"
 ---
 # <a name="deny-server-principal-permissions-transact-sql"></a>DENY (サーバー プリンシパルの権限の拒否) (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -130,7 +130,7 @@ GO
 ### <a name="b-denying-view-definition-permission-with-cascade"></a>B. CASCADE を指定して VIEW DEFINITION 権限を拒否する  
  次の例では、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ログイン `VIEW DEFINITION` の `EricKurjan` 権限を、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ログイン `RMeyyappan` に対して拒否します。 ここでは `CASCADE` オプションを使用して、`VIEW DEFINITION` がこの権限を許可したプリンシパルに対しても、`EricKurjan` の `RMeyyappan` 権限を拒否することを指定します。  
   
-```  
+```sql  
 USE master;  
 DENY VIEW DEFINITION ON LOGIN::EricKurjan TO RMeyyappan   
     CASCADE;  
@@ -140,7 +140,7 @@ GO
 ### <a name="c-denying-view-definition-permission-on-a-server-role"></a>C. サーバー ロールの VIEW DEFINITION 権限を拒否する  
  次の例では、`Sales` サーバー ロールの `VIEW DEFINITION` 権限を、`Auditors` サーバー ロールに対して拒否します。  
   
-```  
+```sql 
 USE master;  
 DENY VIEW DEFINITION ON SERVER ROLE::Sales TO Auditors ;  
 GO   

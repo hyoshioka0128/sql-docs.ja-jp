@@ -1,7 +1,7 @@
 ---
 title: SQL Server ドキュメント ナビゲーションのヒント
 description: SQL Server 技術ドキュメントを参照する際のヒントとテクニックです。ハブ ページ、目次、ヘッダー、階層リンクの使用方法、バージョン フィルターの使用方法などについて説明します。
-ms.date: 10/15/2019
+ms.date: 08/12/2020
 ms.prod: sql
 ms.technology: release-landing
 ms.reviewer: ''
@@ -9,21 +9,21 @@ ms.custom: ''
 ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: '>= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017 || = sqlallproducts-allversions'
-ms.openlocfilehash: f85c97e36900d3c6f4372004819690a8ede49d22
-ms.sourcegitcommit: 903856818acc657e5c42faa16d1c770aeb4e1d1b
+monikerRange: '>= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017'
+ms.openlocfilehash: 4c8852c9b2ce3f7bce027632b741511a008cb646
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83731602"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98595886"
 ---
-# <a name="sql-server-docs-navigation-guide"></a>SQL Server ドキュメント ナビゲーション ガイド 
+# <a name="sql-server-docs-navigation-guide"></a>SQL Server ドキュメント ナビゲーション ガイド
 
 このトピックでは、SQL Server 技術ドキュメント領域を参照する際のヒントとテクニックについて説明します。  
 
 ## <a name="hub-page"></a>ハブ ページ
 
-SQL Server のハブ ページは、[https://aka.ms/sqldocs](https://aka.ms/sqldocs) にあり、関連する SQL Server コンテンツを検索するためのエントリポイントです。
+SQL Server のハブ ページは、[https://aka.ms/sqldocs](../index.yml?WT.mc_id=akams) にあり、関連する SQL Server コンテンツを検索するためのエントリポイントです。
 
 SQL Server 技術ドキュメント セット内の各ページの上部にあるヘッダーにある **[SQL ドキュメント]** を選択すると、いつでもこのページに戻ることができます。 
 
@@ -31,7 +31,7 @@ SQL Server 技術ドキュメント セット内の各ページの上部にあ�
 
 ## <a name="offline-documentation"></a>オフライン ドキュメント
 
-SQL Server のドキュメントをオフライン システムで表示するには、2 つのオプションがあります。 SQL Server 技術ドキュメントを使用中にいつでも PDF を作成できます。または、[SQL Server のオフラインのヘルプ ビューアー](sql-server-help-installation.md)を使用してオフラインのコンテンツをダウンロードできます。 
+SQL Server のドキュメントをオフライン システムで表示するには、2 つのオプションがあります。 SQL Server 技術ドキュメントを使用中にいつでも PDF を作成できます。または、[SQL Server のオフラインのヘルプ ビューアー](./sql-server-offline-documentation.md)を使用してオフラインのコンテンツをダウンロードできます。 
 
 PDF を作成する場合は、すべての目次の下部にある **[Download PDF]\(PDF をダウンロード\)** リンクを選択します。
 

@@ -1,4 +1,5 @@
 ---
+description: Upgrade and Migrate Reporting Services
 title: Reporting Services のアップグレードと移行 | Microsoft Docs
 ms.prod: reporting-services
 ms.prod_service: reporting-services-native
@@ -11,12 +12,12 @@ author: maggiesMSFT
 ms.author: maggies
 ms.topic: conceptual
 ms.date: 05/01/2020
-ms.openlocfilehash: ca9ffd01b7553cb343a83565615a786467371891
-ms.sourcegitcommit: b72c9fc9436c44c6a21fd96223c73bf94706c06b
+ms.openlocfilehash: 2515a93b025392735135cd13cbd734975f8ed221
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719528"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596836"
 ---
 # <a name="upgrade-and-migrate-reporting-services"></a>Upgrade and Migrate Reporting Services
 
@@ -26,11 +27,11 @@ ms.locfileid: "82719528"
  
 - **Reporting Services 2016 以前のバージョン "*から*" Reporting Services 2016 以前のバージョン "*への*" アップグレード:** サーバーと現在インストールされているインスタンスで [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] コンポーネントをアップグレードします。 これは一般に "インプレース" アップグレードと呼ばれます。 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] サーバーのモード間でのインプレース アップグレードはサポートされていません。 たとえば、ネイティブ モードのレポート サーバーを SharePoint モードのレポート サーバーにアップグレードすることはできません。 レポート アイテムはモード間で移行できます。 詳細については、このドキュメントで後述する「[SharePoint モードのアップグレードと移行のシナリオ](#bkmk_sharePoint_scenarios)」セクションを参照してください。  
 
-- **Reporting Services 2016 以前のバージョン "*から*" Reporting Services 2017 以降のバージョン "*への*" アップグレード**は、上記のバージョンと同じアップグレード シナリオではありません。 Reporting Services 2016 以前のバージョン "*に*" アップグレードする場合、SQL Server インストール メディアを使用したインプレース アップグレード プロセスに従うことができます。 新しい Reporting Services はスタンドアロン製品であるため、Reporting Services 2016 以前のバージョン "*から*" Reporting Services 2017 以降のバージョン "*に*" アップグレードする場合は、同じ手順に従うことはできません。 これは SQL Server のインストール メディアには含まれなくなりました。 
+- **Reporting Services 2016 以前のバージョン "*から*" Reporting Services 2017 以降のバージョン "*への*" アップグレード** は、上記のバージョンと同じアップグレード シナリオではありません。 Reporting Services 2016 以前のバージョン "*に*" アップグレードする場合、SQL Server インストール メディアを使用したインプレース アップグレード プロセスに従うことができます。 新しい Reporting Services はスタンドアロン製品であるため、Reporting Services 2016 以前のバージョン "*から*" Reporting Services 2017 以降のバージョン "*に*" アップグレードする場合は、同じ手順に従うことはできません。 これは SQL Server のインストール メディアには含まれなくなりました。 
 
     Reporting Services 2016 以前のバージョンから Reporting Services 2017 以降にアップグレードするには、移行先のインスタンスとして Reporting Services 2017 以降を使用して、「[Reporting Services のインストールの移行 (ネイティブ モード)](migrate-a-reporting-services-installation-native-mode.md)」の記事に従います。 
 
-- **Reporting Services 2017 "*から*" 今後のバージョンへのアップグレード**も、製品のインストール GUID が同じであるため、インプレース アップグレード シナリオです。 SQLServerReportingServices.exe インストール ファイルを実行して、Reporting Services が現在インストールされているサーバーでインプレース アップグレードを開始します。
+- **Reporting Services 2017 "*から*" 今後のバージョンへのアップグレード** も、製品のインストール GUID が同じであるため、インプレース アップグレード シナリオです。 SQLServerReportingServices.exe インストール ファイルを実行して、Reporting Services が現在インストールされているサーバーでインプレース アップグレードを開始します。
   
 - **移行**:新しい SharePoint 環境をインストールして構成し、レポート アイテムとリソースを新しい環境にコピーして、既存のコンテンツを使用するよう新しい環境を構成します。 下位レベルの移行形式では、 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] データベース、構成ファイル、および SharePoint コンテンツ データベース (SharePoint モードを使用している場合) をコピーします。  
 
@@ -42,7 +43,7 @@ ms.locfileid: "82719528"
  アップグレード可能なサポートされるエディションとバージョンの詳細な一覧については、「 [Supported Version and Edition Upgrades](../../database-engine/install-windows/supported-version-and-edition-upgrades.md)」を参照してください。  
   
 > [!TIP]  
->  SQL Server に関する問題の最新情報については、「[SQL Server 2016 リリース ノート](https://go.microsoft.com/fwlink/?LinkID=398124)」を参照してください。  
+>  SQL Server に関する問題の最新情報については、「[SQL Server 2016 リリース ノート](../../sql-server/sql-server-2016-release-notes.md)」を参照してください。  
   
   
 ##  <a name="side-by-side-installations"></a><a name="bkmk_side_by_side"></a> サイド バイ サイド インストール  
@@ -68,7 +69,7 @@ ms.locfileid: "82719528"
 
 * [SQL Server 2016 へのアップグレード](../../database-engine/install-windows/upgrade-sql-server.md)
 * [インストール ウィザードを使用した SQL Server 2016 へのアップグレード &#40;セットアップ&#41;](../../database-engine/install-windows/upgrade-sql-server-using-the-installation-wizard-setup.md)
-* [コマンド プロンプトからの SQL Server 2016 のインストール](../../database-engine/install-windows/install-sql-server-2016-from-the-command-prompt.md)
+* [コマンド プロンプトからの SQL Server 2016 のインストール](../../database-engine/install-windows/install-sql-server-from-the-command-prompt.md)
   
   
 ##  <a name="pre-upgrade-checklist"></a><a name="bkmk_upgrade_checklist"></a> アップグレード前のチェック リスト  
@@ -114,7 +115,7 @@ ms.locfileid: "82719528"
   
 3.  アップグレードを続行できる場合は、アップグレード処理を進めるように求められます。  
   
-4.  SQL Server Reporting Services プログラム ファイルの新しいフォルダーが作成されます。 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] のインストール用のプログラム フォルダーには、MSRS13.\<*インスタンス名*> が含まれます。  
+4.  SQL Server Reporting Services プログラム ファイルの新しいフォルダーが作成されます。 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] のインストール用のプログラム フォルダーには、MSRS13.\<*instance name*> が含まれます。  
   
 5.  SQL Server Reporting Services レポート サーバーのプログラム ファイル、構成ツール、およびレポート サーバー機能の一部であるコマンド ライン ユーティリティが追加されます。  
   
@@ -122,9 +123,9 @@ ms.locfileid: "82719528"
   
     2.  新しいバージョンにアップグレードされるレポート サーバーの構成ツールおよびユーティリティには、ネイティブ モードの [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] 構成ツール、コマンド ライン ユーティリティ (RS.exe など)、およびレポート ビルダーがあります。  
   
-    3.  [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] などの他のクライアント ツールは個別にダウンロードし、個別にアップグレードする必要があります。 詳細については、「 [Download SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/mt238290.aspx)」 (SQL Server Management Studio (SSMS) のダウンロード) を参照してください。
+    3.  [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] などの他のクライアント ツールは個別にダウンロードし、個別にアップグレードする必要があります。 詳細については、「 [Download SQL Server Management Studio (SSMS)](../../ssms/download-sql-server-management-studio-ssms.md)」 (SQL Server Management Studio (SSMS) のダウンロード) を参照してください。
   
-    4.  [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)] は個別にダウンロードします。 詳細については、「 [SQL Server Data Tools in Visual Studio 2015](https://msdn.microsoft.com/mt186501)」 (Visual Studio 2015 の SQL Server Data Tools) を参照してください。  
+    4.  [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)] は個別にダウンロードします。 詳細については、「 [SQL Server Data Tools in Visual Studio 2015](/previous-versions/mt186501(v=msdn.10))」 (Visual Studio 2015 の SQL Server Data Tools) を参照してください。  
   
 6.  SQL Server Reporting Services レポート サーバー サービスのサービス コントロール マネージャーにあるサービス エントリが再利用されます。 このサービスのエントリには、レポート サーバー Windows サービス アカウントが含まれます。  
   
@@ -138,13 +139,13 @@ ms.locfileid: "82719528"
 ##  <a name="upgrade-a-reporting-services-native-mode-scale-out-deployment"></a><a name="bkmk_native_scaleout"></a> Reporting Services ネイティブ モードのスケールアウト配置のアップグレード  
  複数のレポート サーバーにスケールアウトされる [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] ネイティブ モードの配置をアップグレードする方法の概要を次に示します。 このプロセスでは、 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] 配置のダウンタイムが発生します。  
   
-1.  レポート サーバー データベースと暗号化キーをバックアップします。 詳細については、「[Reporting Services のバックアップおよび復元操作](../../reporting-services/install-windows/backup-and-restore-operations-for-reporting-services.md)」および「[スケールアウト配置に関する暗号化キーの追加と削除 &#40;SSRS 構成マネージャー&#41;](../../reporting-services/install-windows/add-and-remove-encryption-keys-for-scale-out-deployment.md)」を参照してください。  
+1.  レポート サーバー データベースと暗号化キーをバックアップします。 詳細については、「[Reporting Services のバックアップおよび復元操作](../../reporting-services/install-windows/backup-and-restore-operations-for-reporting-services.md)」、および[スケールアウト配置に関する暗号化キーの追加と削除 (レポート サーバー構成マネージャー)](../../reporting-services/install-windows/add-and-remove-encryption-keys-for-scale-out-deployment.md) に関する記事を参照してください。  
   
-2.  [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] 構成マネージャーを使用して、スケールアウトした配置からすべてのレポート サーバーを削除します。 詳細については、「[ネイティブ モード レポート サーバーのスケールアウト配置の構成 &#40;SSRS 構成マネージャー&#41;](../../reporting-services/install-windows/configure-a-native-mode-report-server-scale-out-deployment.md)」を参照してください。  
+2.  [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] 構成マネージャーを使用して、スケールアウトした配置からすべてのレポート サーバーを削除します。 詳細については、[ネイティブ モード レポート サーバーのスケールアウト配置の構成 (レポート サーバー構成マネージャー)](../../reporting-services/install-windows/configure-a-native-mode-report-server-scale-out-deployment.md) に関する記事を参照してください。  
   
 3.  いずれかのレポート サーバーを SQL Server Reporting Services にアップグレードします。  
   
-4.  [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] 構成マネージャーを使用して、スケールアウト配置にレポート サーバーを再度追加します。 詳細については、「[ネイティブ モード レポート サーバーのスケールアウト配置の構成 &#40;SSRS 構成マネージャー&#41;](../../reporting-services/install-windows/configure-a-native-mode-report-server-scale-out-deployment.md)」を参照してください。  
+4.  [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] 構成マネージャーを使用して、スケールアウト配置にレポート サーバーを再度追加します。 詳細については、[ネイティブ モード レポート サーバーのスケールアウト配置の構成 (レポート サーバー構成マネージャー)](../../reporting-services/install-windows/configure-a-native-mode-report-server-scale-out-deployment.md) に関する記事を参照してください。  
   
      各サーバーで、アップグレードおよびスケールアウトの手順を繰り返します。  
   
@@ -235,13 +236,13 @@ ms.locfileid: "82719528"
   
 -   [SharePoint 2016 へのアップグレード プロセスの概要](https://technet.microsoft.com/library/cc262483\(v=office.16\))
 
--   [SharePoint 2013 へのアップグレード プロセスの概要](https://go.microsoft.com/fwlink/p/?LinkId=256688)。
+-   [SharePoint 2013 へのアップグレード プロセスの概要](/SharePoint/upgrade-and-update/overview-of-the-upgrade-process-from-sharepoint-2010-to-sharepoint-2013)。
   
--   [SharePoint 2013 へのアップグレードの前に環境をクリーンアップする](https://go.microsoft.com/fwlink/p/?LinkId=256689)  
+-   [SharePoint 2013 へのアップグレードの前に環境をクリーンアップする](/SharePoint/upgrade-and-update/clean-up-an-environment-before-an-upgrade-to-sharepoint-2013)  
   
 -   [SharePoint 2013 から SharePoint Server 2016 にデータベースをアップグレードする](https://technet.microsoft.com/library/cc303436\(v=office.16\))
 
--   [SharePoint 2010 から SharePoint 2013 にデータベースをアップグレードする](https://go.microsoft.com/fwlink/p/?LinkId=256690)。  
+-   [SharePoint 2010 から SharePoint 2013 にデータベースをアップグレードする](/SharePoint/upgrade-and-update/upgrade-content-databases-from-sharepoint-2010-to-sharepoint-2013)。  
 
 ## <a name="next-steps"></a>次のステップ
 

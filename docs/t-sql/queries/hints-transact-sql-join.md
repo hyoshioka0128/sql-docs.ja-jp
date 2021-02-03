@@ -23,12 +23,12 @@ helpviewer_keywords:
 ms.assetid: 09069f4a-f2e3-4717-80e1-c0110058efc4
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 728805a8e4d8bfdbee198f30e26a9228b62b894c
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 37f988a345bcc4280f6e76f039049ca56a4f6a81
+ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88360948"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91116307"
 ---
 # <a name="hints-transact-sql---join"></a>ヒント (Transact-SQL) - Join
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -51,7 +51,6 @@ ms.locfileid: "88360948"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 <join_hint> ::=   
      { LOOP | HASH | MERGE | REMOTE }  
 ```  
@@ -79,7 +78,7 @@ ms.locfileid: "88360948"
 ### <a name="a-using-hash"></a>A. HASH を使用する  
  次の例では、クエリの `JOIN` 操作を `HASH` 結合によって実行することを指定します。 この例では、[!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] データベースを使用します。  
   
-```  
+```sql
 SELECT p.Name, pr.ProductReviewID  
 FROM Production.Product AS p  
 LEFT OUTER HASH JOIN Production.ProductReview AS pr  
@@ -90,7 +89,7 @@ ORDER BY ProductReviewID DESC;
 ### <a name="b-using-loop"></a>B. LOOP を使用する  
  次の例では、クエリの `JOIN` 操作を `LOOP` 結合によって実行することを指定します。 この例では、[!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] データベースを使用します。  
   
-```  
+```sql
 DELETE FROM Sales.SalesPersonQuotaHistory   
 FROM Sales.SalesPersonQuotaHistory AS spqh  
     INNER LOOP JOIN Sales.SalesPerson AS sp  
@@ -102,7 +101,7 @@ GO
 ### <a name="c-using-merge"></a>C. MERGE を使用する  
  次の例では、クエリの `JOIN` 操作を `MERGE` 結合によって実行することを指定します。 この例では、[!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] データベースを使用します。  
   
-```  
+```sql
 SELECT poh.PurchaseOrderID, poh.OrderDate, pod.ProductID, pod.DueDate, poh.VendorID   
 FROM Purchasing.PurchaseOrderHeader AS poh  
 INNER MERGE JOIN Purchasing.PurchaseOrderDetail AS pod   

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -22,14 +22,14 @@ helpviewer_keywords:
 - compatibility [SQL Server], system tables
 - user IDs [SQL Server]
 ms.assetid: 8e4624f5-9d36-4ce7-9c9e-1fe010fa2122
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 3eb92654dfb25a0e66d2e071040e487e6a404366
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: ff5bb1e1c95c2cd1429e101f4ebebb5dffda10a0
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88482047"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99160636"
 ---
 # <a name="system-compatibility-views-transact-sql"></a>システム互換性ビュー (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -57,9 +57,9 @@ ms.locfileid: "88482047"
 |**uid**|**syscacheobjects**|**sys.dm_exec_plan_attributes**|  
 |**uid**|**sysprocesses**|**sys.dm_exec_requests**|  
   
- ユーザーデータベースで参照されている場合、SQL Server 2000 で非推奨と発表されたシステムテーブル ( **sys.syslanguages** や **syscacheobjects**など) は、 **sys** スキーマのバック互換ビューにバインドされるようになりました。 SQL Server 2000 システムテーブルは複数のバージョンで非推奨とされているため、この変更は互換性に影響する変更とは見なされません。  
+ ユーザーデータベースで参照されている場合、SQL Server 2000 で非推奨と発表されたシステムテーブル ( **sys.syslanguages** や **syscacheobjects** など) は、 **sys** スキーマのバック互換ビューにバインドされるようになりました。 SQL Server 2000 システムテーブルは複数のバージョンで非推奨とされているため、この変更は互換性に影響する変更とは見なされません。  
   
- 例: ユーザーが **sys.syslanguages** という名前のユーザーテーブルをユーザーデータベースに作成した場合、SQL Server 2008 では、そのデータベースのステートメントによって、 `SELECT * from dbo.syslanguages;` ユーザーテーブルから値が返されます。 SQL Server 2012 以降、この方法ではシステムビュー **sys.sysの言語**からデータが返されます。  
+ 例: ユーザーが **sys.syslanguages** という名前のユーザーテーブルをユーザーデータベースに作成した場合、SQL Server 2008 では、そのデータベースのステートメントによって、 `SELECT * from dbo.syslanguages;` ユーザーテーブルから値が返されます。 SQL Server 2012 以降、この方法ではシステムビュー **sys.sysの言語** からデータが返されます。  
   
 ## <a name="see-also"></a>参照  
  [カタログ ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)   

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - KILL STATS JOB
 - KILL_STATS_JOB_TSQL
@@ -21,14 +21,14 @@ helpviewer_keywords:
 - KILL STATS JOB statement
 - statistics update jobs [SQL Server]
 ms.assetid: 55a8f9f1-3259-45c0-8ab9-60b9c088b4b4
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 439ca52d7678372ee6bf3adecccc99444631a311
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: d52e417bef5c998d381ee9720d626d39430d8fee
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88459331"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99113126"
 ---
 # <a name="kill-stats-job-transact-sql"></a>KILL STATS JOB (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -39,8 +39,7 @@ ms.locfileid: "88459331"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 KILL STATS JOB job_id   
 ```  
   
@@ -61,7 +60,7 @@ KILL STATS JOB job_id
 ## <a name="examples"></a>例  
  次の例は、*job_id* = `53` のジョブに関連付けられた統計情報の更新を終了する方法を示しています。  
   
-```  
+```sql  
 KILL STATS JOB 53;  
 GO  
 ```  

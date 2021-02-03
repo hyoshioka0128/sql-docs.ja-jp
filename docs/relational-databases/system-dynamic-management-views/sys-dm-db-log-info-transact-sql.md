@@ -1,6 +1,6 @@
 ---
-description: dm_db_log_info (Transact-sql)
-title: dm_db_log_info (Transact-sql) |Microsoft Docs
+description: sys.dm_db_log_info (Transact-sql)
+title: sys.dm_db_log_info (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 04/24/2018
 ms.prod: sql
@@ -20,15 +20,15 @@ ms.assetid: f6b40060-c17d-472f-b0a3-3b350275d487
 author: savjani
 ms.author: pariks
 manager: ajayj
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: aba965d4a0289db9ef7def58b90f15a1479cb485
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 171cada53538f8e5b615e6096a169b0976b57532
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88447664"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99236048"
 ---
-# <a name="sysdm_db_log_info-transact-sql"></a>dm_db_log_info (Transact-sql)
+# <a name="sysdm_db_log_info-transact-sql"></a>sys.dm_db_log_info (Transact-sql)
 [!INCLUDE[tsql-appliesto-2016sp2-asdb-xxxx-xxx-md](../../includes/tsql-appliesto-2016sp2-asdb-xxxx-xxx-md.md)]
 
 トランザクションログの [仮想ログファイル (値)](../../relational-databases/sql-server-transaction-log-architecture-and-management-guide.md#physical_arch) を返します。 メモすべてのトランザクションログファイルがテーブル出力で結合されていることに注意してください。 出力の各行は、トランザクションログの "1" を表し、ログ内のその中に関連する情報を提供します。
@@ -41,7 +41,7 @@ sys.dm_db_log_info ( database_id )
 
 ## <a name="arguments"></a>引数  
  *database_id* |NULL |標準  
- データベースの ID を示します。 *database_id* は **int**です。有効な入力値は、データベースの ID 番号、NULL、または DEFAULT です。 既定値は NULL です。 現在のデータベースのコンテキストでは、NULL および DEFAULT は同じ値になります。
+ データベースの ID を示します。 *database_id* は **int** です。有効な入力値は、データベースの ID 番号、NULL、または DEFAULT です。 既定値は NULL です。 現在のデータベースのコンテキストでは、NULL および DEFAULT は同じ値になります。
  
  NULL を指定すると、現在のデータベースのすべての情報が返されます。
 
@@ -61,7 +61,7 @@ sys.dm_db_log_info ( database_id )
 |vlf_parity|**tinyint** |[仮想ログファイル (%)](../../relational-databases/sql-server-transaction-log-architecture-and-management-guide.md#physical_arch)のパリティ。指定した範囲内のログの末尾を特定するために内部的に使用されます。|
 |vlf_first_lsn|**nvarchar (48)** |[仮想ログファイル (](../../relational-databases/sql-server-transaction-log-architecture-and-management-guide.md#physical_arch)列 1) 内の最初のログレコードの[ログシーケンス番号 (LSN)](../../relational-databases/sql-server-transaction-log-architecture-and-management-guide.md#Logical_Arch) 。|
 |vlf_create_lsn|**nvarchar (48)** |[仮想ログファイル](../../relational-databases/sql-server-transaction-log-architecture-and-management-guide.md#physical_arch)を作成したログレコードの[ログシーケンス番号 (LSN)](../../relational-databases/sql-server-transaction-log-architecture-and-management-guide.md#Logical_Arch) 。|
-|vlf_encryptor_thumbprint|**varbinary(20)**| **適用対象:** [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] <br><br> 値が [Transparent Data Encryption](../../relational-databases/security/encryption/transparent-data-encryption.md)を使用して暗号化されている場合は、オフの暗号化の拇印を表示します。それ以外の場合は NULL を示します。 |
+|vlf_encryptor_thumbprint|**varbinary(20)**| **適用対象:** [!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] <br><br> 値が [Transparent Data Encryption](../../relational-databases/security/encryption/transparent-data-encryption.md)を使用して暗号化されている場合は、オフの暗号化の拇印を表示します。それ以外の場合は NULL を示します。 |
 
 ## <a name="remarks"></a>解説
 `sys.dm_db_log_info`動的管理関数は、ステートメントを置き換え `DBCC LOGINFO` ます。    

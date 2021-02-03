@@ -13,13 +13,13 @@ f1_keywords:
 ms.assetid: 0b2e3d4e-03b7-4c31-8f96-48648d750010
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: =azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions
-ms.openlocfilehash: 8d321f41871469284b3ce8dd3402cc16eee385d1
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-mi-current||>=sql-server-2016
+ms.openlocfilehash: fb42b1c8f14880c0831d153d4507adc4da80065d
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88493883"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97479863"
 ---
 # <a name="publisher-information-publications"></a>パブリッシャー情報、[パブリケーション]
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -41,18 +41,18 @@ ms.locfileid: "88493883"
  **状態**  
  各パブリケーションの状態です。これは、サブスクリプションの最も優先度の高い状態により決定されます。 既定では、パブリケーション情報を表示するグリッドは **[状態]** 列の順序で並べられています。 表示される状態の値と、その値の並べ替え順 (たとえば、エラーは常にグリッドの上部に表示されます) を次に示します。  
   
--   エラー  
+-   Error  
   
 -   [パフォーマンス クリティカル]  
   
 -   [失敗したコマンドの再試行]  
   
--   [OK]  
+-   OK  
   
  **[パフォーマンス クリティカル]** 状態は、トランザクション サブスクリプションとマージ サブスクリプションに関連しています。トランザクション サブスクリプションの場合は、しきい値が設定されている場合にのみ表示されます。 パフォーマンスの測定としきい値の設定については、「[Monitor Performance with Replication Monitor](../../relational-databases/replication/monitor/monitor-performance-with-replication-monitor.md)」 (レプリケーション モニターを使用したパフォーマンスの監視) と「[レプリケーション モニターのしきい値と警告の設定](../../relational-databases/replication/monitor/set-thresholds-and-warnings-in-replication-monitor.md)」を参照してください。  
   
  **Publication**  
- 各パブケーションの名前です。 *PublicationDatabaseName: PublicationName*という形式になります。  
+ 各パブケーションの名前です。 *PublicationDatabaseName: PublicationName* という形式になります。  
   
  **サブスクリプション**  
  各パブリケーションのサブスクリプションの数です。  

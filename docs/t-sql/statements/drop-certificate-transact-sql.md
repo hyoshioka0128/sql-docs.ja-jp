@@ -22,16 +22,16 @@ helpviewer_keywords:
 ms.assetid: 5704aa04-68a3-4b29-b62b-8868af487817
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 7c3907c74fd03e58416a2b15cec06d3416570f11
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 0b752d29f38bd6a4301ea4f5da2a3560c02608bb
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88426634"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97483904"
 ---
 # <a name="drop-certificate-transact-sql"></a>DROP CERTIFICATE (Transact-SQL)
-[!INCLUDE [sql-asdb-asa-pdw](../../includes/applies-to-version/sql-asdb-asa-pdw.md)]
+[!INCLUDE [sql-asdb-pdw](../../includes/applies-to-version/sql-asdb-pdw.md)]
 
   データベースから証明書を削除します。  
   
@@ -41,9 +41,7 @@ ms.locfileid: "88426634"
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md) 
 
   
-> [!Note]
-> [!INCLUDE [Synapse preview note](../../includes/synapse-preview-note.md)]
-  
+ 
 ## <a name="syntax"></a>構文  
   
 ```synaxsql  
@@ -65,7 +63,7 @@ DROP CERTIFICATE certificate_name
 ## <a name="examples"></a>例  
  次の例では、証明書 `Shipping04` をデータベース `AdventureWorks` から削除します。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 DROP CERTIFICATE Shipping04;  
 ```  
@@ -73,7 +71,7 @@ DROP CERTIFICATE Shipping04;
 ## <a name="examples-sspdw"></a>例: [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  
  次の例では、証明書 `Shipping04` を削除します。  
   
-```
+```sql
 USE master;  
 DROP CERTIFICATE Shipping04;  
 ```  

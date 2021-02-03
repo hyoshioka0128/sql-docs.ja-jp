@@ -3,7 +3,7 @@ title: '[出力ウィンドウ]'
 description: '[出力] ウィンドウを使用して、SQL Server Management Studio デバッガーなどのツールからのステータス メッセージとその他の出力を表示する方法について説明します。'
 titleSuffix: T-SQL Debugger
 ms.prod: sql
-ms.technology: scripting
+ms.technology: ssms
 ms.topic: conceptual
 helpviewer_keywords:
 - Output Window [Transact-SQL]
@@ -14,13 +14,13 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 12/04/2019
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 93cf1e703e7a8610ecf2bc8de841c00b7b2b3397
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 66eda4d5c7cf3d5098eec0f00e4cb5dbf50cd0d7
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87247334"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97478723"
 ---
 # <a name="transact-sql-debugger---output-window"></a>Transact-SQL デバッガー - [出力] ウィンドウ
 
@@ -39,7 +39,7 @@ ms.locfileid: "87247334"
  出力ペインの一覧を表示します。 ユーザーに情報を配信するために **[出力]** ウィンドウで使用したツールに応じて、情報のペインの一部を使用できる場合があります。  
   
  **出力ペイン**  
- 選択されているペインの出力を **出力ペインの一覧**に表示します。  
+ 選択されているペインの出力を **出力ペインの一覧** に表示します。  
   
 ## <a name="see-also"></a>参照  
- [Transact-SQL デバッガー](../../relational-databases/scripting/transact-sql-debugger.md)  
+ [Transact-SQL デバッガー](./transact-sql-debugger.md)

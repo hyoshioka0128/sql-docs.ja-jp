@@ -1,11 +1,11 @@
 ---
-description: external_language_files (Transact-sql)-SQL Server
-title: external_language_files (Transact-sql)-SQL Server |Microsoft Docs
+description: sys.external_language_files (Transact-sql)-SQL Server
+title: sys.external_language_files (Transact-sql)-SQL Server |Microsoft Docs
 ms.custom: ''
 ms.date: 05/22/2019
 ms.prod: sql
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - external_languages
 - external_languages_TSQL
@@ -19,15 +19,15 @@ author: nelgson
 ms.author: negust
 ms.reviewer: dphansen
 manager: cgronlun
-monikerRange: '>=sql-server-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: fe6da94cc085e14667ee0518452fc6043eed60e9
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=sql-server-ver15'
+ms.openlocfilehash: f283066ac99b4ef41b0fc6d46fc7b1a2a64b1270
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88401068"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99203777"
 ---
-# <a name="sysexternal_language_files-transact-sql"></a>external_language_files (Transact-sql)
+# <a name="sysexternal_language_files-transact-sql"></a>sys.external_language_files (Transact-sql)
 [!INCLUDE[SQL Server 2019](../../includes/applies-to-version/sqlserver2019.md)]
 
 このカタログビューには、データベース内の外部言語拡張ファイルの一覧が表示されます。 **R** と **Python** は予約済みの名前であり、それらの特定の名前で外部言語を作成することはできません。
@@ -36,7 +36,7 @@ File_spec から外部言語が作成されると、拡張機能自体とその�
 
 ## <a name="sysexternal_languages"></a>sys.external_languages
 
-カタログビューの external_language_files には、データベース内の外部言語拡張機能ごとに1行のデータが表示されます。 パラメーター
+カタログビュー sys.external_language_files には、データベース内の外部言語拡張機能ごとに1行のデータが表示されます。 パラメーター
 
 |列名 |データ型 | 説明|
 |------|------|------|

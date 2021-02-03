@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DROP SERVER AUDIT
 - DROP_SERVER_AUDIT_TSQL
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: faace8a3-daa9-4208-a2cd-4249eb32175c
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 589334b9834a6f64c2a50bed77d890c5da013efd
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 212921f49257745e050759f70d1c7ade8f9dabf1
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88304351"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99160222"
 ---
 # <a name="drop-server-audit--transact-sql"></a>DROP SERVER AUDIT (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -35,7 +35,6 @@ ms.locfileid: "88304351"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 DROP SERVER AUDIT audit_name  
     [ ; ]  
 ```  
@@ -55,7 +54,7 @@ DROP SERVER AUDIT audit_name
 ## <a name="examples"></a>例  
  次の例では、`HIPAA_Audit` という監査を削除します。  
   
-```  
+```sql  
 ALTER SERVER AUDIT HIPAA_Audit  
 STATE = OFF;  
 GO  

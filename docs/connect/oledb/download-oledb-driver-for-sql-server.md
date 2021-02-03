@@ -1,18 +1,18 @@
 ---
 title: Microsoft OLE DB Driver for SQL Server のダウンロード | Microsoft Docs
 description: SQL Server や Azure SQL Database に接続するネイティブ Windows アプリケーションを開発するには、Microsoft OLE DB Driver for SQL Server をダウンロードします。
-ms.date: 05/25/2020
+ms.date: 12/01/2020
 ms.prod: sql
 ms.technology: connectivity
 ms.topic: conceptual
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 000d7c39221f54459783fc9117a35a880fb02c92
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+ms.openlocfilehash: 4d0f619fbdba59a902a1db379f65ebd131e5e4df
+ms.sourcegitcommit: cad737d30e5a80033f3b021cc3f0d47c00756a6b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86006984"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96614484"
 ---
 # <a name="download-microsoft-ole-db-driver-for-sql-server"></a>Microsoft OLE DB Driver for SQL Server のダウンロード
 
@@ -22,28 +22,30 @@ OLE DB Driver for SQL Server はスタンドアロンのデータ アクセス �
 
 ## <a name="download"></a>ダウンロード
 
-Microsoft OLE DB Driver 18.4 for SQL Server は、最新の一般提供 (GA) バージョンです。 以前のバージョンの Microsoft OLE DB Driver 18 for SQL Server がインストールされている場合は、18.4 をインストールすると 18.4 にアップグレードされます。
+Microsoft OLE DB Driver for SQL Server の再頒布可能インストーラーでは、新しい SQL Server 機能を利用するために実行時に必要なクライアント コンポーネントがインストールされます。 バージョン 18.3 以降のインストーラーには、Microsoft Active Directory 認証ライブラリ (ADAL.dll) も含まれていてインストールされます。
 
-**[![ダウンロード](../../ssms/media/download-icon.png) Microsoft OLE DB Driver for SQL Server r (x64) のダウンロード](https://go.microsoft.com/fwlink/?linkid=2129954)**  
-**[![ダウンロード](../../ssms/media/download-icon.png) Microsoft OLE DB Driver for SQL Server r (x86) のダウンロード](https://go.microsoft.com/fwlink/?linkid=2131003)**  
+Microsoft OLE DB Driver 18.5 for SQL Server は、最新の一般提供 (GA) バージョンです。 以前のバージョンの Microsoft OLE DB Driver 18 for SQL Server がインストールされている場合は、18.5 をインストールすると 18.5 にアップグレードされます。
+
+**[![ダウンロード](../../ssms/media/download-icon.png) Microsoft OLE DB Driver for SQL Server r (x64) のダウンロード](https://go.microsoft.com/fwlink/?linkid=2135577)**  
+**[![ダウンロード](../../ssms/media/download-icon.png) Microsoft OLE DB Driver for SQL Server r (x86) のダウンロード](https://go.microsoft.com/fwlink/?linkid=2135722)**  
 
 ### <a name="version-information"></a>バージョン情報
 
-- リリース番号:18.4.0
-- リリース日:2020 年 5 月 30 日
+- リリース番号:18.5.0
+- リリース日:2020 年 12 月 1 日
 
 > [!Note]
-> 英語以外のバージョンからこのページにアクセスしていて、最新の内容を見たい場合は、[サイトの英語 (米国) 版](https://aka.ms/downloadmsoledbsqlusenglish)をご覧ください。 [使用できる言語](#available-languages)を選択して、英語 (米国) 版のサイトから別の言語をダウンロードできます。ます。
+> 英語以外のバージョンからこのページにアクセスしていて、最新の内容を見たい場合は、[サイトの英語 (米国) 版]()をご覧ください。 [使用できる言語](#available-languages)を選択して、英語 (米国) 版のサイトから別の言語をダウンロードできます。ます。
 
 ## <a name="available-languages"></a>使用できる言語
 
 Microsoft OLE DB Driver for SQL Server のこのリリースは、次の言語でインストールできます。
 
-Microsoft OLE DB Driver 18.4 for SQL Server (x64):  
-[簡体中国語](https://go.microsoft.com/fwlink/?linkid=2129954&clcid=0x804) | [繁体中国語](https://go.microsoft.com/fwlink/?linkid=2129954&clcid=0x404) | [英語 (米国)](https://go.microsoft.com/fwlink/?linkid=2129954&clcid=0x409) | [フランス語](https://go.microsoft.com/fwlink/?linkid=2129954&clcid=0x40c) | [ドイツ語](https://go.microsoft.com/fwlink/?linkid=2129954&clcid=0x407) | [イタリア語](https://go.microsoft.com/fwlink/?linkid=2129954&clcid=0x410) | [日本語](https://go.microsoft.com/fwlink/?linkid=2129954&clcid=0x411) | [韓国語](https://go.microsoft.com/fwlink/?linkid=2129954&clcid=0x412) | [ポルトガル語 (ブラジル)](https://go.microsoft.com/fwlink/?linkid=2129954&clcid=0x416) | [ロシア語](https://go.microsoft.com/fwlink/?linkid=2129954&clcid=0x419) | [スペイン語](https://go.microsoft.com/fwlink/?linkid=2129954&clcid=0x40a)
+Microsoft OLE DB Driver 18.5 for SQL Server (x64):  
+[簡体中国語](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x804) | [繁体中国語](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x404) | [英語 (米国)](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x409) | [フランス語](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x40c) | [ドイツ語](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x407) | [イタリア語](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x410) | [日本語](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x411) | [韓国語](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x412) | [ポルトガル語 (ブラジル)](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x416) | [ロシア語](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x419) | [スペイン語](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x40a)
 
-Microsoft OLE DB Driver 18.4 for SQL Server (x86):  
-[簡体中国語](https://go.microsoft.com/fwlink/?linkid=2131003&clcid=0x804) | [繁体中国語](https://go.microsoft.com/fwlink/?linkid=2131003&clcid=0x404) | [英語 (米国)](https://go.microsoft.com/fwlink/?linkid=2131003&clcid=0x409) | [フランス語](https://go.microsoft.com/fwlink/?linkid=2131003&clcid=0x40c) | [ドイツ語](https://go.microsoft.com/fwlink/?linkid=2131003&clcid=0x407) | [イタリア語](https://go.microsoft.com/fwlink/?linkid=2131003&clcid=0x410) | [日本語](https://go.microsoft.com/fwlink/?linkid=2131003&clcid=0x411) | [韓国語](https://go.microsoft.com/fwlink/?linkid=2131003&clcid=0x412) | [ポルトガル語 (ブラジル)](https://go.microsoft.com/fwlink/?linkid=2131003&clcid=0x416) | [ロシア語](https://go.microsoft.com/fwlink/?linkid=2131003&clcid=0x419) | [スペイン語](https://go.microsoft.com/fwlink/?linkid=2131003&clcid=0x40a)
+Microsoft OLE DB Driver 18.5 for SQL Server (x86):  
+[簡体中国語](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x804) | [繁体中国語](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x404) | [英語 (米国)](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x409) | [フランス語](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x40c) | [ドイツ語](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x407) | [イタリア語](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x410) | [日本語](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x411) | [韓国語](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x412) | [ポルトガル語 (ブラジル)](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x416) | [ロシア語](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x419) | [スペイン語](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x40a)
 
 ## <a name="release-notes"></a>リリース ノート
 

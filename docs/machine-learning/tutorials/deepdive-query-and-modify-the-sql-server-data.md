@@ -1,6 +1,6 @@
 ---
 title: RevoScaleR を使用して SQL データを変更する
-description: RevoScaleR チュートリアル 3:SQL Server で R 言語を使用してデータのクエリを実行し、データを変更する方法。
+description: SQL Server で R 言語を使用してデータのクエリを実行し、データを変更する方法について説明します。具体的には RevoScaleR 関数について説明します。
 ms.prod: sql
 ms.technology: machine-learning-services
 ms.date: 11/27/2018
@@ -8,18 +8,18 @@ ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 7fda48d4d59ab66ae285e4aeda1899a214a5b901
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 9938cdeca70e4fd7a97c9ce8b9d38035022ce714
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85679892"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470563"
 ---
 # <a name="query-and-modify-the-sql-server-data-sql-server-and-revoscaler-tutorial"></a>SQL Server データのクエリを実行し、データを変更する (SQL Server と RevoScaleR のチュートリアル)
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
-これは、SQL Server で [RevoScaleR 関数](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler)を使用する方法についての [RevoScaleR チュートリアル シリーズ](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)のチュートリアル 3 です。
+これは、SQL Server で [RevoScaleR 関数](/machine-learning-server/r-reference/revoscaler/revoscaler)を使用する方法についての [RevoScaleR チュートリアル シリーズ](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)のチュートリアル 3 です。
 
 前のチュートリアルでは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] にデータを読み込みました。 このチュートリアルでは、**RevoScaleR** を使用してデータを探索および変更できます。
 
@@ -27,13 +27,13 @@ ms.locfileid: "85679892"
 > * 変数に関する基本的な情報を返します。
 > * 生データからカテゴリ データを作成します。
 
-カテゴリデータまたは *factor 変数*は、探索データの視覚化に役立ちます。 これらをヒストグラムへの入力として使用すると、変数データがどのように表示されるかを把握できます。
+カテゴリデータまたは *factor 変数* は、探索データの視覚化に役立ちます。 これらをヒストグラムへの入力として使用すると、変数データがどのように表示されるかを把握できます。
 
 ## <a name="query-for-columns-and-types"></a>列と型のクエリ
 
 R IDE または RGui を使用して R スクリプトを実行します。 
 
-最初に、列とそのデータ型の一覧を取得します。 関数 [rxGetVarInfo](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxgetvarinfoxdf) を使用し、分析するデータ ソースを指定できます。 **RevoScaleR** のバージョンによっては、[rxGetVarNames](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxgetvarnames) を使用することもできます。 
+最初に、列とそのデータ型の一覧を取得します。 関数 [rxGetVarInfo](/machine-learning-server/r-reference/revoscaler/rxgetvarinfoxdf) を使用し、分析するデータ ソースを指定できます。 **RevoScaleR** のバージョンによっては、[rxGetVarNames](/machine-learning-server/r-reference/revoscaler/rxgetvarnames) を使用することもできます。 
   
 ```R
 rxGetVarInfo(data = sqlFraudDS)
@@ -61,7 +61,7 @@ Var 9: fraudRisk, Type: integer
 
 列を略称にマップしてから要因として使用すると、パフォーマンスも改善されます。 詳細については、「[R とデータの最適化](../r/r-and-data-optimization-r-services.md)」を参照してください。
 
-1. まず、次のように R 変数 *stateAbb*を作成し、この変数に追加する文字列のベクトルを定義します。
+1. まず、次のように R 変数 *stateAbb* を作成し、この変数に追加する文字列のベクトルを定義します。
   
     ```R
     stateAbb <- c("AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DC",
@@ -71,7 +71,7 @@ Var 9: fraudRisk, Type: integer
         "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY")
     ```
 
-2. 次に、 *ccColInfo*という名前の列情報オブジェクトを作成します。このオブジェクトは、カテゴリ レベル (州の省略形) への既存の整数値のマッピングを指定します。
+2. 次に、 *ccColInfo* という名前の列情報オブジェクトを作成します。このオブジェクトは、カテゴリ レベル (州の省略形) への既存の整数値のマッピングを指定します。
   
     このステートメントは、性別およびカード名義人の要因変数も作成します。
   
@@ -104,7 +104,7 @@ Var 9: fraudRisk, Type: integer
     rowsPerRead = sqlRowsPerRead)
     ```
   
-    - *table* パラメーターでは、先ほど作成したデータ ソースを含む変数 *sqlFraudTable*を渡します。
+    - *table* パラメーターでは、先ほど作成したデータ ソースを含む変数 *sqlFraudTable* を渡します。
     - *colInfo* パラメーターでは、列のデータ型および要因レベルを含む変数 *ccColInfo* を渡します。
 
 4.  以上の手順で、関数 **rxGetVarInfo** を使用して新しいデータ ソース内の変数を確認できるようになりました。

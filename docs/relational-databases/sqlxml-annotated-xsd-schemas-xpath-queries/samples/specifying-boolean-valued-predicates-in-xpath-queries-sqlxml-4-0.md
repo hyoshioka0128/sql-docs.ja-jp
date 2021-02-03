@@ -19,13 +19,13 @@ ms.assetid: 5f6e7219-6911-4bca-a54b-56b95e0b43dd
 author: MightyPen
 ms.author: genemi
 ms.custom: seo-lt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: fbc7aa62597834371ee27bcd90af567f1c1d5a0e
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: cc257db3918ff7f24c7d85d057b43bb256b7231e
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85773089"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97430937"
 ---
 # <a name="specifying-boolean-valued-predicates-in-xpath-queries-sqlxml-40"></a>XPath クエリでのブール値述語の指定 (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -68,7 +68,7 @@ ms.locfileid: "85773089"
   
 3.  SQLXML 4.0 テスト スクリプト (sqlxml4test.vbs) を作成し、それを使用してテンプレートを実行します。  
 
-     詳細については、「ADO を使用した[SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
+     詳細については、「ADO を使用した [SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
   
      以下に結果を示します。  
   
@@ -91,8 +91,8 @@ ms.locfileid: "85773089"
     </ROOT>  
     ```  
   
-### <a name="b-specify-successive-and-nested-predicates"></a>B: 連続する述語を入れ子で指定する  
- 次のクエリでは、述語を連続して使用しています。 このクエリでは、 **\<Customer>** **SalesPersonID**属性の値が277で、 **TerritoryID**属性の値が3であるコンテキストノードのすべての子要素が返されます。  
+### <a name="b-specify-successive-and-nested-predicates"></a>B. 連続する述語を入れ子で指定する  
+ 次のクエリでは、述語を連続して使用しています。 このクエリでは、 **\<Customer>** **SalesPersonID** 属性の値が277で、 **TerritoryID** 属性の値が3であるコンテキストノードのすべての子要素が返されます。  
   
 ```  
 /child::Customer[attribute::SalesPersonID="277"][attribute::TerritoryID="3"]  
@@ -100,13 +100,13 @@ ms.locfileid: "85773089"
   
  このクエリは、 **\<Customer>** 述語で指定された両方の条件を満たす要素を返します。  
   
- **属性**軸 (@) へのショートカットを指定できます。また、**子**軸が既定値であるため、クエリから省略できます。  
+ **属性** 軸 (@) へのショートカットを指定できます。また、**子** 軸が既定値であるため、クエリから省略できます。  
   
 ```  
 /Customer[@SalesPersonID="277"][@TerritoryID="3"]  
 ```  
   
- 次の XPath クエリでは、述語を入れ子にして使用しています。 このクエリでは、 **\<Customer>** **\<Order>** **\<Order>** **SalesPersonID**属性の値が2である1つ以上の要素を含む子要素を含むコンテキストノードのすべての子要素が返されます。  
+ 次の XPath クエリでは、述語を入れ子にして使用しています。 このクエリでは、 **\<Customer>** **\<Order>** **\<Order>** **SalesPersonID** 属性の値が2である1つ以上の要素を含む子要素を含むコンテキストノードのすべての子要素が返されます。  
   
 ```  
 /Customer[Order[@SalesPersonID=2]]  
@@ -134,7 +134,7 @@ ms.locfileid: "85773089"
   
 3.  SQLXML 4.0 テスト スクリプト (sqlxml4test.vbs) を作成し、それを使用してテンプレートを実行します。  
   
-     詳細については、「ADO を使用した[SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
+     詳細については、「ADO を使用した [SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
   
  次は結果の一部です。  
   
@@ -168,14 +168,14 @@ ms.locfileid: "85773089"
 </ROOT>  
 ```  
   
-### <a name="c-specify-a-top-level-predicate"></a>C: 最上位の述語を指定する  
+### <a name="c-specify-a-top-level-predicate"></a>C. 最上位の述語を指定する  
  次のクエリでは、子 **\<Customer>** 要素を持つコンテキストノードの子要素ノードが返され **\<Order>** ます。 このクエリでは、ロケーション パスを最上位の述語としてテストします。  
   
 ```  
 /child::Customer[child::Order]  
 ```  
   
- **子**軸が既定値です。 そのため、クエリは次のように指定できます。  
+ **子** 軸が既定値です。 そのため、クエリは次のように指定できます。  
   
 ```  
 /Customer[Order]  
@@ -203,7 +203,7 @@ ms.locfileid: "85773089"
   
 3.  SQLXML 4.0 テスト スクリプト (sqlxml4test.vbs) を作成し、それを使用してテンプレートを実行します。  
   
-     詳細については、「ADO を使用した[SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
+     詳細については、「ADO を使用した [SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
   
  次に結果の一部を示します。  
   

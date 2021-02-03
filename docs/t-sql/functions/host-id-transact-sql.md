@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - HOST_ID
 - HOST_ID_TSQL
@@ -21,12 +21,12 @@ helpviewer_keywords:
 ms.assetid: 36ba56d4-20d7-4cd1-aa2a-e40a6c0a4e39
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 80d5129d2b3165c69b4738414ad5354a324cded1
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: bfd14c50d3f4b566c3be442631278eca8ffc661f
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88417328"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99159222"
 ---
 # <a name="host_id-transact-sql"></a>HOST_ID (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -37,8 +37,7 @@ ms.locfileid: "88417328"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 HOST_ID ()  
 ```  
   
@@ -55,14 +54,14 @@ HOST_ID ()
 ## <a name="examples"></a>例  
  次の例では、受注を記録するテーブルに行を挿入するコンピューターの端末 ID を記録するために、`HOST_ID()` 定義内で `DEFAULT` を使用するテーブルを作成します。  
   
-```  
+```sql  
 CREATE TABLE Orders  
-   (OrderID     int       PRIMARY KEY,  
-    CustomerID  nchar(5)  REFERENCES Customers(CustomerID),  
-    TerminalID  char(8)   NOT NULL DEFAULT HOST_ID(),  
-    OrderDate   datetime  NOT NULL,  
-    ShipDate    datetime  NULL,  
-    ShipperID   int       NULL REFERENCES Shippers(ShipperID));  
+   (OrderID     INT       PRIMARY KEY,  
+    CustomerID  NCHAR(5)  REFERENCES Customers(CustomerID),  
+    TerminalID  CHAR(8)   NOT NULL DEFAULT HOST_ID(),  
+    OrderDate   DATETIME  NOT NULL,  
+    ShipDate    DATETIME  NULL,  
+    ShipperID   INT       NULL REFERENCES Shippers(ShipperID));  
 GO  
 ```  
   

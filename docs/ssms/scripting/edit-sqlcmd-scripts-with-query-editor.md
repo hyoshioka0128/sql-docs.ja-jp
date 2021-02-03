@@ -1,12 +1,9 @@
 ---
 title: クエリ エディターによる SQLCMD スクリプトの編集
 description: Windows システムのコマンドと Transact-SQL ステートメントを同じスクリプトで処理する必要がある場合は、SQLCMD スクリプトを使用します。 データベース エンジン クエリ エディターを使用して SQLCMD スクリプトを記述および編集する方法について説明します。
-ms.custom: seo-lt-2019
-ms.date: 03/14/2017
 ms.prod: sql
 ms.prod_service: sql-tools
-ms.technology: scripting
-ms.reviewer: ''
+ms.technology: ssms
 ms.topic: conceptual
 helpviewer_keywords:
 - scripts [SQL Server], SQLCMD scripts
@@ -17,17 +14,22 @@ helpviewer_keywords:
 ms.assetid: f77b866d-c330-47c9-9e74-0b8d8dff4b31
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: ed1171649c422ccb451fc7540cae8ca6629b65b1
-ms.sourcegitcommit: d855def79af642233cbc3c5909bc7dfe04c4aa23
+ms.reviewer: ''
+ms.custom: seo-lt-2019
+ms.date: 03/14/2017
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 8e6c97089feee33f1bbff76f0820ea37de5ae69c
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87122963"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97474313"
 ---
 # <a name="edit-sqlcmd-scripts-with-query-editor"></a>クエリ エディターによる SQLCMD スクリプトの編集
+
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
-  [!INCLUDE[ssDE](../../includes/ssde-md.md)] の [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] のクエリ エディターを使用すると、クエリを SQLCMD スクリプトとして作成したり、編集したりできます。 Windows システムのコマンドと [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントを同じスクリプトで処理する必要がある場合は、SQLCMD スクリプトを使用します。  
+
+[!INCLUDE[ssDE](../../includes/ssde-md.md)] の [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] のクエリ エディターを使用すると、クエリを SQLCMD スクリプトとして作成したり、編集したりできます。 Windows システムのコマンドと [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントを同じスクリプトで処理する必要がある場合は、SQLCMD スクリプトを使用します。  
   
 ## <a name="sqlcmd-mode"></a>SQLCMD モード  
  [!INCLUDE[ssDE](../../includes/ssde-md.md)] のクエリ エディターで SQLCMD スクリプトの作成や編集を行うには、SQLCMD スクリプト モードを有効にする必要があります。 クエリ エディターの SQLCMD モードは、既定では有効ではありません。 スクリプト モードを有効にするには、ツール バーの **[SQLCMD モード]** アイコンをクリックするか、 **[クエリ]** メニューの **[SQLCMD モード]** をクリックします。  
@@ -84,7 +86,7 @@ ms.locfileid: "87122963"
     -   (4 行処理されました)  
   
 > [!IMPORTANT]  
->  コマンド ラインから実行すると、 **sqlcmd** ユーティリティではオペレーティング システムとの完全な対話が可能になります。 クエリ エディターを **SQLCMD モード**で使用する場合は、対話型のステートメントを実行しないように注意してください。 クエリ エディターは、オペレーティング システムのプロンプトに応答できません。  
+>  コマンド ラインから実行すると、 **sqlcmd** ユーティリティではオペレーティング システムとの完全な対話が可能になります。 クエリ エディターを **SQLCMD モード** で使用する場合は、対話型のステートメントを実行しないように注意してください。 クエリ エディターは、オペレーティング システムのプロンプトに応答できません。  
   
  SQLCMD の実行方法の詳細については、「 [sqlcmd Utility](../../tools/sqlcmd-utility.md)」または SQLCMD のチュートリアルを参照してください。  
   

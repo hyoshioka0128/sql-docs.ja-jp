@@ -10,60 +10,60 @@ ms.reviewer: ''
 ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: '>=sql-server-2016||>=sql-server-linux-2017||=azure-sqldw-latest||>=aps-pdw-2016||=sqlallproducts-allversions||=azuresqldb-mi-current'
-ms.openlocfilehash: 167b9d1d9990c20be8c01a3407a5423644e524f8
-ms.sourcegitcommit: 6fd8c1914de4c7ac24900fe388ecc7883c740077
+monikerRange: '>=sql-server-2016||>=sql-server-linux-2017||=azure-sqldw-latest||>=aps-pdw-2016||=azuresqldb-mi-current'
+ms.openlocfilehash: e246d516d3c05b9a2c6725f7fd3e3f787066b8aa
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "79112430"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97461403"
 ---
 # <a name="wideworldimportersdw-database-catalog"></a>WideWorldImportersDW データベースカタログ
 [!INCLUDE[appliesto-ss-xxxx-asdw-pdw-md](../includes/appliesto-ss-xxxx-asdw-pdw-md.md)]
 WideWorldImportersDW データベースのスキーマ、テーブル、およびストアドプロシージャについて説明します。 
 
-WideWorldImportersDW データベースは、データウェアハウスと分析処理に使用されます。 販売および購入に関するトランザクションデータは、WideWorldImporters データベースで生成され、**毎日の ETL プロセス**を使用して WideWorldImportersDW データベースに読み込まれます。
+WideWorldImportersDW データベースは、データウェアハウスと分析処理に使用されます。 販売および購入に関するトランザクションデータは、WideWorldImporters データベースで生成され、 **毎日の ETL プロセス** を使用して WideWorldImportersDW データベースに読み込まれます。
 
-そのため、WideWorldImportersDW 内のデータは WideWorldImporters のデータをミラー化しますが、テーブルの構成は異なります。 WideWorldImporters には従来の正規化されたスキーマがありますが、WideWorldImportersDW では、テーブルの設計に[スタースキーマ](https://wikipedia.org/wiki/Star_schema)のアプローチを使用します。 ファクトテーブルとディメンションテーブル以外にも、ETL プロセスで使用される多数のステージングテーブルがデータベースに含まれています。
+そのため、WideWorldImportersDW 内のデータは WideWorldImporters のデータをミラー化しますが、テーブルの構成は異なります。 WideWorldImporters には従来の正規化されたスキーマがありますが、WideWorldImportersDW では、テーブルの設計に [スタースキーマ](https://wikipedia.org/wiki/Star_schema) のアプローチを使用します。 ファクトテーブルとディメンションテーブル以外にも、ETL プロセスで使用される多数のステージングテーブルがデータベースに含まれています。
 
 ## <a name="schemas"></a>スキーマ
 
 さまざまな種類のテーブルは、3つのスキーマで構成されています。
 
-|Schema|説明|
+|スキーマ|説明|
 |-----------------------------|---------------------|
 |Dimension|ディメンションテーブル。|
-|ファクト|ファクトテーブル。|  
+|ファクト| ファクト テーブル。|  
 |統合|ETL に必要なステージングテーブルおよびその他のオブジェクト。|  
 
 ## <a name="tables"></a>テーブル
 
 ディメンションテーブルとファクトテーブルを以下に示します。 統合スキーマのテーブルは ETL プロセスでのみ使用され、一覧には表示されません。
 
-### <a name="dimension-tables"></a>ディメンションテーブル
+### <a name="dimension-tables"></a>ディメンション テーブル
 
 WideWorldImportersDW には、次のディメンションテーブルがあります。 説明には、WideWorldImporters データベース内のソーステーブルとのリレーションシップが含まれます。
 
 |テーブル|ソーステーブル|
 |-----------------------------|---------------------|
 |City|`Application.Cities`, `Application.StateProvinces`, `Application.Countries`.|
-|Customer|`Sales.Customers`, `Sales.BuyingGroups`, `Sales.CustomerCategories`.|
-|日付|財務年度を含む、日付に関する情報を含む新しいテーブル (会計年度の最初の開始日に基づく)。|
-|Employee|`Application.People`.|
+|顧客|`Sales.Customers`, `Sales.BuyingGroups`, `Sales.CustomerCategories`.|
+|Date|財務年度を含む、日付に関する情報を含む新しいテーブル (会計年度の最初の開始日に基づく)。|
+|従業員|`Application.People`.|
 |StockItem|`Warehouse.StockItems`, `Warehouse.Colors`, `Warehouse.PackageType`.|
-|業者|`Purchasing.Suppliers`, `Purchasing.SupplierCategories`.|
+|Supplier (仕入先)|`Purchasing.Suppliers`, `Purchasing.SupplierCategories`.|
 |PaymentMethod|`Application.PaymentMethods`.|
 |TransactionType|`Application.TransactionTypes`.|
 
-### <a name="fact-tables"></a>ファクトテーブル
+### <a name="fact-tables"></a>ファクト テーブル
 
 WideWorldImportersDW には、次のファクトテーブルがあります。 説明には、WideWorldImporters データベース内のソーステーブルとの関係、および各ファクトテーブルが一般的に使用される分析/レポートクエリのクラスが含まれます。
 
 |テーブル|ソーステーブル|サンプル分析|
 |-----------------------------|---------------------|---------------------|
-|Order|`Sales.Orders` および `Sales.OrderLines`|販売員、ピッカー/packer 生産性、および時間における注文の選択。 さらに、注文のバックにつながる在庫状況が低いという状況もあります。|
+|注文|`Sales.Orders` および `Sales.OrderLines`|販売員、ピッカー/packer 生産性、および時間における注文の選択。 さらに、注文のバックにつながる在庫状況が低いという状況もあります。|
 |Sale|`Sales.Invoices` および `Sales.InvoiceLines`|販売日、配送日、時間の経過に伴う収益性、営業担当者による収益性。|
-|購入|`Purchasing.PurchaseOrderLines`|予想される時間と実際のリードタイム|
+|Purchase|`Purchasing.PurchaseOrderLines`|予想される時間と実際のリードタイム|
 |トランザクション|`Sales.CustomerTransactions` および `Purchasing.SupplierTransactions`|発行日と終了日、および金額の測定。|
 |移動|`Warehouse.StockTransactions`|時間の経過と共に移動します。|
 |在庫保持|`Warehouse.StockItemHoldings`|手持在庫のレベルと価値。|
@@ -72,7 +72,7 @@ WideWorldImportersDW には、次のファクトテーブルがあります。 �
 
 ストアドプロシージャは、主に ETL プロセスと構成の目的で使用されます。
 
-このサンプルの拡張機能には、Reporting Services レポート`Reports`にスキーマを使用することと`PowerBI` 、power BI アクセス用のスキーマを使用することをお勧めします。
+このサンプルの拡張機能には、Reporting Services レポートにスキーマを使用すること `Reports` と、 `PowerBI` power BI アクセス用のスキーマを使用することをお勧めします。
 
 ### <a name="application-schema"></a>アプリケーションスキーマ
 
@@ -92,7 +92,7 @@ WideWorldImportersDW には、次のファクトテーブルがあります。 �
 ETL プロセスで使用されるプロシージャは、次のカテゴリに分類されます。
 - ETL パッケージのヘルパープロシージャ-すべての Get * プロシージャ。
 - ステージングデータを DW テーブルに移行するために ETL パッケージによって使用されるプロシージャ-All Migrate * プロシージャ。
-- `PopulateDateDimensionForYear`-年を取り、その年のすべての日付が`Dimension.Date`テーブルに設定されていることを確認します。
+- `PopulateDateDimensionForYear` -年を取り、その年のすべての日付がテーブルに設定されていることを確認し `Dimension.Date` ます。
 
 ### <a name="sequences-schema"></a>シーケンススキーマ
 
@@ -100,5 +100,5 @@ ETL プロセスで使用されるプロシージャは、次のカテゴリに�
 
 |手順|目的|
 |-----------------------------|---------------------|
-|順序のリセット|すべてのシーケンス`ReseedSequenceBeyondTableValue`に対してプロシージャを呼び出します。|
-|ReseedSequenceBeyondTableValue|同じシーケンスを使用するテーブルの値を超えて、次のシーケンス値を再配置するために使用されます。 (シーケンスに`DBCC CHECKIDENT`相当する id 列の場合は、複数のテーブルにまたがる場合もあります)。|
+|順序のリセット|`ReseedSequenceBeyondTableValue`すべてのシーケンスに対してプロシージャを呼び出します。|
+|ReseedSequenceBeyondTableValue|同じシーケンスを使用するテーブルの値を超えて、次のシーケンス値を再配置するために使用されます。 ( `DBCC CHECKIDENT` シーケンスに相当する id 列の場合は、複数のテーブルにまたがる場合もあります)。|

@@ -7,18 +7,18 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 ms.assetid: a6fb85b2-b010-4ca9-b65f-4402917076ea
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 999d82dfa2ce6cd4a91949ddd60c90cf306ab338
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: d670b71f972e700af90ee70b38538466fbd26a33
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88427724"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99208050"
 ---
 # <a name="system-metadata-functions"></a>システム メタデータ関数
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

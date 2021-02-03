@@ -5,7 +5,7 @@ ms.custom: seo-lt-2019
 ms.date: 08/21/2018
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 helpviewer_keywords:
 - change tracking [SQL Server], AlwaysOn Availability Groups
@@ -13,14 +13,14 @@ helpviewer_keywords:
 - Availability Groups [SQL Server], interoperability
 - replication [SQL Server], AlwaysOn Availability Groups
 ms.assetid: e17a9ca9-dd96-4f84-a85d-60f590da96ad
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: d09e76a26e0364857c70469ef1308f21e298727b
-ms.sourcegitcommit: df1f0f2dfb9452f16471e740273cd1478ff3100c
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: fcb67787d6f29272d2496dbfe76788d476ef8ea0
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87395047"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641159"
 ---
 # <a name="replication-change-tracking--change-data-capture---always-on-availability-groups"></a>レプリケーション、変更の追跡、変更データ キャプチャ - Always On 可用性グループ
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -151,7 +151,7 @@ ms.locfileid: "87395047"
     FROM sys.availability_replicas AS r  
     JOIN sys.availability_groups AS g  
         ON r.group_id = g.group_id  
-    WHERE g.name = N'MY_AG_NAME;  
+    WHERE g.name = N'MY_AG_NAME';  
     ```  
   
      可用性グループ リスナー名または明示的なノード名を使用してセカンダリ レプリカを検索できます。 可用性グループ リスナー名を使用すると、アクセスは適切なセカンダリ レプリカに送られます。  

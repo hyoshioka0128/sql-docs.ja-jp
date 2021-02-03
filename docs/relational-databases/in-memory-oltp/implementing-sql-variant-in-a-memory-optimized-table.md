@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: f17f21df-959d-4e20-92f3-bd707d555a46
 author: MightyPen
 ms.author: genemi
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 76acc2e061ff550d2da90b167637ad7efa76b1d8
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 81f5eef710a1408d9f768d9c3af05c3240555010
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85723156"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97460425"
 ---
 # <a name="implementing-sql_variant-in-a-memory-optimized-table"></a>メモリ最適化テーブルへの SQL_VARIANT の実装
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -125,6 +125,5 @@ case [Key_enum] when 1 then convert(sql_variant, [Key_bi])
 ```  
   
 ## <a name="see-also"></a>参照  
- [インメモリ OLTP への移行](../../relational-databases/in-memory-oltp/migrating-to-in-memory-oltp.md)  
-  
+ [インメモリ OLTP への移行](./plan-your-adoption-of-in-memory-oltp-features-in-sql-server.md)  
   

@@ -14,14 +14,14 @@ f1_keywords:
 helpviewer_keywords:
 - COMPRESS function
 ms.assetid: c2bfe9b8-57a4-48b4-b028-e1a3ed5ece88
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 51cf2e37ae548383d7c02b3ba4028b9327857928
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 9cad44793e95f48ee60ddef3d767967011b1248a
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88468189"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092359"
 ---
 # <a name="compress-transact-sql"></a>COMPRESS (Transact-SQL)
 [!INCLUDE [sqlserver2016-asdb-asdbmi-asa](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "88468189"
   
 ## <a name="syntax"></a>構文  
   
-```sql
+```syntaxsql
 COMPRESS ( expression )  
 ```  
   
@@ -40,18 +40,18 @@ COMPRESS ( expression )
 *式 (expression)*  
 A
 
-* **binary(***n***)**
-* **char(***n***)**
-* **nchar(***n***)**
+* **binary(** _n_*_)_*
+* **char(** _n_*_)_*
+* **nchar(** _n_*_)_*
 * **nvarchar(max)**
-* **nvarchar(***n***)**
+* **nvarchar(** _n_*_)_*
 * **varbinary(max)**
-* **varbinary(***n***)**
+* **varbinary(** _n_*_)_*
 * **varchar(max)**
 
 or
 
-* **varchar(***n***)**
+* **varchar(** _n_*_)_*
 
 expression。 詳細については、「[式 &#40;Transact-SQL&#41;](../../t-sql/language-elements/expressions-transact-sql.md)」を参照してください。
   

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DROP SYMMETRIC KEY
 - DROP_SYMMETRIC_KEY_TSQL
@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: 6150bc67-08cb-402e-9c24-b04c9654b434
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 2e931d371bd117d82d4cd1725acb3fc5f64890ce
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: fb12c70c3515bef5cfe578211785a4aa6531636e
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88444597"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99161221"
 ---
 # <a name="drop-symmetric-key-transact-sql"></a>DROP SYMMETRIC KEY (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -40,8 +40,7 @@ ms.locfileid: "88444597"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql  
 DROP SYMMETRIC KEY symmetric_key_name [REMOVE PROVIDER KEY]  
 ```  
   
@@ -55,9 +54,8 @@ DROP SYMMETRIC KEY symmetric_key_name [REMOVE PROVIDER KEY]
  EKM デバイスから拡張キー管理 (EKM) を削除します。 拡張キー管理について詳しくは、「[拡張キー管理 &#40;EKM&#41;](../../relational-databases/security/encryption/extensible-key-management-ekm.md)」をご覧ください。  
   
 ## <a name="remarks"></a>注釈  
- 現在のセッションでキーが開かれている場合、ステートメントは失敗します。  
   
- 非対称キーが EKM デバイスの拡張キー管理 (EKM) にマップされており、**REMOVE PROVIDER KEY** オプションが指定されていない場合は、キーはデータベースから削除されますが、デバイスからは削除されず、警告が発行されます。  
+非対称キーが EKM デバイスの拡張キー管理 (EKM) にマップされており、**REMOVE PROVIDER KEY** オプションが指定されていない場合は、キーはデータベースから削除されますが、デバイスからは削除されず、警告が発行されます。  
   
 ## <a name="permissions"></a>アクセス許可  
  対称キーに対する CONTROL 権限が必要です。  
@@ -65,7 +63,7 @@ DROP SYMMETRIC KEY symmetric_key_name [REMOVE PROVIDER KEY]
 ## <a name="examples"></a>例  
  次の例では、現在のデータベースから対称キー `GailSammamishKey6` を削除します。  
   
-```  
+```sql  
 CLOSE SYMMETRIC KEY GailSammamishKey6;  
 DROP SYMMETRIC KEY GailSammamishKey6;  
 GO  

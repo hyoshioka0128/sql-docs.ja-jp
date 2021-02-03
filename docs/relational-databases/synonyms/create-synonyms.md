@@ -12,15 +12,15 @@ helpviewer_keywords:
 - creating synonyms
 - synonyms [SQL Server], creating
 ms.assetid: fedfa7a5-d0b6-4e2b-90f4-a08122958e33
-author: CarlRabeler
-ms.author: carlrab
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 28709eaba9bf8afb2f2c26749db4bb52c80fd64e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: markingmyname
+ms.author: maghan
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 2239ed32aece0d91e880958b3d21f072da7a8ac4
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88490387"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97473053"
 ---
 # <a name="create-synonyms"></a>シノニムの作成
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -49,7 +49,7 @@ ms.locfileid: "88490387"
   
 #### <a name="to-create-a-synonym"></a>シノニムを作成するには  
   
-1.  **オブジェクト エクスプローラー**で、新しいビューを作成するデータベースを展開します。  
+1.  **オブジェクト エクスプローラー** で、新しいビューを作成するデータベースを展開します。  
   
 2.  **[シノニム]** フォルダーを右クリックし、**[新しいシノニム...]** をクリックします。  
   

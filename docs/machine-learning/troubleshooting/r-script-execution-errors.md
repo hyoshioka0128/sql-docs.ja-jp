@@ -8,20 +8,18 @@ ms.topic: troubleshooting
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: ebcedf2adc48fad6668b30d9c34d21b7557879dc
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 28dcbe177f5bc91ea73170978e2da9022154976f
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87253715"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470663"
 ---
 # <a name="common-r-scripting-errors-in-sql-server"></a>SQL Server での一般的な R スクリプト エラー
-[!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
 この記事では、SQL Server で R コードを実行する際のいくつかの一般的なスクリプト エラーについて説明します。 この一覧がすべてではありません。 パッケージは多数あり、同じパッケージのバージョンによってエラーが異なる場合があります。
-
-ここに記載されていないスクリプト エラーが発生した場合は、[Machine Learning Server フォーラム](https://social.msdn.microsoft.com/Forums/home?category=MicrosoftR)に投稿してください。 このフォーラムでは、さまざまな SQL 機械学習製品で使用されている機械学習コンポーネントをサポートしています。
 
 ## <a name="valid-script-fails-in-t-sql-or-in-stored-procedures"></a>T-SQL またはストアド プロシージャで有効なスクリプトが失敗する
 
@@ -33,7 +31,7 @@ ms.locfileid: "87253715"
 
 2. メッセージを調べて、入力データまたは出力データに互換性のないデータ型またはサポートされていないデータ型の列が含まれているかどうかを確認します。 たとえば、SQL データベースに対するクエリでは、GUID または RowGUID が返されることがよくありますが、これらはどちらもサポートされていません。 詳しくは、[R のライブラリとデータ型](../r/r-libraries-and-data-types.md)に関する記事をご覧ください。
 
-3. 個々の R 関数のヘルプ ページを参照して、SQL Server 計算コンテキストですべてのパラメーターがサポートされているかどうかを確認します。 ScaleR のヘルプについては、インライン R ヘルプ コマンドを使用するか、[パッケージ リファレンス](https://docs.microsoft.com/r-server/r-reference/revoscaler/revoscaler)を参照してください。
+3. 個々の R 関数のヘルプ ページを参照して、SQL Server 計算コンテキストですべてのパラメーターがサポートされているかどうかを確認します。 ScaleR のヘルプについては、インライン R ヘルプ コマンドを使用するか、[パッケージ リファレンス](/r-server/r-reference/revoscaler/revoscaler)を参照してください。
 
 R ランタイムが機能していても、スクリプトからエラーが返された場合は、R Tools for Visual Studio などの専用の R 開発環境でスクリプトをデバッグしてみることをお勧めします。
 
@@ -63,7 +61,7 @@ R スクリプトは次のいくつかの理由により、SQL Server のコン�
 
 その理由は、R Services に対して作成されるワーカー アカウントに、サーバーに接続するためのアクセス許可がないためです。 そのため、ODBC 呼び出しをユーザーに代わって実行することはできません。 この問題は SQL ログインでは発生しません。SQL ログインでは、資格情報が R クライアントから SQL Server インスタンスに明示的に渡され、次に ODBC に渡されるためです。 ただし、SQL ログインを使用すると、Windows 認証を使用した場合よりも安全性が低くなります。
 
-リモートで開始されるスクリプトから Windows 資格情報を安全に渡すには、SQL Server が資格情報をエミュレートする必要があります。 このプロセスは _暗黙の認証_と呼ばれます。 これを機能させるには、SQL Server コンピューターで R スクリプトまたは Python スクリプトを実行するワーカー アカウントに適切なアクセス許可が必要です。
+リモートで開始されるスクリプトから Windows 資格情報を安全に渡すには、SQL Server が資格情報をエミュレートする必要があります。 このプロセスは _暗黙の認証_ と呼ばれます。 これを機能させるには、SQL Server コンピューターで R スクリプトまたは Python スクリプトを実行するワーカー アカウントに適切なアクセス許可が必要です。
 
 1. R コードを実行するインスタンスで管理者として [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] を開きます。
 
@@ -100,6 +98,6 @@ remove('name1', 'name2', ...)
 
 [機械学習のトラブルシューティングのためのデータ収集](data-collection-ml-troubleshooting-process.md)
 
-[アップグレードとインストールに関してよく寄せられる質問](upgrade-and-installation-faq-sql-server-r-services.md)
+[SQL Server Machine Learning Services のインストール](../install/sql-machine-learning-services-windows-install.md)
 
 [データベース エンジンの接続のトラブルシューティング](../../database-engine/configure-windows/troubleshoot-connecting-to-the-sql-server-database-engine.md)

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: replication
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - IHindextypes
 - IHindextypes_TSQL
@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - IHindextypes system table
 ms.assetid: 5eb67d59-a19d-4dba-9d2b-657f87818f6b
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: ee1697bb203763bdf6dd842b77450156f98dd0cd
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 7738b30518520436a9df6c09ad1ae585277f8b7f
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540334"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99201718"
 ---
 # <a name="ihindextypes-transact-sql"></a>IHindextypes (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **IHindextypes**システムテーブルには、非 SQL Server パブリッシャーに対してサポートされている非 SQL Server インデックスの種類ごとに1つの行が含まれています。 このテーブルは、ディストリビューションデータベースに格納されます。  
+  **IHindextypes** システムテーブルには、非 SQL Server パブリッシャーに対してサポートされている非 SQL Server インデックスの種類ごとに1つの行が含まれています。 このテーブルは、ディストリビューションデータベースに格納されます。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

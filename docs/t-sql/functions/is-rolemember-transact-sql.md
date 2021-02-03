@@ -20,13 +20,13 @@ helpviewer_keywords:
 ms.assetid: 73efa688-ae91-4014-98bc-1cabe47321f7
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 0df369f34c1993132ff6df45b1495c81f6ef6665
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 22ed8c4b55529aa0121e29c8b1acfc2727e74ce3
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88417378"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97402261"
 ---
 # <a name="is_rolemember-transact-sql"></a>IS_ROLEMEMBER (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -38,7 +38,6 @@ ms.locfileid: "88417378"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 IS_ROLEMEMBER ( 'role' [ , 'database_principal' ] )  
 ```  
   
@@ -46,7 +45,7 @@ IS_ROLEMEMBER ( 'role' [ , 'database_principal' ] )
 
 ## <a name="arguments"></a>引数
  **'** *role* **'**  
- 確認するデータベース ロールの名前を指定します。 *role* は **sysname**です。  
+ 確認するデータベース ロールの名前を指定します。 *role* は **sysname** です。  
   
  **'** *database_principal* **'**  
  確認するデータベース ユーザー、データベース ロール、またはアプリケーション ロールの名前です。 *database_principal* は **sysname**, 、既定値は NULL です。 値を指定しない場合、結果は現在の実行コンテキストに基づきます。 パラメーターに "NULL" という語が含まれていると、NULL が返されます。  
@@ -56,8 +55,8 @@ IS_ROLEMEMBER ( 'role' [ , 'database_principal' ] )
   
 |戻り値|説明|  
 |------------------|-----------------|  
-|0|*database_principal* のメンバーではない *ロール*です。|  
-|1|*database_principal* のメンバーである *ロール*です。|  
+|0|*database_principal* のメンバーではない *ロール* です。|  
+|1|*database_principal* のメンバーである *ロール* です。|  
 |NULL|*database_principal* または *ロール* が有効でないか、ロールのメンバーシップを表示する権限がありません。|  
   
 ## <a name="remarks"></a>解説  
@@ -88,7 +87,7 @@ IS_ROLEMEMBER ( 'role' [ , 'database_principal' ] )
 ## <a name="examples"></a>例  
  次の例では、現在のユーザーが `db_datareader` 固定データベース ロールのメンバーであるかどうかを示しています。  
   
-```  
+```sql  
 IF IS_ROLEMEMBER ('db_datareader') = 1  
    print 'Current user is a member of the db_datareader role'  
 ELSE IF IS_ROLEMEMBER ('db_datareader') = 0  

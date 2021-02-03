@@ -1,6 +1,6 @@
 ---
 title: olapR を使って R で MDX クエリを作成する
-description: SQL Server の olapR パッケージ ライブラリを使用して、R 言語スクリプトで MDX クエリを記述します。
+description: SQL Server の olapR パッケージ ライブラリを使用し、R 言語スクリプトで MDX クエリを記述するか、既存の MDX クエリを実行します。
 ms.prod: sql
 ms.technology: machine-learning-services
 ms.date: 05/22/2019
@@ -8,18 +8,18 @@ ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 501449396ee20b763047ac16d23e32b3e98aa366
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 8e2f37542ae3363e654370f6dcdcbc76cc941335
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85722535"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470853"
 ---
 # <a name="how-to-create-mdx-queries-in-r-using-olapr"></a>olapR を使って R で MDX クエリを作成する方法
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
-[olapR](https://docs.microsoft.com/machine-learning-server/r-reference/olapr/olapr) パッケージでは、SQL Server Analysis Services でホストされているキューブに対する MDX クエリがサポートされています。 既存のキューブに対してクエリを作成したり、ディメンションやその他のキューブ オブジェクトを調べたり、既存の MDX クエリを貼り付けてデータを取得したりできます。
+[olapR](/machine-learning-server/r-reference/olapr/olapr) パッケージでは、SQL Server Analysis Services でホストされているキューブに対する MDX クエリがサポートされています。 既存のキューブに対してクエリを作成したり、ディメンションやその他のキューブ オブジェクトを調べたり、既存の MDX クエリを貼り付けてデータを取得したりできます。
 
 この記事では、**olapR** パッケージの主な 2 つの用途について説明します。
 
@@ -49,7 +49,7 @@ ms.locfileid: "85722535"
      
      + `axis()` : クエリで使う追加の軸の名前を指定します。 
      
-         OLAP キューブは、最大で 128 個のクエリ軸を含むことができます。 一般に、最初の 4 つの軸は、**列**、**行**、**ページ**、および**チャプター**と呼ばれます。 
+         OLAP キューブは、最大で 128 個のクエリ軸を含むことができます。 一般に、最初の 4 つの軸は、**列**、**行**、**ページ**、および **チャプター** と呼ばれます。 
          
          クエリが比較的単純な場合は、 `columns`、 `rows`などの関数を使ってクエリを作成できます。 ただし、 `axis()` 関数を使って 0 以外のインデックス値を指定し、多くの修飾子を持つ MDX クエリを作成したり、修飾子として余分なディメンションを追加したりすることもできます。
 
@@ -75,13 +75,13 @@ ms.locfileid: "85722535"
 
 次の例は、AdventureWorks データ マートとキューブ プロジェクトに基づいています。このプロジェクトは、Analysis Services に簡単に復元できるバックアップ ァイルを含め、複数のバージョンで広く利用できるためです。 既存のキューブがない場合は、次のいずれかのオプションを使用してサンプル キューブを取得します。
 
-+ Analysis Services チュートリアルのレッスン 4: [OLAP キューブの作成](https://docs.microsoft.com/analysis-services/multidimensional-tutorial/multidimensional-modeling-adventure-works-tutorial)までの手順に従って、これらの例で使用されているキューブを作成します
++ Analysis Services チュートリアルのレッスン 4: [OLAP キューブの作成](/analysis-services/multidimensional-tutorial/multidimensional-modeling-adventure-works-tutorial)までの手順に従って、これらの例で使用されているキューブを作成します
 
-+ 既存のキューブをバックアップとしてダウンロードし、Analysis Services のインスタンスに復元します。 たとえば、このサイトは、完全に処理されたキューブを zip 形式: [Adventure Works 多次元モデル SQL 2014](https://msftdbprodsamples.codeplex.com/downloads/get/882334) で提供します。 ファイルを抽出し、ご自身の SSAS インスタンスに復元します。 詳細については、[バックアップと復元](https://docs.microsoft.com/analysis-services/multidimensional-models/backup-and-restore-of-analysis-services-databases)に関するページ、または [Restore-ASDatabase コマンドレット](/powershell/module/sqlserver/restore-asdatabase)に関するページをご覧ください。
++ 既存のキューブをバックアップとしてダウンロードし、Analysis Services のインスタンスに復元します。 たとえば、このサイトは、完全に処理されたキューブを zip 形式: [Adventure Works 多次元モデル SQL 2014](https://msftdbprodsamples.codeplex.com/downloads/get/882334) で提供します。 ファイルを抽出し、ご自身の SSAS インスタンスに復元します。 詳細については、[バックアップと復元](/analysis-services/multidimensional-models/backup-and-restore-of-analysis-services-databases)に関するページ、または [Restore-ASDatabase コマンドレット](/powershell/module/sqlserver/restore-asdatabase)に関するページをご覧ください。
 
 ### <a name="1-basic-mdx-with-slicer"></a>1.スライサーを使う基本的な MDX
 
-この MDX クエリは、インターネットの販売数と販売金額の数と金額の _メジャー_ を選択し、列軸に設定します。 SalesTerritory ディメンションのメンバーを *スライサー*として追加し、オーストラリアからの販売のみが計算で使われるようにクエリをフィルターします。
+この MDX クエリは、インターネットの販売数と販売金額の数と金額の _メジャー_ を選択し、列軸に設定します。 SalesTerritory ディメンションのメンバーを *スライサー* として追加し、オーストラリアからの販売のみが計算で使われるようにクエリをフィルターします。
 
 ```MDX
 SELECT {[Measures].[Internet Sales Count], [Measures].[InternetSales-Sales Amount]} ON COLUMNS, 
@@ -148,7 +148,7 @@ SELECT {[Measures].[Internet Sales Count], [Measures].[Internet Sales-Sales Amou
 表示権限のあるインスタンス上のすべてのキューブまたはパースペクティブを表示するには、 `explore`への引数としてハンドルを渡します。
 
 > [!IMPORTANT]
-> 結果の最後にあるのはキューブでは**ありません**。TRUE は、メタデータ操作が成功したことを示しているだけです。 無効な引数を渡すとエラーがスローされます。
+> 結果の最後にあるのはキューブでは **ありません**。TRUE は、メタデータ操作が成功したことを示しているだけです。 無効な引数を渡すとエラーがスローされます。
 
 ```R
 cnnstr <- "Data Source=localhost; Provider=MSOLAP; initial catalog=Analysis Services Tutorial"

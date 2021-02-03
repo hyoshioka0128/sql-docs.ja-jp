@@ -15,13 +15,13 @@ helpviewer_keywords:
 ms.assetid: 29816a41-f105-4414-8be1-070675d62e84
 author: jaszymas
 ms.author: jaszymas
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 8b84de259222b9e2bde8c9b99f67328ea317e645
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 35f08a014fd1abbc8af6db994ba4c2d9b85a0bd4
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85765147"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97405682"
 ---
 # <a name="provision-always-encrypted-keys-using-sql-server-management-studio"></a>SQL Server Management Studio を使用して Always Encrypted キーをプロビジョニングする
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "85765147"
 
 **[新しい列マスター キー]** ダイアログでは、列マスター キーを生成することも、キー ストア内の既存のキーを選択することもできます。さらに、作成または選択したキーに対して列マスター キーのメタデータをデータベースに作成することができます。
 
-1.  **オブジェクト エクスプローラー**を使用し、データベースの下の **[セキュリティ]、[Always Encrypted キー]** の順にアクセスします。
+1.  **オブジェクト エクスプローラー** を使用し、データベースの下の **[セキュリティ]、[Always Encrypted キー]** の順にアクセスします。
 2.  **[列マスター キー]** フォルダーを右クリックし、 **[新しい列マスター キー...]** を選択します。 
 3.  **[新しい列マスター キー]** ダイアログで、列マスター キーのメタデータ オブジェクトの名前を入力します。
 4.  キー ストアを選択します。
@@ -60,7 +60,7 @@ ms.locfileid: "85765147"
 
 ダイアログを完了すると、SQL Server Management Studio によって、データベースに列マスター キーのメタデータが作成されます。 ダイアログでこれを実現するには、 [CREATE COLUMN MASTER KEY (Transact-SQL)](../../../t-sql/statements/create-column-master-key-transact-sql.md) ステートメントを生成し発行します。
 
-::: moniker range=">=sql-server-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15"
 
 エンクレーブ対応の列マスター キーを構成する場合は、SSMS により、そのメタデータも列マスター キーを使って署名されます。 
 
@@ -81,7 +81,7 @@ ms.locfileid: "85765147"
 
 **[新しい列の暗号化キー]** ダイアログでは、列暗号化キーを生成し、それを列マスター キーで暗号化し、データベースに列暗号化キーのメタデータを作成することができます。
 
-1.  **オブジェクト エクスプローラー**を使用して、データベースの下にあるフォルダーを **[セキュリティ]、[Always Encrypted キー]** の順に移動します。
+1.  **オブジェクト エクスプローラー** を使用して、データベースの下にあるフォルダーを **[セキュリティ]、[Always Encrypted キー]** の順に移動します。
 2.  **[列暗号化キー]** フォルダーを右クリックし、 **[新しい列の暗号化キー...]** を選択します。 
 3.  **[新しい列の暗号化キー]** ダイアログで、列暗号化キーのメタデータ オブジェクトの名前を入力します。
 4.  データベースの列マスター キーを表すメタデータ オブジェクトを選択します。

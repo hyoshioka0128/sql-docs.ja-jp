@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: 5a9e4ddf-3cb1-4baf-94d6-b80acca24f64
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: =azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions
-ms.openlocfilehash: 9e6746847d202448b9953cbb9b65e769375645ba
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+monikerRange: =azuresqldb-mi-current||>=sql-server-2016
+ms.openlocfilehash: bd6ae5ed3072af96c64ba69e7346e8e2b2f03cbe
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86918268"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97467483"
 ---
 # <a name="frequently-asked-questions-for-replication-administrators"></a>レプリケーションの管理者に関してよく寄せられる質問
 [!INCLUDE[sql-asdbmi](../../../includes/applies-to-version/sql-asdbmi.md)]
@@ -69,7 +69,7 @@ ms.locfileid: "86918268"
   
 -   トランザクション パブリケーションがキュー更新サブスクリプションをサポートしている場合は、レプリケーションによってすべてのテーブルに **msrepl_tran_version** 列が追加されます。 テーブルがパブリケーションから削除されても、 **msrepl_tran_version** 列は削除されません。  
   
--   フィルターには、レプリケーションで行の識別に使用される **rowguidcol** を含めることはできません。 既定では、これはマージ レプリケーションのセットアップ時に追加される列であり、 **rowguid**という名前が付けられます。  
+-   フィルターには、レプリケーションで行の識別に使用される **rowguidcol** を含めることはできません。 既定では、これはマージ レプリケーションのセットアップ時に追加される列であり、 **rowguid** という名前が付けられます。  
   
 ### <a name="how-do-i-manage-constraints-on-published-tables"></a>パブリッシュされたテーブルの制約はどのように管理すればよいですか。  
  パブリッシュされたテーブル上の制約については、注意すべき問題がいくつかあります。  
@@ -135,7 +135,7 @@ ms.locfileid: "86918268"
   
 -   互換性レベルが 90 未満のマージ パブリケーションのアーティクルの場合。既定では、所有者名は空白のままなり、サブスクライバーにオブジェクトを作成する際に **dbo** と指定されます。  
   
--   Oracle パブリケーションのアーティクルの場合。既定では、所有者名が **dbo**と指定されます。  
+-   Oracle パブリケーションのアーティクルの場合。既定では、所有者名が **dbo** と指定されます。  
   
 -   キャラクター モードのスナップショット ([!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 以外のバージョンのサブスクライバーや [!INCLUDE[ssEW](../../../includes/ssew-md.md)] サブスクライバーで使用されます) を使用するパブリケーションのアーティクルの場合。既定では、所有者は空白のままになります。 既定の所有者は、サブスクライバーに接続しているディストリビューション エージェントまたはマージ エージェントで使用されるアカウントに関連付けられている所有者になります。  
   
@@ -216,7 +216,7 @@ ms.locfileid: "86918268"
 ### <a name="how-do-i-determine-whether-there-are-transactions-or-rows-to-be-replicated"></a>レプリケートする必要のあるトランザクションまたは行があるかどうかはどうすれば判断できますか。  
  トランザクション レプリケーションの場合は、ストアド プロシージャか、レプリケーション モニターの **[未配布のコマンド]** タブを使用します。 詳細については、「[レプリケートされたコマンドとディストリビューション データベースの情報の表示 &#40;レプリケーション Transact-SQL プログラミング&#41;](../../../relational-databases/replication/monitor/view-replicated-commands-and-information-in-distribution-database.md)」および「[レプリケーション モニターを使用して情報を表示し、タスクを実行する](../../../relational-databases/replication/monitor/view-information-and-perform-tasks-replication-monitor.md)」を参照してください。  
   
- マージ レプリケーションの場合は、ストアド プロシージャ **sp_showpendingchanges**を使用します。 詳細については、「[sp_showpendingchanges &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-showpendingchanges-transact-sql.md)」を参照してください。  
+ マージ レプリケーションの場合は、ストアド プロシージャ **sp_showpendingchanges** を使用します。 詳細については、「[sp_showpendingchanges &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-showpendingchanges-transact-sql.md)」を参照してください。  
   
 ### <a name="how-far-behind-is-the-distribution-agent-should-i-reinitialize"></a>ディストリビューション エージェントがどの程度遅れているのか、 再初期化が必要かどうかを確認する方法はありますか。  
  ストアド プロシージャ **sp_replmonitorsubscriptionpendingcmds** か、レプリケーション モニターの **[未配布のコマンド]** タブを使用します。 ストアド プロシージャとタブには、次の内容が表示されます。  

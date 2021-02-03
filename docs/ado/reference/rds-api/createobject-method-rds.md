@@ -7,25 +7,25 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 helpviewer_keywords:
 - CreateObject method [ADO]
 ms.assetid: dec96be6-0b31-4953-9c9a-e962b5afcd18
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 0fd3e6c7ad67b058920963c7e2dc92f60a2a84d6
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 5fa625a75bbcadffb37064c04adc7ebd57a48994
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88982613"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99163870"
 ---
 # <a name="createobject-method-rds"></a>CreateObject メソッド (RDS)
 対象のビジネスオブジェクトのプロキシを作成し、そのオブジェクトへのポインターを返します。 プロキシは、ビジネスオブジェクトとの通信のためにデータをパッケージ化してサーバー側スタブにマーシャリングし、インターネット経由で要求とデータを送信します。 インプロセスコンポーネントオブジェクトの場合、プロキシは使用されません。オブジェクトへのポインターだけが使用されます。  
   
 > [!IMPORTANT]
->  Windows 8 と windows Server 2012 以降では、RDS サーバーコンポーネントが Windows オペレーティングシステムに含まれなくなりました (詳細については、「Windows 8 および [Windows server 2012 の互換性に関するクックブック](https://www.microsoft.com/download/details.aspx?id=27416) 」を参照してください)。 RDS クライアントコンポーネントは、今後のバージョンの Windows では削除される予定です。 新規の開発作業ではこの機能を使用しないようにし、現在この機能を使用しているアプリケーションは修正することを検討してください。 RDS を使用するアプリケーションは、 [WCF Data Service](https://go.microsoft.com/fwlink/?LinkId=199565)に移行する必要があります。  
+>  Windows 8 と windows Server 2012 以降では、RDS サーバーコンポーネントが Windows オペレーティングシステムに含まれなくなりました (詳細については、「Windows 8 および [Windows server 2012 の互換性に関するクックブック](https://www.microsoft.com/download/details.aspx?id=27416) 」を参照してください)。 RDS クライアントコンポーネントは、今後のバージョンの Windows では削除される予定です。 新規の開発作業ではこの機能を使用しないようにし、現在この機能を使用しているアプリケーションは修正することを検討してください。 RDS を使用するアプリケーションは、 [WCF Data Service](/dotnet/framework/wcf/)に移行する必要があります。  
   
 ## <a name="syntax"></a>構文  
  リモートデータサービスは、HTTP、HTTPS (Secure Socket Layer 経由の HTTP)、DCOM、およびインプロセスの各プロトコルをサポートしています。  
@@ -39,7 +39,7 @@ ms.locfileid: "88982613"
   
 ## <a name="parameters"></a>パラメーター  
  *Object*  
- *ProgID*で指定された型のオブジェクトに評価されるオブジェクト変数。  
+ *ProgID* で指定された型のオブジェクトに評価されるオブジェクト変数。  
   
  *DataSpace*  
  RDS を表すオブジェクト変数です [。新しいオブジェクトの](./dataspace-object-rds.md) インスタンスを作成するために使用される、領域内のオブジェクト。  
@@ -50,8 +50,8 @@ ms.locfileid: "88982613"
  *awebsrvr* または *computername*  
  サーバービジネスオブジェクトのインスタンスが作成されるインターネットインフォメーションサービス (IIS) Web サーバーを識別する URL を表す **文字列** 値です。  
   
-## <a name="remarks"></a>解説  
- *HTTP プロトコル*は標準の Web プロトコルです。*HTTPS*はセキュリティで保護された Web プロトコルです。 HTTP を使用せずにローカルエリアネットワークを実行する場合は、 *DCOM プロトコル* を使用します。 *インプロセス*プロトコルは、ローカルダイナミックリンクライブラリ (DLL) です。ネットワークを使用しません。  
+## <a name="remarks"></a>コメント  
+ *HTTP プロトコル* は標準の Web プロトコルです。*HTTPS* はセキュリティで保護された Web プロトコルです。 HTTP を使用せずにローカルエリアネットワークを実行する場合は、 *DCOM プロトコル* を使用します。 *インプロセス* プロトコルは、ローカルダイナミックリンクライブラリ (DLL) です。ネットワークを使用しません。  
   
 ## <a name="applies-to"></a>適用対象  
  [DataSpace オブジェクト (RDS)](./dataspace-object-rds.md)  

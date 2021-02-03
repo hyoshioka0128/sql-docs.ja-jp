@@ -15,15 +15,15 @@ helpviewer_keywords:
 - execution plans [SQL Server], saving
 - saving execution plans
 ms.assetid: c439e53b-56f3-4442-97c6-dabd48a203d8
-author: julieMSFT
-ms.author: jrasnick
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 6bcf97d3f0e3607d9444c6ab5b3b101004d3926b
-ms.sourcegitcommit: 9470c4d1fc8d2d9d08525c4f811282999d765e6e
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 3c9c95103e574f51ef530f17432125fe99a591e6
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86457623"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97469173"
 ---
 # <a name="save-an-execution-plan-in-xml-format"></a>XML 形式での実行プランの保存
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -50,7 +50,7 @@ ms.locfileid: "86457623"
     ```  
   
      > [!NOTE] 
-     > SHOWPLAN_XML は、クエリのコンパイル時クエリ実行プラン情報を生成しますが、クエリの実行は行いません。 これは**推定**実行プランとも呼ばれます。 STATISTICS XML は、クエリの実行時クエリ実行プラン情報を生成し、クエリを実行します。 これは**実際の**実行プランとも呼ばれます。  
+     > SHOWPLAN_XML は、クエリのコンパイル時クエリ実行プラン情報を生成しますが、クエリの実行は行いません。 これは **推定** 実行プランとも呼ばれます。 STATISTICS XML は、クエリの実行時クエリ実行プラン情報を生成し、クエリを実行します。 これは **実際の** 実行プランとも呼ばれます。  
   
 3.  クエリを実行します。 例:  
   
@@ -71,7 +71,7 @@ ms.locfileid: "86457623"
   
 5.  **[** \<Grid or Text> **の結果を保存]** ダイアログ ボックスで、 **[保存の種類]** ボックスの **[すべてのファイル (\*.\*)]** をクリックします。  
   
-6.  **[ファイル名]** ボックスに \<name**>.sqlplan の形式で名前を入力し、 **[保存]** をクリックします。  
+6.  **[ファイル名]** ボックスに、\<name> **.sqlplan** の形式で名前を入力してから、 **[保存]** をクリックします。  
 
 ### <a name="to-save-an-execution-plan-by-using-sql-server-management-studio-options"></a>SQL Server Management Studio のオプションを使用して実行プランを保存するには  
   
@@ -83,7 +83,7 @@ ms.locfileid: "86457623"
   
 3.  **[名前を付けて保存]** ダイアログ ボックスで、 **[ファイルの種類]** が **[実行プラン ファイル (\*.sqlplan)]** に設定されていることを確認します。  
   
-4.  **[ファイル名]** ボックスに \<name**>.sqlplan の形式で名前を入力し、 **[保存]** をクリックします。  
+4.  **[ファイル名]** ボックスに、\<name> **.sqlplan** の形式で名前を入力してから、 **[保存]** をクリックします。  
   
 ### <a name="to-open-a-saved-xml-query-plan-in-sql-server-management-studio"></a>保存した XML クエリ プランを SQL Server Management Studio で開くには  
   
@@ -93,7 +93,7 @@ ms.locfileid: "86457623"
   
 3.  表示する XML クエリ プラン ファイルを選択し、 **[開く]** をクリックします。  
   
-     代わりに、Windows エクスプローラーで、拡張子が **.sqlplan**のファイルをダブルクリックしてもかまいません。 プランが、 [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)]で開かれます。  
+     代わりに、Windows エクスプローラーで、拡張子が **.sqlplan** のファイルをダブルクリックしてもかまいません。 プランが、 [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)]で開かれます。  
   
 ## <a name="see-also"></a>参照  
  [SET SHOWPLAN_XML &#40;Transact-SQL&#41;](../../t-sql/statements/set-showplan-xml-transact-sql.md)   

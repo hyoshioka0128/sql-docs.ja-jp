@@ -9,15 +9,15 @@ ms.reviewer: ''
 ms.technology: in-memory-oltp
 ms.topic: conceptual
 ms.assetid: 9cf6c5ff-4548-401a-b3ec-084f47ff0eb8
-author: CarlRabeler
-ms.author: carlrab
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 2eb2a150921c613019894e34e2859fa9adcf9137
-ms.sourcegitcommit: edba1c570d4d8832502135bef093aac07e156c95
+author: markingmyname
+ms.author: maghan
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 77c9d57563fb926a777a20edc89e8dbde7bf204d
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86483714"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97465413"
 ---
 # <a name="calling-natively-compiled-stored-procedures-from-data-access-applications"></a>データ アクセス アプリケーションからのネイティブ コンパイル ストアド プロシージャの呼び出し
 
@@ -33,7 +33,7 @@ ms.locfileid: "86483714"
 
 ### <a name="sqlclient"></a>SqlClient
 
-- SqlClient の場合、*準備*実行と*直接*実行の区別はありません。 `CommandType = CommandType.StoredProcedure` で SqlCommand を使用してストアド プロシージャを実行します。
+- SqlClient の場合、*準備* 実行と *直接* 実行の区別はありません。 `CommandType = CommandType.StoredProcedure` で SqlCommand を使用してストアド プロシージャを実行します。
 
 - SqlClient では、準備された RPC プロシージャ呼び出しはサポートされません。
 
@@ -102,7 +102,7 @@ for (unsigned int i = 0; i < order.ItemCount; i++) {
 
 1. メモリ最適化データ ファイル グループが含まれるサンプル データベースを作成します。 メモリ最適化データ ファイルグループが含まれるデータベースを作成する方法については、「 [メモリ最適化テーブルおよびネイティブ コンパイル ストアド プロシージャの作成](../../relational-databases/in-memory-oltp/creating-a-memory-optimized-table-and-a-natively-compiled-stored-procedure.md)」を参照してください。
 
-2. データベースを参照する PrepExecSample という ODBC データ ソースを作成します。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client ドライバーを使用します。 また、サンプルを変更して [Microsoft ODBC Driver for SQL Server](https://msdn.microsoft.com/library/jj730314.aspx)を使用できます。
+2. データベースを参照する PrepExecSample という ODBC データ ソースを作成します。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client ドライバーを使用します。 また、サンプルを変更して [Microsoft ODBC Driver for SQL Server](../../connect/odbc/windows/microsoft-odbc-driver-for-sql-server-on-windows.md)を使用できます。
 
 3. サンプル データベースに [!INCLUDE[tsql](../../includes/tsql-md.md)] スクリプト (下記) を実行します。
 
@@ -433,4 +433,4 @@ int _tmain() {
 ```
 
 ## <a name="see-also"></a>参照
-[ネイティブ コンパイル ストアド プロシージャ](../../relational-databases/in-memory-oltp/natively-compiled-stored-procedures.md)
+[ネイティブ コンパイル ストアド プロシージャ](./a-guide-to-query-processing-for-memory-optimized-tables.md)

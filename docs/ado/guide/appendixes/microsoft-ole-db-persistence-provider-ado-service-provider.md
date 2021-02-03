@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e75ef0dc-2016-4fcc-8918-23311c0d4e02
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 8b9cfce1762ef678e544a2148df4a4d79074e152
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: fe50ef2d018f01e0811c5d950f73ae6cb3d3c5f3
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88991073"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97638061"
 ---
 # <a name="microsoft-ole-db-persistence-provider-overview"></a>Microsoft OLE DB 永続化プロバイダーの概要
 Microsoft OLE DB 永続化プロバイダーを使用すると、 [レコードセット](../../reference/ado-api/recordset-object-ado.md) オブジェクトをファイルに保存し、後でその **レコードセット** オブジェクトをファイルから復元できます。 スキーマ情報、データ、および保留中の変更は保持されます。
@@ -47,9 +47,6 @@ Microsoft OLE DB 永続化プロバイダーを使用すると、 [レコード�
 
  現時点では、パラメーター化された階層的な **レコードセット** オブジェクトのみを保存することはできません。
 
- **レコードセット**オブジェクトを永続的に格納する方法の詳細については、「[レコードセット永続](../data/more-about-recordset-persistence.md)化」を参照してください。
+ **レコードセット** オブジェクトを永続的に格納する方法の詳細については、「[レコードセット永続](../data/more-about-recordset-persistence.md)化」を参照してください。
 
- ストリームを使用して**レコードセット**を開くときに、 **Open**メソッドの*Source*パラメーター以外にパラメーターを指定しないようにする必要があります。
-
-## <a name="see-also"></a>参照
-[Microsoft OLE DB 永続化プロバイダー (ADO サービスプロバイダー)]()
+ ストリームを使用して **レコードセット** を開くときに、 **Open** メソッドの *Source* パラメーター以外にパラメーターを指定しないようにする必要があります。

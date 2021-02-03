@@ -21,13 +21,13 @@ helpviewer_keywords:
 ms.assetid: 88b22f65-ee01-459c-8800-bcf052df958a
 author: rothja
 ms.author: jroth
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: b3f261fe1a543844bfb7b38e3889c0077abcaee2
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: a445552a69033bec7564e05d7fc86d7416a5ff47
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88325625"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97461833"
 ---
 # <a name="sql-server-transaction-log-architecture-and-management-guide"></a>SQL Server トランザクション ログのアーキテクチャと管理ガイド
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -83,10 +83,10 @@ ms.locfileid: "88325625"
 >    -  増加分が 64 MB 以上 1 GB 以下の場合、増加分のサイズに対応する 8 個の VLF を作成します (たとえば、512 MB 増加の場合は 8 個の 64 MB VLF を作成します)
 >    -  増加分が 1 GB を超える場合、増加分のサイズに対応する 16 個の VLF を作成します (たとえば、8 GB 増加の場合は 16 個の 512 MB VLF を作成します)
 
-小さな増加が繰り返され、ログ ファイルが大きくなった場合、多くの仮想ログ ファイルが生成されます。 **このような状況では、データベースの起動、ログのバックアップ操作、およびログの復元操作の速度が低下する場合があります。** 逆に、増加の回数が少なく、あるいはたった 1 回でログ ファイルが大きなサイズになった場合、非常に大きな仮想ログ ファイルが少しだけ生成されます。 トランザクション ログの**必須サイズ**を正しく見積もる方法や**自動拡張**設定については、「[トランザクション ログ ファイルのサイズの管理](../relational-databases/logs/manage-the-size-of-the-transaction-log-file.md#Recommendations)」の*推奨事項*セクションを参照してください。
+小さな増加が繰り返され、ログ ファイルが大きくなった場合、多くの仮想ログ ファイルが生成されます。 **このような状況では、データベースの起動、ログのバックアップ操作、およびログの復元操作の速度が低下する場合があります。** 逆に、増加の回数が少なく、あるいはたった 1 回でログ ファイルが大きなサイズになった場合、非常に大きな仮想ログ ファイルが少しだけ生成されます。 トランザクション ログの **必須サイズ** を正しく見積もる方法や **自動拡張** 設定については、「[トランザクション ログ ファイルのサイズの管理](../relational-databases/logs/manage-the-size-of-the-transaction-log-file.md#Recommendations)」の *推奨事項* セクションを参照してください。
 
-必要な増分を利用し、最終的に必要なサイズに近い*サイズ*値をログ ファイルに割り当て、最適な VLF 配布を達成することと、比較的大きな *growth_increment* 値を設定することをお勧めします。 下のヒントを参照し、現在のトランザクション ログ サイズに最適な VLF 配布を決定してください。 
- - *サイズ*値は `ALTER DATABASE` の `SIZE` 引数で設定されますが、これはログ ファイルの初期サイズとなります。
+必要な増分を利用し、最終的に必要なサイズに近い *サイズ* 値をログ ファイルに割り当て、最適な VLF 配布を達成することと、比較的大きな *growth_increment* 値を設定することをお勧めします。 下のヒントを参照し、現在のトランザクション ログ サイズに最適な VLF 配布を決定してください。 
+ - *サイズ* 値は `ALTER DATABASE` の `SIZE` 引数で設定されますが、これはログ ファイルの初期サイズとなります。
  - *growth_increment* 値 (自動拡張値とも呼ばれています) は `ALTER DATABASE` の `FILEGROWTH` 引数で設定されますが、これは新しい領域が必要になるたびにファイルに追加される領域の量です。 
  
 `ALTER DATABASE` の `FILEGROWTH` 引数と `SIZE` 引数の詳細については、「[ALTER DATABASE &#40;Transact-SQL&#41; の File および Filegroup オプション](../t-sql/statements/alter-database-transact-sql-file-and-filegroup-options.md)」を参照してください。
@@ -134,7 +134,7 @@ ms.locfileid: "88325625"
 ##  <a name="write-ahead-transaction-log"></a><a name="WAL"></a> 先行書き込みトランザクション ログ  
  このセクションでは、データの変更をディスクに記録するときの先行書き込みトランザクション ログの役割について説明します。 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] では、先行書き込みログ (WAL) アルゴリズムを使用します。これにより、関連付けられているログ レコードより前にデータ変更がディスクに書き込まれることがなくなります。 これにより、トランザクションの ACID プロパティが維持されます。  
   
- 先行書き込みログがどのように機能するのかを理解するには、変更されたデータがディスクに書き込まれるしくみを把握しておくことが重要です。 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] はバッファー キャッシュを保持し、データを取得する必要がある場合は、そのキャッシュの中へデータ ページを読み取ります。 ページがバッファー キャッシュ内で変更されたとき、その変更が直ちにディスクに書き戻されるわけではありません。代わりに、そのページは *ダーティ*とマークされます。 データ ページが物理的にディスクに書き込まれる前には、複数回の論理書き込みが行われる可能性があります。 論理書き込みを行うたびに、トランザクション ログ レコードが、変更を記録するログ キャッシュに挿入されます。 ログ レコードは、関連付けられているダーティ ページがバッファー キャッシュから削除されディスクに書き込まれる前に、ディスクに書き込まれる必要があります。 チェックポイント プロセスでは、指定されたデータベースからのページを含むバッファーのバッファー キャッシュを定期的にスキャンし、ダーティ ページをすべてディスクに書き込みます。 チェックポイントは、すべてのダーティ ページがディスクに書き込まれたことを確認するために作成されるポイントで、その後の復旧の時間を短縮します。  
+ 先行書き込みログがどのように機能するのかを理解するには、変更されたデータがディスクに書き込まれるしくみを把握しておくことが重要です。 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] はバッファー キャッシュを保持し、データを取得する必要がある場合は、そのキャッシュの中へデータ ページを読み取ります。 ページがバッファー キャッシュ内で変更されたとき、その変更が直ちにディスクに書き戻されるわけではありません。代わりに、そのページは *ダーティ* とマークされます。 データ ページが物理的にディスクに書き込まれる前には、複数回の論理書き込みが行われる可能性があります。 論理書き込みを行うたびに、トランザクション ログ レコードが、変更を記録するログ キャッシュに挿入されます。 ログ レコードは、関連付けられているダーティ ページがバッファー キャッシュから削除されディスクに書き込まれる前に、ディスクに書き込まれる必要があります。 チェックポイント プロセスでは、指定されたデータベースからのページを含むバッファーのバッファー キャッシュを定期的にスキャンし、ダーティ ページをすべてディスクに書き込みます。 チェックポイントは、すべてのダーティ ページがディスクに書き込まれたことを確認するために作成されるポイントで、その後の復旧の時間を短縮します。  
   
  変更されたデータ ページをバッファー キャッシュからディスクに書き込むことを "ページのフラッシュ" といいます。 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] には、関連付けられているログ レコードの書き込み前にダーティ ページをフラッシュしないためのロジックが用意されています。 ログ レコードは、ログ バッファーがフラッシュされるときにディスクに書き込まれます。  これは、トランザクションがコミットされたとき、またはログ バッファーがいっぱいになったときに必ず発生します。  
   
@@ -154,7 +154,7 @@ ms.locfileid: "88325625"
 トランザクション ログのバックアップの詳細については、「[トランザクション ログのバックアップ &#40;SQL Server&#41;](../relational-databases/backup-restore/transaction-log-backups-sql-server.md)」を参照してください。
   
 ### <a name="the-log-chain"></a>ログ チェーン  
- ログ バックアップの連続的なシーケンスは、 *ログ チェーン*と呼ばれます。 ログ チェーンは、データベースの完全バックアップから始まります。 通常、新しいログ チェーンが開始されるのは、データベースが最初にバックアップされたとき、または復旧モデルを単純復旧から完全復旧または一括ログ復旧に変更したときだけです。 データベースの完全バックアップの作成時に既存のバックアップ セットを上書きしない限り、既存のログ チェーンはそのまま残ります。 ログ チェーンがそのまま残っている場合は、メディア セット内にあるデータベースの完全バックアップからデータベースを復元し、その後で復旧ポイントに達するまで後続のログ バックアップをすべて復元できます。 復旧ポイントは、最後のログ バックアップの末尾、または任意のログ バックアップの特定の復旧ポイントである場合があります。 詳細については、「[トランザクション ログ バックアップ &#40;SQL Server&#41;](../relational-databases/backup-restore/transaction-log-backups-sql-server.md)」を参照してください。  
+ ログ バックアップの連続的なシーケンスは、 *ログ チェーン* と呼ばれます。 ログ チェーンは、データベースの完全バックアップから始まります。 通常、新しいログ チェーンが開始されるのは、データベースが最初にバックアップされたとき、または復旧モデルを単純復旧から完全復旧または一括ログ復旧に変更したときだけです。 データベースの完全バックアップの作成時に既存のバックアップ セットを上書きしない限り、既存のログ チェーンはそのまま残ります。 ログ チェーンがそのまま残っている場合は、メディア セット内にあるデータベースの完全バックアップからデータベースを復元し、その後で復旧ポイントに達するまで後続のログ バックアップをすべて復元できます。 復旧ポイントは、最後のログ バックアップの末尾、または任意のログ バックアップの特定の復旧ポイントである場合があります。 詳細については、「[トランザクション ログ バックアップ &#40;SQL Server&#41;](../relational-databases/backup-restore/transaction-log-backups-sql-server.md)」を参照してください。  
   
  データベースを障害の発生時点まで復元するには、ログ チェーンが途切れていないことが条件になります。 つまり、トランザクション ログ バックアップのシーケンスは、障害の発生時点まで途切れずに続いている必要があります。 ログのシーケンスの始まりは、復元するデータ バックアップの種類 (データベース バックアップ、部分バックアップ、ファイル バックアップ) によって異なります。 データベース バックアップまたは部分バックアップの場合、ログ バックアップのシーケンスはデータベース バックアップまたは部分バックアップの最後から始まっている必要があります。 一連のファイル バックアップの場合、ログ バックアップのシーケンスはファイル バックアップの完全なセットから始まっている必要があります。 詳細については、「[トランザクション ログ バックアップの適用 &#40;SQL Server&#41;](../relational-databases/backup-restore/apply-transaction-log-backups-sql-server.md)」を参照してください。  
   
@@ -255,7 +255,6 @@ LSN 148 はトランザクション ログの最後のレコードです。 LSN 
 [高速データベース復旧](../relational-databases/backup-restore/restore-and-recovery-overview-sql-server.md#adr)       
 [sys.dm_db_log_info &#40;Transact-SQL&#41;](../relational-databases/system-dynamic-management-views/sys-dm-db-log-info-transact-sql.md)   
 [sys.dm_db_log_space_usage &#40;Transact-SQL&#41;](../relational-databases/system-dynamic-management-views/sys-dm-db-log-space-usage-transact-sql.md)    
-[SQL Server のログ記録と復旧について (著者: Paul Randal)](https://technet.microsoft.com/magazine/2009.02.logging.aspx)    
+[SQL Server のログ記録と復旧について (著者: Paul Randal)](/previous-versions/technet-magazine/dd392031(v=msdn.10))    
 [SQL Server Transaction Log Management (SQL Server のトランザクション ログ管理) (著者: Tony Davis、Gail Shaw)](https://www.simple-talk.com/books/sql-books/sql-server-transaction-log-management-by-tony-davis-and-gail-shaw/)  
-  
   

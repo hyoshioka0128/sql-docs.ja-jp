@@ -17,13 +17,13 @@ helpviewer_keywords:
 ms.assetid: 813f1397-fa0b-45ec-a718-e13fe2fb88ac
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: d7903ef171ecda557c723edc2d73381a2db8fa41
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 53012e9698cdd7132b6ea35a8296d84287a2767f
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88486852"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97438375"
 ---
 # <a name="effects-of-iso-options"></a>ISO オプションの効果
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -34,13 +34,13 @@ ms.locfileid: "88486852"
   
  ステートメント自体はドライバーが実行します。ODBC アプリケーションはステートメントの実行に対して何の要求も行いません。 ISO オプションを設定することで、SQL Native Client ODBC ドライバーを使用する ODBC アプリケーションの移植性が高まります。これは、サーバーの動作が ISO 標準に準拠するためです。  
   
- DB-Library ベースのアプリケーションは、通常これらのオプションを有効にしません。 ODBC または DB-LIBRARY クライアントが同じ SQL ステートメントを実行しているときに異なる動作を観察するサイトは、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native CLIENT ODBC ドライバーの問題を指しているとは限りません。 最初に、Native Client ODBC ドライバーで使用されるのと同じ SET オプションを使用して、DB-LIBRARY 環境でステートメントを再実行する必要があり [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] ます。  
+ DB-Library ベースのアプリケーションは、通常これらのオプションを有効にしません。 ODBC または DB-Library クライアントが同じ SQL ステートメントを実行しているときに異なる動作を観察するサイトでは、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native CLIENT ODBC ドライバーの問題を指しているとは限りません。 最初に、Native Client ODBC ドライバーで使用されるのと同じ SET オプションを使用して、DB-Library 環境でステートメントを再実行する必要があり [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] ます。  
   
  SET オプションはユーザーやアプリケーションがいつでも有効または無効にできるので、ストアド プロシージャやトリガーの開発者は、上記の SET オプションを有効にした場合と無効にした場合の両方で、開発したプロシージャやトリガーをテストする必要があります。 これにより、プロシージャやトリガーの起動時に、接続に設定されているオプションに関係なく、プロシージャやトリガーが適切に動作することを確認できます。 これらのオプションのいずれかについて特定の設定が必要なトリガーやストアド プロシージャは、そのトリガーやストアド プロシージャの起動時に SET ステートメントを実行する必要があります。 この SET ステートメントは、トリガーやストアド プロシージャが実行されている間だけ有効になり、トリガーやストアド プロシージャが終了すると元の設定が復元されます。  
   
  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] のインスタンスに接続しているときは、4 番目の SET オプションの CONCAT_NULL_YIELDS_NULL も有効になります。 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]データソースに AnsiNPW = NO が指定されている場合、または[SQLDriverConnect](../../../relational-databases/native-client-odbc-api/sqldriverconnect.md)または[SQLBrowseConnect](../../../relational-databases/native-client-odbc-api/sqlbrowseconnect.md)のいずれかで、Native Client ODBC ドライバーでこれらのオプションが設定されていません。  
   
- 前に説明した ISO オプションと同様に、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native CLIENT ODBC ドライバーでは、QuotedID = NO がデータソースで指定されている場合、または **SQLDriverConnect** または **SQLBrowseConnect**のいずれかで指定されている場合、QUOTED_IDENTIFIER オプションは有効になりません。  
+ 前に説明した ISO オプションと同様に、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native CLIENT ODBC ドライバーでは、QuotedID = NO がデータソースで指定されている場合、または **SQLDriverConnect** または **SQLBrowseConnect** のいずれかで指定されている場合、QUOTED_IDENTIFIER オプションは有効になりません。  
   
  ドライバーが SET オプションの現在の状態を確認できるようにするために、ODBC アプリケーションでは、[!INCLUDE[tsql](../../../includes/tsql-md.md)] SET ステートメントを使用して SET オプションを設定しないようにします。 これらのオプションを設定する場合は、データ ソースまたは接続オプションのみを使用するようにします。 アプリケーションが SET ステートメントを実行した場合、ドライバーは不正な SQL ステートメントを生成する可能性があります。  
   

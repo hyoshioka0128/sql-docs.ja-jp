@@ -17,14 +17,14 @@ helpviewer_keywords:
 - DENY statement, XML schema collections
 - schema collections [SQL Server], permissions
 ms.assetid: 159969a7-8313-41bc-bb19-c55af76597e6
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 39743080ca519eb61adcd206b6ce2c98c7ecba6a
-ms.sourcegitcommit: edba1c570d4d8832502135bef093aac07e156c95
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 4e52584f3fe4bcd1528557dc04e602a3f11ca37c
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86484757"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98081880"
 ---
 # <a name="deny-xml-schema-collection-permissions-transact-sql"></a>DENY (XML スキーマ コレクションの権限の拒否) (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -117,7 +117,7 @@ DENY permission  [ ,...n ] ON
 ## <a name="examples"></a>例  
  次の例では、XML スキーマ コレクション `Invoices4` の `EXECUTE` 権限を、ユーザー `Wanida` に対して拒否します。 XML スキーマ コレクション `Invoices4` は、`AdventureWorks2012` データベースの `Sales` スキーマ内にあります。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 DENY EXECUTE ON XML SCHEMA COLLECTION::Sales.Invoices4 TO Wanida;  
 GO  

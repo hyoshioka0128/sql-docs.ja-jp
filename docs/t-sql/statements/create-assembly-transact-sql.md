@@ -21,15 +21,15 @@ helpviewer_keywords:
 - CREATE ASSEMBLY statement
 - assemblies [CLR integration], creating
 ms.assetid: d8d1d245-c2c3-4325-be52-4fc1122c2079
-author: CarlRabeler
-ms.author: carlrab
-monikerRange: =azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017
-ms.openlocfilehash: 556cab50de2e8207eb78d829f18373213ee171b9
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017
+ms.openlocfilehash: 13b639ace60f98ce9ab55cc0280130131f6851ca
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88496865"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098409"
 ---
 # <a name="create-assembly-transact-sql"></a>CREATE ASSEMBLY (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md.md )]
@@ -172,7 +172,7 @@ FROM { <client_assembly_specifier> | <assembly_bits> [ ,...n ] }
   
 **適用対象**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降。  
   
- 次の例では、[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] サンプルがローカル コンピューターの既定の場所にインストールされており、HelloWorld.csproj サンプル アプリケーションがコンパイルされていることを前提としています。 詳細については、「[Hello World サンプル](https://msdn.microsoft.com/library/fed6c358-f5ee-4d4c-9ad6-089778383ba7)」を参照してください。  
+ 次の例では、[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] サンプルがローカル コンピューターの既定の場所にインストールされており、HelloWorld.csproj サンプル アプリケーションがコンパイルされていることを前提としています。 詳細については、「[Hello World サンプル](/previous-versions/sql/sql-server-2016/ff878250(v=sql.130))」を参照してください。  
   
 ```sql  
 CREATE ASSEMBLY HelloWorld   
@@ -204,6 +204,5 @@ WITH PERMISSION_SET = SAFE;
  [CREATE TYPE &#40;Transact-SQL&#41;](../../t-sql/statements/create-type-transact-sql.md)   
  [CREATE AGGREGATE &#40;Transact-SQL&#41;](../../t-sql/statements/create-aggregate-transact-sql.md)   
  [EVENTDATA &#40;Transact-SQL&#41;](../../t-sql/functions/eventdata-transact-sql.md)   
- [CLR &#40;共通言語ランタイム&#41; 統合の使用シナリオと例](https://msdn.microsoft.com/library/33aac25f-abb4-4f29-af88-4a0dacd80ae7)  
-  
+ [CLR &#40;共通言語ランタイム&#41; 統合の使用シナリオと例](/previous-versions/sql/sql-server-2016/ms131078(v=sql.130))  
   

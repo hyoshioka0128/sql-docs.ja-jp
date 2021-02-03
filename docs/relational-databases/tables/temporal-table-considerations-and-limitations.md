@@ -9,15 +9,15 @@ ms.reviewer: ''
 ms.technology: table-view-index
 ms.topic: conceptual
 ms.assetid: c8a21481-0f0e-41e3-a1ad-49a84091b422
-author: CarlRabeler
-ms.author: carlrab
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: b3d276d144730bfeb39b0cde13720da61de72b67
-ms.sourcegitcommit: 331b8495e4ab37266945c81ff5b93d250bdaa6da
+author: markingmyname
+ms.author: maghan
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 3ba8729558f6e3e1736db9c380a268cd606444f1
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88645833"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97482354"
 ---
 # <a name="temporal-table-considerations-and-limitations"></a>テンポラル テーブルの考慮事項と制約
 
@@ -36,7 +36,7 @@ ms.locfileid: "88645833"
 - 現在のテーブルがパーティション分割する場合、履歴テーブルは、パーティション分割構成がレプリケートされていないために自動的に現在のテーブルから履歴テーブルに既定のファイル グループに作成されます。
 - テンポラル テーブルと履歴テーブルは **FILETABLE** にすることができず、サポートされている **FILESTREAM** 以外の任意のデータ型の列を含めることができます。これは、 **FILETABLE** と **FILESTREAM** では [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の外部でのデータ操作が可能なので、システムのバージョン管理を保証できないためです。
 - ノード テーブルまたはエッジ テーブルは、テンポラル テーブルとして作成することも、テンポラル テーブルに変更することもできません。
-- テンポラル テーブルでは、 **(n)varchar(max)** 、 **varbinary(max)** 、 **(n)text**、 **image**などの BLOB データ型がサポートされていますが、これらは多大なストレージ コストを発生させ、サイズが多いためにパフォーマンスに影響を与えます。 そのため、システムの設計時に、これらのデータ型を使用する場合は注意が必要です。
+- テンポラル テーブルでは、 **(n)varchar(max)** 、 **varbinary(max)** 、 **(n)text**、 **image** などの BLOB データ型がサポートされていますが、これらは多大なストレージ コストを発生させ、サイズが多いためにパフォーマンスに影響を与えます。 そのため、システムの設計時に、これらのデータ型を使用する場合は注意が必要です。
 - 履歴テーブルは、現在のテーブルと同じデータベースで作成する必要があります。 **Linked Server** に対するテンポラル クエリはサポートされていません。
 - 履歴テーブルには、制約 (主キー、外部キー、テーブル、または列の制約) を含めることはできません。
 - テンポラル クエリ (**FOR SYSTEM_TIME** 句を使用するクエリ) 上では、インデックス付きビューはサポートされていません。

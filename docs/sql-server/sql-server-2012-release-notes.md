@@ -12,22 +12,22 @@ helpviewer_keywords:
 ms.assetid: 9ccb390a-67a9-4593-85ea-2b4c41c4620f
 author: rothja
 ms.author: jroth
-monikerRange: = sql-server-2016 || = sqlallproducts-allversions
-ms.openlocfilehash: f07d5ea10fbb762b46dcf47fb15e9acdfe8404a9
-ms.sourcegitcommit: 768f046107642f72693514f51bf2cbd00f58f58a
+monikerRange: = sql-server-2016
+ms.openlocfilehash: fff3b6de7e2e83c535997194ca2622d9cd9e9595
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87111146"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98766176"
 ---
 # <a name="sql-server-2012-release-notes"></a>SQL Server 2012 リリース ノートします。
 [!INCLUDE [SQL Server Azure SQL Database ](../includes/applies-to-version/sqlserver.md)]
 このリリース ノートでは、[Microsoft SQL Server 2012](https://go.microsoft.com/fwlink/?LinkId=238647) のインストールやトラブルシューティングを行う前に知っておく必要がある、既知の問題について説明しています。 このリリース ノートは、オンラインのみで入手でき、インストール メディアには含まれていません。また、定期的に更新されます。  
   
-SQL Server 2012 の開始方法およびインストール方法の詳細については、SQL Server 2012 の Readme をご覧ください。 Readme ドキュメントは、インストール メディアまたは [Readme](https://download.microsoft.com/download/3/B/D/3BD9DD65-D3E3-43C3-BB50-0ED850A82AD5/ENU/Readme.htm) ダウンロード ページから入手できます。 「 [SQL Server オンライン ブック](https://go.microsoft.com/fwlink/?LinkId=190948) 」または [SQL Server フォーラム](https://go.microsoft.com/fwlink/?LinkId=213599)でも詳細な情報を参照することができます。  
+SQL Server 2012 の開始方法およびインストール方法の詳細については、SQL Server 2012 の Readme をご覧ください。 Readme ドキュメントは、インストール メディアまたは [Readme](https://download.microsoft.com/download/3/B/D/3BD9DD65-D3E3-43C3-BB50-0ED850A82AD5/ENU/Readme.htm) ダウンロード ページから入手できます。 「 [SQL Server オンライン ブック](/previous-versions/sql/sql-server-2012/ms130214(v=sql.110)) 」または [SQL Server フォーラム](https://go.microsoft.com/fwlink/?LinkId=213599)でも詳細な情報を参照することができます。  
   
 ## <a name="10-before-you-install"></a><a name="Install"></a>1.0 インストールの準備  
-[!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]をインストールする前に、次のことを考慮してください。  
+[!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)]をインストールする前に、次のことを考慮してください。  
   
 ### <a name="11-rules-documentation-for-sql-server-2012-setup"></a>1.1 SQL Server 2012 セットアップのルール ドキュメント  
 **問題:** SQL Server セットアップによって、セットアップ操作が完了する前にコンピューターの構成が検証されます。 SQL Server のセットアップ処理中にはさまざまなルールが適用され、システム構成チェッカー (SCC) レポートによって記録されます。 このセットアップ ルールに関するドキュメントは、MSDN ライブラリで提供されなくなりました。  
@@ -92,7 +92,7 @@ SQL Server を Windows Server 2008 R2 Server Core SP1 にインストールす�
   
 -   Microsoft SQL Server 2012 は、Windows Server 2008 R2 Server Core SP1 を搭載するコンピューターに、以前のバージョンの SQL Server とサイド バイ サイドでインストールすることはできません。  
   
--   SQL Server 2012 の一部の機能は、Server Core オペレーティング システムではサポートされません。 サポートされる機能と Server Core への SQL Server 2012 のインストールの詳細については、「 [Server Core への SQL Server 2012 のインストール](https://msdn.microsoft.com/library/hh231669(SQL.110).aspx)」をご覧ください。  
+-   SQL Server 2012 の一部の機能は、Server Core オペレーティング システムではサポートされません。 サポートされる機能と Server Core への SQL Server 2012 のインストールの詳細については、「 [Server Core への SQL Server 2012 のインストール](/previous-versions/sql/sql-server-2012/hh231669(v=sql.110))」をご覧ください。  
   
 ### <a name="16-semantic-search-requires-you-to-install-an-additional-dependency"></a>1.6 セマンティック検索を使用するには、依存する追加項目のインストールが必要になる  
 **問題:** 統計的セマンティック検索には、追加の前提条件として、セマンティック言語統計データベースが必要です。これは、SQL Server セットアップ プログラムでインストールされません。  
@@ -133,7 +133,7 @@ A semantic language statistics database is not registered. Full-text indexes usi
   
         2.  **[機能の選択]** インターフェイスで、 **[.NET Framework 3.5.1 の機能]** を展開します。  
   
-        3.  **[.NET Framework 3.5.1 の機能]** を展開すると、2 つのチェック ボックスが表示されます。 1 つは .NET Framework 3.5.1 用で、もう 1 つは WCF アクティブ化用です。 **.NET Framework 3.5.1**のチェック ボックスをオンにし、 **[次へ]** をクリックします。 .NET Framework 3.5.1 の機能をインストールする前に、必要な役割サービスと機能もインストールする必要があります。  
+        3.  **[.NET Framework 3.5.1 の機能]** を展開すると、2 つのチェック ボックスが表示されます。 1 つは .NET Framework 3.5.1 用で、もう 1 つは WCF アクティブ化用です。 **.NET Framework 3.5.1** のチェック ボックスをオンにし、 **[次へ]** をクリックします。 .NET Framework 3.5.1 の機能をインストールする前に、必要な役割サービスと機能もインストールする必要があります。  
   
         4.  **[インストール オプションの確認]** で、選択内容を確認して、[インストール] をクリックします。  
   
@@ -156,13 +156,13 @@ A semantic language statistics database is not registered. Full-text indexes usi
   
         1.  **[スタート]** ボタンをクリックし、 |  **[コントロール パネル]**  |  **[プログラム]** 、 **[Windows の機能の有効化または無効化]** の順にクリックします。 管理者のパスワードの入力または確認入力を求めるメッセージが表示されたら、パスワードを入力するか、確認入力を行います。  
   
-        2.  **Microsoft .NET Framework 3.5.1**を有効にするには、この機能の横にあるチェック ボックスをオンにします。 Windows の機能を無効化するには、チェック ボックスをオフにします。  
+        2.  **Microsoft .NET Framework 3.5.1** を有効にするには、この機能の横にあるチェック ボックスをオンにします。 Windows の機能を無効化するには、チェック ボックスをオフにします。  
   
         3.  **[OK]** をクリックします。  
   
         **展開イメージのサービスと管理 (DISM.exe) を使用して .NET Framework 3.5 SP1 を有効にするには、次の方法を使用します。**  
   
-        展開イメージのサービスと管理 (DISM.exe) を使用して .NET Framework 3.5 SP1 を有効にすることもできます。 Windows の機能をオンラインで有効にする方法の詳細については、「 [Windows の機能をオンラインで有効または無効にする](https://technet.microsoft.com/library/dd744582(WS.10).aspx)」をご覧ください。 次に、.NET Framework 3.5 SP1 を有効にする手順を説明します。  
+        展開イメージのサービスと管理 (DISM.exe) を使用して .NET Framework 3.5 SP1 を有効にすることもできます。 Windows の機能をオンラインで有効にする方法の詳細については、「 [Windows の機能をオンラインで有効または無効にする](/previous-versions/windows/it-pro/windows-7/dd744582(v=ws.10))」をご覧ください。 次に、.NET Framework 3.5 SP1 を有効にする手順を説明します。  
   
         1.  コマンド プロンプトで次のコマンドを入力すると、オペレーティング システムで使用できるすべての機能の一覧が表示されます。  
   
@@ -334,7 +334,7 @@ Analysis Services (AS) 用の SQL Server Integration Services (SSIS) コンポ�
 ### <a name="42-to-reinstall-data-quality-server-delete-the-dqs-objects-after-uninstalling-data-quality-server"></a>4.2 Data Quality Server を再インストールするには Data Quality Server をアンインストールしてから DQS オブジェクトを削除する必要がある  
 **問題:** Data Quality Server をアンインストールしても、DQS オブジェクト (DQS データベース、DQS ログイン、および DQS ストアド プロシージャ) は SQL Server インスタンスから削除されません。  
   
-**対処法:** 同じコンピューターの同じ SQL Server インスタンスに Data Quality Server を再インストールするには、SQL Server インスタンスから手動で DQS オブジェクトを削除する必要があります。 さらに、Data Quality Server を再インストールする前に、そのコンピューターの C:\Program Files\Microsoft SQL Server\MSSQL11.<SQL_Server_Instance>\MSSQL\DATA フォルダーから DQS データベース (DQS_MAIN、DQS_PROJECTS、および DQS_STAGING_DATA) ファイルも削除する必要があります。 この操作を行わないと、Data Quality Server のインストールが失敗します。 ナレッジ ベースやデータ品質プロジェクトなどのデータを残しておく場合は、データベース ファイルを削除せずに別の場所に移動します。 アンインストール プロセスの完了後に DQS オブジェクトを削除する方法の詳細については、「 [Data Quality Server オブジェクトの削除](https://msdn.microsoft.com/library/hh231667.aspx)」をご覧ください。  
+**対処法:** 同じコンピューターの同じ SQL Server インスタンスに Data Quality Server を再インストールするには、SQL Server インスタンスから手動で DQS オブジェクトを削除する必要があります。 さらに、Data Quality Server を再インストールする前に、そのコンピューターの C:\Program Files\Microsoft SQL Server\MSSQL11.<SQL_Server_Instance>\MSSQL\DATA フォルダーから DQS データベース (DQS_MAIN、DQS_PROJECTS、および DQS_STAGING_DATA) ファイルも削除する必要があります。 この操作を行わないと、Data Quality Server のインストールが失敗します。 ナレッジ ベースやデータ品質プロジェクトなどのデータを残しておく場合は、データベース ファイルを削除せずに別の場所に移動します。 アンインストール プロセスの完了後に DQS オブジェクトを削除する方法の詳細については、「 [Data Quality Server オブジェクトの削除](./install/remove-data-quality-server-objects.md)」をご覧ください。  
   
 ### <a name="43-indication-of-a-terminated-knowledge-discovery-or-interactive-cleansing-activity-is-delayed"></a>4.3 ナレッジ検出アクティビティや対話的なクレンジング アクティビティの終了通知が遅れる  
 **問題:** 管理者がアクティビティを [アクティビティの監視] 画面で終了した場合、ナレッジ検出、ドメイン管理、または対話的なクレンジングのアクティビティを実行しているインタラクティブ ユーザーには、そのユーザーが次に操作を実行するまで、アクティビティが終了したことが通知されません。  
@@ -578,10 +578,10 @@ Get-ClusterResource yourListenerName|Set-ClusterParameter HostRecordTTL 300
 **対処法:** 接続文字列で 'multisubnetfailover = true' を使用します。  
   
 #### <a name="576-failure-to-create-new-availability-group-listeners-because-of-active-directory-quotas"></a>5.7.6 Active Directory クォータが原因で新しい可用性グループ リスナーを作成できない  
-**問題:** 新しい可用性グループ リスナーの作成は、参加しているクラスター ノード マシン アカウントの Active Directory クォータに達したため、失敗する場合があります。 詳細については、「 [コンピューター オブジェクト変更時のクラスター サービス アカウントのトラブルシューティング方法](https://support.microsoft.com/kb/307532) 」および「 [Active Directory Quotas (Active Directory クォータ)](https://technet.microsoft.com/library/cc904295(WS.10).aspx)」をご覧ください。  
+**問題:** 新しい可用性グループ リスナーの作成は、参加しているクラスター ノード マシン アカウントの Active Directory クォータに達したため、失敗する場合があります。 詳細については、「 [コンピューター オブジェクト変更時のクラスター サービス アカウントのトラブルシューティング方法](https://support.microsoft.com/kb/307532) 」および「 [Active Directory Quotas (Active Directory クォータ)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc904295(v=ws.10))」をご覧ください。  
   
 #### <a name="577-netbios-conflicts-because-availability-group-listener-names-use-an-identical-15-character-prefix"></a>5.7.7 可用性グループ リスナー名で同一の 15 文字のプレフィックスが使用されていることによる NetBIOS の競合  
-同じ Active Directory で制御されている 2 つの WSFC クラスターがあり、両方のクラスターで可用性グループ リスナーを作成しようとする場合、15 文字より長い名前を使用して、15 文字のプレフィックスが同一であると、仮想ネットワーク名リソースをオンラインにできなかったことを示すエラーが表示されます。 DNS 名のプレフィックスに対する名前付け規則の詳細については、「 [Assigning Domain Names (ドメイン名を割り当てる)](https://technet.microsoft.com/library/cc731265(WS.10).aspx)」を参照してください。  
+同じ Active Directory で制御されている 2 つの WSFC クラスターがあり、両方のクラスターで可用性グループ リスナーを作成しようとする場合、15 文字より長い名前を使用して、15 文字のプレフィックスが同一であると、仮想ネットワーク名リソースをオンラインにできなかったことを示すエラーが表示されます。 DNS 名のプレフィックスに対する名前付け規則の詳細については、「 [Assigning Domain Names (ドメイン名を割り当てる)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731265(v=ws.10))」を参照してください。  
   
 ![horizontal_bar](media/horizontal-bar.png "horizontal_bar")  
   
@@ -630,7 +630,7 @@ SQL Server 2012 Reporting Services から Microsoft SQL Server PDW Appliance Upd
 ![horizontal_bar](media/horizontal-bar.png "horizontal_bar")  
   
 ## <a name="90-streaminsight"></a><a name="SI"></a>9.0 StreamInsight  
-SQL Server 2012 には StreamInsight 2.0 が含まれています。 StreamInsight 2.0 を使用するには、Microsoft SQL Server 2012 のライセンスと .NET Framework 4.0 が必要です。 StreamInsight 2.0 には、いくつかのバグ修正に加え、さまざまなパフォーマンスの改善が施されています。 詳細については、「 [Microsoft StreamInsight 2.0 RC0 Release Notes (Microsoft StreamInsight 2.0 のリリース ノート)](https://social.technet.microsoft.com/wiki/contents/articles/6539.aspx)」をご覧ください。 StreamInsight 2.0 を単独でダウンロードするには、Microsoft ダウンロード センターの [Microsoft StreamInsight 2.0 のダウンロード ページ](https://go.microsoft.com/fwlink/?LinkId=241593) にアクセスしてください。  
+SQL Server 2012 には StreamInsight 2.1 が含まれています。 StreamInsight 2.1 を使用するには、Microsoft SQL Server 2012 のライセンスと .NET Framework 4.0 が必要です。 StreamInsight 2.0 には、いくつかのバグ修正に加え、さまざまなパフォーマンスの改善が施されています。 詳細については、「[Microsoft StreamInsight 2.1 のリリース ノート](https://social.technet.microsoft.com/wiki/contents/articles/6539.aspx)」をご覧ください。 StreamInsight 2.1 を単独でダウンロードするには、Microsoft ダウンロード センターの [Microsoft StreamInsight 2.1 のダウンロード ページ](https://www.microsoft.com/download/details.aspx?id=30149)にアクセスしてください。  
   
 ![horizontal_bar](media/horizontal-bar.png "horizontal_bar")  
   
@@ -641,4 +641,4 @@ SQL Server 2012 には StreamInsight 2.0 が含まれています。 StreamInsig
   
 **回避策**:オペレーティング システム アーキテクチャに応じて、SQL Server 2012 メディアの `\1028_CHT_LP\x64\redist\Upgrade Advisor` または `\1028_CHT_LP\x86\redist\Upgrade Advisor` にある **SQLUA.msi** ファイルを検索してください。  
   
-![horizontal_bar](media/horizontal-bar.png "horizontal_bar")  
+![horizontal_bar](media/horizontal-bar.png "horizontal_bar")

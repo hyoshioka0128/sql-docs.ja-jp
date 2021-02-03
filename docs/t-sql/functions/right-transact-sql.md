@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - RIGHT_TSQL
 - RIGHT
@@ -20,13 +20,13 @@ helpviewer_keywords:
 ms.assetid: 43f1fe1f-aa18-47e3-ba20-e03e32254a6d
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 219d071b6cb85dad1014a1cdf5b40926aaba634a
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: da0e2e1224cce5dfe13da57eb0efb7959ae8c4ec
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88422626"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99101713"
 ---
 # <a name="right-transact-sql"></a>RIGHT (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -66,7 +66,7 @@ RIGHT ( character_expression , integer_expression )
 ### <a name="a-using-right-with-a-column"></a>A:列を指定して RIGHT を使用する  
  次の例では、[!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] データベース内の各担当者の名前の右端から 5 文字が返されます。  
   
-```  
+```sql  
 SELECT RIGHT(FirstName, 5) AS 'First Name'  
 FROM Person.Person  
 WHERE BusinessEntityID < 5  
@@ -93,7 +93,7 @@ Rob
 ### <a name="b-using-right-with-a-column"></a>B. 列を指定して RIGHT を使用する  
  次の例では、`DimEmployee` テーブル内の各姓の右端から 5 文字が返されます。  
   
-```  
+```sql  
 -- Uses AdventureWorks  
   
 SELECT RIGHT(LastName, 5) AS Name  
@@ -115,7 +115,7 @@ lters
 ### <a name="c-using-right-with-a-character-string"></a>C. 文字列を指定して RIGHT を使用する  
  次の例では、`RIGHT` を使用して `abcdefg` という文字列の右端の 2 文字を返します。  
   
-```  
+```sql  
 SELECT RIGHT('abcdefg', 2); 
 ```  
   

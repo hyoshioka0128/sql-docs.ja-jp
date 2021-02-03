@@ -8,13 +8,13 @@ ms.technology: release-landing
 ms.topic: article
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: '>=sql-server-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 299182ad45f8c96f4b2f07d38f1b3f366eea7b33
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+monikerRange: '>=sql-server-ver15'
+ms.openlocfilehash: 749e13242c81e5a566ae13dfd66385194639db37
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86923411"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596217"
 ---
 # <a name="whats-new-in-sql-server-2019"></a>[!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] の新機能
 
@@ -26,7 +26,7 @@ ms.locfileid: "86923411"
 
 詳細および既知の問題については、「[[!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] リリース ノート](sql-server-version-15-release-notes.md)」を参照してください。
 
-[!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] で最良のエクスペリエンスを得るには、[最新のツール](https://aka.ms/getazuredatastudio)を使用してください。
+[!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] で最良のエクスペリエンスを得るには、[最新のツール](../azure-data-studio/download-azure-data-studio.md)を使用してください。
 
 [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] では、[!INCLUDE[sql-server](../includes/ssnoversion-md.md)] 用の [!INCLUDE[big-data-clusters](../includes/ssbigdataclusters-nover.md)] が導入されています。 また、SQL Server データベース エンジン、SQL Server Analysis Services、SQL Server Machine Learning Services、SQL Server on Linux、SQL Server マスター データ サービスに対する追加機能と機能強化も提供されています。
 
@@ -76,7 +76,7 @@ ms.locfileid: "86923411"
 | &nbsp; | &nbsp; |
 
 ### <a name="intelligent-performance"></a>インテリジェントなパフォーマンス
-[!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] は以前のリリースのインテリジェント データベースのイノベーションに基づいて構築されており、[さらに高速な実行](https://docs.microsoft.com/archive/blogs/bobsql/)が保証されています。 こうした機能強化により、既知のリソースのボトルネックを克服できます。また、すべてのワークロードにわたって予測可能なパフォーマンスを実現するようにデータベース サーバーを構成するオプションが用意されています。
+[!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] は以前のリリースのインテリジェント データベースのイノベーションに基づいて構築されており、[さらに高速な実行](/archive/blogs/bobsql/)が保証されています。 こうした機能強化により、既知のリソースのボトルネックを克服できます。また、すべてのワークロードにわたって予測可能なパフォーマンスを実現するようにデータベース サーバーを構成するオプションが用意されています。
 
 |新機能または更新 | 詳細 |
 |:---|:---|
@@ -130,10 +130,10 @@ ms.locfileid: "86923411"
 |新機能または更新 | 詳細 |
 |:---|:---|
 |新しい Java 言語 SDK | SQL Server から実行できる Java プログラムの開発が簡略化されます。 「[SQL Server 用の Microsoft Extensibility SDK for Java](../language-extensions/how-to/extensibility-sdk-java-sql-server.md)」を参照してください。 |
-|Java 言語の SDK はオープンソースです |[Microsoft SQL Server 用の Microsoft Extensibility SDK for Java](https://docs.microsoft.com/sql/language-extensions/how-to/extensibility-sdk-java-sql-server) がオープン ソース化され、[GitHub で入手可能](https://github.com/microsoft/sql-server-language-extensions)になりました。|
+|Java 言語の SDK はオープンソースです |[Microsoft SQL Server 用の Microsoft Extensibility SDK for Java](../language-extensions/how-to/extensibility-sdk-java-sql-server.md) がオープン ソース化され、[GitHub で入手可能](https://github.com/microsoft/sql-server-language-extensions)になりました。|
 |Java データ型のサポート|[Java のデータ型](../language-extensions/how-to/java-to-sql-data-types.md)に関するページを参照してください。|
 |新しい既定の Java Runtime | SQL Server には、製品全体での Java サポート用に Azul Systems Zulu Embedded が含まれようになりました。 「[Free supported Java in SQL Server 2019 is now available](https://cloudblogs.microsoft.com/sqlserver/2019/07/24/free-supported-java-in-sql-server-2019-is-now-available/)」(SQL Server 2019 で無料サポートの Java が利用可能に) を参照してください。 |
-|SQL Server 言語拡張機能| 拡張性フレームワークで外部コードを実行します。 「[SQL Server 言語拡張機能](https://docs.microsoft.com/sql/language-extensions/language-extensions-overview)」を参照してください。
+|SQL Server 言語拡張機能| 拡張性フレームワークで外部コードを実行します。 「[SQL Server 言語拡張機能](../language-extensions/language-extensions-overview.md)」を参照してください。
 |外部言語を登録する|新しいデータ定義言語 (DDL) である `CREATE EXTERNAL LANGUAGE` では、Java などの外部言語が SQL Server に登録されます。 [CREATE EXTERNAL LANGUAGE](../t-sql/statements/create-external-language-transact-sql.md) に関するページを参照してください。 |
 | &nbsp; | &nbsp; |
 
@@ -213,7 +213,7 @@ ms.locfileid: "86923411"
 |新機能または更新 | 詳細 |
 |:---|:---|
 | Microsoft Container Registry | [Microsoft Container Registry](https://azure.microsoft.com/blog/microsoft-syndicates-container-catalog/) では、[!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] など、Microsoft の新しい公式コンテナー イメージのために Docker Hub が取り替えられます。 |
-| ルート以外のコンテナー | [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] では、既定でルート以外のユーザーとして [!INCLUDE[sql-server](../includes/ssnoversion-md.md)] を起動することで、より安全なコンテナーを作成できるようになりました。 [非ルート ユーザーとして SQL Server コンテナーを作成して実行する](../linux/sql-server-linux-configure-docker.md#buildnonrootcontainer)方法に関する記事を参照してください。 |
+| ルート以外のコンテナー | [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] では、既定でルート以外のユーザーとして [!INCLUDE[sql-server](../includes/ssnoversion-md.md)] を起動することで、より安全なコンテナーを作成できるようになりました。 [非ルート ユーザーとして SQL Server コンテナーを作成して実行する](../linux/sql-server-linux-docker-container-deployment.md)方法に関する記事を参照してください。 |
 | Red Hat 認定コンテナー イメージ | [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] 以降、Red Hat Enterprise Linux 上で SQL Server コンテナーを実行できるようになりました。 |
 | PolyBase と Machine Learning のサポート| [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] では、Machine Learning Services や PolyBase など、SQL Server コンテナーの新しい使用方法が導入されました。 [コンテナー GitHub リポジトリ内の SQL Server](https://github.com/microsoft/mssql-docker/tree/master/linux/preview/examples) の例を参照してください。 |
 | &nbsp; | &nbsp; |
@@ -222,8 +222,8 @@ ms.locfileid: "86923411"
 
 |新機能または更新 | 詳細 |
 |:---|:---| 
-|新しいメモリ セットアップ オプション | インストール中に "*最小サーバー メモリ (MB)* " および "*最大サーバー メモリ (MB)* " のサーバー構成を設定します。 「[[データベース エンジンの構成] - [メモリ] ページ](https://docs.microsoft.com/sql/sql-server/install/instance-configuration?view=sql-server-ver15#memory)」および「[コマンド プロンプトからの SQL Server のインストール](../database-engine/install-windows/install-sql-server-from-the-command-prompt.md#Install)」の `USESQLRECOMMENDEDMEMORYLIMITS`、`SQLMINMEMORY`、`SQLMAXMEMORY` パラメーターを参照してください。 提案される値は、「[サーバー メモリ構成オプション](../database-engine/configure-windows/server-memory-server-configuration-options.md#manually)」のメモリ構成ガイドラインに沿っています。| 
-|新しい並列処理セットアップ オプション | インストールの間に "*並列処理の最大限度*" サーバー構成オプションを設定します。 「[[データベース エンジンの構成] - [MAXDOP] ページ](https://docs.microsoft.com/sql/sql-server/install/instance-configuration?view=sql-server-ver15#maxdop)」および「[コマンド プロンプトからの SQL Server のインストール](../database-engine/install-windows/install-sql-server-from-the-command-prompt.md#Install)」の `SQLMAXDOP` パラメーターを参照してください。 既定値は、「[max degree of parallelism サーバー構成オプションの構成](../database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option.md#Guidelines)」の並列処理の最大限度ガイドラインに沿っています。| 
+|新しいメモリ セットアップ オプション | インストール中に "*最小サーバー メモリ (MB)* " および "*最大サーバー メモリ (MB)* " のサーバー構成を設定します。 「[[データベース エンジンの構成] - [メモリ] ページ](./install/instance-configuration.md#memory)」および「[コマンド プロンプトからの SQL Server のインストール](../database-engine/install-windows/install-sql-server-from-the-command-prompt.md#Install)」の `USESQLRECOMMENDEDMEMORYLIMITS`、`SQLMINMEMORY`、`SQLMAXMEMORY` パラメーターを参照してください。 提案される値は、「[サーバー メモリ構成オプション](../database-engine/configure-windows/server-memory-server-configuration-options.md#manually)」のメモリ構成ガイドラインに沿っています。| 
+|新しい並列処理セットアップ オプション | インストールの間に "*並列処理の最大限度*" サーバー構成オプションを設定します。 「[[データベース エンジンの構成] - [MAXDOP] ページ](./install/instance-configuration.md#maxdop)」および「[コマンド プロンプトからの SQL Server のインストール](../database-engine/install-windows/install-sql-server-from-the-command-prompt.md#Install)」の `SQLMAXDOP` パラメーターを参照してください。 既定値は、「[max degree of parallelism サーバー構成オプションの構成](../database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option.md#Guidelines)」の並列処理の最大限度ガイドラインに沿っています。| 
 |サーバーおよび CAL ライセンス プロダクト キーに関するセットアップ警告|Enterprise Server または Enterprise CAL ライセンス プロダクト キーが入力されていて、マシンに 20 個を超える物理コアがある場合、またはハイパースレッディングが有効になっている場合に 40 個の論理コアがある場合は、セットアップ中に警告が表示されます。 ユーザーは、引き続き制限を確認してセットアップを続行するか、オペレーティング システムの最大プロセッサ数をサポートするライセンス キーを入力することができます。|
 | &nbsp; | &nbsp; |
 
@@ -241,7 +241,7 @@ ms.locfileid: "86923411"
 
 | 新機能または更新 | 詳細 |
 |:---|:---|
-|表形式モデルでの計算グループ| 計算グループを使用すると、一般的なメジャー式を*計算品目*としてグループ化することにより、冗長なメジャーの数を大幅に削減できます。 詳細については、[表形式モデルの計算グループ](/analysis-services/tabular-models/calculation-groups)に関する記事を参照してください。 |
+|表形式モデルでの計算グループ| 計算グループを使用すると、一般的なメジャー式を *計算品目* としてグループ化することにより、冗長なメジャーの数を大幅に削減できます。 詳細については、[表形式モデルの計算グループ](/analysis-services/tabular-models/calculation-groups)に関する記事を参照してください。 |
 |クエリ インターリーブ| クエリ インターリーブは、同時実行性の高いシナリオでユーザー クエリの応答時間を向上させることができる表形式モードのシステム構成です。 詳細については、「[クエリ インターリーブ](/analysis-services/tabular-models/query-interleaving)」を参照してください。 |
 |表形式モデルでの多対多リレーションシップ| 両列が一意でない場合の多対多リレーションシップを使用できます。 詳細については、[表形式モデルでのリレーションシップ](/analysis-services/tabular-models/relationships-ssas-tabular)に関する記事を参照してください。|
 |リソース ガバナンス用のプロパティ設定| このリリースでは、新しいメモリ設定が追加されました: リソース ガバナンス用の Memory\QueryMemoryLimit、DbpropMsmdRequestMemoryLimit、OLAP\Query\RowsetSerializationLimit。 詳細については、[メモリの設定](/analysis-services/server-properties/memory-properties)に関する記事を参照してください。|
@@ -262,7 +262,7 @@ ms.locfileid: "86923411"
 
 | 新機能または更新 | 詳細 |
 |:---|:---|
-|Azure SQL Database Managed Instance データベースのサポート| マネージド インスタンス上で [!INCLUDE[master-data-services](../includes/ssmdsshort-md.md)] をホストします。 [[!INCLUDE[master-data-services](../includes/ssmdsshort-md.md)] のインストールと構成](../master-data-services/master-data-services-installation-and-configuration.md#SetUpWeb)に関するページを参照してください。|
+|Azure SQL Managed Instance データベースのサポート| Azure SQL Managed Instance で [!INCLUDE[master-data-services](../includes/ssmdsshort-md.md)] をホストします。 [[!INCLUDE[master-data-services](../includes/ssmdsshort-md.md)] のインストールと構成](../master-data-services/master-data-services-installation-and-configuration.md#SetUpWeb)に関するページを参照してください。|
 |新しい HTML コントロール| HTML コントロールでは、以前の Silverlight コンポーネントがすべて置き換えられます。 Silverlight の依存関係が削除されました。|
 | &nbsp; | &nbsp; |
 

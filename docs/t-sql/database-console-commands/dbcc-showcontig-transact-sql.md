@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: 1df2123a-1197-4fff-91a3-25e3d8848aaa
 author: pmasl
 ms.author: umajay
-ms.openlocfilehash: a6843555e9f83a77470e35c5a854d53560f38a91
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 26dd5c74d56cf279157c9c4d34f15c765b47f763
+ms.sourcegitcommit: 00be343d0f53fe095a01ea2b9c1ace93cdcae724
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88459884"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98813223"
 ---
 # <a name="dbcc-showcontig-transact-sql"></a>DBCC SHOWCONTIG (Transact-SQL)
 
@@ -40,7 +40,7 @@ ms.locfileid: "88459884"
 > [!IMPORTANT]  
 >  [!INCLUDE[ssNoteDepFutureDontUse](../../includes/ssnotedepfuturedontuse-md.md)] 代わりに [sys.dm_db_index_physical_stats](../../relational-databases/system-dynamic-management-views/sys-dm-db-index-physical-stats-transact-sql.md) を使用してください。  
   
-**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] から[現在のバージョン](https://go.microsoft.com/fwlink/p/?LinkId=299658)まで)
+**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] から [現在のバージョン](/troubleshoot/sql/general/determine-version-edition-update-level)まで)
   
 ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)
   
@@ -99,8 +99,8 @@ DBCC SHOWCONTIG
 |**スキャンされたエクステント数**|テーブルまたはインデックスのエクステント数です。|  
 |**エクステントの切り替え回数**|DBCC ステートメントがテーブルまたはインデックスのページを横断する間に 1 つのエクステントから別のエクステントに移動する回数です。|  
 |**平均ページ数 (エクステントあたり)**|ページ チェーンに存在するエクステント 1 つあたりのページ数です。|  
-|**スキャン密度 [最善値:実際値]**|パーセンテージです。 **実際値**に対する**最善値**の比率です。 すべて連続的にリンクされているときは、この値は 100 になります。100 未満の場合は、断片化が発生していることを示します。<br /><br /> **最善値**は、すべて連続的にリンクされている場合の理想的なエクステント変更回数です。 **実際値**は、実際のエクステント変更回数を示します。|  
-|**論理スキャンの断片化**|インデックスのリーフ ページをスキャンするときに返される、順序が無効なページのパーセンテージです。 この数値はヒープとは関係ありません。 順序が不正なページとは、インデックスに割り当てられている次の物理的なページと、現在のリーフ ページの*次ページ* ポインターが示すページが異なるページのことです。|  
+|**スキャン密度 [最善値:実際値]**|パーセンテージです。 **実際値** に対する **最善値** の比率です。 すべて連続的にリンクされているときは、この値は 100 になります。100 未満の場合は、断片化が発生していることを示します。<br /><br /> **最善値** は、すべて連続的にリンクされている場合の理想的なエクステント変更回数です。 **実際値** は、実際のエクステント変更回数を示します。|  
+|**論理スキャンの断片化**|インデックスのリーフ ページをスキャンするときに返される、順序が無効なページのパーセンテージです。 この数値はヒープとは関係ありません。 順序が不正なページとは、インデックスに割り当てられている次の物理的なページと、現在のリーフ ページの *次ページ* ポインターが示すページが異なるページのことです。|  
 |**エクステント スキャンの断片化**|インデックスのリーフ ページをスキャンするときの順序が無効なエクステントのパーセンテージです。 この数値はヒープとは関係ありません。 順序が無効なエクステントとは、インデックス上の現在のページを含むエクステントの物理的な位置が、インデックス上の前のページを含むエクステントの直後でない状態を指します。<br /><br /> 注:インデックスが複数のファイルにわたっている場合、この数値は無意味です。|  
 |**平均空きバイト数 (ページあたり)**|スキャンしたページの平均の空きバイト数です。 数値が大きいほど、ページの密度が低くなります。 ランダムな挿入がそれほど行われないインデックスの場合は、小さい値の方が適しています。 この数値は行サイズの影響も受けます。行サイズが大きいと数値が大きくなります。|  
 |**平均ページ密度 (全体)**|パーセンテージで表した平均ページ密度です。 この数値は行サイズを考慮しています。 このため、ページが満たされる程度に関してはより正確な指標になります。 パーセント値は、大きいほど適しています。|  
@@ -134,7 +134,7 @@ TABLERESULTS を指定した場合、DBCC SHOWCONTIG は次の列に加え、前
 |**ScanDensity**|パーセンテージです。 **ActualCount** に対する **BestCount** の比率です。 すべて連続的にリンクされているときは、この値は 100 になります。100 未満の場合は、断片化が発生していることを示します。|  
 |**BestCount**|すべて連続的にリンクされている場合の理想的なエクステント変更回数です。|  
 |**ActualCount**|エクステント変更の実際の数です。|  
-|**LogicalFragmentation**|インデックスのリーフ ページをスキャンするときに返される、順序が無効なページのパーセンテージです。 この数値はヒープとは関係ありません。 順序が不正なページとは、インデックスに割り当てられている次の物理的なページと、現在のリーフ ページの*次ページ* ポインターが示すページが異なるページのことです。|  
+|**LogicalFragmentation**|インデックスのリーフ ページをスキャンするときに返される、順序が無効なページのパーセンテージです。 この数値はヒープとは関係ありません。 順序が不正なページとは、インデックスに割り当てられている次の物理的なページと、現在のリーフ ページの *次ページ* ポインターが示すページが異なるページのことです。|  
 |**ExtentFragmentation**|インデックスのリーフ ページをスキャンするときの順序が無効なエクステントのパーセンテージです。 この数値はヒープとは関係ありません。 順序が無効なエクステントとは、インデックス上の現在のページを含むエクステントの物理的な位置が、インデックス上の前のページを含むエクステントの直後でない状態を指します。<br /><br /> 注:インデックスが複数のファイルにわたっている場合、この数値は無意味です。|  
   
 WITH TABLERESULTS および FAST を指定した場合の結果セットは WITH TABLERESULTS を指定した場合と同じです。ただし、次の列が null 値になります。
@@ -170,7 +170,7 @@ DBCC SHOWCONTIG は、テーブルに著しい断片化が生じているかど�
 -   インデックスを再構築します。  
      REBUILD を設定した ALTER INDEX を使用して、インデックスを再構築します。 詳細については、「[ALTER INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/alter-index-transact-sql.md)」を参照してください。  
   
-無作為の挿入が多くないインデックスについては、**ページごとの平均空きバイト数**と**平均ページ密度 (全体)** は、インデックス ページの充填率を示します。 無作為の挿入が多くないインデックスについては、**ページごとの空きバイト数**を低くし、**平均ページ密度 (全体)** を高くしてください。 インデックスを削除し、FILLFACTOR オプションを指定して再作成を行うと、これらの統計が改善されます。 また、REORGANIZE と併用する ALTER INDEX コマンドは、インデックスの FILLFACTOR を考慮しながらインデックスを最適化するので、これらの統計が改善されます。
+無作為の挿入が多くないインデックスについては、**ページごとの平均空きバイト数** と **平均ページ密度 (全体)** は、インデックス ページの充填率を示します。 無作為の挿入が多くないインデックスについては、**ページごとの空きバイト数** を低くし、**平均ページ密度 (全体)** を高くしてください。 インデックスを削除し、FILLFACTOR オプションを指定して再作成を行うと、これらの統計が改善されます。 また、REORGANIZE と併用する ALTER INDEX コマンドは、インデックスの FILLFACTOR を考慮しながらインデックスを最適化するので、これらの統計が改善されます。
   
 > [!NOTE]  
 >  ランダム挿入が多く、ページの密度が高いインデックスは、ページ分割の数が増えます。 断片化が大きくなります。  
@@ -208,7 +208,7 @@ GO
 ```sql  
 USE AdventureWorks2012;  
 GO  
-DECLARE @id int, @indid int  
+DECLARE @id INT, @indid INT  
 SET @id = OBJECT_ID('Production.Product')  
 SELECT @indid = index_id   
 FROM sys.indexes  
@@ -245,12 +245,12 @@ GO
 /*Perform a 'USE <database name>' to select the database in which to run the script.*/  
 -- Declare variables  
 SET NOCOUNT ON;  
-DECLARE @tablename varchar(255);  
-DECLARE @execstr   varchar(400);  
-DECLARE @objectid  int;  
-DECLARE @indexid   int;  
-DECLARE @frag      decimal;  
-DECLARE @maxfrag   decimal;  
+DECLARE @tablename VARCHAR(255);  
+DECLARE @execstr   VARCHAR(400);  
+DECLARE @objectid  INT;  
+DECLARE @indexid   INT;  
+DECLARE @frag      DECIMAL;  
+DECLARE @maxfrag   DECIMAL;  
   
 -- Decide on the maximum fragmentation to allow for.  
 SELECT @maxfrag = 30.0;  
@@ -263,26 +263,26 @@ DECLARE tables CURSOR FOR
   
 -- Create the table.  
 CREATE TABLE #fraglist (  
-   ObjectName char(255),  
-   ObjectId int,  
-   IndexName char(255),  
-   IndexId int,  
-   Lvl int,  
-   CountPages int,  
-   CountRows int,  
-   MinRecSize int,  
-   MaxRecSize int,  
-   AvgRecSize int,  
-   ForRecCount int,  
-   Extents int,  
-   ExtentSwitches int,  
-   AvgFreeBytes int,  
-   AvgPageDensity int,  
-   ScanDensity decimal,  
-   BestCount int,  
-   ActualCount int,  
-   LogicalFrag decimal,  
-   ExtentFrag decimal);  
+   ObjectName CHAR(255),  
+   ObjectId INT,  
+   IndexName CHAR(255),  
+   IndexId INT,  
+   Lvl INT,  
+   CountPages INT,  
+   CountRows INT,  
+   MinRecSize INT,  
+   MaxRecSize INT,  
+   AvgRecSize INT,  
+   ForRecCount INT,  
+   Extents INT,  
+   ExtentSwitches INT,  
+   AvgFreeBytes INT,  
+   AvgPageDensity INT,  
+   ScanDensity DECIMAL,  
+   BestCount INT,  
+   ActualCount INT,  
+   LogicalFrag DECIMAL,  
+   ExtentFrag DECIMAL);  
   
 -- Open the cursor.  
 OPEN tables;  
@@ -354,5 +354,3 @@ GO
 [OBJECT_ID &#40;Transact-SQL&#41;](../../t-sql/functions/object-id-transact-sql.md)  
 [sys.indexes &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-indexes-transact-sql.md)
   
-  
-

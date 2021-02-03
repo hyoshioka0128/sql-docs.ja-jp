@@ -8,16 +8,16 @@ ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: f4f0da1fdee47d166fe1b06fd8ce6e8ddea64f4c
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 94f54e84a7f78dd92bacee399415149ca3b08a07
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85723850"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470903"
 ---
 # <a name="creating-multiple-models-using-rxexecby"></a>rxExecBy を使用して複数のモデルを作成する
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
 RevoScaleR の **rxExecBy** 関数では、複数の関連モデルの並列処理がサポートされています。 データ サイエンティストは、複数の類似エンティティのデータに基づいて 1 つの大きなモデルをトレーニングするのではなく、1 つのエンティティに固有のデータをそれぞれ使用して、多数の関連モデルをすばやく作成できます。 
 
@@ -39,7 +39,7 @@ RevoScaleR の rxExecBy 関数は、多数の小さなデータ セットに対�
 
 ## <a name="rxexecby-syntax-and-examples"></a>rxExecBy の構文と例
 
-**rxExecBy** は 4 つの入力を取ります。入力の 1 つは、指定された**キー**列でパーティション分割できるデータセットまたはデータ ソース オブジェクトです。 関数は、各パーティションの出力を返します。 出力の形式は、引数として渡される関数によって異なります。 たとえば、rxLinMod などのモデリング関数を渡すと、データセットのパーティションごとに個別のトレーニング済みモデルを返すことができます。
+**rxExecBy** は 4 つの入力を取ります。入力の 1 つは、指定された **キー** 列でパーティション分割できるデータセットまたはデータ ソース オブジェクトです。 関数は、各パーティションの出力を返します。 出力の形式は、引数として渡される関数によって異なります。 たとえば、rxLinMod などのモデリング関数を渡すと、データセットのパーティションごとに個別のトレーニング済みモデルを返すことができます。
 
 ### <a name="supported-functions"></a>サポートされる関数
 

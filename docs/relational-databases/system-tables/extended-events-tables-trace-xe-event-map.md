@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - trace_xe_event_map_TSQL
 - trace_xe_event_map
@@ -17,14 +17,14 @@ helpviewer_keywords:
 - trace_xe_event_map
 - extended events [SQL Server], tables
 ms.assetid: 537aa292-3540-47e8-be28-56dc01abc343
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 2e5a00eee3eb03b469f53fef18bb0512b8e2f32d
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 72394c7ec68c6abd2815edec6ec3ddabe135e09b
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545772"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99207220"
 ---
 # <a name="extended-events-tables---trace_xe_event_map"></a>拡張イベント テーブル - trace_xe_event_map
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "89545772"
 |package_name|**nvarchar(60)**|マップされたイベントが存在する拡張イベントパッケージの名前です。|  
 |xe_event_name|**nvarchar(60)**|SQL トレースイベントクラスにマップされる拡張イベントイベントの名前です。|  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  次のクエリを使用すると、SQL トレース イベント クラスと同様の拡張イベントを特定できます。  
   
 ```  

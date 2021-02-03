@@ -4,7 +4,7 @@ description: Transact-SQL スクリプト ファイル内のブレークポイ�
 titleSuffix: T-SQL debugger
 ms.prod: sql
 ms.prod_service: sql-tools
-ms.technology: scripting
+ms.technology: ssms
 ms.topic: conceptual
 helpviewer_keywords:
 - Transact-SQL debugger, breakpoint location
@@ -14,13 +14,13 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 12/04/2019
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 1ada37fc6ca1b90e65b2cc4531b13c090db05736
-ms.sourcegitcommit: d855def79af642233cbc3c5909bc7dfe04c4aa23
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: b8e99fef7e7ffff995f5f23afc69bcfe0c9800c2
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87122953"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97480643"
 ---
 # <a name="edit-a-breakpoint-location"></a>ブレークポイントの位置の編集
 
@@ -46,7 +46,7 @@ ms.locfileid: "87122953"
   
 ## <a name="see-also"></a>参照
 
-- [ヒット カウントの指定](../../relational-databases/scripting/specify-a-hit-count.md)
-- [ブレークポイント アクションの指定](../../relational-databases/scripting/specify-a-breakpoint-action.md)
-- [ブレークポイント条件の指定](../../relational-databases/scripting/specify-a-breakpoint-condition.md)
-- [ブレークポイント フィルターの指定](../../relational-databases/scripting/specify-a-breakpoint-filter.md)
+- [ヒット カウントの指定](./specify-a-hit-count.md)
+- [ブレークポイント アクションの指定](./specify-a-breakpoint-action.md)
+- [ブレークポイント条件の指定](./specify-a-breakpoint-condition.md)
+- [ブレークポイント フィルターの指定](./specify-a-breakpoint-filter.md)

@@ -29,13 +29,13 @@ helpviewer_keywords:
 ms.assetid: cba4999e-a9d4-4742-abc9-4a4f109206b6
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 95a36c889059488d20e5cfdf3f1c954d6c403d87
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: e3a2016379bce1813549a686ff1b8192e4bfa4d5
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88459641"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97439267"
 ---
 # <a name="sysdatetime-transact-sql"></a>SYSDATETIME (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -63,7 +63,7 @@ SYSDATETIME ( )
  **datetime2(7)**  
   
 ## <a name="remarks"></a>解説  
- [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントを参照できます SYSDATETIME を参照できる任意の場所、 **datetime2 (7) **式です。  
+ [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントを参照できます SYSDATETIME を参照できる任意の場所、 **datetime2 (7)** 式です。  
   
  SYSDATETIME は非決定的関数です。 この関数を列内で参照するビューと式には、インデックスを付けることができません。  
   
@@ -75,7 +75,7 @@ SYSDATETIME ( )
   
 ### <a name="a-getting-the-current-system-date-and-time"></a>A. 現在のシステム日付と時刻を取得する  
   
-```  
+```sql
 SELECT SYSDATETIME()  
     ,SYSDATETIMEOFFSET()  
     ,SYSUTCDATETIME()  
@@ -94,7 +94,7 @@ GETUTCDATE()       2007-04-30 20:10:02.047
   
 ### <a name="b-getting-the-current-system-date"></a>B. 現在のシステム日付を取得する  
   
-```  
+```sql
 SELECT CONVERT (date, SYSDATETIME())  
     ,CONVERT (date, SYSDATETIMEOFFSET())  
     ,CONVERT (date, SYSUTCDATETIME())  
@@ -107,7 +107,7 @@ SELECT CONVERT (date, SYSDATETIME())
   
 ### <a name="c-getting-the-current-system-time"></a>C. 現在のシステム時刻を取得する  
   
-```  
+```sql
 SELECT CONVERT (time, SYSDATETIME())  
     ,CONVERT (time, SYSDATETIMEOFFSET())  
     ,CONVERT (time, SYSUTCDATETIME())  
@@ -129,7 +129,7 @@ GETUTCDATE()       20:18:45.3470000
   
 ### <a name="d-getting-the-current-system-date-and-time"></a>D: 現在のシステム日付と時刻の取得  
   
-```  
+```sql
 SELECT SYSDATETIME();  
 ```  
   

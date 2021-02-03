@@ -1,7 +1,8 @@
 ---
-title: Azure Active Directory の使用 | SQL Server に関する Microsoft Docs
+title: Azure Active Directory の使用
+description: Microsoft OLE DB Driver for SQL Server で利用できて、Azure SQL データベースへの接続を可能にする Azure Active Directory 認証方法について説明します。
 ms.custom: ''
-ms.date: 10/11/2019
+ms.date: 09/30/2020
 ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
@@ -9,12 +10,12 @@ ms.technology: connectivity
 ms.topic: reference
 author: bazizi
 ms.author: v-beaziz
-ms.openlocfilehash: 9c3586c8b51495ed3c49dd88f9f85a2b60d09aa0
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+ms.openlocfilehash: 71f95203e006141649db7b884b56d085f562974b
+ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86007255"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96504713"
 ---
 # <a name="using-azure-active-directory"></a>Azure Active Directory の使用
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -23,28 +24,34 @@ ms.locfileid: "86007255"
 
 ## <a name="purpose"></a>目的
 
-バージョン 18.2.1 から、Microsoft OLE DB Driver for SQL Server では、フェデレーション ID を使用して OLE DB アプリケーションが Azure SQL Database のインスタンスに接続できるようになりました。 新しい認証方法は次のとおりです。
+
+バージョン [18.2.1](../release-notes-for-oledb-driver-for-sql-server.md#1821) から、Microsoft OLE DB Driver for SQL Server では、フェデレーション ID を使用して OLE DB アプリケーションが Azure SQL Database のインスタンスに接続できるようになりました。 新しい認証方法は次のとおりです。
 - Azure Active Directory のログイン ID とパスワード
 - Azure Active Directory のアクセス トークン
 - Azure Active Directory 統合認証
 - SQL ログイン ID とパスワード
 
-バージョン 18.3 では、次の認証方法のサポートが追加されています。
+
+バージョン [18.3.0](../release-notes-for-oledb-driver-for-sql-server.md#1830) では、次の認証方法のサポートが追加されています。
 - Azure Active Directory 対話型認証
-- Azure Active Directory MSI 認証
+- Azure Active Directory マネージド ID 認証
+
+バージョン [18.5.0](../release-notes-for-oledb-driver-for-sql-server.md#1850) では、次の認証方法のサポートが追加されています。
+- Azure Active Directory サービス プリンシパル認証
 
 > [!NOTE]
-> `DataTypeCompatibility` (またはそれに対応するプロパティ) が `80` に設定された状態での次の認証モードの使用は、サポート**されていません**。
+> `DataTypeCompatibility` (またはそれに対応するプロパティ) が `80` に設定された状態での次の認証モードの使用は、サポート **されていません**。
 > - ログイン ID とパスワードを使用する Azure Active Directory 認証
 > - アクセス トークンを使用する Azure Active Directory 認証
 > - Azure Active Directory 統合認証
 > - Azure Active Directory 対話型認証
-> - Azure Active Directory MSI 認証
+> - Azure Active Directory マネージド ID 認証
+> - Azure Active Directory サービス プリンシパル認証
 
 ## <a name="connection-string-keywords-and-properties"></a>接続文字列キーワードとプロパティ
 次の接続文字列キーワードが、Azure Active Directory 認証をサポートするために導入されています。
 
-|接続文字列キーワード|接続プロパティ|説明|
+|接続文字列キーワード|Connection プロパティ|説明|
 |---               |---                |---        |
 |Access Token|SSPROP_AUTH_ACCESS_TOKEN|Azure Active Directory に対する認証を行うためのアクセス トークンを指定します。 |
 |認証|SSPROP_AUTH_MODE|使用する認証方法を指定します。|
@@ -54,13 +61,13 @@ ms.locfileid: "86007255"
 - [初期化プロパティと承認プロパティ](../ole-db-data-source-objects/initialization-and-authorization-properties.md)
 
 ## <a name="encryption-and-certificate-validation"></a>暗号化と証明書の検証
-このセクションでは、暗号化および証明書の検証の動作の変更について説明します。 これらの変更は、新しい認証またはアクセス トークンの接続文字列キーワード (またはそれに対応するプロパティ) を使用する場合に**のみ**有効です。
+このセクションでは、暗号化および証明書の検証の動作の変更について説明します。 これらの変更は、新しい認証またはアクセス トークンの接続文字列キーワード (またはそれに対応するプロパティ) を使用する場合に **のみ** 有効です。
 
 ### <a name="encryption"></a>暗号化
 新しい接続プロパティ/キーワードが使用された場合、セキュリティを強化するために、ドライバーは既定の暗号化の値を `yes` に設定して、それをオーバーライドします。 オーバーライドが行われるのは、データ ソース オブジェクトの初期化時です。 初期化の前に何らかの方法で暗号化が設定されると、値は保持され、オーバーライドされません。
 
 > [!NOTE]   
-> ADO アプリケーション、および `IDataInitialize::GetDataSource` を介して `IDBInitialize` インターフェイスを取得するアプリケーションでは、このインターフェイスを実装するコア コンポーネントによって、暗号化が既定値の `no` に明示的に設定されます。 その結果、新しい認証プロパティ/キーワードではこの設定が保持され、暗号化の値はオーバーライド**されません**。 そのため、これらのアプリケーションで `Use Encryption for Data=true` を明示的に設定し、既定値をオーバーライドすることを**お勧めします**。
+> ADO アプリケーション、および `IDataInitialize::GetDataSource` を介して `IDBInitialize` インターフェイスを取得するアプリケーションでは、このインターフェイスを実装するコア コンポーネントによって、暗号化が既定値の `no` に明示的に設定されます。 その結果、新しい認証プロパティ/キーワードではこの設定が保持され、暗号化の値はオーバーライド **されません**。 そのため、これらのアプリケーションで `Use Encryption for Data=true` を明示的に設定し、既定値をオーバーライドすることを **お勧めします**。
 
 ### <a name="certificate-validation"></a>証明書の検証
 セキュリティを強化するために、新しい接続プロパティ/キーワードでは、**クライアントの暗号化設定に関係なく**、`TrustServerCertificate` 設定 (およびそれに対応する接続文字列キーワード/プロパティ) が保持されます。 その結果、既定でサーバー証明書が検証されます。
@@ -118,7 +125,7 @@ ms.locfileid: "86007255"
 ### <a name="azure-active-directory-authentication-using-an-access-token"></a>アクセス トークンを使用する Azure Active Directory 認証
 
 - `IDataInitialize::GetDataSource`の使用
-    > Provider=MSOLEDBSQL;Data Source=[サーバー];Initial Catalog=[データベース];**Access Token=[アクセス トークン]** ;Use Encryption for Data=true
+    > Provider=MSOLEDBSQL;Data Source=[サーバー];Initial Catalog=[データベース];**Access Token=[アクセス トークン]**;Use Encryption for Data=true
 - `DBPROP_INIT_PROVIDERSTRING`の使用
     > `DBPROP_INIT_PROVIDERSTRING` を使用したアクセス トークンの提供はサポートされていません
 
@@ -129,7 +136,7 @@ ms.locfileid: "86007255"
 - `DBPROP_INIT_PROVIDERSTRING`の使用
     > Server=[サーバー];Database=[データベース];**Authentication=ActiveDirectoryInteractive**;UID=[ユーザー名];Encrypt=yes
 
-### <a name="azure-active-directory-msi-authentication"></a>Azure Active Directory MSI 認証
+### <a name="azure-active-directory-managed-identity-authentication"></a>Azure Active Directory マネージド ID 認証
 
 - `IDataInitialize::GetDataSource`の使用
     - ユーザー割り当てマネージド ID:
@@ -141,6 +148,13 @@ ms.locfileid: "86007255"
         > Server=[サーバー];Database=[データベース];**Authentication=ActiveDirectoryMSI**;UID=[オブジェクト ID];Encrypt=yes
     - システム割り当てマネージド ID:
         > Server=[サーバー];Database=[データベース];**Authentication=ActiveDirectoryMSI**;Encrypt=yes
+
+### <a name="azure-active-directory-service-principal-authentication"></a>Azure Active Directory サービス プリンシパル認証
+
+- `IDataInitialize::GetDataSource`の使用
+    > Provider=MSOLEDBSQL;Data Source=[サーバー];Initial Catalog=[データベース];**Authentication=ActiveDirectoryServicePrincipal**;User ID=[アプリケーション (クライアント) ID];Password=[アプリケーション (クライアント) シークレット];Use Encryption for Data=true
+- `DBPROP_INIT_PROVIDERSTRING`の使用
+    > Server=[サーバー];Database=[データベースj];**Authentication=ActiveDirectoryServicePrincipal**;UID=[アプリケーション (クライアント) ID];PWD=[アプリケーション (クライアント) シークレット];Encrypt=yes
 
 ## <a name="code-samples"></a>コード サンプル
 
@@ -258,8 +272,8 @@ Cleanup:
 ```
 
 ## <a name="next-steps"></a>次のステップ
-- [OAuth 2.0 コード付与フローを使用して Azure Active Directory Web アプリケーションへのアクセスを承認する](https://go.microsoft.com/fwlink/?linkid=2072672)。
+- [OAuth 2.0 コード付与フローを使用して Azure Active Directory Web アプリケーションへのアクセスを承認する](/azure/active-directory/azuread-dev/v1-protocols-oauth-code)。
 
-- SQL Server への [Azure Active Directory 認証](https://go.microsoft.com/fwlink/?linkid=2073783)について学習します。
+- SQL Server への [Azure Active Directory 認証](/azure/azure-sql/database/authentication-aad-overview)について学習します。
 
 - OLE DB ドライバーがサポートする[接続文字列キーワード](../applications/using-connection-string-keywords-with-oledb-driver-for-sql-server.md)を使用してドライバー接続を構成します。

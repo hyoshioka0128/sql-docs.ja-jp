@@ -1,26 +1,26 @@
 ---
-description: dm_pdw_nodes (Transact-sql)
-title: dm_pdw_nodes (Transact-sql) |Microsoft Docs
+description: sys.dm_pdw_nodes (Transact-sql)
+title: sys.dm_pdw_nodes (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/07/2017
 ms.prod: sql
 ms.technology: data-warehouse
 ms.reviewer: ''
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 ms.assetid: 93966909-d758-4d50-950b-f5066d104fa6
 author: ronortloff
 ms.author: rortloff
-monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest || = sqlallproducts-allversions'
-ms.openlocfilehash: b999f7e10baece4566ebe0dd87b96b92eaabac53
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
+ms.openlocfilehash: b6ba594d39222549d8f906d3846085afc5ec7bea
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88474783"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99140357"
 ---
-# <a name="sysdm_pdw_nodes-transact-sql"></a>dm_pdw_nodes (Transact-sql)
+# <a name="sysdm_pdw_nodes-transact-sql"></a>sys.dm_pdw_nodes (Transact-sql)
 [!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
 
   のすべてのノードに関する情報を保持 [!INCLUDE[ssAPS](../../includes/ssaps-md.md)] します。 アプライアンス内のノードごとに1行が一覧表示されます。  
@@ -35,6 +35,6 @@ ms.locfileid: "88474783"
 |region|**nvarchar(32)**|ノードが実行されているリージョン。|' PDW '、' HDINSIGHT '|  
   
 ## <a name="see-also"></a>参照  
- [SQL Data Warehouse および並列データウェアハウスの動的管理ビュー &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sql-and-parallel-data-warehouse-dynamic-management-views.md)  
+ [Azure Synapse Analytics と並列データウェアハウスの動的管理ビュー &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sql-and-parallel-data-warehouse-dynamic-management-views.md)  
   
   

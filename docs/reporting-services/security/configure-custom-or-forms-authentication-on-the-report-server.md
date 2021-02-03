@@ -1,4 +1,5 @@
 ---
+description: レポート サーバーでカスタム認証またはフォーム認証を構成する
 title: レポート サーバーでカスタム認証またはフォーム認証を構成する | Microsoft Docs
 ms.date: 04/18/2017
 ms.prod: reporting-services
@@ -11,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: e8601a8f-e66d-4649-8e4d-a46ca20ec7d0
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 8c77e0f066c6342fb0b5bc58130cb20c80e40de3
-ms.sourcegitcommit: ff82f3260ff79ed860a7a58f54ff7f0594851e6b
+ms.openlocfilehash: bca083e29d0d03a5a5470f58b4e004d81cd27a36
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "65571168"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596633"
 ---
 # <a name="configure-custom-or-forms-authentication-on-the-report-server"></a>レポート サーバーでカスタム認証またはフォーム認証を構成する
 
@@ -27,7 +28,7 @@ Reporting Services に用意されている拡張可能なアーキテクチャ�
 > [!NOTE]
 >  カスタム認証拡張機能を作成するには、カスタム コードと [!INCLUDE[vstecasp](../../includes/vstecasp-md.md)] セキュリティに関する専門知識が必要です。 カスタム認証拡張機能を作成しない場合は、 [!INCLUDE[msCoName](../../includes/msconame-md.md)] Active Directory のグループとアカウントを使用できます。ただし、レポート サーバーの配置のスコープを大幅に縮小する必要があります。 カスタム認証について詳しくは、「 [セキュリティ拡張機能の実装](../../reporting-services/extensions/security-extension/implementing-a-security-extension.md)」をご覧ください。
 
-さらに、SharePoint 製品と統合された SQL Server Reporting Services 環境でフォーム認証またはカスタム認証拡張機能を使用する場合は、選択した認証方法を使用するように SharePoint サイトを構成する必要があります。 SharePoint における認証の構成に関する詳細については、 [Developer Network (MSDN) の「](https://go.microsoft.com/fwlink/?LinkId=115575) 認証の例 [!INCLUDE[msCoName](../../includes/msconame-md.md)] 」をご覧ください。
+さらに、SharePoint 製品と統合された SQL Server Reporting Services 環境でフォーム認証またはカスタム認証拡張機能を使用する場合は、選択した認証方法を使用するように SharePoint サイトを構成する必要があります。 SharePoint における認証の構成に関する詳細については、 [Developer Network (MSDN) の「](/previous-versions/office/sharepoint-2007-products-and-technologies/cc262069(v=office.12)) 認証の例 [!INCLUDE[msCoName](../../includes/msconame-md.md)] 」をご覧ください。
 
 
 
@@ -35,7 +36,7 @@ Reporting Services に用意されている拡張可能なアーキテクチャ�
 
 1.  テキスト エディターで RSReportServer.config を開きます。
 
-2.  \<**Authentication**> を検索します。
+2.  \<**Authentication**> を探します。
 
 3.  次の XML 構造をコピーします。
 
@@ -56,13 +57,13 @@ Reporting Services に用意されている拡張可能なアーキテクチャ�
 
 6.  レポート サーバーの Web.config ファイルを開きます。 既定では、このファイルは \Program Files\Microsoft SQL Server\MSRS10_50.MSSQLSERVER\ReportServer にあります。
 
-7.  **authentication mode** を探して、それを **Forms**に設定します。
+7.  **authentication mode** を探して、それを **Forms** に設定します。
 
     ```
     <authentication mode = "Forms" />
     ```
 
-8.  **identity impersonate** を探して、それを **False**に設定します。
+8.  **identity impersonate** を探して、それを **False** に設定します。
 
     ```
     <identity impersonate = "false" />  

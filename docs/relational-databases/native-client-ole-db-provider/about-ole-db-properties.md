@@ -16,13 +16,13 @@ helpviewer_keywords:
 ms.assetid: 0b36a61e-b542-400d-a3d2-e6f643caf2c6
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: b7c6e88a9f8a5083e18744e954a6063cda076750
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 8ae2a130508f85f9ea1dc83fe6754d880a94d81c
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88490741"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97469333"
 ---
 # <a name="about-sql-server-native-client-ole-db-properties"></a>SQL Server Native Client OLE DB のプロパティについて
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -51,6 +51,5 @@ ms.locfileid: "88490741"
   
 ## <a name="see-also"></a>参照  
  [SQL Server Native Client OLE DB プロバイダーアプリケーションの作成](../../relational-databases/native-client-ole-db-provider/creating-a-sql-server-native-client-ole-db-provider-application.md)   
- [プロパティ [OLE DB]](https://go.microsoft.com/fwlink/?LinkId=112207)  
-  
+ [プロパティ [OLE DB]](/previous-versions/windows/desktop/ms722734(v=vs.85))  
   

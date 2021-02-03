@@ -22,13 +22,13 @@ helpviewer_keywords:
 ms.assetid: 67084a67-43ff-4065-987a-3b16d1841565
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: =azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions
-ms.openlocfilehash: d3af77a60678e8286fadfbafcf46f742439e9bf7
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+monikerRange: =azuresqldb-mi-current||>=sql-server-2016
+ms.openlocfilehash: 3aa0d62d275f3c92a6a21aba4c60b083e004e10b
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86902528"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97467443"
 ---
 # <a name="enhance-transactional-replication-performance"></a>トランザクション レプリケーションのパフォーマンスの向上
 [!INCLUDE[sql-asdbmi](../../../includes/applies-to-version/sql-asdbmi.md)]
@@ -84,7 +84,7 @@ ms.locfileid: "86902528"
     - **SubscriptionStreams** の値を大きくすると、サブスクライバーへの複数の接続が変更のバッチを並列で適用するため、ディストリビューション エージェントの全体的なスループットの向上に役立ちます。 ただし、プロセッサの数および他のメタデータの条件 (主キー、外部キー、一意制約、インデックスなど) によっては、SubscriptionStreams の値を高くすると悪影響がある可能性があります。 さらに、ストリームの実行またはコミットが失敗した場合、ディストリビューション エージェントはフォールバックし、単一のストリームで失敗したバッチを再試行します。
 
 
-このテストについて詳しくは、ブログ「[レプリケーションエージェントのプロファイルパラメータを最適化してパフォーマンスを向上させる](https://blogs.msdn.microsoft.com/sql_server_team/optimizing-replication-agent-profile-parameters-for-better-performance/)」(パフォーマンス向上のためのレプリケーション エージェントのプロファイル パラメーターの最適化) をご覧ください。
+このテストについて詳しくは、ブログ「[レプリケーションエージェントのプロファイルパラメータを最適化してパフォーマンスを向上させる](/archive/blogs/sql_server_team/optimizing-replication-agent-profile-parameters-for-better-performance)」(パフォーマンス向上のためのレプリケーション エージェントのプロファイル パラメーターの最適化) をご覧ください。
 
 
 ### <a name="log-reader-agent"></a>ログ リーダー エージェント (Log Reader Agent)
@@ -105,7 +105,7 @@ ms.locfileid: "86902528"
 #### <a name="maxcmdsintran"></a>MaxCmdsInTran
 - 予期せずに 1 回だけ発生するボトルネックを解決するには、ログ リーダー エージェントに対して **–MaxCmdsInTran** パラメーターを使用します。  
   
-**–MaxCmdsInTran** パラメーターは、ログ リーダーがディストリビューション データベースにコマンドを書き込む際に、トランザクションにグループ化されるステートメントの最大数を指定します。 このパラメーターを使用すると、ログ リーダー エージェントおよびディストリビューション エージェントは、サブスクライバーでコマンドを適用するときに、パブリッシャーで (多数のコマンドで構成される) 大きなトランザクションを複数の小さなトランザクションに分割できます。 このパラメーターを指定すると、ディストリビューターでの競合を減らし、パブリッシャーとサブスクライバーの間の待機時間を減らすことができます。 元のトランザクションはより小さな単位で適用されるため、サブスクライバーは元のトランザクションが終了する前に、大きな論理パブリッシャー トランザクションの行にアクセスし、トランザクションの厳密な原子性を損なうことがあります。 既定値は **0**です。この場合、パブリッシャーのトランザクション境界が保護されます。 このパラメーターは、Oracle パブリッシャーには適用されません。  
+**–MaxCmdsInTran** パラメーターは、ログ リーダーがディストリビューション データベースにコマンドを書き込む際に、トランザクションにグループ化されるステートメントの最大数を指定します。 このパラメーターを使用すると、ログ リーダー エージェントおよびディストリビューション エージェントは、サブスクライバーでコマンドを適用するときに、パブリッシャーで (多数のコマンドで構成される) 大きなトランザクションを複数の小さなトランザクションに分割できます。 このパラメーターを指定すると、ディストリビューターでの競合を減らし、パブリッシャーとサブスクライバーの間の待機時間を減らすことができます。 元のトランザクションはより小さな単位で適用されるため、サブスクライバーは元のトランザクションが終了する前に、大きな論理パブリッシャー トランザクションの行にアクセスし、トランザクションの厳密な原子性を損なうことがあります。 既定値は **0** です。この場合、パブリッシャーのトランザクション境界が保護されます。 このパラメーターは、Oracle パブリッシャーには適用されません。  
   
    > [!WARNING]  
    >  **MaxCmdsInTran** は、常に有効になるようには設計されていませんでした。 このパラメーターは、ユーザーが誤って 1 つのトランザクションで多数の DML 操作を実行した場合に対応するためのものです (このような場合、トランザクション全体がディストリビューション データベースに格納されるまでコマンドの配布で遅延が発生したり、ロックが保持されたりするなどの問題が発生します)。 このような状況が定期的に発生する場合は、アプリケーションを確認して、トランザクションのサイズを縮小する方法を見つけます。  
@@ -162,5 +162,4 @@ SQL Server オンライン ブックの "ディストリビューション エ�
 [レプリケーション エージェント プロファイルの操作](../../../relational-databases/replication/agents/work-with-replication-agent-profiles.md)  
 [レプリケーション エージェント コマンド プロンプト パラメーターを表示および変更する &#40;SQL Server Management Studio&#41;](../../../relational-databases/replication/agents/view-and-modify-replication-agent-command-prompt-parameters.md)  
 [Replication Agent Executables Concepts](../../../relational-databases/replication/concepts/replication-agent-executables-concepts.md)  
-  
   

@@ -6,7 +6,7 @@ ms.date: 05/24/2019
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: supportability
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - SQL Server event classes, Broker event category
 - Broker event category [SQL Server]
@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: 470dc93c-0dda-4d89-829b-937738d59b31
 author: stevestein
 ms.author: sstein
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: ab93bbb94022f25206154e94531754315ef21c34
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: bbf57d56e65e00221fba35449898c9bc23d70529
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88456024"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99111824"
 ---
 # <a name="broker-event-category"></a>Broker イベント カテゴリ
 
@@ -45,7 +45,6 @@ ms.locfileid: "88456024"
   
  Service Broker には、2 つのセキュリティ監査イベントも提供されます。 これらのイベントの詳細については、「 [Audit Broker Login イベント クラス](../../relational-databases/event-classes/audit-broker-login-event-class.md) 」と「 [Audit Broker Conversation イベント クラス](../../relational-databases/event-classes/audit-broker-conversation-event-class.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
- [セキュリティ監査イベント カテゴリ](https://docs.microsoft.com/analysis-services/trace-events/security-audit-event-category)  
-  
+## <a name="see-also"></a>参照  
+ [セキュリティ監査イベント カテゴリ](/analysis-services/trace-events/security-audit-event-category)  
   

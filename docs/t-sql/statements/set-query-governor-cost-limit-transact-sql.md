@@ -21,14 +21,14 @@ helpviewer_keywords:
 - QUERY_GOVERNOR_COST_LIMIT option
 - overriding connection values
 ms.assetid: 3424bb44-6915-462d-a8d7-fe834af81387
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: bef95342402c065b0691e7478a3fc04b26e5495d
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: fb2a2c1dda36b6e2378c6197e1e87cc9190a535b
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88304429"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98100737"
 ---
 # <a name="set-query_governor_cost_limit-transact-sql"></a>SET QUERY_GOVERNOR_COST_LIMIT (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -52,15 +52,15 @@ SET QUERY_GOVERNOR_COST_LIMIT value
   
  "クエリ コスト" とは、特定のハードウェア構成でクエリを完了するために必要とされる予測所要時間を秒単位で表したものです。  
   
-## <a name="remarks"></a>注釈  
- SET QUERY_GOVERNOR_COST_LIMIT の設定は現在の接続にだけ適用され、現在の接続が終了するまで有効です。 サーバー全体のクエリ制御コストの上限値を変更するには、[sp_configure](../../database-engine/configure-windows/configure-the-query-governor-cost-limit-server-configuration-option.md) の **query governor cost limit サーバー構成オプション**を構成します。 このオプションを構成する方法の詳細については、「[sp_configure](../../relational-databases/system-stored-procedures/sp-configure-transact-sql.md)」および「[サーバー構成オプション &#40;SQL Server&#41;](../../database-engine/configure-windows/server-configuration-options-sql-server.md)」を参照してください。  
+## <a name="remarks"></a>解説  
+ SET QUERY_GOVERNOR_COST_LIMIT の設定は現在の接続にだけ適用され、現在の接続が終了するまで有効です。 サーバー全体のクエリ制御コストの上限値を変更するには、[sp_configure](../../database-engine/configure-windows/configure-the-query-governor-cost-limit-server-configuration-option.md) の **query governor cost limit サーバー構成オプション** を構成します。 このオプションを構成する方法の詳細については、「[sp_configure](../../relational-databases/system-stored-procedures/sp-configure-transact-sql.md)」および「[サーバー構成オプション &#40;SQL Server&#41;](../../database-engine/configure-windows/server-configuration-options-sql-server.md)」を参照してください。  
   
  SET QUERY_GOVERNOR_COST_LIMIT は、解析時ではなく実行時に設定されます。  
   
 ## <a name="permissions"></a>アクセス許可  
  ロール **public** のメンバーシップが必要です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [SET ステートメント &#40;Transact-SQL&#41;](../../t-sql/statements/set-statements-transact-sql.md)  
   
   

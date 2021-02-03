@@ -3,7 +3,7 @@ title: Transact-SQL デバッガー
 description: Transact-SQL デバッガーを使用してコードをステップ実行し、実行状態を表示する方法と、その他のさまざまなデバッグ タスクを実行する方法について説明します。
 titleSuffix: T-SQL debugger
 ms.prod: sql
-ms.technology: scripting
+ms.technology: ssms
 ms.topic: conceptual
 helpviewer_keywords:
 - Transact-SQL debugger, introduction
@@ -13,13 +13,13 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 07/22/2020
-monikerRange: '>= sql-server-2016 || = sqlallproducts-allversions'
-ms.openlocfilehash: 7a3f86e5df9c94905089cd5382d3895dd9f01e84
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+monikerRange: '>= sql-server-2016'
+ms.openlocfilehash: 0a62b9bae20ec9f45d73c2a891b50dda746d568d
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87246162"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642304"
 ---
 # <a name="transact-sql-debugger"></a>Transact-SQL デバッガー
 
@@ -47,7 +47,7 @@ ms.locfileid: "87246162"
 
     ストアド プロシージャまたは関数をデバッグする場合、モジュールにステップ インできます。 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] に、モジュールのソース コードが表示された新しい [!INCLUDE[ssDE](../../includes/ssde-md.md)] クエリ エディター ウィンドウが開かれた後、ウィンドウがデバッグ モードに切り替えられ、モジュールの最初のステートメントで実行が一時停止します。 その後、モジュールのコードに対して、ブレークポイントの設定やコードのステップ実行などの操作を行うことができます。  
 
-デバッガーでのコードの操作については、「 [Transact-SQL コードのステップ実行](../../relational-databases/scripting/step-through-transact-sql-code.md)」を参照してください。  
+デバッガーでのコードの操作については、「 [Transact-SQL コードのステップ実行](./step-through-transact-sql-code.md)」を参照してください。  
 
 ## <a name="viewing-debugger-information"></a>デバッガー情報の表示
 
@@ -69,11 +69,11 @@ ms.locfileid: "87246162"
 
 |タスクの説明|トピック|  
 |----------------------|-----------|  
-|リモート デバッグに必要な構成を [!INCLUDE[tsql](../../includes/tsql-md.md)] デバッガーに対して行う方法について説明します。|[TSQL デバッガー実行前のファイアウォール規則の構成](../../relational-databases/scripting/configure-firewall-rules-before-running-the-tsql-debugger.md)|  
-|デバッガーの操作を開始、停止、および制御する方法について説明します。|[Transact-SQL デバッガーの実行](../../relational-databases/scripting/run-the-transact-sql-debugger.md)|  
-|[!INCLUDE[tsql](../../includes/tsql-md.md)] デバッガーを使用してコードをステップ実行する方法について説明します。|[Transact-SQL コードのステップ実行](../../relational-databases/scripting/step-through-transact-sql-code.md)|  
-|デバッガーを使用して [!INCLUDE[tsql](../../includes/tsql-md.md)] データ (パラメーター、変数など) およびシステム情報を表示する方法について説明します。|[Transact-SQL デバッガー情報](../../relational-databases/scripting/transact-sql-debugger-information.md)|  
+|リモート デバッグに必要な構成を [!INCLUDE[tsql](../../includes/tsql-md.md)] デバッガーに対して行う方法について説明します。|[TSQL デバッガー実行前のファイアウォール規則の構成](./configure-firewall-rules-before-running-the-tsql-debugger.md)|  
+|デバッガーの操作を開始、停止、および制御する方法について説明します。|[Transact-SQL デバッガーの実行](./run-the-transact-sql-debugger.md)|  
+|[!INCLUDE[tsql](../../includes/tsql-md.md)] デバッガーを使用してコードをステップ実行する方法について説明します。|[Transact-SQL コードのステップ実行](./step-through-transact-sql-code.md)|  
+|デバッガーを使用して [!INCLUDE[tsql](../../includes/tsql-md.md)] データ (パラメーター、変数など) およびシステム情報を表示する方法について説明します。|[Transact-SQL デバッガー情報](./transact-sql-debugger-information.md)|  
 
 ## <a name="see-also"></a>関連項目
 
-[クエリおよびテキスト エディター &#40;SQL Server Management Studio&#41;](../../relational-databases/scripting/query-and-text-editors-sql-server-management-studio.md)
+[クエリおよびテキスト エディター &#40;SQL Server Management Studio&#41;](../f1-help/database-engine-query-editor-sql-server-management-studio.md)

@@ -6,11 +6,16 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
-- Int()_TSQL
-- sql13.swb.tsqlresults.f1
-- sql13.swb.tsqlquery.f1
+- bigint_TSQL
+- smallint
+- bigint
+- smallint_TSQL
+- tinyint_TSQL
+- int_TSQL
+- int
+- tinyint
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -22,13 +27,13 @@ helpviewer_keywords:
 ms.assetid: 9bda5b0b-2380-4931-a1c8-f362fdefa99b
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 0fab6f77202c4a0fc136d760730c03d24e583870
-ms.sourcegitcommit: b80364e31739d7b08cc388c1f83bb01de5dd45c1
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 23242d075a453f244601ed573ed779d160d810bd
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87565620"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99165139"
 ---
 # <a name="int-bigint-smallint-and-tinyint-transact-sql"></a>int、bigint、smallint、および tinyint (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -47,7 +52,7 @@ ms.locfileid: "87565620"
   
 **bigint** 間に位置 **smallmoney** と **int** データ型の優先順位表でします。
   
-関数を返します。 **bigint** 、パラメーター式が場合にのみ、 **bigint** データ型。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] その他の整数データ型を自動的に昇格しません (**tinyint**, 、**smallint**, 、および **int**) に **bigint**です。
+関数を返します。 **bigint** 、パラメーター式が場合にのみ、 **bigint** データ型。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] その他の整数データ型を自動的に昇格しません (**tinyint**, 、**smallint**, 、および **int**) に **bigint** です。
   
 > [!CAUTION]  
 >  +、-、\*、/、または % の算術演算子を使用して、**int**、**smallint**、**tinyint**、または **bigint** の定数値の暗黙的または明示的変換を実行して **float**、**real**、**decimal**、または **numeric** データ型にした場合、データ型と式の精度を計算するときに [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] が適用する規則は、クエリが自動パラメーター化されているかどうかに応じて異なります。  
@@ -59,7 +64,7 @@ ms.locfileid: "87565620"
 ## <a name="converting-integer-data"></a>整数型データの変換
 整数を暗黙的に文字データ型に変換するとき、整数が大きすぎて文字型フィールドに格納できない場合、ASCII 文字コード 42 のアスタリスク (*) が [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によって入力されます。
   
-2,147, 483,647 に変換されます。 よりも大きい整数の定数、 **decimal** データ型ではなく、 **bigint** データ型。 次の例は、しきい値を超過すると、結果のデータ型変更から、 **int** を **decimal**です。
+2,147, 483,647 に変換されます。 よりも大きい整数の定数、 **decimal** データ型ではなく、 **bigint** データ型。 次の例は、しきい値を超過すると、結果のデータ型変更から、 **int** を **decimal** です。
   
 ```sql
 SELECT 2147483647 / 2 AS Result1, 2147483649 / 2 AS Result2 ;  
@@ -78,10 +83,10 @@ Result1      Result2
 ```sql
 CREATE TABLE dbo.MyTable  
 (  
-  MyBigIntColumn bigint  
-,MyIntColumn  int
-,MySmallIntColumn smallint
-,MyTinyIntColumn tinyint
+  MyBigIntColumn BIGINT  
+,MyIntColumn  INT
+,MySmallIntColumn SMALLINT
+,MyTinyIntColumn TINYINT
 );  
   
 GO  
@@ -94,7 +99,7 @@ FROM dbo.MyTable;
   
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
   
-```sql
+```
 MyBigIntColumn       MyIntColumn MySmallIntColumn MyTinyIntColumn  
 -------------------- ----------- ---------------- ---------------  
 9223372036854775807  2147483647  32767            255  

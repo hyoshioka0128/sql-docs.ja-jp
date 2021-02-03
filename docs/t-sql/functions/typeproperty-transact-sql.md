@@ -20,13 +20,13 @@ helpviewer_keywords:
 ms.assetid: bc311c80-bac5-46ab-a5c8-68b1c6bbf24a
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 455f736f73d2b4ba6c5e798b3cd9d8376ee4217b
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 54957a176c0896e01603de5a47accbcaed6c6681
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88467723"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97439257"
 ---
 # <a name="typeproperty-transact-sql"></a>TYPEPROPERTY (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "88467723"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql
 TYPEPROPERTY (type , property)  
 ```  
   
@@ -71,7 +71,7 @@ TYPEPROPERTY (type , property)
 ### <a name="a-identifying-the-owner-of-a-data-type"></a>A. データ型の所有者を特定する  
  次の例では、データ型の所有者を返します。  
   
-```  
+```sql
 SELECT TYPEPROPERTY(SCHEMA_NAME(schema_id) + '.' + name, 'OwnerId') AS owner_id, name, system_type_id, user_type_id, schema_id  
 FROM sys.types;  
 ```  
@@ -79,7 +79,7 @@ FROM sys.types;
 ### <a name="b-returning-the-precision-of-the-tinyint-data-type"></a>B. tinyint データ型の有効桁数を返す  
  次の例では、`tinyint` データ型の有効桁数を返します。  
   
-```  
+```sql
 SELECT TYPEPROPERTY( 'tinyint', 'PRECISION');  
 ```  
   

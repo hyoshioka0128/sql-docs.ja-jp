@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sp_bindefault
 - sp_bindefault_TSQL
@@ -18,13 +18,13 @@ helpviewer_keywords:
 ms.assetid: 3da70c10-68d0-4c16-94a5-9e84c4a520f6
 author: markingmyname
 ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 21f743aa4c28095a3167ebb16cf873f46afece38
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 4aacb6bff81f204e89e8704406d61ffb69ae84fb
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89541962"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99199199"
 ---
 # <a name="sp_bindefault-transact-sql"></a>sp_bindefault (Transact-sql)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -50,20 +50,20 @@ sp_bindefault [ @defname = ] 'default' ,
   
 `[ @objname = ] 'object_name'` 既定値をバインドするテーブルと列、または別名データ型の名前を指定します。 *object_name* は **nvarchar (776)** で、既定値はありません。 *object_name* は、 **varchar (max)**、 **nvarchar (max)**、 **varbinary (MAX)**、 **xml**、または CLR ユーザー定義型では定義できません。  
   
- *Object_name*が1つの部分で構成される名前である場合、別名データ型として解決されます。 2部構成または3部構成の名前の場合は、最初にテーブルと列として解決されます。この解決が失敗した場合、別名データ型として解決されます。 既定では、default が列に直接バインドされていない限り、別名データ型の既存の列は *default*を継承します。 既定値をバインドすることはできません、 **text**,、 **ntext**,、 **イメージ**,、 **varchar (max**),、 **nvarchar (max)**,、 **varbinary (max)**,、 **xml**,、 **タイムスタンプ**,、または CLR ユーザー定義型の列、IDENTITY プロパティを持つ列、計算列、または既に既定の制約が設定されている列です。  
+ *Object_name* が1つの部分で構成される名前である場合、別名データ型として解決されます。 2部構成または3部構成の名前の場合は、最初にテーブルと列として解決されます。この解決が失敗した場合、別名データ型として解決されます。 既定では、default が列に直接バインドされていない限り、別名データ型の既存の列は *default* を継承します。 既定値をバインドすることはできません、 **text**,、 **ntext**,、 **イメージ**,、 **varchar (max**),、 **nvarchar (max)**,、 **varbinary (max)**,、 **xml**,、 **タイムスタンプ**,、または CLR ユーザー定義型の列、IDENTITY プロパティを持つ列、計算列、または既に既定の制約が設定されている列です。  
   
 > [!NOTE]  
 >  *object_name* には、区切られた識別子として角かっこ **[]** を含めることができます。 詳細については、「[データベース識別子](../../relational-databases/databases/database-identifiers.md)」を参照してください。  
   
-`[ @futureonly = ] 'futureonly_flag'` は、別名データ型に既定値をバインドする場合にのみ使用されます。 *futureonly_flag* は **varchar (15)** で、既定値は NULL です。 このパラメーターが **futureonly**に設定されている場合、そのデータ型の既存の列は新しい既定値を継承できません。 このパラメーターは、既定値を列にバインドするときには使用されません。 *Futureonly_flag*が NULL の場合、新しい既定値は、現在既定値を持たない別名データ型の列、または別名データ型の既存の既定値を使用している列にバインドされます。  
+`[ @futureonly = ] 'futureonly_flag'` は、別名データ型に既定値をバインドする場合にのみ使用されます。 *futureonly_flag* は **varchar (15)** で、既定値は NULL です。 このパラメーターが **futureonly** に設定されている場合、そのデータ型の既存の列は新しい既定値を継承できません。 このパラメーターは、既定値を列にバインドするときには使用されません。 *Futureonly_flag* が NULL の場合、新しい既定値は、現在既定値を持たない別名データ型の列、または別名データ型の既存の既定値を使用している列にバインドされます。  
   
 ## <a name="return-code-values"></a>リターン コードの値  
  0 (成功) または 1 (失敗)  
   
 ## <a name="remarks"></a>解説  
- **Sp_bindefault**を使用すると、新しい既定値を列にバインドできます。ただし、既定の制約を使用することをお勧めします。または、既存の既定値をアンバインドせずに別名データ型に対して使用することもできます。 古い既定値はオーバーライドされます。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]システムデータ型または CLR ユーザー定義型に既定値をバインドすることはできません。 既定値がバインド先の列と互換性がない場合、バインド時ではなく、既定値を挿入しようとする [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] とエラーメッセージが返されます。  
+ **Sp_bindefault** を使用すると、新しい既定値を列にバインドできます。ただし、既定の制約を使用することをお勧めします。または、既存の既定値をアンバインドせずに別名データ型に対して使用することもできます。 古い既定値はオーバーライドされます。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]システムデータ型または CLR ユーザー定義型に既定値をバインドすることはできません。 既定値がバインド先の列と互換性がない場合、バインド時ではなく、既定値を挿入しようとする [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] とエラーメッセージが返されます。  
   
- 別名データ型の既存の列は、既定値が直接バインドされているか、 *futureonly_flag* または **futureonly**として指定されていない限り、新しい既定値を継承します。 別名データ型の新しい列は、常に既定値を継承します。  
+ 別名データ型の既存の列は、既定値が直接バインドされているか、 *futureonly_flag* または **futureonly** として指定されていない限り、新しい既定値を継承します。 別名データ型の新しい列は、常に既定値を継承します。  
   
  既定値を列にバインドすると、関連する情報が、列 **カタログビュー** に追加されます。 別名データ型に既定値をバインドすると、関連する情報が、の **種類** のカタログビューに追加されます。  
   
@@ -82,7 +82,7 @@ EXEC sp_bindefault 'today', 'HumanResources.Employee.HireDate';
 ```  
   
 ### <a name="b-binding-a-default-to-an-alias-data-type"></a>B. 別名データ型に既定値をバインドする  
- `def_ssn` という名前のデフォルトと、`ssn` という別名データ型が既に存在しています。 次の例では、既定の `def_ssn` をにバインド `ssn` しています。 テーブルが作成されると、別名データ型が割り当てられているすべての列によって、既定値が継承され `ssn` ます。 **Ssn**型の既存の列も既定の**def_ssn**を継承します。ただし、 *futureonly_flag*値に**futureonly**が指定されていない場合、または列に既定のが直接バインドされている場合を除きます。 列にバインドされているデフォルトは、データ型にバインドされているデフォルトより常に優先します。  
+ `def_ssn` という名前のデフォルトと、`ssn` という別名データ型が既に存在しています。 次の例では、既定の `def_ssn` をにバインド `ssn` しています。 テーブルが作成されると、別名データ型が割り当てられているすべての列によって、既定値が継承され `ssn` ます。 **Ssn** 型の既存の列も既定の **def_ssn** を継承します。ただし、 *futureonly_flag* 値に **futureonly** が指定されていない場合、または列に既定のが直接バインドされている場合を除きます。 列にバインドされているデフォルトは、データ型にバインドされているデフォルトより常に優先します。  
   
 ```  
 USE master;  
@@ -91,7 +91,7 @@ EXEC sp_bindefault 'def_ssn', 'ssn';
 ```  
   
 ### <a name="c-using-the-futureonly_flag"></a>C. Futureonly_flag の使用  
- 次の例では、 `def_ssn` 別名データ型に既定値をバインドし `ssn` ます。 **Futureonly**が指定されているため、型の既存の列 `ssn` は影響を受けません。  
+ 次の例では、 `def_ssn` 別名データ型に既定値をバインドし `ssn` ます。 **Futureonly** が指定されているため、型の既存の列 `ssn` は影響を受けません。  
   
 ```  
 USE master;  
@@ -100,7 +100,7 @@ EXEC sp_bindefault 'def_ssn', 'ssn', 'futureonly';
 ```  
   
 ### <a name="d-using-delimited-identifiers"></a>D. 区切られた識別子の使用  
- 次の例では、object_name で区切られた識別子を使用して `[t.1]` います。 *object_name*  
+ 次の例では、object_name で区切られた識別子を使用して `[t.1]` います。   
   
 ```  
 USE master;  

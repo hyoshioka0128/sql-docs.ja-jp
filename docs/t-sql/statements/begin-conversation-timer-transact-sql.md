@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - CONVERSATION
 - BEGIN_CONVERSATION_TSQL
@@ -31,14 +31,14 @@ helpviewer_keywords:
 - starting timers [Service Broker]
 - https://schemas.microsoft.com/SQL/ServiceBroker/DialogTimer message
 ms.assetid: 98e49b3f-a38f-4180-8171-fa9cb30db4cb
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: c7f0d19062bd164c44481082ab5885f0c40572be
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 8212a0d9589c325eb716ea2491fd7c78551929fd
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88496981"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99184479"
 ---
 # <a name="begin-conversation-timer-transact-sql"></a>BEGIN CONVERSATION TIMER (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -50,7 +50,6 @@ ms.locfileid: "88496981"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 BEGIN CONVERSATION TIMER ( conversation_handle )  
    TIMEOUT = timeout   
 [ ; ]  
@@ -80,7 +79,7 @@ BEGIN CONVERSATION TIMER ( conversation_handle )
 ## <a name="examples"></a>例  
  次の例では、`@dialog_handle` で指定されるダイアログに 2 分間のタイムアウトを設定します。  
   
-```  
+```sql 
 -- @dialog_handle is of type uniqueidentifier and  
 -- contains a valid conversation handle.  
   

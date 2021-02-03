@@ -1,6 +1,6 @@
 ---
 title: SQL Server Management Studio でテンプレートを使用する
-description: SSMS でのテンプレートの使用に関するチュートリアルです。
+description: SQL Server Management Studio (SSMS) で使用できる作成済みの Transact-SQL (T-SQL) テンプレートについて説明します。
 keywords: SQL Server, SSMS, SQL Server Management Studio, テンプレート
 author: MashaMSFT
 ms.author: mathoma
@@ -19,12 +19,12 @@ helpviewer_keywords:
 - scripts [SQL Server], SQL Server Management Studio
 ms.custom: seo-lt-2019
 ms.date: 03/13/2018
-ms.openlocfilehash: 03f42fbffd124fbdaa18578009ce72598a743361
-ms.sourcegitcommit: ff82f3260ff79ed860a7a58f54ff7f0594851e6b
+ms.openlocfilehash: ee33e30ef69b0c4a464e91576dc33e6d15ca4890
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "75247159"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596973"
 ---
 # <a name="use-templates-in-sql-server-management-studio"></a>SQL Server Management Studio でテンプレートを使用する
 
@@ -34,7 +34,7 @@ ms.locfileid: "75247159"
 
 このチュートリアルを実行するには、SQL Server Management Studio と、SQL Server へのアクセスが必要です。
 
-* [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) をインストールします。
+* [SQL Server Management Studio](../download-sql-server-management-studio-ssms.md) をインストールします。
 
 * [SQL Server 2017 Developer Edition](https://www.microsoft.com/sql-server/sql-server-downloads) をインストールする。
 
@@ -118,7 +118,7 @@ ms.locfileid: "75247159"
 
 SSMS に慣れ親しむには、実践的な経験を積むのが最も効果的です。 以下の "*チュートリアル*" と "*操作方法*" に関する記事は、SSMS 内で使用できるさまざまな機能を使用するのに役立ちます。  以下の記事では、SSMS のコンポーネントを管理する方法と、頻繁に使用する機能にアクセスする方法が説明されています。
 
-* [インスタンスに接続してクエリを実行する](../tutorials/connect-query-sql-server.md)
+* [インスタンスに接続してクエリを実行する](../quickstarts/ssms-connect-query-sql-server.md)
 * [スクリプトの作成](../tutorials/scripting-ssms.md)
 * [SSMS を構成する](../tutorials/ssms-configuration.md)
 * [SSMS を使用するための追加のヒントとテクニック](../tutorials/ssms-tricks.md)

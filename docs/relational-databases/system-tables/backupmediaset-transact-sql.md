@@ -1,12 +1,12 @@
 ---
 title: backupmediaset (Transact-sql) |Microsoft Docs
+description: バックアップメディアセットごとに1つの行を含む backupmediaset のリファレンスです。
 ms.custom: ''
 ms.date: 08/09/2016
 ms.prod: sql
-ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - backupmediaset
 - backupmediaset_TSQL
@@ -15,21 +15,20 @@ dev_langs:
 helpviewer_keywords:
 - backup media [SQL Server], backupmediaset system table
 - backupmediaset system table
-ms.assetid: d9c18a93-cab9-4db8-ae09-c6bd8145ab8f
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: fded40f11cfc094e3af89295496787413e3fd4cd
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: c886cf2fb117611d5956277656dd7aaadca9afc5
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540380"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99198657"
 ---
 # <a name="backupmediaset-transact-sql"></a>backupmediaset (Transact-SQL)
+
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  バックアップ メディア セットごとに 1 行のデータを格納します。 このテーブルは、 **msdb** データベースに格納されます。  
- 
+バックアップ メディア セットごとに 1 行のデータを格納します。 このテーブルは、 **msdb** データベースに格納されます。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
@@ -44,9 +43,9 @@ ms.locfileid: "89540380"
 |**mirror_count**|**tinyint**|メディアセット内のミラーの数。|  
 |**is_password_protected**|**bit**|メディアセットパスワードが保護されているかを示します。<br /><br /> 0 = 保護されていない<br /><br /> 1 = 保護されている|  
 |**is_compressed**|**bit**|バックアップが圧縮されているかどうか。<br /><br /> 0 = 圧縮されていません。<br /><br /> 1 = 圧縮<br /><br /> この値は、 **msdb** のアップグレード中に NULL に設定されます。 これは圧縮されていないバックアップを示します。|  
-|**is_encrypted**|**ビット**|バックアップが暗号化されているかどうか。<br /><br /> 0 = 暗号化なし<br /><br /> 1 = 暗号化|  
+|**is_encrypted**|**16-bit**|バックアップが暗号化されているかどうか。<br /><br /> 0 = 暗号化なし<br /><br /> 1 = 暗号化|  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  LOADHISTORY を使用した *backup_device* からの RESTORE verifyonly は、 **backupmediaset** テーブルの列に、メディアセットヘッダーからの適切な値を設定します。  
   
  このテーブルおよびその他のバックアップテーブルと履歴テーブルの行の数を減らすには、 [sp_delete_backuphistory](../../relational-databases/system-stored-procedures/sp-delete-backuphistory-transact-sql.md) ストアドプロシージャを実行します。  

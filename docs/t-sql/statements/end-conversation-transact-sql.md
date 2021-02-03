@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - END DIALOG
 - END CONVERSATION
@@ -23,14 +23,14 @@ helpviewer_keywords:
 - conversations [Service Broker], ending
 - ending conversations [SQL Server]
 ms.assetid: 4415a126-cd22-4a5e-b84a-d8c68515c83b
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: 76784d22919fc492c715ffa876c825e14794a511
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 83d0acb45d13442e2c538878d3336688513e6519
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88496723"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99183002"
 ---
 # <a name="end-conversation-transact-sql"></a>END CONVERSATION (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -42,7 +42,6 @@ ms.locfileid: "88496723"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 END CONVERSATION conversation_handle  
    [   [ WITH ERROR = failure_code DESCRIPTION = 'failure_text' ]  
      | [ WITH CLEANUP ]  
@@ -57,7 +56,7 @@ END CONVERSATION conversation_handle
  終了するメッセージ交換のメッセージ交換ハンドルを指定します。  
   
  WITH ERROR =*failure_code*  
- エラー コードです。 *Failure_code* のデータ型は **int**です。このエラー コードはユーザー定義のコードであり、メッセージ交換の相手側に送信するエラー メッセージの一部となります。 このエラー コードは 0 よりも大きい値にする必要があります。  
+ エラー コードです。 *Failure_code* のデータ型は **int** です。このエラー コードはユーザー定義のコードであり、メッセージ交換の相手側に送信するエラー メッセージの一部となります。 このエラー コードは 0 よりも大きい値にする必要があります。  
   
  DESCRIPTION =*failure_text*  
  エラー メッセージです。 *Failure_text* のデータ型は **nvarchar (3000)** です。 このエラー テキストはユーザー定義のテキストであり、メッセージ交換の相手側に送信するエラー メッセージの一部となります。  
@@ -96,14 +95,14 @@ END CONVERSATION conversation_handle
 ### <a name="a-ending-a-conversation"></a>A. メッセージ交換を終了する  
  次の例では、`@dialog_handle` で指定したダイアログを終了します。  
   
-```  
+```sql 
 END CONVERSATION @dialog_handle ;  
 ```  
   
 ### <a name="b-ending-a-conversation-with-an-error"></a>B. メッセージ交換を終了し、エラーを返す  
  次の例では、処理中のステートメントでエラーがレポートされた場合に、`@dialog_handle` で指定したダイアログを終了し、エラーを返します。 これは簡単なエラー処理であり、アプリケーションによってはこの方法が適切でない場合があります。  
   
-```  
+```sql  
 DECLARE @dialog_handle UNIQUEIDENTIFIER,  
         @ErrorSave INT,  
         @ErrorDesc NVARCHAR(100) ;  
@@ -128,7 +127,7 @@ COMMIT TRANSACTION ;
 ### <a name="c-cleaning-up-a-conversation-that-cannot-complete-normally"></a>C. 正常に完了しなかったメッセージ交換をクリーンアップする  
  次の例では、`@dialog_handle` で指定したダイアログを終了します。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ではサービス キューと転送キューからすべてのメッセージが直ちに削除され、リモート サービスに通知は送信されません。 このようにクリーンアップと共にダイアログを終了すると、リモート サービスに通知が送信されません。この方法は、リモート サービスで **EndDialog** または **Error** メッセージを受信できない場合にのみ使用してください。  
   
-```  
+```sql  
 END CONVERSATION @dialog_handle WITH CLEANUP ;  
 ```  
   

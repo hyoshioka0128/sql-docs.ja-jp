@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sp_getapplock_TSQL
 - sp_getapplock
@@ -19,13 +19,13 @@ helpviewer_keywords:
 ms.assetid: e1e85908-9f31-47cf-8af6-88c77e6f24c9
 author: markingmyname
 ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 8f60adc4bdd8e8d3cdfc7f44751854b97a2f7345
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 82c0c343d76c3fb8fe6275c2450b62d50fd11b34
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89535861"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99185768"
 ---
 # <a name="sp_getapplock-transact-sql"></a>sp_getapplock (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -56,10 +56,10 @@ sp_getapplock [ @Resource = ] 'resource_name' ,
 >  アプリケーション ロックが取得されると、プレーン テキストで抽出できるのは最初の 32 文字のみとなり、残りの部分はハッシュされます。  
   
  [ @LockMode =] '*lock_mode*'  
- 特定のリソースに対して取得されるロックモードを指定します。 *lock_mode* は **varchar (32)** で、既定値はありません。 値には、 **Shared**、 **Update**、 **intentshared**、 **intentshared**、または **exclusive**を指定できます。 詳細については、「 [ロックモード](../sql-server-transaction-locking-and-row-versioning-guide.md#lock_modes)」を参照してください。
+ 特定のリソースに対して取得されるロックモードを指定します。 *lock_mode* は **varchar (32)** で、既定値はありません。 値には、 **Shared**、 **Update**、 **intentshared**、 **intentshared**、または **exclusive** を指定できます。 詳細については、「 [ロックモード](../sql-server-transaction-locking-and-row-versioning-guide.md#lock_modes)」を参照してください。
   
  [ @LockOwner =] '*lock_owner*'  
- ロックの所有者を指定します。これはロックが要求されたときの *lock_owner* 値です。 *lock_owner* は **varchar (32)** です。 この値は **Transaction** (既定値) または **Session** のいずれかです。 *Lock_owner*値が**transaction**、既定で、または明示的に指定されている場合、sp_getapplock はトランザクション内から実行する必要があります。  
+ ロックの所有者を指定します。これはロックが要求されたときの *lock_owner* 値です。 *lock_owner* は **varchar (32)** です。 この値は **Transaction** (既定値) または **Session** のいずれかです。 *Lock_owner* 値が **transaction**、既定で、または明示的に指定されている場合、sp_getapplock はトランザクション内から実行する必要があります。  
   
  [ @LockTimeout =] '*値*'  
  ロックのタイムアウト値をミリ秒単位で指定します。 既定値は、@ によって返される値と同じ @LOCK_TIMEOUT です。 ロック要求がすぐに許可されない場合に、ロックを待機するのではなく-1 のリターンコードを返す必要があることを示すには、0を指定します。  
@@ -70,7 +70,7 @@ sp_getapplock [ @Resource = ] 'resource_name' ,
 ## <a name="return-code-values"></a>リターン コードの値  
  \>= 0 (成功)、または < 0 (失敗)  
   
-|[値]|結果|  
+|値|結果|  
 |-----------|------------|  
 |0|ロックが同時に許可されました。|  
 |1|互換性のない他のロックが解放されるのを待機してから、ロックが許可されました。|  
@@ -79,7 +79,7 @@ sp_getapplock [ @Resource = ] 'resource_name' ,
 |-3|ロック要求がデッドロックの対象になりました。|  
 |-999|パラメーターの検証またはその他の呼び出しエラーを示します。|  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  リソースに配置されたロックは、現在のトランザクションまたは現在のセッションのいずれかに関連付けられます。 現在のトランザクションに関連付けられたロックは、トランザクションがコミットまたはロールバックされるときに解放されます。 セッションに関連付けられているロックは、セッションがログアウトされると解放されます。何らかの理由でサーバーがシャットダウンすると、すべてのロックが解放されます。  
   
  sp_getapplock によって作成されるロック リソースは、セッションの現在のデータベースで作成されます。 各ロックリソースは、の結合された値によって識別されます。  

@@ -25,13 +25,13 @@ ms.manageR: jroth
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 03/16/2017
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017'
-ms.openlocfilehash: 2c3767addadd34aebac1b29ee1b7fbdba189ae43
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017'
+ms.openlocfilehash: 29f495dda754d3456e8d8df8811620548426cd89
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86002987"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97478443"
 ---
 # <a name="osql-utility"></a>osql ユーティリティ
 
@@ -94,7 +94,7 @@ C:\>osql
 ```  
   
 > [!IMPORTANT]  
->  パスワードをマスクする場合は、 **-P** オプションを **-U** オプションと共に指定しないでください。 **osql** を **-U** オプションおよび他のスイッチと共に指定した後 ( **-P**は指定しない)、Enter キーを押すと、 **osql** によってパスワードが要求されます。 この方法を使用すると、入力時にパスワードが確実にマスクされます。  
+>  パスワードをマスクする場合は、 **-P** オプションを **-U** オプションと共に指定しないでください。 **osql** を **-U** オプションおよび他のスイッチと共に指定した後 ( **-P** は指定しない)、Enter キーを押すと、 **osql** によってパスワードが要求されます。 この方法を使用すると、入力時にパスワードが確実にマスクされます。  
   
  **-E**  
  パスワードを要求せずに、セキュリティ接続を使用します。  
@@ -103,10 +103,10 @@ C:\>osql
  接続先となる [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] のインスタンスを指定します。 サーバー上の *の既定のインスタンスに接続するには、* server_name [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] を指定します。 サーバー上の [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] の名前付きインスタンスに接続するには、_server\_name_ **\\** _instance\_name_ を指定します。 サーバーを指定しない場合、 **osql** は、ローカル コンピューター上にある [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] の既定のインスタンスに接続します。 ネットワーク上のリモート コンピューターから **osql** を実行するときは、このオプションが必要です。  
   
  **-H** _wksta_name_  
- ワークステーション名を指定します。 ワークステーション名は **sysprocesses.hostname** に格納され、 **sp_who**により表示されます。 このオプションが指定されていない場合は、現在のコンピューター名であると見なされます。  
+ ワークステーション名を指定します。 ワークステーション名は **sysprocesses.hostname** に格納され、 **sp_who** により表示されます。 このオプションが指定されていない場合は、現在のコンピューター名であると見なされます。  
   
  **-d** _db_name_  
- *osql* の開始時に USE **db_name**ステートメントを発行します。  
+ *osql* の開始時に USE **db_name** ステートメントを発行します。  
   
  **-l** _time_out_  
  **osql** がログイン タイムアウトになる時間を秒単位で指定します。**osql** でのログインに関する既定のタイムアウトは 8 秒です。  
@@ -152,22 +152,22 @@ osql -E -q "select name, object_id from %table%"
  クエリは二重引用符で、クエリに埋め込まれたものは単一引用符で囲みます。  
   
  **-Q"** _query_ **"**  
- クエリの実行後、直ちに **osql**を終了します。 クエリは二重引用符で、クエリに埋め込まれたものは単一引用符で囲みます。  
+ クエリの実行後、直ちに **osql** を終了します。 クエリは二重引用符で、クエリに埋め込まれたものは単一引用符で囲みます。  
   
  **-n**  
  入力行から行番号とプロンプト記号 (>) を削除します。  
   
  **-m** _error_level_  
- エラー メッセージの表示をカスタマイズします。 指定した重大度レベル以上のエラーが発生すると、メッセージ番号、状況、エラー レベルが表示されます。 指定した重大度レベルより低いレベルのエラーの場合は、何も表示されません。 **-1** を指定すると、単なる情報メッセージであっても、すべてのヘッダーがメッセージと共に返されます。 **-1**を使用する場合、パラメーターと設定値の間には空白を入れないでください ( **-m -1**ではなく、 **-m-1**を使用)。  
+ エラー メッセージの表示をカスタマイズします。 指定した重大度レベル以上のエラーが発生すると、メッセージ番号、状況、エラー レベルが表示されます。 指定した重大度レベルより低いレベルのエラーの場合は、何も表示されません。 **-1** を指定すると、単なる情報メッセージであっても、すべてのヘッダーがメッセージと共に返されます。 **-1** を使用する場合、パラメーターと設定値の間には空白を入れないでください ( **-m -1** ではなく、 **-m-1** を使用)。  
   
  **-r** { **0**| **1**}  
- メッセージ出力を画面にリダイレクトします (**stderr**)。 パラメーターを指定しない場合や、 **0**を指定した場合は、重大度レベル 11 以上のエラー メッセージだけがリダイレクトされます。 **1**を指定した場合は、"print" を含むすべてのメッセージ出力がリダイレクトされます。  
+ メッセージ出力を画面にリダイレクトします (**stderr**)。 パラメーターを指定しない場合や、 **0** を指定した場合は、重大度レベル 11 以上のエラー メッセージだけがリダイレクトされます。 **1** を指定した場合は、"print" を含むすべてのメッセージ出力がリダイレクトされます。  
   
  **-i** _input_file_  
  SQL ステートメントまたはストアド プロシージャのバッチを含むファイルを指定します。 **\<** -i **の代わりに、未満を示す比較演算子 (** ) を使用することもできます。  
   
  **-o** _output_file_  
- **osql**からの出力を受信するファイルを指定します。 **>** -o **の代わりに、より大きい (** ) 比較演算子を使用することもできます。  
+ **osql** からの出力を受信するファイルを指定します。 **>** -o **の代わりに、より大きい (** ) 比較演算子を使用することもできます。  
   
  *input_file* が Unicode ではなく、 **-u** が指定されていない場合、 *output_file* は OEM 形式で格納されます。 *input_file* が Unicode であるか、 **-u** が指定されている場合、 *output_file* は Unicode 形式で格納されます。  
   
@@ -178,13 +178,13 @@ osql -E -q "select name, object_id from %table%"
  エラーが発生したときに、 **osql** を終了し、DOS ERRORLEVEL 値を返します。 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] のエラー メッセージの重大度が 11 以上の場合は、DOS ERRORLEVEL 変数に返される値は 1 です。それ以外の場合は、値 0 が返されます。 [!INCLUDE[msCoName](../includes/msconame-md.md)] MS-DOS バッチ ファイルにより、DOS ERRORLEVEL の値をテストすることができ、エラーを適切に処理できます。  
   
  **-u**  
- *input_file* の形式に関係なく、 *output_file*を Unicode 形式で格納するように指定します。  
+ *input_file* の形式に関係なく、 *output_file* を Unicode 形式で格納するように指定します。  
   
  **-R**  
  通貨、日付、および時刻データを文字データに変換するときに、 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] ODBC ドライバーでクライアントの設定を使用することを指定します。  
   
  **-O**  
- **isql** の先行バージョンの動作と一致するように、 **osql**の一部の機能を使用不能にします。 このオプションを指定すると、次の機能は使用できなくなります。  
+ **isql** の先行バージョンの動作と一致するように、 **osql** の一部の機能を使用不能にします。 このオプションを指定すると、次の機能は使用できなくなります。  
   
 -   EOF バッチ処理  
   
@@ -195,14 +195,14 @@ osql -E -q "select name, object_id from %table%"
  また、このオプションは DOS ERRORLEVEL の既定値を -1 に設定します。  
   
 > [!NOTE]  
->  **-n**、 **-O** および **-D** オプションは、 **osql**ではサポートされなくなりました。  
+>  **-n**、 **-O** および **-D** オプションは、 **osql** ではサポートされなくなりました。  
   
 ## <a name="remarks"></a>解説  
- **osql** ユーティリティは、ここに記載された、大文字と小文字では異なる機能を持つオプションを使用して、オペレーティング システムから直接起動されます。 起動されると、 **osql**は SQL ステートメントを受け取り、 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] に対話的に送ります。 結果はフォーマットされ、画面に表示されます (**stdout**)。 **osql**を終了するには、QUIT または EXIT を使用します。  
+ **osql** ユーティリティは、ここに記載された、大文字と小文字では異なる機能を持つオプションを使用して、オペレーティング システムから直接起動されます。 起動されると、 **osql** は SQL ステートメントを受け取り、 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] に対話的に送ります。 結果はフォーマットされ、画面に表示されます (**stdout**)。 **osql** を終了するには、QUIT または EXIT を使用します。  
   
- ユーザー名を指定せずに **osql**を起動すると、 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] では、 **osqluser=(** _user_ **)** や **osqlserver=(** _server_ **)** などの環境変数が確認され、それらの値が使用されます。 環境変数が設定されていない場合は、ワークステーションのユーザー名が使用されます。 サーバーを指定していない場合は、ワークステーション名が使用されます。  
+ ユーザー名を指定せずに **osql** を起動すると、 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] では、 **osqluser=(** _user_ **)** や **osqlserver=(** _server_ **)** などの環境変数が確認され、それらの値が使用されます。 環境変数が設定されていない場合は、ワークステーションのユーザー名が使用されます。 サーバーを指定していない場合は、ワークステーション名が使用されます。  
   
- **-U** と **-P** のどちらのオプションも使用しない場合は、 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] では接続時に [!INCLUDE[msCoName](../includes/msconame-md.md)] Windows 認証モードが使用されます。 認証は、 [!INCLUDE[msCoName](../includes/msconame-md.md)] osql **を実行しているユーザーの**Windows アカウントに基づいて行われます。  
+ **-U** と **-P** のどちらのオプションも使用しない場合は、 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] では接続時に [!INCLUDE[msCoName](../includes/msconame-md.md)] Windows 認証モードが使用されます。 認証は、 [!INCLUDE[msCoName](../includes/msconame-md.md)] osql **を実行しているユーザーの** Windows アカウントに基づいて行われます。  
   
  **osql** ユーティリティでは ODBC API が使用されます。 またこのユーティリティでは、 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] の ISO 接続オプションに対して [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] ODBC ドライバーの既定の設定が使用されます。 詳細については、「ANSI オプションの効果」を参照してください。  
   
@@ -216,11 +216,11 @@ osql -E -q "select name, object_id from %table%"
 |-------------|-----------------|  
 |GO|最後の GO の後に入力したすべてのステートメントを実行します。|  
 |RESET|入力したステートメントをすべて消去します。|  
-|QUIT または EXIT( )|**osql**を終了します。|  
-|Ctrl + C|クエリを終了しますが、 **osql**は終了しません。|  
+|QUIT または EXIT( )|**osql** を終了します。|  
+|Ctrl + C|クエリを終了しますが、 **osql** は終了しません。|  
   
 > [!NOTE]  
->  !! コマンド および ED コマンドは **osql**ではサポートされなくなりました。  
+>  !! コマンド および ED コマンドは **osql** ではサポートされなくなりました。  
   
  コマンド ターミネータ GO (既定値)、RESET、EXIT、QUIT、および Ctrl + C は、行頭の **osql** プロンプトの直後に使用した場合にだけ認識されます。  
   
@@ -257,18 +257,18 @@ osql -E -i titles.qry -o titles.res
 ```  
   
 > [!IMPORTANT]  
->  可能であれば、 **-E**オプションを使用します (信頼関係接続)。  
+>  可能であれば、 **-E** オプションを使用します (信頼関係接続)。  
   
- 対話的に **osql** を使用している場合、 **:r**_file\_name_を使用して、オペレーティング システム ファイルをコマンド バッファーに読み取ることができます。 これにより、 *file_name* 内の SQL スクリプトが単一のバッチとして直接サーバーへ送信されます。  
+ 対話的に **osql** を使用している場合、 **:r**_file\_name_ を使用して、オペレーティング システム ファイルをコマンド バッファーに読み取ることができます。 これにより、 *file_name* 内の SQL スクリプトが単一のバッチとして直接サーバーへ送信されます。  
   
 > [!NOTE]  
->  **osql**を使用するとき、GO によって SQL スクリプト ファイルに構文エラーが発生する場合、 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] は GO をバッチ区切り記号として処理しています。  
+>  **osql** を使用するとき、GO によって SQL スクリプト ファイルに構文エラーが発生する場合、 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] は GO をバッチ区切り記号として処理しています。  
   
 ## <a name="inserting-comments"></a>コメントの挿入  
- [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] osql **で**に送られる Transact-SQL ステートメントには、コメントを挿入することができます。 2 種類のコメント スタイルがあります: `--` と `/*...*/` です。  
+ [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] osql **で** に送られる Transact-SQL ステートメントには、コメントを挿入することができます。 2 種類のコメント スタイルがあります: `--` と `/*...*/` です。  
   
 ## <a name="using-exit-to-return-results-in-osql"></a>EXIT によって osql から返される結果  
- **osql**からの戻り値に、SELECT ステートメントの結果を使用できます。 数値の場合、結果行の最終行の最終列は、4 バイトの (長) 整数に変換されます。 MS-DOS は、下位バイトを親プロセスやオペレーティング システムのエラー レベルに渡します。 Windows では、4 バイトの整数全体を渡します。 の構文は次のとおりです。  
+ **osql** からの戻り値に、SELECT ステートメントの結果を使用できます。 数値の場合、結果行の最終行の最終列は、4 バイトの (長) 整数に変換されます。 MS-DOS は、下位バイトを親プロセスやオペレーティング システムのエラー レベルに渡します。 Windows では、4 バイトの整数全体を渡します。 の構文は次のとおりです。  
   
 ```  
 EXIT ( < query > )  

@@ -2,7 +2,7 @@
 description: 既存の暗号化された列に対してセキュリティで保護されたエンクレーブが設定された Always Encrypted を有効にする
 title: 既存の暗号化された列に対してセキュリティで保護されたエンクレーブが設定された Always Encrypted を有効にする | Microsoft Docs
 ms.custom: ''
-ms.date: 10/30/2019
+ms.date: 01/15/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: vanto
@@ -10,16 +10,16 @@ ms.technology: security
 ms.topic: conceptual
 author: jaszymas
 ms.author: jaszymas
-monikerRange: '>= sql-server-ver15 || = sqlallproducts-allversions'
-ms.openlocfilehash: 4ef6fe83bd2d9671ccf43b4957497a8c1fc7a4cf
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>= sql-server-ver15'
+ms.openlocfilehash: 03a57949624897b2cd2e0552892803c21a408b52
+ms.sourcegitcommit: 8ca4b1398e090337ded64840bcb8d6c92d65c29e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88420336"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98534811"
 ---
 # <a name="enable-always-encrypted-with-secure-enclaves-for-existing-encrypted-columns"></a>既存の暗号化された列に対してセキュリティで保護されたエンクレーブが設定された Always Encrypted を有効にする 
-[!INCLUDE [sqlserver2019-windows-only](../../../includes/applies-to-version/sqlserver2019-windows-only.md)]
+[!INCLUDE [sqlserver2019-windows-only-asdb](../../../includes/applies-to-version/sqlserver2019-windows-only-asdb.md)]
 
 この記事では、セキュリティで保護されたエンクレーブが設定された Always Encrypted の機能を有効にし、既存の暗号化された列に対してエンクレーブ計算を有効にする方法を説明します。  
 
@@ -74,5 +74,5 @@ ms.locfileid: "88420336"
 クライアント側ツールを使用して列の暗号化をローテーションする方法の詳細については、「[SQL Server Management Studio を使用して Always Encrypted キーを交換する](rotate-always-encrypted-keys-using-ssms.md)」および「[PowerShell を使用して Always Encrypted キーをローテーションする](rotate-always-encrypted-keys-using-powershell.md)」をご覧ください。
 
 ## <a name="next-steps"></a>次の手順
-- [セキュリティで保護されたエンクレーブが設定された Always Encrypted を使用する列のクエリを実行する](always-encrypted-enclaves-query-columns.md)
+- [セキュリティで保護されたエンクレーブを使用して Transact-SQL ステートメントを実行する](always-encrypted-enclaves-query-columns.md)
 - [セキュリティで保護されたエンクレーブが設定された Always Encrypted を使用するアプリケーションを開発する](always-encrypted-enclaves-client-development.md)

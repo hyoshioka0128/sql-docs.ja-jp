@@ -9,17 +9,27 @@ ms.date: 06/27/2018
 ms.author: murshedz
 ms.reviewer: martinle
 ms.custom: seo-dt-2019
-ms.openlocfilehash: 5e0193fb7e749b7127d59743557e58cb049e734c
-ms.sourcegitcommit: 7345e4f05d6c06e1bcd73747a4a47873b3f3251f
+ms.openlocfilehash: 004550d95ca69bae45c518b8054886e635e829df
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88778471"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091785"
 ---
 # <a name="whats-new-in-analytics-platform-system-a-scale-out-mpp-data-warehouse"></a>スケールアウト MPP データウェアハウスである Analytics Platform System の新機能
 Microsoft Analytics Platform System (APS) の最新のアプライアンス更新プログラムの新機能を参照してください。 APS は、MPP SQL Server 並列データウェアハウスをホストする、スケールアウトされたオンプレミスのアプライアンスです。 
 
-::: moniker range=">= aps-pdw-2016-au7 || = sqlallproducts-allversions"
+::: moniker range=">= aps-pdw-2016-au7 "
+<a name="h2-aps-cu7.7"></a>
+## <a name="aps-cu77"></a>APS CU7.7
+リリース日-2020 年11月
+
+### <a name="scvmm2016"></a>SCVMM2016
+APS CU 7.7 ソフトウェアは、VMM VM を Windows Server 2016 にアップグレードし、SCVMM2016 をインストールします。 現在使用されている SCVMM 2012 R2 の有効期間の終了日は2022年7月です。 新しい SCVMM がサポートされるようにするには、CU 7.7 の必須アップグレードを行う必要があります。 お客様は、できるだけ早く CU 7.7 にアップグレードすることを推奨しています。
+
+### <a name="ssis-destination-adapter-for-sql-server-2019-as-target"></a>ターゲットとして SQL Server 2019 の SSIS 変換先アダプター
+SQL Server 2019 をサポートする新しい APS SSIS 変換先アダプター (展開ターゲットは [ダウンロードサイト](https://www.microsoft.com/download/details.aspx?id=57472)からダウンロードできます)。
+
 <a name="h2-aps-cu7.6"></a>
 ## <a name="aps-cu76"></a>APS CU7.6
 リリース日-2020 年4月
@@ -35,13 +45,13 @@ CU 7.6 にアップグレードすると、ユーザーが作成したテーブ�
 リリース日-2019 年9月
 
 ### <a name="alter-external-data-source"></a>外部データソースの変更
-お客様は、CU 7.5 更新プログラムを使用して外部データソース定義を変更することができます。 Hadoop 名前ノードの高可用性を使用しているお客様は、フェールオーバーが発生したときに、データソースを変更して引数を変更できるようになりました。 APS の場合、場所、RESOURCE_MANAGER_LOCATION、資格情報のみを変更できます。 詳細については、「 [alter external data source](../t-sql/statements/alter-external-data-source-transact-sql.md?view=sql-server-2017) 」を参照してください。
+お客様は、CU 7.5 更新プログラムを使用して外部データソース定義を変更することができます。 Hadoop 名前ノードの高可用性を使用しているお客様は、フェールオーバーが発生したときに、データソースを変更して引数を変更できるようになりました。 APS の場合、場所、RESOURCE_MANAGER_LOCATION、資格情報のみを変更できます。 詳細については、「 [alter external data source](../t-sql/statements/alter-external-data-source-transact-sql.md?view=sql-server-2017&preserve-view=true) 」を参照してください。
 
 ### <a name="cdh-515-and-516-support-with-polybase"></a>CDH 5.15 と5.16 の PolyBase のサポート
 CU 7.5 update を使用する APS の PolyBase では、Cloudera からの、CDH 5.15 および5.16 バージョンの Hadoop 配布がサポートされるようになりました。 CDH 5.x バージョンにはオプション6を使用します。 
 
 ### <a name="try_convert-and-try_cast-support"></a>Try_Convert と Try_Cast のサポート
-CU 7.5 APS では、 [TRY_CAST](../t-sql/functions/try-cast-transact-sql.md?view=sql-server-2017) および [TRY_CONVERT](../t-sql/functions/try-convert-transact-sql.md?view=sql-server-2017) tsql 関数がサポートされるようになりました。 これらの関数は、変換が成功した場合に、指定したデータ型に変換された値を返します。それ以外の場合は null を返します。
+CU 7.5 APS では、 [TRY_CAST](../t-sql/functions/try-cast-transact-sql.md?view=sql-server-2017&preserve-view=true) および [TRY_CONVERT](../t-sql/functions/try-convert-transact-sql.md?view=sql-server-2017&preserve-view=true) tsql 関数がサポートされるようになりました。 これらの関数は、変換が成功した場合に、指定したデータ型に変換された値を返します。それ以外の場合は null を返します。
 
 <a name="h2-aps-cu7.4"></a>
 ## <a name="aps-cu74"></a>APS CU7.4
@@ -70,7 +80,7 @@ Informatica バージョン10.2.0 および10.2.0 修正プログラム1で動�
 
 #### <a name="supported-versions"></a>サポートされているバージョン
 
-| APS バージョン | Informatica PowerCenter | ドライバー |
+| APS バージョン | Informatica PowerCenter | Driver |
 |:---|:---|:---|
 | APS 2016 | 9.6.1 | SQL Server Native Client 2.x |
 | APS 2016 以降 | 10.2.0、10.2.0 Hotfix 1 | SQL Server Native Client 2.x |
@@ -87,7 +97,7 @@ APS CU 7.2 は、TLS 1.2 をサポートしています。 クライアントコ
 ### <a name="hadoop-encryption-zone-support-for-polybase"></a>PolyBase の Hadoop 暗号化ゾーンのサポート
 PolyBase が Hadoop 暗号化ゾーンと通信できるようになりました。 「 [Hadoop のセキュリティを構成する](polybase-configure-hadoop-security.md#encryptionzone)」で必要な APS 構成の変更を参照してください。
 
-### <a name="insert-select-maxdop-options"></a>挿入-maxdop オプションを選択する
+### <a name="insert-select-maxdop-options"></a>Maxdop オプションの Insert-Select
 挿入選択操作に対して1を超える maxdop 設定を選択できる [機能スイッチ](appliance-feature-switch.md) が追加されました。 Maxdop 設定を0、1、2、または4に設定できるようになりました。 既定値は 1 です。
 
 > [!IMPORTANT]  
@@ -132,7 +142,7 @@ SQL Server 2017 をサポートする新しい APS SSIS 変換先アダプター
 リリース日-2018 年7月
 
 ### <a name="dbcc-commands-do-not-consume-concurrency-slots-behavior-change"></a>DBCC コマンドは同時実行スロットを使用しません (動作の変更)
-APS は、 [DBCC DROPCLEANBUFFERS](../t-sql/database-console-commands/dbcc-dropcleanbuffers-transact-sql.md)などの t-sql [dbcc コマンド](../t-sql/database-console-commands/dbcc-transact-sql.md)のサブセットをサポートしています。 以前は、これらのコマンドは[コンカレンシー スロット](./workload-management.md?view=aps-pdw-2016-au7#concurrency-slots)を消費したので、実行できるユーザー負荷/クエリの数が減少しました。 コマンドは、 `DBCC` ユーザーの同時実行スロットを使用しないローカルキューで実行されるようになりました。これにより、全体的なクエリ実行パフォーマンスが向上します。
+APS は、 [DBCC DROPCLEANBUFFERS](../t-sql/database-console-commands/dbcc-dropcleanbuffers-transact-sql.md)などの t-sql [dbcc コマンド](../t-sql/database-console-commands/dbcc-transact-sql.md)のサブセットをサポートしています。 以前は、これらのコマンドは[コンカレンシー スロット](./workload-management.md?view=aps-pdw-2016-au7&preserve-view=true&#concurrency-slots)を消費したので、実行できるユーザー負荷/クエリの数が減少しました。 コマンドは、 `DBCC` ユーザーの同時実行スロットを使用しないローカルキューで実行されるようになりました。これにより、全体的なクエリ実行パフォーマンスが向上します。
 
 ### <a name="replaces-some-metadata-calls-with-catalog-objects"></a>一部のメタデータ呼び出しをカタログオブジェクトに置き換えます。
 SMO を使用する代わりに、メタデータ呼び出しに catalog オブジェクトを使用すると、APS のパフォーマンスが向上しています。 CU 7.1 以降、これらのメタデータ呼び出しの一部では、既定でカタログオブジェクトが使用されるようになりました。 メタデータクエリを使用しているお客様が問題が発生した場合は、 [機能スイッチ](appliance-feature-switch.md) でこの動作を無効にすることができます。
@@ -164,12 +174,12 @@ Select @var がサポートされるようになりました。 詳細につい�
 APS AU7 には [Configuration Manager](launch-the-configuration-manager.md)の機能スイッチが導入されています。 AutoStatsEnabled と DmsProcessStopMessageTimeoutInSeconds は、管理者が変更できる構成可能なオプションになりました。
 
 ### <a name="known-issues"></a>既知の問題
-APS AU7 ソフトウェアでは、Intel BIOS の更新プログラムが提供されており、予測 *実行のサイドチャネル攻撃*として説明されている問題を修正します。 攻撃は、 *Spectre と Meltdown の脆弱性*と呼ばれるものを悪用することを目的としています。 APS と共にパッケージ化されますが、BIOS の更新プログラムは、APS AU7 ソフトウェアのインストールの一部としてではなく、手動でインストールされます。
+APS AU7 ソフトウェアでは、Intel BIOS の更新プログラムが提供されており、予測 *実行のサイドチャネル攻撃* として説明されている問題を修正します。 攻撃は、 *Spectre と Meltdown の脆弱性* と呼ばれるものを悪用することを目的としています。 APS と共にパッケージ化されますが、BIOS の更新プログラムは、APS AU7 ソフトウェアのインストールの一部としてではなく、手動でインストールされます。
 
 Microsoft は、すべてのお客様に BIOS の更新をインストールするようにアドバイスします。 Microsoft は、さまざまな環境におけるさまざまな SQL ワークロードに対して、カーネル仮想アドレスシャドウ (KVAS)、カーネルページテーブル間接 (中 TI)、および間接分岐予測軽減 (IBP) の影響を測定しました。 この測定では、一部のワークロードで大幅な低下が見られました。 結果に基づいて、BIOS 更新を有効にした場合のパフォーマンスへの影響をテストしてから、運用環境に展開することをお勧めします。 SQL Server ガイダンスを参照し[てください。](https://support.microsoft.com/help/4073225/guidance-protect-sql-server-against-spectre-meltdown)
 
 ::: moniker-end
-::: moniker range=">= aps-pdw-2016 || = sqlallproducts-allversions"
+::: moniker range=">= aps-pdw-2016 "
 <a name="h2-aps-au6"></a>
 ## <a name="aps-2016"></a>APS 2016
 このセクションでは、APS 2016-AU6 の新機能について説明します。
@@ -265,7 +275,7 @@ The proper formats have at least two big advantages.  One big advantage is that 
 [bcp ユーティリティ]:/sql/tools/bcp-utility
 [一意]:/sql/t-sql/data-types/uniqueidentifier-transact-sql
 [NUMERIC]:/sql/t-sql/data-types/decimal-and-numeric-transact-sql
-[行または範囲]:/sql/t-sql/queries/select-over-clause-transact-sql
+[ROWS または RANGE]:/sql/t-sql/queries/select-over-clause-transact-sql
 [FIRST_VALUE]:/sql/t-sql/functions/first-value-transact-sql
 [LAST_VALUE]:/sql/t-sql/functions/last-value-transact-sql
 [CUME_DIST]:/sql/t-sql/functions/cume-dist-transact-sql

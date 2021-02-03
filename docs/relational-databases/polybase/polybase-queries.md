@@ -17,13 +17,13 @@ ms.assetid: 2c5aa2bd-af7d-4f57-9a28-9673c2a4c07e
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: ''
-monikerRange: '>= sql-server-2016 || =sqlallproducts-allversions'
-ms.openlocfilehash: 92416e1dc528880767ccebd1873707e0a1259a31
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+monikerRange: '>= sql-server-2016'
+ms.openlocfilehash: 2eec9c64a65ae0fb548944dc88a056c15e5c1e80
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85901266"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97416856"
 ---
 # <a name="polybase-query-scenarios"></a>PolyBase クエリのシナリオ
 
@@ -89,7 +89,7 @@ Hadoop または Azure ストレージに SQL Server からのデータをエク
 
 まず、'allow polybase export' の `sp_configure` 値を 1 に設定してエクスポート機能を有効にします。 次に、変換先ディレクトリを指す外部テーブルを作成します。 CREATE EXTERNAL TABLE ステートメントは、変換先ディレクトリが存在しない場合にそれを作成します。 次に、ローカルの SQL Server テーブルからのデータを外部データ ソースをエクスポートするのに INSERT INTO を使用します。 
 
-SELECT ステートメントの結果セットは、指定したファイル形式で指定した場所にエクスポートされます。 外部ファイルの名前は *QueryID_date_time_ID.format*です ( *ID* は増分識別子、 *format* はエクスポートされるデータ形式)。 たとえば、あるファイルの名前は QID776_20160130_182739_0.orc となります。
+SELECT ステートメントの結果セットは、指定したファイル形式で指定した場所にエクスポートされます。 外部ファイルの名前は *QueryID_date_time_ID.format* です ( *ID* は増分識別子、 *format* はエクスポートされるデータ形式)。 たとえば、あるファイルの名前は QID776_20160130_182739_0.orc となります。
 
 > [!NOTE]
 > データを PolyBase 経由で Hadoop または Azure Blob Storage にエクスポートする場合、データだけがエクスポートされ、CREATE EXTERNAL TABLE コマンドで定義した列名 (メタデータ) はエクスポートされません。

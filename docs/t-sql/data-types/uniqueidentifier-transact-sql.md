@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-data-warehouse, database-engine, pdw, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - uniqueidentifier
 - uniqueidentifier_TSQL
@@ -20,13 +20,13 @@ helpviewer_keywords:
 ms.assetid: b026035b-f3d2-4d70-989d-3884b4ca0233
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: bf9ac8c8f907da233cc1168df7d4e81cb42c6c53
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 41f90385398fc60fc198e22a74a36f810e84c985
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88368238"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99179656"
 ---
 # <a name="uniqueidentifier-transact-sql"></a>uniqueidentifier (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -49,26 +49,26 @@ ms.locfileid: "88368238"
 
 これらのツールと機能では、`uniqueidentifier` データ型はサポートされません。
 - PolyBase
-- Parallel Data Warehouse 用の [dwloader 読み込みツール](https://msdn.microsoft.com/sql/analytics-platform-system/dwloader)
+- Parallel Data Warehouse 用の [dwloader 読み込みツール](../../analytics-platform-system/dwloader.md)
 
 ## <a name="examples"></a>例  
 次の例では、`uniqueidentifier` 型の値を `char` 型の値に変換します。
   
 ```sql
 DECLARE @myid uniqueidentifier = NEWID();  
-SELECT CONVERT(char(255), @myid) AS 'char';  
+SELECT CONVERT(CHAR(255), @myid) AS 'char';  
 ```  
   
 次の例は、変換後のデータ型に対して値が長すぎる場合のデータの切り捨てを示します。 **uniqueidentifier** 型は 36 文字に制限されているため、この長さを超える文字は切り捨てられます。
   
 ```sql
-DECLARE @ID nvarchar(max) = N'0E984725-C51C-4BF4-9960-E1C80E27ABA0wrong';  
+DECLARE @ID NVARCHAR(max) = N'0E984725-C51C-4BF4-9960-E1C80E27ABA0wrong';  
 SELECT @ID, CONVERT(uniqueidentifier, @ID) AS TruncatedValue;  
 ```  
   
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
   
-```sql
+```
 String                                       TruncatedValue  
 -------------------------------------------- ------------------------------------  
 0E984725-C51C-4BF4-9960-E1C80E27ABA0wrong    0E984725-C51C-4BF4-9960-E1C80E27ABA0  
@@ -86,5 +86,4 @@ String                                       TruncatedValue
 [NEWSEQUENTIALID &#40;Transact-SQL&#41;](../../t-sql/functions/newsequentialid-transact-sql.md)    
 [SET @local_variable &#40;Transact-SQL&#41;](../../t-sql/language-elements/set-local-variable-transact-sql.md)  
 [Updatable Subscriptions for Transactional Replication](../../relational-databases/replication/transactional/updatable-subscriptions-for-transactional-replication.md)
-  
   

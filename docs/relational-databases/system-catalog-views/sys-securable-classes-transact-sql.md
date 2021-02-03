@@ -1,13 +1,13 @@
 ---
-description: securable_classes (Transact-sql)
-title: securable_classes (Transact-sql) |Microsoft Docs
+description: sys.securable_classes (Transact-sql)
+title: sys.securable_classes (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 12/01/2016
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - securable_classes_TSQL
 - securable_classes
@@ -20,15 +20,15 @@ helpviewer_keywords:
 ms.assetid: ae2bf589-17be-4cad-b5d5-05a34173b32d
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 64fbaf23147c8d383ca59de3e6679e1239d141f2
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 92b4082fc8cfdf4771813d128eb3cbbac0d27321
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88447874"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99194791"
 ---
-# <a name="syssecurable_classes-transact-sql"></a>securable_classes (Transact-sql)
+# <a name="syssecurable_classes-transact-sql"></a>sys.securable_classes (Transact-sql)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   セキュリティ保護可能なクラスの一覧を返します。  

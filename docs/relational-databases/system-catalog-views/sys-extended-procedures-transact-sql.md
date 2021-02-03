@@ -1,13 +1,13 @@
 ---
 description: sys.extended_procedures (Transact-SQL)
-title: extended_procedures (Transact-sql) |Microsoft Docs
+title: sys.extended_procedures (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - extended_procedures
 - sys.extended_procedures
@@ -18,19 +18,19 @@ dev_langs:
 helpviewer_keywords:
 - sys.extended_procedures catalog view
 ms.assetid: 310e0f87-0044-4fdf-bd12-51a723a74ce6
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 1edc9a52c610c3a72660fb899d6f74470c1c00c4
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: c148fb0bd8aa9af0f49a6d6e7d5a239af00b64e1
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551447"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99203829"
 ---
 # <a name="sysextended_procedures-transact-sql"></a>sys.extended_procedures (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  拡張ストアドプロシージャであるオブジェクトごとに1行の値を格納 **し** ます。型 = X。拡張ストアドプロシージャは、 **master** データベースにインストールされるので、データベースコンテキストからのみ表示されます。 他のデータベースコンテキストの **extended_procedures** ビューからを選択すると、空の結果セットが返されます。  
+  拡張ストアドプロシージャであるオブジェクトごとに1行の値を格納 **し** ます。型 = X。拡張ストアドプロシージャは、 **master** データベースにインストールされるので、データベースコンテキストからのみ表示されます。 他のデータベースコンテキストの **sys.extended_procedures** ビューからを選択すると、空の結果セットが返されます。  
 
   
 |列名|データ型|説明|  

@@ -7,21 +7,21 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
 - object catalog views [SQL Server]
 - catalog views [SQL Server], objects
 ms.assetid: e8670a6b-e15c-4126-8d2d-c9cfb968a12d
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: ed6cb1967e7c64ad77b5d5cbc8c40000a733e3fb
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 0dac0e964aa965918c95eaa7e3fd951db2dd67ac
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550578"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99194548"
 ---
 # <a name="object-catalog-views-transact-sql"></a>オブジェクトカタログビュー (Transact-sql)
 
@@ -115,7 +115,5 @@ ms.locfileid: "89550578"
 :::row-end:::
   
 ## <a name="see-also"></a>参照  
- システム[カタログビュー](catalog-views-transact-sql.md) [システムビュー &#40;transact-sql&#41;](https://msdn.microsoft.com/library/35a6161d-7f43-4e00-bcd3-3091f2015e90)  
+ システム[カタログビュー](catalog-views-transact-sql.md) [システムビュー &#40;transact-sql&#41;](../../t-sql/language-reference.md)  
   
-  
-

@@ -17,14 +17,14 @@ helpviewer_keywords:
 - DROP DEFAULT statement
 - defaults [SQL Server], removing
 ms.assetid: d2d3af25-8877-46ba-95d9-1844961d97ee
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: 1146be44b4ae2d02c1fcd94c4b0f2d53f52e55e9
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 2762305952b7c2e189a9c399f614974e1fc32e11
+ms.sourcegitcommit: 713e5a709e45711e18dae1e5ffc190c7918d52e7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88478885"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98688791"
 ---
 # <a name="drop-default-transact-sql"></a>DROP DEFAULT (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -46,7 +46,7 @@ DROP DEFAULT [ IF EXISTS ] { [ schema_name . ] default_name } [ ,...n ] [ ; ]
 
 ## <a name="arguments"></a>引数
  *IF EXISTS*  
- **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から[現在のバージョン](https://go.microsoft.com/fwlink/p/?LinkId=299658)まで)。  
+ **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] から [現在のバージョン](../../sql-server/what-s-new-in-sql-server-2016.md)まで)。  
   
  条件付きでは既に存在する場合にのみ、既定値を削除します。  
   
@@ -69,7 +69,7 @@ DROP DEFAULT [ IF EXISTS ] { [ schema_name . ] default_name } [ ,...n ] [ ; ]
 ### <a name="a-dropping-a-default"></a>A. デフォルトを削除する  
  既定値が列または別名データ型にバインドされていない場合は、DROP DEFAULT を使うだけで削除できます。 次の例では、ユーザーが作成したデフォルト `datedflt` を削除します。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 IF EXISTS (SELECT name FROM sys.objects  
@@ -79,9 +79,9 @@ IF EXISTS (SELECT name FROM sys.objects
 GO  
 ```  
   
- [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降では、次の構文を使うことができます。  
+ [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降では、次の構文を使うことができます。  
   
-```  
+```sql  
 DROP DEFAULT IF EXISTS datedflt;  
 GO  
 ```  
@@ -89,7 +89,7 @@ GO
 ### <a name="b-dropping-a-default-that-has-been-bound-to-a-column"></a>B. 列にバインドされた既定値を削除する  
  次の例では、`EmergencyContactPhone` テーブルの `Contact` 列に関連付けられているデフォルトをアンバインドし、デフォルト `phonedflt` を削除します。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
    BEGIN   
@@ -104,5 +104,3 @@ GO
  [sp_helptext &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-helptext-transact-sql.md)   
  [sp_help &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-help-transact-sql.md)   
  [sp_unbindefault &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-unbindefault-transact-sql.md)  
-  
-  

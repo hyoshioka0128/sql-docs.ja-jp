@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: bd20fd3a-414b-4581-959d-ebba4ddf5a55
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 86ef2c561979d7f2578863f35366ee33cb21dcdc
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+ms.openlocfilehash: abb62aec3a712ace96d6db82ea8eb0085d8a9e74
+ms.sourcegitcommit: 04d101fa6a85618b8bc56c68b9c006b12147dbb5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86915885"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99049279"
 ---
 # <a name="install-integration-services-ssis"></a>Integration Services (SSIS) のインストール
 
@@ -81,7 +81,7 @@ ETL (抽出、変換、読み込み) プロセス専用のサーバーを使う�
 
 ### <a name="configuring-ssis-event-logging"></a>SSIS イベント ログの構成
 
-既定では、新規インストールで、 [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] はパッケージの実行に関連するイベントをアプリケーション イベント ログに記録しないように構成されます。 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]のデータ コレクター機能を使用すると、この設定により、大量のイベント ログ エントリは生成されません。 ログに記録されないイベントは、EventID 12288 の "パッケージが起動されました。" や EventID 12289 の "パッケージが正常に完了しました。" です。 これらのイベントをアプリケーション イベント ログに記録するには、レジストリを編集用に開きます。 次に、レジストリ内で HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\130\SSIS ノードを見つけ、LogPackageExecutionToEventLog 設定の DWORD 値を 0 から 1 に変更します。
+既定では、新規インストールで、 [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] はパッケージの実行に関連するイベントをアプリケーション イベント ログに記録しないように構成されます。 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]のデータ コレクター機能を使用すると、この設定により、大量のイベント ログ エントリは生成されません。 ログに記録されないイベントは、EventID 12288 の "パッケージが起動されました。" や EventID 12289 の "パッケージが正常に完了しました。" です。 これらのイベントをアプリケーション イベント ログに記録するには、レジストリを編集用に開きます。 次に、レジストリ内で HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\130\SSIS ノードを見つけ、LogPackageExecutionToEventLog 設定の DWORD 値を 0 から 1 に変更します。
 
 ## <a name="install-additional-components-for-integration-services"></a>Integration Services の追加コンポーネントをインストールする
 
@@ -95,7 +95,7 @@ ETL (抽出、変換、読み込み) プロセス専用のサーバーを使う�
 
   - 32 ビットおよび 64 ビットの SSIS コンポーネント。
 
-  - SSIS をインストールしても、SSIS パッケージの設計と開発に必要なツールはインストール**されません**。
+  - SSIS をインストールしても、SSIS パッケージの設計と開発に必要なツールはインストール **されません**。
 
 - **SQL Server データベース エンジン**。 SQL Server セットアップ ウィザードでデータベース エンジンをインストールします。 データベース エンジンを選ぶと、SSIS パッケージを格納、管理、実行、監視するための SSIS カタログ データベース `SSISDB` を作成してホストできます。
 
@@ -115,7 +115,7 @@ ETL (抽出、変換、読み込み) プロセス専用のサーバーを使う�
 
 - **SQL Server Data Tools (SSDT)** 。 Visual Studio 2019 向け SSDT スタンドアロン インストーラーは廃止となりました。 Visual Studio 2019 に関しては、今後、[VS マーケット プレース](https://marketplace.visualstudio.com/items?itemName=SSIS.SqlServerIntegrationServicesProjects&ssr=false#overview)から SSIS デザイナー拡張機能を入手できます。
 
-- **Integration Services Feature Pack for Azure**。 Feature Pack のダウンロードとインストールについて詳しくは、「[Microsoft SQL Server 2017 Integration Services Feature Pack for Azure](https://docs.microsoft.com/sql/integration-services/azure-feature-pack-for-integration-services-ssis?view=sql-server-2017)」をご覧ください。 Feature Pack をインストールすると、パッケージは、次のサービスを含む Azure クラウドのストレージ サービスと分析サービスに接続できます。
+- **Integration Services Feature Pack for Azure**。 Feature Pack のダウンロードとインストールについて詳しくは、[Microsoft SQL Server Integration Services Feature Pack for Azure](../azure-feature-pack-for-integration-services-ssis.md) に関するページをご覧ください。 Feature Pack をインストールすると、パッケージは、次のサービスを含む Azure クラウドのストレージ サービスと分析サービスに接続できます。
 
   - Azure Blob Storage です。
 
@@ -123,7 +123,7 @@ ETL (抽出、変換、読み込み) プロセス専用のサーバーを使う�
 
   - Azure Data Lake Store。
 
-  - Azure SQL Data Warehouse。
+  - Azure Synapse Analytics。
 
   - Azure Data Lake Storage (Gen2)。
 

@@ -9,12 +9,12 @@ ms.date: 04/17/2018
 ms.author: murshedz
 ms.reviewer: martinle
 ms.custom: seo-dt-2019
-ms.openlocfilehash: b1d817bae593d4083f3e4873d626e147e58d5c28
-ms.sourcegitcommit: 7345e4f05d6c06e1bcd73747a4a47873b3f3251f
+ms.openlocfilehash: b6e0bbfd3acbc7616fca0f180d6de3238a724231
+ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88767161"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97489722"
 ---
 # <a name="acquire-and-configure-a-backup-server-for-parallel-data-warehouse"></a>並列データウェアハウスのバックアップサーバーを取得して構成する
 この記事では、Analytics Platform System (APS) と Parallel Data Warehouse (PDW) のバックアップおよび復元機能で使用するために、非アプライアンス Windows システムをバックアップサーバーとして構成する方法について説明します。  
@@ -89,7 +89,7 @@ PDW は UNC ファイル共有を使用してバックアップサーバーに�
   
 5.  バックアップドメインアカウントの資格情報を PDW に追加します。  
   
-    次に例を示します。  
+    たとえば、次のように入力します。  
   
     ```sql  
     EXEC sp_pdw_add_network_credentials '10.192.147.63', 'seattle\david', '********';  
@@ -120,9 +120,9 @@ FROM DISK = '\\10.172.14.255\backups\yearly\Invoices2013Full'
   
 詳細については、次を参照してください。 
   
--   [BACKUP DATABASE](../t-sql/statements/backup-transact-sql.md?view=aps-pdw-2016)   
+-   [BACKUP DATABASE](../t-sql/statements/backup-transact-sql.md?view=aps-pdw-2016&preserve-view=true)   
   
--   [データベースの復元](../t-sql/statements/restore-statements-transact-sql.md?view=aps-pdw-2016)  
+-   [データベースの復元](../t-sql/statements/restore-statements-transact-sql.md?view=aps-pdw-2016&preserve-view=true)  
   
 ## <a name="security-notices"></a><a name="Security"></a>セキュリティに関する通知  
 バックアップサーバーがアプライアンスのプライベートドメインに参加していません。 独自のネットワーク内にあり、独自のドメインとプライベートのアプライアンスドメインとの間に信頼関係がありません。  
@@ -140,7 +140,7 @@ PDW にユーザー名とパスワードを格納するには、 [sp_pdw_add_net
   
 PDW からネットワーク資格情報を削除するには、 [sp_pdw_remove_network_credentials](../relational-databases/system-stored-procedures/sp-pdw-remove-network-credentials-sql-data-warehouse.md) ストアドプロシージャを使用します。  
   
-SQL Server PDW に格納されているすべてのネットワーク資格情報を一覧表示するには、 [dm_pdw_network_credentials](../relational-databases/system-dynamic-management-views/sys-dm-pdw-network-credentials-transact-sql.md) 動的管理ビューを使用します。  
+SQL Server PDW に格納されているすべてのネットワーク資格情報を一覧表示するには [sys.dm_pdw_network_credentials](../relational-databases/system-dynamic-management-views/sys-dm-pdw-network-credentials-transact-sql.md) 動的管理ビューを使用します。  
   
 ### <a name="secure-communications"></a>セキュリティで保護された通信  
   

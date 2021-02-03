@@ -20,13 +20,13 @@ helpviewer_keywords:
 ms.assetid: 7a34be46-15b4-4b6b-8497-cfd8f9f14234
 author: rothja
 ms.author: jroth
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 02ac9ba37fae91916675a8a8edb4dfe904306112
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: b38293d4b60168028a5669a9f5dd2e01ccbde012
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88463799"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97466753"
 ---
 # <a name="track-data-changes-sql-server"></a>データ変更の追跡 (SQL Server)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -82,7 +82,7 @@ ms.locfileid: "88463799"
  キャプチャ インスタンスに関連付けられた変更データにアクセスするには、関連付けられたソース テーブルのすべてのキャプチャ対象列に対する選択アクセスがユーザーに許可されている必要があります。 また、キャプチャ インスタンスの作成時にゲーティング ロールが指定されている場合、呼び出し元は、指定されたゲーティング ロールのメンバーである必要もあります。 メタデータにアクセスするためのその他の一般的な変更データ キャプチャ関数には、public ロールですべてのデータベース ユーザーがアクセスできます。ただし、通常は、返されるメタデータへのアクセスも、基になるソース テーブルに対する選択アクセス、および定義されたすべてのゲーティング ロールのメンバーシップに基づいて制限されます。  
   
  **変更データ キャプチャが有効になっているソース テーブルに対する DDL 操作**  
- テーブルで変更データ キャプチャが有効になっているときにテーブルに DDL 操作を適用できるのは、固定サーバー ロール **sysadmin**のメンバー、 **database role db_owner**のメンバー、または **database role db_ddladmin**のメンバーのみです。 テーブルに対する DDL 操作の実行が明示的に許可されているユーザーがこれらの操作を実行しようとすると、エラー 22914 が返されます。  
+ テーブルで変更データ キャプチャが有効になっているときにテーブルに DDL 操作を適用できるのは、固定サーバー ロール **sysadmin** のメンバー、 **database role db_owner** のメンバー、または **database role db_ddladmin** のメンバーのみです。 テーブルに対する DDL 操作の実行が明示的に許可されているユーザーがこれらの操作を実行しようとすると、エラー 22914 が返されます。  
   
 ### <a name="data-type-considerations-for-change-data-capture"></a>変更データ キャプチャのデータ型に関する考慮事項  
  基本的な列の種類はすべて変更データ キャプチャでサポートされています。 次の表では、さまざまな列の型の動作と制限について説明します。  
@@ -114,9 +114,9 @@ ms.locfileid: "88463799"
  データベース ミラーリングの詳細については、「[データベース ミラーリング &#40;SQL Server&#41;](../../database-engine/database-mirroring/database-mirroring-sql-server.md)」を参照してください。  
   
 #### <a name="transactional-replication"></a>トランザクション レプリケーション  
- 変更データ キャプチャとトランザクション レプリケーションは、同じデータベースで共存できます。ただし、両方の機能が有効になっている場合、変更テーブルが異なる方法で作成されます。 変更データ キャプチャとトランザクション レプリケーションでは、トランザクション ログから変更を読み取る際に、常に同じプロシージャ ( [sp_replcmds](../../relational-databases/system-stored-procedures/sp-replcmds-transact-sql.md)) が使用されます。 変更データ キャプチャのみが有効になっている場合は、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェント ジョブによって **sp_replcmds**が呼び出されます。 同じデータベースで両方の機能が有効になっている場合は、ログ リーダー エージェントによって **sp_replcmds**が呼び出されます。 このエージェントは、変更テーブルとディストリビューション データベース テーブルの両方を作成します。 詳細については、「 [Replication Log Reader Agent](../../relational-databases/replication/agents/replication-log-reader-agent.md)」を参照してください。  
+ 変更データ キャプチャとトランザクション レプリケーションは、同じデータベースで共存できます。ただし、両方の機能が有効になっている場合、変更テーブルが異なる方法で作成されます。 変更データ キャプチャとトランザクション レプリケーションでは、トランザクション ログから変更を読み取る際に、常に同じプロシージャ ( [sp_replcmds](../../relational-databases/system-stored-procedures/sp-replcmds-transact-sql.md)) が使用されます。 変更データ キャプチャのみが有効になっている場合は、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェント ジョブによって **sp_replcmds** が呼び出されます。 同じデータベースで両方の機能が有効になっている場合は、ログ リーダー エージェントによって **sp_replcmds** が呼び出されます。 このエージェントは、変更テーブルとディストリビューション データベース テーブルの両方を作成します。 詳細については、「 [Replication Log Reader Agent](../../relational-databases/replication/agents/replication-log-reader-agent.md)」を参照してください。  
   
- [!INCLUDE[ssSampleDBobject](../../includes/sssampledbobject-md.md)] データベースで変更データ キャプチャが有効になっており、2 つのテーブルでキャプチャが有効になっているシナリオについて考えてみます。 変更テーブルを作成するために、キャプチャ ジョブによって **sp_replcmds**が呼び出されます。 データベースでトランザクション レプリケーションが有効になり、パブリケーションが作成されます。 次に、ログ リーダー エージェントがデータベースに対して作成され、キャプチャ ジョブが削除されます。 ログ リーダー エージェントは、変更テーブルにコミットされた最後のログ シーケンス番号からログのスキャンを続行します。 これにより、変更テーブル内のデータの一貫性が確保されます。 このデータベースでトランザクション レプリケーションが無効になっている場合、ログ リーダー エージェントが削除され、キャプチャ ジョブが再作成されます。  
+ [!INCLUDE[ssSampleDBobject](../../includes/sssampledbobject-md.md)] データベースで変更データ キャプチャが有効になっており、2 つのテーブルでキャプチャが有効になっているシナリオについて考えてみます。 変更テーブルを作成するために、キャプチャ ジョブによって **sp_replcmds** が呼び出されます。 データベースでトランザクション レプリケーションが有効になり、パブリケーションが作成されます。 次に、ログ リーダー エージェントがデータベースに対して作成され、キャプチャ ジョブが削除されます。 ログ リーダー エージェントは、変更テーブルにコミットされた最後のログ シーケンス番号からログのスキャンを続行します。 これにより、変更テーブル内のデータの一貫性が確保されます。 このデータベースでトランザクション レプリケーションが無効になっている場合、ログ リーダー エージェントが削除され、キャプチャ ジョブが再作成されます。  
   
 > [!NOTE]  
 >  変更データ キャプチャとトランザクション レプリケーションの両方でログ リーダー エージェントを使用している場合、レプリケートされた変更が最初にディストリビューション データベースに書き込まれます。 次に、キャプチャされた変更が変更テーブルに書き込まれます。 両方の操作は同時にコミットされます。 ディストリビューション データベースへの書き込みの際に遅延が生じた場合、変更テーブルに変更が表示される前に、それに対応する遅延が発生します。  
@@ -154,7 +154,7 @@ ms.locfileid: "88463799"
   
      変更の追跡について説明します。変更の追跡のしくみについて概要を示し、変更の追跡が [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] のその他の機能とどのように連携するかを説明します。  
   
--   [Microsoft Sync Framework デベロッパー センター](https://go.microsoft.com/fwlink/?LinkId=108054)  
+-   [Microsoft Sync Framework デベロッパー センター](/previous-versions/sql/synchronization/mt490616(v=msdn.10))  
   
      [!INCLUDE[ssSyncFrameLong](../../includes/sssyncframelong-md.md)] および [!INCLUDE[sql_sync_short](../../includes/sql-sync-short-md.md)]に関する完全なドキュメントが用意されています。 [!INCLUDE[sql_sync_short](../../includes/sql-sync-short-md.md)]のドキュメントのトピック「SQL Server 変更の追跡の使用方法」には、詳細な情報とコードの例があります。  
   
@@ -176,7 +176,5 @@ ms.locfileid: "88463799"
  [変更追跡関数 &#40;Transact-SQL&#41;](../../relational-databases/system-functions/change-tracking-functions-transact-sql.md)   
  [変更データ キャプチャ ストアド プロシージャ &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/change-data-capture-stored-procedures-transact-sql.md)   
  [変更データ キャプチャのテーブル &#40;Transact-SQL&#41;](../../relational-databases/system-tables/change-data-capture-tables-transact-sql.md)   
- [変更データ キャプチャに関連した動的管理ビュー &#40;Transact-SQL&#41;](https://msdn.microsoft.com/library/2a771d7d-693a-4f56-9227-02cd00e0e200)  
+ [変更データ キャプチャに関連した動的管理ビュー &#40;Transact-SQL&#41;](../system-dynamic-management-views/system-dynamic-management-views.md)  
   
-  
-

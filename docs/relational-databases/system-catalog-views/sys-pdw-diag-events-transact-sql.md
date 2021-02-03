@@ -1,26 +1,26 @@
 ---
-description: pdw_diag_events (Transact-sql)
-title: pdw_diag_events (Transact-sql) |Microsoft Docs
+description: sys.pdw_diag_events (Transact-sql)
+title: sys.pdw_diag_events (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/04/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 ms.assetid: 59bb3e9c-2829-49a0-b382-652ed1f54f88
 author: ronortloff
 ms.author: rortloff
-monikerRange: '>= aps-pdw-2016 || = sqlallproducts-allversions'
-ms.openlocfilehash: c38eb1e89f3e06bee1f3ec2841efc72845a96386
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>= aps-pdw-2016'
+ms.openlocfilehash: ef6e294c39328d5c2f90895f4ecb28f73601188c
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88490288"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99180781"
 ---
-# <a name="syspdw_diag_events-transact-sql"></a>pdw_diag_events (Transact-sql)
+# <a name="syspdw_diag_events-transact-sql"></a>sys.pdw_diag_events (Transact-sql)
 [!INCLUDE [pdw](../../includes/applies-to-version/pdw.md)]
 
   システム上の診断セッションに含めることができるイベントに関する情報を保持します。  
@@ -32,6 +32,6 @@ ms.locfileid: "88490288"
 |**is_enabled**|**bit**|イベントが発行されているかどうか。||  
   
 ## <a name="see-also"></a>参照  
- [SQL Data Warehouse and Parallel Data Warehouse Catalog Views (SQL Data Warehouse および Parallel Data Warehouse のカタログ ビュー)](../../relational-databases/system-catalog-views/sql-data-warehouse-and-parallel-data-warehouse-catalog-views.md)  
+ [Azure Synapse Analytics と Parallel Data Warehouse のカタログ ビュー](../../relational-databases/system-catalog-views/sql-data-warehouse-and-parallel-data-warehouse-catalog-views.md)  
   
   

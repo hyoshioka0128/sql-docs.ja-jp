@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.assetid: 8f3d273c-c663-4341-aa2f-5ed8ebcba5b0
 author: markingmyname
 ms.author: maghan
-monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 8939bfbec2f309c899a527288de35a3d3ea10d09
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 91301000df95b19338313d4541d7a7de4956095d
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88420196"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97439821"
 ---
 # <a name="sql-server-shared-management-objects-smo-license-terms"></a>SQL Server 共有管理オブジェクト (SMO) ライセンス条項
 [!INCLUDE [SQL Server ASDB, ASDBMI, ASDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
@@ -43,7 +43,7 @@ ms.locfileid: "88420196"
 
 **2.  追加のライセンス条件および追加の使用権。**
 
-&nbsp;&nbsp;**. 再頒布可能コード。**
+&nbsp;&nbsp;**ある.   再頒布可能コード。**
 
 &nbsp;&nbsp;&nbsp;&nbsp;**i. を使用および配布する権限。以下の条項に準拠している場合:**
 *   お客様は、本ソフトウェアをオブジェクト コード形式で複製し (以下「再頒布可能コード」といいます) 再頒布することができます。
@@ -86,9 +86,9 @@ ms.locfileid: "88420196"
 
 **10. 準拠法。**
 
-&nbsp;&nbsp;**米国。** お客様が本ソフトウェアを米国内で入手された場合、抵触法にかかわらず、本ライセンス条項の解釈および契約違反への主張は、米国ワシントン州法に準拠するものとします。 消費者保護法、公正取引法、および違法行為を含みますがこれに限定されない他の主張については、お客様が所在する地域の法律に準拠します。
+&nbsp;&nbsp;**ある.   米国。** お客様が本ソフトウェアを米国内で入手された場合、抵触法にかかわらず、本ライセンス条項の解釈および契約違反への主張は、米国ワシントン州法に準拠するものとします。 消費者保護法、公正取引法、および違法行為を含みますがこれに限定されない他の主張については、お客様が所在する地域の法律に準拠します。
 
-&nbsp;&nbsp;**b. 米国外。** お客様が本ソフトウェアを日本国および米国以外で入手された場合、本ライセンス条項は適用される地域法に準拠するものとします。
+&nbsp;&nbsp;**b.   米国の外側。** お客様が本ソフトウェアを日本国および米国以外で入手された場合、本ライセンス条項は適用される地域法に準拠するものとします。
 
 **11. 法的効力。** 本ライセンス条項は、特定の法的な権利を規定したものです。 お客様は、国によっては、その他の権利を有する場合があります。 また、お客様が本ソフトウェアを取得された第三者に関する権利を有する場合もあります。 本ライセンス条項は、お客様の国の法律がその法律に基づく権利の変更を許容しない場合、それらの権利を変更しないものとします。
 

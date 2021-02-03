@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - OR_TSQL
 - OR
@@ -18,15 +18,15 @@ helpviewer_keywords:
 - combining conditions
 - OR operator
 ms.assetid: b730a256-4a63-4880-9906-65b05cd9caf2
-author: rothja
-ms.author: jroth
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 11dbf45f7376a1a5557331dbd0466443bbd92739
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 6ff82e085323121fd9da098dd3e0db0495f278ec
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88422496"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99191880"
 ---
 # <a name="or-transact-sql"></a>OR (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -65,7 +65,7 @@ boolean_expression OR boolean_expression
 ## <a name="examples"></a>例  
  次の例では、`vEmployeeDepartmentHistory` ビューを使用して、夕方または夜間のシフトで勤務する `Quality Assurance` の従業員の名前を取得します。 かっこを省略した場合、このクエリでは、夕方シフトで勤務する `Quality Assurance` の従業員と、夜間シフトで勤務するすべての従業員が返されます。  
   
-```  
+```sql  
 -- Uses AdventureWorks  
   
 SELECT FirstName, LastName, Shift   
@@ -86,7 +86,7 @@ WHERE Department = 'Quality Assurance'
 ## <a name="examples-sssdwfull-and-sspdw"></a>例: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)]、[!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  
  次の例は、20 未満の `BaseRate` を取得するか、2001 年 1 月 1 日以降の `HireDate` を持つ従業員の名前を取得します。  
   
-```  
+```sql  
 -- Uses AdventureWorks  
   
 SELECT FirstName, LastName, BaseRate, HireDate   

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - INDEXKEY_PROPERTY_TSQL
 - INDEXKEY_PROPERTY
@@ -20,14 +20,14 @@ helpviewer_keywords:
 - displaying index keys
 - keys [SQL Server], index
 ms.assetid: 87c0c385-6b2d-4716-ac8c-a3ce6e8d89e9
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 722e8b7d7e818cb4bd9225f83f65aeb8b0090798
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 1a2b0231a42b39340c459875e6a343f443f2d873
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88364688"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99181238"
 ---
 # <a name="indexkey_property-transact-sql"></a>INDEXKEY_PROPERTY (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -41,8 +41,7 @@ ms.locfileid: "88364688"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 INDEXKEY_PROPERTY ( object_ID ,index_ID ,key_ID ,property )  
 ```  
   
@@ -53,7 +52,7 @@ INDEXKEY_PROPERTY ( object_ID ,index_ID ,key_ID ,property )
  テーブルまたはインデックス付きビューのオブジェクト ID 番号です。 *object_ID* は **int** です。  
   
  *index_ID*  
- インデックスの ID 番号です。 *index_ID* は** int**です。  
+ インデックスの ID 番号です。 *index_ID* は **int** です。  
   
  *key_ID*  
  インデックス キー列の位置です。 *key_ID* is **int**.  

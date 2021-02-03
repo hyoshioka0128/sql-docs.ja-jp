@@ -13,13 +13,13 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: jroth
 ms.custom: seo-dt-2019
-monikerRange: =azuresqldb-current||= azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: ffc15af15be20b4ba1bbcd5566c5e63ac0d7226f
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||= azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 3ca366f274f4880fdb629eab4b77fa180bacb60b
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88490928"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97463513"
 ---
 # <a name="json-data-in-sql-server"></a>SQL Server の JSON データ
 
@@ -194,7 +194,7 @@ OUTER APPLY OPENJSON(skills)
 ### <a name="convert-sql-server-data-to-json-or-export-json"></a>SQL Server のデータを JSON に変換または JSON をエクスポートする
 
 >[!NOTE]
->Azure SQL Data Warehouse データの JSON への変換や、JSON のエクスポートは、サポートされていません。
+>Azure Synapse Analytics データの JSON への変換や、JSON のエクスポートは、サポートされていません。
 
 **FOR JSON** 句を **SELECT** ステートメントに追加して、SQL Server データまたは SQL クエリの結果を JSON として書式設定します。 **FOR JSON** を使用して、JSON 出力の形式設定をクライアント アプリケーションから SQL Server に委任します。 詳細については、「[FOR JSON を使用してクエリ結果を JSON として書式設定する (SQL Server)](../../relational-databases/json/format-query-results-as-json-with-for-json-sql-server.md)」を参照してください。  
   
@@ -269,7 +269,7 @@ JSON テキストは `VARCHAR` または `NVARCHAR` 列に格納され、プレ�
 
 ## <a name="store-and-index-json-data-in-sql-server"></a>JSON データの SQL Server への格納とインデックスの追加
 
-JSON はテキスト形式なので、SQL Database の `NVARCHAR` 列に JSON ドキュメントを格納できます。 `NVARCHAR` 型は、すべての SQL Server サブシステムでサポートされているので、**CLUSTERED COLUMNSTORE** インデックスが付いたテーブル、**メモリ最適化**テーブル、または OPENROWSET または PolyBase を使用して読み取ることができる外部ファイルに JSON ドキュメントを格納することができます。
+JSON はテキスト形式なので、SQL Database の `NVARCHAR` 列に JSON ドキュメントを格納できます。 `NVARCHAR` 型は、すべての SQL Server サブシステムでサポートされているので、**CLUSTERED COLUMNSTORE** インデックスが付いたテーブル、**メモリ最適化** テーブル、または OPENROWSET または PolyBase を使用して読み取ることができる外部ファイルに JSON ドキュメントを格納することができます。
 
 JSON データの SQL Server への保存、インデックスの追加、最適化のオプションに関する詳細については、次の記事を参照してください。
 

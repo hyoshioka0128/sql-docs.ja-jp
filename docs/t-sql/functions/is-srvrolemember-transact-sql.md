@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - IS_SRVROLEMEMBER_TSQL
 - IS_SRVROLEMEMBER
@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 3241a44a-6958-415b-b8b7-2a1207c36ab3
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 837f0044e39548bcd442b53603a0c320b620fcbd
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 10d6a11fccad8f4905015024f6d90a3aadb2dac4
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88459767"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99165087"
 ---
 # <a name="is_srvrolemember-transact-sql"></a>IS_SRVROLEMEMBER (Transact-SQL)
 
@@ -38,7 +38,6 @@ ms.locfileid: "88459767"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 IS_SRVROLEMEMBER ( 'role' [ , 'login' ] )  
 ```  
   
@@ -46,7 +45,7 @@ IS_SRVROLEMEMBER ( 'role' [ , 'login' ] )
 
 ## <a name="arguments"></a>引数
  **'** *role* **'**  
- 確認するサーバー ロールの名前です。 *role* は **sysname**です。  
+ 確認するサーバー ロールの名前です。 *role* は **sysname** です。  
   
  *role* の有効な値は、ユーザー定義サーバー ロールと、次の固定サーバー ロールです。  
 
@@ -100,7 +99,7 @@ IS_SRVROLEMEMBER ( 'role' [ , 'login' ] )
 ## <a name="examples"></a>例  
  次の例では、現在のユーザーの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ログインが固定サーバー ロール `sysadmin` のメンバーであるかどうかを示しています。  
   
-```  
+```sql  
 IF IS_SRVROLEMEMBER ('sysadmin') = 1  
    print 'Current user''s login is a member of the sysadmin role'  
 ELSE IF IS_SRVROLEMEMBER ('sysadmin') = 0  
@@ -111,7 +110,7 @@ ELSE IF IS_SRVROLEMEMBER ('sysadmin') IS NULL
   
  次の例では、ドメイン ログイン Pat が固定サーバー ロール **diskadmin** のメンバーであるかどうかを示します。  
   
-```  
+```sql  
 SELECT IS_SRVROLEMEMBER('diskadmin', 'Contoso\Pat');  
 ```  
   

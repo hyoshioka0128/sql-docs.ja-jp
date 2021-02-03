@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sysremotelogins
 - sysremotelogins_TSQL
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sysremotelogins system table
 - sys.sysremotelogins compatibility view
 ms.assetid: b7ffcfa6-aed8-41d4-8b70-845439ab813d
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 39cf5ae09d0857acf7d0d89b2be789162a751b64
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: e0eef79e4e104e7c6c089bc798f5da60f2ea8a8c
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88482055"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99160661"
 ---
 # <a name="syssysremotelogins-transact-sql"></a>sys.sysremotelogins (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "88482055"
 |**remoteserverid**|**smallint**|リモートサーバーの識別。|  
 |**remoteusername**|**sysname**|リモートサーバー上のユーザーのログイン名。|  
 |**status**|**smallint**|0 を返します。|  
-|**sid**|**varbinary (85)**|[!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows ユーザーのセキュリティ ID。|  
+|**sid**|**varbinary(85)**|[!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows ユーザーのセキュリティ ID。|  
 |**changedate**|**datetime**|リモートユーザーが追加された日付と時刻。|  
   
 ## <a name="see-also"></a>参照  

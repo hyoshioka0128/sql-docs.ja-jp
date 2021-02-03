@@ -1,18 +1,19 @@
 ---
+description: SQL Server Reporting Services のインストール
 title: SQL Server Reporting Services のインストール | Microsoft Docs
-ms.date: 05/01/2020
+ms.date: 12/11/2020
 ms.prod: reporting-services
 ms.prod_service: reporting-services-native
 ms.topic: conceptual
 author: maggiesMSFT
 ms.author: maggies
-monikerRange: '>= sql-server-2017 || = sqlallproducts-allversions'
-ms.openlocfilehash: 07669b5c0466c725a271f71ed207c332ffdb5a26
-ms.sourcegitcommit: b72c9fc9436c44c6a21fd96223c73bf94706c06b
+monikerRange: '>= sql-server-2016'
+ms.openlocfilehash: a6c2dc6ae1a8711c3e78403b539a603c0cb36dcf
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82693800"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596991"
 ---
 # <a name="install-sql-server-reporting-services"></a>SQL Server Reporting Services のインストール
 
@@ -20,12 +21,12 @@ ms.locfileid: "82693800"
 
 SQL Server Reporting Services をインストールするには、レポート アイテムの格納、レポートの表示、およびサブスクリプションや他のレポート サービスの処理を行うためのサーバー コンポーネントが必要です。 
 
-::: moniker range=">=sql-server-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15"
 Microsoft ダウンロード センターから [SQL Server 2019 Reporting Services](https://www.microsoft.com/download/details.aspx?id=100122) をダウンロードします。
 
 ::: moniker-end
 
-::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2017"
 Microsoft ダウンロード センターから [SQL Server 2017 Reporting Services](https://www.microsoft.com/download/details.aspx?id=55252) をダウンロードします。
 
 ::: moniker-end
@@ -67,7 +68,7 @@ Reporting Services をインストールする前に、「[Hardware and software
     > [!NOTE]
     > 既定のパスは、C:\Program Files\Microsoft SQL Server Reporting Services です。
 
-7. 正常にセットアップした後、 **[レポート サーバーの構成]** を選択して、Reporting Services Configuration Manager を起動します。
+7. 正常にセットアップした後、 **[レポート サーバーの構成]** を選択して、レポート サーバー構成マネージャーを起動します。
 
 ## <a name="configure-your-report-server"></a>レポート サーバーを構成する
 
@@ -100,7 +101,7 @@ URL 予約は、プレフィックス、ホスト名、ポート、および仮�
 |Prefix|既定のプレフィックスは HTTP です。 以前にトランスポート層セキュリティ(TLS) (旧称 Secure Sockets Layer (SSL)) 証明書をインストールした場合は、セットアップによって、HTTPS プレフィックスを使用する URL 予約の作成が試みられます。|
 |ホスト名|既定のホスト名は、強いワイルドカード (+) です。 これにより、コンピューターに対して解決されるあらゆるホスト名 (`https://<computername>/reportserver`、`https://localhost/reportserver`、`https://<IPAddress>/reportserver.`) の指定のポートで、レポート サーバーが HTTP 要求を受け付けるように指定されます。|
 |Port|既定のポートは 80 です。 ポート 80 以外のポートを使用する場合は、Web ポータルをブラウザー ウィンドウで開くときに、そのポートを URL に明示的に追加する必要があります。|
-|仮想ディレクトリ|既定では、仮想ディレクトリは、レポート サーバー Web サービスの場合は ReportServer の形式で作成され、Web ポータルの場合は Reports の形式で作成されます。 レポート サーバー Web サービスの既定の仮想ディレクトリは、 **reportserver**です。 Web ポータルの既定の仮想ディレクトリは、**reports** です。|
+|仮想ディレクトリ|既定では、仮想ディレクトリは、レポート サーバー Web サービスの場合は ReportServer の形式で作成され、Web ポータルの場合は Reports の形式で作成されます。 レポート サーバー Web サービスの既定の仮想ディレクトリは、 **reportserver** です。 Web ポータルの既定の仮想ディレクトリは、**reports** です。|
 
 完全な URL 文字列の例を次に示します。
 
@@ -126,7 +127,7 @@ Web サービス URL および Web ポータル URL 用に構成されている 
 
 SQL Server Reporting Services ネイティブ モードをインストールする方法については、「[Reporting Services ネイティブ モードのレポート サーバーのインストール](install-reporting-services-native-mode-report-server.md)」を参照してください。 
 
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 
 SharePoint 統合モードで SQL Server 2016 Reporting Services (およびそれ以降) をインストールする方法については、「[SharePoint モードでの最初のレポート サーバーのインストール](install-the-first-report-server-in-sharepoint-mode.md)」を参照してください。
 
@@ -136,6 +137,6 @@ SharePoint 統合モードで SQL Server 2016 Reporting Services (およびそ�
 
 インストールされたレポート サーバーを使用して、レポートの作成を開始し、自分のレポート サーバーに配置します。 レポート ビルダーの使用を開始する方法については、「[レポート ビルダーをインストールする](../../reporting-services/install-windows/install-report-builder.md)」を参照してください。
 
-SQL Server Data Tools を使用してレポートを作成するには、[SQL Server Data Tools をダウンロードします](https://go.microsoft.com/fwlink/?LinkID=616714)。
+SQL Server Data Tools を使用してレポートを作成するには、[SQL Server Data Tools をダウンロードします](../../ssdt/download-sql-server-data-tools-ssdt.md)。
 
 その他の質問 [Reporting Services のフォーラムに質問してみてください](https://go.microsoft.com/fwlink/?LinkId=620231)

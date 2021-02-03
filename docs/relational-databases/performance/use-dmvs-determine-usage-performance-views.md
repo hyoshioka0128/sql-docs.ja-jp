@@ -2,22 +2,22 @@
 title: DMV - ビューの使用統計とパフォーマンス
 description: 動的管理ビュー (DMV) の sys.dm_exec_query_optimizer_info、sys.views、および sys.dmv_exec_cached_plans を使用して、SQL クエリのパフォーマンス統計情報を取得する方法について説明します。
 ms.custom: seo-dt-2019
-author: julieMSFT
-ms.author: jrasnick
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.date: 09/27/2018
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: performance
 ms.topic: conceptual
-ms.openlocfilehash: ea5ae310606097b9f25a31337222b941ac963fd0
-ms.sourcegitcommit: a4ee6957708089f7d0dda15668804e325b8a240c
+ms.openlocfilehash: d900786f27280eb66ded8801843e9c657f2ceb5f
+ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87899545"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96504907"
 ---
 # <a name="use-dmvs-to-determine-usage-statistics-and-performance-of-views"></a>DMV を使用してビューの使用統計とパフォーマンスを確認する
-この記事では、**ビューを使用するクエリのパフォーマンス**に関する情報を取得するために使用する方法とスクリプトについて説明します。 これらのスクリプトの目的は、データベース内のさまざまなビューの使用とパフォーマンスのインジケーターを提供することです。 
+この記事では、**ビューを使用するクエリのパフォーマンス** に関する情報を取得するために使用する方法とスクリプトについて説明します。 これらのスクリプトの目的は、データベース内のさまざまなビューの使用とパフォーマンスのインジケーターを提供することです。 
 
 ## <a name="sysdm_exec_query_optimizer_info"></a>sys.dm_exec_query_optimizer_info
 DMV [sys.dm_exec_query_optimizer_info](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-optimizer-info-transact-sql.md) では、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] クエリ オプティマイザーによって行われた最適化に関する統計情報が公開されます。 これらの値は累積的であり、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の起動時に記録を開始します。 クエリ オプティマイザーの詳細については、「[クエリ処理アーキテクチャ ガイド](../../relational-databases/query-processing-architecture-guide.md)」を参照してください。   

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - OPEN_TSQL
 - OPEN
@@ -20,14 +20,14 @@ helpviewer_keywords:
 - OPEN statement
 - Transact-SQL cursors, opening
 ms.assetid: fd1c5e3b-6045-4a42-b646-3fca76e874c1
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 478c8c846f075c6d9a9705e978a53236a65e3536
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 23d3a4c306d61f2fdc7f71102a3a786dd9856941
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88467591"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99191928"
 ---
 # <a name="open-transact-sql"></a>OPEN (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -39,7 +39,6 @@ ms.locfileid: "88467591"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 OPEN { { [ GLOBAL ] cursor_name } | cursor_variable_name }  
 ```  
   
@@ -66,7 +65,7 @@ OPEN { { [ GLOBAL ] cursor_name } | cursor_variable_name }
 ## <a name="examples"></a>例  
  次の例では、カーソルをオープンし、すべての行をフェッチします。  
   
-```  
+```sql  
 DECLARE Employee_Cursor CURSOR FOR  
 SELECT LastName, FirstName  
 FROM AdventureWorks2012.HumanResources.vEmployee  

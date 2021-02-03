@@ -1,13 +1,13 @@
 ---
 description: sys.resource_governor_configuration (Transact-SQL)
-title: resource_governor_configuration (Transact-sql) |Microsoft Docs
+title: sys.resource_governor_configuration (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.resource_governor_configuration_TSQL
 - sys.resource_governor_configuration
@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.resource_governor_configuration catalog view
 ms.assetid: 89099668-1dc6-4b07-9d8b-49bc95c7bfc0
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 9d5cc74d9f551c0c5da2fbaf7c5629e3e0487da9
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: c36375450d680d85bd551124f2eb9bfb03d895d6
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550471"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99206841"
 ---
 # <a name="sysresource_governor_configuration-transact-sql"></a>sys.resource_governor_configuration (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "89550471"
 |is_enabled|**bit**|リソース ガバナーの現在の状態を示します。<br /><br /> 0 = Resource Governor が有効になっていません。<br /><br /> 1 = Resource Governor が有効になっています。<br /><br /> NULL 値は許可されません。|  
 |max_outstanding_io_per_volume|**int**|**適用対象**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降。<br /><br /> ボリュームごとの未処理の I/O の最大数。|  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  カタログ ビューには、メタデータに格納されているリソース ガバナー構成が表示されます。 メモリ内の構成を表示するには、対応する動的管理ビューを使用します。  
   
 ## <a name="permissions"></a>アクセス許可  
@@ -69,7 +69,7 @@ GO
 ## <a name="see-also"></a>参照  
  [Resource Governor カタログビュー &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/resource-governor-catalog-views-transact-sql.md)   
  [カタログ ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)   
- [dm_resource_governor_configuration &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-configuration-transact-sql.md)   
+ [sys.dm_resource_governor_configuration &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-configuration-transact-sql.md)   
  [リソース ガバナー](../../relational-databases/resource-governor/resource-governor.md)  
   
   

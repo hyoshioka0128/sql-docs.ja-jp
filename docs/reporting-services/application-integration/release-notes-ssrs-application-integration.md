@@ -1,7 +1,7 @@
 ---
 title: レポート ビューアー コントロールのリリース ノート
 description: Reporting Services に関連する WebForms および WinForms のレポート ビューアー コントロールのリリース ノート。
-ms.date: 01/16/2020
+ms.date: 11/30/2020
 ms.prod: reporting-services
 ms.prod_service: reporting-services-native
 ms.technology: application-integration
@@ -11,18 +11,25 @@ ms.assetid: 112e0240-351d-46a9-98c7-2be09f26ac60
 ms.reviewer: maggies
 author: RhysSchmidtke
 ms.author: rhys
-ms.openlocfilehash: 1ed8d92f77a360d195c893c38ee08e642ee0b24a
-ms.sourcegitcommit: c6a2efe551e37883c1749bdd9e3c06eb54ccedc9
+ms.openlocfilehash: 7edb40b44108ebf66c9462e8c909fbbd9f39510f
+ms.sourcegitcommit: 0c0e4ab90655dde3e34ebc08487493e621f25dda
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80752875"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96443008"
 ---
 # <a name="release-notes-for-report-viewer-controls-for-webforms-and-winforms-of-ssrs"></a>SSRS の WebForms および WinForms のレポート ビューアー コントロールのリリース ノート
 
 これらは、[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] (SSRS) に関連する WebForms および WinForms のレポート ビューアー コントロールのリリース ノートです。
 
 SSRS のリリース ノートについては、「[SQL Server Reporting Services (SSRS) 2017 以降のリリース ノート](../release-notes-reporting-services.md)」を参照してください。
+
+## <a name="15014270"></a>150.1427.0
+| 変更の説明 | 詳細 |
+| :----------------- | :------ |
+| バグの修正 | クリック後にリンクが表示済みとして表示されない問題を修正しました。 |
+|           | 特定のロケールに影響する datetime 解析に関する問題を修正しました。 |
+| &nbsp; | &nbsp; |
 
 ## <a name="15014040"></a>150.1404.0
 | 変更の説明 | 詳細 |
@@ -62,7 +69,7 @@ SSRS のリリース ノートについては、「[SQL Server Reporting Service
 | 変更の説明 | 詳細 |
 | :----------------- | :------ |
 | パラメーターのないレポートが **Server.LoadReportDefinition** によって読み込まれないバグが修正されています。 | &nbsp; |
-| WebForms レポート ビューアー コントロール。 | RTL ページ (*direction: rtl;* css を使用してテキスト フローを変更するページ) への埋め込みがサポートされました。<br/><br/>*IReportViewerMessages5* ローカリゼーション インターフェイスを使用した、印刷ダイアログ テキストのカスタマイズがサポートされました。<br/><br/>ユーザー補助のサポートが改善されました。<br/><br/>&bull; &nbsp; &nbsp; [WebForms のレポート ビューアー コントロール用の NuGet パッケージ](https://www.nuget.org/packages/Microsoft.ReportingServices.ReportViewerControl.Webforms/150.900.148) |
+| WebForms レポート ビューアー コントロール。 | RTL ページ (*direction: rtl;* css を使用してテキスト フローをを変更するページ) への埋め込みがサポートされました。<br/><br/>*IReportViewerMessages5* ローカリゼーション インターフェイスを使用した、印刷ダイアログ テキストのカスタマイズがサポートされました。<br/><br/>ユーザー補助のサポートが改善されました。<br/><br/>&bull; &nbsp; &nbsp; [WebForms のレポート ビューアー コントロール用の NuGet パッケージ](https://www.nuget.org/packages/Microsoft.ReportingServices.ReportViewerControl.Webforms/150.900.148) |
 | WinForms レポート ビューアー コントロール。 | アプリが高 DPI モードで実行されている場合の印刷機能が修正されました。<br/><br/>&bull; &nbsp; &nbsp; [WinForms のレポート ビューアー コントロール用の NuGet パッケージ](https://www.nuget.org/packages/Microsoft.ReportingServices.ReportViewerControl.Winforms/150.900.148) |
 | &nbsp; | &nbsp; |
 

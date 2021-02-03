@@ -9,15 +9,15 @@ ms.reviewer: ''
 ms.technology: in-memory-oltp
 ms.topic: conceptual
 ms.assetid: 2b67292d-6d8e-4016-9063-a97461ffe57a
-author: CarlRabeler
-ms.author: genemi
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: dc1693c1e0d2290fe097a8879240f4b0c6074dd8
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+author: markingmyname
+ms.author: maghan
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 38e748f890ae86ae66b697a60a2350a2a919dbfa
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86922118"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97485184"
 ---
 # <a name="sql-server-management-objects-support-for-in-memory-oltp"></a>インメモリ OLTP に対する SQL Server 管理オブジェクトのサポート
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -164,5 +164,5 @@ public class A {
   
 ## <a name="see-also"></a>関連項目  
 
-- [SQL Server によるインメモリ OLTP のサポート](sql-server-support-for-in-memory-oltp.md)
+- [SQL Server によるインメモリ OLTP のサポート](./transact-sql-support-for-in-memory-oltp.md)
 - [SMO の概要](../server-management-objects-smo/overview-smo.md)

@@ -1,12 +1,12 @@
 ---
-description: dm_os_hosts (Transact-sql)
-title: dm_os_hosts (Transact-sql) |Microsoft Docs
+description: sys.dm_os_hosts (Transact-sql)
+title: sys.dm_os_hosts (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 08/18/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_os_hosts_TSQL
 - dm_os_hosts
@@ -17,50 +17,50 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_os_hosts dynamic management view
 ms.assetid: a313ff3b-1fe9-421e-b94b-cea19c43b0e5
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 482ce9c2e7e29aa0b1f137e3941136b6552d305b
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 7d52a5cf6a949656df60fd76ed678c2505566735
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89548496"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99184893"
 ---
-# <a name="sysdm_os_hosts-transact-sql"></a>dm_os_hosts (Transact-sql)
+# <a name="sysdm_os_hosts-transact-sql"></a>sys.dm_os_hosts (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   のインスタンスに現在登録されているすべてのホストを返し [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。 このビューでは、ホストで使用されているリソースも返されます。  
   
 > [!NOTE]  
->  またはからこれを呼び出すに [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] は [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] 、 **dm_pdw_nodes_os_hosts**という名前を使用します。  
+>  またはからこれを呼び出すに [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] は [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] 、 **sys.dm_pdw_nodes_os_hosts** という名前を使用します。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
 |**host_address**|**varbinary (8)**|ホスト オブジェクトの内部メモリ アドレス。|  
-|**type**|**nvarchar(60)**|ホストされるコンポーネントの種類。 たとえば、オブジェクトに適用された<br /><br /> SOSHOST_CLIENTID_SERVERSNI = SQL Server ネイティブインターフェイス<br /><br /> SOSHOST_CLIENTID_SQLOLEDB = SQL Server Native Client OLE DB プロバイダー<br /><br /> SOSHOST_CLIENTID_MSDART = Microsoft データアクセスの実行時|  
+|**type**|**nvarchar(60)**|ホストされるコンポーネントの種類。 たとえば、次のように入力します。<br /><br /> SOSHOST_CLIENTID_SERVERSNI = SQL Server ネイティブインターフェイス<br /><br /> SOSHOST_CLIENTID_SQLOLEDB = SQL Server Native Client OLE DB プロバイダー<br /><br /> SOSHOST_CLIENTID_MSDART = Microsoft データアクセスの実行時|  
 |**name**|**nvarchar(32)**|ホストの名前。|  
 |**enqueued_tasks_count**|**int**|ホストによって [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のキューに挿入されたタスクの合計数。|  
 |**active_tasks_count**|**int**|このホストがキューに配置した現在実行中のタスクの数。|  
 |**completed_ios_count**|**int**|このホストで発行され、完了した i/o の合計数。|  
 |**completed_ios_in_bytes**|**bigint**|このホストで完了した i/o の合計バイト数。|  
 |**active_ios_count**|**int**|現在完了を待機しているこのホストに関連する i/o 要求の合計数。|  
-|**default_memory_clerk_address**|**varbinary (8)**|このホストに関連付けられているメモリクラークオブジェクトのメモリアドレス。 詳細については、「 [sys. dm_os_memory_clerks &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-memory-clerks-transact-sql.md)」を参照してください。|  
+|**default_memory_clerk_address**|**varbinary (8)**|このホストに関連付けられているメモリクラークオブジェクトのメモリアドレス。 詳細については、「 [sys.dm_os_memory_clerks &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-memory-clerks-transact-sql.md)」を参照してください。|  
 |**pdw_node_id**|**int**|**適用対象**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] 、 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> このディストリビューションが配置されているノードの識別子。|  
   
 ## <a name="permissions"></a>アクセス許可
 
 で [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] は、 `VIEW SERVER STATE` 権限が必要です。   
-[!INCLUDE[ssSDS_md](../../includes/sssds-md.md)]Premium レベルでは、データベースの権限が必要です `VIEW DATABASE STATE` 。 [!INCLUDE[ssSDS_md](../../includes/sssds-md.md)]Standard レベルおよび Basic レベルでは、**サーバー管理**者または**Azure Active Directory 管理者**アカウントが必要です。   
+SQL Database Basic、S0、S1 のサービス目標、およびエラスティックプール内のデータベースについて `Server admin` は、または `Azure Active Directory admin` アカウントが必要です。 その他のすべての SQL Database サービスの目的で `VIEW DATABASE STATE` は、データベースで権限が必要になります。   
 
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の実行可能なコンポーネント以外の OLE DB プロバイダーなどのコンポーネントが、メモリを割り当てたりノンプリエンプティブなスケジュールに参加することが許可されます。 これらのコンポーネントはによってホストされ、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] これらのコンポーネントによって割り当てられるすべてのリソースが追跡されます。 ホスティングによって、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の外部コンポーネントで使用されるリソースをより正確に把握できます。  
   
 ## <a name="relationship-cardinalities"></a>リレーションシップ基数  
   
-|From|終了|リレーションシップ|  
+|差出人|終了|リレーションシップ|  
 |----------|--------|------------------|  
-|sys.dm_os_hosts. default_memory_clerk_address|dm_os_memory_clerks。 memory_clerk_address|1対1|  
-|sys.dm_os_hosts. host_address|dm_os_memory_clerks。 host_address|1対1|  
+|sys.dm_os_hosts. default_memory_clerk_address|sys.dm_os_memory_clerks。 memory_clerk_address|1対1|  
+|sys.dm_os_hosts. host_address|sys.dm_os_memory_clerks。 host_address|1対1|  
   
 ## <a name="examples"></a>例  
  次の例では、ホストされるコンポーネントによってコミットされたメモリの合計量を確認します。  
@@ -79,7 +79,7 @@ GROUP BY h.type;
   
 ## <a name="see-also"></a>参照  
 
- [dm_os_memory_clerks &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-memory-clerks-transact-sql.md)   
+ [sys.dm_os_memory_clerks &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-memory-clerks-transact-sql.md)   
  [SQL Server オペレーティングシステム関連の動的管理ビュー &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sql-server-operating-system-related-dynamic-management-views-transact-sql.md)  
   
   

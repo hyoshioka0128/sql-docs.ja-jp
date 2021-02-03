@@ -1,12 +1,12 @@
 ---
-description: dm_cryptographic_provider_keys (Transact-sql)
-title: dm_cryptographic_provider_keys (Transact-sql) |Microsoft Docs
+description: sys.dm_cryptographic_provider_keys (Transact-sql)
+title: sys.dm_cryptographic_provider_keys (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_cryptographic_provider_keys_TSQL
 - dm_cryptographic_provider_keys_TSQL
@@ -17,16 +17,16 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_cryptographic_provider_keys dynamic management function
 ms.assetid: 5a8c1421-c56b-44b5-96e5-4f01782a0c7c
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 1f2ee5bd2a0aecd1cd56d4efd041caf920f19e61
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 9fcfeed749aea4fa18ac74ba4e78cc9dfa368828
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542329"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99196293"
 ---
-# <a name="sysdm_cryptographic_provider_keys-transact-sql"></a>dm_cryptographic_provider_keys (Transact-sql)
+# <a name="sysdm_cryptographic_provider_keys-transact-sql"></a>sys.dm_cryptographic_provider_keys (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   拡張キー管理 (EKM: Extensible Key Management) プロバイダーによって提供されるキーに関する情報を返します。  

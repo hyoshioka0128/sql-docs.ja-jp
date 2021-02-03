@@ -1,13 +1,13 @@
 ---
-description: dm_exec_input_buffer (Transact-sql)
-title: dm_exec_input_buffer (Transact-sql) |Microsoft Docs
+description: sys.dm_exec_input_buffer (Transact-sql)
+title: sys.dm_exec_input_buffer (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 11/14/2019
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_exec_input_buffer
 - sys.dm_exec_input_buffer _tsql
@@ -18,17 +18,17 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_exec_input_buffer dynamic management function
 ms.assetid: fb34a560-bde9-4ad9-aa96-0d4baa4fc104
-author: markingmyname
-ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 4fecdc698dc7015ab47e5a8c97b3990c7e5bf1f4
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 1560c1147df8373cf75fa5640ca8ee6c6ce97bdc
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89536956"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99159870"
 ---
-# <a name="sysdm_exec_input_buffer-transact-sql"></a>dm_exec_input_buffer (Transact-sql)
+# <a name="sysdm_exec_input_buffer-transact-sql"></a>sys.dm_exec_input_buffer (Transact-sql)
 
 [!INCLUDE[tsql-appliesto-2014sp2-asdb-xxxx-xxx-md](../../includes/tsql-appliesto-2014sp2-asdb-xxxx-xxx-md.md)]
 
@@ -42,13 +42,13 @@ sys.dm_exec_input_buffer ( session_id , request_id )
 
 ## <a name="arguments"></a>引数
 
-*session_id* 検索するバッチを実行するセッション ID を指定します。 *session_id* は **smallint**です。 *session_id* は、次の動的管理オブジェクトから取得できます。
+*session_id* 検索するバッチを実行するセッション ID を指定します。 *session_id* は **smallint** です。 *session_id* は、次の動的管理オブジェクトから取得できます。
 
 - [sys.dm_exec_requests](../../relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql.md)
 - [sys.dm_exec_sessions](../../relational-databases/system-dynamic-management-views/sys-dm-exec-sessions-transact-sql.md)
 - [sys.dm_exec_connections](../../relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql.md)
 
-*request_id*[Dm_exec_requests](../../relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql.md)からの request_id。 *request_id* は **int**です。
+*request_id*[Sys.dm_exec_requests](../../relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql.md)からの request_id。 *request_id* は **int** です。
 
 ## <a name="table-returned"></a>返されるテーブル
 
@@ -70,9 +70,9 @@ sys.dm_exec_input_buffer ( session_id , request_id )
 > [!IMPORTANT]
 > 所有者権限を持たない Azure SQL Database (トリガー、ストアドプロシージャ、関数など) に対してこの DMV を SQL Server Management Studio 以外で実行すると、master データベースで権限エラーがスローされます。
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>コメント
 
-この動的管理関数は、 **クロス適用**を行うことによって、dm_exec_sessions または sys. dm_exec_requests と組み合わせて使用できます。
+この動的管理関数は、 **クロス適用** を行うことで sys.dm_exec_sessions または sys.dm_exec_requests と組み合わせて使用できます。
 
 ## <a name="examples"></a>例
 

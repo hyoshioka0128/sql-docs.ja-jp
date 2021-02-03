@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - AND_TSQL
 - AND
@@ -20,15 +20,15 @@ helpviewer_keywords:
 - AND
 - combining expressions
 ms.assetid: b61d7f8d-5a51-49b7-91dd-f6190a5a0fb9
-author: rothja
-ms.author: jroth
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: cf84d48b89218d4d37a7c1c1b9cf57df6a45775e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 5558851589fe1eb5f77d5fea55e40fa4c6d0ba75
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88417168"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99176389"
 ---
 # <a name="and-transact-sql"></a>AND (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -47,7 +47,7 @@ boolean_expression AND boolean_expression
 
 ## <a name="arguments"></a>引数
  *boolean_expression*  
- **TRUE**、**FALSE** または、**UNKNOWN** のブール値を返す有効な[式](../../t-sql/language-elements/expressions-transact-sql.md)を指定します。  
+ **TRUE**、**FALSE** または、**UNKNOWN** のブール値を返す有効な [式](../../t-sql/language-elements/expressions-transact-sql.md)を指定します。  
   
 ## <a name="result-types"></a>戻り値の型  
  **Boolean**  
@@ -69,7 +69,7 @@ boolean_expression AND boolean_expression
 ### <a name="a-using-the-and-operator"></a>A. AND 演算子の使用  
  次の例では、役職が `Marketing Assistant` で、なおかつ、利用可能な休暇時間数が `41` 時間を超える従業員の情報を選択します。  
   
-```  
+```sql  
 -- Uses AdventureWorks  
   
 SELECT  BusinessEntityID, LoginID, JobTitle, VacationHours   
@@ -81,7 +81,7 @@ AND VacationHours > 41 ;
 ### <a name="b-using-the-and-operator-in-an-if-statement"></a>B. IF ステートメントでの AND 演算子の使用  
  次の例は、IF ステートメントでの AND の使用方法を示しています。 1 つ目のステートメントでは、`1 = 1` と `2 = 2` の両方が true であるため、結果は true です。 2 つ目の例では、引数 `2 = 17` が false であるため、結果は false です。  
   
-```  
+```sql  
 IF 1 = 1 AND 2 = 2  
 BEGIN  
    PRINT 'First Example is TRUE'  

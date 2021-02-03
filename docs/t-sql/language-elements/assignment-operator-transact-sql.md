@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -17,29 +17,29 @@ helpviewer_keywords:
 - relationships [SQL Server], assignment operators
 - column headings [SQL Server]
 ms.assetid: c3040db6-21d6-40ac-a783-82c98ec006cc
-author: rothja
-ms.author: jroth
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a9b1233cb665304c2a9b38689b8470b416c3abe1
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 3e3dc98ec56d529c89165e803f302c8751752f98
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88459454"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99161822"
 ---
 # <a name="-assignment-operator-transact-sql"></a>= (代入演算子) (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2012-all_md](../../includes/tsql-appliesto-ss2012-all-md.md)]
 
   [!INCLUDE[tsql](../../includes/tsql-md.md)] の代入演算子は等号 (=) だけです。 次の例では、`@MyCounter` 変数を作成した後、代入演算子によって、`@MyCounter` を式で返される値に設定します。  
   
-```  
+```sql  
 DECLARE @MyCounter INT;  
 SET @MyCounter = 1;  
 ```  
   
  代入演算子を使用すると、列見出しと、列の値を定義する式との関係を設定することもできます。 次の例では、列見出しの `FirstColumnHeading` と `SecondColumnHeading` を表示します。 ここでは、すべての行の `xyz` 列見出しに文字列 `FirstColumnHeading` が表示され、 続けて、`Product` テーブルの各製品 ID が `SecondColumnHeading` 列見出しに一覧表示されます。  
   
-```  
+```sql  
 -- Uses AdventureWorks  
   
 SELECT FirstColumnHeading = 'xyz',  

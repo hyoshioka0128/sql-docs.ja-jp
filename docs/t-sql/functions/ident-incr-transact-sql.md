@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - IDENT_INCR
 - IDENT_INCR_TSQL
@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: e13b491f-4f1f-4cb6-8b63-5084120f98cf
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 4e51aa371646a3f193576f27ab362c3ce66915fc
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 40e837355422ce5fe41acbc0f11310f1b7b1ae09
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88365838"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99188732"
 ---
 # <a name="ident_incr-transact-sql"></a>IDENT_INCR (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "88365838"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql 
 IDENT_INCR ( 'table_or_view' )  
 ```  
   
@@ -44,7 +44,7 @@ IDENT_INCR ( 'table_or_view' )
 
 ## <a name="arguments"></a>引数
 **'** *table_or_view* **'**  
-有効な ID 増分値を確認するためのテーブルまたはビューを表す[式](../../t-sql/language-elements/expressions-transact-sql.md)を指定します。 *table_or_view* には、引用符で囲まれた文字列定数を指定できます。 変数、関数、または列名を指定することもできます。 *table_or_view* は **char**、**nchar**、**varchar**、または **nvarchar**です。  
+有効な ID 増分値を確認するためのテーブルまたはビューを表す[式](../../t-sql/language-elements/expressions-transact-sql.md)を指定します。 *table_or_view* には、引用符で囲まれた文字列定数を指定できます。 変数、関数、または列名を指定することもできます。 *table_or_view* は **char**、**nchar**、**varchar**、または **nvarchar** です。  
   
 ## <a name="return-types"></a>戻り値の型  
 **numeric**([@@MAXPRECISION](../../t-sql/functions/max-precision-transact-sql.md),0))  

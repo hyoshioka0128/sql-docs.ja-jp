@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DATALENGTH_TSQL
 - DATALENGTH
@@ -22,13 +22,13 @@ helpviewer_keywords:
 ms.assetid: 00f377f1-cc3e-4eac-be47-b3e3f80267c9
 author: pmasl
 ms.author: pelopes
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 2bb43434dd528a7937f854ce287953f748d50076
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 6a047c6178f9defea3abca3a1526c4b11a8fce88
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88422816"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99183568"
 ---
 # <a name="datalength-transact-sql"></a>DATALENGTH (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -42,7 +42,7 @@ ms.locfileid: "88422816"
   
 ## <a name="syntax"></a>構文  
   
-```
+```syntaxsql
 DATALENGTH ( expression )   
 ```  
 
@@ -55,7 +55,7 @@ DATALENGTH ( expression )
 ## <a name="return-types"></a>戻り値の型
 *expression* が **varchar(max)**、**nvarchar(max)**、**varbinary(max)** データ型の場合は **bigint**、それ以外の場合は **int**。
   
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>解説  
 次のような可変長データを格納できるデータ型で使用すると、`DATALENGTH` は非常に便利です。
 - **image**
 - **ntext**

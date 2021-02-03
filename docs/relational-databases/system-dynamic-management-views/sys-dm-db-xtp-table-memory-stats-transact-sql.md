@@ -1,13 +1,13 @@
 ---
-description: dm_db_xtp_table_memory_stats (Transact-sql)
-title: dm_db_xtp_table_memory_stats (Transact-sql) |Microsoft Docs
+description: sys.dm_db_xtp_table_memory_stats (Transact-sql)
+title: sys.dm_db_xtp_table_memory_stats (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 08/29/2016
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_db_xtp_table_memory_stats_TSQL
 - dm_db_xtp_table_memory_stats
@@ -19,17 +19,17 @@ helpviewer_keywords:
 - sys.dm_db_xtp_table_memory_stats
 - dm_db_xtp_table_memory_stats
 ms.assetid: ad0efc06-3d9c-4861-9dfa-a7a87822d0c8
-author: markingmyname
-ms.author: maghan
-monikerRange: =azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 5bf82197a769e8268d882aadc9358a4b4ee8bbb7
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 6521cc342b94ba120271215b98970c05eed7fd62
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89537010"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99160108"
 ---
-# <a name="sysdm_db_xtp_table_memory_stats-transact-sql"></a>dm_db_xtp_table_memory_stats (Transact-sql)
+# <a name="sysdm_db_xtp_table_memory_stats-transact-sql"></a>sys.dm_db_xtp_table_memory_stats (Transact-sql)
 [!INCLUDE[sql-asdb-asdbmi](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   現在のデータベースの各 [!INCLUDE[hek_2](../../includes/hek-2-md.md)] テーブル (ユーザーおよびシステム) におけるメモリ使用量に関する統計を返します。 システムテーブルには負のオブジェクト Id があり、エンジンの実行時の情報を格納するために使用され [!INCLUDE[hek_2](../../includes/hek-2-md.md)] ます。 ユーザー オブジェクトとは異なり、システム テーブルは内部で使用され、メモリ内にしか存在しないため、カタログ ビューには表示されません。 システムテーブルは、ストレージ内のすべてのデータ/デルタファイルのメタデータ、マージ要求、行をフィルター処理するためのデルタファイルのウォーターマーク、削除されたテーブル、回復とバックアップに関する関連情報などの情報を格納するために使用されます。 エンジンは、 [!INCLUDE[hek_2](../../includes/hek-2-md.md)] 最大8192のデータファイルとデルタファイルのペアを持つことができるため、大規模なインメモリデータベースでは、システムテーブルによって使用されるメモリが数メガバイトになることがあります。  
@@ -68,7 +68,7 @@ SELECT SUM( memory_allocated_for_indexes_kb + memory_allocated_for_table_kb) AS
 FROM sys.dm_db_xtp_table_memory_stats;  
 ```  
   
-## <a name="user-scenario"></a>ユーザーシナリオ  
+## <a name="user-scenario"></a>ユーザー シナリオ  
  まず、HkDb1 という名前のデータベースに次のテーブルを作成します。  
   
 ```  

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - '*_TSQL'
 - '*'
@@ -18,15 +18,15 @@ helpviewer_keywords:
 - multiplication [SQL Server]
 - multiply operator (*)
 ms.assetid: 34beb660-db19-46ca-ac90-2218471457bf
-author: rothja
-ms.author: jroth
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 4265eac0332833e2a3fdae2957e3ef37b7b62707
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: cc0e9999276fdc854ffbc40a6fbc808f63872c45
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88467644"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99187769"
 ---
 # <a name="-multiplication-transact-sql"></a>* (乗算) (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "88467644"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 expression * expression  
 ```  
   
@@ -45,7 +45,7 @@ expression * expression
 
 ## <a name="arguments"></a>引数
  *式 (expression)*  
- 数値データ型に分類されるデータ型を持つ有効な[式](../../t-sql/language-elements/expressions-transact-sql.md)を指定します。ただし、**datetime** および **smalldatetime** データ型は除きます。  
+ 数値データ型に分類されるデータ型を持つ有効な [式](../../t-sql/language-elements/expressions-transact-sql.md)を指定します。ただし、**datetime** および **smalldatetime** データ型は除きます。  
   
 ## <a name="result-types"></a>戻り値の型  
  優先順位が高い引数のデータ型を返します。 詳細については、「[データ型の優先順位 &#40;Transact-SQL&#41;](../../t-sql/data-types/data-type-precedence-transact-sql.md)」を参照してください。  
@@ -53,7 +53,7 @@ expression * expression
 ## <a name="examples"></a>例  
  次の例では、`Product` テーブルのすべてのマウンテン バイクの製品 ID 番号、名前、表示価格、および新しい表示価格を取得します。 新しい表示価格は、`*` 算術演算子を使用して `ListPrice` に `1.15` を乗算することにより、計算します。  
   
-```  
+```sql  
 -- Uses AdventureWorks  
   
 SELECT ProductID, Name, ListPrice, ListPrice * 1.15 AS NewPrice  
@@ -66,7 +66,7 @@ GO
 ## <a name="examples-sssdwfull-and-sspdw"></a>例: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)]、[!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  
  次の例では、`dimEmployee` テーブルの従業員の姓と名を取得し、それぞれに対して `VacationHours` の支払いを計算します。  
   
-```  
+```sql  
 -- Uses AdventureWorks  
   
 SELECT FirstName, LastName, BaseRate * VacationHours AS VacationPay  

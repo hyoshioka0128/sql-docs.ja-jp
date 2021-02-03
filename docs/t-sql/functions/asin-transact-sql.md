@@ -18,15 +18,15 @@ helpviewer_keywords:
 - sine
 - arcsine
 ms.assetid: 6256dd7d-83d5-486e-a933-1d59afc7e417
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 43905f174185f45cb2d56d3e9325bf0098cfb4e5
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: f07936f49e0142f9851569112c7eab6e2037c5b0
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88417548"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98089437"
 ---
 # <a name="asin-transact-sql"></a>ASIN (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -45,7 +45,7 @@ ASIN ( float_expression )
 
 ## <a name="arguments"></a>引数
 *float_expression*  
-**float** 型、または暗黙的に float 型に変換できる[式](../../t-sql/language-elements/expressions-transact-sql.md)を指定します。 -1.00 ～ 1.00 の範囲の値のみが有効です。 この範囲外の値を指定すると、NULL が返され、ASIN がドメイン エラーを報告します。
+**float** 型、または暗黙的に float 型に変換できる [式](../../t-sql/language-elements/expressions-transact-sql.md)を指定します。 -1.00 ～ 1.00 の範囲の値のみが有効です。 この範囲外の値を指定すると、NULL が返され、ASIN がドメイン エラーを報告します。
   
 ## <a name="return-types"></a>戻り値の型
 **float**
@@ -56,27 +56,27 @@ ASIN ( float_expression )
 ```sql
 /* The first value will be -1.01. This fails because the value is   
 outside the range.*/  
-DECLARE @angle float  
+DECLARE @angle FLOAT  
 SET @angle = -1.01  
-SELECT 'The ASIN of the angle is: ' + CONVERT(varchar, ASIN(@angle))  
+SELECT 'The ASIN of the angle is: ' + CONVERT(VARCHAR, ASIN(@angle))  
 GO  
   
 -- The next value is -1.00.  
-DECLARE @angle float  
+DECLARE @angle FLOAT  
 SET @angle = -1.00  
-SELECT 'The ASIN of the angle is: ' + CONVERT(varchar, ASIN(@angle))  
+SELECT 'The ASIN of the angle is: ' + CONVERT(VARCHAR, ASIN(@angle))  
 GO  
   
 -- The next value is 0.1472738.  
-DECLARE @angle float  
+DECLARE @angle FLOAT  
 SET @angle = 0.1472738  
-SELECT 'The ASIN of the angle is: ' + CONVERT(varchar, ASIN(@angle))  
+SELECT 'The ASIN of the angle is: ' + CONVERT(VARCHAR, ASIN(@angle))  
 GO  
 ```  
   
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
   
-```sql
+```
 -------------------------  
 .Net SqlClient Data Provider: Msg 3622, Level 16, State 1, Line 3  
 A domain error occurred.  

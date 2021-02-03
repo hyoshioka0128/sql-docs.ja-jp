@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - ARITHABORT_TSQL
 - ARITHABORT
@@ -25,15 +25,15 @@ helpviewer_keywords:
 - ending queries [SQL Server]
 - stopping queries
 ms.assetid: f938a666-fdd1-4233-b97f-719f27b1a0e6
-author: CarlRabeler
-ms.author: carlrab
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 9c73faad3f032775b292897ee1f51c2d1a0a4228
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 43ad8593836d262db63540de34d86e04ebdf7ab4
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88415738"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99190427"
 ---
 # <a name="set-arithabort-transact-sql"></a>SET ARITHABORT (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -43,16 +43,14 @@ ms.locfileid: "88415738"
 ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
 ## <a name="syntax"></a>構文  
-  
+
+### <a name="syntax-for-ssnoversion-mdmd-and-sssodfull-mdmd"></a>[!INCLUDE[ssnoversion-md.md](../../includes/ssnoversion-md.md)] および [!INCLUDE[sssodfull-md.md](../../includes/sssodfull-md.md)] の構文
 ```syntaxsql
--- Syntax for SQL Server and Azure SQL Database
-  
 SET ARITHABORT { ON | OFF }
 ```
 
+### <a name="syntax-for-sssdw-mdmd-and-sspdw-mdmd"></a>[!INCLUDE[sssdw-md.md](../../includes/sssdw-md.md)] および [!INCLUDE[sspdw-md.md](../../includes/sspdw-md.md)] の構文
 ```syntaxsql
--- Syntax for Azure SQL Data Warehouse and Parallel Data Warehouse
-
 SET ARITHABORT ON
 ```
   
@@ -100,7 +98,7 @@ SELECT @ARITHABORT AS ARITHABORT;
 ## <a name="examples"></a>例  
 次の例では、`SET ARITHABORT` を ON に設定した場合の 0 除算のエラーおよびオーバーフロー エラーをそれぞれ示しています。  
   
-```  
+```sql  
 -- SET ARITHABORT  
 -------------------------------------------------------------------------------  
 -- Create tables t1 and t2 and insert data values.  
@@ -118,35 +116,35 @@ INSERT INTO t1
 VALUES (255, 1);  
 GO  
   
-PRINT '*** SET ARITHABORT ON';  
+PRINT '**_ SET ARITHABORT ON';  
 GO  
 -- SET ARITHABORT ON and testing.  
 SET ARITHABORT ON;  
 GO  
   
-PRINT '*** Testing divide by zero during SELECT';  
+PRINT '_*_ Testing divide by zero during SELECT';  
 GO  
 SELECT a / b AS ab   
 FROM t1;  
 GO  
   
-PRINT '*** Testing divide by zero during INSERT';  
+PRINT '_*_ Testing divide by zero during INSERT';  
 GO  
 INSERT INTO t2  
 SELECT a / b AS ab    
 FROM t1;  
 GO  
   
-PRINT '*** Testing tinyint overflow';  
+PRINT '_*_ Testing tinyint overflow';  
 GO  
 INSERT INTO t2  
 SELECT a + b AS ab   
 FROM t1;  
 GO  
   
-PRINT '*** Resulting data - should be no data';  
+PRINT '_*_ Resulting data - should be no data';  
 GO  
-SELECT *   
+SELECT _   
 FROM t2;  
 GO  
   
@@ -161,29 +159,29 @@ SET ARITHABORT OFF;
 GO  
   
 -- This works properly.  
-PRINT '*** Testing divide by zero during SELECT';  
+PRINT '**_ Testing divide by zero during SELECT';  
 GO  
 SELECT a / b AS ab    
 FROM t1;  
 GO  
   
 -- This works as if SET ARITHABORT was ON.  
-PRINT '*** Testing divide by zero during INSERT';  
+PRINT '_*_ Testing divide by zero during INSERT';  
 GO  
 INSERT INTO t2  
 SELECT a / b AS ab    
 FROM t1;  
 GO  
-PRINT '*** Testing tinyint overflow';  
+PRINT '_*_ Testing tinyint overflow';  
 GO  
 INSERT INTO t2  
 SELECT a + b AS ab   
 FROM t1;  
 GO  
   
-PRINT '*** Resulting data - should be 0 rows';  
+PRINT '_*_ Resulting data - should be 0 rows';  
 GO  
-SELECT *   
+SELECT _   
 FROM t2;  
 GO  
   

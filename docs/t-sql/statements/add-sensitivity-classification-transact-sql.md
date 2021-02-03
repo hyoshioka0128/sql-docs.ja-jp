@@ -22,13 +22,13 @@ helpviewer_keywords:
 - rank
 ms.custom: ''
 ms.date: 06/10/2020
-monikerRange: " >= sql-server-linux-ver15 || >= sql-server-ver15 || = azuresqldb-current || = sqlallproducts-allversions"
-ms.openlocfilehash: 641896fb407beabdedbd30d98cc8d94d16d31efe
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+monikerRange: " >= sql-server-linux-ver15 || >= sql-server-ver15 || = azuresqldb-current"
+ms.openlocfilehash: 8aa8b00a9a24513eb925ef113db94caaea0cfe50
+ms.sourcegitcommit: 713e5a709e45711e18dae1e5ffc190c7918d52e7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88991888"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98688838"
 ---
 # <a name="add-sensitivity-classification-transact-sql"></a>ADD SENSITIVITY CLASSIFICATION (Transact-SQL)
 
@@ -38,7 +38,7 @@ ms.locfileid: "88991888"
 
 SQL Server では、これは SQL Server 2019 で導入されました。
 
-データベース環境で機密データを分類すると、可視性の拡張と保護の強化が実現します。 詳しくは、[SQL Information Protection の概要](https://aka.ms/sqlip)に関する記事をご覧ください。
+データベース環境で機密データを分類すると、可視性の拡張と保護の強化が実現します。 詳しくは、[SQL Information Protection の概要](/azure/azure-sql/database/data-discovery-and-classification-overview)に関する記事をご覧ください。
 
 ## <a name="syntax"></a>構文
 
@@ -129,5 +129,5 @@ ADD SENSITIVITY CLASSIFICATION TO
 
 - [DROP SENSITIVITY CLASSIFICATION (Transact-SQL)](../../t-sql/statements/drop-sensitivity-classification-transact-sql.md)
 - [sys.sensitivity_classifications (Transact-SQL)](../../relational-databases/system-catalog-views/sys-sensitivity-classifications-transact-sql.md)
-- [権限 (データベース エンジン)](https://docs.microsoft.com/sql/relational-databases/security/permissions-database-engine)
-- [SQL Information Protection の概要](https://aka.ms/sqlip)
+- [権限 (データベース エンジン)](../../relational-databases/security/permissions-database-engine.md)
+- [SQL Information Protection の概要](/azure/azure-sql/database/data-discovery-and-classification-overview)

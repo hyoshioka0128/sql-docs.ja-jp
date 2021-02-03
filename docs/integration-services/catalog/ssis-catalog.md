@@ -2,7 +2,7 @@
 description: SSIS カタログ
 title: SSIS カタログ | Microsoft Docs
 ms.custom: ''
-ms.date: 11/12/2018
+ms.date: 09/17/2020
 ms.prod: sql
 ms.prod_service: integration-services
 ms.reviewer: ''
@@ -15,12 +15,12 @@ f1_keywords:
 ms.assetid: 24bd987e-164a-48fd-b4f2-cbe16a3cd95e
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: c2050734b89c8b5ae74aa40316c9b1f980705dc3
-ms.sourcegitcommit: 827ad02375793090fa8fee63cc372d130f11393f
+ms.openlocfilehash: a8ed14b14198bb95db838e76ca07bffe5875ce69
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89480294"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642601"
 ---
 # <a name="ssis-catalog"></a>SSIS カタログ
 
@@ -40,7 +40,7 @@ ms.locfileid: "89480294"
   
  **SSISDB** データベースを保守するには、ユーザー データベースの管理に標準的なエンタープライズ ポリシーを適用することをお勧めします。 メンテナンス プランの作成については、「 [Maintenance Plans](../../relational-databases/maintenance-plans/maintenance-plans.md)」をご覧ください。  
   
- **SSISDB** カタログおよび **SSISDB** データベースは、Windows PowerShell をサポートしています。 Windows PowerShell による SQL Server の使用の詳細については、「 [SQL Server PowerShell](../../relational-databases/scripting/sql-server-powershell.md)」をご覧ください。 Windows PowerShell を使用してプロジェクトの配置などのタスクを実行する方法の例については、blogs.msdn.com のブログ エントリ「 [SQL Server 2012 での SSIS と PowerShell](https://techcommunity.microsoft.com/t5/sql-server-integration-services/ssis-and-powershell-in-sql-server-2012/ba-p/388015)」をご覧ください。  
+ **SSISDB** カタログおよび **SSISDB** データベースは、Windows PowerShell をサポートしています。 Windows PowerShell による SQL Server の使用の詳細については、「 [SQL Server PowerShell](../../powershell/sql-server-powershell.md)」をご覧ください。 Windows PowerShell を使用してプロジェクトの配置などのタスクを実行する方法の例については、blogs.msdn.com のブログ エントリ「 [SQL Server 2012 での SSIS と PowerShell](https://techcommunity.microsoft.com/t5/sql-server-integration-services/ssis-and-powershell-in-sql-server-2012/ba-p/388015)」をご覧ください。  
   
  操作データの表示に関する詳細については、「 [パッケージとその他の操作を実行するモニター](../../integration-services/performance/monitor-running-packages-and-other-operations.md)」をご覧ください。  
   
@@ -126,12 +126,12 @@ ms.locfileid: "89480294"
   
  同じ名前の [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] プロジェクトをカタログの同じフォルダーに配置することで、このプロジェクトを更新または再配置できます。 既定では、プロジェクトを再配置するたびに、 **SSISDB** カタログには以前のバージョンのプロジェクトが保持されます。 操作データのサイズを維持するには、 **SSIS サーバー メンテナンス ジョブ** を使用して古いバージョンのプロジェクトを削除します。  
  
-**SSIS サーバー メンテナンス ジョブ**を実行するために、SSIS で SQL Server ログイン **##MS_SSISServerCleanupJobLogin##** が作成されます。 このログインは SSIS による内部使用専用です。
+**SSIS サーバー メンテナンス ジョブ** を実行するために、SSIS で SQL Server ログイン **##MS_SSISServerCleanupJobLogin##** が作成されます。 このログインは SSIS による内部使用専用です。
   
  次の **SSISDB** カタログ プロパティで、この [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェント ジョブの動作を定義します。 **[カタログ プロパティ]** ダイアログ ボックスを利用するか、[catalog.catalog_properties (SSISDB データベース)](../../integration-services/system-views/catalog-catalog-properties-ssisdb-database.md) と [catalog.configure_catalog (SSISDB データベース)](../../integration-services/system-stored-procedures/catalog-configure-catalog-ssisdb-database.md) を利用し、プロパティを表示し、変更できます。  
   
  **ログを定期的に消去する**  
- このプロパティが **True**に設定されている場合は、操作のクリーンアップのジョブ ステップが実行されます。  
+ このプロパティが **True** に設定されている場合は、操作のクリーンアップのジョブ ステップが実行されます。  
   
  **保有期間 (日)**  
  操作データの最大保有期間を日数で定義します。 この期間を経過したデータは削除されます。  
@@ -139,7 +139,7 @@ ms.locfileid: "89480294"
  最小値は 1 日です。 最大値は [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] **int** データの最大値によってのみ制限されます。 このデータ型に関する詳細については、「[int、bigint、smallint、および tinyint (Transact-SQL)](../../t-sql/data-types/int-bigint-smallint-and-tinyint-transact-sql.md)」を参照してください。  
   
  **古いバージョンを定期的に削除する**  
- このプロパティが **True**に設定されている場合は、プロジェクト バージョンのクリーンアップのジョブ ステップが実行されます。  
+ このプロパティが **True** に設定されている場合は、プロジェクト バージョンのクリーンアップのジョブ ステップが実行されます。  
   
  **プロジェクトごとのバージョンの最大数**  
  カタログに格納されるプロジェクトのバージョンの数を定義します。 この数を超える古いバージョンのプロジェクトは削除されます。  
@@ -416,7 +416,7 @@ ms.locfileid: "89480294"
   
     ```  
   
-3.  **の** [データベースのバックアップ] [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]ダイアログ ボックスを使用して SSISDB データベースをバックアップします。 詳細については、「[データベースをバックアップする方法 (SQL Server Management Studio)](https://go.microsoft.com/fwlink/?LinkId=231812) に関する記事をご覧ください。  
+3.  **の** [データベースのバックアップ] [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]ダイアログ ボックスを使用して SSISDB データベースをバックアップします。 詳細については、「[データベースをバックアップする方法 (SQL Server Management Studio)](../../relational-databases/backup-restore/create-a-full-database-backup-sql-server.md) に関する記事をご覧ください。  
   
 4.  次の手順を実行して、##MS_SSISServerCleanupJobLogin## の CREATE LOGIN スクリプトを生成します。 詳細については、「[CREATE LOGIN &#40;Transact-SQL&#41;](../../t-sql/statements/create-login-transact-sql.md)」を参照してください。  
   
@@ -440,7 +440,7 @@ ms.locfileid: "89480294"
   
 ### <a name="to-restore-the-ssis-database"></a>SSIS データベースを復元するには  
   
-1.  SSISDB カタログが作成されていない [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスに SSISDB データベースを復元する場合は、`sp_configure` ストアド プロシージャを実行して、共通言語ランタイム (CLR) を有効にします。 詳細については、「[sp_configure &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-configure-transact-sql.md)」と「[clr enabled サーバー構成オプション](https://go.microsoft.com/fwlink/?LinkId=231855)」を参照してください。  
+1.  SSISDB カタログが作成されていない [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスに SSISDB データベースを復元する場合は、`sp_configure` ストアド プロシージャを実行して、共通言語ランタイム (CLR) を有効にします。 詳細については、「[sp_configure &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-configure-transact-sql.md)」と「[clr enabled サーバー構成オプション](../../database-engine/configure-windows/clr-enabled-server-configuration-option.md)」を参照してください。  
   
     ```  
     use master   
@@ -450,21 +450,19 @@ ms.locfileid: "89480294"
     ```  
   
 2.  SSISDB カタログが作成されていない [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスに SSISDB データベースを復元する場合は、非対称キーと非対称キーからのログインを作成し、UNSAFE 権限をログインに付与します。  
-  
+
     ```  
-    Create Asymmetric key MS_SQLEnableSystemAssemblyLoadingKey  
-           FROM Executable File = 'C:\Program Files\Microsoft SQL Server\110\DTS\Binn\Microsoft.SqlServer.IntegrationServices.Server.dll'  
-  
+    Create Asymmetric Key MS_SQLEnableSystemAssemblyLoadingKey  
+           FROM Executable File = 'C:\Program Files\Microsoft SQL Server\YourSQLServerDefaultCompatibilityLevel\DTS\Binn\Microsoft.SqlServer.IntegrationServices.Server.dll'  
     ```  
+
+    `YourSQLServerDefaultCompatibilityLevel` の値は、[SQL Server の既定の互換性レベルの一覧](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md#arguments)で確認することができます。
   
-     [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] ログインを行うには Microsoft Win32 API などの制限付きのリソースへの追加アクセスが必要であるため、CLR ストアド プロシージャでは、UNSAFE 権限をログインに付与する必要があります。 UNSAFE コード権限の要件の詳細については、「 [アセンブリの作成](../../relational-databases/clr-integration/assemblies/creating-an-assembly.md)」を参照してください。  
-  
+    [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] ログインを行うには Microsoft Win32 API などの制限付きのリソースへの追加アクセスが必要であるため、CLR ストアド プロシージャでは、UNSAFE 権限をログインに付与する必要があります。 UNSAFE コード権限の要件の詳細については、「 [アセンブリの作成](../../relational-databases/clr-integration/assemblies/creating-an-assembly.md)」を参照してください。  
+
     ```  
-    Create Login MS_SQLEnableSystemAssemblyLoadingUser  
-           FROM Asymmetric key MS_SQLEnableSystemAssemblyLoadingKey   
-  
-           Grant unsafe Assembly to MS_SQLEnableSystemAssemblyLoadingUser  
-  
+    Create Login ##MS_SQLEnableSystemAssemblyLoadingUser## FROM Asymmetric Key MS_SQLEnableSystemAssemblyLoadingKey   
+    Grant Unsafe Assembly to ##MS_SQLEnableSystemAssemblyLoadingUser##    
     ```  
   
 3.  **の** [データベースの復元] [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]ダイアログ ボックスを使用して、バックアップから SSISDB データベースを復元します。 詳細については、次のトピックを参照してください。  
@@ -599,7 +597,7 @@ ms.locfileid: "89480294"
   
 > [!IMPORTANT]  
 > -   可用性グループの **プライマリ ノード** で、次の手順を実行する必要があります。
-> -   SSISDB を Always On 可用性グループに追加した "*後に*"、**Always On の SSIS サポート**を有効にする必要があります。  
+> -   SSISDB を Always On 可用性グループに追加した "*後に*"、**Always On の SSIS サポート** を有効にする必要があります。  
 
 > [!NOTE]
 > この手順の詳細については、データ プラットフォームの MVP である Marcos Freccia 氏による、スクリーン ショットが追加された次のチュートリアルをご覧ください:「[Adding SSISDB to AG for SQL Server 2016 (AG for SQL Server 2016 に SSISDB を追加する)](https://marcosfreccia.com/2017/04/28/adding-ssisdb-to-ag-for-sql-server-2016/)」。
@@ -614,7 +612,7 @@ ms.locfileid: "89480294"
   
 4.  SSIS サーバー インスタンスを再起動するたびに **catalog.startup** ストアド プロシージャが実行されるようにするには、 [[SQL Server のスタートアップ時に Integration Services ストアド プロシージャを自動実行できるようにする]](../system-stored-procedures/catalog-startup.md) をクリックします。 このストアド プロシージャは、SSISDB カタログに対する操作の状態のメンテナンスを実行します。 SSIS サーバー インスタンスがダウンした場合に、実行されていたパッケージの状態を修正します。  
   
-5.  **パスワード**を入力し、 **[OK]** をクリックします。 カタログ データを暗号化するために使用されるデータベース マスター キーがパスワードで保護されます。 パスワードは安全な場所に保管してください。 データベース マスター キーをバックアップすることもお勧めします。 詳細については、「 [データベース マスター キーのバックアップ](../../relational-databases/security/encryption/back-up-a-database-master-key.md)」を参照してください。  
+5.  **パスワード** を入力し、 **[OK]** をクリックします。 カタログ データを暗号化するために使用されるデータベース マスター キーがパスワードで保護されます。 パスワードは安全な場所に保管してください。 データベース マスター キーをバックアップすることもお勧めします。 詳細については、「 [データベース マスター キーのバックアップ](../../relational-databases/security/encryption/back-up-a-database-master-key.md)」を参照してください。  
   
 ####  <a name="step-2-add-ssisdb-to-an-always-on-availability-group"></a><a name="Step2"></a> ステップ 2:SSISDB を Always On 可用性グループに追加する  
 SSISDB データベースを Always On 可用性グループに追加する手順は、他のユーザー データベースを可用性グループに追加する場合とほぼ同じです。 「 [可用性グループ ウィザードの使用](../../database-engine/availability-groups/windows/use-the-availability-group-wizard-sql-server-management-studio.md)」を参照してください。  
@@ -653,11 +651,11 @@ SSISDB データベースを Always On 可用性グループに追加する手�
   
  SQL Server のアップグレード時にブロックされず、SSISDB が Always On 可用性グループに属している場合、SQL Server データベース エンジンをアップグレードした後に、別に SSISDB をアップグレードします。 次の手順で、SSIS アップグレード ウィザードを使用して SSISDB をアップグレードします。  
   
-1.  可用性グループから SSISDB データベースを削除するか、SSISDB が可用性グループで唯一のデータベースの場合は可用性グループを削除します。 このタスクを実行するには、可用性グループの **プライマリ ノード**で **SQL Server Management Studio** を起動します。  
+1.  可用性グループから SSISDB データベースを削除するか、SSISDB が可用性グループで唯一のデータベースの場合は可用性グループを削除します。 このタスクを実行するには、可用性グループの **プライマリ ノード** で **SQL Server Management Studio** を起動します。  
   
-2.  すべての **レプリカ ノード**から SSISDB データベースを削除します。  
+2.  すべての **レプリカ ノード** から SSISDB データベースを削除します。  
   
-3.  **プライマリ ノード**の SSISDB データベースをアップグレードします。 SQL Server Management Studio の**オブジェクト エクスプローラー** で、 **[Integration Service カタログ]** を展開し、 **[SSISDB]** を右クリックし、 **[データベース アップグレード]** を選択します。 **SSISDB アップグレード ウィザード** の指示に従ってデータベースをアップグレードします。 **SSIDB アップグレード ウィザード** は、**プライマリ ノード**のローカルで起動します。  
+3.  **プライマリ ノード** の SSISDB データベースをアップグレードします。 SQL Server Management Studio の **オブジェクト エクスプローラー** で、 **[Integration Service カタログ]** を展開し、 **[SSISDB]** を右クリックし、 **[データベース アップグレード]** を選択します。 **SSISDB アップグレード ウィザード** の指示に従ってデータベースをアップグレードします。 **SSIDB アップグレード ウィザード** は、**プライマリ ノード** のローカルで起動します。  
   
 4.  「[ステップ 2:SSISDB を Always On 可用性グループに追加する](#Step2)」の手順に従って、SSISDB を可用性グループに追加します。  
   
@@ -681,4 +679,4 @@ SSISDB は、制約付き委任をサポートしません。 ダブルホップ
   
 -   blogs.msdn.com のブログ エントリ「 [SSIS カタログのアクセス制御のヒント](https://techcommunity.microsoft.com/t5/sql-server-integration-services/ssis-catalog-access-control-tips/ba-p/388057)」  
   
--   blogs.msdn.com のブログ エントリ「 [SSIS カタログ マネージド オブジェクト モデルの概要](https://techcommunity.microsoft.com/t5/sql-server-integration-services/a-glimpse-of-the-ssis-catalog-managed-object-model/ba-p/387892)」  
+-   blogs.msdn.com のブログ エントリ「 [SSIS カタログ マネージド オブジェクト モデルの概要](https://techcommunity.microsoft.com/t5/sql-server-integration-services/a-glimpse-of-the-ssis-catalog-managed-object-model/ba-p/387892)」

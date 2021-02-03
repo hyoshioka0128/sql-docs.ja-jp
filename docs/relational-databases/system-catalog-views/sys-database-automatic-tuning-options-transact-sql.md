@@ -1,5 +1,5 @@
 ---
-title: database_automatic_tuning_options (Transact-sql) |Microsoft Docs
+title: sys.database_automatic_tuning_options (Transact-sql) |Microsoft Docs
 description: SQL Database で自動チューニングオプションを表示する方法について説明します。 必要なアクセス許可を確認し、使用可能なその他のリソースを表示します。
 ms.custom: ''
 ms.date: 07/20/2017
@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - database_automatic_tuning_options_tsql
 - database_automatic_tuning_options
@@ -21,13 +21,13 @@ helpviewer_keywords:
 ms.assetid: 16b47d55-8019-41ff-ad34-1e0112178067
 author: jovanpop-msft
 ms.author: jovanpop
-monikerRange: =azuresqldb-current||>=sql-server-2017||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 4de2851505d7c5c240d792ecacdaa6bf3d1c6c3e
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+monikerRange: =azuresqldb-current||>=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 0dbedd65c5f98016e4e001fd863845079da68578
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87242952"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99210378"
 ---
 # <a name="sysdatabase_automatic_tuning_options-transact-sql"></a>データベースの \_ 自動 \_ Tuning_options (transact-sql)
 [!INCLUDE[sqlserver2017-asdb](../../includes/applies-to-version/sqlserver2017-asdb.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "87242952"
 
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
-|**name**|**nvarchar(128)**|自動チューニングオプションの名前。 使用可能なオプションについては、 [ALTER DATABASE SET AUTOMATIC_TUNING &#40;transact-sql&#41;](../../t-sql/statements/alter-database-transact-sql-set-options.md)を参照してください。|  
+|**name**|**nvarchar(128)**|自動チューニングオプションの名前。 使用可能なオプションについては、 [ALTER DATABASE SET AUTOMATIC_TUNING &#40;transact-sql&#41;](../../t-sql/statements/alter-database-transact-sql-set-options.md) を参照してください。|  
 |**desired_state**|**smallint**|自動チューニングオプションの目的の操作モードを示します。ユーザーによって明示的に設定されます。<br />0 = OFF<br />1 = ON|  
 |**desired_state_desc**|**nvarchar(60)**|自動チューニングオプションの目的の操作モードの説明テキスト。<br />OFF<br />ON|  
 |**actual_state**|**smallint**|自動チューニングオプションの操作モードを示します。<br />0 = OFF<br />1 = ON|  
@@ -50,6 +50,6 @@ ms.locfileid: "87242952"
 ## <a name="see-also"></a>参照  
  [自動チューニング](../../relational-databases/automatic-tuning/automatic-tuning.md)   
  [ALTER DATABASE SET AUTOMATIC_TUNING &#40;Transact-sql&#41;](../../t-sql/statements/alter-database-transact-sql-set-options.md)   
- [database_query_store_options &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-database-query-store-options-transact-sql.md)   
- [dm_db_tuning_recommendations &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-tuning-recommendations-transact-sql.md)   
+ [sys.database_query_store_options &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-database-query-store-options-transact-sql.md)   
+ [sys.dm_db_tuning_recommendations &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-tuning-recommendations-transact-sql.md)   
  

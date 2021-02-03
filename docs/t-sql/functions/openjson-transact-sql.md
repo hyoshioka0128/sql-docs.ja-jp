@@ -16,14 +16,14 @@ helpviewer_keywords:
 ms.assetid: 233d0877-046b-4dcc-b5da-adeb22f78531
 author: jovanpop-msft
 ms.author: jovanpop
-ms.reviewer: jroth
-monikerRange: = azuresqldb-current||= azure-sqldw-latest||>= sql-server-2016||>= sql-server-linux-2017||= sqlallproducts-allversions
-ms.openlocfilehash: dcfdfec2bb179d6182df1306ffc5b46dbd86bf59
-ms.sourcegitcommit: 173dbecfe78fd1bcc13a922b579a2bb9ad37b713
+ms.reviewer: chadam
+monikerRange: = azuresqldb-current||= azure-sqldw-latest||>= sql-server-2016||>= sql-server-linux-2017
+ms.openlocfilehash: 1c7b948b1f883d1de6c6bb6556aee25c0e859695
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942315"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98085917"
 ---
 # <a name="openjson-transact-sql"></a>OPENJSON (Transact-SQL)
 
@@ -75,7 +75,7 @@ JSON テキストを含む Unicode 文字式です。
 OPENJSON では、配列の要素または JSON 式内のオブジェクトのプロパティを反復処理し、各要素またはプロパティの 1 つの行を返します。 次の例では、*jsonExpression* として指定されたオブジェクトの各プロパティを返します。  
 
 ```sql
-DECLARE @json NVarChar(2048) = N'{
+DECLARE @json NVARCHAR(2048) = N'{
    "String_value": "John",
    "DoublePrecisionFloatingPoint_value": 45,
    "DoublePrecisionFloatingPoint_value": 2.3456,
@@ -146,7 +146,7 @@ JSON の式のプロパティを持つパスの手順を照合に使用する比
 
 *colName*。出力列の名前。  
   
-**OPENJSON** は既定では、列の名前を使用して、JSON テキストのプロパティと一致します。 たとえば、*name*の列をスキーマを指定する場合、OPENJSON は JSON テキストには、"name"プロパティを使用して、この列を作成しようとします。 使用して、この既定のマッピングをオーバーライドすることができます、  *column_path* 引数。  
+**OPENJSON** は既定では、列の名前を使用して、JSON テキストのプロパティと一致します。 たとえば、*name* の列をスキーマを指定する場合、OPENJSON は JSON テキストには、"name"プロパティを使用して、この列を作成しようとします。 使用して、この既定のマッピングをオーバーライドすることができます、  *column_path* 引数。  
   
 *type*  
 出力列のデータ型。  
@@ -204,11 +204,11 @@ DECLARE @json NVARCHAR(MAX) = N'[
 SELECT *
 FROM OPENJSON ( @json )  
 WITH (   
-              Number   varchar(200)   '$.Order.Number',  
-              Date     datetime       '$.Order.Date',  
-              Customer varchar(200)   '$.AccountNumber',  
-              Quantity int            '$.Item.Quantity',  
-              [Order]  nvarchar(MAX)  AS JSON  
+              Number   VARCHAR(200)   '$.Order.Number',  
+              Date     DATETIME       '$.Order.Date',  
+              Customer VARCHAR(200)   '$.AccountNumber',  
+              Quantity INT            '$.Item.Quantity',  
+              [Order]  NVARCHAR(MAX)  AS JSON  
  )
 ```  
   
@@ -225,13 +225,13 @@ OPENJSON 関数によって返される列は、WITH オプションによって
 1. OPENJSON を既定のスキーマで呼び出した場合 (つまり、WITH 句に明示的にスキーマを指定しない場合)、関数は、次の列を持つテーブルを返します。  
     1.  **[キー]** 指定したプロパティの名前か、指定した配列内の要素のインデックスを含む nvarchar (4000) 値。 キー列は BIN2 照合順序を持っています。  
     2.  **値**。 プロパティの値を含む、nvarchar (max) 値です。 [値] 列では、その照合順序を継承 *jsonExpression* から。
-    3.  **[種類]** 。 値の型を含む int 値。 **型**の列には、既定のスキーマを OPENJSON を使用する場合にのみが返されます。 型の列では、次の values. のことがあります。  
+    3.  **[種類]** 。 値の型を含む int 値。 **型** の列には、既定のスキーマを OPENJSON を使用する場合にのみが返されます。 型の列では、次の values. のことがあります。  
   
         |型の列の値|JSON データ型|  
         |------------------------------|--------------------|  
         |0|null|  
         |1|string|  
-        |2|number|  
+        |2|数値|  
         |3|true/false|  
         |4|array|  
         |5|object|  
@@ -291,7 +291,7 @@ WHERE product.productTypeID IN (1,2,3,4)
   
 ### <a name="example-2---merge-properties-from-two-json-objects"></a>例 3 - 2 つの JSON オブジェクトからのマージ プロパティ
 
-次の例では、2 つの JSON オブジェクトのすべてのプロパティの和集合を選択します。 2 つのオブジェクトでは、重複する*name*プロパティがあります。 例では、キーの値を使って、結果から重複する行を除外しています。  
+次の例では、2 つの JSON オブジェクトのすべてのプロパティの和集合を選択します。 2 つのオブジェクトでは、重複する *name* プロパティがあります。 例では、キーの値を使って、結果から重複する行を除外しています。  
   
 ```sql  
 DECLARE @json1 NVARCHAR(MAX),@json2 NVARCHAR(MAX)
@@ -326,7 +326,7 @@ CROSS APPLY OPENJSON(SalesReasons)
 ```sql  
 SELECT SalesOrderID, OrderDate, value AS Reason  
 FROM Sales.SalesOrderHeader  
-     CROSS APPLY OPENJSON (SalesReasons) WITH (value nvarchar(100) '$')
+     CROSS APPLY OPENJSON (SalesReasons) WITH (value NVARCHAR(100) '$')
 ```  
   
 この例では、`$` パスは、配列内の各要素を参照します。 返される値を明示的にキャストする場合は、この種類のクエリを使用できます。  
@@ -339,7 +339,7 @@ FROM Sales.SalesOrderHeader
 SELECT store.title, location.street, location.lat, location.long  
 FROM store  
 CROSS APPLY OPENJSON(store.jsonCol, 'lax $.location')   
-     WITH (street varchar(500) ,  postcode  varchar(500) '$.postcode' ,  
+     WITH (street VARCHAR(500) ,  postcode VARCHAR(500) '$.postcode' ,  
      lon int '$.geo.longitude', lat int '$.geo.latitude')  
      AS location
 ```  
@@ -369,10 +369,10 @@ DECLARE @json NVARCHAR(max)  = N'{
   INSERT INTO Person  
   SELECT *   
   FROM OPENJSON(@json)  
-  WITH (id int,  
-        firstName nvarchar(50), lastName nvarchar(50),   
-        isAlive bit, age int,  
-        dateOfBirth datetime2, spouse nvarchar(50))
+  WITH (id INT,  
+        firstName NVARCHAR(50), lastName NVARCHAR(50),   
+        isAlive BIT, age INT,  
+        dateOfBirth DATETIME, spouse NVARCHAR(50))
 ```  
 
 ### <a name="example-6---simple-example-with-json-content"></a>例 6 - JSON コンテンツを使用したシンプルな例

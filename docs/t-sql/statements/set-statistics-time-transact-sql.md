@@ -23,14 +23,14 @@ helpviewer_keywords:
 - compile times [SQL Server]
 - execution processing time [SQL Server]
 ms.assetid: eec2e1cd-a29d-4cf3-a271-be9d61506f15
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: 4d6a735e68b49216ea1e9f5604000cef2243c6ec
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 36db16f45f3f73742c89b6269fedc5c4603e648f
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88414818"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096911"
 ---
 # <a name="set-statistics-time-transact-sql"></a>SET STATISTICS TIME (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -53,7 +53,7 @@ SET STATISTICS TIME { ON | OFF }
   
  SET STATISTICS TIME は、解析時ではなく実行時に設定されます。  
   
- Microsoft [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は、**簡易プーリング**構成オプションを有効にしたときに起動されるファイバー モードでは正確な統計情報を提供できません。  
+ Microsoft [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は、**簡易プーリング** 構成オプションを有効にしたときに起動されるファイバー モードでは正確な統計情報を提供できません。  
   
  **sysprocesses** テーブル内の **cpu** 列が更新されるのは、SET STATISTICS TIME が ON の状態でクエリが実行されたときだけです。 SET STATISTICS TIME が OFF の場合は、**0** が返されます。  
   

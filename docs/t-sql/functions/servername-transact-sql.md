@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - '@@SERVERNAME'
 - '@@SERVERNAME_TSQL'
@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: b0ef33fb-954a-4294-b05b-a87c14ce25a3
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 41a2c51ed429185156b4bf0ff5e9b002e4b514ea
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 167f21cdc1f2a1e0d5558d1d95cd42005a031bd1
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88363168"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99191099"
 ---
 # <a name="x40x40servername-transact-sql"></a>&#x40;&#x40;SERVERNAME (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -34,8 +34,7 @@ ms.locfileid: "88363168"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 @@SERVERNAME  
 ```  
   
@@ -63,7 +62,7 @@ ms.locfileid: "88363168"
 ## <a name="examples"></a>例  
  次の例に、`@@SERVERNAME` の使用方法を示します。  
   
-```  
+```sql  
 SELECT @@SERVERNAME AS 'Server Name'  
 ```  
   

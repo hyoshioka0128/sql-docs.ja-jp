@@ -38,23 +38,23 @@ helpviewer_keywords:
 ms.assetid: 7f3fa5f6-6b50-43bb-9047-1544ade55e39
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: f49b1139faade46df4d1b853c4bc0e9f25c4e111
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 268aafa5b95bed4c9e2687fef430aa4a972ea2c7
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86005673"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97463163"
 ---
 # <a name="database-level-roles"></a>データベース レベルのロール
 
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] には、データベースでの権限を簡単に管理できるように、いくつかの *ロール* が用意されています。ロールは、セキュリティ プリンシパルとして他のプリンシパルをグループ化します。 ロールは、 ***Windows オペレーティング システムの*** グループ [!INCLUDE[msCoName](../../../includes/msconame-md.md)] に似ています。 データベース レベルのロールは、その権限のスコープがデータベース全体に及びます。  
+  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] には、データベースでの権限を簡単に管理できるように、いくつかの *ロール* が用意されています。ロールは、セキュリティ プリンシパルとして他のプリンシパルをグループ化します。 これらは、[!INCLUDE[msCoName](../../../includes/msconame-md.md)] Windows オペレーティング システムの "**グループ**" に似ています。 データベース レベルのロールは、その権限のスコープがデータベース全体に及びます。  
 
 データベース ロールに対するユーザーの追加および削除を行うには、 `ADD MEMBER` ALTER ROLE `DROP MEMBER` ステートメントの [と](../../../t-sql/statements/alter-role-transact-sql.md) のオプションを使用します。 [!INCLUDE[ssPDW_md](../../../includes/sspdw-md.md)] と Azure Synapse では、`ALTER ROLE` のこのような使用はサポートされません。 代わりに、以前の [sp_addrolemember](../../../relational-databases/system-stored-procedures/sp-addrolemember-transact-sql.md) と [sp_droprolemember](../../../relational-databases/system-stored-procedures/sp-droprolemember-transact-sql.md) プロシージャを使用してください。
   
- データベース レベルのロールは 2 種類あります。1 つはデータベースに事前に定義されている *固定データベース ロール* 、もう 1 つはユーザーが作成できる *ユーザー定義データベース ロール* です。  
+ データベース レベルのロールは 2 種類あります。1 つはデータベースに事前に定義されている "固定データベース ロール"、もう 1 つはユーザーが作成できる "*ユーザー定義データベース ロール*" です。  
   
  固定データベース ロールはデータベース レベルで定義されており、各データベースに存在します。 **db_owner** データベース ロールのメンバーは、固定データベース ロールのメンバーシップを管理できます。 msdb データベースには、特別な用途のデータベース ロールもいくつかあります。  
   
@@ -97,7 +97,11 @@ ms.locfileid: "86005673"
 |**loginmanager** | 仮想 master データベースのログインを作成および削除できます。|
 
 > [!NOTE]
-> サーバー レベル プリンシパルと Azure Active Directory 管理者 (構成されている場合) には [!INCLUDE[ssSDS_md](../../../includes/sssds-md.md)] と Azure Synapse でのすべての権限があり、すべてのロールのメンバーである必要はありません。 詳細については、「[SQL Database の認証と承認:アクセス権の付与](https://azure.microsoft.com/documentation/articles/sql-database-manage-logins/)」を参照してください。 
+> サーバー レベル プリンシパルと Azure Active Directory 管理者 (構成されている場合) には [!INCLUDE[ssSDS_md](../../../includes/sssds-md.md)] と Azure Synapse でのすべての権限があり、すべてのロールのメンバーである必要はありません。 詳細については、「[SQL Database の認証と承認:アクセス権の付与](/azure/azure-sql/database/logins-create-manage)」を参照してください。 
+
+一部のデータベース ロールは Azure SQL または Synapse SQL には該当しません。
+- **db_backupoperator** は、バックアップおよび復元の T-SQL コマンドで使用できないため、Azure SQL データベース (マネージド インスタンスではない) および Synapse SQL サーバーレス プールには該当しません。
+- **db_datawriter** と **db_denydatawriter** は、外部データを読み取るだけなので、Synapse SQL サーバーレスには該当しません。
   
 ## <a name="msdb-roles"></a>msdb ロール  
  msdb データベースには、次の表に示す特別な用途のロールが含まれています。  
@@ -116,7 +120,7 @@ ms.locfileid: "86005673"
 ## <a name="working-with-database-level-roles"></a>データベース レベルのロールの操作  
  次の表では、データベース レベルのロールを操作するためのコマンド、ビュー、および関数について説明します。  
   
-|特徴量|Type|説明|  
+|機能|Type|説明|  
 |-------------|----------|-----------------|  
 |[sp_helpdbfixedrole &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-helpdbfixedrole-transact-sql.md)|Metadata|固定データベース ロールの一覧を返します。|  
 |[sp_dbfixedrolepermission &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-dbfixedrolepermission-transact-sql.md)|Metadata|固定データベース ロールの権限を表示します。|  
@@ -149,5 +153,4 @@ ms.locfileid: "86005673"
  [SQL Server の保護](../../../relational-databases/security/securing-sql-server.md)  
   
  [sp_helprotect &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-helprotect-transact-sql.md)  
-  
   

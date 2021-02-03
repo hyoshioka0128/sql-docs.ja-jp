@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DROP_APPLICATION_ROLE_TSQL
 - DROP APPLICATION ROLE
@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: 44121ee7-ef40-405d-b03b-f8ddb4e3c559
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 4274c8a7689dacd251c872b3066b4422c4c90d80
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 898ae1a1ede2577a03c82f5c596d4a6ffafd759b
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88478932"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99159336"
 ---
 # <a name="drop-application-role-transact-sql"></a>DROP APPLICATION ROLE (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -38,8 +38,7 @@ ms.locfileid: "88478932"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 DROP APPLICATION ROLE rolename  
 ```  
   
@@ -61,7 +60,7 @@ DROP APPLICATION ROLE rolename
 ## <a name="examples"></a>例  
  データベースからアプリケーション ロール "weekly_ledger" を削除します。  
   
-```  
+```sql  
 DROP APPLICATION ROLE weekly_ledger;  
 GO  
 ```  

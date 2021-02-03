@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: 5a7f7cfd-7faf-439f-8085-8fd6bf7db355
 author: stevestein
 ms.author: sstein
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 1abc4ab38086afd380707b2eb12fafc48713bf08
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 8aae425506ebc8a2a17aadb2fa9c2d4485fe8f85
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88418996"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97426742"
 ---
 # <a name="tutorial-using-the-hierarchyid-data-type"></a>チュートリアル:hierarchyid データ型の使用
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "88418996"
 [レッスン 2: 階層テーブルでのデータの作成と管理](../../relational-databases/tables/lesson-2-creating-and-managing-data-in-a-hierarchical-table.md)  
 このレッスンでは、 **hierarchyid** データ型を使用して階層構造を表すテーブルを作成します。 その後、階層的な手法を使用して、テーブル内のデータを操作します。  
   
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
 システムには次のコンポーネントがインストールされている必要があります。  
   
 -   [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降の任意のエディション。  
@@ -47,9 +47,8 @@ ms.locfileid: "88418996"
 ## <a name="see-also"></a>参照  
 [チュートリアル:データベース エンジンの概要](../../relational-databases/tutorial-getting-started-with-the-database-engine.md)  
 [チュートリアル:Transact-SQL ステートメントの作成](../../t-sql/tutorial-writing-transact-sql-statements.md)  
-[hierarchyid データ型メソッド リファレンス](https://msdn.microsoft.com/library/01a050f5-7580-4d5f-807c-7f11423cbb06)  
+[hierarchyid データ型メソッド リファレンス](../../t-sql/data-types/hierarchyid-data-type-method-reference.md)  
 [階層データ (SQL Server)](../../relational-databases/hierarchical-data-sql-server.md)  
 [hierarchyid &#40;Transact-SQL&#41;](../../t-sql/data-types/hierarchyid-data-type-method-reference.md)  
-  
   
   

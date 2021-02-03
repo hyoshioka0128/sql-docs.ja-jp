@@ -5,29 +5,29 @@ ms.custom: seodec18
 ms.date: 04/20/2017
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
-ms.topic: conceptual
+ms.technology: availability-groups
+ms.topic: reference
 helpviewer_keywords:
 - Availability Groups [SQL Server], about
 - Availability Groups [SQL Server], interoperability
 ms.assetid: daf87f90-2623-42ca-912c-b8f07d210510
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: 5a4f41009505a733eb58bef73f55697430550be3
-ms.sourcegitcommit: 827ad02375793090fa8fee63cc372d130f11393f
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 1c0322b1b00b3f5cbff775d3c248ee81916f48a9
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89480577"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98765135"
 ---
 # <a name="always-on-availability-groups-interoperability-sql-server"></a>Always On 可用性グループ: 相互運用性 (SQL Server)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
 
-このトピックでは、 [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] の他の [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 機能との間の [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)]の相互運用性について説明します。
+このトピックでは、[!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] と他の [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 機能との間の相互運用性について説明します。
 
 ## <a name="features-that-interoperate-with-always-on-availability-groups"></a><a name="Interop"></a> Always On 可用性グループと相互運用可能な機能
 
-[!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] で [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] と相互運用可能な [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)]機能を次の表に示します。 **詳細情報** 列のリンクは、特定の機能に関して相互運用性に関する考慮事項が存在することを示します。
+[!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] と相互運用する [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 機能を次の表に示します。 **詳細情報** 列のリンクは、特定の機能に関して相互運用性に関する考慮事項が存在することを示します。
 
 |機能|詳細情報|
 |:------|:---------------|
@@ -50,7 +50,7 @@ ms.locfileid: "89480577"
 
 次の機能は、特定の制限付きで [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] と相互運用します。 詳細については、リンク先のトピックを参照してください。
 
-- データベースをまたがるトランザクション/分散トランザクション ([!INCLUDE[ssSQL15](../../../includes/sssql15-md.md)] と Windows Server 2016)。 詳細については、「[Always On 可用性グループとデータベース ミラーリングでの複数データベースにまたがるトランザクションと分散トランザクション &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/transactions-always-on-availability-and-database-mirroring.md)」を参照してください。
+- データベースをまたがるトランザクション/分散トランザクション ([!INCLUDE[ssSQL15](../../../includes/sssql16-md.md)] と Windows Server 2016)。 詳細については、「[Always On 可用性グループとデータベース ミラーリングでの複数データベースにまたがるトランザクションと分散トランザクション &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/transactions-always-on-availability-and-database-mirroring.md)」を参照してください。
 - 読み取り不可のセカンダリがある環境では、[クエリ統計システム データ コレクター](../../../relational-databases/data-collection/system-data-collection-set-reports.md#Query)を確実に実行することができません。 クエリ統計システム データ コレクターを使用するには、[読み取りアクセス](configure-read-only-access-on-an-availability-replica-sql-server.md)を許可するように、可用性グループのセカンダリ レプリカを設定してください。 
 
 ## <a name="features-that-do-not-interoperate-with-always-on-availability-groups"></a><a name="NoInterop"></a> Always On 可用性グループと相互運用不可能な機能
@@ -63,15 +63,15 @@ ms.locfileid: "89480577"
 
 - **ブログ:**
 
-  [移行ガイド: 以前のクラスタリングおよびミラーリングの展開による SQL Server 2012 フェールオーバークラスタリングおよび可用性グループへの移行](https://blogs.msdn.microsoft.com/sqlalwayson/2012/04/09/now-available-migration-guide-migrating-to-sql-server-2012-failover-clustering-and-availability-groups-from-prior-clustering-and-mirroring-deployments/)
-  [SQL Server Always On チームのブログ:SQL Server Always On チームのオフィシャル ブログ](https://blogs.msdn.microsoft.com/sqlalwayson/)
-  [CSS SQL Server エンジニアのブログ](https://docs.microsoft.com/archive/blogs/psssql/)
+  [移行ガイド: 以前のクラスタリングおよびミラーリングの展開による SQL Server 2012 フェールオーバークラスタリングおよび可用性グループへの移行](/archive/blogs/sqlalwayson/now-available-migration-guide-migrating-to-sql-server-2012-failover-clustering-and-availability-groups-from-prior-clustering-and-mirroring-deployments)
+  [SQL Server Always On チームのブログ:SQL Server Always On チームのオフィシャル ブログ](/archive/blogs/sqlalwayson/)
+  [CSS SQL Server エンジニアのブログ](/archive/blogs/psssql/)
 
 - **ホワイト ペーパー:**
 
-  [移行ガイド: 以前の配置の結合データベース ミラーリングとログ配布から Always On 可用性グループに移行する](https://msdn.microsoft.com/library/jj635217)
-  [高可用性とディザスター リカバリーのための Microsoft SQL Server Always On ソリューション ガイド](https://go.microsoft.com/fwlink/?LinkId=227600)
-  [SQL Server 2012 に関する Microsoft ホワイト ペーパー](https://msdn.microsoft.com/library/hh403491.aspx)
+  [移行ガイド: 以前の配置の結合データベース ミラーリングとログ配布から Always On 可用性グループに移行する](/previous-versions/sql/sql-server-2012/jj635217(v=msdn.10))
+  [高可用性とディザスター リカバリーのための Microsoft SQL Server Always On ソリューション ガイド](/previous-versions/sql/sql-server-2012/hh781257(v=msdn.10))
+  [SQL Server 2012 に関する Microsoft ホワイト ペーパー](https://social.technet.microsoft.com/wiki/contents/articles/13146.white-paper-gallery-for-sql-server.aspx#[Category]SQLServer2012)
   [SQL Server ユーザー諮問チームのホワイト ペーパー](https://techcommunity.microsoft.com/t5/DataCAT/bg-p/DataCAT/)
 
 ## <a name="see-also"></a>参照

@@ -16,21 +16,21 @@ helpviewer_keywords:
 ms.assetid: 3419b7f3-36a3-4863-816e-e641e4e90496
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 896926a74bff62ccc84c3a80ad0169dd97858524
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 7924ee21c5bbf6184654303328952afb93fc97cd
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88490772"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97469323"
 ---
 # <a name="isscommandwithparameters-native-client-ole-db-provider"></a>ISSCommandWithParameters (Native Client OLE DB provider)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  **Isscommandwithparameters** は [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 、XML およびユーザー定義型 (UDT) のサポートを公開します。 これは、コア OLE DB インターフェイス **ICommandWithParameters**から継承する省略可能なインターフェイスです。 **ICommandWithParameters**から継承された3つのメソッドに加えて、**Getparameterinfo**、 **Mapparameternames**、および**setparameterinfo**;**Isscommandwithparameters**には、サーバー固有のデータ型を処理するために使用される2つの新しいメソッドが用意されています。  
+  **Isscommandwithparameters** は [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 、XML およびユーザー定義型 (UDT) のサポートを公開します。 これは、コア OLE DB インターフェイス **ICommandWithParameters** から継承する省略可能なインターフェイスです。 **ICommandWithParameters** から継承された3つのメソッドに加えて、**Getparameterinfo**、 **Mapparameternames**、および **setparameterinfo**;**Isscommandwithparameters** には、サーバー固有のデータ型を処理するために使用される2つの新しいメソッドが用意されています。  
   
 > [!NOTE]  
->  **Isscommandwithparameters**インターフェイスは、サービスコンポーネントが使用されている場合に使用できますが、サービスコンポーネント自体はこのインターフェイスを使用しません。  
+>  **Isscommandwithparameters** インターフェイスは、サービスコンポーネントが使用されている場合に使用できますが、サービスコンポーネント自体はこのインターフェイスを使用しません。  
   
 |方法|説明|  
 |------------|-----------------|  
@@ -38,8 +38,7 @@ ms.locfileid: "88490772"
 |[ISSCommandWithParameters::SetParameterProperties &#40;OLE DB&#41;](../../relational-databases/native-client-ole-db-interfaces/isscommandwithparameters-setparameterproperties-ole-db.md)|序数順に各パラメーターのパラメーター プロパティを設定するか、**SSPARAMPROPS** 構造体の配列を指定して、一括でパラメーター プロパティを設定します。|  
   
 ## <a name="see-also"></a>参照  
- [インターフェイス &#40;OLE DB&#41;](https://msdn.microsoft.com/library/34c33364-8538-45db-ae41-5654481cda93)   
+ [インターフェイス &#40;OLE DB&#41;](./sql-server-native-client-ole-db-interfaces.md)   
  [XML データ型の使用](../../relational-databases/native-client/features/using-xml-data-types.md)   
  [ユーザー定義型の使用](../../relational-databases/native-client/features/using-user-defined-types.md)  
-  
   

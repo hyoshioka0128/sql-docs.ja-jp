@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: replication
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - MSlogreader_agents_TSQL
 - MSlogreader_agents
@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSlogreader_agents system table
 ms.assetid: 8baa3c5a-cb40-42d0-b966-00e6d55368e8
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: fc52c520b1759839ee75d066895ba9ac19c1c6c2
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: cbf7f439c03ff29e205b7a19a159b67b43090a71
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89547112"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99212318"
 ---
 # <a name="mslogreader_agents-transact-sql"></a>MSlogreader_agents (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSlogreader_agents**テーブルには、ローカルディストリビューターで実行されているログリーダーエージェントごとに1つの行が含まれています。 このテーブルは、ディストリビューションデータベースに格納されます。  
+  **MSlogreader_agents** テーブルには、ローカルディストリビューターで実行されているログリーダーエージェントごとに1つの行が含まれています。 このテーブルは、ディストリビューションデータベースに格納されます。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

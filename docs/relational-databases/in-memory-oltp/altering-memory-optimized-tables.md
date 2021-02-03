@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: 690b70b7-5be1-4014-af97-54e531997839
 author: MightyPen
 ms.author: genemi
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 60acfdfb738542c39c5974691811c482e36b9f9e
-ms.sourcegitcommit: 21bedbae28840e2f96f5e8b08bcfc794f305c8bc
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: da12d83efd43c7ca6113348adee8e3bde14d9472
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87863347"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97465473"
 ---
 # <a name="altering-memory-optimized-tables"></a>メモリ最適化テーブルの変更
 
@@ -52,7 +52,7 @@ ALTER TABLE 構文は、テーブル スキーマを変更する場合だけで�
 
  スキーマ バインドであるためには、アクセスするメモリ最適化テーブルおよび参照する列に対するスキーマ バインド依存関係を持つネイティブ コンパイル ストアド プロシージャが必要です。 スキーマ バインド依存関係とは、参照元エンティティが存在する限り、参照先エンティティを削除したり、互換性のない方法で変更したりすることができない 2 つのエンティティ間のリレーションシップです。  
   
- たとえば、スキーマ バインドのネイティブ コンパイル ストアド プロシージャがテーブル *mytable* の列 *c1*を参照している場合、列 *c1* は削除できません。 同様に、このようなプロシージャで列リストのない INSERT ステートメント (たとえば `INSERT INTO dbo.mytable VALUES (...)`) を使用している場合、テーブルの列はどれも削除できません。  
+ たとえば、スキーマ バインドのネイティブ コンパイル ストアド プロシージャがテーブル *mytable* の列 *c1* を参照している場合、列 *c1* は削除できません。 同様に、このようなプロシージャで列リストのない INSERT ステートメント (たとえば `INSERT INTO dbo.mytable VALUES (...)`) を使用している場合、テーブルの列はどれも削除できません。  
 
 ## <a name="logging-of-alter-table-on-memory-optimized-tables"></a>メモリ最適化テーブルの ALTER TABLE のログ記録
 
@@ -138,4 +138,4 @@ GO
 
 ## <a name="see-also"></a>参照  
 
-[メモリ最適化テーブル](../../relational-databases/in-memory-oltp/memory-optimized-tables.md)  
+[メモリ最適化テーブル](./sample-database-for-in-memory-oltp.md)

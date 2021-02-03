@@ -5,7 +5,7 @@ ms.date: 03/25/2019
 ms.reviewer: ''
 ms.prod: sql
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 ms.custom: ''
 ms.author: giladm
 author: giladmit
@@ -24,16 +24,16 @@ helpviewer_keywords:
 - labels [SQL]
 - information types
 - data classification
-monikerRange: = azuresqldb-current || = sqlallproducts-allversions
-ms.openlocfilehash: 347573e5eb507ca1e607382e2df0dd07763f7689
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: " >= sql-server-ver15 || = azuresqldb-current"
+ms.openlocfilehash: 5d065fc3b939ae130d903d0d69060673a2094caf
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88304682"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99165073"
 ---
 # <a name="drop-sensitivity-classification-transact-sql"></a>DROP SENSITIVITY CLASSIFICATION (Transact-SQL)
-[!INCLUDE [asdb-asdbmi-asa](../../includes/applies-to-version/asdb-asdbmi-asa.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
 
 1 つ以上のデータベース列から秘密度の分類に関するメタデータを削除します。
 
@@ -58,7 +58,7 @@ DROP SENSITIVITY CLASSIFICATION FROM
     - *table_name* - 分類される列が属するテーブルの名前です。
     - *column_name* - 分類を削除する列の名前です。
 
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>解説  
 
 - 1 つの "DROP SENSITIVITY CLASSIFICATION" ステートメントを使用して複数のオブジェクトの分類を削除できます。
 
@@ -88,10 +88,10 @@ DROP SENSITIVITY CLASSIFICATION FROM
     dbo.sales.price, dbo.sales.discount, SalesLT.Customer.Phone  
 ```
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 
 [ADD SENSITIVITY CLASSIFICATION (Transact-SQL)](../../t-sql/statements/add-sensitivity-classification-transact-sql.md)
 
 [sys.sensitivity_classifications (Transact-SQL)](../../relational-databases/system-catalog-views/sys-sensitivity-classifications-transact-sql.md)
 
-[SQL Information Protection の概要](https://aka.ms/sqlip)
+[SQL Information Protection の概要](/azure/azure-sql/database/data-discovery-and-classification-overview)

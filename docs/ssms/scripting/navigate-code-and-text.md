@@ -1,11 +1,8 @@
 ---
 title: コード内とテキスト内の移動
 description: さまざまな手法 (場所のブックマークを設定して、その場所に簡単に戻る、インクリメンタル検索を行う、マウスとキーボードを使用する、[ジャンプ] コマンドを使用して、行番号を指定してその行にジャンプする) でドキュメント内を移動する方法について説明します。
-ms.custom: seo-lt-2019
-ms.date: 03/01/2017
 ms.prod: sql
-ms.technology: scripting
-ms.reviewer: ''
+ms.technology: ssms
 ms.topic: conceptual
 helpviewer_keywords:
 - searches [SQL Server Management Studio], incremental
@@ -21,17 +18,22 @@ helpviewer_keywords:
 ms.assetid: f63247ff-9751-4e99-8ee3-0772ad4009d0
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 4ac0d91b3d6bc3dd6527063a176b0728f96f144e
-ms.sourcegitcommit: d855def79af642233cbc3c5909bc7dfe04c4aa23
+ms.reviewer: ''
+ms.custom: seo-lt-2019
+ms.date: 03/01/2017
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 5c96185636472a1bf7cc512fa4947597289f38e5
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87122590"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97474283"
 ---
 # <a name="navigate-code-and-text"></a>コード内とテキスト内の移動
+
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
-  以下の方法で、テキスト内を移動することができます。  
+
+以下の方法で、テキスト内を移動することができます。  
   
 -   ブックマーク  
   
@@ -72,6 +74,4 @@ ms.locfileid: "87122590"
   
 1.  **[編集]** メニューの **[ジャンプ]** をクリックします。  
   
-2.  表示する行番号を入力します。  
-  
-  
+2.  表示する行番号を入力します。

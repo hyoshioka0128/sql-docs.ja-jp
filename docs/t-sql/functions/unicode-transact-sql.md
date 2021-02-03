@@ -20,13 +20,13 @@ helpviewer_keywords:
 ms.assetid: 5e3c40b2-8401-4741-9f2a-bae70eaa4da6
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 56a8d99b228c1115af02109e5715020463126f78
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: a9f3b9d166090d224c6af3743e832170b2300509
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88479530"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97421757"
 ---
 # <a name="unicode-transact-sql"></a>UNICODE (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -59,7 +59,7 @@ UNICODE ( 'ncharacter_expression' )
  次の例では、`UNICODE` と `NCHAR` の各関数を使用して、文字列 `Åkergatan` 24 の先頭文字を表す UNICODE 値と実際の先頭文字 `Å` を出力します。  
   
 ```sql  
-DECLARE @nstring nchar(12);  
+DECLARE @nstring NCHAR(12);  
 SET @nstring = N'Åkergatan 24';  
 SELECT UNICODE(@nstring), NCHAR(UNICODE(@nstring));  
 ```  
@@ -78,7 +78,7 @@ SELECT UNICODE(@nstring), NCHAR(UNICODE(@nstring));
 -- The @position variable holds the position of the character currently  
 -- being processed. The @nstring variable is the Unicode character   
 -- string to process.  
-DECLARE @position int, @nstring nchar(12);  
+DECLARE @position INT, @nstring NCHAR(12);  
 -- Initialize the current position variable to the first character in   
 -- the string.  
 SET @position = 1;  
@@ -92,12 +92,13 @@ SET @nstring = N'Åkergatan 24';
 PRINT 'Character #' + ' ' + 'Unicode Character' + ' ' + 'UNICODE Value';  
 WHILE @position <= LEN(@nstring)  
 -- While these are still characters in the character string,  
-   BEGIN;  
-   SELECT @position,   
-      CONVERT(char(17), SUBSTRING(@nstring, @position, 1)),  
-      UNICODE(SUBSTRING(@nstring, @position, 1));  
-   SELECT @position = @position + 1;  
-   END;  
+
+BEGIN;  
+   SELECT @position AS [position],   
+      SUBSTRING(@nstring, @position, 1) AS [character],  
+      UNICODE(SUBSTRING(@nstring, @position, 1)) AS [code_point];  
+   SET @position = @position + 1;  
+END; 
 ```  
   
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  

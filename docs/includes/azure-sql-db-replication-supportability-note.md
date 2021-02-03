@@ -4,12 +4,12 @@ ms.service: sql-server
 ms.topic: include
 ms.date: 05/30/2019
 ms.author: mathoma
-ms.openlocfilehash: 08a9352b6323b34b3b75cc32506e33f832889e45
-ms.sourcegitcommit: 822d4b3cfa53269535500a3db5877a82b5076728
+ms.openlocfilehash: 35a53a15ed74e8cc9d7381a2d45182fe6d211315
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "88010995"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98187006"
 ---
   > [!NOTE] 
-  > Azure SQL Managed Instance は、スナップショットおよびトランザクション レプリケーションのパブリッシャー、ディストリビューター、およびサブスクライバーの可能性があります。 Azure SQL Database のデータベースは、スナップショットとトランザクション レプリケーションのプッシュ サブスクライバーの可能性しかありません。 詳細については、[Azure SQL Database を使用したトランザクションのレプリケーション](/azure/sql-database/sql-database-managed-instance-transactional-replication)に関する記事を参照してください。 
+  > Azure SQL Managed Instance は、スナップショットおよびトランザクション レプリケーションのパブリッシャー、ディストリビューター、およびサブスクライバーの可能性があります。 Azure SQL Database のデータベースは、スナップショットとトランザクション レプリケーションのプッシュ サブスクライバーの可能性しかありません。 詳細については、[Azure SQL Database](/azure/azure-sql/database/replication-to-sql-database) および [Azure SQL Managed Instance](/azure/azure-sql/managed-instance/replication-transactional-overview) を使用したトランザクションのレプリケーションに関するページを参照してください。

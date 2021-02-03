@@ -10,13 +10,13 @@ ms.topic: conceptual
 ms.assetid: 67cb8b3e-3d82-47f4-840d-0f12a3bff565
 author: rothja
 ms.author: jroth
-monikerRange: = sql-server-2016 || = sqlallproducts-allversions
-ms.openlocfilehash: 395acfc882bdd4277a260f53eba4da8acf57d85f
-ms.sourcegitcommit: 768f046107642f72693514f51bf2cbd00f58f58a
+monikerRange: = sql-server-2016
+ms.openlocfilehash: 123a1604717fdfb58f7f1e69db353995e6e0a960
+ms.sourcegitcommit: 866554663ca3191748b6e4eb4d8d82fa58c4e426
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87111694"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97559294"
 ---
 # <a name="sql-server-2012-service-pack-release-notes"></a>SQL Server 2012 Service Pack のリリース ノート
 [!INCLUDE [SQL Server Azure SQL Database ](../includes/applies-to-version/sqlserver.md)]
@@ -56,7 +56,7 @@ Service Pack は、インストール メディアではなくオンラインで
 - **DBCC INPUTBUFFER に置き換わる新しい DMF**: DBCC INPUTBUFFER を置き換えるため、session_id をパラメーターとして受け取る新しい動的管理関数 sys.dm_input_buffer が導入されました。
 - **可用性グループの読み取りルーティングの障害に対する Xevent の機能強化**: 現在、read_only_rout_fail XEvent は、ルーティング リストがあるが、リスト内のどのサーバーも接続に使用できない場合にのみ起動されます。 この機能強化には、トラブルシューティングに役立つ追加情報と、XEvent が起動するコード ポイントの拡張も含まれます。 
 - **可用性グループのフェールオーバーを使用した Service Broker の処理の向上**: 現在、可用性グループのデータベースで Service Broker が有効になっていると、プライマリ レプリカで開始されたすべての Service Broker の接続は、AG フェールオーバー中に開いたままになります。 この機能強化により、AG フェールオーバー中、これらの開いたままの接続がすべて閉じられます。
-- **自動ソフト NUMA のパーティション分割**: サーバー レベルでトレース フラグ 8079 が有効になっている場合、SQL 2014 SP2 で自動[ソフト NUMA](../database-engine/configure-windows/soft-numa-sql-server.md) パーティション分割が導入されます。 スタートアップ時にトレース フラグ 8079 が有効になっていると、SQL Server 2014 SP2 はハードウェア レイアウトを問い合わせて、NUMA ノードあたり 8 個以上の CPU をレポートするシステムにソフト NUMA を自動的に構成します。 自動ソフト NUMA の動作は、ハイパースレッド (HT/論理プロセッサ) に対応しています。 パーティション分割と追加ノードの作成により、リスナーの数の増加、スケーリング、およびネットワークと暗号化機能の向上により、バックグラウンド処理が拡張されます。 自動ソフト NUMA を実稼働環境でオンにする前に、最初にワークロードのパフォーマンスをテストすることをお勧めします。
+- **自動ソフト NUMA のパーティション分割**: サーバー レベルでトレース フラグ 8079 が有効になっている場合、SQL 2014 SP2 で自動 [ソフト NUMA](../database-engine/configure-windows/soft-numa-sql-server.md) パーティション分割が導入されます。 スタートアップ時にトレース フラグ 8079 が有効になっていると、SQL Server 2014 SP2 はハードウェア レイアウトを問い合わせて、NUMA ノードあたり 8 個以上の CPU をレポートするシステムにソフト NUMA を自動的に構成します。 自動ソフト NUMA の動作は、ハイパースレッド (HT/論理プロセッサ) に対応しています。 パーティション分割と追加ノードの作成により、リスナーの数の増加、スケーリング、およびネットワークと暗号化機能の向上により、バックグラウンド処理が拡張されます。 自動ソフト NUMA を実稼働環境でオンにする前に、最初にワークロードのパフォーマンスをテストすることをお勧めします。
 
 ## <a name="service-pack-3-release-notes"></a>Service Pack 3 リリース ノート
 
@@ -69,7 +69,7 @@ Service Pack は、インストール メディアではなくオンラインで
 ## <a name="service-pack-2-release-notes"></a>Service Pack 2 リリース ノート
   
 ### <a name="download-pages"></a>ダウンロード ページ 
-- [SQL Server 2012 SP2 Feature Pack](https://go.microsoft.com/fwlink/?LinkID=401008)
+- [SQL Server 2012 SP2 Feature Pack](https://www.microsoft.com/download/details.aspx?id=43340)
 - [SQL Server 2012 SP2 Express](https://go.microsoft.com/fwlink/?LinkID=401007)
 
 次の表を使用して、現在インストールされているバージョンを基に、ダウンロードするファイルの場所と名前を確認します。 システム要件と基本的なインストール手順が含まれているページをダウンロードします。  
@@ -82,13 +82,13 @@ Service Pack は、インストール メディアではなくオンラインで
 |SQL Server 2012 のクライアントと管理ツールのみの 32 ビット バージョン (SQL Server 2012 Management Studio を含む)|SQL Server 2012 SP2 の 32 ビット バージョンにクライアントと管理ツールをアップグレード|**SQLEXPRWT_** <arch> **_** <lang> **.msi** ( [SQL Server 2012 SP2 Express のダウンロード ページ](https://go.microsoft.com/fwlink/?LinkID=401007)|  
 |SQL Server 2012 Management Studio Express の 32 ビット バージョン|SQL Server 2012 SP2 Management Studio Express の 32 ビット バージョンにアップグレード|**SQLManagementStudio_** <arch> **_** <lang> **.msi** ( [SQL Server 2012 SP2 Express のダウンロード ページ](https://go.microsoft.com/fwlink/?LinkID=401007)|  
 |SQL Server 2012 のいずれかのエディションの 32 ビット バージョンおよびクライアントと管理ツールの 32 ビット バージョン (SQL Server 2012 RTM Management Studio を含む)|SQL Server 2012 SP2 の 32 ビット バージョンにすべての製品をアップグレード|**SQLEXPRADV_** <arch> **_** <lang> **.msi** ( [SQL Server 2012 SP2 Express のダウンロード ページ](https://go.microsoft.com/fwlink/?LinkID=401007)|  
-|[Microsoft SQL Server 2012 RTM Feature Pack](https://www.microsoft.com/download/details.aspx?id=29065) または [Microsoft SQL Server 2012 SP1 Feature Pack](https://go.microsoft.com/fwlink/p/?LinkID=268266)の 1 つ以上のツールの 32 ビット バージョン|Microsoft SQL Server 2012 SP2 用 Feature Pack の 32 ビット バージョンにツールをアップグレード|Microsoft [SQL Server 2012 SP2 Feature Pack のダウンロード ページ](https://go.microsoft.com/fwlink/?LinkID=401008)の 1 つ以上のツール|  
+|[Microsoft SQL Server 2012 RTM Feature Pack](https://www.microsoft.com/download/details.aspx?id=56041) または [Microsoft SQL Server 2012 SP1 Feature Pack](https://www.microsoft.com/download/details.aspx?id=35575)の 1 つ以上のツールの 32 ビット バージョン|Microsoft SQL Server 2012 SP2 用 Feature Pack の 32 ビット バージョンにツールをアップグレード|Microsoft [SQL Server 2012 SP2 Feature Pack のダウンロード ページ](https://www.microsoft.com/download/details.aspx?id=43340)の 1 つ以上のツール|  
 |64 ビット インストール:|||  
 |SQL Server 2012 のいずれかのエディションの 64 ビット バージョン|SQL Server 2012 SP2 の 64 ビット バージョンにアップグレード|SQLServer2012SP2-KB2958429-<arch>-<langid>.exe ( [SQL Server 2012 SP2 のダウンロード ページ](https://go.microsoft.com/fwlink/?LinkID=401006)から)|  
 |SQL Server 2012 RTM Express の 64 ビット バージョン|SQL Server 2012 SP2 の 64 ビット バージョンにアップグレード|**SQLEXPR_** <arch> **_** <lang> **.msi** ( [SQL Server 2012 SP2 Express のダウンロード ページ](https://go.microsoft.com/fwlink/?LinkID=401007)|  
 |SQL Server 2012 のクライアントと管理ツールのみの 64 ビット バージョン (SQL Server 2012 Management Studio 含む)|SQL Server 2012 SP2 の 64 ビット バージョンにクライアントと管理ツールをアップグレード|**SQLEXPRWT_** <arch> **_** <lang> **.msi** ( [SQL Server 2012 SP2 Express のダウンロード ページ](https://go.microsoft.com/fwlink/?LinkID=401007)|  
 |SQL Server 2012 Management Studio Express の 64 ビット バージョン|SQL Server 2012 SP2 Management Studio Express の 64 ビット バージョンにアップグレード|**SQLManagementStudio_** <arch> **_** <lang> **.msi** ( [SQL Server 2012 SP2 Express のダウンロード ページ](https://go.microsoft.com/fwlink/?LinkID=401007)|  
-|[Microsoft SQL Server 2012 RTM Feature Pack](https://www.microsoft.com/download/details.aspx?id=29065) または [Microsoft SQL Server 2012 SP1 Feature Pack](https://go.microsoft.com/fwlink/p/?LinkID=268266)の 1 つ以上のツールの 64 ビット バージョン|Microsoft SQL Server 2012 SP2 用 Feature Pack の 64 ビット バージョンにツールをアップグレード|Microsoft [SQL Server 2012 SP2 Feature Pack のダウンロード ページ](https://go.microsoft.com/fwlink/?LinkID=401008)の 1 つ以上のツール|   
+|[Microsoft SQL Server 2012 RTM Feature Pack](https://www.microsoft.com/download/details.aspx?id=56041) または [Microsoft SQL Server 2012 SP1 Feature Pack](https://www.microsoft.com/download/details.aspx?id=35575)の 1 つ以上のツールの 64 ビット バージョン|Microsoft SQL Server 2012 SP2 用 Feature Pack の 64 ビット バージョンにツールをアップグレード|Microsoft [SQL Server 2012 SP2 Feature Pack のダウンロード ページ](https://www.microsoft.com/download/details.aspx?id=43340)の 1 つ以上のツール|   
 
 
 ## <a name="service-pack-1-release-notes"></a>Service Pack 1 リリース ノート
@@ -108,22 +108,22 @@ Service Pack は、インストール メディアではなくオンラインで
 |SQL Server 2012 のクライアントと管理ツールのみの 32 ビット バージョン (SQL Server 2012 Management Studio を含む)|SQL Server 2012 SP1 の 32 ビット バージョンにクライアントと管理ツールをアップグレード|SQLManagementStudio_x86_ENU.exe ( [こちら](https://go.microsoft.com/fwlink/p/?LinkID=267905)から)|  
 |SQL Server 2012 Management Studio Express の 32 ビット バージョン|SQL Server 2012 SP1 Management Studio Express の 32 ビット バージョンにアップグレード|SQLManagementStudio_x86_ENU.exe ( [こちら](https://go.microsoft.com/fwlink/p/?LinkID=267905)から)|  
 |SQL Server 2012 のいずれかのエディションの 32 ビット バージョン **および** クライアントと管理ツールの 32 ビット バージョン (SQL Server 2012 RTM Management Studio 含む)|SQL Server 2012 SP1 の 32 ビット バージョンにすべての製品をアップグレード|SQLServer2012SP1-KB2674319-x86-ENU.exe ( [こちら](https://go.microsoft.com/fwlink/p/?LinkID=268158)から)|  
-|[Microsoft SQL Server 2012 RTM Feature Pack](https://www.microsoft.com/download/details.aspx?id=44272)の 1 つ以上のツールの 32 ビット バージョン|Microsoft SQL Server 2012 SP1 用 Feature Pack の 32 ビット バージョンにツールをアップグレード|[Microsoft SQL Server 2012 SP1 Feature Pack](https://go.microsoft.com/fwlink/p/?LinkID=268266)の 1 つ以上のファイル|  
+|[Microsoft SQL Server 2012 RTM Feature Pack](https://www.microsoft.com/download/details.aspx?id=44272)の 1 つ以上のツールの 32 ビット バージョン|Microsoft SQL Server 2012 SP1 用 Feature Pack の 32 ビット バージョンにツールをアップグレード|[Microsoft SQL Server 2012 SP1 Feature Pack](https://www.microsoft.com/download/details.aspx?id=35575)の 1 つ以上のファイル|  
 |SQL Server 2012 の 32 ビット インストールなし|SP1 を含む 32 ビット バージョンの SQL Server 2012 をインストール (SP1 がプレインストールされた新しいインスタンス)|SQLServer2012SP1-FullSlipstream-x86-ENU.exe **および** SQLServer2012SP1-FullSlipstream-x86-ENU.box ( [こちら](https://go.microsoft.com/fwlink/p/?LinkID=268158)から)|  
 |SQL Server 2012 Management Studio の 32 ビット インストールなし|32 ビットの SQL Server 2012 Management Studio をインストール (SP1 を含む)|SQLManagementStudio_x86_ENU.exe ( [こちら](https://go.microsoft.com/fwlink/p/?LinkId=267905)から)|  
 |SQL Server 2012 RTM Express の 32 ビット バージョンなし|32 ビットの SQL Server 2012 Express をインストール (SP1 を含む)|SQLEXPR32_x86_ENU.exe ( [こちら](https://go.microsoft.com/fwlink/p/?LinkId=267905)から)|  
-|**SQL Server 2008** または **SQL Server 2008 R2**の 32 ビット インストール|32 ビットの SQL Server 2012 (SP1 含む) に**インプレース アップグレード**|SQLServer2012SP1-FullSlipstream-x86-ENU.exe **および** SQLServer2012SP1-FullSlipstream-x86-ENU.box ( [こちら](https://go.microsoft.com/fwlink/p/?LinkID=268158)から)|  
+|**SQL Server 2008** または **SQL Server 2008 R2** の 32 ビット インストール|32 ビットの SQL Server 2012 (SP1 含む) に **インプレース アップグレード**|SQLServer2012SP1-FullSlipstream-x86-ENU.exe **および** SQLServer2012SP1-FullSlipstream-x86-ENU.box ( [こちら](https://go.microsoft.com/fwlink/p/?LinkID=268158)から)|  
 |**64 ビット インストール:**|||  
 |SQL Server 2012 のいずれかのエディションの 64 ビット バージョン|SQL Server 2012 SP1 の 64 ビット バージョンにアップグレード|SQLServer2012SP1-KB2674319-x64-ENU.exe ( [こちら](https://go.microsoft.com/fwlink/p/?LinkID=268158)から)|  
 |SQL Server 2012 RTM Express の 64 ビット バージョン|SQL Server 2012 SP1 の 64 ビット バージョンにアップグレード|SQLServer2012SP1-KB2674319-x64-ENU.exe ( [こちら](https://go.microsoft.com/fwlink/p/?LinkID=268158)から)|  
 |SQL Server 2012 のクライアントと管理ツールのみの 64 ビット バージョン (SQL Server 2012 Management Studio 含む)|SQL Server 2012 SP1 の 64 ビット バージョンにクライアントと管理ツールをアップグレード|SQLManagementStudio_x64_ENU.exe ( [こちら](https://go.microsoft.com/fwlink/p/?LinkID=267905)から)|  
 |SQL Server 2012 Management Studio Express の 64 ビット バージョン|SQL Server 2012 SP1 Management Studio Express の 64 ビット バージョンにアップグレード|SQLManagementStudio_x64_ENU.exe ( [こちら](https://go.microsoft.com/fwlink/p/?LinkID=267905)から)|  
 |SQL Server 2012 のいずれかのエディションの 64 ビット バージョン **および** クライアントと管理ツールの 64 ビット バージョン (SQL Server 2012 RTM Management Studio を含む)|SQL Server 2012 SP1 の 64 ビット バージョンにすべての製品をアップグレード|SQLServer2012SP1-KB2674319-x64-ENU.exe ( [こちら](https://go.microsoft.com/fwlink/p/?LinkID=268158)から)|  
-|[Microsoft SQL Server 2012 RTM Feature Pack](https://www.microsoft.com/download/details.aspx?id=44272)の 1 つ以上のツールの 64 ビット バージョン|Microsoft SQL Server 2012 SP1 用 Feature Pack の 64 ビット バージョンにツールをアップグレード|[Microsoft SQL Server 2012 SP1 Feature Pack](https://go.microsoft.com/fwlink/p/?LinkID=268266)の 1 つ以上のファイル|  
+|[Microsoft SQL Server 2012 RTM Feature Pack](https://www.microsoft.com/download/details.aspx?id=44272)の 1 つ以上のツールの 64 ビット バージョン|Microsoft SQL Server 2012 SP1 用 Feature Pack の 64 ビット バージョンにツールをアップグレード|[Microsoft SQL Server 2012 SP1 Feature Pack](https://www.microsoft.com/download/details.aspx?id=35575)の 1 つ以上のファイル|  
 |SQL Server 2012 の 64 ビット インストールなし|SP1 を含む 64 ビット バージョンの SQL Server 2012 をインストール (SP1 がプレインストールされた新しいインスタンス)|SQLServer2012SP1-FullSlipstream-x64-ENU.exe **および** SQLServer2012SP1-FullSlipstream-x64-ENU.box ( [こちら](https://go.microsoft.com/fwlink/p/?LinkID=268158)から)|  
 |SQL Server 2012 Management Studio の 64 ビット インストールなし|64 ビットの SQL Server 2012 Management Studio をインストール (SP1 含む)|SQLManagementStudio_x64_ENU.exe ( [こちら](https://go.microsoft.com/fwlink/p/?LinkID=267905)から)|  
 |SQL Server 2012 RTM Express の 64 ビット バージョンなし|64 ビットの SQL Server 2012 Express をインストール (SP1 含む)|SQLEXPR_x64_ENU.exe ( [こちら](https://go.microsoft.com/fwlink/p/?LinkID=267905)から)|  
-|**SQL Server 2008** または **SQL Server 2008 R2**の 64 ビット インストール|64 ビットの SQL Server 2012 (SP1 含む) に**インプレース アップグレード**|SQLServer2012SP1-FullSlipstream-x64-ENU.exe **および** SQLServer2012SP1-FullSlipstream-x64-ENU.box ( [こちら](https://go.microsoft.com/fwlink/p/?LinkID=268158)から)|  
+|**SQL Server 2008** または **SQL Server 2008 R2** の 64 ビット インストール|64 ビットの SQL Server 2012 (SP1 含む) に **インプレース アップグレード**|SQLServer2012SP1-FullSlipstream-x64-ENU.exe **および** SQLServer2012SP1-FullSlipstream-x64-ENU.box ( [こちら](https://go.microsoft.com/fwlink/p/?LinkID=268158)から)|  
 
 ### <a name="known-issues-fixed-in-this-service-pack"></a>この Service Pack で修正された既知の問題  
 この Service Pack で修正されたすべてのバグと既知の問題については、 [サポート技術情報記事](https://support.microsoft.com/kb/2674319)を参照してください。   
@@ -154,7 +154,7 @@ Service Pack は、インストール メディアではなくオンラインで
 ### <a name="reporting-services"></a>Reporting Services  
   
 #### <a name="install-and-configure-sharepoint-server-2013-prior-to-installing-reporting-services"></a>Reporting Services をインストールする前に SharePoint Server 2013 をインストールおよび構成する  
-**問題:** SQL Server Reporting Services (SSRS) をインストールする**前に**、次の要件を完了します。  
+**問題:** SQL Server Reporting Services (SSRS) をインストールする **前に**、次の要件を完了します。  
   
 1.  SharePoint 2013 製品準備ツールを実行します。  
   
@@ -175,7 +175,7 @@ Service Pack は、インストール メディアではなくオンラインで
   
 -   "値 'SharePoint Principal' は、接続文字列プロパティ 'User Identity' ではサポートされていません。"  
   
-**対処法:** SharePoint Server 2013 に PowerPivot for SharePoint 2013 インストーラー パッケージ (**spPowerPivot.msi**) をインストールします。 インストーラー パッケージは、 [!INCLUDE[ssSQL11SP1](../includes/sssql11sp1-md.md)] 機能パックに付属しています。 この機能パックは、 [!INCLUDE[msCoName](../includes/msconame-md.md)] ダウンロード センターの [SQL Server 2012 SP1 機能パック](https://go.microsoft.com/fwlink/p/?LinkID=268266) からダウンロードできます。  
+**対処法:** SharePoint Server 2013 に PowerPivot for SharePoint 2013 インストーラー パッケージ (**spPowerPivot.msi**) をインストールします。 インストーラー パッケージは、 [!INCLUDE[ssSQL11SP1](../includes/sssql11sp1-md.md)] 機能パックに付属しています。 この機能パックは、 [!INCLUDE[msCoName](../includes/msconame-md.md)] ダウンロード センターの [SQL Server 2012 SP1 機能パック](https://www.microsoft.com/download/details.aspx?id=35575) からダウンロードできます。  
   
 #### <a name="power-view-sheets-in-a-powerpivot-workbook-are-deleted-after-a-scheduled-data-refresh"></a>定期データ更新の後で、PowerPivot ブックの Power View シートが削除される  
 **問題点**: PowerPivot for SharePoint アドインでは、Power View が含まれたブックで **定期データ更新** を使用すると、すべての Power View シートが削除されます。  
@@ -201,18 +201,18 @@ SQL Server 2012 Express Service Pack 1 (SP1) リリースには、SQL Server 201
   
 **対処法:** 次の手順に従って CDC コンポーネントを最新バージョンにアップグレードしてください。  
   
-1.  [SQL Server 2012 SP1 Feature Pack ダウンロード ページ](https://go.microsoft.com/fwlink/p/?LinkID=268266)から Change Data Capture Service for Oracle by Attunity の .msi ファイルをダウンロードします。  
+1.  [SQL Server 2012 SP1 Feature Pack ダウンロード ページ](https://www.microsoft.com/download/details.aspx?id=35575)から Change Data Capture Service for Oracle by Attunity の .msi ファイルをダウンロードします。  
   
 2.  .msi ファイルを実行します。  
   
 ### <a name="sql-server-data-tier-application-framework-dacfx"></a>SQL Server Data-Tier Application Framework (DACFx)  
 **インプレース アップグレードのサポート**  
   
-このバージョンの Data-Tier Application Framework (DACFx) では、以前のバージョンからのインプレース アップグレードがサポートされているので、このリリースにアップグレードする前に以前の DACFx インストールを削除する必要はありません。 今後のリリースの DACFx は、 [ここ](https://msdn.microsoft.com/library/dn702988.aspx)にあります。  
+このバージョンの Data-Tier Application Framework (DACFx) では、以前のバージョンからのインプレース アップグレードがサポートされているので、このリリースにアップグレードする前に以前の DACFx インストールを削除する必要はありません。 今後のリリースの DACFx は、 [ここ](/previous-versions/sql/sql-server-2016/dn702988(v=sql.130))にあります。  
   
 **選択的 XML インデックスのサポート**  
   
-SQL Server 2012 SP1 には、 [選択的 XML インデックス (SXI)](https://msdn.microsoft.com/598ecdcd-084b-4032-81b2-eed6ae9f5d44)のサポートが含まれています。これは SQL Server の新機能であり、高いパフォーマンスと効率で XML 列データのインデックスを作成できます。  
+SQL Server 2012 SP1 には、 [選択的 XML インデックス (SXI)](../relational-databases/xml/selective-xml-indexes-sxi.md)のサポートが含まれています。これは SQL Server の新機能であり、高いパフォーマンスと効率で XML 列データのインデックスを作成できます。  
   
 DACFx は、すべての DAC シナリオとクライアント ツールで、SXI インデックスをサポートするようになりました。 SXI がサポートされるのは、最新のバージョンの SSDT のみです。 SSDT RTM バージョンおよび September 2012 バージョンでは、SXI はサポートされません。  
   
@@ -232,7 +232,7 @@ DACFx は、すべての DAC シナリオとクライアント ツールで、SX
   
 -   BACPAC のインポート - .bacpac ファイルをインポートして、SQL Server または Azure SQL Database を新規に作成したり、空のデータベースにデータを入力したりできます。  
   
-SqlPackage.exe の完全なドキュメントは、MSDN の [ここ](https://msdn.microsoft.com/library/hh550080%28v=vs.103%29.aspx)にあります。  
+SqlPackage.exe の完全なドキュメントは、MSDN の [ここ](../tools/sqlpackage/sqlpackage.md)にあります。  
   
 **パッケージの互換性**  
   
@@ -243,11 +243,11 @@ SqlPackage.exe の完全なドキュメントは、MSDN の [ここ](https://msd
 -   以前のバージョンの DACFx で作成されたすべての DAC パッケージを、このリリースで使用できます。  
   
 ## <a name="see-also"></a>参照
-- [SQL Server 2012 サービス更新プログラムのインストール](https://msdn.microsoft.com/library/hh479746(v=sql.110).aspx)
+- [SQL Server 2012 サービス更新プログラムのインストール](/previous-versions/sql/sql-server-2012/hh479746(v=sql.110))
 - [SQL Server のバージョンとエディションを識別する方法](https://support.microsoft.com/help/321185)
-- [SQL Server 2012 サービス更新プログラムのインストール](https://msdn.microsoft.com/library/hh479746(v=sql.110).aspx)
+- [SQL Server 2012 サービス更新プログラムのインストール](/previous-versions/sql/sql-server-2012/hh479746(v=sql.110))
 - [SQL Server のバージョンとエディションを識別する方法](https://support.microsoft.com/help/321185) 
 - [SQL Server のバージョンとエディションを確認する方法](https://support.microsoft.com/kb/321185)  
-- [SQL Server 2014 の各エディションがサポートする機能](https://msdn.microsoft.com/5da61ff5-12b9-48e6-b3c8-0dacca1751c4)  
+- [SQL Server 2014 の各エディションがサポートする機能](./editions-and-components-of-sql-server-2016.md)  
 
 [!INCLUDE[get-help-options](../includes/paragraph-content/get-help-options.md)]

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: replication
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - MSdbms_datatype_mapping_TSQL
 - MSdbms_datatype_mapping
@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSdbms_datatype_mapping system table
 ms.assetid: 13289a0b-dfb0-4771-ad80-4c5f83cded99
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 8364437100eebf74c976ba0be2b9ad2d0d6c472a
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 8ea7ffaa872030b1a1d0d6ec20e17c69d64266b6
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89544549"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99160482"
 ---
 # <a name="msdbms_datatype_mapping-transact-sql"></a>MSdbms_datatype_mapping (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSdbms_datatype_mapping**テーブルには、ソースデータベース管理システム (DBMS) のデータ型から、マップ先 DBMS の1つ以上の特定のデータ型への許容データ型マッピングが含まれています。 このテーブルは **msdb** データベースに格納され、異種データベースレプリケーションに使用されます。  
+  **MSdbms_datatype_mapping** テーブルには、ソースデータベース管理システム (DBMS) のデータ型から、マップ先 DBMS の1つ以上の特定のデータ型への許容データ型マッピングが含まれています。 このテーブルは **msdb** データベースに格納され、異種データベースレプリケーションに使用されます。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

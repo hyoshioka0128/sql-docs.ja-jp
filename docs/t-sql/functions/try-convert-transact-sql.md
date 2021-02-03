@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - TRY_CONVERT_TSQL
 - TRY_CONVERT
@@ -18,13 +18,13 @@ helpviewer_keywords:
 ms.assetid: 3e6e7825-6482-4cb2-a8c2-9abc99e265a6
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: = azuresqldb-current||>= sql-server-2016 ||>= sql-server-linux-2017||= sqlallproducts-allversions||>= aps-pdw-2016||= azure-sqldw-latest
-ms.openlocfilehash: b6a58db5551e8e94b6069f7dba7e415034c45a2b
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: = azuresqldb-current||>= sql-server-2016 ||>= sql-server-linux-2017||>= aps-pdw-2016||= azure-sqldw-latest
+ms.openlocfilehash: 65d082cc3e4758688c7405e7bfc337dfb28d525d
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88467758"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99159706"
 ---
 # <a name="try_convert-transact-sql"></a>TRY_CONVERT (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -36,7 +36,6 @@ ms.locfileid: "88467758"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 TRY_CONVERT ( data_type [ ( length ) ], expression [, style ] )  
 ```  
   
@@ -125,7 +124,7 @@ Explicit conversion from data type int to xml is not allowed.
 ### <a name="c-try_convert-succeeds"></a>C. TRY_CONVERT が成功する  
  この例は、式を求められている形式にする必要があることを示しています。  
   
-```  
+```sql
 SET DATEFORMAT mdy;  
 SELECT TRY_CONVERT(datetime2, '12/31/2010') AS Result;  
 GO  

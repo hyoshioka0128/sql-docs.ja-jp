@@ -6,7 +6,7 @@ ms.date: 03/14/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: supportability
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - event notifications [SQL Server], database mirroring
 - Audit Database Mirroring Login event class
@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: d0bd436d-aade-4208-a7e5-75cf3b5d0ce9
 author: stevestein
 ms.author: sstein
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: b800c1fee12b34c17aeb28b252301bd13feef0f7
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: eb9145c2eb8c6d29f70a3c1426c2a35dc717154e
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88428554"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99193112"
 ---
 # <a name="audit-database-mirroring-login-event-class"></a>Audit Database Mirroring Login イベント クラス
 [!INCLUDE [SQL Server - ASDB](../../includes/applies-to-version/sql-asdb.md)]
@@ -45,7 +45,7 @@ ms.locfileid: "88428554"
 |**ObjectName**|**nvarchar**|この接続に使用する接続文字列。|34|いいえ|  
 |**OwnerName**|**nvarchar**|ローカルのデータベース ミラーリング エンドポイントで構成されたサポート済みの認証方式。 複数の方式を使用できる場合は、受け入れ側 (対象) のエンドポイントにより、最初に試行される方式が決まります。 次のいずれかの値になります。<br /><br /> <br /><br /> **なし**。 認証方式が構成されていません。<br /><br /> **NTLM**: NTLM 認証が必要です。<br /><br /> **KERBEROS**: Kerberos 認証が必要です。<br /><br /> **NEGOTIATE**: Windows が認証方式をネゴシエートします。<br /><br /> **CERTIFICATE**: エンドポイントに構成されている証明書が必要です。これは、 **master** データベースに格納されています。<br /><br /> **NTLM, CERTIFICATE**: NTLM またはエンドポイントの証明書を認証方式として受け付けます。<br /><br /> **KERBEROS, CERTIFICATE**: Kerberos またはエンドポイントの証明書を認証方式として受け付けます。<br /><br /> **NEGOTIATE, CERTIFICATE**: Windows が認証方式、または認証に使用できるエンドポイントの証明書をネゴシエートします。<br /><br /> **CERTIFICATE, NTLM**: エンドポイントの証明書または NTLM を認証方式として受け付けます。<br /><br /> **CERTIFICATE, KERBEROS**: エンドポイントの証明書または Kerberos を認証方式として受け付けます。<br /><br /> **CERTIFICATE, NEGOTIATE**: エンドポイントの証明書を認証方式として受け付けるか、Windows が認証方式をネゴシエートします。|37|いいえ|  
 |**ProviderName**|**nvarchar**|この接続に使用する認証方式。|46|いいえ|  
-|**RoleName**|**nvarchar**|接続のロール。 **initiator** または **target**のいずれかです。|38|いいえ|  
+|**RoleName**|**nvarchar**|接続のロール。 **initiator** または **target** のいずれかです。|38|いいえ|  
 |**ServerName**|**nvarchar**|トレースされる [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスの名前。|26|いいえ|  
 |**SPID**|**int**|クライアントに関連付けられているプロセスに、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によって割り当てられているサーバー プロセス ID。|12|はい|  
 |**StartTime**|**datetime**|イベントの開始時刻 (取得できた場合)。|14|はい|  

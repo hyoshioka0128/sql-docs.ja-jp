@@ -1,7 +1,7 @@
 ---
 title: エイリアス化
-description: SQL Data Warehouse と Parallel Data Warehouse で別名を利用します。
-titleSuffix: Azure SQL Data Warehouse
+description: Azure Synapse Analytics と Parallel Data Warehouse でのエイリアス化。
+titleSuffix: Azure Synapse Analytics
 ms.custom: seo-lt-2019
 ms.date: 03/16/2017
 ms.prod: sql
@@ -11,15 +11,15 @@ ms.topic: conceptual
 ms.assetid: 7b3a5c74-05cf-4385-8ee6-6176d003cb8a
 author: shkale-msft
 ms.author: shkale
-monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest || = sqlallproducts-allversions'
-ms.openlocfilehash: 01afcc83b2a7094ea65607cac87437854e828e11
-ms.sourcegitcommit: 01297f2487fe017760adcc6db5d1df2c1234abb4
+monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
+ms.openlocfilehash: a70959afb4e61f2049e19cfd1de96f0434abcb09
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86197309"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97476673"
 ---
-# <a name="aliasing-azure-sql-data-warehouse-parallel-data-warehouse"></a>別名 (Azure SQL Data Warehouse、Parallel Data Warehouse)
+# <a name="aliasing-azure-synapse-analytics-parallel-data-warehouse"></a>エイリアス化 (Azure Synapse Analytics、Parallel Data Warehouse)
 
 [!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
 

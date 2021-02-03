@@ -5,17 +5,17 @@ ms.custom: seo-lt-2019
 ms.date: 04/03/2010
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
-ms.topic: conceptual
-author: MashaMSFT
-ms.author: mathoma
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 6b6afc86afc567e2d6f93b45dae8fb9fd4861525
-ms.sourcegitcommit: 7035d9471876c70b99c58bf9b46af5cce6e9c66c
+ms.technology: availability-groups
+ms.topic: reference
+author: cawrites
+ms.author: chadam
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: 340fcfa12f3432a09821132f44e8d58672be8198
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87522406"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97640975"
 ---
 # <a name="always-on-availability-group-system-object-reference"></a>AlwaysOn 可用性グループ システム オブジェクト リファレンス
 

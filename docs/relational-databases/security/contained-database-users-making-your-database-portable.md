@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: e57519bb-e7f4-459b-ba2f-fd42865ca91d
 author: VanMSFT
 ms.author: vanto
-monikerRange: =azuresqldb-current||>=sql-server-2016||=azure-sqldw-latest||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: a76bc720df1808290a09e2cec5fad1c0667ae389
-ms.sourcegitcommit: 822d4b3cfa53269535500a3db5877a82b5076728
+monikerRange: =azuresqldb-current||>=sql-server-2016||=azure-sqldw-latest||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 9215ac429ff45d80a2ba1ea7d913a63ab49e34e7
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87988793"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97480953"
 ---
 # <a name="contained-database-users---making-your-database-portable"></a>包含データベース ユーザー - データベースの可搬性を確保する
 
@@ -41,7 +41,7 @@ ms.locfileid: "87988793"
 
  包含データベース ユーザー モデルでは、ログインが master データベースには存在しません。 認証プロセスはユーザー データベースで実行されます。master データベースには、ユーザー データベース内のデータベース ユーザーに関連付けられたログインは存在しません。 包含データベース ユーザー モデルは Windows 認証と [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 認証の両方をサポートしており、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] と [!INCLUDE[ssSDS](../../includes/sssds-md.md)]の両方で使用できます。 包含データベース ユーザーとして接続するには必ず、ユーザー データベースのパラメーターが接続文字列に含まれている必要があります。 [!INCLUDE[ssDE](../../includes/ssde-md.md)] はそれを基に、認証プロセスがどちらのデータベースで管理されるかを判別します。 包含データベース ユーザーのアクティビティは、そのユーザーを認証するデータベースに限定されます。そのため包含データベース ユーザーとして接続しているときは、そのユーザーが必要とする個々のデータベースに、ユーザー アカウントを別々に作成する必要があります。 データベースを切り替えるには、 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] ユーザー側で新しい接続を作成する必要があります。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 内の包含データベース ユーザーは、別のデータベースに同一ユーザーが存在する場合、データベースを切り替えることができます。  
   
-**Azure:** [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] と [!INCLUDE[ssSDW_md](../../includes/sssdw-md.md)] は、包含データベース ユーザーとしての Azure Active Directory ID をサポートします。 [!INCLUDE[ssSDS_md](../../includes/sssds-md.md)] では、 [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] 認証で包含データベース ユーザーがサポートされますが、 [!INCLUDE[ssSDW_md](../../includes/sssdw-md.md)] ではサポートされません。 詳細については、[Azure Active Directory 認証を使用した SQL Database への接続](https://azure.microsoft.com/documentation/articles/sql-database-aad-authentication/)に関するページを参照してください。 Azure Active Directory 認証を使用するとき、Active Directory ユニバーサル認証を使用し、SSMS から接続できます。  管理者は多要素認証を要求するようにユニバーサル認証を設定できます。多要素認証では、電話、テキスト メッセージ、PIN のあるスマート カード、モバイル アプリ通知を利用して ID を確認します。 詳細については、「 [SQL Database と SQL Data Warehouse での Azure AD MFA のための SSMS のサポート](https://azure.microsoft.com/documentation/articles/sql-database-ssms-mfa-authentication/)」をご覧ください。  
+**Azure:** [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] と [!INCLUDE[ssSDW_md](../../includes/sssdw-md.md)] は、包含データベース ユーザーとしての Azure Active Directory ID をサポートします。 [!INCLUDE[ssSDS_md](../../includes/sssds-md.md)] では、 [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] 認証で包含データベース ユーザーがサポートされますが、 [!INCLUDE[ssSDW_md](../../includes/sssdw-md.md)] ではサポートされません。 詳細については、[Azure Active Directory 認証を使用した SQL Database への接続](/azure/azure-sql/database/authentication-aad-overview)に関するページを参照してください。 Azure Active Directory 認証を使用するとき、Active Directory ユニバーサル認証を使用し、SSMS から接続できます。  管理者は多要素認証を要求するようにユニバーサル認証を設定できます。多要素認証では、電話、テキスト メッセージ、PIN のあるスマート カード、モバイル アプリ通知を利用して ID を確認します。 詳細については、[SQL Database と Azure Synapse Analytics での Azure AD MFA の SSMS サポート](/azure/azure-sql/database/authentication-mfa-ssms-overview)に関する記事を参照してください。  
   
  [!INCLUDE[ssSDS](../../includes/sssds-md.md)] と [!INCLUDE[ssSDW_md](../../includes/sssdw-md.md)]に関しては、接続文字列にはデータベース名が常に必要となるため、従来のモデルから包含データベース ユーザー モデルに切り替える際、接続文字列に対する変更は不要です。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 接続の場合は、データベースの名前を接続文字列に追加する必要があります (既に存在する場合は不要)。  
   
@@ -60,8 +60,8 @@ ms.locfileid: "87988793"
   
  [!INCLUDE[ssSDS](../../includes/sssds-md.md)] のファイアウォール規則の詳細については、次のトピックを参照してください。  
   
-- [Azure SQL Database ファイアウォール](https://msdn.microsoft.com/library/azure/ee621782.aspx)  
-- [方法: ファイアウォール設定を構成する (Azure SQL Database)](https://msdn.microsoft.com/library/azure/jj553530.aspx)  
+- [Azure SQL Database ファイアウォール](/previous-versions/azure/ee621782(v=azure.100))  
+- [方法: ファイアウォール設定を構成する (Azure SQL Database)](/previous-versions/azure/jj553530(v=azure.100))  
 - [sp_set_firewall_rule &#40;Azure SQL データベース&#41;](../../relational-databases/system-stored-procedures/sp-set-firewall-rule-azure-sql-database.md)  
 - [sp_set_database_firewall_rule &#40;Azure SQL データベース&#41;](../../relational-databases/system-stored-procedures/sp-set-database-firewall-rule-azure-sql-database.md)  
   
@@ -79,24 +79,34 @@ ms.locfileid: "87988793"
 
 Azure SQL Managed Instance は、包含データベースのコンテキストでオンプレミス SQL Server のように動作します。 自分の包含ユーザーを作成するときは、ご利用のデータベースのコンテキストを master データベースからユーザーデータベースに変更してください。 また、containment オプションを設定するときは、ユーザー データベースへのアクティブな接続が存在しないようにする必要があります。 
 
-次に例を示します。 
+
+次に例を示します。
+
+> [!WARNING]
+> 次のスクリプトを実行する前に、Managed Instance データベースで他の接続がアクティブになっていないことを確認してください。 このスクリプトにより、データベースで実行されている他のプロセスが中断される可能性があります。
 
 ```sql
 Use MASTER;
 GO 
 
 ALTER DATABASE Test
-SET containment=partial
+SET RESTRICTED_USER
+WITH ROLLBACK IMMEDIATE;
 
+ALTER DATABASE Test
+SET containment=partial;
+
+ALTER DATABASE Test
+SET MULTI_USER;
 
 USE Test;  
-GO  
+GO 
+
 CREATE USER Carlo  
 WITH PASSWORD='Enterpwdhere*'  
 
-
 SELECT containment_desc FROM sys.databases
-WHERE name='test'
+WHERE name='Test'
 ```
 
   
@@ -104,7 +114,7 @@ WHERE name='test'
   
 - [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]では、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のインスタンスに対して包含データベース ユーザーを有効にする必要があります。 詳細については、[包含データベース認証サーバー構成オプション](../../database-engine/configure-windows/contained-database-authentication-server-configuration-option.md)を参照してください。  
 - 包含データベース ユーザーとログインの名前が重複しない場合は、アプリケーションで共存させることができます。  
-- **name1** という名前のログインが master データベースに存在し、なおかつ **name1**という名前の包含データベース ユーザーを作成した場合、接続文字列でデータベース名を指定すると、そのデータベースに接続するときのログイン コンテキストよりも、データベース ユーザーのコンテキストが優先されます。 つまり、包含データベース ユーザーは、同じ名前のログインに優先します。  
+- **name1** という名前のログインが master データベースに存在し、なおかつ **name1** という名前の包含データベース ユーザーを作成した場合、接続文字列でデータベース名を指定すると、そのデータベースに接続するときのログイン コンテキストよりも、データベース ユーザーのコンテキストが優先されます。 つまり、包含データベース ユーザーは、同じ名前のログインに優先します。  
 - [!INCLUDE[ssSDS](../../includes/sssds-md.md)] では、包含データベース ユーザーの名前を、サーバーの管理者アカウントと同じ名前にすることはできません。  
 - [!INCLUDE[ssSDS](../../includes/sssds-md.md)] サーバーの管理者アカウントは、包含データベース ユーザーにできません。 サーバー管理者は、包含データベース ユーザーを作成し、管理するための十分な権限を持っています。 サーバー管理者は、ユーザー データベースの包含データベース ユーザーに権限を付与できます。  
 - 包含データベース ユーザーはデータベース レベル プリンシパルであるため、使用するすべてのデータベースで包含データベース ユーザーを作成する必要があります。 ID はデータベースに限定され、同じサーバー内の別のデータベースで同じ名前とパスワードを持つユーザーとは完全に独立しています。  
@@ -115,5 +125,4 @@ WHERE name='test'
  [包含データベース](../../relational-databases/databases/contained-databases.md)   
  [包含データベースでのセキュリティのベスト プラクティス](../../relational-databases/databases/security-best-practices-with-contained-databases.md)   
  [CREATE USER &#40;Transact-SQL&#41;](../../t-sql/statements/create-user-transact-sql.md)   
- [Azure Active Directory の認証を使用して、SQL データベースに接続します。](https://azure.microsoft.com/documentation/articles/sql-database-aad-authentication/)  
-  
+ [Azure Active Directory の認証を使用して、SQL データベースに接続します。](/azure/azure-sql/database/authentication-aad-overview)  

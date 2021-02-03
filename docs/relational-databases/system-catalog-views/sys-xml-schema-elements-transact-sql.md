@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.xml_schema_elements
 - sys.xml_schema_elements_TSQL
@@ -18,19 +18,19 @@ dev_langs:
 helpviewer_keywords:
 - sys.xml_schema_elements catalog view
 ms.assetid: 190ed0cd-0c5e-4607-9db4-9e77cacf17d7
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 008fb9d5d8beb5f746d02be3357eb1e73ae58ea9
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: e8b8e424b022ea8d05532eb6046c5780c26ef1de
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89543967"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99211985"
 ---
 # <a name="sysxml_schema_elements-transact-sql"></a>sys.xml_schema_elements (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **E**の**symbol_space**型である XML スキーマコンポーネントごとに1行の値を返します。  
+  **E** の **symbol_space** 型である XML スキーマコンポーネントごとに1行の値を返します。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

@@ -11,13 +11,13 @@ dev_langs:
 - TSQL
 author: pmasl
 ms.author: umajay
-monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest || = sqlallproducts-allversions'
-ms.openlocfilehash: 03ef74fb824c39aee0045f378f6aaf5268052794
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
+ms.openlocfilehash: a4b3316c85c7f4e1cd0843f81d1e33b5a1e084fd
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88479840"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97476753"
 ---
 # <a name="dbcc-pdw_showpartitionstats-transact-sql"></a>DBCC PDW_SHOWPARTITIONSTATS (Transact-SQL)
 
@@ -30,10 +30,12 @@ ms.locfileid: "88479840"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-Show the partition stats for a table  
+--Show the partition stats for a table  
 DBCC PDW_SHOWPARTITIONSTATS ( " [ database_name . [ schema_name ] . ] | [ schema_name.] table_name  ")  
 [;]  
 ```  
+
+[!INCLUDE[synapse-analytics-od-unsupported-syntax](../../includes/synapse-analytics-od-unsupported-syntax.md)]
 
 ## <a name="arguments"></a>引数  
  `[ database_name . [ schema_name ] . | schema_name . ] table_name`  

@@ -20,14 +20,14 @@ helpviewer_keywords:
 - DROP SYNONYM statement
 - dropping synonyms
 ms.assetid: 23578932-e4de-4c39-a5a0-ce45139c4269
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: c79cd921290a89d040edd85fc218c9de6baa8f37
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 2a3dc4b5974059062815000f1671d1fa425137a7
+ms.sourcegitcommit: 713e5a709e45711e18dae1e5ffc190c7918d52e7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88426594"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98688883"
 ---
 # <a name="drop-synonym-transact-sql"></a>DROP SYNONYM (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -38,8 +38,7 @@ ms.locfileid: "88426594"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 DROP SYNONYM [ IF EXISTS ] [ schema. ] synonym_name  
 ```  
   
@@ -47,7 +46,7 @@ DROP SYNONYM [ IF EXISTS ] [ schema. ] synonym_name
 
 ## <a name="arguments"></a>引数
  *IF EXISTS*  
-**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から[現在のバージョン](https://go.microsoft.com/fwlink/p/?LinkId=299658)まで)
+**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] から [現在のバージョン](../../sql-server/what-s-new-in-sql-server-2016.md)まで)
   
  条件付きでは既に存在する場合にのみ、シノニムを削除します。  
   
@@ -74,7 +73,7 @@ DROP SYNONYM [ IF EXISTS ] [ schema. ] synonym_name
 ## <a name="examples"></a>例  
  次の例では、まずシノニム `MyProduct` を作成し、その後シノニムを削除します。  
   
-```  
+```sql  
 USE tempdb;  
 GO  
 -- Create a synonym for the Product table in AdventureWorks2012.  
@@ -91,5 +90,3 @@ GO
 ## <a name="see-also"></a>参照  
  [CREATE SYNONYM &#40;Transact-SQL&#41;](../../t-sql/statements/create-synonym-transact-sql.md)   
  [EVENTDATA &#40;Transact-SQL&#41;](../../t-sql/functions/eventdata-transact-sql.md)  
-  
-  

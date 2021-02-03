@@ -37,12 +37,12 @@ helpviewer_keywords:
 ms.assetid: 8bf1316f-c0ef-49d0-90a7-3946bc8e7a89
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 88e4bea72d38e7c4a60bfb89d9962c58a99e4804
-ms.sourcegitcommit: 883435b4c7366f06ac03579752093737b098feab
+ms.openlocfilehash: 2043bf4c60a1154b719d81b583d055b60b85c6ec
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89062331"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172334"
 ---
 # <a name="hints-transact-sql---table"></a>ヒント (Transact-SQL) - Table
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -307,13 +307,19 @@ READUNCOMMITTED および NOLOCK は、挿入、更新、削除の各操作に�
 分離レベルについての詳細については、「[SET TRANSACTION ISOLATION LEVEL &#40;Transact-SQL&#41;](../../t-sql/statements/set-transaction-isolation-level-transact-sql.md)」を参照してください。  
   
 > [!NOTE]  
-> READUNCOMMITTED が指定されているときにエラー メッセージ 601 が表示された場合は、デッドロック エラー (1205) を解決するときと同じように解決し、ステートメントを再実行してください。  
+> READUNCOMMITTED が指定されているときに[エラー メッセージ 601](../../relational-databases/errors-events/database-engine-events-and-errors.md#errors--2-to-999) が表示された場合は、デッドロック エラー ([エラー メッセージ 1205](../../relational-databases/errors-events/mssqlserver-1205-database-engine-error.md)) を解決するときと同じように解決し、ステートメントを再実行してください。  
   
 REPEATABLEREAD  
 REPEATABLE READ 分離レベルで実行しているトランザクションと同じロック セマンティクスでスキャンを実行することを指定します。 分離レベルについての詳細については、「[SET TRANSACTION ISOLATION LEVEL &#40;Transact-SQL&#41;](../../t-sql/statements/set-transaction-isolation-level-transact-sql.md)」を参照してください。  
   
 ROWLOCK  
-通常取得されるページ ロックまたはテーブル ロックの代わりに、行ロックを取得することを指定します。 SNAPSHOT 分離レベルで実行中のトランザクションにおいてこのオプションを指定しても、UPDLOCK や HOLDLOCK など、ロックが必要な他のテーブル ヒントと組み合わせて指定しない限り、行ロックは取得されません。  
+通常取得されるページ ロックまたはテーブル ロックの代わりに、行ロックを取得することを指定します。 SNAPSHOT 分離レベルで実行中のトランザクションにおいてこのオプションを指定しても、UPDLOCK や HOLDLOCK など、ロックが必要な他のテーブル ヒントと組み合わせて指定しない限り、行ロックは取得されません。 ROWLOCK は、クラスター化された列ストア インデックスのあるテーブルと共に使用できません。 次の例では、アプリケーションに[エラー 651](../../relational-databases/errors-events/database-engine-events-and-errors.md#errors--2-to-999) が返されます。  
+
+```sql 
+UPDATE [dbo].[FactResellerSalesXL_CCI] WITH (ROWLOCK)
+SET UnitPrice = 50
+WHERE ProductKey = 150;
+```  
   
 SERIALIZABLE  
 HOLDLOCK に相当します。 共有ロックがより制限的になります。テーブルまたはデータ ページが不要になったときに、トランザクションが完了しているかどうかにかかわらず共有ロックが解除されるのではなく、共有ロックはトランザクションが完了するまで保持されます。 SERIALIZABLE 分離レベルで実行しているトランザクションと同じセマンティクスで、スキャンが実行されます。 分離レベルについての詳細については、「[SET TRANSACTION ISOLATION LEVEL &#40;Transact-SQL&#41;](../../t-sql/statements/set-transaction-isolation-level-transact-sql.md)」を参照してください。  
@@ -321,11 +327,11 @@ HOLDLOCK に相当します。 共有ロックがより制限的になります�
 SNAPSHOT  
 **適用対象**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降。 
   
-メモリ最適化されたテーブルは、SNAPSHOT 分離でアクセスされます。 SNAPSHOT は、メモリ最適化されたテーブルだけで使用できまます (ディスク ベースのテーブルでは使用できません)。 詳細については、「[メモリ最適化テーブルの概要](../../relational-databases/in-memory-oltp/introduction-to-memory-optimized-tables.md)」を参照してください。  
+メモリ最適化されたテーブルは、SNAPSHOT 分離でアクセスされます。 次の例のように、SNAPSHOT は、メモリ最適化されたテーブルだけで使用できます (ディスク ベースのテーブルでは使用できません)。 詳細については、「[メモリ最適化テーブルの概要](../../relational-databases/in-memory-oltp/introduction-to-memory-optimized-tables.md)」を参照してください。  
   
 ```sql 
-SELECT * FROM dbo.Customers AS c   
-WITH (SNAPSHOT)   
+SELECT * 
+FROM dbo.Customers AS c WITH (SNAPSHOT)   
 LEFT JOIN dbo.[Order History] AS oh   
     ON c.customer_id=oh.customer_id;  
 ```  
@@ -392,7 +398,7 @@ GO
 フィルター選択されたインデックスに必要な値が SET オプションにない場合、クエリ オプティマイザーはインデックス ヒントを無視します。 詳細については、「[CREATE INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-index-transact-sql.md)」を参照してください。  
   
 ## <a name="using-noexpand"></a>NOEXPAND の使用  
-NOEXPAND は*インデックス付きビュー*にのみ適用できます。 インデックス付きビューとは、一意なクラスター化インデックスが作成されているビューを示します。 インデックス付きビューおよびベース テーブルの両方に存在する列への参照がクエリに含まれていて、クエリ オプティマイザーがクエリの実行にインデックス付きビューを使用する方が最適であると判断した場合、クエリ オプティマイザーはビューのインデックスを利用します。 この機能は、*インデックス付きビューのマッチング*と呼ばれます。 [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] SP1 より前のバージョンでは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の特定のエディションでのみ、クエリ オプティマイザーではインデックス付きビューが自動的に使用されます。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の各エディションでサポートされる機能の一覧については、[SQL Server 2016 のエディションでサポートされる機能](../../sql-server/editions-and-supported-features-for-sql-server-2016.md)、[SQL Server 2017 のエディションでサポートされる機能](../../SQL-server/editions-and-components-of-SQL-server-2017.md)、および [SQL Server 2019 のエディションでサポートされる機能](../../sql-server/editions-and-components-of-sql-server-version-15.md) に関するページを参照してください。  
+NOEXPAND は *インデックス付きビュー* にのみ適用できます。 インデックス付きビューとは、一意なクラスター化インデックスが作成されているビューを示します。 インデックス付きビューおよびベース テーブルの両方に存在する列への参照がクエリに含まれていて、クエリ オプティマイザーがクエリの実行にインデックス付きビューを使用する方が最適であると判断した場合、クエリ オプティマイザーはビューのインデックスを利用します。 この機能は、*インデックス付きビューのマッチング* と呼ばれます。 [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] SP1 より前のバージョンでは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の特定のエディションでのみ、クエリ オプティマイザーではインデックス付きビューが自動的に使用されます。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の各エディションでサポートされる機能の一覧については、[SQL Server 2016 のエディションでサポートされる機能](../../sql-server/editions-and-components-of-sql-server-2016.md)、[SQL Server 2017 のエディションでサポートされる機能](../../SQL-server/editions-and-components-of-SQL-server-2017.md)、および [SQL Server 2019 のエディションでサポートされる機能](../../sql-server/editions-and-components-of-sql-server-version-15.md) に関するページを参照してください。  
   
 ただし、クエリ オプティマイザーで、インデックス付きビューのマッチングを検討したり、NOEXPAND ヒントで参照されるインデックス付きビューを使用したりするには、以下の SET オプションを ON に設定する必要があります。  
 
@@ -413,7 +419,7 @@ NOEXPAND は*インデックス付きビュー*にのみ適用できます。 �
  クエリ オプティマイザーがインデックス付きビューのインデックスを使用するように強制するには、NOEXPAND オプションを指定します。 このヒントは、ビューがクエリ内でも指定されている場合にのみ使用できます。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、FROM 句で直接ビューを指定していないクエリで、特定のインデックス付きビューが使用されるようにするヒントは用意されていません。しかし、クエリ オプティマイザーでは、インデックス付きビューがクエリで直接参照されていなくても、その使用が検討されます。 NOEXPAND テーブル ヒントを使用すると、[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] によってインデックス付きビューに対してのみ自動的に統計が作成されます。 このヒントを省略すると、統計を手動で作成することでは解決できない、統計がないことに関する実行プランの警告につながる場合があります。 クエリの最適化中、[!INCLUDE[ssde_md](../../includes/ssde_md.md)] は、クエリがビューを直接参照し、NOEXPAND ヒントが使用されるときに、自動的または手動で作成された統計情報の表示を使用します。    
   
 ## <a name="using-a-table-hint-as-a-query-hint"></a>クエリ ヒントとしてのテーブル ヒントの使用  
- OPTION (TABLE HINT) 句を使用すると、*テーブル ヒント*をクエリ ヒントとして指定することもできます。 [プラン ガイド](../../relational-databases/performance/plan-guides.md)のコンテキスト内でのみ、テーブル ヒントをクエリ ヒントとして使用することをお勧めします。 アドホック クエリに対しては、これらのヒントをテーブル ヒントとしてのみ指定します。 詳細については、「[クエリ ヒント &#40;Transact-SQL&#41;](../../t-sql/queries/hints-transact-sql-query.md)」を参照してください。  
+ OPTION (TABLE HINT) 句を使用すると、*テーブル ヒント* をクエリ ヒントとして指定することもできます。 [プラン ガイド](../../relational-databases/performance/plan-guides.md)のコンテキスト内でのみ、テーブル ヒントをクエリ ヒントとして使用することをお勧めします。 アドホック クエリに対しては、これらのヒントをテーブル ヒントとしてのみ指定します。 詳細については、「[クエリ ヒント &#40;Transact-SQL&#41;](../../t-sql/queries/hints-transact-sql-query.md)」を参照してください。  
   
 ## <a name="permissions"></a>アクセス許可  
  KEEPIDENTITY、IGNORE_CONSTRAINTS、IGNORE_TRIGGERS の各ヒントには、テーブルに対する `ALTER` 権限が必要です。  
@@ -476,5 +482,4 @@ AND (d.OrderQty > 5 OR d.LineTotal < 1000.00);
  [OPENROWSET &#40;Transact-SQL&#41;](../../t-sql/functions/openrowset-transact-sql.md)   
  [Hints &#40;Transact-SQL&#41;](../../t-sql/queries/hints-transact-sql.md)   
  [クエリ ヒント &#40;Transact-SQL&#41;](../../t-sql/queries/hints-transact-sql-query.md)  
-  
   

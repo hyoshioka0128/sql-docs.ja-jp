@@ -1,6 +1,6 @@
 ---
 title: R チュートリアル:モデルの構築と保存
-description: SQL Server のデータベース内分析に使用される R 言語モデルを構築する方法を示すチュートリアルです。
+description: SQL Server のデータベース内分析に使用される R 言語機械学習モデルを構築する方法について説明します。
 ms.prod: sql
 ms.technology: machine-learning-services
 ms.date: 11/26/2018
@@ -8,18 +8,18 @@ ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 8ae0de4af29dd68e71300de52875044a8c2d64b4
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 1974c58ad2adbad3b7e136ffa36ffa88b5783fc6
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85730428"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470053"
 ---
 # <a name="build-an-r-model-and-save-to-sql-server-walkthrough"></a>R モデルを構築して SQL Server に保存する (チュートリアル)
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2016](../../includes/applies-to-version/sqlserver2016.md)]
 
-このステップでは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]で機械学習モデルを構築し、モデルを保存する方法について説明します。 モデルを保存することにより、システム ストアド プロシージャ [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) または [PREDICT (T-SQL) 関数](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql)を使用して、[!INCLUDE[tsql](../../includes/tsql-md.md)] コードから直接呼び出すことができます。
+このステップでは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]で機械学習モデルを構築し、モデルを保存する方法について説明します。 モデルを保存することにより、システム ストアド プロシージャ [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) または [PREDICT (T-SQL) 関数](../../t-sql/queries/predict-transact-sql.md)を使用して、[!INCLUDE[tsql](../../includes/tsql-md.md)] コードから直接呼び出すことができます。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -67,7 +67,7 @@ GO
 
 このモデルは、タクシー運転手が特定の乗車でチップを受け取る可能性が高いかどうかを予測する二項分類子です。 前のレッスンで作成したデータ ソースを使用し、ロジスティック回帰を使用してチップ分類子をトレーニングします。
 
-1. [RevoScaleR](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxlogit) パッケージに含まれる **rxLogit** 関数を呼び出し、ロジスティック回帰モデルを作成します。 
+1. [RevoScaleR](/r-server/r-reference/revoscaler/rxlogit) パッケージに含まれる **rxLogit** 関数を呼び出し、ロジスティック回帰モデルを作成します。 
 
     ```R
     system.time(logitObj <- rxLogit(tipped ~ passenger_count + trip_distance + trip_time_in_secs + direct_distance, data = featureDataSource));
@@ -109,7 +109,7 @@ GO
 
 モデルが構築されたので、そのモデルを使用して運転手が特定のドライブでチップを受け取る可能性が高いかどうかを予測できます。
 
-1. 最初に、[RxSqlServerData](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxsqlserverdata) 関数を使用して、スコアリング結果を格納するためのデータ ソース オブジェクトを定義します。
+1. 最初に、[RxSqlServerData](/r-server/r-reference/revoscaler/rxsqlserverdata) 関数を使用して、スコアリング結果を格納するためのデータ ソース オブジェクトを定義します。
 
     ```R
     scoredOutput <- RxSqlServerData(
@@ -123,7 +123,7 @@ GO
   
     + 予測値を格納するテーブルを作成するには、rxSqlServer データ関数を実行する SQL ログインが、データベースの DDL 権限を持っている必要があります。 ログインでテーブルを作成できない場合、ステートメントは失敗します。
 
-2. [rxPredict](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxpredict) 関数を呼び出して結果を生成します。
+2. [rxPredict](/r-server/r-reference/revoscaler/rxpredict) 関数を呼び出して結果を生成します。
 
     ```R
     rxPredict(modelObject = logitObj,
@@ -138,7 +138,7 @@ GO
 
 ## <a name="plot-model-accuracy"></a>モデル精度のプロット
 
-モデルの精度を把握するには、[rxRoc](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxroc) 関数を使用して受信者側の動作曲線をプロットします。 rxRoc は、リモート コンピューティング コンテキストをサポートする RevoScaleR パッケージが提供する新しい関数の 1 つなので、2 つのオプションがあります。
+モデルの精度を把握するには、[rxRoc](/r-server/r-reference/revoscaler/rxroc) 関数を使用して受信者側の動作曲線をプロットします。 rxRoc は、リモート コンピューティング コンテキストをサポートする RevoScaleR パッケージが提供する新しい関数の 1 つなので、2 つのオプションがあります。
 
 + rxRoc 関数を使用してリモート コンピューティング コンテキストでプロットを実行し、プロットをローカル クライアントに返すことができます。
 
@@ -173,7 +173,7 @@ GO
 
 コマンド プロンプトで `rxGetComputeContext()` を実行することで、コンピューティング コンテキストがローカルであることを確認できます。 戻り値は "RxLocalSeq コンピューティング コンテキスト" にする必要があります。
 
-1. ローカル コンピューティング コンテキストでは、プロセスはほぼ同じです。 [rxImport](https://docs.microsoft.com/r-server/r-reference/revoscaler/rximport) 関数を使用して、指定したデータをローカルの R 環境に読み込みます。
+1. ローカル コンピューティング コンテキストでは、プロセスはほぼ同じです。 [rxImport](/r-server/r-reference/revoscaler/rximport) 関数を使用して、指定したデータをローカルの R 環境に読み込みます。
 
     ```R
     scoredOutput = rxImport(scoredOutput)
@@ -203,7 +203,7 @@ GO
 
 ## <a name="deploy-the-model"></a>モデルをデプロイする
 
-モデルを構築した後、それが正常に実行されていることを確かめたら、おそらく、組織内のユーザーまたはユーザーがモデルを利用できるサイトにデプロイしたり、定期的にモデルを再トレーニングしたり再調整したりすることができます。 このプロセスは、モデルの*運用*と呼ばれることがあります。 SQL Server では、ストアド プロシージャに R コードを埋め込むことによって運用が実現されます。 コードはプロシージャ内に存在するので、SQL Server に接続できる任意のアプリケーションから呼び出すことができます。
+モデルを構築した後、それが正常に実行されていることを確かめたら、おそらく、組織内のユーザーまたはユーザーがモデルを利用できるサイトにデプロイしたり、定期的にモデルを再トレーニングしたり再調整したりすることができます。 このプロセスは、モデルの *運用* と呼ばれることがあります。 SQL Server では、ストアド プロシージャに R コードを埋め込むことによって運用が実現されます。 コードはプロシージャ内に存在するので、SQL Server に接続できる任意のアプリケーションから呼び出すことができます。
 
 外部アプリケーションからモデルを呼び出すには、実稼働に使用されるデータベースにモデルを保存する必要があります。 トレーニングしたモデルは、**varbinary(max)** 型の 1 列にバイナリ形式で保存されます。
 
@@ -223,7 +223,7 @@ GO
     modelbinstr=paste(modelbin, collapse="");
     ```
 
-2. **RODBC**を使用して ODBC 接続を開きます。 パッケージが既に読み込まれている場合は、RODBC への呼び出しを省略できます。
+2. **RODBC** を使用して ODBC 接続を開きます。 パッケージが既に読み込まれている場合は、RODBC への呼び出しを省略できます。
 
     ```R
     library(RODBC);

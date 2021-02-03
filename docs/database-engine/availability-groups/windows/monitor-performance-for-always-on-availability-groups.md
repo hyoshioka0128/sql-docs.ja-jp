@@ -5,17 +5,17 @@ ms.custom: ag-guide, seodec18
 ms.date: 06/13/2017
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 ms.assetid: dfd2b639-8fd4-4cb9-b134-768a3898f9e6
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 08ef8be56e34d7f0e62a02c5a9819f0f5c41344b
-ms.sourcegitcommit: 99f61724de5edf6640efd99916d464172eb23f92
+ms.openlocfilehash: fa6d63d665a2a81d0a112a1685b3ead1969479d1
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87362689"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643742"
 ---
 # <a name="monitor-performance-for-always-on-availability-groups"></a>Always On 可用性グループのパフォーマンスを監視する
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -59,7 +59,7 @@ ms.locfileid: "87362689"
 > [!IMPORTANT]  
 >  可用性グループに複数の可用性データベースが含まれている場合、Tfailover が最も高い可用性データベースは RTO 準拠の制限値になります。  
   
- 障害検出時間 Tdetection は、システムが障害を検出するのにかかる時間です。 この時間は、個々の可用性レプリカではなく、クラスター レベルの設定に依存します。 構成されている自動フェールオーバーの条件に応じて、SQL Server での重大な内部エラー (孤立したスピンロックなど) への瞬時の応答として、フェールオーバーをトリガーすることができます。 この場合、[sp_server_diagnostics &#40;Transact-SQL&#41;](~/relational-databases/system-stored-procedures/sp-server-diagnostics-transact-sql.md) エラー レポートが WSFC クラスターに送信されるのと同じ速さで検出が行われます (既定の間隔は正常性チェックのタイムアウトの 1/3)。 クラスターの正常性チェックのタイムアウトの時間 (既定では 30 秒) が経過したり、リソース DLL と SQL Server インスタンス間のリースの有効期限 (既定では 20 秒) が切れたりなど、タイムアウトが原因でフェールオーバーがトリガーされることもあります。 この場合、検出時間はタイムアウト間隔と同じ長さとなります。 詳細については、「[可用性グループの自動フェールオーバーのための柔軟なフェールオーバー ポリシー &#40;SQL Server&#41;](https://msdn.microsoft.com/library/hh710061(SQL.120).aspx)」を参照してください。  
+ 障害検出時間 Tdetection は、システムが障害を検出するのにかかる時間です。 この時間は、個々の可用性レプリカではなく、クラスター レベルの設定に依存します。 構成されている自動フェールオーバーの条件に応じて、SQL Server での重大な内部エラー (孤立したスピンロックなど) への瞬時の応答として、フェールオーバーをトリガーすることができます。 この場合、[sp_server_diagnostics &#40;Transact-SQL&#41;](~/relational-databases/system-stored-procedures/sp-server-diagnostics-transact-sql.md) エラー レポートが WSFC クラスターに送信されるのと同じ速さで検出が行われます (既定の間隔は正常性チェックのタイムアウトの 1/3)。 クラスターの正常性チェックのタイムアウトの時間 (既定では 30 秒) が経過したり、リソース DLL と SQL Server インスタンス間のリースの有効期限 (既定では 20 秒) が切れたりなど、タイムアウトが原因でフェールオーバーがトリガーされることもあります。 この場合、検出時間はタイムアウト間隔と同じ長さとなります。 詳細については、「[可用性グループの自動フェールオーバーのための柔軟なフェールオーバー ポリシー &#40;SQL Server&#41;](./configure-flexible-automatic-failover-policy.md?viewFallbackFrom=sql-server-2014)」を参照してください。  
   
  フェールオーバーの準備を整えるためにセカンダリ レプリカで実行する必要があることは、再実行でログの末尾をキャッチアップすることだけです。 再実行時間 Tredo は次の式を使用して計算します。  
   
@@ -74,7 +74,7 @@ ms.locfileid: "87362689"
   
  ![可用性グループの RPO の計算](media/always-on-rpo.gif "可用性グループの RPO の計算")  
   
- ここで、*log_send_queue* は、[log_send_queue_size](~/relational-databases/system-dynamic-management-views/sys-dm-hadr-database-replica-states-transact-sql.md) の値であり、*ログ生成速度*は、[SQL Server: データベース > Log Bytes Flushed/sec](~/relational-databases/performance-monitor/sql-server-databases-object.md) の値です。  
+ ここで、*log_send_queue* は、[log_send_queue_size](~/relational-databases/system-dynamic-management-views/sys-dm-hadr-database-replica-states-transact-sql.md) の値であり、*ログ生成速度* は、[SQL Server: データベース > Log Bytes Flushed/sec](~/relational-databases/performance-monitor/sql-server-databases-object.md) の値です。  
   
 > [!WARNING]  
 >  可用性グループに 1 つ以上の可用性データベースが含まれている場合、最高 Tdata_loss で可用性データベースの RPO 対応制限値になります。  
@@ -90,7 +90,7 @@ Always On 可用性グループで、セカンダリ レプリカでホストさ
 1. SQL Server Management Studio で、 **[Always On 可用性グループ]** ノードを展開し、可用性グループの名前を右クリックして **[ダッシュボードの表示]** を選択します。 
 1. **[グループ化]** タブで、 **[列の追加と削除]** を選択します。 **[推定復旧時間 (秒)]** (RTO) と **[推定データ損失 (時間)]** (RPO) の両方のチェック ボックスをオンにします。 
 
-   ![rto-rpo-dashboard.png](media/rto-rpo-dashboard.png)
+   ![RTO RPO ダッシュボードを示すスクリーンショット。](media/rto-rpo-dashboard.png)
 
 ### <a name="calculation-of-secondary-database-rto"></a>セカンダリ データベースの RTO の計算 
 フェールオーバーが発生した後、*セカンダリ データベース* の復旧に必要な時間は、復旧時間の計算で決まります。  フェールオーバー時間は通常は短く一定です。 この検出時間は、個々の可用性レプリカではなく、クラスター レベルの設定に依存します。 
@@ -310,9 +310,9 @@ DMV の [sys.dm_hadr_database_replica_states](../../../relational-databases/syst
 
   
 ##  <a name="monitoring-for-rto-and-rpo"></a>RTO と RPO の監視  
- このセクションでは、可用性グループの RTO および RPO メトリックを監視する方法を実演します。 この実演の内容は、「[The Always On health model, part 2: Extending the health model](https://docs.microsoft.com/archive/blogs/sqlalwayson/the-alwayson-health-model-part-2-extending-the-health-model)」 (Always On 正常性モデル、パート 2: 正常性モデルの拡張) で提供している GUI のチュートリアルに類似しています。  
+ このセクションでは、可用性グループの RTO および RPO メトリックを監視する方法を実演します。 この実演の内容は、「[The Always On health model, part 2: Extending the health model](/archive/blogs/sqlalwayson/the-alwayson-health-model-part-2-extending-the-health-model)」 (Always On 正常性モデル、パート 2: 正常性モデルの拡張) で提供している GUI のチュートリアルに類似しています。  
   
- [フェールオーバー時間 (RTO) の推定](#estimating-failover-time-rto) および[データ損失の可能性 (RPO) の推定](#estimating-potential-data-loss-rpo) におけるフェールオーバー時間の計算およびデータ損失の可能性の計算の要素は、ポリシー管理ファセット "**データベース レプリカ状態**" の中でパフォーマンス メトリックとして便利に提供されています (「[SQL Server オブジェクトのポリシー ベースの管理ファセットの表示](~/relational-databases/policy-based-management/view-the-policy-based-management-facets-on-a-sql-server-object.md)」を参照)。 この 2 つのメトリックはスケジュールに従って監視することができます。メトリックが指定の RTO および RPO を超えた場合はそれぞれアラートが返されます。  
+ [フェールオーバー時間 (RTO) の推定](#estimating-failover-time-rto) および [データ損失の可能性 (RPO) の推定](#estimating-potential-data-loss-rpo) におけるフェールオーバー時間の計算およびデータ損失の可能性の計算の要素は、ポリシー管理ファセット "**データベース レプリカ状態**" の中でパフォーマンス メトリックとして便利に提供されています (「[SQL Server オブジェクトのポリシー ベースの管理ファセットの表示](~/relational-databases/policy-based-management/view-the-policy-based-management-facets-on-a-sql-server-object.md)」を参照)。 この 2 つのメトリックはスケジュールに従って監視することができます。メトリックが指定の RTO および RPO を超えた場合はそれぞれアラートが返されます。  
   
  デモ スクリプトでは、以下の特性を備え、それぞれのスケジュールに従って実行される 2 つのシステム ポリシーが作成されます。  
   
@@ -386,7 +386,7 @@ DMV の [sys.dm_hadr_database_replica_states](../../../relational-databases/syst
   
         -   **条件の確認**: `RTO`  
   
-        -   **対象**: **IsPrimaryReplica AvailabilityGroup** の**すべての DatabaseReplicaState**  
+        -   **対象**: **IsPrimaryReplica AvailabilityGroup** の **すべての DatabaseReplicaState**  
   
              この設定により、ポリシーは必ず、ローカルの可用性レプリカがプライマリ レプリカである可用性グループのみで評価されます。  
   
@@ -414,7 +414,7 @@ DMV の [sys.dm_hadr_database_replica_states](../../../relational-databases/syst
   
         -   **条件の確認**: `RPO`  
   
-        -   **対象**: **IsPrimaryReplica AvailabilityGroup** の**すべての DatabaseReplicaState**  
+        -   **対象**: **IsPrimaryReplica AvailabilityGroup** の **すべての DatabaseReplicaState**  
   
         -   **[評価モード]** :**スケジュールで実行**  
   
@@ -444,7 +444,7 @@ DMV の [sys.dm_hadr_database_replica_states](../../../relational-databases/syst
 |[トラブルシューティング:プライマリ上の変更がセカンダリ レプリカに反映されない](troubleshoot-primary-changes-not-reflected-on-secondary.md)|クライアント アプリケーションは、プライマリ レプリカの更新を正常に完了しますが、セカンダリ レプリカのクエリを実行すると、変更が反映されていないことが示されます。|  
   
 ##  <a name="useful-extended-events"></a><a name="BKMK_XEVENTS"></a> 有用な拡張イベント  
- **同期中の**状態にあるレプリカのトラブルシューティングを行う場合は、次の拡張イベントは便利です。  
+ **同期中の** 状態にあるレプリカのトラブルシューティングを行う場合は、次の拡張イベントは便利です。  
   
 |イベント名|カテゴリ|チャネル|可用性レプリカ|  
 |----------------|--------------|-------------|--------------------------|  
@@ -454,4 +454,4 @@ DMV の [sys.dm_hadr_database_replica_states](../../../relational-databases/syst
 |hadr_worker_pool_task|`alwayson`|デバッグ|プライマリ|  
 |hadr_dump_primary_progress|`alwayson`|デバッグ|プライマリ|  
 |hadr_dump_log_progress|`alwayson`|デバッグ|プライマリ|  
-|hadr_undo_of_redo_log_scan|`alwayson`|分析|セカンダリ|  
+|hadr_undo_of_redo_log_scan|`alwayson`|分析|セカンダリ|

@@ -7,18 +7,18 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 ms.assetid: 166426e1-555d-4ce4-bae3-248dcac56883
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 08850a48a75f47d9cc4e3c849231983da20ee025
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: d27b090559a96e43afd038eae06bfa0c7462b3c1
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88419466"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99208033"
 ---
 # <a name="system-trace-functions"></a>システムトレース関数
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

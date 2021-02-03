@@ -1,4 +1,5 @@
 ---
+description: '[テーブルと列] ダイアログ ボックス (Visual Database Tools)'
 title: '[テーブルと列] ダイアログ ボックス'
 ms.custom: seo-lt-2019
 ms.date: 01/19/2017
@@ -12,12 +13,12 @@ ms.assetid: 8cf27be1-e66d-4735-a428-9ab4b33af4f5
 author: markingmyname
 ms.author: maghan
 ms.reviewer: ''
-ms.openlocfilehash: 21947fabfe87638f233639a8f18e81d0ce8a9965
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+ms.openlocfilehash: 444691b0ec7196c2dcb09426b7e7cb3063445826
+ms.sourcegitcommit: 0bee2b4392d50151c3839a937371588cc2ce2d3e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86004158"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98667732"
 ---
 # <a name="tables-and-columns-dialog-box-visual-database-tools"></a>[テーブルと列] ダイアログ ボックス (Visual Database Tools)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -26,7 +27,7 @@ ms.locfileid: "86004158"
 > [!NOTE]  
 > テーブルをレプリケーションのためにパブリッシュする場合は、Transact-SQL ステートメントの [ALTER TABLE](../../t-sql/statements/alter-table-transact-sql.md) または SQL Server 管理オブジェクト (SMO) を使用してスキーマを変更する必要があります。 テーブル デザイナーまたはデータベース ダイアグラム デザイナーを使用してスキーマを変更するとき、テーブルはいったん削除されてから再作成されます。 パブリッシュされたオブジェクトは削除できないので、スキーマの変更は失敗します。  
   
-## <a name="options"></a>Options  
+## <a name="options"></a>オプション  
 **[リレーションシップ名]**  
 リレーションシップの名前を表示します。  
   
@@ -46,5 +47,5 @@ ms.locfileid: "86004158"
 > 外部キーに選択した列は、対応する主キー列と同じデータ型である必要があります。 各キーには同じ数の列が必要です。 たとえば、リレーションシップの主キー側になるテーブルの主キーが 2 列で構成されている場合、この各列がリレーションシップの外部キー側になるテーブルの列と一致する必要があります。  
   
 ## <a name="see-also"></a>参照  
-方法: テーブル間のリレーションシップを作成する (https://msdn.microsoft.com/867a54b8-5be4-46e6-9702-49ae6dabf67c)  
+[方法: テーブル間のリレーションシップを作成する](https://msdn.microsoft.com/867a54b8-5be4-46e6-9702-49ae6dabf67c)  
   

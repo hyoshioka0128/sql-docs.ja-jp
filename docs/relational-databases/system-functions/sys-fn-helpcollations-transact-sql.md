@@ -1,13 +1,13 @@
 ---
 description: sys.fn_helpcollations (Transact-SQL)
-title: fn_helpcollations (Transact-sql) |Microsoft Docs
+title: sys.fn_helpcollations (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 08/23/2017
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - fn_helpcollations
 - fn_helpcollations_TSQL
@@ -18,15 +18,15 @@ helpviewer_keywords:
 - collations [SQL Server], supported
 - fn_helpcollations function
 ms.assetid: b5082e81-1fee-4e2c-b567-5412eaee41c1
-author: rothja
-ms.author: jroth
-monikerRange: '>=aps-pdw-2016|| = azure-sqldw-latest ||=azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 66b0a9ad6c68e209cbcf21a05ef015f43535ec4e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>=aps-pdw-2016|| = azure-sqldw-latest ||=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 5d5f1e211c9ec7f562839c92c9666bceb0e65bef
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88427834"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99202002"
 ---
 # <a name="sysfn_helpcollations-transact-sql"></a>sys.fn_helpcollations (Transact-SQL)
 
@@ -58,7 +58,7 @@ fn_helpcollations ()
  次の例では、文字で始まるすべての照合順序名 `L` と、バイナリ並べ替え照合順序を返します。
 
 > [!Note]
-> Fn_helpcollations () に対する Azure SQL Data Warehouse クエリは、master データベースで実行する必要があります。  
+> Fn_helpcollations () に対する Azure Synapse Analytics クエリは、master データベースで実行する必要があります。  
   
 ```sql  
 SELECT Name, Description FROM fn_helpcollations()  
@@ -85,4 +85,4 @@ WHERE Name like 'L%' AND Description LIKE '% binary sort';
 
 [COLLATE &#40;Transact-SQL&#41;](~/t-sql/statements/collations.md)   
 [COLLATIONPROPERTY &#40;Transact-sql&#41;](../../t-sql/functions/collation-functions-collationproperty-transact-sql.md)  
-[Azure SQL Data Warehouse でのデータベースの照合順序のサポート](https://azure.microsoft.com/blog/database-collation-support-for-azure-sql-data-warehouse-2)  
+[Azure Synapse Analytics のデータベース照合順序のサポート](https://azure.microsoft.com/blog/database-collation-support-for-azure-sql-data-warehouse-2)  

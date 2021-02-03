@@ -32,13 +32,13 @@ helpviewer_keywords:
 ms.assetid: 92d34f48-fa2b-47c5-89d3-a4c39b0f39eb
 author: pmasl
 ms.author: sstein
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 39803c2063bf6afbae9bc6797d85499fc91a10bd
-ms.sourcegitcommit: 19ae05bc69edce1e3b3d621d7fdd45ea5f74969d
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 99ef20a9db20238f24361327b79068ed39d430f4
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88564672"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97465673"
 ---
 # <a name="collation-and-unicode-support"></a>照合順序と Unicode のサポート
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -428,7 +428,7 @@ SELECT name FROM customer ORDER BY name COLLATE Latin1_General_CS_AI;
 ```    
     
 ###  <a name="locale"></a><a name="Locale_Defn"></a> ロケール    
-ロケールは、場所またはカルチャに関連付けられる一連の情報です。 その情報には、言語の名前や ID、言語の記述に使用される文字表記、文化的慣習などが含まれる場合があります。 照合順序は、1 つ以上のロケールに関連付けることができます。 詳細については、「 [Microsoft によって割り当てられているロケール ID](https://msdn.microsoft.com/goglobal/bb964664.aspx)」を参照してください。    
+ロケールは、場所またはカルチャに関連付けられる一連の情報です。 その情報には、言語の名前や ID、言語の記述に使用される文字表記、文化的慣習などが含まれる場合があります。 照合順序は、1 つ以上のロケールに関連付けることができます。 詳細については、「 [Microsoft によって割り当てられているロケール ID](/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c)」を参照してください。    
     
 ###  <a name="code-page"></a><a name="Code_Page_Defn"></a> コード ページ    
 コード ページは、特定の文字表記の順序付けられた文字のセットです。コード ページでは、数値インデックス (コード ポイント値) が各文字に関連付けられます。 Windows コード ページは、通常は "*文字セット*" または *charset* と呼ばれています。 コード ページは、各種の Windows システム ロケールで使用される文字セットおよびキーボード レイアウトをサポートするために使用されます。     
@@ -492,7 +492,7 @@ Unicode または非 Unicode データ型の使用に関連する問題点を評
 さまざまな状況で、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によって他のサーバーまたはクライアントとのやり取りが行われ、組織ではアプリケーションやサーバー インスタンス間で複数のデータ アクセス標準を使用する可能性があります。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] クライアントは次の 2 つの主要タイプのいずれかになります。    
     
 -   OLE DB および Open Database Connectivity (ODBC) バージョン 3.7 以降を使用する **Unicode クライアント**。    
--   DB ライブラリおよび ODBC バージョン 3.6 以前を使用する**非 Unicode クライアント**。    
+-   DB ライブラリおよび ODBC バージョン 3.6 以前を使用する **非 Unicode クライアント**。    
     
 以下の表では、Unicode 型サーバーと非 Unicode 型サーバーの各種の組み合わせにおける多言語データの使用に関する情報を示します。    
     
@@ -600,7 +600,7 @@ Unicode Consortium では、各文字に一意のコード ポイント (000000 
 <sup>2</sup>[補助文字](#Supplementary_Characters)のコード ポイント範囲。
 
 > [!TIP]   
-> [CHAR(*n*) および VARCHAR(*n*)](../../t-sql/data-types/char-and-varchar-transact-sql.md)、または[NCHAR(*n*) および NVARCHAR(*n*)](../../t-sql/data-types/nchar-and-nvarchar-transact-sql.md) では、*n* は文字数を定義すると考えるのが一般的です。 これは、CHAR (10) 列の例では、0 – 127 の範囲の 10 個の ASCII 文字を **Latin1_General_100_CI_AI** などの照合順序を使用して格納できるためで、この範囲内の各文字が 1 バイトのみを使用するためです。
+> [CHAR(*n*) および VARCHAR(*n*)](../../t-sql/data-types/char-and-varchar-transact-sql.md)、または [NCHAR(*n*) および NVARCHAR(*n*)](../../t-sql/data-types/nchar-and-nvarchar-transact-sql.md) では、*n* は文字数を定義すると考えるのが一般的です。 これは、CHAR (10) 列の例では、0 – 127 の範囲の 10 個の ASCII 文字を **Latin1_General_100_CI_AI** などの照合順序を使用して格納できるためで、この範囲内の各文字が 1 バイトのみを使用するためです。
 >    
 > ただし、[CHAR(*n*) および VARCHAR(*n*)](../../t-sql/data-types/char-and-varchar-transact-sql.md) では、*n* によって "*バイト*" での文字列のサイズ (0 – 8,000) が定義され、[NCHAR(*n*) および NVARCHAR(*n*)](../../t-sql/data-types/nchar-and-nvarchar-transact-sql.md) では *n* によって "*バイトペア*" での文字列のサイズ (0 – 4,000) が定義されます。 *n* は、格納できる文字数を定義しません。
 
@@ -647,10 +647,12 @@ Unicode Consortium では、各文字に一意のコード ポイント (000000 
 * [OLE DB Driver for SQL Server の UTF-8 のサポート](../../connect/oledb/features/utf-8-support-in-oledb-driver-for-sql-server.md)  
 * [SQL Server 照合順序名 (Transact-SQL)](../../t-sql/statements/sql-server-collation-name-transact-sql.md)  
 * [Windows 照合順序名 (Transact-SQL)](../../t-sql/statements/windows-collation-name-transact-sql.md)  
-* [SQL Server 用の UTF-8 サポートの概要](https://techcommunity.microsoft.com/t5/SQL-Server/Introducing-UTF-8-support-for-SQL-Server/ba-p/734928)       
+* [SQL Server 用の UTF-8 サポートの概要](https://techcommunity.microsoft.com/t5/SQL-Server/Introducing-UTF-8-support-for-SQL-Server/ba-p/734928)      
+* [COLLATE (Transact-SQL)](../../t-sql/statements/collations.md)      
+* [照合順序の優先順位](../../t-sql/statements/collation-precedence-transact-sql.md)    
     
 ## <a name="see-also"></a>関連項目    
 [包含データベースの照合順序](../../relational-databases/databases/contained-database-collations.md)     
 [フルテキスト インデックス作成時の言語の選択](../../relational-databases/search/choose-a-language-when-creating-a-full-text-index.md)     
 [sys.fn_helpcollations (Transact-SQL)](../../relational-databases/system-functions/sys-fn-helpcollations-transact-sql.md)       
-[1 バイト文字セットとマルチバイト文字セット](https://docs.microsoft.com/cpp/c-runtime-library/single-byte-and-multibyte-character-sets)      
+[1 バイト文字セットとマルチバイト文字セット](/cpp/c-runtime-library/single-byte-and-multibyte-character-sets)

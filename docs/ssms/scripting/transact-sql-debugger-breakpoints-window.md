@@ -3,7 +3,7 @@ title: '[ブレークポイント] ウィンドウ'
 description: データベース エンジン クエリ エディターの [ブレークポイント] ウィンドウを使用して、Transact-SQL デバッガーのブレークポイントを管理する方法について説明します。
 titleSuffix: T-SQL debugger
 ms.prod: sql
-ms.technology: scripting
+ms.technology: ssms
 ms.topic: conceptual
 helpviewer_keywords:
 - Breakpoints Window [Transact-SQL]
@@ -13,13 +13,13 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 07/22/2020
-monikerRange: '>= sql-server-2016 || = sqlallproducts-allversions'
-ms.openlocfilehash: 70178cf723b4e599ca6982668ade3faed61ee8c2
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+monikerRange: '>= sql-server-2016'
+ms.openlocfilehash: 915ad9a9429c9200613a0bb443b42237162ea9c7
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87248043"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97476823"
 ---
 # <a name="transact-sql-debugger---breakpoints-window"></a>Transact-SQL デバッガー - [ブレークポイント] ウィンドウ
 
@@ -95,4 +95,4 @@ ms.locfileid: "87248043"
 
 ## <a name="see-also"></a>参照
 
-[Transact-SQL デバッガー](../../relational-databases/scripting/transact-sql-debugger.md)
+[Transact-SQL デバッガー](./transact-sql-debugger.md)

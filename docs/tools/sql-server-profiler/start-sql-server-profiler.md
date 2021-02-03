@@ -12,12 +12,12 @@ author: markingmyname
 ms.author: maghan
 ms.custom: seo-lt-2019
 ms.date: 07/07/2017
-ms.openlocfilehash: 6ce61356dcbaaf1d05be9aa56804af3d85adbd7b
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 09a6d7f612e9a66ad98849ec1c7672b44387d43e
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85734167"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641935"
 ---
 # <a name="run-sql-server-profiler"></a>SQL Server Profiler の実行
 
@@ -55,4 +55,4 @@ ms.locfileid: "85734167"
 
 ## <a name="next-steps"></a>次のステップ  
  [SQL Server Profiler の概要](../../tools/sql-server-profiler/sql-server-profiler.md)   
- [SQL Server Management Studio の使用 [SQL Server]](https://msdn.microsoft.com/library/f289e978-14ca-46ef-9e61-e1fe5fd593be)  
+ [SQL Server Management Studio の使用 [SQL Server]](../../ssms/sql-server-management-studio-ssms.md)

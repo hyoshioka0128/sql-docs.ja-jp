@@ -5,17 +5,17 @@ ms.custom: seo-lt-2019
 ms.date: 03/04/2017
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
-ms.topic: conceptual
+ms.technology: failover-cluster-instance
+ms.topic: how-to
 ms.assetid: 68074bd5-be9d-4487-a320-5b51ef8e2b2d
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: e2f84b38751b57e1fe9ebba525e636da45a59954
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 61b9788f0f8ee76979869c9775d81990435bdb5b
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85896674"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642698"
 ---
 # <a name="view-and-read-failover-cluster-instance-diagnostics-log"></a>フェールオーバー クラスター インスタンスの診断ログを表示して読む方法
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "85896674"
 ###  <a name="security"></a><a name="Security"></a> セキュリティ  
   
 ####  <a name="permissions"></a><a name="Permissions"></a> Permissions  
- **fn_xe_file_target_read_file**を実行するには、VIEW SERVER STATE 権限が必要です。  
+ **fn_xe_file_target_read_file** を実行するには、VIEW SERVER STATE 権限が必要です。  
   
  SQL Server Management Studio を管理者として開きます。  
   
@@ -46,7 +46,7 @@ ms.locfileid: "85896674"
   
 1.  **[ファイル]** メニューから、 **[開く]** 、 **[ファイル]** を選択し、表示する診断ログ ファイルを選択します。  
   
-2.  イベントは、右ペインに行として表示されます。既定では、 **名前**と **タイムスタンプ** の 2 つの列だけが表示されます。  
+2.  イベントは、右ペインに行として表示されます。既定では、 **名前** と **タイムスタンプ** の 2 つの列だけが表示されます。  
   
      また、 **[ExtendedEvents]** メニューがアクティブ化されます。  
   
@@ -56,7 +56,7 @@ ms.locfileid: "85896674"
   
 4.  **[ExtendedEvents]** メニューを使用し、 **[フィルター]** オプションを選択することによって、イベント データをフィルター選択したり並べ替えたりすることができます。  
   
-##  <a name="using-transact-sql"></a><a name="TsqlProcedure"></a> Transact-SQL の使用  
+##  <a name="view-diagnostic-log-files-with-transact-sql"></a><a name="TsqlProcedure"></a> Transact-SQL を使用して診断ログ ファイルを表示する  
  **診断ログ ファイルを表示するには**  
   
  SQLDIAG ログ ファイル内のすべてのログ アイテムを表示するには、次のクエリを使用します。  
@@ -88,7 +88,7 @@ ORDER BY Time;
 > [!NOTE]  
 >  WHERE 句を使用して、特定のコンポーネントまたは状態の結果にフィルターを適用することができます。  
   
-##  <a name="using-transact-sql"></a><a name="TsqlConfigure"></a> Transact-SQL の使用  
+##  <a name="configure-diagnostic-log-properties-with-transact-sql"></a><a name="TsqlConfigure"></a> Transact-SQL を使用して診断ログのプロパティを構成する  
  **診断ログのプロパティを構成するには**  
   
 > [!NOTE]  

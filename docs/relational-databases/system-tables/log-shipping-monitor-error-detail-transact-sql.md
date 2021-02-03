@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - log_shipping_monitor_error_detail_TSQL
 - log_shipping_monitor_error_detail
@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - log_shipping_monitor_error_detail system table
 ms.assetid: 0c38a625-60d2-4ee2-bcf3-2ba367914220
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 0f606f93697308a690451583267a5d77383fa723
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 8de8ba7737ce51d1ff6a47996250efb7c6862ca0
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89547187"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99186948"
 ---
 # <a name="log_shipping_monitor_error_detail-transact-sql"></a>log_shipping_monitor_error_detail (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -45,12 +45,12 @@ ms.locfileid: "89547187"
 |**source**|**nvarchar**|エラー メッセージまたはイベントのソース。|  
 |**help_url**|**nvarchar**|URL (使用可能な場合)。エラーに関する詳細情報が表示されます。|  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  このテーブルには、ログ配布エージェントに関するエラーの詳細が格納されます。 各エラーは一連の例外として記録され、 エージェントセッションごとに複数のエラー (シーケンス) が存在する場合があります。  
   
  リモート監視サーバーに格納されているだけでなく、プライマリサーバーに関連する情報が **log_shipping_monitor_error_detail** テーブルのプライマリサーバーに格納されます。また、セカンダリサーバーに関連する情報は、セカンダリサーバーの **log_shipping_monitor_error_detail** テーブルにも格納されます。  
   
- エージェントセッションを識別するには、列 **agent_id**、 **agent_type**、および **session_id**を使用します。 **Log_time**で並べ替え、ログに記録された順序でエラーを確認します。  
+ エージェントセッションを識別するには、列 **agent_id**、 **agent_type**、および **session_id** を使用します。 **Log_time** で並べ替え、ログに記録された順序でエラーを確認します。  
   
 ## <a name="see-also"></a>参照  
  [ログ配布について &#40;SQL Server&#41;](../../database-engine/log-shipping/about-log-shipping-sql-server.md)   

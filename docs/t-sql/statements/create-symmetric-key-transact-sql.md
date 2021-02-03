@@ -23,12 +23,12 @@ helpviewer_keywords:
 ms.assetid: b5d23572-b79d-4cf1-9eef-d648fa3b1358
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: c378e113e07a9d85bbeedbf585f9b58f417812f9
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 581f49677f56c0d0c1360d5282c07205f18ee35a
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88426674"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170824"
 ---
 # <a name="create-symmetric-key-transact-sql"></a>CREATE SYMMETRIC KEY (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -117,7 +117,7 @@ CREATE SYMMETRIC KEY key_name
  \<algorithm>  
 暗号化アルゴリズムを指定します。   
 > [!WARNING]  
-> [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降、AES_128、AES_192、AES_256 以外のすべてのアルゴリズムが非推奨とされます。 古いアルゴリズムを使用する場合は (推奨されません)、データベース互換性レベルを 120 以下に設定する必要があります。  
+> [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降、AES_128、AES_192、AES_256 以外のすべてのアルゴリズムが非推奨とされます。 古いアルゴリズムを使用する場合は (推奨されません)、データベース互換性レベルを 120 以下に設定する必要があります。  
   
 ## <a name="remarks"></a>解説  
  対称キーを作成するときには、証明書、パスワード、対称キー、非対称キー、PROVIDER のうち少なくとも 1 つを使用して対称キーを暗号化する必要があります。 キーには種類ごとの暗号化を複数指定できます。 つまり、1 つの対称キーを、複数の証明書、パスワード、対称キー、および非対称キーを使用して同時に暗号化できます。  
@@ -161,7 +161,7 @@ CREATE SYMMETRIC KEY key_name
 ### <a name="a-creating-a-symmetric-key"></a>A. 対称キーを作成する  
  次の例では、`AES 256` アルゴリズムを使用して対称キー `JanainaKey09` を作成し、新しいキーを証明書 `Shipping04` を使用して暗号化します。  
   
-```  
+```sql  
 CREATE SYMMETRIC KEY JanainaKey09   
 WITH ALGORITHM = AES_256  
 ENCRYPTION BY CERTIFICATE Shipping04;  
@@ -171,8 +171,7 @@ GO
 ### <a name="b-creating-a-temporary-symmetric-key"></a>B. 一時対称キーを作成する  
  次の例では、パス フレーズ `#MarketingXXV` から、一時対称キー `The square of the hypotenuse is equal to the sum of the squares of the sides` を作成します。 このキーには文字列 `Pythagoras` から生成された GUID が与えられ、証明書 `Marketing25` を使用して暗号化されます。  
   
-```  
-  
+```sql 
 CREATE SYMMETRIC KEY #MarketingXXV   
 WITH ALGORITHM = AES_128,  
 KEY_SOURCE   
@@ -185,7 +184,7 @@ GO
 ### <a name="c-creating-a-symmetric-key-using-an-extensible-key-management-ekm-device"></a>C. 拡張キー管理 (EKM) デバイスを使用して対称キーを作成する  
  次の例では、`MyEKMProvider` というプロバイダーとキー名 `KeyForSensitiveData` を使用して、`MySymKey` という対称キーを作成します。 `User1` に承認を割り当てています。また、システム管理者が `MyEKMProvider` というプロバイダーを [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] に既に登録していることを前提としています。  
   
-```  
+```sql  
 CREATE SYMMETRIC KEY MySymKey  
 AUTHORIZATION User1  
 FROM PROVIDER EKMProvider  

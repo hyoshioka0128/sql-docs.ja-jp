@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: 273ea09d-60ee-47f5-8828-8bdc7a3c3529
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: f4e26da02da69955a3bc3f589753efa1007ae3a1
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 3852c804ce8ab919072d8a2dbe23b4e0f11b8768
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86005621"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97463133"
 ---
 # <a name="determining-effective-database-engine-permissions"></a>データベース エンジンの有効なアクセス許可の決定
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -52,7 +52,7 @@ SQL Server データベース エンジンでは、さまざまなオブジェ�
 
 固定サーバー ロールと固定データベース ロールでは、アクセス許可が事前構成されています。このアクセス許可は変更できません。 固定サーバー ロールのメンバーを判断するには、次のクエリを実行します。    
 > [!NOTE]
->  サーバー レベルのアクセス許可が利用できない SQL データベースまたは SQL データ ウェアハウスには適用しないでください。 `sys.server_principals` の `is_fixed_role` 列が SQL Server 2012 に追加されました。 古いバージョンの SQL Server には必要ありません。  
+>  サーバー レベルのアクセス許可が利用できない SQL Database または Azure Synapse Analytics には適用しないでください。 `sys.server_principals` の `is_fixed_role` 列が SQL Server 2012 に追加されました。 古いバージョンの SQL Server には必要ありません。  
 > ```sql
 > SELECT SP1.name AS ServerRoleName, 
 >  isnull (SP2.name, 'No members') AS LoginName   
@@ -107,7 +107,7 @@ Windows ユーザーは複数の Windows グループに属することがあり
 
 次のクエリは、サーバー レベルで承諾または拒否されているアクセス許可の一覧を返します。 このクエリはマスター データベースで実行してください。   
 > [!NOTE]
->  サーバー レベルのアクセス許可を SQL データベースまたは SQL データ ウェアハウスで承諾または拒否することはできません。   
+>  サーバー レベルのアクセス許可を SQL Database または Azure Synapse Analytics で承諾または拒否することはできません。   
 > ```sql
 > SELECT pr.type_desc, pr.name, 
 >  isnull (pe.state_desc, 'No permission statements') AS state_desc, 

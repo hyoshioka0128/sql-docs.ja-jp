@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - < (Less Than)
 - <_TSQL
@@ -21,15 +21,15 @@ helpviewer_keywords:
 - less than (<)
 - < (less than operator)
 ms.assetid: 54f50bdd-bb62-4593-9af9-4c49edecab75
-author: rothja
-ms.author: jroth
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 490c02198ebc9d5b1fd7c6b8f0ff91d1c3ccd014
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 9ff6e3c974db9bf14128e883e2b5b110e8624319
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88422486"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99101646"
 ---
 # <a name="lt-less-than-transact-sql"></a>&lt; (より小さい) (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "88422486"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 expression < expression  
 ```  
   
@@ -58,7 +58,7 @@ expression < expression
 ### <a name="a-using--in-a-simple-query"></a>A. 簡単なクエリで < を使用する  
  次の例では、`HumanResources.Department` テーブル内で、`DepartmentID` の値が値 3 未満の行をすべて返します。  
   
-```  
+```sql  
 -- Uses AdventureWorks  
   
 SELECT DepartmentID, Name  
@@ -82,10 +82,9 @@ DepartmentID Name
   
 ### <a name="b-using--to-compare-two-variables"></a>B. < を使用して 2 つの変数を比較する  
   
-```  
-DECLARE @a int = 45, @b int = 40;  
+```sql  
+DECLARE @a INT = 45, @b INT = 40;  
 SELECT IIF ( @a < @b, 'TRUE', 'FALSE' ) AS Result;  
-  
 ```  
   
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  

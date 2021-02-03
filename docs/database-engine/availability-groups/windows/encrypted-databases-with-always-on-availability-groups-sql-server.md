@@ -5,26 +5,26 @@ ms.custom: seodec18
 ms.date: 05/17/2016
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
-ms.topic: conceptual
+ms.technology: availability-groups
+ms.topic: how-to
 helpviewer_keywords:
 - Transparent Data Encryption, AlwaysOn Availability Groups
 - TDE, AlwaysOn Availability Groups
 - Availability Groups [SQL Server], interoperability
 ms.assetid: 09eb6ebc-3051-4fff-86a5-93524507b1fc
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: aed6a2e94b553bf6a32d46d45ee1fb7af877addf
-ms.sourcegitcommit: b80364e31739d7b08cc388c1f83bb01de5dd45c1
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: eeea0a9d3010cc29c5a3f687a41e22a14d7ea30e
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87565585"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98765626"
 ---
 # <a name="add-an-encrypted-database-to-an-always-on-availability-group"></a>暗号化されたデータベースを Always On 可用性グループに追加する
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
 
-  このトピックでは、 [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] で現在暗号化されているデータベースまたは最近暗号化解除されたデータベースと [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)]を使用する方法について説明します。  
+  このトピックでは、 [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] で現在暗号化されているデータベースまたは最近暗号化解除されたデータベースと [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)]を使用する方法について説明します。  
   
  
 ##  <a name="limitations-and-restrictions"></a><a name="Restrictions"></a> 制限事項と制約事項  
@@ -33,15 +33,13 @@ ms.locfileid: "87565585"
   
      暗号化解除されたデータベースを、ウィザードを使用して可用性グループに追加できるようにするには、次の操作を行います。  
   
-    1.  プライマリ データベースのログ バックアップを作成します。  
+    1.  プライマリ データベースの完全バックアップを作成します。 
   
-    2.  プライマリ データベースの完全バックアップを作成します。  
+    2.  プライマリ データベースのログ バックアップを作成します。  
   
     3.  セカンダリ レプリカをホストするサーバー インスタンスでデータベース バックアップを復元します。  
-  
-    4.  プライマリ データベースから新しいログ バックアップを作成します。  
-  
-    5.  セカンダリ データベースでこのログ バックアップを復元します。  
+    
+    4.  セカンダリ データベースでこのログ バックアップを復元します。  
   
 ##  <a name="related-tasks"></a><a name="RelatedTasks"></a> 関連タスク  
   

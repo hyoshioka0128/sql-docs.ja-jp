@@ -9,12 +9,12 @@ metadata:
   author: MashaMSFT
   ms.author: mathoma
   ms.date: 07/25/2020
-  ms.openlocfilehash: 9f614c1fdabc8a8726b3bcb0b870e47acb1a376d
-  ms.sourcegitcommit: 331b8495e4ab37266945c81ff5b93d250bdaa6da
+  ms.openlocfilehash: f78daf1c47974a7b4799e7b6ef42ae27cce3d4b2
+  ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/20/2020
-  ms.locfileid: "88646802"
+  ms.lasthandoff: 01/11/2021
+  ms.locfileid: "98100616"
 landingContent:
 - title: モジュール 1:SQL Server on Linux の概要
   linkLists:
@@ -23,7 +23,7 @@ landingContent:
     - text: Linux の概要
       url: new-to-linux-resources.md
     - text: 次のことを学びます:Linux 上の SQL Server
-      url: https://docs.microsoft.com/learn/modules/introduction-sql-server-linux/
+      url: /learn/modules/introduction-sql-server-linux/
     - text: Channel 9 - Linux での SQL Server の動作 (オプション)
       url: https://channel9.msdn.com/Shows/Data-Exposed/SQL-Server-on-Linux-The-HOW?term=sql%20server%20on%20Linux&lang-en=true
     - text: Channel 9 - SQL Server on Linux (オプション)
@@ -53,7 +53,7 @@ landingContent:
     - text: ツールの概要
       url: ../tools/overview-sql-tools.md
     - text: Azure Data Studio (ツール)
-      url: ../azure-data-studio/what-is.md
+      url: ../azure-data-studio/what-is-azure-data-studio.md
     - text: Channel 9 - クロスプラットフォーム SQL ツール (オプション)
       url: https://channel9.msdn.com/events/Connect/2016/173?term=SQL%20on%20linux&lang-en=true
 - title: モジュール 4:SQL Server on Linux の構成

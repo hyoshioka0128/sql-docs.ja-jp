@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - money_TSQL
 - money
@@ -24,13 +24,13 @@ helpviewer_keywords:
 ms.assetid: 57861137-89ea-4b89-b361-390597d7bccc
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: c8e5f56358030a75e7be4943f8790766e036e6a0
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 58ae2f3edcee325330864bbcb91ef210fe9c981b
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88468301"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99165132"
 ---
 # <a name="money-and-smallmoney-transact-sql"></a>money と smallmoney (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -60,15 +60,15 @@ ms.locfileid: "88468301"
 次の例では、変換 **smallmoney** と **money** 値を **varchar** と **10 進** それぞれのデータ型します。
   
 ```sql
-DECLARE @mymoney_sm smallmoney = 3148.29,  
-        @mymoney    money = 3148.29;  
-SELECT  CAST(@mymoney_sm AS varchar) AS 'SM_MONEY varchar',  
-        CAST(@mymoney AS decimal)    AS 'MONEY DECIMAL';  
+DECLARE @mymoney_sm SMALLMONEY = 3148.29,  
+        @mymoney    MONEY = 3148.29;  
+SELECT  CAST(@mymoney_sm AS VARCHAR) AS 'SM_MONEY varchar',  
+        CAST(@mymoney AS DECIMAL)    AS 'MONEY DECIMAL';  
 ```  
   
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
   
-```sql
+```
 SM_MONEY VARCHAR               MONEY DECIMAL  
 ------------------------------ ----------------------  
 3148.29                        3148    

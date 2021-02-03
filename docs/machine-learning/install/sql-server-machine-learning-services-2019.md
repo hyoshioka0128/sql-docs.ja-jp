@@ -7,16 +7,16 @@ ms.date: 03/05/2020
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
-monikerRange: '>=sql-server-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 4ab748bf792362fdb799a9b2b7a3ea4a386b717d
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: '>=sql-server-ver15'
+ms.openlocfilehash: 53f339b871022e68e367c91797c3beed2212505a
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85771750"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471083"
 ---
 # <a name="sql-server-2019-on-windows-isolation-changes-for-machine-learning-services"></a>Windows 上の SQL Server 2019:Machine Learning Services の分離の変更
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2019 - Windows only](../../includes/applies-to-version/sqlserver2019-windows-only.md)]
 
 この記事では、Windows 上の SQL Server 2019 の Machine Learning Services での分離メカニズムに対する変更について説明します。 これらの変更は、**SQLRUserGroup**、ファイアウォール規則、ファイルのアクセス許可、および暗黙の認証に影響します。
 
@@ -24,7 +24,7 @@ ms.locfileid: "85771750"
 
 ## <a name="changes-to-isolation-mechanism"></a>分離メカニズムの変更
 
-Windows では、SQL Server 2019 セットアップにより、外部プロセスの分離メカニズムが変更されます。 この変更により、ローカル ワーカー アカウントが、Windows で実行されているクライアント アプリケーションの分離テクノロジである [AppContainers](https://docs.microsoft.com/windows/desktop/secauthz/appcontainer-isolation) に置き換えられます。 
+Windows では、SQL Server 2019 セットアップにより、外部プロセスの分離メカニズムが変更されます。 この変更により、ローカル ワーカー アカウントが、Windows で実行されているクライアント アプリケーションの分離テクノロジである [AppContainers](/windows/desktop/secauthz/appcontainer-isolation) に置き換えられます。 
 
 変更の結果に対して、管理者が特別に行うアクション項目はありません。 新規またはアップグレードされたサーバーでは、[sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) から実行されるすべての外部スクリプトおよびコードは、自動的に新しい分離モデルに従います。 
 
@@ -39,7 +39,7 @@ Windows では、SQL Server 2019 セットアップにより、外部プロセ�
 
 以前のリリースでは、**SQLRUserGroup** には、外部プロセスの分離と実行に使用されるローカル Windows ユーザー アカウント (MSSQLSERVER00-MSSQLSERVER20) のプールが含まれていました。 外部プロセスが必要な場合、SQL Server Launchpad サービスは使用可能なアカウントを取得し、それを使用してプロセスを実行します。 
 
-SQL Server 2019 では、セットアップでローカル ワーカー アカウントが作成されなくなりました。 代わりに、[AppContainer](https://docs.microsoft.com/windows/desktop/secauthz/appcontainer-isolation) によって分離が実現されます。 実行時に、ストアド プロシージャまたはクエリで埋め込みスクリプトやコードが検出されると、SQL Server は拡張機能固有の起動ツールの要求を使用して Launchpad を呼び出します。 Launchpad は、自身の ID の下のプロセスで適切なランタイム環境を呼び出し、AppContainer をインスタンス化して、それを含めます。 ローカル アカウントとパスワードの管理が不要になったため、これは有益な変更です。 また、ローカル ユーザー アカウントが禁止されているインストールでは、ローカル ユーザー アカウントの依存関係を削除することで、この機能を使用できるようになります。
+SQL Server 2019 では、セットアップでローカル ワーカー アカウントが作成されなくなりました。 代わりに、[AppContainer](/windows/desktop/secauthz/appcontainer-isolation) によって分離が実現されます。 実行時に、ストアド プロシージャまたはクエリで埋め込みスクリプトやコードが検出されると、SQL Server は拡張機能固有の起動ツールの要求を使用して Launchpad を呼び出します。 Launchpad は、自身の ID の下のプロセスで適切なランタイム環境を呼び出し、AppContainer をインスタンス化して、それを含めます。 ローカル アカウントとパスワードの管理が不要になったため、これは有益な変更です。 また、ローカル ユーザー アカウントが禁止されているインストールでは、ローカル ユーザー アカウントの依存関係を削除することで、この機能を使用できるようになります。
 
 AppContainer は、SQL Server に実装されているため、内部メカニズムです。 プロセス モニターには AppContainer の物理的な証拠は表示されませんが、セットアップによって作成された、プロセスによるネットワーク呼び出しを防ぐための送信ファイアウォール規則で AppContainer を見つけることができます。
 
@@ -58,7 +58,7 @@ AppContainers への移行の一環として、AppContainer SID に基づく新�
 
 既定では、外部の Python および R スクリプトには、作業ディレクトリに対する読み取りアクセス許可のみが与えられます。 
 
-ご利用の Python または R スクリプトで他の任意のディレクトリへのアクセス権が必要な場合は、**NT Service\MSSQLLaunchpad** サービス ユーザー アカウントおよびこのディレクトリ上の **ALL APPLICATION PACKAGES** に**読み取りおよび実行**アクセス許可または**書き込み**アクセス許可を付与する必要があります。
+ご利用の Python または R スクリプトで他の任意のディレクトリへのアクセス権が必要な場合は、**NT Service\MSSQLLaunchpad** サービス ユーザー アカウントおよびこのディレクトリ上の **ALL APPLICATION PACKAGES** に **読み取りおよび実行** アクセス許可または **書き込み** アクセス許可を付与する必要があります。
 
 アクセス権を付与するには、次の手順に従います。
 
@@ -77,7 +77,7 @@ AppContainers への移行の一環として、AppContainer SID に基づく新�
 
 ## <a name="implied-authentication"></a>暗黙の認証
 
-以前と同様に、スクリプトまたはコードが、信頼されている認証を使用してデータまたはリソースを取得するために SQL Server に接続する必要がある場合、*暗黙の認証*には追加の構成が必要です。 追加の構成では、複数のワーカー アカウントではなく、単一の SQL Server Launchpad サービス アカウントが唯一のメンバーである **SQLRUserGroup** のためのデータベース ログインを作成する必要があります。 このタスクの詳細については、「[データベース ユーザーとして SQLRUserGroup を追加する](../security/create-a-login-for-sqlrusergroup.md)」を参照してください。
+以前と同様に、スクリプトまたはコードが、信頼されている認証を使用してデータまたはリソースを取得するために SQL Server に接続する必要がある場合、*暗黙の認証* には追加の構成が必要です。 追加の構成では、複数のワーカー アカウントではなく、単一の SQL Server Launchpad サービス アカウントが唯一のメンバーである **SQLRUserGroup** のためのデータベース ログインを作成する必要があります。 このタスクの詳細については、「[データベース ユーザーとして SQLRUserGroup を追加する](../security/create-a-login-for-sqlrusergroup.md)」を参照してください。
 
 
 ## <a name="symbolic-link-created-by-setup"></a>セットアップによって作成されたシンボリック リンク

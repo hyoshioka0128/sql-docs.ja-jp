@@ -12,17 +12,17 @@ helpviewer_keywords:
 ms.assetid: b1ae7b78-182a-459e-ab28-f743e43f8293
 author: MladjoA
 ms.author: mlandzic
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 4abd4b9c915a47318ccc8f13d67507af67f0e1d0
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: bedf575888445fb0e14684d4e325b60eb8547a79
+ms.sourcegitcommit: 7791bd2ba339edc5cd2078a6537c8f6bfe72a19b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88448004"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98564454"
 ---
 # <a name="spatial-indexes-overview"></a>空間インデックスの概要
-[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
-  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、空間データと空間インデックスがサポートされています。 *空間インデックス* は拡張インデックスの一種で、空間列にインデックスを設定することができます。 空間列とは、空間データ型 ( **geometry** や **geography**など) のデータを含むテーブル列です。  
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
+  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、空間データと空間インデックスがサポートされています。 *空間インデックス* は拡張インデックスの一種で、空間列にインデックスを設定することができます。 空間列とは、空間データ型 ( **geometry** や **geography** など) のデータを含むテーブル列です。  
   
 > [!IMPORTANT]  
 >  空間インデックスに影響を及ぼす機能を含め、 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]で導入された空間機能の詳細な説明とサンプルについては、ホワイト ペーパー『 [New Spatial Features in SQL Server 2012 (SQL Server 2012 の新しい空間機能)](https://go.microsoft.com/fwlink/?LinkId=226407)』をダウンロードしてご覧ください。  
@@ -30,7 +30,7 @@ ms.locfileid: "88448004"
 ##  <a name="about-spatial-indexes"></a><a name="about"></a> 空間インデックスについて  
   
 ###  <a name="decomposing-indexed-space-into-a-grid-hierarchy"></a><a name="decompose"></a> インデックスを作成する空間のグリッド階層への分解  
- [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]では、空間インデックスは B ツリーを使用して構築されます。したがって、インデックスでは、B ツリーの線形な順序で 2 次元の空間データを表現する必要があります。 このため、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、データを空間インデックスに読み取る前に、空間を階層に均一に分解します。 このインデックス作成プロセスでは、空間が 4 つのレベルから成る *グリッド階層* に *分解*されます。 これらのレベルはそれぞれ、 *レベル 1* (最上位レベル)、 *レベル 2*、 *レベル 3*、および *レベル 4*と呼ばれます。  
+ [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]では、空間インデックスは B ツリーを使用して構築されます。したがって、インデックスでは、B ツリーの線形な順序で 2 次元の空間データを表現する必要があります。 このため、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、データを空間インデックスに読み取る前に、空間を階層に均一に分解します。 このインデックス作成プロセスでは、空間が 4 つのレベルから成る *グリッド階層* に *分解* されます。 これらのレベルはそれぞれ、 *レベル 1* (最上位レベル)、 *レベル 2*、 *レベル 3*、および *レベル 4* と呼ばれます。  
   
  各レベルでは、1 つ上のレベルがさらに分解されます。したがって、上のレベルのセルに次のレベルの完全なグリッドが含まれます。 特定のレベルのすべてのグリッドは、両方の軸に沿って同じ数のセルを持ちます (4 × 4、8 × 8 など)。それらのセルのサイズはすべて同じです。  
   
@@ -46,7 +46,7 @@ ms.locfileid: "88448004"
  ![4 × 4 のレベル 1 グリッド上の多角形と線](../../relational-databases/spatial/media/spndx-level-1-objects.gif "4 × 4 のレベル 1 グリッド上の多角形と線")  
   
 #### <a name="grid-density"></a>グリッド密度  
- グリッドの軸に沿ったセルの数により、グリッドの *密度*が決まります。この数が多いほど密度が高くなります。 たとえば、8 × 8 のグリッド (64 個のセル) は、4 × 4 のグリッド (16 個のセル) より高密度です。 グリッド密度はレベルごとに定義されます。  
+ グリッドの軸に沿ったセルの数により、グリッドの *密度* が決まります。この数が多いほど密度が高くなります。 たとえば、8 × 8 のグリッド (64 個のセル) は、4 × 4 のグリッド (16 個のセル) より高密度です。 グリッド密度はレベルごとに定義されます。  
   
  空間インデックスの [CREATE SPATIAL INDEX](../../t-sql/statements/create-spatial-index-transact-sql.md)[!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントでサポートされている GRIDS 句を使用すると、レベルごとに異なるグリッド密度を指定できます。 特定のレベルのグリッド密度を指定するには、次のいずれかのキーワードを使用します。  
   
@@ -79,7 +79,7 @@ ms.locfileid: "88448004"
   
 -   オブジェクトごとのセル数のルール  
   
-     このルールでは、 *オブジェクトごとのセル数の制限*を適用します。オブジェクトごとのセル数の制限は、レベル 1 以外のレベルで各オブジェクトについてカウントできるセルの最大数を決定します。 これにより、下位レベルでオブジェクトについて記録できる情報の量が制御されます。  
+     このルールでは、 *オブジェクトごとのセル数の制限* を適用します。オブジェクトごとのセル数の制限は、レベル 1 以外のレベルで各オブジェクトについてカウントできるセルの最大数を決定します。 これにより、下位レベルでオブジェクトについて記録できる情報の量が制御されます。  
   
 -   最下位のセルのルール  
   
@@ -101,7 +101,7 @@ ms.locfileid: "88448004"
   
  たとえば先ほどの、八角形がレベル 1 グリッドのセル 15 に完全に収まっている図では、 セル 15 がテセレーションされて、八角形がレベル 2 の 9 つのセルに分解されています。 この例では、オブジェクトごとのセル数の制限が 9 以上と想定されています。 オブジェクトごとのセル数の制限が 8 以下の場合は、セル 15 はテセレーションされず、セル 15 のみがオブジェクトに対してカウントされます。  
   
- 既定では、オブジェクトごとのセル数の制限は 16 です。この値は、ほとんどの空間インデックスで、スペースと精度のバランスが取れた値になります。 ただし、[CREATE SPATIAL INDEX](../../t-sql/statements/create-spatial-index-transact-sql.md)[!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントでサポートされている CELLS_PER_OBJECT **=** _n_ 句を使用すると、オブジェクトごとのセル数の制限を 1 から 8,192 の範囲で指定できます。  
+ 既定では、オブジェクトごとのセル数の制限は 16 です。この値は、ほとんどの空間インデックスで、スペースと精度のバランスが取れた値になります。 ただし、[CREATE SPATIAL INDEX](../../t-sql/statements/create-spatial-index-transact-sql.md)[!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントでサポートされている CELLS_PER_OBJECT **=** _n_ 句を使用すると、オブジェクトごとのセル数の制限を 1 から 8192 の範囲で指定できます。  
   
 > [!NOTE]  
 >  空間インデックスの **cells_per_object** の設定は、 [sys.spatial_index_tessellations](../../relational-databases/system-catalog-views/sys-spatial-index-tessellations-transact-sql.md) カタログ ビューで確認できます。  
@@ -114,7 +114,7 @@ ms.locfileid: "88448004"
  ![最下位のセルによる最適化](../../relational-databases/spatial/media/spndx-opt-deepest-cell.gif "最下位のセルによる最適化")  
   
 ###  <a name="tessellation-schemes"></a><a name="schemes"></a> テセレーション スキーム  
- 空間インデックスの動作の一部は、 *テセレーション スキーム*によって決まります。 テセレーション スキームはデータ型固有です。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]では、空間インデックスで次の 2 つのテセレーション スキームがサポートされています。  
+ 空間インデックスの動作の一部は、 *テセレーション スキーム* によって決まります。 テセレーション スキームはデータ型固有です。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]では、空間インデックスで次の 2 つのテセレーション スキームがサポートされています。  
   
 -   *ジオメトリ グリッド テセレーション*。 **geometry** データ型用のスキームです。  
   
@@ -130,7 +130,7 @@ ms.locfileid: "88448004"
 >  このテセレーション スキームを明示的に指定するには、[CREATE SPATIAL INDEX](../../t-sql/statements/create-spatial-index-transact-sql.md) [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントの USING (GEOMETRY_AUTO_GRID/GEOMETRY_GRID) 句を使用します。  
   
 ##### <a name="the-bounding-box"></a>境界ボックス  
- 幾何データで用いられる平面は無限に広がっていますが、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]の空間インデックスは有限の空間を必要とします。 ジオメトリ グリッド テセレーション スキームでは、分解のための有限の空間を確立するために、四角形の *境界ボックス*が必要になります。 境界ボックスは 4 つの座標によって定義されます **(**_x-min_**,**_y-min_**)** および **(**_x-max_**,**_y-max_**)**。これらの座標は、空間インデックスのプロパティとして格納されます。 各座標の意味は次のとおりです。  
+ 幾何データで用いられる平面は無限に広がっていますが、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]の空間インデックスは有限の空間を必要とします。 ジオメトリ グリッド テセレーション スキームでは、分解のための有限の空間を確立するために、四角形の *境界ボックス* が必要になります。 境界ボックスは 4 つの座標によって定義されます **(**_x-min_**,**_y-min_**)** および **(**_x-max_**,**_y-max_**)**。これらの座標は、空間インデックスのプロパティとして格納されます。 各座標の意味は次のとおりです。  
   
 -   *x-min* は、境界ボックスの左下隅の x 座標です。  
   

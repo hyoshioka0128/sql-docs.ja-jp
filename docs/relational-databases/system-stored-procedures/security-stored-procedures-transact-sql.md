@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -17,13 +17,13 @@ helpviewer_keywords:
 ms.assetid: 62b72907-7e95-4c97-9891-0c45d5b678ce
 author: VanMSFT
 ms.author: vanto
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 5050644389090e826f7c86593e9c68aea4cc4863
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 440e6106b855383fcdca879b20001d660469edcc
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88469805"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99206789"
 ---
 # <a name="security-stored-procedures-transact-sql"></a>セキュリティストアドプロシージャ (Transact-sql)
 
@@ -33,7 +33,7 @@ ms.locfileid: "88469805"
 
 :::row:::
     :::column:::
-        [sp_add_trusted_assembly]( sys-sp-add-trusted-assembly-transact-sql.md) 
+        [sys.sp_add_trusted_assembly]( sys-sp-add-trusted-assembly-transact-sql.md) 
     :::column-end:::
     :::column:::
         [sp_addapprole](../../relational-databases/system-stored-procedures/sp-addapprole-transact-sql.md) (非推奨)
@@ -127,10 +127,10 @@ ms.locfileid: "88469805"
 :::row-end:::
 :::row:::
     :::column:::
-        [sp_dropalias](../../relational-databases/system-stored-procedures/sp-dropalias-transact-sql.md) (非推奨) 
+        [sp_dropalias](./system-stored-procedures-transact-sql.md) (非推奨) 
     :::column-end:::
     :::column:::
-        [sp_drop_trusted_assembly]( sys-sp-drop-trusted-assembly-transact-sql.md) 
+        [sys.sp_drop_trusted_assembly]( sys-sp-drop-trusted-assembly-transact-sql.md) 
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -278,7 +278,6 @@ ms.locfileid: "88469805"
 :::row-end:::
   
 ## <a name="see-also"></a>参照  
- [システムストアドプロシージャ &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/system-stored-procedures-transact-sql.md)   
+ [システム ストアド プロシージャ &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/system-stored-procedures-transact-sql.md)   
  [セキュリティ関数 &#40;Transact-SQL&#41;](../../t-sql/functions/security-functions-transact-sql.md)  
-  
   

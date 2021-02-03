@@ -9,15 +9,15 @@ ms.reviewer: ''
 ms.technology: table-view-index
 ms.topic: conceptual
 ms.assetid: 21e6d74f-711f-40e6-a8b7-85f832c5d4b3
-author: CarlRabeler
-ms.author: carlrab
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 40b42ef18c74211ca51399827428870af368f95c
-ms.sourcegitcommit: 331b8495e4ab37266945c81ff5b93d250bdaa6da
+author: markingmyname
+ms.author: maghan
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 2b795f2fc65cade53dac533795d41ae8013e90cb
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88646313"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97439395"
 ---
 # <a name="creating-a-system-versioned-temporal-table"></a>システム バージョン管理されたテンポラル テーブルの作成
 
@@ -51,7 +51,7 @@ WITH (SYSTEM_VERSIONING = ON);
 
 ### <a name="important-remarks"></a>重要な解説
 
-- システム バージョン管理されたテンポラル テーブルには、主キーと、 **PERIOD FOR SYSTEM_TIME** として宣言された 2 つの datetime2 列で定義された厳密に 1 つの **PERIOD FOR SYSTEM_TIME**が必要です。
+- システム バージョン管理されたテンポラル テーブルには、主キーと、 **PERIOD FOR SYSTEM_TIME** として宣言された 2 つの datetime2 列で定義された厳密に 1 つの **PERIOD FOR SYSTEM_TIME** が必要です。
 - **PERIOD** 列は、null 値許容性が指定されていない場合でも、常に null 値非許容と見なされます。 **PERIOD** 列が明示的に Null 許容として定義されている場合、**CREATE TABLE** ステートメントは失敗します。
 - 履歴テーブルは、列の数、列名、順序、データ型に関して、現在のテーブルまたはテンポラル テーブルと常にスキーマが整合している必要があります。
 - 匿名履歴テーブルは、現在のテーブルまたはテンポラル テーブルと同じスキーマで自動的に作成されます。
@@ -84,7 +84,7 @@ WITH (SYSTEM_VERSIONING = ON (HISTORY_TABLE = dbo.DepartmentHistory));
 
 - **HISTORY_TABLE** パラメーターにはスキーマ名が必須です。
 - 指定したスキーマが存在しない場合、 **CREATE TABLE** ステートメントは失敗します。
-- **HISTORY_TABLE** パラメーターによって指定されているテーブルが既に存在する場合、新しく作成されるテンポラル テーブルに対して、 [スキーマの整合性およびテンポラル データの整合性](https://msdn.microsoft.com/library/dn935015.aspx)が検証されます。 無効な履歴テーブルを指定した場合、**CREATE TABLE** ステートメントは失敗します。
+- **HISTORY_TABLE** パラメーターによって指定されているテーブルが既に存在する場合、新しく作成されるテンポラル テーブルに対して、 [スキーマの整合性およびテンポラル データの整合性](./temporal-tables.md)が検証されます。 無効な履歴テーブルを指定した場合、**CREATE TABLE** ステートメントは失敗します。
 
 ## <a name="creating-a-temporal-table-with-a-user-defined-history-table"></a>ユーザー定義の履歴テーブルによるテンポラル テーブルの作成
 
@@ -170,7 +170,7 @@ ALTER TABLE InsurancePolicy
   - 開始列の既定値では、既存の行が有効であると考慮することを始める時点を指定します。 未来の時刻は指定できません。
   - 終了日時は、特定の datetime2 精度に対する最大値として指定する必要があります。たとえば、`9999-12-31 23:59:59` や `9999-12-31 23:59:59.9999999` にします。
 - 期間を追加すると、現在のテーブルでデータ整合性チェックが実行されて、期間列の既定値が有効であることが確認されます。
-- **SYSTEM_VERSIONING**を有効にするときに既存の履歴テーブルを指定すると、現在のテーブルと履歴テーブルの両方に対してデータの整合性チェックが行われます。 **DATA_CONSISTENCY_CHECK = OFF** を追加パラメーターとして指定した場合は、スキップできます。
+- **SYSTEM_VERSIONING** を有効にするときに既存の履歴テーブルを指定すると、現在のテーブルと履歴テーブルの両方に対してデータの整合性チェックが行われます。 **DATA_CONSISTENCY_CHECK = OFF** を追加パラメーターとして指定した場合は、スキップできます。
 
 ### <a name="migrate-existing-tables-to-built-in-support"></a>既存のテーブルを組み込みサポートに移行する
 
@@ -207,4 +207,4 @@ ALTER TABLE ProjectTaskCurrent
 - [システム バージョン管理のテンポラル テーブルのデータの変更](../../relational-databases/tables/modifying-data-in-a-system-versioned-temporal-table.md)
 - [システム バージョン管理されたテンポラル テーブルのデータのクエリ](../../relational-databases/tables/querying-data-in-a-system-versioned-temporal-table.md)
 - [システム バージョン管理されたテンポラル テーブルのスキーマを変更する](../../relational-databases/tables/changing-the-schema-of-a-system-versioned-temporal-table.md)
-- [システム バージョン管理されたテンポラル テーブルでシステム バージョン管理を停止する](../../relational-databases/tables/stopping-system-versioning-on-a-system-versioned-temporal-table.md)  
+- [システム バージョン管理されたテンポラル テーブルでシステム バージョン管理を停止する](../../relational-databases/tables/stopping-system-versioning-on-a-system-versioned-temporal-table.md)

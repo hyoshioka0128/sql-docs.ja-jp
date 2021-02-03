@@ -1,6 +1,6 @@
 ---
 description: sys.dm_db_stats_histogram (Transact-SQL)
-title: dm_db_stats_histogram (Transact-sql) |Microsoft Docs
+title: sys.dm_db_stats_histogram (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
@@ -18,24 +18,24 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_db_stats_histogram dynamic management function
 ms.assetid: 1897fd4a-8d51-461e-8ef2-c60be9e563f2
-author: markingmyname
-ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 330053f10b6b57b184d2be26d4181997ed19ba7b
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 5225498eda8ccba4b32b8889062282a6c7d9f3cd
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89543969"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99236064"
 ---
 # <a name="sysdm_db_stats_histogram-transact-sql"></a>sys.dm_db_stats_histogram (Transact-SQL)
 
 [!INCLUDE [sqlserver2016-asdb-asdbmi](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi.md)]
 
-現在のデータベース内の指定されたデータベースオブジェクト (テーブルまたはインデックス付きビュー) の統計ヒストグラムを返し [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。 `DBCC SHOW_STATISTICS WITH HISTOGRAM` に似ています。
+現在のデータベース内の指定されたデータベースオブジェクト (テーブルまたはインデックス付きビュー) の統計ヒストグラムを返し [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。 `DBCC SHOW_STATISTICS WITH HISTOGRAM` と似ています。
 
 > [!NOTE] 
-> この DMF は、SP1 CU2 以降で使用できます。 [!INCLUDE[ssSQL15](../../includes/ssSQL15-md.md)]
+> この DMF は、SP1 CU2 以降で使用できます。 [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)]
 
 ## <a name="syntax"></a>構文  
   
@@ -45,10 +45,10 @@ sys.dm_db_stats_histogram (object_id, stats_id)
   
 ## <a name="arguments"></a>引数  
  *object_id*  
- 統計のプロパティが要求された、現在のデータベース内にあるオブジェクトの ID です。 *object_id* は **int**です。  
+ 統計のプロパティが要求された、現在のデータベース内にあるオブジェクトの ID です。 *object_id* は **int** です。  
   
  *stats_id*  
- 指定された *object_id*の統計情報の ID です。 統計 ID は、 [sys.stats](../../relational-databases/system-catalog-views/sys-stats-transact-sql.md) 動的管理ビューから取得できます。 *stats_id* は **int**です。  
+ 指定された *object_id* の統計情報の ID です。 統計 ID は、 [sys.stats](../../relational-databases/system-catalog-views/sys-stats-transact-sql.md) 動的管理ビューから取得できます。 *stats_id* は **int** です。  
   
 ## <a name="table-returned"></a>返されるテーブル  
   
@@ -77,7 +77,7 @@ sys.dm_db_stats_histogram (object_id, stats_id)
   
  次の図は、6 つの区間があるヒストグラムを示しています。 最初の上限境界値の左側にある領域が最初の区間です。  
   
- ![ヒストグラム](../../relational-databases/system-dynamic-management-views/media/histogram_2.gif "ヒストグラム")  
+ ![ヒストグラム](../../relational-databases/system-dynamic-management-views/media/histogram-2.svg "ヒストグラム")  
   
  ヒストグラムの各区間は、以下のように表されます。  
   

@@ -1,8 +1,6 @@
 ---
+title: FROM 句と JOIN、APPLY、PIVOT (T-SQL)
 description: FROM 句と JOIN、APPLY、PIVOT (Transact-SQL)
-title: FROM:JOIN、APPLY、PIVOT (T-SQL) | Microsoft Docs
-ms.custom: ''
-ms.date: 06/01/2019
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
@@ -13,6 +11,8 @@ f1_keywords:
 - FROM_TSQL
 - FROM
 - JOIN_TSQL
+- OUTER_JOIN_TSQL
+- INNER_JOIN_TSQL
 - CROSS_TSQL
 - CROSS_APPLY_TSQL
 - APPLY_TSQL
@@ -34,13 +34,15 @@ helpviewer_keywords:
 ms.assetid: 36b19e68-94f6-4539-aeb1-79f5312e4263
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 810a61f438f88420829bb9656b328b2d93c7ef7b
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.custom: ''
+ms.date: 06/01/2019
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: d1ac3e525ba2e7f3cf459a7ce0ae309d22263aa1
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88445379"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172404"
 ---
 # <a name="from-clause-plus-join-apply-pivot-transact-sql"></a>FROM 句と JOIN、APPLY、PIVOT (Transact-SQL)
 
@@ -56,9 +58,9 @@ FROM 句は通常、SELECT ステートメントで必要です。 例外は、�
 
 この記事では、FROM 句で使用できる次のキーワードについても説明します。
 
-- JOIN
+- [JOIN](../../relational-databases/performance/joins.md)
 - APPLY
-- PIVOT
+- [PIVOT](from-using-pivot-and-unpivot.md)
 
 ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)
 
@@ -138,7 +140,7 @@ FROM 句は通常、SELECT ステートメントで必要です。 例外は、�
 ```  
   
 ```syntaxsql
--- Syntax for Azure SQL Data Warehouse and Parallel Data Warehouse  
+-- Syntax for Azure Synapse Analytics and Parallel Data Warehouse  
   
 FROM { <table_source> [ ,...n ] }  
   
@@ -151,7 +153,7 @@ FROM { <table_source> [ ,...n ] }
 }  
   
 <tablesample_clause> ::=
-    TABLESAMPLE ( sample_number [ PERCENT ] ) -- SQL Data Warehouse only  
+    TABLESAMPLE ( sample_number [ PERCENT ] ) -- Azure Synapse Analytics only  
  
 <joined_table> ::=   
 {  
@@ -199,20 +201,14 @@ FROM { <table_source> [ ,...n ] }
  WITH (\<table_hint> )  
  クエリ オプティマイザーが、このテーブルを使用して、このステートメントに対し最適化またはロックを使用することを指定します。 詳細については、「[テーブル ヒント &#40;Transact-SQL&#41;](../../t-sql/queries/hints-transact-sql-table.md)」を参照してください。  
   
- *rowset_function*  
-
+*rowset_function*  
 **適用対象**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降と [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
-
-  
- OPENROWSET など、テーブル参照の代わりに使用できるオブジェクトを返す行セット関数のいずれかを指定します。 行セット関数の一覧の詳細については、「[行セット関数 &#40;Transact-SQL&#41;](../../t-sql/functions/rowset-functions-transact-sql.md)」を参照してください。  
+OPENROWSET など、テーブル参照の代わりに使用できるオブジェクトを返す行セット関数のいずれかを指定します。 行セット関数の一覧の詳細については、「[行セット関数 &#40;Transact-SQL&#41;](../functions/opendatasource-transact-sql.md)」を参照してください。  
   
  OPENROWSET 関数および OPENQUERY 関数を使用したリモート オブジェクトの指定は、そのオブジェクトにアクセスする OLE DB プロバイダーの機能に依存します。  
   
  *bulk_column_alias*  
-
 **適用対象**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降と [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
-
-  
  結果セット内の列名に対する別名です。このパラメーターは省略可能です。 列の別名は、BULK オプションが指定された OPENROWSET 関数を使用する SELECT ステートメント内でのみ使用できます。 *bulk_column_alias* を使用する場合は、ファイル内の列と同じ順序ですべてのテーブル列に対して別名を指定します。  
   
 > [!NOTE]  
@@ -221,12 +217,9 @@ FROM { <table_source> [ ,...n ] }
  *user_defined_function*  
  テーブル値関数を指定します。  
   
- OPENXML \<openxml_clause>  
-
+OPENXML \<openxml_clause>  
 **適用対象**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降と [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
-
-  
- XML ドキュメントに対して行セット ビューを提供します。 詳細については、「[OPENXML &#40;Transact-SQL&#41;](../../t-sql/functions/openxml-transact-sql.md)」を参照してください。  
+XML ドキュメントに対して行セット ビューを提供します。 詳細については、「[OPENXML &#40;Transact-SQL&#41;](../../t-sql/functions/openxml-transact-sql.md)」を参照してください。  
   
  *derived_table*  
  データベースから行を取得するサブクエリです。 *derived_table* は 1 つ上のレベルのクエリへの入力として使用されます。  
@@ -236,17 +229,11 @@ FROM { <table_source> [ ,...n ] }
  *column_alias*  
  派生テーブルの結果セット内の列名に対する別名です。このパラメーターは省略可能です。 選択リストの各列の別名を 1 つずつ含みます。列の別名リスト全体をかっこで囲みます。  
   
- *table_or_view_name* FOR SYSTEM_TIME \<system_time>  
-
-**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降と [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
-
-  
- データの特定のバージョンが、指定された時間的なテーブルとそのシステムのバージョン情報のリンクの履歴テーブルから返されることを指定します  
+ *table_or_view_name* FOR SYSTEM_TIME \<system_time> 適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降および [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
+データの特定のバージョンが、指定された時間的なテーブルとそのシステムのバージョン情報のリンクの履歴テーブルから返されることを指定します  
   
 ### <a name="tablesample-clause"></a>TABLESAMPLE 句
-**適用対象:** SQL Server、SQL Database 
- 
- テーブルからのデータのサンプルが返されることを指定します。 サンプルは、概数になる可能性があります。 この句は、SELECT または UPDATE ステートメント内の主テーブルまたは結合テーブルで使用できます。 TABLESAMPLE はビューを使用して指定できません。  
+**適用対象:** SQL Server、SQL Database。テーブルからのデータのサンプルが返すことを指定します。 サンプルは、概数になる可能性があります。 この句は、SELECT または UPDATE ステートメント内の主テーブルまたは結合テーブルで使用できます。 TABLESAMPLE はビューを使用して指定できません。  
   
 > [!NOTE]  
 >  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] にアップグレードされたデータベースに対して TABLESAMPLE を使用するときは、データベースの互換性レベルは 110 以上に設定され、再帰共通テーブル式 (CTE) クエリでは PIVOT は許可されません。 詳細については、「[ALTER DATABASE 互換性レベル &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md)」を参照してください。  
@@ -267,15 +254,15 @@ FROM { <table_source> [ ,...n ] }
  選択されたサンプルを再度返すことができることを示します。 同じ *repeat_seed* 値を使用して指定されている場合、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] はテーブル内の行に変更が行われない限り同じ行のサブセットを返します。 異なる *repeat_seed* 値を使用して指定されている場合、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は、テーブル内の異なる行のサンプルをいくつか返す可能性があります。 テーブルに対する挿入、更新、削除、インデックスの再構築またはデフラグ、およびデータベースの復元またはアタッチは、変更と見なされます。  
   
  *repeat_seed*  
- 乱数を生成するために [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によって使用される整数の定数式です。 *repeat_seed* は **bigint**です。 *repeat_seed* が指定されていない場合は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によってランダムに値が割り当てられます。 テーブルに変更が適用されていない場合は、特定の *repeat_seed* 値に対して、サンプル結果は常に同じになります。 *repeat_seed* 式は、0 より大きい整数値に評価される必要があります。  
+ 乱数を生成するために [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によって使用される整数の定数式です。 *repeat_seed* は **bigint** です。 *repeat_seed* が指定されていない場合は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によってランダムに値が割り当てられます。 テーブルに変更が適用されていない場合は、特定の *repeat_seed* 値に対して、サンプル結果は常に同じになります。 *repeat_seed* 式は、0 より大きい整数値に評価される必要があります。  
   
 ### <a name="tablesample-clause"></a>TABLESAMPLE 句
-**適用対象:** SQL Data Warehouse
+**適用対象:** [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)]
 
  テーブルからのデータのサンプルが返されることを指定します。 サンプルは、概数になる可能性があります。 この句は、SELECT または UPDATE ステートメント内の主テーブルまたは結合テーブルで使用できます。 TABLESAMPLE はビューを使用して指定できません。 
 
  PERCENT  
- *sample_number* で指定した割合の行がテーブルから取得されることを指定します。 PERCENT を指定すると、SQL Data Warehouse は指定された割合の概数を返します。 PERCENT を指定する場合、*sample_number* 式は 0 ～ 100 の値に評価される必要があります。  
+ *sample_number* で指定した割合の行がテーブルから取得されることを指定します。 PERCENT が指定されている場合、[!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] は指定された割合の概数を返します。 PERCENT を指定する場合、*sample_number* 式は 0 ～ 100 の値に評価される必要があります。  
 
 
 ### <a name="joined-table"></a>結合テーブル 
@@ -381,35 +368,24 @@ ON (p.ProductID = v.ProductID);
  UNPIVOT \<unpivot_clause>  
  入力テーブルが *column_list* 内の複数の列から *pivot_column* と呼ばれる単一の列に絞り込まれることを指定します。 PIVOT および UNPIVOT の詳細については、「[PIVOT および UNPIVOT の使用](../../t-sql/queries/from-using-pivot-and-unpivot.md)」を参照してください。  
   
- AS OF \<date_time>  
-
-**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降と [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
-
+AS OF \<date_time>  
+**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降と [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
+これまでの時間内には、指定位置で行ごとに実際の値を含む (現在) の 1 つのレコードを含むテーブルを返します。 内部的には、共用体はテンポラル テーブルとその履歴テーブルの間に実行されます。結果はフィルター処理され、 *\<date_time>* パラメーターによって指定される時点で有効であった行で値を返します。 *system_start_time_column_name* 値が *\<date_time>* パラメーター値と等しいかそれよりも小さく、*system_end_time_column_name* 値が *\<date_time>* パラメーター値より大きい場合に、行の値は有効と見なされます。   
   
- これまでの時間内には、指定位置で行ごとに実際の値を含む (現在) の 1 つのレコードを含むテーブルを返します。 内部的には、共用体はテンポラル テーブルとその履歴テーブルの間に実行されます。結果はフィルター処理され、 *\<date_time>* パラメーターによって指定される時点で有効であった行で値を返します。 *system_start_time_column_name* 値が *\<date_time>* パラメーター値と等しいかそれよりも小さく、*system_end_time_column_name* 値が *\<date_time>* パラメーター値より大きい場合に、行の値は有効と見なされます。   
+FROM \<start_date_time> TO \<end_date_time>
+: [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降および [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]**に該当します。**
+FROM 引数の *\<start_date_time>* パラメーター値の前からアクティブ状態が始まったかどうかに関係なく、または、TO 引数の *\<end_date_time>* パラメーター値の後でアクティブ状態を止めたかどうかに関係なく、指定の時間範囲内でアクティブであったすべてのレコード バージョンの値を含むテーブルを返します。 内部的には、共用体が一時的なテーブルとその履歴テーブルの間実行され、結果をフィルター処理すると、指定した時間範囲の中にいつでもにアクティブだったすべての行のバージョンの値を返します。 FROM エンドポイントによって定義されている下限の境界で正確にアクティブになった行のサイズが含まれ、宛先エンドポイントによって定義された境界の上限で正確にアクティブになった行は含まれません。  
   
- FROM \<start_date_time> TO \<end_date_time>
-
-**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降と [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。
-
+BETWEEN \<start_date_time> AND \<end_date_time>  
+**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降と [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
+\<end_date_time> エンドポイントで定義された上限の境界によってアクティブになった行が含まれることを除き、上記の **FROM \<start_date_time> TO \<end_date_time>** の説明と同じです。  
   
- FROM 引数の *\<start_date_time>* パラメーター値の前からアクティブ状態が始まったかどうかに関係なく、または、TO 引数の *\<end_date_time>* パラメーター値の後でアクティブ状態を止めたかどうかに関係なく、指定の時間範囲内でアクティブであったすべてのレコード バージョンの値を含むテーブルを返します。 内部的には、共用体が一時的なテーブルとその履歴テーブルの間実行され、結果をフィルター処理すると、指定した時間範囲の中にいつでもにアクティブだったすべての行のバージョンの値を返します。 FROM エンドポイントによって定義されている下限の境界で正確にアクティブになった行のサイズが含まれ、宛先エンドポイントによって定義された境界の上限で正確にアクティブになった行は含まれません。  
+CONTAINED IN (\<start_date_time> , \<end_date_time>)  
+**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降と [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
+開かれて、CONTAINED IN 引数の 2 つの datetime 値で定義されている指定時間範囲内に閉じられた、すべてのレコードのバージョンの値が含まれるテーブルを返します。 行が下位の境界に正確に有効になったまたは上限の境界上だけでアクティブにされているが中断されることでは、含まれています。  
   
- BETWEEN \<start_date_time> AND \<end_date_time>  
-
-**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降と [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
-  
- \<end_date_time> エンドポイントで定義された上限の境界によってアクティブになった行が含まれることを除き、上記の **FROM \<start_date_time> TO \<end_date_time>** の説明と同じです。  
-  
- CONTAINED IN (\<start_date_time> , \<end_date_time>)  
-
-**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降と [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
-
-  
- 開かれて、CONTAINED IN 引数の 2 つの datetime 値で定義されている指定時間範囲内に閉じられた、すべてのレコードのバージョンの値が含まれるテーブルを返します。 行が下位の境界に正確に有効になったまたは上限の境界上だけでアクティブにされているが中断されることでは、含まれています。  
-  
- ALL  
- 現在のテーブルと、履歴テーブルの両方からのすべての行から値を持つテーブルを返します。  
+ALL  
+現在のテーブルと、履歴テーブルの両方からのすべての行から値を持つテーブルを返します。  
   
 ## <a name="remarks"></a>解説  
  FROM 句は、結合テーブルと派生テーブルに対して SQL-92-SQL 構文がサポートされています。 SQL-92 構文には、INNER、LEFT OUTER、RIGHT OUTER、FULL OUTER、および CROSS 結合演算子が用意されています。  
@@ -634,9 +610,8 @@ GO
   
 ### <a name="m-using-for-system_time"></a>M. FOR SYSTEM_TIME を使用する  
   
-**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降と [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
-  
- 次の例では、FOR SYSTEM_TIME AS OF date_time_literal_or_variable 引数を使用して、2014 年 1 月 1 日の時点の実際 (現在) のテーブル行を返します。  
+**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降と [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
+次の例では、FOR SYSTEM_TIME AS OF date_time_literal_or_variable 引数を使用して、2014 年 1 月 1 日の時点の実際 (現在) のテーブル行を返します。  
   
 ```sql
 SELECT DepartmentNumber,   
@@ -648,7 +623,7 @@ FOR SYSTEM_TIME AS OF '2014-01-01'
 WHERE ManagerID = 5;
 ```  
   
- 次の例では、FOR SYSTEM_TIME FROM date_time_literal_or_variable TO date_time_literal_or_variable 引数を使用して、境界の上限を除く、定義された期間 (2013 年 1 月 1 日から 2014 年 1 月 1 日まで) にアクティブだったすべての行を返します。  
+次の例では、FOR SYSTEM_TIME FROM date_time_literal_or_variable TO date_time_literal_or_variable 引数を使用して、境界の上限を除く、定義された期間 (2013 年 1 月 1 日から 2014 年 1 月 1 日まで) にアクティブだったすべての行を返します。  
   
 ```sql
 SELECT DepartmentNumber,   
@@ -899,4 +874,4 @@ FROM Sales.Customer TABLESAMPLE SYSTEM (10 PERCENT) ;
  [OPENQUERY &#40;Transact-SQL&#41;](../../t-sql/functions/openquery-transact-sql.md)   
  [OPENROWSET &#40;Transact-SQL&#41;](../../t-sql/functions/openrowset-transact-sql.md)   
  [演算子 &#40;Transact-SQL&#41;](../../t-sql/language-elements/operators-transact-sql.md)   
- [WHERE &#40;Transact-SQL&#41;](../../t-sql/queries/where-transact-sql.md)  
+ [WHERE &#40;Transact-SQL&#41;](../../t-sql/queries/where-transact-sql.md)

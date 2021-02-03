@@ -9,12 +9,12 @@ ms.date: 01/19/2019
 ms.author: murshedz
 ms.reviewer: martinle
 ms.custom: seo-dt-2019
-ms.openlocfilehash: e7f106e462d3d1bb7848b15523ef3d3f7feed2a1
-ms.sourcegitcommit: 7345e4f05d6c06e1bcd73747a4a47873b3f3251f
+ms.openlocfilehash: 9dd52db9d34519f2b09cbaba880806c17509c84c
+ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88767211"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97489712"
 ---
 # <a name="backup-and-restore"></a>バックアップと復元
 
@@ -24,7 +24,7 @@ ms.locfileid: "88767211"
 
 PDW *データベースバックアップ* は、形式で格納されたアプライアンスデータベースのコピーであり、元のデータベースをアプライアンスに復元するために使用できます。  
   
-PDW データベースバックアップは、 [BACKUP database](../t-sql/statements/backup-transact-sql.md?view=aps-pdw-2016) t-sql ステートメントを使用して作成され、 [RESTORE database](../t-sql/statements/restore-statements-transact-sql.md?view=aps-pdw-2016) ステートメントで使用するように書式設定されます。他の目的では使用できません。 バックアップは、同じ数またはより多くのコンピューティングノードを持つアプライアンスにのみ復元できます。  
+PDW データベースバックアップは、 [BACKUP database](../t-sql/statements/backup-transact-sql.md?view=aps-pdw-2016&preserve-view=true) t-sql ステートメントを使用して作成され、 [RESTORE database](../t-sql/statements/restore-statements-transact-sql.md?view=aps-pdw-2016&preserve-view=true) ステートメントで使用するように書式設定されます。他の目的では使用できません。 バックアップは、同じ数またはより多くのコンピューティングノードを持つアプライアンスにのみ復元できます。  
   
 <!-- MISSING LINKS
 The [master database](master-database.md) is a SMP SQL Server database. It is backed up with the BACKUP DATABASE statement. To restore master, use the [Restore the Master Database](configuration-manager-restore-master-database.md) page of the Configuration Manager tool.  
@@ -104,7 +104,7 @@ PDW では、SQL Server バックアップテクノロジを使用して、ア�
   
 1.  復元するデータベースバックアップは、アプライアンス以外のバックアップサーバー上の Windows ファイル共有で使用できます。 最適なパフォーマンスを得るために、このサーバーはアプライアンス InfiniBand ネットワークに接続されています。  
   
-2.  ユーザーは、 [RESTORE DATABASE](../t-sql/statements/restore-statements-transact-sql.md?view=aps-pdw-2016) tsql ステートメントをコントロールノードに送信します。  
+2.  ユーザーは、 [RESTORE DATABASE](../t-sql/statements/restore-statements-transact-sql.md?view=aps-pdw-2016&preserve-view=true) tsql ステートメントをコントロールノードに送信します。  
   
     -   復元は、完全復元またはヘッダー復元のいずれかです。 完全復元では、完全バックアップが復元され、必要に応じて差分バックアップが復元されます。  
   
@@ -130,11 +130,11 @@ PDW では、SQL Server バックアップテクノロジを使用して、ア�
   
 ## <a name="related-tasks"></a>Related Tasks  
   
-|バックアップと復元のタスク|説明|  
+|バックアップと復元のタスク|Description|  
 |---------------------------|---------------|  
 |サーバーをバックアップサーバーとして準備します。|[バックアップ サーバーの取得と構成](acquire-and-configure-backup-server.md)|  
-|データベースをバックアップします。|[BACKUP DATABASE](../t-sql/statements/backup-transact-sql.md?view=aps-pdw-2016)|  
-|データベースを復元します。|[データベースの復元](../t-sql/statements/restore-statements-transact-sql.md?view=aps-pdw-2016)|    
+|データベースをバックアップします。|[BACKUP DATABASE](../t-sql/statements/backup-transact-sql.md?view=aps-pdw-2016&preserve-view=true)|  
+|データベースを復元する。|[データベースの復元](../t-sql/statements/restore-statements-transact-sql.md?view=aps-pdw-2016&preserve-view=true)|    
 
 <!-- MISSING LINKS
 

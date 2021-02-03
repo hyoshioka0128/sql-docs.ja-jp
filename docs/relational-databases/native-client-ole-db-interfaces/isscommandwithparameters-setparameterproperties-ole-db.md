@@ -16,13 +16,13 @@ helpviewer_keywords:
 ms.assetid: 4cd0281a-a2a0-43df-8e46-eb478b64cb4b
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: ec0621d8967f2fa351e9147815bddf2d80f0e300
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 6a7e6b24ac8cb66f594985f79b8605569d91d0de
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88490761"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97469343"
 ---
 # <a name="isscommandwithparameterssetparameterproperties-in-sql-server-native-client-ole-db"></a>SQL Server Native Client の ISSCommandWithParameters:: SetParameterProperties (OLE DB)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -52,7 +52,7 @@ HRESULT SetParameterProperties(
   
  **ISSCommandWithParameters::SetParameterProperties** メソッドを呼び出す前に、**SetParameterInfo** メソッドを呼び出す必要があります。 `SetParameterProperties(0, NULL)` を呼び出すと、指定したパラメーター プロパティがすべて消去されます。また、`SetParameterInfo(0,NULL,NULL)` を呼び出すと、パラメーターに関連付けられているすべてのプロパティを含めて、パラメーターに関するすべての情報が消去されます。  
   
- **Isscommandwithparameters:: SetParameterProperties**を呼び出して、DBTYPE_XML 型または型ではないパラメーターのプロパティを指定します。また、DBTYPE_UDT は DB_E_ERRORSOCCURRED または DB_S_ERRORSOCCURRED を返し、そのパラメーターの SSTAMPROPS に含まれるすべての dbprops の*dwstatus*フィールドを DBPROPSTATUS_NOTSET でマークします。 DB_E_ERRORSOCCURRED または DB_S_ERRORSOCCURRED が指しているパラメーターを検出するには、SSPARAMPROPS に含まれている各 DBPROPSET の DBPROP 配列をすべて調べる必要があります。  
+ **Isscommandwithparameters:: SetParameterProperties** を呼び出して、DBTYPE_XML 型または型ではないパラメーターのプロパティを指定します。また、DBTYPE_UDT は DB_E_ERRORSOCCURRED または DB_S_ERRORSOCCURRED を返し、そのパラメーターの SSTAMPROPS に含まれるすべての dbprops の *dwstatus* フィールドを DBPROPSTATUS_NOTSET でマークします。 DB_E_ERRORSOCCURRED または DB_S_ERRORSOCCURRED が指しているパラメーターを検出するには、SSPARAMPROPS に含まれている各 DBPROPSET の DBPROP 配列をすべて調べる必要があります。  
   
  **ISSCommandWithParameters::SetParameterProperties** を呼び出すときに、**SetParameterInfo** によって情報が設定されていないパラメーターのプロパティを指定すると、プロバイダーは次のエラー メッセージと共に E_UNEXPECTED を返します。  
   

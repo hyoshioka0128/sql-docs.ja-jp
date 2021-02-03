@@ -17,13 +17,13 @@ helpviewer_keywords:
 ms.assetid: 3d54e3bb-7c5f-427e-82f8-1403a54c4f53
 author: MightyPen
 ms.author: genemi
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: f7c2db9cc01bfa50092e5849d869d43da8a622e5
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 4526f566783bbac2de4b8aa28f0711000e67db1b
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85665545"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97429893"
 ---
 # <a name="using-ado-to-execute-sqlxml-40-queries"></a>ADO を使用した、SQLXML 4.0 クエリの実行
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -115,7 +115,7 @@ ms.locfileid: "85665545"
   
 1.  次の方法で、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client がインストールされていること確認します。  
   
-    1.  [**スタート**] メニューの [**設定**] をポイントし、[**コントロールパネル**] をクリックします。  
+    1.  [ **スタート** ] メニューの [ **設定**] をポイントし、[ **コントロールパネル**] をクリックします。  
   
     2.  コントロールパネルで、[**プログラムの追加と削除**] を開きます。  
   

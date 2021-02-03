@@ -1,13 +1,13 @@
 ---
-description: server_assembly_modules (Transact-sql)
-title: server_assembly_modules (Transact-sql) |Microsoft Docs
+description: sys.server_assembly_modules (Transact-sql)
+title: sys.server_assembly_modules (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - server_assembly_modules_TSQL
 - sys.server_assembly_modules
@@ -18,19 +18,19 @@ dev_langs:
 helpviewer_keywords:
 - sys.server_assembly_modules catalog view
 ms.assetid: af799e38-2d16-49b2-bcf5-6f9199af899e
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 412cd0ef0ed2fa42ce6c1add66ce26b3a863f413
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: dead9bfa36010e7ffc2835595bcfa4710d582206
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550436"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99182437"
 ---
-# <a name="sysserver_assembly_modules-transact-sql"></a>server_assembly_modules (Transact-sql)
+# <a name="sysserver_assembly_modules-transact-sql"></a>sys.server_assembly_modules (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  TA 型のサーバーレベルのトリガーのアセンブリモジュールごとに1行の値を格納します。 このビューは、アセンブリ トリガーを、基になる CLR 実装にマップします。 この関係を **server_triggers**に結合できます。 アセンブリを **master** データベースに読み込む必要があります。 組 (object_id) は、リレーションシップのキーです。  
+  TA 型のサーバーレベルのトリガーのアセンブリモジュールごとに1行の値を格納します。 このビューは、アセンブリ トリガーを、基になる CLR 実装にマップします。 このリレーションシップを **sys.server_triggers** に参加させることができます。 アセンブリを **master** データベースに読み込む必要があります。 組 (object_id) は、リレーションシップのキーです。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

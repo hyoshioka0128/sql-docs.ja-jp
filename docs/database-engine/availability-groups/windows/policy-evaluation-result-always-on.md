@@ -5,20 +5,20 @@ ms.custom: seodec18
 ms.date: 05/17/2016
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 f1_keywords:
 - swb.agdashboard.policyeval.f1
 - sql13.swb.agdashboard.policyeval.f1
 ms.assetid: 703e947f-d345-4506-be21-34bfbfa7bca6
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: 333ff3e79bc92d82a224caf8af24fb9dc76a6082
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 735598f97a9d735d3a827e0e561fa365b7b1d6cd
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85897010"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642558"
 ---
 # <a name="policy-evaluation-result-page-always-on-dashboard"></a>ポリシー評価の結果ページ (Always On ダッシュボード)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]

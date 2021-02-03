@@ -1,4 +1,5 @@
 ---
+description: Designate a Fail-Safe Operator
 title: Designate a Fail-Safe Operator
 ms.custom: seo-lt-2019
 ms.date: 01/19/2017
@@ -15,19 +16,19 @@ ms.assetid: 0f4eb513-5c0a-4523-974e-e85c1deeb57f
 author: markingmyname
 ms.author: maghan
 ms.reviewer: ''
-monikerRange: = azuresqldb-mi-current || >= sql-server-2016 || = sqlallproducts-allversions
-ms.openlocfilehash: 1f91a6c3548c944d3b2bcf075f2189a5fe4112df
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: = azuresqldb-mi-current || >= sql-server-2016
+ms.openlocfilehash: 5e8774eeb1f0c13350e81a6cb5635695c80a3eb8
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85724497"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97423475"
 ---
 # <a name="designate-a-fail-safe-operator"></a>Designate a Fail-Safe Operator
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
 
 > [!IMPORTANT]  
-> [Azure SQL Database Managed Instance](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) では現在、すべてではありませんがほとんどの SQL Server エージェントの機能がサポートされています。 詳細については、「[Azure SQL Database Managed Instance と SQL Server の T-SQL の相違点](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-transact-sql-information#sql-server-agent)」を参照してください。
+> 現在、[Azure SQL Managed Instance](/azure/sql-database/sql-database-managed-instance) によって、すべてではありませんが、ほとんどの SQL Server エージェントの機能がサポートされています。 詳細については、[Azure SQL Managed Instance と SQL Server の T-SQL の相違点](/azure/sql-database/sql-database-managed-instance-transact-sql-information#sql-server-agent)に関するページを参照してください。
 
 緊急時のオペレーターとは、指定オペレーターが不在の場合に警告を受信するユーザーのことです。 このトピックでは、[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] で [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] を使用して、[!INCLUDE[msCoName](../../includes/msconame_md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントの警告通知を受信する緊急時のオペレーターを設定する方法について説明します。  
   
@@ -54,13 +55,12 @@ ms.locfileid: "85724497"
   
 2.  **[SQL Server エージェント]** を右クリックし、 **[プロパティ]** を選択します。  
   
-3.  **[SQL Server エージェントのプロパティ - **_<サーバー名>_]\_ ダイアログ ボックスの **[ページの選択]** で **[警告システム]** を選択します。  
+3.  **[SQL Server エージェントのプロパティ -** _<サーバー名>_ ]\_ ダイアログ ボックスの **[ページの選択]** で **[警告システム]** を選択します。  
   
 4.  **[緊急時のオペレーター]** の **[緊急時のオペレーターを有効にする]** チェック ボックスをオンにします。  
   
 5.  **[オペレーター]** 一覧から、緊急時のオペレーターにするオペレーターを選択します。  
   
-6.  次のチェック ボックスのいずれかまたはすべてを選択して、オペレーターへの通知方法を指定します。 **[電子メール]** 、 **[ポケットベル]** 、または **[Net Send]** 。  
+6.  **[電子メール]**、 **[ポケットベル]**、 **[Net send]** チェック ボックスのいずれかまたはすべてを選択して、オペレーターへの通知方法を指定します。  
   
 7.  完了したら、 **[OK]** をクリックします。  
-  

@@ -18,13 +18,13 @@ helpviewer_keywords:
 ms.assetid: ee1db3e5-60eb-4425-8a6b-977eeced3f98
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 9efdab422aba328213742d859ccdcca7498ebaed
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: f3599b25297cd1c30e015cfc609ed06376c243bf
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88423904"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97438629"
 ---
 # <a name="using-sql-server-default-result-sets"></a>SQL Server の既定の結果セットの使用
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -41,7 +41,7 @@ SQLSetStmtAttr(hstmt, SQL_ATTR_ROW_ARRAY_SIZE, 1, SQL_IS_INTEGER);
   
  [!INCLUDE[ssVersion2005](../../../includes/ssversion2005-md.md)] では、複数のアクティブな結果セット (MARS) のサポートが導入されました。アプリケーションは、接続ごとに複数のアクティブな既定の結果セットを持つことができるようになりました。 MARS は既定では有効になっていません。  
   
- [!INCLUDE[ssVersion2005](../../../includes/ssversion2005-md.md)] より前のリリースでは、既定の結果セットは 1 つの接続における複数のアクティブなステートメントをサポートしていません。 SQL ステートメントが 1 つの接続で実行された後、サーバーは結果セットのすべての行が処理されるまで、その接続に対するクライアントからのコマンドを受け付けません (結果セットの残りの行の処理を取り消す要求は除きます)。 部分的に処理された結果セットの残りの部分を取り消すには、 *Foption*パラメーターを SQL_CLOSE に設定して[sqlcloを](../../../relational-databases/native-client-odbc-api/sqlclosecursor.md)呼び出すか、 [SQLFreeStmt](../../../relational-databases/native-client-odbc-api/sqlfreestmt.md)を呼び出します。 部分的に処理された結果セットを完成させ、別の結果セットが存在するかどうかをテストするには、 [Sqlmoreresults](../../../relational-databases/native-client-odbc-api/sqlmoreresults.md)を呼び出します。 既定の結果セットが完全に処理される前に ODBC アプリケーションが接続ハンドルに対してコマンドを試行した場合は SQL_ERROR が生成され、 **SQLGetDiagRec** を呼び出すとが返されます。  
+ [!INCLUDE[ssVersion2005](../../../includes/ssversion2005-md.md)] より前のリリースでは、既定の結果セットは 1 つの接続における複数のアクティブなステートメントをサポートしていません。 SQL ステートメントが 1 つの接続で実行された後、サーバーは結果セットのすべての行が処理されるまで、その接続に対するクライアントからのコマンドを受け付けません (結果セットの残りの行の処理を取り消す要求は除きます)。 部分的に処理された結果セットの残りの部分を取り消すには、 *Foption* パラメーターを SQL_CLOSE に設定して [sqlcloを](../../../relational-databases/native-client-odbc-api/sqlclosecursor.md)呼び出すか、 [SQLFreeStmt](../../../relational-databases/native-client-odbc-api/sqlfreestmt.md)を呼び出します。 部分的に処理された結果セットを完成させ、別の結果セットが存在するかどうかをテストするには、 [Sqlmoreresults](../../../relational-databases/native-client-odbc-api/sqlmoreresults.md)を呼び出します。 既定の結果セットが完全に処理される前に ODBC アプリケーションが接続ハンドルに対してコマンドを試行した場合は SQL_ERROR が生成され、 **SQLGetDiagRec** を呼び出すとが返されます。  
   
 ```  
 szSqlState: "HY000", pfNativeError: 0  

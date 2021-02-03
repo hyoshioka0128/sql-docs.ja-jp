@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sp_helprole_TSQL
 - sp_helprole
@@ -18,13 +18,13 @@ helpviewer_keywords:
 ms.assetid: b023103f-ccf3-44e2-b418-4be9bdd49f4a
 author: markingmyname
 ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 8b96269437d8dd793c6a1baf0884d8a16160145d
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 24eca96d2d3c1b7535607fedb2cd3a04961a29df
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89538723"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99210787"
 ---
 # <a name="sp_helprole-transact-sql"></a>sp_helprole (Transact-sql)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -41,7 +41,7 @@ sp_helprole [ [ @rolename = ] 'role' ]
 ```  
   
 ## <a name="arguments"></a>引数  
-`[ @rolename = ] 'role'` 現在のデータベース内のロールの名前を指定します。 *role* の部分は **sysname**で、既定値は NULL です。 *ロール* は現在のデータベースに存在している必要があります。 *Role*が指定されていない場合は、現在のデータベース内のすべてのロールに関する情報が返されます。  
+`[ @rolename = ] 'role'` 現在のデータベース内のロールの名前を指定します。 *role* の部分は **sysname** で、既定値は NULL です。 *ロール* は現在のデータベースに存在している必要があります。 *Role* が指定されていない場合は、現在のデータベース内のすべてのロールに関する情報が返されます。  
   
 ## <a name="return-code-values"></a>リターン コードの値  
  0 (成功) または 1 (失敗)  
@@ -51,11 +51,11 @@ sp_helprole [ [ @rolename = ] 'role' ]
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
 |**RoleName**|**sysname**|現在のデータベース内のロールの名前。|  
-|**RoleId**|**smallint**|**RoleName**の ID。|  
+|**RoleId**|**smallint**|**RoleName** の ID。|  
 |**IsAppRole**|**int**|0 = **RoleName** はアプリケーションロールではありません。<br /><br /> 1 = **RoleName** はアプリケーションロールです。|  
   
-## <a name="remarks"></a>解説  
- ロールに関連付けられている権限を表示するには、 **sp_helprotect**を使用します。 データベースロールのメンバーを表示するには、 **sp_helprolemember**を使用します。  
+## <a name="remarks"></a>コメント  
+ ロールに関連付けられている権限を表示するには、 **sp_helprotect** を使用します。 データベースロールのメンバーを表示するには、 **sp_helprolemember** を使用します。  
   
 ## <a name="permissions"></a>アクセス許可  
  ロール **public** のメンバーシップが必要です。  

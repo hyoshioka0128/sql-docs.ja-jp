@@ -14,13 +14,13 @@ ms.assetid: c5885d14-c7c1-47b3-a389-455e99a7ece1
 author: MightyPen
 ms.author: genemi
 ms.custom: seo-lt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 7fd6795105bb2540c08f1f241444b6464f131601
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: b17b1990f168326ae884b4db4f1ff22a63b24e21
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85762829"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97439691"
 ---
 # <a name="guidelines-and-limitations-of-xml-bulk-load-sqlxml-40"></a>XML 一括読み込みのガイドラインと制限 (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -78,7 +78,7 @@ ms.locfileid: "85762829"
     </Schema>  
     ```  
   
--   **Sql: overflow フィールド**注釈を使用してオーバーフロー列が指定されていない場合、Xml 一括読み込みでは、xml ドキュメント内に存在するデータは無視されますが、マッピングスキーマには記述されていません。  
+-   **Sql: overflow フィールド** 注釈を使用してオーバーフロー列が指定されていない場合、Xml 一括読み込みでは、xml ドキュメント内に存在するデータは無視されますが、マッピングスキーマには記述されていません。  
   
      XML 一括読み込みでは、XML データ ストリーム内に既知のタグが検出されると常に、指定のマッピング スキーマが適用されます。 XML ドキュメントに存在していてもスキーマに記述されていないデータは無視されます。 たとえば、要素を記述するマッピングスキーマがあるとし **\<Customer>** ます。 XML データファイルには、 **\<AllCustomers>** すべての要素を囲むルートタグ (スキーマでは説明されていません) があり **\<Customer>** ます。  
   
@@ -108,7 +108,7 @@ ms.locfileid: "85762829"
     </AllCustomers>  
     ```  
   
-     XML 一括読み込みでは、これらの要素は無視さ **\<Order>** れます。 ただし、スキーマで**sql: overflow-field**注釈を使用して、列をオーバーフロー列として識別すると、XML 一括読み込みではこの列にすべての未使用データが格納されます。  
+     XML 一括読み込みでは、これらの要素は無視さ **\<Order>** れます。 ただし、スキーマで **sql: overflow-field** 注釈を使用して、列をオーバーフロー列として識別すると、XML 一括読み込みではこの列にすべての未使用データが格納されます。  
   
 -   CDATA セクションとエンティティ参照は、データベースに保存される前に、同等の文字列に変換されます。  
   
@@ -122,7 +122,7 @@ ms.locfileid: "85762829"
   
 -   マッピング スキーマで属性に既定値が指定されており、その属性が XML ソース データに含まれていない場合、XML 一括読み込みでは既定値が使用されます。  
   
-     次のサンプル XDR スキーマでは、 **HireDate**属性に既定値が割り当てられています。  
+     次のサンプル XDR スキーマでは、 **HireDate** 属性に既定値が割り当てられています。  
   
     ```  
     <?xml version="1.0" ?>  
@@ -145,7 +145,7 @@ ms.locfileid: "85762829"
     </Schema>  
     ```  
   
-     この XML データでは、2番目の要素に**HireDate**属性がありません **\<Customers>** 。 XML 一括読み込みで2番目の要素がデータベースに挿入されるときに、 **\<Customers>** スキーマで指定されている既定値が使用されます。  
+     この XML データでは、2番目の要素に **HireDate** 属性がありません **\<Customers>** 。 XML 一括読み込みで2番目の要素がデータベースに挿入されるときに、 **\<Customers>** スキーマで指定されている既定値が使用されます。  
   
     ```  
     <ROOT>  
@@ -154,13 +154,13 @@ ms.locfileid: "85762829"
     </ROOT>  
     ```  
   
--   **Sql: url エンコード**の注釈はサポートされていません。  
+-   **Sql: url エンコード** の注釈はサポートされていません。  
   
      XML データ入力に URL を指定して、その場所からデータの一括読み込みを行うことはできません。  
   
      マッピング スキーマで指定されているテーブルは、新しく作成されます (データベースは存在する必要があります)。 データベースに1つ以上のテーブルが既に存在する場合、SGDropTables プロパティは、これらの既存のテーブルを削除して再作成するかどうかを決定します。  
   
--   SchemaGen プロパティ (たとえば、SchemaGen = true) を指定した場合、マッピングスキーマで指定されているテーブルが作成されます。 ただし、SchemaGen では、次の1つの例外を除き、これらのテーブルに対する制約 (主キー/外部キーの制約など) は作成されません。リレーションシップの主キーを構成する XML ノードが XML 型の ID (つまり、XSD の**type = "xsd: ID"** ) を持つように定義されていて、SchemaGen に対して SGUseID プロパティが True に設定されている場合、id 型のノードから作成される主キーだけでなく、マッピングスキーマリレーションシップから主キー/外部キーのリレーションシップが  
+-   SchemaGen プロパティ (たとえば、SchemaGen = true) を指定した場合、マッピングスキーマで指定されているテーブルが作成されます。 ただし、SchemaGen では、次の1つの例外を除き、これらのテーブルに対する制約 (主キー/外部キーの制約など) は作成されません。リレーションシップの主キーを構成する XML ノードが XML 型の ID (つまり、XSD の **type = "xsd: ID"** ) を持つように定義されていて、SchemaGen に対して SGUseID プロパティが True に設定されている場合、id 型のノードから作成される主キーだけでなく、マッピングスキーマリレーションシップから主キー/外部キーのリレーションシップが  
   
 -   SchemaGen は、リレーショナルスキーマを生成するために XSD スキーマファセットと拡張機能を使用しません [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 。  
   
@@ -174,6 +174,6 @@ ms.locfileid: "85762829"
   
 -   XML 一括読み込みを使用して日付値を挿入する場合、値は (-)CCYY-MM-DD((+-)TZ) の形式で指定する必要があります。 これは日付の標準の XSD 形式です。  
   
--   一部のプロパティ フラグは、他のプロパティ フラグと互換性がありません。 たとえば、一括読み込みでは、 **Ignoreduplicatekeys = true**を**Keepidentity = false**と共に使用することはできません。 **Keepidentity = false**の場合、一括読み込みでは、サーバーがキー値を生成する必要があります。 テーブルには、キーに対する**IDENTITY**制約が必要です。 サーバーは重複するキーを生成しません。つまり、 **Ignoreduplicatekeys**が**true**に設定されている必要はありません。 **Ignoreduplicatekeys**は、受信データから行を含むテーブルに主キーの値をアップロードする場合にのみ**true**に設定し、主キーの値が競合する可能性がある場合にのみ設定する必要があります。  
+-   一部のプロパティ フラグは、他のプロパティ フラグと互換性がありません。 たとえば、一括読み込みでは、 **Ignoreduplicatekeys = true** を **Keepidentity = false** と共に使用することはできません。 **Keepidentity = false** の場合、一括読み込みでは、サーバーがキー値を生成する必要があります。 テーブルには、キーに対する **IDENTITY** 制約が必要です。 サーバーは重複するキーを生成しません。つまり、 **Ignoreduplicatekeys** が **true** に設定されている必要はありません。 **Ignoreduplicatekeys** は、受信データから行を含むテーブルに主キーの値をアップロードする場合にのみ **true** に設定し、主キーの値が競合する可能性がある場合にのみ設定する必要があります。  
   
   

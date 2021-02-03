@@ -37,13 +37,13 @@ helpviewer_keywords:
 ms.assetid: 09974469-c5d2-4be8-bc5a-78e404660b2c
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 8d42e04e6701d086784290e6c2ba7d6d9540961e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 0f7878341361f74c9e8e4aa65b6619aebde9780a
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88467606"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97460895"
 ---
 # <a name="search-condition-transact-sql"></a>検索条件 (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -95,7 +95,7 @@ ms.locfileid: "88467606"
 ```  
   
 ```syntaxsql
--- Syntax for Azure SQL Data Warehouse and Parallel Data Warehouse  
+-- Syntax for Azure Synapse Analytics and Parallel Data Warehouse  
   
 < search_condition > ::=   
     { [ NOT ] <predicate> | ( <search_condition> ) }   
@@ -173,7 +173,7 @@ ms.locfileid: "88467606"
  [ NOT ] LIKE  
  後続の文字列が、パターン照合で使用されます。 詳細については、「[LIKE &#40;Transact-SQL&#41;](../../t-sql/language-elements/like-transact-sql.md)」を参照してください。  
   
- ESCAPE **'***escape_ character***'**  
+ ESCAPE **'** _escape_ character_ *_'_*  
  ワイルドカードとして機能するのではなく、ワイルドカード文字そのものを文字列内で検索できます。 *escape_character* は、ワイルドカード文字の前に付けてこの特別な使用方法を示す文字です。  
   
  [ NOT ] BETWEEN  
@@ -211,7 +211,7 @@ ms.locfileid: "88467606"
 ### <a name="a-using-where-with-like-and-escape-syntax"></a>A. WHERE を LIKE および ESCAPE 構文と共に使用する  
  次の例では、`LargePhotoFileName` 列に文字列 `green_` が含まれている行を検索します。_ がワイルドカード文字であるため、`ESCAPE` オプションを使用しています。 `ESCAPE` オプションを指定しないと、単語 `green` の後に _ 以外の 1 文字が続く文字列を含む description 列の値もクエリで検索してしまいます。  
   
-```  
+```sql  
 USE AdventureWorks2012 ;  
 GO  
 SELECT *   
@@ -222,7 +222,7 @@ WHERE LargePhotoFileName LIKE '%greena_%' ESCAPE 'a' ;
 ### <a name="b-using-where-and-like-syntax-with-unicode-data"></a>B. WHERE および LIKE 構文を UNICODE データと共に使用する  
  次の例では、`WHERE` 句を使用し、米国 (`US`) 国外を対象として、名前が `Pa` で始まる都市にあるすべての企業の住所を取得します。  
   
-```  
+```sql  
 USE AdventureWorks2012 ;  
 GO  
 SELECT AddressLine1, AddressLine2, City, PostalCode, CountryRegionCode    
@@ -237,7 +237,7 @@ AND City LIKE N'Pa%' ;
 ### <a name="c-using-where-with-like"></a>C. LIKE を含む WHERE を使用する  
  次の例では、`LastName` 列に `and` という文字列がある行を検索します。  
   
-```  
+```sql  
 -- Uses AdventureWorks  
   
 SELECT EmployeeKey, LastName  
@@ -248,7 +248,7 @@ WHERE LastName LIKE '%and%';
 ### <a name="d-using-where-and-like-syntax-with-unicode-data"></a>D. WHERE および LIKE 構文を UNICODE データと共に使用する  
  次の例では、`WHERE` 句を使用して `LastName` 列の Unicode 検索を実行します。  
   
-```  
+```sql  
 -- Uses AdventureWorks  
   
 SELECT EmployeeKey, LastName  

@@ -13,16 +13,16 @@ helpviewer_keywords:
 ms.assetid: 850b7ef9-d2b7-4754-bf04-7cb419ffb776
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 37f49a006b0fe17120af2309f9b3991ab594ebda
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: d843da0059418602778c0b0b0b2de6f954a55e43
+ms.sourcegitcommit: 04d101fa6a85618b8bc56c68b9c006b12147dbb5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88423716"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99048987"
 ---
 # <a name="import-a-policy-based-management-policy"></a>ポリシー ベースの管理ポリシーのインポート
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
-  このトピックでは、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] を使用して、 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]でポリシー ベースの管理ポリシー インスタンスをインポートする方法について説明します。  
+  このトピックでは、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] を使用して、 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]でポリシー ベースの管理ポリシー インスタンスをインポートする方法について説明します。  
   
 ## <a name="permissions"></a>アクセス許可
  msdb データベースの PolicyAdministratorRole ロールのメンバーシップが必要です。
@@ -32,7 +32,7 @@ ms.locfileid: "88423716"
   
 ### <a name="to-import-a-policy-instance"></a>ポリシー インスタンスをインポートするには  
   
-1.  **オブジェクト エクスプローラー**で、プラス記号をクリックして、新しくインポートするポリシー インスタンスを配置するサーバーを展開します。  
+1.  **オブジェクト エクスプローラー** で、プラス記号をクリックして、新しくインポートするポリシー インスタンスを配置するサーバーを展開します。  
   
 2.  プラス記号をクリックして **[管理]** フォルダーを展開します。  
   
@@ -46,4 +46,4 @@ ms.locfileid: "88423716"
 
 
 ## <a name="example-policies"></a>ポリシーの例
- ポリシーの例は [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)]に含まれていませんが、以前に配布されたポリシーの例には、[SQL Server Management Studio v17](../../ssms/release-notes-ssms.md#previous-ssms-releases) をインストールすることによってアクセスできます。  SQL Server Management Studio v17 のインストールが完了すると、ポリシーの例は `C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Policies` で見つけることができます。 これらのポリシーは、ご自分のポリシー ベースの管理ポリシーの基礎としてインポートおよび使用できます。
+ ポリシーの例は、[SQL Server のサンプル コード リポジトリ](https://github.com/microsoft/sql-server-samples/tree/master/samples/features/epm-framework/sample-policies)にあります。 これらのポリシーは、ご自分のポリシー ベースの管理ポリシーの基礎としてインポートおよび使用できます。

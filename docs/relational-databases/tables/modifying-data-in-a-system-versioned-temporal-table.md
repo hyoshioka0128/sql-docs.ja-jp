@@ -9,15 +9,15 @@ ms.reviewer: ''
 ms.technology: table-view-index
 ms.topic: conceptual
 ms.assetid: 5f398470-c531-47b5-84d5-7c67c27df6e5
-author: CarlRabeler
-ms.author: carlrab
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 79ae1efd305215d0e64287e6c0a7ad7aa9a70a36
-ms.sourcegitcommit: 331b8495e4ab37266945c81ff5b93d250bdaa6da
+author: markingmyname
+ms.author: maghan
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 7acb5296f5cfcefd5c39c9ceb643a1076c11bfbd
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88646449"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97484474"
 ---
 # <a name="modifying-data-in-a-system-versioned-temporal-table"></a>システム バージョン管理のテンポラル テーブルのデータの変更
 
@@ -29,7 +29,7 @@ ms.locfileid: "88646449"
 
 ## <a name="inserting-data"></a>データの挿入
 
-新しいデータを挿入する際に、 **PERIOD** 列が **HIDDEN**でない場合、それらの列を考慮する必要があります。 システム バージョン管理のテンポラル テーブルでは、パーティション切り替えを使用することもできます。
+新しいデータを挿入する際に、 **PERIOD** 列が **HIDDEN** でない場合、それらの列を考慮する必要があります。 システム バージョン管理のテンポラル テーブルでは、パーティション切り替えを使用することもできます。
 
 ### <a name="insert-new-data-with-visible-period-columns"></a>表示する period 列のある新しいデータの挿入
 
@@ -191,7 +191,7 @@ AND Department.DeptID = 10 ;
 
 ## <a name="deleting-data"></a>データを削除する
 
-通常の **DELETE** ステートメントで、現在のテーブル内のデータを削除します。 削除された行の終了期間列には、基になるトランザクションの開始時間が設定されます。 **SYSTEM_VERSIONING = ON**の間、履歴テーブルから行を直接削除することはできません。 **SYSTEM_VERSIONING = OFF** を設定し、現在および履歴テーブルから行を削除しますが、システムは変更の履歴を保持しないことに注意してください。 **SYSTEM_VERSIONING = ON**の間、現在のテーブルの **TRUNCATE** と **SWITCH PARTITION OUT** 、および履歴テーブルの **SWITCH PARTITION IN**はサポートされません。
+通常の **DELETE** ステートメントで、現在のテーブル内のデータを削除します。 削除された行の終了期間列には、基になるトランザクションの開始時間が設定されます。 **SYSTEM_VERSIONING = ON** の間、履歴テーブルから行を直接削除することはできません。 **SYSTEM_VERSIONING = OFF** を設定し、現在および履歴テーブルから行を削除しますが、システムは変更の履歴を保持しないことに注意してください。 **SYSTEM_VERSIONING = ON** の間、現在のテーブルの **TRUNCATE** と **SWITCH PARTITION OUT** 、および履歴テーブルの **SWITCH PARTITION IN** はサポートされません。
 
 ## <a name="using-merge-to-modify-data-in-temporal-table"></a>MERGE を使用したテンポラル テーブルのデータの変更
 

@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 5a641a46-7cfb-4d7b-a90d-6e4625719d74
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 0073698d4cc7ce29912be8bbce3badf3eeea6742
-ms.sourcegitcommit: b6ee0d434b3e42384b5d94f1585731fd7d0eff6f
+ms.openlocfilehash: f290da98335aaf46c3c0d12c94d265f14dc1e2bd
+ms.sourcegitcommit: 773c1203e3c4617606cecb2626f6b2f2c855a53d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89288334"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96535286"
 ---
 # <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
@@ -40,7 +40,7 @@ LocalDB は、SQL Server Express のインストール中に選択する機能�
 - [SQL Server Express 2017](https://go.microsoft.com/fwlink/?LinkID=853017)
 - [SQL Server Express 2016](https://go.microsoft.com/fwlink/?LinkID=799012)
 
-あるいは、**データの保存と処理**ワークロードや **ASP.NET と Web 開発**ワークロードの一部として、または個別のコンポーネントとし、[Visual Studio インストーラー](https://visualstudio.microsoft.com/downloads/)で LocalDB をインストールすることもできます。
+あるいは、**データの保存と処理** ワークロードや **ASP.NET と Web 開発** ワークロードの一部として、または個別のコンポーネントとし、[Visual Studio インストーラー](https://visualstudio.microsoft.com/downloads/)で LocalDB をインストールすることもできます。
 
 
 ## <a name="install-localdb"></a>LocalDB をインストールする
@@ -55,7 +55,7 @@ LocalDB は、SQL Server Express のインストール中に選択する機能�
 
 LocalDB セットアップ プログラムでは、`SqlLocalDB.msi` プログラムを使用して、コンピューターに必要なファイルがインストールされます。 LocalDB はインストールされると [!INCLUDE[ssExpress](../../includes/ssexpress-md.md)] のインスタンスとなり、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースを作成して開くことができます。 データベースのシステム データベース ファイルは、通常は非表示になっているローカル AppData パスに格納されます。 たとえば、「 `C:\Users\<user>\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances\LocalDBApp1\` 」のように入力します。 ユーザー データベース ファイルは、ユーザーが指定する場所 (通常は `C:\Users\<user>\Documents\` フォルダー内の任意の場所) に格納されます。
 
-LocalDB をアプリケーション内に組み込む手順の詳細については、[!INCLUDE[vsprvs](../../includes/vsprvs-md.md)] の「[ローカル データの概要](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/ms233817(v=vs.110))」と「[Visual Studio でデータベースを作成し、テーブルを追加する](/visualstudio/data-tools/create-a-sql-database-by-using-a-designer)」を参照してください。
+LocalDB をアプリケーション内に組み込む手順の詳細については、[!INCLUDE[vsprvs](../../includes/vsprvs-md.md)] の「[ローカル データの概要](/previous-versions/visualstudio/visual-studio-2012/ms233817(v=vs.110))」と「[Visual Studio でデータベースを作成し、テーブルを追加する](/visualstudio/data-tools/create-a-sql-database-by-using-a-designer)」を参照してください。
 
 LocalDB API の詳細については、「[SQL Server Express LocalDB リファレンス](../../relational-databases/sql-server-express-localdb-reference.md)」を参照してください。
 
@@ -64,6 +64,10 @@ LocalDB API の詳細については、「[SQL Server Express LocalDB リファ�
 LocalDB のインスタンスの照合順序は `SQL_Latin1_General_CP1_CI_AS` に設定されており、変更することはできません。 データベース レベル、列レベル、および式レベルの照合順序は正常にサポートされます。 包含データベースは、「[包含データベースの照合順序](../../relational-databases/databases/contained-database-collations.md)」で定義されているメタデータおよび `tempdb` の照合順序ルールに従います。
 
 ### <a name="restrictions"></a>制限
+
+- LocalDB に Service Pack を超える修正プログラムを適用することはできません。 CU とセキュリティ更新プログラムを手動で適用することはできず、Windows Update、Windows Update for Business、またはその他の方法によっては適用されません。
+
+- LocalDB は、SQL Management Studio を使用してリモートで管理することはできません。
 
 - LocalDB はマージ レプリケーションのサブスクライバーとして使用することはできません。
 
@@ -77,7 +81,7 @@ LocalDB のインスタンスの照合順序は `SQL_Latin1_General_CP1_CI_AS` �
 
 LocalDB では、2 種類のインスタンス、自動インスタンスと名前付きインスタンスがサポートされています。
 
-- LocalDB の自動インスタンスはパブリックです。 ユーザーのために自動的に作成および管理され、任意のアプリケーションから使用できます。 ユーザーのコンピューターにインストールされているどのバージョンの LocalDB についても、LocalDB の自動インスタンスが 1 つ存在します。 LocalDB の自動インスタンスを使用すると、シームレスなインスタンス管理を実行できます。 インスタンスを作成する必要はありません。それだけで動作します。 この機能により、アプリケーションのインストールと別のコンピューターへの移行が簡単になります。 対象コンピューターに指定バージョンの LocalDB がインストールされている場合、その対象コンピューターでも同じバージョンの LocalDB の自動インスタンスを使用できます。 LocalDB の自動インスタンスのインスタンス名には特殊なパターンがあり、これは予約済み名前空間に属します。 自動インスタンスにより、LocalDB の名前付きインスタンスとの名前の競合が防止されます。 自動インスタンスの名前は **MSSQLLocalDB**です。
+- LocalDB の自動インスタンスはパブリックです。 ユーザーのために自動的に作成および管理され、任意のアプリケーションから使用できます。 ユーザーのコンピューターにインストールされているどのバージョンの LocalDB についても、LocalDB の自動インスタンスが 1 つ存在します。 LocalDB の自動インスタンスを使用すると、シームレスなインスタンス管理を実行できます。 インスタンスを作成する必要はありません。それだけで動作します。 この機能により、アプリケーションのインストールと別のコンピューターへの移行が簡単になります。 対象コンピューターに指定バージョンの LocalDB がインストールされている場合、その対象コンピューターでも同じバージョンの LocalDB の自動インスタンスを使用できます。 LocalDB の自動インスタンスのインスタンス名には特殊なパターンがあり、これは予約済み名前空間に属します。 自動インスタンスにより、LocalDB の名前付きインスタンスとの名前の競合が防止されます。 自動インスタンスの名前は **MSSQLLocalDB** です。
 
 - LocalDB の名前付きインスタンスはプライベートです。 これらは、そのインスタンスの作成と管理を行う単一のアプリケーションによって所有されます。 名前付きインスタンスは他のインスタンスからの分離を可能にし、他のデータベース ユーザーとのリソースの競合を減らすことによってパフォーマンスを向上させることができます。 名前付きインスタンスは、ユーザーが LocalDB 管理 API を通じて明示的に作成するか、マネージド アプリケーションの app.config ファイルを通じて暗黙的に作成する必要があります (ただし、マネージド アプリケーションでは必要に応じて API も使用できます)。 LocalDB の各名前付きインスタンスには、LocalDB バイナリの特定のセットを指す特定の LocalDB バージョンが関連付けられています。 LocalDB のインスタンス名は **sysname** データ型で、最大文字数は 128 文字です (これは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の正規の名前付きインスタンスとは異なり、16 の ASCII 文字で構成される正規の NetBIOS 名に制限されることはありません)。LocalDB のインスタンス名には、ファイル名内で有効な任意の Unicode 文字を使用できます。自動インスタンス名を使用する名前付きインスタンスは、自動インスタンスになります。
 

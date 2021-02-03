@@ -30,14 +30,14 @@ helpviewer_keywords:
 - SERVICE_BROKER option
 - Availability Groups [SQL Server], endpoint
 ms.assetid: 6405e7ec-0b5b-4afd-9792-1bfa5a2491f6
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: 8851fcf2339196c3d35220341bc5f737a128aaff
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: c787027e1cebf844339a8cdc70bd23a6d8c974bd
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88426804"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171654"
 ---
 # <a name="create-endpoint-transact-sql"></a>CREATE ENDPOINT (Transact-SQL)
 
@@ -201,7 +201,7 @@ FOR DATABASE_MIRRORING (
  必要に応じて、エンドポイントで使用される暗号化の形式を、ALGORITHM 引数を使用して次のように指定できます。  
   
  **AES**  
- エンドポイントで AES アルゴリズムを使用する必要があることを指定します。 これは [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降の既定値です。  
+ エンドポイントで AES アルゴリズムを使用する必要があることを指定します。 これは [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降の既定値です。  
   
  RC4  
  エンドポイントで RC4 アルゴリズムを使用する必要があることを指定します。 これは [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] までの既定値です。  

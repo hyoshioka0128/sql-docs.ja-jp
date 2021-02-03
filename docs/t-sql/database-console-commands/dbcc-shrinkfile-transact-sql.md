@@ -30,12 +30,12 @@ helpviewer_keywords:
 ms.assetid: e02b2318-bee9-4d84-a61f-2fddcf268c9f
 author: pmasl
 ms.author: umajay
-ms.openlocfilehash: 203b53928ee41dcc75194cef6171959cdc08dd71
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 478c7c784c25b1b71bcafd2279ac93bc7545c188
+ms.sourcegitcommit: e40e75055c1435c5e3f9b6e3246be55526807b4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88479794"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98151314"
 ---
 # <a name="dbcc-shrinkfile-transact-sql"></a>DBCC SHRINKFILE (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -47,7 +47,6 @@ ms.locfileid: "88479794"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 DBCC SHRINKFILE   
 (  
     { file_name | file_id }   
@@ -68,7 +67,7 @@ DBCC SHRINKFILE
 圧縮するファイルの識別 (ID) 番号。 ファイル ID を取得するには、システム関数 [FILE_IDEX](../../t-sql/functions/file-idex-transact-sql.md) を使用するか、現在のデータベースで [sys.database_files](../../relational-databases/system-catalog-views/sys-database-files-transact-sql.md) カタログ ビューに対してクエリを実行します。
   
 *target_size*  
-整数 - ファイルの新しいサイズ (MB 単位)。 指定しない場合、DBCC SHRINKFILE はファイル作成サイズに圧縮されます。
+整数 - ファイルの新しいサイズ (MB 単位)。 指定されていないか、0 の場合、DBCC SHRINKFILE はファイル作成サイズに減らされます。
   
 > [!NOTE]  
 >  DBCC SHRINKFILE *target_size* を使用して、空のファイルの既定サイズを減らすことができます。 たとえば、5 MB のファイルを作成してから、ファイルがまだ空のうちに 3 MB に圧縮した場合、既定のファイル サイズは 3 MB に設定されます。 これは、データが含まれたことがない空のファイルにのみ該当します。  
@@ -77,7 +76,7 @@ DBCC SHRINKFILE
 指定した場合、DBCC SHRINKFILE では、*target_size* までファイルの圧縮が試行されます。 解放対象のファイルの領域内にある使用ページは、ファイルの保持領域内の空き領域に移動されます。 たとえば、10 MB のデータ ファイルで、8 *target_size* を指定した DBCC SHRINKFILE 操作を実行すると、ファイルの末尾 2 MB 内にあるすべての使用ページがファイルの先頭 8 MB にある未割り当てページに移動されます。 DBCC SHRINKFILE では、格納されているデータ サイズ以下に、ファイルを圧縮することはできません。 たとえば、10 MB のデータ ファイルのうち 7 MB が使用されている場合、*target_size* を 6 にして DBCC SHRINKFILE ステートメントを実行しても、ファイルは 7 MB にまでしか圧縮できず、6 MB にはなりません。
   
 EMPTYFILE  
-指定したファイルから、**同じファイル グループ**内の他のファイルにすべてのデータを移動します。 つまり、EMPTYFILE は、指定したファイルから、同じファイル グループ内の他のファイルにデータを移動します。 EMPTYFILE を使用すると、このファイルが読み取り専用でなくても、ファイルに新しいデータが追加されません。 ファイルを削除するには [ALTER DATABASE](../../t-sql/statements/alter-database-transact-sql.md) ステートメントを使用できます。 [ALTER DATABASE](../../t-sql/statements/alter-database-transact-sql.md) ステートメントを使用してファイル サイズを変更すると、読み取り専用フラグがリセットされ、データを追加することができます。
+指定したファイルから、**同じファイル グループ** 内の他のファイルにすべてのデータを移動します。 つまり、EMPTYFILE は、指定したファイルから、同じファイル グループ内の他のファイルにデータを移動します。 EMPTYFILE を使用すると、このファイルが読み取り専用でなくても、ファイルに新しいデータが追加されません。 ファイルを削除するには [ALTER DATABASE](../../t-sql/statements/alter-database-transact-sql.md) ステートメントを使用できます。 [ALTER DATABASE](../../t-sql/statements/alter-database-transact-sql.md) ステートメントを使用してファイル サイズを変更すると、読み取り専用フラグがリセットされ、データを追加することができます。
 
 FILESTREAM ファイル グループ コンテナーでは、FILESTREAM ガベージ コレクターが実行され、EMPTYFILE によって他のコンテナーにコピーされた不要なすべてのファイル グループ コンテナー ファイルが削除された後でなければ、ALTER DATABASE を使用してファイルを削除できません。 詳細については、「[sp_filestream_force_garbage_collection &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/filestream-and-filetable-sp-filestream-force-garbage-collection.md)」を参照してください。
   
@@ -158,7 +157,7 @@ FROM sys.database_files;
 
 [行のバージョン管理に基づく分離レベル](../../t-sql/statements/set-transaction-isolation-level-transact-sql.md)で実行されているトランザクションによって、圧縮操作がブロックされることがあります。 たとえば、DBCC SHRINK DATABASE 操作を実行するときに、行のバージョン管理に基づく分離レベルでの大規模な削除操作が進行中の場合、圧縮操作は削除が完了してから続行されます。 このブロックが発生すると、DBCC SHRINKFILE および DBCC SHRINKDATABASE 操作によって、情報メッセージ (SHRINKDATABASE は 5202、SHRINKFILE は 5203) が SQL Server エラー ログに出力されます。 このメッセージは、最初の 1 時間は 5 分ごと、それ以降は 1 時間ごとにログに記録されます。 たとえば、エラー ログに次のエラー メッセージが含まれている場合は、次のエラーが発生します。
   
-```sql
+```
 DBCC SHRINKFILE for file ID 1 is waiting for the snapshot   
 transaction with timestamp 15 and other snapshot transactions linked to   
 timestamp 15 or with timestamps older than 109 to finish.  

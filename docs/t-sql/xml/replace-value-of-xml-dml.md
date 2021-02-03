@@ -6,7 +6,7 @@ ms.date: 07/26/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: c310f6df-7adf-493b-b56b-8e3143b13ae7
 author: MightyPen
 ms.author: genemi
-ms.openlocfilehash: 7c4133965870627a475fc7314f55952c38694a6e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 6882fa93bb1d4837f909bc00f74fdf9e83e7c5c4
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88426514"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99174383"
 ---
 # <a name="replace-value-of-xml-dml"></a>replace value of (XML DML)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "88426514"
   
 ## <a name="syntax"></a>構文  
   
-```sql
+```syntaxsql
 replace value of Expression1   
 with Expression2  
 ```  
@@ -44,7 +44,7 @@ with Expression2
 値を更新するノードを特定します。 ノードを 1 つだけ指定する必要があります。 つまり、*Expression1* は静的なシングルトンである必要があります。 XML が型指定されている場合、ノードの型は単純型でなければなりません。 複数のノードを選択すると、エラーが発生します。 *Expression1* が空のシーケンスを返す場合は、値の置換は行われず、エラーは返されません。 *Expression1* からは、単純型に型指定された内容 (リストまたはアトミック型)、テキスト ノード、または属性ノードを持つ 1 つの要素が返される必要があります。 *Expression1* に共用体型、複合型、処理命令、ドキュメント ノード、またはコメント ノードを指定することはできません。指定すると、エラーが返されます。  
   
 *Expression2*  
-ノードの新しい値を特定します。 暗黙的に **data()** が使用されるので、単純型に型指定されたノードを返す式にすることができます。 この値が値のリストの場合、**update** ステートメントにより、古い値がそのリストと置き換えられます。 型指定された XML インスタンスを変更する場合、*Expression2* は *Expression*1 と同じ型またはサブタイプにする必要があります。 それ以外の場合は、エラーが返されます。 型指定されていない XML インスタンスを変更する場合、*Expression2* にはアトミック化可能な式を指定する必要があります。 それ以外の場合は、エラーが返されます。  
+ノードの新しい値を特定します。 暗黙的に **data()** が使用されるので、単純型に型指定されたノードを返す式にすることができます。 この値が値のリストの場合、**update** ステートメントにより、古い値がそのリストと置き換えられます。 型指定された XML インスタンスを変更する場合、*Expression2* は *Expression* 1 と同じ型またはサブタイプにする必要があります。 それ以外の場合は、エラーが返されます。 型指定されていない XML インスタンスを変更する場合、*Expression2* にはアトミック化可能な式を指定する必要があります。 それ以外の場合は、エラーが返されます。  
   
 ## <a name="examples"></a>例  
 **replace value of** を使用した次の XML DML ステートメントの例は、XML ドキュメント内のノードを更新する方法を示しています。  
@@ -53,7 +53,7 @@ with Expression2
 次の例では、まず、ドキュメント インスタンスが **xml** 型の変数に代入されます。 次に、**replace value of** XML DML ステートメントで、ドキュメント内の値が更新されます。  
   
 ```sql
-DECLARE @myDoc xml;  
+DECLARE @myDoc XML;  
 SET @myDoc = '<Root>  
 <Location LocationID="10"   
             LaborHours="1.1"  
@@ -67,13 +67,13 @@ SELECT @myDoc;
 -- update text in the first manufacturing step  
 SET @myDoc.modify('  
   replace value of (/Root/Location/step[1]/text())[1]  
-  with     "new text describing the manu step"  
+  with "new text describing the manu step"  
 ');  
 SELECT @myDoc;  
 -- update attribute value  
 SET @myDoc.modify('  
   replace value of (/Root/Location/@LaborHours)[1]  
-  with     "100.0"  
+  with "100.0"  
 ');  
 SELECT @myDoc;  
 ```  
@@ -84,7 +84,7 @@ SELECT @myDoc;
 次の例に示すように、**replace value of XML DML** ステートメントの Expression2 に **if** 式を指定できます。 Expression1 では、最初のワーク センターの LaborHours 属性を更新することを示します。 Expression2 では、**if** 式を使用して LaborHours 属性の新しい値を決定します。  
   
 ```sql
-DECLARE @myDoc xml  
+DECLARE @myDoc XML  
 SET @myDoc = '<Root>  
 <Location LocationID="10"   
             LaborHours=".1"  
@@ -111,10 +111,10 @@ SELECT @myDoc
 次の例では、列に格納されている XML を更新します。  
   
 ```sql
-drop table T  
-go  
-CREATE TABLE T (i int, x xml)  
-go  
+DROP TABLE T  
+GO  
+CREATE TABLE T (i INT, x XML)  
+GO  
 INSERT INTO T VALUES(1,'<Root>  
 <ProductDescription ProductID="1" ProductName="Road Bike">  
 <Features>  
@@ -143,52 +143,53 @@ FROM T
 この例では、まず、型指定された XML 列を含むテーブル (T) を AdventureWorks データベースに作成します。 次に、製造手順の XML インスタンスを ProductModel テーブルの Instructions 列からテーブル T にコピーします。続いて、テーブル T の XML に挿入が適用されます。  
   
 ```sql
-use AdventureWorks  
-go  
-drop table T  
-go  
-create table T(ProductModelID int primary key,   
-Instructions xml (Production.ManuInstructionsSchemaCollection))  
-go  
-insert  T   
-select ProductModelID, Instructions  
-from Production.ProductModel  
-where ProductModelID=7  
-go  
+USE AdventureWorks  
+GO  
+DROP TABLE T  
+GO  
+CREATE TABLE T(
+  ProductModelID INT PRIMARY KEY,   
+  Instructions XML (Production.ManuInstructionsSchemaCollection))  
+GO  
+INSERT T   
+SELECT ProductModelID, Instructions  
+FROM Production.ProductModel  
+WHERE ProductModelID=7  
+GO
 --insert a new location - <Location 1000/>.   
-update T  
-set Instructions.modify('  
+UPDATE T  
+SET Instructions.modify('  
   declare namespace MI="https://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelManuInstructions";  
 insert <MI:Location LocationID="1000"  LaborHours="1000"  LotSize="1000" >  
            <MI:step>Do something using <MI:tool>hammer</MI:tool></MI:step>  
          </MI:Location>  
   as first  
-  into   (/MI:root)[1]  
+  into (/MI:root)[1]  
 ')  
-go  
-select Instructions  
-from T  
-go  
+GO  
+SELECT Instructions  
+FROM T  
+GO  
 -- Now replace manu. tool in location 1000  
-update T  
-set Instructions.modify('  
+UPDATE T  
+SET Instructions.modify('  
   declare namespace MI="https://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelManuInstructions";  
   replace value of (/MI:root/MI:Location/MI:step/MI:tool)[1]   
-  with   "screwdriver"  
+  with "screwdriver"  
 ')  
-go  
-select Instructions  
-from T  
+GO  
+SELECT Instructions  
+FROM T  
 -- Now replace value of lot size  
-update T  
-set Instructions.modify('  
+UPDATE T  
+SET Instructions.modify('  
   declare namespace MI="https://schemas.microsoft.com/sqlserver/2004/07/adventure-works/ProductModelManuInstructions";  
   replace value of (/MI:root/MI:Location/@LotSize)[1]   
-  with   500 cast as xs:decimal ?  
+  with 500 cast as xs:decimal ?  
 ')  
-go  
-select Instructions  
-from T  
+GO  
+SELECT Instructions  
+FROM T  
 ```  
   
 LotSize 値を置換するときの **cast** の使い方に注意してください。 この処理は、値を特定の型にする必要がある場合に必要です。 この例では、値を 500 にした場合、明示的にキャストする必要はありません。  

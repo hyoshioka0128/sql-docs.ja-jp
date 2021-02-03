@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 52d4b12d-17be-4cbd-aa78-65332a4883b0
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 37faae69ff478df0a40abe36569e818605500c6d
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: da24d93a095535c08a4f4539268c3b23954ec8bd
+ms.sourcegitcommit: ac9feb0b10847b369b77f3c03f8200c86ee4f4e0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88472344"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90688584"
 ---
 # <a name="deny-symmetric-key-permissions-transact-sql"></a>DENY (対称キーの権限の拒否) (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -114,7 +114,7 @@ DENY permission [ ,...n ]
 ## <a name="examples"></a>例  
  次の例では、対称キー `SamInventory42` の `ALTER` 権限を、データベース ユーザー `HamidS` に対して拒否します。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 DENY ALTER ON SYMMETRIC KEY::SamInventory42 TO HamidS;  
 GO  

@@ -9,14 +9,14 @@ ms.reviewer: ''
 ms.technology: backup-restore
 ms.topic: conceptual
 ms.assetid: 17a81fcd-8dbd-458d-a9c7-2b5209062f45
-author: MikeRayMSFT
-ms.author: mikeray
-ms.openlocfilehash: 1fd961b275f6b392e9284312675c873f16fecd27
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 63e2f722305c2af448be7d49868eef72d1a9fb8d
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85718067"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172694"
 ---
 # <a name="file-snapshot-backups-for-database-files-in-azure"></a>Azure でのデータベース ファイルのスナップショット バックアップ
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -26,7 +26,7 @@ ms.locfileid: "85718067"
   
  **ダウンロード**  
   
--   [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]をダウンロードするには、  **[評価センター](https://www.microsoft.com/evalcenter/evaluate-sql-server-2016)** に移動してください。  
+-   [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]をダウンロードするには、  **[評価センター](https://www.microsoft.com/evalcenter/evaluate-sql-server-2016)** に移動してください。  
   
 -   Azure アカウントをすでにお持ちですか?  既にお持ちの場合は、 **[こちら](https://azure.microsoft.com/services/virtual-machines/sql-server/)** にアクセスして、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] がインストール済みの仮想マシンをすぐにご利用いただけます。  
   
@@ -72,7 +72,7 @@ ms.locfileid: "85718067"
   
 -   RESTORE WITH MOVE が必須です。  
   
--   Premium Storage の詳細については、[Premium Storage: Azure 仮想マシン ワークロード向けの高パフォーマンス ストレージ](https://azure.microsoft.com/documentation/articles/storage-premium-storage-preview-portal/)に関するページを参照してください  
+-   Premium Storage の詳細については、[Premium Storage: Azure 仮想マシン ワークロード向けの高パフォーマンス ストレージ](/azure/virtual-machines/disks-types)に関するページを参照してください  
   
  **単一のストレージ アカウント**: ファイル スナップショットと目的の BLOB では同じストレージ アカウントが使用されている必要があります。  
   
@@ -80,7 +80,7 @@ ms.locfileid: "85718067"
   
  **オンライン復元**: ファイル スナップショット バックアップを使用するときは、オンライン復元を実行することはできません。 オンライン復元の詳細については、「[オンライン復元 &#40;SQL Server&#41;](../../relational-databases/backup-restore/online-restore-sql-server.md)」を参照してください。  
   
- **課金**: SQL Server のファイル スナップショット バックアップを使用すると、データの変化に応じて追加料金が発生します。 詳細については、「 [スナップショットの課金方法について](https://msdn.microsoft.com/library/azure/hh768807.aspx)」を参照してください。  
+ **課金**: SQL Server のファイル スナップショット バックアップを使用すると、データの変化に応じて追加料金が発生します。 詳細については、「 [スナップショットの課金方法について](/rest/api/storageservices/Understanding-How-Snapshots-Accrue-Charges)」を参照してください。  
   
  **アーカイブ**: ファイル スナップショット バックアップをアーカイブする場合は、BLOB ストレージまたはストリーミング バックアップにアーカイブできます。 Blob ストレージにアーカイブするには、ファイル スナップショット バックアップ セット内のスナップショットを別個の BLOB にコピーします。 ストリーミング バックアップにアーカイブするには、ファイル スナップショット バックアップを新しいデータベースとして復元し、圧縮や暗号化を使用した通常のストリーミング バックアップを実行して、必要に応じて、ベース BLOB とは別個にアーカイブします。  
   
@@ -178,5 +178,4 @@ GO
   
 ## <a name="see-also"></a>参照  
  [チュートリアル:Azure Blob Storage サービスと SQL Server 2016 データベースの使用](../tutorial-use-azure-blob-storage-service-with-sql-server-2016.md)  
-  
   

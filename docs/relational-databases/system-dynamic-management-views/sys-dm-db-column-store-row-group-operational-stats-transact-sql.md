@@ -1,31 +1,31 @@
 ---
-description: dm_db_column_store_row_group_operational_stats (Transact-sql)
-title: dm_db_column_store_row_group_operational_stats (Transact-sql) |Microsoft Docs
+description: sys.dm_db_column_store_row_group_operational_stats (Transact-sql)
+title: sys.dm_db_column_store_row_group_operational_stats (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 ms.assetid: 31b71c68-50a0-4fd8-a7fe-2d2292be1163
-author: markingmyname
-ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: d384029cb8a226dfed01d14360247d00cb998cd8
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 4adcc52df1d3039f18ca63cbe93bd355f8df4544
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89537617"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99180661"
 ---
-# <a name="sysdm_db_column_store_row_group_operational_stats-transact-sql"></a>dm_db_column_store_row_group_operational_stats (Transact-sql)
+# <a name="sysdm_db_column_store_row_group_operational_stats-transact-sql"></a>sys.dm_db_column_store_row_group_operational_stats (Transact-sql)
 
 [!INCLUDE [sqlserver2016-asdb-asdbmi](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi.md)]
 
-  列ストアインデックスの圧縮された行グループについて、現在の行レベル i/o、ロック、およびアクセスメソッドのアクティビティを返します。 Dm_db_column_store_row_group_operational_stats を使用して、ユーザークエリが列ストアインデックスの圧縮された行グループまたはパーティションに対する読み取りまたは書き込みを待機する時間の長さを追跡し、重要な i/o アクティビティまたはホットスポットが発生している行グループを特定し **ます** 。  
+  列ストアインデックスの圧縮された行グループについて、現在の行レベル i/o、ロック、およびアクセスメソッドのアクティビティを返します。 **Sys.dm_db_column_store_row_group_operational_stats** を使用して、圧縮された行グループまたは列ストアインデックスのパーティションに対する読み取りまたは書き込みをユーザークエリが待機する必要がある時間を追跡し、大量の i/o アクティビティまたはホットスポットが発生している行グループを特定します。  
   
  インメモリ列ストアインデックスは、この DMV には表示されません。  
  
@@ -61,9 +61,9 @@ ms.locfileid: "89537617"
  [インデックス関連の動的管理ビューおよび関数 &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/index-related-dynamic-management-views-and-functions-transact-sql.md)   
  [パフォーマンスの監視とチューニング](../../relational-databases/performance/monitor-and-tune-for-performance.md)   
  [sys.dm_db_index_physical_stats &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-index-physical-stats-transact-sql.md)   
- [dm_db_index_usage_stats &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-index-usage-stats-transact-sql.md)   
+ [sys.dm_db_index_usage_stats &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-index-usage-stats-transact-sql.md)   
  [sys.dm_os_latch_stats &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-latch-stats-transact-sql.md)   
- [dm_db_partition_stats &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-partition-stats-transact-sql.md)   
+ [sys.dm_db_partition_stats &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-partition-stats-transact-sql.md)   
  [sys.allocation_units &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-allocation-units-transact-sql.md)   
  [sys.indexes &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-indexes-transact-sql.md)  
   

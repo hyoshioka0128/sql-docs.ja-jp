@@ -13,13 +13,13 @@ helpviewer_keywords:
 ms.assetid: 82252e4f-b1d0-49e5-aa0b-3624aade2add
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: '>=aps-pdw-2016||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017'
-ms.openlocfilehash: b3daf000381fbfaa5481ae18f348bd987689e46b
-ms.sourcegitcommit: 9ee72c507ab447ac69014a7eea4e43523a0a3ec4
+monikerRange: '>=aps-pdw-2016||>=sql-server-2016||>=sql-server-linux-2017'
+ms.openlocfilehash: 71c71e4809b573dae9507b52bc3d32e5b6f5142e
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84938973"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97460745"
 ---
 # <a name="polybase-connectivity-configuration-transact-sql"></a>PolyBase 接続構成 (Transact-SQL)
 [!INCLUDE[appliesto-ss-xxxx-xxxx-pdw-md](../../includes/appliesto-ss-xxxx-xxxx-pdw-md.md)]
@@ -50,7 +50,7 @@ RECONFIGURE
  構成オプションの名前を指定します。 *option_name* は **varchar(35)** 、既定値は NULL です。 指定しない場合、オプションの完全な一覧が返されます。  
   
  [ **@configvalue=** ] **'** _value_ **'**  
- 新しい構成設定を指定します。 *value* のデータ型は **int**で、既定値は NULL です。 最大値はオプションごとに異なります。  
+ 新しい構成設定を指定します。 *value* のデータ型は **int** で、既定値は NULL です。 最大値はオプションごとに異なります。  
   
  **'hadoop connectivity'**  
  PolyBase から Hadoop クラスターまたは Azure BLOB ストレージ (WASB) へのすべての接続に Hadoop データ ソースの種類を指定します。 この設定は、外部テーブルに外部データ ソースを作成するために必要です。 詳細については、「 [CREATE EXTERNAL DATA SOURCE (Transact-SQL)](../../t-sql/statements/create-external-data-source-transact-sql.md)」を参照してください。  
@@ -97,7 +97,7 @@ RECONFIGURE
 |**name**|**nvarchar(35)**|構成オプションの名前。|  
 |**minimum**|**int**|構成オプションの最小値。|  
 |**maximum**|**int**|構成オプションの最大値。|  
-|**config_value**|**int**|**sp_configure**を使用して設定された値。|  
+|**config_value**|**int**|**sp_configure** を使用して設定された値。|  
 |**run_value**|**int**|PolyBase が使用する現在の値。 この値は、RECONFIGURE を実行すると設定されます。<br /><br /> 値が変更中のプロセスではない限り、 **config_value** と **run_value** は、通常は同じ値です。<br /><br /> 再構成が進行中である場合、この実行値を正確にするために、再起動が必要になる可能性があります。|  
   
 ## <a name="general-remarks"></a>全般的な解説  

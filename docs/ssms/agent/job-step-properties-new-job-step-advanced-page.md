@@ -1,4 +1,5 @@
 ---
+description: '[ジョブ ステップのプロパティ]/[新しいジョブ ステップ] ([詳細設定] ページ)'
 title: 新しいジョブ ステップのプロパティ ([詳細設定] ページ)
 ms.prod: sql
 ms.prod_service: sql-tools
@@ -12,20 +13,20 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 01/19/2017
-monikerRange: = azuresqldb-mi-current || >= sql-server-2016 || = sqlallproducts-allversions
-ms.openlocfilehash: aa078a72894711dbe267a4cac049317a159eb20d
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: = azuresqldb-mi-current || >= sql-server-2016
+ms.openlocfilehash: d4987186486dc6164f9827f03aec8e30e10d40eb
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85755218"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97408869"
 ---
 # <a name="job-step-properties---new-job-step-advanced-page"></a>[ジョブ ステップのプロパティ]/[新しいジョブ ステップ] ([詳細設定] ページ)
 
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
 
 > [!IMPORTANT]  
-> [Azure SQL Database Managed Instance](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) では現在、すべてではありませんがほとんどの SQL Server エージェントの機能がサポートされています。 詳細については、「[Azure SQL Database Managed Instance と SQL Server の T-SQL の相違点](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-transact-sql-information#sql-server-agent)」を参照してください。
+> 現在、[Azure SQL Managed Instance](/azure/sql-database/sql-database-managed-instance) によって、すべてではありませんが、ほとんどの SQL Server エージェントの機能がサポートされています。 詳細については、[Azure SQL Managed Instance と SQL Server の T-SQL の相違点](/azure/sql-database/sql-database-managed-instance-transact-sql-information#sql-server-agent)に関するページを参照してください。
 
 このページを使用すると、[!INCLUDE[msCoName](../../includes/msconame_md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェント ジョブ ステップのプロパティを表示したり、変更したりできます。  
   
@@ -33,7 +34,7 @@ ms.locfileid: "85755218"
 **[成功した場合のアクション]**  
 ジョブ ステップが成功した場合に [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントが実行するアクションを設定します。  
   
-**[再試行回数]**  
+**再試行**  
 失敗したジョブ ステップを [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントで再試行する回数を設定します。  
   
 **[再試行間隔 (分)]**  
@@ -46,7 +47,7 @@ ms.locfileid: "85755218"
 **[出力ファイル]**  
 ジョブ ステップからの出力に使用するファイルを設定します。 このオプションは、 **sysadmin** 固定サーバー ロールのメンバーである場合にのみ使用できます。  
   
-**[...]**  
+**...**  
 ジョブ ステップからの出力に使用するファイルを参照します。  
   
 **表示**  
@@ -74,7 +75,7 @@ ms.locfileid: "85755218"
 **[出力ファイル]**  
 ジョブ ステップからの出力に使用するファイルを設定します。  
   
-**[...]**  
+**...**  
 ジョブ ステップからの出力に使用するファイルを参照します。  
   
 **表示**  
@@ -99,7 +100,7 @@ ms.locfileid: "85755218"
 **[出力ファイル]**  
 ジョブ ステップからの出力に使用するファイルを設定します。  
   
-**[...]**  
+**...**  
 ジョブ ステップからの出力に使用するファイルを参照します。  
   
 **表示**  
@@ -121,7 +122,7 @@ ms.locfileid: "85755218"
 このオプションを選択すると、ジョブ ステップの出力がジョブ履歴に含められます。  
   
 ## <a name="options-for-replication-queue-reader-job-steps"></a>レプリケーション キュー リーダーのジョブ ステップのオプション  
-**[サーバー]**  
+**サーバー**  
 レプリケーション キュー リーダーのジョブ ステップを使用するように、サーバーを設定します。  
   
 **[データベース]**  
@@ -131,7 +132,7 @@ ms.locfileid: "85755218"
 **[出力ファイル]**  
 ジョブ ステップからの出力に使用するファイルを設定します。 このオプションは、 **sysadmin** 固定サーバー ロールのメンバーである場合にのみ使用できます。  
   
-**[...]**  
+**...**  
 ジョブ ステップからの出力に使用するファイルを参照します。  
   
 **表示**  
@@ -154,4 +155,3 @@ ms.locfileid: "85755218"
   
 ## <a name="see-also"></a>参照  
 [ジョブ ステップの管理](../../ssms/agent/manage-job-steps.md)  
-  

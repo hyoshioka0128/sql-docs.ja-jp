@@ -18,13 +18,13 @@ helpviewer_keywords:
 ms.assetid: b23ea2cc-8545-4873-b0c1-57e76b0a3a7b
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 41b4fca44f8dab8d4cb2eac1211387d27004b7c4
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 06e9cdecd37e5fc1f78de6726384715ad7b8c9bf
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88494146"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97406856"
 ---
 # <a name="bcp_exec"></a>bcp_exec
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -45,22 +45,22 @@ RETCODE bcp_exec (
  一括コピーが有効な ODBC 接続ハンドルです。  
   
  *pnRowsProcessed*  
- DBINT へのポインターです。 **Bcp_exec**関数は、正常にコピーされた行の数をこの DBINT に設定します。 *PnRowsProcessed*が NULL の場合、 **bcp_exec**によって無視されます。  
+ DBINT へのポインターです。 **Bcp_exec** 関数は、正常にコピーされた行の数をこの DBINT に設定します。 *PnRowsProcessed* が NULL の場合、 **bcp_exec** によって無視されます。  
   
 ## <a name="returns"></a>戻り値  
- SUCCEED、SUCCEED_ASYNC、または FAIL のいずれかを返します。 すべての行がコピーされると、 **bcp_exec** 関数は成功を返します。 非同期の一括コピー操作がまだ未解決である場合、 **bcp_exec**は SUCCEED_ASYNC を返します。 **bcp_exec** は、完全なエラーが発生した場合、またはエラーを生成した行数が [bcp_control](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-control.md)を使用して BCPMAXERRS に指定された値に達した場合に失敗します。 BCPMAXERRS の既定値は 10 です。 BCPMAXERRS オプションの影響を受けるのは、データ ファイルの行 (サーバーに送信される行以外) を読み取る間にプロバイダーで検出される構文エラーのみです。 ある行でエラーが検出されると、サーバーはバッチを中止します。 *PnRowsProcessed*パラメーターで、正常にコピーされた行の数を確認します。  
+ SUCCEED、SUCCEED_ASYNC、または FAIL のいずれかを返します。 すべての行がコピーされると、 **bcp_exec** 関数は成功を返します。 非同期の一括コピー操作がまだ未解決である場合、 **bcp_exec** は SUCCEED_ASYNC を返します。 **bcp_exec** は、完全なエラーが発生した場合、またはエラーを生成した行数が [bcp_control](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-control.md)を使用して BCPMAXERRS に指定された値に達した場合に失敗します。 BCPMAXERRS の既定値は 10 です。 BCPMAXERRS オプションの影響を受けるのは、データ ファイルの行 (サーバーに送信される行以外) を読み取る間にプロバイダーで検出される構文エラーのみです。 ある行でエラーが検出されると、サーバーはバッチを中止します。 *PnRowsProcessed* パラメーターで、正常にコピーされた行の数を確認します。  
   
 ## <a name="remarks"></a>解説  
- この関数は、 [bcp_init](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-init.md)の*edirection*パラメーターの値に応じて、ユーザーファイルからデータベーステーブルへ、またはその逆のデータをコピーします。  
+ この関数は、 [bcp_init](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-init.md)の *edirection* パラメーターの値に応じて、ユーザーファイルからデータベーステーブルへ、またはその逆のデータをコピーします。  
   
- **Bcp_exec**を呼び出す前に、有効なユーザーファイル名を使用して**bcp_init**を呼び出します。 この操作を行わないと、エラーが発生します。  
+ **Bcp_exec** を呼び出す前に、有効なユーザーファイル名を使用して **bcp_init** を呼び出します。 この操作を行わないと、エラーが発生します。  
   
- **bcp_exec** は、任意の期間に未処理である可能性のある唯一の一括コピー関数です。 そのため、非同期モードをサポートする唯一の一括コピー関数でもあります。 非同期モードを設定するには、 [SQLSetConnectAttr](../../relational-databases/native-client-odbc-api/sqlsetconnectattr.md) を使用して **bcp_exec**を呼び出す前に SQL_ATTR_ASYNC_ENABLE を SQL_ASYNC_ENABLE_ON に設定します。 完了をテストするには、同じパラメーターを使用して **bcp_exec** を呼び出します。 一括コピーがまだ完了していない場合、 **bcp_exec** は SUCCEED_ASYNC を返します。 また、 *pnRowsProcessed* は、サーバーに送信された行数の状態カウントを返します。 サーバーに送信された行は、バッチの終わりに到達するまではコミットされません。  
+ **bcp_exec** は、任意の期間に未処理である可能性のある唯一の一括コピー関数です。 そのため、非同期モードをサポートする唯一の一括コピー関数でもあります。 非同期モードを設定するには、 [SQLSetConnectAttr](../../relational-databases/native-client-odbc-api/sqlsetconnectattr.md) を使用して **bcp_exec** を呼び出す前に SQL_ATTR_ASYNC_ENABLE を SQL_ASYNC_ENABLE_ON に設定します。 完了をテストするには、同じパラメーターを使用して **bcp_exec** を呼び出します。 一括コピーがまだ完了していない場合、 **bcp_exec** は SUCCEED_ASYNC を返します。 また、 *pnRowsProcessed* は、サーバーに送信された行数の状態カウントを返します。 サーバーに送信された行は、バッチの終わりに到達するまではコミットされません。  
   
  での一括コピーの重大な変更については [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 、「 [ODBC&#41;&#40;の一括コピー操作の実行 ](../../relational-databases/native-client-odbc-bulk-copy-operations/performing-bulk-copy-operations-odbc.md)」を参照してください。  
   
 ## <a name="example"></a>例  
- 次の例では、 **bcp_exec**を使用する方法を示します。  
+ 次の例では、 **bcp_exec** を使用する方法を示します。  
   
 ```  
 // Variables like henv not specified.  

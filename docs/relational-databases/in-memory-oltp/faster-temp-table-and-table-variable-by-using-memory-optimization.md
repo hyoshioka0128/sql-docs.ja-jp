@@ -9,15 +9,15 @@ ms.reviewer: ''
 ms.technology: in-memory-oltp
 ms.topic: conceptual
 ms.assetid: 38512a22-7e63-436f-9c13-dde7cf5c2202
-author: Jodebrui
-ms.author: jodebrui
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: e8f6369de798c04805e2c5facb01fcfd6dc31153
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: kevin-farlee
+ms.author: kfarlee
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 09d3e92d2e181264965a1d4525d13f7d13b4504d
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85723245"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97460485"
 ---
 # <a name="faster-temp-table-and-table-variable-by-using-memory-optimization"></a>メモリ最適化を使用した一時テーブルとテーブル変数の高速化
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -210,7 +210,7 @@ DECLARE @tvTableD TABLE
   
 #### <a name="d1-convert-inline-to-explicit"></a>D.1 インラインを明示的に変換  
   
-上記の構文は、テーブル変数 *inline*を作成すると考えられます。 インライン構文は、メモリ最適化をサポートしません。 そのため、インライン構文を TYPE の明示的な構文に変換します。  
+上記の構文は、テーブル変数 *inline* を作成すると考えられます。 インライン構文は、メモリ最適化をサポートしません。 そのため、インライン構文を TYPE の明示的な構文に変換します。  
   
 *スコープ:* 最初の go の区切り文字のバッチによって作成された TYPE 定義は、サーバーがシャットダウンして再起動された後でも保持されます。 ただし、最初の go 区切り文字の後に、宣言されたテーブル @tvTableC は、次の go に到達してバッチが終了するまでのみ保持されます。  
   
@@ -265,7 +265,7 @@ CREATE TYPE dbo.typeTableD
   
 ## <a name="e-prerequisite-filegroup-for-sql-server"></a>E. SQL Server の前提条件となる FILEGROUP  
   
-Microsoft SQL Server では、メモリ最適化機能を使用するために、データベースに **MEMORY_OPTIMIZED_DATA**で宣言された FILEGROUP がある必要があります。  
+Microsoft SQL Server では、メモリ最適化機能を使用するために、データベースに **MEMORY_OPTIMIZED_DATA** で宣言された FILEGROUP がある必要があります。  
   
 - Azure SQL Database では、この FILEGROUP を作成する必要はありません。  
   
@@ -411,7 +411,7 @@ Beginning execution loop
 Batch execution completed 5001 times.  
 2016-04-20 00:27:05.440  = End time, _tempdb.  
 ---- Tests done. ----  
-***/
+**_/
 ```
   
   
@@ -423,17 +423,16 @@ Batch execution completed 5001 times.
 - [メモリ最適化テーブルのメモリ必要量の推定](../../relational-databases/in-memory-oltp/estimate-memory-requirements-for-memory-optimized-tables.md)  
 - [メモリ最適化テーブルのテーブルと行のサイズ:計算の例](../../relational-databases/in-memory-oltp/table-and-row-size-in-memory-optimized-tables.md)  
   
-より大きなテーブル変数の場合、非クラスター化のインデックスは、メモリ最適化 " *テーブル*" よりも多くメモリを使用します。 行の数やインデックス キーが多くなるほど、その違いは大きくなります。  
+より大きなテーブル変数の場合、非クラスター化インデックスでは、メモリ最適化 "テーブル" よりも多くのメモリが使用されます。 行の数やインデックス キーが多くなるほど、その違いは大きくなります。  
   
 メモリ最適化テーブル変数がアクセスごとに正確なキー値でのみアクセスされる場合、非クラスター化インデックスよりもハッシュ インデックスを選択する方が望ましい可能性があります。 ただし、適切な BUCKET_COUNT を予想できない場合は、NONCLUSTERED インデックスを選択することをお勧めします。  
   
 ## <a name="h-see-also"></a>H. 関連項目  
   
-- [メモリ最適化テーブル。](../../relational-databases/in-memory-oltp/memory-optimized-tables.md)
+- [メモリ最適化テーブル。](./sample-database-for-in-memory-oltp.md)
 
 - [メモリ最適化オブジェクトの持続性の定義。](../../relational-databases/in-memory-oltp/defining-durability-for-memory-optimized-objects.md)
 
 - [2017 年 9 月のブログで発表された、不適切なメモリ不足エラーの可能性を除去するための累積的な更新プログラム。](https://support.microsoft.com/help/4025208/fix-memory-leak-occurs-when-you-use-memory-optimized-tables-in-microso)
     - 「[SQL Server 2016 のビルド バージョン](https://support.microsoft.com/help/3177312/sql-server-2016-build-versions)」には、リリース、サービス パック、および累積的な更新プログラムの詳細が示されています。
     - このような不定期の不適切なエラーは、SQL Server Enterprise Edition では発生しませんでした。
-

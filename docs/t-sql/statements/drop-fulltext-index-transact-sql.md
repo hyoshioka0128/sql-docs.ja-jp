@@ -20,14 +20,14 @@ helpviewer_keywords:
 - DROP FULLTEXT INDEX statement
 - dropping full-text indexes
 ms.assetid: 7443a4ab-1d43-4a22-bbba-a07f620892cb
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: 111b04595ee418b277b5284452787fe1307a233b
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: a5ed7a438741e9e69f5d5df98f9b5a3958977e26
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88478837"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98091953"
 ---
 # <a name="drop-fulltext-index-transact-sql"></a>DROP FULLTEXT INDEX (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -38,8 +38,7 @@ ms.locfileid: "88478837"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 DROP FULLTEXT INDEX ON table_name  
 ```  
   
@@ -58,7 +57,7 @@ DROP FULLTEXT INDEX ON table_name
 ## <a name="examples"></a>例  
  次の例では、`JobCandidate` テーブルに存在するフルテキスト インデックスを削除します。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 DROP FULLTEXT INDEX ON HumanResources.JobCandidate;  

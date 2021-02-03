@@ -19,10 +19,10 @@ ms.assetid: 37059074-5ee8-4f55-9414-1e958fd3adaf
 author: MladjoA
 ms.author: mlandzic
 ms.openlocfilehash: d9beb721578c9c041f2fdd38b4c4e3b1af58ab99
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.sourcegitcommit: c5078791a07330a87a92abb19b791e950672e198
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "88445018"
 ---
 # <a name="stmpointfromtext-geometry-data-type"></a>STMPointFromText (geometry データ型)
@@ -53,7 +53,7 @@ STMPointFromText ( 'multipoint_tagged_text', SRID )
   
  OGC の型: **MultiPoint**  
   
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>解説  
  このメソッドでは、入力が正しい形式でない場合に、**FormatException** をスローします。  
   
 ## <a name="examples"></a>例  

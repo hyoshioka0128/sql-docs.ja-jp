@@ -6,7 +6,7 @@ ms.date: 07/26/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 52430735-51f4-46d1-a308-9aecf8648fda
 author: MightyPen
 ms.author: genemi
-ms.openlocfilehash: 56037b1a9caf1c6b37c62e0bdb10ecbf76c045a1
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: f7064750b46e57572c8437858d5527f4b1e5cba4
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88496368"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99172453"
 ---
 # <a name="modify-method-xml-data-type"></a>modify() メソッド (xml データ型)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -29,8 +29,7 @@ ms.locfileid: "88496368"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 modify (XML_DML)  
 ```  
   

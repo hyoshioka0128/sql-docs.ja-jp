@@ -1,12 +1,12 @@
 ---
-description: dm_xtp_gc_queue_stats (Transact-sql)
-title: dm_xtp_gc_queue_stats (Transact-sql) |Microsoft Docs
+description: sys.dm_xtp_gc_queue_stats (Transact-sql)
+title: sys.dm_xtp_gc_queue_stats (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 08/02/2016
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - dm_xtp_gc_stats
 - dm_xtp_gc_stats_TSQL
@@ -17,17 +17,17 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_xtp_gc_stats dynamic management view
 ms.assetid: addef774-318d-46a7-85df-f93168a800cb
-author: markingmyname
-ms.author: maghan
-monikerRange: = azuresqldb-current || = azuresqldb-mi-current || >= sql-server-2016 || >= sql-server-linux-2017 || = sqlallproducts-allversions
-ms.openlocfilehash: 5431cba1f886aee939d9a70d9b05fd65398184ce
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: = azuresqldb-current || = azuresqldb-mi-current || >= sql-server-2016 || >= sql-server-linux-2017
+ms.openlocfilehash: 75102afed1536334491ff25b7c520b6e5556d0be
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539239"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99127732"
 ---
-# <a name="sysdm_xtp_gc_queue_stats-transact-sql"></a>dm_xtp_gc_queue_stats (Transact-sql)
+# <a name="sysdm_xtp_gc_queue_stats-transact-sql"></a>sys.dm_xtp_gc_queue_stats (Transact-sql)
 
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
@@ -52,10 +52,10 @@ ms.locfileid: "89539239"
 ## <a name="permissions"></a>アクセス許可  
  VIEW SERVER STATE 権限が必要です。  
   
-## <a name="user-scenario"></a>ユーザーシナリオ  
+## <a name="user-scenario"></a>ユーザー シナリオ  
  この出力は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] が 4 コアで実行中か、または、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスが 4 コアに関連付けられていることを示しています。  
   
- この出力は、処理する作業項目がキューにないことを示しています。 キュー 0 の場合、SQL の起動後、キューから削除された作業項目が合計 15625 で、キューの最大項目数は 215625 に設定されています。  
+ この出力は、処理する作業項目がキューにないことを示しています。 キュー0の場合、SQL スタートアップが15625でキューの深さの最大値が15625であるため、合計作業項目がキューから解除されます。  
   
 ```  
 queue_id total_enqueues total_dequeues current_queue_depth  maximum_queue_depth  last_service_ticks  

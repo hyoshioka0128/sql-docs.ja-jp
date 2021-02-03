@@ -6,18 +6,18 @@ ms.date: 06/10/2016
 ms.service: sql-database
 ms.prod_service: sql-database
 ms.reviewer: ''
-ms.topic: language-reference
+ms.topic: reference
 ms.assetid: 9e985a19-f93f-4c56-b644-12c529298011
-author: markingmyname
-ms.author: maghan
-monikerRange: = azuresqldb-current || = sqlallproducts-allversions
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: = azuresqldb-current
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 6e8175b720a109c11ebdeeb4843360ff2ade340b
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: 4c96b6596c01410f9cea5d0e3183f599d1031c26
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89546411"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99131154"
 ---
 # <a name="sysdm_xe_database_session_events-azure-sql-database"></a>sys.dm_xe_database_session_events (Azure SQL Database)
 [!INCLUDE[Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/asdb-asdbmi.md)]
@@ -26,7 +26,7 @@ ms.locfileid: "89546411"
   
 ||  
 |-|  
-|**に適用さ**れます: [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] V12 およびそれ以降のすべてのバージョン。|  
+|**に適用さ** れます: [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] V12 およびそれ以降のすべてのバージョン。|  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
@@ -40,9 +40,9 @@ ms.locfileid: "89546411"
   
 ### <a name="relationship-cardinalities"></a>リレーションシップ基数  
   
-|From|終了|リレーションシップ|  
+|差出人|終了|リレーションシップ|  
 |----------|--------|------------------|  
-|dm_xe_database_session_events。 event_session_address|dm_xe_database_sessions. アドレス|多対一|  
-|sys. dm_xe_database_session_events. event_package_guid、dm_xe_database_session_events event_name|sys.dm_xe_objects.name、sys.dm_xe_objects.package_guid|多対一|  
+|sys.dm_xe_database_session_events sys.dm_xe_database_session_events.event_session_address|sys.dm_xe_database_sessions。アドレス|多対一|  
+|event_package_guid、_xe_database_session_events、_xe_database_session_events. event_name|sys.dm_xe_objects.name、sys.dm_xe_objects.package_guid|多対一|  
   
   

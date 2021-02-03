@@ -8,16 +8,16 @@ ms.topic: conceptual
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: e51e4121a7e941512a84e3acf577af0ff687f4d7
-ms.sourcegitcommit: d1535944bff3f2580070cc036ece30f1d43ee2ce
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 41c0eb01dbcd2838a1c6f388e8b4304ef1eb3c7f
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86406275"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471283"
 ---
 # <a name="r-language-extension-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services の R 言語拡張機能
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
 この記事では、[SQL Server Machine Learning Services](../sql-server-machine-learning-services.md) と [SQL Server 2016 R Services](../r/sql-server-r-services.md) で外部 Python スクリプトを実行するための R 拡張機能について説明します。 拡張機能により、次のものが追加されます。
 
@@ -32,7 +32,7 @@ ms.locfileid: "86406275"
 
 SQL Server には、オープンソース パッケージと専用パッケージの両方が含まれています。 基本の R ライブラリは、Microsoft のオープンソース R のディストリビューションによってインストールされます (Microsoft R Open (MRO))。 R の現在のユーザーは、R コードを移植し、ほとんどまたはまったく変更することなく、SQL Server 上の外部プロセスとしてそれを実行できます。 MRO は、SQL ツールとは別にインストールされ、機能拡張フレームワークのコア エンジン プロセスの外部で実行されます。 インストール中に、オープンソース ライセンスの条項に同意する必要があります。 その後、R の他のオープンソース ディストリビューションと同じように、標準 R パッケージを変更することなく実行できます。 
 
-SQL Server では、基本の R 実行可能ファイルは変更されませんが、セットアップによってインストールされたバージョンの R を使用する必要があります。これは、専用パッケージがビルドおよびテストされているバージョンであるためです。 CRAN から取得する可能性のある R の基本ディストリビューションと MRO の違いについては、[R 言語との相互運用性と Microsoft R 製品と機能](https://docs.microsoft.com/r-server/what-is-r-server-interoperability)に関するページを参照してください。
+SQL Server では、基本の R 実行可能ファイルは変更されませんが、セットアップによってインストールされたバージョンの R を使用する必要があります。これは、専用パッケージがビルドおよびテストされているバージョンであるためです。 CRAN から取得する可能性のある R の基本ディストリビューションと MRO の違いについては、[R 言語との相互運用性と Microsoft R 製品と機能](/r-server/what-is-r-server-interoperability)に関するページを参照してください。
 
 セットアップでインストールされた R 基本パッケージのディストリビューションは、インスタンスに関連付けられているフォルダーで見つけることができます。 たとえば、既定の SQL Server インスタンスに R Services をインストールした場合、R ライブラリは既定のこのフォルダー `C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES\library` に配置されます。 同様に、既定のインスタンスに関連付けられている R ツールは、既定でこのフォルダー `C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES\bin` に配置されます。
 
@@ -40,8 +40,8 @@ Microsoft によって並列ワークロードと分散ワークロードに追�
 
 | ライブラリ | 説明 |
 |---------|-------------|
-| [**RevoScaleR**](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/revoscaler) | データ ソース オブジェクトとデータの探索、操作、変換、視覚化をサポートします。 リモート コンピューティング コンテキスト、およびさまざまなスケーラブルな機械学習モデル (**rxLinMod** など) の作成をサポートします。 これらの API は、大きすぎてメモリに収まらないデータ セットの分析と複数のコアまたはプロセッサでの分散計算を実行するように最適化されています。 RevoScaleR パッケージでは、分析のために使用されるデータの高速移動と格納用の XDF ファイル形式もサポートします。 XDF 形式は、カラム型ストレージを使用する移植可能な形式であり、テキスト、SPSS、ODBC 接続などのさまざまなソースからデータを読み込んで操作するために使用できます。 |
-| [**MicrosoftML**](https://docs.microsoft.com/r-server/r/concept-what-is-the-microsoftml-package) | 速度と精度のために最適化された機械学習アルゴリズムに加え、テキストとイメージを操作するためのインライン変換も含まれています。 詳細については、[SQL Server の MicrosoftML](../r/ref-r-microsoftml.md) に関するページを参照してください。 | 
+| [**RevoScaleR**](/machine-learning-server/r-reference/revoscaler/revoscaler) | データ ソース オブジェクトとデータの探索、操作、変換、視覚化をサポートします。 リモート コンピューティング コンテキスト、およびさまざまなスケーラブルな機械学習モデル (**rxLinMod** など) の作成をサポートします。 これらの API は、大きすぎてメモリに収まらないデータ セットの分析と複数のコアまたはプロセッサでの分散計算を実行するように最適化されています。 RevoScaleR パッケージでは、分析のために使用されるデータの高速移動と格納用の XDF ファイル形式もサポートします。 XDF 形式は、カラム型ストレージを使用する移植可能な形式であり、テキスト、SPSS、ODBC 接続などのさまざまなソースからデータを読み込んで操作するために使用できます。 |
+| [**MicrosoftML**](/r-server/r/concept-what-is-the-microsoftml-package) | 速度と精度のために最適化された機械学習アルゴリズムに加え、テキストとイメージを操作するためのインライン変換も含まれています。 詳細については、[SQL Server の MicrosoftML](../r/ref-r-microsoftml.md) に関するページを参照してください。 | 
 
 ## <a name="using-r-in-sql-server"></a>SQL Server での R の使用
 
@@ -64,7 +64,7 @@ Microsoft によって並列ワークロードと分散ワークロードに追�
 ![rsql_indb780-01](../r/media/script_in-db-r.png)
 
 1. ストアド プロシージャ ([sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md)) に渡されたパラメーター _@language='R'_ によって、R ランタイムに対する要求が示されます。 この要求は SQL Server からスタート パッド サービスに送信されます。
-Linux の場合、SQL では**スタート パッド** サービスを使用して、ユーザーごとに個別のスタート パッド プロセスとの通信が行われます。 詳細については、[機能拡張アーキテクチャの図](extensibility-framework.md#architecture-diagram)を参照してください。
+Linux の場合、SQL では **スタート パッド** サービスを使用して、ユーザーごとに個別のスタート パッド プロセスとの通信が行われます。 詳細については、[機能拡張アーキテクチャの図](extensibility-framework.md#architecture-diagram)を参照してください。
 2. スタート パッド サービスによって、適切なランチャーが起動されます (この場合は RLauncher)。
 3. RLauncher が外部の R プロセスを起動します。
 4. BxlServer と R ランタイムとの連携により、SQL Server とのデータ交換や、作業結果の保存が管理されます。

@@ -8,24 +8,22 @@ ms.topic: troubleshooting
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 597b656c3f235ae59a22f7e85bf54dcc25fb1873
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: b57fdb3abd3482d6a395e1e6690f2e628a2a3e9e
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87253683"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470683"
 ---
 # <a name="troubleshoot-issues-with-launchpad-service-and-external-script-execution-in-sql-server"></a>SQL Server での Launchpad サービスと外部スクリプト実行に関する問題のトラブルシューティング
-[!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
 この記事では、SQL Server Trusted Launchpad サービスに関連する問題のトラブルシューティング ガイダンスを提供します。 Launchpad サービスでは、R および Python の外部スクリプト実行がサポートされています。 構成の問題または変更や、不足するネットワーク プロトコルなどの複数の問題により、Launchpad が起動しないことがあります。  
 
-ここに記載されていない問題が発生した場合は、[Machine Learning Server フォーラム](https://social.msdn.microsoft.com/Forums/home?category=MicrosoftR)に質問を投稿できます。
-
 ## <a name="determine-whether-launchpad-is-running"></a>Launchpad が実行されているかどうかを判断する
 
-1. **[サービス]** パネル (services.msc) を開きます。 または、コマンド ラインで「**Sqlservermanager13.msc**」または「**SQLServerManager14**」と入力して、[SQL Server 構成マネージャー](https://docs.microsoft.com/sql/relational-databases/sql-server-configuration-manager)を開きます。
+1. **[サービス]** パネル (services.msc) を開きます。 または、コマンド ラインで「**Sqlservermanager13.msc**」または「**SQLServerManager14**」と入力して、[SQL Server 構成マネージャー](../../relational-databases/sql-server-configuration-manager.md)を開きます。
 
 2. Launchpad が実行されているサービス アカウントをメモします。 R または Python が有効になっている各インスタンスには、Launchpad サービスの独自のインスタンスが必要です。 たとえば、名前付きインスタンスのサービスは、_MSSQLLaunchpad$InstanceName_ のようになります。
 
@@ -57,7 +55,7 @@ Machine Learning Services のセットアップ中に、SQL Server は Windows �
 
 ただし、より制限の厳しいセキュリティ ポリシーが適用されている組織では、このグループに必要な権限が手動で削除されているか、ポリシーによって自動的に失効にされている可能性があります。 権限が削除されている場合、Launchpad は SQL Server に接続できなくなり、SQL Server は外部ランタイムを呼び出せません。
 
-問題を解決するには、グループ **SQLRUserGroup** に**ローカルのログオンを許可する**システム権限があることを確認します。
+問題を解決するには、グループ **SQLRUserGroup** に **ローカルのログオンを許可する** システム権限があることを確認します。
 
 詳細については、「[Windows サービス アカウントと権限の構成](../../database-engine/configure-windows/configure-windows-service-accounts-and-permissions.md)」を参照してください。
 
@@ -79,7 +77,7 @@ GRANT EXECUTE ANY EXTERNAL SCRIPT TO <username>
 
 このセクションでは、Launchpad が返す最も一般的なエラー メッセージを示します。
 
-::: moniker range=">=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2016"
 ## <a name="unable-to-launch-runtime-for-r-script"></a>"R スクリプトのランタイムを起動できません"
 
 R ユーザーの Windows グループ (Python にも使用) が R Services を実行しているインスタンスにログオンできない場合は、次のエラーが表示されることがあります。
@@ -123,7 +121,7 @@ Launchpad に別のアカウントを割り当てたか、SQL Server コンピ�
 
 機械学習をインストールして有効にしたが、R または Python スクリプトを実行しようとするとこのエラーが発生する場合は、インスタンスの Launchpad サービスが実行を停止した可能性があります。
 
-1. Windows コマンド プロンプトから SQL Server 構成マネージャーを開きます。 詳細については、「 [SQL Server Configuration Manager](https://docs.microsoft.com/sql/relational-databases/sql-server-configuration-manager)」を参照してください。
+1. Windows コマンド プロンプトから SQL Server 構成マネージャーを開きます。 詳細については、「 [SQL Server Configuration Manager](../../relational-databases/sql-server-configuration-manager.md)」を参照してください。
 
 2. インスタンスの SQL Server Launchpad を右クリックし、 **[プロパティ]** を選択します。
 
@@ -188,12 +186,12 @@ EXEC sp_execute_external_script @language = N'R',
 
 この問題を解決するには、パッケージを SQL Server インスタンス ライブラリに再インストールする必要があります。
 
-::: moniker range=">=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2016"
 >[!NOTE]
 >最新バージョンの Microsoft R を使用するために SQL Server 2016 のインスタンスをアップグレードした場合、既定のライブラリの場所は異なります。 詳細については、[SqlBindR を使用した R サービスのインスタンスのアップグレード](../install/upgrade-r-and-python.md)に関する記事を参照してください。
 ::: moniker-end
 
-::: moniker range=">=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2016"
 ## <a name="launchpad-shuts-down-due-to-mismatched-dlls"></a>DLL が一致しないために Launchpad がシャットダウンする
 
 他の機能を使用してデータベース エンジンをインストールして、サーバーに修正プログラムを適用した後、元のメディアを使用して Machine Learning 機能を追加すると、正しくないバージョンの Machine Learning コンポーネントがインストールされることがあります。 Launchpad は、バージョンの不一致を検出すると、シャットダウンしてダンプ ファイルを作成します。
@@ -225,7 +223,7 @@ R をインストールするボリュームが短いファイル名に対応し
 
 回避策として、SQL Server がインストールされ、R Services がインストールされているボリュームで 8dot3 表記を有効にできます。 次に、R Services 構成ファイルに作業ディレクトリの短い名前を指定する必要があります。
 
-1. 8dot3 表記を有効にするには、「[fsutil 8dot3name](https://technet.microsoft.com/library/ff621566(v=ws.11).aspx)」で説明されているように、*8dot3name* 引数を指定して fsutil ユーティリティを実行します。
+1. 8dot3 表記を有効にするには、「[fsutil 8dot3name](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/ff621566(v=ws.11))」で説明されているように、*8dot3name* 引数を指定して fsutil ユーティリティを実行します。
 
 2. 8dot3 表記が有効になったら、RLauncher.config ファイルを開き、`WORKING_DIRECTORY` のプロパティを確認します。 このファイルを見つける方法の詳細については、[Machine Learning のトラブルシューティングのためのデータ収集](data-collection-ml-troubleshooting-process.md)に関する記事を参照してください。
 
@@ -240,6 +238,6 @@ R をインストールするボリュームが短いファイル名に対応し
 
 [機械学習のトラブルシューティングのためのデータ収集](data-collection-ml-troubleshooting-process.md)
 
-[アップグレードとインストールに関してよく寄せられる質問](upgrade-and-installation-faq-sql-server-r-services.md)
+[SQL Server Machine Learning Services のインストール](../install/sql-machine-learning-services-windows-install.md)
 
 [データベース エンジンの接続のトラブルシューティング](../../database-engine/configure-windows/troubleshoot-connecting-to-the-sql-server-database-engine.md)

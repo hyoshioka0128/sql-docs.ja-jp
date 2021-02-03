@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sp_help
 - sp_help_TSQL
@@ -18,13 +18,13 @@ helpviewer_keywords:
 ms.assetid: 913cd5d4-39a3-4a4b-a926-75ed32878884
 author: markingmyname
 ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 21116db0cc5faa63a54ffda5740f1c93df27c676
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: e97e2118c90521881dbf55d686910cff01ef79e7
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89543353"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99176569"
 ---
 # <a name="sp_help-transact-sql"></a>sp_help (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -42,7 +42,7 @@ sp_help [ [ @objname = ] 'name' ]
 ```  
   
 ## <a name="arguments"></a>引数  
-`[ @objname = ] 'name'`**Sysobjects**または**systypes**テーブル内の任意のユーザー定義データ型のオブジェクトの名前を指定します。 *名前* は **nvarchar (** 776 **)**,、既定値は NULL です。 データベース名は使用できません。  'Person.AddressType' や [Person.AddressType] など、2 つまたは 3 つの部分名を区切る必要があります。   
+`[ @objname = ] 'name'`**Sysobjects** または **systypes** テーブル内の任意のユーザー定義データ型のオブジェクトの名前を指定します。 *名前* は **nvarchar (** 776 **)**,、既定値は NULL です。 データベース名は使用できません。  'Person.AddressType' や [Person.AddressType] など、2 つまたは 3 つの部分名を区切る必要があります。   
    
   
 ## <a name="return-code-values"></a>リターン コードの値  
@@ -55,51 +55,51 @@ sp_help [ [ @objname = ] 'name' ]
   
     |列名|データ型|説明|  
     |-----------------|---------------|-----------------|  
-    |**Name**|**nvarchar (** 128 **)**|オブジェクト名|  
+    |**名前**|**nvarchar (** 128 **)**|オブジェクト名|  
     |**所有者**|**nvarchar (** 128 **)**|オブジェクトの所有者 (これは、オブジェクトを所有するデータベースプリンシパルです。 既定値は、オブジェクトを含むスキーマの所有者です)。|  
     |**Object_type**|**nvarchar (** 31 **)**|オブジェクトの種類|  
   
-2.  *名前*が [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データ型またはユーザー定義データ型である場合、 **sp_help**はこの結果セットを返します。  
+2.  *名前* が [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データ型またはユーザー定義データ型である場合、 **sp_help** はこの結果セットを返します。  
   
     |列名|データ型|説明|  
     |-----------------|---------------|-----------------|  
     |**Type_name**|**nvarchar (** 128 **)**|データ型の名前。|  
     |**Storage_type**|**nvarchar (** 128 **)**|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 型名。|  
-    |**長さ**|**smallint**|データ型の物理的な長さ (バイト単位)。|  
+    |**Length**|**smallint**|データ型の物理的な長さ (バイト単位)。|  
     |**Prec**|**int**|有効桁数 (桁数の合計数)。|  
     |**スケール**|**int**|小数点の右側の桁数。|  
     |**NULL 値の使用**|**varchar (** 35 **)**|NULL 値が許可されるかどうかを示します。 Yes または No。|  
     |**Default_name**|**nvarchar (** 128 **)**|このデータ型にバインドされた既定値の名前です。<br /><br /> NULL = 既定値がバインドされていません。|  
     |**Rule_name**|**nvarchar (** 128 **)**|このデータ型にバインドされたルールの名前です。<br /><br /> NULL = 既定値がバインドされていません。|  
-    |**Collation**|**sysname**|データ型の照合順序。 文字以外のデータ型の場合は NULL です。|  
+    |**照合順序**|**sysname**|データ型の照合順序。 文字以外のデータ型の場合は NULL です。|  
   
-3.  *名前*がデータ型以外のデータベースオブジェクトである場合、 **sp_help**は、指定されたオブジェクトの型に基づいて、この結果セットと追加の結果セットを返します。  
+3.  *名前* がデータ型以外のデータベースオブジェクトである場合、 **sp_help** は、指定されたオブジェクトの型に基づいて、この結果セットと追加の結果セットを返します。  
 
     |列名|データ型|説明|  
     |-----------------|---------------|-----------------|  
-    |**Name**|**nvarchar (** 128 **)**|テーブル名|  
+    |**名前**|**nvarchar (** 128 **)**|テーブル名|  
     |**所有者**|**nvarchar (** 128 **)**|テーブルの所有者|  
-    |**型**|**nvarchar (** 31 **)**|テーブルの種類です。|  
+    |**Type**|**nvarchar (** 31 **)**|テーブルの種類です。|  
     |**Created_datetime**|**datetime**|作成された日付テーブル|  
   
      指定されたデータベースオブジェクトによっては、 **sp_help** によって追加の結果セットが返されます。  
   
-     *Name*がシステムテーブル、ユーザーテーブル、またはビューの場合、 **sp_help**は次の結果セットを返します。 ただし、ビューに対しては、データ ファイルがファイル グループ内のどこに配置されているかを表す結果セットは返されません。  
+     *Name* がシステムテーブル、ユーザーテーブル、またはビューの場合、 **sp_help** は次の結果セットを返します。 ただし、ビューに対しては、データ ファイルがファイル グループ内のどこに配置されているかを表す結果セットは返されません。  
   
     -   列オブジェクトに関して次の結果セットが返されます。  
   
         |列名|データ型|説明|  
         |-----------------|---------------|-----------------|  
         |**Column_name**|**nvarchar (** 128 **)**|列名。|  
-        |**型**|**nvarchar (** 128 **)**|列のデータ型。|  
+        |**Type**|**nvarchar (** 128 **)**|列のデータ型。|  
         |**L8**|**varchar (** 35 **)**|列の値が計算されるかどうかを示します。 Yes または No。|  
-        |**長さ**|**int**|列の長さ (バイト単位)。<br /><br /> 注: 列のデータ型が大きな値の型 (**varchar (max)**、 **nvarchar (max)**、 **varbinary (max)**、または **xml**) の場合、値は-1 と表示されます。|  
+        |**Length**|**int**|列の長さ (バイト単位)。<br /><br /> 注: 列のデータ型が大きな値の型 (**varchar (max)**、 **nvarchar (max)**、 **varbinary (max)**、または **xml**) の場合、値は-1 と表示されます。|  
         |**Prec**|**char (** 5 **)**|列の有効桁数。|  
         |**スケール**|**char (** 5 **)**|列の小数点以下桁数です。|  
         |**NULL 値の使用**|**varchar (** 35 **)**|列で NULL 値を使用できるかどうかを示します。 Yes または No。|  
         |**TrimTrailingBlanks**|**varchar (** 35 **)**|末尾の空白をトリミングします。 Yes または No を返します。|  
         |**FixedLenNullInSource**|**varchar (** 35 **)**|これは旧バージョンとの互換性のためにだけ用意されています。|  
-        |**Collation**|**sysname**|列の照合順序。 非文字データ型の場合は NULL です。|  
+        |**照合順序**|**sysname**|列の照合順序。 非文字データ型の場合は NULL です。|  
   
     -   Id 列に対して次の結果セットが返されます。  
   
@@ -108,7 +108,7 @@ sp_help [ [ @objname = ] 'name' ]
         |**ID**|**nvarchar (** 128 **)**|データ型が id として宣言されている列の名前。|  
         |**Seed**|**numeric**|Id 列の開始値。|  
         |**Increment**|**numeric**|この列の値に使用する増分です。|  
-        |**[レプリケーションでは使用しない]**|**int**|**Sqlrepl**などのレプリケーションログインでテーブルにデータを挿入するときに、IDENTITY プロパティは適用されません。<br /><br /> 1 = True<br /><br /> 0 = False|  
+        |**[レプリケーションでは使用しない]**|**int**|**Sqlrepl** などのレプリケーションログインでテーブルにデータを挿入するときに、IDENTITY プロパティは適用されません。<br /><br /> 1 = True<br /><br /> 0 = False|  
   
     -   列に対して次の結果セットが返されます。  
   
@@ -153,21 +153,21 @@ sp_help [ [ @objname = ] 'name' ]
         |列名|データ型|説明|  
         |-----------------|---------------|-----------------|  
         |**Parameter_name**|**nvarchar (** 128 **)**|ストアドプロシージャのパラメーター名。|  
-        |**型**|**nvarchar (** 128 **)**|ストアドプロシージャパラメーターのデータ型。|  
-        |**長さ**|**smallint**|物理ストレージの最大長 (バイト単位)。|  
+        |**Type**|**nvarchar (** 128 **)**|ストアドプロシージャパラメーターのデータ型。|  
+        |**Length**|**smallint**|物理ストレージの最大長 (バイト単位)。|  
         |**Prec**|**int**|桁数または合計桁数。|  
         |**スケール**|**int**|小数点の右側の桁数。|  
         |**Param_order**|**smallint**|パラメーターの順番です。|  
   
-## <a name="remarks"></a>解説  
- **Sp_help**プロシージャは、現在のデータベースでのみオブジェクトを検索します。  
+## <a name="remarks"></a>コメント  
+ **Sp_help** プロシージャは、現在のデータベースでのみオブジェクトを検索します。  
   
- *名前*が指定されていない場合**sp_help**現在のデータベース内のすべてのオブジェクトのオブジェクト名、所有者、およびオブジェクトの種類が一覧表示されます。 **sp_helptrigger** は、トリガーに関する情報を提供します。  
+ *名前* が指定されていない場合 **sp_help** 現在のデータベース内のすべてのオブジェクトのオブジェクト名、所有者、およびオブジェクトの種類が一覧表示されます。 **sp_helptrigger** は、トリガーに関する情報を提供します。  
   
  **sp_help** は、順序付け可能インデックス列のみを公開します。そのため、XML インデックスや空間インデックスに関する情報は公開されません。  
   
 ## <a name="permissions"></a>アクセス許可  
- ロール **public** のメンバーシップが必要です。 ユーザーは、 *objname*に対して少なくとも1つのアクセス許可を持っている必要があります。 列の制約キー、既定値、またはルールを表示するには、テーブルに対する VIEW DEFINITION 権限が必要です。  
+ ロール **public** のメンバーシップが必要です。 ユーザーは、 *objname* に対して少なくとも1つのアクセス許可を持っている必要があります。 列の制約キー、既定値、またはルールを表示するには、テーブルに対する VIEW DEFINITION 権限が必要です。  
   
 ## <a name="examples"></a>例  
   

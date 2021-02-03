@@ -7,21 +7,21 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
 - data collector view
 - data collector [SQL Server], views
 ms.assetid: a005e885-7813-4c7e-b332-b01d9e9d4054
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 9ba8bb14fbcd308c764db1693802d660f729fed1
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: bf304e44eb5f4374d4fdc1de21d7dc73fee2d72e
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89546872"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99184302"
 ---
 # <a name="data-collector-views-transact-sql"></a>データ コレクターのビュー (Transact-SQL)
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]

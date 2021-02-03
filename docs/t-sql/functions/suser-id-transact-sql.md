@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - SUSER_ID_TSQL
 - SUSER_ID
@@ -23,13 +23,13 @@ helpviewer_keywords:
 ms.assetid: 348911ab-b0b6-4867-aee7-e6f42e053a4a
 author: VanMSFT
 ms.author: vanto
-monikerRange: =azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017
-ms.openlocfilehash: 8a05992f921eadfc59e28cb21e3ada3594368b73
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017
+ms.openlocfilehash: c8d76d0a44678a7a43bd365976d8be352d58bf16
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88445556"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99181474"
 ---
 # <a name="suser_id-transact-sql"></a>SUSER_ID (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -43,8 +43,7 @@ ms.locfileid: "88445556"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 SUSER_ID ( [ 'login' ] )   
 ```  
   
@@ -67,7 +66,7 @@ SUSER_ID ( [ 'login' ] )
 ## <a name="examples"></a>例  
  次の例では、`sa` ログインのログイン ID 番号を返します。  
   
-```  
+```sql
 SELECT SUSER_ID('sa');  
 ```  
   

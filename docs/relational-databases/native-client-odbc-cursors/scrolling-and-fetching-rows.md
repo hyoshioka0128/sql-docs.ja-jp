@@ -21,13 +21,13 @@ helpviewer_keywords:
 ms.assetid: 9109f10d-326b-4a6d-8c97-831f60da8c4c
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 9648f17ccd3688e166612f3d753d3208a83ebb52
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 16caf538ea5406ea4d5f23d4fbd05b2a646a0ba7
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88460788"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97473673"
 ---
 # <a name="scrolling-and-fetching-rows"></a>行のスクロールとフェッチ
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -36,17 +36,17 @@ ms.locfileid: "88460788"
   
 -   [SQLSetStmtAttr](../../relational-databases/native-client-odbc-api/sqlsetstmtattr.md)を使用してカーソル機能を設定します。  
   
--   **Sqlexecute**または**SQLExecDirect**を使用してカーソルを開きます。  
+-   **Sqlexecute** または **SQLExecDirect** を使用してカーソルを開きます。  
   
--   **Sqlfetch**または[sqlfetchscroll](../../relational-databases/native-client-odbc-api/sqlfetchscroll.md)を使用して行をスクロールおよびフェッチします。  
+-   **Sqlfetch** または [sqlfetchscroll](../../relational-databases/native-client-odbc-api/sqlfetchscroll.md)を使用して行をスクロールおよびフェッチします。  
   
- **Sqlfetch**と**Sqlfetchsroll**は、同時に行のブロックをフェッチできます。 返される行の数は、SQL_ATTR_ROW_ARRAY_SIZE パラメーターを設定するために **SQLSetStmtAttr** を使用して指定します。  
+ **Sqlfetch** と **Sqlfetchsroll** は、同時に行のブロックをフェッチできます。 返される行の数は、SQL_ATTR_ROW_ARRAY_SIZE パラメーターを設定するために **SQLSetStmtAttr** を使用して指定します。  
   
  ODBC アプリケーションでは、 **Sqlfetch** を使用して、順方向専用カーソルを介してフェッチできます。  
   
- カーソルをスクロールするには、 **Sqlfetchscroll**を使用します。 **Sqlfetchscroll** は、相対フェッチ (現在の行セットの先頭から行セット *n* の行をフェッチ) と絶対フェッチ (行 *n*で始まる行セットのフェッチ) に加えて、次の行セット、以前の行セット、最初の行セット、および最後の行セットのフェッチをサポートしています。 絶対フェッチで *n* が負の値の場合、行は結果セットの末尾からカウントされます。 たとえば、行 -1 の絶対フェッチは、結果セット内にある最後の行を起点とした行セットをフェッチします。  
+ カーソルをスクロールするには、 **Sqlfetchscroll** を使用します。 **Sqlfetchscroll** は、相対フェッチ (現在の行セットの先頭から行セット *n* の行をフェッチ) と絶対フェッチ (行 *n* で始まる行セットのフェッチ) に加えて、次の行セット、以前の行セット、最初の行セット、および最後の行セットのフェッチをサポートしています。 絶対フェッチで *n* が負の値の場合、行は結果セットの末尾からカウントされます。 たとえば、行 -1 の絶対フェッチは、結果セット内にある最後の行を起点とした行セットをフェッチします。  
   
- レポートなどのブロックカーソル機能に対してのみ **Sqlfetchscroll** を使用するアプリケーションは、次の行セットをフェッチするオプションのみを使用して、結果セットを1回だけ通過する可能性があります。 一方、画面ベースのアプリケーションでは、 **Sqlfetchscroll**のすべての機能を利用できます。 アプリケーションで、行セットのサイズを画面に表示される行数に設定し、画面バッファーを結果セットにバインドすると、スクロールバーの操作を **Sqlfetchscroll**の呼び出しに直接変換できます。  
+ レポートなどのブロックカーソル機能に対してのみ **Sqlfetchscroll** を使用するアプリケーションは、次の行セットをフェッチするオプションのみを使用して、結果セットを1回だけ通過する可能性があります。 一方、画面ベースのアプリケーションでは、 **Sqlfetchscroll** のすべての機能を利用できます。 アプリケーションで、行セットのサイズを画面に表示される行数に設定し、画面バッファーを結果セットにバインドすると、スクロールバーの操作を **Sqlfetchscroll** の呼び出しに直接変換できます。  
   
 |スクロール バーの操作|SQLFetchScroll のスクロール操作|  
 |--------------------------|-------------------------------------|  

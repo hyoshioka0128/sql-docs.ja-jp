@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - ALTER_SEARCH_PROPERTY_TSQL
 - ALTER_SEARCH_PROPERTY_LIST_TSQL
@@ -22,14 +22,14 @@ helpviewer_keywords:
 - search property lists [SQL Server], altering
 - ALTER SEARCH PROPERTY LIST statement
 ms.assetid: 0436e4a8-ca26-4d23-93f1-e31e2a1c8bfb
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: b4a16ec827c742bd99cbc543c57c4e3c7b13c247
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: c39fb37a0df34e7f7cf2afcf34678fa4c225a9f2
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88467312"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99182227"
 ---
 # <a name="alter-search-property-list-transact-sql"></a>ALTER SEARCH PROPERTY LIST (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -62,7 +62,7 @@ ALTER SEARCH PROPERTY LIST list_name
   
  既存のプロパティ リストの名前を表示するには、次のように [sys.registered_search_property_lists](../../relational-databases/system-catalog-views/sys-registered-search-property-lists-transact-sql.md) カタログ ビューを使用します。  
   
-```  
+```sql  
 SELECT name FROM sys.registered_search_property_lists;  
 ```  
   
@@ -79,7 +79,7 @@ SELECT name FROM sys.registered_search_property_lists;
   
  現在のデータベースの検索プロパティ リストに現在存在するプロパティの名前を表示するには、次のように [sys.registered_search_properties](../../relational-databases/system-catalog-views/sys-registered-search-properties-transact-sql.md) カタログ ビューを使用します。  
   
-```  
+```sql  
 SELECT property_name FROM sys.registered_search_properties;  
 ```  
   
@@ -88,7 +88,7 @@ SELECT property_name FROM sys.registered_search_properties;
   
  現在のデータベースの検索プロパティ リストに存在する任意のプロパティのプロパティ セット GUID を表示するには、次のように [sys.registered_search_properties](../../relational-databases/system-catalog-views/sys-registered-search-properties-transact-sql.md) カタログ ビューを使用します。  
   
-```  
+```sql  
 SELECT property_set_guid FROM sys.registered_search_properties;  
 ```  
   
@@ -97,7 +97,7 @@ SELECT property_set_guid FROM sys.registered_search_properties;
   
  現在のデータベースの検索プロパティ リストに存在する任意のプロパティの整数識別子を表示するには、次のように [sys.registered_search_properties](../../relational-databases/system-catalog-views/sys-registered-search-properties-transact-sql.md) カタログ ビューを使用します。  
   
-```  
+```sql  
 SELECT property_int_id FROM sys.registered_search_properties;  
 ```  
   
@@ -117,7 +117,7 @@ SELECT property_int_id FROM sys.registered_search_properties;
   
  プロパティを指定する場合は、PROPERTY_SET_GUID 句、PROPERTY_INT_ID 句、PROPERTY_DESCRIPTION 句を、かっこで囲まれたコンマ区切りのリストとして任意の順序で配置できます。次に例を示します。  
   
-```  
+```sql  
 ALTER SEARCH PROPERTY LIST CVitaProperties  
 ADD 'System.Author'   
 WITH (   
@@ -136,7 +136,7 @@ WITH (
 ## <a name="making-added-properties-searchable"></a>追加したプロパティを検索可能にする  
  検索プロパティを検索プロパティ リストに追加すると、そのプロパティが登録されます。 新しく追加されたプロパティは、[CONTAINS](../../t-sql/queries/contains-transact-sql.md) クエリですぐに指定することができます。 しかし、関連付けられているフルテキスト インデックスを再作成しない限り、新しく追加されたプロパティに対するプロパティスコープのフルテキスト クエリを実行してもドキュメントは返されません。 たとえば、新しく追加されたプロパティ *new_search_property* に対する次のプロパティスコープのクエリは、対象のテーブル (*table_name*) と関連付けられているフルテキスト インデックスが再作成されない限り、ドキュメントを返しません。  
   
-```  
+```sql  
 SELECT column_name  
 FROM table_name  
 WHERE CONTAINS( PROPERTY( column_name, 'new_search_property' ), 
@@ -146,7 +146,7 @@ GO
   
  完全な作成を始めるには、次の [ALTER FULLTEXT INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/alter-fulltext-index-transact-sql.md) ステートメントを使います。  
   
-```  
+```sql  
 USE database_name;  
 GO  
 ALTER FULLTEXT INDEX ON table_name START FULL POPULATION;  
@@ -184,7 +184,7 @@ GO
 > [!NOTE]  
 >  `DocumentPropertyList` プロパティ リスト作成の例については、「[CREATE SEARCH PROPERTY LIST &#40;Transact-SQL&#41;](../../t-sql/statements/create-search-property-list-transact-sql.md)」をご覧ください。  
   
-```  
+```sql  
 ALTER SEARCH PROPERTY LIST DocumentPropertyList  
    ADD 'Title'   
    WITH ( PROPERTY_SET_GUID = 'F29F85E0-4FF9-1068-AB91-08002B27B3D9', PROPERTY_INT_ID = 2,   
@@ -208,7 +208,7 @@ ALTER SEARCH PROPERTY LIST DocumentPropertyList
 ### <a name="b-dropping-a-property"></a>B. プロパティを削除する  
  次の例では、`Comments` プロパティを `DocumentPropertyList` プロパティ リストから削除します。  
   
-```  
+```sql  
 ALTER SEARCH PROPERTY LIST DocumentPropertyList  
 DROP 'Comments' ;  
 ```  

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.xml_schema_wildcards
 - sys.xml_schema_wildcards_TSQL
@@ -18,19 +18,19 @@ dev_langs:
 helpviewer_keywords:
 - sys.xml_schema_wildcards catalog view
 ms.assetid: 7cedfe9a-e99e-4777-8a28-98674b6e5cff
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 706db88cdc82c7b67105826091f826c62e7f3311
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 1648798a92b545ffcb5500fe7cc90f7d28e76987
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89548629"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99190832"
 ---
 # <a name="sysxml_schema_wildcards-transact-sql"></a>sys.xml_schema_wildcards (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  XML スキーマコンポーネントごとに1行を返します。これは、属性ワイルド**カード (** **V**) または要素**kind**ワイルドカード ( **W**) であり、どちらも**symbol_space** **N**です。  
+  XML スキーマコンポーネントごとに1行を返します。これは **Attribute-Wildcard (** **V**) または Element-Wildcard (**種類** は **W**) であり、両方とも **symbol_space** **N** です。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

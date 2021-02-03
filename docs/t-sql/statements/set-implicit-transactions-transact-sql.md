@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - IMPLICIT_TRANSACTIONS
 - SET IMPLICIT_TRANSACTIONS
@@ -22,15 +22,15 @@ helpviewer_keywords:
 - SET IMPLICIT_TRANSACTIONS statement
 - IMPLICIT_TRANSACTIONS option
 ms.assetid: a300ac43-e4c0-4329-8b79-a1a05e63370a
-author: CarlRabeler
-ms.author: carlrab
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 992a1fd5e6129666cae7413cb461a51285fb5973
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: bdc701408345b9067a2519c30570bc668b5db06b
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88426554"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99190354"
 ---
 # <a name="set-implicit_transactions-transact-sql"></a>SET IMPLICIT_TRANSACTIONS (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -135,88 +135,87 @@ SELECT @IMPLICIT_TRANSACTIONS AS IMPLICIT_TRANSACTIONS;
   
 ```sql  
 -- Transact-SQL.  
-go  
 -- Preparations.  
 SET NOCOUNT ON;  
 SET IMPLICIT_TRANSACTIONS OFF;  
-go  
+GO  
 WHILE (@@TranCount > 0) COMMIT TRANSACTION;  
-go  
+GO  
 IF (OBJECT_ID(N'dbo.t1',N'U') IS NOT NULL) DROP TABLE dbo.t1;  
-go  
-CREATE table dbo.t1 (a int);  
-go  
+GO  
+CREATE table dbo.t1 (a INT);  
+GO  
   
 PRINT N'-------- [Test A] ---- OFF ----';  
 PRINT N'[A.01] Now, SET IMPLICIT_TRANSACTIONS OFF.';  
 PRINT N'[A.02] @@TranCount, at start, == ' + CAST(@@TRANCOUNT AS NVARCHAR(10));  
 SET IMPLICIT_TRANSACTIONS OFF;  
-go  
+GO 
 INSERT INTO dbo.t1 VALUES (11);  
 INSERT INTO dbo.t1 VALUES (12);  
 PRINT N'[A.03] @@TranCount, after INSERTs, == ' + CAST(@@TRANCOUNT AS NVARCHAR(10));  
-go  
+GO  
   
 PRINT N' ';  
 PRINT N'-------- [Test B] ---- ON ----';  
 PRINT N'[B.01] Now, SET IMPLICIT_TRANSACTIONS ON.';  
 PRINT N'[B.02] @@TranCount, at start, == ' + CAST(@@TRANCOUNT AS NVARCHAR(10));  
 SET IMPLICIT_TRANSACTIONS ON;  
-go  
+GO
 INSERT INTO dbo.t1 VALUES (21);  
 INSERT INTO dbo.t1 VALUES (22);  
 PRINT N'[B.03] @@TranCount, after INSERTs, == ' + CAST(@@TRANCOUNT AS NVARCHAR(10));  
-go  
+GO 
 COMMIT TRANSACTION;  
 PRINT N'[B.04] @@TranCount, after COMMIT, == ' + CAST(@@TRANCOUNT AS NVARCHAR(10));  
-go  
+GO
   
 PRINT N' ';  
 PRINT N'-------- [Test C] ---- ON, then BEGIN TRAN ----';  
 PRINT N'[C.01] Now, SET IMPLICIT_TRANSACTIONS ON.';  
 PRINT N'[C.02] @@TranCount, at start, == ' + CAST(@@TRANCOUNT AS NVARCHAR(10));  
 SET IMPLICIT_TRANSACTIONS ON;  
-go  
+GO  
 BEGIN TRANSACTION;  
 INSERT INTO dbo.t1 VALUES (31);  
 INSERT INTO dbo.t1 VALUES (32);  
 PRINT N'[C.03] @@TranCount, after INSERTs, == ' + CAST(@@TRANCOUNT AS NVARCHAR(10));  
-go  
+GO  
 COMMIT TRANSACTION;  
 PRINT N'[C.04] @@TranCount, after a COMMIT, == ' + CAST(@@TRANCOUNT AS NVARCHAR(10));  
 COMMIT TRANSACTION;  
 PRINT N'[C.05] @@TranCount, after another COMMIT, == ' + CAST(@@TRANCOUNT AS NVARCHAR(10));  
-go  
+GO
   
 PRINT N' ';  
 PRINT N'-------- [Test D] ---- ON, INSERT, BEGIN TRAN, INSERT ----';  
 PRINT N'[D.01] Now, SET IMPLICIT_TRANSACTIONS ON.';  
 PRINT N'[D.02] @@TranCount, at start, == ' + CAST(@@TRANCOUNT AS NVARCHAR(10));  
 SET IMPLICIT_TRANSACTIONS ON;  
-go  
+GO 
 INSERT INTO dbo.t1 VALUES (41);  
 BEGIN TRANSACTION;  
 INSERT INTO dbo.t1 VALUES (42);  
 PRINT N'[D.03] @@TranCount, after INSERTs, == ' + CAST(@@TRANCOUNT AS NVARCHAR(10));  
-go  
+GO 
 COMMIT TRANSACTION;  
 PRINT N'[D.04] @@TranCount, after a COMMIT, == ' + CAST(@@TRANCOUNT AS NVARCHAR(10));  
 COMMIT TRANSACTION;  
 PRINT N'[D.05] @@TranCount, after another COMMIT, == ' + CAST(@@TRANCOUNT AS NVARCHAR(10));  
-go  
+GO
   
 -- Clean up.  
 SET IMPLICIT_TRANSACTIONS OFF;  
-go  
+GO  
 WHILE (@@TranCount > 0) COMMIT TRANSACTION;  
-go  
+GO  
 DROP TABLE dbo.t1;  
-go  
+GO
 ```  
   
  次は、前述の Transact-SQL スクリプトからのテキスト出力です。  
   
-```sql  
+```
 -- Text output from Transact-SQL:  
   
 -------- [Test A] ---- OFF ----  

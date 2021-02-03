@@ -8,12 +8,13 @@ ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
 ms.assetid: 6bd8eb0b-593d-467e-87ea-ab1c4dbcd1ea
-ms.openlocfilehash: 51feab9c5cc38f1e9b67b3de68ce29c597cdb83a
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+moniker: '>= sql-server-linux-2017 || >= sql-server-2017 '
+ms.openlocfilehash: 04ece9daf696d73b9de96f48a08e32136fe6ab66
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85883910"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094636"
 ---
 # <a name="choose-the-right-tool-to-manage-sql-server-on-linux"></a>SQL Server on Linux を管理するための適切なツールの選択
 
@@ -27,11 +28,11 @@ SQL Server on Linux を管理するには、いくつかの方法があります
 
 ## <a name="transact-sql"></a>Transact-SQL
 
-クライアント ツールで実行できる処理はほぼすべて、Transact-SQL ステートメントを使用しても行うことができます。 SQL Server には、SQL Server の状態と構成を照会する[動的管理ビュー (DMV)](../relational-databases/system-dynamic-management-views/system-dynamic-management-views.md) が用意されています。 また、データベース管理タスク用の [Transact-SQL コマンド](../t-sql/language-reference.md)もあります。 これらのコマンドは、SQL Server への接続と Transact-SQL クエリの実行をサポートする任意のクライアント ツール ([sqlcmd](sql-server-linux-setup-tools.md) や [Visual Studio Code](sql-server-linux-develop-use-vscode.md) など) で実行できます。
+クライアント ツールで実行できる処理はほぼすべて、Transact-SQL ステートメントを使用しても行うことができます。 SQL Server には、SQL Server の状態と構成を照会する[動的管理ビュー (DMV)](../relational-databases/system-dynamic-management-views/system-dynamic-management-views.md) が用意されています。 また、データベース管理タスク用の [Transact-SQL コマンド](../t-sql/language-reference.md)もあります。 これらのコマンドは、SQL Server への接続と Transact-SQL クエリの実行をサポートする任意のクライアント ツール ([sqlcmd](sql-server-linux-setup-tools.md) や [Visual Studio Code](../tools/visual-studio-code/sql-server-develop-use-vscode.md) など) で実行できます。
 
 ## <a name="azure-data-studio"></a>Azure Data Studio
 
-新しい Azure Data Studio は、SQL Server を管理するためのクロスプラットフォーム ツールです。 詳細については、[Azure Data Studio](../azure-data-studio/what-is.md) に関するページを参照してください。
+新しい Azure Data Studio は、SQL Server を管理するためのクロスプラットフォーム ツールです。 詳細については、[Azure Data Studio](../azure-data-studio/what-is-azure-data-studio.md) に関するページを参照してください。
 
 ## <a name="sql-server-management-studio-on-windows"></a>Windows 上の SQL Server Management Studio
 

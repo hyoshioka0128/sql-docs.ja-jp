@@ -10,12 +10,12 @@ ms.date: 12/13/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 732db8e12b2923dfdd74727c5e9e0a5a56483fc4
-ms.sourcegitcommit: ff82f3260ff79ed860a7a58f54ff7f0594851e6b
+ms.openlocfilehash: 6474b863e5078b94da5dc79c1c1a7f90b3faf761
+ms.sourcegitcommit: e120899c5e72ce3108d1e459703ccd2ea6a84a5b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "75255916"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97353713"
 ---
 # <a name="submit-spark-jobs-on-sql-server-big-data-cluster-in-visual-studio-code"></a>SQL Server ビッグ データ クラスター上の Visual Studio Code で Spark ジョブを送信する
 
@@ -28,10 +28,10 @@ Spark & Hive Tools は、Windows、Linux、macOS など、Visual Studio Code で
 
 この記事の手順を完了するには、次の項目が必要です。
 
-- SQL Server ビッグ データ クラスター。 [[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]](https://docs.microsoft.com/sql/big-data-cluster/big-data-cluster-overview?view=sqlallproducts-allversions)に関するページを参照してください。
+- SQL Server ビッグ データ クラスター。 [[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]](https://docs.microsoft.com/sql/big-data-cluster/big-data-cluster-overview)に関するページを参照してください。
 - [Visual Studio Code](https://code.visualstudio.com/)。
 - [Mono](https://www.mono-project.com/docs/getting-started/install/)。 Mono は、Linux と macOS の場合にのみ必要です。
-- [Visual Studio Code 用に PySpark の対話型の環境を設定します](https://docs.microsoft.com/azure/hdinsight/set-up-pyspark-interactive-environment)。
+- [Visual Studio Code 用に PySpark の対話型の環境を設定します](/azure/hdinsight/set-up-pyspark-interactive-environment)。
 - **SQLBDCexample** という名前のローカル ディレクトリ。  この記事では、**C:\SQLBDC\SQLBDCexample** を使用しています。
 
 ## <a name="install-spark--hive-tools"></a>Spark & Hive Tools をインストールする
@@ -91,7 +91,7 @@ Spark & Hive Tools は、Windows、Linux、macOS など、Visual Studio Code で
 
 Visual Studio Code からクラスターにスクリプトを送信するには、SQL Server ビッグ データ クラスターをリンクする必要があります。
 
-1. メニュー バーから **[View]\(表示\)**  >  **[Command Palette]\(コマンド パレット\)** に移動し、「**Spark / Hive:Link a Cluster**」と入力します。
+1. メニュー バーから **[表示]\(表示\)**  >  **[Command Palette]\(コマンド パレット\)** に移動し、「**Spark / Hive:Link a Cluster**」と入力します。
 
    ![クラスターのリンク コマンド](./media/spark-hive-tools-vscode/link-cluster-command.png)
 
@@ -109,7 +109,7 @@ Visual Studio Code からクラスターにスクリプトを送信するには�
 
 ## <a name="list-clusters"></a>クラスターを一覧表示する
 
-1. メニュー バーから **[View]\(表示\)**  >  **[Command Palette]\(コマンド パレット\)** に移動し、「**Spark / Hive:List Cluster**」と入力します。
+1. メニュー バーから **[表示]\(表示\)**  >  **[Command Palette]\(コマンド パレット\)** に移動し、「**Spark / Hive:List Cluster**」と入力します。
 
 2. **[OUTPUT]\(出力\)** ビューを確認します。  このビューには、リンクされたクラスターが表示されます。
 
@@ -249,11 +249,11 @@ Spark & Hive for Visual Studio Code は次の機能をサポートしていま�
 
 ## <a name="unlink-cluster"></a>クラスターのリンク解除
 
-1. メニュー バーから **[View]\(表示\)**  >  **[Command Palette]\(コマンド パレット\)** に移動し、「**Spark / Hive:Unlink a Cluster**」と入力します。  
+1. メニュー バーから **[表示]\(表示\)**  >  **[Command Palette]\(コマンド パレット\)** に移動し、「**Spark / Hive:Unlink a Cluster**」と入力します。  
 
 2. リンクを解除するクラスターを選択します。  
 
 3. **[OUTPUT]\(出力\)** ビューを確認します。  
 
 ## <a name="next-steps"></a>次のステップ
-SQL Server ビッグ データ クラスターと関連するシナリオの詳細については、「[[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]](https://docs.microsoft.com/sql/big-data-cluster/big-data-cluster-overview?view=sqlallproducts-allversions)」を参照してください。
+SQL Server ビッグ データ クラスターと関連するシナリオの詳細については、「[[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]](https://docs.microsoft.com/sql/big-data-cluster/big-data-cluster-overview)」を参照してください。

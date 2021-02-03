@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - '@@PACK_RECEIVED_TSQL'
 - '@@PACK_RECEIVED'
@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 5c0b3d36-bfad-4f0b-abb8-e8f6391b32cd
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 3fea7af807dee5ff6307817992fe2f034ca00e78
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 535a59f8181f1661146d4583ecadd286942799eb
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88363488"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99101802"
 ---
 # <a name="x40x40pack_received-transact-sql"></a>&#x40;&#x40;PACK_RECEIVED (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "88363488"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 @@PACK_RECEIVED  
 ```  
   
@@ -51,7 +51,7 @@ ms.locfileid: "88363488"
 ## <a name="examples"></a>例  
  次の例は、`@@PACK_RECEIVED` の使用方法を示しています。  
   
-```  
+```sql  
 SELECT @@PACK_RECEIVED AS 'Packets Received';   
 ```  
   

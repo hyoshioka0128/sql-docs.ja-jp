@@ -1,13 +1,13 @@
 ---
 description: sys.dm_db_stats_properties (Transact-SQL)
-title: dm_db_stats_properties (Transact-sql) |Microsoft Docs
+title: sys.dm_db_stats_properties (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 12/18/2017
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_db_stats_properties_TSQL
 - sys.dm_db_stats_properties
@@ -18,20 +18,20 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_db_stats_properties
 ms.assetid: 8a54889d-e263-4881-9fcb-b1db410a9453
-author: markingmyname
-ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 1039850e4322003ddfedd5407d18ab6170077c42
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 7786afaa6ae9b50f8df1e2c0d9ec73e35dcc249d
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89537034"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99236042"
 ---
 # <a name="sysdm_db_stats_properties-transact-sql"></a>sys.dm_db_stats_properties (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
-  現在のデータベース内の指定されたデータベースオブジェクト (テーブルまたはインデックス付きビュー) の統計のプロパティを返し [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。 パーティションテーブルについては、同様の [dm_db_incremental_stats_properties](../../relational-databases/system-dynamic-management-views/sys-dm-db-incremental-stats-properties-transact-sql.md)を参照してください。 
+  現在のデータベース内の指定されたデータベースオブジェクト (テーブルまたはインデックス付きビュー) の統計のプロパティを返し [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。 パーティションテーブルについては、同様の [sys.dm_db_incremental_stats_properties](../../relational-databases/system-dynamic-management-views/sys-dm-db-incremental-stats-properties-transact-sql.md)を参照してください。 
  
 ## <a name="syntax"></a>構文  
   
@@ -41,10 +41,10 @@ sys.dm_db_stats_properties (object_id, stats_id)
   
 ## <a name="arguments"></a>引数  
  *object_id*  
- 統計のプロパティが要求された、現在のデータベース内にあるオブジェクトの ID です。 *object_id* は **int**です。  
+ 統計のプロパティが要求された、現在のデータベース内にあるオブジェクトの ID です。 *object_id* は **int** です。  
   
  *stats_id*  
- 指定された *object_id*の統計情報の ID です。 統計 ID は、 [sys.stats](../../relational-databases/system-catalog-views/sys-stats-transact-sql.md) 動的管理ビューから取得できます。 *stats_id* は **int**です。  
+ 指定された *object_id* の統計情報の ID です。 統計 ID は、 [sys.stats](../../relational-databases/system-catalog-views/sys-stats-transact-sql.md) 動的管理ビューから取得できます。 *stats_id* は **int** です。  
   
 ## <a name="table-returned"></a>返されるテーブル  
   
@@ -57,18 +57,18 @@ sys.dm_db_stats_properties (object_id, stats_id)
 |rows_sampled|**bigint**|統計の計算時にサンプリングされた行の合計数。|  
 |steps|**int**|ヒストグラムの区間の数。 詳細については、「[DBCC SHOW_STATISTICS &#40;Transact-SQL&#41;](../../t-sql/database-console-commands/dbcc-show-statistics-transact-sql.md)」を参照してください。|  
 |unfiltered_rows|**bigint**|フィルター式を適用する前のテーブル内の行の合計数 (フィルター選択された統計情報の場合)。 統計がフィルター選択されていない場合は unfiltered_rows は行の列に返される値と同じです。|  
-|modification_counter|**bigint**|統計情報が前回更新されてから先頭の統計列 (構築するヒストグラムの基になる列) に対して行われた変更の総数。<br /><br /> メモリ最適化テーブル: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] この列の先頭と末尾には、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 統計が最後に更新された後、またはデータベースが再起動されてからの、テーブルに対する変更の合計数が含まれます。|  
-|persisted_sample_percent|**float**|サンプリングの割合を明示的に指定しない統計情報の更新に使用される永続化されたサンプルのパーセンテージです。 値がゼロの場合、永続化されたサンプルのパーセンテージがこの統計に設定されていません。<br /><br /> **適用対象:** [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 CU4|  
+|modification_counter|**bigint**|統計情報が前回更新されてから先頭の統計列 (構築するヒストグラムの基になる列) に対して行われた変更の総数。<br /><br /> メモリ最適化テーブル: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] この列の先頭と末尾には、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 統計が最後に更新された後、またはデータベースが再起動されてからの、テーブルに対する変更の合計数が含まれます。|  
+|persisted_sample_percent|**float**|サンプリングの割合を明示的に指定しない統計情報の更新に使用される永続化されたサンプルのパーセンテージです。 値がゼロの場合、永続化されたサンプルのパーセンテージがこの統計に設定されていません。<br /><br /> **適用対象:** [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] SP1 CU4|  
   
 ## <a name="remarks"></a><a name="Remarks"></a> 解説  
- **dm_db_stats_properties** は、次のいずれかの条件に該当する場合に空の行セットを返します。  
+ **sys.dm_db_stats_properties** は、次のいずれかの条件に該当する場合に空の行セットを返します。  
   
 -   **object_id** または **stats_id** が NULL です。    
 -   指定されたオブジェクトが見つからないか、テーブルまたはインデックス付きビューに対応していません。    
 -   指定した統計 ID が、指定したオブジェクト ID の既存の統計情報に対応しない。    
 -   現在のユーザーに統計オブジェクトを表示する権限がない。  
   
- この動作により、sys. **objects**や**sys**などのビューの行にクロス適用された場合に、 **dm_db_stats_properties**を安全に使用できるようになります。  
+ この動作により、 **sys. objects** や **sys** などのビュー内の行にクロス適用した場合に、 **sys.dm_db_stats_properties** を安全に使用できるようになります。  
  
 統計の更新日付は、メタデータではなく[統計 BLOB オブジェクト](../../relational-databases/statistics/statistics.md#DefinitionQOStatistics)に[ヒストグラム](../../relational-databases/statistics/statistics.md#histogram)および[密度ベクトル](../../relational-databases/statistics/statistics.md#density)と共に格納されます。 統計データを生成するためのデータが読み取られない場合、統計 blob は作成されず、日付は使用できず、 *last_updated* 列は NULL になります。 これは、述語が行を返さないフィルター選択された統計情報や、新しい空のテーブルの場合です。
   

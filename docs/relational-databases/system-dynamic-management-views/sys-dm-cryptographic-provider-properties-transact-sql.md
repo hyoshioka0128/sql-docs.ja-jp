@@ -1,12 +1,12 @@
 ---
 description: sys.dm_cryptographic_provider_properties (Transact-SQL)
-title: dm_cryptographic_provider_properties (Transact-sql) |Microsoft Docs
+title: sys.dm_cryptographic_provider_properties (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - dm_cryptographic_provider_properties_TSQL
 - sys.dm_cryptographic_provider_properties
@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_cryptographic_provider_properties dynamic management view
 ms.assetid: 024b0095-6766-4189-a39a-d316c5ec2874
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 1e8ff6159cea1f6ca723ed83a73f045f5746967c
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: fc068cd362c9fd0df5552e92ba1e303ed451d6a2
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542356"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99196281"
 ---
 # <a name="sysdm_cryptographic_provider_properties-transact-sql"></a>sys.dm_cryptographic_provider_properties (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -49,8 +49,8 @@ ms.locfileid: "89542356"
 |symmetric_key_import|**tinyint**|0 (サポートされていません)<br /><br /> 1 (サポートされています)|  
 |symmetric_key_persistance|**tinyint**|0 (サポートされていません)<br /><br /> 1 (サポートされています)|  
   
-## <a name="remarks"></a>解説  
- sys.dm_cryptographic_provider_properties ビューはパブリックに表示できます。  
+## <a name="permissions"></a>アクセス許可  
+ **Sys.dm_cryptographic_provider_properties** ビューはパブリックに表示されます。  
   
 ## <a name="see-also"></a>参照  
  [セキュリティ カタログ ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/security-catalog-views-transact-sql.md)   

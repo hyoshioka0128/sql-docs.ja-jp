@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -18,19 +18,19 @@ helpviewer_keywords:
 - "FALSE"
 - logical operators [SQL Server], Transact-SQL
 ms.assetid: edd92f08-76fb-4fd7-a4b6-8520d6a81df1
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 1fe06931370c3c97598ed2b9789b1e692a3980ac
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: e4e6a2de56090fcdd2f9dc3dc0dc51656508bd27
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88445460"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99193702"
 ---
 # <a name="logical-operators-transact-sql"></a>論理演算子 (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  論理演算子は、条件の真偽をテストします。 論理演算子は、比較演算子と同様、TRUE、FALSE、または UNKNOWN を値にとる**ブール** データ型を返します。  
+  論理演算子は、条件の真偽をテストします。 論理演算子は、比較演算子と同様、TRUE、FALSE、または UNKNOWN を値にとる **ブール** データ型を返します。  
   
 |演算子|説明|  
 |--------------|-------------|  

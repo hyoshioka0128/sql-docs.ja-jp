@@ -6,7 +6,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DATEADD
 - DATEADD_TSQL
@@ -23,15 +23,15 @@ helpviewer_keywords:
 - date and time [SQL Server], DATEADD
 - DATEADD function [SQL Server]
 ms.assetid: 89c5ae32-89c6-47e1-979e-15d97908b9f1
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 1e45fad8edfcc54e35d5a0c4ad0536a5586439d6
-ms.sourcegitcommit: 768f046107642f72693514f51bf2cbd00f58f58a
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: cd0ef9cc5cae47ca5ce42ff090a6fb794674131e
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87112053"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99183540"
 ---
 # <a name="dateadd-transact-sql"></a>DATEADD (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -148,7 +148,7 @@ SELECT DATEADD(year,-2147483647, '20060731');
 ## <a name="fractional-seconds-precision"></a>秒の小数部の有効桁数
 `DATEADD` は、*date* データ型の **smalldatetime**、**date**、**datetime** について、**microsecond** または **nanosecond** の *datepart* に加算を許可しません。
   
-ミリ秒の小数点以下桁数は 3 (.123) です。マイクロ秒の小数点以下桁数は 6 (.123456) です。ナノ秒の小数点以下桁数は 9 (.123456789) です。 **time**、**datetime2**、および**datetimeoffset** データ型の小数点以下桁数は最大 7 (.1234567) です。 **nanosecond** の *datepart* については、*date* の 1 秒未満の秒を増やす前に、*number* を 100 にする必要があります。 1 から 49 の *number* は 0 に切り捨てられ、50 から 99 は 100 に切り上げられます。
+ミリ秒の小数点以下桁数は 3 (.123) です。マイクロ秒の小数点以下桁数は 6 (.123456) です。ナノ秒の小数点以下桁数は 9 (.123456789) です。 **time**、**datetime2**、および **datetimeoffset** データ型の小数点以下桁数は最大 7 (.1234567) です。 **nanosecond** の *datepart* については、*date* の 1 秒未満の秒を増やす前に、*number* を 100 にする必要があります。 1 から 49 の *number* は 0 に切り捨てられ、50 から 99 は 100 に切り上げられます。
   
 次のステートメントは、**millisecond**、**microsecond**、または **nanosecond** の *datepart* を加算します。
   
@@ -171,7 +171,7 @@ SELECT '150 nanoseconds', DATEADD(nanosecond,150,@datetime2);
   
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
   
-```sql
+```
 1 millisecond     2007-01-01 13:10:10.1121111  
 2 milliseconds    2007-01-01 13:10:10.1131111  
 1 microsecond     2007-01-01 13:10:10.1111121  
@@ -220,7 +220,7 @@ SELECT 'nanosecond',DATEADD(nanosecond,1,@datetime2);
   
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
   
-```sql
+```
 Year         2008-01-01 13:10:10.1111111  
 quarter      2007-04-01 13:10:10.1111111  
 month        2007-02-01 13:10:10.1111111  
@@ -271,7 +271,7 @@ FROM Sales.SalesOrderHeader;
   
 次に結果セットの一部を示します。
   
-```sql
+```
 SalesOrderID OrderDate               PromisedShipDate  
 ------------ ----------------------- -----------------------  
 43659        2005-07-01 00:00:00.000 2005-07-03 00:00:00.000  
@@ -296,14 +296,14 @@ SalesOrderID OrderDate               PromisedShipDate
 次の例では、*number* と *date* の引数としてユーザー定義変数を指定しています。
   
 ```sql
-DECLARE @days int = 365,   
-        @datetime datetime = '2000-01-01 01:01:01.111'; /* 2000 was a leap year */;  
+DECLARE @days INT = 365,   
+        @datetime DATETIME = '2000-01-01 01:01:01.111'; /* 2000 was a leap year */;  
 SELECT DATEADD(day, @days, @datetime);  
 ```  
   
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
   
-```sql
+```
 -----------------------  
 2000-12-31 01:01:01.110  
   
@@ -319,7 +319,7 @@ SELECT DATEADD(month, 1, SYSDATETIME());
   
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
   
-```sql
+```
 ---------------------------  
 2013-02-06 14:29:59.6727944  
   

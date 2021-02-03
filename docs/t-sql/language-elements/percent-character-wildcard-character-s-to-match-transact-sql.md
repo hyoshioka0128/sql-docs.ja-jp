@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - '%'
 - '%_TSQL'
@@ -21,14 +21,14 @@ helpviewer_keywords:
 - wildcard characters [SQL Server]
 - characters [SQL Server], wildcard
 ms.assetid: d4cbc1a9-37e1-4101-97fb-e6ac30c1223e
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 5a0c232b2849f2fcfc7bf7d0a946714b15f753fc
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 27156d5bfcb6fe1e859131a6a011bba2b53b46ba
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88307551"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99185283"
 ---
 # <a name="percent-character-wildcard---characters-to-match-transact-sql"></a>パーセント文字 (ワイルドカード - 一致する文字列) (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "88307551"
 ## <a name="examples"></a>例  
  次の例では、`Person` の `AdventureWorks2012` テーブルに登録されている人のうち、`Dan` で始まるすべての名前を返します。  
   
-```  
+```syntaxsql  
 -- Uses AdventureWorks  
   
 SELECT FirstName, LastName  

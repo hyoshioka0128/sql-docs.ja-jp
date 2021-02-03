@@ -12,18 +12,18 @@ helpviewer_keywords:
 ms.assetid: 29816a41-f105-4414-8be1-070675d62e84
 author: jaszymas
 ms.author: jaszymas
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 4bb90c0f00087f0d2b0b76b3fa66b8cca2f4707c
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 506abf476e04ab1a40059d04031949fa80b31acf
+ms.sourcegitcommit: 866554663ca3191748b6e4eb4d8d82fa58c4e426
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88470109"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97559324"
 ---
 # <a name="configure-column-encryption-using-always-encrypted-with-a-dac-package"></a>DAC パッケージでの Always Encrypted を使用した列暗号化の構成 
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
 
-[データ層アプリケーション (DAC) パッケージ](../../data-tier-applications/data-tier-applications.md) (DACPAC とも呼ばれます) は、テーブル内のテーブルや列を含むすべての SQL Server オブジェクトを定義する SQL Server データベースのデプロイの移植可能な単位です。 DACPAC をデータベースに発行する場合 (DACPAC を使用してデータベースをアップグレードする場合)、ターゲット データベースのスキーマは、DACPAC のスキーマに一致するように更新されます。 SQL Server Management Studio、[PowerShell](../../data-tier-applications/upgrade-a-data-tier-application.md#UpgradeDACPowerShell)、または [sqlpackage](../../../tools/sqlpackage.md#publish-parameters-properties-and-sqlcmd-variables) の[データ層アプリケーションのアップグレード ウィザード](../../data-tier-applications/upgrade-a-data-tier-application.md#UsingDACUpgradeWizard)を使用して、DACPAC を発行できます。
+[データ層アプリケーション (DAC) パッケージ](../../data-tier-applications/data-tier-applications.md) (DACPAC とも呼ばれます) は、テーブル内のテーブルや列を含むすべての SQL Server オブジェクトを定義する SQL Server データベースのデプロイの移植可能な単位です。 DACPAC をデータベースに発行する場合 (DACPAC を使用してデータベースをアップグレードする場合)、ターゲット データベースのスキーマは、DACPAC のスキーマに一致するように更新されます。 SQL Server Management Studio、[PowerShell](../../data-tier-applications/upgrade-a-data-tier-application.md#UpgradeDACPowerShell)、または [sqlpackage](../../../tools/sqlpackage/sqlpackage-publish.md) の[データ層アプリケーションのアップグレード ウィザード](../../data-tier-applications/upgrade-a-data-tier-application.md#UsingDACUpgradeWizard)を使用して、DACPAC を発行できます。
 
 この記事では、DACPAC またはターゲット データベースに [Always Encrypted](always-encrypted-database-engine.md) で保護された列が含まれる場合に、データベースをアップグレードするための特別な考慮事項について説明します。 DACPAC 内の列の暗号化スキームが、ターゲット データベースの既存の列の暗号化スキームと異なる場合、DACPAC を発行すると、列に格納されているデータの暗号化、暗号化解除、または再暗号化が行われます。 詳細については、次の表を参照してください。
 
@@ -38,7 +38,7 @@ ms.locfileid: "88470109"
 ## <a name="performance-considerations"></a>パフォーマンスに関する考慮事項
 暗号化操作を実行するには、DACPAC をデプロイするために使用するツールにより、データをデータベースから移動する必要があります。 このツールでは、データベース内で必要な暗号化構成を使用して新しい 1 つまたは複数のテーブルが作成され、元のテーブルからすべてのデータが読み込まれ、要求された暗号化操作が実行され、データを新しいテーブルにアップロードされた後、元のテーブルが新しいテーブルに入れ替えられます。 暗号化操作の実行には時間がかかる場合があります。 その間、データベースでトランザクションを書き込むことはできません。 
 
-::: moniker range=">=sql-server-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15"
 
 > [!NOTE]
 > [!INCLUDE [sssqlv15-md](../../../includes/sssqlv15-md.md)] を使用していて、お使いの SQL Server インスタンスがセキュリティで保護されたエンクレーブで構成されている場合は、データベースからデータを移動せずに、暗号化操作をインプレースで実行できます。 「[セキュリティで保護されたエンクレーブが設定された Always Encrypted を使用して列の暗号化をインプレースで構成する](always-encrypted-enclaves-configure-encryption.md)」を参照してください。 DACPAC のデプロイでは、インプレース暗号化は使用できないことに注意してください。

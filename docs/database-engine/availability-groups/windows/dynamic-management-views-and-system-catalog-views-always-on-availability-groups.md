@@ -5,17 +5,17 @@ ms.custom: seo-lt-2019
 ms.date: 06/13/2017
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
-ms.topic: conceptual
+ms.technology: availability-groups
+ms.topic: troubleshooting
 ms.assetid: 4320a4a4-6183-462b-8bda-e7424e7cb706
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 8d8c71bc806bc01443b07c9cb43cb5ea5be939fc
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+ms.openlocfilehash: a2a69aa016ae258375c6095bbf38e58ddd75b981
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85894483"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643594"
 ---
 # <a name="dynamic-management-views-and-system-catalog-views-always-on-availability-groups"></a>動的管理ビューおよびシステム カタログ ビュー (Always On 可用性グループ)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -36,7 +36,7 @@ select * from sys.dm_hadr_cluster_members
 go  
 ```  
   
- この結果セットでは、現在の WSFC クラスターの各メンバー ノードの状態が報告されます。 クォーラムが**ノードとファイル共有マジョリティ**として定義されている場合は、ファイル共有も報告されます。 各ノードの投票の重み ([number_of_quorum_votes](~/relational-databases/system-dynamic-management-views/sys-dm-hadr-cluster-members-transact-sql.md) 値) を含め、各ノードの状態を確認できます。  
+ この結果セットでは、現在の WSFC クラスターの各メンバー ノードの状態が報告されます。 クォーラムが **ノードとファイル共有マジョリティ** として定義されている場合は、ファイル共有も報告されます。 各ノードの投票の重み ([number_of_quorum_votes](~/relational-databases/system-dynamic-management-views/sys-dm-hadr-cluster-members-transact-sql.md) 値) を含め、各ノードの状態を確認できます。  
   
 ## <a name="explore-the-cluster-network"></a>クラスター ネットワークを探索する  
  次のクエリでは、現在の WSFC クラスターのネットワーク構成が取得されます。  

@@ -15,20 +15,20 @@ helpviewer_keywords:
 ms.assetid: ca89aa4c-c4c1-4c46-8515-a6754667b3e5
 author: markingmyname
 ms.author: maghan
-monikerRange: = azuresqldb-current || = sqlallproducts-allversions
-ms.openlocfilehash: 1fbd97400ced46a70026b832ad4721d9f33cf690
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+monikerRange: = azuresqldb-current
+ms.openlocfilehash: 2ab1c51c53282b5f245cf7da0d33cf4f797bf53a
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89543463"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97439467"
 ---
 # <a name="sp_execute_remote-azure-sql-database"></a>sp_execute_remote (Azure SQL Database)
 [!INCLUDE[Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/asdb-asdbmi.md)]
 
   [!INCLUDE[tsql](../../includes/tsql-md.md)]シャードとして機能する単一のリモート Azure SQL Database またはデータベースのセットに対して、行方向のパーティション構成でステートメントを実行します。  
   
- このストアドプロシージャは、エラスティッククエリ機能の一部です。  「 [エラスティックデータベースクエリの概要](https://azure.microsoft.com/documentation/articles/sql-database-elastic-query-overview/) 」および「 [シャーディングのエラスティックデータベースクエリ (行方向のパーティション分割)」を](https://azure.microsoft.com/documentation/articles/sql-database-elastic-query-horizontal-partitioning/)参照して Azure SQL Database ください。  
+ このストアドプロシージャは、エラスティッククエリ機能の一部です。  「 [エラスティックデータベースクエリの概要](/azure/azure-sql/database/elastic-query-overview) 」および「 [シャーディングのエラスティックデータベースクエリ (行方向のパーティション分割)」を](/azure/azure-sql/database/elastic-query-horizontal-partitioning)参照して Azure SQL Database ください。  
   
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -48,7 +48,7 @@ sp_execute_remote [ @data_source_name = ] datasourcename
  ステートメントが実行される外部データソースを識別します。 「 [CREATE EXTERNAL DATA SOURCE &#40;transact-sql&#41;](../../t-sql/statements/create-external-data-source-transact-sql.md)」を参照してください。 外部データソースの種類は、"RDBMS" または "SHARD_MAP_MANAGER" にすることができます。  
   
  [ \@ stmt =] *ステートメント*  
- ステートメントまたはバッチを含む Unicode 文字列を指定し [!INCLUDE[tsql](../../includes/tsql-md.md)] ます。 \@stmt は、Unicode 定数または Unicode 変数のいずれかである必要があります。 + 演算子で 2 つの文字列を連結するなどの複雑な Unicode 式は使用できません。 文字定数も使用できません。 Unicode 定数を指定する場合は、先頭に **N**を付ける必要があります。たとえば、Unicode 定数 **N ' sp_who '** は有効ですが、文字定数 **' sp_who '** は有効ではありません。 文字列のサイズは、使用可能なデータベースサーバーのメモリによってのみ制限されます。 64ビットサーバーでは、文字列のサイズは、最大サイズである **nvarchar (max)** の 2 GB に制限されています。  
+ ステートメントまたはバッチを含む Unicode 文字列を指定し [!INCLUDE[tsql](../../includes/tsql-md.md)] ます。 \@stmt は、Unicode 定数または Unicode 変数のいずれかである必要があります。 + 演算子で 2 つの文字列を連結するなどの複雑な Unicode 式は使用できません。 文字定数も使用できません。 Unicode 定数を指定する場合は、先頭に **N** を付ける必要があります。たとえば、Unicode 定数 **N ' sp_who '** は有効ですが、文字定数 **' sp_who '** は有効ではありません。 文字列のサイズは、使用可能なデータベースサーバーのメモリによってのみ制限されます。 64ビットサーバーでは、文字列のサイズは、最大サイズである **nvarchar (max)** の 2 GB に制限されています。  
   
 > [!NOTE]  
 >  \@stmt には、変数名と同じ形式のパラメーターを含めることができます。次に例を示します。 `N'SELECT * FROM HumanResources.Employee WHERE EmployeeID = @IDParameter'`  
@@ -76,7 +76,7 @@ sp_execute_remote [ @data_source_name = ] datasourcename
 ## <a name="remarks"></a>解説  
  `sp_execute_remote` パラメーターは、前の「構文」セクションで説明されているように、特定の順序で入力する必要があります。 パラメーターが順序どおりに入力されていない場合は、エラーメッセージが表示されます。  
   
- `sp_execute_remote` には、バッチと名前のスコープに関して、 [transact-sql&#41;の実行 &#40;](../../t-sql/language-elements/execute-transact-sql.md) と同じ動作があります。 Sp_execute_remote * \@ stmt*パラメーター内の transact-sql ステートメントまたはバッチは、sp_execute_remote ステートメントが実行されるまでコンパイルされません。  
+ `sp_execute_remote` には、バッチと名前のスコープに関して、 [transact-sql&#41;の実行 &#40;](../../t-sql/language-elements/execute-transact-sql.md) と同じ動作があります。 Sp_execute_remote *\@ stmt* パラメーター内の transact-sql ステートメントまたはバッチは、sp_execute_remote ステートメントが実行されるまでコンパイルされません。  
   
  `sp_execute_remote` 行を生成したリモートデータベースの名前を含む ' $ShardName ' という名前の結果セットに列を追加します。  
   
@@ -106,4 +106,3 @@ EXEC sp_execute_remote @data_source_name  = N'PointToMaster',
 
 [CREATE DATABASE SCOPED CREDENTIAL](../../t-sql/statements/create-database-scoped-credential-transact-sql.md)  
 [CREATE EXTERNAL DATA SOURCE (Transact-SQL)](../../t-sql/statements/create-external-data-source-transact-sql.md)  
-    

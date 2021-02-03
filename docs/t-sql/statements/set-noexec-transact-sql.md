@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - NOEXEC_TSQL
 - SET_NOEXEC_TSQL
@@ -21,14 +21,14 @@ helpviewer_keywords:
 - compiling queries [SQL Server]
 - NOEXEC option
 ms.assetid: ba56fba1-af9b-4459-b6e4-5d7e71a7630b
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: 4e32f168c04aba303dc33e1e3db8c268e163ef82
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 29d887135d805e8e5697b5366b45d0f61b1fcbbc
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88356628"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99189464"
 ---
 # <a name="set-noexec-transact-sql"></a>SET NOEXEC (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]

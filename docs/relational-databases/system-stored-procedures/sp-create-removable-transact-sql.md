@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sp_create_removable
 - sp_create_removable_TSQL
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 06e36ae5-f70d-4a26-9a7f-ee4b9360b355
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 06a7201d7e631c660bd0478705f84d395289ccc3
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: 7ffe2273f7bd2ca63143f77a4d0c5726709d8440
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89541869"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99205196"
 ---
 # <a name="sp_create_removable-transact-sql"></a>sp_create_removable (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -31,7 +31,7 @@ ms.locfileid: "89541869"
   リムーバブル メディア データベースを作成します。 3 つ以上のファイル (システム カタログ テーブルとトランザクション ログに 1 つずつ、データ テーブルに 1 つ以上) を作成し、それらのファイルにデータベースを格納します。  
   
 > [!IMPORTANT]  
->  [!INCLUDE[ssNoteDepFutureAvoid](../../includes/ssnotedepfutureavoid-md.md)] 代わりに [CREATE DATABASE](../../t-sql/statements/create-database-sql-server-transact-sql.md) を使用することをお勧めします。  
+>  [!INCLUDE[ssNoteDepFutureAvoid](../../includes/ssnotedepfutureavoid-md.md)] 代わりに [CREATE DATABASE](../../t-sql/statements/create-database-transact-sql.md) を使用することをお勧めします。  
   
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -56,27 +56,27 @@ sp_create_removable
 ```  
   
 ## <a name="arguments"></a>引数  
-`[ @dbname = ] 'dbname'` リムーバブルメディアで使用するために作成するデータベースの名前を指定します。 *dbname* は **sysname**です。  
+`[ @dbname = ] 'dbname'` リムーバブルメディアで使用するために作成するデータベースの名前を指定します。 *dbname* は **sysname** です。  
   
-`[ @syslogical = ] 'syslogical'` システムカタログテーブルを格納するファイルの論理名を指定します。 *syslogical* は **sysname**です。  
+`[ @syslogical = ] 'syslogical'` システムカタログテーブルを格納するファイルの論理名を指定します。 *syslogical* は **sysname** です。  
   
 `[ @sysphysical = ] 'sysphysical'` 物理名を指定します。 システム カタログ テーブルを格納するファイルの名前をフル パスと共に指定します。 *sysphysical* は **nvarchar (260)** です。  
   
-`[ @syssize = ] syssize` システムカタログテーブルを保持するファイルのサイズを mb 単位で示します。 *syssize* は **int**です。 *Syssize* の最小値は1です。  
+`[ @syssize = ] syssize` システムカタログテーブルを保持するファイルのサイズを mb 単位で示します。 *syssize* は **int** です。 *Syssize* の最小値は1です。  
   
-`[ @loglogical = ] 'loglogical'` トランザクションログを格納するファイルの論理名を指定します。 *loglogical* は **sysname**です。  
+`[ @loglogical = ] 'loglogical'` トランザクションログを格納するファイルの論理名を指定します。 *loglogical* は **sysname** です。  
   
 `[ @logphysical = ] 'logphysical'` 物理名を指定します。 これには、トランザクションログを含むファイルの完全修飾パスが含まれます。 *logphysical* は **nvarchar (260)** です。  
   
-`[ @logsize = ] logsize` トランザクションログを格納するファイルのサイズを mb 単位で示します。 *logsize* は **int**です。最小 *logsize* は1です。  
+`[ @logsize = ] logsize` トランザクションログを格納するファイルのサイズを mb 単位で示します。 *logsize* は **int** です。最小 *logsize* は1です。  
   
-`[ @datalogical1 = ] 'datalogical'` データテーブルを格納するファイルの論理名を指定します。 *datalogical* は **sysname**です。  
+`[ @datalogical1 = ] 'datalogical'` データテーブルを格納するファイルの論理名を指定します。 *datalogical* は **sysname** です。  
   
  データファイルは 1 ~ 16 である必要があります。 データベースが大きくなり複数のディスクに分散する必要が生じた場合に備えて、通常、複数のデータ ファイルを作成します。  
   
 `[ @dataphysical1 = ] 'dataphysical'` 物理名を指定します。 データ テーブルを格納するファイルの名前をフル パスと共に指定します。 *dataphysical* は **nvarchar (260)** です。  
   
-`[ @datasize1 = ] 'datasize'` データテーブルを格納するファイルのサイズを mb 単位で示します。 *datasize* は **int**です。最小 *datasize* は1です。  
+`[ @datasize1 = ] 'datasize'` データテーブルを格納するファイルのサイズを mb 単位で示します。 *datasize* は **int** です。最小 *datasize* は1です。  
   
 ## <a name="return-code-values"></a>リターン コードの値  
  0 (成功) または 1 (失敗)  
@@ -128,5 +128,4 @@ EXEC sp_create_removable 'inventory',
  [sp_helpfile &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-helpfile-transact-sql.md)   
  [sp_helpfilegroup &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-helpfilegroup-transact-sql.md)   
  [システム ストアド プロシージャ &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/system-stored-procedures-transact-sql.md)  
-  
   

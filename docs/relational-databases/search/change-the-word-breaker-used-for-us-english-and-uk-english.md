@@ -10,17 +10,17 @@ ms.assetid: 6b5d2177-db98-47f5-b32e-4b80a2f74ffe
 author: pmasl
 ms.author: pelopes
 ms.reviewer: mikeray
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 2da7ecd383b1db1ef9a66b3ac3fb75ef9fbf8723
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 0b836e9a86fe6b323dbcacfb3f408889f87fa6bd
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88403878"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641701"
 ---
 # <a name="change-the-word-breaker-used-for-us-english-and-uk-english"></a>米国英語と英国英語に使用されるワード ブレーカーを変更する方法
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
-  [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] では、英語用のワード ブレーカーおよびステマーの新しいバージョン (バージョン 14.0.4999.1038) がインストールされて、前のバージョン (バージョン 12.0.6828.0) が置き換えられます。 新しいコンポーネントで変更された動作の詳細については、「 [フルテキスト検索の動作の変更](https://docs.microsoft.com/sql/relational-databases/search/full-text-search?view=sql-server-ver15)」を参照してください。 このトピックでは、これらのコンポーネントの新しいバージョンを前のバージョンに切り替えたり、前のバージョンから新しいバージョンに切り替えたりする方法について説明します。 クラスターのインストールでは、これらの変更を、すべてのプライマリ ノードとパッシブ ノードで行う必要があります。  
+  [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] では、英語用のワード ブレーカーおよびステマーの新しいバージョン (バージョン 14.0.4999.1038) がインストールされて、前のバージョン (バージョン 12.0.6828.0) が置き換えられます。 新しいコンポーネントで変更された動作の詳細については、「 [フルテキスト検索の動作の変更](./full-text-search.md)」を参照してください。 このトピックでは、これらのコンポーネントの新しいバージョンを前のバージョンに切り替えたり、前のバージョンから新しいバージョンに切り替えたりする方法について説明します。 クラスターのインストールでは、これらの変更を、すべてのプライマリ ノードとパッシブ ノードで行う必要があります。  
   
  前のバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、米国英語 (LCID 1033) と英国英語 (LCID 2057) に対し、異なる CLSID で表される異なるワード ブレーカーが使用されていました。 このリリースでは、次の表に示すように、両方の LCID で同じ CLSID を持つ同じコンポーネントが使用されます。  
   
@@ -43,7 +43,7 @@ ms.locfileid: "88403878"
   
     1.  前のワード ブレーカー用に値が **{188D6CC5-CB03-4C01-912E-47D21295D77E}** の新しいキーを追加します。  
   
-    2.  このキー値の [(既定)] のデータを **langwrbk.dll**に更新します。  
+    2.  このキー値の [(既定)] のデータを **langwrbk.dll** に更新します。  
   
     3.  前のステマー用に値が **{EEED4C20-7F1B-11CE-BE57-00AA0051FE20}** の新しいキーを追加します。  
   
@@ -65,7 +65,7 @@ ms.locfileid: "88403878"
   
     1.  前のワード ブレーカー用に値が **{173C97E2-AEBE-437C-9445-01B237ABF2F6}** の新しいキーを追加します。  
   
-    2.  このキー値の [(既定)] のデータを **langwrbk.dll**に更新します。  
+    2.  このキー値の [(既定)] のデータを **langwrbk.dll** に更新します。  
   
     3.  前のステマー用に値が **{D99F7670-7F1A-11CE-BE57-00AA0051FE20}** の新しいキーを追加します。  
   
@@ -127,6 +127,5 @@ ms.locfileid: "88403878"
   
 ## <a name="see-also"></a>参照  
  [検索で使用するワード ブレーカーを以前のバージョンに戻す](../../relational-databases/search/revert-the-word-breakers-used-by-search-to-the-previous-version.md)   
- [フルテキスト検索の動作の変更](https://docs.microsoft.com/sql/relational-databases/search/full-text-search?view=sql-server-ver15)  
-  
+ [フルテキスト検索の動作の変更](./full-text-search.md)  
   

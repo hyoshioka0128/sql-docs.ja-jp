@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - FULLTEXTSERVICEPROPERTY_TSQL
 - FULLTEXTSERVICEPROPERTY
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - services [SQL Server], full-text search properties
 - test
 ms.assetid: b7dcacb0-af83-4807-9d1e-49148b56b59c
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 095ba81db2c432b33ceb1795582cff3b9ef559c1
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: c4108edf72e31ec8fc1db7838c239143cf36e136
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88309948"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99179217"
 ---
 # <a name="fulltextserviceproperty-transact-sql"></a>FULLTEXTSERVICEPROPERTY (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -37,8 +37,7 @@ ms.locfileid: "88309948"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 FULLTEXTSERVICEPROPERTY ('property')  
 ```  
   
@@ -66,7 +65,7 @@ FULLTEXTSERVICEPROPERTY ('property')
 ## <a name="examples"></a>例  
  次の例では、署名付きバイナリのみが読み込まれるかどうかを確認し、戻り値は、この検証が行われていないことを示します。  
   
-```  
+```sql  
 SELECT fulltextserviceproperty('VerifySignature');  
 ```  
   
@@ -79,7 +78,7 @@ SELECT fulltextserviceproperty('VerifySignature');
   
  署名の検証を既定値の 1 に戻すには、次の `sp_fulltext_service` ステートメントを使用できます。  
   
-```  
+```sql  
 EXEC sp_fulltext_service @action='verify_signature', @value=1;  
 GO  
 ```  

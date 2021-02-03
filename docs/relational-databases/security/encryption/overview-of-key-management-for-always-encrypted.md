@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: 07a305b1-4110-42f0-b7aa-28a4e32e912a
 author: jaszymas
 ms.author: jaszymas
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: bfeb8126553a1a5990ed7ccfd8a836117f3328b0
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: be7a5c94f5de63f343a8c529f8a824e13177923c
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85784013"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97467303"
 ---
 # <a name="overview-of-key-management-for-always-encrypted"></a>Always Encrypted のキー管理の概要
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -27,10 +27,10 @@ ms.locfileid: "85784013"
 
 Always Encrypted キーとキーの管理について説明するときは、実際の暗号化キーと、キーを *記述* するメタデータ オブジェクトとの違いを理解することが重要です。 実際の暗号化キーを指す **列暗号化キー** と **列マスター キー** という用語と、データベース内の Always Encrypted キーの **説明** を指す **列暗号化キーのメタデータ** と *列マスター キーのメタデータ* という用語を使用します。
 
-- ***列暗号化キー*** は、データを暗号化するために使用される内容暗号化キーです。 名前が示すように、列暗号化キーはデータベースの列内のデータを暗号化するために使用します。 同じ列暗号化キーで 1 つ以上の列を暗号化することも、ご使用のアプリケーションの要件に応じて複数の列暗号化キーを使用することもできます。 列暗号化キーは自体が暗号化され、列暗号化キーの暗号化された値だけが (列暗号化キーのメタデータの一部として) データベースに格納されます。 列暗号化キーのメタデータは、 [sys.column_encryption_keys (TRANSACT-SQL)](../../../relational-databases/system-catalog-views/sys-column-encryption-keys-transact-sql.md) と [sys.column_encryption_key_values (TRANSACT-SQL)](../../../relational-databases/system-catalog-views/sys-column-encryption-key-values-transact-sql.md) カタログ ビューに格納されます。 AES-256 アルゴリズムで使用される列暗号化キーは 256 ビット長です。
+- "***列暗号化キー**" は、データを暗号化するために使用される内容暗号化キーです。 名前が示すように、列暗号化キーはデータベースの列内のデータを暗号化するために使用します。 同じ列暗号化キーで 1 つ以上の列を暗号化することも、ご使用のアプリケーションの要件に応じて複数の列暗号化キーを使用することもできます。 列暗号化キーは自体が暗号化され、列暗号化キーの暗号化された値だけが (列暗号化キーのメタデータの一部として) データベースに格納されます。 列暗号化キーのメタデータは、 [sys.column_encryption_keys (TRANSACT-SQL)](../../../relational-databases/system-catalog-views/sys-column-encryption-keys-transact-sql.md) と [sys.column_encryption_key_values (TRANSACT-SQL)](../../../relational-databases/system-catalog-views/sys-column-encryption-key-values-transact-sql.md) カタログ ビューに格納されます。 AES-256 アルゴリズムで使用される列暗号化キーは 256 ビット長です。
 
 
-- ***列マスター キー*** は、列暗号化キーの暗号化に使用される保護キーです。 列マスター キーは、Windows 証明書ストア、Azure Key Vault、またはハードウェア セキュリティ モジュールなどの信頼できるキー ストアに格納する必要があります。 データベースには、列マスター キーに関するメタデータ (キー ストアの種類と場所) のみが含まれます。 列マスター キーのメタデータは、 [sys.column_master_keys (TRANSACT-SQL)](../../../relational-databases/system-catalog-views/sys-column-master-keys-transact-sql.md) カタログ ビューに格納されています。  
+- "_*_列マスター キー_*_" は、列暗号化キーの暗号化に使用される保護キーです。 列マスター キーは、Windows 証明書ストア、Azure Key Vault、またはハードウェア セキュリティ モジュールなどの信頼できるキー ストアに格納する必要があります。 データベースには、列マスター キーに関するメタデータ (キー ストアの種類と場所) のみが含まれます。 列マスター キーのメタデータは、 [sys.column_master_keys (TRANSACT-SQL)](../../../relational-databases/system-catalog-views/sys-column-master-keys-transact-sql.md) カタログ ビューに格納されています。  
 
 データベース システム内のキー メタデータには、プレーンテキストの列マスター キーまたはプレーンテキストの列暗号化キーは含まれていないことに注意してください。 データベースには、列マスター キーの種類と場所に関する情報と、列暗号化キーの暗号化された値のみが含まれます。 これは、プレーンテキストのキーはデータベース システムに決して公開されないので、データベース システムが侵害された場合でも、Always Encrypted を使用して保護されているデータの安全性が保証されることを意味します。 データベース システムがプレーンテキストのキーにアクセスできないようにするため、キー管理ツールは、データベースをホストしているコンピューターとは異なるコンピューターで必ず実行します。詳細については、後述の「 [キー管理のセキュリティに関する考慮事項](#security-considerations-for-key-management) 」でご確認ください。
 
@@ -42,7 +42,7 @@ Always Encrypted キーとキーの管理について説明するときは、実
 
 キー管理のプロセスは、次の高度なタスクに分類できます。
 
-- **キーのプロビジョニング** - 信頼できるキー ストア (たとえば、Windows 証明書ストア、Azure Key Vault、またはハードウェア セキュリティ モジュール) に物理キーを作成し、列マスター キーで列暗号化キーを暗号化し、両方の種類のメタデータをデータベースに作成します。
+- "*キーのプロビジョニング*" - 信頼できるキー ストア (たとえば、Windows 証明書ストア、Azure Key Vault、またはハードウェア セキュリティ モジュール) に物理キーを作成し、列マスター キーで列暗号化キーを暗号化し、両方の種類のメタデータをデータベースに作成します。
 
 - **キーの交換** -既存のキーを定期的に新しいキーに交換します。 キーが侵害された場合や、暗号化キーを定期的に交換することを定めた組織のポリシーまたはコンプライアンス規定に準拠するために、キーを交換する必要があります。 
 
@@ -54,7 +54,7 @@ Always Encrypted キーを管理するユーザーには、セキュリティ管
 - **セキュリティ管理者** – 列暗号化キーと列マスター キーを生成し、列マスター キーを含むキー ストアを管理します。 これらのタスクを実行するには、セキュリティ管理者がキーとキー ストアにアクセスできる必要がありますが、データベースへのアクセスは必要ありません。
 - **DBA** - データベース内のキーに関するメタデータを管理します。 キー管理タスクを実行するには、DBA がデータベース内のキー メタデータを管理できる必要がありますが、キーまたは列マスター キーを保持しているキー ストアにアクセスする必要はありません。
 
-上記の役割を考慮すると、Always Encrypted のキー管理タスクを実行するには、 *役割の分離を使用する*場合と *役割の分離を使用しない*場合の 2 つの異なる方法があります。 組織のニーズに応じて、要件に最適なキー管理プロセスを選択できます。
+上記の役割を考慮すると、Always Encrypted のキー管理タスクを実行するには、 *役割の分離を使用する* 場合と *役割の分離を使用しない* 場合の 2 つの異なる方法があります。 組織のニーズに応じて、要件に最適なキー管理プロセスを選択できます。
 
 ## <a name="managing-keys-with-role-separation"></a>役割の分離を使用したキー管理
 役割の分離を使用して Always Encrypted キーを管理する場合、組織内の別々の人がセキュリティ管理者の役割と DBA の役割を担当します。 役割の分離を使用したキー管理プロセスには、キーまたは実際のキーを保持するキー ストアへのアクセス権はありません。また、セキュリティ管理者には機密データを含むデータベースへのアクセス権はありません。 組織内の DBA が機密データにアクセスできないようにすることが目的の場合は、役割の分離を使用してキーを管理することをお勧めします。 
@@ -68,7 +68,7 @@ Always Encrypted キーを管理するユーザーには、セキュリティ管
 
 ## <a name="tools-for-managing-always-encrypted-keys"></a>Always Encrypted キーを管理するためのツール
 
-Always Encrypted キーは、 [SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/ms174173.aspx) と [PowerShell](../../scripting/sql-server-powershell.md)を使用して管理できます。
+Always Encrypted キーは、 [SQL Server Management Studio (SSMS)](../../../ssms/sql-server-management-studio-ssms.md) と [PowerShell](../../../powershell/sql-server-powershell.md)を使用して管理できます。
 
 - **SQL Server Management Studio (SSMS)** は、キー ストアのアクセスとデータベース のアクセスに関するタスクを組み合わせるダイアログとウィザードを提供しています。そのため、SSMS では役割の分離をサポートしていませんが、キーの構成を容易にします。 SSMS を使用したキー管理の詳細については、以下を参照してください。
     - [SQL Server Management Studio を使用して Always Encrypted キーをプロビジョニングする](configure-always-encrypted-keys-using-ssms.md)
@@ -101,9 +101,5 @@ Always Encrypted の主な目的は、データベース システムまたは�
 
 ## <a name="see-also"></a>参照
 - [常に暗号化](../../../relational-databases/security/encryption/always-encrypted-database-engine.md)
-- [Always Encrypted ウィザード チュートリアル (Azure Key Vault)](https://azure.microsoft.com/documentation/articles/sql-database-always-encrypted-azure-key-vault/)
-- [Always Encrypted ウィザード チュートリアル (Windows 証明書ストア)](https://azure.microsoft.com/documentation/articles/sql-database-always-encrypted/)
-
-
-
-
+- [Always Encrypted ウィザード チュートリアル (Azure Key Vault)](/azure/azure-sql/database/always-encrypted-azure-key-vault-configure)
+- [Always Encrypted ウィザード チュートリアル (Windows 証明書ストア)](/azure/azure-sql/database/always-encrypted-certificate-store-configure)

@@ -1,7 +1,7 @@
 ---
-description: 権限:GRANT、DENY、REVOKE (Azure SQL Data Warehouse、並列データ ウェアハウス)
+description: 権限:GRANT、DENY、REVOKE (Azure Synapse Analytics、Parallel Data Warehouse)
 title: GRANT-DENY-REVOKE の権限
-titleSuffix: Azure SQL Data Warehouse
+titleSuffix: Azure Synapse Analytics
 ms.custom: seo-lt-2019
 ms.date: 08/10/2017
 ms.prod: sql
@@ -14,15 +14,15 @@ dev_langs:
 ms.assetid: 5a3b7424-408e-4cb0-8957-667ebf4596fc
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest || = sqlallproducts-allversions'
-ms.openlocfilehash: ed28cb4adb7acd80212770d5760197854d8e8539
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
+ms.openlocfilehash: 14eb63bde72a10be3c58af17510030ad6610e33b
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88357748"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97465873"
 ---
-# <a name="permissions-grant-deny-revoke-azure-sql-data-warehouse-parallel-data-warehouse"></a>権限:GRANT、DENY、REVOKE (Azure SQL Data Warehouse、並列データ ウェアハウス)
+# <a name="permissions-grant-deny-revoke-azure-synapse-analytics-parallel-data-warehouse"></a>権限:GRANT、DENY、REVOKE (Azure Synapse Analytics、Parallel Data Warehouse)
 [!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
 
   セキュリティ保護可能なリソース (データベース、テーブル、ビューなど) からセキュリティ プリンシパル (ログイン、データベース ユーザー、またはデータベース ロール) にアクセス許可 (**UPDATE** など) を付与または拒否するには、[!INCLUDE[ssSDW](../../includes/sssdw-md.md)] または [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]**GRANT** および **DENY** ステートメントを使用します。 アクセス許可を許可または拒否するには、**REVOKE** を使用します。  
@@ -42,7 +42,7 @@ ms.locfileid: "88357748"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
--- Azure SQL Data Warehouse and Parallel Data Warehouse  
+-- Azure Synapse Analytics and Parallel Data Warehouse  
 GRANT   
     <permission> [ ,...n ]  
     [ ON [ <class_type> :: ] securable ]   
@@ -121,14 +121,14 @@ REVOKE
  PDW はストアドプロシージャを実行して、ユーザーの操作を計算ノードに分散することがあります。 そのため、データベース全体に対する execute 権限を拒否できません (たとえば `DENY EXECUTE ON DATABASE::<name> TO <user>;` は失敗します)。回避策として、ユーザー スキーマまたは特定のオブジェクト (プロシージャ) に対する execute 権限を拒否します。  
   
 ### <a name="implicit-and-explicit-permissions"></a>暗黙的および明示的なアクセス許可  
- *明示的なアクセス許可*は、**GRANT** または **DENY** ステートメントによってプリンシパルに付与される **GRANT** または **DENY** アクセス許可です。  
+ *明示的なアクセス許可* は、**GRANT** または **DENY** ステートメントによってプリンシパルに付与される **GRANT** または **DENY** アクセス許可です。  
   
- *暗黙的なアクセス許可*は、プリンシパル (ログイン、ユーザー、データベース ロール) が別のデータベース ロールから継承する **GRANT** または **DENY** アクセス許可です。  
+ *暗黙的なアクセス許可* は、プリンシパル (ログイン、ユーザー、データベース ロール) が別のデータベース ロールから継承する **GRANT** または **DENY** アクセス許可です。  
   
  暗黙的なアクセス許可は、包含または親のアクセス許可からも継承できます。 たとえば、テーブルの **UPDATE** アクセス許可は、テーブルが含まれるスキーマに対する **UPDATE** アクセス許可、またはテーブルの **CONTROL** アクセス許可を持つことによって継承できます。  
   
 ### <a name="ownership-chaining"></a>所有権の継承  
- 複数のデータベース オブジェクトが連続して互いにアクセスしている場合、このシーケンスは*チェーン*と呼ばれます。 このようなチェーンは単独では存在しませんが、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] がチェーン内のリンクを移動する際に、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によって、構成要素であるオブジェクトに対する権限が、オブジェクトに個別にアクセスした場合とは異なる方法で評価されます。 所有権の継承は、セキュリティの管理に重要な影響を与えます。 所有権の継承の詳細については、次を参照してください「[所有権の継承](https://msdn.microsoft.com/library/ms188676\(v=sql11\).aspx)」および「[チュートリアル:所有権の継承とコンテキストの切り替え](../../relational-databases/tutorial-ownership-chains-and-context-switching.md)」です。  
+ 複数のデータベース オブジェクトが連続して互いにアクセスしている場合、このシーケンスは *チェーン* と呼ばれます。 このようなチェーンは単独では存在しませんが、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] がチェーン内のリンクを移動する際に、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によって、構成要素であるオブジェクトに対する権限が、オブジェクトに個別にアクセスした場合とは異なる方法で評価されます。 所有権の継承は、セキュリティの管理に重要な影響を与えます。 所有権の継承の詳細については、次を参照してください「[所有権の継承](https://msdn.microsoft.com/library/ms188676\(v=sql11\).aspx)」および「[チュートリアル:所有権の継承とコンテキストの切り替え](../../relational-databases/tutorial-ownership-chains-and-context-switching.md)」です。  
   
 ## <a name="permission-list"></a>アクセス許可の一覧  
   
@@ -238,7 +238,7 @@ REVOKE
   
 -   REFERENCES  
   
- 各権限の種類の定義については、「[権限 (データベース エンジン)](https://msdn.microsoft.com/library/ms191291.aspx)」を参照してください。  
+ 各権限の種類の定義については、「[権限 (データベース エンジン)](../../relational-databases/security/permissions-database-engine.md)」を参照してください。  
   
 ### <a name="chart-of-permissions"></a>アクセス許可のグラフ  
  すべてのアクセス許可は、このポスターでグラフィカルに表されます。 これは、アクセス許可の入れ子になった階層構造を確認する最も簡単な方法です。 たとえば、**ALTER ON LOGIN** 自体でアクセス許可を与えることができますが、ログインがそのログインに対する **CONTROL** アクセス許可を与えられている場合、またはログインが **ALTER ANY LOGIN** アクセス許可を与えられている場合にも含まれます。  
@@ -269,57 +269,55 @@ REVOKE
 ### <a name="a-granting-a-server-level-permission-to-a-login"></a>A. ログインに、サーバー レベル権限を許可する  
  次の 2 つのステートメントでは、ログインに、サーバー レベルの権限を付与します。  
   
-```  
+```sql  
 GRANT CONTROL SERVER TO [Ted];  
 ```  
   
-```  
+```sql  
 GRANT ALTER ANY DATABASE TO Mary;  
 ```  
   
 ### <a name="b-granting-a-server-level-permission-to-a-login"></a>B. ログインに、サーバー レベル権限を許可する  
  次の例では、サーバー プリンシパル (別のログイン) に対して、ログインに、サーバー レベルの権限を付与します。  
   
-```  
+```sql  
 GRANT  VIEW DEFINITION ON LOGIN::Ted TO Mary;  
 ```  
   
 ### <a name="c-granting-a-database-level-permission-to-a-user"></a>C. ユーザーに、データベース レベル権限を許可する  
  次の例では、データベース プリンシパル (別のユーザー) に対して、ユーザーに、データベース レベルのアクセス許可を付与します。  
   
-```  
+```sql  
 GRANT VIEW DEFINITION ON USER::[Ted] TO Mary;  
 ```  
   
 ### <a name="d-granting-denying-and-revoking-a-schema-permission"></a>D. スキーマの権限を許可、拒否、および取り消す  
  次の **GRANT** ステートメントは、dbo スキーマの任意のテーブルまたはビューからデータを選択する権限を Yuen に付与します。  
   
-```  
+```sql  
 GRANT SELECT ON SCHEMA::dbo TO [Yuen];  
 ```  
   
  次の **DENY** ステートメントでは、Yuen が dbo スキーマのどのテーブルまたはビューからもデータを選択できないようにします。 Yuen がロールのメンバーシップを通してなど、その他の何らかの方法で権限を持っている場合でも、データを読み取ることはできません。  
   
-```  
+```sql  
 DENY SELECT ON SCHEMA::dbo TO [Yuen];  
 ```  
   
  次の **REVOKE** ステートメントは **DENY** 権利を削除します。 Yuen の明示的なアクセス許可は、ニュートラルになりました。 Yuen は、ロールのメンバーシップなどその他のいくつかの暗黙的な権限を任意のテーブルからデータを選択できる場合があります。  
   
-```  
+```sql  
 REVOKE SELECT ON SCHEMA::dbo TO [Yuen];  
 ```  
   
 ### <a name="e-demonstrating-the-optional-object-clause"></a>E. 省略可能な OBJECT:: 句を示す  
  OBJECT は、権限ステートメントの既定のクラスであるために、次の 2 つのステートメントは同じです。 **OBJECT::** 句は省略可能です。  
   
-```  
+```sql  
 GRANT UPDATE ON OBJECT::dbo.StatusTable TO [Ted];  
 ```  
   
-```  
+```sql  
 GRANT UPDATE ON dbo.StatusTable TO [Ted];  
 ```  
   
-  
-

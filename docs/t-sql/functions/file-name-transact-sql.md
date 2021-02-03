@@ -24,14 +24,14 @@ helpviewer_keywords:
 - FILE_NAME function
 - logical file names [SQL Server]
 ms.assetid: 68b298aa-ce47-4af5-b59f-9a1b46d48326
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 4f6a8a9625582bd40b988f787bfdd6201bb2b747
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 6f5588c385e9118469db95ee0de202711f5a8e3e
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88479698"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092270"
 ---
 # <a name="file_name-transact-sql"></a>FILE_NAME (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -42,7 +42,7 @@ ms.locfileid: "88479698"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 FILE_NAME ( file_id )   
 ```  
   

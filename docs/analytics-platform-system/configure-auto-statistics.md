@@ -9,13 +9,13 @@ ms.date: 06/27/2018
 ms.author: murshedz
 ms.reviewer: martinle
 ms.custom: seo-dt-2019
-monikerRange: '>= aps-pdw-2016-au7 || = sqlallproducts-allversions'
-ms.openlocfilehash: 7071c9cb46bde6e2d353293cec9f01451c0b4f67
-ms.sourcegitcommit: e042272a38fb646df05152c676e5cbeae3f9cd13
+monikerRange: '>= aps-pdw-2016-au7'
+ms.openlocfilehash: fc204c5c4fd37ef4621c4376142662b7a9164ade
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74401283"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97420189"
 ---
 # <a name="configure-auto-statistics"></a>自動統計の構成
 
@@ -41,11 +41,11 @@ ms.locfileid: "74401283"
 統計の非同期更新オプション AUTO_UPDATE_STATISTICS_ASYNC によって、クエリ オプティマイザーで統計の同期更新と非同期更新のどちらを使用するかが決まります。 APS では、統計の非同期更新オプションが既定でオンになっており、クエリオプティマイザーによって統計が非同期的に更新されます。 AUTO_UPDATE_STATISTICS_ASYNC オプションは、インデックスに対して作成された統計オブジェクト、クエリ述語内の列に対して 1 列ずつ作成された統計オブジェクト、および CREATE STATISTICS ステートメントを使用して作成された統計に適用されます。
 
 ## <a name="configuration-settings-for-system-administrators"></a>システム管理者の構成設定
-APS AU7 にアップグレードすると、既定で自動統計が有効になります。 システム管理者は、アプライアンス Configuration Manager の [[機能スイッチ](appliance-feature-switch.md)] オプションで自動統計を有効または無効にすることができます。  有効にすると、ユーザーはデータベースごとに統計設定を変更できます。
+APS AU7 にアップグレードすると、既定で自動統計が有効になります。 システム管理者は、アプライアンス Configuration Manager の [ [機能スイッチ](appliance-feature-switch.md) ] オプションで自動統計を有効または無効にすることができます。  有効にすると、ユーザーはデータベースごとに統計設定を変更できます。
 機能スイッチの値を変更するには、APS でサービスを再起動する必要があります。
 
 ## <a name="change-auto-statistics-settings-on-a-database"></a>データベースの自動統計設定を変更する
-システム管理者によって自動統計が有効になっている場合は、 [ALTER database (並列データウェアハウス)](../t-sql/statements/alter-database-transact-sql.md?tabs=sqlpdw)を使用して、データベースの統計設定を変更できます。 自動統計機能スイッチがシステム管理者によって有効にされている場合、AU7 へのアップグレード後に新しく作成されたデータベースでは、自動統計が有効になります。 AU7 へのアップグレード前に存在していたすべてのデータベースで、自動統計が無効になっています。 次の例では、既存のデータベース myPDW で自動統計を有効にします。
+システム管理者によって自動統計が有効になっている場合は、 [ALTER database (並列データウェアハウス)](../t-sql/statements/alter-database-transact-sql.md?tabs=sqlpdw) を使用して、データベースの統計設定を変更できます。 自動統計機能スイッチがシステム管理者によって有効にされている場合、AU7 へのアップグレード後に新しく作成されたデータベースでは、自動統計が有効になります。 AU7 へのアップグレード前に存在していたすべてのデータベースで、自動統計が無効になっています。 次の例では、既存のデータベース myPDW で自動統計を有効にします。
 
 ```sql
 ALTER DATABASE myPDW SET AUTO_CREATE_STATISTICS ON

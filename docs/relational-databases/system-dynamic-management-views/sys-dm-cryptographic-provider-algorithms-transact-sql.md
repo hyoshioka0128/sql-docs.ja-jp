@@ -1,12 +1,12 @@
 ---
-description: dm_cryptographic_provider_algorithms (Transact-sql)
-title: dm_cryptographic_provider_algorithms (Transact-sql) |Microsoft Docs
+description: sys.dm_cryptographic_provider_algorithms (Transact-sql)
+title: sys.dm_cryptographic_provider_algorithms (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - dm_cryptographic_provider_algorithms_TSQL
 - sys.dm_cryptographic_provider_algorithms
@@ -17,16 +17,16 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_cryptographic_provider_algorithms dynamic management function
 ms.assetid: 8bcccb37-5cfb-4e1e-a0bb-7ff4c279fe8e
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: c3ed45a66cca5e038b63e3eb0d360a8f59a9ee54
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 24690f636b2832aae039841284e275dfa181f078
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542332"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99207170"
 ---
-# <a name="sysdm_cryptographic_provider_algorithms-transact-sql"></a>dm_cryptographic_provider_algorithms (Transact-sql)
+# <a name="sysdm_cryptographic_provider_algorithms-transact-sql"></a>sys.dm_cryptographic_provider_algorithms (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   拡張キー管理 (EKM) プロバイダーによってサポートされているアルゴリズムを返します。  

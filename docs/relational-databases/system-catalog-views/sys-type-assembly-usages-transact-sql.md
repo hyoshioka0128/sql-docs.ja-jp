@@ -1,13 +1,13 @@
 ---
-description: type_assembly_usages (Transact-sql)
-title: type_assembly_usages (Transact-sql) |Microsoft Docs
+description: sys.type_assembly_usages (Transact-sql)
+title: sys.type_assembly_usages (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.type_assembly_usages
 - sys.type_assembly_usages_TSQL
@@ -18,16 +18,16 @@ dev_langs:
 helpviewer_keywords:
 - sys.type_assembly_usages catalog view
 ms.assetid: 79b8bf25-6e4e-4a07-ae93-7a4e44f65171
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: c6e1bd7aba0b16af1fa59b1064a519f7879207ab
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 810048128a9117739b180994ae2f3a21df385bc5
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542428"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99201953"
 ---
-# <a name="systype_assembly_usages-transact-sql"></a>type_assembly_usages (Transact-sql)
+# <a name="systype_assembly_usages-transact-sql"></a>sys.type_assembly_usages (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   アセンブリ参照への型ごとに1行の値を格納します。  

@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: fc3e22c2-3165-4ac9-87e3-bf27219c820f
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: e601f2b89000902647631fda9ee46a90a92e5b39
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 72ab05dfce314119c30e08428fdcaa2b94ba25ed
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88409178"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171774"
 ---
 # <a name="columnstore-indexes---design-guidance"></a>列ストア インデックス - 設計ガイダンス
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -66,13 +66,13 @@ ms.locfileid: "88409178"
 * テーブルに、varchar(max)、nvarchar(max)、varbinary(max) データ型が必要な場合。 または、これらの列が含まれないように列ストア インデックスを設計します。
 * テーブル データが永続的でない場合。 データをすばやく格納および削除する必要がある場合は、ヒープまたは一時テーブルの使用を検討してください。
 * テーブルの行数がパーティションあたり 100 万未満の場合。 
-* 更新と削除がテーブルに対する操作の 10% を超える場合。 大量の更新と削除は断片化の原因となります。 すべてのデータを列ストアに強制的に入れて断片化を解消する再編成という操作を実行するまで、断片化は圧縮率とクエリ パフォーマンスに影響します。 詳しくは、[列ストア インデックスでインデックスの断片化を最小限に抑える方法](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2016/03/07/columnstore-index-defragmentation-using-reorganize-command/)に関する記事をご覧ください。
+* 更新と削除がテーブルに対する操作の 10% を超える場合。 大量の更新と削除は断片化の原因となります。 すべてのデータを列ストアに強制的に入れて断片化を解消する再編成という操作を実行するまで、断片化は圧縮率とクエリ パフォーマンスに影響します。 詳しくは、[列ストア インデックスでインデックスの断片化を最小限に抑える方法](/archive/blogs/sqlserverstorageengine/columnstore-index-defragmentation-using-reorganize-command)に関する記事をご覧ください。
 
 詳しくは、「[Columnstore indexes - data warehousing](../../relational-databases/indexes/columnstore-indexes-data-warehouse.md)」(列ストア インデックス - データ ウェアハウス) をご覧ください。
 
 ## <a name="add-b-tree-nonclustered-indexes-for-efficient-table-seeks"></a>B ツリー 非クラスター化インデックスを追加してテーブルのシークを効率化する
 
-[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降では、クラスター化列ストア インデックスのセカンダリ インデックスとして非クラスター化 B ツリー インデックスを作成できます。 列ストア インデックスが変更されると、非クラスター化 B ツリー インデックスが更新されます。 これは、うまく利用するとメリットのある強力な機能です。 
+[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降では、クラスター化列ストア インデックスのセカンダリ インデックスとして非クラスター化 B ツリー インデックスを作成できます。 列ストア インデックスが変更されると、非クラスター化 B ツリー インデックスが更新されます。 これは、うまく利用するとメリットのある強力な機能です。 
 
 セカンダリ B ツリー インデックスを使用すると、すべての行をスキャンせずに特定の行を効率的に検索できます。  他のオプションも使用できます。 たとえば、B ツリー インデックスで UNIQUE 制約を使用して、主キーまたは外部キー制約を適用できます。 一意でない値は B ツリー インデックスに挿入できないため、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] でその値を列ストアに挿入することはできません。 
 
@@ -84,7 +84,7 @@ ms.locfileid: "88409178"
 
 ## <a name="use-a-nonclustered-columnstore-index-for-real-time-analytics"></a>非クラスター化列ストア インデックスを使用したリアルタイム分析
 
-[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降では、行ストア ディスク ベース テーブルまたはメモリ内 OLTP テーブルで非クラスター化列ストア インデックスを使用できます。 これにより、トランザクション テーブルに対して分析をリアルタイムで実行できるようになります。 トランザクションは基になるテーブルで発生しますが、列ストア インデックスに対して分析を実行できます。 1 つのテーブルで両方のインデックスを管理するため、行ストアと列ストア両方のインデックスに対して変更をリアルタイムで使用できます。
+[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降では、行ストア ディスク ベース テーブルまたはメモリ内 OLTP テーブルで非クラスター化列ストア インデックスを使用できます。 これにより、トランザクション テーブルに対して分析をリアルタイムで実行できるようになります。 トランザクションは基になるテーブルで発生しますが、列ストア インデックスに対して分析を実行できます。 1 つのテーブルで両方のインデックスを管理するため、行ストアと列ストア両方のインデックスに対して変更をリアルタイムで使用できます。
 
 列ストア インデックスは行ストア インデックスよりもデータ圧縮率が 10 倍高いため、必要な追加ストレージがわずかで済みます。 たとえば、圧縮された行ストア テーブルが 20 GB を必要とする場合、列ストア インデックスではさらに 2 GB 必要な場合があります。 必要な追加領域は、非クラスター化列ストア インデックス内の列数によっても異なります。 
 
@@ -94,13 +94,13 @@ ms.locfileid: "88409178"
   
 *   別のデータ ウェアハウスの必要をなくす場合。 従来、企業では行ストア テーブルでトランザクションを実行し、データを別のデータ ウェアハウスに読み込んで分析を実行しています。 多くのワークロードでは、トランザクション テーブルに非クラスター化列ストア インデックスを作成して、読み込みプロセスと別のデータ ウェアハウスを排除できます。
 
-  [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] には、このシナリオのパフォーマンスを高めるいくつかの方法が用意されています。 OLTP アプリケーションを変更せずに非クラスター化列ストア インデックスを有効にできるため、とても簡単に試すことができます。 
+  [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] には、このシナリオのパフォーマンスを高めるいくつかの方法が用意されています。 OLTP アプリケーションを変更せずに非クラスター化列ストア インデックスを有効にできるため、とても簡単に試すことができます。 
 
 処理リソースを追加するには、読み取り可能なセカンダリに対して分析を実行できます。 読み取り可能なセカンダリを使用すると、トランザクションのワークロードと分析ワークロードの処理が分離されます。 
 
 詳しくは、「[Get started with columnstore indexes for real-time operational analytics](../../relational-databases/indexes/get-started-with-columnstore-for-real-time-operational-analytics.md)」(列ストア インデックスを使用したリアルタイム運用分析の概要) をご覧ください
 
-最適な列ストア インデックスの選択について詳しくは、Sunil Agarwal のブログで「[Which columnstore index is right for my workload?](https://blogs.msdn.microsoft.com/sql_server_team/columnstore-index-which-columnstore-index-is-right-for-my-workload)」(自分のワークロードに適した列ストア インデックス) をご覧ください。
+最適な列ストア インデックスの選択について詳しくは、Sunil Agarwal のブログで「[Which columnstore index is right for my workload?](/archive/blogs/sql_server_team/columnstore-index-which-columnstore-index-is-right-for-my-workload)」(自分のワークロードに適した列ストア インデックス) をご覧ください。
 
 ## <a name="use-table-partitions-for-data-management-and-query-performance"></a>テーブルのパーティションを使用してデータ管理とクエリのパフォーマンスを高める
 列ストア インデックスでは、データの管理とアーカイブの優れた方法であるパーティション分割がサポートされます。 パーティション分割では、操作を 1 つ以上のパーティションに制限することでクエリのパフォーマンスも向上します。
@@ -130,7 +130,7 @@ ms.locfileid: "88409178"
 * 1,000,000 行を 1 つのパーティションまたは非パーティション テーブルに読み込みます。 1,000,000 行を含む 1 つの圧縮行グループを取得します。 これは、高いデータ圧縮と高速なクエリ パフォーマンスに優れています。
 * 1,000,000 行を 10 個のパーティションに均等に読み込みます。 各パーティションは、列ストア圧縮の最小しきい値未満である 100,000 行を受け取ります。 その結果、列ストア インデックスには、それぞれ 100,000 行を含む 10 個のデルタ行グループがある可能性があります。 デルタ行グループを列ストアに強制的に移動する方法があります。 ただし、これらが列ストア インデックス内の行のみである場合、圧縮された行グループは、最適な圧縮とクエリ パフォーマンスを発揮するには小さくなりすぎます。
 
-パーティション分割について詳しくは、Sunil Agarwal のブログ記事「[Should I partition my columnstore index?](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2016/10/04/columnstore-index-should-i-partition-my-columnstore-index/)」(自分の列ストア インデックスは分割する必要があるか) をご覧ください。
+パーティション分割について詳しくは、Sunil Agarwal のブログ記事「[Should I partition my columnstore index?](/archive/blogs/sqlserverstorageengine/columnstore-index-should-i-partition-my-columnstore-index)」(自分の列ストア インデックスは分割する必要があるか) をご覧ください。
 
 ## <a name="choose-the-appropriate-data-compression-method"></a>適切なデータの圧縮方法を選ぶ
 列ストア インデックスは、データ圧縮に関する 2 つの選択肢 (列ストア圧縮とアーカイブ圧縮) を提供しています。 圧縮オプションは、インデックスの作成時、または後で [ALTER INDEX ...REBUILD](../../t-sql/statements/alter-index-transact-sql.md) を使用して変更するときに選択できます。
@@ -171,11 +171,11 @@ B ツリー インデックスは並べ替えられた順序で行を既に格�
   
 |タスク|参照トピック|Notes|  
 |----------|----------------------|-----------|  
-|テーブルを列ストアとして作成する。|[CREATE TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/create-table-transact-sql.md)|[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]以降、テーブルをクラスター化列ストア インデックスとして作成できます。 最初に行ストア テーブルを作成して列ストアに変換する必要はありません。|  
-|列ストア インデックスを持つメモリ テーブルを作成します。|[CREATE TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/create-table-transact-sql.md)|[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]以降、列ストア インデックスを持つ、メモリ最適化テーブルを作成できます。 列ストア インデックスは、テーブルの作成後に、ALTER TABLE ADD INDEX 構文を使用して追加することもできます。|  
+|テーブルを列ストアとして作成する。|[CREATE TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/create-table-transact-sql.md)|[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]以降、テーブルをクラスター化列ストア インデックスとして作成できます。 最初に行ストア テーブルを作成して列ストアに変換する必要はありません。|  
+|列ストア インデックスを持つメモリ テーブルを作成します。|[CREATE TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/create-table-transact-sql.md)|[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]以降、列ストア インデックスを持つ、メモリ最適化テーブルを作成できます。 列ストア インデックスは、テーブルの作成後に、ALTER TABLE ADD INDEX 構文を使用して追加することもできます。|  
 |行ストア テーブルを列ストアに変換する。|[CREATE COLUMNSTORE INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-columnstore-index-transact-sql.md)|既存のヒープまたはバイナリ ツリーを列ストアに変換します。 この変換を実行するときの既存のインデックスとインデックス名の処理方法を例示します。|  
 |列ストア テーブルを行ストアに変換する。|[CREATE CLUSTERED INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-columnstore-index-transact-sql.md#d-convert-a-columnstore-table-to-a-rowstore-table-with-a-clustered-index)、[列ストア テーブルを行ストア ヒープに戻す](../../t-sql/statements/create-columnstore-index-transact-sql.md#e-convert-a-columnstore-table-back-to-a-rowstore-heap) |この変換は通常は必要ありませんが、状況によっては必要になる場合があります。 列ストアをヒープまたはクラスター化インデックスに変換する方法を例示します。|   
-|行ストア テーブルで列ストア インデックスを作成する。|[CREATE COLUMNSTORE INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-columnstore-index-transact-sql.md)|行ストア テーブルでは列ストア インデックスを 1 つ使用できます。  [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]以降、列ストア インデックスにフィルター条件を指定できるようになりました。 基本構文を例示します。|  
+|行ストア テーブルで列ストア インデックスを作成する。|[CREATE COLUMNSTORE INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-columnstore-index-transact-sql.md)|行ストア テーブルでは列ストア インデックスを 1 つ使用できます。  [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]以降、列ストア インデックスにフィルター条件を指定できるようになりました。 基本構文を例示します。|  
 |運用分析のパフォーマンスの高いインデックスを作成する。|[列ストアを使用したリアルタイム運用分析の概要](../../relational-databases/indexes/get-started-with-columnstore-for-real-time-operational-analytics.md)|補完的な列ストア インデックスと B ツリー インデックスを作成する方法について説明します。OLTP クエリでは B ツリー インデックスが使用され、分析クエリでは列ストア インデックスが使用されます。|  
 |データ ウェアハウス用のパフォーマンスの高い列ストア インデックスを作成する。|[列ストア インデックス - データ ウェアハウス](../../relational-databases/indexes/columnstore-indexes-data-warehouse.md)|列ストア テーブルで B ツリー インデックスを使用して、パフォーマンスの高いデータ ウェアハウス クエリを作成する方法について説明します。|  
 |B ツリー インデックスを使用して列ストア インデックスに主キー制約を適用する|[列ストア インデックス - データ ウェアハウス](../../relational-databases/indexes/columnstore-indexes-data-warehouse.md)|B ツリー インデックスと列ストア インデックスを組み合わせて、列ストア インデックスに主キー制約を適用する方法を示します。|  
@@ -190,7 +190,6 @@ B ツリー インデックスは並べ替えられた順序で行を既に格�
 空の列ストア インデックスを作成するには:
 
 * [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] または [!INCLUDE[ssSDS](../../includes/sssds-md.md)]。「[CREATE TABLE (Transact-SQL)](../../t-sql/statements/create-table-transact-sql.md)」を参照してください。
-* [!INCLUDE[ssSDW](../../includes/sssdw-md.md)]。「[CREATE TABLE (Azure SQL Data Warehouse)](../../t-sql/statements/create-table-as-select-azure-sql-data-warehouse.md)」を参照してください。
+* [!INCLUDE[ssSDW](../../includes/sssdw-md.md)]。「[CREATE TABLE (Azure Synapse Analytics)](../../t-sql/statements/create-table-as-select-azure-sql-data-warehouse.md)」を参照してください。
 
 既存の行ストア ヒープまたは B ツリー インデックスをクラスター化列ストア インデックスに変換する方法、または非クラスター化列ストア インデックスを作成する方法の詳細については、「[CREATE COLUMNSTORE INDEX (Transact-SQL)](../../t-sql/statements/create-columnstore-index-transact-sql.md)」を参照してください。
-

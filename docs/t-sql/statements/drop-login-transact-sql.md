@@ -22,13 +22,13 @@ helpviewer_keywords:
 ms.assetid: acb5c3dc-7aa2-49f6-9330-573227ba9b1a
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: c841d8ec30915cd1494624c34eba77f893e4d901
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: baf40defffcc055f1841f16744e23e21cdb7a104
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88478930"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97476643"
 ---
 # <a name="drop-login-transact-sql"></a>DROP LOGIN (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "88478930"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 DROP LOGIN login_name  
 ```  
   
@@ -64,7 +64,7 @@ DROP LOGIN login_name
 ### <a name="a-dropping-a-login"></a>A. ログインを削除する  
  次の例では、ログイン `WilliJo` を削除します。  
   
-```  
+```sql  
 DROP LOGIN WilliJo;  
 GO 
 ```  

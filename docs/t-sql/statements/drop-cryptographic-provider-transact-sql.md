@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DROP CRYPTOGRAPHIC PROVIDER
 - DROP_CRYPTOGRAPHIC_PROVIDER_TSQL
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 71c55c20-439e-4897-aef5-f20e556d668f
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 80c6b61bbded237a0eedb0ee39fc8d4a6f55700f
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 05859caf64c152888c9b811c0d5a2c078b725e86
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88416388"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99189202"
 ---
 # <a name="drop-cryptographic-provider-transact-sql"></a>DROP CRYPTOGRAPHIC PROVIDER (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -34,8 +34,7 @@ ms.locfileid: "88416388"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 DROP CRYPTOGRAPHIC PROVIDER provider_name   
 ```  
   
@@ -58,7 +57,7 @@ DROP CRYPTOGRAPHIC PROVIDER provider_name
 ## <a name="examples"></a>例  
  次の例では、`SecurityProvider` という暗号プロバイダーを削除します。  
   
-```  
+```sql  
 /* First, disable provider to perform the upgrade.  
 This will terminate all open cryptographic sessions. */  
 ALTER CRYPTOGRAPHIC PROVIDER SecurityProvider   

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sysdevices
 - sysdevices_TSQL
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sys.sysdevices compatibility view
 - sysdevices system table
 ms.assetid: ac5bcaf4-8fb6-4855-8856-d7643f469361
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 6bcc481e595dc2c061d736a6bee12da6d918b7e8
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 07b3d4b93bb6351e000d64a9f7aeda0baf1ea90a
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88419796"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99158553"
 ---
 # <a name="syssysdevices-transact-sql"></a>sys.sysデバイス (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

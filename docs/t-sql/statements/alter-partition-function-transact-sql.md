@@ -24,14 +24,14 @@ helpviewer_keywords:
 - partition functions [SQL Server], modifying
 - partitioned tables [SQL Server], merging
 ms.assetid: 70866dac-0a8f-4235-8108-51547949ada4
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: efac16278bec7099024cb5f9e7cc2480013728cc
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: c3ae0c860bc31a228ce3a842d7e1ba8a861ea1e5
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88444894"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092113"
 ---
 # <a name="alter-partition-function-transact-sql"></a>ALTER PARTITION FUNCTION (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -74,7 +74,7 @@ ALTER PARTITION SCHEME ステートメントでは、新しいパーティショ
 >  列ストア インデックスに関する制限: テーブルに列ストア インデックスが存在する場合は、空のパーティションのみを分割できます。 この操作を実行する前に、列ストア インデックスを削除するか無効にする必要があります。  
   
 MERGE [ RANGE ( *boundary_value*) ]  
-パーティションを削除し、そのパーティションに存在する任意の値を残りの 1 つのパーティションにマージします。 RANGE (*boundary_value*) は、既存の境界値である必要があります。ここに、削除したパーティションの値がマージされます。 この引数は、最初に *boundary_value* を保持していたファイルグループを、残りのパーティションがそれを使用しない場合、または NEXT USED プロパティでマークしない場合を除き、パーティション構成から削除します。 マージされたパーティションは、最初に *boundary_value* を保持していなかったファイル グループに存在します。 *boundary_value* は定数式であり、変数 (ユーザー定義型変数を含む) または関数 (ユーザー定義関数を含む) を参照できます。 [!INCLUDE[tsql](../../includes/tsql-md.md)] 式は参照できません。 *boundary_value* は、対応するパーティション分割列のデータ型と一致するか、パーティション分割列のデータ型に暗黙的に変換される必要があります。 また、明示的な変換中に、値のサイズおよびスケールが対応する *input_parameter_type* のものと一致しない方法で *boundary_value* を切り詰めることはできません。  
+パーティションを削除し、そのパーティションに存在する任意の値を残りの 1 つのパーティションにマージします。 RANGE (*boundary_value*) は、削除するパーティションの既存の境界値である必要があります。 この引数は、最初に *boundary_value* を保持していたファイルグループを、残りのパーティションがそれを使用しない場合、または NEXT USED プロパティでマークしない場合を除き、パーティション構成から削除します。 マージされたパーティションは、最初に *boundary_value* を保持していなかったファイル グループに存在します。 *boundary_value* は定数式であり、変数 (ユーザー定義型変数を含む) または関数 (ユーザー定義関数を含む) を参照できます。 [!INCLUDE[tsql](../../includes/tsql-md.md)] 式は参照できません。 *boundary_value* は、対応するパーティション分割列のデータ型と一致するか、パーティション分割列のデータ型に暗黙的に変換される必要があります。 また、明示的な変換中に、値のサイズおよびスケールが対応する *input_parameter_type* のものと一致しない方法で *boundary_value* を切り詰めることはできません。  
   
 > [!NOTE]  
 >  列ストア インデックスに関する制限:列ストア インデックスを含む 2 つの空でないパーティションをマージすることはできません。 この操作を実行する前に、列ストア インデックスを削除するか無効にする必要があります  

@@ -5,28 +5,28 @@ ms.custom: seodec18
 ms.date: 05/17/2016
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
-ms.topic: conceptual
+ms.technology: availability-groups
+ms.topic: how-to
 helpviewer_keywords:
 - FileTables [SQL Server], Availability Groups
 - FILESTREAM [SQL Server], Availability Groups
 - Availability Groups [SQL Server], interoperability
 ms.assetid: fdceda9a-a9db-4d1d-8745-345992164a98
-author: MashaMSFT
-ms.author: mathoma
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: b98c555c9110981159cc3344d0adadd874bae7e0
-ms.sourcegitcommit: 7035d9471876c70b99c58bf9b46af5cce6e9c66c
+author: cawrites
+ms.author: chadam
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: 42a36a01313636c072a8ba4b104f6f366fb13e86
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87522914"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98766435"
 ---
 # <a name="use-filestream-and-filetable-with-always-on-availability-groups"></a>Always On 可用性グループで FILESTREAM と FileTable を使用する
 
 [!INCLUDE[sql windows only](../../../includes/applies-to-version/sql-windows-only.md)]
 
-  このトピックでは、 [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] で [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)]と FILESTREAM 機能および FileTable 機能を使用する方法について説明します。  
+  このトピックでは、 [!INCLUDE[ssHADR](../../../includes/sshadr-md.md)] で [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)]と FILESTREAM 機能および FileTable 機能を使用する方法について説明します。  
   
  すべての FILESTREAM 機能がサポートされています。 フェールオーバー後、FILESTREAM データは読み取り可能なセカンダリ レプリカと新しいプライマリの両方でアクセスできます。  
   

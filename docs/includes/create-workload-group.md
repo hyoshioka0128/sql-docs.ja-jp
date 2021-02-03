@@ -1,6 +1,6 @@
 リソース ガバナー ワークロード グループを作成し、そのワークロード グループをリソース ガバナー リソース プールに関連付けます。 リソース ガバナーは、[!INCLUDE[msCoName](msconame-md.md)][!INCLUDE[ssNoVersion](ssnoversion-md.md)] のすべてのエディションで使用できるわけではありません。 [!INCLUDE[ssNoVersion](ssnoversion-md.md)]の各エディションでサポートされる機能の一覧については、「 [SQL Server 2016 の各エディションがサポートする機能](~/sql-server/editions-and-supported-features-for-sql-server-2016.md)」を参照してください。
 
-![トピック リンク アイコン](../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)。
+:::image type="icon" source="../database-engine/configure-windows/media/topic-link.gif"::: [Transact-SQL 構文表記規則](../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)。
 
 ## <a name="syntax"></a>構文
 
@@ -64,7 +64,7 @@ REQUEST_MAX_CPU_TIME_SEC = *value*</br>
 > [!NOTE]
 > 既定では、リソース ガバナーでは最大時間を超過しても、要求は継続されます。 ただし、イベントが生成されます。 詳細については、「[CPU Threshold Exceeded イベント クラス](../relational-databases/event-classes/cpu-threshold-exceeded-event-class.md)」を参照してください。
 > [!IMPORTANT]
-> [!INCLUDE[ssSQL15](sssql15-md.md)] SP2 および [!INCLUDE[ssSQL17](sssql17-md.md)] CU3 以降では、[トレース フラグ 2422](../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md) を使用すると、最大時間を超えたときにリソース ガバナーが要求を中止します。
+> [!INCLUDE[ssSQL15](sssql16-md.md)] SP2 および [!INCLUDE[ssSQL17](sssql17-md.md)] CU3 以降では、[トレース フラグ 2422](../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md) を使用すると、最大時間を超えたときにリソース ガバナーが要求を中止します。
 
 REQUEST_MEMORY_GRANT_TIMEOUT_SEC = *value*</br>
 メモリ許可 (作業バッファー メモリ) が使用可能になるのをクエリが待機できる最大時間を秒単位で指定します。 *value* は、0 または正の整数にする必要があります。 *value* の既定の設定である 0 の場合、クエリ コストに基づく内部の計算を使用して、最大時間が決定されます。
@@ -73,7 +73,7 @@ REQUEST_MEMORY_GRANT_TIMEOUT_SEC = *value*</br>
 > メモリ許可のタイムアウトに達しても、常にクエリが失敗するとは限りません。 クエリが失敗するのは、同時実行クエリ数が多すぎる場合だけです。 それ以外の場合、クエリは最小限のメモリ許可しか取得できないので、クエリのパフォーマンスが低下します。
 
 MAX_DOP = *value*</br>
-並列クエリ実行に対する**並列処理の最大限度 (MAXDOP)** を指定します。 *value* は、0 または正の整数にする必要があります。 *value* の許容範囲は 0 から 64 です。 *value* の既定の設定は 0 で、グローバル設定が使用されます。 MAX_DOP は次のように処理されます。
+並列クエリ実行に対する **並列処理の最大限度 (MAXDOP)** を指定します。 *value* は、0 または正の整数にする必要があります。 *value* の許容範囲は 0 から 64 です。 *value* の既定の設定は 0 で、グローバル設定が使用されます。 MAX_DOP は次のように処理されます。
 
 > [!NOTE]
 > ワークロード グループの MAX_DOP では、[並列処理の最大限度に対するサーバー構成](../database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option.md)と、**MAXDOP** [データベース スコープ構成](../t-sql/statements/alter-database-scoped-configuration-transact-sql.md)がオーバーライドされます。
@@ -97,7 +97,7 @@ USING { *pool_name* |  **"default"** }</br>
 > 定義済みのワークロード グループおよびリソース プールではすべて、"default" などの小文字の名前が使用されています。 大文字と小文字を区別する照合順序を使用するサーバーでは、これを考慮する必要があります。 SQL_Latin1_General_CP1_CI_AS など、大文字と小文字を区別しない照合順序を使用するサーバーでは、"default" と "Default" が同じものと見なされます。
 
 EXTERNAL external_pool_name | "default"</br>
-**適用対象**: [!INCLUDE[ssNoVersion](ssnoversion-md.md)] ([!INCLUDE[ssSQL15](sssql15-md.md)] 以降)。
+**適用対象**: [!INCLUDE[ssNoVersion](ssnoversion-md.md)] ([!INCLUDE[ssSQL15](sssql16-md.md)] 以降)。
 
 ワークロード グループには、外部リソース プールを指定できます。 ワークロード グループを定義し、2 つのプールに関連付けることができます。
 

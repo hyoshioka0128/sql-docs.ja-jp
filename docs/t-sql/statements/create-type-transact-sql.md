@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sql13.swb.sysdatatype.properties.f1
 - CREATE TYPE
@@ -25,14 +25,14 @@ helpviewer_keywords:
 - alias data types [SQL Server], creating
 - data types [SQL Server], creating
 ms.assetid: 2202236b-e09f-40a1-bbc7-b8cff7488905
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: edff505f253c5c913a9330cb514c8cb72d764ba8
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 2063543c497070bd8366cae9a8691b3701fc4330
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88488059"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99177908"
 ---
 # <a name="create-type-transact-sql"></a>CREATE TYPE (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -279,13 +279,13 @@ column_name <data_type>
  [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降では、ディスク上ではなく、プライマリ メモリ内でテーブル型のデータを処理できます。 詳細については、「[インメモリ OLTP &#40;インメモリ最適化&#41;](../../relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization.md)」を参照してください。 メモリ最適化テーブル型の作成方法を示すコード サンプルについては、「[メモリ最適化テーブルおよびネイティブ コンパイル ストアド プロシージャの作成](../../relational-databases/in-memory-oltp/creating-a-memory-optimized-table-and-a-natively-compiled-stored-procedure.md)」をご覧ください。  
   
 ## <a name="permissions"></a>アクセス許可  
- 現在のデータベース内の CREATE TYPE 権限、および *schema_name*に対する ALTER 権限が必要です。 *schema_name* を指定しなかった場合は、現在のユーザーのスキーマを判断するための既定の名前解決ルールが適用されます。 *assembly_name* を指定した場合は、ユーザーがそのアセンブリの所有者であるか、そのアセンブリに対する REFERENCES 権限を持っている必要があります。  
+ 現在のデータベース内の CREATE TYPE 権限、および *schema_name* に対する ALTER 権限が必要です。 *schema_name* を指定しなかった場合は、現在のユーザーのスキーマを判断するための既定の名前解決ルールが適用されます。 *assembly_name* を指定した場合は、ユーザーがそのアセンブリの所有者であるか、そのアセンブリに対する REFERENCES 権限を持っている必要があります。  
 
  CREATE TABLE ステートメント内の列をユーザー定義型として定義する場合は、そのユーザー定義型に対する REFERENCES 権限が必要です。
  
    >[!NOTE]
   > ユーザー定義型を使用する列があるテーブルを作成するユーザーは、そのユーザー定義型に対して REFERENCES アクセス許可を持っている必要があります。
-  > このテーブルを TempDB 内に作成する必要がある場合、テーブルを作成する**前**に毎回 REFERENCES アクセス許可を明示的に付与する必要があります。または、このデータ型と REFERENCES アクセス許可を model データベースに追加する必要があります。 この処理が完了すると、このデータ型とアクセス許可は TempDB で永続的に利用できるようになります。 この処理が完了していない場合、SQL Server の再起動時にユーザー定義のデータ型とアクセス許可は消去されます。 詳細については、「[CREATE TABLE](https://docs.microsoft.com/sql/t-sql/statements/create-table-transact-sql?view=sql-server-2017#permissions-1)」を参照してください。
+  > このテーブルを TempDB 内に作成する必要がある場合、テーブルを作成する **前** に毎回 REFERENCES アクセス許可を明示的に付与する必要があります。または、このデータ型と REFERENCES アクセス許可を model データベースに追加する必要があります。 この処理が完了すると、このデータ型とアクセス許可は TempDB で永続的に利用できるようになります。 この処理が完了していない場合、SQL Server の再起動時にユーザー定義のデータ型とアクセス許可は消去されます。 詳細については、「[CREATE TABLE](./create-table-transact-sql.md#permissions-1)」を参照してください。
   
 ## <a name="examples"></a>例  
   
@@ -347,4 +347,3 @@ GO
  [EVENTDATA &#40;Transact-SQL&#41;](../../t-sql/functions/eventdata-transact-sql.md)    
  [CLR ユーザー定義型](../../relational-databases/clr-integration-database-objects-user-defined-types/clr-user-defined-types.md)     
  [SQL Server でのユーザー定義型の使用](../../relational-databases/clr-integration-database-objects-user-defined-types/working-with-user-defined-types-in-sql-server.md)     
-  

@@ -4,17 +4,17 @@ description: SQL Server で可用性グループのデータ ストリームが�
 ms.custom: ''
 ms.date: 06/22/2016
 ms.prod: sql
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 ms.assetid: 7632769c-b246-4766-886f-7c60ec540be8
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: f8af4702abe127dc0bf5b53be7618515c21cd13c
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 1066b1e519f757207b06f1deb94031f2f054bc5f
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85888013"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641854"
 ---
 # <a name="tune-compression-for-availability-group"></a>可用性グループの圧縮の調整
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -45,6 +45,6 @@ ms.locfileid: "85888013"
 
 [データベース エンジンのスタートアップ オプション](../../../database-engine/configure-windows/database-engine-service-startup-options.md)
 
-[自動シード処理](https://msdn.microsoft.com/library/mt735149(SQL.130).aspx)
+[自動シード処理](./automatically-initialize-always-on-availability-group.md)
 
-[Always On の前提条件](prereqs-restrictions-recommendations-always-on-availability.md) 
+[Always On の前提条件](prereqs-restrictions-recommendations-always-on-availability.md)

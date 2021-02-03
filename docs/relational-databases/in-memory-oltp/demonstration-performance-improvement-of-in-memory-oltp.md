@@ -9,15 +9,15 @@ ms.reviewer: ''
 ms.technology: in-memory-oltp
 ms.topic: conceptual
 ms.assetid: c6def45d-d2d4-4d24-8068-fab4cd94d8cc
-author: CarlRabeler
-ms.author: carlrab
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: d9d5cccaa99ae0343c3f6c99cd7f7bcfb249df0e
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: markingmyname
+ms.author: maghan
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 22a4e3b5b1ee18fd70ba62c813aa6412bdbd9383
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85723258"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97481273"
 ---
 # <a name="demonstration-performance-improvement-of-in-memory-oltp"></a>実証: インメモリ OLTP によるパフォーマンスの向上
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -64,9 +64,9 @@ go
   
 1.  コード例に使用する既存のテスト データベースを決定します。  
   
-2.  新しいテスト データベースを作成する場合は、 [Azure ポータル](https://portal.azure.com) を使用して、 **imoltp**という名前のデータベースを作成します。  
+2.  新しいテスト データベースを作成する場合は、 [Azure ポータル](https://portal.azure.com) を使用して、 **imoltp** という名前のデータベースを作成します。  
   
- その場合に Azure ポータルを使用する手順については、「 [Get Started with Azure SQL Database (Azure SQL Database の概要)](https://azure.microsoft.com/documentation/articles/sql-database-get-started)」を参照してください。  
+ その場合に Azure ポータルを使用する手順については、「 [Get Started with Azure SQL Database (Azure SQL Database の概要)](/azure/azure-sql/database/single-database-create-quickstart)」を参照してください。  
   
 ### <a name="step-2-create-memory-optimized-tables-and-ncsproc"></a>手順 2:メモリ最適化テーブルと NCSProc を作成する  
  この手順では、メモリ最適化テーブルとネイティブ コンパイル ストアド プロシージャ (NCSProc) を作成します。 次の操作を行います。  
@@ -198,5 +198,4 @@ go
   
 ## <a name="see-also"></a>参照  
  [インメモリ OLTP &#40;インメモリ最適化&#41;](../../relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization.md)  
-  
   

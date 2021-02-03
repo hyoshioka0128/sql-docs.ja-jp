@@ -17,12 +17,13 @@ helpviewer_keywords:
 ms.assetid: 84cce528-edb0-473f-a85f-3eb87fbe2cf3
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: b0ea0f3cbaab9a2935a62e2e921090d83fd8f042
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: a59fd9774bb6c9bdb652f41623856d01c9d2a86a
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86009155"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97438465"
 ---
 # <a name="sqlstate-odbc-error-codes"></a>SQLSTATE (ODBC エラー コード)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -31,11 +32,10 @@ ms.locfileid: "86009155"
   
  状態エラー コードの詳細については、次のトピックを参照してください。  
   
--   [付録 A: ODBC エラー コード](https://go.microsoft.com/fwlink/?LinkId=89356)  
+-   [付録 A: ODBC エラー コード](../../odbc/reference/appendixes/appendix-a-odbc-error-codes.md)  
   
--   [SQLSTATE マッピング](https://go.microsoft.com/fwlink/?LinkId=89355)  
+-   [SQLSTATE マッピング](../../odbc/reference/develop-app/sqlstate-mappings.md)  
   
 ## <a name="see-also"></a>参照  
  [エラーとメッセージの処理](../../relational-databases/native-client-odbc-error-messages/handling-errors-and-messages.md)  
-  
   

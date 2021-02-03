@@ -1,12 +1,12 @@
 ---
 description: sys.dm_xtp_gc_stats (Transact-SQL)
-title: dm_xtp_gc_stats (Transact-sql) |Microsoft Docs
+title: sys.dm_xtp_gc_stats (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - dm_xtp_gc_stats
 - dm_xtp_gc_stats_TSQL
@@ -17,21 +17,21 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_xtp_gc_stats dynamic management view
 ms.assetid: 8287d611-50e3-43e1-ba8d-3e3793d3ba0e
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: e69ed7bc99077962489a81e44484fb2a90b33b70
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: afe3d85f7763359a485eeb5b3939ae4444ddf38a
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89543810"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99126944"
 ---
 # <a name="sysdm_xtp_gc_stats-transact-sql"></a>sys.dm_xtp_gc_stats (Transact-SQL)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
   ガベージコレクションプロセスの現在の動作に関する情報 (全体的な統計情報) を提供 [!INCLUDE[hek_2](../../includes/hek-2-md.md)] します。  
   
- 行は、通常のトランザクション処理の一部として、またはメインのガベージコレクションスレッド (アイドルワーカーと呼ばれます) によってガベージコレクトされます。 ユーザートランザクションがコミットされると、ガベージコレクションキュー dm_xtp_gc_queue_stats (デキュー[&#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-xtp-gc-queue-stats-transact-sql.md)) から1つの作業項目がされます。 ガベージ コレクションが可能であってもメイン ユーザー トランザクションでアクセスされなかった行のガベージ コレクションは、ダスティ コーナー スキャン (使用頻度が低いインデックスの領域のスキャン) の一環としてアイドル ワーカーによって実行されます。  
+ 行は、通常のトランザクション処理の一部として、またはメインのガベージコレクションスレッド (アイドルワーカーと呼ばれます) によってガベージコレクトされます。 ユーザートランザクションがコミットされると、ガベージコレクションキュー ([sys.dm_xtp_gc_queue_stats &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-xtp-gc-queue-stats-transact-sql.md)) から1つの作業項目がデキューされます。 ガベージ コレクションが可能であってもメイン ユーザー トランザクションでアクセスされなかった行のガベージ コレクションは、ダスティ コーナー スキャン (使用頻度が低いインデックスの領域のスキャン) の一環としてアイドル ワーカーによって実行されます。  
   
  詳細については、「[インメモリ OLTP &#40;インメモリ最適化&#41;](../../relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization.md)」を参照してください。  
   

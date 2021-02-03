@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 1615db50-69de-4778-8be6-4e058c00ccd4
 author: MladjoA
 ms.author: mlandzic
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: befee8aca5a1c9d7a66015a02c8851c56d0e5a8a
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 668d1fda7e4b979e52377c03daaddb0cb2286cdd
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88464917"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97462963"
 ---
 # <a name="spatial-data-types-overview"></a>空間データ型の概要
 
-[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
+[!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
   
 空間データには 2 つの型があります。 **geometry** データ型は平面 (ユークリッド (平面地球)) データをサポートしています。 **geometry** データ型 (平面) は、*Open Geospatial Consortium (OGC) Simple Features for SQL Specification* version 1.1.0 および SQL MM (ISO 標準) の両方に準拠しています。
 また、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、**geography** データ型もサポートされています。このデータ型は、GPS の緯度経度座標などの楕円体 (球体地球) データを格納します。
@@ -38,7 +38,7 @@ ms.locfileid: "88464917"
 
 ![geom_hierarchy](../../relational-databases/spatial/media/geom-hierarchy.png)
 
-geography データ型には、インスタンス化可能な型がもう 1 つあります: **FullGlobe**。 **geometry** 型および **geography** 型は、特定のインスタンスが適切な形式のインスタンスである限り、明示的に定義されていない場合でも、そのインスタンスを認識できます。 たとえば、STPointFromText() メソッドを使用して **Point** インスタンスを明示的に定義した場合、そのインスタンスは、メソッドの入力が適切な形式である限り、**geometry** と **geography** によって **Point**として認識されます。 `STGeomFromText()` メソッドを使用して同じインスタンスを定義した場合は、 **geometry** データ型と **geography** データ型の両方で **Point**として認識されます。  
+geography データ型には、インスタンス化可能な型がもう 1 つあります: **FullGlobe**。 **geometry** 型および **geography** 型は、特定のインスタンスが適切な形式のインスタンスである限り、明示的に定義されていない場合でも、そのインスタンスを認識できます。 たとえば、STPointFromText() メソッドを使用して **Point** インスタンスを明示的に定義した場合、そのインスタンスは、メソッドの入力が適切な形式である限り、**geometry** と **geography** によって **Point** として認識されます。 `STGeomFromText()` メソッドを使用して同じインスタンスを定義した場合は、 **geometry** データ型と **geography** データ型の両方で **Point** として認識されます。  
 
 geometry 型および geography 型のサブタイプには、単純型とコレクション型があります。  `STNumCurves()` などのメソッドは、単純型でのみ機能します。  
 
@@ -74,7 +74,7 @@ geometry 型の円弧セグメントは、XY デカルト座標平面上に定�
 
 平面 (平面地球) 座標系では、距離や面積の測定値は座標と同じ測定単位で表されます。 **geometry** データ型を使用した場合、(2, 2) と (5, 6) の間の距離は、使用されている単位に関係なく 5 単位になります。  
 
-楕円体 (球体地球) 座標系では、座標は緯度と経度で表されます。 ただし、長さと面積は、**geography** インスタンスの[空間参照系識別子](https://docs.microsoft.com/sql/relational-databases/spatial/spatial-reference-identifiers-srids)によっても異なりますが、通常はメートルと平方メートルで測定されます。 メートルは、 **geography** データ型の最も一般的な測定単位です。  
+楕円体 (球体地球) 座標系では、座標は緯度と経度で表されます。 ただし、長さと面積は、**geography** インスタンスの [空間参照系識別子](./spatial-reference-identifiers-srids.md)によっても異なりますが、通常はメートルと平方メートルで測定されます。 メートルは、 **geography** データ型の最も一般的な測定単位です。  
 
 ### <a name="orientation-of-spatial-data"></a>空間データの方向
 
@@ -88,7 +88,7 @@ geometry 型の円弧セグメントは、XY デカルト座標平面上に定�
 
 - 各 **geography** インスタンスが 1 つの半球に収まる必要があります。 半球よりも大きい空間オブジェクトを格納することはできません。
 
-- Open Geospatial Consortium (OGC) の Well-Known Text (WKT) 表現または Well-Known Binary (WKB) 表現の **geography** インスタンスでは、半球より大きいオブジェクトが生成される場合に **ArgumentException**がスローされます。  
+- Open Geospatial Consortium (OGC) の Well-Known Text (WKT) 表現または Well-Known Binary (WKB) 表現の **geography** インスタンスでは、半球より大きいオブジェクトが生成される場合に **ArgumentException** がスローされます。  
 
 - 2 つの **geography** インスタンスの入力を必要とする **geography** データ型のメソッド (STIntersection()、STUnion()、STDifference()、STSymDifference() など) では、メソッドの結果が 1 つの半球に収まらない場合に null が返されます。 STBuffer() でも、出力が 1 つの半球に収まらない場合に null が返されます。  
 
@@ -201,10 +201,10 @@ SELECT @g.ToString(), @g.STLength();
 
 ## <a name="see-also"></a>関連項目
 
-- [空間データ (SQL Server)](https://msdn.microsoft.com/library/bb933790.aspx)
-- [geometry データ型メソッド リファレンス](https://msdn.microsoft.com/library/bb933973.aspx)
-- [geography データ型メソッド リファレンス](https://docs.microsoft.com/sql/t-sql/spatial-geography/spatial-types-geography)
+- [空間データ (SQL Server)](./spatial-data-sql-server.md)
+- [geometry データ型メソッド リファレンス](../../t-sql/spatial-geometry/spatial-types-geometry-transact-sql.md)
+- [geography データ型メソッド リファレンス](../../t-sql/spatial-geography/spatial-types-geography.md)
 - [STNumCurves &#40;geometry データ型&#41;](../../t-sql/spatial-geometry/stnumcurves-geometry-data-type.md)
 - [STNumCurves &#40;geography データ型&#41;](../../t-sql/spatial-geography/stnumcurves-geography-data-type.md)
 - [STGeomFromText#40;geometry データ型&#41;](../../t-sql/spatial-geometry/stgeomfromtext-geometry-data-type.md)
-- [STGeomFromText #40;geography データ型&#41;](../../t-sql/spatial-geography/stgeomfromtext-geography-data-type.md)  
+- [STGeomFromText #40;geography データ型&#41;](../../t-sql/spatial-geography/stgeomfromtext-geography-data-type.md)

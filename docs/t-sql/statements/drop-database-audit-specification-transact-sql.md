@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DROP_DATABASE_AUDIT_SPECIFICATION_TSQL
 - DROP DATABASE AUDIT SPECIFICATION
@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: 3c387c6e-9a67-4daa-b64a-c87f6b3c9c4f
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: e4abd76d2f2fb4b2036036e165ec8f075003fc21
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 86b5ed49598119e71b49d8c6df1f9f253d3e2b7e
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88472304"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99186286"
 ---
 # <a name="drop-database-audit-specification-transact-sql"></a>DROP DATABASE AUDIT SPECIFICATION (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -36,7 +36,6 @@ ms.locfileid: "88472304"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 DROP DATABASE AUDIT SPECIFICATION audit_specification_name  
 [ ; ]  
 ```  
@@ -58,7 +57,7 @@ DROP DATABASE AUDIT SPECIFICATION audit_specification_name
 ### <a name="a-dropping-a-database-audit-specification"></a>A. データベース監査仕様を削除する  
  次の例では、`HIPAA_Audit_DB_Specification` という監査を削除します。  
   
-```  
+```sql  
 DROP DATABASE AUDIT SPECIFICATION HIPAA_Audit_DB_Specification;  
 GO  
 ```  

@@ -2,7 +2,7 @@
 description: Validate XML with the XML Task
 title: XML タスクを使った XML の検証 | Microsoft Docs
 ms.custom: ''
-ms.date: 03/14/2017
+ms.date: 09/08/2020
 ms.prod: sql
 ms.prod_service: integration-services
 ms.reviewer: ''
@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 224fc025-c21f-4d43-aa9d-5ffac337f9b0
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 2dd292ea05ae40ff5cd19a1a8e8de55f9f0b9095
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 97e0ea80dcc5cffefc99cbbc928eace94ade942a
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88349258"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172594"
 ---
 # <a name="validate-xml-with-the-xml-task"></a>Validate XML with the XML Task
 
@@ -28,7 +28,7 @@ ms.locfileid: "88349258"
 
   XML タスクの **ValidationDetails** プロパティを有効にして、XML ドキュメントを検証し、詳細なエラー出力を取得します。  
   
- 次のスクリーン ショットは、 **XML タスク エディター** と、XML 検証で詳細なエラー出力を取得するのに必要な設定を示しています。  
+ 次のスクリーン ショットは、**XML タスク エディター** と、XML 検証で詳細なエラー出力を取得するのに必要な設定を示しています。  
   
  ![XML タスク エディターの XML タスク プロパティ](../../integration-services/control-flow/media/xmltaskproperties.jpg "XML タスク エディターの XML タスク プロパティ")  
   
@@ -37,7 +37,7 @@ ms.locfileid: "88349258"
  この XML 検証機能は、大きなサイズの XML ドキュメントや大量のエラーにも、簡単に規模を変更して対応できます。 出力ファイル自体が XML 形式なので、出力に対するクエリの実行と分析が可能です。 たとえば、出力に大量のエラーが含まれている場合、このトピックで説明する方法で [!INCLUDE[tsql](../../includes/tsql-md.md)] クエリを使用して、エラーをグループ化することができます。  
   
 > [!NOTE]
->  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] ( [!INCLUDE[ssIS](../../includes/ssis-md.md)]) では、**Service Pack 2 で**ValidationDetails[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] プロパティが導入されました。 このプロパティは、 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] と [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]でも利用できます。  
+>  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] ( [!INCLUDE[ssIS](../../includes/ssis-md.md)]) では、**Service Pack 2 で** ValidationDetails[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] プロパティが導入されました。 このプロパティは、 [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] と [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)]でも利用できます。  
   
 ## <a name="sample-output-for-xml-thats-valid"></a>有効な XML のサンプル出力  
  有効な XML ファイルの検証結果が記載されたサンプル出力ファイルを次に示します。  
@@ -121,10 +121,9 @@ ORDER BY 2 DESC, COALESCE(error, 'Z');
   
  次に示すのは、前に示したテキストの 2 つ目のサンプル クエリの結果を [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] で表示した画面です。  
   
- ![Management Studio で XML エラーをグループ化するクエリ](../../integration-services/control-flow/media/queryforxmlerrors.jpg "Management Studio で XML エラーをグループ化するクエリ")  
+ ![Management Studio で XML エラーをグループ化するクエリ](../../integration-services/control-flow/media/query-for-xml-errors.png "Management Studio で XML エラーをグループ化するクエリ")  
   
 ## <a name="see-also"></a>参照  
  [XML タスク](../../integration-services/control-flow/xml-task.md)   
- [XML タスク エディター ([全般] ページ)](../../integration-services/control-flow/xml-task-editor-general-page.md)  
-  
+ [XML タスク エディター ([全般] ページ)](./xml-task.md)  
   

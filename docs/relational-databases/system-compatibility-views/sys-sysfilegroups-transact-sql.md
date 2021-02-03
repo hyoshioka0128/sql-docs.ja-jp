@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sysfilegroups_TSQL
 - sys.sysfilegroups
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sysfilegroups system table
 - sys.sysfilegroups compatibility view
 ms.assetid: e567fa07-31cd-43cc-b8c7-ba6108baca80
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: de9252c9a63b419a28f61aad2401471fa5f5c778
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 9d0a11ac6a62ee7f2936e3c31f8e99389b2bd10c
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88427904"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99160717"
 ---
 # <a name="syssysfilegroups-transact-sql"></a>sys.sysファイルグループ (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

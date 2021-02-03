@@ -1,20 +1,20 @@
 ---
 title: SQL Server コンテナーの高可用性
 description: SQL Server コンテナーの高可用性について説明します。 また、Kubernetes 上の SQL Server でのコンテナーのデプロイについても説明します。
-author: MikeRayMSFT
-ms.author: mikeray
+author: VanMSFT
+ms.author: vanto
 ms.reviewer: vanto
 ms.date: 08/09/2018
 ms.topic: article
 ms.prod: sql
 ms.technology: linux
-monikerRange: '>=sql-server-2017||>=sql-server-linux-2017||=sqlallproducts-allversions'
-ms.openlocfilehash: 00665a8306dbf586b92cfec14a8fe21f631f96c9
-ms.sourcegitcommit: 3ea082c778f6771b17d90fb597680ed334d3e0ec
+monikerRange: '>=sql-server-2017||>=sql-server-linux-2017'
+ms.openlocfilehash: b0d384b2d75b6eedc431b4b352de8915b7e8097d
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88088897"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471533"
 ---
 # <a name="high-availability-for-sql-server-containers"></a>SQL Server コンテナーの高可用性
 
@@ -43,5 +43,5 @@ Kubernetes にコンテナーを作成するには、「[Kubernetes に SQL Serv
 ## <a name="next-steps"></a>次のステップ
 
 SQL Server コンテナーを Azure Kubernetes Service (AKS) にデプロイするには、次の例を参照してください。
-* [Docker コンテナーに SQL Server をデプロイする](sql-server-linux-configure-docker.md)
+* [Docker コンテナーに SQL Server をデプロイする](./sql-server-linux-docker-container-deployment.md)
 * [Kubernetes に SQL Server コンテナーをデプロイする](tutorial-sql-server-containers-kubernetes.md)

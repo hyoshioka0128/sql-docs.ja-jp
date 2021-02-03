@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: SQLvariant
 ms.author: aanelson
 ms.reviewer: vanto
-ms.openlocfilehash: fed5ca919a78f3051ba7677f46f786b7c62f9b27
-ms.sourcegitcommit: 3ea082c778f6771b17d90fb597680ed334d3e0ec
+ms.openlocfilehash: a65ad9ad35e4feb2a55ffbdc259601a7b16106f9
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88088855"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98094557"
 ---
 # <a name="manage-sql-server-on-linux-with-powershell-core"></a>PowerShell Core で SQL Server on Linux を管理する
 
@@ -21,16 +21,16 @@ ms.locfileid: "88088855"
 
 ## <a name="cross-platform-editor-options"></a>クロスプラットフォーム エディター オプション
 
-下の PowerShell Core の手順はすべて、通常のターミナルで動作します。あるいは、VS Code または Azure Data Studio 内のターミナルから実行できます。  VS Code と Azure Data Studio のいずれも macOS と Linux で利用できます。  Azure Data Studio の詳細は、[このクイックスタート](https://docs.microsoft.com/sql/azure-data-studio/quickstart-sql-server)を参照してください。  [PowerShell 拡張機能](https://docs.microsoft.com/sql/azure-data-studio/powershell-extension)の使用もお勧めします。
+下の PowerShell Core の手順はすべて、通常のターミナルで動作します。あるいは、VS Code または Azure Data Studio 内のターミナルから実行できます。  VS Code と Azure Data Studio のいずれも macOS と Linux で利用できます。  Azure Data Studio の詳細は、[このクイックスタート](../azure-data-studio/quickstart-sql-server.md)を参照してください。  [PowerShell 拡張機能](../azure-data-studio/extensions/powershell-extension.md)の使用もお勧めします。
 
 ## <a name="installing-powershell-core"></a>PowerShell Core のインストール
 
 サポートされているさまざまな実験用プラットフォームで PowerShell Core をインストールする方法については、次の記事を参照してください。
 
-- [Windows に PowerShell Core をインストールする](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-6)
-- [Linux に PowerShell Core をインストールする](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-6)
-- [macOS に PowerShell Core をインストールする](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6)
-- [ARM に PowerShell Core をインストールする](https://docs.microsoft.com/powershell/scripting/install/powershell-core-on-arm?view=powershell-6)
+- [Windows に PowerShell Core をインストールする](/powershell/scripting/install/installing-powershell-core-on-windows)
+- [Linux に PowerShell Core をインストールする](/powershell/scripting/install/installing-powershell-core-on-linux)
+- [macOS に PowerShell Core をインストールする](/powershell/scripting/install/installing-powershell-core-on-macos)
+- [ARM に PowerShell Core をインストールする](/powershell/scripting/install/powershell-core-on-arm)
 
 ## <a name="install-the-sqlserver-module"></a>SqlServer モジュールをインストールする
 
@@ -46,7 +46,7 @@ PowerShell ギャラリーから SqlServer モジュールをインストール�
 
 ## <a name="using-the-sqlserver-module"></a>SqlServer モジュールを使用する
 
-まず、PowerShell Core を起動してみましょう。  macOS または Linux を使用している場合、コンピューターで*ターミナル セッション*を開き、「**pwsh**」と入力すると、新しい PowerShell Core セッションが起動します。  Windows の場合、<kbd>Win</kbd>+<kbd>R</kbd> を使用し、「`pwsh`」と入力すると、新しい PowerShell Core セッションが起動します。
+まず、PowerShell Core を起動してみましょう。  macOS または Linux を使用している場合、コンピューターで *ターミナル セッション* を開き、「**pwsh**」と入力すると、新しい PowerShell Core セッションが起動します。  Windows の場合、<kbd>Win</kbd>+<kbd>R</kbd> を使用し、「`pwsh`」と入力すると、新しい PowerShell Core セッションが起動します。
 
 ```
 pwsh
@@ -108,7 +108,7 @@ your_server_instance            14.0.3048  RTM          CU13         Linux      
 
 ## <a name="using-the-sql-server-powershell-provider"></a>SQL Server PowerShell プロバイダーの使用
 
-SQL Server インスタンスに接続するもう 1 つの方法は、[SQL Server PowerShell プロバイダー](https://docs.microsoft.com/sql/powershell/sql-server-powershell-provider)を使用することです。  プロバイダーを使用すると、オブジェクト エクスプローラーのツリー構造の中を移動するように SQL Server インスタンスの中を移動できます (ただし、コマンドラインで)。  既定では、このプロバイダーは `SQLSERVER:\` という名前の PSDrive として表示されます。これを使用し、ドメイン アカウントでアクセスできる SQL Server インスタンスを接続し、その中を移動できます。  SQL Server on Linux 用に Active Directory 認証を設定する方法については、「[構成手順](https://docs.microsoft.com/sql/linux/sql-server-linux-active-directory-auth-overview#configuration-steps)」を参照してください。
+SQL Server インスタンスに接続するもう 1 つの方法は、[SQL Server PowerShell プロバイダー](../powershell/sql-server-powershell-provider.md)を使用することです。  プロバイダーを使用すると、オブジェクト エクスプローラーのツリー構造の中を移動するように SQL Server インスタンスの中を移動できます (ただし、コマンドラインで)。  既定では、このプロバイダーは `SQLSERVER:\` という名前の PSDrive として表示されます。これを使用し、ドメイン アカウントでアクセスできる SQL Server インスタンスを接続し、その中を移動できます。  SQL Server on Linux 用に Active Directory 認証を設定する方法については、「[構成手順](./sql-server-linux-active-directory-auth-overview.md#configuration-steps)」を参照してください。
 
 SQL Server PowerShell プロバイダーで SQL 認証を使用することもできます。 これを行うには、`New-PSDrive` コマンドレットを使用して新しい PSDrive を作成し、正しい資格情報を指定して接続します。
 
@@ -183,7 +183,7 @@ tempdb               Normal       16.00 MB    5.49 MB Simple       140 sa
 次のコマンドをコピーして PowerShell プロンプトに貼り付けます。 実行に数分かかる場合があります。 これらのコマンドで次の手順が実行されます。
 - インスタンスのホスト名または IP アドレスの入力を求めるダイアログが表示されます
 - *[PowerShell 資格情報の要求]* ダイアログが表示され、資格情報の入力が求められます。 "*SQL ユーザー名*" と "*SQL パスワード*" を使って、Linux 上の SQL Server インスタンスに接続できます
-- **Get-SqlErrorLog** コマンドレットを使用して Linux 上の SQL Server インスタンスに接続し、**昨日**以降のエラー ログを取得します
+- **Get-SqlErrorLog** コマンドレットを使用して Linux 上の SQL Server インスタンスに接続し、**昨日** 以降のエラー ログを取得します
 
 必要に応じて、`$serverInstance` 変数をお使いの SQL Server インスタンスの IP アドレスまたはホスト名に置き換えることができます。
 
@@ -198,7 +198,7 @@ Get-SqlErrorLog -ServerInstance $serverInstance -Credential $credential -Since Y
 ```
 
 ## <a name="explore-cmdlets-currently-available-in-ps-core"></a>PS Core で現在利用できるコマンドレットを試す
-SqlServer モジュールには現在、Windows PowerShell で利用できるコマンドレットが 109 個用意されていますが、109 個のうちの 62 個だけが PSCore で利用できます。 現在利用できる 62 個のコマンドレットの完全なリストは、以下に含まれています。  SqlServer モジュールの全コマンドレットを詳しく記録したものが必要な場合、SqlServer [コマンドレット リファレンス](https://docs.microsoft.com/powershell/module/sqlserver/)を参照してください。
+SqlServer モジュールには現在、Windows PowerShell で利用できるコマンドレットが 109 個用意されていますが、109 個のうちの 62 個だけが PSCore で利用できます。 現在利用できる 62 個のコマンドレットの完全なリストは、以下に含まれています。  SqlServer モジュールの全コマンドレットを詳しく記録したものが必要な場合、SqlServer [コマンドレット リファレンス](/powershell/module/sqlserver/)を参照してください。
 
 次のコマンドでは、お使いのバージョンの PowerShell で利用できるすべてのコマンドレットが表示されます。
 
@@ -272,4 +272,4 @@ SELECT Name
 - Convert-UrnToPath
 
 ## <a name="see-also"></a>関連項目
-- [SQL Server PowerShell](../relational-databases/scripting/sql-server-powershell.md)
+- [SQL Server PowerShell](../powershell/sql-server-powershell.md)

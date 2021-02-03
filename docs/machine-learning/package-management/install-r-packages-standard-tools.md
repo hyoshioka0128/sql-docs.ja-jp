@@ -7,25 +7,24 @@ ms.date: 11/20/2019
 ms.topic: how-to
 author: garyericson
 ms.author: garye
-ms.reviewer: davidph
-monikerRange: =sql-server-2016||=sql-server-2017||=sqlallproducts-allversions
-ms.openlocfilehash: a1a135588c9775758008b5db9ffca38e6ff3d041
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =sql-server-2016||=sql-server-2017
+ms.openlocfilehash: 5943de8bcc6588572bc3acebed5b3ba4104b7a96
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85723955"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471063"
 ---
 # <a name="install-packages-with-r-tools"></a>R ツールを使用してパッケージをインストールする
 
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2016 and 2017 only](../../includes/applies-to-version/sqlserver2016-2017-only.md)]
 
 この記事では、標準の R ツールを使用して、新しい R パッケージを SQL Server Machine Learning Services または SQL Server R Services のインスタンスにインストールする方法について説明します。 インターネットに接続されている SQL Server だけでなく、インターネットから切り離されている SQL Server にもパッケージをインストールできます。
 
 標準の R ツールの他に、次のものを使用して R パッケージをインストールできます。
 
 + [RevoScaleR](install-r-packages-with-revoscaler.md)
-::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2017"
 + [T-SQL](install-r-packages-with-tsql.md) (CREATE EXTERNAL LIBRARY)
 ::: moniker-end
 
@@ -36,13 +35,13 @@ ms.locfileid: "85723955"
 
 + R パッケージ ライブラリは SQL Server インスタンスの Program Files フォルダー内にあります。既定では、このフォルダーにインストールするには管理者権限が必要です。 詳細については、[パッケージ ライブラリの場所](../package-management/r-package-information.md#default-r-library-location)に関するページを参照してください。
 
-  ::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+  ::: moniker range="=sql-server-2017"
   管理者以外のユーザーは、RevoScaleR 9.0.1 以降または CREATE EXTERNAL LIBRARY を使用してパッケージをインストールできます。 **dbo_owner** ユーザー、または CREATE EXTERNAL LIBRARY 権限を持つユーザーは、現在のデータベースに R パッケージをインストールできます。 詳細については、次を参照してください。
   + [RevoScaleR を使用して R パッケージをインストールする](install-r-packages-with-revoscaler.md)
   + [T-SQL (CREATE EXTERNAL LIBRARY) を使用して SQL Server に R パッケージをインストールする](install-r-packages-with-tsql.md)
   ::: moniker-end
 
-  ::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+  ::: moniker range="=sql-server-2016"
   管理者以外のユーザーは、RevoScaleR 9.0.1 以降を使用してパッケージをインストールできます。 **dbo_owner** ユーザーは、現在のデータベースに R パッケージをインストールできます。 詳細については、「[RevoScaleR を使用して R パッケージをインストールする](install-r-packages-with-revoscaler.md)」を参照してください。
   ::: moniker-end
 
@@ -57,13 +56,13 @@ SQL Server からインターネットにアクセスできる場合は、標準
 
 1. インスタンス ライブラリの場所を特定し (「[R パッケージ情報の取得](../package-management/r-package-information.md)」を参照)、R ツールがインストールされているフォルダーに移動します。
 
-   ::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+   ::: moniker range="=sql-server-2016"
    たとえば、SQL Server の既定のインスタンスの既定のパスは次のようになります。
 
    `C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES\bin\x64\`
    ::: moniker-end
 
-   ::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+   ::: moniker range="=sql-server-2017"
    たとえば、SQL Server の既定のインスタンスの既定のパスは次のようになります。
 
    `C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\R_SERVICES\bin\x64\`
@@ -88,13 +87,13 @@ ZIP ファイルが SQL Server インスタンス上にある場合は、標準�
 
 1. インスタンス ライブラリの場所を特定し (「[R パッケージ情報の取得](../package-management/r-package-information.md)」を参照)、R ツールがインストールされているフォルダーに移動します。 
 
-   ::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+   ::: moniker range="=sql-server-2016"
    たとえば、SQL Server の既定のインスタンスの既定のパスは次のようになります。
 
    `C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES\bin\x64\`
    ::: moniker-end
 
-   ::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+   ::: moniker range="=sql-server-2017"
    たとえば、SQL Server の既定のインスタンスの既定のパスは次のようになります。
 
    `C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\R_SERVICES\bin\x64\`
@@ -127,4 +126,4 @@ ZIP ファイルが SQL Server インスタンス上にある場合は、標準�
 
 + [R パッケージ情報の取得](r-package-information.md)
 + [R パッケージを使用するためのヒント](tips-for-using-r-packages.md)
-+ [SQL Server の R 言語のチュートリアル](../tutorials/sql-server-r-tutorials.md)
++ [SQL Server の R 言語のチュートリアル](../tutorials/r-tutorials.md)

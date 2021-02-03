@@ -21,15 +21,15 @@ helpviewer_keywords:
 - LTRIM function
 - blank characters [SQL Server]
 ms.assetid: 369ed340-1a09-4597-a9eb-6720156cd39a
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 8cbf878b6e5dd7023e45a9057e1195c76a26ecb7
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: e00469b9438f7ff8bcfe7567d97b35f0058b7f38
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88467986"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102582"
 ---
 # <a name="ltrim-transact-sql"></a>LTRIM (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -48,7 +48,7 @@ LTRIM ( character_expression )
 
 ## <a name="arguments"></a>引数
  *character_expression*  
- 文字データまたはバイナリ データの[式](../../t-sql/language-elements/expressions-transact-sql.md)を指定します。 *character_expression* には定数、変数、または列を指定できます。 *character_expression* 以外のデータ型の場合は、ある必要があります **text**、**ntext**、および **image**、つまりに暗黙的に変換 **varchar**です。 それ以外の場合は、[CAST](../../t-sql/functions/cast-and-convert-transact-sql.md) を指定して明示的に *character_expression* を変換します。  
+ 文字データまたはバイナリ データの[式](../../t-sql/language-elements/expressions-transact-sql.md)を指定します。 *character_expression* には定数、変数、または列を指定できます。 *character_expression* 以外のデータ型の場合は、ある必要があります **text**、**ntext**、および **image**、つまりに暗黙的に変換 **varchar** です。 それ以外の場合は、[CAST](../../t-sql/functions/cast-and-convert-transact-sql.md) を指定して明示的に *character_expression* を変換します。  
   
 ## <a name="return-type"></a>戻り値の型  
  **varchar** または **nvarchar**  
@@ -60,7 +60,7 @@ LTRIM ( character_expression )
  次の例では、LTRIM を使用して文字式から先頭の空白を削除します。  
   
 ```sql  
-SELECT LTRIM('     Five spaces are at the beginning of this string.') FROM sys.databases;  
+SELECT LTRIM('     Five spaces are at the beginning of this string.');  
 ```  
   
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  

@@ -1,7 +1,8 @@
 ---
-title: コンカレンシー制御について | Microsoft Docs
+title: コンカレンシー制御について
+description: SQL Server 用 JDBC Driver でマルチユーザー アプリケーションを開発するときのコンカレンシー制御とデータベース整合性の維持方法について説明します。
 ms.custom: ''
-ms.date: 08/12/2019
+ms.date: 12/08/2020
 ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
@@ -10,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 98b7dabe-9b12-4e1d-adeb-e5b5cb0c96f3
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 520abf20b52f15458ac36d7a2e617a04970eb66a
-ms.sourcegitcommit: fe5c45a492e19a320a1a36b037704bf132dffd51
+ms.openlocfilehash: c44f52697fa8048a8c7db2286c3e69114f658152
+ms.sourcegitcommit: 7f76975c29d948a9a3b51abce564b9c73d05dcf0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80925338"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96900945"
 ---
 # <a name="understanding-concurrency-control"></a>コンカレンシー制御について
 [!INCLUDE[Driver_JDBC_Download](../../includes/driver_jdbc_download.md)]
@@ -23,7 +24,7 @@ ms.locfileid: "80925338"
   コンカレンシー制御とは、複数のユーザーが同時に行を更新しているときにデータベースの整合性を維持するために使用される、さまざまな手法を表します。 不適切なコンカレンシーは、ダーティ リード、ファントム読み取り、反復不能読み取りなどの問題につながります。 [!INCLUDE[jdbcNoVersion](../../includes/jdbcnoversion_md.md)] は、これらの問題を解決するために [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によって使用されるすべてのコンカレンシー手法へのインターフェイスを提供します。  
   
 > [!NOTE]  
->  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のコンカレンシーの詳細については、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] オンライン ブックの「コンカレント データ アクセスの管理」を参照してください。  
+>  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のコンカレンシーの詳細については、「[同時実行データ アクセスの管理](../../relational-databases/sql-server-transaction-locking-and-row-versioning-guide.md#managing-concurrent-data-access)」を参照してください。  
   
 ## <a name="remarks"></a>解説  
  JDBC ドライバーは、以下に示すコンカレンシーの種類をサポートしています。  
@@ -45,7 +46,7 @@ ms.locfileid: "80925338"
 |ステートメントが TYPE_SCROLL_INSENSITIVE を使用して作成されている|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は、静的スナップショット カーソルを作成します。 このカーソルは、他のユーザーによる行の更新からカーソルを保護するために、基になるテーブル行から切り離されています。|TYPE_SCROLL_SENSITIVE、TYPE_SS_SCROLL_KEYSET、TYPE_SS_SCROLL_DYNAMIC、または TYPE_FORWARD_ONLY を CONCUR_UPDATABLE と共に使用し、静的カーソルが作成されないようにします。|  
 |テーブル デザインにより KEYSET カーソルまたは DYNAMIC カーソルが使用できなくなっている|基になるテーブルに、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] が行を一意に識別できる一意キーがありません。|一意キーをテーブルに追加し、各行を一意に識別できるようにします。|  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [JDBC ドライバーによる結果セットの管理](../../connect/jdbc/managing-result-sets-with-the-jdbc-driver.md)  
   
   

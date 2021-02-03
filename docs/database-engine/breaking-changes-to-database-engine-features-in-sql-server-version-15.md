@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: ''
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: '>=sql-server-2017||=sqlallproducts-allversions||>=sql-server-linux-2017'
-ms.openlocfilehash: 42dcedd7eec5e69259fb32a3939e6a6c42598f4d
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+monikerRange: '>=sql-server-2017||>=sql-server-linux-2017'
+ms.openlocfilehash: bdabf31b5963201014bc6f48f26136d820ef0b7a
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86919583"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97483714"
 ---
 # <a name="breaking-changes-to-database-engine-in-sssqlv15-md"></a>[!INCLUDE[sssqlv15-md](../includes/sssqlv15-md.md)] におけるデータベース エンジンの重大な変更
 [!INCLUDE[sqlserver2019](../includes/applies-to-version/sqlserver2019.md)]
@@ -31,4 +31,4 @@ SQL Server 2019 には、重大な変更はありません。
 
 - [SQL Server 2019 データベース エンジンの非推奨の機能](../database-engine/deprecated-database-engine-features-in-sql-server-version-15.md)   
 - [SQL Server で廃止されたデータベース エンジンの機能](../database-engine/discontinued-database-engine-functionality-in-sql-server.md)   
-- [SQL Server データベース エンジンの旧バージョンとの互換性](../database-engine/sql-server-database-engine-backward-compatibility.md)
+- [SQL Server データベース エンジンの旧バージョンとの互換性](./discontinued-database-engine-functionality-in-sql-server.md)

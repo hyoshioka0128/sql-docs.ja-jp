@@ -21,13 +21,13 @@ helpviewer_keywords:
 ms.assetid: a8afcdbc-55db-4916-a219-19454f561f9e
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions
-ms.openlocfilehash: 5da2a080ef20bd98b27873796a64b433268ae06f
-ms.sourcegitcommit: 768f046107642f72693514f51bf2cbd00f58f58a
+monikerRange: =azuresqldb-current||>=sql-server-2016
+ms.openlocfilehash: 1d395bebae8b009f4e91d8df074401f8659e1748
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87108428"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97467403"
 ---
 # <a name="strategies-for-backing-up-and-restoring-snapshot-and-transactional-replication"></a>スナップショット レプリケーションおよびトランザクション レプリケーションのバックアップと復元の方式
 [!INCLUDE[sql-asdb](../../../includes/applies-to-version/sql-asdb.md)]
@@ -238,17 +238,17 @@ ms.locfileid: "87108428"
   
     4.  手順 b で取得した値 `@request_id` を指定して、[sp_helppeerresponses](../../../relational-databases/system-stored-procedures/sp-helppeerresponses-transact-sql.md) を実行します。 すべてのノードがピア要求を受信するまで待機します。 手順 e. に進みます。  
   
-    5.  データベース **C** のパブリケーションに対するサブスクリプションをデータベース **B**で再作成します。その際に、サブスクライバーにデータが格納済みであることを指定します。 手順 b. に進みます。  
+    5.  データベース **C** のパブリケーションに対するサブスクリプションをデータベース **B** で再作成します。その際に、サブスクライバーにデータが格納済みであることを指定します。 手順 b. に進みます。  
   
-    6.  データベース **B** のパブリケーションに対するサブスクリプションをデータベース **C**で再作成します。その際に、サブスクライバーにデータが格納済みであることを指定します。 手順 13 に進みます。  
+    6.  データベース **B** のパブリケーションに対するサブスクリプションをデータベース **C** で再作成します。その際に、サブスクライバーにデータが格納済みであることを指定します。 手順 13 に進みます。  
   
-12. データベース **B** とデータベース **C**の間のサブスクリプションを再作成します。  
+12. データベース **B** とデータベース **C** の間のサブスクリプションを再作成します。  
   
-    1.  データベース **B**で [MSpeer_lsns](../../../relational-databases/system-tables/mspeer-lsns-transact-sql.md) テーブルにクエリを実行して、データベース **B** がデータベース **C**から受信した最新のトランザクションのログ シーケンス番号 (LSN) を取得します。  
+    1.  データベース **B** で [MSpeer_lsns](../../../relational-databases/system-tables/mspeer-lsns-transact-sql.md) テーブルにクエリを実行して、データベース **B** がデータベース **C** から受信した最新のトランザクションのログ シーケンス番号 (LSN) を取得します。  
   
     2.  データベース **B** で、データベース **C** でのパブリケーションに対するサブスクリプションを再作成します。そのとき、LSN に基づいてサブスクリプションを初期化する必要があることを指定します ([sp_addsubscription](../../../relational-databases/system-stored-procedures/sp-addsubscription-transact-sql.md) の `@sync_type` パラメーターに対して値 " **initialize from lsn**" を指定)。 手順 b. に進みます。  
   
-    3.  データベース **B** のパブリケーションに対するサブスクリプションをデータベース **C**で再作成します。その際に、サブスクライバーにデータが格納済みであることを指定します。 手順 13 に進みます。  
+    3.  データベース **B** のパブリケーションに対するサブスクリプションをデータベース **C** で再作成します。その際に、サブスクライバーにデータが格納済みであることを指定します。 手順 13 に進みます。  
   
 13. ディストリビューション エージェントを実行して、データベース **B** およびデータベース **C** のサブスクリプションを同期します。復元が完了します。  
   

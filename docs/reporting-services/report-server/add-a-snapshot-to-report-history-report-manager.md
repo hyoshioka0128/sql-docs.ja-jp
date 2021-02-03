@@ -9,12 +9,12 @@ ms.author: maggies
 ms.reviewer: ''
 ms.custom: ''
 ms.date: 06/26/2019
-ms.openlocfilehash: 1effcdd44d04b3125cdeaf9983372cdcb00bd429
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+ms.openlocfilehash: 18d1cc11b8ab4d4501e62ac5acfbffaeab32c892
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87245735"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97466583"
 ---
 # <a name="add-a-snapshot-to-report-history"></a>レポート履歴にスナップショットを追加する
 
@@ -24,7 +24,7 @@ ms.locfileid: "87245735"
   
 ## <a name="to-manually-add-snapshots-to-report-history"></a>レポート履歴にスナップショットを手動で追加するには
   
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 
 1. レポート マネージャーで、 **[コンテンツ]** ページに移動し、履歴を表示するアイテムの上にマウス ポインターを移動して、下矢印をクリックします。
   
@@ -32,7 +32,7 @@ ms.locfileid: "87245735"
   
 3. **[新しいスナップショット]** をクリックします。 **[実行時]** 列に新しいスナップショットが作成されます。  
     > [!NOTE]
-    > スナップショット作成を有効にするには、管理者は**履歴の手動作成を許可する**ようにレポート履歴を構成する必要があります。 詳細については、 [レポート履歴を制限する (レポート マネージャー)](../reports/limit-report-history-report-manager.md)をクリックします。
+    > スナップショット作成を有効にするには、管理者は **履歴の手動作成を許可する** ようにレポート履歴を構成する必要があります。 詳細については、 [レポート履歴を制限する (レポート マネージャー)](../reports/limit-report-history-report-manager.md)をクリックします。
 
 4. **[Apply]** をクリックします。
   
@@ -71,11 +71,11 @@ ms.locfileid: "87245735"
 - [レポートの実行プロパティを構成する &#40;レポート マネージャー&#41;](../../reporting-services/reports/configure-execution-properties-for-a-report-report-manager.md)
 - [レポート履歴を制限する &#40;レポート マネージャー&#41;](../../reporting-services/reports/limit-report-history-report-manager.md)
 - [スケジュール](../../reporting-services/subscriptions/schedules.md)   
-- [レポート マネージャー &#40;SSRS ネイティブ モード&#41;](https://msdn.microsoft.com/library/80949f9d-58f5-48e3-9342-9e9bf4e57896)
+- [レポート マネージャー &#40;SSRS ネイティブ モード&#41;](../web-portal-ssrs-native-mode.md)
 
 ::: moniker-end
 
-::: moniker range=">=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2017"
 
 ## <a name="to-manually-add-snapshots-to-report-history"></a>レポート履歴にスナップショットを手動で追加するには
   
@@ -88,7 +88,7 @@ ms.locfileid: "87245735"
 4. **[履歴スナップショット]** ページで、 **[新しい履歴スナップショット]** を選択します。 新しいスナップショットが作成され、下の **[作成済み]** 列に現在の日付と時刻で表示されます。  
   
     > [!NOTE]
-    > スナップショット作成を有効にするには、管理者は**履歴の手動作成を許可する**ようにレポート履歴を構成する必要があります。 詳細については、「[レポート履歴を制限する (Web ポータル)](../../reporting-services/reports/limit-report-history-report-manager.md)」を参照してください。
+    > スナップショット作成を有効にするには、管理者は **履歴の手動作成を許可する** ようにレポート履歴を構成する必要があります。 詳細については、「[レポート履歴を制限する (Web ポータル)](../../reporting-services/reports/limit-report-history-report-manager.md)」を参照してください。
 
 ## <a name="to-add-snapshots-via-a-schedule-to-report-history"></a>スケジュールを利用し、レポート履歴にスナップショットを追加するには
 
@@ -111,7 +111,7 @@ ms.locfileid: "87245735"
 8.  **[適用]** を選択し、設定を保存します。  
 
     > [!NOTE]  
-    > スナップショット作成を有効にするには、管理者は**履歴の手動作成を許可する**ようにレポート履歴を構成する必要があります。 詳細については、[レポート履歴の制限 (Web ポータル)](../../reporting-services/reports/limit-report-history-report-manager.md)に関するページを参照してください。
+    > スナップショット作成を有効にするには、管理者は **履歴の手動作成を許可する** ようにレポート履歴を構成する必要があります。 詳細については、[レポート履歴の制限 (Web ポータル)](../../reporting-services/reports/limit-report-history-report-manager.md)に関するページを参照してください。
 
 9.  **[Apply]** をクリックします。
 
@@ -160,6 +160,6 @@ ms.locfileid: "87245735"
 - [レポートの実行プロパティを構成する (Web ポータル)](../../reporting-services/reports/configure-execution-properties-for-a-report-report-manager.md)
 - [レポート履歴を制限する (Web ポータル)](../../reporting-services/reports/limit-report-history-report-manager.md)
 - [スケジュール](../../reporting-services/subscriptions/schedules.md)   
-- [Web ポータル &#40;SSRS ネイティブ モード&#41;](https://msdn.microsoft.com/library/80949f9d-58f5-48e3-9342-9e9bf4e57896)
+- [Web ポータル &#40;SSRS ネイティブ モード&#41;](../web-portal-ssrs-native-mode.md)
 
 ::: moniker-end

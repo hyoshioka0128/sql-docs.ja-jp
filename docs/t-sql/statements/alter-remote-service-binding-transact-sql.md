@@ -18,14 +18,14 @@ helpviewer_keywords:
 - ALTER REMOTE SERVICE BINDING statement
 - modifying remote service bindings
 ms.assetid: ee620b4a-9375-4eaa-a016-69916c9e1e68
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: e5f1d1f3149cd00456c89d8edea1af014a43756f
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: c671b412d5d9ce34c34fdc49e16215dafc8ec83e
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88458884"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092122"
 ---
 # <a name="alter-remote-service-binding-transact-sql"></a>ALTER REMOTE SERVICE BINDING (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -37,7 +37,6 @@ ms.locfileid: "88458884"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 ALTER REMOTE SERVICE BINDING binding_name   
    WITH [ USER = <user_name> ] [ , ANONYMOUS = { ON | OFF } ]   
 [ ; ]  
@@ -69,7 +68,7 @@ ALTER REMOTE SERVICE BINDING binding_name
 ## <a name="examples"></a>例  
  次の例では、リモート サービス バインド `APBinding` を変更し、アカウント `SecurityAccount` からの証明を使用してメッセージを暗号化します。  
   
-```  
+```sql  
 ALTER REMOTE SERVICE BINDING APBinding  
     WITH USER = SecurityAccount ;  
 ```  

@@ -19,15 +19,15 @@ helpviewer_keywords:
 - UPDATE STATISTICS statement
 - statistical information [SQL Server], updating
 ms.assetid: 919158f2-38d0-4f68-82ab-e1633bd0d308
-author: CarlRabeler
-ms.author: carlrab
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 76a5cb5e751249400529aeef059cbc504097f3bc
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 3680ba07e290f8b531ab46576f76bd3ffeee3460
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88356718"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170444"
 ---
 # <a name="update-statistics-transact-sql"></a>UPDATE STATISTICS (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -73,7 +73,7 @@ UPDATE STATISTICS table_or_indexed_view_name
 ```  
   
 ```syntaxsql
--- Syntax for Azure SQL Data Warehouse and Parallel Data Warehouse  
+-- Syntax for Azure Synapse Analytics and Parallel Data Warehouse  
   
 UPDATE STATISTICS [ schema_name . ] table_name   
     [ ( { statistics_name | index_name } ) ]  
@@ -86,8 +86,10 @@ UPDATE STATISTICS [ schema_name . ] table_name
     ]  
 [;]  
 ```  
-  
+
 [!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
+
+[!INCLUDE[synapse-analytics-od-unsupported-syntax](../../includes/synapse-analytics-od-unsupported-syntax.md)]
 
 ## <a name="arguments"></a>引数
  *table_or_indexed_view_name*  
@@ -106,7 +108,7 @@ UPDATE STATISTICS [ schema_name . ] table_name
   
  SAMPLE は、既定のサンプリングに基づくクエリ プランが最適ではない特殊な場合に使用できます。 クエリ オプティマイザーは、既定でサンプリングを使用して統計的に有意なサンプル サイズを決定するため、SAMPLE を指定する必要はほとんどありませんが、高品質のクエリ プランを作成する場合は、SAMPLE が必要です。 
  
-[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降では、データのサンプリングによる統計の作成が並列で実行できるようになりました (互換性レベル 130 を使用している場合)。これにより、統計情報収集のパフォーマンスが上がります。 テーブル サイズが一定のしきい値を超えると、クエリ オプティマイザーは並列サンプリングによる統計を使用します。 
+[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降では、データのサンプリングによる統計の作成が並列で実行できるようになりました (互換性レベル 130 を使用している場合)。これにより、統計情報収集のパフォーマンスが上がります。 テーブル サイズが一定のしきい値を超えると、クエリ オプティマイザーは並列サンプリングによる統計を使用します。 
    
  FULLSCAN オプションには SAMPLE を使用できません。 SAMPLE も FULLSCAN も指定しない場合、既定でサンプリングしたデータが使用され、サンプル サイズが計算されます。  
   
@@ -114,7 +116,7 @@ UPDATE STATISTICS [ schema_name . ] table_name
   
  ほとんどのワークロードでは、フル スキャンは必要なく、既定のサンプリングで十分です。  
 ただし、変化するデータ分布の影響を受ける特定のワークロードではサンプル サイズの増加が必要な場合があり、フル スキャンが必要な場合もあります。  
-詳しくは、[CSS SQL Escalation Services に関するブログ](https://docs.microsoft.com/archive/blogs/psssql/sampling-can-produce-less-accurate-statistics-if-the-data-is-not-evenly-distributed)をご覧ください。  
+詳しくは、[CSS SQL Escalation Services に関するブログ](/archive/blogs/psssql/sampling-can-produce-less-accurate-statistics-if-the-data-is-not-evenly-distributed)をご覧ください。  
   
  RESAMPLE  
  最新のサンプル レートを使用して各統計を更新します。  
@@ -134,7 +136,7 @@ PERSIST_SAMPLE_PERCENT = { ON | OFF }
  > [!TIP] 
  > [DBCC SHOW_STATISTICS](../../t-sql/database-console-commands/dbcc-show-statistics-transact-sql.md) と [sys.dm_db_stats_properties](../../relational-databases/system-dynamic-management-views/sys-dm-db-stats-properties-transact-sql.md) は、選択した統計について保存されたサンプル率値を公開します。
  
- **適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 CU4 以降) 以降 ([!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU1 以降)。  
+ **適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 CU4 以降) 以降 ([!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU1 以降)。  
  
  ON PARTITIONS ( { \<partition_number> | \<range> } [, ...n] ) ] ON PARTITIONS 句で指定したパーティションを対象としたリーフ レベルの統計を強制的に再計算してから、それらをマージして全体統計を構築します。 異なるサンプル レートで構築されたパーティションの統計はマージできないため、WITH RESAMPLE が必要になります。  
   
@@ -169,7 +171,7 @@ PERSIST_SAMPLE_PERCENT = { ON | OFF }
 **適用対象**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降
 
 MAXDOP = *max_degree_of_parallelism*  
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP2 および [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 以降)。  
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP2 および [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] CU3 以降)。  
   
  統計操作の間、**max degree of parallelism** 構成オプションをオーバーライドします。 詳細については、「 [max degree of parallelism サーバー構成オプションの構成](../../database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option.md)」を参照してください。 並列プランの実行で使用されるプロセッサ数を制限するには、MAXDOP を使用します。 最大数は 64 プロセッサです。  
   
@@ -211,10 +213,10 @@ EXEC sp_updatestats;
 ### <a name="determining-the-last-statistics-update"></a>統計の最終更新日の特定  
  統計の最終更新日を調べるには、 [STATS_DATE](../../t-sql/functions/stats-date-transact-sql.md) 関数を使用します。  
   
-### <a name="pdw--sql-data-warehouse"></a>PDW / SQL Data Warehouse  
- 次の構文は、PDW / SQL Data Warehouse ではサポートされていません  
+### <a name="pdw--azure-synapse-analytics"></a>PDW / Azure Synapse Analytics  
+ 以下の構文は [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] / [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] でサポートされていません  
   
-```syntaxsql
+```sql
 UPDATE STATISTICS t1 (a,b);   
 ```  
   
@@ -317,4 +319,4 @@ UPDATE STATISTICS Customer;
  [sp_updatestats &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-updatestats-transact-sql.md)   
  [STATS_DATE &#40;Transact-SQL&#41;](../../t-sql/functions/stats-date-transact-sql.md)  
  [sys.dm_db_stats_properties &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-stats-properties-transact-sql.md)    
- [sys.dm_db_stats_histogram &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-stats-histogram-transact-sql.md)   
+ [sys.dm_db_stats_histogram &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-stats-histogram-transact-sql.md)

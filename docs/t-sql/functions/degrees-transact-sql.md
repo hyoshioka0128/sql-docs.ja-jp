@@ -17,15 +17,15 @@ helpviewer_keywords:
 - DEGREES function
 - number of degrees
 ms.assetid: 5208de3c-90a3-4f59-a7e3-10b01bf285bb
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 4eba677197f76a27ed76d10a4a413e7de2a311b2
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: ee6a72a4f0da2c2bebeb07ceed1e9520cec642e9
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88445818"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102671"
 ---
 # <a name="degrees-transact-sql"></a>DEGREES (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -44,7 +44,7 @@ DEGREES ( numeric_expression )
 
 ## <a name="arguments"></a>引数
  *numeric_expression*  
-**bit** データ型を除く、真数または概数データ型カテゴリの[式](../../t-sql/language-elements/expressions-transact-sql.md)です。  
+**bit** データ型を除く、真数または概数データ型カテゴリの [式](../../t-sql/language-elements/expressions-transact-sql.md)です。  
   
 ## <a name="return-code-values"></a>リターン コードの値  
 データ型が *numeric_expression* のデータ型に一致する値を返します。  
@@ -52,7 +52,7 @@ DEGREES ( numeric_expression )
 ## <a name="examples"></a>例  
 この例では、PI/2 ラジアンの角度を度の単位で返します。  
   
-```  
+```sql  
 SELECT 'The number of degrees in PI/2 radians is: ' +   
 CONVERT(VARCHAR, DEGREES((PI()/2)));  
 GO  

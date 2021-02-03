@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: 2d999fec-9e22-4514-ad5f-22a64b82f95b
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6434acd7163894f61d3cdaebcbc110aba5edb7a8
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: cebaef8091839467fa818f13516efee384b089c0
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88482646"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97485084"
 ---
 # <a name="sqlnativesql"></a>SQLNativeSql
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -28,7 +28,6 @@ ms.locfileid: "88482646"
   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client ODBC ドライバーは、サーバーにアクセスせずに **SQLNativeSql** 要求に応じます。 この関数を使用すると、SQL ステートメントの構文を効率的にテストできます。 構文チェックでは、識別子または SQL ステートメント内の式の結果が有効かどうかは判断されないので、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] SQLNativeSql **によって返された** ネイティブ SQL を実行すると失敗することがあります。  
   
 ## <a name="see-also"></a>参照  
- [SQLNativeSql 関数](https://go.microsoft.com/fwlink/?LinkID=59358)   
+ [SQLNativeSql 関数](../../odbc/reference/syntax/sqlnativesql-function.md)   
  [ODBC API 実装の詳細](../../relational-databases/native-client-odbc-api/odbc-api-implementation-details.md)  
-  
   

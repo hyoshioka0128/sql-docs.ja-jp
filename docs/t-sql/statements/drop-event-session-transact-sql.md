@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DROP_EVENT_SESSION_TSQL
 - DROP EVENT SESSION
@@ -17,14 +17,14 @@ helpviewer_keywords:
 - event sessions [SQL Server]
 - DROP EVENT SESSION statement
 ms.assetid: 92eabe4b-24e2-43b1-978c-31a199964b90
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 5c7472a6185dca4ca32bfd0ef639a674b82fc719
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 53a1c1e98bc8916eb23bb3fe0c74daa7196af8a3
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88416518"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99190462"
 ---
 # <a name="drop-event-session-transact-sql"></a>DROP EVENT SESSION (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "88416518"
   
 ## <a name="syntax"></a>構文  
   
-```    
+```syntaxsql    
 DROP EVENT SESSION event_session_name  
 ON SERVER  
 ```  

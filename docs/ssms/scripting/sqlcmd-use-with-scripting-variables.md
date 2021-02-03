@@ -4,7 +4,7 @@ description: スクリプト変数を使用して、複数のシナリオで使�
 ms.custom: seo-lt-2019
 ms.date: 08/09/2016
 ms.prod: sql
-ms.technology: scripting
+ms.technology: ssms
 ms.reviewer: ''
 ms.topic: conceptual
 dev_langs:
@@ -18,13 +18,13 @@ helpviewer_keywords:
 ms.assetid: 793495ca-cfc9-498d-8276-c44a5d09a92c
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 9b3628994d100057de864ac1e1188e865d14dca8
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 96f2987363fd52cc92127b6b54ffcd2a98b9ae10
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87246201"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97476883"
 ---
 # <a name="sqlcmd---use-with-scripting-variables"></a>sqlcmd - スクリプト変数の使用
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -32,10 +32,10 @@ ms.locfileid: "87246201"
   
  スクリプト変数は、**setvar** コマンドを使用して明示的に定義するか、または **sqlcmd -v** オプションを使用して暗黙的に定義できます。  
   
- このトピックでは、 **SET**を使用して Cmd.exe コマンド プロンプトで環境変数を定義する例も紹介しています。  
+ このトピックでは、 **SET** を使用して Cmd.exe コマンド プロンプトで環境変数を定義する例も紹介しています。  
   
 ## <a name="setting-scripting-variables-by-using-the-setvar-command"></a>setvar コマンドを使用したスクリプト変数の設定  
- **setvar** コマンドは、スクリプト変数を定義するのに使用します。 **setvar** コマンドを使用して定義されている変数は、内部的に格納されます。 スクリプト変数は、 **SET**を使用してコマンド プロンプトで定義されている環境変数と混同しないようにする必要があります。 環境変数でもなく **setvar**コマンドを使用して定義したものでもない変数をスクリプト内で参照していると、エラー メッセージが表示され、スクリプトの実行は停止されます。 詳細については、「 **sqlcmd ユーティリティ** 」の [-b](../../tools/sqlcmd-utility.md)オプションの説明を参照してください。  
+ **setvar** コマンドは、スクリプト変数を定義するのに使用します。 **setvar** コマンドを使用して定義されている変数は、内部的に格納されます。 スクリプト変数は、 **SET** を使用してコマンド プロンプトで定義されている環境変数と混同しないようにする必要があります。 環境変数でもなく **setvar** コマンドを使用して定義したものでもない変数をスクリプト内で参照していると、エラー メッセージが表示され、スクリプトの実行は停止されます。 詳細については、「 **sqlcmd ユーティリティ** 」の [-b](../../tools/sqlcmd-utility.md)オプションの説明を参照してください。  
   
 ## <a name="variable-precedence-low-to-high"></a>変数の優先順位 (低から高)  
  複数の種類の変数に同じ名前が付いている場合、優先順位の最も高い変数が使用されます。  
@@ -44,7 +44,7 @@ ms.locfileid: "87246201"
   
 2.  ユーザー レベル環境変数  
   
-3.  **sqlcmd**の起動前にコマンド プロンプトで設定されたコマンド シェル (**SET X=Y**)  
+3.  **sqlcmd** の起動前にコマンド プロンプトで設定されたコマンド シェル (**SET X=Y**)  
   
 4.  **sqlcmd -v** X=Y  
   
@@ -101,7 +101,7 @@ sqlcmd -v ColumnName ="LastName" -i c:\testscript.sql
 -   変数値に引用符が使用されている場合は、その引用符をエスケープする必要があります。 たとえば、`setvar MyVar "spac""e"`のように指定します。  
   
 ## <a name="guidelines-for-cmdexe-set-variable-values-and-names"></a>Cmd.exe の SET による変数の値と名前に関するガイドライン  
- SET を使用して定義される変数は、Cmd.exe 環境で使用されるため、 **sqlcmd**で参照できます。 次のガイドラインを考慮してください。  
+ SET を使用して定義される変数は、Cmd.exe 環境で使用されるため、 **sqlcmd** で参照できます。 次のガイドラインを考慮してください。  
   
 -   変数名には空白文字または引用符を使用できません。  
   
@@ -332,8 +332,7 @@ C:\> sqlcmd
 ```
   
 ## <a name="see-also"></a>参照  
- [sqlcmd ユーティリティの使用](../../relational-databases/scripting/sqlcmd-use-the-utility.md)   
+ [sqlcmd ユーティリティの使用](./sqlcmd-use-the-utility.md)   
  [sqlcmd ユーティリティ](../../tools/sqlcmd-utility.md)   
  [コマンド プロンプト ユーティリティ リファレンス &#40;データベース エンジン&#41;](../../tools/command-prompt-utility-reference-database-engine.md)  
-  
   

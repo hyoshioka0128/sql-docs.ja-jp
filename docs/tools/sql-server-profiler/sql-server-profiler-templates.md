@@ -12,12 +12,12 @@ author: markingmyname
 ms.author: maghan
 ms.custom: seo-lt-2019
 ms.date: 03/14/2017
-ms.openlocfilehash: d278cd7b25dd4a9879f2c3a498bf2288e582beb1
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: b29ba66b9cf0e05f1585ff4f37723cf8fffba669
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85748639"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643387"
 ---
 # <a name="sql-server-profiler-templates"></a>SQL Server Profiler のテンプレート
 
@@ -59,8 +59,7 @@ ms.locfileid: "85748639"
   
 ## <a name="see-also"></a>参照  
  [トレース テンプレートの作成 &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/create-a-trace-template-sql-server-profiler.md)   
- [トレース テンプレートの変更 &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/modify-a-trace-template-sql-server-profiler.md)   
+ [トレース テンプレートの変更 &#40;SQL Server Profiler&#41;](./modify-trace-templates.md)   
  [トレース テンプレートのエクスポート &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/export-a-trace-template-sql-server-profiler.md)   
  [トレース テンプレートのインポート &#40;SQL Server Profiler&#41;](../../tools/sql-server-profiler/import-a-trace-template-sql-server-profiler.md)  
-  
   

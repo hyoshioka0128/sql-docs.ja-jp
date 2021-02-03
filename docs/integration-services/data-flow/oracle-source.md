@@ -10,12 +10,12 @@ ms.technology: integration-services
 ms.topic: conceptual
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: af9683fe11a5d739e753ba451a4d621c6bfe8497
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: fe89a97c1fb13d9446b0fe07f04c7399b42a439e
+ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88430734"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97489772"
 ---
 # <a name="oracle-source"></a>Oracle ソース
 
@@ -53,9 +53,9 @@ Oracle ソースのカスタム プロパティは次のとおりです。 す�
 |プロパティ名|データ型|説明|
 |:-|:-|:-|
 |AccessMode|Integer (列挙)|データベースへのアクセスに使用するモード。 指定できる値は、 **[テーブル名]** と **[SQL コマンド]** です。 既定値は **[テーブル名]** です。|
-|BatchSize|Integer|一括読み込みのバッチのサイズ。 これは、配列として抽出されるレコード数です。 <br>このプロパティは、**詳細エディター**によってのみ設定されます|
-|DefaultCodePage|Integer|データ ソースにコード ページ情報がない場合に使用されるコード ページ。 <br>このプロパティは、**詳細エディター**によってのみ設定されます。|
-|PreFetchCount|Integer|プリフェッチされた行の数。 <br>このプロパティは、**詳細エディター**によってのみ設定されます。|
+|BatchSize|Integer|一括読み込みのバッチのサイズ。 これは、配列として抽出されるレコード数です。 <br>このプロパティは、**詳細エディター** によってのみ設定されます|
+|DefaultCodePage|Integer|データ ソースにコード ページ情報がない場合に使用されるコード ページ。 <br>このプロパティは、**詳細エディター** によってのみ設定されます。|
+|PreFetchCount|Integer|プリフェッチされた行の数。 <br>このプロパティは、**詳細エディター** によってのみ設定されます。|
 |SqlCommand|String|AccessMode が SQL コマンドに設定されている場合に実行される SQL コマンド。|
 |TableName|String|AccessMode がテーブル名に設定されている場合に使用されるデータを含んだテーブルの名前。|
 
@@ -73,7 +73,7 @@ Oracle ソース エディターを次の図に示します。 これには、[�
 
 ![Oracle ソース](media/oracle-source.png)
 
-**[詳細エディター] ダイアログ ボックス**には、プログラムによって設定できるプロパティが表示されます。
+**[詳細エディター] ダイアログ ボックス** には、プログラムによって設定できるプロパティが表示されます。
 
 **[詳細エディター]** ダイアログ ボックスを開くには、次の操作を実行します。
 
@@ -162,7 +162,7 @@ Oracle ソース エディターを次の図に示します。 これには、[�
 **エラー動作**
 
 Oracle ソースでフローでのエラーを処理する方法を選択します (エラーを無視する、行をリダイレクトする、またはコンポーネントを失敗させる)。
-**関連セクション**:[データのエラー処理](https://docs.microsoft.com/sql/integration-services/data-flow/error-handling-in-data?view=sql-server-2017)
+**関連セクション**:[データのエラー処理](./error-handling-in-data.md)
 
 **切り捨て**
 

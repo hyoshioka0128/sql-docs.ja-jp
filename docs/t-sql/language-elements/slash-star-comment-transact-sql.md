@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - /*...*/_TSQL
 - Comment
@@ -20,14 +20,14 @@ helpviewer_keywords:
 - remarks [SQL Server]
 - comments [SQL Server]
 ms.assetid: 4d9ab1b2-4bbb-4c16-beb1-cafc1af7417c
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 481701a7d2167e1d45f5aa77f715a380a63e97af
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 28104f9417d37d8ca1a3c561738dfde34e504749
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88459233"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99184640"
 ---
 # <a name="slash-star-block-comment-transact-sql"></a>スラッシュ アスタリスク (ブロック コメント) (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx_md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-xxx-md.md)]
@@ -39,8 +39,7 @@ ms.locfileid: "88459233"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 /*  
 text_of_comment  
 */  
@@ -61,8 +60,8 @@ text_of_comment
   
  たとえば、次のコードではエラーが生成されます。  
   
-```  
-DECLARE @comment AS varchar(20);  
+```sql  
+DECLARE @comment AS VARCHAR(20);  
 GO  
 /*  
 SELECT @comment = '/*';  
@@ -73,21 +72,20 @@ GO
   
  このエラーを回避するには、次のように変更してください。  
   
-```  
-DECLARE @comment AS varchar(20);  
+```sql  
+DECLARE @comment AS VARCHAR(20);  
 GO  
 /*  
 SELECT @comment = '/*';  
 */ */  
 SELECT @@VERSION;  
 GO  
-  
 ```  
   
 ## <a name="examples"></a>例  
  次の例では、コード セクションの作業内容を説明するコメントを使用しています。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 /*  

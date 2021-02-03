@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DATABASE_PRINCIPAL_ID_TSQL
 - DATABASE_PRINCIPAL_ID
@@ -21,12 +21,12 @@ helpviewer_keywords:
 ms.assetid: 908c7dd8-c10b-4658-92f6-0224f9835dd9
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: da62d368b27c7539115e199742d5e7ed224eb75c
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 911c4733853d3920486c2b1cd37298159b539e2d
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88445876"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99184034"
 ---
 # <a name="database_principal_id-transact-sql"></a>DATABASE_PRINCIPAL_ID (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "88445876"
   
 ## <a name="syntax"></a>構文  
   
-```sql
+```syntaxsql
 DATABASE_PRINCIPAL_ID ( 'principal_name' )  
 ```  
   

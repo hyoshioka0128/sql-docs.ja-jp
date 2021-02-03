@@ -5,17 +5,17 @@ ms.custom: seodec18
 ms.date: 01/28/2020
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
-ms.topic: conceptual
+ms.technology: availability-groups
+ms.topic: how-to
 ms.assetid: f7c7acc5-a350-4a17-95e1-e689c78a0900
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: 629aceee12a89498d763fde2d3510f69e0cde452
-ms.sourcegitcommit: b80364e31739d7b08cc388c1f83bb01de5dd45c1
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: b6335c43c179dfcdb94ecae98b829f3ff8bb50aa
+ms.sourcegitcommit: e5664d20ed507a6f1b5e8ae7429a172a427b066c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87565281"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97697100"
 ---
 # <a name="configure-an-always-on-distributed-availability-group"></a>Always On 分散型可用性グループの構成  
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -59,7 +59,7 @@ GO
 ## <a name="create-first-availability-group"></a>最初の可用性グループを作成する
 
 ### <a name="create-the-primary-availability-group-on-the-first-cluster"></a>最初のクラスターにプライマリ可用性グループを作成する  
-最初の Windows Server フェールオーバー クラスター (WSFC) に可用性グループを作成します。   この例では、データベース `ag1` の `db1`という可用性グループです。 プライマリ可用性グループのプライマリ レプリカは、分散型可用性グループでは**グローバル プライマリ**と呼ばれます。 この例の server1 はグローバル プライマリです。        
+最初の Windows Server フェールオーバー クラスター (WSFC) に可用性グループを作成します。   この例では、データベース `ag1` の `db1`という可用性グループです。 プライマリ可用性グループのプライマリ レプリカは、分散型可用性グループでは **グローバル プライマリ** と呼ばれます。 この例の server1 はグローバル プライマリです。        
   
 ```sql  
 CREATE AVAILABILITY GROUP [ag1]   
@@ -111,7 +111,7 @@ GO
   
 
 ## <a name="create-second-availability-group"></a>2 つ目の可用性グループを作成する  
- 2 つ目の WSFC に 2 つ目の可用性グループ `ag2`を作成します。 この場合、データベースはプライマリ可用性グループから自動的にシード処理されるため、データベースを指定しません。  セカンダリ可用性グループのプライマリ レプリカは、分散型可用性グループでは**フォワーダー**と呼ばれます。 この例の server3 はフォワーダーです。 
+ 2 つ目の WSFC に 2 つ目の可用性グループ `ag2`を作成します。 この場合、データベースはプライマリ可用性グループから自動的にシード処理されるため、データベースを指定しません。  セカンダリ可用性グループのプライマリ レプリカは、分散型可用性グループでは **フォワーダー** と呼ばれます。 この例の server3 はフォワーダーです。 
   
 ```sql  
 CREATE AVAILABILITY GROUP [ag2]   
@@ -155,6 +155,10 @@ GO
 ## <a name="create-distributed-availability-group-on-first-cluster"></a>最初のクラスターに分散型可用性グループを作成する  
  最初の WSFC に分散型可用性グループ (この例では `distributedag` ) を作成します。 **CREATE AVAILABILITY GROUP** コマンドに **DISTRIBUTED** オプションを指定して実行します。 **AVAILABILITY GROUP ON** パラメーターに、メンバー可用性グループの `ag1` と `ag2` を指定します。  
   
+# <a name="automatic-seeding"></a>[[自動シード処理]](#tab/automatic)
+
+自動シード処理を使用して分散型可用性グループを作成するには、次の Transact-SQL コードを使用します。 
+
 ```sql  
 CREATE AVAILABILITY GROUP [distributedag]  
    WITH (DISTRIBUTED)   
@@ -176,12 +180,41 @@ CREATE AVAILABILITY GROUP [distributedag]
 GO   
 ```  
   
+
+# <a name="manual-seeding"></a>[手動シード処理](#tab/manual)
+
+手動シード処理を使用して分散型可用性グループを作成するには、次の Transact-SQL コードを使用します。 
+
+```sql
+CREATE AVAILABILITY GROUP [distributedag]  
+   WITH (DISTRIBUTED)   
+   AVAILABILITY GROUP ON  
+      'ag1' WITH    
+      (   
+         LISTENER_URL = 'tcp://ag1-listener.contoso.com:5022',    
+         AVAILABILITY_MODE = ASYNCHRONOUS_COMMIT,   
+         FAILOVER_MODE = MANUAL,   
+         SEEDING_MODE = MANUAL   
+      ),   
+      'ag2' WITH    
+      (   
+         LISTENER_URL = 'tcp://ag2-listener.contoso.com:5022',   
+         AVAILABILITY_MODE = ASYNCHRONOUS_COMMIT,   
+         FAILOVER_MODE = MANUAL,   
+         SEEDING_MODE = MANUAL   
+      );    
+GO   
+
+```
+
+---
+
 > [!NOTE]  
->  **LISTENER_URL** で、各可用性グループのリスナーと、可用性グループのデータベース ミラーリング エンドポイントを指定します。 この例では、ポート `5022` です (リスナーの作成に使用したポート `60173` ではありません)。 Azure でインスタンスにロード バランサーを使用している場合、[分散型可用性グループのポートの負荷分散の規則を追加します](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener#add-load-balancing-rule-for-distributed-availability-group)。 SQL Server インスタンスのポートだけでなく、リスナー ポートの規則を追加します。 
+>  **LISTENER_URL** で、各可用性グループのリスナーと、可用性グループのデータベース ミラーリング エンドポイントを指定します。 この例では、ポート `5022` です (リスナーの作成に使用したポート `60173` ではありません)。 Azure でインスタンスにロード バランサーを使用している場合、[分散型可用性グループのポートの負荷分散の規則を追加します](/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener#add-load-balancing-rule-for-distributed-availability-group)。 SQL Server インスタンスのポートだけでなく、リスナー ポートの規則を追加します。 
 
 ### <a name="cancel-automatic-seeding-to-forwarder"></a>フォワーダーへの自動シード処理を取り消す
 
-何らかの理由で、2 つの可用性グループを同期する_前に_フォワーダーの初期化を取り消すことが必要になる場合、フォワーダーの SEEDING_MODE パラメーターを MANUAL に設定することで分散型可用性グループを変更し、すぐにシード処理を取り消します。 グローバル プライマリでコマンドを実行します。 
+何らかの理由で、2 つの可用性グループを同期する _前に_ フォワーダーの初期化を取り消すことが必要になる場合、フォワーダーの SEEDING_MODE パラメーターを MANUAL に設定することで分散型可用性グループを変更し、すぐにシード処理を取り消します。 グローバル プライマリでコマンドを実行します。 
 
 ```sql
 -- Cancel automatic seeding.  Connect to global primary but specify DAG AG2
@@ -196,6 +229,10 @@ ALTER AVAILABILITY GROUP [distributedag]
 ## <a name="join-distributed-availability-group-on-second-cluster"></a>2 つ目のクラスターの分散型可用性グループに参加する  
  次に、2 つ目の WSFC の分散型可用性グループに参加します。  
   
+# <a name="automatic-seeding"></a>[[自動シード処理]](#tab/automatic)
+
+自動シード処理を使用して分散型可用性グループに参加するには、次の Transact-SQL コードを使用します。 
+
 ```sql  
 ALTER AVAILABILITY GROUP [distributedag]   
    JOIN   
@@ -216,6 +253,61 @@ ALTER AVAILABILITY GROUP [distributedag]
       );    
 GO  
 ```  
+
+
+
+# <a name="manual-seeding"></a>[手動シード処理](#tab/manual)
+
+手動シード処理を使用して分散型可用性グループに参加するには、次の Transact-SQL コードを使用します。 
+
+```sql
+ALTER AVAILABILITY GROUP [distributedag]   
+   JOIN   
+   AVAILABILITY GROUP ON  
+      'ag1' WITH    
+      (   
+         LISTENER_URL = 'tcp://ag1-listener.contoso.com:5022',    
+         AVAILABILITY_MODE = ASYNCHRONOUS_COMMIT,   
+         FAILOVER_MODE = MANUAL,   
+         SEEDING_MODE = MANUAL   
+      ),   
+      'ag2' WITH    
+      (   
+         LISTENER_URL = 'tcp://ag2-listener.contoso.com:5022',   
+         AVAILABILITY_MODE = ASYNCHRONOUS_COMMIT,   
+         FAILOVER_MODE = MANUAL,   
+         SEEDING_MODE = MANUAL  
+      );    
+GO  
+```
+
+手動シード処理を使用してフォワーダーにデータベースを作成する場合は、グローバル プライマリから完全バックアップとトランザクション ログ バックアップを実行し、それらを NONRECOVERY オプションを指定してフォワーダーに復元します。 例:
+
+グローバル プライマリでバックアップするには、次のようにします。 
+
+```sql
+BACKUP DATABASE [db1] 
+TO DISK = '<full backup location>' WITH FORMAT
+BACKUP LOG [db1] 
+TO DISK = '<log backup location>' WITH FORMAT
+```
+
+フォワーダーに復元するには、次のようにします。 
+
+```sql
+RESTORE DATABASE [db1] 
+FROM DISK = '<full backup location>' WITH NORECOVERY
+RESTORE LOG [db1] FROM DISK = '<log backup location>' WITH NORECOVERY
+```
+
+その後、フォワーダーで次のように実行します。
+
+```sql
+ALTER DATABASE [db1] SET HADR AVAILABILITY GROUP = [distributedag]
+```
+
+---
+
 
 ## <a name="join-the-database-on-the-secondary-of-the-second-availability-group"></a><a name="failover"></a> 2 つ目の可用性グループのセカンダリ上のデータベースを結合する
 2 つ目の可用性グループのセカンダリ レプリカ上のデータベースが復元状態になったら、それを可用性グループに手動で結合する必要があります。
@@ -392,5 +484,4 @@ ALTER AVAILABILITY GROUP [SQLFCIDAG]
 
  [CREATE AVAILABILITY GROUP &#40;Transact-SQL&#41;](../../../t-sql/statements/create-availability-group-transact-sql.md)   
  [ALTER AVAILABILITY GROUP &#40;Transact-SQL&#41;](../../../t-sql/statements/alter-availability-group-transact-sql.md)  
-  
   

@@ -1,26 +1,26 @@
 ---
-description: pdw_nodes_indexes (Transact-sql)
-title: pdw_nodes_indexes (Transact-sql) |Microsoft Docs
+description: sys.pdw_nodes_indexes (Transact-sql)
+title: sys.pdw_nodes_indexes (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/04/2017
 ms.prod: sql
 ms.technology: data-warehouse
 ms.reviewer: ''
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 ms.assetid: 261bcb7f-a906-4979-b274-bc5f1aa66426
 author: ronortloff
 ms.author: rortloff
-monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest || = sqlallproducts-allversions'
-ms.openlocfilehash: f6c518d53122015af3e86350b0037e1b88604543
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
+ms.openlocfilehash: a9fee9ec599444091e0543b0ed7e4fd326fdaa02
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88490257"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99186508"
 ---
-# <a name="syspdw_nodes_indexes-transact-sql"></a>pdw_nodes_indexes (Transact-sql)
+# <a name="syspdw_nodes_indexes-transact-sql"></a>sys.pdw_nodes_indexes (Transact-sql)
 [!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
 
   のインデックスを返し [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] ます。  
@@ -51,6 +51,6 @@ ms.locfileid: "88490257"
  CONTROL SERVER 権限が必要です。  
   
 ## <a name="see-also"></a>参照  
- [SQL Data Warehouse and Parallel Data Warehouse Catalog Views (SQL Data Warehouse および Parallel Data Warehouse のカタログ ビュー)](../../relational-databases/system-catalog-views/sql-data-warehouse-and-parallel-data-warehouse-catalog-views.md)  
+ [Azure Synapse Analytics と Parallel Data Warehouse のカタログ ビュー](../../relational-databases/system-catalog-views/sql-data-warehouse-and-parallel-data-warehouse-catalog-views.md)  
   
   

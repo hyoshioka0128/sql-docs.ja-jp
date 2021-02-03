@@ -5,32 +5,32 @@ description: この 4 部構成のチュートリアルのパート 4 では、S
 ms.prod: sql
 ms.technology: machine-learning
 ms.topic: tutorial
-author: cawrites
-ms.author: chadam
+author: dphansen
+ms.author: davidph
 ms.reviewer: garye, davidph
 ms.date: 05/21/2020
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: af3826d5153e2be157a74c96037bff51c6039e7c
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: bc5cb5f0b5a79b7e9ff81171e0a1b7b31ad580db
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85728563"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470163"
 ---
 # <a name="tutorial-deploy-a-predictive-model-in-r-with-sql-machine-learning"></a>チュートリアル:SQL 機械学習を使用して R で予測モデルをデプロイする
-[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
+[!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
 
-::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15"
 この 4 部構成のチュートリアル シリーズのパート 4 では、Machine Learning Services を使用して、R で開発された機械学習モデルを SQL Server Machine Learning Services またはビッグ データ クラスターにデプロイします。
 ::: moniker-end
-::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2017"
 この 4 部構成のチュートリアル シリーズのパート 4 では、Machine Learning Services を使用して、R で開発された機械学習モデルを SQL Server にデプロイします。
 ::: moniker-end
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 この 4 部構成のチュートリアル シリーズのパート 4 では、SQL Server R Services を使用して、R で開発された機械学習モデルを SQL Server にデプロイします。
 ::: moniker-end
-::: moniker range="=azuresqldb-mi-current||=sqlallproducts-allversions"
+::: moniker range="=azuresqldb-mi-current"
 この 4 部構成のチュートリアル シリーズのパート 4 では、Machine Learning Services を使用して、R で開発された機械学習モデルを Azure SQL Managed Instance にデプロイします。
 ::: moniker-end
 
@@ -50,7 +50,7 @@ ms.locfileid: "85728563"
 
 ## <a name="prerequisites"></a>前提条件
 
-このチュートリアルのパート 4 は、[**パート 1** ](r-predictive-model-introduction.md)の前提条件を満たし、[**パート 2** ](r-predictive-model-prepare-data.md)および[**パート 3** ](r-predictive-model-train.md)の手順を完了していることを前提としています。
+このチュートリアルのパート 4 は、[**パート 1**](r-predictive-model-introduction.md)の前提条件を満たし、[**パート 2**](r-predictive-model-prepare-data.md)および [**パート 3**](r-predictive-model-train.md)の手順を完了していることを前提としています。
 
 ## <a name="create-a-stored-procedure-that-generates-the-model"></a>モデルを生成するストアド プロシージャの作成
 

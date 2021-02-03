@@ -24,13 +24,13 @@ ms.assetid: 76767b20-ef55-49ce-8dc4-e77cb8ff618a
 author: pmasl
 ms.author: pelopes
 ms.reviewer: mikeray
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 77e6331623da6672b0b39ec7ca432201cd9a482b
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: ac09b96cf93144ebf2b615bbd73db36c673eb5ca
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88404138"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97479463"
 ---
 # <a name="populate-full-text-indexes"></a>フルテキスト インデックスの作成
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -38,9 +38,9 @@ ms.locfileid: "88404138"
   
 ##  <a name="types-of-population"></a><a name="types"></a> Types of population  
 フルテキスト インデックスは次の種類の作成に対応しています。
--   **すべて**のカタログの作成
--   **変更の追跡**に基づく自動または手動作成
--   **タイムスタンプ**に基づく増分作成
+-   **すべて** のカタログの作成
+-   **変更の追跡** に基づく自動または手動作成
+-   **タイムスタンプ** に基づく増分作成
   
 ## <a name="full-population"></a>すべてのカタログの作成  
  すべてのカタログの作成では、テーブルまたはインデックス付きビューのすべての行に対してインデックス エントリが作成されます。 フルテキスト インデックスのすべてのカタログの作成では、ベース テーブルまたはインデックス付きビューのすべての行に対してインデックス エントリが作成されます。  
@@ -191,21 +191,21 @@ ALTER FULLTEXT INDEX ON Production.Document
 
      次のようなオプションがあります。  
   
-    -   新しいスケジュールを**作成**するには、 **[新規作成]** をクリックします。  
+    -   新しいスケジュールを **作成** するには、 **[新規作成]** をクリックします。  
   
         スケジュールを作成できる **[新しいフルテキスト インデックス テーブルのスケジュール]** ダイアログ ボックスが表示されます。 スケジュールを保存するには、 **[OK]** をクリックします。  
   
         > [!IMPORTANT]  
         >  *[フルテキスト インデックスのプロパティ]* ダイアログ ボックスを閉じると、新しいスケジュールが SQL Server エージェント ジョブ (*database_name*. **table_name** でテーブルの増分作成を開始) に関連付けられます。 同じフルテキスト インデックスのスケジュールを複数作成した場合、すべてのスケジュールで同じジョブが使用されます。  
   
-    -   既存のスケジュールを**変更**するには、それを選択し、 **[編集]** をクリックします。  
+    -   既存のスケジュールを **変更** するには、それを選択し、 **[編集]** をクリックします。  
   
          スケジュールを変更できる **[新しいフルテキスト インデックス テーブルのスケジュール]** ダイアログ ボックスが表示されます。  
   
         > [!NOTE]  
         >  SQL Server エージェント ジョブの変更については、「[ジョブの変更](../../ssms/agent/modify-a-job.md)」を参照してください。  
   
-    -   既存のスケジュールを**削除**するには、それを選択し、 **[削除]** をクリックします。  
+    -   既存のスケジュールを **削除** するには、それを選択し、 **[削除]** をクリックします。  
   
 2.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]   
 

@@ -1,13 +1,13 @@
 ---
-description: data_spaces (Transact-sql)
-title: data_spaces (Transact-sql) |Microsoft Docs
+description: sys.data_spaces (Transact-sql)
+title: sys.data_spaces (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/17/2017
 ms.prod: sql
 ms.prod_service: database-engine, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - data_spaces
 - sys.data_spaces_TSQL
@@ -18,17 +18,17 @@ dev_langs:
 helpviewer_keywords:
 - sys.data_spaces catalog view
 ms.assetid: f39d55fe-2c0f-472d-a77f-cebc6fea95b5
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 59e67b607a30b8822908e8fff2a09ab7a00c6bfe
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 8d6225a241f06a5fd962bcb7d298bfa3e5d52e98
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550568"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99182522"
 ---
-# <a name="sysdata_spaces-transact-sql"></a>data_spaces (Transact-sql)
+# <a name="sysdata_spaces-transact-sql"></a>sys.data_spaces (Transact-sql)
 [!INCLUDE [sql-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdbmi-asa-pdw.md)]
 
   データ領域ごとに 1 行のデータがあります。 データ領域はファイル グループ、パーティション構成、または FILESTREAM データ ファイル グループです。  
@@ -37,7 +37,7 @@ ms.locfileid: "89550568"
 |-----------------|---------------|-----------------|  
 |name|**sysname**|データ領域の名前。データベース内で一意です。|  
 |data_space_id|**int**|データ領域 ID 番号。データベース内で一意です。|  
-|型|**char(2)**|データ領域の種類:<br /><br /> FG = ファイル グループ<br /><br /> FD = FILESTREAM データ ファイル グループ<br /><br /> FX = メモリ最適化テーブルファイルグループ<br /><br /> **適用対象**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降。<br /><br /> PS = パーティション構成|  
+|type|**char(2)**|データ領域の種類:<br /><br /> FG = ファイル グループ<br /><br /> FD = FILESTREAM データ ファイル グループ<br /><br /> FX = メモリ最適化テーブルファイルグループ<br /><br /> **適用対象**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降。<br /><br /> PS = パーティション構成|  
 |type_desc|**nvarchar(60)**|データ領域の種類の説明:<br /><br /> FILESTREAM_DATA_FILEGROUP<br /><br /> MEMORY_OPTIMIZED_DATA_FILEGROUP<br /><br /> **適用対象**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降。<br /><br /> PARTITION_SCHEME<br /><br /> ROWS_FILEGROUP|  
 |is_default|**bit**|1 = 既定のデータ領域です。 既定のデータ領域は、CREATE TABLE または CREATE INDEX ステートメントでファイル グループやパーティション構成が指定されない場合に使用されます。<br /><br /> 0 = 既定のデータ領域ではありません。|  
 |is_system|**bit**|**適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降。<br /><br /> 1 = データ領域は、フルテキストインデックスフラグメントに使用されます。<br /><br /> 0 = フルテキスト インデックス フラグメントに使用しないデータ領域。|  

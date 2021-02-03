@@ -7,21 +7,21 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
 - catalog views [SQL Server], XML schemas
 - XML schemas [SQL Server], catalog views
 ms.assetid: e92304ae-f920-4b28-8f63-6324973ba359
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 7bf6327cb83f4461feabd09c748099f465b5e89b
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 84aa05fe25ab375d458f8062d05b54a7c4310d3e
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551340"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99180748"
 ---
 # <a name="xml-schemas-xml-type-system-catalog-views-transact-sql"></a>XML スキーマ (XML 型システム) のカタログビュー (Transact-sql)
 [!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]
@@ -30,7 +30,7 @@ ms.locfileid: "89551340"
 
 :::row:::
     :::column:::
-        [column_xml_schema_collection_usage](../../relational-databases/system-catalog-views/sys-column-xml-schema-collection-usages-transact-sql.md)
+        [sys.column_xml_schema_collection_usage](../../relational-databases/system-catalog-views/sys-column-xml-schema-collection-usages-transact-sql.md)
         
         [sys.selective_xml_index_paths](../../relational-databases/system-catalog-views/sys-selective-xml-index-paths-transact-sql.md)
         
@@ -65,6 +65,5 @@ ms.locfileid: "89551340"
   
 ## <a name="see-also"></a>参照  
  [カタログ ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)   
- [システムビュー &#40;Transact-sql&#41;](https://msdn.microsoft.com/library/35a6161d-7f43-4e00-bcd3-3091f2015e90)  
-  
+ [システムビュー &#40;Transact-sql&#41;](../../t-sql/language-reference.md)  
   

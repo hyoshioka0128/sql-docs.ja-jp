@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.configurations_TSQL
 - configurations
@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.configurations catalog view
 ms.assetid: c4709ed1-bf88-4458-9e98-8e9b78150441
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 6273f057b7733b787ed2ed8e8b61d23fd107fbd7
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: bca35c6287a88c1439ca64c6f7cfd431de0269ea
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89546839"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99159109"
 ---
 # <a name="sysconfigurations-transact-sql"></a>sys.configurations (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -44,7 +44,7 @@ ms.locfileid: "89546839"
 |**is_dynamic**|**bit**|1 = 再構成ステートメントが実行されたときに有効になる変数です。|  
 |**is_advanced**|**bit**|1 = 変数は、 **show advancedoption** が設定されている場合にのみ表示されます。|  
   
- ## <a name="remarks"></a>解説
+ ## <a name="remarks"></a>コメント
   すべてのサーバー構成オプションの一覧については、「 [サーバー構成オプション &#40;SQL Server&#41;](../../database-engine/configure-windows/server-configuration-options-sql-server.md)」を参照してください。  
   
 > [!NOTE]  
@@ -53,7 +53,7 @@ ms.locfileid: "89546839"
 sys.configurations カタログビューを使用すると、config_value ([値] 列)、run_value (value_in_use 列)、および構成オプションが動的 (サーバーエンジンの再起動または is_dynamic 列) かどうかを判断できます。
 
 > [!NOTE]
-> Sp_configure の結果セットの config_value は、 **sys.configurations 値** 列と同じです。 **Run_value**は、 **sys.configurations value_in_use**列に相当します。
+> Sp_configure の結果セットの config_value は、 **sys.configurations 値** 列と同じです。 **Run_value** は、 **sys.configurations.value_in_use** 列に相当します。
 
 次のクエリを使用して、構成済みの値がインストールされていないかどうかを確認できます。
 
@@ -65,11 +65,12 @@ select * from sys.configurations where value != value_in_use
 
 値と value_in_use が同じではなく、これが想定される動作である構成オプションがあります。 次に例を示します。
 
-"max server memory (MB)"-0 の既定の構成値は value_in_use = 2147483647 "min server memory (MB)" と表示されます。既定の構成値0は、value_in_use = 8 (32 ビット) または 16 (64 ビット) として表示される場合があります。 
+"max server memory (MB)"-既定の構成値0は **value_in_use** = 2147483647 で表示されます。<br>
 
-場合によっては、 **value_in_use** が0になります。 この場合、"true" **value_in_use** は 8 (32 ビット) または 16 (64 ビット) です。
+"min server memory (MB)"-既定の構成値0は、 **value_in_use** = 8 (32 ビット) または 16 (64 ビット) として表示される場合があります。 場合によっては、 **value_in_use** が0になります。 この場合、"true" **value_in_use** は 8 (32 ビット) または 16 (64 ビット) です。
 
-**Is_dynamic**列を使用して、構成オプションに再起動が必要かどうかを判断できます。 is_dynamic = 1 は、再構成 (t-sql) のコマンドが実行されると、新しい値が "直ちに" 有効になることを意味します (場合によっては、サーバーエンジンが新しい値をすぐに評価するのではなく、通常の実行時にその値が使用されます)。 is_dynamic = 0 の場合、変更された構成値は、再構成 (T-sql) コマンドが実行された場合でも、サーバーが再起動されるまで有効になりません。
+
+**Is_dynamic** 列を使用して、構成オプションに再起動が必要かどうかを判断できます。 is_dynamic = 1 は、再構成 (t-sql) のコマンドが実行されると、新しい値が "直ちに" 有効になることを意味します (場合によっては、サーバーエンジンが新しい値をすぐに評価するのではなく、通常の実行時にその値が使用されます)。 is_dynamic = 0 の場合、変更された構成値は、再構成 (T-sql) コマンドが実行された場合でも、サーバーが再起動されるまで有効になりません。
 
 動的でない構成オプションの場合、構成変更のインストールの最初の手順を実行するために再構成 (T-sql) コマンドが実行されているかどうかを確認する方法はありません。 SQL Server を再起動して構成の変更をインストールする前に、再構成 (T-sql) コマンドを実行して、SQL Server の再起動後にすべての構成変更が有効になるようにします。 
  

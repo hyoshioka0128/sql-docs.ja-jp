@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - IS_OBJECTSIGNED
 - IS_OBJECTSIGNED_TSQL
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: afbc4f7f-8266-4ee6-9802-14a2dbe69ef6
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: e6ef80c95e7ff6fb2751a86d10ea707b2a1033d5
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: e33459d72484363319449d1baba953e0165d6407
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88422716"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99165110"
 ---
 # <a name="is_objectsigned-transact-sql"></a>IS_OBJECTSIGNED (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -34,8 +34,7 @@ ms.locfileid: "88422716"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 IS_OBJECTSIGNED (   
 'OBJECT', @object_id, @class, @thumbprint  
   )   
@@ -82,7 +81,7 @@ IS_OBJECTSIGNED (
 ### <a name="a-displaying-extended-properties-on-a-database"></a>A. データベースの拡張プロパティを表示する  
  次の例では、**master** データベースの spt_fallback_db テーブルがスキーマ署名証明書によって署名されているかどうかをテストします。  
   
-```  
+```sql  
 USE master;  
 -- Declare a variable to hold a thumbprint and an object name  
 DECLARE @thumbprint varbinary(20), @objectname sysname;  

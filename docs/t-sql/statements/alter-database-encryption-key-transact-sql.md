@@ -18,16 +18,17 @@ helpviewer_keywords:
 ms.assetid: f88dac4b-efe0-47ed-9808-972a4381377e
 author: VanMSFT
 ms.author: vanto
-monikerRange: = azuresqldb-current || = azuresqldb-mi-current || >= sql-server-2016 || >= sql-server-linux-2017 || = sqlallproducts-allversions||=azure-sqldw-latest
-ms.openlocfilehash: 3ecebada059baf91632eb74acd161add4ba0a393
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: = azuresqldb-current || = azuresqldb-mi-current || >= sql-server-2016 || >= sql-server-linux-2017
+ms.openlocfilehash: 850526cec9e7fc4eb91d6ca4355d17e2804e00b3
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88444979"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97402053"
 ---
 # <a name="alter-database-encryption-key-transact-sql"></a>ALTER DATABASE ENCRYPTION KEY (Transact-SQL)
-[!INCLUDE [sql-asa-pdw](../../includes/applies-to-version/sql-asa-pdw.md)]
+
+[!INCLUDE [sql-pdw](../../includes/applies-to-version/sql-pdw.md)]
 
   データベースを透過的に暗号化するために使用する暗号化キーおよび証明書を変更します。 透過的データベース暗号化について詳しくは、「[透過的なデータ暗号化 &#40;TDE&#41;](../../relational-databases/security/encryption/transparent-data-encryption.md)」をご覧ください。  
   
@@ -49,11 +50,9 @@ ALTER DATABASE ENCRYPTION KEY
 [ ; ]  
 ```
   
-> [!Note]
-> [!INCLUDE [Synapse preview note](../../includes/synapse-preview-note.md)]
   
 ```syntaxsql
--- Syntax for Azure Synapse Analytics and Parallel Data Warehouse  
+-- Syntax for Parallel Data Warehouse  
   
 ALTER DATABASE ENCRYPTION KEY  
     {  
@@ -66,7 +65,7 @@ ALTER DATABASE ENCRYPTION KEY
     }  
 [ ; ]  
 ```  
-  
+ 
 [!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
 
 ## <a name="arguments"></a>引数
@@ -92,7 +91,7 @@ ALTER DATABASE ENCRYPTION KEY
 ## <a name="examples"></a>例  
  次の例では、`AES_256` アルゴリズムを使用するようにデータベース暗号化キーを変更します。  
   
-```  
+```sql  
 -- Uses AdventureWorks  
   
 ALTER DATABASE ENCRYPTION KEY  

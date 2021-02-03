@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sp_change_log_shipping_secondary_database
 - sp_change_log_shipping_secondary_database_TSQL
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 3ebcf2f1-980f-4543-a84b-fbaeea54eeac
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: 5fc10c705564c88fe157860d00a61fa5ea682cc0
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 50383a1389c6327ae9caa6dcabf69bdcb8c720b4
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88486285"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99209354"
 ---
 # <a name="sp_change_log_shipping_secondary_database-transact-sql"></a>sp_change_log_shipping_secondary_database (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -74,11 +74,11 @@ sp_change_log_shipping_secondary_database
   
 `[ @restore_threshold = ] 'restore_threshold'` 復元操作の間に、アラートが生成されるまでの経過時間 (分単位)。 *restore_threshold* は **int** であり、NULL にすることはできません。  
   
-`[ @threshold_alert = ] 'threshold_alert'` 復元のしきい値を超えたときに発生する警告を指定します。 *threshold_alert* は **int**,、既定値は14420です。  
+`[ @threshold_alert = ] 'threshold_alert'` 復元のしきい値を超えたときに発生する警告を指定します。 *threshold_alert* は **int**,、既定値は14421です。  
   
-`[ @threshold_alert_enabled = ] 'threshold_alert_enabled'`*Restore_threshold*を超えたときにアラートを生成するかどうかを指定します。 1 = 有効。0 = 無効です。 *threshold_alert_enabled* は **ビット** であり、NULL にすることはできません。  
+`[ @threshold_alert_enabled = ] 'threshold_alert_enabled'`*Restore_threshold* を超えたときにアラートを生成するかどうかを指定します。 1 = 有効。0 = 無効です。 *threshold_alert_enabled* は **ビット** であり、NULL にすることはできません。  
   
-`[ @history_retention_period = ] 'history_retention_period'` 履歴を保持する時間の長さを分単位で指定します。 *history_retention_period* は **int**です。値が指定されていない場合は、1440の値が使用されます。  
+`[ @history_retention_period = ] 'history_retention_period'` 履歴を保持する時間の長さを分単位で指定します。 *history_retention_period* は **int** です。値が指定されていない場合は、1440の値が使用されます。  
   
 ## <a name="return-code-values"></a>リターン コードの値  
  0 (成功) または 1 (失敗)  
@@ -97,7 +97,7 @@ sp_change_log_shipping_secondary_database
  このプロシージャを実行できるのは、 **sysadmin** 固定サーバーロールのメンバーだけです。  
   
 ## <a name="examples"></a>例  
- この例では、 **sp_change_log_shipping_secondary_database** を使用してデータベース **LogShipAdventureWorks**のセカンダリデータベースパラメーターを更新する方法を示します。  
+ この例では、 **sp_change_log_shipping_secondary_database** を使用してデータベース **LogShipAdventureWorks** のセカンダリデータベースパラメーターを更新する方法を示します。  
   
 ```  
 EXEC master.dbo.sp_change_log_shipping_secondary_database   

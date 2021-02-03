@@ -7,19 +7,19 @@ ms.date: 01/19/2017
 ms.reviewer: ''
 ms.prod: sql
 ms.prod_service: connectivity
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 helpviewer_keywords:
 - Recordset property [ADO]
 ms.assetid: a29e3fb9-306d-497a-9a59-1856a914e5e9
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 27b6cf791b3b980000662f2073280d53f24aeaa1
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: b4f8f1db220bdf68205e3bd4628a27d0b57705b8
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88981433"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99168804"
 ---
 # <a name="recordset-sourcerecordset-properties-rds"></a>Recordset、SourceRecordset プロパティ (RDS)
 カスタムビジネスオブジェクトから返される **レコードセット** オブジェクトを示します。  
@@ -27,7 +27,7 @@ ms.locfileid: "88981433"
  **適用対象:** [DATACONTROL オブジェクト (RDS)](./datacontrol-object-rds.md)  
   
 > [!IMPORTANT]
->  Windows 8 と windows Server 2012 以降では、RDS サーバーコンポーネントが Windows オペレーティングシステムに含まれなくなりました (詳細については、「Windows 8 および [Windows server 2012 の互換性に関するクックブック](https://www.microsoft.com/download/details.aspx?id=27416) 」を参照してください)。 RDS クライアントコンポーネントは、今後のバージョンの Windows では削除される予定です。 新規の開発作業ではこの機能を使用しないようにし、現在この機能を使用しているアプリケーションは修正することを検討してください。 RDS を使用するアプリケーションは、 [WCF Data Service](https://go.microsoft.com/fwlink/?LinkId=199565)に移行する必要があります。  
+>  Windows 8 と windows Server 2012 以降では、RDS サーバーコンポーネントが Windows オペレーティングシステムに含まれなくなりました (詳細については、「Windows 8 および [Windows server 2012 の互換性に関するクックブック](https://www.microsoft.com/download/details.aspx?id=27416) 」を参照してください)。 RDS クライアントコンポーネントは、今後のバージョンの Windows では削除される予定です。 新規の開発作業ではこの機能を使用しないようにし、現在この機能を使用しているアプリケーションは修正することを検討してください。 RDS を使用するアプリケーションは、 [WCF Data Service](/dotnet/framework/wcf/)に移行する必要があります。  
   
 ## <a name="syntax"></a>構文  
   
@@ -42,14 +42,14 @@ Recordset = DataControl.Recordset
  RDS を表すオブジェクト変数です [。DataControl](./datacontrol-object-rds.md) オブジェクト。  
   
  *レコードセット*  
- **レコードセット**オブジェクトを表すオブジェクト変数です。  
+ **レコードセット** オブジェクトを表すオブジェクト変数です。  
   
-## <a name="remarks"></a>解説  
- **SourceRecordset**プロパティは、カスタムビジネスオブジェクトから返された[レコードセット](../ado-api/recordset-object-ado.md)に設定できます。  
+## <a name="remarks"></a>コメント  
+ **SourceRecordset** プロパティは、カスタムビジネスオブジェクトから返された [レコードセット](../ado-api/recordset-object-ado.md)に設定できます。  
   
- これらのプロパティを使用すると、アプリケーションはカスタムプロセスを使用してバインドプロセスを処理できます。 レコードセットを直接操作し**て、プロパティ**の設定や**レコードセット**の反復処理などのアクションを実行できるように、**レコード**セットにラップされた行セットを受け取ります。  
+ これらのプロパティを使用すると、アプリケーションはカスタムプロセスを使用してバインドプロセスを処理できます。 レコードセットを直接操作し **て、プロパティ** の設定や **レコードセット** の反復処理などのアクションを実行できるように、**レコード** セットにラップされた行セットを受け取ります。  
   
- **SourceRecordset**プロパティを設定するか、スクリプトコードで実行時に**レコードセット**プロパティを読み取ることができます。  
+ **SourceRecordset** プロパティを設定するか、スクリプトコードで実行時に **レコードセット** プロパティを読み取ることができます。  
   
  **SourceRecordset** は、読み取り専用プロパティである **Recordset** プロパティとは対照的に、書き込み専用のプロパティです。  
   

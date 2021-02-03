@@ -8,13 +8,13 @@ ms.date: 10/31/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
-monikerRange: '>= sql-server-linux-ver15  || >= sql-server-ver15 || = sqlallproducts-allversions'
-ms.openlocfilehash: 146ab5788e29045a55e6251be01e061f52d7bbb8
-ms.sourcegitcommit: 3ea082c778f6771b17d90fb597680ed334d3e0ec
+monikerRange: '>= sql-server-linux-ver15  || >= sql-server-ver15'
+ms.openlocfilehash: 4630a96f1abf961174ece179aabfd160a5784ad9
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88088933"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471613"
 ---
 # <a name="configure-persistent-memory-pmem-for-sql-server-on-linux"></a>SQL Server on Linux 用に永続メモリ (PMEM) を構成する
 
@@ -27,7 +27,7 @@ ms.locfileid: "88088933"
 [!INCLUDE[sqlv15](../includes/sssqlv15-md.md)] には、永続メモリを使用するインメモリ機能が多数あります。 このドキュメントでは、SQL Server on Linux 用に永続メモリを構成するために必要な手順について説明します。
 
 > [!NOTE]
-> 用語_エンライトメント_は、永続メモリ対応ファイル システムの操作の概念を伝えるために導入されました。 ユーザー スペース アプリケーションからファイル システムへの直接アクセスは、メモリ マッピング (`mmap()`) を使用することで容易になります。 ファイルのメモリ マッピングを作成すると、アプリケーションは、I/O スタックを完全にバイパスするロード命令またはストア命令を発行できます。 これは、ホスト拡張アプリケーション (SQLPAL と Windows OS または Linux OS がやり取りできるようにするブラック ボックス コード) の観点からは、「エンライトメントされた」ファイル システムと見なされます。
+> 用語 _エンライトメント_ は、永続メモリ対応ファイル システムの操作の概念を伝えるために導入されました。 ユーザー スペース アプリケーションからファイル システムへの直接アクセスは、メモリ マッピング (`mmap()`) を使用することで容易になります。 ファイルのメモリ マッピングを作成すると、アプリケーションは、I/O スタックを完全にバイパスするロード命令またはストア命令を発行できます。 これは、ホスト拡張アプリケーション (SQLPAL と Windows OS または Linux OS がやり取りできるようにするブラック ボックス コード) の観点からは、「エンライトメントされた」ファイル システムと見なされます。
 
 ## <a name="create-namespaces-for-pmem-devices"></a>PMEM デバイスの名前空間を作成する
 
@@ -87,7 +87,7 @@ mount -o dax,noatime /dev/pmem0 /mnt/dax
 
 デバイスを `ndctl` を使用して構成し、作成とマウントを行ったら、そこにデータベース ファイルを配置するか、新しいデータベースを作成できます。
 
-PMEM デバイスは、O_DIRECT (ダイレクト I/O) セーフであるため、トレース フラグ 3979 を有効にして強制フラッシュ メカニズムを無効にすることを検討してください。 詳細については、[FUA のサポート](https://support.microsoft.com/help/4131496/enable-forced-flush-mechanism-in-sql-server-2017-on-linux) に関するページをご覧ください。 強制ユニット アクセスの内部については、[FUA の内部](https://blogs.msdn.microsoft.com/bobsql/2018/12/18/sql-server-on-linux-forced-unit-access-fua-internals/)に関するページをご覧ください。
+PMEM デバイスは、O_DIRECT (ダイレクト I/O) セーフであるため、トレース フラグ 3979 を有効にして強制フラッシュ メカニズムを無効にすることを検討してください。 詳細については、[FUA のサポート](https://support.microsoft.com/help/4131496/enable-forced-flush-mechanism-in-sql-server-2017-on-linux) に関するページをご覧ください。 強制ユニット アクセスの内部については、[FUA の内部](/archive/blogs/bobsql/sql-server-on-linux-forced-unit-access-fua-internals)に関するページをご覧ください。
 
 ## <a name="next-steps"></a>次のステップ
 

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - MOVE_CONVERSATION_TSQL
 - MOVE CONVERSATION
@@ -22,14 +22,14 @@ helpviewer_keywords:
 - conversations [Service Broker], groups
 - conversations [Service Broker], moving
 ms.assetid: 1da4d2c9-e767-434e-b49b-615711a7f626
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: 2bfd1e22b79749abf8747362a8e7181def375643
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: ffe39296dabc641cdca3a007c5011142c58d11ab
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88358168"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99172532"
 ---
 # <a name="move-conversation-transact-sql"></a>MOVE CONVERSATION (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -41,7 +41,6 @@ ms.locfileid: "88358168"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 MOVE CONVERSATION conversation_handle  
    TO conversation_group_id  
 [ ; ]  
@@ -72,7 +71,7 @@ MOVE CONVERSATION conversation_handle
 ## <a name="examples"></a>例  
  次の例では、メッセージ交換を別のメッセージ交換グループに移動します。  
   
-```  
+```sql  
 DECLARE @conversation_handle UNIQUEIDENTIFIER,  
         @conversation_group_id UNIQUEIDENTIFIER ;  
   

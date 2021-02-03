@@ -23,13 +23,13 @@ helpviewer_keywords:
 ms.assetid: 24ba54fc-98f7-4d35-8881-b5158aac1d66
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 0ffc3d6b3ec03d8903124e1fd75515a93fd43cd3
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 8495d1e9a4f5294b63e307569bb904be5c777e28
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85999191"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97464233"
 ---
 # <a name="from---using-pivot-and-unpivot"></a>FROM - PIVOT および UNPIVOT の使用
 
@@ -42,7 +42,7 @@ ms.locfileid: "85999191"
 ## <a name="syntax"></a>構文  
 次の構文では、`PIVOT` 演算子を使用する方法について説明します。  
   
-```  
+```syntaxsql  
 SELECT <non-pivoted column>,  
     [first pivoted column] AS <column name>,  
     [second pivoted column] AS <column name>,  
@@ -164,8 +164,8 @@ FROM PurchaseOrderHeader;
   
 ```sql
 -- Create the table and insert values as portrayed in the previous example.  
-CREATE TABLE pvt (VendorID int, Emp1 int, Emp2 int,  
-    Emp3 int, Emp4 int, Emp5 int);  
+CREATE TABLE pvt (VendorID INT, Emp1 INT, Emp2 INT,  
+    Emp3 INT, Emp4 INT, Emp5 INT);  
 GO  
 INSERT INTO pvt VALUES (1,4,3,5,4,4);  
 INSERT INTO pvt VALUES (2,4,1,5,5,5);  
@@ -205,7 +205,7 @@ VendorID    Employee    Orders
   
 `UNPIVOT` 関係演算子の動作は `PIVOT` 関係演算子の動作と正反対ではないことに注意してください。 `PIVOT` 関係演算子を実行すると集計が行われ、複数である可能性のある行が出力では 1 つの行にマージされます。 `UNPIVOT` 関係演算子を実行しても、行が既にマージされているので、最初のテーブル値式の結果を再現することはできません。 さらに、`UNPIVOT` の入力に含まれる NULL 値は、出力には表示されません。 値が表示されない場合、それは `PIVOT` 操作の前の入力に、NULL 値が含まれている可能性があることを示しています。  
   
-[!INCLUDE[ssSampleDBobject](../../includes/sssampledbobject-md.md)] サンプル データベースのビュー `Sales.vSalesPersonSalesByFiscalYears` では、`PIVOT` 関係演算子を使用して会計年度別に販売員ごとの総売上を返します。 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] でビューをスクリプト化するには、**オブジェクト エクスプローラー**の [!INCLUDE[ssSampleDBobject](../../includes/sssampledbobject-md.md)] データベースの **[ビュー]** フォルダーで、スクリプト化するビューを探します。 ビュー名を右クリックし、 **[ビューをスクリプト化]** をクリックします。  
+[!INCLUDE[ssSampleDBobject](../../includes/sssampledbobject-md.md)] サンプル データベースのビュー `Sales.vSalesPersonSalesByFiscalYears` では、`PIVOT` 関係演算子を使用して会計年度別に販売員ごとの総売上を返します。 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] でビューをスクリプト化するには、**オブジェクト エクスプローラー** の [!INCLUDE[ssSampleDBobject](../../includes/sssampledbobject-md.md)] データベースの **[ビュー]** フォルダーで、スクリプト化するビューを探します。 ビュー名を右クリックし、 **[ビューをスクリプト化]** をクリックします。  
   
 ## <a name="see-also"></a>参照  
 [FROM (Transact-SQL)](../../t-sql/queries/from-transact-sql.md)   

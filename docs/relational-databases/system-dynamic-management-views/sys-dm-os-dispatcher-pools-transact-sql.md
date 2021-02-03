@@ -1,12 +1,12 @@
 ---
 description: sys.dm_os_dispatcher_pools (Transact-SQL)
-title: dm_os_dispatcher_pools (Transact-sql) |Microsoft Docs
+title: sys.dm_os_dispatcher_pools (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 08/18/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - dm_os_dispatcher_pools_TSQL
 - dm_os_dispatcher_pools
@@ -18,14 +18,14 @@ helpviewer_keywords:
 - extended events [SQL Server], views
 - sys.dm_os_dispatcher_pools DMV
 ms.assetid: b9edbc83-c6bc-4753-9bb5-a454cfe7d6bf
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: a1810098b53ab87f98687a767f384674fcdaa8bc
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 5b5b16a27d17b2dd75d9b398f613e098b10345b4
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89531902"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99184916"
 ---
 # <a name="sysdm_os_dispatcher_pools-transact-sql"></a>sys.dm_os_dispatcher_pools (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -33,12 +33,12 @@ ms.locfileid: "89531902"
   セッション ディスパッチャー プールに関する情報を返します。 ディスパッチャープールは、バックグラウンド処理を実行するためにシステムコンポーネントによって使用されるスレッドプールです。  
   
 > [!NOTE]  
->  またはからこれを呼び出すに [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] は [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] 、 **dm_pdw_nodes_os_dispatcher_pools**という名前を使用します。  
+>  またはからこれを呼び出すに [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] は [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] 、 **sys.dm_pdw_nodes_os_dispatcher_pools** という名前を使用します。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
 |dispatcher_pool_address|**varbinary (8)**|ディスパッチャープールのアドレス。 dispatcher_pool_address は一意です。 NULL 値は許可されません。|  
-|型|**nvarchar (256)**|ディスパッチャープールの種類。 NULL 値は許可されません。 ディスパッチャープールには、次の2種類があります。<br /><br /> DISP_POOL_XE_ENGINE<br /><br /> DISP_POOL_XE_SESSION<br /><br /> DMV で完全な一覧を照会する|  
+|type|**nvarchar (256)**|ディスパッチャープールの種類。 NULL 値は許可されません。 ディスパッチャープールには、次の2種類があります。<br /><br /> DISP_POOL_XE_ENGINE<br /><br /> DISP_POOL_XE_SESSION<br /><br /> DMV で完全な一覧を照会する|  
 |name|**nvarchar (256)**|ディスパッチャー プールの名前。 NULL 値は許可されません。|  
 |dispatcher_count|**int**|アクティブなディスパッチャースレッドの数。 NULL 値は許可されません。|  
 |dispatcher_ideal_count|**int**|ディスパッチャープールが使用できるようになるディスパッチャースレッドの数。 NULL 値は許可されません。|  
@@ -50,9 +50,9 @@ ms.locfileid: "89531902"
 ## <a name="permissions"></a>アクセス許可
 
 で [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] は、 `VIEW SERVER STATE` 権限が必要です。   
-[!INCLUDE[ssSDS_md](../../includes/sssds-md.md)]Premium レベルでは、データベースの権限が必要です `VIEW DATABASE STATE` 。 [!INCLUDE[ssSDS_md](../../includes/sssds-md.md)]Standard レベルおよび Basic レベルでは、**サーバー管理**者または**Azure Active Directory 管理者**アカウントが必要です。   
+SQL Database Basic、S0、S1 のサービス目標、およびエラスティックプール内のデータベースについて `Server admin` は、または `Azure Active Directory admin` アカウントが必要です。 その他のすべての SQL Database サービスの目的で `VIEW DATABASE STATE` は、データベースで権限が必要になります。   
 
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
   
   
 

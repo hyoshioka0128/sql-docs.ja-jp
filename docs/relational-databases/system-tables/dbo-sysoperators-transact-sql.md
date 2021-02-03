@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sysoperators
 - dbo.sysoperators
@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sysoperators system table
 ms.assetid: c2afa20c-b15f-46ca-ae74-2eb65909409e
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: a5784e4084fa8481f8293d68b81d4ab8c52f626a
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 80084de44f0bd1f859e6df5a83116b55cca74045
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540370"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99195044"
 ---
 # <a name="dbosysoperators-transact-sql"></a>dbo.sysoperators (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "89540370"
 |-----------------|---------------|-----------------|  
 |**id**|**int**|オペレーターの ID。|  
 |**name**|**sysname**|演算子の名前。|  
-|**有効**|**tinyint**|アラート通知の状態 (ブール値)。 **1**の場合、このオペレーターは警告が発生したときに通知を受け取ることができます。|  
+|**有効**|**tinyint**|アラート通知の状態 (ブール値)。 **1** の場合、このオペレーターは警告が発生したときに通知を受け取ることができます。|  
 |**email_address**|**nvarchar (100)**|このオペレーターの電子メールアドレス。|  
 |**last_email_date**|**int**|このオペレーターが最後に電子メール通知を受信した日付。|  
 |**last_email_time**|**int**|このオペレーターが最後に電子メール通知を受信した時刻。|  

@@ -1,4 +1,5 @@
 ---
+description: レポート サーバーで Windows 認証を構成する
 title: レポート サーバーで Windows 認証を構成する | Microsoft Docs
 ms.date: 06/22/2020
 ms.prod: reporting-services
@@ -11,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 4de9c3dd-0ee7-49b3-88bb-209465ca9d86
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: c3320851b253b8ca509b564405db4b873e5dea0b
-ms.sourcegitcommit: 4fe7b0d5e8ef1bc076caa3819f7a7b058635a486
+ms.openlocfilehash: 53e005fcd5c4a11270a5bc2f7c307f521311c548
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85263837"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596650"
 ---
 # <a name="configure-windows-authentication-on-the-report-server"></a>レポート サーバーで Windows 認証を構成する
   [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] は、既定では、ネゴシエート認証または NTLM 認証を指定する要求を受け入れます。 これらのセキュリティ プロバイダーを使用するクライアント アプリケーションおよびブラウザーが配置に含まれている場合は、追加の構成なしで既定値を使用できます。 Windows 統合セキュリティの別のセキュリティ プロバイダーを使用する場合 (たとえば Kerberos を直接使用する場合)、または既定値を変更した後に元の設定を復元する場合は、このトピックの情報を使用して、レポート サーバーで認証設定を指定できます。  
@@ -130,7 +131,7 @@ ms.locfileid: "85263837"
   
 -   ドメイン ユーザー アカウントでレポート サーバー サービスの SPN を登録します。 詳細については、「[レポート サーバーのサービス プリンシパル名 &#40;SPN&#41; の登録](../../reporting-services/report-server/register-a-service-principal-name-spn-for-a-report-server.md)」を参照してください。  
   
--   ネットワーク サービスなどのビルトイン アカウントで実行されるように、サービス アカウントを変更します。 ビルトイン アカウントは、HTTP SPN を Host SPN にマップします。これは、コンピューターをネットワークに追加するときに定義されます。 詳細については、「[サービス アカウントの構成 (SSRS 構成マネージャー)](../install-windows/configure-the-report-server-service-account-ssrs-configuration-manager.md)」を参照してください。
+-   ネットワーク サービスなどのビルトイン アカウントで実行されるように、サービス アカウントを変更します。 ビルトイン アカウントは、HTTP SPN を Host SPN にマップします。これは、コンピューターをネットワークに追加するときに定義されます。 詳細については、[サービス アカウントの構成 &#40;レポート サーバーの構成マネージャー&#41;](../install-windows/configure-the-report-server-service-account-ssrs-configuration-manager.md) に関する記事を参照してください。
   
 -   NTLM を使用します。 NTLM は一般に、Kerberos 認証が失敗した場合に機能します。 NTLM を使用するには、RSReportServer.config ファイルから **RSWindowsNegotiate** を削除し、 **RSWindowsNTLM** のみが指定されていることを確認します。 この方法を選択すれば、SPN を定義していないドメイン ユーザー アカウントでも、引き続きレポート サーバー サービスに使用できます。  
   
@@ -148,7 +149,7 @@ ms.locfileid: "85263837"
   
 -   10 進値を 16 進形式に変換する 1 つの方法として、 [!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows の電卓を使用することができます。 Windows の電卓では、[10 進] オプションと [16 進] オプションを表示するいくつかのモードがサポートされています。 [10 進] オプションを選択し、ログ ファイルで見つけた 10 進値を貼り付けるか入力して、[16 進] オプションを選択します。  
   
--   次に、「 [User-Account-Control 属性](https://go.microsoft.com/fwlink/?LinkId=183366) 」を参照して、サービス アカウントの属性を取得します。  
+-   次に、「 [User-Account-Control 属性](/windows/win32/adschema/a-useraccountcontrol) 」を参照して、サービス アカウントの属性を取得します。  
   
 ##### <a name="spns-configured-in-active-directory-for-the-reporting-services-service-account"></a>Reporting Services サービス アカウントに対して Active Directory で構成された SPN  
  [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] サービスのトレース ログ ファイルに SPN が記録されるようにするために、 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] の拡張保護機能を一時的に有効にすることができます。  
@@ -205,5 +206,4 @@ ms.locfileid: "85263837"
  [レポート サーバーで基本認証を構成する](../../reporting-services/security/configure-basic-authentication-on-the-report-server.md)   
  [レポート サーバーでカスタム認証またはフォーム認証を構成する](../../reporting-services/security/configure-custom-or-forms-authentication-on-the-report-server.md)   
  [Reporting Services での認証の拡張保護](../../reporting-services/security/extended-protection-for-authentication-with-reporting-services.md)  
-  
   

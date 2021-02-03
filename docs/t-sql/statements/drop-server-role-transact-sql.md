@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: pdw, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DROP SERVER ROLE
 - DROP_SERVER_ROLE_TSQL
@@ -19,13 +19,13 @@ helpviewer_keywords:
 ms.assetid: a2a1e6e6-e40c-4d6a-81be-d197b80bf226
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 40e9be1315ee89990d6cfec8dc5e6ac7042bdbc5
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: e9993ef678f2c8526e0ce9aa9daa1b7ac1d1e82e
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88496736"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99160212"
 ---
 # <a name="drop-server-role-transact-sql"></a>DROP SERVER ROLE (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-pdw-md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-pdw-md.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "88496736"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 DROP SERVER ROLE role_name  
 ```  
   
@@ -63,7 +63,7 @@ DROP SERVER ROLE role_name
 ### <a name="a-to-drop-a-server-role"></a>A. サーバー ロールを削除するには  
  次の例では、サーバー ロール `purchasing` を削除します。  
   
-```  
+```sql  
 DROP SERVER ROLE purchasing;  
 GO  
 ```  
@@ -71,7 +71,7 @@ GO
 ### <a name="b-to-view-role-membership"></a>B. ロールのメンバーシップを表示するには  
  ロールのメンバーシップを表示するには、[!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] の **[サーバー ロール (メンバー)]** ページを使用するか、次のクエリを実行します。  
   
-```  
+```sql  
 SELECT SRM.role_principal_id, SP.name AS Role_Name,   
 SRM.member_principal_id, SP2.name  AS Member_Name  
 FROM sys.server_role_members AS SRM  
@@ -85,7 +85,7 @@ ORDER BY  SP.name,  SP2.name
 ### <a name="c-to-view-role-membership"></a>C. ロールのメンバーシップを表示するには  
  サーバー ロールが別のサーバー ロールを所有しているかどうかを判断するには、次のクエリを実行します。  
   
-```  
+```sql  
 SELECT SP1.name AS RoleOwner, SP2.name AS Server_Role  
 FROM sys.server_principals AS SP1  
 JOIN sys.server_principals AS SP2  

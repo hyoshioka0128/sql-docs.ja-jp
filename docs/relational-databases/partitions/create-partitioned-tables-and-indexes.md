@@ -2,7 +2,7 @@
 description: パーティション テーブルとパーティション インデックスの作成
 title: パーティション テーブルとパーティション インデックスの作成 | Microsoft Docs
 ms.custom: ''
-ms.date: 03/14/2017
+ms.date: 1/5/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
@@ -29,17 +29,17 @@ helpviewer_keywords:
 ms.assetid: 7641df10-1921-42a7-ba6e-4cb03b3ba9c8
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: a22807e98d887504cb1700e7bc3497984b699059
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 273e6f625b0a86be179da529e8b52e0d7ce991cc
+ms.sourcegitcommit: 04d101fa6a85618b8bc56c68b9c006b12147dbb5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88482535"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99049158"
 ---
 # <a name="create-partitioned-tables-and-indexes"></a>パーティション テーブルとパーティション インデックスの作成
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
-  [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] では、 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] または [!INCLUDE[tsql](../../includes/tsql-md.md)]を使用して、パーティション テーブルまたはパーティション インデックスを作成できます。 パーティション テーブルとパーティション インデックスのデータは、データベース内の複数のファイル グループに分散できるように、行方向に複数の単位に分割されています。 パーティション分割により、大規模なテーブルとインデックスの管理の可能性と拡張性が向上します。  
+  [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] では、 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] または [!INCLUDE[tsql](../../includes/tsql-md.md)]を使用して、パーティション テーブルまたはパーティション インデックスを作成できます。 パーティション テーブルとパーティション インデックスのデータは、データベース内の複数のファイル グループに分散できるように、行方向に複数の単位に分割されています。 パーティション分割により、大規模なテーブルとインデックスの管理の可能性と拡張性が向上します。  
   
  一般に、パーティション テーブルまたはパーティション インデックスの作成は、次の 4 つの操作で構成されます。  
   
@@ -50,6 +50,9 @@ ms.locfileid: "88482535"
 3.  パーティション テーブルまたはパーティション インデックスのパーティションを新しいファイル グループにマップするパーティション構成を作成します。  
   
 4.  テーブルまたはインデックスを作成または変更し、格納場所としてそのパーティション構成を指定します。  
+ 
+> [!NOTE]
+> Azure [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] では、プライマリ ファイル グループのみがサポートされています。  
   
  **このトピックの内容**  
   
@@ -96,7 +99,7 @@ ms.locfileid: "88482535"
 3.  **[行]** で、 **[追加]** をクリックします。 新しい行に、ファイル グループ名を入力します。  
   
     > [!WARNING]  
-    >  パーティションを作成するときは常に、境界値に指定されたファイル グループの数より 1 つ多い数のファイル グループが必要です。  
+    >  パーティションの作成時にファイル グループを複数指定する場合は、境界値に指定したファイル グループの数より 1 つ多い数のファイル グループが常に必要です。  
   
 4.  行の追加を繰り返して、パーティション テーブルのすべてのファイル グループを作成します。  
   
@@ -114,7 +117,7 @@ ms.locfileid: "88482535"
   
 1.  パーティション分割するテーブルを右クリックし、**[ストレージ]** をポイントします。次に、**[パーティションの作成]** をクリックします。  
   
-2.  **パーティションの作成ウィザード**の **[パーティションの作成ウィザードへようこそ]** ページで、 **[次へ]** をクリックします。  
+2.  **パーティションの作成ウィザード** の **[パーティションの作成ウィザードへようこそ]** ページで、 **[次へ]** をクリックします。  
   
 3.  **[パーティション分割列の選択]** ページの **[使用可能なパーティション分割列]** グリッドで、テーブルのパーティション分割に使用する列を選択します。 **[使用可能なパーティション分割列]** グリッドには、データのパーティション分割に使用できるデータ型の列だけが表示されます。 計算列をパーティション分割列として選択する場合は、列を PERSISTED として指定する必要があります。  
   
@@ -138,14 +141,14 @@ ms.locfileid: "88482535"
   
      このページを完了したら、 **[次へ]** をクリックします。  
   
-6.  **[パーティションのマップ]** ページの **[範囲]** で、 **[左側の境界]** または **[右側の境界]** を選択して、作成する各ファイル グループ内に最大または最小の境界値を含めるかどうかを指定します。 パーティションを作成するときは常に、境界値に指定されたファイル グループの数に 1 つ余分なファイル グループを足した数を入力する必要があります。  
+6.  **[パーティションのマップ]** ページの **[範囲]** で、 **[左側の境界]** または **[右側の境界]** を選択して、作成する各ファイル グループ内に最大または最小の境界値を含めるかどうかを指定します。 パーティションの作成時にファイル グループを複数指定する場合は、境界値に指定したファイル グループの数より 1 つ多い数のファイル グループを常に入力する必要があります。  
   
      **[ファイル グループを選択して境界値を指定します]** グリッドの **[ファイル グループ]** で、データをパーティション分割するファイル グループを選択します。 **[境界]** で、各ファイル グループの境界値を入力します。 境界値を空にした場合、パーティション関数は、パーティション関数名を使用して、テーブルまたはインデックス全体を単一のパーティションにマップします。  
   
      このページで使用できる他のオプションを次に示します。  
   
      **[境界の設定]**  
-     **[境界値の設定]** ダイアログ ボックスを開き、パーティションの境界値と日付範囲を選択します。 このオプションは、 **date**、 **datetime**、 **smalldatetime**、 **datetime2**、または **datetimeoffset**のいずれかのデータ型を含むパーティション分割列を選択した場合にのみ使用できます。  
+     **[境界値の設定]** ダイアログ ボックスを開き、パーティションの境界値と日付範囲を選択します。 このオプションは、 **date**、 **datetime**、 **smalldatetime**、 **datetime2**、または **datetimeoffset** のいずれかのデータ型を含むパーティション分割列を選択した場合にのみ使用できます。  
   
      **[ストレージの推定]**  
      パーティションに指定された各ファイル グループのストレージの行数、必要な領域、および使用できる領域を推定します。 これらの値は、読み取り専用の値としてグリッドに表示されます。  
@@ -265,7 +268,7 @@ ms.locfileid: "88482535"
   
 #### <a name="to-create-a-partitioned-table"></a>パーティション テーブルを作成するには  
   
-1.  **オブジェクト エクスプローラー**で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)]のインスタンスに接続します。  
+1.  **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)]のインスタンスに接続します。  
   
 2.  [標準] ツール バーの **[新しいクエリ]** をクリックします。  
   
@@ -345,6 +348,34 @@ ms.locfileid: "88482535"
         ON myRangePS1 (col1) ;  
     GO  
     ```  
+
+
+#### <a name="to-create-a-partitioned-table-in-azure-sqldbesa"></a>Azure [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] にパーティション テーブルを作成するには
+
+Azure [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] では、ファイルとファイル グループの追加はサポートされていませんが、PRIMARY ファイル グループのみをパーティション分割するテーブルのパーティション分割はサポートされています。
+  
+1.  **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)]のインスタンスに接続します。  
+  
+1.  [標準] ツール バーの **[新しいクエリ]** をクリックします。  
+  
+1.  次の例をコピーしてクエリ ウィンドウに貼り付け、 **[実行]** をクリックします。 この例では、パーティション関数とパーティション構成を作成します。 パーティション構成を格納場所として指定した新しいテーブルが作成されます。 
+
+    ```
+    -- Creates a partition function called myRangePF1 that will partition a table into four partitions  
+    CREATE PARTITION FUNCTION myRangePF1 (int)  
+        AS RANGE LEFT FOR VALUES (1, 100, 1000) ;  
+    GO  
+    -- Creates a partition scheme called myRangePS1 that applies myRangePF1 to the PRIMARY filegroup 
+    CREATE PARTITION SCHEME myRangePS1  
+        AS PARTITION myRangePF1  
+        ALL TO ('PRIMARY') ;  
+    GO  
+    -- Creates a partitioned table called PartitionTable that uses myRangePS1 to partition col1  
+    CREATE TABLE PartitionTable (col1 int PRIMARY KEY, col2 char(10))  
+        ON myRangePS1 (col1) ;  
+    GO
+    ```  
+
   
 #### <a name="to-determine-if-a-table-is-partitioned"></a>テーブルがパーティション分割されているかどうかを調べるには  
   
@@ -410,7 +441,7 @@ ms.locfileid: "88482535"
     GO  
     ```  
   
- 詳細については、次を参照してください。  
+ 詳細については次を参照してください:  
   
 -   [ALTER DATABASE の File および Filegroup オプション &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-transact-sql-file-and-filegroup-options.md)  
   

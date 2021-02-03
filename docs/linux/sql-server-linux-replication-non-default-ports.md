@@ -3,20 +3,20 @@ title: レプリケーション スナップショット フォルダーを構�
 titleSuffix: SQL Server on Linux
 description: Linux 上の SQL Server レプリケーションに対して、既定以外のポートでスナップショット フォルダーの共有を構成する方法について説明します。
 ms.custom: seo-lt-2019
-author: MikeRayMSFT
-ms.author: mikeray
+author: VanMSFT
+ms.author: vanto
 ms.reviewer: vanto
 ms.date: 09/24/2018
 ms.topic: article
 ms.prod: sql
 ms.technology: linux
-monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: cdb90854984c195258891178be8a3fd07345929b
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15'
+ms.openlocfilehash: ce4e17be837794382435c8a5369ef92a44a5b91a
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85882683"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471503"
 ---
 # <a name="configure-replication-with-non-default-ports-sql-server-linux"></a>既定以外のポートを使用してレプリケーションを構成する (SQL Server Linux)
 

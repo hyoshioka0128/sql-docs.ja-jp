@@ -8,16 +8,16 @@ ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: =sql-server-2016||=sql-server-2017||=sqlallproducts-allversions
-ms.openlocfilehash: 525e9d0931b3ff25d4258004680ed158a9baf82d
-ms.sourcegitcommit: edba1c570d4d8832502135bef093aac07e156c95
+monikerRange: =sql-server-2016||=sql-server-2017
+ms.openlocfilehash: 833f89a2a39fa95999ac98f718769eb425d9d21f
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86484448"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471343"
 ---
 # <a name="scale-concurrent-execution-of-external-scripts-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services での外部スクリプトの同時実行のスケーリング
-[!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
+[!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
 SQL Server Machine Learning Services のワーカー アカウントについて、および外部スクリプトの同時実行数をスケーリングするよう既定の構成を変更する方法について説明します。
 

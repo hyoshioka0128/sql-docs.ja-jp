@@ -1,8 +1,8 @@
 ---
 title: ユニバーサル データ リンク (UDL) の構成 | Microsoft Docs
-description: Microsoft OLE DB Driver for SQL Server を使用したユニバーサル データ リンク (UDL) の構成
+description: '[接続] タブを使用し、OLE DB Driver for SQL Server を使用してデータに接続する方法を指定する方法について説明します。'
 ms.custom: ''
-ms.date: 10/11/2019
+ms.date: 09/30/2020
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
@@ -10,12 +10,12 @@ ms.technology: connectivity
 ms.topic: reference
 ms.author: v-beaziz
 author: bazizi
-ms.openlocfilehash: c83def9454ab3477e1c08102bb0b7ac66d7e2f65
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+ms.openlocfilehash: f8d9444864dfe144918374c6d10e1a9f403faff3
+ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85986652"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96504733"
 ---
 # <a name="universal-data-link-udl-configuration"></a>ユニバーサル データ リンク (UDL) の構成
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -32,7 +32,7 @@ Microsoft OLE DB Driver for SQL Server を使用してデータに接続する�
 |オプション|説明|
 |---   |---        |
 |[サーバー名の選択または入力]|ドロップダウン リストからサーバー名を選択するか、アクセスするデータベースが格納されているサーバーの場所を入力します。 サーバー上のデータベースを選択するのは別の操作です。 一覧を更新するには、"更新" をクリックします。
-|Enter information to sign in to the server (サーバーにサインインするための情報の入力)|このドロップダウン リストから、次の認証オプションを選択できます。 <ul><li>`Windows Authentication:` 現在ログインしているユーザーの Windows アカウントの資格情報を使用した SQL Server に対する認証。</li><li>`SQL Server Authentication:` ログイン ID とパスワードを使用した認証。</li><li>`Active Directory - Integrated:` Azure Active Directory の ID による統合認証。 このモードは、SQL Server に対する Windows 認証でも使用できます。</li><li>`Active Directory - Password:` Azure Active Directory の ID によるユーザー ID とパスワードの認証。</li><li>`Active Directory - Universal with MFA support:` Azure Active Directory の ID による対話型認証。 このモードでは、Azure Multi-Factor Authentication (MFA) がサポートされます。</li></ul>|
+|Enter information to sign in to the server (サーバーにサインインするための情報の入力)|このドロップダウン リストから、次の認証オプションを選択できます。 <ul><li>`Windows Authentication:` 現在ログインしているユーザーの Windows アカウントの資格情報を使用した SQL Server に対する認証。</li><li>`SQL Server Authentication:` ログイン ID とパスワードを使用した認証。</li><li>`Active Directory - Integrated:` Azure Active Directory の ID による統合認証。 このモードは、SQL Server に対する Windows 認証でも使用できます。</li><li>`Active Directory - Password:` Azure Active Directory の ID によるユーザー ID とパスワードの認証。</li><li>`Active Directory - Universal with MFA support:` Azure Active Directory の ID による対話型認証。 このモードでは、Azure Multi-Factor Authentication (MFA) がサポートされます。</li><li>`Active Directory - Service Principal:` Azure Active Directory サービス プリンシパルを使用した認証。 **ユーザー名** はアプリケーション (クライアント) ID に設定する必要があります。 **パスワード** はアプリケーション (クライアント) シークレットに設定する必要があります。</li></ul>|
 |サーバー SPN|セキュリティ接続を使用する場合、サーバーのサービス プリンシパル名 (SPN) を指定できます。|
 |ユーザー名|データ ソースにサインインするときに認証に使用するユーザー ID を入力します。|
 |Password|データ ソースにサインインするときに認証に使用するパスワードを入力します。|
@@ -56,7 +56,7 @@ Microsoft OLE DB Driver for SQL Server を使用してデータに接続する�
 
 
 > [!NOTE]  
->  一般的なデータ リンク接続情報については、「[Data Link API の概要](https://go.microsoft.com/fwlink/?linkid=2067432)」を参照してください。
+>  一般的なデータ リンク接続情報については、「[Data Link API の概要](/previous-versions/windows/desktop/ms718102(v=vs.85))」を参照してください。
 
 ## <a name="next-steps"></a>次のステップ
 - OLE DB ドライバーを使用して [Azure Active Directory に対する認証を行います](../features/using-azure-active-directory.md)。

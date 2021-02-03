@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: 9d0ce165-8719-4007-9ae8-00f85cab3a0d
 author: dphansen
 ms.author: davidph
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 3346d217228bf6ca914b6ae1aa31af0883383908
-ms.sourcegitcommit: 9b41725d6db9957dd7928a3620fe4db41eb51c6e
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 90a24ba11ce482e8d8608e1641d64ace067ad41b
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88173243"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170974"
 ---
 # <a name="external-scripts-enabled-server-configuration-option"></a>external scripts enabled サーバー構成オプション
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -31,9 +31,9 @@ ms.locfileid: "88173243"
 
 [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) プロシージャを使用して外部スクリプトを実行する前に、external script enabled オプションを有効にする必要があります。 R や Python などのサポートされている言語で書かれたスクリプトを実行するには、**sp_execute_external_script** を使います。 
 
-+ [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] の場合
++ [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] の場合
 
-    [!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)] には、[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] での R 言語のサポートと、一連の R ワークステーション ツールおよび接続性ライブラリが含まれます。
+    [!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)] には、[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] での R 言語のサポートと、一連の R ワークステーション ツールおよび接続性ライブラリが含まれます。
 
     [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のセットアップの間に **R Services** をインストールして、R スクリプトの実行を有効にします。
 
@@ -42,6 +42,10 @@ ms.locfileid: "88173243"
     [!INCLUDE[rsql-productnamenew-md](../../includes/rsql-productnamenew-md.md)] では、R と Python の両方の言語がサポートされています。
 
     外部スクリプトの実行を有効にするには、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のセットアップの間に、**Machine Learning Services** 機能をインストールします。 初期セットアップのときに、必ず少なくとも 1 つの言語を選んでください (R と Python のどちらか一方または両方)。
+    
++ [!INCLUDE[ssSQL15](../../includes/sssqlv15-md.md)] 以降の [!INCLUDE[rsql-productnamenew-md](../../includes/rsql-productnamenew-md.md)] によって、R、Python、Java のすべてとその他のサード パーティ言語がサポートされています。
+
+任意のサポート言語で外部スクリプトの実行を有効にするには、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のセットアップ時に、Machine Learning Services と言語拡張機能をインストールします。
 
 ## <a name="additional-requirements"></a>その他の要件
 

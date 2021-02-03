@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: 0b10016f-a479-4444-a484-46cb4677cf64
 author: MightyPen
 ms.author: genemi
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 3b4aad088298790c4add3ddea318131a1ed61d70
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 034142392069443993c5d987b8aed80231c229fb
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85756815"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97481333"
 ---
 # <a name="use-the-powershell-provider-for-extended-events"></a>拡張イベントへの PowerShell プロバイダーの使用
 
@@ -114,8 +114,7 @@ $session.Create()
  拡張イベント セッションを作成、変更、または削除するには、ALTER ANY EVENT SESSION 権限が必要です。  
   
 ## <a name="see-also"></a>参照  
- [SQL Server PowerShell](../../relational-databases/scripting/sql-server-powershell.md)   
+ [SQL Server PowerShell](../../powershell/sql-server-powershell.md)   
  [system_health セッションの使用](../../relational-databases/extended-events/use-the-system-health-session.md)   
  [拡張イベントのツール](../../relational-databases/extended-events/extended-events-tools.md)  
-  
   

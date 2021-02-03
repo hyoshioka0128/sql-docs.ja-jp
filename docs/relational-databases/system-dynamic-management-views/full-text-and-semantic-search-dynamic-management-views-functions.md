@@ -1,12 +1,12 @@
 ---
-description: フルテキストおよびセマンティック検索の動的管理ビュー-関数
-title: フルテキスト検索とセマンティック検索の動的管理ビュー-Functions |Microsoft Docs
+description: Full-Text およびセマンティック検索の動的管理ビュー-関数
+title: Full-Text およびセマンティック検索の動的管理ビュー-関数 |Microsoft Docs
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -15,19 +15,19 @@ helpviewer_keywords:
 ms.assetid: 199dbd5a-29f6-4ef0-8e65-86e32c0aaa3a
 author: pmasl
 ms.author: pelopes
-ms.openlocfilehash: 4faaa92980259861682bf8e73aaca434d8e29e44
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: cd9e072fa2c4aafceaad2d4aad57eb9dcc4bb38b
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88374708"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99201357"
 ---
-# <a name="full-text-and-semantic-search-dynamic-management-views---functions"></a>フルテキストおよびセマンティック検索の動的管理ビュー-関数
+# <a name="full-text-and-semantic-search-dynamic-management-views---functions"></a>Full-Text およびセマンティック検索の動的管理ビュー-関数
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   ここでは、フルテキスト検索とセマンティック検索に関連する次の動的管理ビューおよび関数について説明します。  
   
-## <a name="full-text-search-dynamic-management-views-and-functions"></a>フルテキスト検索の動的管理ビューおよび関数  
+## <a name="full-text-search-dynamic-management-views-and-functions"></a>動的管理ビューおよび関数の検索 Full-Text  
  [sys.dm_fts_active_catalogs &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-fts-active-catalogs-transact-sql.md)  
  サーバー上でいくつかの作成アクティビティが進行中のフルテキストカタログに関する情報を返します。  
   
@@ -53,7 +53,7 @@ ms.locfileid: "88374708"
  フルテキスト クロールまたはフルテキスト クロール範囲の一部として使用される、特定のメモリ プールのメモリ バッファーに関する情報を返します。  
   
  [sys.dm_fts_memory_pools](../../relational-databases/system-dynamic-management-views/sys-dm-fts-memory-pools-transact-sql.md)  
- フルテキストクロールまたはフルテキストクロールの範囲でフルテキスト Gatherer コンポーネントで使用できる共有メモリプールに関する情報を返します。  
+ フルテキストクロールまたはフルテキストクロール範囲の Full-Text Gatherer コンポーネントで使用できる共有メモリプールに関する情報を返します。  
   
  [sys.dm_fts_outstanding_batches](../../relational-databases/system-dynamic-management-views/sys-dm-fts-outstanding-batches-transact-sql.md)  
  各フルテキストインデックスバッチに関する情報を返します。  
@@ -70,6 +70,5 @@ ms.locfileid: "88374708"
   
 ## <a name="see-also"></a>参照  
  [動的管理ビューと動的管理関数 &#40;Transact-SQL&#41;](~/relational-databases/system-dynamic-management-views/system-dynamic-management-views.md)   
- [システムビュー &#40;Transact-sql&#41;](https://msdn.microsoft.com/library/35a6161d-7f43-4e00-bcd3-3091f2015e90)  
-  
+ [システムビュー &#40;Transact-sql&#41;](../../t-sql/language-reference.md)  
   

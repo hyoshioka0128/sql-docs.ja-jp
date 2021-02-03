@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: ''
-ms.openlocfilehash: 9d4dd55daf26c9f927e23c0f269a084c711d0481
-ms.sourcegitcommit: 58158eda0aa0d7f87f9d958ae349a14c0ba8a209
+ms.openlocfilehash: 2cbdcfca40f1fa2fd51e669aeefcf317a958c687
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80215748"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97467433"
 ---
 # <a name="type-mapping-with-polybase"></a>PolyBase を使用した型マッピング
 
@@ -28,7 +28,7 @@ PolyBase を使用して外部テーブルを作成する場合、データ型�
 外部データ ソース内のファイルを参照する外部のテーブルでは、列と型の定義は、外部ファイルの正確なスキーマにマップする必要があります。 Hadoop/Hive に格納されているデータを参照するデータの種類を定義する場合は、SQL、および Hive のデータ型の間では、次のマッピングを使用し、そこから選択するときに、SQL のデータ型に型をキャストします。 型には、特にそれ以外の場合に記されていない、Hive のすべてのバージョンが含まれます。
 
 > [!NOTE]  
-> SQL Server では、いずれの変換でも Hive の *infinity*のデータ値をサポートしていません。 PolyBase はデータ型変換エラーで失敗します。
+> SQL Server では、いずれの変換でも Hive の *infinity* のデータ値をサポートしていません。 PolyBase はデータ型変換エラーで失敗します。
 
 ## <a name="hadoop-type-mapping-reference"></a>Hadoop 型マッピング リファレンス
 
@@ -57,14 +57,15 @@ PolyBase を使用して外部テーブルを作成する場合、データ型�
 | decimal       | Decimal                   | decimal        | BigDecimalWritable    | Hive0.11 以降が適用されます。 |
 
 <!--SQL Server 2019-->
-::: moniker range=">= sql-server-ver15 || =sqlallproducts-allversions"
+::: moniker range=">= sql-server-ver15 "
 
 ## <a name="oracle-type-mapping-reference"></a>Oracle 型マッピング リファレンス
 
 | Oracle データ型 | SQL Server の型 | 
 | -------------    | --------------- |
 |Float             |Float            |
-|NUMBER            |Decimal          |
+|NUMBER            |Float            |
+|NUMBER (p,s)      |Decimal (p, s)   |
 |LONG              |nvarchar         |
 |BINARY_FLOAT      |Real             | 
 |BINARY_DOUBLE     |Float            | 
@@ -98,14 +99,14 @@ PolyBase を使用して外部テーブルを作成する場合、データ型�
 | String             | nvarchar        |
 | Binary Data        | nvarchar        |
 | Object ID          | nvarchar        |
-| Boolean            | bit             |
+| ブール型            | ビット             |
 | Date               | Datetime2       |
 | 32-bit integer     | int             |
 | Timestamp          | nvarchar        |
-| 64-bit integer     | BigInt          |
+| 64 ビット整数     | BigInt          |
 |Decimal 128         | Decimal         | 
 | DBPointer          | nvarchar        |
-| Javascript         | nvarchar        |
+| JavaScript         | nvarchar        |
 | Max Key            | nvarchar        |
 | Min Key            | nvarchar        |
 | Symbol             | nvarchar        |
@@ -139,10 +140,10 @@ MongoDB では、BSON ドキュメントを使用して、データ レコード
 |timestamp           |Datetime2        |
 |TIME                |Time             |
 |TIME WITH TIME ZONE |Time             |
-|TIMESTAMP WITH TIME ZONE|Time         |
+|TIMESTAMP WITH TIME ZONE|時刻         |
 
 ::: moniker-end
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 これを使用する方法について詳しくは、[CREATE EXTERNAL TABLE](../../t-sql/statements/create-external-table-transact-sql.md) に関する Transact-SQL 参照記事をご覧ください。

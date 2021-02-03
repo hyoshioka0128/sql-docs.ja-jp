@@ -29,21 +29,21 @@ author: MightyPen
 ms.author: genemi
 ms.reviewer: ''
 ms.custom: seo-lt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 15274c3b46ac7b0dfb3e9f43fad0dd1174f5fbbf
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 6c050a6b34781fc6312e7d410aeccace29e3dc84
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85775765"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97461763"
 ---
 # <a name="specifying-relationships-using-sqlrelationship-sqlxml-40"></a>sql:relationship を使用した、リレーションシップの指定 (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
   XML ドキュメント内の要素は関連付けることができます。 要素は階層的に入れ子にでき、要素間に ID、IDREF、または IDREFS のリレーションシップを指定することができます。  
   
- たとえば、XSD スキーマでは、要素に **\<Customer>** 子要素が含まれてい **\<Order>** ます。 スキーマを AdventureWorks データベースにマップすると、要素は **\<Customer>** sales. Customer テーブルにマップされ、 **\<Order>** 要素は SalesOrderHeader テーブルにマップされます。 これらの基になるテーブル (Sales. Customer および SalesOrderHeader) は、顧客が注文を配置するため、関連付けられています。 ここで、Sales.SalesOrderHeader テーブル内の CustomerID は、Sales.Customer テーブル内の CustomerID 主キーを参照する外部キーです。 **Sql: relationship**注釈を使用すると、マッピングスキーマ要素間にこれらのリレーションシップを設定できます。  
+ たとえば、XSD スキーマでは、要素に **\<Customer>** 子要素が含まれてい **\<Order>** ます。 スキーマを AdventureWorks データベースにマップすると、要素は **\<Customer>** sales. Customer テーブルにマップされ、 **\<Order>** 要素は SalesOrderHeader テーブルにマップされます。 これらの基になるテーブル (Sales. Customer および SalesOrderHeader) は、顧客が注文を配置するため、関連付けられています。 ここで、Sales.SalesOrderHeader テーブル内の CustomerID は、Sales.Customer テーブル内の CustomerID 主キーを参照する外部キーです。 **Sql: relationship** 注釈を使用すると、マッピングスキーマ要素間にこれらのリレーションシップを設定できます。  
   
- 注釈付き XSD スキーマでは、 **sql: relationship**注釈を使用して、要素のマップ先となる基になるテーブル間の主キーと外部キーのリレーションシップに基づいて、スキーマ要素を階層的に入れ子にします。 **Sql: relationship**注釈を指定するときは、次のことを確認する必要があります。  
+ 注釈付き XSD スキーマでは、 **sql: relationship** 注釈を使用して、要素のマップ先となる基になるテーブル間の主キーと外部キーのリレーションシップに基づいて、スキーマ要素を階層的に入れ子にします。 **Sql: relationship** 注釈を指定するときは、次のことを確認する必要があります。  
   
 -   親テーブル (Sales.Customer) と子テーブル (Sales.SalesOrderHeader)。  
   
@@ -51,7 +51,7 @@ ms.locfileid: "85775765"
   
  これらの情報を使用して、適切な階層が生成されます。  
   
- テーブル名と必要な結合情報を指定するには、 **sql: relationship**注釈で次の属性を指定します。 これらの属性は、要素でのみ有効です **\<sql:relationship>** 。  
+ テーブル名と必要な結合情報を指定するには、 **sql: relationship** 注釈で次の属性を指定します。 これらの属性は、要素でのみ有効です **\<sql:relationship>** 。  
   
  **名前**  
  リレーションシップの一意な名前を指定します。  
@@ -59,10 +59,10 @@ ms.locfileid: "85775765"
  **親**  
  親リレーション (テーブル) を指定します。 これは省略可能な属性です。この属性を指定しない場合、親テーブル名はドキュメント内の子階層の情報から取得されます。 同じでも異なる親要素を使用する2つの親子階層がスキーマで指定されている場合は、 **\<sql:relationship>** で親属性を指定しません **\<sql:relationship>** 。 この情報はスキーマ内の階層から取得されます。  
   
- **parent-key**  
+ **親-キー**  
  親の親キーを指定します。 親キーが複数の列で構成される場合は、値をスペースで区切って指定します。 複数列キーに指定される値と、それに対応する子キーに指定される値の間では、位置的なマッピングが行われます。  
   
- **子供**  
+ **子**  
  子リレーション (テーブル) を指定します。  
   
  **child-key**  
@@ -71,17 +71,17 @@ ms.locfileid: "85775765"
  **逆条件**  
  で指定されたこの属性 **\<sql:relationship>** は、アップデートグラムによって使用されます。 詳細については、「sql [: relationship での sql: 逆属性の指定](../../relational-databases/sqlxml-annotated-xsd-schemas-using/specifying-the-sql-inverse-attribute-on-sql-relationship-sqlxml-4-0.md)」を参照してください。  
   
- **Sql: キーフィールド**の注釈は、子要素を含む要素で指定する必要があります。この要素には、 **\<sql:relationship>** 要素と子の間にが定義され、親要素で指定されたテーブルの主キーは提供されません。 スキーマでが指定されていない場合でも **\<sql:relationship>** 、適切な階層を生成するために**sql: キーフィールド**を指定する必要があります。 詳細については、「 [sql: キーフィールドを使用したキー列の識別](../../relational-databases/sqlxml-annotated-xsd-schemas-using/identifying-key-columns-using-sql-key-fields-sqlxml-4-0.md)」を参照してください。  
+ **Sql: キーフィールド** の注釈は、子要素を含む要素で指定する必要があります。この要素には、 **\<sql:relationship>** 要素と子の間にが定義され、親要素で指定されたテーブルの主キーは提供されません。 スキーマでが指定されていない場合でも **\<sql:relationship>** 、適切な階層を生成するために **sql: キーフィールド** を指定する必要があります。 詳細については、「 [sql: キーフィールドを使用したキー列の識別](../../relational-databases/sqlxml-annotated-xsd-schemas-using/identifying-key-columns-using-sql-key-fields-sqlxml-4-0.md)」を参照してください。  
   
- 結果に適切な入れ子を生成するには、すべてのスキーマで**sql: キーフィールド**を指定することをお勧めします。  
+ 結果に適切な入れ子を生成するには、すべてのスキーマで **sql: キーフィールド** を指定することをお勧めします。  
   
-## <a name="examples"></a>使用例  
+## <a name="examples"></a>例  
  次の例を使用した実際のサンプルを作成するには、特定の条件を満たす必要があります。 詳細については、「 [SQLXML の例を実行するための要件](../../relational-databases/sqlxml/requirements-for-running-sqlxml-examples.md)」を参照してください。  
   
-### <a name="a-specifying-the-sqlrelationship-annotation-on-an-element"></a>A: 要素に sql:relationship 注釈を指定する  
+### <a name="a-specifying-the-sqlrelationship-annotation-on-an-element"></a>A. 要素に sql:relationship 注釈を指定する  
  次の注釈付き XSD スキーマには、要素と要素が含まれてい **\<Customer>** **\<Order>** ます。 **\<Order>** 要素は要素の子要素です **\<Customer>** 。  
   
- スキーマでは、子要素に**sql: relationship**注釈が指定されてい **\<Order>** ます。 リレーションシップ自体は、要素で定義され **\<xsd:appinfo>** ます。  
+ スキーマでは、子要素に **sql: relationship** 注釈が指定されてい **\<Order>** ます。 リレーションシップ自体は、要素で定義され **\<xsd:appinfo>** ます。  
   
  要素は、 **\<relationship>** SalesOrderHeader テーブルの customerid を外部キーとして識別します。これは、sales. Customer テーブルの customerid 主キーを参照します。 したがって、顧客に属する注文は、その要素の子要素として表示され **\<Customer>** ます。  
   
@@ -172,7 +172,7 @@ ms.locfileid: "85775765"
   
 3.  SQLXML 4.0 テスト スクリプト (sqlxml4test.vbs) を作成し、それを使用してテンプレートを実行します。  
   
-     詳細については、「ADO を使用した[SQLXML クエリの実行](../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
+     詳細については、「ADO を使用した [SQLXML クエリの実行](../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
   
  結果セットは次のようになります。  
   
@@ -187,7 +187,7 @@ ms.locfileid: "85775765"
 </ROOT>  
 ```  
   
-### <a name="b-specifying-a-relationship-chain"></a>B: リレーションシップ チェーンを指定する  
+### <a name="b-specifying-a-relationship-chain"></a>B. リレーションシップ チェーンを指定する  
  この例では、AdventureWorks データベースから取得したデータを使用して、次の XML ドキュメントを要求するとします。  
   
 ```  
@@ -203,7 +203,7 @@ ms.locfileid: "85775765"
   
  この階層を生成する XSD スキーマを指定するには、OrderOD と ODProduct の 2 つのリレーションシップを指定する必要があります。 OrderOD リレーションシップでは、Sales.SalesOrderHeader テーブルと Sales.SalesOrderDetail テーブル間の親子リレーションシップを指定します。 ODProduct リレーションシップでは、Sales.SalesOrderDetail テーブルと Production.Product テーブル間のリレーションシップを指定します。  
   
- 次のスキーマでは、要素の**msdata: relationship**注釈によっ **\<Product>** て、Orderod と ODProduct の2つの値が指定されています。 これらの値の指定順序は重要です。  
+ 次のスキーマでは、要素の **msdata: relationship** 注釈によっ **\<Product>** て、Orderod と ODProduct の2つの値が指定されています。 これらの値の指定順序は重要です。  
   
 ```  
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"  
@@ -301,7 +301,7 @@ ms.locfileid: "85775765"
   
 3.  SQLXML 4.0 テスト スクリプト (sqlxml4test.vbs) を作成し、それを使用してテンプレートを実行します。  
   
-     詳細については、「ADO を使用した[SQLXML クエリの実行](../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
+     詳細については、「ADO を使用した [SQLXML クエリの実行](../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
   
  結果セットは次のようになります。  
   
@@ -319,8 +319,8 @@ ms.locfileid: "85775765"
 </ROOT>  
 ```  
   
-### <a name="c-specifying-the-relationship-annotation-on-an-attribute"></a>C: 属性にリレーションシップ注釈を指定する  
- この例のスキーマには、 \<Customer> 子要素を持ち、 \<CustomerID> IDREFS 型の OrderIDList 属性を持つ要素が含まれています。 要素は、 \<Customer> AdventureWorks データベースの Sales. Customer テーブルにマップされます。 既定では、このマッピングのスコープは、子要素または属性に**sql: relation**が指定されていない限り、すべての子要素または属性に適用されます。その場合は、要素を使用して、適切な主キー/外部キーのリレーションシップを定義する必要があり \<relationship> ます。 また、**リレーションシップ注釈を**使用して別のテーブルを指定する子要素または属性では、**リレーションシップ**注釈も指定する必要があります。  
+### <a name="c-specifying-the-relationship-annotation-on-an-attribute"></a>C. 属性にリレーションシップ注釈を指定する  
+ この例のスキーマには、 \<Customer> 子要素を持ち、 \<CustomerID> IDREFS 型の OrderIDList 属性を持つ要素が含まれています。 要素は、 \<Customer> AdventureWorks データベースの Sales. Customer テーブルにマップされます。 既定では、このマッピングのスコープは、子要素または属性に **sql: relation** が指定されていない限り、すべての子要素または属性に適用されます。その場合は、要素を使用して、適切な主キー/外部キーのリレーションシップを定義する必要があり \<relationship> ます。 また、 **リレーションシップ注釈を** 使用して別のテーブルを指定する子要素または属性では、 **リレーションシップ** 注釈も指定する必要があります。  
   
 ```  
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"  
@@ -372,7 +372,7 @@ ms.locfileid: "85775765"
   
 3.  SQLXML 4.0 テスト スクリプト (sqlxml4test.vbs) を作成し、それを使用してテンプレートを実行します。  
   
-     詳細については、「ADO を使用した[SQLXML クエリの実行](../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
+     詳細については、「ADO を使用した [SQLXML クエリの実行](../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
   
  結果セットは次のようになります。  
   
@@ -384,7 +384,7 @@ ms.locfileid: "85775765"
 </ROOT>  
 ```  
   
-### <a name="d-specifying-sqlrelationship-on-multiple-elements"></a>D: 複数の要素に sql:relationship を指定する  
+### <a name="d-specifying-sqlrelationship-on-multiple-elements"></a>D. 複数の要素に sql:relationship を指定する  
  この例では、注釈付き XSD スキーマには、、、およびの各要素が含まれてい **\<Customer>** **\<Order>** **\<OrderDetail>** ます。  
   
  **\<Order>** 要素は要素の子要素です **\<Customer>** 。 **\<sql:relationship>** は子要素で指定されます **\<Order>** 。したがって、顧客に属する注文は、の子要素として表示され **\<Customer>** ます。  
@@ -462,7 +462,7 @@ ms.locfileid: "85775765"
   
 3.  SQLXML 4.0 テスト スクリプト (sqlxml4test.vbs) を作成し、それを使用してテンプレートを実行します。  
   
-     詳細については、「ADO を使用した[SQLXML クエリの実行](../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
+     詳細については、「ADO を使用した [SQLXML クエリの実行](../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
   
  結果セットは次のようになります。  
   
@@ -486,7 +486,7 @@ ms.locfileid: "85775765"
 ```  
   
 ### <a name="e-specifying-the-sqlrelationship-without-the-parent-attribute"></a>E. \<sql:relationship>親属性を指定せずにを指定する  
- この例では、親属性を指定せずにを指定してい **\<sql:relationship>** ます。 **parent** たとえば、次の従業員テーブルがあるとします。  
+ この例では、親属性を指定せずにを指定してい **\<sql:relationship>** ます。  たとえば、次の従業員テーブルがあるとします。  
   
 ```  
 Emp1(SalesPersonID, FirstName, LastName, ReportsTo)  
@@ -527,7 +527,7 @@ Emp2(SalesPersonID, FirstName, LastName, ReportsTo)
 </xsd:schema>  
 ```  
   
- スキーマで **\<Emp1>** は、要素と要素の両方 **\<Emp2>** が**emptype**型です。 **Emptype**型は、 **\<Order>** 子要素とそれに対応するを記述し **\<sql:relationship>** ます。 この場合、 **\<sql:relationship>** **親**属性を使用してで特定できる1つの親がありません。 この場合、で**親**属性を指定する必要はありません **\<sql:relationship>** 。**親**属性情報は、スキーマ内の階層から取得されます。  
+ スキーマで **\<Emp1>** は、要素と要素の両方 **\<Emp2>** が **emptype** 型です。 **Emptype** 型は、 **\<Order>** 子要素とそれに対応するを記述し **\<sql:relationship>** ます。 この場合、 **\<sql:relationship>** **親** 属性を使用してで特定できる1つの親がありません。 この場合、で **親** 属性を指定する必要はありません **\<sql:relationship>** 。 **親** 属性情報は、スキーマ内の階層から取得されます。  
   
 ##### <a name="to-test-a-sample-xpath-query-against-the-schema"></a>スキーマに対してサンプル XPath クエリをテストするには  
   
@@ -581,7 +581,7 @@ Emp2(SalesPersonID, FirstName, LastName, ReportsTo)
   
 5.  SQLXML 4.0 テスト スクリプト (sqlxml4test.vbs) を作成し、それを使用してテンプレートを実行します。  
   
-     詳細については、「ADO を使用した[SQLXML クエリの実行](../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
+     詳細については、「ADO を使用した [SQLXML クエリの実行](../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
   
  結果セットの一部を次に示します。  
   

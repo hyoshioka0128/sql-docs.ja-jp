@@ -6,7 +6,7 @@ ms.date: 07/27/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - xml_schema_namespace_TSQL
 - xml_schema_namespace
@@ -21,12 +21,12 @@ helpviewer_keywords:
 ms.assetid: ee9873d8-dd3a-4bff-a10c-68bbadbdf1a6
 author: MightyPen
 ms.author: genemi
-ms.openlocfilehash: dec332c4c39d5811e98ebd57409751be037ecf12
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 865f2548293fc572a56c90b0813bb83aa2776cbc
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88478645"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99181702"
 ---
 # <a name="xml_schema_namespace"></a>xml_schema_namespace
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -37,8 +37,7 @@ ms.locfileid: "88478645"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 xml_schema_namespace( Relational_schema , XML_schema_collection_name , [ Namespace ] )  
 ```  
   
@@ -52,7 +51,7 @@ xml_schema_namespace( Relational_schema , XML_schema_collection_name , [ Namespa
  再構築する XML スキーマ コレクションの名前を指定します。 *XML_schema_collection_name* は **sysname** です。  
   
  *Namespace*  
- 再構築する XML スキーマの名前空間 URI です。 上限は 1,000 文字です。 名前空間 URI を指定しない場合、XML スキーマ コレクション全体が再構築されます。 *名前空間*は **nvarchar(4000)** です。  
+ 再構築する XML スキーマの名前空間 URI です。 上限は 1,000 文字です。 名前空間 URI を指定しない場合、XML スキーマ コレクション全体が再構築されます。 *名前空間* は **nvarchar(4000)** です。  
   
 ## <a name="return-types"></a>戻り値の型  
  **xml**  
@@ -67,7 +66,7 @@ xml_schema_namespace( Relational_schema , XML_schema_collection_name , [ Namespa
 ## <a name="examples"></a>例  
  次の例では、XML スキーマ コレクション `ProductDescriptionSchemaCollection` を、`AdventureWorks` データベース内の運用リレーショナル スキーマから取得します。  
   
-```  
+```sql
 USE AdventureWorks;  
 GO  
 SELECT xml_schema_namespace(N'production',N'ProductDescriptionSchemaCollection');  

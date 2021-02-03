@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sp_certify_removable_TSQL
 - sp_certify_removable
@@ -18,19 +18,19 @@ helpviewer_keywords:
 ms.assetid: ca12767f-0ae5-4652-b523-c23473f100a1
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: cebbe2f8b2e4787f0291244e08f04e30a814dded
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: 69a0c6e1331144fc340ad15bb103e593d3ba8f65
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89541927"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99197678"
 ---
 # <a name="sp_certify_removable-transact-sql"></a>sp_certify_removable (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   リムーバブル メディア上でデータベースが配布用に正しく構成されているかどうか確認し、問題があればユーザーにレポートします。  
   
-> **重要!!** [!代わりに[ssNoteDepFutureAvoid](../../t-sql/statements/create-database-sql-server-transact-sql.md) を含めてください。  
+> **重要!!** [!代わりに[ssNoteDepFutureAvoid](../../t-sql/statements/create-database-transact-sql.md) を含めてください。  
   
   
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
@@ -44,7 +44,7 @@ sp_certify_removable [ @dbname= ] 'dbname'
 ```  
   
 ## <a name="arguments"></a>引数  
-`[ @dbname = ] 'dbname'` 確認するデータベースを指定します。 *dbname* は **sysname**です。  
+`[ @dbname = ] 'dbname'` 確認するデータベースを指定します。 *dbname* は **sysname** です。  
   
 `[ @autofix = ] 'auto'` データベースとすべてのデータベースオブジェクトの所有権をシステム管理者に付与し、ユーザーが作成したデータベースユーザーと既定以外の権限を削除します。 *auto* は **nvarchar (4)**,、既定値は NULL です。  
   
@@ -62,7 +62,7 @@ sp_certify_removable [ @dbname= ] 'dbname'
   
  システム管理者は、データベースとすべてのデータベース オブジェクトの所有者であることが必要です。 システム管理者は、を実行しているすべてのサーバー上に存在する既知のユーザーであり、 [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースが後で配布およびインストールされるときに存在することが予想されます。  
   
- **Auto**値を指定せずに**sp_certify_removable**を実行すると、次のいずれかの条件に関する情報が返されます。  
+ **Auto** 値を指定せずに **sp_certify_removable** を実行すると、次のいずれかの条件に関する情報が返されます。  
   
 -   システム管理者は、データベースの所有者ではありません。  
   
@@ -74,9 +74,9 @@ sp_certify_removable [ @dbname= ] 'dbname'
   
  これらの条件は、次の方法で修正できます。  
   
--   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]ツールと手順を使用し、 **sp_certify_removable**を再実行します。  
+-   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]ツールと手順を使用し、 **sp_certify_removable** を再実行します。  
   
--   **Auto**値を指定して**sp_certify_removable**を実行するだけです。  
+-   **Auto** 値を指定して **sp_certify_removable** を実行するだけです。  
   
  このストアドプロシージャでは、ユーザーとユーザーの権限のみがチェックされることに注意してください。 データベースにはグループを追加でき、そのグループに権限を与えることができます。 詳細については、「 [GRANT &#40;Transact-SQL&#41;](../../t-sql/statements/grant-transact-sql.md)と共に使用できるように構成する方法について説明します。  
   
@@ -96,5 +96,4 @@ EXEC sp_certify_removable inventory, AUTO;
  [ALTER DATABASE &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-transact-sql.md)   
  [sp_dbremove &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-dbremove-transact-sql.md)   
  [システム ストアド プロシージャ &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/system-stored-procedures-transact-sql.md)  
-  
   

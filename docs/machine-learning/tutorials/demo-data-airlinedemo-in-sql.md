@@ -1,4 +1,5 @@
 ---
+description: SQL Server Python と R のチュートリアルの航空会社フライト到着デモ データ
 title: チュートリアルの航空会社のフライト デモ データ
 Description: R と Python の航空会社データセットを含むデータベースを作成します。 このデータセットは、SQL Server Machine Learning Services 用の R および Python チュートリアルで使用されます。
 ms.prod: sql
@@ -8,20 +9,20 @@ ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 4f697287bff5ad4734d11c3d6391154a3a970470
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 3b19e905d68d53764a496ab5ee7745e3529484cf
+ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85727997"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97489902"
 ---
 #  <a name="airline-flight-arrival-demo-data-for-sql-server-python-and-r-tutorials"></a>SQL Server Python と R のチュートリアルの航空会社フライト到着デモ データ
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
 この演習では、R または Python の組み込みの航空会社デモ データ セットからインポートしたデータを格納する SQL Server データベースを作成します。 R と Python のディストリビューションには同等のデータが用意されており、Management Studio を使用してそれを SQL Server データベースにインポートできます。
 
-この演習を完了するには、[SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-2017) または T-SQL クエリを実行できる別のツールが必要です。
+この演習を完了するには、[SQL Server Management Studio](../../ssms/download-sql-server-management-studio-ssms.md) または T-SQL クエリを実行できる別のツールが必要です。
 
 このデータセットを使用したチュートリアルとクイックスタートには、次のものがあります。
 
@@ -31,9 +32,9 @@ ms.locfileid: "85727997"
 
 1. SQL Server Management Studio を開始し、R または Python 統合のあるデータベース エンジン インスタンスに接続します。  
 
-2. オブジェクト エクスプローラーで、 **[データベース]** を右クリックし、**flightdata** という名前の新しいデータベースを作成します。
+2. オブジェクト エクスプローラーで、**[データベース]** を右クリックし、**flightdata** という名前の新しいデータベースを作成します。
 
-3. **flightdata** を右クリックし、 **[タスク]** をクリックして、 **[フラットファイルのインポート]** をクリックします。
+3. **flightdata** を右クリックし、**[タスク]** をクリックして、**[フラットファイルのインポート]** をクリックします。
 
 4. インストールした言語に応じて、R または Python ディストリビューションに用意されている AirlineDemoData.csv ファイルを開きます。
 

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DROP_SERVICE_TSQL
 - DROP SERVICE
@@ -20,14 +20,14 @@ helpviewer_keywords:
 - DROP SERVICE statement
 - removing services
 ms.assetid: 2351bba7-0f2a-4cda-b3b2-6a88b8747c53
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: 0c44273578fff67bed075dea4f60fc6314902dcc
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 9885361098f0f61d53c8e885e790c4497fe49ada
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88415808"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99158304"
 ---
 # <a name="drop-service-transact-sql"></a>DROP SERVICE (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -39,7 +39,6 @@ ms.locfileid: "88415808"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 DROP SERVICE service_name  
 [ ; ]  
 ```  
@@ -61,7 +60,7 @@ DROP SERVICE service_name
 ## <a name="examples"></a>例  
  次の例では、サービス `//Adventure-Works.com/Expenses` を削除します。  
   
-```  
+```sql  
 DROP SERVICE [//Adventure-Works.com/Expenses] ;  
 ```  
   

@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: c1bc13d4-8297-4daf-bb19-4c1e5ba292a6
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 67d9f59f1561ce844c3e6a1b6f3e20770e12db6b
-ms.sourcegitcommit: f0772f614482e0b3cde3609e178689ce62ca3a19
+ms.openlocfilehash: 12afa9794e4d48e2c7b16620ce845660f61801bc
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84547962"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97461413"
 ---
 # <a name="monitoring-report-server-performance"></a>レポート サーバーのパフォーマンスの監視
   パフォーマンス監視ツールを使用してレポート サーバーのパフォーマンスを監視することにより、サーバーの利用状況の評価、傾向の監視、システムのボトルネックの診断、および現在のシステム構成で十分かどうかを判断するためのデータの収集を行うことができます。 サーバーのパフォーマンスを調整するには、レポート サーバー アプリケーション ドメインを再利用する頻度を指定します。 詳細については、「 [レポート サーバー アプリケーションで利用可能なメモリの構成](../../reporting-services/report-server/configure-available-memory-for-report-server-applications.md)」を参照してください。  
@@ -55,21 +55,21 @@ ms.locfileid: "84547962"
   
 -   システム構成の変更がパフォーマンスに所定の効果をもたらしたかどうかを検証する。  
 
-::: moniker range=">=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2017"
   
 ## <a name="reporting-services-performance-objects"></a>Reporting Services パフォーマンス オブジェクト  
 SQL Server Reporting Services (SSRS) 2016 以降には、次のパフォーマンス オブジェクトが含まれます。  
   
--   レポート サーバーのパフォーマンスを監視するための**MSRS 2011 Web Service** および **MSRS 2011 SharePoint Mode Web Service** 。 これらのパフォーマンス オブジェクトには複数のカウンターが含まれ、主に対話的なレポート表示操作によって開始されるレポート サーバー処理の追跡に使用されます。 これらのカウンターは、 [!INCLUDE[vstecasp](../../includes/vstecasp-md.md)] がレポート サーバー Web サービスを停止した時点でリセットされます。  
+-   レポート サーバーのパフォーマンスを監視するための **MSRS 2011 Web Service** および **MSRS 2011 SharePoint Mode Web Service** 。 これらのパフォーマンス オブジェクトには複数のカウンターが含まれ、主に対話的なレポート表示操作によって開始されるレポート サーバー処理の追跡に使用されます。 これらのカウンターは、 [!INCLUDE[vstecasp](../../includes/vstecasp-md.md)] がレポート サーバー Web サービスを停止した時点でリセットされます。  
   
--   スケジュール設定した操作、およびレポートの配信を監視するための**MSRS 2011 Windows Service** および **MSRS 2011 Windows Service SharePoint Mode** to monitor scheduled operations および report delivery. これらのパフォーマンス オブジェクトには複数のカウンターが含まれ、スケジュールされた操作を介して開始されるレポート処理の追跡に使用されます。 スケジュールされた操作には、サブスクリプションと配信、レポート実行スナップショット、およびレポート履歴が含まれます。  
+-   スケジュール設定した操作、およびレポートの配信を監視するための **MSRS 2011 Windows Service** および **MSRS 2011 Windows Service SharePoint Mode** to monitor scheduled operations および report delivery. これらのパフォーマンス オブジェクトには複数のカウンターが含まれ、スケジュールされた操作を介して開始されるレポート処理の追跡に使用されます。 スケジュールされた操作には、サブスクリプションと配信、レポート実行スナップショット、およびレポート履歴が含まれます。  
   
--   HTTP 関連のイベントおよびメモリ管理を監視するための **ReportServer サービス**および **ReportServerSharePoint サービス**。 これらは、[!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] に固有のカウンターです。要求、接続、サインイン試行など、レポート サーバーにおける HTTP 関連のイベントが追跡されます。 このパフォーマンス オブジェクトには、メモリ管理に関連したカウンターも含まれています。  
+-   HTTP 関連のイベントおよびメモリ管理を監視するための **ReportServer サービス** および **ReportServerSharePoint サービス**。 これらは、[!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] に固有のカウンターです。要求、接続、サインイン試行など、レポート サーバーにおける HTTP 関連のイベントが追跡されます。 このパフォーマンス オブジェクトには、メモリ管理に関連したカウンターも含まれています。  
   
  1 台のコンピューターに複数のレポート サーバー インスタンスが存在する場合、インスタンスをまとめて監視することも個別に監視することもできます。 カウンターを追加する場合は、監視対象に含めるインスタンスを選択してください。 パフォーマンス コンソール (perfmon.msc) の使用およびカウンターの追加に関する詳細については、 [!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows の製品マニュアルを参照してください。  
   
 ## <a name="other-performance-counters"></a>その他のパフォーマンス カウンター  
- **MSRS 2008 Web Service**、**MSRS 2008 Windows Service**、および **ReportServer サービス**専用に、カスタムの [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] パフォーマンス カウンターが用意されています。 次のパフォーマンス オブジェクトにより、レポート サーバーに関する補足的なパフォーマンス監視データが提供されます。  
+ **MSRS 2008 Web Service**、**MSRS 2008 Windows Service**、および **ReportServer サービス** 専用に、カスタムの [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] パフォーマンス カウンターが用意されています。 次のパフォーマンス オブジェクトにより、レポート サーバーに関する補足的なパフォーマンス監視データが提供されます。  
   
 |パフォーマンス オブジェクト|Notes|  
 |------------------------|-----------|  

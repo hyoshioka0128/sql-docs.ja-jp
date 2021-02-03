@@ -21,13 +21,13 @@ ms.assetid: d4b908d1-b25b-4ad9-8478-9cd882e8c44e
 author: MightyPen
 ms.author: genemi
 ms.custom: seo-lt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 11e4a7a875dd2c9b9450619f389b2f082136c536
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 0f7c39eac7fc19d9f35c800f71ac874159fe284b
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85790593"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97479203"
 ---
 # <a name="handling-database-concurrency-issues-in-updategrams-sqlxml-40"></a>アップデートグラムでのデータベース コンカレンシーに関する問題への対応 (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -58,7 +58,7 @@ ms.locfileid: "85790593"
   
  このレベルの保護を実現するには、ブロックで更新する主キー列と列を指定します (複数可) **\<before>** 。  
   
- たとえば、このアップデートグラムでは、Person.Contact テーブルで、ContactID が 1 となっている連絡先の Phone 列の値が変更されます。 ブロックでは、 **\<before>** 更新された値を適用する前に、この属性値がデータベース内の対応する列の値と一致するように、 **Phone**属性を指定します。  
+ たとえば、このアップデートグラムでは、Person.Contact テーブルで、ContactID が 1 となっている連絡先の Phone 列の値が変更されます。 ブロックでは、 **\<before>** 更新された値を適用する前に、この属性値がデータベース内の対応する列の値と一致するように、 **Phone** 属性を指定します。  
   
 ```  
 <ROOT xmlns:updg="urn:schemas-microsoft-com:xml-updategram">  
@@ -104,11 +104,11 @@ ms.locfileid: "85790593"
   
 -   ブロック内のタイムスタンプ列 (使用可能な場合) を指定し **\<before>** ます。  
   
-     * * ブロック内のすべてのレコード列を指定する代わりに \<before**> 、timestamp 列 (テーブルにテーブルがある場合) と、ブロック内の主キー列を指定するだけで済み **\<before>** ます。 データベースでは、レコードが更新されるたびにタイムスタンプ列が一意な値に更新されます。 この場合、アップデートグラムではタイムスタンプの値とデータベースの対応する値を比較します。 データベースに格納されているタイムスタンプ値はバイナリ値です。 したがって、timestamp 列は、スキーマで**dt: type = "bin. hex"**、 **dt: type = "bin. base64"**、または**sql: datatype = "timestamp"** として指定する必要があります。 ( **Xml**データ型またはの [!INCLUDE[msCoName](../../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] いずれかを指定できます。データ型。)  
+     * * ブロック内のすべてのレコード列を指定する代わりに \<before**> 、timestamp 列 (テーブルにテーブルがある場合) と、ブロック内の主キー列を指定するだけで済み **\<before>** ます。 データベースでは、レコードが更新されるたびにタイムスタンプ列が一意な値に更新されます。 この場合、アップデートグラムではタイムスタンプの値とデータベースの対応する値を比較します。 データベースに格納されているタイムスタンプ値はバイナリ値です。 したがって、timestamp 列は、スキーマで **dt: type = "bin. hex"**、 **dt: type = "bin. base64"**、または **sql: datatype = "timestamp"** として指定する必要があります。 ( **Xml** データ型またはの [!INCLUDE[msCoName](../../../includes/msconame-md.md)] [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] いずれかを指定できます。データ型。)  
   
 #### <a name="to-test-the-updategram"></a>アップデートグラムをテストするには  
   
-1.  **Tempdb**データベースに次のテーブルを作成します。  
+1.  **Tempdb** データベースに次のテーブルを作成します。  
   
     ```  
     USE tempdb  
@@ -168,7 +168,7 @@ ms.locfileid: "85790593"
   
 5.  SQLXML 4.0 テスト スクリプト (sqlxml4test.vbs) を作成し、それを使用してテンプレートを実行します。  
   
-     詳細については、「ADO を使用した[SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
+     詳細については、「ADO を使用した [SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
   
  これは、これと同等の XDR スキーマです。  
   
@@ -189,7 +189,7 @@ ms.locfileid: "85790593"
 </Schema>  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [SQLXML 4.0&#41;&#40;アップデートグラムのセキュリティに関する考慮事項](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/security/updategram-security-considerations-sqlxml-4-0.md)  
+## <a name="see-also"></a>参照  
+ [SQLXML 4.0&#41;&#40;アップデートグラムのセキュリティに関する考慮事項 ](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/security/updategram-security-considerations-sqlxml-4-0.md)  
   
   

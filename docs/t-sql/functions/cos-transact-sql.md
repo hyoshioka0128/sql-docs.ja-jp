@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - COS
 - COS_TSQL
@@ -17,15 +17,15 @@ helpviewer_keywords:
 - cosine
 - COS function
 ms.assetid: c9fa8ae1-3373-4f3e-9b97-fa05077c1040
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 096c24a129a7262248add636094c8288d4291c6d
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 9c969f8d4f57815c546dfcd244cf7dad6b6cf5ff
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88479748"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99184204"
 ---
 # <a name="cos-transact-sql"></a>COS (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -44,7 +44,7 @@ COS ( float_expression )
 
 ## <a name="arguments"></a>引数
 *float_expression*  
-**float** 型の[式](../../t-sql/language-elements/expressions-transact-sql.md)を指定します。
+**float** 型の [式](../../t-sql/language-elements/expressions-transact-sql.md)を指定します。
   
 ## <a name="return-types"></a>戻り値の型
 **float**
@@ -53,15 +53,15 @@ COS ( float_expression )
 この例では、指定された角度の `COS` 値が返されます。
   
 ```sql
-DECLARE @angle float;  
+  DECLARE @angle FLOAT;  
 SET @angle = 14.78;  
-SELECT 'The COS of the angle is: ' + CONVERT(varchar,COS(@angle));  
+SELECT 'The COS of the angle is: ' + CONVERT(VARCHAR,COS(@angle));  
 GO  
 ```  
   
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
   
-```sql
+```
 The COS of the angle is: -0.599465                        
   
 (1 row(s) affected)  

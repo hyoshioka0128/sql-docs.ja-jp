@@ -1,13 +1,13 @@
 ---
-description: dm_resource_governor_resource_pools_history_ex (Transact-sql)
-title: dm_resource_governor_resource_pools_history_ex (Transact-sql) |Microsoft Docs
+description: sys.dm_resource_governor_resource_pools_history_ex (Transact-sql)
+title: sys.dm_resource_governor_resource_pools_history_ex (Transact-sql) |Microsoft Docs
 ms.custom: ''
-ms.date: 03/27/2019
+ms.date: 01/05/2021
 ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.resource_governor
 - sys.resource_governor_TSQL
@@ -20,20 +20,20 @@ helpviewer_keywords:
 ms.assetid: ''
 author: joesackmsft
 ms.author: josack
-monikerRange: =azuresqldb-current||=sqlallproducts-allversions
-ms.openlocfilehash: 62aec7de63493a94ea05f91883e506d0fc0f6f7b
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current
+ms.openlocfilehash: 998777c9a6cbe8a4194997210f1938b09f98df3f
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88481793"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99203285"
 ---
-# <a name="sysdm_resource_governor_resource_pools_history_ex-transact-sql"></a>dm_resource_governor_resource_pools_history_ex (Transact-sql)
+# <a name="sysdm_resource_governor_resource_pools_history_ex-transact-sql"></a>sys.dm_resource_governor_resource_pools_history_ex (Transact-sql)
 
 [!INCLUDE[appliesto-xx-asdb-xxxx-xxx-md](../../includes/appliesto-xx-asdb-xxxx-xxx-md.md)]
 
-Azure SQL Database のリソースプール統計の最後の32分 (合計 128) の20秒間隔でスナップショットを返します。  
-  
+各行は、Azure SQL Database のリソースプール統計の定期的なスナップショットを表します。 スナップショットは、データベースエンジンの起動時と、それ以降は数秒ごとに実行されます。 現在のスナップショットと前のスナップショットの間の間隔は異なる場合があり、列に表示され `duration_ms` ます。 利用可能な最新のスナップショットが返されます。各リソースプールについて最大128のスナップショットが返されます。
+
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
 |**pool_id**|INT|リソースプールの ID。 NULL 値は許可されません。
@@ -104,7 +104,7 @@ Azure SQL Database のリソースプール統計の最後の32分 (合計 128) 
 
 このビューには VIEW SERVER STATE 権限が必要です。
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>コメント
 
 ユーザーは、この動的管理ビューにアクセスして、ユーザーワークロードプールと Azure SQL Database インスタンスのシステム内部プールについて、ほぼリアルタイムのリソース消費を監視できます。
 
@@ -119,7 +119,7 @@ Azure SQL Database のリソースプール統計の最後の32分 (合計 128) 
 select snapshot_time, name, max_log_rate_kb, delta_log_bytes_used from sys.dm_resource_governor_resource_pools_history_ex where name like 'UserPool%' order by snapshot_time desc
 ```
 
-次の例では、論理マスターに接続しなくても、elastic_pool_resource_stats と同様の情報が返されます。
+次の例では、論理マスターに接続しなくても同様の情報を sys.elastic_pool_resource_stats として返します。
 
 ```sql
 select snapshot_time, name, cap_vcores_used_percent,
@@ -135,6 +135,6 @@ select snapshot_time, name, cap_vcores_used_percent,
 
 ## <a name="see-also"></a>参照
 
-- [翻訳ログレートガバナンス](https://docs.microsoft.com/azure/sql-database/sql-database-resource-limits-database-server#transaction-log-rate-governance)
-- [エラスティック プールの DTU リソースの制限](https://docs.microsoft.com/azure/sql-database/sql-database-dtu-resource-limits-elastic-pools)
-- [エラスティック プールの仮想コア リソースの制限](https://docs.microsoft.com/azure/sql-database/sql-database-vcore-resource-limits-elastic-pools)
+- [翻訳ログレートガバナンス](/azure/sql-database/sql-database-resource-limits-database-server#transaction-log-rate-governance)
+- [エラスティック プールの DTU リソースの制限](/azure/sql-database/sql-database-dtu-resource-limits-elastic-pools)
+- [エラスティック プールの仮想コア リソースの制限](/azure/sql-database/sql-database-vcore-resource-limits-elastic-pools)

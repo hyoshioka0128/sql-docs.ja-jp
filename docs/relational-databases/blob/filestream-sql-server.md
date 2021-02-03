@@ -15,13 +15,13 @@ helpviewer_keywords:
 ms.assetid: 9a5a8166-bcbe-4680-916c-26276253eafa
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions||=azuresqldb-mi-current'
-ms.openlocfilehash: fe0e101311bf8fc1b790be423322b4deaca3923e
-ms.sourcegitcommit: 591bbf4c7e4e2092f8abda6a2ffed263cb61c585
+monikerRange: '>=sql-server-2016||=azuresqldb-mi-current'
+ms.openlocfilehash: 58b68bdf2996446ed08a37297e0c9776c2274832
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86942413"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97483664"
 ---
 # <a name="filestream-sql-server"></a>FILESTREAM (SQL Server)
 [!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only.md)]
@@ -50,7 +50,7 @@ FILESTREAM ストレージは、データを BLOB としてファイル シス�
   
 列のデータをファイル システムに格納するように指定するには、 **varbinary(max)** 列で FILESTREAM 属性を指定します。 [!INCLUDE[ssDE](../../includes/ssde-md.md)] では、これにより、その列のすべてのデータがファイル システム (データベース ファイル以外の場所) に格納されるようになります。  
   
-FILESTREAM データは FILESTREAM ファイル グループに格納する必要があります。 FILESTREAM ファイル グループは特殊なファイル グループで、ファイルそのものではなくファイル システム ディレクトリが含まれます。 これらのファイル システム ディレクトリは、 *データ コンテナー*と呼ばれます。 データ コンテナーは、 [!INCLUDE[ssDE](../../includes/ssde-md.md)] ストレージとファイル システム ストレージの間のインターフェイスです。 
+FILESTREAM データは FILESTREAM ファイル グループに格納する必要があります。 FILESTREAM ファイル グループは特殊なファイル グループで、ファイルそのものではなくファイル システム ディレクトリが含まれます。 これらのファイル システム ディレクトリは、 *データ コンテナー* と呼ばれます。 データ コンテナーは、 [!INCLUDE[ssDE](../../includes/ssde-md.md)] ストレージとファイル システム ストレージの間のインターフェイスです。 
 
 FILESTREAM ストレージを使用する際は、以下の点を考慮してください。  
 
@@ -85,7 +85,7 @@ FILESTREAM 列にデータを格納した後、それらのファイルにアク
 [!INCLUDE[tsql](../../includes/tsql-md.md)]を使用して、FILESTREAM データの挿入、更新、および削除を行うことができます。  
 
 - 挿入操作を使用すると、null 値、空の値、または比較的短いインライン データを FILESTREAM フィールドに事前設定することができます。 ただし、大量のデータをファイルにストリーミングする場合は、Win32 インターフェイスを使用する方が効率的です。  
-- FILESTREAM フィールドを更新すると、その基となるファイル システムの BLOB データが変更されます。 FILESTREAM フィールドを NULL に設定すると、フィールドに関連付けられている BLOB データが削除されます。 UPDATE [!INCLUDE[tsql](../../includes/tsql-md.md)] .**Write() として実装されている**の大量の更新を使用してデータの部分更新を実行することはできません。 
+- FILESTREAM フィールドを更新すると、その基となるファイル システムの BLOB データが変更されます。 FILESTREAM フィールドを NULL に設定すると、フィールドに関連付けられている BLOB データが削除されます。 UPDATE [!INCLUDE[tsql](../../includes/tsql-md.md)] .**Write() として実装されている** の大量の更新を使用してデータの部分更新を実行することはできません。 
 - FILESTREAM データを含む行を削除したり、FILESTREAM データを含むテーブルを削除したり切り捨てたりすると、その基となるファイル システムの BLOB データが削除されます。
 
 ### <a name="file-system-streaming-access"></a>ファイル システム ストリーミング アクセス

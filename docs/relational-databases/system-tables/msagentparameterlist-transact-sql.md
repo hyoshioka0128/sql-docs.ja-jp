@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: replication
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - MSagentparameterlist_TSQL
 - MSagentparameterlist
@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - Msagentparameterlist system table
 ms.assetid: 4ea571a0-078d-4e13-95ee-f3d4bbd4dfb2
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: b5fcded0e1ffe97578832f773e65d2d08e1c41d8
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: c52b35d8b31f989af7fe03f336f1b6e5073eb657
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551047"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99160507"
 ---
 # <a name="msagentparameterlist-transact-sql"></a>MSagentparameterlist (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **Msagentparameterlist**テーブルには、レプリケーションエージェントのパラメーター情報が含まれており、特定の種類のエージェントに対して設定できるパラメーターを指定するために使用されます。 このテーブルは、 **msdb** データベースに格納されます。  
+  **Msagentparameterlist** テーブルには、レプリケーションエージェントのパラメーター情報が含まれており、特定の種類のエージェントに対して設定できるパラメーターを指定するために使用されます。 このテーブルは、 **msdb** データベースに格納されます。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

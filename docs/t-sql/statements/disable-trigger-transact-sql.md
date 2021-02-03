@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DISABLE_TSQL
 - DISABLE
@@ -22,14 +22,14 @@ helpviewer_keywords:
 - triggers [SQL Server], disabling
 - disabling triggers
 ms.assetid: e6529f06-e442-437e-a7bf-41790bc092c5
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: fd967687eabaed290f02e52853e784a375468580
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 01302c2d9acdf1ce89246be18fd54c3cae72ebff
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88496845"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99159347"
 ---
 # <a name="disable-trigger-transact-sql"></a>DISABLE TRIGGER (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -113,7 +113,7 @@ GO
 ### <a name="c-disabling-all-triggers-that-were-defined-with-the-same-scope"></a>C. 同じスコープに定義されたすべてのトリガーを無効にする  
  次の例では、サーバー スコープで作成された DDL トリガーをすべて無効にします。  
   
-```  
+```sql  
 DISABLE Trigger ALL ON ALL SERVER;  
 GO  
 ```  

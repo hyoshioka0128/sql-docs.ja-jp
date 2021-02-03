@@ -20,14 +20,14 @@ helpviewer_keywords:
 - DROP MESSAGE TYPE statement
 - removing message types
 ms.assetid: 805e8ad5-8a93-49f0-88e5-e6fca8814dd5
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: b93b022ed1937b3923a44d5c13b62ff2038df958
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 3813b67d85fc3dc8c145aaaa79226587b037f675
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88478833"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096979"
 ---
 # <a name="drop-message-type-transact-sql"></a>DROP MESSAGE TYPE (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -39,7 +39,6 @@ ms.locfileid: "88478833"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 DROP MESSAGE TYPE message_type_name  
 [ ; ]  
 ```  
@@ -59,7 +58,7 @@ DROP MESSAGE TYPE message_type_name
 ## <a name="examples"></a>例  
  次の例では、データベースからメッセージ型 `//Adventure-Works.com/Expenses/SubmitExpense` を削除します。  
   
-```  
+```sql  
 DROP MESSAGE TYPE [//Adventure-Works.com/Expenses/SubmitExpense] ;  
 ```  
   

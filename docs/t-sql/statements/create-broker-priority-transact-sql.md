@@ -24,14 +24,14 @@ dev_langs:
 helpviewer_keywords:
 - CREATE BROKER PRIORITY statement
 ms.assetid: e0bbebfa-b7c3-4825-8169-7281f7e6de98
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: c753f9dc977f94064161ee340ebced685dd9f6c7
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: b027d1e0472a2154eaff8540e5dcc4b93f7be930
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88478984"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98100219"
 ---
 # <a name="create-broker-priority-transact-sql"></a>CREATE BROKER PRIORITY (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -43,7 +43,6 @@ ms.locfileid: "88478984"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 CREATE BROKER PRIORITY ConversationPriorityName  
 FOR CONVERSATION  
 [ SET ( [ CONTRACT_NAME = {ContractName | ANY } ]  
@@ -169,7 +168,7 @@ FOR CONVERSATION
 ### <a name="a-assigning-a-priority-level-to-both-directions-of-a-conversation"></a>A. メッセージ交換の両方向に優先度レベルを割り当てる  
  この 2 つのメッセージ交換の優先度では、`TargetService` と `InitiatorAService` の間で `SimpleContract` を使用するすべての操作に優先度レベル 3 が割り当てられるようにします。  
   
-```  
+```sql  
 CREATE BROKER PRIORITY InitiatorAToTargetPriority  
     FOR CONVERSATION  
     SET (CONTRACT_NAME = SimpleContract,  
@@ -187,7 +186,7 @@ CREATE BROKER PRIORITY TargetToInitiatorAPriority
 ### <a name="b-setting-the-priority-level-for-all-conversations-that-use-a-contract"></a>B. 特定のコントラクトを使用するすべてのメッセージ交換の優先度レベルを設定する  
  `SimpleContract` というコントラクトを使用するすべての操作に優先度レベル `7` を割り当てます。 これは、`SimpleContract` とローカル サービスまたはリモート サービスを指定する優先度が他にないことを前提にしています。  
   
-```  
+```sql 
 CREATE BROKER PRIORITY SimpleContractDefaultPriority  
     FOR CONVERSATION  
     SET (CONTRACT_NAME = SimpleContract,  
@@ -199,7 +198,7 @@ CREATE BROKER PRIORITY SimpleContractDefaultPriority
 ### <a name="c-setting-a-base-priority-level-for-a-database"></a>C. データベースの基本の優先度レベルを設定する  
  2 つの特定のサービスに対するメッセージ交換の優先度を定義し、次に、その他のすべてのメッセージ交換のエンドポイントに一致するメッセージ交換の優先度を定義します。 これは既定の優先度 (常に 5) に代わるものではありませんが、既定値が割り当てられる項目数を最小限にします。  
   
-```  
+```sql 
 CREATE BROKER PRIORITY [//Adventure-Works.com/Expenses/ClaimPriority]  
     FOR CONVERSATION  
     SET (CONTRACT_NAME = ANY,  

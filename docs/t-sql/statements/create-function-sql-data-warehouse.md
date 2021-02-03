@@ -1,30 +1,30 @@
 ---
-description: CREATE FUNCTION (SQL Data Warehouse)
-title: CREATE FUNCTION (SQL Data Warehouse) | Microsoft Docs
+description: CREATE FUNCTION (Azure Synapse Analytics)
+title: CREATE FUNCTION (Azure Synapse Analytics) | Microsoft Docs
 ms.custom: ''
-ms.date: 08/10/2017
+ms.date: 09/17/2020
 ms.prod: sql
 ms.prod_service: sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 ms.assetid: 8cad1b2c-5ea0-4001-9060-2f6832ccd057
-author: juliemsft
+author: julieMSFT
 ms.author: jrasnick
-monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest || = sqlallproducts-allversions'
-ms.openlocfilehash: 2715fe9bd9586105a498660c146e252669268aba
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
+ms.openlocfilehash: ffa098db4ca61746a3301702cd526498f0cd2f85
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88426654"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99191014"
 ---
-# <a name="create-function-sql-data-warehouse"></a>CREATE FUNCTION (SQL Data Warehouse)
+# <a name="create-function-azure-synapse-analytics"></a>CREATE FUNCTION (Azure Synapse Analytics)
 [!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
 
-  [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] でユーザー定義関数を作成します。 ユーザー定義の関数は、パラメーターを受け取り、複雑な計算などの操作を実行する [!INCLUDE[tsql](../../includes/tsql-md.md)] ルーチンであり、そのアクションの結果を値として返します。 戻り値は、スカラー (単一) 値である必要があります。 このステートメントを使用して、次の方法で使用できる再利用可能なルーチンを作成します。  
+  [!INCLUDE[ssSDW](../../includes/ssazuresynapse_md.md)] と [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] でユーザー定義関数を作成します。 ユーザー定義の関数は、パラメーターを受け取り、複雑な計算などの操作を実行する [!INCLUDE[tsql](../../includes/tsql-md.md)] ルーチンであり、そのアクションの結果を値として返します。 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] では、戻り値はスカラー (単一) 値である必要があります。 [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] では、CREATE FUNCTION で、インライン テーブル値関数 (プレビュー) の構文を使用してテーブルを返したり、スカラー関数の構文を使用して 1 つの値を返すことができます。 このステートメントを使用して、次の方法で使用できる再利用可能なルーチンを作成します。  
   
 -   SELECT などの [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメント内で使用する  
   
@@ -36,12 +36,14 @@ ms.locfileid: "88426654"
   
 -   ストアド プロシージャを置換する  
   
+-   セキュリティ ポリシーのフィルター述語としてのインライン関数を使用します。  
+  
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
---Transact-SQL Scalar Function Syntax  
+-- Transact-SQL Scalar Function Syntax  (in Azure Synapse Analytics and Parallel Data Warehouse)
 CREATE FUNCTION [ schema_name. ] function_name   
 ( [ { @parameter_name [ AS ] parameter_data_type   
     [ = default ] }   
@@ -62,8 +64,24 @@ RETURNS return_data_type
     [ SCHEMABINDING ]  
   | [ RETURNS NULL ON NULL INPUT | CALLED ON NULL INPUT ]  
 }  
-  
-```  
+```
+
+```syntaxsql
+-- Transact-SQL Inline Table-Valued Function Syntax (Preview in Azure Synapse Analytics only)
+CREATE FUNCTION [ schema_name. ] function_name
+( [ { @parameter_name [ AS ] parameter_data_type
+    [ = default ] }
+    [ ,...n ]
+  ]
+)
+RETURNS TABLE
+    [ WITH SCHEMABINDING ]
+    [ AS ]
+    RETURN [ ( ] select_stmt [ ) ]
+[ ; ]
+```
+
+[!INCLUDE[synapse-analytics-od-unsupported-syntax](../../includes/synapse-analytics-od-unsupported-syntax.md)]
   
 ## <a name="arguments"></a>引数  
  *schema_name*  
@@ -103,6 +121,14 @@ RETURNS return_data_type
   
  *scalar_expression*  
  スカラー関数が返すスカラー値を指定します。  
+
+ *select_stmt* **適用対象**:Azure Synapse Analytics  
+ インライン テーブル値関数 (プレビュー) の戻り値を定義する単一の SELECT ステートメントです。
+
+ TABLE **適用対象**:Azure Synapse Analytics  
+ テーブル値関数 (TVF) の戻り値がテーブルになるように指定します。 TVF に渡すことができるのは、定数と @*local_variables* のみです。
+
+ インライン TVF (プレビュー) の TABLE 戻り値は、単一の SELECT ステートメントを使用して定義されます。 インライン関数には、関連付けられている戻り変数はありません。
   
  **\<function_option>::=** 
   
@@ -138,13 +164,15 @@ RETURNS return_data_type
 -   関数を作成しているときに、WITH SCHEMABINDING 句を指定します。 これにより、関数定義で参照されているオブジェクトは、一緒に関数も変更しない限り変更できなくなります。  
   
 ## <a name="interoperability"></a>相互運用性  
- 関数で有効なステートメントは以下のとおりです。  
+ スカラー値関数で有効なステートメントは以下のとおりです。  
   
 -   代入ステートメント。  
   
 -   TRY...CATCH ステートメント以外の流れ制御ステートメント。  
   
 -   ローカル データ変数を定義する DECLARE ステートメント。  
+
+インライン テーブル値関数 (プレビュー) では、select ステートメントを 1 つだけ使用できます。
   
 ## <a name="limitations-and-restrictions"></a>制限事項と制約事項  
  ユーザー定義関数は、データベースの状態を変更するアクションの実行に使用することはできません。  
@@ -191,11 +219,49 @@ GO
   
 SELECT dbo.ConvertInput(15) AS 'ConvertedValue';  
 ```  
-  
-## <a name="see-also"></a>参照  
- [ALTER FUNCTION (SQL Server PDW)](https://msdn.microsoft.com/25ff3798-eb54-4516-9973-d8f707a13f6c)   
- [DROP FUNCTION (SQL Server PDW)](https://msdn.microsoft.com/1792a90d-0d06-4852-9dec-6de1b9cd229e)  
-  
-  
 
+## <a name="examples-sssdwfull"></a>例: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)]  
+
+### <a name="a-creating-an-inline-table-valued-function-preview"></a>A. インライン テーブル値関数 (プレビュー) を作成する
+ 次の例では、インライン テーブル値関数を作成して、モジュールにあるいくつかの重要な情報を返します。これは `objectType` パラメーターによってフィルター処理されます。 この例には、DEFAULT パラメーターを使用して関数が呼び出された場合にすべてのモジュールを返すための既定値が含まれています。 この例では、「[メタデータ](#metadata)」に記載されているシステム カタログ ビューの一部を使用しています。
+
+```sql
+CREATE FUNCTION dbo.ModulesByType(@objectType CHAR(2) = '%%')
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT 
+        sm.object_id AS 'Object Id',
+        o.create_date AS 'Date Created',
+        OBJECT_NAME(sm.object_id) AS 'Name',
+        o.type AS 'Type',
+        o.type_desc AS 'Type Description', 
+        sm.definition AS 'Module Description'
+    FROM sys.sql_modules AS sm  
+    JOIN sys.objects AS o ON sm.object_id = o.object_id
+    WHERE o.type like '%' + @objectType + '%'
+);
+GO
+```
+次のように指定して関数を呼び出すと、すべてのビュー (**V**) オブジェクトを返すことができます。
+```sql
+select * from dbo.ModulesByType('V');
+```
+
+### <a name="b-combining-results-of-an-inline-table-valued-function-preview"></a>B. インライン テーブル値関数 (プレビュー) の結果を結合する
+ このシンプルな例は、先に作成したインライン TVF を使用し、クロス適用によって結果を他のテーブルと結合する方法を示したものです。 ここでは、*type* 列で一致するすべての行を対象に、sys.objects と `ModulesByType` の結果の両方からすべての列を選択しています。 APPLY の使用方法について詳しくは、「[FROM 句と JOIN、APPLY、PIVOT](../../t-sql/queries/from-transact-sql.md)」を参照してください。
+
+```sql
+SELECT * 
+FROM sys.objects o
+CROSS APPLY dbo.ModulesByType(o.type);
+GO
+```
+  
+## <a name="see-also"></a>関連項目  
+ [ALTER FUNCTION (SQL Server PDW)](/previous-versions/sql/)   
+ [DROP FUNCTION (SQL Server PDW)](/previous-versions/sql/)  
+  
+  
 

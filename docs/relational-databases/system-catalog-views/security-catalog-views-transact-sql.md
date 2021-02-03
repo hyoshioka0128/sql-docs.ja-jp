@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -18,19 +18,19 @@ helpviewer_keywords:
 ms.assetid: 4d5cf1bf-09a7-4ee0-9dbb-5c584750fc67
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 09137e36c0b96193d5b9c48ebf8bbe5cf52a52ff
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 26faef48c73b41bb96eedc921fb2f8f91673e746
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88475507"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99200893"
 ---
 # <a name="security-catalog-views-transact-sql"></a>セキュリティ カタログ ビュー (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   セキュリティ情報は、パフォーマンスとユーティリティ用に最適化されたカタログビューで公開されます。 可能な場合は、次のカタログ ビューを使用して、カタログ メタデータにアクセスできます。  
   
-## <a name="database-level-views"></a>データベースレベルのビュー   
+## <a name="database-level-views"></a>Database-Level ビュー   
   
 :::row:::
     :::column:::
@@ -59,7 +59,7 @@ ms.locfileid: "88475507"
 
 &nbsp;
 
-## <a name="server-level-views"></a>サーバーレベルのビュー  
+## <a name="server-level-views"></a>Server-Level ビュー  
 
 :::row:::
     :::column:::
@@ -132,7 +132,7 @@ ms.locfileid: "88475507"
 :::row-end:::
 :::row:::
     :::column:::
-        [column_master_key_definitions](../../relational-databases/system-catalog-views/sys-column-master-keys-transact-sql.md)
+        [sys.column_master_keys](../../relational-databases/system-catalog-views/sys-column-master-keys-transact-sql.md)
     :::column-end:::
     :::column:::
         [sys.security_predicates &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-security-predicates-transact-sql.md)

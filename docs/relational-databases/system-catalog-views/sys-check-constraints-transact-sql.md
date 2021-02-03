@@ -1,13 +1,13 @@
 ---
-description: check_constraints (Transact-sql)
-title: check_constraints (Transact-sql) |Microsoft Docs
+description: sys.check_constraints (Transact-sql)
+title: sys.check_constraints (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/28/2017
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.check_constraints
 - sys.check_constraints_TSQL
@@ -20,15 +20,15 @@ helpviewer_keywords:
 ms.assetid: 940ebc5e-44ba-4dae-8b29-da94f2d1d6c4
 author: VanMSFT
 ms.author: vanto
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 767714d75fcb885a23899161714695237fcb8149
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: f1248a45505b06ca40255c77f093aa36ee0b2909
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88323858"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99188842"
 ---
-# <a name="syscheck_constraints-transact-sql"></a>check_constraints (Transact-sql)
+# <a name="syscheck_constraints-transact-sql"></a>sys.check_constraints (Transact-sql)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
   CHECK 制約であるオブジェクトごとに1行の値を保持 **します。 type** = ' C '。  

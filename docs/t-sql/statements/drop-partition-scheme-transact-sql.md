@@ -20,14 +20,14 @@ helpviewer_keywords:
 - removing partition schemes
 - partition schemes [SQL Server], removing
 ms.assetid: 6efbc87c-1c92-4e43-96a7-e0f30f1db185
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: 5d8b2a228bbe2405c4cfb0738193bcd0d770c277
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 65a64c6488afe5ca5598f68d13d4f5a41e7d2e03
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88478809"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096912"
 ---
 # <a name="drop-partition-scheme-transact-sql"></a>DROP PARTITION SCHEME (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-xxx-md](../../includes/applies-to-version/sqlserver.md)]
@@ -39,7 +39,6 @@ ms.locfileid: "88478809"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 DROP PARTITION SCHEME partition_scheme_name [ ; ]  
 ```  
   
@@ -64,7 +63,7 @@ DROP PARTITION SCHEME partition_scheme_name [ ; ]
 ## <a name="examples"></a>例  
  下記は、現在のデータベースから `myRangePS1` パーティション構成を削除する例です。  
   
-```  
+```sql  
 DROP PARTITION SCHEME myRangePS1;  
 ```  
   

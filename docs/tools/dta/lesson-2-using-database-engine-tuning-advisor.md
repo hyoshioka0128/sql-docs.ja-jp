@@ -13,12 +13,12 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 03/01/2017
-ms.openlocfilehash: 385171c8465a06595a65c02ff457d003ce723a7f
-ms.sourcegitcommit: 9470c4d1fc8d2d9d08525c4f811282999d765e6e
+ms.openlocfilehash: d261cbabe0e5bdb22db537a10ef259b9b9d39e6c
+ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86458694"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97489912"
 ---
 # <a name="lesson-2-using-database-engine-tuning-advisor"></a>レッスン 2: データベース エンジン チューニング アドバイザーの使用
 
@@ -30,12 +30,12 @@ ms.locfileid: "86458694"
 
 このチュートリアルを実行するには、SQL Server Management Studio、SQL Server を実行しているサーバーへのアクセス、および AdventureWorks データベースが必要です。
 
-- [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) をインストールします。
+- [SQL Server Management Studio](../../ssms/download-sql-server-management-studio-ssms.md) をインストールします。
 - [SQL Server 2017 Developer Edition](https://www.microsoft.com/sql-server/sql-server-downloads) をインストールします。
-- [AdventureWorks2017 サンプル データベース](https://docs.microsoft.com/sql/samples/adventureworks-install-configure?view=sql-server-2017)をダウンロードします。
+- [AdventureWorks2017 サンプル データベース](../../samples/adventureworks-install-configure.md)をダウンロードします。
 
 
-SSMS でデータベースを復元する手順については、[データベースの復元](https://docs.microsoft.com/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms?view=sql-server-2017)に関するページをご覧ください。
+SSMS でデータベースを復元する手順については、[データベースの復元](../../relational-databases/backup-restore/restore-a-database-backup-using-ssms.md)に関するページをご覧ください。
 
   >[!NOTE]
   > このチュートリアルは、SQL Server Management Studio の使用と基本的なデータベース管理タスクに慣れているユーザーを対象としています。 
@@ -69,7 +69,7 @@ SSMS でデータベースを復元する手順については、[データベ�
   
 3.  データベース エンジン チューニング アドバイザー GUI の右側ペインにある **[全般]** タブで、 **[セッション名]** に「**MySession**」と入力します。 
   
-4.  **ワークロード**に対して **[ファイル]** を選択し、双眼鏡アイコンを選択して、**ワークロード ファイルを参照**します。 手順 1 で保存した **MyScript.sql** ファイルを見つけます。  
+4.  **ワークロード** に対して **[ファイル]** を選択し、双眼鏡アイコンを選択して、**ワークロード ファイルを参照** します。 手順 1 で保存した **MyScript.sql** ファイルを見つけます。  
 
    ![以前に保存したスクリプトの検索](media/dta-tutorials/dta-script.png)
   
@@ -147,5 +147,4 @@ SSMS でデータベースを復元する手順については、[データベ�
  ## <a name="next-lesson"></a>次のレッスン  
 [レッスン 3:DTA コマンド プロンプト ユーティリティの使用](../../tools/dta/lesson-3-using-the-dta-command-prompt-utility.md)  
    
-  
   

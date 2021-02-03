@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.sysmessages
 - sysmessages
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sysmessages system table
 - sys.sysmessages compatibility view
 ms.assetid: 44bee7d9-7517-4071-99be-8b36f979c7cc
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: c54d1cd0db8de1753a6dd81bfbde71c6944df6e1
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: d686f63f498dcc77f15bd372a232e2583ec46c99
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88475146"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99160689"
 ---
 # <a name="syssysmessages-transact-sql"></a>sys.sysmessages (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

@@ -8,7 +8,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - CREATE DATABASE AUDIT
 - DATABASE_AUDIT_SPECIFICATION_TSQL
@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: 0544da48-0ca3-4a01-ba4c-940e23dc315b
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 0febaf92d4bdc58ce4e714391c8d4789158a986f
-ms.sourcegitcommit: cb620c77fe6bdefb975968837706750c31048d46
+ms.openlocfilehash: c62f35df2ea567bda36eb1ae126d9e461194f670
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86392790"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99192739"
 ---
 # <a name="create-database-audit-specification-transact-sql"></a>CREATE DATABASE AUDIT SPECIFICATION (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -41,7 +41,6 @@ ms.locfileid: "86392790"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 CREATE DATABASE AUDIT SPECIFICATION audit_specification_name  
 {  
     FOR SERVER AUDIT audit_name   
@@ -92,14 +91,14 @@ CREATE DATABASE AUDIT SPECIFICATION audit_specification_name
 ## <a name="permissions"></a>アクセス許可  
  `ALTER ANY DATABASE AUDIT` 権限を持つユーザーは、データベース監査の仕様を作成し、任意の監査にバインドできます。  
   
- データベース監査仕様の作成後は、`CONTROL SERVER` 権限、`ALTER ANY DATABASE AUDIT` 権限を持つプリンシパル、または `sysadmin` アカウントがその仕様を表示できます。  
+ データベース監査仕様の作成後は、`CONTROL SERVER` 権限を持つユーザー、または `sysadmin` アカウントがその仕様を表示できます。  
   
 ## <a name="examples"></a>例
 
 ### <a name="a-audit-select-and-insert-on-a-table-for-any-database-principal"></a>A. 任意のデータベース プリンシパルについてテーブルで SELECT と INSERT を監査する 
  次の例では、`Payrole_Security_Audit` というサーバー監査を作成した後、`Payrole_Security_Audit` データベースの `SELECT` テーブルで `INSERT` ユーザーによる `dbo` ステートメントと `HumanResources.EmployeePayHistory` ステートメントを監査する、`AdventureWorks2012` というデータベース監査仕様を作成します。  
   
-```  
+```sql  
 USE master ;  
 GO  
 -- Create the server audit.  
@@ -123,10 +122,10 @@ WITH (STATE = ON) ;
 GO  
 ``` 
 
-### <a name="b-audit-any-dml-insert-update-or-delete-on-_all_-objects-in-the-_sales_-schema-for-a-specific-database-role"></a>B. 特定のデータベース ロールについて _sales_ スキーマの_すべて_のオブジェクトで任意の DML (INSERT、UPDATE、または DELETE) を監査する  
+### <a name="b-audit-any-dml-insert-update-or-delete-on-_all_-objects-in-the-_sales_-schema-for-a-specific-database-role"></a>B. 特定のデータベース ロールについて _sales_ スキーマの _すべて_ のオブジェクトで任意の DML (INSERT、UPDATE、または DELETE) を監査する  
  次の例では、`DataModification_Security_Audit` というサーバー監査を作成した後、`Audit_Data_Modification_On_All_Sales_Tables` データベースでの `INSERT` スキーマのすべてのオブジェクトについて、新しいデータベース ロール `UPDATE` のユーザーによる `DELETE`、`SalesUK` および `Sales` ステートメントを監査する、`AdventureWorks2012` というデータベース監査仕様を作成します。  
   
-```  
+```sql  
 USE master ;  
 GO  
 -- Create the server audit.

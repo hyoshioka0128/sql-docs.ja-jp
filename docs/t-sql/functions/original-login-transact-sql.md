@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - ORIGINAL_LOGIN_TSQL
 - ORIGINAL_LOGIN
@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: ddfb0991-cde3-4b97-a5b7-ee450133f160
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: f2df0bdf310b0096d1bad89d6815ed4dd1aa65bb
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: b7409baa8bcdac97746f8da2751a16e323c77850
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88363818"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99183931"
 ---
 # <a name="original_login-transact-sql"></a>ORIGINAL_LOGIN (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -38,8 +38,7 @@ ms.locfileid: "88363818"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 ORIGINAL_LOGIN( )  
 ```  
   
@@ -58,7 +57,7 @@ ORIGINAL_LOGIN( )
   >[!NOTE]
   > Azure SQL Database では ORIGINAL_LOGIN 関数がサポートされますが、*Execute as LOGIN* がサポートされないため、次のスクリプトは失敗します。 
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 --Create a temporary login and user.  

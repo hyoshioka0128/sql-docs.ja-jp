@@ -20,14 +20,14 @@ helpviewer_keywords:
 - full-text search [SQL Server], stopwords
 - stopwords [full-text search]
 ms.assetid: f6ad87d5-6a34-435a-8456-8244947c5c83
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: 8a7105e0f5360144594d215063b6a2f91590e54c
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 12e90f8d8b2d0b35ecd406af54f55b6ea96cb4c6
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88479101"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98082449"
 ---
 # <a name="alter-fulltext-stoplist-transact-sql"></a>ALTER FULLTEXT STOPLIST (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -38,8 +38,7 @@ ms.locfileid: "88479101"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 ALTER FULLTEXT STOPLIST stoplist_name  
 {   
         ADD [N] 'stopword' LANGUAGE language_term    
@@ -68,16 +67,16 @@ ALTER FULLTEXT STOPLIST stoplist_name
   
 |形式|説明|  
 |------------|-----------------|  
-|String|*language_term* には、[sys.syslanguages (Transact-SQL)](../../relational-databases/system-compatibility-views/sys-syslanguages-transact-sql.md) 互換性ビューの **alias** 列の値と同じ値を指定します。 文字列は、 **'***language_term***'** のように引用符 (') で囲む必要があります。|  
+|String|*language_term* には、[sys.syslanguages (Transact-SQL)](../../relational-databases/system-compatibility-views/sys-syslanguages-transact-sql.md) 互換性ビューの **alias** 列の値と同じ値を指定します。 文字列は、 **'** _language_term_*_'_* のように単一引用符で囲む必要があります。|  
 |Integer|*language_term* には、言語の LCID を指定します。|  
 |16 進数|*language_term* には、"0x" の後に LCID の 16 進数の値を指定します。 16 進数の値は、先頭の 0 を含め、8 桁以内で指定してください。 値を 2 バイト文字セット (DBCS) の形式で指定すると、SQL Server で Unicode に変換されます。|  
   
- ADD **'***stopword***'** LANGUAGE *language_term*  
+ ADD **'** _stopword_*_'_* LANGUAGE *language_term*  
  LANGUAGE *language_term* で指定した言語のストップリストにストップワードを追加します。  
   
  指定したキーワードの組み合わせと言語の LCID 値がストップリスト内で一意でない場合、エラーが返されます。  LCID 値が登録言語に対応していない場合は、エラーが生成されます。  
   
- DROP { **'***stopword***'** LANGUAGE *language_term* | ALL LANGUAGE *language_term* | ALL }  
+ DROP { **'** _stopword_*_'_* LANGUAGE *language_term* | ALL LANGUAGE *language_term* | ALL }  
  ストップ リストからストップ ワードを削除します。  
   
  **'** *stopword* **'** LANGUAGE *language_term*  
@@ -98,7 +97,7 @@ ALTER FULLTEXT STOPLIST stoplist_name
 ## <a name="examples"></a>例  
  次の例では、`CombinedFunctionWordList` というストップリストを変更して、単語 'en' をまずスペイン語用に、次にフランス語用に追加します。  
   
-```  
+```sql  
 ALTER FULLTEXT STOPLIST CombinedFunctionWordList ADD 'en' LANGUAGE 'Spanish';  
 ALTER FULLTEXT STOPLIST CombinedFunctionWordList ADD 'en' LANGUAGE 'French';  
 ```  

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sp_addumpdevice_TSQL
 - sp_addumpdevice
@@ -19,17 +19,17 @@ helpviewer_keywords:
 ms.assetid: c2d2ae49-0808-46d8-8444-db69a69d0ec3
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 91af8d735fb27f5009d4c7067805523f02413ba4
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: 68bad4307f35aebe34c7c2617881c5dc56c0a4ba
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550010"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99198394"
 ---
 # <a name="sp_addumpdevice-transact-sql"></a>sp_addumpdevice (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   
-**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] から[現在のバージョン](https://go.microsoft.com/fwlink/p/?LinkId=299658)まで)。  
+**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] から [現在のバージョン](/troubleshoot/sql/general/determine-version-edition-update-level)まで)。  
 
 バックアップ デバイスを [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスに追加します。  
   
@@ -50,25 +50,25 @@ sp_addumpdevice [ @devtype = ] 'device_type'
 ## <a name="arguments"></a>引数  
 `[ @devtype = ] 'device_type'` バックアップデバイスの種類を示します。 *device_type* は **varchar (20)** で、既定値はありません。次のいずれかの値を指定できます。  
   
-|[値]|説明|  
+|値|説明|  
 |-----------|-----------------|  
 |**ディスク**|バックアップデバイスとしてのハードディスクファイル。|  
 |**テープ**|[!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows でサポートされるテープ デバイス。<br /><br /> 注:テープ バックアップ デバイスは、将来のバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]でサポートされなくなる予定です。 新規の開発作業ではこの機能を使用しないようにし、現在この機能を使用しているアプリケーションは修正することを検討してください。|  
   
-`[ @logicalname = ] 'logical_name'` BACKUP ステートメントおよび RESTORE ステートメントで使用するバックアップデバイスの論理名を指定します。 *logical_name* は **sysname**であり、既定値はありません。 NULL にすることはできません。  
+`[ @logicalname = ] 'logical_name'` BACKUP ステートメントおよび RESTORE ステートメントで使用するバックアップデバイスの論理名を指定します。 *logical_name* は **sysname** であり、既定値はありません。 NULL にすることはできません。  
   
 `[ @physicalname = ] 'physical_name'` バックアップデバイスの物理名を指定します。 物理名は、オペレーティングシステムのファイル名の規則またはネットワークデバイスの汎用名前付け規則に従う必要があり、完全なパスを含める必要があります。 *physical_name* は **nvarchar (260)** で、既定値はありません。 NULL にすることはできません。  
   
  リモートネットワークの場所にバックアップデバイスを作成する場合は、を起動したときに使用されていた名前に、 [!INCLUDE[ssDE](../../includes/ssde-md.md)] リモートコンピューターに対する適切な書き込み機能があることを確認してください。  
   
- テープデバイスを追加する場合、このパラメーターには、Windows によってローカルテープデバイスに割り当てられた物理名を指定する必要があります。たとえば、コンピューター上の最初のテープデバイスの** \\ \\ .\TAPE0**です。 テープデバイスがサーバーコンピューターに接続されている必要があります。リモートで使用することはできません。 英数字以外の文字を含む名前は引用符で囲みます。  
+ テープデバイスを追加する場合、このパラメーターには、Windows によってローカルテープデバイスに割り当てられた物理名を指定する必要があります。たとえば、コンピューター上の最初のテープデバイスの **\\ \\ .\TAPE0** です。 テープデバイスがサーバーコンピューターに接続されている必要があります。リモートで使用することはできません。 英数字以外の文字を含む名前は引用符で囲みます。  
   
 > [!NOTE]  
 >  このプロシージャは、指定された物理名をカタログに入力します。 この手順では、デバイスにアクセスしたり、デバイスを作成したりすることはありません。  
   
-`[ @cntrltype = ] 'controller_type'` 公表. 指定した場合、このパラメーターは無視されます。 旧バージョンとの互換性のためだけに用意されています。 **Sp_addumpdevice**の新しい使用では、このパラメーターを省略する必要があります。  
+`[ @cntrltype = ] 'controller_type'` 公表. 指定した場合、このパラメーターは無視されます。 旧バージョンとの互換性のためだけに用意されています。 **Sp_addumpdevice** の新しい使用では、このパラメーターを省略する必要があります。  
   
-`[ @devstatus = ] 'device_status'` 公表. 指定した場合、このパラメーターは無視されます。 旧バージョンとの互換性のためだけに用意されています。 **Sp_addumpdevice**の新しい使用では、このパラメーターを省略する必要があります。  
+`[ @devstatus = ] 'device_status'` 公表. 指定した場合、このパラメーターは無視されます。 旧バージョンとの互換性のためだけに用意されています。 **Sp_addumpdevice** の新しい使用では、このパラメーターを省略する必要があります。  
   
 ## <a name="return-code-values"></a>リターン コードの値  
  0 (成功) または 1 (失敗)  
@@ -77,7 +77,7 @@ sp_addumpdevice [ @devtype = ] 'device_type'
  なし  
   
 ## <a name="remarks"></a>解説  
- **sp_addumpdevice** により、バックアップデバイスが **backup_devices** カタログビューに追加されます。 その後、そのデバイスを BACKUP ステートメントや RESTORE ステートメントで論理的に参照できるようになります。 **sp_addumpdevice** では、物理デバイスへのアクセスは一切実行されません。 BACKUP ステートメントや RESTORE ステートメントが実行されるときにだけ、指定されたデバイスにアクセスされます。 論理バックアップデバイスを作成すると、BACKUP ステートメントと RESTORE ステートメントが簡略化されます。デバイス名を指定する場合は、"TAPE =" または "DISK =" 句を使用してデバイスパスを指定します。  
+ **sp_addumpdevice** 、 **sys.backup_devices** カタログビューにバックアップデバイスを追加します。 その後、そのデバイスを BACKUP ステートメントや RESTORE ステートメントで論理的に参照できるようになります。 **sp_addumpdevice** では、物理デバイスへのアクセスは一切実行されません。 BACKUP ステートメントや RESTORE ステートメントが実行されるときにだけ、指定されたデバイスにアクセスされます。 論理バックアップデバイスを作成すると、BACKUP ステートメントと RESTORE ステートメントが簡略化されます。デバイス名を指定する場合は、"TAPE =" または "DISK =" 句を使用してデバイスパスを指定します。  
   
  所有権とアクセス許可の問題によって、ディスクまたはファイルバックアップデバイスの使用が妨げられることがあります。 [!INCLUDE[ssDE](../../includes/ssde-md.md)]を起動する Windows アカウントに適切なファイル権限が付与されているかどうかを確認してください。  
   
@@ -148,5 +148,4 @@ GO
  [sp_dropdevice &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-dropdevice-transact-sql.md)   
  [sys.backup_devices &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-backup-devices-transact-sql.md)   
  [システム ストアド プロシージャ &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/system-stored-procedures-transact-sql.md)  
-  
   

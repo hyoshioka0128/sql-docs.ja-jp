@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: 2f82db01-da7e-4a7d-8bc0-48b245e6f768
 author: MightyPen
 ms.author: genemi
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 51d1aed041e25ceaefea1a3237fb1e02848f2d77
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 92e8976ec52409d877bdd2bfe2b90a8784731d12
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85723197"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171964"
 ---
 # <a name="implementing-a-case-expression-in-a-natively-compiled-stored-procedure"></a>ネイティブ コンパイル ストアド プロシージャに CASE 式を実装する
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -45,9 +45,9 @@ EXEC dbo.usp_SOHOnlineOrderResult
 GO  
 ``` 
 
-**適用対象:** [!INCLUDE[ssSQL14-md](../../includes/ssSQL14-md.md)] および [!INCLUDE[ssSQL15-md](../../includes/ssSQL15-md.md)] 以降の SQL Server
+**適用対象:** [!INCLUDE[ssSQL14-md](../../includes/ssSQL14-md.md)] および [!INCLUDE[ssSQL15-md](../../includes/sssql16-md.md)] 以降の SQL Server
 
-  CASE 式は、ネイティブ コンパイル T-SQL モジュールでサポートされて*いません*。 次のサンプルは、ネイティブ コンパイル ストアド プロシージャに CASE 式の機能を実装する方法を示しています。  
+  CASE 式は、ネイティブ コンパイル T-SQL モジュールでサポートされて *いません*。 次のサンプルは、ネイティブ コンパイル ストアド プロシージャに CASE 式の機能を実装する方法を示しています。  
   
  コード サンプルでは、テーブル変数を使用して、単一の結果セットを作成します。 この方法は、データ行の追加コピーを作成する必要があるため、限られた行数を処理する場合にのみ推奨されます。  
   
@@ -103,7 +103,6 @@ GO
 ```  
   
 ## <a name="see-also"></a>参照  
- [ネイティブ コンパイル ストアド プロシージャの移行に関する問題](../../relational-databases/in-memory-oltp/migration-issues-for-natively-compiled-stored-procedures.md)   
+ [ネイティブ コンパイル ストアド プロシージャの移行に関する問題](./a-guide-to-query-processing-for-memory-optimized-tables.md)   
  [インメモリ OLTP でサポートされていない Transact-SQL の構造](../../relational-databases/in-memory-oltp/transact-sql-constructs-not-supported-by-in-memory-oltp.md)  
-  
   

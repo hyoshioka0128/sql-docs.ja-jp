@@ -1,7 +1,7 @@
 ---
 title: データベース ファイルとファイル グループ | Microsoft Docs
 description: データベース ファイルと、割り当てと管理の目的で SQL Server にファイル グループを作成する方法について説明します。 例、ルール、および推奨事項を表示します。
-ms.custom: contperfq4
+ms.custom: contperf-fy20q4
 ms.date: 05/29/2020
 ms.prod: sql
 ms.prod_service: database-engine
@@ -33,12 +33,12 @@ helpviewer_keywords:
 ms.assetid: 9ca11918-480d-4838-9198-cec221ef6ad0
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 58c4cd1b0f3df19365772aa3bee751ac73a7cd1a
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: f14eaec691218c4f7a9cad82dabb2f31f36b6245
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85756264"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878753"
 ---
 # <a name="database-files-and-filegroups"></a>データベース ファイルとファイル グループ
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -212,13 +212,14 @@ GO
 - 同じ結合クエリで使用する各テーブルは別のファイル グループに配置してください。 この手順により、結合されるデータが並列ディスク I/O によって検索されるので、パフォーマンスが向上します。
 - アクセス頻度が高いテーブルとそれらのテーブルに属する非クラスター化インデックスは、別々のファイル グループに配置してください。 異なるファイル グループを使用すると、ファイルが別の物理ディスク上にある場合に並列 I/O が行われるので、パフォーマンスが向上します。
 - トランザクション ログ ファイルは、他のファイルやファイル グループと同じ物理ディスク上に配置しないでください。
+- [Diskpart](/windows-server/administration/windows-commands/diskpart) などのツールを使用して、データベース ファイルが存在するボリュームまたはパーティションを拡張する必要がある場合は、まずすべてのシステム データベースとユーザー データベースをバックアップし、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] サービスを停止してください。 また、ディスク ボリュームが正常に拡張されたら、[`DBCC CHECKDB`](../../t-sql/database-console-commands/dbcc-checkdb-transact-sql.md) コマンドを実行して、ボリューム上にあるすべてのデータベースの物理的な整合性を確保することを検討してください。
 
 トランザクション ログ ファイル管理の推奨事項については、「[トランザクション ログ ファイルのサイズの管理](../../relational-databases/logs/manage-the-size-of-the-transaction-log-file.md#Recommendations)」を参照してください。   
 
 ## <a name="related-content"></a>関連コンテンツ  
- [CREATE DATABASE &#40;SQL Server Transact-SQL&#41;](../../t-sql/statements/create-database-sql-server-transact-sql.md)    
+ [CREATE DATABASE &#40;SQL Server Transact-SQL&#41;](../../t-sql/statements/create-database-transact-sql.md)    
  [ALTER DATABASE の File および Filegroup オプション &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-transact-sql-file-and-filegroup-options.md)      
  [データベースのデタッチとアタッチ &#40;SQL Server&#41;](../../relational-databases/databases/database-detach-and-attach-sql-server.md)  
  [SQL Server トランザクション ログのアーキテクチャと管理ガイド](../../relational-databases/sql-server-transaction-log-architecture-and-management-guide.md)    
  [ページとエクステントのアーキテクチャ ガイド](../../relational-databases/pages-and-extents-architecture-guide.md)    
- [トランザクション ログ ファイルのサイズの管理](../../relational-databases/logs/manage-the-size-of-the-transaction-log-file.md)     
+ [トランザクション ログ ファイルのサイズの管理](../../relational-databases/logs/manage-the-size-of-the-transaction-log-file.md)

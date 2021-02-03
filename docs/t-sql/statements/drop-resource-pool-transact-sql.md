@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DROP RESOURCE POOL
 - DROP_RESOURCE_POOL_TSQL
@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - DROP RESOURCE POOL
 ms.assetid: 18cd6dd9-7a6d-4a08-b9d5-649af23583d5
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: faad24f1b4cd637dadb05edef812ababbc75000e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 88d29f1e9e252c09c6abc0e41ced89ef6f5f6b30
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88478787"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99188443"
 ---
 # <a name="drop-resource-pool-transact-sql"></a>DROP RESOURCE POOL (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -35,7 +35,6 @@ ms.locfileid: "88478787"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 DROP RESOURCE POOL pool_name  
 [ ; ]  
 ```  
@@ -59,7 +58,7 @@ DROP RESOURCE POOL pool_name
 ## <a name="examples"></a>例  
  次の例では、`big_pool` というリソース プールを削除します。  
   
-```  
+```sql  
 DROP RESOURCE POOL big_pool;  
 GO  
 ALTER RESOURCE GOVERNOR RECONFIGURE;  

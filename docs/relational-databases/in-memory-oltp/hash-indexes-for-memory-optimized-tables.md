@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: e922cc3a-3d6e-453b-8d32-f4b176e98488
 author: MightyPen
 ms.author: genemi
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 13117bad78c1cfc843bbe68caeb2abb5c5f64dff
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 4f6dc92d2d77f453f6838ebe990ed5426c665689
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85723216"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97460475"
 ---
 # <a name="troubleshooting-hash-indexes-for-memory-optimized-tables"></a>メモリ最適化テーブルのハッシュ インデックスのトラブルシューティング
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -72,7 +72,7 @@ go
   
 ### <a name="monitor-statistics-for-chains-and-empty-buckets"></a>チェーンと空のバケットの統計を監視する  
   
-次の T-SQL SELECT を実行することで、ハッシュ インデックスの統計を監視できます。 この SELECT では、 **sys.dm_db_xtp_hash_index_stats**という名前のデータ管理ビュー (DMV) を使用します。  
+次の T-SQL SELECT を実行することで、ハッシュ インデックスの統計を監視できます。 この SELECT では、 **sys.dm_db_xtp_hash_index_stats** という名前のデータ管理ビュー (DMV) を使用します。  
   
 ```sql
 SELECT  
@@ -116,7 +116,7 @@ SELECT の結果を、次の統計ガイドラインと比較します。
 2. テーブルに数千行を設定します。  
     a. モジュロ演算子を使用して、StatusCode 列の重複する値の割合を構成します。  
     b. INSERT ループは、262,144 行を約 1 分間で挿入します。  
-3. PRINT は、前述の SELECT を **sys.dm_db_xtp_hash_index_stats**から実行することを指示するメッセージを出力します。  
+3. PRINT は、前述の SELECT を **sys.dm_db_xtp_hash_index_stats** から実行することを指示するメッセージを出力します。  
 
 ```sql
 DROP TABLE IF EXISTS SalesOrder_Mem;  
@@ -174,11 +174,11 @@ go
 - 主キー インデックスと *ix_OrderSequence* に一意の値を挿入します。  
 - `StatusCode` の 8 つのみの個別の値を表す 20 ～ 30 万の行を挿入します。 したがって、*ix_StatusCode* インデックスの値は高い割合で重複しています。  
   
-バケット数が最適でない場合のトラブルシューティングを行うために、 **sys.dm_db_xtp_hash_index_stats**からの SELECT の次の出力を確認します。 これらの結果を得るために、セクション D.1 からコピーした SELECT に `WHERE Object_Name(h.object_id) = 'SalesOrder_Mem'` を追加しています。  
+バケット数が最適でない場合のトラブルシューティングを行うために、 **sys.dm_db_xtp_hash_index_stats** からの SELECT の次の出力を確認します。 これらの結果を得るために、セクション D.1 からコピーした SELECT に `WHERE Object_Name(h.object_id) = 'SalesOrder_Mem'` を追加しています。  
   
 `SELECT` の結果をコードの後に示しています。見やすくするために、結果を幅の狭い 2 つの結果表に意図的に分割しています。  
   
-- *バケット数*に関する結果は次のとおりです。  
+- *バケット数* に関する結果は次のとおりです。  
   
 | IndexName | total_bucket_count | empty_bucket_count | EmptyBucketPercent |  
 | :-------- | -----------------: | -----------------: | -----------------: |  
@@ -186,7 +186,7 @@ go
 | ix_StatusCode | 8 | 4 | 50 |  
 | PK_SalesOrd_B14003... | 262144 | 96525 | 36 |  
   
-- *チェーン長*に関する結果を次に示します。  
+- *チェーン長* に関する結果を次に示します。  
   
 | IndexName | avg_chain_length | max_chain_length |  
 | :-------- | ---------------: | ---------------: |  
@@ -218,7 +218,7 @@ go
   
 ### <a name="balancing-the-trade-off"></a>トレードオフのバランスを考慮する  
   
-OLTP ワークロードは、個々の行に注目します。 フル テーブル スキャンは、通常は OLTP ワークロードのパフォーマンスのクリティカル パスではありません。 したがって、**メモリ使用率の数量**と、**等値テストと挿入操作のパフォーマンス**とのトレードオフのバランスを考慮する必要があります。  
+OLTP ワークロードは、個々の行に注目します。 フル テーブル スキャンは、通常は OLTP ワークロードのパフォーマンスのクリティカル パスではありません。 したがって、**メモリ使用率の数量** と、**等値テストと挿入操作のパフォーマンス** とのトレードオフのバランスを考慮する必要があります。  
   
 **メモリの使用量のほうが大きな問題である場合:**  
   

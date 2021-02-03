@@ -6,20 +6,20 @@ ms.date: 03/03/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
 - FileTables [SQL Server], dynamic management views
 ms.assetid: e50a135d-6644-42a4-a0df-1c7a2b722051
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 268499cff0d6d967134cd8d28a6842df04fba0cd
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 3291b20888ba330496c6cf3d5784520ce02bc906
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89544855"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99146105"
 ---
 # <a name="filestream-and-filetable-dynamic-management-views-transact-sql"></a>Filestream および FileTable の動的管理ビュー (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

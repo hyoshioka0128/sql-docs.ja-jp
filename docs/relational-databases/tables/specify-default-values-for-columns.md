@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: 64514aed-b846-407b-992e-cf813f9a1a91
 author: stevestein
 ms.author: sstein
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 361e98e19788f4d2c6aa921caf71e58552ee53a0
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 4ef2e6eebd15d2d88d9bed1290614d67b5596b87
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88488566"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97474603"
 ---
 # <a name="specify-default-values-for-columns"></a>列の既定値の指定
 
@@ -56,7 +56,7 @@ ms.locfileid: "88488566"
 
 ### <a name="object-explorer"></a>オブジェクト エクスプローラー
 
-1. **オブジェクト エクスプローラー**で、有効桁数を変更する列が含まれているテーブルを右クリックし、 **[デザイン]** をクリックします。
+1. **オブジェクト エクスプローラー** で、有効桁数を変更する列が含まれているテーブルを右クリックし、 **[デザイン]** をクリックします。
 
 2. 既定値を指定する列を選択します。
 
@@ -73,7 +73,7 @@ SSMS を使用して T-SQL を送信することにより、さまざまな方�
 
 ### <a name="alter-table-t-sql"></a>ALTER TABLE (T-SQL)
 
-1. **オブジェクト エクスプローラー**で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)]のインスタンスに接続します。
+1. **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)]のインスタンスに接続します。
 
 2. [標準] ツール バーの **[新しいクエリ]** をクリックします。
 

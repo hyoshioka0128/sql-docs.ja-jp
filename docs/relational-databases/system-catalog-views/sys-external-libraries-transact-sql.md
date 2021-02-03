@@ -1,12 +1,12 @@
 ---
 description: sys.external_libraries (Transact-SQL)
-title: external_libraries (Transact-sql) |Microsoft Docs
+title: sys.external_libraries (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/25/2020
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: machine-learning
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - external_libraries
 - external_libraries_TSQL
@@ -19,13 +19,13 @@ helpviewer_keywords:
 author: dphansen
 ms.author: davidph
 manager: cgronlun
-monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: 6dcc1b8f7cddc785203dc2430c2f1a4dce4b4d39
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: 8c092f44618b07cad75d4c6be0d3aa42f22145b6
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88377578"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99191555"
 ---
 # <a name="sysexternal_libraries-transact-sql"></a>sys.external_libraries (Transact-SQL)  
 [!INCLUDE [SQL Server 2017 SQL MI](../../includes/applies-to-version/sqlserver2017-asdbmi.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "88377578"
 
 ## <a name="sysexternal_libraries"></a>sys.external_libraries
 
-カタログビューの external_libraries には、データベースにアップロードされた各外部ライブラリの行が一覧表示されます。
+カタログビュー sys.external_libraries は、データベースにアップロードされた各外部ライブラリの行を一覧表示します。
 
 |列名 |データ型 | 説明|
 |------|------|------|

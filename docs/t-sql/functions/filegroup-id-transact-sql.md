@@ -20,14 +20,14 @@ helpviewer_keywords:
 - IDs [SQL Server], filegroups
 - names [SQL Server], filegroups
 ms.assetid: 852a76d8-9e61-4a31-84ee-c7edb84a061c
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 9ce3c3947ec276935d601905dc1ea7b4d0188a3e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: ac5ca26044fb7b6e0af151443cf7eed482ebb851
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88422746"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092247"
 ---
 # <a name="filegroup_id-transact-sql"></a>FILEGROUP_ID (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "88422746"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql 
 FILEGROUP_ID ( 'filegroup_name' )   
 ```  
   
@@ -56,7 +56,7 @@ FILEGROUP_ID ( 'filegroup_name' )
 ## <a name="examples"></a>例  
 この例では、[!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] データベース内の `PRIMARY` という名前のファイル グループのファイル グループ ID を取得します。  
   
-```  
+```sql  
 SELECT FILEGROUP_ID('PRIMARY') AS [Filegroup ID];  
 GO  
 ```  

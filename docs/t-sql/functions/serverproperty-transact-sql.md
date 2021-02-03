@@ -11,6 +11,7 @@ ms.topic: language-reference
 f1_keywords:
 - SERVERPROPERTY_TSQL
 - SERVERPROPERTY
+- sql13.swb.serverpropeties.connections.f1
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -23,13 +24,13 @@ helpviewer_keywords:
 ms.assetid: 11e166fa-3dd2-42d8-ac4b-04f18c612c4a
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 208c26d0dd9b11cdcc0783de69caf99cba0a0de4
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: aed106ed3915c779c558ff919128320f97174c8d
+ms.sourcegitcommit: 23649428528346930d7d5b8be7da3dcf1a2b3190
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88445612"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98241893"
 ---
 # <a name="serverproperty-transact-sql"></a>SERVERPROPERTY (Transact-SQL)
 
@@ -41,12 +42,12 @@ ms.locfileid: "88445612"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 SERVERPROPERTY ( 'propertyname' )  
 ```  
 
 > [!IMPORTANT]
-> SQL Server と Azure SQL Database のデータベース エンジンのバージョン番号は類似のものではありません。別個の製品に与えられる内部製造番号になっています。 Azure SQL Database のデータベース エンジンは SQL Server データベース エンジンと同じコードに基づいています。 最も重要なことですが、Azure SQL Database のデータベース エンジンには常に最新の SQL データベース エンジン ビットが与えられます。 Azure SQL Database のバージョン 12 は SQL Server のバージョン 15 より新しくなります。
+> [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] の [!INCLUDE[ssde_md](../../includes/ssde_md.md)] バージョン番号は類似のものではありません。別個の製品に与えられる内部製造番号を表しています。 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] の [!INCLUDE[ssde_md](../../includes/ssde_md.md)] は、[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] と同じコード ベースに基づいています。 最も重要なのは、[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] の [!INCLUDE[ssde_md](../../includes/ssde_md.md)] には常に最新の SQL [!INCLUDE[ssde_md](../../includes/ssde_md.md)] ビットがあることです。 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] のバージョン 12 は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のバージョン 15 よりも新しいものです。
 
 [!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
 
@@ -62,9 +63,9 @@ SERVERPROPERTY ( 'propertyname' )
 |CollationID|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 照合順序の ID。<br /><br /> 基本データ型: **int**|  
 |ComparisonStyle|照合順序の Windows 比較形式。<br /><br /> 基本データ型: **int**|  
 |ComputerNamePhysicalNetBIOS|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスが現在実行されているローカル コンピューターの NetBIOS 名。<br /><br /> フェールオーバー クラスターの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] クラスター化インスタンスでは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスがフェールオーバー クラスターの他のノードにフェールオーバーすると、この値が変わります。<br /><br /> [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] スタンドアロン インスタンスではこの値は変わらず、MachineName プロパティと同じ値が返されます。<br /><br /> **注:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスがフェールオーバー クラスター内にある場合に、フェールオーバー クラスター インスタンスの名前を取得するには、MachineName プロパティを使用します。<br /><br /> NULL = 無効な入力、エラー、または該当なし<br /><br /> 基本データ型: **nvarchar(128)**|  
-|Edition|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスのインストールされている製品のエディション。 機能や制限 ([SQL Server のエディション別の計算容量制限](../../sql-server/compute-capacity-limits-by-edition-of-sql-server.md)など) は、このプロパティの値を使用して調べます。 このバージョン (64 ビット) には、64 ビット バージョンの[!INCLUDE[ssDE](../../includes/ssde-md.md)]が追加されています。<br /><br /> 戻り値:<br /><br /> 'Enterprise Edition'<br /><br /> 'Enterprise Edition:Core-based Licensing'<br /><br /> 'Enterprise Evaluation Edition'<br /><br /> 'Business Intelligence Edition'<br /><br /> 'Developer Edition'<br /><br /> 'Express Edition'<br /><br /> 'Express Edition with Advanced Services'<br /><br /> 'Standard Edition'<br /><br /> 'Web Edition'<br /><br /> 'SQL Azure' は、[!INCLUDE[ssSDS](../../includes/sssds-md.md)] または [!INCLUDE[ssDW](../../includes/ssdw-md.md)] を示します<br /><br /> 'Azure SQL Edge Developer' は、Azure SQL Edge の開発専用エディションを示します <br /><br /> 'Azure SQL Edge' は、Azure SQL Edge の有料エディションを示します <br /><br /> 基本データ型: **nvarchar(128)**|  
-|EditionID|EditionID は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスについて、インストールされている製品のエディションを表します。 機能や制限 ([SQL Server のエディション別の計算容量制限](../../sql-server/compute-capacity-limits-by-edition-of-sql-server.md)など) は、このプロパティの値を使用して調べます。<br /><br /> 1804890536 = Enterprise<br /><br /> 1872460670 = Enterprise Edition:Core-based Licensing<br /><br /> 610778273= Enterprise Evaluation<br /><br /> 284895786 = Business Intelligence<br /><br /> -2117995310 = Developer<br /><br /> -1592396055 = Express<br /><br /> -133711905 = Express with Advanced Services<br /><br /> -1534726760 = Standard<br /><br /> 1293598313 = Web<br /><br /> 1674378470 = SQL Database または Microsoft Azure Synapse Analytics (旧称 SQL Data Warehouse)<br /><br /> -1461570097 = Azure SQL Edge Developer <br /><br /> 1994083197 = Azure SQL Edge <br /><br />基本データ型: **bigint** 型|  
-|EngineEdition|サーバーにインストールされている [!INCLUDE[ssDE](../../includes/ssde-md.md)] インスタンスの[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のエディション。<br /><br /> 1 = Personal または Desktop Engine ([!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 以降のバージョンでは使用できません)<br /><br /> 2 = Standard (Standard、Web、および Business Intelligence の場合に返されます)<br /><br /> 3 = Enterprise (Evaluation、Developer、Enterprise エディションの場合にこの値が返されます)<br /><br /> 4 = Express (Express、Express with Tools、Express with Advanced Services の場合に返されます)<br /><br /> 5 = [!INCLUDE[ssSDS](../../includes/sssds-md.md)]<br /><br /> 6 = [!INCLUDE[ssDW](../../includes/ssdw-md.md)]<br /><br /> 8 = マネージド インスタンス<br /><br /> 9 = Azure SQL Edge (Azure SQL Edge の両方のエディションで返されます)<br /><br /> 基本データ型: **int**|  
+|Edition|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスのインストールされている製品のエディション。 機能や制限 ([SQL Server のエディション別の計算容量制限](../../sql-server/compute-capacity-limits-by-edition-of-sql-server.md)など) は、このプロパティの値を使用して調べます。 このバージョン (64 ビット) には、64 ビット バージョンの[!INCLUDE[ssDE](../../includes/ssde-md.md)]が追加されています。<br /><br /> 戻り値:<br /><br /> 'Enterprise Edition'<br /><br /> 'Enterprise Edition:Core-based Licensing'<br /><br /> 'Enterprise Evaluation Edition'<br /><br /> 'Business Intelligence Edition'<br /><br /> 'Developer Edition'<br /><br /> 'Express Edition'<br /><br /> 'Express Edition with Advanced Services'<br /><br /> 'Standard Edition'<br /><br /> 'Web Edition'<br /><br /> 'SQL Azure' は、[!INCLUDE[ssSDS](../../includes/sssds-md.md)] または [!INCLUDE[ssDW](../../includes/ssdw-md.md)] を示します<br /><br /> 'Azure SQL Edge Developer' は、Azure SQL Edge の開発専用エディションを示します<br /><br /> 'Azure SQL Edge' は、Azure SQL Edge の有料エディションを示します<br /><br /> 基本データ型: **nvarchar(128)**|  
+|EditionID|EditionID は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスについて、インストールされている製品のエディションを表します。 機能や制限 ([SQL Server のエディション別の計算容量制限](../../sql-server/compute-capacity-limits-by-edition-of-sql-server.md)など) は、このプロパティの値を使用して調べます。<br /><br /> 1804890536 = Enterprise<br /><br /> 1872460670 = Enterprise Edition:Core-based Licensing<br /><br /> 610778273= Enterprise Evaluation<br /><br /> 284895786 = Business Intelligence<br /><br /> -2117995310 = Developer<br /><br /> -1592396055 = Express<br /><br /> -133711905 = Express with Advanced Services<br /><br /> -1534726760 = Standard<br /><br /> 1293598313 = Web<br /><br /> 1674378470 = [!INCLUDE[ssSDS](../../includes/sssds-md.md)] または [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)]<br /><br /> -1461570097 = Azure SQL Edge Developer <br /><br /> 1994083197 = Azure SQL Edge <br /><br />基本データ型: **bigint** 型|  
+|EngineEdition|サーバーにインストールされている [!INCLUDE[ssDE](../../includes/ssde-md.md)] インスタンスの[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のエディション。<br /><br /> 1 = Personal または Desktop Engine ([!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 以降のバージョンでは使用できません)<br /><br /> 2 = Standard (Standard、Web、および Business Intelligence の場合に返されます)<br /><br /> 3 = Enterprise (Evaluation、Developer、Enterprise エディションの場合にこの値が返されます)<br /><br /> 4 = Express (Express、Express with Tools、Express with Advanced Services の場合に返されます)<br /><br /> 5 = [!INCLUDE[ssSDS](../../includes/sssds-md.md)]<br /><br /> 6 = [!INCLUDE[ssDW](../../includes/ssdw-md.md)]<br /><br /> 8 = [!INCLUDE[ssSDSMIfull](../../includes/sssdsmifull-md.md)]<br /><br /> 9 = Azure SQL Edge (Azure SQL Edge のすべてのエディションで返されます)<br /><br /> 11 = Azure Synapse サーバーレス SQL プール<br /><br /> 基本データ型: **int**|  
 |FilestreamConfiguredLevel|FILESTREAM アクセスの構成されているレベル。 詳細については、「[filestream のアクセス レベル](../../database-engine/configure-windows/filestream-access-level-server-configuration-option.md)」を参照してください。<br /><br /> 基本データ型: **int**|  
 |FilestreamEffectiveLevel|FILESTREAM アクセスの有効なレベル。 レベルが変更されており、インスタンスの再起動またはコンピューターの再起動のいずれかが保留されている場合、この値は FilestreamConfiguredLevel と異なることがあります。 詳細については、「[filestream のアクセス レベル](../../database-engine/configure-windows/filestream-access-level-server-configuration-option.md)」を参照してください。<br /><br /> 基本データ型: **int**|  
 |FilestreamShareName|FILESTREAM で使用される共有の名前。<br /><br /> NULL = 無効な入力、エラー、または該当なし<br /><br /> 基本データ型: **nvarchar(128)**| 
@@ -91,10 +92,10 @@ SERVERPROPERTY ( 'propertyname' )
 |ProcessID|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] サービスのプロセス ID。 このインスタンスに属する Sqlservr.exe を識別するときに、ProcessID は効果的です。<br /><br /> NULL = 無効な入力、エラー、または該当なし<br /><br /> 基本データ型: **int**|  
 |ProductBuild|**適用対象**: 2015 年 10 月以降の [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)]。<br /><br /> ビルド番号です。<br /><br /> 基本データ型: **nvarchar(128)**|  
 |ProductBuildType|**適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] から 2015 年後半以降の更新プログラムの現在のバージョン。<br /><br /> 現在のビルドのビルドの種類です。<br /><br /> 次のいずれかを返します。<br /><br /> OD = 特定の顧客のオンデマンド リリース。<br /><br /> GDR = Windows Update を介してリリースされた一般配布リリース。<br /><br /> NULL = 適用なし。<br /><br /> 基本データ型: **nvarchar(128)**|  
-|ProductLevel|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスのバージョンのレベルです。<br /><br /> 次のいずれかを返します。<br /><br /> 'RTM' = オリジナル リリース バージョン<br /><br /> 'SP*n*' = サービス パックのバージョン<br /><br /> 'CTP*n*', = Community Technology Preview のバージョン<br /><br /> 基本データ型: **nvarchar(128)**|  
+|ProductLevel|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスのバージョンのレベルです。<br /><br /> 次のいずれかを返します。<br /><br /> 'RTM' = オリジナル リリース バージョン<br /><br /> 'SP *n*' = サービス パックのバージョン<br /><br /> 'CTP *n*', = Community Technology Preview のバージョン<br /><br /> 基本データ型: **nvarchar(128)**|  
 |ProductMajorVersion|**適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] から 2015 年後半以降の更新プログラムの現在のバージョン。<br /><br /> メジャー バージョン。<br /><br /> 基本データ型: **nvarchar(128)**|  
 |ProductMinorVersion|**適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] から 2015 年後半以降の更新プログラムの現在のバージョン。<br /><br /> マイナー バージョン。<br /><br /> 基本データ型: **nvarchar(128)**|  
-|ProductUpdateLevel|**適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] から 2015 年後半以降の更新プログラムの現在のバージョン。<br /><br /> 現在のビルドのレベルを更新します。 CU は累積更新を示します。<br /><br /> 次のいずれかを返します。<br /><br /> CU*n* = 累積更新プログラム<br /><br /> NULL = 適用なし。<br /><br /> 基本データ型: **nvarchar(128)**|  
+|ProductUpdateLevel|**適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] から 2015 年後半以降の更新プログラムの現在のバージョン。<br /><br /> 現在のビルドのレベルを更新します。 CU は累積更新を示します。<br /><br /> 次のいずれかを返します。<br /><br /> CU *n* = 累積更新プログラム<br /><br /> NULL = 適用なし。<br /><br /> 基本データ型: **nvarchar(128)**|  
 |ProductUpdateReference|**適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] から 2015 年後半以降の更新プログラムの現在のバージョン。<br /><br /> そのリリースのサポート技術情報の記事です。<br /><br /> 基本データ型: **nvarchar(128)**|  
 |ProductVersion|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスのバージョンです ('*major.minor.build.revision*' 形式)。<br /><br /> 基本データ型: **nvarchar(128)**|  
 |ResourceLastUpdateDateTime|リソース データベースが最後に更新された日時を返します。<br /><br /> 基本データ型: **datetime**|  
@@ -104,7 +105,6 @@ SERVERPROPERTY ( 'propertyname' )
 |SqlCharSetName|照合順序の SQL 文字セットの名前。<br /><br /> 基本データ型: **nvarchar(128)**|  
 |SqlSortOrder|照合順序の SQL 並べ替え順序 ID。<br /><br /> 基本データ型: **tinyint**|  
 |SqlSortOrderName|照合順序の SQL 並べ替え順序の名前。<br /><br /> 基本データ型: **nvarchar(128)**|  
- 
   
 ## <a name="return-types"></a>戻り値の型  
 

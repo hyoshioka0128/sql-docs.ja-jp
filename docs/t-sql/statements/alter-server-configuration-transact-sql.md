@@ -19,14 +19,14 @@ helpviewer_keywords:
 - ALTER SERVER CONFIGURATION statement
 - setting process affinity
 ms.assetid: f3059e42-5f6f-4a64-903c-86dca212a4b4
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: c162a55af4cc76f5ce9b848e28aa0d9b7c324f58
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: ce637e88679747faf40ec7f262ceaea3c0f01f5f
+ms.sourcegitcommit: 713e5a709e45711e18dae1e5ffc190c7918d52e7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88426894"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98688878"
 ---
 # <a name="alter-server-configuration-transact-sql"></a>ALTER SERVER CONFIGURATION (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -184,13 +184,13 @@ SQL Server フェールオーバー クラスタリングのログ記録レベ�
 リソース フェールオーバーのシナリオでは、フェールオーバーが発生する前に、SQL Server リソース DLL でダンプ ファイルを取得できます。 これは、FCI と可用性グループの両方のテクノロジに当てはまります。 SQL Server リソース DLL で SQL Server リソースが失敗したと判断した場合、SQL Server リソース DLL では Sqldumper.exe ユーティリティを使用して、SQL Server プロセスのダンプ ファイルを取得します。 リソース フェールオーバー時に、確実に Sqldumper.exe ユーティリティによってダンプ ファイルが正常に生成されるようにするには、次の 3 つのプロパティを前提条件として設定する必要があります: SqlDumperDumpTimeOut、SqlDumperDumpPath、SqlDumperDumpFlags。
 
 SQLDUMPEREDUMPFLAGS  
-SQL Server の SQLDumper ユーティリティによって生成されるダンプ ファイルの種類を決定します。 既定の設定は 0 です。 この設定には、16 進数ではなく、10 進数の値が使用されます。 ミニ ダンプでは 288 を使用し、間接メモリのミニ ダンプでは 296 を使用し、フィルター処理されたダンプでは 33024 を使用します。 詳細については、[SQL Server Dumper ユーティリティに関するサポート技術情報の資料](https://go.microsoft.com/fwlink/?LinkId=206173)を参照してください。  
+SQL Server の SQLDumper ユーティリティによって生成されるダンプ ファイルの種類を決定します。 既定の設定は 0 です。 この設定には、16 進数ではなく、10 進数の値が使用されます。 ミニ ダンプでは 288 を使用し、間接メモリのミニ ダンプでは 296 を使用し、フィルター処理されたダンプでは 33024 を使用します。 詳細については、[SQL Server Dumper ユーティリティに関するサポート技術情報の資料](/troubleshoot/sql/tools/use-sqldumper-generate-dump-file)を参照してください。  
   
 SQLDUMPERDUMPPATH = { 'os_file_path' | DEFAULT }  
-SQLDumper ユーティリティがダンプ ファイルを保存する場所。 詳細については、[SQL Server Dumper ユーティリティに関するサポート技術情報の資料](https://go.microsoft.com/fwlink/?LinkId=206173)を参照してください。  
+SQLDumper ユーティリティがダンプ ファイルを保存する場所。 詳細については、[SQL Server Dumper ユーティリティに関するサポート技術情報の資料](/troubleshoot/sql/tools/use-sqldumper-generate-dump-file)を参照してください。  
   
 SQLDUMPERDUMPTIMEOUT = { 'dump_time-out' | DEFAULT }  
-SQL Server でエラーが発生した場合の、SQLDumper ユーティリティによるダンプの生成のタイムアウト値 (ミリ秒単位)。 既定値は 0 で、ダンプの完了に時間制限がないことを示します。 詳細については、[SQL Server Dumper ユーティリティに関するサポート技術情報の資料](https://go.microsoft.com/fwlink/?LinkId=206173)を参照してください。  
+SQL Server でエラーが発生した場合の、SQLDumper ユーティリティによるダンプの生成のタイムアウト値 (ミリ秒単位)。 既定値は 0 で、ダンプの完了に時間制限がないことを示します。 詳細については、[SQL Server Dumper ユーティリティに関するサポート技術情報の資料](/troubleshoot/sql/tools/use-sqldumper-generate-dump-file)を参照してください。  
   
  FAILURECONDITIONLEVEL = { 'failure_condition_level' | DEFAULT }  
  SQL Server フェールオーバー クラスター インスタンスがフェイルオーバーまたは再起動する必要がある状態。 既定値は 3 で、重大なサーバー エラーの発生時に SQL Server リソースがフェールオーバーまたは再起動することを示します。 このエラー状態レベルおよび他のエラー状態レベルについて詳しくは、「[FailureConditionLevel プロパティ設定の構成](../../sql-server/failover-clusters/windows/configure-failureconditionlevel-property-settings.md)」をご覧ください。  
@@ -203,7 +203,7 @@ SQL Server データベース エンジンのリソース DLL が、サーバー
 **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降)。   
   
 HADR CLUSTER CONTEXT **=** { **'** _remote\_windows\_cluster_ **'** | LOCAL }  
-サーバー インスタンスの HADR クラスター コンテキストを、指定した Windows Server フェールオーバー クラスター (WSFC) に切り替えます。 *HADR クラスター コンテキスト*は、サーバー インスタンスによってホストされる可用性レプリカのメタデータを管理する WSFC を決定します。 SET HADR CLUSTER CONTEXT オプションは、[!INCLUDE[ssHADR](../../includes/sshadr-md.md)] を新しい WSFC 上の [!INCLUDE[ssSQL11SP1](../../includes/sssql11sp1-md.md)] 以降のバージョンのインスタンスに移行するクラスター間での移行中にのみ使用してください。  
+サーバー インスタンスの HADR クラスター コンテキストを、指定した Windows Server フェールオーバー クラスター (WSFC) に切り替えます。 *HADR クラスター コンテキスト* は、サーバー インスタンスによってホストされる可用性レプリカのメタデータを管理する WSFC を決定します。 SET HADR CLUSTER CONTEXT オプションは、[!INCLUDE[ssHADR](../../includes/sshadr-md.md)] を新しい WSFC 上の [!INCLUDE[ssSQL11SP1](../../includes/sssql11sp1-md.md)] 以降のバージョンのインスタンスに移行するクラスター間での移行中にのみ使用してください。  
   
 HADR クラスター コンテキストの切り替えは、ローカル WSFC とリモート WSFC 間でのみ実行できます。 その後、リモート WSFC からローカル WSFC に切り戻すことができます。 HADR クラスター コンテキストは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスが可用性レプリカをホストしていない場合のみリモート クラスターに切り替えることができます。  
   
@@ -227,7 +227,7 @@ LOCAL
 **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降)。    
   
 ON  
-バッファー プール拡張オプションを有効にします。 このオプションは不揮発性記憶域を使用してバッファー プールのサイズを拡張します。 ソリッドステート ドライブ (SSD) などの不揮発性記憶域はプール内にクリーンなデータ ページを保持します。 この機能の詳細については、「[バッファー プール拡張](../../database-engine/configure-windows/buffer-pool-extension.md)」を参照してください。バッファー プール拡張機能は、すべての SQL Server エディションで使用できるとは限りません。 詳細については、「[SQL Server 2016 の各エディションでサポートされる機能](../../sql-server/editions-and-supported-features-for-sql-server-2016.md)」を参照してください。  
+バッファー プール拡張オプションを有効にします。 このオプションは不揮発性記憶域を使用してバッファー プールのサイズを拡張します。 ソリッドステート ドライブ (SSD) などの不揮発性記憶域はプール内にクリーンなデータ ページを保持します。 この機能の詳細については、「[バッファー プール拡張](../../database-engine/configure-windows/buffer-pool-extension.md)」を参照してください。バッファー プール拡張機能は、すべての SQL Server エディションで使用できるとは限りません。 詳細については、「[SQL Server 2016 の各エディションでサポートされる機能](../../sql-server/editions-and-components-of-sql-server-2016.md)」を参照してください。  
   
 FILENAME = 'os_file_path_and_name'  
 バッファー プール拡張キャッシュ ファイルのディレクトリ パスと名前を定義します。 ファイル拡張子は .BPE と指定する必要があります。 FILENAME を変更する前に BUFFER POOL EXTENSION を無効にします。  
@@ -245,7 +245,7 @@ OFF
   
 **\<soft_numa>**  
 
-**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降)。  
+**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降)。  
   
 ON  
 大きい NUMA ハードウェア ノードを小さい NUMA ノードに分割する自動パーティション分割を有効にします。 実行中の値を変更するには、データベース エンジンの再起動が必要です。  
@@ -484,5 +484,3 @@ GO
 [sys.dm_os_memory_nodes &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-memory-nodes-transact-sql.md)   
 [sys.dm_os_buffer_pool_extension_configuration &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-buffer-pool-extension-configuration-transact-sql.md)   
 [バッファー プール拡張](../../database-engine/configure-windows/buffer-pool-extension.md)  
-  
-  

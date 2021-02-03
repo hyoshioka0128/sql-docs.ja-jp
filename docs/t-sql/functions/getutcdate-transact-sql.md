@@ -33,15 +33,15 @@ helpviewer_keywords:
 - dates [SQL Server], system date and time
 - time [SQL Server], system
 ms.assetid: 48a5b230-102e-4a89-bb2a-fcf0cac862bb
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: e0c03a89535dded3c17f556c4b048bbdb1840c1c
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 7d4cbf063ac0bda8ed1d7f9826e4c591c7aecc0d
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88422766"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98086911"
 ---
 # <a name="getutcdate-transact-sql"></a>GETUTCDATE (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -57,7 +57,7 @@ ms.locfileid: "88422766"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 GETUTCDATE()  
 ```  
   
@@ -76,7 +76,7 @@ GETUTCDATE()
   
 ### <a name="a-getting-the-current-system-date-and-time"></a>A. 現在のシステム日付と時刻を取得する  
   
-```  
+```sql  
 SELECT 'SYSDATETIME()      ', SYSDATETIME();  
 SELECT 'SYSDATETIMEOFFSET()', SYSDATETIMEOFFSET();  
 SELECT 'SYSUTCDATETIME()   ', SYSUTCDATETIME();  
@@ -115,7 +115,7 @@ GETUTCDATE()             2007-05-04
   
 ### <a name="c-getting-the-current-system-time"></a>C. 現在のシステム時刻を取得する  
   
-```  
+```sql  
 SELECT 'SYSDATETIME()      ', CONVERT (time, SYSDATETIME());  
 SELECT 'SYSDATETIMEOFFSET()', CONVERT (time, SYSDATETIMEOFFSET());  
 SELECT 'SYSUTCDATETIME()   ', CONVERT (time, SYSUTCDATETIME());  

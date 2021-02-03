@@ -7,19 +7,19 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - ADO MD collections
 - collections [ADO MD]
 ms.assetid: 01c53429-ccc9-4077-b738-d3c1f43bd76c
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: cdd41be1cf7ed4d412978d387270242874b56d7f
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: e5758f4860216cda3b2b79e82a747f3c420a0d35
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88987573"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99166212"
 ---
 # <a name="ado-md-collections"></a>ADO MD のコレクション
 
@@ -34,7 +34,7 @@ ms.locfileid: "88987573"
 |[Positions](./positions-collection-ado-md.md)|軸上の点を定義する **位置** オブジェクトを格納します。|  
   
 ## <a name="see-also"></a>参照  
- [ADO MD API リファレンス](./ado-md-object-model.md?view=sql-server-ver15)   
+ [ADO MD API リファレンス](./ado-md-object-model.md)   
  [ADO MD コード例](./ado-md-code-examples.md)   
  [ADO MD 列挙定数](./ado-md-enumerated-constants.md)   
  [ADO MD メソッド](./ado-md-methods.md)   

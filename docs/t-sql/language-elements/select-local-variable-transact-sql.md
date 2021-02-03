@@ -23,15 +23,15 @@ helpviewer_keywords:
 - '@local_variable'
 - local variables [SQL Server]
 ms.assetid: 8e1a9387-2c5d-4e51-a1fd-a2a95f026d6f
-author: rothja
-ms.author: jroth
-monikerRange: = azuresqldb-current ||>= sql-server-2016 ||= azure-sqldw-latest||>= sql-server-linux-2017||= sqlallproducts-allversions
-ms.openlocfilehash: 0c9944d3541ba47bcb6670aaf703d66d59ee9b5b
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: = azuresqldb-current ||>= sql-server-2016 ||= azure-sqldw-latest||>= sql-server-linux-2017
+ms.openlocfilehash: 3b1545d50733a5139c0a4d6ef22f22b719691fc5
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88459342"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98100337"
 ---
 # <a name="select-local_variable-transact-sql"></a>SELECT @local_variable (Transact-SQL)
 
@@ -96,7 +96,7 @@ SELECT ステートメントが行を返さない場合、変数は現在の値�
 ```sql  
 -- Uses AdventureWorks    
   
-DECLARE @var1 varchar(30);         
+DECLARE @var1 VARCHAR(30);         
 SELECT @var1 = 'Generic Name';         
 SELECT @var1 = Name         
 FROM Sales.Store         
@@ -118,7 +118,7 @@ SELECT @var1 AS 'Company Name';
 ```sql  
 -- Uses AdventureWorks  
   
-DECLARE @var1 varchar(30)   
+DECLARE @var1 VARCHAR(30)   
 SELECT @var1 = 'Generic Name'   
 SELECT @var1 = (SELECT Name   
 FROM Sales.Store   

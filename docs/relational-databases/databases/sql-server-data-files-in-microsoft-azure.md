@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 38ffd9c2-18a5-43d2-b674-e425addec4e4
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 5314f43ea17351f54cf1815346a0820cc5cd77e3
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 22413b2fff8a3b243e4723ecc66862980f8d8abf
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85715488"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98766259"
 ---
 # <a name="sql-server-data-files-in-microsoft-azure"></a>Microsoft Azure 内の SQL Server データ ファイル
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -25,7 +25,7 @@ ms.locfileid: "85715488"
 Microsoft Azure 内の SQL Server データ ファイルにより、BLOB として格納された SQL Server データベース ファイルに対するネイティブ サポートが有効になります。 この機能を使用すると、オンプレミスの環境または Microsoft Azure 仮想マシンで実行されている SQL Server でデータベースを作成し、Microsoft Azure BLOB ストレージに専用のデータ保存場所を用意できます。 また、コンピューター間でデータベースを移動するプロセスが簡略化されます。 1 台のコンピューターからデータベースをデタッチして、別のコンピューターにアタッチすることができます。 また、Microsoft Azure ストレージを復元元または復元先として使用することで、データベースのバックアップ ファイルに代替の格納場所が提供されます。 このため、データの仮想化、移動、セキュリティ、および可用性の面での利点と、低コストと容易なメンテナンスで実現できる高可用性と柔軟なスケーリングにより、いくつかのハイブリッド ソリューションが有効になります。
  
 > [!IMPORTANT]  
->  システム データベースを Azure BLOB ストレージに格納することは推奨されず、サポートされていません。 
+>  システム データベースを Azure Blob Storage に格納することは推奨されず、サポートされていません。 
 
  このトピックでは、SQL Server データ ファイルを Microsoft Azure ストレージ サービスに格納する場合の重要な概念と考慮事項について説明します。  
   
@@ -54,7 +54,7 @@ Azure ディスクは、エンタープライズ規模のビジネスの継続�
 ### <a name="azure-storage-concepts"></a>Azure Storage の概念  
 Azure の機能で SQL Server データ ファイルを使用する場合は、Azure 内でストレージ アカウントとコンテナーを作成する必要があります。 次に、SQL Server 資格情報を作成する必要があります。これには、コンテナーのポリシーに関する情報と、コンテナーにアクセスするために必要な Shared Access Signature が含まれます。  
 
-[Microsoft Azure](https://azure.microsoft.com) の [Azure Storage](https://azure.microsoft.com/services/storage/) アカウントは、BLOB にアクセスするための名前空間の最高レベルを表します。 ストレージ アカウントには、合計サイズがストレージの制限内であれば、無制限の数のコンテナーを含めることができます。 ストレージの制限に関する最新情報については、「 [Azure のサブスクリプションとサービスの制限、クォータ、および制約](https://docs.microsoft.com/azure/azure-subscription-service-limits)」をご覧ください。 コンテナーには、一連の [BLOB](https://docs.microsoft.com/azure/storage/common/storage-introduction#blob-storage) をグループ化するコンテナーが用意されています。 すべての BLOB は 1 つのコンテナーに存在する必要があります。 アカウントには、無制限の数のコンテナーを含めることができます。 同様に、コンテナーには、BLOB を無制限に格納できます。 Azure Storage に格納できる BLOB には、ブロック BLOB とページ BLOB の 2 種類があります。 この新しい機能ではページ BLOB が使用されます。ファイル内のバイト範囲が頻繁に変更される場合はこちらの方が効率的です。 BLOB には、`https://storageaccount.blob.core.windows.net/<container>/<blob>` という URL 形式を使用してアクセスできます。  
+[Microsoft Azure](https://azure.microsoft.com) の [Azure Storage](https://azure.microsoft.com/services/storage/) アカウントは、BLOB にアクセスするための名前空間の最高レベルを表します。 ストレージ アカウントには、合計サイズがストレージの制限内であれば、無制限の数のコンテナーを含めることができます。 ストレージの制限に関する最新情報については、「 [Azure のサブスクリプションとサービスの制限、クォータ、および制約](/azure/azure-subscription-service-limits)」をご覧ください。 コンテナーには、一連の [BLOB](/azure/storage/common/storage-introduction#blob-storage) をグループ化するコンテナーが用意されています。 すべての BLOB は 1 つのコンテナーに存在する必要があります。 アカウントには、無制限の数のコンテナーを含めることができます。 同様に、コンテナーには、BLOB を無制限に格納できます。 Azure Storage に格納できる BLOB には、ブロック BLOB とページ BLOB の 2 種類があります。 この新しい機能ではページ BLOB が使用されます。ファイル内のバイト範囲が頻繁に変更される場合はこちらの方が効率的です。 BLOB には、`https://storageaccount.blob.core.windows.net/<container>/<blob>` という URL 形式を使用してアクセスできます。  
 
 ### <a name="azure-billing-considerations"></a>Azure の課金に関する注意点  
 
@@ -91,7 +91,7 @@ ON
 >[!IMPORTANT]
 >コンテナーのデータ ファイルに対するアクティブな参照が存在する場合、対応する SQL Server 資格情報を削除しようとすると失敗します。
 
-詳細については、「 [Azure のストレージ リソースへのアクセスの管理](https://docs.microsoft.com/azure/storage/blobs/storage-manage-access-to-resources)」をご覧ください。  
+詳細については、「 [Azure のストレージ リソースへのアクセスの管理](/azure/storage/blobs/storage-manage-access-to-resources)」をご覧ください。  
 
 ### <a name="security"></a>セキュリティ  
  Azure Storage に SQL Server データ ファイルを格納する場合のセキュリティに関する考慮事項と要件は次のとおりです。
@@ -120,13 +120,13 @@ ON
   
 - Azure 機能で SQL Server データ ファイルを使用する場合は、ストレージ アカウントに対する地理的レプリケーションはサポートされません。 ストレージ アカウントで地理的レプリケーションが実行されている場合に、地理的フェールオーバーが発生すると、データの破損が発生する可能性があります。  
   
-- 容量の制限については、「[Blob Storage の概要](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-introduction)」を参照してください。  
+- 容量の制限については、「[Blob Storage の概要](/azure/storage/blobs/storage-blobs-introduction)」を参照してください。  
   
 - Azure Storage 機能で SQL Server データ ファイルを使用する場合は、インメモリ OLTP データを BLOB ストレージ内に格納することはできません。 これは、インメモリ OLTP に **FileStream** に対する依存関係があり、この機能の現在のリリースでは、Azure Storage に **FileStream** データを格納することがサポートされていないためです。  
   
 - Azure 機能で SQL Server データ ファイルを使用する場合、SQL Server は、**master** データベース内で設定された照合順序を使用して、すべての URL 比較またはパス比較を実行します。  
   
-- **AlwaysOn 可用性グループ**は、プライマリ データベースに新しいデータベース ファイルを追加しない限りサポートされます。 データベース操作により、プライマリ データベースに新しいファイルを作成する必要がある場合は、最初にセカンダリ ノードで可用性グループを無効にします。 次に、プライマリ データベースに対してデータベース操作を実行し、プライマリ ノードでデータベースをバックアップします。 次に、データベースをセカンダリ ノードに復元します。 この操作が終了したら、セカンダリ ノードで Always On 可用性グループを再び有効にします。 
+- **AlwaysOn 可用性グループ** は、プライマリ データベースに新しいデータベース ファイルを追加しない限りサポートされます。 データベース操作により、プライマリ データベースに新しいファイルを作成する必要がある場合は、最初にセカンダリ ノードで可用性グループを無効にします。 次に、プライマリ データベースに対してデータベース操作を実行し、プライマリ ノードでデータベースをバックアップします。 次に、データベースをセカンダリ ノードに復元します。 この操作が終了したら、セカンダリ ノードで Always On 可用性グループを再び有効にします。 
 
    >[!NOTE]
    >Azure 機能で SQL Server データ ファイルを使用する場合は、Always On フェールオーバー クラスター インスタンスはサポートされません。
@@ -153,7 +153,7 @@ ON
 ### <a name="transact-sql-support"></a>Transact-SQL のサポート  
  この新しい機能により、Transact-SQL の表層のセキュリティ構成が次のように変更されました。
 
-- **sys.master_files** システム ビューに、新しい **int**列 **credential_id** が追加されました。 **credential_id** 列は、Azure Storage データ ファイルが自身の資格状態を使用するために `sys.credentials` への相互参照を有効にする目的で使用されます。 資格情報を使用するデータベース ファイルが存在するが、この資格情報を削除できないという場合などに、トラブルシューティングとして使用できます。  
+- **sys.master_files** システム ビューに、新しい **int** 列 **credential_id** が追加されました。 **credential_id** 列は、Azure Storage データ ファイルが自身の資格状態を使用するために `sys.credentials` への相互参照を有効にする目的で使用されます。 資格情報を使用するデータベース ファイルが存在するが、この資格情報を削除できないという場合などに、トラブルシューティングとして使用できます。  
   
 ##  <a name="troubleshooting-for-sql-server-data-files-in-microsoft-azure"></a><a name="bkmk_Troubleshooting"></a> Microsoft Azure で SQL Server データ ファイルを使用する場合のトラブルシューティング  
  サポートされていない機能または制限事項によるエラーを回避するために、まず「 [Limitations](../../relational-databases/databases/sql-server-data-files-in-microsoft-azure.md#bkmk_Limitations)」をご確認ください。  
@@ -166,10 +166,10 @@ ON
     解決策:Azure Storage にあるアクティブなデータベース ファイルで使用中の資格情報を削除しようとすると、このエラーが発生することがあります。 資格情報を削除するには、まずこのデータベース ファイルのある関連 BLOB を削除する必要があります。 アクティブなリースを保持している BLOB を削除するには、先にリースを終了する必要があります。  
   
 - *コンテナーに対して Shared Access Signature が正しく作成されていません。*    
-     解決策:コンテナーに対して Shared Access Signature が正しく作成されていることを確認します。 「[チュートリアル:Microsoft Azure Blob Storage サービスと SQL Server 2016 データベースの使用](../lesson-2-create-a-sql-server-credential-using-a-shared-access-signature.md)」をご覧ください。  
+     解決策:コンテナーに対して Shared Access Signature が正しく作成されていることを確認します。 「[チュートリアル:Microsoft Azure Blob Storage サービスと SQL Server 2016 データベースの使用](../tutorial-use-azure-blob-storage-service-with-sql-server-2016.md#2---create-a-sql-server-credential-using-a-shared-access-signature)」をご覧ください。  
   
 - *SQL Server 資格情報が正しく作成されていません。*    
-    解決策: **[ID]** フィールドに 'Shared Access Signature' を使用して、シークレットが正しく作成されたことを確認します。 「[チュートリアル:Microsoft Azure Blob Storage サービスと SQL Server 2016 データベースの使用](../lesson-3-database-backup-to-url.md)」をご覧ください。  
+    解決策: **[ID]** フィールドに 'Shared Access Signature' を使用して、シークレットが正しく作成されたことを確認します。 「[チュートリアル:Microsoft Azure Blob Storage サービスと SQL Server 2016 データベースの使用](../tutorial-use-azure-blob-storage-service-with-sql-server-2016.md#3---database-backup-to-url)」をご覧ください。  
   
  **BLOB リース エラー**  
   
@@ -177,25 +177,28 @@ ON
   
  **データベース エラー**  
   
-1.  *データベースの作成中にエラーが発生しました*   
-    解決策:「[チュートリアル:Microsoft Azure Blob Storage サービスと SQL Server 2016 データベースの使用](../lesson-4-restore-database-to-virtual-machine-from-url.md)」をご覧ください。  
+**データベースの作成中にエラーが発生しました** 解決策: 「[チュートリアル:Microsoft Azure Blob Storage サービスと SQL Server 2016 データベースの使用](../tutorial-use-azure-blob-storage-service-with-sql-server-2016.md#4----restore-database-to-virtual-machine-from-url)」をご覧ください。  
   
-2.  *ALTER ステートメントの実行中にエラーが発生しました*   
-    解決策:ALTER DATABASE ステートメントは、必ずデータベースがオンライン状態のときに実行してください。 データ ファイルを Azure Storage にコピーするときは常に、ブロック BLOB ではなくページ BLOB を作成します。 そうしないと、ALTER DATABASE は失敗します。 「[チュートリアル:Microsoft Azure Blob Storage サービスと SQL Server 2016 データベースの使用](../tutorial-use-azure-blob-storage-service-with-sql-server-2016.md)」をご覧ください。  
+**ALTER ステートメントの実行中にエラーが発生しました。** 解決策: ALTER DATABASE ステートメントは、必ずデータベースがオンライン状態のときに実行してください。 データ ファイルを Azure Storage にコピーするときは常に、ブロック BLOB ではなくページ BLOB を作成します。 そうしないと、ALTER DATABASE は失敗します。 「[チュートリアル:Microsoft Azure Blob Storage サービスと SQL Server 2016 データベースの使用](../tutorial-use-azure-blob-storage-service-with-sql-server-2016.md)」をご覧ください。  
   
-3.  *エラー コード 5120 物理ファイル "%.\*ls" を開けません。オペレーティング システム エラー %d: "%ls"*   
+**エラー コード - 5120 物理ファイル "%.\*ls" を開けません。オペレーティング システム エラー %d: "%ls"**   
 
-    解決策:現在、この新しい機能強化では、Azure Storage 内の同じデータベース ファイルに複数の SQL Server インスタンスで同時にアクセスすることはできません。 ServerA がアクティブなデータベース ファイルとオンライン接続されているときに、誤って起動された ServerB に同じデータ ファイルを指すデータベースがある場合、2 番目のサーバーでは、次のエラーでデータベースの起動に失敗します。エラー "*コード 5120 物理ファイル "%.\*" ls" を開けません。オペレーティング システム エラー %d: "%ls"* 。  
+解決策:現在、この新しい機能強化では、Azure Storage 内の同じデータベース ファイルに複数の SQL Server インスタンスで同時にアクセスすることはできません。 ServerA がアクティブなデータベース ファイルとオンライン接続されているときに、誤って起動された ServerB に同じデータ ファイルを指すデータベースがある場合、2 番目のサーバーでは、次のエラーでデータベースの起動に失敗します。エラー "*コード 5120 物理ファイル "%.\*" ls" を開けません。オペレーティング システム エラー %d: "%ls"* 。  
   
-     この問題を解決するには、まず、Azure Storage 内のデータベース ファイルに ServerA からアクセスする必要があるかどうかを決定します。 必要ない場合は、ServerA と Azure Storage 内のデータベース ファイルとの接続を削除します。 そのためには、次の手順に従います。  
-  
-    1.  ALTER DATABASE ステートメントを使用して、ServerA のファイル パスをローカル フォルダーに設定します。  
-  
-    2.  ServerA でデータベースをオフラインに設定します。  
-  
-    3.  次に、Azure Storage から ServerA のローカル フォルダーにデータベース ファイルをコピーします。これにより、ServerA でデータベースのローカル コピーを確保できます。  
-  
-    4.  データベースをオンラインに設定します。  
+この問題を解決するには、まず、Azure Storage 内のデータベース ファイルに ServerA からアクセスする必要があるかどうかを決定します。 必要ない場合は、ServerA と Azure Storage 内のデータベース ファイルとの接続を削除します。 そのためには、次の手順に従います。  
+
+1.  ALTER DATABASE ステートメントを使用して、ServerA のファイル パスをローカル フォルダーに設定します。  
+
+2.  ServerA でデータベースをオフラインに設定します。  
+
+3.  次に、Azure Storage から ServerA のローカル フォルダーにデータベース ファイルをコピーします。これにより、ServerA でデータベースのローカル コピーを確保できます。  
+
+4.  データベースをオンラインに設定します。
+
+**エラー コード 833 - 完了までに 15 秒を超える I/O 要求** 
+   
+   このエラーは、ストレージ システムで SQL Server ワークロードの要求を満たせないことを示しています。 アプリケーション層から IO アクティビティを減らすか、ストレージ層のスループット機能を強化してください。 詳細については、[エラー 833](../errors-events/mssqlserver-833-database-engine-error.md) に関するページを参照してください。 パフォーマンスの問題が解決しない場合は、Premium や UltraSSD などの別のストレージ層にファイルを移動することを検討してください。 Azure VM 上の SQL Server については、[ストレージ パフォーマンスの最適化](/azure/virtual-machines/premium-storage-performance)に関する記述を参照してください。
+
 
 ## <a name="next-steps"></a>次のステップ  
   

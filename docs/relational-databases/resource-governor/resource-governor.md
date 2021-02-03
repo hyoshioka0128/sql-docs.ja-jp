@@ -2,7 +2,7 @@
 title: リソース ガバナー | Microsoft Docs
 description: 受信したアプリケーション要求で使用できる CPU、物理 I/O、メモリの量を制限する SQL Server Resource Governor 機能について説明します。
 ms.custom: ''
-ms.date: 03/14/2017
+ms.date: 12/21/2020
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: performance
@@ -11,19 +11,22 @@ helpviewer_keywords:
 - Resource Governor, overview
 - Resource Governor
 ms.assetid: 2bc89b66-e801-45ba-b30d-8ed197052212
-author: julieMSFT
-ms.author: jrasnick
-ms.openlocfilehash: 8654f25318bfc947394b0acaf0df19a8f7eb2bc3
-ms.sourcegitcommit: 9470c4d1fc8d2d9d08525c4f811282999d765e6e
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: fea1ba3712f07548d259867f931188d9e5798802
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86457829"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596412"
 ---
 # <a name="resource-governor"></a>[リソース ガバナー]
-[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
+[!INCLUDE [SQL Server SQL MI](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Resource Governor は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のワークロードとシステム リソースの消費を管理するために使用できる機能です。 Resource Governor を使用すると、着信アプリケーション要求で使用できる CPU、物理 I/O、およびメモリの量に対して制限を指定できます。  
   
+> [!NOTE]
+> (その他の手法のうち) [Azure SQL Database では Resource Governor を利用して](https://azure.microsoft.com/blog/resource-governance-in-azure-sql-database/)リソースを管理しますが、Azure SQL Database 内のカスタム リソース プールとワークロード グループのユーザー構成はサポートされていません。 Azure Synapse Analytics には、[ワークロード分類機能](/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-workload-classification)を介した、Resource Governor の動作に似た別の実装があります。
+
 ## <a name="benefits-of-resource-governor"></a>リソース ガバナーの利点  
  リソース ガバナーでは、受け取った要求に応じてリソース消費を制限することにより、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のワークロードとリソースを管理することができます。 リソース ガバナーでは、同程度のサイズの複数のクエリや要求を 1 つのエンティティとして扱う場合、それらをワークロードと呼んでいます。 これは必須ではありませんが、ワークロードのリソースの使用パターンが統一化されていると、リソース ガバナーから得られる利点も増えます。 リソース制限は、実行中のワークロードへの影響を最小限に抑えながらリアルタイムで再構成できます。  
   
@@ -61,8 +64,8 @@ ms.locfileid: "86457829"
   
 -   **分類。** 分類プロセスにより、着信セッションがセッションの特性に基づいてワークロード グループに割り当てられます。 分類ロジックは、分類子関数と呼ばれるユーザー定義関数を記述することで調整できます。 リソース ガバナーでは、分類規則を実装するための、ユーザー定義の分類関数もサポートされます。 詳細については、「 [リソース ガバナーの分類子関数](../../relational-databases/resource-governor/resource-governor-classifier-function.md)」を参照してください。  
   
-> [!NOTE]  
->  リソース ガバナーでは、専用管理者接続 (DAC) が制御されません。 内部のワークロード グループおよびリソース プールで実行される DAC クエリは、分類する必要がありません。  
+> [!NOTE]
+> リソース ガバナーでは、専用管理者接続 (DAC) が制御されません。 内部のワークロード グループおよびリソース プールで実行される DAC クエリは、分類する必要がありません。  
   
  リソース ガバナーのコンテキストでは、上記の概念をコンポーネントとして扱うことができます。 次の図は、これらのコンポーネントと、データベース エンジン環境でのその相互関係を示しています。 処理の観点から見たフローを簡単に示すと次のようになります。  
   
@@ -92,5 +95,4 @@ ms.locfileid: "86457829"
   
 ## <a name="see-also"></a>参照  
  [データベース エンジンのインスタンス &#40;SQL Server&#41;](../../database-engine/configure-windows/database-engine-instances-sql-server.md)  
-  
   

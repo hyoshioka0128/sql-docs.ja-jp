@@ -14,34 +14,34 @@ helpviewer_keywords:
 ms.assetid: 69d3af44-8196-43ab-8037-cdd06207b171
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 1cfa5203d9be4b89d94173abc000c6fdb1d76d07
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 73bdc833b31251e3cf0747aca19371ad2b0cb839
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88428314"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97473773"
 ---
 # <a name="sqlcolumns"></a>SQLColumns
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  **Sqlcolumns** は、 *CatalogName*、 *TableName*、または *ColumnName* パラメーターの値が存在するかどうかを SQL_SUCCESS 返します。 これらのパラメーターで無効な値が使用されている場合、 **Sqlfetch**は SQL_NO_DATA を返します。  
+  **Sqlcolumns** は、 *CatalogName*、 *TableName*、または *ColumnName* パラメーターの値が存在するかどうかを SQL_SUCCESS 返します。 これらのパラメーターで無効な値が使用されている場合、 **Sqlfetch** は SQL_NO_DATA を返します。  
   
 > [!NOTE]  
 >  大きな値型の場合、すべての長さパラメーターが SQL_SS_LENGTH_UNLIMITED という値で返されます。  
   
  **Sqlcolumns** は、静的サーバーカーソルで実行できます。 更新可能なカーソル (動的カーソルまたはキーセットカーソル) で **Sqlcolumns** を実行しようとすると、カーソルの種類が変更されたことを示す SQL_SUCCESS_WITH_INFO が返されます。  
   
- [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Native CLIENT ODBC ドライバーでは、 *CatalogName*パラメーターに2つの部分で構成される名前を使用して、リンクサーバー上のテーブルに関する情報のレポートをサポートしています。 *Linked_Server_Name Catalog_Name*。  
+ > Native Client ODBC ドライバーでは、 *CatalogName* パラメーターの2部構成の名前 ( *Linked_Server_Name*) を受け入れることによって、リンクサーバー上のテーブルに関する情報のレポートをサポートしています。  
   
- ODBC 2 の場合。*x* アプリケーションでは、 *tablename*でワイルドカードを使用していません。 **sqlcolumns** は、名前が *tablename* に一致し、現在のユーザーが所有しているテーブルに関する情報を返します。 現在のユーザーが *tablename* パラメーターと一致する名前を持つテーブルを所有していない場合、 **sqlcolumns** は、テーブル名が *tablename* パラメーターと一致する他のユーザーが所有しているテーブルに関する情報を返します。 ODBC 2 の場合。*x* アプリケーションワイルドカードを使用する **sqlcolumns** は、名前が *TableName*に一致するすべてのテーブルを返します。 ODBC 3 の場合。*x* Applications **sqlcolumns** は、所有者に関係なく名前が *TableName* に一致するすべてのテーブル、またはワイルドカードを使用するかどうかを返します。  
+ ODBC 2 の場合。*x* アプリケーションでは、 *tablename* でワイルドカードを使用していません。 **sqlcolumns** は、名前が *tablename* に一致し、現在のユーザーが所有しているテーブルに関する情報を返します。 現在のユーザーが *tablename* パラメーターと一致する名前を持つテーブルを所有していない場合、 **sqlcolumns** は、テーブル名が *tablename* パラメーターと一致する他のユーザーが所有しているテーブルに関する情報を返します。 ODBC 2 の場合。*x* アプリケーションワイルドカードを使用する **sqlcolumns** は、名前が *TableName* に一致するすべてのテーブルを返します。 ODBC 3 の場合。*x* Applications **sqlcolumns** は、所有者に関係なく名前が *TableName* に一致するすべてのテーブル、またはワイルドカードを使用するかどうかを返します。  
   
  次の表は、結果セットによって返される列の一覧です。  
   
 |列名|説明|  
 |-----------------|-----------------|  
 |DATA_TYPE|**VARCHAR (max)** データ型の SQL_VARCHAR、SQL_VARBINARY、または SQL_WVARCHAR を返します。|  
-|TYPE_NAME|**Varchar (max)**、 **varbinary (max)**、および**nvarchar (max)** データ型の "varchar"、"varbinary"、または "nvarchar" を返します。|  
+|TYPE_NAME|**Varchar (max)**、 **varbinary (max)**、および **nvarchar (max)** データ型の "varchar"、"varbinary"、または "nvarchar" を返します。|  
 |COLUMN_SIZE|**Varchar (max)** データ型の場合、列のサイズが無制限であることを示す SQL_SS_LENGTH_UNLIMITED を返します。|  
 |BUFFER_LENGTH|**Varchar (max)** データ型の場合、バッファーのサイズが無制限であることを示す SQL_SS_LENGTH_UNLIMITED を返します。|  
 |SQL_DATA_TYPE|**VARCHAR (max)** データ型の SQL_VARCHAR、SQL_VARBINARY、または SQL_WVARCHAR を返します。|  
@@ -75,7 +75,7 @@ ms.locfileid: "88428314"
  詳細については、「 [日付と時刻の機能強化 &#40;ODBC&#41;](../../relational-databases/native-client-odbc-date-time/date-and-time-improvements-odbc.md)」を参照してください。  
   
 ## <a name="sqlcolumns-support-for-large-clr-udts"></a>SQLColumns による大きな CLR UDT のサポート  
- **Sqlcolumns** は、大きな CLR ユーザー定義型 (udt) をサポートしています。 詳細については、「 [大容量の CLR ユーザー定義型 &#40;ODBC&#41;](../../relational-databases/native-client/odbc/large-clr-user-defined-types-odbc.md)」を参照してください。  
+ **Sqlcolumns** は、大きな CLR ユーザー定義型 (udt) をサポートしています。 詳細については、「 [LARGE CLR User-Defined Types &#40;ODBC&#41;](../../relational-databases/native-client/odbc/large-clr-user-defined-types-odbc.md)」を参照してください。  
   
 ## <a name="sqlcolumns-support-for-sparse-columns"></a>SQLColumns によるスパース列のサポート  
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Sqlcolumns の結果セットには、次の2つの特定の列が追加されています。  
@@ -92,7 +92,6 @@ ms.locfileid: "88428314"
  ODBC でのスパース列の詳細については、「 [スパース列のサポート &#40;odbc&#41;](../../relational-databases/native-client/odbc/sparse-columns-support-odbc.md)」を参照してください。  
   
 ## <a name="see-also"></a>参照  
- [SQLColumns 関数](https://go.microsoft.com/fwlink/?LinkId=59336)   
+ [SQLColumns 関数](../../odbc/reference/syntax/sqlcolumns-function.md)   
  [ODBC API 実装の詳細](../../relational-databases/native-client-odbc-api/odbc-api-implementation-details.md)  
-  
   

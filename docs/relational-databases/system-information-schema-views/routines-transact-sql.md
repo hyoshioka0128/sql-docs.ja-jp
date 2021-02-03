@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - ROUTINES_TSQL
 - ROUTINES
@@ -19,13 +19,13 @@ helpviewer_keywords:
 ms.assetid: c75561b2-c9a1-48a1-9afa-a5896b6454cf
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 71985db395bd1574e40e1769093c30ec972f90a0
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 25ea15fd105733e04dd571dc925df394b1520d47
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89536843"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99192092"
 ---
 # <a name="routines-transact-sql"></a>ROUTINES (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -40,10 +40,10 @@ ms.locfileid: "89536843"
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
 |SPECIFIC_CATALOG|**nvarchar (** 128 **)**|カタログ固有の名前。 この名前は ROUTINE_CATALOG と同じです。|  
-|SPECIFIC_SCHEMA|**nvarchar (** 128 **)**|スキーマ固有の名前。<br /><br /> 重要オブジェクトのスキーマを決定するために INFORMATION_SCHEMA ビューを使用しないでください。 ** \* \* \* \* ** INFORMATION_SCHEMA ビューは、オブジェクトのメタデータのサブセットのみを表します。 オブジェクトのスキーマを調べる唯一の信頼性のある方法は、sys.objects カタログ ビューに対するクエリを実行する方法です。|  
+|SPECIFIC_SCHEMA|**nvarchar (** 128 **)**|スキーマ固有の名前。<br /><br /> 重要オブジェクトのスキーマを決定するために INFORMATION_SCHEMA ビューを使用しないでください。 **\* \* \* \*** INFORMATION_SCHEMA ビューは、オブジェクトのメタデータのサブセットのみを表します。 オブジェクトのスキーマを調べる唯一の信頼性のある方法は、sys.objects カタログ ビューに対するクエリを実行する方法です。|  
 |SPECIFIC_NAME|**nvarchar (** 128 **)**|カタログ固有の名前。 この名前は ROUTINE_NAME と同じです。|  
 |ROUTINE_CATALOG|**nvarchar (** 128 **)**|関数のカタログの名前。|  
-|ROUTINE_SCHEMA|**nvarchar (** 128 **)**|関数を含むスキーマの名前。<br /><br /> 重要オブジェクトのスキーマを決定するために INFORMATION_SCHEMA ビューを使用しないでください。 ** \* \* \* \* ** INFORMATION_SCHEMA ビューは、オブジェクトのメタデータのサブセットのみを表します。 オブジェクトのスキーマを調べる唯一の信頼性のある方法は、sys.objects カタログ ビューに対するクエリを実行する方法です。|  
+|ROUTINE_SCHEMA|**nvarchar (** 128 **)**|関数を含むスキーマの名前。<br /><br /> 重要オブジェクトのスキーマを決定するために INFORMATION_SCHEMA ビューを使用しないでください。 **\* \* \* \*** INFORMATION_SCHEMA ビューは、オブジェクトのメタデータのサブセットのみを表します。 オブジェクトのスキーマを調べる唯一の信頼性のある方法は、sys.objects カタログ ビューに対するクエリを実行する方法です。|  
 |ROUTINE_NAME|**nvarchar (** 128 **)**|関数の名前です。|  
 |ROUTINE_TYPE|**nvarchar (** 20 **)**|ストアドプロシージャのプロシージャと関数の関数を返します。|  
 |MODULE_CATALOG|**nvarchar (** 128 **)**|NULL。 将来使用するために予約されています。|  
@@ -53,8 +53,8 @@ ms.locfileid: "89536843"
 |UDT_SCHEMA|**nvarchar (** 128 **)**|NULL。 将来使用するために予約されています。|  
 |UDT_NAME|**nvarchar (** 128 **)**|NULL。 将来使用するために予約されています。|  
 |DATA_TYPE|**nvarchar (** 128 **)**|関数の戻り値のデータ型。 テーブル値関数の場合、 **テーブル** を返します。|  
-|CHARACTER_MAXIMUM_LENGTH|**int**|戻り値のデータ型が文字型の場合の最大文字数。<br /><br /> **xml**と大きな値の型のデータの場合は-1。|  
-|CHARACTER_OCTET_LENGTH|**int**|戻り値の型が文字型の場合は、バイト単位の最大長。<br /><br /> **xml**と大きな値の型のデータの場合は-1。|  
+|CHARACTER_MAXIMUM_LENGTH|**int**|戻り値のデータ型が文字型の場合の最大文字数。<br /><br /> **xml** と大きな値の型のデータの場合は-1。|  
+|CHARACTER_OCTET_LENGTH|**int**|戻り値の型が文字型の場合は、バイト単位の最大長。<br /><br /> **xml** と大きな値の型のデータの場合は-1。|  
 |COLLATION_CATALOG|**nvarchar (** 128 **)**|常に NULL が返されます。|  
 |COLLATION_SCHEMA|**nvarchar (** 128 **)**|常に NULL が返されます。|  
 |COLLATION_NAME|**nvarchar (** 128 **)**|戻り値の照合順序名。 非文字型の場合、は NULL を返します。|  
@@ -64,7 +64,7 @@ ms.locfileid: "89536843"
 |NUMERIC_PRECISION|**smallint**|戻り値の数値の有効桁数。 数値以外の型の場合、は NULL を返します。|  
 |NUMERIC_PRECISION_RADIX|**smallint**|戻り値の数値の有効桁数の基数。 数値型でない場合、は NULL を返します。|  
 |NUMERIC_SCALE|**smallint**|戻り値の小数点以下桁数。 数値型でない場合、は NULL を返します。|  
-|DATETIME_PRECISION|**smallint**|戻り値が **datetime**型の場合の秒の小数部の有効桁数。 その他の場合は NULL が返されます。|  
+|DATETIME_PRECISION|**smallint**|戻り値が **datetime** 型の場合の秒の小数部の有効桁数。 その他の場合は NULL が返されます。|  
 |INTERVAL_TYPE|**nvarchar (** 30 **)**|NULL。 将来使用するために予約されています。|  
 |INTERVAL_PRECISION|**smallint**|NULL。 将来使用するために予約されています。|  
 |TYPE_UDT_CATALOG|**nvarchar (** 128 **)**|NULL。 将来使用するために予約されています。|  
@@ -76,7 +76,7 @@ ms.locfileid: "89536843"
 |MAXIMUM_CARDINALITY|**bigint**|NULL。 将来使用するために予約されています。|  
 |DTD_IDENTIFIER|**nvarchar (** 128 **)**|NULL。 将来使用するために予約されています。|  
 |ROUTINE_BODY|**nvarchar (** 30 **)**|外部で記述された関数の場合は、関数の場合は SQL を返し [!INCLUDE[tsql](../../includes/tsql-md.md)] ます。<br /><br /> 関数は常に SQL です。|  
-|ROUTINE_DEFINITION|**nvarchar (** 4000 **)**|関数またはストアドプロシージャが暗号化されていない場合、関数またはストアドプロシージャの定義テキストの最初の4000文字を返します。 その他の場合は NULL が返されます。<br /><br /> 完全な定義を確実に取得するには、 [OBJECT_DEFINITION](../../t-sql/functions/object-definition-transact-sql.md) 関数または [sql_modules](../../relational-databases/system-catalog-views/sys-sql-modules-transact-sql.md) カタログビューの定義列に対してクエリを実行します。|  
+|ROUTINE_DEFINITION|**nvarchar (** 4000 **)**|関数またはストアドプロシージャが暗号化されていない場合、関数またはストアドプロシージャの定義テキストの最初の4000文字を返します。 その他の場合は NULL が返されます。<br /><br /> 完全な定義を確実に取得するには、 [sys.sql_modules](../../relational-databases/system-catalog-views/sys-sql-modules-transact-sql.md)カタログビューの[OBJECT_DEFINITION](../../t-sql/functions/object-definition-transact-sql.md)関数または定義列に対してクエリを実行します。|  
 |EXTERNAL_NAME|**nvarchar (** 128 **)**|NULL。 将来使用するために予約されています。|  
 |EXTERNAL_LANGUAGE|**nvarchar (** 30 **)**|NULL。 将来使用するために予約されています。|  
 |PARAMETER_STYLE|**nvarchar (** 30 **)**|NULL。 将来使用するために予約されています。|  
@@ -92,11 +92,10 @@ ms.locfileid: "89536843"
 |LAST_ALTERED|**datetime**|関数が最後に変更された時刻。|  
   
 ## <a name="see-also"></a>参照  
- [システムビュー &#40;Transact-sql&#41;](https://msdn.microsoft.com/library/35a6161d-7f43-4e00-bcd3-3091f2015e90)   
+ [システムビュー &#40;Transact-sql&#41;](../../t-sql/language-reference.md)   
  [情報スキーマビュー &#40;Transact-sql&#41;](~/relational-databases/system-information-schema-views/system-information-schema-views-transact-sql.md)   
  [sys.columns (Transact-SQL)](../../relational-databases/system-catalog-views/sys-columns-transact-sql.md)   
  [sys.objects &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-objects-transact-sql.md)   
  [sys.procedures &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-procedures-transact-sql.md)   
  [sys.sql_modules &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-sql-modules-transact-sql.md)  
-  
   

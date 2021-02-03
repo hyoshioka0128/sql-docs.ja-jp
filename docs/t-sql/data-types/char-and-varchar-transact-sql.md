@@ -24,13 +24,13 @@ helpviewer_keywords:
 ms.assetid: 282cd982-f4fb-4b22-b2df-9e8478f13f6a
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: dd9c5fc213462de6c1d4f7ddae0b3948957ffa0e
-ms.sourcegitcommit: 9be0047805ff14e26710cfbc6e10d6d6809e8b2c
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 5f78cfecbfcf99ec3ae855b41bb802a0c6b12864
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89042545"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97462553"
 ---
 # <a name="char-and-varchar-transact-sql"></a>char および varchar (Transact-SQL)
 
@@ -46,7 +46,7 @@ ms.locfileid: "89042545"
 
 ## <a name="remarks"></a>解説
 
-一般的な誤解として、[CHAR(*n*) および VARCHAR(*n*)](../../t-sql/data-types/char-and-varchar-transact-sql.md) では *n* によって文字数が定義されると考えられています。 実際には、[CHAR(*n*) および VARCHAR(*n*)](../../t-sql/data-types/char-and-varchar-transact-sql.md) では、*n* によって文字長が**バイト** (0-8,000) で定義されます。 *n* は、格納できる文字数を定義しません。 これは、[NCHAR(*n*) および NVARCHAR(*n*)](../../t-sql/data-types/nchar-and-nvarchar-transact-sql.md) の定義と同様です。
+一般的な誤解として、[CHAR(*n*) および VARCHAR(*n*)](../../t-sql/data-types/char-and-varchar-transact-sql.md) では *n* によって文字数が定義されると考えられています。 実際には、[CHAR(*n*) および VARCHAR(*n*)](../../t-sql/data-types/char-and-varchar-transact-sql.md) では、*n* によって文字長が **バイト** (0-8,000) で定義されます。 *n* は、格納できる文字数を定義しません。 これは、[NCHAR(*n*) および NVARCHAR(*n*)](../../t-sql/data-types/nchar-and-nvarchar-transact-sql.md) の定義と同様です。
 この誤解が生じるのは、1 バイト エンコードを使用すると、CHAR と VARCHAR の格納サイズが *n* バイトとなり、文字の数も *n* となるためです。 しかしながら、[UTF-8](https://www.wikipedia.org/wiki/UTF-8) などのマルチバイト エンコードの場合、より高い Unicode 範囲 (128-1,114,111) では 1 文字に 2 バイト以上が使用されることになります。 たとえば、CHAR(10) として定義された列では、[!INCLUDE[ssde_md](../../includes/ssde_md.md)]で格納できる文字は、1 バイト エンコード (Unicode 範囲 0-127) を使用する文字は 10 個ですが、マルチバイト エンコード (Unicode 範囲 128-1,114,111) を使用する場合は 10 個未満です。 Unicode の格納と文字の範囲の詳細については、「[UTF-8 と UTF-16 でのストレージの相違点](../../relational-databases/collations/collation-and-unicode-support.md#storage_differences)」を参照してください。
 
 データ定義または変数宣言ステートメントで *n* を指定しないと、既定の長さは 1 になります。 CAST 関数および CONVERT 関数で *n* を指定しないと、既定の長さは 30 になります。
@@ -84,7 +84,7 @@ CREATE TABLE または ALTER TABLE 実行時に SET ANSI_PADDING が OFF に設�
 > [!NOTE]
 > コード ページ変換は **char** および **varchar** データ型に対してはサポートされていますが、**text** データ型に対してはサポートされていません。 以前のバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] と同様に、コード ページの変換中のデータの損失は報告されません。
 
-近似の**数値**データ型に変換される文字式には、オプションで指数表記を含めることができます。 この表記は、オプションでプラス (+) またはマイナス (-) 記号、次いで数字が続く、小文字の e または大文字の E です。
+近似の **数値** データ型に変換される文字式には、オプションで指数表記を含めることができます。 この表記は、オプションでプラス (+) またはマイナス (-) 記号、次いで数字が続く、小文字の e または大文字の E です。
 
 文字式を正確な **numeric** 型に変換する場合、その文字式は、数字と小数点から構成されている必要があります。必要に応じて、プラス記号 (+) またはマイナス記号 (-) を付けることができます。 先頭の空白は無視されます。 123,456.00 の千の区切り記号など、コンマ区切りの記号は、文字列内で使用できません。
 
@@ -99,8 +99,8 @@ CREATE TABLE または ALTER TABLE 実行時に SET ANSI_PADDING が OFF に設�
 次の例は、`char` データ型および `varchar` データ型が変数宣言で使用された場合に、*n* の既定値が 1 になることを示しています。
 
 ```sql
-DECLARE @myVariable AS varchar = 'abc';
-DECLARE @myNextVariable AS char = 'abc';
+DECLARE @myVariable AS VARCHAR = 'abc';
+DECLARE @myNextVariable AS CHAR = 'abc';
 --The following returns 1
 SELECT DATALENGTH(@myVariable), DATALENGTH(@myNextVariable);
 GO
@@ -111,12 +111,12 @@ GO
 次の例は、`char` データ型または `varchar` データ型が `CAST` 関数および `CONVERT` 関数と共に使用された場合に、*n* の既定値が 30 になることを示しています。
 
 ```sql
-DECLARE @myVariable AS varchar(40);
+DECLARE @myVariable AS VARCHAR(40);
 SET @myVariable = 'This string is longer than thirty characters';
-SELECT CAST(@myVariable AS varchar);
-SELECT DATALENGTH(CAST(@myVariable AS varchar)) AS 'VarcharDefaultLength';
-SELECT CONVERT(char, @myVariable);
-SELECT DATALENGTH(CONVERT(char, @myVariable)) AS 'VarcharDefaultLength';
+SELECT CAST(@myVariable AS VARCHAR);
+SELECT DATALENGTH(CAST(@myVariable AS VARCHAR)) AS 'VarcharDefaultLength';
+SELECT CONVERT(CHAR, @myVariable);
+SELECT DATALENGTH(CONVERT(CHAR, @myVariable)) AS 'VarcharDefaultLength';
 ```
 
 ### <a name="c-converting-data-for-display-purposes"></a>C. 表示用にデータを変換する
@@ -128,11 +128,11 @@ USE AdventureWorks2012;
 GO
 SELECT BusinessEntityID,
    SalesYTD,
-   CONVERT (varchar(12),SalesYTD,1) AS MoneyDisplayStyle1,
+   CONVERT (VARCHAR(12),SalesYTD,1) AS MoneyDisplayStyle1,
    GETDATE() AS CurrentDate,
-   CONVERT(varchar(12), GETDATE(), 3) AS DateDisplayStyle3
+   CONVERT(VARCHAR(12), GETDATE(), 3) AS DateDisplayStyle3
 FROM Sales.SalesPerson
-WHERE CAST(SalesYTD AS varchar(20) ) LIKE '1%';
+WHERE CAST(SalesYTD AS VARCHAR(20) ) LIKE '1%';
 ```
 
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
@@ -155,13 +155,13 @@ BusinessEntityID SalesYTD              DisplayFormat CurrentDate             Dis
 
 ```sql
 DECLARE @myid uniqueidentifier = NEWID();
-SELECT CONVERT(char(255), @myid) AS 'char';
+SELECT CONVERT(CHAR(255), @myid) AS 'char';
 ```
 
 次の例は、変換後のデータ型に対して値が長すぎる場合のデータの切り捨てを示します。 **uniqueidentifier** 型は 36 文字に制限されているため、この長さを超える文字は切り捨てられます。
 
 ```sql
-DECLARE @ID nvarchar(max) = N'0E984725-C51C-4BF4-9960-E1C80E27ABA0wrong';
+DECLARE @ID NVARCHAR(max) = N'0E984725-C51C-4BF4-9960-E1C80E27ABA0wrong';
 SELECT @ID, CONVERT(uniqueidentifier, @ID) AS TruncatedValue;
 ```
 

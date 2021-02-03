@@ -32,13 +32,13 @@ ms.assetid: 970e4553-b41d-4a12-ad50-0ee65d1f305d
 author: MightyPen
 ms.author: genemi
 ms.custom: seo-lt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: e9ec14bb6a13b3dc8675c2bf2710bdcf101b80ff
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 181b5a7dd62b5a3cae2ff433f718d8c40b40e6bf
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85650823"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97415320"
 ---
 # <a name="xml-bulk-load-examples-sqlxml-40"></a>XML 一括読み込みの例 (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -113,8 +113,8 @@ Function ValidateFile(strXmlFile,strUrn,strXsdFile)
 End Function  
 ```  
   
-## <a name="a-bulk-loading-xml-in-a-table"></a>A: 単一テーブルでの XML の一括読み込み  
- この例 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] では、ConnectionString プロパティ (MyServer) で指定されているのインスタンスへの接続を確立します。 この例では、ErrorLogFile プロパティも指定しています。 エラー出力は指定したファイル ("C:\error.log") に保存されます。ファイルの保存場所は変更することもできます。 また、Execute メソッドのパラメーターは、マッピングスキーマファイル (SampleSchema.xml) と XML データファイル (SampleXMLData.xml) の両方であることに注意してください。 一括読み込みを実行すると、 **tempdb**データベースで作成した Cust テーブルには、XML データファイルの内容に基づく新しいレコードが格納されます。  
+## <a name="a-bulk-loading-xml-in-a-table"></a>A. 単一テーブルでの XML の一括読み込み  
+ この例 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] では、ConnectionString プロパティ (MyServer) で指定されているのインスタンスへの接続を確立します。 この例では、ErrorLogFile プロパティも指定しています。 エラー出力は指定したファイル ("C:\error.log") に保存されます。ファイルの保存場所は変更することもできます。 また、Execute メソッドのパラメーターは、マッピングスキーマファイル (SampleSchema.xml) と XML データファイル (SampleXMLData.xml) の両方であることに注意してください。 一括読み込みを実行すると、 **tempdb** データベースで作成した Cust テーブルには、XML データファイルの内容に基づく新しいレコードが格納されます。  
   
 #### <a name="to-test-a-sample-bulk-load"></a>一括読み込みのサンプルをテストするには  
   
@@ -201,7 +201,7 @@ End Function
 </Schema>  
 ```  
   
-## <a name="b-bulk-loading-xml-data-in-multiple-tables"></a>B: 複数テーブルでの XML データの一括読み込み  
+## <a name="b-bulk-loading-xml-data-in-multiple-tables"></a>B. 複数テーブルでの XML データの一括読み込み  
  この例では、XML ドキュメントは要素と要素で構成されて **\<Customer>** **\<Order>** います。  
   
 ```xml  
@@ -227,7 +227,7 @@ End Function
 </ROOT>  
 ```  
   
- この例では、XML データを**Cust**および**custorder**という2つのテーブルに一括読み込みします。  
+ この例では、XML データを **Cust** および **custorder** という2つのテーブルに一括読み込みします。  
   
 -   Cust (CustomerID、CompanyName、City)  
   
@@ -276,7 +276,7 @@ End Function
   
 #### <a name="to-test-a-sample-bulk-load"></a>一括読み込みのサンプルをテストするには  
   
-1.  **Tempdb**データベースに2つのテーブルを作成します。  
+1.  **Tempdb** データベースに2つのテーブルを作成します。  
   
     ```sql  
     USE tempdb;  
@@ -332,7 +332,7 @@ End Function
 </Schema>  
 ```  
   
-## <a name="c-using-chain-relationships-in-the-schema-to-bulk-load-xml"></a>C: スキーマでチェーン リレーションシップを使用して XML の一括読み込みを行う  
+## <a name="c-using-chain-relationships-in-the-schema-to-bulk-load-xml"></a>C. スキーマでチェーン リレーションシップを使用して XML の一括読み込みを行う  
  この例では、XML 一括読み込みにおいて、マッピング スキーマで指定されている M:N リレーションシップを使用し、M:N リレーションシップを表すテーブルにデータを読み込む方法を示します。  
   
  たとえば、次の XSD スキーマを考えてみます。  
@@ -435,7 +435,7 @@ End Function
   
 5.  VBScript コードを実行します。 XML 一括読み込みによって、XML ドキュメントが Ord テーブルと Product テーブルに読み込まれます。  
   
-## <a name="d-bulk-loading-in-identity-type-columns"></a>D: ID 型の列に一括読み込みを行う  
+## <a name="d-bulk-loading-in-identity-type-columns"></a>D. ID 型の列に一括読み込みを行う  
  この例では、一括読み込みでの ID 型列の扱いについて説明します。 この例では、3 つのテーブル (Ord、Product、OrderDetail) にデータの一括読み込みが行われます。  
   
  これらのテーブルには、次の条件が設定されています。  
@@ -458,7 +458,7 @@ OrderDetail (OrderID, ProductID)
   
  この場合、XML 一括読み込みでは、テーブル間の主キー/外部キーのリレーションシップが識別されます。 一括読み込みでは、主キーのあるテーブルにレコードが挿入された後、[!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] で生成された ID 値が、外部キー列のあるテーブルに格納されます。 次の XML 一括読み込みの例では、次の順序でテーブルにデータが挿入されます。  
   
-1.  製品  
+1.  Product  
   
 2.  Ord  
   
@@ -543,7 +543,7 @@ OrderDetail (OrderID, ProductID)
     </ROOT>  
     ```  
   
-4.  任意のテキスト エディターまたは XML エディターでファイルを作成し、ValidateAndBulkload.vbs として保存します。 このファイルに次の VBScript コードを追加します。 接続文字列は、適切なサーバー名とデータベース名に変更します。 **Execute**メソッドのパラメーターとして機能するファイルの適切なパスを指定します。  
+4.  任意のテキスト エディターまたは XML エディターでファイルを作成し、ValidateAndBulkload.vbs として保存します。 このファイルに次の VBScript コードを追加します。 接続文字列は、適切なサーバー名とデータベース名に変更します。 **Execute** メソッドのパラメーターとして機能するファイルの適切なパスを指定します。  
   
     ```  
     Set objBL = CreateObject("SQLXMLBulkLoad.SQLXMLBulkload.4.0")  
@@ -810,7 +810,7 @@ End Sub
 ```  
   
 ## <a name="g-bulk-loading-in-overflow-columns"></a>G. オーバーフロー列に一括読み込みを行う  
- マッピングスキーマで**sql: overflow フィールド**の注釈を使用してオーバーフロー列が指定されている場合、XML 一括読み込みでは、ソースドキュメントからこの列にすべての未使用データがコピーされます。  
+ マッピングスキーマで **sql: overflow フィールド** の注釈を使用してオーバーフロー列が指定されている場合、XML 一括読み込みでは、ソースドキュメントからこの列にすべての未使用データがコピーされます。  
   
  次の XSD スキーマを考えてみます。  
   
@@ -854,7 +854,7 @@ End Sub
   
 #### <a name="to-test-a-working-sample"></a>実際のサンプルをテストするには  
   
-1.  **Tempdb**データベースに2つのテーブルを作成します。  
+1.  **Tempdb** データベースに2つのテーブルを作成します。  
   
     ```  
     USE tempdb;  
@@ -978,7 +978,7 @@ set objBL=Nothing
   
 #### <a name="to-test-a-working-sample"></a>実際のサンプルをテストするには  
   
-1.  **Tempdb**データベースに次のテーブルを作成します。  
+1.  **Tempdb** データベースに次のテーブルを作成します。  
   
     ```  
     USE tempdb;  
@@ -1033,7 +1033,7 @@ set objBL=Nothing
   
 5.  VBScript コードを実行します。  
   
-     **Customerid**の値が、次のように中かっこ ({および}) を含む GUID として指定されている場合、スキーマでは**customerid**属性に対応する**sql: datatype**を指定する必要があります。  
+     **Customerid** の値が、次のように中かっこ ({および}) を含む GUID として指定されている場合、スキーマでは **customerid** 属性に対応する **sql: datatype** を指定する必要があります。  
   
     ```  
     <ROOT>  
@@ -1065,7 +1065,7 @@ set objBL=Nothing
     </xsd:schema>  
     ```  
   
-     列の型が**uniqueidentifier**として指定されて**いる場合、** 一括読み込み操作では、列に挿入する前に、 **CustomerID**値から中かっこ ({および}) を削除します。  
+     列の型が **uniqueidentifier** として指定されて **いる場合、** 一括読み込み操作では、列に挿入する前に、 **CustomerID** 値から中かっこ ({および}) を削除します。  
   
  これは、これと同等の XDR スキーマです。  
   
@@ -1116,7 +1116,7 @@ End Sub
   
 #### <a name="to-test-a-working-sample"></a>実際のサンプルをテストするには  
   
-1.  **Tempdb**データベースに2つのテーブルを作成します。  
+1.  **Tempdb** データベースに2つのテーブルを作成します。  
   
     ```  
     USE tempdb;  
@@ -1245,9 +1245,9 @@ End Sub
 ```  
   
 ## <a name="j-bulk-loading-in-xml-data-type-columns"></a>J. xml データ型の列に一括読み込みを行う  
- マッピングスキーマで**sql: datatype = "xml"** 注釈を使用して[xml データ型](../../../t-sql/xml/xml-transact-sql.md)の列が指定されている場合、xml 一括読み込みでは、マップされたフィールドの xml 子要素をソースドキュメントからこの列にコピーできます。  
+ マッピングスキーマで **sql: datatype = "xml"** 注釈を使用して [xml データ型](../../../t-sql/xml/xml-transact-sql.md)の列が指定されている場合、xml 一括読み込みでは、マップされたフィールドの xml 子要素をソースドキュメントからこの列にコピーできます。  
   
- 次の XSD スキーマを考えてみます。この XSD スキーマでは、サンプル データベース AdventureWorks の Production.ProductModel テーブルのビューがマップされます。 この表では、 **xml**データ型の catalogdescription フィールドが、 **\<Desc>** **sql: field**および**sql: datatype = "xml"** 注釈を使用して要素にマップされています。  
+ 次の XSD スキーマを考えてみます。この XSD スキーマでは、サンプル データベース AdventureWorks の Production.ProductModel テーブルのビューがマップされます。 この表では、 **xml** データ型の catalogdescription フィールドが、 **\<Desc>** **sql: field** および **sql: datatype = "xml"** 注釈を使用して要素にマップされています。  
   
 ```  
 <?xml version="1.0" encoding="utf-8" ?>  

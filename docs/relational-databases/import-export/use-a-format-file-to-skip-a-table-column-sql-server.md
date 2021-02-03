@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: 30e0e7b9-d131-46c7-90a4-6ccf77e3d4f3
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 5a83155dd566812248e37d509e34600a1beeb677
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: d7dc4905411b6673d0e4a2127e3885918d509bbb
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86007189"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97473913"
 ---
 # <a name="use-a-format-file-to-skip-a-table-column-sql-server"></a>フォーマット ファイルを使用したテーブル列のスキップ (SQL Server)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -76,7 +76,7 @@ bcp WideWorldImporters..myTestSkipCol format nul -f myTestSkipCol_Default.fmt -c
 > [!IMPORTANT]  
 >  場合によっては、`-S` 引数で接続先サーバー インスタンスの名前を指定する必要があります。 また、`-U` と `-P` の引数を使用したユーザー名とパスワードの指定が必要な場合もあります。 詳細については、「 [bcp Utility](../../tools/bcp-utility.md)」を参照してください。  
 
-上記のコマンドでは、 `myTestSkipCol_Default.fmt`という XML 以外のフォーマット ファイルを作成します。 このフォーマット ファイルは *bcp* で作成した形式なので、 **既定のフォーマット ファイル**といいます。 既定のフォーマット ファイルには、データ ファイル フィールドとテーブル列の一対一の対応が記述されます。  
+上記のコマンドでは、 `myTestSkipCol_Default.fmt`という XML 以外のフォーマット ファイルを作成します。 このフォーマット ファイルは *bcp* で作成した形式なので、 **既定のフォーマット ファイル** といいます。 既定のフォーマット ファイルには、データ ファイル フィールドとテーブル列の一対一の対応が記述されます。  
   
  次のスクリーンショットに、この既定のフォーマット ファイルのサンプルで使用されている値を示します。 
   
@@ -94,7 +94,7 @@ XML 以外の既定のフォーマット ファイルを変更するには、2 �
 列のスキップに推奨されている方法には、次の 3 つの手順が含まれています。
 
 1.   まず、ソース データ ファイルに存在しないフィールドを記述しているフォーマット ファイルの行をすべて削除します。
-2.   次に、削除したフォーマット ファイルの行に続く各行の "ホスト ファイル フィールドの順序" の値を減らします。 "ホスト ファイル フィールドの順序" の値が、データ ファイル内での各データ フィールドの実際の場所を反映した 1 ～ *n*の通し番号になるようにします。
+2.   次に、削除したフォーマット ファイルの行に続く各行の "ホスト ファイル フィールドの順序" の値を減らします。 "ホスト ファイル フィールドの順序" の値が、データ ファイル内での各データ フィールドの実際の場所を反映した 1 ～ *n* の通し番号になるようにします。
 3.   最後に、データ ファイル内の実際のフィールド数が反映されるように、"列の数" フィールドの値を減らします。  
   
 次の例は、`myTestSkipCol` テーブルの既定のフォーマット ファイルに基づいています。 変更後のフォーマット ファイルは、最初のデータ フィールドを `Col1`にマップし、 `Col2`をスキップして、2 番目のデータ フィールドを `Col3`にマップしています。 `Col2` に相当する行は削除されています。 最初のフィールドの後ろの区切り記号も `\t` から `,` に変更されています。
@@ -150,7 +150,7 @@ bcp WideWorldImporters..myTestSkipCol format nul -f myTestSkipCol_Default.xml -c
 > [!IMPORTANT]  
 >  場合によっては、`-S` 引数で接続先サーバー インスタンスの名前を指定する必要があります。 また、`-U` と `-P` の引数を使用したユーザー名とパスワードの指定が必要な場合もあります。 詳細については、「 [bcp Utility](../../tools/bcp-utility.md)」を参照してください。  
  
-上記のコマンドでは、`myTestSkipCol_Default.xml` という XML フォーマット ファイルを作成します。 このフォーマット ファイルは *bcp* で作成した形式なので、 **既定のフォーマット ファイル**といいます。 既定のフォーマット ファイルには、データ ファイル フィールドとテーブル列の一対一の対応が記述されます。  
+上記のコマンドでは、`myTestSkipCol_Default.xml` という XML フォーマット ファイルを作成します。 このフォーマット ファイルは *bcp* で作成した形式なので、 **既定のフォーマット ファイル** といいます。 既定のフォーマット ファイルには、データ ファイル フィールドとテーブル列の一対一の対応が記述されます。  
   
 ```xml
 <?xml version="1.0"?>  

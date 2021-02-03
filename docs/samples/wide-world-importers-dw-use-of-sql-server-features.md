@@ -9,14 +9,14 @@ ms.reviewer: ''
 ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: '>=sql-server-2016||>=sql-server-linux-2017||=azure-sqldw-latest||>=aps-pdw-2016||=sqlallproducts-allversions||=azuresqldb-mi-current'
+monikerRange: '>=sql-server-2016||>=sql-server-linux-2017||=azure-sqldw-latest||>=aps-pdw-2016||=azuresqldb-mi-current'
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 837947acfb36857414b53edc9f89054a4dd4bbd8
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+ms.openlocfilehash: dea493c6c46536367d3251579d60c731bde1bb84
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85899980"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97424572"
 ---
 # <a name="wideworldimportersdw-use-of-sql-server-features-and-capabilities"></a>SQL Server の機能の WideWorldImportersDW 使用方法
 [!INCLUDE[appliesto-ss-xxxx-asdw-pdw-md](../includes/appliesto-ss-xxxx-asdw-pdw-md.md)]
@@ -86,7 +86,7 @@ ORDER BY PopulationIn2016 DESC;
 
 非クラスター化インデックスは、主キー制約と外部キー制約を容易にするために、クラスター化列ストアインデックスの上に使用されます。 これらの制約は、細心の注意を払って追加されました。 ETL プロセスは、整合性を適用するための制約がある WideWorldImporters データベースからデータを送信します。 Primary キー制約と foreign key 制約、およびそれらのサポートインデックスを削除すると、ファクトテーブルのストレージフットプリントが減少します。
 
-**データサイズ**
+**データ サイズ**
 
 サンプルデータベースには、サンプルを簡単にダウンロードしてインストールできるように、データサイズが制限されています。 ただし、列ストアインデックスの実際のパフォーマンス上の利点を確認するには、より大きなデータセットを使用することをお勧めします。
 

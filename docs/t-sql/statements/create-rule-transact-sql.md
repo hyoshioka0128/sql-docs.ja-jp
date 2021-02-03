@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - RULE_TSQL
 - CREATE RULE
@@ -28,14 +28,14 @@ helpviewer_keywords:
 - binding rules [SQL Server]
 - rules [SQL Server], creating
 ms.assetid: b016a289-3a74-46b1-befc-a13183be51e4
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: 2615c5d5d75191067d64d7c562f50b330dfdc830
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: a1751cef0c499a3fff4da9bf86d08e74f35a7eb7
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88458788"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99192689"
 ---
 # <a name="create-rule-transact-sql"></a>CREATE RULE (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -52,7 +52,6 @@ ms.locfileid: "88458788"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 CREATE RULE [ schema_name . ] rule_name   
 AS condition_expression  
 [ ; ]  
@@ -105,7 +104,7 @@ AS condition_expression
 ### <a name="a-creating-a-rule-with-a-range"></a>A. 範囲を指定してルールを作成する  
  次の例で作成するルールは、ルールのバインド先となる列に挿入できる整数の範囲を制限します。  
   
-```  
+```sql  
 CREATE RULE range_rule  
 AS   
 @range>= $1000 AND @range <$20000;  
@@ -114,7 +113,7 @@ AS
 ### <a name="b-creating-a-rule-with-a-list"></a>B. リストを指定してルールを作成する  
  次の例で作成するルールは、ルールのバインド先となる列に挿入できる値を、指定したリストの値に制限します。  
   
-```  
+```sql  
 CREATE RULE list_rule  
 AS   
 @list IN ('1389', '0736', '0877');  
@@ -123,7 +122,7 @@ AS
 ### <a name="c-creating-a-rule-with-a-pattern"></a>C. パターンを指定してルールを作成する  
  次の例では、任意の文字 2 つの後にハイフン (`-`)、その後に任意の数の文字 (または文字なし)、最後に `0` ～ `9` の整数 1 文字というパターンを指定するルールを作成します。  
   
-```  
+```sql  
 CREATE RULE pattern_rule   
 AS  
 @value LIKE '__-%[0-9]'  

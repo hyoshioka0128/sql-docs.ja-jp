@@ -19,14 +19,14 @@ helpviewer_keywords:
 - column properties [SQL Server]
 - column length [SQL Server]
 ms.assetid: cf891206-c49f-40eb-858e-eefd2b638a33
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: a46720f3752e5588221a3af686d2449554dc0fe4
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 3ad0d568f52fbec8d1feec0ec734b2722a0247e3
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88310928"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102618"
 ---
 # <a name="col_length-transact-sql"></a>COL_LENGTH (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "88310928"
   
 ## <a name="syntax"></a>構文  
   
-```sql
+```syntaxsql
 COL_LENGTH ( 'table' , 'column' )   
 ```  
   
@@ -45,10 +45,10 @@ COL_LENGTH ( 'table' , 'column' )
 
 ## <a name="arguments"></a>引数
 **'** *table* **'**  
-列の長さ情報を定義するテーブルの名前。 *テーブル* 型の式は、 **nvarchar**です。
+列の長さ情報を定義するテーブルの名前。 *テーブル* 型の式は、 **nvarchar** です。
   
 **'** *column* **'**  
-長さを定義する列名。 *列* 型の式は、 **nvarchar**です。
+長さを定義する列名。 *列* 型の式は、 **nvarchar** です。
   
 ## <a name="return-type"></a>の戻り値の型 :
 **smallint**
@@ -67,7 +67,7 @@ COL_LENGTH ( 'table' , 'column' )
 ```sql
 USE AdventureWorks2012;  
 GO  
-CREATE TABLE t1(c1 varchar(40), c2 nvarchar(40) );  
+CREATE TABLE t1(c1 VARCHAR(40), c2 NVARCHAR(40) );  
 GO  
 SELECT COL_LENGTH('t1','c1')AS 'VarChar',  
       COL_LENGTH('t1','c2')AS 'NVarChar';  
@@ -77,7 +77,7 @@ DROP TABLE t1;
   
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
   
-```sql
+```
 VarChar     NVarChar  
 40          80  
 ```  

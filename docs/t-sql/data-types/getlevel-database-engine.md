@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - GetLevel
 - GetLevel_TSQL
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 81577d7e-8ff6-4e73-b7f4-94c03d4921e7
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: d2a8f93d51cd61e9a6a7654472fabbab95475913
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 60581bb2a615bdbb5d612dabcd8b3c0fefde5d64
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88445927"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99165169"
 ---
 # <a name="getlevel-database-engine"></a>GetLevel (データベース エンジン)
 
@@ -33,12 +33,12 @@ ms.locfileid: "88445927"
   
 ## <a name="syntax"></a>構文  
   
-```sql
+```syntaxsql
 -- Transact-SQL syntax  
 node.GetLevel ( )   
 ```  
   
-```sql
+```syntaxsql
 -- CLR syntax  
 SqlInt16 GetLevel ( )   
 ```  
@@ -46,11 +46,11 @@ SqlInt16 GetLevel ( )
 [!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
 
 ## <a name="return-types"></a>戻り値の型  
-**SQL Server の戻り値の型: smallint **
+**SQL Server の戻り値の型: smallint**
   
 **CLR の戻り値の型: SqlInt16**
   
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>解説  
 1 つ以上のノードのレベルを決定したり、指定したレベルのメンバーにノードをフィルタリングしたりするために使用します。 階層のルートはレベル 0 です。
   
 GetLevel は、幅優先の検索のインデックスに便利です。 詳しくは、「[階層データ &#40;SQL Server&#41;](../../relational-databases/hierarchical-data-sql-server.md)」をご覧ください。
@@ -94,7 +94,6 @@ this.GetLevel()
 ```  
   
 ## <a name="see-also"></a>参照
-[hierarchyid データ型メソッド リファレンス](https://msdn.microsoft.com/library/01a050f5-7580-4d5f-807c-7f11423cbb06)  
+[hierarchyid データ型メソッド リファレンス](./hierarchyid-data-type-method-reference.md)  
 [階層データ (SQL Server)](../../relational-databases/hierarchical-data-sql-server.md)  
 [hierarchyid &#40;Transact-SQL&#41;](../../t-sql/data-types/hierarchyid-data-type-method-reference.md)
-  

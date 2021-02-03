@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - PWDENCRYPT
 - PWDENCRYPT_TSQL
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 333e9a43-1099-4b9b-b941-4b0b016f47f3
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 0b25d123f34de28d64e39e3593f918e01eada30b
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 2bc5c778ea6dc591099538b974bf71f4d85c4f0a
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88445594"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99182355"
 ---
 # <a name="pwdencrypt-transact-sql"></a>PWDENCRYPT (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -36,8 +36,7 @@ ms.locfileid: "88445594"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 PWDENCRYPT ( 'password' )  
 ```  
   
@@ -45,7 +44,7 @@ PWDENCRYPT ( 'password' )
 
 ## <a name="arguments"></a>引数
  *password*  
- 暗号化されるパスワードです。 *パスワード* は **sysname**です。  
+ 暗号化されるパスワードです。 *パスワード* は **sysname** です。  
   
 ## <a name="return-types"></a>戻り値の型  
  **varbinary (128)**  
@@ -53,7 +52,7 @@ PWDENCRYPT ( 'password' )
 ## <a name="permissions"></a>アクセス許可  
  PWDENCRYPT はパブリックに使用できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [セキュリティ関数 &#40;Transact-SQL&#41;](../../t-sql/functions/security-functions-transact-sql.md)   
  [PWDCOMPARE &#40;Transact-SQL&#41;](../../t-sql/functions/pwdcompare-transact-sql.md)  
   

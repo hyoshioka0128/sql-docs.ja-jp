@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - ALTER SERVICE
 - ALTER_SERVICE_TSQL
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - ALTER SERVICE statement
 - services [Service Broker], modifying
 ms.assetid: 2b4608f7-bb2e-4246-aa29-b52c55995b3a
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: 8a99076d994a9866c9b6a0d0b6b434dcf30a04d2
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: c74ca3071940e198b48f0f49e8a08e57a472e4c8
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88426794"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99182173"
 ---
 # <a name="alter-service-transact-sql"></a>ALTER SERVICE (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -37,8 +37,7 @@ ms.locfileid: "88426794"
   
 ## <a name="syntax"></a>構文  
   
-```syntaxsql
-  
+```syntaxsql 
 ALTER SERVICE service_name   
    [ ON QUEUE [ schema_name . ]queue_name ]   
    [ ( < opt_arg > [ , ...n ] ) ]  
@@ -77,7 +76,7 @@ ALTER SERVICE service_name
 ### <a name="a-changing-the-queue-for-a-service"></a>A. サービスのキューを変更する  
  次の例では、キュー `//Adventure-Works.com/Expenses` を使用するよう、`NewQueue` サービスを変更します。  
   
-```  
+```sql  
 ALTER SERVICE [//Adventure-Works.com/Expenses]  
     ON QUEUE NewQueue ;  
 ```  
@@ -85,7 +84,7 @@ ALTER SERVICE [//Adventure-Works.com/Expenses]
 ### <a name="b-adding-a-new-contract-to-the-service"></a>B. サービスに新しいコントラクトを追加する  
  次の例では、コントラクト `//Adventure-Works.com/Expenses` のダイアログを許可するよう、`//Adventure-Works.com/Expenses` サービスを変更します。  
   
-```  
+```sql  
 ALTER SERVICE [//Adventure-Works.com/Expenses]  
     (ADD CONTRACT [//Adventure-Works.com/Expenses/ExpenseSubmission]) ;  
 ```  
@@ -93,7 +92,7 @@ ALTER SERVICE [//Adventure-Works.com/Expenses]
 ### <a name="c-adding-a-new-contract-to-the-service-dropping-existing-contract"></a>C. サービスに新しいコントラクトを追加し、既存のコントラクトを削除する  
  次の例では、コントラクト `//Adventure-Works.com/Expenses` のダイアログを許可し、コントラクト `//Adventure-Works.com/Expenses/ExpenseProcessing` のダイアログを禁止するよう、`//Adventure-Works.com/Expenses/ExpenseSubmission` サービスを変更します。  
   
-```  
+```sql  
 ALTER SERVICE [//Adventure-Works.com/Expenses]  
     (ADD CONTRACT [//Adventure-Works.com/Expenses/ExpenseProcessing],   
      DROP CONTRACT [//Adventure-Works.com/Expenses/ExpenseSubmission]) ;  

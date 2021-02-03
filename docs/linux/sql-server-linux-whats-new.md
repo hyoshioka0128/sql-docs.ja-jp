@@ -7,12 +7,12 @@ ms.date: 04/10/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
-ms.openlocfilehash: 489b2bda31554766a874fb7d09d259fbc96a3398
-ms.sourcegitcommit: 3ea082c778f6771b17d90fb597680ed334d3e0ec
+ms.openlocfilehash: 7f2eba8e373fd291606a3580f0464b829a86d03c
+ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88088743"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97489762"
 ---
 # <a name="whats-new-for-sql-server-2017-on-linux"></a>SQL Server 2017 on Linux の新機能
 
@@ -25,11 +25,11 @@ ms.locfileid: "88088743"
 
 ## <a name="ubuntu-1804-supported"></a>Ubuntu 18.04 をサポート
 
-SQL Server 2017 CU20 以降では、Ubuntu 18.04 がサポートされるようになりました。 [Ubuntu での SQL Server のインストールとデータベースの作成](quickstart-install-connect-ubuntu.md?view=sql-server-2017)に関するクイック スタートを参照してください。
+SQL Server 2017 CU20 以降では、Ubuntu 18.04 がサポートされるようになりました。 [Ubuntu での SQL Server のインストールとデータベースの作成](quickstart-install-connect-ubuntu.md)に関するクイック スタートを参照してください。
 
 ## <a name="rhel-8-supported"></a>RHEL 8 をサポート
 
-SQL Server 2017 CU20 以降では、RHEL 8 がサポートされるようになりました。 [Red Hat での SQL Server のインストールとデータベースの作成](quickstart-install-connect-red-hat.md?view=sql-server-2017)に関するクイック スタートを参照してください。
+SQL Server 2017 CU20 以降では、RHEL 8 がサポートされるようになりました。 [Red Hat での SQL Server のインストールとデータベースの作成](quickstart-install-connect-red-hat.md)に関するクイック スタートを参照してください。
 
 ## <a name="sql-server-database-engine"></a>SQL Server データベース エンジン
 
@@ -57,7 +57,7 @@ SQL Server 2017 CU20 以降では、RHEL 8 がサポートされるようにな�
 
 - コマンドライン構成ツール、[mssql-confmssql-conf](sql-server-linux-configure-mssql-conf.md)。
 - [環境変数](sql-server-linux-configure-environment-variables.md)での無人インストールのサポート。
-- クロスプラットフォームの [Visual Studio Code mssql-server 拡張機能](sql-server-linux-develop-use-vscode.md)。
+- クロスプラットフォームの [Visual Studio Code mssql-server 拡張機能](../tools/visual-studio-code/sql-server-develop-use-vscode.md)。
 - クロスプラットフォームのスクリプト ジェネレーター、[mssql-scripter](https://github.com/Microsoft/sql-xplat-cli/blob/dev/doc/usage_guide.md)。
 - クロスプラットフォームの動的管理ビュー (DMV) モニター、[DBFS ツール](https://github.com/Microsoft/dbfs)。
 

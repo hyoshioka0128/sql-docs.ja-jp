@@ -18,13 +18,13 @@ helpviewer_keywords:
 ms.assetid: 23e98015-a8e4-4434-9b3f-9c7350cf965f
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: be359426c5ea5125b2fcec991f8ed06b1732e12f
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 9ccfce33bc58ea146c0e7383bba00625260740b0
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88448576"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97483333"
 ---
 # <a name="bcp_moretext"></a>bcp_moretext
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -46,7 +46,7 @@ RETCODE bcp_moretext (
  一括コピーが有効な ODBC 接続ハンドルです。  
   
  *cbData*  
- *PData*によって参照されるデータから SQL Server にコピーされるデータのバイト数を指定します。 値 SQL_NULL_DATA は、NULL を示します。  
+ *PData* によって参照されるデータから SQL Server にコピーされるデータのバイト数を指定します。 値 SQL_NULL_DATA は、NULL を示します。  
   
  *pData*  
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] に送信する、サポートされている長い可変長データ チャンクへのポインターです。  
@@ -57,11 +57,11 @@ RETCODE bcp_moretext (
 ## <a name="remarks"></a>解説  
  この関数を [bcp_bind](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-bind.md) および [bcp_sendrow](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-sendrow.md) と組み合わせて使用すると、長い可変長のデータ値を多数の小さなチャンクで SQL Server にコピーできます。 **bcp_moretext** は、 **text**、 **ntext**、 **image**、 **varchar (max)**、 **nvarchar (max)**、 **VARBINARY (max)**、ユーザー定義型 (UDT)、および XML の SQL Server 各データ型を持つ列で使用できます。 **bcp_moretext** は、データ変換をサポートしていません。指定されたデータは、ターゲット列のデータ型と一致している必要があります。  
   
- **Bcp_moretext**でサポートされているデータ型に対して NULL 以外の*pData*パラメーターを使用して**bcp_bind**が呼び出された場合、 **bcp_sendrow**は長さに関係なくデータ値全体を送信します。 ただし、 **bcp_bind** がサポートされているデータ型に対して NULL の *pData* パラメーターを持っている場合、 **bcp_moretext** を使用して、データが存在するバインド列が処理されたことを示す **bcp_sendrow** から正常に返された直後にデータをコピーできます。  
+ **Bcp_moretext** でサポートされているデータ型に対して NULL 以外の *pData* パラメーターを使用して **bcp_bind** が呼び出された場合、 **bcp_sendrow** は長さに関係なくデータ値全体を送信します。 ただし、 **bcp_bind** がサポートされているデータ型に対して NULL の *pData* パラメーターを持っている場合、 **bcp_moretext** を使用して、データが存在するバインド列が処理されたことを示す **bcp_sendrow** から正常に返された直後にデータをコピーできます。  
   
- **Bcp_moretext**を使用して、サポートされているデータ型の列を1つの行で送信する場合は、その行でサポートされている他のすべてのデータ型の列を送信するためにも使用する必要があります。 列はスキップされません。 サポートされるデータ型は、SQLTEXT、SQLNTEXT、SQLIMAGE、SQLUDT、および SQLXML です。 列の型が varchar(max)、nvarchar(max)、または varbinary(max) の場合、SQLCHARACTER、SQLVARCHAR、SQNCHAR、SQLBINARY、SQLVARBINARY も、サポート対象となります。  
+ **Bcp_moretext** を使用して、サポートされているデータ型の列を1つの行で送信する場合は、その行でサポートされている他のすべてのデータ型の列を送信するためにも使用する必要があります。 列はスキップされません。 サポートされるデータ型は、SQLTEXT、SQLNTEXT、SQLIMAGE、SQLUDT、および SQLXML です。 列の型が varchar(max)、nvarchar(max)、または varbinary(max) の場合、SQLCHARACTER、SQLVARCHAR、SQNCHAR、SQLBINARY、SQLVARBINARY も、サポート対象となります。  
   
- **Bcp_bind**または[bcp_collen](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-collen.md)のいずれかを呼び出すと、SQL Server 列にコピーされるすべてのデータパーツの合計長が設定されます。 **Bcp_bind**または**bcp_collen**の呼び出しで指定されているよりも多くのバイトを SQL Server 送信しようとすると、エラーが発生します。 このエラーが発生するのは、たとえば、SQL Server**テキスト**列の使用可能なデータの長さを4500に設定するために**bcp_collen**を使用**bcp_moretext**し、データバッファーの長さが1000バイト長であることを各呼び出しに対して指定する場合などです。  
+ **Bcp_bind** または [bcp_collen](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-collen.md)のいずれかを呼び出すと、SQL Server 列にコピーされるすべてのデータパーツの合計長が設定されます。 **Bcp_bind** または **bcp_collen** の呼び出しで指定されているよりも多くのバイトを SQL Server 送信しようとすると、エラーが発生します。 このエラーが発生するのは、たとえば、SQL Server **テキスト** 列の使用可能なデータの長さを4500に設定するために **bcp_collen** を使用 **bcp_moretext** し、データバッファーの長さが1000バイト長であることを各呼び出しに対して指定する場合などです。  
   
  コピーされた行に複数の長い可変長列が含まれている場合、 **bcp_moretext** は最初にそのデータを最も低い順序の列に送信し、次に、その後に最も低い2番目の列に番号が付けられます。 コピーするデータの合計長を正しく設定することが重要です。 長さの設定以外に、一括コピーによって列のすべてのデータを受け取ったことを示す方法はありません。  
   
@@ -87,7 +87,7 @@ bcp_moretext(hdbc, 0, NULL);
 ```  
   
 ## <a name="example"></a>例  
- この例では、 **bcp_bind**と**bcp_sendrow**で**bcp_moretext**を使用する方法を示します。  
+ この例では、 **bcp_bind** と **bcp_sendrow** で **bcp_moretext** を使用する方法を示します。  
   
 ```  
 // Variables like henv not specified.  
@@ -166,7 +166,7 @@ nRowsProcessed = bcp_done(hdbc);
 // Carry on.  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [一括コピー関数](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/sql-server-driver-extensions-bulk-copy-functions.md)  
   
   

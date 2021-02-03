@@ -1,13 +1,13 @@
 ---
 description: sys.dm_exec_sql_text (Transact-SQL)
-title: dm_exec_sql_text (Transact-sql) |Microsoft Docs
+title: sys.dm_exec_sql_text (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 10/20/2017
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - dm_exec_sql_text
 - sys.dm_exec_sql_text
@@ -18,20 +18,20 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_exec_sql_text dynamic management function
 ms.assetid: 61b8ad6a-bf80-490c-92db-58dfdff22a24
-author: markingmyname
-ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 95db0c9386b8c3f1befda89c68635e37f32a1eb5
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 089633aa2fb51a727d861d987bf9a628408b2540
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539428"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99192933"
 ---
 # <a name="sysdm_exec_sql_text-transact-sql"></a>sys.dm_exec_sql_text (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
-  指定された *sql_handle*によって識別される SQL バッチのテキストを返します。 このテーブル値関数は、システム関数 **fn_get_sql** に代わるものです。  
+  指定された *sql_handle* によって識別される SQL バッチのテキストを返します。 このテーブル値関数は、システム関数 **fn_get_sql** に代わるものです。  
   
  
 ## <a name="syntax"></a>構文  
@@ -44,7 +44,7 @@ sys.dm_exec_sql_text(sql_handle | plan_handle)
 *sql_handle*  
 は、実行済みまたは現在実行中のバッチを一意に識別するトークンです。 *sql_handle* は **varbinary (64)** です。 
 
-*Sql_handle*は、次の動的管理オブジェクトから取得できます。  
+*Sql_handle* は、次の動的管理オブジェクトから取得できます。  
   
 -   [sys.dm_exec_query_stats](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-stats-transact-sql.md)  
   
@@ -61,7 +61,7 @@ sys.dm_exec_sql_text(sql_handle | plan_handle)
 *plan_handle*  
 は、実行され、そのプランがプランキャッシュに存在するか、現在実行中のバッチのクエリ実行プランを一意に識別するトークンです。 *plan_handle* は **varbinary (64)** です。   
 
-*Plan_handle*は、次の動的管理オブジェクトから取得できます。    
+*Plan_handle* は、次の動的管理オブジェクトから取得できます。    
   
 -   [sys.dm_exec_cached_plans &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-cached-plans-transact-sql.md)  
   
@@ -69,9 +69,9 @@ sys.dm_exec_sql_text(sql_handle | plan_handle)
   
 -   [sys.dm_exec_requests &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql.md)  
 
--   [dm_exec_procedure_stats &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-procedure-stats-transact-sql.md)  
+-   [sys.dm_exec_procedure_stats &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-procedure-stats-transact-sql.md)  
 
--   [dm_exec_trigger_stats &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-trigger-stats-transact-sql.md)   
+-   [sys.dm_exec_trigger_stats &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-trigger-stats-transact-sql.md)   
   
 ## <a name="table-returned"></a>返されるテーブル  
   
@@ -79,14 +79,14 @@ sys.dm_exec_sql_text(sql_handle | plan_handle)
 |-----------------|---------------|-----------------|  
 |**dbid**|**smallint**|データベースの ID。<br /><br /> アドホック SQL ステートメントおよび準備された SQL ステートメントの場合、ステートメントがコンパイルされたデータベースの ID。|  
 |**objectid**|**int**|オブジェクトの ID。<br /><br /> アドホック SQL ステートメントおよび準備された SQL ステートメントの場合は NULL になります。|  
-|**number**|**smallint**|番号付きストアド プロシージャの場合、ストアド プロシージャの番号。 詳細については、「 [sys. numbered_procedures &#40;transact-sql&#41;](../../relational-databases/system-catalog-views/sys-numbered-procedures-transact-sql.md)」を参照してください。<br /><br /> アドホック SQL ステートメントおよび準備された SQL ステートメントの場合は NULL になります。|  
+|**number**|**smallint**|番号付きストアド プロシージャの場合、ストアド プロシージャの番号。 詳細については、「 [sys.numbered_procedures &#40;transact-sql&#41;](../../relational-databases/system-catalog-views/sys-numbered-procedures-transact-sql.md)」を参照してください。<br /><br /> アドホック SQL ステートメントおよび準備された SQL ステートメントの場合は NULL になります。|  
 |**暗号**|**bit**|1 = SQL テキストは暗号化されています。<br /><br /> 0 = SQL テキストは暗号化されていません。|  
 |**text**|**nvarchar (max** **)**|SQL クエリのテキスト。<br /><br /> 暗号化されているオブジェクトの場合は NULL になります。|  
   
 ## <a name="permissions"></a>アクセス許可  
  サーバーに対する `VIEW SERVER STATE` 権限が必要です。  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
 アドホッククエリの場合、SQL ハンドルは、サーバーに送信される SQL テキストに基づくハッシュ値であり、任意のデータベースからのものである可能性があります。 
 
 ストアドプロシージャ、トリガー、関数などのデータベースオブジェクトでは、SQL ハンドルはデータベース ID、オブジェクト ID、およびオブジェクト番号から取得されます。 
@@ -99,7 +99,7 @@ sys.dm_exec_sql_text(sql_handle | plan_handle)
 ## <a name="examples"></a>例 
 
 ### <a name="a-conceptual-example"></a>A. 概念例
-次に、 **sql_handle** を直接または **クロス適用**を使用して渡す方法を示す基本的な例を示します。
+次に、 **sql_handle** を直接または **クロス適用** を使用して渡す方法を示す基本的な例を示します。
   1.  アクティビティを作成します。  
 の新しいクエリウィンドウで、次の T-sql を実行 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] します。   
       ```sql
@@ -111,8 +111,8 @@ sys.dm_exec_sql_text(sql_handle | plan_handle)
         WAITFOR DELAY '00:02:00';
       ```
       
-  2.  **クロス適用**を使用しています。  
-    **Dm_exec_requests**からの sql_handle は、**クロス適用**を使用して**dm_exec_sql_text**に渡されます。 新しいクエリウィンドウを開き、手順 1. で識別された spid を渡します。 この例では、spid はとなり `59` ます。
+  2.  **クロス適用** を使用しています。  
+    **Sys.dm_exec_requests** からの sql_handle は、**クロス適用** を使用して **sys.dm_exec_sql_text** に渡されます。 新しいクエリウィンドウを開き、手順 1. で識別された spid を渡します。 この例では、spid はとなり `59` ます。
 
         ```sql
         SELECT t.*
@@ -121,8 +121,8 @@ sys.dm_exec_sql_text(sql_handle | plan_handle)
         WHERE session_id = 59 -- modify this value with your actual spid
          ```      
  
-  2.  **Sql_handle**を直接渡しています。  
-**Dm_exec_requests**から**sql_handle**を取得します。 次に、 **sql_handle** を直接 **dm_exec_sql_text**に渡します。 新しいクエリウィンドウを開き、手順 1. で識別した spid を **dm_exec_requests**に渡します。 この例では、spid はとなり `59` ます。 次に、返された **sql_handle** を引数として **sys. dm_exec_sql_text**に渡します。
+  2.  **Sql_handle** を直接渡しています。  
+**Sys.dm_exec_requests** から **sql_handle** を取得します。 次に、 **sql_handle** を **sys.dm_exec_sql_text** に直接渡します。 新しいクエリウィンドウを開き、手順 1. で識別した spid を **sys.dm_exec_requests** に渡します。 この例では、spid はとなり `59` ます。 次に、返された **sql_handle** を引数として **sys.dm_exec_sql_text** に渡します。
 
         ```sql
         -- acquire sql_handle
@@ -182,10 +182,11 @@ ORDER BY s1.sql_handle, s1.statement_start_offset, s1.statement_end_offset;
 ## <a name="see-also"></a>関連項目  
  [動的管理ビューと動的管理関数 &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/system-dynamic-management-views.md)   
  [実行関連の動的管理ビューおよび関数 &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/execution-related-dynamic-management-views-and-functions-transact-sql.md)   
- [dm_exec_query_stats &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-stats-transact-sql.md)   
+ [sys.dm_exec_query_stats &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-stats-transact-sql.md)   
  [sys.dm_exec_requests &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql.md)   
- [dm_exec_cursors &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-cursors-transact-sql.md)   
- [dm_exec_xml_handles &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-xml-handles-transact-sql.md)   
- [dm_exec_query_memory_grants &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-memory-grants-transact-sql.md)   
- APPLY を使用[する](../../t-sql/queries/from-transact-sql.md#using-apply)  [dm_exec_text_query_plan &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-text-query-plan-transact-sql.md)  
+ [sys.dm_exec_cursors &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-cursors-transact-sql.md)   
+ [sys.dm_exec_xml_handles &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-xml-handles-transact-sql.md)   
+ [sys.dm_exec_query_memory_grants &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-memory-grants-transact-sql.md)   
+ [APPLY を使用する](../../t-sql/queries/from-transact-sql.md#using-apply)   
+ [sys.dm_exec_text_query_plan &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-text-query-plan-transact-sql.md)  
 

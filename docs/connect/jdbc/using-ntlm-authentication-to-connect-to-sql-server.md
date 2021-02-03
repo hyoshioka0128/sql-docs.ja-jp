@@ -13,12 +13,12 @@ ms.assetid: ''
 author: lilgreenbird
 ms.author: v-susanh
 manager: kenvh
-ms.openlocfilehash: 93b4956b70e6e81e215da4fcde61a3a3287b50ec
-ms.sourcegitcommit: cb620c77fe6bdefb975968837706750c31048d46
+ms.openlocfilehash: 31510c4fbe4291168753809c227650951592e1e6
+ms.sourcegitcommit: 644223c40af7168f9d618526e9f4cd24e115d1db
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86393150"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96328042"
 ---
 # <a name="using-ntlm-authentication-to-connect-to-sql-server"></a>NTLM 認証を使用して SQL Server に接続する
 
@@ -35,11 +35,11 @@ NTLM 認証には、次のプロパティも使用されます。
 
 **domain** 以外のプロパティは必須です。**NTLM** authenticationScheme プロパティが使用されている場合、どれかが不足していると、ドライバーによってエラーがスローされます。 
 
-接続プロパティの詳細については、「[接続プロパティの設定](../../connect/jdbc/setting-the-connection-properties.md)」を参照してください。 Microsoft NTLM 認証プロトコルの詳細については、[Microsoft NTLM](https://docs.microsoft.com/windows/desktop/SecAuthN/microsoft-ntlm) に関するページを参照してください。
+接続プロパティの詳細については、「[接続プロパティの設定](../../connect/jdbc/setting-the-connection-properties.md)」を参照してください。 Microsoft NTLM 認証プロトコルの詳細については、[Microsoft NTLM](/windows/desktop/SecAuthN/microsoft-ntlm) に関するページを参照してください。
 
 ## <a name="remarks"></a>解説
 
-NTLM 認証の動作を制御する、SQL Server 設定の詳細については、[ネットワーク セキュリティ:LAN Manager 認証レベル](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/network-security-lan-manager-authentication-level)に関するページを参照してください。 
+NTLM 認証の動作を制御する、SQL Server 設定の詳細については、[ネットワーク セキュリティ:LAN Manager 認証レベル](/windows/security/threat-protection/security-policy-settings/network-security-lan-manager-authentication-level)に関するページを参照してください。 
 
 ## <a name="logging"></a>ログ記録
 
@@ -79,12 +79,12 @@ try (Connection c = ds.getConnection(); Statement s = c.createStatement();
 
 サービス プリンシパル名 (SPN) の詳細については、以下を参照してください。
 
-- [クライアント接続でのサービス プリンシパル名 (SPN) のサポート](https://docs.microsoft.com/sql/relational-databases/native-client/features/service-principal-name-spn-support-in-client-connections?view=sql-server-2017)
+- [クライアント接続でのサービス プリンシパル名 (SPN) のサポート](../../relational-databases/native-client/features/service-principal-name-spn-support-in-client-connections.md)
 
 > [!NOTE]  
 > serverSpn 接続属性は、Microsoft JDBC Driver 4.2 以降でのみサポートされています。
 
-> 6\.2 リリースより前の JDBC driver では、**serverSpn** を明示的に設定する必要があります。 6\.2 リリースの場合、ドライバーは既定で **Serverspn** を構築でき ますが、 **serverspn**を明示的に使用することもできます。
+> 6\.2 リリースより前の JDBC driver では、**serverSpn** を明示的に設定する必要があります。 6\.2 リリースの場合、ドライバーは既定で **Serverspn** を構築でき ますが、 **serverspn** を明示的に使用することもできます。
 
 ## <a name="security-risks"></a>セキュリティ リスク
 
@@ -101,7 +101,7 @@ SSL 暗号化を使用した接続の詳細については、以下を参照し�
 - [SSL 暗号化を使用した接続](../../connect/jdbc/connecting-with-ssl-encryption.md)
 
 > [!NOTE]
-> 7\.4 リリースでは、拡張保護と暗号化の**両方**を有効にすることはサポートされていません。
+> 7\.4 リリースでは、拡張保護と暗号化の **両方** を有効にすることはサポートされていません。
 
 ## <a name="see-also"></a>関連項目
 

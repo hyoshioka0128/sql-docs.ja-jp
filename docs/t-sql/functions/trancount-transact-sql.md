@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - '@@TRANCOUNT_TSQL'
 - '@@TRANCOUNT'
@@ -21,13 +21,13 @@ helpviewer_keywords:
 ms.assetid: b2638410-e410-4bd0-9b54-90096182b2b6
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 7b6447931645647185b105659943325b47f317a7
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 23aa58a64cdd76b5065338e28c3624db070ad118
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88459524"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99158690"
 ---
 # <a name="x40x40trancount-transact-sql"></a>&#x40;&#x40;TRANCOUNT (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -38,10 +38,13 @@ ms.locfileid: "88459524"
   
 ## <a name="syntax"></a>構文  
   
-```  
+
+```syntaxsql  
 @@TRANCOUNT  
 ```  
-  
+
+[!INCLUDE[synapse-analytics-od-unsupported-syntax](../../includes/synapse-analytics-od-unsupported-syntax.md)]
+
 [!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
 
 ## <a name="return-types"></a>戻り値の型
@@ -55,7 +58,8 @@ ms.locfileid: "88459524"
 ### <a name="a-showing-the-effects-of-the-begin-and-commit-statements"></a>A. BEGIN と COMMIT ステートメントの影響を確認する  
  次の例では、`BEGIN` ステートメントと `COMMIT` ステートメントを入れ子にした場合の `@@TRANCOUNT` 変数に対する影響を確認します。  
   
-```  
+
+```sql  
 PRINT @@TRANCOUNT  
 --  The BEGIN TRAN statement will increment the  
 --  transaction count by 1.  
@@ -79,7 +83,8 @@ PRINT @@TRANCOUNT
 ### <a name="b-showing-the-effects-of-the-begin-and-rollback-statements"></a>B. BEGIN ステートメントと ROLLBACK ステートメントの影響を確認する  
  次の例では、`BEGIN TRAN` ステートメントと `ROLLBACK` ステートメントを入れ子にした場合の `@@TRANCOUNT` 変数に対する影響を確認します。  
   
-```  
+
+```sql  
 PRINT @@TRANCOUNT  
 --  The BEGIN TRAN statement will increment the  
 --  transaction count by 1.  

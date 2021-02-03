@@ -23,12 +23,12 @@ helpviewer_keywords:
 ms.assetid: f039d0de-ade7-4aaf-8b7b-d207deb3371a
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 8b3953f0f0000ce67f3d58ffbc4be07b5d921734
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 23cd700fd8b25778118b2141bf0205dcbd87c92e
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88479223"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170464"
 ---
 # <a name="alter-availability-group-transact-sql"></a>ALTER AVAILABILITY GROUP (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -94,7 +94,7 @@ ALTER AVAILABILITY GROUP group_name
      | PRIMARY_ROLE ( {   
             [ ALLOW_CONNECTIONS = { READ_WRITE | ALL } ]   
         [,] [ READ_ONLY_ROUTING_LIST = { ( '<server_instance>' [ ,...n ] ) | NONE } ]  
-        [,] [ READ_WRITE_ROUTING_URL = { ( '<server_instance>' ) ] 
+        [,] [ READ_WRITE_ROUTING_URL = { ( '<server_instance>' ) ] 
      } )  
      | SESSION_TIMEOUT = integer
   
@@ -210,7 +210,7 @@ ALTER AVAILABILITY GROUP group_name
 > [!NOTE]  
 >  クライアント要求に対して [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスが応答しないことは、可用性グループには関係ありません。  
   
- FAILURE_CONDITION_LEVEL 値と HEALTH_CHECK_TIMEOUT 値は、特定のグループに対する*柔軟なフェールオーバー ポリシー*を定義します。 この柔軟なフェールオーバー ポリシーを使用すると、自動フェールオーバーを引き起こす条件をきめ細かく制御できます。 詳細については、「[可用性グループの自動フェールオーバーのための柔軟なフェールオーバー ポリシー &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/flexible-automatic-failover-policy-availability-group.md)」を参照してください。  
+ FAILURE_CONDITION_LEVEL 値と HEALTH_CHECK_TIMEOUT 値は、特定のグループに対する *柔軟なフェールオーバー ポリシー* を定義します。 この柔軟なフェールオーバー ポリシーを使用すると、自動フェールオーバーを引き起こす条件をきめ細かく制御できます。 詳細については、「[可用性グループの自動フェールオーバーのための柔軟なフェールオーバー ポリシー &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/configure-flexible-automatic-failover-policy.md)」を参照してください。  
   
  HEALTH_CHECK_TIMEOUT **=** *milliseconds*  
  [sp_server_diagnostics](../../relational-databases/system-stored-procedures/sp-server-diagnostics-transact-sql.md) システム ストアド プロシージャによってサーバーの状態情報が返されるのを待機する時間 (ミリ秒単位) を指定します。この時間が経過すると、WSFC クラスターはサーバー インスタンスが速度低下または応答停止しているものと見なします。 HEALTH_CHECK_TIMEOUT はグループ レベルで設定されますが、自動フェールオーバーで同期コミット可用性モードが構成されている (AVAILABILITY_MODE **=** SYNCHRONOUS_COMMIT) 可用性レプリカにのみ適用されます。  さらに、正常性チェック タイムアウトが自動フェールオーバーをトリガーできるのは、プライマリとセカンダリの両方のレプリカが自動フェールオーバー モードに構成されていて (FAILOVER_MODE **=** AUTOMATIC)、セカンダリ レプリカが現在プライマリ レプリカと同期されている場合だけです。  
@@ -228,10 +228,10 @@ ALTER AVAILABILITY GROUP group_name
  この設定の詳細については、「[データベース レベルの正常性検出オプション](../../database-engine/availability-groups/windows/sql-server-always-on-database-health-detection-failover-option.md)」を参照してください。 
 
 DTC_SUPPORT  **=** { PER_DB | NONE }  
-この可用性グループの分散トランザクションが有効かどうかを指定します。 分散トランザクションは [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降の可用性グループ データベースに対してのみサポートされ、複数データベースにまたがるトランザクションは [!INCLUDE[ssSQL16](../../includes/sssql15-md.md)] SP2 以降に対してのみサポートされます。 `PER_DB` では、これらのトランザクションをサポートする可用性グループが作成され、可用性グループ内のデータベースを含む複数データベースにまたがるトランザクションが分散トランザクションに自動的に昇格されます。 `NONE` では、複数データベースにまたがるトランザクションは分散トランザクションに自動昇格されず、データベースは DTC の安定した RMID に登録されません。 `NONE` の設定を使用しても分散トランザクションは妨げられませんが、状況によってはデータベースのフェールオーバーと自動復旧が失敗する場合があります。 詳細については、「[Always On 可用性グループとデータベース ミラーリングでの複数データベースにまたがるトランザクションと分散トランザクション &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/transactions-always-on-availability-and-database-mirroring.md)」を参照してください。 
+この可用性グループの分散トランザクションが有効かどうかを指定します。 分散トランザクションは [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降の可用性グループ データベースに対してのみサポートされ、複数データベースにまたがるトランザクションは [!INCLUDE[ssSQL16](../../includes/sssql16-md.md)] SP2 以降に対してのみサポートされます。 `PER_DB` では、これらのトランザクションをサポートする可用性グループが作成され、可用性グループ内のデータベースを含む複数データベースにまたがるトランザクションが分散トランザクションに自動的に昇格されます。 `NONE` では、複数データベースにまたがるトランザクションは分散トランザクションに自動昇格されず、データベースは DTC の安定した RMID に登録されません。 `NONE` の設定を使用しても分散トランザクションは妨げられませんが、状況によってはデータベースのフェールオーバーと自動復旧が失敗する場合があります。 詳細については、「[Always On 可用性グループとデータベース ミラーリングでの複数データベースにまたがるトランザクションと分散トランザクション &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/transactions-always-on-availability-and-database-mirroring.md)」を参照してください。 
  
 > [!NOTE]
-> 可用性グループの設定 DTC_SUPPORT の変更のサポートは、[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] Service Pack 2 で導入されました。 それより前のバージョンでは、このオプションは使用できません。 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] の以前のバージョンでこの設定を変更するには、可用性グループをいったん削除してから、再度作成する必要があります。
+> 可用性グループの設定 DTC_SUPPORT の変更のサポートは、[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] Service Pack 2 で導入されました。 それより前のバージョンでは、このオプションは使用できません。 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] の以前のバージョンでこの設定を変更するには、可用性グループをいったん削除してから、再度作成する必要があります。
  
  REQUIRED_SYNCHRONIZED_SECONDARIES_TO_COMMIT   
  SQL Server 2017 で導入されました。 コミットに必要な同期セカンダリ レプリカの最小数を設定するために使用します。この数を超えると、プライマリがトランザクションをコミットします。 SQL Server トランザクションは、セカンダリ レプリカの最小数の最新情報がトランザクション ログに与えられるまで待機することになります。 既定値は 0 であり、SQL Server 2016 と同じように動作します。 最小値は 0 です。 最大値はレプリカの数から 1 を引いた値になります。 このオプションは、同期コミット モードのレプリカに関連しています。 レプリカが同期コミット モードのとき、セカンダリ同期レプリカに対する書き込みがレプリカ データベース トランザクション ログにコミットされるまで、プライマリ レプリカへの書き込みは待機します。 セカンダリ同期レプリカをホストする SQL Server が応答を停止した場合、プライマリ レプリカをホストする SQL Server はそのセカンダリ レプリカを同期未実行としてマークし、続行します。 応答のないデータベースがオンラインに復帰すると、"未同期" 状態になります。プライマリが再度同期可能になるまで、レプリカに異常のマークが付きます。 この設定により、レプリカの最小数で各トランザクションがコミットされるまで、プライマリ レプリカは続行しません。 レプリカの最小数が利用できない場合、プライマリのコミットは失敗します。 クラスター タイプ `EXTERNAL` の場合、可用性グループがクラスター リソースに追加されると、設定が変更されます。 「[可用性グループの構成の高可用性とデータの保護](../../linux/sql-server-linux-availability-group-ha.md)」を参照してください。
@@ -373,7 +373,7 @@ DTC_SUPPORT  **=** { PER_DB | NONE }
   
  名前付きインスタンスの場合は、[sys.dm_tcp_listener_states](../../relational-databases/system-dynamic-management-views/sys-dm-tcp-listener-states-transact-sql.md) 動的管理ビューの **port** 列と **type_desc** 列をクエリすることで、ポート番号を取得できます。 サーバー インスタンスでは Transact-SQL リスナーを使用します (**type_desc='TSQL'** )。  
   
- 可用性レプリカの読み取り専用ルーティングの URL の計算の詳細については、「[AlwaysOn の read_only_routing_url の計算](https://docs.microsoft.com/archive/blogs/mattn/calculating-read_only_routing_url-for-alwayson)」を参照してください。  
+ 可用性レプリカの読み取り専用ルーティングの URL の計算の詳細については、「[AlwaysOn の read_only_routing_url の計算](/archive/blogs/mattn/calculating-read_only_routing_url-for-alwayson)」を参照してください。  
   
 > [!NOTE]  
 >  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の名前付きインスタンスの場合は、特定のポートを使用するように Transact-SQL リスナーを構成する必要があります。 詳細については、「[特定の TCP ポートで受信待ちするようにサーバーを構成する方法 &#40;SQL Server 構成マネージャー&#41;](../../database-engine/configure-windows/configure-a-server-to-listen-on-a-specific-tcp-port.md)」を参照してください。  
@@ -406,7 +406,7 @@ DTC_SUPPORT  **=** { PER_DB | NONE }
   
  読み取り可能なセカンダリ レプリカをホストする可能性があるすべてのサーバー インスタンスを指定するには、コンマ区切りのリストを使用します。 読み取り専用のルーティングは、リストで指定されているサーバー インスタンスの順序に従います。 レプリカの読み取り専用ルーティング リストにレプリカのホスト サーバー インスタンスを含める場合、通常は一覧の最後にこのサーバー インスタンスを配置することをお勧めします。読み取りを目的とした接続が使用できる場合に、これがセカンダリ レプリカに移動するためです。  
   
- [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降では、読み取り可能なセカンダリ レプリカ間で読み取りを目的とした要求の負荷を分散することができます。 読み取り専用ルーティング リスト内のかっこの入れ子になったセットにレプリカを配置することで、これを指定します。 詳細と例については、「[読み取り専用レプリカ間の負荷分散の構成](../../database-engine/availability-groups/windows/configure-read-only-routing-for-an-availability-group-sql-server.md#loadbalancing)」を参照してください。  
+ [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降では、読み取り可能なセカンダリ レプリカ間で読み取りを目的とした要求の負荷を分散することができます。 読み取り専用ルーティング リスト内のかっこの入れ子になったセットにレプリカを配置することで、これを指定します。 詳細と例については、「[読み取り専用レプリカ間の負荷分散の構成](../../database-engine/availability-groups/windows/configure-read-only-routing-for-an-availability-group-sql-server.md#loadbalancing)」を参照してください。  
   
  NONE  
  この可用性レプリカがプライマリ レプリカの場合は、読み取り専用のルーティングをサポートしないことを指定します。 これは既定の動作です。 MODIFY REPLICA ON と併せて使用すると、この値は既存のリスト (ある場合) を無効にします。  
@@ -449,7 +449,7 @@ DTC_SUPPORT  **=** { PER_DB | NONE }
  詳細については、「 [可用性グループへのセカンダリ レプリカの参加 &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/join-a-secondary-replica-to-an-availability-group-sql-server.md)、または PowerShell を使用して、既存の AlwaysOn 可用性グループにセカンダリ レプリカを追加する方法について説明します。  
   
  FAILOVER  
-接続されているセカンダリ レプリカへの可用性グループのデータ損失のない手動フェールオーバーを開始します。 プライマリ レプリカをホストするレプリカは*フェールオーバー ターゲット*です。  フェールオーバー ターゲットによってプライマリ ロールが引き継がれ、各データベースのコピーが復旧されて、新しいプライマリ データベースとしてオンラインになります。 元のプライマリ レプリカは同時にセカンダリ ロールに移行し、そのデータベースがセカンダリ データベースになって、直ちに中断されます。 これらのロールは、連続する障害によって繰り返し切り替えられる可能性があります。  
+接続されているセカンダリ レプリカへの可用性グループのデータ損失のない手動フェールオーバーを開始します。 プライマリ レプリカをホストするレプリカは *フェールオーバー ターゲット* です。  フェールオーバー ターゲットによってプライマリ ロールが引き継がれ、各データベースのコピーが復旧されて、新しいプライマリ データベースとしてオンラインになります。 元のプライマリ レプリカは同時にセカンダリ ロールに移行し、そのデータベースがセカンダリ データベースになって、直ちに中断されます。 これらのロールは、連続する障害によって繰り返し切り替えられる可能性があります。  
   
  現在プライマリ レプリカと同期されている同期コミット モードのセカンダリ レプリカでのみサポートされます。 セカンダリ レプリカを同期する場合、プライマリ レプリカも同期コミット可用性モードで実行されている必要があります。  
   
@@ -462,7 +462,7 @@ DTC_SUPPORT  **=** { PER_DB | NONE }
  > [!CAUTION]  
 >  データの損失を伴う可能性があるフェールオーバーの強制は、厳密にはディザスター リカバリー手段です。 したがって、プライマリ レプリカが動作しなくなった状況で、データの損失を許容でき、可用性グループに直ちにサービスを復元する必要がある場合のみ、強制フェールオーバーを実行することを強くお勧めします。  
   
- ロールが SECONDARY 状態または RESOLVING 状態であるレプリカでのみサポートされます。 --フェールオーバー コマンドを入力する対象のレプリカは、*フェールオーバー ターゲット*と呼ばれます。  
+ ロールが SECONDARY 状態または RESOLVING 状態であるレプリカでのみサポートされます。 --フェールオーバー コマンドを入力する対象のレプリカは、*フェールオーバー ターゲット* と呼ばれます。  
   
  フェールオーバー ターゲットへの可用性グループのフェールオーバーを強制します (データ損失の可能性あり)。 フェールオーバー ターゲットによってプライマリ ロールが引き継がれ、各データベースのコピーが復旧されて、新しいプライマリ データベースとしてオンラインになります。 残りのセカンダリ レプリカのすべてのセカンダリ データベースは手動で再開するまで中断されます。 元のプライマリ レプリカが使用可能になった場合はセカンダリ ロールに切り替わり、そのデータベースは中断されたセカンダリ データベースになります。  
   
@@ -493,7 +493,7 @@ DTC_SUPPORT  **=** { PER_DB | NONE }
 >  NetBIOS では、dns_name の最初の 15 文字のみが認識されます。 同じ Active Directory で制御されている 2 つの WSFC クラスターがあり、両方のクラスターで可用性グループ リスナーを作成しようとする場合、15 文字より長い名前を使用して、15 文字のプレフィックスが同一であると、仮想ネットワーク名リソースをオンラインにできなかったことを示すエラーが表示されます。 DNS 名のプレフィックスに対する名前付け規則の詳細については、「 [ドメイン名を割り当てる](https://technet.microsoft.com/library/cc731265\(WS.10\).aspx)」を参照してください。  
   
  JOIN AVAILABILITY GROUP ON  
- *分散可用性グループ*に参加します。 分散可用性グループを作成すると、それが作成されたクラスターの可用性グループがプライマリの可用性グループになります。 分散可用性グループに参加する可用性グループがセカンダリ可用性グループになります。  
+ *分散可用性グループ* に参加します。 分散可用性グループを作成すると、それが作成されたクラスターの可用性グループがプライマリの可用性グループになります。 分散可用性グループに参加する可用性グループがセカンダリ可用性グループになります。  
   
  \<ag_name>  
  分散可用性グループの半分を占める可用性グループの名前を指定します。  
@@ -527,7 +527,7 @@ DTC_SUPPORT  **=** { PER_DB | NONE }
  分散型可用性グループのフェールオーバー モードを指定します。  
   
  MANUAL  
- データベース管理者による計画的な手動フェールオーバーまたは強制手動フェールオーバー (通常は*強制フェールオーバー*と呼ばれる) を有効にします。  
+ データベース管理者による計画的な手動フェールオーバーまたは強制手動フェールオーバー (通常は *強制フェールオーバー* と呼ばれる) を有効にします。  
   
  セカンダリ可用性グループへの自動フェールオーバーはサポートされていません。  
   
@@ -594,7 +594,7 @@ DTC_SUPPORT  **=** { PER_DB | NONE }
  \<modify\_listener\_option\>  
  MODIFY LISTENER には、次のいずれかのオプションを指定できます。  
   
- ADD IP { **('** _four\_part\_ipv4\_address_ **','** _four\_part\_ipv4_mask_ **')** \| <b>('</b>dns\_name*ipv6\_address* __')__ }  
+ ADD IP { **('** _four\_part\_ipv4\_address_ **','** _four\_part\_ipv4_mask_ **')** \| <b>('</b>dns\_name *ipv6\_address* __')__ }  
  指定した IP アドレスを *dns\_name* で指定されている可用性グループ リスナーに追加します。  
   
  PORT **=** *listener_port*  
@@ -650,5 +650,4 @@ GO
  [AlwaysOn 可用性グループの構成のトラブルシューティング &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/troubleshoot-always-on-availability-groups-configuration-sql-server.md)   
  [AlwaysOn 可用性グループの概要 &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server.md)   
  [可用性グループ リスナー、クライアント接続、およびアプリケーションのフェールオーバー &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/listeners-client-connectivity-application-failover.md)  
-  
   

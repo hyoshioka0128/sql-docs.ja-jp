@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 85f4e7e6-a330-4de0-9048-64f386ccc314
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 5c4eef4555867208ae71b0495dfd9393c2459ca3
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 98ac18629fc8765c314abd799364fd542e25c5da
+ms.sourcegitcommit: 192f6a99e19e66f0f817fdb1977f564b2aaa133b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88444964"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96128120"
 ---
 # <a name="alter-database-audit-specification-transact-sql"></a>ALTER DATABASE AUDIT SPECIFICATION (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -37,7 +37,6 @@ ms.locfileid: "88444964"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 ALTER DATABASE AUDIT SPECIFICATION audit_specification_name  
 {  
     [ FOR SERVER AUDIT audit_name ]  
@@ -53,7 +52,6 @@ ALTER DATABASE AUDIT SPECIFICATION audit_specification_name
       <action_specification>[ ,...n ] ON [ class :: ] securable   
      BY principal [ ,...n ]   
 }  
-  
 ```  
   
 
@@ -98,7 +96,7 @@ ALTER DATABASE AUDIT SPECIFICATION audit_specification_name
 ## <a name="examples"></a>例  
  次の例では、`HIPAA_Audit_DB_Specification` ユーザーによる `SELECT` ステートメントを監査する、`dbo` という [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 監査の `HIPAA_Audit` というデータベース監査仕様を変更します。  
   
-```  
+```sql  
 ALTER DATABASE AUDIT SPECIFICATION HIPAA_Audit_DB_Specification  
 FOR SERVER AUDIT HIPAA_Audit  
     ADD (SELECT  

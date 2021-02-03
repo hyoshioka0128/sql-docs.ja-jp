@@ -8,13 +8,13 @@ ms.technology: report-server-sharepoint
 ms.topic: conceptual
 author: maggiesMSFT
 ms.author: maggies
-monikerRange: '>=sql-server-2016 <=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 9bf9391bfb9a705379caa6c9f34ae752d2dcc3c6
-ms.sourcegitcommit: 66a0672e47415dbd5cfd8d19075102c8c3973e70
+monikerRange: '>=sql-server-2016 <=sql-server-2016'
+ms.openlocfilehash: 559b88b776c92abfd98929f5b73cabb04a7f6d80
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83767103"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97474523"
 ---
 # <a name="back-up-and-restore-reporting-services-sharepoint-service-applications"></a>Reporting Services SharePoint サービス アプリケーションのバックアップと復元
 
@@ -32,7 +32,7 @@ ms.locfileid: "83767103"
 ### <a name="limitations-and-restrictions"></a>制限事項と制約事項
 
 > [!NOTE]
->  [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] サービス アプリケーションは、SharePoint のバックアップおよび復元機能を使用して、部分的にバックアップおよび復元できます。 これには**追加の手順が必要** であり、その手順はこのトピック内に記載されています。 現在、バックアップ プロセスでは、自動実行アカウント (UEA) または Windows 認証用の暗号化キーと資格情報は [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] データベースにバックアップ**されません**。
+>  [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] サービス アプリケーションは、SharePoint のバックアップおよび復元機能を使用して、部分的にバックアップおよび復元できます。 これには **追加の手順が必要** であり、その手順はこのトピック内に記載されています。 現在、バックアップ プロセスでは、自動実行アカウント (UEA) または Windows 認証用の暗号化キーと資格情報は [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] データベースにバックアップ **されません**。
 
 ### <a name="recommendations"></a>推奨事項
   
@@ -40,7 +40,7 @@ ms.locfileid: "83767103"
   
 -   [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] サービス アプリケーションがデータベースへのアクセス用に UEA または Windows 認証を使用しているかどうかを確認してください。 これらのいずれかを使用している場合は、復元プロセス後にサービス アプリケーションを正しく構成できるよう、適切な資格情報を確認してください。  
   
--   SharePoint のバックアップ ログが、バックアップ ファイルと同じフォルダーに作成されていることを確認してください。 このファイルは通常、 **spbackup.log**という名前になります。  
+-   SharePoint のバックアップ ログが、バックアップ ファイルと同じフォルダーに作成されていることを確認してください。 このファイルは通常、 **spbackup.log** という名前になります。  
   
 ## <a name="back-up-the-service-application"></a>サービス アプリケーションのバックアップ
 
@@ -72,9 +72,9 @@ ms.locfileid: "83767103"
   
  詳細については、 SharePoint のドキュメントの次のトピックを参照してください。  
   
- [サービス アプリケーションのバックアップ (SharePoint Foundation 2010) (SharePoint ドキュメント)](https://msdn.microsoft.com/library/ee748601.aspx)。  
+ [サービス アプリケーションのバックアップ (SharePoint Foundation 2010) (SharePoint ドキュメント)](/previous-versions/office/sharepoint-foundation-2010/ee748601(v=office.14))。  
   
- [サービス アプリケーションのバックアップ (SharePoint Server 2010)](https://technet.microsoft.com/library/ee428318.aspx)  
+ [サービス アプリケーションのバックアップ (SharePoint Server 2010)](/SharePoint/administration/back-up-a-service-application)  
   
 ### <a name="verify-execution-account-and-database-authentication"></a>実行アカウントとデータベース認証の確認
 
@@ -126,9 +126,9 @@ ms.locfileid: "83767103"
   
  詳細については、 SharePoint のドキュメントの次のトピックを参照してください。  
   
- [サービス アプリケーションを復元する (SharePoint Foundation 2010)](https://msdn.microsoft.com/library/ee748615.aspx)。  
+ [サービス アプリケーションを復元する (SharePoint Foundation 2010)](/previous-versions/office/sharepoint-foundation-2010/ee748615(v=office.14))。  
   
- [サービス アプリケーションを復元する (SharePoint Server 2010)](https://technet.microsoft.com/library/ee428305.aspx)。  
+ [サービス アプリケーションを復元する (SharePoint Server 2010)](/SharePoint/administration/restore-a-service-application)。  
 
 ### <a name="restore-the-encryption-keys-using-sharepoint-central-administration"></a>SharePoint サーバーの全体管理を使用して暗号化キーを復元する
 

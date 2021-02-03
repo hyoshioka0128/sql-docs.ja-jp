@@ -15,13 +15,13 @@ helpviewer_keywords:
 ms.assetid: 6dd601a4-1233-43d9-a9f0-bc8d84e5d188
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: =azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions
-ms.openlocfilehash: 6a0703042862d995d8890c01fee519915b513e3a
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-mi-current||>=sql-server-2016
+ms.openlocfilehash: 03b08fa667f8b0753c315a7cf66123618cb493f7
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88482455"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97475863"
 ---
 # <a name="article-properties---ltarticlegt"></a>アーティクルのプロパティ - &lt;Article&gt;
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -67,7 +67,7 @@ ms.locfileid: "88482455"
   
 -   互換性レベルが 90 未満のマージ パブリケーションのアーティクルの場合。既定では、所有者名は空白のままなり、サブスクライバーにオブジェクトを作成する際に **dbo** と指定されます。  
   
--   Oracle パブリケーションのアーティクルの場合。既定では、所有者名が **dbo**と指定されます。  
+-   Oracle パブリケーションのアーティクルの場合。既定では、所有者名が **dbo** と指定されます。  
   
 -   キャラクター モードのスナップショット ([!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 以外のバージョンのサブスクライバーや [!INCLUDE[ssEW](../../includes/ssew-md.md)] サブスクライバーで使用されます) を使用するパブリケーションのアーティクルの場合。既定では、所有者は空白のままになります。 既定の所有者は、サブスクライバーに接続しているディストリビューション エージェントまたはマージ エージェントで使用されるアカウントに関連付けられている所有者になります。  
   
@@ -145,7 +145,7 @@ ms.locfileid: "88482455"
  アーティクルがトランザクション パブリケーションに含まれているとき、このダイアログ ボックスの **[ステートメントの配信]** セクションで、ストアド プロシージャを使用して変更をサブスクライバーに伝達するように指定した場合 (既定)、そのプロシージャを各サブスクライバーにコピーするかどうかを選択します。 **[False]** を選択した場合、プロシージャを手作業でコピーしなければ、ディストリビューション エージェントが変更を伝達しようとしても失敗します。  
   
  **対象オブジェクトの所有者**  
- **dbo**以外の値を入力した場合、次の操作が行われます。  
+ **dbo** 以外の値を入力した場合、次の操作が行われます。  
   
 -   [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 以上が動作しているサブスクライバーでは、入力した値と同じ名前のサブスクライバーでスキーマが作成されていることを確認する必要があります。 詳細については、「[CREATE SCHEMA &#40;Transact-SQL&#41;](../../t-sql/statements/create-schema-transact-sql.md)」を参照してください。  
   

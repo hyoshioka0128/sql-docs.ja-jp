@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - xml_schema_attributes_TSQL
 - xml_schema_attributes
@@ -18,19 +18,19 @@ dev_langs:
 helpviewer_keywords:
 - sys.xml_schema_attributes catalog view
 ms.assetid: dd0c98aa-5e72-4df6-96d9-482786c8dbb1
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: a64481a5e3ab55a489d173dfd88f295a09aa9dfd
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 135d3d376c79f6ac6ab6c75fbad206777c71b5a5
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89546723"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99206444"
 ---
 # <a name="sysxml_schema_attributes-transact-sql"></a>sys.xml_schema_attributes (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  属性である XML スキーマコンポーネントごとに 1**行のを返します。の** **symbol_space**です。  
+  属性である XML スキーマコンポーネントごとに 1 **行のを返します。の** **symbol_space** です。  
 
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - RESTORE FILELISTONLY
 - RESTORE_FILELISTONLY_TSQL
@@ -22,13 +22,13 @@ helpviewer_keywords:
 ms.assetid: 0b4b4d11-eb9d-4f3e-9629-6c79cec7a81a
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: =azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017
-ms.openlocfilehash: f72bc6a3a67f73fc7ab44e94514f7db7b6a905a4
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017
+ms.openlocfilehash: 7a648b81b0c29799de837e76e6b745b4d460f61c
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88478764"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99159328"
 ---
 # <a name="restore-statements---filelistonly-transact-sql"></a>RESTORE ステートメント - FILELISTONLY (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md.md )]
@@ -44,7 +44,6 @@ ms.locfileid: "88478764"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 RESTORE FILELISTONLY   
 FROM <backup_device>   
 [ WITH   
@@ -75,7 +74,6 @@ FROM <backup_device>
    | { DISK | TAPE | URL } = { 'physical_backup_device_name' |  
        @physical_backup_device_name_var }   
 }  
-  
 ```  
 
 > [!NOTE] 
@@ -124,7 +122,7 @@ FROM <backup_device>
 ## <a name="examples"></a>例  
  次の例は、`AdventureWorksBackups` というバックアップ デバイスから情報を返します。 この例では `FILE` オプションを使用して、デバイスで 2 番目のバックアップ セットを指定しています。  
   
-```  
+```sql  
 RESTORE FILELISTONLY FROM AdventureWorksBackups   
    WITH FILE=2;  
 GO  

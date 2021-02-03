@@ -1,13 +1,13 @@
 ---
-description: dm_db_objects_disabled_on_compatibility_level_change (Transact-sql)
-title: dm_db_objects_disabled_on_compatibility_level_change (Transact-sql) |Microsoft Docs
+description: sys.dm_db_objects_disabled_on_compatibility_level_change (Transact-sql)
+title: sys.dm_db_objects_disabled_on_compatibility_level_change (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - dm_db_objects_disabled_on_compatibility_level_change
 - dm_db_objects_disabled_on_compatibility_level_change_TSQL
@@ -18,17 +18,17 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_db_objects_disabled_on_compatibility_level_change catalog view
 ms.assetid: a5d70064-0330-48b9-b853-01eba50755d0
-author: markingmyname
-ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: f4779675cd37f6f49f90ab01fa17e5f5e9259260
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: c7fef254ef7403e56c497453a36705110fe64e66
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89519205"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99202560"
 ---
-# <a name="spatial-data---sysdm_db_objects_disabled_on_compatibility_level_change"></a>空間データ-sys. dm_db_objects_disabled_on_compatibility_level_change
+# <a name="spatial-data---sysdm_db_objects_disabled_on_compatibility_level_change"></a>空間データ-sys.dm_db_objects_disabled_on_compatibility_level_change
 [!INCLUDE [SQL Server Azure SQL Database ](../../includes/applies-to-version/sql-asdb.md)]
 
   で互換性レベルを変更した結果として無効になるインデックスと制約の一覧を示し [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。 更新または互換性レベルの変更後に、式が空間 Udt を使用する、保存される計算列を含むインデックスおよび制約は無効になります。 互換性レベルの変更の影響を判断するには、この動的管理関数を使用します。  
@@ -43,7 +43,7 @@ sys.dm_db_objects_disabled_on_compatibility_level_change ( compatibility_level )
   
 ##  <a name="arguments"></a><a name="Arguments"></a> 引数  
  *compatibility_level*  
- 設定を計画している互換性レベルを識別する**int** 。  
+ 設定を計画している互換性レベルを識別する **int** 。  
   
 ## <a name="table-returned"></a>返されるテーブル  
   
@@ -147,7 +147,7 @@ sys.dm_db_objects_disabled_on_compatibility_level_change ( compatibility_level )
  VIEW DATABASE STATE 権限が必要です。  
   
 ## <a name="example"></a>例  
- 次の例では、互換性レベルを120に変更することによって影響を受けるオブジェクトを検索するために、dm_db_objects_disabled_on_compatibility_level_change に対するクエリを示します **。**  
+ 次の例では、互換性レベルを120に変更することによって影響を受けるオブジェクトを検索するために **sys.dm_db_objects_disabled_on_compatibility_level_change** に対するクエリを示します。  
   
 ```sql  
 SELECT * FROM sys.dm_db_objects_disabled_on_compatibility_level_change(120);  

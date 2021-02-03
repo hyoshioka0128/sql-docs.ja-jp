@@ -27,14 +27,14 @@ helpviewer_keywords:
 - line continuation character
 - reverse solidus
 ms.assetid: c97fbb20-3d12-4d0b-9b52-62a229bc83c0
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 2437daed52cb8b4a79431465f8a27e5464185e23
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 3451d6a9346fd1988cdfc509635967017a0b6cb9
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88459284"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98095918"
 ---
 # <a name="backslash-line-continuation-transact-sql"></a>円記号 (行の連結) (Transact-SQL)
 
@@ -46,7 +46,7 @@ ms.locfileid: "88459284"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 <first section of string> \  
 <continued section of string>  
 ```  
@@ -69,10 +69,9 @@ ms.locfileid: "88459284"
 
 次の例では、円記号と復帰を使用して文字列を 2 行に分けます。  
   
-```  
+```sql  
 SELECT 'abc\  
 def' AS [ColumnResult];  
-  
 ```  
   
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
@@ -87,10 +86,9 @@ def' AS [ColumnResult];
 
 次の例では、円記号と復帰を使用してバイナリ文字列を 2 行に分けます。  
 
-```  
+```sql  
 SELECT 0xabc\
 def AS [ColumnResult];  
-  
 ```  
   
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  

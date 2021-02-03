@@ -1,5 +1,5 @@
 ---
-title: AdventureWorks サンプル データベース
+title: AdventureWorks サンプルデータベース
 description: Transact-sql (T-sql)、SQL Server Management Studio (SSMS)、または Azure Data Studio を使用して SQL Server に AdventureWorks サンプルデータベースをダウンロードしてインストールするには、次の手順に従います。
 ms.prod: sql
 ms.prod_service: sql
@@ -10,14 +10,14 @@ ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 9c60bea64ad528a953101da7625347ca659b1c6d
-ms.sourcegitcommit: edba1c570d4d8832502135bef093aac07e156c95
+ms.openlocfilehash: ec38d7eeed89d03bab4ebd92446517542e2e51a0
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86485099"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596999"
 ---
-# <a name="adventureworks-sample-databases"></a>AdventureWorks サンプル データベース
+# <a name="adventureworks-sample-databases"></a>AdventureWorks サンプルデータベース
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
 この記事では、AdventureWorks サンプルデータベースをダウンロードするための直接リンクと、それらを SQL Server および Azure SQL Database に復元する手順について説明します。 
@@ -26,17 +26,17 @@ ms.locfileid: "86485099"
 
 ## <a name="prerequisites"></a>前提条件
 
-- [SQL Server](https://www.microsoft.com/evalcenter/evaluate-sql-server-2019)または[Azure SQL Database](https://azure.microsoft.com/services/sql-database/)
-- [SQL Server Management Studio](../ssms/download-sql-server-management-studio-ssms.md)または[Azure Data Studio](../azure-data-studio/download-azure-data-studio.md)
+- [SQL Server](https://www.microsoft.com/evalcenter/evaluate-sql-server-2019) または [Azure SQL Database](https://azure.microsoft.com/services/sql-database/)
+- [SQL Server Management Studio](../ssms/download-sql-server-management-studio-ssms.md) または [Azure Data Studio](../azure-data-studio/download-azure-data-studio.md)
 
 
 ## <a name="download-backup-files"></a>バックアップファイルのダウンロード 
 
 次のリンクを使用して、シナリオに適したサンプルデータベースをダウンロードします。 
 
-- **OLTP**データは、最も一般的なオンライントランザクション処理ワークロード用です。 
-- データ**ウェアハウス (DW)** データは、データウェアハウスのワークロードを対象としています。 
-- **ライトウェイト (LT)** データは、 **OLTP**サンプルの軽量で減らすダウンバージョンです。 
+- **OLTP** データは、最も一般的なオンライントランザクション処理ワークロード用です。 
+- データ **ウェアハウス (DW)** データは、データウェアハウスのワークロードを対象としています。 
+- **ライトウェイト (LT)** データは、 **OLTP** サンプルの軽量で減らすダウンバージョンです。 
 
 必要なものがわからない場合は、SQL Server バージョンと一致する OLTP バージョンから開始してください。 
 
@@ -59,11 +59,11 @@ ms.locfileid: "86485099"
 
 ## <a name="restore-to-sql-server"></a>SQL Server に復元 
 
-このファイルを使用して、 `.bak` サンプルデータベースを SQL Server インスタンスに復元できます。 これを行うには、 [RESTORE (transact-sql)](../t-sql/statements/restore-statements-transact-sql.md)コマンドを使用するか、 [SQL Server Management Studio](../ssms/download-sql-server-management-studio-ssms.md)または[AZURE DATA STUDIO](../azure-data-studio/download-azure-data-studio.md)のグラフィカルインターフェイス (GUI) を使用します。
+このファイルを使用して、 `.bak` サンプルデータベースを SQL Server インスタンスに復元できます。 これを行うには、 [RESTORE (transact-sql)](../t-sql/statements/restore-statements-transact-sql.md) コマンドを使用するか、 [SQL Server Management Studio](../ssms/download-sql-server-management-studio-ssms.md) または [AZURE DATA STUDIO](../azure-data-studio/download-azure-data-studio.md)のグラフィカルインターフェイス (GUI) を使用します。
 
 # <a name="sql-server-management-studio-ssms"></a>[SQL Server Management Studio (SSMS)](#tab/ssms)
 
-SQL Server Management Studio (SSMS) を使い慣れていない場合は、[接続 & クエリ](../ssms/tutorials/connect-query-sql-server.md)を使用して開始することができます。 
+SQL Server Management Studio (SSMS) を使い慣れていない場合は、 [接続 & クエリ](../ssms/quickstarts/ssms-connect-query-sql-server.md) を使用して開始することができます。 
 
 SQL Server Management Studio でデータベースを復元するには、次の手順を実行します。
 
@@ -73,18 +73,18 @@ SQL Server Management Studio でデータベースを復元するには、次の
    `C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Backup`. 
 
 3. SQL Server Management Studio (SSMS) を開き、で SQL Server に接続します。 
-4. データベースの復元ウィザードを起動するには**オブジェクトエクスプローラー**[データベースの復元 **] で [データベース]** を右クリックします。  >  **Restore Database...** **Restore Database** 
+4. データベースの復元ウィザードを起動するには **オブジェクトエクスプローラー**[データベースの復元 **] で [データベース]** を右クリックします。  >    
 
-   :::image type="content" source="media/adventureworks-install-configure/restore-db-ssms.png" alt-text="オブジェクトエクスプローラーでデータベースを右クリックし、[データベースの復元] を選択して、データベースを復元することを選択します。":::
+   :::image type="content" source="media/adventureworks-install-configure/restore-db-ssms.png" alt-text="オブジェクトエクスプローラーでデータベースを右クリックし、[データベースの復元] を選択して、データベースを復元する方法を示すスクリーンショット。":::
 
 
-1. [**デバイス**] を選択し、省略記号 **(...)** を選択してデバイスを選択します。 
-1. [**追加**] を選択し、 `.bak` 最近この場所に移動したファイルを選択します。 この場所にファイルを移動したが、ウィザードで表示できない場合は、通常、アクセス許可の問題が SQL Server か、このフォルダー内のこのファイルに対するアクセス許可が SQL Server にサインインしているユーザーがいないことを示しています。 
-1. [ **OK]** を選択して、データベースのバックアップの選択を確認し、 **[バックアップデバイスの選択**] ウィンドウを閉じます。 
-1. [**ファイル**] タブを確認し**て、復元**の場所とファイル名が**データベースの復元**ウィザードの目的の場所とファイル名と一致していることを確認します。 
+1. [ **デバイス** ] を選択し、省略記号 **(...)** を選択してデバイスを選択します。 
+1. [ **追加** ] を選択し、 `.bak` 最近この場所に移動したファイルを選択します。 この場所にファイルを移動したが、ウィザードで表示できない場合は、通常、アクセス許可の問題が SQL Server か、このフォルダー内のこのファイルに対するアクセス許可が SQL Server にサインインしているユーザーがいないことを示しています。 
+1. [ **OK]** を選択して、データベースのバックアップの選択を確認し、 **[バックアップデバイスの選択** ] ウィンドウを閉じます。 
+1. [ **ファイル** ] タブを確認し **て、復元** の場所とファイル名が **データベースの復元** ウィザードの目的の場所とファイル名と一致していることを確認します。 
 1. **[OK]** を選択してデータベースを復元します。 
 
-   :::image type="content" source="media/adventureworks-install-configure/restore-db-wizard-ssms.png" alt-text="オブジェクトエクスプローラーでデータベースを右クリックし、[データベースの復元] を選択して、データベースを復元することを選択します。":::
+   :::image type="content" source="media/adventureworks-install-configure/restore-db-wizard-ssms.png" alt-text="復元するバックアップセットが強調表示されている [データベースの復元] ウィンドウと、[OK] オプションが表示されたスクリーンショット。":::
 
 SQL Server データベースの復元の詳細については、「 [SSMS を使用したデータベースバックアップの復元](../relational-databases/backup-restore/restore-a-database-backup-using-ssms.md)」を参照してください。
 
@@ -92,7 +92,8 @@ SQL Server データベースの復元の詳細については、「 [SSMS を�
 
 Transact-sql (T-sql) を使用して、サンプルデータベースを復元できます。 AdventureWorks2019 を復元する例を以下に示しますが、データベース名とインストールファイルのパスは環境によって異なる場合があります。 
 
-AdventureWorks2019 を復元するには、必要に応じて環境に合わせて値を変更し、次の Transact-sql (T-sql) コマンドを実行します。
+AdventureWorks2019 を **Windows** に復元するには、必要に応じて環境に合わせて値を変更し、次の Transact-sql (t-sql) コマンドを実行します。
+
 
 ```sql
 USE [master]
@@ -101,6 +102,19 @@ FROM  DISK = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\B
 WITH  FILE = 1,  NOUNLOAD,  STATS = 5
 GO
 
+```
+
+AdventureWorks2019 を **linux** に復元するには、Windows ファイルシステムのパスを linux に変更し、次の Transact-sql (t-sql) コマンドを実行します。 
+
+
+```sql
+USE [master]
+RESTORE DATABASE [AdventureWorks2019]
+FROM DISK = '/var/opt/mssql/backup/AdventureWorks2019.bak'
+WITH MOVE 'AdventureWorks2017' TO '/var/opt/mssql/data/AdventureWorks2019.mdf',
+MOVE 'AdventureWorks2017_log' TO '/var/opt/mssql/data/AdventureWorks2019_log.ldf',
+FILE = 1,  NOUNLOAD,  STATS = 5
+GO
 ```
 
 # <a name="azure-data-studio"></a>[Azure Data Studio](#tab/data-studio)
@@ -115,25 +129,25 @@ Azure Data Studio でデータベースを復元するには、次の手順を�
     `C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Backup`.
 
 1. Azure Data Studio Studio を開き、SQL Server インスタンスに接続します。
-1. サーバーを右クリックし、[**管理**] を選択します。
+1. サーバーを右クリックし、[ **管理**] を選択します。
 
-   :::image type="content" source="media/adventureworks-install-configure/ads-manage.png" alt-text="オブジェクトエクスプローラーでデータベースを右クリックし、[データベースの復元] を選択して、データベースを復元することを選択します。":::
+   :::image type="content" source="media/adventureworks-install-configure/ads-manage.png" alt-text="[管理] オプションが強調表示されている Azure Data Studio を示すスクリーンショット。":::
 
-1. **復元**の選択
+1. **復元** の選択
 
    :::image type="content" source="media/adventureworks-install-configure/ads-restore-database.png" alt-text="上部のメニューから [復元] を選択して、データベースを復元します。":::
 
-1. [**全般**] タブで、[**ソース**] の一覧に表示される値を入力します。
-    1. [**復元元**] で、[*バックアップファイル*] を選択します。
-    1. [**バックアップファイルのパス**] で、.bak ファイルを保存した場所を選択します。 
+1. [ **全般** ] タブで、[ **ソース**] の一覧に表示される値を入力します。
+    1. [ **復元元**] で、[ *バックアップファイル*] を選択します。
+    1. [ **バックアップファイルのパス**] で、.bak ファイルを保存した場所を選択します。 
     
    :::image type="content" source="media/adventureworks-install-configure/ads-source.png" alt-text="バックアップファイルのパスを選択してください":::
     
-    これにより、**データベース**、**ターゲットデータベース**、復元などの残りのフィールドが自動的**に**設定されます。 
+    これにより、 **データベース**、 **ターゲットデータベース** 、復元などの残りのフィールドが自動的 **に** 設定されます。 
 
    :::image type="content" source="media/adventureworks-install-configure/ads-destination-restore-plan.png" alt-text="バックアップファイルのパスを選択すると、残りのフィールドは自動設定されます。":::
 
-1. [**復元**] を選択して、データベースを復元します。 
+1. [ **復元** ] を選択して、データベースを復元します。 
 
    :::image type="content" source="media/adventureworks-install-configure/ads-restore.png" alt-text="準備ができたら、[復元] を選択してデータベースを復元します。":::
 
@@ -152,14 +166,14 @@ Azure SQL Database で新しいデータベースを作成する場合は、空�
 サンプルデータベースを使用して新しいデータベースを作成するには、次の手順に従います。 
 
 1. Azure portal に接続します。
-1. ナビゲーションウィンドウの左上にある [**リソースの作成**] を選択します。 
-1. [**データベース**] を選択し、[ **SQL Database**] を選択します。 
+1. ナビゲーションウィンドウの左上にある [ **リソースの作成** ] を選択します。 
+1. [ **データベース** ] を選択し、[ **SQL Database**] を選択します。 
 1. 要求された情報を入力して、データベースを作成します。 
 1. [**追加設定**] タブで、[**データソース**] の下の既存のデータとして [**サンプル**] を選択します。 
 
    :::image type="content" source="media/adventureworks-install-configure/deploy-sample-to-azure.png" alt-text="Azure SQL Database を作成するときに、Azure portal の [追加設定] タブでデータソースとして [サンプル] を選択します。":::
 
-1. [**作成**] を選択して、AdventureWorksLT データベースの復元されたコピーである新しい SQL Database を作成します。 
+1. [ **作成** ] を選択して、AdventureWorksLT データベースの復元されたコピーである新しい SQL Database を作成します。 
 
 
 ### <a name="deploy-database-from-sql-server"></a>SQL Server からデータベースを配置する
@@ -169,7 +183,7 @@ SQL Server Management Studio には、Azure SQL Database にデータベース�
 SQL Server から Azure SQL Database にサンプルデータベースを配置するには、次の手順を実行します。
 
 1. SQL Server Management Studio で SQL Server に接続します。 
-1. まだ実行していない場合は、[サンプルデータベースを SQL Server に復元](#restore-to-sql-server)します。 
+1. まだ実行していない場合は、 [サンプルデータベースを SQL Server に復元](#restore-to-sql-server)します。 
 1. 復元したデータベースを右クリックし、**オブジェクトエクスプローラー**  >  **タスク**] [  >  **データベースを Microsoft Azure SQL Database に配置**...] の順にクリックします。 
 
    :::image type="content" source="media/adventureworks-install-configure/deploy-db-to-azure.png" alt-text="データベースを右クリックして [タスク] を選択し、Microsoft Azure SQL Database にデータベースを配置することを選択します。":::
@@ -194,5 +208,5 @@ SQL Server から Azure SQL Database にサンプルデータベースを配置�
 
 
 [SQL Server データベースエンジンのチュートリアル](../relational-databases/database-engine-tutorials.md)   
-[SQL Server Management Studio を使用した接続とクエリ (SSMS)](../ssms/tutorials/connect-query-sql-server.md)   
-[Azure Data Studio を使用した接続とクエリ](../ssms/tutorials/connect-query-sql-server.md)
+[SQL Server Management Studio を使用した接続とクエリ (SSMS)](../ssms/quickstarts/ssms-connect-query-sql-server.md)   
+[Azure Data Studio を使用した接続とクエリ](../ssms/quickstarts/ssms-connect-query-sql-server.md)

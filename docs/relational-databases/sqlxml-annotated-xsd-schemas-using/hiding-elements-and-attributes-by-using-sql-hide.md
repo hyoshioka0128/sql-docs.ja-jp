@@ -25,27 +25,27 @@ ms.assetid: 0978301b-f068-46b6-82b9-dc555161f52e
 author: MightyPen
 ms.author: genemi
 ms.reviewer: ''
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 81b6570f0301d501f1f8899da70e60f04f1c5c44
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 44f7bf464742b1863ebc62a5def3f484932b52c2
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85750757"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97415795"
 ---
 # <a name="hiding-elements-and-attributes-by-using-sqlhide"></a>sql:hide による要素と属性の非表示
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
-  XSD スキーマに対して XPath クエリを実行すると、結果の XML ドキュメントにはスキーマで指定された要素と属性が含められます。 **Sql: hide**注釈を使用して、スキーマで一部の要素と属性を非表示にするように指定できます。 この機能は、クエリの選択条件としてはスキーマ内の特定の要素または属性が必要でも、生成される XML ドキュメントではこれらを返したくない場合に便利です。  
+  XSD スキーマに対して XPath クエリを実行すると、結果の XML ドキュメントにはスキーマで指定された要素と属性が含められます。 **Sql: hide** 注釈を使用して、スキーマで一部の要素と属性を非表示にするように指定できます。 この機能は、クエリの選択条件としてはスキーマ内の特定の要素または属性が必要でも、生成される XML ドキュメントではこれらを返したくない場合に便利です。  
   
- **Sql: hide**注釈はブール値 (0 = false、1 = true) を取ります。 指定できる値は 0、1、true、false です。  
+ **Sql: hide** 注釈はブール値 (0 = false、1 = true) を取ります。 指定できる値は 0、1、true、false です。  
   
-## <a name="examples"></a>使用例  
+## <a name="examples"></a>例  
  次の例を使用した実際のサンプルを作成するには、特定の条件を満たす必要があります。 詳細については、「 [SQLXML の例を実行するための要件](../../relational-databases/sqlxml/requirements-for-running-sqlxml-examples.md)」を参照してください。  
   
-### <a name="a-specifying-sqlhide-on-an-attribute"></a>A: 属性に sql:hide を指定する  
- この例の XSD スキーマは、 **\<Person.Contact>** **ContactID**、 **FirstName**、および**LastName**属性を持つ要素で構成されています。  
+### <a name="a-specifying-sqlhide-on-an-attribute"></a>A. 属性に sql:hide を指定する  
+ この例の XSD スキーマは、 **\<Person.Contact>** **ContactID**、 **FirstName**、および **LastName** 属性を持つ要素で構成されています。  
   
- **\<Person.Contact>** 要素は複合型であるため、同じ名前のテーブルにマップされます (既定のマッピング)。 要素のすべての属性 **\<Person.Contact>** は単純型で、AdventureWorks データベースの Person. Contacttable 内の同じ名前の列にマップされます。 スキーマでは、 **ContactID**属性に**sql: hide**注釈が指定されています。 このスキーマに対して XPath クエリを指定すると、XML ドキュメントで**ContactID**が返されません。  
+ **\<Person.Contact>** 要素は複合型であるため、同じ名前のテーブルにマップされます (既定のマッピング)。 要素のすべての属性 **\<Person.Contact>** は単純型で、AdventureWorks データベースの Person. Contacttable 内の同じ名前の列にマップされます。 スキーマでは、 **ContactID** 属性に **sql: hide** 注釈が指定されています。 このスキーマに対して XPath クエリを指定すると、XML ドキュメントで **ContactID** が返されません。  
   
 ```  
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"   
@@ -82,7 +82,7 @@ ms.locfileid: "85750757"
   
 3.  SQLXML 4.0 テスト スクリプト (sqlxml4test.vbs) を作成し、それを使用してテンプレートを実行します。  
   
-     詳細については、「ADO を使用した[SQLXML 4.0 クエリの実行](../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
+     詳細については、「ADO を使用した [SQLXML 4.0 クエリの実行](../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
   
  結果セットは次のようになります。  
   
@@ -92,7 +92,7 @@ ms.locfileid: "85750757"
 </ROOT>  
 ```  
   
- 要素に**sql: hide**が指定されている場合、要素とその属性または子要素は、生成された XML ドキュメントに表示されません。 次に、 **sql: hide**が要素に指定されている別の XSD スキーマを示し **\<OD>** ます。  
+ 要素に **sql: hide** が指定されている場合、要素とその属性または子要素は、生成された XML ドキュメントに表示されません。 次に、 **sql: hide** が要素に指定されている別の XSD スキーマを示し **\<OD>** ます。  
   
 ```  
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"  

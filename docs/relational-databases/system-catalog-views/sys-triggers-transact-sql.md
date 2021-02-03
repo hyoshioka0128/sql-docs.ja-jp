@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - triggers
 - triggers_TSQL
@@ -18,22 +18,22 @@ dev_langs:
 helpviewer_keywords:
 - sys.triggers catalog view
 ms.assetid: cefa4fc4-b8b9-4cd7-b124-eed5283acbfc
-author: markingmyname
-ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: b533a4bd4f2b404975e8315f36aba9b31e3b51ce
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: a7e094d89d7515a22474b2b05c15e1274080aa38
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545374"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99200186"
 ---
 # <a name="systriggers-transact-sql"></a>sys.triggers (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
-  TR トリガーまたは TA トリガーであるオブジェクトごとに、1 行のデータを格納します。 DML トリガー名はスキーマスコープであるため、 **sys. オブジェクト**に表示されます。 DDL トリガー名は親エンティティによってスコープが設定され、このビューでのみ表示されます。  
+  TR トリガーまたは TA トリガーであるオブジェクトごとに、1 行のデータを格納します。 DML トリガー名はスキーマスコープであるため、 **sys. オブジェクト** に表示されます。 DDL トリガー名は親エンティティによってスコープが設定され、このビューでのみ表示されます。  
   
- **Parent_class**列と**name**列は、データベース内のトリガーを一意に識別します。  
+ **Parent_class** 列と **name** 列は、データベース内のトリガーを一意に識別します。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

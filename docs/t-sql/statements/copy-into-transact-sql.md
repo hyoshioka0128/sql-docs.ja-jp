@@ -1,8 +1,8 @@
 ---
-title: COPY INTO (Transact-SQL) (プレビュー)
-titleSuffix: (SQL Data Warehouse) - SQL Server
-description: Azure SQL Data Warehouse で COPY ステートメントを使用して、外部ストレージ アカウントからの読み込みを行います。
-ms.date: 08/05/2020
+title: COPY INTO (Transact-SQL)
+titleSuffix: (Azure Synapse Analytics) - SQL Server
+description: Azure Synapse Analytics で COPY ステートメントを使用して、外部ストレージ アカウントからの読み込みを行います。
+ms.date: 09/25/2020
 ms.prod: sql
 ms.prod_service: database-engine, sql-data-warehouse
 ms.reviewer: jrasnick
@@ -17,19 +17,19 @@ dev_langs:
 - TSQL
 author: kevinvngo
 ms.author: kevin
-monikerRange: =sqlallproducts-allversions||=azure-sqldw-latest
-ms.openlocfilehash: e2f225a66be811b3cafe13c0ccf89eb81700a1aa
-ms.sourcegitcommit: 6d53ecfdc463914f045c20eda96da39dec22acca
+monikerRange: =azure-sqldw-latest
+ms.openlocfilehash: 43a5cc755eb07fe80a0d33d6b5b892e2a65ab21e
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88901571"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97638824"
 ---
-# <a name="copy-transact-sql-preview"></a>COPY (Transact-SQL) (プレビュー)
+# <a name="copy-transact-sql"></a>COPY (Transact-SQL)
 
 [!INCLUDE [asa](../../includes/applies-to-version/asa.md)]
 
-この記事では、Azure SQL Data Warehouse で COPY ステートメントを使用して、外部ストレージ アカウントからの読み込みを行う方法について説明します。 COPY ステートメントを使用すると、SQL Data Warehouse への高スループットのデータ インジェストで最大の柔軟性が確保されます。 次の機能に COPY を使用します。
+この記事では、[!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] で COPY ステートメントを使用して、外部ストレージ アカウントからの読み込みを行う方法について説明します。 COPY ステートメントを使用すると、[!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] への高スループットのデータ インジェストで最大の柔軟性が確保されます。 次の機能に COPY を使用します。
 
 - データ ウェアハウスに対する厳格な CONTROL アクセス許可を使用せずに、低い特権のユーザーを使用して読み込むことができます。
 - 追加のデータベース オブジェクトを作成することなく、1 つの T-SQL ステートメントを実行できます。
@@ -41,14 +41,11 @@ ms.locfileid: "88901571"
 - CSV ファイルで SQL Server の日付形式を活用できます。
 - 保存場所のパスにワイルドカードや複数のファイルを指定できます。
 
-> [!NOTE]  
-> COPY ステートメントは、現在、パブリック プレビュー段階にあります。
-
 COPY ステートメントを使用した包括的な例とクイックスタートについては、次のドキュメントを参照してください。
 
-- [クイック スタート: COPY ステートメントを使用してデータを一括読み込みする](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/quickstart-bulk-load-copy-tsql)
-- [クイック スタート: COPY ステートメントとそのサポートされている認証方法の使用例](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/quickstart-bulk-load-copy-tsql-examples)
-- [クイック スタート: 機能が豊富な Synapse Studio UI を使用して COPY ステートメントを作成する (Workspace プレビュー)](https://docs.microsoft.com/azure/synapse-analytics/quickstart-load-studio-sql-pool)
+- [クイック スタート: COPY ステートメントを使用してデータを一括読み込みする](/azure/synapse-analytics/sql-data-warehouse/quickstart-bulk-load-copy-tsql)
+- [クイック スタート: COPY ステートメントとそのサポートされている認証方法の使用例](/azure/synapse-analytics/sql-data-warehouse/quickstart-bulk-load-copy-tsql-examples)
+- [クイック スタート: 機能が豊富な Synapse Studio UI を使用して COPY ステートメントを作成する](/azure/synapse-analytics/quickstart-load-studio-sql-pool)
 
 ## <a name="syntax"></a>構文  
 
@@ -102,7 +99,7 @@ WITH
 - ADLS Gen2 の *External location*: https://<account>. dfs.core.windows.net/<container>/<path>
 
 > [!NOTE]  
-> BLOB エンドポイントは、下位互換性のため ADLS Gen2 で使用できます。 最適なパフォーマンスを得るには、**BLOB** エンドポイントを使用します。
+> .blob エンドポイントは ADLS Gen2 にも使用でき、現在最高のパフォーマンスを実現しています。 お使いの認証方法で .dfs が必要ない場合、.blob エンドポイントを使用します。
 
 - *Account* - ストレージ アカウント名
 
@@ -134,18 +131,25 @@ WITH
 >Polybase のファイルの種類である "区切りテキスト" は "CSV" ファイル形式に置き換えられています。このファイル形式で既定のコンマ区切り記号を構成するには、FIELDTERMINATOR パラメーターを使用します。 
 
 *FILE_FORMAT = external_file_format_name*</br>
-*FILE_FORMAT* は Parquet ファイルおよび ORC ファイルにのみ適用され、外部データのファイルの種類と圧縮方法を格納する外部ファイル形式オブジェクトの名前を指定します。 外部ファイル形式を作成するには、[CREATE EXTERNAL FILE FORMAT](create-external-file-format-transact-sql.md?view=azure-sqldw-latest) を使用します。
+*FILE_FORMAT* は Parquet ファイルおよび ORC ファイルにのみ適用され、外部データのファイルの種類と圧縮方法を格納する外部ファイル形式オブジェクトの名前を指定します。 外部ファイル形式を作成するには、[CREATE EXTERNAL FILE FORMAT](create-external-file-format-transact-sql.md) を使用します。
 
 *CREDENTIAL (IDENTITY = ‘’, SECRET = ‘’)*</br>
 *CREDENTIAL* は、外部ストレージ アカウントにアクセスするための認証メカニズムを指定します。 認証方法を次に示します。
 
-|                          |                CSV                |              Parquet               |                ORC                 |
-| :----------------------: | :-------------------------------: | :-------------------------------:  | :-------------------------------:  |
-|  **Azure Blob Storage**  | SAS/MSI/サービス プリンシパル/キー/AAD |              SAS/キー               |              SAS/キー               |
-| **Azure Data Lake Gen2** | SAS/MSI/サービス プリンシパル/キー/AAD | SAS (BLOB エンドポイント)/MSI (dfs エンドポイント)/サービス プリンシパル/キー/AAD | SAS (BLOB エンドポイント)/MSI (dfs エンドポイント)/サービス プリンシパル/キー/AAD |
+|                          |                CSV                |                      Parquet                       |                        ORC                         |
+| :----------------------: | :-------------------------------: | :------------------------------------------------: | :------------------------------------------------: |
+|  **Azure Blob Storage**  | SAS/MSI/サービス プリンシパル/キー/AAD |                      SAS/キー                       |                      SAS/キー                       |
+| **Azure Data Lake Gen2** | SAS/MSI/サービス プリンシパル/キー/AAD | SAS (BLOB<sup>1</sup>)/MSI (dfs<sup>2</sup>)/サービス プリンシパル/キー/AAD | SAS (BLOB<sup>1</sup>)/MSI (dfs<sup>2</sup>)/サービス プリンシパル/キー/AAD |
+
+1:この認証方法には、お使いの外部のロケーション パスに .blob エンドポイント ( **.blob**.core.windows.net) が必要です。
+
+2:この認証方法には、お使いの外部のロケーション パスに .dfs エンドポイント ( **.dfs**.core.windows.net) が必要です。
 
 
-AAD またはパブリック ストレージ アカウントを使用して認証する場合は、CREDENTIAL を指定する必要はありません。 
+> [!NOTE]  
+>
+> - AAD またはパブリック ストレージ アカウントを使用して認証する場合は、CREDENTIAL を指定する必要はありません。 
+> - ストレージ アカウントが VNet に関連付けられている場合は、MSI (マネージド ID) を使用して認証する必要があります。
 
 - Shared Access Signatures (SAS) を使用した認証
   
@@ -252,13 +256,13 @@ ROW TERMINATOR の UTF-8 では、拡張 ASCII およびマルチバイト文字
 *FIRSTROW* は CSV に適用され、COPY コマンドに対して、すべてのファイルで最初に読み取られる行番号を指定します。 値は 1 から始まり、これが既定値です。 2 に設定すると、データが読み込まれるときに、すべてのファイルの最初の行 (ヘッダー行) がスキップされます。 行は、行ターミネータの存在に基づいてスキップされます。
 
 *DATEFORMAT = { ‘mdy’ \| ‘dmy’ \| ‘ymd’ \| ‘ydm’ \| ‘myd’ \| ‘dym’ }*</br>
-DATEFORMAT は CSV にのみ適用され、SQL Server 日付形式に対する日付の日付形式のマッピングを指定します。 Transact-SQL の日付と時刻のデータ型および関数の概要については、「[日付と時刻のデータ型および関数 (Transact-SQL)](../functions/date-and-time-data-types-and-functions-transact-sql.md?view=sql-server-ver15)」を参照してください。 COPY コマンド内の DATEFORMAT は、[セッション レベルで構成された DATEFORMAT](set-dateformat-transact-sql.md?view=sql-server-ver15) よりも優先されます。
+DATEFORMAT は CSV にのみ適用され、SQL Server 日付形式に対する日付の日付形式のマッピングを指定します。 Transact-SQL の日付と時刻のデータ型および関数の概要については、「[日付と時刻のデータ型および関数 (Transact-SQL)](../functions/date-and-time-data-types-and-functions-transact-sql.md)」を参照してください。 COPY コマンド内の DATEFORMAT は、[セッション レベルで構成された DATEFORMAT](set-dateformat-transact-sql.md) よりも優先されます。
 
 *ENCODING = ‘UTF8’ | ‘UTF16’*</br>
 *ENCODING* は CSV にのみ適用されます。 既定値は UTF8 です。 COPY コマンドによって読み込まれたファイルのデータ エンコード標準を指定します。 
 
 *IDENTITY_INSERT = ‘ON’ | ‘OFF’*</br>
-IDENTITY_INSERT は、インポートしたデータ ファイルの ID 値 (複数可) を ID 列に使用するかどうかを指定します。 IDENTITY_INSERT が OFF (既定値) の場合、この列の ID 値は検証されますが、インポートされません。 テーブル作成時に指定されたシード値と増分値に基づいて、固有の値が SQL DW によって自動的に割り当てられます。 COPY コマンドによる次の動作に注意してください。
+IDENTITY_INSERT は、インポートしたデータ ファイルの ID 値 (複数可) を ID 列に使用するかどうかを指定します。 IDENTITY_INSERT が OFF (既定値) の場合、この列の ID 値は検証されますが、インポートされません。 テーブル作成時に指定されたシード値と増分値に基づいて、一意の値が Azure Synapse Analytics によって自動的に割り当てられます。 COPY コマンドによる次の動作に注意してください。
 
 - IDENTITY_INSERT が OFF で、テーブルに ID 列がある場合
   - 入力フィールドを ID 列にマップしない列リストを指定する必要があります。
@@ -271,10 +275,10 @@ IDENTITY_INSERT は、インポートしたデータ ファイルの ID 値 (複
 
 コピー コマンドを実行するユーザーには次の権限が必要です。 
 
-- [ADMINISTER DATABASE BULK OPERATIONS](grant-database-permissions-transact-sql.md?view=azure-sqldw-latest#remarks)
-- [INSERT ](grant-database-permissions-transact-sql.md?view=azure-sqldw-latest#remarks)
+- [ADMINISTER DATABASE BULK OPERATIONS](grant-database-permissions-transact-sql.md#remarks)
+- [INSERT ](grant-database-permissions-transact-sql.md#remarks)
 
-INSERT 権限および ADMINISTER BULK OPERATIONS 権限が必要です。 Azure SQL Data Warehouse では、INSERT 権限と ADMINISTER DATABASE BULK OPERATIONS 権限が必要です。
+INSERT 権限および ADMINISTER BULK OPERATIONS 権限が必要です。 [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] では、INSERT および ADMINISTER DATABASE BULK OPERATIONS 権限が必要です。
 
 ## <a name="examples"></a>例  
 
@@ -398,7 +402,7 @@ WITH (
 ## <a name="faq"></a>よく寄せられる質問
 
 ### <a name="what-is-the-performance-of-the-copy-command-compared-to-polybase"></a>PolyBase と比較した場合の COPY コマンドのパフォーマンスについて教えてください。
-ワークロードによっては、COPY コマンドのパフォーマンスが向上します。 パブリック プレビュー中に最適な読み込みパフォーマンスを得るには、CSV の読み込み時に複数のファイルに入力を分割することを検討してください。 プレビュー期間中にパフォーマンスの結果をチームと共有してください。 sqldwcopypreview@service.microsoft.com
+ワークロードによっては、COPY コマンドのパフォーマンスが向上します。 最適な読み込みパフォーマンスを得るには、CSV の読み込み時に複数のファイルに入力を分割することを検討してください。
 
 ### <a name="what-is-the-file-splitting-guidance-for-the-copy-command-loading-csv-files"></a>CSV ファイルを読み込む COPY コマンドに関するファイルの分割ガイダンスについて教えてください。
 ファイル数に関するガイダンスを、次の表で説明します。 推奨されるファイル数に到達すると、大きいファイル程パフォーマンスが向上します。 単純なファイル分割エクスペリエンスについては、次の[ドキュメント](https://techcommunity.microsoft.com/t5/azure-synapse-analytics/how-to-maximize-copy-load-throughput-with-file-splits/ba-p/1314474)を参照してください。 
@@ -426,24 +430,22 @@ WITH (
 ### <a name="what-is-the-file-splitting-guidance-for-the-copy-command-loading-parquet-or-orc-files"></a>Parquet ファイルまたは ORC ファイルを読み込む COPY コマンドに関するファイルの分割ガイダンスについて教えてください。
 COPY コマンドによって自動的にファイルが分割されるため、Parquet ファイルと ORC ファイルを分割する必要はありません。 最適なパフォーマンスを得るには、Azure ストレージ アカウントの Parquet ファイルと ORC ファイルが 256MB 以上である必要があります。 
 
-### <a name="when-will-the-copy-command-be-generally-available"></a>COPY コマンドはいつ一般公開されますか?
-COPY コマンドは、この暦年 (2020) の終わりまでに一般提供されます。 
-
 ### <a name="are-there-any-limitations-on-the-number-or-size-of-files"></a>ファイルの数やサイズに制限はありますか?
 ファイルの数やサイズに制限はありません。ただし、最適なパフォーマンスを得るには、少なくとも 4 MB のファイルを使用することをお勧めします。
 
-### <a name="are-there-any-limitations-with-copy-using-synapse-workspaces-preview"></a>Synapse ワークスペース (プレビュー) を使用した場合、COPY には何か制限がありますか?
-
-マネージド ID (MSI) を使用する認証は、COPY ステートメントまたは PolyBase (パイプラインで使用する場合を含む) ではサポートされていません。 次のようなエラー メッセージが表示されることがあります。
+### <a name="are-there-any-known-issues-with-the-copy-statement"></a>COPY ステートメントに既知の問題はありますか?
+2020 年 12 月 7 日より前に作成された Synapse ワークスペースがある場合、マネージド ID を使用して認証するときに、同様のエラー メッセージが表示されることがあります。
 
 *com.microsoft.sqlserver.jdbc.SQLServerException: マネージド サービス ID はこのサーバーでは有効にされていません。マネージド サービス ID を有効にして、もう一度お試しください。*
 
-ストレージ アカウントが VNet に関連付けられている場合、MSI 認証が必要です。 ストレージ アカウントが VNet に関連付けられている場合は、COPY または PolyBase ではなく、BCP の一括挿入を使用してデータを読み込む必要があります。
+この問題を回避するには、次の手順に従って、ワークスペースのマネージド ID を再登録します。
 
-この制限は、Synapse ワークスペース (プレビュー) に属する SQL プールにのみ適用されます。 今後のリリースでは、Synapse ワークスペースで MSI がサポートされるようになります。 
+1. Azure portal で Synapse ワークスペースにアクセスします
+2. [マネージド ID] ブレードにアクセスします 
+3. [パイプラインの許可] オプションが既にオンになっている場合は、この設定をオフにして保存する必要があります
+4. [パイプラインの許可] オプションをオンにして保存します
 
-フィードバックや問題は、配布リストの sqldwcopypreview@service.microsoft.com までお寄せください。
 
 ## <a name="see-also"></a>関連項目  
 
- [SQL Data Warehouse を使用した読み込みの概要](/azure/sql-data-warehouse/design-elt-data-loading)
+ [[!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] で概要を読み込む](/azure/sql-data-warehouse/design-elt-data-loading)

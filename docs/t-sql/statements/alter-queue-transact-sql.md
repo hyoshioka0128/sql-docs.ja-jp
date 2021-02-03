@@ -22,14 +22,14 @@ helpviewer_keywords:
 - unavailable queues [SQL Server]
 - activation stored procedures [Service Broker]
 ms.assetid: d54aa325-8761-4cd4-8da7-acf33df12296
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: 85e3edf2b7fd40fbf5bd9e046923354b5d299e41
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 09303d17e8cb284251d9c8e585eeadb5a1a1e898
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88467362"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170844"
 ---
 # <a name="alter-queue-transact-sql"></a>ALTER QUEUE (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -76,7 +76,6 @@ WITH
 {  
    ( MAXDOP = max_degree_of_parallelism )  
 }  
-  
 ```  
   
 
@@ -108,12 +107,12 @@ WITH
  キューがストアド プロシージャをアクティブにするかどうかを指定します。 STATUS = ON の場合は、現在実行中のプロシージャの数が MAX_QUEUE_READERS より少なく、ストアド プロシージャによるメッセージの受信よりも早くメッセージがキューに到着する場合に、PROCEDURE_NAME で指定されるストアド プロシージャがキューによって開始されます。 STATUS = OFF の場合は、キューによってストアド プロシージャはアクティブになりません。  
   
  REBUILD [ WITH \<queue_rebuild_options> ]  
- **適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降。  
+ **適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降。  
   
  キューの内部テーブルのすべてのインデックスを再構築します。 負荷が高いために断片化の問題が発生した場合は、この機能を使用します。 MAXDOP は、唯一サポートされているキューの rebuild オプションです。 REBUILD は常にオフライン操作です。  
   
  REORGANIZE [ WITH ( LOB_COMPACTION = { ON | OFF } ) ]  
- **適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降。  
+ **適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降。  
   
  キューの内部テーブルのすべてのインデックスを再構成します。   
 ユーザー テーブルの REORGANIZE とは異なり、キューの REORGANIZE は常にオフライン操作として実行されます。これは、キューではページ レベルのロックが明示的に無効になっているためです。  
@@ -122,7 +121,7 @@ WITH
 >  インデックスの断片化に関する一般的なガイダンスでは、断片化が 5% から 30% の場合、インデックスを再構成します。 断片化が 30% を超える場合は、インデックスを再構築します。 ただし、これらの数値は環境の開始点として一般的なガイダンスでのみ使用できます。 インデックスの断片化の量を確認するには、「[sys.dm_db_index_physical_stats &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-index-physical-stats-transact-sql.md)」を使用します。例については、この記事の例 G を参照してください。  
   
  MOVE TO { *file_group* | "default" }  
- **適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降。  
+ **適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降。  
   
  キューの内部テーブルを (そのインデックスと共に) ユーザー指定のファイル グループに移動します。  新しいファイル グループを読み取り専用にすることはできません。  
   
@@ -180,14 +179,14 @@ WITH
 ### <a name="a-making-a-queue-unavailable"></a>A. キューを利用できないようにする  
  次の例では、`ExpenseQueue` キューをメッセージの受信に利用できないようにします。  
   
-```  
+```sql  
 ALTER QUEUE ExpenseQueue WITH STATUS = OFF ;  
 ```  
   
 ### <a name="b-changing-the-activation-stored-procedure"></a>B. アクティブ化ストアド プロシージャを変更する  
  次の例では、キューによって開始されるストアド プロシージャを変更します。 このストアド プロシージャは、`ALTER QUEUE` ステートメントを実行したユーザーとして実行されます。  
   
-```  
+```sql  
 ALTER QUEUE ExpenseQueue  
     WITH ACTIVATION (  
         PROCEDURE_NAME = new_stored_proc,  
@@ -197,14 +196,14 @@ ALTER QUEUE ExpenseQueue
 ### <a name="c-changing-the-number-of-queue-readers"></a>C. キュー リーダーの数を変更する  
  次の例では、このキュー用に [!INCLUDE[ssSB](../../includes/sssb-md.md)] で起動されるストアド プロシージャ インスタンスの最大数を `7` に設定します。  
   
-```  
+```sql  
 ALTER QUEUE ExpenseQueue WITH ACTIVATION (MAX_QUEUE_READERS = 7) ;  
 ```  
   
 ### <a name="d-changing-the-activation-stored-procedure-and-the-execute-as-account"></a>D. アクティブ化ストアド プロシージャと EXECUTE AS アカウントを変更する  
  次の例では、[!INCLUDE[ssSB](../../includes/sssb-md.md)] によって開始されるストアド プロシージャを変更します。 このストアド プロシージャは、ユーザー `SecurityAccount` として実行されます。  
   
-```  
+```sql  
 ALTER QUEUE ExpenseQueue  
     WITH ACTIVATION (  
         PROCEDURE_NAME = AdventureWorks2012.dbo.new_stored_proc ,  
@@ -214,7 +213,7 @@ ALTER QUEUE ExpenseQueue
 ### <a name="e-setting-the-queue-to-retain-messages"></a>E. メッセージを保持するようキューを設定する  
  次の例では、メッセージを保持するようキューを設定します。 このキューでは、キューを使用するサービス間で送信または受信されるすべてのメッセージが、そのメッセージ交換が終わるまで保持されます。  
   
-```  
+```sql  
 ALTER QUEUE ExpenseQueue WITH RETENTION = ON ;  
 ```  
   
@@ -227,29 +226,29 @@ ALTER QUEUE ExpenseQueue WITH ACTIVATION (DROP) ;
   
 ### <a name="g-rebuilding-queue-indexes"></a>G. キュー インデックスを再構築する  
   
-**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降。  
+**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降。  
   
  次の例では、キュー インデックスを再構築します。  
   
-```  
+```sql  
 ALTER QUEUE ExpenseQueue REBUILD WITH (MAXDOP = 2)   
 ```  
   
 ### <a name="h-reorganizing-queue-indexes"></a>H. キュー インデックスを再構成する  
   
-**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降。  
+**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降。  
   
  次の例では、キュー インデックスを再構成します。  
   
-```  
+```sql  
 ALTER QUEUE ExpenseQueue REORGANIZE   
 ```  
   
 ### <a name="i-moving-queue-internal-table-to-another-filegroup"></a>I:キューの内部テーブルを別のファイル グループに移動する  
   
-**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降。  
+**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降。  
   
-```  
+```sql  
 ALTER QUEUE ExpenseQueue MOVE TO [NewFilegroup]   
 ```  
   

@@ -1,12 +1,12 @@
 ---
 description: sys.dm_db_log_stats (Transact-SQL)
-title: dm_db_log_stats (Transact-sql) |Microsoft Docs
+title: sys.dm_db_log_stats (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 05/17/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - dm_db_log_stats_TSQL
 - sys.dm_db_log_stats
@@ -17,15 +17,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_db_log_stats dynamic management function
 ms.assetid: ''
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=sql-server-2017||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 98c8b45ccde39b7155443b1ef7fabd994f6b26ab
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 88ac57a5ba41afacafe8565225ed9ce7bca55991
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550306"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99191189"
 ---
 # <a name="sysdm_db_log_stats-transact-sql"></a>sys.dm_db_log_stats (Transact-SQL)   
 [!INCLUDE[tsql-appliesto-2016sp2-asdb-xxxx-xxx-md](../../includes/tsql-appliesto-2016sp2-asdb-xxxx-xxx-md.md)]
@@ -73,7 +73,7 @@ ms.locfileid: "89550306"
 |recovery_vlf_count |**bigint** |   フェールオーバーまたはサーバーの再起動があった場合に、回復する [仮想ログファイル (vlf)](../../relational-databases/sql-server-transaction-log-architecture-and-management-guide.md#physical_arch) の合計数。 |  
 
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>コメント
 `sys.dm_db_log_stats`セカンダリレプリカとして可用性グループに参加しているデータベースに対して実行する場合は、上記で説明したフィールドのサブセットのみが返されます。  現在、 `database_id` `recovery_model` `log_backup_time` セカンダリデータベースに対して実行すると、、、およびのみが返されます。   
 
 ## <a name="permissions"></a>アクセス許可  

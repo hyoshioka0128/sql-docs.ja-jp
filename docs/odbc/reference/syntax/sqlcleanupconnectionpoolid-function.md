@@ -7,25 +7,25 @@ ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
 ms.technology: connectivity
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - SQLCleanupConnectionPoolID function [ODBC]
 ms.assetid: 1fc61908-e003-4587-b91a-32f40569fb99
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 12046405d10c41796b8ad989f746aaac242f430d
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: ce2a6dc5a0a368312a46cb038cb56407f977b2ef
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88448842"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99181010"
 ---
 # <a name="sqlcleanupconnectionpoolid-function"></a>SQLCleanupConnectionPoolID 関数
 **互換性**  
  導入されたバージョン: ODBC 3.81 標準準拠: ODBC  
   
- **まとめ**  
- **SQLCleanupConnectionPoolID** は、プール ID がタイムアウトしたことをドライバーに通知します。プール ID は、そのプール ID に関連付けられているプール内のすべての接続がタイムアウトしたときにタイムアウトすることがあります。接続タイムアウトの詳細については [、「Microsoft Data Access コンポーネントでのプーリング](https://msdn.microsoft.com/library/ms810829.aspx) 」を参照してください。  
+ **要約**  
+ **SQLCleanupConnectionPoolID** は、プール ID がタイムアウトしたことをドライバーに通知します。プール ID は、そのプール ID に関連付けられているプール内のすべての接続がタイムアウトしたときにタイムアウトすることがあります。接続タイムアウトの詳細については [、「Microsoft Data Access コンポーネントでのプーリング](/previous-versions/ms810829(v=msdn.10)) 」を参照してください。  
   
 ## <a name="syntax"></a>構文  
   
@@ -47,11 +47,11 @@ SQLRETURN  SQLCleanupConnectionPoolID (
  SQL_SUCCESS、SQL_SUCCESS_WITH_INFO、SQL_ERROR、または SQL_INVALID_HANDLE。  
   
 ## <a name="diagnostics"></a>診断  
- ドライバーマネージャーは、 **SQLCleanupConnectionPoolID**から返された診断情報を処理しません。  
+ ドライバーマネージャーは、 **SQLCleanupConnectionPoolID** から返された診断情報を処理しません。  
   
  アプリケーションは、ドライバーによって返されたエラーメッセージを受信できません。  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  **SQLCleanupConnectionPoolID** はいつでも呼び出すことができますが、ドライバーマネージャーは、他のスレッドが同時に **SQLGetPoolID** を呼び出していないことを保証します。また、そのプール ID で割り当てられた接続情報トークンを使用して、他のスレッドが **SQLRateConnection** と **sqlpoolconnect** を同時に呼び出すことはありません。 そのため、ドライバーは、この機能がスレッドセーフであることを確認する必要があります。  
   
  ドライバーは、プール ID に関連付けられているリソースをクリーンアップできます。  

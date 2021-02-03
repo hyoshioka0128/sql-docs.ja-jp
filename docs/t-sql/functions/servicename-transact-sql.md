@@ -20,13 +20,13 @@ helpviewer_keywords:
 ms.assetid: 5b0b35be-50ae-411d-a607-bf7464b73624
 author: VanMSFT
 ms.author: vanto
-monikerRange: =azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017
-ms.openlocfilehash: 0754a042a02730ad58015d74b3bfdd34c1dc33fe
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017
+ms.openlocfilehash: 04bcf15b50a106833fd7cf79bdd7d3cc388d74f2
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88467924"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97481933"
 ---
 # <a name="x40x40servicename-transact-sql"></a>&#x40;&#x40;SERVICENAME (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "88467924"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql
 @@SERVICENAME  
 ```  
   
@@ -52,7 +52,7 @@ ms.locfileid: "88467924"
 ## <a name="examples"></a>例  
  次の例に、`@@SERVICENAME` の使用方法を示します。  
   
-```  
+```sql  
 SELECT @@SERVICENAME AS 'Service Name';  
 ```  
   

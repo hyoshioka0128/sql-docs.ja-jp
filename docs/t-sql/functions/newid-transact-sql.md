@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-data-warehouse, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - NEWID
 - NEWID_TSQL
@@ -19,13 +19,13 @@ helpviewer_keywords:
 ms.assetid: f7014e60-96d5-457e-afc3-72b60ba20c0f
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: =azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: b478b8ea685a5e8cf5399c5ca429936be9a18784
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 58e4d9c124a224fd1596fee815f3e475d03a5354
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88445707"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99189239"
 ---
 # <a name="newid-transact-sql"></a>NEWID (Transact-SQL)
 
@@ -82,15 +82,15 @@ CREATE TABLE cust
 (  
  CustomerID uniqueidentifier NOT NULL  
    DEFAULT newid(),  
- Company varchar(30) NOT NULL,  
- ContactName varchar(60) NOT NULL,   
- Address varchar(30) NOT NULL,   
- City varchar(30) NOT NULL,  
- StateProvince varchar(10) NULL,  
- PostalCode varchar(10) NOT NULL,   
- CountryRegion varchar(20) NOT NULL,   
- Telephone varchar(15) NOT NULL,  
- Fax varchar(15) NULL  
+ Company VARCHAR(30) NOT NULL,  
+ ContactName VARCHAR(60) NOT NULL,   
+ Address VARCHAR(30) NOT NULL,   
+ City VARCHAR(30) NOT NULL,  
+ StateProvince VARCHAR(10) NULL,  
+ PostalCode VARCHAR(10) NOT NULL,   
+ CountryRegion VARCHAR(20) NOT NULL,   
+ Telephone VARCHAR(15) NOT NULL,  
+ Fax VARCHAR(15) NULL  
 );  
 GO  
 -- Inserting 5 rows into cust table.  
@@ -114,7 +114,7 @@ GO
 ### <a name="c-using-uniqueidentifier-and-variable-assignment"></a>C. uniqueidentifier と変数代入を使用する  
  次の例では、`@myid` という名前の変数を **uniqueidentifier** データ型の変数として宣言します。 この変数に、`SET` ステートメントを使用して値を代入します。  
   
-```  
+```sql  
 DECLARE @myid uniqueidentifier ;  
 SET @myid = 'A972C577-DFB0-064E-1189-0154C99310DAAC12';  
 SELECT @myid;  

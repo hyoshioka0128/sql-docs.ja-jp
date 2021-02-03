@@ -20,13 +20,13 @@ helpviewer_keywords:
 ms.assetid: 50d2e015-05ae-4014-a1cd-4de7866ad651
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 80b0606f38f50b067f706bc5dad4d094ea49a4b2
-ms.sourcegitcommit: 75f767c7b1ead31f33a870fddab6bef52f99906b
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: f5317580647f0d8795277722e44382c2a77cdafe
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87332041"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97467293"
 ---
 # <a name="metadata-visibility-configuration"></a>メタデータ表示の構成
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -131,7 +131,7 @@ GO
   
  次のメタデータは公開を強制されません。  
   
--   **sys.servers** の **provider_string**列に格納されている値。 ALTER ANY LINKED SERVER 権限が許可されていないユーザーには、この列に NULL 値が表示されます。  
+-   **sys.servers** の **provider_string** 列に格納されている値。 ALTER ANY LINKED SERVER 権限が許可されていないユーザーには、この列に NULL 値が表示されます。  
   
 -   ストアド プロシージャやトリガーなどのユーザー定義オブジェクトのソース定義。 ソース コードは、次のいずれかの条件を満たしている場合のみ表示されます。  
   
@@ -164,7 +164,7 @@ GO
 
 -   OBJECT_DEFINITION() 関数  
   
--   **sys.sql_logins**の password_hash 列に格納された値。  CONTROL SERVER 権限が許可されていないユーザーには、この列に NULL 値が表示されます。  
+-   **sys.sql_logins** の password_hash 列に格納された値。  CONTROL SERVER 権限が許可されていないユーザーには、この列に NULL 値が表示されます。  
   
 > [!NOTE]  
 >  組み込みシステム プロシージャと組み込みシステム関数の SQL 定義は、 **sys.system_sql_modules** カタログ ビュー、 **sp_helptext** ストアド プロシージャ、および OBJECT_DEFINITION() 関数を使用すると公開されます。  

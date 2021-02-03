@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: 298eafca-e01f-4707-8c29-c75546fcd6b0
 author: rothja
 ms.author: jroth
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 27776324d94176619c25acbeefb3b6bd901d8a2a
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 4105a3c3b0ba43d3ed142cba31b2f991f6dc5287
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88418936"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97461563"
 ---
 # <a name="dml-triggers"></a>DML トリガー
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -56,15 +56,15 @@ ms.locfileid: "88418936"
   
  次の表は、AFTER トリガーと INSTEAD OF トリガーの機能を比較したものです。  
   
-|機能|AFTER トリガー|INSTEAD OF トリガー|  
+|関数|AFTER トリガー|INSTEAD OF トリガー|  
 |--------------|-------------------|------------------------|  
 |適用範囲|テーブル|テーブルとビュー|  
 |テーブルまたはビューごとの数|トリガーを起動する動作 (UPDATE、DELETE、および INSERT) ごとに複数指定できます。|トリガーを起動する動作 (UPDATE、DELETE、および INSERT) ごとに 1 つしか指定できません。|  
 |連鎖参照|制限はありません。|INSTEAD OF UPDATE トリガーと DELETE トリガーは、参照整合性制約の連鎖の対象となっているテーブルでは許可されません。|  
 |実行|次の処理の後<br /><br /> 制約処理<br /><br /> 宣言参照動作<br /><br /> **inserted** テーブルと **deleted** テーブルの作成<br /><br /> トリガーを起動する動作|次の処理の前: 制約処理<br /><br /> 次の処理の代わり: トリガーを起動する動作<br /><br /> 次の処理の後:  **inserted** テーブルと **deleted** テーブルの作成|  
-|実行の順序|最初と最後の実行内容を指定できます。|適用なし|  
-|**inserted**テーブルと **deleted**テーブル内の **varchar(max)** 、 **nvarchar(max)** 、および **varbinary(max)** の列参照|許可|許可|  
-|**inserted**テーブルと **deleted**テーブル内の **text** 、 **ntext** 、および **image** の列参照|使用できません|許可|  
+|実行の順序|最初と最後の実行内容を指定できます。|適用できません|  
+|**inserted** テーブルと **deleted** テーブル内の **varchar(max)** 、 **nvarchar(max)** 、および **varbinary(max)** の列参照|許可|許可|  
+|**inserted** テーブルと **deleted** テーブル内の **text** 、 **ntext** 、および **image** の列参照|禁止|許可されます。|  
   
  CLR トリガー  
  CLR トリガーは、AFTER トリガーと INSTEAD OF トリガーのいずれかにすることができます。 また、CLR トリガーは DDL トリガーにすることもできます。 CLR トリガーは、 [!INCLUDE[tsql](../../includes/tsql-md.md)] ストアド プロシージャを実行するのではなく、.NET Framework で作成され、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]でアップロードされたアセンブリのメンバーであるマネージド コードに記述されている、1 つ以上のメソッドを実行します。  

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - NULLIF
 - NULLIF_TSQL
@@ -19,15 +19,15 @@ helpviewer_keywords:
 - NULLIF function
 - equivalent expressions [SQL Server]
 ms.assetid: 44c7b67e-74c7-4bb9-93a4-7a3016bd2feb
-author: rothja
-ms.author: jroth
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6ceef62e268cc34f036423b2e55b56152d24ea2e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 105aca59bbcd707e644a19dcb44aaff0c4784aa3
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88361328"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99191938"
 ---
 # <a name="nullif-transact-sql"></a>NULLIF (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "88361328"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 NULLIF ( expression , expression )  
 ```  
   
@@ -49,9 +49,9 @@ NULLIF ( expression , expression )
 [!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
 
 ## <a name="return-types"></a>戻り値の型
- 最初の*式*と同じ型を返します。  
+ 最初の *式* と同じ型を返します。  
   
- NULLIF は、2 つの式が等しくない場合、最初の*式*を返します。 式が等しい場合、NULLIF は最初の*式*のデータ型の NULL 値を返します。  
+ NULLIF は、2 つの式が等しくない場合、最初の *式* を返します。 式が等しい場合、NULLIF は最初の *式* のデータ型の NULL 値を返します。  
   
 ## <a name="remarks"></a>注釈  
  NULLIF は、2 つの式を比較し、その 2 つが等価な場合に NULL を返す検索 CASE 式と同じです。  

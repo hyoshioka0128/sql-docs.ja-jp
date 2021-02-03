@@ -15,14 +15,14 @@ helpviewer_keywords:
 ms.assetid: e644696f-9017-428e-a5b3-d445d1c630b3
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 68892ebd57fb83578eda6090e3baead0bb7b4ed0
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+ms.openlocfilehash: e89b0fb2445901ec981a5bdfa238cbd31704a039
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86007209"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97473953"
 ---
 # <a name="import-native-and-character-format-data-from-earlier-versions-of-sql-server"></a>以前のバージョンの SQL Server からのネイティブ形式データおよび文字形式データのインポート
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "86007209"
 ## <a name="interpretation-of-data-types"></a>データ型について  
  [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] 以降のバージョンでは、いくつかの新しいデータ型がサポートされるようになりました。 以前の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] バージョンに新しいデータ型をインポートする場合は、古い **bcp** クライアントで読み取ることが可能な形式でそのデータ型を格納する必要があります。 次の表では、以前のバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]との互換性を維持するために、新しいデータ型がどのように変換されるかをまとめています。  
   
-|SQL Server 2005 の新しいデータ型|バージョン 6*x*の互換性のあるデータ型|バージョン 70 の互換性のあるデータ型|バージョン 80 の互換性のあるデータ型|  
+|SQL Server 2005 の新しいデータ型|バージョン 6 *x* の互換性のあるデータ型|バージョン 70 の互換性のあるデータ型|バージョン 80 の互換性のあるデータ型|  
 |---------------------------------------|-------------------------------------------|-----------------------------------------|-----------------------------------------|  
 |**bigint**|**decimal**|**decimal**|*|  
 |**sql_variant**|**text**|**nvarchar (4000)**|*|  
@@ -63,7 +63,7 @@ ms.locfileid: "86007209"
  **bcp** コマンドでは、 **datetime** 型と **smalldatetime** 型の値に使用される ODBC の既定の形式を使用して、文字形式のデータ ファイルがエクスポートされます。 たとえば、日付 **が含まれた** datetime `12 Aug 1998` 型の列は、文字列 `1998-08-12 00:00:00.000`としてデータ ファイルに一括コピーされます。  
   
 > [!IMPORTANT]  
->  **bcp** を使用してデータを **smalldatetime**フィールドにインポートする場合は、秒の値が 00.000 になっていることを確認してください。それ以外の場合、この操作は失敗します。 **smalldatetime** データ型には、最も近い "分" までの値のみが保持されます。 この場合、BULK INSERT および INSERT ... SELECT * FROM OPENROWSET(BULK...) は失敗しませんが、秒の値は切り捨てられます。  
+>  **bcp** を使用してデータを **smalldatetime** フィールドにインポートする場合は、秒の値が 00.000 になっていることを確認してください。それ以外の場合、この操作は失敗します。 **smalldatetime** データ型には、最も近い "分" までの値のみが保持されます。 この場合、BULK INSERT および INSERT ... SELECT * FROM OPENROWSET(BULK...) は失敗しませんが、秒の値は切り捨てられます。  
   
 ##  <a name="related-tasks"></a><a name="RelatedTasks"></a> 関連タスク  
  **一括インポートまたは一括エクスポートのデータ形式を使用するには**  
@@ -81,7 +81,6 @@ ms.locfileid: "86007209"
  [BULK INSERT &#40;Transact-SQL&#41;](../../t-sql/statements/bulk-insert-transact-sql.md)   
  [OPENROWSET &#40;Transact-SQL&#41;](../../t-sql/functions/openrowset-transact-sql.md)   
  [データ型 &#40;Transact-SQL&#41;](../../t-sql/data-types/data-types-transact-sql.md)   
- [SQL Server データベース エンジンの旧バージョンとの互換性](../../database-engine/sql-server-database-engine-backward-compatibility.md)   
+ [SQL Server データベース エンジンの旧バージョンとの互換性](../../database-engine/discontinued-database-engine-functionality-in-sql-server.md)   
  [CAST および CONVERT &#40;Transact-SQL&#41;](../../t-sql/functions/cast-and-convert-transact-sql.md)  
-  
   

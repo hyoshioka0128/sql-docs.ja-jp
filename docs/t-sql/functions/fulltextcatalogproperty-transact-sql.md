@@ -18,14 +18,14 @@ helpviewer_keywords:
 - FULLTEXTCATALOGPROPERTY function
 - status information [SQL Server], full-text catalogs
 ms.assetid: f841dc79-2044-4863-aff0-56b8bb61f250
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: c6e8c856b81bd4ff4ab03c988af1edf6a8b3ac43
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 57e53c26b7f1797daf6a1ccc53f7578eabda734a
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88468019"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98087390"
 ---
 # <a name="fulltextcatalogproperty-transact-sql"></a>FULLTEXTCATALOGPROPERTY (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -36,8 +36,7 @@ ms.locfileid: "88468019"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 FULLTEXTCATALOGPROPERTY ('catalog_name' ,'property')  
 ```  
   
@@ -88,7 +87,7 @@ FULLTEXTCATALOGPROPERTY ('_catalog\_name_','**IndexSize**') では、[sys.fullte
 ## <a name="examples"></a>例  
 次の例では、`Cat_Desc` という名前のフルテキスト カタログにあるフルテキスト インデックス項目の個数を返します。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 SELECT fulltextcatalogproperty('Cat_Desc', 'ItemCount');  

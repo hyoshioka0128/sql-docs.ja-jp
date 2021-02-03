@@ -6,7 +6,7 @@ ms.date: 03/14/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sp_pkeys
 - sp_pkeys_TSQL
@@ -17,13 +17,13 @@ helpviewer_keywords:
 ms.assetid: e614c75d-847b-4726-8f6f-cd18de688eda
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6051015e1b1ae91aed51f87349d2d60598cbf524
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: bfb9d942ae25c8bf690e1ed9740f56c021cf413d
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89541678"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99190032"
 ---
 # <a name="sp_pkeys-transact-sql"></a>sp_pkeys (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "89541678"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql  
--- Syntax for SQL Server, Azure SQL Database, Azure SQL Data Warehouse, Parallel Data Warehouse  
+-- Syntax for SQL Server, Azure SQL Database, Azure Synapse Analytics, Parallel Data Warehouse  
   
 sp_pkeys [ @table_name = ] 'name'       
     [ , [ @table_owner = ] 'owner' ]   
@@ -47,12 +47,12 @@ sp_pkeys [ @table_name = ] 'name'
  情報を返すテーブルを指定します。 *名前* は **sysname**,、既定値はありません。 ワイルドカードのパターンマッチングはサポートされていません。  
   
  [ @table_owner =] '*owner*'  
- 指定したテーブルのテーブル所有者を指定します。 *owner* は **sysname**,、既定値は NULL です。 ワイルドカードのパターンマッチングはサポートされていません。 *Owner*が指定されていない場合、基になる DBMS の既定のテーブル可視性ルールが適用されます。  
+ 指定したテーブルのテーブル所有者を指定します。 *owner* は **sysname**,、既定値は NULL です。 ワイルドカードのパターンマッチングはサポートされていません。 *Owner* が指定されていない場合、基になる DBMS の既定のテーブル可視性ルールが適用されます。  
   
- では [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 、指定された名前のテーブルが現在のユーザーによって所有されている場合、そのテーブルの列が返されます。 *所有者*が指定されておらず、現在のユーザーが指定された*名前*のテーブルを所有していない場合、このプロシージャは、データベース所有者が所有する、指定された*名前*のテーブルを検索します。 そのテーブルが存在する場合、そのテーブルの列が返されます。  
+ では [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 、指定された名前のテーブルが現在のユーザーによって所有されている場合、そのテーブルの列が返されます。 *所有者* が指定されておらず、現在のユーザーが指定された *名前* のテーブルを所有していない場合、このプロシージャは、データベース所有者が所有する、指定された *名前* のテーブルを検索します。 そのテーブルが存在する場合、そのテーブルの列が返されます。  
   
  [ @table_qualifier =] '*修飾子*'  
- テーブル修飾子を示します。 *修飾子* は **sysname**,、既定値は NULL です。 さまざまな DBMS 製品では、3つの要素で構成するテーブル (_修飾子_) がサポート**しています。**_所有者_**。**_名前_)。 では [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 、この列はデータベース名を表します。 一部の製品では、テーブルのデータベース環境のサーバー名を表します。  
+ テーブル修飾子を示します。 *修飾子* は **sysname**,、既定値は NULL です。 さまざまな DBMS 製品では、3つの要素で構成するテーブル (_修飾子_) がサポート **しています。**_所有者_**。**_名前_)。 では [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 、この列はデータベース名を表します。 一部の製品では、テーブルのデータベース環境のサーバー名を表します。  
   
 ## <a name="return-code-values"></a>リターン コードの値  
  なし  
@@ -68,7 +68,7 @@ sp_pkeys [ @table_name = ] 'name'
 |KEY_SEQ|**smallint**|複数列の主キーの列のシーケンス番号。|  
 |PK_NAME|**sysname**|主キー識別子。 データソースに該当しない場合は NULL を返します。|  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  sp_pkeys では、PRIMARY KEY 制約で明示的に定義された列に関する情報が返されます。 すべてのシステムが明示的に名前が付けられた主キーをサポートしているわけではないため、ゲートウェイの実装者が主キーの構成を決定します。 "主キー" という用語は、テーブルの論理主キーを指していることに注意してください。 論理主キーとして示されているすべてのキーには、一意のインデックスが定義されている必要があります。 sp_statistics には、この一意なインデックスも返されます。  
   
  sp_pkeys ストアド プロシージャは、ODBC の SQLPrimaryKeys に相当します。 返される結果は、TABLE_QUALIFIER、TABLE_OWNER、TABLE_NAME、および KEY_SEQ の値で並べ替えられます。  

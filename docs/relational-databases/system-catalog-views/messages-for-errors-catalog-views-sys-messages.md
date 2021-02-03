@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - messages_TSQL
 - sys.messages_TSQL
@@ -20,14 +20,14 @@ helpviewer_keywords:
 - sys.messages catalog view
 - error numbers [SQL Server]
 ms.assetid: 8c16ecdf-68f4-4a2a-b594-086e3344e58a
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 12f6c532c03330f5e56446bcc6d5e22dcb9a3b71
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 86deff195d153a4898775dd1127b4582a384a6e0
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539761"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99194531"
 ---
 # <a name="messages-for-errors-catalog-views---sysmessages"></a>メッセージ (エラー用) のカタログ ビュー - sys.messages
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -37,9 +37,9 @@ ms.locfileid: "89539761"
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
 |**message_id**|**int**|メッセージの ID。 これはサーバー内で一意です。 5万未満のメッセージ Id はシステムメッセージです。|  
-|**language_id**|**smallint**|**Sys.syslanguages**で定義されているように、**テキスト**内のテキストが使用される言語 ID。 これは、指定された **message_id**に対して一意です。|  
-|**severity**|**tinyint**|メッセージの重大度レベル (1 ~ 25)。 これは、 **message_id**内のすべてのメッセージ言語で同じです。|  
-|**is_event_logged**|**bit**|1 = メッセージは、エラーが発生するとイベントがログに記録されます。 これは、 **message_id**内のすべてのメッセージ言語で同じです。|  
+|**language_id**|**smallint**|**Sys.syslanguages** で定義されているように、**テキスト** 内のテキストが使用される言語 ID。 これは、指定された **message_id** に対して一意です。|  
+|**severity**|**tinyint**|メッセージの重大度レベル (1 ~ 25)。 これは、 **message_id** 内のすべてのメッセージ言語で同じです。|  
+|**is_event_logged**|**bit**|1 = メッセージは、エラーが発生するとイベントがログに記録されます。 これは、 **message_id** 内のすべてのメッセージ言語で同じです。|  
 |**text**|**nvarchar(2048)**|対応する **language_id** がアクティブな場合に使用されるメッセージのテキスト。|  
   
 ## <a name="permissions"></a>アクセス許可  
@@ -48,9 +48,8 @@ ms.locfileid: "89539761"
 ## <a name="see-also"></a>参照  
  [THROW &#40;Transact-SQL&#41;](../../t-sql/language-elements/throw-transact-sql.md)   
  [カタログ ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)   
- [エラーのメッセージ &#40;&#41; カタログビュー &#40;Transact-sql&#41;](https://msdn.microsoft.com/library/8ac78c53-7b97-41b3-9cbd-5f97c179f1f2)   
- [例外メッセージボックスのプログラミング](https://msdn.microsoft.com/library/0b1ba514-6959-4e69-bfd2-3cf3c1ac4b9c)   
+ [エラーのメッセージ &#40;&#41; カタログビュー &#40;Transact-sql&#41;]()   
+ [例外メッセージボックスのプログラミング](/previous-versions/sql/sql-server-2016/ms166343(v=sql.130))   
  [エラーメッセージ](../../relational-databases/native-client-odbc-error-messages/error-messages.md)   
  [データベース エンジンのイベントとエラー](../../relational-databases/errors-events/database-engine-events-and-errors.md)  
-  
   

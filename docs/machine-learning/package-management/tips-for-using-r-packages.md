@@ -1,5 +1,6 @@
 ---
 title: R パッケージを使用するためのヒント
+titleSuffix: SQL machine learning
 description: R または SQL Server を初めて使用するユーザー向けに、SQL Server で R パッケージを使用する際に役立つヒントについて説明します。
 ms.prod: sql
 ms.technology: machine-learning
@@ -7,18 +8,17 @@ ms.date: 08/06/2019
 ms.topic: how-to
 author: garyericson
 ms.author: garye
-ms.reviewer: davidph
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: ad2650317958ffd43b0f4b910585d429249115b3
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: e7480b4d31685be402c98892557ddfb5f7db0ab5
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85730538"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470983"
 ---
 # <a name="tips-for-using-r-packages"></a>R パッケージを使用するためのヒント
 
-[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
+[!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
 
 この記事では、SQL Server で R パッケージを使用する際に役立つヒントについて説明します。 これらのヒントは、R に不慣れな DBA と、SQL Server インスタンスでのパッケージ アクセスには不慣れで R の経験は豊富な開発者向けです。
 
@@ -36,11 +36,11 @@ R パッケージは、他の複数のパッケージに依存していること
 
 [CRAN](https://cran.r-project.org/) や [Bioconductor](https://www.bioconductor.org/) など、R パッケージには複数のソースがあります。 R 言語の公式サイト (<https://www.r-project.org/>) には、このようなリソースの多くが掲載されています。 Microsoft は、オープンソース R ([MRO](https://mran.microsoft.com/)) やその他のパッケージの配布用に [MRAN](https://mran.microsoft.com/open) を提供しています。 多くのパッケージは GitHub に公開されており、開発者はそこでソース コードを入手できます。
 
-::: moniker range=">=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2016"
 R パッケージは複数のコンピューティング プラットフォームで動作します。 インストールするバージョンが Windows バイナリであることを確認してください。
 ::: moniker-end
 
-::: moniker range=">=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-linux-ver15"
 R パッケージは複数のコンピューティング プラットフォームで動作します。 インストールするバージョンが Linux バイナリであることを確認してください。
 ::: moniker-end
 
@@ -90,9 +90,9 @@ SQL Server に R パッケージをインストールする方法の詳細につ
 
 ## <a name="see-also"></a>参照
 
-::: moniker range="<=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="<=sql-server-2017"
 + [R ツールを使用してパッケージをインストールする](install-r-packages-standard-tools.md)
 ::: moniker-end
-::: moniker range=">sql-server-2017||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions"
+::: moniker range=">sql-server-2017||>=sql-server-linux-ver15||=azuresqldb-mi-current"
 + [sqlmlutils で新しい R パッケージをインストールする](install-additional-r-packages-on-sql-server.md)
 ::: moniker-end

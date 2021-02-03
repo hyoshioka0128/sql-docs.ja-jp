@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
 ms.assetid: ''
-ms.openlocfilehash: a09f79c3e5dec6c181855119e36ff0d4f0d7210e
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+ms.openlocfilehash: 737004c651ff7cb335557cbbfe61e9df516e2f48
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85899637"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471623"
 ---
 # <a name="configure-sql-server-settings-with-environment-variables-on-linux"></a>Linux 上で環境変数を使って SQL Server の設定を構成する
 
@@ -27,7 +27,7 @@ Linux では、いくつかの異なる環境変数を使って SQL Server 2017 
 
 ::: moniker-end
 <!--SQL Server 2019 on Linux-->
-::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 || =sqlallproducts-allversions"
+::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
 
 Linux では、いくつかの異なる環境変数を使って SQL Server 2019 を構成することができます。 このような変数は、次の 2 つのシナリオで使用されます。
 
@@ -66,7 +66,7 @@ Linux では、いくつかの異なる環境変数を使って SQL Server 2019 
 
 ::: moniker-end
 <!--SQL Server 2019 on Linux-->
-::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 || =sqlallproducts-allversions"
+::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
 
 | 環境変数 | 説明 |
 |-----|-----|
@@ -128,11 +128,11 @@ docker run -e ACCEPT_EULA=Y -e MSSQL_PID="Developer" -e MSSQL_SA_PASSWORD="<Your
 ```
 
 > [!NOTE]
-> コンテナーで実稼働エディションを実行するためのプロセスは若干異なります。 詳細については、「[Run production container images](sql-server-linux-configure-docker.md#production)」(実稼働のコンテナー イメージを実行する) を参照してください。
+> コンテナーで実稼働エディションを実行するためのプロセスは若干異なります。 詳細については、「[Run production container images](./sql-server-linux-docker-container-deployment.md#production)」(実稼働のコンテナー イメージを実行する) を参照してください。
 
 ::: moniker-end
 <!--SQL Server 2019 on Linux-->
-::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 || =sqlallproducts-allversions"
+::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
 
 Linux/macOS 上で Docker を実行している場合は、単一引用符を含む次の構文を使います。
 

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: replication
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - MSreplication_subscriptions
 - MSreplication_subscriptions_TSQL
@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSreplication_subscriptions system table
 ms.assetid: fd0c5843-4e9b-4448-8bfb-0a4067d1d8d1
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: b89aee32b5ea431da77043938104960d4d353b74
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 4cfff7bf1ccbe24ad794eab4f7c1ad5141c7055b
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551034"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99158767"
 ---
 # <a name="msreplication_subscriptions-transact-sql"></a>MSreplication_subscriptions (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSreplication_subscriptions**テーブルには、ローカルサブスクライバーデータベースにサービスを提供している各ディストリビューションエージェントについて、1行のレプリケーション情報が含まれています。 このテーブルは、サブスクリプションデータベースに格納されます。  
+  **MSreplication_subscriptions** テーブルには、ローカルサブスクライバーデータベースにサービスを提供している各ディストリビューションエージェントについて、1行のレプリケーション情報が含まれています。 このテーブルは、サブスクリプションデータベースに格納されます。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

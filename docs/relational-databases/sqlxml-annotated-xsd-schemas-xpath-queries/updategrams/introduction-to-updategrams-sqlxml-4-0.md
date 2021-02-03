@@ -23,13 +23,13 @@ ms.assetid: cfe24e82-a645-4f93-ab16-39c21f90cce6
 author: MightyPen
 ms.author: genemi
 ms.custom: seo-lt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 49c28dd3104ff7ec64f12e9f0a3c8544ad6a5811
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 6a416950247208c682d0fdc923db71357405fd0e
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85790878"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170624"
 ---
 # <a name="introduction-to-updategrams-sqlxml-40"></a>アップデートグラムの概要 (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -40,10 +40,10 @@ ms.locfileid: "85790878"
  アップデートグラムを使用すると、OPENXML と同様にデータベースに対してデータを挿入、更新、または削除できます。ただし、アップデートグラムは注釈付き XSD (または XDR) スキーマにより提供される XML ビューに対して動作します。たとえば、更新はマッピング スキーマにより提供される XML ビューに適用されます。 マッピング スキーマには、XML 要素と属性を対応するデータベース テーブルと列にマップするための、必要な情報が含まれています。 アップデートグラムでは、このマッピング情報を使用してデータベース テーブルと列が更新されます。  
   
 > [!NOTE]  
->  このドキュメントは、[!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] でサポートされるテンプレートとマッピング スキーマについて理解していることを前提としています。 詳細については、「[注釈付き XSD スキーマの概要 &#40;SQLXML 4.0&#41;](../../../relational-databases/sqlxml/annotated-xsd-schemas/introduction-to-annotated-xsd-schemas-sqlxml-4-0.md)」を参照してください。 XDR を使用するレガシアプリケーションでは、 [SQLXML 4.0&#41;では、注釈付き Xdr スキーマ &#40;非推奨](../../../relational-databases/sqlxml/annotated-xsd-schemas/annotated-xdr-schemas-deprecated-in-sqlxml-4-0.md)とされています。  
+>  このドキュメントは、[!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] でサポートされるテンプレートとマッピング スキーマについて理解していることを前提としています。 詳細については、「 [注釈付き XSD スキーマの概要 &#40;SQLXML 4.0&#41;](../../../relational-databases/sqlxml/annotated-xsd-schemas/introduction-to-annotated-xsd-schemas-sqlxml-4-0.md)」を参照してください。 XDR を使用するレガシアプリケーションでは、 [SQLXML 4.0&#41;では、注釈付き Xdr スキーマ &#40;非推奨 ](../../../relational-databases/sqlxml/annotated-xsd-schemas/annotated-xdr-schemas-deprecated-in-sqlxml-4-0.md)とされています。  
   
 ## <a name="required-namespaces-in-the-updategram"></a>アップデートグラムで必要な名前空間  
- 、、およびなどのアップデートグラムのキーワードは、 **\<sync>** **\<before>** **\<after>** **urn: schema-microsoft-com: xml アップデートグラム**の名前空間にあります。 名前空間プレフィックスは、任意のものを使用できます。 このドキュメントでは、 **updg**プレフィックスは**アップデートグラム**の名前空間を示しています。  
+ 、、およびなどのアップデートグラムのキーワードは、 **\<sync>** **\<before>** **\<after>** **urn: schema-microsoft-com: xml アップデートグラム** の名前空間にあります。 名前空間プレフィックスは、任意のものを使用できます。 このドキュメントでは、 **updg** プレフィックスは **アップデートグラム** の名前空間を示しています。  
   
 ## <a name="reviewing-syntax"></a>構文の確認  
  アップデートグラムは、、、およびの各ブロックを含むテンプレートで、 **\<sync>** **\<before>** **\<after>** アップデートグラムの構文を形成します。 次のコードは、最も単純な構文です。  
@@ -103,9 +103,9 @@ ms.locfileid: "85790878"
 ### <a name="explicit-mapping"></a>明示的なマッピング  
  XSD または XDR のいずれかのマッピング スキーマを指定した場合、アップデートグラムではそのスキーマによって、更新するデータベース テーブルと列が決定されます。  
   
- アップデートグラムで複雑な更新を実行する場合 (マッピングスキーマで指定されている親子リレーションシップに基づいて複数のテーブルにレコードを挿入する場合など) は、アップデートグラムを実行する**マッピング**スキーマ属性を使用してマッピングスキーマを明示的に指定する必要があります。  
+ アップデートグラムで複雑な更新を実行する場合 (マッピングスキーマで指定されている親子リレーションシップに基づいて複数のテーブルにレコードを挿入する場合など) は、アップデートグラムを実行する **マッピング** スキーマ属性を使用してマッピングスキーマを明示的に指定する必要があります。  
   
- アップデートグラムはテンプレートであり、アップデートグラム内でマッピング スキーマに指定するパスは、テンプレート ファイルの場所 (アップデートグラムが保存されている場所) に対する相対パスです。 詳細については、「[アップデートグラムでの注釈付きマッピングスキーマの指定 &#40;SQLXML 4.0&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/updategrams/specifying-an-annotated-mapping-schema-in-an-updategram-sqlxml-4-0.md)」を参照してください。  
+ アップデートグラムはテンプレートであり、アップデートグラム内でマッピング スキーマに指定するパスは、テンプレート ファイルの場所 (アップデートグラムが保存されている場所) に対する相対パスです。 詳細については、「 [アップデートグラムでの注釈付きマッピングスキーマの指定 &#40;SQLXML 4.0&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/updategrams/specifying-an-annotated-mapping-schema-in-an-updategram-sqlxml-4-0.md)」を参照してください。  
   
 ## <a name="element-centric-and-attribute-centric-mapping-in-updategrams"></a>アップデートグラムでの要素中心および属性中心のマッピング  
  アップデートグラムでマッピング スキーマが指定されていないときに使用される既定のマッピングでは、アップデートグラムの要素がテーブルにマップされ、要素中心マッピングの場合は子要素、属性中心マッピングの場合は属性が、それぞれ列にマップされます。  
@@ -129,7 +129,7 @@ ms.locfileid: "85790878"
 ```  
   
 ### <a name="attribute-centric-mapping"></a>属性中心のマッピング  
- 属性中心のマッピングでは、要素に属性を指定します。 たとえば、次のアップデートグラムでは属性中心のマッピングが使用されています。 この例では、 **\<Person.Contact>** 要素は**FirstName**属性と**LastName**属性で構成されています。 これらの属性は、要素のプロパティ **\<Person.Contact>** です。 前の例と同様に、このアップデートグラムではマッピングスキーマが指定されていないため、 **\<Person.Contact>** 要素を Person. Contact テーブルにマップし、要素の属性をテーブル内のそれぞれの列にマップするために、暗黙的なマッピングに依存しています。  
+ 属性中心のマッピングでは、要素に属性を指定します。 たとえば、次のアップデートグラムでは属性中心のマッピングが使用されています。 この例では、 **\<Person.Contact>** 要素は **FirstName** 属性と **LastName** 属性で構成されています。 これらの属性は、要素のプロパティ **\<Person.Contact>** です。 前の例と同様に、このアップデートグラムではマッピングスキーマが指定されていないため、 **\<Person.Contact>** 要素を Person. Contact テーブルにマップし、要素の属性をテーブル内のそれぞれの列にマップするために、暗黙的なマッピングに依存しています。  
   
 ```  
 <ROOT xmlns:updg="urn:schemas-microsoft-com:xml-updategram">  
@@ -144,7 +144,7 @@ ms.locfileid: "85790878"
 ```  
   
 ### <a name="using-both-element-centric-and-attribute-centric-mapping"></a>要素中心と属性中心の両方のマッピングの使用  
- 次のアップデートグラムに示すように、要素中心と属性中心のマッピングは併用できます。 要素には **\<Person.Contact>** 属性と子要素の両方が含まれていることに注意してください。 また、このアップデートグラムは暗黙的なマッピングに従います。 このため、 **FirstName**属性と **\<LastName>** child 要素は、Person. Contact テーブルの対応する列にマップされます。  
+ 次のアップデートグラムに示すように、要素中心と属性中心のマッピングは併用できます。 要素には **\<Person.Contact>** 属性と子要素の両方が含まれていることに注意してください。 また、このアップデートグラムは暗黙的なマッピングに従います。 このため、 **FirstName** 属性と **\<LastName>** child 要素は、Person. Contact テーブルの対応する列にマップされます。  
   
 ```  
 <ROOT xmlns:updg="urn:schemas-microsoft-com:xml-updategram">  
@@ -174,7 +174,7 @@ ms.locfileid: "85790878"
   
 -   OLE DB コマンドとして送信する。  
   
-## <a name="see-also"></a>関連項目  
- [SQLXML 4.0&#41;&#40;アップデートグラムのセキュリティに関する考慮事項](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/security/updategram-security-considerations-sqlxml-4-0.md)  
+## <a name="see-also"></a>参照  
+ [SQLXML 4.0&#41;&#40;アップデートグラムのセキュリティに関する考慮事項 ](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/security/updategram-security-considerations-sqlxml-4-0.md)  
   
   

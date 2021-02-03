@@ -1,27 +1,27 @@
 ---
-description: internal_partitions (Transact-sql)
-title: internal_partitions (Transact-sql) |Microsoft Docs
+description: sys.internal_partitions (Transact-sql)
+title: sys.internal_partitions (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/26/2019
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 ms.assetid: 0262df2b-5ba7-4715-b17b-3d9ce470a38e
 author: ronortloff
 ms.author: rortloff
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: e7e6f8d248ef4d000c98a664148a5a5b33f0786b
-ms.sourcegitcommit: 331b8495e4ab37266945c81ff5b93d250bdaa6da
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 402e8ff5793ad0ea5abd11cad60f93b6ae963df2
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88645939"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99191409"
 ---
-# <a name="sysinternal_partitions-transact-sql"></a>internal_partitions (Transact-sql)
+# <a name="sysinternal_partitions-transact-sql"></a>sys.internal_partitions (Transact-sql)
 
 [!INCLUDE [sqlserver2016-asdb-asdbmi](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi.md)]
 

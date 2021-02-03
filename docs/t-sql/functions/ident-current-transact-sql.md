@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - IDENT_CURRENT
 - IDENT_CURRENT_TSQL
@@ -21,12 +21,12 @@ helpviewer_keywords:
 ms.assetid: 21517ced-39f5-4cd8-8d9c-0a0b8aff554a
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 7fffc7d4a09e29066942c321fc65b48202d247ba
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 608f7c4745d2d5590fc4d2956f7fca580c9b4111
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88365478"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99184014"
 ---
 # <a name="ident_current-transact-sql"></a>IDENT_CURRENT (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "88365478"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 IDENT_CURRENT( 'table_or_view' )  
 ```  
   
@@ -95,8 +95,8 @@ GO
 IF OBJECT_ID(N't7', N'U') IS NOT NULL   
     DROP TABLE t7;  
 GO  
-CREATE TABLE t6(id int IDENTITY);  
-CREATE TABLE t7(id int IDENTITY(100,1));  
+CREATE TABLE t6(id INT IDENTITY);  
+CREATE TABLE t7(id INT IDENTITY(100,1));  
 GO  
 CREATE TRIGGER t6ins ON t6 FOR INSERT   
 AS  

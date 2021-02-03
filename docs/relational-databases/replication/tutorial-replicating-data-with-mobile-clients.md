@@ -13,19 +13,19 @@ helpviewer_keywords:
 ms.assetid: af673514-30c7-403a-9d18-d01e1a095115
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 4110d523762a147a569caaf03d71dbdc4567c5c3
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 7070e1aa45101022073d4ce21cf7943cfca31d34
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85720693"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97468713"
 ---
 # <a name="tutorial-configure-replication-between-a-server-and-mobile-clients-merge"></a>チュートリアル:サーバーとモバイル クライアントの間のレプリケーション (マージ) を構成する
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 マージ レプリケーションは、中央のサーバーと、常時接続でないモバイル クライアントの間でデータを移動する際の問題を解決する有効なソリューションです。 レプリケーション ウィザードを使用すると、マージ レプリケーション トポロジを簡単に設定し、管理できます。 
 
-このチュートリアルでは、モバイル クライアント用のレプリケーション トポロジを設定する方法を学習します。 マージ レプリケーションの詳細については、[マージ レプリケーションの概要](https://docs.microsoft.com/sql/relational-databases/replication/merge/merge-replication)に関するページを参照してください
+このチュートリアルでは、モバイル クライアント用のレプリケーション トポロジを設定する方法を学習します。 マージ レプリケーションの詳細については、[マージ レプリケーションの概要](./merge/merge-replication.md)に関するページを参照してください
   
 ## <a name="what-you-will-learn"></a>学習する内容  
 このチュートリアルでは、マージ レプリケーションを使用して中央のデータベースから 1 名以上のモバイル ユーザーにデータをパブリッシュし、各ユーザーが独自にフィルター選択されたデータ サブセットを取得するようにする方法を説明します。 
@@ -48,14 +48,14 @@ ms.locfileid: "85720693"
   
 - サブスクライバー サーバー (レプリケーション先) に、SQL Server Express と SQL Server Compact を除く SQL Server の任意のエディションをインストールします。 このチュートリアルで作成するパブリケーションでは、SQL Server Express と SQL Server Compact のどちらもサポートされていません。 
 
-- [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) をインストールします。
+- [SQL Server Management Studio](../../ssms/download-sql-server-management-studio-ssms.md) をインストールします。
 - [SQL Server 2017 Developer Edition](https://www.microsoft.com/sql-server/sql-server-downloads) をインストールします。
-- [AdventureWorks サンプル データベース](https://github.com/Microsoft/sql-server-samples/releases)をダウンロードします。 SSMS でデータベースを復元する方法の詳細については、[データベースの復元](https://docs.microsoft.com/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms)に関するページを参照してください。  
+- [AdventureWorks サンプル データベース](https://github.com/Microsoft/sql-server-samples/releases)をダウンロードします。 SSMS でデータベースを復元する方法の詳細については、[データベースの復元](../backup-restore/restore-a-database-backup-using-ssms.md)に関するページを参照してください。  
  
   
 >[!NOTE]
 > - 3 つ以上離れたバージョンの SQL Server インスタンスでは、レプリケーションはサポートされていません。 詳細については、「[Supported SQL Versions in Replication Topology](https://blogs.msdn.microsoft.com/repltalk/2016/08/12/suppported-sql-server-versions-in-replication-topology/)」(レプリケーション トポロジでサポートされている SQL Server のバージョン) を参照してください。
-> - [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] では、固定サーバー ロール **sysadmin** のメンバーとしてログインし、パブリッシャーとサブスクライバーに接続する必要があります。 このロールの詳細については、「[サーバー レベルのロール](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/server-level-roles)」を参照してください。  
+> - [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] では、固定サーバー ロール **sysadmin** のメンバーとしてログインし、パブリッシャーとサブスクライバーに接続する必要があります。 このロールの詳細については、「[サーバー レベルのロール](../security/authentication-access/server-level-roles.md)」を参照してください。  
   
   
 **このチュートリアルの推定所要時間: 60 分**  
@@ -91,7 +91,7 @@ ms.locfileid: "85720693"
    >
    > SQL Server 2017 より前のビルドを使用している場合は、双方向のレプリケーションでこの列を使用するとデータ損失の可能性があることを通知するメッセージが画面の下部に表示されます。 このチュートリアルでは、このメッセージは無視してかまいません。 ただし、このデータ型は、サポートされているビルドを使用している場合を除き、実稼働環境でレプリケートしないでください。
    > 
-   > **hierarchyid** データ型のレプリケーションに関する詳細は、「[レプリケートされたテーブルでの hierarchyid 列の使用](https://docs.microsoft.com/sql/t-sql/data-types/hierarchyid-data-type-method-reference#using-hierarchyid-columns-in-replicated-tables)」を参照してください。
+   > **hierarchyid** データ型のレプリケーションに関する詳細は、「[レプリケートされたテーブルでの hierarchyid 列の使用](../../t-sql/data-types/hierarchyid-data-type-method-reference.md#using-hierarchyid-columns-in-replicated-tables)」を参照してください。
     
   
 7. **[テーブル行のフィルター選択]** ページで、 **[追加]** 、 **[フィルターの追加]** の順に選択します。  
@@ -147,7 +147,7 @@ ms.locfileid: "85720693"
 
     ![パブリケーション名が表示された [ウィザードの完了] ページ](media/tutorial-replicating-data-with-mobile-clients/namemergerepl.png)
   
-24. パブリケーションが作成されたら、 **[閉じる]** を選択します。 **オブジェクト エクスプローラー**で **[レプリケーション]** ノードの下の **[ローカル パブリケーション]** を右クリックして **[更新]** を選択し、新しいマージ レプリケーションを表示します。  
+24. パブリケーションが作成されたら、 **[閉じる]** を選択します。 **オブジェクト エクスプローラー** で **[レプリケーション]** ノードの下の **[ローカル パブリケーション]** を右クリックして **[更新]** を選択し、新しいマージ レプリケーションを表示します。  
   
 ### <a name="view-the-status-of-snapshot-generation"></a>スナップショット生成の状態を表示する  
   
@@ -281,7 +281,6 @@ ms.locfileid: "85720693"
 - [スナップショットを使用したサブスクリプションの初期化](../../relational-databases/replication/initialize-a-subscription-with-a-snapshot.md)  
 - [データの同期](../../relational-databases/replication/synchronize-data.md)  
 - [プル サブスクリプションの同期](../../relational-databases/replication/synchronize-a-pull-subscription.md)  
-  
   
   
   

@@ -5,7 +5,7 @@ ms.custom: seo-lt-2019
 ms.date: 06/02/2016
 ms.prod: sql
 ms.prod_service: sql-tools
-ms.technology: scripting
+ms.technology: ssms
 ms.reviewer: ''
 ms.topic: conceptual
 helpviewer_keywords:
@@ -15,13 +15,13 @@ helpviewer_keywords:
 ms.assetid: 3ffc9f31-4efa-4c1a-a033-ed1dc48b065f
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: eaf166e819f062f8b66ab8b171f345cb68515383
-ms.sourcegitcommit: d855def79af642233cbc3c5909bc7dfe04c4aa23
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 98ad4f0261edbf7468403f388af155a6bc305838
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87122863"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97474323"
 ---
 # <a name="configure-intellisense-sql-server-management-studio"></a>IntelliSense の構成 (SQL Server Management Studio)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "87122863"
 ### <a name="to-turn-statement-completion-options-off-by-default"></a>入力候補オプションを既定でオフにするには  
 
 > [!NOTE]
-> SQL Data Warehouse は、IntelliSense をサポートしていません。
+> Azure Synapse Analytics は、IntelliSense をサポートしていません。
 >
 >
   

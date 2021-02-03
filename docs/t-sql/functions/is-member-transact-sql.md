@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - IS_MEMBER
 - IS_MEMBER_TSQL
@@ -27,13 +27,13 @@ helpviewer_keywords:
 ms.assetid: 77cb68a0-19b7-4fe1-ab17-e5587699631b
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 5d421173d4951ffadc60136ba761b446bf33b59b
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: e938e2cfbe93c137ce24d77d7f942b1764f521be
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88417338"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99179664"
 ---
 # <a name="is_member-transact-sql"></a>IS_MEMBER (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -45,7 +45,6 @@ ms.locfileid: "88417338"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 IS_MEMBER ( { 'group' | 'role' } )  
 ```  
   
@@ -55,7 +54,7 @@ IS_MEMBER ( { 'group' | 'role' } )
  **'** *group* **'**  
 **適用対象**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降
   
- 確認する Windows グループの名前です。*Domain*\\*Group* という形式にする必要があります。 *グループ* は **sysname**です。  
+ 確認する Windows グループの名前です。*Domain*\\*Group* という形式にする必要があります。 *グループ* は **sysname** です。  
   
  **'** *role* **'**  
  名前を指定します、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] チェックされるロールです。 *ロール* は **sysname** 、データベース ロールまたはユーザー定義のロールがサーバーの役割ではないの固定を含めることができます。  
@@ -86,7 +85,7 @@ IS_MEMBER ( { 'group' | 'role' } )
 ## <a name="examples"></a>例  
  次の例は、現在のユーザーがデータベース ロールまたは Windows ドメイン グループのメンバーであるかどうかを確認します。  
   
-```  
+```sql  
 -- Test membership in db_owner and print appropriate message.  
 IF IS_MEMBER ('db_owner') = 1  
    PRINT 'Current user is a member of the db_owner role'  

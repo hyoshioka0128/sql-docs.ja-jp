@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: e8b80e8d-d0c9-4500-a868-0ce08233da08
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 42008bdc7c78a587abcc67bd9fe18e305e188960
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+ms.openlocfilehash: 63f185f686d21c5c9a490bee83d2c9afaf449b8f
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86905638"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641888"
 ---
 # <a name="sqlagent90-application"></a>sqlagent90 アプリケーション
 [!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
@@ -43,12 +43,11 @@ sqlagent90
  [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] エージェントを冗長モードで実行し、診断情報をコマンド プロンプト ウィンドウに書き込みます。 診断情報は、 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] エージェントのエラー ログに書き込まれる情報と同じです。  
   
  **-i** *instance_name*  
- [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] エージェントを [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] instance_name *によって指定された名前付き*インスタンスに接続します。  
+ [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] エージェントを [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] instance_name *によって指定された名前付き* インスタンスに接続します。  
   
 ## <a name="remarks"></a>解説  
- **sqlagent90** は、 **-v** スイッチが指定された場合にのみ、著作権に関するメッセージを表示した後にコマンド プロンプト ウィンドウに出力を表示します。 **sqlagent90**を停止するには、コマンド プロンプトで Ctrl キーを押しながら C キーを押します。 **sqlagent90**を停止する前に、コマンド プロンプト ウィンドウを閉じないでください。  
+ **sqlagent90** は、 **-v** スイッチが指定された場合にのみ、著作権に関するメッセージを表示した後にコマンド プロンプト ウィンドウに出力を表示します。 **sqlagent90** を停止するには、コマンド プロンプトで Ctrl キーを押しながら C キーを押します。 **sqlagent90** を停止する前に、コマンド プロンプト ウィンドウを閉じないでください。  
   
 ## <a name="see-also"></a>参照  
- [管理タスクの自動化 &#40;SQL Server エージェント&#41;](https://msdn.microsoft.com/library/541ee5ac-2c9f-4b74-b4f0-13b7bd5920b0)  
-  
+ [管理タスクの自動化 &#40;SQL Server エージェント&#41;](../ssms/agent/automated-administration-tasks-sql-server-agent.md)  
   

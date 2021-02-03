@@ -7,24 +7,24 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - DataControl object [ADO], members
 ms.assetid: 9a8f9b0c-8452-4e95-a561-cfc4b7165c5e
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 5f2b3733c523684701e8bde6cbc66faf51cf84b3
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 5b1433924be05693a51083360d8df85870d5dfc3
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88982483"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99163847"
 ---
 # <a name="datacontrol-object-rds-properties-methods-and-events"></a>DataControl オブジェクト (RDS) のプロパティ、メソッド、およびイベント
 > [!IMPORTANT]
->  Windows 8 と windows Server 2012 以降では、RDS サーバーコンポーネントが Windows オペレーティングシステムに含まれなくなりました (詳細については、「Windows 8 および [Windows server 2012 の互換性に関するクックブック](https://www.microsoft.com/download/details.aspx?id=27416) 」を参照してください)。 RDS クライアントコンポーネントは、今後のバージョンの Windows では削除される予定です。 新規の開発作業ではこの機能を使用しないようにし、現在この機能を使用しているアプリケーションは修正することを検討してください。 RDS を使用するアプリケーションは、 [WCF Data Service](https://go.microsoft.com/fwlink/?LinkId=199565)に移行する必要があります。  
+>  Windows 8 と windows Server 2012 以降では、RDS サーバーコンポーネントが Windows オペレーティングシステムに含まれなくなりました (詳細については、「Windows 8 および [Windows server 2012 の互換性に関するクックブック](https://www.microsoft.com/download/details.aspx?id=27416) 」を参照してください)。 RDS クライアントコンポーネントは、今後のバージョンの Windows では削除される予定です。 新規の開発作業ではこの機能を使用しないようにし、現在この機能を使用しているアプリケーションは修正することを検討してください。 RDS を使用するアプリケーションは、 [WCF Data Service](/dotnet/framework/wcf/)に移行する必要があります。  
   
-## <a name="properties"></a>プロパティ  
+## <a name="properties"></a>Properties  
  [Connect プロパティ (RDS)](./connect-property-rds.md)  
   
  [ExecuteOptions プロパティ (RDS)](./executeoptions-property-rds.md)  
@@ -70,7 +70,7 @@ ms.locfileid: "88982483"
   
  [SubmitChanges メソッド (RDS)](./submitchanges-method-rds.md)  
   
-## <a name="events"></a>イベント  
+## <a name="events"></a>events  
  [onError イベント (RDS)](./onerror-event-rds.md)  
   
  [onReadyStateChange イベント (RDS)](./onreadystatechange-event-rds.md)  

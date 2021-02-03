@@ -13,13 +13,13 @@ helpviewer_keywords:
 ms.assetid: e5906a76-9511-4c47-8826-8c765b58a39d
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: =azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions
-ms.openlocfilehash: 83c9ffd0daca07588bc1b559c7fa3a16acb115e8
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-mi-current||>=sql-server-2016
+ms.openlocfilehash: b8eab851e7bde95fa0ab6aaf2ee75ae0ffc6d0a1
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88498722"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97481013"
 ---
 # <a name="mssql_eng014117"></a>MSSQL_ENG014117
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "88498722"
 ## <a name="explanation"></a>説明  
  このエラーは、次のいずれかまたは両方に該当する場合に発生する可能性があります。  
   
--   指定したディストリビューション データベースのエントリが、 **msdb..MSdistributiondbs**に存在しない場合。  
+-   指定したディストリビューション データベースのエントリが、 **msdb..MSdistributiondbs** に存在しない場合。  
   
 -   **master** データベース内にローカル サーバーのエントリがない場合、またはエントリは存在するが正しくない場合。  
   
@@ -68,7 +68,7 @@ ms.locfileid: "88498722"
   
      @@SERVERNAME の値がクラスター化されたインスタンスに対して適切でない場合は、クラスター アドミニストレーターを使用して名前を変更する必要があります。 詳細については、「[Always On フェールオーバー クラスター インスタンス (SQL Server)](../../sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server.md)」を参照してください。  
   
- ディストリビューター インスタンスが正しく登録されていることを確認したら、ディストリビューション データベースが **msdb..MSdistributiondbs**の一覧に表示されているかどうかを確認します。 表示されていない場合は、次の手順を実行します。  
+ ディストリビューター インスタンスが正しく登録されていることを確認したら、ディストリビューション データベースが **msdb..MSdistributiondbs** の一覧に表示されているかどうかを確認します。 表示されていない場合は、次の手順を実行します。  
   
 1.  ディストリビューション構成のスクリプトを作成します。 詳細については、「[レプリケーションのスクリプト作成](../../relational-databases/replication/scripting-replication.md)」を参照してください。  
   

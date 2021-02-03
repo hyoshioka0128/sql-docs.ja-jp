@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.assetid: c2804a9a-08ea-4f4a-805d-a2c19c68733d
 author: maggiesMSFT
 ms.author: maggies
-monikerRange: '>=sql-server-2016 <=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 1f401a51defd84d9ed6a3160c4961b3087847b2d
-ms.sourcegitcommit: ff82f3260ff79ed860a7a58f54ff7f0594851e6b
+monikerRange: '>=sql-server-2016 <=sql-server-2016'
+ms.openlocfilehash: b4c8232909187894df11b7b1198fdb3416fbd1e4
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "79286246"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97425487"
 ---
 # <a name="install-or-uninstall-the-reporting-services-add-in-for-sharepoint-ssrs"></a>SharePoint 用 Reporting Services アドイン (SSRS) のインストールまたはアンインストール
 
@@ -53,7 +53,7 @@ ms.locfileid: "79286246"
 ##  <a name="overview-of-the-installation-methods"></a><a name="bkmk_3ways_to_install"></a> インストール方法の概要  
  SharePoint 製品用 SQL Server 2016 Reporting Services アドインは、次の 2 つの方法のいずれかを使ってインストールできます。  
   
--   **インストール ウィザード:** ![メモ](https://docs.microsoft.com/analysis-services/analysis-services/instances/install-windows/media/ssrs-fyi-note.png "note") SQL Server 2016 では、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インストール ウィザードでアドインをインストールできます。 ウィザードの **[機能の選択]** ページで、 **[SharePoint 製品用 Reporting Services アドイン]** を選択します。  
+-   **インストール ウィザード:** ![メモ](/analysis-services/analysis-services/instances/install-windows/media/ssrs-fyi-note.png "note") SQL Server 2016 では、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インストール ウィザードでアドインをインストールできます。 ウィザードの **[機能の選択]** ページで、 **[SharePoint 製品用 Reporting Services アドイン]** を選択します。  
   
 -   **rsSharepoint.msi:** アドインをインストール メディアから直接インストールするか、ダウンロードしてインストールできます。 rsSharepoint.msi は、グラフィカル ユーザー インターフェイスもコマンド ライン インストールもサポートしています。 .msi を管理者特権を使用して実行する必要があるため、まず高度な権限でコマンド プロンプトを開いてから、コマンド ラインから rsSharepoint.msi を実行します。 アドインのダウンロードの詳細については、「 [SharePoint 製品用 Reporting Services アドインの検索場所](../../reporting-services/install-windows/where-to-find-the-reporting-services-add-in-for-sharepoint-products.md)」を参照してください。  
   
@@ -84,7 +84,7 @@ Rssharepoint.msi /?
 ###  <a name="files-only-installation"></a><a name="bkmk_files_only_installation"></a> ファイルのみのインストール  
  インストールのカスタム アクション フェーズをスキップしてファイルをインストールするには、SKIPCA オプションを指定してコマンド ラインから rssharepoint.msi を実行します。  
   
-1.  **管理者権限を使用して**コマンド プロンプトを開きます。  
+1.  **管理者権限を使用して** コマンド プロンプトを開きます。  
   
 2.  次のコマンドを実行します。  
   
@@ -101,7 +101,7 @@ Rssharepoint.msi /?
   
 2.  カスタム アクションの実行可能ファイルを実行します。  
   
-    1.  ファイル **rsCustomAction.exe**を含むフォルダーに移動します。 このファイルは、アドインのファイルのみのインストールを実行することで、コンピューターにコピーされます。 **rsCustomAction.exe** は **%Temp%** ディレクトリにあります。 ファイルに移動するには、コマンド プロンプトから次のように入力します。  
+    1.  ファイル **rsCustomAction.exe** を含むフォルダーに移動します。 このファイルは、アドインのファイルのみのインストールを実行することで、コンピューターにコピーされます。 **rsCustomAction.exe** は **%Temp%** ディレクトリにあります。 ファイルに移動するには、コマンド プロンプトから次のように入力します。  
   
          **CD %temp%** 。  
   
@@ -123,7 +123,7 @@ Rssharepoint.msi /?
   
  サイレント インストールを行うには、次の手順を実行します。  
   
-1.  **管理者権限を使用して**コマンド プロンプトを開きます。  
+1.  **管理者権限を使用して** コマンド プロンプトを開きます。  
   
 2.  次のコマンドを実行します。  
   
@@ -166,7 +166,7 @@ Rssharepoint.msi /?
 ### <a name="uninstall-from-the-command-line"></a>コマンドラインからアンインストールする  
  アドインをコマンド ラインからアンインストールするには、次の手順を実行します。  
   
-1.  **管理者権限を使用して**コマンド プロンプトを開きます。  
+1.  **管理者権限を使用して** コマンド プロンプトを開きます。  
   
 2.  次のコマンドを実行します。  
   
@@ -179,7 +179,7 @@ Rssharepoint.msi /?
 ### <a name="uninstall-the-add-in-from-the-local-server-only"></a>ローカル サーバーのみからのアドインのアンインストール  
  前に説明したアドインのアンインストール方法では、 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] の機能とオブジェクトがファームから削除されます。 マルチサーバー ファームにおいて、ローカル コンピューターからのみアドインをアンインストールして、SharePoint ファームは稼働させておく場合は、次の手順を実行します。  
   
-1.  **管理者権限を使用して**コマンド プロンプトを開きます。  
+1.  **管理者権限を使用して** コマンド プロンプトを開きます。  
   
 2.  次のコマンドを実行します。  
   
@@ -191,7 +191,7 @@ Rssharepoint.msi /?
   
  SharePoint から [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] の機能の登録を解除するが、後で使用するためにファイルをディスクに残しておくには、次の手順を実行します。  
   
-1.  **管理者権限を使用して**コマンド プロンプトを開きます。  
+1.  **管理者権限を使用して** コマンド プロンプトを開きます。  
   
 2.  次のコマンドを実行します。  
   
@@ -204,7 +204,7 @@ Rssharepoint.msi /?
 ##  <a name="how-to-repair-rssharepointmsi-from-the-command-line"></a><a name="bkmk_repair"></a> コマンド ラインから rssharepoint.msi を修復する方法  
  コマンド ラインを使用して [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] アドインを修復またはアンインストールするには、次の手順を実行します。  
   
-1.  **管理者権限を使用して**コマンド プロンプトを開きます。  
+1.  **管理者権限を使用して** コマンド プロンプトを開きます。  
   
 2.  次のコマンドを実行します。  
   
@@ -213,7 +213,7 @@ Rssharepoint.msi /?
     ```  
   
 ##  <a name="setup-log-files"></a><a name="bkmk_logfiles"></a> セットアップ ログ ファイル  
- セットアップの実行中は、 **アドインをインストールしたユーザーの** %temp% [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] フォルダー内のログ ファイルに情報が記録されます。 このフォルダーのパスは、**C:\Users\\<ユーザー名\>\AppData\Local\Temp** などです。ファイル名の形式は **RS_SP_\<番号>.log** で、実際の名前は **RS_SP_0.log** のようになります。 ログ内では、エラーは "SSRSCustomActionError" という文字列から始まります。  
+ セットアップの実行中は、 **アドインをインストールしたユーザーの** %temp% [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] フォルダー内のログ ファイルに情報が記録されます。 たとえば、**c:\Users\\<username\>\AppData\Local\Temp** などです。ファイル名は、**RS_SP_\<number>.log** (**RS_SP_0.log** など) となります。 ログ内では、エラーは "SSRSCustomActionError" という文字列から始まります。  
   
 > [!NOTE]  
 >  AppData は Windows オペレーティング システム内の隠れたフォルダーです。 隠れたファイルとフォルダーを表示するには、Windows エクスプローラーのフォルダー設定を変更する必要がある場合があります。  

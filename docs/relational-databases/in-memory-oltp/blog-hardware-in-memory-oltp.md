@@ -10,13 +10,13 @@ ms.technology: in-memory-oltp
 ms.topic: conceptual
 author: MightyPen
 ms.author: genemi
-monikerRange: =azuresqldb-current||=azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017||=sqlallproducts-allversions
-ms.openlocfilehash: e5486dddb1b71d2a32055cb4175ed300ce19320f
-ms.sourcegitcommit: 7a47aaffbd82bab2707cd69f44571a9037d2273b
+monikerRange: =azuresqldb-current||=azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017
+ms.openlocfilehash: 09483122764de51b565693d85c3ae8efa9a8c570
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85377623"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97465353"
 ---
 # <a name="hardware-considerations-for-in-memory-oltp-in-sql-server"></a>SQL Server におけるインメモリ OLTP のハードウェアに関する考慮事項
 
@@ -25,7 +25,7 @@ ms.locfileid: "85377623"
 > [!NOTE]
 > この記事は、2013 年 8 月 1 日に Microsoft SQL Server 2014 チームによって発行されたブログです。 このブログの Web ページは廃止されます。
 >
-> [SQL Server インメモリ OLTP](index.md)
+> [SQL Server インメモリ OLTP](./in-memory-oltp-in-memory-optimization.md)
 
 <!--
     Here was the link to the blog. This blog was captured into this new article on 2018/11/30, by GeneMi (MightyPen).

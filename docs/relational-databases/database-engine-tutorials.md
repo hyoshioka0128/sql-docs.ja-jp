@@ -9,15 +9,15 @@ ms.reviewer: ''
 ms.technology: performance
 ms.topic: conceptual
 ms.assetid: 32bd8af8-a832-4dc8-afff-01668e6b2b51
-author: rothja
-ms.author: jroth
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 4814fe709fb28141d00fd5302feab845d39d5331
-ms.sourcegitcommit: 9470c4d1fc8d2d9d08525c4f811282999d765e6e
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 891abb94a3f9ac00edf910d5e8a830c7adee0b0f
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86458524"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597231"
 ---
 # <a name="database-engine-tutorials"></a>データベース エンジンのチュートリアル
 [!INCLUDE [SQL Server Azure SQL Database](../includes/applies-to-version/sql-asdb.md)]
@@ -26,7 +26,7 @@ ms.locfileid: "86458524"
 [チュートリアル:データベース エンジンの概要](../relational-databases/tutorial-getting-started-with-the-database-engine.md)  
 このチュートリアルでは、 [!INCLUDE[ssDE](../includes/ssde-md.md)]のインスタンスに接続する方法について説明します。  
   
-[チュートリアル:SQL Server Management Studio](../tools/sql-server-management-studio/tutorial-sql-server-management-studio.md)  
+[チュートリアル:SQL Server Management Studio](../ssms/quickstarts/ssms-connect-query-sql-server.md)  
 このチュートリアルでは、 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] のインフラストラクチャを管理するための統合環境について説明します。 [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)] は、 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]のインスタンスを構成、監視、および管理するためのグラフィカル インターフェイスを提供します。 さらに、データベースやデータ ウェアハウスなどの、アプリケーションで使用されるデータ層コンポーネントを配置、監視、およびアップグレードすることもできます。 [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)] は、スクリプトを編集およびデバッグするための [!INCLUDE[tsql](../includes/tsql-md.md)]、MDX、DMX、XML の各言語エディターも提供します。  
   
 [チュートリアル:Transact-SQL ステートメントの作成](../t-sql/tutorial-writing-transact-sql-statements.md)  
@@ -57,6 +57,3 @@ ms.locfileid: "86458524"
 [SQL Server 2016 チュートリアル](../sql-server/tutorials-for-sql-server-2016.md)  
 [TechNet WIKI:SQL Server 2012 サンプル](https://go.microsoft.com/fwlink/?linkID=220734)  
   
-  
-  
-

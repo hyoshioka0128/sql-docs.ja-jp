@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: 6ae0a369-1bc7-4ae4-be89-2b483697cd1f
 author: stevestein
 ms.author: sstein
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 7b59fe000bb72cdfb7286c5efba0de009439c555
-ms.sourcegitcommit: 75f767c7b1ead31f33a870fddab6bef52f99906b
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 2d0a64ac9fd8ed3f9ac09f269a4026ed797b5af2
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87332201"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97466983"
 ---
 # <a name="view-the-dependencies-of-a-stored-procedure"></a>ストアド プロシージャの依存関係の表示
 [!INCLUDE[appliesto-ss-asdb-xxxx-pdw-md](../../includes/appliesto-ss-asdb-xxxx-pdw-md.md)]
@@ -75,7 +75,7 @@ ms.locfileid: "87332201"
  システム関数: **sys.dm_sql_referencing_entities**  
  この関数は、プロシージャに依存しているオブジェクトを表示するために使用します。  
   
-1.  **オブジェクト エクスプローラー**で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)] のインスタンスに接続し、そのインスタンスを展開します。  
+1.  **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)] のインスタンスに接続し、そのインスタンスを展開します。  
   
 2.  **[データベース]** を展開し、プロシージャが属するデータベースを展開します。  
   
@@ -119,7 +119,7 @@ ms.locfileid: "87332201"
  システム関数: **sys.dm_sql_referenced_entities**  
  この関数は、プロシージャが依存しているオブジェクトを表示するために使用します。  
   
-1.  **オブジェクト エクスプローラー**で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)] のインスタンスに接続し、そのインスタンスを展開します。  
+1.  **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)] のインスタンスに接続し、そのインスタンスを展開します。  
   
 2.  **[データベース]** を展開し、プロシージャが属するデータベースを展開します。  
   
@@ -165,7 +165,7 @@ ms.locfileid: "87332201"
  このビューを使用すると、プロシージャが依存しているオブジェクトまたはプロシージャに依存しているオブジェクトを表示できます。  
   
  プロシージャに依存しているオブジェクトを表示します。  
- 1.  **オブジェクト エクスプローラー**で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)] のインスタンスに接続し、そのインスタンスを展開します。  
+ 1.  **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)] のインスタンスに接続し、そのインスタンスを展開します。  
   
 2.  **[データベース]** を展開し、プロシージャが属するデータベースを展開します。  
   
@@ -216,7 +216,7 @@ ms.locfileid: "87332201"
     ```  
   
  プロシージャが依存しているオブジェクトを表示します。  
- 1.  **オブジェクト エクスプローラー**で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)] のインスタンスに接続し、そのインスタンスを展開します。  
+ 1.  **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)] のインスタンスに接続し、そのインスタンスを展開します。  
   
 2.  **[データベース]** を展開し、プロシージャが属するデータベースを展開します。  
   

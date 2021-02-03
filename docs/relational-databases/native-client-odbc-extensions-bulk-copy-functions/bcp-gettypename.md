@@ -18,13 +18,13 @@ helpviewer_keywords:
 ms.assetid: 65f036d1-f60e-4b8a-97b3-76fccf0dfed4
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: d8956677e62c3f4a824e704c0905c7970cf9e913
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 3872736a1748dbd06e251a65d358522e7b92a630
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88448579"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97483374"
 ---
 # <a name="bcp_gettypename"></a>bcp_gettypename
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -55,7 +55,7 @@ RETCODE bcp_gettypename (
   
  次の表では、指定できる BCP 型、それらの BCP 型が max 型かどうか、および予想される出力を示しています。  
   
-|BCP 型名|MaxType|出力|  
+|BCP 型名|MaxType|Output|  
 |-------------------|-------------|------------|  
 |**SQLDECIMAL**|接続前/接続後|**decimal**|  
 |**SQLNUMERIC**|接続前/接続後|**numeric**|  
@@ -76,7 +76,7 @@ RETCODE bcp_gettypename (
 |**SQLBINARY**|いいえ|**Binary**|  
 |**SQLBIGVARBINARY**|いいえ|**可変長**|  
 |**SQLVARBINARY**|いいえ|**可変長**|  
-|**SQLIMAGE**|接続前/接続後|**Image**|  
+|**SQLIMAGE**|接続前/接続後|**イメージ**|  
 |**SQLINTN**|接続前/接続後|**int-null**|  
 |**SQLDATETIMN**|接続前/接続後|**datetime-null**|  
 |**SQLMONEYN**|接続前/接続後|**money-null**|  
@@ -88,7 +88,7 @@ RETCODE bcp_gettypename (
 |**SQLAOPMAX**|接続前/接続後|**Max (最大値)**|  
 |**SQLDATETIM4**|接続前/接続後|**smalldatetime**|  
 |**SQLMONEY4**|接続前/接続後|**Smallmoney**|  
-|**SQLFLT4**|接続前/接続後|**本当の**|  
+|**SQLFLT4**|接続前/接続後|**Real**|  
 |**SQLUNIQUEID**|接続前/接続後|**uniqueidentifier**|  
 |**SQLNCHAR**|いいえ|**Nchar**|  
 |**SQLNVARCHAR**|いいえ|**Nvarchar**|  
@@ -113,7 +113,7 @@ RETCODE bcp_gettypename (
   
  詳細については、「 [日付と時刻の機能強化 &#40;ODBC&#41;](../../relational-databases/native-client-odbc-date-time/date-and-time-improvements-odbc.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [一括コピー関数](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/sql-server-driver-extensions-bulk-copy-functions.md)  
   
   

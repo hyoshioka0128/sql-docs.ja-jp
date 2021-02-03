@@ -15,13 +15,13 @@ helpviewer_keywords:
 ms.assetid: 7c71ec9f-0180-4398-b32a-4bfb7592e75d
 author: stevestein
 ms.author: sstein
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 18ed629f6a9d02c0068a20fc1da3e8d5c4375dc2
-ms.sourcegitcommit: 331b8495e4ab37266945c81ff5b93d250bdaa6da
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 70df620a283ac7f49c8ec854884a25843adc3e1c
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88645801"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97464513"
 ---
 # <a name="rename-columns-database-engine"></a>列名の変更 (データベース エンジン)
 
@@ -60,13 +60,13 @@ ms.locfileid: "88645801"
 
 ### <a name="to-rename-a-column-using-object-explorer"></a>オブジェクト エクスプ ローラーを使用して列の名前を変更するには
 
-1. **オブジェクト エクスプローラー**で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)]のインスタンスに接続します。
-2. **オブジェクト エクスプローラー**で、列の名前を変更するテーブルを右クリックし、 **[名前の変更]** をクリックします。
+1. **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)]のインスタンスに接続します。
+2. **オブジェクト エクスプローラー** で、列の名前を変更するテーブルを右クリックし、 **[名前の変更]** をクリックします。
 3. 新しい列の名前を入力します。
 
 ### <a name="to-rename-a-column-using-table-designer"></a>テーブル デザイナーを使用して列の名前を変更するには
 
-1. **オブジェクト エクスプローラー**で、列の名前を変更するテーブルを右クリックし、 **[デザイン]** をクリックします。
+1. **オブジェクト エクスプローラー** で、列の名前を変更するテーブルを右クリックし、 **[デザイン]** をクリックします。
 2. **[列名]** の下の変更する名前を選択して、新しい名前を入力します。
 3. **[ファイル]** メニューの **[** _<テーブル名>_ を保存] をクリックします。
 

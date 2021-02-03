@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: d0233525-a83b-4279-813e-c554042abd0e
 author: nahk-ivanov
 ms.author: alexiva
-ms.openlocfilehash: 35f0b2698497c1c87ed6d54eab2dc82496318619
-ms.sourcegitcommit: e8f6c51d4702c0046aec1394109bc0503ca182f0
+ms.openlocfilehash: 2de9fc7fdc730cb09f96bff6633cab29521e175e
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87932473"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596981"
 ---
 # <a name="sql-server-migration-assistant"></a>SQL Server Migration Assistant
 
@@ -42,11 +42,11 @@ SSMA では、次のターゲットバージョンがサポートされていま
 - SQL Server 2012
 - SQL Server 2014
 - SQL Server 2016
-- Windows および Linux での SQL Server 2017
-- Windows および Linux での SQL Server 2019
-- Azure SQL Database
+- Windows および Linux 上の SQL Server 2017
+- Windows および Linux 上の SQL Server 2019
+- Azure SQL データベース
 - Azure SQL Managed Instance
-- Azure SQL Data Warehouse * *
+- Azure Synapse Analytics * *
 
 * * このターゲットは、SSMA for Oracle でのみサポートされています。
 
@@ -62,19 +62,19 @@ SSMA では、次のターゲットバージョンがサポートされていま
 
 **Microsoft SQL Server Migration Assistant (SSMA) のヘルプとサポート:**  
   
-- **製品のヘルプ**-製品サポートにアクセスするには、ssma を起動し、[ヘルプ] メニューを選択するか、F1 キーを押します。  
+- **製品のヘルプ** -製品サポートにアクセスするには、ssma を起動し、[ヘルプ] メニューを選択するか、F1 キーを押します。  
   
-- **SQL Server コミュニティフォーラム**-SQL Server コミュニティで質問する  
+- **SQL Server コミュニティフォーラム** -SQL Server コミュニティで質問する  
   
-  - SQL Server コミュニティによって監視されているコミュニティニュースグループとフォーラム[SQL Server](https://go.microsoft.com/fwlink/?LinkId=42455)ます。 ブログや Web サイトなど、コミュニティ情報のソースも一覧表示されます。  
+  - SQL Server コミュニティによって監視されているコミュニティニュースグループとフォーラム[SQL Server](../sql-server/index.yml)ます。 ブログや Web サイトなど、コミュニティ情報のソースも一覧表示されます。  
   
-  - [SQL Server Developer センターのコミュニティ](https://go.microsoft.com/fwlink/?LinkId=42456)-ニュースグループ、フォーラム、その他の開発者 SQL Server に役立つコミュニティリソース  
+  - [SQL Server Developer センターのコミュニティ](../sql-server/index.yml) -ニュースグループ、フォーラム、その他の開発者 SQL Server に役立つコミュニティリソース  
   
-- **サポート**-にアクセスし [https://support.microsoft.com/assistedsupportproducts](https://support.microsoft.com/assistedsupportproducts) て、' SQL Server Migration Assistant ' を検索します。  バージョンを選択し、[要求の開始] を選択します。  サポートは SQL Server Migration Assistant ツールに含まれています。  
+- **サポート** -にアクセスし [https://support.microsoft.com/assistedsupportproducts](https://support.microsoft.com/assistedsupportproducts) て、' SQL Server Migration Assistant ' を検索します。  バージョンを選択し、[要求の開始] を選択します。  サポートは SQL Server Migration Assistant ツールに含まれています。  
   
-- **プレミアサポート**-プレミア契約をお持ちの場合は、プレミア[オンラインポータル](https://premier.microsoft.com/)でプレミアサポートを受けることができます。  
+- **プレミアサポート** -プレミア契約をお持ちの場合は、プレミア [オンラインポータル](https://premier.microsoft.com/)でプレミアサポートを受けることができます。  
   
-- **コンサルティングサービス**-パートナー支援型の移行については、 [Azure データベース移行ガイド](https://datamigration.microsoft.com/)を参照してください。
+- **コンサルティングサービス** -パートナー支援型の移行については、 [Azure データベース移行ガイド](https://datamigration.microsoft.com/)を参照してください。
   
 ## <a name="legal-notice-ssma"></a>免責事項 (SSMA)
 
@@ -102,4 +102,4 @@ SQL Server のドキュメントに記載されている内容は、十分なテ
   
 お客様は、ドキュメントに記載されていない API、ストアド プロシージャ、拡張ストアド プロシージャ、関数、ビュー、テーブル、列、プロパティ、メタデータなどを使用しないでください。 Microsoft カスタマーサポートは、ドキュメントに記載されていないエントリポイントを利用または使用するデータベースまたはアプリケーションをサポートしていません。  
   
-ドキュメントに記載されていないエントリ ポイントを応用または使用するアプリケーションやデータベースについては、将来のバージョンの SQL Server に対応させるためのサーバーおよびデータベースのアップグレードは保証されません。 SQL Server 機能の使用は、Microsoft SQL Server のドキュメントに記載されている方法に限定されます。 機能が Microsoft SQL Server のドキュメントに記載されていない場合は、SQL Server のサポート対象から除外されます。  
+ドキュメントに記載されていないエントリ ポイントを応用または使用するアプリケーションやデータベースについては、将来のバージョンの SQL Server に対応させるためのサーバーおよびデータベースのアップグレードは保証されません。 SQL Server 機能の使用は、Microsoft SQL Server のドキュメントに記載されている方法に限定されます。 機能が Microsoft SQL Server のドキュメントに記載されていない場合は、SQL Server のサポート対象から除外されます。

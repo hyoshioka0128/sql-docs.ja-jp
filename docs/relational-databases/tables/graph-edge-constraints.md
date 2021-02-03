@@ -16,13 +16,13 @@ helpviewer_keywords:
 - SQL Graph
 author: shkale-msft
 ms.author: shkale
-monikerRange: '>=sql-server-2017||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current||=azuresqldb-current'
-ms.openlocfilehash: 6f1075c6128ae040b3f2b0cb80c167d77aca89e0
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current||=azuresqldb-current'
+ms.openlocfilehash: c74b5d0f91e1a6bdcf54df1bf00e60d4ff7a72cd
+ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88419026"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97490102"
 ---
 # <a name="edge-constraints"></a>エッジ制約
 
@@ -229,7 +229,7 @@ GO
 ALTER TABLE bought ADD CONSTRAINT EC_BOUGHT1 CONNECTION (Supplier TO Product);
  ```  
 
-前の例では、**bought** エッジ テーブルに 2 つの別個のエッジ制約 (*EC_BOUGHT* と *EC_BOUGHT1*) を作成しました。 これらのエッジ制約には、どちらにも、異なるエッジ制約句があります。 エッジ テーブルに複数のエッジ制約がある場合、特定のエッジがエッジ テーブルで許可されるには、**すべての**エッジ制約を満たす必要があります。 ここでは、*EC_BOUGHT* と *EC_BOUGHT1* を満たすことができるエッジがないため、**bought** エッジ テーブルは空の状態を維持する必要があります。
+前の例では、**bought** エッジ テーブルに 2 つの別個のエッジ制約 (*EC_BOUGHT* と *EC_BOUGHT1*) を作成しました。 これらのエッジ制約には、どちらにも、異なるエッジ制約句があります。 エッジ テーブルに複数のエッジ制約がある場合、特定のエッジがエッジ テーブルで許可されるには、**すべての** エッジ制約を満たす必要があります。 ここでは、*EC_BOUGHT* と *EC_BOUGHT1* を満たすことができるエッジがないため、**bought** エッジ テーブルは空の状態を維持する必要があります。
 
 エッジ テーブルへの挿入を成功させるには、エッジ制約の 1 つを削除するか両方を削除し、両方のエッジ制約句を含む新しいエッジ制約を作成する必要があります。
 
@@ -343,5 +343,4 @@ WHERE EC.parent_object_id = object_id('bought');
 [CREATE TABLE (SQL Graph)](../../t-sql/statements/create-table-sql-graph.md)  
 [ALTER TABLE table_constraint](../../t-sql/statements/alter-table-table-constraint-transact-sql.md)  
 
-SQL Server のグラフ テクノロジについて詳しくは、「[SQL Server と Azure SQL Database でのグラフ処理](../graphs/sql-graph-overview.md?view=sql-server-2017)」をご覧ください。
-
+SQL Server のグラフ テクノロジについて詳しくは、「[SQL Server と Azure SQL Database でのグラフ処理](../graphs/sql-graph-overview.md)」をご覧ください。

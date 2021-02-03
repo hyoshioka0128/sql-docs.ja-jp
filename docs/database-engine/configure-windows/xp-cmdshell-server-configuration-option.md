@@ -11,14 +11,14 @@ helpviewer_keywords:
 ms.assetid: c147c9e1-b81d-49c8-b800-3019f4d86a13
 author: markingmyname
 ms.author: maghan
-ms.custom: contperfq4
+ms.custom: contperf-fy20q4
 ms.date: 06/12/2020
-ms.openlocfilehash: b2d4364d01b871364fda3ac42d98536e99269c29
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: d12ea9c15f2a07fa6fdd4bc5dd5538fd1522d267
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85763944"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878835"
 ---
 # <a name="xp_cmdshell-server-configuration-option"></a>xp_cmdshell サーバー構成オプション
 
@@ -30,6 +30,9 @@ ms.locfileid: "85763944"
 
 - 新しく開発されたコードでは、**xp_cmdshell** ストアド プロシージャを使用しないでください。通常は、無効のままにしておく必要があります。
 - 一部のレガシ アプリケーションでは、**xp_cmdshell** を有効にする必要があります。 このストアド プロシージャを使用しないようにアプリケーションを変更できない場合は、以下の説明に従って有効にすることができます。
+
+> [!NOTE]  
+> **xp_cmdshell** を使用する必要がある場合、セキュリティのベスト プラクティスとして、それを必要とする実際のタスクの期間だけそれを有効にすることをお勧めします。
 
 **xp_cmdshell** を有効にする必要がある場合は、[ポリシーベースの管理](../../relational-databases/policy-based-management/administer-servers-by-using-policy-based-management.md)を使用するか、次のコード例に示すように **sp_configure** システム ストアド プロシージャを実行します。  
   

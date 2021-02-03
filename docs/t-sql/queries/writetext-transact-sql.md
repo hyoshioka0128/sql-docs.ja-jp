@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - WRITETEXT_TSQL
 - WRITETEXT
@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: 80c252fd-a8b8-4a2e-888a-059081ed4109
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: e55a8822677162472d9f005eec213e184003cf00
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: f1793b813e763df5cb8078a73fb1cd78c7fe7a6c
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88422396"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99193364"
 ---
 # <a name="writetext-transact-sql"></a>WRITETEXT (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -44,7 +44,6 @@ ms.locfileid: "88422396"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 WRITETEXT [BULK]  
   { table.column text_ptr }  
   [ WITH LOG ] { data }  
@@ -98,12 +97,12 @@ WRITETEXT [BULK]
 > [!NOTE]  
 >  この例を実行するには、pubs サンプル データベースをインストールする必要があります。  
   
-```  
+```sql  
 USE pubs;  
 GO  
 ALTER DATABASE pubs SET RECOVERY SIMPLE;  
 GO  
-DECLARE @ptrval binary(16);  
+DECLARE @ptrval BINARY(16);  
 SELECT @ptrval = TEXTPTR(pr_info)   
 FROM pub_info pr, publishers p  
 WHERE p.pub_id = pr.pub_id   

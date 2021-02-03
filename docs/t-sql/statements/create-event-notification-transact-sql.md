@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - CREATE_EVENT_NOTIFICATION_TSQL
 - NOTIFICATION_TSQL
@@ -22,14 +22,14 @@ helpviewer_keywords:
 - events [SQL Server], notifications
 - event notifications [SQL Server], creating
 ms.assetid: dbbff0e8-9e25-4f12-a1ba-e12221d16ac2
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: 3c13c9635537ead88d8cb0f140a65cdf2dd82c35
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 2f4f4863a468f5f7d0da39cc578c8f4f865f7828
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88426764"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99186875"
 ---
 # <a name="create-event-notification-transact-sql"></a>CREATE EVENT NOTIFICATION (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -41,7 +41,6 @@ ms.locfileid: "88426764"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 CREATE EVENT NOTIFICATION event_notification_name   
 ON { SERVER | DATABASE | QUEUE queue_name }   
 [ WITH FAN_IN ]  
@@ -54,7 +53,7 @@ TO SERVICE 'broker_service' , { 'broker_instance_specifier' | 'current database'
 
 ## <a name="arguments"></a>引数
  *event_notification_name*  
- イベント通知の名前です。 イベント通知名は[識別子](../../relational-databases/databases/database-identifiers.md)の規則に従っている必要があり、作成先のスコープ (SERVER、DATABASE、または *object_name*) で一意であることが必要です。  
+ イベント通知の名前です。 イベント通知名は [識別子](../../relational-databases/databases/database-identifiers.md)の規則に従っている必要があり、作成先のスコープ (SERVER、DATABASE、または *object_name*) で一意であることが必要です。  
   
  SERVER  
  イベント通知のスコープを現在の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスに適用します。 指定した場合、FOR 句で指定したイベントが [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスで発生するたびに、通知が行われます。  
@@ -90,7 +89,7 @@ TO SERVICE 'broker_service' , { 'broker_instance_specifier' | 'current database'
  *event_group*  
  [!INCLUDE[tsql](../../includes/tsql-md.md)] または SQL トレース イベントの定義済みグループの名前を指定します。 イベント通知は、イベント グループに属するイベントが実行された後に実行されます。 DDL イベント グループと、対応する [!INCLUDE[tsql](../../includes/tsql-md.md)] イベント、およびそれらを定義できるスコープの一覧については、「[DDL イベント グループ](../../relational-databases/triggers/ddl-event-groups.md)」を参照してください。  
   
- *event_group* は、対応するイベントの種類を**sys.events** カタログ ビューに追加した場合、CREATE EVENT NOTIFICATION ステートメントが終了したときにマクロとしても動作します。  
+ *event_group* は、対応するイベントの種類を **sys.events** カタログ ビューに追加した場合、CREATE EVENT NOTIFICATION ステートメントが終了したときにマクロとしても動作します。  
   
  **'** *broker_service* **'**  
  イベント インスタンスのデータを受信するターゲット サービスを指定します。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、イベント通知用に対象サービスに対して 1 つ以上のメッセージ交換が開きます。 このサービスは、同じ [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] イベントのメッセージ型と、メッセージの送信に使用されるコントラクトに従っている必要があります。  
@@ -142,18 +141,21 @@ TO SERVICE 'broker_service' , { 'broker_instance_specifier' | 'current database'
 --Create a queue to receive messages.  
 CREATE QUEUE NotifyQueue ;  
 GO  
+
 --Create a service on the queue that references  
 --the event notifications contract.  
 CREATE SERVICE NotifyService  
 ON QUEUE NotifyQueue  
 ([https://schemas.microsoft.com/SQL/Notifications/PostEventNotification]);  
 GO  
+
 --Create a route on the service to define the address   
 --to which Service Broker sends messages for the service.  
 CREATE ROUTE NotifyRoute  
 WITH SERVICE_NAME = 'NotifyService',  
 ADDRESS = 'LOCAL';  
-GO  
+GO 
+
 --Create the event notification.  
 CREATE EVENT NOTIFICATION log_ddl1   
 ON SERVER   
@@ -176,7 +178,7 @@ TO SERVICE 'NotifyService',
 ### <a name="c-getting-information-about-an-event-notification-that-is-server-scoped"></a>C. サーバー スコープのイベント通知に関する情報を取得する  
  次の例では、`sys.server_event_notifications` カタログ ビューをクエリして、サーバー スコープで作成されたイベント通知 `log_ddl1` に関するメタデータを取得します。  
   
-```  
+```sql  
 SELECT * FROM sys.server_event_notifications  
 WHERE name = 'log_ddl1';  
 ```  

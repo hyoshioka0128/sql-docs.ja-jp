@@ -1,13 +1,13 @@
 ---
-description: fn_trace_geteventinfo (Transact-sql)
-title: fn_trace_geteventinfo (Transact-sql) |Microsoft Docs
+description: sys.fn_trace_geteventinfo (Transact-sql)
+title: sys.fn_trace_geteventinfo (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - fn_trace_geteventinfo
 - fn_trace_geteventinfo_TSQL
@@ -19,16 +19,16 @@ helpviewer_keywords:
 - sys.fn_trace_geteventinfo function
 - status information [SQL Server], events
 ms.assetid: 5b1c858a-ca43-4e2b-9d67-8654daaf0cc5
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 4eac53507004b832bcee19bd50bf7739062015c1
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 9249fc380c2642f2e3415d6b6da0e6103360fa04
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88498161"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99201875"
 ---
-# <a name="sysfn_trace_geteventinfo-transact-sql"></a>fn_trace_geteventinfo (Transact-sql)
+# <a name="sysfn_trace_geteventinfo-transact-sql"></a>sys.fn_trace_geteventinfo (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   トレースされているイベントに関する情報を返します。  
@@ -56,7 +56,7 @@ fn_trace_geteventinfo ( trace_id )
 |**イベント**|**int**|トレースされるイベントの ID|  
 |**columnid**|**int**|各イベントに対して収集されたすべての列の ID 番号|  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  特定のトレースの ID が渡された場合、 **fn_trace_geteventinfo** はそのトレースに関する情報を返します。 無効な ID が渡された場合、空の行セットが返されます。  
   
 ## <a name="permissions"></a>アクセス許可  
@@ -73,13 +73,13 @@ GO
   
 ## <a name="see-also"></a>参照  
  [sp_trace_setevent &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-trace-setevent-transact-sql.md)   
- [sp_trace_setfilter &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-trace-setfilter-transact-sql.md)   
- [Transact-sql&#41;&#40;トレースを作成する ](../../relational-databases/sql-trace/create-a-trace-transact-sql.md)   
- [sp_trace_create &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-trace-create-transact-sql.md)   
+ [sp_trace_setfilter &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-trace-setfilter-transact-sql.md)   
+ [トレースの作成 &#40;Transact-SQL&#41;](../../relational-databases/sql-trace/create-a-trace-transact-sql.md)   
+ [sp_trace_create &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-trace-create-transact-sql.md)   
  [sp_trace_generateevent &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-trace-generateevent-transact-sql.md)   
- [sp_trace_setstatus &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-trace-setstatus-transact-sql.md)   
+ [sp_trace_setstatus &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-trace-setstatus-transact-sql.md)   
  [sys.fn_trace_getinfo &#40;Transact-SQL&#41;](../../relational-databases/system-functions/sys-fn-trace-getinfo-transact-sql.md)   
- [fn_trace_gettable &#40;Transact-sql&#41;](../../relational-databases/system-functions/sys-fn-trace-gettable-transact-sql.md)   
+ [sys.fn_trace_gettable &#40;Transact-sql&#41;](../../relational-databases/system-functions/sys-fn-trace-gettable-transact-sql.md)   
  [sys.fn_trace_getfilterinfo &#40;Transact-SQL&#41;](../../relational-databases/system-functions/sys-fn-trace-getfilterinfo-transact-sql.md)  
   
   

@@ -1,13 +1,13 @@
 ---
 description: sys.dm_exec_text_query_plan (Transact-SQL)
-title: dm_exec_text_query_plan (Transact-sql) |Microsoft Docs
+title: sys.dm_exec_text_query_plan (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 10/20/2017
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - dm_exec_text_query_plan
 - sys.dm_exec_text_query_plan_TSQL
@@ -18,20 +18,20 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_exec_text_query_plan dynamic management function
 ms.assetid: 9d5e5f59-6973-4df9-9eb2-9372f354ca57
-author: markingmyname
-ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 51e2ee0d9867f952b219434ff59432732a96ddd6
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 95259700c5235ebe748ae4eaaa0f320df8c7a595
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539442"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99192948"
 ---
 # <a name="sysdm_exec_text_query_plan-transact-sql"></a>sys.dm_exec_text_query_plan (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
-[!INCLUDE[tsql](../../includes/tsql-md.md)] バッチ、またはバッチ内の特定のステートメントのプラン表示をテキスト形式で返します。 プラン ハンドルで指定するクエリ プランは、キャッシュ内のもの、または現在実行中のものを指定できます。 このテーブル値関数は、 [transact-sql&#41;&#40;dm_exec_query_plan ](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-transact-sql.md)に似ていますが、次の点が異なります。  
+[!INCLUDE[tsql](../../includes/tsql-md.md)] バッチ、またはバッチ内の特定のステートメントのプラン表示をテキスト形式で返します。 プラン ハンドルで指定するクエリ プランは、キャッシュ内のもの、または現在実行中のものを指定できます。 このテーブル値関数は [sys.dm_exec_query_plan &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-transact-sql.md)に似ていますが、次の点が異なります。  
   
 -   クエリ プランの出力がテキスト形式で返される。  
 -   クエリ プランの出力のサイズに制限がない。  
@@ -56,7 +56,7 @@ sys.dm_exec_text_query_plan
 *plan_handle*  
 は、実行され、そのプランがプランキャッシュに存在するか、現在実行中のバッチのクエリ実行プランを一意に識別するトークンです。 *plan_handle* は **varbinary (64)** です。   
 
-*Plan_handle*は、次の動的管理オブジェクトから取得できます。 
+*Plan_handle* は、次の動的管理オブジェクトから取得できます。 
   
 -   [sys.dm_exec_cached_plans &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-cached-plans-transact-sql.md)  
   
@@ -64,12 +64,12 @@ sys.dm_exec_text_query_plan
   
 -   [sys.dm_exec_requests &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql.md)  
 
--   [dm_exec_procedure_stats &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-procedure-stats-transact-sql.md)  
+-   [sys.dm_exec_procedure_stats &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-procedure-stats-transact-sql.md)  
 
--   [dm_exec_trigger_stats &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-trigger-stats-transact-sql.md)  
+-   [sys.dm_exec_trigger_stats &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-trigger-stats-transact-sql.md)  
   
 *statement_start_offset* |0 |標準  
-バッチまたは保存されるオブジェクトのテキスト内での、行が示すクエリの開始位置 (バイト単位) を示します。 *statement_start_offset* は **int**です。値0はバッチの先頭を示します。 既定値は 0 です。  
+バッチまたは保存されるオブジェクトのテキスト内での、行が示すクエリの開始位置 (バイト単位) を示します。 *statement_start_offset* は **int** です。値0はバッチの先頭を示します。 既定値は 0 です。  
   
 ステートメントの開始オフセットは、次の動的管理オブジェクトから取得できます。  
   
@@ -80,7 +80,7 @@ sys.dm_exec_text_query_plan
 *statement_end_offset* |-1 |標準  
 バッチまたは保存されるオブジェクトのテキスト内での、行が示すクエリの終了位置 (バイト単位) を示します。  
   
-*statement_start_offset* は **int**です。  
+*statement_start_offset* は **int** です。  
   
 値 -1 はバッチの最後を表します。 既定値は -1 です。  
   
@@ -92,16 +92,16 @@ sys.dm_exec_text_query_plan
 |**objectid**|**int**|ストアド プロシージャやユーザー定義関数など、クエリ プランのオブジェクトの ID。 アドホック バッチおよび準備されたバッチの場合、この列の値は **NULL** です。<br /><br /> NULL 値は許可されます。|  
 |**number**|**smallint**|ストアド プロシージャに付けられた番号 (整数)。 たとえば、**orders** アプリケーションのプロシージャ グループの名前は、**orderproc;1**、**orderproc;2** のように指定されることがあります。 アドホック バッチおよび準備されたバッチの場合、この列の値は **NULL** です。<br /><br /> NULL 値は許可されます。|  
 |**暗号**|**bit**|対応するプロシージャが暗号化されているかどうか。<br /><br /> 0 = 暗号化されていない<br /><br /> 1 = 暗号化されている<br /><br /> NULL 値は許可されません。|  
-|**query_plan**|**nvarchar(max)**|*Plan_handle*で指定されたクエリ実行プランのコンパイル時のプラン表示表現を格納します。 プラン表示はテキスト形式です。 アドホック [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメント、ストアド プロシージャ コール、ユーザー定義関数コールなどを含むバッチごとに、1 つのプランが生成されます。<br /><br /> NULL 値は許可されます。|  
+|**query_plan**|**nvarchar(max)**|*Plan_handle* で指定されたクエリ実行プランのコンパイル時のプラン表示表現を格納します。 プラン表示はテキスト形式です。 アドホック [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメント、ストアド プロシージャ コール、ユーザー定義関数コールなどを含むバッチごとに、1 つのプランが生成されます。<br /><br /> NULL 値は許可されます。|  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  次の場合、**sys.dm_exec_text_query_plan** で返されるテーブルの **plan** 列にはプラン表示の出力は返されません。  
   
--   *Plan_handle*を使用して指定されたクエリプランがプランキャッシュから削除されている場合、返されるテーブルの**query_plan**列は null になります。 たとえば、プラン ハンドルがキャプチャされてから **sys.dm_exec_text_query_plan** に使用されるまでに遅延が生じると、クエリ プランがキャッシュから削除されることがあります。  
+-   *Plan_handle* を使用して指定されたクエリプランがプランキャッシュから削除されている場合、返されるテーブルの **query_plan** 列は null になります。 たとえば、プラン ハンドルがキャプチャされてから **sys.dm_exec_text_query_plan** に使用されるまでに遅延が生じると、クエリ プランがキャッシュから削除されることがあります。  
   
 -   一括操作ステートメントや、8 KB よりも大きなサイズの文字列リテラルを含むステートメントなど、キャッシュされない [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントがいくつかあります。 これらのステートメントはキャッシュに存在しないため、**sys.dm_exec_text_query_plan** を使用してこれらのステートメントのプラン表示を取得することはできません。  
   
--   [!INCLUDE[tsql](../../includes/tsql-md.md)]バッチまたはストアドプロシージャにユーザー定義関数への呼び出し、または EXEC (*string*) を使用するなどの動的 SQL の呼び出しが含まれている場合、ユーザー定義関数のコンパイル済み XML プラン表示は、バッチまたはストアドプロシージャの dm_exec_text_query_plan によって返されるテーブルには含まれません **。** 代わりに、ユーザー定義関数に対応する*plan_handle*に対して、 **dm_exec_text_query_plan**の個別の呼び出しを行う必要があります。  
+-   [!INCLUDE[tsql](../../includes/tsql-md.md)]バッチまたはストアドプロシージャにユーザー定義関数の呼び出しまたは動的 SQL の呼び出し (EXEC (*string*) の使用など) が含まれている場合、ユーザー定義関数のコンパイル済み XML プラン表示は、バッチまたはストアドプロシージャの **sys.dm_exec_text_query_plan** によって返されるテーブルには含まれません。 代わりに、ユーザー定義関数に対応する *plan_handle* に対して、 **sys.dm_exec_text_query_plan** の個別の呼び出しを行う必要があります。  
   
 アドホッククエリで [簡易](../../relational-databases/query-processing-architecture-guide.md#SimpleParam) または [強制パラメーター](../../relational-databases/query-processing-architecture-guide.md#ForcedParam)化を使用する場合、 **query_plan** 列にはステートメントテキストのみが含まれ、実際のクエリプランは含まれません。 クエリ プランを返すには、**sys.dm_exec_text_query_plan** を呼び出して、準備されたパラメーター化クエリのプラン ハンドルを取得します。 クエリがパラメーター化されたかどうかを判断するには、[sys.syscacheobjects](../../relational-databases/system-compatibility-views/sys-syscacheobjects-transact-sql.md) ビューの **sql** 列、または [sys.dm_exec_sql_text](../../relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql.md) 動的管理ビューの text 列を参照します。  
   
@@ -181,4 +181,4 @@ GO
 ```  
   
 ## <a name="see-also"></a>参照  
- [dm_exec_query_plan &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-transact-sql.md)  
+ [sys.dm_exec_query_plan &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-transact-sql.md)  

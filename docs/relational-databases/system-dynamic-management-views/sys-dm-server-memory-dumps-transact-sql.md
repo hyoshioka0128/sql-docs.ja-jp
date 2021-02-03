@@ -1,12 +1,12 @@
 ---
 description: sys.dm_server_memory_dumps (Transact-SQL)
-title: dm_server_memory_dumps (Transact-sql) |Microsoft Docs
+title: sys.dm_server_memory_dumps (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_server_memory_dumps_TSQL
 - dm_server_memory_dumps_TSQL
@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_server_memory_dumps dynamic management view
 ms.assetid: 41782719-f54d-4e11-941a-c050c7576e23
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: cec8575270fd7068290cb24f88405453415b3020
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 937e73f48f43693d1c976534c2c272f58d4fed14
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89543835"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99134603"
 ---
 # <a name="sysdm_server_memory_dumps-transact-sql"></a>sys.dm_server_memory_dumps (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

@@ -23,13 +23,13 @@ helpviewer_keywords:
 ms.assetid: fb163e47-1546-4682-abaa-8c9494e9ddc7
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 860f4d84084916982fb8328e2fa1cc373d8b3204
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: a5c6647b06d058b1b97188810c4a23644d05c4f7
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86005687"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97468593"
 ---
 # <a name="create-a-login"></a>ログインの作成
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -66,9 +66,9 @@ ms.locfileid: "86005687"
   
     2.  **[場所を指定してください]** で、 **[場所]** をクリックして **[場所]** ダイアログ ボックスを開き、使用可能なサーバー場所の 1 つを選択します。 完了したら、 **[OK]** をクリックします。  
   
-    3.  **[選択するオブジェクト名を入力してください (例)]** で、検索するユーザー名またはグループ名を入力します。 詳細については、「 [[ユーザー、コンピューターまたはグループの選択] ダイアログ ボックス](https://technet.microsoft.com/library/cc771712.aspx)」を参照してください。  
+    3.  **[選択するオブジェクト名を入力してください (例)]** で、検索するユーザー名またはグループ名を入力します。 詳細については、「 [[ユーザー、コンピューターまたはグループの選択] ダイアログ ボックス](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771712(v=ws.11))」を参照してください。  
   
-    4.  詳細検索オプションを表示するには **[詳細]** をクリックします。 詳細については、「 [[ユーザー、コンピューターまたはグループの選択] ダイアログ ボックス - [詳細設定] ページ](https://technet.microsoft.com/library/cc733110.aspx)」を参照してください。  
+    4.  詳細検索オプションを表示するには **[詳細]** をクリックします。 詳細については、「 [[ユーザー、コンピューターまたはグループの選択] ダイアログ ボックス - [詳細設定] ページ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc733110(v=ws.11))」を参照してください。  
   
     5.  **[OK]** をクリックします。  
   
@@ -147,7 +147,7 @@ ms.locfileid: "86005687"
  ログインにマップするデータベース ユーザーを指定します。 既定では、データベース ユーザーの名前はログインと同じになります。  
   
  **[既定のスキーマ]**  
- ユーザーの既定のスキーマを指定します。 ユーザーが最初に作成されるときの既定のスキーマは、 **dbo**です。 存在しない既定のスキーマを指定することもできます。 Windows グループ、証明書、非対称キーにマップされるユーザーに対して既定のスキーマを指定することはできません。  
+ ユーザーの既定のスキーマを指定します。 ユーザーが最初に作成されるときの既定のスキーマは、 **dbo** です。 存在しない既定のスキーマを指定することもできます。 Windows グループ、証明書、非対称キーにマップされるユーザーに対して既定のスキーマを指定することはできません。  
   
  **[_database_name_ では guest アカウントが有効]**  
  選択したデータベースで guest アカウントが有効かどうかを示す読み取り専用属性です。 guest アカウントを有効または無効にするには、guest アカウントの **[ログインのプロパティ]** ダイアログ ボックスの **[状態]** ページを使用します。  
@@ -230,7 +230,7 @@ ms.locfileid: "86005687"
 ##  <a name="create-a-login-using-windows-authentication-using-t-sql"></a><a name="TsqlProcedure"></a> Windows 認証と T-SQL を使用してログインを作成する  
   
  
-1.  **オブジェクト エクスプローラー**で、 [!INCLUDE[ssDE](../../../includes/ssde-md.md)]のインスタンスに接続します。  
+1.  **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDE](../../../includes/ssde-md.md)]のインスタンスに接続します。  
   
 2.  [標準] ツール バーの **[新しいクエリ]** をクリックします。  
   
@@ -246,7 +246,7 @@ ms.locfileid: "86005687"
   
 ## <a name="create-a-login-using-sql-server-authentication-using-t-sql"></a>SQL Server 認証と T-SQL を使用してログインを作成する
   
-1.  **オブジェクト エクスプローラー**で、 [!INCLUDE[ssDE](../../../includes/ssde-md.md)]のインスタンスに接続します。  
+1.  **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDE](../../../includes/ssde-md.md)]のインスタンスに接続します。  
   
 2.  [標準] ツール バーの **[新しいクエリ]** をクリックします。  
   
@@ -275,5 +275,4 @@ ms.locfileid: "86005687"
   
 ## <a name="see-also"></a>参照  
  [SQL Server データベース エンジンと Azure SQL Database のセキュリティ センター](../../../relational-databases/security/security-center-for-sql-server-database-engine-and-azure-sql-database.md)  
-  
   

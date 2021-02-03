@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - trace_xe_action_map_TSQL
 - trace_xe_action_map
@@ -17,14 +17,14 @@ helpviewer_keywords:
 - extended events [SQL Server], tables
 - trace_xe_action_map
 ms.assetid: 208a1413-ce7f-4521-b765-d74723627302
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 5f3b742741d3add5b54c07d3cec4f47bbd919e2d
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: fe0e58d21752106b8273772bac6642e8b166f0d9
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540417"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99207228"
 ---
 # <a name="extended-events-tables---trace_xe_action_map"></a>拡張イベント テーブル - trace_xe_action_map
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "89540417"
 |package_name|**nvarchar(60)**|マップされたアクションがある拡張イベント パッケージの名前です。|  
 |xe_action_name|**nvarchar(60)**|SQL トレース列にマップされる拡張イベントアクションの名前です。|  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  次のクエリを使用して、SQL トレース列に相当する拡張イベントアクションを特定できます。  
   
 ```  

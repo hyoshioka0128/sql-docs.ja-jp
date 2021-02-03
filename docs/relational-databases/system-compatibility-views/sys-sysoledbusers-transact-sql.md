@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.sysoledbusers
 - sys.sysoledbusers_TSQL
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sysoledbusers system table
 - sys.sysoledbusers compatibility view
 ms.assetid: fe924c17-9cad-4b2b-8124-1e0fd82931e3
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 01a2683f063280800606ebd42ba9ce65a286ab82
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 4e8c134ad74b24704696b586bb362ab253dedb84
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88482115"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99148540"
 ---
 # <a name="syssysoledbusers-transact-sql"></a>sys.sysoledbusers (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -40,9 +40,9 @@ ms.locfileid: "88482115"
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
 |**rmtsrvid**|**smallint**|サーバーのセキュリティ id 番号 (SID)。|  
-|**rmtloginame**|**nvarchar (** 128 **)**|リンクされた**rmtservid**の**loginsid**がマップされるリモートログインの名前。|  
+|**rmtloginame**|**nvarchar (** 128 **)**|リンクされた **rmtservid** の **loginsid** がマップされるリモートログインの名前。|  
 |**rmtpassword**|**nvarchar (** 128 **)**|NULL を返します。|  
-|**loginsid**|**varbinary(** 85 **)**|マップされるローカルログインの SID。|  
+|**loginsid**|**varbinary (** 85 **)**|マップされるローカルログインの SID。|  
 |**status**|**smallint**|1の場合、マッピングはユーザーの資格情報を使用する必要があります。|  
 |**changedate**|**datetime**|マッピング情報が最後に変更された日付。|  
   

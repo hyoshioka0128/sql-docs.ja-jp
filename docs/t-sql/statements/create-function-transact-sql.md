@@ -39,14 +39,14 @@ helpviewer_keywords:
 - TVF
 - functions [SQL Server], invoking
 ms.assetid: 864b393f-225f-4895-8c8d-4db59ea60032
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: b097202564578ebeb52592d6bdae789f9c0d2fd6
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 717ffe936bef35c9794e160e56c7ea7b0658058f
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88479010"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170704"
 ---
 # <a name="create-function-transact-sql"></a>CREATE FUNCTION (Transact-SQL)
 
@@ -73,7 +73,7 @@ ms.locfileid: "88479010"
 > [!NOTE]
 >
 > - このトピックでは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] への .NET Framework CLR の統合について説明します。 CLR 統合は、[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] には適用されません。
-> - [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] については、「[CREATE FUNCTION (SQL Data Warehouse)](../../t-sql/statements/create-function-sql-data-warehouse.md)」を参照してください。
+> - [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] については、「[CREATE FUNCTION (Azure Synapse Analytics)](../../t-sql/statements/create-function-sql-data-warehouse.md)」を参照してください。
 
 ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)
 
@@ -271,12 +271,12 @@ RETURNS return_data_type
 ## <a name="arguments"></a>引数
 
 *OR ALTER*
-**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
+**適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
 
 条件付きで、既に存在する場合にのみ関数を変更します。
 
 > [!NOTE]
-> CLR のオプションの [OR ALTER] 構文は、[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 CU1 以降で使用できます。
+> CLR のオプションの [OR ALTER] 構文は、[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 CU1 以降で使用できます。
 
 *schema_name*: ユーザー定義関数が属するスキーマの名前を指定します。
 
@@ -357,7 +357,7 @@ EXTERNAL NAME \<method_specifier> *assembly_name*.*class_name*.*method_name*
 
 *\<*table_type_definition*>* ( { \<column_definition> \<column_constraint>| \<computed_column_definition> } [ \<table_constraint> ] [ ,...*n* ] ) [!INCLUDE[tsql](../../includes/tsql-md.md)] 関数のテーブル データ型を定義します。 テーブルの定義には、列の定義、および列またはテーブルの制約が含まれます。 テーブルは、常にプライマリ ファイル グループに保存されます。
 
-*\< clr_table_type_definition >* ( { *column_name**data_type* } [ ,...*n* ] ) **適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] SP1 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] ([一部のリージョンではプレビュー](https://azure.microsoft.com/documentation/articles/sql-database-preview-whats-new/?WT.mc_id=TSQL_GetItTag))。
+*\< clr_table_type_definition >* ( { *column_name**data_type* } [ ,...*n* ] ) **適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] SP1 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] ([一部のリージョンではプレビュー](/azure/azure-sql/database/features-comparison?WT.mc_id=TSQL_GetItTag))。
 
 CLR 関数のテーブル データ型を定義します。 テーブルの定義には、列名およびデータ型のみが含まれます。 テーブルは、常にプライマリ ファイル グループに保存されます。
 
@@ -538,7 +538,7 @@ CLR 関数のプログラミング方法について詳しくは、「[CLR ユ�
 |**SystemDataAccess**|関数が、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のローカル インスタンスのシステム データ (システム カタログまたは仮想システム テーブル) にアクセスします。||
 |**UserDataAccess**|関数が、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のローカル インスタンスのユーザー データにアクセスします。|ユーザー定義テーブルと一時テーブルが含まれますが、テーブル変数は含まれません。|
 
-[!INCLUDE[tsql](../../includes/tsql-md.md)] 関数の有効桁数のプロパティと決定性のプロパティは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によって自動的に決定されます。 CLR 関数のデータ アクセス プロパティと決定性のプロパティは、ユーザーが指定できます。 詳しくは、「[CLR 統合のカスタム属性の概要](https://msdn.microsoft.com/library/ecf5c097-0972-48e2-a9c0-b695b7dd2820)」をご覧ください。
+[!INCLUDE[tsql](../../includes/tsql-md.md)] 関数の有効桁数のプロパティと決定性のプロパティは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によって自動的に決定されます。 CLR 関数のデータ アクセス プロパティと決定性のプロパティは、ユーザーが指定できます。 詳しくは、「[CLR 統合のカスタム属性の概要](../../relational-databases/clr-integration/database-objects/clr-integration-custom-attributes-for-clr-routines.md)」をご覧ください。
 
 これらのプロパティの現在の値を表示するには、[OBJECTPROPERTYEX](../../t-sql/functions/objectpropertyex-transact-sql.md) を使用します。
 

@@ -8,16 +8,16 @@ ms.topic: conceptual
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 9e9fedafebab6b5353ddb6f2f51bd0c8662377e1
-ms.sourcegitcommit: d1535944bff3f2580070cc036ece30f1d43ee2ce
+monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15'
+ms.openlocfilehash: da47f54b73faf9507e5c815526bb14d1aa6d8396
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86406285"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471293"
 ---
 # <a name="python-language-extension-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services の Python 言語拡張機能
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2017 and later](../../includes/applies-to-version/sqlserver2017.md)]
 
 この記事では、[SQL Server Machine Learning Services](../sql-server-machine-learning-services.md) で外部 Python スクリプトを実行するための Python 拡張機能について説明します。 拡張機能により、次のものが追加されます。
 
@@ -42,8 +42,8 @@ Microsoft が並列ワークロードと分散ワークロード用に追加し�
 
 | ライブラリ | 説明 |
 |---------|-------------|
-| [**revoscalepy**](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/revoscalepy-package) | データ ソース オブジェクトとデータの探索、操作、変換、視覚化をサポートします。 リモート コンピューティング コンテキスト、およびさまざまなスケーラブルな機械学習モデル (**rxLinMod** など) の作成をサポートします。 詳細については、[SQL Server での revoscalepy モジュール](../python/ref-py-revoscalepy.md)に関するページをご覧ください。  |
-| [**microsoftml**](https://docs.microsoft.com/machine-learning-server/python-reference/microsoftml/microsoftml-package) | 速度と精度のために最適化された機械学習アルゴリズムに加え、テキストとイメージを操作するためのインライン変換も含まれています。 詳細については、[SQL Server での microsoftml モジュール](../python/ref-py-microsoftml.md)に関するページを参照してください。 |
+| [**revoscalepy**](/machine-learning-server/python-reference/revoscalepy/revoscalepy-package) | データ ソース オブジェクトとデータの探索、操作、変換、視覚化をサポートします。 リモート コンピューティング コンテキスト、およびさまざまなスケーラブルな機械学習モデル (**rxLinMod** など) の作成をサポートします。 詳細については、[SQL Server での revoscalepy モジュール](../python/ref-py-revoscalepy.md)に関するページをご覧ください。  |
+| [**microsoftml**](/machine-learning-server/python-reference/microsoftml/microsoftml-package) | 速度と精度のために最適化された機械学習アルゴリズムに加え、テキストとイメージを操作するためのインライン変換も含まれています。 詳細については、[SQL Server での microsoftml モジュール](../python/ref-py-microsoftml.md)に関するページを参照してください。 |
 
 microsoftml と revoscalepy は密結合されています。microsoftml で使用されるデータ ソースは、revoscalepy オブジェクトとして定義されています。 revoscalepy でコンピューティング コンテキストの制限は microsoftml に転送されます。 つまり、ローカル操作ではすべての機能を使用できますが、リモート コンピューティング コンテキストに切り替えるには RxInSqlServer が必要です。
 
@@ -70,7 +70,7 @@ SQL Server の "内部で" Python を実行する場合は、Python スクリプ
 ![script-in-db-python](../../machine-learning/python/media/script-in-db-python2.png)
 
 1. ストアド プロシージャに渡されたパラメーター `@language='Python'` によって、Python ランタイムに対する要求が示されます。 この要求は SQL Server からスタート パッド サービスに送信されます。
-Linux の場合、SQL では**スタート パッド** サービスを使用して、ユーザーごとに個別のスタート パッド プロセスとの通信が行われます。 詳細については、[機能拡張アーキテクチャの図](extensibility-framework.md#architecture-diagram)を参照してください。
+Linux の場合、SQL では **スタート パッド** サービスを使用して、ユーザーごとに個別のスタート パッド プロセスとの通信が行われます。 詳細については、[機能拡張アーキテクチャの図](extensibility-framework.md#architecture-diagram)を参照してください。
 2. スタート パッド サービスによって適切なランチャーが起動されます (この場合は PythonLauncher)。
 3. PythonLauncher によって外部の Python35 プロセスが開始されます。
 4. BxlServer と Python ランタイムとの連携により、データ交換や、作業結果の保存が管理されます。
@@ -102,7 +102,7 @@ Linux の場合、SQL では**スタート パッド** サービスを使用し�
 ## <a name="next-steps"></a>次のステップ
 
 + [SQL Server の revoscalepy モジュール](../python/ref-py-revoscalepy.md)
-+ [revoscalepy 関数リファレンス](https://docs.microsoft.com/r-server/python-reference/revoscalepy/revoscalepy-package) 
++ [revoscalepy 関数リファレンス](/r-server/python-reference/revoscalepy/revoscalepy-package) 
 + [SQL Server の機能拡張フレームワーク](extensibility-framework.md)
 + [SQL Server の R および機械学習拡張機能](extension-r.md)
 + [Python パッケージ情報の取得](../package-management/python-package-information.md)

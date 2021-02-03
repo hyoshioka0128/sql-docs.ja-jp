@@ -11,13 +11,13 @@ ms.author: drskwier
 ms.reviewer: maghan
 ms.custom: seo-lt-2019
 ms.date: 12/15/2019
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||=azuresqldb-mi-current'
-ms.openlocfilehash: 212cf0c286ec0f55a76d16c27a66fac6a6f1f5e4
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=azuresqldb-mi-current'
+ms.openlocfilehash: a380eabba4a20a65fd291b938d270a440f66d754
+ms.sourcegitcommit: 44eebb659f9b226c08aea6c31a909b22ad4fec60
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86003950"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860605"
 ---
 # <a name="release-notes-for-sql-server-data-tools-ssdt"></a>SQL Server Data Tools (SSDT) リリース ノート
 
@@ -44,6 +44,64 @@ GeneMi , 2019/03/22.
 
 P.S.  there's no need to keep this large HTML comment indefinitely.
 -->
+
+## <a name="1597nbsp-ssdt-for-vs-2017"></a>15.9.7、VS 2017 用 &nbsp; SSDT
+
+_リリース済み:_ &nbsp; 2021 年 1 月 5 日  
+_ビルド番号:_ &nbsp; 14.0.16228.0  
+_Visual Studio 2017 用 SSDT。_
+
+### <a name="whats-new"></a>新機能
+
+| New Item | 詳細 |
+|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Integration Services (SSIS) | IR 作成ウィザードの SSISDB の作成をオプションにします。 |
+| Integration Services (SSIS) | 異なるサブスクリプションの名前が同じである場合に、IR 作成ウィザードおよび Azure 対応プロジェクト ウィザードで Azure サブスクリプションのコンボ ボックス項目が重複するという問題を修正しました。 |
+| Integration Services (SSIS) | IR 作成ウィザードで [接続] ボタンを有効にできない場合があるという問題が修正されました。 |
+| Integration Services (SSIS) | 異なるサブスクリプションの名前が同じである場合に、IR 作成ウィザードおよび Azure 対応プロジェクト ウィザードで Azure サブスクリプションのコンボ ボックス項目が重複するという問題を修正しました。 |
+| Integration Services (SSIS) | 現在のロケールがドイツの場合に、スクリプト コンポーネントの bufferwrapper.cs の下にある自動生成されたコードによって余計な二重引用符が追加される問題を修正しました。 |
+| Integration Services (SSIS) | ターゲット サーバーのバージョンが SQL Server 2012、2014、2016 の場合、[WSDL のダウンロード] ボタンが表示されない問題を修正しました。 |
+| Integration Services (SSIS) | メモリ不足の例外が原因で大規模なプロジェクトのビルドが失敗することがある問題を修正しました。 |
+| Integration Services (SSIS) | パッケージ配置モデルでファイル システムまたは MSDB にコピーとして保存するときに、パッケージがプロジェクトの現在のターゲット サーバー バージョンにダウングレードされない問題を修正しました。 |
+| Integration Services (SSIS) | "No such interface" (該当するインターフェイスがありません) エラーが原因でディメンション処理変換先が機能しない問題を修正しました。 |
+| Integration Services (SSIS) | アクセシビリティと高 DPI に関連するいくつかの問題を修正しました。 |
+
+### <a name="known-issues"></a>既知の問題
+
+| 既知の問題 | 詳細 |
+| :---------- | :------ |
+| ExecuteOutOfProcess が True に設定されていると、SSIS パッケージ実行タスクはデバッグをサポートしません。 | この問題はデバッグにのみ該当します。 DTExec.exe または SSIS カタログを介した保存、展開、実行は影響を受けません。 |
+| &nbsp; | &nbsp; |
+
+
+## <a name="1596nbsp-ssdt-for-vs-2017"></a>15.9.6、VS&nbsp;2017 用 SSDT
+
+_リリース済み:_ &nbsp;2020 年 8 月 31 日  
+_ビルド番号:_ &nbsp;14.0.16222.0  
+_Visual Studio 2017 用 SSDT。_
+
+### <a name="whats-new"></a>新機能
+
+| New Item | 詳細 |
+|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Integration Services (SSIS) | SQL Server Analysis Services (SSAS) データソースへの接続時に OLE DB ソースで **[プレビュー]** ボタンが機能しないという問題を修正しました。 |
+| Integration Services (SSIS) | 関連付けられたパスを削除する前にデータ フロー コンポーネントの入力または出力を削除すると COMException エラーが発生するという問題を修正しました。 |
+| Integration Services (SSIS) | SSAS 処理タスクが Power BI ワークスペースに接続してそのモデルを更新できないという問題を修正しました。 |
+| Integration Services (SSIS) | x64 ランタイムを使用し、SQL Server 2017 をターゲットとしている場合に、Visual Studio がデバッグ スクリプト タスク/コンポーネントでハングするという問題を修正しました。 |
+| Integration Services (SSIS) | 一部の環境で MySQL ドライバーを選択したときにインポート/エクスポート ウィザードがクラッシュするという問題を修正しました。 |
+| Integration Services (SSIS) | アクセシビリティと高 DPI に関連するいくつかの問題を修正しました。 |
+| Integration Services (SSIS) | ユーザーがパッケージを開くときに、検証をスキップしてパフォーマンスを向上させることができるようになりました。 詳しくは、[SSDT での SSIS パッケージのオープンを高速化する](https://techcommunity.microsoft.com/t5/sql-server-integration-services/accelerate-the-opening-of-ssis-package-in-ssdt/ba-p/1607099)方法に関する記事を参照してください。 |
+| Integration Services (SSIS) | ターゲット サーバーのバージョンが SQL Server 2017 ではない場合に、Azure-SSIS へのデプロイをブロックします。 |
+
+### <a name="known-issues"></a>既知の問題
+
+| 既知の問題 | 詳細 |
+| :---------- | :------ |
+| ExecuteOutOfProcess が True に設定されていると、SSIS パッケージ実行タスクはデバッグをサポートしません。 | この問題はデバッグにのみ該当します。 DTExec.exe または SSIS カタログを介した保存、展開、実行は影響を受けません。 |
+| SSIS と SSAS が同じ Visual Studio インスタンスにインストールされている場合、Power Query ソースは OData v4 をサポートしない可能性があります。 | &nbsp; |
+| SSIS と SSAS が同じ Visual Studio インスタンスにインストールされている場合、Power Query ソースでは Oracle への接続に ODBC を使用できない可能性があります。 | &nbsp; |
+| Power Query ソースはローカライズされていません。 | &nbsp; |
+| &nbsp; | &nbsp; |
 
 ## <a name="1595nbsp-ssdt-for-vs-2017"></a>15.9.5、VS 2017 用 &nbsp; SSDT
 
@@ -726,16 +784,16 @@ _SQL Server 2017 までのサポート。_
     - PowerQuery での例示による列の追加
     - 1400 モデルでのデータ アクセス オプション (M エンジンによって使われるモデル レベルのプロパティ)
         - 高速結合の有効化 (既定値は false です。true に設定すると、マッシュアップ エンジンはデータを結合するときにデータ ソースのプライバシー レベルを無視します)
-        - 従来のリダイレクトの有効化 (既定値は false です。true に設定すると、マッシュアップ エンジンは安全ではない可能性のある HTTP リダイレクトに従います。  たとえば、HTTPS から HTTP URI へのリダイレクト)  
-        - エラー値を null として返します (既定値は false です。true にすると、セル レベルのエラーが null として返されます。 false の場合、セルにエラーが含まれると例外が発生します)  
+        - 従来のリダイレクトの有効化 (既定値は false です。true に設定すると、マッシュアップ エンジンは安全ではない可能性のある HTTP リダイレクトに従います。    たとえば、HTTPS から HTTP URI へのリダイレクト)  
+        - エラー値を null として返します (既定値は false です。true にすると、セル レベルのエラーが null として返されます。 false の場合、セルにエラーが含まれると例外が発生します)  
     - PowerQuery を使う追加データ ソース (ファイル データ ソース)
-        - Excel 
-        - テキスト/CSV 
-        - xml 
-        - Json 
-        - Folder 
-        - Access データベース 
-        - Azure Blob Storage 
+        - Excel 
+        - テキスト/CSV 
+        - xml 
+        - Json 
+        - Folder 
+        - Access データベース 
+        - Azure Blob Storage 
     - ローカライズされた PowerQuery ユーザー インターフェイス
 - DAX エディター ツール ウィンドウ
     - SSDT の [表示] > [その他のウィンドウ] メニューで利用可能な DAX 編集エクスペリエンスがメジャー、計算列、詳細行の式に関して改良されました
@@ -844,24 +902,24 @@ SqlPackage の発行アクションとスクリプト アクションには、2 
 DacFx に 2 つの新しい API、DacServices.Publish() と DacServices.Script() が追加されました。 これらは、発行 + スクリプト + レポートの各アクションを 1 回の操作で実行できるようサポートします。 使用例:
 
 ```
-DacServices service = new DacServices(connectionString);
-using(DacPackage package = DacPackage.Load(@"C:\My\db.dacpac")) {
-var options = new PublishOptions() {
-    GenerateDeploymentScript = true, // Should a deployment script be created?
-    GenerateDeploymentReport = true, // Should an xml deploy report be created?
-    DatabaseScriptPath = @"C:\My\OutputScript.sql", // optional path to save script to
-    MasterDbScriptPath = @"C:\My\OutputScript_Master.sql", // optional path to save master script to
-    DeployOptions = new DacDeployOptions()
+DacServices service = new DacServices(connectionString);
+using(DacPackage package = DacPackage.Load(@"C:\My\db.dacpac")) {
+var options = new PublishOptions() {
+    GenerateDeploymentScript = true, // Should a deployment script be created?
+    GenerateDeploymentReport = true, // Should an xml deploy report be created?
+    DatabaseScriptPath = @"C:\My\OutputScript.sql", // optional path to save script to
+    MasterDbScriptPath = @"C:\My\OutputScript_Master.sql", // optional path to save master script to
+    DeployOptions = new DacDeployOptions()
 };
 
-// Call publish and receive deployment script & report in the results
-PublishResult result = service.Publish(package, "TargetDb", options);
+// Call publish and receive deployment script & report in the results
+PublishResult result = service.Publish(package, "TargetDb", options);
 Console.WriteLine(result.DatabaseScript);
 Console.WriteLine(result.MasterDbScript);
 Console.WriteLine(result.DeploymentReport);
 
-// Call script and receive deployment script & report in results
-result = service.Script(package, "TargetDb", options);
+// Call script and receive deployment script & report in results
+result = service.Script(package, "TargetDb", options);
 Console.WriteLine(result.DatabaseScript);
 Console.WriteLine(result.MasterDbScript);
 Console.WriteLine(result.DeploymentReport);
@@ -870,7 +928,7 @@ Console.WriteLine(result.DeploymentReport);
 **Analysis Services と Reporting Services**
 
 SSAS 表形式デザイナーの DAX パーサーにおいて、大きな DAX 式を使用する際のパフォーマンスが向上しました。
-詳しくは、[Analysis Services に関するブログ記事](https://blogs.msdn.microsoft.com/analysisservices/2016/09/20/introducing-integrated-workspace-mode-for-sql-server-data-tools-for-analysis-services-tabular-projects-ssdt-tabular/)をご覧ください。
+詳しくは、[Analysis Services に関するブログ記事](/archive/blogs/analysisservices/introducing-integrated-workspace-mode-for-sql-server-data-tools-for-analysis-services-tabular-projects-ssdt-tabular)をご覧ください。
 
 ### <a name="fixed--improved-this-month"></a>今月の修正点/強化点
 
@@ -896,7 +954,7 @@ SSAS 表形式デザイナーの DAX パーサーにおいて、大きな DAX �
 
 **統合サービス**
 
-* 接続のバグ  [1608896](https://connect.microsoft.com/SQLServer/feedback/details/1608896/move-multiple-integration-service-package-tasks) の修正:複数の統合サービス パッケージのタスクの移動
+* 接続のバグ [1608896](https://connect.microsoft.com/SQLServer/feedback/details/1608896/move-multiple-integration-service-package-tasks) の修正: 複数の統合サービス パッケージのタスクの移動
 
 ## <a name="164-ssdt-for-vs-2015"></a>16.4、VS 2015 用 SSDT
 
@@ -906,11 +964,11 @@ _SQL Server 2016 の場合。_
 
 **新機能**
 
-SqlPackage.exe および Data-Tier Application Framework (DacFx) API でスキーマ比較がサポートされるようになりました。 詳しくは、「 [Schema Compare in SqlPackage and the Data-Tier Application Framework](https://blogs.msdn.microsoft.com/ssdt/2016/09/20/schema-compare-in-sqlpackage-and-the-data-tier-application-framework-dacfx/)」(SqlPackage および Data-Tier Application Framework におけるスキーマ比較) をご覧ください。
+SqlPackage.exe および Data-Tier Application Framework (DacFx) API でスキーマ比較がサポートされるようになりました。 詳しくは、「[Schema Compare in SqlPackage and the Data-Tier Application Framework](/archive/blogs/ssdt/schema-compare-in-sqlpackage-and-the-data-tier-application-framework-dacfx)」(SqlPackage および Data-Tier Application Framework におけるスキーマ比較) をご覧ください。
 
 **Analysis Services - SSDT テーブル (SSAS) 統合のワークスペース モード**
 
-SSDT テーブルに内部 SSAS インスタンスが含まれるようになりました。これにより、統合ワークスペース モードが有効な場合は、SSDT テーブルがバックグラウンドで自動的に起動するため、テーブル、列、データをモデル デザイナーで追加および表示できます。外部のワークスペース サーバー インスタンスを指定する必要はありません。 統合ワークスペース モードを使用しても、SSDT テーブルがワークスペース サーバーおよびデータベースと連動するしくみは変わりません。 変わるのは、SSDT テーブルがワークスペース データベースをホストする場所です。 統合ワークスペース モードを有効にするには、新しい表形式プロジェクトの作成時に表示される [テーブル モデル デザイナー] ダイアログ ボックスの [統合ワークスペース] オプションを選択します。 明示的なワークスペース サーバーを現在使用している既存の表形式プロジェクトの場合は、[プロパティ] ウィンドウで [統合ワークスペース モード] パラメーターを True に設定して統合ワークスペース モードに切り替えることができます。このパラメーターは、ソリューション エクスプローラーで Model.bim ファイルを選択すると表示されます。 詳しくは、[Analysis Services に関するブログ記事](https://blogs.msdn.microsoft.com/analysisservices/2016/09/20/introducing-integrated-workspace-mode-for-sql-server-data-tools-for-analysis-services-tabular-projects-ssdt-tabular/)をご覧ください。
+SSDT テーブルに内部 SSAS インスタンスが含まれるようになりました。これにより、統合ワークスペース モードが有効な場合は、SSDT テーブルがバックグラウンドで自動的に起動するため、テーブル、列、データをモデル デザイナーで追加および表示できます。外部のワークスペース サーバー インスタンスを指定する必要はありません。 統合ワークスペース モードを使用しても、SSDT テーブルがワークスペース サーバーおよびデータベースと連動するしくみは変わりません。 変わるのは、SSDT テーブルがワークスペース データベースをホストする場所です。 統合ワークスペース モードを有効にするには、新しい表形式プロジェクトの作成時に表示される [テーブル モデル デザイナー] ダイアログ ボックスの [統合ワークスペース] オプションを選択します。 明示的なワークスペース サーバーを現在使用している既存の表形式プロジェクトの場合は、[プロパティ] ウィンドウで [統合ワークスペース モード] パラメーターを True に設定して統合ワークスペース モードに切り替えることができます。このパラメーターは、ソリューション エクスプローラーで Model.bim ファイルを選択すると表示されます。 詳しくは、[Analysis Services に関するブログ記事](/archive/blogs/analysisservices/introducing-integrated-workspace-mode-for-sql-server-data-tools-for-analysis-services-tabular-projects-ssdt-tabular)をご覧ください。
 
 **データベース ツールの更新および修正点**
  **:**
@@ -983,13 +1041,13 @@ _SQL Server 2016 の場合。_
 **新機能**  
 - **Always Encrypted のサポート:** このリリースでは、Always Encrypted 列があるデータベースで、Always Encrypted がコア API とコマンド ライン ツール (SqlPackage.exe) を通じて完全にサポートされます。 Always Encrypted のすべての機能が完全にサポートされた状態でデータベース プロジェクトをビルドして発行できます。  
 - **テンポラル テーブルのサポートの強化:** テンポラル テーブルのリンクを変更前に解除し、これらが完了したら再リンクするようにして、処理を簡略化しました。 つまり、サポートされる操作に関して、テンポラル テーブルが他の種類のテーブル (標準、メモリ内) と同等になります。 
-- **SqlPackage.exe とインストールの変更:** SSDT を SQL Server エンジンと SSMS の更新から切り離すための変更を行いました。 詳しくは、「[Changes to SSDT and SqlPackage.exe installation and updates](https://blogs.msdn.microsoft.com/ssdt/2016/06/30/changes-to-ssdt-and-sqlpackage-exe-installation-and-updates/)」(SSDT と SqlPackage.exe のインストールおよび更新の変更) をご覧ください。
+- **SqlPackage.exe とインストールの変更:** SSDT を SQL Server エンジンと SSMS の更新から切り離すための変更を行いました。 詳しくは、「[Changes to SSDT and SqlPackage.exe installation and updates](/archive/blogs/ssdt/changes-to-ssdt-and-sqlpackage-exe-installation-and-updates)」(SSDT と SqlPackage.exe のインストールおよび更新の変更) をご覧ください。
 
 
 **更新と修正点**
 * **データベース ツール:**
     * 今後、SSDT がデータベースで Transparent Data Encryption (TDE) を無効にすることはありません。 これまでは、プロジェクトのデータベース設定における既定の暗号化オプションが無効であると、暗号化がオフになっていました。 この修正により、暗号化を有効にすることができ、発行中に無効になることはありません。 
-    * 初期接続時の Azure SQL DB 接続の再試行の回数が増えて、回復性が向上しました。
+    * 初期接続時の Azure SQL データベース接続の再試行の回数が増えて、回復性が向上しました。
     * 既定のファイル グループが PRIMARY でない場合は、Azure V12 へのインポート/発行が失敗していました。 現在では、発行時にこの設定が無視されるようになりました。
     * 引用符で囲まれた識別子がオンになっているオブジェクトを含むデータベースのエクスポート時に、一部のインスタンスでエクスポートの検証が失敗する問題を修正しました。
     * Hekaton テーブルの作成用の TEXTIMAGE_ON オプションが許可されていない場合に正しく追加されない問題を修正しました。
@@ -1021,12 +1079,12 @@ _リリース済み:_ &nbsp; 2016 年 6 月 1 日
 _ビルド番号:_ &nbsp; 14.0.60525.0  
 _SQL Server 2016 の場合。_
 
-SSDT の一般提供 (GA) がリリースされました。 2016 年 6 月の SSDT GA の更新では、SQL Server 2016 RTM の最新の更新プログラムのサポートとさまざまなバグ修正が追加されました。 詳しくは、「[SQL Server Data Tools GA update for June 2016](https://blogs.msdn.microsoft.com/ssdt/2016/06/01/sql-server-data-tools-ga-update-for-june-2016/)」(2016 年 6 月の SQL Server Data Tools の GA 更新) をご覧ください。
+SSDT の一般提供 (GA) がリリースされました。 2016 年 6 月の SSDT GA の更新では、SQL Server 2016 RTM の最新の更新プログラムのサポートとさまざまなバグ修正が追加されました。 詳しくは、「[SQL Server Data Tools GA update for June 2016](/archive/blogs/ssdt/sql-server-data-tools-ga-update-for-june-2016)」(2016 年 6 月の SQL Server Data Tools の GA 更新) をご覧ください。
 
 ## <a name="additional-resources"></a>その他のリソース
 
 - [SQL Server Data Tools &#40;SSDT&#41; のダウンロード](../ssdt/download-sql-server-data-tools-ssdt.md)
 - [以前のリリースの SQL Server Data Tools (SSDT と SSDT-BI)](../ssdt/previous-releases-of-sql-server-data-tools-ssdt-and-ssdt-bi.md)
-- [データベース エンジンの新機能](https://msdn.microsoft.com/library/bb510411.aspx)
-- [Analysis Services の新機能](https://docs.microsoft.com/analysis-services/what-s-new-in-analysis-services)
+- [データベース エンジンの新機能](../sql-server/what-s-new-in-sql-server-2016.md)
+- [Analysis Services の新機能](/analysis-services/what-s-new-in-analysis-services)
 - [Integration Services の新機能](../integration-services/what-s-new-in-integration-services-in-sql-server-2016.md)

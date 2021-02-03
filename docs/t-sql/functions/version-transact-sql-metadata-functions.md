@@ -7,19 +7,19 @@ ms.prod: sql
 ms.prod_service: sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 ms.assetid: 95a79b33-98f2-4929-a1a5-93b522a9e152
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest || = sqlallproducts-allversions'
-ms.openlocfilehash: 82ae0f0b2ef46cf1082d5d0fe7fc064e3c538ee8
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
+ms.openlocfilehash: b96f059d38320b0c07e42f67125fc686ee7866df
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88361588"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99159679"
 ---
 # <a name="version---transact-sql-metadata-functions"></a>Version - Transact SQL メタデータ関数
 [!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
@@ -30,8 +30,8 @@ ms.locfileid: "88361588"
   
 ## <a name="syntax"></a>構文  
   
-```  
--- Azure SQL Data Warehouse and Parallel Data Warehouse  
+```syntaxsql
+-- Azure Synapse Analytics and Parallel Data Warehouse  
 VERSION ( )  
 ```  
   
@@ -43,12 +43,12 @@ VERSION ( )
 ## <a name="examples"></a>例  
 次の例では、バージョン番号を返します。  
   
-```  
+```sql
 SELECT VERSION();  
 ```  
   
-## <a name="see-also"></a>関連項目 
-[SESSION_ID &#40;Transact-SQL&#41;](../../t-sql/functions/session-id-transact-sql.md)  
+## <a name="see-also"></a>参照 
+[SESSION_ID (Transact-SQL)](../../t-sql/functions/session-id-transact-sql.md)  
 [DB_NAME &#40;Transact-SQL&#41;](../../t-sql/functions/db-name-transact-sql.md)  
   
   

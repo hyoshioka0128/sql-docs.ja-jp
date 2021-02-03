@@ -3,7 +3,7 @@ title: ALTER DATABASE SCOPED CONFIGURATION
 description: 複数のデータベース構成を個別データベース レベルで設定できます。
 titleSuffix: SQL Server (Transact-SQL)
 ms.custom: seo-lt-2019
-ms.date: 10/31/2019
+ms.date: 09/15/2020
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
@@ -21,23 +21,23 @@ helpviewer_keywords:
 - ALTER DATABASE SCOPED CONFIGURATION statement
 - configuration [SQL Server], ALTER DATABASE SCOPED CONFIGURATION statement
 ms.assetid: 63373c2f-9a0b-431b-b9d2-6fa35641571a
-author: CarlRabeler
-ms.author: carlrab
-monikerRange: = azuresqldb-current || = azuresqldb-mi-current || >= sql-server-2016 || >= sql-server-linux-2017 ||=azure-sqldw-latest|| = sqlallproducts-allversions
-ms.openlocfilehash: 698048be11f3514762f27c23ec16bf4ef18041a5
-ms.sourcegitcommit: 21bedbae28840e2f96f5e8b08bcfc794f305c8bc
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: = azuresqldb-current || = azuresqldb-mi-current || >= sql-server-2016 || >= sql-server-linux-2017 ||=azure-sqldw-latest
+ms.openlocfilehash: 8d314e90bbe869dec9ccdc31c45996c4834fc829
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87864483"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170424"
 ---
 # <a name="alter-database-scoped-configuration-transact-sql"></a>ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)
 
 [!INCLUDE[tsql-appliesto-ss2016-asdb-asdw-xxx-md.md](../../includes/tsql-appliesto-ss2016-asdb-asdw-xxx-md.md)]
 
-このコマンドを使うと、複数のデータベース構成設定を**個別のデータベース** レベルで設定できます。 
+このコマンドを使うと、複数のデータベース構成設定を **個別のデータベース** レベルで設定できます。 
 
-[引数](#arguments)セクションの各設定の**適用対象**行で示されているように、次の設定は [!INCLUDE[sssdsfull](../../includes/sssdsfull-md.md)] と [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] でサポートされています。 
+[引数](#arguments)セクションの各設定の **適用対象** 行で示されているように、次の設定は [!INCLUDE[sssdsfull](../../includes/sssdsfull-md.md)] と [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] でサポートされています。 
 
 - プロシージャ キャッシュをクリアします。
 - プライマリ データベースに対して、MAXDOP パラメーターを特定のデータベースに最適な内容に基づいて任意の値 (1、2、...) に設定し、(クエリ レポートなどに) 使用されるすべてのセカンダリ データベースに対して別の値 (0 など) を設定します。
@@ -58,7 +58,7 @@ ms.locfileid: "87864483"
 - 再開可能なインデックス操作を一時停止してから、SQL Server エンジンによって自動的に中止されるまでの一時停止される時間を分単位で指定します。
 - 統計の非同期更新で優先度が低いロックの待機を有効または無効にします
 
-この設定は、Azure Synapse Analytics (旧称 SQL DW) でのみ使用できます。
+この設定は、Azure Synapse Analytics でのみ使用できます。
 - ユーザー データベースの互換性レベルを設定する
 
 ![リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "[リンク] アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)
@@ -113,7 +113,7 @@ ALTER DATABASE SCOPED CONFIGURATION
 > -  `DISABLE_BATCH_MODE_ADAPTIVE_JOINS` を `BATCH_MODE_ADAPTIVE_JOINS` に変更しました
 
 ```SQL
--- Syntax for Azure Synapse Analytics (Formerly SQL DW)
+-- Syntax for Azure Synapse Analytics
 
 ALTER DATABASE SCOPED CONFIGURATION
 {
@@ -143,17 +143,17 @@ CLEAR PROCEDURE_CACHE [plan_handle]
 
 MAXDOP **=** {\<value> | PRIMARY } **\<value>**
 
-ステートメントで使用される**並列処理の最大限度 (MAXDOP)** 設定の既定値を指定します。 0 が初期設定値であり、サーバー構成が代わりに使用されることを示します。 データベース スコープの MAXDOP は、サーバー レベルで設定されている**並列処理の最大限度**を p_configure によってオーバーライドします (0 に設定されていない限り)。 別の設定を必要とする特定のクエリを調整する目的で、クエリ ヒントでは引き続き、データベース スコープの MAXDOP をオーバーライドできます。 これらすべての設定の上限は、[ワークロード グループ](create-workload-group-transact-sql.md)に設定されている MAXDOP によって決定されます。
+ステートメントで使用される **並列処理の最大限度 (MAXDOP)** 設定の既定値を指定します。 0 が初期設定値であり、サーバー構成が代わりに使用されることを示します。 データベース スコープの MAXDOP は、サーバー レベルで設定されている **並列処理の最大限度** を p_configure によってオーバーライドします (0 に設定されていない限り)。 別の設定を必要とする特定のクエリを調整する目的で、クエリ ヒントでは引き続き、データベース スコープの MAXDOP をオーバーライドできます。 これらすべての設定の上限は、[ワークロード グループ](create-workload-group-transact-sql.md)に設定されている MAXDOP によって決定されます。
 
 MAXDOP オプションを使用すると、並列プラン実行で使用するプロセッサの数を制限できます。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、クエリ、インデックス データ定義言語 (DDL) の操作、並列挿入、オンライン列変更、並行統計コレクション、静的およびキーセット ドリブン カーソルの作成の場合に並列実行プランが検討されます。
 
 > [!NOTE]
-> **並列処理の最大限度 (MAXDOP)** の制限は[タスク](../../relational-databases/system-dynamic-management-views/sys-dm-os-tasks-transact-sql.md)ごとに設定されます。 この設定は、[要求](../../relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql.md)ごとまたはクエリ制限ごとではありません。 つまり、並列クエリ実行中に、1 つの要求で、[スケジューラ](../../relational-databases/system-dynamic-management-views/sys-dm-os-tasks-transact-sql.md)に割り当てられてた複数のタスクを生成することができます。 詳細については、「[スレッドおよびタスクのアーキテクチャ ガイド](../../relational-databases/thread-and-task-architecture-guide.md)」を参照してください。 
+> **並列処理の最大限度 (MAXDOP)** の制限は [タスク](../../relational-databases/system-dynamic-management-views/sys-dm-os-tasks-transact-sql.md)ごとに設定されます。 この設定は、[要求](../../relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql.md)ごとまたはクエリ制限ごとではありません。 つまり、並列クエリ実行中に、1 つの要求で、[スケジューラ](../../relational-databases/system-dynamic-management-views/sys-dm-os-tasks-transact-sql.md)に割り当てられてた複数のタスクを生成することができます。 詳細については、「[スレッドおよびタスクのアーキテクチャ ガイド](../../relational-databases/thread-and-task-architecture-guide.md)」を参照してください。 
 
 インスタンス レベルでこのオプションを設定する方法については、「[max degree of parallelism サーバー構成オプションの構成](../../database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option.md)」を参照してください。
 
 > [!NOTE]
-> [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] では、サーバーレベルの**並列処理の最大限度**構成は常に 0 に設定されます。 MAXDOP は、現在の記事で説明されているように、データベースごとに構成できます。 MAXDOP の最適な構成に関する推奨事項については、「[その他のリソース](#additional-resources)」を参照してください。
+> [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] では、新しいシングル データベースとエラスティック プール データベースのデータベース スコープ構成 MAXDOP が既定で 8 に設定されています。 MAXDOP は、現在の記事で説明されているように、データベースごとに構成できます。 MAXDOP の最適な構成に関する推奨事項については、「[その他のリソース](#additional-resources)」を参照してください。
 
 > [!TIP]
 > これをクエリ レベルで行うには、**MAXDOP** [クエリ ヒント](../../t-sql/queries/hints-transact-sql-query.md)を使用します。    
@@ -170,7 +170,7 @@ LEGACY_CARDINALITY_ESTIMATION **=** { ON | **OFF** | PRIMARY }
 
 > [!TIP]
 > これをクエリ レベルで行うには、**QUERYTRACEON** [クエリ ヒント](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md)を追加してください。
-> [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 以降、クエリ レベルでこれを行うには、トレース フラグの代わりに、**USE HINT** [クエリ ヒント](../../t-sql/queries/hints-transact-sql-query.md#use_hint)を追加してください。
+> [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 以降、クエリ レベルでこれを行うには、トレース フラグの代わりに、**USE HINT** [クエリ ヒント](../../t-sql/queries/hints-transact-sql-query.md#use_hint)を追加してください。
 
 PRIMARY
 
@@ -182,7 +182,7 @@ PARAMETER_SNIFFING **=** { **ON** | OFF | PRIMARY}
 
 > [!TIP]
 > クエリ レベルでこれを行う方法については、「**OPTIMIZE FOR UNKNOWN** [クエリ ヒント](../../t-sql/queries/hints-transact-sql-query.md)」を参照してください。
-> [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 以降、クエリ レベルでこれを行うには、**USE HINT** [クエリ ヒント](../../t-sql/queries/hints-transact-sql-query.md#use_hint)も利用できます。
+> [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 以降、クエリ レベルでこれを行うには、**USE HINT** [クエリ ヒント](../../t-sql/queries/hints-transact-sql-query.md#use_hint)も利用できます。
 
 PRIMARY
 
@@ -196,7 +196,7 @@ PRIMARY
 
 > [!TIP]
 > これをクエリ レベルで行うには、**QUERYTRACEON** [クエリ ヒント](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md)を追加してください。
-> [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 以降、クエリ レベルでこれを行うには、トレース フラグの代わりに、USE HINT [クエリ ヒント](../../t-sql/queries/hints-transact-sql-query.md#use_hint)を追加してください。
+> [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 以降、クエリ レベルでこれを行うには、トレース フラグの代わりに、USE HINT [クエリ ヒント](../../t-sql/queries/hints-transact-sql-query.md#use_hint)を追加してください。
 
 PRIMARY
 
@@ -220,7 +220,7 @@ INTERLEAVED_EXECUTION_TVF **=** { **ON** | OFF }
 > [!NOTE]
 > データベース互換性レベルが 130 以下である場合は、このデータベース スコープの構成に影響がありません。
 >
-> SQL Server 2017 (14.x) のみでの、オプション INTERLEAVED_EXECUTION_TVF には **DISABLE**_INTERLEAVED_EXECUTION_TVF の古い名前があります。
+> SQL Server 2017 (14.x) のみでの、オプション INTERLEAVED_EXECUTION_TVF には **DISABLE** _INTERLEAVED_EXECUTION_TVF の古い名前があります。
 
 BATCH_MODE_MEMORY_GRANT_FEEDBACK **=** { **ON** | OFF}
 
@@ -403,7 +403,7 @@ ISOLATE_SECURITY_POLICY_CARDINALITY **=** { ON | **OFF**}
 
 DW_COMPATIBILITY_LEVEL **=** {**AUTO** | 10 | 20 }
 
-**適用対象**:Azure Synapse Analytics (旧称 SQL DW) のみ
+**適用対象**:Azure Synapse Analytics のみ
 
 指定したバージョンのデータベース エンジンと互換性があるように、Transact-SQL およびクエリ処理の動作を設定します。  設定が完了すると、そのデータベースでクエリが実行されるときに、互換性のある機能だけが実行されます。  データベースの互換性レベルは、最初の作成時に既定で AUTO に設定されます。  互換性レベルは、データベースの一時停止/再開、バックアップ/復元操作の後でも保持されます。 
 
@@ -466,7 +466,7 @@ ASYNC_STATS_UPDATE_WAIT_AT_LOW_PRIORITY **=** { ON | **OFF**}
 
 ### <a name="dacfx"></a>DacFx
 
-`ALTER DATABASE SCOPED CONFIGURATION` は [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] と [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降) の新しい機能であり、データベース スキーマに影響を与えます。スキーマのエクスポートは (データがあってもなくても)、[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] や [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] など、以前のバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] にはインポートできません。 たとえば、[!INCLUDE[ssSDS](../../includes/sssds-md.md)] または [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] データベースから [DACPAC](https://msdn.microsoft.com/library/ee210546.aspx#Anchor_3) または [BACPAC](https://msdn.microsoft.com/library/ee210546.aspx#Anchor_4) にエクスポートしたものは、下位レベルのサーバーにインポートできません。
+`ALTER DATABASE SCOPED CONFIGURATION` は [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] と [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降) の新しい機能であり、データベース スキーマに影響を与えます。スキーマのエクスポートは (データがあってもなくても)、[!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] や [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] など、以前のバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] にはインポートできません。 たとえば、[!INCLUDE[ssSDS](../../includes/sssds-md.md)] または [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] データベースから [DACPAC](../../relational-databases/data-tier-applications/data-tier-applications.md) または [BACPAC](../../relational-databases/data-tier-applications/data-tier-applications.md#bacpac) にエクスポートしたものは、下位レベルのサーバーにインポートできません。
 
 ### <a name="elevate_online"></a>ELEVATE_ONLINE
 
@@ -628,12 +628,12 @@ SET PAUSED_RESUMABLE_INDEX_ABORT_DURATION_MINUTES = 60
 ### <a name="legacy_cardinality_estimation-resources"></a>LEGACY_CARDINALITY_ESTIMATION リソース
 
 - [カーディナリティ推定 (SQL Server)](../../relational-databases/performance/cardinality-estimation-sql-server.md)
-- [SQL Server 2014 のカーディナリティ推定機能によるクエリプランの最適化](https://msdn.microsoft.com/library/dn673537.aspx)
+- [SQL Server 2014 のカーディナリティ推定機能によるクエリプランの最適化](/previous-versions/dn673537(v=msdn.10))
 
 ### <a name="parameter_sniffing-resources"></a>PARAMETER_SNIFFING リソース
 
 - [パラメーター スニッフィング](../../relational-databases/query-processing-architecture-guide.md#ParamSniffing)
-- ["I smell a parameter!"](https://blogs.msdn.microsoft.com/queryoptteam/2006/03/31/i-smell-a-parameter/) (パラメーターのにおいがする!)
+- ["I smell a parameter!"](/archive/blogs/queryoptteam/i-smell-a-parameter) (パラメーターのにおいがする!)
 
 ### <a name="query_optimizer_hotfixes-resources"></a>QUERY_OPTIMIZER_HOTFIXES リソース
 
@@ -657,4 +657,4 @@ SET PAUSED_RESUMABLE_INDEX_ABORT_DURATION_MINUTES = 60
  [オンライン インデックス操作の動作原理](../../relational-databases/indexes/how-online-index-operations-work.md)    
  [オンラインでのインデックス操作の実行](../../relational-databases/indexes/perform-index-operations-online.md)    
  [ALTER INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/alter-index-transact-sql.md)    
- [CREATE INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-index-transact-sql.md)    
+ [CREATE INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-index-transact-sql.md)

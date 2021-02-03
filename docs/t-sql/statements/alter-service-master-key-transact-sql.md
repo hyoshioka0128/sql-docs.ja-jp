@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - ALTER_SERVICE_MASTER_KEY_TSQL
 - ALTER SERVICE MASTER KEY
@@ -25,12 +25,12 @@ helpviewer_keywords:
 ms.assetid: a1e9be0e-4115-47d8-9d3a-3316d876a35e
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 53526aa2ba6a59b623382aa1c47b11443759756b
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: d83d71f8640575319817f3610b1055e2808140ce
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88426824"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99182220"
 ---
 # <a name="alter-service-master-key-transact-sql"></a>ALTER SERVICE MASTER KEY (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -42,7 +42,6 @@ ms.locfileid: "88426824"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 ALTER SERVICE MASTER KEY   
     [ { <regenerate_option> | <recover_option> } ] [;]  
   
@@ -65,25 +64,25 @@ ALTER SERVICE MASTER KEY
  REGENERATE  
  サービス マスター キーを再生成することを示します。  
   
- OLD_ACCOUNT **='***account_name***'**  
+ OLD_ACCOUNT **='** _account_name_*_'_*  
  古い Windows サービス アカウントの名前を指定します。  
   
 > [!WARNING]  
 >  このオプションは、互換性のために残されています。 使用しないでください。 代わりに [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Configuration Manager を使用してください。  
   
- OLD_PASSWORD **='***password***'**  
+ OLD_PASSWORD **='** _password_*_'_*  
  古い Windows サービス アカウントのパスワードを指定します。  
   
 > [!WARNING]  
 >  このオプションは、互換性のために残されています。 使用しないでください。 代わりに [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Configuration Manager を使用してください。  
   
- NEW_ACCOUNT **='***account_name***'**  
+ NEW_ACCOUNT **='** _account_name_*_'_*  
  新しい Windows サービス アカウントの名前を指定します。  
   
 > [!WARNING]  
 >  このオプションは、互換性のために残されています。 使用しないでください。 代わりに [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Configuration Manager を使用してください。  
   
- NEW_PASSWORD **='***password***'**  
+ NEW_PASSWORD **='** _password_*_'_*  
  新しい Windows サービス アカウントのパスワードを指定します。  
   
 > [!WARNING]  
@@ -112,7 +111,7 @@ ALTER SERVICE MASTER KEY
 ## <a name="examples"></a>例  
  次の例では、サービス マスター キーを再生成します。  
   
-```  
+```sql  
 ALTER SERVICE MASTER KEY REGENERATE;  
 GO  
 ```  

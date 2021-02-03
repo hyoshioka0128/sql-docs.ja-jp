@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.assetid: 6b2291bb-1d20-4d08-81cb-a16dd8e01faf
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: d256ac7cc7f7925ad307c527378abcca5b6d121f
-ms.sourcegitcommit: ff82f3260ff79ed860a7a58f54ff7f0594851e6b
+ms.openlocfilehash: ca0071416491700254047b43056d32fc64ed1d9d
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "76971381"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97425132"
 ---
 # <a name="install-report-builder"></a>レポート ビルダーをインストールする
 
@@ -33,17 +33,17 @@ ms.locfileid: "76971381"
   
  [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] Web ポータル、または [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] と統合された SharePoint サイトから [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] を起動できます。 詳細については、「 [レポート ビルダーの起動](../../reporting-services/report-builder/start-report-builder.md)」を参照してください。  
 
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
   
 ### <a name="sharepoint-site-integrated-with-ssrsnoversion"></a>統合された SharePoint サイト: [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)]
   
- [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)]と統合された SharePoint サイトで、 **[新しいドキュメント]** メニューに **[レポート ビルダー レポート]** 、 **[レポート ビルダーのモデル]** 、および **[レポート データ ソース]** が表示されない場合は、それらのコンテンツの種類を SharePoint ライブラリに追加する必要があります。 詳細については、「 [SharePoint ライブラリへの Reporting Services のコンテンツの種類の追加](../../reporting-services/report-server-sharepoint/add-reporting-services-content-types-to-a-sharepoint-library.md)」をご覧ください。  
+ [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)]と統合された SharePoint サイトで、 **[新しいドキュメント]** メニューに **[レポート ビルダー レポート]**、 **[レポート ビルダーのモデル]**、および **[レポート データ ソース]** が表示されない場合は、それらのコンテンツの種類を SharePoint ライブラリに追加する必要があります。 詳細については、「 [SharePoint ライブラリへの Reporting Services のコンテンツの種類の追加](../../reporting-services/report-server-sharepoint/add-reporting-services-content-types-to-a-sharepoint-library.md)」をご覧ください。  
 
 ::: moniker-end
  
 ## <a name="install-ssrbnoversion-with-microsoft-endpoint-configuration-manager"></a>Microsoft Endpoint Configuration Manager で [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] をインストールする 
   
- お使いのコンピューターへのプログラムのプッシュに、管理者が Microsoft Endpoint Configuration Manager などのソフトウェアを使用することも可能です。 特定のソフトウェアを使用して [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)]をインストールする方法については、そのソフトウェアのマニュアルを参照してください。 詳細については、「[Microsoft Endpoint Configuration Manager のドキュメント](https://docs.microsoft.com/configmgr/)」を参照してください。  
+ お使いのコンピューターへのプログラムのプッシュに、管理者が Microsoft Endpoint Configuration Manager などのソフトウェアを使用することも可能です。 特定のソフトウェアを使用して [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)]をインストールする方法については、そのソフトウェアのマニュアルを参照してください。 詳細については、「[Microsoft Endpoint Configuration Manager のドキュメント](/configmgr/)」を参照してください。  
   
 > [!IMPORTANT]  
 >  Windows Vista および Windows 7 でコマンド ライン操作を実行するには、セキュリティ機能に基づいて高度な権限が必要となり、コマンド ラインの実行権限が要求されます。 インストールはサイレント モードになりません。 インストールをサイレント モードにするには、管理者としてコマンド ラインを実行する必要があります。  
@@ -56,7 +56,7 @@ ms.locfileid: "76971381"
   
 1.  [Microsoft ダウンロード センターのレポート ビルダー ページ](https://go.microsoft.com/fwlink/?LinkID=734968) で、 **[ダウンロード]** をクリックします。  
   
-2.  [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] のダウンロードが完了したら、 **[実行]** をクリックします。  
+2.  [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] のダウンロードが完了したら、**[実行]** をクリックします。  
   
      これで SQL Server [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] ウィザードが起動します。  
   
@@ -81,25 +81,25 @@ ms.locfileid: "76971381"
   
 ## <a name="to-install-ssrbnoversion-from-the-command-line"></a>コマンド ラインから [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] をインストールするには 
 
- [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] のインストールをコマンド ラインから実行し、引数を指定してインストールをカスタマイズすることもできます。 標準の MSI 固有パラメーターに加えて、[!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] に用意されているカスタム パラメーターの RBINSTALLDIR と REPORTSERVERURL も使用できます。 RBINSTALLDIR では、[!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] 用のルート インストール フォルダーを指定します。 REPORTSERVERURL では、[!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] でサーバーにレポートを保存するときに使用される既定のレポート サーバーを指定します。  
+ [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] のインストールをコマンド ラインから実行し、引数を指定してインストールをカスタマイズすることもできます。 標準の MSI 固有パラメーターに加えて、[!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] に用意されている使用できるカスタム パラメーターはRBINSTALLDIR と RBSERVERURL。 RBINSTALLDIR では、[!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] 用のルート インストール フォルダーを指定します。 RBSERVERURL では、[!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] でサーバーにレポートを保存するときに使用される既定のレポート サーバーを指定します。  
   
  ユーザー インターフェイスをまったく操作しない完全なサイレント インストールを実行する場合は、 **/quiet** オプションを指定します。 quiet オプション フラグを使用するとインストール エラーが抑制されるように設計されています。 そのため、quiet オプションを使用する場合は、ログ記録を指定する **/l** オプションを含めることをお勧めします。   
   
 1.  [Microsoft ダウンロード センターのレポート ビルダー ページ](https://go.microsoft.com/fwlink/?LinkID=734968)で、 **[ダウンロード]** をクリックします。  
   
-2.  [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] のダウンロードが完了したら、 **[保存]** をクリックします。  
+2.  [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] のダウンロードが完了したら、**[保存]** をクリックします。  
   
 3.  **[スタート]** メニューの **[ファイル名を指定して実行]** をクリックします。  
   
-4.  **[開く]** ボックスに「 **cmd.** 」と入力します。  
+4.  **[開く]** ボックスに「 **cmd.**」と入力します。  
   
 5.  コマンド プロンプト ウィンドウで、ReportBuilder.msi を保存したフォルダーに移動します。  
   
 6.  次の形式のコマンドを入力します。  
   
-     `msiexec/i ReportBuilder.msi /option [value] [/option [value]]`  
+     `msiexec/i ReportBuilder.msi OPTION=OptionValue [OPTION=OptionValue]`  
   
-     [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] のインストールに固有のオプションは、RBINSTALLDIR と REPORTSERVERURL の 2 つです。 コマンド ラインにこれらの引数を含める必要はありません。 標準的なコマンド ラインは次のとおりです。  
+     [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] のインストールに固有の 2 つのオプションは、RBINSTALLDIR と RBSERVERURL。 コマンド ラインにこれらの引数を含める必要はありません。 標準的なコマンド ラインは次のとおりです。  
   
      `msiexec /i ReportBuilder3_x86.msi /quiet`  
   
@@ -115,8 +115,7 @@ ms.locfileid: "76971381"
   
      既存のサーバーのリストにレポート サーバーが表示されない場合は、**[レポートを開く]** ダイアログ ボックスを閉じ、[!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)] の下部の **[接続]** をクリックしてサーバーに接続します。  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [レポート ビルダーの起動](../../reporting-services/report-builder/start-report-builder.md)   
  [レポート ビルダーをアンインストールする](../../reporting-services/install-windows/uninstall-report-builder.md)  
-  
   

@@ -9,19 +9,19 @@ ms.reviewer: ''
 ms.technology: in-memory-oltp
 ms.topic: conceptual
 ms.assetid: ee847b5f-6a1a-448e-a746-d61a023881ff
-author: CarlRabeler
-ms.author: carlrab
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: b909ab9d5290ae0c34c9c65a1bd47010a20952e4
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: markingmyname
+ms.author: maghan
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 8684764c0386513c0890b10dee8bfa3582c1cf59
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85734981"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97485174"
 ---
 # <a name="sql-server-management-studio-support-for-in-memory-oltp"></a>SQL Server Management Studio によるインメモリ OLTP のサポート
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
-  [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] は、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インフラストラクチャを管理するための統合環境です。 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] には、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のインスタンスを構成、監視、および管理するためのツールが備わっています。 詳細については、「 [SQL Server Management Studio](https://msdn.microsoft.com/library/66a6b7b1-de6a-4161-82bd-98ded486947b)」を参照してください。  
+  [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] は、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インフラストラクチャを管理するための統合環境です。 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] には、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のインスタンスを構成、監視、および管理するためのツールが備わっています。 詳細については、「 [SQL Server Management Studio](../../ssms/sql-server-management-studio-ssms.md)」を参照してください。  
   
  このトピックのタスクでは、 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] を使用してメモリ最適化テーブル、メモリ最適化テーブルのインデックス、ネイティブ コンパイル ストアド プロシージャ、およびユーザー定義のメモリ最適化テーブル型を管理する方法について説明します。  
   
@@ -29,7 +29,7 @@ ms.locfileid: "85734981"
   
 ### <a name="to-create-a-database-with-a-memory-optimized-data-filegroup"></a>メモリ最適化データ ファイル グループが含まれるデータベースを作成するには  
   
-1.  **オブジェクト エクスプローラー**で、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベース エンジンのインスタンスに接続し、そのインスタンスを展開します。  
+1.  **オブジェクト エクスプローラー** で、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベース エンジンのインスタンスに接続し、そのインスタンスを展開します。  
   
 2.  **[データベース]** を右クリックし、 **[新しいデータベース]** をクリックします。  
   
@@ -41,7 +41,7 @@ ms.locfileid: "85734981"
   
 ### <a name="to-create-a-memory-optimized-table"></a>メモリ最適化テーブルを作成するには  
   
-1.  **オブジェクト エクスプローラー**で、データベースの **[テーブル]** ノードを右クリックし、 **[新規]** 、 **[メモリ最適化テーブル]** の順にクリックします。  
+1.  **オブジェクト エクスプローラー** で、データベースの **[テーブル]** ノードを右クリックし、 **[新規]** 、 **[メモリ最適化テーブル]** の順にクリックします。  
   
      メモリ最適化テーブルを作成するためのテンプレートが表示されます。  
   
@@ -49,11 +49,11 @@ ms.locfileid: "85734981"
   
      テンプレートの使用方法の詳細については、「 [テンプレート エクスプローラー](../../ssms/template/template-explorer.md)」を参照してください。  
   
-3.  **オブジェクト エクスプローラー**では、テーブルはまずディスク ベース テーブル、次にメモリ最適化テーブルの順に並べ替えられます。 すべてのテーブルを名前順で確認するには、「 **オブジェクト エクスプローラーの詳細** 」を使用します。  
+3.  **オブジェクト エクスプローラー** では、テーブルはまずディスク ベース テーブル、次にメモリ最適化テーブルの順に並べ替えられます。 すべてのテーブルを名前順で確認するには、「 **オブジェクト エクスプローラーの詳細** 」を使用します。  
   
 ### <a name="to-create-a-natively-compiled-stored-procedure"></a>ネイティブ コンパイル ストアド プロシージャを作成するには  
   
-1.  **オブジェクト エクスプローラー**で、データベースの **[ストアド プロシージャ]** ノードを右クリックし、 **[新規]** 、 **[ネイティブ コンパイル ストアド プロシージャ]** の順にクリックします。  
+1.  **オブジェクト エクスプローラー** で、データベースの **[ストアド プロシージャ]** ノードを右クリックし、 **[新規]** 、 **[ネイティブ コンパイル ストアド プロシージャ]** の順にクリックします。  
   
      ネイティブ コンパイル ストアド プロシージャを作成するためのテンプレートが表示されます。  
   
@@ -75,7 +75,7 @@ ms.locfileid: "85734981"
   
 #### <a name="view-memory-usage-by-memory-optimized-objects-report"></a>メモリ最適化オブジェクトによるメモリ使用量レポートの表示  
   
--   **オブジェクト エクスプローラー**でデータベースを右クリックし、 **[レポート]** 、 **[標準レポート]** 、 **[メモリ最適化オブジェクトによるメモリ使用量]** の順にクリックします。  
+-   **オブジェクト エクスプローラー** でデータベースを右クリックし、 **[レポート]** 、 **[標準レポート]** 、 **[メモリ最適化オブジェクトによるメモリ使用量]** の順にクリックします。  
   
      このレポートでは、データベース内のメモリ最適化オブジェクトによるメモリ領域の使用に関して詳細なデータが提供されます。  
   
@@ -129,7 +129,7 @@ ms.locfileid: "85734981"
   
         -   スクリプトの生成。  
   
-             **スクリプトの生成とパブリッシュ ウィザード**で、 **[オブジェクトの有無を確認する]** スクリプト作成オプションの既定値は FALSE です。 ウィザードの **[スクリプト作成オプションの設定]** 画面で、 **[オブジェクトの有無を確認する]** スクリプト作成オプションの値を TRUE に設定すると、生成されるスクリプトに "CREATE PROCEDURE <プロシージャ名> AS" および "ALTER PROCEDURE <プロシージャ名> <プロシージャ定義>" が含められます。 生成されたスクリプトを実行すると、ネイティブ コンパイル ストアド プロシージャが ALTER PROCEDURE をサポートしていないことが原因で、エラーが返されます。  
+             **スクリプトの生成とパブリッシュ ウィザード** で、 **[オブジェクトの有無を確認する]** スクリプト作成オプションの既定値は FALSE です。 ウィザードの **[スクリプト作成オプションの設定]** 画面で、 **[オブジェクトの有無を確認する]** スクリプト作成オプションの値を TRUE に設定すると、生成されるスクリプトに "CREATE PROCEDURE <プロシージャ名> AS" および "ALTER PROCEDURE <プロシージャ名> <プロシージャ定義>" が含められます。 生成されたスクリプトを実行すると、ネイティブ コンパイル ストアド プロシージャが ALTER PROCEDURE をサポートしていないことが原因で、エラーが返されます。  
   
              ネイティブ コンパイル ストアド プロシージャごとに生成されるスクリプトを変更するには  
   
@@ -141,13 +141,13 @@ ms.locfileid: "85734981"
   
         -   データのインポートとエクスポート。 **[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インポートおよびエクスポート ウィザードの [1 つ以上のテーブルまたはビューからデータをコピーする]** オプションを使用します。 対象のテーブルが転送先データベースに存在しないメモリ最適化テーブルの場合には、以下の手順を実行します。  
   
-            1.  **[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インポートおよびエクスポート ウィザード**の **[テーブルのコピーまたはクエリの指定]** 画面で、 **[1 つ以上のテーブルまたはビューのデータをコピーする]** を選択します。 続けて、 **[次へ]** をクリックします。  
+            1.  **[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インポートおよびエクスポート ウィザード** の **[テーブルのコピーまたはクエリの指定]** 画面で、 **[1 つ以上のテーブルまたはビューのデータをコピーする]** を選択します。 続けて、 **[次へ]** をクリックします。  
   
             2.  **[マッピングの編集]** をクリックします。 **[変換先テーブルを作成する]** 、 **[SQL の編集]** の順にクリックします。 CREATE TABLE 構文を入力して、転送先データベースにメモリ最適化テーブルを作成します。 **[OK]** をクリックし、ウィザードの残りの手順を実行します。  
   
         -   メンテナンス プラン。 インデックスを再構成し、再構築するメンテナンス タスクは、メモリ最適化テーブルとそのインデックスではサポートされません。 このため、インデックスを再構築および再構成するメンテナンス プランを実行しても、選択したデータベース内のメモリ最適化テーブルおよびそのインデックスは省略されます。  
   
-             メンテナンス タスクの統計の更新は、メモリ最適化テーブルおよびそのインデックスのサンプル スキャンではサポートされていません。 したがって、統計の更新のメンテナンス プランを実行すると、メモリ最適化テーブルおよびそのインデックスの統計は、常に **WITH FULLSCAN, NORECOMPUTE**に更新されます。  
+             メンテナンス タスクの統計の更新は、メモリ最適化テーブルおよびそのインデックスのサンプル スキャンではサポートされていません。 したがって、統計の更新のメンテナンス プランを実行すると、メモリ最適化テーブルおよびそのインデックスの統計は、常に **WITH FULLSCAN, NORECOMPUTE** に更新されます。  
   
 -   [オブジェクト エクスプローラーの詳細] ペイン  
   
@@ -159,6 +159,5 @@ ms.locfileid: "85734981"
  サポートされていない [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 機能の詳細については、「 [インメモリ OLTP に対してサポートされていない SQL Server の機能](../../relational-databases/in-memory-oltp/unsupported-sql-server-features-for-in-memory-oltp.md)」を参照してください 。  
   
 ## <a name="see-also"></a>参照  
- [SQL Server によるインメモリ OLTP のサポート](../../relational-databases/in-memory-oltp/sql-server-support-for-in-memory-oltp.md)  
-  
+ [SQL Server によるインメモリ OLTP のサポート](./transact-sql-support-for-in-memory-oltp.md)  
   

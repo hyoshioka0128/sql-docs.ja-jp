@@ -8,15 +8,15 @@ ms.reviewer: ''
 ms.technology: install
 ms.topic: conceptual
 ms.assetid: e1792eeb-2874-4653-b20e-3063f4eb4e5d
-author: MashaMSFT
-ms.author: mathoma
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 67c6dd12c7c4829c2dc615ce8e440f8518d5fd09
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+author: cawrites
+ms.author: chadam
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: 127d1a0bcac97d2b802460549b38c79012f71329
+ms.sourcegitcommit: 3ec49252e82590de0fe559a8574606ae213f6f3b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85883238"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97975431"
 ---
 # <a name="considerations-for-installing-sql-server-using-sysprep"></a>SysPrep を使用した SQL Server のインストールに関する注意点
 
@@ -43,7 +43,7 @@ SysPrep を使用して [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)
   
 - Windows System Preparation ツール ("Windows SysPrep" ともいいます) と組み合わせると、ソース コンピューター上で未構成の準備済み [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスを格納したオペレーティング システムのイメージを作成できます。 これにより、オペレーティング システム イメージを複数のコンピューター上に配置できます。 オペレーティング システムの構成が完了したら、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] セットアップのイメージの完了手順を使用して、準備済みインスタンスを構成できます。  
   
-    Windows オペレーティング システムのイメージを準備するには、Windows SysPrep ツールを使用します。 このツールは、組織全体に配置するためにオペレーティング システムのカスタマイズされたイメージをキャプチャする場合に使用されます。 SysPrep とその使用方法の詳細については、[Sysprep](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview) に関するページを参照してください。  
+    Windows オペレーティング システムのイメージを準備するには、Windows SysPrep ツールを使用します。 このツールは、組織全体に配置するためにオペレーティング システムのカスタマイズされたイメージをキャプチャする場合に使用されます。 SysPrep とその使用方法の詳細については、[Sysprep](/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview) に関するページを参照してください。  
   
 ## <a name="installation-media-considerations"></a>インストール メディアに関する注意点  
  完全バージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]を使用している場合は、次のことを考慮してください。  
@@ -69,7 +69,7 @@ SysPrep を使用して [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)
   
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Browser と [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Writer は、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]インスタンスを準備すると自動的に準備され、 イメージの完了手順で [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスを完了させると完了します。  
   
-サポートされる [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のエディションについては、「[SQL Server 2017 の各エディションとサポートされている機能](../../sql-server/editions-and-components-of-sql-server-2017.md)」を参照してください。  
+[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] でサポートされるエディションについては、「[SQL Server 2017 の各エディションとサポートされている機能](../../sql-server/editions-and-components-of-sql-server-2017.md)」および [SQL Server 2019](../../sql-server/editions-and-components-of-sql-server-version-15.md) に関するページを参照してください。  
   
 準備済み [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]インスタンスの構成時に、エディションをアップグレードできます。 このオプションは [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Express Edition ではサポートされていません。  
   
@@ -97,4 +97,4 @@ SysPrep を使用して [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)
 - **[インストール センター]** の **[詳細設定]** ページにある **[準備済みスタンドアロン インスタンスのイメージの完了]** をクリックします。  
   
 ## <a name="see-also"></a>参照  
-[SQL Server のインストール計画](../../sql-server/install/planning-a-sql-server-installation.md)  
+[SQL Server のインストール計画](../../sql-server/install/planning-a-sql-server-installation.md)

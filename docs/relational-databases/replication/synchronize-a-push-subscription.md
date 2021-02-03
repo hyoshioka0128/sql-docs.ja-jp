@@ -15,13 +15,13 @@ helpviewer_keywords:
 ms.assetid: 0cfa7ae5-91d3-4a4f-9edf-a852d45783b5
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions
-ms.openlocfilehash: 89a63fd6fcf51a3ad30923e05e41e599fc7e0413
-ms.sourcegitcommit: 768f046107642f72693514f51bf2cbd00f58f58a
+monikerRange: =azuresqldb-current||>=sql-server-2016
+ms.openlocfilehash: 9f20f527694fd0ed33de68fbcbabd93e0ef96683
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87111749"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97468753"
 ---
 # <a name="synchronize-a-push-subscription"></a>プッシュ サブスクリプションの同期
 [!INCLUDE[sql-asdb](../../includes/applies-to-version/sql-asdb.md)]
@@ -77,7 +77,7 @@ ms.locfileid: "87111749"
   
 #### <a name="to-start-the-distribution-agent-to-synchronize-a-push-subscription-to-a-transactional-publication"></a>ディストリビューション エージェントを開始してプッシュ サブスクリプションをトランザクション パブリケーションに同期するには  
   
-1.  コマンド プロンプトから、またはディストリビューターからバッチ ファイルで、 **distrib.exe**を実行します。 次のコマンド ライン引数を指定します。  
+1.  コマンド プロンプトから、またはディストリビューターからバッチ ファイルで、 **distrib.exe** を実行します。 次のコマンド ライン引数を指定します。  
   
     -   **-Publisher**  
   
@@ -116,7 +116,7 @@ ms.locfileid: "87111749"
   
 #### <a name="to-start-the-merge-agent-to-synchronize-a-push-subscription-to-a-merge-publication"></a>マージ エージェントを開始してプッシュ サブスクリプションをマージ パブリケーションに同期するには  
   
-1.  コマンド プロンプトから、またはディストリビューターからバッチ ファイルで、 **replmerg.exe**を実行します。 次のコマンド ライン引数を指定します。  
+1.  コマンド プロンプトから、またはディストリビューターからバッチ ファイルで、 **replmerg.exe** を実行します。 次のコマンド ライン引数を指定します。  
   
     -   **-Publisher**  
   
@@ -219,7 +219,7 @@ REM -- The following command must be supplied without line breaks.
   
     -   <xref:Microsoft.SqlServer.Replication.ReplicationObject.ConnectionContext%2A>に、手順 1. で作成した接続を設定します。  
   
-3.  <xref:Microsoft.SqlServer.Replication.ReplicationObject.LoadProperties%2A> メソッドを呼び出して、その他のサブスクリプション プロパティを取得します。 このメソッドが **false**を返す場合、サブスクリプションが存在するかどうかをご確認ください。  
+3.  <xref:Microsoft.SqlServer.Replication.ReplicationObject.LoadProperties%2A> メソッドを呼び出して、その他のサブスクリプション プロパティを取得します。 このメソッドが **false** を返す場合、サブスクリプションが存在するかどうかをご確認ください。  
   
 4.  次のいずれかの方法で、ディストリビューターのディストリビューション エージェントを起動します。  
   
@@ -243,7 +243,7 @@ REM -- The following command must be supplied without line breaks.
   
     -   <xref:Microsoft.SqlServer.Replication.ReplicationObject.ConnectionContext%2A>に、手順 1. で作成した接続を設定します。  
   
-3.  <xref:Microsoft.SqlServer.Replication.ReplicationObject.LoadProperties%2A> メソッドを呼び出して、その他のサブスクリプション プロパティを取得します。 このメソッドが **false**を返す場合、サブスクリプションが存在するかどうかをご確認ください。  
+3.  <xref:Microsoft.SqlServer.Replication.ReplicationObject.LoadProperties%2A> メソッドを呼び出して、その他のサブスクリプション プロパティを取得します。 このメソッドが **false** を返す場合、サブスクリプションが存在するかどうかをご確認ください。  
   
 4.  次のいずれかの方法で、ディストリビューターのマージ エージェントを起動します。  
   

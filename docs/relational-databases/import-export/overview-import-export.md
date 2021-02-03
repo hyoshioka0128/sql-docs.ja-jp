@@ -9,14 +9,14 @@ ms.technology: data-movement
 ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
 ms.custom: seo-lt-2019
-ms.openlocfilehash: c2f1b8e4a711081bb998c6417c90e28b7638e508
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+ms.openlocfilehash: d934e6f1c5457297e385fbe8d42c2709ed2c0f88
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86001188"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97438789"
 ---
 # <a name="import-and-export-data-from-sql-server-and-azure-sql-database"></a>SQL Server および Azure SQL Database のデータをインポートおよびエクスポートする
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "86001188"
 BCP コマンドライン ユーティリティを使って、データをインポートおよびエクスポートできます。 詳しくは、「[bcp ユーティリティを使用した一括データのインポートとエクスポート](import-and-export-bulk-data-by-using-the-bcp-utility-sql-server.md)」をご覧ください。
 
 ### <a name="use-the-import-flat-file-wizard"></a>フラット ファイルのインポート ウィザードを使用する
-インポート ウィザードやエクスポート ウィザードおよびその他のツールで使用可能な構成オプションが必ずしもすべて必要ではない場合、SQL Server Management Studio (SSMS) の**フラット ファイルのインポート ウィザード**を使用して、テキスト ファイルを SQL Server にインポートできます。 詳細については、次の記事を参照してください。
+インポート ウィザードやエクスポート ウィザードおよびその他のツールで使用可能な構成オプションが必ずしもすべて必要ではない場合、SQL Server Management Studio (SSMS) の **フラット ファイルのインポート ウィザード** を使用して、テキスト ファイルを SQL Server にインポートできます。 詳細については、次の記事を参照してください。
 - [SQL のフラット ファイルのインポート ウィザード](import-flat-file-wizard.md)
 - [SQL Server Management Studio 17.3 の新機能](https://blogs.technet.microsoft.com/dataplatforminsider/2017/10/10/whats-new-in-sql-server-management-studio-17-3/)
 - [SSMS 17.3 の新しいフラット ファイルのインポート ウィザードの概要](https://channel9.msdn.com/Shows/Data-Exposed/Introducing-the-new-Import-Flat-File-Wizard-in-SSMS-173)
@@ -44,7 +44,7 @@ SQL Server インポートおよびエクスポート ウィザードを使っ�
 ### <a name="design-your-own-import-or-export"></a>独自のインポートまたはエクスポートを設計する
 カスタム データ インポートを設計する場合は、次のいずれかの機能またはサービスを使うことができます。
 -   SQL Server Integration Services。 詳しくは、「[SQL Server Integration Services](../../integration-services/sql-server-integration-services.md)」をご覧ください。
--   Azure Data Factory。 詳しくは、「[Azure Data Factory の概要](https://docs.microsoft.com/azure/data-factory/data-factory-introduction)」をご覧ください。
+-   Azure Data Factory。 詳しくは、「[Azure Data Factory の概要](/azure/data-factory/data-factory-introduction)」をご覧ください。
 
 ## <a name="data-formats-for-import-and-export"></a>インポートおよびエクスポートのデータ形式
 
@@ -53,7 +53,7 @@ SQL Server インポートおよびエクスポート ウィザードを使っ�
 フラット ファイルまたはその他のさまざまなファイル形式、リレーショナル データベース、およびクラウド サービスで、データをインポートおよびエクスポートできます。 特定のツールでのこれらのオプションについて詳しくは、次のトピックをご覧ください。
 -   SQL Server インポートおよびエクスポート ウィザードについては、「[Connect to Data Sources with the SQL Server Import and Export Wizard](../../integration-services/import-export-data/connect-to-data-sources-with-the-sql-server-import-and-export-wizard.md)」(SQL Server インポートおよびエクスポート ウィザードを使用してデータ ソースに接続する) をご覧ください。
 -   SQL Server Integration Services については、「[Integration Services (SSIS) の接続](../../integration-services/connection-manager/integration-services-ssis-connections.md)」をご覧ください。
--   Azure Data Factory については、「[Azure Data Factory を使用して Amazon Redshift からデータを移動する](https://docs.microsoft.com/azure/data-factory/data-factory-amazon-redshift-connector)」をご覧ください。
+-   Azure Data Factory については、「[Azure Data Factory を使用して Amazon Redshift からデータを移動する](/azure/data-factory/data-factory-amazon-redshift-connector)」をご覧ください。
 
 ### <a name="commonly-used-data-formats"></a>よく使われるデータ形式
 

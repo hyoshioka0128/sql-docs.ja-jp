@@ -19,14 +19,14 @@ helpviewer_keywords:
 - current lock time-out setting
 - locking [SQL Server], time-outs
 ms.assetid: 6bf8bf97-60b8-40c1-b89d-8f5a00bcae2e
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 9e52cf67e220c6ff9a1b15b837ad037e2be83679
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 3e1d70d12638f77437642a2b7738fea0d5f24129
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88479645"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101047"
 ---
 # <a name="x40x40lock_timeout-transact-sql"></a>&#x40;&#x40;LOCK_TIMEOUT (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "88479645"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 @@LOCK_TIMEOUT  
 ```  
   
@@ -54,7 +54,7 @@ ms.locfileid: "88479645"
 ## <a name="examples"></a>例  
  この例では、LOCK_TIMEOUT 値が設定されていない場合の結果セットを示します。  
   
-```  
+```sql  
 SELECT @@LOCK_TIMEOUT AS [Lock Timeout];  
 GO  
 ```  
@@ -69,7 +69,7 @@ Lock Timeout
   
  この例では、LOCK_TIMEOUT を 1,800 ミリ秒に設定し、@@LOCK_TIMEOUT を呼び出します。  
   
-```  
+```sql  
 SET LOCK_TIMEOUT 1800;  
 SELECT @@LOCK_TIMEOUT AS [Lock Timeout];  
 GO  

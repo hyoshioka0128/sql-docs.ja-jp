@@ -25,14 +25,14 @@ helpviewer_keywords:
 - manual checkpoints [SQL Server]
 - pages [SQL Server], checkpoints
 ms.assetid: ccdfc689-ad4e-44c0-83f7-0f2cfcfb6406
-author: juliemsft
+author: julieMSFT
 ms.author: jrasnick
-ms.openlocfilehash: da05183ae2b331f78f9692acc6aaff66a9455092
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 257bdc81d1f5f2ab6a5599cb155f71453ac27c34
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88459407"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98097153"
 ---
 # <a name="checkpoint-transact-sql"></a>CHECKPOINT (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -46,8 +46,7 @@ ms.locfileid: "88459407"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 CHECKPOINT [ checkpoint_duration ]  
 ```  
   

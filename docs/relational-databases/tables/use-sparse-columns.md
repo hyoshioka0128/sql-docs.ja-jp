@@ -15,13 +15,13 @@ helpviewer_keywords:
 ms.assetid: ea7ddb87-f50b-46b6-9f5a-acab222a2ede
 author: stevestein
 ms.author: sstein
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: b422f4c34831c570b3ed6d9d54bcdb90d1d86754
-ms.sourcegitcommit: 331b8495e4ab37266945c81ff5b93d250bdaa6da
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: ba2d4bc789c324e3e6153dc971a983638af603f4
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88645938"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97482344"
 ---
 # <a name="use-sparse-columns"></a>スパース列の使用
 
@@ -125,7 +125,7 @@ ms.locfileid: "88645938"
 ## <a name="restrictions-for-using-sparse-columns"></a>スパース列の使用に関する制限  
  スパース列は、任意の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データ型にすることができ、他の列と同じように動作しますが、次の制限があります。  
   
--   スパース列は、NULL 値を許容する必要があり、ROWGUIDCOL または IDENTITY プロパティを持つことができません。 スパース列のデータ型を **text**、 **ntext**、 **image**、 **timestamp**、ユーザー定義データ型、 **geometry**、または **geography**にすることはできません。また、スパース列には FILESTREAM 属性を指定できません。  
+-   スパース列は、NULL 値を許容する必要があり、ROWGUIDCOL または IDENTITY プロパティを持つことができません。 スパース列のデータ型を **text**、 **ntext**、 **image**、 **timestamp**、ユーザー定義データ型、 **geometry**、または **geography** にすることはできません。また、スパース列には FILESTREAM 属性を指定できません。  
   
 -   スパース列には既定値を設定できません。  
   

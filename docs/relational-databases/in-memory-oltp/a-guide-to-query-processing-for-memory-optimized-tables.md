@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: 065296fe-6711-4837-965e-252ef6c13a0f
 author: MightyPen
 ms.author: genemi
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 0c62f1f2ef34bd5ba1a59a642ac8d07db2dbe259
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: eed83fcd8a8b861f102c90fbc73d28d51bd5fa56
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87247081"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97465483"
 ---
 # <a name="a-guide-to-query-processing-for-memory-optimized-tables"></a>メモリ最適化テーブルのクエリ処理のガイド
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -83,7 +83,7 @@ SELECT o.OrderID, c.* FROM dbo.[Customer] c INNER JOIN dbo.[Order] o ON c.Custom
   
 -   Order テーブルのデータは、CustomerID 列の非クラスター化インデックスを使用して取得されます。 このインデックスには、結合に使用される CustomerID 列と、ユーザーに返す主キー列 OrderID の両方が含まれています。 Order テーブルから追加の列を返す場合は、Order テーブルのクラスター化インデックス内の参照が必要です。  
   
--   論理演算子 **Inner Join** は、物理演算子 **Merge Join**によって実装されます。 その他の物理結合の種類は、 **Nested Loops** と **Hash Join**です。 この **Merge Join** 演算子では、両方のインデックスが結合列 CustomerID を基準に並べ替えられていることを利用します。  
+-   論理演算子 **Inner Join** は、物理演算子 **Merge Join** によって実装されます。 その他の物理結合の種類は、 **Nested Loops** と **Hash Join** です。 この **Merge Join** 演算子では、両方のインデックスが結合列 CustomerID を基準に並べ替えられていることを利用します。  
   
  これを少し変えたバリエーションとして、OrderID だけでなく、Order テーブルのすべての行を返すクエリを検討します。  
   
@@ -96,7 +96,7 @@ SELECT o.*, c.* FROM dbo.[Customer] c INNER JOIN dbo.[Order] o ON c.CustomerID =
  ![ディスク ベース テーブルのハッシュ結合のクエリ プラン。](../../relational-databases/in-memory-oltp/media/hekaton-query-plan-2.png "ディスク ベース テーブルのハッシュ結合のクエリ プラン。")  
 ディスク ベース テーブルのハッシュ結合のクエリ プラン。  
   
- このクエリでは、Orders テーブルの行はクラスター化インデックスを使用して取得されます。 これで、 **Hash Match** 物理演算子は **Inner Join**に使用されます。 Order のクラスター化インデックスは CustomerID で並べ替えられません。したがって、 **Merge Join** はパフォーマンスに影響を与えるソート演算子を必要とします。 前の例の **Hash Match** 演算子のコスト (46%) と比較して、 **Merge Join** 演算子 (75%) の相対コストを確認してください。 オプティマイザーでは、前の例でも **Hash Match** 演算子を検討したうえで、 **Merge Join** 演算子の方がパフォーマンスがよいと判断されています。  
+ このクエリでは、Orders テーブルの行はクラスター化インデックスを使用して取得されます。 これで、 **Hash Match** 物理演算子は **Inner Join** に使用されます。 Order のクラスター化インデックスは CustomerID で並べ替えられません。したがって、 **Merge Join** はパフォーマンスに影響を与えるソート演算子を必要とします。 前の例の **Hash Match** 演算子のコスト (46%) と比較して、 **Merge Join** 演算子 (75%) の相対コストを確認してください。 オプティマイザーでは、前の例でも **Hash Match** 演算子を検討したうえで、 **Merge Join** 演算子の方がパフォーマンスがよいと判断されています。  
   
 ## <a name="ssnoversion-query-processing-for-disk-based-tables"></a>[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ディスク ベース テーブルに対するクエリ処理  
  次の図は、アドホック クエリに対する [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のクエリ処理フローの概要を示しています。  
@@ -174,7 +174,7 @@ SELECT o.OrderID, c.* FROM dbo.[Customer] c INNER JOIN dbo.[Order] o ON c.Custom
   
     -   クラスター化インデックスは、メモリ最適化テーブルでサポートされていません。 代わりに、すべてのメモリ最適化テーブルには 1 つ以上の非クラスター化インデックスが必要です。メモリ最適化テーブルのすべてのインデックスは、そのテーブル内のすべての列に効率的にアクセスできます。列をインデックスに格納したり、クラスター化されたインデックスを参照したりする必要はありません。  
   
--   このプランには、 **Merge Join** ではなく **Hash Match**が含まれます。 Order テーブルと Customer テーブルの両方のインデックスはハッシュ インデックスになるため、順序付けされません。 **Merge Join** では並べ替え操作が必要であり、それによってパフォーマンスが低下していました。  
+-   このプランには、 **Merge Join** ではなく **Hash Match** が含まれます。 Order テーブルと Customer テーブルの両方のインデックスはハッシュ インデックスになるため、順序付けされません。 **Merge Join** では並べ替え操作が必要であり、それによってパフォーマンスが低下していました。  
   
 ## <a name="natively-compiled-stored-procedures"></a>ネイティブ コンパイル ストアド プロシージャ  
  ネイティブ コンパイル ストアド プロシージャは、クエリ実行エンジンによって解釈されるのではなく、マシン語コードにコンパイルされる [!INCLUDE[tsql](../../includes/tsql-md.md)] ストアド プロシージャです。 次のスクリプトは、(クエリの例のセクションの) クエリの例を実行する、ネイティブ コンパイル ストアド プロシージャを作成します。  
@@ -199,7 +199,7 @@ END
 |-|-----------------------|-----------------|  
 |最初のコンパイル|作成時。|最初の実行時。|  
 |自動再コンパイル|データベースまたはサーバーの再起動後、プロシージャの最初の実行時。|サーバーの再起動時。 または、通常はスキーマや統計の変更またはメモリ不足に基づく、プラン キャッシュからの削除時。|  
-|手動での再コンパイル|**sp_recompile**の使用。|**sp_recompile**の使用。 たとえば DBCC FREEPROCCACHE を使用して、キャッシュからプランを手動で削除できます。 また、WITH RECOMPILE ストアド プロシージャを作成することもできます。このストアド プロシージャは、実行のたびに再コンパイルされます。|  
+|手動での再コンパイル|**sp_recompile** の使用。|**sp_recompile** の使用。 たとえば DBCC FREEPROCCACHE を使用して、キャッシュからプランを手動で削除できます。 また、WITH RECOMPILE ストアド プロシージャを作成することもできます。このストアド プロシージャは、実行のたびに再コンパイルされます。|  
   
 ### <a name="compilation-and-query-processing"></a>コンパイルとクエリ処理  
  次の図は、ネイティブ コンパイル ストアド プロシージャのコンパイル処理を示しています。  
@@ -230,7 +230,7 @@ END
   
 2.  パーサーは、名前とストアド プロシージャのパラメーターを抽出します。  
   
-     たとえば **sp_prep_exec**を使用して、ステートメントが準備されている場合、パーサーは実行時にプロシージャ名とパラメーターを抽出する必要はありません。  
+     たとえば **sp_prep_exec** を使用して、ステートメントが準備されている場合、パーサーは実行時にプロシージャ名とパラメーターを抽出する必要はありません。  
   
 3.  インメモリ OLTP ランタイムがストアド プロシージャに対する DLL エントリ ポイントを特定します。  
   
@@ -273,37 +273,32 @@ GO
 |Stream Aggregate|`SELECT count(CustomerID) FROM dbo.Customer`|Hash Match 操作が集計をサポートしていないことに注意してください。 したがって、解釈された [!INCLUDE[tsql](../../includes/tsql-md.md)] 内の同じクエリに対するプランが Hash Match 操作を使用しても、ネイティブ コンパイル ストアド プロシージャ内のすべての集計は Stream Aggregate 操作を使用します|  
   
 ## <a name="column-statistics-and-joins"></a>列統計と結合  
- [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インデックス スキャンやインデックス シークなど特定の操作のコストを推定できるように、インデックス キー列に値の統計を保持します。 ([!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、非インデックス キー列に対しても、明示的に作成された場合またはクエリ オプティマイザーによってクエリの述語に応じて作成された場合、統計が作成されます)。コストの推定の主要な基準は、1 個の操作によって処理される行数です。 ディスク ベース テーブルの場合、コストの推定では、特定の操作でアクセスされるページ数が重要です。 ただし、メモリ最適化テーブルではページ数は重要ではないため (常にゼロ)、ここでは行数を中心に説明します。 推定は、プラン内のインデックス シークおよびスキャン操作で開始され、続いて、結合操作などの他の操作へと進みます。 結合操作によって処理される行数の推定値は、基になるインデックス、シーク、およびスキャン操作の推定値に基づきます。 解釈された [!INCLUDE[tsql](../../includes/tsql-md.md)] によるメモリ最適化テーブルへのアクセスの場合は、実際の実行プランを調べて、プラン内の操作の推定行数と実際の行数の違いを確認することができます。  
+
+[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インデックス スキャンやインデックス シークなど特定の操作のコストを推定できるように、インデックス キー列に値の統計を保持します。 ([!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、非インデックス キー列に対しても、明示的に作成された場合またはクエリ オプティマイザーによってクエリの述語に応じて作成された場合、統計が作成されます)。コストの推定の主要な基準は、1 個の操作によって処理される行数です。 ディスク ベース テーブルの場合、コストの推定では、特定の操作でアクセスされるページ数が重要です。 ただし、メモリ最適化テーブルではページ数は重要ではないため (常にゼロ)、ここでは行数を中心に説明します。 推定は、プラン内のインデックス シークおよびスキャン操作で開始され、続いて、結合操作などの他の操作へと進みます。 結合操作によって処理される行数の推定値は、基になるインデックス、シーク、およびスキャン操作の推定値に基づきます。 解釈された [!INCLUDE[tsql](../../includes/tsql-md.md)] によるメモリ最適化テーブルへのアクセスの場合は、実際の実行プランを調べて、プラン内の操作の推定行数と実際の行数の違いを確認することができます。  
   
- 図 1 の例の場合は、次のようになります。  
+図 1 の例の場合は、次のようになります。  
   
--   Customer でのクラスター化インデックス スキャンは、推定値が 91、実際の値が 91。  
+- Customer でのクラスター化インデックス スキャンは、推定値が 91、実際の値が 91。  
+- CustomerID での非クラスター化インデックス スキャンは、推定値が 830、実際の値が 830。  
+- マージ結合操作は、推定値が 815、実際の値が 830。  
   
--   CustomerID での非クラスター化インデックス スキャンは、推定値が 830、実際の値が 830。  
+インデックス スキャンの推定値は正確です。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ディスク ベース テーブルの行数を保持します。 テーブル全体の推定およびインデックス スキャンは常に正確です。 結合の推定も非常に正確です。  
   
--   マージ結合操作は、推定値が 815、実際の値が 830。  
+これらの推定が変わると、さまざまなプランの選択肢に対するコストの注意点も変わります。 たとえば、1 個の結合操作の推定値が 1 または少ない行数である場合、Nested Loops 結合を使用する方が低コストです。 次のクエリを考えてみます。  
   
- インデックス スキャンの推定値は正確です。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ディスク ベース テーブルの行数を保持します。 テーブル全体の推定およびインデックス スキャンは常に正確です。 結合の推定も非常に正確です。  
-  
- これらの推定が変わると、さまざまなプランの選択肢に対するコストの注意点も変わります。 たとえば、1 個の結合操作の推定値が 1 または少ない行数である場合、Nested Loops 結合を使用する方が低コストです。  
-  
- 次に、クエリのプランを示します。  
-  
-```  
+```sql
 SELECT o.OrderID, c.* FROM dbo.[Customer] c INNER JOIN dbo.[Order] o ON c.CustomerID = o.CustomerID  
 ```  
   
- Customer テーブルで 1 行だけを残してすべての行を削除した後  
+`Customer` テーブルの 1 行を除くすべての行を削除すると、次のクエリ プランが生成されます。  
   
- ![列統計と結合。](../../relational-databases/in-memory-oltp/media/hekaton-query-plan-9.png "列統計と結合。")  
+![列統計と結合。](../../relational-databases/in-memory-oltp/media/hekaton-query-plan-9.png "列統計と結合。")  
   
- このクエリ プランについて  
+このクエリ プランについて  
   
--   Hash Match は、Nested Loops 物理結合操作で置き換えられました。  
-  
--   IX_CustomerID でのフル インデックス スキャンは、インデックス シークで置き換えられました。 これにより、スキャンの対象は 5 行となり、フル インデックス スキャンに必要な 830 行ではなくなります。  
+- Hash Match は、Nested Loops 物理結合操作で置き換えられました。  
+- IX_CustomerID でのフル インデックス スキャンは、インデックス シークで置き換えられました。 これにより、スキャンの対象は 5 行となり、フル インデックス スキャンに必要な 830 行ではなくなります。  
   
 ## <a name="see-also"></a>参照  
- [メモリ最適化テーブル](../../relational-databases/in-memory-oltp/memory-optimized-tables.md)  
-  
+ [メモリ最適化テーブル](./sample-database-for-in-memory-oltp.md)  
   

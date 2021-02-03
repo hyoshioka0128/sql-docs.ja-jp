@@ -11,15 +11,15 @@ ms.topic: conceptual
 helpviewer_keywords:
 - Query Store, data collection
 ms.assetid: 8d5eec36-0013-480a-9c11-183e162e4c8e
-author: julieMSFT
-ms.author: jrasnick
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||= azure-sqldw-latest||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 1c099485550f258c81684bf11c76ab7d57d0830b
-ms.sourcegitcommit: 9470c4d1fc8d2d9d08525c4f811282999d765e6e
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||= azure-sqldw-latest||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: b534aefadb3e81e4ab889d04c1eebc1d9b2aef9e
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86458421"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97464833"
 ---
 # <a name="how-query-store-collects-data"></a>クエリ ストアでデータを収集する方法
 [!INCLUDE [SQL Server ASDB, ASDBMI, ASDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
@@ -38,7 +38,7 @@ SQL Server クエリ ストアの動作は、フライト データ レコーダ
 |**sys.query_context_settings**|クエリが実行されるプランに影響する設定の一意の組み合わせを示します。 同じクエリ テキストが、プランに影響する異なる設定で実行されると、`context_settings_id` はクエリキーの一部であるため、クエリ ストアに個別のクエリ エントリが生成されます。|  
 |**sys.query_store_query**|クエリ ストアで個別に追跡および強制されるクエリ エントリ。 単一のクエリ テキストが異なるコンテキスト設定で実行される場合、または異なる [!INCLUDE[tsql](../../includes/tsql-md.md)] モジュール (ストアド プロシージャやトリガーなど) の外側と内側で実行される場合は、複数のクエリ エントリが生成される可能性があります。|  
 |**sys.query_store_plan**|コンパイル時間の統計を含むクエリの見積もりプランを表示します。 格納されたプランは、`SET SHOWPLAN_XML ON` を使用して取得したものと同じです。|  
-|**sys.query_store_runtime_stats_interval**|クエリ ストアは、自動的に生成される時間枠 (間隔) ごとに時間を分割し、すべての実行済みプランにその間隔で集計された統計を格納します。 間隔のサイズは、([!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] の) 構成オプションの**統計収集間隔**、または [ALTER DATABASE の SET オプション &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-transact-sql-set-options.md) を使用する `INTERVAL_LENGTH_MINUTES` によって制御されます。|  
+|**sys.query_store_runtime_stats_interval**|クエリ ストアは、自動的に生成される時間枠 (間隔) ごとに時間を分割し、すべての実行済みプランにその間隔で集計された統計を格納します。 間隔のサイズは、([!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] の) 構成オプションの **統計収集間隔**、または [ALTER DATABASE の SET オプション &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-transact-sql-set-options.md) を使用する `INTERVAL_LENGTH_MINUTES` によって制御されます。|  
 |**sys.query_store_runtime_stats**|実行済みプランで集計されたランタイム統計です。 キャプチャされたすべてのメトリックは、次の 4 つの統計関数の形式で表されます。平均、最小、最大、標準偏差の 4 つの統計関数の形式で表されます。|  
   
  クエリ ストアのビューについて詳しくは、「[クエリのストアを使用した、パフォーマンスの監視](monitoring-performance-by-using-the-query-store.md)」の「関連するビュー、関数、プロシージャ」セクションを参照してください。 

@@ -1,13 +1,13 @@
 ---
-description: backup_devices (Transact-sql)
-title: backup_devices (Transact-sql) |Microsoft Docs
+description: sys.backup_devices (Transact-sql)
+title: sys.backup_devices (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - backup_devices_TSQL
 - backup_devices
@@ -19,19 +19,19 @@ helpviewer_keywords:
 - backup devices [SQL Server], viewing information
 - sys.backup_devices catalog view
 ms.assetid: 457edaa4-aca1-4bd3-bf8d-734490b80fcd
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: b58bfc803d66b8782631ec4fd3d9223041dbce73
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 1698ea0f99a92c9b93af3eb7eb479bb10b200928
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551498"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99198585"
 ---
-# <a name="sysbackup_devices-transact-sql"></a>backup_devices (Transact-sql)
+# <a name="sysbackup_devices-transact-sql"></a>sys.backup_devices (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **Sp_addumpdevice**を使用して登録された、またはで作成されたバックアップデバイスごとに1行の値を格納し [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] ます。  
+  **Sp_addumpdevice** を使用して登録された、またはで作成されたバックアップデバイスごとに1行の値を格納し [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] ます。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

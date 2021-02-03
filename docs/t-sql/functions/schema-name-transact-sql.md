@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - SCHEMA_NAME
 - SCHEMA_NAME_TSQL
@@ -19,13 +19,13 @@ helpviewer_keywords:
 ms.assetid: 20071b77-2b6e-4ce7-a8e3-fa71480baf73
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 72de5307eaa3da7fc60011fc06c794df89fc885a
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 52c3d7527494c8bb4ac92a1bd083be7ce0b53908
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88309208"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99183484"
 ---
 # <a name="schema_name-transact-sql"></a>SCHEMA_NAME (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "88309208"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql
 SCHEMA_NAME ( [ schema_id ] )  
 ```  
   
@@ -46,12 +46,12 @@ SCHEMA_NAME ( [ schema_id ] )
   
 |期間|定義|  
 |----------|----------------|  
-|*schema_id*|スキーマの ID です。 *schema_id* は、 **int**です。場合 *schema_id* が定義されていない場合、SCHEMA_NAME は、呼び出し元の既定のスキーマの名前が返すされます。|  
+|*schema_id*|スキーマの ID です。 *schema_id* は、 **int** です。場合 *schema_id* が定義されていない場合、SCHEMA_NAME は、呼び出し元の既定のスキーマの名前が返すされます。|  
   
 ## <a name="return-types"></a>戻り値の型  
  **sysname**  
   
- ときに、NULL を返します*schema_id* 、有効な ID ではありません  
+ ときに、NULL を返します *schema_id* 、有効な ID ではありません  
   
 ## <a name="remarks"></a>注釈  
  SCHEMA_NAME は、システム スキーマとユーザー定義スキーマの名前を返します。 SCHEMA_NAME は、選択リストの中、WHERE 句の中、また、式を使える所であればどこでも呼び出すことができます。  
@@ -60,13 +60,13 @@ SCHEMA_NAME ( [ schema_id ] )
   
 ### <a name="a-returning-the-name-of-the-default-schema-of-the-caller"></a>A. 呼び出し元の既定のスキーマ名を返す  
   
-```  
+```sql
 SELECT SCHEMA_NAME();  
 ```  
   
 ### <a name="b-returning-the-name-of-a-schema-by-using-an-id"></a>B. ID を使用してスキーマの名前を返す  
   
-```  
+```sql
 SELECT SCHEMA_NAME(1);  
 ```  
   

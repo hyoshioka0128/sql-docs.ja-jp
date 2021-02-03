@@ -22,14 +22,14 @@ helpviewer_keywords:
 - adding files
 - ALTER ASSEMBLY statement
 ms.assetid: 87bca678-4e79-40e1-bb8b-bd5ed8f34853
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: c6c555402f16e46d049409e1d10196ef91bf4169
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: dda1de9a2eb4628765333651c7d074b0c38551db
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88472444"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98100912"
 ---
 # <a name="alter-assembly-transact-sql"></a>ALTER ASSEMBLY (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -104,7 +104,7 @@ ALTER ASSEMBLY assembly_name
   
 -   直接または間接的にアセンブリ内のメソッドを参照する CHECK 制約。  
   
--   アセンブリに依存する CLR ユーザー定義型の列と、**UserDefined** (非**ネイティブ**) シリアル化形式を実装する型の列。  
+-   アセンブリに依存する CLR ユーザー定義型の列と、**UserDefined** (非 **ネイティブ**) シリアル化形式を実装する型の列。  
   
 -   WITH SCHEMABINDING を使用して作成されたビューを参照する、CLR ユーザー定義型の列。  
   
@@ -122,7 +122,7 @@ ALTER ASSEMBLY assembly_name
 > [!NOTE]  
 >  このオプションは、包含データベースまたは Azure SQL Database では使用できません。  
   
- [ ADD FILE FROM { *client_file_specifier* [ AS *file_name*] | *file_bits*AS *file_name*}  
+ [ ADD FILE FROM { *client_file_specifier* [ AS *file_name*] | *file_bits* AS *file_name*}  
  ソース コード、デバッグ ファイル、その他の関連情報など、アセンブリに関連付けられるファイルをサーバーにアップロードし、**sys.assembly_files** カタログ ビューに表示できるようにします。 *client_file_specifier* には、ファイルのアップロード元となる場所を指定します。 *file_bits* を代わりに使用し、ファイルを構成するバイナリ値の一覧を指定できます。 *file_name* には、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスに格納する必要があるファイルの名前を指定します。 *file_name* は、*file_bits* が指定されている場合は指定する必要があり、*client_file_specifier* が指定されている場合はオプションになります。 *file_name* が指定されていない場合、*client_file_specifier* の file_name の部分が *file_name* として使用されます。  
   
 > [!NOTE]  
@@ -201,9 +201,9 @@ ALTER ASSEMBLY assembly_name
  次の例では、`ComplexNumber` アセンブリを更新して、その実装を保持する [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] モジュールの最新コピーを反映させます。  
   
 > [!NOTE]  
->  アセンブリ `ComplexNumber` は、サンプル スクリプト UserDefinedDataType を実行することによって作成できます。 詳細については、「[ユーザー定義型](https://msdn.microsoft.com/library/a9b75f36-d7f5-47f7-94d6-b4448c6a2191)」を参照してください。  
+>  アセンブリ `ComplexNumber` は、サンプル スクリプト UserDefinedDataType を実行することによって作成できます。 詳細については、「[ユーザー定義型](/previous-versions/sql/sql-server-2016/ms131078(v=sql.130))」を参照してください。  
   
- ```
+ ```sql
  ALTER ASSEMBLY ComplexNumber 
  FROM 'C:\Program Files\Microsoft SQL Server\130\Tools\Samples\1033\Engine\Programmability\CLR\UserDefinedDataType\CS\ComplexNumber\obj\Debug\ComplexNumber.dll' 
   ```
@@ -214,7 +214,7 @@ ALTER ASSEMBLY assembly_name
 ### <a name="b-adding-a-file-to-associate-with-an-assembly"></a>B. ファイルを追加してアセンブリに関連付ける  
  次の例では、ソース コード ファイル `Class1.cs` をアップロードして、アセンブリ `MyClass` に関連付けます。 この例では、アセンブリ `MyClass` がデータベースに既に作成されていることを前提としています。  
   
-```  
+```sql  
 ALTER ASSEMBLY MyClass   
 ADD FILE FROM 'C:\MyClassProject\Class1.cs';  
 ```  
@@ -225,7 +225,7 @@ ADD FILE FROM 'C:\MyClassProject\Class1.cs';
 ### <a name="c-changing-the-permissions-of-an-assembly"></a>C. アセンブリの権限を変更する  
  次の例では、アセンブリ `ComplexNumber` の権限セットを、SAFE から `EXTERNAL ACCESS` に変更します。  
   
-```  
+```sql  
 ALTER ASSEMBLY ComplexNumber WITH PERMISSION_SET = EXTERNAL_ACCESS;  
 ```  
   
@@ -233,5 +233,4 @@ ALTER ASSEMBLY ComplexNumber WITH PERMISSION_SET = EXTERNAL_ACCESS;
  [CREATE ASSEMBLY &#40;Transact-SQL&#41;](../../t-sql/statements/create-assembly-transact-sql.md)   
  [DROP ASSEMBLY &#40;Transact-SQL&#41;](../../t-sql/statements/drop-assembly-transact-sql.md)   
  [EVENTDATA &#40;Transact-SQL&#41;](../../t-sql/functions/eventdata-transact-sql.md)  
-  
   

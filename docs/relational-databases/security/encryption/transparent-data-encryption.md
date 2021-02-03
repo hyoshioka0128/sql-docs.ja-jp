@@ -18,13 +18,13 @@ ms.assetid: c75d0d4b-4008-4e71-9a9d-cee2a566bd3b
 author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 8d1ba3c44a911130a4f86eb5be3789657b24288b
-ms.sourcegitcommit: b2ab989264dd9d23c184f43fff2ec8966793a727
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 06288dc0bc6e16ab8928322005254f5fac1ddc61
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86380885"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171484"
 ---
 # <a name="transparent-data-encryption-tde"></a>Transparent Data Encryption (TDE)
 
@@ -51,12 +51,12 @@ TDE では、保存データ (データとログ ファイル) が保護され�
 >
 >**関連項目:**
 >
-> - [Azure SQL Database での Transparent Data Encryption](../../../relational-databases/security/encryption/transparent-data-encryption-azure-sql.md)
-> - [SQL Data Warehouse での Transparent Data Encryption (TDE) の概要](https://azure.microsoft.com/documentation/articles/sql-data-warehouse-encryption-tde-tsql/)
+> - [Azure SQL Database での Transparent Data Encryption](/azure/azure-sql/database/transparent-data-encryption-tde-overview)
+> - [Azure Synapse Analytics での Transparent Data Encryption (TDE) の概要](/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-encryption-tde-tsql)
 > - [別の SQL Server への TDE で保護されたデータベースの移動](../../../relational-databases/security/encryption/move-a-tde-protected-database-to-another-sql-server.md)
 > - [EKM の使用による TDE の有効化](../../../relational-databases/security/encryption/enable-tde-on-sql-server-using-ekm.md)
 > - [SQL 暗号化機能への SQL Server コネクタの使用](../../../relational-databases/security/encryption/use-sql-server-connector-with-sql-encryption-features.md)
-> - [よく寄せられる質問での TDE についての SQL Server セキュリティ ブログ](https://blogs.msdn.microsoft.com/sqlsecurity/2016/10/05/feature-spotlight-transparent-data-encryption-tde/)
+> - [よく寄せられる質問での TDE についての SQL Server セキュリティ ブログ](/archive/blogs/sqlsecurity/feature-spotlight-transparent-data-encryption-tde)
 
 ## <a name="about-tde"></a>TDE について
 
@@ -64,7 +64,7 @@ TDE では、保存データ (データとログ ファイル) が保護され�
 
 ### <a name="information-applicable-to-sssds"></a>[!INCLUDE[ssSDS](../../../includes/sssds-md.md)] に該当する情報
 
-TDE を [!INCLUDE[sqldbesa](../../../includes/sqldbesa-md.md)] V12 と共に使用すると、マスター データベースに格納されるサーバー レベルの証明書が [!INCLUDE[ssSDS](../../../includes/sssds-md.md)] によって自動的に作成されます。 [!INCLUDE[ssSDS](../../../includes/sssds-md.md)] で TDE データベースを移動する場合、移動操作のためにデータベースの暗号化を解除する必要はありません。 TDE と [!INCLUDE[ssSDS](../../../includes/sssds-md.md)] の使用について詳しくは、「[Azure SQL Database の Transparent Data Encryption](../../../relational-databases/security/encryption/transparent-data-encryption-azure-sql.md)」を参照してください。
+TDE を [!INCLUDE[sqldbesa](../../../includes/sqldbesa-md.md)] V12 と共に使用すると、マスター データベースに格納されるサーバー レベルの証明書が [!INCLUDE[ssSDS](../../../includes/sssds-md.md)] によって自動的に作成されます。 [!INCLUDE[ssSDS](../../../includes/sssds-md.md)] で TDE データベースを移動する場合、移動操作のためにデータベースの暗号化を解除する必要はありません。 TDE と [!INCLUDE[ssSDS](../../../includes/sssds-md.md)] の使用について詳しくは、「[Azure SQL Database の Transparent Data Encryption](/azure/azure-sql/database/transparent-data-encryption-tde-overview)」を参照してください。
 
 ### <a name="information-applicable-to-ssnoversion"></a>[!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] に該当する情報
 
@@ -314,7 +314,7 @@ TDE を使用してデータベースを暗号化する場合、バッファー 
 
 ## <a name="tde-and-in-memory-oltp"></a>TDE とインメモリ OLTP
 
-インメモリ OLTP オブジェクトを含むデータベースで、TDE を有効にすることができます。 [!INCLUDE[ssSQL15](../../../includes/sssql15-md.md)] と [!INCLUDE[ssSDSfull](../../../includes/sssdsfull-md.md)] では、TDE を有効した場合、インメモリ OLTP ログ レコードとデータが暗号化されます。 [!INCLUDE[ssSQL14](../../../includes/sssql14-md.md)] では、TDE を有効した場合、インメモリ OLTP ログ レコードは暗号化されますが、MEMORY_OPTIMIZED_DATA ファイル グループのファイルは暗号化されません。
+インメモリ OLTP オブジェクトを含むデータベースで、TDE を有効にすることができます。 [!INCLUDE[ssSQL15](../../../includes/sssql16-md.md)] と [!INCLUDE[ssSDSfull](../../../includes/sssdsfull-md.md)] では、TDE を有効した場合、インメモリ OLTP ログ レコードとデータが暗号化されます。 [!INCLUDE[ssSQL14](../../../includes/sssql14-md.md)] では、TDE を有効した場合、インメモリ OLTP ログ レコードは暗号化されますが、MEMORY_OPTIMIZED_DATA ファイル グループのファイルは暗号化されません。
 
 ## <a name="related-tasks"></a>関連タスク
 
@@ -324,12 +324,12 @@ TDE を使用してデータベースを暗号化する場合、バッファー 
 
 ## <a name="related-content"></a>関連コンテンツ
 
-[Azure SQL Database での Transparent Data Encryption](../../../relational-databases/security/encryption/transparent-data-encryption-azure-sql.md)  
-[SQL Data Warehouse での Transparent Data Encryption (TDE) の概要](https://azure.microsoft.com/documentation/articles/sql-data-warehouse-encryption-tde-tsql/)  
+[Azure SQL Database での Transparent Data Encryption](/azure/azure-sql/database/transparent-data-encryption-tde-overview)  
+[Azure Synapse Analytics での Transparent Data Encryption (TDE) の概要](/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-encryption-tde-tsql)  
 [SQL Server の暗号化](../../../relational-databases/security/encryption/sql-server-encryption.md)  
 [SQL Server とデータベースの暗号化キー (データベース エンジン)](../../../relational-databases/security/encryption/sql-server-and-database-encryption-keys-database-engine.md)  
 
 ## <a name="see-also"></a>関連項目
 
 [SQL Server データベース エンジンと Azure SQL Database のセキュリティ センター](../../../relational-databases/security/security-center-for-sql-server-database-engine-and-azure-sql-database.md)  
-[FILESTREAM (SQL Server)](../../../relational-databases/blob/filestream-sql-server.md)  
+[FILESTREAM (SQL Server)](../../../relational-databases/blob/filestream-sql-server.md)

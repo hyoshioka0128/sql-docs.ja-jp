@@ -10,14 +10,14 @@ ms.topic: conceptual
 f1_keywords:
 - sql13.dta.general.f1
 ms.assetid: 50dd0a0b-a407-4aeb-bc8b-b02a793aa30a
-author: julieMSFT
-ms.author: jrasnick
-ms.openlocfilehash: 84ff76946cacefee80cc61f7e1b66e6a1e77fb21
-ms.sourcegitcommit: 9470c4d1fc8d2d9d08525c4f811282999d765e6e
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: f3b5176bb0b9ac123090f032e0908d57155ff592
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86458304"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172184"
 ---
 # <a name="database-engine-tuning-advisor"></a>Database Engine Tuning Advisor
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -73,7 +73,7 @@ ms.locfileid: "86458304"
  データベース エンジン チューニング アドバイザーのコマンド プロンプト版。 **dta** ユーティリティは、データベース エンジン チューニング アドバイザーの機能をアプリケーションとスクリプトで使用するために作成されました。  
   
  **ワークロード**  
- チューニングするデータベースの代表的なワークロードが含まれた Transact-SQL スクリプト ファイル、トレース ファイル、またはトレース テーブル。 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]以降では、プラン キャッシュをワークロードとして指定することができます。  [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降では、[クエリ ストアをワークロードとして指定する](../../relational-databases/performance/tuning-database-using-workload-from-query-store.md)ことができます。 
+ チューニングするデータベースの代表的なワークロードが含まれた Transact-SQL スクリプト ファイル、トレース ファイル、またはトレース テーブル。 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]以降では、プラン キャッシュをワークロードとして指定することができます。  [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降では、[クエリ ストアをワークロードとして指定する](../../relational-databases/performance/tuning-database-using-workload-from-query-store.md)ことができます。 
   
  **XML 入力ファイル**  
  データベース エンジン チューニング アドバイザーがワークロードのチューニングに使用できる XML 形式のファイル。 XML 入力ファイルは、GUI でも **dta** ユーティリティでも利用できない高度なチューニング オプションをサポートします。  

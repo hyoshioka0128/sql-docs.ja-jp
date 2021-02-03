@@ -23,13 +23,13 @@ helpviewer_keywords:
 ms.assetid: a19c808f-aaf9-4a69-af59-b1a5fc3e5c4c
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 571cd20813376fd3ed25bb89cf49890f8d75f718
-ms.sourcegitcommit: 768f046107642f72693514f51bf2cbd00f58f58a
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 2dcdf0ed9fa0e62be66cde8773a741b37ffa3306
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87111857"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97461203"
 ---
 # <a name="substring-transact-sql"></a>SUBSTRING (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "87111857"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql
 SUBSTRING ( expression ,start , length )  
 ```  
   
@@ -78,7 +78,7 @@ SUBSTRING ( expression ,start , length )
 ### <a name="a-using-substring-with-a-character-string"></a>A. SUBSTRING に文字列を使用する  
  次の例では、文字列の一部分のみを返す方法を示しています。 `sys.databases` テーブルから、このクエリは最初の列でシステム データベース名、2 番目の列でデータベースの最初の文字、最後の列で 3 番目と 4 番目の文字を返します。  
   
-```  
+```sql
 SELECT name, SUBSTRING(name, 1, 1) AS Initial ,
 SUBSTRING(name, 3, 2) AS ThirdAndFourthCharacters
 FROM sys.databases  
@@ -98,7 +98,7 @@ WHERE database_id < 5;
   
  文字列定数 `abcdef` の 2 番目、3 番目、および 4 番目の文字を表示するには、次のようにします。  
   
-```  
+```sql
 SELECT x = SUBSTRING('abcdef', 2, 3);  
 ```  
   
@@ -117,9 +117,9 @@ bcd
 > [!NOTE]  
 >  次の例を実行するには、**pubs** データベースをインストールする必要があります。  
   
- 次の例では、`pubs` データベースにある `pub_info` テーブルの **text** および **image** データ列から、それぞれ最初の 10 文字を返す方法を示します。 **text** としてデータが返される **varchar**, 、および **image** としてデータが返されます **varbinary**です。  
+ 次の例では、`pubs` データベースにある `pub_info` テーブルの **text** および **image** データ列から、それぞれ最初の 10 文字を返す方法を示します。 **text** としてデータが返される **varchar**, 、および **image** としてデータが返されます **varbinary** です。  
   
-```  
+```sql
 USE pubs;  
 SELECT pub_id, SUBSTRING(logo, 1, 10) AS logo,   
    SUBSTRING(pr_info, 1, 10) AS pr_info  
@@ -139,7 +139,7 @@ WHERE pub_id = '1756';
   
  次の例では、**text** データと **ntext** データの両方に対する SUBSTRING の効果を示します。 この例では最初に、`npub_info` という名前の `pubs` データベースに新しいテーブルを作成します。 次に、`pr_info` 列の最初の 80 文字から `npub_info` テーブルの `pub_info.pr_info` 列を作成し、最初の文字として `ü` を追加します。 最後に、`INNER JOIN` を使って、**text** および **ntext** の両方のパブリッシャー情報列から、すべてのパブリッシャー ID 番号と `SUBSTRING` を取得します。  
   
-```  
+```sql
 IF EXISTS (SELECT table_name FROM INFORMATION_SCHEMA.TABLES   
       WHERE table_name = 'npub_info')  
    DROP TABLE npub_info;  
@@ -149,7 +149,7 @@ USE pubs;
 GO  
 CREATE TABLE npub_info  
 (  
- pub_id char(4) NOT NULL  
+ pub_id CHAR(4) NOT NULL  
     REFERENCES publishers(pub_id)  
     CONSTRAINT UPKCL_npubinfo PRIMARY KEY CLUSTERED,  
 pr_info ntext NULL  
@@ -184,7 +184,7 @@ ORDER BY pr.pub_id ASC;
 ### <a name="c-using-substring-with-a-character-string"></a>C. SUBSTRING に文字列を使用する  
  次の例では、文字列の一部分のみを返す方法を示しています。 このクエリでは、`dbo.DimEmployee` テーブルから、最初の列に姓を、2 番目の列には名のイニシャルのみを返します。  
   
-```  
+```sql
 -- Uses AdventureWorks  
   
 SELECT LastName, SUBSTRING(FirstName, 1, 1) AS Initial  
@@ -205,7 +205,7 @@ Barreto de Mattos    P
   
  次の例では、文字列定数 `abcdef` の 2 番目、3 番目、4 番目の文字を返す方法を示します。  
   
-```  
+```sql
 USE ssawPDW;  
   
 SELECT TOP 1 SUBSTRING('abcdef', 2, 3) AS x FROM dbo.DimCustomer;  

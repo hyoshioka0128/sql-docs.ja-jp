@@ -1,12 +1,12 @@
 ---
 description: sys.dm_resource_governor_workload_groups_history_ex (Azure SQL Database)
-title: dm_resource_governor_workload_groups_history_ex (Azure SQL Database) |Microsoft Docs
+title: sys.dm_resource_governor_workload_groups_history_ex (Azure SQL Database) |Microsoft Docs
 ms.custom: ''
-ms.date: 05/22/2019
+ms.date: 01/05/2021
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_resource_governor_workload_groups_history_ex_TSQL
 - sys.dm_resource_governor_workload_groups_history_ex
@@ -19,17 +19,17 @@ helpviewer_keywords:
 - sys.dm_resource_governor_workload_groups_history_ex dynamic management view
 author: joesackmsft
 ms.author: josack
-ms.openlocfilehash: eee98e604fad74b58db9acd5e1f5b20a0189f216
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: ac8bc675c5a059c211e6ecfbed063d54daf6ee92
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88489758"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99203312"
 ---
 # <a name="sysdm_resource_governor_workload_groups_history_ex-azure-sql-database"></a>sys.dm_resource_governor_workload_groups_history_ex (Azure SQL Database)
 [!INCLUDE[Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/asdb-asdbmi.md)]
 
-Azure SQL Database のリソースプール統計の最後の32分 (合計128秒間) について、20秒間隔でスナップショットを返します。
+各行は、Azure SQL Database のワークロードグループ統計の定期的なスナップショットを表します。 スナップショットは、データベースエンジンの起動時と、それ以降は数秒ごとに実行されます。 現在のスナップショットと前のスナップショットの間の間隔は異なる場合があり、列に表示され `duration_ms` ます。 使用可能な最新のスナップショットが返されます。各ワークロードグループの最大128スナップショットが返されます。
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
@@ -80,7 +80,7 @@ Azure SQL Database のリソースプール統計の最後の32分 (合計128秒
 
 このビューには VIEW SERVER STATE 権限が必要です。
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>コメント
 
 ユーザーは、この動的管理ビューにアクセスして、ユーザーワークロードプールと Azure SQL Database インスタンスのシステム内部プールについて、ほぼリアルタイムのリソース消費を監視できます。
 
@@ -101,8 +101,8 @@ WHERE name LIKE 'User%'
 ORDER BY snapshot_time DESC;
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-- [翻訳ログレートガバナンス](https://docs.microsoft.com/azure/sql-database/sql-database-resource-limits-database-server#transaction-log-rate-governance)
-- [エラスティック プールの DTU リソースの制限](https://docs.microsoft.com/azure/sql-database/sql-database-dtu-resource-limits-elastic-pools)
-- [エラスティック プールの仮想コア リソースの制限](https://docs.microsoft.com/azure/sql-database/sql-database-vcore-resource-limits-elastic-pools)
+- [翻訳ログレートガバナンス](/azure/sql-database/sql-database-resource-limits-database-server#transaction-log-rate-governance)
+- [エラスティック プールの DTU リソースの制限](/azure/sql-database/sql-database-dtu-resource-limits-elastic-pools)
+- [エラスティック プールの仮想コア リソースの制限](/azure/sql-database/sql-database-vcore-resource-limits-elastic-pools)

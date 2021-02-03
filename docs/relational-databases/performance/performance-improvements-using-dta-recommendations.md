@@ -10,23 +10,23 @@ ms.topic: conceptual
 helpviewer_keywords:
 - Database Engine Tuning Advisor, performance improvements
 ms.assetid: 2e51ea06-81cb-4454-b111-da02808468e6
-author: julieMSFT
-ms.author: jrasnick
-ms.openlocfilehash: abad80759ccfbc2d5315c5f89cf1dcce3172c9f4
-ms.sourcegitcommit: 9470c4d1fc8d2d9d08525c4f811282999d765e6e
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: e6d392cedebec98c00ca6dac84dcc1d2fee21258
+ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86458285"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96505106"
 ---
 # <a name="performance-improvements-using-database-engine-tuning-advisor-dta-recommendations"></a>データベース エンジン チューニング アドバイザー (DTA) の推奨事項を使用したパフォーマンスの強化
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
 
 ---
-データ ウェアハウスと分析ワークロードのパフォーマンスは**列ストア** インデックスで大幅に上がります。特に、大きなテーブルをスキャンするクエリで効果を発揮します。 **行ストア** (B+-tree) インデックスは、比較的少量のデータにアクセスし、特定の値または値範囲を検索するクエリで最も効果を発揮します。 行ストア インデックスは行を並べ替えた上で提示するので、クエリ実行プランの並べ替えコストの削減にもなります。 そのため、行ストア インデックスと列ストア インデックスをどのように組み合わせるかという選択はアプリケーションのワークロードに依存します。
+データ ウェアハウスと分析ワークロードのパフォーマンスは **列ストア** インデックスで大幅に上がります。特に、大きなテーブルをスキャンするクエリで効果を発揮します。 **行ストア** (B+-tree) インデックスは、比較的少量のデータにアクセスし、特定の値または値範囲を検索するクエリで最も効果を発揮します。 行ストア インデックスは行を並べ替えた上で提示するので、クエリ実行プランの並べ替えコストの削減にもなります。 そのため、行ストア インデックスと列ストア インデックスをどのように組み合わせるかという選択はアプリケーションのワークロードに依存します。
 
-データベース エンジン チューニング アドバイザー (DTA) は、SQL Server 2016 以降、所与のデータベース ワークロードを分析することで**行ストア インデックスと列ストア インデックスの最適な組み合わせ**を推奨できるようになりました。 
+データベース エンジン チューニング アドバイザー (DTA) は、SQL Server 2016 以降、所与のデータベース ワークロードを分析することで **行ストア インデックスと列ストア インデックスの最適な組み合わせ** を推奨できるようになりました。 
 
 ワークロード パフォーマンスに関する DTA 推奨の長所を示すために、実際のお客様のワークロードで実験しました。 お客様のワークロードごとに、DTA に個々のクエリとクエリの完全ワークロードを分析させました。 3 つの選択肢を考慮します。
   
@@ -37,7 +37,7 @@ ms.locfileid: "86458285"
 この場合、推奨されたインデックスを実装しました。 クエリまたはワークロードを複数回実行し、その平均 CPU 時間をミリ秒単位で報告します。 次の図は、2 つの異なる顧客データベースを対象にワークロードの CPU 時間をミリ秒単位で描画したものです。 y 軸 (CPU 時間) では対数スケールが使用されています。   
 
 
-![DTA-columnstore-rowstore-performance](../../relational-databases/performance/media/dta-columnstore-rowstore-performance.gif)
+![DTA 列ストア、行ストアのパフォーマンスを示す棒グラフのスクリーンショット。](../../relational-databases/performance/media/dta-columnstore-rowstore-performance.gif)
 
 
 

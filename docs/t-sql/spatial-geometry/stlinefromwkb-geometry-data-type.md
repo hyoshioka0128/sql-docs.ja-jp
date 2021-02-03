@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, pdw, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - STLineFromWKB (geometry Data Type)
 - STLineFromWKB_TSQL
@@ -18,13 +18,13 @@ helpviewer_keywords:
 ms.assetid: e674c8c4-c67f-4fc1-9873-d9c2ed46c659
 author: MladjoA
 ms.author: mlandzic
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 19f43ada9987079725ab80528d823003cb1636ce
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 1b94446130a62b1388b6e35c9261cd0bb832fe59
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88305428"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99179134"
 ---
 # <a name="stlinefromwkb-geometry-data-type"></a>STLineFromWKB (geometry データ型)
 [!INCLUDE[tsql-appliesto-ss2008-asdb-xxxx-pdw-md](../../includes/tsql-appliesto-ss2008-asdb-xxxx-pdw-md.md)]
@@ -52,7 +52,7 @@ STLineFromWKB ( 'WKB_linestring' , SRID )
   
  OGC の型: **LineString**  
   
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>解説  
  このメソッドでは、入力が正しい形式でない場合に、**FormatException** をスローします。  
   
 ## <a name="examples"></a>例  

@@ -19,26 +19,26 @@ author: MightyPen
 ms.author: genemi
 ms.reviewer: ''
 ms.custom: seo-lt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 50732a867c0329610b0a03eebcd97d3f3224d6e0
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 374b6d588f89abd507d341596da0426eecf8910a
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85750771"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97461773"
 ---
 # <a name="filtering-values-using-sqllimit-field-and-sqllimit-value-sqlxml-40"></a>sql:limit-field および sql:limit-value を使用した、値のフィルター選択 (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
-  データベース クエリから返される行を、一定の制限値に基づいて制限することができます。 **Sql: limit-field**および**sql: limit-value**注釈は、制限値を含むデータベース列を識別し、返されるデータのフィルター処理に使用する特定の制限値を指定するために使用されます。  
+  データベース クエリから返される行を、一定の制限値に基づいて制限することができます。 **Sql: limit-field** および **sql: limit-value** 注釈は、制限値を含むデータベース列を識別し、返されるデータのフィルター処理に使用する特定の制限値を指定するために使用されます。  
   
- **Sql: limit-field**注釈は、制限値を含む列を識別するために使用されます。これは、マップされた各要素または属性で許可されます。  
+ **Sql: limit-field** 注釈は、制限値を含む列を識別するために使用されます。これは、マップされた各要素または属性で許可されます。  
   
- Sql: limit- **value**注釈は、 **sql: limit-field**注釈で指定される列の制限された値を指定するために使用されます。 **Sql: limit-value**注釈は省略可能です。 **Sql: limit-値**が指定されていない場合、NULL 値が想定されます。  
+ Sql: limit- **value** 注釈は、 **sql: limit-field** 注釈で指定される列の制限された値を指定するために使用されます。 **Sql: limit-value** 注釈は省略可能です。 **Sql: limit-値** が指定されていない場合、NULL 値が想定されます。  
   
 > [!NOTE]  
->  マップされた SQL 列が**real**型である**sql: limit フィールド**を使用すると、SQLXML 4.0 は XML スキーマで指定されている**sql: limit-値**に対して、 **nvarchar**指定値として変換を実行します。 ここで、10 進数の制限値を完全な科学的表記法で指定する必要があります。 詳細については、後の例 B を参照してください。  
+>  マップされた SQL 列が **real** 型である **sql: limit フィールド** を使用すると、SQLXML 4.0 は XML スキーマで指定されている **sql: limit-値** に対して、 **nvarchar** 指定値として変換を実行します。 ここで、10 進数の制限値を完全な科学的表記法で指定する必要があります。 詳細については、後の例 B を参照してください。  
   
-## <a name="examples"></a>使用例  
+## <a name="examples"></a>例  
  次の例を使用して実際のサンプルを作成するには、次がインストールされている必要があります。  
   
 -   Microsoft [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client  
@@ -47,7 +47,7 @@ ms.locfileid: "85750771"
   
  これらの例では、テンプレートを使用して、マッピング XSD スキーマに対する XPath クエリを指定します。  
   
-### <a name="a-limiting-the-customer-addresses-returned-to-a-specific-address-type"></a>A: 返される顧客の住所を特定の住所タイプに制限する  
+### <a name="a-limiting-the-customer-addresses-returned-to-a-specific-address-type"></a>A. 返される顧客の住所を特定の住所タイプに制限する  
  この例では、データベースに次の 2 つのテーブルが含まれています。  
   
 -   Customer (CustomerID, CompanyName)  
@@ -56,7 +56,7 @@ ms.locfileid: "85750771"
   
  顧客には、発送先住所と請求先住所のいずれかまたは両方が設定されています。 AddressType 列の値は Shipping と Billing です。  
   
- これは、 **ShipTo** schema 属性が Addresses 関係の StreetAddress 列にマップされるマッピングスキーマです。 この属性に対して返される値は、 **sql: limit-field**および**sql: limit-value**注釈を指定することによって、出荷先住所に限定されます。 同様に、 **BillTo** schema 属性では、顧客の請求先住所のみが返されます。  
+ これは、 **ShipTo** schema 属性が Addresses 関係の StreetAddress 列にマップされるマッピングスキーマです。 この属性に対して返される値は、 **sql: limit-field** および **sql: limit-value** 注釈を指定することによって、出荷先住所に限定されます。 同様に、 **BillTo** schema 属性では、顧客の請求先住所のみが返されます。  
   
  スキーマは次のようになります。  
   
@@ -102,7 +102,7 @@ ms.locfileid: "85750771"
   
 ##### <a name="to-test-a-sample-xpath-query-against-the-schema"></a>スキーマに対してサンプル XPath クエリをテストするには  
   
-1.  **Tempdb**データベースに2つのテーブルを作成します。  
+1.  **Tempdb** データベースに2つのテーブルを作成します。  
   
     ```  
     USE tempdb  
@@ -149,7 +149,7 @@ ms.locfileid: "85750771"
   
 5.  SQLXML 4.0 テスト スクリプト (sqlxml4test.vbs) を作成し、それを使用してテンプレートを実行します。  
 
-     詳細については、「ADO を使用した[SQLXML クエリの実行](../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
+     詳細については、「ADO を使用した [SQLXML クエリの実行](../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
   
  結果を次に示します。  
   
@@ -166,14 +166,14 @@ ms.locfileid: "85750771"
 </ROOT>  
 ```  
   
-### <a name="b-limiting-results-based-on-a-discount-value-of-type-real-data"></a>B: 実数型データのディスカウント値に基づいて結果を制限する  
+### <a name="b-limiting-results-based-on-a-discount-value-of-type-real-data"></a>B. 実数型データのディスカウント値に基づいて結果を制限する  
  この例では、データベースに次の 2 つのテーブルが含まれています。  
   
 -   Orders (OrderID)  
   
 -   OrderDetails (OrderID, ProductID, UnitPrice, Quantity, Price, Discount)  
   
- これは、注文の詳細の**orderid**属性が orders リレーションシップの orderid 列にマップされるマッピングスキーマです。 この属性に対して返される値は、 **sql: limit-field**注釈と**sql:** limit-value 注釈を使用して、**割引**属性に対して指定された値 2.0000000 e-001 (0.2) のみに制限されます。  
+ これは、注文の詳細の **orderid** 属性が orders リレーションシップの orderid 列にマップされるマッピングスキーマです。 この属性に対して返される値は、 **sql: limit-field** 注釈と **sql:** limit-value 注釈を使用して、**割引** 属性に対して指定された値 2.0000000 e-001 (0.2) のみに制限されます。  
   
  スキーマは次のようになります。  
   
@@ -219,7 +219,7 @@ ms.locfileid: "85750771"
   
 ##### <a name="to-test-a-sample-xpath-query-against-the-schema"></a>スキーマに対してサンプル XPath クエリをテストするには  
   
-1.  **Tempdb**データベースに2つのテーブルを作成します。  
+1.  **Tempdb** データベースに2つのテーブルを作成します。  
   
     ```  
     USE tempdb  
@@ -307,8 +307,8 @@ ms.locfileid: "85750771"
     </root>  
     ```  
   
-## <a name="see-also"></a>関連項目  
- [Transact-sql&#41;の float 型と real 型の &#40;](../../t-sql/data-types/float-and-real-transact-sql.md)   
+## <a name="see-also"></a>参照  
+ [float と real &#40;Transact-SQL&#41;](../../t-sql/data-types/float-and-real-transact-sql.md)   
  [nchar および nvarchar &#40;Transact-sql&#41;](../../t-sql/data-types/nchar-and-nvarchar-transact-sql.md)   
  [SQL Server Native Client のインストール](../../relational-databases/native-client/applications/installing-sql-server-native-client.md)   
  [クエリでの注釈付き XSD スキーマの使用 &#40;SQLXML 4.0&#41;](../../relational-databases/sqlxml/annotated-xsd-schemas/using-annotated-xsd-schemas-in-queries-sqlxml-4-0.md)  

@@ -5,32 +5,32 @@ description: この記事では、SQL 機械学習用の R のチュートリア
 ms.prod: sql
 ms.technology: machine-learning
 ms.topic: tutorial
-author: cawrites
-ms.author: chadam
+author: dphansen
+ms.author: davidph
 ms.reviewer: garye, davidph
 ms.date: 05/21/2020
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: ac7bbbb10d736b68d3e9930fafd7ae6e50f739f0
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: 8b9836119612aa64b941f056902e7886deb8233b
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85671025"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470093"
 ---
 # <a name="r-tutorials-for-sql-machine-learning"></a>SQL 機械学習用の R チュートリアル
-[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
+[!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
 
-::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15"
 この記事では、[SQL Server 上の Machine Learning Services](../sql-server-machine-learning-services.md) および [ビッグ データ クラスター](../../big-data-cluster/machine-learning-services.md)用の R のチュートリアルおよびクイックスタートについて説明します。
 ::: moniker-end
-::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2017"
 この記事では、[SQL Server Machine Learning Services](../sql-server-machine-learning-services.md) 用の R のチュートリアルおよびクイックスタートについて説明します。
 ::: moniker-end
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 この記事では、[SQL Server 2016 R サービス](../r/sql-server-r-services.md)用の R のチュートリアルおよびクイックスタートについて説明します。
 ::: moniker-end
-::: moniker range="=azuresqldb-mi-current||=sqlallproducts-allversions"
+::: moniker range="=azuresqldb-mi-current"
 この記事では、[Azure SQL Managed Instance の Machine Learning Services](/azure/azure-sql/managed-instance/machine-learning-services-overview) 用の Python のチュートリアルおよびクイックスタートについて説明します。
 ::: moniker-end
 
@@ -38,13 +38,13 @@ ms.locfileid: "85671025"
 
 ## <a name="r-tutorials"></a>R のチュートリアル
 
-::: moniker range=">=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2016||>=sql-server-linux-ver15"
 | チュートリアル | 説明 |
 |------|-------------|
 | [デシジョン ツリーでスキー レンタルを予測する](r-predictive-model-introduction.md) | R とデシジョン ツリー モデルを使用して、将来のスキー レンタルの数を予測します。 Azure Data Studio のノートブックを使用してデータの準備とモデルのトレーニングを行い、T-SQL を使用してモデルを展開します。 |
 | [K-Means クラスタリングを使用した顧客の分類](r-clustering-model-introduction.md) | R を使用して、顧客を分類するための K-Means クラスタリング モデルを開発および展開します。 Azure Data Studio のノートブックを使用してデータの準備とモデルのトレーニングを行い、T-SQL を使用してモデルを展開します。 |
 | [データ サイエンティスト向けのデータベース内 R 分析](../tutorials/walkthrough-data-science-end-to-end-walkthrough.md) | SQL 機械学習を初めて使用する R 開発者向けに、このチュートリアルでは SQL で一般的なデータ サイエンス タスクを実行する方法について説明します。 データを読み込んで視覚化し、モデルをトレーニングしてデータベースに保存し、そのモデルを予測分析に使用します。 |
-| [SQL 開発者向けのデータベース内 R 分析](../tutorials/sqldev-in-database-r-for-sql-developers.md) | SQL ツールのみを使用して、完全な R ソリューションを構築および展開します。 ソリューションを運用環境に移行することに重点を置いています。 ストアド プロシージャに R コードをラップし、R モデルをデータベースに保存して、予測のために R モデルに対してパラメーター化された呼び出しを行う方法について説明します。 |
+| [SQL 開発者向けのデータベース内 R 分析](../tutorials/r-taxi-classification-introduction.md) | SQL ツールのみを使用して、完全な R ソリューションを構築および展開します。 ソリューションを運用環境に移行することに重点を置いています。 ストアド プロシージャに R コードをラップし、R モデルをデータベースに保存して、予測のために R モデルに対してパラメーター化された呼び出しを行う方法について説明します。 |
 ::: moniker-end
 ::: moniker range="=azuresqldb-mi-current"
 | チュートリアル | 説明 |

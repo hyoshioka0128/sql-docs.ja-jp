@@ -20,14 +20,14 @@ helpviewer_keywords:
 - DROP QUEUE statement
 - removing queues
 ms.assetid: fd866520-ca00-477d-b2e9-0110e9610ed4
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: 28269fcc3c3b4e43e1343bb13abb72d1716a5b0a
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: ead004ad07fbab696e42e5efdefa89a04cc0c2a2
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88478805"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096935"
 ---
 # <a name="drop-queue-transact-sql"></a>DROP QUEUE (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -39,7 +39,6 @@ ms.locfileid: "88478805"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 DROP QUEUE <object>  
 [ ; ]  
   
@@ -68,9 +67,8 @@ DROP QUEUE <object>
 ## <a name="examples"></a>例  
  次の例では、現在のデータベースから **ExpenseQueue** キューを削除します。  
   
-```  
+```sql  
 DROP QUEUE ExpenseQueue ;  
-  
 ```  
   
 ## <a name="see-also"></a>参照  

@@ -1,44 +1,46 @@
 ---
-title: dm_pdw_nodes_exec_query_profiles (Transact-sql) |Microsoft Docs
+title: sys.dm_pdw_nodes_exec_query_profiles (Transact-sql) |Microsoft Docs
 description: クエリの実行中にリアルタイムのデータウェアハウスのクエリの進行状況を監視するために使用できる動的管理ビュー。
 ms.custom: ''
 ms.date: 10/14/2019
 ms.prod: sql
 ms.technology: data-warehouse
 ms.reviewer: ''
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 ms.assetid: ''
 author: XiaoyuMSFT
 ms.author: xiaoyul
-monikerRange: =azure-sqldw-latest || = sqlallproducts-allversions
-ms.openlocfilehash: cb63045fa1a34898e9c195e7a5c75bdf6b34b15a
-ms.sourcegitcommit: df1f0f2dfb9452f16471e740273cd1478ff3100c
+monikerRange: =azure-sqldw-latest
+ms.openlocfilehash: 9158ede7f526fe5ce4cbce7b9e6741c03e170849
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87394349"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99140935"
 ---
-# <a name="sysdm_pdw_nodes_exec_query_profiles-transact-sql"></a>dm_pdw_nodes_exec_query_profiles (Transact-sql)
+# <a name="sysdm_pdw_nodes_exec_query_profiles-transact-sql"></a>sys.dm_pdw_nodes_exec_query_profiles (Transact-sql)
+
 [!INCLUDE [asa](../../includes/applies-to-version/asa.md)]
 
 クエリの実行中にリアルタイムのデータウェアハウスのクエリの進行状況を監視します。   
   
-## <a name="table-returned"></a>返されたテーブル  
+## <a name="table-returned"></a>返されたテーブル
+  
 返されるカウンターは、スレッドごとの演算子ごとになります。 結果は動的であり、 `SET STATISTICS XML ON` クエリの終了時にのみ出力を作成するなど、既存のオプションの結果とは一致しません。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
 |pdw_node_id|**int**|ノードに関連付けられている一意の数値 ID。|
 |session_id|**smallint**|このクエリが実行されるセッションを識別します。 dm_exec_sessions.session_id を参照します。|  
-|request_id|**int**|ターゲット要求を識別します。 Dm_exec_sessions を参照しています。 request_id。|  
-|sql_handle|**varbinary(64)**|クエリが含まれているバッチまたはストアドプロシージャを一意に識別するトークンです。 Dm_exec_query_stats を参照しています。 sql_handle。|  
-|plan_handle|**varbinary(64)**|は、実行され、そのプランがプランキャッシュに存在するか、現在実行中のバッチのクエリ実行プランを一意に識別するトークンです。 Dm_exec_query_stats を参照しています。 plan_handle。|  
+|request_id|**int**|ターゲット要求を識別します。 Dm_exec_sessions request_id を参照します。|  
+|sql_handle|**varbinary(64)**|クエリが含まれているバッチまたはストアドプロシージャを一意に識別するトークンです。 Dm_exec_query_stats を参照します。|  
+|plan_handle|**varbinary(64)**|は、実行され、そのプランがプランキャッシュに存在するか、現在実行中のバッチのクエリ実行プランを一意に識別するトークンです。 Dm_exec_query_stats plan_handle を参照します。|  
 |physical_operator_name|**nvarchar (256)**|物理操作名。|  
 |node_id|**int**|クエリ ツリー内の演算子ノードを識別します。|  
 |thread_id|**int**|同じクエリ演算子ノードに属している (並列クエリの) スレッドを識別します。|  
-|task_address|**varbinary (8)**|このスレッドが使用している SQLOS タスクを識別します。 Dm_os_tasks を参照しています。 task_address。|  
+|task_address|**varbinary (8)**|このスレッドが使用している SQLOS タスクを識別します。 Dm_os_tasks task_address を参照します。|  
 |row_count|**bigint**|これまでに演算子によって返された行の数。|  
 |rewind_count|**bigint**|これまでの巻き戻しの数。|  
 |rebind_count|**bigint**|これまでの再バインドの数。|  
@@ -66,17 +68,20 @@ ms.locfileid: "87394349"
 |segment_read_count|**int**|これまでのセグメント先行読み取りの数。|  
 |segment_skip_count|**int**|これまでにスキップされたセグメントの数。| 
 |actual_read_row_count|**bigint**|残存述語が適用される前に演算子によって読み取られた行の数。| 
-|estimated_read_row_count|**bigint**|**適用対象:** SP1 以降 [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 。 <br/>残存述語が適用される前に、演算子によって読み取られると推定される行の数。|  
+|estimated_read_row_count|**bigint**|**適用対象:** SP1 以降 [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 。 <br/>残存述語が適用される前に、演算子によって読み取られると推定される行の数。|  
   
-## <a name="remarks"></a>解説  
-[Dm_exec_query_profiles](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-query-profiles-transact-sql?view=sql-server-ver15)適用される同じコメント。  
+## <a name="remarks"></a>コメント
+
+[Sys.dm_exec_query_profiles](./sys-dm-exec-query-profiles-transact-sql.md)の同じ解説が適用されます。  
 
 ## <a name="permissions"></a>アクセス許可  
  サーバーに対する `VIEW SERVER STATE` 権限が必要です。  
 
-## <a name="see-also"></a>関連項目  
- [SQL Data Warehouse および並列データウェアハウスの動的管理ビュー &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sql-and-parallel-data-warehouse-dynamic-management-views.md)  
+## <a name="see-also"></a>関連項目
+
+ [Azure Synapse Analytics と並列データウェアハウスの動的管理ビュー &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sql-and-parallel-data-warehouse-dynamic-management-views.md)  
    
 
- ## <a name="next-steps"></a>次のステップ
- 開発に関するその他のヒントについては、[SQL Data Warehouse の開発の概要](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-overview-develop)に関する記事をご覧ください。
+ ## <a name="next-steps"></a>次のステップ 
+
+Azure Synapse Analytics の開発の概要] (/azure/sql-data-warehouse/sql-data-warehouse-overview-develop) をご説明します。

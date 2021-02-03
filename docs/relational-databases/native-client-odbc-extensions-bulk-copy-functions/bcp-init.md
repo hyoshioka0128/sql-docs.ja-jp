@@ -19,13 +19,13 @@ helpviewer_keywords:
 ms.assetid: 6a25862c-7f31-4873-ab65-30f3abde89d2
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 3c32343c060eab0d70ba3bbc4419d30809ae745c
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 7e325b7e88b2958b8870151516f991f27ba79e44
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88448578"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97483343"
 ---
 # <a name="bcp_init"></a>bcp_init
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -52,17 +52,17 @@ Unicode および ANSI 名:
  一括コピーが有効な ODBC 接続ハンドルです。  
   
  *szTable*  
- コピー操作の対象になるデータベース テーブルの名前です。 この名前には、データベース名または所有者名を含めることもできます。 たとえば、 **gracie**のようになります。 **タイトル**、 **gracie**、 **タイトル** は、すべて有効なテーブル名です。  
+ コピー操作の対象になるデータベース テーブルの名前です。 この名前には、データベース名または所有者名を含めることもできます。 たとえば、 **gracie** のようになります。 **タイトル**、 **gracie**、 **タイトル** は、すべて有効なテーブル名です。  
   
- *Edirection*が DB_OUT の場合、 *sztable*をデータベースビューの名前にすることもできます。  
+ *Edirection* が DB_OUT の場合、 *sztable* をデータベースビューの名前にすることもできます。  
   
- *Edirection*が DB_OUT で、 [bcp_exec](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-exec.md)を呼び出す前に[BCP_CONTROL](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-control.md)を使用して select ステートメントを指定した場合は、 **bcp_init** *sztable*を NULL に設定する必要があります。  
+ *Edirection* が DB_OUT で、 [bcp_exec](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-exec.md)を呼び出す前に [BCP_CONTROL](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-control.md)を使用して select ステートメントを指定した場合は、 **bcp_init** *sztable* を NULL に設定する必要があります。  
   
  *szDataFile*  
- コピー操作の対象になるユーザー ファイルの名前です。 [Bcp_sendrow](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-sendrow.md)を使用して変数からデータを直接コピーする場合は、 *SZDATAFILE ファイル*を NULL に設定します。  
+ コピー操作の対象になるユーザー ファイルの名前です。 [Bcp_sendrow](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/bcp-sendrow.md)を使用して変数からデータを直接コピーする場合は、 *SZDATAFILE ファイル* を NULL に設定します。  
   
  *szErrorFile*  
- 進行状況メッセージ、エラー メッセージ、および何かの理由でユーザー ファイルからテーブルにコピーできなかった任意の行のコピーを書き込むエラー ファイルの名前です。 NULL が *Szerrorfile*として渡された場合、エラーファイルは使用されません。  
+ 進行状況メッセージ、エラー メッセージ、および何かの理由でユーザー ファイルからテーブルにコピーできなかった任意の行のコピーを書き込むエラー ファイルの名前です。 NULL が *Szerrorfile* として渡された場合、エラーファイルは使用されません。  
   
  *eDirection*  
  コピーの方向です。この値は DB_IN または DB_OUT になります。 DB_IN は、プログラム変数またはユーザー ファイルからテーブルへのコピーを示します。 DB_OUT は、データベース テーブルからユーザー ファイルへのコピーを示します。 DB_OUT を指定する場合は、ユーザー ファイル名を指定する必要があります。  
@@ -73,7 +73,7 @@ Unicode および ANSI 名:
 ## <a name="remarks"></a>解説  
  他の一括コピー関数を呼び出す前に **bcp_init** を呼び出します。 **bcp_init** は、ワークステーションとの間のデータの一括コピーに必要な初期化を実行し [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。  
   
- **Bcp_init**関数は、一括コピー関数で使用できるように ODBC 接続ハンドルが有効になっている必要があります。 ハンドルを有効にするには、SQL_COPT_SS_BCP が割り当てられていて、接続されていない接続ハンドルで SQL_BCP_ON に設定されている [SQLSetConnectAttr](../../relational-databases/native-client-odbc-api/sqlsetconnectattr.md) を使用します。 接続済みのハンドルの属性を割り当てようとすると、エラーが発生します。  
+ **Bcp_init** 関数は、一括コピー関数で使用できるように ODBC 接続ハンドルが有効になっている必要があります。 ハンドルを有効にするには、SQL_COPT_SS_BCP が割り当てられていて、接続されていない接続ハンドルで SQL_BCP_ON に設定されている [SQLSetConnectAttr](../../relational-databases/native-client-odbc-api/sqlsetconnectattr.md) を使用します。 接続済みのハンドルの属性を割り当てようとすると、エラーが発生します。  
   
  データファイルを指定すると、 **bcp_init** によって、データファイルではなく、データベースのソースまたは対象のテーブルの構造が調べられます。 **bcp_init** は、データベーステーブル、ビュー、または SELECT 結果セットの各列に基づいて、データファイルのデータ形式値を指定します。 このデータ形式値には、各列のデータ型、長さや NULL のインジケーターとターミネータのバイト文字列がデータ内に存在するかどうか、および固定長データ型の幅の指定などが含まれます。 **bcp_init** は、次のように値を設定します。  
   
@@ -224,7 +224,7 @@ int main() {
   
 ```  
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [一括コピー関数](../../relational-databases/native-client-odbc-extensions-bulk-copy-functions/sql-server-driver-extensions-bulk-copy-functions.md)  
   
   

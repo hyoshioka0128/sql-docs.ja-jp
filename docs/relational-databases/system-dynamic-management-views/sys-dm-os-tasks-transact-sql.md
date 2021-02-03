@@ -1,13 +1,13 @@
 ---
-description: dm_os_tasks (Transact-sql)
-title: dm_os_tasks (Transact-sql) |Microsoft Docs
+description: sys.dm_os_tasks (Transact-sql)
+title: sys.dm_os_tasks (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/13/2017
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_os_tasks
 - sys.dm_os_tasks_TSQL
@@ -18,23 +18,23 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_os_tasks dynamic management view
 ms.assetid: 180a3c41-e71b-4670-819d-85ea7ef98bac
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: b19ef563d8726b88f7a5432c6a42deeb687e72b4
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: bd21dd5cce8a794b6a0a909f62a8b223f274cb76
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539318"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99193774"
 ---
-# <a name="sysdm_os_tasks-transact-sql"></a>dm_os_tasks (Transact-sql)
+# <a name="sysdm_os_tasks-transact-sql"></a>sys.dm_os_tasks (Transact-sql)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   のインスタンスでアクティブになっているタスクごとに1行の値を返し [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。 タスクは、SQL Server での実行の基本単位です。 タスクの例としては、クエリ、ログイン、ログアウト、およびゴーストクリーンアップアクティビティ、チェックポイントアクティビティ、ログライター、並列再実行アクティビティなどのシステムタスクがあります。 タスクの詳細については、「 [スレッドおよびタスクアーキテクチャガイド](../../relational-databases/thread-and-task-architecture-guide.md)」を参照してください。
   
 > [!NOTE]  
-> またはからこれを呼び出すに [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] は [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] 、 **dm_pdw_nodes_os_tasks**という名前を使用します。  
+> またはからこれを呼び出すに [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] は [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] 、 **sys.dm_pdw_nodes_os_tasks** という名前を使用します。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
@@ -44,18 +44,18 @@ ms.locfileid: "89539318"
 |**pending_io_count**|**int**|このタスクによって実行される物理 i/o の数。|  
 |**pending_io_byte_count**|**bigint**|このタスクによって実行される i/o の合計バイト数。|  
 |**pending_io_byte_average**|**int**|このタスクによって実行される i/o の平均バイト数。|  
-|**scheduler_id**|**int**|親スケジューラの ID。 これは、このタスクの scheduler 情報を処理するハンドルです。 詳細については、「 [sys. dm_os_schedulers &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-schedulers-transact-sql.md)」を参照してください。|  
+|**scheduler_id**|**int**|親スケジューラの ID。 これは、このタスクの scheduler 情報を処理するハンドルです。 詳細については、「 [sys.dm_os_schedulers &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-schedulers-transact-sql.md)」を参照してください。|  
 |**session_id**|**smallint**|タスクに関連付けられているセッションの ID。|  
 |**exec_context_id**|**int**|タスクに関連付けられている実行コンテキスト ID。|  
-|**request_id**|**int**|タスクの要求の ID。 詳細については、「 [sys. dm_exec_requests &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql.md)」を参照してください。|  
-|**worker_address**|**varbinary (8)**|タスクを実行しているワーカーのメモリアドレス。<br /><br /> NULL = タスクは、ワーカーが実行可能になるのを待機しているか、タスクの実行が完了した直後です。<br /><br /> 詳細については、「 [sys. dm_os_workers &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-workers-transact-sql.md)」を参照してください。|  
-|**host_address**|**varbinary (8)**|ホストのメモリアドレス。<br /><br /> 0 = ホストはタスクの作成に使用されませんでした。 これは、このタスクの作成に使用されたホストを識別するのに役立ちます。<br /><br /> 詳細については、「 [sys. dm_os_hosts &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-hosts-transact-sql.md)」を参照してください。|  
+|**request_id**|**int**|タスクの要求の ID。 詳細については、「 [sys.dm_exec_requests &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql.md)」を参照してください。|  
+|**worker_address**|**varbinary (8)**|タスクを実行しているワーカーのメモリアドレス。<br /><br /> NULL = タスクは、ワーカーが実行可能になるのを待機しているか、タスクの実行が完了した直後です。<br /><br /> 詳細については、「 [sys.dm_os_workers &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-workers-transact-sql.md)」を参照してください。|  
+|**host_address**|**varbinary (8)**|ホストのメモリアドレス。<br /><br /> 0 = ホストはタスクの作成に使用されませんでした。 これは、このタスクの作成に使用されたホストを識別するのに役立ちます。<br /><br /> 詳細については、「 [sys.dm_os_hosts &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-hosts-transact-sql.md)」を参照してください。|  
 |**parent_task_address**|**varbinary (8)**|オブジェクトの親であるタスクのメモリアドレス。|  
 |**pdw_node_id**|**int**|**適用対象**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] 、 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> このディストリビューションが配置されているノードの識別子。|  
   
 ## <a name="permissions"></a>アクセス許可
 で [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] は、 `VIEW SERVER STATE` 権限が必要です。   
-[!INCLUDE[ssSDS_md](../../includes/sssds-md.md)]Premium レベルでは、データベースの権限が必要です `VIEW DATABASE STATE` 。 [!INCLUDE[ssSDS_md](../../includes/sssds-md.md)]Standard レベルおよび Basic レベルでは、**サーバー管理**者または**Azure Active Directory 管理者**アカウントが必要です。   
+SQL Database Basic、S0、S1 のサービス目標、およびエラスティックプール内のデータベースについて `Server admin` は、または `Azure Active Directory admin` アカウントが必要です。 その他のすべての SQL Database サービスの目的で `VIEW DATABASE STATE` は、データベースで権限が必要になります。   
 
 ## <a name="examples"></a>例  
   
@@ -63,7 +63,7 @@ ms.locfileid: "89539318"
  並列で実行される要求の場合は、(,) の同じ組み合わせに対して複数の行が表示され \<**session_id**> \<**request_id**> ます。 次のクエリを使用して、すべてのアクティブな要求に対する [並列処理の最大限度を構成するサーバー構成オプション](../../database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option.md) を検索します。  
   
 > [!NOTE]  
->  **Request_id**は、セッション内で一意です。  
+>  **Request_id** は、セッション内で一意です。  
   
 ```sql  
 SELECT  

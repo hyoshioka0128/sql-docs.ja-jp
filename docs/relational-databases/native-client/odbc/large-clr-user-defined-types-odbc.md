@@ -1,6 +1,6 @@
 ---
 description: 大きな CLR ユーザー定義型 (ODBC)
-title: 大きな CLR ユーザー定義型 (ODBC) |Microsoft Docs
+title: 大きな CLR User-Defined 型 (ODBC) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/17/2017
 ms.prod: sql
@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: ddce337e-bb6e-4a30-b7cc-4969bb1520a9
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 3f1beb11da79f41349ef0f01bb203d969654db07
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 52944d98e4e3141ffbe036b1166b083195ea7fb4
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88428164"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97483163"
 ---
 # <a name="large-clr-user-defined-types-odbc"></a>大きな CLR ユーザー定義型 (ODBC)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -29,7 +29,7 @@ ms.locfileid: "88428164"
   
  大きな CLR Udt の ODBC サポートを示すサンプルについては、「 [大きな udt のサポート](../../../relational-databases/native-client-odbc-how-to/support-for-large-udts.md)」を参照してください。  
   
- SQL Server Native Client での大きな CLR Udt のサポートの詳細については、「 [大きな Clr ユーザー定義型](../../../relational-databases/native-client/features/large-clr-user-defined-types.md)」を参照してください。  
+ SQL Server Native Client での大きな CLR Udt のサポートの詳細については、「 [大きな clr User-Defined 型](../../../relational-databases/native-client/features/large-clr-user-defined-types.md)」を参照してください。  
   
 ## <a name="data-format"></a>データ形式  
  SQL Server Native Client では、大きなオブジェクト (LOB) の型について、列のサイズが 8,000 バイトを超えていることを示す場合に、SQL_SS_LENGTH_UNLIMITED が使用されます。 SQL Server 2008 以降では、サイズが 8,000 バイトを超えている CLR UDT にも同じ値が使用されるようになりました。  
@@ -71,7 +71,7 @@ ms.locfileid: "88428164"
 |SQL_CA_SS_UDT_TYPE_NAME|UDT の名前|UDT の名前|  
 |SQL_CA_SS_UDT_ASSEMBLY_TYPE_NAME|UDT の完全修飾名|UDT の完全修飾名|  
   
- UDT パラメーターの場合、SQL_CA_SS_UDT_TYPE_NAME は常に **SQLSetDescField**を使用して設定する必要があります。 SQL_CA_SS_UDT_CATALOG_NAME と SQL_CA_SS_UDT_SCHEMA_NAME は省略可能です。  
+ UDT パラメーターの場合、SQL_CA_SS_UDT_TYPE_NAME は常に **SQLSetDescField** を使用して設定する必要があります。 SQL_CA_SS_UDT_CATALOG_NAME と SQL_CA_SS_UDT_SCHEMA_NAME は省略可能です。  
   
  UDT が、テーブルとは異なるスキーマで同じデータベースに定義されている場合は、SQL_CA_SS_UDT_SCHEMA_NAME を設定する必要があります。  
   
@@ -89,7 +89,7 @@ ms.locfileid: "88428164"
 |SQL_DESC_CONCISE_TYPE|SQL_SS_UDT|SQL_SS_UDT|  
 |SQL_DESC_DATETIME_INTERVAL_CODE|0|0|  
 |SQL_DESC_DATETIME_INTERVAL_PRECISION|*n*|SQL_SS_LENGTH_UNLIMITED (0)|  
-|SQL_DESC_DISPLAY_SIZE|2*n*|SQL_SS_LENGTH_UNLIMITED (0)|  
+|SQL_DESC_DISPLAY_SIZE|2 *n*|SQL_SS_LENGTH_UNLIMITED (0)|  
 |SQL_DESC_FIXED_PREC_SCALE|SQL_FALSE|SQL_FALSE|  
 |SQL_DESC_LENGTH|*n*|SQL_SS_LENGTH_UNLIMITED (0)|  
 |SQL_DESC_LITERAL_PREFIX|"0x"|"0x"|  
@@ -134,7 +134,7 @@ ms.locfileid: "88428164"
 |変換対象|SQL_SS_UDT|  
 |-----------------------------|------------------|  
 |SQL_C_WCHAR|さ|  
-|SQL_C_BINARY|サポートされています|  
+|SQL_C_BINARY|サポート|  
 |SQL_C_CHAR|さ|  
   
  \* バイナリデータは16進数の文字列に変換されます。  
@@ -144,7 +144,7 @@ ms.locfileid: "88428164"
 |変換対象|SQL_SS_UDT|  
 |-----------------------------|------------------|  
 |SQL_C_WCHAR|さ|  
-|SQL_C_BINARY|サポートされています|  
+|SQL_C_BINARY|サポート|  
 |SQL_C_CHAR|さ|  
   
  \* 16進文字列からバイナリデータへの変換が行われます。  
@@ -214,7 +214,7 @@ ms.locfileid: "88428164"
 ### <a name="sqlgetdescrec"></a>SQLGetDescRec  
  UDT に対して返される値は次のとおりです。  
   
-|SQL データ型|Type|SubType|長さ|有効桁数|スケール|  
+|SQL データ型|種類|サブタイプ|長さ|有効桁数|スケール|  
 |-------------------|----------|-------------|------------|---------------|-----------|  
 |SQL_SS_UDT<br /><br /> (8,000 バイト以下の長さ)|SQL_SS_UDT|0|*n*|n|0|  
 |SQL_SS_UDT<br /><br /> (8,000 バイトを超える長さ)|SQL_SS_UDT|0|SQL_SS_LENGTH_UNLIMITED (0)|SQL_SS_LENGTH_UNLIMITED (0)|0|  
@@ -234,7 +234,7 @@ ms.locfileid: "88428164"
 ### <a name="sqlsetdescrec"></a>SQLSetDescRec  
  UDT に対して許可される値は次のとおりです。  
   
-|SQL データ型|Type|SubType|長さ|有効桁数|スケール|  
+|SQL データ型|種類|サブタイプ|長さ|有効桁数|スケール|  
 |-------------------|----------|-------------|------------|---------------|-----------|  
 |SQL_SS_UDT<br /><br /> (8,000 バイト以下の長さ)|SQL_SS_UDT|0|*n*|*n*|0|  
 |SQL_SS_UDT<br /><br /> (8,000 バイトを超える長さ)|SQL_SS_UDT|0|SQL_SS_LENGTH_UNLIMITED (0)|SQL_SS_LENGTH_UNLIMITED (0)|0|  

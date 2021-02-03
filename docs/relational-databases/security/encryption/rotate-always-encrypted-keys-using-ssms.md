@@ -15,13 +15,13 @@ helpviewer_keywords:
 ms.assetid: 29816a41-f105-4414-8be1-070675d62e84
 author: jaszymas
 ms.author: jaszymas
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: d213b41fe392bbc82f663360879b7d67b07675be
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 09be06fc9f84b46a93363c8386b492f987872583
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85767543"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97463103"
 ---
 # <a name="rotate-always-encrypted-keys-using-sql-server-management-studio"></a>SQL Server Management Studio を使用して Always Encrypted キーを交換する
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -44,7 +44,7 @@ ms.locfileid: "85767543"
 列マスター キーは、通常、1 つまたは複数の列暗号化キーを保護します。 列暗号化キーを列マスター キーにより暗号化すると、各列暗号化キーの暗号化された値がデータベースに格納されます。
 この手順では、回転する列マスター キーで保護されている各列暗号化キーを新しい列マスター キーで暗号化し、新しい暗号化された値をデータベースに格納します。 結果的に、回転の影響を受けた各列暗号化キーには暗号化された値が 2 つ含まれることになります。1 つは既存の列マスター キーにより暗号化された値、もう 1 つは新しい列マスター キーで暗号化された値です。
 
-1.  **オブジェクト エクスプローラー**で **[セキュリティ] > [Always Encrypted キー] > [列マスター キー]** フォルダーの順に移動し、回転する列マスター キーを探します。
+1.  **オブジェクト エクスプローラー** で **[セキュリティ] > [Always Encrypted キー] > [列マスター キー]** フォルダーの順に移動し、回転する列マスター キーを探します。
 2.  列マスター キーを右クリックし、 **[回転]** を選択します。
 3.  **[列マスター キーの回転]** ダイアログの **[ターゲット]** フィールドで、手順 1 で作成した、新しい列マスター キーの名前を選択します。
 4.  既存の列マスター キーで保護された、列暗号化キーの一覧を確認します。 これらのキーは、回転の影響を受けます。
@@ -78,7 +78,7 @@ SQL Server Management Studio では、古い列マスター キーで保護さ�
 > [!WARNING]
 > 対応する列マスター キーがアプリケーションで使用できるようになる前に列暗号化キーの値を削除すると、データベース列をアプリケーションが暗号化解除できなくなります。
 
-1.  **オブジェクト エクスプローラー**で、 **[セキュリティ]、[Always Encrypted キー]** フォルダーの順に移動し、交換する既存の列マスター キーを探します。
+1.  **オブジェクト エクスプローラー** で、 **[セキュリティ]、[Always Encrypted キー]** フォルダーの順に移動し、交換する既存の列マスター キーを探します。
 2.  既存の列マスター キーを右クリックし、 **[クリーンアップ]** を選択します。
 3.  削除される列暗号化キーの値の一覧を確認します。
 4.  **[OK]** をクリックします。
@@ -89,7 +89,7 @@ SQL Server Management Studio では、 [ALTER COLUMN ENCRYPTION KEY (Transact-SQ
 
 データベースから古い列マスター キーの定義を削除する場合は、次の手順を使用します。
 
-1. **オブジェクト エクスプローラー**で **[セキュリティ]、[Always Encrypted キー]、[列マスター キー]** フォルダーの順に移動し、データベースから削除する古い列マスター キーを探します。
+1. **オブジェクト エクスプローラー** で **[セキュリティ]、[Always Encrypted キー]、[列マスター キー]** フォルダーの順に移動し、データベースから削除する古い列マスター キーを探します。
 2. 古い列マスター キーを右クリックし、 **[削除]** を選択します ( [DROP COLUMN MASTER KEY (Transact-SQL)](../../../t-sql/statements/drop-column-master-key-transact-sql.md) ステートメントが生成および発行され、列マスター キーのメタデータが削除されます)。
 3. **[OK]** をクリックします。
 
@@ -127,7 +127,7 @@ SQL Server Management Studio では、 [ALTER COLUMN ENCRYPTION KEY (Transact-SQ
 5.  **[マスター キーの構成]** ページで、新しいキーを格納する場所を選択し、マスター キー ソースを選択し、 **[次へ]** をクリックします。 **注:** 既存の列暗号化キーを使用する (自動生成されたものではなく) 場合、このページで実行するアクションはありません。
 6.  **[検証]** ページで、スクリプトをすぐに実行するか PowerShell スクリプトを作成するかを選択し、 **[次へ]** をクリックします。
 7.  **[概要]** ページで、選択したオプションを確認し、完了したら **[完了]** をクリックしてウィザードを閉じます。
-8.  **オブジェクト エクスプローラー**で **[セキュリティ]、[Always Encrypted キー]、[列暗号化キー]** フォルダーの順に移動し、データベースから削除する古い列暗号化キーを探します。 キーを右クリックし、 **[削除]** をクリックします。
+8.  **オブジェクト エクスプローラー** で **[セキュリティ]、[Always Encrypted キー]、[列暗号化キー]** フォルダーの順に移動し、データベースから削除する古い列暗号化キーを探します。 キーを右クリックし、 **[削除]** をクリックします。
 
 ### <a name="permissions-for-rotating-column-encryption-keys"></a>列暗号化キーを回転するためのアクセス許可
 

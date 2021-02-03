@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
 ms.assetid: 06798dff-65c7-43e0-9ab3-ffb23374b322
-ms.openlocfilehash: 2e21b8f811af5887147ddb71b211e3a876b728d2
-ms.sourcegitcommit: 9b41725d6db9957dd7928a3620fe4db41eb51c6e
+ms.openlocfilehash: 0274f6f2a0acccb20f9a9682d16b35ef5009d1b5
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88180013"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471603"
 ---
 # <a name="configure-sql-server-on-linux-with-the-mssql-conf-tool"></a>mssql-conf ツールを使用して SQL Server on Linux を構成する
 
@@ -50,7 +50,7 @@ ms.locfileid: "88180013"
 
 ::: moniker-end
 <!--SQL Server 2019 on Linux-->
-::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 || =sqlallproducts-allversions"
+::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
 
 **mssql-conf** は、Red Hat Enterprise Linux、SUSE Linux Enterprise Server、Ubuntu 用に [!INCLUDE[SQL Server 2019](../includes/sssqlv15-md.md)] と共にインストールされる構成スクリプトです。 このユーティリティを使用すると、次のパラメーターを設定できます。
 
@@ -178,7 +178,7 @@ sudo /opt/mssql/bin/mssql-conf set sqlagent.errorlogginglevel <level>
    sudo systemctl restart mssql-server
    ```
 
-詳細については、[SQL Server on Linux に関するカスタマー フィードバック](sql-server-linux-customer-feedback.md)および [SQL Server のプライバシーに関する声明](https://go.microsoft.com/fwlink/?LinkID=868444)に関するページを参照してください。
+詳細については、[SQL Server on Linux に関するカスタマー フィードバック](./usage-and-diagnostic-data-configuration-for-sql-server-linux.md)および [SQL Server のプライバシーに関する声明](../sql-server/sql-server-privacy.md)に関するページを参照してください。
 
 ## <a name="change-the-default-data-or-log-directory-location"></a><a id="datadir"></a> 既定のデータまたはログのディレクトリの場所を変更する
 
@@ -476,7 +476,7 @@ sudo systemctl restart mssql-server
    sudo systemctl restart mssql-server
    ```
 
-詳細については、[SQL Server on Linux に関するカスタマー フィードバック](sql-server-linux-customer-feedback.md)に関するページを参照してください。
+詳細については、[SQL Server on Linux に関するカスタマー フィードバック](./usage-and-diagnostic-data-configuration-for-sql-server-linux.md)に関するページを参照してください。
 
 ## <a name="change-the-sql-server-locale"></a><a id="lcid"></a> SQL Server のロケールを変更する
 
@@ -559,7 +559,7 @@ mssql-conf には、MSDTC の監視とトラブルシューティングに使用
 | distributedtransaction.tracefilepath | トレース ファイルを格納するフォルダー |
 | distributedtransaction.turnoffrpcsecurity | 分散トランザクションの RPC セキュリティを有効または無効にします |
 
-::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 || =sqlallproducts-allversions"
+::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
 
 ## <a name="accept-mlservices-eulas"></a><a id="mlservices-eula"></a> MLServices の EULA に同意する
 
@@ -589,7 +589,7 @@ accepteula = Y
 accepteulaml = Y
 ```
 :::moniker-end
-::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 || =sqlallproducts-allversions"
+::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
 
 ## <a name="enable-outbound-network-access"></a><a id="mlservices-outbound-access"></a> 送信ネットワーク アクセスを有効にする
 
@@ -728,7 +728,7 @@ sudo cat /var/opt/mssql/mssql.conf
 
 ## <a name="mssqlconf-format"></a><a id="mssql-conf-format"></a> mssql.conf format
 
-次の **/var/opt/mssql/mssql.conf** ファイルは、各設定の例を示しています。 この形式を使用すると、必要に応じて **mssql.conf** ファイルに手動で変更を加えることができます。 ファイルを手動で変更する場合は、変更を適用する前に SQL Server を再起動する必要があります。 Docker で **mssql** ファイルを使用するには、Docker が[データを保持](sql-server-linux-configure-docker.md)している必要があります。 まず、完全な **mssql.conf** ファイルをホスト ディレクトリに追加してから、コンテナーを実行します。 この例は[カスタマー フィードバック](sql-server-linux-customer-feedback.md)に含まれています。
+次の **/var/opt/mssql/mssql.conf** ファイルは、各設定の例を示しています。 この形式を使用すると、必要に応じて **mssql.conf** ファイルに手動で変更を加えることができます。 ファイルを手動で変更する場合は、変更を適用する前に SQL Server を再起動する必要があります。 Docker で **mssql** ファイルを使用するには、Docker が [データを保持](./sql-server-linux-docker-container-deployment.md)している必要があります。 まず、完全な **mssql.conf** ファイルをホスト ディレクトリに追加してから、コンテナーを実行します。 この例は[カスタマー フィードバック](./usage-and-diagnostic-data-configuration-for-sql-server-linux.md)に含まれています。
 
 <!--SQL Server 2017 on Linux-->
 ::: moniker range="= sql-server-linux-2017 || = sql-server-2017"
@@ -783,7 +783,7 @@ traceflag = 3456
 
 ::: moniker-end
 <!--SQL Server 2019 on Linux-->
-::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 || =sqlallproducts-allversions"
+::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
 
 ```ini
 [EULA]

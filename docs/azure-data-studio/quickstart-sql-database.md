@@ -9,12 +9,12 @@ author: yualan
 ms.author: alayu
 ms.custom: seodec18; sqlfreshmay19; seo-lt-2019
 ms.date: 05/14/2019
-ms.openlocfilehash: fc3ff2a1edea509318040edd90e693b8eaf839df
-ms.sourcegitcommit: 7345e4f05d6c06e1bcd73747a4a47873b3f3251f
+ms.openlocfilehash: c168ceb916ac1b65f4e6d45c9ee1054b15b0cb75
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88766441"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97637659"
 ---
 # <a name="quickstart-use-azure-data-studio-to-connect-and-query-azure-sql-database"></a>クイック スタート:Azure Data Studio を使用して、Azure SQL Database に接続してクエリを実行する
 
@@ -24,7 +24,7 @@ ms.locfileid: "88766441"
 
 このクイック スタートを完了するには、Azure Data Studio と Azure SQL Database サーバーが必要です。
 
-- [Azure Data Studio をインストールする](./download-azure-data-studio.md?view=sql-server-ver15)
+- [Azure Data Studio をインストールする](./download-azure-data-studio.md)
 
 Azure SQL サーバーがない場合は、次のいずれかの Azure SQL Database クイック スタートを完了します。 後の手順のために、完全修飾サーバー名とサインイン資格情報を覚えておいてください。
 
@@ -39,7 +39,7 @@ Azure Data Studio を使用して、Azure SQL Database サーバーへの接続�
 
 1. 最初に Azure Data Studio を実行すると、 **[ようこそ]** ページが開きます。 **ウェルカム** ページが表示されない場合は、 **[ヘルプ]**  >  **[ようこそ]** を選択します。 **[新しい接続]** を選択して、 **[接続]** ウィンドウを開きます。
    
-   ![新しい接続アイコン](media/quickstart-sql-database/new-connection-icon.png)
+   ![[次の接続] オプションが選択されている Azure Delta Studio の [ようこそ] ダイアログ ボックスを示すスクリーンショット。](media/quickstart-sql-database/new-connection-icon.png)
 
 2. この記事では、SQL サインインを使用しますが、Windows 認証もサポートされています。 ご利用の Azure SQL サーバーのサーバー名、ユーザー名、パスワードを使用して、次のようにフィールドに入力します。
 
@@ -53,7 +53,7 @@ Azure Data Studio を使用して、Azure SQL Database サーバーへの接続�
    | **データベース名** | *空白のままにする* | ここでは、サーバーに接続するだけです。 |
    | **サーバー グループ** | <Default> を選択 | 作成した特定のサーバー グループにフィールドを設定できます。 | 
 
-   ![新しい接続アイコン](media/quickstart-sql-database/new-connection-screen.png)  
+   ![Azure Data Studio のスクリーンショット - [接続] ページ。](media/quickstart-sql-database/new-connection-screen.png)  
 
 3. **[接続]** を選択します。
 

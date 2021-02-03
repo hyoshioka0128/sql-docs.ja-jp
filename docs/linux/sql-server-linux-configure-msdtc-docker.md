@@ -8,12 +8,12 @@ ms.date: 11/04/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
-ms.openlocfilehash: 5529412dd1c575f25fb372aba3428edcce55431a
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+ms.openlocfilehash: 8f8487b4246a349169891f68e4068ad233f78d21
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85900082"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471633"
 ---
 # <a name="how-to-use-distributed-transactions-with-sql-server-on-docker"></a>Docker 上で SQL Server による分散トランザクションを使用する方法
 
@@ -55,7 +55,7 @@ docker run `
 
 ::: moniker-end
 <!--SQL Server 2019 on Linux-->
-::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 || =sqlallproducts-allversions"
+::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
 
 次の例では、これらの環境変数を使用して、MSDTC 用に構成された 1 つの SQL Server 2019 コンテナーをプルして実行する方法を示しています。 これにより、任意のホスト上の任意のアプリケーションと通信できるようになります。
 
@@ -80,7 +80,7 @@ docker run `
 > [!IMPORTANT]
 > 上記のコマンドは、Linux 上で実行される Docker に対してのみ機能します。 Windows 上にある Docker の場合は、Windows ホストによって既にポート 135 上でリッスンされています。 Windows 上の Docker に対する `-p 135:135` パラメーターを削除することは可能ですが、いくつかの制限があります。 作成されたコンテナーは、ホストに関連する分散トランザクションには使用できません。ホスト上にある Docker コンテナー間での分散トランザクションのみに使用できます。
 
-このコマンドでは、**RPC エンドポイント マッパー サービス**がポート 135 にバインドされ、**MSDTC** サービスが Docker 仮想ネットワーク内のポート 51000 にバインドされています。 SQL Server の TDS 通信は、Docker 仮想ネットワーク内のポート 1433 上で行われます。 これらのポートは、TDS ポート 51433、RPC エンドポイント マッパーポート 135、および MSDTC ポート 51000 としてホストするために、外部に公開されています。
+このコマンドでは、**RPC エンドポイント マッパー サービス** がポート 135 にバインドされ、**MSDTC** サービスが Docker 仮想ネットワーク内のポート 51000 にバインドされています。 SQL Server の TDS 通信は、Docker 仮想ネットワーク内のポート 1433 上で行われます。 これらのポートは、TDS ポート 51433、RPC エンドポイント マッパーポート 135、および MSDTC ポート 51000 としてホストするために、外部に公開されています。
 
 > [!NOTE]
 > RPC エンドポイント マッパーと MSDTC ポートは、ホストとコンテナー上で同一になっている必要はありません。 そのため、RPC エンドポイント マッパーのポートはコンテナー上で 135 になるように構成されると共に、潜在的にはポート 13501 またはホスト サーバー上で利用できるその他の任意のポートにマップされる可能性があります。

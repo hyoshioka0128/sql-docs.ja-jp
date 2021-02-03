@@ -19,14 +19,14 @@ helpviewer_keywords:
 - column testing [SQL Server]
 - updated columns
 ms.assetid: 765fde44-1f95-4015-80a4-45388f18a42c
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: af91c04f85eae26326ab05e2deb83030267cc7fa
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: c927fbad08c222aad4e284a66d3b3e61061e82e9
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88422826"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101288"
 ---
 # <a name="columns_updated-transact-sql"></a>COLUMNS_UPDATED (Transact-SQL)
 
@@ -38,7 +38,7 @@ ms.locfileid: "88422826"
   
 ## <a name="syntax"></a>構文  
   
-```sql
+```syntaxsql
 COLUMNS_UPDATED ( )   
 ```  
 
@@ -94,24 +94,24 @@ IF EXISTS(SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES
    DROP TABLE auditEmployeeData;  
 GO  
 CREATE TABLE dbo.employeeData (  
-   emp_id int NOT NULL PRIMARY KEY,  
-   emp_bankAccountNumber char (10) NOT NULL,  
-   emp_salary int NOT NULL,  
-   emp_SSN char (11) NOT NULL,  
-   emp_lname nchar (32) NOT NULL,  
-   emp_fname nchar (32) NOT NULL,  
-   emp_manager int NOT NULL  
+   emp_id INT NOT NULL PRIMARY KEY,  
+   emp_bankAccountNumber CHAR (10) NOT NULL,  
+   emp_salary INT NOT NULL,  
+   emp_SSN CHAR (11) NOT NULL,  
+   emp_lname NCHAR (32) NOT NULL,  
+   emp_fname NCHAR (32) NOT NULL,  
+   emp_manager INT NOT NULL  
    );  
 GO  
 CREATE TABLE dbo.auditEmployeeData (  
    audit_log_id uniqueidentifier DEFAULT NEWID() PRIMARY KEY,  
-   audit_log_type char (3) NOT NULL,  
-   audit_emp_id int NOT NULL,  
-   audit_emp_bankAccountNumber char (10) NULL,  
-   audit_emp_salary int NULL,  
-   audit_emp_SSN char (11) NULL,  
+   audit_log_type CHAR (3) NOT NULL,  
+   audit_emp_id INT NOT NULL,  
+   audit_emp_bankAccountNumber CHAR (10) NULL,  
+   audit_emp_salary INT NULL,  
+   audit_emp_SSN CHAR (11) NULL,  
    audit_user sysname DEFAULT SUSER_SNAME(),  
-   audit_changed datetime DEFAULT GETDATE()  
+   audit_changed DATETIME DEFAULT GETDATE()  
    );  
 GO  
 CREATE TRIGGER dbo.updEmployeeData   

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - PARAMETERS_TSQL
 - PARAMETERS
@@ -19,13 +19,13 @@ helpviewer_keywords:
 ms.assetid: 06ded0ca-7d21-4400-864a-b801e855b257
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 9a59a1e60637a9d1166be81a50e945c3f9c53e36
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: bdc283f4fb4a8aec6cbce2d1ba8aae238a28cc82
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550172"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99189638"
 ---
 # <a name="parameters-transact-sql"></a>パラメーター (Transact-sql)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -45,8 +45,8 @@ ms.locfileid: "89550172"
 |**AS_LOCATOR**|**nvarchar (** 10 **)**|ロケーターとして宣言された場合は YES が返されます。 その他の場合は NO が返されます。|  
 |**PARAMETER_NAME**|**nvarchar (** 128 **)**|パラメーターの名前。 関数の戻り値に相当する場合は NULL になります。|  
 |**DATA_TYPE**|**nvarchar (** 128 **)**|システムにより提供されるデータ型。|  
-|**CHARACTER_MAXIMUM_LENGTH**|**int**|バイナリまたは文字データ型の文字列の最大長。<br /><br /> **xml**と大きな値の型のデータの場合は-1。 その他の場合は NULL が返されます。|  
-|**CHARACTER_OCTET_LENGTH**|**int**|バイナリまたは文字データ型の最大バイト数。<br /><br /> **xml**と大きな値の型のデータの場合は-1。 その他の場合は NULL が返されます。|  
+|**CHARACTER_MAXIMUM_LENGTH**|**int**|バイナリまたは文字データ型の文字列の最大長。<br /><br /> **xml** と大きな値の型のデータの場合は-1。 その他の場合は NULL が返されます。|  
+|**CHARACTER_OCTET_LENGTH**|**int**|バイナリまたは文字データ型の最大バイト数。<br /><br /> **xml** と大きな値の型のデータの場合は-1。 その他の場合は NULL が返されます。|  
 |**COLLATION_CATALOG**|**nvarchar (** 128 **)**|常に NULL が返されます。|  
 |**COLLATION_SCHEMA**|**nvarchar (** 128 **)**|常に NULL が返されます。|  
 |**COLLATION_NAME**|**nvarchar (** 128 **)**|パラメーター照合の名前。 文字型の 1 つでない場合は、NULL が返されます。|  
@@ -56,7 +56,7 @@ ms.locfileid: "89550172"
 |**NUMERIC_PRECISION**|**tinyint**|数値データの概数、正確な数値データ、整数データ、または通貨データの有効桁数。 その他の場合は NULL が返されます。|  
 |**NUMERIC_PRECISION_RADIX**|**smallint**|数値データの概数、正確な数値データ、整数データ、または通貨データの有効桁数の基数。 その他の場合は NULL が返されます。|  
 |**NUMERIC_SCALE**|**tinyint**|数値データの概数、正確な数値データ、整数データ、または通貨データの桁数。 その他の場合は NULL が返されます。|  
-|**DATETIME_PRECISION**|**smallint**|パラメーターの型が **datetime** または **smalldatetime**の場合の秒の小数部の有効桁数。 その他の場合は NULL が返されます。|  
+|**DATETIME_PRECISION**|**smallint**|パラメーターの型が **datetime** または **smalldatetime** の場合の秒の小数部の有効桁数。 その他の場合は NULL が返されます。|  
 |**INTERVAL_TYPE**|**nvarchar (** 30 **)**|NULL。 将来使用するために予約されています。|  
 |**INTERVAL_PRECISION**|**smallint**|NULL。 将来使用するために予約されています。|  
 |**USER_DEFINED_TYPE_CATALOG**|**nvarchar (** 128 **)**|NULL。 将来使用するために予約されています。|  
@@ -67,10 +67,9 @@ ms.locfileid: "89550172"
 |**SCOPE_NAME**|**nvarchar (** 128 **)**|NULL。 将来使用するために予約されています。|  
   
 ## <a name="see-also"></a>参照  
- [システムビュー &#40;Transact-sql&#41;](https://msdn.microsoft.com/library/35a6161d-7f43-4e00-bcd3-3091f2015e90)   
+ [システムビュー &#40;Transact-sql&#41;](../../t-sql/language-reference.md)   
  [情報スキーマビュー &#40;Transact-sql&#41;](~/relational-databases/system-information-schema-views/system-information-schema-views-transact-sql.md)   
  [sys.columns (Transact-SQL)](../../relational-databases/system-catalog-views/sys-columns-transact-sql.md)   
  [sys.objects &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-objects-transact-sql.md)   
  [sys.parameters &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-parameters-transact-sql.md)  
-  
   

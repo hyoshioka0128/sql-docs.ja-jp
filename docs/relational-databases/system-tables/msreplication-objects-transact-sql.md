@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: replication
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - MSreplication_objects
 - MSreplication_objects_TSQL
@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSreplication_objects system table
 ms.assetid: 08f9710d-976d-448e-bead-ac9835e87bc5
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: d3c582b495702a46c51519f56dee1e977980840f
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: cac5ebe0eda9527035ecb73b442f60958548592e
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89538271"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99183023"
 ---
 # <a name="msreplication_objects-transact-sql"></a>MSreplication_objects (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSreplication_objects**テーブルには、サブスクライバーデータベースのレプリケーションに関連付けられているオブジェクトごとに1行のデータが格納されます。 このテーブルは、サブスクリプションデータベースに格納されます。  
+  **MSreplication_objects** テーブルには、サブスクライバーデータベースのレプリケーションに関連付けられているオブジェクトごとに1行のデータが格納されます。 このテーブルは、サブスクリプションデータベースに格納されます。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

@@ -16,13 +16,13 @@ helpviewer_keywords:
 ms.assetid: ''
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: '>=sql-server-2017||=sqlallproducts-allversions||>=sql-server-linux-2017'
-ms.openlocfilehash: 7ff7a91230daff2aab0e031fa2b87803e379921b
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+monikerRange: '>=sql-server-2017||>=sql-server-linux-2017'
+ms.openlocfilehash: 5d9f07f96f83767a84f7ee0128d674f4ab955eed
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87244081"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170854"
 ---
 # <a name="deprecated-database-engine-features-in-sql-server-2017"></a>SQL Server 2017 データベース エンジンの非推奨の機能
 
@@ -46,11 +46,11 @@ WHERE object_name = 'SQLServer:Deprecated Features';
 ```
 
 > [!NOTE]
-> このリストは、[!INCLUDE[sssql15-md](../includes/sssql15-md.md)] のリストと同じです。 [!INCLUDE[sssqlv14-md](../includes/sssqlv14-md.md)] で提供が終了または中止されることが新しく発表されたデータベース エンジン機能はありません。
+> このリストは、[!INCLUDE[sssql15-md](../includes/sssql16-md.md)] のリストと同じです。 [!INCLUDE[sssqlv14-md](../includes/sssqlv14-md.md)] で提供が終了または中止されることが新しく発表されたデータベース エンジン機能はありません。
 
 ## <a name="features-deprecated-in-the-next-version-of-sql-server"></a>SQL Server の次のバージョンで非推奨となっている機能
 
-次の SQL Server データベース エンジン機能は、SQL Server の次のバージョンでは非推奨となっています。 新規の開発作業ではこれらの機能を使用しないようにし、現在これらの機能を使用しているアプリケーションはできるだけ早く修正してください。 **機能名**の値は、トレース イベントには ObjectName として表示され、パフォーマンス カウンターと `sys.dm_os_performance_counters` にはインスタンス名として表示されます。 **機能 ID** の値は、トレース イベントに ObjectId として表示されます。
+次の SQL Server データベース エンジン機能は、SQL Server の次のバージョンでは非推奨となっています。 新規の開発作業ではこれらの機能を使用しないようにし、現在これらの機能を使用しているアプリケーションはできるだけ早く修正してください。 **機能名** の値は、トレース イベントには ObjectName として表示され、パフォーマンス カウンターと `sys.dm_os_performance_counters` にはインスタンス名として表示されます。 **機能 ID** の値は、トレース イベントに ObjectId として表示されます。
 
 ### <a name="back-up-and-restore"></a>バックアップと復元
 
@@ -62,7 +62,7 @@ WHERE object_name = 'SQLServer:Deprecated Features';
 
 | 非推奨の機能 | 代替 | 機能名 | 機能 ID |
 |--------------------|-------------|--------------|------------|
-バージョン 100 (SQL Server 2008 および SQL Server 2008 R2) からアップグレードします。 | SQL Server バージョンが[サポート](https://aka.ms/sqllifecycle)対象外になったときに、関連するデータベース互換性レベルに非推奨の印が付けられます。 しかし、Microsoft では、アップグレードをより簡単にする目的で、サポートされているあらゆるデータベース互換性レベルで認められているアプリケーションのサポートを可能な限り継続します。 互換性レベルの詳細については、「[ALTER DATABASE 互換性レベル &#40;Transact-SQL&#41;](../t-sql/statements/alter-database-transact-sql-compatibility-level.md)」を参照してください。 | Database compatibility level 100 | 108 |
+バージョン 100 (SQL Server 2008 および SQL Server 2008 R2) からアップグレードします。 | SQL Server バージョンが[サポート](/lifecycle/products/?products=sql-server)対象外になったときに、関連するデータベース互換性レベルに非推奨の印が付けられます。 しかし、Microsoft では、アップグレードをより簡単にする目的で、サポートされているあらゆるデータベース互換性レベルで認められているアプリケーションのサポートを可能な限り継続します。 互換性レベルの詳細については、「[ALTER DATABASE 互換性レベル &#40;Transact-SQL&#41;](../t-sql/statements/alter-database-transact-sql-compatibility-level.md)」を参照してください。 | Database compatibility level 100 | 108 |
 
 ### <a name="database-objects"></a>データベース オブジェクト
 
@@ -89,7 +89,7 @@ WHERE object_name = 'SQLServer:Deprecated Features';
 
 | 非推奨の機能 | 代替 | 機能名 | 機能 ID |
 |--------------------|-------------|--------------|------------|
-| **SET ROWCOUNT** 、 **INSERT**、および **UPDATE**ステートメントの **DELETE** | TOP キーワード | SET ROWCOUNT | 109 |
+| **SET ROWCOUNT** 、 **INSERT**、および **UPDATE** ステートメントの **DELETE** | TOP キーワード | SET ROWCOUNT | 109 |
 | HOLDLOCK table hint without parenthesis | かっこ付きの HOLDLOCK を使用します。 | HOLDLOCK table hint without parenthesis | 167 |
 
 ## <a name="features-deprecated-in-a-future-version-of-sql-server"></a>SQL Server の将来のバージョンで非推奨となっている機能
@@ -329,7 +329,7 @@ WHERE object_name = 'SQLServer:Deprecated Features';
 | 3 つおよび 4 つの部分で構成された列参照 | 2 つの部分で構成される名前が標準に準拠した動作です。|3 つ以上の部分で構成される列名 |
 | SELECT リストの式に対して、列の別名として使用される、引用符で囲まれた文字列:<br /><br />'*string_alias*' = *expression* | *expression* [AS] *column_alias*<br /><br />*expression* [AS] [*column_alias*]<br /><br />*expression* [AS] "*column_alias*"<br /><br />*expression* [AS] '*column_alias*'<br /><br />*column_alias* = *expression* | 列の別名としての文字列リテラル |
 | 番号付きプロシージャ | [なし] : 使用しないでください。 | ProcNums |
-| DROP INDEX での*table_name.index_name* 構文|DROP INDEX での*index_name* ON *table_name* 構文です。|2 部構成の名前が使用された DROP INDEX |
+| DROP INDEX での *table_name.index_name* 構文|DROP INDEX での *index_name* ON *table_name* 構文です。|2 部構成の名前が使用された DROP INDEX |
 | セミコロンで終了しない Transact-SQL ステートメント。|Transact-SQL ステートメントをセミコロン (;) で終了してください。 | なし |
 | GROUP BY ALL|状況に応じて UNION または派生テーブルを使用したカスタム ソリューションを使用してください。 | GROUP BY ALL |
 | DML ステートメントでの列名としての ROWGUIDCOL の使用|$rowguid を使用してください。|ROWGUIDCOL |
@@ -370,6 +370,4 @@ WHERE object_name = 'SQLServer:Deprecated Features';
 > **sp_setapprole** のクッキーの **OUTPUT** パラメーターは現在、適切な最大長である **varbinary(8000)** としてドキュメントに記載されています。 ただし、現在の実装では **varbinary(50)** を返します。 開発者が **varbinary(50)** を割り当てると、今後のリリースでクッキーの戻り値のサイズが増えた場合にアプリケーションの変更が必要になる可能性があります。 これは廃止の問題ではありませんが、アプリケーションの調整と似ているため、このトピックで説明されています。 詳細については、「[sp_setapprole &#40;Transact-SQL&#41;](../relational-databases/system-stored-procedures/sp-setapprole-transact-sql.md)」を参照してください。  
   
 ## <a name="see-also"></a>参照  
- [SQL Server 2016 で廃止されたデータベース エンジンの機能](../database-engine/discontinued-database-engine-functionality-in-sql-server-2016.md)  
-  
-
+ [SQL Server 2016 で廃止されたデータベース エンジンの機能](./discontinued-database-engine-functionality-in-sql-server.md)  

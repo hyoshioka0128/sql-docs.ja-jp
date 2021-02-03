@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - '@@VERSION'
 - '@@VERSION_TSQL'
@@ -21,13 +21,13 @@ helpviewer_keywords:
 ms.assetid: 385ba80e-7c28-41a5-9cdb-5648f3785983
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: af4d350dfac4051a4d39b3ddd13dec45edd8141a
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 39bf4fb339f27cd62929e5bc216e2bc27ad03def
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88422606"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99181807"
 ---
 # <a name="x40x40version---transact-sql-configuration-functions"></a>&#x40;&#x40;バージョン - Transact SQL 構成関数
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "88422606"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql
 @@VERSION  
 ```  
 
@@ -89,7 +89,7 @@ ms.locfileid: "88422606"
 ### <a name="a-return-the-current-version-of-ssnoversion"></a>A: 現在のバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] を返す  
  次の例では、現在のインストールに関するバージョン情報を返します。  
   
-```  
+```sql
 SELECT @@VERSION AS 'SQL Server Version';  
 ```  
   
@@ -97,7 +97,7 @@ SELECT @@VERSION AS 'SQL Server Version';
   
 ### <a name="b-return-the-current-version-of-ssdw"></a>B. 現在のバージョンの [!INCLUDE[ssDW](../../includes/ssdw-md.md)] を返す  
   
-```  
+```sql
 SELECT @@VERSION AS 'SQL Server PDW Version';  
 ```  
   

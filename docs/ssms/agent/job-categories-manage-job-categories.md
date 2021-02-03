@@ -1,4 +1,5 @@
 ---
+description: '[ジョブ カテゴリ] - [ジョブ カテゴリの管理]'
 title: '[ジョブ カテゴリ] - [ジョブ カテゴリの管理]'
 ms.custom: seo-lt-2019
 ms.date: 01/19/2017
@@ -14,24 +15,24 @@ ms.assetid: 38276438-40b1-43ce-9aae-6805be6d9332
 author: markingmyname
 ms.author: maghan
 ms.reviewer: ''
-monikerRange: = azuresqldb-mi-current || >= sql-server-2016 || = sqlallproducts-allversions
-ms.openlocfilehash: a3310542681017523e061c9868dcb36437df7fd2
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: = azuresqldb-mi-current || >= sql-server-2016
+ms.openlocfilehash: 2dd854780c892da693b4f3950a88524a961a5fb2
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85764154"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97402578"
 ---
 # <a name="job-categories---manage-job-categories"></a>[ジョブ カテゴリ] - [ジョブ カテゴリの管理]
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
 
 > [!IMPORTANT]  
-> [Azure SQL Database Managed Instance](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) では現在、すべてではありませんがほとんどの SQL Server エージェントの機能がサポートされています。 詳細については、「[Azure SQL Database Managed Instance と SQL Server の T-SQL の相違点](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-transact-sql-information#sql-server-agent)」を参照してください。
+> 現在、[Azure SQL Managed Instance](/azure/sql-database/sql-database-managed-instance) によって、すべてではありませんが、ほとんどの SQL Server エージェントの機能がサポートされています。 詳細については、[Azure SQL Managed Instance と SQL Server の T-SQL の相違点](/azure/sql-database/sql-database-managed-instance-transact-sql-information#sql-server-agent)に関するページを参照してください。
 
 **[ジョブ カテゴリ]** ダイアログ ボックスを使用すると、ジョブ カテゴリを追加したり削除したりできます。 組み込みジョブ カテゴリは削除できません。  
   
 ## <a name="options"></a>オプション  
-**Name**  
+**名前**  
 ジョブ カテゴリの名前です。  
   
 **[カテゴリ内のジョブの数]**  
@@ -51,5 +52,4 @@ ms.locfileid: "85764154"
   
 #### <a name="to-access-the-job-categories-dialog-box"></a>[ジョブ カテゴリ] ダイアログ ボックスにアクセスするには  
   
-1.  **オブジェクト エクスプローラー**で、 **[SQL Server エージェント]** を展開し、 **[ジョブ]** を右クリックして、 **[ジョブ カテゴリの管理]** をクリックします。  
-  
+1.  **オブジェクト エクスプローラー** で、 **[SQL Server エージェント]** を展開し、 **[ジョブ]** を右クリックして、 **[ジョブ カテゴリの管理]** をクリックします。  

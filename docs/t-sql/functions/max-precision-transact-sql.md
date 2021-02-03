@@ -20,14 +20,14 @@ helpviewer_keywords:
 - '@@MAX_PRECISION function'
 - data types [SQL Server], precision
 ms.assetid: 9e7158a1-e503-422a-b326-3c9b06e181b2
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: e6a44419d89a8c823794ad3bd69adcae1fbb463e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: b04104c842f1de5242d770635d7aec9ab1f62048
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88422636"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102529"
 ---
 # <a name="x40x40max_precision-transact-sql"></a>&#x40;&#x40;MAX_PRECISION (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -38,8 +38,7 @@ ms.locfileid: "88422636"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 @@MAX_PRECISION  
 ```  
   
@@ -53,7 +52,7 @@ ms.locfileid: "88422636"
   
 ## <a name="examples"></a>例  
   
-```  
+```sql  
 SELECT @@MAX_PRECISION AS 'Max Precision'  
 ```  
   

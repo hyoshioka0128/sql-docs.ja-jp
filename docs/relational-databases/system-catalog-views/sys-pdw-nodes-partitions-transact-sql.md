@@ -1,26 +1,26 @@
 ---
-description: pdw_nodes_partitions (Transact-sql)
-title: pdw_nodes_partitions (Transact-sql) |Microsoft Docs
+description: sys.pdw_nodes_partitions (Transact-sql)
+title: sys.pdw_nodes_partitions (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/03/2017
 ms.prod: sql
 ms.technology: data-warehouse
 ms.reviewer: ''
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 ms.assetid: b4216752-4813-4b2c-b259-7d8ffc6cc190
 author: ronortloff
 ms.author: rortloff
-monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest || = sqlallproducts-allversions'
-ms.openlocfilehash: 82903661be207c73b1b848e8273b594ff49d1642
-ms.sourcegitcommit: 883435b4c7366f06ac03579752093737b098feab
+monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
+ms.openlocfilehash: c4c6e3ce34f1fbd73bf046b9fdeb178d82878f6f
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89062271"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99207838"
 ---
-# <a name="syspdw_nodes_partitions-transact-sql"></a>pdw_nodes_partitions (Transact-sql)
+# <a name="syspdw_nodes_partitions-transact-sql"></a>sys.pdw_nodes_partitions (Transact-sql)
 [!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
 
   すべてのテーブルのパーティションごとに1行のデータを格納し、データベース内のほとんどの種類のインデックスを格納 [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] します。 すべてのテーブルとインデックスには、明示的にパーティション分割されているかどうかにかかわらず、少なくとも1つのパーティションが含まれます。  
@@ -71,7 +71,7 @@ ORDER BY o.name, pnp.index_id, pnp.partition_id;
 ```    
   
 ## <a name="see-also"></a>参照  
- [SQL Data Warehouse and Parallel Data Warehouse Catalog Views (SQL Data Warehouse および Parallel Data Warehouse のカタログ ビュー)](../../relational-databases/system-catalog-views/sql-data-warehouse-and-parallel-data-warehouse-catalog-views.md)  
+ [Azure Synapse Analytics と Parallel Data Warehouse のカタログ ビュー](../../relational-databases/system-catalog-views/sql-data-warehouse-and-parallel-data-warehouse-catalog-views.md)  
   
   
 

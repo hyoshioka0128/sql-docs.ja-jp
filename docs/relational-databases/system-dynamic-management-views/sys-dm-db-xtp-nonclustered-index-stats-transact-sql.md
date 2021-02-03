@@ -1,13 +1,13 @@
 ---
-description: dm_db_xtp_nonclustered_index_stats (Transact-sql)
-title: dm_db_xtp_nonclustered_index_stats (Transact-sql) |Microsoft Docs
+description: sys.dm_db_xtp_nonclustered_index_stats (Transact-sql)
+title: sys.dm_db_xtp_nonclustered_index_stats (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 08/29/2016
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - dm_db_xtp_nonclustered_index_stats_TSQL
 - dm_db_xtp_nonclustered_index_stats
@@ -18,28 +18,28 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_db_xtp_nonclustered_index_stats
 ms.assetid: d55ba31c-296c-419b-9c4b-c126e0a3d156
-author: markingmyname
-ms.author: maghan
-monikerRange: =azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 8c48807db007bd5d622283fd07c3aed8aec0198a
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: e61722861043fd34309d3dbfdf0430537b1f5230
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542211"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99160121"
 ---
-# <a name="sysdm_db_xtp_nonclustered_index_stats-transact-sql"></a>dm_db_xtp_nonclustered_index_stats (Transact-sql)
+# <a name="sysdm_db_xtp_nonclustered_index_stats-transact-sql"></a>sys.dm_db_xtp_nonclustered_index_stats (Transact-sql)
 [!INCLUDE[sql-asdb-asdbmi](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
-  sys.dm_db_xtp_nonclustered_index_stats には、メモリ最適化テーブルの非クラスター化インデックスの操作に関する統計が含まれます。 dm_db_xtp_nonclustered_index_stats 現在のデータベース内のメモリ最適化テーブルの非クラスター化インデックスごとに1行のデータを格納します。  
+  sys.dm_db_xtp_nonclustered_index_stats には、メモリ最適化テーブルの非クラスター化インデックスの操作に関する統計が含まれます。 sys.dm_db_xtp_nonclustered_index_stats には、現在のデータベース内のメモリ最適化テーブルの非クラスター化インデックスごとに1行のデータが格納されます。  
   
  sys.dm_db_xtp_nonclustered_index_stats に反映されている統計は、インメモリ インデックス構造の作成時に収集されます。 インメモリインデックス構造は、データベースの再起動時に再作成されます。  
   
- DML 操作中やデータベースがオンラインになったときに、インデックスの利用状況を把握して監視するには、dm_db_xtp_nonclustered_index_stats を使用します。 メモリ最適化テーブルを含むデータベースを再起動すると、一度に1行ずつメモリに挿入することによってインデックスが作成されます。 ページ分割、マージ、および統合の数は、データベースがオンラインになったときにインデックスを構築するために実行された作業を理解するのに役立ちます。 また、一連の DML 操作の前後にこれらのカウントを確認することもできます。  
+ Sys.dm_db_xtp_nonclustered_index_stats を使用すると、DML 操作中やデータベースがオンラインになったときに、インデックスの利用状況を把握して監視することができます。 メモリ最適化テーブルを含むデータベースを再起動すると、一度に1行ずつメモリに挿入することによってインデックスが作成されます。 ページ分割、マージ、および統合の数は、データベースがオンラインになったときにインデックスを構築するために実行された作業を理解するのに役立ちます。 また、一連の DML 操作の前後にこれらのカウントを確認することもできます。  
   
  再試行回数が多い場合は、同時実行の問題を示しています。サポートにお問い合わせ [!INCLUDE[msCoName](../../includes/msconame-md.md)] ください。  
   
- メモリ最適化された非クラスター化インデックスの詳細については、 [SQL Server インメモリ OLTP の概要](https://t.co/T6zToWc6y6)、ページ17を参照してください。  
+ メモリ最適化された非クラスター化インデックスの詳細については、「 [SQL Server In-Memory OLTP 内部概要](https://t.co/T6zToWc6y6)、ページ17」を参照してください。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

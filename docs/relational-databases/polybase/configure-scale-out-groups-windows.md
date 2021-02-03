@@ -8,13 +8,13 @@ ms.topic: tutorial
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: ''
-monikerRange: '>= sql-server-2016 || =sqlallproducts-allversions'
-ms.openlocfilehash: 2fee6052dea18c25b093ee75b53c56b1dd053aad
-ms.sourcegitcommit: 9be0047805ff14e26710cfbc6e10d6d6809e8b2c
+monikerRange: '>= sql-server-2016'
+ms.openlocfilehash: 1592632bdeca9f8c3cdceeb61b06c1bd92550f53
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89042501"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97477923"
 ---
 # <a name="configure-polybase-scale-out-groups-on-windows"></a>Windows 上で PolyBase スケールアウト グループを構成する
 
@@ -52,7 +52,7 @@ ms.locfileid: "89042501"
   
    - PQTH4A-CMP02  
   
-2. ドメイン アカウント:*PQTH4A\PolyBaseUse*r  
+2. ドメイン アカウント:*PQTH4A\PolyBaseUse* r  
 
 ## <a name="install-sql-server-with-polybase-on-all-machines"></a>すべてのマシンに、PolyBase を使用する SQL Server をインストールする
 
@@ -60,11 +60,11 @@ ms.locfileid: "89042501"
   
 2. [機能の選択] ページで、 **[外部データ用 PolyBase クエリ サービス]** を選択します。
   
-3. [サーバーの構成] ページで、SQL Server PolyBase エンジンと SQL Server PolyBase Data Movement サービス用に**ドメイン アカウント** PQTH4A\PolyBaseUser を使用します。
+3. [サーバーの構成] ページで、SQL Server PolyBase エンジンと SQL Server PolyBase Data Movement サービス用に **ドメイン アカウント** PQTH4A\PolyBaseUser を使用します。
   
 4. [PolyBase の構成] ページで、 **[PolyBase スケール アウト グループの一部として、SQL Server インスタンスを使用します]** オプションを選択します。 これにより、ファイアウォールが開かれて、PolyBase サービスへの着信接続が許可されます。 ヘッド ノードが名前付きインスタンスの場合は、ヘッド ノードの Windows ファイアウォールに SQL Server ポートを手動で追加する必要があります。また、ヘッド ノードで SQL Browser を開始します。
   
-5. セットアップが完了したら、 **services.msc**を実行します。 SQL Server、PolyBase エンジン、および PolyBase データ移動サービスが実行されていることを確認します。
+5. セットアップが完了したら、 **services.msc** を実行します。 SQL Server、PolyBase エンジン、および PolyBase データ移動サービスが実行されていることを確認します。
   
    ![PolyBase サービス](../../relational-databases/polybase/media/polybase-services.png "PolyBase サービス")  
   
@@ -109,6 +109,6 @@ ms.locfileid: "89042501"
   
 ## <a name="next-steps"></a>次のステップ  
 
-トラブルシューティングについては、「 [PolyBase troubleshooting with dynamic management views](https://msdn.microsoft.com/library/ce9078b7-a750-4f47-b23e-90b83b783d80)」を参照してください。
+トラブルシューティングについては、「 [PolyBase troubleshooting with dynamic management views](/previous-versions/sql/sql-server-2016/mt146389(v=sql.130))」を参照してください。
   
 PolyBase について詳しくは、[PolyBase の概要](../../relational-databases/polybase/polybase-guide.md)に関する記事をご覧ください。

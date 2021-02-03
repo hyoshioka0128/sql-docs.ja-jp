@@ -1,13 +1,13 @@
 ---
 description: sys.function_order_columns (Transact-SQL)
-title: function_order_columns (Transact-sql) |Microsoft Docs
+title: sys.function_order_columns (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - function_order_columns
 - sys.function_order_columns_TSQL
@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.function_order_columns catalog view
 ms.assetid: 29287973-3125-4d35-8ca9-92cb45828854
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 5c7ac555630f4472e5cf58ad9017cdb03643ae2b
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: d66bf0eebbe2eb37c95a06cd03f07e2b8e2471f9
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89546797"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99191442"
 ---
 # <a name="sysfunction_order_columns-transact-sql"></a>sys.function_order_columns (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -36,8 +36,8 @@ ms.locfileid: "89546797"
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
 |**object_id**|**int**|順序が定義されているオブジェクト (CLR テーブル値関数) の ID です。|  
-|**order_column_id**|**int**|順序列の ID です **order_column_id** は **object_id**内でのみ一意です。<br /><br /> **order_column_id** は、順序付けにおけるこの列の位置を表します。|  
-|**column_id**|**int**|**Object_id**内の列の ID。<br /><br /> **column_id** は **object_id**内でのみ一意です。|  
+|**order_column_id**|**int**|順序列の ID です **order_column_id** は **object_id** 内でのみ一意です。<br /><br /> **order_column_id** は、順序付けにおけるこの列の位置を表します。|  
+|**column_id**|**int**|**Object_id** 内の列の ID。<br /><br /> **column_id** は **object_id** 内でのみ一意です。|  
 |**is_descending**|**bit**|1 = 順序列には、降順の並べ替え方向があります。<br /><br /> 0 = 順序列には昇順の並べ替え方向があります。|  
   
 ## <a name="permissions"></a>アクセス許可  

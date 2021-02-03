@@ -29,13 +29,13 @@ helpviewer_keywords:
 ms.assetid: 2c00ee51-2062-4e47-8b19-d90f524c6427
 author: pmasl
 ms.author: umajay
-monikerRange: = azuresqldb-current || >= sql-server-2016 || >= sql-server-linux-2017 || = azure-sqldw-latest||= sqlallproducts-allversions
-ms.openlocfilehash: b7fd8592ed2643d25736539c91b3e3bedfdd75ea
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: = azuresqldb-current || >= sql-server-2016 || >= sql-server-linux-2017 || = azure-sqldw-latest
+ms.openlocfilehash: a9d7992469339a429478d8aee79d01c8f71dd3dd
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88479864"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97476793"
 ---
 # <a name="dbcc-checkident-transact-sql"></a>DBCC CHECKIDENT (Transact-SQL)
 
@@ -48,7 +48,6 @@ ms.locfileid: "88479864"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-
 -- Syntax for SQL Server and Azure SQL Database  
 
 DBCC CHECKIDENT
@@ -59,16 +58,16 @@ DBCC CHECKIDENT
 [ WITH NO_INFOMSGS ]  
 ```  
 
-```console
--- Syntax for Azure SQL Data Warehouse
+```syntaxsql
+-- Syntax for Azure Synapse Analytics
 DBCC CHECKIDENT   
  (   
     table_name  
         [RESEED, new_reseed_value ]   
 )  
 [ WITH NO_INFOMSGS ]  
-
 ```
+
 [!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
 
 ## <a name="arguments"></a>引数
@@ -133,7 +132,7 @@ DBCC CHECKIDENT
 
  呼び出し元がテーブルを含むスキーマを所有しているか、**sysadmin** 固定サーバー ロール、**db_owner** 固定サーバー ロール、または **db_ddladmin** 固定サーバー ロールのメンバーである必要があります。
 
-Azure SQL Data Warehouse には **db_owner** アクセス許可が必要です。
+[!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] には **db_owner** のアクセス許可が必要です。
   
 ## <a name="examples"></a>例  
   

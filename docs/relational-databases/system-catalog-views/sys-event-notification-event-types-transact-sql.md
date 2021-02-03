@@ -1,13 +1,13 @@
 ---
-description: event_notification_event_types (Transact-sql)
-title: event_notification_event_types (Transact-sql) |Microsoft Docs
+description: sys.event_notification_event_types (Transact-sql)
+title: sys.event_notification_event_types (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.event_notification_event_types_TSQL
 - sys.event_notification_event_types
@@ -18,17 +18,17 @@ dev_langs:
 helpviewer_keywords:
 - sys.event_notification_event_types catalog view
 ms.assetid: 73dae456-7044-4b00-b0bd-990ef810b356
-author: markingmyname
-ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 0cbd26c772434396e7648012cd035c71eda73cdf
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 23f843b7996f527ac55a2bc05416c7a3ca8d9ca0
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89548799"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99203878"
 ---
-# <a name="sysevent_notification_event_types-transact-sql"></a>event_notification_event_types (Transact-sql)
+# <a name="sysevent_notification_event_types-transact-sql"></a>sys.event_notification_event_types (Transact-sql)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
   イベント通知を発生させるイベントまたはイベントグループごとに1行の値を返します。  

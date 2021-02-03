@@ -1,12 +1,12 @@
 ---
-description: dm_os_cluster_properties (Transact-sql)
-title: dm_os_cluster_properties (Transact-sql) |Microsoft Docs
+description: sys.dm_os_cluster_properties (Transact-sql)
+title: sys.dm_os_cluster_properties (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 08/09/2016
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_os_cluster_properties_TSQL
 - sys.dm_os_cluster_properties
@@ -18,16 +18,16 @@ helpviewer_keywords:
 - dm_os_cluster_properties
 - sys.dm_os_cluster_properties
 ms.assetid: 6d82e770-fba7-49e0-9a0c-3b34b393e4a7
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: f90e54197387bf0bd64bf5c890ab3a044883bbd9
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: cc832c3e5e89e0b78761e680ce53b0f1884e1f92
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550248"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99184944"
 ---
-# <a name="sysdm_os_cluster_properties-transact-sql"></a>dm_os_cluster_properties (Transact-sql)
+# <a name="sysdm_os_cluster_properties-transact-sql"></a>sys.dm_os_cluster_properties (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   このトピックで特定されたクラスターリソースプロパティの現在の設定を持つ1行を返し [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。 このビューがのスタンドアロンインスタンスで実行されている場合、データは返されません [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 。  

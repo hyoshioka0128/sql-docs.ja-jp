@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: owend
 ms.reviewer: owend
 author: minewiskan
-ms.openlocfilehash: e988f6864404cb7f1af4be77acc8ad0ab8e50562
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 6e524635d20f3d2bb669ac36d5b4b131af904ecf
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88483785"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98099148"
 ---
 # <a name="multidimensional-expressions-mdx-reference"></a>多次元式 (MDX) リファレンス
 
@@ -28,9 +28,8 @@ ms.locfileid: "88483785"
 |[MDX 言語リファレンス &#40;MDX&#41;](../mdx/mdx-language-reference-mdx.md)|MDX 言語を定義するステートメント、演算子、および関数について説明します。|  
   
 ## <a name="see-also"></a>参照  
- [MDX による多次元データのクエリ](https://docs.microsoft.com/analysis-services/multidimensional-models/mdx/querying-multidimensional-data-with-mdx)   
- [XMLA&#41;の Analysis Services スクリプト言語 &#40;ASSL ](https://docs.microsoft.com/analysis-services/assl/analysis-services-scripting-language-assl-for-xmla)   
- [分析データソースからのデータの取得](https://docs.microsoft.com/analysis-services/adomd/multidimensional-models-adomd-net-client/retrieving-data-from-an-analytical-data-source?view=asallproducts-allversions)   
- [割り当てとその他のスクリプト コマンドの定義](https://docs.microsoft.com/analysis-services/multidimensional-models/define-assignments-and-other-script-commands)  
-  
+ [MDX による多次元データのクエリ](/analysis-services/multidimensional-models/mdx/querying-multidimensional-data-with-mdx)   
+ [XMLA&#41;の Analysis Services スクリプト言語 &#40;ASSL ](/analysis-services/assl/analysis-services-scripting-language-assl-for-xmla)   
+ [分析データソースからのデータの取得](/analysis-services/adomd/multidimensional-models-adomd-net-client/retrieving-data-from-an-analytical-data-source)   
+ [割り当てとその他のスクリプト コマンドの定義](/analysis-services/multidimensional-models/define-assignments-and-other-script-commands)  
   

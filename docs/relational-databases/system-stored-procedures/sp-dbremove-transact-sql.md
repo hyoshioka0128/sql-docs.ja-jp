@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sp_dbremove
 - sp_dbremove_TSQL
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: a8513f4a-c025-49c8-99c3-4c83cb7f51ed
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 1303996a3ca68c5cc244ed24d0405169a19e4779
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: 3002fe1738a377cb42aa6c16411e0b75ebfaac2a
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89549892"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99159508"
 ---
 # <a name="sp_dbremove-transact-sql"></a>sp_dbremove (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -43,9 +43,9 @@ sp_dbremove [ @dbname = ] 'database' [ , [ @dropdev = ] 'dropdev' ]
 ```  
   
 ## <a name="arguments"></a>引数  
-`[ @dbname = ] 'database'` 削除するデータベースの名前を指定します。 *データベースのデータ* 型は **sysname**で、既定値は NULL です。  
+`[ @dbname = ] 'database'` 削除するデータベースの名前を指定します。 *データベースのデータ* 型は **sysname** で、既定値は NULL です。  
   
-`[ @dropdev = ] 'dropdev'` 旧バージョンとの互換性を保つために指定されたフラグであり、現在は無視されています。 *dropdev* の値は **dropdev**です。  
+`[ @dropdev = ] 'dropdev'` 旧バージョンとの互換性を保つために指定されたフラグであり、現在は無視されています。 *dropdev* の値は **dropdev** です。  
   
 ## <a name="return-code-values"></a>リターン コードの値  
  0 (成功) または 1 (失敗)  
@@ -65,8 +65,7 @@ EXEC sp_dbremove sales;
   
 ## <a name="see-also"></a>参照  
  [ALTER DATABASE &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-transact-sql.md)   
- [CREATE DATABASE &#40;SQL Server Transact-SQL&#41;](../../t-sql/statements/create-database-sql-server-transact-sql.md)   
+ [CREATE DATABASE &#40;SQL Server Transact-SQL&#41;](../../t-sql/statements/create-database-transact-sql.md)   
  [DBCC &#40;Transact-SQL&#41;](../../t-sql/database-console-commands/dbcc-transact-sql.md)   
  [sp_detach_db &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-detach-db-transact-sql.md)  
-  
   

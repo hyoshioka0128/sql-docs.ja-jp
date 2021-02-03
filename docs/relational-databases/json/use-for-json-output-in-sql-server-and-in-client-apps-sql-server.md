@@ -13,16 +13,16 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: jroth
 ms.custom: seo-dt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: fb663a8ccc5dc08b186abce1f90bb4ce55b89ed4
-ms.sourcegitcommit: d7accd198ee94e9d87eca8ed86fdb70bc60819e6
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 4bd5911552144084550abdadb3d432ab08f3bf9a
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89386013"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172504"
 ---
 # <a name="use-for-json-output-in-sql-server-and-in-client-apps-sql-server"></a>SQL Server およびクライアント アプリでの FOR JSON 出力の使用 (SQL Server)
-[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
+[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sqlserver2016-asdb.md)]
 
 ここでは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] またはクライアント アプリで **FOR JSON** 句およびその JSON 出力を使用する方法を例として示します。  
   
@@ -93,20 +93,24 @@ SET Details =
   
 ```csharp  
 var queryWithForJson = "SELECT ... FOR JSON";
-var conn = new SqlConnection("<connection string>");
-var cmd = new SqlCommand(queryWithForJson, conn);
-conn.Open();
-var jsonResult = new StringBuilder();
-var reader = cmd.ExecuteReader();
-if (!reader.HasRows)
+using(var conn = new SqlConnection("<connection string>"))
 {
-    jsonResult.Append("[]");
-}
-else
-{
-    while (reader.Read())
+    using(var cmd = new SqlCommand(queryWithForJson, conn))
     {
-        jsonResult.Append(reader.GetValue(0).ToString());
+        conn.Open();
+        var jsonResult = new StringBuilder();
+        var reader = cmd.ExecuteReader();
+        if (!reader.HasRows)
+        {
+            jsonResult.Append("[]");
+        }
+        else
+        {
+            while (reader.Read())
+            {
+                jsonResult.Append(reader.GetValue(0).ToString());
+            }
+        }
     }
 }
 ```  

@@ -16,13 +16,13 @@ helpviewer_keywords:
 ms.assetid: b85df83b-ba56-43bf-bcdf-b2a6fca43276
 author: MightyPen
 ms.author: genemi
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 66d987556c0de9a64b7572be324b9f59563af830
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 5bc731438d8691664b4db502ab05e3489e5faaa1
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85730175"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97461723"
 ---
 # <a name="sqlxml-40-net-framework-support---using-bulk-load"></a>SQLXML 4.0 の .NET Framework サポート - 一括読み込みの使用
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -114,11 +114,11 @@ ms.locfileid: "85730175"
   
 5.  C# コンソール アプリケーションを作成します。  
   
-6.  [**プロジェクト**] メニューの [**参照の追加**] をクリックします。  
+6.  [ **プロジェクト** ] メニューの [ **参照の追加**] をクリックします。  
   
-7.  [ **COM** ] タブで、[ **Microsoft SQLXML Bulkload 4.0 Type Library** (xblkld4.dll)] を選択し、[ **OK**] をクリックします。 プロジェクトで作成された**Interop. SQLXMLBULKLOADLib**アセンブリが表示されます。  
+7.  [ **COM** ] タブで、[ **Microsoft SQLXML Bulkload 4.0 Type Library** (xblkld4.dll)] を選択し、[ **OK**] をクリックします。 プロジェクトで作成された **Interop. SQLXMLBULKLOADLib** アセンブリが表示されます。  
   
-8.  Main() メソッドを次のコードに置き換え、 **ConnectionString**プロパティと、スキーマファイルとデータファイルへのファイルパスを更新します。  
+8.  Main() メソッドを次のコードに置き換え、 **ConnectionString** プロパティと、スキーマファイルとデータファイルへのファイルパスを更新します。  
   
     ```  
     [STAThread]  
@@ -150,7 +150,7 @@ ms.locfileid: "85730175"
   
      この例では、.NET Framework プロジェクトで使用できるマネージド ラッパー DLL (SQLXMLBULKLOADLib.dll) が作成されます。 新しく作成した DLL へのプロジェクト参照を、.NET Framework で追加します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [XML データの一括読み込みの実行 &#40;SQLXML 4.0&#41;](../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/bulk-load-xml/performing-bulk-load-of-xml-data-sqlxml-4-0.md)  
   
   

@@ -20,15 +20,15 @@ helpviewer_keywords:
 - -- (comment character)
 - comments [SQL Server]
 ms.assetid: 676ea8c2-52c1-4ef6-9354-320f1a091153
-author: rothja
-ms.author: jroth
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: f7d802b17e338c3cf9c739e493970564fcdb3d51
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 152276ea9879065e1ffbe809197e82959172dac9
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88445563"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98100414"
 ---
 # <a name="---comment-transact-sql"></a>-- (コメント) (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -39,8 +39,7 @@ ms.locfileid: "88445563"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 -- text_of_comment  
 ```  
   
@@ -65,7 +64,7 @@ ms.locfileid: "88445563"
 ## <a name="examples"></a>例  
  次の例では、-- コメント文字を使用します。  
   
-```  
+```sql  
 -- Choose the AdventureWorks2012 database.  
 USE AdventureWorks2012;  
 GO  

@@ -17,14 +17,14 @@ helpviewer_keywords:
 - production servers [SQL Server]
 - offload tuning overhead [SQL Server]
 ms.assetid: 94e6c3e5-1f09-4616-9da2-4e44d066d494
-author: julieMSFT
-ms.author: jrasnick
-ms.openlocfilehash: f0013940f887991a622cf3cbc6f6e3f72ad78d8b
-ms.sourcegitcommit: 9470c4d1fc8d2d9d08525c4f811282999d765e6e
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: a286b61d3efa53aa862b5c69fbd3782d6c59cdd3
+ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86457334"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96505341"
 ---
 # <a name="considerations-for-using-test-servers"></a>テスト サーバーの使用に関する注意点
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "86457334"
   
 -   実稼働サーバー上のデータベースをチューニングするためにテスト サーバーを使用するユーザーは、両方のサーバーに存在している必要があります。存在しない場合、このシナリオは失敗します。  
   
--   テスト サーバーと実稼働サーバーのシナリオでは、拡張ストアド プロシージャ **xp_msver**を有効にする必要があります。 [!INCLUDE[ssDE](../../includes/ssde-md.md)] チューニング アドバイザーでは、この拡張ストアド プロシージャを使用して、実稼働サーバーのプロセッサ数と使用可能なメモリをフェッチし、テスト サーバーでのチューニングに使用します。 **xp_msver** が有効ではない場合、 [!INCLUDE[ssDE](../../includes/ssde-md.md)] チューニング アドバイザーでは、 [!INCLUDE[ssDE](../../includes/ssde-md.md)] チューニング アドバイザーを実行しているコンピューターのハードウェア特性が想定値として使用されます。 [!INCLUDE[ssDE](../../includes/ssde-md.md)] チューニング アドバイザーを実行しているコンピューターのハードウェア特性を推定できない場合は、1 つのプロセッサと 1,024 MB のメモリがあると仮定します。 この拡張ストアド プロシージャは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]をインストールしたときに既定でオンになっています。 詳細については、「[セキュリティ構成](../../relational-databases/security/surface-area-configuration.md)」および「[xp_msver &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/xp-msver-transact-sql.md)」を参照してください。  
+-   テスト サーバーと実稼働サーバーのシナリオでは、拡張ストアド プロシージャ **xp_msver** を有効にする必要があります。 [!INCLUDE[ssDE](../../includes/ssde-md.md)] チューニング アドバイザーでは、この拡張ストアド プロシージャを使用して、実稼働サーバーのプロセッサ数と使用可能なメモリをフェッチし、テスト サーバーでのチューニングに使用します。 **xp_msver** が有効ではない場合、 [!INCLUDE[ssDE](../../includes/ssde-md.md)] チューニング アドバイザーでは、 [!INCLUDE[ssDE](../../includes/ssde-md.md)] チューニング アドバイザーを実行しているコンピューターのハードウェア特性が想定値として使用されます。 [!INCLUDE[ssDE](../../includes/ssde-md.md)] チューニング アドバイザーを実行しているコンピューターのハードウェア特性を推定できない場合は、1 つのプロセッサと 1,024 MB のメモリがあると仮定します。 この拡張ストアド プロシージャは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]をインストールしたときに既定でオンになっています。 詳細については、「[セキュリティ構成](../../relational-databases/security/surface-area-configuration.md)」および「[xp_msver &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/xp-msver-transact-sql.md)」を参照してください。  
   
 -   [!INCLUDE[ssDE](../../includes/ssde-md.md)] チューニング アドバイザーでは、テスト サーバーと実稼働サーバーの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のエディションが同じである必要があります。 2 つの異なるエディションがある場合は、テスト サーバーのエディションが優先されます。 たとえば、テスト サーバーで [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Standard が実行されている場合は、実稼働サーバーで実行されているのが [!INCLUDE[ssDE](../../includes/ssde-md.md)] Enterprise であっても、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] チューニング アドバイザーの推奨設定にはインデックス付きビュー、パーティション分割、およびオンライン操作は含まれません。  
   

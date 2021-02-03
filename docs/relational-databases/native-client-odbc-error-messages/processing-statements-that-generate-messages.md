@@ -25,13 +25,13 @@ helpviewer_keywords:
 ms.assetid: 672ebdc5-7fa1-4ceb-8d52-fd25ef646654
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: ca60a4bbe9652d20cb4db0f9f4522d2fa1ff1afc
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: c648e39186dada7527678f6a1c8efcd764d86355
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88420516"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97438455"
 ---
 # <a name="processing-statements-that-generate-messages"></a>メッセージを生成するステートメントの処理
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -63,7 +63,7 @@ szErrorMsg="[Microsoft][SQL Server Native Client][SQL Server]
    SQL Server Parse and Compile Time: cpu time = 0 ms."  
 ```  
   
- SET STATISTICS IO の出力は、結果セットの最後に到達するまで使用できません。 統計 IO 出力を取得するために、アプリケーションは、 **Sqlfetch**または[sqlfetchscroll](../../relational-databases/native-client-odbc-api/sqlfetchscroll.md)が SQL_NO_DATA を返す時点で**SQLGetDiagRec**を呼び出します。 STATISTICS IO の出力は、次の形式で返されます。  
+ SET STATISTICS IO の出力は、結果セットの最後に到達するまで使用できません。 統計 IO 出力を取得するために、アプリケーションは、 **Sqlfetch** または [sqlfetchscroll](../../relational-databases/native-client-odbc-api/sqlfetchscroll.md)が SQL_NO_DATA を返す時点で **SQLGetDiagRec** を呼び出します。 STATISTICS IO の出力は、次の形式で返されます。  
   
 ```  
 szSqlState="01000", *pfNativeError= 3615,  
@@ -81,7 +81,7 @@ szErrorMsg="[Microsoft][ SQL Server Native Client][SQL Server]
 SQLExecDirect(hstmt, "DBCC CHECKTABLE(Authors)", SQL_NTS);  
 ```  
   
- **SQLGetDiagRec**を呼び出すと、次のように戻ります。  
+ **SQLGetDiagRec** を呼び出すと、次のように戻ります。  
   
 ```  
 szSqlState = "01000", *pfNativeError = 2536,  
@@ -100,13 +100,13 @@ szErrorMsg="[Microsoft][ SQL Server Native Client][SQL Server]
 ```  
   
 ## <a name="using-print-and-raiserror-statements"></a>PRINT ステートメントと RAISERROR ステートメントの使用  
- [!INCLUDE[tsql](../../includes/tsql-md.md)] PRINT ステートメントと RAISERROR ステートメントでは、 **SQLGetDiagRec**を呼び出すことによってもデータが返されます。 PRINT ステートメントを実行すると SQL_SUCCESS_WITH_INFO が返され、後続の **SQLGetDiagRec** の呼び出しでは *SQLState* 01000 が返されます。 重大度が 10 以下の RAISERROR の動作は PRINT と同様です。 重大度が11以上の RAISERROR では、execute は SQL_ERROR を返し、後続の **SQLGetDiagRec** の呼び出しでは *SQLState* 42000 が返されます。 たとえば、次のステートメントでは SQL_SUCCESS_WITH_INFO が返されます。  
+ [!INCLUDE[tsql](../../includes/tsql-md.md)] PRINT ステートメントと RAISERROR ステートメントでは、 **SQLGetDiagRec** を呼び出すことによってもデータが返されます。 PRINT ステートメントを実行すると SQL_SUCCESS_WITH_INFO が返され、後続の **SQLGetDiagRec** の呼び出しでは *SQLState* 01000 が返されます。 重大度が 10 以下の RAISERROR の動作は PRINT と同様です。 重大度が11以上の RAISERROR では、execute は SQL_ERROR を返し、後続の **SQLGetDiagRec** の呼び出しでは *SQLState* 42000 が返されます。 たとえば、次のステートメントでは SQL_SUCCESS_WITH_INFO が返されます。  
   
 ```  
 SQLExecDirect (hstmt, "PRINT  'Some message' ", SQL_NTS);  
 ```  
   
- **SQLGetDiagRec**を呼び出すと返されます。  
+ **SQLGetDiagRec** を呼び出すと返されます。  
   
 ```  
 szSQLState = "01000", *pfNative Error = 0,  
@@ -121,7 +121,7 @@ SQLExecDirect (hstmt, "RAISERROR ('Sample error 1.', 10, -1)",
    SQL_NTS)  
 ```  
   
- **SQLGetDiagRec**を呼び出すと返されます。  
+ **SQLGetDiagRec** を呼び出すと返されます。  
   
 ```  
 szSQLState = "01000", *pfNative Error = 50000,  
@@ -135,7 +135,7 @@ szErrorMsg= "[Microsoft] [SQL Server Native Client][SQL Server]
 SQLExecDirect (hstmt, "RAISERROR ('Sample error 2.', 11, -1)", SQL_NTS)  
 ```  
   
- **SQLGetDiagRec**を呼び出すと返されます。  
+ **SQLGetDiagRec** を呼び出すと返されます。  
   
 ```  
 szSQLState = "42000", *pfNative Error = 50000,  

@@ -1,6 +1,6 @@
 ---
 title: FILESTREAM のサポート | Microsoft Docs
-description: OLE DB Driver for SQL Server の FILESTREAM のサポート
+description: SQL Server では、強化された FILESTREAM 機能がサポートされています。この機能を使用すると、SQL Server またはファイル システムで大きなバイナリ値の格納やアクセスが可能になります。
 ms.custom: ''
 ms.date: 09/13/2019
 ms.prod: sql
@@ -11,17 +11,17 @@ ms.topic: reference
 helpviewer_keywords:
 - FILESTREAM [SQL Server], OLE DB Driver for SQL Server
 - OLE DB Driver for SQL Server [FILESTREAM support]
-author: pmasl
-ms.author: pelopes
-ms.openlocfilehash: f79511daab45aa03af93a05092a7e858547f6953
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+author: David-Engel
+ms.author: v-daenge
+ms.openlocfilehash: d1fcc048d51186289d13cbe8918b5328f8c604f8
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87244991"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98766139"
 ---
 # <a name="filestream-support-in-ole-db-driver-for-sql-server"></a>OLE DB Driver for SQL Server の FILESTREAM のサポート
-[!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md-winonly](../../../includes/appliesto-ss-xxxx-xxxx-xxx-md-winonly.md)]
+[!INCLUDE[sql windows only](../../../includes/applies-to-version/sql-windows-only.md)]
 
 [!INCLUDE[Driver_OLEDB_Download](../../../includes/driver_oledb_download.md)]
 
@@ -54,7 +54,7 @@ SELECT is_filestream FROM sys.columns WHERE name = 'varbinaryCol3' AND object_id
 ```  
   
 ## <a name="down-level-compatibility"></a>下位互換性  
-クライアントが OLE DB Driver for SQL Server を使用してコンパイルされていて、アプリケーションが [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../../includes/sssql11-md.md)] から [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)]) に接続している場合、**varbinary (max)** の動作は [!INCLUDE[ssVersion2005](../../../includes/ssversion2005-md.md)] で [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client によって導入された動作と互換性を持つようになります。 返されるデータの最大サイズが 2 GB に制限されます。 戻り値が 2 GB より大きい場合は切り捨てが行われ、"文字列データの右側が切り捨てられました" という警告が返されます。 
+クライアントが OLE DB Driver for SQL Server を使用してコンパイルされていて、アプリケーションが [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../../includes/sssql11-md.md)] 以降) に接続している場合、**varbinary(max)** の動作は [!INCLUDE[ssVersion2005](../../../includes/ssversion2005-md.md)] で [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client によって導入された動作と互換性を持つようになります。 返されるデータの最大サイズが 2 GB に制限されます。 戻り値が 2 GB より大きい場合は切り捨てが行われ、"文字列データの右側が切り捨てられました" という警告が返されます。 
   
 データ型の互換性が 80 に設定されている場合は、クライアントの動作で下位クライアントとの互換性が維持されます。  
   

@@ -10,13 +10,13 @@ ms.topic: conceptual
 ms.date: 10/02/2019
 ms.prod: sql
 ms.prod_service: polybase, sql-data-warehouse, pdw
-monikerRange: '>= sql-server-2016 || =sqlallproducts-allversions'
-ms.openlocfilehash: cc030aa9036c67b1175a99ef01eab47099b8fc36
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+monikerRange: '>= sql-server-2016'
+ms.openlocfilehash: 24a228fb504f53c1afe88b0955500e811f1073b6
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87247302"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171494"
 ---
 # <a name="troubleshoot-polybase-kerberos-connectivity"></a>PolyBase Kerberos の接続性のトラブルシューティング
 
@@ -33,7 +33,7 @@ Kerberos でセキュリティが強化された Hadoop クラスターに対し
 
 ## <a name="prerequisites"></a>前提条件
 
-1. [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] RTM CU6/[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 CU3/[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 以上 (PolyBase がインストールされていること)
+1. [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] RTM CU6/[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] SP1 CU3/[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] 以上 (PolyBase がインストールされていること)
 1. Kerberos (Active Directory または MIT) によるセキュリティで保護された Hadoop クラスター (Cloudera または Hortonworks)
 
 ## <a name="introduction"></a>はじめに
@@ -43,7 +43,7 @@ Kerberos でセキュリティが強化された Hadoop クラスターに対し
 1. セキュリティで保護されたリソース (HDFS、MR2、YARN、ジョブ履歴など)
 1. キー配布センター (Active Directory のドメイン コント ローラーと呼ばれる)
 
-Hadoop によるセキュリティで保護された各リソースは、Hadoop クラスター上で Kerberos が構成されている場合、一意の**サービス プリンシパル名 (SPN)** を使用して**キー配布センター (KDC)** に登録されます。 この登録は、クライアントが KDC から**チケット保証チケット (TGT)** と呼ばれる一時的なユーザー チケットを取得することを目標に行われます。TGT は、クライアントがアクセスする対象の特定の SPN に対して、**サービス チケット (ST)** と呼ばれる別の一時的なチケットを要求するために必要です。  
+Hadoop によるセキュリティで保護された各リソースは、Hadoop クラスター上で Kerberos が構成されている場合、一意の **サービス プリンシパル名 (SPN)** を使用して **キー配布センター (KDC)** に登録されます。 この登録は、クライアントが KDC から **チケット保証チケット (TGT)** と呼ばれる一時的なユーザー チケットを取得することを目標に行われます。TGT は、クライアントがアクセスする対象の特定の SPN に対して、**サービス チケット (ST)** と呼ばれる別の一時的なチケットを要求するために必要です。  
 
 PolyBase では、Kerberos によるセキュリティで保護されたリソースに対する認証が要求されたときに、次の 4 ラウンドトリップ ハンドシェイクが行われます。
 
@@ -71,7 +71,7 @@ PolyBase には、Hadoop クラスターのプロパティを含む次の構成 
 
 `\[System Drive\]:{install path}\{MSSQL##.INSTANCENAME}\MSSQL\Binn\PolyBase\Hadoop\conf`
 
-たとえば、[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] の既定値は `C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\Binn\PolyBase\Hadoop\conf` です。
+たとえば、[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] の既定値は `C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\Binn\PolyBase\Hadoop\conf` です。
 
 **core-site.xml** を更新し、次の 3 つのプロパティを追加します。 環境に応じて値を設定します。
 
@@ -124,7 +124,7 @@ MIT KDC からの抜粋を以下に示します。 MIT と AD の完全なサン
 ## <a name="checkpoint-1"></a>チェックポイント 1
 `Server Principal = krbtgt/MYREALM.COM@MYREALM.COM` のチケットの 16 進数ダンプが存在する必要があります。 これは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] が KDC に対して認証され、TGT を受け取ったことを示します。 それ以外の場合、問題が存在するのは厳密には [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] と KDC の間であり、Hadoop との間ではありません。
 
-PolyBase は AD と MIT 間の信頼関係を**サポートしていない**ため、Hadoop クラスターに構成されているのと同じ KDC に対して構成されている必要があります。 このような環境では、手動でその KDC にサービス アカウントを作成し、そのアカウントを使って認証を実行できます。
+PolyBase は AD と MIT 間の信頼関係を **サポートしていない** ため、Hadoop クラスターに構成されているのと同じ KDC に対して構成されている必要があります。 このような環境では、手動でその KDC にサービス アカウントを作成し、そのアカウントを使って認証を実行できます。
 
 ```cmd
 |>>> KrbAsReq creating message 
@@ -198,7 +198,7 @@ PolyBase は HDFS へのアクセスを試行しますが、必要なサービ�
 ```
 
 ## <a name="common-errors"></a>一般的なエラー
-ツールが実行され、ターゲット パスのファイル プロパティが*出力されていない*場合 (チェックポイント 4)、途中で例外がスローされています。 例外を確認し、4 ステップのフローで例外が発生したコンテキストを検討します。 次の一般的な問題が発生していないかをこの順に確認します。
+ツールが実行され、ターゲット パスのファイル プロパティが *出力されていない* 場合 (チェックポイント 4)、途中で例外がスローされています。 例外を確認し、4 ステップのフローで例外が発生したコンテキストを検討します。 次の一般的な問題が発生していないかをこの順に確認します。
 
 | 例外とメッセージ | 原因 | 
 | --- | --- |
@@ -253,7 +253,7 @@ Kerberos へのアクセス時に引き続き問題が発生する場合は、�
 4. KDC で AES256 のみをサポートできる場合は、[JCE ポリシー ファイル](http://www.oracle.com/technetwork/java/javase/downloads/index.html)がインストールされていることを確認します。
 
 ## <a name="see-also"></a>関連項目
-[Active Directory 認証を使用した PolyBase と Cloudera の統合](https://blogs.msdn.microsoft.com/microsoftrservertigerteam/2016/10/17/integrating-polybase-with-cloudera-using-active-directory-authentication)  
+[Active Directory 認証を使用した PolyBase と Cloudera の統合](/archive/blogs/microsoftrservertigerteam/integrating-polybase-with-cloudera-using-active-directory-authentication)  
 [CDH 用に Kerberos を設定するための Cloudera のガイド](https://www.cloudera.com/documentation/enterprise/5-6-x/topics/cm_sg_principal_keytab.html)  
 [HDP 用に Kerberos を設定するための Hortonworks のガイド](https://docs.hortonworks.com/HDPDocuments/Ambari-2.2.0.0/bk_Ambari_Security_Guide/content/ch_configuring_amb_hdp_for_kerberos.html)  
 [PolyBase のトラブルシューティング](polybase-troubleshooting.md)

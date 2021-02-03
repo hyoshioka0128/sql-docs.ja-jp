@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: replication
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - MSlogreader_history_TSQL
 - MSlogreader_history
@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSlogreader_history system table
 ms.assetid: 2e399fa1-3591-4c1c-96b7-7964fe82c7c4
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: ae2abdcaf4014df405ebf6dcefff8e2207530a93
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 71963149d6ad8be972acd6a2da3380212eb8548a
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545741"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99212312"
 ---
 # <a name="mslogreader_history-transact-sql"></a>MSlogreader_history (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSlogreader_history**テーブルには、ローカルディストリビューターに関連付けられているログリーダーエージェントの履歴行が含まれています。 このテーブルは、ディストリビューションデータベースに格納されます。  
+  **MSlogreader_history** テーブルには、ローカルディストリビューターに関連付けられているログリーダーエージェントの履歴行が含まれています。 このテーブルは、ディストリビューションデータベースに格納されます。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
@@ -44,8 +44,8 @@ ms.locfileid: "89545741"
 |**delivered_commands**|**int**|セッションで配信されたコマンドの合計数。|  
 |**average_commands**|**int**|セッションで配信されたコマンドの平均数。|  
 |**delivery_rate**|**float**|1秒間に配信された平均コマンド。|  
-|**delivery_latency**|**int**|コマンドがパブリッシュされたデータベースに入ってからディストリビューションデータベースに入ってくるまでの待機時間。 単位はミリ秒。|  
-|**error_id**|**int**|**MSrepl_error**システムテーブル内のエラーの ID。|  
+|**delivery_latency**|**int**|コマンドがパブリッシュされたデータベースに入ってからディストリビューションデータベースに入ってくるまでの待機時間。 単位はミリ秒です。|  
+|**error_id**|**int**|**MSrepl_error** システムテーブル内のエラーの ID。|  
 |**timestamp**|**timestamp**|このテーブルのタイムスタンプ列です。|  
 |**updateable_row**|**bit**|履歴行を上書きできる場合は、 **1** に設定します。|  
   

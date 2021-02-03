@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - RESTORE_MASTER_KEY_TSQL
 - RESTORE MASTER KEY
@@ -26,12 +26,12 @@ helpviewer_keywords:
 ms.assetid: 70ceb951-31a2-4fc4-a0c1-e6c18eeb3ae7
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 0f5b32d1caa0562f5a5fd226387c21ec029982a5
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 66ba1a2950f25ad1e0ed5e189c091ed6074f1b4d
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88496661"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99180115"
 ---
 # <a name="restore-master-key-transact-sql"></a>RESTORE MASTER KEY (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -42,8 +42,7 @@ ms.locfileid: "88496661"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 RESTORE MASTER KEY FROM FILE = 'path_to_file'   
     DECRYPTION BY PASSWORD = 'password'  
     ENCRYPTION BY PASSWORD = 'password'  
@@ -80,7 +79,7 @@ RESTORE MASTER KEY FROM FILE = 'path_to_file'
 ## <a name="examples"></a>例  
  次の例では、データベース `AdventureWorks2012` のマスター キーを復元します。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 RESTORE MASTER KEY   
     FROM FILE = 'c:\backups\keys\AdventureWorks2012_master_key'   

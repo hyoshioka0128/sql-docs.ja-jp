@@ -15,13 +15,13 @@ helpviewer_keywords:
 ms.assetid: 902314fe-5f9c-4d0d-a0b7-27e67c9c70ec
 author: stevestein
 ms.author: sstein
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: eb9b80387573d0145c6510d9377ac959939dd536
-ms.sourcegitcommit: 75f767c7b1ead31f33a870fddab6bef52f99906b
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 476741da7da2e0e463a5a5a0abf4ebf0a8e70d40
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87332354"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97467083"
 ---
 # <a name="specify-parameters"></a>パラメーターの指定
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -86,7 +86,7 @@ GO
 >  既定値が空白または句読点を含む文字列の場合、または数字で始まる場合 (たとえば 6xxx)、単一引用符で囲む必要があります。  
 
 > [!NOTE] 
-> 既定のパラメーターは、Azure SQL Data Warehouse または Parallel Data Warehouse ではサポートされていません。 
+> 既定のパラメーターは、Azure Synapse Analytics または Parallel Data Warehouse ではサポートされていません。 
   
  パラメーターに対して既定値として適切に値を指定できない場合は、NULL を既定値として指定してください。 パラメーターの値なしでプロシージャを実行する場合は、プロシージャからカスタマイズされたメッセージが返されるようにすることをお勧めします。  
   

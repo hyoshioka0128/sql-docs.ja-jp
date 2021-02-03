@@ -27,13 +27,13 @@ helpviewer_keywords:
 ms.assetid: 8ac501c3-4280-4d5b-b58a-1524fa715b50
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 02c4d4eb6b3e96a65af77bf0c0d5ca749d2d201b
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 344580a5c85898666c1450a0bc00d7a12fa20341
+ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88458917"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97489962"
 ---
 # <a name="alter-master-key-transact-sql"></a>ALTER MASTER KEY (Transact-SQL)
 
@@ -81,7 +81,7 @@ ALTER MASTER KEY <alter_option>
 ```
 
 ```syntaxsql
--- Syntax for Azure SQL Data Warehouse and Analytics Platform System
+-- Syntax for Azure Synapse Analytics and Analytics Platform System
 
 ALTER MASTER KEY <alter_option>
 
@@ -139,7 +139,7 @@ ALTER MASTER KEY REGENERATE WITH ENCRYPTION BY PASSWORD = 'dsjdkflJ435907NnmM#sX
 GO
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [CREATE MASTER KEY](../../t-sql/statements/create-master-key-transact-sql.md)
 - [OPEN MASTER KEY](../../t-sql/statements/open-master-key-transact-sql.md)
@@ -148,5 +148,5 @@ GO
 - [RESTORE MASTER KEY](../../t-sql/statements/restore-master-key-transact-sql.md)
 - [DROP MASTER KEY](../../t-sql/statements/drop-master-key-transact-sql.md)
 - [暗号化階層](../../relational-databases/security/encryption/encryption-hierarchy.md)
-- [CREATE DATABASE](../../t-sql/statements/create-database-transact-sql.md?view=sql-server-2017)
+- [CREATE DATABASE](../../t-sql/statements/create-database-transact-sql.md)
 - [データベースのデタッチとアタッチ](../../relational-databases/databases/database-detach-and-attach-sql-server.md)

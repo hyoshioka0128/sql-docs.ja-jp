@@ -8,7 +8,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - KILL QUERY NOTIFICATION SUBSCRIPTION
 - KILL_QUERY_NOTIFICATION_SUBSCRIPTION_TSQL
@@ -20,14 +20,14 @@ helpviewer_keywords:
 - subscriptions [SQL Server query notifications], stopping
 - query notifications [SQL Server], subscriptions
 ms.assetid: 8aeadf51-286c-4748-bef2-d25858b250bf
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 4ad75032f362b3cbdef46eb247d1fd524275055f
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: fb6fee6ecfbd2e71dd975ecc06fcc55785d20514
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86919608"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99112330"
 ---
 # <a name="kill-query-notification-subscription-transact-sql"></a>KILL QUERY NOTIFICATION SUBSCRIPTION (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -39,7 +39,6 @@ ms.locfileid: "86919608"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 KILL QUERY NOTIFICATION SUBSCRIPTION   
    { ALL | subscription_id }  
 ```  
@@ -68,14 +67,14 @@ KILL QUERY NOTIFICATION SUBSCRIPTION
 ### <a name="a-removing-all-query-notification-subscriptions-in-the-instance"></a>A. インスタンス内のすべてのクエリ通知サブスクリプションを削除する  
  次の例では、インスタンス内のすべてのクエリ通知サブスクリプションを削除します。  
   
-```  
+```sql  
 KILL QUERY NOTIFICATION SUBSCRIPTION ALL ;  
 ```  
   
 ### <a name="b-removing-a-single-query-notification-subscription"></a>B. 1 つのクエリ通知サブスクリプションを削除する  
  次の例では、サブスクリプション ID が `73` のクエリ通知サブスクリプションを削除します。  
   
-```  
+```sql  
 KILL QUERY NOTIFICATION SUBSCRIPTION 73 ;  
 ```  
   

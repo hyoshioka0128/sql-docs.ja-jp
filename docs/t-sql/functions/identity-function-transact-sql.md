@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - IDENTITY_TSQL
 - IDENTITY
@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: ebec77eb-fc02-4feb-b6c5-f0098d43ccb6
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 6f8cd22140dd78ace01d685498306885b0081f21
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: bad6595806a3b50cc0634cecbae2c4db098799ba
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88365238"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99189927"
 ---
 # <a name="identity-function-transact-sql"></a>IDENTITY (関数) (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -42,7 +42,6 @@ ms.locfileid: "88365238"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 IDENTITY (data_type [ , seed , increment ] ) AS column_name  
 ```  
   
@@ -62,12 +61,12 @@ IDENTITY (data_type [ , seed , increment ] ) AS column_name
  新しいテーブルに挿入する列の名前を指定します。  
   
 ## <a name="return-types"></a>戻り値の型  
- 同じを返します *data_type*です。  
+ 同じを返します *data_type* です。  
   
 ## <a name="remarks"></a>注釈  
  この関数ではテーブルに列が作成されるので、次のいずれかの方法で選択リストから列名を指定する必要があります。  
   
-```  
+```sql  
 --(1)  
 SELECT IDENTITY(int, 1,1) AS ID_Num  
 INTO NewTable  
@@ -77,13 +76,12 @@ FROM OldTable;
 SELECT ID_Num = IDENTITY(int, 1, 1)  
 INTO NewTable  
 FROM OldTable;  
-  
 ```  
   
 ## <a name="examples"></a>例  
  次の例では、[!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] データベースの `Contact` テーブルにあるすべての行を、`NewContact` という新しいテーブルに追加します。 IDENTITY 関数を使用して、`NewContact` テーブルの識別番号を 1 ではなく 100 から開始するようにします。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 IF OBJECT_ID (N'Person.NewContact', N'U') IS NOT NULL  
@@ -101,7 +99,6 @@ ALTER DATABASE AdventureWorks2012 SET RECOVERY FULL;
 GO  
 SELECT ContactNum, First, Last FROM Person.NewContact;  
 GO  
-  
 ```  
   
 ## <a name="see-also"></a>参照  

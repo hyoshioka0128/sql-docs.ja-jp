@@ -19,13 +19,13 @@ helpviewer_keywords:
 ms.assetid: a0b1337d-2059-4872-8c62-3f967d8b170f
 author: stevestein
 ms.author: sstein
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 0dc360ab3faf724830f61b4572cff93425203ec4
-ms.sourcegitcommit: 75f767c7b1ead31f33a870fddab6bef52f99906b
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: f7cff43378cdffd2015040d9de4d8ffb7b014291
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87332616"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97475303"
 ---
 # <a name="execute-a-stored-procedure"></a>ストアド プロシージャの実行
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -103,7 +103,7 @@ ms.locfileid: "87332616"
   
 -   ストアド プロシージャの自動実行  
   
-     自動実行用にマークされたプロシージャは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] を起動するたびに実行されます。スタートアップ プロセス中に、 **master** データベースが復旧されます。 データベースのメンテナンス操作を実行する場合や、バックグラウンド プロセスとしてプロシージャを連続実行する場合は、自動実行するようにプロシージャを設定すると便利です。 プロシージャの自動実行は、グローバル一時テーブルの作成など、 **tempdb**のシステム タスクまたはメンテナンス タスクを行う場合にも使用できます。 このようにすると、 **のスタートアップ時に** tempdb [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] が再作成されても、一時テーブルの存在が保証されます。  
+     自動実行用にマークされたプロシージャは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] を起動するたびに実行されます。スタートアップ プロセス中に、 **master** データベースが復旧されます。 データベースのメンテナンス操作を実行する場合や、バックグラウンド プロセスとしてプロシージャを連続実行する場合は、自動実行するようにプロシージャを設定すると便利です。 プロシージャの自動実行は、グローバル一時テーブルの作成など、 **tempdb** のシステム タスクまたはメンテナンス タスクを行う場合にも使用できます。 このようにすると、 **のスタートアップ時に** tempdb [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] が再作成されても、一時テーブルの存在が保証されます。  
   
      自動実行されるプロシージャは、固定サーバー ロール **sysadmin** と同じ権限で操作を行います。 これらのプロシージャが生成するエラー メッセージは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のエラー ログに書き込まれます。  
   
@@ -114,7 +114,7 @@ ms.locfileid: "87332616"
   
 -   自動実行の設定、解除、および制御  
   
-     自動実行されるようにプロシージャを設定できるのは、システム管理者 (**sa**) だけです。 また、このプロシージャは、 **master** データベースに格納されていて、 **sa**により所有されている必要があり、入出力パラメーターを受け渡すことはできません。  
+     自動実行されるようにプロシージャを設定できるのは、システム管理者 (**sa**) だけです。 また、このプロシージャは、 **master** データベースに格納されていて、 **sa** により所有されている必要があり、入出力パラメーターを受け渡すことはできません。  
   
      次の操作を実行するには、 [sp_procoption](../../relational-databases/system-stored-procedures/sp-procoption-transact-sql.md) を使用します。  
   
@@ -132,7 +132,7 @@ ms.locfileid: "87332616"
   
 #### <a name="to-execute-a-stored-procedure"></a>ストアド プロシージャを実行するには  
   
-1.  **オブジェクト エクスプローラー**で、 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)]のインスタンスに接続して、そのインスタンスを展開します。次に、 **[データベース]** を展開します。  
+1.  **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)]のインスタンスに接続して、そのインスタンスを展開します。次に、 **[データベース]** を展開します。  
   
 2.  目的のデータベースを展開し、 **[プログラミング]** を展開します。次に、 **[ストアド プロシージャ]** を展開します。  
   

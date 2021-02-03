@@ -20,18 +20,18 @@ helpviewer_keywords:
 ms.assetid: 51ad69d8-fe92-4662-a7cd-d235692f0c03
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: f90a0f31355b5225533728efb25dfb5f6c96de16
-ms.sourcegitcommit: 6c2232c4d2c1ce5710296ce97b909f5ed9787f66
+ms.openlocfilehash: 60d621e9bb833615aaed5e6f622afb9591916037
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84462168"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597059"
 ---
 # <a name="tutorial-how-to-locate-and-start-reporting-services-tools-ssrs"></a>チュートリアル:Reporting Services ツールを検索および開始する方法 (SSRS)
 
 このチュートリアルでは、レポート サーバーの設定、レポート サーバーのコンテンツと動作の管理、 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] の改ページ調整されたレポートとモバイル レポートの作成とパブリッシュに使用できるツールを紹介します。 既にツールを使用している場合は、 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)]を使用するスキルを学ぶことができるその他のチュートリアルへお進みください。 その他のチュートリアルについては、「 [Reporting Services のチュートリアル (SSRS)](../../reporting-services/reporting-services-tutorials-ssrs.md)を使用するスキルを学ぶことができるその他のチュートリアルへお進みください。
 
-## <a name="reporting-services-configuration-manager-native-mode"></a><a name="bkmk_configuration_manager"></a> Reporting Services 構成マネージャー (ネイティブ モード)
+## <a name="report-server-configuration-manager-native-mode"></a><a name="bkmk_configuration_manager"></a> レポート サーバーの構成マネージャー (ネイティブ モード)
 ネイティブ モードの構成マネージャーを使用して、次の処理を行います。
 
 - サービス アカウントを指定します。
@@ -43,15 +43,15 @@ ms.locfileid: "84462168"
 
 **インストール:** [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] 構成マネージャーは、[!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] ネイティブ モードのインストール時にインストールされます。 詳細については、 [「Reporting Services ネイティブ モードのレポート サーバーのインストール」](../../reporting-services/install-windows/install-reporting-services-native-mode-report-server.md)を参照してください。
 
-### <a name="to-start-the-reporting-services-configuration-manager"></a>Reporting Services 構成マネージャーを起動するには
+### <a name="to-start-the-report-server-configuration-manager"></a>レポート サーバーの構成マネージャーを起動するには
 
-1. Windows のスタート画面で、「 **reporting** 」と入力し、 **[アプリ]** の検索結果で **[Reporting Services 構成マネージャー]** をクリックします。
+1. Windows のスタート画面で、「**reporting**」と入力し、 **[アプリ]** の検索結果で **[レポート サーバーの構成マネージャー]** をクリックします。
 
-    ![Reporting Services 構成マネージャーの起動](../../reporting-services/tools/media/bi-ssrs-configmanager-win8-startscreen.gif "Reporting Services 構成マネージャーの起動")
+    ![スタートの [レポート サーバーの構成マネージャー]](../../reporting-services/tools/media/bi-ssrs-configmanager-win8-startscreen.gif "スタートの [レポート サーバーの構成マネージャー]")
 
     **Or**
 
-    **[スタート]** ボタンをクリックして、 **[プログラム]** をクリックし、[ [!INCLUDE[ssCurrentUI](../../includes/sscurrentui-md.md)]]、 **[構成ツール]** 、 **[Reporting Services 構成マネージャー]** の順にクリックします。
+    **[スタート]** をクリックして、 **[プログラム]** をクリックし、次に [[!INCLUDE[ssCurrentUI](../../includes/sscurrentui-md.md)]]、 **[構成ツール]** 、 **[レポート サーバーの構成マネージャー]** の順にクリックします。
 
     **[レポート サーバー インスタンスの選択]** ダイアログ ボックスが表示されます。このダイアログ ボックスでは構成するレポート サーバー インスタンスを選択します。
 
@@ -67,7 +67,7 @@ ms.locfileid: "84462168"
 
     ![Reporting Services 構成ツール](../../reporting-services/tools/media/rs-ui-reportserverconfigkatmai.png "Reporting Services 構成ツール")
 
- **次の手順:** 「[レポート サーバーを構成および管理する (SSRS ネイティブ モード)](../../reporting-services/report-server/configure-and-administer-a-report-server-ssrs-native-mode.md)」と「[Reporting Services 構成マネージャー (ネイティブ モード)](../../reporting-services/install-windows/reporting-services-configuration-manager-native-mode.md)」。
+ **次の手順:** 「[レポート サーバーを構成および管理する &#40;SSRS ネイティブ モード&#41;](../../reporting-services/report-server/configure-and-administer-a-report-server-ssrs-native-mode.md)」と「[レポート サーバーの構成マネージャー &#40;ネイティブ モード&#41;](../../reporting-services/install-windows/reporting-services-configuration-manager-native-mode.md)」。
 
 ## <a name="web-portal-native-mode"></a>Web ポータル (ネイティブ モード)
 
@@ -81,7 +81,7 @@ Web ポータルを起動するには適切なアクセス許可が必要です�
 
 1. ブラウザーを開きます。 サポートされているブラウザーやバージョンの詳細については、「 [Browser Support for Reporting Services and Power View](../../reporting-services/browser-support-for-reporting-services-and-power-view.md)」(Reporting Services と Power View のブラウザー サポート) を参照してください。
 
-2. Web ブラウザーのアドレス バーに、Web ポータルの URL を入力します。 既定の URL は `https://<serverName>/reports`を使用するスキルを学ぶことができるその他のチュートリアルへお進みください。 Reporting Services 構成ツールを使用して、サーバー名と URL を確認できます。 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] で使用される URL の詳細については、「[レポート サーバー URL の構成 &#40;SSRS 構成マネージャー&#41;](../../reporting-services/install-windows/configure-report-server-urls-ssrs-configuration-manager.md)」を参照してください。
+2. Web ブラウザーのアドレス バーに、Web ポータルの URL を入力します。 既定の URL は `https://<serverName>/reports`を使用するスキルを学ぶことができるその他のチュートリアルへお進みください。 Reporting Services 構成ツールを使用して、サーバー名と URL を確認できます。 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] で使用される URL の詳細については、「[レポート サーバー URL の構成 &#40;レポート サーバーの構成マネージャー&#41;](../../reporting-services/install-windows/configure-report-server-urls-ssrs-configuration-manager.md)」を参照してください。
 
 3. Web ポータルがブラウザー ウィンドウ内に表示されます。 最初のページは [ホーム] フォルダーです。 アクセス許可に応じて、最初のページにその他のフォルダー、レポートへのハイパーリンク、リソース ファイルなどが表示される場合もあります。 ツール バーに追加のボタンやコマンドが表示される場合もあります。
 
@@ -89,7 +89,7 @@ Web ポータルを起動するには適切なアクセス許可が必要です�
 
 ## <a name="management-studio"></a><a name="bkmk_managements_studio"></a> Management Studio
 
-レポート サーバー管理者は、 [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] を使用して、レポート サーバーと共に他の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] コンポーネント サーバーを管理できます。 詳細については、[SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/tutorials/tutorial-sql-server-management-studio) のチュートリアルを参照してください。
+レポート サーバー管理者は、 [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] を使用して、レポート サーバーと共に他の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] コンポーネント サーバーを管理できます。 詳細については、[SQL Server Management Studio](../../ssms/quickstarts/ssms-connect-query-sql-server.md) のチュートリアルを参照してください。
 
 ### <a name="to-start-sql-server-management-studio"></a>SQL Server Management Studio を起動するには
 
@@ -115,11 +115,11 @@ Web ポータルを起動するには適切なアクセス許可が必要です�
 
 レポート デザイナーは、 [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)] - Visual Studio で使用できます。 レポート デザイナーのデザイン画面にはタブ付きウィンドウ、ウィザード、メニューが用意されており、これらを使ってレポートの作成機能にアクセスできます。 レポート デザイナー ツールは、レポート サーバー プロジェクトまたは [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)] のレポート サーバー ウィザードのテンプレートを選択すると使用可能になります。 詳細については、「[SQL Server データ ツールの Reporting Services (SSDT)](../../reporting-services/tools/reporting-services-in-sql-server-data-tools-ssdt.md)」を参照してください。
 
-[SQL Server Data Tools](https://go.microsoft.com/fwlink/?LinkID=616714)をダウンロードします。
+[SQL Server Data Tools](../../ssdt/download-sql-server-data-tools-ssdt.md)をダウンロードします。
 
 ### <a name="to-start-report-designer"></a>レポート デザイナーを起動するには
 
-1. **SQL Server Data Tools**を開きます。
+1. **SQL Server Data Tools** を開きます。
 
 2. **[ファイル]** メニューの **[新規作成]** をポイントし、 **[プロジェクト]** をクリックします。
 
@@ -139,7 +139,7 @@ Web ポータルを起動するには適切なアクセス許可が必要です�
 
 [SQL Server のレポート ビルダー](../../reporting-services/report-builder/report-builder-in-sql-server-2016.md)はスタンドアロンのアプリケーションであり、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の外部で改ページ調整されたレポートを作成するために使用できます。 レポート デザイナーで作成したレポートであっても、以前のバージョンの [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)]でデザインしたレポートであっても、あらゆる既存レポートのカスタマイズおよび更新が可能です。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Web ポータルまたは Microsoft ダウンロード センターからインストールします。
 
-ページ分割されたレポートの準備ができたら、レポート サーバーに公開するか、[Power BI サービスに保存します](https://docs.microsoft.com/power-bi/paginated-reports-save-to-power-bi-service)。
+ページ分割されたレポートの準備ができたら、レポート サーバーに公開するか、[Power BI サービスに保存します](/power-bi/paginated-reports-save-to-power-bi-service)。
 Microsoft ダウンロード センターから[レポート ビルダーをダウンロード](https://go.microsoft.com/fwlink/?LinkID=219138) します。
 
 ### <a name="to-start-ssrbnoversion"></a>を開始するには [!INCLUDE[ssRBnoversion](../../includes/ssrbnoversion.md)]
@@ -181,7 +181,7 @@ Microsoft ダウンロード センターから[SQL Server Mobile Report Publish
 
 [SQL Server Mobile Report Publisher をダウンロード](https://go.microsoft.com/fwlink/?LinkID=733527)  
 [レポート ビルダーをダウンロード](https://go.microsoft.com/fwlink/?LinkID=219138)  
-[SQL Server Data Tools のダウンロード](https://go.microsoft.com/fwlink/?LinkID=616714)  
+[SQL Server Data Tools のダウンロード](../../ssdt/download-sql-server-data-tools-ssdt.md)  
 [Reporting Services SharePoint モードのインストール](../../reporting-services/install-windows/install-reporting-services-sharepoint-mode.md)  
 [Reporting Services Report Server](../../reporting-services/report-server-sharepoint/reporting-services-report-server.md)  
 [クエリ デザイン ツール](../../reporting-services/report-data/query-design-tools-ssrs.md)  

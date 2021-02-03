@@ -53,14 +53,14 @@ helpviewer_keywords:
 - XML indexes [SQL Server], creating
 ms.assetid: d2297805-412b-47b5-aeeb-53388349a5b9
 author: pmasl
-ms.author: carlrab
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 19e4d14aa0e8624cf2ddc5ca37e3aba5ea27dff1
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.author: pelopes
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 3f1322f21ed7ad3f09f30a0f5a5e71e5614a8d47
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88467271"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98766234"
 ---
 # <a name="create-index-transact-sql"></a>CREATE INDEX (Transact-SQL)
 
@@ -90,7 +90,7 @@ CREATE UNIQUE INDEX i1 ON t1 (col1 DESC, col2 ASC, col3 DESC);
 
 **重要なシナリオ:**
 
-[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] および [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 以降では、列ストア インデックスに非クラスター化インデックスを使用して、データ ウェアハウスのクエリのパフォーマンスを向上させます。 詳しくは、「[列ストア インデックス - データ ウェアハウス](../../relational-databases/indexes/columnstore-indexes-data-warehouse.md)」をご覧ください。
+[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] および [!INCLUDE[ssSDS](../../includes/sssds-md.md)] 以降では、列ストア インデックスに非クラスター化インデックスを使用して、データ ウェアハウスのクエリのパフォーマンスを向上させます。 詳しくは、「[列ストア インデックス - データ ウェアハウス](../../relational-databases/indexes/columnstore-indexes-data-warehouse.md)」をご覧ください。
 
 その他の種類のインデックスについては、以下を参照してください。
 
@@ -192,11 +192,11 @@ CREATE [ UNIQUE ] [ CLUSTERED | NONCLUSTERED ] INDEX index_name
 }
 ```
 
-### <a name="syntax-for-azure-sql-data-warehouse-and-parallel-data-warehouse"></a>Azure SQL Data Warehouse と Parallel Data Warehouse の構文
+### <a name="syntax-for-azure-synapse-analytics-and-parallel-data-warehouse"></a>Azure Synapse Analytics と Parallel Data Warehouse の構文
 
 ```syntaxsql
 
-CREATE CLUSTERED COLUMNSTORE INDEX INDEX index_name
+CREATE CLUSTERED COLUMNSTORE INDEX index_name
     ON [ database_name . [ schema ] . | schema . ] table_name
     [ORDER (column[,...n])]
     [WITH ( DROP_EXISTING = { ON | OFF } )]
@@ -250,9 +250,9 @@ NONCLUSTERED
 *column*      
  インデックスの基準となる 1 列または複数列を指定します。 指定した列を組み合わせた値で複合インデックスを作成するには、2 つ以上の列名を指定します。 複合インデックスに含まれる列は、*table_or_view_name* の後のかっこ内に、並べ替えの優先順序に従って指定します。
 
-1 つの複合インデックス キーには、最大 32 の列を結合できます。 複合インデックス キーに含まれる列はすべて、同じテーブルまたはビュー内に存在する必要があります。 複合インデックスの値の最大許容サイズは、クラスター化インデックスの場合は、900 バイトまたは非クラスター化インデックスの 1,700 です。 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] および [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以前のバージョンの場合、制限は列数が 16、サイズが 900 バイトになります。
+1 つの複合インデックス キーには、最大 32 の列を結合できます。 複合インデックス キーに含まれる列はすべて、同じテーブルまたはビュー内に存在する必要があります。 複合インデックスの値の最大許容サイズは、クラスター化インデックスの場合は、900 バイトまたは非クラスター化インデックスの 1,700 です。 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] および [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以前のバージョンの場合、制限は列数が 16、サイズが 900 バイトになります。
 
-ラージ オブジェクト (LOB) データ型の列 **ntext**、**text**、**varchar(max)** 、**nvarchar(max)** 、**varbinary(max)** 、**xml**、または **image** 、インデックスのキー列として指定することはできません。 また、ビュー定義に含めることはできません**ntext**、**text**、または **image** 列では、CREATE INDEX ステートメントで参照されていない場合でも。
+ラージ オブジェクト (LOB) データ型の列 **ntext**、**text**、**varchar(max)** 、**nvarchar(max)** 、**varbinary(max)** 、**xml**、または **image** 、インデックスのキー列として指定することはできません。 また、ビュー定義に含めることはできません **ntext**、**text**、または **image** 列では、CREATE INDEX ステートメントで参照されていない場合でも。
 
 バイナリ順序がサポートされる CLR ユーザー定義型列に対してインデックスを作成できます。 ユーザー定義型列からメソッドを呼び出すように定義されている計算列にも、そのメソッドが決定的とマークされていて、データ アクセス操作が実行されない限り、インデックスを作成できます。 CLR ユーザー定義型列でのインデックス作成の詳細については、「[CLR ユーザー定義型の使用](../../relational-databases/clr-integration-database-objects-user-defined-types/clr-user-defined-types.md)」を参照してください。
 
@@ -264,7 +264,7 @@ INCLUDE **(** _column_ [ **,** ... *n* ] **)**
 
 列名は INCLUDE リスト内で繰り返すことはできず、キー列と非キー列両方で同時に使用することはできません。 テーブルにクラスター化インデックスが定義されている場合、非クラスター化インデックスには常にクラスター化インデックスの列が含まれます。 詳細については、「 [付加列インデックスの作成](../../relational-databases/indexes/create-indexes-with-included-columns.md)」を参照してください。
 
-**text**、 **ntext**、および **image**を除く、すべてのデータ型を使用できます。 インデックスを作成またはオフラインで再構築する必要があります (ONLINE = OFF) かどうかには、指定された非キー列のいずれかは **varchar (max)** , 、**nvarchar (max)** , 、または **varbinary (max)** データ型。
+**text**、 **ntext**、および **image** を除く、すべてのデータ型を使用できます。 インデックスを作成またはオフラインで再構築する必要があります (ONLINE = OFF) かどうかには、指定された非キー列のいずれかは **varchar (max)** , 、**nvarchar (max)** , 、または **varbinary (max)** データ型。
 
 決定的な計算列、および正確または不正確な計算列を、付加列にできます。 派生した計算列 **image**、**ntext**、**text**、**varchar(max)** 、**nvarchar(max)** 、**varbinary(max)** 、および **xml** 計算列のデータ型が付加列として使用できる限り、非キー列でのデータ型を含めることができます。 詳細については、「 [計算列のインデックス](../../relational-databases/indexes/indexes-on-computed-columns.md)」を参照してください。
 
@@ -351,7 +351,7 @@ _database_name_
 
 ビューにインデックスを作成するには、SCHEMABINDING を指定してそのビューを定義する必要があります。 ビューに非クラスター化インデックスを作成する前に、そのビューに一意のクラスター化インデックスを作成する必要があります。 インデックス付きビューの詳細については、「解説」を参照してください。
 
-[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降では、オブジェクトをクラスター化列ストア インデックスに格納されたテーブルに指定できます。
+[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降では、オブジェクトをクラスター化列ストア インデックスに格納されたテーブルに指定できます。
 
 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] では、*database_name* が現在のデータベースの場合、または _database_name_ が `tempdb` で、_object_name_ が # で始まる場合に、3 つの要素で構成された名前形式 _database_name_.[_schema_name_]._object_name_ をサポートします。
 
@@ -474,7 +474,7 @@ ONLINE = { ON | **OFF** }
 インデックス操作時に、基になるテーブルや関連するインデックスをクエリやデータ変更で使用できるかどうかを指定します。 既定値は OFF です。
 
 > [!IMPORTANT]
-> オンラインでのインデックス操作は、[!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のすべてのエディションで使用できるわけではありません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の各エディションでサポートされる機能の一覧については、「[Editions and Supported Features for SQL Server 2016](../../sql-server/editions-and-supported-features-for-sql-server-2016.md)」 (SQL Server 2016 のエディションとサポートされる機能) を参照してください。
+> オンラインでのインデックス操作は、[!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のすべてのエディションで使用できるわけではありません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の各エディションでサポートされる機能の一覧については、「[Editions and Supported Features for SQL Server 2016](../../sql-server/editions-and-components-of-sql-server-2016.md)」 (SQL Server 2016 のエディションとサポートされる機能) を参照してください。
 
 ON      
 長期のテーブル ロックは、インデックス操作の間は保持されません。 インデックス操作の主なフェーズの間は、基になるテーブル上に、インテント共有 (IS) ロックのみが保持されます。 これにより、基になるテーブルやインデックスに対するクエリや更新を続行できます。 操作の開始時、非常に短い時間ですが、ソース オブジェクトの共有 (S) ロックが保持されます。 操作の終了時、短い時間ですが、非クラスタ化インデックスが作成される場合は、ソース オブジェクト上で共有 (S) ロックの取得が行われます。また、クラスター化インデックスがオンラインで作成または削除され、クラスター化または非クラスター化インデックスが再構築される場合は、SCH-M (スキーマ修正) ロックが取得されます。 インデックスがローカルの一時テーブルに作成される場合、ONLINE は ON にできません。
@@ -566,7 +566,7 @@ MAXDOP = *max_degree_of_parallelism*
  詳細については、「 [並列インデックス操作の構成](../../relational-databases/indexes/configure-parallel-index-operations.md)」を参照してください。
 
 > [!NOTE]
-> 並列インデックス操作は、[!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のすべてのエディションで使用できるわけではありません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の各エディションでサポートされる機能の一覧については、「[SQL Server 2016 の各エディションとサポートされている機能](../../sql-server/editions-and-supported-features-for-sql-server-2016.md)」および「[SQL Server 2017 の各エディションとサポートされている機能](../../sql-server/editions-and-components-of-sql-server-2017.md)」をご覧ください。
+> 並列インデックス操作は、[!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のすべてのエディションで使用できるわけではありません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の各エディションでサポートされる機能の一覧については、「[SQL Server 2016 の各エディションとサポートされている機能](../../sql-server/editions-and-components-of-sql-server-2016.md)」および「[SQL Server 2017 の各エディションとサポートされている機能](../../sql-server/editions-and-components-of-sql-server-2017.md)」をご覧ください。
 
 DATA_COMPRESSION      
 指定したインデックス、パーティション番号、またはパーティション範囲に、データ圧縮オプションを指定します。 次のようなオプションがあります。
@@ -621,7 +621,7 @@ CREATE INDEX ステートメントは、他のクエリと同じように最適�
 テーブル (ヒープ) にクラスター化インデックスを作成したり、既存のクラスター化インデックスを削除して再作成する場合は、データの並べ替えや、基のテーブルまたは既存のクラスター化インデックス データの一時的コピーを実行するために、データベース内で追加の作業領域が使用可能になっている必要があります。 クラスター化インデックスの詳細については、「[クラスター化インデックスの作成](../../relational-databases/indexes/create-clustered-indexes.md)」と「[SQL Server のインデックスのアーキテクチャとデザイン ガイド](../../relational-databases/sql-server-index-design-guide.md)」を参照してください。
 
 ## <a name="nonclustered-indexes"></a>非クラスター化インデックス
-[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] では、クラスター化列ストア インデックスとして格納されたテーブルに非クラスター化インデックスを作成できます。 最初に保存されているテーブルに非クラスター化インデックスを作成するかどうかは後で、テーブルをクラスター化列ストア インデックスに変換する場合は、ヒープまたはクラスター化インデックスに適用する場合は、インデックスが永続化されます。 クラスター化列ストア インデックスを再構築するときに、非クラスター化インデックスを削除する必要がではありません。
+[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] では、クラスター化列ストア インデックスとして格納されたテーブルに非クラスター化インデックスを作成できます。 最初に保存されているテーブルに非クラスター化インデックスを作成するかどうかは後で、テーブルをクラスター化列ストア インデックスに変換する場合は、ヒープまたはクラスター化インデックスに適用する場合は、インデックスが永続化されます。 クラスター化列ストア インデックスを再構築するときに、非クラスター化インデックスを削除する必要がではありません。
 
 制限事項と制約事項:
 
@@ -633,7 +633,7 @@ CREATE INDEX ステートメントは、他のクエリと同じように最適�
 ## <a name="partitioned-indexes"></a>パーティション インデックス
 パーティション インデックスは、パーティション分割されたテーブルと同様の方法で作成および維持されますが、通常のインデックスのように、個別のデータベース オブジェクトとして扱われます。 パーティション分割されていないテーブルにパーティション インデックスを作成したり、パーティション分割されているテーブルに非パーティション インデックスを作成することもできます。
 
-パーティション分割されているテーブルにインデックスを作成し、インデックスを配置するファイル グループを指定しない場合、インデックスは基になるテーブルと同じ方法でパーティション分割されます。 これは、既定では、インデックスは基になるテーブルと同じファイル グループに配置され、パーティション分割されたテーブルの場合、同じパーティション分割列を使用する同じパーティション構成に配置されるためです。 インデックスがテーブルと同じパーティション構成とパーティション分割列を使用する場合、インデックスはテーブルに*固定*されます。
+パーティション分割されているテーブルにインデックスを作成し、インデックスを配置するファイル グループを指定しない場合、インデックスは基になるテーブルと同じ方法でパーティション分割されます。 これは、既定では、インデックスは基になるテーブルと同じファイル グループに配置され、パーティション分割されたテーブルの場合、同じパーティション分割列を使用する同じパーティション構成に配置されるためです。 インデックスがテーブルと同じパーティション構成とパーティション分割列を使用する場合、インデックスはテーブルに *固定* されます。
 
 > [!WARNING]
 > 固定されていないインデックスをパーティションが 1, 000 個以上あるテーブルに作成または再構築することは可能ですが、サポートされていません。 このような操作を行うと、操作中にパフォーマンスが低下したりメモリが過度に消費される可能性があります。 パーティションの数が 1,000 個を超えた場合は、固定されたインデックスのみを使用することをお勧めします。
@@ -642,7 +642,7 @@ CREATE INDEX ステートメントは、他のクエリと同じように最適�
 
 インデックス付きビューは、テーブルのインデックスと同じ方法でパーティション分割されたテーブルに作成できます。 パーティション インデックスの詳細については、「[パーティション テーブルとパーティション インデックス](../../relational-databases/partitions/partitioned-tables-and-indexes.md)」と「[SQL Server のインデックスのアーキテクチャとデザイン ガイド](../../relational-databases/sql-server-index-design-guide.md)」を参照してください。
 
-[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] では、パーティション インデックスが作成または再構築された場合、テーブル内のすべての行をスキャンして統計を作成することはできません。 代わりに、クエリ オプティマイザーが既定のサンプリング アルゴリズムを使用して統計を生成します。 テーブル内のすべての行をスキャンしてパーティション インデックスの統計を作成するには、`FULLSCAN` 句で `CREATE STATISTICS` または `UPDATE STATISTICS` を使用します。
+[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] では、パーティション インデックスが作成または再構築された場合、テーブル内のすべての行をスキャンして統計を作成することはできません。 代わりに、クエリ オプティマイザーが既定のサンプリング アルゴリズムを使用して統計を生成します。 テーブル内のすべての行をスキャンしてパーティション インデックスの統計を作成するには、`FULLSCAN` 句で `CREATE STATISTICS` または `UPDATE STATISTICS` を使用します。
 
 ## <a name="filtered-indexes"></a>フィルター選択されたインデックス
 フィルター選択されたインデックスは、最適化された非クラスター化インデックスであり、テーブルから選択する行の少ないクエリに適しています。 フィルター選択されたインデックスは、フィルター述語を使用してテーブル内の一部のデータにインデックスを作成します。 フィルター選択されたインデックスを適切に設計すると、クエリのパフォーマンスを向上させ、ストレージ コストとメンテナンス コストを削減することができます。
@@ -682,7 +682,7 @@ SET オプションが正しくないと、次の状態が発生する場合が�
 XML インデックスについては、「[CREATE XML INDEX](../../t-sql/statements/create-xml-index-transact-sql.md)」および「[XML インデックス &#40;SQL Server&#41;](../../relational-databases/xml/xml-indexes-sql-server.md)」をご覧ください。
 
 ## <a name="index-key-size"></a>インデックス キーのサイズ
-インデックス キーの最大サイズは 900 バイトをクラスター化インデックスと非クラスター化インデックスの 1,700 バイトです。 ([!INCLUDE[ssSDS](../../includes/sssds-md.md)] および [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以前では、制限は常に 900 バイトでした)。インデックス **varchar** 既存のデータ列には、インデックスの作成時の制限を超えない場合をバイトの制限を超える列を作成することができます。 ただし、後続の挿入や更新操作を、制限を超える合計サイズとなる列には失敗します。 クラスター化インデックスのインデックス キーには、ROW_OVERFLOW_DATA アロケーション ユニットに既存のデータを持つ **varchar** 列を含めることはできません。 クラスター化インデックスが **varchar** 列に作成され、既存のデータが IN_ROW_DATA アロケーション ユニットにある場合に、データを行外に押し出すような挿入処理や更新処理をその列に対して行うと失敗します。
+インデックス キーの最大サイズは 900 バイトをクラスター化インデックスと非クラスター化インデックスの 1,700 バイトです。 ([!INCLUDE[ssSDS](../../includes/sssds-md.md)] および [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以前では、制限は常に 900 バイトでした)。インデックス **varchar** 既存のデータ列には、インデックスの作成時の制限を超えない場合をバイトの制限を超える列を作成することができます。 ただし、後続の挿入や更新操作を、制限を超える合計サイズとなる列には失敗します。 クラスター化インデックスのインデックス キーには、ROW_OVERFLOW_DATA アロケーション ユニットに既存のデータを持つ **varchar** 列を含めることはできません。 クラスター化インデックスが **varchar** 列に作成され、既存のデータが IN_ROW_DATA アロケーション ユニットにある場合に、データを行外に押し出すような挿入処理や更新処理をその列に対して行うと失敗します。
 
 非クラスター化インデックスのリーフ レベルに非キー列を含めることができます。 インデックス キー サイズを計算するとき、[!INCLUDE[ssDE](../../includes/ssde-md.md)]ではこれらの列は考慮されません。 詳細については、「[付加列インデックスの作成](../../relational-databases/indexes/create-indexes-with-included-columns.md)」と「[SQL Server のインデックスのアーキテクチャとデザイン ガイド](../../relational-databases/sql-server-index-design-guide.md)」を参照してください。
 
@@ -761,7 +761,7 @@ DROP_EXISTING を使用すると、非クラスター化インデックスが定
 - オンラインでのインデックス作成は、`RESUMABLE = ON` オプションを使って再開可能として指定できます。
 - RESUMABLE オプションは特定のインデックス用のメタデータ内に保持されるのではなく、現在の DDL ステートメントの実行中にのみ適用されます。 したがって、再開機能を有効にするには、`RESUMABLE = ON` 句を明示的に指定する必要があります。
 - MAX_DURATION オプションは、`RESUMABLE = ON` オプションに対してのみサポートされます。
-- MAX_DURATION for RESUMABLE オプションでは、構築するインデックスの時間間隔を指定します。 この時間が経過すると、インデックスの構築が一時停止するか、またはその実行が完了します。 ユーザーは、一時停止されたインデックスの構築を再開可能にするタイミングを決定します。 MAX_DURATION の**時間** (分単位) は、0 分より長く、かつ 1 週間 (7 \* 24 \* 60 = 10080 分) 以下とする必要があります。 インデックス操作の一時停止時間を長くすると、特定のテーブルでの DML パフォーマンスおよびデータベースのディスク容量に影響を及ぼす可能性があります。元々存在するインデックスも新たに作成されたインデックスもディスク容量を必要とし、DML 操作中に更新される必要があるからです。 MAX_DURATION オプションを省略した場合、インデックス操作は、それが完了するかまたは障害が発生するまで続行されます。
+- MAX_DURATION for RESUMABLE オプションでは、構築するインデックスの時間間隔を指定します。 この時間が経過すると、インデックスの構築が一時停止するか、またはその実行が完了します。 ユーザーは、一時停止されたインデックスの構築を再開可能にするタイミングを決定します。 MAX_DURATION の **時間** (分単位) は、0 分より長く、かつ 1 週間 (7 \* 24 \* 60 = 10080 分) 以下とする必要があります。 インデックス操作の一時停止時間を長くすると、特定のテーブルでの DML パフォーマンスおよびデータベースのディスク容量に影響を及ぼす可能性があります。元々存在するインデックスも新たに作成されたインデックスもディスク容量を必要とし、DML 操作中に更新される必要があるからです。 MAX_DURATION オプションを省略した場合、インデックス操作は、それが完了するかまたは障害が発生するまで続行されます。
 - インデックス操作を直ちに一時停止するには、進行中のコマンドを停止するか (Ctrl + C キー)、[ALTER INDEX](alter-index-transact-sql.md) PAUSE コマンドを実行するか、または `KILL <session_id>` コマンドを実行します。 コマンドが一時停止されたら、[ALTER INDEX](alter-index-transact-sql.md) コマンドを使って再開することができます。
 - 再開可能なインデックスに対する元の CREATE INDEX ステートメントを再実行すると、一時停止されていたインデックス作成操作が自動的に再開されます。
 - `SORT_IN_TEMPDB = ON` オプションは、再開可能なインデックスに対してはサポートされていません。
@@ -897,7 +897,7 @@ INSERT INTO Production.UnitMeasure (UnitMeasureCode, Name, ModifiedDate)
 
 結果のエラー メッセージは次のようになります。
 
-```cmd
+```
 Server: Msg 2601, Level 14, State 1, Line 1
 Cannot insert duplicate key row in object 'UnitMeasure' with unique index 'AK_UnitMeasure_Name'. The statement has been terminated.
 ```
@@ -959,7 +959,7 @@ GO
 
 次は 2 番目の `INSERT` ステートメントの結果です。
 
-```cmd
+```
 Server: Msg 2601, Level 14, State 1, Line 5
 Cannot insert duplicate key row in object '#Test' with unique index
 'AK_Index'. The statement has been terminated.
@@ -1206,4 +1206,4 @@ WITH (DROP_EXISTING = ON);
 [sys.indexes](../../relational-databases/system-catalog-views/sys-indexes-transact-sql.md)     
 [sys.index_columns](../../relational-databases/system-catalog-views/sys-index-columns-transact-sql.md)    
 [sys.xml_indexes](../../relational-databases/system-catalog-views/sys-xml-indexes-transact-sql.md)     
-[EVENTDATA](../../t-sql/functions/eventdata-transact-sql.md)     
+[EVENTDATA](../../t-sql/functions/eventdata-transact-sql.md)

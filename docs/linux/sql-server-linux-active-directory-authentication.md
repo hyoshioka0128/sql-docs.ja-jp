@@ -12,12 +12,12 @@ ms.custom: seodec18
 ms.technology: linux
 helpviewer_keywords:
 - Linux, AAD authentication
-ms.openlocfilehash: 7c93711eae4a6a2eea397940811089f366e47829
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+ms.openlocfilehash: f1e526621d9ff769094830af5cf312eb8c1f17f9
+ms.sourcegitcommit: 2991ad5324601c8618739915aec9b184a8a49c74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85896963"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97323657"
 ---
 # <a name="tutorial-use-active-directory-authentication-with-sql-server-on-linux"></a>チュートリアル:SQL Server on Linux で Active Directory 認証を使用する
 
@@ -53,9 +53,9 @@ SQL Server Linux ホストを Active Directory ドメイン コントローラ�
 ## <a name="create-ad-user-or-msa-for-ssnoversion-and-set-spn"></a><a id="createuser"></a>[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 用の AD ユーザー (または MSA) を作成して SPN を設定する
 
 > [!NOTE]
-> 以下の手順では、[完全修飾ドメイン名](https://en.wikipedia.org/wiki/Fully_qualified_domain_name)を使います。 **Azure** を使用している場合は、先に進む前に **[作成する](https://docs.microsoft.com/azure/virtual-machines/linux/portal-create-fqdn)** 必要があります。
+> 以下の手順では、[完全修飾ドメイン名](https://en.wikipedia.org/wiki/Fully_qualified_domain_name)を使います。 **Azure** を使用している場合は、先に進む前に **[作成する](/azure/virtual-machines/linux/portal-create-fqdn)** 必要があります。
 
-1. ドメイン コントローラーで [New-ADUser](https://technet.microsoft.com/library/ee617253.aspx) PowerShell コマンドを実行して、有効期限がないパスワードを持つ新しい AD ユーザーを作成します。 次の例では `mssql` というアカウント名を使っていますが、任意のアカウント名にすることができます。 アカウントの新しいパスワードを入力するように求められます。
+1. ドメイン コントローラーで [New-ADUser](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee617253(v=technet.10)) PowerShell コマンドを実行して、有効期限がないパスワードを持つ新しい AD ユーザーを作成します。 次の例では `mssql` というアカウント名を使っていますが、任意のアカウント名にすることができます。 アカウントの新しいパスワードを入力するように求められます。
 
    ```PowerShell
    Import-Module ActiveDirectory
@@ -64,13 +64,17 @@ SQL Server Linux ホストを Active Directory ドメイン コントローラ�
    ```
 
    > [!NOTE]
-   > SQL Server 専用の AD アカウントを使用して、SQL Server の資格情報が同じアカウントを使用する他のサービスと共有されないようにすることが、セキュリティのベスト プラクティスです。 ただし、アカウントのパスワードがわかっている場合は、必要に応じて既存の AD アカウントを再利用できます (次のステップで keytab ファイルを生成するために必要です)。 さらに、このアカウントは、ユーザー アカウントで 128 ビットおよび 256 ビットの Kerberos AES 暗号化 (**msDS-SupportedEncryptionTypes** 属性) をサポートする場合は有効にする必要があります。
+   > SQL Server 専用の AD アカウントを使用して、SQL Server の資格情報が同じアカウントを使用する他のサービスと共有されないようにすることが、セキュリティのベスト プラクティスです。 ただし、アカウントのパスワードがわかっている場合は、必要に応じて既存の AD アカウントを再利用できます (次のステップで keytab ファイルを生成するために必要です)。 さらに、このアカウントは、ユーザー アカウントで 128 ビットおよび 256 ビットの Kerberos AES 暗号化 (**msDS-SupportedEncryptionTypes** 属性) をサポートする場合は有効にする必要があります。 アカウントで AES 暗号化が有効になっていることを確認するには、 **[Active Directory ユーザーとコンピューター]** ユーティリティでアカウントを見つけ、 **[プロパティ]** を選択します。 **[プロパティ]** で **[アカウント]** タブを見つけて、次のタイトルの 2 つのチェックボックスがオンになっていることを確認します。 
+   >
+   > 1. **[このアカウントで Kerberos AES 128 ビット暗号化をサポートする]**
+   >
+   > 2. **[このアカウントで Kerberos AES 256 ビット暗号化をサポートする]**
 
 2. **setspn.exe** ツールを使って、このアカウントの ServicePrincipalName (SPN) を設定します。 SPN は、次の例で指定したとおりに書式設定されている必要があります。 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] ホスト コンピューターの完全修飾ドメイン名は、[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] ホスト上で `hostname --all-fqdns` を実行することによって確認できます。 別のポート番号を使うように [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] を構成している場合を除き、TCP ポートは 1433 にする必要があります。
 
    ```PowerShell
-   setspn -A MSSQLSvc/**<fully qualified domain name of host machine>**:**<tcp port>** mssql
-   setspn -A MSSQLSvc/**<netbios name of the host machine>**:**<tcp port>** mssql
+   setspn -A MSSQLSvc/<fully qualified domain name of host machine>:<tcp port> mssql
+   setspn -A MSSQLSvc/<netbios name of the host machine>:<tcp port> mssql
    ```
 
    > [!NOTE]
@@ -96,11 +100,11 @@ Linux で SQL Server の AD 認証を構成するには、AD アカウント (MS
    ```bash
    kinit user@CONTOSO.COM
    kvno user@CONTOSO.COM
-   kvno MSSQLSvc/**<fully qualified domain name of host machine>**:**<tcp port>**@CONTOSO.COM
+   kvno MSSQLSvc/<fully qualified domain name of host machine>:<tcp port>@CONTOSO.COM
    ```
 
    > [!NOTE]
-   > SPN がドメインに反映されるまでに数分かかる場合があります (特に、ドメインが大きい場合)。 `kvno: Server not found in Kerberos database while getting credentials for MSSQLSvc/**<fully qualified domain name of host machine>**:**<tcp port>**@CONTOSO.COM` というエラーが発生する場合は、数分待ってからもう一度やり直してください。</br></br> 上記のコマンドは、サーバーが AD ドメインに参加している場合にのみ機能します。これについては前のセクションで説明しました。
+   > SPN がドメインに反映されるまでに数分かかる場合があります (特に、ドメインが大きい場合)。 `kvno: Server not found in Kerberos database while getting credentials for MSSQLSvc/<fully qualified domain name of host machine>:<tcp port>@CONTOSO.COM` というエラーが発生する場合は、数分待ってからもう一度やり直してください。</br></br> 上記のコマンドは、サーバーが AD ドメインに参加している場合にのみ機能します。これについては前のセクションで説明しました。
 
 1. [**ktpass**](/windows-server/administration/windows-commands/ktpass) を使用し、各 SPN の keytab エントリを追加します。その際、Windows コンピューターのコマンド プロンプトで次のコマンドを使用します。
 
@@ -201,7 +205,7 @@ SQL Windows とは異なり、Kerberos 認証は SQL Linux のローカル接続
 
 ### <a name="ssms-on-a-domain-joined-windows-client"></a>ドメインに参加している Windows クライアントでの SSMS
 
-ドメイン資格情報を使用して、ドメインに参加している Windows クライアントにログインします。 SQL Server Management Studio がインストールされていることを確認した後、 **[サーバーへの接続]** ダイアログで **[Windows 認証]** を指定して、SQL Server インスタンス (例 : `mssql-host.contoso.com`) に接続します。
+ドメイン資格情報を使用して、ドメインに参加している Windows クライアントにログインします。 SQL Server Management Studio がインストールされていることを確認した後、**[サーバーへの接続]** ダイアログで **[Windows 認証]** を指定して、SQL Server インスタンス (例 : `mssql-host.contoso.com`) に接続します。
 
 ### <a name="ad-authentication-using-other-client-drivers"></a>他のクライアント ドライバーを使用した AD 認証
 
@@ -248,7 +252,7 @@ sudo mssql-conf set network.enablekdcfromkrb5conf true
 systemctl restart mssql-server
 ```
 
-次に、 **/etc/krb5.conf** で KDC リストを次のように構成します。
+次に、**/etc/krb5.conf** で KDC リストを次のように構成します。
 
 ```/etc/krb5.conf
 [realms]

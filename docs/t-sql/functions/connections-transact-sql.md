@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - '@@CONNECTIONS'
 - '@@CONNECTIONS_TSQL'
@@ -20,14 +20,14 @@ helpviewer_keywords:
 - number of connection attempts
 - attempted connections
 ms.assetid: c59836a8-443c-4b9a-8b96-8863ada97ac7
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 48279ffe9c454a32545d28c7ed74556ba3f93157
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 0d8e3ee7fcdaf287ecb0919c8c3215c2adc6aec7
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88366928"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99184229"
 ---
 # <a name="x40x40connections-transact-sql"></a>&#x40;&#x40;CONNECTIONS (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "88366928"
   
 ## <a name="syntax"></a>構文  
   
-```sql
+```syntaxsql
 @@CONNECTIONS  
 ```  
 
@@ -64,8 +64,7 @@ SELECT GETDATE() AS 'Today''s Date and Time',
   
 [!INCLUDE[ssResult](../../includes/ssresult-md.md)]
   
-```sql
-  
+``` 
 Today's Date and Time  Login Attempts  
 ---------------------- --------------  
 12/5/2006 10:32:45 AM  211023         

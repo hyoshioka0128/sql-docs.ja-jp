@@ -9,12 +9,12 @@ ms.date: 04/17/2018
 ms.author: murshedz
 ms.reviewer: martinle
 ms.custom: seo-dt-2019
-ms.openlocfilehash: 4d28d64c4c59655c1f08eb0e4c6dc979a7814652
-ms.sourcegitcommit: 7345e4f05d6c06e1bcd73747a4a47873b3f3251f
+ms.openlocfilehash: ba4b4992b97cb930005458640215497f0487016f
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88778411"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641555"
 ---
 # <a name="t-sql-language-elements-for-parallel-data-warehouse"></a>Parallel Data Warehouse の t-sql 言語要素
 分析プラットフォームシステム (APS) の t-sql 言語要素 SQL Server 並列データウェアハウス (PDW)。
@@ -23,7 +23,7 @@ ms.locfileid: "88778411"
 * [構文表記規則](../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)
 * [オブジェクト名の規則](../relational-databases/databases/database-identifiers.md)
 * [予約済みキーワード](../t-sql/language-elements/reserved-keywords-transact-sql.md)
-* [照合順序](../t-sql/statements/collations.md?view=sql-server-ver15)
+* [照合順序](../t-sql/statements/collations.md)
 * [コメント](../t-sql/language-elements/comment-transact-sql.md)
 * [定数](../t-sql/data-types/constants-transact-sql.md)
 * [データ型](../t-sql/data-types/data-types-transact-sql.md)

@@ -1,6 +1,6 @@
 ---
 description: sys.geo_replication_links (Azure SQL Database)
-title: geo_replication_links (Azure SQL Database) |Microsoft Docs
+title: sys.geo_replication_links (Azure SQL Database) |Microsoft Docs
 ms.custom: ''
 ms.date: 01/28/2019
 ms.service: sql-database
@@ -15,15 +15,15 @@ helpviewer_keywords:
 - sys.dm_geo_replication_links dynamic management view
 - dm_geo_replication_links dynamic management view
 ms.assetid: 58911798-1d60-4f28-87ab-2def2bfc3de7
-author: markingmyname
-ms.author: maghan
-monikerRange: = azuresqldb-current || = sqlallproducts-allversions
-ms.openlocfilehash: 36849d6fc285839ebf99b75452735ddf5073f4ec
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: = azuresqldb-current
+ms.openlocfilehash: f10f318ebba5627957f1555b5979e8993f6f5e02
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89543752"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093904"
 ---
 # <a name="sysgeo_replication_links-azure-sql-database"></a>sys.geo_replication_links (Azure SQL Database)
 
@@ -34,8 +34,8 @@ ms.locfileid: "89543752"
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
 |database_id|**int**|データベースビュー内の現在のデータベースの ID。|  
-|start_date|**datetimeoffset**|データベースレプリケーションが開始されたときの地域 SQL Database データセンターでの UTC 時刻|  
-|modify_date|**datetimeoffset**|リージョン SQL Database データセンターでの UTC 時刻 (データベースの geo レプリケーションが完了したとき)。 この時点で、新しいデータベースがプライマリデータベースと同期されます。 .|  
+|start_date|**datetimeoffset**|データベースレプリケーションが開始されたときの地域 SQL Database データセンターでの UTC 時刻。|  
+|modify_date|**datetimeoffset**|リージョン SQL Database データセンターでの UTC 時刻 (データベースの geo レプリケーションが完了したとき)。 この時点で、新しいデータベースがプライマリデータベースと同期されます。|  
 |link_guid|**uniqueidentifier**|Geo レプリケーションリンクの一意の ID。|  
 |partner_server|**sysname**|Geo レプリケートされたデータベースを含む SQL Database サーバーの名前。|  
 |partner_database|**sysname**|リンクされた SQL Database サーバー上の geo レプリケートされたデータベースの名前。|  
@@ -68,6 +68,6 @@ FROM sys.geo_replication_links;
 
 ## <a name="see-also"></a>参照
 
- [ALTER DATABASE (Azure SQL Database)](../../t-sql/statements/alter-database-azure-sql-database.md)   
- [dm_geo_replication_link_status &#40;Azure SQL Database&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-geo-replication-link-status-azure-sql-database.md)   
- [dm_operation_status &#40;Azure SQL Database&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database.md)  
+ [ALTER DATABASE (Azure SQL Database)](../../t-sql/statements/alter-database-transact-sql.md)   
+ [sys.dm_geo_replication_link_status &#40;Azure SQL Database&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-geo-replication-link-status-azure-sql-database.md)   
+ [sys.dm_operation_status &#40;Azure SQL Database&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database.md)

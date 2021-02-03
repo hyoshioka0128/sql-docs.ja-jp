@@ -20,13 +20,13 @@ helpviewer_keywords:
 ms.assetid: 0cd467fb-3f22-471a-892c-0039d9f7fa1a
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 9842b304d6f6a57e501500f3b02153138010496b
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: d047aa77ca0587a26225f8c0b180d81a8e48fb2d
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88445640"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97462453"
 ---
 # <a name="replicate-transact-sql"></a>REPLICATE (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -57,14 +57,14 @@ REPLICATE ( string_expression , integer_expression )
  **bigint** を含む、整数型の式を指定します。 場合 *であれば、任意* は負の場合、NULL が返されます。  
   
 ## <a name="return-types"></a>戻り値の型  
- 同じ型を返します *string_expression*です。  
+ 同じ型を返します *string_expression* です。  
   
 ## <a name="examples"></a>例  
   
 ### <a name="a-using-replicate"></a>A. REPLICATE を使用する  
  次の例では、[!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] データベースの取り扱い品目コードの前に `0` という文字を 4 回繰り返します。  
   
-```  
+```sql
 SELECT [Name]  
 , REPLICATE('0', 4) + [ProductLine] AS 'Line Code'  
 FROM [Production].[Product]  
@@ -90,7 +90,7 @@ HL Touring Frame - Yellow, 50                      0000T
 ### <a name="b-using-replicate-and-datalength"></a>B. REPLICATE と DATALENGTH を使用する  
  次の例では、数値データ型から文字または Unicode に数値を変換するときに、その数値の左側を埋めて指定された長さにします。  
   
-```  
+```sql
 IF EXISTS(SELECT name FROM sys.tables  
       WHERE name = 't1')  
    DROP TABLE t1;  
@@ -128,7 +128,7 @@ Varchar Column        Char Column
 ### <a name="c-using-replicate"></a>C: REPLICATE を使用する  
  次の例では、`ItemCode` 値の前に `0` という文字を 4 回繰り返します。  
   
-```  
+```sql
 -- Uses AdventureWorks  
   
 SELECT EnglishProductName AS Name,  

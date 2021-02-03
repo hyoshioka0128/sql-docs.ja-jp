@@ -18,14 +18,14 @@ helpviewer_keywords:
 - CHECKSUM_AGG function
 - groups [SQL Server], checksum values
 ms.assetid: cdede70c-4eb5-4c92-98ab-b07787ab7222
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 6190b42e9e52f9f20e9ad645c0169f08dc7694a7
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 2bea0aad7839bc0b487b77b6ac1434396b84b765
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88311128"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102636"
 ---
 # <a name="checksum_agg-transact-sql"></a>CHECKSUM_AGG (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "88311128"
   
 ## <a name="syntax"></a>構文  
   
-```sql
+```syntaxsql
 CHECKSUM_AGG ( [ ALL | DISTINCT ] expression )  
 ```  
   
@@ -53,7 +53,7 @@ DISTINCT
 整数[式](../../t-sql/language-elements/expressions-transact-sql.md)です。 `CHECKSUM_AGG` では、サブクエリまたは集計関数の使用は許可されません。
   
 ## <a name="return-types"></a>戻り値の型
-すべてのチェックサムを返します *式* 値としての **int**です。
+すべてのチェックサムを返します *式* 値としての **int** です。
   
 ## <a name="remarks"></a>注釈  
 `CHECKSUM_AGG` は、テーブルの変更を検出できます。
@@ -70,7 +70,7 @@ DISTINCT
 ```sql
 --Get the checksum value before the column value is changed.  
 
-SELECT CHECKSUM_AGG(CAST(Quantity AS int))  
+SELECT CHECKSUM_AGG(CAST(Quantity AS INT))  
 FROM Production.ProductInventory;  
 GO  
 ```  
@@ -89,7 +89,7 @@ WHERE Quantity=100;
 GO  
 
 --Get the checksum of the modified column.  
-SELECT CHECKSUM_AGG(CAST(Quantity AS int))  
+SELECT CHECKSUM_AGG(CAST(Quantity AS INT))  
 FROM Production.ProductInventory;  
 ```  
   

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sp_addrolemember_TSQL
 - sp_addrolemember
@@ -18,13 +18,13 @@ helpviewer_keywords:
 ms.assetid: a583c087-bdb3-46d2-b9e5-3921b3e6d10b
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 59193e08c71a7827e347be5b06bbe4cc81ffa826
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: e9b0049c38a2e94f250dd3e6dc5a350a03ef89c4
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88486360"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99210069"
 ---
 # <a name="sp_addrolemember-transact-sql"></a>sp_addrolemember (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -41,13 +41,15 @@ ms.locfileid: "88486360"
 ```syntaxsql
 sp_addrolemember [ @rolename = ] 'role', [ @membername = ] 'security_account'  
 ```    
+
+[!INCLUDE[synapse-analytics-od-unsupported-syntax](../../includes/synapse-analytics-od-unsupported-syntax.md)]
   
 ## <a name="arguments"></a>引数  
  [ @rolename =] '*role*'  
- 現在のデータベースのデータベースロールの名前を指定します。 *role* は **sysname**で、既定値はありません。  
+ 現在のデータベースのデータベースロールの名前を指定します。 *role* は **sysname** で、既定値はありません。  
   
  [ @membername =] '*security_account*'  
- ロールに追加するセキュリティアカウントを示します。 *security_account* は **sysname**であり、既定値はありません。 *security_account* には、データベースユーザー、データベースロール、windows ログイン、または windows グループを指定できます。  
+ ロールに追加するセキュリティアカウントを示します。 *security_account* は **sysname** であり、既定値はありません。 *security_account* には、データベースユーザー、データベースロール、windows ログイン、または windows グループを指定できます。  
   
 ## <a name="return-code-values"></a>リターン コードの値  
  0 (成功) または 1 (失敗)  
@@ -68,7 +70,7 @@ sp_addrolemember [ @rolename = ] 'role', [ @membername = ] 'security_account'
   
 -   ロールを所有するロールのメンバーシップ  
   
--   ロールに対する**ALTER ANY role**権限または**alter**権限。  
+-   ロールに対する **ALTER ANY role** 権限または **alter** 権限。  
   
  固定データベースロールにメンバーを追加するには、db_owner 固定データベースロールのメンバーシップが必要です。  
   
@@ -118,11 +120,11 @@ EXEC sp_addrolemember 'Production', 'UserMary'
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [セキュリティストアドプロシージャ &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/security-stored-procedures-transact-sql.md)   
- [sp_addsrvrolemember &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-addsrvrolemember-transact-sql.md)   
+ [セキュリティ ストアド プロシージャ &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/security-stored-procedures-transact-sql.md)   
+ [sp_addsrvrolemember &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-addsrvrolemember-transact-sql.md)   
  [sp_droprolemember &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-droprolemember-transact-sql.md)   
- [sp_grantdbaccess &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-grantdbaccess-transact-sql.md)   
- [システムストアドプロシージャ &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/system-stored-procedures-transact-sql.md)   
+ [sp_grantdbaccess &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-grantdbaccess-transact-sql.md)   
+ [システム ストアド プロシージャ &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/system-stored-procedures-transact-sql.md)   
  [データベース レベルのロール](../../relational-databases/security/authentication-access/database-level-roles.md)  
   
   

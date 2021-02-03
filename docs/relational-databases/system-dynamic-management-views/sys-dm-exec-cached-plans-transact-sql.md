@@ -1,13 +1,13 @@
 ---
-description: dm_exec_cached_plans (Transact-sql)
-title: dm_exec_cached_plans (Transact-sql) |Microsoft Docs
+description: sys.dm_exec_cached_plans (Transact-sql)
+title: sys.dm_exec_cached_plans (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 09/18/2017
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_exec_cached_plans
 - dm_exec_cached_plans
@@ -18,17 +18,17 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_exec_cached_plans dynamic management view
 ms.assetid: 95b707d3-3a93-407f-8e88-4515d4f2039d
-author: markingmyname
-ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 02e10051c13f55b703e0f45ab2b657d7f0d66230
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 37855613cdb51a23546bf2ef199b3810d23c5a9a
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542204"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99106906"
 ---
-# <a name="sysdm_exec_cached_plans-transact-sql"></a>dm_exec_cached_plans (Transact-sql)
+# <a name="sysdm_exec_cached_plans-transact-sql"></a>sys.dm_exec_cached_plans (Transact-sql)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
   クエリ実行を高速化するため [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] でキャッシュされた各クエリ プランについての行を返します。 この動的管理ビューを使用して、キャッシュされたクエリ プラン、キャッシュされたクエリ テキスト、キャッシュされたプランが確保するメモリの量、およびキャッシュされたプランの再利用回数を参照できます。  
@@ -36,7 +36,7 @@ ms.locfileid: "89542204"
  [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] では、動的管理ビューは、データベースの包含に影響する情報を公開することも、ユーザーがアクセスできる他のデータベースに関する情報を公開することもできません。 この情報を公開しないように、接続されたテナントに属していないデータを含むすべての行がフィルターで除外されます。さらに、列 **memory_object_address** および **pool_id** の値はフィルター処理されます。列の値が NULL に設定されています。  
   
 > [!NOTE]  
->  またはからこれを呼び出すに [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] は [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] 、 **dm_pdw_nodes_exec_cached_plans**という名前を使用します。  
+>  またはからこれを呼び出すに [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] は [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] 、 **sys.dm_pdw_nodes_exec_cached_plans** という名前を使用します。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
@@ -46,7 +46,7 @@ ms.locfileid: "89542204"
 |size_in_bytes|**int**|キャッシュ オブジェクトによって使用されたバイト数。|  
 |memory_object_address|**varbinary (8)**|キャッシュ エントリのメモリ アドレス。 この値は、[sys.dm_os_memory_objects](../../relational-databases/system-dynamic-management-views/sys-dm-os-memory-objects-transact-sql.md) と併用してキャッシュされたプランのメモリ内訳を取得したり、[sys.dm_os_memory_cache_entries](../../relational-databases/system-dynamic-management-views/sys-dm-os-memory-cache-entries-transact-sql.md) と併用してエントリをキャッシュするコストを取得したりできます。|  
 |cacheobjtype|**nvarchar (34)**|キャッシュ内のオブジェクトの種類。 値は次のいずれかになります。<br /><br /> Compiled Plan<br /><br /> Compiled Plan Stub<br /><br /> Parse Tree<br /><br /> Extended Proc<br /><br /> CLR Compiled Func<br /><br /> CLR Compiled Proc|  
-|objtype|**nvarchar (16)**|オブジェクトの種類。 有効な値とそれに対応する説明を次に示します。<br /><br /> Proc: ストアドプロシージャ<br />準備完了: 準備されたステートメント<br />アドホック: アドホッククエリ。 [!INCLUDE[tsql](../../includes/tsql-md.md)]リモートプロシージャ呼び出しとしてではなく**osql**または**sqlcmd**を使用して、言語イベントとして送信されたを示します。<br />ReplProc: レプリケーション-フィルター-プロシージャ<br />トリガー: トリガー<br />ビュー: 表示<br />既定値: 既定<br />UsrTab: User テーブル<br />SysTab: システムテーブル<br />Check: CHECK 制約<br />ルール: ルール|  
+|objtype|**nvarchar (16)**|オブジェクトの種類。 有効な値とそれに対応する説明を次に示します。<br /><br /> Proc: ストアドプロシージャ<br />準備完了: 準備されたステートメント<br />アドホック: アドホッククエリ。 [!INCLUDE[tsql](../../includes/tsql-md.md)]リモートプロシージャ呼び出しとしてではなく **osql** または **sqlcmd** を使用して、言語イベントとして送信されたを示します。<br />ReplProc: レプリケーション-フィルター-プロシージャ<br />トリガー: トリガー<br />ビュー: 表示<br />既定値: 既定<br />UsrTab: User テーブル<br />SysTab: システムテーブル<br />Check: CHECK 制約<br />ルール: ルール|  
 |plan_handle|**varbinary(64)**|インメモリ プランの識別子。 この識別子は一時的なもので、プランがキャッシュに残っている間だけ一定の値になります。 この値は、次の動的管理関数で使用できます。<br /><br /> [sys.dm_exec_sql_text](../../relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql.md)<br /><br /> [sys.dm_exec_query_plan](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-transact-sql.md)<br /><br /> [sys.dm_exec_plan_attributes](../../relational-databases/system-dynamic-management-views/sys-dm-exec-plan-attributes-transact-sql.md)|  
 |pool_id|**int**|このプランのメモリ使用量の大部分を占めるリソース プールの ID。|  
 |pdw_node_id|**int**|**適用対象**: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] 、 [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]<br /><br /> このディストリビューションが配置されているノードの識別子。|  
@@ -56,7 +56,7 @@ ms.locfileid: "89542204"
 ## <a name="permissions"></a>アクセス許可
 
 で [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] は、 `VIEW SERVER STATE` 権限が必要です。   
-[!INCLUDE[ssSDS_md](../../includes/sssds-md.md)]Premium レベルでは、データベースの権限が必要です `VIEW DATABASE STATE` 。 [!INCLUDE[ssSDS_md](../../includes/sssds-md.md)]Standard レベルおよび Basic レベルでは、**サーバー管理**者または**Azure Active Directory 管理者**アカウントが必要です。   
+SQL Database Basic、S0、S1 のサービス目標、およびエラスティックプール内のデータベースについて `Server admin` は、または `Azure Active Directory admin` アカウントが必要です。 その他のすべての SQL Database サービスの目的で `VIEW DATABASE STATE` は、データベースで権限が必要になります。   
 
 ## <a name="examples"></a>例  
   
@@ -84,7 +84,7 @@ GO
 ```  
   
 ### <a name="c-returning-the-set-options-with-which-the-plan-was-compiled"></a>C. プランがコンパイルされた SET オプションを取得する  
- 次の例は、プランをコンパイルした SET オプションを返します。 `sql_handle`プランのも返されます。 PIVOT 演算子は、 `set_options` `sql_handle` 属性と属性を行ではなく列として出力するために使用されます。 で返される値の詳細については `set_options` 、「 [sys. Dm_exec_plan_attributes &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-plan-attributes-transact-sql.md)」を参照してください。  
+ 次の例は、プランをコンパイルした SET オプションを返します。 `sql_handle`プランのも返されます。 PIVOT 演算子は、 `set_options` `sql_handle` 属性と属性を行ではなく列として出力するために使用されます。 で返される値の詳細については `set_options` 、「 [Sys.dm_exec_plan_attributes &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-plan-attributes-transact-sql.md)」を参照してください。  
   
 ```sql  
 SELECT plan_handle, pvt.set_options, pvt.sql_handle  
@@ -115,11 +115,11 @@ GO
 ## <a name="see-also"></a>参照  
  [動的管理ビューと動的管理関数 &#40;Transact-SQL&#41;](~/relational-databases/system-dynamic-management-views/system-dynamic-management-views.md)   
  [実行関連の動的管理ビューおよび関数 &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/execution-related-dynamic-management-views-and-functions-transact-sql.md)   
- [dm_exec_query_plan &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-transact-sql.md)   
- [dm_exec_plan_attributes &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-plan-attributes-transact-sql.md)   
- [dm_exec_sql_text &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql.md)   
- [dm_os_memory_objects &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-memory-objects-transact-sql.md)   
- [dm_os_memory_cache_entries &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-memory-cache-entries-transact-sql.md)   
+ [sys.dm_exec_query_plan &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-transact-sql.md)   
+ [sys.dm_exec_plan_attributes &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-plan-attributes-transact-sql.md)   
+ [sys.dm_exec_sql_text &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql.md)   
+ [sys.dm_os_memory_objects &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-memory-objects-transact-sql.md)   
+ [sys.dm_os_memory_cache_entries &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-memory-cache-entries-transact-sql.md)   
  [FROM &#40;Transact-SQL&#41;](../../t-sql/queries/from-transact-sql.md)  
   
   

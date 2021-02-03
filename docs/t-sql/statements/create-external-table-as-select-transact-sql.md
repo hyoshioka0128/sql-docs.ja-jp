@@ -20,13 +20,13 @@ helpviewer_keywords:
 ms.assetid: 32dfe254-6df7-4437-bfd6-ca7d37557b0a
 author: ronortloff
 ms.author: rortloff
-monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest || = sqlallproducts-allversions'
-ms.openlocfilehash: 14f329396794d3bfd0384a4888e705e9e31a498b
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
+ms.openlocfilehash: 9c97ee3e1f268553a828e035498b203c8fa1e747
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88862093"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97438947"
 ---
 # <a name="create-external-table-as-select-transact-sql"></a>CREATE EXTERNAL TABLE AS SELECT (Transact-SQL)
 [!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
@@ -37,8 +37,7 @@ ms.locfileid: "88862093"
 
 ## <a name="syntax"></a>構文
 
-```syntaxsql
-  
+```syntaxsql 
 CREATE EXTERNAL TABLE [ [database_name  . [ schema_name ] . ] | schema_name . ] table_name   
     WITH (   
         LOCATION = 'hdfs_folder',  
@@ -72,7 +71,7 @@ CREATE EXTERNAL TABLE [ [database_name  . [ schema_name ] . ] | schema_name . ] 
 
  **FILE_FORMAT = *external_file_format_name*** には、外部データ ファイルの形式を含む、外部ファイル形式オブジェクトの名前を指定します。 外部ファイル形式を作成するには、[CREATE EXTERNAL FILE FORMAT &#40;Transact-SQL&#41;](../../t-sql/statements/create-external-file-format-transact-sql.md) を使用します。
 
- この CREATE EXTERNAL TABLE AS SELECT ステートメントの実行時に、**REJECT オプション**は適用されません。 代わりに、ここで指定し、後で外部テーブルからデータをインポートする際に、データベースで使用できるようにします。 後で CREATE TABLE AS SELECT ステートメントで外部テーブルからデータを選択するときに、データベースでは拒否オプションを使用して、インポートを停止するまでにインポートの失敗が許容される行の数または割合を決定します。
+ この CREATE EXTERNAL TABLE AS SELECT ステートメントの実行時に、**REJECT オプション** は適用されません。 代わりに、ここで指定し、後で外部テーブルからデータをインポートする際に、データベースで使用できるようにします。 後で CREATE TABLE AS SELECT ステートメントで外部テーブルからデータを選択するときに、データベースでは拒否オプションを使用して、インポートを停止するまでにインポートの失敗が許容される行の数または割合を決定します。
 
    - **REJECT_VALUE = *reject_value*** には、インポートに失敗することができる行の値または割合を指定します。これを超えると、データベースのインポートが停止されます。
 
@@ -107,7 +106,7 @@ CREATE EXTERNAL TABLE [ [database_name  . [ schema_name ] . ] | schema_name . ] 
 
 ## <a name="permissions"></a>アクセス許可
 
- このコマンドを実行するには、*データベース ユーザー*は以下のすべての権限またはメンバーシップが必要です。
+ このコマンドを実行するには、*データベース ユーザー* は以下のすべての権限またはメンバーシップが必要です。
 
 - **db_ddladmin** 固定データベース ロールの新しいテーブルまたはメンバーシップを含む、ローカル スキーマに対する **ALTER SCHEMA** 権限。
 - **db_ddladmin** 固定データベース ロールの **CREATE TABLE** 権限またはメンバーシップ。
@@ -118,7 +117,7 @@ CREATE EXTERNAL TABLE [ [database_name  . [ schema_name ] . ] | schema_name . ] 
 - **ADMINISTER BULK OPERATIONS**
 - **ALTER ANY EXTERNAL DATA SOURCE**
 - **ALTER ANY EXTERNAL FILE FORMAT**
-- Hadoop クラスターまたは BLOB ストレージで外部フォルダーを読み取りおよび書き込みを行うための**書き込み**権限。
+- Hadoop クラスターまたは BLOB ストレージで外部フォルダーを読み取りおよび書き込みを行うための **書き込み** 権限。
 
  > [!IMPORTANT]
  >  ALTER ANY EXTERNAL DATA SOURCE 権限は、あらゆる外部データ ソース オブジェクトを作成し、変更する能力をプリンシパルに与えます。そのため、データベース上のすべてのデータベース スコープ資格情報にアクセスする能力も与えます。 この権限は特権として考える必要があり、システム内の信頼できるプリンシパルにのみ与える必要があります。
@@ -137,7 +136,7 @@ CREATE EXTERNAL TABLE [ [database_name  . [ schema_name ] . ] | schema_name . ] 
 
  外部テーブルの名前と定義は、データベースのメタデータに格納されます。 データは外部データ ソースに格納されます。
 
- 外部ファイルの名前は *QueryID_date_time_ID.format*です ( *ID* は増分識別子、 *format* はエクスポートされるデータ形式)。 たとえば、QID776_20160130_182739_0.orc です。
+ 外部ファイルの名前は *QueryID_date_time_ID.format* です ( *ID* は増分識別子、 *format* はエクスポートされるデータ形式)。 たとえば、QID776_20160130_182739_0.orc です。
 
  CREATE EXTERNAL TABLE AS SELECT ステートメントを使用すると、ソース テーブルがパーティション分割されている場合でも、常にパーティション分割されていないテーブルが作成されます。
 
@@ -176,7 +175,7 @@ Parquet または ORC ファイルに対する CREATE EXTERNAL TABLE AS SELECT �
 - /r
 - /n
 
-これらの文字が含まれる CREATE EXTERNAL TABLE AS SELECT を使用するには、最初にデータに CREATE EXTERNAL TABLE AS SELECT を実行して区切りテキストファイルを作成する必要があり、その後は外部ツールを使用して Parquet または ORC に変換することができます。
+これらの文字が含まれる CREATE EXTERNAL TABLE AS SELECT を使用するには、最初にデータに CREATE EXTERNAL TABLE AS SELECT ステートメントを実行してデータを区切りテキストファイルにエクスポートする必要があり、その後は外部ツールを使用して Parquet または ORC に変換することができます。
 
 ## <a name="locking"></a>ロック
  SCHEMARESOLUTION オブジェクトの共有ロックを取得します。
@@ -198,9 +197,8 @@ Parquet または ORC ファイルに対する CREATE EXTERNAL TABLE AS SELECT �
 
  結果の Hadoop の場所とファイル名は `hdfs:// xxx.xxx.xxx.xxx:5000/files/Customer/ QueryID_YearMonthDay_HourMinutesSeconds_FileIndex.txt.` です。
 
-```  
-  
-      -- Example is based on AdventureWorks   
+```sql  
+-- Example is based on AdventureWorks   
 CREATE EXTERNAL TABLE hdfsCustomer  
 WITH (  
         LOCATION='/pdwdata/customer.tbl',  
@@ -216,9 +214,8 @@ WITH (
 > [!NOTE]
 >  この例では 5000 に指定されています。 ポートが指定されていない場合、データベースは既定のポートとして 8020 を使用します。
 
-```  
-  
-      -- Example is based on AdventureWorks  
+```sql  
+-- Example is based on AdventureWorks  
 CREATE EXTERNAL TABLE dbo.FactInternetSalesNew  
 WITH   
     (   
@@ -235,8 +232,8 @@ OPTION ( HASH JOIN );
  - [CREATE EXTERNAL DATA SOURCE &#40;Transact-SQL&#41;](../../t-sql/statements/create-external-data-source-transact-sql.md)
  - [CREATE EXTERNAL FILE FORMAT &#40;Transact-SQL&#41;](../../t-sql/statements/create-external-file-format-transact-sql.md)
  - [CREATE EXTERNAL TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/create-external-table-transact-sql.md)
- - [CREATE TABLE &#40;Azure SQL Data Warehouse、Parallel Data Warehouse&#41;](~/t-sql/statements/create-table-azure-sql-data-warehouse.md)
- - [CREATE TABLE AS SELECT &#40;Azure SQL Data Warehouse&#41;](../../t-sql/statements/create-table-as-select-azure-sql-data-warehouse.md)
+ - [CREATE TABLE &#40;Azure Synapse Analytics、Parallel Data Warehouse&#41;](~/t-sql/statements/create-table-azure-sql-data-warehouse.md)
+ - [CREATE TABLE AS SELECT &#40;Azure Synapse Analytics&#41;](../../t-sql/statements/create-table-as-select-azure-sql-data-warehouse.md)
  - [DROP TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/drop-table-transact-sql.md)
  - [ALTER TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/alter-table-transact-sql.md)
 

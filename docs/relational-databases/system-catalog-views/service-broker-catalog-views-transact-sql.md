@@ -7,21 +7,21 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
 - Service Broker, catalog views
 - catalog views [SQL Server], Service Broker
 ms.assetid: 00682b5e-4720-422e-a5ec-4a96f26e1300
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: c665bf8042c4f9d7b7cadcae6201169627099869
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 9e4a4fc8f96375971d0e1edf30ed1be1758e094b
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542693"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99181333"
 ---
 # <a name="service-broker-catalog-views-transact-sql"></a>Service Broker カタログ ビュー (Transact-SQL)
 [!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "89542693"
         
         [sys.conversation_priorities &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-conversation-priorities-transact-sql.md)
         
-        [message_type_xml_schema_collection_usages &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-message-type-xml-schema-collection-usages-transact-sql.md)
+        [sys.message_type_xml_schema_collection_usages &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-message-type-xml-schema-collection-usages-transact-sql.md)
         
         [sys.remote_service_bindings](../../relational-databases/system-catalog-views/sys-remote-service-bindings-transact-sql.md)
         
@@ -47,7 +47,7 @@ ms.locfileid: "89542693"
     :::column:::
         [sys.service_contract_usages](../../relational-databases/system-catalog-views/sys-service-contract-usages-transact-sql.md)
         
-        [service_contracts &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-service-contracts-transact-sql.md)
+        [sys.service_contracts &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-service-contracts-transact-sql.md)
         
         [sys.service_message_types](../../relational-databases/system-catalog-views/sys-service-message-types-transact-sql.md)
         
@@ -63,8 +63,7 @@ ms.locfileid: "89542693"
   
 ## <a name="see-also"></a>参照  
  [カタログ ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)   
- [システムビュー &#40;Transact-sql&#41;](https://msdn.microsoft.com/library/35a6161d-7f43-4e00-bcd3-3091f2015e90)   
- [service_broker_endpoints &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-service-broker-endpoints-transact-sql.md)   
+ [システムビュー &#40;Transact-sql&#41;](../../t-sql/language-reference.md)   
+ [sys.service_broker_endpoints &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-service-broker-endpoints-transact-sql.md)   
  [sys.service_queues &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-service-queues-transact-sql.md)  
-  
   

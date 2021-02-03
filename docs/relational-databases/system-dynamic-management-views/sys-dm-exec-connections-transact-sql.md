@@ -1,13 +1,13 @@
 ---
-description: dm_exec_connections (Transact-sql)
-title: dm_exec_connections (Transact-sql) |Microsoft Docs
+description: sys.dm_exec_connections (Transact-sql)
+title: sys.dm_exec_connections (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 11/16/2017
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - dm_exec_connections_TSQL
 - sys.dm_exec_connections_TSQL
@@ -18,23 +18,23 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_exec_connections dynamic management view
 ms.assetid: 6bd46fe1-417d-452d-a9e6-5375ee8690d8
-author: markingmyname
-ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 9f9885ce0232b9fc36cbcec48ed17d16b54f4f57
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: efc81c962d28ece5948b04e6b7fa51fe0bbab750
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89546652"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99160098"
 ---
-# <a name="sysdm_exec_connections-transact-sql"></a>dm_exec_connections (Transact-sql)
+# <a name="sysdm_exec_connections-transact-sql"></a>sys.dm_exec_connections (Transact-sql)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
   このインスタンスの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] との間に確立された接続に関する情報と各接続の詳細を返します。 SQL Server のサーバー全体の接続情報を返します。 SQL Database の現在のデータベース接続情報を返します。  
   
 > [!NOTE]
-> またはからこれを呼び出すに [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] は [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] 、 [dm_pdw_exec_connections &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-connections-transact-sql.md)を使用します。  
+> またはからこれを呼び出すに [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)] は [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] 、 [sys.dm_pdw_exec_connections &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-connections-transact-sql.md)を使用します。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
@@ -65,7 +65,7 @@ ms.locfileid: "89546652"
 ## <a name="permissions"></a>アクセス許可
 
 で [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] は、 `VIEW SERVER STATE` 権限が必要です。   
-[!INCLUDE[ssSDS_md](../../includes/sssds-md.md)]Premium レベルでは、データベースの権限が必要です `VIEW DATABASE STATE` 。 [!INCLUDE[ssSDS_md](../../includes/sssds-md.md)]Standard レベルおよび Basic レベルでは、**サーバー管理**者または**Azure Active Directory 管理者**アカウントが必要です。   
+SQL Database Basic、S0、S1 のサービス目標、およびエラスティックプール内のデータベースについて `Server admin` は、または `Azure Active Directory admin` アカウントが必要です。 その他のすべての SQL Database サービスの目的で `VIEW DATABASE STATE` は、データベースで権限が必要になります。   
 
 ## <a name="physical-joins"></a>物理結合  
  ![sys.dm_exec_connections の結合](../../relational-databases/system-dynamic-management-views/media/join-dm-exec-connections-1.gif "sys.dm_exec_connections の結合")  
@@ -74,7 +74,7 @@ ms.locfileid: "89546652"
   
 | 最初の要素 | 2番目の要素 | リレーションシップ |
 | --------------| -------------- | ------------ |  
-|dm_exec_sessions。 session_id|dm_exec_connections.session_id|一対一|  
+|dm_exec_sessions dm_exec_sessions.session_id|dm_exec_connections.session_id|一対一|  
 |dm_exec_requests.connection_id|dm_exec_connections.connection_id|多対一|  
 |dm_broker_connections.connection_id|dm_exec_connections.connection_id|1対1|  
   

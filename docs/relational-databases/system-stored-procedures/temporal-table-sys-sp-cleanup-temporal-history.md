@@ -1,6 +1,6 @@
 ---
-description: sp_cleanup_temporal_history (Transact-sql)
-title: sys. sp_cleanup_temporal_history |Microsoft Docs
+description: sys.sp_cleanup_temporal_history (Transact-sql)
+title: sys.sp_cleanup_temporal_history |Microsoft Docs
 ms.custom: ''
 ms.date: 03/04/2017
 ms.service: sql-database
@@ -9,15 +9,15 @@ ms.topic: conceptual
 ms.assetid: 6eff30b4-b261-4f1f-b93c-1f69d754298d
 author: markingmyname
 ms.author: maghan
-monikerRange: = azuresqldb-current || = sqlallproducts-allversions
-ms.openlocfilehash: 3b47fd6b0ee5a06ae1ce585f583a699a530e350b
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+monikerRange: = azuresqldb-current
+ms.openlocfilehash: e4afeb9f30040cf576a35b1b822bf5292752c148
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545795"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97427191"
 ---
-# <a name="syssp_cleanup_temporal_history-transact-sql"></a>sp_cleanup_temporal_history (Transact-sql)
+# <a name="syssp_cleanup_temporal_history-transact-sql"></a>sys.sp_cleanup_temporal_history (Transact-sql)
 
 [!INCLUDE[Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/asdb-asdbmi.md)]
 
@@ -54,7 +54,7 @@ sp_cleanup_temporal_history [@schema_name = ] schema_name, [@table_name = ] tabl
 
 ## <a name="permissions"></a>アクセス許可
 
-Db_owner のアクセス許可が必要です。
+db_owner のアクセス許可が必要です。
 
 ## <a name="example"></a>例
 
@@ -66,4 +66,4 @@ select @rowcnt
 
 ## <a name="next-steps"></a>次のステップ
 
-[テンポラルテーブルのリテンション期間ポリシー](https://docs.microsoft.com/azure/sql-database/sql-database-temporal-tables-retention-policy)
+[テンポラルテーブルのリテンション期間ポリシー](/azure/sql-database/sql-database-temporal-tables-retention-policy)

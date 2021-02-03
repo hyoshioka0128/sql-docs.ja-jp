@@ -1,21 +1,21 @@
 ---
 description: sys.dm_column_encryption_enclave (Transact-SQL)
-title: dm_column_encryption_enclave (Transact-sql) |Microsoft Docs
+title: sys.dm_column_encryption_enclave (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 10/11/2019
 ms.prod: sql
 ms.reviewer: vanto
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 author: jaszymas
 ms.author: jaszymas
-monikerRange: '>= sql-server-ver15 || = sqlallproducts-allversions'
-ms.openlocfilehash: 480215cc2157887eedbafd7a5cf4368f03e65c93
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>= sql-server-ver15'
+ms.openlocfilehash: 402c5f6703a8639c1fbedc645da54ae821162bcd
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88423286"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99200338"
 ---
 # <a name="sysdm_column_encryption_enclave-transact-sql"></a>sys.dm_column_encryption_enclave (Transact-SQL)
 [!INCLUDE [sqlserver2019-windows-only](../../includes/applies-to-version/sqlserver2019-windows-only.md)]

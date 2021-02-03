@@ -14,13 +14,13 @@ dev_langs:
 - TSQL
 author: joesackmsft
 ms.author: josack
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: e77c9cb851921db306e52594b49d472902f36563
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 3215ba0a2acc1db2a3625ea176ddda4dd5ef0506
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88417528"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97482064"
 ---
 # <a name="approx_count_distinct-transact-sql"></a>APPROX_COUNT_DISTINCT (Transact-SQL)
 
@@ -32,9 +32,7 @@ ms.locfileid: "88417528"
   
 ## <a name="syntax"></a>構文  
   
-```sql
--- Syntax for Azure SQL Database, Azure SQL Data Warehouse and Parallel Data Warehouse  
-
+```syntaxsql
 APPROX_COUNT_DISTINCT ( expression )   
 ```  
   
@@ -42,7 +40,7 @@ APPROX_COUNT_DISTINCT ( expression )
 
 ## <a name="arguments"></a>引数
 *式 (expression)*  
-**image**、**sql_variant**、**ntext**、**text** を除く、任意の型の[式](../../t-sql/language-elements/expressions-transact-sql.md)です。 
+**image**、**sql_variant**、**ntext**、**text** を除く、任意の型の [式](../../t-sql/language-elements/expressions-transact-sql.md)です。 
 
 ## <a name="return-types"></a>戻り値の型
  **bigint**  

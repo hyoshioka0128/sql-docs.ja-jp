@@ -8,14 +8,14 @@ ms.reviewer: ''
 ms.technology: install
 ms.topic: conceptual
 ms.assetid: 463c570e-9f75-4653-b3b8-4d61753b0013
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 0d0532f2705a926cc9395e62759aef3eb1dc9f69
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: b542b33ee1dc4bf849131f90be0316c32b386879
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85858670"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98765870"
 ---
 # <a name="file-locations-for-default-and-named-instances-of-sql-server"></a>SQL Server の既定のインスタンスおよび名前付きインスタンスのファイルの場所
 [!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
@@ -42,7 +42,7 @@ ms.locfileid: "85858670"
 |-----|-----|--------|
 |[!INCLUDE[ssqlv15](../../includes/sssqlv15-md.md)]| 150| 15| 
 |[!INCLUDE[ssqlv14](../../includes/sssqlv14-md.md)]| 140| 14| 
-|[!INCLUDE[ssqlv13](../../includes/sssql15-md.md)]| 130| 13 | 
+|[!INCLUDE[ssqlv13](../../includes/sssql16-md.md)]| 130| 13 | 
 |[!INCLUDE[ssqlv12](../../includes/sssql14-md.md)]  | 120|12 | 
 |[!INCLUDE[sssql11](../../includes/sssql11-md.md)] | 110|11 | 
   
@@ -59,14 +59,14 @@ ms.locfileid: "85858670"
   
  このリリースの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] における既定のインスタンス ID の例を次に示します。  
   
--   [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] の既定のインスタンスの場合: MSSQL\{nn}.MSSQLSERVER。  
+-   [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] の既定のインスタンスの場合: MSSQL\{nn}.MSSQLSERVER。  
   
 -   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Analysis Services の既定のインスタンスの場合: MSAS\{nn}.MSSQLSERVER。  
   
--   "MyInstance" という名前の [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] インスタンスの場合: MSSQL\{nn}.MyInstance。  
+-   "MyInstance" という名前の [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] インスタンスの場合: MSSQL\{nn}.MyInstance。  
   
 
- [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] および [!INCLUDE[ssDE](../../includes/ssde-md.md)] を含み、名前が "MyInstance" で、インストール先が既定のディレクトリである [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)]の名前付きインスタンスの場合、ディレクトリ構造は次のようになります。  
+ [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] および [!INCLUDE[ssDE](../../includes/ssde-md.md)] を含み、名前が "MyInstance" で、インストール先が既定のディレクトリである [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)]の名前付きインスタンスの場合、ディレクトリ構造は次のようになります。  
   
 -   C:\Program Files\Microsoft SQL Server\MSSQL\{nn}.MyInstance\  
   
@@ -123,7 +123,7 @@ ms.locfileid: "85858670"
 > [!WARNING]
 > \Program Files\\[!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]\ フォルダーがアクセス許可の制限により保護されていることを確認してください。  
   
-ファイルの場所の既定のドライブは *systemdrive*で、通常は C ドライブです。子機能のインストール パスは、親機能のインストール パスと同じになります。  
+ファイルの場所の既定のドライブは *systemdrive* で、通常は C ドライブです。子機能のインストール パスは、親機能のインストール パスと同じになります。  
   
 <sup>1</sup> 1 つのインストール パスが [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] とクライアント コンポーネントの間で共有されます。 1 つのコンポーネントのインストール パスを変更すると、他のコンポーネントのパスも変更されます。 後続のインストールでは、最初のインストールと同じ場所にコンポーネントがインストールされます。  
   
@@ -142,7 +142,6 @@ ms.locfileid: "85858670"
 >  データ ファイルは、常に、Data という名前の子ディレクトリに格納されているものと見なされます。 たとえば、データ ファイルが C:\Program Files\\[!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]\MSSQL\{nn}.\<InstanceName>\MSSQL\Data にある場合、アップグレード時に、システム データベースのデータ ディレクトリのルート パスとして C:\Program Files\\[!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]\MSSQL\{nn}.\<InstanceName>\ を指定します。  
   
 ## <a name="see-also"></a>参照  
- [データベース エンジンの構成 - データ ディレクトリ](https://msdn.microsoft.com/library/9b1fa0fc-623b-479a-afc3-4f13bd850487)   
- [Analysis Services の構成 - データ ディレクトリ](https://msdn.microsoft.com/library/ef732855-b7af-4f40-a619-5573c1c354bb)  
-  
+ [データベース エンジンの構成 - データ ディレクトリ](../../database-engine/install-windows/install-sql-server.md)   
+ [Analysis Services の構成 - データ ディレクトリ](../../database-engine/install-windows/install-sql-server.md)  
   

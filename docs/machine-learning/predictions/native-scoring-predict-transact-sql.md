@@ -4,18 +4,18 @@ titleSuffix: SQL machine learning
 description: PREDICT T-SQL 関数でネイティブ スコアリングを使用して、ほぼリアルタイムで新しいデータ入力の予測値を生成する方法について説明します。
 ms.prod: sql
 ms.technology: machine-learning
-ms.date: 06/26/2020
+ms.date: 07/29/2020
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2017||=azuresqldb-current||>=sql-server-linux-2017||=azuresqldb-mi-current||=azure-sqldw-latest||=sqlallproducts-allversions'
-ms.openlocfilehash: 9335e8e9979b09aad070de7bd55c1e61a04488fa
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+monikerRange: '>=sql-server-2017||=azuresqldb-current||>=sql-server-linux-2017||=azuresqldb-mi-current||=azure-sqldw-latest'
+ms.openlocfilehash: 842daa6574dc660346733e7b74b539eba5c7f7b0
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87242342"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471033"
 ---
 # <a name="native-scoring-using-the-predict-t-sql-function-with-sql-machine-learning"></a>SQL 機械学習で PREDICT T-SQL 関数を使用したネイティブ スコアリング
 
@@ -60,18 +60,18 @@ ms.locfileid: "87242342"
 | Azure SQL Edge | はい | いいえ |
 | Azure Synapse Analytics | はい | いいえ |
 
-::: moniker range="=azuresqldb-mi-current||=azure-sqldw-latest||=sqlallproducts-allversions"
+::: moniker range="=azuresqldb-mi-current||=azure-sqldw-latest"
 ### <a name="onnx-models"></a>ONNX モデル
 
 このモデルは、[Open Neural Network Exchange (ONNX)](https://onnx.ai/get-started.html) モデル形式である必要があります。
 ::: moniker-end
 
-::: moniker range=">=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current||=azuresqldb-current||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current||=azuresqldb-current"
 ### <a name="revoscale-models"></a>RevoScale モデル
 
 モデルは、[RevoScaleR](../r/ref-r-revoscaler.md) または [revoscalepy](../python/ref-py-revoscalepy.md) パッケージを使用し、下に一覧表示されているサポートされる **rx** アルゴリズムのいずれかを使用して、事前にトレーニングされている必要があります。
 
-モデルのシリアル化には、R の場合は [rxSerialize](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxserializemodel)、Python の場合は [rx_serialize_model](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-serialize-model) を使用します。 これらのシリアル化関数は、高速スコアリングをサポートするように最適化されています。
+モデルのシリアル化には、R の場合は [rxSerialize](/machine-learning-server/r-reference/revoscaler/rxserializemodel)、Python の場合は [rx_serialize_model](/machine-learning-server/python-reference/revoscalepy/rx-serialize-model) を使用します。 これらのシリアル化関数は、高速スコアリングをサポートするように最適化されています。
 
 <a name="bkmk_native_supported_algos"></a> 
 
@@ -81,19 +81,19 @@ ms.locfileid: "87242342"
 
 + revoscalepy アルゴリズム
 
-  + [rx_lin_mod](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-lin-mod)
-  + [rx_logit](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-logit) 
-  + [rx_btrees](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-btrees) 
-  + [rx_dtree](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-dtree) 
-  + [rx_dforest](https://docs.microsoft.com/machine-learning-server/python-reference/revoscalepy/rx-dforest) 
+  + [rx_lin_mod](/machine-learning-server/python-reference/revoscalepy/rx-lin-mod)
+  + [rx_logit](/machine-learning-server/python-reference/revoscalepy/rx-logit) 
+  + [rx_btrees](/machine-learning-server/python-reference/revoscalepy/rx-btrees) 
+  + [rx_dtree](/machine-learning-server/python-reference/revoscalepy/rx-dtree) 
+  + [rx_dforest](/machine-learning-server/python-reference/revoscalepy/rx-dforest) 
 
 + RevoScaleR アルゴリズム
 
-  + [rxLinMod](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxlinmod)
-  + [rxLogit](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxlogit)
-  + [rxBTrees](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxbtrees)
-  + [rxDtree](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxdtree)
-  + [rxDForest](https://docs.microsoft.com/r-server/r-reference/revoscaler/rxdforest)
+  + [rxLinMod](/r-server/r-reference/revoscaler/rxlinmod)
+  + [rxLogit](/r-server/r-reference/revoscaler/rxlogit)
+  + [rxBTrees](/r-server/r-reference/revoscaler/rxbtrees)
+  + [rxDtree](/r-server/r-reference/revoscaler/rxdtree)
+  + [rxDForest](/r-server/r-reference/revoscaler/rxdforest)
 
 MicrosoftML または microsoftml からのアルゴリズムを使用する必要がある場合は、[sp_rxPredict によるリアルタイムのスコアリング](../predictions/real-time-scoring.md)を使用します。
 
@@ -106,7 +106,7 @@ MicrosoftML または microsoftml からのアルゴリズムを使用する必�
 ::: moniker-end
 
 ## <a name="examples"></a>例
-::: moniker range="=azuresqldb-mi-current||=azure-sqldw-latest||=sqlallproducts-allversions"
+::: moniker range="=azuresqldb-mi-current||=azure-sqldw-latest"
 ### <a name="predict-with-an-onnx-model"></a>ONNX モデルを使用した PREDICT
 
 この例では、ネイティブ スコアリングに `dbo.models` テーブルに格納されている ONNX モデルを使用する方法を示しています。
@@ -145,7 +145,7 @@ FROM PREDICT(MODEL = @model, DATA = predict_input, RUNTIME=ONNX) WITH (variable1
 > **PREDICT** によって返される列と値は、モデルの種類によって異なる場合があるため、**WITH** 句を使用して、返されるデータのスキーマを定義する必要があります。
 ::: moniker-end
 
-::: moniker range=">=sql-server-2017||=azuresqldb-mi-current||>=sql-server-linux-2017||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2017||=azuresqldb-mi-current||>=sql-server-linux-2017"
 ### <a name="predict-with-revoscale-model"></a>RevoScale モデルによる PREDICT
 
 この例では、R で **RevoScaleR** を使用してモデルを作成してから、T-SQL からリアルタイムの予測関数を呼び出しています。
@@ -169,7 +169,7 @@ CREATE TABLE iris_rx_data (
 GO
 ```
 
-次のステートメントを使用して、データ テーブルに**アヤメ** データセットのデータを設定します。
+次のステートメントを使用して、データ テーブルに **アヤメ** データセットのデータを設定します。
 
 ```sql
 INSERT INTO iris_rx_data ("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width" , "Species")
@@ -210,7 +210,7 @@ EXECUTE sp_execute_external_script
 ```
 
 > [!NOTE]
-> RevoScaleR からの [rxSerializeModel](https://docs.microsoft.com/machine-learning-server/r-reference/revoscaler/rxserializemodel) 関数を使用して、モデルを保存してください。 標準の R `serialize` 関数では、必要な形式を生成できません。
+> RevoScaleR からの [rxSerializeModel](/machine-learning-server/r-reference/revoscaler/rxserializemodel) 関数を使用して、モデルを保存してください。 標準の R `serialize` 関数では、必要な形式を生成できません。
 
 次のようなステートメントを実行すると、格納されているモデルをバイナリ形式で表示できます。
 
@@ -221,7 +221,7 @@ FROM ml_models;
 
 #### <a name="step-2-run-predict-on-the-model"></a>手順 2. モデルで PREDICT を実行する
 
-次の単純な PREDICT ステートメントでは、**ネイティブ スコアリング**関数を使用して、デシジョン ツリー モデルから分類を取得します。 指定した属性に基づいてアヤメの種類、花弁の長さと幅が予測されます。
+次の単純な PREDICT ステートメントでは、**ネイティブ スコアリング** 関数を使用して、デシジョン ツリー モデルから分類を取得します。 指定した属性に基づいてアヤメの種類、花弁の長さと幅が予測されます。
 
 ```sql
 DECLARE @model varbinary(max) = (

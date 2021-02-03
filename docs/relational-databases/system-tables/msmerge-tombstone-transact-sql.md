@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: replication
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - MSmerge_tombstone_TSQL
 - MSmerge_tombstone
@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSmerge_tombstone system table
 ms.assetid: 8b3fc7bf-729b-40f2-8a26-e7dfbe8ddb38
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: dc137583386c4b098960d762484ef526f2f95f14
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 6cd4fb0d58f0e400d23834090f31bf9043f547d5
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545563"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99205897"
 ---
 # <a name="msmerge_tombstone-transact-sql"></a>MSmerge_tombstone (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSmerge_tombstone**テーブルには、削除された行に関する情報が含まれており、削除を他のサブスクライバーに反映させることができます。 このテーブルは、パブリケーションデータベースとサブスクリプションデータベースに格納されます。  
+  **MSmerge_tombstone** テーブルには、削除された行に関する情報が含まれており、削除を他のサブスクライバーに反映させることができます。 このテーブルは、パブリケーションデータベースとサブスクリプションデータベースに格納されます。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

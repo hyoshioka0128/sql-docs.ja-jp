@@ -14,20 +14,20 @@ helpviewer_keywords:
 ms.assetid: 4b2515a6-12c3-44fb-b263-1c567681cd2b
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017'
-ms.openlocfilehash: c9983289150144059a4b71d787aab1c0a91dbeb3
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017'
+ms.openlocfilehash: b7f709d7884748d24467ea8825d40775a6a4dc2d
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86006275"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642266"
 ---
 # <a name="sqlps-utility"></a>sqlps ユーティリティ
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
   **sqlps** ユーティリティは、Windows PowerShell セッションを起動し、 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] PowerShell プロバイダーおよびコマンドレットの読み込みと登録を行います。 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] PowerShell コンポーネントを使用する PowerShell コマンドやスクリプトを入力して、 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] インスタンスとそのオブジェクトを操作できます。  
   
 > [!IMPORTANT]  
->  [!INCLUDE[ssNoteDepFutureAvoid](../includes/ssnotedepfutureavoid-md.md)] 代わりに **sqlps** PowerShell モジュールを使用してください。 **sqlps** モジュールの詳細については、「 [Import the SQLPS Module](../relational-databases/scripting/import-the-sqlps-module.md)」を参照してください。  
+>  [!INCLUDE[ssNoteDepFutureAvoid](../includes/ssnotedepfutureavoid-md.md)] 代わりに **sqlps** PowerShell モジュールを使用してください。 **sqlps** モジュールの詳細については、「 [Import the SQLPS Module](../powershell/download-sql-server-ps-module.md)」を参照してください。  
   
 ## <a name="syntax"></a>構文  
   
@@ -63,13 +63,13 @@ sqlps
  **sqlps** ユーティリティへの入力を、テキスト文字列形式 (**Text**) にするか、シリアル化された CLIXML 形式 (**XML**) にするかを指定します。  
   
  **-Command**  
- **sqlps** ユーティリティで実行するコマンドを指定します。 **-NoExit** が同時に指定されていない限り、 **sqlps** ユーティリティはこのコマンドの実行後に終了します。 **-Command**の後にはその他のスイッチを指定しないでください。指定すると、コマンド パラメーターとして読み取られます。  
+ **sqlps** ユーティリティで実行するコマンドを指定します。 **-NoExit** が同時に指定されていない限り、 **sqlps** ユーティリティはこのコマンドの実行後に終了します。 **-Command** の後にはその他のスイッチを指定しないでください。指定すると、コマンド パラメーターとして読み取られます。  
   
  **-**  
  **-Command-** は、 **sqlps** ユーティリティで入力を標準入力から読み取ることを指定します。  
   
  *script_block* [ **-args**_argument\_array_ ]  
- 実行する PowerShell コマンドのブロックを指定します。ブロックは中かっこ {} で囲む必要があります。 *Script_block* を指定できるのは、 **sqlps** ユーティリティを **PowerShell** または他の **sqlps** ユーティリティ セッションから呼び出すときだけです。 *argument_array* は、 *script_block*内の PowerShell コマンドの引数を含む PowerShell 変数の配列です。  
+ 実行する PowerShell コマンドのブロックを指定します。ブロックは中かっこ {} で囲む必要があります。 *Script_block* を指定できるのは、 **sqlps** ユーティリティを **PowerShell** または他の **sqlps** ユーティリティ セッションから呼び出すときだけです。 *argument_array* は、 *script_block* 内の PowerShell コマンドの引数を含む PowerShell 変数の配列です。  
   
  *string* [ *command_parameters* ]  
  実行する PowerShell コマンドを含む文字列を指定します。 **"&{** _command_ **}"** という形式を使用します。 引用符は文字列を示し、呼び出し演算子 (&) は **sqlps** ユーティリティにコマンドを実行させます。  
@@ -82,7 +82,7 @@ sqlps
   
 -   Microsoft.SqlServer.Management.PSProvider.dll  
   
-     [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] PowerShell プロバイダーおよび関連するコマンドレット ( **Encode-SqlName** や **Decode-SqlName**など) を実装します。  
+     [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] PowerShell プロバイダーおよび関連するコマンドレット ( **Encode-SqlName** や **Decode-SqlName** など) を実装します。  
   
 -   Microsoft.SqlServer.Management.PSSnapin.dll  
   
@@ -98,7 +98,7 @@ sqlps
   
 -   [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] プロバイダー パスを使用して [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] オブジェクトの階層内を移動する。  
   
- 既定では、 **sqlps** ユーティリティ実行時のスクリプト実行ポリシーは **Restricted**に設定されます。 これにより、PowerShell スクリプトの実行が防止されます。 **Set-ExecutionPolicy** コマンドレットを使用すると、署名されたスクリプトまたは任意のスクリプトの実行を有効にすることができます。 信頼できるソースからのスクリプト以外は実行しないでください。また、適切な NTFS 権限を使用して、すべての入力ファイルと出力ファイルのセキュリティを保護してください。 PowerShell スクリプトの有効化の詳細については、「 [Windows PowerShell スクリプトの実行](/previous-versions/system-center/virtual-machine-manager-2008-r2/cc917925(v=technet.10))」を参照してください。  
+ 既定では、 **sqlps** ユーティリティ実行時のスクリプト実行ポリシーは **Restricted** に設定されます。 これにより、PowerShell スクリプトの実行が防止されます。 **Set-ExecutionPolicy** コマンドレットを使用すると、署名されたスクリプトまたは任意のスクリプトの実行を有効にすることができます。 信頼できるソースからのスクリプト以外は実行しないでください。また、適切な NTFS 権限を使用して、すべての入力ファイルと出力ファイルのセキュリティを保護してください。 PowerShell スクリプトの有効化の詳細については、「 [Windows PowerShell スクリプトの実行](/previous-versions/system-center/virtual-machine-manager-2008-r2/cc917925(v=technet.10))」を参照してください。  
   
  **および** に採用されていたバージョンの [!INCLUDE[ssKatmai](../includes/sskatmai-md.md)] sqlps [!INCLUDE[ssKilimanjaro](../includes/sskilimanjaro-md.md)] ユーティリティは、Windows PowerShell 1.0 のミニシェルとして実装されていました。 ミニシェルには特定の制限があります。たとえば、ミニシェルによって読み込まれているスナップイン以外、ユーザーは読み込むことができません。 [!INCLUDE[ssSQL11](../includes/sssql11-md.md)] 以降のバージョンのユーティリティは、 **sqlps** モジュールを使用するように変更されており、このような制限は適用されません。  
   
@@ -123,6 +123,5 @@ sqlps -NoExit -Command "&{.\MyFolder.MyScript.ps1}"
   
 ## <a name="see-also"></a>参照  
  [サーバー ネットワーク プロトコルの有効化または無効化](../database-engine/configure-windows/enable-or-disable-a-server-network-protocol.md)   
- [SQL Server PowerShell](../relational-databases/scripting/sql-server-powershell.md)  
-  
+ [SQL Server PowerShell](../powershell/sql-server-powershell.md)  
   

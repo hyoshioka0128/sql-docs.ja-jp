@@ -6,7 +6,7 @@ ms.date: 03/14/2017
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - partners [SQL Server], connecting clients to
@@ -16,22 +16,22 @@ helpviewer_keywords:
 ms.assetid: 0d5d2742-2614-43de-9ab9-864addb6299b
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 8da63d8ff15d03b55586a72a578d6074fa2a5473
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: c34c9359534b3ec59aba824dccb649a9168fe725
+ms.sourcegitcommit: 2f3f5920e0b7a84135c6553db6388faf8e0abe67
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85789770"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98783609"
 ---
 # <a name="connect-clients-to-a-database-mirroring-session-sql-server"></a>データベース ミラーリング セッションへのクライアントの接続 (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
-  データベース ミラーリング セッションに接続するには、クライアント側で [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client または .NET Framework Data Provider for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]を使用できます。 これらのデータ アクセス プロバイダーは、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] データベース用に構成されると、両方ともデータベース ミラーリングを完全にサポートします。 ミラー化されたデータベースの使用に関するプログラミングの注意点については、「 [Using Database Mirroring](../../relational-databases/native-client/features/using-database-mirroring.md)」を参照してください。 さらに、現在のプリンシパル サーバー インスタンスは使用可能であり、クライアントのログインがサーバー インスタンス上に作成されている必要があります。 詳細については、「 [孤立ユーザーのトラブルシューティング &#40;SQL Server&#41;](../../sql-server/failover-clusters/troubleshoot-orphaned-users-sql-server.md)を実行します。 データベース ミラーリング セッションへのクライアント接続では、ミラーリング監視サーバー インスタンスが存在していても使用されません。  
+  データベース ミラーリング セッションに接続するには、クライアント側で [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client または .NET Framework Data Provider for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]を使用できます。 これらのデータ アクセス プロバイダーは、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] データベース用に構成されると、両方ともデータベース ミラーリングを完全にサポートします。 ミラー化されたデータベースの使用に関するプログラミングの注意点については、「 [Using Database Mirroring](../../relational-databases/native-client/features/using-database-mirroring.md)」を参照してください。 さらに、現在のプリンシパル サーバー インスタンスは使用可能であり、クライアントのログインがサーバー インスタンス上に作成されている必要があります。 詳細については、「 [孤立ユーザーのトラブルシューティング &#40;SQL Server&#41;](../../sql-server/failover-clusters/troubleshoot-orphaned-users-sql-server.md)を実行します。 データベース ミラーリング セッションへのクライアント接続では、ミラーリング監視サーバー インスタンスが存在していても使用されません。  
   
   
 ##  <a name="making-the-initial-connection-to-a-database-mirroring-session"></a><a name="InitialConnection"></a> データベース ミラーリング セッションへの最初の接続  
- クライアントはミラー化されたデータベースに初めて接続するときに、最低限サーバー インスタンスの名前を含む接続文字列を指定する必要があります。 この必須のサーバー名は、現在のプリンシパル サーバー インスタンスを特定するもので、 *イニシャル パートナー名*と呼びます。  
+ クライアントはミラー化されたデータベースに初めて接続するときに、最低限サーバー インスタンスの名前を含む接続文字列を指定する必要があります。 この必須のサーバー名は、現在のプリンシパル サーバー インスタンスを特定するもので、 *イニシャル パートナー名* と呼びます。  
   
- 接続文字列には、必要に応じて、別のサーバー インスタンスの名前を指定することもできます。この名前は、現在のミラー サーバー インスタンスを特定するもので、最初の接続試行でイニシャル パートナーを使用できない場合に使用されます。 この 2 つ目の名前を *フェールオーバー パートナー名*と呼びます。  
+ 接続文字列には、必要に応じて、別のサーバー インスタンスの名前を指定することもできます。この名前は、現在のミラー サーバー インスタンスを特定するもので、最初の接続試行でイニシャル パートナーを使用できない場合に使用されます。 この 2 つ目の名前を *フェールオーバー パートナー名* と呼びます。  
   
  また、接続文字列にはデータベース名も指定する必要があります。 データベース名は、データ アクセス プロバイダーがフェールオーバーを試行できるようにするために必要です。  
   
@@ -46,7 +46,7 @@ ms.locfileid: "85789770"
   
  イニシャル パートナー名で接続できない場合、フェールオーバー パートナー名 (指定された場合) で接続を試行します。 いずれかのパートナー名で現在のプリンシパル サーバーを正しく特定できると、正常に最初の接続を開くことができます。 この接続が完了すると、現在のミラー サーバーのサーバー インスタンス名をダウンロードします。 この名前はフェールオーバー パートナー名としてキャッシュに保存され、クライアントが指定したフェールオーバー パートナー名 (存在する場合) が上書きされます。 その後、.NET Framework Data Provider for [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] はこのフェールオーバー パートナー名を更新しません。 それに対して、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client は、その後の接続や接続のリセットにより異なるパートナー名が返されたときはキャッシュを更新します。  
   
- 次の図は、 **Db_1**という名前のミラー化されたデータベースのイニシャル パートナーである **Partner_A**へのクライアント接続を示しています。 この図では、クライアントが指定したイニシャル パートナー名が現在のプリンシパル サーバーである **Partner_A**を正しく特定しています。 最初の接続試行が成功し、データ アクセス プロバイダーのローカル キャッシュに、ミラー サーバーの名前 (現在は **Partner_B**) がフェールオーバー パートナー名として保存されます。 最後に、クライアントが **Db_1** データベースのプリンシパル コピーに接続されます。  
+ 次の図は、 **Db_1** という名前のミラー化されたデータベースのイニシャル パートナーである **Partner_A** へのクライアント接続を示しています。 この図では、クライアントが指定したイニシャル パートナー名が現在のプリンシパル サーバーである **Partner_A** を正しく特定しています。 最初の接続試行が成功し、データ アクセス プロバイダーのローカル キャッシュに、ミラー サーバーの名前 (現在は **Partner_B**) がフェールオーバー パートナー名として保存されます。 最後に、クライアントが **Db_1** データベースのプリンシパル コピーに接続されます。  
   
  ![最初のパートナーがプリンシパルである場合のクライアント接続](../../database-engine/database-mirroring/media/dbm-initial-connection.gif "最初のパートナーがプリンシパルである場合のクライアント接続")  
   
@@ -226,7 +226,7 @@ Server=123.34.45.56,4724;
 ##  <a name="Benefits"></a>   
   
 ##  <a name="the-impact-of-a-stale-failover-partner-name"></a><a name="StalePartnerName"></a> 古いフェールオーバー パートナー名の影響  
- データベース管理者はフェールオーバー パートナーをいつでも変更できます。 このため、クライアントが指定したフェールオーバー パートナー名が *古い*場合があります。 たとえば、別のサーバー インスタンス Partner_C で置き換えられる Partner_B というフェールオーバー パートナーを考えてみます。 クライアントがフェールオーバー パートナー名として Partner_B を指定した場合、それは古い名前です。 クライアント指定のフェールオーバー パートナー名が古い場合、データ アクセス プロバイダーは、クライアントでフェールオーバー パートナー名が指定されていない場合と同じように動作します。  
+ データベース管理者はフェールオーバー パートナーをいつでも変更できます。 このため、クライアントが指定したフェールオーバー パートナー名が *古い* 場合があります。 たとえば、別のサーバー インスタンス Partner_C で置き換えられる Partner_B というフェールオーバー パートナーを考えてみます。 クライアントがフェールオーバー パートナー名として Partner_B を指定した場合、それは古い名前です。 クライアント指定のフェールオーバー パートナー名が古い場合、データ アクセス プロバイダーは、クライアントでフェールオーバー パートナー名が指定されていない場合と同じように動作します。  
   
  たとえば、クライアントによって 1 つの接続文字列が 4 回の接続試行に使用される場合を検討します。 この接続文字列では、次のようにイニシャル パートナー名が Partner_A で、フェールオーバー パートナー名が Partner_B です。  
   

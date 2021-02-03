@@ -2,7 +2,7 @@
 title: tempdb データベース | Microsoft Docs
 description: このトピックでは、SQL Server と Azure SQL Database で tempdb データベースを構成し、使用する方法について説明します。
 ms.custom: P360
-ms.date: 04/17/2020
+ms.date: 09/16/2020
 ms.prod: sql
 ms.prod_service: database-engine
 ms.technology: ''
@@ -15,14 +15,13 @@ helpviewer_keywords:
 ms.assetid: ce4053fb-e37a-4851-b711-8e504059a780
 author: stevestein
 ms.author: sstein
-ms.reviewer: carlrab
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: eafc98ea91b60ec21396e1b25eca2684e24f5cfc
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 910db0887a50e12163ddeda927159f5e6c97b74b
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88861363"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98169280"
 ---
 # <a name="tempdb-database"></a>tempdb データベース
 
@@ -41,9 +40,9 @@ ms.locfileid: "88861363"
   > [!IMPORTANT]
   > `tempdb` に保存され、データベース レベルまで調べられるグローバル一時テーブルとグローバル一時ストアド プロシージャは、Azure SQL Database 単一データベースおよびエラスティック プールによってサポートされています。 
   >
-  > グローバル一時テーブルとグローバル一時ストアド プロシージャは、同じ SQL データベース内のすべてのユーザーのセッションで共有されます。 他の SQL データベースからのユーザー セッションは、グローバル一時テーブルにアクセスできません。 詳細については、「[Database scoped global temporary tables (Azure SQL Database)](../../t-sql/statements/create-table-transact-sql.md#database-scoped-global-temporary-tables-azure-sql-database)」(データベース スコープ グローバル一時テーブル (Azure SQL Database)) を参照してください。 [Azure SQL Managed Instance](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) では、SQL Server と同じ一時オブジェクトがサポートされます。
+  > グローバル一時テーブルとグローバル一時ストアド プロシージャは、同じ SQL データベース内のすべてのユーザーのセッションで共有されます。 他の SQL データベースからのユーザー セッションは、グローバル一時テーブルにアクセスできません。 詳細については、「[Database scoped global temporary tables (Azure SQL Database)](../../t-sql/statements/create-table-transact-sql.md#database-scoped-global-temporary-tables-azure-sql-database)」(データベース スコープ グローバル一時テーブル (Azure SQL Database)) を参照してください。 [Azure SQL Managed Instance](/azure/sql-database/sql-database-managed-instance) では、SQL Server と同じ一時オブジェクトがサポートされます。
   >
-  > Azure SQL Database の単一データベースとエラスティック プールでは、master データベースと `tempdb` データベースのみが適用されます。 詳細については、[Azure SQL Database サーバーの概要](https://docs.microsoft.com/azure/sql-database/sql-database-servers-databases#what-is-an-azure-sql-database-server)に関する記事を参照してください。 Azure SQL Database の単一データベースとエラスティック プールのコンテキストでの `tempdb` については、[Azure SQL Database の単一データベースとエラスティック プールでの tempdb データベース](#tempdb-database-in-sql-database)に関する説明を参照してください。 
+  > Azure SQL Database の単一データベースとエラスティック プールでは、master データベースと `tempdb` データベースのみが適用されます。 詳細については、[Azure SQL Database サーバーの概要](/azure/sql-database/sql-database-servers-databases#what-is-an-azure-sql-database-server)に関する記事を参照してください。 Azure SQL Database の単一データベースとエラスティック プールのコンテキストでの `tempdb` については、[Azure SQL Database の単一データベースとエラスティック プールでの tempdb データベース](#tempdb-database-in-sql-database)に関する説明を参照してください。 
   >
   > Azure SQL Managed Instance の場合、すべてのシステム データベースが適用されます。
 
@@ -116,6 +115,8 @@ ms.locfileid: "88861363"
 
 ### <a name="tempdb-sizes-for-dtu-based-service-tiers"></a>DTU に基づくサービス層の tempdb のサイズ
 
+<!-- tempdb being larger for Basic and 50 eDTU pools than for 100-400 eDTU pools reflects actual config (historical reasons) --> 
+
 |サービス レベルの目標|`tempdb` の最大データ ファイル サイズ (GB)|`tempdb` のデータ ファイルの数|`tempdb` の最大データ サイズ (GB)|
 |---|---:|---:|---:|
 |Basic|13.9|1|13.9|
@@ -134,15 +135,21 @@ ms.locfileid: "88861363"
 |P6|13.9|12|166.7|
 |P11|13.9|12|166.7|
 |P15|13.9|12|166.7|
-|Premium エラスティック データベース プール数 (すべて DTU 構成)|13.9|12|166.7|
-|Standard エラスティック データベース プール数 (S0 - S2)|13.9|12|166.7|
-|Standard エラスティック データベース プール数 (S3 以上) |32|12|384|
-|Basic エラスティック データベース プール数 (すべて DTU 構成)|13.9|12|166.7|
+|Basic エラスティック プール (すべての DTU 構成)|13.9|12|166.7|
+|Standard エラスティック プール (50 eDTU)|13.9|12|166.7|
+|Standard エラスティック プール (100 eDTU)|32|1|32|
+|Standard エラスティック プール (200 eDTU)|32|2|64|
+|Standard エラスティック プール (300 eDTU)|32|3|96|
+|Standard エラスティック プール (400 eDTU)|32|3|96|
+|Standard エラスティック プール (800 eDTU)|32|6|192|
+|Standard エラスティック プール (1200 eDTU)|32|10|320|
+|Standard エラスティック プール (1600-3000 eDTU)|32|12|384|
+|Premium エラスティック プール (すべての DTU 構成)|13.9|12|166.7|
 ||||
 
 ### <a name="tempdb-sizes-for-vcore-based-service-tiers"></a>vCore に基づくサービス層の tempdb のサイズ
 
-[仮想コア ベースのリソース制限](https://docs.microsoft.com/azure/sql-database/sql-database-vcore-resource-limits)に関する記事を参照してください。
+[仮想コア ベースのリソース制限](/azure/sql-database/sql-database-vcore-resource-limits)に関する記事を参照してください。
 
 ## <a name="restrictions"></a>制限事項
 
@@ -206,7 +213,7 @@ GO
 ユーザー データベースによって使用されるものとは異なるディスクに、`tempdb` データベースを配置します。
 
 ## <a name="performance-improvements-in-tempdb-for-sql-server"></a>SQL Server の tempdb でのパフォーマンスの強化
-[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降では、`tempdb` のパフォーマンスが次の方法でさらに最適化されています。  
+[!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降では、`tempdb` のパフォーマンスが次の方法でさらに最適化されています。  
   
 - 一時テーブルとテーブル変数はキャッシュされます。 キャッシュを使用することで、一時オブジェクトを削除および作成する操作を非常に高速に実行できます。 また、キャッシュによって、ページの割り当てやメタデータの競合も減少します。  
 - 割り当てページ ラッチ プロトコルが改善され、使用される `UP` (更新) ラッチの回数が減っています。  
@@ -216,7 +223,7 @@ GO
 - `tempdb` 内のすべての割り当てで単一エクステントが使用されます。 [トレース フラグ 1118](../../t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql.md) は必須ではなくなりました。  
 - プライマリ ファイル グループの場合、`AUTOGROW_ALL_FILES` プロパティはオンにされており、プロパティは変更できません。
 
-`tempdb` でのパフォーマンス向上の詳細については、[TEMPDB - ファイルとトレース フラグと更新](https://blogs.msdn.microsoft.com/sql_server_team/tempdb-files-and-trace-flags-and-updates-oh-my/)に関するブログ記事を参照してください。
+`tempdb` でのパフォーマンス向上の詳細については、[TEMPDB - ファイルとトレース フラグと更新](/archive/blogs/sql_server_team/tempdb-files-and-trace-flags-and-updates-oh-my)に関するブログ記事を参照してください。
 
 ## <a name="memory-optimized-tempdb-metadata"></a>メモリ最適化 tempdb メタデータ
 `tempdb` でのメタデータの競合は、従来、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 上で実行されている多くのワークロードのスケーラビリティに対するボトルネックになっていました。 [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] では、[メモリ内データベース](../in-memory-database.md)機能ファミリの一部として、メモリ最適化 tempdb メタデータという新機能が導入されています。 
@@ -228,15 +235,33 @@ GO
 > [!VIDEO https://channel9.msdn.com/Shows/Data-Exposed/How-and-When-To-Memory-Optimized-TempDB-Metadata/player?WT.mc_id=dataexposed-c9-niner]
 
 
+### <a name="configuring-and-using-memory-optimized-tempdb-metadata"></a>メモリ最適化 tempdb メタデータの構成と使用
+
 この新しい機能にオプトインするには、次のスクリプトを使用します。
 
 ```sql
-ALTER SERVER CONFIGURATION SET MEMORY_OPTIMIZED TEMPDB_METADATA = ON 
+ALTER SERVER CONFIGURATION SET MEMORY_OPTIMIZED TEMPDB_METADATA = ON;
 ```
 
 この構成の変更を有効にするには、サービスの再起動が必要です。
 
-この実装にはいくつかの制限があります。
+次の T-SQL コマンドを使用して、`tempdb` がメモリ最適化かどうかを確認できます。
+
+```sql
+SELECT SERVERPROPERTY('IsTempdbMetadataMemoryOptimized');
+```
+
+メモリ最適化 `tempdb` メタデータを有効にした後に、何らかの理由でサーバーの起動に失敗した場合は、 **-f** スタートアップ オプションを使用して [最小構成](../../database-engine/configure-windows/start-sql-server-with-minimal-configuration.md)で SQL Server インスタンスを開始することで、この機能を回避できます。 その後、この機能を無効にして、通常モードで SQL Server を再起動できます。
+
+サーバーを潜在的なメモリ不足の状態から保護するために、`tempdb` を[リソース プール](../in-memory-oltp/bind-a-database-with-memory-optimized-tables-to-a-resource-pool.md)にバインドすることができます。 これは、リソース プールをデータベースにバインドするために通常実行する手順の代わりに [`ALTER SERVER`](../../t-sql/statements/alter-server-configuration-transact-sql.md) コマンドを使用して行います。
+
+```sql
+ALTER SERVER CONFIGURATION SET MEMORY_OPTIMIZED TEMPDB_METADATA = ON (RESOURCE_POOL = 'pool_name');
+```
+
+メモリ最適化 tempdb メタデータが既に有効になっている場合でも、この変更を有効にするには再起動も必要です。
+
+### <a name="memory-optimized-tempdb-limitations"></a>メモリ最適化 tempdb メタデータの制限
 
 - 機能のオンとオフの切り替えは、動的ではありません。 `tempdb` の構造を根本的に変更する必要があるため、この機能を有効または無効にするには再起動が必要です。
 
@@ -249,12 +274,15 @@ ALTER SERVER CONFIGURATION SET MEMORY_OPTIMIZED TEMPDB_METADATA = ON
   例:
     
   ```sql
-  BEGIN TRAN
+  BEGIN TRAN;
+  
   SELECT *
-  FROM tempdb.sys.tables  -----> Creates a user in-memory OLTP transaction on tempdb
+  FROM tempdb.sys.tables;  -----> Creates a user in-memory OLTP transaction in tempdb
+  
   INSERT INTO <user database>.<schema>.<mem-optimized table>
-  VALUES (1)  ----> Tries to create user in-memory OLTP transaction but will fail
-   COMMIT TRAN
+  VALUES (1); ----> Tries to create a user in-memory OLTP transaction in the user database but will fail
+  
+  COMMIT TRAN;
   ```
     
 - メモリ最適化テーブルに対するクエリではロックと分離のヒントがサポートされていないため、メモリ最適化 `tempdb` カタログ ビューに対するクエリでは、ロックと分離のヒントは適用されません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 内の他のシステム カタログ ビューと同じように、システム ビューに対するすべてのトランザクションは、`READ COMMITTED` (または、このケースでは `READ COMMITTED SNAPSHOT`) の分離になります。
@@ -265,14 +293,6 @@ ALTER SERVER CONFIGURATION SET MEMORY_OPTIMIZED TEMPDB_METADATA = ON
 
 > [!NOTE] 
 > これらの制限は、`tempdb` システム ビューを参照している場合にのみ適用されます。 必要に応じて、ユーザー データベース内のメモリ最適化テーブルにアクセスするときに、同じトランザクションで一時テーブルを作成できます。
-
-次の T-SQL コマンドを使用して、`tempdb` がメモリ最適化かどうかを確認できます。
-
-```
-SELECT SERVERPROPERTY('IsTempdbMetadataMemoryOptimized')
-```
-
-メモリ最適化 `tempdb` メタデータを有効にした後に、何らかの理由でサーバーの起動に失敗した場合は、 **-f** スタートアップ オプションを使用して[最小構成](../../database-engine/configure-windows/start-sql-server-with-minimal-configuration.md)で SQL Server インスタンスを開始することで、この機能を回避できます。 その後、この機能を無効にして、通常モードで SQL Server を再起動できます。
 
 ## <a name="capacity-planning-for-tempdb-in-sql-server"></a>SQL Server での tempdb の容量計画
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 運用環境での `tempdb` の適切なサイズを判断するには、多くの要因が関係します。 前に説明したように、これらの要因には既存のワークロードや使用されている [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の機能などがあります。 SQL Server のテスト環境で次のタスクを実行して、既存のワークロードを分析することをお勧めします。
@@ -335,4 +355,3 @@ GROUP BY R2.session_id, R1.internal_objects_alloc_page_count,
 [sys.databases](../../relational-databases/system-catalog-views/sys-databases-transact-sql.md)    
 [sys.master_files](../../relational-databases/system-catalog-views/sys-master-files-transact-sql.md)    
 [データベース ファイルの移動](../../relational-databases/databases/move-database-files.md)    
-  

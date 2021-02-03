@@ -5,17 +5,17 @@ ms.custom: seo-lt-2019
 ms.date: 03/26/2018
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
-ms.topic: conceptual
+ms.technology: availability-groups
+ms.topic: how-to
 ms.assetid: 67c6a601-677a-402b-b3d1-8c65494e9e96
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: a563558f6b7d20dd4ca8d5f6573d1b16f598fa1f
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: a4b992ab522145959cb4e3fe4e4b978f15b11e9c
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85900869"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97644166"
 ---
 # <a name="use-automatic-seeding-to-initialize-an-always-on-availability-group"></a>自動シード処理を使用して、Always On 可用性グループを初期化する
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -286,5 +286,4 @@ SQL Server が自動シード処理に使用するスレッドの数は固定さ
 
 [CREATE AVAILABILITY GROUP (Transact-SQL)](../../../t-sql/statements/create-availability-group-transact-sql.md)
 
-[AlwaysOn 可用性グループのトラブルシューティングと監視のガイド](https://technet.microsoft.com/library/dn135328.aspx)
-
+[AlwaysOn 可用性グループのトラブルシューティングと監視のガイド](/previous-versions/sql/sql-server-guides/dn135328(v=sql.110))

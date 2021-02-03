@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - OBJECT_DEFINITION_TSQL
 - OBJECT_DEFINITION
@@ -21,12 +21,12 @@ helpviewer_keywords:
 ms.assetid: 2ac837c7-eca9-4d29-b06e-72e30450c68d
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 82855e167f44106078e7e2e3589f349eb307e503
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 134f2a0ad313fe48e6d500014b8429a9164397ce
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88417238"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99189908"
 ---
 # <a name="object_definition-transact-sql"></a>OBJECT_DEFINITION (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -37,8 +37,7 @@ ms.locfileid: "88417238"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 OBJECT_DEFINITION ( object_id )  
 ```  
   
@@ -89,7 +88,7 @@ OBJECT_DEFINITION ( object_id )
 ### <a name="a-returning-the-source-text-of-a-user-defined-object"></a>A. ユーザー定義オブジェクトのソース テキストを返す  
  次の例では、ユーザー定義トリガー `uAddress` の定義を `Person` スキーマで返します。 組み込み関数 `OBJECT_ID` を使用して、トリガーのオブジェクト ID を `OBJECT_DEFINITION` ステートメントに返します。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 SELECT OBJECT_DEFINITION (OBJECT_ID(N'Person.uAddress')) AS [Trigger Definition];   
@@ -99,7 +98,7 @@ GO
 ### <a name="b-returning-the-source-text-of-a-system-object"></a>B. システム オブジェクトのソース テキストを返す  
  次の例では、システム ストアド プロシージャ `sys.sp_columns` の定義を返します。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 SELECT OBJECT_DEFINITION (OBJECT_ID(N'sys.sp_columns')) AS [Object Definition];  

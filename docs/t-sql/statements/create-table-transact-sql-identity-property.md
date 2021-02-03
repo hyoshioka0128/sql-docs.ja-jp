@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-data-warehouse, database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - IDENTITY_TSQL
 - IDENTITY
@@ -21,13 +21,13 @@ helpviewer_keywords:
 ms.assetid: 8429134f-c821-4033-a07c-f782a48d501c
 author: VanMSFT
 ms.author: vanto
-monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: f7bde409031e86d65826505f03467c79fe5075ab
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: e239ff0edf653c5c172e0dfacb6b9ee835901a91
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88467226"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99177934"
 ---
 # <a name="create-table-transact-sql-identity-property"></a>CREATE TABLE (Transact-SQL) IDENTITY (プロパティ)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
@@ -41,10 +41,12 @@ ms.locfileid: "88467226"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 IDENTITY [ (seed , increment) ]
 ```  
   
+[!INCLUDE[synapse-analytics-od-unsupported-syntax](../../includes/synapse-analytics-od-unsupported-syntax.md)]  
+
 [!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
 
 ## <a name="arguments"></a>引数
@@ -55,7 +57,7 @@ IDENTITY [ (seed , increment) ]
  読み込まれている前の行の ID 値に加算される増分の値です。
 
  > [!NOTE]
- > Azure Synapse Analytics では、データ ウェアハウスの分散アーキテクチャにより、ID の値は増分になりません。 詳細については、「[Synapse SQL プールで IDENTITY を使用して代理キーを作成する](/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-tables-identity#allocation-of-values)」を参照してください。
+ > Azure Synapse Analytics では、データ ウェアハウスの分散アーキテクチャにより、ID の値は増分になりません。 詳細については、[Synapse SQL プールで IDENTITY を使用して代理キーを作成する方法](/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-tables-identity#allocation-of-values)に関する記事を参照してください。
   
  seed と increment の両方を指定するか、またはどちらも指定しないでください。 どちらも指定しないときの既定値は (1,1) です。  
   
@@ -71,7 +73,7 @@ IDENTITY [ (seed , increment) ]
 -   **値の一意性**: **PRIMARY KEY** 制約、**UNIQUE** 制約、または **UNIQUE** インデックスを使用して、一意性を強制する必要があります。 - 
  
 > [!NOTE]
-> Azure Synapse Analytics では、**PRIMARY KEY** 制約、**UNIQUE** 制約、または **UNIQUE** インデックスはサポートされません。 詳細については、「[Synapse SQL プールで IDENTITY を使用して代理キーを作成する](/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-tables-identity#what-is-a-surrogate-key)」を参照してください。
+> Azure Synapse Analytics では、**PRIMARY KEY** 制約、**UNIQUE** 制約、または **UNIQUE** インデックスはサポートされません。 詳細については、[Synapse SQL プールで IDENTITY を使用して代理キーを作成する方法](/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-tables-identity#what-is-a-surrogate-key)に関する記事を参照してください。
 
 -   **トランザクション内の連続する値**: 複数行を挿入するトランザクションは、テーブルで同時に他の挿入が実行される可能性があるため、その複数行の連続する値を取得するとは限りません。 連続した値にする必要がある場合、トランザクションはテーブル上で排他ロックを使用するか、**SERIALIZABLE** 分離レベルを使用する必要があります。  
   
@@ -92,7 +94,7 @@ IDENTITY [ (seed , increment) ]
 ### <a name="a-using-the-identity-property-with-create-table"></a>A. CREATE TABLE で IDENTITY プロパティを使用する  
  次の例では、ID 番号を自動的に増分するテーブルを、`IDENTITY` プロパティを使用して新規作成します。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
   
 IF OBJECT_ID ('dbo.new_employees', 'U') IS NOT NULL  
@@ -123,7 +125,7 @@ VALUES
 > [!NOTE]  
 >  次に示す [!INCLUDE[tsql](../../includes/tsql-md.md)] スクリプトの最初の部分は、あくまでも参考です。 実行できるのは、"`-- Create the img table`" というコメントで始まる [!INCLUDE[tsql](../../includes/tsql-md.md)] スクリプトです。  
   
-```  
+```sql 
 -- Here is the generic syntax for finding identity value gaps in data.  
 -- The illustrative example starts here.  
 SET IDENTITY_INSERT tablename ON;  
@@ -155,14 +157,14 @@ SET IDENTITY_INSERT tablename OFF;
 IF OBJECT_ID ('dbo.img', 'U') IS NOT NULL  
    DROP TABLE img;  
 GO  
-CREATE TABLE img (id_num int IDENTITY(1,1), company_name sysname);  
+CREATE TABLE img (id_num INT IDENTITY(1,1), company_name sysname);  
 INSERT img(company_name) VALUES ('New Moon Books');  
 INSERT img(company_name) VALUES ('Lucerne Publishing');  
 -- SET IDENTITY_INSERT ON and use in img table.  
 SET IDENTITY_INSERT img ON;  
   
-DECLARE @minidentval smallint;  
-DECLARE @nextidentval smallint;  
+DECLARE @minidentval SMALLINT;  
+DECLARE @nextidentval SMALLINT;  
 SELECT @minidentval = MIN($IDENTITY) FROM img  
  IF @minidentval = IDENT_SEED('img')  
     SELECT @nextidentval = MIN($IDENTITY) + IDENT_INCR('img')  

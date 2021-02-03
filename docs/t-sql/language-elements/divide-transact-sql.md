@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - /
 - /_TSQL
@@ -18,15 +18,15 @@ helpviewer_keywords:
 - division [SQL Server]
 - divide operator (/)
 ms.assetid: 1d69893b-e5c3-441d-8dd8-0e5eb872ecfc
-author: rothja
-ms.author: jroth
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: da987dbea422db8ab6e26ce9b84ff55b5d5abb2e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 7df42357ffb19e252e36808e013d3bc78e2200bb
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88459414"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99119354"
 ---
 # <a name="-division-transact-sql"></a>/ (除算) (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "88459414"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 dividend / divisor  
 ```  
   
@@ -45,7 +45,7 @@ dividend / divisor
 
 ## <a name="arguments"></a>引数
  *dividend*  
- 除算される数値式です。 *dividend* には、数値型に分類されるデータ型を持つ有効な[式](../../t-sql/language-elements/expressions-transact-sql.md)を指定できます。ただし、**datetime** および **smalldatetime** データ型は除きます。  
+ 除算される数値式です。 *dividend* には、数値型に分類されるデータ型を持つ有効な [式](../../t-sql/language-elements/expressions-transact-sql.md)を指定できます。ただし、**datetime** および **smalldatetime** データ型は除きます。  
   
  *divisor*  
  被除数を除算する数値式です。 *divisor* には、数値型に分類されるデータ型を持つ有効な式を指定できます。ただし、**datetime** および **smalldatetime** データ型は除きます。  
@@ -61,7 +61,7 @@ dividend / divisor
 ## <a name="examples"></a>例  
  次の例では、算術除算演算子を使用して、[!INCLUDE[ssSampleDBCoFull](../../includes/sssampledbcofull-md.md)] の販売員の各月の販売目標を計算しています。  
   
-```  
+```sql  
 -- Uses AdventureWorks  
   
 SELECT s.BusinessEntityID AS SalesPersonID, FirstName, LastName, SalesQuota, SalesQuota/12 AS 'Sales Target Per Month'  
@@ -88,7 +88,7 @@ SalesPersonID FirstName    LastName          SalesQuota  Sales Target Per Month
 ## <a name="examples-sssdwfull-and-sspdw"></a>例: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)]、[!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  
  次の例では、除算算術演算子を使用して、各従業員の休暇時間と病気時間の単純な比率を計算します。  
   
-```  
+```sql  
 -- Uses AdventureWorks  
   
 SELECT FirstName, LastName, VacationHours/SickLeaveHours AS PersonalTimeRatio  

@@ -16,25 +16,25 @@ helpviewer_keywords:
 - SQL Server Management Studio [SQL Server], execution plans
 - tuning queries [SQL Server]
 ms.assetid: bcd6f094-c613-4835-ae19-4caaadb4bb17
-author: julieMSFT
-ms.author: jrasnick
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 19c0cee8d1ff56167032f7a0ff918b3adee24056
-ms.sourcegitcommit: 9470c4d1fc8d2d9d08525c4f811282999d765e6e
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 3e0d4632eff87b02f907c8fe9eeada28cb3ff0b8
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86457297"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97418319"
 ---
 # <a name="display-and-save-execution-plans"></a>実行プランの表示と保存
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 ここでは、実行プランを表示する方法、および Microsoft [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]を使用して実行プランを XML 形式でファイルに保存する方法について説明します。  
   
-実行プランでは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] クエリ オプティマイザーによって選択されたデータ取得方法がグラフィカルに表示されます。 実行プランでは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の特定のステートメントやクエリの実行コストがアイコンで表されます。この点が、表形式で表す [SET SHOWPLAN_ALL](../../t-sql/statements/set-showplan-all-transact-sql.md) ステートメントまたは [SET SHOWPLAN_TEXT](../../t-sql/statements/set-showplan-text-transact-sql.md) ステートメントとは異なります。 グラフィカルな実行プランの表示は、クエリのパフォーマンスの特徴を理解するうえで役立ちます。  
+実行プランでは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] クエリ オプティマイザーによって選択されたデータ取得方法がグラフィカルに表示されます。 実行プランでは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の特定のステートメントやクエリの実行コストがアイコンで表されます。この点が、表形式で表す [SET SHOWPLAN_ALL](../../t-sql/statements/set-showplan-all-transact-sql.md) ステートメントまたは [SET SHOWPLAN_TEXT](../../t-sql/statements/set-showplan-text-transact-sql.md) ステートメントとは異なります。 グラフィカルな実行プランの表示は、クエリのパフォーマンスの特徴を理解するうえで役立ちます。  
 
-[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] クエリ オプティマイザーから生成される実行プランは 1 つのみですが、**推定**実行プランと**実際**の実行プランという概念があります。
+[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] クエリ オプティマイザーから生成される実行プランは 1 つのみですが、**推定** 実行プランと **実際** の実行プランという概念があります。
 -  [推定実行プラン](../../relational-databases/performance/display-the-estimated-execution-plan.md)は、コンパイル時にクエリ オプティマイザーが生成する実行プランを返します。 推定実行プランを生成しても、実際にはクエリやバッチが実行されません。そのため、実際のリソース使用状況のメトリックやランタイムの警告など、実行時情報が含まれていません。 
--  [実際の実行プラン](../../relational-databases/performance/display-an-actual-execution-plan.md)は、クエリまたはバッチが実行を完了した後に、クエリ オプティマイザーが生成する実行プランを返します。 実際の実行プランには、リソース使用状況のメトリックやランタイムの警告に関するランタイム情報が含まれます。  
+-  [実際の実行プラン](../../relational-databases/performance/display-an-actual-execution-plan.md)は、クエリまたはバッチが実行を完了した後に、クエリ オプティマイザーが生成する実行プランを返します。 実際の実行プランには、リソース使用状況のメトリックやランタイムの警告に関するランタイム情報が含まれます。  
 
 クエリ実行プランの詳細については、「[クエリ処理アーキテクチャ ガイド](../../relational-databases/query-processing-architecture-guide.md)」を参照してください。
   

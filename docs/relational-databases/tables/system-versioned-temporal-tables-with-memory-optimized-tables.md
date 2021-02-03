@@ -9,15 +9,15 @@ ms.reviewer: ''
 ms.technology: table-view-index
 ms.topic: conceptual
 ms.assetid: 23274522-e5cf-4095-bed8-bf986d6342e0
-author: CarlRabeler
-ms.author: carlrab
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: f8aaedc07aef085f7245346adc5a8e04302be909
-ms.sourcegitcommit: 331b8495e4ab37266945c81ff5b93d250bdaa6da
+author: markingmyname
+ms.author: maghan
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 05ed5ec0d34d2a1a612b76c0117d0bf66675ad7a
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88646636"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98171894"
 ---
 # <a name="system-versioned-temporal-tables-with-memory-optimized-tables"></a>メモリ最適化テーブルでのシステム バージョン管理されたテンポラル テーブル
 
@@ -25,7 +25,7 @@ ms.locfileid: "88646636"
 [!INCLUDE [sqlserver2016-asdb-asdbmi](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi.md)]
 
 
-[Memory-Optimized Tables](../../relational-databases/in-memory-oltp/memory-optimized-tables.md) のシステム バージョン管理されたテンポラル テーブルは、インメモリ OLTP ワークロードで収集されたデータに対して [データ監査および特定時点分析](https://msdn.microsoft.com/library/mt631669.aspx) が必要な場合にコスト効果の高いソリューションを提供するように設計されています。 高いトランザクション スループット、ロックを必要としないコンカレンシー、簡単にクエリできる大量の履歴データを格納する機能を提供します。
+[Memory-Optimized Tables](../in-memory-oltp/sample-database-for-in-memory-oltp.md) のシステム バージョン管理されたテンポラル テーブルは、インメモリ OLTP ワークロードで収集されたデータに対して [データ監査および特定時点分析](./temporal-table-usage-scenarios.md) が必要な場合にコスト効果の高いソリューションを提供するように設計されています。 高いトランザクション スループット、ロックを必要としないコンカレンシー、簡単にクエリできる大量の履歴データを格納する機能を提供します。
 
 ## <a name="overview"></a>概要
 
@@ -43,13 +43,13 @@ ms.locfileid: "88646636"
 
 - システム バージョン管理できるのは、持続性のあるメモリ最適化テーブルだけです (**DURABILITY = SCHEMA_AND_DATA**)。
 - メモリ最適化されてシステム バージョン管理されたテーブルの履歴テーブルは、エンド ユーザーまたはシステムのどちらによって作成される場合でも、ディスク ベースでなければなりません。
-- 現在のテーブル (インメモリ) のみに影響するクエリは、 [ネイティブ コンパイル T-SQL モジュール](https://msdn.microsoft.com/library/dn133184.aspx)で使用できます。 FOR SYSTEM TIME 句を使用したテンポラル クエリは、ネイティブ コンパイル モジュールではサポートされません。 アドホック クエリおよび非ネイティブ モジュールでの FOR SYSTEM TIME 句とメモリ最適化テーブルの使用はサポートされています。
-- **SYSTEM_VERSIONING = ON**のときは、現在のメモリ最適化テーブルでの更新および削除操作の結果である最新のシステム バージョン管理された変更を受け入れるため、内部的なメモリ最適化ステージング テーブルが自動的に作成されます。
+- 現在のテーブル (インメモリ) のみに影響するクエリは、 [ネイティブ コンパイル T-SQL モジュール](../in-memory-oltp/a-guide-to-query-processing-for-memory-optimized-tables.md)で使用できます。 FOR SYSTEM TIME 句を使用したテンポラル クエリは、ネイティブ コンパイル モジュールではサポートされません。 アドホック クエリおよび非ネイティブ モジュールでの FOR SYSTEM TIME 句とメモリ最適化テーブルの使用はサポートされています。
+- **SYSTEM_VERSIONING = ON** のときは、現在のメモリ最適化テーブルでの更新および削除操作の結果である最新のシステム バージョン管理された変更を受け入れるため、内部的なメモリ最適化ステージング テーブルが自動的に作成されます。
 - 内部のメモリ最適化ステージング テーブルからのデータは、非同期のデータ フラッシュ タスクによって、ディスク ベースの履歴テーブルに定期的に移動されます。 このデータ フラッシュ メカニズムの目的は、親オブジェクトによる内部メモリ バッファーのメモリ使用量を 10% 未満に維持することです。 [sys.dm_db_xtp_memory_consumers &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-xtp-memory-consumers-transact-sql.md) をクエリし、内部メモリ最適化ステージング テーブルと現在のテンポラル テーブルのデータを集計することにより、システム バージョン管理されたメモリ最適化テンポラル テーブルの総メモリ消費量を要約できます。
 - データ フラッシュを適用するには、 [sp_xtp_flush_temporal_history](../../relational-databases/system-stored-procedures/temporal-table-sp-xtp-flush-temporal-history.md)を呼び出します。
 - **SYSTEM_VERSIONING = OFF** のとき、またはシステム バージョン管理されたテーブルのスキーマが列を追加、削除、または変更することによって変更されると、内部ステージング バッファーの内容全体がディスク ベースの履歴テーブルに移動されます。
 - 履歴データのクエリは実質的にスナップショット分離レベルであり、メモリ内ステージング バッファーとディスク ベース テーブルの重複がない和集合を常に返します。
-- テーブルのスキーマを内部的に変更する**ALTER TABLE** 操作はデータのフラッシュを実行する必要があり、操作の時間を長引かせる可能性があります。
+- テーブルのスキーマを内部的に変更する **ALTER TABLE** 操作はデータのフラッシュを実行する必要があり、操作の時間を長引かせる可能性があります。
 
 ## <a name="the-internal-memory-optimized-staging-table"></a>内部メモリ最適化ステージング テーブル
 
@@ -70,7 +70,7 @@ ms.locfileid: "88646636"
 
 データ フラッシュは、現在実行している最も古いトランザクションより古いメモリ内内部バッファーからすべてのレコードを削除して、ディスク ベースの履歴テーブルにこれらのレコードを移動します。
 
-[sp_xtp_flush_temporal_history](../../relational-databases/system-stored-procedures/temporal-table-sp-xtp-flush-temporal-history.md) を呼び出して、スキーマとテーブル名を指定することで、データ フラッシュを強制的に実行することができます: **sys.sp_xtp_flush_temporal_history @schema_name, @object_name** 。 このユーザー実行コマンドを使用すると、内部スケジュールでシステムによってデータ フラッシュ タスクが呼び出されるときと同じデータ移動プロセスが呼び出されます。
+[sp_xtp_flush_temporal_history](../../relational-databases/system-stored-procedures/temporal-table-sp-xtp-flush-temporal-history.md) を呼び出し、次のスキーマおよびテーブル名を指定することで、データ フラッシュを強制的に実行することができます: **sys.sp_xtp_flush_temporal_history \@schema_name, \@object_name**。 このユーザー実行コマンドを使用すると、内部スケジュールでシステムによってデータ フラッシュ タスクが呼び出されるときと同じデータ移動プロセスが呼び出されます。
 
 ## <a name="see-also"></a>参照
 

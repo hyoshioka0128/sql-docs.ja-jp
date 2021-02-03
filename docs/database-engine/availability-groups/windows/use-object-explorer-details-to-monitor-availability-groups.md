@@ -5,7 +5,7 @@ ms.custom: ''
 ms.date: 05/17/2016
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 f1_keywords:
 - sql13.swb.availabilitygroup.OEdetails.f1
@@ -14,14 +14,14 @@ helpviewer_keywords:
 - Availability Groups [SQL Server], databases
 - Availability Groups [SQL Server]
 ms.assetid: 84affc47-40e0-43d9-855e-468967068c35
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: e7ee1430cd764c02c05f2bf3f8f935d397a6155a
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: e6b0c8547718c1a7580108427314a4a58f4ba0b5
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85894162"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641841"
 ---
 # <a name="use-object-explorer-details-to-monitor-availability-groups"></a>[オブジェクト エクスプローラーの詳細] を使用した可用性グループの監視
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]

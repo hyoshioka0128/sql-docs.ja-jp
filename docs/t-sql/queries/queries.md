@@ -13,19 +13,19 @@ dev_langs:
 ms.assetid: 5ff02a32-e8d3-479c-ae8b-07581e41f5f8
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 921d626eaacb0cdfd6f14988cd41e39efc35339b
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: e79bf08e7cbd4364d473a96032e226758b724134
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88459134"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97460925"
 ---
 # <a name="queries"></a>クエリ
 
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  データ操作言語 (DML) は、[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] および SQL Database でデータを取得して操作するために使用される用語の集まりです。 そのほとんどは、SQL Data Warehouse と PDW で利用できます (詳細については個々のステートメントを確認してください)。 DML ステートメントを使用すると、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースに対してデータの追加、変更、クエリ、または削除を実行できます。  
+  データ操作言語 (DML) は、[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] および SQL Database でデータを取得して操作するために使用される用語の集まりです。 そのほとんどは、[!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] と [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] でも動作します (詳細については個々のステートメントを確認してください)。 DML ステートメントを使用すると、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースに対してデータの追加、変更、クエリ、または削除を実行できます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  次の表は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で使用する DML ステートメントを示しています。  

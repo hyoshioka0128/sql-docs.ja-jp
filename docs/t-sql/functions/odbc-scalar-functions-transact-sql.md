@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -52,21 +52,23 @@ helpviewer_keywords:
 ms.assetid: a0df1ac2-6699-4ac0-8f79-f362f23496f1
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 4ce160465056b18c7f6f347b0587603dd489fa06
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 198cf1d49bc62aaeda9f18003b860a9dec803df8
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88445694"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99189867"
 ---
 # <a name="odbc-scalar-functions-transact-sql"></a>ODBC スカラー関数 (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントでは、[ODBC スカラー関数](https://go.microsoft.com/fwlink/?LinkID=88579)を使用できます。 これらのステートメントは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によって解釈されます。 具体的には、ストアド プロシージャやユーザー定義関数の中で、 文字列、数値、時刻、日付、間隔を扱う関数のほか、システム関数を使用することができます。  
+  [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントでは、[ODBC スカラー関数](../../odbc/reference/appendixes/appendix-e-scalar-functions.md)を使用できます。 これらのステートメントは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によって解釈されます。 具体的には、ストアド プロシージャやユーザー定義関数の中で、 文字列、数値、時刻、日付、間隔を扱う関数のほか、システム関数を使用することができます。  
   
-## <a name="usage"></a>使用法  
- `SELECT {fn <function_name> [ (<argument>,....n) ] }`  
+## <a name="usage"></a>使用方法  
+ ```syntaxsql
+ SELECT {fn <function_name> [ (<argument>,....n) ] }
+ ```
   
 ## <a name="functions"></a>関数  
  次の表は、同等の機能が [!INCLUDE[tsql](../../includes/tsql-md.md)] に存在しない ODBC スカラー関数をまとめたものです。  
@@ -108,7 +110,8 @@ ms.locfileid: "88445694"
 ### <a name="a-using-an-odbc-function-in-a-stored-procedure"></a>A. ODBC 関数をストアド プロシージャで使用する  
  次の例では、ストアド プロシージャで、ODBC 関数を使用します。  
   
-```  
+
+```sql 
 CREATE PROCEDURE dbo.ODBCprocedure  
 (  
     @string_exp NVARCHAR(4000)  
@@ -120,7 +123,7 @@ SELECT {fn OCTET_LENGTH( @string_exp )};
 ### <a name="b-using-an-odbc-function-in-a-user-defined-function"></a>B. ODBC 関数をユーザー定義関数で使用する  
  次の例では、ODBC 関数をユーザー定義関数で使用しています。  
   
-```  
+```sql  
 CREATE FUNCTION dbo.ODBCudf  
 (  
     @string_exp NVARCHAR(4000)  
@@ -135,14 +138,13 @@ END ;
   
 SELECT dbo.ODBCudf('Returns the length.');  
 --Returns 38  
-  
 ```  
   
 ### <a name="c-using-an-odbc-functions-in-select-statements"></a>C. ODBC 関数を SELECT ステートメントで使用する  
  次の SELECT ステートメントでは、ODBC 関数が使用されています。  
   
-```  
-DECLARE @string_exp nvarchar(4000) = 'Returns the length.';  
+```sql 
+DECLARE @string_exp NVARCHAR(4000) = 'Returns the length.';  
 SELECT {fn BIT_LENGTH( @string_exp )};  
 -- Returns 304  
 SELECT {fn OCTET_LENGTH( @string_exp )};  
@@ -183,7 +185,7 @@ SELECT {fn WEEK( @date_exp )};
 ### <a name="d-using-an-odbc-function-in-a-stored-procedure"></a>D. ODBC 関数をストアド プロシージャで使用する  
  次の例では、ストアド プロシージャで、ODBC 関数を使用します。  
   
-```  
+```sql  
 CREATE PROCEDURE dbo.ODBCprocedure  
 (  
     @string_exp NVARCHAR(4000)  
@@ -195,7 +197,7 @@ SELECT {fn BIT_LENGTH( @string_exp )};
 ### <a name="e-using-an-odbc-function-in-a-user-defined-function"></a>E. ODBC 関数をユーザー定義関数で使用する  
  次の例では、ODBC 関数をユーザー定義関数で使用しています。  
   
-```  
+```sql  
 CREATE FUNCTION dbo.ODBCudf  
 (  
     @string_exp NVARCHAR(4000)  
@@ -210,13 +212,12 @@ END ;
   
 SELECT dbo.ODBCudf('Returns the length in bits.');  
 --Returns 432  
-  
 ```  
   
 ### <a name="f-using-an-odbc-functions-in-select-statements"></a>F. ODBC 関数を SELECT ステートメントで使用する  
  次の SELECT ステートメントでは、ODBC 関数が使用されています。  
   
-```  
+```sql  
 DECLARE @string_exp NVARCHAR(4000) = 'Returns the length.';  
 SELECT {fn BIT_LENGTH( @string_exp )};  
 -- Returns 304  
@@ -250,4 +251,4 @@ SELECT {fn WEEK( @date_exp )};
 ```  
   
 ## <a name="see-also"></a>参照  
- [組み込み関数 &#40;Transact-SQL&#41;](~/t-sql/functions/functions.md)  
+ [組み込み関数 &#40;Transact-SQL&#41;](~/t-sql/functions/functions.md)

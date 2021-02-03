@@ -1,13 +1,13 @@
 ---
-description: sp_cdc_disable_db (Transact-sql)
-title: sp_cdc_disable_db (Transact-sql) |Microsoft Docs
+description: sys.sp_cdc_disable_db (Transact-sql)
+title: sys.sp_cdc_disable_db (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sp_cdc_disable_db
 - sys.sp_cdc_disable_db_TSQL
@@ -22,19 +22,19 @@ helpviewer_keywords:
 ms.assetid: 420fb99e-e60f-445b-b568-da96471f1e8f
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: e9b5f17c01ebaa6a55cc5e9afa1ab83c6d924111
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+ms.openlocfilehash: 5964b470b527874b16e9341522bd96e9a4110455
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551164"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99182027"
 ---
-# <a name="syssp_cdc_disable_db-transact-sql"></a>sp_cdc_disable_db (Transact-sql)
+# <a name="syssp_cdc_disable_db-transact-sql"></a>sys.sp_cdc_disable_db (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   現在のデータベースの変更データ キャプチャ機能を無効にします。 変更データ キャプチャは、 [!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のすべてのエディッションで使用できるわけではありません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]の各エディションでサポートされる機能の一覧については、「 [SQL Server 2016 の各エディションがサポートする機能](~/sql-server/editions-and-supported-features-for-sql-server-2016.md)」を参照してください。  
   
-**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] から[現在のバージョン](https://go.microsoft.com/fwlink/p/?LinkId=299658)まで)。  
+**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] から [現在のバージョン](/troubleshoot/sql/general/determine-version-edition-update-level)まで)。  
   
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -51,7 +51,7 @@ sys.sp_cdc_disable_db
  なし  
   
 ## <a name="remarks"></a>解説  
- **sp_cdc_disable_db** は、現在有効になっているデータベース内のすべてのテーブルについて、変更データキャプチャを無効にします。 変更テーブル、ジョブ、ストアドプロシージャ、関数など、変更データキャプチャに関連するすべてのシステムオブジェクトが削除されます。 データベースエントリの **is_cdc_enabled** 列、 [データベースカタログビュー](../../relational-databases/system-catalog-views/sys-databases-transact-sql.md) は0に設定されています。  
+ **sys.sp_cdc_disable_db** は、現在有効になっているデータベース内のすべてのテーブルについて、変更データキャプチャを無効にします。 変更テーブル、ジョブ、ストアドプロシージャ、関数など、変更データキャプチャに関連するすべてのシステムオブジェクトが削除されます。 データベースエントリの **is_cdc_enabled** 列、 [データベースカタログビュー](../../relational-databases/system-catalog-views/sys-databases-transact-sql.md) は0に設定されています。  
   
 > [!NOTE]  
 >  変更データ キャプチャが無効なときにデータベースに対して多数のキャプチャ インスタンスが定義されている場合、実行時間の長いトランザクションがあると sys.sp_cdc_disable_db が実行できなくなる場合があります。 sys.sp_cdc_disable_db を実行する前に sys.sp_cdc_disable_table を使用して個々のキャプチャ インスタンスを無効にすれば、この問題を防ぐことができます。  
@@ -70,7 +70,6 @@ GO
 ```  
   
 ## <a name="see-also"></a>参照  
- [sp_cdc_enable_db &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sys-sp-cdc-enable-db-transact-sql.md)   
- [sp_cdc_disable_table &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sys-sp-cdc-disable-table-transact-sql.md)  
-  
+ [sys.sp_cdc_enable_db &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sys-sp-cdc-enable-db-transact-sql.md)   
+ [sys.sp_cdc_disable_table &#40;Transact-sql&#41;](../../relational-databases/system-stored-procedures/sys-sp-cdc-disable-table-transact-sql.md)  
   

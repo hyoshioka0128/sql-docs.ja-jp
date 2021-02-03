@@ -3,7 +3,7 @@ title: ブレークポイント アクションの指定
 description: ブレークポイントにヒットし、特定の他の条件が満たされたときに Transact-SQL デバッガーが実行するカスタム タスクであるヒット アクションを指定する方法について説明します。
 titleSuffix: T-SQL debugger
 ms.prod: sql
-ms.technology: scripting
+ms.technology: ssms
 ms.topic: conceptual
 helpviewer_keywords:
 - Transact-SQL debugger, breakpoint action
@@ -14,13 +14,13 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 12/04/2019
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: bbe5cd84c13c84f8902ac82bd8ef3ef54dc82bda
-ms.sourcegitcommit: d855def79af642233cbc3c5909bc7dfe04c4aa23
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 9ecbbb8f69ff4f5ba0c7bf36a7decc24a24011ec
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87122730"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97466243"
 ---
 # <a name="specify-a-breakpoint-action"></a>ブレークポイント アクションの指定
 
@@ -73,5 +73,5 @@ ms.locfileid: "87122730"
 3.  **[OK]** をクリックして変更を適用するか、 **[キャンセル]** をクリックして変更を適用せずに終了します。  
   
 ## <a name="see-also"></a>参照  
- [ブレークポイント条件の指定](../../relational-databases/scripting/specify-a-breakpoint-condition.md)   
- [ヒット カウントの指定](../../relational-databases/scripting/specify-a-hit-count.md)  
+ [ブレークポイント条件の指定](./specify-a-breakpoint-condition.md)   
+ [ヒット カウントの指定](./specify-a-hit-count.md)

@@ -23,15 +23,15 @@ helpviewer_keywords:
 - exclusive OR mathematical operations
 - bitwise exclusive OR (^)
 ms.assetid: f38f0ad4-46d0-40ea-9851-0f928fda5293
-author: rothja
-ms.author: jroth
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: fe64aa29987ee280a79afd66faed94cbbc89540e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 6d26cc856791bf46ec8a7f77fe2261ab41b635f2
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88417178"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093556"
 ---
 # <a name="-bitwise-exclusive-or-transact-sql"></a>^ (ビットごとの排他的 OR) (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -42,7 +42,7 @@ ms.locfileid: "88417178"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 expression ^ expression  
 ```  
   
@@ -50,10 +50,10 @@ expression ^ expression
 
 ## <a name="arguments"></a>引数
  *式 (expression)*  
- 整数データ型に分類されるデータ型のいずれか、または **bit**、または **binary** または **varbinary** データ型の有効な[式](../../t-sql/language-elements/expressions-transact-sql.md)を指定します。 *式*は、ビットごとの演算に対して 2 進数として扱われます。  
+ 整数データ型に分類されるデータ型のいずれか、または **bit**、または **binary** または **varbinary** データ型の有効な [式](../../t-sql/language-elements/expressions-transact-sql.md)を指定します。 *式* は、ビットごとの演算に対して 2 進数として扱われます。  
   
 > [!NOTE]  
->  ビットごとの演算では、1 つの*式*のみが **binary** または **varbinary** データ型のいずれかになります。  
+>  ビットごとの演算では、1 つの *式* のみが **binary** または **varbinary** データ型のいずれかになります。  
   
 ## <a name="result-types"></a>戻り値の型  
  入力値が **int** の場合は **int** です。  
@@ -65,12 +65,12 @@ expression ^ expression
 ## <a name="remarks"></a>解説  
  ビットごとの **^** 演算子では、2 つの式の対応するビットを対象に、ビットごとの排他的論理 OR 演算が実行されます。 入力式で現在処理対象となっているビットについて、両方ではなくいずれか一方のビットだけが 1 の場合、結果セットのビットは 1 に設定されます。 両方のビットが 0 または 1 の場合、結果セットのビットはクリアされて 0 になります。  
   
- 左側の式と右側の式が異なる整数型の場合 (たとえば、左側の*式*が **smallint** 型で、右側の*式*が **int** 型の場合)、小さいデータ型の引数が大きいデータ型の引数に変換されます。 この場合、**smallint** "_式_" は **int** に変換されます。  
+ 左側の式と右側の式が異なる整数型の場合 (たとえば、左側の *式* が **smallint** 型で、右側の *式* が **int** 型の場合)、小さいデータ型の引数が大きいデータ型の引数に変換されます。 この場合、**smallint** "_式_" は **int** に変換されます。  
   
 ## <a name="examples"></a>例  
  次の例では、**int** データ型を使用して元の値を格納するテーブルを作成し、1 行に 2 つの値を挿入します。  
   
-```  
+```sql  
 CREATE TABLE bitwise (   
   a_int_value INT NOT NULL,  
   b_int_value INT NOT NULL);
@@ -81,7 +81,7 @@ GO
   
  次のクエリでは、`a_int_value` 列と `b_int_value` 列との間でビットごとの排他的論理 OR を実行します。  
   
-```  
+```sql  
 SELECT a_int_value ^ b_int_value  
 FROM bitwise;  
 GO  

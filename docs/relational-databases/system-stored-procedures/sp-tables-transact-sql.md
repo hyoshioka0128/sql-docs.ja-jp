@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sp_tables
 - sp_tables_TSQL
@@ -18,13 +18,13 @@ helpviewer_keywords:
 ms.assetid: 787a2fa5-87a1-49bd-938b-6043c245f46b
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 03e8a9ddaa10ad154f26abc8baf5e005209e1494
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: a176073f8951cd15acd34aa00b92fc268f90c27e
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89547637"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99180586"
 ---
 # <a name="sp_tables-transact-sql"></a>sp_tables (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "89547637"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql  
--- Syntax for SQL Server, Azure SQL Database, Azure SQL Data Warehouse, Parallel Data Warehouse  
+-- Syntax for SQL Server, Azure SQL Database, Azure Synapse Analytics, Parallel Data Warehouse  
   
 sp_tables [ [ @table_name = ] 'name' ]   
      [ , [ @table_owner = ] 'owner' ]   
@@ -55,9 +55,9 @@ sp_tables [ [ @table_name = ] 'name' ]
   
  では [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 、指定された名前のテーブルが現在のユーザーによって所有されている場合、そのテーブルの列が返されます。 所有者が指定されておらず、現在のユーザーが指定された名前のテーブルを所有していない場合、このプロシージャは、データベース所有者が所有する、指定された名前のテーブルを検索します。 そのテーブルが存在する場合、そのテーブルの列が返されます。  
   
-`[ @table_qualifier = ] 'qualifier'` テーブル修飾子の名前を指定します。 *修飾子* は **sysname**,、既定値は NULL です。 さまざまな DBMS 製品では、3つの要素で構成するテーブル (_修飾子_) がサポート**しています。**_所有者_**。**_名前_)。 では [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 、この列はデータベース名を表します。 一部の製品では、テーブルのデータベース環境のサーバー名を表します。  
+`[ @table_qualifier = ] 'qualifier'` テーブル修飾子の名前を指定します。 *修飾子* は **sysname**,、既定値は NULL です。 さまざまな DBMS 製品では、3つの要素で構成するテーブル (_修飾子_) がサポート **しています。**_所有者_**。**_名前_)。 では [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 、この列はデータベース名を表します。 一部の製品では、テーブルのデータベース環境のサーバー名を表します。  
   
-``[ , [ @table_type = ] "'type', 'type'" ]`` 指定されているテーブル型のすべてのテーブルに関する情報を提供する、コンマで区切られた値の一覧です。 これには、 **テーブル**、 **システムテーブル**、および **ビュー**が含まれます。 *型* は **varchar (100)**,、既定値は NULL です。  
+``[ , [ @table_type = ] "'type', 'type'" ]`` 指定されているテーブル型のすべてのテーブルに関する情報を提供する、コンマで区切られた値の一覧です。 これには、 **テーブル**、 **システムテーブル**、および **ビュー** が含まれます。 *型* は **varchar (100)**,、既定値は NULL です。  
   
 > [!NOTE]  
 >  単一引用符は各テーブル型を囲む必要があり、二重引用符はパラメーター全体を囲む必要があります。 テーブル型は大文字にする必要があります。 SET QUOTED_IDENTIFIER が ON の場合は、各単一引用符を2倍にし、パラメーター全体を単一引用符で囲む必要があります。  
@@ -77,12 +77,12 @@ sp_tables [ [ @table_name = ] 'name' ]
 |**TABLE_TYPE**|**varchar(32)**|テーブル、システムテーブル、またはビュー。|  
 |**備考**|**varchar (254)**|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] はこの列の値を返しません。|  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  相互運用性を最大にするために、ゲートウェイクライアントは SQL-92-標準の SQL パターン照合 (% と _ ワイルドカード文字) のみを想定する必要があります。  
   
- 現在のユーザーの特定のテーブルに対する読み取りまたは書き込みアクセスに関する特権情報は、常にチェックされません。 そのため、アクセスは保証されません。 この結果セットには、テーブルとビューだけでなく、これらの型をサポートする DBMS 製品へのゲートウェイのシノニムと別名も含まれています。 **Sp_server_info**の結果セットで server 属性**ACCESSIBLE_TABLES**が Y の場合は、現在のユーザーがアクセスできるテーブルだけが返されます。  
+ 現在のユーザーの特定のテーブルに対する読み取りまたは書き込みアクセスに関する特権情報は、常にチェックされません。 そのため、アクセスは保証されません。 この結果セットには、テーブルとビューだけでなく、これらの型をサポートする DBMS 製品へのゲートウェイのシノニムと別名も含まれています。 **Sp_server_info** の結果セットで server 属性 **ACCESSIBLE_TABLES** が Y の場合は、現在のユーザーがアクセスできるテーブルだけが返されます。  
   
- **sp_tables** は、ODBC の **sqltables** に相当します。 返される結果は、 **TABLE_TYPE**、 **TABLE_QUALIFIER**、 **TABLE_OWNER**、および **TABLE_NAME**順に並べ替えられます。  
+ **sp_tables** は、ODBC の **sqltables** に相当します。 返される結果は、 **TABLE_TYPE**、 **TABLE_QUALIFIER**、 **TABLE_OWNER**、および **TABLE_NAME** 順に並べ替えられます。  
   
 ## <a name="permissions"></a>アクセス許可  
  スキーマに対する SELECT 権限が必要です。  

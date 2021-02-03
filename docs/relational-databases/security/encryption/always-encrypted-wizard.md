@@ -16,13 +16,13 @@ helpviewer_keywords:
 ms.assetid: 68daddc9-ce48-49aa-917f-6dec86ad5af5
 author: jaszymas
 ms.author: jaszymas
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: f592004e96a9b469a56bc9ff85b8f4080af38406
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 27af6771eeccf660b1eac623f80e663d93e411b8
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85627447"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97405971"
 ---
 # <a name="configure-column-encryption-using-always-encrypted-wizard"></a>Always Encrypted ウィザードを使用して列暗号化を構成する
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -36,7 +36,7 @@ Always Encrypted ウィザードは、選択したデータベースの列に対
 > [!NOTE]
 > 暗号化操作の実行には時間がかかる場合があります。 その間、データベースでトランザクションを書き込むことはできません。 大きなテーブルに対する暗号化操作には、PowerShell が推奨されるツールです。 「[PowerShell での Always Encrypted を使用した列暗号化の構成](configure-column-encryption-using-powershell.md)」をご覧ください。
 
-::: moniker range=">=sql-server-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15"
 
 > [!NOTE]
 > [!INCLUDE [sssqlv15-md](../../../includes/sssqlv15-md.md)] を使用していて、お使いの SQL Server インスタンスがセキュリティで保護されたエンクレーブで構成されている場合は、データベースからデータを移動せずに、暗号化操作をインプレースで実行できます。 「[セキュリティで保護されたエンクレーブが設定された Always Encrypted を使用して列の暗号化をインプレースで構成する](always-encrypted-enclaves-configure-encryption.md)」を参照してください。 ウィザードでは、インプレース暗号化がサポートされていないことに注意してください。
@@ -46,8 +46,8 @@ Always Encrypted ウィザードは、選択したデータベースの列に対
 PowerShell を使用することをお勧めします 
 
  - ウィザードを使用して Always Encrypted を構成し、それをクライアント アプリケーションで使用する方法を説明したエンドツーエンドのチュートリアルについては、以下の Azure SQL Database チュートリアルをご覧ください。
-    - [Always Encrypted と Windows 証明書ストアの列マスター キーを使用して Azure SQL Database 内の機密データを保護する](https://azure.microsoft.com/documentation/articles/sql-database-always-encrypted/)
-    - [Always Encrypted と Azure Key Vault の列マスター キーを使用して Azure SQL Database 内の機密データを保護する](https://docs.microsoft.com/azure/sql-database/sql-database-always-encrypted-azure-key-vault)
+    - [Always Encrypted と Windows 証明書ストアの列マスター キーを使用して Azure SQL Database 内の機密データを保護する](/azure/azure-sql/database/always-encrypted-certificate-store-configure)
+    - [Always Encrypted と Azure Key Vault の列マスター キーを使用して Azure SQL Database 内の機密データを保護する](/azure/sql-database/sql-database-always-encrypted-azure-key-vault)
 
  - ウィザードの利用方法を含む動画が必要な場合、「 [Keeping Sensitive Data Secure with Always Encrypted (Always Encrypted で機密データを守る)](https://channel9.msdn.com/events/DataDriven/SQLServer2016/AlwaysEncrypted)」をご覧ください。 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] セキュリティ チームのブログ「 [SSMS Encryption Wizard - Enabling Always Encrypted in a Few Easy Steps](https://techcommunity.microsoft.com/t5/SQL-Server/SSMS-Encryption-Wizard-Enabling-Always-Encrypted-in-a-Few-Easy/ba-p/384545)」(SSMS 暗号化ウィザード - 数回の手順で Always Encrypted を有効にする) も参照してください。  
  - Always Encrypted キーについて詳しくは、「[Always Encrypted のキー管理の概要](overview-of-key-management-for-always-encrypted.md)」をご覧ください。

@@ -24,13 +24,13 @@ helpviewer_keywords:
 ms.assetid: 5ccef797-408f-4964-80da-965d8e1ccba7
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 78c981c7ecefa48ed38dee3d523ff2fbf991504e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: f8fe46e23a17adb057431eca0c0a999087fe5f8e
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88415578"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97465893"
 ---
 # <a name="drop-master-key-transact-sql"></a>DROP MASTER KEY (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-asdb-asdw-pdw-md](../../includes/tsql-appliesto-ss2008-xxxx-asdw-pdw-md.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "88415578"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 DROP MASTER KEY  
 ```  
   
@@ -57,7 +57,7 @@ DROP MASTER KEY
 ## <a name="examples"></a>例  
  次の例では、データベース `AdventureWorks2012` のマスター キーを削除します。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 DROP MASTER KEY;  
 GO  
@@ -66,7 +66,7 @@ GO
 ## <a name="examples-sssdwfull-and-sspdw"></a>例: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)]、[!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  
  次の例では、マスター キーを削除します。  
   
-```  
+```sql  
 USE master;  
 DROP MASTER KEY;  
 GO  

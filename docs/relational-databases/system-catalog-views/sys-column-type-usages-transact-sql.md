@@ -1,13 +1,13 @@
 ---
-description: column_type_usages (Transact-sql)
-title: column_type_usages (Transact-sql) |Microsoft Docs
+description: sys.column_type_usages (Transact-sql)
+title: sys.column_type_usages (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - column_type_usages
 - sys.column_type_usages_TSQL
@@ -18,16 +18,16 @@ dev_langs:
 helpviewer_keywords:
 - sys.column_type_usages catalog view
 ms.assetid: 1ead375e-f662-4837-903f-8947496c51e4
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 519eaa9b389fdc1920e6396536e45f028e97a4a4
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 328d98a5b8690cd92da0d130736e5254d2e94630
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542648"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99190857"
 ---
-# <a name="syscolumn_type_usages-transact-sql"></a>column_type_usages (Transact-sql)
+# <a name="syscolumn_type_usages-transact-sql"></a>sys.column_type_usages (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   ユーザー定義型の列ごとに 1 行のデータを保持します。  

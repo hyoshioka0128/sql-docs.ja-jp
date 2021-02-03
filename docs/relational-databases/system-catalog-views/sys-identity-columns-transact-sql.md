@@ -1,13 +1,13 @@
 ---
-description: identity_columns (Transact-sql)
-title: identity_columns (Transact-sql) |Microsoft Docs
+description: sys.identity_columns (Transact-sql)
+title: sys.identity_columns (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - identity_columns
 - sys.identity_columns
@@ -20,24 +20,24 @@ helpviewer_keywords:
 ms.assetid: 97ee01e6-9c9e-4fd9-884b-68b4084669d5
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 67282343c26f607ef0d6f44401cdf2a1c291fafd
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 3c375ef30ef9c5a3c76b61bb2eb06a4aa3bb611a
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88420136"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99193825"
 ---
-# <a name="sysidentity_columns-transact-sql"></a>identity_columns (Transact-sql)
+# <a name="sysidentity_columns-transact-sql"></a>sys.identity_columns (Transact-sql)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   Id 列である列ごとに1行の値を格納します。  
   
- **Identity_columns**ビューは、 **sys**ビューから行を継承します。 **Identity_columns**ビューでは、 **seed_value**、 **increment_value**、 **last_value**、および**is_not_for_replication**の各列に加えて、 **sys**ビュー内の列が返されます。 詳細については、「[カタログ ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)」を参照してください。  
+ **Sys.identity_columns** ビューでは、 **sys** ビューから行を継承します。 **Sys.identity_columns** ビューでは、列、 **seed_value**、 **increment_value**、 **last_value**、および **is_not_for_replication** 列が返さ **れます。** 詳細については、「[カタログ ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)」を参照してください。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
-|**\<columns inherited from sys.columns>**||**Identity_columns**ビューでは、すべての列が返されます、、**列、ビュー**です。 また、以下に示す追加の列も返されます。 **Identity_columns**ビューが**sys**から継承する列の詳細については、「 [sys &#40;transact-sql&#41;](../../relational-databases/system-catalog-views/sys-columns-transact-sql.md)」を参照してください。|  
+|**\<columns inherited from sys.columns>**||**Sys.identity_columns** ビューでは、すべての列が返されます、**列、ビュー** です。 また、以下に示す追加の列も返されます。 **Sys.identity_columns** ビューが **sys** から継承する列の説明については、「 [sys &#40;transact-sql&#41;](../../relational-databases/system-catalog-views/sys-columns-transact-sql.md)」を参照してください。|  
 |**seed_value**|**sql_variant**|この id 列のシード値。 シード値のデータ型は、列自体のデータ型と同じです。|  
 |**increment_value**|**sql_variant**|この ID 列に対する増分値です。 シード値のデータ型は、列自体のデータ型と同じです。|  
 |**last_value**|**sql_variant**|この id 列に対して生成された最後の値。 シード値のデータ型は、列自体のデータ型と同じです。|  

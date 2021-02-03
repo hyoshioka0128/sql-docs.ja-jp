@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: e4cb8eb8-affb-4810-a8a9-0110af3c247a
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 1c8ddbf1bd14e246741639a7e9eb11f4175c14d5
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: c75867165d29be5af4073aa6c8e2281687db7f0c
+ms.sourcegitcommit: c5078791a07330a87a92abb19b791e950672e198
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88365248"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "91114768"
 ---
 # <a name="ident_seed-transact-sql"></a>IDENT_SEED (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "88365248"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 IDENT_SEED ( 'table_or_view' )  
 ```  
   
@@ -44,7 +44,7 @@ IDENT_SEED ( 'table_or_view' )
 
 ## <a name="arguments"></a>引数
  **'** *table_or_view* **'**  
- ID シード値を確認するためのテーブルまたはビューを表す[式](../../t-sql/language-elements/expressions-transact-sql.md)を指定します。 *されることはありません* 引用符、変数、関数の場合、または列名で囲まれた文字列定数を指定できます。 *table_or_view* は **char**、**nchar**、**varchar**、または **nvarchar**です。  
+ ID シード値を確認するためのテーブルまたはビューを表す[式](../../t-sql/language-elements/expressions-transact-sql.md)を指定します。 *されることはありません* 引用符、変数、関数の場合、または列名で囲まれた文字列定数を指定できます。 *table_or_view* は **char**、**nchar**、**varchar**、または **nvarchar** です。  
   
 ## <a name="return-types"></a>戻り値の型  
 **numeric**([@@MAXPRECISION](../../t-sql/functions/max-precision-transact-sql.md),0))  

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - SET HADR
 - SET_HADR_TSQL
@@ -22,14 +22,14 @@ helpviewer_keywords:
 - Availability Groups [SQL Server], Transact-SQL statements
 - Availability Groups [SQL Server], databases
 ms.assetid: 20e6e803-d6d5-48d5-b626-d1e0a73d174c
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: 3afe9d34563d8c414f662d3dbbf57c44231ea420
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 7d62a25ccfdf4abb6231f226e7a846418680a155
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88479214"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99184528"
 ---
 # <a name="alter-database-transact-sql-set-hadr"></a>ALTER DATABASE (Transact-SQL) SET HADR 
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -41,7 +41,6 @@ ms.locfileid: "88479214"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 ALTER DATABASE database_name  
    SET HADR   
    {  
@@ -70,7 +69,7 @@ ALTER DATABASE database_name
   
 -   データベースは既にプライマリ レプリカ上の可用性グループに追加されている必要があります。  
   
--   プライマリ レプリカがアクティブになっている必要があります。 非アクティブなプライマリ レプリカのトラブルシューティング方法の詳細については、「[AlwaysOn 可用性グループの構成のトラブルシューティング (SQL Server)](https://go.microsoft.com/fwlink/?LinkId=225834)」を参照してください。  
+-   プライマリ レプリカがアクティブになっている必要があります。 非アクティブなプライマリ レプリカのトラブルシューティング方法の詳細については、「[AlwaysOn 可用性グループの構成のトラブルシューティング (SQL Server)](/previous-versions/sql/sql-server-2012/ff878308(v=sql.110))」を参照してください。  
   
 -   プライマリ レプリカがオンラインになっており、セカンダリ レプリカがプライマリ レプリカに接続されている必要があります。  
   
@@ -137,7 +136,7 @@ ALTER DATABASE database_name
 ## <a name="examples"></a>例  
  次の例では、セカンダリ データベース `AccountsDb1` を、`AccountsAG` 可用性グループのローカル セカンダリ レプリカに参加させます。  
   
-```  
+```sql  
 ALTER DATABASE AccountsDb1 SET HADR AVAILABILITY GROUP = AccountsAG;  
 ```  
   
@@ -149,5 +148,4 @@ ALTER DATABASE AccountsDb1 SET HADR AVAILABILITY GROUP = AccountsAG;
  [ALTER AVAILABILITY GROUP &#40;Transact-SQL&#41;](../../t-sql/statements/alter-availability-group-transact-sql.md)   
  [CREATE AVAILABILITY GROUP &#40;Transact-SQL&#41;](../../t-sql/statements/create-availability-group-transact-sql.md)   
  [Always On 可用性グループの概要 &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server.md) [Always On 可用性グループの構成のトラブルシューティング &#40;SQL Server&#41;](../../database-engine/availability-groups/windows/troubleshoot-always-on-availability-groups-configuration-sql-server.md) 
-  
   

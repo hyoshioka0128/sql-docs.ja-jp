@@ -5,22 +5,22 @@ ms.custom: seodec18
 ms.date: 05/17/2016
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
-ms.topic: conceptual
+ms.technology: availability-groups
+ms.topic: how-to
 f1_keywords:
 - sql13.swb.adddatabasewizard.f1
 helpviewer_keywords:
 - Availability Groups [SQL Server], wizards
 - Availability Groups [SQL Server], databases
 ms.assetid: 81e5e36d-735d-4731-8017-2654673abb88
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: 15fd7cae3cfc50d9c659ea189c9fd162529d3ff6
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: e26d1dbf4b6599403beed4262eedc89eba2b0dd2
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85900867"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641248"
 ---
 # <a name="add-a-database-to-an-always-on-availability-group-with-the-availability-group-wizard"></a>可用性グループ ウィザードを使用して Always On 可用性グループにデータベースを追加する
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]

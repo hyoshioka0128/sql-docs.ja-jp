@@ -11,23 +11,23 @@ ms.topic: conceptual
 ms.date: 06/10/2020
 ms.author: datrigan
 author: DavidTrigano
-ms.openlocfilehash: 7c23b7faa93281ab34ed4b500d10dfd50e9c8c76
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: eab3c943f1191c2d52f6d476c1e0a83b74b6f0df
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85737043"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97638188"
 ---
 # <a name="sql-data-discovery-and-classification"></a>SQL データの検出と分類
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-データの検出と分類では、データベース内の機密データの**検出**、**分類**、**ラベル付け**、**レポート作成**を行うための新しいツールが導入されました。このツールは [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) に組み込まれています。
+データの検出と分類では、データベース内の機密データの **検出**、**分類**、**ラベル付け**、**レポート作成** を行うための新しいツールが導入されました。このツールは [SQL Server Management Studio (SSMS)](../../ssms/download-sql-server-management-studio-ssms.md) に組み込まれています。
 最も機密性の高いデータ (ビジネス、財務、医療など) の検出と分類は、組織の情報保護の達成において極めて重要な役割を果たすことができます。 次のような場合にインフラストラクチャとして使用できます。
 * データのプライバシー基準を満たせるようにする。
 * 機密性の高いデータを含むデータベース/列へのアクセスを制御し、セキュリティを強化する。
 
 > [!NOTE]
-> データの検出と分類は、**SQL Server 2012 以降でサポートされ、[SSMS 17.5](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) 以降で使用できます**。 Azure SQL Database については、「[Azure SQL Database のデータの検出と分類](/azure/sql-database/sql-database-data-discovery-and-classification/)」を参照してください。
+> データの検出と分類は、**SQL Server 2012 以降でサポートされ、[SSMS 17.5](../../ssms/download-sql-server-management-studio-ssms.md) 以降で使用できます**。 Azure SQL Database については、「[Azure SQL Database のデータの検出と分類](/azure/sql-database/sql-database-data-discovery-and-classification/)」を参照してください。
 
 ## <a name="overview"></a><a id="subheading-1"></a>概要
 データの検出と分類では高度な一連のサービスが導入され、データベースだけでなく、データの保護を目的とした新しい SQL Information Protection パラダイムが形成されます。
@@ -49,51 +49,51 @@ ms.locfileid: "85737043"
 
 2. SSMS オブジェクト エクスプローラーで、分類するデータベースを右クリックして、 **[タスク]** 、 **[データの検出と分類]** 、 **[データの分類]** の順に選択します。
 
-   ![ナビゲーション ウィンドウ][0]
+   ![[タスク] > [データの検出と分類] > [データの分類] の順に選択されている SSMS オブジェクト エクスプローラーを示すスクリーンショット。][0]
 
-3. 分類エンジンは機密データが含まれる可能性のある列についてデータベースをスキャンし、**推奨される列の分類**のリストを提供します。
+3. 分類エンジンは機密データが含まれる可能性のある列についてデータベースをスキャンし、**推奨される列の分類** のリストを提供します。
 
     * 推奨される列の分類のリストを表示するには、上部にある推奨事項通知ボックスまたはウィンドウの下部にある推奨事項パネルをクリックします。
 
-        ![ナビゲーション ウィンドウ][2]
+        ![分類の推奨事項を含む 39 の列が見つかったという通知を示すスクリーンショット。 ここをクリックすればそれらが表示されます。][2]
 
-        ![ナビゲーション ウィンドウ][3]
+        ![分類の推奨事項を含む 39 の列があるという通知を示すスクリーンショット (クリックすると表示されます)。][3]
 
     * 推奨事項のリストを確認します。
         * 特定の列の推奨事項を承諾するには、関連する行の左側の列のチェック ボックスをオンにします。 推奨事項テーブル ヘッダーのチェック ボックスをオンにして、*すべての推奨事項* を承諾済みとしてマークすることもできます。
 
         * ドロップダウン ボックスを使用して、推奨される情報の種類と機密ラベルを変更することもできます。        
 
-        ![ナビゲーション ウィンドウ][4]
+        ![推奨事項の一覧を示すスクリーンショット。][4]
 
     * 選択した推奨事項を適用するには、青い **[Accept selected recommendations]\(選択した推奨事項を承諾\)** ボタンをクリックします。
 
-        ![ナビゲーション ウィンドウ][5]
+        ![[Accept selected recommendations]\(選択した推奨事項を承諾\) ボタンのスクリーンショット。][5]
 
-4. 代わりに列を**手動で分類**することもできます。さらに、推奨事項ベースの分類について、次の操作を実行することもできます。
+4. 代わりに列を **手動で分類** することもできます。さらに、推奨事項ベースの分類について、次の操作を実行することもできます。
 
     * ウィンドウの上部のメニューで **[分類の追加]** をクリックします。
 
-        ![ナビゲーション ウィンドウ][6]
+        ![[分類の追加] オプションが選択されている上部のメニューを示すスクリーンショット。][6]
 
     * 開いたコンテキスト メニューで、分類するスキーマ、テーブル、列の順に選択し、情報の種類と機密ラベルを選択します。 次に、コンテキスト ウィンドウの下部にある青い **[分類の追加]** ボタンをクリックします。
 
-        ![ナビゲーション ウィンドウ][7]
+        ![[分類の追加] コンテキスト ウィンドウを示すスクリーンショット。][7]
 
 5. 分類を完了し、新しい分類メタデータでデータベース列に永続的にラベル (タグ) を付けるには、ウィンドウの上部のメニューで **[保存]** をクリックします。
 
-    ![ナビゲーション ウィンドウ][8]
+    ![[保存] オプションが選択されている上部のメニューを示すスクリーンショット。][8]
 
 
 6. データベースの分類状態の完全な要約を示すレポートを生成するには、ウィンドウの上部のメニューで **[レポートの表示]** をクリックします。 (レポートは SSMS を利用して生成することもできます。 レポートを生成するデータベースを右クリックし、 **[タスク]** 、 **[データの検出と分類]** 、 **[レポートの生成]** の順に選択します。)
 
-    ![ナビゲーション ウィンドウ][9]
+    ![[レポートの表示] オプションが選択されている上部のメニューを示すスクリーンショット。][9]
 
-    ![ナビゲーション ウィンドウ][10]
+    ![SQL データ分類レポートを示すスクリーンショット。][10]
 
 ## <a name="manage-information-protection-policy-with-ssms"></a><a id="subheading-3"></a>SSMS で情報保護ポリシーを管理する
 
-[SSMS 18.4](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) 以降を利用し、情報保護ポリシーを管理できます。
+[SSMS 18.4](../../ssms/download-sql-server-management-studio-ssms.md) 以降を利用し、情報保護ポリシーを管理できます。
 
 1. SQL Server Management Studio (SSMS) で、SQL Server に接続します。
 
@@ -109,14 +109,14 @@ ms.locfileid: "85737043"
 
 > [!IMPORTANT]
 > 情報保護ポリシー ファイルは SQL Server に保存されません。
-> SSMS では既定の情報保護ポリシーが使用されます。 カスタマイズされた情報保護ポリシーでエラーが発生した場合、SSMS では既定のポリシーを使用できません。 データ分類でエラーが発生します。 解決するには、 **[情報保護ポリシーのリセット]** をクリックし、既定のポリシーを使用し、データ分類をもう一度有効にします。
+> SSMS では既定の情報保護ポリシーが使用されます。 カスタマイズされた情報保護ポリシーでエラーが発生した場合、SSMS では既定のポリシーを使用できません。 データ分類でエラーが発生します。 解決するには、**[情報保護ポリシーのリセット]** をクリックし、既定のポリシーを使用し、データ分類をもう一度有効にします。
 
 ## <a name="accessing-the-classification-metadata"></a><a id="subheading-4"></a>分類メタデータへのアクセス
 
 SQL Server 2019 には [`sys.sensitivity_classifications`](../system-catalog-views/sys-sensitivity-classifications-transact-sql.md) というシステム カタログ ビューが導入されています。 このビューでは、情報の種類と機密ラベルが返されます。 
 
 > [!NOTE]
-> このビューには **VIEW ANY SENSITIVITY CLASSIFICATION** 権限が必要です。 詳細については、「 [Metadata Visibility Configuration](https://docs.microsoft.com/sql/relational-databases/security/metadata-visibility-configuration?view=sql-server-ver15)」を参照してください。
+> このビューには **VIEW ANY SENSITIVITY CLASSIFICATION** 権限が必要です。 詳細については、「 [Metadata Visibility Configuration](./metadata-visibility-configuration.md)」を参照してください。
 
 SQL Server 2019 インスタンスで、`sys.sensitivity_classifications` を問い合わせ、分類されているすべての列とそれらに対応する分類を確認します。 次に例を示します。 
 
@@ -190,27 +190,25 @@ FROM
 # <a name="t-sql"></a>[T-SQL](#tab/t-sql)
 T-SQL を使って、列の分類を追加/削除し、データベース全体のすべての分類を取得することができます。
 
-- 1 つ以上の列の分類の追加/更新:[ADD SENSITIVITY CLASSIFICATION](https://docs.microsoft.com/sql/t-sql/statements/add-sensitivity-classification-transact-sql)
-- 1 つ以上の列の分類の削除:[DROP SENSITIVITY CLASSIFICATION](https://docs.microsoft.com/sql/t-sql/statements/drop-sensitivity-classification-transact-sql)
+- 1 つ以上の列の分類の追加/更新:[ADD SENSITIVITY CLASSIFICATION](../../t-sql/statements/add-sensitivity-classification-transact-sql.md)
+- 1 つ以上の列の分類の削除:[DROP SENSITIVITY CLASSIFICATION](../../t-sql/statements/drop-sensitivity-classification-transact-sql.md)
 
 # <a name="powershell-cmdlet"></a>[PowerShell コマンドレット](#tab/sql-powelshell)
 PowerShell コマンドレットを使用して列の分類を追加/削除し、すべての分類を取得し、データベース全体の推奨事項を取得できます。
 
-- [Get-SqlSensitivityClassification](https://docs.microsoft.com/powershell/module/sqlserver/Get-SqlSensitivityClassification?view=sqlserver-ps)
-- [Get-SqlSensitivityRecommendations](https://docs.microsoft.com/powershell/module/sqlserver/Get-SqlSensitivityRecommendations?view=sqlserver-ps)
-- [Set-SqlSensitivityClassification](https://docs.microsoft.com/powershell/module/sqlserver/Set-SqlSensitivityClassification?view=sqlserver-ps)
-- [Remove-SqlSensitivityClassification](https://docs.microsoft.com/powershell/module/sqlserver/Remove-SqlSensitivityClassification?view=sqlserver-ps)
-
----
+- [Get-SqlSensitivityClassification](/powershell/module/sqlserver/Get-SqlSensitivityClassification)
+- [Get-SqlSensitivityRecommendations](/powershell/module/sqlserver/Get-SqlSensitivityRecommendations)
+- [Set-SqlSensitivityClassification](/powershell/module/sqlserver/Set-SqlSensitivityClassification)
+- [Remove-SqlSensitivityClassification](/powershell/module/sqlserver/Remove-SqlSensitivityClassification)
 
 ## <a name="next-steps"></a><a id="subheading-6"></a>次のステップ
 
-Azure SQL Database については、「[Azure SQL Database のデータの検出と分類](https://go.microsoft.com/fwlink/?linkid=866265)」を参照してください。
+Azure SQL Database については、「[Azure SQL Database のデータの検出と分類](/azure/azure-sql/database/data-discovery-and-classification-overview)」を参照してください。
 
 次の列レベルのセキュリティ メカニズムを適用して、機微な列の保護を検討してください。
 
-* [動的データ マスク](https://docs.microsoft.com/sql/relational-databases/security/dynamic-data-masking): 使用中の機微な列を難読化します。
-* [Always Encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine): 保存中の機微な列を暗号化します。
+* [動的データ マスク](./dynamic-data-masking.md): 使用中の機微な列を難読化します。
+* [Always Encrypted](./encryption/always-encrypted-database-engine.md): 保存中の機微な列を暗号化します。
 
 <!--Anchors-->
 [SQL Data Discovery & Classification overview]: #subheading-1

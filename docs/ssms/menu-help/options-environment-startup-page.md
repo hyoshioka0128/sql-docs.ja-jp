@@ -1,18 +1,19 @@
 ---
 title: " SQL Server の [オプション] ページ - [環境] - [スタートアップ]"
-ms.date: 11/05/2018
+description: '[オプション] ([環境] - [スタートアップ] ページ)'
 ms.prod: sql
 ms.prod_service: sql-tools
 ms.technology: ssms
 ms.topic: conceptual
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: b817bb058373fb86c417f3622bde516d10dfb81a
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+ms.date: 11/05/2018
+ms.openlocfilehash: 6db0e4b3cf24087b9441b9e3c6b83b59cbefe48f
+ms.sourcegitcommit: af64e2b8d498af26b973e86db5c00f8d72991295
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86007815"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98193049"
 ---
 # <a name="options-environment---startup-page"></a>[オプション] ([環境] - [スタートアップ] ページ)
 

@@ -12,13 +12,13 @@ helpviewer_keywords:
 ms.assetid: da9cd2c4-6fdd-4ada-b74f-105e3541393c
 author: stevestein
 ms.author: sstein
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 88c0c8d1365d91489a7485e6eabed759b0515716
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 41f86301a0520201fb0316de6d4d3379d27c37d1
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88428444"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97467873"
 ---
 # <a name="performance-statistics-event-class"></a>Performance Statistics イベント クラス
 [!INCLUDE [SQL Server - ASDB](../../includes/applies-to-version/sql-asdb.md)]
@@ -55,7 +55,7 @@ ms.locfileid: "88428444"
 |DatabaseID|**int**|USE *database* ステートメントで指定されたデータベースの ID、または特定のインスタンスについて USE *database* ステートメントが実行されていない場合は既定のデータベースの ID となります。 [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] では、ServerName データ列がトレースにキャプチャされ、そのサーバーが利用可能な場合、データベースの名前が表示されます。 データベースに対応する値は、DB_ID 関数を使用して特定します。|3|はい|  
 |EventSequence|**int**|要求内の特定のイベントのシーケンス。|51|いいえ|  
 |SessionLoginName|**nvarchar**|セッションを開始したユーザーのログイン名。 たとえば、Login1 を使用して [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] に接続し、Login2 でステートメントを実行すると、SessionLoginName には Login1 が表示され、LoginName には Login2 が表示されます。 この列には、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ログインと Windows ログインの両方が表示されます。|64|はい|  
-|EventSubClass|**int**|イベント サブクラスの種類。<br /><br /> 1 = ストアド プロシージャ内のクエリがコンパイルされました。<br /><br /> ストアド プロシージャのトレースで、次の種類の EventSubClass が生成されます。<br /><br /> *n* 個のクエリを持つストアド プロシージャでは、次のようになります。<br /><br /> 種類 1 が*n* 個|21|はい|  
+|EventSubClass|**int**|イベント サブクラスの種類。<br /><br /> 1 = ストアド プロシージャ内のクエリがコンパイルされました。<br /><br /> ストアド プロシージャのトレースで、次の種類の EventSubClass が生成されます。<br /><br /> *n* 個のクエリを持つストアド プロシージャでは、次のようになります。<br /><br /> 種類 1 が *n* 個|21|はい|  
 |IntegerData2|**int**|ストアド プロシージャ内のステートメントの最後。<br /><br /> ストアド プロシージャの最後に達すると -1 になります。|55|はい|  
 |ObjectID|**int**|システムによって割り当てられたオブジェクト ID。|22|はい|  
 |Offset|**int**|ストアド プロシージャ内またはバッチ内のステートメントの開始オフセット。|61|はい|  
@@ -79,7 +79,7 @@ ms.locfileid: "88428444"
 |DatabaseID|**int**|USE *database* ステートメントで指定されたデータベースの ID、または特定のインスタンスについて USE *database* ステートメントが実行されていない場合は既定のデータベースの ID となります。 [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] では、ServerName データ列がトレースにキャプチャされ、そのサーバーが利用可能な場合、データベースの名前が表示されます。 データベースに対応する値は、DB_ID 関数を使用して特定します。|3|はい|  
 |EventSequence|**int**|要求内の特定のイベントのシーケンス。|51|いいえ|  
 |SessionLoginName|**nvarchar**|セッションを開始したユーザーのログイン名。 たとえば、Login1 を使用して [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] に接続し、Login2 でステートメントを実行すると、SessionLoginName には Login1 が表示され、LoginName には Login2 が表示されます。 この列には、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ログインと Windows ログインの両方が表示されます。|64|はい|  
-|EventSubClass|**int**|イベント サブクラスの種類。<br /><br /> 2 = アドホック SQL ステートメント内のクエリがコンパイルされました。<br /><br /> アドホック バッチのトレースで、次の種類の EventSubClass が生成されます。<br /><br /> *n* 個のクエリを持つアドホック バッチでは、次のようになります。<br /><br /> 種類 2 が*n* 個|21|はい|  
+|EventSubClass|**int**|イベント サブクラスの種類。<br /><br /> 2 = アドホック SQL ステートメント内のクエリがコンパイルされました。<br /><br /> アドホック バッチのトレースで、次の種類の EventSubClass が生成されます。<br /><br /> *n* 個のクエリを持つアドホック バッチでは、次のようになります。<br /><br /> 種類 2 が *n* 個|21|はい|  
 |IntegerData2|**int**|バッチ内のステートメントの最後。<br /><br /> バッチの最後に達すると -1 になります。|55|はい|  
 |ObjectID|**int**|該当なし|22|はい|  
 |Offset|**int**|バッチ内のステートメントの開始オフセット。<br /><br /> バッチの開始時は 0 です。|61|はい|  

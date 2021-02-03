@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5a31e88a-ad7b-4ef7-b773-e2571f1cb3aa
 author: MladjoA
 ms.author: mlandzic
-ms.openlocfilehash: f57155c8724d8cb27aaf06eaf491e11298ad61c2
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 812819918da17184029d3b28d2971f9cd85cd7a4
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88497043"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99159408"
 ---
 # <a name="isvaliddetailed-geometry-datatype"></a>IsValidDetailed (geometry データ型)
 [!INCLUDE [SQL Server Azure SQL Database ](../../includes/applies-to-version/sql-asdb.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "88497043"
   
  CLR 戻り値の型: **string**  
   
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>解説  
  次の表に、返される可能性のある戻り値を示します。  
   
 |戻り値|説明|  

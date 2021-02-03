@@ -6,7 +6,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DATEDIFF_TSQL
 - DATEDIFF
@@ -28,15 +28,15 @@ helpviewer_keywords:
 - crossing date time boundaries [SQL Server]
 - calculating dates times [SQL Server]
 ms.assetid: eba979f2-1a8d-4cce-9d75-b74f9b519b37
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 7e5f0fa70dc5c46d984a4d7003fc1ae6a00906a7
-ms.sourcegitcommit: 768f046107642f72693514f51bf2cbd00f58f58a
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 236c082d81db4928e1697e692afef45a6770b5de
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87112090"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99181862"
 ---
 # <a name="datediff-transact-sql"></a>DATEDIFF (Transact-SQL)
 
@@ -50,7 +50,7 @@ ms.locfileid: "87112090"
   
 ## <a name="syntax"></a>構文  
   
-```
+```syntaxsql
 DATEDIFF ( datepart , startdate , enddate )  
 ```  
   
@@ -171,8 +171,8 @@ SELECT DATEDIFF(day, startDate, endDate) AS 'Duration'
 この例では、ユーザー定義変数が *startdate* と *enddate* の引数として機能します。
   
 ```sql
-DECLARE @startdate datetime2 = '2007-05-05 12:10:09.3312722';  
-DECLARE @enddate   datetime2 = '2007-05-04 12:10:09.3312722';   
+DECLARE @startdate DATETIME2 = '2007-05-05 12:10:09.3312722';  
+DECLARE @enddate   DATETIME2 = '2007-05-04 12:10:09.3312722';   
 SELECT DATEDIFF(day, @startdate, @enddate);  
 ```  
   

@@ -12,16 +12,16 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: jroth
 ms.custom: seo-dt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 785060a9f12b68f38e7d59420f7a2e31a77312fa
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 4dbd1e7c5c095154aa7505776c3669564da601d9
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88499332"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97478163"
 ---
 # <a name="format-json-output-automatically-with-auto-mode-sql-server"></a>AUTO モードで自動的に JSON 出力を書式設定する (SQL Server)
-[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
+[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sqlserver2016-asdb.md)]
 
 **SELECT** ステートメントの構造に基づいて **FOR JSON** 句の出力を自動的に書式設定するには、**AUTO** オプションを指定します。  
   
@@ -33,7 +33,7 @@ ms.locfileid: "88499332"
 
 **FOR JSON AUTO** オプションを使用するクエリには、 **FROM** 句を含める必要があります。  
   
-以下に、 **FOR JSON** 句で **AUTO** オプションを使用した例を示します。  
+以下に、 **FOR JSON** 句で **AUTO** オプションを使用した例を示します。 [Azure Data Studio](../../azure-data-studio/download-azure-data-studio.md) は、フラット文字列を表示するのではなく、(この記事に示されているように) JSON の結果を自動的に書式設定するので、JSON クエリ用に推奨されるクエリ エディターです。
   
 ## <a name="examples"></a>例
 

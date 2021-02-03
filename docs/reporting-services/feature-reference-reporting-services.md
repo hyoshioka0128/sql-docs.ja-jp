@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 01daf21c-19c6-448d-ac30-accb54ad83da
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: b5b87404b685fe9e5de09f8703d3c06c48371836
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+ms.openlocfilehash: bdfab6a0dea0d1c098b5057d897f65ac88b6a748
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87247241"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596182"
 ---
 # <a name="feature-reference-reporting-services"></a>機能リファレンス (Reporting Services)
   [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] には、レポートの作成、管理、表示に使用できるツールとアプリケーションが数種類用意されています。 ここでは、これらのツールとアプリケーションのダイアログ ボックス、Web ページ、およびウィザードに関する特有のトピックを紹介します。  
@@ -29,9 +29,6 @@ ms.locfileid: "87247241"
 ## <a name="in-this-section"></a>このセクションの内容  
  [レポート デザイナーの F1 ヘルプ](../reporting-services/tools/report-designer-f1-help.md)  
  レポート デザイナーと関連するダイアログ ボックス、レポート ウィザード、および画像ウィザードのヘルプについて説明します。  
-  
- [Reporting Services 構成マネージャーのヘルプ トピック](https://msdn.microsoft.com/library/7b6fb18e-ec39-4661-88e3-977ed64e2c82)  
- レポート サーバー インスタンスの配置と管理に使用される [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] 構成ツールのヘルプについて説明します。  
   
  [Management Studio のレポート サーバーの F1 ヘルプ](../reporting-services/tools/report-server-in-management-studio-f1-help.md)  
  [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] [!INCLUDE[ssManStudio](../includes/ssmanstudio-md.md)] でレポートおよびレポート サーバーの管理に使用されるダイアログ ボックスのヘルプについて説明します。  
@@ -43,7 +40,6 @@ ms.locfileid: "87247241"
  [Reporting Services の概念 &#40;SSRS&#41;](../reporting-services/reporting-services-concepts-ssrs.md)   
  [Reporting Services レポート &#40;SSRS&#41;](../reporting-services/reports/reporting-services-reports-ssrs.md)   
  [レポート データセット (SSRS)](../reporting-services/report-data/report-datasets-ssrs.md)   
- [レポート ビルダーの概要](https://www.microsoft.com/download/en/details.aspx?id=29072)   
- [レポート ビルダー 1.0 を使用したレポートのデザインと実装](https://go.microsoft.com/fwlink/?LinkId=142601)  
-  
+ [レポート ビルダーの概要](https://www.databasejournal.com/features/mssql/sql-server-report-builder-3.0.html)   
+ [レポート ビルダー 1.0 を使用したレポートのデザインと実装](/previous-versions/sql/sql-server-2008/ms159750(v=sql.100))  
   

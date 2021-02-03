@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - Not Greater
 - Greater
@@ -20,14 +20,14 @@ helpviewer_keywords:
 - '!> (not greater than)'
 - not greater than operator (!>)
 ms.assetid: 71a413ed-64f1-4ab9-9c52-c5959a77d00f
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: a7235630eaa2e60db49fe1230ce1f496dae69e63
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 094be90e33185188e5ca070f5da6556bc13ecc6f
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88479450"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99187764"
 ---
 # <a name="gt-not-greater-than-transact-sql"></a>!&gt;(より大きくない) (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -38,8 +38,7 @@ ms.locfileid: "88479450"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql 
 expression !> expression  
 ```  
   

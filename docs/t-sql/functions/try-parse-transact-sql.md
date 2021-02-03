@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - TRY_PARSE_TSQL
 - TRY_PARSE
@@ -18,13 +18,13 @@ helpviewer_keywords:
 ms.assetid: 292bac1d-edd8-468c-8ff1-8c7de625bc55
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: = azuresqldb-current||>= sql-server-2016||>= sql-server-linux-2017||= sqlallproducts-allversions||=azure-sqldw-latest
-ms.openlocfilehash: f8df055fa3d40a8d31d25ad9917d86a86363335c
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: = azuresqldb-current||>= sql-server-2016||>= sql-server-linux-2017||=azure-sqldw-latest
+ms.openlocfilehash: dfd39a530ca9bac61d2a4ac6036eaae7d5c37152
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88467741"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99183331"
 ---
 # <a name="try_parse-transact-sql"></a>TRY_PARSE (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
@@ -35,8 +35,7 @@ ms.locfileid: "88467741"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 TRY_PARSE ( string_value AS data_type [ USING culture ] )  
 ```  
   
@@ -133,7 +132,7 @@ TRY_PARSE ( string_value AS data_type [ USING culture ] )
   
 ### <a name="a-simple-example-of-try_parse"></a>A. TRY_PARSE の簡単な使用例  
   
-```  
+```sql
 SELECT TRY_PARSE('Jabberwokkie' AS datetime2 USING 'en-US') AS Result;  
 ```  
   
@@ -149,7 +148,7 @@ NULL
   
 ### <a name="b-detecting-nulls-with-try_parse"></a>B. TRY_PARSE で NULL 値を検出する  
   
-```  
+```sql
 SELECT  
     CASE WHEN TRY_PARSE('Aragorn' AS decimal USING 'sr-Latn-CS') IS NULL  
         THEN 'True'  
@@ -170,10 +169,9 @@ True
   
 ### <a name="c-using-iif-with-try_parse-and-implicit-culture-setting"></a>C. TRY_PARSE と暗黙のカルチャ設定を指定した IIF を使用する  
   
-```  
+```sql
 SET LANGUAGE English;  
-SELECT IIF(TRY_PARSE('01/01/2011' AS datetime2) IS NULL, 'True', 'False') AS Result;  
-  
+SELECT IIF(TRY_PARSE('01/01/2011' AS datetime2) IS NULL, 'True', 'False') AS Result;
 ```  
   
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  

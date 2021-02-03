@@ -2,7 +2,7 @@
 description: セキュリティで保護されたエンクレーブが設定された Always Encrypted のキーを管理する
 title: セキュリティで保護されたエンクレーブが設定された Always Encrypted のキーを管理する | Microsoft Docs
 ms.custom: ''
-ms.date: 10/30/2019
+ms.date: 01/15/2021
 ms.reviewer: vanto
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
@@ -10,16 +10,17 @@ ms.technology: security
 ms.topic: conceptual
 author: jaszymas
 ms.author: jaszymas
-monikerRange: '>= sql-server-ver15 || = sqlallproducts-allversions'
-ms.openlocfilehash: 8b70fba2edc9a3ba948afa653acbe79607b8eb51
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>= sql-server-ver15'
+ms.openlocfilehash: 68cc07fdf37dc358d0de024c3227f7225ebea27c
+ms.sourcegitcommit: 8ca4b1398e090337ded64840bcb8d6c92d65c29e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88420316"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98534431"
 ---
 # <a name="manage-keys-for-always-encrypted-with-secure-enclaves"></a>セキュリティで保護されたエンクレーブが設定された Always Encrypted のキーを管理する
-[!INCLUDE [sqlserver2019-windows-only](../../../includes/applies-to-version/sqlserver2019-windows-only.md)]
+
+[!INCLUDE [sqlserver2019-windows-only-asdb](../../../includes/applies-to-version/sqlserver2019-windows-only-asdb.md)]
 
 [セキュリティで保護されたエンクレーブが設定された Always Encrypted](always-encrypted-enclaves.md)では、エンクレーブ対応キーを導入することによって、[Always Encrypted](always-encrypted-database-engine.md) のキー管理が拡張されています。 
 

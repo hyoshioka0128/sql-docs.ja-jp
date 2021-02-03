@@ -3,23 +3,23 @@ title: カスタム レポートを使用したスクリプトの監視
 description: SQL Server Management Studio (SSMS) のカスタム レポートを使用して、外部スクリプト (Python と R) の実行、使用されたリソース、問題の診断、SQL Server Machine Learning Services のパフォーマンスの調整を監視します。
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 09/17/2019
+ms.date: 10/14/2020
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 708d805ff810876ba5871b2e1e887dd97aceba3a
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: 1dd9f995efad5f8e4209baf5827c7be8ccdd8886
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85659623"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471353"
 ---
 # <a name="monitor-python-and-r-script-execution-using-custom-reports-in-sql-server-management-studio"></a>SQL Server Management Studio のカスタムレポートを使用して Python および R のスクリプトの実行を監視する
- [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
+[!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
 
-SQL Server Management Studio (SSMS) のカスタム レポートを使用して、外部スクリプト (Python と R) の実行、使用されたリソース、問題の診断、SQL Server Machine Learning Services のパフォーマンスの調整を監視します。
+[SQL Server Management Studio (SSMS)](../../ssms/download-sql-server-management-studio-ssms.md) のカスタム レポートを使用して、外部スクリプト (Python と R) の実行、使用されたリソース、問題の診断、[SQL Server Machine Learning Services](../sql-server-machine-learning-services.md) のパフォーマンスの調整を監視します。
 
 これらのレポートでは、次のような詳細情報を表示できます。
 
@@ -40,6 +40,11 @@ SQL Server Management Studio のレポートの詳細については、「[Manag
 これらのレポートを使用するには、次の手順を実行します。
 
 1. GitHub から SQL Server Machine Learning Services の [SSMS カスタム レポート](https://github.com/Microsoft/sql-server-samples/tree/master/samples/features/machine-learning-services/ssms-custom-reports)をダウンロードします。
+
+   ::: moniker range="=azuresqldb-mi-current"
+   >[!NOTE]
+   > カスタム レポート **ML Services - Configure Instance** は、Azure SQL Managed Instance ではサポートされていません。
+   ::: moniker-end
 
 2. Management Studio へのレポートのコピー
 

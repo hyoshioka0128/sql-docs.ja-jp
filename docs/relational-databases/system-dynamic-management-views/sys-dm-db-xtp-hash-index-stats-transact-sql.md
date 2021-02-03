@@ -1,13 +1,13 @@
 ---
-description: dm_db_xtp_hash_index_stats (Transact-sql)
-title: dm_db_xtp_hash_index_stats (Transact-sql) |Microsoft Docs
+description: sys.dm_db_xtp_hash_index_stats (Transact-sql)
+title: sys.dm_db_xtp_hash_index_stats (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 08/29/2016
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_db_xtp_hash_index_stats
 - sys.dm_db_xtp_hash_index_stats_TSQL
@@ -18,17 +18,17 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_db_xtp_hash_index_stats (dynamic management view)
 ms.assetid: 45969884-cd61-48e8-aee5-c725c78e3e4c
-author: markingmyname
-ms.author: maghan
-monikerRange: =azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 5e8b28d292de4d860a8e46f7a679e42d99ac8c88
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: f0fe801529ce7706c71ed23a8e9b077ba8aa5747
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542262"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99108754"
 ---
-# <a name="sysdm_db_xtp_hash_index_stats-transact-sql"></a>dm_db_xtp_hash_index_stats (Transact-sql)
+# <a name="sysdm_db_xtp_hash_index_stats-transact-sql"></a>sys.dm_db_xtp_hash_index_stats (Transact-sql)
 [!INCLUDE[sql-asdb-asdbmi](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
   これらの統計は、バケット数を理解してチューニングするために役立ちます。 また、インデックス キーに多数の重複があるケースを検出するためにも使用できます。  
@@ -42,9 +42,9 @@ ms.locfileid: "89542262"
 長いチェーン長は、SELECT や INSERT など、個々の行に対するすべての DML 操作のパフォーマンスに大きな影響を与える可能性があります。 チェーンの長さが短く、空のバケット数が多いことは、bucket_count の値が高すぎることを意味します。 これにより、インデックス スキャンのパフォーマンスが低下します。  
   
 > [!WARNING]
-> **dm_db_xtp_hash_index_stats** は、テーブル全体をスキャンします。 そのため、データベースに大きなテーブルがある場合は、 **dm_db_xtp_hash_index_stats** に長時間かかることがあります。  
+> **sys.dm_db_xtp_hash_index_stats** は、テーブル全体をスキャンします。 そのため、データベースに大きなテーブルがある場合、 **sys.dm_db_xtp_hash_index_stats** には実行に時間がかかることがあります。  
   
-詳細については、「 [メモリ最適化テーブルのハッシュインデックス](../../relational-databases/sql-server-index-design-guide.md#hash_index)」を参照してください。  
+詳細については、「 [Memory-Optimized テーブルのハッシュインデックス](../../relational-databases/sql-server-index-design-guide.md#hash_index)」を参照してください。  
   
 |列名|種類|説明|  
 |-----------------|----------|-----------------|  
@@ -88,7 +88,7 @@ ms.locfileid: "89542262"
   ORDER BY [table], [index];  
 ``` 
 
-このクエリの結果を解釈する方法の詳細については、「 [メモリ最適化テーブルのハッシュインデックスのトラブルシューティング](../../relational-databases/in-memory-oltp/hash-indexes-for-memory-optimized-tables.md) 」を参照してください。  
+このクエリの結果を解釈する方法の詳細については、「 [Memory-Optimized テーブルのハッシュインデックスのトラブルシューティング](../../relational-databases/in-memory-oltp/hash-indexes-for-memory-optimized-tables.md) 」を参照してください。  
 
 ### <a name="b-hash-index-statistics-for-internal-tables"></a>B. 内部テーブルのハッシュインデックスの統計
 

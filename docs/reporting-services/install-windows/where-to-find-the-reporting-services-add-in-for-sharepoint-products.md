@@ -11,13 +11,13 @@ helpviewer_keywords:
 ms.assetid: 069ac476-6336-44a9-a0e7-db1c4888948f
 author: maggiesMSFT
 ms.author: maggies
-monikerRange: '>=sql-server-2016 <=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: ba6987367e72ed544df13216b31aebe85af500e2
-ms.sourcegitcommit: ff82f3260ff79ed860a7a58f54ff7f0594851e6b
+monikerRange: '>=sql-server-2016 <=sql-server-2016'
+ms.openlocfilehash: c088a6cf0779c5c37c92d7ecd2ff93b2cda4ae46
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "74866295"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98172154"
 ---
 # <a name="where-to-find-the-reporting-services-add-in-for-sharepoint-products"></a>SharePoint 製品用 Reporting Services アドインの検索場所
 
@@ -26,12 +26,12 @@ SharePoint 製品およびテクノロジ (rssharepoint.msi) 用 [!INCLUDE[msCoN
 > [!IMPORTANT]  
 >  [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] アドイン、レポート サーバー、および SharePoint のサポートされる組み合わせの一覧については、「[SharePoint、Reporting Services サーバー、Reporting Services アドインのサポートされる組み合わせ &#40;SQL Server 2016&#41;](../../reporting-services/install-windows/supported-combinations-of-sharepoint-and-reporting-services-server.md)」を参照してください。  
   
-##  <a name="sssql15-reporting-services-add-in-for-sharepoint-products"></a>SharePoint 製品用 <a name="bkmk_sql16"></a> [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] Reporting Services アドイン  
+##  <a name="sssql15-reporting-services-add-in-for-sharepoint-products"></a>SharePoint 製品用 <a name="bkmk_sql16"></a> [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] Reporting Services アドイン  
  アドインをダウンロードしてインストールするには、以下の [!INCLUDE[msCoName](../../includes/msconame-md.md)] ダウンロード センターを参照してください。  
   
 -   [Microsoft SharePoint 用 Microsoft® SQL Server® 2016 Reporting Services アドイン](https://www.microsoft.com/download/details.aspx?id=52682)  
   
- このアドインの [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] バージョンは、 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] インストール ウィザードでも提供されます。  
+ このアドインの [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] バージョンは、 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] インストール ウィザードでも提供されます。  
   
 -   セットアップ ウィザードの **[機能の選択]** ページで、 **[SharePoint 製品用 Reporting Services アドイン]** を選択します。  
   
@@ -53,13 +53,13 @@ SharePoint 製品およびテクノロジ (rssharepoint.msi) 用 [!INCLUDE[msCoN
   
  アドインをダウンロードしてインストールするには、以下の [!INCLUDE[msCoName](../../includes/msconame-md.md)] ダウンロード センターを参照してください。  
   
--   **SP1 アドイン:** [Microsoft® SharePoint® 用 Microsoft® SQL Server® 2012 SP1 Reporting Services アドイン ](https://www.microsoft.com/download/details.aspx?id=35583)(https://www.microsoft.com/download/details.aspx?id=35583) 。  
+-   **SP1 アドイン:** [Microsoft® SharePoint® 用 Microsoft® SQL Server® 2012 SP1 Reporting Services アドイン](https://www.microsoft.com/download/details.aspx?id=35583)(https://www.microsoft.com/download/details.aspx?id=35583) 。  
   
 -   **SP1:** [Microsoft® SQL Server® 2012 Service Pack 1 (SP1)](https://www.microsoft.com/download/details.aspx?id=35575) (https://www.microsoft.com/download/details.aspx?id=35575) 。  
 
 ##  <a name="sssql11-reporting-services-add-in-for-sharepoint-2010-products"></a>SharePoint 2010 製品用 <a name="bkmk_sql11"></a> [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] Reporting Services アドイン
 
-SQL Server 2016 リリースでは、[機能の選択] ページで SQL Server インストール ウィザードの一部としてアドインをインストールできるようになりました。 アドインを別途ダウンロードしてインストールする場合、このファイルの最新バージョンは、 [!INCLUDE[msCoName](../../includes/msconame-md.md)] ダウンロード センターの「 [Microsoft® SharePoint® テクノロジ 2010 用 Microsoft® SQL Server® 2012 Reporting Services アドイン](https://go.microsoft.com/fwlink/?LinkID=207242) 」ページからオンラインで入手できます。
+SQL Server 2016 リリースでは、[機能の選択] ページで SQL Server インストール ウィザードの一部としてアドインをインストールできるようになりました。 アドインを別途ダウンロードしてインストールする場合、このファイルの最新バージョンは、 [!INCLUDE[msCoName](../../includes/msconame-md.md)] ダウンロード センターの「 [Microsoft® SharePoint® テクノロジ 2010 用 Microsoft® SQL Server® 2012 Reporting Services アドイン](https://www.microsoft.com/download/details.aspx?id=56052) 」ページからオンラインで入手できます。
 
 ## <a name="next-steps"></a>次のステップ
 

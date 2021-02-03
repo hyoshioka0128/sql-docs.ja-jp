@@ -13,20 +13,20 @@ helpviewer_keywords:
 ms.assetid: 867a54b8-5be4-46e6-9702-49ae6dabf67c
 author: stevestein
 ms.author: sstein
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: ea3a7bec04dcd7e584d541cf4fa4ccee3cf48915
-ms.sourcegitcommit: 331b8495e4ab37266945c81ff5b93d250bdaa6da
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 230a1a00d66f1839be7a8135ff9c45022f0a2511
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88645847"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98765650"
 ---
 # <a name="create-foreign-key-relationships"></a>外部キーのリレーションシップの作成
 
 
 [!INCLUDE [sqlserver2016-asdb-asdbmi](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi.md)]
 
-この記事では、[!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] または [!INCLUDE[tsql](../../includes/tsql-md.md)] を使用して、[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] で外部キーのリレーションシップを作成する方法について説明します。 あるテーブルの行と他のテーブルの行を関連付ける場合は、2 つのテーブル間にリレーションシップを作成します。
+この記事では、[!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] または [!INCLUDE[tsql](../../includes/tsql-md.md)] を使用して、[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] で外部キーのリレーションシップを作成する方法について説明します。 あるテーブルの行と他のテーブルの行を関連付ける場合は、2 つのテーブル間にリレーションシップを作成します。
 
 ## <a name="permissions"></a>アクセス許可
 
@@ -42,7 +42,7 @@ ms.locfileid: "88645847"
 - FOREIGN KEY 制約は、同じテーブル内の他の列を参照でき、自己参照として参照されます。
 - 列レベルで指定された FOREIGN KEY 制約は、参照列を 1 つだけ表示できます。 この参照列は、制約が定義されている列と同じデータ型である必要があります。
 - テーブルレベルで指定された FOREIGN KEY 制約は、制約列リスト内の列の数と同じ数の参照列を持っている必要があります。 また、各参照列のデータ型は、列リスト内の、参照列に対応する列と同じでなければなりません。
-- [!INCLUDE[ssDE](../../includes/ssde-md.md)] には、他のテーブルを参照するテーブルに含めることができる FOREIGN KEY 制約の数に対して定義済みの制限はありません。 [!INCLUDE[ssDE](../../includes/ssde-md.md)] では、特定のテーブルを参照する他のテーブルが所有する FOREIGN KEY 制約の数も制限されません。 ただし、使用できる FOREIGN KEY 制約の実際の数は、ハードウェア構成やデータベースおよびアプリケーションのデザインにより制限されます。 テーブルから、他のテーブルと列を最大 253 個まで外部キーとして参照 (発信参照) することができます。 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降では、1 つのテーブル内の列を参照 (着信参照) できる他のテーブルと列の数が 253 から 10,000 までに限られています。 (少なくとも 130 の互換性レベルが必要です)。増加には、次の制限があります。
+- [!INCLUDE[ssDE](../../includes/ssde-md.md)] には、他のテーブルを参照するテーブルに含めることができる FOREIGN KEY 制約の数に対して定義済みの制限はありません。 [!INCLUDE[ssDE](../../includes/ssde-md.md)] では、特定のテーブルを参照する他のテーブルが所有する FOREIGN KEY 制約の数も制限されません。 ただし、使用できる FOREIGN KEY 制約の実際の数は、ハードウェア構成やデータベースおよびアプリケーションのデザインにより制限されます。 テーブルから、他のテーブルと列を最大 253 個まで外部キーとして参照 (発信参照) することができます。 [!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] 以降では、1 つのテーブル内の列を参照 (着信参照) できる他のテーブルと列の数が 253 から 10,000 までに限られています。 (少なくとも 130 の互換性レベルが必要です)。増加には、次の制限があります。
 
   - 253 を超える外部キー参照は、DELETE と UPDATE DML 操作でのみサポートされています。 MERGE 操作はサポートされません。
   - テーブル自体に対する外部キー参照も、253 の外部キー参照に制限されます。
@@ -58,7 +58,7 @@ ms.locfileid: "88645847"
 
 1. オブジェクト エクスプローラーで、リレーションシップの外部キー側となるテーブルを右クリックして、 **[デザイン]** をクリックします。
 
-   [ **[テーブル デザイナー]** ](../../ssms/visual-db-tools/design-tables-visual-database-tools.md) にテーブルが表示されます。
+   [ **[テーブル デザイナー]**](../../ssms/visual-db-tools/design-tables-visual-database-tools.md) にテーブルが表示されます。
 2. **[テーブル デザイナー]** メニューの **[リレーションシップ]** をクリックします。
 3. **[外部キーのリレーションシップ]** ダイアログ ボックスで、 **[追加]** をクリックします。
 

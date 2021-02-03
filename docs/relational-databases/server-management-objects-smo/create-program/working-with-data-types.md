@@ -16,13 +16,13 @@ helpviewer_keywords:
 ms.assetid: 1e0e736a-c709-4d89-aeb2-b32dcfd641fa
 author: markingmyname
 ms.author: maghan
-monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 99ac0e206244404d1f4155acdd10c0a35df6e719
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 1939f6608b6175463103fce2a69a3d5936346605
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88420306"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97463003"
 ---
 # <a name="working-with-data-types"></a>データ型の処理
 [!INCLUDE [SQL Server ASDB, ASDBMI, ASDW ](../../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
@@ -51,9 +51,9 @@ ms.locfileid: "88420306"
   
 -   オブジェクト コンストラクター内で <xref:Microsoft.SqlServer.Management.Smo.DataType> インラインを指定する。  
   
--   クラスの静的メンバーの1つ <xref:Microsoft.SqlServer.Management.Smo.DataType> ( **Int**など) を使用します。これにより、実際にはオブジェクトのインスタンスが返され <xref:Microsoft.SqlServer.Management.Smo.DataType> ます。  
+-   クラスの静的メンバーの1つ <xref:Microsoft.SqlServer.Management.Smo.DataType> ( **Int** など) を使用します。これにより、実際にはオブジェクトのインスタンスが返され <xref:Microsoft.SqlServer.Management.Smo.DataType> ます。  
   
- <xref:Microsoft.SqlServer.Management.Smo.DataType> オブジェクトには、データの型を定義するいくつかのプロパティがあります。 たとえば、<xref:Microsoft.SqlServer.Management.Smo.SqlDataType> プロパティは [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] データ型を指定します。 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] データ型を表す定数値は <xref:Microsoft.SqlServer.Management.Smo.SqlDataType> 列挙にリストされます。 これは、 **varchar**、 **nchar**、 **currency**、 **integer**、 **float**、および **datetime**などのデータ型を参照します。  
+ <xref:Microsoft.SqlServer.Management.Smo.DataType> オブジェクトには、データの型を定義するいくつかのプロパティがあります。 たとえば、<xref:Microsoft.SqlServer.Management.Smo.SqlDataType> プロパティは [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] データ型を指定します。 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] データ型を表す定数値は <xref:Microsoft.SqlServer.Management.Smo.SqlDataType> 列挙にリストされます。 これは、 **varchar**、 **nchar**、 **currency**、 **integer**、 **float**、および **datetime** などのデータ型を参照します。  
   
  データ型を確立したら、そのデータに対して特定のプロパティを設定する必要があります。 たとえば、 **nchar** 型の場合、 **Length** プロパティで文字列データの長さを設定する必要があります。 これは、有効桁数と小数点以下桁数を指定する必要のある数値に対しても同様です。  
   

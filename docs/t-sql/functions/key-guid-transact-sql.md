@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - Key_GUID_TSQL
 - Key_GUID
@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 9246c7b2-7098-42c4-a222-cbf30267c46a
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 306930c6d66db06f36554dd1ab49bf70d586017a
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: a41bc9595d6969b161a160691570125a8204b6d8
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88417288"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99183969"
 ---
 # <a name="key_guid-transact-sql"></a>KEY_GUID (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -36,8 +36,7 @@ ms.locfileid: "88417288"
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
+```syntaxsql
 Key_GUID( 'Key_Name' )  
 ```  
   
@@ -61,7 +60,7 @@ Key_GUID( 'Key_Name' )
 ## <a name="examples"></a>例  
  次の例では、`ABerglundKey1` という対称キーの GUID を返します。  
   
-```  
+```sql  
 SELECT Key_GUID('ABerglundKey1');  
 ```  
   

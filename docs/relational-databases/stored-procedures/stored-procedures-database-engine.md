@@ -13,13 +13,13 @@ helpviewer_keywords:
 ms.assetid: cc6daf62-9663-4c3e-950a-ab42e2830427
 author: stevestein
 ms.author: sstein
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 68fbf67a8ff58c4f768c56a84e45c11fd4480c05
-ms.sourcegitcommit: 75f767c7b1ead31f33a870fddab6bef52f99906b
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: be8431723e70b85f006f24aa81f8ba51bec8360f
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87332227"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97467053"
 ---
 # <a name="stored-procedures-database-engine"></a>ストアド プロシージャ (データベース エンジン)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -65,7 +65,7 @@ ms.locfileid: "87332227"
  ユーザー定義プロシージャは、ユーザー定義データベース、または **リソース** データベースを除くすべてのシステム データベースに作成できます。 プロシージャは [!INCLUDE[tsql](../../includes/tsql-md.md)] に開発するか、または [!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] 共通言語ランタイム (CLR) メソッドの参照として開発することができます。  
   
  **一時**  
- 一時プロシージャは、ユーザー定義プロシージャの 1 形式です。 一時プロシージャは永続的なプロシージャと同様ですが、一時プロシージャは **tempdb**に格納されることが異なります。 一時プロシージャには、ローカル一時プロシージャとグローバル一時プロシージャの 2 種類があります。 この 2 種類の一時テーブルでは、名前、表示設定、および可用性が異なります。 ローカル一時プロシージャ名の先頭には、番号記号 (#) が 1 つ付いています。このプロシージャは、作成したユーザーの現在の接続でのみ表示され、この接続が閉じられたときに削除されます。 グローバル一時プロシージャ名の先頭には、番号記号が 2 つ (##) 付いています。このプロシージャは、作成されるとすべてのユーザーに表示され、このプロシージャを使用する最後のセッションの終了時に削除されます。  
+ 一時プロシージャは、ユーザー定義プロシージャの 1 形式です。 一時プロシージャは永続的なプロシージャと同様ですが、一時プロシージャは **tempdb** に格納されることが異なります。 一時プロシージャには、ローカル一時プロシージャとグローバル一時プロシージャの 2 種類があります。 この 2 種類の一時テーブルでは、名前、表示設定、および可用性が異なります。 ローカル一時プロシージャ名の先頭には、番号記号 (#) が 1 つ付いています。このプロシージャは、作成したユーザーの現在の接続でのみ表示され、この接続が閉じられたときに削除されます。 グローバル一時プロシージャ名の先頭には、番号記号が 2 つ (##) 付いています。このプロシージャは、作成されるとすべてのユーザーに表示され、このプロシージャを使用する最後のセッションの終了時に削除されます。  
   
  **システム**  
  システム プロシージャは [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]に含まれています。 物理的には内部の非表示 **リソース** データベースに格納されますが、論理的には各システム データベースとユーザー定義データベースの **sys** スキーマに表示されます。 さらに、 **msdb** データベースには、警告とジョブのスケジュール設定に使用される **dbo** スキーマ内にシステム ストアド プロシージャも含まれます。 システム プロシージャ名には **sp_** というプレフィックスが付くため、ユーザー定義プロシージャ名を付けるときにこのプレフィックスを使用しないようにすることをお勧めします。 すべてのシステム プロシージャの一覧については、「[システム ストアド プロシージャ &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/system-stored-procedures-transact-sql.md)」を参照してください。  
@@ -95,6 +95,5 @@ ms.locfileid: "87332227"
 |ストアド プロシージャでパラメーターを使用する方法について説明します。|[パラメーター](../../relational-databases/stored-procedures/parameters.md)|  
   
 ## <a name="related-content"></a>関連コンテンツ  
- [CLR ストアド プロシージャ](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/clr-stored-procedures)  
+ [CLR ストアド プロシージャ](/dotnet/framework/data/adonet/sql/clr-stored-procedures)  
  [名前の遅延解決](../../t-sql/statements/create-trigger-transact-sql.md#deferred-name-resolution)
-  

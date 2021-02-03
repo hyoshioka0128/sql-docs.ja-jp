@@ -22,28 +22,28 @@ helpviewer_keywords:
 - messages [SQL Server], stored procedure where occurred
 - errors [SQL Server], trigger where occurred
 ms.assetid: b81edbf0-856a-498f-ba87-48ff1426d980
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 46cfbc293d9808b98e75883d4031c7b7ffb2363d
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: f4fa95d1f4c7f77be0dc19ec4c4aa066201936b3
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88417388"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98096055"
 ---
 # <a name="error_procedure-transact-sql"></a>ERROR_PROCEDURE (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]  
 
 この関数は、エラーによって TRY...CATCH 構造の CATCH ブロックが実行された場合に、そのエラーが発生したストアド プロシージャまたはトリガーの名前を返します。 
-- SQL Server 2017 から[現行バージョン](../../sql-server/what-s-new-in-sql-server-ver15.md?view=sql-server-ver15)までからは、schema_name.stored_procedure_name が返されます。
+- SQL Server 2017 から[現行バージョン](../../sql-server/what-s-new-in-sql-server-ver15.md)までからは、schema_name.stored_procedure_name が返されます。
 - SQL Server 2016 からは stored_procedure_name が返されます
 
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 ERROR_PROCEDURE ( )  
 ```  
   
@@ -69,7 +69,7 @@ CATCH ブロックで呼び出された場合、`ERROR_PROCEDURE` はエラー�
 ### <a name="a-using-error_procedure-in-a-catch-block"></a>A. CATCH ブロックで ERROR_PROCEDURE を使用する  
 この例では、0 除算エラーを生成したストアド プロシージャを示します。 `ERROR_PROCEDURE` は、エラーが発生したストアド プロシージャの名前を返します。  
   
-```  
+```sql  
 -- Verify that the stored procedure does not already exist.  
 IF OBJECT_ID ( 'usp_ExampleProc', 'P' ) IS NOT NULL   
     DROP PROCEDURE usp_ExampleProc;  
@@ -90,7 +90,10 @@ BEGIN CATCH
     SELECT ERROR_PROCEDURE() AS ErrorProcedure;  
 END CATCH;  
 GO  
+```  
 
+[!INCLUDE[ssResult](../../includes/ssresult-md.md)]
+```  
 -----------
 
 (0 row(s) affected)
@@ -100,14 +103,13 @@ ErrorProcedure
 usp_ExampleProc
 
 (1 row(s) affected)
-
 ```  
+
   
 ### <a name="b-using-error_procedure-in-a-catch-block-with-other-error-handling-tools"></a>B. CATCH ブロックで、別のエラー処理ツールと一緒に ERROR_PROCEDURE を使用する  
 この例では、0 除算エラーを生成したストアド プロシージャを示します。 ストアド プロシージャは、エラーが発生したストアド プロシージャの名前と共に、エラーに関する情報を返します。  
   
-```  
-  
+```sql
 -- Verify that the stored procedure does not already exist.  
 IF OBJECT_ID ( 'usp_ExampleProc', 'P' ) IS NOT NULL   
     DROP PROCEDURE usp_ExampleProc;  
@@ -133,8 +135,11 @@ BEGIN CATCH
         ERROR_MESSAGE() AS ErrorMessage,  
         ERROR_LINE() AS ErrorLine;  
         END CATCH;  
-GO  
+GO
+``` 
 
+[!INCLUDE[ssResult](../../includes/ssresult-md.md)]
+``` 
 -----------
 
 (0 row(s) affected)
@@ -145,7 +150,8 @@ ErrorNumber ErrorSeverity ErrorState  ErrorProcedure   ErrorMessage             
 
 (1 row(s) affected)
 
-```  
+``` 
+
   
 ## <a name="see-also"></a>参照  
  [sys.messages &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/messages-for-errors-catalog-views-sys-messages.md)   

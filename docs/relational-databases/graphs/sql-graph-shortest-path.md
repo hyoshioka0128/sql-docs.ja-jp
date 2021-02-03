@@ -18,13 +18,13 @@ helpviewer_keywords:
 - SQL graph, MATCH statement
 author: shkale-msft
 ms.author: shkale
-monikerRange: =azuresqldb-current||>=sql-server-ver15||=sqlallproducts-allversions||=azuresqldb-mi-current
-ms.openlocfilehash: a77835335aa2fe3e9b5d4436dcac07556e9a3c26
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-ver15||=azuresqldb-mi-current
+ms.openlocfilehash: c916466f6a105a2b10508e23f1739bba0d192970
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88475845"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97480183"
 ---
 # <a name="shortest_path-transact-sql"></a>SHORTEST_PATH (Transact-sql)
 [!INCLUDE[tsql-appliesto-SQL 19-SQL DB-SQL MI](../../includes/applies-to-version/sqlserver2019-asdb-asdbmi.md)]
@@ -50,7 +50,7 @@ FOR PATH は、任意の長さのパターンに参加する FROM 句の任意�
 このパターンには、目的のノードに到達するまで、またはパターンで指定された反復処理の最大数が満たされるまで繰り返し走査する必要があるノードとエッジが含まれます。 クエリが実行されるたびに、このパターンを実行した結果は、開始ノードから終了ノードまでのパスに沿って走査されたノードとエッジの順序付けられたコレクションになります。 これは正規表現形式の構文パターンであり、次の2つのパターンの量指定子がサポートされています。
 
 * **' + '**: パターンを1回以上繰り返します。 最短パスが見つかったらすぐに終了します。
-* **{1, n}**: パターン1を ' n ' 回繰り返します。 最短のが見つかるとすぐに終了します。
+* **{1,n}** : パターンを 1 から "n" 回繰り返します。 最短のが見つかるとすぐに終了します。
 
 ## <a name="last_node"></a>LAST_NODE
 LAST_NODE () 関数を使用すると、2つの任意の長さのトラバーサルパターンを連結できます。 次のようなシナリオで使用できます。    
@@ -86,14 +86,14 @@ STRING_AGG 関数は、式と区切り記号を入力として受け取り、文
 ### <a name="last_value"></a>LAST_VALUE
 走査されたパスの最後のノードから属性を射影するために、LAST_VALUE 集計関数を使用できます。 この関数への入力としてエッジテーブルの別名を指定するとエラーになります。使用できるのは、ノードのテーブル名または別名だけです。
 
-**最後のノード**: 最後のノードは、一致述語の矢印の方向に関係なく、走査されたパスの最後に表示されるノードを参照します。 たとえば、`MATCH(SHORTEST_PATH(n(-(e)->p)+) )` のように指定します。 ここで、パスの最後のノードが最後にアクセスした P ノードになります。 
+**最後のノード**: 最後のノードは、一致述語の矢印の方向に関係なく、走査されたパスの最後に表示されるノードを参照します。 (例: `MATCH(SHORTEST_PATH(n(-(e)->p)+) )`)。 ここで、パスの最後のノードが最後にアクセスした P ノードになります。 
 
 一方、最後のノードは、このパターンの出力グラフパスの最後の n 番目のノードです。 `MATCH(SHORTEST_PATH((n<-(e)-)+p))`    
 
-### <a name="sum"></a>SUM
+### <a name="sum"></a>[SUM]
 この関数は、指定されたノード/エッジ属性値またはスキャンされたパスに出現する式の合計を返します。
 
-### <a name="count"></a>COUNT
+### <a name="count"></a>[COUNT]
 この関数は、パス内の必要なノード/エッジ属性の null 以外の値の数を返します。 COUNT 関数では、 \* ノードまたはエッジテーブルの別名を持つ ' ' 演算子がサポートされています。 ノードまたはエッジテーブルの別名がないと、の使用法があいまいになり、エラーが発生し \* ます。
 
 ```syntaxsql
@@ -103,10 +103,10 @@ STRING_AGG 関数は、式と区切り記号を入力として受け取り、文
 ### <a name="avg"></a>AVG
 指定されたノード/エッジ属性値またはスキャンされたパスに出現する式の平均を返します。
 
-### <a name="min"></a>MIN
+### <a name="min"></a>[MIN]
 指定されたノード/エッジ属性値またはスキャンパスに出現する式からの最小値を返します。
 
-### <a name="max"></a>MAX
+### <a name="max"></a>[MAX]
 指定されたノード/エッジ属性値、またはスキャンされたパスに出現する式から最大値を返します。
 
 ## <a name="remarks"></a>解説  
@@ -212,7 +212,7 @@ WHERE Q.levels = 2
 
 ## <a name="see-also"></a>参照  
  [MATCH (SQL グラフ)](../../t-sql/queries/match-sql-graph.md)    
- [CREATE TABLE &#40;SQL Graph&#41;](../../t-sql/statements/create-table-sql-graph.md)   
- [INSERT (SQL グラフ)](../../t-sql/statements/insert-sql-graph.md)]  
+ [CREATE TABLE &#40;SQL グラフ&#41;](../../t-sql/statements/create-table-sql-graph.md)   
+ [INSERT (SQL グラフ)](../../t-sql/statements/insert-sql-graph.md)  
  [SQL Server 2017 でのグラフ処理](../../relational-databases/graphs/sql-graph-overview.md)     
  

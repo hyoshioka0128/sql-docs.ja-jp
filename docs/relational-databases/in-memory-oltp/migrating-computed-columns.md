@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: 64a9eade-22c3-4a9d-ab50-956219e08df1
 author: MightyPen
 ms.author: genemi
-monikerRange: =sql-server-2016||=sqlallproducts-allversions
-ms.openlocfilehash: 2b378b5921397ec90d44a4d63de3aeaf944d8ab2
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =sql-server-2016
+ms.openlocfilehash: 95f920fc8648ed646f1056c9d334ee831651f5e2
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85730887"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97465373"
 ---
 # <a name="migrating-computed-columns"></a>計算列の移行
 
@@ -98,6 +98,5 @@ GO
 ```  
   
 ## <a name="see-also"></a>参照  
- [インメモリ OLTP への移行](../../relational-databases/in-memory-oltp/migrating-to-in-memory-oltp.md)  
-  
+ [インメモリ OLTP への移行](./plan-your-adoption-of-in-memory-oltp-features-in-sql-server.md)  
   

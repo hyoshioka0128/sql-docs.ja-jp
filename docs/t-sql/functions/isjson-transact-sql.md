@@ -5,7 +5,7 @@ ms.custom: ''
 ms.date: 06/03/2020
 ms.prod: sql
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - ISJSON
 - ISJSON_TSQL
@@ -15,14 +15,14 @@ helpviewer_keywords:
 ms.assetid: c836f3d3-3e17-44ae-92bf-f341918896c3
 author: jovanpop-msft
 ms.author: jovanpop
-ms.reviewer: jroth
-monikerRange: = azuresqldb-current||= azure-sqldw-latest||>= sql-server-2016||>= sql-server-linux-2017||= sqlallproducts-allversions
-ms.openlocfilehash: 5504e67b20a4e4cdb0afdacb779234e56dd9c8d3
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.reviewer: chadam
+monikerRange: = azuresqldb-current||= azure-sqldw-latest||>= sql-server-2016||>= sql-server-linux-2017
+ms.openlocfilehash: 2c06e92296b8ec10c92a8a30ceeaf3b9b9bfb592
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88422666"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99193188"
 ---
 # <a name="isjson-transact-sql"></a>ISJSON (Transact-SQL)
 [!INCLUDE [sqlserver2016-asdb-asdbmi-asa](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa.md)]
@@ -33,20 +33,20 @@ ms.locfileid: "88422666"
   
 ## <a name="syntax"></a>構文  
   
-```sql  
+```syntaxsql  
 ISJSON ( expression )  
 ```  
   
 ## <a name="arguments"></a>引数
  *式 (expression)*  
- テストする文字列です。  
+ テストする文字列。  
   
 ## <a name="return-value"></a>戻り値  
  文字列に有効な JSON が含まれている場合は 1 を、それ以外の場合は 0 を返します。 *式* が null の場合は null を返します。  
   
  エラーは返されません。  
   
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>解説  
  **ISJSON** は、同じレベルのキーの一意性をチェックしません。  
   
 ## <a name="examples"></a>例  

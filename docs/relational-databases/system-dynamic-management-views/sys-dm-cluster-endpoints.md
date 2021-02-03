@@ -1,13 +1,13 @@
 ---
-description: dm_cluster_endpoints (Transact-sql)
-title: dm_cluster_endpoints (Transact-sql) |Microsoft Docs
+description: sys.dm_cluster_endpoints (Transact-sql)
+title: sys.dm_cluster_endpoints (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 11/04/2019
 ms.prod: sql
 ms.prod_service: database-engine, big-data-clusters
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_cluster_endpoints
 - dm_cluster_endpoints_TSQL
@@ -17,17 +17,17 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_cluster_endpoints dynamic management view
 ms.assetid: ''
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=sql-server-ver15||=sqlallproducts-allversions||>=sql-server-linux-2017'
-ms.openlocfilehash: 7df88a6be24e5378a8bd588514c9806e8258eb0e
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>=sql-server-ver15||>=sql-server-linux-2017'
+ms.openlocfilehash: 1d5d9cc9219422fd7559d73417354435eb20d488
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542340"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99200343"
 ---
-# <a name="sysdm_cluster_endpoints-transact-sql"></a>dm_cluster_endpoints (Transact-sql)
+# <a name="sysdm_cluster_endpoints-transact-sql"></a>sys.dm_cluster_endpoints (Transact-sql)
 [!INCLUDE[sqlserver2019](../../includes/applies-to-version/sqlserver2019.md)]
 
 |列名|データ型|説明|  

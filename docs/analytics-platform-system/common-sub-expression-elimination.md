@@ -9,13 +9,13 @@ ms.date: 12/17/2018
 ms.author: murshedz
 ms.reviewer: martinle
 ms.custom: seo-dt-2019
-monikerRange: '>= aps-pdw-2016-au7 || = sqlallproducts-allversions'
-ms.openlocfilehash: d05314f4d100e469c621d42a10ed89671b2bdd9c
-ms.sourcegitcommit: e042272a38fb646df05152c676e5cbeae3f9cd13
+monikerRange: '>= aps-pdw-2016-au7'
+ms.openlocfilehash: 8dfadabcae27ff8705d86294b1c05851245d199c
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74401334"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97420201"
 ---
 # <a name="common-subexpression-elimination-explained"></a>共通部分式の削除について説明します。
 
@@ -57,7 +57,7 @@ select top 100 asceding.rnk, i1.i_product_name best_performing, i2.i_product_nam
 ```
 前述の TPC-DS ベンチマークツールからのクエリを考えてみましょう。  上記のクエリでは、サブクエリは同じですが、rank () over 関数を使用した order by 句は、2つの異なる方法で並べ替えられています。 CU 7.3 以前では、このサブクエリは2回評価されて実行されます。1回は昇順で、1回は降順で、2つのデータ移動操作を行います。 APS CU 7.3 をインストールすると、サブクエリの部分が1回評価されるため、データの移動が減少し、クエリの処理が速くなります。
 
-APS CU 7.3 にアップグレードした後でも機能をテストできるようにする "OptimizeCommonSubExpressions" という[機能スイッチ](appliance-feature-switch.md)が導入されました。 この機能は既定でオンになっていますが、無効にすることができます。 
+APS CU 7.3 にアップグレードした後でも機能をテストできるようにする "OptimizeCommonSubExpressions" という [機能スイッチ](appliance-feature-switch.md) が導入されました。 この機能は既定でオンになっていますが、無効にすることができます。 
 
 > [!NOTE] 
 > 機能スイッチの値を変更するには、サービスを再起動する必要があります。

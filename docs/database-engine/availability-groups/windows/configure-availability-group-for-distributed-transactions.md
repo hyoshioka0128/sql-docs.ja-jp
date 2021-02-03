@@ -5,8 +5,8 @@ ms.custom: seodec18
 ms.date: 02/06/2019
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
-ms.topic: conceptual
+ms.technology: availability-groups
+ms.topic: how-to
 helpviewer_keywords:
 - database mirroring [SQL Server], interoperability
 - cross-database transactions [SQL Server]
@@ -14,14 +14,14 @@ helpviewer_keywords:
 - Availability Groups [SQL Server], interoperability
 - troubleshooting [SQL Server], cross-database transactions
 ms.assetid: ''
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: c6f7f07070842dbdc9903d7654cea3d76c2e0a8e
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 5587622f0f61b7b7063b246d0599d46cc8c16f0c
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85896114"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170784"
 ---
 # <a name="configure-distributed-transactions-for-an-always-on-availability-group"></a>Always On 可用性グループ用に分散トランザクションを構成する
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -31,9 +31,9 @@ ms.locfileid: "85896114"
 分散トランザクションを保証するには、分散トランザクション リソース マネージャーとしてデータベースを登録するように、可用性グループを構成する必要があります。  
 
 >[!NOTE]
->[!INCLUDE[SQL2016](../../../includes/sssql15-md.md)] Service Pack 2 以降では、可用性グループでの分散トランザクションが完全にサポートされます。 [!INCLUDE[SQL2016](../../../includes/sssql15-md.md)] Service Pack 2 より前のバージョンでは、可用性グループ内のデータベースに関連する複数データベースにまたがる分散トランザクション (つまり、同じ SQL Server インスタンスのデータベースを使用するトランザクション) はサポートされません。 [!INCLUDE[SQL2017](../../../includes/sssqlv14-md.md)] にはこのような制限はありません。 
+>[!INCLUDE[SQL2016](../../../includes/sssql16-md.md)] Service Pack 2 以降では、可用性グループでの分散トランザクションが完全にサポートされます。 [!INCLUDE[SQL2016](../../../includes/sssql16-md.md)] Service Pack 2 より前のバージョンでは、可用性グループ内のデータベースに関連する複数データベースにまたがる分散トランザクション (つまり、同じ SQL Server インスタンスのデータベースを使用するトランザクション) はサポートされません。 [!INCLUDE[SQL2017](../../../includes/sssqlv14-md.md)] にはこのような制限はありません。 
 >
->[!INCLUDE[SQL2016](../../../includes/sssql15-md.md)] での構成手順は [!INCLUDE[SQL2017](../../../includes/sssqlv14-md.md)] の場合と同じです。
+>[!INCLUDE[SQL2016](../../../includes/sssql16-md.md)] での構成手順は [!INCLUDE[SQL2017](../../../includes/sssqlv14-md.md)] の場合と同じです。
 
 分散トランザクションでは、クライアント アプリケーションは Microsoft 分散トランザクション コーディネーター (MS DTC または DTC) と連携して、複数のデータ ソース間でトランザクションの整合性を保証します。 DTC は、サポートされている Windows Server ベースのオペレーティング システムで使用可能なサービスです。 分散トランザクションの場合は、DTC が "*トランザクション コーディネーター*" です。 通常は、SQL Server インスタンスが "*リソース マネージャー*" です。 データベースが可用性グループ内にある場合、各データベースがそれ自体のリソース マネージャーである必要があります。 
 
@@ -45,7 +45,7 @@ ms.locfileid: "85896114"
 
 分散トランザクションをサポートするように可用性グループを構成するには、次の前提条件が満たされている必要があります。
 
-* 分散トランザクションに参加する [!INCLUDE[SQLServer](../../../includes/ssnoversion-md.md)] のすべてのインスタンスが、[!INCLUDE[SQL2016](../../../includes/sssql15-md.md)] またはそれ以降である必要があります。
+* 分散トランザクションに参加する [!INCLUDE[SQLServer](../../../includes/ssnoversion-md.md)] のすべてのインスタンスが、[!INCLUDE[SQL2016](../../../includes/sssql16-md.md)] またはそれ以降である必要があります。
 
 * 可用性グループは、Windows Server 2016 または Windows Server 2012 R2 上で実行されている必要があります。 Windows Server 2012 R2 の場合は、[https://support.microsoft.com/kb/3090973](https://support.microsoft.com/kb/3090973) で入手できる KB3090973 の更新プログラムをインストールする必要があります。  
 
@@ -55,7 +55,7 @@ ms.locfileid: "85896114"
 
 
 
-[!INCLUDE[SQL2016](../../../includes/sssql15-md.md)] 以降では、分散トランザクション対応の可用性グループを作成できます。 分散トランザクション対応の可用性グループを作成するには、可用性グループの定義に `DTC_SUPPORT = PER_DB` を追加します。 次のスクリプトは、分散トランザクション対応の可用性グループを作成します。 
+[!INCLUDE[SQL2016](../../../includes/sssql16-md.md)] 以降では、分散トランザクション対応の可用性グループを作成できます。 分散トランザクション対応の可用性グループを作成するには、可用性グループの定義に `DTC_SUPPORT = PER_DB` を追加します。 次のスクリプトは、分散トランザクション対応の可用性グループを作成します。 
 
 ```sql
 CREATE AVAILABILITY GROUP MyAG
@@ -91,7 +91,7 @@ ALTER AVAILABILITY GROUP MyaAG
 ```
 
 >[!NOTE]
->[!INCLUDE[SQL2016](../../../includes/sssql15-md.md)] Service Pack 2 以降では、分散トランザクションの可用性グループを変更できます。 Service Pack 2 より前の [!INCLUDE[SQL2016](../../../includes/sssql15-md.md)] バージョンの場合、可用性グループを削除し、`DTC_SUPPORT = PER_DB` 設定で作り直す必要があります。 
+>[!INCLUDE[SQL2016](../../../includes/sssql16-md.md)] Service Pack 2 以降では、分散トランザクションの可用性グループを変更できます。 Service Pack 2 より前の [!INCLUDE[SQL2016](../../../includes/sssql16-md.md)] バージョンの場合、可用性グループを削除し、`DTC_SUPPORT = PER_DB` 設定で作り直す必要があります。 
 
 分散トランザクションを無効にするには、次の Transact-SQL コマンドを使います。
 
@@ -160,10 +160,10 @@ RMID の変更中に存在しているアクティブなトランザクション
 Microsoft Distributed Transaction Coordinator (MS DTC) 
 failed to reenlist citing that the database RMID does 
 not match the RMID [xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx] 
-associated with the transaction.  Please manually resolve
+associated with the transaction.  Please manually resolve
 the transaction.
     
-SQL Server detected a DTC/KTM in-doubt transaction with UOW 
+SQL Server detected a DTC/KTM in-doubt transaction with UOW 
 {yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy}.Please resolve it 
 following the guideline for Troubleshooting DTC Transactions.
 ```
@@ -193,16 +193,16 @@ following the guideline for Troubleshooting DTC Transactions.
    ALTER DATABASE [DB1] SET ONLINE
    ```
 
-未確定トランザクションの解決について詳しくは、「[トランザクションを手動で解決する](https://technet.microsoft.com/library/cc754134.aspx)」をご覧ください。
+未確定トランザクションの解決について詳しくは、「[トランザクションを手動で解決する](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754134(v=ws.10))」をご覧ください。
 
 ## <a name="next-steps"></a>次の手順  
 
-[分散トランザクション](https://docs.microsoft.com/dotnet/framework/data/adonet/distributed-transactions)
+[分散トランザクション](/dotnet/framework/data/adonet/distributed-transactions)
 
 [Always On 可用性グループ:相互運用性 &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/always-on-availability-groups-interoperability-sql-server.md)  
   
 [トランザクション - Always On 可用性グループとデータベース ミラーリング](transactions-always-on-availability-and-database-mirroring.md)  
 
-[XA トランザクションのサポート](https://technet.microsoft.com/library/cc753563(v=ws.10).aspx)
+[XA トランザクションのサポート](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753563(v=ws.10))
 
-[動作方法:DTC トランザクションのセッション/SPID (-2)](https://blogs.msdn.microsoft.com/bobsql/2016/08/04/how-it-works-sessionspid-2-for-dtc-transactions/)
+[動作方法:DTC トランザクションのセッション/SPID (-2)](/archive/blogs/bobsql/how-it-works-sessionspid-2-for-dtc-transactions)

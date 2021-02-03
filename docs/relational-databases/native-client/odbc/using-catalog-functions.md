@@ -18,13 +18,13 @@ helpviewer_keywords:
 ms.assetid: 7773fb2e-06b5-4c4b-88e9-0ad9132ad273
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a9bdc781aaef55a074083e111777b99c0b6ebd6e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 5047e64eed31c1b6853cbe23fc2008d61015fbca
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88428094"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97467613"
 ---
 # <a name="using-catalog-functions"></a>カタログ関数の使用
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "88428094"
   
  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] は分散クエリをサポートします。分散クエリは、1 つのクエリで複数の異種 OLE DB データ ソースのデータにアクセスするクエリです。 リモートの OLE DB データ ソースへアクセスするための方法として、目的のデータ ソースをリンク サーバーとして定義する方法があります。 これを行うには、 [sp_addlinkedserver](../../../relational-databases/system-stored-procedures/sp-addlinkedserver-transact-sql.md)を使用します。 リンク サーバーを定義すると、このサーバーのオブジェクトを次のような 4 部構成の名前を使用して Transact-SQL ステートメントで参照できるようになります。  
   
- *object_name を linked_server_name*します。  
+ *linked_server_name. object_name*.  
   
  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client ODBC ドライバーでは、リンク サーバーからのカタログ情報の取得に役立つ、次の 2 つのドライバー固有の関数をサポートします。  
   
@@ -47,7 +47,7 @@ ms.locfileid: "88428094"
   
      リンク サーバーに含まれるカタログの一覧を返します。  
   
- リンクサーバー名とカタログ名を指定すると、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native CLIENT ODBC ドライバーは、 _linked_server_name_の2部構成の名前を使用してカタログから情報を取得することをサポートし**ます。** 次の ODBC カタログ関数の*CatalogName*の_カタログ_。  
+ リンクサーバー名とカタログ名を指定すると、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native CLIENT ODBC ドライバーは、 _linked_server_name_ の2部構成の名前を使用してカタログから情報を取得することをサポートし **ます。** 次の ODBC カタログ関数の *CatalogName* の _カタログ_。  
   
 -   **SQLColumnPrivileges**  
   
@@ -61,7 +61,7 @@ ms.locfileid: "88428094"
   
 -   **SQLTables**  
   
- 2部構成の_linked_server_name_**。**_カタログ_は、 [SQLForeignKeys](../../../relational-databases/native-client-odbc-api/sqlforeignkeys.md)上の*FKCatalogName*および*PKCatalogName*でもサポートされています。  
+ 2部構成の _linked_server_name_**。**_カタログ_ は、 [SQLForeignKeys](../../../relational-databases/native-client-odbc-api/sqlforeignkeys.md)上の *FKCatalogName* および *PKCatalogName* でもサポートされています。  
   
  SQLLinkedServers と SQLLinkedCatalogs を使用する場合は、次のファイルが必要です。  
   

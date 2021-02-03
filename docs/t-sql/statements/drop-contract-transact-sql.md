@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DROP_CONTRACT_TSQL
 - DROP CONTRACT
@@ -20,14 +20,14 @@ helpviewer_keywords:
 - contracts [Service Broker], dropping
 - DROP CONTRACT statement
 ms.assetid: fdd0f81e-3c22-4cdf-9416-b4977a6ac3b6
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: 128a8d993345e5c78d537923e26463acbe734e2e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 006a9d381e2dec277a83ea8a22e86ff194a8e4cf
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88416648"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99190504"
 ---
 # <a name="drop-contract-transact-sql"></a>DROP CONTRACT (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -39,7 +39,6 @@ ms.locfileid: "88416648"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 DROP CONTRACT contract_name   
 [ ; ]  
 ```  
@@ -61,9 +60,8 @@ DROP CONTRACT contract_name
 ## <a name="examples"></a>例  
  次の例では、データベースからコントラクト `//Adventure-Works.com/Expenses/ExpenseSubmission` を削除します。  
   
-```  
-DROP CONTRACT   
-    [//Adventure-Works.com/Expenses/ExpenseSubmission] ;  
+```sql  
+DROP CONTRACT [//Adventure-Works.com/Expenses/ExpenseSubmission] ;  
 ```  
   
 ## <a name="see-also"></a>参照  

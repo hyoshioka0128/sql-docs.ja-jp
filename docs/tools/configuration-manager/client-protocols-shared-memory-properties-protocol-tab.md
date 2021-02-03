@@ -6,7 +6,7 @@ ms.date: 03/14/2017
 ms.prod: sql
 ms.prod_service: sql-tools
 ms.reviewer: ''
-ms.technology: configuration
+ms.technology: tools-other
 ms.topic: conceptual
 helpviewer_keywords:
 - shared memory [SQL Server]
@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: 941369bd-cd4d-4a64-8e42-724d9a866eb7
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 53d147ec8ee31853032b3f6b0d12968d37990fd6
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: f6294c73d9ba3a422381d38f1914e84d48d9596e
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85895033"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97463861"
 ---
 # <a name="client-protocols---shared-memory-properties-protocol-tab"></a>クライアント プロトコル - [共有メモリのプロパティ] ダイアログ ボックス ([プロトコル] タブ)
 [!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
@@ -31,6 +31,5 @@ ms.locfileid: "85895033"
  可能な値は、 **[はい]** と **[いいえ]** です。  
   
 ## <a name="see-also"></a>参照  
- [ネットワーク プロトコルの選択](https://msdn.microsoft.com/library/6565fb7d-b076-4447-be90-e10d0dec359a)  
-  
+ [ネットワーク プロトコルの選択](/previous-versions/sql/sql-server-2016/ms187892(v=sql.130))  
   

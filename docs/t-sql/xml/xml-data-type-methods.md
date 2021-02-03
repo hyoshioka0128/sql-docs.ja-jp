@@ -6,7 +6,7 @@ ms.date: 03/16/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d112b9c9-be9f-435c-a9e6-d21b65778fb7
 author: MightyPen
 ms.author: genemi
-ms.openlocfilehash: ad40f95ce20db318d475f3317e6a2ebfc0b02cf2
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 8eb3fd64ab953922dfdddf31f2961c9d0df5f527
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88414898"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99181679"
 ---
 # <a name="xml-data-type-methods"></a>xml データ型のメソッド
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -41,9 +41,9 @@ ms.locfileid: "88414898"
   
  これらのメソッドは、ユーザー定義型メソッドの呼び出し構文を使用して呼び出します。 次に例を示します。  
   
-```  
+```sql
 SELECT XmlCol.query(' ... ')  
-FROM   Table  
+FROM Table  
 ```  
   
 > [!NOTE]  

@@ -10,14 +10,14 @@ ms.topic: conceptual
 ms.assetid: 80ba9e43-f3f0-4730-9fb1-2afd2dd3e6fc
 author: Minewiskan
 ms.author: owend
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
+monikerRange: '>=sql-server-2016'
 manager: erikre
-ms.openlocfilehash: 98fdd14f73f64dd23df2a8766a49f4adbc7ffc2f
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 03041d41745e51d858f56bfcd21407ad58530dd9
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88500921"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97460695"
 ---
 # <a name="upgrade-power-pivot-for-sharepoint"></a>Power Pivot for SharePoint のアップグレード
 
@@ -27,7 +27,7 @@ ms.locfileid: "88500921"
   
  **[!INCLUDE[applies](../../includes/applies-md.md)]**  SharePoint 2010 | SharePoint 2013  
   
- リリース ノートについては、「 [SQL Server 2016 リリース ノート](https://go.microsoft.com/fwlink/?LinkID=398124)」を参照してください。  
+ リリース ノートについては、「 [SQL Server 2016 リリース ノート](../../sql-server/sql-server-2016-release-notes.md)」を参照してください。  
   
  **この記事の内容:**  
   
@@ -93,17 +93,17 @@ ms.locfileid: "88500921"
   
 2.  サーバーを再起動します。  
   
-3.  SharePoint 2013 ファーム内の各サーバーで [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] for SharePoint アドイン (**spPowerPivot.msi**) を実行し、データ プロバイダーをインストールします。 データ プロバイダーもアップグレードする SQL Server セットアップ ウィザードを実行したサーバーは例外です。 詳細については、[Microsoft SQL Server 2014 PowerPivot for Microsoft SharePoint 2013 のダウンロード ページ](https://www.microsoft.com/download/details.aspx?id=42300)および「[PowerPivot for SharePoint アドインのインストールまたはアンインストール &#40;SharePoint 2013&#41;](https://docs.microsoft.com/analysis-services/instances/install-windows/install-or-uninstall-the-power-pivot-for-sharepoint-add-in-sharepoint-2013)」を参照してください。  
+3.  SharePoint 2013 ファーム内の各サーバーで [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] for SharePoint アドイン (**spPowerPivot.msi**) を実行し、データ プロバイダーをインストールします。 データ プロバイダーもアップグレードする SQL Server セットアップ ウィザードを実行したサーバーは例外です。 詳細については、[Microsoft SQL Server 2014 PowerPivot for Microsoft SharePoint 2013 のダウンロード ページ](https://www.microsoft.com/download/details.aspx?id=42300)および「[PowerPivot for SharePoint アドインのインストールまたはアンインストール &#40;SharePoint 2013&#41;](/analysis-services/instances/install-windows/install-or-uninstall-the-power-pivot-for-sharepoint-add-in-sharepoint-2013)」を参照してください。  
   
 4.  **SharePoint 2013 ファーム内の各サーバーで [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] for SharePoint 2013 構成ツールを実行し** 、アドインによってインストールされた更新済みのソリューション ファイルを使用して SharePoint ファームを構成します。 この手順に SharePoint サーバーの全体管理を使用することはできません。 詳細については、「  
   
-    1.  Windows のスタート画面から「 **[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)]** 」と入力し、検索結果で **[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] for SharePoint 2013 構成**をクリックします。 検索結果には 2 つのバージョンの構成ツールが表示される場合があることに注意してください。  
+    1.  Windows のスタート画面から「 **[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)]** 」と入力し、検索結果で **[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] for SharePoint 2013 構成** をクリックします。 検索結果には 2 つのバージョンの構成ツールが表示される場合があることに注意してください。  
   
-         ![2 つの PowerPivot 構成ツール](https://docs.microsoft.com/analysis-services/analysis-services/instances/install-windows/media/as-powerpivot-configtools-bothicons.gif "2 つの PowerPivot 構成ツール")  
+         ![2 つの PowerPivot 構成ツール](/analysis-services/analysis-services/instances/install-windows/media/as-powerpivot-configtools-bothicons.gif "2 つの PowerPivot 構成ツール")  
   
          または  
   
-         **[スタート]** ボタンをクリックし、 **[すべてのプログラム]** をポイントして、[ [!INCLUDE[ssCurrentUI](../../includes/sscurrentui-md.md)]]、 **[構成ツール]** 、 **[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] For SharePoint 2013 構成**の順にクリックします。 このツールは、 [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)] がローカル サーバーにインストールされている場合にのみ表示されることに注意してください。  
+         **[スタート]** ボタンをクリックし、 **[すべてのプログラム]** をポイントして、[ [!INCLUDE[ssCurrentUI](../../includes/sscurrentui-md.md)]]、 **[構成ツール]** 、 **[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] For SharePoint 2013 構成** の順にクリックします。 このツールは、 [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)] がローカル サーバーにインストールされている場合にのみ表示されることに注意してください。  
   
     2.  起動時、構成ツールにより、 [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] ファーム ソリューションと [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] Web アプリケーション ソリューションのアップグレード状態がチェックされます。 これらのソリューションの古いバージョンが検出されると、メッセージ "**新しいバージョンの [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] ソリューション ファイルが検出されました。ファームをアップグレードするために、アップグレード オプションを選択してください。** " と表示されます。 **[OK]** をクリックし、システムの検証メッセージを閉じます。  
   
@@ -126,17 +126,17 @@ ms.locfileid: "88500921"
   
     8.  **[はい]** をクリックして続行します。  
   
-    9. ファーム内のソリューションおよび機能のアップグレードが完了するまで、数分かかります。 この処理の間に、[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] データに対する接続要求は**失敗**し、"**データを更新できません**" や "**要求されたアクションを実行しようとしてエラーが発生しました。再試行してください**" のようなエラーが表示されます。 アップグレードが完了すると、サーバーは使用可能になり、これらのエラーは発生しなくなります。  
+    9. ファーム内のソリューションおよび機能のアップグレードが完了するまで、数分かかります。 この処理の間に、[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] データに対する接続要求は **失敗** し、"**データを更新できません**" や "**要求されたアクションを実行しようとしてエラーが発生しました。再試行してください**" のようなエラーが表示されます。 アップグレードが完了すると、サーバーは使用可能になり、これらのエラーは発生しなくなります。  
   
      詳細については、「  
   
-    -   [Power Pivot の構成ツール](https://docs.microsoft.com/analysis-services/power-pivot-sharepoint/power-pivot-configuration-tools)  
+    -   [Power Pivot の構成ツール](/analysis-services/power-pivot-sharepoint/power-pivot-configuration-tools)  
   
-    -   [PowerPivot for SharePoint 2013 の構成または修復 &#40;PowerPivot 構成ツール&#41;](https://docs.microsoft.com/analysis-services/power-pivot-sharepoint/configure-or-repair-power-pivot-for-sharepoint-2013)  
+    -   [PowerPivot for SharePoint 2013 の構成または修復 &#40;PowerPivot 構成ツール&#41;](/analysis-services/power-pivot-sharepoint/configure-or-repair-power-pivot-for-sharepoint-2013)  
   
-    -   [Windows PowerShell を使用した Power Pivot の構成](https://docs.microsoft.com/analysis-services/power-pivot-sharepoint/power-pivot-configuration-using-windows-powershell)  
+    -   [Windows PowerShell を使用した Power Pivot の構成](/analysis-services/power-pivot-sharepoint/power-pivot-configuration-using-windows-powershell)  
   
-    -   [Power Pivot for SharePoint 用 PowerShell リファレンス](https://docs.microsoft.com/analysis-services/powershell/powershell-reference-for-power-pivot-for-sharepoint)  
+    -   [Power Pivot for SharePoint 用 PowerShell リファレンス](/analysis-services/powershell/powershell-reference-for-power-pivot-for-sharepoint)  
   
 5.  アップグレード後の手順を実行し、ファーム内の [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] サーバーのバージョンを確認して、アップグレードが成功したことを確認します。 詳しくは、この記事の「[アップグレード後の検証タスク](#verify)」および次のセクションをご覧ください。  
   
@@ -153,7 +153,7 @@ ms.locfileid: "88500921"
     Get-Service | where {$_.displayname -like "*SharePoint*"}  
     ```  
   
-3.  **SharePoint** サービスの **SQL Server Analysis Services** と **SQL Server [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] System サービス**が SharePoint サーバーの全体管理で開始されていることを確認するか、次の PowerShell コマンドを使用します。  
+3.  **SharePoint** サービスの **SQL Server Analysis Services** と **SQL Server [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] System サービス** が SharePoint サーバーの全体管理で開始されていることを確認するか、次の PowerShell コマンドを使用します。  
   
     ```  
     get-SPserviceinstance | where {$_.typename -like "*sql*"}  
@@ -165,13 +165,13 @@ ms.locfileid: "88500921"
     Get-Service | where {$_.displayname -like "*powerpivot*"}  
     ```  
   
-5.  **SQL Server Analysis Services ([!INCLUDE[ssGemini](../../includes/ssgemini-md.md)])** Windows サービスを実行する最初の SharePoint アプリケーション サーバーで、 **[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] セットアップを実行**して、POWERPIVOT インスタンスをアップグレードします。 SQL Server セットアップ ウィザードの [インストール] ページで、アップグレード オプションを選択します。 詳細については、「 [インストール ウィザードを使用した SQL Server 2016 へのアップグレード &#40;セットアップ&#41;](../../database-engine/install-windows/upgrade-sql-server-using-the-installation-wizard-setup.md)」を参照してください。  
+5.  **SQL Server Analysis Services ([!INCLUDE[ssGemini](../../includes/ssgemini-md.md)])** Windows サービスを実行する最初の SharePoint アプリケーション サーバーで、 **[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] セットアップを実行** して、POWERPIVOT インスタンスをアップグレードします。 SQL Server セットアップ ウィザードの [インストール] ページで、アップグレード オプションを選択します。 詳細については、「 [インストール ウィザードを使用した SQL Server 2016 へのアップグレード &#40;セットアップ&#41;](../../database-engine/install-windows/upgrade-sql-server-using-the-installation-wizard-setup.md)」を参照してください。  
   
-6.  構成ツールを実行する前に**サーバーを再起動します** 。 これにより、SQLServer セットアップによってインストールされた更新プログラムや必須コンポーネントがシステムで完全に構成されます。  
+6.  構成ツールを実行する前に **サーバーを再起動します** 。 これにより、SQLServer セットアップによってインストールされた更新プログラムや必須コンポーネントがシステムで完全に構成されます。  
   
 7.  **SharePoint 2013 ファーム内の各サーバーで [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] ) サービスを実行する最初の SharePoint アプリケーション サーバーで、** 構成ツールを実行[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)]して、SharePoint のソリューションと Web サービスをアップグレードします。 この手順にサーバーの全体管理を使用することはできません。  
   
-    1.  **[スタート]** メニューの **[すべてのプログラム]** をポイントし、[ [!INCLUDE[ssCurrentUI](../../includes/sscurrentui-md.md)]] をクリックします。次に、 **[構成ツール]** をクリックし、 **[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] 構成ツール**をクリックします。 このツールは、 [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)] がローカル サーバーにインストールされている場合にのみ表示されることに注意してください。  
+    1.  **[スタート]** メニューの **[すべてのプログラム]** をポイントし、[ [!INCLUDE[ssCurrentUI](../../includes/sscurrentui-md.md)]] をクリックします。次に、 **[構成ツール]** をクリックし、 **[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] 構成ツール** をクリックします。 このツールは、 [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)] がローカル サーバーにインストールされている場合にのみ表示されることに注意してください。  
   
     2.  起動時、構成ツールにより、 [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] ファーム ソリューションと [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] Web アプリケーション ソリューションのアップグレード状態がチェックされます。 これらのソリューションの古いバージョンが検出されると、メッセージ "新しいバージョンの [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] ソリューション ファイルが検出されました。 ファームをアップグレードするために、アップグレード オプションを選択してください。" と表示されます。 **[OK]** をクリックして、このメッセージを閉じます。  
   
@@ -183,7 +183,7 @@ ms.locfileid: "88500921"
   
          ブックを新しいバージョンで上書きする場合は、 **[はい]** をクリックします。 それ以外の場合は、 **[いいえ]** をクリックしてホーム ページに戻ります。 ブックを別の場所に保存してコピーを作成します。続行する準備が整ったら、この手順に戻ります。  
   
-         ダッシュボードで使用するブックをカスタマイズする方法の詳細については、「 [Power Pivot 管理ダッシュボードのカスタマイズ](https://go.microsoft.com/fwlink/?linkID=229639)」を参照してください。  
+         ダッシュボードで使用するブックをカスタマイズする方法の詳細については、「 [Power Pivot 管理ダッシュボードのカスタマイズ](/previous-versions/sql/sql-server-2008-r2/ff718155(v=sql.105))」を参照してください。  
   
     5.  タスク一覧内のアクションを確認し、ツールで実行しないアクションを除外します。 既定ではすべてのアクションが含まれています。 アクションを削除するには、タスク一覧でアクションを選択し、[パラメーター] ページの **[この操作をタスク一覧に含めます]** チェック ボックスをオンにします。  
   
@@ -204,7 +204,7 @@ ms.locfileid: "88500921"
   
     10. ファーム内のソリューションおよび機能のアップグレードが完了するまで、数分かかります。 この間、[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] データに対する接続要求は、"データを更新できません" または "要求されたアクションを実行しようとしたときにエラーが発生しました。 再試行してください。" アップグレードが完了すると、サーバーは使用可能になり、これらのエラーは発生しなくなります。  
   
-8.  ファーム内の各 SQL Server Analysis Services ([!INCLUDE[ssGemini](../../includes/ssgemini-md.md)]) サービスに対して次の**処理を繰り返します**。1) SQL Server セットアップを実行する、2)[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] 構成ツールを実行する。  
+8.  ファーム内の各 SQL Server Analysis Services ([!INCLUDE[ssGemini](../../includes/ssgemini-md.md)]) サービスに対して次の **処理を繰り返します**。1) SQL Server セットアップを実行する、2)[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] 構成ツールを実行する。  
   
 9. アップグレード後の手順を実行し、ファーム内の [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] サーバーのバージョンを確認して、アップグレードが成功したことを確認します。 詳しくは、この記事の「[アップグレード後の検証タスク](#verify)」および次のセクションをご覧ください。  
   
@@ -230,7 +230,7 @@ ms.locfileid: "88500921"
   
     4.  構成ツールで **[検証]** に続けて **[実行]** をクリックして、タスクを再試行します。  
   
-     他のエラーについては、ULS ログを確認します。 詳細については、「[SharePoint ログ ファイルと診断ログの構成と表示 &#40;Power Pivot for SharePoint&#41;](https://docs.microsoft.com/analysis-services/power-pivot-sharepoint/configure-and-view-sharepoint-and-diagnostic-logging)」を参照してください。  
+     他のエラーについては、ULS ログを確認します。 詳細については、「[SharePoint ログ ファイルと診断ログの構成と表示 &#40;Power Pivot for SharePoint&#41;](/analysis-services/power-pivot-sharepoint/configure-and-view-sharepoint-and-diagnostic-logging)」を参照してください。  
   
 ##  <a name="workbooks"></a><a name="bkmk_workbooks"></a> ブック  
  サーバーをアップグレードしても、サーバー上で実行される [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] ブックがアップグレードされない場合がありますが、前のバージョンの [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] for Excel で作成された古いブックは、そのリリースで利用できる機能を使用して以前と同様に機能し続けます。 ブックが機能し続けるのは、以前のインストールに含まれていた Analysis Services OLE DB プロバイダーのバージョンがアップグレードしたサーバーに残っているためです。  
@@ -248,7 +248,7 @@ ms.locfileid: "88500921"
 Get-PowerPivotSystemService  
 ```  
   
- **CurrentSolutionVersion**を確認します。 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] のバージョンは 13.0.\<major build>.\<minor build> です  
+ **CurrentSolutionVersion** を確認します。 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] のバージョンは 13.0.\<major build>.\<minor build> です  
   
 ### <a name="verify-the-version-of-the-analysis-services-windows-service"></a>Analysis Services Windows サービスのバージョン確認  
  SharePoint 2010 ファーム内の [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)] サーバーの一部のみをアップグレードした場合は、アップグレードされていないサーバー上の [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] インスタンスがファームで想定されるバージョンより古くなります。 すべてのサーバーを同じバージョンにアップグレードする必要があります。 各コンピューターの SQL Server Analysis Services ([!INCLUDE[ssGemini](../../includes/ssgemini-md.md)]) Windows サービスのバージョンを確認するには、次のいずれかの方法を使用します。  
@@ -300,7 +300,7 @@ Get-PowerPivotSystemService
   
 3.  **[信頼できるデータ プロバイダー]** をクリックします。 MSOLAP.5 (Microsoft OLE DB プロバイダー (OLAP Services 11.0 用)) が表示されます。 [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)] をアップグレードした場合、以前のバージョンの MSOLAP.4 も表示されます。  
   
-4.  詳細については、「 [Excel Services で信頼できるデータ プロバイダーとして MSOLAP.5 を追加](https://docs.microsoft.com/analysis-services/power-pivot-sharepoint/add-msolap-5-as-a-trusted-data-provider-in-excel-services)」を参照してください。  
+4.  詳細については、「 [Excel Services で信頼できるデータ プロバイダーとして MSOLAP.5 を追加](/analysis-services/power-pivot-sharepoint/add-msolap-5-as-a-trusted-data-provider-in-excel-services)」を参照してください。  
   
  MSOLAP.4 には、"Microsoft OLE DB プロバイダー (OLAP Services 10.0 用)" という説明が表示されます。 このバージョンは、Excel Services と共にインストールされる [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] に付属する既定のバージョンか、 [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] バージョンである可能性があります。 SharePoint によってインストールされる既定のバージョンでは、 [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] データ アクセスはサポートされません。 SharePoint で [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] ブックに接続するには、 [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] 以降のバージョンが必要です。 [!INCLUDE[ssKilimanjaro](../../includes/sskilimanjaro-md.md)] バージョンがインストールされていることを確認するには、前のセクションの手順に従って、ファイルのプロパティでバージョンを確認してください。  
   
@@ -309,7 +309,7 @@ Get-PowerPivotSystemService
   
 1.  SharePoint アプリケーション サーバーで、 `c:\Windows\Assembly`を参照します。  
   
-2.  アセンブリ名で並べ替えて、 **Microsoft.Analysis Services.Adomd.Client**を見つけます。  
+2.  アセンブリ名で並べ替えて、 **Microsoft.Analysis Services.Adomd.Client** を見つけます。  
   
 3.  バージョン 13.0.\<build number> であることを確認します。  
   
@@ -349,18 +349,17 @@ Get-PowerPivotSystemService
   
 |タスク|Link|  
 |----------|----------|  
-|[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] for SharePoint を実行するすべてのコンピューターでサービスが実行されていることを確認します。|[PowerPivot for SharePoint サーバーの開始または停止](https://docs.microsoft.com/analysis-services/power-pivot-sharepoint/start-or-stop-a-power-pivot-for-sharepoint-server)|  
-|サイト コレクション レベルでの機能のアクティブ化を確認します。|[サイト コレクションを対象とした Power Pivot 機能の統合をサーバーの全体管理でアクティブ化する方法](https://docs.microsoft.com/analysis-services/power-pivot-sharepoint/activate-power-pivot-integration-for-site-collections-in-ca)|  
+|[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] for SharePoint を実行するすべてのコンピューターでサービスが実行されていることを確認します。|[PowerPivot for SharePoint サーバーの開始または停止](/analysis-services/power-pivot-sharepoint/start-or-stop-a-power-pivot-for-sharepoint-server)|  
+|サイト コレクション レベルでの機能のアクティブ化を確認します。|[サイト コレクションを対象とした Power Pivot 機能の統合をサーバーの全体管理でアクティブ化する方法](/analysis-services/power-pivot-sharepoint/activate-power-pivot-integration-for-site-collections-in-ca)|  
 |ブックを開き、フィルターおよびスライサーをクリックしてクエリを開始することで、個々の [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] ブックが適切に読み込まれることを確認します。|ハード ドライブのキャッシュ ファイルの存在をチェックします。 キャッシュ ファイルが存在する場合は、データ ファイルがその物理サーバーに読み込まれたことを示します。 c:\Program Files\Microsoft SQL Server\MSAS13.POWERPIVOT\OLAP\Backup フォルダー内のキャッシュ ファイルを探します。|  
-|データ更新が構成されているブックを選択して、データ更新をテストします。|データ更新をテストする最も簡単な方法は、データ更新スケジュールを変更することです。具体的には、 **[さらに、できるだけ早く更新を行います]** チェック ボックスをオンにして、データ更新がすぐに実行されるようにします。 この手順によって、データ更新が現在のブックに対して成功するかどうかが判明します。 他のよく使用されるブックにもこの手順を実行して、データ更新が機能することを確認します。 データ更新のスケジュール設定については、「 [データ更新のスケジュール (PowerPivot for SharePoint)](https://docs.microsoft.com/sharepoint/administration/data-refresh-using-the-unattended-data-refresh-account)」を参照してください。|  
-|随時、 [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] 管理ダッシュボードのデータ更新レポートを監視して、データ更新エラーがないことを確認します。|[Power Pivot 管理ダッシュボードと使用状況データ](https://docs.microsoft.com/analysis-services/power-pivot-sharepoint/power-pivot-management-dashboard-and-usage-data)|  
+|データ更新が構成されているブックを選択して、データ更新をテストします。|データ更新をテストする最も簡単な方法は、データ更新スケジュールを変更することです。具体的には、 **[さらに、できるだけ早く更新を行います]** チェック ボックスをオンにして、データ更新がすぐに実行されるようにします。 この手順によって、データ更新が現在のブックに対して成功するかどうかが判明します。 他のよく使用されるブックにもこの手順を実行して、データ更新が機能することを確認します。 データ更新のスケジュール設定については、「 [データ更新のスケジュール (PowerPivot for SharePoint)](/sharepoint/administration/data-refresh-using-the-unattended-data-refresh-account)」を参照してください。|  
+|随時、 [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] 管理ダッシュボードのデータ更新レポートを監視して、データ更新エラーがないことを確認します。|[Power Pivot 管理ダッシュボードと使用状況データ](/analysis-services/power-pivot-sharepoint/power-pivot-management-dashboard-and-usage-data)|  
   
- [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] 設定と機能を構成する方法の詳細については、「 [サーバーの全体管理での PowerPivot サーバーの管理と構成](https://docs.microsoft.com/analysis-services/power-pivot-sharepoint/power-pivot-server-administration-and-configuration-in-central-administration)」を参照してください。  
+ [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] 設定と機能を構成する方法の詳細については、「 [サーバーの全体管理での PowerPivot サーバーの管理と構成](/analysis-services/power-pivot-sharepoint/power-pivot-server-administration-and-configuration-in-central-administration)」を参照してください。  
   
- インストール後のすべての構成タスクについて手順を追った説明については、「 [初期構成 (PowerPivot for SharePoint)](https://docs.microsoft.com/sharepoint/administration/configure-power-pivot-for-sharepoint-2013)」を参照してください。  
+ インストール後のすべての構成タスクについて手順を追った説明については、「 [初期構成 (PowerPivot for SharePoint)](/sharepoint/administration/configure-power-pivot-for-sharepoint-2013)」を参照してください。  
   
 ## <a name="see-also"></a>参照  
- [SQL Server 2016 のエディションとサポートされている機能](../../sql-server/editions-and-supported-features-for-sql-server-2016.md)   
+ [SQL Server 2016 のエディションとサポートされている機能](../../sql-server/editions-and-components-of-sql-server-2016.md)   
  [Power Pivot for SharePoint 2010 のインストール](https://sharepointgeorge.com/2012/installing-sql-server-powerpivot-sharepointstep-step-guide/)  
-  
   

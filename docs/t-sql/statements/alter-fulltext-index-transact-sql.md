@@ -20,14 +20,14 @@ helpviewer_keywords:
 - search property lists [SQL Server], associating with full-text indexes
 - ALTER FULLTEXT INDEX statement
 ms.assetid: b6fbe9e6-3033-4d1b-b6bf-1437baeefec3
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: 0f8b215f3e90822fe285b93274b7d93a7e1ee8b5
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: d415680b64097abd9674fc6a68f9b2d3a80bb29b
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88479144"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98082727"
 ---
 # <a name="alter-fulltext-index-transact-sql"></a>ALTER FULLTEXT INDEX (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -39,7 +39,6 @@ ms.locfileid: "88479144"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 ALTER FULLTEXT INDEX ON table_name  
    { ENABLE   
    | DISABLE  
@@ -103,7 +102,7 @@ ALTER FULLTEXT INDEX ON table_name
 >  列がフルテキスト インデックスに対して追加または削除された後、フルテキスト インデックスが作成されるかどうかは、変更の追跡が有効になっているかどうかと WITH NO POPULATION が指定されているかどうかによって決まります。 詳細については、「[変更の追跡と NO POPULATION パラメーターの相関関係](#change-tracking-no-population)」を参照してください。
   
  TYPE COLUMN *type_column_name*  
- **varbinary**、**varbinary(max)**、**image** ドキュメントのドキュメント型を保持するために使用されているテーブル列 *type_column_name* の名前を指定します。 型列と呼ばれるこの列には、ユーザー指定のファイル拡張子 (.doc、.pdf、.xls など) が格納されます。 型列は、 **char**型、 **nchar**型、 **varchar**型、 **nvarchar**型にする必要があります。  
+ **varbinary**、**varbinary(max)**、**image** ドキュメントのドキュメント型を保持するために使用されているテーブル列 *type_column_name* の名前を指定します。 型列と呼ばれるこの列には、ユーザー指定のファイル拡張子 (.doc、.pdf、.xls など) が格納されます。 型列は、 **char** 型、 **nchar** 型、 **varchar** 型、 **nvarchar** 型にする必要があります。  
   
  TYPE COLUMN *type_column_name* を指定できるのは、*column_name* で、データがバイナリ データとして格納される **varbinary**、**varbinary(max)**、**image** 列を指定した場合のみです。それ以外の場合、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ではエラーが返されます。  
   
@@ -155,7 +154,7 @@ ALTER FULLTEXT INDEX ON table_name
  行に対してインデックスが既に作成されていても、フルテキスト インデックス作成でテーブルのすべての行が取得されます。  
   
  INCREMENTAL  
- 最後の作成以降に変更された行のみがフルテキスト インデックス作成で取得されます。 INCREMENTAL は、テーブルに **timestamp**型の列がある場合にのみ適用できます。 フルテキスト カタログ内のテーブルに **timestamp** 型の列が含まれていない場合、そのテーブルでは FULL での作成が行われます。  
+ 最後の作成以降に変更された行のみがフルテキスト インデックス作成で取得されます。 INCREMENTAL は、テーブルに **timestamp** 型の列がある場合にのみ適用できます。 フルテキスト カタログ内のテーブルに **timestamp** 型の列が含まれていない場合、そのテーブルでは FULL での作成が行われます。  
   
  UPDATE  
  変更の監視インデックスが最後に更新されてから行われた、すべての挿入、更新、削除の処理を指定します。 変更の監視の作成はテーブルで有効になっている必要がありますが、バックグラウンド更新インデックスまたは自動の変更の監視はオンにしないでください。  
@@ -238,7 +237,7 @@ ALTER FULLTEXT INDEX ON table_name
   
 1.  検索プロパティ リスト `spl_1` を使って `table_1` にフルテキスト インデックスを作成します。  
   
-    ```  
+    ```sql  
     CREATE FULLTEXT INDEX ON table_1 (column_name) KEY INDEX unique_key_index   
        WITH SEARCH PROPERTY LIST=spl_1,   
        CHANGE_TRACKING OFF, NO POPULATION;   
@@ -246,13 +245,13 @@ ALTER FULLTEXT INDEX ON table_name
   
 2.  フルテキスト インデックスの完全作成が実行されます。  
   
-    ```  
+    ```sql  
     ALTER FULLTEXT INDEX ON table_1 START FULL POPULATION;  
     ```  
   
 3.  この後フルテキスト インデックスは、次のステートメントを使用して別の検索プロパティ リスト `spl_2` に関連付けられます。  
   
-    ```  
+    ```sql  
     ALTER FULLTEXT INDEX ON table_1 SET SEARCH PROPERTY LIST spl_2;  
     ```  
   
@@ -262,14 +261,14 @@ ALTER FULLTEXT INDEX ON table_name
   
 1.  検索プロパティ リスト `spl_1` を持つ `table_1` にフルテキスト インデックスが作成され、完全作成が自動的に実行されます (既定の動作)。  
   
-    ```  
+    ```sql  
     CREATE FULLTEXT INDEX ON table_1 (column_name) KEY INDEX unique_key_index   
        WITH SEARCH PROPERTY LIST=spl_1;   
     ```  
   
 2.  次に示すように、検索プロパティ リストが無効になります。  
   
-    ```  
+    ```sql  
     ALTER FULLTEXT INDEX ON table_1   
        SET SEARCH PROPERTY LIST OFF WITH NO POPULATION;   
     ```  
@@ -278,7 +277,7 @@ ALTER FULLTEXT INDEX ON table_name
   
      たとえば、次のステートメントは、フルテキスト インデックスを元の検索プロパティ リスト `spl_1` に再度関連付けます。  
   
-    ```  
+    ```sql  
     ALTER FULLTEXT INDEX ON table_1 SET SEARCH PROPERTY LIST spl_1;  
     ```  
   
@@ -300,7 +299,7 @@ ALTER FULLTEXT INDEX ON table_name
 ### <a name="a-setting-manual-change-tracking"></a>A. 手動の変更追跡を設定する  
  次の例では、`JobCandidate` テーブルで、フルテキスト インデックスに対して手動での変更追跡を設定します。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 ALTER FULLTEXT INDEX ON HumanResources.JobCandidate  
@@ -317,7 +316,7 @@ GO
 > [!NOTE]  
 >  `DocumentPropertyList` プロパティ リスト作成の例については、「[CREATE SEARCH PROPERTY LIST &#40;Transact-SQL&#41;](../../t-sql/statements/create-search-property-list-transact-sql.md)」をご覧ください。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 ALTER FULLTEXT INDEX ON Production.Document   
@@ -331,7 +330,7 @@ GO
   
  次の例では、`DocumentPropertyList` でフルテキスト インデックスから `Production.Document` プロパティ リストを削除します。 この例では、インデックスからプロパティをすぐに削除する必要はないため、WITH NO POPULATION オプションが指定されています。 ただし、このフルテキスト インデックスに対するプロパティ レベルの検索は実行できなくなります。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 ALTER FULLTEXT INDEX ON Production.Document   
@@ -342,7 +341,7 @@ GO
 ### <a name="d-starting-a-full-population"></a>D. 完全作成を開始する  
  次の例では、`JobCandidate` テーブルでフルテキスト インデックスの完全作成を開始します。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 ALTER FULLTEXT INDEX ON HumanResources.JobCandidate   

@@ -16,19 +16,19 @@ helpviewer_keywords:
 ms.assetid: 0d8f6e4f-bc71-4fa3-8615-74249c8e072d
 author: stevestein
 ms.author: sstein
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 2ad600234ac931f408cdf60ba5b2a855823f8151
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 8fb537c503ec66c368c6c7e12e4740d9db1224aa
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88446455"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99160274"
 ---
 # <a name="delete-columns-from-a-table"></a>テーブルからの列の削除
 
 [!INCLUDE [sqlserver2016-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa-pdw.md)]
 
-このトピックでは、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] で、 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] または [!INCLUDE[tsql](../../includes/tsql-md.md)]を使用してテーブル列を削除する方法について説明します。
+このトピックでは、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] で、 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] または [!INCLUDE[tsql](../../includes/tsql-md.md)]を使用してテーブル列を削除する方法について説明します。
 
 > [!CAUTION]
 > テーブルから列を削除すると、列および列に含まれているすべてのデータが削除されます。
@@ -65,8 +65,8 @@ CHECK 制約がある列を削除することはできません。 最初に制�
 
 ### <a name="to-delete-columns-by-using-object-explorer"></a>オブジェクト エクスプローラーを使用して列を削除するには
 
-1. **オブジェクト エクスプローラー**で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)]のインスタンスに接続します。
-2. **オブジェクト エクスプローラー**で、列を削除するテーブルを探し、展開して列名を表示します。
+1. **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)]のインスタンスに接続します。
+2. **オブジェクト エクスプローラー** で、列を削除するテーブルを探し、展開して列名を表示します。
 3. 削除する列を右クリックして、**[削除]** を選びます。
 4. **[オブジェクトの削除]** ダイアログ ボックスで **[OK]** をクリックします。
 
@@ -74,7 +74,7 @@ CHECK 制約がある列を削除することはできません。 最初に制�
 
 ### <a name="to-delete-columns-by-using-table-designer"></a>テーブル デザイナーを使用して列を削除するには
 
-1. **オブジェクト エクスプローラー**で、列を削除するテーブルを右クリックし、 **[デザイン]** をクリックします。
+1. **オブジェクト エクスプローラー** で、列を削除するテーブルを右クリックし、 **[デザイン]** をクリックします。
 2. 削除する列を右クリックし、ショートカット メニューの **[列の削除]** をクリックします。
 3. 列にリレーションシップ (FOREIGN KEY または PRIMARY KEY) が適用されている場合は、選択した列および列のリレーションシップの削除を確認するメッセージが表示されます。 **[はい]** をクリックします。
 

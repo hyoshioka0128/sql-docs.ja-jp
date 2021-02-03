@@ -5,22 +5,22 @@ ms.custom: seo-lt-2019
 ms.date: 03/14/2017
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
-ms.topic: conceptual
+ms.technology: failover-cluster-instance
+ms.topic: how-to
 helpviewer_keywords:
 - clusters [SQL Server], recovery from failure
 - failover clustering [SQL Server], recovery from failure
 - hardware failures [SQL Server]
 - recovering failover cluster failures [SQL Server]
 ms.assetid: 3d151d0c-e841-4325-8606-c094de37d7d1
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: 44f178d5433a1d3de1670b762b6e1d7e60bad033
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 91e18137748b34012c73860071fa0be93af0277f
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85901200"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642761"
 ---
 # <a name="recover-from-failover-cluster-instance-failure"></a>フェールオーバー クラスター インスタンス障害からの復旧
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]

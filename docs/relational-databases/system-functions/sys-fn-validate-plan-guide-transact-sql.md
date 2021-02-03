@@ -1,13 +1,13 @@
 ---
 description: sys.fn_validate_plan_guide (Transact-SQL)
-title: fn_validate_plan_guide (Transact-sql) |Microsoft Docs
+title: sys.fn_validate_plan_guide (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.fn_validate_plan_guide
 - sys.fn_validate_plan_guide_TSQL
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - fn_validate_plan_guide function
 - sys.fn_validate_plan_guide function
 ms.assetid: 3af8b47a-936d-4411-91d1-d2d16dda5623
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: b19a3cd2f2ee449780127682555f1ae77fabd5d0
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: a53bebcf7a46c725de5447fe8f1b0b45fc94a61a
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88396898"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99208089"
 ---
 # <a name="sysfn_validate_plan_guide-transact-sql"></a>sys.fn_validate_plan_guide (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -45,7 +45,7 @@ sys.fn_validate_plan_guide ( plan_guide_id )
   
 ## <a name="arguments"></a>引数  
  *plan_guide_id*  
- [Plan_guides](../../relational-databases/system-catalog-views/sys-plan-guides-transact-sql.md)カタログビューで報告されるプランガイドの ID を示します。 *plan_guide_id* は **int** で、既定値はありません。  
+ [Sys.plan_guides](../../relational-databases/system-catalog-views/sys-plan-guides-transact-sql.md)カタログビューで報告されるプランガイドの ID を示します。 *plan_guide_id* は **int** で、既定値はありません。  
   
 ## <a name="table-returned"></a>返されるテーブル  
   
@@ -53,7 +53,7 @@ sys.fn_validate_plan_guide ( plan_guide_id )
 |-----------------|---------------|-----------------|  
 |msgnum|**int**|エラーメッセージの ID。|  
 |severity|**tinyint**|メッセージの重大度レベル (1 ~ 25)。|  
-|状態|**smallint**|エラーが発生したコード内の場所を示すエラーの状態番号です。|  
+|state|**smallint**|エラーが発生したコード内の場所を示すエラーの状態番号です。|  
 |message|**nvarchar(2048)**|エラーのメッセージテキスト。|  
   
 ## <a name="permissions"></a>アクセス許可  

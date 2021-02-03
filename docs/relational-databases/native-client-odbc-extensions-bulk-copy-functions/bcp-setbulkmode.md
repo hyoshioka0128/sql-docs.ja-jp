@@ -13,13 +13,13 @@ helpviewer_keywords:
 ms.assetid: de56f206-1f7e-4c03-bf22-da9c7f9f4433
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 43302565cd49cc176b0ad3808398b28b86c57a39
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: e84a650e0cfec42129a7ab8ab972ecf2e0728092
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88494099"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97483313"
 ---
 # <a name="bcp_setbulkmode"></a>bcp_setbulkmode
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -71,8 +71,8 @@ RETCODE bcp_setbulkmode (
   
 |プロパティ|説明|  
 |--------------|-----------------|  
-|BCP_OUT_CHARACTER_MODE|文字出力モードを指定します。<br /><br /> BCP.EXE の-c オプションに対応し、 **Sqlcharacter**に設定された**BCP_FMT_TYPE**プロパティで bcp_setcolfmt します。|  
-|BCP_OUT_WIDE_CHARACTER_MODE|Unicode 出力モードを指定します。<br /><br /> BCP.EXE の-w オプションと、 **Sqlnchar**に設定された**BCP_FMT_TYPE**プロパティの bcp_setcolfmt に対応します。|  
+|BCP_OUT_CHARACTER_MODE|文字出力モードを指定します。<br /><br /> BCP.EXE の-c オプションに対応し、 **Sqlcharacter** に設定された **BCP_FMT_TYPE** プロパティで bcp_setcolfmt します。|  
+|BCP_OUT_WIDE_CHARACTER_MODE|Unicode 出力モードを指定します。<br /><br /> BCP.EXE の-w オプションと、 **Sqlnchar** に設定された **BCP_FMT_TYPE** プロパティの bcp_setcolfmt に対応します。|  
 |BCP_OUT_NATIVE_TEXT_MODE|文字型以外にネイティブ型を指定し、文字型に Unicode を指定します。<br /><br /> 列の型が文字列の場合 (既定値は文字列でない場合は既定)、BCP.EXE および **BCP_FMT_TYPE** bcp_setcolfmt の-N オプションは **sqlnchar** に設定されます。|  
 |BCP_OUT_NATIVE_MODE|ネイティブ データベース型を指定します。<br /><br /> BCP.EXE の-n オプションと、既定値に設定された **BCP_FMT_TYPE** プロパティの bcp_setcolfmt に対応します。|  
   

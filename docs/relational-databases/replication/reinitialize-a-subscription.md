@@ -15,13 +15,13 @@ helpviewer_keywords:
 ms.assetid: ca3625c5-c62e-4ab7-9829-d511f838e385
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions
-ms.openlocfilehash: e7b3504accdf16f98ebee04294881a9d17226a13
-ms.sourcegitcommit: 768f046107642f72693514f51bf2cbd00f58f58a
+monikerRange: =azuresqldb-current||>=sql-server-2016
+ms.openlocfilehash: 0cfff92b4bec90a7689928b95bfc91acdc8f814f
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87110563"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97468873"
 ---
 # <a name="reinitialize-a-subscription"></a>サブスクリプションの再初期化
 [!INCLUDE[sql-asdb](../../includes/applies-to-version/sql-asdb.md)]
@@ -170,7 +170,7 @@ ms.locfileid: "87110563"
 3.  <xref:Microsoft.SqlServer.Replication.ReplicationObject.LoadProperties%2A> メソッドを呼び出して、オブジェクトのプロパティを取得します。  
   
     > [!NOTE]  
-    >  このメソッドが **false**を返す場合、手順 2. でサブスクリプション プロパティを不適切に設定したか、プル サブスクリプションが存在していません。  
+    >  このメソッドが **false** を返す場合、手順 2. でサブスクリプション プロパティを不適切に設定したか、プル サブスクリプションが存在していません。  
   
 4.  <xref:Microsoft.SqlServer.Replication.TransPullSubscription.Reinitialize%2A> メソッドを呼び出します。 このメソッドにより、サブスクリプションを再初期化するようにマークされます。  
   
@@ -185,7 +185,7 @@ ms.locfileid: "87110563"
 3.  <xref:Microsoft.SqlServer.Replication.ReplicationObject.LoadProperties%2A> メソッドを呼び出して、オブジェクトのプロパティを取得します。  
   
     > [!NOTE]  
-    >  このメソッドが **false**を返す場合、手順 2. でサブスクリプション プロパティを不適切に設定したか、プッシュ サブスクリプションが存在していません。  
+    >  このメソッドが **false** を返す場合、手順 2. でサブスクリプション プロパティを不適切に設定したか、プッシュ サブスクリプションが存在していません。  
   
 4.  <xref:Microsoft.SqlServer.Replication.TransSubscription.Reinitialize%2A> メソッドを呼び出します。 このメソッドにより、サブスクリプションを再初期化するようにマークされます。  
   
@@ -200,7 +200,7 @@ ms.locfileid: "87110563"
 3.  <xref:Microsoft.SqlServer.Replication.ReplicationObject.LoadProperties%2A> メソッドを呼び出して、オブジェクトのプロパティを取得します。  
   
     > [!NOTE]  
-    >  このメソッドが **false**を返す場合、手順 2. でサブスクリプション プロパティを不適切に設定したか、プル サブスクリプションが存在していません。  
+    >  このメソッドが **false** を返す場合、手順 2. でサブスクリプション プロパティを不適切に設定したか、プル サブスクリプションが存在していません。  
   
 4.  <xref:Microsoft.SqlServer.Replication.MergePullSubscription.Reinitialize%2A> メソッドを呼び出します。 再初期化の前に **true** を渡してサブスクライバーの変更をアップロードするか、 **false** を渡して再初期化し、サブスクライバーの保留中の変更をすべて破棄します。 このメソッドにより、サブスクリプションを再初期化するようにマークされます。  
   
@@ -218,7 +218,7 @@ ms.locfileid: "87110563"
 3.  <xref:Microsoft.SqlServer.Replication.ReplicationObject.LoadProperties%2A> メソッドを呼び出して、オブジェクトのプロパティを取得します。  
   
     > [!NOTE]  
-    >  このメソッドが **false**を返す場合、手順 2. でサブスクリプション プロパティを不適切に設定したか、プッシュ サブスクリプションが存在していません。  
+    >  このメソッドが **false** を返す場合、手順 2. でサブスクリプション プロパティを不適切に設定したか、プッシュ サブスクリプションが存在していません。  
   
 4.  <xref:Microsoft.SqlServer.Replication.MergeSubscription.Reinitialize%2A> メソッドを呼び出します。 再初期化の前に **true** を渡してサブスクライバーの変更をアップロードするか、 **false** を渡して再初期化し、サブスクライバーの保留中の変更をすべて破棄します。 このメソッドにより、サブスクリプションを再初期化するようにマークされます。  
   

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - FMTONLY_TSQL
 - FMTONLY
@@ -20,15 +20,15 @@ helpviewer_keywords:
 - SET FMTONLY statement
 - FMTONLY option
 ms.assetid: 02a1d9ac-2e58-433c-9a07-2c5a4a2214e1
-author: CarlRabeler
-ms.author: carlrab
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: ef1047125b3c923de910e046a0e92a3380480699
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: b98164e823a68c515e164804a215756b8868b9c4
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88355948"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99190336"
 ---
 # <a name="set-fmtonly-transact-sql"></a>SET FMTONLY (Transact-SQL)
 
@@ -77,58 +77,58 @@ Issue 2246 inspired this code example, and the replacement of the two pre-existi
 -->
 
 ```sql
-go
-SET NoCount ON;
+SET NOCOUNT ON;
+GO
 
-go
 DROP PROCEDURE IF EXISTS prc_gm29;
 
-DROP Table IF EXISTS #tabTemp41;
-DROP Table IF EXISTS #tabTemp42;
-go
+DROP TABLE IF EXISTS #tabTemp41;
+DROP TABLE IF EXISTS #tabTemp42;
+GO
 
 CREATE TABLE #tabTemp41
 (
-   KeyInt41        int           not null,
-   Name41          nvarchar(16)  not null,
-   TargetDateTime  datetime      not null  default GetDate()
+   KeyInt41        INT           NOT NULL,
+   Name41          NVARCHAR(16)  NOT NULL,
+   TargetDateTime  DATETIME      NOT NULL  DEFAULT GetDate()
 );
 
 CREATE TABLE #tabTemp42
 (
-   KeyInt42 int          not null,   -- JOIN-able to KeyInt41.
-   Name42   nvarchar(16) not null
+   KeyInt42 INT          NOT NULL,   -- JOIN-able to KeyInt41.
+   Name42   NVARCHAR(16) NOT NULL
 );
-go
+GO
 
-INSERT into #tabTemp41 (KeyInt41, Name41) values (10, 't41-c');
-INSERT into #tabTemp42 (KeyInt42, Name42) values (10, 't42-p');
-go
+INSERT INTO #tabTemp41 (KeyInt41, Name41) VALUES (10, 't41-c');
+INSERT INTO #tabTemp42 (KeyInt42, Name42) VALUES (10, 't42-p');
+GO
 
 CREATE PROCEDURE prc_gm29
 AS
-begin
-SELECT * from #tabTemp41;
-SELECT * from #tabTemp42;
+BEGIN
+SELECT * FROM #tabTemp41;
+SELECT * FROM #tabTemp42;
 
 SELECT t41.KeyInt41, t41.TargetDateTime, t41.Name41, t42.Name42
-   from
-                 #tabTemp41 as t41
-      INNER JOIN #tabTemp42 as t42 on t42.KeyInt42 = t41.KeyInt41
-end;
-go
+   FROM
+                 #tabTemp41 AS t41
+      INNER JOIN #tabTemp42 AS t42 on t42.KeyInt42 = t41.KeyInt41
+END;
+GO
 
 SET DATEFORMAT mdy;
 
 SET FMTONLY ON;
 EXECUTE prc_gm29;   -- Returns multiple tables.
 SET FMTONLY OFF;
-go
+GO
+
 DROP PROCEDURE IF EXISTS prc_gm29;
 
-DROP Table IF EXISTS #tabTemp41;
-DROP Table IF EXISTS #tabTemp42;
-go
+DROP TABLE IF EXISTS #tabTemp41;
+DROP TABLE IF EXISTS #tabTemp42;
+GO
 
 /****  Actual Output:
 [C:\JunkM\]
@@ -149,7 +149,7 @@ go
 ****/
 ```
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [SET ステートメント &#40;Transact-SQL&#41;](../../t-sql/statements/set-statements-transact-sql.md)  
   
   

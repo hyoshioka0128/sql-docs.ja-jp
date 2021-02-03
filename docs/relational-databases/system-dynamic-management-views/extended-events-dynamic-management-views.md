@@ -6,21 +6,21 @@ ms.date: 03/15/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
 - extended events [SQL Server], dynamic management objects
 - dynamic management objects (SQL Server)
 ms.assetid: 6d337c2f-71e9-4e0c-8877-9780baa7699d
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 74f926b6ad0b90af3ec04a668b1f81a762373037
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 95e44c5d5a7bf88515d4bc98c55fdf8a72c18764
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89544887"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99158467"
 ---
 # <a name="extended-events-dynamic-management-views"></a>拡張イベントの動的管理ビュー
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

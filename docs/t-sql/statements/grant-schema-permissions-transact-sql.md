@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -18,13 +18,13 @@ helpviewer_keywords:
 ms.assetid: b2aa1fc8-e7af-45d2-9f80-737543c8aa95
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 25d81e7dae5f3c02311ec47148a855c0ad3304d8
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: bfe31bbd312b2df347eadf33d0c8b53ec327db2d
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88472286"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99161227"
 ---
 # <a name="grant-schema-permissions-transact-sql"></a>GRANT (スキーマ権限の許可) (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -135,13 +135,13 @@ AS *granting_principal*
   
 ### <a name="a-granting-insert-permission-on-schema-humanresources-to-guest"></a>A. スキーマ HumanResources に対する INSERT 権限を、guest に許可する  
   
-```  
+```sql  
 GRANT INSERT ON SCHEMA :: HumanResources TO guest;  
 ```  
   
 ### <a name="b-granting-select-permission-on-schema-person-to-database-user-wiljo"></a>B. スキーマ Person に対する SELECT 権限を、データベース ユーザー WilJo に許可する  
   
-```  
+```sql  
 GRANT SELECT ON SCHEMA :: Person TO WilJo WITH GRANT OPTION;  
 ```  
   

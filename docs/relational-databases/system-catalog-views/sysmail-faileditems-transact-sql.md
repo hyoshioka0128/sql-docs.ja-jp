@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sysmail_faileditems
 - sysmail_faileditems_TSQL
@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - sysmail_faileditems database mail view
 ms.assetid: a31562c5-358e-4cfc-a72d-b3faccc53851
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 6c86c282b80c346c4d9378c9488e0503bbb85212
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 83e7bc1ebeaa78cd8e12325c7259c93139f9a200
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89548917"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99193019"
 ---
 # <a name="sysmail_faileditems-transact-sql"></a>sysmail_faileditems (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **失敗した**状態のデータベースメールメッセージごとに1行の情報を格納します。 このビューは、正しく送信されなかったメッセージを特定するときに使用できます。  
+  **失敗した** 状態のデータベースメールメッセージごとに1行の情報を格納します。 このビューは、正しく送信されなかったメッセージを特定するときに使用できます。  
   
  データベースメールによって処理されるすべてのメッセージを表示するには [sysmail_allitems &#40;transact-sql&#41;](../../relational-databases/system-catalog-views/sysmail-allitems-transact-sql.md)を使用します。 未送信のメッセージだけを表示するには、 [sysmail_unsentitems &#40;transact-sql&#41;](../../relational-databases/system-catalog-views/sysmail-unsentitems-transact-sql.md)を使用します。 送信されたメッセージだけを表示するには、 [sysmail_sentitems &#40;transact-sql&#41;](../../relational-databases/system-catalog-views/sysmail-sentitems-transact-sql.md)を使用します。 電子メールの添付ファイルを表示するには、 [sysmail_mailattachments &#40;transact-sql&#41;](../../relational-databases/system-catalog-views/sysmail-mailattachments-transact-sql.md)を使用します。  
   
@@ -62,10 +62,10 @@ ms.locfileid: "89548917"
 |**last_mod_date**|**datetime**|行が最後に変更された日付と時刻。|  
 |**last_mod_user**|**sysname**|行を最後に変更したユーザー。|  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  データベースメールによって送信されなかったメッセージを表示するには、 **sysmail_faileditems** ビューを使用します。 データベース メールのトラブルシューティングを行うとき、このビューでは送信されなかったメッセージの属性を確認できるので、問題の性質を特定するのに役立ちます。 失敗の理由を確認するには、失敗したメッセージのエントリを [ [sysmail_event_log &#40;transact-sql&#41;](../../relational-databases/system-catalog-views/sysmail-event-log-transact-sql.md) ビューで確認します。  
   
 ## <a name="permissions"></a>アクセス許可  
- **Sysadmin**固定サーバーロールおよび**databasemailuserrole**データベースロールに付与されます。 **Sysadmin**固定サーバーロールのメンバーによって実行されると、このビューには失敗したすべてのメッセージが表示されます。 他のすべてのユーザーには、送信した失敗したメッセージのみが表示されます。  
+ **Sysadmin** 固定サーバーロールおよび **databasemailuserrole** データベースロールに付与されます。 **Sysadmin** 固定サーバーロールのメンバーによって実行されると、このビューには失敗したすべてのメッセージが表示されます。 他のすべてのユーザーには、送信した失敗したメッセージのみが表示されます。  
   
   

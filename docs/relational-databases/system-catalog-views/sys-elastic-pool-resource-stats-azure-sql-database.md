@@ -15,16 +15,16 @@ helpviewer_keywords:
 - elastic_pool_resource_stats_TSQL
 - elastic_pool_resource_stats
 ms.assetid: f242c1bd-3cc8-4c8b-8aaf-c79b6a8a0329
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.custom: seo-dt-2019
-monikerRange: = azuresqldb-current || = sqlallproducts-allversions
-ms.openlocfilehash: f3478bcf1b6cef15ecb843f76cecb5b180ec7df2
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+monikerRange: = azuresqldb-current
+ms.openlocfilehash: 1b97fe07119f28211186e2efa3986308af477947
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89548779"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98102780"
 ---
 # <a name="syselastic_pool_resource_stats-azure-sql-database"></a>sys.elastic_pool_resource_stats (Azure SQL Database)
 [!INCLUDE[Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/asdb-asdbmi.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "89548779"
   
 ||  
 |-|  
-|**に適用さ**れます:  [!INCLUDE[ssSDS](../../includes/sssds-md.md)] V12。|  
+|**に適用さ** れます:  [!INCLUDE[ssSDS](../../includes/sssds-md.md)] V12。|  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
@@ -48,15 +48,15 @@ ms.locfileid: "89548779"
 |**max_session_percent**|**decimal (5, 2)**|プールの限度に対する割合で表した最大同時実行セッション数。|  
 |**elastic_pool_dtu_limit**|**int**|この期間中のこのエラスティック プールに対する現在の最大エラスティック プール DTU 設定。|  
 |**elastic_pool_storage_limit_mb**|**bigint**|この期間中のこのエラスティック プールに対する現在の最大エラスティック プール ストレージ制限 (メガバイト単位)。|
-|**avg_allocated_storage_percent**|**decimal (5, 2)**|エラスティックプール内のすべてのデータベースによって割り当てられたデータ領域の割合。  これは、エラスティックプールのデータの最大サイズに割り当てられたデータ領域の比率です。  詳細については[、「SQL Database でのファイル領域管理](https://docs.microsoft.com/azure/sql-database/sql-database-file-space-management)」を参照してください。|  
+|**avg_allocated_storage_percent**|**decimal (5, 2)**|エラスティックプール内のすべてのデータベースによって割り当てられたデータ領域の割合。  これは、エラスティックプールのデータの最大サイズに割り当てられたデータ領域の比率です。  詳細については[、「SQL Database でのファイル領域管理](/azure/sql-database/sql-database-file-space-management)」を参照してください。|  
   
 ## <a name="remarks"></a>解説
 
- このビューは、SQL Database サーバーの master データベースに存在します。 **Elastic_pool_resource_stats**を照会するには、master データベースに接続している必要があります。  
+ このビューは、SQL Database サーバーの master データベースに存在します。 **Sys.elastic_pool_resource_stats** を照会するには、master データベースに接続している必要があります。  
   
 ## <a name="permissions"></a>アクセス許可
 
- **Dbmanager**ロールのメンバーシップが必要です。  
+ **Dbmanager** ロールのメンバーシップが必要です。  
   
 ## <a name="examples"></a>例
 
@@ -80,9 +80,8 @@ ORDER BY end_time DESC;
 
 ## <a name="see-also"></a>参照
 
- [エラスティックデータベースによる爆発的な成長の緩和](https://azure.microsoft.com/documentation/articles/sql-database-elastic-pool/)   
- [SQL Database エラスティックデータベースプールの作成と管理 (プレビュー)](https://azure.microsoft.com/documentation/articles/sql-database-elastic-pool-portal/)   
- [resource_stats &#40;Azure SQL Database&#41;](../../relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database.md)   
- [dm_db_resource_stats &#40;Azure SQL Database&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database.md)  
-  
+ [エラスティックデータベースによる爆発的な成長の緩和](/azure/azure-sql/database/elastic-pool-overview)   
+ [SQL Database エラスティックデータベースプールの作成と管理](/azure/azure-sql/database/elastic-pool-overview)   
+ [sys.resource_stats &#40;Azure SQL Database&#41;](../../relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database.md)   
+ [sys.dm_db_resource_stats &#40;Azure SQL Database&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database.md)  
   

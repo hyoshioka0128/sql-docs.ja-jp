@@ -11,13 +11,13 @@ helpviewer_keywords:
 - replication [SQL Server], tutorials
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: =azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions
-ms.openlocfilehash: d7c818e48c916a8ad3da7dfda7eaad6230c16ebd
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+monikerRange: =azuresqldb-mi-current||>=sql-server-2016
+ms.openlocfilehash: 62e047a11d62e8c634f0188746a0f901ab26efdc
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85882279"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97406490"
 ---
 # <a name="troubleshooter-find-errors-with-sql-server-transactional-replication"></a>トラブルシューティング ツール:トラブルシューティング ツール: SQL Server トランザクション レプリケーション エラーを検出する 
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -46,8 +46,8 @@ ms.locfileid: "85882279"
 
 ### <a name="steps-to-take"></a>実施手順
 1. レプリケーション モニターを使用して、レプリケーションでエラーが発生した箇所 (どのエージェント) をあきらかにします。
-   - **パブリッシャーからディストリビューターまで**セクションでエラーが発生している場合は、ログ リーダー エージェントに関する問題です。 
-   - **ディストリビューターからサブスクライバーまで**セクションでエラーが発生している場合は、ディストリビューション エージェントに関する問題です。  
+   - **パブリッシャーからディストリビューターまで** セクションでエラーが発生している場合は、ログ リーダー エージェントに関する問題です。 
+   - **ディストリビューターからサブスクライバーまで** セクションでエラーが発生している場合は、ディストリビューション エージェントに関する問題です。  
 2. ジョブの利用状況モニターでそのエージェントのジョブ履歴を調べて、エラーの詳細を明らかにします。 ジョブ履歴では十分な詳細がわからない場合は、その特定のエージェントで[詳細ログを有効にする](#enable-verbose-logging-on-any-agent)ことができます。
 3. エラーの解決方法の決定を試みます。
 
@@ -210,7 +210,7 @@ ms.locfileid: "85882279"
     Message: Login failed for user 'NODE2\repl_distribution'.
     ```
 
-8. このエラーは、ユーザー **NODE2\repl_distribution** のログインが失敗したため、ディストリビューション エージェントがサブスクライバーに接続できなかったことを示しています。 さらに詳しく調べるには、サブスクライバーに接続して、オブジェクト エクスプローラーで **[管理]** ノードの下の*現在の* SQL Server エラー ログを開きます。 
+8. このエラーは、ユーザー **NODE2\repl_distribution** のログインが失敗したため、ディストリビューション エージェントがサブスクライバーに接続できなかったことを示しています。 さらに詳しく調べるには、サブスクライバーに接続して、オブジェクト エクスプローラーで **[管理]** ノードの下の *現在の* SQL Server エラー ログを開きます。 
 
     ![サブスクライバーのログイン失敗を示すエラー](media/troubleshooting-tran-repl-errors/login-failed.png)
     

@@ -6,7 +6,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DECLARE
 - DECLARE_TSQL
@@ -18,15 +18,15 @@ helpviewer_keywords:
 - DECLARE statement
 - declaring variables
 ms.assetid: d1635ebb-f751-4de1-8bbc-cae161f90821
-author: rothja
-ms.author: jroth
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 28c07de7846b30d1fca9fe81a58398a19deec9a8
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 6ed96b214783d33b0f94f8b567d3078a597c49d8
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86921496"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99119964"
 ---
 # <a name="declare-local_variable-transact-sql"></a>DECLARE @local_variable (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "86921496"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 -- Syntax for SQL Server and Azure SQL Database  
   
 DECLARE   
@@ -74,8 +74,8 @@ See CREATE TABLE for index option syntax.
   
 ```  
   
-```  
--- Syntax for Azure SQL Data Warehouse and Parallel Data Warehouse  
+```syntaxsql
+-- Syntax for Azure Synapse Analytics and Parallel Data Warehouse  
   
 DECLARE   
 {{ @local_variable [AS] data_type } [ =value [ COLLATE <collation_name> ] ] } [,...n]  
@@ -198,19 +198,18 @@ CURSOR
 ### <a name="a-using-declare"></a>A. DECLARE を使用する  
  次の例では、`@find` という名前のローカル変数を使って、`Man` で始まるすべての姓の連絡先情報を取得します。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
-DECLARE @find varchar(30);   
+DECLARE @find VARCHAR(30);   
 /* Also allowed:   
-DECLARE @find varchar(30) = 'Man%';   
+DECLARE @find VARCHAR(30) = 'Man%';   
 */  
 SET @find = 'Man%';   
 SELECT p.LastName, p.FirstName, ph.PhoneNumber  
 FROM Person.Person AS p   
 JOIN Person.PersonPhone AS ph ON p.BusinessEntityID = ph.BusinessEntityID  
 WHERE LastName LIKE @find;  
-  
 ```  
   
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
@@ -228,12 +227,12 @@ Manzanares          Tomas                   1 (11) 500 555-0178
 ### <a name="b-using-declare-with-two-variables"></a>B. DECLARE で 2 つの変数を使用する  
  次の例では、北米販売区域に勤務しており、年間売上高が $2,000,000 以上である [!INCLUDE[ssSampleDBCoFull](../../includes/sssampledbcofull-md.md)] 販売担当者の名前を取得します。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 SET NOCOUNT ON;  
 GO  
-DECLARE @Group nvarchar(50), @Sales money;  
+DECLARE @Group nvarchar(50), @Sales MONEY;  
 SET @Group = N'North America';  
 SET @Sales = 2000000;  
 SET NOCOUNT OFF;  
@@ -245,14 +244,14 @@ WHERE TerritoryGroup = @Group and SalesYTD >= @Sales;
 ### <a name="c-declaring-a-variable-of-type-table"></a>C. table 型の変数を宣言する  
  次の例では、UPDATE ステートメントの OUTPUT 句で指定される値を格納する `table` 変数を作成します。 この後に、`SELECT` 内の値、および `@MyTableVar` テーブルの更新操作の結果を返す 2 つの `Employee` ステートメントが続きます。 `INSERTED.ModifiedDate` 列の結果が、`Employee` テーブルの `ModifiedDate` 列の値と異なることに注意してください。 これは、`AFTER UPDATE` の値を現在の日付に更新する `ModifiedDate` トリガーが、`Employee` テーブルで定義されるためです。 ただし、`OUTPUT` が返す列には、トリガーが起動される前の値が反映されています。 詳細については、「[OUTPUT 句 &#40;Transact-SQL&#41;](../../t-sql/queries/output-clause-transact-sql.md)」を参照してください。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
-DECLARE @MyTableVar table(  
-    EmpID int NOT NULL,  
-    OldVacationHours int,  
-    NewVacationHours int,  
-    ModifiedDate datetime);  
+DECLARE @MyTableVar TABLE(  
+    EmpID INT NOT NULL,  
+    OldVacationHours INT,  
+    NewVacationHours INT,  
+    ModifiedDate DATETIME);  
 UPDATE TOP (10) HumanResources.Employee  
 SET VacationHours = VacationHours * 1.25   
 OUTPUT INSERTED.BusinessEntityID,  
@@ -275,7 +274,7 @@ GO
 ### <a name="d-declaring-a-variable-of-user-defined-table-type"></a>D. ユーザー定義テーブル型の変数を宣言する  
  次の例では、`@LocationTVP` というテーブル値パラメーターまたはテーブル変数を作成します。 これには、`LocationTableType` という対応するユーザー定義テーブル型が必要です。 ユーザー定義テーブル型の作成方法の詳細については、「[CREATE TYPE &#40;Transact-SQL&#41;](../../t-sql/statements/create-type-transact-sql.md)」を参照してください。 テーブル値パラメーターの詳細については、「[テーブル値パラメーターの使用 &#40;データベース エンジン&#41;](../../relational-databases/tables/use-table-valued-parameters-database-engine.md)」を参照してください。  
   
-```  
+```sql  
 DECLARE @LocationTVP   
 AS LocationTableType;  
 ```  
@@ -285,12 +284,12 @@ AS LocationTableType;
 ### <a name="e-using-declare"></a>E. DECLARE を使用する  
  次の例では、`@find` という名前のローカル変数を使って、`Walt` で始まるすべての姓の連絡先情報を取得します。  
   
-```  
+```sql  
 -- Uses AdventureWorks  
   
-DECLARE @find varchar(30);  
+DECLARE @find VARCHAR(30);  
 /* Also allowed:   
-DECLARE @find varchar(30) = 'Man%';  
+DECLARE @find VARCHAR(30) = 'Man%';  
 */  
 SET @find = 'Walt%';  
   
@@ -302,10 +301,10 @@ WHERE LastName LIKE @find;
 ### <a name="f-using-declare-with-two-variables"></a>F. DECLARE で 2 つの変数を使用する  
  次の例では、変数を使用し、`DimEmployee` テーブルにある従業員の名と姓を指定します。  
   
-```  
+```sql  
 -- Uses AdventureWorks  
   
-DECLARE @lastName varchar(30), @firstName varchar(30);  
+DECLARE @lastName VARCHAR(30), @firstName VARCHAR(30);  
   
 SET @lastName = 'Walt%';  
 SET @firstName = 'Bryan';  

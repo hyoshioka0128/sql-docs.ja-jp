@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - '@@NESTLEVEL'
 - '@@NESTLEVEL_TSQL'
@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 8c0b2134-8616-44f6-addc-6583c432fb62
 author: julieMSFT
 ms.author: jrasnick
-ms.openlocfilehash: a6c28eca6f0496e8e66deef9a26aa4e7ef45ea81
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 72333584e3bf02de02dfd108825c6e73f192e604
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88445736"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99192239"
 ---
 # <a name="x40x40nestlevel-transact-sql"></a>&#x40;&#x40;NESTLEVEL (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "88445736"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 @@NESTLEVEL  
 ```  
   
@@ -55,7 +55,7 @@ ms.locfileid: "88445736"
 ### <a name="a-using-nestlevel-in-a-procedure"></a>A. プロシージャで @@NESTLEVEL を使用する  
  次の例では、別のプロシージャを呼び出すプロシージャと、それぞれの `@@NESTLEVEL` 設定を表示するプロシージャの、2 つのプロシージャを作成します。  
   
-```  
+```sql  
 USE AdventureWorks2012;  
 GO  
 IF OBJECT_ID (N'usp_OuterProc', N'P')IS NOT NULL  
@@ -90,7 +90,7 @@ Inner Level
 ### <a name="b-calling-nestlevel"></a>B. @NESTLEVEL を呼び出す  
  次の例では、`SELECT`、`EXEC`、および `sp_executesql` のそれぞれが `@@NESTLEVEL` を呼び出すときに、それらが返す値の違いを示します。  
   
-```  
+```sql  
 CREATE PROC usp_NestLevelValues AS  
     SELECT @@NESTLEVEL AS 'Current Nest Level';  
 EXEC ('SELECT @@NESTLEVEL AS OneGreater');   
@@ -122,7 +122,7 @@ TwoGreater
 (1 row(s) affected)
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [構成関数 &#40;Transact-SQL&#41;](../../t-sql/functions/configuration-functions-transact-sql.md)   
  [ストアド プロシージャの作成](../../relational-databases/stored-procedures/create-a-stored-procedure.md)   
  [@@TRANCOUNT &#40;Transact-SQL&#41;](../../t-sql/functions/trancount-transact-sql.md)  

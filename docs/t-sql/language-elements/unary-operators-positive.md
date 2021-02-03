@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - + (positive)
 - +
@@ -19,15 +19,15 @@ helpviewer_keywords:
 - positive operator (+)
 - positive values [SQL Server]
 ms.assetid: 0f31c5cc-3078-4f6a-9870-7eb1a98053fb
-author: rothja
-ms.author: jroth
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 33134b3f32620ce68edf844737e9e6c1814f1fcb
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 4e72fc7ec26e44298111b5d431fede0f4ef6e6fd
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88459231"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99184715"
 ---
 # <a name="unary-operators---positive"></a>単項演算子 - 正号
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
@@ -47,7 +47,6 @@ ms.locfileid: "88459231"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 + numeric_expression  
 ```  
   
@@ -55,10 +54,10 @@ ms.locfileid: "88459231"
 
 ## <a name="arguments"></a>引数
  *numeric_expression*  
- **datetime** および **smalldatetime** データ型を除く、数値データ型カテゴリ内のいずれかのデータ型の有効な[式](../../t-sql/language-elements/expressions-transact-sql.md)です。  
+ **datetime** および **smalldatetime** データ型を除く、数値データ型カテゴリ内のいずれかのデータ型の有効な [式](../../t-sql/language-elements/expressions-transact-sql.md)です。  
   
 ## <a name="result-types"></a>戻り値の型  
- データ型を返す *numeric_expression*です。  
+ データ型を返す *numeric_expression* です。  
   
 ## <a name="remarks"></a>解説  
  単項プラスは任意の数値式の前に付けることができますが、その式が返す値に対して何の操作も行いません。 つまり、負の式の値を正の値にして返すわけではありません。 負の式の値を正の値として返すには、[ABS](../../t-sql/functions/abs-transact-sql.md) 関数を使用します。  
@@ -68,8 +67,8 @@ ms.locfileid: "88459231"
 ### <a name="a-setting-a-variable-to-a-positive-value"></a>A. 変数に正の値を設定する  
  次の例では、変数を正の値に設定します。  
   
-```  
-DECLARE @MyNumber decimal(10,2);  
+```sql  
+DECLARE @MyNumber DECIMAL(10,2);  
 SET @MyNumber = +123.45;  
 SELECT @MyNumber;  
 GO  
@@ -87,10 +86,10 @@ GO
 ### <a name="b-using-the-unary-plus-operator-with-a-negative-value"></a>B. 単項プラス演算子を負の値と共に使用する  
  次の例では、単項プラス演算子を負の式と共に使用した場合と、同じ式に対して ABS() 関数を使用した場合とを示しています。 単項プラス演算子は式に影響を与えませんが、ABS 関数は式の値を正の値にして返します。  
   
-```  
+```sql  
 USE tempdb;  
 GO  
-DECLARE @Num1 int;  
+DECLARE @Num1 INT;  
 SET @Num1 = -5;  
 SELECT +@Num1, ABS(@Num1);  
 GO  

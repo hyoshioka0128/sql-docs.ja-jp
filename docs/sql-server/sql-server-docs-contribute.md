@@ -1,4 +1,5 @@
 ---
+description: SQL Server のドキュメントに投稿する方法
 title: SQL Server のドキュメントに投稿する方法 | Microsoft Docs
 ms.date: 08/13/2018
 ms.prod: sql
@@ -8,13 +9,13 @@ ms.custom: ''
 ms.topic: conceptual
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: '>= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017 || = sqlallproducts-allversions'
-ms.openlocfilehash: d947ae25f6f01740e7c5826a7edf332ff422a9de
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+monikerRange: '>= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017'
+ms.openlocfilehash: 436ef0f3d46fde6744624ea182c7c0433f9b491b
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87247385"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97409468"
 ---
 # <a name="how-to-contribute-to-sql-server-documentation"></a>SQL Server のドキュメントに投稿する方法
 
@@ -33,12 +34,12 @@ ms.locfileid: "87247385"
 
 ## <a name="edit-in-your-browser"></a><a id="githubui"></a> ブラウザーで編集する
 
-お使いのブラウザーで SQL Server のコンテンツに簡単な編集を加え、Microsoft に送信することができます。 詳細については、[Microsoft Docs 共同作成者ガイドの概要](https://docs.microsoft.com/contribute/#quick-edits-to-existing-documents)のページを参照してください。 
+お使いのブラウザーで SQL Server のコンテンツに簡単な編集を加え、Microsoft に送信することができます。 詳細については、[Microsoft Docs 共同作成者ガイドの概要](/contribute/#quick-edits-to-existing-documents)のページを参照してください。 
 
 次の手順は、このプロセスをまとめたものです。 
 
 1. フィードバックがあるページで、右上の **[編集]** リンクを選択します。
-1. 次のページで、右上の**鉛筆**アイコンを選択します。
+1. 次のページで、右上の **鉛筆** アイコンを選択します。
 1. 次のページの **[Edit file]\(ファイルの編集\)** テキスト ウィンドウで、変更するテキストを直接編集します。
     新規または変更されたテキストの書式設定に関するヘルプが必要な場合は、「[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)」(マークダウンのカンニング ペーパー) を参照してください。
 1. 編集が完了したら、 **[Commit changes]\(変更のコミット\)** で次の手順を実行します。
@@ -58,12 +59,12 @@ ms.locfileid: "87247385"
 
 この方法で投稿する場合は、次の記事を参照してください。
 
-- [GitHub アカウントを作成する](https://docs.microsoft.com/contribute/get-started-setup-github)
-- [コンテンツ オーサリング ツールをインストールする](https://docs.microsoft.com/contribute/get-started-setup-tools)
-- [Git リポジトリをローカルに設定する](https://docs.microsoft.com/contribute/get-started-setup-local)
-- [ツールを使って投稿する](https://docs.microsoft.com/contribute/how-to-write-workflows-major)
+- [GitHub アカウントを作成する](/contribute/get-started-setup-github)
+- [コンテンツ オーサリング ツールをインストールする](/contribute/get-started-setup-tools)
+- [Git リポジトリをローカルに設定する](/contribute/get-started-setup-local)
+- [ツールを使って投稿する](/contribute/how-to-write-workflows-major)
 
-ドキュメントを大幅に変更する pull request を送信する場合は、オンライン**貢献者使用許諾契約書 (CLA)** の提出を求める GitHub のコメントを受け取ります。 オンライン フォームを提出してからでないと、pull request は受け付けられません。
+ドキュメントを大幅に変更する pull request を送信する場合は、オンライン **貢献者使用許諾契約書 (CLA)** の提出を求める GitHub のコメントを受け取ります。 オンライン フォームを提出してからでないと、pull request は受け付けられません。
 
 ## <a name="recognition"></a>認識
 
@@ -106,13 +107,13 @@ SQL Server の各記事には、タイトルの後に **applies-to** インク�
 - 一般的に使用されるインクルードの一覧は、[SQL Server のバージョンと applies-to インクルード ファイル](applies-to-includes.md)に関するページを参照してください。
 - 同じ機能または関連タスクをカバーしている他の記事を探します。 その記事を編集する場合は、applies-to インクルード リンクの Markdown をコピーできます (送信しないで編集をキャンセルできます)。
 - [docs/includes](https://github.com/MicrosoftDocs/sql-docs/tree/live/docs/includes) ディレクトリで、"applies-to" というテキストを含むファイルを探します。 GitHub の **[Find]** ボタンを使ってすばやくフィルター処理できます。 ファイルをクリックして、どのようにレンダリングされるかを確認します。
-- 名前付けの規則に注意してください。 名前に "x" が含まれる場合は、通常、サービスのサポートがないことを示すプレースホルダーです。 たとえば、**appliesto-xx-xxxx-asdw-xxx-md.md** は、**asdw** だけが明示され、他のフィールドは "x" になっているので、Azure SQL Data Warehouse のみのサポートであることを示します。
+- 名前付けの規則に注意してください。 名前に "x" が含まれる場合は、通常、サービスのサポートがないことを示すプレースホルダーです。 たとえば、**appliesto-xx-xxxx-asdw-xxx-md.md** は、**asdw** だけが明示され、他のフィールドは "x" になっているので、Azure Synapse Analytics のみのサポートであることを示しています。
 - **tsql-appliesto-ss2017-xxxx-xxxx-xxx-md.md** のようにバージョン番号が指定されていることもあります。 SQL Server の特定のバージョンで機能が導入されたことがわかっている場合は、そのインクルードだけを使ってください。
 
 ## <a name="contributor-resources"></a>共同作成者のリソース
 
-- [docs.microsoft.com の共同作成者ガイド](https://docs.microsoft.com/contribute/)
-- [Microsoft スタイル ガイド](https://docs.microsoft.com/teamblog/style-guide)
+- [docs.microsoft.com の共同作成者ガイド](/contribute/)
+- [Microsoft スタイル ガイド](/teamblog/style-guide)
 - [Markdown の基礎](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/)
 
 > [!TIP]

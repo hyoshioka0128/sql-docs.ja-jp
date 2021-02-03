@@ -26,13 +26,13 @@ helpviewer_keywords:
 ms.assetid: 565984cd-60c6-4df7-83ea-2349b838ccb2
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 02877aa808d53a586ae9191154dc0bfe3f9a785e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 83684cab677210f0c584a7554042fbe2ce8f8a80
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88459551"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97480403"
 ---
 # <a name="system_user-transact-sql"></a>SYSTEM_USER (Transact-SQL)
 [!INCLUDE [sql-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdbmi-asa-pdw.md)]
@@ -43,7 +43,7 @@ ms.locfileid: "88459551"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql
 SYSTEM_USER  
 ```  
 
@@ -68,8 +68,8 @@ SYSTEM_USER
 ### <a name="a-using-system_user-to-return-the-current-system-user-name"></a>A.  SYSTEM_USER を使用して現在のシステム ユーザー名を返す  
  次の例では、`char` 変数を宣言し、`SYSTEM_USER` の現在の値をこの変数に格納した後、変数に格納されている値を出力します。  
   
-```  
-DECLARE @sys_usr char(30);  
+```sql
+DECLARE @sys_usr CHAR(30);  
 SET @sys_usr = SYSTEM_USER;  
 SELECT 'The current system user is: '+ @sys_usr;  
 GO  
@@ -87,15 +87,15 @@ The current system user is: WillisJo
 ### <a name="b-using-system_user-with-default-constraints"></a>B.  SYSTEM_USER を DEFAULT 制約と共に使用する  
  次の例では、テーブルを作成し、`SYSTEM_USER` 列の `DEFAULT` 制約として `SRep_tracking_user` を使用します。  
   
-```  
+```sql
 USE AdventureWorks2012;  
 GO  
 CREATE TABLE Sales.Sales_Tracking  
 (  
-    Territory_id int IDENTITY(2000, 1) NOT NULL,  
-    Rep_id  int NOT NULL,  
-    Last_sale datetime NOT NULL DEFAULT GETDATE(),  
-    SRep_tracking_user varchar(30) NOT NULL DEFAULT SYSTEM_USER  
+    Territory_id INT IDENTITY(2000, 1) NOT NULL,  
+    Rep_id INT NOT NULL,  
+    Last_sale DATETIME NOT NULL DEFAULT GETDATE(),  
+    SRep_tracking_user VARCHAR(30) NOT NULL DEFAULT SYSTEM_USER  
 );  
 GO  
 INSERT Sales.Sales_Tracking (Rep_id)  
@@ -113,7 +113,7 @@ GO
   
  次のクエリでは、`Sales_Tracking` テーブルのすべての情報を選択します。  
   
-```  
+```sql
 SELECT * FROM Sales_Tracking ORDER BY Rep_id;  
 GO  
 ```  
@@ -137,7 +137,7 @@ Territory_id Rep_id Last_sale            SRep_tracking_user
 ### <a name="c-using-system_user-to-return-the-current-system-user-name"></a>C: SYSTEM_USER を使用して現在のシステム ユーザー名を返す  
  次の例では、`SYSTEM_USER` の現在の値を返します。  
   
-```  
+```sql
 SELECT SYSTEM_USER;  
 ```  
   

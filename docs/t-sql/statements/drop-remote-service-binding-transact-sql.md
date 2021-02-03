@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DROP REMOTE SERVICE BINDING
 - DROP_REMOTE_SERVICE_BINDING_TSQL
@@ -20,14 +20,14 @@ helpviewer_keywords:
 - remote service bindings [Service Broker], dropping
 - DROP REMOTE SERVICE BINDING statement
 ms.assetid: 377789b4-bf94-488f-8c20-687d0bae447a
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: f35d18ea74041bf21b1f67010333ff73b3ef808c
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 8b5ae61854d97935e7423a5c37ccf9387d2fd264
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88444642"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99189802"
 ---
 # <a name="drop-remote-service-binding-transact-sql"></a>DROP REMOTE SERVICE BINDING (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -39,7 +39,6 @@ ms.locfileid: "88444642"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
-  
 DROP REMOTE SERVICE BINDING binding_name  
 [ ; ]  
 ```  
@@ -56,7 +55,7 @@ DROP REMOTE SERVICE BINDING binding_name
 ## <a name="examples"></a>例  
  次の例では、データベースからリモート サービス バインド `APBinding` を削除します。  
   
-```  
+```sql 
 DROP REMOTE SERVICE BINDING APBinding ;  
 ```  
   

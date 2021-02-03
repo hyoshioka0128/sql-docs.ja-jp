@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - FILEGROUPPROPERTY_TSQL
 - FILEGROUPPROPERTY
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - viewing filegroup properties
 - displaying filegroup properties
 ms.assetid: b3a930e6-df05-4034-929c-f681f5f6fc6e
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 5992e56da8ae602d2e681265b63b52f6415f9374
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: cdc8e66d73e7296d269edd420fde4709c11d41f9
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88468025"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99161868"
 ---
 # <a name="filegroupproperty-transact-sql"></a>FILEGROUPPROPERTY (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "88468025"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 FILEGROUPPROPERTY ( filegroup_name, property )  
 ```  
   
@@ -65,12 +65,12 @@ FILEGROUPPROPERTY ( filegroup_name, property )
 ## <a name="examples"></a>例  
 この例では、[!INCLUDE[ssSampleDBnormal](../../includes/sssampledbnormal-md.md)] データベース内のプライマリ ファイル グループに対する `IsDefault` プロパティの設定値が返されます。  
   
-```  
+```sql  
 SELECT FILEGROUPPROPERTY('PRIMARY', 'IsDefault') AS 'Default Filegroup';  
 GO  
 ```  
- [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
-  
+
+ [!INCLUDE[ssResult](../../includes/ssresult-md.md)]   
 ```  
 Default Filegroup   
 ---------------------   

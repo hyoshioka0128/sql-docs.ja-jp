@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: replication
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - MSsync_states
 - MSsync_states_TSQL
@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSsync_states system table
 ms.assetid: b25e17e1-7718-432e-a442-c4946741d474
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: bc3ef439c3d5027e64eb988730c41c3f9bea12d9
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 338700f614cc853b2b275d135e7ef466825e8019
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545490"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99211578"
 ---
 # <a name="mssync_states-transact-sql"></a>MSsync_states (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSsync_states**テーブルでは、同時にスナップショットモードになっているパブリケーションを追跡します。 このテーブルは、ディストリビューションデータベースに格納されます。  
+  **MSsync_states** テーブルでは、同時にスナップショットモードになっているパブリケーションを追跡します。 このテーブルは、ディストリビューションデータベースに格納されます。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

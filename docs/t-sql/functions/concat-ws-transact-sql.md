@@ -16,15 +16,15 @@ dev_langs:
 helpviewer_keywords:
 - CONCAT_WS function
 ms.assetid: f1375fd7-a2fd-48bf-922a-4f778f0deb1f
-author: markingmyname
-ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2017||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 544143a179ab829d18046fd0dce856d9f2a39278
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: =azuresqldb-current||>=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current||=azure-sqldw-latest
+ms.openlocfilehash: dd7dec83f385c17055548626b2232e65af02ab09
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88367148"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101309"
 ---
 # <a name="concat_ws-transact-sql"></a>CONCAT_WS (Transact-SQL)
 [!INCLUDE [sqlserver2017-asdb-asdbmi-asa](../../includes/applies-to-version/sqlserver2017-asdb-asdbmi-asa.md)]
@@ -90,7 +90,7 @@ SELECT CONCAT_WS(',','1 Microsoft Way', NULL, NULL, 'Redmond', 'WA', 98052) AS A
 
 [!INCLUDE[ssResult_md](../../includes/ssresult-md.md)]   
 
-```sql
+```
 Address
 ------------   
 1 Microsoft Way,Redmond,WA,98052
@@ -107,7 +107,7 @@ FROM sys.databases
 
 [!INCLUDE[ssResult_md](../../includes/ssresult-md.md)]   
 
-```sql
+```
 DatabaseInfo
 ------------   
 1,SIMPLE,NONE

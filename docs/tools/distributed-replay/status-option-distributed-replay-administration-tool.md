@@ -11,12 +11,12 @@ author: markingmyname
 ms.author: maghan
 ms.custom: seo-lt-2019
 ms.date: 03/14/2017
-ms.openlocfilehash: 891c66ddb9b2124bb4f7cc32ad391fe4d41d42a1
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: b460f96c2f5cc9ca289b44c0484a0a8c890cabb6
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85732175"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97644258"
 ---
 # <a name="status-option-distributed-replay-administration-tool"></a>status オプション (Distributed Replay 管理ツール)
 
@@ -60,6 +60,5 @@ dreplay status -m localhost -f 60
   
 ## <a name="see-also"></a>参照  
  [SQL Server Distributed Replay](../../tools/distributed-replay/sql-server-distributed-replay.md)   
- [Transact-SQL デバッガー](../../relational-databases/scripting/transact-sql-debugger.md)  
-  
+ [Transact-SQL デバッガー](../../ssms/scripting/transact-sql-debugger.md)  
   

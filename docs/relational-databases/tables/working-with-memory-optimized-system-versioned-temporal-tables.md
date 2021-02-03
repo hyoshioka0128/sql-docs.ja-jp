@@ -9,15 +9,15 @@ ms.reviewer: ''
 ms.technology: table-view-index
 ms.topic: conceptual
 ms.assetid: 691d4f80-6754-43f5-8b43-d4facf08f6fc
-author: CarlRabeler
-ms.author: carlrab
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: ef5094e4b4128406a3cbae663d954c3d8fd5a34c
-ms.sourcegitcommit: 331b8495e4ab37266945c81ff5b93d250bdaa6da
+author: markingmyname
+ms.author: maghan
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: acfdadf0216bd243f61339982615c4bf83796dfa
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88645982"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99177977"
 ---
 # <a name="working-with-memory-optimized-system-versioned-temporal-tables"></a>メモリ最適化およびシステム バージョン管理されたテンポラル テーブルの使用
 
@@ -28,7 +28,7 @@ ms.locfileid: "88645982"
 このトピックでは、メモリ最適化およびシステム バージョン管理されたテンポラル テーブルと、ディスク ベースのシステム バージョン管理されたテンポラル テーブルの違いについて説明します。
 
 > [!NOTE]
-> メモリ最適化されたテンポラル テーブルの使用は [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] にのみ適用され、 [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]には適用されません。
+> メモリ最適化されたテンポラル テーブルの使用は [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] にのみ適用され、 [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]には適用されません。
 
 ## <a name="discovering-metadata"></a>メタデータの検索
 

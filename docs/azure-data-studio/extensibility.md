@@ -9,12 +9,12 @@ ms.author: maghan
 ms.reviewer: alayu, maghan, sstein
 ms.custom: seodec18
 ms.date: 09/24/2018
-ms.openlocfilehash: a8866c438b446715f7e804688f50881e0b0eb167
-ms.sourcegitcommit: 7345e4f05d6c06e1bcd73747a4a47873b3f3251f
+ms.openlocfilehash: 051e3afcd5f76624a1978c5ef3ef0f6a264fe07d
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88778441"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97637732"
 ---
 # <a name="azure-data-studio-extensibility"></a>Azure Data Studio の拡張性
 
@@ -32,6 +32,9 @@ Azure Data Studio には、ユーザー エクスペリエンスをカスタマ�
 ## <a name="visual-studio-code-extensibility-apis"></a>Visual Studio Code の拡張 API
 
 Azure Data Studio のコア プラットフォームは Visual Studio Code に基づいて構築されているため、Visual Studio Code 拡張 API の詳細については、Visual Studio Code の Web サイトにある[拡張機能の作成](https://code.visualstudio.com/docs/extensions/overview)と[拡張 API](https://code.visualstudio.com/docs/extensionAPI/overview) に関するドキュメントを参照してください。
+
+> [!NOTE]
+>  Azure Data Studio は最新バージョンの VS Code に合わせてリリースされますが、含まれている VS Code エンジンは現在の VS Code リリースではない可能性があります。 たとえば、2020 年 11 月の Azure Data Studio の VS Code エンジンは 1.48 であり、現在の VS Code バージョンは 1.51 です。  拡張機能のインストール時に "拡張機能 '<name>' は、VS Code '<version>' と互換性がないため、インストールできません" というエラー メッセージが表示されるのは、パッケージ マニフェスト (`package.json`) でより後の VS Code エンジンのバージョンが定義されている拡張機能が原因です。 Azure Data Studio で VS Code エンジンのバージョンを確認するには、 **[バージョン情報]** の **[ヘルプ]** メニューを使用します。
 
 ## <a name="manage-dashboard-tab-panel-contributions"></a>[ダッシュボード] タブ パネルのコントリビューションを管理する
 
@@ -111,7 +114,7 @@ Dashboard.tabs では、ダッシュボード ページ内にタブ セクショ
 
 `dashboard.insights`
 
-dashboard.insights を使用すれば、分析情報を登録できます。 これは、[チュートリアル: カスタム分析情報ウィジェットのビルド](./tutorial-build-custom-insight-sql-server.md?view=sql-server-ver15)によく似ています
+dashboard.insights を使用すれば、分析情報を登録できます。 これは、[チュートリアル: カスタム分析情報ウィジェットのビルド](./tutorial-build-custom-insight-sql-server.md)によく似ています
 
 ```json
 "dashboard.insights": {

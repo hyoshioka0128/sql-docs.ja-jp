@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - log_shipping_monitor_secondary_TSQL
 - log_shipping_monitor_secondary
@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - log_shipping_monitor_secondary system table
 ms.assetid: afbe1bb7-89a7-4020-9408-0af64a043c2e
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 823295ed5746abcf0e02fca4680a196c8687bc86
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 4c43277d1dd9203f4727a536250b7469ffb9fa55
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89538300"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99122384"
 ---
 # <a name="log_shipping_monitor_secondary-transact-sql"></a>log_shipping_monitor_secondary (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -51,7 +51,7 @@ ms.locfileid: "89538300"
 |**last_restored_latency**|**int**|ログバックアップがプライマリで作成されてからセカンダリに復元されるまでの経過時間 (分単位)。<br /><br /> 初期値が NULL です。|  
 |**history_retention_period**|**int**|指定されたセカンダリデータベースのログ配布履歴レコードが保持されてから削除されるまでの時間 (分単位)。|  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  リモート監視サーバーに格納されているだけでなく、セカンダリサーバーに関連する情報は、セカンダリサーバーの **log_shipping_monitor_secondary** テーブルにも格納されます。  
   
 ## <a name="see-also"></a>参照  

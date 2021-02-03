@@ -13,12 +13,12 @@ f1_keywords:
 ms.assetid: a3447987-5507-4630-ac35-58821b72354d
 author: stevestein
 ms.author: sstein
-ms.openlocfilehash: 98fcdb49facbc1bae6e7a0b76388c385a0fc05e8
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 87c3b10b95a37c74ea1595dca15341aeffe5c261
+ms.sourcegitcommit: 4a813a0741502c56c0cd5ecaafafad2e857a9d7f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85630944"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98031104"
 ---
 # <a name="database-properties-options-page"></a>[データベースのプロパティ] ([オプション] ページ)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -154,7 +154,7 @@ Azure SQL Database に接続している場合、このセクションにはサ�
  算術アボートのデータベース オプションが有効かどうかを指定します。 指定できる値は、 **[True]** および **[False]** です。 **[True]** を指定すると、オーバーフローまたは 0 除算エラーが発生したときにクエリまたはバッチが終了します。 エラーがトランザクションの内部で発生した場合には、トランザクションはロールバックされます。 **[False]** を指定すると、警告メッセージが表示されますが、クエリ、バッチ、トランザクションは、エラーが発生しなかったときのように処理を続行します。 詳細については、「[SET ARITHABORT &#40;Transact-SQL&#41;](../../t-sql/statements/set-arithabort-transact-sql.md)」をご覧ください。  
   
  **[NULL との連結で NULL を使用]**  
- NULL 値が連結された場合の動作を指定します。 プロパティ値が **[True]** の場合、 **string** + NULL は NULL を返します。 **[False]** の場合、結果は **string**です。 詳細については、「[SET CONCAT_NULL_YIELDS_NULL &#40;Transact-SQL&#41;](../../t-sql/statements/set-concat-null-yields-null-transact-sql.md)」をご覧ください。  
+ NULL 値が連結された場合の動作を指定します。 プロパティ値が **[True]** の場合、 **string** + NULL は NULL を返します。 **[False]** の場合、結果は **string** です。 詳細については、「[SET CONCAT_NULL_YIELDS_NULL &#40;Transact-SQL&#41;](../../t-sql/statements/set-concat-null-yields-null-transact-sql.md)」をご覧ください。  
   
  **[複数データベースの組み合わせ所有権有効]**  
  複数データベースの組み合わせ所有権が有効になっているかどうかを示す、読み取り専用の値です。 **[True]** を指定した場合、複数データベースの組み合わせ所有権のソース データベースまたは対象データベースとしてこのデータベースを使用できます。 このプロパティを設定するには、ALTER DATABASE ステートメントを使用します。  
@@ -165,7 +165,7 @@ Azure SQL Database に接続している場合、このセクションにはサ�
  **[False]** を指定すると、相関関係の統計は保持されません。  
  
  **[遅延持続性]**  
- この機能を有効にします。  
+ この機能を有効にします。 詳しくは、「[トランザクションの持続性の制御](../logs/control-transaction-durability.md)」をご覧ください。
  
  **[Is Read Committed Snapshot On]**  
  この機能を有効にします。  
@@ -183,13 +183,13 @@ Azure SQL Database に接続している場合、このセクションにはサ�
  トリガーを他のトリガーによって起動できるかどうかを指定します。 指定できる値は、 **[True]** および **[False]** です。 **[True]** を指定すると、トリガーを再帰的に起動できます。 **[False]** を指定すると、直接再帰のみが回避されます。 間接再帰を無効にするには、sp_configure を使用して nested triggers サーバー オプションを 0 に設定します。 詳しくは、「 [入れ子になったトリガーの作成](../../relational-databases/triggers/create-nested-triggers.md)」をご覧ください。  
   
  **信頼可能**  
- 読み取り専用オプションです。 **True**が表示されていれば、データベース内に確立された権限借用コンテキストでデータベース外部のリソースにアクセスすることが、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] により許可されることを示します。 権限借用コンテキストは、EXECUTE AS ユーザー ステートメントまたはデータベース モジュールの EXECUTE AS 句を使用して、データベース内に確立できます。  
+ 読み取り専用オプションです。 **True** が表示されていれば、データベース内に確立された権限借用コンテキストでデータベース外部のリソースにアクセスすることが、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] により許可されることを示します。 権限借用コンテキストは、EXECUTE AS ユーザー ステートメントまたはデータベース モジュールの EXECUTE AS 句を使用して、データベース内に確立できます。  
   
  データベースの所有者がアクセス権を得るには、サーバー レベルの AUTHENTICATE SERVER 権限も必要です。  
   
- また、このプロパティを True に設定して、安全でない外部のアクセス アセンブリをデータベース内で作成および実行することもできます。 データベースの所有者は、このプロパティを **True**に設定することだけでなく、サーバー レベルの EXTERNAL ACCESS ASSEMBLY 権限または UNSAFE ASSEMBLY 権限も必要です。  
+ また、このプロパティを True に設定して、安全でない外部のアクセス アセンブリをデータベース内で作成および実行することもできます。 データベースの所有者は、このプロパティを **True** に設定することだけでなく、サーバー レベルの EXTERNAL ACCESS ASSEMBLY 権限または UNSAFE ASSEMBLY 権限も必要です。  
   
- 既定では、すべてのユーザー データベースとすべてのシステム データベース ( **MSDB**を除く) で、このプロパティが **False**に設定されます。 **model** データベースおよび **tempdb** データベースのこの値は変更できません。  
+ 既定では、すべてのユーザー データベースとすべてのシステム データベース ( **MSDB** を除く) で、このプロパティが **False** に設定されます。 **model** データベースおよび **tempdb** データベースのこの値は変更できません。  
   
  データベースをサーバーにアタッチするときは、必ず TRUSTWORTHY を **False** に設定します。  
   
@@ -246,5 +246,4 @@ Service Broker の読み取り専用プロパティです。
 
 ## <a name="see-also"></a>参照  
  [ALTER DATABASE &#40;Transact-SQL&#41;](../../t-sql/statements/alter-database-transact-sql.md)   
- [CREATE DATABASE &#40;SQL Server Transact-SQL&#41;](../../t-sql/statements/create-database-sql-server-transact-sql.md)  
-  
+ [CREATE DATABASE &#40;SQL Server Transact-SQL&#41;](../../t-sql/statements/create-database-transact-sql.md)  

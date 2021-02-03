@@ -17,13 +17,13 @@ ms.assetid: a561ae83-a8b6-4b9b-a819-9b86839546b4
 author: MightyPen
 ms.author: genemi
 ms.custom: seo-lt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: dcb35f21b2208d2d5f924102a48ba1364eb9c154
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 9a20d41c1002f9e17ef10dbb86feaef100ce293f
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85649545"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97414298"
 ---
 # <a name="executing-sql-queries-sqlxml-managed-classes"></a>SQL クエリの実行 (SQLXML マネージド クラス)
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "85649545"
   
  この例では、単純な SQL クエリを実行して、従業員の姓、名、および誕生日を取得します。従業員の姓の値はパラメーターとして渡されます。 パラメーター (*LastName*) を指定する場合は、Value プロパティのみが設定されます。 Name プロパティが設定されていません。このクエリでは、パラメーターは位置指定であり、名前は必要ありません。  
   
- SqlXmlCommand オブジェクトの CommandType プロパティは、既定では**Sql**です。 したがって、このプロパティは明示的に設定しません。  
+ SqlXmlCommand オブジェクトの CommandType プロパティは、既定では **Sql** です。 したがって、このプロパティは明示的に設定しません。  
   
 > [!NOTE]  
 >  コードでは、接続文字列に Microsoft [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] インスタンス名を含める必要があります。  

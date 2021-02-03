@@ -8,26 +8,25 @@ ms.date: 05/27/2020
 ms.topic: how-to
 author: garyericson
 ms.author: garye
-ms.reviewer: davidph
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: 877728812d36a7d4db8370254c0fdccbe1011350
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: ee042503a0d88a878b96caba480551e9553d6a88
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85723943"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471003"
 ---
 # <a name="get-r-package-information"></a>R パッケージ情報の取得
 
-[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
+[!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
 
-::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15"
 この記事では、[SQL Server 上の Machine Learning Services](../sql-server-machine-learning-services.md) および[ビッグ データ クラスター](../../big-data-cluster/machine-learning-services.md)にインストールされている R パッケージに関する情報を取得する方法について説明します。 R スクリプトの例では、インストール パスやバージョンなどのパッケージ情報を一覧表示する方法を示しています。
 ::: moniker-end
-::: moniker range="<=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="<=sql-server-2017"
 この記事では、[SQL Server Machine Learning Services](../sql-server-machine-learning-services.md) にインストールされている R パッケージに関する情報を取得する方法について説明します。 R スクリプトの例では、インストール パスやバージョンなどのパッケージ情報を一覧表示する方法を示しています。
 ::: moniker-end
-::: moniker range="=azuresqldb-mi-current||=sqlallproducts-allversions"
+::: moniker range="=azuresqldb-mi-current"
 この記事では、[Azure SQL Managed Instance の Machine Learning Services](/azure/azure-sql/managed-instance/machine-learning-services-overview) にインストールされている R パッケージに関する情報を取得する方法について説明します。 R スクリプトの例では、インストール パスやバージョンなどのパッケージ情報を一覧表示する方法を示しています。
 ::: moniker-end
 
@@ -38,7 +37,7 @@ SQL Server と共に機械学習をインストールすると、インストー
 SQL Server のデータベース内で実行されるすべてのスクリプトは、インスタンス ライブラリから関数を読み込む必要があります。 SQL Server は、他のライブラリにインストールされているパッケージにはアクセスできません。 これはリモート クライアントにも当てはまります。サーバーの計算のコンテキストで実行されているすべての R スクリプトは、インスタンス ライブラリにインストールされているパッケージしか使用できません。
 既定のインスタンス ライブラリは、サーバーの資産を保護するために、コンピューターの管理者のみが変更できるようになっています。
 
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 R のバイナリの既定のパスは次のとおりです。
 
 `C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES\library`
@@ -46,7 +45,7 @@ R のバイナリの既定のパスは次のとおりです。
 既定の SQL インスタンスは、MSSQLSERVER と想定されています。 SQL Server がユーザー定義の名前付きインスタンスとしてインストールされている場合、代わりにその指定の名前を使用します。
 ::: moniker-end
 
-::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2017"
 R のバイナリの既定のパスは次のとおりです。
 
 `C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\R_SERVICES\library`
@@ -54,7 +53,7 @@ R のバイナリの既定のパスは次のとおりです。
 既定の SQL インスタンスは、MSSQLSERVER と想定されています。 SQL Server がユーザー定義の名前付きインスタンスとしてインストールされている場合、代わりにその指定の名前を使用します。
 ::: moniker-end
 
-::: moniker range=">=sql-server-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15"
 R のバイナリの既定のパスは次のとおりです。
 
 `C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\R_SERVICES\library`
@@ -74,40 +73,40 @@ GO
 
 ## <a name="default-microsoft-r-packages"></a>既定の Microsoft R パッケージ
 
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 
 次の Microsoft R パッケージは、SQL Server R Services と共にインストールされます。
 
 |パッケージ | Version | 説明 |
 |---------|---------|-------------|
-| [RevoScaleR](https://docs.microsoft.com/r-server/r-reference/revoscaler/revoscaler)  | 8.0.3 | リモートでの計算のコンテキスト、ストリーミング、データのインポートと変換、モデリング、視覚化、および分析での rx 関数の並列実行で使用します。 |
-| [sqlrutils](https://docs.microsoft.com/machine-learning-server/r-reference/sqlrutils/sqlrutils) | 1.0.0 | ストアド プロシージャに R スクリプトを含めるために使用します。 |
+| [RevoScaleR](/r-server/r-reference/revoscaler/revoscaler)  | 8.0.3 | リモートでの計算のコンテキスト、ストリーミング、データのインポートと変換、モデリング、視覚化、および分析での rx 関数の並列実行で使用します。 |
+| [sqlrutils](/machine-learning-server/r-reference/sqlrutils/sqlrutils) | 1.0.0 | ストアド プロシージャに R スクリプトを含めるために使用します。 |
 
 ::: moniker-end
 
-::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2017"
 
 次の Microsoft R パッケージは、セットアップ時に R 機能を選択すると、SQL Server Machine Learning Services と共にインストールされます。
 
 |パッケージ | Version | 説明 |
 |---------|---------|-------------|
-| [RevoScaleR](https://docs.microsoft.com/r-server/r-reference/revoscaler/revoscaler)  | 9.2 | リモートでの計算のコンテキスト、ストリーミング、データのインポートと変換、モデリング、視覚化、および分析での rx 関数の並列実行で使用します。 |
-| [sqlrutils](https://docs.microsoft.com/machine-learning-server/r-reference/sqlrutils/sqlrutils) | 1.0.0 | ストアド プロシージャに R スクリプトを含めるために使用します。 |
-| [MicrosoftML](https://docs.microsoft.com/r-server/r-reference/microsoftml/microsoftml-package)| 1.4.0 | R に機械学習アルゴリズムを追加します。 | 
-| [olapR](https://docs.microsoft.com/machine-learning-server/r-reference/olapr/olapr) | 1.0.0 | R で MDX ステートメントを記述するために使用します。 |
+| [RevoScaleR](/r-server/r-reference/revoscaler/revoscaler)  | 9.2 | リモートでの計算のコンテキスト、ストリーミング、データのインポートと変換、モデリング、視覚化、および分析での rx 関数の並列実行で使用します。 |
+| [sqlrutils](/machine-learning-server/r-reference/sqlrutils/sqlrutils) | 1.0.0 | ストアド プロシージャに R スクリプトを含めるために使用します。 |
+| [MicrosoftML](/r-server/r-reference/microsoftml/microsoftml-package)| 1.4.0 | R に機械学習アルゴリズムを追加します。 | 
+| [olapR](/machine-learning-server/r-reference/olapr/olapr) | 1.0.0 | R で MDX ステートメントを記述するために使用します。 |
 
 ::: moniker-end
 
-::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=azuresqldb-mi-current"
 
 次の Microsoft R パッケージは、セットアップ時に R 機能を選択すると、SQL Server Machine Learning Services と共にインストールされます。
 
 |パッケージ | Version | 説明 |
 |---------|---------|-------------|
-| [RevoScaleR](https://docs.microsoft.com/r-server/r-reference/revoscaler/revoscaler)  | 9.4.7 | リモートでの計算のコンテキスト、ストリーミング、データのインポートと変換、モデリング、視覚化、および分析での rx 関数の並列実行で使用します。 |
-| [sqlrutils](https://docs.microsoft.com/machine-learning-server/r-reference/sqlrutils/sqlrutils) | 1.0.0 | ストアド プロシージャに R スクリプトを含めるために使用します。 |
-| [MicrosoftML](https://docs.microsoft.com/r-server/r-reference/microsoftml/microsoftml-package)| 9.4.7 | R に機械学習アルゴリズムを追加します。 |
-| [olapR](https://docs.microsoft.com/machine-learning-server/r-reference/olapr/olapr) | 1.0.0 | R で MDX ステートメントを記述するために使用します。 |
+| [RevoScaleR](/r-server/r-reference/revoscaler/revoscaler)  | 9.4.7 | リモートでの計算のコンテキスト、ストリーミング、データのインポートと変換、モデリング、視覚化、および分析での rx 関数の並列実行で使用します。 |
+| [sqlrutils](/machine-learning-server/r-reference/sqlrutils/sqlrutils) | 1.0.0 | ストアド プロシージャに R スクリプトを含めるために使用します。 |
+| [MicrosoftML](/r-server/r-reference/microsoftml/microsoftml-package)| 9.4.7 | R に機械学習アルゴリズムを追加します。 |
+| [olapR](/machine-learning-server/r-reference/olapr/olapr) | 1.0.0 | R で MDX ステートメントを記述するために使用します。 |
 
 ::: moniker-end
 
@@ -115,7 +114,7 @@ GO
 
 既定で R パッケージは、サービス パックと累積的な更新プログラムで更新されます。 その他のパッケージおよび R のコア コンポーネントのバージョンの完全アップグレードは、製品のアップグレード、または Microsoft Machine Learning Server への R サポートのバインドによってのみ可能です。
 
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 また、コンポーネントをアップグレードすると、MicrosoftML および olapR パッケージを SQL Server インスタンスに追加することもできます。
 ::: moniker-end
 
@@ -179,9 +178,9 @@ print(packageDescription("MicrosoftML"))
 
 ## <a name="next-steps"></a>次のステップ
 
-::: moniker range="<=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="<=sql-server-2017"
 + [R ツールを使用してパッケージをインストールする](install-r-packages-standard-tools.md)
 ::: moniker-end
-::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=azuresqldb-mi-current"
 + [sqlmlutils で新しい R パッケージをインストールする](install-additional-r-packages-on-sql-server.md)
 ::: moniker-end

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -17,14 +17,14 @@ helpviewer_keywords:
 - full-text stoplist [SQL Server], permissions
 - GRANT statement, full-text permissions
 ms.assetid: fdb64e09-222a-47fe-b08b-999264ca261d
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: e466840015f0b5d82a8e6430434239db6655ee81
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: f20a996c6d89f1925a8e2f1317826b6e572d0d01
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88472235"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99161212"
 ---
 # <a name="grant-full-text-permissions-transact-sql"></a>GRANT (フルテキストの権限の許可) (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -138,7 +138,7 @@ AS *granting_principal*
 ### <a name="a-granting-permissions-to-a-full-text-catalog"></a>A. フルテキスト カタログに対する権限を許可する  
  次の例では、フルテキスト カタログ `ProductCatalog` に対する `CONTROL` 権限を `Ted` に許可します。  
   
-```  
+```sql  
 GRANT CONTROL  
     ON FULLTEXT CATALOG :: ProductCatalog  
     TO Ted ;  
@@ -147,7 +147,7 @@ GRANT CONTROL
 ### <a name="b-granting-permissions-to-a-stoplist"></a>B. ストップリストに対する権限を許可する  
  次の例では、フルテキスト ストップリスト `ProductStoplist` に対する `VIEW DEFINITION` 権限を `Mary` に許可します。  
   
-```  
+```sql  
 GRANT VIEW DEFINITION  
     ON FULLTEXT STOPLIST :: ProductStoplist  
     TO Mary ;  

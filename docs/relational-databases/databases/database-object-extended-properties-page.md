@@ -13,13 +13,13 @@ f1_keywords:
 ms.assetid: caa4f4a1-fd54-466e-975d-3e7e1cc5de54
 author: stevestein
 ms.author: sstein
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: a5bff24a63829f1820048bf371f4be497a95f6c7
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 945092adb0db5435ab111b9fd3386ba315d75e76
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85756241"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97478383"
 ---
 # <a name="database-object-extended-properties-page"></a>データベース オブジェクト ([拡張プロパティ] ページ)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -36,12 +36,11 @@ ms.locfileid: "85756241"
  オブジェクトの拡張プロパティを表示または指定します。 各拡張プロパティは、オブジェクトに関連付けられたメタデータの名前/値ペアで構成されています。  
   
  **[参照] ボタン**  
- **[値]** の後ろにある参照 ([...]) ボタンをクリックすると、**拡張プロパティの値を設定するための**ダイアログ ボックスが開きます。 ここでは、より大きなテキスト ボックスを使用して拡張プロパティの値を入力または表示できます。  
+ **[値]** の後ろにある参照 ([...]) ボタンをクリックすると、**拡張プロパティの値を設定するための** ダイアログ ボックスが開きます。 ここでは、より大きなテキスト ボックスを使用して拡張プロパティの値を入力または表示できます。  
   
  **削除**  
  選択されている拡張プロパティを削除します。  
   
 ## <a name="see-also"></a>参照  
- [拡張プロパティ カタログ ビュー &#40;Transact-SQL&#41;](https://msdn.microsoft.com/library/f39fd324-efd4-4468-884c-bf77ed1a026f)  
-  
+ [拡張プロパティ カタログ ビュー &#40;Transact-SQL&#41;](../system-catalog-views/catalog-views-transact-sql.md)  
   

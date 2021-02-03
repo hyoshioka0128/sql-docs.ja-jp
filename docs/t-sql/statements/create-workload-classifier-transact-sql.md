@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-data-warehouse
 ms.reviewer: jrasnick
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - WORKLOAD CLASSIFIER
 - WORKLOAD_CLASSIFIER_TSQL
@@ -20,13 +20,13 @@ helpviewer_keywords:
 ms.assetid: ''
 author: ronortloff
 ms.author: rortloff
-monikerRange: =azure-sqldw-latest||=sqlallproducts-allversions
-ms.openlocfilehash: a130cc08ad7a8e04ca3faf0578ff1c4600783d07
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azure-sqldw-latest
+ms.openlocfilehash: 5f592228f6570dfef5df91875ad60318806a1ad3
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88444779"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99177858"
 ---
 # <a name="create-workload-classifier-transact-sql"></a>CREATE WORKLOAD CLASSIFIER (Transact-SQL)
 
@@ -54,6 +54,7 @@ WITH
 [ [ , ] IMPORTANCE = { LOW | BELOW_NORMAL | NORMAL | ABOVE_NORMAL | HIGH }]) 
 [;]
 ```
+[!INCLUDE[synapse-analytics-od-unsupported-syntax](../../includes/synapse-analytics-od-unsupported-syntax.md)]
 
 ## <a name="arguments"></a>引数
 
@@ -85,7 +86,7 @@ SELECT COUNT(*)
 ```
 
 *WLM_CONTEXT*  
-要求を分類できるセッション コンテキスト値を指定します。  コンテキストは、nvarchar(255) 型の省略可能なパラメーターです。  セッション コンテキストを設定する要求を送信する前に、[ と同じ変数名と共に ](../../relational-databases/system-stored-procedures/sp-set-session-context-transact-sql.md?view=azure-sqldw-latest)sys. sp_set_session_context`wlm_context` を使用します。
+要求を分類できるセッション コンテキスト値を指定します。  コンテキストは、nvarchar(255) 型の省略可能なパラメーターです。  セッション コンテキストを設定する要求を送信する前に、[ と同じ変数名と共に ](../../relational-databases/system-stored-procedures/sp-set-session-context-transact-sql.md?view=azure-sqldw-latest&preserve-view=true)sys. sp_set_session_context`wlm_context` を使用します。
 
 例:
 
@@ -180,7 +181,7 @@ CREATE WORKLOAD CLASSIFIER wgcELTRole
 
 ## <a name="see-also"></a>参照
 
-[SQL Data Warehouse の分類](/azure/sql-data-warehouse/sql-data-warehouse-workload-classification)</br>
+[[!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] 分類](/azure/sql-data-warehouse/sql-data-warehouse-workload-classification)</br>
 [DROP WORKLOAD CLASSIFIER &#40;Transact-SQL&#41;](../../t-sql/statements/drop-workload-classifier-transact-sql.md)</br>
 [sys.workload_management_workload_classifiers](../../relational-databases/system-catalog-views/sys-workload-management-workload-classifiers-transact-sql.md)</br>
 [sys.workload_management_workload_classifier_details](../../relational-databases/system-catalog-views/sys-workload-management-workload-classifier-details-transact-sql.md)

@@ -1,4 +1,5 @@
 ---
+description: SQL 機械学習が含まれる Python および R チュートリアル用のアヤメのデモ データ
 title: チュートリアル用のアヤメのデモ データ セット
 titleSuffix: SQL machine learning
 Description: アヤメのデータセットと予測モデルを格納するためのデータベースを作成します。 このデータセットは、SQL 機械学習が含まれる R および Python チュートリアルで使用されます。
@@ -9,16 +10,16 @@ ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: 9a5b7cc5c89874bddfda0ac978bce5899b1cd64b
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: 76e746701aa331cf1720ea56befd5956fd65cfd4
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85737840"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470463"
 ---
 # <a name="iris-demo-data-for-python-and-r-tutorials-with-sql-machine-learning"></a>SQL 機械学習が含まれる Python および R チュートリアル用のアヤメのデモ データ
-[!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
+[!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
 
 この演習では、[アヤメの花のデータセット](https://en.wikipedia.org/wiki/Iris_flower_data_set)と同じデータに基づくモデルからのデータを格納するデータベースを作成します。 アヤメ データは R と Python の両方のディストリビューションに含まれており、SQL 機械学習のチュートリアルで使用されます。
 
@@ -30,7 +31,7 @@ ms.locfileid: "85737840"
 
 ## <a name="create-the-database"></a>データベースの作成
 
-1. SQL Server Management Studio を開始し、新しい**クエリ** ウィンドウを開きます。  
+1. SQL Server Management Studio を開始し、新しい **クエリ** ウィンドウを開きます。  
 
 2. このプロジェクトに対して新しいデータベースを作成し、新しいデータベースを使用するように、**クエリ** ウィンドウのコンテキストを変更します。
 
@@ -129,7 +130,7 @@ R または Python から組み込みのアヤメ データを取得できます
     EXEC dbo.get_iris_dataset;
     ```
 
-    T-SQL を初めて使用する場合は、INSERT ステートメントで新しいデータのみが追加されることに注意してください。既存のデータをチェックしたり、テーブルを削除および再構築したりすることはありません。 テーブル内の同じデータの複数のコピーが取得されないようにするには、最初にこのステートメントを実行します: `TRUNCATE TABLE iris_data`。 T-SQL [TRUNCATE TABLE](https://docs.microsoft.com/sql/t-sql/statements/truncate-table-transact-sql) ステートメントでは、既存のデータが削除されますが、テーブルの構造はそのまま維持されます。
+    T-SQL を初めて使用する場合は、INSERT ステートメントで新しいデータのみが追加されることに注意してください。既存のデータをチェックしたり、テーブルを削除および再構築したりすることはありません。 テーブル内の同じデータの複数のコピーが取得されないようにするには、最初にこのステートメントを実行します: `TRUNCATE TABLE iris_data`。 T-SQL [TRUNCATE TABLE](../../t-sql/statements/truncate-table-transact-sql.md) ステートメントでは、既存のデータが削除されますが、テーブルの構造はそのまま維持されます。
 
 ## <a name="query-the-data"></a>データにクエリを実行する
 

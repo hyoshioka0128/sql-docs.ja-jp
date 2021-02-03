@@ -17,14 +17,14 @@ helpviewer_keywords:
 - DROP SEQUENCE statement
 - sequence number object, dropping
 ms.assetid: c25772d3-61af-4aa7-b58b-a6f67a793e3d
-author: CarlRabeler
-ms.author: carlrab
-ms.openlocfilehash: 7c880111b104abc2de1b1d4d6c8f3cc3e672ef91
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: c68a677a91e0b89b35866070fa7cb605d5195ab8
+ms.sourcegitcommit: 713e5a709e45711e18dae1e5ffc190c7918d52e7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88444604"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98688809"
 ---
 # <a name="drop-sequence-transact-sql"></a>DROP SEQUENCE (Transact-SQL)
 [!INCLUDE [SQL Server Azure SQL Database ](../../includes/applies-to-version/sql-asdb.md)]
@@ -44,7 +44,7 @@ DROP SEQUENCE [ IF EXISTS ] { database_name.schema_name.sequence_name | schema_n
 
 ## <a name="arguments"></a>引数
  *IF EXISTS*  
- **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から[現在のバージョン](https://go.microsoft.com/fwlink/p/?LinkId=299658)まで)。  
+ **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql16-md.md)] から [現在のバージョン](../../sql-server/what-s-new-in-sql-server-2016.md)まで)。  
   
  条件付きではすでに存在する場合にのみ、シーケンスを削除します。  
   
@@ -57,14 +57,14 @@ DROP SEQUENCE [ IF EXISTS ] { database_name.schema_name.sequence_name | schema_n
  *sequence_name*  
  削除するシーケンスの名前です。 データ型は **sysname** です。  
   
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>解説  
  番号の生成後、その番号とシーケンス オブジェクトは無関係になるため、生成された番号が使用されている場合でも、シーケンス オブジェクトは削除できます。  
   
  シーケンス オブジェクトはスキーマ バインドされないため、ストアド プロシージャまたはトリガーによって参照されているシーケンス オブジェクトは削除できます。 テーブルで既定値として参照されているシーケンス オブジェクトは削除できません。 シーケンスを参照しているオブジェクトの一覧がエラー メッセージに表示されます。  
   
  データベース内のすべてのシーケンス オブジェクトを一覧表示するには、次のステートメントを実行します。  
   
-```  
+```sql  
 SELECT sch.name + '.' + seq.name AS [Sequence schema and name]   
     FROM sys.sequences AS seq  
     JOIN sys.schemas AS sch  
@@ -83,7 +83,7 @@ GO
 ## <a name="examples"></a>例  
  次の例では、現在のデータベースから `CountBy1` という名前のシーケンス オブジェクトを削除します。  
   
-```  
+```sql  
 DROP SEQUENCE CountBy1 ;  
 GO  
 ```  
@@ -93,5 +93,3 @@ GO
  [CREATE SEQUENCE &#40;Transact-SQL&#41;](../../t-sql/statements/create-sequence-transact-sql.md)   
  [NEXT VALUE FOR &#40;Transact-SQL&#41;](../../t-sql/functions/next-value-for-transact-sql.md)   
  [シーケンス番号](../../relational-databases/sequence-numbers/sequence-numbers.md)  
-  
-  

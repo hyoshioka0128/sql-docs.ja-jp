@@ -6,7 +6,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - WITH common_table_expression
 - WITH_TSQL
@@ -26,13 +26,13 @@ helpviewer_keywords:
 ms.assetid: 27cfb819-3e8d-4274-8bbe-cbbe4d9c2e23
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: c5feec859ede608fd732099c7cfdb1219e013741
-ms.sourcegitcommit: b57d98e9b2444348f95c83a24b8eea0e6c9da58d
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 1f2455ad3601ac5139766e732046d9436513185c
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86552957"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99192812"
 ---
 # <a name="with-common_table_expression-transact-sql"></a>WITH common_table_expression (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -269,12 +269,12 @@ SalesPersonID SalesYear   TotalSales    SalesQuotaYear SalesQuota  Amt_Above_or_
 -- Create an Employee table.  
 CREATE TABLE dbo.MyEmployees  
 (  
-EmployeeID smallint NOT NULL,  
-FirstName nvarchar(30)  NOT NULL,  
-LastName  nvarchar(40) NOT NULL,  
-Title nvarchar(50) NOT NULL,  
-DeptID smallint NOT NULL,  
-ManagerID int NULL,  
+EmployeeID SMALLINT NOT NULL,  
+FirstName NVARCHAR(30)  NOT NULL,  
+LastName  NVARCHAR(40) NOT NULL,  
+Title NVARCHAR(50) NOT NULL,  
+DeptID SMALLINT NOT NULL,  
+ManagerID INT NULL,  
  CONSTRAINT PK_EmployeeID PRIMARY KEY CLUSTERED (EmployeeID ASC)   
 );  
 -- Populate the table with values.  
@@ -332,20 +332,20 @@ WHERE EmployeeLevel <= 2 ;
   
 ```sql
 WITH DirectReports(Name, Title, EmployeeID, EmployeeLevel, Sort)  
-AS (SELECT CONVERT(varchar(255), e.FirstName + ' ' + e.LastName),  
+AS (SELECT CONVERT(VARCHAR(255), e.FirstName + ' ' + e.LastName),  
         e.Title,  
         e.EmployeeID,  
         1,  
-        CONVERT(varchar(255), e.FirstName + ' ' + e.LastName)  
+        CONVERT(VARCHAR(255), e.FirstName + ' ' + e.LastName)  
     FROM dbo.MyEmployees AS e  
     WHERE e.ManagerID IS NULL  
     UNION ALL  
-    SELECT CONVERT(varchar(255), REPLICATE ('|    ' , EmployeeLevel) +  
+    SELECT CONVERT(VARCHAR(255), REPLICATE ('|    ' , EmployeeLevel) +  
         e.FirstName + ' ' + e.LastName),  
         e.Title,  
         e.EmployeeID,  
         EmployeeLevel + 1,  
-        CONVERT (varchar(255), RTRIM(Sort) + '|    ' + FirstName + ' ' +   
+        CONVERT (VARCHAR(255), RTRIM(Sort) + '|    ' + FirstName + ' ' +   
                  LastName)  
     FROM dbo.MyEmployees AS e  
     JOIN DirectReports AS d ON e.ManagerID = d.EmployeeID  
@@ -360,7 +360,7 @@ ORDER BY Sort;
   
 ```sql
 --Creates an infinite loop  
-WITH cte (EmployeeID, ManagerID, Title) as  
+WITH cte (EmployeeID, ManagerID, Title) AS  
 (  
     SELECT EmployeeID, ManagerID, Title  
     FROM dbo.MyEmployees  
@@ -459,7 +459,7 @@ WHERE d.ComponentLevel = 0;
 -- Genealogy table  
 IF OBJECT_ID('dbo.Person','U') IS NOT NULL DROP TABLE dbo.Person;  
 GO  
-CREATE TABLE dbo.Person(ID int, Name varchar(30), Mother int, Father int);  
+CREATE TABLE dbo.Person(ID int, Name VARCHAR(30), Mother INT, Father INT);  
 GO  
 INSERT dbo.Person   
 VALUES(1, 'Sue', NULL, NULL)  
@@ -503,10 +503,10 @@ GO
  次の例は、CTE の再帰部分で分析関数または集計関数を使用するときに生じる可能性がある落とし穴を示しています。  
   
 ```sql  
-DECLARE @t1 TABLE (itmID int, itmIDComp int);  
+DECLARE @t1 TABLE (itmID INT, itmIDComp INT);  
 INSERT @t1 VALUES (1,10), (2,10);   
   
-DECLARE @t2 TABLE (itmID int, itmIDComp int);   
+DECLARE @t2 TABLE (itmID INT, itmIDComp INT);   
 INSERT @t2 VALUES (3,10), (4,10);   
   
 WITH vw AS  
@@ -523,7 +523,7 @@ WITH vw AS
  (  
     SELECT t.itmID AS itmIDComp  
            , NULL AS itmID  
-           ,CAST(0 AS bigint) AS N  
+           ,CAST(0 AS BITING) AS N  
            ,1 AS Lvl  
     FROM (SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4) AS t (itmID)   
   

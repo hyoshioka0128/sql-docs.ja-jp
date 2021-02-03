@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: pdw, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - SERVER_ROLE_TSQL
 - CREATE SERVER ROLE
@@ -25,12 +25,12 @@ helpviewer_keywords:
 ms.assetid: 30c92f80-f7f6-4a84-ae89-16e69add0de6
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 61a2e779e61d76f81c4ec818b2f07e4f1cd628b4
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: cfaf0335c2ba61e093764352b16847f0f96b295c
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88416848"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99192649"
 ---
 # <a name="create-server-role-transact-sql"></a>CREATE SERVER ROLE (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "88416848"
   
 ## <a name="syntax"></a>構文  
   
-```  
+```syntaxsql  
 CREATE SERVER ROLE role_name [ AUTHORIZATION server_principal ]  
 ```  
   
@@ -66,7 +66,7 @@ CREATE SERVER ROLE role_name [ AUTHORIZATION server_principal ]
 ## <a name="permissions"></a>アクセス許可  
  CREATE SERVER ROLE 権限、または sysadmin 固定サーバー ロールのメンバーシップが必要です。  
   
- さらに、ログインのための *server_principal* に対する IMPERSONATE 権限、 *server_principal*として使用されるサーバー ロールのための ALTER 権限、または server_principal として使用される Windows グループのメンバーシップも必要です。  
+ さらに、ログインのための *server_principal* に対する IMPERSONATE 権限、 *server_principal* として使用されるサーバー ロールのための ALTER 権限、または server_principal として使用される Windows グループのメンバーシップも必要です。  
   
  これによりを追加するには、オブジェクトの種類のサーバーの役割設定とイベントの種類を Audit Server Principal Management イベントが発生します。  
   
@@ -81,7 +81,7 @@ CREATE SERVER ROLE role_name [ AUTHORIZATION server_principal ]
 ### <a name="a-creating-a-server-role-that-is-owned-by-a-login"></a>A. ログインが所有するサーバー ロールを作成する  
  次の例では、ログイン `buyers` が所有するサーバー ロール `BenMiller` を作成します。  
   
-```  
+```sql  
 USE master;  
 CREATE SERVER ROLE buyers AUTHORIZATION BenMiller;  
 GO  
@@ -90,7 +90,7 @@ GO
 ### <a name="b-creating-a-server-role-that-is-owned-by-a-fixed-server-role"></a>B. 固定サーバー ロールが所有するサーバー ロールを作成する  
  次の例では、固定サーバー ロール `auditors` が所有するサーバー ロール `securityadmin` を作成します。  
   
-```  
+```sql  
 USE master;  
 CREATE SERVER ROLE auditors AUTHORIZATION securityadmin;  
 GO  
