@@ -61,7 +61,7 @@ SQL Server インポートおよびエクスポート ウィザードを使っ�
 -   Excel については、「[Excel から SQL Server または Azure SQL Database にデータをインポートする](import-data-from-excel-to-sql.md)」をご覧ください。
 -   JSON については、「[JSON ドキュメントのインポート](../json/import-json-documents-into-sql-server.md)」をご覧ください。
 -   XML については、「[XML ドキュメントのインポートおよびエクスポート](examples-of-bulk-import-and-export-of-xml-documents-sql-server.md)」をご覧ください。
--   Azure Blob Storage については、「[Azure BLOB ストレージからのインポートおよびエクスポート](examples-of-bulk-access-to-data-in-azure-blob-storage.md)」をご覧ください。
+-   Azure Blob Storage については、「[Azure Blob Storage からのインポートおよびエクスポート](examples-of-bulk-access-to-data-in-azure-blob-storage.md)」をご覧ください。
 
 ## <a name="next-steps"></a>次のステップ
 インポートまたはエクスポート タスクをどこから始めればよいかわからない場合は、SQL Server インポートおよびエクスポート ウィザードを検討してください。 概要については、「[簡単な例によるインポートおよびエクスポート ウィザードの概要](../../integration-services/import-export-data/get-started-with-this-simple-example-of-the-import-and-export-wizard.md)」をご覧ください。
