@@ -418,12 +418,12 @@ OPTION ( HASH JOIN );
 
 <a name="ctas-azure-blob-storage-bk"></a>
 
-### <a name="g-use-ctas-to-import-data-from-azure-blob-storage"></a>G. CTAS を使用して Azure BLOB ストレージからデータをインポートする  
+### <a name="g-use-ctas-to-import-data-from-azure-blob-storage"></a>G. CTAS を使用して Azure Blob Storage からデータをインポートする  
 適用対象: [!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] および [!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  
 
 外部テーブルからデータをインポートするには、CREATE TABLE AS SELECT を使用して外部テーブルから選択するだけです。 外部テーブルからデータを選択して [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] に格納する構文は、通常のテーブルからデータを選択する構文と同じです。  
   
- 次の例では、Azure BLOB ストレージ アカウントのデータに対して外部テーブルを定義します。 次に CREATE TABLE AS SELECT を使用して、外部テーブルから選択します。 これで、Azure BLOB ストレージのテキスト区切りファイルからデータがインポートされ、新しい [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] テーブルにデータが格納されます。  
+ 次の例では、Azure Blob Storage アカウントのデータに対して外部テーブルを定義します。 次に CREATE TABLE AS SELECT を使用して、外部テーブルから選択します。 これで、Azure Blob Storage のテキスト区切りファイルからデータがインポートされ、新しい [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] テーブルにデータが格納されます。  
   
 ```sql  
 --Use your own processes to create the text-delimited files on Azure blob storage.  
