@@ -245,7 +245,7 @@ TO \<backup_device> [ **,** ...*n* ]: 関連する [バックアップ デバイ
 { *logical_device_name* \| **@** _logical\_device\_name\_var_ } **適用対象:** SQL Server: データベースのバックアップが作成されるバックアップ デバイスの論理名です。 論理名は、識別子のルールに従う必要があります。 変数 (@*logical_device_name_var*) として指定する場合、バックアップ デバイス名を文字列定数 (@_logical\_device\_name\_var_ **=** logical backup device name) として指定するか、**ntext** または **text** データ型以外の文字列データ型の変数として指定できます。
 
 { DISK \| TAPE \| URL} **=** { **'** _physical\_device\_name_ **'** \| **@** _physical\_device\_name\_var_ \| 'NUL' } **適用対象:** SQL Server に適用する DISK、TAPE、URL。
-ディスク ファイルまたはテープ デバイス、あるいは Microsoft Azure BLOB ストレージ サービスを指定します。 URL の形式は、Microsoft Azure ストレージ サービスへのバックアップを作成するために使用されます。 詳細と例については、「[Microsoft Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」を参照してください。 チュートリアルについては、「[チュートリアル: Microsoft Azure BLOB ストレージ サービスへの SQL Server のバックアップと復元](~/relational-databases/tutorial-sql-server-backup-and-restore-to-azure-blob-storage-service.md)」を参照してください。
+ディスク ファイルまたはテープ デバイス、あるいは Microsoft Azure Blob Storage サービスを指定します。 URL の形式は、Microsoft Azure ストレージ サービスへのバックアップを作成するために使用されます。 詳細と例については、「[Microsoft Azure Blob Storage サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」を参照してください。 チュートリアルについては、「[チュートリアル: Microsoft Azure Blob Storage サービスへの SQL Server のバックアップと復元](~/relational-databases/tutorial-sql-server-backup-and-restore-to-azure-blob-storage-service.md)」を参照してください。
 
 > [!NOTE]
 > NUL ディスク デバイスは送信される情報をすべて破棄し、テストでのみ使用する必要があります。 これは運用環境向けではありません。
@@ -286,7 +286,7 @@ MIRROR TO \<backup_device> [ **,** ...*n* ]: TO 句で指定したバックア�
 バックアップ操作で使用するオプションを指定します。
 
 CREDENTIAL **適用対象**:[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] SP1 CU2 以降)。
-Microsoft Azure BLOB ストレージ サービスにバックアップを作成する場合にのみ使用します。
+Microsoft Azure Blob Storage サービスにバックアップを作成する場合にのみ使用します。
 
 FILE_SNAPSHOT **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降)。
 
@@ -756,7 +756,7 @@ BACKUP DATABASE 権限と BACKUP LOG 権限は、既定では、 **sysadmin** �
 - F. [マルチファミリ ミラー化メディア セットを作成し、そこにバックアップを作成する](#create_multifamily_mirrored_media_set)
 - G. [既存のミラー化メディア セットにバックアップする](#existing_mirrored_media_set)
 - H. [新しいメディア セットに圧縮されたバックアップを作成する](#creating_compressed_backup_new_media_set)
-- I. [Microsoft Azure BLOB ストレージ サービスへのバックアップ](#url)
+- I. [Microsoft Azure Blob Storage サービスへのバックアップ](#url)
 - J. [バックアップ ステートメントの進行状況を追跡する](#backup_progress)
 
 > [!NOTE]
@@ -894,9 +894,9 @@ WITH
     COMPRESSION;
 ```
 
-### <a name="i-backing-up-to-the-microsoft-azure-blob-storage-service"></a><a name="url"></a> I. Microsoft Azure BLOB ストレージ サービスへのバックアップ
+### <a name="i-backing-up-to-the-microsoft-azure-blob-storage-service"></a><a name="url"></a> I. Microsoft Azure Blob Storage サービスへのバックアップ
 
-この例では、Microsoft Azure BLOB ストレージ サービスへの `Sales` のデータベースの完全バックアップを実行します。 ストレージ アカウント名は `mystorageaccount`です。 コンテナーは `myfirstcontainer`と呼ばれます。 保存されたアクセス ポリシーは読み取り、書き込み、削除および一覧表示権で作成されています。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 資格情報 `https://mystorageaccount.blob.core.windows.net/myfirstcontainer` は、保存されたアクセス ポリシーに関連付けられている Shared Access Signature を使用して作成されています。 Microsoft Azure BLOB ストレージ サービスへの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のバックアップについては、「[Microsoft Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」および「[SQL Server Backup to URL](../../relational-databases/backup-restore/sql-server-backup-to-url.md)」を参照してください。
+この例では、Microsoft Azure Blob Storage サービスへの `Sales` のデータベースの完全バックアップを実行します。 ストレージ アカウント名は `mystorageaccount`です。 コンテナーは `myfirstcontainer`と呼ばれます。 保存されたアクセス ポリシーは読み取り、書き込み、削除および一覧表示権で作成されています。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 資格情報 `https://mystorageaccount.blob.core.windows.net/myfirstcontainer` は、保存されたアクセス ポリシーに関連付けられている Shared Access Signature を使用して作成されています。 Microsoft Azure Blob Storage サービスへの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のバックアップについては、「[Microsoft Azure Blob Storage サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」および「[SQL Server Backup to URL](../../relational-databases/backup-restore/sql-server-backup-to-url.md)」を参照してください。
 
 ```sql
 BACKUP DATABASE Sales
@@ -1013,7 +1013,7 @@ TO URL
 
 ### <a name="with-optionsspecifies-options-to-be-used-with-a-backup-operation"></a>WITH オプション: バックアップ操作で使用するオプションを指定します。
 
-CREDENTIAL: Microsoft Azure BLOB ストレージ サービスにバックアップを作成する場合にのみ、使用されます。
+CREDENTIAL: Microsoft Azure Blob Storage サービスにバックアップを作成する場合にのみ、使用されます。
 
 ENCRYPTION: バックアップの暗号化を指定するために使用されます。 バックアップを暗号化するための暗号化アルゴリズムを指定するか、バックアップを暗号化しない場合は `NO_ENCRYPTION` を指定できます。 暗号化は、バックアップ ファイルをセキュリティで保護するために推奨される方法です。 指定できるアルゴリズムの一覧を次に示します。
 
@@ -1112,7 +1112,7 @@ URL に対する所有とアクセス許可の問題によって、バックア�
 
 ## <a name="examples"></a><a name="examples"></a> 使用例
 
-この例では、Microsoft Azure BLOB ストレージ サービスへの `Sales` のデータベースの COPY_ONLY バックアップを実行します。 ストレージ アカウント名は `mystorageaccount`です。 コンテナーは `myfirstcontainer`と呼ばれます。 保存されたアクセス ポリシーは読み取り、書き込み、削除および一覧表示権で作成されています。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 資格情報 `https://mystorageaccount.blob.core.windows.net/myfirstcontainer` は、保存されたアクセス ポリシーに関連付けられている Shared Access Signature を使用して作成されています。 Microsoft Azure BLOB ストレージ サービスへの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のバックアップについては、「[Microsoft Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」および「[SQL Server Backup to URL](../../relational-databases/backup-restore/sql-server-backup-to-url.md)」を参照してください。
+この例では、Microsoft Azure Blob Storage サービスへの `Sales` のデータベースの COPY_ONLY バックアップを実行します。 ストレージ アカウント名は `mystorageaccount`です。 コンテナーは `myfirstcontainer`と呼ばれます。 保存されたアクセス ポリシーは読み取り、書き込み、削除および一覧表示権で作成されています。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 資格情報 `https://mystorageaccount.blob.core.windows.net/myfirstcontainer` は、保存されたアクセス ポリシーに関連付けられている Shared Access Signature を使用して作成されています。 Microsoft Azure Blob Storage サービスへの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のバックアップについては、「[Microsoft Azure Blob Storage サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」および「[SQL Server Backup to URL](../../relational-databases/backup-restore/sql-server-backup-to-url.md)」を参照してください。
 
 ```sql
 BACKUP DATABASE Sales
