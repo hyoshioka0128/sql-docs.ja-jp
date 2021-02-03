@@ -70,7 +70,7 @@ ALTER EXTERNAL DATA SOURCE data_source_name
 
 TYPE = [HADOOP | BLOB_STORAGE]   
 **適用対象**: [!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)]。
-一括操作の場合のみ、`LOCATION` は Azure BLOB ストレージの有効な URL にする必要があります。 `LOCATION` URL の末尾に、 **/** 、ファイル名、または Shared Access Signature パラメーターを配置しないでください。
+一括操作の場合のみ、`LOCATION` は Azure Blob Storage の有効な URL にする必要があります。 `LOCATION` URL の末尾に、 **/** 、ファイル名、または Shared Access Signature パラメーターを配置しないでください。
 使用される資格情報は、`SHARED ACCESS SIGNATURE` を使用して ID として作成する必要があります。 Shared Access Signature に関する詳細については、「[Shared Access Signature (SAS) を使用](/azure/storage/storage-dotnet-shared-access-signature-part-1)」を参照してください。
 
   
