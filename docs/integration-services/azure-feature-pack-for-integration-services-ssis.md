@@ -170,7 +170,7 @@ Expand-Archive zulu8.33.0.1-jdk8.0.192-win_x64.zip -DestinationPath C:\
 ## <a name="scenario-processing-big-data"></a>シナリオ:ビッグ データの処理
  Azure コネクタを使用して、次のビッグ データの処理を完了します。
 
-1.  Azure Blob Upload Task を使用して、入力データを Azure Blob ストレージにアップロードします。
+1.  Azure Blob Upload Task を使用して、入力データを Azure Blob Storage にアップロードします。
 
 2.  Azure HDInsight Create Cluster Task を使用して、Azure HDInsight のクラスターを作成します。 独自のクラスターを使用する場合は、この手順は省略できます。
 
@@ -178,12 +178,12 @@ Expand-Archive zulu8.33.0.1-jdk8.0.192-win_x64.zip -DestinationPath C:\
 
 4.  手順 2 でオンデマンドの HDInsight クラスターを作成した場合は、使用後の HDInsight クラスターを Azure HDInsight Delete Cluster Task で削除します。
 
-5.  Azure HDInsight Blob Download Task を使用して、Azure Blob ストレージから Pig/Hive の出力データをダウンロードします。
+5.  Azure HDInsight Blob Download Task を使用して、Azure Blob Storage から Pig/Hive の出力データをダウンロードします。
 
 ![SSIS Azure コネクタのビッグ データのシナリオを示すスクリーンショット。](../integration-services/media/ssis-azureconnector-bigdatascenario.png)
  
 ## <a name="scenario-managing-data-in-the-cloud"></a>シナリオ:クラウド内のデータ管理
- SSIS パッケージ内の Azure Blob Destination を使用して、出力データを Azure Blob ストレージに書き込みむか、または Azure Blob Source を使用して、Azure Blob ストレージからデータを読み取ります。
+ SSIS パッケージ内の Azure Blob Destination を使用して、出力データを Azure Blob Storage に書き込みむか、または Azure Blob Source を使用して、Azure Blob Storage からデータを読み取ります。
 
 ![OLE DB ソースから Azure Blob Destination へのデータ フローを示すスクリーンショット。](../integration-services/media/ssis-azureconnector-cloudarchive-1.png)
  
