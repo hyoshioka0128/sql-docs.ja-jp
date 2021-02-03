@@ -28,7 +28,7 @@ ms.locfileid: "99076114"
 
 このトピックでは、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] で [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]、 [!INCLUDE[tsql](../../includes/tsql-md.md)]、または PowerShell を使用して、データベースの完全バックアップを作成する方法について説明します。
 
-Azure Blob Storage サービスへの SQL Server のバックアップについては、「[Windows Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」および「[SQL Server Backup to URL](../../relational-databases/backup-restore/sql-server-backup-to-url.md)」を参照してください。
+Azure Blob Storage サービスへの SQL Server のバックアップについては、「[Windows Azure Blob Storage サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」および「[SQL Server Backup to URL](../../relational-databases/backup-restore/sql-server-backup-to-url.md)」を参照してください。
 
 ## <a name="limitations-and-restrictions"></a><a name="Restrictions"></a> 制限事項と制約事項
 
@@ -204,7 +204,7 @@ GO
 
 ![暗号化されたバックアップ](media/create-a-full-database-backup-sql-server/encrypted-backup.png)
 
-#### <a name="d-back-up-to-the-azure-blob-storage-service"></a>D.  Azure BLOB ストレージ サービスへのバックアップ
+#### <a name="d-back-up-to-the-azure-blob-storage-service"></a>D.  Azure Blob Storage サービスへのバックアップ
 
 以下の例では、Azure Blob Storage サービスへの `SQLTestDB` のデータベースの完全バックアップを実行します。 この例では、BLOB コンテナーを含むストレージ アカウントを既に用意していることを前提としています。 この例では、共有アクセス署名が自動的に作成されます。この例では、既存の共有アクセス署名のあるコンテナーがないからです。
 
