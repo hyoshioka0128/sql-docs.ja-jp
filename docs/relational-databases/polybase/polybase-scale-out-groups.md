@@ -27,7 +27,7 @@ ms.locfileid: "97416343"
 
 [!INCLUDE[appliesto-ss-xxxx-asdw-pdw-md-winonly](../../includes/appliesto-ss-xxxx-xxxx-xxx-md-winonly.md)]
 
-PolyBase を使用するスタンドアロンの SQL Server インスタンスは、Hadoop または Azure BLOB ストレージの大量のデータ セットを処理する場合、パフォーマンス ボトルネックになる可能性があります。 PolyBase グループ機能では、Hadoop や Azure BLOB ストレージなどの外部データ ソースからの大量のデータ セットを、クエリ パフォーマンスの向上のためにスケールアウト形式で処理するために、SQL Server インスタンス クラスターを作成することができます。 これで、ワークロードで要求されるパフォーマンスを満たすように、お使いの SQL Server のコンピューティングをスケーリングできます。 SQL Server インスタンスのグループの PolyBase スケールアウト グループでは、並列処理アーキテクチャで大規模な外部データ セットを処理できます。 このグループに、SQL Server インスタンスを追加するほど、データの読み込みおよびクエリのパフォーマンスは線形に増加します。 
+PolyBase を使用するスタンドアロンの SQL Server インスタンスは、Hadoop または Azure Blob Storage の大量のデータ セットを処理する場合、パフォーマンス ボトルネックになる可能性があります。 PolyBase グループ機能では、Hadoop や Azure Blob Storage などの外部データ ソースからの大量のデータ セットを、クエリ パフォーマンスの向上のためにスケールアウト形式で処理するために、SQL Server インスタンス クラスターを作成することができます。 これで、ワークロードで要求されるパフォーマンスを満たすように、お使いの SQL Server のコンピューティングをスケーリングできます。 SQL Server インスタンスのグループの PolyBase スケールアウト グループでは、並列処理アーキテクチャで大規模な外部データ セットを処理できます。 このグループに、SQL Server インスタンスを追加するほど、データの読み込みおよびクエリのパフォーマンスは線形に増加します。 
   
 「 [PolyBase の概要](./polybase-guide.md) 」および「 [PolyBase ガイド](../../relational-databases/polybase/polybase-guide.md)」を参照してください。
   
