@@ -20,7 +20,7 @@ ms.locfileid: "91784770"
 
 [!INCLUDE [SQL Server - Linux](../includes/applies-to-version/sql-linux.md)]
 
-さまざまなオプションを使用して、Linux 上の SQL Server 2017 からデータベースのバックアップを作成できます。 Linux サーバーでは、**sqlcmd** を使用して SQL Server に接続してバックアップを作成できます。 Windows からは、SQL Server on Linux に接続して、ユーザー インターフェイスを使用してバックアップを作成できます。 バックアップ機能はプラットフォーム間で同じです。 たとえば、データベースのローカル バックアップ、リモート ドライブへのバックアップ、または [Microsoft Azure Blob ストレージ サービス](../relational-databases/backup-restore/sql-server-backup-to-url.md)へのバックアップを行うことができます。
+さまざまなオプションを使用して、Linux 上の SQL Server 2017 からデータベースのバックアップを作成できます。 Linux サーバーでは、**sqlcmd** を使用して SQL Server に接続してバックアップを作成できます。 Windows からは、SQL Server on Linux に接続して、ユーザー インターフェイスを使用してバックアップを作成できます。 バックアップ機能はプラットフォーム間で同じです。 たとえば、データベースのローカル バックアップ、リモート ドライブへのバックアップ、または [Microsoft Azure Blob Storage サービス](../relational-databases/backup-restore/sql-server-backup-to-url.md)へのバックアップを行うことができます。
 
 > [!IMPORTANT]
 > SQL Server on Linux により、ブロック BLOB を使用した Azure Blob Storage へのバックアップのみがサポートされています。 バックアップと復元にストレージ キーを使用すると、サポートされないページ BLOB が使用されてしまいます。 代わりに Shared Access Signature を使用します。 ブロック BLOB とページ BLOB の詳細については、「[ブロック BLOB とページ BLOB へのバックアップ](../relational-databases/backup-restore/sql-server-backup-to-url.md#blockbloborpageblob)」のページを参照してください。
