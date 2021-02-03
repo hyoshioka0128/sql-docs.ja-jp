@@ -183,7 +183,7 @@ GO
   
   
 ## <a name="using-the-azure-blob-storage-service"></a>Azure Blob Storage サービスの使用  
- SQL Server のバックアップを Azure Blob Storage サービスに書き込むことができます。  Azure Blob Storage サービスを使用したバックアップについては、「[Microsoft Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」をご覧ください。  
+ SQL Server のバックアップを Azure Blob Storage サービスに書き込むことができます。  Azure Blob Storage サービスを使用したバックアップについては、「[Microsoft Azure Blob Storage サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」をご覧ください。  
   
 ##  <a name="use-a-logical-backup-device"></a><a name="LogicalBackupDevice"></a> 論理バックアップ デバイスを使用する  
  " *論理バックアップ デバイス* " とは、特定の物理バックアップ デバイス (ディスク ファイルやテープ ドライブ) を示す、省略可能なユーザー定義名です。 論理バックアップ デバイスにより、対応する物理バックアップ デバイスを参照する際に間接指定を使用できます。  
