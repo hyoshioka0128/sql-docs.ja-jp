@@ -32,7 +32,7 @@ ms.locfileid: "89042408"
 
 次のスクリーン ショットでは、Azure Blob Storage に接続するための構成オプションを示します。
 
-![Azure BLOB ストレージ接続](../../integration-services/import-export-data/media/azure-blob-storage-connection.png)
+![Azure Blob Storage 接続](../../integration-services/import-export-data/media/azure-blob-storage-connection.png)
 
 ## <a name="options-to-specify"></a>指定するオプション
 
