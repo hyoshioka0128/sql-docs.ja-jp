@@ -41,7 +41,7 @@ PolyBase の主な機能と、これらの機能を利用できる製品を一�
 |Azure Data Lake Store にデータをエクスポートする|いいえ|いいえ|はい|いいえ|
 |Microsoft BI ツールから PolyBase クエリを実行する|はい|いいえ|はい|はい|
 
-<sup>*</sup> SQL Server 2017 で導入されました。「[Azure BLOB ストレージのデータに一括アクセスする例](../import-export/examples-of-bulk-access-to-data-in-azure-blob-storage.md)」を参照してください。
+<sup>*</sup> SQL Server 2017 で導入されました。「[Azure Blob Storage のデータに一括アクセスする例](../import-export/examples-of-bulk-access-to-data-in-azure-blob-storage.md)」を参照してください。
 
 
 ## <a name="pushdown-computation-supported-by-t-sql-operators"></a>T-SQL 演算子でサポートされるプッシュダウン計算
