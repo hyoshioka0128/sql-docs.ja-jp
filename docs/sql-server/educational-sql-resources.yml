@@ -70,7 +70,7 @@ landingContent:
       url: ../relational-databases/in-memory-oltp/creating-a-memory-optimized-table-and-a-natively-compiled-stored-procedure.md
     - text: 証明書を使用してストアド プロシージャに署名する
       url: ../relational-databases/tutorial-signing-stored-procedures-with-a-certificate.md
-    - text: Azure Blob ストレージ サービス
+    - text: Azure Blob Storage サービス
       url: ../relational-databases/tutorial-use-azure-blob-storage-service-with-sql-server-2016.md
     - text: データベース チューニング アドバイザー
       url: ../tools/dta/tutorial-database-engine-tuning-advisor.md
