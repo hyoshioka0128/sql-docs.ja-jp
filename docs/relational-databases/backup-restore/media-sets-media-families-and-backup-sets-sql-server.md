@@ -38,7 +38,7 @@ ms.locfileid: "96130395"
   
   ここでは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] でバックアップ メディアに使用する形式、バックアップ メディアとバックアップ デバイス間の対応付け、バックアップ メディアでのバックアップの構成、メディア セットとメディア ファミリに関するいくつかの注意点について説明します。 古いメディア セットを新しいメディア セットと交換する前に行うバックアップ メディアの初期化およびフォーマット処理の手順、メディア セット内の古いバックアップ セットを上書きする方法、新しいバックアップ セットをメディア セットに追加する方法についても説明します。  
   
->**注:** Azure Blob Storage サービスへの SQL Server のバックアップについて詳しくは、「[Microsoft Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」をご覧ください。  
+>**注:** Azure Blob Storage サービスへの SQL Server のバックアップについて詳しくは、「[Microsoft Azure Blob Storage サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」をご覧ください。  
    
 ##  <a name="terms"></a><a name="TermsAndDefinitions"></a> 用語  
  **メディア セット (media set)**  
