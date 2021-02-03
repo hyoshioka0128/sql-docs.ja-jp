@@ -31,7 +31,7 @@ ms.locfileid: "97438947"
 # <a name="create-external-table-as-select-transact-sql"></a>CREATE EXTERNAL TABLE AS SELECT (Transact-SQL)
 [!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
 
-  外部テーブルを作成してから、Hadoop または Azure Blob ストレージに [!INCLUDE[tsql](../../includes/tsql-md.md)] SELECT ステートメントの結果を並列でエクスポートします。
+  外部テーブルを作成してから、Hadoop または Azure Blob Storage に [!INCLUDE[tsql](../../includes/tsql-md.md)] SELECT ステートメントの結果を並列でエクスポートします。
 
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則 (Transact-SQL)](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)
 
@@ -67,7 +67,7 @@ CREATE EXTERNAL TABLE [ [database_name  . [ schema_name ] . ] | schema_name . ] 
 
 外部ファイルは *hdfs_folder* に書き込まれ、*QueryID_date_time_ID.format* という名前が付けられます (*ID* は増分識別子、*format* はエクスポートされるデータ形式)。 たとえば、QID776_20160130_182739_0.orc です。
 
- **DATA_SOURCE = *external_data_source_name*** には、外部データが格納されている、または格納される場所を含む、外部データ ソース オブジェクトの名前を指定します。 場所は、Hadoop クラスターまたは Azure Blob ストレージのいずれかです。 外部データ ソースを作成するには、[CREATE EXTERNAL DATA SOURCE &#40;Transact-SQL&#41;](../../t-sql/statements/create-external-data-source-transact-sql.md) を使用します。
+ **DATA_SOURCE = *external_data_source_name*** には、外部データが格納されている、または格納される場所を含む、外部データ ソース オブジェクトの名前を指定します。 場所は、Hadoop クラスターまたは Azure Blob Storage のいずれかです。 外部データ ソースを作成するには、[CREATE EXTERNAL DATA SOURCE &#40;Transact-SQL&#41;](../../t-sql/statements/create-external-data-source-transact-sql.md) を使用します。
 
  **FILE_FORMAT = *external_file_format_name*** には、外部データ ファイルの形式を含む、外部ファイル形式オブジェクトの名前を指定します。 外部ファイル形式を作成するには、[CREATE EXTERNAL FILE FORMAT &#40;Transact-SQL&#41;](../../t-sql/statements/create-external-file-format-transact-sql.md) を使用します。
 
