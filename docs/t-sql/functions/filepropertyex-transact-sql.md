@@ -30,7 +30,7 @@ ms.locfileid: "99209574"
 # <a name="filepropertyex-transact-sql"></a>FILEPROPERTYEX (Transact-SQL)
 [!INCLUDE[Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/asdb-asdbmi.md)]
 
-  現在のデータベース内のファイル名とプロパティ名を指定すると、指定された拡張ファイル プロパティ値が返されます。 現在のデータベースに存在しないファイル、または存在しない拡張ファイル プロパティの場合は NULL が返されます。 現在のところ、拡張ファイル プロパティは Azure Blob ストレージ内のデータベースにのみ適用されます。  
+  現在のデータベース内のファイル名とプロパティ名を指定すると、指定された拡張ファイル プロパティ値が返されます。 現在のデータベースに存在しないファイル、または存在しない拡張ファイル プロパティの場合は NULL が返されます。 現在のところ、拡張ファイル プロパティは Azure Blob Storage 内のデータベースにのみ適用されます。  
   
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
