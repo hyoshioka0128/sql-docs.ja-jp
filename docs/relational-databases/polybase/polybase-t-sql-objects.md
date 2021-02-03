@@ -120,7 +120,7 @@ WITH (LOCATION='/Demo/',
 CREATE STATISTICS StatsForSensors on CarSensor_Data(CustomerKey, Speed)  
 ```  
 
-## <a name="create-external-tables-for-azure-blob-storage"></a>Azure BLOB ストレージ用の外部テーブルを作成します。  
+## <a name="create-external-tables-for-azure-blob-storage"></a>Azure Blob Storage 用の外部テーブルを作成します。  
 適用対象:SQL Server (2016 以降)、Azure Synapse Analytics、Parallel Data Warehouse
 
 **1.データベース スコープ ベースの資格情報を作成する**  
