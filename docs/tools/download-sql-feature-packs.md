@@ -36,7 +36,7 @@ ms.locfileid: "98689164"
 
 | 機能 | 説明 |
 |----|-----|
-| [SQL Server Backup to Windows Azure Tool](https://go.microsoft.com/fwlink/?LinkID=391033) | Microsoft SQL Server Backup to Windows Azure Tool は、Windows Azure BLOB ストレージへのバックアップを可能にし、ローカルまたはクラウドに格納される SQL Server バックアップを圧縮します。 |
+| [SQL Server Backup to Windows Azure Tool](https://go.microsoft.com/fwlink/?LinkID=391033) | Microsoft SQL Server Backup to Windows Azure Tool は、Windows Azure Blob Storage へのバックアップを可能にし、ローカルまたはクラウドに格納される SQL Server バックアップを圧縮します。 |
 |||
 
 ## <a name="command-line-programming-and-t-sql"></a>コマンド ライン、プログラミング、T-SQL
