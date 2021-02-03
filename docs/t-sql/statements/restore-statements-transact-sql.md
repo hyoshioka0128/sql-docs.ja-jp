@@ -88,7 +88,7 @@ BACKUP コマンドで作成した SQL Database のバックアップを復元�
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の復元シナリオの詳細については、[復元と復旧の概要](../../relational-databases/backup-restore/restore-and-recovery-overview-sql-server.md)に関するページを参照してください。 引数の説明の詳細については、[RESTORE の引数](../../t-sql/statements/restore-statements-arguments-transact-sql.md)に関するページを参照してください。 別のインスタンスからデータベースを復元するときは、「 [データベースを別のサーバー インスタンスで使用できるようにするときのメタデータの管理 (SQL Server)](../../relational-databases/databases/manage-metadata-when-making-a-database-available-on-another-server.md)」の情報を考慮してください。
 
 > [!NOTE]
-> Microsoft Azure BLOB ストレージ サービスからの復元の詳細については、「[Microsoft Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」を参照してください。
+> Microsoft Azure Blob Storage サービスからの復元の詳細については、「[Microsoft Azure Blob Storage サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -456,7 +456,7 @@ RESTORE の例を次に示します。
 - H. [TAPE 構文を使用して復元する](#restoring_using_TAPE)
 - I. [FILE および FILEGROUP 構文を使用して復元する](#restoring_using_FILE_n_FG)
 - J. [データベース スナップショットに戻す](#reverting_from_db_snapshot)
-- K. [Microsoft Azure BLOB ストレージ サービスから復元する](#Azure_Blob)
+- K. [Microsoft Azure Blob Storage サービスから復元する](#Azure_Blob)
 
 > [!NOTE]
 > その他の例については、[復元と復旧の概要](../../relational-databases/backup-restore/restore-and-recovery-overview-sql-server.md)に関するページにリストされている復元方法に関するトピックを参照してください。
@@ -679,7 +679,7 @@ GO
 
 [&#91;例の先頭に戻る&#93;](#examples)
 
-### <a name="k-restoring-from-the-microsoft-azure-blob-storage-service"></a><a name="Azure_Blob"></a> K. Microsoft Azure BLOB ストレージ サービスから復元する
+### <a name="k-restoring-from-the-microsoft-azure-blob-storage-service"></a><a name="Azure_Blob"></a> K. Microsoft Azure Blob Storage サービスから復元する
 
 次の 3 つの例では、Microsoft Azure ストレージ サービスを使用します。 ストレージ アカウント名は `mystorageaccount`です。 データ ファイルのコンテナーは `myfirstcontainer` と呼ばれます。 バックアップ ファイルのコンテナーは `mysecondcontainer` と呼ばれます。 保存されているアクセス ポリシーは、各コンテナーの読み取り、書き込み、削除、および一覧表示権で作成されています。 SQL Server 資格情報は、保存されているアクセス ポリシーに関連付けられている Shared Access Signature を使用して作成されています。 Microsoft Azure Blob Storage を使用した SQL Server のバックアップと復元に固有の情報については、「[Microsoft Azure Blob ストレージ サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」を参照してください。
 
