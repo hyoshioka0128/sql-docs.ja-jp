@@ -85,11 +85,11 @@ PolyBase を使用すると、SQL Server で次のシナリオに対応できま
 
 - **SQL Server インスタンスまたは PDW から Hadoop に格納されているデータのクエリを実行します。** ユーザーは、たとえば Hadoop など、コスト効果の高いスケーラブルな分散システムにデータを格納しています。 PolyBase を使用すると、T-SQL で簡単にデータを照会できます。
 
-- **Azure Blob Storage に格納されたデータのクエリを実行する。** Azure BLOB ストレージは、Azure サービスによって使用されるデータを格納するのに便利な場所です。  PolyBase を使用すると、T-SQL で簡単にデータにアクセスできます。
+- **Azure Blob Storage に格納されたデータのクエリを実行する。** Azure Blob Storage は、Azure サービスによって使用されるデータを格納するのに便利な場所です。  PolyBase を使用すると、T-SQL で簡単にデータにアクセスできます。
 
 - **Hadoop、Azure Blob Storage、Azure Data Lake Store からデータをインポートする。** Hadoop、Azure Blob Storage、または Azure Data Lake Store からリレーショナル テーブルにデータをインポートすることで、Microsoft SQL の高速な列ストア テクノロジおよび分析機能を活用できます。 ETL ツールやインポート ツールを個別に用意する必要はありません。
 
-- **Hadoop、Azure BLOB ストレージ、Azure Data Lake Store にデータをエクスポートする。** データを Hadoop、Azure BLOB ストレージ、Azure Data Lake Store にアーカイブすることで、コスト効果の高いストレージを実現し、アクセスしやすいようにそのストレージをオンライン状態にしておくことができます。
+- **Hadoop、Azure Blob Storage、Azure Data Lake Store にデータをエクスポートする。** データを Hadoop、Azure Blob Storage、Azure Data Lake Store にアーカイブすることで、コスト効果の高いストレージを実現し、アクセスしやすいようにそのストレージをオンライン状態にしておくことができます。
 
 - **BI ツールと統合する。** PolyBase を Microsoft のビジネス インテリジェンスや分析スタックと一緒に使用したり、SQL Server と互換性のあるサード パーティ ツールを使用したりすることができます。
 
