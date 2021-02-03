@@ -87,7 +87,7 @@ IDENTITY が Windows ユーザーの場合、このシークレットはパス�
 
 - [!INCLUDE[ssSDS](../../includes/sssds-md.md)] は、エラスティック プールにデータベース スコープ資格情報を使用します。 詳しくは、[エラスティック データベースでの急増の緩和](/azure/azure-sql/database/elastic-pool-overview)に関する記事をご覧ください
 
-- [BULK INSERT](../../t-sql/statements/bulk-insert-transact-sql.md) と [OPENROWSET](../../t-sql/functions/openrowset-transact-sql.md) は、データベース スコープ資格情報を使用して Azure Blob Storage からデータにアクセスします。 詳しくは、「[Azure BLOB ストレージのデータに一括アクセスする例](../../relational-databases/import-export/examples-of-bulk-access-to-data-in-azure-blob-storage.md)」をご覧ください。 
+- [BULK INSERT](../../t-sql/statements/bulk-insert-transact-sql.md) と [OPENROWSET](../../t-sql/functions/openrowset-transact-sql.md) は、データベース スコープ資格情報を使用して Azure Blob Storage からデータにアクセスします。 詳しくは、「[Azure Blob Storage のデータに一括アクセスする例](../../relational-databases/import-export/examples-of-bulk-access-to-data-in-azure-blob-storage.md)」をご覧ください。 
 
 ## <a name="permissions"></a>アクセス許可
 
