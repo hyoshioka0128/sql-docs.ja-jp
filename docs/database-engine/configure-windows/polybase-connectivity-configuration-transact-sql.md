@@ -1,6 +1,6 @@
 ---
 title: PolyBase 接続構成 (Transact-SQL) | Microsoft Docs
-description: sp_configure を使用して PolyBase での Hadoop と Azure BLOB ストレージの接続に対するグローバル構成設定を表示または変更する方法について説明します。
+description: sp_configure を使用して PolyBase での Hadoop と Azure Blob Storage の接続に対するグローバル構成設定を表示または変更する方法について説明します。
 ms.custom: ''
 ms.date: 08/03/2017
 ms.prod: sql
@@ -24,7 +24,7 @@ ms.locfileid: "97460745"
 # <a name="polybase-connectivity-configuration-transact-sql"></a>PolyBase 接続構成 (Transact-SQL)
 [!INCLUDE[appliesto-ss-xxxx-xxxx-pdw-md](../../includes/appliesto-ss-xxxx-xxxx-pdw-md.md)]
 
-  PolyBase での Hadoop と Azure BLOB ストレージの接続に対するグローバル構成設定を表示または変更します。
+  PolyBase での Hadoop と Azure Blob Storage の接続に対するグローバル構成設定を表示または変更します。
   
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -53,7 +53,7 @@ RECONFIGURE
  新しい構成設定を指定します。 *value* のデータ型は **int** で、既定値は NULL です。 最大値はオプションごとに異なります。  
   
  **'hadoop connectivity'**  
- PolyBase から Hadoop クラスターまたは Azure BLOB ストレージ (WASB) へのすべての接続に Hadoop データ ソースの種類を指定します。 この設定は、外部テーブルに外部データ ソースを作成するために必要です。 詳細については、「 [CREATE EXTERNAL DATA SOURCE (Transact-SQL)](../../t-sql/statements/create-external-data-source-transact-sql.md)」を参照してください。  
+ PolyBase から Hadoop クラスターまたは Azure Blob Storage (WASB) へのすべての接続に Hadoop データ ソースの種類を指定します。 この設定は、外部テーブルに外部データ ソースを作成するために必要です。 詳細については、「 [CREATE EXTERNAL DATA SOURCE (Transact-SQL)](../../t-sql/statements/create-external-data-source-transact-sql.md)」を参照してください。  
   
  Hadoop の接続設定とそれに対応してサポートされる Hadoop データ ソースがあります。 一度に 1 つの設定だけを有効にすることができます。 オプション 1、4、および 7 では、複数の種類の外部データ ソースを作成して、サーバー上のすべてのセッションで使用することができます。  
   
@@ -61,7 +61,7 @@ RECONFIGURE
   
 -   オプション 1: Windows Server 上の Hortonworks HDP 1.3  
   
--   オプション 1: Azure BLOB ストレージ (WASB[S])  
+-   オプション 1: Azure Blob Storage (WASB[S])  
   
 -   オプション 2:Linux 上の Hortonworks HDP 1.3  
   
@@ -69,7 +69,7 @@ RECONFIGURE
   
 -   オプション 4:Windows Server 上の Hortonworks HDP 2.0  
   
--   オプション 4:Azure BLOB ストレージ (WASB[S])  
+-   オプション 4:Azure Blob Storage (WASB[S])  
   
 -   オプション 5:Linux 上の Hortonworks HDP 2.0  
   
@@ -79,7 +79,7 @@ RECONFIGURE
   
 -   オプション 7:Windows Server 上の Hortonworks 2.1、2.2、2.3  
   
--   オプション 7:Azure BLOB ストレージ (WASB[S])  
+-   オプション 7:Azure Blob Storage (WASB[S])  
   
  **RECONFIGURE**  
  構成値 (config_value) と一致するように、実行値 (run_value) を更新します。 run_value と config_value の定義については、「 [結果セット](#ResultSets) 」を参照してください。 sp_configure で設定されている新しい構成値は、実行値が RECONFIGURE ステートメントで設定されるまで有効になりません。  
@@ -130,7 +130,7 @@ EXEC sp_configure @configname='hadoop connectivity';
 ```  
   
 ### <a name="c-set-hadoop-connectivity"></a>C. Hadoop 接続を設定する  
- この例では、PolyBase をオプション 7 に設定します。 このオプションでは、PolyBase は、Linux と Windows Server、および Azure BLOB ストレージ上の Hortonworks 2.1、2.2、および 2.3 の外部テーブルを作成および使用できます。 たとえば、SQL は 30 個の外部テーブルを、Linux 上の Hortonworks 2.1 のデータを参照する 7 個、Linux 上の Hortonworks 2.2 の 4 個、Linux 上の Hortonworks 2.3 の 7 個、Azure BLOB ストレージを参照するその他の 12 個の外部テーブルとして所有することができます。  
+ この例では、PolyBase をオプション 7 に設定します。 このオプションでは、PolyBase は、Linux と Windows Server、および Azure Blob Storage 上の Hortonworks 2.1、2.2、および 2.3 の外部テーブルを作成および使用できます。 たとえば、SQL は 30 個の外部テーブルを、Linux 上の Hortonworks 2.1 のデータを参照する 7 個、Linux 上の Hortonworks 2.2 の 4 個、Linux 上の Hortonworks 2.3 の 7 個、Azure Blob Storage を参照するその他の 12 個の外部テーブルとして所有することができます。  
   
 ```  
 --Configure external tables to reference data on Hortonworks 2.1, 2.2, and 2.3 on Linux, and Azure blob storage  
