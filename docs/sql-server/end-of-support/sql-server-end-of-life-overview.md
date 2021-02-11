@@ -237,7 +237,7 @@ ms.locfileid: "97472463"
 
 ## <a name="non-sql-options"></a>SQL 以外のオプション
 
-特定の種類のアプリケーションについては、Azure Cosmos DB や Azure テーブル ストレージなどの非リレーショナルまたは NoSQL ソリューションを検討することもできます。
+特定の種類のアプリケーションについては、Azure Cosmos DB や Azure Table Storage などの非リレーショナルまたは NoSQL ソリューションを検討することもできます。
 
 ### <a name="azure-cosmos-db"></a>Azure Cosmos DB
 
@@ -253,9 +253,9 @@ Azure Cosmos DB には、次のような利点があります。
 
 ### <a name="azure-table-storage"></a>Azure Table Storage
 
-ペタバイト単位の半構造化データをコスト効率の高いソリューションで格納する場合は、Azure テーブル ストレージをご検討ください。 詳しくは、「 [テーブル ストレージ](https://azure.microsoft.com/services/storage/tables/)」をご覧ください。
+ペタバイト単位の半構造化データをコスト効率の高いソリューションで格納する場合は、Azure Table Storage をご検討ください。 詳しくは、「[Table Storage](https://azure.microsoft.com/services/storage/tables/)」をご覧ください。
 
-Azure テーブル ストレージには、次のような利点があります。
+Azure Table Storage には、次のような利点があります。
 - データをオフラインにせずに、アプリとテーブル スキーマを改善できます。
 - シャーディングせずに、データセットをスケール アップできます。
 - 複数の領域間でデータをレプリケートする地理的冗長ストレージを利用できます。
