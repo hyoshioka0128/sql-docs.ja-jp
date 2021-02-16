@@ -50,7 +50,7 @@ ms.locfileid: "92192668"
   
  この変換は、1 つの入力、1 つの出力、および 1 つのエラー出力をとります。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
  プロパティを設定するには [!INCLUDE[ssIS](../../../includes/ssis-md.md)] デザイナーから行うか、またはプログラムによって設定します。 SSIS デザイナーでのデータ変換の変換の使用については、「[データ変換の変換を使用してデータを別のデータ型に変換する](../../../integration-services/data-flow/transformations/convert-data-type-by-using-data-conversion-transformation.md)」を参照してください。 プログラムによるこの変換のプロパティの設定については、「 [共通プロパティ](../set-the-properties-of-a-data-flow-component.md) 」および「 [変換のカスタム プロパティ](../../../integration-services/data-flow/transformations/transformation-custom-properties.md)」をご覧ください。  
   
 ## <a name="related-content"></a>関連コンテンツ  
