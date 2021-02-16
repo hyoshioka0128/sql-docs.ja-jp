@@ -105,7 +105,7 @@ ms.locfileid: "92195374"
   
 -   [OLE DB カスタム プロパティ](../../integration-services/data-flow/ole-db-custom-properties.md)  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
   
 -   [OLE DB 変換元を使用してデータを抽出する](../../integration-services/data-flow/extract-data-by-using-the-ole-db-source.md)  
   
