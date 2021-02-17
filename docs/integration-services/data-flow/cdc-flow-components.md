@@ -199,7 +199,7 @@ CDC コンポーネントをインストールしたら、SQL [!INCLUDE[ssBIDevS
   
 -   [CDC スプリッター](../../integration-services/data-flow/cdc-splitter.md)  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
   
 -   [変更の種類に応じた CDC ストリームのダイレクト](../../integration-services/data-flow/direct-the-cdc-stream-according-to-the-type-of-change.md)  
   
