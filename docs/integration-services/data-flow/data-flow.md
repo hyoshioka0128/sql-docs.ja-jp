@@ -214,7 +214,7 @@ ms.locfileid: "94384680"
   
  [!INCLUDE[ssIS](../../includes/ssis-md.md)] デザイナーを使用してプロパティを設定する方法の詳細については、「 [データ フロー コンポーネントのプロパティを設定する](../../integration-services/data-flow/set-the-properties-of-a-data-flow-component.md)」を参照してください。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
  [データ フローでコンポーネントを追加または削除する](../../integration-services/data-flow/add-or-delete-a-component-in-a-data-flow.md)  
   
  [データ フロー内でコンポーネントを連結する](../../integration-services/data-flow/connect-components-in-a-data-flow.md)  
