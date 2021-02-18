@@ -109,7 +109,7 @@ ms.locfileid: "98596486"
   
 -   [データ フロー コンポーネントのプロパティを設定する](../../integration-services/data-flow/set-the-properties-of-a-data-flow-component.md)  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
   
 -   [SQL Server 変換先を使用してデータの一括読み込みを行う](../../integration-services/data-flow/bulk-load-data-by-using-the-sql-server-destination.md)  
   
