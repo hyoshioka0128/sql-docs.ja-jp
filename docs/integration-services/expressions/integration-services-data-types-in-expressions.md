@@ -31,7 +31,7 @@ ms.locfileid: "92196423"
 ## <a name="variables"></a>変数  
  また、式は変数を使用することもできます。 変数は variant データ型で、式エバリュエーターは、変数のデータ型を variant サブタイプから [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] のデータ型に変換してから式を評価します。 変数では、 [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] のデータ型のサブセットのみが使用できます。 たとえば、変数はバイナリ ラージ オブジェクト (BLOB) データ型を使用することはできません。  
   
- [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] のデータ型と [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] のデータ型に対する ｖariant データ型のマッピングについては、「 [Integration Services のデータ型](../../integration-services/data-flow/integration-services-data-types.md)」を参照してください。  
+ [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] のデータ型と [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] のデータ型に対する ｖariant データ型のマッピングについては、「[Integration Services のデータ型](../../integration-services/data-flow/integration-services-data-types.md)」を参照してください。  
   
 ## <a name="literals"></a>リテラル  
  式には、文字列、ブール、および数値リテラルも含めることができます。 数値リテラルの [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] 数値データ型への変換の詳細については、「[ &#40;SSIS&#41;](../../integration-services/expressions/numeric-string-and-boolean-literals.md)」を参照してください。  
@@ -134,12 +134,12 @@ ms.locfileid: "92196423"
   
  演算や関数の結果のデータ型は、多くの場合、定義済みのものです。 つまり、引数のデータ型、または式エバリュエーターが結果をキャストするデータ型として定義されています。 たとえば、論理 OR 演算子 (||) の結果は常にブール型で、ABS 関数の結果は引数と同じ数値データ型になります。また、乗算の結果は、結果を失うことなく保持可能な最小の数値データ型になります。 結果のデータ型については、「[ &#40;SSIS Expression&#41;](../../integration-services/expressions/operators-ssis-expression.md)」と「[ &#40;SSIS Expression&#41;](../../integration-services/expressions/functions-ssis-expression.md)」を参照してください。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク 
  [データ フロー コンポーネントで式を使用する](/previous-versions/sql/sql-server-2016/ms141007(v=sql.130))  
   
 ## <a name="related-content"></a>関連コンテンツ  
   
--   pragmaticworks.com の技術記事「 [SSIS 式チート シート](https://go.microsoft.com/fwlink/?LinkId=746575)」  
+-   pragmaticworks.com の技術記事「[SSIS 式チート シート](https://go.microsoft.com/fwlink/?LinkId=746575)」  
   
--   social.technet.microsoft.com の技術記事「 [SSIS 式の例](https://go.microsoft.com/fwlink/?LinkId=220761)」  
+-   social.technet.microsoft.com の技術記事「[SSIS 式の例](https://go.microsoft.com/fwlink/?LinkId=220761)」  
   
