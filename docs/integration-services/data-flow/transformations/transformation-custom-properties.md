@@ -125,7 +125,7 @@ ms.locfileid: "92194624"
 |プロパティ|データ型|説明|  
 |--------------|---------------|-----------------|  
 |AggregationColumnId|Integer|GROUP BY 関数または集計関数に含まれる列の **LineageID** 。|  
-|AggregationComparisonFlags|Integer|集計変換が列の文字列データを比較する方法を指定する値。 詳しくは、「[比較、文字列データ](../../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。|  
+|AggregationComparisonFlags|Integer|集計変換が列の文字列データを比較する方法を指定する値。 詳しくは、「[文字列データの比較](../../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。|  
 |AggregationType|Integer (列挙)|列に対して適用する集計操作を指定する値。 このプロパティの値は、次のいずれか 1 つです。<br /><br /> **Group by** (0)<br /><br /> **Count** (1)<br /><br /> **Count all** (2)<br /><br /> **Countdistinct** (3)<br /><br /> **Sum** (4)<br /><br /> **Average** (5)<br /><br /> **Maximum** (7)<br /><br /> **Minimum** (6)|  
 |CountDistinctKeys|Integer|集計の種類が **個別のカウント**の場合に、集計で書き込むことができるキーの正確な数を指定する値。 CountDistinctScale 値が指定されている場合、CountDistinctKeys の値が優先されます。|  
 |CountDistinctScale|Integer (列挙)|集計の種類が **個別のカウント**の場合に、集計で書き込むことができるキーの概数を表す値。 このプロパティの値は、次のいずれか 1 つです。<br /><br /> **Low** (1): キー値の数が最大 500,000 個であることを示します。<br /><br /> **Medium** (2): キー値の数が最大 5,000,000 個であることを示します。<br /><br /> **High** (3): キー値の数が 25,000,000 個以上であることを示します。<br /><br /> **Unspecified** (0): CountDistinctScale の値を使用しないことを示します。|  
@@ -298,7 +298,7 @@ ms.locfileid: "92194624"
 |プロパティ|データ型|説明|  
 |--------------|---------------|-----------------|  
 |ExactFuzzy|Integer (列挙)|あいまい一致または完全一致のどちらを変換が実行するかを指定する値。 有効な値は **Exact** および **Fuzzy**です。 このプロパティの既定値は **Fuzzy**です。|  
-|FuzzyComparisonFlags|Integer (列挙)|変換が列の文字列データを比較する方法を指定する値。 このプロパティの値は、次のいずれか 1 つです。<br /><br /> **FullySensitive**<br /><br /> **IgnoreCase**<br /><br /> **IgnoreKanaType**<br /><br /> **IgnoreNonSpace**<br /><br /> **IgnoreSymbols**<br /><br /> **IgnoreWidth**<br /><br /> <br /><br /> 詳しくは、「[比較、文字列データ](../../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。|  
+|FuzzyComparisonFlags|Integer (列挙)|変換が列の文字列データを比較する方法を指定する値。 このプロパティの値は、次のいずれか 1 つです。<br /><br /> **FullySensitive**<br /><br /> **IgnoreCase**<br /><br /> **IgnoreKanaType**<br /><br /> **IgnoreNonSpace**<br /><br /> **IgnoreSymbols**<br /><br /> **IgnoreWidth**<br /><br /> <br /><br /> 詳しくは、「[文字列データの比較](../../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。|  
 |LeadingTrailingNumeralsSignificant|Integer (列挙)|数字の有意性を指定する値。 このプロパティの値は、次のいずれか 1 つです。<br /><br /> **NumeralsNotSpecial** (0): 数字の意味を考慮しない場合に使用します。<br /><br /> **LeadingNumeralsSignificant** (1): 先頭の数字を考慮する場合に使用します。<br /><br /> **TrailingNumeralsSignificant** (2): 末尾の数字を考慮する場合に使用します。<br /><br /> **LeadingAndTrailingNumeralsSignificant** (3): 先頭および末尾の数字の両方を考慮する場合に使用します。|  
 |MinSimilarity|Double|列の結合に使用される類似性のしきい値。0 ～ 1 の間の値で指定します。 しきい値より大きい行のみ、一致していると見なされます。|  
 |ToBeCleaned|Boolean|重複部分を識別するためにこの列が使用されるかどうか、つまり、グループ化の対象となる列かどうかを指定する値。 このプロパティの既定値は **False**です。|  
@@ -338,7 +338,7 @@ ms.locfileid: "92194624"
   
 |プロパティ|データ型|説明|  
 |--------------|---------------|-----------------|  
-|FuzzyComparisonFlags|Integer|変換が列の文字列データを比較する方法を指定する値。 詳しくは、「[比較、文字列データ](../../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。|  
+|FuzzyComparisonFlags|Integer|変換が列の文字列データを比較する方法を指定する値。 詳しくは、「[文字列データの比較](../../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。|  
 |FuzzyComparisonFlagsEx|Integer (列挙)|どの拡張比較フラグを変換が使用するかを指定する値。 有効な値は **MapExpandLigatures**、 **MapFoldCZone**、 **MapFoldDigits**、 **MapPrecomposed**、および NoMapping です。 **NoMapping** は、他のフラグと組み合わせて使用することはできません。|  
 |JoinToReferenceColumn|String|列と結合される参照テーブル内の列の名前を指定する値。|  
 |JoinType|Integer|あいまい一致または完全一致のどちらを変換が実行するかを指定する値。 このプロパティの既定値は **Fuzzy**です。 完全結合型を表す整数値は **1** で、あいまい結合型を表す値は **2**です。|  
@@ -571,7 +571,7 @@ ms.locfileid: "92194624"
   
 |プロパティ|データ型|説明|  
 |--------------|---------------|-----------------|  
-|NewComparisonFlags|Integer (ビット マスク)|変換が列の文字列データを比較する方法を指定する値。 詳しくは、「[比較、文字列データ](../../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。|  
+|NewComparisonFlags|Integer (ビット マスク)|変換が列の文字列データを比較する方法を指定する値。 詳しくは、「[文字列データの比較](../../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。|  
 |NewSortKeyPosition|Integer|列の並べ替え順序を指定する値。 この値に 0 を指定すると、データはこの列を基準にして並べ替えされません。|  
   
  次の表は、並べ替え変換の出力列のカスタム プロパティを示しています。 すべてのプロパティは読み取り/書き込み可能です。  
