@@ -1,5 +1,5 @@
 ---
-description: 比較、文字列データ
+description: 文字列データの比較
 title: 文字列データの比較 | Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
@@ -24,7 +24,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/19/2020
 ms.locfileid: "92192736"
 ---
-# <a name="comparing-string-data"></a>比較、文字列データ
+# <a name="comparing-string-data"></a>文字列データの比較
 
 [!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
 
