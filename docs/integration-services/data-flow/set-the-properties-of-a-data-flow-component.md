@@ -94,7 +94,7 @@ ms.locfileid: "88348948"
     -   使用できる入力列の一覧を表示して、出力列の名前を更新するには、 **[入力列]** タブをクリックします。  
   
         > [!NOTE]  
-        >  [入力列] タブは、変換または変換先を使用した作業でのみ使用できます。 詳しくは、「 [Integration Services の変換](../../integration-services/data-flow/transformations/integration-services-transformations.md)」をご覧ください。  
+        >  [入力列] タブは、変換または変換先を使用した作業でのみ使用できます。 詳しくは、「[Integration Services の変換](../../integration-services/data-flow/transformations/integration-services-transformations.md)」をご覧ください。  
   
     -   入力、出力、およびエラー出力のプロパティや、列自体のプロパティを表示および変更するには、 **[入力プロパティと出力プロパティ]** タブをクリックします。  
   
@@ -170,7 +170,7 @@ ms.locfileid: "88348948"
   
 |プロパティ|データ型|説明|  
 |--------------|---------------|-----------------|  
-|ComparisonFlags|Integer|文字データ型を持つ列の比較を示すフラグの組。 詳しくは、「 [Comparing String Data](../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。|  
+|ComparisonFlags|Integer|文字データ型を持つ列の比較を示すフラグの組。 詳しくは、「[比較、文字列データ](../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。|  
 |説明|String|入力列を説明します。|  
 |ErrorOrTruncationOperation|String|行の処理中にエラーや切り捨てが発生する可能性がある場合、その種類を指定するオプションの文字列。|  
 |ErrorRowDisposition|<xref:Microsoft.SqlServer.Dts.Pipeline.Wrapper.DTSRowDisposition>|エラーの処理方法を指定する値。 値は **Fail component**、 **Ignore failure**、 **Redirect row**|  
@@ -180,7 +180,7 @@ ms.locfileid: "88348948"
 |LineageID|Integer|上流列の ID。|  
 |LineageIdentificationString|String|上流列の名前を含む識別文字列。|  
 |名前|String|入力列の名前。|  
-|SortKeyPosition|Integer|列を並べ替えるかどうか、並べ替える場合はその並べ替え順、および複数の列の並べ替えの順序を示す値。 値 **0** は、その列が並べ替えられないことを示します。  詳細については、「 [マージ変換およびマージ結合変換用にデータを並べ替える](../../integration-services/data-flow/transformations/sort-data-for-the-merge-and-merge-join-transformations.md)」を参照してください。|  
+|SortKeyPosition|Integer|列を並べ替えるかどうか、並べ替える場合はその並べ替え順、および複数の列の並べ替えの順序を示す値。 値 **0** は、その列が並べ替えられないことを示します。  詳細については、「[マージ変換およびマージ結合変換用にデータを並べ替える](../../integration-services/data-flow/transformations/sort-data-for-the-merge-and-merge-join-transformations.md)」を参照してください。|  
 |TruncationRowDisposition|<xref:Microsoft.SqlServer.Dts.Pipeline.Wrapper.DTSRowDisposition>|行の処理中に発生した切り捨てを処理する方法を指定する値。 値は **Fail component**、 **Ignore failure**、 **Redirect row**|  
 |UpstreamComponentName|String|上流コンポーネントの名前。|  
 |UsageType|<xref:Microsoft.SqlServer.Dts.Pipeline.Wrapper.DTSUsageType>|コンポーネントが入力列を使用する方法を指定する値。|  
@@ -203,7 +203,7 @@ ms.locfileid: "88348948"
 |id|Integer|出力を一意に識別する値。|  
 |[IdentificationString]|String|出力を識別する文字列。|  
 |IsErrorOut|ブール型|出力がエラー出力かどうかを示します。|  
-|IsSorted|ブール型|出力を並べ替えるかどうかを示します。 既定値は **False** です。<br /><br /> **\*\* 重要 \*\*** **IsSorted** プロパティの値を **True** に設定しても、データは並べ替えられません。 このプロパティでは、データが既に並べ替えられている下流コンポーネントにヒントのみを提供します。 詳細については、「 [マージ変換およびマージ結合変換用にデータを並べ替える](../../integration-services/data-flow/transformations/sort-data-for-the-merge-and-merge-join-transformations.md)」を参照してください。|  
+|IsSorted|ブール型|出力を並べ替えるかどうかを示します。 既定値は **False** です。<br /><br /> **\*\* 重要 \*\*** **IsSorted** プロパティの値を **True** に設定しても、データは並べ替えられません。 このプロパティでは、データが既に並べ替えられている下流コンポーネントにヒントのみを提供します。 詳細については、「[マージ変換およびマージ結合変換用にデータを並べ替える](../../integration-services/data-flow/transformations/sort-data-for-the-merge-and-merge-join-transformations.md)」を参照してください。|  
 |名前|String|出力の名前。|  
 |SynchronousInputID|Integer|出力に同期する入力の ID。|  
 |TruncationRowDisposition|<xref:Microsoft.SqlServer.Dts.Pipeline.Wrapper.DTSRowDisposition>|行の処理中に発生した切り捨てを処理する方法を指定する値。 値は **Fail component**、 **Ignore failure**、 **Redirect row**|  
@@ -215,7 +215,7 @@ ms.locfileid: "88348948"
   
 |プロパティ|データ型|説明|  
 |--------------|---------------|-----------------|  
-|ComparisonFlags|Integer|文字データ型を持つ列の比較を示すフラグの組。 詳しくは、「 [Comparing String Data](../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。|  
+|ComparisonFlags|Integer|文字データ型を持つ列の比較を示すフラグの組。 詳しくは、「[比較、文字列データ](../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。|  
 |説明|String|出力列を説明します。|  
 |ErrorOrTruncationOperation|String|行の処理中にエラーや切り捨てが発生する可能性がある場合、その種類を指定するオプションの文字列。|  
 |ErrorRowDisposition|<xref:Microsoft.SqlServer.Dts.Pipeline.Wrapper.DTSRowDisposition>|エラーの処理方法を指定する値。 値は **Fail component**、 **Ignore failure**、 **Redirect row** 既定値は **Fail component** です。|  
@@ -225,7 +225,7 @@ ms.locfileid: "88348948"
 |LineageID|Integer|出力列の ID。 下流コンポーネントは、この値を使用して列を参照します。|  
 |LineageIdentificationString|String|列の名前を含む識別文字列。|  
 |名前|String|出力列の名前。|  
-|SortKeyPosition|Integer|列を並べ替えるかどうか、並べ替える場合はその並べ替え順、および複数の列の並べ替えの順序を示す値。 値 **0** は、その列が並べ替えられないことを示します。 詳細については、「 [マージ変換およびマージ結合変換用にデータを並べ替える](../../integration-services/data-flow/transformations/sort-data-for-the-merge-and-merge-join-transformations.md)」を参照してください。|  
+|SortKeyPosition|Integer|列を並べ替えるかどうか、並べ替える場合はその並べ替え順、および複数の列の並べ替えの順序を示す値。 値 **0** は、その列が並べ替えられないことを示します。 詳細については、「[マージ変換およびマージ結合変換用にデータを並べ替える](../../integration-services/data-flow/transformations/sort-data-for-the-merge-and-merge-join-transformations.md)」を参照してください。|  
 |SpecialFlags|Integer|出力列の特殊なフラグを含む値。|  
 |TruncationRowDisposition|<xref:Microsoft.SqlServer.Dts.Pipeline.Wrapper.DTSRowDisposition>|行の処理中に発生した切り捨てを処理する方法を指定する値。 値は **Fail component**、 **Ignore failure**、 **Redirect row** 既定値は **Fail component** です。|  
   
@@ -253,7 +253,7 @@ ms.locfileid: "88348948"
 |プロパティ|データ型|説明|  
 |--------------|---------------|-----------------|  
 |CodePage|Integer|Unicode でない文字列データのコード ページを指定します。|  
-|DataType|Integer (列挙)|列の [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] データ型。 詳細については、「 [Integration Services Data Types](../../integration-services/data-flow/integration-services-data-types.md)」を参照してください。|  
+|DataType|Integer (列挙)|列の [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] データ型。 詳細については、「[Integration Services Data Types](../../integration-services/data-flow/integration-services-data-types.md)」を参照してください。|  
 |長さ|Integer|列の長さ (文字数単位)。|  
 |有効桁数|Integer|数値列の有効桁数。|  
 |スケール|Integer|数値列の小数点以下桁数。|  
@@ -335,7 +335,7 @@ ms.locfileid: "88348948"
 ## <a name="data-flow-properties-that-you-can-set-with-an-expression"></a>式で設定できるデータ フロー プロパティ
 データ フロー タスク コンテナーで使用できるプロパティ式を使用して、データ フロー オブジェクトの特定のプロパティの値を指定できます。  
   
- プロパティ式の使用の詳細については、「 [パッケージでプロパティ式を使用する](../../integration-services/expressions/use-property-expressions-in-packages.md)」を参照してください。  
+ プロパティ式の使用の詳細については、「[パッケージでプロパティ式を使用する](../../integration-services/expressions/use-property-expressions-in-packages.md)」を参照してください。  
   
  プロパティ式を使用して、パッケージを配置するインスタンスごとに構成をカスタマイズできます。 また、コマンド プロンプト ユーティリティ **dtexec** に **/set** オプションを付けて使用すると、プロパティ式を使用してパッケージの実行時制約を指定することもできます。 たとえば、並べ替え変換で使用される **MaximumThreads** 、または、あいまいグループ化変換およびあいまい参照変換の **MaxMemoryUsage** を制約できます。 制約を行わないと、これらの変換により大容量のデータがメモリ内にキャッシュされる場合があります。  
   
@@ -353,7 +353,7 @@ ms.locfileid: "88348948"
 |XML ソース|XMLData プロパティ<br /><br /> XMLSchemaDefinition プロパティ|  
   
 ### <a name="data-flow-transformations"></a>データ フローの変換  
- これらのカスタム プロパティの詳細については、「 [変換のカスタム プロパティ](../../integration-services/data-flow/transformations/transformation-custom-properties.md)」を参照してください。  
+ これらのカスタム プロパティの詳細については、「[変換のカスタム プロパティ](../../integration-services/data-flow/transformations/transformation-custom-properties.md)」を参照してください。  
   
 |データ フロー オブジェクト|プロパティ|  
 |----------------------|--------------|  
