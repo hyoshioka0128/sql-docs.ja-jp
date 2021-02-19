@@ -1,5 +1,5 @@
 ---
-description: Merge Join Transformation
+description: マージ結合変換
 title: マージ結合変換 | Microsoft Docs
 ms.custom: ''
 ms.date: 03/01/2017
@@ -27,7 +27,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/26/2020
 ms.locfileid: "88477655"
 ---
-# <a name="merge-join-transformation"></a>Merge Join Transformation
+# <a name="merge-join-transformation"></a>マージ結合変換
 
 [!INCLUDE[sqlserver-ssis](../../../includes/applies-to-version/sqlserver-ssis.md)]
 
