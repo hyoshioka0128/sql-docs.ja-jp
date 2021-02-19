@@ -56,7 +56,7 @@ ms.locfileid: "96123378"
     > [!NOTE]  
     >  派生列変換によって上書きされる入力列を式が参照する場合、その式は派生した値ではなく、列の元の値を使用します。  
   
--   データ型が **文字列** の場合に結果を新しい列に追加するには、コード ページを指定します。 詳しくは、「 [Comparing String Data](../../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。  
+-   データ型が **文字列** の場合に結果を新しい列に追加するには、コード ページを指定します。 詳しくは、「[文字列データの比較](../../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。  
   
  派生列変換には、FriendlyExpression カスタム プロパティがあります。 このプロパティは、パッケージの読み込み時にプロパティ式で更新できます。 詳細については、「[パッケージでプロパティ式を使用する](../../../integration-services/expressions/use-property-expressions-in-packages.md)」および「[変換のカスタム プロパティ](../../../integration-services/data-flow/transformations/transformation-custom-properties.md)」を参照してください。  
   
