@@ -170,7 +170,7 @@ ms.locfileid: "88348948"
   
 |プロパティ|データ型|説明|  
 |--------------|---------------|-----------------|  
-|ComparisonFlags|Integer|文字データ型を持つ列の比較を示すフラグの組。 詳しくは、「[比較、文字列データ](../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。|  
+|ComparisonFlags|Integer|文字データ型を持つ列の比較を示すフラグの組。 詳しくは、「[文字列データの比較](../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。|  
 |説明|String|入力列を説明します。|  
 |ErrorOrTruncationOperation|String|行の処理中にエラーや切り捨てが発生する可能性がある場合、その種類を指定するオプションの文字列。|  
 |ErrorRowDisposition|<xref:Microsoft.SqlServer.Dts.Pipeline.Wrapper.DTSRowDisposition>|エラーの処理方法を指定する値。 値は **Fail component**、 **Ignore failure**、 **Redirect row**|  
@@ -215,7 +215,7 @@ ms.locfileid: "88348948"
   
 |プロパティ|データ型|説明|  
 |--------------|---------------|-----------------|  
-|ComparisonFlags|Integer|文字データ型を持つ列の比較を示すフラグの組。 詳しくは、「[比較、文字列データ](../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。|  
+|ComparisonFlags|Integer|文字データ型を持つ列の比較を示すフラグの組。 詳しくは、「[文字列データの比較](../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。|  
 |説明|String|出力列を説明します。|  
 |ErrorOrTruncationOperation|String|行の処理中にエラーや切り捨てが発生する可能性がある場合、その種類を指定するオプションの文字列。|  
 |ErrorRowDisposition|<xref:Microsoft.SqlServer.Dts.Pipeline.Wrapper.DTSRowDisposition>|エラーの処理方法を指定する値。 値は **Fail component**、 **Ignore failure**、 **Redirect row** 既定値は **Fail component** です。|  
