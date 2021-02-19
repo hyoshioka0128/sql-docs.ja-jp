@@ -35,7 +35,7 @@ ms.locfileid: "92195936"
 
   並べ替え変換は、入力データを昇順または降順で並べ替え、並べ替えたデータを変換出力にコピーします。 入力には複数の並べ替えを適用できます。各並べ替えは、並べ替えの順序を決定する数値によって識別されます。 順序の数値が最も小さい列が最初に並べ替えられ、順序の数値の大きさの順に列が並べ替えられます。 たとえば、 **CountryRegion** という名前の列の並べ替え順序が 1 で、 **City** という名前の列の並べ替え順序が 2 の場合、出力は、国または地域、次に都市の順に並べ替えられます。 正の値は昇順の並べ替えを表し、負の値は降順の並べ替えを表します。 並べ替えを行わない列の並べ替え順序は 0 です。 並べ替えを選択されていない列は、並べ替えられた列と共に、自動的に変換出力にコピーされます。  
   
- 並べ替え変換には、比較オプションのセットが含まれており、変換による列の文字列データの処理方法を決定します。 詳しくは、「 [Comparing String Data](../../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。  
+ 並べ替え変換には、比較オプションのセットが含まれており、変換による列の文字列データの処理方法を決定します。 詳しくは、「[比較、文字列データ](../../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。  
   
 > [!NOTE]  
 >  並べ替え変換では、GUID は Transact-SQL で ORDER BY 句を使用したときと同じ順序では並べ替えられません。 並べ替え変換では、0 ～ 9 で始まる GUID は A ～ F で始まる GUID の前に並べ替えられますが、ORDER BY 句では [!INCLUDE[ssDEnoversion](../../../includes/ssdenoversion-md.md)]での実装と同じく、並べ替え変換とは異なる順番で並べ替えられます。 詳細については、「[ORDER BY 句 (Transact-SQL)](../../../t-sql/queries/select-order-by-clause-transact-sql.md)」を参照してください。  
@@ -51,20 +51,20 @@ ms.locfileid: "92195936"
   
  **[詳細エディター]** ダイアログ ボックスには、プログラムによって設定できるプロパティが反映されます。 **[詳細エディター]** ダイアログ ボックスまたはプログラムで設定できるプロパティの詳細については、次のトピックのいずれかを参照してください。  
   
--   [Common Properties](../set-the-properties-of-a-data-flow-component.md)  
+-   [コンポーネントのプロパティ](../set-the-properties-of-a-data-flow-component.md)  
   
 -   [変換のカスタム プロパティ](../../../integration-services/data-flow/transformations/transformation-custom-properties.md)  
   
-## <a name="related-tasks"></a>Related Tasks  
- コンポーネントのプロパティの設定方法の詳細については、「 [データ フロー コンポーネントのプロパティを設定する](../../../integration-services/data-flow/set-the-properties-of-a-data-flow-component.md)」を参照してください。  
+## <a name="related-tasks"></a>関連タスク  
+ コンポーネントのプロパティの設定方法の詳細については、「[データ フロー コンポーネントのプロパティを設定する](../../../integration-services/data-flow/set-the-properties-of-a-data-flow-component.md)」を参照してください。  
   
 ## <a name="related-content"></a>関連コンテンツ  
- codeplex.com のサンプル「 [SortDeDuplicateDelimitedString カスタム SSIS コンポーネント](https://go.microsoft.com/fwlink/?LinkId=220821)」  
+ codeplex.com のサンプル「[SortDeDuplicateDelimitedString カスタム SSIS コンポーネント](https://go.microsoft.com/fwlink/?LinkId=220821)」  
   
 ## <a name="sort-transformation-editor"></a>並べ替え変換エディター
   **[並べ替え変換エディター]** ダイアログ ボックスを使用すると、並べ替える列を選択し、並べ替え順を設定して、重複する部分を削除するかどうかを指定できます。  
   
-### <a name="options"></a>Options  
+### <a name="options"></a>オプション  
  **使用できる入力列**  
  このチェック ボックスを使用して、並べ替える列を指定します。  
   
@@ -87,7 +87,7 @@ ms.locfileid: "92195936"
  列を並べ替える順序を示します。 各列に対して手動で設定する必要があります。  
   
  **[比較フラグ]**  
- 文字列比較オプションについては、「 [文字列データの比較](../../../integration-services/data-flow/comparing-string-data.md)」を参照してください。  
+ 文字列比較オプションについては、「[文字列データの比較](../../../integration-services/data-flow/comparing-string-data.md)」を参照してください。  
   
  **[重複した並べ替え値を含む行を削除する]**  
  指定された文字列比較オプションに基づいて、重複した列を変換出力にコピーするか、すべての重複部分に対して 1 つのエントリを作成するかを示します。  
