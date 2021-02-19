@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 455a02f0-8143-4562-8648-8fb45ffd334c
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: e3b6b02449fdfebf20469bf859beb500146df0cb
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 185a0df6347748d71ec621940250e682e4c0eca6
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88990303"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100041352"
 ---
 # <a name="openschema-method-example-vb"></a>OpenSchema メソッドの例 (VB)
 この例では、 [OpenSchema](./openschema-method.md) メソッドを使用して、 ***Pubs*** データベース内の各テーブルの名前と種類を表示します。  
@@ -79,7 +79,7 @@ End Sub
 'EndOpenSchemaVB  
 ```  
   
- この例では、 **OpenSchema** method ***Criteria*** 引数に TABLE_TYPE のクエリ制約を指定します。 その結果、 ***Pubs*** データベースに指定されたビューのスキーマ情報のみが返されます。 この例では、各テーブルの名前と種類を表示します。  
+ この例では、 **OpenSchema** method **_Criteria_ _ 引数に TABLE_TYPE のクエリ制約を指定し *ます。その結果、_ Pubs データベースで指定されたビューのスキーマ情報のみ*** が返されます。 この例では、各テーブルの名前と種類を表示します。  
   
 ```  
 Attribute VB_Name = "OpenSchema"  

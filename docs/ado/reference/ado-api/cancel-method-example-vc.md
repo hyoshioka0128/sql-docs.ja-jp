@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7e0eaa39-0c24-4d8c-87e8-f9c4fd3455e7
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 3546816eb19d0b87d901b395959c2777dbb803c8
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 21e9a928bbb839f7e0a788c0bfb939c35c471c7b
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88975603"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100027167"
 ---
 # <a name="cancel-method-example-vc"></a>Cancel メソッドの例 (VC++)
 この例では、接続がビジーの場合に、 [cancel](./cancel-method-ado.md) メソッドを使用して、 [接続](./connection-object-ado.md) オブジェクトで実行されているコマンドを取り消します。  

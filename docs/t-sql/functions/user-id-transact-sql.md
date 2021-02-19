@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - USER_ID
 - USER_ID_TSQL
@@ -23,12 +23,12 @@ helpviewer_keywords:
 ms.assetid: 67fd29bc-eda9-4d4d-b148-5d3659181a43
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 50ffbb7ff9afa07b022f1c119afe07f43ab8ff6d
-ms.sourcegitcommit: 197a6ffb643f93592edf9e90b04810a18be61133
+ms.openlocfilehash: 860016421276c6c02c8d0d523476a856f70f227b
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91379427"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99210632"
 ---
 # <a name="user_id-transact-sql"></a>USER_ID (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -50,7 +50,7 @@ USER_ID ( [ 'user' ] )
 
 ## <a name="arguments"></a>引数
  *user*  
- 使用するユーザー名を指定します。 *ユーザー* は **nchar**です。 場合、 **char** 値を指定すると、暗黙的に変換されます **nchar**です。 かっこが必要です。  
+ 使用するユーザー名を指定します。 *ユーザー* は **nchar** です。 場合、 **char** 値を指定すると、暗黙的に変換されます **nchar** です。 かっこが必要です。  
   
 ## <a name="return-types"></a>戻り値の型  
  **int**  

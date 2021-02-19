@@ -10,13 +10,13 @@ ms.topic: conceptual
 ms.assetid: 9fb8656b-0e4e-4ada-b404-4db4d3eea995
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6405d6be70477297fb9ca02637c92b9e458144a5
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 8d5649928b9e937fef37c7c67bc85c5f560dac20
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92035885"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97460875"
 ---
 # <a name="lesson-1-create-and-query-database-objects"></a>レッスン 1: データベース オブジェクトの作成とクエリ
 [!INCLUDE[tsql-appliesto-ss2008-all-md](../includes/tsql-appliesto-ss2008-all-md.md)]
@@ -54,7 +54,7 @@ SQL Server インスタンスがない場合は、インスタンスを作成し
     GO  
     ```  
   
-2.  ポインターを使用して `CREATE DATABASE`の語句を選択し、 **F1**キーを押します。 SQL Server オンライン ブックの `CREATE DATABASE` のトピックが開きます。 この方法を使用して、このチュートリアルで使用する `CREATE DATABASE` やその他のステートメントの全構文を見つけることができます。  
+2.  ポインターを使用して `CREATE DATABASE`の語句を選択し、 **F1** キーを押します。 SQL Server オンライン ブックの `CREATE DATABASE` のトピックが開きます。 この方法を使用して、このチュートリアルで使用する `CREATE DATABASE` やその他のステートメントの全構文を見つけることができます。  
   
 3.  クエリ エディターで、 **F5** キーを押してステートメントを実行し、 `TestData`という名前のデータベースを作成します。  
   

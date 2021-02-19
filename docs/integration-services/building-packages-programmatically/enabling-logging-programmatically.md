@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: 3222a1ed-83eb-421c-b299-a53b67bba740
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 358bd8e70acba47961909583c153669e21389105
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 35b731cdb854d24ee2c4759c9ce3f611dc98c104
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88352138"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100349170"
 ---
 # <a name="enabling-logging-programmatically"></a>プログラムによるログ記録の有効化
 

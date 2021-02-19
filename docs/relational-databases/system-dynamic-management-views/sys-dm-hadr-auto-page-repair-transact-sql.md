@@ -1,12 +1,12 @@
 ---
 description: sys.dm_hadr_auto_page_repair (Transact-SQL)
-title: dm_hadr_auto_page_repair (Transact-sql) |Microsoft Docs
+title: sys.dm_hadr_auto_page_repair (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 02/05/2019
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - dm_hadr_auto_page_repair_TSQL
 - sys.dm_hadr_auto_page_repair
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - automatic page repair
 - sys.dm_hadr_auto_page_repair dynamic management view
 ms.assetid: d7840adf-4a1b-41ac-bc94-102c07ad1c79
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: a1dfdf8d99f4166bdcfd913f38e23b00cd1cd365
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: b7ec1c79c7d3142909750ebbc525729fa75b82c8
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539403"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100354185"
 ---
 # <a name="sysdm_hadr_auto_page_repair-transact-sql"></a>sys.dm_hadr_auto_page_repair (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

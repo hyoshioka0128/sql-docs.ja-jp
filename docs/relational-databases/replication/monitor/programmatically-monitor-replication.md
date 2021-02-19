@@ -29,13 +29,13 @@ helpviewer_keywords:
 ms.assetid: e8bf8850-8da5-4a4f-a399-64232b4e476d
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: =azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions
-ms.openlocfilehash: 2dfc06b78d249a0ed266315f42c066eef05b3413
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+monikerRange: =azuresqldb-mi-current||>=sql-server-2016
+ms.openlocfilehash: 0983d52e2b0843a8ccbb2566e9e2762e97f61a4a
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86920069"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97433047"
 ---
 # <a name="programmatically-monitor-replication"></a>プログラムによるレプリケーションの監視
 [!INCLUDE[sql-asdbmi](../../../includes/applies-to-version/sql-asdbmi.md)]
@@ -79,7 +79,7 @@ ms.locfileid: "86920069"
   
 #### <a name="to-monitor-merge-agent-sessions"></a>マージ エージェント セッションを監視するには  
   
-1.  ディストリビューターのディストリビューション データベースで、 [sp_replmonitorhelpmergesession](../../../relational-databases/system-stored-procedures/sp-replmonitorhelpmergesession-transact-sql.md)を実行します。 これにより、このディストリビューターを利用する全サブスクリプションのすべてのマージ エージェント セッションに関する監視情報 ( **Session_id**を含む) が返されます。 また、 **MSmerge_sessions** システム テーブルにクエリを実行することでも、 [Session_id](../../../relational-databases/system-tables/msmerge-sessions-transact-sql.md) を取得できます。  
+1.  ディストリビューターのディストリビューション データベースで、 [sp_replmonitorhelpmergesession](../../../relational-databases/system-stored-procedures/sp-replmonitorhelpmergesession-transact-sql.md)を実行します。 これにより、このディストリビューターを利用する全サブスクリプションのすべてのマージ エージェント セッションに関する監視情報 ( **Session_id** を含む) が返されます。 また、 **MSmerge_sessions** システム テーブルにクエリを実行することでも、 [Session_id](../../../relational-databases/system-tables/msmerge-sessions-transact-sql.md) を取得できます。  
   
 2.  ディストリビューターのディストリビューション データベースで、 [sp_replmonitorhelpmergesessiondetail](../../../relational-databases/system-stored-procedures/sp-replmonitorhelpmergesessiondetail-transact-sql.md)を実行します。 手順 1 で取得した **Session_id** の値を **\@session_id** に指定します。 これにより、セッションに関する詳細な監視情報が表示されます。  
   
@@ -127,13 +127,13 @@ ms.locfileid: "86920069"
   
     -   <xref:Microsoft.SqlServer.Replication.MergeSubscriberMonitor.GetLastSessionSummaryDataRow%2A> - 前回のマージ エージェント セッションの情報を保持する <xref:System.Data.DataRow> オブジェクトを返します。 このセッションの **Session_id** 列の値を確認してください。  
   
-4.  (省略可) <xref:Microsoft.SqlServer.Replication.MergeSubscriberMonitor.RefreshSessionSummary%2A> を呼び出して、 <xref:Microsoft.SqlServer.Replication.MergeSessionSummary> として渡された *T:Microsoft.SqlServer.Replication.MergeSessionSummary* オブジェクトのデータを更新します。または、 <xref:Microsoft.SqlServer.Replication.MergeSubscriberMonitor.RefreshSessionSummary%2A> を呼び出して、 <xref:System.Data.DataRow> として渡された *T:System.Data.DataRow*を実行します。  
+4.  (省略可) <xref:Microsoft.SqlServer.Replication.MergeSubscriberMonitor.RefreshSessionSummary%2A> を呼び出して、 <xref:Microsoft.SqlServer.Replication.MergeSessionSummary> として渡された *T:Microsoft.SqlServer.Replication.MergeSessionSummary* オブジェクトのデータを更新します。または、 <xref:Microsoft.SqlServer.Replication.MergeSubscriberMonitor.RefreshSessionSummary%2A> を呼び出して、 <xref:System.Data.DataRow> として渡された *T:System.Data.DataRow* を実行します。  
   
 5.  手順 3. で取得したセッション ID を使用して次のいずれかのメソッドを呼び出し、特定のセッションの詳細情報を取得します。  
   
-    -   <xref:Microsoft.SqlServer.Replication.MergeSubscriberMonitor.GetSessionDetails%2A> - 過去に発生したマージ エージェント セッションの情報を保持する <xref:Microsoft.SqlServer.Replication.MergeSessionDetail> について、 *T:Microsoft.SqlServer.Replication.MergeSessionDetail*を実行します。  
+    -   <xref:Microsoft.SqlServer.Replication.MergeSubscriberMonitor.GetSessionDetails%2A> - 過去に発生したマージ エージェント セッションの情報を保持する <xref:Microsoft.SqlServer.Replication.MergeSessionDetail> について、 *T:Microsoft.SqlServer.Replication.MergeSessionDetail* を実行します。  
   
-    -   <xref:Microsoft.SqlServer.Replication.MergeSubscriberMonitor.GetSessionDetailsDataSet%2A> - 前回のマージ エージェント セッションの情報を保持する <xref:System.Data.DataSet> の情報を保持する *T:Microsoft.SqlServer.Replication.MergeSessionDetail*を実行します。  
+    -   <xref:Microsoft.SqlServer.Replication.MergeSubscriberMonitor.GetSessionDetailsDataSet%2A> - 前回のマージ エージェント セッションの情報を保持する <xref:System.Data.DataSet> の情報を保持する *T:Microsoft.SqlServer.Replication.MergeSessionDetail* を実行します。  
   
 #### <a name="to-monitor-replication-properties-for-all-publications-at-a-distributor"></a>ディストリビューターですべてのパブリケーションについてレプリケーション プロパティを監視するには  
   
@@ -175,7 +175,7 @@ ms.locfileid: "86920069"
   
 2.  次のいずれかの方法で <xref:Microsoft.SqlServer.Replication.PublisherMonitor> オブジェクトを取得します。  
   
-    -   <xref:Microsoft.SqlServer.Replication.PublisherMonitor> クラスのインスタンスを作成します。 パブリッシャーの <xref:Microsoft.SqlServer.Replication.PublisherMonitor.Name%2A> プロパティを設定し、 <xref:Microsoft.SqlServer.Replication.ReplicationObject.ConnectionContext%2A> プロパティに手順 1. で作成した <xref:Microsoft.SqlServer.Management.Common.ServerConnection> を設定します。 <xref:Microsoft.SqlServer.Replication.ReplicationObject.LoadProperties%2A> メソッドを呼び出して、オブジェクトのプロパティを取得します。 このメソッドから **false**が返された場合、パブリッシャー名が正しく定義されていないか、パブリケーションが存在していません。  
+    -   <xref:Microsoft.SqlServer.Replication.PublisherMonitor> クラスのインスタンスを作成します。 パブリッシャーの <xref:Microsoft.SqlServer.Replication.PublisherMonitor.Name%2A> プロパティを設定し、 <xref:Microsoft.SqlServer.Replication.ReplicationObject.ConnectionContext%2A> プロパティに手順 1. で作成した <xref:Microsoft.SqlServer.Management.Common.ServerConnection> を設定します。 <xref:Microsoft.SqlServer.Replication.ReplicationObject.LoadProperties%2A> メソッドを呼び出して、オブジェクトのプロパティを取得します。 このメソッドから **false** が返された場合、パブリッシャー名が正しく定義されていないか、パブリケーションが存在していません。  
   
     -   <xref:Microsoft.SqlServer.Replication.PublisherMonitorCollection> から取得します。このコレクションには、既存の <xref:Microsoft.SqlServer.Replication.ReplicationMonitor.PublisherMonitors%2A> オブジェクトの <xref:Microsoft.SqlServer.Replication.ReplicationMonitor> プロパティを使用してアクセスできます。  
   
@@ -215,7 +215,7 @@ ms.locfileid: "86920069"
   
 2.  次のいずれかの方法で <xref:Microsoft.SqlServer.Replication.PublicationMonitor> オブジェクトを取得します。  
   
-    -   <xref:Microsoft.SqlServer.Replication.PublicationMonitor> クラスのインスタンスを作成します。 パブリケーションの <xref:Microsoft.SqlServer.Replication.PublicationMonitor.DistributionDBName%2A>、 <xref:Microsoft.SqlServer.Replication.PublicationMonitor.PublisherName%2A>、 <xref:Microsoft.SqlServer.Replication.PublicationMonitor.PublicationDBName%2A>、 <xref:Microsoft.SqlServer.Replication.PublicationMonitor.Name%2A> の各プロパティを設定し、 <xref:Microsoft.SqlServer.Replication.ReplicationObject.ConnectionContext%2A> プロパティに手順 1. で作成した <xref:Microsoft.SqlServer.Management.Common.ServerConnection> を設定します。 <xref:Microsoft.SqlServer.Replication.ReplicationObject.LoadProperties%2A> メソッドを呼び出して、オブジェクトのプロパティを取得します。 このメソッドから **false**が返された場合、パブリケーションのプロパティが正しく定義されていないか、パブリケーションが存在していません。  
+    -   <xref:Microsoft.SqlServer.Replication.PublicationMonitor> クラスのインスタンスを作成します。 パブリケーションの <xref:Microsoft.SqlServer.Replication.PublicationMonitor.DistributionDBName%2A>、 <xref:Microsoft.SqlServer.Replication.PublicationMonitor.PublisherName%2A>、 <xref:Microsoft.SqlServer.Replication.PublicationMonitor.PublicationDBName%2A>、 <xref:Microsoft.SqlServer.Replication.PublicationMonitor.Name%2A> の各プロパティを設定し、 <xref:Microsoft.SqlServer.Replication.ReplicationObject.ConnectionContext%2A> プロパティに手順 1. で作成した <xref:Microsoft.SqlServer.Management.Common.ServerConnection> を設定します。 <xref:Microsoft.SqlServer.Replication.ReplicationObject.LoadProperties%2A> メソッドを呼び出して、オブジェクトのプロパティを取得します。 このメソッドから **false** が返された場合、パブリケーションのプロパティが正しく定義されていないか、パブリケーションが存在していません。  
   
     -   <xref:Microsoft.SqlServer.Replication.PublicationMonitorCollection> から取得します。このコレクションには、既存の <xref:Microsoft.SqlServer.Replication.PublisherMonitor.PublicationMonitors%2A> オブジェクトの <xref:Microsoft.SqlServer.Replication.PublisherMonitor> プロパティを使用してアクセスできます。  
   
@@ -245,7 +245,7 @@ ms.locfileid: "86920069"
   
 2.  次のいずれかの方法で <xref:Microsoft.SqlServer.Replication.PublicationMonitor> オブジェクトを取得します。  
   
-    -   <xref:Microsoft.SqlServer.Replication.PublicationMonitor> クラスのインスタンスを作成します。 パブリケーションの <xref:Microsoft.SqlServer.Replication.PublicationMonitor.DistributionDBName%2A>、 <xref:Microsoft.SqlServer.Replication.PublicationMonitor.PublisherName%2A>、 <xref:Microsoft.SqlServer.Replication.PublicationMonitor.PublicationDBName%2A>、 <xref:Microsoft.SqlServer.Replication.PublicationMonitor.Name%2A> の各プロパティを設定し、 <xref:Microsoft.SqlServer.Replication.ReplicationObject.ConnectionContext%2A> プロパティに手順 1. で作成した <xref:Microsoft.SqlServer.Management.Common.ServerConnection> を設定します。 <xref:Microsoft.SqlServer.Replication.ReplicationObject.LoadProperties%2A> メソッドを呼び出して、オブジェクトのプロパティを取得します。 このメソッドから **false**が返された場合、パブリケーションのプロパティが正しく定義されていないか、パブリケーションが存在していません。  
+    -   <xref:Microsoft.SqlServer.Replication.PublicationMonitor> クラスのインスタンスを作成します。 パブリケーションの <xref:Microsoft.SqlServer.Replication.PublicationMonitor.DistributionDBName%2A>、 <xref:Microsoft.SqlServer.Replication.PublicationMonitor.PublisherName%2A>、 <xref:Microsoft.SqlServer.Replication.PublicationMonitor.PublicationDBName%2A>、 <xref:Microsoft.SqlServer.Replication.PublicationMonitor.Name%2A> の各プロパティを設定し、 <xref:Microsoft.SqlServer.Replication.ReplicationObject.ConnectionContext%2A> プロパティに手順 1. で作成した <xref:Microsoft.SqlServer.Management.Common.ServerConnection> を設定します。 <xref:Microsoft.SqlServer.Replication.ReplicationObject.LoadProperties%2A> メソッドを呼び出して、オブジェクトのプロパティを取得します。 このメソッドから **false** が返された場合、パブリケーションのプロパティが正しく定義されていないか、パブリケーションが存在していません。  
   
     -   <xref:Microsoft.SqlServer.Replication.PublicationMonitorCollection> から取得します。このコレクションには、既存の <xref:Microsoft.SqlServer.Replication.PublisherMonitor.PublicationMonitors%2A> オブジェクトの <xref:Microsoft.SqlServer.Replication.PublisherMonitor> プロパティを使用してアクセスできます。  
   
@@ -259,7 +259,7 @@ ms.locfileid: "86920069"
   
 2.  次のいずれかの方法で <xref:Microsoft.SqlServer.Replication.PublicationMonitor> オブジェクトを取得します。  
   
-    -   <xref:Microsoft.SqlServer.Replication.PublicationMonitor> クラスのインスタンスを作成します。 パブリケーションの <xref:Microsoft.SqlServer.Replication.PublicationMonitor.DistributionDBName%2A>、 <xref:Microsoft.SqlServer.Replication.PublicationMonitor.PublisherName%2A>、 <xref:Microsoft.SqlServer.Replication.PublicationMonitor.PublicationDBName%2A>、 <xref:Microsoft.SqlServer.Replication.PublicationMonitor.Name%2A> の各プロパティを設定し、 <xref:Microsoft.SqlServer.Replication.ReplicationObject.ConnectionContext%2A> プロパティに手順 1. で作成した <xref:Microsoft.SqlServer.Management.Common.ServerConnection> を設定します。 <xref:Microsoft.SqlServer.Replication.ReplicationObject.LoadProperties%2A> メソッドを呼び出して、オブジェクトのプロパティを取得します。 このメソッドから **false**が返された場合、パブリケーションのプロパティが正しく定義されていないか、パブリケーションが存在していません。  
+    -   <xref:Microsoft.SqlServer.Replication.PublicationMonitor> クラスのインスタンスを作成します。 パブリケーションの <xref:Microsoft.SqlServer.Replication.PublicationMonitor.DistributionDBName%2A>、 <xref:Microsoft.SqlServer.Replication.PublicationMonitor.PublisherName%2A>、 <xref:Microsoft.SqlServer.Replication.PublicationMonitor.PublicationDBName%2A>、 <xref:Microsoft.SqlServer.Replication.PublicationMonitor.Name%2A> の各プロパティを設定し、 <xref:Microsoft.SqlServer.Replication.ReplicationObject.ConnectionContext%2A> プロパティに手順 1. で作成した <xref:Microsoft.SqlServer.Management.Common.ServerConnection> を設定します。 <xref:Microsoft.SqlServer.Replication.ReplicationObject.LoadProperties%2A> メソッドを呼び出して、オブジェクトのプロパティを取得します。 このメソッドから **false** が返された場合、パブリケーションのプロパティが正しく定義されていないか、パブリケーションが存在していません。  
   
     -   <xref:Microsoft.SqlServer.Replication.PublicationMonitorCollection> から取得します。このコレクションには、既存の <xref:Microsoft.SqlServer.Replication.PublisherMonitor.PublicationMonitors%2A> オブジェクトの <xref:Microsoft.SqlServer.Replication.PublisherMonitor> プロパティを使用してアクセスできます。  
   

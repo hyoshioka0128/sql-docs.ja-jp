@@ -22,12 +22,12 @@ ms.assetid: 855dd9fc-f80c-4dbc-bf46-55a9736bfe15
 author: rothja
 ms.author: jroth
 ms.custom: seo-dt-2019
-ms.openlocfilehash: 6b06f82e5c51aa1c3843abec0daa7d3bebabe40a
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 74435746bc2ef72741cf25a610cb37d4ac1893b4
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88454362"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100080993"
 ---
 # <a name="get-started-by-running-the-enable-database-for-stretch-wizard"></a>まずはデータベースのストレッチの有効化ウィザードを実行する
 [!INCLUDE [sqlserver2016-windows-only](../../includes/applies-to-version/sqlserver2016-windows-only.md)]
@@ -149,11 +149,11 @@ ms.locfileid: "88454362"
   
  データベースにマスター キーが既に存在する場合は、そのパスワードを入力します。  
   
- ![Stretch Database ウィザードの [セキュリティで保護された資格情報] ページ](../../sql-server/stretch-database/media/stretch-wizard-6b.PNG "Stretch Database ウィザードの [セキュリティで保護された資格情報] ページ")  
+ ![Stretch Database ウィザードの [セキュリティで保護された資格情報] ページを示すスクリーンショット。[パスワード] テキストボックスが空になっています。](../../sql-server/stretch-database/media/stretch-wizard-6b.PNG "Stretch Database ウィザードの [セキュリティで保護された資格情報] ページ")  
   
  データベースにマスター キーがない場合は、強力なパスワードを入力してデータベース マスター キーを作成します。  
   
- ![Stretch Database ウィザードの [セキュリティで保護された資格情報] ページ](../../relational-databases/tables/media/stretch-wizard-6.png "Stretch Database ウィザードの [セキュリティで保護された資格情報] ページ")  
+ ![Stretch Database ウィザードの [セキュリティで保護された資格情報] ページを示すスクリーンショット。[新しいパスワード] テキストボックスと [パスワードの確認] テキストボックスが入力されています。](../../relational-databases/tables/media/stretch-wizard-6.png "Stretch Database ウィザードの [セキュリティで保護された資格情報] ページ")  
   
  データベースのマスター キーを作成する方法については、「[CREATE MASTER KEY &#40;Transact-SQL&#41;](../../t-sql/statements/create-master-key-transact-sql.md)」と「[データベース マスター キーの作成](../../relational-databases/security/encryption/create-a-database-master-key.md)」をご覧ください。 ウィザードが作成する資格情報の詳細については、「[データベース スコープ ベースの資格情報を作成する &#40;Transact-SQL&#41;](../../t-sql/statements/create-database-scoped-credential-transact-sql.md)」を参照してください。  
   

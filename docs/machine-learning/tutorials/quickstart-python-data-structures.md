@@ -6,17 +6,16 @@ ms.prod: sql
 ms.technology: machine-learning
 ms.date: 09/28/2020
 ms.topic: quickstart
-author: cawrites
-ms.author: chadam
-ms.reviewer: davidph
+author: dphansen
+ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: a0b1798fb3c9a28a370b2c918d1a856afa1e549b
-ms.sourcegitcommit: 32135463a8494d9ed1600a58f51819359e3c09dc
+monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: c6ab10331055e6142d8d5a03b4875921dbb2f609
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91834547"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101940"
 ---
 # <a name="quickstart-data-structures-and-objects-using-python-with-sql-machine-learning"></a>クイック スタート:SQL 機械学習で Python を使用したデータ構造体とオブジェクト
 [!INCLUDE [SQL Server 2017 SQL MI](../../includes/applies-to-version/sqlserver2017-asdbmi.md)]
@@ -27,7 +26,7 @@ SQL 機械学習は、Python **pandas** パッケージに依存しています�
 
 前もって理解しておくべき概念は次のとおりです。
 
-- データ フレームとは_複数の_列を含むテーブルです。
+- データ フレームとは _複数の_ 列を含むテーブルです。
 - データ フレームの単一の列は、シリーズと呼ばれるリスト ライクのオブジェクトです。
 - データ フレームの単一の値はセルと呼ばれ、インデックスによってアクセスされます。
 
@@ -41,11 +40,11 @@ data.frame に表形式構造が必要な場合、計算の単一の結果をデ
 このクイック スタートを実行するには、次の前提条件を用意しておく必要があります。
 
 - 次のいずれかのプラットフォーム上の SQL データベース:
-  - [SQL Server Machine Learning Services](../sql-server-machine-learning-services.md)。 インストールの方法については、[Windows インストール ガイド](../install/sql-machine-learning-services-windows-install.md)または [Linux インストール ガイド](../../linux/sql-server-linux-setup-machine-learning.md?toc=%2Fsql%2Fmachine-learning%2Ftoc.json)に関するページを参照してください。
+  - [SQL Server Machine Learning Services](../sql-server-machine-learning-services.md)。 インストールするには、[Windows インストール ガイド](../install/sql-machine-learning-services-windows-install.md)または [Linux インストール ガイド](../../linux/sql-server-linux-setup-machine-learning.md?toc=%2Fsql%2Fmachine-learning%2Ftoc.json)に関するページを参照してください。
   - SQL Server ビッグ データ クラスター。 [SQL Server ビッグ データ クラスターで Machine Learning Services を有効にする](../../big-data-cluster/machine-learning-services.md)方法に関するページを参照してください。
-  - Azure SQL Managed Instance の Machine Learning Services。 サインアップ方法については、[Azure SQL Managed Instance の Machine Learning Services の概要](/azure/azure-sql/managed-instance/machine-learning-services-overview)に関するページを参照してください。
+  - Azure SQL Managed Instance の Machine Learning Services。 詳細については、[Azure SQL Managed Instance の Machine Learning Services の概要](/azure/azure-sql/managed-instance/machine-learning-services-overview)に関するページを参照してください。
 
-- Python スクリプトを含む SQL クエリを実行するためのツールです。 このクイックスタートでは [Azure Data Studio](../../azure-data-studio/what-is.md) を使用します。
+- Python スクリプトを含む SQL クエリを実行するためのツールです。 このクイックスタートでは [Azure Data Studio](../../azure-data-studio/what-is-azure-data-studio.md) を使用します。
 
 ## <a name="scalar-value-as-a-series"></a>シリーズとしてのスカラー値
 

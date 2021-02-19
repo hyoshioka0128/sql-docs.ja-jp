@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sp_autostats_TSQL
 - sp_autostats
@@ -18,13 +18,13 @@ helpviewer_keywords:
 ms.assetid: d1df8c15-ee73-49eb-9d13-6e98943c3e38
 author: markingmyname
 ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 79995dc681db76f3de5b6d6af200f6f57f087464
-ms.sourcegitcommit: c74bb5944994e34b102615b592fdaabe54713047
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 4a1746acf81c59b5b83a45d1be0403d4d58ad6c0
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90989938"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99199223"
 ---
 # <a name="sp_autostats-transact-sql"></a>sp_autostats (Transact-sql)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -53,7 +53,7 @@ sp_autostats [ @tblname = ] 'table_or_indexed_view_name'
   
  **OFF** = オフ  
   
- *Stats_flag*が指定されていない場合は、現在の AUTO_UPDATE_STATISTICS 設定を表示します。 *stats_flag* は **varchar (10)**,、既定値は NULL です。  
+ *Stats_flag* が指定されていない場合は、現在の AUTO_UPDATE_STATISTICS 設定を表示します。 *stats_flag* は **varchar (10)**,、既定値は NULL です。  
   
 `[ @indname = ] 'statistics_name'` AUTO_UPDATE_STATISTICS オプションを表示または更新する統計の名前を指定します。 インデックスの統計を表示する場合は、インデックスの名前を使用できます。インデックスの名前は、対応する統計オブジェクトの名前と同じです。  
   
@@ -63,9 +63,9 @@ sp_autostats [ @tblname = ] 'table_or_indexed_view_name'
  0 (成功) または 1 (失敗)  
   
 ## <a name="result-sets"></a>結果セット  
- *Stats_flag*が指定されている場合、 **sp_autostats**は実行された操作を報告しますが、結果セットは返しません。  
+ *Stats_flag* が指定されている場合、 **sp_autostats** は実行された操作を報告しますが、結果セットは返しません。  
   
- *Stats_flag*が指定されていない場合、 **sp_autostats**は次の結果セットを返します。  
+ *Stats_flag* が指定されていない場合、 **sp_autostats** は次の結果セットを返します。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
@@ -75,13 +75,13 @@ sp_autostats [ @tblname = ] 'table_or_indexed_view_name'
   
  テーブルまたはインデックス付きビューの結果セットには、インデックスに対して作成された統計、AUTO_CREATE_STATISTICS オプションで生成された単一列統計、 [CREATE statistics](../../t-sql/statements/create-statistics-transact-sql.md) ステートメントで作成された統計が含まれます。  
   
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>コメント  
  指定したインデックスが無効な場合、または指定したテーブルに無効なクラスター化インデックスがある場合は、エラー メッセージが表示されます。  
   
  AUTO_UPDATE_STATISTICS はメモリ最適化テーブルでは常に OFF です。  
   
 ## <a name="permissions"></a>アクセス許可  
- AUTO_UPDATE_STATISTICS オプションを変更するには、 **db_owner** 固定データベースロールのメンバーシップ n、または *TABLE_NAME*に対する ALTER 権限が必要です。AUTO_UPDATE_STATISTICS オプションを表示するには、 **public** ロールのメンバーシップが必要です。  
+ AUTO_UPDATE_STATISTICS オプションを変更するには、 **db_owner** 固定データベースロールのメンバーシップ n、または *TABLE_NAME* に対する ALTER 権限が必要です。AUTO_UPDATE_STATISTICS オプションを表示するには、 **public** ロールのメンバーシップが必要です。  
   
 ## <a name="examples"></a>例  
   

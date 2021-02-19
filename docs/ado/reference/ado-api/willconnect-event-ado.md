@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - WillConnect
@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: da561d58-eb58-446c-a4fd-1838c76073c0
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 259ef55060d7968d9ec557c831412ad58609a6df
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: d135747f0599f646035d2e70e768bf755ac6fa21
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88987783"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100056107"
 ---
 # <a name="willconnect-event-ado"></a>WillConnect イベント (ADO)
 接続が開始 **される前に、イベントが** 呼び出されます。  
@@ -46,8 +46,8 @@ WillConnect ConnectionString, UserID, Password, Options, adStatus, pConnection
  *パスワード*  
  保留中の接続のパスワードを含む **文字列** 。  
   
- *Options*  
- プロバイダーが*ConnectionString*を評価する方法を示す**Long 型**の値。 唯一のオプションは **adAsyncOpen**です。  
+ *[オプション]*  
+ プロバイダーが *ConnectionString* を評価する方法を示す **Long 型** の値。 唯一のオプションは **adAsyncOpen** です。  
   
  *adStatus*  
  [Eventstatusenum](./eventstatusenum.md)状態の値です。  
@@ -57,12 +57,12 @@ WillConnect ConnectionString, UserID, Password, Options, adStatus, pConnection
  このイベントが返される前に、このパラメーターを **adStatusUnwantedEvent** に設定して、後続の通知が行われないようにします。 このパラメーターを **Adstatuscancel** に設定して、この通知の取り消しの原因となった接続操作を要求します。  
   
  *pConnection*  
- このイベント通知を適用する [接続](./connection-object-ado.md) オブジェクト。 に**よって接続の**パラメーターを**変更して****も、接続**に影響はありません。  
+ このイベント通知を適用する [接続](./connection-object-ado.md) オブジェクト。 に **よって接続の** パラメーターを **変更して****も、接続** に影響はありません。  
   
 ## <a name="remarks"></a>解説  
  を **呼び出すと、** *ConnectionString*、 *UserID*、 *Password*、および *Options* の各パラメーターは、このイベントの原因となった操作によって確立された値 (保留中の接続) に設定され、イベントが返される前に変更できます。 **接続** によって、保留中の接続が取り消されたという要求が返される場合があります。  
   
- このイベントがキャンセルされると、 **Connectcomplete** が呼び出され、 *Adstatus* パラメーターが **Adstatuserrorの curred**に設定されます。  
+ このイベントがキャンセルされると、 **Connectcomplete** が呼び出され、 *Adstatus* パラメーターが **Adstatuserrorの curred** に設定されます。  
   
 ## <a name="see-also"></a>参照  
  [ADO Events モデルの例 (VC + +)](./ado-events-model-example-vc.md)   

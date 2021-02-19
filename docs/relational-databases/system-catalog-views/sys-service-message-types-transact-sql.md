@@ -1,13 +1,13 @@
 ---
-description: service_message_types (Transact-sql)
-title: service_message_types (Transact-sql) |Microsoft Docs
+description: sys.service_message_types (Transact-sql)
+title: sys.service_message_types (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.service_message_types
 - service_message_types
@@ -18,16 +18,16 @@ dev_langs:
 helpviewer_keywords:
 - sys.service_message_types catalog view
 ms.assetid: 6a38709a-60fe-46f6-89da-718f74f15600
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 3eaaa45f6f34e690b7b8abc3fc0366b54748b16c
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 9ce8898f707a1c82f98e88a04f52ffd706cd7fb4
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550424"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99204493"
 ---
-# <a name="sysservice_message_types-transact-sql"></a>service_message_types (Transact-sql)
+# <a name="sysservice_message_types-transact-sql"></a>sys.service_message_types (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   このカタログビューには、service broker に登録されているメッセージの種類ごとに1行が含まれています。

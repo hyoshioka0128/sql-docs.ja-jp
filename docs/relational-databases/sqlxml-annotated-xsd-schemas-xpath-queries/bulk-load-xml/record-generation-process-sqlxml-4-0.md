@@ -22,13 +22,13 @@ ms.assetid: d8885bbe-6f15-4fb9-9684-ca7883cfe9ac
 author: MightyPen
 ms.author: genemi
 ms.custom: seo-lt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 380698d9d164012f8e0be53f19be6cef8b7c56e8
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 3b6a29abf5c1c0fd02a6af3c48845553bb88756f
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85773057"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97467173"
 ---
 # <a name="record-generation-process-sqlxml-40"></a>レコードの生成処理 (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -58,7 +58,7 @@ ms.locfileid: "85773057"
 -   レコード生成の規則の例外  
   
 ## <a name="scope-of-a-node"></a>ノードのスコープ  
- Xml ドキュメント内のノード (要素または属性) は、xml 一括読み込みで xml 入力データストリームで検出されたときに*スコープ内に*入ります。 要素ノードの場合、要素はその開始タグが現れた時点でスコープ内に入ります。 属性ノードの場合、属性はその名前が現れた時点でスコープ内に入ります。  
+ Xml ドキュメント内のノード (要素または属性) は、xml 一括読み込みで xml 入力データストリームで検出されたときに *スコープ内に* 入ります。 要素ノードの場合、要素はその開始タグが現れた時点でスコープ内に入ります。 属性ノードの場合、属性はその名前が現れた時点でスコープ内に入ります。  
   
  要素ノードの場合は終了タグ、属性ノードの場合は属性値の最後に達し、ノードのデータがなくなると、ノードはスコープ外に出ます。  
   
@@ -79,7 +79,7 @@ ms.locfileid: "85773057"
 </xsd:schema>  
 ```  
   
- このスキーマでは、 **\<Customer>** **CustomerID**属性と**CompanyName**属性を持つ要素が指定されています。 **Sql: relation**注釈は、 **\<Customer>** 要素を Customers テーブルにマップします。  
+ このスキーマでは、 **\<Customer>** **CustomerID** 属性と **CompanyName** 属性を持つ要素が指定されています。 **Sql: relation** 注釈は、 **\<Customer>** 要素を Customers テーブルにマップします。  
   
  次の XML ドキュメントの一部を考えてみます。  
   
@@ -151,7 +151,7 @@ ms.locfileid: "85773057"
   
 -   **\<Customer>** Xml データファイル内の要素ノードがスコープ内に入ると、Xml 一括読み込みでは Cust テーブルのレコードが生成されます。 次に、XML 一括読み込みで、、、および子要素から必要な列値 (CustomerID、CompanyName、および City) がコピーされ、 **\<CustomerID>** **\<CompanyName>** これらの要素が **\<City>** スコープ内に入ります。  
   
--   **\<Order>** 要素ノードがスコープ内に入ると、XML 一括読み込みでは CustOrder テーブルのレコードが生成されます。 XML 一括読み込みでは、 **OrderID**属性の値がこのレコードにコピーされます。 CustomerID 列に必要な値は、 **\<CustomerID>** 要素の子要素から取得され **\<Customer>** ます。 XML 一括読み込みでは、 **\<sql:relationship>** 要素で**customerid**属性が指定されていない限り、で指定された情報を使用して、このレコードの customerid 外部キー値を取得し **\<Order>** ます。 一般的な規則として、子要素が外部キー属性の値を明示的に指定すると、XML 一括読み込みではその値が使用され、指定したを使用して親要素から値が取得されません **\<sql:relationship>** 。 この **\<Order>** 要素ノードがスコープ外に出ると、XML 一括読み込みではレコードがに送信され、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 後続のすべての **\<Order>** 要素ノードが同じ方法で処理されます。  
+-   **\<Order>** 要素ノードがスコープ内に入ると、XML 一括読み込みでは CustOrder テーブルのレコードが生成されます。 XML 一括読み込みでは、 **OrderID** 属性の値がこのレコードにコピーされます。 CustomerID 列に必要な値は、 **\<CustomerID>** 要素の子要素から取得され **\<Customer>** ます。 XML 一括読み込みでは、 **\<sql:relationship>** 要素で **customerid** 属性が指定されていない限り、で指定された情報を使用して、このレコードの customerid 外部キー値を取得し **\<Order>** ます。 一般的な規則として、子要素が外部キー属性の値を明示的に指定すると、XML 一括読み込みではその値が使用され、指定したを使用して親要素から値が取得されません **\<sql:relationship>** 。 この **\<Order>** 要素ノードがスコープ外に出ると、XML 一括読み込みではレコードがに送信され、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 後続のすべての **\<Order>** 要素ノードが同じ方法で処理されます。  
   
 -   最後に、 **\<Customer>** 要素ノードがスコープ外に移動します。 XML 一括読み込みで顧客レコードが [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] に送信されます。 XML 一括読み込みでは、XML データ ストリームの後続の顧客すべてについて、この処理が行われます。  
   
@@ -221,7 +221,7 @@ ms.locfileid: "85773057"
 ## <a name="exceptions-to-the-record-generation-rule"></a>レコード生成の規則の例外  
  XML 一括読み込みでは、IDREF または IDREFS 型のノードがスコープ内に入っても、ノードのレコードは生成されません。 スキーマのどこかで、レコードを完全に記述するようにしてください。 IDREFS 型が無視されるのと同様に、 **dt: type = "nmtokens"** 注釈は無視されます。  
   
- たとえば、要素と要素を記述する次の XSD スキーマについて考えてみ **\<Customer>** **\<Order>** ます。 要素には、 **\<Customer>** IDREFS 型の**orderlist**属性が含まれています。 タグは、 **\<sql:relationship>** 顧客と注文リストの間の一対多リレーションシップを指定します。  
+ たとえば、要素と要素を記述する次の XSD スキーマについて考えてみ **\<Customer>** **\<Order>** ます。 要素には、 **\<Customer>** IDREFS 型の **orderlist** 属性が含まれています。 タグは、 **\<sql:relationship>** 顧客と注文リストの間の一対多リレーションシップを指定します。  
   
  スキーマは次のようになります。  
   
@@ -262,9 +262,9 @@ ms.locfileid: "85773057"
 </xsd:schema>  
 ```  
   
- 一括読み込みでは IDREFS 型のノードが無視されるため、 **Orderlist**属性ノードがスコープ内に入ってもレコードは生成されません。 このため、注文レコードを Orders テーブルに追加したい場合は、スキーマ内のどこかでこれらの注文を記述する必要があります。 このスキーマでは、要素を指定することで、 **\<Order>** XML 一括読み込みで Orders テーブルに注文レコードが追加されるようになります。 要素には、 **\<Order>** CustOrder テーブルのレコードを埋めるために必要なすべての属性が記述されています。  
+ 一括読み込みでは IDREFS 型のノードが無視されるため、 **Orderlist** 属性ノードがスコープ内に入ってもレコードは生成されません。 このため、注文レコードを Orders テーブルに追加したい場合は、スキーマ内のどこかでこれらの注文を記述する必要があります。 このスキーマでは、要素を指定することで、 **\<Order>** XML 一括読み込みで Orders テーブルに注文レコードが追加されるようになります。 要素には、 **\<Order>** CustOrder テーブルのレコードを埋めるために必要なすべての属性が記述されています。  
   
- 要素の**CustomerID**と**OrderID**の値が要素の値と一致していることを確認する必要があり **\<Customer>** **\<Order>** ます。 参照の整合性は必ず維持する必要があります。  
+ 要素の **CustomerID** と **OrderID** の値が要素の値と一致していることを確認する必要があり **\<Customer>** **\<Order>** ます。 参照の整合性は必ず維持する必要があります。  
   
 #### <a name="to-test-a-working-sample"></a>実際のサンプルをテストするには  
   

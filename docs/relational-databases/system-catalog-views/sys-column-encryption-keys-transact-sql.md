@@ -1,13 +1,13 @@
 ---
-description: column_encryption_keys (Transact-sql)
-title: column_encryption_keys (Transact-sql) |Microsoft Docs
+description: sys.column_encryption_keys (Transact-sql)
+title: sys.column_encryption_keys (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 10/15/2019
 ms.prod: sql
 ms.prod_service: database-engine, sql-data-warehouse
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.column_encryption_keys
 - column_encryption_keys_TSQL
@@ -20,15 +20,15 @@ helpviewer_keywords:
 ms.assetid: 43980dd8-b9b1-4869-a304-2c183ae8977d
 author: jaszymas
 ms.author: jaszymas
-monikerRange: =azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 4dc716cf2990984bd65e7425776517602e18c6d9
-ms.sourcegitcommit: 8f062015c2a033f5a0d805ee4adabbe15e7c8f94
+monikerRange: =azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 04332ba7c72b5c834936833f30387cb59167d1a8
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91227075"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99188803"
 ---
-# <a name="syscolumn_encryption_keys--transact-sql"></a>column_encryption_keys (Transact-sql)
+# <a name="syscolumn_encryption_keys--transact-sql"></a>sys.column_encryption_keys (Transact-sql)
 [!INCLUDE[tsql-appliesto-ss2016-xxxx-asdw-xxx-md](../../includes/tsql-appliesto-ss2016-xxxx-asdw-xxx-md.md)]
 
   [CREATE COLUMN ENCRYPTION KEY](../../t-sql/statements/create-column-encryption-key-transact-sql.md)ステートメントで作成された列暗号化キー (ceks) に関する情報を返します。 各行は CEK を表します。  
@@ -41,7 +41,7 @@ ms.locfileid: "91227075"
 |**modify_date**|**datetime**|CEK が最後に変更された日付。|  
   
 ## <a name="permissions"></a>アクセス許可  
- **VIEW ANY COLUMN ENCRYPTION KEY**権限が必要です。  
+ **VIEW ANY COLUMN ENCRYPTION KEY** 権限が必要です。  
   
  [!INCLUDE[ssCatViewPerm](../../includes/sscatviewperm-md.md)] 詳細については、「 [Metadata Visibility Configuration](../../relational-databases/security/metadata-visibility-configuration.md)」を参照してください。  
   

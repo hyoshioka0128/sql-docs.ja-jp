@@ -5,21 +5,21 @@ ms.custom: seo-lt-2019
 ms.date: 11/21/2019
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: failover-cluster-instance
 ms.topic: conceptual
 helpviewer_keywords:
 - upgrading failover cluster instances
 - clusters [SQL Server], upgrading
 - failover clustering [SQL Server], upgrading
 ms.assetid: daac41fe-7d0b-4f14-84c2-62952ad8cbfa
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: c06446f14fd2f316f297b675cc1b96efc7801ba1
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: aaf4e27a88bdb3e23937521f230e62dae4115129
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91988315"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642762"
 ---
 # <a name="upgrade-a-failover-cluster-instance"></a>フェールオーバー クラスター インスタンスのアップグレード 
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]

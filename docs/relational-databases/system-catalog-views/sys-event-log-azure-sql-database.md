@@ -6,7 +6,7 @@ ms.date: 01/28/2019
 ms.service: sql-database
 ms.prod_service: sql-database
 ms.reviewer: ''
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - event_log
 - sys.event_log_TSQL
@@ -18,15 +18,15 @@ helpviewer_keywords:
 - event_log
 - sys.event_log
 ms.assetid: ad5496b5-e5c7-4a18-b5a0-3f985d7c4758
-author: markingmyname
-ms.author: maghan
-monikerRange: = azuresqldb-current || = sqlallproducts-allversions
-ms.openlocfilehash: 67c111b15728f92e3a6f0ac8dac830fe32f2f8da
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: = azuresqldb-current
+ms.openlocfilehash: ae823cddc60a82c343bc949515493f9405a51a9a
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91892402"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99203854"
 ---
 # <a name="sysevent_log-azure-sql-database"></a>sys.event_log (Azure SQL データベース)
 
@@ -41,23 +41,23 @@ ms.locfileid: "91892402"
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
-|**database_name**|**sysname**|データベースの名前です。 接続が失敗し、ユーザーがデータベース名を指定していない場合、この列は空白です。|  
+|**database_name**|**sysname**|データベース名。 接続が失敗し、ユーザーがデータベース名を指定していない場合、この列は空白です。|  
 |**start_time**|**datetime2**|集計間隔の開始時刻を示す UTC 日時。 集計イベントの場合、時刻は常に 5 分単位になります。 次に例を示します。<br /><br /> ' 2011-09-28 16:00:00 '<br />' 2011-09-28 16:05:00 '<br />' 2011-09-28 16:10:00 '|  
 |**end_time**|**datetime2**|集計間隔の終了時刻を示す UTC 日時。 集計イベントの場合、 **End_time** は、同じ行の対応する **start_time** よりも常に5分後になります。 集計されていないイベントの場合、 **start_time** と **end_time** はイベントの実際の UTC 日時と同じになります。|  
 |**event_category**|**nvarchar (64)**|このイベントを生成した上位レベルのコンポーネント。<br /><br /> 使用可能な値の一覧については、「 [イベントの種類](../../relational-databases/system-catalog-views/sys-event-log-azure-sql-database.md#EventTypes) 」を参照してください。|  
 |**event_type**|**nvarchar (64)**|イベントの種類。<br /><br /> 使用可能な値の一覧については、「 [イベントの種類](../../relational-databases/system-catalog-views/sys-event-log-azure-sql-database.md#EventTypes) 」を参照してください。|  
 |**event_subtype**|**int**|発生したイベントのサブタイプ。<br /><br /> 使用可能な値の一覧については、「 [イベントの種類](../../relational-databases/system-catalog-views/sys-event-log-azure-sql-database.md#EventTypes) 」を参照してください。|  
 |**event_subtype_desc**|**nvarchar (64)**|イベントのサブタイプの説明。<br /><br /> 使用可能な値の一覧については、「 [イベントの種類](../../relational-databases/system-catalog-views/sys-event-log-azure-sql-database.md#EventTypes) 」を参照してください。|  
-|**severity**|**int**|エラーの重大度。 次のいずれかの値になります。<br /><br /> 0 = 情報<br />1 = 警告<br />2 = エラー|  
+|**severity**|**int**|エラーの重大度。 指定できる値は次のとおりです。<br /><br /> 0 = 情報<br />1 = 警告<br />2 = エラー|  
 |**event_count**|**int**|指定された期間内に、指定されたデータベースでこのイベントが発生した回数 (**start_time** および **end_time**)。|  
 |**description**|**nvarchar(max)**|イベントの詳細な説明。<br /><br /> 使用可能な値の一覧については、「 [イベントの種類](../../relational-databases/system-catalog-views/sys-event-log-azure-sql-database.md#EventTypes) 」を参照してください。|  
-|**additional_data**|**XML**|*注: Azure SQL Database V12 では、この値は常に NULL です。V12 のデッドロックイベントを取得する方法については、「 [例](#Deadlock) 」を参照してください。*<br /><br /> **デッドロック**イベントの場合は、この列にデッドロックグラフが表示されます。 他の種類のイベントの場合、この列は NULL になります。 |  
+|**additional_data**|**XML**|*注: Azure SQL Database V12 では、この値は常に NULL です。V12 のデッドロックイベントを取得する方法については、「 [例](#Deadlock) 」を参照してください。*<br /><br /> **デッドロック** イベントの場合は、この列にデッドロックグラフが表示されます。 他の種類のイベントの場合、この列は NULL になります。 |  
   
 ##  <a name="event-types"></a><a name="EventTypes"></a> イベントの種類
 
  このビューの各行によって記録されるイベントは、カテゴリ (**event_category**)、イベントの種類 (**event_type**)、およびサブタイプ (**event_subtype**) によって識別されます。 次の表に、このビューで収集されるイベントの種類を示します。  
   
- **接続**カテゴリのイベントについては、[sys.database_connection_stats] ビューで概要情報を確認できます。  
+ **接続** カテゴリのイベントについては、[sys.database_connection_stats] ビューで概要情報を確認できます。  
   
 > [!NOTE]  
 > このビューには、発生する可能性のあるすべての [!INCLUDE[ssSDS](../../includes/sssds-md.md)] データベース イベントが表示されるわけではなく、この表に示されているイベントのみが表示されます。 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] の今後のリリースで他のカテゴリ、イベントの種類、およびサブタイプが報告対象として追加される可能性はあります。  
@@ -83,17 +83,17 @@ ms.locfileid: "91892402"
 |**できる**|**throttling_long_transaction**|40551|**excessive_tempdb_usage**|2|*注: Azure SQL Database V11 にのみ適用されます。*<br /><br /> TEMPDB の使用量が多すぎるため、セッションを終了しました。 クエリを変更して一時テーブルの使用領域を減らしてください。 詳細については、「 [リソースの制限](/previous-versions/azure/dn338081(v=azure.100))」を参照してください。|  
 |**できる**|**throttling_long_transaction**|40552|**excessive_log_space_usage**|2|*注: Azure SQL Database V11 にのみ適用されます。*<br /><br /> トランザクション ログの使用領域が多すぎるため、セッションを終了しました。 1 回のトランザクションで変更する行を減らしてください。 詳細については、「 [リソースの制限](/previous-versions/azure/dn338081(v=azure.100))」を参照してください。|  
 |**できる**|**throttling_long_transaction**|40553|**excessive_memory_usage**|2|*注: Azure SQL Database V11 にのみ適用されます。*<br /><br /> メモリの使用量が多すぎるため、セッションを終了しました。 クエリを変更して、処理する行を減らしてください。 詳細については、「 [リソースの制限](/previous-versions/azure/dn338081(v=azure.100))」を参照してください。|  
-|**双発**|**deadlock**|0|**deadlock**|2|デッドロックが発生しました。|  
+|**engine**|**deadlock**|0|**deadlock**|2|デッドロックが発生しました。|  
   
 ## <a name="permissions"></a>アクセス許可
 
- **Master**データベースへのアクセス権限を持つユーザーには、このビューに対する読み取り専用アクセス権があります。  
+ **Master** データベースへのアクセス権限を持つユーザーには、このビューに対する読み取り専用アクセス権があります。  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
   
 ### <a name="event-aggregation"></a>イベント集計
 
- このビューのイベント情報は、5 分未満の間隔で収集および集計されます。 **Event_count**列は、特定の期間内に特定のデータベースに対して特定の**event_type**と**event_subtype**が発生した回数を表します。  
+ このビューのイベント情報は、5 分未満の間隔で収集および集計されます。 **Event_count** 列は、特定の期間内に特定のデータベースに対して特定の **event_type** と **event_subtype** が発生した回数を表します。  
   
 > [!NOTE]  
 > デッドロックなど、一部のイベントは集計されません。 これらのイベントの場合、 **event_count** は1と **start_time** になり、 **end_time** はイベントが発生した実際の UTC 日時と同じになります。  
@@ -105,7 +105,7 @@ ms.locfileid: "91892402"
 |`Database1`|`2012-02-05 11:00:00`|`2012-02-05 11:05:00`|`connectivity`|`connection_failed`|`4`|`login_failed_for_user`|`2`|`7`|`Login failed for user.`|`NULL`|  
   
 ### <a name="interval-start_time-and-end_time"></a>間隔の start_time と end_time  
- イベントが集計間隔に含まれるのは、イベントが*on* **start_time**の_後_、またはその後に発生してから、その間隔の**end_time** _前_です。 たとえば、`2012-10-30 19:25:00.0000000` に発生したイベントは、下に示す例では 2 つ目の間隔にのみ含まれます。  
+ イベントが集計間隔に含まれるのは、イベントが **start_time** の _後_、またはその後に発生してから、その間隔の **end_time** _前_ です。 たとえば、`2012-10-30 19:25:00.0000000` に発生したイベントは、下に示す例では 2 つ目の間隔にのみ含まれます。  
   
 ```
 start_time                    end_time  

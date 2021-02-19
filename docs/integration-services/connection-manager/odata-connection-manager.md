@@ -14,12 +14,12 @@ f1_keywords:
 - sql13.dts.designer.odataconnectionmanager.f1
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 68b556070ef8714bc793a333b2a7e6c5d392d882
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 7d02fbd8a7029a794b933053bec5f676646eced1
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91719818"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100338422"
 ---
 # <a name="odata-connection-manager"></a>OData 接続マネージャー
 
@@ -87,7 +87,7 @@ Microsoft Dynamics AX Online または Microsoft Dynamics CRM Online に接続�
 -   **Microsoft Dynamics CRM Online** (Dynamics CRM Online の場合)
 -   **Microsoft Online Services** (Microsoft Online Services の場合)
 
-Windows 認証以外のオプションを選択する場合は、**ユーザー名**と**パスワード**を入力します。 
+Windows 認証以外のオプションを選択する場合は、**ユーザー名** と **パスワード** を入力します。 
 
 Microsoft Dynamics AX Online または Microsoft Dynamics CRM Online に接続する場合、**[Microsoft Online Services]** 認証オプションを使用することはできません。 また、多要素認証に構成されているオプションを使用することもできません。
 

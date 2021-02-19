@@ -5,18 +5,18 @@ ms.custom: ''
 ms.date: 06/03/2020
 ms.prod: sql
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 ms.assetid: 96bc8255-a037-4907-aec4-1a9c30814651
 author: jovanpop-msft
 ms.author: jovanpop
-ms.reviewer: jroth
-monikerRange: = azuresqldb-current||= azure-sqldw-latest||>= sql-server-2016||>= sql-server-linux-2017||= sqlallproducts-allversions
-ms.openlocfilehash: 35d34b47dbb1c1f8879656895c8b7e3429f95de0
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.reviewer: chadam
+monikerRange: = azuresqldb-current||= azure-sqldw-latest||>= sql-server-2016||>= sql-server-linux-2017
+ms.openlocfilehash: 121c84fb00abaaec2466813fe161f928713200fd
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88364258"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "100338006"
 ---
 # <a name="json_modify-transact-sql"></a>JSON_MODIFY (Transact-SQL)
 
@@ -37,7 +37,7 @@ JSON_MODIFY ( expression , path , newValue )
  *式 (expression)*  
  式。 通常、変数または JSON テキストを含む列の名前。  
   
- *式*に有効な JSON が含まれていない場合、**JSON_MODIFY** エラーが返されます。  
+ *式* に有効な JSON が含まれていない場合、**JSON_MODIFY** エラーが返されます。  
   
  *path*  
  更新するプロパティを指定する JSON path 式。
@@ -58,7 +58,7 @@ JSON_MODIFY ( expression , path , newValue )
 - *\<json path>*  
     更新するプロパティのパスを指定します。 詳細については、「[JSON パス式 &#40;SQL Server&#41;](../../relational-databases/json/json-path-expressions-sql-server.md)」を参照してください。  
   
-[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] と [!INCLUDE[ssSDSfull_md](../../includes/sssdsfull-md.md)] では、*path* の値として変数を指定できます。
+[!INCLUDE [sssql17-md](../../includes/sssql17-md.md)] と [!INCLUDE[ssSDSfull_md](../../includes/sssdsfull-md.md)] では、*path* の値として変数を指定できます。
 
 *path* の書式が有効でない場合、**JSON_MODIFY** はエラーを返します。  
   

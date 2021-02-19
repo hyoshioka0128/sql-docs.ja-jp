@@ -7,18 +7,18 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 11/09/2018
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - RDS API reference [ADO]
 ms.assetid: ca9fa99e-1a9f-4deb-80d4-6942555fb22a
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: eb25bfb3a6536c5af5fb9801f617f0e9d4a653f1
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: e8a412db78c760f377530f6aa9dbf809e4fd3437
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91724428"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100049272"
 ---
 # <a name="rds-api-reference"></a>RDS の API リファレンス
 > [!IMPORTANT]

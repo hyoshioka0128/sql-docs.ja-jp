@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: 07a305b1-4110-42f0-b7aa-28a4e32e912a
 author: jaszymas
 ms.author: jaszymas
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: ed92a4bce43ec105992bfd41dbde825d72fc2a22
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 234f6233e2f6b024e6ad74a82f403e3df7db9a05
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91867605"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100340178"
 ---
 # <a name="overview-of-key-management-for-always-encrypted"></a>Always Encrypted のキー管理の概要
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -54,7 +54,7 @@ Always Encrypted キーを管理するユーザーには、セキュリティ管
 - **セキュリティ管理者** – 列暗号化キーと列マスター キーを生成し、列マスター キーを含むキー ストアを管理します。 これらのタスクを実行するには、セキュリティ管理者がキーとキー ストアにアクセスできる必要がありますが、データベースへのアクセスは必要ありません。
 - **DBA** - データベース内のキーに関するメタデータを管理します。 キー管理タスクを実行するには、DBA がデータベース内のキー メタデータを管理できる必要がありますが、キーまたは列マスター キーを保持しているキー ストアにアクセスする必要はありません。
 
-上記の役割を考慮すると、Always Encrypted のキー管理タスクを実行するには、 *役割の分離を使用する*場合と *役割の分離を使用しない*場合の 2 つの異なる方法があります。 組織のニーズに応じて、要件に最適なキー管理プロセスを選択できます。
+上記の役割を考慮すると、Always Encrypted のキー管理タスクを実行するには、 *役割の分離を使用する* 場合と *役割の分離を使用しない* 場合の 2 つの異なる方法があります。 組織のニーズに応じて、要件に最適なキー管理プロセスを選択できます。
 
 ## <a name="managing-keys-with-role-separation"></a>役割の分離を使用したキー管理
 役割の分離を使用して Always Encrypted キーを管理する場合、組織内の別々の人がセキュリティ管理者の役割と DBA の役割を担当します。 役割の分離を使用したキー管理プロセスには、キーまたは実際のキーを保持するキー ストアへのアクセス権はありません。また、セキュリティ管理者には機密データを含むデータベースへのアクセス権はありません。 組織内の DBA が機密データにアクセスできないようにすることが目的の場合は、役割の分離を使用してキーを管理することをお勧めします。 

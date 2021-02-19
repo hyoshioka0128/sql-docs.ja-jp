@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 1c38cd3b-e4f5-4754-b115-ef5e46d24ab9
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: c1eeb97d29525a7aa3a48b0c123f60776fc5e223
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 06062a16166ad2dea1891ea63e952b3955597063
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88988793"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100051223"
 ---
 # <a name="state-property-example-vc"></a>State プロパティの例 (VC++)
 この例では、非同期接続が開いており、非同期コマンドが実行中の場合に、 [State](./state-property-ado.md) プロパティを使用してメッセージを表示します。  

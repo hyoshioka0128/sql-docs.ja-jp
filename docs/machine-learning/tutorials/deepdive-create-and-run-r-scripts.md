@@ -8,13 +8,13 @@ ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 3d8b04d384d7ee5f846197ff3465b9c0914ca94c
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: bb362f078dd4fbebedf88dc41e997a5feb702f55
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92196316"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470643"
 ---
 # <a name="compute-summary-statistics-in-r-sql-server-and-revoscaler-tutorial"></a>R での概要統計情報の計算 (SQL Server および RevoScaleR チュートリアル)
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "92196316"
 
 R コードをリモートで実行する前に、リモート コンピューティング コンテキストを指定する必要があります。 *sqlCompute* パラメーターに指定されている [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] コンピューターで後続のすべての計算が行われます。
 
-コンピューティング コンテキストは、変更するまでアクティブな状態が維持されます。 ただし、リモート サーバー コンテキストで実行*できない* R スクリプトは自動的にローカルで実行されます。
+コンピューティング コンテキストは、変更するまでアクティブな状態が維持されます。 ただし、リモート サーバー コンテキストで実行 *できない* R スクリプトは自動的にローカルで実行されます。
 
 コンピューティング コンテキストがどのように動作するかを確認するには、リモート SQL Server で sqlFraudDS データ ソースに関する概要の統計情報を生成します。 このデータ ソース オブジェクトは[チュートリアル 2](deepdive-create-sql-server-data-objects-using-rxsqlserverdata.md) で作成され、RevoDeepDive データベースの ccFraudSmall テーブルを表しています。 
 

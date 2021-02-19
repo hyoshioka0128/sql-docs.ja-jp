@@ -1,11 +1,11 @@
 ---
 description: sys.dm_database_copies (Azure SQL データベース)
-title: dm_database_copies (Azure SQL Database) |Microsoft Docs
+title: sys.dm_database_copies (Azure SQL Database) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.service: sql-database
 ms.reviewer: ''
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - dm_database_copies_TSQL
 - sys.dm_database_copies
@@ -17,22 +17,22 @@ helpviewer_keywords:
 - dm_database_copies
 - sys.dm_database_copies
 ms.assetid: d03d4657-86d1-4496-97e6-cc3bc292e0b1
-author: markingmyname
-ms.author: maghan
-monikerRange: = azuresqldb-current || = sqlallproducts-allversions
-ms.openlocfilehash: 178fda9bb96fc84acd1527f172c6a6728a1ec22e
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: = azuresqldb-current
+ms.openlocfilehash: a9a6e570b6c535620152f49947b4d4e289a6ff2a
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89543927"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99195097"
 ---
 # <a name="sysdm_database_copies-azure-sql-database"></a>sys.dm_database_copies (Azure SQL データベース)
-[!INCLUDE[Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/asdb-asdbmi.md)]
+[!INCLUDE[Azure SQL Database](../../includes/applies-to-version/asdb.md)]
 
   データベースのコピーに関する情報を返します。  
   
-Geo レプリケーションリンクに関する情報を取得するには、 [geo_replication_links](../../relational-databases/system-dynamic-management-views/sys-geo-replication-links-azure-sql-database.md) または [dm_geo_replication_link_status](../../relational-databases/system-dynamic-management-views/sys-dm-geo-replication-link-status-azure-sql-database.md) ビュー (SQL Database V12 で利用可能) を使用します。
+Geo レプリケーションリンクに関する情報を取得するには、 [sys.geo_replication_links](../../relational-databases/system-dynamic-management-views/sys-geo-replication-links-azure-sql-database.md) ビューまたは [sys.dm_geo_replication_link_status](../../relational-databases/system-dynamic-management-views/sys-dm-geo-replication-link-status-azure-sql-database.md) ビュー (SQL Database V12 で利用可能) を使用します。
   
   
 |列名|データ型|説明|  
@@ -59,7 +59,7 @@ Geo レプリケーションリンクに関する情報を取得するには、 
 ## <a name="permissions"></a>アクセス許可  
  このビューは、サーバーレベルプリンシパルログインの **master** データベースでのみ使用できます。  
   
-## <a name="remarks"></a>解説  
- ソースサーバーまたはターゲットサーバーの**master**データベースでは、 **sys. dm_database_copies**ビューを使用でき [!INCLUDE[ssSDS](../../includes/sssds-md.md)] ます。 データベースのコピーが正常に完了し、新しいデータベースがオンラインになると、 **dm_database_copies** ビューの行が自動的に削除されます。  
+## <a name="remarks"></a>コメント  
+ ソースサーバーまたはターゲットサーバーの **master** データベースの **sys.dm_database_copies** ビューを使用でき [!INCLUDE[ssSDS](../../includes/sssds-md.md)] ます。 データベースのコピーが正常に完了し、新しいデータベースがオンラインになると、 **sys.dm_database_copies** ビューの行が自動的に削除されます。  
   
   

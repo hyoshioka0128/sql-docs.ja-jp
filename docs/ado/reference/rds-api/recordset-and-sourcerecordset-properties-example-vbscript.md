@@ -7,7 +7,7 @@ ms.date: 01/19/2017
 ms.reviewer: ''
 ms.prod: sql
 ms.prod_service: connectivity
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 95175316-cd10-4cf7-96ba-2a226fd97701
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: a6784ba51ce7b57a9682cb573bd035f7bd102e3a
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 9e6a47a9c4d47be07523d9fc92da056a4cf4c280
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91724309"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100052963"
 ---
 # <a name="recordset-and-sourcerecordset-properties-example-vbscript"></a>Recordset と SourceRecordset プロパティの例 (VBScript)
 > [!IMPORTANT]
@@ -29,7 +29,7 @@ ms.locfileid: "91724309"
   
  次の例は、実行時に [RDSServer](./datafactory-object-rdsserver.md) の既定のビジネスオブジェクトに必要なパラメーターを設定する方法を示しています。  
   
- この例をテストするには、 \<Body> \</Body> 通常の HTML ドキュメントのタグとタグの間でこのコードを**RecordsetVBS.asp**切り取って貼り付け、RecordsetVBS という名前を付けます。 ASP スクリプトによってサーバーが識別されます。  
+ この例をテストするには、 \<Body> \</Body> 通常の HTML ドキュメントのタグとタグの間でこのコードを切り取って貼り付け、RecordsetVBS という名前を付けます。 ASP スクリプトによってサーバーが識別されます。  
   
 ```  
 <!-- BeginRecordSetVBS -->  

@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 55bedd08-7440-4da4-b854-4ac9ef2fdedb
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 7860bf668bb1e01029c2c0b3edaa7441bcd6244e
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: ae18a3f56af436bf4c0530bdfadd6b9bdf91cd8e
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88988153"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100056337"
 ---
 # <a name="update-and-cancelupdate-methods-example-vb"></a>Update および CancelUpdate メソッドの例 (VB)
 この例では、 [更新](./update-method.md) メソッドと [CancelUpdate](./cancelupdate-method-ado.md) メソッドの組み合わせを示します。  
@@ -115,7 +115,7 @@ End Sub
 ' EndUpdateVB  
 ```  
   
- この例では、 [AddNew](./addnew-method-ado.md)メソッドと共に**Update**メソッドを使用します。  
+ この例では、 [AddNew](./addnew-method-ado.md)メソッドと共に **Update** メソッドを使用します。  
   
 ```  
 Attribute VB_Name = "Update"  

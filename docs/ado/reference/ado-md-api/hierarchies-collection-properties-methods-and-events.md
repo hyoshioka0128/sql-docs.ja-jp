@@ -7,21 +7,21 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - Hierarchies collection [ADO MD], members
 ms.assetid: 326dc32a-30e5-4f91-85ab-84663db41279
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 8df4ae6792c6394f4905390cf2bbdac6bd53e942
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 92dbd86c72c994c933e4a07c23e34c5f3937a565
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88986663"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100054607"
 ---
 # <a name="hierarchies-collection-properties-methods-and-events"></a>Hierarchies コレクションのプロパティ、メソッド、およびイベント
-## <a name="properties"></a>プロパティ  
+## <a name="properties"></a>Properties  
  [Count プロパティ](../ado-api/count-property-ado.md)  
   
  [Item プロパティ](../ado-api/item-property-ado.md)  

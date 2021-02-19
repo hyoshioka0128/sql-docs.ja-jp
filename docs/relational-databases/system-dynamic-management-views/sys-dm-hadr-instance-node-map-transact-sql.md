@@ -1,12 +1,12 @@
 ---
-description: dm_hadr_instance_node_map (Transact-sql)
-title: dm_hadr_instance_node_map (Transact-sql) |Microsoft Docs
+description: sys.dm_hadr_instance_node_map (Transact-sql)
+title: sys.dm_hadr_instance_node_map (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.sys.dm_hadr_instance_node_map_TSQL
 - sys.sys.dm_hadr_instance_node_map
@@ -19,16 +19,16 @@ helpviewer_keywords:
 - Availability Groups [SQL Server], WSFC
 - sys.sys.dm_hadr_instance_node_map dynamic management view
 ms.assetid: ccfaf62c-9f87-43cf-a5e7-8942e91dd041
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 08d928613751650b4943604aa6caed52ccc26b85
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 1a95ad5a8dbd95d185df27aace94f26d5859d648
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89548493"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100347612"
 ---
-# <a name="sysdm_hadr_instance_node_map-transact-sql"></a>dm_hadr_instance_node_map (Transact-sql)
+# <a name="sysdm_hadr_instance_node_map-transact-sql"></a>sys.dm_hadr_instance_node_map (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   Always On 可用性グループに参加している可用性レプリカをホストするのすべてのインスタンスについて [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 、は、サーバーインスタンスをホストする Windows Server フェールオーバークラスター (WSFC) ノードの名前を返します。 この動的管理ビューには、次の用途があります。  

@@ -9,22 +9,22 @@ ms.date: 10/01/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 4d810220e0bd1148d4f572638c3ac67d4c3b44c0
-ms.sourcegitcommit: ae474d21db4f724523e419622ce79f611e956a22
+ms.openlocfilehash: 9d9b74b3d0f3822152927197b71d77731a5c775c
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92257243"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100047446"
 ---
-# <a name="what-is-the-storage-pool-big-data-clusters-2019"></a>記憶域プールとは ([!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)])
+# <a name="what-is-the-storage-pool-in-a-sql-server-big-data-cluster"></a>SQL Server ビッグ データ クラスターにおける記憶域プールとは
 
 [!INCLUDE[SQL Server 2019](../includes/applies-to-version/sqlserver2019.md)]
 
-この記事では、[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ver15.md)] (BDC) での *SQL Server 記憶域プール*の役割について説明します。 以下のセクションでは、SQL 記憶域プールのアーキテクチャと機能について説明します。
+この記事では、SQL Server ビッグ データ クラスターでの "*SQL Server 記憶域プール*" の役割について説明します。 以下のセクションでは、記憶域プールのアーキテクチャと機能について説明します。
 
 ## <a name="storage-pool-architecture"></a>記憶域プールのアーキテクチャ
 
-記憶域プールは、SQL Server BDC エコシステムでのローカル HDFS (Hadoop) クラスターです。 非構造化および半構造化データ用の永続的ストレージを提供します。 記憶域プールには、Parquet や区切りテキストなどのデータ ファイルを格納できます。 記憶域を永続化するために、プール内の各ポッドには永続ボリュームがアタッチされています。 記憶域プール ファイルには、SQL Server を通して [PolyBase](../relational-databases/polybase/polybase-guide.md) 経由でアクセスすることも、Apache Knox ゲートウェイを使用して直接アクセスすることもできます。
+記憶域プールは、SQL Server ビッグ データ クラスター内のローカル HDFS (Hadoop) クラスターです。 非構造化および半構造化データ用の永続的ストレージを提供します。 記憶域プールには、Parquet や区切りテキストなどのデータ ファイルを格納できます。 記憶域を永続化するために、プール内の各ポッドには永続ボリュームがアタッチされています。 記憶域プール ファイルには、SQL Server を通して [PolyBase](../relational-databases/polybase/polybase-guide.md) 経由でアクセスすることも、Apache Knox ゲートウェイを使用して直接アクセスすることもできます。
 
 クラシック HDFS セットアップは、記憶域が接続されている一連の汎用ハードウェア コンピューターで構成されています。 フォールト トレランスを実現し、並列処理を活用するために、データは複数のノード間にブロック単位で分散されます。 クラスターに含まれるノードの中の 1 つは名前ノードとして機能し、そこにはデータ ノードに配置されているファイルに関するメタデータ情報が格納されます。
 

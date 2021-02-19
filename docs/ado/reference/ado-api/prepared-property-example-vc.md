@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f697ac1a-f125-42b5-bbf6-762a7fa30ae3
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: fb8f0b2b269e872f8a40cbdce11388895ec5f927
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: c439bde9ef6ee225354a1a3064ac730b4768c526
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88990023"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100040982"
 ---
 # <a name="prepared-property-example-vc"></a>Prepared プロパティの例 (VC++)
 次の例では、2つの[コマンド](./command-object-ado.md)オブジェクトを開いて、準備さ[れたプロパティ](./prepared-property-ado.md)を示しています。1つは準備されています。  

@@ -15,22 +15,22 @@ helpviewer_keywords:
 ms.assetid: 69024aad-eeea-4187-8fea-b49bc2359849
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: f336e026d95db0de5ad40a9fb4ebc90d8165f609
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 648766b45290fce3b954265b854c5bbd2fb0602c
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85998995"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100351290"
 ---
 # <a name="xml-format-files-sql-server"></a>XML フォーマット ファイル (SQL Server)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
-  [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] には、 *のテーブルにデータを一括インポートする目的で使用する* XML フォーマット ファイル [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] を記述するための構文を定義した XML スキーマが用意されています。 このスキーマは XML Schema Definition Language (XSDL) で定義されています。XML フォーマット ファイルはこのスキーマに準拠している必要があります。 XML フォーマット ファイルは [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ツールが [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client と共にインストールされている場合のみサポートされます。  
+  [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] には、 *のテーブルにデータを一括インポートする目的で使用する* XML フォーマット ファイル [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] を記述するための構文を定義した XML スキーマが用意されています。 このスキーマは XML Schema Definition Language (XSDL) で定義されています。XML フォーマット ファイルはこのスキーマに準拠している必要があります。 XML フォーマット ファイルは [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ツールが [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client と共にインストールされている場合のみサポートされます。  
   
  XML フォーマット ファイルは、**bcp** コマンド、BULK INSERT ステートメント、または INSERT ...SELECT \* FROM OPENROWSET(BULK...) ステートメントのいずれかを使用して実行します。 **bcp** コマンドを使用して、あるテーブルに対する XML フォーマット ファイルを自動的に生成できます。詳細については、「 [bcp Utility](../../tools/bcp-utility.md)」を参照してください。  
   
 > [!NOTE]  
->  一括エクスポートおよび一括インポート用に 2 種類のフォーマット ファイルがサポートされています。 *XML 以外のフォーマット ファイル* と *XML フォーマット ファイル*です。 XML フォーマット ファイルは XML 以外のフォーマット ファイルに比べ、柔軟かつ強力です。 XML 以外のフォーマット ファイルの詳細については、「 [XML 以外のフォーマット ファイル &#40;SQL Server&#41;](../../relational-databases/import-export/non-xml-format-files-sql-server.md)」を参照してください。  
+>  一括エクスポートおよび一括インポート用に 2 種類のフォーマット ファイルがサポートされています。 *XML 以外のフォーマット ファイル* と *XML フォーマット ファイル* です。 XML フォーマット ファイルは XML 以外のフォーマット ファイルに比べ、柔軟かつ強力です。 XML 以外のフォーマット ファイルの詳細については、「 [XML 以外のフォーマット ファイル &#40;SQL Server&#41;](../../relational-databases/import-export/non-xml-format-files-sql-server.md)」を参照してください。  
   
  **このトピックの内容**  
   
@@ -291,7 +291,7 @@ ms.locfileid: "85998995"
   
 -   [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメント (BULK INSERT および OPENROWSET の一括行セット プロバイダー)  
   
-     テーブルにデータを一括インポートする際、[!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントでは、\<ROW> コンポーネントを使用して入力行セットが生成されます。 また、[!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントでは、\<ROW> で指定されている列の型とインポート先のテーブルの対応する列に基づいて、適切な型変換が実行されます。 フォーマット ファイルで指定されている列の型とインポート先のテーブルの列の型が一致しない場合、追加の型変換が実行されます。 この追加の型変換によって、 **bcp**コマンドと比べたときの BULK INSERT または OPENROWSET の一括行セット プロバイダーの動作に矛盾が生じる (精度が低下する) ことがあります。  
+     テーブルにデータを一括インポートする際、[!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントでは、\<ROW> コンポーネントを使用して入力行セットが生成されます。 また、[!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントでは、\<ROW> で指定されている列の型とインポート先のテーブルの対応する列に基づいて、適切な型変換が実行されます。 フォーマット ファイルで指定されている列の型とインポート先のテーブルの列の型が一致しない場合、追加の型変換が実行されます。 この追加の型変換によって、 **bcp** コマンドと比べたときの BULK INSERT または OPENROWSET の一括行セット プロバイダーの動作に矛盾が生じる (精度が低下する) ことがあります。  
   
      \<ROW> 要素の情報に基づいて行が構築されるので、追加の情報は必要ありません。 このため、SELECT ステートメント (SELECT \* FROM OPENROWSET(BULK *datafile* FORMATFILE=*xmlformatfile*) を使用して行セットを生成することができます。  
   

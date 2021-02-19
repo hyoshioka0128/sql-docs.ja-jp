@@ -8,13 +8,13 @@ ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 02b30a427865774a313b999c62376fd83aa4e632
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15'
+ms.openlocfilehash: aa5e3e9da0e13a9946ed0a2c985512a7e9452307
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92193634"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470073"
 ---
 # <a name="use-python-with-revoscalepy-to-create-a-model-that-runs-remotely-on-sql-server"></a>Python と revoscalepy を使用して、SQL Server でリモートで実行されるモデルを作成します
 [!INCLUDE [SQL Server 2017](../../includes/applies-to-version/sqlserver2017.md)]
@@ -54,7 +54,7 @@ SQL Server で Python コードを実行するには、**revoscalepy** パッケ
 
 このレッスンでは、SQL Server のデータを使用して、非常に大規模なデータセットに対する回帰をサポートする **revoscalepy** の関数である [rx_lin_mod](/machine-learning-server/python-reference/revoscalepy/rx-lin-mod) で線形モデルをトレーニングします。 
 
-このレッスンでは、設定方法の基本を説明し、その後 Python での **SQL Server コンピューティング コンテキスト**の使用についても説明します。 コンピューティング コンテキストが他のプラットフォームとどのように機能し、どのコンピューティング コンテキストがサポートされるかについては、「[Machine Learning Server でのスクリプト実行のコンピューティング コンテキスト](/machine-learning-server/r/concept-what-is-compute-context)」を参照してください。
+このレッスンでは、設定方法の基本を説明し、その後 Python での **SQL Server コンピューティング コンテキスト** の使用についても説明します。 コンピューティング コンテキストが他のプラットフォームとどのように機能し、どのコンピューティング コンテキストがサポートされるかについては、「[Machine Learning Server でのスクリプト実行のコンピューティング コンテキスト](/machine-learning-server/r/concept-what-is-compute-context)」を参照してください。
 
 
 ## <a name="run-the-sample-code"></a>サンプル コードを実行します。
@@ -64,8 +64,8 @@ SQL Server で Python コードを実行するには、**revoscalepy** パッケ
 このコードでは、次の手順を実行します。
 
 1. 必要なライブラリと関数をインポートします。
-2. SQL Server への接続を作成します。 データを操作するための**データソース** オブジェクトを作成します。
-3. ロジスティック回帰アルゴリズムで使用できるように**変換**を使用してデータを変更します。
+2. SQL Server への接続を作成します。 データを操作するための **データソース** オブジェクトを作成します。
+3. ロジスティック回帰アルゴリズムで使用できるように **変換** を使用してデータを変更します。
 4. `rx_lin_mod` を呼び出し、モデルに適合する数式を定義します。
 5. 元のデータに基づいて一連の予測を生成します。
 6. 予測値に基づいて概要を作成します。
@@ -125,13 +125,13 @@ def test_linmod_sql():
 
 ### <a name="defining-a-data-source-vs-defining-a-compute-context"></a>データ ソースの定義とコンピューティング コンテキストの定義
 
-データ ソースは、コンピューティング コンテキストとは異なります。 *データ ソース*は、コードで使用されるデータを定義します。 コンピューティング コンテキストは、コードが実行される場所を定義します。 ただし、同じ情報の一部を使用します。
+データ ソースは、コンピューティング コンテキストとは異なります。 *データ ソース* は、コードで使用されるデータを定義します。 コンピューティング コンテキストは、コードが実行される場所を定義します。 ただし、同じ情報の一部を使用します。
 
 + `sql_query` や `sql_connection_string` などの Python 変数は、データのソースと定義します。 
 
-    これらの変数を [RxSqlServerData](/r-server/python-reference/revoscalepy/rxsqlserverdata) コンストラクターに渡して、`data_source`という名前の**データソース オブジェクト**を実装します。
+    これらの変数を [RxSqlServerData](/r-server/python-reference/revoscalepy/rxsqlserverdata) コンストラクターに渡して、`data_source`という名前の **データソース オブジェクト** を実装します。
 
-+ [RxInSqlServer](/machine-learning-server/python-reference/revoscalepy/rxinsqlserver) コンストラクターを使用して**コンピューティング コンテキスト オブジェクト**を作成します。 結果として得られる**コンピューティング コンテキスト　オブジェクト**には、`sql_cc`という名前が付けられます。
++ [RxInSqlServer](/machine-learning-server/python-reference/revoscalepy/rxinsqlserver) コンストラクターを使用して **コンピューティング コンテキスト オブジェクト** を作成します。 結果として得られる **コンピューティング コンテキスト　オブジェクト** には、`sql_cc`という名前が付けられます。
 
     この例では、データ ソースで使用した同じ接続文字列を再利用します。これは、コンピューティング コンテキストとして使用するのと同じ SQL Server インスタンスにデータがあることを前提としています。 
     
@@ -139,7 +139,7 @@ def test_linmod_sql():
  
 ### <a name="changing-compute-contexts"></a>コンピューティング コンテキストの変更
 
-コンピューティング コンテキストを定義したら、**アクティブなコンピューティング コンテキスト**を設定する必要があります。 
+コンピューティング コンテキストを定義したら、**アクティブなコンピューティング コンテキスト** を設定する必要があります。 
 
 既定では、ほとんどの操作はローカルで実行されます。つまり、別のコンピューティング コンテキストを指定しない場合、データはデータ ソースからフェッチされ、コードは現在の Python 環境で実行されます。
 

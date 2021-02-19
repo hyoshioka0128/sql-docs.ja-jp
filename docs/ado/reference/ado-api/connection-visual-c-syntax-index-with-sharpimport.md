@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 dev_langs:
 - C++
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 03f47eda-840d-4cab-83d9-ccddd873f342
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 8f8a96dd49164f2a67c803a71e54f592674a895d
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 4c16776194a09682e1e772b70f522cb2948c5cab
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88974863"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100034732"
 ---
 # <a name="connection-visual-c-syntax-index-with-import"></a>Connection (Visual C++ 構文インデックス #import)
 ## <a name="methods"></a>メソッド  

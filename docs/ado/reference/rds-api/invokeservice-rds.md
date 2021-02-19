@@ -7,19 +7,19 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 helpviewer_keywords:
 - InvokeService [RDS]
 ms.assetid: ad45c676-ec7e-4a3a-9a6b-a54f75eb3012
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 8d3dc0ca3744f715f080e5e34a9d4cd5e88bc8b6
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 4fa32ebcb641623f9a9ceb30ad30d12a949ba84b
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91724493"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100053083"
 ---
 # <a name="invokeservice-rds"></a>InvokeService (RDS)
 サポートされているオブジェクトのバージョンで、要求されたインターフェイスへのポインターを返します。  
@@ -45,10 +45,10 @@ object.InvokeService(REFID riid, IUknown* punkNotSoFunctionalInterface, IUknown*
   
  *ppunkMoreFunctionalInterface*  
   
- 入出力 *Riid*で要求されたインターフェイスポインターを受け取るポインター変数のアドレス。 正常に返された場合、 *ppunkMoreFunctionalInterface* パラメーターには、オブジェクトへの要求されたインターフェイスポインターが格納されます。 オブジェクトが、 *riid*で指定されたインターフェイスをサポートしていない場合、 *ppunkMoreFunctionalInterface* は NULL に設定されます。  
+ 入出力 *Riid* で要求されたインターフェイスポインターを受け取るポインター変数のアドレス。 正常に返された場合、 *ppunkMoreFunctionalInterface* パラメーターには、オブジェクトへの要求されたインターフェイスポインターが格納されます。 オブジェクトが、 *riid* で指定されたインターフェイスをサポートしていない場合、 *ppunkMoreFunctionalInterface* は NULL に設定されます。  
   
 ## <a name="return-value"></a>戻り値  
- **InvokeService**メソッドの呼び出しが成功したかどうかを示す HRESULT 値。  
+ **InvokeService** メソッドの呼び出しが成功したかどうかを示す HRESULT 値。  
   
 ## <a name="remarks"></a>解説  
  RDS カーソルエンジンの **InvokeService** の実装では、入力行セット (または複数の結果オブジェクト) を取得し、入力行セットからカーソルエンジンを設定してから、ポインターをそれ自体に返します。  

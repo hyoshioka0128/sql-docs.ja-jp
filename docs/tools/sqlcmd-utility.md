@@ -27,13 +27,13 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 09/11/2020
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017'
-ms.openlocfilehash: ff7316307676c15f96579631bdf2dd6eb9612acc
-ms.sourcegitcommit: a5398f107599102af7c8cda815d8e5e9a367ce7e
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017'
+ms.openlocfilehash: 3a33f274b18e36859e697dd4c0a6bdb5c171930e
+ms.sourcegitcommit: 5dcbe4abbe2339292961370c1d8ca3affa625f72
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92005950"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99536399"
 ---
 # <a name="sqlcmd-utility"></a>sqlcmd ユーティリティ
 
@@ -46,7 +46,7 @@ ms.locfileid: "92005950"
  **sqlcmd** ユーティリティを使用すると、Transact-SQL ステートメントやシステム プロシージャ、スクリプト ファイルを使用可能なさまざまなモードで入力できます。
 
 - コマンド プロンプト。
-- **クエリ エディター**での SQLCMD モード。
+- **クエリ エディター** での SQLCMD モード。
 - Windows スクリプト ファイル。
 - SQL Server エージェント ジョブのオペレーティング システム (Cmd.exe) ジョブ ステップ。
 
@@ -57,7 +57,7 @@ ms.locfileid: "92005950"
 **[![x64 用 sqlcmd のダウンロード](../ssdt/media/download.png) Microsoft Command Line Utilities 15 for SQL Server (x64) (2.6 MB) のダウンロード](https://go.microsoft.com/fwlink/?linkid=2142258)**
 <br>**[![x86 用 sqlcmd のダウンロード](../ssdt/media/download.png) Microsoft Command Line Utilities 15 for SQL Server (x86) (2.3 MB) のダウンロード](https://go.microsoft.com/fwlink/?linkid=2142257)**
 
-コマンドライン ツールは一般提供 (GA) ですが、[!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] のインストーラー パッケージと共にリリースされています。
+コマンドライン ツールは一般提供 (GA) ですが、[!INCLUDE[sql-server-2019](../includes/sssql19-md.md)] のインストーラー パッケージと共にリリースされています。
 
 **バージョン情報**
 
@@ -70,7 +70,7 @@ ms.locfileid: "92005950"
 
 **システム要件** Windows 10、Windows 7、Windows 8、Windows 8.1、Windows Server 2008-2019。
 
-このコンポーネントには、[Windows インストーラー 4.5](https://www.microsoft.com/download/details.aspx?id=8483) と [Microsoft ODBC Driver for SQL Server 17](https://aka.ms/downloadmsodbcsql) の両方が必要です。
+このコンポーネントには、[Windows インストーラー 4.5](https://windows-installer.soft32.com/) と [Microsoft ODBC Driver for SQL Server 17](../connect/odbc/download-odbc-driver-for-sql-server.md) の両方が必要です。
  
 SQLCMD のバージョンを確認するには、`sqlcmd -?` コマンドを実行し、15.0.2000.5 以降のバージョンが使用されていることを確認します。
 
@@ -82,7 +82,7 @@ sqlcmd ユーティリティは既定でプレインストールされている�
 SSMS で sqlcmd ステートメントを実行するには、上部のナビゲーションの [クエリ] メニューのドロップダウン リストから SQLCMD モードを選択します。  
 
 > [!IMPORTANT]
-> [!INCLUDE[ssManStudioFull_md](../includes/ssmanstudiofull-md.md)] (SSMS) では、**クエリ エディター**の標準モードと SQLCMD モードでの実行に Microsoft [!INCLUDE[dnprdnshort_md](../includes/dnprdnshort-md.md)] SqlClient を使用します。 コマンド ラインから **sqlcmd** を実行する場合、**sqlcmd** では ODBC ドライバーが使用されます。 同じクエリでも、 [!INCLUDE[ssManStudioFull_md](../includes/ssmanstudiofull-md.md)] の SQLCMD モードで実行する場合と **sqlcmd** ユーティリティで実行する場合とでは、適用される既定のオプションが異なるので、動作も異なる可能性があります。  
+> [!INCLUDE[ssManStudioFull_md](../includes/ssmanstudiofull-md.md)] (SSMS) では、**クエリ エディター** の標準モードと SQLCMD モードでの実行に Microsoft [!INCLUDE[dnprdnshort_md](../includes/dnprdnshort-md.md)] SqlClient を使用します。 コマンド ラインから **sqlcmd** を実行する場合、**sqlcmd** では ODBC ドライバーが使用されます。 同じクエリでも、 [!INCLUDE[ssManStudioFull_md](../includes/ssmanstudiofull-md.md)] の SQLCMD モードで実行する場合と **sqlcmd** ユーティリティで実行する場合とでは、適用される既定のオプションが異なるので、動作も異なる可能性があります。  
 >
 
 現在、**sqlcmd** ではコマンドライン オプションと値の間に空白を入れる必要はありません。 ただし、将来のリリースでは、コマンドライン オプションと値の間に空白が必要になる可能性があります。  
@@ -180,7 +180,7 @@ sqlcmd
 
 > [!IMPORTANT]
 > `-G` オプションは、Azure SQL Database と Azure Data Warehouse にのみ適用されます。
-> 現在、AAD 対話型認証は、Linux または macOS 上でサポートされていません。 AAD 統合認証には、[Microsoft ODBC Driver 17 for SQL Server](https://aka.ms/downloadmsodbcsql) バージョン 17.6.1 以降と、適切に構成された Kerberos 環境が必要です。
+> 現在、AAD 対話型認証は、Linux または macOS 上でサポートされていません。 AAD 統合認証には、[Microsoft ODBC Driver 17 for SQL Server](../connect/odbc/download-odbc-driver-for-sql-server.md) バージョン 17.6.1 以降と、適切に構成された Kerberos 環境が必要です。
 
 - **Azure Active Directory のユーザー名とパスワード:** 
 
@@ -218,7 +218,7 @@ sqlcmd
 
     Azure SQL Database と Azure Synapse Analytics の Azure AD 対話型認証では、多要素認証をサポートする対話的な方法を使用できます。 詳細については、「[Azure Active Directory 対話型認証](../ssdt/azure-active-directory.md#active-directory-interactive-authentication)」を参照してください。 
 
-   Azure AD 対話型には、**sqlcmd** [バージョン 15.0.1000.34](#download-the-latest-version-of-sqlcmd-utility) 以降と [ODBC バージョン 17.2 以降](https://aka.ms/downloadmsodbcsql)が必要です。  
+   Azure AD 対話型には、**sqlcmd** [バージョン 15.0.1000.34](#download-the-latest-version-of-sqlcmd-utility) 以降と [ODBC バージョン 17.2 以降](../connect/odbc/download-odbc-driver-for-sql-server.md)が必要です。  
 
    対話型認証を有効にするには、-G オプションにパスワードを指定せず、ユーザー名 (-U) のみを指定します。
 
@@ -248,14 +248,14 @@ sqlcmd
   >SQLCMD で `-G` および `-U` オプションを使用する場合、既知の問題として、`-G` オプションの前に `-U` オプションを指定すると、認証が失敗する可能性があります。 常に `-G` オプションから始め、`-U` オプションがその後になるようにします。
 
 **-H** _workstation_name_  
- ワークステーション名です。 このオプションにより、 **sqlcmd** スクリプト変数 SQLCMDWORKSTATION が設定されます。 ワークステーション名は **sys.sysprocesses** カタログ ビューの **hostname** 列に一覧表示され、ストアド プロシージャ **sp_who**を使用して取得できます。 このオプションが指定されていない場合の既定値は、現在のコンピューター名になります。 この名前は、異なる 
+ ワークステーション名です。 このオプションにより、 **sqlcmd** スクリプト変数 SQLCMDWORKSTATION が設定されます。 ワークステーション名は **sys.sysprocesses** カタログ ビューの **hostname** 列に一覧表示され、ストアド プロシージャ **sp_who** を使用して取得できます。 このオプションが指定されていない場合の既定値は、現在のコンピューター名になります。 この名前は、異なる 
 
 **sqlcmd** セッションを識別する場合に使用できます。  
 
 **-j** 画面に生のエラー メッセージを出力します。
   
  **-K** _application_intent_  
- アプリケーションがサーバーに接続するときのワークロードのタイプを宣言します。 現在サポートされている値は、 **ReadOnly**だけです。 **-K** を指定しない場合、sqlcmd ユーティリティでは AlwaysOn 可用性グループのセカンダリ レプリカへの接続がサポートされません。 詳細については、「[アクティブなセカンダリ:読み取り可能なセカンダリ レプリカ (AlwaysOn 可用性グループ)](../database-engine/availability-groups/windows/active-secondaries-readable-secondary-replicas-always-on-availability-groups.md)  
+ アプリケーションがサーバーに接続するときのワークロードのタイプを宣言します。 現在サポートされている値は、 **ReadOnly** だけです。 **-K** を指定しない場合、sqlcmd ユーティリティでは AlwaysOn 可用性グループのセカンダリ レプリカへの接続がサポートされません。 詳細については、「[アクティブなセカンダリ:読み取り可能なセカンダリ レプリカ (AlwaysOn 可用性グループ)](../database-engine/availability-groups/windows/active-secondaries-readable-secondary-replicas-always-on-availability-groups.md)  
   
 **-M** _multisubnet_failover_  
  SQL Server 可用性グループまたは SQL Server フェールオーバー クラスター インスタンスの可用性グループ リスナーに接続する際には、必ず **-M** を指定してください。 **-M** を指定すると、(現在) アクティブなサーバーを迅速に検出して接続できます。 **-M** を指定しない場合、 **-M** は無効になります。 詳細については、「[リスナー、クライアント接続、アプリケーションのフェールオーバー](../database-engine/availability-groups/windows/listeners-client-connectivity-application-failover.md)」、「[可用性グループの作成と構成 &#40;SQL Server&#41;](../database-engine/availability-groups/windows/creation-and-configuration-of-availability-groups-sql-server.md)」、「[フェールオーバー クラスタリングと Always On 可用性グループ (SQL Server)](../database-engine/availability-groups/windows/failover-clustering-and-always-on-availability-groups-sql-server.md)」、「[アクティブなセカンダリ:読み取り可能なセカンダリ レプリカ (AlwaysOn 可用性グループ)](../database-engine/availability-groups/windows/active-secondaries-readable-secondary-replicas-always-on-availability-groups.md)。
@@ -270,7 +270,7 @@ sqlcmd
 
 強力なパスワードを使用することをお勧めします。
 
-#### <a name="use-a-strong-password"></a>[**強力なパスワードを使用してください。** ](../relational-databases/security/strong-passwords.md)
+#### <a name="use-a-strong-password"></a>[**強力なパスワードを使用してください。**](../relational-databases/security/strong-passwords.md)
 
  パスワード プロンプトは、次のようにパスワード プロンプトをコンソールに出力することによって表示されます。 `Password:`  
   
@@ -311,7 +311,7 @@ sqlcmd
 > [!NOTE]  
 >  OSQLUSER 環境変数は旧バージョンとの互換性を維持しています。 SQLCMDUSER 環境変数は OSQLUSER 環境変数よりも優先されます。 これにより、 **sqlcmd** と **osql** を競合することなく組み合わせて使用できます。 また、既存の **osql** スクリプトは引き続き実行することができます。  
   
- **-U** オプションも **-P** オプションも指定しないと、**sqlcmd** は Microsoft Windows 認証モードを使用して接続を試みます。 認証は **sqlcmd**を実行しているユーザーの Windows アカウントに基づきます。  
+ **-U** オプションも **-P** オプションも指定しないと、**sqlcmd** は Microsoft Windows 認証モードを使用して接続を試みます。 認証は **sqlcmd** を実行しているユーザーの Windows アカウントに基づきます。  
   
  **-U** オプションが **-E** オプション (この記事の後半で説明) と同時に使用されると、エラー メッセージが生成されます。 **-U** オプションの後に複数の引数があると、エラー メッセージが生成され、プログラムが終了します。  
   
@@ -357,7 +357,7 @@ sqlcmd
  このオプションは **-i**_input\_file_ **-I**_I input_file_ のように複数回使用できます。  
   
  **-o** _output_file_  
- **sqlcmd**からの出力を受信するファイルを指定します。  
+ **sqlcmd** からの出力を受信するファイルを指定します。  
   
  **-u** が指定されている場合は、 *output_file* は Unicode 形式で格納されます。 ファイル名が無効な場合は、エラー メッセージが生成され、 **sqlcmd** が終了します。 **sqlcmd** は、同じファイルに対する複数の **sqlcmd** プロセスの同時書き込みはサポートしていません。 出力ファイルが破損するか、または不適切なファイルになる可能性があります。 **-f** スイッチもファイル形式に関連します。 このファイルが存在しない場合は作成されます。 以前の **sqlcmd** セッションで同じ名前のファイルが作成されていた場合は、上書きされます。 ここで指定されるファイルは **stdout** ファイルではありません。 **stdout** ファイルが指定されると、このファイルは使用されません。  
   
@@ -371,13 +371,13 @@ sqlcmd
  空白を含むファイル パスは、引用符で囲む必要があります。  
   
  **-r**[**0** | **1**]  
- エラー メッセージ出力を画面にリダイレクトします (**stderr**)。 パラメーターを指定しない場合や、 **0**を指定した場合は、重大度レベル 11 以上のエラー メッセージだけがリダイレクトされます。 **1**を指定した場合は、PRINT を含むすべてのエラー メッセージ出力がリダイレクトされます。 -o を使用しても効果はありません。 既定では、メッセージは **stdout**に送られます。  
+ エラー メッセージ出力を画面にリダイレクトします (**stderr**)。 パラメーターを指定しない場合や、 **0** を指定した場合は、重大度レベル 11 以上のエラー メッセージだけがリダイレクトされます。 **1** を指定した場合は、PRINT を含むすべてのエラー メッセージ出力がリダイレクトされます。 -o を使用しても効果はありません。 既定では、メッセージは **stdout** に送られます。  
   
  **-R**  
  **sqlcmd** により、クライアントのロケールに基づいて SQL Server から取得された数値、通貨、日付、および時刻の各列がローカライズされます。 既定では、これらの列はサーバーの地域別設定を使用して表示されます。  
   
  **-u**  
- *input_file* の形式に関係なく、 *output_file*を Unicode 形式で格納するように指定します。  
+ *input_file* の形式に関係なく、 *output_file* を Unicode 形式で格納するように指定します。  
   
  **クエリ実行オプション**  
   **-e**  
@@ -401,7 +401,7 @@ sqlcmd
  このオプションと共に **-b** を指定すると、 **sqlcmd** はエラーで終了します。 **-b** オプションについては、この記事の後半で説明します。  
   
  **-Q "** _cmdline query_ **"**  
- **sqlcmd** の起動時にクエリを実行し、 **sqlcmd**を即時終了します。 セミコロンで区切られた複数のクエリを実行できます。  
+ **sqlcmd** の起動時にクエリを実行し、 **sqlcmd** を即時終了します。 セミコロンで区切られた複数のクエリを実行できます。  
   
  次の例で示すように、クエリを引用符で囲みます。  
   
@@ -417,13 +417,13 @@ sqlcmd
  このオプションと共に **-b** を指定すると、 **sqlcmd** はエラーで終了します。 **-b** オプションについては、この記事の後半で説明します。  
   
  **-t** _query_timeout_  
- コマンド (または SQL ステートメント) の実行待ち時間を秒単位で指定します。このオプションにより、 **sqlcmd** スクリプト変数 SQLCMDSTATTIMEOUT が設定されます。 *time_out* 値を指定しないと、コマンドはタイムアウトしません。*query**time_out* は、1 から 65,534 の数値にする必要があります。 指定した値が数値以外の場合、または範囲外の場合、 **sqlcmd** はエラー メッセージを生成します。  
+ コマンド (または SQL ステートメント) の実行待ち時間を秒単位で指定します。このオプションにより、 **sqlcmd** スクリプト変数 SQLCMDSTATTIMEOUT が設定されます。 *time_out* 値を指定しないと、コマンドはタイムアウトしません。*query* *time_out* は、1 から 65,534 の数値にする必要があります。 指定した値が数値以外の場合、または範囲外の場合、 **sqlcmd** はエラー メッセージを生成します。  
   
 > [!NOTE]  
 >  実際のタイムアウト値は、指定した *time_out* 値より数秒異なる場合があります。  
   
  **-vvar =**  _value_[ **var =** _value_...]  
- **sqlcmd**スクリプトで使用できる **sqlcmd** スクリプト変数を作成します。 値に空白が含まれる場合は、値を引用符で囲みます。 複数の _**var**_= **"** _values_ **"** の値を指定できます。 指定した値にエラーが生じた場合は、 **sqlcmd** は、エラー メッセージを生成してから終了します。  
+ **sqlcmd** スクリプトで使用できる **sqlcmd** スクリプト変数を作成します。 値に空白が含まれる場合は、値を引用符で囲みます。 複数の _**var**_= **"** _values_ **"** の値を指定できます。 指定した値にエラーが生じた場合は、 **sqlcmd** は、エラー メッセージを生成してから終了します。  
   
  `sqlcmd -v MyVar1=something MyVar2="some thing"`  
   
@@ -437,7 +437,7 @@ sqlcmd
  列ヘッダーの間に出力する行数を指定します。 既定では、各クエリの結果に対して、ヘッダーは 1 つだけ表示されます。 このオプションにより、 **sqlcmd** スクリプト変数 SQLCMDHEADERS が設定されます。 ヘッダーを出力しない場合は、 **-1** を指定します。 有効でない値があると、 **sqlcmd** はエラー メッセージを生成してから終了します。  
   
  **-k** [**1** | **2**]  
- タブ、改行文字などのすべての制御文字を出力から削除します。 このパラメーターにより、データが返されたときの列の形式が維持されます。 1 を指定した場合、制御文字は 1 つの空白に置き換えられます。 2 を指定すると、連続する制御文字が 1 つの空白に置き換えられます。 **-k** は **-k1**と同じです。  
+ タブ、改行文字などのすべての制御文字を出力から削除します。 このパラメーターにより、データが返されたときの列の形式が維持されます。 1 を指定した場合、制御文字は 1 つの空白に置き換えられます。 2 を指定すると、連続する制御文字が 1 つの空白に置き換えられます。 **-k** は **-k1** と同じです。  
   
  **-s** _col_separator_  
  列の区切り文字を指定します。 既定では、空白になっています。 このオプションにより、 **sqlcmd** スクリプト変数 SQLCMDCOLSEP が設定されます。 アンパサンド (&)、セミコロン (;) など、オペレーティング システムで特別な意味を持つ文字を使用する場合は、その文字を引用符 (") で囲みます。 列の区切り文字には、任意の 8 ビットの文字を指定できます。  
@@ -468,7 +468,7 @@ sqlcmd
 - **image**  
   
 > [!NOTE]  
->  UDT は実装によって固定長にもなります。 固定長の UDT の長さが *display_width*よりも短い場合は、返される UDT の値は影響を受けません。 ただし、 *display_width*よりも長い場合は、出力は切り捨てられます。  
+>  UDT は実装によって固定長にもなります。 固定長の UDT の長さが *display_width* よりも短い場合は、返される UDT の値は影響を受けません。 ただし、 *display_width* よりも長い場合は、出力は切り捨てられます。  
    
   
 > [!IMPORTANT]  
@@ -491,12 +491,12 @@ sqlcmd
   
  **エラー報告のオプション**  
   **-b**  
- エラーが発生したときに、 **sqlcmd** を終了し、DOS ERRORLEVEL 値を返します。 SQL Server のエラー メッセージの重大度が 10 よりも高い場合、DOS ERRORLEVEL 変数に返される値は **1** です。それ以外の場合は、**0** が返されます。 **-V** オプションが **-b**と共に設定されている場合、 **-V** . を使用して設定した値よりも重大度が低いときは、 **sqlcmd**はエラーを報告しません。 コマンド プロンプト バッチ ファイルにより ERRORLEVEL の値をテストすることができ、エラーを適切に処理できます。 **sqlcmd** は重大度レベル 10 (情報メッセージ) に対してはエラーを報告しません。  
+ エラーが発生したときに、 **sqlcmd** を終了し、DOS ERRORLEVEL 値を返します。 SQL Server のエラー メッセージの重大度が 10 よりも高い場合、DOS ERRORLEVEL 変数に返される値は **1** です。それ以外の場合は、**0** が返されます。 **-V** オプションが **-b** と共に設定されている場合、 **-V** . を使用して設定した値よりも重大度が低いときは、 **sqlcmd** はエラーを報告しません。 コマンド プロンプト バッチ ファイルにより ERRORLEVEL の値をテストすることができ、エラーを適切に処理できます。 **sqlcmd** は重大度レベル 10 (情報メッセージ) に対してはエラーを報告しません。  
   
  **sqlcmd** スクリプトに正しくないコメントや構文エラーが含まれている場合やスクリプト変数が不足している場合、返される ERRORLEVEL は 1 です。  
   
  **-m** _error_level_  
- **stdout**に送信されるエラー メッセージを制御します。 重大度レベルがこのレベル以上のメッセージが送信されます。 この値を **-1**に設定すると、情報メッセージを含めすべてのメッセージが送信されます。 **-m** と **-1**の間にスペースは使用できません。 たとえば、 **-m-1** は有効で、 **-m-1** は有効でありません。  
+ **stdout** に送信されるエラー メッセージを制御します。 重大度レベルがこのレベル以上のメッセージが送信されます。 この値を **-1** に設定すると、情報メッセージを含めすべてのメッセージが送信されます。 **-m** と **-1** の間にスペースは使用できません。 たとえば、 **-m-1** は有効で、 **-m-1** は有効でありません。  
   
  このオプションにより、 **sqlcmd** スクリプト変数 SQLCMDERRORLEVEL も設定されます。 この変数の既定値は 0 です。  
   
@@ -541,7 +541,7 @@ sqlcmd
   
  省略可能なパラメーター **1** を指定した場合は、統計の出力形式は、スプレッドシートへ容易にインポートできる、またはスクリプトによって処理できる、コロンで区切られた形式となります。  
   
- 省略可能なパラメーターが **1**以外の値の場合は、エラーが生成され、 **sqlcmd** は終了します。  
+ 省略可能なパラメーターが **1** 以外の値の場合は、エラーが生成され、 **sqlcmd** は終了します。  
   
  **-X** **[1]**  
  **sqlcmd** がバッチ ファイルから実行される場合に、システムのセキュリティを損なう可能性のあるコマンドを無効にします。 無効なコマンドも認識されます。 **sqlcmd** は警告メッセージを表示して継続します。 省略可能なパラメーターを **1** に指定すると、 **sqlcmd** はエラー メッセージを生成して終了します。 **-X** オプションを使用した場合に無効になるコマンドは次のとおりです。  
@@ -550,7 +550,7 @@ sqlcmd
   
 - **!!** _command_  
   
- **-X** オプションを指定すると、環境変数が **sqlcmd**に渡されなくなります。 また、SQLCMDINI スクリプト変数を使用して指定した、スタートアップ スクリプトも実行できなくなります。 **sqlcmd** スクリプト変数の詳細については、「 [sqlcmd でのスクリプト変数の使用](~/relational-databases/scripting/sqlcmd-use-with-scripting-variables.md)」を参照してください。  
+ **-X** オプションを指定すると、環境変数が **sqlcmd** に渡されなくなります。 また、SQLCMDINI スクリプト変数を使用して指定した、スタートアップ スクリプトも実行できなくなります。 **sqlcmd** スクリプト変数の詳細については、「 [sqlcmd でのスクリプト変数の使用](~/relational-databases/scripting/sqlcmd-use-with-scripting-variables.md)」を参照してください。  
   
  **-?**  
  **sqlcmd** のバージョンと **sqlcmd** オプションの構文の概要を表示します。  
@@ -574,7 +574,7 @@ sqlcmd
   
 2.  ユーザー レベル環境変数  
   
-3.  **sqlcmd** の実行前にコマンド プロンプトで行ったコマンド シェル ( **SET**X=Y) の設定  
+3.  **sqlcmd** の実行前にコマンド プロンプトで行ったコマンド シェル ( **SET** X=Y) の設定  
   
 4.  **sqlcmd-v** X=Y  
   
@@ -667,10 +667,10 @@ sqlcmd
   
 - **:Setvar** コマンドを明示的に使用します。  
   
-- **sqlcmd**の実行前に環境変数を定義します。  
+- **sqlcmd** の実行前に環境変数を定義します。  
   
 > [!NOTE]  
->  **-X** オプションを使用すると、環境変数が **sqlcmd**に渡されなくなります。  
+>  **-X** オプションを使用すると、環境変数が **sqlcmd** に渡されなくなります。  
   
  **:Setvar** を使って定義した変数と環境変数が同じ名前の場合は、 **:Setvar** を使用して定義した変数が優先されます。  
   
@@ -684,12 +684,12 @@ sqlcmd
  現在設定されているスクリプト変数の一覧を表示します。  
   
 > [!NOTE]  
->  **sqlcmd**によって設定されたスクリプト変数および **:Setvar** コマンドを使用して設定されたスクリプト変数のみが表示されます。  
+>  **sqlcmd** によって設定されたスクリプト変数および **:Setvar** コマンドを使用して設定されたスクリプト変数のみが表示されます。  
   
  **出力コマンド**  
   **:Error**   
  _**\<**_  _filename_  **_>|_ STDERR|STDOUT**  
- すべてのエラー出力を、 *file name*によって指定されたファイル、または **stderr** や **stdout**にリダイレクトします。 **Error** コマンドは、スクリプト内で複数回使用できます。 既定では、エラー出力は **stderr**に送られます。  
+ すべてのエラー出力を、 *file name* によって指定されたファイル、または **stderr** や **stdout** にリダイレクトします。 **Error** コマンドは、スクリプト内で複数回使用できます。 既定では、エラー出力は **stderr** に送られます。  
   
  *ファイル名*  
  出力を受信するファイルを作成して開きます。 ファイルが既に存在している場合は、ファイルは 0 バイトに切り詰められます。 権限またはその他の理由でファイルが使用できない場合は、出力は切り替えられず、最後に指定した出力先または既定の出力先に送信されます。  
@@ -701,10 +701,10 @@ sqlcmd
  エラー出力を **stdout** ストリームに切り替えます。 ストリームがリダイレクトされている場合は、ストリームがリダイレクトされた対象がエラー出力を受信します。  
   
  **:Out \<** _filename_ **>** | **STDERR**| **STDOUT**  
- すべてのクエリ結果を、 *file name*によって指定されたファイル、または **stderr** や **stdout**に作成してリダイレクトします。 既定では、出力は **stdout**に送られます。 ファイルが既に存在している場合は、ファイルは 0 バイトに切り詰められます。 **Out** コマンドは、スクリプト内で複数回使用できます。  
+ すべてのクエリ結果を、 *file name* によって指定されたファイル、または **stderr** や **stdout** に作成してリダイレクトします。 既定では、出力は **stdout** に送られます。 ファイルが既に存在している場合は、ファイルは 0 バイトに切り詰められます。 **Out** コマンドは、スクリプト内で複数回使用できます。  
   
  **:Perftrace \<** _filename_ **>** | **STDERR**| **STDOUT**  
- すべてのパフォーマンス トレース情報を、 *file name*によって指定されたファイル、または **stderr** や **stdout**に作成してリダイレクトします。 既定では、パフォーマンス トレース出力は **stdout**に送られます。 ファイルが既に存在している場合は、ファイルは 0 バイトに切り詰められます。 **Perftrace** コマンドは、スクリプト内で複数回使用できます。  
+ すべてのパフォーマンス トレース情報を、 *file name* によって指定されたファイル、または **stderr** や **stdout** に作成してリダイレクトします。 既定では、パフォーマンス トレース出力は **stdout** に送られます。 ファイルが既に存在している場合は、ファイルは 0 バイトに切り詰められます。 **Perftrace** コマンドは、スクリプト内で複数回使用できます。  
   
  **実行制御コマンド**  
   **:On Error**[ **exit** | **ignore**]  
@@ -718,7 +718,7 @@ sqlcmd
  **sqlcmd** が終了します。  
   
  **[:]** **EXIT**[ **(** _statement_ **)** ]  
- **sqlcmd**からの戻り値に、SELECT ステートメントの結果を使用できます。 数値の場合、結果行の最終行の第 1 列は、4 バイトの (長) 整数に変換されます。 MS-DOS、Linux、および Mac は、下位バイトを親プロセスやオペレーティング システムのエラー レベルに渡します。 Windows 200x では、4 バイトの整数全体を渡します。 の構文は次のとおりです。  
+ **sqlcmd** からの戻り値に、SELECT ステートメントの結果を使用できます。 数値の場合、結果行の最終行の第 1 列は、4 バイトの (長) 整数に変換されます。 MS-DOS、Linux、および Mac は、下位バイトを親プロセスやオペレーティング システムのエラー レベルに渡します。 Windows 200x では、4 バイトの整数全体を渡します。 の構文は次のとおりです。  
   
  `:EXIT(query)`  
   
@@ -774,7 +774,7 @@ sqlcmd
 > [!NOTE]  
 >  **\<** _filename_ **>** は、**sqlcmd** が実行されたスタートアップ ディレクトリと関連して読み取られます。  
   
- ファイルは、バッチ ターミネータが検出された後に読み取られ、実行されます。 **:r** コマンドは複数発行できます。 ファイルには、どのような **sqlcmd** コマンドでも含めることができます。 これには、バッチ ターミネータの **GO**も含まれます。  
+ ファイルは、バッチ ターミネータが検出された後に読み取られ、実行されます。 **:r** コマンドは複数発行できます。 ファイルには、どのような **sqlcmd** コマンドでも含めることができます。 これには、バッチ ターミネータの **GO** も含まれます。  
   
 > [!NOTE]  
 >  対話モードで表示される行数は、`:r` コマンドが検出されるたびに、1 行ずつ増えます。 `:r` コマンドは、リスト コマンドの出力に表示されます。  
@@ -854,7 +854,7 @@ Enter キーを押すと、次の情報メッセージが出力されます。"�
   
  この行の次には区切り行が出力されます。区切り行は、連続したダッシュ文字です。 次に出力の例を示します。  
   
- **sqlcmd**を開始します。 **sqlcmd** コマンド プロンプトで次のクエリを入力します。  
+ **sqlcmd** を開始します。 **sqlcmd** コマンド プロンプトで次のクエリを入力します。  
   
  `USE AdventureWorks2012;`  
   
@@ -917,13 +917,21 @@ sqlcmd -S Target_DB_or_DW.testsrv.database.windows.net -G -U bob@contoso.com -P 
 
 - 統合セキュリティを使用します。  
 
-- 自動化された環境では **-X** を使用します。  
+- 自動化された環境では **-X[1]** を使用します。
 
 - 適切な NTFS ファイル システム権限を使用して、入力ファイルと出力ファイルのセキュリティを保護します。
 
 - パフォーマンスを向上させるには、複数のセッションではなく、1 つの **sqlcmd** セッションの中で、できるだけ作業するようにします。
 
 - バッチまたはクエリ実行のタイムアウト値を、推定所要時間よりも長めに設定します。
+
+次の説明を参考にして、正確さを最大限に高めます。
+
+- **-V16** を使用して、[重大度 16 レベルのメッセージ](../relational-databases/errors-events/database-engine-error-severities.md#levels-of-severity)をログに記録します。  重大度 16 のメッセージは、ユーザーが訂正できる一般的なエラーを示します。
+
+- プロセスが終了した後、終了コードと DOS ERRORLEVEL 変数を確認します。  通常、**sqlcmd** からは 0 が返されます。それ以外の場合は、 **-V** によって構成された ERRORLEVEL が設定されます。  つまり、ERRORLEVEL が SQL Server から報告されるエラー番号と同じ値であると想定しないでください。 エラー番号は、システム関数 [ **@@ERROR**](../t-sql/functions/error-transact-sql.md) に対応する SQL Server 固有の値です。  ERRORLEVEL は、(SQLCMD が) 終了した理由を示す SQLCMD 固有の値であり、その値はコマンド ライン引数 **-b** を指定することによって影響を受けます。
+
+終了コードおよび DOS ERRORLEVEL のチェックと組み合わせて **-V16** を使用すると、自動化された環境 (特に運用リリース前の品質ゲート) でエラーをキャッチできます。
 
 ## <a name="next-steps"></a>次のステップ
 

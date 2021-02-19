@@ -8,20 +8,20 @@ ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: e53accf27dbc3c573596c5ebaf1d83667480a34e
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 47864a26c3a5090543c842b45fb6f39ef9862380
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92196286"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470603"
 ---
 # <a name="create-sql-server-data-objects-using-rxsqlserverdata-sql-server-and-revoscaler-tutorial"></a>RxSqlServerData を使用した SQL Server のデータ オブジェクトを作成する (SQL Server および RevoScaleR チュートリアル)
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
 これは、SQL Server で [RevoScaleR 関数](/machine-learning-server/r-reference/revoscaler/revoscaler)を使用する方法についての [RevoScaleR チュートリアル シリーズ](deepdive-data-science-deep-dive-using-the-revoscaler-packages.md)のチュートリアル 2 です。
 
-このチュートリアルは、データベースの作成の続きであり、テーブルの追加とデータの読み込みについて説明します。 [チュートリアル 2 ](deepdive-work-with-sql-server-data-using-r.md)で、DBA がデータベースを作成してログインした場合、RStudio などの R IDE または **Rgui** などの組み込みツールを使用してテーブルを追加できます。
+このチュートリアルは、データベースの作成の続きであり、テーブルの追加とデータの読み込みについて説明します。 [チュートリアル 2](deepdive-work-with-sql-server-data-using-r.md)で、DBA がデータベースを作成してログインした場合、RStudio などの R IDE または **Rgui** などの組み込みツールを使用してテーブルを追加できます。
 
 R から、SQL Server に接続し、**RevoScaleR** 関数を使用して次のタスクを実行します。
 
@@ -55,7 +55,7 @@ R から、SQL Server に接続し、**RevoScaleR** 関数を使用して次の�
     sqlFraudTable <- "ccFraudSmall"
     ```
   
-    サーバー インスタンスとデータベースの名前は接続文字列の一部として既に指定されているので、2 つの変数を組み合わせると、新しいテーブルの*完全修飾*名は、*instance.database.schema.ccFraudSmall* となります。
+    サーバー インスタンスとデータベースの名前は接続文字列の一部として既に指定されているので、2 つの変数を組み合わせると、新しいテーブルの *完全修飾* 名は、*instance.database.schema.ccFraudSmall* となります。
   
 3.  必要に応じて、*rowsPerRead* を指定して、各バッチで読み込まれるデータ行の数を制御します。
   
@@ -81,13 +81,13 @@ R から、SQL Server に接続し、**RevoScaleR** 関数を使用して次の�
 
 同じ手順を使用し、スコアリング データを保持するテーブルを同じプロセスを使用して作成します。
 
-1. スコア付けで使用するテーブルの名前を格納するための新しい R 変数 *sqlScoreTable*を作成します。
+1. スコア付けで使用するテーブルの名前を格納するための新しい R 変数 *sqlScoreTable* を作成します。
   
     ```R
     sqlScoreTable <- "ccFraudScoreSmall"
     ```
   
-2. その変数を引数として **RxSqlServerData** 関数に渡して、2 つ目のデータ ソース オブジェクト *sqlScoreDS*を定義します。
+2. その変数を引数として **RxSqlServerData** 関数に渡して、2 つ目のデータ ソース オブジェクト *sqlScoreDS* を定義します。
   
     ```R
     sqlScoreDS <- RxSqlServerData(connectionString = sqlConnString,
@@ -159,7 +159,7 @@ R から、SQL Server に接続し、**RevoScaleR** 関数を使用して次の�
     ccScoreCsv <- file.path(rxGetOption("sampleDataDir"), "ccFraudScoreSmall.csv")
     ```
   
-2. **RxTextData** 関数を使用してデータを取得し、それを変数 *inTextData*に保存します。
+2. **RxTextData** 関数を使用してデータを取得し、それを変数 *inTextData* に保存します。
   
     ```R
     inTextData <- RxTextData(file = ccScoreCsv,      colClasses = c(
@@ -179,7 +179,7 @@ R から、SQL Server に接続し、**RevoScaleR** 関数を使用して次の�
   
     - *OutFile* 引数では、データを保存する、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 内のテーブルを指定します。
   
-    - テーブルが既に存在しているために*上書き*オプションを使用しない場合は、切り捨てなしで結果が挿入されます。
+    - テーブルが既に存在しているために *上書き* オプションを使用しない場合は、切り捨てなしで結果が挿入されます。
   
 ここでも、接続に成功した場合は、完了を示すメッセージと、テーブルへのデータ書き込みに要した時間が表示されます。
 

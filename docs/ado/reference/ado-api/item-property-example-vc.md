@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 05ae3f5a-a0c1-459d-aa7d-ed7f3b2ecd60
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 4359302bbd32d110ce55d073f155b74438586563
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: fdbecc77e8a86f2135c6b12fd9fbf6a4727c31cd
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88990733"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100041862"
 ---
 # <a name="item-property-example-vc"></a>Item プロパティの例 (VC++)
-この例では、 [Item](./item-property-ado.md) プロパティがコレクションのメンバーにアクセスする方法を示します。 この例では、パラメーター化されたコマンドを使用して、 ***Pubs***データベースの***Authors***テーブルを開きます。  
+この例では、 [Item](./item-property-ado.md) プロパティがコレクションのメンバーにアクセスする方法を示します。 この例では、パラメーター化されたコマンドを使用して、_ *_Pubs_** データベースの ***Authors** _ テーブルを開きます。  
   
  データベースに対して発行されたコマンドのパラメーターは、 [コマンド](./command-object-ado.md) オブジェクトの [Parameters](./parameters-collection-ado.md) コレクションからインデックスと名前によってアクセスされます。 返された [レコードセット](./recordset-object-ado.md) のフィールドは、そのオブジェクトの [fields](./fields-collection-ado.md) コレクションからインデックスと名前によってアクセスされます。  
   

@@ -7,13 +7,13 @@ ms.date: 07/14/2020
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
-monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 3d435340ec276de3dd2b08f340ecd49bb8c03787
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15'
+ms.openlocfilehash: 1fcaa82829b35926e2707dda792ac2c376241650
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956904"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470933"
 ---
 # <a name="revoscalepy-python-package-in-sql-server-machine-learning-services"></a>revoscalepy (SQL Server Machine Learning Services の Python パッケージ)
 [!INCLUDE [SQL Server 2017 and later](../../includes/applies-to-version/sqlserver2017.md)]
@@ -50,7 +50,7 @@ ms.locfileid: "91956904"
 
 ## <a name="1-data-source-and-compute"></a>1 - データ ソースと計算
 
-**revoscalepy** には、データ ソースを作成したり、場所、つまり、計算が実行される場所である*計算コンテキスト*を設定したりするための関数が含まれています。 SQL Server シナリオに関連する関数を次の表に示します。
+**revoscalepy** には、データ ソースを作成したり、場所、つまり、計算が実行される場所である *計算コンテキスト* を設定したりするための関数が含まれています。 SQL Server シナリオに関連する関数を次の表に示します。
 
 SQL Server と Python では、場合によっては異なるデータ型が使用されます。 SQL のデータ型と Python のデータ型の対応表が必要であれば、[Python と SQL のデータ型マッピング](python-libraries-and-data-types.md) ページを参照してください。
 

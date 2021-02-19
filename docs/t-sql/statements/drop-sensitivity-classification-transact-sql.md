@@ -5,7 +5,7 @@ ms.date: 03/25/2019
 ms.reviewer: ''
 ms.prod: sql
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 ms.custom: ''
 ms.author: giladm
 author: giladmit
@@ -24,13 +24,13 @@ helpviewer_keywords:
 - labels [SQL]
 - information types
 - data classification
-monikerRange: " >= sql-server-ver15 || = azuresqldb-current || = sqlallproducts-allversions"
-ms.openlocfilehash: 6b09e5e60bd7ac1d02f46d191fccd0e2142f8d75
-ms.sourcegitcommit: 610e3ebe21ac6575850a29641a32f275e71557e3
+monikerRange: " >= sql-server-ver15 || = azuresqldb-current"
+ms.openlocfilehash: 4c1eef43401cd55ef7983e620d3d2f73f221809c
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91784760"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100340945"
 ---
 # <a name="drop-sensitivity-classification-transact-sql"></a>DROP SENSITIVITY CLASSIFICATION (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
@@ -94,4 +94,4 @@ DROP SENSITIVITY CLASSIFICATION FROM
 
 [sys.sensitivity_classifications (Transact-SQL)](../../relational-databases/system-catalog-views/sys-sensitivity-classifications-transact-sql.md)
 
-[SQL Information Protection の概要](https://aka.ms/sqlip)
+[SQL Information Protection の概要](/azure/azure-sql/database/data-discovery-and-classification-overview)

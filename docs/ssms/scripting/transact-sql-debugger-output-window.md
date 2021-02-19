@@ -14,13 +14,13 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 12/04/2019
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 744120ac17992b75f63e510414cdfc79e4527a8b
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 6866f5720d6e3343a9019595280897b5a275d27c
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92036149"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100341012"
 ---
 # <a name="transact-sql-debugger---output-window"></a>Transact-SQL デバッガー - [出力] ウィンドウ
 
@@ -39,7 +39,7 @@ ms.locfileid: "92036149"
  出力ペインの一覧を表示します。 ユーザーに情報を配信するために **[出力]** ウィンドウで使用したツールに応じて、情報のペインの一部を使用できる場合があります。  
   
  **出力ペイン**  
- 選択されているペインの出力を **出力ペインの一覧**に表示します。  
+ 選択されているペインの出力を **出力ペインの一覧** に表示します。  
   
 ## <a name="see-also"></a>参照  
  [Transact-SQL デバッガー](./transact-sql-debugger.md)

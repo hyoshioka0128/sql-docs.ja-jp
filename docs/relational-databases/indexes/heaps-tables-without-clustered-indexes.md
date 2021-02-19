@@ -17,13 +17,13 @@ helpviewer_keywords:
 ms.assetid: df5c4dfb-d372-4d0f-859a-a2d2533ee0d7
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: ac59dabc8cba303ab0b4e8e8c63811772461d216
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: be2a84e21cc55340d675041cdd353dab887531c2
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88490970"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97465293"
 ---
 # <a name="heaps-tables-without-clustered-indexes"></a>ヒープ (クラスター化インデックスなしのテーブル)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -54,7 +54,7 @@ ms.locfileid: "88490970"
   
  指定した順序でテーブル全体のコンテンツを返す必要がない場合を除いて、非クラスター化インデックスがなく、テーブルが大きい場合はヒープを使用しないでください。 ヒープでは、特定の行を探すためにヒープのすべての行を読み取る必要があります。  
  
- データが頻繁に更新される場合は、ヒープを使用しないでください。 レコードを更新し、その更新によって、使用されるデータ ページ内の領域が現在よりも増える場合、十分な空き領域があるデータ ページにレコードを移動する必要があります。 これにより、データの新しい場所を指す**転送レコード**が作成され、以前にそのデータを保持していたページに、新しい物理的な場所を示す**転送ポインター**を書き込む必要があります。 これは、ヒープの断片化を招きます。 ヒープをスキャンするときは、これらのポインターをたどる必要があります。このため、先読みパフォーマンスが制限され、追加の I/O 発生して、スキャンのパフォーマンスが低下するおそれがあります。 
+ データが頻繁に更新される場合は、ヒープを使用しないでください。 レコードを更新し、その更新によって、使用されるデータ ページ内の領域が現在よりも増える場合、十分な空き領域があるデータ ページにレコードを移動する必要があります。 これにより、データの新しい場所を指す **転送レコード** が作成され、以前にそのデータを保持していたページに、新しい物理的な場所を示す **転送ポインター** を書き込む必要があります。 これは、ヒープの断片化を招きます。 ヒープをスキャンするときは、これらのポインターをたどる必要があります。このため、先読みパフォーマンスが制限され、追加の I/O 発生して、スキャンのパフォーマンスが低下するおそれがあります。 
   
 ## <a name="managing-heaps"></a>ヒープの管理  
  ヒープを作成するには、クラスター化インデックスのないテーブルを作成します。 既にテーブルにクラスター化インデックスが含まれている場合は、クラスター化インデックスを削除して、テーブルをヒープに戻します。  

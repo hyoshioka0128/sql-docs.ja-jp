@@ -5,18 +5,18 @@ ms.custom: seo-lt-2019
 ms.date: 08/30/2016
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: how-to
 ms.assetid: a47c5005-20e3-4880-945c-9f78d311af7a
-author: MashaMSFT
-ms.author: mathoma
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 1b5232854920083c685e426e0ca55eeb9a065c70
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+author: cawrites
+ms.author: chadam
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: b487792986ba1986ea1ba85212dad60f93e04c83
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91726503"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100343777"
 ---
 # <a name="how-to-cluster-the-dtc-service-for-an-always-on-availability-group"></a>Always On 可用性グループの DTC サービスをクラスター化する方法
 
@@ -35,7 +35,7 @@ ms.locfileid: "91726503"
 
 |タスク|リファレンス|  
 |-----------------|----------|  
-|共有記憶域ドライブ。|[Configuring the Shared-Storage Drive](https://msdn.microsoft.com/library/cc982358(v=bts.10).aspx)(共有記憶域ドライブの構成)。 ドライブ文字に **M**を使用することを検討します。|
+|共有記憶域ドライブ。|[Configuring the Shared-Storage Drive](https://msdn.microsoft.com/library/cc982358(v=bts.10).aspx)(共有記憶域ドライブの構成)。 ドライブ文字に **M** を使用することを検討します。|
 |固有の DTC ネットワーク名リソース。  名前は、Active Directory にクラスター コンピューター オブジェクトとして登録されます。<br /><br />次のいずれかが満たされていることを確認します。<br /><br />• DTC ネットワーク名リソースを作成するユーザーに、DTC ネットワーク名リソースが保存される OU またはコンテナーに対するコンピューター オブジェクト作成アクセス許可があること。<br /><br />•  ユーザーにコンピューター オブジェクトの作成アクセス許可がない場合は、DTC ネットワーク名リソース用のクラスター コンピューター オブジェクトの用意をドメイン管理者に依頼します。|[Active Directory ドメイン サービスでクラスター コンピューター オブジェクトをプレステージする](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn466519(v=ws.11))|
 |使用可能な有効な静的 IP アドレスとその IP アドレスの適切なサブネット マスク。||
 
@@ -48,7 +48,7 @@ ms.locfileid: "91726503"
 |タスク|リファレンス|  
 |-----------------|----------|  
 |クラスター化された DTC リソースへの安全なネットワーク アクセスを有効にします。|[MS DTC への安全なネットワーク アクセスを有効にする](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753620(v=ws.10))|
-|ローカル DTC サービスを停止して無効にします。|[サービスの開始方法を構成する](https://technet.microsoft.com/library/cc755249(v=ws.11).aspx)|
+|ローカル DTC サービスを停止して無効にします。|[サービスの開始方法を構成する](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755249(v=ws.11))|
 |可用性グループの各インスタンスの SQL Server サービスを停止して再開します。  必要に応じて可用性グループをフェールオーバーします。|[可用性グループの計画的な手動フェールオーバーの実行 (SQL Server)](../../../database-engine/availability-groups/windows/perform-a-planned-manual-failover-of-an-availability-group-sql-server.md)<br /><br />[データベース エンジン、SQL Server エージェント、SQL Server Browser サービスの開始、停止、一時停止、再開、および再起動](../../../database-engine/configure-windows/start-stop-pause-resume-restart-sql-server-services.md)|
 
 - サーバーが Windows Server 2012 R2 の場合、オペレーティング システムに [KB 3030373](https://support.microsoft.com/kb/3090973) が適用されている必要があります。

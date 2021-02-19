@@ -25,12 +25,12 @@ helpviewer_keywords:
 author: VanMSFT
 ms.author: vanto
 ms.reviewer: vanto
-ms.openlocfilehash: 6d3a6d83b14c401ca6fc7ff6c773ef9565662a0f
-ms.sourcegitcommit: 22102f25db5ccca39aebf96bc861c92f2367c77a
+ms.openlocfilehash: 299155fad92a34b79c7a1a7c0a4d1ad0f86111ea
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92115461"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100348166"
 ---
 # <a name="editions-and-supported-features-of-sql-server-2017-on-linux"></a>Linux 上の SQL Server 2017 のエディションとサポートされる機能
 
@@ -210,6 +210,7 @@ Developer Edition では引き続き、[SQL Server 分散再生](../tools/distri
 |平面データ型と測地データ型|はい|はい|はい|はい| 
 |高度な空間的なライブラリ|はい|はい|はい|はい|   
 |業界標準の空間データ形式のインポート/エクスポート|はい|はい|はい|はい|   
+
 ## <a name="unsupported-features--services"></a><a name="Unsupported"></a> サポートされていない機能とサービス
 
 次の機能とサービスは、SQL Server 2017 on Linux では利用できません。 これらの機能のサポートは、今後ますます使用可能になります。
@@ -225,6 +226,7 @@ Developer Edition では引き続き、[SQL Server 分散再生](../tools/distri
 | &nbsp; | Filetable、FILESTREAM |
 | &nbsp; | EXTERNAL_ACCESS 権限または UNSAFE 権限が設定された CLR アセンブリ |
 | &nbsp; | バッファー プール拡張 |
+| &nbsp; | URL へのバックアップ - ページ BLOB <sup>1</sup>|
 | **SQL Server エージェント** |  サブシステム: CmdExec、PowerShell、キュー リーダー、SSIS、SSAS、SSRS |
 | &nbsp; | 警告 |
 | &nbsp; | ログ リーダー エージェント (Log Reader Agent) |
@@ -241,6 +243,8 @@ Developer Edition では引き続き、[SQL Server 分散再生](../tools/distri
 | &nbsp; | Data Quality Services |
 | &nbsp; | マスター データ サービス |
   
+<sup>1</sup> URL へのバックアップは、[Shared Access Signature](../relational-databases/backup-restore/sql-server-backup-to-url.md#SAS) を使用して、ブロック BLOB に対してサポートされています。
+
 ## <a name="next-steps"></a>次のステップ
  [SQL Server 2019 の各エディションとサポートされる機能 - Windows](../sql-server/editions-and-components-of-sql-server-version-15.md)  
  [SQL Server 2017 の各エディションとサポートされる機能 - Windows](../sql-server/editions-and-components-of-sql-server-2017.md)  

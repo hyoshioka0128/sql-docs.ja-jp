@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - StreamTypeEnum
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 220fe51d-4889-4020-a099-2ec9c7485503
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: e3ad1fbf5a6b916e0a70d9b067addc1848c8ac9a
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: ca3cedb72c0fbde218c1c29972819c70551ee7ad
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88988453"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100056557"
 ---
 # <a name="streamtypeenum"></a>StreamTypeEnum
 [ストリーム](./stream-object-ado.md)オブジェクトに格納されているデータの型を指定します。  

@@ -22,13 +22,13 @@ ms.assetid: f7fbe155-5b68-4777-bc71-a47637471f32
 author: markingmyname
 ms.author: maghan
 ms.reviewer: ''
-monikerRange: = azuresqldb-mi-current || >= sql-server-2016 || = sqlallproducts-allversions
-ms.openlocfilehash: 6c9d22743c0559c7b766595b24bbfaf02e54f6d9
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+monikerRange: = azuresqldb-mi-current || >= sql-server-2016
+ms.openlocfilehash: 4618bcc2b35a258f24046b2d88ea407742e87b20
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92038839"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97477003"
 ---
 # <a name="monitor-and-respond-to-events"></a>イベントの監視と応答
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "92038839"
 > [!IMPORTANT]  
 > 現在、[Azure SQL Managed Instance](/azure/sql-database/sql-database-managed-instance) によって、すべてではありませんが、ほとんどの SQL Server エージェントの機能がサポートされています。 詳細については、[Azure SQL Managed Instance と SQL Server の T-SQL の相違点](/azure/sql-database/sql-database-managed-instance-transact-sql-information#sql-server-agent)に関するページを参照してください。
 
-[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントを使用して、 *からのメッセージ、特定のパフォーマンス条件、WMI (Windows Management Instrumentation) イベントなどの*イベント [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]を監視したり、イベントに自動的に応答したりできます。  
+[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントを使用して、 *からのメッセージ、特定のパフォーマンス条件、WMI (Windows Management Instrumentation) イベントなどの* イベント [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]を監視したり、イベントに自動的に応答したりできます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
 [警告](../../ssms/agent/alerts.md)  
@@ -49,7 +49,7 @@ ms.locfileid: "92038839"
 ジョブが失敗または成功したときに通知を送信するために [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントで使用できる、管理者の別名の作成について説明します。  
   
 ## <a name="about-monitoring-and-responding-to-events"></a>イベントの監視と応答について  
-イベントへの自動応答を *警告*と呼びます。 1 つ以上のイベントの警告を定義して、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントがイベントの発生に応答する方法を指定できます。 警告は、管理者に通知するか、ジョブを実行するか、またはその両方を行ってイベントに応答できます。 警告は、別のコンピューターの Microsoft Windows アプリケーション ログにイベントを転送することもできます。 たとえば、重大度レベル 19 のイベントが発生した場合に、オペレーターに直ちに通知されるように指定できます。 データベース管理者は警告を定義することにより、より効果的に [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]を監視および管理できます。  
+イベントへの自動応答を *警告* と呼びます。 1 つ以上のイベントの警告を定義して、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントがイベントの発生に応答する方法を指定できます。 警告は、管理者に通知するか、ジョブを実行するか、またはその両方を行ってイベントに応答できます。 警告は、別のコンピューターの Microsoft Windows アプリケーション ログにイベントを転送することもできます。 たとえば、重大度レベル 19 のイベントが発生した場合に、オペレーターに直ちに通知されるように指定できます。 データベース管理者は警告を定義することにより、より効果的に [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]を監視および管理できます。  
   
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントは、警告が定義されているイベントにのみ応答します。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェントでによってイベントを監視するために使用される方法は、イベントの種類によって異なります。  
   

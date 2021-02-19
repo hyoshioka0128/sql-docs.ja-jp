@@ -10,13 +10,13 @@ ms.date: 09/24/2018
 ms.topic: article
 ms.prod: sql
 ms.technology: linux
-monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: a945b716b6de0d4fcb61ccbfd296eded645243d4
-ms.sourcegitcommit: 610e3ebe21ac6575850a29641a32f275e71557e3
+monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15'
+ms.openlocfilehash: f51dd4ebdb3a797a54eb488e8d99c02017dc70e9
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91785029"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100346482"
 ---
 # <a name="configure-replication-with-non-default-ports-sql-server-linux"></a>既定以外のポートを使用してレプリケーションを構成する (SQL Server Linux)
 

@@ -1,5 +1,5 @@
 ---
-title: Backup to URL に関するベスト プラクティスとトラブルシューティング
+title: URL へのバックアップに関するベスト プラクティスとトラブルシューティング
 description: Azure BLOB ストレージとの間の SQL Server のバックアップと復元に関するベスト プラクティスとトラブルシューティングのヒントを学習します。
 ms.custom: seo-lt-2019
 ms.date: 12/17/2019
@@ -9,16 +9,16 @@ ms.reviewer: ''
 ms.technology: backup-restore
 ms.topic: conceptual
 ms.assetid: de676bea-cec7-479d-891a-39ac8b85664f
-author: MikeRayMSFT
-ms.author: mikeray
-ms.openlocfilehash: d1487a5c7a6c9343438c1a3f6d42fd49e425000b
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 6620e688dcd8094bbc5b27bfbb540a2e7d3b1585
+ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91809178"
+ms.lasthandoff: 02/13/2021
+ms.locfileid: "100348829"
 ---
-# <a name="sql-server-backup-to-url-best-practices-and-troubleshooting"></a>SQL Server Backup to URL に関するベスト プラクティスとトラブルシューティング
+# <a name="sql-server-back-up-to-url-best-practices-and-troubleshooting"></a>SQL Server の URL へのバックアップに関するベスト プラクティスとトラブルシューティング
 
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
 
@@ -35,7 +35,7 @@ ms.locfileid: "91809178"
   
 -   BLOB を誤って上書きしないように、各バックアップに一意なファイル名を付けることをお勧めします。  
   
--   コンテナーを作成する際は、アクセス レベルを **private**に設定し、必要な認証情報を指定できるユーザーまたはアカウントだけがコンテナー内の BLOB の読み取りや書き込みを実行できるようにすることをお勧めします。  
+-   コンテナーを作成する際は、アクセス レベルを **private** に設定し、必要な認証情報を指定できるユーザーまたはアカウントだけがコンテナー内の BLOB の読み取りや書き込みを実行できるようにすることをお勧めします。  
   
 -   Azure 仮想マシンで実行されている [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンス上の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースの場合、仮想マシンと同じリージョンのストレージ アカウントを使用して、リージョン間のデータ転送のコストがかからないようにします。 また、同じ地域を使用すると、バックアップ操作と復元操作で最適なパフォーマンスを得ることができます。  
   
@@ -44,6 +44,8 @@ ms.locfileid: "91809178"
 -   バックアップ中に `WITH COMPRESSION` オプションを使用すると、ストレージ コストとストレージのトランザクション コストを最小限に抑えることができます。 また、バックアップ プロセスが完了するまでにかかる時間を短縮することもできます。  
 
 - 「[SQL Server Backup to URL](./sql-server-backup-to-url.md)」で推奨されているように、`MAXTRANSFERSIZE` 引数と `BLOCKSIZE` 引数を設定します。
+
+- SQL Server は、使用されるストレージの冗長性の種類に依存しません。 ページ BLOB とブロック BLOB へのバックアップは、すべてのストレージ冗長性 (LRS\ZRS\GRS\RA-GRS\RA-GZRS\etc.) でサポートされています。
   
 ## <a name="handling-large-files"></a>大きなファイルの処理  
   
@@ -52,86 +54,130 @@ ms.locfileid: "91809178"
 -   「[バックアップの管理](#managing-backups-mb1)」セクションで推奨されているように `WITH COMPRESSION` オプションを使用することは、大きなファイルをバックアップするときに非常に重要です。  
   
 ## <a name="troubleshooting-backup-to-or-restore-from-url"></a>BACKUP TO URL または RESTORE FROM URL のトラブルシューティング  
- ここでは、Azure Blob Storage サービスへのバックアップまたは Azure Blob Storage サービスからの復元を実行するときに発生するエラーを簡単にトラブルシューティングする方法をいくつか示します。  
-  
- サポートされないオプションまたは制限事項によるエラーを回避するには、「 [Microsoft Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md) 」の記事で、制限事項の一覧および BACKUP コマンドと RESTORE コマンドのサポート情報を確認してください。  
-  
- **認証エラー:**  
-  
--   `WITH CREDENTIAL` は新しいオプションで、Azure Blob Storage サービスへのバックアップまたは Azure Blob Storage サービスからの復元に必要です。 資格情報に関連するエラーには、次のようなものがあります。  
-  
-     **BACKUP** コマンドまたは **RESTORE** コマンドで指定された資格情報が存在しません。 この問題を回避するには、資格情報が BACKUP ステートメントに存在しない場合に資格情報を作成する T-SQL ステートメントを含めることができます。 使用可能な例を次に示します。  
-  
-    ```sql  
-    IF NOT EXISTS  
-    (SELECT * FROM sys.credentials   
-    WHERE credential_identity = 'mycredential')  
-    CREATE CREDENTIAL <credential name> WITH IDENTITY = 'mystorageaccount'  
-    , SECRET = '<storage access key>' ;  
-    ```  
-  
--   資格情報は存在しますが、BACKUP コマンドの実行に使用されるログイン アカウントに資格情報へのアクセス権限がありません。 **Alter any credential** 権限がある ***db_backupoperator*** ロールのログイン アカウントを使用してください。  
-  
--   ストレージ アカウントの名前とキーの値を確認してください。 資格情報に格納されている情報は、バックアップ操作と復元操作で使用する Azure ストレージ アカウントのプロパティの値と一致する必要があります。  
-  
- **バックアップ エラー/障害:**  
-  
--   同じ BLOB への並列バックアップを実行すると、バックアップの 1 つが " **初期化に失敗しました** " エラーで失敗します。  
-  
--   ページ BLOB (`BACKUP... TO URL... WITH CREDENTIAL` など) を使用している場合は、次のエラー ログを使用して、バックアップ エラーのトラブルシューティングに役立ててください。  
-  
-    -   トレース フラグ 3051 を設定して、次の形式の特定のエラー ログへの記録を有効にします。  
-  
-        `BackupToUrl-\<instname>-\<dbname>-action-\<PID>.log` ここで `\<action>` は、次のいずれかです。  
-  
-        -   **DB (DB)**  
-        -   **FILELISTONLY**  
-        -   **LABELONLY**  
-        -   **HEADERONLY**  
-        -   **VERIFYONLY**  
-  
-    -   Windows イベント ログ (`SQLBackupToUrl` という名前のアプリケーション ログ) を確認することで情報を見つけることもできます。  
 
-    -   大規模なデータベースをバックアップする場合には、COMPRESSION、MAXTRANSFERSIZE、BLOCKSIZE、および複数の URL 引数を検討してください。  「[Backing up a VLDB to Azure Blob Storage](/archive/blogs/sqlcat/backing-up-a-vldb-to-azure-blob-storage)」(VLDB を Azure Blob Storage にバックアップする) を参照してください
+ここでは、Azure Blob Storage サービスへのバックアップまたは Azure Blob Storage サービスからの復元を実行するときに発生するエラーを簡単にトラブルシューティングする方法をいくつか示します。  
   
-        ```console
-        Msg 3202, Level 16, State 1, Line 1
-        Write on "https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_0.bak" failed: 1117(The request could not be performed because of an I/O device error.)
-        Msg 3013, Level 16, State 1, Line 1
-        BACKUP DATABASE is terminating abnormally.
-        ```
+サポートされないオプションまたは制限事項によるエラーを回避するには、「 [Microsoft Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md) 」の記事で、制限事項の一覧および BACKUP コマンドと RESTORE コマンドのサポート情報を確認してください。  
 
-        ```sql  
-        BACKUP DATABASE TestDb
-        TO URL = 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_0.bak',
-        URL = 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_1.bak',
-        URL = 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_2.bak'
-        WITH COMPRESSION, MAXTRANSFERSIZE = 4194304, BLOCKSIZE = 65536;  
-        ```  
+**初期化に失敗しました** 
 
--   圧縮されたバックアップから復元するときに、次のエラーが表示される場合があります。  
+同じ BLOB への並列バックアップを実行すると、バックアップの 1 つが " **初期化に失敗しました** " エラーで失敗します。 
+
+ページ BLOB (`BACKUP... TO URL... WITH CREDENTIAL` など) を使用している場合は、次のエラー ログを使用して、バックアップ エラーのトラブルシューティングに役立ててください。  
   
-    -   `SqlException 3284 occurred. Severity: 16 State: 5  
-        Message Filemark on device 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_0.bak' is not aligned.           Reissue the Restore statement with the same block size used to create the backupset: '65536' looks like a possible value.`  
+トレース フラグ 3051 を設定して、次の形式の特定のエラー ログへの記録を有効にします。  
   
-        このエラーを解決するには、**BLOCKSIZE = 65536** を指定した **RESTORE** ステートメントを再実行してください。  
+`BackupToUrl-\<instname>-\<dbname>-action-\<PID>.log` ここで `\<action>` は、次のいずれかです。  
   
--   アクティブなリースを保持している BLOB が原因でバックアップ中に発生するエラー:バックアップ処理に失敗すると、アクティブなリースを保持する BLOB が生成されます。  
+-   **DB (DB)**  
+-   **FILELISTONLY**  
+-   **LABELONLY**  
+-   **HEADERONLY**  
+-   **VERIFYONLY**  
   
-     BACKUP ステートメントが再実行されると、バックアップ操作が次のようなエラーで失敗することがあります。  
+Windows イベント ログ (`SQLBackupToUrl` という名前のアプリケーション ログ) を確認することで情報を見つけることもできます。  
+
+**I/O デバイス エラーのため、要求は実行されませんでした。**
+
+大規模なデータベースをバックアップする場合は、COMPRESSION、MAXTRANSFERSIZE、BLOCKSIZE、および複数の URL 引数を検討してください。  「[Backing up a VLDB to Azure Blob Storage](/archive/blogs/sqlcat/backing-up-a-vldb-to-azure-blob-storage)」(VLDB を Azure Blob Storage にバックアップする) を参照してください
+
+エラー: 
+
+```console
+Msg 3202, Level 16, State 1, Line 1
+Write on "https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_0.bak" failed: 
+1117(The request could not be performed because of an I/O device error.)
+Msg 3013, Level 16, State 1, Line 1
+BACKUP DATABASE is terminating abnormally.
+```
+
+解決の例: 
+
+```sql  
+BACKUP DATABASE TestDb
+TO URL = 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_0.bak',
+URL = 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_1.bak',
+URL = 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_2.bak'
+WITH COMPRESSION, MAXTRANSFERSIZE = 4194304, BLOCKSIZE = 65536;  
+```  
+
+**デバイスのメッセージ ファイルマークが揃っていません。**
+
+圧縮されたバックアップから復元するときに、次のエラーが表示される場合があります。  
   
-     `Backup to URL received an exception from the remote endpoint. Exception Message: The remote server returned an error: (412) There is currently a lease on the blob and no lease ID was specified in the request.`  
+```
+SqlException 3284 occurred. Severity: 16 State: 5  
+Message Filemark on device 'https://mystorage.blob.core.windows.net/mycontainer/TestDbBackupSetNumber2_0.bak' is not aligned.
+Reissue the Restore statement with the same block size used to create the backupset: '65536' looks like a possible value.  
+```
   
-     アクティブなリースを保持しているバックアップ BLOB ファイルに対して RESTORE ステートメントが実行されると、復元操作は次のようなエラーで失敗します。  
+このエラーを解決するには、**BLOCKSIZE = 65536** を指定した **RESTORE** ステートメントを再実行してください。  
   
-     `Exception Message: The remote server returned an error: (409) Conflict..`  
+**バックアップ処理に失敗すると、アクティブなリースを保持する BLOB が生成されます。**
+
+アクティブなリースを保持している BLOB が原因でバックアップ中に発生するエラー: `Failed backup activity can result in blobs with active leases.`  
+
+BACKUP ステートメントが再実行されると、バックアップ操作が次のようなエラーで失敗することがあります。  
+
+```
+Backup to URL received an exception from the remote endpoint. Exception Message: 
+The remote server returned an error: (412) There is currently a lease on the blob and no lease ID was specified in the request. 
+```
+
+アクティブなリースを保持しているバックアップ BLOB ファイルに対して RESTORE ステートメントが実行されると、復元操作は次のようなエラーで失敗します。  
   
-     このようなエラーが発生した場合は、BLOB ファイルを削除する必要があります。 このシナリオの詳細とこの問題の解決方法については、「 [Deleting Backup Blob Files with Active Leases](../../relational-databases/backup-restore/deleting-backup-blob-files-with-active-leases.md)」を参照してください。  
+`Exception Message: The remote server returned an error: (409) Conflict..`  
   
+このようなエラーが発生した場合は、BLOB ファイルを削除する必要があります。 このシナリオの詳細とこの問題の解決方法については、「 [Deleting Backup Blob Files with Active Leases](../../relational-databases/backup-restore/deleting-backup-blob-files-with-active-leases.md)」を参照してください。  
+
+**OS エラー 50:要求はサポートされていません**
+ 
+データベースをバックアップしているときに、次の理由によりエラー `Operating system error 50(The request is not supported)` が表示される場合があります。 
+
+   - 指定されたストレージ アカウントが General Purpose V1/V2 でない。
+   - SAS トークンが 128 文字を超えている。
+   - 資格情報が作成されたときに、SAS トークンの先頭に `?` 記号があった。 その場合は、削除してください。
+   - 現在の接続では、Storage Explorer または SQL Server Management Studio (SSMS) を使用して、現在のマシンからストレージ アカウントに接続できない。 
+   - SAS トークンに割り当てられたポリシーの有効期限が切れている。 Azure Storage Explorer を使用して新しいポリシーを作成し、そのポリシーを使用して新しい SAS トークンを作成するか、資格情報を変更して、もう一度バックアップを試行してください。 
+
+**認証エラー**
+  
+`WITH CREDENTIAL` は新しいオプションで、Azure Blob Storage サービスへのバックアップまたは Azure Blob Storage サービスからの復元に必要です。
+
+資格情報に関連するエラーには、`The credential specified in the **BACKUP** or **RESTORE** command does not exist. ` のようなものがあります。
+
+この問題を回避するには、資格情報が BACKUP ステートメントに存在しない場合に資格情報を作成する T-SQL ステートメントを含めることができます。 使用可能な例を次に示します。  
+
+  
+```sql  
+IF NOT EXISTS  
+(SELECT * FROM sys.credentials   
+WHERE credential_identity = 'mycredential')  
+CREATE CREDENTIAL <credential name> WITH IDENTITY = 'mystorageaccount'  
+, SECRET = '<storage access key>' ;  
+```  
+  
+資格情報は存在しますが、BACKUP コマンドの実行に使用されるログイン アカウントに資格情報へのアクセス権限がありません。 **_Alter any credential_** 権限がある **db_backupoperator** ロールのログイン アカウントを使用してください。  
+  
+ストレージ アカウントの名前とキーの値を確認してください。 資格情報に格納されている情報は、バックアップ操作と復元操作で使用する Azure ストレージ アカウントのプロパティの値と一致する必要があります。  
+  
+
+**400 (無効な要求) エラー**
+
+SQL Server 2012 を使用すると、次のようなバックアップの実行中にエラーが発生する場合があります。
+
+```
+Backup to URL received an exception from the remote endpoint. Exception Message: 
+The remote server returned an error: (400) Bad Request..
+```
+
+これは、Azure Storage アカウントでサポートされている TLS バージョンが原因で発生します。 サポートされている TLS バージョンを変更するか、[KB4017023](https://support.microsoft.com/en-us/topic/kb4017023-sql-server-2012-2014-or-2016-backup-to-microsoft-azure-blob-storage-service-url-isn-t-compatible-for-tls-1-2-e9ef6124-fc05-8128-86bc-f4f4f5ff2b78) に記載されている回避策を使用してください。
+
+
 ## <a name="proxy-errors"></a>プロキシ エラー  
  インターネットへのアクセスにプロキシ サーバーを使用している場合、以下の問題が発生することがあります。  
   
- **プロキシ サーバーによる接続数の設定:**  
+ **プロキシ サーバーによる接続調整**  
   
  プロキシ サーバーで、1 分あたりの接続数を制限する設定が使用されている場合があります。 Backup to URL プロセスはマルチスレッド プロセスであるため、この制限を超える可能性があります。 制限を超えた場合、プロキシ サーバーは接続を切断します。 この問題を解決するには、プロキシ設定を変更し、SQL Server がプロキシを使用しないようにします。 エラー ログに表示される可能性のある種類またはエラー メッセージの例を次に示します。  
   

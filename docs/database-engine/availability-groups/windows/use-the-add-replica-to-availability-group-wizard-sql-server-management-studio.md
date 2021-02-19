@@ -5,7 +5,7 @@ ms.custom: seo-lt-2019
 ms.date: 05/17/2016
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 f1_keywords:
 - sql13.swb.addreplicawizard.f1
@@ -13,18 +13,18 @@ helpviewer_keywords:
 - Availability Groups [SQL Server], availability replicas
 - Availability Groups [SQL Server], wizards
 ms.assetid: 60d962b6-2af4-4394-9190-61939a102bc0
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: 1df0c28e1d7919b1694802b2b5f024cf5e6dcf6f
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: e9180f809dd1300a0c5c6a4c5b5d429c6054adc4
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85880238"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100340450"
 ---
 # <a name="add-a-replica-to-your-always-on-availability-group-using-the-availability-group-wizard-in-sql-server-management"></a>SQL Server Management で可用性グループ ウィザードを使用し、Always On 可用性グループにレプリカを追加する
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
-  **可用性グループへのレプリカの追加ウィザード**を使用して、既存の Always On 可用性グループに新しいセカンダリ レプリカを追加できます。  
+  **可用性グループへのレプリカの追加ウィザード** を使用して、既存の Always On 可用性グループに新しいセカンダリ レプリカを追加できます。  
   
 > [!NOTE]  
 >  [!INCLUDE[tsql](../../../includes/tsql-md.md)] または PowerShell を使用して可用性グループにセカンダリ レプリカを追加する方法については、「[可用性グループへのセカンダリ レプリカの追加 &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/add-a-secondary-replica-to-an-availability-group-sql-server.md)」を参照してください。  

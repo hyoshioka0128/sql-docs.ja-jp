@@ -6,18 +6,19 @@ ms.technology: ssdt
 ms.topic: conceptual
 f1_keywords:
 - SQL.DATA.TOOLS.SQLEDITOR
+- sql.data.tools.sqleditor
 ms.assetid: fa78e2cf-3c64-49f5-93cc-a3d50b1e7d05
 author: markingmyname
 ms.author: maghan
 ms.reviewer: “”
 ms.custom: seo-lt-2019
 ms.date: 02/09/2017
-ms.openlocfilehash: b6a045900509fbf7aff58f477f079747e413bf0d
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+ms.openlocfilehash: 6edd17773c3624e181659962cd3c7a4e2b9f6d4b
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85883175"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100066837"
 ---
 # <a name="use-transact-sql-editor-to-edit-and-execute-scripts"></a>Transact-SQL エディターを使用したスクリプトの編集と実行
 
@@ -25,7 +26,7 @@ Transact\-SQL エディターには、スクリプトの編集およびデバッ
   
 データベースに接続していない状態で、そのデータベースに対するクエリを実行する場合にも、**[SQL]** -> **[Transact\-SQL エディター]** メニュー オプションの **[新しいクエリ接続]** ダイアログ ボックスを使用してデータベースに接続し、Transact\-SQL エディターを起動できます。  
   
-Transact\-SQL エディターには、Transact\-SQL スクリプトの記述および編集を実行できる場所として、メインの **T-SQL** ペインがあります。 TSQL エディターでは、IntelliSense がサポートされているほか、複雑なステートメントを読みやすくするために、構文のカラー コーディング機能も用意されています。 また、検索と置換、一括コメントアウト、フォントと色のカスタマイズ、および行番号表示の機能も使用できます。 エディター内のスクリプトを実行する対象のデータベースを変更することもできます。 詳細については、「[既存のデータベースを複製する方法](../ssdt/how-to-clone-an-existing-database.md)」を参照してください。 **結果**ペインには、クエリ結果がグリッドまたはテキストとして表示されます。 クエリ結果をファイルにリダイレクトすることもできます。 **メッセージ** ペインには、スクリプトの実行時に返されるエラー、警告、および情報メッセージが表示されます。 クライアント統計が有効化されていると、クエリ実行に関する情報がカテゴリ別に**統計**ペインに表示されます。 **実行プラン** ペインには、SQL Server によって選択されたデータ取得方法が表示され、特定のステートメントまたはクエリの実行コストが示されます。  
+Transact\-SQL エディターには、Transact\-SQL スクリプトの記述および編集を実行できる場所として、メインの **T-SQL** ペインがあります。 TSQL エディターでは、IntelliSense がサポートされているほか、複雑なステートメントを読みやすくするために、構文のカラー コーディング機能も用意されています。 また、検索と置換、一括コメントアウト、フォントと色のカスタマイズ、および行番号表示の機能も使用できます。 エディター内のスクリプトを実行する対象のデータベースを変更することもできます。 詳細については、「[既存のデータベースを複製する方法](../ssdt/how-to-clone-an-existing-database.md)」を参照してください。 **結果** ペインには、クエリ結果がグリッドまたはテキストとして表示されます。 クエリ結果をファイルにリダイレクトすることもできます。 **メッセージ** ペインには、スクリプトの実行時に返されるエラー、警告、および情報メッセージが表示されます。 クライアント統計が有効化されていると、クエリ実行に関する情報がカテゴリ別に **統計** ペインに表示されます。 **実行プラン** ペインには、SQL Server によって選択されたデータ取得方法が表示され、特定のステートメントまたはクエリの実行コストが示されます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
   

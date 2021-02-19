@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 dev_langs:
 - C++
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: e59d0687-1f5a-45c5-9d0a-c1f27079495d
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 9f28f07c53a9535d0a4698e668be8f0d4e40592c
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: f030bf01a0fbfc69911713466255f7335e434a04
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88988523"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100056597"
 ---
 # <a name="stream-visual-c-syntax-index-with-import"></a>Stream (Visual C++ 構文インデックス #import)
 ## <a name="methods"></a>メソッド  

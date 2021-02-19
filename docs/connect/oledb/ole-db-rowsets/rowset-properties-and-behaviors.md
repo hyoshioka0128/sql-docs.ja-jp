@@ -2,7 +2,7 @@
 title: 行セットのプロパティと動作 (OLE DB ドライバー)
 description: これらは OLE DB Driver for SQL Server 行セット プロパティです。プロパティ名と説明が含まれます。
 ms.custom: ''
-ms.date: 06/14/2018
+ms.date: 09/30/2020
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
@@ -15,19 +15,19 @@ helpviewer_keywords:
 - OLE DB rowsets, properties
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: b5d42db2a329290f13917b754a89232e30ae52ed
-ms.sourcegitcommit: c95f3ef5734dec753de09e07752a5d15884125e2
+ms.openlocfilehash: ff19eb334fceba0b49a88fd1f812ad5b320c762f
+ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88859999"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96504741"
 ---
 # <a name="rowset-properties-and-behaviors"></a>行セットのプロパティと動作
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
 [!INCLUDE[Driver_OLEDB_Download](../../../includes/driver_oledb_download.md)]
 
-  これらは、OLE DB Driver for SQL Server の行セットのプロパティです。  
+  OLE DB Driver for SQL Server の行セットのプロパティを次に示します。
   
 |プロパティ ID|説明|  
 |-----------------|-----------------|  
@@ -40,7 +40,7 @@ ms.locfileid: "88859999"
 |DBPROP_BOOKMARKTYPE|R/W:読み取り専用<br /><br /> 既定値はDBPROPVAL_BMK_NUMERIC<br /><br /> 説明:OLE DB Driver for SQL Server では、数値のブックマークのみ実装されています。 OLE DB Driver for SQL Server のブックマークは、32 ビットの符号なし整数で、DBTYPE_UI4 型です。|  
 |DBPROP_CACHEDEFERRED|この行セット プロパティは、OLE DB Driver for SQL Server では実装されていません。 このプロパティ値の読み取りまたは書き込みを行うと、エラーが発生します。|  
 |DBPROP_CANFETCHBACKWARDS DBPROP_CANSCROLLBACKWARDS|R/W:読み取り/書き込み<br /><br /> 既定値はVARIANT_FALSE<br /><br /> 説明:OLE DB Driver for SQL Server では、シーケンシャルではない行セットで逆方向のフェッチと逆方向のスクロールがサポートされます。 OLE DB Driver for SQL Server は、DBPROP_CANFETCHBACKWARDS と DBPROP_CANSCROLLBACKWARDS のいずれかが VARIANT_TRUE のとき、カーソル対応の行セットを作成します。 詳細については、「[行セットと SQL Server カーソル](../../oledb/ole-db-rowsets/rowsets-and-sql-server-cursors.md)」を参照してください。|  
-|DBPROP_CANHOLDROWS|R/W:読み取り/書き込み<br /><br /> 既定値はVARIANT_FALSE<br /><br /> 説明:行セット内に現在ある行に保留中の変更が存在する場合、コンシューマーがその行セットの行をさらに取得しようとすると、既定では、OLE DB Driver for SQL Server により DB_E_ROWSNOTRELEASED が返されます。 この動作は変更できます。<br /><br /> DBPROP_CANHOLDROWS と DBPROP_IRowsetChange の両方が VARIANT_TRUE の場合は、ブックマークが設定された行セットになります。 この 2 つのプロパティが VARIANT_TRUE の場合、行セットでは **IRowsetLocate** インターフェイスを使用でき、DBPROP_BOOKMARKS と DBPROP_LITERALBOOKMARKS の両方が VARIANT_TRUE になります。<br /><br /> ブックマークを含む OLE DB Driver for SQL Server の行セットは、[!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] カーソルによりサポートされます。|  
+|DBPROP_CANHOLDROWS|R/W:読み取り/書き込み<br /><br /> 既定値はVARIANT_FALSE<br /><br /> 説明: 行セット内に現在ある行に保留中の変更が存在する場合、コンシューマーがその行セットの行をさらに取得しようとすると、既定では、OLE DB Driver for SQL Server により DB_E_ROWSNOTRELEASED が返されます。 この動作は変更できます。<br /><br /> DBPROP_CANHOLDROWS と DBPROP_IRowsetChange の両方が VARIANT_TRUE の場合は、ブックマークが設定された行セットになります。 この 2 つのプロパティが VARIANT_TRUE の場合、行セットでは **IRowsetLocate** インターフェイスを使用でき、DBPROP_BOOKMARKS と DBPROP_LITERALBOOKMARKS の両方が VARIANT_TRUE になります。<br /><br /> ブックマークを含む OLE DB Driver for SQL Server の行セットは、[!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] カーソルによりサポートされます。|  
 |DBPROP_CHANGEINSERTEDROWS|R/W:読み取り/書き込み<br /><br /> 既定値はVARIANT_FALSE<br /><br /> 説明:行セットがキーセット ドリブン カーソルを使用している場合、このプロパティには VARIANT_TRUE のみ設定できます。|  
 |DBPROP_COLUMNRESTRICT|R/W:読み取り専用<br /><br /> 既定値はVARIANT_FALSE<br /><br /> 説明:コンシューマーが行セット内の列を変更できないとき、OLE DB Driver for SQL Server により、このプロパティは VARIANT_TRUE に設定されます。 行セットの他の列は、更新可能にできます。また、行自体を削除することもできます。<br /><br /> このプロパティが VARIANT_TRUE の場合、コンシューマーは DBCOLUMNINFO 構造体の *dwFlags* メンバーを確認し、各列に値を書き込めるかどうかを判断します。 列が変更可能な場合は、*dwFlags* は DBCOLUMNFLAGS_WRITE です。|  
 |DBPROP_COMMANDTIMEOUT|R/W:読み取り/書き込み<br /><br /> 既定値は0<br /><br /> 説明:既定では、OLE DB Driver for SQL Server は **ICommand::Execute** メソッドでタイムアウトしません。|  
@@ -97,6 +97,7 @@ ms.locfileid: "88859999"
 |SSPROP_DEFERPREPARE|列:いいえ<br /><br /> R/W:読み取り/書き込み<br /><br /> 型: VT_BOOL<br /><br /> 既定値はVARIANT_TRUE<br /><br /> 説明:VARIANT_TRUE:準備実行では、**ICommand::Execute** が呼び出されるか、メタプロパティ操作が実行されるまで、コマンドの準備が遅延されます。 プロパティが次の値に設定されている場合は、ステートメントの準備が行われます。<br /><br /> VARIANT_FALSE:**ICommandPrepare::Prepare** が実行されたとき、ステートメントが準備されます。|  
 |SSPROP_IRowsetFastLoad|列:いいえ<br /><br /> R/W:読み取り/書き込み<br /><br /> 型: VT_BOOL<br /><br /> 既定値はVARIANT_FALSE<br /><br /> 説明:このプロパティを VARIANT_TRUE に設定すると、**IOpenRowset::OpenRowset** から行セットを高速に読み込んで開くことができます。 **ICommandProperties::SetProperties** でこのプロパティを設定することはできません。|  
 |SSPROP_ISSAsynchStatus|列:いいえ。<br /><br /> R/W:読み取り/書き込み<br /><br /> 型: VT_BOOL<br /><br /> 既定値はVARIANT_FALSE<br /><br /> 説明:このプロパティを VARIANT_TRUE に設定すると、[ISSAsynchStatus](../../oledb/ole-db-interfaces/issasynchstatus-ole-db.md) インターフェイスを使用した非同期操作を実行できます。|  
+|SSPROP_ISSDataClassification|R/W:読み取り/書き込み<br /><br />  型: VT_BOOL<br /><br /> 既定値はVARIANT_TRUE<br /><br /> 説明: OLE DB Driver for SQL Server では、[ISSDataClassification](../ole-db-interfaces/issdataclassification-ole-db.md) インターフェイスを使用した秘密度分類情報の取得がサポートされています。|  
 |SSPROP_MAXBLOBLENGTH|列:いいえ<br /><br /> R/W:読み取り/書き込み<br /><br /> 型: VT_I4<br /><br /> 既定値はこのプロバイダーでは、サーバーから返されるテキストのサイズを制限しません。プロパティ値は最大値に設定されます。 たとえば、2147483647 に設定されます。<br /><br /> 説明:OLE DB Driver for SQL Server では、SET TEXTSIZE ステートメントを実行して、SELECT ステートメントで返されるバイナリ ラージ オブジェクト (BLOB) データのサイズを制限します。|  
 |SSPROP_NOCOUNT_STATUS|列:NoCount<br /><br /> R/W:読み取り専用<br /><br /> 型: VT_BOOL<br /><br /> 既定値はVARIANT_FALSE<br /><br /> 説明:[!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] の SET NOCOUNT ON/OFF の状態を表すブール値です。<br /><br /> VARIANT_TRUE: SET NOCOUNT ON の場合<br /><br /> VARIANT_FALSE: SET NOCOUNT OFF の場合|  
 |SSPROP_QP_NOTIFICATION_MSGTEXT|列:いいえ<br /><br /> R/W:読み取り/書き込み<br /><br /> 型: VT_BSTR (許可される文字数: 1 から 2,000 文字)<br /><br /> 既定値は空の文字列<br /><br /> 説明:クエリ通知のメッセージ テキストです。 これはユーザーが定義するので、定義済みの書式はありません。|  

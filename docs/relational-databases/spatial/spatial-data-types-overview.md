@@ -15,13 +15,13 @@ helpviewer_keywords:
 ms.assetid: 1615db50-69de-4778-8be6-4e058c00ccd4
 author: MladjoA
 ms.author: mlandzic
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: a5eca8f5329c6d4727c622c78d7b66000ad50935
-ms.sourcegitcommit: a5398f107599102af7c8cda815d8e5e9a367ce7e
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 87ed2882d8276b3a92add3349b73bf38fe821dc9
+ms.sourcegitcommit: 10ae200635b9e8554e6bc6f658125e1a80d4d5ae
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92006214"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99589310"
 ---
 # <a name="spatial-data-types-overview"></a>空間データ型の概要
 
@@ -38,7 +38,7 @@ ms.locfileid: "92006214"
 
 ![geom_hierarchy](../../relational-databases/spatial/media/geom-hierarchy.png)
 
-geography データ型には、インスタンス化可能な型がもう 1 つあります: **FullGlobe**。 **geometry** 型および **geography** 型は、特定のインスタンスが適切な形式のインスタンスである限り、明示的に定義されていない場合でも、そのインスタンスを認識できます。 たとえば、STPointFromText() メソッドを使用して **Point** インスタンスを明示的に定義した場合、そのインスタンスは、メソッドの入力が適切な形式である限り、**geometry** と **geography** によって **Point**として認識されます。 `STGeomFromText()` メソッドを使用して同じインスタンスを定義した場合は、 **geometry** データ型と **geography** データ型の両方で **Point**として認識されます。  
+geography データ型には、インスタンス化可能な型がもう 1 つあります: **FullGlobe**。 **geometry** 型および **geography** 型は、特定のインスタンスが適切な形式のインスタンスである限り、明示的に定義されていない場合でも、そのインスタンスを認識できます。 たとえば、STPointFromText() メソッドを使用して **Point** インスタンスを明示的に定義した場合、そのインスタンスは、メソッドの入力が適切な形式である限り、**geometry** と **geography** によって **Point** として認識されます。 `STGeomFromText()` メソッドを使用して同じインスタンスを定義した場合は、 **geometry** データ型と **geography** データ型の両方で **Point** として認識されます。  
 
 geometry 型および geography 型のサブタイプには、単純型とコレクション型があります。  `STNumCurves()` などのメソッドは、単純型でのみ機能します。  
 
@@ -74,7 +74,7 @@ geometry 型の円弧セグメントは、XY デカルト座標平面上に定�
 
 平面 (平面地球) 座標系では、距離や面積の測定値は座標と同じ測定単位で表されます。 **geometry** データ型を使用した場合、(2, 2) と (5, 6) の間の距離は、使用されている単位に関係なく 5 単位になります。  
 
-楕円体 (球体地球) 座標系では、座標は緯度と経度で表されます。 ただし、長さと面積は、**geography** インスタンスの[空間参照系識別子](./spatial-reference-identifiers-srids.md)によっても異なりますが、通常はメートルと平方メートルで測定されます。 メートルは、 **geography** データ型の最も一般的な測定単位です。  
+楕円体 (球体地球) 座標系では、座標は緯度と経度で表されます。 ただし、長さと面積は、**geography** インスタンスの [空間参照系識別子](./spatial-reference-identifiers-srids.md)によっても異なりますが、通常はメートルと平方メートルで測定されます。 メートルは、 **geography** データ型の最も一般的な測定単位です。  
 
 ### <a name="orientation-of-spatial-data"></a>空間データの方向
 
@@ -84,15 +84,15 @@ geometry 型の円弧セグメントは、XY デカルト座標平面上に定�
 
 楕円体座標系でのポリゴンの内部は、"左手の法則" によって定義されています。geography のポリゴンのリングに沿って歩いていると想像する場合、点が一覧表示されている順序に従って、左側の領域がポリゴンの内部として扱われ、右側の領域がポリゴンの外部として扱われます。
 
-[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] で互換性レベルが 100 以下である場合、 **geography** データ型には次の制約があります。
+[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] で互換性レベルが 100 以下である場合、 **geography** データ型には次の制約があります。
 
 - 各 **geography** インスタンスが 1 つの半球に収まる必要があります。 半球よりも大きい空間オブジェクトを格納することはできません。
 
-- Open Geospatial Consortium (OGC) の Well-Known Text (WKT) 表現または Well-Known Binary (WKB) 表現の **geography** インスタンスでは、半球より大きいオブジェクトが生成される場合に **ArgumentException**がスローされます。  
+- Open Geospatial Consortium (OGC) の Well-Known Text (WKT) 表現または Well-Known Binary (WKB) 表現の **geography** インスタンスでは、半球より大きいオブジェクトが生成される場合に **ArgumentException** がスローされます。  
 
 - 2 つの **geography** インスタンスの入力を必要とする **geography** データ型のメソッド (STIntersection()、STUnion()、STDifference()、STSymDifference() など) では、メソッドの結果が 1 つの半球に収まらない場合に null が返されます。 STBuffer() でも、出力が 1 つの半球に収まらない場合に null が返されます。  
 
-[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]の **FullGlobe** は、球全体を覆う特殊な多角形です。 領域はありますが、境界や頂点はありません。  
+[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]の **FullGlobe** は、球全体を覆う特殊な多角形です。 領域はありますが、境界や頂点はありません。  
 
 ### <a name="outer-and-inner-rings-in-geography-data-type"></a>`geography` データ型の外部および内部のリング
 

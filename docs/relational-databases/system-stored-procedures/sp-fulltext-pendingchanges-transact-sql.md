@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sp_fulltext_pendingchanges_TSQL
 - sp_fulltext_pendingchanges
@@ -18,13 +18,13 @@ helpviewer_keywords:
 ms.assetid: fee042fe-4781-4a33-a01b-d98fb5629f1b
 author: markingmyname
 ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 6befa1abf7f427ab59c851fac9e51933ecc97bb7
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 44f62af1a650d824b1ccbfaec1d7fda1bf5c229d
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89538907"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99187964"
 ---
 # <a name="sp_fulltext_pendingchanges-transact-sql"></a>sp_fulltext_pendingchanges (Transact-sql)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -58,10 +58,10 @@ sp_fulltext_pendingchanges table_id
 ## <a name="permissions"></a>アクセス許可  
  **sysadmin** 固定サーバー ロールのメンバーシップが必要です。  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  未処理の変更がない場合、空の行セットが返されます。  
   
- フルテキスト検索クエリでは、 **Status** 値が0の行は返されません。 これは、行がベーステーブルから削除され、フルテキストインデックスから削除されるのを待機しているためです。  
+ Full-Text の検索クエリでは、 **Status** 値が0の行は返されません。 これは、行がベーステーブルから削除され、フルテキストインデックスから削除されるのを待機しているためです。  
   
  特定のテーブルに対して保留中の変更の数を確認するには、OBJECTPROPERTYEX 関数の **TableFullTextPendingChanges** プロパティを使用します。  
   

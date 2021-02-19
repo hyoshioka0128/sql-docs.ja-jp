@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - VERIFYONLY
 - RESTORE VERIFYONLY
@@ -23,13 +23,13 @@ helpviewer_keywords:
 ms.assetid: cba3b6a0-b48e-4c94-812b-5b3cbb408bd6
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: =azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017
-ms.openlocfilehash: d198e47b3faf8cb7efc81a4075d90407f75dfb59
-ms.sourcegitcommit: b93beb4f03aee2c1971909cb1d15f79cd479a35c
+monikerRange: =azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017
+ms.openlocfilehash: b76a49d34d0603d62ee7160bb2f4ef9c32d482a7
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91498024"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99237796"
 ---
 # <a name="restore-statements---verifyonly-transact-sql"></a>RESTORE ステートメント - VERIFYONLY (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md.md )]
@@ -110,7 +110,7 @@ FROM <backup_device> [ ,...n ]
 >  RESTORE VERIFYONLY は、データベース スナップショットでは動作しません。 元に戻す操作を行う前にデータベース スナップショットを確認するには、DBCC CHECKDB を実行してください。  
   
 > [!NOTE]  
->  スナップショットのバックアップでは、バックアップ ファイルで指定された場所にスナップショットが存在することが RESTORE VERIFYONLY によって確認されます。 スナップショット バックアップは、[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] の新機能です。 スナップショット バックアップの詳細については、「[Azure でのデータベース ファイルのスナップショット バックアップ](../../relational-databases/backup-restore/file-snapshot-backups-for-database-files-in-azure.md)」を参照してください。  
+>  スナップショットのバックアップでは、バックアップ ファイルで指定された場所にスナップショットが存在することが RESTORE VERIFYONLY によって確認されます。 スナップショット バックアップは、[!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] の新機能です。 スナップショット バックアップの詳細については、「[Azure でのデータベース ファイルのスナップショット バックアップ](../../relational-databases/backup-restore/file-snapshot-backups-for-database-files-in-azure.md)」を参照してください。  
   
 ## <a name="security"></a>セキュリティ  
  バックアップ操作では、オプションで、メディア セットとバックアップ セットにそれぞれパスワードを設定できます。 メディア セットまたはバックアップ セットにパスワードが設定されている場合は、RESTORE ステートメントで正しいパスワードを指定する必要があります。 これらのパスワードを設定しておくと、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ツールを使って不正に復元操作が行われたり、メディアにバックアップ セットが不正に追加されたりするのを防ぐことができます。 ただし、BACKUP ステートメントで FORMAT オプションが使用された場合、パスワードでメディアの上書きを防ぐことはできません。  

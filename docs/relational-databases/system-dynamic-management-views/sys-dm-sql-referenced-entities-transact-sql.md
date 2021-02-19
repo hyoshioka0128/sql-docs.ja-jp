@@ -1,13 +1,13 @@
 ---
 description: sys.dm_sql_referenced_entities (Transact-SQL)
-title: dm_sql_referenced_entities (Transact-sql) |Microsoft Docs
+title: sys.dm_sql_referenced_entities (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 05/01/2019
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - dm_sql_referenced_entities_TSQL
 - dm_sql_referenced_entities
@@ -18,21 +18,21 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_sql_referenced_entities dynamic management function
 ms.assetid: 077111cb-b860-4d61-916f-bac5d532912f
-author: markingmyname
-ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: de7e748e1e993d0e60bde500af1443707ee9020c
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 1ed4aebeaf422b47dd94531c5d0a8a491cf9490e
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550215"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99203334"
 ---
 # <a name="sysdm_sql_referenced_entities-transact-sql"></a>sys.dm_sql_referenced_entities (Transact-SQL)
 
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
-内の指定した参照元エンティティの定義で、名前によって参照されるユーザー定義エンティティごとに1行の値を返し [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。 2つのエンティティ間の依存関係は、 *参照先*エンティティと呼ばれる1つのユーザー定義エンティティが、参照 *元エンティティ*と呼ばれる別のユーザー定義エンティティの永続化された SQL 式に名前で表示されると作成されます。 たとえば、ストアドプロシージャが指定した参照元エンティティである場合、この関数は、テーブル、ビュー、ユーザー定義型 (Udt)、またはその他のストアドプロシージャなど、ストアドプロシージャで参照されているすべてのユーザー定義エンティティを返します。  
+内の指定した参照元エンティティの定義で、名前によって参照されるユーザー定義エンティティごとに1行の値を返し [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。 2つのエンティティ間の依存関係は、 *参照先* エンティティと呼ばれる1つのユーザー定義エンティティが、参照 *元エンティティ* と呼ばれる別のユーザー定義エンティティの永続化された SQL 式に名前で表示されると作成されます。 たとえば、ストアドプロシージャが指定した参照元エンティティである場合、この関数は、テーブル、ビュー、ユーザー定義型 (Udt)、またはその他のストアドプロシージャなど、ストアドプロシージャで参照されているすべてのユーザー定義エンティティを返します。  
   
  この動的管理関数を使用すると、指定した参照元エンティティによって参照される次の種類のエンティティについてレポートできます。  
   
@@ -66,10 +66,10 @@ sys.dm_sql_referenced_entities (
 ```  
   
 ## <a name="arguments"></a>引数  
- [ *schema_name*です。 ] *referencing_entity_name*  
- 参照元エンティティの名前です。 参照元のクラスが OBJECT の場合は*schema_name*が必要です。  
+ [ *schema_name* です。 ] *referencing_entity_name*  
+ 参照元エンティティの名前です。 参照元のクラスが OBJECT の場合は *schema_name* が必要です。  
   
- *schema_name。 referencing_entity_name* は **nvarchar (517)** です。  
+ *schema_name* は **nvarchar (517)** です。  
   
  *<referencing_class>* :: = {OBJECT |DATABASE_DDL_TRIGGER |SERVER_DDL_TRIGGER}  
  指定された参照元エンティティのクラスです。 ステートメントごとに1つのクラスのみを指定できます。  
@@ -91,7 +91,7 @@ sys.dm_sql_referenced_entities (
 |referenced_class|**tinyint**|参照先エンティティのクラス。<br /><br /> 1 = オブジェクトまたは列<br /><br /> 6 = 型<br /><br /> 10 = XML スキーマ コレクション<br /><br /> 21 = パーティション関数|  
 |referenced_class_desc|**nvarchar(60)**|参照先エンティティのクラスの説明です。<br /><br /> OBJECT_OR_COLUMN<br /><br /> TYPE<br /><br /> XML_SCHEMA_COLLECTION<br /><br /> PARTITION_FUNCTION|  
 |is_caller_dependent|**bit**|参照先エンティティのスキーマバインドが実行時に発生することを示します。そのため、エンティティ ID の解決は、呼び出し元のスキーマによって異なります。 これが該当するのは、参照先エンティティがストアド プロシージャ、拡張ストアド プロシージャ、または、EXECUTE ステートメント内で呼び出されるユーザー定義関数である場合です。<br /><br /> 1 = 参照先エンティティは呼び出し元に依存し、実行時に解決されます。 この場合、referenced_id は NULL です。<br /><br /> 0 = 参照先エンティティ ID は、呼び出し元に依存しません。 スキーマ バインド参照のほか、スキーマ名を明示的に指定するデータベース間参照やサーバー間参照の場合は常に 0 になります。 たとえば、`EXEC MyDatabase.MySchema.MyProc` 形式のエンティティ参照は呼び出し元に依存しません。 ただし、形式の参照 `EXEC MyDatabase..MyProc` は呼び出し元に依存します。|  
-|is_ambiguous|**bit**|参照があいまいであり、実行時にユーザー定義関数、ユーザー定義型 (UDT)、または **xml**型の列への xquery 参照に解決できることを示します。 たとえば、ストアドプロシージャでステートメントが定義されているとし `SELECT Sales.GetOrder() FROM Sales.MySales` ます。 `Sales.GetOrder()` が `Sales` スキーマ内のユーザー定義関数なのか、`Sales` という名前のメソッドを持つ UDT 型の `GetOrder()` という名前の列なのかは、ストアド プロシージャが実行されるまで不明です。<br /><br /> 1 = ユーザー定義関数または列のユーザー定義型 (UDT) メソッドへの参照があいまいです。<br /><br /> 0 = 参照は明確です。つまり、関数を呼び出したときに、エンティティを正しくバインドできます。<br /><br /> スキーマバインド参照の場合は常に0です。|  
+|is_ambiguous|**bit**|参照があいまいであり、実行時にユーザー定義関数、ユーザー定義型 (UDT)、または **xml** 型の列への xquery 参照に解決できることを示します。 たとえば、ストアドプロシージャでステートメントが定義されているとし `SELECT Sales.GetOrder() FROM Sales.MySales` ます。 `Sales.GetOrder()` が `Sales` スキーマ内のユーザー定義関数なのか、`Sales` という名前のメソッドを持つ UDT 型の `GetOrder()` という名前の列なのかは、ストアド プロシージャが実行されるまで不明です。<br /><br /> 1 = ユーザー定義関数または列のユーザー定義型 (UDT) メソッドへの参照があいまいです。<br /><br /> 0 = 参照は明確です。つまり、関数を呼び出したときに、エンティティを正しくバインドできます。<br /><br /> スキーマバインド参照の場合は常に0です。|  
 |is_selected|**bit**|1 = オブジェクトまたは列が選択されています。|  
 |is_updated|**bit**|1 = オブジェクトまたは列が変更されています。|  
 |is_select_all|**bit**|1 = オブジェクトは SELECT * 句で使用されます (オブジェクトレベルのみ)。|  
@@ -115,15 +115,15 @@ sys.dm_sql_referenced_entities (
   
  列の依存関係を解決できない場合、エラー2020を返します。 このエラーによって、クエリからオブジェクト レベルの依存関係が返されなくなることはありません。  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  この関数は、任意のデータベースのコンテキストで実行して、サーバーレベルの DDL トリガーを参照するエンティティを返すことができます。  
   
  次の表に、依存関係情報が作成および管理されるエンティティの種類を示します。 依存関係情報は、ルール、既定値、一時テーブル、一時ストアドプロシージャ、またはシステムオブジェクトに対して作成または管理されません。  
   
 |エンティティの種類|参照元エンティティ|参照先エンティティ|  
 |-----------------|------------------------|-----------------------|  
-|Table|はい*|はい|  
-|View|はい|はい|  
+|テーブル|はい*|はい|  
+|表示|はい|はい|  
 |[!INCLUDE[tsql](../../includes/tsql-md.md)] ストアド プロシージャ**|はい|はい|  
 |CLR ストアド プロシージャ (CLR stored procedure)|いいえ|はい|  
 |[!INCLUDE[tsql](../../includes/tsql-md.md)] ユーザー定義関数|はい|はい|  

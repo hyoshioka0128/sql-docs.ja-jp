@@ -8,14 +8,14 @@ ms.reviewer: ''
 ms.technology: install
 ms.topic: conceptual
 ms.assetid: 1b7c6dbb-b40e-4822-9caa-608e1056af8e
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 4f19dc1e34ea35509a8894400ca298909e3b1f96
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 6b9e66d821600b29157c0942a2da3a23403a250d
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85883743"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100336073"
 ---
 # <a name="remove-data-quality-server-objects"></a>Data Quality Server オブジェクトの削除
 [!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]

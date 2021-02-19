@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -15,25 +15,25 @@ helpviewer_keywords:
 ms.assetid: 29530153-b963-4a7c-8665-2335f1d604a8
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: e5ce070edb9058f36bab18d64a06f50b867bbe55
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 4f88253197d5f8a0ea98a1e088e840d66a25ac41
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88976473"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100035762"
 ---
 # <a name="ado-events-model-example-vc"></a>ADO イベント モデルの例 (VC++)
 「 [言語による Ado イベントのインスタンス化](../../guide/data/ado-event-instantiation-by-language.md) 」の Visual C++ セクションでは、ado イベントモデルをインスタンス化する方法について一般的な説明を示します。 次に、 **#import** ディレクティブによって作成された環境内でイベントモデルをインスタンス化する具体的な例を示します。  
   
  一般的な説明では、メソッドシグネチャの参照として **adoint** を使用します。 ただし、一般的な説明のいくつかの詳細は、 **#import** ディレクティブを使用した結果として若干異なります。  
   
--   **#Import**ディレクティブは、 **typedef**の、メソッドシグネチャのデータ型、および修飾子をその基本的な形式に解決します。  
+-   **#Import** ディレクティブは、 **typedef** の、メソッドシグネチャのデータ型、および修飾子をその基本的な形式に解決します。  
   
 -   上書きする必要がある純粋仮想メソッドのすべてには、"**raw_**" というプレフィックスが付いています。  
   
  一部のコードは、単にコーディングスタイルを反映しています。  
   
--   **アドバイズ**メソッドによって使用される**IUnknown**へのポインターは、 **QueryInterface**の呼び出しによって明示的に取得されます。  
+-   **アドバイズ** メソッドによって使用される **IUnknown** へのポインターは、 **QueryInterface** の呼び出しによって明示的に取得されます。  
   
 -   クラス定義でデストラクターを明示的にコーディングする必要はありません。  
   

@@ -11,17 +11,17 @@ ms.topic: conceptual
 ms.assetid: c2695a5c-9cc5-4b18-8771-53027ca9a9af
 author: rothja
 ms.author: jroth
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 3af6036a3bc6cf2b751eed6a1df173fca2c9a117
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 835ba74b8bcd50692b7d74cbdf3e94fc501c163d
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88488592"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99184254"
 ---
 # <a name="rename-user-defined-functions"></a>ユーザー定義関数名の変更
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
-  [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] では、 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] または [!INCLUDE[tsql](../../includes/tsql-md.md)]を使用してユーザー定義関数の名前を変更できます。  
+  [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] では、 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] または [!INCLUDE[tsql](../../includes/tsql-md.md)]を使用してユーザー定義関数の名前を変更できます。  
   
  **このトピックの内容**  
   
@@ -56,7 +56,7 @@ ms.locfileid: "88488592"
   
 #### <a name="to-rename-user-defined-functions"></a>ユーザー定義関数の名前を変更するには  
   
-1.  **オブジェクト エクスプローラー**で、名前を変更する関数が格納されているデータベースの横にあるプラス記号をクリックします。  
+1.  **オブジェクト エクスプローラー** で、名前を変更する関数が格納されているデータベースの横にあるプラス記号をクリックします。  
   
 2.  **Programmability** フォルダーの横にあるプラス記号をクリックします。  
   

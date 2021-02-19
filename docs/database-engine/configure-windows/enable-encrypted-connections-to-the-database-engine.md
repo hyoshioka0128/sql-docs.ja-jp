@@ -1,6 +1,6 @@
 ---
 title: 暗号化された接続を有効にする | Microsoft Docs
-ms.custom: contperfq4
+ms.custom: contperf-fy20q4
 ms.date: 08/29/2019
 ms.prod: sql
 ms.prod_service: security
@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: e1e55519-97ec-4404-81ef-881da3b42006
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: d147177be88db5bba50955711a8585ff11d872d9
-ms.sourcegitcommit: 2f868a77903c1f1c4cecf4ea1c181deee12d5b15
+ms.openlocfilehash: 87ac1c0759264b00567d5edc2cd9f22727fdd0fa
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91670972"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "100353864"
 ---
 # <a name="enable-encrypted-connections-to-the-database-engine"></a>データベース エンジンへの暗号化接続の有効化
 
@@ -40,7 +40,7 @@ ms.locfileid: "91670972"
  サーバー コンピューターには、証明書がプロビジョニングされている必要があります。 サーバー コンピューターで証明書をプロビジョニングするには、Windows に[証明書をインポート](#single-server)します。 クライアント コンピューターは、[証明書のルート証明機関を信頼](#about)するように設定する必要があります。  
   
 > [!IMPORTANT]
-> SSL (Secure Sockets Layer) は、[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降では廃止されています。 代わりに、トランスポート層セキュリティ (TLS) を使用してください。
+> SSL (Secure Sockets Layer) は、[!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降では廃止されています。 代わりに、トランスポート層セキュリティ (TLS) を使用してください。
 
 ## <a name="transport-layer-security-tls"></a>トランスポート層セキュリティ (TLS)
 
@@ -64,14 +64,14 @@ TLS 暗号化を有効にすると、[!INCLUDE[ssNoVersion](../../includes/ssnov
 
 ## <a name="about-certificates"></a><a name="about"></a>証明書について
 
- **サーバー認証**用の証明書が発行されている必要があります。 証明書の名前は、コンピューターの完全修飾ドメイン名 (FQDN) である必要があります。  
+ **サーバー認証** 用の証明書が発行されている必要があります。 証明書の名前は、コンピューターの完全修飾ドメイン名 (FQDN) である必要があります。  
   
  証明書は、コンピューター上のユーザーにローカルに格納されます。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] が使用する証明書をインストールするには、ローカル管理者特権を持つアカウントで [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 構成マネージャーを実行している必要があります。
 
  クライアントは、サーバーが使用する証明書の所有権を検証できる必要があります。 サーバー証明書に署名した証明機関の公開キー証明書をクライアントが持っている場合は、それ以上の構成は必要ありません。 [!INCLUDE[msCoName](../../includes/msconame-md.md)] Windows には、多くの証明機関の公開キー証明書が含まれています。 サーバー証明書に署名した公的または私的な証明機関に対する公開キー証明書をクライアントが持っていない場合は、サーバー証明書に署名した証明機関の公開キー証明書をインストールする必要があります。  
   
 > [!NOTE]  
-> フェールオーバー クラスターで暗号化を使用する場合、フェールオーバー クラスター内のすべてのノードに対して、仮想サーバーの完全修飾 DNS 名を使用してサーバー証明書をインストールする必要があります。 たとえば、***test1.\*\<your company>\*.com*** および ***test2.\*\<your company>\*.com*** というノードを持つ 2 ノードのクラスターと、***virtsql*** という仮想サーバーがあるとします。この場合、***virtsql.\*\<your company>\*.com*** の証明書を両方のノードにインストールする必要があります。 **[SQL Server ネットワークの構成]** の **[virtsql のプロトコル]** プロパティ ボックスの **[強制的に暗号化]** オプションを **[はい]** に設定します。
+> フェールオーバー クラスターで暗号化を使用する場合、フェールオーバー クラスター内のすべてのノードに対して、仮想サーバーの完全修飾 DNS 名を使用してサーバー証明書をインストールする必要があります。 たとえば、 **_test1.\_\<your company>\*.com*** および **_test2.\_\<your company>\*.com*** というノードを持つ 2 ノードのクラスターと、**_virtsql_*_ という仮想サーバーがあるとします。この場合、_ *_virtsql.\_\<your company>\*.com*** の証明書を両方のノードにインストールする必要があります。 **[SQL Server ネットワークの構成]** の **[virtsql のプロトコル]** プロパティ ボックスの **[強制的に暗号化]** オプションを **[はい]** に設定します。
 
 > [!NOTE]
 > Azure VM 上の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] への Azure Search インデクサーからの暗号化接続を作成するには、「[Azure VM での Azure Search インデクサーから SQL Server への接続の構成](/azure/search/search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers)」を参照してください。 
@@ -92,7 +92,7 @@ TLS 暗号化を有効にすると、[!INCLUDE[ssNoVersion](../../includes/ssnov
 
 - 証明書の **Subject** プロパティで、共通名 (CN) がサーバー コンピューターのホスト名または完全修飾ドメイン名 (FQDN) と同一であると示されていること。 ホスト名を使用するときは、証明書で DNS サフィックスを指定する必要があります。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] がフェールオーバー クラスターで実行されている場合、共通名は仮想サーバーのホスト名または FQDN と同じである必要があり、証明書がフェールオーバー クラスター内のすべてのノードにプロビジョニングされる必要があります。
 
-- ワイルドカード証明書は、[!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] および [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] Native Client (SNAC) でサポートされています。 その後、SNAC は廃止され、[Microsoft OLE DB Driver for SQL Server](../../connect/oledb/oledb-driver-for-sql-server.md) と [Microsoft ODBC Driver for SQL Server](../../connect/odbc/microsoft-odbc-driver-for-sql-server.md) に置き換わりました。 他のクライアントでは、ワイルドカード証明書がサポートされていない可能性があります。 詳細については、クライアントのドキュメントと [KB 258858](https://support.microsoft.com/kb/258858) を参照してください。       
+- ワイルドカード証明書は、[!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] および [!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] Native Client (SNAC) でサポートされています。 その後、SNAC は廃止され、[Microsoft OLE DB Driver for SQL Server](../../connect/oledb/oledb-driver-for-sql-server.md) と [Microsoft ODBC Driver for SQL Server](../../connect/odbc/microsoft-odbc-driver-for-sql-server.md) に置き換わりました。 他のクライアントでは、ワイルドカード証明書がサポートされていない可能性があります。      
   SQL Server 構成マネージャーを使用して、ワイルドカード証明書を選択することはできません。 ワイルドカード証明書を使うには、`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQLServer\SuperSocketNetLib` のレジストリ キーを編集し、**Certificate** の値に証明書の拇印を (スペースを含めずに) 入力する必要があります。  
 
   > [!WARNING]  
@@ -100,9 +100,9 @@ TLS 暗号化を有効にすると、[!INCLUDE[ssNoVersion](../../includes/ssnov
 
 ## <a name="install-on-single-server"></a><a name="single-server"></a>単一サーバーへのインストール
 
-[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] で、SQL Server 構成マネージャーに証明書の管理が統合されました。 [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] の SQL Server 構成マネージャーは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の以前のバージョンで使用できます。 単一の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスに証明書を追加する方法については、「[証明書の管理 (SQL Server 構成マネージャー)](../../database-engine/configure-windows/manage-certificates.md)」を参照してください。
+[!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] で、SQL Server 構成マネージャーに証明書の管理が統合されました。 [!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] の SQL Server 構成マネージャーは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の以前のバージョンで使用できます。 単一の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスに証明書を追加する方法については、「[証明書の管理 (SQL Server 構成マネージャー)](../../database-engine/configure-windows/manage-certificates.md)」を参照してください。
 
-[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] を介して [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] を使用する場合に、[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] の SQL Server 構成マネージャーが使用できない場合は、次の手順に従ってください。
+[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] を介して [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] を使用する場合に、[!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] の SQL Server 構成マネージャーが使用できない場合は、次の手順に従ってください。
 
 1. **[スタート]** メニューの **[ファイル名を指定して実行]** をクリックし、 **[名前]** ボックスに「 **MMC** 」と入力して **[OK]** をクリックします。  
   
@@ -130,15 +130,15 @@ TLS 暗号化を有効にすると、[!INCLUDE[ssNoVersion](../../includes/ssnov
   
 ## <a name="install-across-multiple-servers"></a>複数のサーバーにまたがるインストール
 
-[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] で、SQL Server 構成マネージャーに証明書の管理が統合されました。 [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] の SQL Server 構成マネージャーは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の以前のバージョンで使用できます。 フェールオーバー クラスター構成または可用性グループ構成に証明書を追加するには、「[証明書の管理 (SQL Server 構成マネージャー)](../../database-engine/configure-windows/manage-certificates.md)」を参照してください。
+[!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] で、SQL Server 構成マネージャーに証明書の管理が統合されました。 [!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] の SQL Server 構成マネージャーは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の以前のバージョンで使用できます。 フェールオーバー クラスター構成または可用性グループ構成に証明書を追加するには、「[証明書の管理 (SQL Server 構成マネージャー)](../../database-engine/configure-windows/manage-certificates.md)」を参照してください。
 
-[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] を介して [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] を使用する場合に、[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] の SQL Server 構成マネージャーが使用できない場合は、各サーバーに対して、「[1 台のサーバーに証明書をプロビジョニング (インストール) するには](#single-server)」の手順を実行します。
+[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] を介して [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] を使用する場合に、[!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] の SQL Server 構成マネージャーが使用できない場合は、各サーバーに対して、「[1 台のサーバーに証明書をプロビジョニング (インストール) するには](#single-server)」の手順を実行します。
 
 ## <a name="export-server-certificate"></a>サーバー証明書のエクスポート  
   
 1. **[証明書]** スナップインで、 **[証明書]**  /  **[個人]** フォルダーで証明書を探し、 **[証明書]** を右クリックします。次に **[すべてのタスク]** をポイントし、 **[エクスポート]** をクリックします。  
   
-2. **証明書のエクスポート ウィザード**を実行して、証明書ファイルを使いやすい場所に格納します。  
+2. **証明書のエクスポート ウィザード** を実行して、証明書ファイルを使いやすい場所に格納します。  
   
 ## <a name="configure-server"></a>サーバーの構成
 
@@ -147,7 +147,7 @@ TLS 暗号化を有効にすると、[!INCLUDE[ssNoVersion](../../includes/ssnov
 > [!IMPORTANT]
 > [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]サービス アカウントには、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で暗号化を強制するために使用される証明書の読み取りアクセス許可が必要です。 特権のないサービス アカウントの場合、読み取りアクセス許可を証明書に追加する必要があります。 この操作に失敗すると、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] サービスを再起動できなくなる可能性があります。
   
-1. **SQL Server 構成マネージャー**で、 **[SQL Server ネットワークの構成]** を展開し、 **[** _\<server instance> のプロトコル]_ を右クリックして、 **[プロパティ]** を選択します。  
+1. **SQL Server 構成マネージャー** で、 **[SQL Server ネットワークの構成]** を展開し、 **[** _\<server instance> のプロトコル]_ を右クリックして、 **[プロパティ]** を選択します。  
   
 2. **[ _\<instance name>_ のプロトコル]** の **[プロパティ]** ダイアログ ボックスの **[証明書]** タブで、 **[証明書]** ボックスのドロップダウンから必要な証明書を選択し、 **[OK]** をクリックします。  
   

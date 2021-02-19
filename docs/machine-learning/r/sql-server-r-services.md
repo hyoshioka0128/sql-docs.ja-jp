@@ -8,13 +8,13 @@ ms.date: 08/06/2020
 ms.topic: overview
 author: dphansen
 ms.author: davidph
-monikerRange: =sql-server-2016||=sqlallproducts-allversions
-ms.openlocfilehash: f19c86fe5b61b46a95db7988657b1e5ed833f9fd
-ms.sourcegitcommit: 8f062015c2a033f5a0d805ee4adabbe15e7c8f94
+monikerRange: =sql-server-2016
+ms.openlocfilehash: 87c3afd4e8fc96bf753067c06de2a60741bbbadb
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91227093"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100019989"
 ---
 # <a name="what-is-sql-server-2016-r-services"></a>SQL Server 2016 R Services とは
 
@@ -55,7 +55,7 @@ R Services で R スクリプトを実行するには、次の 2 つの方法が
 
 + 最も一般的な方法は、T-SQL ストアド プロシージャ [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) を使用することです。
 
-+ また、任意の R クライアントを使用して、実行をリモートの SQL Server にプッシュするスクリプト (*リモート計算コンテキスト*と呼ばれます) を書くこともできます。 詳細については、[データ サイエンス クライアントの R 開発を設定する](../r/set-up-a-data-science-client.md)方法に関する記事を参照してください。
++ また、任意の R クライアントを使用して、実行をリモートの SQL Server にプッシュするスクリプト (*リモート計算コンテキスト* と呼ばれます) を書くこともできます。 詳細については、[データ サイエンス クライアントの R 開発を設定する](../r/set-up-a-data-science-client.md)方法に関する記事を参照してください。
 
 <a name="version"></a>
 
@@ -92,7 +92,7 @@ Microsoft のエンタープライズ パッケージに加えて、オープン
 
 1. 開発ツールを構成します。 使用できるもの:
 
-    + T-SQL およびストアド プロシージャ [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) を使用して R スクリプトを実行する [Azure Data Studio](../../azure-data-studio/what-is.md) または [SQL Server Management Studio (SSMS)](../../ssms/sql-server-management-studio-ssms.md)。
+    + T-SQL およびストアド プロシージャ [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) を使用して R スクリプトを実行する [Azure Data Studio](../../azure-data-studio/what-is-azure-data-studio.md) または [SQL Server Management Studio (SSMS)](../../ssms/sql-server-management-studio-ssms.md)。
     + スクリプトを実行する開発用のノート PC またはワークステーション上の R。 [RevoScaleR](../r/ref-r-revoscaler.md) を使用してデータをローカルにプルすることや、リモートから SQL Server に実行をプッシュすることができます。 詳細については、[データ サイエンス クライアントの R 開発を設定する](../r/set-up-a-data-science-client.md)方法に関する記事を参照してください。
 
 1. 最初の R スクリプトを作成します

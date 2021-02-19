@@ -22,13 +22,13 @@ ms.assetid: 15282db1-65c4-43be-bdb7-e9ef49cb33a2
 author: MightyPen
 ms.author: genemi
 ms.custom: seo-lt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 6567b5dfa6a6b83298793c9e5f2962d9c1bdb878
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: d82028477d11cb53034a8ea3f6e40fde17cf205e
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85764829"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97467093"
 ---
 # <a name="introduction-to-annotated-xsd-schemas-sqlxml-40"></a>注釈付き XSD スキーマの概要 (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -55,10 +55,10 @@ ms.locfileid: "85764829"
 > [!NOTE]  
 >  [!INCLUDE[msCoName](../../../includes/msconame-md.md)] SQLXML 4.0 の XSD スキーマ言語では、[!INCLUDE[ssVersion2000](../../../includes/ssversion2000-md.md)] の注釈付き XML-Data Reduced (XDR) スキーマ言語で挿入された注釈がサポートされます。 ただし、注釈付き XDR は、SQLXML 4.0 では非推奨とされます。  
   
- リレーショナル データベースの場合、任意の XSD スキーマをリレーショナル ストアにマップすると便利です。 これを実行する 1 つの方法は、XSD スキーマに注釈を付けることです。 注釈を持つ XSD スキーマは、*マッピングスキーマ*と呼ばれます。これは、XML データをリレーショナルストアにマップする方法に関する情報を提供します。 マッピング スキーマは、実質的にはリレーショナル データの XML ビューです。 これらのマッピングを使用して、リレーショナル データを XML ドキュメントとして取得できます。  
+ リレーショナル データベースの場合、任意の XSD スキーマをリレーショナル ストアにマップすると便利です。 これを実行する 1 つの方法は、XSD スキーマに注釈を付けることです。 注釈を持つ XSD スキーマは、 *マッピングスキーマ* と呼ばれます。これは、XML データをリレーショナルストアにマップする方法に関する情報を提供します。 マッピング スキーマは、実質的にはリレーショナル データの XML ビューです。 これらのマッピングを使用して、リレーショナル データを XML ドキュメントとして取得できます。  
   
 ## <a name="namespace-for-annotations"></a>注釈の名前空間  
- XSD スキーマでは、名前空間**urn: schema-microsoft-com: mapping スキーマ**を使用して注釈を指定します。 次の例に示すように、名前空間を指定する最も簡単な方法は、タグ内で名前空間を指定することです **\<xsd:schema>** 。  
+ XSD スキーマでは、名前空間 **urn: schema-microsoft-com: mapping スキーマ** を使用して注釈を指定します。 次の例に示すように、名前空間を指定する最も簡単な方法は、タグ内で名前空間を指定することです **\<xsd:schema>** 。  
   
 ```  
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"   
@@ -67,10 +67,10 @@ ms.locfileid: "85764829"
 </xsd:schema>  
 ```  
   
- 使用される名前空間プレフィックスは任意です。 このドキュメントでは、 **sql**プレフィックスを使用して、注釈の名前空間を表し、この名前空間内の注釈を他の名前空間内の注釈と区別します。  
+ 使用される名前空間プレフィックスは任意です。 このドキュメントでは、 **sql** プレフィックスを使用して、注釈の名前空間を表し、この名前空間内の注釈を他の名前空間内の注釈と区別します。  
   
 ## <a name="example-of-an-annotated-xsd-schema"></a>注釈付き XSD スキーマの例  
- 次の例では、XSD スキーマは要素で構成されて **\<Person.Contact>** います。 要素には、 **\<Employee>** **ContactID**属性と **\<FirstName>** 子 **\<LastName>** 要素があります。  
+ 次の例では、XSD スキーマは要素で構成されて **\<Person.Contact>** います。 要素には、 **\<Employee>** **ContactID** 属性と **\<FirstName>** 子 **\<LastName>** 要素があります。  
   
 ```  
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">  
@@ -111,14 +111,14 @@ ms.locfileid: "85764829"
 </xsd:schema>  
 ```  
   
- マッピングスキーマで **\<Contact>** は、要素は**sql: relation**注釈を使用して、サンプルの AdventureWorks データベースの Person. Contact テーブルにマップされます。 属性 ConID、FName、および LName は、 **sql: field**注釈を使用して、Person. Contact テーブルの ContactID、FirstName、および LastName 列にマップされます。  
+ マッピングスキーマで **\<Contact>** は、要素は **sql: relation** 注釈を使用して、サンプルの AdventureWorks データベースの Person. Contact テーブルにマップされます。 属性 ConID、FName、および LName は、 **sql: field** 注釈を使用して、Person. Contact テーブルの ContactID、FirstName、および LastName 列にマップされます。  
   
  この注釈付きの XSD スキーマによって、リレーショナル データの XML ビューが提供されます。 この XML ビューには、XPath 言語を使用してクエリを実行できます。 XPath クエリを実行すると、SQL クエリによって返される行セットではなく、XML ドキュメントが返されます。  
   
 > [!NOTE]  
 >  マッピング スキーマに指定するリレーショナル値 (テーブル名や列名など) の大文字小文字の区別は、SQL Server で使用される照合順序の、大文字小文字の区別の設定によって変わります。 詳細については、「 [Collation and Unicode Support](../../../relational-databases/collations/collation-and-unicode-support.md)」を参照してください。  
   
-## <a name="other-resources"></a>その他の参照情報  
+## <a name="other-resources"></a>その他のリソース  
  XML スキーマ定義言語 (XSD)、XML パス言語 (XPath)、Extensible Stylesheet Language Transformations (XSLT) の詳細については、次の Web サイトを参照してください。  
   
 -   XML スキーマパート 0: 入門、W3C 勧告 (https://www.w3.org/TR/xmlschema-0/)  
@@ -131,8 +131,8 @@ ms.locfileid: "85764829"
   
 -   XSL 変換 (XSLT) (https://www.w3.org/TR/xslt)  
   
-## <a name="see-also"></a>関連項目  
- [SQLXML 4.0&#41;&#40;注釈付きスキーマのセキュリティに関する考慮事項](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/security/annotated-schema-security-considerations-sqlxml-4-0.md)   
+## <a name="see-also"></a>参照  
+ [SQLXML 4.0&#41;&#40;注釈付きスキーマのセキュリティに関する考慮事項 ](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/security/annotated-schema-security-considerations-sqlxml-4-0.md)   
  [注釈付き XDR スキーマ &#40;SQLXML 4.0 で非推奨とされました&#41;](../../../relational-databases/sqlxml/annotated-xsd-schemas/annotated-xdr-schemas-deprecated-in-sqlxml-4-0.md)  
   
   

@@ -7,19 +7,19 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 helpviewer_keywords:
 - Query method [ADO]
 ms.assetid: 20f2480f-3758-405d-a379-05a0dce74796
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: d65da0531e9387e94f4d22c734821779c53b9639
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: ae851f55696232f5bb11e38bfdfc3d0f44ed6709
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91724440"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100053044"
 ---
 # <a name="query-method-rds"></a>Query メソッド (RDS)
 は、有効な SQL クエリ文字列を使用して [レコードセット](../ado-api/recordset-object-ado.md)を返します。  
@@ -36,7 +36,7 @@ Set Recordset = DataFactory.Query(Connection, Query)
   
 #### <a name="parameters"></a>パラメーター  
  *レコードセット*  
- **レコードセット**オブジェクトを表すオブジェクト変数です。  
+ **レコードセット** オブジェクトを表すオブジェクト変数です。  
   
  *DataFactory*  
  [RDSServer DataFactory](./datafactory-object-rdsserver.md)オブジェクトを表すオブジェクト変数です。  

@@ -8,13 +8,13 @@ ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 107b4cc7c68f1fdf91a685235d336556740547c7
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 8e2f37542ae3363e654370f6dcdcbc76cc941335
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956593"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470853"
 ---
 # <a name="how-to-create-mdx-queries-in-r-using-olapr"></a>olapR を使って R で MDX クエリを作成する方法
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -49,7 +49,7 @@ ms.locfileid: "91956593"
      
      + `axis()` : クエリで使う追加の軸の名前を指定します。 
      
-         OLAP キューブは、最大で 128 個のクエリ軸を含むことができます。 一般に、最初の 4 つの軸は、**列**、**行**、**ページ**、および**チャプター**と呼ばれます。 
+         OLAP キューブは、最大で 128 個のクエリ軸を含むことができます。 一般に、最初の 4 つの軸は、**列**、**行**、**ページ**、および **チャプター** と呼ばれます。 
          
          クエリが比較的単純な場合は、 `columns`、 `rows`などの関数を使ってクエリを作成できます。 ただし、 `axis()` 関数を使って 0 以外のインデックス値を指定し、多くの修飾子を持つ MDX クエリを作成したり、修飾子として余分なディメンションを追加したりすることもできます。
 
@@ -81,7 +81,7 @@ ms.locfileid: "91956593"
 
 ### <a name="1-basic-mdx-with-slicer"></a>1.スライサーを使う基本的な MDX
 
-この MDX クエリは、インターネットの販売数と販売金額の数と金額の _メジャー_ を選択し、列軸に設定します。 SalesTerritory ディメンションのメンバーを *スライサー*として追加し、オーストラリアからの販売のみが計算で使われるようにクエリをフィルターします。
+この MDX クエリは、インターネットの販売数と販売金額の数と金額の _メジャー_ を選択し、列軸に設定します。 SalesTerritory ディメンションのメンバーを *スライサー* として追加し、オーストラリアからの販売のみが計算で使われるようにクエリをフィルターします。
 
 ```MDX
 SELECT {[Measures].[Internet Sales Count], [Measures].[InternetSales-Sales Amount]} ON COLUMNS, 
@@ -148,7 +148,7 @@ SELECT {[Measures].[Internet Sales Count], [Measures].[Internet Sales-Sales Amou
 表示権限のあるインスタンス上のすべてのキューブまたはパースペクティブを表示するには、 `explore`への引数としてハンドルを渡します。
 
 > [!IMPORTANT]
-> 結果の最後にあるのはキューブでは**ありません**。TRUE は、メタデータ操作が成功したことを示しているだけです。 無効な引数を渡すとエラーがスローされます。
+> 結果の最後にあるのはキューブでは **ありません**。TRUE は、メタデータ操作が成功したことを示しているだけです。 無効な引数を渡すとエラーがスローされます。
 
 ```R
 cnnstr <- "Data Source=localhost; Provider=MSOLAP; initial catalog=Analysis Services Tutorial"

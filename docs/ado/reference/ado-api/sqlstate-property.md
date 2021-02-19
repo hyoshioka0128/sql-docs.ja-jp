@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - Error::GetSQLState
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: f9e25967-54b0-444d-af2a-0d2c75365d3e
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: bbc849f19c91f7b2387df5e0e71b3455efa0db09
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 0f6d10db3da5ea8c1b6d5daba3062e53d2f35244
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88988863"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100051343"
 ---
 # <a name="sqlstate-property"></a>SQLState プロパティ
 指定された [エラー](./error-object.md) オブジェクトの SQL 状態を示します。  

@@ -5,7 +5,7 @@ ms.custom: seo-lt-2019
 ms.date: 12/13/2019
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: failover-cluster-instance
 ms.topic: how-to
 helpviewer_keywords:
 - clusters [SQL Server], removing failover cluster instance
@@ -13,14 +13,14 @@ helpviewer_keywords:
 - uninstalling failover cluster instances
 - removing failover cluster instances
 ms.assetid: bf63353b-69cf-4c5c-98ea-7b151e36537f
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: 3b523b792889c21a0b1d00ea3ab3ea3ac6fbf2aa
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 89e3cbbaeca927671a340e3fe4178e6eb5d807e8
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91988400"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642885"
 ---
 # <a name="remove-a-failover-cluster-instance-setup"></a>フェールオーバー クラスター インスタンスの削除 (セットアップ)
 

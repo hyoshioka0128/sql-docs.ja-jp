@@ -11,14 +11,14 @@ ms.topic: conceptual
 f1_keywords:
 - sql13.swb.restoredb.general.f1
 ms.assetid: 160cf58c-b06a-475f-9a69-2b051e5767ab
-author: MikeRayMSFT
-ms.author: mikeray
-ms.openlocfilehash: 5c322f8c798a7b4a319df67e56565af54ceac20f
-ms.sourcegitcommit: 9386ae1b90705a39d37d5541b70c5e8a6564f253
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: cda87fffca686f8e86c7b617e502952341bd459f
+ms.sourcegitcommit: 5a1ed81749800c33059dac91b0e18bd8bb3081b1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91662181"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96125548"
 ---
 # <a name="restore-database-general-page"></a>[データベースの復元] ([全般] ページ)
 
@@ -63,8 +63,8 @@ RESTORE 権限は、サーバーでメンバーシップ情報を常に確認で
   
 |期間|定義|  
 |----------|----------------|  
-|**[データベース]**|復元するデータベースを一覧に入力します。 新しいデータベースを入力するか、ドロップダウン リストから既存のデータベースを選択します。 このリストには、システム データベース **master** および **tempdb**を除いた、サーバー上のすべてのデータベースが表示されます。<br /><br /> 注:パスワードで保護されたバックアップを復元するには、 [RESTORE](../../t-sql/statements/restore-statements-transact-sql.md) ステートメントを使用する必要があります。|  
-|**[復元先]**|既定では、 **[復元先]** ボックスが [最後に作成されたバックアップ] に設定されます。 **[タイムライン]** を選択して、 **[バックアップのタイムライン]** ダイアログ ボックスを表示することもできます。これによって、データベースのバックアップ履歴がタイムラインの形式で表示されます。 **[タイムライン]** をクリックして、データベースを復元する特定の**日付時刻**を選択します。 データベースは、この指定された時点での状態に復元されます。 「 [Backup Timeline](../../relational-databases/backup-restore/backup-timeline.md)」を参照してください。|  
+|**[データベース]**|復元するデータベースを一覧に入力します。 新しいデータベースを入力するか、ドロップダウン リストから既存のデータベースを選択します。 このリストには、システム データベース **master** および **tempdb** を除いた、サーバー上のすべてのデータベースが表示されます。<br /><br /> 注:パスワードで保護されたバックアップを復元するには、 [RESTORE](../../t-sql/statements/restore-statements-transact-sql.md) ステートメントを使用する必要があります。|  
+|**[復元先]**|既定では、 **[復元先]** ボックスが [最後に作成されたバックアップ] に設定されます。 **[タイムライン]** を選択して、 **[バックアップのタイムライン]** ダイアログ ボックスを表示することもできます。これによって、データベースのバックアップ履歴がタイムラインの形式で表示されます。 **[タイムライン]** をクリックして、データベースを復元する特定の **日付時刻** を選択します。 データベースは、この指定された時点での状態に復元されます。 「 [Backup Timeline](../../relational-databases/backup-restore/backup-timeline.md)」を参照してください。|  
   
 ### <a name="restore-plan"></a>復元プラン  
   

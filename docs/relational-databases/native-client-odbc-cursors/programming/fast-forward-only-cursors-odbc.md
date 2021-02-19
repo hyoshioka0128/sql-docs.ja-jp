@@ -1,6 +1,6 @@
 ---
 description: 高速順方向専用カーソル (ODBC)
-title: 高速順方向専用カーソル (ODBC) |Microsoft Docs
+title: 高速 Forward-Only カーソル (ODBC) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
@@ -16,13 +16,13 @@ helpviewer_keywords:
 ms.assetid: 0707d07e-fc95-42ed-9280-b7e508ac8c62
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 3c365461cc7dc4874ae76978019da2c67e3b84fd
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: ef941028ffaf9c515b42d319bee522a03c928569
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88423914"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97438595"
 ---
 # <a name="fast-forward-only-cursors-odbc"></a>高速順方向専用カーソル (ODBC)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -31,7 +31,7 @@ ms.locfileid: "88423914"
   
 -   [SQLGetData](../../../relational-databases/native-client-odbc-api/sqlgetdata.md) はサポートされていません。 結果セットの列を、プログラム変数にバインドする必要があります。  
   
--   サーバーはカーソルの最後に達したことを検出すると、そのカーソルを自動的に閉じます。 アプリケーションは引き続き[SqlcloSQLFreeStmt](../../../relational-databases/native-client-odbc-api/sqlclosecursor.md)または[SQLFreeStmt](../../../relational-databases/native-client-odbc-api/sqlfreestmt.md)(SQL_CLOSE) を呼び出す必要がありますが、ドライバーからサーバーにクローズ要求を送信する必要はありません。 この動作により、ネットワーク経由でのサーバーとのやり取りが抑えられます。  
+-   サーバーはカーソルの最後に達したことを検出すると、そのカーソルを自動的に閉じます。 アプリケーションは引き続き[SqlcloSQLFreeStmt](../../../relational-databases/native-client-odbc-api/sqlclosecursor.md)または[](../../../relational-databases/native-client-odbc-api/sqlfreestmt.md)(SQL_CLOSE) を呼び出す必要がありますが、ドライバーからサーバーにクローズ要求を送信する必要はありません。 この動作により、ネットワーク経由でのサーバーとのやり取りが抑えられます。  
   
  アプリケーションでは、ドライバー固有のステートメント属性 SQL_SOPT_SS_CURSOR_OPTIONS を使用して高速順方向専用カーソルを要求します。 SQL_SOPT_SS_CURSOR_OPTIONS 属性に SQL_CO_FFO を設定すると、高速順方向専用カーソルが有効になりますが、autofetch オプションは有効になりません。 SQL_CO_FFO_AF を設定すると、autofetch オプションも有効になります。 Autofetch の詳細については、「 [Using autofetch WITH ODBC](../../../relational-databases/native-client-odbc-cursors/programming/using-autofetch-with-odbc-cursors.md)cursor」を参照してください。  
   
@@ -43,7 +43,7 @@ ms.locfileid: "88423914"
   
 3.  結果列を *n* + 1 個の要素の配列にバインドします ( *n* + 1 行が実際にフェッチされた場合は安全です)。  
   
-4.  **SQLExecDirect**または**sqlexecute**のいずれかを使用してカーソルを開きます。  
+4.  **SQLExecDirect** または **sqlexecute** のいずれかを使用してカーソルを開きます。  
   
 5.  返された状態が SQL_SUCCESS の場合は、 **SQLFreeStmt** または **sqlcloを** 呼び出してカーソルを閉じます。 行のすべてのデータが、バインドされたプログラム変数に格納されます。  
   

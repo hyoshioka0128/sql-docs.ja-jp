@@ -6,7 +6,7 @@ ms.date: 12/30/2019
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - SEQUENCES
 - SEQUENCES_TSQL
@@ -17,13 +17,13 @@ helpviewer_keywords:
 - INFORMATION_SCHEMA.SEQUENCES view
 author: markingmyname
 ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 7fa13582e155387bbe7b7122e0051d830be2261b
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 8f8d71ff5d8e8cf90a5057721deaad383a33678a
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89546336"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100338077"
 ---
 # <a name="sequences-transact-sql"></a>シーケンス (Transact-sql)
 
@@ -31,7 +31,7 @@ ms.locfileid: "89546336"
 
 現在のデータベースの現在のユーザーがアクセスできるシーケンスごとに1行のデータを返します。
 
-これらのビューから情報を取得するには、 **INFORMATION_SCHEMA**の完全修飾名を指定し_ます。 view_name_。
+これらのビューから情報を取得するには、 **INFORMATION_SCHEMA**_.view_name_ の完全修飾名を指定します。
 
 |列名|データ型|説明|
 |-----------------|---------------|-----------------|

@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - JScript
 helpviewer_keywords:
@@ -16,15 +16,15 @@ helpviewer_keywords:
 ms.assetid: bff98617-a6ba-4f41-9c5f-915161e3ea31
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 058a6046d7ac4010413bb4d124dd92ff9af902df
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: e9f928cccd455af05804e35efe25fb1aa537cd25
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88977233"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100031660"
 ---
 # <a name="absoluteposition-and-cursorlocation-properties-example-jscript"></a>AbsolutePosition およびカーソルのプロパティの例 (JScript)
-この例では、 [AbsolutePosition](./absoluteposition-property-ado.md) プロパティを使用して、 [レコードセット](./recordset-object-ado.md)のすべてのレコードを列挙するループの進行状況を追跡する方法を示します。 カーソルをクライアントカーソルに設定することによって、 **AbsolutePosition**プロパティを有効にするには、cursor [location](./cursorlocation-property-ado.md)プロパティを使用します。 次のコードを切り取ってメモ帳または別のテキストエディターに貼り付け、 **AbsolutePositionJS**として保存します。  
+この例では、 [AbsolutePosition](./absoluteposition-property-ado.md) プロパティを使用して、 [レコードセット](./recordset-object-ado.md)のすべてのレコードを列挙するループの進行状況を追跡する方法を示します。 カーソルをクライアントカーソルに設定することによって、 **AbsolutePosition** プロパティを有効にするには、cursor [location](./cursorlocation-property-ado.md)プロパティを使用します。 次のコードを切り取ってメモ帳または別のテキストエディターに貼り付け、 **AbsolutePositionJS** として保存します。  
   
 ```  
 <!-- BeginAbsolutePositionJS -->  

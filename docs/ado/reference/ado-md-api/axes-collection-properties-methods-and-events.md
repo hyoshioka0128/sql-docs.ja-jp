@@ -7,21 +7,21 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - Axes collection [ADO MD], members
 ms.assetid: be459530-6f28-458f-ad70-759eae3ae08c
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 2db7cc811d4ae266bfbe3c86d5f254ba8a5cbaf5
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: d74cea075072045a072e8f7c6e5bb82eb793c274
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88987403"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100055827"
 ---
 # <a name="axes-collection-properties-methods-and-events"></a>Axes コレクションのプロパティ、メソッド、およびイベント
-## <a name="properties"></a>プロパティ  
+## <a name="properties"></a>Properties  
  [Count プロパティ](../ado-api/count-property-ado.md)  
   
  [Item プロパティ](../ado-api/item-property-ado.md)  

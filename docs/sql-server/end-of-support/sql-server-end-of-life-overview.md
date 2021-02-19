@@ -5,16 +5,16 @@ ms.date: 08/12/2020
 ms.prod: sql
 ms.technology: install
 ms.topic: conceptual
-author: markingmyname
-ms.author: maghan
+author: cawrites
+ms.author: chadam
 ms.reviewer: pmasl
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 49cb6fddf2906583d64aa732d222a1d1a100e6c8
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: 97f9707792d134f0a2b23a5deb8ff33fe9b9ca88
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91988610"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97472463"
 ---
 # <a name="sql-server-end-of-support-options"></a>SQL Server のサポート終了オプション 
 [!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
@@ -24,8 +24,8 @@ ms.locfileid: "91988610"
 ## <a name="understanding-the-sql-server-lifecycle"></a>SQL Server のライフサイクルについて
 
 各バージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、少なくとも 10 年間のサポートが受けられます。これには、メインストリーム サポートの 5 年間、および延長サポートの 5 年間が含まれます。
--  **メインストリーム サポート**には、機能、パフォーマンス、スケーラビリティ、およびセキュリティ更新プログラムが含まれています。 
--  **延長サポート**には、セキュリティ更新プログラムのみが含まれます。 
+-  **メインストリーム サポート** には、機能、パフォーマンス、スケーラビリティ、およびセキュリティ更新プログラムが含まれています。 
+-  **延長サポート** には、セキュリティ更新プログラムのみが含まれます。 
 
 **サポートの終了** (有効期間の終了とも呼ばれます) は、製品がそのライフサイクルの終了に達したことと、製品でサービスとサポートを利用できなくなったことを示します。 Microsoft ライフサイクルの詳細については、「[Microsoft ライフサイクル ポリシー](https://support.microsoft.com/hub/4095338/microsoft-lifecycle-policy)」を参照してください。
 
@@ -95,7 +95,7 @@ ms.locfileid: "91988610"
 
 ## <a name="extend-support"></a>サポートを延長する 
 
-アップグレードの準備ができておらず、クラウドに移行する準備ができていない場合は、延長セキュリティ更新プログラムのサブスクリプションを購入して、サポート終了日を過ぎてから最長 3 年間は**重要な**セキュリティ更新プログラムを受け取ることができます。  
+アップグレードの準備ができておらず、クラウドに移行する準備ができていない場合は、延長セキュリティ更新プログラムのサブスクリプションを購入して、サポート終了日を過ぎてから最長 3 年間は **重要な** セキュリティ更新プログラムを受け取ることができます。  
 
 ### <a name="benefits"></a>メリット 
 

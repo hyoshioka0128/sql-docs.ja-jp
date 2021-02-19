@@ -1,25 +1,26 @@
 ---
+title: Transact-SQL ステートメント
 description: Transact-SQL ステートメント
-title: ステートメント | Microsoft Docs
-ms.custom: ''
-ms.date: 04/17/2020
 ms.prod: sql
 ms.prod_service: sql-data-warehouse, database-engine, pdw, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
+f1_keywords:
+- Alter_TSQL
 dev_langs:
 - TSQL
-ms.assetid: d8d6f62a-e815-425c-a80e-a63fd34ec275
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: c89cfff4f1477503650ab8f20ceb636636fb333f
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.custom: ''
+ms.date: 04/17/2020
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 85f4838575e340a5b40dddc109802ed99afedd7c
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540571"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99189429"
 ---
 # <a name="transact-sql-statements"></a>Transact-SQL ステートメント
 
@@ -45,6 +46,7 @@ SQL ステートメントは作業のアトミック単位であり、完全に�
 - ENABLE TRIGGER
 - RENAME
 - UPDATE STATISTICS
+- TRUNCATE TABLE
 
 ## <a name="data-manipulation-language"></a>データ操作言語
 
@@ -56,7 +58,6 @@ SQL ステートメントは作業のアトミック単位であり、完全に�
 - SELECT
 - UPDATE
 - MERGE
-- TRUNCATE TABLE
 
 ## <a name="permissions-statements"></a>権限ステートメント
 

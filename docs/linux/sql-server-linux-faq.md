@@ -7,12 +7,12 @@ ms.date: 10/23/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
-ms.openlocfilehash: 7b6583ce7fb4ae2d0b37d898b549a385cfc09763
-ms.sourcegitcommit: 22102f25db5ccca39aebf96bc861c92f2367c77a
+ms.openlocfilehash: 68f135dfbc2b03cfb27c7ab8b14345f0ffcc32db
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92115451"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100348128"
 ---
 # <a name="sql-server-on-linux-frequently-asked-questions-faq"></a>SQL Server on Linux に関してよく寄せられる質問 (FAQ)
 
@@ -105,7 +105,7 @@ ms.locfileid: "92115451"
 
 1. **Linux で実行される SSMS のようなツールはありますか?**
 
-   新しい Azure Data Studio は、SQL Server を管理するためのクロスプラットフォーム ツールです。 詳細については、[Azure Data Studio とは何か](../azure-data-studio/what-is.md)に関するページを参照してください。
+   新しい Azure Data Studio は、SQL Server を管理するためのクロスプラットフォーム ツールです。 詳細については、[Azure Data Studio とは何か](../azure-data-studio/what-is-azure-data-studio.md)に関するページを参照してください。
 
 1. **sqlcmd や bcp のようなコマンドを Linux で使用できますか?**
 

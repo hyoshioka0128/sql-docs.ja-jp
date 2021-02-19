@@ -6,21 +6,21 @@ ms.date: 05/18/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
 - database dynamic management objects [SQL Server]
 - dynamic management objects [SQL Server], database
 ms.assetid: 615e9440-32a3-4ec4-94c6-94547e10ebda
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: cfffdf68d61b0a9ec40b0649f0e92fed93f442b3
-ms.sourcegitcommit: a5398f107599102af7c8cda815d8e5e9a367ce7e
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: b5ce339ae678de564a900abeb1e2287924ba73bb
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92006574"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99158498"
 ---
 # <a name="database-related-dynamic-management-views-transact-sql"></a>データベース関連の動的管理ビュー (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

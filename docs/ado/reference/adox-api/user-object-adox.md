@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - User
@@ -16,20 +16,20 @@ helpviewer_keywords:
 ms.assetid: f68e32ce-ef7c-407d-bdb5-d280947ae0e2
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 6e83bd40c226f1d5b5948c6475b259c799907866
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: e37c09d4793a96056ab5d8003bf022b1d250b744
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88983052"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100049682"
 ---
 # <a name="user-object-adox"></a>User オブジェクト (ADOX)
 セキュリティで保護されたデータベース内でアクセス許可を持つユーザーアカウントを表します。  
   
 ## <a name="remarks"></a>解説  
- [カタログ](./catalog-object-adox.md)の[ユーザー](./users-collection-adox.md)コレクションは、すべてのカタログのユーザーを表します。 [グループ](./group-object-adox.md)の**ユーザー**コレクションは、特定のグループのユーザーのみを表します。  
+ [カタログ](./catalog-object-adox.md)の[ユーザー](./users-collection-adox.md)コレクションは、すべてのカタログのユーザーを表します。 [グループ](./group-object-adox.md)の **ユーザー** コレクションは、特定のグループのユーザーのみを表します。  
   
- **ユーザー**オブジェクトのプロパティ、コレクション、およびメソッドを使用すると、次のことができます。  
+ **ユーザー** オブジェクトのプロパティ、コレクション、およびメソッドを使用すると、次のことができます。  
   
 -   [Name](./name-property-adox.md)プロパティを使用してユーザーを識別します。  
   

@@ -7,19 +7,19 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - ADOX, collections
 - collections [ADOX]
 ms.assetid: c0c90ba9-0471-4381-96f1-376de22fa2ee
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: cc807900a08869ef46628b8aca2456326e617c87
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 69c5785fc47dfb0cede3d7aaa73aaac10d6fd4c1
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88985823"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100050663"
 ---
 # <a name="adox-collections"></a>ADOX のコレクション
 
@@ -35,7 +35,7 @@ ms.locfileid: "88985823"
 |[ビュー](./views-collection-adox.md)|カタログのすべての **ビュー** オブジェクトが含まれます。|  
   
 ## <a name="see-also"></a>参照  
- [ADOX API リファレンス](./adox-object-model.md?view=sql-server-ver15)   
+ [ADOX API リファレンス](./adox-object-model.md)   
  [ADOX オブジェクトモデル](./adox-object-model.md)   
  [ADOX オブジェクト](./adox-objects.md)   
  [データ定義言語とセキュリティの ADO 拡張機能 (ADOX)](../../guide/extensions/ado-extensions-for-data-definition-language-and-security-adox.md)

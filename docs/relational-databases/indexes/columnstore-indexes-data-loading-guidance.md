@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: b29850b5-5530-498d-8298-c4d4a741cdaf
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6b057d193af0cea47e1dc19c58c508d45786b940
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 37827d1de9b99acb585762da094fd6cdaf905298
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88482735"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99235391"
 ---
 # <a name="columnstore-indexes---data-loading-guidance"></a>列ストア インデックス - データ読み込みガイダンス
 
@@ -28,7 +28,7 @@ ms.locfileid: "88482735"
  列ストア インデックスを初めて使用する場合は、 「[列ストア インデックス - 概要](../../relational-databases/indexes/columnstore-indexes-overview.md)」と「[列ストア インデックスのアーキテクチャ](../../relational-databases/sql-server-index-design-guide.md#columnstore_index)」を参照してください。
   
 ## <a name="what-is-bulk-loading"></a>一括読み込みとは
-*一括読み込み*は、大量の行がデータ ストアに追加される方法を表します。 これは、バッチの行を対象とするため、データを列ストア インデックスに移動するために、最もパフォーマンスが良い方法です。 一括読み込みでは、行グループを最大容量まで入れ、直接列ストアに圧縮します。 行グループごとに最小値の 102,400 行に一致しない読み込みの最後の行のみが、デルタストアに移動されます。  
+*一括読み込み* は、大量の行がデータ ストアに追加される方法を表します。 これは、バッチの行を対象とするため、データを列ストア インデックスに移動するために、最もパフォーマンスが良い方法です。 一括読み込みでは、行グループを最大容量まで入れ、直接列ストアに圧縮します。 行グループごとに最小値の 102,400 行に一致しない読み込みの最後の行のみが、デルタストアに移動されます。  
 
 一括読み込みを実行するには、[bcp ユーティリティ](../../tools/bcp-utility.md)、[Integration Services](../../integration-services/sql-server-integration-services.md) を使用したり、ステージング テーブルから行を選択したりすることができます。
 
@@ -89,7 +89,7 @@ INSERT INTO <columnstore index>
 SELECT <list of columns> FROM <Staging Table>  
 ```  
   
- このコマンドでは、BCP や一括挿入と同じように列ストア インデックスにデータを読み込みますが、データは単一のバッチにまとめられます。 ステージング テーブルの行数が 102400 未満の場合、行はデルタ行グループに読み込まれ、それ以外の場合、行は圧縮された列グループに直接読み込まれます。 この `INSERT` 操作はシングル スレッドの場合に限られていました。 データの並列読み込みを行う場合、複数のステージング テーブルを作成するか、ステージング テーブルの重複していない行の範囲を指定して `INSERT`/`SELECT` を実行することができます。 このような制限は [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] にはありません。 次のコマンドではステージング テーブルからデータを並列で読み込みますが、`TABLOCK` を指定する必要があります。 これは、一括読み込みについて説明した内容と矛盾していることがありますが、主な違いは、ステージング テーブルからの並列データの読み込みが同じトランザクションで実行されることです。
+ このコマンドでは、BCP や一括挿入と同じように列ストア インデックスにデータを読み込みますが、データは単一のバッチにまとめられます。 ステージング テーブルの行数が 102400 未満の場合、行はデルタ行グループに読み込まれ、それ以外の場合、行は圧縮された列グループに直接読み込まれます。 この `INSERT` 操作はシングル スレッドの場合に限られていました。 データの並列読み込みを行う場合、複数のステージング テーブルを作成するか、ステージング テーブルの重複していない行の範囲を指定して `INSERT`/`SELECT` を実行することができます。 このような制限は [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] にはありません。 次のコマンドではステージング テーブルからデータを並列で読み込みますが、`TABLOCK` を指定する必要があります。 これは、一括読み込みについて説明した内容と矛盾していることがありますが、主な違いは、ステージング テーブルからの並列データの読み込みが同じトランザクションで実行されることです。
   
 ```sql  
 INSERT INTO <columnstore index> WITH (TABLOCK) 
@@ -104,7 +104,7 @@ SELECT <list of columns> FROM <Staging Table>
   
 ## <a name="what-is-trickle-insert"></a>トリクル挿入とは
 
-*トリクル挿入*は、個々の行が列ストア インデックスに移動する方法を表します。 トリクル挿入では、[INSERT INTO](../../t-sql/statements/insert-transact-sql.md) ステートメントを使用します。 トリクル挿入を使用すると、すべての行はデルタストアに移動されます。 これは行が少数のときに便利ですが、大量の読み込みは実用的ではありません。
+*トリクル挿入* は、個々の行が列ストア インデックスに移動する方法を表します。 トリクル挿入では、[INSERT INTO](../../t-sql/statements/insert-transact-sql.md) ステートメントを使用します。 トリクル挿入を使用すると、すべての行はデルタストアに移動されます。 これは行が少数のときに便利ですが、大量の読み込みは実用的ではありません。
   
 ```sql  
 INSERT INTO <table-name> VALUES (<set of values>)  

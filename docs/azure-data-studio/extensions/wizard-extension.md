@@ -9,16 +9,16 @@ ms.author: alayu
 ms.reviewer: maghan
 ms.custom: ''
 ms.date: 08/28/2020
-ms.openlocfilehash: 50440aca120dad6cfd165262bd4bfd2e139393cf
-ms.sourcegitcommit: 63aef5a96905f0b026322abc9ccb862ee497eebe
+ms.openlocfilehash: ef9938d87de3963ab7757e0d4ec3af0e01d6f33a
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91364059"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100048362"
 ---
 # <a name="create-an-azure-data-studio-wizard-extension"></a>Azure Data Studio のウィザード拡張機能を作成する
 
-このチュートリアルでは、新しい **Azure Data Studio のウィザード拡張機能**を作成する方法について説明します。 この拡張機能は、Azure Data Studio でのウィザードとユーザーのやりとりに役立ちます。
+このチュートリアルでは、新しい **Azure Data Studio のウィザード拡張機能** を作成する方法について説明します。 この拡張機能は、Azure Data Studio でのウィザードとユーザーのやりとりに役立ちます。
 
 この記事では、次の方法について説明します。
 > [!div class="checklist"]
@@ -36,14 +36,14 @@ Azure Data Studio は Visual Studio Code と同じフレームワーク上に構
 - `$PATH` にインストールされ、利用できる [Node.js](https://nodejs.org)。 Node.js には、拡張機能ジェネレーターのインストールに使用される [npm](https://www.npmjs.com/) (Node.js パッケージ マネージャー) が含まれています。
 - 拡張機能をデバッグするための [Visual Studio Code](https://code.visualstudio.com)。
 - The Azure Data Studio [Debug 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-mssql.sqlops-debug) (任意)。 これにより、パッケージ化して Azure Data Studio にインストールしなくても拡張機能をテストできます。
-- 確実に `azuredatastudio` をパスに含めます。 Windows の場合、setup.exe で `Add to Path` オプションを選択します。 Mac または Linux の場合、*[PATH 内に 'azuredatastudio' コマンドをインストールします]* オプションを実行します。
+- 確実に `azuredatastudio` をパスに含めます。 Windows の場合、setup.exe で `Add to Path` オプションを選択します。 Mac または Linux の場合、Azure Data Studio のコマンド パレットから **[PATH 内に 'azuredatastudio' コマンドをインストールします]** を実行します。
 
 ## <a name="install-the-extension-generator"></a>拡張機能ジェネレーターをインストールする
 
 拡張機能作成のプロセスを簡単にするため、Yeoman を利用して[拡張機能ジェネレーター](https://code.visualstudio.com/docs/extensions/yocode)を構築しました。 これをインストールするには、コマンド プロンプトから次を実行します。
 
 ```console
-`npm install -g yo generator-azuredatastudio`
+npm install -g yo generator-azuredatastudio
 ```
 
 ## <a name="create-your-wizard-extension"></a>ウィザード拡張機能を作成する
@@ -74,7 +74,7 @@ Azure Data Studio は Visual Studio Code と同じフレームワーク上に構
 
 ### <a name="run-the-extension"></a>拡張機能を実行する
 
-拡張機能を実行して、ウィザード テンプレートが提供する内容を見てみましょう。 実行する前に、**Azure Data Studio Debug 拡張機能**を、確実に Visual Studio Code にインストールします。
+拡張機能を実行して、ウィザード テンプレートが提供する内容を見てみましょう。 実行する前に、**Azure Data Studio Debug 拡張機能** を、確実に Visual Studio Code にインストールします。
 
 VS Code で **F5** を選択します。すると、Azure Data Studio がデバッグ モードで起動し、拡張機能が実行されます。 次に、Azure Data Studio で、新しいウィンドウのコマンド パレット (Ctr + Shift + P キー) から **[Launch Wizard]\(ウィザードの起動\)** コマンドを実行します。 その結果、この拡張機能によって提供される既定のウィザードが起動します。
 
@@ -104,7 +104,7 @@ VS Code で **F5** を選択します。すると、Azure Data Studio がデバ�
 他者と共有するには、拡張機能を 1 つのファイルにパッケージ化する必要があります。 ファイルは Azure Data Studio 拡張機能マーケットプレースに公開するか、チームやコミュニティで共有できます。 それを行うには、別の npm パッケージをコマンド ラインからインストールする必要があります。
 
 ```console
-npm install -g vsce`
+npm install -g vsce
 ```
 
 `README.md` を好みに応じて編集し、次に拡張機能のベース ディレクトリに移動して、`vsce package` を実行します。 必要に応じてリポジトリを拡張機能とリンクすることも、それなしで続行することもできます。 1 つ追加するには、`package.json` ファイルに同様の行を追加します。

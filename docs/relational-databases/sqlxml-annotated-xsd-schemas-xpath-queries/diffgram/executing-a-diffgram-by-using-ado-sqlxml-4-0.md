@@ -17,13 +17,13 @@ ms.assetid: 741fce82-de83-4923-86eb-30acb5b9a5e6
 author: MightyPen
 ms.author: genemi
 ms.custom: seo-lt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 9a6e50a1e7a770ad8be9777d37b84bc328248159
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: a28fe03f8e52d58f0e31c2e7d3cabebfd8a6113c
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85650044"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97431500"
 ---
 # <a name="executing-a-diffgram-by-using-ado-sqlxml-40"></a>ADO を使用した、DiffGram の実行 (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -31,17 +31,17 @@ ms.locfileid: "85650044"
   
  サンプルアプリケーションのプロセスは次のとおりです。  
   
--   **Conn**オブジェクト (**ADODB接続**) 特定のサーバー上の SQL Server の実行中のインスタンスへの接続を確立します。  
+-   **Conn** オブジェクト (**ADODB接続**) 特定のサーバー上の SQL Server の実行中のインスタンスへの接続を確立します。  
   
--   **Cmd**オブジェクト (**ADODB**) は、確立された接続で実行されます。  
+-   **Cmd** オブジェクト (**ADODB**) は、確立された接続で実行されます。  
   
 -   コマンド言語が DBGUID_MSSQLXML に設定されます。  
   
 -   DiffGram は、ファイルからコマンドストリーム (**Strmin**) にコピーされます。  
   
--   コマンドの出力ストリームは、 **Strmout**オブジェクト (ADODB) に設定され**ます。ストリーム**) が返されます。  
+-   コマンドの出力ストリームは、 **Strmout** オブジェクト (ADODB) に設定され **ます。ストリーム**) が返されます。  
   
--   SQLOLEDB プロバイダーを使用する場合、既定では Sqlxmlx.dll により Microsoft SQLXML の機能が提供されます。 SQLOLEDB プロバイダーで Sqlxml4.dll を使用するには、SQLOLEDB プロバイダー**接続**オブジェクトで**sqlxml Version**プロパティを**sqlxml. 4.0**に設定する必要があります。  
+-   SQLOLEDB プロバイダーを使用する場合、既定では Sqlxmlx.dll により Microsoft SQLXML の機能が提供されます。 SQLOLEDB プロバイダーで Sqlxml4.dll を使用するには、SQLOLEDB プロバイダー **接続** オブジェクトで **sqlxml Version** プロパティを **sqlxml. 4.0** に設定する必要があります。  
   
 -   コマンド (DiffGram) が実行されます。  
   
@@ -97,7 +97,7 @@ End Sub
     Microsoft ActiveX Data Objects 2.8 Library  
     ```  
   
-4.  ツールボックスで、[**コマンド**ボタン] をクリックし、フォームにボタンを描画します。  
+4.  ツールボックスで、[ **コマンド** ボタン] をクリックし、フォームにボタンを描画します。  
   
 5.  ボタンをダブルクリックしてコードを編集し、トピックで提供されるアプリケーション コードを追加します。  
   

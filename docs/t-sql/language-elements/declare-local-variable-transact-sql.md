@@ -6,7 +6,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DECLARE
 - DECLARE_TSQL
@@ -18,15 +18,15 @@ helpviewer_keywords:
 - DECLARE statement
 - declaring variables
 ms.assetid: d1635ebb-f751-4de1-8bbc-cae161f90821
-author: rothja
-ms.author: jroth
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 4fcb156d48e619a0d5ac399bf4c04a91720d3f0d
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 46551c65a37fb4e2c5b98806835f9b0b0fb3701d
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92196620"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100347563"
 ---
 # <a name="declare-local_variable-transact-sql"></a>DECLARE @local_variable (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -74,8 +74,8 @@ See CREATE TABLE for index option syntax.
   
 ```  
   
-
--- Azure Synapse Analytics と Parallel Data Warehouse の構文  
+```syntaxsql
+-- Syntax for Azure Synapse Analytics and Parallel Data Warehouse  
   
 DECLARE   
 {{ @local_variable [AS] data_type } [ =value [ COLLATE <collation_name> ] ] } [,...n]  
@@ -84,120 +84,119 @@ DECLARE
   
 [!INCLUDE[sql-server-tsql-previous-offline-documentation](../../includes/sql-server-tsql-previous-offline-documentation.md)]
 
-## Arguments
+## <a name="arguments"></a>引数
 @*local_variable*  
- Is the name of a variable. Variable names must begin with an at (@) sign. Local variable names must comply with the rules for [identifiers](../../relational-databases/databases/database-identifiers.md).  
+ 変数名を指定します。 変数名は、アット マーク (@) で始める必要があります。 ローカル変数名は、[識別子](../../relational-databases/databases/database-identifiers.md)の規則に従っている必要があります。  
   
 *data_type*  
- Is any system-supplied, common language runtime (CLR) user-defined table type, or alias data type. A variable cannot be of **text**, **ntext**, or **image** data type.  
+ システム提供の共通言語ランタイム (CLR) ユーザー定義テーブル型または別名データ型を指定します。 変数のデータ型としては **text**、**ntext**、**image** を指定できません。  
   
- For more information about system data types, see [Data Types &#40;Transact-SQL&#41;](../../t-sql/data-types/data-types-transact-sql.md). For more information about CLR user-defined types or alias data types, see [CREATE TYPE &#40;Transact-SQL&#41;](../../t-sql/statements/create-type-transact-sql.md).  
+ システム データ型の詳細については、「[データ型 &#40;Transact-SQL&#41;](../../t-sql/data-types/data-types-transact-sql.md)」を参照してください。 CLR ユーザー定義型または別名データ型の詳細については、「[CREATE TYPE &#40;Transact-SQL&#41;](../../t-sql/statements/create-type-transact-sql.md)」を参照してください。  
   
  =*value*  
- Assigns a value to the variable in-line. The value can be a constant or an expression, but it must either match the variable declaration type or be implicitly convertible to that type. For more information, see [Expressions &#40;Transact-SQL&#41;](../../t-sql/language-elements/expressions-transact-sql.md).  
+ インラインで値を変数に代入します。 値には定数または式を指定できますが、変数宣言の型と同じであるか、その型に暗黙的に変換できる必要があります。 詳細については、「[式 &#40;Transact-SQL&#41;](../../t-sql/language-elements/expressions-transact-sql.md)」を参照してください。  
   
 @*cursor_variable_name*  
- Is the name of a cursor variable. Cursor variable names must begin with an at (@) sign and conform to the rules for identifiers.  
+ カーソル変数の名前を指定します。 カーソル変数名はアット マーク (@) で始まり、識別子の規則に従っている必要があります。  
   
 CURSOR  
- Specifies that the variable is a local cursor variable.  
+ 変数がローカルのカーソル変数であることを指定します。  
   
 @*table_variable_name*  
- Is the name of a variable of type **table**. Variable names must begin with an at  (@) sign and conform to the rules for identifiers.  
+ **table** 型の変数の名前です。 変数名はアット マーク (@) で始まり、識別子の規則に従っている必要があります。  
   
 <table_type_definition>  
-Defines the **table** data type. The table declaration includes column definitions, names, data types, and constraints. The only constraint types allowed are PRIMARY KEY, UNIQUE, NULL, and CHECK. An alias data type cannot be used as a column scalar data type if a rule or default definition is bound to the type.
+**table** データ型を定義します。 テーブルの定義には、列の定義、名前、データ型、制約が含まれます。 指定できる制約の種類は、PRIMARY KEY、UNIQUE、NULL、CHECK のみです。 別名データ型にルールや既定の定義がバインドされている場合、別名データ型を列のスカラー データ型として使用することはできません。
   
-\<table_type_definiton>
-Is a subset of information used to define a table in CREATE TABLE. Elements and essential definitions are included here. For more information, see [CREATE TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/create-table-transact-sql.md).  
+\<table_type_definiton> CREATE TABLE でテーブルを定義するために使用する情報のサブセットです。 これには要素と必須の定義が含まれます。 詳細については、「[CREATE TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/create-table-transact-sql.md)」を参照してください。  
   
  *n*  
- Is a placeholder indicating that multiple variables can be specified and assigned values. When declaring **table** variables, the **table** variable must be the only variable being declared in the DECLARE statement.  
+ 複数の変数を指定し、値を割り当てることができることを示すプレースホルダーです。 **table** 変数を宣言する場合、1 つの DECLARE ステートメント内に **table** 変数以外の変数を定義することはできません。  
   
  *column_name*  
- Is the name of the column in the table.  
+ テーブル内の列名を指定します。  
   
  *scalar_data_type*  
- Specifies that the column is a scalar data type.  
+ 列がスカラー データ型であることを指定します。  
   
  *computed_column_expression*  
- Is an expression defining the value of a computed column. It is computed from an expression using other columns in the same table. For example, a computed column can have the definition **cost** AS **price \* qty**. The expression can be a noncomputed column name, constant, built-in function, variable, or any combination of these connected by one or more operators. The expression cannot be a subquery or a user-defined function. The expression cannot reference a CLR user-defined type.  
+ 計算列の値を定義する式を指定します。 計算列は、同じテーブルの他の列を使用した式によって計算されます。 たとえば、計算列は **cost** AS **price \* qty** として定義されます。この式には、計算列以外の列の名前、定数、組み込み関数、変数、およびこれらを 1 つ以上の演算子で結合した組み合わせを使用できます。 この式はサブクエリまたはユーザー定義関数にはできません。 この式は CLR ユーザー定義型を参照できません。  
   
  [ COLLATE *collation_name*]  
- Specifies the collation for the column. *collation_name* can be either a Windows collation name or an SQL collation name, and is applicable only for columns of the **char**, **varchar**, **text**, **nchar**, **nvarchar**, and **ntext** data types. If not specified, the column is assigned either the collation of the user-defined data type (if the column is of a user-defined data type) or the collation of the current database.  
+ 列の照合順序を指定します。 *collation_name* には、Windows の照合順序名か SQL の照合順序名を指定できます。これは、データ型が **char**、**varchar**、**text**、**nchar**、**nvarchar**、**ntext** の列にだけ適用できます。 指定しないと、列がユーザー定義データ型である場合はユーザー定義データ型の照合順序、または現在のデータベースの照合順序が割り当てられます。  
   
- For more information about the Windows and SQL collation names, see [COLLATE &#40;Transact-SQL&#41;](~/t-sql/statements/collations.md).  
+ Windows と SQL の照合順序名については、「[COLLATE &#40;Transact-SQL&#41;](~/t-sql/statements/collations.md)」を参照してください。  
   
  DEFAULT  
- Specifies the value provided for the column when a value is not explicitly supplied during an insert. DEFAULT definitions can be applied to any columns except those defined as **timestamp** or those with the IDENTITY property. DEFAULT definitions are removed when the table is dropped. Only a constant value, such as a character string; a system function, such as a SYSTEM_USER(); or NULL can be used as a default. To maintain compatibility with earlier versions of [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)], a constraint name can be assigned to a DEFAULT.  
+ 挿入の際に明示的な値を指定しない場合に、列に入力される値を指定します。 DEFAULT 定義は、**timestamp** として定義された列または IDENTITY プロパティを持つ列以外のすべての列に適用できます。 テーブルが削除されると、DEFAULT 定義は削除されます。 既定値として使用できるのは、文字列などの定数値、SYSTEM_USER() などのシステム関数、または NULL だけです。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の旧バージョンとの互換性を保つため、DEFAULT に制約名を割り当てることができます。  
   
  *constant_expression*  
- Is a constant, NULL, or a system function used as the default value for the column.  
+ 列の既定値として使用される定数、NULL またはシステム関数を指定します。  
   
  IDENTITY  
- Indicates that the new column is an identity column. When a new row is added to the table, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] provides a unique incremental value for the column. Identity columns are commonly used in conjunction with PRIMARY KEY constraints to serve as the unique row identifier for the table. The IDENTITY property can be assigned to **tinyint**, **smallint**, **int**, **decimal(p,0)**, or **numeric(p,0)** columns. Only one identity column can be created per table. Bound defaults and DEFAULT constraints cannot be used with an identity column. You must specify both the seed and increment, or neither. If neither is specified, the default is (1,1).  
+ 新しい列が ID 列であることを指定します。 テーブルに行が新しく追加されると、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では列に一意な増分値が設定されます。 ID 列は通常、PRIMARY KEY 制約と組み合わせて使用し、テーブルの一意な行識別子 (ROWID) の役割を果たします。 IDENTITY プロパティは、**tinyint**、**smallint**、**int**、**decimal(p,0)** 、**numeric(p,0)** のいずれかの列に割り当てることができます。 ID 列は 1 つのテーブルにつき 1 つだけ作成できます。 バインドされた既定値および DEFAULT 制約を ID 列と共に使用することはできません。 seed と increment は、両方を指定するか、どちらも指定しないでください。 どちらも指定しないときの既定値は (1,1) です。  
   
  *seed*  
- Is the value used for the very first row loaded into the table.  
+ テーブルに読み込まれる最初の行に使用される値です。  
   
  *increment*  
- Is the incremental value added to the identity value of the previous row that was loaded.  
+ 既に読み込まれている前の行の ID 値に加算される増分値です。  
   
  ROWGUIDCOL  
- Indicates that the new column is a row global unique identifier column. Only one **uniqueidentifier** column per table can be designated as the ROWGUIDCOL column. The ROWGUIDCOL property can be assigned only to a **uniqueidentifier** column.  
+ 新しい列が行グローバル一意識別子列であることを指定します。 1 つのテーブルにつき、1 つの **uniqueidentifier** 列だけを ROWGUIDCOL 列に指定できます。 ROWGUIDCOL プロパティは **uniqueidentifier** 列にだけ割り当てることができます。  
   
  NULL | NOT NULL  
- Indicates if null is allowed in the variable. The default is NULL.  
+ 変数で NULL 値が許可されるかどうかを示します。 既定値は NULL です。  
   
  PRIMARY KEY  
- Is a constraint that enforces entity integrity for a given column or columns through a unique index. Only one PRIMARY KEY constraint can be created per table.  
+ 特定の 1 つ以上の一意なインデックスによって列にエンティティの整合性を強制する制約です。 PRIMARY KEY 制約は、1 つのテーブルにつき 1 つだけ作成できます。  
   
  UNIQUE  
- Is a constraint that provides entity integrity for a given column or columns through a unique index. A table can have multiple UNIQUE constraints.  
+ 一意なインデックスによって、特定の 1 つ以上の列に対してエンティティの整合性を設定する制約です。 1 つのテーブルには複数の UNIQUE 制約を指定できます。  
   
  CHECK  
- Is a constraint that enforces domain integrity by limiting the possible values that can be entered into a column or columns.  
+ 1 つ以上の列に入力できる値を制限することによってドメインの整合性を設定する制約です。  
   
  *logical_expression*  
- Is a logical expression that returns TRUE or FALSE.  
+ TRUE または FALSE を返す論理式です。  
   
-## Remarks  
- Variables are often used in a batch or procedure as counters for WHILE, LOOP, or for an IF...ELSE block.  
+## <a name="remarks"></a>解説  
+ 変数は、バッチやプロシージャの中で、WHILE、LOOP、または IF...ELSE ブロックのカウンターとして使用される場合があります。  
   
- Variables can be used only in expressions, not in place of object names or keywords. To construct dynamic SQL statements, use EXECUTE.  
+ 変数は式の内部だけで使用できます。オブジェクト名やキーワードの代わりに使用することはできません。 動的 SQL ステートメントを作成するには、EXECUTE を使用します。  
   
- The scope of a local variable is the batch in which it is declared.  
+ ローカル変数のスコープは、その変数が宣言されるバッチです。  
  
- A table variable is not necessarily memory resident. Under memory pressure, the pages belonging to a table variable can be pushed out to tempdb.
+ テーブル変数は、必ずしもメモリ常駐ではありません。 メモリ不足の場合、テーブル変数に属するページは tempdb に移動します。
   
- A cursor variable that currently has a cursor assigned to it can be referenced as a source in a:  
+ 現在カーソルが割り当てられているカーソル変数は、次のステートメントの中でソースとして参照できます。  
   
--   CLOSE statement.  
+-   CLOSE ステートメント。  
   
--   DEALLOCATE statement.  
+-   DEALLOCATE ステートメント  
   
--   FETCH statement.  
+-   FETCH ステートメント  
   
--   OPEN statement.  
+-   OPEN ステートメント  
   
--   Positioned DELETE or UPDATE statement.  
+-   位置指定の DELETE または UPDATE ステートメント。  
   
--   SET CURSOR variable statement (on the right side).  
+-   SET CURSOR 変数ステートメント (右側)。  
   
- In all of these statements, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] raises an error if a referenced cursor variable exists but does not have a cursor currently allocated to it. If a referenced cursor variable does not exist, [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] raises the same error raised for an undeclared variable of another type.  
+ どのステートメントの場合も、参照されるカーソル変数は存在するが、現在カーソルが割り当てられていない場合は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] でエラーが発生します。 参照されているカーソル変数が存在しない場合、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、宣言されていない別の型の変数に対して発生するエラーと同じエラーが発生します。  
   
- A cursor variable:  
+ カーソル変数には、次の特徴があります。  
   
--   Can be the target of either a cursor type or another cursor variable. For more information, see [SET @local_variable &#40;Transact-SQL&#41;](../../t-sql/language-elements/set-local-variable-transact-sql.md).  
+-   カーソルの種類または別のカーソル変数の対象になります。 詳細については、「[SET @local_variable &#40;Transact-SQL&#41;](../../t-sql/language-elements/set-local-variable-transact-sql.md)」を参照してください。  
   
--   Can be referenced as the target of an output cursor parameter in an EXECUTE statement if the cursor variable does not have a cursor currently assigned to it.  
+-   カーソル変数に現在カーソルが割り当てられていない場合、EXECUTE ステートメント内の出力カーソル パラメーターの対象として参照できます。  
   
--   Should be regarded as a pointer to the cursor.  
+-   カーソルへのポインターとして扱われます。  
   
-## Examples  
+## <a name="examples"></a>例  
   
-### A. Using DECLARE  
- The following example uses a local variable named `@find` to retrieve contact information for all last names beginning with `Man`.  
+### <a name="a-using-declare"></a>A. DECLARE を使用する  
+ 次の例では、`@find` という名前のローカル変数を使って、`Man` で始まるすべての姓の連絡先情報を取得します。  
   
 ```sql  
 USE AdventureWorks2012;  

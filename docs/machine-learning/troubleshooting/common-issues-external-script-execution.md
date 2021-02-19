@@ -8,13 +8,13 @@ ms.topic: troubleshooting
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 0e2fb03c2b4b79db7d97a3ad66d46d79e669983c
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: b57fdb3abd3482d6a395e1e6690f2e628a2a3e9e
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92194524"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470683"
 ---
 # <a name="troubleshoot-issues-with-launchpad-service-and-external-script-execution-in-sql-server"></a>SQL Server での Launchpad サービスと外部スクリプト実行に関する問題のトラブルシューティング
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -55,7 +55,7 @@ Machine Learning Services のセットアップ中に、SQL Server は Windows �
 
 ただし、より制限の厳しいセキュリティ ポリシーが適用されている組織では、このグループに必要な権限が手動で削除されているか、ポリシーによって自動的に失効にされている可能性があります。 権限が削除されている場合、Launchpad は SQL Server に接続できなくなり、SQL Server は外部ランタイムを呼び出せません。
 
-問題を解決するには、グループ **SQLRUserGroup** に**ローカルのログオンを許可する**システム権限があることを確認します。
+問題を解決するには、グループ **SQLRUserGroup** に **ローカルのログオンを許可する** システム権限があることを確認します。
 
 詳細については、「[Windows サービス アカウントと権限の構成](../../database-engine/configure-windows/configure-windows-service-accounts-and-permissions.md)」を参照してください。
 
@@ -77,7 +77,7 @@ GRANT EXECUTE ANY EXTERNAL SCRIPT TO <username>
 
 このセクションでは、Launchpad が返す最も一般的なエラー メッセージを示します。
 
-::: moniker range=">=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2016"
 ## <a name="unable-to-launch-runtime-for-r-script"></a>"R スクリプトのランタイムを起動できません"
 
 R ユーザーの Windows グループ (Python にも使用) が R Services を実行しているインスタンスにログオンできない場合は、次のエラーが表示されることがあります。
@@ -186,12 +186,12 @@ EXEC sp_execute_external_script @language = N'R',
 
 この問題を解決するには、パッケージを SQL Server インスタンス ライブラリに再インストールする必要があります。
 
-::: moniker range=">=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2016"
 >[!NOTE]
 >最新バージョンの Microsoft R を使用するために SQL Server 2016 のインスタンスをアップグレードした場合、既定のライブラリの場所は異なります。 詳細については、[SqlBindR を使用した R サービスのインスタンスのアップグレード](../install/upgrade-r-and-python.md)に関する記事を参照してください。
 ::: moniker-end
 
-::: moniker range=">=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2016"
 ## <a name="launchpad-shuts-down-due-to-mismatched-dlls"></a>DLL が一致しないために Launchpad がシャットダウンする
 
 他の機能を使用してデータベース エンジンをインストールして、サーバーに修正プログラムを適用した後、元のメディアを使用して Machine Learning 機能を追加すると、正しくないバージョンの Machine Learning コンポーネントがインストールされることがあります。 Launchpad は、バージョンの不一致を検出すると、シャットダウンしてダンプ ファイルを作成します。

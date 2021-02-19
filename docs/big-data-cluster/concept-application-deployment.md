@@ -10,16 +10,18 @@ ms.date: 06/22/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 65a7c0afc57cc29d8ec5df7beb4c3107470e2d31
-ms.sourcegitcommit: ae474d21db4f724523e419622ce79f611e956a22
+ms.openlocfilehash: 8c1f6b4895e872289095411cfd8ecdaf1e2eb087
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92257262"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100047652"
 ---
-# <a name="what-is-application-deployment-on-a-big-data-cluster"></a>ビッグ データ クラスターへのアプリケーション展開とは
+# <a name="what-is-application-deployment-on-a-sql-server-big-data-cluster"></a>SQL Server ビッグ データ クラスターのアプリケーション展開とは
 
-アプリケーション展開は、アプリケーションを作成、管理、および実行するためのインターフェイスを提供することにより、ビッグ データ クラスターでアプリケーションの展開を可能にします。 ビッグ データ クラスターに展開されたアプリケーションは、クラスターの計算機能を利用し、クラスターで使用可能なデータにアクセスできます。 これにより、データが存在するアプリケーションを管理しながら、アプリケーションのスケーラビリティとパフォーマンスが向上します。 SQL Server ビッグ データ クラスターでサポートされるアプリケーション ランタイムは、R、Python、SSIS、MLeap です。
+[!INCLUDE[SQL Server 2019](../includes/applies-to-version/sqlserver2019.md)]
+
+アプリケーション展開は、アプリケーションを作成、管理、および実行するためのインターフェイスを提供することにより、SQL Server ビッグ データ クラスターでアプリケーションの展開を可能にします。 SQL Server ビッグ データ クラスターに展開されたアプリケーションは、クラスターの計算機能を利用し、クラスターで使用可能なデータにアクセスできます。 これにより、データが存在するアプリケーションを管理しながら、アプリケーションのスケーラビリティとパフォーマンスが向上します。 [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)] でサポートされているアプリケーション ランタイムは、R、Python、SSIS、MLeap です。
 
 以降のセクションでは、アプリケーション展開のアーキテクチャと機能について説明します。
 
@@ -67,9 +69,9 @@ CU5 リリースの時点では、[アプリ展開]()インターフェイスを
 ```yml
 ...
 allowedCapabilities:
-- SETUID
-- SETGID
-- CHOWN
+- SETUID
+- SETGID
+- CHOWN
 - SYS_PTRACE
 - AUDIT_WRITE
 ...

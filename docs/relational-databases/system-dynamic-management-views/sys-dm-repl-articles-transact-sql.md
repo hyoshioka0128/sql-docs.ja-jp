@@ -1,11 +1,11 @@
 ---
 description: sys.dm_repl_articles (Transact-SQL)
-title: dm_repl_articles (Transact-sql) |Microsoft Docs
+title: sys.dm_repl_articles (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_repl_articles_TSQL
 - dm_repl_articles
@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_repl_articles dynamic management function
 ms.assetid: 794d514e-bacd-432e-a8ec-3a063a97a37b
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: ab0bd4b6ff2f862b292f78d9927536c2f9d2be6b
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 807f8e1a8cf8b7400d471af1d1151e9652797105
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89537017"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99138107"
 ---
 # <a name="sysdm_repl_articles-transact-sql"></a>sys.dm_repl_articles (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -66,9 +66,9 @@ ms.locfileid: "89537017"
 |**Int文書のオプション**|**bigint**|追加のパブリッシングオプションを指定するビットマップ。ビットごとのオプションの値は次のとおりです。<br /><br /> **0x1** -ピアツーピアレプリケーションに対して有効になります。<br /><br /> **0x2** -ローカル変更のみを発行します。<br /><br /> **0x4** -SQL Server 以外のサブスクライバーに対して有効です。|  
   
 ## <a name="permissions"></a>アクセス許可  
- **Dm_repl_articles**を呼び出すには、パブリケーションデータベースに対する VIEW DATABASE STATE 権限が必要です。  
+ **Dm_repl_articles** を呼び出すには、パブリケーションデータベースに対する VIEW DATABASE STATE 権限が必要です。  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  情報は、レプリケーションアーティクルキャッシュに現在読み込まれているレプリケートされたデータベースオブジェクトに対してのみ返されます。  
   
 ## <a name="see-also"></a>参照  

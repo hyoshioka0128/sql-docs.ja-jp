@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - ASSEMBLYPROPERTY_TSQL
 - ASSEMBLYPROPERTY
@@ -17,14 +17,14 @@ helpviewer_keywords:
 - ASSEMBLYPROPERTY statement
 - assemblies [CLR integration], properties
 ms.assetid: cf03d1b1-724c-48bf-a8df-3fe2586b150a
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 722d6c4b2130ad51c2249f083691233524d3834c
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 5a5acce18561975c29a3e5f22f74227e079f422f
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92037085"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99210012"
 ---
 # <a name="assemblyproperty-transact-sql"></a>ASSEMBLYPROPERTY (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

@@ -7,19 +7,19 @@ ms.prod: sql
 ms.prod_service: sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 ms.assetid: 8cad1b2c-5ea0-4001-9060-2f6832ccd057
-author: juliemsft
+author: julieMSFT
 ms.author: jrasnick
-monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest || = sqlallproducts-allversions'
-ms.openlocfilehash: 571771403d665bd6d668fcce7037e06db6ffa33d
-ms.sourcegitcommit: bd3a135f061e4a49183bbebc7add41ab11872bae
+monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
+ms.openlocfilehash: ffa098db4ca61746a3301702cd526498f0cd2f85
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92300644"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99191014"
 ---
 # <a name="create-function-azure-synapse-analytics"></a>CREATE FUNCTION (Azure Synapse Analytics)
 [!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
@@ -66,8 +66,6 @@ RETURNS return_data_type
 }  
 ```
 
-[!INCLUDE[synapse-analytics-od-unsupported-syntax](../../includes/synapse-analytics-od-unsupported-syntax.md)]
-
 ```syntaxsql
 -- Transact-SQL Inline Table-Valued Function Syntax (Preview in Azure Synapse Analytics only)
 CREATE FUNCTION [ schema_name. ] function_name
@@ -82,6 +80,8 @@ RETURNS TABLE
     RETURN [ ( ] select_stmt [ ) ]
 [ ; ]
 ```
+
+[!INCLUDE[synapse-analytics-od-unsupported-syntax](../../includes/synapse-analytics-od-unsupported-syntax.md)]
   
 ## <a name="arguments"></a>引数  
  *schema_name*  
@@ -106,7 +106,7 @@ RETURNS TABLE
  *parameter_data_type*  
  パラメーター データ型。 [!INCLUDE[tsql](../../includes/tsql-md.md)] 関数は、[!INCLUDE[ssSDW](../../includes/sssdw-md.md)] でサポートされるすべてのスカラー データ型を許可します。 タイムスタンプ (rowversion) データ型はサポートされていません。  
   
- [ = *default* ]  
+ [ =*default* ]  
  パラメーターの既定値です。 *default* 値が定義されている場合は、パラメーターに値を指定せずに関数を実行できます。  
   
  関数のパラメーターに既定値がある場合に、既定値を取得する目的でその関数を呼び出すときは、DEFAULT キーワードを指定する必要があります。 この動作は、ストアド プロシージャで既定値を持つパラメーターを使用する場合とは異なります。ストアド プロシージャの場合は、パラメーターを省略すると既定値が暗黙的に使用されます。  
@@ -122,11 +122,11 @@ RETURNS TABLE
  *scalar_expression*  
  スカラー関数が返すスカラー値を指定します。  
 
- *select_stmt* **適用対象** :Azure Synapse Analytics  
+ *select_stmt* **適用対象**:Azure Synapse Analytics  
  インライン テーブル値関数 (プレビュー) の戻り値を定義する単一の SELECT ステートメントです。
 
- TABLE **適用対象** :Azure Synapse Analytics  
- テーブル値関数 (TVF) の戻り値がテーブルになるように指定します。 TVF に渡すことができるのは、定数と @ *local_variables* のみです。
+ TABLE **適用対象**:Azure Synapse Analytics  
+ テーブル値関数 (TVF) の戻り値がテーブルになるように指定します。 TVF に渡すことができるのは、定数と @*local_variables* のみです。
 
  インライン TVF (プレビュー) の TABLE 戻り値は、単一の SELECT ステートメントを使用して定義されます。 インライン関数には、関連付けられている戻り変数はありません。
   
@@ -204,7 +204,7 @@ GO
 ## <a name="examples-sssdwfull-and-sspdw"></a>例: [!INCLUDE[ssSDWfull](../../includes/sssdwfull-md.md)]、[!INCLUDE[ssPDW](../../includes/sspdw-md.md)]  
   
 ### <a name="a-using-a-scalar-valued-user-defined-function-to-change-a-data-type"></a>A. データ型を変更するために、スカラー値ユーザー定義関数を使用する  
- この単純な関数は、 **int** データ型として入力を取り、 **decimal(10,2)** データ型として出力を返します。  
+ この単純な関数は、**int** データ型として入力を取り、**decimal(10,2)** データ型として出力を返します。  
   
 ```sql  
 CREATE FUNCTION dbo.ConvertInput (@MyValueIn int)  
@@ -244,13 +244,13 @@ RETURN
 );
 GO
 ```
-次のように指定して関数を呼び出すと、すべてのビュー ( **V** ) オブジェクトを返すことができます。
+次のように指定して関数を呼び出すと、すべてのビュー (**V**) オブジェクトを返すことができます。
 ```sql
 select * from dbo.ModulesByType('V');
 ```
 
 ### <a name="b-combining-results-of-an-inline-table-valued-function-preview"></a>B. インライン テーブル値関数 (プレビュー) の結果を結合する
- このシンプルな例は、先に作成したインライン TVF を使用し、クロス適用によって結果を他のテーブルと結合する方法を示したものです。 ここでは、 *type* 列で一致するすべての行を対象に、sys.objects と `ModulesByType` の結果の両方からすべての列を選択しています。 APPLY の使用方法について詳しくは、「[FROM 句と JOIN、APPLY、PIVOT](../../t-sql/queries/from-transact-sql.md)」を参照してください。
+ このシンプルな例は、先に作成したインライン TVF を使用し、クロス適用によって結果を他のテーブルと結合する方法を示したものです。 ここでは、*type* 列で一致するすべての行を対象に、sys.objects と `ModulesByType` の結果の両方からすべての列を選択しています。 APPLY の使用方法について詳しくは、「[FROM 句と JOIN、APPLY、PIVOT](../../t-sql/queries/from-transact-sql.md)」を参照してください。
 
 ```sql
 SELECT * 
@@ -264,5 +264,4 @@ GO
  [DROP FUNCTION (SQL Server PDW)](/previous-versions/sql/)  
   
   
-
 

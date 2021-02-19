@@ -7,13 +7,13 @@ ms.date: 08/28/2020
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: ea99f736af30fb1989bd8728896bed3f12c4c59c
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 12088a5d5a8413f76176da09e2f8aa94e72e63f0
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956633"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470913"
 ---
 # <a name="create-ssis-and-ssrs-workflows-with-r-on-sql-server"></a>SQL Server で R を使用して SSIS および SSRS ワークフローを作成する
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -143,7 +143,7 @@ update ssis_iris_models set model_name = 'rxLinMod' where model_name = 'default 
 
 これで、トレーニング データを読み込み、モデルを生成するコードが完成しました。残りの手順は、モデルを使用して予測を生成することだけです。 
 
-これを行うには、SQL クエリに R スクリプトを配置し、ssis_iris_model で [rxPredict](//machine-learning-server/r-reference/revoscaler/rxpredict) 組み込み R 関数をトリガーします。 このタスクは **predict_species_length** と名付けられたストアド プロシージャによって実現されます。
+これを行うには、SQL クエリに R スクリプトを配置し、ssis_iris_model で [rxPredict](/machine-learning-server/r-reference/revoscaler/rxpredict) 組み込み R 関数をトリガーします。 このタスクは **predict_species_length** と名付けられたストアド プロシージャによって実現されます。
 
 ```T-SQL
 Create procedure predict_species_length (@model varchar(100))

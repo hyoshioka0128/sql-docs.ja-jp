@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DROP QUEUE
 - DROP_QUEUE_TSQL
@@ -20,14 +20,14 @@ helpviewer_keywords:
 - DROP QUEUE statement
 - removing queues
 ms.assetid: fd866520-ca00-477d-b2e9-0110e9610ed4
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 4bf41bb420ddaaccd0f1899c641a30a17bbb8fcd
-ms.sourcegitcommit: 197a6ffb643f93592edf9e90b04810a18be61133
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: c52466e4763e2b01ff435e82d41bf393bbcfabdc
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91380347"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99201119"
 ---
 # <a name="drop-queue-transact-sql"></a>DROP QUEUE (Transact-SQL)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]

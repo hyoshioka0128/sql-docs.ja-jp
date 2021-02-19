@@ -26,19 +26,19 @@ f1_keywords:
 ms.assetid: 6e89815e-187e-45bf-bf63-3d5c4a246360
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: e3c5b3c399dfe95e1cbfa521e1a67044d4c5be8e
-ms.sourcegitcommit: fe59f8dc27fd633f5dfce54519d6f5dcea577f56
+ms.openlocfilehash: e33750c6c62b1de3b889399fca46dbf5aa83b3fd
+ms.sourcegitcommit: ea0bf89617e11afe85ad85309e0ec731ed265583
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91935212"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92907280"
 ---
 # <a name="add-change-or-delete-a-map-or-map-layer-report-builder-and-ssrs"></a>マップまたはマップ レイヤーの追加、変更、または削除 (レポート ビルダーおよび SSRS)
   マップは、レイヤーのコレクションです。 マップを [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] の改ページ調整されたレポートに追加する場合は、先にレイヤーを定義します。 追加のレイヤーを作成するには、マップ レイヤー ウィザードを実行します。  
   
  レイヤーの追加/削除、またはレイヤーのオプションを変更する一番簡単な方法は、マップ レイヤー ウィザードを使用する方法です。 マップ ペインから手動でオプションを変更することもできます。 **マップ** ペインを表示するには、レポート デザイン画面のマップ内をクリックします。 次の図に、このペインの一部を示します。  
   
- ![rsMapLayerZone](../../reporting-services/report-design/media/rsmaplayerzone.gif "rsMapLayerZone")  
+ ![レイヤー ツールバー、レイヤーの表示、レイヤー名、空間データ ソースの種類、レイヤーの種類、ズーム レベルの調整、ビューの中心の調整オプションを示す [マップ レイヤー] セクションのスクリーンショット。](../../reporting-services/report-design/media/rsmaplayerzone.gif "rsMapLayerZone")  
   
  マップ レイヤーは、マップ ペインに表示されるとおりに、背面から前面の順に描画されます。 上の図では、タイル レイヤーが最初に描画され、多角形レイヤーが最後に描画されます。 先に描画されたレイヤー上のマップ要素は、後から描画されるレイヤーによって隠されてしまう場合があります。 マップ ペインのツール バーにある方向キーを使用すると、レイヤーの順序を変更できます。 レイヤーの表示/非表示を切り替えるには、表示アイコンをクリックします。 レイヤーの透明度を変更するには、 **[レイヤー データのプロパティ]** ダイアログ ボックスの **[表示]** ページを使用します。  
   
@@ -46,12 +46,12 @@ ms.locfileid: "91935212"
   
 |Symbol|説明|使用する場合|  
 |------------|-----------------|-----------------|  
-|![rs_IconMapLayerWizard](../../reporting-services/media/rs-iconmaplayerwizard.gif "rs_IconMapLayerWizard")|マップ レイヤー ウィザード|ウィザードを使用してレイヤーを追加するには、 **[レイヤーの新規作成ウィザード]** をクリックします。|  
-|![rs_IconMapAddLayer](../../reporting-services/media/rs-iconmapaddlayer.gif "rs_IconMapAddLayer")|レイヤーの追加|レイヤーを手動で追加するには、 **[レイヤーの追加]** をクリックし、追加するマップ レイヤーの種類をクリックします。|  
-|![rs_IconMapPolygonLayer](../../reporting-services/report-design/media/rs-iconmappolygonlayer.gif "rs_IconMapPolygonLayer")|多角形レイヤー|多角形座標のセットに基づく領域または形状を表示するマップ レイヤーを追加します。|  
-|![rs_IconMapLineLayer](../../reporting-services/report-design/media/rs-iconmaplinelayer.gif "rs_IconMapLineLayer")|線レイヤー|線座標のセットに基づくパスまたはルートを表示するマップ レイヤーを追加します。|  
-|![rs_IconMapPointLayer](../../reporting-services/report-design/media/rs-iconmappointlayer.gif "rs_IconMapPointLayer")|ポイント レイヤー|ポイント座標のセットに基づく場所を表示するマップ レイヤーを追加します。|  
-|![rs_IconMapTileLayer](../../reporting-services/report-design/media/rs-iconmaptilelayer.gif "rs_IconMapTileLayer")|タイル レイヤー|ビューポートによって定義された現在のマップ ビュー領域に対応する Bing のマップ タイルを表示するマップ レイヤーを追加します。|  
+|:::image type="icon" source="../../reporting-services/media/rs-iconmaplayerwizard.gif":::|マップ レイヤー ウィザード|ウィザードを使用してレイヤーを追加するには、 **[レイヤーの新規作成ウィザード]** をクリックします。|  
+|:::image type="icon" source="../../reporting-services/media/rs-iconmapaddlayer.gif":::|レイヤーの追加|レイヤーを手動で追加するには、 **[レイヤーの追加]** をクリックし、追加するマップ レイヤーの種類をクリックします。|  
+|:::image type="icon" source="../../reporting-services/report-design/media/rs-iconmappolygonlayer.gif":::|多角形レイヤー|多角形座標のセットに基づく領域または形状を表示するマップ レイヤーを追加します。|  
+|:::image type="icon" source="../../reporting-services/report-design/media/rs-iconmaplinelayer.gif":::|線レイヤー|線座標のセットに基づくパスまたはルートを表示するマップ レイヤーを追加します。|  
+|:::image type="icon" source="../../reporting-services/report-design/media/rs-iconmappointlayer.gif":::|ポイント レイヤー|ポイント座標のセットに基づく場所を表示するマップ レイヤーを追加します。|  
+|:::image type="icon" source="../../reporting-services/report-design/media/rs-iconmaptilelayer.gif":::|タイル レイヤー|ビューポートによって定義された現在のマップ ビュー領域に対応する Bing のマップ タイルを表示するマップ レイヤーを追加します。|  
   
  マップ ペインの一番下にはマップ ビュー領域があります。 マップの中心またはズーム オプションを変更するには、方向キーを使用してビューの中心を調整し、スライダーを使用してズーム レベルを調整します。  
   
@@ -197,7 +197,7 @@ ms.locfileid: "91935212"
   
 3.  **[表示]** をクリックします。  
   
-4.  **[透明度オプション]** で、透明度を表す値 (たとえば、「 **40**」) を入力します。 透明度が 0% の場合、レイヤーは不透明になります。 透明度が 100% の場合、レポート内にレイヤーは表示されません。  
+4.  **[透明度オプション]** で、透明度を表す値 (たとえば、「 **40** 」) を入力します。 透明度が 0% の場合、レイヤーは不透明になります。 透明度が 100% の場合、レポート内にレイヤーは表示されません。  
   
 5.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
   
@@ -209,7 +209,7 @@ ms.locfileid: "91935212"
   
 3.  **[表示]** をクリックします。  
   
-4.  **[透明度オプション]** で、透明度を表す値 (たとえば、「 **40**」) を入力します。  
+4.  **[透明度オプション]** で、透明度を表す値 (たとえば、「 **40** 」) を入力します。  
   
 5.  [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
   
@@ -219,7 +219,7 @@ ms.locfileid: "91935212"
   
 2.  マップ ペイン内のタイル レイヤーをクリックして選択します。 プロパティ ペインにタイル レイヤーのプロパティが表示されます。  
   
-3.  プロパティ ペインで、UseSecureConnection を **True**に設定します。  
+3.  プロパティ ペインで、UseSecureConnection を **True** に設定します。  
   
  Bing Maps Web サービスに対する接続では、HTTP SSL サービスを使用して、このレイヤーの Bing マップ タイルが取得されます。 トランスポート層セキュリティ (TLS) は、以前は Secure Sockets Layer (SSL) と呼ばれていました。
   

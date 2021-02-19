@@ -9,16 +9,16 @@ ms.author: drskwier
 ms.reviewer: maghan, sstein
 ms.custom: ''
 ms.date: 06/25/2020
-ms.openlocfilehash: 4320873affdab74a31d1e666a84bc744b1c00385
-ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
+ms.openlocfilehash: 8bcc0e9d54c98c83e184c3ff957dbf35082ba673
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91123356"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100048416"
 ---
 # <a name="build-and-publish-a-project"></a>プロジェクトをビルドして公開する
 
-Azure Data Studio の SQL データベース プロジェクトの拡張機能のビルド プロセスでは、Windows、macOS、Linux 環境で *dacpac* を作成できます。 プロジェクトは、公開プロセスを使用してローカルまたはクラウド環境にデプロイできます。
+Azure Data Studio の SQL データベース プロジェクトの拡張機能 (プレビュー) のビルド プロセスでは、Windows、macOS、Linux 環境で *dacpac* を作成できます。 プロジェクトは、公開プロセスを使用してローカルまたはクラウド環境にデプロイできます。
 
 ## <a name="prerequisites"></a>前提条件
 

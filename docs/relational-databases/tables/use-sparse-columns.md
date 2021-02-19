@@ -15,13 +15,13 @@ helpviewer_keywords:
 ms.assetid: ea7ddb87-f50b-46b6-9f5a-acab222a2ede
 author: stevestein
 ms.author: sstein
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: b422f4c34831c570b3ed6d9d54bcdb90d1d86754
-ms.sourcegitcommit: 331b8495e4ab37266945c81ff5b93d250bdaa6da
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 2b2d569c3f37370bd132485e843da005b1769b17
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88645938"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99211534"
 ---
 # <a name="use-sparse-columns"></a>スパース列の使用
 
@@ -39,7 +39,7 @@ ms.locfileid: "88645938"
   
      スパース列は、NULL 値の行が多数あるため、フィルター選択されたインデックスに特に適しています。 スパース列でフィルター選択されたインデックスを使用すると、値が設定された行にのみインデックスを作成できます。 これにより、より小さく効率的なインデックスが作成されます。 詳細については、「 [Create Filtered Indexes](../../relational-databases/indexes/create-filtered-indexes.md)」を参照してください。  
   
- スパース列とフィルター選択されたインデックスを併用することで、 [!INCLUDE[winSPServ](../../includes/winspserv-md.md)]などのアプリケーションでは、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]を使用して多数のユーザー定義プロパティを効率よく格納およびアクセスできます。  
+ スパース列とフィルター選択されたインデックスを併用することで、 [!INCLUDE[winSPServ](../../includes/winspserv-md.md)]などのアプリケーションでは、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]を使用して多数のユーザー定義プロパティを効率よく格納およびアクセスできます。  
   
 ## <a name="properties-of-sparse-columns"></a>スパース列のプロパティ  
  スパース列には次の特性があります。  
@@ -125,7 +125,7 @@ ms.locfileid: "88645938"
 ## <a name="restrictions-for-using-sparse-columns"></a>スパース列の使用に関する制限  
  スパース列は、任意の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データ型にすることができ、他の列と同じように動作しますが、次の制限があります。  
   
--   スパース列は、NULL 値を許容する必要があり、ROWGUIDCOL または IDENTITY プロパティを持つことができません。 スパース列のデータ型を **text**、 **ntext**、 **image**、 **timestamp**、ユーザー定義データ型、 **geometry**、または **geography**にすることはできません。また、スパース列には FILESTREAM 属性を指定できません。  
+-   スパース列は、NULL 値を許容する必要があり、ROWGUIDCOL または IDENTITY プロパティを持つことができません。 スパース列のデータ型を **text**、 **ntext**、 **image**、 **timestamp**、ユーザー定義データ型、 **geometry**、または **geography** にすることはできません。また、スパース列には FILESTREAM 属性を指定できません。  
   
 -   スパース列には既定値を設定できません。  
   

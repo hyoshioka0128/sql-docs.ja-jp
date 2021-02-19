@@ -11,12 +11,12 @@ ms.author: maghan
 ms.reviewer: matteot, drskwier
 ms.custom: seo-lt-2019
 ms.date: 10/14/2020
-ms.openlocfilehash: 59f7fdf4427a6f63da0a36a73697b2f5dbce7784
-ms.sourcegitcommit: 7eb80038c86acfef1d8e7bfd5f4e30e94aed3a75
+ms.openlocfilehash: ed8fce6dfaebb20ebeebe9b5197948dbf2502dad
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92081561"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100339054"
 ---
 # <a name="manage-authentication-to-sql-server-in-powershell"></a>PowerShell で SQL Server への認証を管理する
 
@@ -66,10 +66,10 @@ function sqldrive
 }  
   
 ## Use the sqldrive function to create a SQLAuth virtual drive.  
-sqldrive SQLAuth  
+sqldrive SQLAuth
   
-## CD to the virtual drive, which invokes the supplied authentication credentials.  
-cd SQLAuth  
+## Set-Location to the virtual drive, which invokes the supplied authentication credentials.  
+sl SQLAuth:
 ```
 
 ## <a name="sql-server-authentication-using-invoke-sqlcmd"></a>Invoke-Sqlcmd を使用する SQL Server 認証

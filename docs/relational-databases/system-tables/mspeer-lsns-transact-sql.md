@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: replication
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - MSpeer_lsns
 - MSpeer_lsns_TSQL
@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSpeer_lsns system table
 ms.assetid: 0ba33907-601b-4c3d-8099-2663f680a161
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 6b08e7631633f56cb2f697dad862378685ee635a
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 8316d023cb030e2eba09aff82d4e941cf551d1a5
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545536"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99205855"
 ---
 # <a name="mspeer_lsns-transact-sql"></a>MSpeer_lsns (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **Mspeer_lsns**テーブルは、ピアツーピアレプリケーショントポロジ内の各トランザクションをサブスクリプションにマップするために使用されます。 このテーブルは、ピアツーピアレプリケーショントポロジ内のすべてのパブリケーションデータベースと、ピアツーピアパブリケーションのすべてのサブスクライバーのサブスクリプションデータベースに格納されます。 この種類のトランザクションレプリケーショントポロジの詳細については、「 [ピアツーピアトランザクションレプリケーション](../../relational-databases/replication/transactional/peer-to-peer-transactional-replication.md)」を参照してください。 このテーブルは、パブリケーションデータベースに格納されます。  
+  **Mspeer_lsns** テーブルは、ピアツーピアレプリケーショントポロジ内の各トランザクションをサブスクリプションにマップするために使用されます。 このテーブルは、ピアツーピアレプリケーショントポロジ内のすべてのパブリケーションデータベースと、ピアツーピアパブリケーションのすべてのサブスクライバーのサブスクリプションデータベースに格納されます。 この種類のトランザクションレプリケーショントポロジの詳細については、「 [ピアツーピアトランザクションレプリケーション](../../relational-databases/replication/transactional/peer-to-peer-transactional-replication.md)」を参照してください。 このテーブルは、パブリケーションデータベースに格納されます。  
   
 ## <a name="definition"></a>定義  
   

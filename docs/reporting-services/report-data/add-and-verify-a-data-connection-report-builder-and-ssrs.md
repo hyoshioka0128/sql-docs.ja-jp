@@ -9,13 +9,13 @@ author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: ''
 ms.custom: ''
-ms.date: 03/01/2017
-ms.openlocfilehash: cfddbdca35d24589b3fa87976cbfb547f14a46ee
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+ms.date: 12/13/2020
+ms.openlocfilehash: b99ed7142dece1c256962b21dacf46bc78470967
+ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91891792"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97489852"
 ---
 # <a name="add-and-verify-a-data-connection-report-builder-and-ssrs"></a>データ接続を追加および確認する (レポート ビルダーおよび SSRS)
 
@@ -25,7 +25,7 @@ ms.locfileid: "91891792"
 
 埋め込みデータ ソースを作成するには、データの外部ソースへの接続情報が必要で、データへのアクセスに必要な権限を把握している必要があります。 通常、この情報は、データ ソースの所有者から得られます。 接続をテストすることによって、指定されている資格情報が十分かどうかを確認できます。
 
-詳細については、「[データ接続文字列を作成する - レポート ビルダーおよび SSRS](data-connections-data-sources-and-connection-strings-report-builder-and-ssrs.md)」と「[レポート ビルダーで資格情報を指定する](./specify-credential-and-connection-information-for-report-data-sources.md?view=sql-server-2017)」を参照してください
+詳細については、「[データ接続文字列を作成する - レポート ビルダーおよび SSRS](data-connections-data-sources-and-connection-strings-report-builder-and-ssrs.md)」と「[レポート ビルダーで資格情報を指定する](./specify-credential-and-connection-information-for-report-data-sources.md)」を参照してください
 
 > [!NOTE]  
 > [!INCLUDE[ssRBRDDup](../../includes/ssrbrddup-md.md)]
@@ -59,7 +59,7 @@ ms.locfileid: "91891792"
 
 5. **[詳細]** をクリックし、情報に基づいて問題を修正します。
 
-    詳細については、「 [レポート ビルダーでの資格情報の指定](./specify-credential-and-connection-information-for-report-data-sources.md?view=sql-server-2017)」を参照してください。
+    詳細については、「 [レポート ビルダーでの資格情報の指定](./specify-credential-and-connection-information-for-report-data-sources.md)」を参照してください。
 
 6. [!INCLUDE[clickOK](../../includes/clickok-md.md)]  
 

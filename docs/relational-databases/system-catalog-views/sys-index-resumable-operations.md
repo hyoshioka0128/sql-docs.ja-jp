@@ -1,13 +1,13 @@
 ---
-description: index_resumable_operations (Transact-sql)
-title: index_resumable_operations (Transact-sql) |Microsoft Docs
+description: sys.index_resumable_operations (Transact-sql)
+title: sys.index_resumable_operations (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 11/12/2019
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.index_resumable_operations_TSQL
 - sys.indexes_TSQL
@@ -17,20 +17,20 @@ helpviewer_keywords:
 - sys.indexes
 - sys.index_resumable_operations
 ms.assetid: ''
-author: markingmyname
-ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2017||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: d6878ccf5d267c265ca7bd90120c1bfc227f16ed
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 6cb33d3efd0d1e69ec64a179ed54fcb79b273bf3
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89546770"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99193803"
 ---
-# <a name="sysindex_resumable_operations-transact-sql"></a>index_resumable_operations (Transact-sql)
+# <a name="sysindex_resumable_operations-transact-sql"></a>sys.index_resumable_operations (Transact-sql)
 
 [!INCLUDE[sqlserver2017-asdb](../../includes/applies-to-version/sqlserver2017-asdb.md)]
-**index_resumable_operations** は、再開可能なインデックスの再構築または作成のために現在の実行状態を監視して確認するシステムビューです。  
+**sys.index_resumable_operations** は、再開可能なインデックスの再構築または作成のために現在の実行状態を監視して確認するシステムビューです。  
 **適用対象**: SQL Server (2017 以降)、および Azure SQL Database
   
 |列名|データ型|説明|  
@@ -41,7 +41,7 @@ ms.locfileid: "89546770"
 |**sql_text**|**nvarchar(max)**|DDL T-sql ステートメントのテキスト|
 |**last_max_dop**|**smallint**|最後に使用された MAX_DOP (既定 = 0)|
 |**partition_number**|**int**|所有しているインデックスまたはヒープ内のパーティション番号。 パーティション分割されていないテーブルとインデックスの場合、またはすべてのパーティションが再構築される場合は、この列の値が NULL になります。|
-|**状態**|**tinyint**|再開可能なインデックスの動作状態:<br /><br />0 = 実行中<br /><br />1 = 一時停止|
+|**state**|**tinyint**|再開可能なインデックスの動作状態:<br /><br />0 = 実行中<br /><br />1 = 一時停止|
 |**state_desc**|**nvarchar(60)**|再開可能なインデックスの動作状態の説明 (実行中または一時停止)|  
 |**start_time**|**datetime**|インデックス操作の開始時刻 (null 非許容)|
 |**last_pause_time**|**datatime**| インデックス操作の最後の一時停止時刻 (null 許容)。 操作が実行中で一時停止されていない場合は NULL です。|
@@ -65,7 +65,7 @@ SELECT * FROM  sys.index_resumable_operations WHERE STATE = 1;
 
 - [ALTER INDEX](../../t-sql/statements/alter-index-transact-sql.md)
 - [CREATE INDEX](../../t-sql/statements/create-index-transact-sql.md)
-- [カタログビュー](catalog-views-transact-sql.md)
+- [カタログ ビュー](catalog-views-transact-sql.md)
 - [オブジェクトカタログビュー](object-catalog-views-transact-sql.md)
 - [sys.indexes](sys-xml-indexes-transact-sql.md)
 - [sys.index_columns](sys-index-columns-transact-sql.md)

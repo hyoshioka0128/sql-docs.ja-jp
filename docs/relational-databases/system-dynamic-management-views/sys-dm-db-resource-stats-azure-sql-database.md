@@ -5,7 +5,7 @@ ms.custom: ''
 ms.date: 02/27/2020
 ms.service: sql-database
 ms.reviewer: ''
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_db_resource_stats
 - sys.dm_db_resource_stats_TSQL
@@ -19,13 +19,13 @@ helpviewer_keywords:
 ms.assetid: 6e76b39f-236e-4bbf-b0b5-38be190d81e8
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: = azuresqldb-current || = sqlallproducts-allversions
-ms.openlocfilehash: 21cef237634891d4795e46f96f63eba701f55852
-ms.sourcegitcommit: 32135463a8494d9ed1600a58f51819359e3c09dc
+monikerRange: = azuresqldb-current
+ms.openlocfilehash: c7cfb333e3cb2d67e61b2f8ae8cb12d0748b05d7
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91833706"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99204815"
 ---
 # <a name="sysdm_db_resource_stats-azure-sql-database"></a>sys.dm_db_resource_stats (Azure SQL Database)
 [!INCLUDE[Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/asdb-asdbmi.md)]
@@ -38,8 +38,8 @@ ms.locfileid: "91833706"
 |avg_cpu_percent|**decimal (5, 2)**|サービス層の制限に対する割合での平均コンピューティング使用率。|  
 |avg_data_io_percent|**decimal (5, 2)**|サービス層の上限に対する平均データ i/o 使用率 (%)。 Hyperscale データベースについては、「 [リソース使用率の統計情報のデータ IO](/azure/sql-database/sql-database-hyperscale-performance-diagnostics#data-io-in-resource-utilization-statistics)」を参照してください。|  
 |avg_log_write_percent|**decimal (5, 2)**|サービス層の制限に対する割合としての、平均トランザクションログの書き込み (MBps)。|  
-|avg_memory_usage_percent|**decimal (5, 2)**|サービス層の制限に対する平均メモリ使用率 (%)。<br /><br /> これには、バッファープールページに使用されるメモリと、インメモリ OLTP オブジェクトのストレージが含まれます。|  
-|xtp_storage_percent|**decimal (5, 2)**|サービス層の制限 (レポート間隔の終了時) に対するインメモリ OLTP のストレージ使用率。 これには、メモリ最適化テーブル、インデックス、およびテーブル変数の、次のインメモリ OLTP オブジェクトのストレージに使用されるメモリが含まれます。 また、ALTER TABLE 操作の処理に使用されるメモリも含まれています。<br /><br /> インメモリ OLTP がデータベースで使用されていない場合は0を返します。|  
+|avg_memory_usage_percent|**decimal (5, 2)**|サービス層の制限に対する平均メモリ使用率 (%)。<br /><br /> これには、バッファープールページと In-Memory OLTP オブジェクトの格納に使用されるメモリが含まれます。|  
+|xtp_storage_percent|**decimal (5, 2)**|サービス層の制限に対する In-Memory OLTP の記憶域使用率 (レポート間隔の終了時)。 これには、メモリ最適化テーブル、インデックス、およびテーブル変数の In-Memory OLTP オブジェクトのストレージに使用されるメモリが含まれます。 また、ALTER TABLE 操作の処理に使用されるメモリも含まれています。<br /><br /> In-Memory OLTP がデータベースで使用されていない場合は0を返します。|  
 |max_worker_percent|**decimal (5, 2)**|データベースのサービス階層の上限に対する割合での最大同時実行ワーカー (要求)。|  
 |max_session_percent|**decimal (5, 2)**|データベースのサービス層の上限に対する割合での最大同時セッション数。|  
 |dtu_limit|**int**|この期間中のこのデータベースの現在の最大データベース DTU 設定です。 仮想コアベースのモデルを使用しているデータベースの場合、この列は NULL になります。|
@@ -56,12 +56,12 @@ ms.locfileid: "91833706"
 ## <a name="permissions"></a>アクセス許可
  このビューには、VIEW DATABASE STATE 権限が必要です。  
   
-## <a name="remarks"></a>注釈
- **Sys.dm_db_resource_stats**によって返されるデータは、実行しているサービス階層/パフォーマンスレベルに対して許容される最大制限の割合として表されます。
+## <a name="remarks"></a>コメント
+ **Sys.dm_db_resource_stats** によって返されるデータは、実行しているサービス階層/パフォーマンスレベルに対して許容される最大制限の割合として表されます。
  
  過去60分以内にデータベースが別のサーバーにフェールオーバーされた場合、ビューはそのフェールオーバー以降の時間についてのみデータを返します。  
   
- 保有期間が長いこのデータの詳細なビューを表示するには、 **master**データベースの**sys.resource_stats**カタログビューを使用します。 このビューは、5分ごとにデータをキャプチャし、履歴データを14日間保持します。  詳細については、「 [sys.resource_stats &#40;Azure SQL Database&#41;](../../relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database.md)」を参照してください。  
+ 保有期間が長いこのデータの詳細なビューを表示するには、 **master** データベースの **sys.resource_stats** カタログビューを使用します。 このビューは、5分ごとにデータをキャプチャし、履歴データを14日間保持します。  詳細については、「 [sys.resource_stats &#40;Azure SQL Database&#41;](../../relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database.md)」を参照してください。  
   
  データベースがエラスティックプールのメンバーである場合、パーセント値として表示されるリソース統計は、エラスティックプール構成で設定されたデータベースの上限に対する比率として表されます。  
   

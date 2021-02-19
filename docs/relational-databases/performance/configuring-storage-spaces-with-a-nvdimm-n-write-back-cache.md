@@ -8,14 +8,14 @@ ms.reviewer: ''
 ms.technology: performance
 ms.topic: conceptual
 ms.assetid: 861862fa-9900-4ec0-9494-9874ef52ce65
-author: julieMSFT
-ms.author: jrasnick
-ms.openlocfilehash: 438bb53d76763ecb7179638591f0353cb1bedf6f
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 8cde267305ee7e7666443d0cf9c7f96dee92d072
+ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91891892"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96505344"
 ---
 # <a name="configuring-storage-spaces-with-a-nvdimm-n-write-back-cache"></a>NVDIMM-N ライトバック キャッシュを使った記憶域スペースの構成
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -30,7 +30,7 @@ ms.locfileid: "91891892"
 Get-PhysicalDisk | Select FriendlyName, MediaType, BusType  
 ```  
   
- ![Get-PhysicalDisk](../../relational-databases/performance/media/get-physicaldisk.png "Get-PhysicalDisk")  
+ ![Get-PhysicalDisk コマンドレットの出力を示す Windows Powershell ウィンドウのスクリーンショット。](../../relational-databases/performance/media/get-physicaldisk.png "Get-PhysicalDisk")  
   
 > [!NOTE]  
 >  NVDIMM-N デバイスを使用すると、ライトバック キャッシュの対象になるデバイスを具体的に選択する必要がなくなります。  
@@ -47,7 +47,7 @@ $pd =  Get-PhysicalDisk | Select FriendlyName, MediaType, BusType | WHere-Object
 $pd | Select FriendlyName, MediaType, BusType  
 ```  
   
- ![Select FriendlyName](../../relational-databases/performance/media/select-friendlyname.png "Select FriendlyName")  
+ ![$Pd コマンドレットの出力を示す Windows Powershell ウィンドウのスクリーンショット。](../../relational-databases/performance/media/select-friendlyname.png "Select FriendlyName")  
   
 ## <a name="creating-the-storage-pool"></a>記憶域プールの作成  
  PhysicalDisks を含む $pd 変数を使用すると、New-StoragePool PowerShell コマンドレットを使用して記憶域プールを構築するのが容易になります。  
@@ -56,7 +56,7 @@ $pd | Select FriendlyName, MediaType, BusType
 New-StoragePool -StorageSubSystemFriendlyName "Windows Storage*" -FriendlyName NVDIMM_Pool -PhysicalDisks $pd  
 ```  
   
- ![New-StoragePool](../../relational-databases/performance/media/new-storagepool.png "New-StoragePool")  
+ ![New-StoragePool コマンドレットの出力を示す Windows Powershell ウィンドウのスクリーンショット。](../../relational-databases/performance/media/new-storagepool.png "New-StoragePool")  
   
 ## <a name="creating-the-virtual-disk-and-volume"></a>仮想ディスクとボリュームの作成  
  プールが作成されたら、次に仮想ディスクを切り出して、書式設定します。 次のケースでは、仮想ディスクは 1 つだけ作成され、New-Volume PowerShell コマンドレットを使用してこのプロセスを効率化することができます。  
@@ -65,15 +65,15 @@ New-StoragePool -StorageSubSystemFriendlyName "Windows Storage*" -FriendlyName N
 New-Volume -StoragePool (Get-StoragePool -FriendlyName NVDIMM_Pool) -FriendlyName Log_Space -Size 300GB -FileSystem NTFS -AccessPath S: -ResiliencySettingName Mirror  
 ```  
   
- ![New-Volume](../../relational-databases/performance/media/new-volume.png "New-Volume")  
+ ![New-Volume コマンドレットの出力を示す Windows Powershell ウィンドウのスクリーンショット。](../../relational-databases/performance/media/new-volume.png "New-Volume")  
   
  仮想ディスクが作成、初期化され、NTFS でフォーマットされます。 次の画面キャプチャは、サイズが 300 GB で、書き込みキャッシュが 1 GB であり、NVDIMM-N でホストされることを示しています。  
   
- ![Get-VirtualDisk](../../relational-databases/performance/media/get-virtualdisk.png "Get-VirtualDisk")  
+ ![Get-VirtualDisk コマンドレットの出力を示す Windows Powershell ウィンドウのスクリーンショット。](../../relational-databases/performance/media/get-virtualdisk.png "Get-VirtualDisk")  
   
  サーバーで表示されるこの新しいボリュームが確認できるようになりました。 SQL Server トランザクション ログに対してこのドライブを使用できます。  
   
- ![Log_Space ドライブ](../../relational-databases/performance/media/log-space-drive.png "Log_Space ドライブ")  
+ ![Log_Space ドライブを示す、[この PC] ページ上のエクスプローラー ウィンドウのスクリーンショット。](../../relational-databases/performance/media/log-space-drive.png "Log_Space ドライブ")  
   
 ## <a name="see-also"></a>参照  
  [Windows 10 の Windows 記憶域スペース](https://windows.microsoft.com/windows-10/storage-spaces-windows-10)   

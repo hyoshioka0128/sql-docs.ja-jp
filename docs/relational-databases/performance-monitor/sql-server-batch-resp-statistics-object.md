@@ -11,14 +11,14 @@ ms.topic: conceptual
 helpviewer_keywords:
 - SQLServer:Batch Resp Statistics
 ms.assetid: a58e8733-6a8d-4b47-b5cb-042e813d808a
-author: julieMSFT
-ms.author: jrasnick
-ms.openlocfilehash: b28b0d8af863c21f4764f5c7126fca20b18c1ab1
-ms.sourcegitcommit: 9470c4d1fc8d2d9d08525c4f811282999d765e6e
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: acd7dc7b853c600b743d9791a3bade6ce8970a41
+ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86458154"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96505880"
 ---
 # <a name="sql-server-batch-resp-statistics-object"></a>SQL Server、Batch Resp Statistics オブジェクト
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -51,9 +51,9 @@ ms.locfileid: "86458154"
   
 |項目|説明|  
 |----------|-----------------|  
-|**CPU Time:Requests**|要求に対して CPU が使用した時間。|  
+|**CPU Time:Requests**|CPU 時間に基づく要求の数。|  
 |**CPU Time:Total(ms)**|バッチに対して CPU が使用した合計時間。|  
-|**Elapsed Time:Requests**|要求の経過時間。|  
+|**Elapsed Time:Requests**|経過時間に基づく要求の数。|  
 |**Elapsed Time:Total(ms)**|バッチの経過時間。|  
 
 ## <a name="see-also"></a>参照

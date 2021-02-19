@@ -8,13 +8,13 @@ ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: a509b16abc2c52f504cf3783f5fb22370faaef94
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 8402ec9094b7e765764d5e650ac27a0b87b0e5d2
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956753"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471123"
 ---
 # <a name="install-pre-trained-machine-learning-models-on-sql-server"></a>事前トレーニング済みの機械学習モデルを SQL Server にインストールする
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "91956753"
 
 | R 関数 (MicrosoftML) | Python 関数 (microsoftml) | 使用法 |
 |--------------------------|-------------------------------|-------|
-| [getSentiment](/machine-learning-server/r-reference/microsoftml/getsentiment) | [get_sentiment](//machine-learning-server/python-reference/microsoftml/get-sentiment) | テキスト入力に対して正/負のセンチメント スコアを生成します。 |
+| [getSentiment](/machine-learning-server/r-reference/microsoftml/getsentiment) | [get_sentiment](/machine-learning-server/python-reference/microsoftml/get-sentiment) | テキスト入力に対して正/負のセンチメント スコアを生成します。 |
 | [featurizeImage](/machine-learning-server/r-reference/microsoftml/featurizeimage) | [featurize_image](/machine-learning-server/python-reference/microsoftml/featurize-image) | 画像ファイル入力からテキスト情報を抽出します。 |
 
 ## <a name="prerequisites"></a>前提条件
@@ -38,13 +38,13 @@ ms.locfileid: "91956753"
 
 外部スクリプトを有効にし、SQL Server LaunchPad サービスが実行されている必要があります。 インストール手順では、これらの機能を有効にして確認する手順について説明します。 
 
-::: moniker range=">=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2017"
 [MicrosoftML R パッケージ](/machine-learning-server/r-reference/microsoftml/microsoftml-package)または [microsoftml Python パッケージ](/machine-learning-server/python-reference/microsoftml/microsoftml-package)には、事前トレーニング済みモデルが含まれています。
 
 [SQL Server Machine Learning Services](sql-machine-learning-services-windows-install.md) には、機械学習ライブラリの両方の言語バージョンが含まれているため、ユーザー側でこれ以上の操作をしなくてもこの前提条件は満たされます。 ライブラリが存在するため、この記事で説明されている PowerShell スクリプトを使用して、事前トレーニング済みのモデルをこれらのライブラリに追加できます。
 ::: moniker-end
 
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 [MicrosoftML R package](/machine-learning-server/r-reference/microsoftml/microsoftml-package) には、事前トレーニング済みモデルが含まれています。
 
 [SQL Server R Services](sql-r-services-windows-install.md) は、R 専用であり、すぐに使用可能な [MicrosoftML パッケージ](/machine-learning-server/r-reference/microsoftml/microsoftml-package)が含まれていません。 MicrosoftML を追加するには、[コンポーネントのアップグレード](../install/upgrade-r-and-python.md)を行う必要があります。 コンポーネントのアップグレードの利点の 1 つは、事前トレーニング済みのモデルを同時に複数追加できるため、PowerShell スクリプトを実行する必要がないことです。 ただし、既にアップグレードしたが、事前トレーニング済みのモデルを最初に追加しなかった場合は、この記事の説明に従って PowerShell スクリプトを実行できます。 これは両方のバージョンの SQL Server で機能します。 その前に、`C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES\library` に MicrosoftML ライブラリが存在することを確認してください。

@@ -15,11 +15,11 @@ ms.assetid: 9223e474-f224-4907-a4f2-081e11db58f5
 author: MashaMSFT
 ms.author: mathoma
 ms.openlocfilehash: 4f0f124b9073335a5dc681c34fb7fa977123f04c
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+ms.sourcegitcommit: 192f6a99e19e66f0f817fdb1977f564b2aaa133b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91869286"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96125138"
 ---
 # <a name="view-offline-log-files"></a>オフライン ログ ファイルの表示
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -115,7 +115,7 @@ ms.locfileid: "91869286"
   
     -   現在のユーザーとして接続するには、 **[別のユーザーとして接続する]** チェック ボックスがオフになっていることを確認し、 **[OK]** をクリックします。  
   
-    -   別のユーザーとして接続するには、 **[別のユーザーとして接続する]** チェック ボックスをオンにし、 **[ユーザーを設定]** をクリックします。 ユーザー資格情報を求められたら入力し (ユーザー名を *domain_name*\\*user_name*の形式で入力します)、 **[OK]** をクリックします。再度 **[OK]** をクリックして接続します。  
+    -   別のユーザーとして接続するには、 **[別のユーザーとして接続する]** チェック ボックスをオンにし、 **[ユーザーを設定]** をクリックします。 ユーザー資格情報を求められたら入力し (ユーザー名を *domain_name*\\*user_name* の形式で入力します)、 **[OK]** をクリックします。再度 **[OK]** をクリックして接続します。  
   
     > [!NOTE]  
     >  ログ ファイルの読み込みに時間がかかりすぎる場合は、[ログ ファイルの表示] ツール バーの **[停止]** をクリックできます。  

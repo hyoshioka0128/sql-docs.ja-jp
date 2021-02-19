@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 41625f6f-e12d-4d8d-9f60-0729ce64c31e
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: fe9d475ac047dc137c74a4ac75ce33c526db15bc
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 573b8153e8c3dbe319b0dc9157fe97d912a3aa82
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88988073"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100056287"
 ---
 # <a name="updatebatch-and-cancelbatch-methods-example-vb"></a>UpdateBatch および CancelBatch メソッドの例 (VB)
 この例では、 [CancelBatch](./cancelbatch-method-ado.md)メソッドと共に、 [UpdateBatch](./updatebatch-method.md)メソッドを示します。  

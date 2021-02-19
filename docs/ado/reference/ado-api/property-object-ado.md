@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - Property
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: b2a4767c-03c7-4935-a3bc-df3e1a38a009
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 7edc57495968cb94dbf8714e3b519acac578775f
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: e78b0d38a775a527016126fbbc9fe1051664ce9c
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88989983"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100040922"
 ---
 # <a name="property-object-ado"></a>Property オブジェクト (ADO)
 プロバイダーによって定義される ADO オブジェクトの動的特性を表します。  
@@ -29,9 +29,9 @@ ms.locfileid: "88989983"
 ## <a name="remarks"></a>解説  
  ADO オブジェクトには、組み込みと動的の2種類のプロパティがあります。  
   
- 組み込みプロパティは ADO で実装されるプロパティで、構文を使用して、新しいオブジェクトですぐに使用でき `MyObject.Property` ます。 オブジェクトの[プロパティ](./properties-collection-ado.md)コレクションには**プロパティ**オブジェクトとして表示されません。そのため、値を変更することはできますが、その特性を変更することはできません。  
+ 組み込みプロパティは ADO で実装されるプロパティで、構文を使用して、新しいオブジェクトですぐに使用でき `MyObject.Property` ます。 オブジェクトの [プロパティ](./properties-collection-ado.md)コレクションには **プロパティ** オブジェクトとして表示されません。そのため、値を変更することはできますが、その特性を変更することはできません。  
   
- 動的プロパティは、基になるデータプロバイダーによって定義され、適切な ADO オブジェクトの **properties** コレクションに表示されます。 たとえば、プロバイダー固有のプロパティは、 [レコードセット](./recordset-object-ado.md) オブジェクトがトランザクションをサポートするか更新するかを示します。 これらの追加のプロパティは、その**レコードセット**オブジェクトの**プロパティ**コレクション内の**プロパティ**オブジェクトとして表示されます。 動的プロパティは、コレクションを通じてのみ、または構文を使用して参照でき `MyObject.Properties(0)` `MyObject.Properties("Name")` ます。  
+ 動的プロパティは、基になるデータプロバイダーによって定義され、適切な ADO オブジェクトの **properties** コレクションに表示されます。 たとえば、プロバイダー固有のプロパティは、 [レコードセット](./recordset-object-ado.md) オブジェクトがトランザクションをサポートするか更新するかを示します。 これらの追加のプロパティは、その **レコードセット** オブジェクトの **プロパティ** コレクション内の **プロパティ** オブジェクトとして表示されます。 動的プロパティは、コレクションを通じてのみ、または構文を使用して参照でき `MyObject.Properties(0)` `MyObject.Properties("Name")` ます。  
   
  どちらの種類のプロパティも削除できません。  
   

@@ -11,18 +11,18 @@ ms.topic: conceptual
 ms.assetid: b0a248a4-4488-4cc8-89fc-46906a8c24a1
 author: MightyPen
 ms.author: genemi
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 975e14a1a17422949f5ef848b0b0a69d71e58593
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 733b2ba63ba6236ae1df955dafd31ce18260214c
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91866622"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99237551"
 ---
 # <a name="table-and-row-size-in-memory-optimized-tables"></a>メモリ最適化テーブルのテーブルと行のサイズ
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
-[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] より前のバージョンでは、メモリ最適化テーブルの行内データのサイズは、[8,060 バイト](?viewFallbackFrom=sql-server-2014)より長くすることができませんでした。 しかし、[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降および Azure SQL Database では、複数の大きな列 (複数の varbinary(8000) 列など) および LOB 列 (varbinary(max)、varchar(max)、nvarchar(max)) を含むメモリ最適化テーブルを作成し、ネイティブにコンパイルされた T-SQL モジュールとテーブル型を使ってこれらの列に対する操作を実行できるようになっています。 
+[!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] より前のバージョンでは、メモリ最適化テーブルの行内データのサイズは、[8,060 バイト](?viewFallbackFrom=sql-server-2014)より長くすることができませんでした。 しかし、[!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降および Azure SQL Database では、複数の大きな列 (複数の varbinary(8000) 列など) および LOB 列 (varbinary(max)、varchar(max)、nvarchar(max)) を含むメモリ最適化テーブルを作成し、ネイティブにコンパイルされた T-SQL モジュールとテーブル型を使ってこれらの列に対する操作を実行できるようになっています。 
   
 行サイズの上限である 8060 バイトを超える列は、行外の、個別の内部テーブルに配置されます。 行外の列ごとに対応する内部テーブルがあり、 それぞれの内部テーブルには非クラスター化インデックスが 1 つ含まれます。 行外の列に使用されるこれらの内部テーブルについて詳しくは、「[sys.memory_optimized_tables_internal_attributes &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-memory-optimized-tables-internal-attributes-transact-sql.md)」をご覧ください。 
  
@@ -50,7 +50,7 @@ ms.locfileid: "91866622"
 [table size] = [size of index 1] + ... + [size of index n] + ([row size] * [row count])  
 ```  
   
-ハッシュ インデックスのサイズはテーブルの作成時に固定され、実際のバケット数によって決まります。 インデックス指定のときに指定された `bucket_count` は、最も近い 2 のべき乗となるように切り上げられ、これが*実際のバケット数*となります。 たとえば、指定された bucket_count が 100,000 の場合、インデックスの*実際のバケット数*は 131,072 です。  
+ハッシュ インデックスのサイズはテーブルの作成時に固定され、実際のバケット数によって決まります。 インデックス指定のときに指定された `bucket_count` は、最も近い 2 のべき乗となるように切り上げられ、これが *実際のバケット数* となります。 たとえば、指定された bucket_count が 100,000 の場合、インデックスの *実際のバケット数* は 131,072 です。  
   
 ```  
 [hash index size] = 8 * [actual bucket count]  
@@ -123,7 +123,7 @@ ms.locfileid: "91866622"
   
 *計算された行本体サイズ* と *実際の行本体サイズ* の計算方法は似ています。 次の表の最後に説明されているとおり、唯一の違いは、(n)varchar(i) 列と varbinary(i) 列のサイズの計算です。 計算された行本体サイズでは、宣言されたサイズ *i* を列のサイズとして使用しますが、実際の行本体サイズではデータの実際のサイズを使用します。  
   
-*実際の行本文サイズ* = SUM(*シャロー型のサイズ*) + 2 + 2 * *ディープ型の列の数*として指定した場合、行本文サイズの計算について、次の表で説明します。  
+*実際の行本文サイズ* = SUM(*シャロー型のサイズ*) + 2 + 2 * *ディープ型の列の数* として指定した場合、行本文サイズの計算について、次の表で説明します。  
   
 |Section|サイズ|説明|  
 |-------------|----------|--------------|  
@@ -134,8 +134,8 @@ ms.locfileid: "91866622"
 |NULL 配列の余白|次のいずれかの値になります。<br /><br /> ディープ型の列が存在し、NULL 配列のサイズのバイト数が奇数である場合は 1。<br /><br /> それ以外の場合は、0。|ディープ型は、(var)binary 型と (n)(var)char 型です。|  
 |パディング|ディープ型の列がない場合は: 0<br /><br /> ディープ型の列がある場合、シャロー列に必要な最大の配置に基づいて、余白の 0 ～ 7 バイトが追加されます。 前に説明したように、各シャロー列の配置は、列のサイズと等しい値にする必要があります。ただし、例外として、GUID 列の配置は 1 バイト (16 ではない) とし、数値列の配置は常に 8 バイト (16 ではない) とする必要があります。 すべてのシャロー列間で必要となる配置の値の中で、最も大きな値が使用されます。それまでの合計サイズ (ディープ型の列を含まない) が必要な配置の倍数になるように、余白として 0 ～ 7 バイトが追加されます。|ディープ型は、(var)binary 型と (n)(var)char 型です。|  
 |固定長のディープ型の列|SUM(*固定長のディープ型の列のサイズ*)<br /><br /> 個々の列のサイズは次のとおりです。<br /><br /> char(i) および binary(i) の場合は i。<br /><br /> nchar(i) の場合は 2 * i。|固定長のディープ型の列では、列の型が char(i)、nchar(i)、または binary(i) です。|  
-|可変長のディープ型の列の*計算されたサイズ*|SUM(*可変長のディープ型の列の計算されたサイズ*)<br /><br /> 個々の列の計算されたサイズは次のとおりです。<br /><br /> varchar(i) および varbinary(i) の場合は i。<br /><br /> nvarchar(i) の場合は 2 * i。|この行が適用されるのは *計算された行本体サイズ* のみです。<br /><br /> 可変長のディープ型の列では、列の型が varchar(i)、nvarchar(i)、または varbinary(i) です。 計算されたサイズは、列の最大長 (i) で決まります。|  
-|可変長のディープ型の列の*実際のサイズ*|SUM(*可変長のディープ型の列の実際のサイズ*)<br /><br /> 個々の列の実際のサイズは次のとおりです。<br /><br /> varchar(i) の場合は n (ここで n は列に格納されている文字数)。<br /><br /> nvarchar(i) の場合は 2 * n (ここで n は列に格納されている文字数)。<br /><br /> varbinary(i) の場合は n (ここで n は列に格納されているバイト数)。|この行が適用されるのは *実際の行本体サイズ* のみです。<br /><br /> 実際のサイズは、行の列内に格納されているデータで決まります。|   
+|可変長のディープ型の列の *計算されたサイズ*|SUM(*可変長のディープ型の列の計算されたサイズ*)<br /><br /> 個々の列の計算されたサイズは次のとおりです。<br /><br /> varchar(i) および varbinary(i) の場合は i。<br /><br /> nvarchar(i) の場合は 2 * i。|この行が適用されるのは *計算された行本体サイズ* のみです。<br /><br /> 可変長のディープ型の列では、列の型が varchar(i)、nvarchar(i)、または varbinary(i) です。 計算されたサイズは、列の最大長 (i) で決まります。|  
+|可変長のディープ型の列の *実際のサイズ*|SUM(*可変長のディープ型の列の実際のサイズ*)<br /><br /> 個々の列の実際のサイズは次のとおりです。<br /><br /> varchar(i) の場合は n (ここで n は列に格納されている文字数)。<br /><br /> nvarchar(i) の場合は 2 * n (ここで n は列に格納されている文字数)。<br /><br /> varbinary(i) の場合は n (ここで n は列に格納されているバイト数)。|この行が適用されるのは *実際の行本体サイズ* のみです。<br /><br /> 実際のサイズは、行の列内に格納されているデータで決まります。|   
   
 ##  <a name="example-table-and-row-size-computation"></a><a name="bkmk_ExampleComputation"></a> 例: テーブルと行のサイズの計算  
  ハッシュ インデックスの場合、実際のバケット数は最も近い 2 のべき乗に切り上げられます。 たとえば、指定された `bucket_count` が 100,000 ならば、そのインデックスの実際のバケット数は 131,072 です。  

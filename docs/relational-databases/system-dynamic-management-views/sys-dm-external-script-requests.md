@@ -1,12 +1,12 @@
 ---
 description: sys.dm_external_script_requests
-title: sys. dm_external_script_requests |Microsoft Docs
+title: sys.dm_external_script_requests |Microsoft Docs
 ms.custom: ''
 ms.date: 06/26/2020
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: machine-learning
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_external_script_requests
 - sys.dm_external_script_requests_TSQL
@@ -20,13 +20,13 @@ ms.assetid: e7e7c50f-b8b2-403c-b8c8-1955da5636c3
 author: dphansen
 ms.author: davidph
 manager: cgronlun
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: 1b3c1f10be0b454503c5fbcfd9cdab191a687797
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: ca4cfdd348d04ab0332653fa6851107ffa5f16d1
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88489845"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99207114"
 ---
 # <a name="sysdm_external_script_requests"></a>sys.dm_external_script_requests
 [!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
@@ -50,7 +50,7 @@ ms.locfileid: "88489845"
 > [!NOTE]
 > 外部スクリプトを実行するユーザーには、追加の権限が必要 `EXECUTE ANY EXTERNAL SCRIPT` です。ただし、この DMV は、管理者がこの権限なしで使用できます。 
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
 
 このビューは、スクリプト言語の識別子を使用してフィルター処理することができます。
 

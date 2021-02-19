@@ -4,18 +4,18 @@ description: SQL Server Docker コンテナーをセキュリティで保護す�
 author: vin-yu
 ms.author: vinsonyu
 ms.reviewer: vanto
-ms.custom: contperfq1
+ms.custom: contperf-fy21q1
 ms.date: 09/07/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
-moniker: '>= sql-server-linux-2017 || >= sql-server-2017 || =sqlallproducts-allversions'
-ms.openlocfilehash: 60ee13c6715362ba821575a3f8b9f9d5bc3e2bfa
-ms.sourcegitcommit: 764f90cf2eeca8451afdea2753691ae4cf032bea
+moniker: '>= sql-server-linux-2017 || >= sql-server-2017 '
+ms.openlocfilehash: c120dedfaf7c83be5b4a4c67f07def520280c602
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91589331"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100348178"
 ---
 # <a name="secure-sql-server-docker-containers"></a>SQL Server Docker コンテナーをセキュリティで保護する
 
@@ -186,14 +186,14 @@ Linux コンテナー上の SQL Server への接続の暗号化を開始する�
 <!--SQL Server 2017 on Linux -->
 ::: moniker range="= sql-server-linux-2017 || = sql-server-2017"
 
-- [クイックスタート](quickstart-install-connect-docker.md?view=sql-server-2017)に従って、Docker 上で SQL Server 2017 のコンテナー イメージを開始する
+- [クイックスタート](quickstart-install-connect-docker.md?view=sql-server-2017&preserve-view=true)に従って、Docker 上で SQL Server 2017 のコンテナー イメージを開始する
 
 ::: moniker-end
 
 <!--SQL Server 2019 on Linux-->
-::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 || =sqlallproducts-allversions"
+::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
 
-- [クイックスタート](quickstart-install-connect-docker.md?view=sql-server-ver15)に従って、Docker 上で SQL Server 2019 のコンテナー イメージを開始する
+- [クイックスタート](quickstart-install-connect-docker.md)に従って、Docker 上で SQL Server 2019 のコンテナー イメージを開始する
 
 ::: moniker-end
 

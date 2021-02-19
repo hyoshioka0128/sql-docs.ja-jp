@@ -7,18 +7,18 @@ ms.reviewer: ''
 ms.prod: sql
 ms.prod_service: connectivity
 ms.technology: ado
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - ADO, reference
 ms.assetid: 6dc27c85-84e1-472a-b057-d1854b8c98a3
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 75d6f5880fb0a8f98c3d458b791283158cddb0f3
-ms.sourcegitcommit: 9774e2cb8c07d4f6027fa3a5bb2852e4396b3f68
+ms.openlocfilehash: 77abffb64178bfdffcd6f9b9e74834f856b98907
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92098691"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100050803"
 ---
 # <a name="ado-programmer39s-reference"></a>ADO プログラマーズ&#39;s リファレンス
 このセクションでは、次のトピックを扱います。  
@@ -27,6 +27,6 @@ ms.locfileid: "92098691"
   
 -   [RDS の API リファレンス](./rds-api/rds-api-reference.md)  
   
--   [ADO MD API リファレンス](./ado-md-api/ado-md-object-model.md?view=sql-server-ver15)  
+-   [ADO MD API リファレンス](./ado-md-api/ado-md-object-model.md)  
   
--   [ADOX API リファレンス](./adox-api/adox-object-model.md?view=sql-server-ver15)
+-   [ADOX API リファレンス](./adox-api/adox-object-model.md)

@@ -20,13 +20,13 @@ helpviewer_keywords:
 ms.assetid: 32dfe254-6df7-4437-bfd6-ca7d37557b0a
 author: ronortloff
 ms.author: rortloff
-monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest || = sqlallproducts-allversions'
-ms.openlocfilehash: bbb0773d4c89b7b9879b0ff250e9ffaf6e465654
-ms.sourcegitcommit: 3efd8bbf91f4f78dce3a4ac03348037d8c720e6a
+monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
+ms.openlocfilehash: 14a7dce61b50ced328c103ec88973e9bf7b18c7d
+ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91024354"
+ms.lasthandoff: 02/13/2021
+ms.locfileid: "100345241"
 ---
 # <a name="create-external-table-as-select-transact-sql"></a>CREATE EXTERNAL TABLE AS SELECT (Transact-SQL)
 [!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
@@ -71,7 +71,7 @@ CREATE EXTERNAL TABLE [ [database_name  . [ schema_name ] . ] | schema_name . ] 
 
  **FILE_FORMAT = *external_file_format_name*** には、外部データ ファイルの形式を含む、外部ファイル形式オブジェクトの名前を指定します。 外部ファイル形式を作成するには、[CREATE EXTERNAL FILE FORMAT &#40;Transact-SQL&#41;](../../t-sql/statements/create-external-file-format-transact-sql.md) を使用します。
 
- この CREATE EXTERNAL TABLE AS SELECT ステートメントの実行時に、**REJECT オプション**は適用されません。 代わりに、ここで指定し、後で外部テーブルからデータをインポートする際に、データベースで使用できるようにします。 後で CREATE TABLE AS SELECT ステートメントで外部テーブルからデータを選択するときに、データベースでは拒否オプションを使用して、インポートを停止するまでにインポートの失敗が許容される行の数または割合を決定します。
+ この CREATE EXTERNAL TABLE AS SELECT ステートメントの実行時に、**REJECT オプション** は適用されません。 代わりに、ここで指定し、後で外部テーブルからデータをインポートする際に、データベースで使用できるようにします。 後で CREATE TABLE AS SELECT ステートメントで外部テーブルからデータを選択するときに、データベースでは拒否オプションを使用して、インポートを停止するまでにインポートの失敗が許容される行の数または割合を決定します。
 
    - **REJECT_VALUE = *reject_value*** には、インポートに失敗することができる行の値または割合を指定します。これを超えると、データベースのインポートが停止されます。
 
@@ -106,7 +106,7 @@ CREATE EXTERNAL TABLE [ [database_name  . [ schema_name ] . ] | schema_name . ] 
 
 ## <a name="permissions"></a>アクセス許可
 
- このコマンドを実行するには、*データベース ユーザー*は以下のすべての権限またはメンバーシップが必要です。
+ このコマンドを実行するには、*データベース ユーザー* は以下のすべての権限またはメンバーシップが必要です。
 
 - **db_ddladmin** 固定データベース ロールの新しいテーブルまたはメンバーシップを含む、ローカル スキーマに対する **ALTER SCHEMA** 権限。
 - **db_ddladmin** 固定データベース ロールの **CREATE TABLE** 権限またはメンバーシップ。
@@ -117,7 +117,7 @@ CREATE EXTERNAL TABLE [ [database_name  . [ schema_name ] . ] | schema_name . ] 
 - **ADMINISTER BULK OPERATIONS**
 - **ALTER ANY EXTERNAL DATA SOURCE**
 - **ALTER ANY EXTERNAL FILE FORMAT**
-- Hadoop クラスターまたは BLOB ストレージで外部フォルダーを読み取りおよび書き込みを行うための**書き込み**権限。
+- Hadoop クラスターまたは BLOB ストレージで外部フォルダーを読み取りおよび書き込みを行うための **書き込み** 権限。
 
  > [!IMPORTANT]
  >  ALTER ANY EXTERNAL DATA SOURCE 権限は、あらゆる外部データ ソース オブジェクトを作成し、変更する能力をプリンシパルに与えます。そのため、データベース上のすべてのデータベース スコープ資格情報にアクセスする能力も与えます。 この権限は特権として考える必要があり、システム内の信頼できるプリンシパルにのみ与える必要があります。
@@ -136,7 +136,7 @@ CREATE EXTERNAL TABLE [ [database_name  . [ schema_name ] . ] | schema_name . ] 
 
  外部テーブルの名前と定義は、データベースのメタデータに格納されます。 データは外部データ ソースに格納されます。
 
- 外部ファイルの名前は *QueryID_date_time_ID.format*です ( *ID* は増分識別子、 *format* はエクスポートされるデータ形式)。 たとえば、QID776_20160130_182739_0.orc です。
+ 外部ファイルの名前は *QueryID_date_time_ID.format* です ( *ID* は増分識別子、 *format* はエクスポートされるデータ形式)。 たとえば、QID776_20160130_182739_0.orc です。
 
  CREATE EXTERNAL TABLE AS SELECT ステートメントを使用すると、ソース テーブルがパーティション分割されている場合でも、常にパーティション分割されていないテーブルが作成されます。
 
@@ -161,6 +161,8 @@ CREATE EXTERNAL TABLE [ [database_name  . [ schema_name ] . ] | schema_name . ] 
 
  外部テーブルで許可されるデータ定義言語 (DDL) 操作は、CREATE TABLE、DROP TABLE、CREATE STATISTICS、DROP STATISTICS、CREATE VIEW、DROP VIEW のみです。
 
+ サーバーレス SQL プールの外部テーブルを、現在データがある場所に作成することはできません。 データの格納に使用されている場所を再利用するには、その場所を ADLS で手動で削除する必要があります。
+
  PolyBase では、32 個の同時 PolyBase クエリを実行しているときに、フォルダーあたり最大 33,000 ファイルを使用できます。 この最大数には、各 HDFS フォルダー内のファイルとサブフォルダーの両方が含まれます。 コンカレンシーの度合いが 32 未満である場合、ユーザーは 33,000 より多いファイルが含まれている HDFS のフォルダーに対して PolyBase クエリを実行できます。 Hadoop および PolyBase のユーザーがファイル パスを短くし、HDFS フォルダーごとに 30,000 以下のファイルを使用することをお勧めします。 参照されているファイルが多すぎると、JVM のメモリ不足例外が発生します。
 
  この CREATE EXTERNAL TABLE AS SELECT では [SET ROWCOUNT &#40;Transact-SQL&#41;](../../t-sql/statements/set-rowcount-transact-sql.md) の効果はありません。 同様の動作を実現するには、[TOP &#40;Transact-SQL&#41;](../../t-sql/queries/top-transact-sql.md) を使用します。
@@ -175,7 +177,7 @@ Parquet または ORC ファイルに対する CREATE EXTERNAL TABLE AS SELECT �
 - /r
 - /n
 
-これらの文字が含まれる CREATE EXTERNAL TABLE AS SELECT を使用するには、最初にデータに CREATE EXTERNAL TABLE AS SELECT を実行して区切りテキストファイルを作成する必要があり、その後は外部ツールを使用して Parquet または ORC に変換することができます。
+これらの文字が含まれる CREATE EXTERNAL TABLE AS SELECT を使用するには、最初にデータに CREATE EXTERNAL TABLE AS SELECT ステートメントを実行してデータを区切りテキストファイルにエクスポートする必要があり、その後は外部ツールを使用して Parquet または ORC に変換することができます。
 
 ## <a name="locking"></a>ロック
  SCHEMARESOLUTION オブジェクトの共有ロックを取得します。

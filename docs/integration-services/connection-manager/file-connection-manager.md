@@ -21,11 +21,11 @@ ms.assetid: 019078bc-44ee-4975-9169-0f9a89e3f3be
 author: chugugrace
 ms.author: chugu
 ms.openlocfilehash: ebe86146e2ce4f25f05c9948071d3fc7a4d4edb8
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.sourcegitcommit: 192f6a99e19e66f0f817fdb1977f564b2aaa133b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91728055"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96123698"
 ---
 # <a name="file-connection-manager"></a>ファイル接続マネージャー
 
@@ -37,7 +37,7 @@ ms.locfileid: "91728055"
 ## <a name="usage-types-of-the-file-connection-manager"></a>ファイル接続マネージャーの使用法の種類  
  ファイル接続マネージャーの **FileUsageType** プロパティでは、ファイル接続の使用方法を指定します。 ファイル接続マネージャーでは、ファイルの作成、フォルダーの作成、既存のファイルの使用、または既存のフォルダーの使用を実行できます。  
   
- 次の表に **FileUsageType**の値を示します。  
+ 次の表に **FileUsageType** の値を示します。  
   
 |値|説明|  
 |-----------|-----------------|  
@@ -52,7 +52,7 @@ ms.locfileid: "91728055"
 ## <a name="configuration-of-the-file-connection-manager"></a>ファイル接続マネージャーの構成  
  ファイル接続マネージャーをパッケージに追加するときは、 [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] によって、実行時にファイル接続を解決する接続マネージャーを作成し、ファイル接続プロパティを設定して、ファイル接続をパッケージの **接続** コレクションに追加します。  
   
- 接続マネージャーの **ConnectionManagerType** プロパティは、 **FILE**に設定されます。  
+ 接続マネージャーの **ConnectionManagerType** プロパティは、 **FILE** に設定されます。  
   
  ファイル接続マネージャーは、次の方法で構成できます。  
   

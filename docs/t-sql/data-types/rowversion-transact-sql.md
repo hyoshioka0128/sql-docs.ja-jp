@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - timestamp_TSQL
 - timestamp
@@ -27,12 +27,12 @@ helpviewer_keywords:
 ms.assetid: 65c9cf0e-3e8a-45f8-87b3-3460d96afb0b
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 087e3e1d67bce5d8f46f03cdb1cad05578b39b46
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 47117ba5b13d7b494174576d76cca9a5472f0c9e
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88479900"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99187838"
 ---
 # <a name="rowversion-transact-sql"></a>rowversion (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "88479900"
 自動的に生成された、データベース内で一意の 2 進数を公開するデータ型です。 **rowversion** は、通常、テーブルの行のバージョンを記録するためのメカニズムとして使用します。 格納サイズは 8 バイトです。 **rowversion** データ型は数値を加算していくだけであり、日付や時刻では保持されません。 日付または時刻を記録するには、 **datetime2** データ型を使用してください。
   
 ## <a name="remarks"></a>解説  
-各データベースを含むテーブルで実行される update 操作または挿入ごとにインクリメントされるカウンターには、 **rowversion** 、データベース内の列です。 このカウンターは、データベース rowversion です。 これにより、クロックへの関連付けが可能な実際の時間ではなく、データベース内の相対時間が追跡されます。 テーブルには、1 つだけ保持できます** rowversion** 列です。 たびにを持つ行、** rowversion** で増加したデータベース rowversion 値が挿入される、列が変更または挿入、 **rowversion** 列です。 このため、** rowversion** 列、不適切なキーとして、特に主キー。 行を更新すると rowversion 値が変わるので、キーの値も変わります。 列が主キー内にある場合、以前のキーの値は無効になり、この以前の値を参照する外部キーも無効になります。 動的カーソルでテーブルを参照する場合、すべての更新操作はカーソル上の行の位置を変更します。 列がインデックス キーの場合は、データ行に対するすべての更新によって、インデックスの更新も生成されます。  行の値が変更されない場合でも、**rowversion** 値は、update ステートメントによって増分されます  (たとえば、列の値が 5 のときに、update ステートメントによって値が 5 に設定された場合、この操作は値の変更がないにもかかわらず更新とみなされ、**rowversion** は増分されます)。
+各データベースを含むテーブルで実行される update 操作または挿入ごとにインクリメントされるカウンターには、 **rowversion** 、データベース内の列です。 このカウンターは、データベース rowversion です。 これにより、クロックへの関連付けが可能な実際の時間ではなく、データベース内の相対時間が追跡されます。 テーブルには、1 つだけ保持できます **rowversion** 列です。 たびにを持つ行、**rowversion** で増加したデータベース rowversion 値が挿入される、列が変更または挿入、 **rowversion** 列です。 このため、**rowversion** 列、不適切なキーとして、特に主キー。 行を更新すると rowversion 値が変わるので、キーの値も変わります。 列が主キー内にある場合、以前のキーの値は無効になり、この以前の値を参照する外部キーも無効になります。 動的カーソルでテーブルを参照する場合、すべての更新操作はカーソル上の行の位置を変更します。 列がインデックス キーの場合は、データ行に対するすべての更新によって、インデックスの更新も生成されます。  行の値が変更されない場合でも、**rowversion** 値は、update ステートメントによって増分されます  (たとえば、列の値が 5 のときに、update ステートメントによって値が 5 に設定された場合、この操作は値の変更がないにもかかわらず更新とみなされ、**rowversion** は増分されます)。
   
 **timestamp** は、**rowversion** データ型のシノニムであり、データ型のシノニムの動作が適用されます。 DDL ステートメントでは、可能な限り **timestamp** の代わりに **rowversion** を使用してください。 詳しくは、「[データ型のシノニム &#40;Transact-SQL&#41;](../../t-sql/data-types/data-type-synonyms-transact-sql.md)」をご覧ください。
   

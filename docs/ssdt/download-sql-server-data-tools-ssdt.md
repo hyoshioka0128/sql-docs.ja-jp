@@ -12,13 +12,13 @@ ms.author: drskwier
 ms.reviewer: maghan
 ms.custom: seo-lt-2019
 ms.date: 02/20/2020
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||=azuresqldb-mi-current'
-ms.openlocfilehash: 39f1f79701a0a3fd871b2b273a48197b8b42187b
-ms.sourcegitcommit: a5398f107599102af7c8cda815d8e5e9a367ce7e
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=azuresqldb-mi-current'
+ms.openlocfilehash: cf088c407a95d32f3cfc7413b55ec41661126e78
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92005889"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100077240"
 ---
 # <a name="download-sql-server-data-tools-ssdt-for-visual-studio"></a>SQL Server Data Tools (SSDT) for Visual Studio のダウンロード
 
@@ -53,7 +53,7 @@ Visual Studio 2019 では、Analysis Services、Integration Services、Reporting
 
    ![[データの保存と処理] ワークロード (2019)](../ssdt/media/download-sql-server-data-tools-ssdt/data-workload-2019.png)
 
-Analysis Services、Integration Services、または Reporting Services プロジェクトの場合は、Visual Studio 内から ( **[拡張機能]** 、 **[拡張機能を管理する]** の順に選択する) または [[Marketplace]](https://marketplace.visualstudio.com/search?term=services&target=VS&category=All%20categories&vsVersion=&sortBy=Relevance) から適切な[拡張機能](/visualstudio/ide/finding-and-using-visual-studio-extensions)をインストールできます。
+Analysis Services、Integration Services、または Reporting Services プロジェクトの場合は、Visual Studio 内から ( **[拡張機能]** 、 **[拡張機能を管理する]** の順に選択する) または [[Marketplace]](https://marketplace.visualstudio.com/search?term=services&target=VS&category=All%20categories&vsVersion=&sortBy=Relevance) から適切な [拡張機能](/visualstudio/ide/finding-and-using-visual-studio-extensions)をインストールできます。
 
 * [Analysis Services](https://marketplace.visualstudio.com/items?itemName=ProBITools.MicrosoftAnalysisServicesModelingProjects)
 * [統合サービス](https://marketplace.visualstudio.com/items?itemName=SSIS.SqlServerIntegrationServicesProjects)
@@ -93,10 +93,10 @@ Analysis Services、Integration Services、Reporting Services プロジェクト
 
 ## <a name="ssdt-for-vs-2017-standalone-installer"></a>SSDT for VS 2017 (スタンドアロン インストーラー)
 
-:::image type="icon" source="media/download.png" border="false"::: **[SSDT for Visual Studio 2017 (15.9.6) のダウンロード](https://go.microsoft.com/fwlink/?linkid=2139376)**
+:::image type="icon" source="media/download.png" border="false"::: **[SSDT for Visual Studio 2017 (15.9.7) のダウンロード](https://go.microsoft.com/fwlink/?linkid=2151759)**
 
 > [!IMPORTANT]
-> * SSDT for Visual Studio 2017 (15.9.6) をインストールする前に、*Analysis Services プロジェクト*と *Reporting Services プロジェクト*の拡張機能がインストールされている場合はアンインストールし、すべての VS インスタンスを閉じます。 
+> * SSDT for Visual Studio 2017 (15.9.7) をインストールする前に、*Analysis Services プロジェクト* と *Reporting Services プロジェクト* の拡張機能がインストールされている場合はアンインストールし、すべての VS インスタンスを閉じます。 
 > * SQL Server 2017 用の受信トレイ コンポーネント Power Query ソースが削除されました。 すぐに使用できるコンポーネントとして SQL Server 2017 および 2019 用の Power Query ソースを発表しました。これは[こちら](https://www.microsoft.com/download/details.aspx?id=100619)からダウンロードできます。
 > * Oracle および Teradata コネクタを使用し、SQL 2019 より前の以前のバージョンの SQL Server をターゲットとするパッケージを設計するには、[SQL 2019 用の Microsoft Oracle Connector](https://www.microsoft.com/download/details.aspx?id=58228) および [SQL 2019 用の Microsoft Teradata Connector](https://www.microsoft.com/download/details.aspx?id=100599) に加えて、対応するバージョンの Microsoft Connector for Oracle and Teradata by Attunity もインストールする必要があります。
 >    * [SQL Server 2017 をターゲットとする Microsoft Connector Version 5.0 for Oracle and Teradata by Attunity](https://www.microsoft.com/download/details.aspx?id=55179)
@@ -116,17 +116,17 @@ SSDT for Visual Studio 2017 の[システム要件](/visualstudio/productinfo/vs
 
 **SSDT for VS 2017** の今回のリリースは、次の言語でインストールできます。
 
-* [簡体中国語](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x804)
-* [繁体中国語](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x404)
-* [英語 (米国)](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x409)
-* [フランス語](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x40c)
-* [ドイツ語](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x407)
-* [イタリア語](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x410)
-* [日本語](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x411)
-* [韓国語](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x412)
-* [ポルトガル語 (ブラジル)](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x416)
-* [ロシア語](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x419)
-* [スペイン語](https://go.microsoft.com/fwlink/?linkid=2139376&clcid=0x40a)
+* [簡体中国語](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x804)
+* [繁体中国語](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x404)
+* [英語 (米国)](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x409)
+* [フランス語](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x40c)
+* [ドイツ語](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x407)
+* [イタリア語](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x410)
+* [日本語](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x411)
+* [韓国語](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x412)
+* [ポルトガル語 (ブラジル)](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x416)
+* [ロシア語](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x419)
+* [スペイン語](https://go.microsoft.com/fwlink/?linkid=2151759&clcid=0x40a)
 
 ### <a name="considerations-and-limitations"></a>考慮事項と制限事項
 
@@ -138,7 +138,7 @@ SSDT for Visual Studio 2017 の[システム要件](/visualstudio/productinfo/vs
 
 インターネットに接続されていない状態で SSDT をインストールするには、このセクションの手順に従います。 詳細については、「[Visual Studio 2017 のネットワーク インストールを作成する](/visualstudio/install/create-a-network-installation-of-visual-studio)」を参照してください。
 
-まず、**オンライン**のときに次の手順を完了します。
+まず、**オンライン** のときに次の手順を完了します。
 
 1. [SSDT スタンドアロン インストーラーをダウンロードします](#ssdt-for-vs-2017-standalone-installer)。
 
@@ -148,7 +148,7 @@ SSDT for Visual Studio 2017 の[システム要件](/visualstudio/productinfo/vs
    1. 特定の言語には、`vs_sql.exe --layout c:\<filepath> --lang en-us` のようにロケールを渡します (1 つの言語は 1 GB まで)。
    1. すべての言語には、`vs_sql.exe --layout c:\<filepath>` のように `--lang` 引数を省略します (すべての言語は 3.9 GB まで)。
 
-前述の手順を完了したら、以下の手順を**オフライン**で実行できます。
+前述の手順を完了したら、以下の手順を **オフライン** で実行できます。
 
 1. `vs_setup.exe --NoWeb` を実行して、VS2017 Shell と SQL Server Data Project をインストールします。
 

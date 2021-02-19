@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - Parameter
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: e010e794-7f0f-4026-8b5b-37328e437d63
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 123ca1553ede61735565a6f82cb36b0035c56dcb
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 6e9d4f0770cdc15ac44882fa808f60f1a85f071c
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88990173"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100041152"
 ---
 # <a name="parameter-object"></a>Parameter オブジェクト
 パラメーター化クエリまたはストアドプロシージャに基づいて [Command](./command-object-ado.md) オブジェクトに関連付けられたパラメーターまたは引数を表します。  
@@ -31,7 +31,7 @@ ms.locfileid: "88990173"
   
  **パラメーター** オブジェクトは、パラメーター化クエリに関連付けられているパラメーター、またはストアドプロシージャの in/out 引数と戻り値を表します。 プロバイダーの機能によっては、 **パラメーター** オブジェクトの一部のコレクション、メソッド、またはプロパティが使用できないことがあります。  
   
- **Parameter**オブジェクトのコレクション、メソッド、およびプロパティを使用して、次の操作を実行できます。  
+ **Parameter** オブジェクトのコレクション、メソッド、およびプロパティを使用して、次の操作を実行できます。  
   
 -   [Name](./name-property-ado.md)プロパティを使用して、パラメーターの名前を設定または取得します。  
   
@@ -45,7 +45,7 @@ ms.locfileid: "88990173"
   
  呼び出すストアドプロシージャまたはパラメーター化クエリに関連付けられているパラメーターの名前とプロパティがわかっている場合は、 [createparameter](./createparameter-method-ado.md) メソッドを使用して、適切なプロパティ設定を持つ **パラメーター** オブジェクトを作成し、 [Append](./append-method-ado.md) メソッドを使用 [してパラメーターコレクションに](./parameters-collection-ado.md) 追加することができます。 これにより、パラメーターコレクションの [Refresh](./refresh-method-ado.md) メソッドを呼び出さなくても、リソースを大量に消費する可能性のある操作であるプロバイダーからパラメーター情報を取得するため **に、パラメーター** の値を設定して返すことができます。  
   
- **パラメーター**オブジェクトは、スクリプト作成には安全ではありません。  
+ **パラメーター** オブジェクトは、スクリプト作成には安全ではありません。  
   
  ここでは、次のトピックについて説明します。  
   

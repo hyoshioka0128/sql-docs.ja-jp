@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: d8304849-3f80-4cf3-9425-529d2a8ebedd
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 610ad3b837c7fc91cbfeba440b0fa2aea9fca81e
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 02d438039eac6ae4a18894a58ff3785425637264
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88982893"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100049652"
 ---
 # <a name="views-and-fields-collections-example-vb"></a>Views および Fields コレクションの例 (VB)
 次のコードは、 [コマンド](./command-property-adox.md) プロパティと [レコードセット](../ado-api/recordset-object-ado.md) オブジェクトを使用して、ビューのフィールド情報を取得する方法を示しています。  

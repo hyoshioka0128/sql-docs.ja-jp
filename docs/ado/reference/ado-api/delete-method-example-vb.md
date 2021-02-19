@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0c80e71b-9e3f-4d05-ab2a-9e78798dad88
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 36dd8f9b603e3a918dd968318d83fa12c7580e67
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 0a91cc67b25b3ff017d63e76fbfbc3528957427f
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88974083"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100025565"
 ---
 # <a name="delete-method-example-vb"></a>Delete メソッドの例 (VB)
 この例では、 [Delete](../../../ado/reference/ado-api/delete-method-ado-recordset.md) メソッドを使用して、レコード [セット](../../../ado/reference/ado-api/recordset-object-ado.md)から指定されたレコードを削除します。  

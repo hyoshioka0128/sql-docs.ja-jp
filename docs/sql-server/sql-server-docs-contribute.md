@@ -9,13 +9,13 @@ ms.custom: ''
 ms.topic: conceptual
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: '>= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017 || = sqlallproducts-allversions'
-ms.openlocfilehash: 6a268ef27e1f2e5337e2325fb464656e255b454c
-ms.sourcegitcommit: a5398f107599102af7c8cda815d8e5e9a367ce7e
+monikerRange: '>= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017'
+ms.openlocfilehash: a0f3f665421c04208af1123e659aadcfe513d407
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92005842"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100080313"
 ---
 # <a name="how-to-contribute-to-sql-server-documentation"></a>SQL Server のドキュメントに投稿する方法
 
@@ -39,7 +39,7 @@ ms.locfileid: "92005842"
 次の手順は、このプロセスをまとめたものです。 
 
 1. フィードバックがあるページで、右上の **[編集]** リンクを選択します。
-1. 次のページで、右上の**鉛筆**アイコンを選択します。
+1. 次のページで、右上の **鉛筆** アイコンを選択します。
 1. 次のページの **[Edit file]\(ファイルの編集\)** テキスト ウィンドウで、変更するテキストを直接編集します。
     新規または変更されたテキストの書式設定に関するヘルプが必要な場合は、「[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)」(マークダウンのカンニング ペーパー) を参照してください。
 1. 編集が完了したら、 **[Commit changes]\(変更のコミット\)** で次の手順を実行します。
@@ -64,7 +64,7 @@ ms.locfileid: "92005842"
 - [Git リポジトリをローカルに設定する](/contribute/get-started-setup-local)
 - [ツールを使って投稿する](/contribute/how-to-write-workflows-major)
 
-ドキュメントを大幅に変更する pull request を送信する場合は、オンライン**貢献者使用許諾契約書 (CLA)** の提出を求める GitHub のコメントを受け取ります。 オンライン フォームを提出してからでないと、pull request は受け付けられません。
+ドキュメントを大幅に変更する pull request を送信する場合は、オンライン **貢献者使用許諾契約書 (CLA)** の提出を求める GitHub のコメントを受け取ります。 オンライン フォームを提出してからでないと、pull request は受け付けられません。
 
 ## <a name="recognition"></a>認識
 

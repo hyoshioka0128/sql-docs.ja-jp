@@ -5,21 +5,21 @@ ms.custom: seo-lt-2019
 ms.date: 03/14/2017
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: failover-cluster-instance
 ms.topic: how-to
 helpviewer_keywords:
 - Availability Groups [SQL Server], WSFC clusters
 - quorum [SQL Server], AlwaysOn and WSFC quorum
 - failover clustering [SQL Server], AlwaysOn Availability Groups
 ms.assetid: 6cefdc18-899e-410c-9ae4-d6080f724046
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: 14cce727272080727ec4000c8519cdaa26e6b890
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 6aa2a07da107a5283a4dacc8323dc5d6a928702a
+ms.sourcegitcommit: 38e055eda82d293bf5fe9db14549666cf0d0f3c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91988098"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99251192"
 ---
 # <a name="wsfc-disaster-recovery-through-forced-quorum-sql-server"></a>WSFC の強制クォーラムによる災害復旧 (SQL Server)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -60,7 +60,7 @@ ms.locfileid: "91988098"
 1.  **障害の範囲を特定します。** 応答しない可用性グループや SQL Server インスタンス、災害後に使用できるオンラインのクラスター ノードをそれぞれ特定し、Windows イベント ログと SQL Server システム ログを確認します。  必要に応じて、後で分析できるように解析データやシステム ログを保存しておきます。  
   
     > [!TIP]  
-    >  応答している [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)]インスタンスで、 [sys.dm_hadr_availability_group_states](../../../relational-databases/system-dynamic-management-views/sys-dm-hadr-availability-group-states-transact-sql.md) 動的管理ビュー (DMV) クエリを実行して、ローカル サーバー インスタンスに可用性レプリカを保持している可用性グループの正常性に関する情報を取得できます。  
+    >  応答している [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)]インスタンスで、 [sys.dm_hadr_availability_group_states](../../../relational-databases/system-dynamic-management-views/sys-dm-hadr-availability-group-states-transact-sql.md) 動的管理ビュー (DMV) クエリを実行して、ローカル サーバー インスタンスに可用性レプリカを保持している可用性グループの正常性に関する情報を取得できます。  
   
 2.  **1 つのノードで強制クォーラムを使用して WSFC クラスターを起動します。** WSFC クラスター サービスがシャットダウンしたもの以外で、コンポーネントの障害が最も少ないノードを特定し、  そのノードが他の大半のノードと通信できることを確認します。  
   

@@ -2,20 +2,20 @@
 title: Azure Active Directory の使用
 description: Microsoft OLE DB Driver for SQL Server で利用できて、Azure SQL データベースへの接続を可能にする Azure Active Directory 認証方法について説明します。
 ms.custom: ''
-ms.date: 10/11/2019
+ms.date: 09/30/2020
 ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
 ms.technology: connectivity
-ms.topic: reference
+ms.topic: conceptual
 author: bazizi
 ms.author: v-beaziz
-ms.openlocfilehash: bace88bd8ccf42cbef96a34ddb2af2593cedd7be
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 83f87b1643517a34de24708abd15b5bbc3a52fa2
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91727299"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99160034"
 ---
 # <a name="using-azure-active-directory"></a>Azure Active Directory の使用
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -24,23 +24,29 @@ ms.locfileid: "91727299"
 
 ## <a name="purpose"></a>目的
 
-バージョン 18.2.1 から、Microsoft OLE DB Driver for SQL Server では、フェデレーション ID を使用して OLE DB アプリケーションが Azure SQL Database のインスタンスに接続できるようになりました。 新しい認証方法は次のとおりです。
+
+バージョン [18.2.1](../release-notes-for-oledb-driver-for-sql-server.md#1821) から、Microsoft OLE DB Driver for SQL Server では、フェデレーション ID を使用して OLE DB アプリケーションが Azure SQL Database のインスタンスに接続できるようになりました。 新しい認証方法は次のとおりです。
 - Azure Active Directory のログイン ID とパスワード
 - Azure Active Directory のアクセス トークン
 - Azure Active Directory 統合認証
 - SQL ログイン ID とパスワード
 
-バージョン 18.3 では、次の認証方法のサポートが追加されています。
+
+バージョン [18.3.0](../release-notes-for-oledb-driver-for-sql-server.md#1830) では、次の認証方法のサポートが追加されています。
 - Azure Active Directory 対話型認証
 - Azure Active Directory マネージド ID 認証
 
+バージョン [18.5.0](../release-notes-for-oledb-driver-for-sql-server.md#1850) では、次の認証方法のサポートが追加されています。
+- Azure Active Directory サービス プリンシパル認証
+
 > [!NOTE]
-> `DataTypeCompatibility` (またはそれに対応するプロパティ) が `80` に設定された状態での次の認証モードの使用は、サポート**されていません**。
+> `DataTypeCompatibility` (またはそれに対応するプロパティ) が `80` に設定された状態での次の認証モードの使用は、サポート **されていません**。
 > - ログイン ID とパスワードを使用する Azure Active Directory 認証
 > - アクセス トークンを使用する Azure Active Directory 認証
 > - Azure Active Directory 統合認証
 > - Azure Active Directory 対話型認証
 > - Azure Active Directory マネージド ID 認証
+> - Azure Active Directory サービス プリンシパル認証
 
 ## <a name="connection-string-keywords-and-properties"></a>接続文字列キーワードとプロパティ
 次の接続文字列キーワードが、Azure Active Directory 認証をサポートするために導入されています。
@@ -55,13 +61,13 @@ ms.locfileid: "91727299"
 - [初期化プロパティと承認プロパティ](../ole-db-data-source-objects/initialization-and-authorization-properties.md)
 
 ## <a name="encryption-and-certificate-validation"></a>暗号化と証明書の検証
-このセクションでは、暗号化および証明書の検証の動作の変更について説明します。 これらの変更は、新しい認証またはアクセス トークンの接続文字列キーワード (またはそれに対応するプロパティ) を使用する場合に**のみ**有効です。
+このセクションでは、暗号化および証明書の検証の動作の変更について説明します。 これらの変更は、新しい認証またはアクセス トークンの接続文字列キーワード (またはそれに対応するプロパティ) を使用する場合に **のみ** 有効です。
 
 ### <a name="encryption"></a>暗号化
 新しい接続プロパティ/キーワードが使用された場合、セキュリティを強化するために、ドライバーは既定の暗号化の値を `yes` に設定して、それをオーバーライドします。 オーバーライドが行われるのは、データ ソース オブジェクトの初期化時です。 初期化の前に何らかの方法で暗号化が設定されると、値は保持され、オーバーライドされません。
 
 > [!NOTE]   
-> ADO アプリケーション、および `IDataInitialize::GetDataSource` を介して `IDBInitialize` インターフェイスを取得するアプリケーションでは、このインターフェイスを実装するコア コンポーネントによって、暗号化が既定値の `no` に明示的に設定されます。 その結果、新しい認証プロパティ/キーワードではこの設定が保持され、暗号化の値はオーバーライド**されません**。 そのため、これらのアプリケーションで `Use Encryption for Data=true` を明示的に設定し、既定値をオーバーライドすることを**お勧めします**。
+> ADO アプリケーション、および `IDataInitialize::GetDataSource` を介して `IDBInitialize` インターフェイスを取得するアプリケーションでは、このインターフェイスを実装するコア コンポーネントによって、暗号化が既定値の `no` に明示的に設定されます。 その結果、新しい認証プロパティ/キーワードではこの設定が保持され、暗号化の値はオーバーライド **されません**。 そのため、これらのアプリケーションで `Use Encryption for Data=true` を明示的に設定し、既定値をオーバーライドすることを **お勧めします**。
 
 ### <a name="certificate-validation"></a>証明書の検証
 セキュリティを強化するために、新しい接続プロパティ/キーワードでは、**クライアントの暗号化設定に関係なく**、`TrustServerCertificate` 設定 (およびそれに対応する接続文字列キーワード/プロパティ) が保持されます。 その結果、既定でサーバー証明書が検証されます。
@@ -142,6 +148,13 @@ ms.locfileid: "91727299"
         > Server=[サーバー];Database=[データベース];**Authentication=ActiveDirectoryMSI**;UID=[オブジェクト ID];Encrypt=yes
     - システム割り当てマネージド ID:
         > Server=[サーバー];Database=[データベース];**Authentication=ActiveDirectoryMSI**;Encrypt=yes
+
+### <a name="azure-active-directory-service-principal-authentication"></a>Azure Active Directory サービス プリンシパル認証
+
+- `IDataInitialize::GetDataSource`の使用
+    > Provider=MSOLEDBSQL;Data Source=[サーバー];Initial Catalog=[データベース];**Authentication=ActiveDirectoryServicePrincipal**;User ID=[アプリケーション (クライアント) ID];Password=[アプリケーション (クライアント) シークレット];Use Encryption for Data=true
+- `DBPROP_INIT_PROVIDERSTRING`の使用
+    > Server=[サーバー];Database=[データベースj];**Authentication=ActiveDirectoryServicePrincipal**;UID=[アプリケーション (クライアント) ID];PWD=[アプリケーション (クライアント) シークレット];Encrypt=yes
 
 ## <a name="code-samples"></a>コード サンプル
 

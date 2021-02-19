@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sysindexkeys
 - sys.sysindexkeys_TSQL
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sysindexkeys system table
 - sys.sysindexkeys compatibility view
 ms.assetid: 53a33c8d-e5f0-430d-a712-b65f43d64318
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 8934f884ba5a0841ab54a2a06bafbe3d654e6bcb
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 011d308c520b1d69acefccac93e5eb509b72b7f5
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88469897"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99201407"
 ---
 # <a name="syssysindexkeys-transact-sql"></a>sys.sysindexkeys (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

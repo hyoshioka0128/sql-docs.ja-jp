@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - Levels
@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: fed8684a-b428-4ee4-8f8d-928abe4ad9ad
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 3c28c286157e9182be43a137e88828d3c162a5b9
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 291bd48eb9a1d5cc31bbff6526591220f2f09fe2
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88986453"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100051113"
 ---
 # <a name="levels-collection-ado-md"></a>Levels コレクション (ADO MD)
 階層を構成する [レベル](./level-object-ado-md.md) オブジェクトを格納します。  

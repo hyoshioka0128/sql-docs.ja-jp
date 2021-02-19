@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: pochiraju
 ms.author: rajpo
 ms.reviewer: mathoma
-ms.openlocfilehash: fa37fb348aa94e59ac3816d523cc5a30bc314713
-ms.sourcegitcommit: 71d2389cf27156fa0404a6e6f65fb7a61c40789a
+ms.openlocfilehash: 105f471afc10e03c8d6371aa22cce1f6e74ca8c1
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636172"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100065917"
 ---
 # <a name="replay-a-trace-in-database-experimentation-assistant"></a>Database Experimentation Assistant でトレースを再生する
 
@@ -50,7 +50,7 @@ Database Experimentation Assistant (DEA) では、アップグレードされた
         > [!NOTE]
         > Azure SQL Database または Azure SQL Managed Instance については、Azure blob ストレージアカウントの SAS URI を指定する必要があります。
 
-3. **[はい、データベースを手動で復元しまし**た] チェックボックスをオンにして、データベースが復元されたことを確認します。
+3. **[はい、データベースを手動で復元しまし** た] チェックボックスをオンにして、データベースが復元されたことを確認します。
 
 4. [ **SQL Server 接続の詳細**] で、次の情報を入力または選択します。
 
@@ -139,7 +139,7 @@ DEA は、パフォーマンスに関連する情報を含むトレースイベ�
 
 - コントローラーコンピューターで分散再生コントローラーサービスが実行されていることを確認してください。 確認するには、分散再生管理ツールを使用します (コマンドを実行し `dreplay.exe status -f 1` ます)。
 - 再生がリモートで開始された場合:
-  - DEA を実行しているコンピューターがコントローラーに対して ping を正常に実行できることを確認します。 [ **再生環境の構成** ] ページの指示に従って、ファイアウォールの設定によって接続が許可されていることを確認します。 詳細については、「 [SQL Server 分散再生](../tools/distributed-replay/sql-server-distributed-replay.md?view=sql-server-2017)」を参照してください。
+  - DEA を実行しているコンピューターがコントローラーに対して ping を正常に実行できることを確認します。 [ **再生環境の構成** ] ページの指示に従って、ファイアウォールの設定によって接続が許可されていることを確認します。 詳細については、「 [SQL Server 分散再生](../tools/distributed-replay/sql-server-distributed-replay.md)」を参照してください。
   - 分散再生コントローラーのユーザーに対して、DCOM リモート起動とリモートアクティブ化が許可されていることを確認します。
   - 分散再生コントローラーのユーザーに対して、DCOM リモートアクセスユーザー権限が許可されていることを確認します。
 

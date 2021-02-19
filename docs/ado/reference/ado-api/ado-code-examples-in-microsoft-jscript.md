@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - JScript
 helpviewer_keywords:
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 228b978d-eef1-4e30-928a-005b2f77ef14
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 8fff86663c19b4be71b2d83ae24c1cd3ea61ee14
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: ff09ffadd567e8aa8fcbe76856179099d3bce456
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88976673"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100031430"
 ---
 # <a name="ado-code-examples-in-microsoft-jscript"></a>Microsoft JScript での ADO のコード例
 次のコード例を使用して、JScript で記述するときに ADO のメソッド、プロパティ、およびイベントを使用する方法を学習します。  
@@ -40,7 +40,7 @@ ms.locfileid: "88976673"
   
 -   [GetRows メソッドの例](./getrows-method-example-vb.md)  
   
-## <a name="properties"></a>プロパティ  
+## <a name="properties"></a>Properties  
   
 -   [AbsolutePage、PageCount、および PageSize プロパティの例](./absolutepage-pagecount-and-pagesize-properties-example-jscript.md)  
   

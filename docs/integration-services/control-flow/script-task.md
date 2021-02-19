@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: f6cce7df-4bd6-4b75-9f89-6c37b4bb5558
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 4f5f18f3306256906d6c419957aa3d97d3506e7d
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: 10be8411e2de29c514c3d9aed50c550a0e86ba91
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92197143"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100348273"
 ---
 # <a name="script-task"></a>スクリプト タスク
 

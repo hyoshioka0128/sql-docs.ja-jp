@@ -5,7 +5,7 @@ ms.custom: seodec18
 ms.date: 05/17/2016
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 helpviewer_keywords:
 - Availability Groups [SQL Server], availability replicas
@@ -15,14 +15,14 @@ helpviewer_keywords:
 - Availability Groups [SQL Server], client connectivity
 - Availability Groups [SQL Server], active secondary replicas
 ms.assetid: 29027e46-43e4-4b45-b650-c4cdeacdf552
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: fc0568a32bae1f9c31fe4d20ff6ae2139d325acd
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: b05793948960a5981813095413dc48dfe23df3ae
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91724620"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100339276"
 ---
 # <a name="types-of-client-connections-to-replicas-within-an-always-on-availability-group"></a>Always On 可用性グループ内のレプリカに対するクライアント接続の種類
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -80,7 +80,7 @@ ms.locfileid: "91724620"
  クライアント接続要求を処理する可用性グループ リスナーの詳細については、「 [可用性グループ リスナー、クライアント接続、およびアプリケーションのフェールオーバー &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/listeners-client-connectivity-application-failover.md)」をご参照ください。  
   
 ### <a name="example-connection-access-configuration"></a>接続のアクセス構成の例  
- 可用性レプリカの接続アクセスの構成内容がそれぞれ異なっている場合、可用性グループがフェールオーバーした後でクライアント接続のサポートが変わる可能性があります。 たとえば、リモートの非同期コミット セカンダリ レプリカでレポートが実行された可用性グループについて考えてみましょう。 この可用性グループのデータベースのすべての読み取り専用アプリケーションで、 **アプリケーションの目的** 接続プロパティが **ReadOnly**に設定されているため、すべての読み取り専用接続が読み取りを目的とした接続です。  
+ 可用性レプリカの接続アクセスの構成内容がそれぞれ異なっている場合、可用性グループがフェールオーバーした後でクライアント接続のサポートが変わる可能性があります。 たとえば、リモートの非同期コミット セカンダリ レプリカでレポートが実行された可用性グループについて考えてみましょう。 この可用性グループのデータベースのすべての読み取り専用アプリケーションで、 **アプリケーションの目的** 接続プロパティが **ReadOnly** に設定されているため、すべての読み取り専用接続が読み取りを目的とした接続です。  
   
  この例の可用性グループには、メインのコンピューティング センターにある 2 つの同期コミット レプリカと、サテライト サイトにある 2 つの非同期コミット レプリカが含まれています。 プライマリ ロールに対しては、すべてのレプリカに読み取り/書き込みアクセスが構成され、どのような状況でもプライマリ レプリカへの読み取りを目的とした接続ができないようになっています。 同期コミットのセカンダリ ロールでは、既定の接続アクセス構成 ("なし") が使用されるため、セカンダリ ロールではすべてのクライアント接続が禁止されます。  一方、非同期コミット レプリカは、セカンダリ ロールでの読み取り目的の接続を許可するように構成されています。 次の表に、この例の構成をまとめます。  
   

@@ -4,22 +4,44 @@ description: 各リリースの SQL Server Migration Assistant (SSMA) for DB2 (D
 author: nahk-ivanov
 ms.prod: sql
 ms.custom: ''
-ms.date: 9/28/2020
+ms.date: 12/17/2020
 ms.reviewer: ''
 ms.technology: ssma
 ms.topic: conceptual
 ms.assetid: 1cc38f85-3caa-42d0-8c76-a380c1d15c67
 ms.author: alexiva
-ms.openlocfilehash: 8f84892230de6e7070933657cd25636a2fc697d8
-ms.sourcegitcommit: b93beb4f03aee2c1971909cb1d15f79cd479a35c
+ms.openlocfilehash: a047a1528bafe0f04fca72661d4e32cc8b15fc89
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91498224"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100069297"
 ---
 # <a name="whats-new-in-ssma-for-db2-db2tosql"></a>SSMA for DB2 の新機能 (DB2ToSQL)
 
 この記事では、各リリースでの DB2 変更の SQL Server Migration Assistant (SSMA) を示します。
+
+## <a name="ssma-v816"></a>SSMA v 8.16
+
+SSMA for DB2 の v 8.16 リリースには、次の変更が含まれています。
+
+* 特殊文字を使用した列の別名の変換の修正
+* 句の変換を修正します `SELECTIVITY`
+* 句の変換の改善 `WITH ROW MOVEMENT`
+* レガシパーサーのサポートを削除する
+* データベースから更新されていないオブジェクトの問題を修正します
+
+## <a name="ssma-v815"></a>SSMA v 8.15
+
+SSMA for DB2 の v 8.15 リリースには、いくつかのユーザー補助機能の強化に加えて、次の変更が含まれています。
+
+* `MIN` / `MAX` 日付/時刻引数を使用した集計関数の変換の修正
+* `VARCHAR_FORMAT` `DD` プレースホルダーが使用されている場合のエミュレーション関数のバグの修正
+* データ型の型マッピングの向上 `TIME`
+* `ROUND` `TRUNC` 数値引数を使用した関数と関数の変換の改善
+* 改良評価レポートを最新のブラウザーで動作させる
+* Azure AD 認証にデータベースによって提供される権限を使用する
+* ファイルから読み込まれたステートメントの名前付けを改善する
 
 ## <a name="ssma-v814"></a>SSMA v 8.14
 
@@ -94,7 +116,7 @@ SSMA for DB2 のバージョン8.7 リリースには、新しい DB2 構文パ�
 
 ユーザビリティとパフォーマンスの向上を目的とした一連の修正に加えて、SSMA for DB2 のリリースは、ユーザーが変換されたコードで SSMA 拡張プロパティを省略できるようにする設定を追加することによって強化されました。
 
-Ssma for DB2 でこの設定を利用するには、[**ツール**] [プロジェクト] [  >  **設定]**  >  **[全般**変換] の順に移動し、[その  >  **Conversion****他**] の [**拡張プロパティを省略**する] 設定の値を **[はい]** に更新します。
+Ssma for DB2 でこの設定を利用するには、[**ツール**] [プロジェクト] [  >  **設定]**  >  **[全般** 変換] の順に移動し、[その  >  **他**] の [**拡張プロパティを省略** する] 設定の値を **[はい]** に更新します。
 
 ![拡張プロパティの設定を省略する](../db2/media/ssma-omit-extended-properties.png)
 

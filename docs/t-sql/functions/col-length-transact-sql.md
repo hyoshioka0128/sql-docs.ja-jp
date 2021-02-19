@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - COL_LENGTH
 - COL_LENGTH_TSQL
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - column properties [SQL Server]
 - column length [SQL Server]
 ms.assetid: cf891206-c49f-40eb-858e-eefd2b638a33
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 862e7aa70a3d26f5555c5f809d5fb24137de1a40
-ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 1204ea1a23a8548e8d221fccb27f5190de45eec7
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91116103"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99211474"
 ---
 # <a name="col_length-transact-sql"></a>COL_LENGTH (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -45,10 +45,10 @@ COL_LENGTH ( 'table' , 'column' )
 
 ## <a name="arguments"></a>引数
 **'** *table* **'**  
-列の長さ情報を定義するテーブルの名前。 *テーブル* 型の式は、 **nvarchar**です。
+列の長さ情報を定義するテーブルの名前。 *テーブル* 型の式は、 **nvarchar** です。
   
 **'** *column* **'**  
-長さを定義する列名。 *列* 型の式は、 **nvarchar**です。
+長さを定義する列名。 *列* 型の式は、 **nvarchar** です。
   
 ## <a name="return-type"></a>の戻り値の型 :
 **smallint**

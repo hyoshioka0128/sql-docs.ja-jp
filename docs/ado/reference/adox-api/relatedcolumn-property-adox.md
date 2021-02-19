@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - _Column::GetRelatedColumn
@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 2f2ca019-c785-4c08-beb1-3a2d3b47823e
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: ce854ad82338bd6aee43b85b98abfea5adb64646
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 6f9d63ef7f7d6a919d76e4e6b6220f423352ff10
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88983443"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100054857"
 ---
 # <a name="relatedcolumn-property-adox"></a>RelatedColumn プロパティ (ADOX)
 関連するテーブル内の関連する [列オブジェクト (ADOX)](./column-object-adox.md) の名前を示します (キー列のみ)。  

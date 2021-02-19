@@ -11,13 +11,13 @@ ms.assetid: 04521d7f-588c-4259-abc2-1a2857eb05ec
 author: MightyPen
 ms.author: genemi
 ms.custom: seo-lt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 897ebac1fa9d73444daf97a3642edb573a4f1c69
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 2dc811a3e3217c3aa6bf2d9a006cfd1ff0c7796b
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91868789"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97481473"
 ---
 # <a name="selects-and-joins-from-system-views-for-extended-events-in-sql-server"></a>SQL Server の拡張イベントに対するシステム ビューからの SELECT と JOIN
 
@@ -114,7 +114,7 @@ ms.locfileid: "91868789"
 ### <a name="b1-ssms-ui-perspective"></a>B.1 SSMS UI パースペクティブ
 
 
-SSMS の **オブジェクト エクスプローラー**で、 **[管理]** 、 **[拡張イベント]**  >  **[セッション]** を右クリックして **[新しいセッション]**  >  **[管理]** 」をご覧ください。
+SSMS の **オブジェクト エクスプローラー** で、 **[管理]** 、 **[拡張イベント]**  >  **[セッション]** を右クリックして **[新しいセッション]**  >  **[管理]** 」をご覧ください。
 
 大きい **[新しいセッション]** ダイアログの最初の **[全般]** セクションで、 **[サーバーの起動時にイベント セッションを開始する]** がオンになっています。
 
@@ -621,7 +621,7 @@ SELECT  -- C.4
 ### <a name="c5-sysdm_xe_map_values-and-event-fields"></a>C.5 *sys.dm_xe_map_values* とイベント フィールド
 
 
-次の SELECT には、 *sys.dm_xe_map_values*という名前の巧妙なビューに対する JOIN が含まれます。
+次の SELECT には、 *sys.dm_xe_map_values* という名前の巧妙なビューに対する JOIN が含まれます。
 
 この SELECT の目的は、イベント セッションから選択できるさまざまなフィールドを表示することです。 イベント フィールドは、2 つの方法で使用できます。
 
@@ -675,7 +675,7 @@ SELECT  --C.5
 
 
 ```
-/***  5 sampled rows from the actual 153 rows returned.
+/**_  5 sampled rows from the actual 153 rows returned.
     NOTE:  'resource_type' under 'Column'.
 
 Package     Object          Object-Type   O--C   Column          Column-Type-Name     Column-Type   Column-Value   C--M   Map-Value        Map-Key
@@ -689,7 +689,7 @@ sqlserver   lock_deadlock   event         o--c   resource_type   lock_resource_t
 Therefore, on your CREATE EVENT SESSION statement, in its ADD EVENT WHERE clause,
 you could put:
     WHERE( ... resource_type = 6 ...)  -- Meaning:  6 = PAGE.
-***/
+_*_/
 ```
 
 
@@ -700,7 +700,7 @@ you could put:
 
 次の SELECT は、ターゲットのすべてのパラメーターを返します。 各パラメーターには、必須かどうかを示すタグが付けられます。 パラメーターに割り当てる値によって、ターゲットの動作が変わります。
 
-- WHERE 句の項目 *object_type = 'customizable'* に注意してください。
+- WHERE 句の項目 object_type = 'customizable' にご注意ください。
 - また、 *o.name =* の WHERE 句の値を編集する必要があります。
 
 
@@ -754,7 +754,7 @@ package0   event_file   lazy_create_blob     boolean              Not_mandatory 
 package0   event_file   max_file_size        uint64               Not_mandatory   Maximum file size in MB
 package0   event_file   max_rollover_files   uint32               Not_mandatory   Maximum number of files to retain
 package0   event_file   metadatafile         unicode_string_ptr   Not_mandatory   Not used
-***/
+**_/
 ```
 
 
@@ -766,7 +766,7 @@ package0   event_file   metadatafile         unicode_string_ptr   Not_mandatory 
 この DMV SELECT は、アクティブなイベント セッションのターゲットからデータ行を返します。 データは XML にキャストされており、返されたセルをクリックして SSMS で簡単に表示できます。
 
 - イベント セッションが停止すると、この SELECT はゼロ行を返します。
-- *s.name =* の WHERE 句の値を編集する必要があります。
+- s.name = の WHERE 句の値を編集する必要があります。
 
 
 ```sql
@@ -792,7 +792,7 @@ SELECT  --C.7
 次のように設定されています。
 
 - *s.name =* の値には、 *checkpoint_begin* イベントのイベント セッションが設定されています。
-- ターゲットは *ring_buffer*です。
+- ターゲットは *ring_buffer* です。
 
 
 ```XML
@@ -831,7 +831,7 @@ XML-Cast セルをクリックすると、次の出力が表示されます。
 ### <a name="c8-select-from-a-function-to-retrieve-event_file-data-from-disk-drive"></a>C.8 ディスク ドライブから event_file データを取得する関数の SELECT
 
 
-イベント セッションがデータを収集した後で停止されたものとします。 セッションが event_file ターゲットを使用するように定義されている場合でも、関数 *sys.fn_xe_target_read_file*を呼び出すことによってデータを取得できます。
+イベント セッションがデータを収集した後で停止されたものとします。 セッションが event_file ターゲットを使用するように定義されている場合でも、関数 *sys.fn_xe_target_read_file* を呼び出すことによってデータを取得できます。
 
 - この SELECT を実行する前に、関数呼び出しのパスとファイル名のパラメーターを編集する必要があります。
     - セッションを再起動するたびに SQL システムが実際の .XEL ファイル名に埋め込む余分な桁に注意する必要はありません。 通常のルート名と拡張子を指定するだけです。

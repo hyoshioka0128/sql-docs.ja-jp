@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - FILESTREAM_TSQL
 - TABLE
@@ -46,14 +46,14 @@ helpviewer_keywords:
 - maximum number of bytes per row
 - data retention policy
 ms.assetid: 1e068443-b9ea-486a-804f-ce7b6e048e8b
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 8b37413dd6450999e6671858073805dea5a5424e
-ms.sourcegitcommit: ead0b8c334d487a07e41256ce5d6acafa2d23c9d
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 807508fcd1d89abcd37bee18177c63ba9b13bde4
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92412578"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100340014"
 ---
 # <a name="create-table-transact-sql"></a>CREATE TABLE (Transact-SQL)
 
@@ -356,18 +356,18 @@ column_name <data_type>
 
 ## <a name="arguments"></a>引数
 
-*database_name* : テーブルが作成されるデータベースの名前です。 *database_name* には、既存のデータベース名を指定する必要があります。 指定しない場合、 *database_name* は現在のデータベースに設定されます。 現在の接続に対するログインには、 *database_name* で指定されたデータベース内の既存のユーザー ID を関連付け、そのユーザー ID に CREATE TABLE 権限を許可しておく必要があります。
+*database_name*: テーブルが作成されるデータベースの名前です。 *database_name* には、既存のデータベース名を指定する必要があります。 指定しない場合、*database_name* は現在のデータベースに設定されます。 現在の接続に対するログインには、*database_name* で指定されたデータベース内の既存のユーザー ID を関連付け、そのユーザー ID に CREATE TABLE 権限を許可しておく必要があります。
 
-*schema_name* : 新しいテーブルが所属するスキーマの名前です。
+*schema_name*: 新しいテーブルが所属するスキーマの名前です。
 
-*table_name* : 新しいテーブルの名前です。 テーブル名は[識別子](../../relational-databases/databases/database-identifiers.md)の規則に従っている必要があります。 116 文字までしか使用できないローカル一時テーブル名 (名前の先頭に 1 つの番号記号 (#) が付加されます) を除き、 *table_name* には、最大 128 文字を使用できます。
+*table_name*: 新しいテーブルの名前です。 テーブル名は[識別子](../../relational-databases/databases/database-identifiers.md)の規則に従っている必要があります。 116 文字までしか使用できないローカル一時テーブル名 (名前の先頭に 1 つの番号記号 (#) が付加されます) を除き、*table_name* には、最大 128 文字を使用できます。
 
-AS FileTable **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降)。
+AS FileTable **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降)。
 
 新しいテーブルを FileTable として作成します。 FileTable には固定スキーマがあるため、列は指定しません。 詳細については、「[FileTables](../../relational-databases/blob/filetables-sql-server.md)」を参照してください。
 
 *column_name*
-*computed_column_expression* : 計算列の値を定義する式です。 計算列は、PERSISTED とマークされていない限り、テーブルに物理的に保存されない仮想列です。 この列は、同じテーブルの他の列を使用する式から計算されます。 たとえば、計算列は **cost** AS **price** \* **qty** として定義されます。式には、非計算列の名前、定数、関数、変数、および 1 つ以上の演算子によってこれらを結合した組み合わせを使用できます。 式をサブクエリにすることはできません。また、別名データ型を含めることはできません。
+*computed_column_expression*: 計算列の値を定義する式です。 計算列は、PERSISTED とマークされていない限り、テーブルに物理的に保存されない仮想列です。 この列は、同じテーブルの他の列を使用する式から計算されます。 たとえば、計算列は **cost** AS **price** \* **qty** として定義されます。式には、非計算列の名前、定数、関数、変数、および 1 つ以上の演算子によってこれらを結合した組み合わせを使用できます。 式をサブクエリにすることはできません。また、別名データ型を含めることはできません。
 
 計算列は、選択リスト、WHERE 句、ORDER BY 句、その他標準式が使用できる任意の位置で使用できます。ただし、次の場合は除きます。
 
@@ -383,18 +383,18 @@ AS FileTable **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversio
 
 計算列で NULL 値を許容するかどうかは、使用されている式に基づいて[!INCLUDE[ssDE](../../includes/ssde-md.md)]によって自動的に決定されます。 null 値を許容しない列しかない場合でも、ほとんどの式の結果は null 値を許容すると見なされます。これは、アンダーフローやオーバーフローによって結果が null 値になる場合があるためです。 テーブルの任意の計算列で NULL 値が許容されるかどうかを調べるには、`COLUMNPROPERTY` 関数で **AllowsNull** プロパティを使用します。 NULL 値が許容される式を、NULL 値を許容しない式に変換するには、`ISNULL` に *check_expression* 定数を指定します。この定数は、NULL 値の結果の代わりに使用される NULL 以外の値です。 共通言語ランタイム (CLR) のユーザー定義型の式に基づく計算列では、その型に対する REFERENCES 権限が必要です。
 
-PERSISTED: [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] により計算値が物理的にテーブルに格納され、計算列が依存している他の列のいずれかが更新されるとその値が更新されることを指定します。 計算列を `PERSISTED` とマークすることで、計算列に対して決定論的なインデックスを作成することができますが、正確ではありません。 詳細については、「 [計算列のインデックス](../../relational-databases/indexes/indexes-on-computed-columns.md)」を参照してください。 パーティション テーブルのパーティション分割列として使用される計算列は、明示的に `PERSISTED` に設定する必要があります。 `PERSISTED` が指定されている場合、 *computed_column_expression* は決定論的である必要があります。
+PERSISTED: [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] により計算値が物理的にテーブルに格納され、計算列が依存している他の列のいずれかが更新されるとその値が更新されることを指定します。 計算列を `PERSISTED` とマークすることで、計算列に対して決定論的なインデックスを作成することができますが、正確ではありません。 詳細については、「 [計算列のインデックス](../../relational-databases/indexes/indexes-on-computed-columns.md)」を参照してください。 パーティション テーブルのパーティション分割列として使用される計算列は、明示的に `PERSISTED` に設定する必要があります。 `PERSISTED` が指定されている場合、*computed_column_expression* は決定論的である必要があります。
 
 ON { *partition_scheme* | *filegroup* |  **"default"** } テーブルが格納されるパーティション構成またはファイル グループを指定します。 *partition_scheme* を指定すると、テーブルはパーティション テーブルとなり、各パーティションは *partition_scheme* で指定した 1 つ以上のファイル グループに格納されます。 *filegroup* を指定すると、テーブルは指定されたファイル グループに格納されます。 ファイル グループがデータベース内に存在している必要があります。 **"default"** を指定するか、ON をまったく指定しないと、テーブルは既定のファイル グループに格納されます。 CREATE TABLE で指定したテーブルの格納方法を後から変更することはできません。
 
-ON { *partition_scheme* | *filegroup* |  **"default"** } は、PRIMARY KEY 制約または UNIQUE 制約で指定することもできます。 これらの制約はインデックスを作成します。 *filegroup* を指定すると、インデックスは指定されたファイル グループに格納されます。 **"default"** を指定するか、ON を指定しなかった場合、インデックスはテーブルと同じファイル グループに格納されます。 `PRIMARY KEY` または `UNIQUE` 制約によりクラスター化インデックスが作成される場合、テーブルのデータ ページはインデックスと同じファイル グループに格納されます。 `CLUSTERED` を指定するか、制約によりクラスター化インデックスを作成し、テーブル定義の *partition_scheme* または *filegroup* とは異なる *partition_scheme* (またはその逆) を指定すると、制約定義だけが優先され、それ以外は無視されます。
+ON {*partition_scheme* | *filegroup* |  **"default"** } は、PRIMARY KEY 制約または UNIQUE 制約で指定することもできます。 これらの制約はインデックスを作成します。 *filegroup* を指定すると、インデックスは指定されたファイル グループに格納されます。 **"default"** を指定するか、ON を指定しなかった場合、インデックスはテーブルと同じファイル グループに格納されます。 `PRIMARY KEY` または `UNIQUE` 制約によりクラスター化インデックスが作成される場合、テーブルのデータ ページはインデックスと同じファイル グループに格納されます。 `CLUSTERED` を指定するか、制約によりクラスター化インデックスを作成し、テーブル定義の *partition_scheme* または *filegroup* とは異なる *partition_scheme* (またはその逆) を指定すると、制約定義だけが優先され、それ以外は無視されます。
 
 > [!NOTE]
-> このコンテキストでは、 *default* はキーワードではありません。 これは、既定ファイル グループの識別子なので、ON **"default"** または ON **[** default **]** のように区切る必要があります。 **"default"** を指定する場合は、現在のセッションに対して `QUOTED_IDENTIFIER` オプションが ON である必要があります。 これが既定の設定です。 詳しくは、「[SET QUOTED_IDENTIFIER](../../t-sql/statements/set-quoted-identifier-transact-sql.md)」をご覧ください。
+> このコンテキストでは、*default* はキーワードではありません。 これは、既定ファイル グループの識別子なので、ON **"default"** または ON **[** default **]** のように区切る必要があります。 **"default"** を指定する場合は、現在のセッションに対して `QUOTED_IDENTIFIER` オプションが ON である必要があります。 これが既定の設定です。 詳しくは、「[SET QUOTED_IDENTIFIER](../../t-sql/statements/set-quoted-identifier-transact-sql.md)」をご覧ください。
 >
 > パーティション テーブルを作成した後、テーブルの `LOCK_ESCALATION` オプションを `AUTO` に設定することを検討してください。 これにより、テーブルではなくパーティション (HoBT) レベルにロックをエスカレートできるようにすることで、コンカレンシーを向上させることができます。 詳細については、「[ALTER TABLE](../../t-sql/statements/alter-table-transact-sql.md)」を参照してください。
 
-TEXTIMAGE_ON { *filegroup*|  **"default"** } **text** 、 **ntext** 、 **image** 、 **xml** 、 **varchar(max)** 、 **nvarchar(max)** 、 **varbinary(max)** 、および CLR ユーザー定義型の列 (geometry や geography など) が、指定したファイル グループに格納されることを示します。
+TEXTIMAGE_ON { *filegroup*|  **"default"** } **text**、**ntext**、**image**、**xml**、**varchar(max)** 、**nvarchar(max)** 、**varbinary(max)** 、および CLR ユーザー定義型の列 (geometry や geography など) が、指定したファイル グループに格納されることを示します。
 
 テーブル内に値の大きな列がない場合は、`TEXTIMAGE_ON` は指定できません。 *partition_scheme* を指定した場合は、`TEXTIMAGE_ON` を指定できません。 **"default"** を指定するか、`TEXTIMAGE_ON` をまったく指定しないと、値の大きな列は既定のファイル グループに格納されます。 `CREATE TABLE` で指定した値の大きな列のデータのストレージを、後から変更することはできません。
 
@@ -405,7 +405,7 @@ TEXTIMAGE_ON { *filegroup*|  **"default"** } **text** 、 **ntext** 、 **image*
 >
 > このコンテキストでは、default はキーワードではありません。 これは、既定ファイル グループの識別子なので、`TEXTIMAGE_ON "default"` または `TEXTIMAGE_ON [default]` のように区切る必要があります。 **"default"** を指定する場合は、現在のセッションに対して `QUOTED_IDENTIFIER` オプションが ON である必要があります。 これが既定の設定です。 詳しくは、「[SET QUOTED_IDENTIFIER](../../t-sql/statements/set-quoted-identifier-transact-sql.md)」をご覧ください。
 
-FILESTREAM_ON { *partition_scheme_name* | filegroup | **"** default **"** } **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] 以降)。 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] では、`FILESTREAM` はサポートされていません。
+FILESTREAM_ON { *partition_scheme_name* | filegroup | **"** default **"** } **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] 以降)。 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] では、`FILESTREAM` はサポートされていません。
 
 FILESTREAM データのファイル グループを指定します。
 
@@ -420,11 +420,11 @@ ON や `TEXTIMAGE_ON` と同様に、`FILESTREAM_ON` の `CREATE TABLE` を使�
 - [CREATE INDEX](../../t-sql/statements/create-index-transact-sql.md) ステートメントでヒープをクラスター化インデックスに変換する。 この場合は、異なる FILESTREAM ファイル グループ、パーティション構成、または NULL を指定できます。
 - [DROP INDEX](../../t-sql/statements/drop-index-transact-sql.md) ステートメントでクラスター化インデックスをヒープに変換する。 この場合は、異なる FILESTREAM ファイル グループ、パーティション構成、または **"default"** を指定できます。
 
-`FILESTREAM_ON <filegroup>` 句のファイル グループ、またはパーティション構成で指定されている各 FILESTREAM ファイル グループには、ファイルが 1 つ定義されている必要があります。 このファイルは、[CREATE DATABASE](../../t-sql/statements/create-database-transact-sql.md?view=sql-server-2017) ステートメントまたは [ALTER DATABASE](../../t-sql/statements/alter-database-transact-sql.md) ステートメントを使用して定義する必要があります。それ以外の場合は、エラーが発生します。
+`FILESTREAM_ON <filegroup>` 句のファイル グループ、またはパーティション構成で指定されている各 FILESTREAM ファイル グループには、ファイルが 1 つ定義されている必要があります。 このファイルは、[CREATE DATABASE](../../t-sql/statements/create-database-transact-sql.md) ステートメントまたは [ALTER DATABASE](../../t-sql/statements/alter-database-transact-sql.md) ステートメントを使用して定義する必要があります。それ以外の場合は、エラーが発生します。
 
 FILESTREAM の関連トピックについては、[バイナリ ラージ オブジェクト - BLOB データ](../../relational-databases/blob/binary-large-object-blob-data-sql-server.md)に関するページをご覧ください。
 
-[ _type\_schema\_name_ **.** ] *type_name* : 列のデータ型と、それが属するスキーマを指定します。 ディスク ベース テーブルの場合、データ型は次のいずれかです。
+[ _type\_schema\_name_ **.** ] *type_name*: 列のデータ型と、それが属するスキーマを指定します。 ディスク ベース テーブルの場合、データ型は次のいずれかです。
 
 - システム データ型
 - [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のシステム データ型に基づく別名型。 別名データ型は、`CREATE TYPE` ステートメントを使って作成した後、テーブル定義で使用できます。 別名データ型用の NULL/NOT NULL 割り当ては、`CREATE TABLE` ステートメントの中でオーバーライドできます。 ただし、長さ指定は変更できません。`CREATE TABLE` ステートメント中の別名データ型の長さは指定できません。
@@ -438,53 +438,53 @@ FILESTREAM の関連トピックについては、[バイナリ ラージ オブ
 
 メモリ最適化テーブルでサポートされるシステム型の一覧については、「[インメモリ OLTP に対してサポートされるデータ型](../../relational-databases/in-memory-oltp/supported-data-types-for-in-memory-oltp.md)」をご覧ください。
 
-*precision* : 指定されるデータ型の有効桁数。 有効桁数の詳細については、「[有効桁数、小数点以下桁数、および長さ (Transact-SQL)](../../t-sql/data-types/precision-scale-and-length-transact-sql.md)」を参照してください。
+*precision*: 指定されるデータ型の有効桁数。 有効桁数の詳細については、「[有効桁数、小数点以下桁数、および長さ (Transact-SQL)](../../t-sql/data-types/precision-scale-and-length-transact-sql.md)」を参照してください。
 
-*scale* : 指定されるデータ型の小数点以下桁数。 有効な小数点以下桁数の詳細については、「[有効桁数、小数点以下桁数、および長さ (Transact-SQL)](../../t-sql/data-types/precision-scale-and-length-transact-sql.md)」を参照してください。
+*scale*: 指定されるデータ型の小数点以下桁数。 有効な小数点以下桁数の詳細については、「[有効桁数、小数点以下桁数、および長さ (Transact-SQL)](../../t-sql/data-types/precision-scale-and-length-transact-sql.md)」を参照してください。
 
-**max** : データ型 **varchar** 、 **nvarchar** 、 **varbinary** にのみ適用され、2^31 バイトの文字およびバイナリ データ、および 2^30 バイトの Unicode データが格納されます。
+**max**: データ型 **varchar**、**nvarchar**、**varbinary** にのみ適用され、2^31 バイトの文字およびバイナリ データ、および 2^30 バイトの Unicode データが格納されます。
 
-CONTENT: *column_name* 内の **xml** データ型の各インスタンスに、複数のトップレベル要素を含められることを指定します。 CONTENT は、 **xml** データ型のみに適用され、 *xml_schema_collection* も指定されている場合にだけ指定できます。 指定しない場合は、CONTENT が既定の動作となります。
+CONTENT: *column_name* 内の **xml** データ型の各インスタンスに、複数のトップレベル要素を含められることを指定します。 CONTENT は、**xml** データ型のみに適用され、*xml_schema_collection* も指定されている場合にだけ指定できます。 指定しない場合は、CONTENT が既定の動作となります。
 
-DOCUMENT: *column_name* 内の **xml** データ型の各インスタンスに、1 つのトップレベル要素のみを含められることを指定します。 DOCUMENT は、 **xml** データ型のみに適用され、 *xml_schema_collection* も指定されている場合にだけ指定できます。
+DOCUMENT: *column_name* 内の **xml** データ型の各インスタンスに、1 つのトップレベル要素のみを含められることを指定します。 DOCUMENT は、**xml** データ型のみに適用され、*xml_schema_collection* も指定されている場合にだけ指定できます。
 
-*xml_schema_collection* : **xml** データ型にのみ適用され、XML スキーマ コレクションをこの型と関連付けます。 スキーマで **xml** 列を使用するには、まず、 [CREATE XML SCHEMA COLLECTION](../../t-sql/statements/create-xml-schema-collection-transact-sql.md) を使用してデータベース内にスキーマを作成する必要があります。
+*xml_schema_collection*: **xml** データ型にのみ適用され、XML スキーマ コレクションをこの型と関連付けます。 スキーマで **xml** 列を使用するには、まず、[CREATE XML SCHEMA COLLECTION](../../t-sql/statements/create-xml-schema-collection-transact-sql.md) を使用してデータベース内にスキーマを作成する必要があります。
 
-DEFAULT: 挿入中に明示的に値を指定しない場合に、列に入力される値を指定します。 DEFAULT 定義は、 **timestamp** として定義された列または `IDENTITY` プロパティを持つ列以外のすべての列に適用できます。 ユーザー定義型の列に既定値を指定する場合は、その型で *constant_expression* 型からユーザー定義型への暗黙的な変換がサポートされている必要があります。 テーブルが削除されると、DEFAULT 定義は削除されます。 既定値として使用できるのは、文字列などの定数値、スカラー関数 (システム、ユーザー定義、CLR 関数のいずれか)、または NULL のみです。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の旧バージョンとの互換性を保つため、DEFAULT に制約名を割り当てることができます。
+DEFAULT: 挿入中に明示的に値を指定しない場合に、列に入力される値を指定します。 DEFAULT 定義は、**timestamp** として定義された列または `IDENTITY` プロパティを持つ列以外のすべての列に適用できます。 ユーザー定義型の列に既定値を指定する場合は、その型で *constant_expression* 型からユーザー定義型への暗黙的な変換がサポートされている必要があります。 テーブルが削除されると、DEFAULT 定義は削除されます。 既定値として使用できるのは、文字列などの定数値、スカラー関数 (システム、ユーザー定義、CLR 関数のいずれか)、または NULL のみです。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の旧バージョンとの互換性を保つため、DEFAULT に制約名を割り当てることができます。
 
-*constant_expression* : 列の既定値として使用される定数、NULL、またはシステム関数です。
+*constant_expression*: 列の既定値として使用される定数、NULL、またはシステム関数です。
 
-*memory_optimized_constant_expression* : 列の既定値として使用できる定数、NULL、またはシステム関数です。 ネイティブ コンパイル ストアド プロシージャでサポートされている必要があります。 ネイティブ コンパイル ストアド プロシージャの組み込み関数について詳しくは、「[ネイティブ コンパイル T-SQL モジュールでサポートされる機能](../../relational-databases/in-memory-oltp/supported-features-for-natively-compiled-t-sql-modules.md)」をご覧ください。
+*memory_optimized_constant_expression*: 列の既定値として使用できる定数、NULL、またはシステム関数です。 ネイティブ コンパイル ストアド プロシージャでサポートされている必要があります。 ネイティブ コンパイル ストアド プロシージャの組み込み関数について詳しくは、「[ネイティブ コンパイル T-SQL モジュールでサポートされる機能](../../relational-databases/in-memory-oltp/supported-features-for-natively-compiled-t-sql-modules.md)」をご覧ください。
 
-IDENTITY: 新しい列が ID 列であることを示します。 テーブルに行が新しく追加されると、[!INCLUDE[ssDE](../../includes/ssde-md.md)]は列に一意な増分の値を設定します。 ID 列は通常、PRIMARY KEY 制約と共に使用され、テーブルの一意な行識別子 (ROWID) の役割を果たします。 `IDENTITY` プロパティは、 **tinyint** 、 **smallint** 、 **int** 、 **bigint** 、 **decimal(p,0)** 、 **numeric(p,0)** のいずれかの列に割り当てることができます。 ID 列は 1 つのテーブルにつき 1 つだけ作成できます。 バインドされた既定値および DEFAULT 制約を ID 列と共に使用することはできません。 seed と increment の両方を指定するか、またはどちらも指定しません。 どちらも指定しないときの既定値は (1,1) です。
+IDENTITY: 新しい列が ID 列であることを示します。 テーブルに行が新しく追加されると、[!INCLUDE[ssDE](../../includes/ssde-md.md)]は列に一意な増分の値を設定します。 ID 列は通常、PRIMARY KEY 制約と共に使用され、テーブルの一意な行識別子 (ROWID) の役割を果たします。 `IDENTITY` プロパティは、**tinyint**、**smallint**、**int**、**bigint**、**decimal(p,0)** 、**numeric(p,0)** のいずれかの列に割り当てることができます。 ID 列は 1 つのテーブルにつき 1 つだけ作成できます。 バインドされた既定値および DEFAULT 制約を ID 列と共に使用することはできません。 seed と increment の両方を指定するか、またはどちらも指定しません。 どちらも指定しないときの既定値は (1,1) です。
 
-*seed* : テーブルに読み込まれる最初の行に使用される値です。
+*seed*: テーブルに読み込まれる最初の行に使用される値です。
 
-*increment* : 読み込まれている前の行の ID 値に加算される増分値です。
+*increment*: 読み込まれている前の行の ID 値に加算される増分値です。
 
 NOT FOR REPLICATION `CREATE TABLE` ステートメントでは、IDENTITY プロパティ、FOREIGN KEY 制約、CHECK 制約で `NOT FOR REPLICATION` 句を指定できます。 `IDENTITY` プロパティでこの句を指定すると、レプリケーション エージェントが挿入を行うときに ID 列の値が増加されません。 制約でこの句を指定すると、レプリケーション エージェントが挿入、更新、削除操作を行う際に制約が適用されません。
 
-GENERATED ALWAYS AS ROW { START | END } [ HIDDEN ] [ NOT NULL ] **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
+GENERATED ALWAYS AS ROW { START | END } [ HIDDEN ] [ NOT NULL ] **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
 
 指定した `datetime2` 列が、システムによって、レコードの有効期限の開始時刻またはレコードの有効期限の終了時刻のいずれかを記録するために使用されることを指定します。 列を `NOT NULL` として定義する必要があります。 それらを `NULL` として指定しようとすると、システムによりエラーがスローされます。 期間列に対して明示的に NOT NULL を指定しない場合、システムにより既定で列が `NOT NULL` として定義されます。 `PERIOD FOR SYSTEM_TIME` および `WITH SYSTEM_VERSIONING = ON` 引数と組み合わせてこの引数を使い、テーブル上でシステムのバージョン管理を有効にします。 詳細については、「 [Temporal Tables](../../relational-databases/tables/temporal-tables.md)」を参照してください。
 
-1 つまたは両方の期間列を **HIDDEN** フラグでマークしてこれらの列を暗黙的に非表示にし、 **SELECT \* FROM** _`<table>`_ がこれらの列の値を返さないようにすることができます。 既定では、期間列は非表示ではありません。 非表示の列を使用するためには、テンポラル テーブルを直接参照するすべてのクエリで明示的に含める必要があります。 変更する、 **HIDDEN** を既存の **期間** 列の属性 期間 削除し、別の非表示フラグを再作成する必要があります。
+1 つまたは両方の期間列を **HIDDEN** フラグでマークしてこれらの列を暗黙的に非表示にし、**SELECT \* FROM** _`<table>`_ がこれらの列の値を返さないようにすることができます。 既定では、期間列は非表示ではありません。 非表示の列を使用するためには、テンポラル テーブルを直接参照するすべてのクエリで明示的に含める必要があります。 変更する、 **HIDDEN** を既存の **期間** 列の属性 期間 削除し、別の非表示フラグを再作成する必要があります。
 
-INDEX *index_name* [ CLUSTERED | NONCLUSTERED ] ( *column_name* [ ASC | DESC ] [ ,... *n* ] ) **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
+INDEX *index_name* [ CLUSTERED | NONCLUSTERED ] (*column_name* [ ASC | DESC ] [ ,... *n* ] ) **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
 
 テーブル上にインデックスを作成することを指定します。 これには、クラスター化インデックスまたは非クラスター化インデックスを指定できます。 インデックスには一覧表示される列が含まれ、昇順、降順のいずれかでデータが並べ替えられます。
 
-INDEX *index_name* CLUSTERED COLUMNSTORE **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
+INDEX *index_name* CLUSTERED COLUMNSTORE **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
 
 テーブル全体を、列形式で、クラスター化列ストア インデックスを使って格納することを指定します。 これには常に、テーブル内のすべての列が含まれます。 列ストア圧縮のベネフィットを得るように列が構成されるため、データはアルファベットや数値順に並べ替えられません。
 
-INDEX *index_name* [ NONCLUSTERED ] COLUMNSTORE ( *column_name* [ ,... *n* ] ) **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
+INDEX *index_name* [ NONCLUSTERED ] COLUMNSTORE (*column_name* [ ,... *n* ] ) **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
 
 テーブル上に非クラスター化列ストア インデックスを作成することを指定します。 基になるテーブルには、行ストア ヒープまたはクラスター化インデックスを指定するか、クラスター化列ストア インデックスを指定することができます。 すべての場合で、テーブルに非クラスター化列ストア インデックスを作成すると、列のデータの 2 番目のコピーがインデックスに格納されます。
 
 非クラスター化列ストア インデックスは、クラスター化列ストア インデックスとして格納および管理されます。 これも非クラスター化列ストア インデックスと呼ばれます。列を制限することができ、テーブル上のセカンダリ インデックスとして存在するためです。
 
-ON _partition\_scheme\_name_ **(** _column\_name_ **)** : パーティション インデックスのパーティションのマップ先となるファイル グループを定義するパーティション構成を指定します。 [CREATE PARTITION SCHEME](../../t-sql/statements/create-partition-scheme-transact-sql.md) または [ALTER PARTITION SCHEME](../../t-sql/statements/alter-partition-scheme-transact-sql.md) を実行して、パーティション構成がデータベース内に存在するようにする必要があります。 *column_name* には、パーティション インデックスがパーティション分割される対象の列を指定します。 この列は、 *partition_scheme_name* で使用されているパーティション関数の引数のデータ型、長さ、有効桁数に一致する必要があります。 *column_name* は、インデックス定義で指定されている列に限定されません。 UNIQUE インデックスをパーティション分割する場合、 *column_name* は一意のキーとして使用されている列から選択する必要がありますが、それ以外の場合はベース テーブルの任意の列を指定できます。 この制限により、[!INCLUDE[ssDE](../../includes/ssde-md.md)]では、単一のパーティション内だけでキー値の一意性を確認できます。
+ON _partition\_scheme\_name_ **(** _column\_name_ **)** : パーティション インデックスのパーティションのマップ先となるファイル グループを定義するパーティション構成を指定します。 [CREATE PARTITION SCHEME](../../t-sql/statements/create-partition-scheme-transact-sql.md) または [ALTER PARTITION SCHEME](../../t-sql/statements/alter-partition-scheme-transact-sql.md) を実行して、パーティション構成がデータベース内に存在するようにする必要があります。 *column_name* には、パーティション インデックスがパーティション分割される対象の列を指定します。 この列は、*partition_scheme_name* で使用されているパーティション関数の引数のデータ型、長さ、有効桁数に一致する必要があります。 *column_name* は、インデックス定義で指定されている列に限定されません。 UNIQUE インデックスをパーティション分割する場合、*column_name* は一意のキーとして使用されている列から選択する必要がありますが、それ以外の場合はベース テーブルの任意の列を指定できます。 この制限により、[!INCLUDE[ssDE](../../includes/ssde-md.md)]では、単一のパーティション内だけでキー値の一意性を確認できます。
 
 > [!NOTE]
 > 一意でないクラスター化インデックスをパーティション分割するとき、[!INCLUDE[ssDE](../../includes/ssde-md.md)]では既定により、まだ指定されていない場合、パーティション分割列がクラスター化インデックス キーのリストに追加されます。 一意でない非クラスター化インデックスをパーティション分割するとき、[!INCLUDE[ssDE](../../includes/ssde-md.md)]では、まだ指定されていない場合、パーティション分割列がインデックスの非キー列 (付加列) として追加されます。
@@ -496,13 +496,13 @@ ON _partition\_scheme\_name_ **(** _column\_name_ **)** : パーティション 
 
 パーティション分割の詳細については、「[パーティション テーブルとパーティション インデックス](../../relational-databases/partitions/partitioned-tables-and-indexes.md)」を参照してください。
 
-ON *filegroup_name* : 指定したファイル グループに、指定したインデックスを作成します。 位置の指定がなく、テーブルまたはビューがパーティション分割されていない場合、インデックスには、基になるテーブルまたはビューと同じファイル グループが使用されます。 ファイル グループは既に存在している必要があります。
+ON *filegroup_name*: 指定したファイル グループに、指定したインデックスを作成します。 位置の指定がなく、テーブルまたはビューがパーティション分割されていない場合、インデックスには、基になるテーブルまたはビューと同じファイル グループが使用されます。 ファイル グループは既に存在している必要があります。
 
 ON **"default"** 既定のファイル グループに、指定したインデックスを作成します。
 
 このコンテキストでの default という用語はキーワードではありません。 これは、既定ファイル グループの識別子なので、ON **"default"** または ON **[default]** のように区切る必要があります。 "default" を指定する場合は、現在のセッションに対して `QUOTED_IDENTIFIER` オプションが ON である必要があります。 これが既定の設定です。 詳しくは、「[SET QUOTED_IDENTIFIER](../../t-sql/statements/set-quoted-identifier-transact-sql.md)」をご覧ください。
 
-[ FILESTREAM_ON { *filestream_filegroup_name* | *partition_scheme_name* | "NULL" } ] **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] 以降)。
+[ FILESTREAM_ON { *filestream_filegroup_name* | *partition_scheme_name* | "NULL" } ] **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] 以降)。
 
 クラスター化インデックスの作成時に、テーブルの FILESTREAM データの配置を指定します。 FILESTREAM_ON 句を使用すると、異なる FILESTREAM ファイル グループやパーティション構成に FILESTREAM データを移動できます。
 
@@ -522,7 +522,7 @@ ROWGUIDCOL プロパティは、列に格納されている値の一意性を設
 
 ENCRYPTED WITH: [Always Encrypted](../../relational-databases/security/encryption/always-encrypted-database-engine.md) 機能を使った列の暗号化を指定します。
 
-COLUMN_ENCRYPTION_KEY = *key_name* : 列の暗号化キーを指定します。 詳細については、[CREATE COLUMN ENCRYPTION KEY](../../t-sql/statements/create-column-encryption-key-transact-sql.md) に関するページをご覧ください。
+COLUMN_ENCRYPTION_KEY = *key_name*: 列の暗号化キーを指定します。 詳細については、[CREATE COLUMN ENCRYPTION KEY](../../t-sql/statements/create-column-encryption-key-transact-sql.md) に関するページをご覧ください。
 
 ENCRYPTION_TYPE = { DETERMINISTIC | RANDOMIZED }: **決定論的な暗号化** では、指定した任意のプレーンテキストに対して、常に同じ暗号化された値が生成されるような方法を使用します。 決定論的な暗号化を使うことにより、等価比較を使った検索や、グループ化、暗号化された値に基づく等価結合を使ったテーブルの結合が可能になりますが、承認されていないユーザーが、暗号化された列のパターンを調べることで暗号化された値に関する情報を推測することも可能になります。 決定論的に暗号化された列で 2 つのテーブルを結合することができるのは、両方の列が同じ列暗号化キーを使って暗号化されている場合のみです。 明確な暗号化では、バイナリ 2 文字型の列の並べ替え順序を持つ列の照合順序を使用する必要があります。
 
@@ -534,7 +534,7 @@ Always Encrypted (セキュア エンクレーブなし) を使用している�
 
 列は、該当するデータ型である必要があります。
 
-ALGORITHM **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降)。
+ALGORITHM **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降)。
 
 **'AEAD_AES_256_CBC_HMAC_SHA_256'** を指定する必要があります。
 
@@ -542,7 +542,7 @@ ALGORITHM **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-m
 
 SPARSE: 列がスパース列であることを示します。 スパース列のストレージは NULL 値用に最適化されます。 スパース列を NOT NULL として指定することはできません。 スパース列のその他の制限事項と詳細については、「[スパース列の使用](../../relational-databases/tables/use-sparse-columns.md)」を参照してください。
 
-MASKED WITH ( FUNCTION = ' *mask_function* ') **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降)。
+MASKED WITH ( FUNCTION = ' *mask_function* ') **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降)。
 
 動的なデータ マスクを指定します。 *mask_function* マスキング関数は、適切なパラメーターの名前を指定します。 次の 4 つの関数を使用できます。
 
@@ -553,7 +553,7 @@ MASKED WITH ( FUNCTION = ' *mask_function* ') **適用対象** : [!INCLUDE[ssNoV
 
 関数のパラメーターについては、「[動的なデータ マスキング](../../relational-databases/security/dynamic-data-masking.md)」を参照してください。
 
-FILESTREAM **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] 以降)
+FILESTREAM **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssKilimanjaro](../../includes/ssKilimanjaro-md.md)] 以降)
 
 **varbinary(max)** 列に対してのみ有効です。 **varbinary (max)** BLOB データの FILESTREAM ストレージを指定します。
 
@@ -563,7 +563,7 @@ FILESTREAM **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-
 
 列に対して FILESTREAM ストレージ属性を指定した場合、この列のすべての値がファイル システム上の FILESTREAM データ コンテナーに格納されます。
 
-COLLATE *collation_name* : 列の照合順序を指定します。 照合順序名には、Windows 照合順序名または SQL 照合順序名を指定できます。 *collation_name* は、 **char** 、 **varchar** 、 **text** 、 **nchar** 、 **nvarchar** 、および **ntext** データ型の列に対してのみ適用可能です。 指定しない場合、ユーザー定義データ型の列である場合は列にユーザー定義データ型の照合順序が割り当てられ、それ以外の場合はデータベースの既定の照合順序が割り当てられます。
+COLLATE *collation_name*: 列の照合順序を指定します。 照合順序名には、Windows 照合順序名または SQL 照合順序名を指定できます。 *collation_name* は、**char**、**varchar**、**text**、**nchar**、**nvarchar**、および **ntext** データ型の列に対してのみ適用可能です。 指定しない場合、ユーザー定義データ型の列である場合は列にユーザー定義データ型の照合順序が割り当てられ、それ以外の場合はデータベースの既定の照合順序が割り当てられます。
 
 Windows の照合順序名および SQL の照合順序名の詳細については、「[Windows 照合順序名 (Transact-SQL)](../../t-sql/statements/windows-collation-name-transact-sql.md)」および「[SQL 照合順序名 (Transact-SQL)](../../t-sql/statements/sql-server-collation-name-transact-sql.md)」を参照してください。
 
@@ -571,7 +571,7 @@ Windows の照合順序名および SQL の照合順序名の詳細について�
 
 CONSTRAINT: PRIMARY KEY、NOT NULL、UNIQUE、FOREIGN KEY、または CHECK 制約の定義の開始を示す、省略可能なキーワードです。
 
-*constraint_name* : 制約の名前です。 制約名は、テーブルが所属するスキーマ内で一意である必要があります。
+*constraint_name*: 制約の名前です。 制約名は、テーブルが所属するスキーマ内で一意である必要があります。
 
 NULL | NOT NULL: 列内で null 値を許容するかどうかを決定します。 NULL は厳密には制約ではありませんが、NOT NULL と同じように指定することができます。 計算列で NOT NULL を指定できるのは、PERSISTED も指定した場合のみです。
 
@@ -585,7 +585,7 @@ CLUSTERED | NONCLUSTERED: PRIMARY KEY または UNIQUE 制約に対して、ク�
 
 FOREIGN KEY REFERENCES: 1 つ以上の列内のデータに参照整合性を持たせる制約です。 FOREIGN KEY 制約では、列内の各値が、参照されるテーブル内の対応する参照される列 (1 つまたは複数) に存在している必要があります。 FOREIGN KEY 制約は、参照されるテーブル内の PRIMARY KEY 制約または UNIQUE 制約である列、または参照されるテーブルの UNIQUE INDEX で参照される列のみを参照できます。 計算列上の外部キーも、PERSISTED とマークする必要があります。
 
-[ _schema\_name_ **.** ] *referenced_table_name* ] : FOREIGN KEY 制約で参照されるテーブル名と、それが属するスキーマです。
+[ _schema\_name_ **.** ] *referenced_table_name*] : FOREIGN KEY 制約で参照されるテーブル名と、それが属するスキーマです。
 
 **(** *ref_column* [ **,** ... *n* ] **)** : FOREIGN KEY 制約によって参照されるテーブルの、列または列のリストです。
 
@@ -603,11 +603,11 @@ SET DEFAULT: 親テーブル内の対応する行が削除されると、外部�
 
 `INSTEAD OF` トリガーの `ON DELETE` が既にテーブルに存在する場合は、`ON DELETE CASCADE` を定義できません。
 
-たとえば、[!INCLUDE[ssSampleDBobject](../../includes/sssampledbobject-md.md)] データベースで、 **ProductVendor** テーブルに **Vendor** テーブルとの参照関係があるとします。 ここで、 **ProductVendor.BusinessEntityID** 外部キーは **Vendor.BusinessEntityID** 主キーを参照します。
+たとえば、[!INCLUDE[ssSampleDBobject](../../includes/sssampledbobject-md.md)] データベースで、**ProductVendor** テーブルに **Vendor** テーブルとの参照関係があるとします。 ここで、**ProductVendor.BusinessEntityID** 外部キーは **Vendor.BusinessEntityID** 主キーを参照します。
 
-`DELETE` ステートメントを **Vendor** テーブルの行で実行した場合、`ON DELETE CASCADE` アクションが **ProductVendor.BusinessEntityID** に対して指定されていると、[!INCLUDE[ssDE](../../includes/ssde-md.md)] では **ProductVendor** テーブルに 1 つ以上の従属行があるかどうかが確認されます。 従属行がある場合、 **ProductVendor** テーブルの従属行が、 **Vendor** テーブルで参照される行と共に削除されます。
+`DELETE` ステートメントを **Vendor** テーブルの行で実行した場合、`ON DELETE CASCADE` アクションが **ProductVendor.BusinessEntityID** に対して指定されていると、[!INCLUDE[ssDE](../../includes/ssde-md.md)] では **ProductVendor** テーブルに 1 つ以上の従属行があるかどうかが確認されます。 従属行がある場合、**ProductVendor** テーブルの従属行が、**Vendor** テーブルで参照される行と共に削除されます。
 
-これに対し、`NO ACTION` が指定されている場合、 **ProductVendor** テーブルに **Vendor** テーブルの行を参照する行が 1 つでもあると、[!INCLUDE[ssDE](../../includes/ssde-md.md)] でエラーが発生し、Vendor 行の削除操作をロールバックします。
+これに対し、`NO ACTION` が指定されている場合、**ProductVendor** テーブルに **Vendor** テーブルの行を参照する行が 1 つでもあると、[!INCLUDE[ssDE](../../includes/ssde-md.md)] でエラーが発生し、Vendor 行の削除操作をロールバックします。
 
 ON UPDATE { **NO ACTION** \| CASCADE \ SET NULL \| SET DEFAULT }: 変更対象のテーブル内の行が参照関係を持ち、親テーブルで参照先の行が更新された場合、その行に対して実行されるアクションを指定します。 既定値は NO ACTION です。
 
@@ -623,39 +623,39 @@ SET DEFAULT: 親テーブルの対応する行が更新された場合、外部�
 
 `INSTEAD OF` トリガーの `ON UPDATE` が変更するテーブルに既に存在する場合は、`ON UPDATE CASCADE`、`SET NULL`、または `SET DEFAULT` を定義できません。
 
-たとえば、[!INCLUDE[ssSampleDBobject](../../includes/sssampledbobject-md.md)] データベースで、 **ProductVendor** テーブルに **Vendor** テーブルとの参照関係があるとします。 **ProductVendor.BusinessEntity** 外部キーは **Vendor.BusinessEntityID** 主キーを参照します。
+たとえば、[!INCLUDE[ssSampleDBobject](../../includes/sssampledbobject-md.md)] データベースで、**ProductVendor** テーブルに **Vendor** テーブルとの参照関係があるとします。**ProductVendor.BusinessEntity** 外部キーは **Vendor.BusinessEntityID** 主キーを参照します。
 
-UPDATE ステートメントを **Vendor** テーブルの行で実行した場合、ON UPDATE CASCADE アクションが **ProductVendor.BusinessEntityID** に対して指定されていると、[!INCLUDE[ssDE](../../includes/ssde-md.md)]では **ProductVendor** テーブルに 1 つ以上の従属行があるかどうかが確認されます。 従属行がある場合、 **ProductVendor** テーブルの従属行が、 **Vendor** テーブルで参照される行と共に更新されます。
+UPDATE ステートメントを **Vendor** テーブルの行で実行した場合、ON UPDATE CASCADE アクションが **ProductVendor.BusinessEntityID** に対して指定されていると、[!INCLUDE[ssDE](../../includes/ssde-md.md)]では **ProductVendor** テーブルに 1 つ以上の従属行があるかどうかが確認されます。 従属行がある場合、**ProductVendor** テーブルの従属行が、**Vendor** テーブルで参照される行と共に更新されます。
 
-これに対し、NO ACTION が指定されている場合、 **ProductVendor** テーブルに **Vendor** テーブルの行を参照する行が 1 つでもあると、[!INCLUDE[ssDE](../../includes/ssde-md.md)]でエラーが発生し、Vendor 行の更新操作をロールバックします。
+これに対し、NO ACTION が指定されている場合、**ProductVendor** テーブルに **Vendor** テーブルの行を参照する行が 1 つでもあると、[!INCLUDE[ssDE](../../includes/ssde-md.md)]でエラーが発生し、Vendor 行の更新操作をロールバックします。
 
 CHECK: 1 つまたは複数の列に入力できる値を制限することによってドメインの整合性を設定する制約です。 計算列の CHECK 制約も、PERSISTED とマークする必要があります。
 
-*logical_expression* : TRUE または FALSE を返す論理式です。 別名データ型を式に含めることはできません。
+*logical_expression*: TRUE または FALSE を返す論理式です。 別名データ型を式に含めることはできません。
 
-*column* : テーブル制約で使われる、列または列のリスト (かっこで囲む) です。制約の定義で使われる列を示します。
+*column*: テーブル制約で使われる、列または列のリスト (かっこで囲む) です。制約の定義で使われる列を示します。
 
 [ **ASC** | DESC ]: テーブル制約に参加している 1 つまたは複数の列が並べ替えられる順序を指定します。 既定値は ASC です。
 
-*partition_scheme_name* : パーティション テーブルのパーティションがマップされるファイル グループを定義するパーティション構成の名前です。 パーティション構成はデータベース内に存在している必要があります。
+*partition_scheme_name*: パーティション テーブルのパーティションがマップされるファイル グループを定義するパーティション構成の名前です。 パーティション構成はデータベース内に存在している必要があります。
 
-[ _partition\_column\_name_ **.** ]: パーティション テーブルがパーティション分割される対象の列を指定します。 ここで指定する列は、 *partition_scheme_name* が使用しているパーティション関数で指定した列と、データ型、長さ、有効桁数が同じであることが必要です。 パーティション関数に関与する計算列は、明示的に PERSISTED とマークされている必要があります。
+[ _partition\_column\_name_ **.** ]: パーティション テーブルがパーティション分割される対象の列を指定します。 ここで指定する列は、*partition_scheme_name* が使用しているパーティション関数で指定した列と、データ型、長さ、有効桁数が同じであることが必要です。 パーティション関数に関与する計算列は、明示的に PERSISTED とマークされている必要があります。
 
 > [!IMPORTANT]
 > パーティション テーブルに加え、ALTER TABLE...SWITCH 操作のソースまたはターゲットとなっているパーティション分割されていないテーブルのパーティション分割列にも、NOT NULL を指定することをお勧めします。 こうすることで、パーティション分割列上のすべての CHECK 制約で null 値のチェックを行う必要がなくなります。
 
-WITH FILLFACTOR **=** _fillfactor_ : インデックス データの格納に使用される個々のインデックス ページを [!INCLUDE[ssDE](../../includes/ssde-md.md)] がどの程度埋めるかを指定します。 ユーザーが指定できる *fillfactor* の値は、1 ～ 100 です。 値を指定しない場合の既定値は 0 です。 FILL FACTOR 値 0 と 100 の機能は、まったく同じです。
+WITH FILLFACTOR **=** _fillfactor_: インデックス データの格納に使用される個々のインデックス ページを [!INCLUDE[ssDE](../../includes/ssde-md.md)] がどの程度埋めるかを指定します。 ユーザーが指定できる *fillfactor* の値は、1 ～ 100 です。 値を指定しない場合の既定値は 0 です。 FILL FACTOR 値 0 と 100 の機能は、まったく同じです。
 
 > [!IMPORTANT]
 > マニュアルには、WITH FILLFACTOR = *fillfactor* が PRIMARY KEY 制約または UNIQUE 制約に適用される唯一のインデックス オプションとして記述されていますが、これは旧バージョンとの互換性を維持するために記載されており、将来のリリースではこのような記述はなくなります。
 
 *column_set_name* XML COLUMN_SET FOR ALL_SPARSE_COLUMNS: 列セットの名前です。 列セットは、型指定されていない XML 表記であり、テーブルのすべてのスパース列を 1 つにまとめて構造化した出力です。 列セットの詳細については、「 [列セットの使用](../../relational-databases/tables/use-column-sets.md)」を参照してください。
 
-PERIOD FOR SYSTEM_TIME ( *system_start_time_column_name* , *system_end_time_column_name* ) **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
+PERIOD FOR SYSTEM_TIME (*system_start_time_column_name* , *system_end_time_column_name* ) **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
 
 レコードの有効期間を記録するためにシステムで使われる列の名前を指定します。 GENERATED ALWAYS AS ROW { START | END } および WITH SYSTEM_VERSIONING = ON 引数と組み合わせてこの引数を使い、テーブル上でシステムのバージョン管理を有効にします。 詳細については、「 [Temporal Tables](../../relational-databases/tables/temporal-tables.md)」を参照してください。
 
-COMPRESSION_DELAY **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
+COMPRESSION_DELAY **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
 
 メモリ最適化のために、行が変更されないままテーブル内に留まる必要のある最小時間 (分) を遅延によって指定します。その後、それは列ストア インデックスへの圧縮対象となります。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、圧縮する特定の行がその最終更新時刻に従って選択されます。 たとえば、行が 2 時間の期間に頻繁に変更されている場合は、SQL Server が行を圧縮する前に更新が確実に完了するように `COMPRESSION_DELAY = 120 Minutes` に設定できます。
 
@@ -677,17 +677,17 @@ PAGE: ページの圧縮を使用して、テーブルまたは指定したパ�
 
 COLUMNSTORE
 
-**適用対象** : [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
+**適用対象**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
 
 非クラスター化列ストアとクラスター化列ストア インデックスの両方を含む列ストア インデックスにのみ適用されます。 COLUMNSTORE では、最も高パフォーマンスの列ストア圧縮で圧縮することを指定します。 これは、一般的な選択です。
 
-COLUMNSTORE_ARCHIVE **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
+COLUMNSTORE_ARCHIVE **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
 
 非クラスター化列ストアとクラスター化列ストア インデックスの両方を含む列ストア インデックスにのみ適用されます。 COLUMNSTORE_ARCHIVE では、テーブルまたはパーティションをより小さなサイズにさらに圧縮します。 これは、アーカイブ用や、ストレージのサイズを減らす必要があり、かつ保存と取得に時間をかける余裕があるその他の状況で使用できます。
 
 詳細については、「 [Data Compression](../../relational-databases/data-compression/data-compression.md)」を参照してください。
 
-ON PARTITIONS **(** { `<partition_number_expression>` | [ **,** ... *n* ] **)** : DATA_COMPRESSION 設定を適用するパーティションを指定します。 テーブルがパーティション分割されていない場合に `ON PARTITIONS` 引数を使用すると、エラーが発生します。 `ON PARTITIONS` 句を指定しないと、パーティション テーブルのすべてのパーティションに対して `DATA_COMPRESSION` オプションが適用されます。
+ON PARTITIONS **(** { `<partition_number_expression>` | [ **,** ...*n* ] **)** : DATA_COMPRESSION 設定を適用するパーティションを指定します。 テーブルがパーティション分割されていない場合に `ON PARTITIONS` 引数を使用すると、エラーが発生します。 `ON PARTITIONS` 句を指定しないと、パーティション テーブルのすべてのパーティションに対して `DATA_COMPRESSION` オプションが適用されます。
 
 *partition_number_expression* は以下の方法で指定できます。
 
@@ -712,7 +712,7 @@ WITH
 
 PAD_INDEX = { ON | **OFF** }: ON の場合、FILLFACTOR で指定した空き領域の割合が、インデックスの中間レベル ページに適用されます。 OFF の場合や、FILLFACTOR 値を指定しない場合、中間レベル ページは、中間ページの一連のキーを考慮しつつ、インデックスが持つことのできる最大サイズの行を少なくとも 1 つ格納できる領域を残して、ほぼ容量いっぱいに使用されます。 既定値は OFF です。
 
-FILLFACTOR **=** _fillfactor_ : インデックスの作成または変更中に、[!INCLUDE[ssDE](../../includes/ssde-md.md)] が各インデックス ページのリーフ レベルをどの程度まで埋めるかを、パーセントで指定します。 *fillfactor* 値には、1 ～ 100 の整数値を指定してください。 既定値は 0 です。 FILL FACTOR 値 0 と 100 の機能は、まったく同じです。
+FILLFACTOR **=** _fillfactor_: インデックスの作成または変更中に、[!INCLUDE[ssDE](../../includes/ssde-md.md)] が各インデックス ページのリーフ レベルをどの程度まで埋めるかを、パーセントで指定します。 *fillfactor* 値には、1 ～ 100 の整数値を指定してください。 既定値は 0 です。 FILL FACTOR 値 0 と 100 の機能は、まったく同じです。
 
 IGNORE_DUP_KEY = { ON | **OFF** }: 挿入操作で、一意のインデックスに重複するキーの値を挿入しようとしたときのエラー応答を指定します。 IGNORE_DUP_KEY オプションは、インデックスが作成または再構築された後の挿入操作のみに適用されます。 [CREATE INDEX](../../t-sql/statements/create-index-transact-sql.md)、[ALTER INDEX](../../t-sql/statements/alter-index-transact-sql.md)、または [UPDATE](../../t-sql/queries/update-transact-sql.md) を実行した場合、このオプションは無効です。 既定値は OFF です。
 
@@ -732,46 +732,46 @@ ALLOW_ROW_LOCKS **=** { **ON** | OFF }: ON の場合、インデックスにア�
 
 ALLOW_PAGE_LOCKS **=** { **ON** | OFF }: ON の場合、インデックスにアクセスするときにページ ロックが許可されます。 いつページ ロックを使用するかは、[!INCLUDE[ssDE](../../includes/ssde-md.md)] によって決定されます。 OFF の場合、ページ ロックは使用されません。 既定値は ON です。
 
-OPTIMIZE_FOR_SEQUENTIAL_KEY = { ON | **OFF** } **適用対象** : [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降。 <BR>
+OPTIMIZE_FOR_SEQUENTIAL_KEY = { ON | **OFF** } **適用対象**: [!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] 以降。 <BR>
 最終ページ挿入競合に対して最適化するかどうかを指定します。 既定値は OFF です。 詳細については、CREATE INDEX のページの「[シーケンシャル キー](./create-index-transact-sql.md#sequential-keys)」セクションを参照してください。
 
 FILETABLE_DIRECTORY = *directory_name*
 
-**適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降)。
+**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降)。
 
 Windows と互換性のある FileTable ディレクトリ名を指定します。 この名前は、データベース内のすべての FileTable ディレクトリ名の中で一意である必要があります。 一意性の比較では、照合順序の設定とは関係なく、大文字と小文字は区別されません。 この値を指定しない場合、FileTable の名前が使用されます。
 
 FILETABLE_COLLATE_FILENAME = { *collation_name* | database_default }
 
-**適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降)。 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] では、`FILETABLE` はサポートされていません。
+**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降)。 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] では、`FILETABLE` はサポートされていません。
 
 FileTable の **Name** 列に適用される照合順序の名前を指定します。 照合順序は、Windows オペレーティング システムのファイル名のセマンティクスに準拠するために、大文字と小文字を区別しない設定にする必要があります。 この値が指定されていない場合、データベースの既定の照合順序が使用されます。 データベースの既定の照合順序で大文字と小文字が区別される場合は、エラーが発生し、CREATE TABLE 操作は失敗します。
 
-*collation_name* : 大文字と小文字を区別しない照合順序の名前です。
+*collation_name*: 大文字と小文字を区別しない照合順序の名前です。
 
 database_default: データベースの既定の照合順序を使用するように指定します。 この照合順序は、大文字と小文字を区別しないものである必要があります。
 
 FILETABLE_PRIMARY_KEY_CONSTRAINT_NAME = *constraint_name*
-**適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降)。
+**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降)。
 
 FileTable に対して自動的に作成される主キー制約で使用する名前を指定します。 この値を指定しない場合、システムによって制約の名前が生成されます。
 
 FILETABLE_STREAMID_UNIQUE_CONSTRAINT_NAME = *constraint_name*
-**適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降)。
+**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降)。
 
 FileTable の **stream_id** 列に対して自動的に作成される一意制約で使用する名前を指定します。 この値を指定しない場合、システムによって制約の名前が生成されます。
 
 FILETABLE_FULLPATH_UNIQUE_CONSTRAINT_NAME = *constraint_name*
-**適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降)。
+**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降)。
 
 FileTable の **parent_path_locator** 列と **name** 列に対して自動的に作成される一意制約で使用する名前を指定します。 この値を指定しない場合、システムによって制約の名前が生成されます。
 
-SYSTEM_VERSIONING **=** ON [ ( HISTORY_TABLE **=** *schema_name* . *history_table_name* [, DATA_CONSISTENCY_CHECK **=** { **ON** | OFF } ] ) ] **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)])。
+SYSTEM_VERSIONING **=** ON [ ( HISTORY_TABLE **=** *schema_name* .*history_table_name* [, DATA_CONSISTENCY_CHECK **=** { **ON** | OFF } ] ) ] **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)])。
 
 データ型、NULL 値の許容制約、および主キー制約の要件が満たされている場合は、テーブルのシステムのバージョン管理を有効にします。 `HISTORY_TABLE` 引数を使用しない場合、システムは現在のテーブルと同じファイル グループ内の現在のテーブルのスキーマに一致する新しい履歴テーブルを生成し、これによって 2 つのテーブルの間にリンクが作成され、履歴テーブルに現在のテーブル内の各レコードの履歴が記録されるようになります。 この履歴テーブルの名前は `MSSQL_TemporalHistoryFor<primary_table_object_id>` になります。 履歴テーブルには既定では、 **PAGE** 圧縮します。 `HISTORY_TABLE` 引数を使ってリンクを作成し、既存の履歴テーブルを使用する場合、現在のテーブルと指定したテーブルの間のリンクが作成されます。 現在のテーブルがパーティション分割する場合、履歴テーブルは、パーティション分割構成がレプリケートされていないために自動的に現在のテーブルから履歴テーブルに既定のファイル グループに作成されます。 履歴テーブルの作成時に履歴テーブルの名前を指定すると場合、は、スキーマとテーブルの名前を指定する必要があります。 既存の履歴テーブルへのリンクを作成する場合は、データの整合性チェックを実行することもできます。 このデータの整合性チェックでは、既存のレコードが重複しないことを確認します。 データを実行する一貫性チェックが、既定値です。 `PERIOD FOR SYSTEM_TIME` および `GENERATED ALWAYS AS ROW { START | END }` 引数と組み合わせてこの引数を使い、テーブル上でシステムのバージョン管理を有効にします。 詳細については、「 [Temporal Tables](../../relational-databases/tables/temporal-tables.md)」を参照してください。
 
 REMOTE_DATA_ARCHIVE = { ON [ ( *table_stretch_options* [,...n] ) ] | OFF ( MIGRATION_STATE = PAUSED ) }   
-**適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降)。
+**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降)。
 
 Stretch Database が有効または無効になっている新しいテーブルを作成します。 詳細については、「 [Stretch Database](../../sql-server/stretch-database/stretch-database.md)」を参照してください。
 
@@ -779,11 +779,11 @@ Stretch Database が有効または無効になっている新しいテーブル
 
 `ON` を指定してテーブルに対して Stretch を有効にする場合は、必要に応じて、`MIGRATION_STATE = OUTBOUND` を指定してデータの移行をすぐに開始するか、`MIGRATION_STATE = PAUSED` を指定してデータの移行を延期することができます。 既定値は `MIGRATION_STATE = OUTBOUND` です。 テーブルに対して Stretch を有効にする方法については、「[データベースに対して Stretch Database を有効にする](../../sql-server/stretch-database/enable-stretch-database-for-a-table.md)」を参照してください。
 
-**前提条件** 。 テーブルに対して Stretch を有効にする前に、サーバーおよびデータベースで Stretch を有効にする必要があります。 詳細については、「 [Enable Stretch Database for a database](../../sql-server/stretch-database/enable-stretch-database-for-a-database.md)」を参照してください。
+**前提条件**。 テーブルに対して Stretch を有効にする前に、サーバーおよびデータベースで Stretch を有効にする必要があります。 詳細については、「 [Enable Stretch Database for a database](../../sql-server/stretch-database/enable-stretch-database-for-a-database.md)」を参照してください。
 
-**権限** : データベースまたはテーブルの Stretch を有効にするには、db_owner アクセス許可が必要です。 テーブルの Stretch を有効にする場合、テーブルに対する ALTER 権限も必要です。
+**権限**: データベースまたはテーブルの Stretch を有効にするには、db_owner アクセス許可が必要です。 テーブルの Stretch を有効にする場合、テーブルに対する ALTER 権限も必要です。
 
-[ FILTER_PREDICATE = { null | *predicate* } ] **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降)。
+[ FILTER_PREDICATE = { null | *predicate* } ] **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降)。
 
 必要に応じて、履歴データと現在のデータの両方を含むテーブルから移行する行を選択するフィルター述語を指定します。 この述語で決定論的インライン テーブル値関数を呼び出す必要があります。 詳しくは、「[Enable Stretch Database for a table](../../sql-server/stretch-database/enable-stretch-database-for-a-table.md)」および「[フィルター関数を使用して移行する行を選択する](../../sql-server/stretch-database/select-rows-to-migrate-by-using-a-filter-function-stretch-database.md)」をご覧ください。
 
@@ -792,9 +792,9 @@ Stretch Database が有効または無効になっている新しいテーブル
 
 フィルター述語を指定しない場合、テーブル全体が移行されます。
 
-フィルター述語を指定する場合は、 *MIGRATION_STATE* も指定する必要があります。
+フィルター述語を指定する場合は、*MIGRATION_STATE* も指定する必要があります。
 
-MIGRATION_STATE = { OUTBOUND | INBOUND | PAUSED } **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
+MIGRATION_STATE = { OUTBOUND | INBOUND | PAUSED } **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
 
 - [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] から [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] にデータを移行するには `OUTBOUND` を指定します。
 - [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] から [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] にテーブルのリモート データをコピーして戻し、テーブルに対する Stretch を無効にするには、`INBOUND` を指定します。 詳細については、「 [Stretch Database を無効にして、リモート データを戻す](../../sql-server/stretch-database/disable-stretch-database-and-bring-back-remote-data.md)」を参照してください。
@@ -805,7 +805,7 @@ MIGRATION_STATE = { OUTBOUND | INBOUND | PAUSED } **適用対象** : [!INCLUDE[s
 
 [DATA_DELETION = ON  
     {( FILTER_COLUMN = column_name,   
-           RETENTION_PERIOD = { INFINITE | number {DAY | DAYS | WEEK | WEEKS | MONTH | MONTHS | YEAR | YEARS } )}] **Applies to:** Azure SQL Edge " *のみ* "
+           RETENTION_PERIOD = { INFINITE | number {DAY | DAYS | WEEK | WEEKS | MONTH | MONTHS | YEAR | YEARS } )}] **Applies to:** Azure SQL Edge "*のみ*"
 
 データベース内のテーブルの古いデータまたは期限切れのデータに対し、アイテム保持ポリシーを使用したクリーンアップを有効にします。 詳細については、[データ保持の有効化と無効化](/azure/azure-sql-edge/data-retention-enable-disable)に関するページを参照してください。 データ保持を有効にするには、次のパラメーターを指定します。 
 
@@ -817,35 +817,35 @@ MIGRATION_STATE = { OUTBOUND | INBOUND | PAUSED } **適用対象** : [!INCLUDE[s
   - SmallDateTime
   - DateTimeOffset
 
-- RETENTION_PERIOD = { INFINITE | number {DAY | DAYS | WEEK | WEEKS | MONTH | MONTHS | YEAR | YEARS }}       
+- RETENTION_PERIOD = { INFINITE \| number {DAY \| DAYS \| WEEK \| WEEKS \| MONTH \| MONTHS \| YEAR \| YEARS }}       
   テーブルの保持期間のポリシーを指定します。 保有期間は、正の整数値と日付部分の単位を組み合わせて指定します。   
 
-MEMORY_OPTIMIZED **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)])。 Azure SQL Managed Instance では、メモリ最適化テーブルはサポートされません。
+MEMORY_OPTIMIZED **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)])。 Azure SQL Managed Instance では、メモリ最適化テーブルはサポートされません。
 
 値が ON の場合は、テーブルがメモリ最適化されていることを示します。 メモリ最適化テーブルは、トランザクション処理のパフォーマンスの最適化に使用されるインメモリ OLTP 機能の一部です。 インメモリ OLTP の使用を開始するには、「[クイック スタート 1: Transact-SQL のパフォーマンスを向上させるインメモリ OLTP テクノロジ](../../relational-databases/in-memory-oltp/survey-of-initial-areas-in-in-memory-oltp.md)」を参照してください。 メモリ最適化テーブルについて詳しくは、「[メモリ最適化テーブル](../../relational-databases/in-memory-oltp/sample-database-for-in-memory-oltp.md)」をご覧ください。
 
 既定値の OFF は、テーブルがディスク ベースであることを示します。
 
-DURABILITY **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
+DURABILITY **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
 
 値 `SCHEMA_AND_DATA` は、テーブルに持続性があり、変更がディスクに保存され、再起動またはフェールオーバー後も存続することを示します。 SCHEMA_AND_DATA が既定値です。
 
 値 `SCHEMA_ONLY` は、テーブルに持続性がないことを示します。 データベースを再起動またはフェールオーバーした場合、テーブル スキーマは保存されますが、データの更新内容は保存されません。 `DURABILITY = SCHEMA_ONLY` は `MEMORY_OPTIMIZED = ON` でのみ使用することができます。
 
 > [!WARNING]
-> **DURABILITY = SCHEMA_ONLY** でテーブルが作成される場合、 **READ_COMMITTED_SNAPSHOT** がその後 **ALTER DATABASE** を使用して変更されると、テーブル内のデータは失われます。
+> **DURABILITY = SCHEMA_ONLY** でテーブルが作成される場合、**READ_COMMITTED_SNAPSHOT** がその後 **ALTER DATABASE** を使用して変更されると、テーブル内のデータは失われます。
 
-BUCKET_COUNT **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
+BUCKET_COUNT **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
 
 ハッシュ インデックスに作成されるバケットの数を示します。 ハッシュ インデックスの BUCKET_COUNT の最大値は 1,073,741,824 です。 バケット数について詳しくは、「[メモリ最適化テーブルのインデックス](../../relational-databases/in-memory-oltp/indexes-for-memory-optimized-tables.md)」をご覧ください。
 
 BUCKET_COUNT は必須の引数です。
 
-**適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
+**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
 
 列インデックスとテーブル インデックスは、CREATE TABLE ステートメントの一部として指定できます。 メモリ最適化テーブルのインデックスの追加と削除の詳細については、次のページを参照してください。[メモリ最適化テーブルの変更](../../relational-databases/in-memory-oltp/altering-memory-optimized-tables.md)
 
-HASH **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
+HASH **適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降) と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
 
 ハッシュ インデックスを作成することを示します。
 
@@ -855,7 +855,7 @@ HASH **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)
 
 許容されるテーブル、列、制約、およびインデックスの数については、「[SQL Server の最大容量仕様](../../sql-server/maximum-capacity-specifications-for-sql-server.md)」を参照してください。
 
-一般的にテーブルとインデックスには、一度に 1 エクステントの増分で領域が割り当てられます。 `ALTER DATABASE` の `SET MIXED_PAGE_ALLOCATION` オプションが TRUE に設定されている場合、または常に [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] より前である場合は、テーブルまたはインデックスの作成時に、ページが単一エクステントを埋めるのに十分な量になるまで混合エクステントからページが割り当てられます。 ページが単一エクステントを埋めるのに十分な量になった後は、現在割り当てられているエクステントが埋まるたびに新しいエクステントが割り当てられます。 テーブルに割り当てられて使用されている領域の大きさに関するレポートを表示するには、`sp_spaceused` を実行します。
+一般的にテーブルとインデックスには、一度に 1 エクステントの増分で領域が割り当てられます。 `ALTER DATABASE` の `SET MIXED_PAGE_ALLOCATION` オプションが TRUE に設定されている場合、または常に [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] より前である場合は、テーブルまたはインデックスの作成時に、ページが単一エクステントを埋めるのに十分な量になるまで混合エクステントからページが割り当てられます。 ページが単一エクステントを埋めるのに十分な量になった後は、現在割り当てられているエクステントが埋まるたびに新しいエクステントが割り当てられます。 テーブルに割り当てられて使用されている領域の大きさに関するレポートを表示するには、`sp_spaceused` を実行します。
 
 [!INCLUDE[ssDE](../../includes/ssde-md.md)]では、列定義の中で、DEFAULT、IDENTITY、ROWGUIDCOL または列制約を指定する順序は設定されていません。
 
@@ -865,7 +865,7 @@ HASH **適用対象** : [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)
 
 ローカルおよびグローバル一時テーブルを作成できます。 ローカル一時テーブルは現在のセッション内でしか使えず、グローバル一時テーブルはすべてのセッションで使えます。 一時テーブルをパーティション分割することはできません。
 
-ローカル一時テーブル名の前には 1 つの番号記号 (#) を付加し (# *table_name* )、グローバル一時テーブル名の前には 2 つの番号記号を付加します (## *table_name* )。
+ローカル一時テーブル名の前には 1 つの番号記号 (#) を付加し (#*table_name*)、グローバル一時テーブル名の前には 2 つの番号記号を付加します (##*table_name*)。
 
 [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントは、`CREATE TABLE` ステートメントの *table_name* に指定された値を使用して、一時テーブルを参照します。以下に例を示します。
 
@@ -1022,7 +1022,7 @@ CREATE TABLE を使用してパーティション テーブルを作成するに
   CHECK CONSTRAINTS とルールは、INSERT ステートメントと UPDATE ステートメントの実行中のデータの検証という同じ役割を果たします。
 
 - 列に対して 1 つのルールおよび複数の CHECK 制約がある場合、すべての制限が評価されます。
-- **text** 列、 **ntext** 列、 **image** 列に対しては CHECK 制約を定義できません。
+- **text** 列、**ntext** 列、**image** 列に対しては CHECK 制約を定義できません。
 
 ## <a name="additional-constraint-information"></a>制約に関する追加情報
 
@@ -1044,7 +1044,7 @@ CREATE TABLE を使用してパーティション テーブルを作成するに
 
 |列のデータ型|ルール|
 |----------------------|----------|
-|別名データ型|[!INCLUDE[ssDE](../../includes/ssde-md.md)]は、データ型が作成されたときに指定された NULL 値を許容するかどうかの設定を使用します。 データ型に NULL 値を許容するかどうかの既定の設定を調べるには、 **sp_help** を使用します。|
+|別名データ型|[!INCLUDE[ssDE](../../includes/ssde-md.md)]は、データ型が作成されたときに指定された NULL 値を許容するかどうかの設定を使用します。 データ型に NULL 値を許容するかどうかの既定の設定を調べるには、**sp_help** を使用します。|
 |CLR ユーザー定義型 (CLR user-defined type)|NULL 値を許容するかどうかは列の定義によって決まります。|
 |システムから提供されているデータ型|システムから提供されているデータ型にオプションが 1 つしかない場合は、それが優先されます。 **timestamp** データ型は NOT NULL である必要があります。 いずれかのセッション設定が SET を使って ON に設定されている場合:<br />**ANSI_NULL_DFLT_ON** が ON になっていれば、NULL が割り当てられます。 <br />**ANSI_NULL_DFLT_OFF** が ON になっていれば、NOT NULL が割り当てられます。<br /><br /> いずれかのデータベース設定が ALTER DATABASE を使って構成されている場合:<br />**ANSI_NULL_DEFAULT_ON** が ON になっていれば、NULL が割り当てられます。 <br />**ANSI_NULL_DEFAULT_OFF** が ON になっていれば、NOT NULL が割り当てられます。<br /><br /> ANSI_NULL_DEFAULT のデータベース設定を表示するには、カタログ ビュー **sys.databases** を使用します|
 
@@ -1194,7 +1194,7 @@ ON PRIMARY;
 
 ### <a name="g-creating-a-table-with-an-xml-column-typed-to-an-xml-schema-collection"></a>G. XML スキーマ コレクションに型指定された xml 列を含むテーブルの作成
 
-次の例では、XML スキーマ コレクション `xml` 型の `HRResumeSchemaCollection` 列を持つテーブルを作成します。 `DOCUMENT` キーワードは、 *column_name* 内の `xml` データ型の各インスタンスに、トップレベル要素を 1 つだけ含むことができるように指定します。
+次の例では、XML スキーマ コレクション `xml` 型の `HRResumeSchemaCollection` 列を持つテーブルを作成します。 `DOCUMENT` キーワードは、*column_name* 内の `xml` データ型の各インスタンスに、トップレベル要素を 1 つだけ含むことができるように指定します。
 
 ```sql
 CREATE TABLE HumanResources.EmployeeResumes
@@ -1261,7 +1261,7 @@ CREATE TABLE dbo.mytable
 
 ### <a name="k-creating-a-computed-column-based-on-a-user-defined-type-column"></a>K. ユーザー定義型の列に基づく計算列の作成
 
-次の例では、ユーザー定義型 `utf8string` として定義された 1 つの列を持つテーブルを作成します。型のアセンブリと型自体が現在のデータベース中に既に作成されていることを前提としています。 2 番目の列は `utf8string` に基づいて定義され、 **type(class)** `utf8string` のメソッド `ToString()` を使用して列の値が計算されます。
+次の例では、ユーザー定義型 `utf8string` として定義された 1 つの列を持つテーブルを作成します。型のアセンブリと型自体が現在のデータベース中に既に作成されていることを前提としています。 2 番目の列は `utf8string` に基づいて定義され、**type(class)** `utf8string` のメソッド `ToString()` を使用して列の値が計算されます。
 
 ```sql
 CREATE TABLE UDTypeTable
@@ -1340,7 +1340,7 @@ CREATE TABLE T1
 
 ### <a name="p-creating-a-system-versioned-disk-based-temporal-table"></a>P. システム バージョン管理されたディスク ベースのテンポラル テーブルの作成
 
-**適用対象** : [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
+**適用対象**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
 
 次の例では、新しい履歴テーブルにリンクされたテンポラル テーブルを作成する方法と、既存の履歴テーブルにリンクされたテンポラル テーブルを作成する方法を示します。 テンポラル テーブルでは、システムのバージョン管理を有効にするテーブルに対して有効になるように定義された主キーを含める必要があることに注意してください。 既存のテーブルのシステムのバージョン管理の追加または削除方法を示す例については、「[使用例](../../t-sql/statements/alter-table-transact-sql.md#Example_Top)」でシステムのバージョン管理の例をご覧ください。 ユース ケースについては、「[テンポラル テーブル](../../relational-databases/tables/temporal-tables.md)」をご覧ください。
 
@@ -1390,7 +1390,7 @@ WITH (SYSTEM_VERSIONING = ON (HISTORY_TABLE = dbo.Department_History, DATA_CONSI
 
 ### <a name="q-creating-a-system-versioned-memory-optimized-temporal-table"></a>Q. システム バージョン管理されたメモリ最適化テンポラル テーブルの作成
 
-**適用対象** : [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
+**適用対象**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
 
 次の例では、ディスク ベースの新しい履歴テーブルにリンクされた、システム バージョン管理されたメモリ最適化テンポラル テーブルを作成する方法を示します。
 

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sysforeignkeys
 - sys.sysforeignkeys
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sysforeignkeys system table
 - sys.sysforeignkeys compatibility view
 ms.assetid: 41544236-1c46-4501-be88-18c06963b6e8
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 15a02ec0dc5b6b1e5b376876b18e36863468e59e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: edbb686df3d410b6049bca2799e0f10b2ff07db8
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88455102"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99158528"
 ---
 # <a name="syssysforeignkeys-transact-sql"></a>sys.sysforeignkeys (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

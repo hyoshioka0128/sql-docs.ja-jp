@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: 102ae1d0-973d-4e12-992c-d844bf05160d
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: d71c4b453ca9e3f48f5ac2d4d7cbcf46da1d26e8
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 25366965de65289e895cda888a7bb3a6d8956d54
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91869379"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97481153"
 ---
 # <a name="running-stored-procedures---process-return-codes-and-output-parameters"></a>ストアド プロシージャの実行 - リターン コードと出力パラメーターの処理
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -38,9 +38,9 @@ ms.locfileid: "91869379"
   
 2.  各入力、入出力、出力パラメーター、およびプロシージャの戻り値 (存在する場合) に対して [SQLBindParameter](../../relational-databases/native-client-odbc-api/sqlbindparameter.md) を呼び出します。  
   
-3.  **SQLExecDirect**を使用してステートメントを実行します。  
+3.  **SQLExecDirect** を使用してステートメントを実行します。  
   
-4.  結果セットの処理は、最後の結果セットの処理中、または**Sqlmoreresults**が SQL_NO_DATA を返すまで、 **Sqlfetch**または**sqlfetchscroll**によって SQL_NO_DATA が返されるまで実行されます。 この時点で、リターン コードと出力パラメーターにバインドされた変数に、返されたデータ値が格納されています。  
+4.  結果セットの処理は、最後の結果セットの処理中、または **Sqlmoreresults** が SQL_NO_DATA を返すまで、 **Sqlfetch** または **sqlfetchscroll** によって SQL_NO_DATA が返されるまで実行されます。 この時点で、リターン コードと出力パラメーターにバインドされた変数に、返されたデータ値が格納されています。  
 
 ## <a name="example"></a>例  
  このサンプルでは、リターン コードおよび出力パラメーターの処理を示します。 このサンプルは IA64 ではサポートされていません。 このサンプルは、ODBC 3.0 以降のバージョン用に開発されました。  

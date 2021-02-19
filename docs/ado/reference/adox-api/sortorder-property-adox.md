@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - _Column::SortOrder
@@ -20,18 +20,18 @@ helpviewer_keywords:
 ms.assetid: 04510b19-9cb2-4895-b23b-f7790123eb04
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 4141e657fd0c7dfcda2de38c33446bcb3e7a27a2
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 939630bea7346d1c4602fb04a6d9ed21a7b3fef7
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88983313"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100053513"
 ---
 # <a name="sortorder-property-adox"></a>SortOrder プロパティ (ADOX)
 列の並べ替え順序を示します (インデックス列のみ)。  
   
 ## <a name="settings-and-return-values"></a>設定と戻り値  
- は、 [Sortorderenum](./sortorderenum.md)定数のいずれかを指定できる**Long 型**の値を設定して返します。 既定値は **adSortAscending**です。  
+ は、 [Sortorderenum](./sortorderenum.md)定数のいずれかを指定できる **Long 型** の値を設定して返します。 既定値は **adSortAscending** です。  
   
 ## <a name="remarks"></a>解説  
  このプロパティは、[インデックス](./index-object-adox.md)の[Columns](./columns-collection-adox.md)コレクション内の[Column](./column-object-adox.md)オブジェクトにのみ適用されます。  

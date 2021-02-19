@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - UNION
 - UNION_TSQL
@@ -18,15 +18,15 @@ helpviewer_keywords:
 - combining query results
 - UNION operator [SQL Server]
 ms.assetid: 607c296f-8a6a-49bc-975a-b8d0c0914df7
-author: rothja
-ms.author: jroth
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 40bf24d7e1a5bcbc32307b5d5731907fb5f8463d
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 9214d0aff36406604b64ff8b642e1c1f56b136c8
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88459346"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99158915"
 ---
 # <a name="set-operators---union-transact-sql"></a>セット演算子 - UNION (Transact-SQL)
 
@@ -320,7 +320,7 @@ ORDER BY CustomerKey;
 ```  
   
 ### <a name="h-using-union-of-three-select-statements-to-show-effects-of-all-and-parentheses"></a>H. 3 つの SELECT ステートメントで UNION を使用して、ALL とかっこの効果を示す  
-次の例では、`UNION` 利用時の ALL とかっこの効果を示す目的で、`UNION` を使用して**同じテーブル**の結果を結合しています。  
+次の例では、`UNION` 利用時の ALL とかっこの効果を示す目的で、`UNION` を使用して **同じテーブル** の結果を結合しています。  
   
 最初の例では `UNION ALL` を使用し、重複レコードを表示し、ソース テーブルの各行を 3 回返しています。 2 番目の例では、`ALL` を指定せずに `UNION` を使用して、3 つの `SELECT` ステートメントの結果を結合したものから重複する行を削除し、ソース テーブルから重複しない行のみ返します。  
   

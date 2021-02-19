@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - DataTypeEnum
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 2c57eca6-9336-4b06-ba10-9fef5926b1d0
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: fd0e2226c0b85b10d7da9f4f14e7068aa25b1d2d
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: e815d834ffbab6276f4ee6a9069f1163ac9e4cd5
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88974243"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100025639"
 ---
 # <a name="datatypeenum"></a>DataTypeEnum
 [フィールド](../../../ado/reference/ado-api/field-object.md)、[パラメーター](../../../ado/reference/ado-api/parameter-object.md)、または[プロパティ](../../../ado/reference/ado-api/property-object-ado.md)のデータ型を指定します。 対応する OLE DB 型インジケーターは、次の表の説明列にかっこで囲まれています。  
@@ -31,7 +31,7 @@ ms.locfileid: "88974243"
 |**AdArray**|0x2000|他のデータ型の配列を示すフラグ値。常に別のデータ型定数と結合されます。 ADOX には適用されません。|  
 |**adBigInt**|20|8バイト符号付き整数 (DBTYPE_I8) を示します。|  
 |**adBinary**|128|バイナリ値 (DBTYPE_BYTES) を示します。|  
-|**adBoolean**|11|**ブール**値 (DBTYPE_BOOL) を示します。|  
+|**adBoolean**|11|**ブール** 値 (DBTYPE_BOOL) を示します。|  
 |**adBSTR**|8|Null で終わる文字列 (Unicode) (DBTYPE_BSTR) を示します。|  
 |**adChapter**|136|子行セット (DBTYPE_HCHAPTER) 内の行を識別する4バイトのチャプター値を示します。|  
 |**adChar**|129|文字列値 (DBTYPE_STR) を示します。|  

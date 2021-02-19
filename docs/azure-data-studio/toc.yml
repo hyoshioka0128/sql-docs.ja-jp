@@ -7,7 +7,7 @@
 - name: 概要
   items:
     - name: Azure Data Studio
-      href: what-is.md
+      href: what-is-azure-data-studio.md
 - name: クイックスタート
   items:
     - name: SQL Server に対する接続およびクエリ
@@ -122,6 +122,8 @@
           href: notebooks/notebooks-kusto-kernel.md
         - name: Kqlmagic を使用する
           href: notebooks/notebooks-kqlmagic.md
+        - name: パラメーター化を使用する
+          href: notebooks/notebooks-parameterization.md
     - name: デプロイ
       items:
         - name: Azure SQL Database のデプロイ
@@ -154,6 +156,8 @@
   items:
     - name: よく寄せられる質問
       href: faq.md
+    - name: トラブルシューティング
+      href: troubleshooting.md
     - name: Azure Data Studio の GitHub リポジトリ >
       href: 'https://www.github.com/Microsoft/azuredatastudio'
     - name: 問題の報告とご提案 >

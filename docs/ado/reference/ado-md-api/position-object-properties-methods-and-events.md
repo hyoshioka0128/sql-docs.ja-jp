@@ -7,19 +7,19 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 helpviewer_keywords:
 - Position object [ADO MD], members
 ms.assetid: c3e824b1-30c7-4afa-9a27-213c407453e8
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: fc246b6b6c547e77b9372233d8c552e57ac5f25c
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: d06003228118f07d6fe7d20725fa2a63aa19b497
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88986143"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100050922"
 ---
 # <a name="position-object-properties-methods-and-events"></a>Position オブジェクトのプロパティ、メソッド、およびイベント
 ## <a name="propertiescollections"></a>プロパティ/コレクション  

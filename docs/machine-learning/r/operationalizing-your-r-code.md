@@ -8,13 +8,13 @@ ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: 89643fabf2db39e7006e0efaac87adb991893f67
-ms.sourcegitcommit: 9774e2cb8c07d4f6027fa3a5bb2852e4396b3f68
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: a959bf5c29a125aefb390bef1428e6a35745e665
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92098841"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100353756"
 ---
 # <a name="operationalize-r-code-using-stored-procedures-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services でストアド プロシージャを使用して R コードを運用可能にする
 [!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
@@ -49,11 +49,11 @@ R または Python コードで事前に最適化をいくつか行うと、お�
 
 次のチュートリアルでは、バッチと単一行の両方のモードにおける、ストアド プロシージャを使用したスコアリングの例を示します。
 
-::: moniker range=">=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2016||>=sql-server-linux-ver15"
 + [SQL Server における R 用エンド ツー エンド データ サイエンスのチュートリアル](../tutorials/walkthrough-data-science-end-to-end-walkthrough.md)
 ::: moniker-end
 
-::: moniker range="=azuresqldb-mi-current||=sqlallproducts-allversions"
+::: moniker range="=azuresqldb-mi-current"
 + [R チュートリアル:二項分類を使用して NYC タクシーの料金を予測する](../tutorials/r-taxi-classification-introduction.md)
 ::: moniker-end
 
@@ -63,11 +63,11 @@ R または Python コードで事前に最適化をいくつか行うと、お�
 
 R ソリューションで複雑な集計が使用されている場合、または大規模なデータセットが含まれる場合は、SQL Server の非常に効率的なインメモリ集計と列ストア インデックスを利用して、R コードで統計の計算結果とスコア付けを処理できます。
 
-::: moniker range=">=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2016||>=sql-server-linux-ver15"
 
 ## <a name="adapt-r-code-for-other-platforms-or-compute-contexts"></a>他のプラットフォームまたはコンピューティング コンテキストに合わせて R コードを調整する
 
-SQL Server セットアップで[スタンドアロン サーバー オプション](../install/sql-machine-learning-standalone-windows-install.md)を使用する場合、または SQL 以外の製品、Microsoft Machine Learning Server (以前の **Microsoft R Server**) をインストールする場合、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データに対して実行する R コードと同じものを、Spark over HDFS などの他のデータ ソースに対して使用できます。
+SQL Server セットアップで [スタンドアロン サーバー オプション](../install/sql-machine-learning-standalone-windows-install.md)を使用する場合、または SQL 以外の製品、Microsoft Machine Learning Server (以前の **Microsoft R Server**) をインストールする場合、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データに対して実行する R コードと同じものを、Spark over HDFS などの他のデータ ソースに対して使用できます。
 
 + [Machine Learning Server のドキュメント](/r-server/)
 

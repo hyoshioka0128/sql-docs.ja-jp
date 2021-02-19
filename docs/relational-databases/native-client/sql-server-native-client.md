@@ -10,13 +10,13 @@ ms.topic: conceptual
 ms.assetid: e4d4fe39-0090-42a7-8405-6378370d11cb
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: f62b0fa0d27ed5db06f85b2c77e1ab381534d731
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: b65b009d5dc88dc9d5a0cd5cc6f5592c8160c8bb
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91891112"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97467503"
 ---
 # <a name="sql-server-native-client"></a>SQL Server Native Client
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -48,13 +48,13 @@ Native Client の ODBC では [!INCLUDE[ssNoVersion](../../includes/ssnoversion-
 
 -   C データ型の機能拡張。 詳細については、「 [ODBC の C データ型](../../odbc/reference/develop-app/c-data-types-in-odbc.md)」を参照してください。  
 
-     Native Client でこの機能をサポートするために [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 、アプリケーションで ODBC 3.8 が使用されている場合、SQLGetDescField は**SQL_C_BINARY**ではなく**SQL_C_SS_TIME2** ( **time**型の場合) または**SQL_C_SS_TIMESTAMPOFFSET** ( **datetimeoffset**の場合) を返すことができます。 詳細については、「 [ODBC の日付と時刻の機能強化に関するデータ型のサポート](../../relational-databases/native-client-odbc-date-time/data-type-support-for-odbc-date-and-time-improvements.md)」を参照してください。  
+     Native Client でこの機能をサポートするために [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 、アプリケーションで ODBC 3.8 が使用されている場合、SQLGetDescField は **SQL_C_BINARY** ではなく **SQL_C_SS_TIME2** ( **time** 型の場合) または **SQL_C_SS_TIMESTAMPOFFSET** ( **datetimeoffset** の場合) を返すことができます。 詳細については、「 [ODBC の日付と時刻の機能強化に関するデータ型のサポート](../../relational-databases/native-client-odbc-date-time/data-type-support-for-odbc-date-and-time-improvements.md)」を参照してください。  
 
 -   小さいバッファーを使用して **SQLGetData** を複数回呼び出して、大きなパラメーター値を取得します。 詳細については、「 [SQLGetData を使用した出力パラメーターの取得](../../odbc/reference/develop-app/retrieving-output-parameters-using-sqlgetdata.md)」を参照してください。  
 
  次のトピックでは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] における [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] Native Client の動作の変更点について説明します。  
 
--   **ICommandWithParameters:: SetParameterInfo**を呼び出すときに、 *pwszName*パラメーターに渡される値は有効な識別子である必要があります。 詳細については、「 [ICommandWithParameters](../../relational-databases/native-client-ole-db-interfaces/icommandwithparameters.md)」を参照してください。  
+-   **ICommandWithParameters:: SetParameterInfo** を呼び出すときに、 *pwszName* パラメーターに渡される値は有効な識別子である必要があります。 詳細については、「 [ICommandWithParameters](../../relational-databases/native-client-ole-db-interfaces/icommandwithparameters.md)」を参照してください。  
 
 -   **SQLDescribeParam** は、常に ODBC 仕様に準拠した値を返します。 詳細については、「 [SQLDescribeParam](../../relational-databases/native-client-odbc-api/sqldescribeparam.md)」を参照してください。  
 

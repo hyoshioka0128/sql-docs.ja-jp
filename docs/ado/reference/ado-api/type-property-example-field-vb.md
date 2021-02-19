@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: accb72f5-a3bd-4a7e-92b6-6da0783b4b75
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: b6dcd959172ade73a7c960e91997c5a1cb1e2dc5
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: a5cbe8963153887a4028474170f5039707c6794a
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88988273"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100056427"
 ---
 # <a name="type-property-example-field-vb"></a>Type プロパティの例 (Field) (VB)
-この例では、 ***Employees***テーブル内のすべての[Field](./field-object.md)オブジェクトの[type](./type-property-ado.md)プロパティの値に対応する定数の名前を表示することによって、 [type](./type-property-ado.md)プロパティを示します。 このプロシージャを実行するには、FieldType 関数が必要です。  
+この例では、 ***Employees*** テーブル内のすべての [Field](./field-object.md)オブジェクトの [type](./type-property-ado.md)プロパティの値に対応する定数の名前を表示することによって、 [type](./type-property-ado.md)プロパティを示します。 このプロシージャを実行するには、FieldType 関数が必要です。  
   
 ```  
 'BeginTypeFieldVB  

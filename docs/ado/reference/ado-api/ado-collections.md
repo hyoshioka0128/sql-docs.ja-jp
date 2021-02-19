@@ -7,19 +7,19 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - ADO collections [ADO]
 - collections [ADO]
 ms.assetid: b5e1d26d-b41d-4e35-8c7c-972426473dfb
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 0e23f0dedfafb47a5c97bb11f35c02b5527448e8
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: a3eb7878ff0875b916606732ad11dc67a961e269
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88976523"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100035772"
 ---
 # <a name="ado-collections"></a>ADO のコレクション
 これらのコレクションと ADO オブジェクトの間のリレーションシップは、 [Ado オブジェクトモデル](./ado-object-model.md)で表現されます。  
@@ -29,9 +29,9 @@ ms.locfileid: "88976523"
 |コレクション|説明|  
 |-|-|  
 |[エラー](./errors-collection-ado.md)|プロバイダーに関連する単一のエラーへの応答として作成されたすべての **エラー** オブジェクトが含まれます。|  
-|[フィールド](./fields-collection-ado.md)|**レコードセット**オブジェクトのすべての**Field**オブジェクトを格納します。|  
-|[パラメーター](./parameters-collection-ado.md)|**Command**オブジェクトのすべての**パラメーター**オブジェクトを含みます。|  
-|[Properties](./properties-collection-ado.md)|オブジェクトの特定のインスタンスのすべての **プロパティ** オブジェクトを含みます。|  
+|[Fields](./fields-collection-ado.md)|**レコードセット** オブジェクトのすべての **Field** オブジェクトを格納します。|  
+|[パラメーター](./parameters-collection-ado.md)|**Command** オブジェクトのすべての **パラメーター** オブジェクトを含みます。|  
+|[プロパティ](./properties-collection-ado.md)|オブジェクトの特定のインスタンスのすべての **プロパティ** オブジェクトを含みます。|  
   
 ## <a name="see-also"></a>参照  
  [ADO API リファレンス](./ado-api-reference.md)   

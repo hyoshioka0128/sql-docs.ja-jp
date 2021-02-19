@@ -11,13 +11,13 @@ ms.assetid: 96976bac-018c-47cc-b1b2-fa9605eb55e5
 author: markingmyname
 ms.author: maghan
 ms.custom: seo-dt-2019
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: b58fe4128d8df7b01d30b0a5ad11ce41881973ae
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 80cc09a529a1ec59354270dc7b33de3043abcd41
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88327888"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97433521"
 ---
 # <a name="new-date-and-time-features-with-previous-sql-server-versions-ole-db"></a>以前のバージョンの SQL Server における、新しい日付または時刻の機能の動作 (OLE DB)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "88327888"
 ## <a name="down-level-client-behavior"></a>下位クライアントの動作  
  より前のバージョンの Native Client を使用するクライアントアプリケーションで [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] は、新しい日付/時刻型が **nvarchar** 列として表示されます。 列のコンテンツはリテラル表現になります。 詳細については、「データ形式: 文字列とリテラル」を参照してください。 [OLE DB の日付と時刻の改善に関するデータ型のサポートに関する](../../relational-databases/native-client-ole-db-date-time/data-type-support-for-ole-db-date-and-time-improvements.md)セクションを参照してください。 列のサイズは、列に指定された有効桁数に対するリテラルの最大長です。  
   
- Catalog Api は、クライアントに返されるダウンレベルのデータ型コード ( **nvarchar**など) および関連する下位の表現 (適切なリテラル形式など) と一貫性のあるメタデータを返します。 ただし、返されるデータ型名は、実際の [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] の型名です。  
+ Catalog Api は、クライアントに返されるダウンレベルのデータ型コード ( **nvarchar** など) および関連する下位の表現 (適切なリテラル形式など) と一貫性のあるメタデータを返します。 ただし、返されるデータ型名は、実際の [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] の型名です。  
   
  [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)]日付型または時刻型へのスキーマ変更が行われた (以降の) サーバーに対して下位クライアントアプリケーションを実行する場合、想定される動作は次のようになります。  
   
@@ -37,8 +37,8 @@ ms.locfileid: "88327888"
 |DBTYPE_DBTIMESTAMP|||時刻フィールドは 0 に設定されます。|IRowsetChange は、時間フィールドが0以外の場合、文字列の切り捨てによって失敗します。|  
 |DBTYPE_DBTIME||Time(0)|OK|OK|  
 |DBTYPE_DBTIMESTAMP|||日付フィールドは現在の日付に設定されます。|秒の小数部が0以外の場合、文字列の切り捨てによる IRowsetChange は失敗します。<br /><br /> 日付は無視されます。|  
-|DBTYPE_DBTIME||Time(7)|失敗しました-時刻リテラルが無効です。|[OK]|  
-|DBTYPE_DBTIMESTAMP|||失敗しました-時刻リテラルが無効です。|[OK]|  
+|DBTYPE_DBTIME||Time(7)|失敗しました-時刻リテラルが無効です。|OK|  
+|DBTYPE_DBTIMESTAMP|||失敗しました-時刻リテラルが無効です。|OK|  
 |DBTYPE_DBTIMESTAMP||Datetime2 (3)|OK|OK|  
 |DBTYPE_DBTIMESTAMP||Datetime2 (7)|OK|OK|  
 |DBTYPE_DBDATE|Smalldatetime|Date|OK|OK|  
@@ -140,7 +140,7 @@ ms.locfileid: "88327888"
 |CREATE_PARAMS|NULL|NULL|NULL|NULL|NULL|NULL|  
 |IS_NULLABLE|VARIANT_TRUE|VARIANT_TRUE|VARIANT_TRUE|VARIANT_TRUE|VARIANT_TRUE|VARIANT_TRUE|  
 |CASE_SENSITIVE|VARIANT_FALSE|VARIANT_FALSE|VARIANT_FALSE|VARIANT_FALSE|VARIANT_FALSE|VARIANT_FALSE|  
-|検索可能|DB_SEARCHABLE|DB_SEARCHABLE|DB_SEARCHABLE|DB_SEARCHABLE|DB_SEARCHABLE|DB_SEARCHABLE|  
+|SEARCHABLE|DB_SEARCHABLE|DB_SEARCHABLE|DB_SEARCHABLE|DB_SEARCHABLE|DB_SEARCHABLE|DB_SEARCHABLE|  
 |UNSIGNED_ATTRIBUTE|NULL|NULL|NULL|NULL|NULL|NULL|  
 |FIXED_PREC_SCALE|VARIANT_FALSE|VARIANT_FALSE|VARIANT_FALSE|VARIANT_FALSE|VARIANT_FALSE|VARIANT_FALSE|  
 |AUTO_UNIQUE_VALUE|VARIANT_FALSE|VARIANT_FALSE|VARIANT_FALSE|VARIANT_FALSE|VARIANT_FALSE|VARIANT_FALSE|  

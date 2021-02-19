@@ -11,17 +11,17 @@ ms.topic: conceptual
 ms.assetid: c28ffa44-7b8b-4efa-b755-c7a3b1c11ce4
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: c26ab977839927751903eead0533256ab91fde2c
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: b2e188200daf0469f80cf74db901bcc240fd8706
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88370138"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100340694"
 ---
 # <a name="local-audit-for-ssms-usage-and-diagnostic-data-collection"></a>SSMS の使用状況および診断データの収集のローカル監査
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-SQL Server Management Studio (SSMS) には、機能使用状況および診断データを匿名で収集して Microsoft に送信する、インターネット対応機能が含まれています。 SSMS は、標準的なコンピューター情報、および使用とパフォーマンスに関する情報を収集する場合があります。これらの情報は Microsoft に送信され、SSMS の品質、セキュリティ、および信頼性を向上させる目的で分析されます。 お客様の名前、住所などの連絡先情報は収集されません。 詳細については、「[Microsoft プライバシーに関する声明](https://privacy.microsoft.com/privacystatement)」と「[SQL Server のプライバシーの補足情報](https://go.microsoft.com/fwlink/?LinkID=868444)」を参照してください。
+SQL Server Management Studio (SSMS) には、機能使用状況および診断データを匿名で収集して Microsoft に送信する、インターネット対応機能が含まれています。 SSMS は、標準的なコンピューター情報、および使用とパフォーマンスに関する情報を収集する場合があります。これらの情報は Microsoft に送信され、SSMS の品質、セキュリティ、および信頼性を向上させる目的で分析されます。 お客様の名前、住所などの連絡先情報は収集されません。 詳細については、「[Microsoft プライバシーに関する声明](https://privacy.microsoft.com/privacystatement)」と「[SQL Server のプライバシーの補足情報](../sql-server/sql-server-privacy.md)」を参照してください。
 
 ## <a name="audit-feature-usage-and-diagnostic-data"></a>監査機能の使用状況および診断データ
 
@@ -65,4 +65,4 @@ SSMS の使用状況データの収集をオプトインまたはオプトアウ
 ## <a name="see-also"></a>関連項目
 
 - [SQL Server の使用状況および診断データの収集を構成する](../sql-server/usage-and-diagnostic-data-configuration-for-sql-server.md)
-- [SQL Server の使用状況および診断データの収集のローカル監査](https://msdn.microsoft.com/library/mt743085.aspx)
+- [SQL Server の使用状況および診断データの収集のローカル監査](../sql-server/usage-and-diagnostic-data-in-local-audit.md)

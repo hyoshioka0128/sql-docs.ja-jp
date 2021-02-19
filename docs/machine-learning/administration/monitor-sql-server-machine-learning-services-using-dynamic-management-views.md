@@ -8,13 +8,13 @@ ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: 09a01937611b239aeb6db1df406fc057063eb634
-ms.sourcegitcommit: 22102f25db5ccca39aebf96bc861c92f2367c77a
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: 91ae86607ee2127af21ae0d47f80580df32c93cd
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92115546"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100337096"
 ---
 # <a name="monitor-sql-server-machine-learning-services-using-dynamic-management-views-dmvs"></a>動的管理ビュー (DMV) を使用して SQL Server Machine Learning Services を監視する
 [!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
@@ -168,7 +168,7 @@ WHERE object_name LIKE '%External Scripts%'
 | カウンター                   | 説明 |
 |---------------------------|-------------|
 | Total Executions          | ローカルまたはリモート呼び出しによって開始された外部プロセスの数。 |
-| Parallel Executions       | スクリプトに _\@並列処理_仕様が含まれ、[!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] が並列クエリ プランを生成して使用することができた回数。 |
+| Parallel Executions       | スクリプトに _\@並列処理_ 仕様が含まれ、[!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] が並列クエリ プランを生成して使用することができた回数。 |
 | Streaming Executions      | ストリーミング機能が呼び出された回数。 |
 | SQL CC Executions         | 呼び出しがリモートでインスタンス化され、SQL Server が計算コンテキストとして使用された外部スクリプトの実行回数。 |
 | Implied Auth.Login      | ODBC ループバック呼び出しが暗黙の認証を使用して行われた回数。つまり、スクリプト要求を送信したユーザーに代わって [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] が呼び出しを実行した回数。 |
@@ -250,9 +250,9 @@ FROM sys.dm_resource_governor_external_resource_pools AS ep;
 | 列                   | 説明  |
 |--------------------------|--------------|
 | pool_name                | リソース プールの名前。 SQL Server リソース プールの先頭には `SQL Server` が付けられ、外部リソース プールの先頭には `External Pool` が付けられます。 |
-| total_cpu_usage_hours    | リソース ガバナー統計がリセットされてからの累積 CPU 使用率 (ミリ秒単位)。 |
-| read_io_completed_total  | リソース ガバナー統計がリセットされた後に完了した読み取り IO の合計。              |
-| write_io_completed_total | リソース ガバナー統計がリセットされた後に完了した書き込み IO の合計。             |
+| total_cpu_usage_hours    | Resource Governor 統計がリセットされてからの累積 CPU 使用率 (ミリ秒単位)。 |
+| read_io_completed_total  | Resource Governor 統計がリセットされてからの実行済み読み取り IO の合計。              |
+| write_io_completed_total | Resource Governor 統計がリセットされてからの実行済み書き込み IO の合計。             |
 
 ## <a name="installed-packages"></a>インストール済みパッケージ
 

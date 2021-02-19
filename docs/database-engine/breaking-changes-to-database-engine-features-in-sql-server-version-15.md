@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: ''
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: '>=sql-server-2017||=sqlallproducts-allversions||>=sql-server-linux-2017'
-ms.openlocfilehash: 91d1cd485341bcd5bd267aca606f6c12c562918e
-ms.sourcegitcommit: 2f868a77903c1f1c4cecf4ea1c181deee12d5b15
+monikerRange: '>=sql-server-2017||>=sql-server-linux-2017'
+ms.openlocfilehash: e0fe1531c004b20c365c7d0dafc24ad8c2bd4f97
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91670345"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100060034"
 ---
-# <a name="breaking-changes-to-database-engine-in-sssqlv15-md"></a>[!INCLUDE[sssqlv15-md](../includes/sssqlv15-md.md)] におけるデータベース エンジンの重大な変更
+# <a name="breaking-changes-to-database-engine-in-sssql19-md"></a>[!INCLUDE[sssql19-md](../includes/sssql19-md.md)] におけるデータベース エンジンの重大な変更
 [!INCLUDE[sqlserver2019](../includes/applies-to-version/sqlserver2019.md)]
 
 SQL Server 2019 には、重大な変更はありません。

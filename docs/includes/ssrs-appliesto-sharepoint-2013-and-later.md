@@ -8,11 +8,11 @@ ms.topic: include
 ms.date: 02/11/2020
 ms.author: maggies
 ms.custom: include file
-ms.openlocfilehash: dfa181f74dad49c5e54536ad540dcbf07e912e82
-ms.sourcegitcommit: 5c28603dd51d907544ebf8a50b678675d5414eaf
+ms.openlocfilehash: d6874764eaed3a7d206d34576ff9093551fc67f7
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80501606"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100016928"
 ---
- ![はい](media/yes-icon.png)SharePoint 2013 以降
+ :::image type="icon" source="media/yes-icon.png":::SharePoint 2013 以降

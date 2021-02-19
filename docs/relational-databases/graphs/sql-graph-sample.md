@@ -14,25 +14,25 @@ helpviewer_keywords:
 ms.assetid: ''
 author: shkale-msft
 ms.author: shkale
-monikerRange: =azuresqldb-current||>=sql-server-2017||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: eeb6cde4e4b24d9ef7b5e67de8bfd155808fd649
-ms.sourcegitcommit: 75f767c7b1ead31f33a870fddab6bef52f99906b
+monikerRange: =azuresqldb-current||>=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 3ec041d799407434cb7fa374c6808ef3113e3153
+ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87331052"
+ms.lasthandoff: 02/13/2021
+ms.locfileid: "100351432"
 ---
 # <a name="create-a-graph-database-and-run-some-pattern-matching-queries-using-t-sql"></a>グラフデータベースを作成し、T-sql を使用して何らかのパターン一致クエリを実行する
 
-[!INCLUDE[sqlserver2017-asdb](../../includes/applies-to-version/sqlserver2017-asdb.md)]
+[!INCLUDE[sqlserver2017-asdb](../../includes/applies-to-version/sqlserver2017-asdb-asdbmi.md)]
 
-このサンプルでは、 [!INCLUDE[tsql-md](../../includes/tsql-md.md)] ノードとエッジを含むグラフデータベースを作成し、新しい MATCH 句を使用していくつかのパターンに一致し、グラフを走査するスクリプトを示します。 このサンプルスクリプトは、Azure SQL Database との両方で動作します。[!INCLUDE[sssqlv14](../../includes/sssqlv14-md.md)]  
+このサンプルでは、 [!INCLUDE[tsql-md](../../includes/tsql-md.md)] ノードとエッジを含むグラフデータベースを作成し、新しい MATCH 句を使用していくつかのパターンに一致し、グラフを走査するスクリプトを示します。 このサンプルスクリプトは、Azure SQL Database との両方で動作します。 [!INCLUDE[sssql17](../../includes/sssql17-md.md)]  
 
 ## <a name="sample-schema"></a>サンプルスキーマ
 
 このサンプルでは、図1に示すように、People、レストラン、および City ノードを持つ架空のソーシャルネットワークについて、グラフスキーマを作成します。 これらのノードは、友人、いいね!、LivesIn、および LocatedIn エッジを使用して相互に接続されています。
 
-![市区町村-レストラン-テーブル](../../relational-databases/graphs/media/person-cities-restaurants-tables.png "Sql グラフデータベースのサンプル")  
+![レストラン、city、person nodes、LivesIn、LocatedIn、いいねのエッジを含むサンプルスキーマを示す図](../../relational-databases/graphs/media/person-cities-restaurants-tables.png "Sql グラフデータベースのサンプル")  
 図 1: レストラン、city、person nodes、LivesIn、LocatedIn、いいね! のエッジを含むサンプルスキーマ。
 
 ## <a name="sample-script"></a>サンプル スクリプト

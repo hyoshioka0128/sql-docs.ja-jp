@@ -8,11 +8,11 @@ ms.topic: include
 ms.date: 03/26/2018
 ms.author: maggies
 ms.custom: include file
-ms.openlocfilehash: 6f8ebb842caf13a20e2647a0d73ab8ad037d4f3a
-ms.sourcegitcommit: 5c28603dd51d907544ebf8a50b678675d5414eaf
+ms.openlocfilehash: 8eb4d4dc0e08d2eb9b38f9bd9fe755edbd229230
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80502379"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100019587"
 ---
- ![いいえ](media/no-icon.png)Power BI Report Server
+ :::image type="icon" source="media/no-icon.png":::Power BI Report Server

@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 1482104a0c8ffea7f7f2502b83b9b268b7bb08d2
-ms.sourcegitcommit: 67befbf7435f256e766bbce6c1de57799e1db9ad
+ms.openlocfilehash: d706b9ef0ed5d95c411f00d426a8b9daf1415074
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92523957"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100340031"
 ---
 # <a name="adventureworks-sample-databases"></a>AdventureWorks サンプルデータベース
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -35,20 +35,20 @@ ms.locfileid: "92523957"
 次のリンクを使用して、シナリオに適したサンプルデータベースをダウンロードします。 
 
 - **OLTP** データは、最も一般的なオンライントランザクション処理ワークロード用です。 
-- データ**ウェアハウス (DW)** データは、データウェアハウスのワークロードを対象としています。 
+- データ **ウェアハウス (DW)** データは、データウェアハウスのワークロードを対象としています。 
 - **ライトウェイト (LT)** データは、 **OLTP** サンプルの軽量で減らすダウンバージョンです。 
 
 必要なものがわからない場合は、SQL Server バージョンと一致する OLTP バージョンから開始してください。 
 
-|**OLTP** |**データ ウェアハウス (data warehouse)** |**軽量**|
+|**OLTP** |**データウェアハウス** |**軽量**|
 |---------|---------|---------|
 |[AdventureWorks2019](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2019.bak)|[AdventureWorksDW2019](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2019.bak)|[AdventureWorksLT2019](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksLT2019.bak)|
 |[AdventureWorks2017](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2017.bak)|[AdventureWorksDW2017](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2017.bak)|[AdventureWorksLT2017](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksLT2017.bak)|
 |[AdventureWorks2016](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2016.bak)|[AdventureWorksDW2016](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2016.bak)|[AdventureWorksLT2016](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksLT2016.bak)|
-|[AdventureWorks2016_EXT .bak](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2016_EXT.bak)|[AdventureWorksDW2016_EXT .bak](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2016_EXT.bak)| 該当なし |
+|[AdventureWorks2016_EXT .bak](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2016_EXT.bak)|[AdventureWorksDW2016_EXT .bak](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2016_EXT.bak)| N/A |
 |[AdventureWorks2014](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2014.bak)|[AdventureWorksDW2014](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2014.bak)|[AdventureWorksLT2014](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksLT2014.bak)|
 |[AdventureWorks2012](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2012.bak)|[AdventureWorksDW2012](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2012.bak)|[AdventureWorksLT2012](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksLT2012.bak)|
-|[AdventureWorks2008R2](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks2008r2/adventure-works-2008r2-oltp.bak)| [AdventureWorksDW2008R2](https://github.com/microsoft/sql-server-samples/releases/download/adventureworks2008r2/adventure-works-2008r2-dw.bak) | 該当なし |
+|[AdventureWorks2008R2](https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks2008r2/adventure-works-2008r2-oltp.bak)| [AdventureWorksDW2008R2](https://github.com/microsoft/sql-server-samples/releases/download/adventureworks2008r2/adventure-works-2008r2-dw.bak) | N/A |
 
 その他のファイルは、GitHub で直接見つけることができます。 
 
@@ -63,7 +63,7 @@ ms.locfileid: "92523957"
 
 # <a name="sql-server-management-studio-ssms"></a>[SQL Server Management Studio (SSMS)](#tab/ssms)
 
-SQL Server Management Studio (SSMS) を使い慣れていない場合は、 [接続 & クエリ](../ssms/quickstarts/connect-query-sql-server.md) を使用して開始することができます。 
+SQL Server Management Studio (SSMS) を使い慣れていない場合は、 [接続 & クエリ](../ssms/quickstarts/ssms-connect-query-sql-server.md) を使用して開始することができます。 
 
 SQL Server Management Studio でデータベースを復元するには、次の手順を実行します。
 
@@ -73,7 +73,7 @@ SQL Server Management Studio でデータベースを復元するには、次の
    `C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Backup`. 
 
 3. SQL Server Management Studio (SSMS) を開き、で SQL Server に接続します。 
-4. データベースの復元ウィザードを起動するには**オブジェクトエクスプローラー**[データベースの復元 **] で [データベース]** を右クリックします。  >  **Restore Database...** **Restore Database** 
+4. データベースの復元ウィザードを起動するには **オブジェクトエクスプローラー**[データベースの復元 **] で [データベース]** を右クリックします。  >    
 
    :::image type="content" source="media/adventureworks-install-configure/restore-db-ssms.png" alt-text="オブジェクトエクスプローラーでデータベースを右クリックし、[データベースの復元] を選択して、データベースを復元する方法を示すスクリーンショット。":::
 
@@ -84,7 +84,7 @@ SQL Server Management Studio でデータベースを復元するには、次の
 1. [ **ファイル** ] タブを確認し **て、復元** の場所とファイル名が **データベースの復元** ウィザードの目的の場所とファイル名と一致していることを確認します。 
 1. **[OK]** を選択してデータベースを復元します。 
 
-   :::image type="content" source="media/adventureworks-install-configure/restore-db-wizard-ssms.png" alt-text="オブジェクトエクスプローラーでデータベースを右クリックし、[データベースの復元] を選択して、データベースを復元する方法を示すスクリーンショット。":::
+   :::image type="content" source="media/adventureworks-install-configure/restore-db-wizard-ssms.png" alt-text="復元するバックアップセットが強調表示されている [データベースの復元] ウィンドウと、[OK] オプションが表示されたスクリーンショット。":::
 
 SQL Server データベースの復元の詳細については、「 [SSMS を使用したデータベースバックアップの復元](../relational-databases/backup-restore/restore-a-database-backup-using-ssms.md)」を参照してください。
 
@@ -92,7 +92,8 @@ SQL Server データベースの復元の詳細については、「 [SSMS を�
 
 Transact-sql (T-sql) を使用して、サンプルデータベースを復元できます。 AdventureWorks2019 を復元する例を以下に示しますが、データベース名とインストールファイルのパスは環境によって異なる場合があります。 
 
-AdventureWorks2019 を復元するには、必要に応じて環境に合わせて値を変更し、次の Transact-sql (T-sql) コマンドを実行します。
+AdventureWorks2019 を **Windows** に復元するには、必要に応じて環境に合わせて値を変更し、次の Transact-sql (t-sql) コマンドを実行します。
+
 
 ```sql
 USE [master]
@@ -101,6 +102,19 @@ FROM  DISK = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\B
 WITH  FILE = 1,  NOUNLOAD,  STATS = 5
 GO
 
+```
+
+AdventureWorks2019 を **linux** に復元するには、Windows ファイルシステムのパスを linux に変更し、次の Transact-sql (t-sql) コマンドを実行します。 
+
+
+```sql
+USE [master]
+RESTORE DATABASE [AdventureWorks2019]
+FROM DISK = '/var/opt/mssql/backup/AdventureWorks2019.bak'
+WITH MOVE 'AdventureWorks2017' TO '/var/opt/mssql/data/AdventureWorks2019.mdf',
+MOVE 'AdventureWorks2017_log' TO '/var/opt/mssql/data/AdventureWorks2019_log.ldf',
+FILE = 1,  NOUNLOAD,  STATS = 5
+GO
 ```
 
 # <a name="azure-data-studio"></a>[Azure Data Studio](#tab/data-studio)
@@ -117,25 +131,25 @@ Azure Data Studio でデータベースを復元するには、次の手順を�
 1. Azure Data Studio Studio を開き、SQL Server インスタンスに接続します。
 1. サーバーを右クリックし、[ **管理**] を選択します。
 
-   :::image type="content" source="media/adventureworks-install-configure/ads-manage.png" alt-text="オブジェクトエクスプローラーでデータベースを右クリックし、[データベースの復元] を選択して、データベースを復元する方法を示すスクリーンショット。":::
+   :::image type="content" source="media/adventureworks-install-configure/ads-manage.png" alt-text="[管理] オプションが強調表示されている Azure Data Studio を示すスクリーンショット。":::
 
-1. **復元**の選択
+1. **復元** の選択
 
-   :::image type="content" source="media/adventureworks-install-configure/ads-restore-database.png" alt-text="オブジェクトエクスプローラーでデータベースを右クリックし、[データベースの復元] を選択して、データベースを復元する方法を示すスクリーンショット。":::
+   :::image type="content" source="media/adventureworks-install-configure/ads-restore-database.png" alt-text="上部のメニューから [復元] を選択して、データベースを復元します。":::
 
 1. [ **全般** ] タブで、[ **ソース**] の一覧に表示される値を入力します。
     1. [ **復元元**] で、[ *バックアップファイル*] を選択します。
     1. [ **バックアップファイルのパス**] で、.bak ファイルを保存した場所を選択します。 
     
-   :::image type="content" source="media/adventureworks-install-configure/ads-source.png" alt-text="オブジェクトエクスプローラーでデータベースを右クリックし、[データベースの復元] を選択して、データベースを復元する方法を示すスクリーンショット。":::
+   :::image type="content" source="media/adventureworks-install-configure/ads-source.png" alt-text="バックアップファイルのパスを選択してください":::
     
-    これにより、 **データベース**、 **ターゲットデータベース** 、復元などの残りのフィールドが自動的 **に**設定されます。 
+    これにより、 **データベース**、 **ターゲットデータベース** 、復元などの残りのフィールドが自動的 **に** 設定されます。 
 
-   :::image type="content" source="media/adventureworks-install-configure/ads-destination-restore-plan.png" alt-text="オブジェクトエクスプローラーでデータベースを右クリックし、[データベースの復元] を選択して、データベースを復元する方法を示すスクリーンショット。":::
+   :::image type="content" source="media/adventureworks-install-configure/ads-destination-restore-plan.png" alt-text="バックアップファイルのパスを選択すると、残りのフィールドは自動設定されます。":::
 
 1. [ **復元** ] を選択して、データベースを復元します。 
 
-   :::image type="content" source="media/adventureworks-install-configure/ads-restore.png" alt-text="オブジェクトエクスプローラーでデータベースを右クリックし、[データベースの復元] を選択して、データベースを復元する方法を示すスクリーンショット。":::
+   :::image type="content" source="media/adventureworks-install-configure/ads-restore.png" alt-text="準備ができたら、[復元] を選択してデータベースを復元します。":::
 
 ---
 
@@ -157,7 +171,7 @@ Azure SQL Database で新しいデータベースを作成する場合は、空�
 1. 要求された情報を入力して、データベースを作成します。 
 1. [**追加設定**] タブで、[**データソース**] の下の既存のデータとして [**サンプル**] を選択します。 
 
-   :::image type="content" source="media/adventureworks-install-configure/deploy-sample-to-azure.png" alt-text="オブジェクトエクスプローラーでデータベースを右クリックし、[データベースの復元] を選択して、データベースを復元する方法を示すスクリーンショット。":::
+   :::image type="content" source="media/adventureworks-install-configure/deploy-sample-to-azure.png" alt-text="Azure SQL Database を作成するときに、Azure portal の [追加設定] タブでデータソースとして [サンプル] を選択します。":::
 
 1. [ **作成** ] を選択して、AdventureWorksLT データベースの復元されたコピーである新しい SQL Database を作成します。 
 
@@ -172,7 +186,7 @@ SQL Server から Azure SQL Database にサンプルデータベースを配置�
 1. まだ実行していない場合は、 [サンプルデータベースを SQL Server に復元](#restore-to-sql-server)します。 
 1. 復元したデータベースを右クリックし、**オブジェクトエクスプローラー**  >  **タスク**] [  >  **データベースを Microsoft Azure SQL Database に配置**...] の順にクリックします。 
 
-   :::image type="content" source="media/adventureworks-install-configure/deploy-db-to-azure.png" alt-text="オブジェクトエクスプローラーでデータベースを右クリックし、[データベースの復元] を選択して、データベースを復元する方法を示すスクリーンショット。":::
+   :::image type="content" source="media/adventureworks-install-configure/deploy-db-to-azure.png" alt-text="データベースを右クリックして [タスク] を選択し、Microsoft Azure SQL Database にデータベースを配置することを選択します。":::
 
 1. ウィザードに従って Azure SQL Database に接続し、データベースをデプロイします。 
 
@@ -194,5 +208,5 @@ SQL Server から Azure SQL Database にサンプルデータベースを配置�
 
 
 [SQL Server データベースエンジンのチュートリアル](../relational-databases/database-engine-tutorials.md)   
-[SQL Server Management Studio を使用した接続とクエリ (SSMS)](../ssms/quickstarts/connect-query-sql-server.md)   
-[Azure Data Studio を使用した接続とクエリ](../ssms/quickstarts/connect-query-sql-server.md)
+[SQL Server Management Studio を使用した接続とクエリ (SSMS)](../ssms/quickstarts/ssms-connect-query-sql-server.md)   
+[Azure Data Studio を使用した接続とクエリ](../ssms/quickstarts/ssms-connect-query-sql-server.md)

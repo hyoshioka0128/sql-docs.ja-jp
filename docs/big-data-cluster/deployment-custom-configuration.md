@@ -9,25 +9,25 @@ ms.date: 06/22/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 48a2c99a029517ebbab24b017bbaeba906b1c6cb
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: d983b4d0d7cfb02a587675984fdc42c54bf9f0ec
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91725865"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100047202"
 ---
 # <a name="configure-deployment-settings-for-cluster-resources-and-services"></a>クラスター リソースとサービスの展開設定を構成する
 
 [!INCLUDE[SQL Server 2019](../includes/applies-to-version/sqlserver2019.md)]
 
-`azdata` 管理ツールに組み込まれている事前定義された構成プロファイルのセットから開始すると、ご自分の BDC ワークロード要件に合わせて、既定の設定を簡単に変更することができます。 構成ファイルの構造により、リソースの各サービスの設定を詳細に更新することができます。
+[!INCLUDE [azure-data-cli-azdata](../includes/azure-data-cli-azdata.md)] 管理ツールに組み込まれている事前定義された構成プロファイルのセットから開始すると、ご自分の BDC ワークロード要件に合わせて、既定の設定を簡単に変更することができます。 構成ファイルの構造により、リソースの各サービスの設定を詳細に更新することができます。
 
 ビッグ データ クラスターの構成の概要については、この 13 分間のビデオをご覧ください。
 
 > [!VIDEO https://channel9.msdn.com/Shows/Data-Exposed/Big-Data-Cluster-Configuration/player?WT.mc_id=dataexposed-c9-niner]
 
 > [!TIP]
-> 高可用性サービスを展開する方法の詳細については、[SQL Server マスター](deployment-high-availability.md)や [HDFS 名前ノード](deployment-high-availability-hdfs-spark.md)などのミッション クリティカルなコンポーネントに対して**高可用性**を構成する方法に関する記事を参照してください。
+> 高可用性サービスを展開する方法の詳細については、[SQL Server マスター](deployment-high-availability.md)や [HDFS 名前ノード](deployment-high-availability-hdfs-spark.md)などのミッション クリティカルなコンポーネントに対して **高可用性** を構成する方法に関する記事を参照してください。
 
 リソース レベルの構成を設定したり、リソース内のすべてのサービスの構成を更新したりすることもできます。 `bdc.json` の構造の概要を次に示します。
 
@@ -648,7 +648,7 @@ azdata bdc config patch --config-file custom-bdc/bdc.json --patch-file ./patch.j
 }
 ```
 
-手動で `control.json` を編集して、上記のセクションを `spec` に追加することができます。または、次のような修正プログラム ファイル `elasticsearch-patch.json` 作成し、`azdata` CLI を使用して `control.json` ファイルに修正プログラムを適用することもできます。
+手動で `control.json` を編集して、上記のセクションを `spec` に追加することができます。または、次のような修正プログラム ファイル `elasticsearch-patch.json` を作成し、[!INCLUDE [azure-data-cli-azdata](../includes/azure-data-cli-azdata.md)] を使用して `control.json` ファイルに修正プログラムを適用することもできます。
 
 ```json
 {

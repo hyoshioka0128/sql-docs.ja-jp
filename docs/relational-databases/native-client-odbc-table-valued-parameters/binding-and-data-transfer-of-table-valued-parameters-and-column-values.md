@@ -1,6 +1,6 @@
 ---
-title: テーブル値パラメーターのデータ転送
-description: テーブル値パラメーターのデータ転送について説明します。
+title: Table-Valued パラメーターのデータ転送
+description: Table-Valued パラメーターのデータ転送について説明します
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.technology: native-client
@@ -11,12 +11,13 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: ''
 ms.date: 07/01/2020
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 0be2ffbfb7160d5be8f5ebb2a2ed688103a54b4d
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 19a7f22cd26ea4988364d51ff70300cdbf42d365
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86004614"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97436158"
 ---
 # <a name="binding-and-data-transfer-of-table-valued-parameters-and-column-values"></a>テーブル値パラメーターおよび列の値のバインドとデータ転送
 
@@ -26,7 +27,7 @@ ms.locfileid: "86004614"
 
 [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降では、入力のテーブル値パラメーターのみがサポートされています。 そのため、SQL_DESC_PARAMETER_TYPE を SQL_PARAM_INPUT 以外の値に設定しようとすると、SQLSTATE = HY105 で SQL_ERROR が返され、"パラメーターの型が無効です" というメッセージが表示されます。  
 
-属性 SQL_CA_SS_COL_HAS_DEFAULT_VALUE を使用すると、テーブル値パラメーターのすべての列に既定値を割り当てることができます。 ただし、テーブル値パラメーターの個々の列値には、SQLBindParameter で*StrLen_or_IndPtr*の SQL_DEFAULT_PARAM を使用して既定値を割り当てることはできません。 SQLBindParameter で*StrLen_or_IndPtr*で SQL_DEFAULT_PARAM を使用すると、テーブル値パラメーター全体を既定値に設定することはできません。 これらの規則に従わないと、SQLExecute または SQLExecDirect は SQL_ERROR を返します。 診断レコードは SQLSTATE = 07S01 というメッセージで生成されます。 "パラメーターの既定のパラメーターが正しく使用されていませ \<p> \<p> ん。" は、クエリステートメント内の tvp の序数です。  
+属性 SQL_CA_SS_COL_HAS_DEFAULT_VALUE を使用すると、テーブル値パラメーターのすべての列に既定値を割り当てることができます。 ただし、テーブル値パラメーターの個々の列値には、SQLBindParameter で *StrLen_or_IndPtr* の SQL_DEFAULT_PARAM を使用して既定値を割り当てることはできません。 SQLBindParameter で *StrLen_or_IndPtr* で SQL_DEFAULT_PARAM を使用すると、テーブル値パラメーター全体を既定値に設定することはできません。 これらの規則に従わないと、SQLExecute または SQLExecDirect は SQL_ERROR を返します。 診断レコードは SQLSTATE = 07S01 というメッセージで生成されます。 "パラメーターの既定のパラメーターが正しく使用されていませ \<p> \<p> ん。" は、クエリステートメント内の tvp の序数です。  
 
 > [!Note]
 > テーブル値パラメーターには、既定値が設定されていません。 SQL_DEFAULT_PARAM は行がないことを示しているためです。 行が存在しない場合は、バインドする列がありません。
@@ -43,9 +44,9 @@ ms.locfileid: "86004614"
 |*InputOutputType*|IPD の SQL_DESC_PARAMETER_TYPE。<br /><br /> テーブル値パラメーターの列の場合、これはテーブル値パラメーター自体の設定と同じである必要があります。|IPD の SQL_DESC_PARAMETER_TYPE。<br /><br /> これは SQL_PARAM_INPUT である必要があります。|  
 |*ValueType*|APD の SQL_DESC_TYPE、SQL_DESC_CONCISE_TYPE。|APD の SQL_DESC_TYPE、SQL_DESC_CONCISE_TYPE。<br /><br /> これは SQL_C_DEFAULT または SQL_C_BINARY である必要があります。|  
 |*ParameterType*|IPD の SQL_DESC_TYPE、SQL_DESC_CONCISE_TYPE。|IPD の SQL_DESC_TYPE、SQL_DESC_CONCISE_TYPE。<br /><br /> これは SQL_SS_TABLE である必要があります。|  
-|*ColumnSize*|IPD の SQL_DESC_LENGTH または SQL_DESC_PRECISION。<br /><br /> これは、 *ParameterType*の値によって異なります。|SQL_DESC_ARRAY_SIZE<br /><br /> テーブル値パラメーターにフォーカスが設定されている場合は SQL_ATTR_PARAM_SET_SIZE を使用して設定することもできます。<br /><br /> テーブル値パラメーターの場合、これはテーブル値パラメーターの列バッファー内の行数です。|  
+|*ColumnSize*|IPD の SQL_DESC_LENGTH または SQL_DESC_PRECISION。<br /><br /> これは、 *ParameterType* の値によって異なります。|SQL_DESC_ARRAY_SIZE<br /><br /> テーブル値パラメーターにフォーカスが設定されている場合は SQL_ATTR_PARAM_SET_SIZE を使用して設定することもできます。<br /><br /> テーブル値パラメーターの場合、これはテーブル値パラメーターの列バッファー内の行数です。|  
 |*DecimalDigits*|IPD の SQL_DESC_PRECISION または SQL_DESC_SCALE。|未使用。 これは 0 である必要があります。<br /><br /> このパラメーターが0でない場合、SQLBindParameter は SQL_ERROR を返し、"有効桁数または小数点以下桁数が無効です" というメッセージで SQLSTATE = HY104 の診断レコードが生成されます。|  
-|*ParameterValuePtr*|APD の SQL_DESC_DATA_PTR。|SQL_CA_SS_TYPE_NAME。<br /><br /> これは、ストアドプロシージャの呼び出しでは省略可能であり、必要でない場合は NULL を指定できます。 プロシージャ呼び出しではない SQL ステートメントに対して指定する必要があります。<br /><br /> このパラメーターは、可変の行バインドの使用時にアプリケーションがテーブル値パラメーターを特定するための一意の値としても機能します。 詳細については、「テーブル値パラメーターの可変の行バインド」を参照してください。<br /><br /> SQLBindParameter の呼び出しでテーブル値パラメーターの型名を指定する場合は、ANSI アプリケーションとしてビルドされたアプリケーションであっても、Unicode 値として指定する必要があります。 パラメーター *StrLen_or_IndPtr*に使用される値は、SQL_NTS または名前の文字列の長さに (WCHAR) のサイズを乗算した値である必要があります。|  
+|*ParameterValuePtr*|APD の SQL_DESC_DATA_PTR。|SQL_CA_SS_TYPE_NAME。<br /><br /> これは、ストアドプロシージャの呼び出しでは省略可能であり、必要でない場合は NULL を指定できます。 プロシージャ呼び出しではない SQL ステートメントに対して指定する必要があります。<br /><br /> このパラメーターは、可変の行バインドの使用時にアプリケーションがテーブル値パラメーターを特定するための一意の値としても機能します。 詳細については、「テーブル値パラメーターの可変の行バインド」を参照してください。<br /><br /> SQLBindParameter の呼び出しでテーブル値パラメーターの型名を指定する場合は、ANSI アプリケーションとしてビルドされたアプリケーションであっても、Unicode 値として指定する必要があります。 パラメーター *StrLen_or_IndPtr* に使用される値は、SQL_NTS または名前の文字列の長さに (WCHAR) のサイズを乗算した値である必要があります。|  
 |*BufferLength*|APD の SQL_DESC_OCTET_LENGTH。|テーブル値パラメーターの型名の長さ (バイト単位)。<br /><br /> 型名が null で終わる場合は SQL_NTS、テーブル値パラメーターの型名が不要な場合は0になります。|  
 |*StrLen_or_IndPtr*|APD の SQL_DESC_OCTET_LENGTH_PTR。|APD の SQL_DESC_OCTET_LENGTH_PTR。<br /><br /> テーブル値パラメーターの場合、これはデータ長ではなく行数です。|  
 ||||
@@ -68,35 +69,35 @@ ms.locfileid: "86004614"
 
 3. SQLSetStmtAttr を呼び出して、SQL_SOPT_SS_PARAM_FOCUS を0に設定します。 これは、SQLExecute または SQLExecDirect が呼び出される前に実行する必要があります。 それ以外の場合は SQL_ERROR が返され、"無効な属性値、SQL_SOPT_SS_PARAM_FOCUS (実行時には0でなければなりません)" というメッセージで SQLSTATE = HY024 の診断レコードが生成されます。  
 
-4. 行を含まないテーブル値パラメーターの SQL_DEFAULT_PARAM に*StrLen_or_IndPtr*または SQL_DESC_OCTET_LENGTH_PTR を設定します。または、テーブル値パラメーターに行がある場合は、sqlexecute または SQLExecDirect の次回の呼び出し時に転送される行の数を設定します。 テーブル値パラメーターが null 許容ではないため、 *StrLen_or_IndPtr*または SQL_DESC_OCTET_LENGTH_PTR をテーブル値パラメーターの SQL_NULL_DATA に設定することはできません (ただし、テーブル値パラメーターの構成列には null 値が許容される可能性があります)。 この値が無効な値に設定されている場合、SQLExecute または SQLExecDirect は SQL_ERROR を返し、"パラメーターの文字列またはバッファーの長さが正しくありません" というメッセージが表示され \<p> ます。ここで、p はパラメーター番号です。
+4. 行を含まないテーブル値パラメーターの SQL_DEFAULT_PARAM に *StrLen_or_IndPtr* または SQL_DESC_OCTET_LENGTH_PTR を設定します。または、テーブル値パラメーターに行がある場合は、sqlexecute または SQLExecDirect の次回の呼び出し時に転送される行の数を設定します。 テーブル値パラメーターが null 許容ではないため、 *StrLen_or_IndPtr* または SQL_DESC_OCTET_LENGTH_PTR をテーブル値パラメーターの SQL_NULL_DATA に設定することはできません (ただし、テーブル値パラメーターの構成列には null 値が許容される可能性があります)。 この値が無効な値に設定されている場合、SQLExecute または SQLExecDirect は SQL_ERROR を返し、"パラメーターの文字列またはバッファーの長さが正しくありません" というメッセージが表示され \<p> ます。ここで、p はパラメーター番号です。
 
 5. SQLExecute または SQLExecDirect を呼び出します。
 
-    入力テーブル値パラメーターの列の値は、 *StrLen_or_IndPtr*が SQL_LEN_DATA_AT_EXEC (*長さ*) に設定されているか、列の SQL_DATA_AT_EXEC に設定されている場合に、部分的に渡すことができます。 これは、パラメーターの配列を使用するときに値を個別に渡す場合と似ています。 実行時データのすべてのパラメーターと同様に、SQLParamData は、ドライバーがデータを要求している配列の行を示していません。アプリケーションでは、このことに対処する必要があります。 アプリケーションは、ドライバーが値を要求する順序について、想定を行うことはできません。  
+    入力テーブル値パラメーターの列の値は、 *StrLen_or_IndPtr* が SQL_LEN_DATA_AT_EXEC (*長さ*) に設定されているか、列の SQL_DATA_AT_EXEC に設定されている場合に、部分的に渡すことができます。 これは、パラメーターの配列を使用するときに値を個別に渡す場合と似ています。 実行時データのすべてのパラメーターと同様に、SQLParamData は、ドライバーがデータを要求している配列の行を示していません。アプリケーションでは、このことに対処する必要があります。 アプリケーションは、ドライバーが値を要求する順序について、想定を行うことはできません。  
 
 ## <a name="variable-table-valued-parameter-row-binding"></a>テーブル値パラメーターの可変の行バインド  
 
 可変行バインドでは、実行時に行がバッチで転送され、アプリケーションは必要に応じて行をドライバーに渡します。 これは、各パラメーター値の実行時データに似ています。 可変の行バインドでは、アプリケーションによって次の処理が行われます。  
 
-1. 前のセクション「固定テーブル値パラメーターの行バインド」の手順 1. ~ 3. で説明したように、パラメーターおよびテーブル値パラメーター列をバインドします。  
+1. 前のセクションの手順 1. ~ 3. で説明したように、パラメーターとテーブル値パラメーターの列をバインドします。前のセクション「固定 Table-Valued パラメーターの行バインド」を参照してください。  
 
-2. 実行時に SQL_DATA_AT_EXEC に渡すテーブル値パラメーターの*StrLen_or_IndPtr*または SQL_DESC_OCTET_LENGTH_PTR を設定します。 どちらも設定されていない場合は、前のセクションで説明したように、パラメーターが処理されます。  
+2. 実行時に SQL_DATA_AT_EXEC に渡すテーブル値パラメーターの *StrLen_or_IndPtr* または SQL_DESC_OCTET_LENGTH_PTR を設定します。 どちらも設定されていない場合は、前のセクションで説明したように、パラメーターが処理されます。  
 
 3. SQLExecute または SQLExecDirect を呼び出します。 これは、実行時データパラメーターとして処理される SQL_PARAM_INPUT または SQL_PARAM_INPUT_OUTPUT パラメーターがある場合に SQL_NEED_DATA を返します。 この場合、アプリケーションによって次の処理が行われます。  
 
-    - SQLParamData を呼び出します。 これにより、実行時データパラメーターの*Parametervalueptr*値と SQL_NEED_DATA のリターンコードが返されます。 すべてのパラメーターデータがドライバーに渡されると、SQLParamData は SQL_SUCCESS、SQL_SUCCESS_WITH_INFO、または SQL_ERROR を返します。 実行時データパラメーターの場合、 *Parametervalueptr*は、記述子フィールド SQL_DESC_DATA_PTR と同じですが、値が一意に必要なパラメーターを識別するためのトークンと見なすことができます。 この "トークン" は、バインド時にアプリケーションからドライバーに渡され、実行時にアプリケーションに返されます。  
+    - SQLParamData を呼び出します。 これにより、実行時データパラメーターの *Parametervalueptr* 値と SQL_NEED_DATA のリターンコードが返されます。 すべてのパラメーターデータがドライバーに渡されると、SQLParamData は SQL_SUCCESS、SQL_SUCCESS_WITH_INFO、または SQL_ERROR を返します。 実行時データパラメーターの場合、 *Parametervalueptr* は、記述子フィールド SQL_DESC_DATA_PTR と同じですが、値が一意に必要なパラメーターを識別するためのトークンと見なすことができます。 この "トークン" は、バインド時にアプリケーションからドライバーに渡され、実行時にアプリケーションに返されます。  
   
-4. Null テーブル値パラメーターのテーブル値パラメーターの行データを送信するには、テーブル値パラメーターに行がない場合、アプリケーションは*StrLen_or_Ind*を SQL_DEFAULT_PARAM に設定して SQLPutData を呼び出します。  
+4. Null テーブル値パラメーターのテーブル値パラメーターの行データを送信するには、テーブル値パラメーターに行がない場合、アプリケーションは *StrLen_or_Ind* を SQL_DEFAULT_PARAM に設定して SQLPutData を呼び出します。  
 
     NULL 以外の TVP については、アプリケーションによって次の処理が行われます。
 
-    - すべてのテーブル値パラメーター列の*Str_Len_or_Ind*を適切な値に設定し、実行時データパラメーターではないテーブル値パラメーター列のデータバッファーを設定します。 通常のパラメーターを個別にドライバーに渡すことができるように、テーブル値パラメーターの列の実行時データを使用することができます。  
+    - すべてのテーブル値パラメーター列の *Str_Len_or_Ind* を適切な値に設定し、実行時データパラメーターではないテーブル値パラメーター列のデータバッファーを設定します。 通常のパラメーターを個別にドライバーに渡すことができるように、テーブル値パラメーターの列の実行時データを使用することができます。  
 
-    - は、サーバーに送信される行の数に設定された*Str_Len_or_Ind*を使用して SQLPutData を呼び出します。 0 ~ SQL_DESC_ARRAY_SIZE または SQL_DEFAULT_PARAM の範囲外の値はエラーとなり、"文字列またはバッファーの長さが無効です" というメッセージと共に SQLSTATE HY090 が返されます。 0は、すべての行が送信され、テーブル値パラメーターのデータがないことを示します (この一覧の2番目の箇条書き項目を参照)。 SQL_DEFAULT_PARAM を使用できるのは、ドライバーがテーブル値パラメーターのデータを最初に要求するときだけです (この箇条書きの 1 番目の項目参照)。  
+    - は、サーバーに送信される行の数に設定された *Str_Len_or_Ind* を使用して SQLPutData を呼び出します。 0 ~ SQL_DESC_ARRAY_SIZE または SQL_DEFAULT_PARAM の範囲外の値はエラーとなり、"文字列またはバッファーの長さが無効です" というメッセージと共に SQLSTATE HY090 が返されます。 0は、すべての行が送信され、テーブル値パラメーターのデータがないことを示します (この一覧の2番目の箇条書き項目を参照)。 SQL_DEFAULT_PARAM を使用できるのは、ドライバーがテーブル値パラメーターのデータを最初に要求するときだけです (この箇条書きの 1 番目の項目参照)。  
 
-5. すべての行が送信されると、は*Str_Len_or_Ind*値が0のテーブル値パラメーターの SQLPutData を呼び出した後、上記の手順3a に進みます。  
+5. すべての行が送信されると、は *Str_Len_or_Ind* 値が0のテーブル値パラメーターの SQLPutData を呼び出した後、上記の手順3a に進みます。  
 
-6. SQLParamData を再度呼び出します。 テーブル値パラメーターの列の間に実行時データパラメーターがある場合は、SQLParamData によって返される値*Valueptrptr*によって識別されます。 すべての列値を使用できる場合、SQLParamData はテーブル値パラメーターの*Parametervalueptr*値を返し、アプリケーションは再度開始します。  
+6. SQLParamData を再度呼び出します。 テーブル値パラメーターの列の間に実行時データパラメーターがある場合は、SQLParamData によって返される値 *Valueptrptr* によって識別されます。 すべての列値を使用できる場合、SQLParamData はテーブル値パラメーターの *Parametervalueptr* 値を返し、アプリケーションは再度開始します。  
 
 ## <a name="next-steps"></a>次のステップ
 

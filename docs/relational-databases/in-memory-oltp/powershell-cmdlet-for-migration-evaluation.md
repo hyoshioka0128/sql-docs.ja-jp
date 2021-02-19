@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: 117250d3-9982-47fe-94fd-6f29f6159940
 author: MightyPen
 ms.author: genemi
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: f0c3489dab411718eb32e8ff4dd6c182ec59f2b8
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 78b4d84a98d7ea2c753a673a222a1a19e0b7e5e2
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85722382"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641286"
 ---
 # <a name="powershell-cmdlet-for-migration-evaluation"></a>移行を評価するための PowerShell コマンドレット
 
@@ -27,7 +27,7 @@ ms.locfileid: "85722382"
 
 現時点では、このコマンドレットはインメモリ OLTP の移行適合性の評価に制限されています。 このコマンドレットは、管理者特権の Windows PowerShell 環境と sqlps の両方で実行できます。
 
-この PowerShell コマンドレットを直接実行する代わりに、SQL Server Management Studio (SSMS) を使用してコマンドレットを暗黙的に実行することもできます。 SSMS **オブジェクトエクスプローラー**でテーブルを右クリックし、 **[メモリ最適化アドバイザー]** をクリックします。
+この PowerShell コマンドレットを直接実行する代わりに、SQL Server Management Studio (SSMS) を使用してコマンドレットを暗黙的に実行することもできます。 SSMS **オブジェクトエクスプローラー** でテーブルを右クリックし、 **[メモリ最適化アドバイザー]** をクリックします。
 
 ## <a name="syntax"></a>構文
 
@@ -56,7 +56,7 @@ Save-SqlMigrationReport
 - `-Schema`
 - `-Object`
 
-逆に、`-InputObject` を指定_しない_場合は、`-Server` および `-Database` を指定します。 `-Server` を指定する場合、`-Schema` または `-Object`、またはその両方を指定して範囲を狭めるオプションがあります。
+逆に、`-InputObject` を指定 _しない_ 場合は、`-Server` および `-Database` を指定します。 `-Server` を指定する場合、`-Schema` または `-Object`、またはその両方を指定して範囲を狭めるオプションがあります。
 
 | パラメーター名 | 説明 |
 | :------------- | :---------- |
@@ -192,4 +192,4 @@ HTML は、主に次のヘッダーを持つ 2 列のテーブルです。
 
 ## <a name="related-links"></a>関連リンク
 
-- リファレンス ドキュメント:[Save-SqlMigrationReport](/powershell/module/sqlserver/save-sqlmigrationreport?view=sqlserver-ps)
+- リファレンス ドキュメント:[Save-SqlMigrationReport](/powershell/module/sqlserver/save-sqlmigrationreport)

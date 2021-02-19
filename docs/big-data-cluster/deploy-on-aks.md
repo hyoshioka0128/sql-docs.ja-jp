@@ -10,12 +10,12 @@ ms.date: 12/13/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: d82ac562495e916ce34b591190f6c427e6c8413e
-ms.sourcegitcommit: 7345e4f05d6c06e1bcd73747a4a47873b3f3251f
+ms.openlocfilehash: 2021cf90230bd22de775cef164336f9e31631991
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88765941"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100038802"
 ---
 # <a name="configure-azure-kubernetes-service-for-sql-server-big-data-cluster-deployments"></a>SQL Server ビッグ データ クラスターの展開のために Azure Kubernetes Service を構成する
 
@@ -149,7 +149,7 @@ Azure リソース グループは、Azure リソースが展開され管理さ�
 
 ## <a name="connect-to-the-cluster"></a>クラスターに接続する
 
-1. kubectl を構成して Kubernetes クラスターに接続するには、[az aks get-credentials](/cli/azure/aks?view=azure-cli-latest#az-aks-get-credentials) コマンドを実行します。 この手順では、資格情報をダウンロードし、それらを使用するために kubectl CLI を構成します。
+1. kubectl を構成して Kubernetes クラスターに接続するには、[az aks get-credentials](/cli/azure/aks#az-aks-get-credentials) コマンドを実行します。 この手順では、資格情報をダウンロードし、それらを使用するために kubectl CLI を構成します。
 
    ```azurecli
    az aks get-credentials --resource-group=sqlbdcgroup --name kubcluster
@@ -165,7 +165,7 @@ Azure リソース グループは、Azure リソースが展開され管理さ�
 
 上記のコマンドを利用して Azure Kubernetes サービスを作成する際に問題が発生した場合は、次の解決策を試してください。
 
-- [最新の Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) がインストールされていることを確認してください。
+- [最新の Azure CLI](/cli/azure/install-azure-cli) がインストールされていることを確認してください。
 - 別のリソース グループとクラスター名を使用して、同じ手順を試してください。
 - 詳細な [AKS のトラブルシューティングのドキュメント](/azure/aks/troubleshooting)を参照してください。
 

@@ -5,16 +5,16 @@ description: SQL Server 言語拡張を使用し、SQL Server ストアド プ�
 author: dphansen
 ms.author: davidph
 ms.date: 06/25/2020
-ms.topic: conceptual
+ms.topic: how-to
 ms.prod: sql
 ms.technology: language-extensions
-monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 901410fb36080d39436a3a908a0ffd9260c5b513
-ms.sourcegitcommit: 346a37242f889d76cd783f55aeed98023c693610
+monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15'
+ms.openlocfilehash: 263979480f9cb4d4326560f0bb8bae5157cf777f
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91765803"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100072743"
 ---
 # <a name="how-to-call-the-java-runtime-in-sql-server-language-extensions"></a>SQL Server 言語拡張で Java ランタイムを呼び出す方法
 [!INCLUDE [SQL Server 2019 and later](../../includes/applies-to-version/sqlserver2019.md)]

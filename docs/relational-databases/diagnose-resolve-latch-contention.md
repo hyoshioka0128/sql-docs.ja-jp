@@ -3,18 +3,18 @@ title: 'ホワイトペーパー: ラッチの競合の診断と解決'
 description: この記事では、SQL Server におけるラッチの競合の診断と解決について詳しく説明します。 この記事は、当初、Microsoft の SQLCAT チームによって公開されたものです。
 ms.date: 09/30/2020
 ms.prod: sql
-ms.reviewer: jroth
+ms.reviewer: wiassaf
 ms.technology: performance
 ms.topic: how-to
 author: bluefooted
 ms.author: pamela
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: c1cbf760c16d6de88906d03f511315ae6caec335
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 67f6fe5f8c1577142ac2356a070a954f94b856f1
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91811884"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100075016"
 ---
 # <a name="diagnose-and-resolve-latch-contention-on-sql-server"></a>SQL Server でラッチの競合を診断および解決する
 
@@ -58,7 +58,7 @@ SQL Server のページは 8 KB で、複数の行を格納できます。 コ�
 
 * **KP** -- 保持ラッチ (Keep Latch)。参照されている構造を破棄できないようにします。 スレッドでバッファーの構造を確認する必要がある場合に使用されます。 KP ラッチは、破棄 (DT) ラッチを除くすべてのラッチと互換性があるため、KP ラッチは "軽量" と見なされます。つまり、使用したときのパフォーマンスへの影響が最小限です。 KP ラッチは DT ラッチと互換性がないため、参照されている構造体が他のスレッドによって破棄されることはありません。 たとえば、KP ラッチを使用すると、それによって参照される構造体が、レイジーライター プロセスによって破棄されなくなります。 SQL Server のバッファー ページ管理でレイジーライター プロセスを使用する方法の詳細については、「[ページの書き込み](./writing-pages.md)」を参照してください。
 
-* **SH** -- 共有ラッチ (Shared Latch)。ページ構造を読み取るために必要です。 
+* **SH** -- 共有ラッチ。参照されている構造体を読み取るために必要です (データ ページの読み取りなど)。 共有ラッチの下では、複数のスレッドからリソースに同時にアクセスして読み取りを行うことができます。
 * **UP** -- 更新ラッチ (Update Latch)。SH (共有ラッチ) および KP とは互換性がありますが、それ以外とはないので、参照されている構造体に EX ラッチで書き込むことはできません。 
 * **EX** - 排他ラッチ (Exclusive Latch)。参照されている構造体に対する他のスレッドによる書き込みまたは読み取りをブロックします。 使用例の 1 つは、破損ページ保護のためにページの内容を変更する場合です。 
 * **DT** -- 破棄ラッチ (Destroy Latch)。参照されている構造の内容を破棄する前に取得する必要があります。 たとえば、他のスレッドで使用できる空きバッファーのリストに追加する前に、クリーン ページを解放するため、レイジーライター プロセスで DT ラッチを取得する必要があります。
@@ -163,7 +163,7 @@ OLTP 環境でパフォーマンスを妨げるラッチの競合は、通常、
 
 3. ラッチに関係があるものの割合を判断します。
 
-累積待機情報は、*sys.dm_os_wait_stats* DMV から入手できます。 最も一般的なラッチの競合の種類はバッファー ラッチ競合であり、*wait_type* が **PAGELATCH\_\*** であるラッチ待機時間の増加として観察されます。 非バッファー ラッチは、待機の種類 **LATCH\*** の下にグループ化されています。 次の図に示すように、まず、*sys.dm_os_wait_stats* DMV を使用してシステムの累積待機時間を取得し、バッファー ラッチまたは非バッファー ラッチによる全体的な待機時間の割合を確認する必要があります。 非バッファー ラッチが発生している場合は、*sys.dm_os_latch_stats* DMV も調べる必要があります。
+累積待機情報は、*sys.dm_os_wait_stats* DMV から入手できます。 最も一般的なラッチの競合の種類はバッファー ラッチ競合であり、*wait_type* が **PAGELATCH\_\** _ であるラッチ待機時間の増加として観察されます。 非バッファー ラッチは、待機の種類 _*LATCH\**_ の下にグループ化されています。 次の図に示すように、まず、_sys.dm_os_wait_stats* DMV を使用してシステムの累積待機時間を取得し、バッファーまたは非バッファー ラッチによる全体的な待機時間の割合を確認する必要があります。 非バッファー ラッチが発生している場合は、*sys.dm_os_latch_stats* DMV も調べる必要があります。
 
 次の図は、*sys.dm_os_wait_stats* と *sys.dm_os_latch_stats* DMV によって返される情報の関係を示したものです。
 
@@ -191,7 +191,7 @@ OLTP 環境でパフォーマンスを妨げるラッチの競合は、通常、
    > [!NOTE]
    > 各待機の種類に対する相対待機時間は、*sys.dm_os_wait_stats* DMV には含まれません。この DMW を使用すると、SQL Server のインスタンスが最後に開始されてから、または DBCC SQLPERF を使用して累積待機統計がリセットてからの待機時間が、測定されるためです。 各待機の種類の相対的な待機時間を計算するには、ピーク負荷の前と後に *sys.dm_os_wait_stats* のスナップショットを取得して、その差を計算します。 「[一定期間の待機時間を計算する](#calculate-waits-over-a-time-period)」のサンプル スクリプトを、この目的に使用できます。
 
-   **非運用環境**のみの場合は、次のコマンドを使用して *sys.dm_os_wait_stats* DMV をクリアします。
+   **非運用環境** のみの場合は、次のコマンドを使用して *sys.dm_os_wait_stats* DMV をクリアします。
    
    ```sql
    dbcc SQLPERF ('sys.dm_os_wait_stats', 'CLEAR')
@@ -210,7 +210,7 @@ OLTP 環境でパフォーマンスを妨げるラッチの競合は、通常、
 
 ## <a name="analyzing-current-wait-buffer-latches"></a>現在の待機バッファー ラッチの分析
 
-バッファー ラッチの競合は、*sys.dm_os_wait_stats* DMV に表示される *wait_type* が **PAGELATCH\_\*** または **PAGEIOLATCH\_\*** であるラッチ待機時間の増加として示されます。 システムをリアルタイムで確認するには、システムに対して次のクエリを実行し、*sys.dm_os_wait_stats*、*sys.dm_exec_sessions*、*sys.dm_exec_requests* の各 DMV を結合します。 その結果を使用して、サーバーで実行されているセッションの現在の待機の種類を特定できます。
+バッファー ラッチの競合は、_sys.dm_os_wait_stats* DMV に表示される *wait_type* が **PAGELATCH\_\** _ または _*PAGEIOLATCH\_\**_ であるラッチ待機時間の増加として示されます。 システムをリアルタイムで確認するには、システムに対して次のクエリを実行し、*sys.dm_os_wait_stats*、*sys.dm_exec_sessions*、*sys.dm_exec_requests* の各 DMV を結合します。 その結果を使用して、サーバーで実行されているセッションの現在の待機の種類を特定できます。
 
 ```sql
 SELECT wt.session_id, wt.wait_type

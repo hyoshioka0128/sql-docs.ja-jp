@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - Parse
 - Parse_TSQL
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: b37e28b6-6e2e-470a-945b-ce5252da743a
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 8ebfca7738f8310108aab9ba988e658e7a5c1e17
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+ms.openlocfilehash: 7b74df820ef7cd0bebacf77d5c67344bedac2b5e
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92038365"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99187858"
 ---
 # <a name="parse-database-engine"></a>Parse (データベース エンジン)
 [!INCLUDE [SQL Server Azure SQL Database ](../../includes/applies-to-version/sql-asdb.md)]
@@ -59,7 +59,7 @@ CLR : 評価される String 値。
 **CLR 戻り値の型:SqlHierarchyId**
   
 ## <a name="remarks"></a>解説  
-場合 解析 の有効な文字列表記ではない値を受け取る、 **hierarchyid**, 、例外が発生します。 たとえば場合、 **cha**r データ型には、末尾のスペースが含まれている、例外が発生します。
+場合 解析 の有効な文字列表記ではない値を受け取る、 **hierarchyid**, 、例外が発生します。 たとえば場合、 **cha** r データ型には、末尾のスペースが含まれている、例外が発生します。
   
 ## <a name="examples"></a>例  
   

@@ -5,20 +5,20 @@ ms.custom: seodec18
 ms.date: 06/08/2016
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 helpviewer_keywords:
 - Availability Groups [SQL Server], monitoring
 - Availability Groups [SQL Server], troubleshooting
 ms.assetid: 1d5e3291-0d0a-45a1-88e5-1fc242d17210
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: 9cf9343673732daee37aacb0a37943dc8be67616
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 075f4a957764038b56d61b7be64fd31acb9e13c8
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91727843"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100337953"
 ---
 # <a name="tools-to-monitor-always-on-availability-groups"></a>Always On 可用性グループを監視するツール
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]

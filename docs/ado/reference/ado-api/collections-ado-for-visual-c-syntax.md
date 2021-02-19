@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 dev_langs:
 - C++
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 6a0109a0-f2d9-4f7c-8e1e-42763f9acaea
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: b4bc59facd753bf6d36c3a79d06a4efe29e7c235
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 095c9e132282f87d7e2b66917a740630916c647e
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88975383"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100034962"
 ---
 # <a name="collections-ado-for-visual-c-syntax"></a>Collections (Visual C++ 構文用の ADO)
 ## <a name="parameters"></a>パラメーター  
@@ -44,7 +44,7 @@ Refresh(void);
   
 -   [Refresh メソッド (ADO)](./refresh-method-ado.md)  
   
-### <a name="properties"></a>プロパティ  
+### <a name="properties"></a>Properties  
   
 ```  
 get_Count(long *c);  
@@ -75,7 +75,7 @@ Refresh(void);
   
 -   [Refresh メソッド (ADO)](./refresh-method-ado.md)  
   
-### <a name="properties"></a>プロパティ  
+### <a name="properties"></a>Properties  
   
 ```  
 get_Count(long *c);  
@@ -103,7 +103,7 @@ Refresh(void);
   
 -   [Refresh メソッド (ADO)](./refresh-method-ado.md)  
   
-### <a name="properties"></a>プロパティ  
+### <a name="properties"></a>Properties  
   
 ```  
 get_Count(long *c);  
@@ -128,7 +128,7 @@ Refresh(void);
   
 -   [Refresh メソッド (ADO)](./refresh-method-ado.md)  
   
-### <a name="properties"></a>プロパティ  
+### <a name="properties"></a>Properties  
   
 ```  
 get_Count(long *c);  

@@ -8,13 +8,13 @@ ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 82c949647cf670c0e335b2c4446c248fea86581d
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: e7d7b36c2c19d48fec393e38c741244f6713dcd3
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92196327"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470633"
 ---
 # <a name="data-science-scenarios-and-solution-templates"></a>データ サイエンスのシナリオとソリューション テンプレート
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -22,11 +22,11 @@ ms.locfileid: "92196327"
 この記事では、さまざまな SQL Server 機械学習ソリューション テンプレートについて説明します。 これらのテンプレートにはベスト プラクティスが示されており、機械学習ソリューションを短時間で実装する際に役立つ構成要素が提供されます。 各テンプレートは、特定の業種または業界に固有のデータ サイエンスに関する問題を解決するように設計されています。
 各テンプレートのタスクは、データ準備や機能エンジニアリングから、モデルのトレーニングとスコアリングまで、多岐にわたります。 
 
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 これらのテンプレートを使用して、[!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)] のしくみを学習します。 その後で、独自のシナリオに合わせてテンプレートをカスタマイズし、カスタム ソリューションを構築できます。
 ::: moniker-end
 
-::: moniker range=">=sql-server-2017||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2017||>=sql-server-linux-ver15"
 これらのテンプレートを使用して、SQL Server Machine Learning Services のしくみを学習します。 その後で、独自のシナリオに合わせてテンプレートをカスタマイズし、カスタム ソリューションを構築できます。
 ::: moniker-end
 
@@ -69,7 +69,7 @@ ms.locfileid: "92196327"
 
 **問題:** 顧客離反の分析と予測は、顧客離反を管理し、防ぐ必要がある業界で重要です。たとえば、銀行、電気通信、小売店などです。 顧客離れ分析の目標は、離れる可能性が高い顧客を特定し、そのような顧客が離れないようにして、ビジネスを維持することです。
 
-**方法:** このテンプレートは、顧客離反の問題を**二項分類**問題として数式化します。 顧客層と顧客トランザクションという 2 つのソースからサンプル データを使用し、顧客離れを起こす可能性が高い顧客と低い顧客を分類します。
+**方法:** このテンプレートは、顧客離反の問題を **二項分類** 問題として数式化します。 顧客層と顧客トランザクションという 2 つのソースからサンプル データを使用し、顧客離れを起こす可能性が高い顧客と低い顧客を分類します。
   
 ## <a name="predictive-maintenance"></a>予測的なメンテナンス
 
@@ -83,9 +83,9 @@ ms.locfileid: "92196327"
   
 -   **分類モデル**: エンジンのエラーが発生する確率が高いかどうかを予測します。
   
-    **二項分類モデル**は、一定期間内にエンジンのエラーが発生するかどうかを予測します。
+    **二項分類モデル** は、一定期間内にエンジンのエラーが発生するかどうかを予測します。
 
-    **多項分類モデル**は、特定のエンジンにエラーが発生するかどうかを予測し、エラーが発生する可能性がある期間を提供します。 たとえば、特定の日について、指定した日、または指定した日から何日後に任意のデバイスでエラーが発生する可能性が高いかどうかを予測できます。
+    **多項分類モデル** は、特定のエンジンにエラーが発生するかどうかを予測し、エラーが発生する可能性がある期間を提供します。 たとえば、特定の日について、指定した日、または指定した日から何日後に任意のデバイスでエラーが発生する可能性が高いかどうかを予測できます。
 
 ## <a name="energy-demand-forecasting"></a>エネルギー需要予測
 
@@ -93,7 +93,7 @@ ms.locfileid: "92196327"
 
 **問題:** 需要予測は、エネルギー、小売、サービスなど、さまざまな分野で重要な問題です。 正確な需要予測は、企業が運用計画、リソース割り当てを改善し、その他の重要なビジネス上の意思決定を行うのに役立ちます。 エネルギー セクターでは、エネルギー貯蔵コストを削減し、需要と供給のバランスを取るために需要予測が不可欠です。
 
-**方法:** このテンプレートは、SQL Server R Services を使用して電力需要を予測します。 予測に使用されるモデルは、Microsoft R Server に含まれる高パフォーマンス機械学習アルゴリズムである **rxDForest**に基づくランダム フォレスト回帰モデルです。 このソリューションには、需要シミュレーター、モデルのトレーニングに必要なすべての R コードと T-SQL コード、予測の生成とレポートに使用できるストアド プロシージャが含まれています。 
+**方法:** このテンプレートは、SQL Server R Services を使用して電力需要を予測します。 予測に使用されるモデルは、Microsoft R Server に含まれる高パフォーマンス機械学習アルゴリズムである **rxDForest** に基づくランダム フォレスト回帰モデルです。 このソリューションには、需要シミュレーター、モデルのトレーニングに必要なすべての R コードと T-SQL コード、予測の生成とレポートに使用できるストアド プロシージャが含まれています。 
 
 
 ## <a name="how-to-use-the-templates"></a><a name="bkmk_HowTo"></a>テンプレートの使用方法

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -15,14 +15,14 @@ helpviewer_keywords:
 - assemblies [CLR integration], catalog views
 - CLR assembly catalog views
 ms.assetid: b2e71480-92b2-4610-a4ff-dafb121087d9
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 1d27ee8c9460b8b14b451479cd061af08b9dfdce
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 7b79cccbcf9c6030419bb4550f3cbd4f9137eddc
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91810264"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99193023"
 ---
 # <a name="clr-assembly-catalog-views-transact-sql"></a>CLR アセンブリカタログビュー (Transact-sql)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

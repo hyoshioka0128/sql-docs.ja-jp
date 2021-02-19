@@ -12,16 +12,16 @@ ms.assetid: b6941dc0-50f5-475d-82eb-ce7c68117489
 author: MashaMSFT
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 25e6685166177b6adc436a1fc024d899be5f0233
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 4b2f20965b3bdff081368c2e1fcaa2bc255aca47
+ms.sourcegitcommit: 38e055eda82d293bf5fe9db14549666cf0d0f3c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88386428"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99250099"
 ---
 # <a name="use-sql-server-profiler-to-create-a-sql-trace-collection-set"></a>SQL Server Profiler の使用による SQL トレース コレクション セットの作成
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
-  [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] では、 [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] のサーバー側のトレース機能を利用して、ジェネリック SQL トレース コレクター型を使用するコレクション セットを作成するためのトレース定義をエクスポートできます。 このプロセスは 2 つの部分で構成されます。  
+  [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] では、 [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] のサーバー側のトレース機能を利用して、ジェネリック SQL トレース コレクター型を使用するコレクション セットを作成するためのトレース定義をエクスポートできます。 このプロセスは 2 つの部分で構成されます。  
   
 1.  [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] トレースの作成とエクスポート  
   
@@ -127,11 +127,11 @@ BEGIN TRANSACTION
 BEGIN TRY  
   
 -- Define collection set  
--- ***  
--- *** Replace 'SqlTrace Collection Set Name Here' in the   
--- *** following script with the name you want  
--- *** to use for the collection set.  
--- ***  
+-- **_  
+-- _*_ Replace 'SqlTrace Collection Set Name Here' in the   
+-- _*_ following script with the name you want  
+-- _*_ to use for the collection set.  
+-- _*_  
 DECLARE @collection_set_id int;  
 EXEC [dbo].[sp_syscollector_create_collection_set]  
     @name = N'SPROC_CollectionSet',  
@@ -171,11 +171,11 @@ SELECT @collector_type_GUID = collector_type_uid
   WHERE name = N'Generic SQL Trace Collector Type';  
   
 -- Create the trace collection item.  
--- ***  
--- *** Replace 'SqlTrace Collection Item Name Here' in   
--- *** the following script with the name you want to  
--- *** use for the collection item.  
--- ***  
+-- _*_  
+-- _*_ Replace 'SqlTrace Collection Item Name Here' in   
+-- _*_ the following script with the name you want to  
+-- _*_ use for the collection item.  
+-- _**  
 EXEC [dbo].[sp_syscollector_create_collection_item]  
    @collection_set_id = @collection_set_id,  
    @collector_type_uid = @collector_type_GUID,  

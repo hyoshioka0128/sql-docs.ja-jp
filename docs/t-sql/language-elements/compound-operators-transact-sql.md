@@ -7,21 +7,21 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
 - compound operators
 - compound operators, described
 ms.assetid: 5072fe91-02d3-42a7-831f-756eff714a17
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: f2daa8d7b168266ac56d1047eca2aa9408ebfe25
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 9fe8dedde26a421d58930c9df4861c9ce64d8973
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92196672"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99208203"
 ---
 # <a name="compound-operators-transact-sql"></a>複合演算子 (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -30,7 +30,7 @@ ms.locfileid: "92196672"
   
  [!INCLUDE[tsql](../../includes/tsql-md.md)] には、次の複合演算子があります。  
   
-|演算子|詳細情報へのリンク|アクション|  
+|オペレーター|詳細情報へのリンク|アクション|  
 |--------------|------------------------------|------------|  
 |+=|[+= &#40;加算代入&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/add-equals-transact-sql.md)|いくつかの数値を元の値に加算し、元の値に結果を設定します。|  
 |-=|[-= &#40;減算代入&#41; &#40;Transact-SQL&#41;](../../t-sql/language-elements/subtract-equals-transact-sql.md)|いくつかの数値を元の値から減算し、元の値に結果を設定します。|  

@@ -15,13 +15,13 @@ helpviewer_keywords:
 ms.assetid: ce4053fb-e37a-4851-b711-8e504059a780
 author: stevestein
 ms.author: sstein
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: c49e89d9ed81950d0c8781d39c57eef3e408482b
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 0fa90cc172c07b7642ca937271fe8c6709b65ede
+ms.sourcegitcommit: e8c0c04eb7009a50cbd3e649c9e1b4365e8994eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92195559"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100489376"
 ---
 # <a name="tempdb-database"></a>tempdb データベース
 
@@ -68,6 +68,9 @@ ms.locfileid: "92195559"
 
 > [!NOTE]
 > データ ファイルの数の既定値は、 [KB 2154845](https://support.microsoft.com/kb/2154845/)の一般的なガイドラインに基づいています。  
+
+> [!NOTE]
+> `tempdb` の現在のサイズと拡張パラメーターを確認するには、ビュー `tempdb.sys.database_files` でクエリを実行します。
   
 ### <a name="moving-the-tempdb-data-and-log-files-in-sql-server"></a>SQL Server の tempdb のデータ ファイルとログ ファイルの移動
 
@@ -213,7 +216,7 @@ GO
 ユーザー データベースによって使用されるものとは異なるディスクに、`tempdb` データベースを配置します。
 
 ## <a name="performance-improvements-in-tempdb-for-sql-server"></a>SQL Server の tempdb でのパフォーマンスの強化
-[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降では、`tempdb` のパフォーマンスが次の方法でさらに最適化されています。  
+[!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降では、`tempdb` のパフォーマンスが次の方法でさらに最適化されています。  
   
 - 一時テーブルとテーブル変数はキャッシュされます。 キャッシュを使用することで、一時オブジェクトを削除および作成する操作を非常に高速に実行できます。 また、キャッシュによって、ページの割り当てやメタデータの競合も減少します。  
 - 割り当てページ ラッチ プロトコルが改善され、使用される `UP` (更新) ラッチの回数が減っています。  
@@ -226,9 +229,9 @@ GO
 `tempdb` でのパフォーマンス向上の詳細については、[TEMPDB - ファイルとトレース フラグと更新](/archive/blogs/sql_server_team/tempdb-files-and-trace-flags-and-updates-oh-my)に関するブログ記事を参照してください。
 
 ## <a name="memory-optimized-tempdb-metadata"></a>メモリ最適化 tempdb メタデータ
-`tempdb` でのメタデータの競合は、従来、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 上で実行されている多くのワークロードのスケーラビリティに対するボトルネックになっていました。 [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] では、[メモリ内データベース](../in-memory-database.md)機能ファミリの一部として、メモリ最適化 tempdb メタデータという新機能が導入されています。 
+`tempdb` でのメタデータの競合は、従来、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 上で実行されている多くのワークロードのスケーラビリティに対するボトルネックになっていました。 [!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] では、[メモリ内データベース](../in-memory-database.md)機能ファミリの一部として、メモリ最適化 tempdb メタデータという新機能が導入されています。 
 
-この機能により、このボトルネックが実質的に除去され、tempdb の負荷が高いワークロードに新しいレベルのスケーラビリティが提供されます。 [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] では、一時テーブルのメタデータの管理に関連するシステム テーブルを、ラッチ フリーの非持続的メモリ最適化テーブルに移動できます。
+この機能により、このボトルネックが実質的に除去され、tempdb の負荷が高いワークロードに新しいレベルのスケーラビリティが提供されます。 [!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] では、一時テーブルのメタデータの管理に関連するシステム テーブルを、ラッチ フリーの非持続的メモリ最適化テーブルに移動できます。
 
 メモリ最適化 tempdb メタデータを使用する方法とそのタイミングの概要については、この 7 分間のビデオをご覧ください。
 
@@ -251,7 +254,7 @@ ALTER SERVER CONFIGURATION SET MEMORY_OPTIMIZED TEMPDB_METADATA = ON;
 SELECT SERVERPROPERTY('IsTempdbMetadataMemoryOptimized');
 ```
 
-メモリ最適化 `tempdb` メタデータを有効にした後に、何らかの理由でサーバーの起動に失敗した場合は、 **-f** スタートアップ オプションを使用して[最小構成](../../database-engine/configure-windows/start-sql-server-with-minimal-configuration.md)で SQL Server インスタンスを開始することで、この機能を回避できます。 その後、この機能を無効にして、通常モードで SQL Server を再起動できます。
+メモリ最適化 `tempdb` メタデータを有効にした後に、何らかの理由でサーバーの起動に失敗した場合は、 **-f** スタートアップ オプションを使用して [最小構成](../../database-engine/configure-windows/start-sql-server-with-minimal-configuration.md)で SQL Server インスタンスを開始することで、この機能を回避できます。 その後、この機能を無効にして、通常モードで SQL Server を再起動できます。
 
 サーバーを潜在的なメモリ不足の状態から保護するために、`tempdb` を[リソース プール](../in-memory-oltp/bind-a-database-with-memory-optimized-tables-to-a-resource-pool.md)にバインドすることができます。 これは、リソース プールをデータベースにバインドするために通常実行する手順の代わりに [`ALTER SERVER`](../../t-sql/statements/alter-server-configuration-transact-sql.md) コマンドを使用して行います。
 

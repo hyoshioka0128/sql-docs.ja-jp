@@ -17,25 +17,25 @@ f1_keywords:
 helpviewer_keywords:
 - Database Engine Tuning Advisor [SQL Server], starting
 ms.assetid: a4e3226a-3917-4ec8-bdf0-472879d231c9
-author: julieMSFT
-ms.author: jrasnick
-ms.openlocfilehash: 68e48fb6316b5794d51208b42ab10938b17126dc
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: da72d129bac65b1b9210e49d33782b257ea9e182
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91890751"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99236430"
 ---
 # <a name="start-and-use-the-database-engine-tuning-advisor"></a>データベース エンジン チューニング アドバイザーの起動および使用
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
-  このトピックでは、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]でデータベース エンジン チューニング アドバイザーを起動して使用する方法について説明します。 データベースをチューニングした後で結果を表示および操作する方法については、「 [データベース エンジン チューニング アドバイザーからの出力の表示および操作](../../relational-databases/performance/view-and-work-with-the-output-from-the-database-engine-tuning-advisor.md)」を参照してください。  
+  このトピックでは、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]でデータベース エンジン チューニング アドバイザーを起動して使用する方法について説明します。 データベースをチューニングした後で結果を表示および操作する方法については、「 [データベース エンジン チューニング アドバイザーからの出力の表示および操作](../../relational-databases/performance/view-and-work-with-the-output-from-the-database-engine-tuning-advisor.md)」を参照してください。  
   
 ##  <a name="initialize-the-database-engine-tuning-advisor"></a><a name="Initialize"></a> データベース エンジン チューニング アドバイザーを初期化する  
  初回起動時に、 **sysadmin** 固定サーバー ロールのメンバーであるユーザーがデータベース エンジン チューニング アドバイザーを初期化する必要があります。 これは、チューニング操作をサポートするには、いくつかのシステム テーブルを **msdb** データベースに作成する必要があるためです。 また、初期化によって、 **db_owner** 固定データベース ロールのメンバーであるユーザーも自分の所有するデータベースにあるテーブルのワークロードをチューニングできます。  
   
  システム管理者権限を持つユーザーは、次の操作のいずれかを実行する必要があります。  
   
--   データベース エンジン チューニング アドバイザーのグラフィカル ユーザー インターフェイスを使用して、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]のインスタンスに接続します。 詳細については、このトピックの「 [データベース エンジン チューニング アドバイザーを起動する](#Start) 」を参照してください。  
+-   データベース エンジン チューニング アドバイザーのグラフィカル ユーザー インターフェイスを使用して、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]のインスタンスに接続します。 詳細については、このトピックの「 [データベース エンジン チューニング アドバイザーを起動する](#Start) 」を参照してください。  
   
 -   **dta** ユーティリティを使用して最初のワークロードをチューニングします。 詳細については、このトピックの「 [dta ユーティリティを使用する](#dta) 」を参照してください。  
   
@@ -55,7 +55,7 @@ ms.locfileid: "91890751"
   
 #### <a name="to-start-the-database-engine-tuning-advisor-from-the-sql-server-management-studio-query-editor"></a>SQL Server Management Studio のクエリ エディターからデータベース エンジン チューニング アドバイザーを起動するには  
   
-1.  [!INCLUDE[tsql](../../includes/tsql-md.md)] で [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]スクリプト ファイルを開きます。 詳細については、「[クエリおよびテキスト エディター &#40;SQL Server Management Studio&#41;](../../ssms/f1-help/database-engine-query-editor-sql-server-management-studio.md?view=sql-server-ver15)」を参照してください。  
+1.  [!INCLUDE[tsql](../../includes/tsql-md.md)] で [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]スクリプト ファイルを開きます。 詳細については、「[クエリおよびテキスト エディター &#40;SQL Server Management Studio&#41;](../../ssms/f1-help/database-engine-query-editor-sql-server-management-studio.md)」を参照してください。  
   
 2.  [!INCLUDE[tsql](../../includes/tsql-md.md)] スクリプト内のクエリを選択するか、スクリプト全体を選択します。選択範囲を右クリックし、 **[データベース エンジン チューニング アドバイザーでのクエリの分析]** をクリックします。 データベース エンジン チューニング アドバイザー GUI が表示され、そのスクリプトが XML ファイル ワークロードとしてインポートされます。 セッション名とチューニング オプションを指定して、選択した [!INCLUDE[tsql](../../includes/tsql-md.md)] クエリを自分のワークロードとしてチューニングできます。  
   
@@ -72,7 +72,7 @@ ms.locfileid: "91890751"
 
       ||  
       |-|  
-      |**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降。|  
+      |**適用対象**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降。|  
 
   
 -   プラン キャッシュをワークロードとして指定する。 このようにすることでワークロードを手動で作成する手間が省けます。 詳細については、このトピックの「 [データベースをチューニングする](#Tune) 」を参照してください。  
@@ -88,7 +88,7 @@ ms.locfileid: "91890751"
   
 ###  <a name="to-create-transact-sql-script-workloads"></a><a name="SSMS"></a> Transact-SQL スクリプトのワークロードを作成するには  
   
-1.  [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]でクエリ エディターを起動します。 詳細については、「[クエリおよびテキスト エディター &#40;SQL Server Management Studio&#41;](../../ssms/f1-help/database-engine-query-editor-sql-server-management-studio.md?view=sql-server-ver15)」を参照してください。  
+1.  [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]でクエリ エディターを起動します。 詳細については、「[クエリおよびテキスト エディター &#40;SQL Server Management Studio&#41;](../../ssms/f1-help/database-engine-query-editor-sql-server-management-studio.md)」を参照してください。  
   
 2.  クエリ エディターに [!INCLUDE[tsql](../../includes/tsql-md.md)] スクリプトを入力します。 このスクリプトには、チューニングする 1 つ以上のデータベースに対して実行する一連の [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントが含まれている必要があります。  
   
@@ -124,10 +124,10 @@ ms.locfileid: "91890751"
   
 -   **SP:StmtCompleted**  
   
- これらのトレース イベントの **Starting** バージョンを使用することもできます。 たとえば、 **SQL:BatchStarting**などです。 ただし、これらのトレース イベントの **Completed** バージョンには、 **Duration** 列が含まれているので、データベース エンジン チューニング アドバイザーは、より効率的にワークロードのチューニングを行うことができます。 データベース エンジン チューニング アドバイザーは、他の種類のトレース イベントのチューニングは行いません。 これらのトレース イベントの詳細については、「 [Stored Procedures Event Category](../../relational-databases/event-classes/stored-procedures-event-category.md) 」および「 [TSQL Event Category](../../relational-databases/event-classes/tsql-event-category.md)」を参照してください。 SQL トレース ストアド プロシージャを使用したトレース ファイル ワークロードの作成の詳細については、「[トレースの作成 &#40;Transact-SQL&#41;](../../relational-databases/sql-trace/create-a-trace-transact-sql.md)」を参照してください。  
+ これらのトレース イベントの **Starting** バージョンを使用することもできます。 たとえば、 **SQL:BatchStarting** などです。 ただし、これらのトレース イベントの **Completed** バージョンには、 **Duration** 列が含まれているので、データベース エンジン チューニング アドバイザーは、より効率的にワークロードのチューニングを行うことができます。 データベース エンジン チューニング アドバイザーは、他の種類のトレース イベントのチューニングは行いません。 これらのトレース イベントの詳細については、「 [Stored Procedures Event Category](../../relational-databases/event-classes/stored-procedures-event-category.md) 」および「 [TSQL Event Category](../../relational-databases/event-classes/tsql-event-category.md)」を参照してください。 SQL トレース ストアド プロシージャを使用したトレース ファイル ワークロードの作成の詳細については、「[トレースの作成 &#40;Transact-SQL&#41;](../../relational-databases/sql-trace/create-a-trace-transact-sql.md)」を参照してください。  
   
 ### <a name="trace-file-or-trace-table-workloads-that-contain-the-loginname-data-column"></a>LoginName データ列を含んでいるトレース ファイル ワークロードまたはトレース テーブル ワークロード  
- データベース エンジン チューニング アドバイザーは、チューニング処理の一環としてプラン表示要求を送信します。 **LoginName** データ列が含まれているトレース テーブルまたはトレース ファイルをワークロードとして使用する場合、データベース エンジン チューニング アドバイザーは、 **LoginName**に指定されているユーザーの権限を借用します。 トレースに含まれているステートメントに対してプラン表示を実行し生成するための SHOWPLAN 権限がそのユーザーに許可されていない場合、そのステートメントのチューニングは行われません。  
+ データベース エンジン チューニング アドバイザーは、チューニング処理の一環としてプラン表示要求を送信します。 **LoginName** データ列が含まれているトレース テーブルまたはトレース ファイルをワークロードとして使用する場合、データベース エンジン チューニング アドバイザーは、 **LoginName** に指定されているユーザーの権限を借用します。 トレースに含まれているステートメントに対してプラン表示を実行し生成するための SHOWPLAN 権限がそのユーザーに許可されていない場合、そのステートメントのチューニングは行われません。  
   
 ##### <a name="to-avoid-granting-the-showplan-permission-to-each-user-specified-in-the-loginname-column-of-the-trace"></a>トレースの LoginName 列に指定された各ユーザーに SHOWPLAN 権限を許可しないようにするには  
   

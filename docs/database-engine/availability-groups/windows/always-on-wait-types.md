@@ -5,17 +5,17 @@ ms.custom: ag-guide, seodec18
 ms.date: 06/13/2017
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: how-to
 ms.assetid: afa8caff-f325-48d9-a8ef-a30beab60389
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 2a04953b5881362dbae6a83ea874dc9ed0207a7a
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 4be170149181263e7d904f5f820a9dd50f6d3801
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91724552"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100347493"
 ---
 # <a name="identify-waits-associated-with-availability-groups"></a>可用性グループに関連付けられている待機を識別する
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]

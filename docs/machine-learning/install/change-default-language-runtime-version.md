@@ -8,14 +8,13 @@ ms.date: 08/14/2020
 ms.topic: how-to
 author: garyericson
 ms.author: garye
-ms.reviewer: davidph
-monikerRange: =sql-server-2016||=sql-server-2017||=sqlallproducts-allversions
-ms.openlocfilehash: d730ead0a11c240284ecb9a902a90eaedc5b1bb6
-ms.sourcegitcommit: 5f658b286f56001b055a8898d97e74906516dc99
+monikerRange: =sql-server-2016||=sql-server-2017
+ms.openlocfilehash: eacae756f788a5cf42c19cae27a975f98111fb71
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90009365"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100068974"
 ---
 # <a name="change-the-default-r-or-python-language-runtime-version"></a>既定の R または Python 言語ランタイム バージョンを変更する
 

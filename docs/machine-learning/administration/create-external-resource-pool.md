@@ -8,13 +8,13 @@ ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 08f2c66fec80ce27e3e7a9ffca7a00194ff3b81b
-ms.sourcegitcommit: 5da46e16b2c9710414fe36af9670461fb07555dc
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: da6f6817856efd9dd0310211998230d49e6f3d1b
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89283763"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471393"
 ---
 # <a name="create-a-resource-pool-for-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services のリソース プールを作成する
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -45,7 +45,7 @@ SQL Server Machine Learning Services で、Python および R のワークロー
     |-|-|-|-|-|-|-|-|-|
     |2|既定値 (default)|0|100|0|100|100|0|0|
 
-2.  既定の**外部**リソース プールに割り当てられているリソースを確認します。
+2.  既定の **外部** リソース プールに割り当てられているリソースを確認します。
   
     ```sql
     SELECT * FROM sys.resource_governor_external_resource_pools WHERE name = 'default'
@@ -92,7 +92,7 @@ SQL Server Machine Learning Services で、Python および R のワークロー
   
      優先するワークロードを細かく制御するために、新しいユーザー定義の外部リソース プールを作成できます。 分類子関数を定義して、外部リソース プールに割り当てます。 **EXTERNAL** キーワードは新規のキーワードです。
   
-     新しい*ユーザー定義の外部リソース プール*を作成します。 次の例では、プールに **ds_ep** という名前を付けています。
+     新しい *ユーザー定義の外部リソース プール* を作成します。 次の例では、プールに **ds_ep** という名前を付けています。
   
     ```sql
     CREATE EXTERNAL RESOURCE POOL ds_ep WITH (max_memory_percent = 40);

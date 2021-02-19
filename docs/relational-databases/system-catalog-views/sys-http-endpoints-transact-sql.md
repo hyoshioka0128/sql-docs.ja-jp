@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.http_endpoints
 - http_endpoints
@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.http_endpoints catalog view
 ms.assetid: 16f59695-ecd9-457e-8874-055af63f8ea7
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: a9d4627c0a5914b4ff62b36fd9357f7919c2e490
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 60b9aa9ad9ef11b88e80a13bfb7469050034cfca
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956463"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99191431"
 ---
 # <a name="syshttp_endpoints-transact-sql"></a>sys.http_endpoints (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

@@ -1,12 +1,12 @@
 ---
 description: sys.dm_database_replica_states (Azure SQL Database)
-title: dm_database_replica_states (Azure SQL Database) |Microsoft Docs
+title: sys.dm_database_replica_states (Azure SQL Database) |Microsoft Docs
 ms.custom: ''
 ms.date: 05/22/2019
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_database_replica_states_TSQL
 - sys.dm_database_replica_states
@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - Availability Groups [SQL Server], monitoring
 - sys.dm_database_replica_states dynamic management view
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 217f9e691ceb0da86834eb452d6b608fdbb8f091
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: ea657e595c955589d645db5ec4fccb17a0549a62
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89537680"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100336997"
 ---
 # <a name="sysdm_database_replica_states-azure-sql-database"></a>sys.dm_database_replica_states (Azure SQL Database)
 [!INCLUDE[Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/asdb-asdbmi.md)]
@@ -60,7 +60,7 @@ ms.locfileid: "89537680"
 |**last_received_time**|**datetime**|最後に受信したメッセージのログ ブロック ID がセカンダリ レプリカで読み取られた時刻。|  
 |**last_hardened_lsn**|**numeric(25,0)**|セカンダリデータベースで最後に書き込まれた LSN のログレコードを含むログブロックの先頭。<br /><br /> 非同期コミットプライマリデータベース、または現在のポリシーが "delay" である同期コミットデータベースでは、値は NULL です。 その他の同期コミットプライマリデータベースの場合、 **last_hardened_lsn** は、すべてのセカンダリデータベースで書き込まれた lsn の最小値を示します。<br /><br /> **注: last_hardened_lsn** には、0で埋め込まれたログブロック ID が反映されます。 これは実際のログ シーケンス番号ではありません。|  
 |**last_hardened_time**|**datetime**|セカンダリデータベースで、最後に書き込まれた LSN のログブロック識別子の時刻 (**last_hardened_lsn**)。 プライマリ データベースの場合、書き込まれた LSN の最小値に対応する時刻が反映されます。|  
-|**last_redone_lsn**|**numeric(25,0)**|セカンダリデータベースで再実行された最後のログレコードの実際のログシーケンス番号。 **last_redone_lsn** は常に **last_hardened_lsn**未満です。|  
+|**last_redone_lsn**|**numeric(25,0)**|セカンダリデータベースで再実行された最後のログレコードの実際のログシーケンス番号。 **last_redone_lsn** は常に **last_hardened_lsn** 未満です。|  
 |**last_redone_time**|**datetime**|セカンダリ データベースでログ レコードが最後に再実行された時刻。|  
 |**log_send_queue_size**|**bigint**|セカンダリ データベースに送信されていない、プライマリ データベースのログ レコードの量 (KB 単位)。|  
 |**log_send_rate**|**bigint**|プライマリレプリカインスタンスが最後のアクティブ期間中にデータを送信した平均速度 (kb/秒)。|  
@@ -71,7 +71,7 @@ ms.locfileid: "89537680"
 |**last_commit_lsn**|**numeric(25,0)**|トランザクション ログの最終コミット レコードに対応する実際のログ シーケンス番号。<br /><br /> プライマリ データベースの場合、これは処理された最終コミット レコードに対応します。 セカンダリ データベースの行には、セカンダリ レプリカがプライマリ レプリカに送信したログ シーケンス番号が反映されます。<br /><br /> セカンダリ レプリカの場合、これは再実行された最終コミット レコードです。|  
 |**last_commit_time**|**datetime**|最終コミット レコードに対応する時刻。<br /><br /> セカンダリ データベースの場合、この時刻はプライマリ データベースと同じになります。<br /><br /> プライマリ レプリカの場合、各セカンダリ データベースの行に、そのセカンダリ データベースをホストするセカンダリ レプリカがプライマリ レプリカに報告した時刻が表示されます。 プライマリデータベースの行と特定のセカンダリデータベースの行の間の時間の差は、再実行プロセスが検出され、進行状況がセカンダリレプリカによってプライマリレプリカに報告されていることを前提として、目標復旧時点 (RPO) を表します。|  
 |**low_water_mark_for_ghosts**|**bigint**|プライマリデータベースのゴーストクリーンアップで使用される下限を示す、データベースの単調に増加する数。 この数が時間の経過と共に増加していない場合は、ゴーストクリーンアップが行われない可能性があることを意味します。 プライマリ レプリカでは、クリーンアップする非実体行を決定するために、すべての可用性レプリカ (プライマリ レプリカを含む) でこのデータベースのこの列の最小値を使用します。|  
-|**secondary_lag_seconds**|**bigint**|同期中にセカンダリレプリカがプライマリレプリカの背後にある秒数。<br /><br />**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降。|  
+|**secondary_lag_seconds**|**bigint**|同期中にセカンダリレプリカがプライマリレプリカの背後にある秒数。<br /><br />**適用対象**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降。|  
 |**quorum_commit_lsn**|**numeric(25,0)**|単に情報を示すためだけに特定されます。 サポートされていません。 将来の互換性は保証されません。|
 |**quorum_commit_time**|**datetime**|単に情報を示すためだけに特定されます。 サポートされていません。 将来の互換性は保証されません。|
 

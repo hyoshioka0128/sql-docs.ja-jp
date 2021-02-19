@@ -5,17 +5,17 @@ ms.custom: seo-lt-2019
 ms.date: 05/02/2018
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: how-to
 ms.assetid: ''
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: 074a66a094b08f843eed67cfb0276f8c9e635a63
-ms.sourcegitcommit: 968969b62bc158b9843aba5034c9d913519bc4a7
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 787a683eb0fc666eff8f3c72519bbba149dafe96
+ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91753751"
+ms.lasthandoff: 02/13/2021
+ms.locfileid: "100340817"
 ---
 # <a name="mechanics-and-guidelines-of-lease-cluster-and-health-check-timeouts-for-always-on-availability-groups"></a>Always On 可用性グループのリース、クラスター、正常性チェック タイムアウトのしくみとガイドライン。 
 
@@ -29,7 +29,7 @@ ms.locfileid: "91753751"
 
 SQL Server の場合、AG リソース DLL は、AG リース メカニズムと Always On 正常性検出に基づいて、AG の正常性を判断します。 AG リソース DLL は、`IsAlive` 操作を介してリソースの正常性を公開します。 リソース モニターは、`CrossSubnetDelay` と `SameSubnetDelay` のクラスター全体の値で設定される、クラスターのハートビート間隔で `IsAlive` をポーリングします。 プライマリ ノードでは、リソース DLL に対する `IsAlive` 呼び出しで AG が正常でないことが返されるたびに、クラスター サービスがフェールオーバーを開始します。 
 
-クラスター サービスはクラスター内の他のノードにハートビートを送信し、そこから受信したハートビートを確認します。 ノードは、一連の未確認ハートビートから通信エラーを検出すると、到達可能なすべてのノードでクラスター ノードの正常性ビューを調整するようにメッセージをブロードキャストします。 このイベント (*再グループ化イベント*と呼ばれる) により、ノード間のクラスター状態の一貫性が維持されます。 再グループ化イベントの後、クォーラムが失われた場合、このパーティションの AG を含むすべてのクラスター リソースがオフラインになります。 このパーティションのすべてのノードは、解決中の状態に遷移します。 クォーラムを保持する、パーティションが存在する場合、AG はそのパーティションの 1 つのノードに割り当てられ、プライマリ レプリカになり、他のすべてのノードがセカンダリ レプリカになります。 
+クラスター サービスはクラスター内の他のノードにハートビートを送信し、そこから受信したハートビートを確認します。 ノードは、一連の未確認ハートビートから通信エラーを検出すると、到達可能なすべてのノードでクラスター ノードの正常性ビューを調整するようにメッセージをブロードキャストします。 このイベント (*再グループ化イベント* と呼ばれる) により、ノード間のクラスター状態の一貫性が維持されます。 再グループ化イベントの後、クォーラムが失われた場合、このパーティションの AG を含むすべてのクラスター リソースがオフラインになります。 このパーティションのすべてのノードは、解決中の状態に遷移します。 クォーラムを保持する、パーティションが存在する場合、AG はそのパーティションの 1 つのノードに割り当てられ、プライマリ レプリカになり、他のすべてのノードがセカンダリ レプリカになります。 
 
 ## <a name="always-on-health-detection"></a>Always On 正常性検出 
 
@@ -98,7 +98,7 @@ WSFC 構成には、クラスター タイムアウト値を判断する必要�
 現在のクラスター値をすべて一覧表示するには、ターゲット クラスターの任意のノードで、管理者特権の PowerShell 端末を開きます。 次のコマンドを実行します。
 
 ```PowerShell
- Get-Cluster | fl \
+ Get-Cluster | fl *
 ``` 
 
 これらの値のいずれかを更新するには、管理者特権の PowerShell 端末で以下のコマンドを実行します。
@@ -125,6 +125,8 @@ WSFC 構成には、クラスター タイムアウト値を判断する必要�
 
    AG の構成に応じて、リスナー、共有ディスク、ファイル共有などのリソースが追加される可能性があります。これらのリソースに追加の構成は必要ありません。 
 
+> [!NOTE]  
+>  プロパティ 'LeaseTimeout' の新しい値は、リソースがオフラインになり、再びオンラインになった後に有効になります。
    
 ### <a name="health-check-values"></a>正常性チェックの値 
 

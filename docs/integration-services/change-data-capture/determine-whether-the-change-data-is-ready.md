@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 04935f35-96cc-4d70-a250-0fd326f8daff
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 95a2a3a5ec29f8b467cbd637e13be3aced203f41
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 9fd82f56cb1edb459e662e31778fcb8341a6887c
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88496238"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100353032"
 ---
 # <a name="determine-whether-the-change-data-is-ready"></a>データの変更の準備ができているかどうかを判断する
 
@@ -84,7 +84,7 @@ ms.locfileid: "88496238"
   
     2.  **[EvalExpression]** に「 `@DataReady == 0`」と入力します。  
   
-         この式が **False**と評価されると、実行がループの外に移り、増分読み込みが開始されます。  
+         この式が **False** と評価されると、実行がループの外に移り、増分読み込みが開始されます。  
   
 ## <a name="configuring-the-execute-sql-task-that-queries-for-change-data"></a>変更データのクエリを実行する SQL 実行タスクの構成  
  For ループ コンテナー内に SQL 実行タスクを追加します。 このタスクでは、変更データ キャプチャ プロセスがデータベースに保持しているテーブルに対してクエリを実行します。 このクエリの結果は、変更データが準備できているかどうかを示す状態値です。  

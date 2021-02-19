@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - Cell::Ordinal
@@ -17,21 +17,21 @@ helpviewer_keywords:
 ms.assetid: a6001168-b954-47f0-ba0d-c05c4cc40c58
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: b4d14b2cdfc61fd76221a2071f15593807b5f1ba
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 4d76ed341fe71f7a5927f6a7e84a63322adcf13f
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88986223"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100051043"
 ---
 # <a name="ordinal-property-ado-md-cell"></a>Ordinal プロパティ (ADO MD セル)
 セルセット内の位置によって [セル](./cell-object-ado-md.md) を一意に識別します。  
   
 ## <a name="return-values"></a>戻り値  
- **長**整数を返し、読み取り専用です。  
+ **長** 整数を返し、読み取り専用です。  
   
 ## <a name="remarks"></a>解説  
- セルの序数値は、セルセット内のセルを一意に識別します。 概念的には、セルセット内のセルには、セルセットが *p*次元配列であるかのように番号が付けられます。ここで、 *p* は [軸](./axes-collection-ado-md.md)の数です。 セルは、行優先順で0から始まる番号が付けられます。 セルの序数を計算するための式を次に示します。  
+ セルの序数値は、セルセット内のセルを一意に識別します。 概念的には、セルセット内のセルには、セルセットが *p* 次元配列であるかのように番号が付けられます。ここで、 *p* は [軸](./axes-collection-ado-md.md)の数です。 セルは、行優先順で0から始まる番号が付けられます。 セルの序数を計算するための式を次に示します。  
   
  セルの序数値を[Cellset](./cellset-object-ado-md.md)オブジェクトの[Item](./item-property-ado-md-cellset.md)プロパティと共に使用して、[セル](./cell-object-ado-md.md)をすばやく取得できます。  
   

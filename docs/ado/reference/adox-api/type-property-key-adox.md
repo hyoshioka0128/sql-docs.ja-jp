@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - _Key::GetType
@@ -20,18 +20,18 @@ helpviewer_keywords:
 ms.assetid: 8ca2f1fd-eb1e-490c-a28b-67eda92e0fc7
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: ced8d2083fe4c6d34c752cc77d54f9f1a5e2569e
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: a23a9bc6749d97978a9f5ab686aa0c1f0eb7a023
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88983113"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100049702"
 ---
 # <a name="type-property-key-adox"></a>Type プロパティ (キー) (ADOX)
 キーの種類を示します。  
   
 ## <a name="settings-and-return-values"></a>設定と戻り値  
- [Keytypeenum](./keytypeenum.md)定数のいずれかを指定できる**Long 型**の値を設定または返します。 既定値は **adKeyPrimary**です。  
+ [Keytypeenum](./keytypeenum.md)定数のいずれかを指定できる **Long 型** の値を設定または返します。 既定値は **adKeyPrimary** です。  
   
 ## <a name="remarks"></a>解説  
  このプロパティは、既にコレクションに追加されている [キー](./key-object-adox.md) オブジェクトに対しては読み取り専用です。  

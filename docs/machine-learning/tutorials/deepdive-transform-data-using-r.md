@@ -8,13 +8,13 @@ ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 6260905faa886383ea41d913d1645fa47dc8ce7d
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 8c954d708a6dba6a0caad4122149cfcecdb5a182
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92195094"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470513"
 ---
 # <a name="transform-data-using-r-sql-server-and-revoscaler-tutorial"></a>R を使用してデータを変換する (SQL Server と RevoScaleR のチュートリアル)
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "92195094"
 **boot** パッケージからは、ロジットの逆数を計算する、**inv.logit** 関数を使用します。 つまり、 **inv.logit** 関数はロジットを [0,1] のスケールで確率に変換します。
 
 > [!TIP] 
-> このスケールの予測を取得するもう 1 つの方法としては、 *rxPredict* の元の呼び出しで **type** パラメーターを **response**に設定します。
+> このスケールの予測を取得するもう 1 つの方法としては、 *rxPredict* の元の呼び出しで **type** パラメーターを **response** に設定します。
 
 1. まず、テーブル `ccScoreOutput` 用のデータを保持するためのデータ ソースを作成して開始します。
   
@@ -98,7 +98,7 @@ Var 8: creditLine, Type: integer
 Var 9: ccFraudProb, Type: numeric
 ```
 
-元のロジット スコアは保持されますが、新しい列の *ccFraudProb*が追加されており、ロジット スコアが 0 ～ 1 の値として表示されます。
+元のロジット スコアは保持されますが、新しい列の *ccFraudProb* が追加されており、ロジット スコアが 0 ～ 1 の値として表示されます。
 
 ファクト変数が文字データとしてテーブル `ccScoreOutput2` に書き込まれていることに注意してください。 以降の解析で因子として使用するには、 *colInfo* パラメーターを使用してレベルを指定します。
 

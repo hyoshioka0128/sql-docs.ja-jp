@@ -8,13 +8,13 @@ ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: d66452796f3c3cd669784ae7233fb9dcf8e5bc5c
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 9938cdeca70e4fd7a97c9ce8b9d38035022ce714
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92195104"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470563"
 ---
 # <a name="query-and-modify-the-sql-server-data-sql-server-and-revoscaler-tutorial"></a>SQL Server データのクエリを実行し、データを変更する (SQL Server と RevoScaleR のチュートリアル)
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "92195104"
 > * 変数に関する基本的な情報を返します。
 > * 生データからカテゴリ データを作成します。
 
-カテゴリデータまたは *factor 変数*は、探索データの視覚化に役立ちます。 これらをヒストグラムへの入力として使用すると、変数データがどのように表示されるかを把握できます。
+カテゴリデータまたは *factor 変数* は、探索データの視覚化に役立ちます。 これらをヒストグラムへの入力として使用すると、変数データがどのように表示されるかを把握できます。
 
 ## <a name="query-for-columns-and-types"></a>列と型のクエリ
 
@@ -61,7 +61,7 @@ Var 9: fraudRisk, Type: integer
 
 列を略称にマップしてから要因として使用すると、パフォーマンスも改善されます。 詳細については、「[R とデータの最適化](../r/r-and-data-optimization-r-services.md)」を参照してください。
 
-1. まず、次のように R 変数 *stateAbb*を作成し、この変数に追加する文字列のベクトルを定義します。
+1. まず、次のように R 変数 *stateAbb* を作成し、この変数に追加する文字列のベクトルを定義します。
   
     ```R
     stateAbb <- c("AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DC",
@@ -71,7 +71,7 @@ Var 9: fraudRisk, Type: integer
         "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY")
     ```
 
-2. 次に、 *ccColInfo*という名前の列情報オブジェクトを作成します。このオブジェクトは、カテゴリ レベル (州の省略形) への既存の整数値のマッピングを指定します。
+2. 次に、 *ccColInfo* という名前の列情報オブジェクトを作成します。このオブジェクトは、カテゴリ レベル (州の省略形) への既存の整数値のマッピングを指定します。
   
     このステートメントは、性別およびカード名義人の要因変数も作成します。
   
@@ -104,7 +104,7 @@ Var 9: fraudRisk, Type: integer
     rowsPerRead = sqlRowsPerRead)
     ```
   
-    - *table* パラメーターでは、先ほど作成したデータ ソースを含む変数 *sqlFraudTable*を渡します。
+    - *table* パラメーターでは、先ほど作成したデータ ソースを含む変数 *sqlFraudTable* を渡します。
     - *colInfo* パラメーターでは、列のデータ型および要因レベルを含む変数 *ccColInfo* を渡します。
 
 4.  以上の手順で、関数 **rxGetVarInfo** を使用して新しいデータ ソース内の変数を確認できるようになりました。

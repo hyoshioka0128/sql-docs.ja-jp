@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: replication
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - IHpublishercolumnindexes
 - IHpublishercolumnindexes_TSQL
@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - IHpublishercolumnindexes system table
 ms.assetid: 95b95a1d-b502-4838-825f-82a456487e25
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 5e8c4f3de523b1809ceed4a71c5384d853f92414
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 13d7e4240b86950b21889f660d9e228eb09552e7
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545758"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99201671"
 ---
 # <a name="ihpublishercolumnindexes-transact-sql"></a>IHpublishercolumnindexes (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **IHpublishercolumnindexes**システムテーブルは、 [IHpublishercolumns](../../relational-databases/system-tables/ihpublishercolumns-transact-sql.md)システムテーブル内の非 SQL Server パブリケーションの列を[IHpublisherindexes](../../relational-databases/system-tables/ihpublisherindexes-transact-sql.md)システムテーブルのインデックスにマップします。 このテーブルは、ディストリビューションデータベースに格納されます。  
+  **IHpublishercolumnindexes** システムテーブルは、 [IHpublishercolumns](../../relational-databases/system-tables/ihpublishercolumns-transact-sql.md)システムテーブル内の非 SQL Server パブリケーションの列を [IHpublisherindexes](../../relational-databases/system-tables/ihpublisherindexes-transact-sql.md)システムテーブルのインデックスにマップします。 このテーブルは、ディストリビューションデータベースに格納されます。  
   
 ## <a name="definition"></a>定義  
   

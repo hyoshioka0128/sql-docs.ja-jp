@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: 7349e626-6ed5-4d21-b05f-cf042ad9ad70
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 4592e5b2bc35da9c2887e0c2552dc33cd3cecd5e
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+ms.openlocfilehash: 301d77a972da39f4e3e046e5e983206e9a1ba5c9
+ms.sourcegitcommit: 80701484b8f404316d934ad2a85fd773e26ca30c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91987388"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93243771"
 ---
 # <a name="the-web-portal-of-a-report-server-ssrs-native-mode"></a>レポート サーバーの Web ポータル (SSRS ネイティブ モード)
 
@@ -22,7 +22,7 @@ ms.locfileid: "91987388"
 
 Reporting Services レポート サーバーの Web ポータルは Web ベース エクスペリエンスです。 このポータルでは、レポート、モバイル レポート、KPI を表示したり、レポート サーバー インスタンス内の要素間を移動したりできます。 Web ポータルを利用し、1 つのレポート サーバー インスタンスを管理することもできます。
 
-![ssRSPortal](../reporting-services/media/ssrsportal.png)
+![SQL Server Reporting Services ポータルを示すスクリーンショット。](../reporting-services/media/ssrsportal.png)
 
 ## <a name="what-is-the-web-portal"></a>Web ポータルとは何か
 
@@ -67,9 +67,9 @@ Web ポータルは Web アプリケーションであり、ブラウザー ウ�
 
 2. Web ブラウザーのアドレス バーに、Web ポータルの URL を入力します。
 
-    既定の URL は *https://[ComputerName]/reports*です。
+    既定の URL は *https://[ComputerName]/reports* です。
 
-    レポート サーバーは、特定のポートを使用するように構成できます。 たとえば、*https://[ComputerName]:80/reports* または *https://[ComputerName]:8080/reports*。
+    レポート サーバーは、特定のポートを使用するように構成できます。 たとえば、 *https://[ComputerName]:80/reports* または *https://[ComputerName]:8080/reports* 。
 
 ## <a name="grouping-by-categories"></a>カテゴリ別のグループ化
 
@@ -86,15 +86,15 @@ Web ポータルは、アイテムを複数のカテゴリにグループ化し�
 
 右上の **[表示]** を選択すると、表示内容を変更できます。 [非表示項目の表示] を選択した場合、そのアイテムは薄い色で表示されます。
 
-![ssRSWebPortal-view](../reporting-services/media/ssrswebportal-view.png)
+![[表示] ドロップダウンのスクリーンショット。[非表示項目の表示] オプションが選択されています。](../reporting-services/media/ssrswebportal-view.png)
 
-![ssRSWebPortal-hidden](../reporting-services/media/ssrswebportal-hidden.png)
+![[ページネーションのあるレポート] オプションが使用できないことを示すスクリーンショット。](../reporting-services/media/ssrswebportal-hidden.png)
 
 ### <a name="power-bi-desktop-reports-and-excel-workbooks"></a>Power BI Desktop レポートと Excel ブック
 
 Power BI Desktop レポートと Excel ブックのアクセス許可をアップロード、整理、管理できます。 Web ポータル内でグループ化されます。
 
-![ssRSWebPortal-view-pbi-and-excel](../reporting-services/media/ssrswebportal-view-pbi-and-excel.png)
+![[Power BI Desktop レポート] セクションと [Excel ブック] セクションを示すスクリーンショット。](../reporting-services/media/ssrswebportal-view-pbi-and-excel.png)
 
 ファイルは他のリソース ファイルと同様に Reporting Services 内に保管されます。 いずれかのアイテムを選択すると、デスクトップにローカル ダウンロードされます。 レポート サーバーに再アップロードすることで、変更を保存できます。
 
@@ -102,7 +102,7 @@ Power BI Desktop レポートと Excel ブックのアクセス許可をアッ�
 
 検索語句を入力すると、ユーザーがアクセスできるアイテムが表示されます。 結果は KPI、レポート、データセット、その他のアイテムに分類されます。 その後、結果を使用したり、お気に入りに追加したりできます。
 
-![ssRSWebPortal-Search](../reporting-services/media/ssrswebportal-search.png)
+![SQL Server Reporting Services ポータルを示すスクリーンショット。[検索] テキスト ボックスが選択されています。](../reporting-services/media/ssrswebportal-search.png)
 
 ## <a name="web-portal-tasks"></a>Web ポータル タスク
 

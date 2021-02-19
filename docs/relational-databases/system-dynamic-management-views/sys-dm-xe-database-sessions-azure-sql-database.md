@@ -5,17 +5,17 @@ ms.custom: ''
 ms.date: 03/06/2017
 ms.service: sql-database
 ms.reviewer: ''
-ms.topic: language-reference
+ms.topic: reference
 ms.assetid: 33ea5179-16bb-4abd-96cc-9bc696e80987
-author: markingmyname
-ms.author: maghan
-monikerRange: = azuresqldb-current || = sqlallproducts-allversions
-ms.openlocfilehash: da990bafa1addd84ffabdc700c9f94e82454eb3a
-ms.sourcegitcommit: 968969b62bc158b9843aba5034c9d913519bc4a7
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: = azuresqldb-current
+ms.openlocfilehash: 0e70d8d2f3dc731f29eda1f96b8ad88d51964313
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91753758"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99129874"
 ---
 # <a name="sysdm_xe_database_sessions-azure-sql-database"></a>sys.dm_xe_database_sessions (Azure SQL Database)
 [!INCLUDE[Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/asdb-asdbmi.md)]
@@ -24,7 +24,7 @@ ms.locfileid: "91753758"
   
 ||  
 |-|  
-|**に適用さ**れます: [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] V12 およびそれ以降のすべてのバージョン。|  
+|**に適用さ** れます: [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] V12 およびそれ以降のすべてのバージョン。|  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
@@ -39,7 +39,7 @@ ms.locfileid: "91753758"
 ### <a name="relationship-cardinalities"></a>リレーションシップ基数  
 2015-07-13 のように、' sys.dm_xe_objects ' は、名前に ' _database ' が含まれていないこれらの Xevent Dmv の1つです。 次の表の右側の列では、タイプミスやエラーではありません。 名前は Microsoft SQL Server と Azure SQL Database で同じです。  
   
-|ソース|宛先|Relationship|  
+|差出人|終了|リレーションシップ|  
 |--------|------|----------------|  
 |sys.dm_xe_database_session_events sys.dm_xe_database_session_events.event_session_address|sys.dm_xe_database_sessions。アドレス|多対一|  
 |event_package_guid、_xe_database_session_events、_xe_database_session_events. event_name|sys.dm_xe_objects.name、sys.dm_xe_objects.package_guid|多対一|  

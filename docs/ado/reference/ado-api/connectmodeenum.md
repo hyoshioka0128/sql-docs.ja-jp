@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - ConnectModeEnum
@@ -16,21 +16,21 @@ helpviewer_keywords:
 ms.assetid: 3792c294-5161-4538-a908-22a5fc50b85f
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 704e4e78c47744fbdf2288800353fbbd33d8b090
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 5232779e4756e8130ad5b7b5a4058e2bed96be1b
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88974713"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100034632"
 ---
 # <a name="connectmodeenum"></a>ConnectModeEnum
-[接続](./connection-object-ado.md)のデータを変更したり、[レコード](./record-object-ado.md)を開いたり、**レコード**および[ストリーム](./stream-object-ado.md)オブジェクトの[Mode](./mode-property-ado.md)プロパティの値を指定したりするために使用できるアクセス許可を指定します。  
+[接続](./connection-object-ado.md)のデータを変更したり、[レコード](./record-object-ado.md)を開いたり、**レコード** および [ストリーム](./stream-object-ado.md)オブジェクトの [Mode](./mode-property-ado.md)プロパティの値を指定したりするために使用できるアクセス許可を指定します。  
   
 |定数|値|説明|  
 |--------------|-----------|-----------------|  
 |**adModeRead**|1|読み取り専用のアクセス許可を示します。|  
 |**adModeReadWrite**|3|読み取り/書き込みアクセス許可を示します。|  
-|**adModeRecursive**|0x400000|他の共有* \* 拒否 \* *値 (**adModeShareDenyNone**、 **adModeShareDenyWrite**、または**adModeShareDenyRead**) と共に使用して、現在の**レコード**のすべてのサブレコードに共有の制限を伝達します。 **レコード**に子がない場合、影響はありません。 実行時エラーは、 **adModeShareDenyNone** でのみ使用される場合に生成されます。 ただし、他の値と組み合わせた場合は、 **adModeShareDenyNone** と共に使用できます。 たとえば、"**adModeRead** or **adModeShareDenyNone** or **adModeRecursive**" を使用できます。|  
+|**adModeRecursive**|0x400000|他の共有 *\* 拒否 \** 値 (**adModeShareDenyNone**、 **adModeShareDenyWrite**、または **adModeShareDenyRead**) と共に使用して、現在の **レコード** のすべてのサブレコードに共有の制限を伝達します。 **レコード** に子がない場合、影響はありません。 実行時エラーは、 **adModeShareDenyNone** でのみ使用される場合に生成されます。 ただし、他の値と組み合わせた場合は、 **adModeShareDenyNone** と共に使用できます。 たとえば、"**adModeRead** or **adModeShareDenyNone** or **adModeRecursive**" を使用できます。|  
 |**adModeShareDenyNone**|16|他のユーザーが任意のアクセス許可で接続を開くことを許可します。 他のユーザーに対して、読み取りアクセスも書き込みアクセスも拒否できません。|  
 |**adModeShareDenyRead**|4|他のユーザーが読み取りアクセス許可で接続を開けないようにします。|  
 |**adModeShareDenyWrite**|8|書き込みアクセス許可を持つ接続を他のユーザーが開けないようにします。|  

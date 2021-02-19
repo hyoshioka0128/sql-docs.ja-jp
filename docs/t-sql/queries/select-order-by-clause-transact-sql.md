@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - ORDER_TSQL
 - BY
@@ -39,13 +39,13 @@ helpviewer_keywords:
 ms.assetid: bb394abe-cae6-4905-b5c6-8daaded77742
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 0b6910a57f137a6463f235bb64db2b6bef4274d4
-ms.sourcegitcommit: 8f062015c2a033f5a0d805ee4adabbe15e7c8f94
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 2aadc41cd8b4cf40a6e00ef9e33fd18248780df4
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91226926"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99205427"
 ---
 # <a name="select---order-by-clause-transact-sql"></a>SELECT - ORDER BY 句 (Transact-SQL)
 
@@ -146,7 +146,7 @@ ORDER BY SchemaName + ''; -- wrong
  SELECT TOP (*N*) ステートメントでは必ず ORDER BY 句を使用してください。 これは、TOP の処理対象の行を指定するための唯一の方法です。 詳細については、「[TOP &#40;Transact-SQL&#41;](../../t-sql/queries/top-transact-sql.md)」を参照してください。  
   
 ## <a name="interoperability"></a>相互運用性  
- 別のソースから行を挿入するときに、ORDER BY 句を SELECT...INTO ステートメントと共に使用する場合、行が指定した順序で挿入されるかどうかは保証されません。  
+ 別のソースから行を挿入するときに、ORDER BY 句を SELECT...INTO または INSERT...SELECT ステートメントと共に使用する場合、行が指定した順序で挿入されるかどうかは保証されません。  
   
  ビューで OFFSET および FETCH を使用しても、ビューの updateability プロパティは変更されません。  
   

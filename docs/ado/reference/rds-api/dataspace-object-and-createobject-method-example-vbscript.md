@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -16,18 +16,18 @@ helpviewer_keywords:
 ms.assetid: 12b0e160-5e5c-441f-bed7-ac0bd061e003
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: cc2887f46996450dc9d809439226dbef6cf76e97
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 753bc9b3bbc8b9f881d845bae663358b3eb88074
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91720963"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100049442"
 ---
 # <a name="dataspace-object-and-createobject-method-example-vbscript"></a>DataSpace オブジェクトおよび CreateObject メソッドの例 (VBScript)
 > [!IMPORTANT]
 >  Windows 8 と windows Server 2012 以降では、RDS サーバーコンポーネントが Windows オペレーティングシステムに含まれなくなりました (詳細については、「Windows 8 および [Windows server 2012 の互換性に関するクックブック](https://www.microsoft.com/download/details.aspx?id=27416) 」を参照してください)。 RDS クライアントコンポーネントは、今後のバージョンの Windows では削除される予定です。 新規の開発作業ではこの機能を使用しないようにし、現在この機能を使用しているアプリケーションは修正することを検討してください。 RDS を使用するアプリケーションは、 [WCF Data Service](/dotnet/framework/wcf/)に移行する必要があります。  
   
- 次の例は、RDS の [CreateObject](./createobject-method-rds.md) メソッドの使用方法を示して [います。既定のビジネスオブジェクトを使用し](./dataspace-object-rds.md) た、 [RDSServer DataFactory](./datafactory-object-rdsserver.md)。 この例をテストするには、 \<Body> \</Body> 通常の HTML ドキュメントのタグとタグの間でこのコードを**DataSpaceVBS.asp**切り取って貼り付けます。 ASP スクリプトによってサーバーが識別されます。  
+ 次の例は、RDS の [CreateObject](./createobject-method-rds.md) メソッドの使用方法を示して [います。既定のビジネスオブジェクトを使用し](./dataspace-object-rds.md) た、 [RDSServer DataFactory](./datafactory-object-rdsserver.md)。 この例をテストするには、 \<Body> \</Body> 通常の HTML ドキュメントのタグとタグの間でこのコードを切り取って貼り付けます。 ASP スクリプトによってサーバーが識別されます。  
   
 ```  
 <!-- BeginDataSpaceVBS -->  

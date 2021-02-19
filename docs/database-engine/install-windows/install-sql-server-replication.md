@@ -14,15 +14,15 @@ helpviewer_keywords:
 - replication [SQL Server], installing
 - command prompt [SQL Server replication]
 ms.assetid: c50ad078-060b-4a8d-ad45-9e31a8d85729
-author: MashaMSFT
-ms.author: mathoma
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 199230f8438a93db64fd5e32ded526699c447a7b
-ms.sourcegitcommit: 2f868a77903c1f1c4cecf4ea1c181deee12d5b15
+author: cawrites
+ms.author: chadam
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: 30c66668feb75097cde8c508adf85ef3f18bb097
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91670945"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100348350"
 ---
 # <a name="install-sql-server-replication"></a>SQL Server レプリケーションのインストール
 
@@ -48,5 +48,5 @@ ms.locfileid: "91670945"
 ## <a name="see-also"></a>関連項目  
  [SQL Server のインストール](../../database-engine/install-windows/install-sql-server.md)   
  [コマンド プロンプトからの SQL Server のインストール](./install-sql-server-from-the-command-prompt.md)   
- [SQL Server の各エディションでサポートされる機能](../../sql-server/editions-and-components-of-sql-server-2017.md)  
+ [SQL Server 2017 の各エディションとサポートされている機能](../../sql-server/editions-and-components-of-sql-server-2017.md)および [SQL Server 2019 の各エディションとサポートされている機能](../../sql-server/editions-and-components-of-sql-server-version-15.md)
   

@@ -9,12 +9,12 @@ ms.date: 04/21/2020
 ms.topic: how-to
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 1dbe3505616fa95c429faf6d1f018f947bd60930
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+ms.openlocfilehash: 02276cee62edd604df5e018bc22cf86cddaaec03
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91891032"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100043952"
 ---
 # <a name="ad-mode-deployment-stopped---missing-reverse-lookup-zone-entry-for-dc"></a>AD モードの展開が停止する - DC の逆引き参照ゾーン エントリが見つからない
 
@@ -29,18 +29,18 @@ bash シェルの展開結果の例を次に示します。
 ```
 The privacy statement can be viewed at:
 https://go.microsoft.com/fwlink/?LinkId=853010
- 
+ 
 The license terms for SQL Server Big Data Cluster can be viewed at:
 Enterprise: https://go.microsoft.com/fwlink/?linkid=2104292
 Standard: https://go.microsoft.com/fwlink/?linkid=2104294
 Developer: https://go.microsoft.com/fwlink/?linkid=2104079
- 
+ 
 Cluster deployment documentation can be viewed at:
 https://aka.ms/bdc-deploy
- 
+ 
 NOTE: Cluster creation can take a significant amount of time depending on
 configuration, network speed, and the number of nodes in the cluster.
- 
+ 
 Starting cluster deployment.
 Cluster controller endpoint is available at bdc-control.contoso.com:30080, 193.168.5.14:30080.
 Waiting for control plane to be ready after 5 minutes.
@@ -90,12 +90,12 @@ azdata bdc debug copy-logs -n mssql-cluster -c security-support
 ログを抽出し、`\mssql-cluster\control-<identifier>\controller\control-rts5t-controller-stdout.log` を見つけます。
 
 > [!TIP]
-> ログを収集するには、複数の方法があります。 `azdata` を使用してログをコピーする代わりに、Azure Data Studio でノートブックを使用できます。
+> ログを収集するには、複数の方法があります。 [!INCLUDE [azure-data-cli-azdata](../includes/azure-data-cli-azdata.md)] を使用してログをコピーする代わりに、Azure Data Studio でノートブックを使用できます。
 > Azure Data Studio で Kubernetes クラスターに接続し、適切なトラブルシューティング ノートブックを実行します。 ノートブックの例を次に示します。
 >
 > - TSG027 - クラスターのデプロイを観察する
 > - TSG061 - BDC 名前空間内にあるポッドのすべてのコンテナー ログの末尾を取得する
-> - TSG001 - `azdata` copy-logs を実行する
+> - TSG001 - `azdata copy-logs` を実行する
 >
 
 ## <a name="inspect-the-logs"></a>ログを調べる
@@ -119,25 +119,25 @@ YYYY-MM-DD HH:MM:SS.ms | ERROR | Failed to create AD user account 'nginx-mgmtpro
 次の PowerShell スクリプトを実行して、逆引き DNS エントリ (PTR レコード) が構成されているかどうかを確認します。
 
 ```powershell
-#Domain Controller FQDN 'DCserver01.contoso.local'
-$Domain_controller_FQDN = 'DCserver01.contoso.local'
+#Domain Controller FQDN 'DCserver01.contoso.local'
+$Domain_controller_FQDN = 'DCserver01.contoso.local'
 
-#Performing Domain Controller DNS record, reverse PTR Checks...
-$DcControllerDnsPtr_Result = New-Object System.Collections.ArrayList
-try {
-    $Domain_controller_DNS_Record = Resolve-DnsName $Domain_controller_FQDN -Type A -Server $Domain_DNS_IP_address -ErrorAction Stop
-    foreach ($ip in $Domain_controller_DNS_Record.IPAddress) {
-        #resolving hostname by IP address to make sure we have reverse PTR record 
-        if ((Resolve-DnsName $ip).NameHost -eq $Domain_controller_FQDN) {
-            [void]$DcControllerDnsPtr_Result.add("OK - $Domain_controller_FQDN has an A record with an IP $ip, Reverse PTR record is in place") 
-        }
-        else {
-            [void]$DcControllerDnsPtr_Result.add("Missing - $Domain_controller_FQDN has an A record with an IP $ip, But no reverse PTR record was found for the host")
-        }
-    }
+#Performing Domain Controller DNS record, reverse PTR Checks...
+$DcControllerDnsPtr_Result = New-Object System.Collections.ArrayList
+try {
+    $Domain_controller_DNS_Record = Resolve-DnsName $Domain_controller_FQDN -Type A -Server $Domain_DNS_IP_address -ErrorAction Stop
+    foreach ($ip in $Domain_controller_DNS_Record.IPAddress) {
+        #resolving hostname by IP address to make sure we have reverse PTR record 
+        if ((Resolve-DnsName $ip).NameHost -eq $Domain_controller_FQDN) {
+            [void]$DcControllerDnsPtr_Result.add("OK - $Domain_controller_FQDN has an A record with an IP $ip, Reverse PTR record is in place") 
+        }
+        else {
+            [void]$DcControllerDnsPtr_Result.add("Missing - $Domain_controller_FQDN has an A record with an IP $ip, But no reverse PTR record was found for the host")
+        }
+    }
 }
-catch {
-    [void]$DcControllerDnsPtr_Result.add("Error - " + $_.exception.message)
+catch {
+    [void]$DcControllerDnsPtr_Result.add("Error - " + $_.exception.message)
 }
 
 #show the results 

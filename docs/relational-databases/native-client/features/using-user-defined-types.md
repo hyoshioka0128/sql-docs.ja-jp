@@ -1,5 +1,5 @@
 ---
-description: SQL Server Native Client でのユーザー定義型の使用
+description: SQL Server Native Client での User-Defined 型の使用
 title: ユーザー定義型の使用 | Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
@@ -21,15 +21,15 @@ helpviewer_keywords:
 ms.assetid: e15d8169-3517-4323-9c9e-0f5c34aff7df
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: b56a4e3446c827ecd8372876aa54cb023827a861
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 2808e712491271fe5738ba4d20ad3e7e2133a451
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88448229"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97461953"
 ---
-# <a name="using-user-defined-types-in-sql-server-native-client"></a>SQL Server Native Client でのユーザー定義型の使用
+# <a name="using-user-defined-types-in-sql-server-native-client"></a>SQL Server Native Client での User-Defined 型の使用
 [!INCLUDE[appliesto-ss-asdb-xxxx-pdw-md](../../../includes/appliesto-ss-asdb-xxxx-pdw-md.md)]
 
   [!INCLUDE[ssVersion2005](../../../includes/ssversion2005-md.md)] では、ユーザー定義型 (UDT) が導入されました。 これにより、[!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] データベースにオブジェクトやカスタム データ構造を格納できるようになり、SQL の型システムが拡張されます。 UDT は複数のデータ型を持つことができ、動作を定義できます。この点は、1 つの [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] システム データ型から構成される従来の別名データ型と異なります。 UDT は、検証可能なコードを生成する .NET 共通言語ランタイム (CLR) でサポートされる任意の言語を使用して定義されます。 このような言語には、Microsoft Visual C#<sup>®</sup> や Visual Basic<sup>®</sup> .NET があります。 データは、.NET のクラスまたは構造体のフィールドやプロパティとして公開され、動作はクラスまたは構造体のメソッドによって定義されます。  
@@ -149,7 +149,7 @@ ms.locfileid: "88448229"
  SSPROP_PARAM_UDT_NAME は必須です。 SSPROP_PARAM_UDT_CATALOGNAME と SSPROP_PARAM_UDT_SCHEMANAME は省略可能です。 いずれかのプロパティが適切に指定されていない場合、DB_E_ERRORSINCOMMAND が返されます。 SSPROP_PARAM_UDT_CATALOGNAME プロパティと SSPROP_PARAM_UDT_SCHEMANAME プロパティがどちらも指定されていない場合、UDT は、テーブルと同じデータベースおよびスキーマ内に定義する必要があります。 UDT の定義が、テーブルと同じデータベース内にあって、同じスキーマ内にない場合、SSPROP_PARAM_UDT_SCHEMANAME プロパティを指定する必要があります。 UDT の定義がテーブルと異なるデータベースにある場合、SSPROP_PARAM_UDT_CATALOGNAME プロパティと SSPROP_PARAM_UDT_SCHEMANAME プロパティの両方を指定する必要があります。  
   
 #### <a name="the-dbpropset_sqlservercolumn-property-set"></a>DBPROPSET_SQLSERVERCOLUMN プロパティ セット  
- **Itabledefinition**インターフェイスでのテーブルの作成をサポートするために、Native Client では、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 次の3つの新しい列が DBPROPSET_SQLSERVERCOLUMN プロパティセットに追加されます。  
+ **Itabledefinition** インターフェイスでのテーブルの作成をサポートするために、Native Client では、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 次の3つの新しい列が DBPROPSET_SQLSERVERCOLUMN プロパティセットに追加されます。  
   
 |Name|説明|種類|説明|  
 |----------|-----------------|----------|-----------------|  
@@ -174,7 +174,7 @@ ms.locfileid: "88448229"
  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client では、コア OLE DB インターフェイスの多くに新しい値または変更を追加します。  
   
 #### <a name="the-isscommandwithparameters-interface"></a>ISSCommandWithParameters インターフェイス  
- OLE DB を通じて Udt をサポートするために、Native Client では、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] **Isscommandwithparameters** インターフェイスの追加など、多数の変更が実装されています。 この新しいインターフェイスは、主要な OLE DB インターフェイス **ICommandWithParameters** から継承されます。 **ICommandWithParameters**から継承された3つのメソッドに加えて、**Getparameterinfo**、 **Mapparameternames**、および**setparameterinfo**;**Isscommandwithparameters**には、サーバー固有のデータ型を処理するために使用される**getparameterproperties**メソッドと**setparameterproperties**メソッドが用意されています。  
+ OLE DB を通じて Udt をサポートするために、Native Client では、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] **Isscommandwithparameters** インターフェイスの追加など、多数の変更が実装されています。 この新しいインターフェイスは、主要な OLE DB インターフェイス **ICommandWithParameters** から継承されます。 **ICommandWithParameters** から継承された3つのメソッドに加えて、**Getparameterinfo**、 **Mapparameternames**、および **setparameterinfo**;**Isscommandwithparameters** には、サーバー固有のデータ型を処理するために使用される **getparameterproperties** メソッドと **setparameterproperties** メソッドが用意されています。  
   
 > [!NOTE]  
 >  **ISSCommandWithParameters** インターフェイスでは、新しい SSPARAMPROPS 構造体も使用されます。  

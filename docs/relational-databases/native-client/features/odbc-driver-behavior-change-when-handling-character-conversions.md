@@ -10,13 +10,13 @@ ms.topic: reference
 ms.assetid: 682a232a-bf89-4849-88a1-95b2fbac1467
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 48c2230327a92a560291aacbf802ae775b99fe8f
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 5d74887afafcc4ab0c00881081bf8abf941ac551
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88498906"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97418833"
 ---
 # <a name="odbc-driver-behavior-change-when-handling-character-conversions"></a>文字変換処理での ODBC ドライバーの動作の変更
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -45,7 +45,7 @@ pBuffer = new WCHAR[(iSize/sizeof(WCHAR)) + 1];   // Allocate buffer
 SQLGetData(hstmt, SQL_W_CHAR, ...., (SQLPOINTER*)pBuffer, iSize, &iSize);   // Retrieve data  
 ```  
   
- **SQLGetData** は、実際のデータのチャンクを取得するためにのみ呼び出すことができます。 **SQLGetData**を使用してデータのサイズを取得することはサポートされていません。  
+ **SQLGetData** は、実際のデータのチャンクを取得するためにのみ呼び出すことができます。 **SQLGetData** を使用してデータのサイズを取得することはサポートされていません。  
   
  次に、不適切なパターンを使用した場合のドライバーの変更による影響を示します。 このアプリケーションは、 **varchar** 型の列とバインドを Unicode (SQL_UNICODE/SQL_WCHAR) としてクエリを実行します。  
   
@@ -58,9 +58,9 @@ SQLGetData(hstmt, SQL_WCHAR, ....., (SQLPOINTER*) 0x1, 0 , &iSize);   // Attempt
 |[!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client ODBC ドライバーのバージョン|長さまたはインジケーターの結果|説明|  
 |-----------------------------------------------------------------|---------------------------------|-----------------|  
 |[!INCLUDE[ssKilimanjaro](../../../includes/sskilimanjaro-md.md)] Native Client 以前|6|ドライバーには、CHAR から WCHAR への変換が長さ * 2 として実行できるという誤った想定がありました。|  
-|[!INCLUDE[ssSQL11](../../../includes/sssql11-md.md)] Native Client (Version 11.0.2100.60) 以降|-4 (SQL_NO_TOTAL)|ドライバーは、CHAR から WCHAR または WCHAR から CHAR への変換が、(乗算) \* 2 または (除算)/2 アクションであると想定しなくなりました。<br /><br /> **SQLGetData**を呼び出すと、予期される変換の長さが返されなくなりました。 ドライバーでは CHAR と WCHAR との間の変換が検出され、誤りの可能性のある *2 または /2 の動作の代わりに (-4) SQL_NO_TOTAL が返されます。|  
+|[!INCLUDE[ssSQL11](../../../includes/sssql11-md.md)] Native Client (Version 11.0.2100.60) 以降|-4 (SQL_NO_TOTAL)|ドライバーは、CHAR から WCHAR または WCHAR から CHAR への変換が、(乗算) \* 2 または (除算)/2 アクションであると想定しなくなりました。<br /><br /> **SQLGetData** を呼び出すと、予期される変換の長さが返されなくなりました。 ドライバーでは CHAR と WCHAR との間の変換が検出され、誤りの可能性のある *2 または /2 の動作の代わりに (-4) SQL_NO_TOTAL が返されます。|  
   
- **SQLGetData**を使用して、データのチャンクを取得します。 (擬似コードを示します)。  
+ **SQLGetData** を使用して、データのチャンクを取得します。 (擬似コードを示します)。  
   
 ```  
 while( (SQL_SUCCESS or SQL_SUCCESS_WITH_INFO) == SQLFetch(...) ) {  
@@ -106,9 +106,9 @@ SQLBindParameter(... SQL_W_CHAR, ...)   // Only bind up to first 64 characters
 ## <a name="performing-char-and-wchar-conversions"></a>CHAR と WCHAR の変換の実行  
  [!INCLUDE[ssSQL11](../../../includes/sssql11-md.md)] Native Client ODBC ドライバーには、CHAR と WCHAR の変換を実行する方法が複数用意されています。 ロジックは、blob の操作 (varchar (max)、nvarchar (max)、...) に似ています。  
   
--   **SQLBindCol**または**SQLBindParameter**にバインドする場合、データは指定されたバッファーに保存されるか、または切り捨てられます。  
+-   **SQLBindCol** または **SQLBindParameter** にバインドする場合、データは指定されたバッファーに保存されるか、または切り捨てられます。  
   
--   バインドしない場合は、 **SQLGetData** と **sqlparamdata**を使用して、データをチャンク単位で取得できます。  
+-   バインドしない場合は、 **SQLGetData** と **sqlparamdata** を使用して、データをチャンク単位で取得できます。  
   
 ## <a name="see-also"></a>参照  
  [SQL Server Native Client の機能](../../../relational-databases/native-client/features/sql-server-native-client-features.md)  

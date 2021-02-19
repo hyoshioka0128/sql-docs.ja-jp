@@ -15,15 +15,15 @@ helpviewer_keywords:
 - execution plans [SQL Server], saving
 - saving execution plans
 ms.assetid: c439e53b-56f3-4442-97c6-dabd48a203d8
-author: julieMSFT
-ms.author: jrasnick
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: f10e2cd6b6b146bb7c91d9732ba04b7f6a4d5ebb
-ms.sourcegitcommit: 610e3ebe21ac6575850a29641a32f275e71557e3
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 3c9c95103e574f51ef530f17432125fe99a591e6
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91784729"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97469173"
 ---
 # <a name="save-an-execution-plan-in-xml-format"></a>XML 形式での実行プランの保存
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -50,7 +50,7 @@ ms.locfileid: "91784729"
     ```  
   
      > [!NOTE] 
-     > SHOWPLAN_XML は、クエリのコンパイル時クエリ実行プラン情報を生成しますが、クエリの実行は行いません。 これは**推定**実行プランとも呼ばれます。 STATISTICS XML は、クエリの実行時クエリ実行プラン情報を生成し、クエリを実行します。 これは**実際の**実行プランとも呼ばれます。  
+     > SHOWPLAN_XML は、クエリのコンパイル時クエリ実行プラン情報を生成しますが、クエリの実行は行いません。 これは **推定** 実行プランとも呼ばれます。 STATISTICS XML は、クエリの実行時クエリ実行プラン情報を生成し、クエリを実行します。 これは **実際の** 実行プランとも呼ばれます。  
   
 3.  クエリを実行します。 例:  
   
@@ -93,7 +93,7 @@ ms.locfileid: "91784729"
   
 3.  表示する XML クエリ プラン ファイルを選択し、 **[開く]** をクリックします。  
   
-     代わりに、Windows エクスプローラーで、拡張子が **.sqlplan**のファイルをダブルクリックしてもかまいません。 プランが、 [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)]で開かれます。  
+     代わりに、Windows エクスプローラーで、拡張子が **.sqlplan** のファイルをダブルクリックしてもかまいません。 プランが、 [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)]で開かれます。  
   
 ## <a name="see-also"></a>参照  
  [SET SHOWPLAN_XML &#40;Transact-SQL&#41;](../../t-sql/statements/set-showplan-xml-transact-sql.md)   

@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 2b6dfef9-bcdf-483d-a164-2fa3ec81a43f
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 25b7ee7aa9b206cec5fc144dd024d3b1fa0847d1
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 2c09dc2ee3c5a98814de979eb398ba59f0423b7e
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88985013"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100054377"
 ---
 # <a name="columns-and-tables-append-methods-name-property-example-vc"></a>Columns および Tables Append メソッド、Name プロパティの例 (VC++)
 次のコードは、新しいテーブルを作成する方法を示しています。  

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - SQL_GRAPH_TSQL
 - TABLE
@@ -32,13 +32,13 @@ helpviewer_keywords:
 ms.assetid: ''
 author: shkale-msft
 ms.author: shkale
-monikerRange: '>=sql-server-2017||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 325e6d949cfede5bec7ccdb958dac2c82e9d9efa
-ms.sourcegitcommit: a5398f107599102af7c8cda815d8e5e9a367ce7e
+monikerRange: '>=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 7d946a2c834fa910a0a7b76b321a55bfbdd91198
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92005588"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99177894"
 ---
 # <a name="create-table-sql-graph"></a>CREATE TABLE (SQL Graph)
 [!INCLUDE[SQL Server 2017](../../includes/applies-to-version/sqlserver2017.md)]
@@ -169,7 +169,7 @@ CREATE TABLE
  CREATE TABLE likes AS EDGE;
 ```
 
-次の例では、他のユーザーと友人になることができるのは、人**だけ**であるとするルールをモデル化しています。つまり、このエッジでは、Person 以外のノードへの参照は許可されません。
+次の例では、他のユーザーと友人になることができるのは、人 **だけ** であるとするルールをモデル化しています。つまり、このエッジでは、Person 以外のノードへの参照は許可されません。
 
 ```
 /* Create friend edge table with CONSTRAINT, restricts for nodes and it direction */

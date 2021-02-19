@@ -2,7 +2,7 @@
 title: SQL Server Management Studio で Always Encrypted を使用した列のクエリを実行する | Microsoft Docs
 description: SQL Server Management Studio を使用して Always Encrypted の列のクエリを実行する方法について説明します。 暗号化された列に格納された暗号化テキストまたはテキストの値を取得します。
 ms.custom: ''
-ms.date: 10/31/2019
+ms.date: 01/15/2021
 ms.prod: sql
 ms.reviewer: vanto
 ms.technology: security
@@ -12,13 +12,13 @@ helpviewer_keywords:
 ms.assetid: 29816a41-f105-4414-8be1-070675d62e84
 author: jaszymas
 ms.author: jaszymas
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 91523e68c03467a7c6aaab40a5cbd3ab696b1890
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: ff7924bf1262ee29977d16548b6548c112bc8b5d
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91866532"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100345454"
 ---
 # <a name="query-columns-using-always-encrypted-with-sql-server-management-studio"></a>SQL Server Management Studio で Always Encrypted を使用した列のクエリを実行する
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "91866532"
 ### <a name="example"></a>例
 `SSN` が `Patients` テーブルの暗号化された列であると仮定して、以下に示されているクエリでバイナリ暗号化テキスト値を取得します (Always Encrypted がデータベース接続で無効になっている場合)。   
 
-![always-encrypted-ciphertext](../../../relational-databases/security/encryption/media/always-encrypted-ciphertext.png)
+![SELECT [SSN] FROM [dbo].[Patients] クエリと、バイナリ暗号化テキスト値として表示されたクエリの結果のスクリーンショット。](../../../relational-databases/security/encryption/media/always-encrypted-ciphertext.png)
  
 ## <a name="retrieving-plaintext-values-stored-in-encrypted-columns"></a>暗号化された列に格納されたプレーンテキスト値の取得    
 (値の暗号化を解除するために) プレーンテキストとして暗号化された列から値を取得する場合は、次のようにします。   
@@ -49,7 +49,7 @@ ms.locfileid: "91866532"
 ### <a name="example"></a>例
 SSN が `char(11)` テーブルで暗号化された `Patients` 列であると仮定して、以下に示されているクエリでプレーンテキスト値を返します (Always Encrypted がデータベース接続で有効になっている場合、および `SSN` 列に構成された列マスター キーにアクセスできる場合)。   
 
-![always-encrypted-plaintext](../../../relational-databases/security/encryption/media/always-encrypted-plaintext.png)
+![SELECT [SSN] FROM [Clinic].[dbo].[Patients] クエリと、プレーン テキスト値として表示されたクエリの結果のスクリーンショット。](../../../relational-databases/security/encryption/media/always-encrypted-plaintext.png)
  
 ## <a name="sending-plaintext-values-targeting-encrypted-columns"></a>暗号化された列をターゲットとするプレーンテキスト値の送信       
 暗号化された列をターゲットとする値を送信するクエリ (暗号化された列に格納されている値を使用して挿入、更新またはフィルタリングするクエリなど) を実行する場合は、次のようにします。
@@ -63,7 +63,7 @@ SSN が `char(11)` テーブルで暗号化された `Patients` 列であると�
 ### <a name="example"></a>例
 `SSN` が `char(11)` テーブルの暗号化された `Patients` 列であると仮定して、以下のスクリプトで SSN 列の `'795-73-9838'` を含む行の検索を試み、 `LastName` 列の値を返します (Always Encrypted がデータベース接続で有効で、Always Encrypted のパラメーター化がクエリ エディター ウィンドウで有効で、 `SSN` 列に構成された列マスター キーにアクセスできる場合)。   
 
-![always-encrypted-patients](../../../relational-databases/security/encryption/media/always-encrypted-patients.png)
+![DECLARE @SSN CHAR(11) = '795-73-9838' SELECT [LastName] FROM [dbo].[Patients] WHERE [SSN] = @SSN クエリとクエリ結果のスクリーンショット。](../../../relational-databases/security/encryption/media/always-encrypted-patients.png)
 
 ## <a name="permissions-for-querying-encrypted-columns"></a>暗号化された列にクエリを実行するためのアクセス許可
 
@@ -90,16 +90,17 @@ SSMS でデータベースに接続する場合は、データベース接続に
 新しい接続を作成するときや **[サーバーに接続]** ダイアログを使用して既存の接続を変更するときに、Always Encrypted を有効または無効にすることができます。 
 
 Always Encrypted を有効 (無効) にするには、次のようにします。
-1. **[サーバーに接続]** ダイアログを開きます (詳細については、「[SQL Server インスタンスに接続する](../../../ssms/quickstarts/connect-query-sql-server.md#connect-to-a-sql-server-instance)」を参照してください)。
+1. **[サーバーに接続]** ダイアログを開きます (詳細については、「[SQL Server インスタンスに接続する](../../../ssms/quickstarts/ssms-connect-query-sql-server.md#connect-to-a-sql-server-instance)」を参照してください)。
 1. **[オプション >>]** をクリックします。
 1. SSMS 18 以降を使用している場合:
     1. **[Always Encrypted]** タブを選択します。
     1. Always Encrypted を有効にするには、 **[Always Encrypted を有効にする (列の暗号化)]** を選択します。 Always Encrypted を無効にするには、 **[Always Encrypted を有効にする (列の暗号化)]** が選択されていないことを確認します。
-    1. [!INCLUDE [sssqlv15-md](../../../includes/sssqlv15-md.md)] を使用し、SQL Server インスタンスがセキュア エンクレーブで構成されている場合は、エンクレーブ構成証明の url を指定できます。 SQL Server インスタンスでセキュア エンクレーブを使用しない場合は、 **[エンクレーブ構成証明 URL]** テキストボックスを空白のままにしてください。 詳細については、「[セキュア エンクレーブを使用する Always Encrypted](always-encrypted-enclaves.md)」を参照してください。
 1. SSMS 17 以前を使用している場合:
     1. **[追加のプロパティ]** タブを選択します。
     1. Always Encrypted を有効にするには、「`Column Encryption Setting = Enabled`」と入力します。 Always Encrypted を無効にするには、`Column Encryption Setting = Disabled` を指定するか、 **[追加のプロパティ]** タブから **[列暗号化設定]** の設定を削除します (既定値は **[無効]** )。   
  1. **[Connect]** をクリックします。
+
+[セキュリティで保護されたエンクレーブが設定された Always Encrypted](always-encrypted-enclaves.md) を使用しているときに、サーバー側のセキュリティで保護されたエンクレーブを利用するステートメントを実行するには、接続に対して Always Encrypted を有効にするだけでなく、エンクレーブ構成証明 URL を指定する必要があります。 詳細については、[SSMS でエンクレーブを使用して T-SQL ステートメントを実行するための前提条件](always-encrypted-enclaves-query-columns.md#prerequisites-for-running-t-sql-statements-using-enclaves-in-ssms)に関するページを参照してください。
 
 > [!TIP]
 > 既存のクエリ エディター ウィンドウで Always Encrypted の有効化と無効化を切り替えるには、次のようにします。   
@@ -189,11 +190,11 @@ SQL Server Management Studio が変数のパラメーター化を試みたとき
 
 下のスクリーン ショットは、6 つの変数宣言の例を示しています。 SQL Server Management Studio は、最初の 3 つの変数を正常にパラメーター化しています。 最後の 3 つの変数ではパラメーター化の前提条件が満たされなかったため、SQL Server Management Studio ではそれらのパラメーター化は試行されていません (宣言にはまったくマークが付けられていません)。
 
-![always-encrypted-parameter-warnings](../../../relational-databases/security/encryption/media/always-encrypted-parameter-warnings.png)
+![6 つの変数宣言のうち、3 つが正常にパラメーター化され、3 つが失敗して関連する警告メッセージが表示された例を示すスクリーンショット。](../../../relational-databases/security/encryption/media/always-encrypted-parameter-warnings.png)
  
 次の別の例では、2 つの変数はパラメーター化の前提条件を満たしていますが、変数が正しく初期化されていないため、パラメーター化の試行は失敗しています。    
  
-![always-encrypted-error](../../../relational-databases/security/encryption/media/always-encrypted-error.png)
+![最終的に失敗して関連する警告メッセージが表示された 2 つの変数宣言の例を示すスクリーンショット。](../../../relational-databases/security/encryption/media/always-encrypted-error.png)
  
 > [!NOTE]
 > Always Encrypted でサポートされる型変換のサブセットは限られているため、多くの場合、Transact-SQL 変数のデータ型が、ターゲットとなるターゲット データベース列の型と同じである必要があります。 たとえば、 `SSN` テーブル内の `Patients` 列の型が `char(11)`であると仮定して、 `@SSN` である、 `nchar(11)`変数の型が列の型と一致しないため、以下のクエリは失敗します。   

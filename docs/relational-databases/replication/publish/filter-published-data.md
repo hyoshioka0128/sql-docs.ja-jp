@@ -21,13 +21,13 @@ helpviewer_keywords:
 ms.assetid: 8a914947-72dc-4119-b631-b39c8070c71b
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: =azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions
-ms.openlocfilehash: c52250061e78f663e4046d53b5c101f13367407d
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-mi-current||>=sql-server-2016
+ms.openlocfilehash: 8d2bb044d0a75c4809cfe987bea6d0c2efc7d743
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88423436"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97477753"
 ---
 # <a name="filter-published-data"></a>パブリッシュされたデータのフィルター選択
 [!INCLUDE[sql-asdbmi](../../../includes/applies-to-version/sql-asdbmi.md)]
@@ -66,7 +66,7 @@ ms.locfileid: "88423436"
   
  ![行のフィルタリング](../../../relational-databases/replication/publish/media/repl-16.gif "行のフィルター選択")  
   
- 静的行フィルターは、WHERE 句を使用してパブリッシュするのに適したデータを選択します。WHERE 句の最後の部分を指定してください。 Adventure Works サンプル データベースの **Product テーブル** を考えます。ここには、列 **ProductLine**が含まれます。 マウンテン バイクに関連した製品についてのデータがある行のみをパブリッシュするには、 `ProductLine = 'M'`を指定します。  
+ 静的行フィルターは、WHERE 句を使用してパブリッシュするのに適したデータを選択します。WHERE 句の最後の部分を指定してください。 Adventure Works サンプル データベースの **Product テーブル** を考えます。ここには、列 **ProductLine** が含まれます。 マウンテン バイクに関連した製品についてのデータがある行のみをパブリッシュするには、 `ProductLine = 'M'`を指定します。  
   
  静的行フィルターにより、各パブリケーションに対するデータセットは 1 つのみとなります。 前の例では、すべてのサブスクライバーは、マウンテン バイクに関連する製品についてのデータがある行のみを受信します。 別のサブスクライバーがロード バイクに関連する製品についてのデータがある行のみを必要としている場合は、次のようになります。  
   
@@ -132,7 +132,7 @@ ms.locfileid: "88423436"
   
 -   トランザクション レプリケーションでは、インデックス付きビューをビューまたはテーブルとしてレプリケートできます。 このビューをテーブルとしてレプリケートする場合、テーブルから列をフィルター選択することはできません。  
   
- 行フィルターは、データベース間で動作するようには設計されていません。 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] では、(フィルターが実行される) **sp_replcmds** の実行が意図的にデータベース所有者 (**dbo**) に制限されています。 **dbo** には、データベース間の権限がありません。 [!INCLUDE[ssKatmai](../../../includes/sskatmai-md.md)] に CDC (Change Data Capture) が追加されたことで、**sp_replcmds** のロジックは、ユーザーが戻って照会できる情報を変更追跡テーブルに設定します。 セキュリティ上の理由から、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] では、悪意のある **dbo** がこの実行パスを乗っ取ることができないようにこのロジックの実行が制限されます。 たとえば、悪意のある **dbo** が CDC テーブルのトリガーを追加すると、その後、 **sp_replcmds**を呼び出すユーザーのコンテキスト (この場合はログ リーダー エージェント) でテーブルが実行されます。  エージェントを実行しているアカウントの権限が高い場合、悪意のある **dbo** は自身の特権を引き上げます。  
+ 行フィルターは、データベース間で動作するようには設計されていません。 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] では、(フィルターが実行される) **sp_replcmds** の実行が意図的にデータベース所有者 (**dbo**) に制限されています。 **dbo** には、データベース間の権限がありません。 [!INCLUDE[ssKatmai](../../../includes/sskatmai-md.md)] に CDC (Change Data Capture) が追加されたことで、**sp_replcmds** のロジックは、ユーザーが戻って照会できる情報を変更追跡テーブルに設定します。 セキュリティ上の理由から、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] では、悪意のある **dbo** がこの実行パスを乗っ取ることができないようにこのロジックの実行が制限されます。 たとえば、悪意のある **dbo** が CDC テーブルのトリガーを追加すると、その後、 **sp_replcmds** を呼び出すユーザーのコンテキスト (この場合はログ リーダー エージェント) でテーブルが実行されます。  エージェントを実行しているアカウントの権限が高い場合、悪意のある **dbo** は自身の特権を引き上げます。  
   
 ## <a name="see-also"></a>参照  
  [データとデータベース オブジェクトのパブリッシュ](../../../relational-databases/replication/publish/publish-data-and-database-objects.md)  

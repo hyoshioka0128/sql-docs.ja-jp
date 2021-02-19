@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
 ms.technology: connectivity
-ms.topic: conceptual
+ms.topic: reference
 apiname:
 - SQLServerStatement.execute (javal.lang.String.int[])
 apilocation:
@@ -16,12 +16,12 @@ apitype: Assembly
 ms.assetid: dc73d1c3-e756-43af-b1fc-ac438cbd0965
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 95c18d95e6014afc78fc53b8a37f3cd4d3509fd3
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 9dc6fb66d220fabb2b1d2ec38990364c36576ae2
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88437774"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100045452"
 ---
 # <a name="execute-method-javalangstring-int"></a>execute (java.lang.String, int[]) メソッド
 
@@ -38,14 +38,14 @@ public final boolean execute(
 #### <a name="parameters"></a>パラメーター
 *sql*
 
-SQL ステートメントを含む**文字列**です。
+SQL ステートメントを含む **文字列** です。
 
 *columnIndexes*
 
 検索可能にする自動生成キーの列インデックスを示す **int** 配列です。
 
 ## <a name="return-value"></a>戻り値
-最初の結果が結果セットの場合は **true** です。 それ以外の場合は、 **false**です。
+最初の結果が結果セットの場合は **true** です。 それ以外の場合は、 **false** です。
   
 ## <a name="exceptions"></a>例外
 [SQLServerException](./sqlserverexception-class.md)

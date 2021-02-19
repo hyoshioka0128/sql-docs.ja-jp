@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 21e19635-340d-49bb-b39d-4867102fb5df
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 69379b9af3dc126713cb2bbd3172003692a7d4de
-ms.sourcegitcommit: 9be0047805ff14e26710cfbc6e10d6d6809e8b2c
+ms.openlocfilehash: 52f465b4cfdcb2ff771a71c1ef956af78b522358
+ms.sourcegitcommit: 0c0e4ab90655dde3e34ebc08487493e621f25dda
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89042235"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442873"
 ---
 # <a name="using-bulk-copy-with-the-jdbc-driver"></a>JDBC ドライバーでの一括コピーの使用
 
@@ -364,9 +364,9 @@ public class BulkCopyMultiple {
 
 この接続プロパティを `false` に設定すると、**DATE**、**DATETIME**、**DATIMETIME2**、**DATETIMEOFFSET**、**SMALLDATETIME**、および **TIME** データ型が文字列として送信されず、それぞれの型として送信されます。
 
-テンポラル データ型をそれぞれの型として送信すると、ユーザーは Azure Synapse Analytics (SQL DW) の列にデータを送信できます。この操作は、以前はドライバーがデータを文字列に変換していたためできませんでした。 SQL Server では暗黙的な変換が実行されるため、テンポラル列に文字列データを送信しても機能しますが、Azure Synapse Analytics (SQL DW) では同じように機能しません。
+テンポラル データ型をそれぞれの型として送信すると、ユーザーは Azure Synapse Analytics の列にデータを送信できます。この操作は、以前はドライバーがデータを文字列に変換していたためできませんでした。 SQL Server では暗黙的な変換が実行されるため、テンポラル列に文字列データを送信しても機能しますが、Azure Synapse Analytics では同じように機能しません。
 
-さらに、**v8.4.1** 以降では、この接続文字列を 'false' に設定しなくても、**MONEY** および **SMALLMONEY** データ型が **DECIMAL** ではなく **MONEY** / **SMALLMONEY** データ型 として送信されるため、これらのデータ型も Azure Synapse Analytics (SQL DW) に一括コピーできます。
+さらに、**v8.4.1** 以降では、この接続文字列を 'false' に設定しなくても、**MONEY** および **SMALLMONEY** データ型が **DECIMAL** ではなく **MONEY** / **SMALLMONEY** データ型として送信されるため、これらのデータ型も Azure Synapse Analytics に一括コピーできます。
 
 ### <a name="extended-bulk-copy-for-azure-data-warehouse-limitations"></a>拡張された Azure Data Warehouse の一括コピーの制限事項
 
@@ -603,7 +603,7 @@ public class BulkCopyExistingTransactions {
   
 2. データベースを展開し、AdventureWorks データベースを右クリックして、 **[タスク]** 、 **[データのエクスポート]** の順にクリックします。  
   
-3. データ ソースに関しては、使用する SQL Server に接続できる**データ ソース** (例: SQL Server Native Client 11.0) を選択し、構成を確認して **[次へ]** をクリックします。  
+3. データ ソースに関しては、使用する SQL Server に接続できる **データ ソース** (例: SQL Server Native Client 11.0) を選択し、構成を確認して **[次へ]** をクリックします。  
   
 4. コピー先に関しては、 **[フラット ファイル変換先]** を選択し、「`C:\Test\TestBulkCSVExample.csv`」のように変換先を含めた **[ファイル名]** を入力します。 **[形式]** が [区切りあり]、 **[テキスト修飾子]** が [なし] に設定されていることを確認し、 **[先頭データ行を列名として使用する]** を有効にして、 **[次へ]** をクリックします。  
   

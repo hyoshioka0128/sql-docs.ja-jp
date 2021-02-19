@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - _Catalog::put_ActiveConnection
@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: 25fff69b-7556-4a28-b6f5-600a4bb0f607
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: c2268458425af400e4d8b2530a1cdabf2decb16b
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: a9f2a83b7b58663c59499b67af7085ec8adca4ab
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88985813"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100050783"
 ---
 # <a name="activeconnection-property-adox"></a>ActiveConnection プロパティ (ADOX)
 [カタログ](./catalog-object-adox.md)が属する ADO[接続](../ado-api/connection-object-ado.md)オブジェクトを示します。  

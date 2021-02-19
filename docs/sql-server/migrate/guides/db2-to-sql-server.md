@@ -5,7 +5,7 @@ ms.custom: ''
 ms.date: 08/17/2020
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: release-landing
+ms.technology: migration-guide
 ms.topic: conceptual
 helpviewer_keywords:
 - processors [SQL Server], supported
@@ -13,15 +13,15 @@ helpviewer_keywords:
 - maximum number of processors supported
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: 1c7d4e0507667429e4f97674ef302a7d5aed8102
-ms.sourcegitcommit: b93beb4f03aee2c1971909cb1d15f79cd479a35c
+ms.openlocfilehash: 81b631c6b5810fc45ce3b14449a458544fdf6200
+ms.sourcegitcommit: 18e2f0706e03d0b2b6324845244fbafaa077a8dd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91510291"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97100358"
 ---
 # <a name="migration-guide-db2-to-sql-server"></a>移行ガイド:DB2 から SQL Server
-[!INCLUDE[sqlserver](../../../includes/applies-to-version/sql-asdb-asdbmi.md)]
+[!INCLUDE[sqlserver](../../../includes/applies-to-version/sqlserver.md)]
 
 この移行ガイドでは、SQL Server Migration Assistant for DB2 を使用して、ユーザー データベースを DB2 から SQL Server に移行する方法について説明します。 
 
@@ -33,7 +33,7 @@ ms.locfileid: "91510291"
 DB2 データベースを SQL Server に移行するには、以下が必要です。
 
 - ソース環境がサポートされていることを確認する。
-- [SQL Server Migration Assistant (SSMA) for DB2](https://www.microsoft.com/download/details.aspx?id=54254) をダウンロードする。
+- [SQL Server Migration Assistant (SSMA) for DB2](https://www.microsoft.com/download/details.aspx?id=54254)。
 
 
 
@@ -41,7 +41,7 @@ DB2 データベースを SQL Server に移行するには、以下が必要で�
 
 前提条件を満たすと、環境のトポロジを検出し、移行の可能性を評価する準備は完了です。 
 
-### <a name="assess-and-convert"></a>評価と変換
+### <a name="assess"></a>アクセス 
 
 SQL Server Migration Assistant (SSMA) を使用して評価を作成します。 
 
@@ -56,18 +56,18 @@ SQL Server Migration Assistant (SSMA) を使用して評価を作成します。
 
 1. **[DB2 への接続]** ダイアログ ボックスで、DB2 接続の詳細の値を入力します。 
 
-   :::image type="content" source="media/db2-to-sql-server/connect-to-db2.png" alt-text="プロジェクトの詳細を入力し、[OK] を選択して保存します。":::
+   :::image type="content" source="media/db2-to-sql-server/connect-to-db2.png" alt-text="DB2 インスタンスに接続する":::
 
 
 1. 移行する DB2 スキーマを右クリックし、 **[レポートの作成]** を選択します。 これにより、HTML レポートが生成されます。 また、スキーマを選択した後、ナビゲーション バーから **[レポートの作成]** を選択することもできます。 
 
-   :::image type="content" source="media/db2-to-sql-server/create-report.png" alt-text="プロジェクトの詳細を入力し、[OK] を選択して保存します。":::
+   :::image type="content" source="media/db2-to-sql-server/create-report.png" alt-text="スキーマを右クリックし、[レポートの作成] を選択する":::
 
 1. HTML レポートを確認し、変換の統計情報とエラーまたは警告を把握します。 また、Excel でレポートを開き、DB2 オブジェクトのインベントリとスキーマ変換の実行に必要な作業量を確認することもできます。 レポートの既定の場所は、SSMAProjects 内のレポート フォルダーです。
 
    (例: `drive:\<username>\Documents\SSMAProjects\MyDB2Migration\report\report_<date>`)。 
 
-   :::image type="content" source="media/db2-to-sql-server/report.png" alt-text="プロジェクトの詳細を入力し、[OK] を選択して保存します。":::
+   :::image type="content" source="media/db2-to-sql-server/report.png" alt-text="レポートを確認して、エラーや警告を特定する":::
 
 
 ### <a name="validate-data-types"></a>データ型を検証する
@@ -78,11 +78,11 @@ SQL Server Migration Assistant (SSMA) を使用して評価を作成します。
 1. **[プロジェクトの設定]** を選択します。 
 1. **[Type mappings]\(型のマッピング\)** タブを選択します。 
 
-   :::image type="content" source="media/db2-to-sql-server/type-mapping.png" alt-text="プロジェクトの詳細を入力し、[OK] を選択して保存します。":::
+   :::image type="content" source="media/db2-to-sql-server/type-mapping.png" alt-text="スキーマ、型マッピングの順に選択する":::
 
-1. **DB2 メタデータ エクスプローラー**でテーブルを選択することにより、各テーブルの型マッピングを変更できます。 
+1. **DB2 メタデータ エクスプローラー** でテーブルを選択することにより、各テーブルの型マッピングを変更できます。 
 
-### <a name="schema-conversion"></a>スキーマ変換 
+### <a name="convert-schema"></a>スキーマの変換 
 
 スキーマを変換するには、次の手順を行います。
 
@@ -92,16 +92,16 @@ SQL Server Migration Assistant (SSMA) を使用して評価を作成します。
     1. ターゲット サーバー上の既存のデータベースに接続するか、新しい名前を指定してターゲット サーバー上に新しいデータベースを作成するかを選択します。 
     1. **[接続]** を選択します。 
 
-   :::image type="content" source="media/db2-to-sql-server/connect-to-sql-server.png" alt-text="プロジェクトの詳細を入力し、[OK] を選択して保存します。":::
+   :::image type="content" source="media/db2-to-sql-server/connect-to-sql-server.png" alt-text="SQL Server に接続するための詳細を入力する":::
 
 
 1. スキーマを右クリックして、 **[スキーマの変換]** を選択します。 または、スキーマを選択した後、上部のナビゲーション バーから **[スキーマの変換]** を選択することもできます。 
 
-   :::image type="content" source="media/db2-to-sql-server/convert-schema.png" alt-text="プロジェクトの詳細を入力し、[OK] を選択して保存します。":::
+   :::image type="content" source="media/db2-to-sql-server/convert-schema.png" alt-text="スキーマを右クリックして、[スキーマの変換] を選択する":::
 
 1. 変換が完了したら、スキーマの構造を比較し、確認して、潜在的な問題を特定し、推奨事項に基づいて対処します。 
 
-   :::image type="content" source="media/db2-to-sql-server/compare-review-schema-structure.png" alt-text="プロジェクトの詳細を入力し、[OK] を選択して保存します。":::
+   :::image type="content" source="media/db2-to-sql-server/compare-review-schema-structure.png" alt-text="スキーマの構造を比較し、確認して、潜在的な問題を特定し、推奨事項に基づいて対処する。":::
 
 1. オフライン スキーマ修復の演習のために、プロジェクトをローカルに保存します。 **[ファイル]** メニューから **[プロジェクトの保存]** を選択します。 
 
@@ -112,22 +112,22 @@ SQL Server Migration Assistant (SSMA) を使用して評価を作成します。
 
 スキーマを発行し、データを移行するには、次の手順を行います。
 
-1. スキーマを発行する: **SQL Server メタデータ エクスプローラー**の **[データベース]** ノードからデータベースを右クリックし、 **[データベースとの同期]** を選択します。
+1. スキーマを発行する: **SQL Server メタデータ エクスプローラー** の **[データベース]** ノードからデータベースを右クリックし、 **[データベースとの同期]** を選択します。
 
-   :::image type="content" source="media/db2-to-sql-server/synchronize-with-database.png" alt-text="プロジェクトの詳細を入力し、[OK] を選択して保存します。":::
+   :::image type="content" source="media/db2-to-sql-server/synchronize-with-database.png" alt-text="データベースを右クリックし、[データベースとの同期] を選択する":::
 
-1. データを移行する: **DB2 メタデータ エクスプローラー**からスキーマを右クリックし、 **[データの移行]** を選択します。 
+1. データを移行する: **DB2 メタデータ エクスプローラー** からスキーマを右クリックし、 **[データの移行]** を選択します。 
 
-   :::image type="content" source="media/db2-to-sql-server/migrate-data.png" alt-text="プロジェクトの詳細を入力し、[OK] を選択して保存します。":::
+   :::image type="content" source="media/db2-to-sql-server/migrate-data.png" alt-text="スキーマを右クリックし、データの移行を選択する":::
 
 1. DB2 インスタンスと SQL Server インスタンスの両方の接続の詳細を指定します。 
-1. **データ移行レポート**を確認します。 
+1. **データ移行レポート** を確認します。 
 
-   :::image type="content" source="media/db2-to-sql-server/data-migration-report.png" alt-text="プロジェクトの詳細を入力し、[OK] を選択して保存します。":::
+   :::image type="content" source="media/db2-to-sql-server/data-migration-report.png" alt-text="データ移行レポートを確認する":::
 
 1. SQL Server Management Studio を使用して SQL Server インスタンスに接続し、データとスキーマを確認して移行を検証します。 
 
-   :::image type="content" source="media/db2-to-sql-server/compare-schema-in-ssms.png" alt-text="プロジェクトの詳細を入力し、[OK] を選択して保存します。":::
+   :::image type="content" source="media/db2-to-sql-server/compare-schema-in-ssms.png" alt-text="SSMS でスキーマを比較する":::
 
 ## <a name="post-migration"></a>移行後 
 
@@ -161,49 +161,6 @@ SQL Server Migration Assistant (SSMA) を使用して評価を作成します。
 |[Azure 上の DB2 LUW pureScale - 設定ガイド](https://github.com/Microsoft/DataMigrationTeam/blob/master/Whitepapers/DB2%20PureScale%20on%20Azure.pdf)|このガイドは、DB2 実装計画の開始点として役立ちます。 業務要件は違っても、同じ基本パターンが適用されます。 このアーキテクチャ パターンは、Azure 上の OLAP アプリケーションにも使用できます。|
 
 これらのリソースは、Azure Data Group エンジニアリング チームがスポンサーである Data SQL Ninja プログラムの一部として開発されました。 Data SQL Ninja プログラムの中核となるのは、複雑なモダン化のブロックを解除して加速し、データ プラットフォームを Microsoft の Azure Data プラットフォームに移行する機会を獲得することです。 組織が Data SQL Ninja プログラムへの参加に関心があると思われる場合は、アカウント チームに連絡し、申請を提出するよう依頼してください。
-
-## <a name="partners"></a>パートナー
-
-次のパートナーは、移行のための別の方法も提供できます。 
-
-:::row:::
-   :::column span="":::
-      [:::image type="content" source="media/db2-to-sql-server/blitzz-logo.png" alt-text="プロジェクトの詳細を入力し、[OK] を選択して保存します。":::](https://www.blitzz.io/product)
-   :::column-end:::
-   :::column span="":::
-      [:::image type="content" source="media/db2-to-sql-server/blueprint-logo.png" alt-text="プロジェクトの詳細を入力し、[OK] を選択して保存します。":::](https://bpcs.com/what-we-do)
-   :::column-end:::
-   :::column span="":::
-      [:::image type="content" source="media/db2-to-sql-server/cognizant-logo.png" alt-text="プロジェクトの詳細を入力し、[OK] を選択して保存します。":::](https://www.cognizant.com/partners/microsoft)
-   :::column-end:::   
-:::row-end:::
-:::row:::
-   :::column span="":::
-      [:::image type="content" source="media/db2-to-sql-server/dxc-logo.png" alt-text="プロジェクトの詳細を入力し、[OK] を選択して保存します。":::](https://www.dxc.technology/application_services/offerings/139843/142343-application_services_for_microsoft_azure)
-   :::column-end:::
-   :::column span="":::
-      [:::image type="content" source="media/db2-to-sql-server/hvr-logo.png" alt-text="プロジェクトの詳細を入力し、[OK] を選択して保存します。":::](https://www.hvr-software.com/solutions/azure-data-integration/)
-   :::column-end:::
-   :::column span="":::
-      [:::image type="content" source="media/db2-to-sql-server/infosys-logo.png" alt-text="プロジェクトの詳細を入力し、[OK] を選択して保存します。":::](https://www.infosys.com/services/)
-   :::column-end:::   
-:::row-end:::
-:::row:::
-   :::column span="":::
-     [:::image type="content" source="media/db2-to-sql-server/ispirer-logo.png" alt-text="プロジェクトの詳細を入力し、[OK] を選択して保存します。":::](https://www.ispirer.com/blog/migration-to-the-microsoft-technology-stack)
-   :::column-end:::
-   :::column span="":::
-      [:::image type="content" source="media/db2-to-sql-server/querysurge-logo.png" alt-text="プロジェクトの詳細を入力し、[OK] を選択して保存します。":::](https://www.querysurge.com/company/partners/microsoft)
-   :::column-end:::
-   :::column span="":::
-     [:::image type="content" source="media/db2-to-sql-server/scalability-experts-logo.png" alt-text="プロジェクトの詳細を入力し、[OK] を選択して保存します。":::](http://www.scalabilityexperts.com/products/index.html)
-   :::column-end:::   
-:::row-end:::
-:::row:::
-   :::column span="":::
-     [:::image type="content" source="media/db2-to-sql-server/wipro-logo.png" alt-text="プロジェクトの詳細を入力し、[OK] を選択して保存します。":::](https://www.wipro.com/analytics/)
-   :::column-end:::
-:::row-end:::
 
 ## <a name="next-steps"></a>次の手順
 

@@ -10,13 +10,13 @@ ms.assetid: 0658dc74-25eb-4486-bbd6-e85c1f92c272
 author: pmasl
 ms.author: pelopes
 ms.reviewer: mikeray
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 783d2a0e80728f323b5b9d25048c10189df695a3
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 6a47f4aab579410c147f4e6472a851cd6baa0dc0
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91868048"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97479493"
 ---
 # <a name="improve-the-performance-of-full-text-queries"></a>フルテキスト クエリのパフォーマンスの向上
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "91868048"
   
 -   フルテキスト キーまたは順位情報だけが必要な場合は、CONTAINS の代わりに [CONTAINSTABLE](../../relational-databases/system-functions/containstable-transact-sql.md) を使用し、FREETEXT の代わりに [FREETEXTTABLE](../../relational-databases/system-functions/freetexttable-transact-sql.md) を使用します。  
   
--   結果を制限してパフォーマンスを向上させるには、FREETEXTTABLE 関数および CONTAINSTABLE 関数の *top_n_by_rank* パラメーターを使用します。 *top_n_by_rank* を使用すると、最も関連性の高いヒットだけを呼び出すことができます。 ビジネス シナリオですべてのヒットを呼び出す必要がない場合 (つまり、 *総呼び出し*が不要な場合) にのみ、このパラメーターを使用してください。  
+-   結果を制限してパフォーマンスを向上させるには、FREETEXTTABLE 関数および CONTAINSTABLE 関数の *top_n_by_rank* パラメーターを使用します。 *top_n_by_rank* を使用すると、最も関連性の高いヒットだけを呼び出すことができます。 ビジネス シナリオですべてのヒットを呼び出す必要がない場合 (つまり、 *総呼び出し* が不要な場合) にのみ、このパラメーターを使用してください。  
   
     > [!NOTE]  
     >  一般に、総呼び出しは法務シナリオで必要とされますが、e ビジネスなどのビジネス シナリオではパフォーマンスの方が重視されることがあります。  

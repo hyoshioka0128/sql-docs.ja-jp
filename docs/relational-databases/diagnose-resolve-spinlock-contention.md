@@ -3,18 +3,18 @@ title: 'ホワイトペーパー: スピンロックの競合の診断と解決'
 description: この記事では、SQL Server で発生するスピンロックの競合の診断と解決について詳細に説明します。 この記事は、当初、Microsoft の SQLCAT チームによって公開されたものです。
 ms.date: 09/30/2020
 ms.prod: sql
-ms.reviewer: jroth
+ms.reviewer: wiassaf
 ms.technology: performance
 ms.topic: how-to
 author: bluefooted
 ms.author: pamela
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: bf22570ae96e0ee2a839088e6848443d0c9dddd9
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 8d7d68e5eec8ddef36970d073b96e54db80b2947
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91811864"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100074983"
 ---
 # <a name="diagnose-and-resolve-spinlock-contention-on-sql-server"></a>SQL Server でのスピンロックの競合を診断および解決する
 
@@ -81,7 +81,7 @@ order by spins desc
 
 * 特定のスピンロックの種類について多数のスピンとバックオフが観察される。
 
-* システムで、高い CPU 使用量または CPU 消費量のスパイクが発生している。 CPU の負荷が高いシナリオでは、(DMV *sys.dm_os_wait_stats*によって報告される) SOS_SCHEDULER_YEILD で高いシグナル待機率が見られます。
+* システムで、高い CPU 使用量または CPU 消費量のスパイクが発生している。 CPU の負荷が高いシナリオでは、(DMV *sys.dm_os_wait_stats* によって報告される) SOS_SCHEDULER_YEILD で高いシグナル待機率が見られます。
 
 * システムで、多くの同時実行が発生する。
 
@@ -137,7 +137,7 @@ SQL Server のスピンロックの競合を診断するための一般的な技
 
 2. **手順 2**:*sys.dm\_ os_spinlock_stats* から統計をキャプチャして、最も競合が発生しているスピンロックの種類を見つけます。
 
-3. **手順 3**:sqlservr.exe (sqlservr.pdb) のデバッグ シンボルを取得し、SQL Server のインスタンスの SQL Server サービスの .exe ファイル (sqlservr.exe) と同じディレクトリにシンボルを配置します。また、バックオフ イベントの呼び出し履歴を表示するには、実行している SQL Server の特定のバージョンのシンボルが必要です。 SQL Server のシンボルは、Microsoft シンボル サーバーで入手できます。 Microsoft シンボル サーバーからシンボルをダウンロードする方法の詳細については、「[シンボルを使用したデバッグ](https://docs.microsoft.com/windows/win32/dxtecharts/debugging-with-symbols)」を参照してください。
+3. **手順 3**:sqlservr.exe (sqlservr.pdb) のデバッグ シンボルを取得し、SQL Server のインスタンスの SQL Server サービスの .exe ファイル (sqlservr.exe) と同じディレクトリにシンボルを配置します。また、バックオフ イベントの呼び出し履歴を表示するには、実行している SQL Server の特定のバージョンのシンボルが必要です。 SQL Server のシンボルは、Microsoft シンボル サーバーで入手できます。 Microsoft シンボル サーバーからシンボルをダウンロードする方法の詳細については、「[シンボルを使用したデバッグ](/windows/win32/dxtecharts/debugging-with-symbols)」を参照してください。
 
 4. **手順 4**:SQL Server 拡張イベントを使用して、対象とするスピンロックの種類のバックオフ イベントをトレースします。
 
@@ -237,7 +237,7 @@ drop event session spin_lock_backoff on server
 出力を分析することにより、SOS_CACHESTORE スピンの最も一般的なコード パスの呼び出し履歴を確認できます。 スクリプトは、返された呼び出し履歴の整合性をチェックするために、CPU 使用率が高いときに数回実行されました。 スロット バケット数が最も多い呼び出し履歴は、2 つの出力 (35,668 と 8,506) の間で共通していることに注目してください。 これらの呼び出し履歴には、次に高いエントリより 2 桁大きい "スロット カウント" があります。 この状態は、対象とするコード パスを示します。
 
 > [!NOTE]
-> 前のスクリプトによって返された呼び出し履歴が見られるのは、珍しいことではありません。 スクリプトを 1 分間実行すると、スロット数が \>1,000 のスタックに問題が発生する可能性が高く、スロット数が \>10,000 のスタックに問題が発生する可能性が高いことがわかりました。
+> 前のスクリプトによって返された呼び出し履歴が見られるのは、珍しいことではありません。 1 分間スクリプトを実行したとき、スロット数が 1000 を超える呼び出し履歴は問題であることを確認しましたが、よりスロット数の多い 10,000 未満のスロット数の方が問題になる可能性が高くなることを確認しました。
 
 > [!NOTE]
 > 次の出力の形式は、読みやすくするために不要なものは削除されています。

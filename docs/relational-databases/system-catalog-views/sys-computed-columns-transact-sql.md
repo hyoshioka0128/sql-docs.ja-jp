@@ -1,13 +1,13 @@
 ---
-description: computed_columns (Transact-sql)
-title: computed_columns (Transact-sql) |Microsoft Docs
+description: sys.computed_columns (Transact-sql)
+title: sys.computed_columns (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.computed_columns_TSQL
 - sys.computed_columns
@@ -18,24 +18,24 @@ dev_langs:
 helpviewer_keywords:
 - sys.computed_columns catalog view
 ms.assetid: c962c619-e18f-4315-9251-8d9862462299
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: daf06e478668d41320e6db1f5e4f410f099c5a8f
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 5ff5feeada9266b9be8b18c357bf63a87184a044
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542649"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99200885"
 ---
-# <a name="syscomputed_columns-transact-sql"></a>computed_columns (Transact-sql)
+# <a name="syscomputed_columns-transact-sql"></a>sys.computed_columns (Transact-sql)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  列が計算列である場合は、その列の行が格納され**ます。**  
+  列が計算列である場合は、その列の行が格納され **ます。**  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
-|**\<Inherited columns>**||**Computed_columns**ビューでは、すべての列が返されます、、**列、ビュー**です。 また、以下に示す追加の列も返されます。 **Computed_columns**ビューが**sys**から継承する列の詳細については、「 [sys &#40;transact-sql&#41;](../../relational-databases/system-catalog-views/sys-columns-transact-sql.md)」を参照してください。 **Computed_columns**ビューでは、 **is_computed**列の値は常に1に設定されます。|  
+|**\<Inherited columns>**||**Sys.computed_columns** ビューでは、すべての列が返されます、**列、ビュー** です。 また、以下に示す追加の列も返されます。 **Sys.computed_columns** ビューが **sys** から継承する列の説明については、「 [sys &#40;transact-sql&#41;](../../relational-databases/system-catalog-views/sys-columns-transact-sql.md)」を参照してください。 **Sys.computed_columns** ビューでは、 **is_computed** 列の値は常に1に設定されます。|  
 |**カスタム**|**nvarchar(max)**|この計算列を定義する SQL テキスト。|  
 |**uses_database_collation**|**bit**|1 = 列の定義は、正しい評価のために、データベースの既定の照合順序に依存します。それ以外の場合は0です。 このような依存関係によって、データベースの既定の照合順序を変更できなくなります。|  
 |**is_persisted**|**bit**|計算列は保持されます。|  

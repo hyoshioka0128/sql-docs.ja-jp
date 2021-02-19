@@ -12,12 +12,12 @@ ms.custom: seodec18
 ms.technology: linux
 helpviewer_keywords:
 - Linux, AAD authentication
-ms.openlocfilehash: 003001752ee656483d7b4a1820f191aafc044f25
-ms.sourcegitcommit: 22102f25db5ccca39aebf96bc861c92f2367c77a
+ms.openlocfilehash: c6487f5c22a61cf1a4979af18d5cc3fdae5b0eb2
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92115927"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100273153"
 ---
 # <a name="tutorial-use-active-directory-authentication-with-sql-server-on-linux"></a>チュートリアル:SQL Server on Linux で Active Directory 認証を使用する
 
@@ -64,7 +64,11 @@ SQL Server Linux ホストを Active Directory ドメイン コントローラ�
    ```
 
    > [!NOTE]
-   > SQL Server 専用の AD アカウントを使用して、SQL Server の資格情報が同じアカウントを使用する他のサービスと共有されないようにすることが、セキュリティのベスト プラクティスです。 ただし、アカウントのパスワードがわかっている場合は、必要に応じて既存の AD アカウントを再利用できます (次のステップで keytab ファイルを生成するために必要です)。 さらに、このアカウントは、ユーザー アカウントで 128 ビットおよび 256 ビットの Kerberos AES 暗号化 (**msDS-SupportedEncryptionTypes** 属性) をサポートする場合は有効にする必要があります。
+   > SQL Server 専用の AD アカウントを使用して、SQL Server の資格情報が同じアカウントを使用する他のサービスと共有されないようにすることが、セキュリティのベスト プラクティスです。 ただし、アカウントのパスワードがわかっている場合は、必要に応じて既存の AD アカウントを再利用できます (次のステップで keytab ファイルを生成するために必要です)。 さらに、このアカウントは、ユーザー アカウントで 128 ビットおよび 256 ビットの Kerberos AES 暗号化 (**msDS-SupportedEncryptionTypes** 属性) をサポートする場合は有効にする必要があります。 アカウントで AES 暗号化が有効になっていることを確認するには、 **[Active Directory ユーザーとコンピューター]** ユーティリティでアカウントを見つけ、 **[プロパティ]** を選択します。 **[プロパティ]** で **[アカウント]** タブを見つけて、次のタイトルの 2 つのチェックボックスがオンになっていることを確認します。 
+   >
+   > 1. **[このアカウントで Kerberos AES 128 ビット暗号化をサポートする]**
+   >
+   > 2. **[このアカウントで Kerberos AES 256 ビット暗号化をサポートする]**
 
 2. **setspn.exe** ツールを使って、このアカウントの ServicePrincipalName (SPN) を設定します。 SPN は、次の例で指定したとおりに書式設定されている必要があります。 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] ホスト コンピューターの完全修飾ドメイン名は、[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] ホスト上で `hostname --all-fqdns` を実行することによって確認できます。 別のポート番号を使うように [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] を構成している場合を除き、TCP ポートは 1433 にする必要があります。
 
@@ -201,7 +205,7 @@ SQL Windows とは異なり、Kerberos 認証は SQL Linux のローカル接続
 
 ### <a name="ssms-on-a-domain-joined-windows-client"></a>ドメインに参加している Windows クライアントでの SSMS
 
-ドメイン資格情報を使用して、ドメインに参加している Windows クライアントにログインします。 SQL Server Management Studio がインストールされていることを確認した後、 **[サーバーへの接続]** ダイアログで **[Windows 認証]** を指定して、SQL Server インスタンス (例 : `mssql-host.contoso.com`) に接続します。
+ドメイン資格情報を使用して、ドメインに参加している Windows クライアントにログインします。 SQL Server Management Studio がインストールされていることを確認した後、**[サーバーへの接続]** ダイアログで **[Windows 認証]** を指定して、SQL Server インスタンス (例 : `mssql-host.contoso.com`) に接続します。
 
 ### <a name="ad-authentication-using-other-client-drivers"></a>他のクライアント ドライバーを使用した AD 認証
 
@@ -248,7 +252,7 @@ sudo mssql-conf set network.enablekdcfromkrb5conf true
 systemctl restart mssql-server
 ```
 
-次に、 **/etc/krb5.conf** で KDC リストを次のように構成します。
+次に、**/etc/krb5.conf** で KDC リストを次のように構成します。
 
 ```/etc/krb5.conf
 [realms]

@@ -9,14 +9,14 @@ ms.date: 04/24/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: polybase
-monikerRange: '>= sql-server-ver15 || = sqlallproducts-allversions'
+monikerRange: '>= sql-server-ver15'
 ms.metadata: seo-lt-2019
-ms.openlocfilehash: 6981eea5cb4d327303755adc74d5610637eb70b0
-ms.sourcegitcommit: db1b6153f0bc2d221ba1ce15543ecc83e1045453
+ms.openlocfilehash: 7b78e44ee36e9320688a8a6815fbb267f1663d3d
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82588258"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100038672"
 ---
 # <a name="virtualize-csv-data-from-storage-pool-big-data-clusters"></a>記憶域プール (ビッグ データ クラスター) から CSV データを仮想化する
 
@@ -71,7 +71,7 @@ ADS から、CSV ファイルを右クリックして、コンテキスト メ�
 
 Azure Data Studio により、インポートされたデータのプレビューが提供されます。
 
-![外部データ ソースの資格情報](media/data-virtualization/130-csv-preview-data.png)
+![インポートされたデータのプレビューが含まれる [Create External Table From CSV]\(CSV から外部テーブルを作成する\) ウィンドウを示すスクリーンショット。](media/data-virtualization/130-csv-preview-data.png)
 
 プレビューの表示が終わったら、 **[次へ]** をクリックして続行します。
 
@@ -79,7 +79,7 @@ Azure Data Studio により、インポートされたデータのプレビュ�
 
 次のウィンドウでは、作成する外部テーブルの列を変更できます。 列の名前とデータ型を変更でき、null 許容型の行にすることができます。 
 
-![外部データ ソースの資格情報](media/data-virtualization/140-csv-modify-columns.png)
+![手順 3「列を変更する」が示されている [Create External Table From CSV]\(CSV から外部テーブルを作成する\) ウィンドウのスクリーンショット。](media/data-virtualization/140-csv-modify-columns.png)
 
 変換先の列を確認したら、 **[次へ]** をクリックします。
 

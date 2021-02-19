@@ -1,13 +1,13 @@
 ---
-description: foreign_keys (Transact-sql)
-title: foreign_keys (Transact-sql) |Microsoft Docs
+description: sys.foreign_keys (Transact-sql)
+title: sys.foreign_keys (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - foreign_keys
 - sys.foreign_keys
@@ -18,17 +18,17 @@ dev_langs:
 helpviewer_keywords:
 - sys.foreign_keys catalog view
 ms.assetid: e960df1a-13fc-43ee-ba91-34c1b719ac2c
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 33cf09cdbac74ea78fc642de8f1d557f39b84938
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 87b8c4bdcd40fc480ad0c4c886a8e5113329f256
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539685"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99193960"
 ---
-# <a name="sysforeign_keys-transact-sql"></a>foreign_keys (Transact-sql)
+# <a name="sysforeign_keys-transact-sql"></a>sys.foreign_keys (Transact-sql)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   FOREIGN KEY 制約であるオブジェクトごとに1行の値を格納します。 **type** = F.  

@@ -1,13 +1,13 @@
 ---
 description: sys.fn_my_permissions (Transact-SQL)
-title: fn_my_permissions (Transact-sql) |Microsoft Docs
+title: sys.fn_my_permissions (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.fn_my_permissions_TSQL
 - fn_my_permissions_TSQL
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - fn_my_permissions function
 - sys.fn_my_permissions function
 ms.assetid: 30f97f00-03d8-443a-9de9-9ec420b7699b
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 75ff0dfb3355158a3dedbc9d5e066dbce0ac441f
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 65596436cf44b2c09f344defa1d5e03768db794d
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88427754"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99201917"
 ---
 # <a name="sysfn_my_permissions-transact-sql"></a>sys.fn_my_permissions (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -47,18 +47,18 @@ fn_my_permissions ( securable , 'securable_class' )
  セキュリティ保護可能なリソースの名前を指定します。 セキュリティ保護可能なリソースがサーバーまたはデータベースの場合、この値は NULL に設定する必要があります。 *securable* には **sysname** 型のスカラー式を指定します。 *セキュリティ保護* 可能なマルチパート名を指定できます。  
   
  '*securable_class*'  
- 権限を一覧表示する、セキュリティ保護可能なリソースのクラスの名前を指定します。 *securable_class* は **sysname**です。 *securable_class* は、アプリケーションロール、アセンブリ、非対称キー、証明書、コントラクト、データベース、エンドポイント、フルテキストカタログ、ログイン、メッセージの種類、オブジェクト、リモートサービスバインド、ロール、ルート、スキーマ、サーバー、サービス、対称キー、種類、ユーザー、XML スキーマコレクションのいずれかである必要があります。  
+ 権限を一覧表示する、セキュリティ保護可能なリソースのクラスの名前を指定します。 *securable_class* は **sysname** です。 *securable_class* は、アプリケーションロール、アセンブリ、非対称キー、証明書、コントラクト、データベース、エンドポイント、フルテキストカタログ、ログイン、メッセージの種類、オブジェクト、リモートサービスバインド、ロール、ルート、スキーマ、サーバー、サービス、対称キー、種類、ユーザー、XML スキーマコレクションのいずれかである必要があります。  
   
 ## <a name="columns-returned"></a>返される列  
  次の表に、 **fn_my_permissions** が返す列を示します。 返される各行によって、セキュリティ保護可能なリソースについて、現在のセキュリティ コンテキストで保持されている権限の詳細が示されます。 クエリが失敗した場合は NULL を返します。  
   
-|列名|Type|説明|  
+|列名|種類|説明|  
 |-----------------|----------|-----------------|  
 |entity_name へのアイテムの追加|**sysname**|リストされたアクセス許可が実質的に付与される、セキュリティ保護可能なリソースの名前。|  
 |subentity_name|**sysname**|セキュリティ保護可能な列に列がある場合は列名、それ以外の場合は NULL です。|  
 |permission_name|**nvarchar**|アクセス許可の名前。|  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  このテーブル値関数は、指定されたセキュリティ保護可能なリソースについて、呼び出し元のプリンシパルが保持している有効な権限の一覧を返します。 有効な権限は、次のいずれかになります。  
   
 -   プリンシパルに直接許可されており、拒否されていない権限。  
@@ -81,7 +81,7 @@ SELECT DISTINCT class_desc FROM fn_builtin_permissions(default)
 GO  
 ```  
   
- 既定値が *セキュリティ保護* 可能な値または *securable_class*の値として指定されている場合、値は NULL として解釈されます。  
+ 既定値が *セキュリティ保護* 可能な値または *securable_class* の値として指定されている場合、値は NULL として解釈されます。  
   
 ## <a name="examples"></a>例  
   

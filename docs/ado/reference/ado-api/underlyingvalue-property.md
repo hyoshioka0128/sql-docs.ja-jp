@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - Field20::GetUnderlyingValue
@@ -18,21 +18,21 @@ helpviewer_keywords:
 ms.assetid: 00a0c8b8-8b63-433f-95b8-020ab05874a0
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: a96924a682a0c916da8c6834ea7b290b88b6f690
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: d96f48d796e3eef7b41467ea4f5b5b14bfc66d36
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88988173"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100056377"
 ---
 # <a name="underlyingvalue-property"></a>UnderlyingValue プロパティ
 データベース内の [フィールド](./field-object.md) オブジェクトの現在の値を示します。  
   
 ## <a name="return-value"></a>戻り値  
- **フィールド**の値を示す**バリアント**値を返します。  
+ **フィールド** の値を示す **バリアント** 値を返します。  
   
 ## <a name="remarks"></a>解説  
- **UnderlyingValue**プロパティを使用して、現在のフィールド値をデータベースから取得します。 **UnderlyingValue**プロパティのフィールド値は、トランザクションに表示される値であり、別のトランザクションによる最近の更新の結果である可能性があります。 これは、もともと[レコードセット](./recordset-object-ado.md)に返された値を反映する[originalvalue](./originalvalue-property-ado.md)プロパティとは異なる場合があります。  
+ **UnderlyingValue** プロパティを使用して、現在のフィールド値をデータベースから取得します。 **UnderlyingValue** プロパティのフィールド値は、トランザクションに表示される値であり、別のトランザクションによる最近の更新の結果である可能性があります。 これは、もともと[レコードセット](./recordset-object-ado.md)に返された値を反映する[originalvalue](./originalvalue-property-ado.md)プロパティとは異なる場合があります。  
   
  これは、 [Resync](./resync-method.md) メソッドを使用する場合と似ていますが、 **UnderlyingValue** プロパティは、現在のレコードから特定のフィールドの値のみを返します。 これは、再 [同期](./resync-method.md) メソッドが [value](./value-property-ado.md) プロパティを置き換えるために使用するのと同じ値です。  
   

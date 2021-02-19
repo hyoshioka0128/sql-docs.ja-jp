@@ -13,12 +13,13 @@ helpviewer_keywords:
 ms.assetid: 910e3e16-7b91-49d8-80bb-b4243926afaa
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 9bf2767bdf043543f84f50a2c72fbfc8a5f10890
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 56b013873ef8060101e28d9b2c4609fa41c0c798
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86009523"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97467813"
 ---
 # <a name="configuring-the-sql-server-odbc-driver---delete-a-data-source"></a>SQL Server ODBC ドライバーの構成 - データ ソースの削除
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -29,16 +30,16 @@ ms.locfileid: "86009523"
   
 ### <a name="to-delete-a-data-source-by-using-odbc-administrator"></a>ODBC アドミニストレーターを使用してデータ ソースを削除するには  
   
-1.  **コントロールパネル**で、[**管理ツール**] を開き、[ **odbc データソース (64 ビット)** ] または [ **odbc データソース (32 ビット)**] をダブルクリックします。 コマンド プロンプトから odbcad32.exe を実行することもできます。  
+1.  **コントロールパネル** で、[**管理ツール**] を開き、[ **odbc データソース (64 ビット)** ] または [ **odbc データソース (32 ビット)**] をダブルクリックします。 コマンド プロンプトから odbcad32.exe を実行することもできます。  
   
-2.  [**ユーザー dsn**]、[**システム dsn**]、または [**ファイル dsn** ] タブをクリックします。  
+2.  [ **ユーザー dsn**]、[ **システム dsn**]、または [ **ファイル dsn** ] タブをクリックします。  
   
 3.  削除するデータソースを選択します。  
   
-4.  [**削除**] をクリックし、削除を確定します。  
+4.  [ **削除**] をクリックし、削除を確定します。  
 
 ## <a name="example"></a>例  
- プログラムによってデータソースを削除するには、2番目のパラメーターとして ODBC_REMOVE_DSN または ODBC_REMOVE_SYS_DSN を使用して[Sqlconfigdatasource](../../relational-databases/native-client-odbc-api/sqlconfigdatasource.md)を呼び出します。  
+ プログラムによってデータソースを削除するには、2番目のパラメーターとして ODBC_REMOVE_DSN または ODBC_REMOVE_SYS_DSN を使用して [Sqlconfigdatasource](../../relational-databases/native-client-odbc-api/sqlconfigdatasource.md) を呼び出します。  
   
  次のサンプルでは、データ ソースをプログラムで削除する方法を示しています。  
   
@@ -60,6 +61,6 @@ int main() {
 ```  
   
 ## <a name="see-also"></a>参照  
- [データソース &#40;ODBC&#41;に追加する](../../relational-databases/native-client-odbc-how-to/configuring-the-sql-server-odbc-driver-add-a-data-source.md)  
+ [データソース &#40;ODBC&#41;に追加する ](../../relational-databases/native-client-odbc-how-to/configuring-the-sql-server-odbc-driver-add-a-data-source.md)  
   
   

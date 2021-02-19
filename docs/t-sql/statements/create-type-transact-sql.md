@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sql13.swb.sysdatatype.properties.f1
 - CREATE TYPE
@@ -25,14 +25,14 @@ helpviewer_keywords:
 - alias data types [SQL Server], creating
 - data types [SQL Server], creating
 ms.assetid: 2202236b-e09f-40a1-bbc7-b8cff7488905
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 5e04a826b3ea7769ceb9ec54cc5175c24f6b98a2
-ms.sourcegitcommit: bd3a135f061e4a49183bbebc7add41ab11872bae
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 2063543c497070bd8366cae9a8691b3701fc4330
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92300579"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99177908"
 ---
 # <a name="create-type-transact-sql"></a>CREATE TYPE (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -200,7 +200,7 @@ column_name <data_type>
  型が NULL 値を保持できるかどうかを指定します。 指定しない場合は、NULL が既定値です。  
   
  *assembly_name*  
- **適用対象** : [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降。  
+ **適用対象**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降。  
   
  共通言語ランタイム内のユーザー定義型の実装を参照する [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のアセンブリを指定します。 *assembly_name* は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の現在のデータベース内の既存のアセンブリに一致している必要があります。  
   
@@ -208,7 +208,7 @@ column_name <data_type>
 >  EXTERNAL_NAME は、包含データベースでは使用できません。  
   
  **[.** *class_name* **]**  
- **適用対象** : [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降。  
+ **適用対象**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降。  
   
  ユーザー定義型を実装するアセンブリ内のクラスを指定します。 *class_name* は有効な識別子であり、アセンブリ内にアセンブリで可視のクラスとして存在している必要があります。 *class_name* は、対応するアセンブリ内のクラス名に正確に一致している必要があります。大文字と小文字は、データベース照合順序に関係なく区別されます。 クラスの記述に使用されている C# などのプログラミング言語が、名前空間の概念を使用している場合、クラス名は、角かっこ ( **[ ]** ) で囲まれた名前空間で修飾された名前にすることができます。 *class_name* を指定しない場合は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によって *type_name* と同じであると見なされます。  
   
@@ -232,7 +232,7 @@ column_name <data_type>
  
   `INDEX *index_name* [ CLUSTERED | NONCLUSTERED ] (*column_name* [ ASC | DESC ] [ ,... *n* ] )`  
      
-**適用対象** : [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
+**適用対象**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。
 
 テーブル上にインデックスを作成することを指定します。 これには、クラスター化インデックスまたは非クラスター化インデックスを指定できます。 インデックスには一覧表示される列が含まれ、昇順、降順のいずれかでデータが並べ替えられます。
   
@@ -240,17 +240,17 @@ column_name <data_type>
  CREATE TABLE ステートメントの一部として列インデックスとテーブル インデックスを指定する必要があります。 メモリ最適化テーブルでは、CREATE INDEX および DROP INDEX はサポートされません。  
   
  MEMORY_OPTIMIZED  
- **適用対象** : [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。  
+ **適用対象**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。  
   
  テーブル型がメモリ最適化かどうかを示します。 既定では、このオプションはオフになっています。テーブル (型) は、メモリ最適化テーブル (型) ではありません。 メモリ最適化テーブル型は、他のユーザー テーブルと同様にスキーマがディスク上に保存されるメモリ最適化ユーザー テーブルです。  
   
  BUCKET_COUNT  
- **適用対象** : [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。  
+ **適用対象**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。  
   
  ハッシュ インデックスに作成されるバケットの数を示します。 ハッシュ インデックスの BUCKET_COUNT の最大値は 1,073,741,824 です。 バケット数について詳しくは、「[メモリ最適化テーブルのインデックス](../../relational-databases/in-memory-oltp/indexes-for-memory-optimized-tables.md)」をご覧ください。 *bucket_count* は必須の引数です。  
   
  HASH  
- **適用対象** : [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。  
+ **適用対象**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]。  
   
  ハッシュ インデックスを作成することを示します。 ハッシュ インデックスは、メモリ最適化テーブルでのみサポートされます。  
   
@@ -271,7 +271,7 @@ column_name <data_type>
   
  **sp_addtype** を使用して作成したユーザー定義型と異なり、CREATE TYPE を使用して作成した型に対しては、データベース ロール **public** に REFERENCES 権限が自動的に付与されるわけではありません。 この権限は個別に付与する必要があります。  
   
- ユーザー定義テーブル型の場合、 *column_name* \<data type> で使用される構造化ユーザー定義型は、テーブル型が定義されているデータベース スキーマ スコープの一部になります。 データベース内の別のスコープに含まれている構造化ユーザー定義型にアクセスするには、2 つの部分から構成される名前を使用します。  
+ ユーザー定義テーブル型の場合、*column_name* \<data type> で使用される構造化ユーザー定義型は、テーブル型が定義されているデータベース スキーマ スコープの一部になります。 データベース内の別のスコープに含まれている構造化ユーザー定義型にアクセスするには、2 つの部分から構成される名前を使用します。  
   
  ユーザー定義テーブル型では、計算列の主キーを PERSISTED および NOT NULL にする必要があります。  
   
@@ -285,7 +285,7 @@ column_name <data_type>
  
    >[!NOTE]
   > ユーザー定義型を使用する列があるテーブルを作成するユーザーは、そのユーザー定義型に対して REFERENCES アクセス許可を持っている必要があります。
-  > このテーブルを TempDB 内に作成する必要がある場合、テーブルを作成する **前** に毎回 REFERENCES アクセス許可を明示的に付与する必要があります。または、このデータ型と REFERENCES アクセス許可を model データベースに追加する必要があります。 この処理が完了すると、このデータ型とアクセス許可は TempDB で永続的に利用できるようになります。 この処理が完了していない場合、SQL Server の再起動時にユーザー定義のデータ型とアクセス許可は消去されます。 詳細については、「[CREATE TABLE](./create-table-transact-sql.md?view=sql-server-2017#permissions-1)」を参照してください。
+  > このテーブルを TempDB 内に作成する必要がある場合、テーブルを作成する **前** に毎回 REFERENCES アクセス許可を明示的に付与する必要があります。または、このデータ型と REFERENCES アクセス許可を model データベースに追加する必要があります。 この処理が完了すると、このデータ型とアクセス許可は TempDB で永続的に利用できるようになります。 この処理が完了していない場合、SQL Server の再起動時にユーザー定義のデータ型とアクセス許可は消去されます。 詳細については、「[CREATE TABLE](./create-table-transact-sql.md#permissions-1)」を参照してください。
   
 ## <a name="examples"></a>例  
   
@@ -300,7 +300,7 @@ FROM varchar(11) NOT NULL ;
 ### <a name="b-creating-a-user-defined-type"></a>B. ユーザー定義型を作成する  
  次の例では、アセンブリ `utf8string` 内のクラス `utf8string` を参照する型 `Utf8String` を作成します。 型を作成する前に、アセンブリ `utf8string` がローカル データベースに登録されます。 CREATE ASSEMBLY ステートメントのバイナリ部分を有効な記述と置き換えます。  
   
-**適用対象** : [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降。  
+**適用対象**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降。  
   
 ```sql  
 CREATE ASSEMBLY utf8string  

@@ -8,17 +8,60 @@ author: yualan
 ms.author: alayu
 ms.reviewer: maghan
 ms.custom: seodec18
-ms.date: 10/14/2020
-ms.openlocfilehash: c75105ddf77c62dd6c871b679dce32ec08c5364c
-ms.sourcegitcommit: 76ab3b57718341c6057613c9bd38cf82fb17786e
+ms.date: 2/10/2021
+ms.openlocfilehash: 17cc8ef3252ad39c344de7a7c51a9af80c1f6030
+ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92059190"
+ms.lasthandoff: 02/13/2021
+ms.locfileid: "100343402"
 ---
 # <a name="release-notes-for-azure-data-studio"></a>Azure Data Studio のリリース ノート
 
 **[最新リリースのダウンロードとインストール](./download-azure-data-studio.md)**
+
+## <a name="december-2020-hotfix"></a>2020 年 12 月 (修正プログラム)
+
+2021 年 2 月 10 日 &nbsp; / &nbsp; バージョン: 1.25.3
+
+| Change | 詳細 |
+| ------ | ------- |
+| バグの修正 [#13899](https://github.com/microsoft/azuredatastudio/issues/13899) | Notebook 内の適切な相互参照リンクまでスクロールする |
+| 重要なバグの修正プログラムを組み込むために Electron をアップグレードする| 該当なし |
+
+## <a name="december-2020"></a>2020 年 12 月
+
+2020 年 12 月 9 日 &nbsp; / &nbsp; バージョン:1.25.0
+
+&nbsp;
+
+| Change | 詳細 |
+| ------ | ------- |
+| バグの修正 | 修正の全一覧については、[GitHub のバグと問題](https://github.com/microsoft/azuredatastudio/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%22December+2020+Release%22)に関するページを参照してください。 |
+| データベース プロジェクトの拡張機能の更新 | ワークスペースの追加とサイドバーの改良 |
+
+## <a name="november-2020"></a>2020 年 11 月
+
+2020 年 11 月 12 日 &nbsp; / &nbsp; バージョン:1.24.0
+
+&nbsp;
+
+| Change | 詳細 |
+| ------ | ------- |
+| バグの修正 | 修正の全一覧については、[GitHub のバグと問題](https://github.com/microsoft/azuredatastudio/issues?q=is%3Aissue+milestone%3A%22November+2020+Release%22+is%3Aclosed)に関するページを参照してください。 |
+| 接続ダイアログ | 接続ダイアログの新しい参照タブを追加しました。 |
+| 拡張機能の更新 | Postgres 拡張機能の更新プログラムをリリースしました。 |
+| ノートブックの新機能 | ノートブックへの SQL のサポートに新機能を追加しました。 <br/> Notebook のパラメーター化のサポートに新機能を追加しました。 <br/>  SQL Notebook の結果ストリーミングに新機能を追加しました。 |
+| Python のインストール | PROSE パッケージが既定の Python インストールから削除されました。 |
+
+### <a name="known-issues-1240"></a>既知の問題 (1.24.0)
+
+| New Item | 詳細 | 回避策 |
+|----------|---------|------------|
+| Azure Arc の拡張機能 | [既知の問題:](https://github.com/microsoft/azuredatastudio/issues/13319)Arc MIAA & PG デプロイの [ノートブックへのスクリプト] ボタンを選択しても、ノートブックのスクリプトを作成する前にフィールドの検証が行われません。 これは、ユーザーがパスワードの確認入力に間違ったパスワードを入力した場合、パスワードの値が間違っているノートブックが生成される可能性があることを意味します。| ただし [デプロイ] ボタンは想定どおりに動作するため、ユーザーは代わりにこれを使用する必要があります。 |
+| オブジェクト エクスプローラー | [Azure Synapse Analytics サーバーレス SQL プール](/azure/synapse-analytics/sql/on-demand-workspace-overview)に関連するエンジンの変更により、1.24.0 より前の ADS のリリースでは、オブジェクト エクスプローラーに破壊的変更があります。 | Azure Synapse Analytics サーバーレス SQL プールと共に Azure Data Studio でオブジェクト エクスプローラーを引き続き利用するには、Azure Data Studio 1.24.0 以降を使用する必要があります。 |
+
+他の既知の問題について、および製品チームにフィードバックを提供するには、[Azure Data Studio フィードバック](https://github.com/microsoft/azuredatastudio)を参照してください。
 
 ## <a name="october-2020"></a>2020 年 10 月
 

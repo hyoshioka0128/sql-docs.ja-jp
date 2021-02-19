@@ -5,17 +5,17 @@ ms.custom: seo-lt-2019
 ms.date: 03/09/2017
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: failover-cluster-instance
 ms.topic: how-to
 ms.assetid: 3bbeb979-e6fc-4184-ad6e-cca62108de74
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: e4ae7a1c74c7d91596550015df78a89fb8a0c857
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: f1b7fb37f0f72475c86bbaa256eeb3634f9ccb4b
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91988314"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642729"
 ---
 # <a name="configure-healthchecktimeout-property-settings"></a>HealthCheckTimeout プロパティ設定の構成
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]

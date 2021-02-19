@@ -9,16 +9,16 @@ ms.custom: ''
 ms.technology: integration-services
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 1d0e6b5fe9303269f5941ba11d231e1ca18def11
-ms.sourcegitcommit: 9774e2cb8c07d4f6027fa3a5bb2852e4396b3f68
+ms.openlocfilehash: a445e38d796113826f45199cf19b4f59a6e9dc16
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92098809"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100045102"
 ---
 # <a name="standalone-sql-server-integration-service-ssis-devops-tools-preview"></a>スタンドアロン SQL Server Integration Service (SSIS) DevOps ツール (プレビュー)
 
-スタンドアロン **SSIS DevOps ツール**は、SSIS CICD タスクを実行するための一連の実行可能ファイルを提供します。 これらの実行可能ファイルは、Visual Studio や SSIS ランタイムのインストールに依存することなく、任意の CICD プラットフォームと簡単に統合できます。 提供される実行可能ファイルは次のとおりです。
+スタンドアロン **SSIS DevOps ツール** は、SSIS CICD タスクを実行するための一連の実行可能ファイルを提供します。 これらの実行可能ファイルは、Visual Studio や SSIS ランタイムのインストールに依存することなく、任意の CICD プラットフォームと簡単に統合できます。 提供される実行可能ファイルは次のとおりです。
 
 - SSISBuild.exe: プロジェクト配置モデルまたはパッケージ配置モデル内で SSIS プロジェクトをビルドします。
 - SSISDeploy.exe: ISPAC ファイルを SSIS カタログに配置するか、.DTSX ファイルとその依存関係をファイル システムに配置します。
@@ -128,6 +128,19 @@ SSISDeploy.exe -source|-s:<source path> -destination|-d:<type>;<path>[;server] [
     ```
 
 ## <a name="release-notes"></a>リリース ノート
+
+### <a name="version-012-preview"></a>バージョン 0.1.2 Preview
+
+リリース日:2021 年 1 月 14 日
+
+- SSIS プロジェクト ファイルと SSIS パッケージのパッケージ パラメーターのメタデータが一致しない場合に、SSISBuild.exe で NullReference 例外が発生してプロジェクトをビルドできないという問題を修正しました。
+- パッケージを含む SSIS プロジェクトが EncryptSensitiveWithUserKey で暗号化されており、パッケージに機密データと共に CM が含まれている場合、そのパッケージが SSISDeploy.exe を使用して SSISDB に正常にデプロイされていても、"保護された XML ノードの暗号化を解除できませんでした" で始まるエラーが発生してパッケージの実行が失敗するという問題を修正しました。
+
+### <a name="version-011-preview"></a>バージョン 0.1.1 プレビュー
+
+リリース日:2020 年 11 月 11 日
+
+- ispac を SSIS カタログに配置するときに、SSISDeploy.exe によるアセンブリの読み込みが失敗する問題を修正しました。
 
 ### <a name="version-010-preview"></a>バージョン 0.1.0 プレビュー
 

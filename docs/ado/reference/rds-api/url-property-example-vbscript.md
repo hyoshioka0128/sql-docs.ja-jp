@@ -7,7 +7,7 @@ ms.date: 01/19/2017
 ms.reviewer: ''
 ms.prod: sql
 ms.prod_service: connectivity
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6ae5ac50-c88c-4262-b7ab-f2b3de382a0b
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 024ac384ba25dd8c8fbd454d5a94786200aaefd6
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: d90e82e34d53a54562def11bd4814bf5c04af419
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91724689"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100052823"
 ---
 # <a name="url-property-example-vbscript"></a>URL プロパティの例 (VBScript)
 > [!IMPORTANT]
@@ -101,7 +101,7 @@ End Sub
 <!-- EndURLClientVBS -->  
 ```  
   
- **Urlservervbs**に存在するサーバー側コードは、更新された**レコードセット**をデータソースに送信します。  
+ **Urlservervbs** に存在するサーバー側コードは、更新された **レコードセット** をデータソースに送信します。  
   
 ```  
 <!-- BeginURLServerVBS -->  

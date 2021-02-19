@@ -7,7 +7,7 @@ ms.date: 01/19/2017
 ms.reviewer: ''
 ms.prod: sql
 ms.prod_service: connectivity
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 380264da-e6bb-418c-b4af-3c22d35644b8
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: e366bfaaa75085113275e7958cec949520263149
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 9d55fd3b80a6b2324c89ad2fdb7c125be7323dcf
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91724396"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100053023"
 ---
 # <a name="rds-code-examples-in-visual-c"></a>Visual C++ での RDS のコード例
 Microsoft Visual C++ での書き込み時に RDS プロパティを使用する方法については、次のコード例を参照してください。  

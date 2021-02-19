@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 2a104245-56df-44f3-b9b7-b3d18643d57b
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 2d8cdeffd661ece8120078019792d306844e575d
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 1b0399fa0c86ee2ddd641cb2ab64d67adffae66c
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88987943"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100056197"
 ---
 # <a name="value-property-example-vc"></a>Value プロパティの例 (VC++)
-この例では、 ***Employees***テーブルのフィールドとプロパティの値を表示することにより、 [Field](./field-object.md)オブジェクトと[property](./property-object-ado.md)オブジェクトを含む[Value](./value-property-ado.md)プロパティを示します。  
+この例では、 ***Employees*** テーブルのフィールドとプロパティの値を表示することにより、 [Field](./field-object.md)オブジェクトと [property](./property-object-ado.md)オブジェクトを含む [Value](./value-property-ado.md)プロパティを示します。  
   
 ```  
 // BeginValueCpp.cpp  

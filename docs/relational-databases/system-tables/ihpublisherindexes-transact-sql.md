@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: replication
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - IHpublisherindexes
 - IHpublisherindexes_TSQL
@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - IHpublisherindexes system table
 ms.assetid: 6008ef89-eeb9-46dc-93a2-f7623298cf0f
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 5b7e4d37acf72277f88290372a1a7c29b7343473
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 5e27ab9816b6b1e96a31e9869b6c41db4c93c25b
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540942"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99201635"
 ---
 # <a name="ihpublisherindexes-transact-sql"></a>IHpublisherindexes (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **IHpublisherindexes**システムテーブルには、現在のディストリビューターを使用して SQL Server 以外のパブリッシャーからレプリケートされたインデックスごとに1つの行が含まれています。 このテーブルは、ディストリビューションデータベースに格納されます。  
+  **IHpublisherindexes** システムテーブルには、現在のディストリビューターを使用して SQL Server 以外のパブリッシャーからレプリケートされたインデックスごとに1つの行が含まれています。 このテーブルは、ディストリビューションデータベースに格納されます。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3dc3443b-a1b0-4fbd-908a-6e274dec981c
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 540c30018ed9b9c7d8d08239d4c93cf7a146b23e
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: a385f1cce10cff211f6758e1898110bccc0c8e83
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88989573"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100051653"
 ---
 # <a name="refresh-method-example-vc"></a>Refresh メソッドの例 (VC++)
 この例では、 [refresh](./refresh-method-ado.md)メソッドを使用して、ストアドプロシージャ[コマンド](./command-object-ado.md)オブジェクトの[パラメーター](./parameters-collection-ado.md)コレクションを更新します。  

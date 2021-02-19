@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - ADORecordsetConstruction
@@ -16,25 +16,25 @@ helpviewer_keywords:
 ms.assetid: 08386eba-f1f7-4879-8ffd-8733930ecb2f
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: ecf8f8e12f8d12a3382e7b67b13e8bb12fb69ac9
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 8f0ed083766464cccd504da7ad9270600fe0050c
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88976223"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100027929"
 ---
 # <a name="adorecordsetconstruction-interface"></a>ADORecordsetConstruction インターフェイス
-**ADORecordsetConstruction**インターフェイスは、C/c + + アプリケーションの OLE DB**行**セットオブジェクトから ADO**レコードセット**オブジェクトを構築するために使用されます。  
+**ADORecordsetConstruction** インターフェイスは、C/c + + アプリケーションの OLE DB **行** セットオブジェクトから ADO **レコードセット** オブジェクトを構築するために使用されます。  
   
  このインターフェイスは、次のプロパティをサポートしています。  
   
-## <a name="properties"></a>プロパティ  
+## <a name="properties"></a>Properties  
   
 |プロパティ|説明|  
 |-|-|  
-|[章](./chapter-property-ado.md)|読み取り/書き込み。<br />この ADO**レコードセット**オブジェクトから OLE DB**チャプター**オブジェクトを取得/設定します。|  
-|[RowPosition](./rowposition-property-ado.md)|読み取り/書き込み。<br />この ADO**レコードセット**オブジェクトの/から OLE DB **rowposition**オブジェクトを取得/設定します。|  
-|[[行セット]](./rowset-property-ado.md)|読み取り/書き込み。<br />この ADO**レコードセット**オブジェクトの/から OLE DB**行**セットオブジェクトを取得/設定します。|  
+|[章](./chapter-property-ado.md)|読み取り/書き込み。<br />この ADO **レコードセット** オブジェクトから OLE DB **チャプター** オブジェクトを取得/設定します。|  
+|[RowPosition](./rowposition-property-ado.md)|読み取り/書き込み。<br />この ADO **レコードセット** オブジェクトの/から OLE DB **rowposition** オブジェクトを取得/設定します。|  
+|[[行セット]](./rowset-property-ado.md)|読み取り/書き込み。<br />この ADO **レコードセット** オブジェクトの/から OLE DB **行** セットオブジェクトを取得/設定します。|  
   
 ## <a name="methods"></a>メソッド  
  なし。  
@@ -52,7 +52,7 @@ ms.locfileid: "88976223"
     adoRs.CreateInstance(__uuidof(Recordset));  
     ```  
   
-2.  **レコードセット**オブジェクトの**IADORecordsetConstruction**インターフェイスに対してクエリを実行します。  
+2.  **レコードセット** オブジェクトの **IADORecordsetConstruction** インターフェイスに対してクエリを実行します。  
   
     ```  
     adoRecordsetConstructionPtr adoRsConstruct=NULL;  
@@ -68,9 +68,9 @@ ms.locfileid: "88976223"
     adoRsConstruct->put_Rowset(pUnk);  
     ```  
   
- 結果の `adoRs` オブジェクトは、OLE DB**行**セットオブジェクトから構築された ADO**レコードセット**オブジェクトを表します。  
+ 結果の `adoRs` オブジェクトは、OLE DB **行** セットオブジェクトから構築された ADO **レコードセット** オブジェクトを表します。  
   
- また、OLE DB**チャプター**または**ROWPOSITION**オブジェクトから ADO**レコードセット**オブジェクトを構築することもできます。  
+ また、OLE DB **チャプター** または **ROWPOSITION** オブジェクトから ADO **レコードセット** オブジェクトを構築することもできます。  
   
 ## <a name="requirements"></a>必要条件  
  **バージョン:** ADO 2.0 以降  

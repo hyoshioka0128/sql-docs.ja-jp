@@ -7,20 +7,20 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
 - FileTables [SQL Server], system functions
 ms.assetid: 71f729df-d340-4cf9-9a6d-305fcb39b009
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 0ba0d5777ad63262dda102f0f7be1f2269ba0be9
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 30469b616c3f8ea6c372380ab2e82b384e2d0b6f
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88481804"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99196106"
 ---
 # <a name="filestream-and-filetable-functions-transact-sql"></a>Filestream および FileTable 関数 (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

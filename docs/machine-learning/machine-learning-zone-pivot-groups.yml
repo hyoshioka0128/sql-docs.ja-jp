@@ -1,0 +1,21 @@
+### YamlMime:ZonePivotGroups
+groups:
+- id: sqlml-platforms
+  title: プラットフォーム
+  prompt: プラットフォームの選択
+  pivots:
+  - id: platform-windows
+    title: Windows
+  - id: platform-linux-ubuntu
+    title: Ubuntu Linux
+  - id: platform-linux-rhel
+    title: Red Hat Enterprise Linux
+  - id: platform-linux-sles
+    title: SUSE Linux Enterprise Server
+metadata:
+  ms.openlocfilehash: 6e4a55d7c3ad0ac95b877dc0752766f0b83e14e1
+  ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 02/10/2021
+  ms.locfileid: "100082223"

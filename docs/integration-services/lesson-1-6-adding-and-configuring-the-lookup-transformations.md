@@ -10,12 +10,12 @@ ms.assetid: 5c59f723-9707-4407-80ae-f05f483cf65f
 author: chugugrace
 ms.author: chugu
 ms.reviewer: ''
-ms.openlocfilehash: 4ab6f98a868dc504cf13fa770cd0d5ad5ceb1788
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 7c88bd5e8abafdb15eba50fa7cdea22f29910bc4
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88462047"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100354322"
 ---
 # <a name="lesson-1-6-add-and-configure-the-lookup-transformations"></a>レッスン 1-6:参照変換を追加し、構成する
 
@@ -44,7 +44,7 @@ ms.locfileid: "88462047"
   
 3.  **[データ フロー]** デザイン画面で、**[参照]** 変換の **[参照]** を選択し、名前を「**Lookup Currency Key**」に変更します。  
   
-4.  **Lookup Currency Key** 変換をダブルクリックし、**参照変換エディター**を表示します。  
+4.  **Lookup Currency Key** 変換をダブルクリックし、**参照変換エディター** を表示します。  
   
 5.  **[全般]** ページで、以下の選択を行います。  
   
@@ -59,8 +59,8 @@ ms.locfileid: "88462047"
     2.  **[SQL クエリの結果を使用する]** をクリックし、次の SQL ステートメントを入力するか貼り付けます。  
   
         ```sql
-        SELECT * FROM [dbo].[DimCurrency]
-        WHERE [CurrencyAlternateKey]
+        SELECT * FROM [Sales].[Currency]
+        WHERE [CurrencyCode]
         IN ('ARS', 'AUD', 'BRL', 'CAD', 'CNY',
             'DEM', 'EUR', 'FRF', 'GBP', 'JPY',
             'MXN', 'SAR', 'USD', 'VEB')

@@ -1,19 +1,19 @@
 ---
 title: OLE DB Driver のリリース ノート
 description: このリリース ノート記事では、Microsoft OLE DB Driver for SQL Server の各リリースにおける変更点について説明します。
-ms.date: 05/25/2020
+ms.date: 12/01/2020
 ms.prod: sql
 ms.technology: connectivity
 ms.topic: conceptual
 ms.reviewer: genemi
 author: mateusz-kmiecik
 ms.author: v-makmie
-ms.openlocfilehash: 2e957fdb91720c46f5065f4b671c14b757a7cb0f
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: e66856d7eac47bca5fe7093cbec02d9414c585ef
+ms.sourcegitcommit: eeb30d9ac19d3ede8d07bfdb5d47f33c6c80a28f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91726935"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96523085"
 ---
 # <a name="release-notes-for-the-microsoft-ole-db-driver-for-sql-server"></a>Microsoft OLE DB Driver for SQL Server のリリース ノート
 
@@ -27,6 +27,34 @@ Hello, from now on, please use the table-based format standard for all new Relea
 See section "## 18.2.1" for a live example in this article.
 Thank you. For questions, contact GeneMi. (2019/03/16)
 -->
+
+## <a name="1850"></a>18.5.0
+![ダウンロード](../../ssms/media/download-icon.png) [x64 インストーラーのダウンロード](https://go.microsoft.com/fwlink/?linkid=2135577)  
+![ダウンロード](../../ssms/media/download-icon.png) [x86 インストーラーのダウンロード](https://go.microsoft.com/fwlink/?linkid=2135722)  
+
+リリース日:2020 年 12 月 1 日
+
+自動的に検出されたもの以外の言語でインストーラーをダウンロードする必要がある場合は、以下の直接リンクを使用できます。  
+    X64 ドライバーの場合: [簡体中国語](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x804) | [繁体中国語](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x404) | [英語 (米国)](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x409) | [フランス語](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x40c) | [ドイツ語](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x407) | [イタリア語](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x410) | [日本語](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x411) | [韓国語](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x412) | [ポルトガル語 (ブラジル)](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x416) | [ロシア語](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x419) | [スペイン語](https://go.microsoft.com/fwlink/?linkid=2135577&clcid=0x40a)  
+    X86 ドライバーの場合: [簡体中国語](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x804) | [繁体中国語](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x404) | [英語 (米国)](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x409) | [フランス語](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x40c) | [ドイツ語](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x407) | [イタリア語](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x410) | [日本語](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x411) | [韓国語](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x412) | [ポルトガル語 (ブラジル)](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x416) | [ロシア語](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x419) | [スペイン語](https://go.microsoft.com/fwlink/?linkid=2135722&clcid=0x40a)  
+
+### <a name="features-added"></a>追加された機能
+
+| 追加された機能 | 詳細 |
+| :------------ | :------ |
+| [SQL データの検出と分類](../../relational-databases/security/sql-data-discovery-and-classification.md)のサポート | [データ分類の使用](features/using-data-classification.md) |
+| Azure Active Directory サービス プリンシパル認証のサポート (`ActiveDirectoryServicePrincipal`) | [Azure Active Directory の使用](features/using-azure-active-directory.md) |
+
+### <a name="bugs-fixed"></a>修正されたバグ
+
+| 修正されたバグ | 詳細 |
+| :-------- | :------ |
+| 埋め込み NUL 文字に関する問題を修正しました。 | ドライバーによって埋め込み NUL 文字を含む不適切な長さの文字列が返される原因となっていたバグを修正しました。 |
+| [IBCPSession](ole-db-interfaces/ibcpsession-ole-db.md) インターフェイスのメモリ リークを修正しました。 | `sql_variant` データ型の一括コピー操作に伴う [IBCPSession](ole-db-interfaces/ibcpsession-ole-db.md) インターフェイスのメモリ リークを修正しました。 |
+| `SSPROP_INTEGRATEDAUTHENTICATIONMETHOD` および `SSPROP_MUTUALLYAUTHENTICATED` プロパティに対して正しくない値が返される原因となっていたバグを修正しました。 | 以前のバージョンのドライバーでは、`SSPROP_INTEGRATEDAUTHENTICATIONMETHOD` プロパティの切り詰められた値が返されました。 また、`ActiveDirectoryIntegrated` 認証の場合、両方の側が相互に認証されていても、`SSPROP_MUTUALLYAUTHENTICATED` プロパティの戻り値は `VARIANT_FALSE` でした。|
+| リンク サーバーのリモート テーブルの挿入に関するバグを修正しました。 | [NOCOUNT サーバー構成オプション](../../database-engine/configure-windows/configure-the-user-options-server-configuration-option.md)が有効になっているとリンク サーバーのリモート テーブルの挿入が失敗する原因となっていたバグを修正しました。 |
+
+## <a name="previous-releases"></a>以前のリリース
 
 ## <a name="1840"></a>18.4.0
 ![ダウンロード](../../ssms/media/download-icon.png) [x64 インストーラーのダウンロード](https://go.microsoft.com/fwlink/?linkid=2129954)  
@@ -52,12 +80,10 @@ X86 ドライバーの場合: [簡体中国語](https://go.microsoft.com/fwlink/
 | [ISequentialStream](/previous-versions/windows/desktop/ms718035(v=vs.85)) インターフェイスのさまざまなバグを修正しました | マルチバイトのコード ページに影響を与えるいくつかのバグにより、読み取り操作の完了前にインターフェイスでストリームの末尾が報告されました。|
 | [IOpenRowset::OpenRowset](/previous-versions/windows/desktop/ms716724(v=vs.85)) インターフェイスのメモリ リークを修正しました | `SSPROP_IRowsetFastLoad` プロパティが有効になっている場合の [IOpenRowset::OpenRowset](/previous-versions/windows/desktop/ms716724(v=vs.85)) インターフェイスのメモリ リークを修正しました。 |
 | `sql_variant` データ型と非 ASCII 文字列に関連するシナリオのバグを修正しました | `sql_variant` データ型と非 ASCII 文字列に関連する特定のシナリオを実行すると、データが破損する可能性があります。 詳細については、次の情報を参照してください。[既知の問題](ole-db-data-types/ssvariant-structure.md#known-issues)。 |
-| [UDL 構成ダイアログ](help-topics/data-link-pages.md)の *[テスト接続]* ボタンの問題を修正しました | [UDL 構成ダイアログ](help-topics/data-link-pages.md)の *[テスト接続]* ボタンで、 *[すべて]* タブで設定された初期化プロパティを利用できるようになりました。 |
-| `SSPROP_INIT_PACKETSIZE` プロパティの既定値の処理を修正しました | `SSPROP_INIT_PACKETSIZE` プロパティが `0` の既定値に設定されている場合の予期しないエラーを修正しました。 このプロパティの詳細については、「[初期化プロパティと承認プロパティ](ole-db-data-source-objects/initialization-and-authorization-properties.md)」を参照してください。 |
-| [IBCPSession](ole-db-interfaces/ibcpsession-ole-db.md) でのバッファー オーバーフローの問題を修正しました | 不適切なデータ ファイルを使用する場合のバッファー オーバーフローの問題を修正しました。 |
-| アクセシビリティの問題を修正しました | インストーラー UI と [SQL Server ログイン ダイアログ](help-topics/sql-server-login-dialog.md) (コンテンツの読み取り、タブ ストップ) でのアクセシビリティの問題を修正しました。 |
-
-## <a name="previous-releases"></a>以前のリリース
+| [UDL 構成ダイアログ](help-topics/data-link-pages.md)の *[テスト接続]* ボタンの問題を修正しました。 | [UDL 構成ダイアログ](help-topics/data-link-pages.md)の *[テスト接続]* ボタンで、 *[すべて]* タブで設定された初期化プロパティを利用できるようになりました。 |
+| `SSPROP_INIT_PACKETSIZE` プロパティの既定値の処理を修正しました。 | `SSPROP_INIT_PACKETSIZE` プロパティが `0` の既定値に設定されている場合の予期しないエラーを修正しました。 このプロパティの詳細については、「[初期化プロパティと承認プロパティ](ole-db-data-source-objects/initialization-and-authorization-properties.md)」を参照してください。 |
+| [IBCPSession](ole-db-interfaces/ibcpsession-ole-db.md) でのバッファー オーバーフローの問題を修正しました。 | 不適切なデータ ファイルを使用する場合のバッファー オーバーフローの問題を修正しました。 |
+| アクセシビリティの問題を修正しました。 | インストーラー UI と [SQL Server ログイン ダイアログ](help-topics/sql-server-login-dialog.md) (コンテンツの読み取り、タブ ストップ) でのアクセシビリティの問題を修正しました。 |
 
 ## <a name="1830"></a>18.3.0
 
@@ -74,7 +100,7 @@ X86 ドライバーの場合: [簡体中国語](https://go.microsoft.com/fwlink/
 
 | 追加された機能 | 詳細 |
 | :------------ | :------ |
-| Azure Active Directory 認証のサポート (`ActiveDirectoryInteractive`、`ActiveDirectoryMSI`)。 | [Azure Active Directory の使用](features/using-azure-active-directory.md)。 |
+| Azure Active Directory 認証のサポート (`ActiveDirectoryInteractive`、`ActiveDirectoryMSI`) | [Azure Active Directory の使用](features/using-azure-active-directory.md) |
 | Azure Active Directory 認証ライブラリ (adal.dll) をインストーラーに含める | 基本ドライバーのインストールに含まれるようになりました。これにより、OLE DB インストーラーを使用すると、SQL Server 用の Microsoft Active Directory 認証ライブラリの既存のインストールがアップグレードされ、Windows のインストール済みアプリケーションの一覧からこれが削除されます。 |
 | &nbsp; | &nbsp; |
 
@@ -102,7 +128,7 @@ X86 ドライバーの場合: [簡体中国語](https://go.microsoft.com/fwlink/
 
 | 追加された機能 | 詳細 |
 | :------------ | :------ |
-| SQL Server リムーバブル メディアからのドライバーのアップグレードのサポート。 | この機能強化により、SQL Server リムーバブル メディアから直接ドライバーをアップグレードできます。 |
+| SQL Server リムーバブル メディアからのドライバーのアップグレードのサポート | この機能強化により、SQL Server リムーバブル メディアから直接ドライバーをアップグレードできます。 |
 | &nbsp; | &nbsp; |
 
 ## <a name="1822"></a>18.2.2
@@ -138,8 +164,8 @@ X86 ドライバーの場合: [簡体中国語](https://go.microsoft.com/fwlink/
 
 | 追加された機能 | 詳細 |
 | :------------ | :------ |
-| UTF-8 サーバー エンコードのサポート。 | [OLE DB Driver for SQL Server の UTF-8 サポート](features/utf-8-support-in-oledb-driver-for-sql-server.md)。 |
-| Azure Active Directory 認証のサポート。 | [Azure Active Directory の使用](features/using-azure-active-directory.md)。 |
+| UTF-8 サーバー エンコードのサポート | [OLE DB Driver for SQL Server の UTF-8 のサポート](features/utf-8-support-in-oledb-driver-for-sql-server.md) |
+| Azure Active Directory 認証のサポート | [Azure Active Directory の使用](features/using-azure-active-directory.md) |
 | &nbsp; | &nbsp; |
 
 ## <a name="1810"></a>18.1.0
@@ -157,7 +183,7 @@ X86 ドライバーの場合: [簡体中国語](https://go.microsoft.com/fwlink/
 
 | 追加された機能 | 詳細 |
 | :------------ | :------ |
-| `UseFMTONLY` 接続文字列キーワードと `SSPROP_INIT_USEFMTONLY` 初期化プロパティのサポート。 | `UseFMTONLY` は [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以上に接続する場合のメタデータの取得方法を制御します。<br/><br/>詳細については、次を参照してください。[OLE DB Driver for SQL Server での接続文字列キーワードの使用](applications/using-connection-string-keywords-with-oledb-driver-for-sql-server.md)。 |
+| `UseFMTONLY` 接続文字列キーワードと `SSPROP_INIT_USEFMTONLY` 初期化プロパティのサポート | `UseFMTONLY` は [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以上に接続する場合のメタデータの取得方法を制御します。<br/><br/>詳細については、次を参照してください。[OLE DB Driver for SQL Server での接続文字列キーワードの使用](applications/using-connection-string-keywords-with-oledb-driver-for-sql-server.md)。 |
 | &nbsp; | &nbsp; |
 
 ### <a name="bugs-fixed-in-1810"></a>18.1.0 で修正されたバグ

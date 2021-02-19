@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - KEY_NAME_TSQL
 - KEY_NAME
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 7b693e5d-2325-4bf9-9b45-ad6a23374b41
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: 9ccc9a860218a6fa39596faaee78908eedf6907a
-ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
+ms.openlocfilehash: 857dff1b1ddb9e732cb065560d922fb5efbd6559
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91115987"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99183966"
 ---
 # <a name="key_name-transact-sql"></a>KEY_NAME (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -42,10 +42,10 @@ KEY_NAME ( ciphertext | key_guid )
 
 ## <a name="arguments"></a>引数
  *ciphertext*  
- 対称キーによって暗号化されたテキストを指定します。 *暗号化テキスト* は型です。** varbinary (8000)** です。  
+ 対称キーによって暗号化されたテキストを指定します。 *暗号化テキスト* は型です。**varbinary (8000)** です。  
   
  *key_guid*  
- 対称キーの GUID を指定します。 *key_guid *は型です。** uniqueidentifier**です。  
+ 対称キーの GUID を指定します。 *key_guid* は型です。**uniqueidentifier** です。  
   
 ## <a name="returned-types"></a>返される型  
  **varchar(128)**  

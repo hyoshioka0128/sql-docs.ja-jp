@@ -18,13 +18,13 @@ ms.assetid: d82942e0-4a86-4b34-a65f-9f143ebe85ce
 author: MikeRayMSFT
 ms.author: mikeray
 ms.prod_service: table-view-index, sql-database
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 047ca1b9ebb3a9157dfe9cbea2ececb898f6b478
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 9612070531dc13d9646d439501925f59f62c8da7
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91867673"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99236911"
 ---
 # <a name="guidelines-for-online-index-operations"></a>オンライン インデックス操作のガイドライン
 
@@ -32,7 +32,7 @@ ms.locfileid: "91867673"
 
 インデックス操作をオンラインで実行するときは、次のガイドラインに従ってください。  
 
-- 基になるテーブルに **image**、 **ntext**、 **text**などの LOB (ラージ オブジェクト) データ型が含まれている場合、クラスター化インデックスの作成、再構築、または削除は、オフラインで行う必要があります。  
+- 基になるテーブルに **image**、 **ntext**、 **text** などの LOB (ラージ オブジェクト) データ型が含まれている場合、クラスター化インデックスの作成、再構築、または削除は、オフラインで行う必要があります。  
 - テーブルに LOB データ型が含まれていても、そのデータ型の列がキー列または非キー (付加) 列としてインデックス定義で使用されていない場合は、一意ではない非クラスター化インデックスをオンラインで作成できます。  
 - ローカル一時テーブルのインデックスの作成、再構築、または削除は、オンラインでは実行できません。 この制限は、グローバル一時テーブルのインデックスには当てはまりません。
 - インデックスは、予期しないエラー、データベースのフェールオーバー、または **PAUSE** コマンドの後で、停止したところから再開できます。 「[CREATE INDEX](../../t-sql/statements/create-index-transact-sql.md)」および「[ALTER INDEX](../../t-sql/statements/alter-index-transact-sql.md)」を参照してください。
@@ -119,7 +119,7 @@ S-Lock または Sch-M ロックはインデックス操作の最後のフェー
 ## <a name="online-default-options"></a>オンラインの既定のオプション
 
 > [!IMPORTANT]
-> これらのオプションは、[!INCLUDE[ssNoVersion](../../includes/sssqlv15-md.md)] でパブリック プレビュー状態です。
+> これらのオプションは、[!INCLUDE[ssNoVersion](../../includes/sssql19-md.md)] でパブリック プレビュー状態です。
 
 ELEVATE_ONLINE または ELEVATE_RESUMABLE データベース スコープ構成オプションを設定することで、データベース レベルでオンラインまたは再開可能の既定のオプションを設定できます。 これらの既定のオプションを設定すると、データベース テーブルをオフラインにする操作を誤って実行してしまう事態を回避できます。 いずれのオプションでも、エンジンは特定の操作をオンラインまたは再開可能実行に自動昇格します。  
 [ALTER DATABASE SCOPED CONFIGURATION](../../t-sql/statements/alter-database-scoped-configuration-transact-sql.md) コマンドを使用して、オプションを FAIL_UNSUPPORTED、WHEN_SUPPORTED、または OFF のいずれかに設定できます。 オンラインと再開可能に異なる値を設定できます。

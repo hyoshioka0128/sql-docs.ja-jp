@@ -6,7 +6,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 619bc7fd-ad0a-44ea-9678-ad40a662c258
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 86a57e675d9ba53334bea806d8c787c21f85b5d1
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 0b74c04a64ca6b5deeb06a7aaa85b97eac1f3fb4
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91724188"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100052883"
 ---
 # <a name="submitchanges-method-example-vbscript"></a>SubmitChanges メソッドの例 (VBScript)
 > [!IMPORTANT]
@@ -27,7 +27,7 @@ ms.locfileid: "91724188"
   
  次のコードフラグメントは、RDS で [SubmitChanges](./submitchanges-method-rds.md) メソッドを使用する方法を示して [います。DataControl](./datacontrol-object-rds.md) オブジェクト。  
   
- この例をテストするには、このコードを切り取って通常の ASP ドキュメントに貼り付け、 **SubmitChangesCtrlVBS**という名前を付けます。 ASP スクリプトによってサーバーが識別されます。  
+ この例をテストするには、このコードを切り取って通常の ASP ドキュメントに貼り付け、 **SubmitChangesCtrlVBS** という名前を付けます。 ASP スクリプトによってサーバーが識別されます。  
   
 ```  
 <!-- BeginCancelUpdateVBS -->  

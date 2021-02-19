@@ -13,29 +13,29 @@ helpviewer_keywords:
 ms.assetid: 059431e2-a65c-4587-ba4a-9929a1611e96
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: b317f23ef9e960fe407e68ef108f31ba0fcfa2c6
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: c7434c34d2e39ae85ecc11ebf5603f825672a919
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88420636"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97438545"
 ---
 # <a name="datetime-data-type-conversions-from-sql-to-c"></a>datetime データ型の SQL から C への変換
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   次の表に、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の日付型または時刻型から C の型に変換する際に考慮する問題を示します。  
   
-## <a name="conversions"></a>変換  
+## <a name="conversions"></a>コンバージョン  
   
 |   | SQL_C_DATE | SQL_C_TIME | SQL_C_TIMESTAMP | SQL_C_SS_TIME2 | SQL_C_SS_TIMESTAMPOFFSET | SQL_C_BINARY | SQL_C_CHAR | SQL_C_WCHAR |
 | - | ---------- | ---------- | --------------- | -------------- | ------------------------ | ------------ | ---------- | ----------- |
 | **SQL_CHAR** |2、3、4、5|2、3、6、7、8|2、3、9、10、11|2、3、6、7|2、3、9、10、11|1|1|1|  
 | **SQL_WCHAR** |2、3、4、5|2、3、6、7、8|2、3、9、10、11|2、3、6、7|2、3、9、10、11|1|1|1|  
-| **SQL_TYPE_DATE** |[OK]|12|13|12|13、23|14|16|16|  
-| **SQL_SS_TIME2** |12|8|15|[OK]|10、23|17|16|16|  
-| **SQL_TYPE_TIMESTAMP** |18|7、8|[OK]|7|23|19|16|16|  
-| **SQL_SS_TIMESTAMPOFFSET** |18、22|7、8、20|20|7、20|[OK]|21|16|16|  
+| **SQL_TYPE_DATE** |OK|12|13|12|13、23|14|16|16|  
+| **SQL_SS_TIME2** |12|8|15|OK|10、23|17|16|16|  
+| **SQL_TYPE_TIMESTAMP** |18|7、8|OK|7|23|19|16|16|  
+| **SQL_SS_TIMESTAMPOFFSET** |18、22|7、8、20|20|7、20|OK|21|16|16|  
   
 ## <a name="key-to-symbols"></a>記号の説明  
   

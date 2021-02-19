@@ -16,10 +16,10 @@ ms.assetid: a5393c1a-cc37-491a-a260-7aad84dbff68
 author: chugugrace
 ms.author: chugu
 ms.openlocfilehash: 7c6e986f032f755f73db249f7ddeff539fca4a8c
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.sourcegitcommit: c5078791a07330a87a92abb19b791e950672e198
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "92197176"
 ---
 # <a name="loop-through-excel-files-and-tables-with-a-foreach-loop-container"></a>Foreach ループ コンテナーを使用して Excel のファイルおよびテーブルをループ処理する
@@ -53,7 +53,7 @@ ms.locfileid: "92197176"
     > [!IMPORTANT]  
     >  この Excel 接続マネージャーを使用するデータ フロー コンポーネントとタスクを構成する際、検証エラーが発生しないようにするには、 **[Excel 接続マネージャー]** で既存の Excel ブックを選択します。 以下の手順に従って **ConnectionString** プロパティ用の式を構成した後は、接続マネージャーは実行時にこのブックを使用しなくなります。 パッケージを作成して構成したら、[プロパティ] ウィンドウで **ConnectionString** プロパティの値を削除することができます。 ただし、この値を削除すると、Excel 接続マネージャーの接続文字列プロパティは Foreach ループが実行されるまで無効になります。 したがって、接続マネージャーを使用するタスクまたはパッケージでは、検証エラーが発生しないように、 **DelayValidation** プロパティを **True** に設定してください。  
     >   
-    >  また、Excel 接続マネージャーの **RetainSameConnection** プロパティでは既定値の **False** を使用する必要があります。 この値を **True**に変更すると、ループの各反復処理で最初の Excel ブックが繰り返し開かれるようになります。  
+    >  また、Excel 接続マネージャーの **RetainSameConnection** プロパティでは既定値の **False** を使用する必要があります。 この値を **True** に変更すると、ループの各反復処理で最初の Excel ブックが繰り返し開かれるようになります。  
   
 8.  新しい Excel 接続マネージャーを選択し、[プロパティ] ウィンドウで **[式]** プロパティをクリックして、参照ボタンをクリックします。  
   

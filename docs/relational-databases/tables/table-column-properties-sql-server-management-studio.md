@@ -15,13 +15,13 @@ f1_keywords:
 ms.assetid: 09830897-cc10-46b8-95f5-e0e9681b668c
 author: stevestein
 ms.author: sstein
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 0ddf8c0360de470d5640ed650c4b8339061c41b4
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 38e9460d8efe8c5fb33285bf4c6eeaada0203dcf
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91810488"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97472633"
 ---
 # <a name="table-column-properties-sql-server-management-studio"></a>テーブル列のプロパティ (SQL Server Management Studio)
 [!INCLUDE [sqlserver2016-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa-pdw.md)]
@@ -93,7 +93,7 @@ ms.locfileid: "91810488"
   
 -   **[フルテキスト インデックス化されている]** この列にフルテキスト インデックスが付けられているかどうかを示します。 この列のデータ型がフルテキスト検索に対応している場合、およびこの列が属するテーブルにフルテキスト インデックスが指定されている場合にのみ、このプロパティを **[はい]** に設定できます。 このプロパティを編集するには、値をクリックしてドロップダウン リストを展開し、値を選択します。  
   
--   **[フルテキスト型列]** この列のフルテキスト インデックスが設定されている列の名前を示します。 この列の **[データ型]** プロパティが **[image]** または **[varbinary]** の場合は、このプロパティを設定する必要があります。 このプロパティで指定される列は、 **[n]char、[n]varchar** 、または **xml**型である必要があります。このプロパティのドロップダウン リストには、これらの 3 種類のいずれかのデータ型を持つ列のみが表示されます。 このプロパティで指定された列の行は、フルテキスト検索ができる列の行と一致するドキュメントの種類を示します。 このプロパティを編集するには、値をクリックしてドロップダウン リストを展開し、別の値を選択します。  
+-   **[フルテキスト型列]** この列のフルテキスト インデックスが設定されている列の名前を示します。 この列の **[データ型]** プロパティが **[image]** または **[varbinary]** の場合は、このプロパティを設定する必要があります。 このプロパティで指定される列は、 **[n]char、[n]varchar** 、または **xml** 型である必要があります。このプロパティのドロップダウン リストには、これらの 3 種類のいずれかのデータ型を持つ列のみが表示されます。 このプロパティで指定された列の行は、フルテキスト検索ができる列の行と一致するドキュメントの種類を示します。 このプロパティを編集するには、値をクリックしてドロップダウン リストを展開し、別の値を選択します。  
   
 -   **[言語]** 列にインデックスを付けるために使用するワード ブレーカーの言語を示します。 プロパティに格納される値は、実際はワード ブレーカーのロケール識別子です。 ワード ブレーカーおよび LCID の詳細については、「ワード ブレーカーとステミング機能」を参照してください。 このプロパティを編集するには、値をクリックしてドロップダウン リストを展開し、別の値を選択します。  
   

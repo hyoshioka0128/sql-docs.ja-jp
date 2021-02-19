@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: fe1e7f60-b0c8-45e9-a5e8-4fedfa73d7ea
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: 4f65282964494ba1fdb160b1e755922a60ad80d8
-ms.sourcegitcommit: df1f0f2dfb9452f16471e740273cd1478ff3100c
+ms.openlocfilehash: 4053b827b51eda8f238e6cada863773d625d1f59
+ms.sourcegitcommit: 821e7039a342bf76306d66c61db247dc2caabc46
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87394987"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "96999231"
 ---
 # <a name="replication-merge-agent"></a>Replication Merge Agent
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -223,20 +223,20 @@ replmerg [-?]
  FTP サービスに接続するときに使用するユーザー名です。 この引数を指定しない場合は、匿名が使用されます。  
   
  **-HistoryVerboseLevel** [**1**\|**2**\|**3**]  
- マージ操作中にログに記録する履歴の量を指定します。 **1**を選択すれば、ログへの履歴の記録がパフォーマンスに与える影響を最小限に抑えることができます。  
+ マージ操作中にログに記録する履歴の量を指定します。 **1** を選択すれば、ログへの履歴の記録がパフォーマンスに与える影響を最小限に抑えることができます。  
   
 |HistoryVerboseLevel の値|説明|  
 |-------------------------------|-----------------|  
 |**0**|エージェントの状態の最終メッセージ、最終のセッションの詳細、およびすべてのエラーをログに記録します。|  
 |**1**|各セッションの状態における増分セッションの詳細をログに記録します。エージェントの状態の最終メッセージ、最終のセッションの詳細、およびすべてのエラーに加えて、進行状況が含まれます。|  
 |**2**|既定値。 各セッションの状態における増分セッションの詳細、およびアーティクル レベルのセッションの詳細をログに記録します。エージェントの状態の最終メッセージ、最終のセッションの詳細、およびすべてのエラーに加えて、進行状況が含まれます。 エージェントの状態のメッセージもログに記録されます。|  
-|**3**|**-HistoryVerboseLevel** = **2**と同じですが、より多くのエージェント進行状況メッセージがログに記録されます。|  
+|**3**|**-HistoryVerboseLevel** = **2** と同じですが、より多くのエージェント進行状況メッセージがログに記録されます。|  
   
  **-Hostname** _host_name_  
  ローカル コンピューターのネットワーク名です。 既定値は、ローカル コンピューターの名前になります。  
   
  **-InteractiveResolution** [**0**\|**1**]  
- 同期中に競合が発生した場合に、インタラクティブ競合回避を使用するかどうかを指定します。 既定値の **0**は、インタラクティブ競合回避を使用しないことを示します。  
+ 同期中に競合が発生した場合に、インタラクティブ競合回避を使用するかどうかを指定します。 既定値の **0** は、インタラクティブ競合回避を使用しないことを示します。  
   
  **-InternetLogin** _internet_login_  
  認証を必要とする [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] レプリケーション リスナー ISAPI DLL への接続時に使用されるログイン名を指定します。  
@@ -245,13 +245,13 @@ replmerg [-?]
  認証を必要とする [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] レプリケーション リスナー ISAPI DLL への接続時に使用されるパスワードを指定します。  
   
  **-InternetProxyLogin**  *internet_proxy_login*  
- 認証を必要とする、 *internet_proxy_server*で定義されたプロキシ サーバーへの接続時に使用されるログイン名を指定します。  
+ 認証を必要とする、 *internet_proxy_server* で定義されたプロキシ サーバーへの接続時に使用されるログイン名を指定します。  
   
  **–InternetProxyPassword**  *internet_proxy_password*  
- 認証を必要とする、 *internet_proxy_server*で定義されたプロキシ サーバーへの接続時に使用されるパスワードを指定します。  
+ 認証を必要とする、 *internet_proxy_server* で定義されたプロキシ サーバーへの接続時に使用されるパスワードを指定します。  
   
  **-InternetProxyServer**  *internet_proxy_server*  
- *internet_url*で指定した HTTP リソースへのアクセス時に使用するプロキシ サーバーを指定します。  
+ *internet_url* で指定した HTTP リソースへのアクセス時に使用するプロキシ サーバーを指定します。  
   
  **-InternetSecurityMode** [**0**\|**1**]  
  Web 同期時の Web サーバーとの接続に使用される IIS セキュリティ モードを指定します。 値 **0** は基本認証を示し、値 **1** は Windows 統合認証 (既定値) を指定します。  
@@ -271,10 +271,10 @@ replmerg [-?]
  **-MakeGenerationInterval** _make_generation_interval_seconds_  
  クライアントにダウンロードする生成結果 (変更のバッチ) を作成する間隔 (秒) です。 既定値は **1** 秒です。  
   
- Makegeneration は、パブリッシャーの変更をサブスクライバーにダウンロードするように準備するプロセスです。また、ダウンロード中にパフォーマンスのボトルネックになる場合があります。 makegeneration プロセスが **-MakeGenerationInterval**で指定された間隔で既に実行された場合、現在の同期セッションでは、このプロセスはスキップされます。 これは、同期のコンカレンシーに役立つ場合があります。特に、サブスクライバーが変更をダウンロードしない場合に役立ちます。  
+ Makegeneration は、パブリッシャーの変更をサブスクライバーにダウンロードするように準備するプロセスです。また、ダウンロード中にパフォーマンスのボトルネックになる場合があります。 makegeneration プロセスが **-MakeGenerationInterval** で指定された間隔で既に実行された場合、現在の同期セッションでは、このプロセスはスキップされます。 これは、同期のコンカレンシーに役立つ場合があります。特に、サブスクライバーが変更をダウンロードしない場合に役立ちます。  
   
  **-MaxBcpThreads** _number_of_threads_  
- 並列実行できる一括コピーの操作数を指定します。 同時に存在するスレッドおよび ODBC 接続の最大数は、 **MaxBcpThreads** 、またはパブリケーション データベース内のシステム テーブル **sysmergeschemachange** に表示される一括コピー要求数のいずれか少ない方の値になります。 **MaxBcpThreads** の値は、0 よりも大きくする必要がありますが、ハードコーディングされた上限はありません。 既定値は **1**です。  
+ 並列実行できる一括コピーの操作数を指定します。 同時に存在するスレッドおよび ODBC 接続の最大数は、 **MaxBcpThreads** 、またはパブリケーション データベース内のシステム テーブル **sysmergeschemachange** に表示される一括コピー要求数のいずれか少ない方の値になります。 **MaxBcpThreads** の値は、0 よりも大きくする必要がありますが、ハードコーディングされた上限はありません。 既定値は **1** です。  
   
  **-MaxDownloadChanges** _number_of_download_changes_  
  パブリッシャーからサブスクライバーにダウンロードする必要のある変更済みの行の最大数を指定します。 ダウンロードする行数が、指定した最大数より多くなる場合があります。完全な生成結果が処理されること、および並列の対象スレッドが実行されて最初のパスでそれぞれ 100 以上の変更が処理されることが原因です。 既定では、ダウンロードの準備が整っている変更がすべて送信されます。  
@@ -283,16 +283,21 @@ replmerg [-?]
  サブスクライバーからパブリッシャーにアップロードする必要のある変更済みの行の最大数を指定します。 アップロードする行数が、指定した最大数より多くなる場合があります。完全な生成結果が処理されること、および並列の対象スレッドが実行されて最初のパスでそれぞれ 100 以上の変更が処理されることが原因です。 既定では、アップロードの準備が整っている変更がすべて送信されます。  
   
  **-MetadataRetentionCleanup** [**0**\|**1**]  
- パブリケーション保有期間に基づいて、メタデータを [MSmerge_genhistory](../../../relational-databases/system-tables/msmerge-genhistory-transact-sql.md)、 [MSmerge_contents](../../../relational-databases/system-tables/msmerge-contents-transact-sql.md)、 [MSmerge_tombstone](../../../relational-databases/system-tables/msmerge-tombstone-transact-sql.md)、 [MSmerge_past_partition_mappings](../../../relational-databases/system-tables/msmerge-past-partition-mappings-transact-sql.md)、および [MSmerge_current_partition_mappings](../../../relational-databases/system-tables/msmerge-current-partition-mappings.md) から削除するかどうかを指定します。 既定値の **1**は、クリーンアップを行う必要があることを示します。 値 **0** は、クリーンアップを自動的に実行しないことを示します。  
+ パブリケーション保有期間に基づいて、メタデータを [MSmerge_genhistory](../../../relational-databases/system-tables/msmerge-genhistory-transact-sql.md)、 [MSmerge_contents](../../../relational-databases/system-tables/msmerge-contents-transact-sql.md)、 [MSmerge_tombstone](../../../relational-databases/system-tables/msmerge-tombstone-transact-sql.md)、 [MSmerge_past_partition_mappings](../../../relational-databases/system-tables/msmerge-past-partition-mappings-transact-sql.md)、および [MSmerge_current_partition_mappings](../../../relational-databases/system-tables/msmerge-current-partition-mappings.md) から削除するかどうかを指定します。 既定値の **1** は、クリーンアップを行う必要があることを示します。 値 **0** は、クリーンアップを自動的に実行しないことを示します。  
   
  **-Output** _output_path_and_file_name_  
  エージェントの出力ファイルのパスです。 ファイル名が指定されていない場合、出力はコンソールに送られます。 指定された名前のファイルが存在する場合、出力はそのファイルに追加されます。  
   
  **-OutputVerboseLevel** [**0**\|**1**\|**2**]  
- 出力を詳細表示にするかどうかを指定します。 詳細レベルが **0**の場合、エラー メッセージだけが出力されます。 詳細レベルが **1**の場合、すべての実行状況報告メッセージが印刷されます。 詳細レベルが **2** (既定値) の場合、すべてのエラー メッセージと実行状況報告メッセージが出力されます。これはデバッグ時に便利です。  
+ 出力を詳細表示にするかどうかを指定します。 詳細レベルが **0** の場合、エラー メッセージだけが出力されます。 詳細レベルが **1** の場合、すべての実行状況報告メッセージが印刷されます。 詳細レベルが **2** (既定値) の場合、すべてのエラー メッセージと実行状況報告メッセージが出力されます。これはデバッグ時に便利です。  
   
  **-ParallelUploadDownload** [**0**\|**1**]  
- パブリッシャーにアップロードする変更とサブスクライバーにダウンロードする変更をマージ エージェントが並列で処理するかどうかを指定します。帯域幅が広いネットワークを使用している大容量環境で有用です。 **ParallelUploadDownload** が **1**の場合は、並列処理が有効です。  
+ パブリッシャーにアップロードする変更とサブスクライバーにダウンロードする変更をマージ エージェントが並列で処理するかどうかを指定します。これは帯域幅が広いネットワークを使用している大容量環境で有用な場合があります。 ただし、**ParallelUploadDownload** が **1** に設定されている場合は、次の警告にご注意ください。
+ 
+このパラメーターは、間もなく非推奨化される可能性があるリストにあります。 **ParallelUploadDownload** パラメーターを 0 に設定して、"高ボリューム サーバー間" のマージ エージェント プロファイルを使用しないようにすることをお勧めします。このプロファイルでは **ParallelUploadDownload** が 1 に設定されているためです。
+
+> [!WARNING]
+>  [!INCLUDE[ssNoteDepFutureDontUse](../../../includes/ssnotedepfuturedontuse-md.md)]
   
  **-PacketSize**  
  パケット サイズをバイト単位で指定します。 既定値は 4096 (バイト) です。  
@@ -319,7 +324,7 @@ replmerg [-?]
  クエリがタイムアウトになるまでの秒数です。既定では 300 秒です。 マージ エージェントも **QueryTimeout** の値を使用して、この値が 1800 を超える場合にパーティション スナップショットの生成をどのくらいの期間待機するかを判断します。  
   
  **-SrcThreads** _number_of_source_threads_  
- マージ エージェントが変更元から変更を列挙するために使用するソース スレッドの数を指定します。 変更元は、アップロード実行時はサブスクライバーであり、ダウンロード実行時はパブリッシャーです。 既定値は **3**です。  
+ マージ エージェントが変更元から変更を列挙するために使用するソース スレッドの数を指定します。 変更元は、アップロード実行時はサブスクライバーであり、ダウンロード実行時はパブリッシャーです。 既定値は **3** です。  
   
  **-StartQueueTimeout** _start_queue_timeout_seconds_  
  実行中の同時マージ処理数が **sp_addmergepublication** の **\@max_concurrent_merge** プロパティによって設定された制限に達した場合に、マージ エージェントが待機する最長秒数です。 最長秒数に達したときにマージ エージェントが待機中である場合、マージ エージェントは終了します。 値 0 は、エージェントが無制限に待機することを示します。ただし、キャンセルできます。  
@@ -338,7 +343,7 @@ replmerg [-?]
 |**3**|新しいデータベースを作成し、データベースをアタッチして、ファイルに存在する可能性のあるすべてのサブスクリプションを有効にします。|  
   
 > [!NOTE]  
->  値 **2** および **3**を使用する場合は、サブスクライバーのデータベース パスを **SubscriberDatabasePath** オプションで指定する必要があります。  
+>  値 **2** および **3** を使用する場合は、サブスクライバーのデータベース パスを **SubscriberDatabasePath** オプションで指定する必要があります。  
   
  **-SubscriberLogin** _subscriber_login_  
  サブスクライバーのログイン名です。 **SubscriberSecurityMode** が **0** ( [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 認証モード) の場合は、このパラメーターを指定しなければなりません。  
@@ -359,19 +364,19 @@ replmerg [-?]
  ディストリビューションのサブスクリプションの種類を指定します。 値 **0** は、プッシュ サブスクリプション (既定値) を示します。値 **1** はプル サブスクリプションを示し、値 **2** は匿名サブスクリプションを示します。  
   
  **-SyncToAlternate** [ **0\|1**]  
- マージ エージェントがサブスクリプションと代替パブリッシャー間での同期を実行しているかどうかを指定します。 値 **1** は、これが代替パブリッシャーであることを示します。 既定値は **0**です。  
+ マージ エージェントがサブスクリプションと代替パブリッシャー間での同期を実行しているかどうかを指定します。 値 **1** は、これが代替パブリッシャーであることを示します。 既定値は **0** です。  
  
  **-T** [**101\|102**]  
  マージ エージェントの追加機能を有効にするトレース フラグ。 値 **101** を指定すると、マージ レプリケーション同期プロセスの各ステップにかかる時間を特定するのに役立つ追加の詳細ログ情報が有効になります。 値 **102** を指定すると、トレース フラグ **101** と同じ統計情報が書き込まれますが、書き込み先は <Distribution server>..msmerge_history テーブルとなります。 トレース フラグ 101 を使用する場合は、`-output` パラメーターと `-outputverboselevel` パラメーターを使用してマージ エージェントのログ記録を有効にします。  たとえば、次のパラメーターをマージ エージェントに追加してから、エージェントを再起動します: `-T 101, -output, -outputverboselevel` 
  
  **-UploadGenerationsPerBatch** _upload_generations_per_batch_  
- サブスクライバーからパブリッシャーに変更をアップロードする間に、1 つのバッチで処理される生成結果の数です。 生成結果は、アーティクルごとに変更の論理グループとして定義されます。 信頼性の高い通信リンクの既定値は **100**です。 信頼性の低い通信リンクの既定値は **1**です。  
+ サブスクライバーからパブリッシャーに変更をアップロードする間に、1 つのバッチで処理される生成結果の数です。 生成結果は、アーティクルごとに変更の論理グループとして定義されます。 信頼性の高い通信リンクの既定値は **100** です。 信頼性の低い通信リンクの既定値は **1** です。  
   
  **-UploadReadChangesPerBatch** _upload_read_changes_per_batch_  
- サブスクライバーからパブリッシャーに変更をアップロードする間に、1 つのバッチで読み取られる変更の数です。 既定値は **100**です。  
+ サブスクライバーからパブリッシャーに変更をアップロードする間に、1 つのバッチで読み取られる変更の数です。 既定値は **100** です。  
   
  **-UploadWriteChangesPerBatch** _upload_write_changes_per_batch_  
- サブスクライバーからパブリッシャーに変更をアップロードする間に、1 つのバッチで適用される変更の数です。 既定値は **100**です。  
+ サブスクライバーからパブリッシャーに変更をアップロードする間に、1 つのバッチで適用される変更の数です。 既定値は **100** です。  
   
  **-UseInprocLoader**  
  マージ エージェントでスナップショット ファイルをサブスクライバーに適用するときに BULK INSERT コマンドを使用することによって、初期スナップショットのパフォーマンスが向上します。 このパラメーターは XML データ型との互換性がないため非推奨とされます。 XML データをレプリケートしない場合にのみ、このパラメーターを使用できます。 このパラメーターは、キャラクター モードのスナップショットでは使用できません。 このパラメーターを使用する場合は、サブスクライバー側の [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] サービス アカウントに、スナップショットの .bcp データ ファイルが格納されたディレクトリの読み取り権限が必要です。 このパラメーターを使用しない場合、エージェントによって読み込まれた ODBC ドライバーがファイルから読み取るので、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] サービス アカウントのセキュリティ コンテキストは使用されません。  

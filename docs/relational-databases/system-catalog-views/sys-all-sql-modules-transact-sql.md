@@ -1,13 +1,13 @@
 ---
-description: all_sql_modules (Transact-sql)
-title: all_sql_modules (Transact-sql) |Microsoft Docs
+description: sys.all_sql_modules (Transact-sql)
+title: sys.all_sql_modules (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/17/2017
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - all_sql_modules_TSQL
 - sys.all_sql_modules
@@ -18,20 +18,20 @@ dev_langs:
 helpviewer_keywords:
 - sys.all_sql_modules catalog view
 ms.assetid: 7477a3fe-afb3-44c8-bb2c-c6e1d9bdee6f
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 4b0d0afbeb727adece2ef961552f3b1b7972722b
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 900c5f3ac658f9d2281112be34ed65aa3aaba395
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89546932"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99191608"
 ---
-# <a name="sysall_sql_modules-transact-sql"></a>all_sql_modules (Transact-sql)
+# <a name="sysall_sql_modules-transact-sql"></a>sys.all_sql_modules (Transact-sql)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  **Sql_modules**と**sys.system_sql_modules**の和集合を返します。  
+  **Sys.sql_modules** と **sys.system_sql_modules** の和集合を返します。  
   
  ビューは、ネイティブコンパイル済みのスカラーユーザー定義関数ごとに1行の値を返します。 詳しくは、「[インメモリ OLTP でのユーザー定義のスカラー関数](../../relational-databases/in-memory-oltp/scalar-user-defined-functions-for-in-memory-oltp.md)」をご覧ください。  
   

@@ -6,21 +6,21 @@ ms.date: 03/20/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
 - index dynamic management objects [SQL Server]
 - dynamic management objects [SQL Server], index
 ms.assetid: ad9ad40f-b018-4bae-b003-691f08dcefdf
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: e1968ddc753fdafbd391b73fd898a3f01b958dd7
-ms.sourcegitcommit: 32135463a8494d9ed1600a58f51819359e3c09dc
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: ae5e669e827de427c2b3e16962763c3c577e970b
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91834481"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99145450"
 ---
 # <a name="index-related-dynamic-management-views-and-functions-transact-sql"></a>インデックス関連の動的管理ビューおよび関数 (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

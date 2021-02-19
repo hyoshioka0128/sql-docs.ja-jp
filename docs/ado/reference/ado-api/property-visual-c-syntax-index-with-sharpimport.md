@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 dev_langs:
 - C++
@@ -16,15 +16,15 @@ helpviewer_keywords:
 ms.assetid: 80988ca7-f514-438d-bf6f-9390dfe93fc3
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 22cfcbb45615c991721b0ae3d6f3380975bc58ab
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 28dfb2b59620a3cb5c4fae0a11fe8b24a9ab3b28
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88989973"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100040872"
 ---
 # <a name="property-visual-c-syntax-index-with-import"></a>Property (Visual C++ 構文インデックス #import)
-## <a name="properties"></a>プロパティ  
+## <a name="properties"></a>Properties  
   
 ```  
 long GetAttributes( );  

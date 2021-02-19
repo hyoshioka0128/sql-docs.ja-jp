@@ -7,19 +7,19 @@ ms.date: 01/19/2017
 ms.reviewer: ''
 ms.prod: sql
 ms.prod_service: connectivity
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 helpviewer_keywords:
 - Synchronize method [ADO]
 ms.assetid: 7af42866-7db2-4174-8251-388a2cf741f2
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: e903d5a3d80af26e9fd1ca36920e5b91adb06b1f
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: c569505febe68a588799a0eb5c3d3142b3633137
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91724166"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100052853"
 ---
 # <a name="synchronize-method-rds"></a>Synchronize メソッド (RDS)
 指定したレコードセットを、ADO 2.5 以降で使用する接続文字列で指定されたデータベースと同期します。  
@@ -44,11 +44,11 @@ object.Synchronize(ConnectionString As String, HandlerString As String, lSynchro
  *lSynchronizeOptions*  
  同期オプションのビットマスク。  
   
- 1 = データベースに対する*Updatetransact* 更新は、トランザクションでラップされます。 更新のいずれかが失敗すると、トランザクションは中止されます。  
+ 1 = データベースに対する *Updatetransact* 更新は、トランザクションでラップされます。 更新のいずれかが失敗すると、トランザクションは中止されます。  
   
  2 =*Refreshwithupdate* では、 *更新* も *refreshconflicts* も設定されていない場合、行の状態が返されます。  
   
- 4 = レコードセットを*更新* するには、データベースの現在のデータを使用して更新します。 保留中の更新はデータベースにプッシュされません。 このビットが設定されていない場合、レコードセットは更新されず、保留中の更新はすべてデータベースにプッシュされます。  
+ 4 = レコードセットを *更新* するには、データベースの現在のデータを使用して更新します。 保留中の更新はデータベースにプッシュされません。 このビットが設定されていない場合、レコードセットは更新されず、保留中の更新はすべてデータベースにプッシュされます。  
   
  8 =*Refreshconflicts* は、保留中の変更があるすべての行を更新できません。 更新に失敗した行は、データベースの現在のデータで更新されます。  
   
@@ -56,16 +56,16 @@ object.Synchronize(ConnectionString As String, HandlerString As String, lSynchro
  同期されるレコードセットへのポインター。  
   
  *pStatusArray*  
- Synchronize の影響を受ける行の状態の安全な配列を返すために使用されるバリアント。 *Refreshwithupdate*、 *Refresh* 、および*refreshconflicts*のいずれの同期オプションも設定されていない場合は設定されません。  
+ Synchronize の影響を受ける行の状態の安全な配列を返すために使用されるバリアント。 *Refreshwithupdate*、 *Refresh* 、および *refreshconflicts* のいずれの同期オプションも設定されていない場合は設定されません。  
   
  *lcid*  
- *Pinformation*で返されたエラーを構築するために使用される LCID。  
+ *Pinformation* で返されたエラーを構築するために使用される LCID。  
   
  *pInformation*  
- **Execute**によって返された情報エラーへのポインター。 NULL の場合、エラー情報は返されません。  
+ **Execute** によって返された情報エラーへのポインター。 NULL の場合、エラー情報は返されません。  
   
 ## <a name="remarks"></a>解説  
- *ハンドラー文字列*パラメーターは null にすることができます。 この場合の動作は、RDS サーバーがどのように構成されているかによって異なります。 "MSDFMAP. handler" のハンドラー文字列は、Microsoft 提供のハンドラー (Msdfmap.dll) を使用する必要があることを示します。 "sample.ini" のハンドラー文字列は、Msdfmap.dll ハンドラーを使用する必要があり、引数 "sample.ini" をハンドラーに渡す必要があることを示します。 Msdfmap.dll は、sample.ini を使用して接続とクエリ文字列を確認する方向として引数を解釈します。  
+ *ハンドラー文字列* パラメーターは null にすることができます。 この場合の動作は、RDS サーバーがどのように構成されているかによって異なります。 "MSDFMAP. handler" のハンドラー文字列は、Microsoft 提供のハンドラー (Msdfmap.dll) を使用する必要があることを示します。 "sample.ini" のハンドラー文字列は、Msdfmap.dll ハンドラーを使用する必要があり、引数 "sample.ini" をハンドラーに渡す必要があることを示します。 Msdfmap.dll は、sample.ini を使用して接続とクエリ文字列を確認する方向として引数を解釈します。  
   
 ## <a name="applies-to"></a>適用対象  
  [DataFactory オブジェクト (RDSServer)](./datafactory-object-rdsserver.md)

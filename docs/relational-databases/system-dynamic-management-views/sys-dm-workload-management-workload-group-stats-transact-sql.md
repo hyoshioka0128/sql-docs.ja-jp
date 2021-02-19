@@ -6,18 +6,18 @@ ms.date: 11/02/2019
 ms.prod: sql
 ms.technology: data-warehouse
 ms.reviewer: ''
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 author: ronortloff
 ms.author: rortloff
-monikerRange: = azure-sqldw-latest||= sqlallproducts-allversions
-ms.openlocfilehash: bc36846a62b8b71e0e21d7ea61d088a0f16c674d
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+monikerRange: = azure-sqldw-latest
+ms.openlocfilehash: 01dbe51a5b82ea68ef1676876a9c0fa1633bf90c
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92035183"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99131465"
 ---
 # <a name="sysdm_workload_management_workload_groups_stats-transact-sql"></a>sys.dm_workload_management_workload_groups_stats (Transact-sql)
 [!INCLUDE [asa](../../includes/applies-to-version/asa.md)]

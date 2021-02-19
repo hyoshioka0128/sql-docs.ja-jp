@@ -2,7 +2,7 @@
 title: XML データのシリアル化の定義 | Microsoft Docs
 description: SQL Server で xml データをシリアル化するときに使用される規則について学習します。
 ms.custom: ''
-ms.date: 03/06/2017
+ms.date: 12/07/2020
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: 42b0b5a4-bdd6-4a60-b451-c87f14758d4b
 author: MightyPen
 ms.author: genemi
-ms.openlocfilehash: 0ddeb0b98f163feb49eb258db29a58bfa5dd1f57
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 67201804cc1f93a9595ff46c02a57da7ea6e6109
+ms.sourcegitcommit: 68063a1857f40487e6a2028de25990728419e3a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85738441"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96749704"
 ---
 # <a name="define-the-serialization-of-xml-data"></a>XML データのシリアル化の定義
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -35,13 +35,13 @@ ms.locfileid: "85738441"
   
  次に例を示します。  
   
-```  
+```sql
 select CAST(CAST(N'<Δ/>' as XML) as VARBINARY(MAX))  
 ```  
   
  結果を次に示します。  
   
-```  
+```console
 0xFFFE3C0094032F003E00  
 ```  
   
@@ -49,13 +49,13 @@ select CAST(CAST(N'<Δ/>' as XML) as VARBINARY(MAX))
   
  次に例を示します。  
   
-```  
+```sql
 select CAST(CAST(N'<Δ/>' as XML) as NVARCHAR(MAX))  
 ```  
   
  結果を次に示します。  
   
-```  
+```console
 <Δ/>  
 ```  
   
@@ -63,7 +63,7 @@ select CAST(CAST(N'<Δ/>' as XML) as NVARCHAR(MAX))
   
  次に例を示します。  
   
-```  
+```sql
 select CAST(CAST(N'<Δ/>' as XML) as VARCHAR(MAX))  
 ```  
   
@@ -77,21 +77,21 @@ select CAST(CAST(N'<Δ/>' as XML) as VARCHAR(MAX))
 ## <a name="entitization-of-xml-characters-during-serialization"></a>シリアル化中の XML 文字のエンティティ変換  
  シリアル化されたすべての XML 構造は再解析が可能である必要があります。 したがって、XML パーサーの正規化フェーズ中に引き続き文字を互いにやり取りできるようにするには、一部の文字をエンティティに変換する方法でシリアル化する必要があります。 ただし、一部の文字をエンティティに変換する場合は、ドキュメントが整形式になり、解析可能になるようにする必要があります。 次に、シリアル化中に適用されるエンティティ変換の規則を示します。  
   
--   &、\<, and > の文字が属性値や要素のコンテンツ内に出現する場合、常に、それぞれ &amp;、&lt;、&gt; にエンティティ変換されます。  
+-   &、\<, and > の文字が属性値や要素のコンテンツ内に出現する場合、常に、それぞれ `&amp;`、`&lt;`、`&gt;` にエンティティ変換されます。  
   
--   SQL Server では属性値を囲むために引用符 (U+0022) が使用されるので、属性値の引用符は &quot;にエンティティ変換されます。  
+-   SQL Server では属性値を囲むために引用符 (U+0022) が使用されるので、属性値の引用符は `&quot;`にエンティティ変換されます。  
   
--   サーバーのみでキャストする場合は、サロゲート ペアが 1 つの数字参照としてエンティティ変換されます。 たとえば、サロゲート ペア U+D800 U+DF00 は、数字参照 &\#x00010300; にエンティティ変換されます。  
+-   サーバーのみでキャストする場合は、サロゲート ペアが 1 つの数字参照としてエンティティ変換されます。 たとえば、サロゲート ペア U+D800 U+DF00 は、数字参照 `&#x00010300;` にエンティティ変換されます。  
   
--   タブ (TAB, U+0009) とラインフィード (LF, U+000A) は、解析時に正規化されないように、属性値の内部でそれぞれ数字参照 &\#x9; および &\#xA; にエンティティ変換されます。  
+-   タブ (TAB, U+0009) とラインフィード (LF, U+000A) は、解析時に正規化されないように、属性値の内部でそれぞれ数字参照 `&#x9;` および `&#xA;` にエンティティ変換されます。  
   
--   キャリッジ リターン (CR, U+000D) は、解析時に正規化されないように、属性値と要素のコンテンツの両方の内部で数字参照 &\#xD; にエンティティ変換されます。  
+-   キャリッジ リターン (CR, U+000D) は、解析時に正規化されないように、属性値と要素のコンテンツの両方の内部で数字参照 `&#xD;` にエンティティ変換されます。  
   
 -   空白文字だけが含まれているテキスト ノードを保護するために、空白文字の 1 つ (通常は最後の空白文字) が数字参照としてエンティティ変換されます。 このようにすると、解析時の空白文字の処理の設定とは無関係に、再解析時に空白文字のテキスト ノードが保持されます。  
   
  次に例を示します。  
   
-```  
+```sql
 declare @u NVARCHAR(50)  
 set @u = N'<a a="  
     '+NCHAR(0xD800)+NCHAR(0xDF00)+N'>">   '+NCHAR(0xA)+N'</a>'  
@@ -100,7 +100,7 @@ select CAST(CONVERT(XML,@u,1) as NVARCHAR(50))
   
  結果を次に示します。  
   
-```  
+```console
 <a a="  
     𐌀>">     
 </a>  
@@ -108,13 +108,13 @@ select CAST(CONVERT(XML,@u,1) as NVARCHAR(50))
   
  最後の空白文字の保護規則を適用しない場合は、 **xml** から文字列型またはバイナリ型にキャストするときに、CONVERT オプションを明示的に 1 に設定できます。 たとえば、エンティティ変換が行われないように、次のように設定できます。  
   
-```  
+```sql
 select CONVERT(NVARCHAR(50), CONVERT(XML, '<a>   </a>', 1), 1)  
 ```  
   
  [query() メソッド (XML データ型)](../../t-sql/xml/query-method-xml-data-type.md) の結果は、XML データ型のインスタンスになることに注意してください。 したがって、文字列型またはバイナリ型にキャストされる **query()** メソッドの結果は、上記の規則に従ってエンティティに変換されます。 エンティティに変換されていない文字列値を取得する場合は、代わりに [value() メソッド (XML データ型)](../../t-sql/xml/value-method-xml-data-type.md) を使用する必要があります。 次に、 **query()** メソッドを使用する例を示します。  
   
-```  
+```sql
 declare @x xml  
 set @x = N'<a>This example contains an entitized char: <.</a>'  
 select @x.query('/a/text()')  
@@ -122,19 +122,19 @@ select @x.query('/a/text()')
   
  結果を次に示します。  
   
-```  
+```console
 This example contains an entitized char: <.  
 ```  
   
  次に、 **value()** メソッドを使用する例を示します。  
   
-```  
+```sql
 select @x.value('(/a/text())[1]', 'nvarchar(100)')  
 ```  
   
  結果を次に示します。  
   
-```  
+```console
 This example contains an entitized char: <.  
 ```  
   
@@ -143,7 +143,7 @@ This example contains an entitized char: <.
   
  たとえば、次の例で示すように、xs:double の値 1.34e1 は 13.4 にシリアル化されます。  
   
-```  
+```sql
 declare @x xml  
 set @x =''  
 select CAST(@x.query('1.34e1') as nvarchar(50))  
@@ -153,6 +153,5 @@ select CAST(@x.query('1.34e1') as nvarchar(50))
   
 ## <a name="see-also"></a>参照  
  [XQuery での型キャストの規則](../../xquery/type-casting-rules-in-xquery.md)   
- [CAST および CONVERT &#40;Transact-SQL&#41;](../../t-sql/functions/cast-and-convert-transact-sql.md)  
-  
-  
+ [CAST および CONVERT &#40;Transact-SQL&#41;](../../t-sql/functions/cast-and-convert-transact-sql.md)
+ 

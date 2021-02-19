@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: cb335455-b027-4f66-868d-d0d8b2175de1
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 85cfa464710579db5872155a0e27bcc57ccdda94
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 0a478cce407c10a57340ec29f7218b1d50b10641
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88990253"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100041272"
 ---
 # <a name="optimize-property-example-vc"></a>Optimize プロパティの例 (VC++)
-この例では、 [Field](./field-object.md) オブジェクトの dynamic **Optimize** プロパティを示します。 **Pubs**データベースの Authors テーブルの**zip**フィールドにはインデックスが**作成**されません。 **Zip**フィールドの[Optimize](./optimize-property-dynamic-ado.md)プロパティを**True**に設定すると、ADO によって、 [Find](./find-method-ado.md)メソッドのパフォーマンスを向上させるインデックスが作成されます。  
+この例では、 [Field](./field-object.md) オブジェクトの dynamic **Optimize** プロパティを示します。 **Pubs** データベースの Authors テーブルの **zip** フィールドにはインデックスが **作成** されません。 **Zip** フィールドの [Optimize](./optimize-property-dynamic-ado.md)プロパティを **True** に設定すると、ADO によって、 [Find](./find-method-ado.md)メソッドのパフォーマンスを向上させるインデックスが作成されます。  
   
 ## <a name="example"></a>例  
   

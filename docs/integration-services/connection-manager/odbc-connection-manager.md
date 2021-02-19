@@ -19,10 +19,10 @@ ms.assetid: e8c77aa7-6772-485e-918e-cef9eeb18c58
 author: chugugrace
 ms.author: chugu
 ms.openlocfilehash: 7fe63ad503b49a760823635902b3744a1ae2d85a
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.sourcegitcommit: c5078791a07330a87a92abb19b791e950672e198
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91719558"
 ---
 # <a name="odbc-connection-manager"></a>ODBC 接続マネージャー
@@ -34,7 +34,7 @@ ms.locfileid: "91719558"
   
  ODBC 接続をパッケージに追加して接続マネージャーのプロパティを設定すると、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] によって接続マネージャーが作成され、パッケージの **Connections** コレクションに追加されます。 接続マネージャーは、実行時に物理 ODBC 接続として解決されます。  
   
- 接続マネージャーの **ConnectionManagerType** プロパティは、 **ODBC**に設定されます。  
+ 接続マネージャーの **ConnectionManagerType** プロパティは、 **ODBC** に設定されます。  
   
  ODBC 接続マネージャーは、次の方法で構成できます。  
   

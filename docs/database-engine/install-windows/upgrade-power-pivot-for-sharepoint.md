@@ -10,14 +10,14 @@ ms.topic: conceptual
 ms.assetid: 80ba9e43-f3f0-4730-9fb1-2afd2dd3e6fc
 author: Minewiskan
 ms.author: owend
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
+monikerRange: '>=sql-server-2016'
 manager: erikre
-ms.openlocfilehash: 6169741cf4e744aa89c17c960a83a6af18d54851
-ms.sourcegitcommit: 2f868a77903c1f1c4cecf4ea1c181deee12d5b15
+ms.openlocfilehash: 2f034ac2223b15a3b66883a3ce3dbc434bcf07db
+ms.sourcegitcommit: 00be343d0f53fe095a01ea2b9c1ace93cdcae724
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91670185"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98813247"
 ---
 # <a name="upgrade-power-pivot-for-sharepoint"></a>Power Pivot for SharePoint のアップグレード
 
@@ -57,7 +57,7 @@ ms.locfileid: "91670185"
   
 -   [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] 構成ツールは SQL Server の共有機能の 1 つで、すべての共有機能は同時にアップグレードされます。 アップグレード プロセス中に、共有機能のアップグレードを必要とする他の SQL Server インスタンスまたは機能を選択すると、 [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] 構成ツールもアップグレードされます。 [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] 構成ツールがアップグレードされても [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] インスタンスがアップグレードされない場合は、問題が発生している可能性があります。 SQL Server の共有機能の詳細については、「[インストール ウィザードを使用した SQL Server 2016 へのアップグレード &#40;セットアップ&#41;](../../database-engine/install-windows/upgrade-sql-server-using-the-installation-wizard-setup.md)」を参照してください。  
   
--   [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] for SharePoint アドイン (**spPowerPivot.msi**) は、以前のバージョンとサイド バイ サイドでインストールされます。 たとえば [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] アドインは、 `c:\Program Files\Microsoft SQL Server\130\Tools\PowerPivotTools`フォルダーにインストールされます。  
+-   [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] for SharePoint アドイン (**spPowerPivot.msi**) は、以前のバージョンとサイド バイ サイドでインストールされます。 たとえば、このアドインは `c:\Program Files\Microsoft SQL Server\nnn\Tools\PowerPivotTools` フォルダーにインストールされます。 SQL Server インストール ファイルについては、[ファイルの場所](../../sql-server/install/file-locations-for-default-and-named-instances-of-sql-server.md#shared-files-for-all-instances-of-)に関するページを参照してください。
   
 ##  <a name="prerequisites"></a><a name="bkmk_prereq"></a> 前提条件  
  **アクセス許可**  
@@ -97,13 +97,13 @@ ms.locfileid: "91670185"
   
 4.  **SharePoint 2013 ファーム内の各サーバーで [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] for SharePoint 2013 構成ツールを実行し** 、アドインによってインストールされた更新済みのソリューション ファイルを使用して SharePoint ファームを構成します。 この手順に SharePoint サーバーの全体管理を使用することはできません。 詳細については、「  
   
-    1.  Windows のスタート画面から「 **[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)]** 」と入力し、検索結果で **[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] for SharePoint 2013 構成**をクリックします。 検索結果には 2 つのバージョンの構成ツールが表示される場合があることに注意してください。  
+    1.  Windows のスタート画面から「 **[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)]** 」と入力し、検索結果で **[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] for SharePoint 2013 構成** をクリックします。 検索結果には 2 つのバージョンの構成ツールが表示される場合があることに注意してください。  
   
          ![2 つの PowerPivot 構成ツール](/analysis-services/analysis-services/instances/install-windows/media/as-powerpivot-configtools-bothicons.gif "2 つの PowerPivot 構成ツール")  
   
          または  
   
-         **[スタート]** ボタンをクリックし、 **[すべてのプログラム]** をポイントして、[ [!INCLUDE[ssCurrentUI](../../includes/sscurrentui-md.md)]]、 **[構成ツール]** 、 **[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] For SharePoint 2013 構成**の順にクリックします。 このツールは、 [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)] がローカル サーバーにインストールされている場合にのみ表示されることに注意してください。  
+         **[スタート]** ボタンをクリックし、 **[すべてのプログラム]** をポイントして、[ [!INCLUDE[ssCurrentUI](../../includes/sscurrentui-md.md)]]、 **[構成ツール]** 、 **[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] For SharePoint 2013 構成** の順にクリックします。 このツールは、 [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)] がローカル サーバーにインストールされている場合にのみ表示されることに注意してください。  
   
     2.  起動時、構成ツールにより、 [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] ファーム ソリューションと [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] Web アプリケーション ソリューションのアップグレード状態がチェックされます。 これらのソリューションの古いバージョンが検出されると、メッセージ "**新しいバージョンの [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] ソリューション ファイルが検出されました。ファームをアップグレードするために、アップグレード オプションを選択してください。** " と表示されます。 **[OK]** をクリックし、システムの検証メッセージを閉じます。  
   
@@ -126,7 +126,7 @@ ms.locfileid: "91670185"
   
     8.  **[はい]** をクリックして続行します。  
   
-    9. ファーム内のソリューションおよび機能のアップグレードが完了するまで、数分かかります。 この処理の間に、[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] データに対する接続要求は**失敗**し、"**データを更新できません**" や "**要求されたアクションを実行しようとしてエラーが発生しました。再試行してください**" のようなエラーが表示されます。 アップグレードが完了すると、サーバーは使用可能になり、これらのエラーは発生しなくなります。  
+    9. ファーム内のソリューションおよび機能のアップグレードが完了するまで、数分かかります。 この処理の間に、[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] データに対する接続要求は **失敗** し、"**データを更新できません**" や "**要求されたアクションを実行しようとしてエラーが発生しました。再試行してください**" のようなエラーが表示されます。 アップグレードが完了すると、サーバーは使用可能になり、これらのエラーは発生しなくなります。  
   
      詳細については、「  
   
@@ -153,7 +153,7 @@ ms.locfileid: "91670185"
     Get-Service | where {$_.displayname -like "*SharePoint*"}  
     ```  
   
-3.  **SharePoint** サービスの **SQL Server Analysis Services** と **SQL Server [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] System サービス**が SharePoint サーバーの全体管理で開始されていることを確認するか、次の PowerShell コマンドを使用します。  
+3.  **SharePoint** サービスの **SQL Server Analysis Services** と **SQL Server [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] System サービス** が SharePoint サーバーの全体管理で開始されていることを確認するか、次の PowerShell コマンドを使用します。  
   
     ```  
     get-SPserviceinstance | where {$_.typename -like "*sql*"}  
@@ -165,13 +165,13 @@ ms.locfileid: "91670185"
     Get-Service | where {$_.displayname -like "*powerpivot*"}  
     ```  
   
-5.  **SQL Server Analysis Services ([!INCLUDE[ssGemini](../../includes/ssgemini-md.md)])** Windows サービスを実行する最初の SharePoint アプリケーション サーバーで、 **[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] セットアップを実行**して、POWERPIVOT インスタンスをアップグレードします。 SQL Server セットアップ ウィザードの [インストール] ページで、アップグレード オプションを選択します。 詳細については、「 [インストール ウィザードを使用した SQL Server 2016 へのアップグレード &#40;セットアップ&#41;](../../database-engine/install-windows/upgrade-sql-server-using-the-installation-wizard-setup.md)」を参照してください。  
+5.  **SQL Server Analysis Services ([!INCLUDE[ssGemini](../../includes/ssgemini-md.md)])** Windows サービスを実行する最初の SharePoint アプリケーション サーバーで、 **[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] セットアップを実行** して、POWERPIVOT インスタンスをアップグレードします。 SQL Server セットアップ ウィザードの [インストール] ページで、アップグレード オプションを選択します。 詳細については、「 [インストール ウィザードを使用した SQL Server 2016 へのアップグレード &#40;セットアップ&#41;](../../database-engine/install-windows/upgrade-sql-server-using-the-installation-wizard-setup.md)」を参照してください。  
   
-6.  構成ツールを実行する前に**サーバーを再起動します** 。 これにより、SQLServer セットアップによってインストールされた更新プログラムや必須コンポーネントがシステムで完全に構成されます。  
+6.  構成ツールを実行する前に **サーバーを再起動します** 。 これにより、SQLServer セットアップによってインストールされた更新プログラムや必須コンポーネントがシステムで完全に構成されます。  
   
 7.  **SharePoint 2013 ファーム内の各サーバーで [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] ) サービスを実行する最初の SharePoint アプリケーション サーバーで、** 構成ツールを実行[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)]して、SharePoint のソリューションと Web サービスをアップグレードします。 この手順にサーバーの全体管理を使用することはできません。  
   
-    1.  **[スタート]** メニューの **[すべてのプログラム]** をポイントし、[ [!INCLUDE[ssCurrentUI](../../includes/sscurrentui-md.md)]] をクリックします。次に、 **[構成ツール]** をクリックし、 **[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] 構成ツール**をクリックします。 このツールは、 [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)] がローカル サーバーにインストールされている場合にのみ表示されることに注意してください。  
+    1.  **[スタート]** メニューの **[すべてのプログラム]** をポイントし、[ [!INCLUDE[ssCurrentUI](../../includes/sscurrentui-md.md)]] をクリックします。次に、 **[構成ツール]** をクリックし、 **[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] 構成ツール** をクリックします。 このツールは、 [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)] がローカル サーバーにインストールされている場合にのみ表示されることに注意してください。  
   
     2.  起動時、構成ツールにより、 [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] ファーム ソリューションと [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] Web アプリケーション ソリューションのアップグレード状態がチェックされます。 これらのソリューションの古いバージョンが検出されると、メッセージ "新しいバージョンの [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] ソリューション ファイルが検出されました。 ファームをアップグレードするために、アップグレード オプションを選択してください。" と表示されます。 **[OK]** をクリックして、このメッセージを閉じます。  
   
@@ -204,7 +204,7 @@ ms.locfileid: "91670185"
   
     10. ファーム内のソリューションおよび機能のアップグレードが完了するまで、数分かかります。 この間、[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] データに対する接続要求は、"データを更新できません" または "要求されたアクションを実行しようとしたときにエラーが発生しました。 再試行してください。" アップグレードが完了すると、サーバーは使用可能になり、これらのエラーは発生しなくなります。  
   
-8.  ファーム内の各 SQL Server Analysis Services ([!INCLUDE[ssGemini](../../includes/ssgemini-md.md)]) サービスに対して次の**処理を繰り返します**。1) SQL Server セットアップを実行する、2)[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] 構成ツールを実行する。  
+8.  ファーム内の各 SQL Server Analysis Services ([!INCLUDE[ssGemini](../../includes/ssgemini-md.md)]) サービスに対して次の **処理を繰り返します**。1) SQL Server セットアップを実行する、2)[!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] 構成ツールを実行する。  
   
 9. アップグレード後の手順を実行し、ファーム内の [!INCLUDE[ssGemini](../../includes/ssgemini-md.md)] サーバーのバージョンを確認して、アップグレードが成功したことを確認します。 詳しくは、この記事の「[アップグレード後の検証タスク](#verify)」および次のセクションをご覧ください。  
   
@@ -248,7 +248,7 @@ ms.locfileid: "91670185"
 Get-PowerPivotSystemService  
 ```  
   
- **CurrentSolutionVersion**を確認します。 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] のバージョンは 13.0.\<major build>.\<minor build> です  
+ **CurrentSolutionVersion** を確認します。 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] のバージョンは 13.0.\<major build>.\<minor build> です  
   
 ### <a name="verify-the-version-of-the-analysis-services-windows-service"></a>Analysis Services Windows サービスのバージョン確認  
  SharePoint 2010 ファーム内の [!INCLUDE[ssGeminiShort](../../includes/ssgeminishort-md.md)] サーバーの一部のみをアップグレードした場合は、アップグレードされていないサーバー上の [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] インスタンスがファームで想定されるバージョンより古くなります。 すべてのサーバーを同じバージョンにアップグレードする必要があります。 各コンピューターの SQL Server Analysis Services ([!INCLUDE[ssGemini](../../includes/ssgemini-md.md)]) Windows サービスのバージョンを確認するには、次のいずれかの方法を使用します。  
@@ -309,7 +309,7 @@ Get-PowerPivotSystemService
   
 1.  SharePoint アプリケーション サーバーで、 `c:\Windows\Assembly`を参照します。  
   
-2.  アセンブリ名で並べ替えて、 **Microsoft.Analysis Services.Adomd.Client**を見つけます。  
+2.  アセンブリ名で並べ替えて、 **Microsoft.Analysis Services.Adomd.Client** を見つけます。  
   
 3.  バージョン 13.0.\<build number> であることを確認します。  
   

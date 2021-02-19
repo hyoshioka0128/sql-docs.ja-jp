@@ -5,7 +5,7 @@ ms.custom: seodec18
 ms.date: 02/27/2020
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 helpviewer_keywords:
 - Availability Groups [SQL Server], listeners
@@ -15,14 +15,14 @@ helpviewer_keywords:
 - Availability Groups [SQL Server], read-only routing
 - Availability Groups [SQL Server], client connectivity
 ms.assetid: 76fb3eca-6b08-4610-8d79-64019dd56c44
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: bd425438dc4a06faea489ac9cba4b607492fcde8
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: e96b57c13cccf07424ce43aab74fde8b4fa43d08
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85900399"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100340857"
 ---
 # <a name="what-is-an-availability-group-listener"></a>可用性グループ リスナーとは  
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]

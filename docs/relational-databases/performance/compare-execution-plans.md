@@ -5,7 +5,7 @@ ms.custom: ''
 ms.date: 11/21/2018
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
-ms.reviewer: ''
+ms.reviewer: wiassaf
 ms.technology: performance
 ms.topic: conceptual
 helpviewer_keywords:
@@ -18,12 +18,12 @@ ms.assetid: 9e583a18-5f4a-4054-bfe1-4b2a76630db6
 author: pmasl
 ms.author: pelopes
 manager: amitban
-ms.openlocfilehash: 855d893ddde9c3eba9f9197c510ed0d03bc658ce
-ms.sourcegitcommit: 9470c4d1fc8d2d9d08525c4f811282999d765e6e
+ms.openlocfilehash: 03b6ec22a3eadf7281f0513997cfcc28d40eb1b6
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86457382"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100344733"
 ---
 # <a name="compare-execution-plans"></a>実行プランの比較
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -45,7 +45,7 @@ ms.locfileid: "86457382"
 > [!TIP]
 > *.sqlplan* ファイルを含むプランの比較作業。旧バージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] からの作業も対象。 また、このオプションではオフライン比較が可能です。そのため、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスに接続する必要がありません。 
 
-2 つの実行プランが比較されているとき、**基本的に同じことを行う**プランのリージョンは同じ色とパターンでハイライトされます。 1 つのプランで色付きのリージョンをクリックすると、そのプランで、一致するノードの中央にもう 1 つのプランが配置されます。 引き続き実行プランの一致しない演算子やノードを比較できますが、その場合、比較する演算子を手動で選択する必要があります。
+2 つの実行プランが比較されているとき、**基本的に同じことを行う** プランのリージョンは同じ色とパターンでハイライトされます。 1 つのプランで色付きのリージョンをクリックすると、そのプランで、一致するノードの中央にもう 1 つのプランが配置されます。 引き続き実行プランの一致しない演算子やノードを比較できますが、その場合、比較する演算子を手動で選択する必要があります。
 
 > [!IMPORTANT]
 > プランの形状を変えると見なされるノードのみが類似性の確認に使用されます。 そのため、2 つのノードの真ん中で色が付いていないノードがプランの同じ下位セクションに入るということがありえます。 その場合、色が付いていないということは、セクションが等しいか確認されたとき、それらのノードが考慮されなかったことを意味します。

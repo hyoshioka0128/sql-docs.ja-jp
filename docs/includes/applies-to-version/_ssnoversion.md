@@ -4,12 +4,12 @@ ms.service: sql
 ms.topic: include
 ms.date: 06/11/2020
 ms.author: mikeray
-ms.openlocfilehash: efefcefbf553132288f1bafa16afdf847a695346
-ms.sourcegitcommit: fb8724fb99c46ecf3a6d7b02a743af9b590402f0
+ms.openlocfilehash: 3a4fa9a37d207c9cbee461e7446c8ca8e0b1c8a3
+ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "85625498"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100019664"
 ---
 <Token>![はい](../media/yes-icon.png)[!INCLUDE [ssnoversion-md](../ssnoversion-md.md)] (サポートされているすべてのバージョン) </Token>
 

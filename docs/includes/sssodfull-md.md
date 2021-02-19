@@ -1,1 +1,1 @@
-Azure Synapse Analytics の SQL オンデマンド (プレビュー)
+Azure Synapse Analytics のサーバーレス SQL プール

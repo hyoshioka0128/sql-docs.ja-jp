@@ -15,16 +15,16 @@ helpviewer_keywords:
 - dm_geo_replication_link_status dynamic management view
 - sys.dm_geo_replication_link_status dynamic management view
 ms.assetid: d763d679-470a-4c21-86ab-dfe98d37e9fd
-author: markingmyname
-ms.author: maghan
-monikerRange: = azuresqldb-current || = sqlallproducts-allversions
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: = azuresqldb-current
 ms.custom: seo-dt-2019
-ms.openlocfilehash: 0d105ddedeafa8a82c068fce90f3e29bc4622f57
-ms.sourcegitcommit: 32135463a8494d9ed1600a58f51819359e3c09dc
+ms.openlocfilehash: 2134a7890d23a7a080a576f8337e750bee2563eb
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91834254"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98092811"
 ---
 # <a name="sysdm_geo_replication_link_status-azure-sql-database"></a>sys.dm_geo_replication_link_status (Azure SQL Database)
 
@@ -51,7 +51,7 @@ ms.locfileid: "91834254"
 >  セカンダリデータベース (セクション 4.2) を削除することによってレプリケーション関係が終了した場合、[ **sys.dm_geo_replication_link_status** ] ビューにそのデータベースの行が表示されなくなります。  
   
 ## <a name="permissions"></a>アクセス許可  
- View_database_state のアクセス許可を持つアカウントは、 **sys.dm_geo_replication_link_status**を照会できます。  
+ View_database_state のアクセス許可を持つアカウントは、 **sys.dm_geo_replication_link_status** を照会できます。  
   
 ## <a name="example"></a>例  
  セカンダリデータベースのレプリケーションラグと最後のレプリケーション時刻を表示します。  

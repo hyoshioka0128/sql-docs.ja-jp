@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-data-warehouse, database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - BINARY_CHECKSUM
 - BINARY_CHECKSUM_TSQL
@@ -17,15 +17,15 @@ helpviewer_keywords:
 - BINARY_CHECKSUM function
 - binary [SQL Server], checksum values
 ms.assetid: 07fece4d-58e3-446e-a3b5-92fe24d2d1fb
-author: markingmyname
-ms.author: maghan
-monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 2dd65d2923d063440e292884da2bb4c6aecf0ec4
-ms.sourcegitcommit: ae474d21db4f724523e419622ce79f611e956a22
+author: cawrites
+ms.author: chadam
+monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: d37596cba9b0786f6105a3e9f9c5c22a46eef7d0
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92255470"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99193465"
 ---
 # <a name="binary_checksum--transact-sql"></a>BINARY_CHECKSUM (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
@@ -77,7 +77,7 @@ BINARY_CHECKSUM ( * | expression [ ,...n ] )
 
 or  
 
-* **sql_variant** ( **sql_variant** の基本データ型が文字列データ型の場合)。  
+* **sql_variant** (**sql_variant** の基本データ型が文字列データ型の場合)。  
   
 たとえば、文字列 "McCavity" と "Mccavity" の `BINARY_CHECKSUM` 値は異なります。 これに対し、大文字小文字が区別されないサーバーの場合、`CHECKSUM` ではこれらの文字列に同じチェックサム値が返されます。 `CHECKSUM` 値と `BINARY_CHECKSUM` 値の比較は避ける必要があります。
  

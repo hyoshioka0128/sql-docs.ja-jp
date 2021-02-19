@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -16,15 +16,15 @@ helpviewer_keywords:
 ms.assetid: b964beee-83c7-4f91-8255-3ba864c9adfd
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 8071fac2ac1497e9b19cb5c5375de3a9dbc725bb
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 606a839b852e3fe18779f111a592328feb6625e7
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88984783"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100054277"
 ---
 # <a name="datecreated-and-datemodified-properties-example-vc"></a>DateCreated および DateModified プロパティの例 (VC++)
-この例では、既存の[テーブル](./table-object-adox.md)に新しい[列](./column-object-adox.md)を追加し、新しい**テーブル**を作成することによって、 [DateCreated](./datecreated-property-adox.md)プロパティと[DateModified](./datemodified-property-adox.md)プロパティを示します。 この例を実行するには、DateOutput プロシージャが必要です。  
+この例では、既存の [テーブル](./table-object-adox.md)に新しい [列](./column-object-adox.md)を追加し、新しい **テーブル** を作成することによって、 [DateCreated](./datecreated-property-adox.md)プロパティと [DateModified](./datemodified-property-adox.md)プロパティを示します。 この例を実行するには、DateOutput プロシージャが必要です。  
   
 ```  
 // BeginDateCreatedCpp.cpp  

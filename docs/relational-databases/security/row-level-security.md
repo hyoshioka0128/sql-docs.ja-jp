@@ -1,5 +1,5 @@
 ---
-title: 行レベルのセキュリティ | Microsoft Docs
+title: 行レベルのセキュリティ
 description: 行レベルのセキュリティで、グループ メンバーシップや実行コンテキストを使用して、SQL Server のデータベース テーブル内の行へのアクセスを制御する方法について説明します。
 ms.custom: ''
 ms.date: 09/01/2020
@@ -14,16 +14,15 @@ helpviewer_keywords:
 - security [SQL Server], predicate based access control
 - row level security described
 - predicate based security
-ms.assetid: 7221fa4e-ca4a-4d5c-9f93-1b8a4af7b9e8
 author: VanMSFT
 ms.author: vanto
-monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: e5ddd76c050e50576a446e8e404b889fcc8fa92d
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: a842f6ed226fe6b298dc9063f5d6c64f287fc82e
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91867966"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100340166"
 ---
 # <a name="row-level-security"></a>行レベルのセキュリティ
 
@@ -39,7 +38,7 @@ Row-Level Security (RLS) は、アプリケーションでセキュリティの�
   
 [CREATE SECURITY POLICY](../../t-sql/statements/create-security-policy-transact-sql.md)[!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントを使用して RLS を実装すると、[インライン テーブル値関数](../../relational-databases/user-defined-functions/create-user-defined-functions-database-engine.md)として述語が作成されます。  
 
-**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から[現在のバージョン](../../sql-server/what-s-new-in-sql-server-2016.md)まで)、[!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] ([入手](/azure/azure-sql/database/features-comparison?WT.mc_id=TSQL_GetItTag))、[!INCLUDE[ssSDW](../../includes/sssdw-md.md)]。
+[!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]、[!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] ([こちらで入手してください](/azure/azure-sql/database/features-comparison?WT.mc_id=TSQL_GetItTag))、[!INCLUDE[ssSDW](../../includes/sssdw-md.md)]。
   
 > [!NOTE]
 > Azure Synapse では、フィルター述語のみがサポートされています。 ブロック述語は現在、Azure Synapse でサポートされていません。
@@ -110,11 +109,11 @@ RLS では、2 種類のセキュリティ述語をサポートしています�
   
  また、追加される各述語に関しては次のアクセス許可も必要になります。  
   
-- 述語として使用している関数に関する**SELECT** および **REFERENCES** 権限。  
+- 述語として使用している関数に関する **SELECT** および **REFERENCES** 権限。  
   
-- ポリシーにバインドしているターゲット テーブルに対する**REFERENCES** 権限。  
+- ポリシーにバインドしているターゲット テーブルに対する **REFERENCES** 権限。  
   
-- 引数として使用しているターゲット テーブルのすべての列に対する**REFERENCES** 権限。  
+- 引数として使用しているターゲット テーブルのすべての列に対する **REFERENCES** 権限。  
   
  セキュリティ ポリシーは、データベースの dbo ユーザーを含めてすべてのユーザーに適用されます。 dbo ユーザーはセキュリティ ポリシーを変更したり削除したりできますが、セキュリティ ポリシーに加えた変更は監査することができます。 sysadmin や db_owner などの高い権限を持つユーザーがトラブルシューティングやデータ検証のためにすべての行を表示する必要がある場合は、これを許可するセキュリティ ポリシーを作成する必要があります。  
   
@@ -208,12 +207,12 @@ CREATE TABLE Sales
  そのテーブルに、各営業担当者の 3 つの注文を表示する、6 つのデータ行を設定します。  
 
 ```sql
-INSERT INTO Sales VALUES (1, 'Sales1', 'Valve', 5);
-INSERT INTO Sales VALUES (2, 'Sales1', 'Wheel', 2);
-INSERT INTO Sales VALUES (3, 'Sales1', 'Valve', 4);
-INSERT INTO Sales VALUES (4, 'Sales2', 'Bracket', 2);
-INSERT INTO Sales VALUES (5, 'Sales2', 'Wheel', 5);
-INSERT INTO Sales VALUES (6, 'Sales2', 'Seat', 5);
+INSERT INTO Sales VALUES (1, 'Sales1', 'Valve', 5);
+INSERT INTO Sales VALUES (2, 'Sales1', 'Wheel', 2);
+INSERT INTO Sales VALUES (3, 'Sales1', 'Valve', 4);
+INSERT INTO Sales VALUES (4, 'Sales2', 'Bracket', 2);
+INSERT INTO Sales VALUES (5, 'Sales2', 'Wheel', 5);
+INSERT INTO Sales VALUES (6, 'Sales2', 'Seat', 5);
 -- View the 6 rows in the table  
 SELECT * FROM Sales;
 ```
@@ -302,8 +301,8 @@ DROP SCHEMA Security;
 
 ### <a name="prerequisites"></a>前提条件
 
-1. SQL プールが必要です。 [Synapse SQL プールを作成する](/azure/synapse-analytics/sql-data-warehouse/create-data-warehouse-portal)方法に関するページを参照してください。
-1. SQL プールをホストしているサーバーが AAD に登録されている必要があります。Storage Blob Contributor のアクセス許可がある Azure Storage アカウントを持っている必要があります。 それには、[こちら](/azure/azure-sql/database/vnet-service-endpoint-rule-overview#steps) の手順に従います。
+1. 専用 SQL プールが必要です。 [専用 SQL プールの作成](/azure/synapse-analytics/sql-data-warehouse/create-data-warehouse-portal)に関する記事を参照してください
+1. 専用 SQL プールをホストしているサーバーは AAD に登録されている必要があります。また、ストレージ BLOB データ共同作成者のアクセス許可がある Azure Storage アカウントを持っている必要があります。 それには、[こちら](/azure/azure-sql/database/vnet-service-endpoint-rule-overview#steps) の手順に従います。
 1. 自分の Azure Storage アカウントにファイル システムを作成します。 Storage Explorer を使用して自分のストレージ アカウントを表示します。 コンテナーを右クリックし、 *[ファイル システムの作成]* を選択します。  
 
 前提条件を満たしたら、別のアクセス機能を示す 3 つのユーザー アカウントを作成します。
@@ -317,10 +316,10 @@ GO
 CREATE LOGIN Sales2 WITH PASSWORD = '<user_password>'
 GO
 
---run in master and your SQL pool database
-CREATE USER Manager FOR LOGIN Manager;  
-CREATE USER Sales1  FOR LOGIN Sales1;  
-CREATE USER Sales2  FOR LOGIN Sales2 ;
+--run in master and your dedicated SQL pool database
+CREATE USER Manager FOR LOGIN Manager;  
+CREATE USER Sales1  FOR LOGIN Sales1;  
+CREATE USER Sales2  FOR LOGIN Sales2 ;
 ```
 
 データを保持するテーブルを作成します。  
@@ -493,7 +492,7 @@ AS
 GO  
 ```
 
-`Sales`のフィルター述語およびブロック述語としてこの関数を追加するセキュリティ ポリシーを作成します。 **BEFORE UPDATE**と **BEFORE DELETE** は既にフィルター処理されているため、ブロック述語に必要なのは **AFTER INSERT** だけです。また、以前に設定した列権限により、 **列は他の値に更新できないため、** AFTER UPDATE `AppUserId` は不要です。
+`Sales`のフィルター述語およびブロック述語としてこの関数を追加するセキュリティ ポリシーを作成します。 **BEFORE UPDATE** と **BEFORE DELETE** は既にフィルター処理されているため、ブロック述語に必要なのは **AFTER INSERT** だけです。また、以前に設定した列権限により、 **列は他の値に更新できないため、** AFTER UPDATE `AppUserId` は不要です。
 
 ```sql
 CREATE SECURITY POLICY Security.SalesFilter  

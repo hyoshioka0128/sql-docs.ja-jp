@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: c1ef96f1-290d-4952-8369-2f49f27afee2
 author: MightyPen
 ms.author: genemi
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 8e484cfef4f805f1456101ad966ddf64912daca5
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 48d4d4b9602049c0c09e9e60ac8991c5c9a74154
+ms.sourcegitcommit: 04d101fa6a85618b8bc56c68b9c006b12147dbb5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91867186"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99049252"
 ---
 # <a name="determining-if-a-table-or-stored-procedure-should-be-ported-to-in-memory-oltp"></a>テーブルまたはストアド プロシージャをインメモリ OLTP に移植する必要があるかどうかの確認
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "91867186"
     > [!IMPORTANT]  
     >  データベース システムのパフォーマンスはさまざまな要因に左右されますが、そのすべてをトランザクション パフォーマンス コレクターで観察および測定できるわけではありません。 したがって、トランザクション パフォーマンス分析レポートは、作成した予測が実際のパフォーマンスの向上と一致することを保証するものではありません。  
   
- [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] のインストール時に **[管理ツール - 基本]** または **[管理ツール - 詳細]** を選択するか、または [SQL Server Management Studio をダウンロード](../../ssms/download-sql-server-management-studio-ssms.md)すると、トランザクション パフォーマンス分析レポートと移行アドバイザーが SQL Server Management Studio (SSMS) の一部としてインストールされます。    
+ [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] のインストール時に **[管理ツール - 基本]** または **[管理ツール - 詳細]** を選択するか、または [SQL Server Management Studio をダウンロード](../../ssms/download-sql-server-management-studio-ssms.md)すると、トランザクション パフォーマンス分析レポートと移行アドバイザーが SQL Server Management Studio (SSMS) の一部としてインストールされます。    
   
 ## <a name="transaction-performance-analysis-reports"></a>トランザクション パフォーマンス分析レポート  
  **オブジェクト エクスプローラー** でトランザクション パフォーマンス分析レポートを生成するには、データベースを右クリックし、 **[レポート]** 、 **[標準レポート]** 、 **[トランザクション パフォーマンス分析の概要]** の順にクリックします。 有意義な分析レポートを生成するには、データベースにアクティブなワークロード、または最近実行されたワークロードがある必要があります。  
@@ -108,7 +108,7 @@ ms.locfileid: "91867186"
   
 **UI コマンドを使用して移行チェックリストを生成するには**  
   
-1.  **オブジェクト エクスプ ローラー**で、システム データベース以外のデータベースを右クリックし、 **[タスク]** をクリックしてから、 **[インメモリ OLTP 移行チェックリストの生成]** をクリックします。  
+1.  **オブジェクト エクスプ ローラー** で、システム データベース以外のデータベースを右クリックし、 **[タスク]** をクリックしてから、 **[インメモリ OLTP 移行チェックリストの生成]** をクリックします。  
   
 2.  [インメモリ OLTP 移行チェックリストの生成] ダイアログ ボックスで [次へ] をクリックし、 **[チェックリスト生成オプションの構成]** ページに移動します。 このページで、次の操作を行います。  
   
@@ -128,7 +128,7 @@ ms.locfileid: "91867186"
   
 **SQL Server PowerShell を使用して移行チェックリストを生成するには**  
   
-1.  **オブジェクト エクスプ ローラー**で、データベースをクリックし、 **[PowerShell の起動]** をクリックします。 次のようなプロンプトが表示されることを確認します。  
+1.  **オブジェクト エクスプ ローラー** で、データベースをクリックし、 **[PowerShell の起動]** をクリックします。 次のようなプロンプトが表示されることを確認します。  
   
     ```  
     PS SQLSERVER: \SQL\{Instance Name}\DEFAULT\Databases\{two-part DB Name}>  

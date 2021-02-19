@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 22f23c30-7c21-4fe3-8e76-36cea6448819
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 2d05c390c8b54cf07a588c343ca244e93e847808
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: b55c047a512931b4e529c24c01c17399e530941c
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91724417"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100053052"
 ---
 # <a name="rds-code-examples-in-vbscript"></a>VBScript での RDS のコード例
 > [!IMPORTANT]
@@ -32,7 +32,7 @@ ms.locfileid: "91724417"
 > [!NOTE]
 >  コード例全体をコードエディターに貼り付けます。 部分例が使用されている場合や段落の書式設定が失われた場合、この例は正常に実行されない可能性があります。  
   
-## <a name="objects"></a>Objects  
+## <a name="objects"></a>オブジェクト  
   
 -   [DataControl オブジェクトの例](./datacontrol-object-example-vbscript.md)  
   

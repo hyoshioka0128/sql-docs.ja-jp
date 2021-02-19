@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 194ce221-49bd-4474-ba34-91453d329381
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 8d7d1c5cf75df09caeb78e8e643c538e19310e97
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 91ad5dd78fbdac5fb434c5af86ed45dd25545be9
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88988673"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100040402"
 ---
 # <a name="status-property-example-vc"></a>Status プロパティの例 (VC++)
 この例では、 [Status](./status-property-ado-recordset.md) プロパティを使用して、バッチ更新が行われる前にバッチ操作で変更されたレコードを表示します。  

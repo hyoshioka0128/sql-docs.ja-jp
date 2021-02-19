@@ -11,12 +11,12 @@ ms.topic: language-reference
 ms.assetid: 802416f6-5177-4db5-bca5-976dec5faf53
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 18e7cb22f94e33328ed08968052d03b0261c73df
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 60ed9b6b57b933170404ba5674c931444a29f909
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88425064"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100273143"
 ---
 # <a name="catalogset_folder_description-ssisdb-database"></a>catalog.set_folder_description (SSISDB データベース)
 

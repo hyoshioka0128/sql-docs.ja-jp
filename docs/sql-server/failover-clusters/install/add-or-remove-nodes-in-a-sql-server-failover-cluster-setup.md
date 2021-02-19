@@ -5,7 +5,7 @@ ms.custom: seo-lt-2019
 ms.date: 12/13/2019
 ms.reviewer: ''
 ms.prod: sql
-ms.technology: high-availability
+ms.technology: failover-cluster-instance
 ms.topic: how-to
 helpviewer_keywords:
 - adding nodes
@@ -16,14 +16,14 @@ helpviewer_keywords:
 - cluster maintenance [SQL Server]
 - removing nodes
 ms.assetid: fe20dca9-a4c1-4d32-813d-42f1782dfdd3
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: a560f2d421675b3e01e8c1350b37112187dc3aa8
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 5cdf48d9530040886021f37fe551f77531131c81
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91988572"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642899"
 ---
 # <a name="add-or-remove-nodes-in-a-failover-cluster-instance-setup"></a>フェールオーバー クラスター インスタンスでのノードの追加または削除 (セットアップ)
 

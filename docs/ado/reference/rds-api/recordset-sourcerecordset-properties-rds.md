@@ -7,19 +7,19 @@ ms.date: 01/19/2017
 ms.reviewer: ''
 ms.prod: sql
 ms.prod_service: connectivity
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 helpviewer_keywords:
 - Recordset property [ADO]
 ms.assetid: a29e3fb9-306d-497a-9a59-1856a914e5e9
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: cdf8a894341343fee7576daed45c75a46857b909
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 531a832c5519b7a049c96de15971c74bc9a607a9
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91724299"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100049202"
 ---
 # <a name="recordset-sourcerecordset-properties-rds"></a>Recordset、SourceRecordset プロパティ (RDS)
 カスタムビジネスオブジェクトから返される **レコードセット** オブジェクトを示します。  
@@ -42,14 +42,14 @@ Recordset = DataControl.Recordset
  RDS を表すオブジェクト変数です [。DataControl](./datacontrol-object-rds.md) オブジェクト。  
   
  *レコードセット*  
- **レコードセット**オブジェクトを表すオブジェクト変数です。  
+ **レコードセット** オブジェクトを表すオブジェクト変数です。  
   
 ## <a name="remarks"></a>解説  
- **SourceRecordset**プロパティは、カスタムビジネスオブジェクトから返された[レコードセット](../ado-api/recordset-object-ado.md)に設定できます。  
+ **SourceRecordset** プロパティは、カスタムビジネスオブジェクトから返された [レコードセット](../ado-api/recordset-object-ado.md)に設定できます。  
   
- これらのプロパティを使用すると、アプリケーションはカスタムプロセスを使用してバインドプロセスを処理できます。 レコードセットを直接操作し**て、プロパティ**の設定や**レコードセット**の反復処理などのアクションを実行できるように、**レコード**セットにラップされた行セットを受け取ります。  
+ これらのプロパティを使用すると、アプリケーションはカスタムプロセスを使用してバインドプロセスを処理できます。 レコードセットを直接操作し **て、プロパティ** の設定や **レコードセット** の反復処理などのアクションを実行できるように、**レコード** セットにラップされた行セットを受け取ります。  
   
- **SourceRecordset**プロパティを設定するか、スクリプトコードで実行時に**レコードセット**プロパティを読み取ることができます。  
+ **SourceRecordset** プロパティを設定するか、スクリプトコードで実行時に **レコードセット** プロパティを読み取ることができます。  
   
  **SourceRecordset** は、読み取り専用プロパティである **Recordset** プロパティとは対照的に、書き込み専用のプロパティです。  
   

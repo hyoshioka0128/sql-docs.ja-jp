@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 58199284-747b-4312-b97f-797ee7bd4435
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 0fe3fdab656afa12de49ee5858783ef97c89c24c
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 1e63e6a1b45c9f64c2dc06518cd325e05a53cc41
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88989023"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100051423"
 ---
 # <a name="sort-property-example-vc"></a>Sort プロパティの例 (VC++)
-この例では、[レコードセット](./recordset-object-ado.md)オブジェクトの[Sort](./sort-property.md)プロパティを使用して、 **Pubs**データベースの***Authors***テーブルから派生した**レコードセット**の行を並べ替えます。 セカンダリユーティリティルーチンによって各行が出力されます。  
+この例では、[レコードセット](./recordset-object-ado.md)オブジェクトの [Sort](./sort-property.md)プロパティを使用して、 **_ Pubs データベースの _Authors_*_ テーブル*** から派生した **レコードセット** の行を並べ替えます。 セカンダリユーティリティルーチンによって各行が出力されます。  
   
 ```  
 // SortPropertyExample.cpp  

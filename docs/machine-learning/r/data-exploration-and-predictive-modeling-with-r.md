@@ -8,13 +8,13 @@ ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 60aecdbd44d13308a30434f42a01f3919fc72aa5
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 283eaa89b214e9324e6b63bffe34735f6067bd39
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956650"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470883"
 ---
 # <a name="data-exploration-and-predictive-modeling-with-r-in-sql-server"></a>SQL Server での R によるデータ探索および予測モデリング
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "91956650"
 
 **RevoScaleR** パッケージには、並列処理とスケール機能を提供するために再設計された、最も一般的ないくつかの R 関数の実装が含まれます。 詳細については、[RevoScaleR を使用した分散コンピューティング](/machine-learning-server/r/how-to-revoscaler-distributed-computing)に関するページをご覧ください。
 
-また、RevoScaleR パッケージでは *実行コンテキスト*の変更もサポートされます。 つまり、ソリューション全体または 1 つの関数のみの場合、ローカル ワークステーションではなく、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスをホストするコンピューターのリソースを使用して計算を行う必要があることを示すことができます。 これを行う利点は複数あります。不要なデータ移動を回避し、サーバー コンピューター上のより多くの計算リソースを活用することができます。
+また、RevoScaleR パッケージでは *実行コンテキスト* の変更もサポートされます。 つまり、ソリューション全体または 1 つの関数のみの場合、ローカル ワークステーションではなく、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスをホストするコンピューターのリソースを使用して計算を行う必要があることを示すことができます。 これを行う利点は複数あります。不要なデータ移動を回避し、サーバー コンピューター上のより多くの計算リソースを活用することができます。
 
 ## <a name="r-environment-and-packages"></a>R の環境とパッケージ
 
@@ -70,7 +70,7 @@ R ソリューションを開発するときは、必ず Microsoft R Client を�
 
 + **[!INCLUDE[rsql_rro-noversion](../../includes/rsql-rro-noversion-md.md)]:** R ランタイムのディストリビューションと、標準的な R 演算のパフォーマンスを向上させる、Intel Math Kernel Library などの一連のパッケージ。  
   
-+ **RevoScaleR:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスに計算をプッシュできる R パッケージ。 [https://login.microsoftonline.com/consumers/]([!INCLUDE[rsql_rre-noversion](../../includes/rsql-rre-noversion-md.md)]) パフォーマンスとスケーラビリティを高めるために再設計された一連の共通の R 関数も含まれています。 これらの強化された関数は、 **rx** プレフィックスで識別できます。 さまざまなソースの強化されたデータ プロバイダーも含まれており、これらの関数には **Rx** のプレフィックスが付いています。
++ **RevoScaleR:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスに計算をプッシュできる R パッケージ。 [!INCLUDE[rsql_rre-noversion](../../includes/rsql-rre-noversion-md.md)]. パフォーマンスとスケーラビリティを高めるために再設計された一連の共通の R 関数も含まれています。 これらの強化された関数は、 **rx** プレフィックスで識別できます。 さまざまなソースの強化されたデータ プロバイダーも含まれており、これらの関数には **Rx** のプレフィックスが付いています。
 
 R をサポートする任意の Windows ベースのコード エディター ([!INCLUDE[rsql_rtvs](../../includes/rsql-rtvs-md.md)] (RStudio) など) を使用できます。 [!INCLUDE[rsql_rro-noversion](../../includes/rsql-rro-noversion-md.md)] をダウンロードすれば、RGui.exe などの R の一般的なコマンド ライン ツールも取得できます。
 
@@ -80,9 +80,9 @@ RevoScaleR パッケージを使用して [!INCLUDE[ssNoVersion](../../includes/
 
 + **RxSqlServerData** は、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]に含まれている新しいスケーラブル パッケージと R 関数を使用して克服できます。
   
-     R コードでこの関数を使用して、 *データ ソース*を定義します。 データ ソース オブジェクトではデータがあるテーブルとサーバーを指定し、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]に対するデータの読み取りおよび書き込みタスクを管理します。
+     R コードでこの関数を使用して、 *データ ソース* を定義します。 データ ソース オブジェクトではデータがあるテーブルとサーバーを指定し、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]に対するデータの読み取りおよび書き込みタスクを管理します。
   
--   **RxInSqlServer** 関数を使用して、*計算コンテキスト*を指定できます。  つまり、R コードを実行する必要がある場所 (ローカル ワークステーションや [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスをホストするコンピューターなど) を示すことができます。  詳細については、[RevoScaleR 関数](/machine-learning-server/r-reference/revoscaler/revoscaler)に関するページをご覧ください。
+-   **RxInSqlServer** 関数を使用して、*計算コンテキスト* を指定できます。  つまり、R コードを実行する必要がある場所 (ローカル ワークステーションや [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスをホストするコンピューターなど) を示すことができます。  詳細については、[RevoScaleR 関数](/machine-learning-server/r-reference/revoscaler/revoscaler)に関するページをご覧ください。
   
      計算コンテキストを設定した場合、影響を受けるのはリモートの実行コンテキストをサポートする計算のみです。これは、R 演算が RevoScaleR パッケージと、関連する関数で提供されることを意味します。 一般に、CRAN の標準パッケージに基づく R ソリューションはリモートの計算コンテキストでは実行できませんが、T-SQL で開始した場合は [!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] コンピューター上で実行できます。 ただし、`rxExec` 関数を使用して R 関数を個別に呼び出し、[!INCLUDE[ssNoVersion_md](../../includes/ssnoversion-md.md)] でリモートで実行できます。
 

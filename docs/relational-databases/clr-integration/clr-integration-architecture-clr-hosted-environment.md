@@ -27,12 +27,12 @@ helpviewer_keywords:
 ms.assetid: d280d359-08f0-47b5-a07e-67dd2a58ad73
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: f0bdba9e6d1e91560f78ea3eb91c8cf8aa419b5d
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+ms.openlocfilehash: 5f39c1c078b470c2b0c2ec47cb8fa69060481259
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91809541"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642278"
 ---
 # <a name="clr-integration-architecture---clr-hosted-environment"></a>CLR 統合のアーキテクチャ - CLR ホスト環境
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -78,7 +78,7 @@ ms.locfileid: "91809541"
  タイプ セーフなコードとは、メモリ構造にアクセスする際に適切に定義された方法のみを使用するコードのことです。 たとえば、有効なオブジェクト参照を例として考えると、タイプ セーフなコードでは、実際のフィールド メンバーに対応してメモリの固定オフセット位置にアクセスできます。 一方、オブジェクトに属するメモリの範囲の内外を問わず、任意のオフセット位置でメモリにアクセスするコードは、タイプ セーフではありません。 アセンブリを CLR に読み込むと、JIT (Just-In-Time) コンパイルを使用して MSIL にコンパイルされる前に、ランタイムによって、コードのタイプ セーフティを判断するためにそのコードを調べる検証フェーズが実行されます。 この検証に正常に合格するコードを、検証可能なタイプ セーフなコードと呼びます。  
   
 ###### <a name="application-domains"></a>アプリケーション ドメイン  
- CLR では、マネージド コード アセンブリを読み込み、実行できるホスト プロセス内の実行領域として、アプリケーション ドメインの概念がサポートされます。 アプリケーション ドメインの境界でアセンブリどうしが分離されます。 アセンブリは、静的変数やデータ メンバーの可視性、およびコードを動的に呼び出す機能に関して分離されます。 また、アプリケーション ドメインはコードのロードとアンロード用のメカニズムでもあります。 アプリケーション ドメインをアンロードしないと、コードをメモリからアンロードできません。 詳細については、「 [アプリケーションドメインと CLR 統合のセキュリティ](/previous-versions/sql/2014/database-engine/dev-guide/application-domains-and-clr-integration-security?view=sql-server-2014)」を参照してください。  
+ CLR では、マネージド コード アセンブリを読み込み、実行できるホスト プロセス内の実行領域として、アプリケーション ドメインの概念がサポートされます。 アプリケーション ドメインの境界でアセンブリどうしが分離されます。 アセンブリは、静的変数やデータ メンバーの可視性、およびコードを動的に呼び出す機能に関して分離されます。 また、アプリケーション ドメインはコードのロードとアンロード用のメカニズムでもあります。 アプリケーション ドメインをアンロードしないと、コードをメモリからアンロードできません。 詳細については、「 [アプリケーションドメインと CLR 統合のセキュリティ](/previous-versions/sql/2014/database-engine/dev-guide/application-domains-and-clr-integration-security?view=sql-server-2014&preserve-view=true)」を参照してください。  
   
 ###### <a name="code-access-security-cas"></a>コード アクセス セキュリティ (CAS)  
  CLR セキュリティ システムには、マネージド コードに権限を割り当てて、そのコードで実行できる操作の種類を制御する方法が用意されています。 コード アクセス権限は、コード ID (アセンブリの署名やコードの作成元など) に基づいて割り当てられます。  

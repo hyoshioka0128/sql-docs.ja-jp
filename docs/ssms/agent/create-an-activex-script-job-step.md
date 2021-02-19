@@ -14,13 +14,13 @@ ms.assetid: e6c46c6b-2d61-4571-bc8e-a831cd6e6302
 author: markingmyname
 ms.author: maghan
 ms.reviewer: ''
-monikerRange: <= sql-server-2016 || = sqlallproducts-allversions
-ms.openlocfilehash: a17be8d63b2ecea316819b90ae5cc8051bd0c2a6
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+monikerRange: <= sql-server-2016
+ms.openlocfilehash: 5c4e73f37930c9c2bfc7458b5ec035739c67bf08
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92035083"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97464403"
 ---
 # <a name="create-an-activex-script-job-step"></a>ActiveX スクリプト ジョブ ステップを作成する
 
@@ -70,7 +70,7 @@ ActiveX サブシステムは SQL Server 2016 以降、廃止されています�
   
 #### <a name="to-create-an-activex-script-job-step"></a>ActiveX スクリプト ジョブ ステップを作成するには  
   
-1.  **オブジェクト エクスプローラー**で、 [!INCLUDE[ssDE](../../includes/ssde_md.md)]のインスタンスに接続します。  
+1.  **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDE](../../includes/ssde_md.md)]のインスタンスに接続します。  
   
 2.  [標準] ツール バーの **[新しいクエリ]** をクリックします。  
   

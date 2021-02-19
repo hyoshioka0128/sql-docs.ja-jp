@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - ASCII_TSQL
 - ASCII
@@ -19,15 +19,15 @@ helpviewer_keywords:
 - code [SQL Server], ASCII
 - leftmost character of expression
 ms.assetid: 45c2044a-0593-4805-8bae-0fad4bde2e6b
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: d0169bc8dd5ed25e6f1689802e9a431df34fe457
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 57d1d99951784c4126accc3862bc86b5bc9dce7d
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88417498"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99193474"
 ---
 # <a name="ascii-transact-sql"></a>ASCII (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -46,13 +46,13 @@ ASCII ( character_expression )
 
 ## <a name="arguments"></a>引数
 *character_expression*  
-**char** 型または **varchar** 型の[式](../../t-sql/language-elements/expressions-transact-sql.md)。
+**char** 型または **varchar** 型の [式](../../t-sql/language-elements/expressions-transact-sql.md)。
   
 ## <a name="return-types"></a>戻り値の型
  **int**  
   
 ## <a name="remarks"></a>解説
-ASCII は、情報交換用米国標準コード (**A**merican **S**tandard **C**ode for **I**nformation **I**nterchange) の略語です。 最新のコンピューター上で文字エンコード標準として機能します。 ASCII 文字の一覧については、「[ASCII](https://www.wikipedia.org/wiki/ASCII)」の**印刷可能文字**に関するセクションを参照してください。
+ASCII は、情報交換用米国標準コード (**A** merican **S** tandard **C** ode for **I** nformation **I** nterchange) の略語です。 最新のコンピューター上で文字エンコード標準として機能します。 ASCII 文字の一覧については、「[ASCII](https://www.wikipedia.org/wiki/ASCII)」の **印刷可能文字** に関するセクションを参照してください。
 
 ASCII は 7 ビット文字セットです。 拡張 ASCII または高 ASCII は、`ASCII` 関数によって処理されない 8 ビット文字セットです。 
 

@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: 64a9eade-22c3-4a9d-ab50-956219e08df1
 author: MightyPen
 ms.author: genemi
-monikerRange: =sql-server-2016||=sqlallproducts-allversions
-ms.openlocfilehash: 1ff95c2fad217e0592e82c6e7bf034813931e758
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =sql-server-2016
+ms.openlocfilehash: a5038368e66524324fb0189b2f1b06e0b374e41a
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91863838"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "100353693"
 ---
 # <a name="migrating-computed-columns"></a>計算列の移行
 
@@ -25,7 +25,7 @@ ms.locfileid: "91863838"
 
 計算列は、メモリ最適化テーブルではサポートされていません。 ただし、計算列をシミュレートすることはできます。
 
-[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 以降、メモリ最適化テーブルとインデックスで計算列がサポートされています。
+[!INCLUDE [sssql17-md](../../includes/sssql17-md.md)] 以降、メモリ最適化テーブルとインデックスで計算列がサポートされています。
 
 ディスク ベース テーブルをメモリ最適化テーブルに移行するときは、計算列を保存する必要性を検討してください。 メモリ最適化テーブルおよびネイティブ コンパイル ストアド プロシージャのさまざまなパフォーマンス特性によって、保存の必要性がなくなる場合があります。  
   

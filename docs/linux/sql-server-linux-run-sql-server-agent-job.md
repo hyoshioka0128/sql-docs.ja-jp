@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
 ms.assetid: 1d93d95e-9c89-4274-9b3f-fa2608ec2792
-ms.openlocfilehash: e7cc33b3f01ae9562f1d9fb1a84830df7a807c9b
-ms.sourcegitcommit: 22102f25db5ccca39aebf96bc861c92f2367c77a
+ms.openlocfilehash: bc52f0a2052d0b9abd1700e92af3a30c0e02bad2
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92115835"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100346438"
 ---
 # <a name="create-and-run-sql-server-agent-jobs-on-linux"></a>Microsoft SQL Server エージェント ジョブを作成して Linux 上で実行する
 
@@ -179,9 +179,9 @@ Windows 上で SQL Server Management Studio (SSMS) を使用して、ジョブ�
 
 1. 新しいジョブ スケジュールを作成します。
 
-   ![ジョブ スケジュール](./media/sql-server-linux-run-sql-server-agent-job/ssms-agent-6.png)
+   ![[スケジュール] オプションと [新規] オプションが選択された [新しいジョブ] ダイアログ ボックスのスクリーンショット。](./media/sql-server-linux-run-sql-server-agent-job/ssms-agent-6.png)
 
-   ![ジョブ スケジュール](./media/sql-server-linux-run-sql-server-agent-job/ssms-agent-8.png)
+   ![[OK] オプションが選択された [新しいジョブ] ダイアログ ボックスのスクリーンショット。](./media/sql-server-linux-run-sql-server-agent-job/ssms-agent-8.png)
 
 1. ジョブを開始します。
 

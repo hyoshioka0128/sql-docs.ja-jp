@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -16,15 +16,15 @@ helpviewer_keywords:
 ms.assetid: f74a81fd-cbcc-4143-b9f8-774c88dd4fad
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: d2d1846203e4650048378d5fb41c4d2ff198f462
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: f81d72eb6c6d6da6bb57208b65727ab63d580f36
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88990353"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100041442"
 ---
 # <a name="open-and-close-methods-example-vc"></a>Open および Close メソッドの例 (VC++)
-この例では、開いている[レコードセット](./recordset-object-ado.md)と[接続](./connection-object-ado.md)オブジェクトの両方に対して、 **Open**メソッドと[Close](./close-method-ado.md)メソッドを使用します。  
+この例では、開いている [レコードセット](./recordset-object-ado.md)と [接続](./connection-object-ado.md)オブジェクトの両方に対して、 **Open** メソッドと [Close](./close-method-ado.md)メソッドを使用します。  
   
 ```  
 // Open_Close_Methods.cpp  

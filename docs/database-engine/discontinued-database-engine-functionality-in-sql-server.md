@@ -35,20 +35,20 @@ helpviewer_keywords:
 ms.assetid: d686cdf0-d11d-4dba-9ec8-de1a5f189f25
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: '>= sql-server-linux-2017  || >= sql-server-2016 || = sqlallproducts-allversions'
-ms.openlocfilehash: 0aada5da9da6b0eadb1c190690f98c4a3d3cb3b8
-ms.sourcegitcommit: 768f046107642f72693514f51bf2cbd00f58f58a
+monikerRange: '>= sql-server-linux-2017  || >= sql-server-2016'
+ms.openlocfilehash: 2b735e98bd49e06057008a714a868cec6c9f5282
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87110248"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100347883"
 ---
 # <a name="discontinued-database-engine-functionality-in-sql-server"></a>SQL Server で廃止されたデータベース エンジンの機能
 [!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
 
-  このトピックでは、 [!INCLUDE[ssDE](../includes/ssde-md.md)] で使用できなくなった [!INCLUDE[ssCurrent](../includes/ssnoversion-md.md)]の機能について説明します。  
+  このトピックでは、 [!INCLUDE[ssDE](../includes/ssde-md.md)] で使用できなくなった [!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)]の機能について説明します。  
 
-## <a name="discontinued-features-in-sssqlv15"></a>[!INCLUDE[ssSQLv15](../includes/sssqlv15-md.md)] で廃止された機能  
+## <a name="discontinued-features-in-sssql19"></a>[!INCLUDE[sssql19](../includes/sssql19-md.md)] で廃止された機能  
 
 - 次のデータベース スコープ構成オプションは廃止されました。
 
@@ -59,23 +59,23 @@ ms.locfileid: "87110248"
 現在の構成オプションについては、「[ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)](../t-sql/statements/alter-database-scoped-configuration-transact-sql.md)」を参照してください。
 
 >[!NOTE]
->[!INCLUDE[ssSQLv14](../includes/sssqlv14-md.md)] で廃止された機能はありません。
+>[!INCLUDE[sssql14](../includes/sssql17-md.md)] で廃止された機能はありません。
 
-## <a name="discontinued-features-in-sssql15"></a>[!INCLUDE[ssSQL15](../includes/sssql15-md.md)] で廃止された機能
+## <a name="discontinued-features-in-sssql15-md"></a>[!INCLUDE[sssql15-md](../includes/sssql16-md.md)] で廃止された機能
 
-- [!INCLUDE[ssSQL15](../includes/sssql15-md.md)] は 64 ビット アプリケーションです。 32 ビット版のインストールは廃止されましたが、いくつかの要素が 32 ビット コンポーネントとして実行されます。  
+- [!INCLUDE[sssql15-md](../includes/sssql16-md.md)] は 64 ビット アプリケーションです。 32 ビット版のインストールは廃止されましたが、いくつかの要素が 32 ビット コンポーネントとして実行されます。  
 
 - 互換性レベル 90 は廃止されました。 詳細については、「[ALTER DATABASE 互換性レベル &#40;Transact-SQL&#41;](../t-sql/statements/alter-database-transact-sql-compatibility-level.md)」を参照してください。  
 
 - ActiveX サブシステムは廃止されました。 代わりに、コマンド ラインまたは PowerShell スクリプトを使用してください。
 
-- 起動時のパラメーター **-h** および **-g**。 詳細については、「 [データベース エンジン サービスのスタートアップ オプション](/previous-versions/sql/2014/database-engine/configure-windows/database-engine-service-startup-options?view=sql-server-2014)」を参照してください。
+- 起動時のパラメーター **-h** および **-g**。 詳細については、「 [データベース エンジン サービスのスタートアップ オプション](/previous-versions/sql/2014/database-engine/configure-windows/database-engine-service-startup-options?view=sql-server-2014&preserve-view=true)」を参照してください。
 
 - Secure Sockets Layer (SSL) での暗号化は廃止されました。 代わりに、トランスポート層セキュリティ (TLS) を使用してください。 詳細については、「[データベース エンジンへの暗号化接続の有効化](../database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine.md)」を参照してください。
 
 ## <a name="previous-versions"></a>以前のバージョン
 
-- [SQL Server 2014 で廃止されたデータベース エンジンの機能](/previous-versions/sql/2014/database-engine/discontinued-database-engine-functionality-in-sql-server-2016?view=sql-server-2014)
+- [SQL Server 2014 で廃止されたデータベース エンジンの機能](/previous-versions/sql/2014/database-engine/discontinued-database-engine-functionality-in-sql-server-2016?view=sql-server-2014&preserve-view=true)
 
 ### <a name="see-also"></a>参照
 

@@ -14,13 +14,13 @@ author: markingmyname
 ms.author: maghan
 ms.custom: seo-lt-2019
 ms.date: 03/01/2017
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 1a0bc3f6a22a2f9ad6ac201e8e49bca1d6059ca1
-ms.sourcegitcommit: 29a2be59c56f8a4b630af47760ef38d2bf56a3eb
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: ebcaade343755652c0954f470bcb2fdfbe516cdd
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92358906"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100349909"
 ---
 # <a name="analysis-server-ltservergt-sql-server-configuration-manager"></a>分析サーバー &lt;サーバー&gt; (SQL Server 構成マネージャー)
 

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - Database Mail [SQL Server], components
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: 8e70b32c2cee28acf4b886f0bf738f4ed8857619
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: ebf8096c4b679cc6d5ac01b164bb9ae4bb014e6e
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88448865"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100352947"
 ---
 # <a name="database-mail-mail-queued-not-delivered"></a>データベース メール:メールがキューされました、配信されません 
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -53,7 +53,7 @@ sysmail_help_queue_sp @queue_type = 'Mail' ;
 
 ## <a name="message-status-unsent"></a>メッセージの状態 - unsent 
 
-状態 **unsent** は、電子メール メッセージが[データベース メール外部プログラム](database-mail-external-program.md)でまだ処理されていないことを表します。 データベース メール外部プログラムによるメッセージの処理は遅れることがあります。この外部プログラムのメッセージ処理速度は、ネットワークの状態、再試行タイムアウト、メッセージの量、および SMTP サーバーの処理能力によって異なります。 問題が解決しない場合は、複数のプロファイルを使用して、複数の SMTP サーバーにメッセージを分散させることを検討します。
+状態 **unsent** は、電子メール メッセージが [データベース メール外部プログラム](database-mail-external-program.md)でまだ処理されていないことを表します。 データベース メール外部プログラムによるメッセージの処理は遅れることがあります。この外部プログラムのメッセージ処理速度は、ネットワークの状態、再試行タイムアウト、メッセージの量、および SMTP サーバーの処理能力によって異なります。 問題が解決しない場合は、複数のプロファイルを使用して、複数の SMTP サーバーにメッセージを分散させることを検討します。
 
 正常に配信されたメッセージを対象に、最終更新日をチェックします。 最後に正常な配信が行われてからしばらく経過している場合は、sysmail_event_log ビューで、この外部プログラムが Service Broker によって正常に開始されたことを確認します。 最後の試行で外部プログラムが開始されなかった場合は、データベース メール外部プログラムが適切なディレクトリにあり、SQL Server のサービス アカウントにこの実行可能ファイルの実行権限があるかどうかを確認します。
 

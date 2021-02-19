@@ -1,12 +1,12 @@
 ---
 description: sys.dm_repl_tranhash (Transact-SQL)
-title: dm_repl_tranhash (Transact-sql) |Microsoft Docs
+title: sys.dm_repl_tranhash (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_repl_tranhash
 - sys.dm_repl_tranhash_TSQL
@@ -17,14 +17,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_repl_tranhash dynamic management view
 ms.assetid: 0cc52338-e805-4ed4-9835-b19bbf72448e
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 35bb540ff2b73a44de324a51937552ae7cc3ec56
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 234a2549d4eaffee6133d35a660c1bbcfb26dd60
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89536897"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99137358"
 ---
 # <a name="sysdm_repl_tranhash-transact-sql"></a>sys.dm_repl_tranhash (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -41,9 +41,9 @@ ms.locfileid: "89536897"
 |**last_commit_lsn**|**nvarchar (64)**|現在のバッチの最後のコミット LSN。|  
   
 ## <a name="permissions"></a>アクセス許可  
- **Dm_repl_tranhash**を呼び出すには、パブリケーションデータベースに対する VIEW DATABASE STATE 権限が必要です。  
+ **Dm_repl_tranhash** を呼び出すには、パブリケーションデータベースに対する VIEW DATABASE STATE 権限が必要です。  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  情報は、レプリケーションアーティクルキャッシュに現在読み込まれているレプリケートされたデータベースオブジェクトに対してのみ返されます。  
   
 ## <a name="see-also"></a>参照  

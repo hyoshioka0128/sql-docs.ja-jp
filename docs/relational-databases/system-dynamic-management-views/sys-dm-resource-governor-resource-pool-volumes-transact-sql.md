@@ -1,12 +1,12 @@
 ---
-description: dm_resource_governor_resource_pool_volumes (Transact-sql)
-title: dm_resource_governor_resource_pool_volumes (Transact-sql) |Microsoft Docs
+description: sys.dm_resource_governor_resource_pool_volumes (Transact-sql)
+title: sys.dm_resource_governor_resource_pool_volumes (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 08/09/2016
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_resource_governor_resource_pool_volumes_TSQL
 - dm_resource_governor_resource_pool_volumes_TSQL
@@ -18,19 +18,19 @@ helpviewer_keywords:
 - dm_resource_governor_resource_pool_volumes
 - sys.dm_resource_governor_resource_pool_volumes
 ms.assetid: fa692e56-c561-4533-97c5-bc12c600553f
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 7fd7feb957b93590d76ff92aab14fd745b7c43dd
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 11d02a022ba5e5444451a4a7474b39a91795a906
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89543851"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99136967"
 ---
-# <a name="sysdm_resource_governor_resource_pool_volumes-transact-sql"></a>dm_resource_governor_resource_pool_volumes (Transact-sql)
+# <a name="sysdm_resource_governor_resource_pool_volumes-transact-sql"></a>sys.dm_resource_governor_resource_pool_volumes (Transact-sql)
 [!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]
 
-  各ディスクボリュームの現在のリソースプール IO 統計に関する情報を返します。 この情報は、 [sys. dm_resource_governor_resource_pools &#40;](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-resource-pools-transact-sql.md)のリソースプールレベルでも使用できます。 transact-sql&#41;を参照してください。  
+  各ディスクボリュームの現在のリソースプール IO 統計に関する情報を返します。 この情報は、 [sys.dm_resource_governor_resource_pools &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-resource-pools-transact-sql.md)のリソースプールレベルでも利用できます。  
   
   
 |列名|データ型|説明|  
@@ -60,7 +60,7 @@ ms.locfileid: "89543851"
 ## <a name="see-also"></a>関連項目  
  [動的管理ビューと動的管理関数 &#40;Transact-SQL&#41;](~/relational-databases/system-dynamic-management-views/system-dynamic-management-views.md)   
  [sys.dm_resource_governor_workload_groups &#40;Transact-SQL&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-workload-groups-transact-sql.md)   
- [resource_governor_resource_pools &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-resource-governor-resource-pools-transact-sql.md)   
+ [sys.resource_governor_resource_pools &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-resource-governor-resource-pools-transact-sql.md)   
  [ALTER RESOURCE GOVERNOR &#40;Transact-SQL&#41;](../../t-sql/statements/alter-resource-governor-transact-sql.md)  
   
   

@@ -2,19 +2,19 @@
 title: Python によるデータ探索のためのヒストグラムのプロット
 titleSuffix: SQL machine learning
 description: Python を使用してデータを視覚化するために、ヒストグラムを作成する方法について説明します。
-author: cawrites
-ms.author: chadam
+author: dphansen
+ms.author: davidph
 ms.date: 07/14/2020
 ms.topic: how-to
 ms.prod: sql
 ms.technology: machine-learning
-monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=azuresqldb-mi-current||=azuresqldb-current||=sqlallproducts-allversions'
-ms.openlocfilehash: c1f30230b00258b5f5f662a99c2d75c29ea7ba8d
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=azuresqldb-mi-current||=azuresqldb-current'
+ms.openlocfilehash: 466abc8687a7f325d216a6b5b6545bc516b2b34d
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956804"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98101992"
 ---
 # <a name="plot-histograms-in-python"></a>Python でのヒストグラムのプロット 
 [!INCLUDE[SQL Server SQL DB SQL MI](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
@@ -23,21 +23,21 @@ ms.locfileid: "91956804"
 
 ## <a name="prerequisites"></a>前提条件:
 
-::: moniker range=">=sql-server-2017||>=sql-server-linux-ver15||=sqlallproducts-allversions"
-* SQL Server : インストール方法については、[Windows 用](../../database-engine/install-windows/install-sql-server.md)または[Linux 用](../../linux/sql-server-linux-overview.md)の SQL Server に関するページを参照してください。
+::: moniker range=">=sql-server-2017||>=sql-server-linux-ver15"
+* [Windows 用](../../database-engine/install-windows/install-sql-server.md)または [Linux 用の SQL Server](../../linux/sql-server-linux-overview.md)
 ::: moniker-end
 
-::: moniker range="=azuresqldb-current||=sqlallproducts-allversions"
-* Azure SQL Database。 サインアップ方法については、[Azure SQL Database](/azure/sql-database/sql-database-get-started-portal) に関するページを参照してください
+::: moniker range="=azuresqldb-current"
+* [Azure SQL Database](/azure/sql-database/sql-database-get-started-portal)
 ::: moniker-end
 
-::: moniker range="=azuresqldb-mi-current||=sqlallproducts-allversions"
-* Azure SQL Managed Instance。 サインアップ方法については、[Azure SQL Managed Instance](/azure/azure-sql/managed-instance/instance-create-quickstart) に関するページを参照してください。
+::: moniker range="=azuresqldb-mi-current"
+* [Azure SQL Managed Instance](/azure/azure-sql/managed-instance/instance-create-quickstart)
 
 * サンプル データベースを Azure SQL Managed Instance に復元するための [SQL Server Management Studio](../../ssms/download-sql-server-management-studio-ssms.md)。
 ::: moniker-end
 
-* Azure Data Studio。 インストール方法については、[Azure Data Studio](../../azure-data-studio/what-is.md) に関するページを参照してください。
+* Azure Data Studio。 インストールするには、[Azure Data Studio](../../azure-data-studio/what-is-azure-data-studio.md) に関するページを参照してください。
 
 * この記事で使用されているサンプル データを取得するために、[サンプル DW データベースを復元](../../samples/adventureworks-install-configure.md)します。
 

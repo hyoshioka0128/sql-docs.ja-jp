@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: 72f5afa3-d636-410b-9e81-2ffa27772a8c
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 3b101ac6ab904543ab3e5a558ce2d50030df5adf
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: aac745594f2dcd23974cc91cb0f9c57ebff91f29
+ms.sourcegitcommit: 49ee3d388ddb52ed9cf78d42cff7797ad6d668f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91720813"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94384904"
 ---
 # <a name="integration-services-ssis-connections"></a>Integration Services (SSIS) の接続
 
@@ -74,7 +74,7 @@ ms.locfileid: "91720813"
 ### <a name="package-level-and-project-level-connection-managers"></a>パッケージ レベルとプロジェクト レベルの接続マネージャー
 接続マネージャーは、パッケージ レベルまたはプロジェクト レベルで作成できます。 プロジェクト レベルで作成した接続マネージャーは、プロジェクト内のすべてのパッケージで使用できます。 一方、パッケージ レベルで作成した接続マネージャーは、特定のパッケージでのみ使用できます。  
   
- データ ソースの代わりにプロジェクト レベルで作成された接続マネージャーを使用して、ソースへの接続を共有します。 プロジェクト レベルで接続マネージャーを追加するには、 [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] プロジェクトでプロジェクト配置モデルを使用する必要があります。 このモデルを使用するようにプロジェクトが構成されている場合、 **[接続マネージャー]** フォルダーが **ソリューション エクスプローラー**に表示され、 **[データ ソース]** フォルダーが **ソリューション エクスプローラー**から削除されます。  
+ データ ソースの代わりにプロジェクト レベルで作成された接続マネージャーを使用して、ソースへの接続を共有します。 プロジェクト レベルで接続マネージャーを追加するには、 [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] プロジェクトでプロジェクト配置モデルを使用する必要があります。 このモデルを使用するようにプロジェクトが構成されている場合、 **[接続マネージャー]** フォルダーが **ソリューション エクスプローラー** に表示され、 **[データ ソース]** フォルダーが **ソリューション エクスプローラー** から削除されます。  
   
 > [!NOTE]  
 >  パッケージでデータ ソースを使用する場合は、プロジェクトをパッケージ配置モデルに変換する必要があります。  
@@ -115,7 +115,7 @@ ms.locfileid: "91720813"
 |種類|説明|トピック|  
 |----------|-----------------|-----------|  
 |ORACLE|Oracle \<version info\> サーバーに接続します。|Oracle 接続マネージャーは、 [!INCLUDE[msCoName](../../includes/msconame-md.md)] Connector for Oracle by Attunity の接続マネージャー コンポーネントです。 [!INCLUDE[msCoName](../../includes/msconame-md.md)] Connector for Oracle by Attunity には、変換元と変換先も含まれます。 詳細については、[Microsoft Connectors for Oracle and Teradata by Attunity](https://www.microsoft.com/download/details.aspx?id=55179) のダウンロード ページを参照してください。|  
-|SAPBI|SAP NetWeaver BI Version 7 システムに接続します。|SAP BI 接続マネージャーは、 [!INCLUDE[msCoName](../../includes/msconame-md.md)] Connector for SAP BI の接続マネージャー コンポーネントです。 [!INCLUDE[msCoName](../../includes/msconame-md.md)] Connector for SAP BI には、変換元と変換先も含まれます。 詳細については、 [Microsoft SQL Server 2008 用 Feature Pack](https://www.microsoft.com/download/details.aspx?id=30440)のダウンロード ページを参照してください。|  
+|SAPBI|SAP NetWeaver BI Version 7 システムに接続します。|SAP BI 接続マネージャーは、 [!INCLUDE[msCoName](../../includes/msconame-md.md)] Connector for SAP BI の接続マネージャー コンポーネントです。 [!INCLUDE[msCoName](../../includes/msconame-md.md)] Connector for SAP BI には、変換元と変換先も含まれます。 詳細については、 [Microsoft SQL Server 2008 用 Feature Pack](https://www.microsoft.com/download/details.aspx?id=44277)のダウンロード ページを参照してください。|  
 |TERADATA|Teradata \<version info\> サーバーに接続します。|Teradata 接続マネージャーは、 [!INCLUDE[msCoName](../../includes/msconame-md.md)] Connector for Teradata by Attunity の接続マネージャー コンポーネントです。 [!INCLUDE[msCoName](../../includes/msconame-md.md)] Connector for Teradata by Attunity には、変換元と変換先も含まれます。 詳細については、[Microsoft Connectors for Oracle and Teradata by Attunity](https://www.microsoft.com/download/details.aspx?id=55179) のダウンロード ページを参照してください。|  
   
 ### <a name="custom-connection-managers"></a>カスタム接続マネージャー  
@@ -126,14 +126,14 @@ ms.locfileid: "91720813"
   
  新しいパッケージを作成する際に接続マネージャーを自動的に作成して構成する場合は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インポートおよびエクスポート ウィザードを使用できます。 このウィザードは、接続マネージャーを使用する変換元および変換先の作成と構成を行う場合に役立ちます。 詳細については、「 [SQL Server データ ツールでのパッケージの作成](../../integration-services/create-packages-in-sql-server-data-tools.md)」を参照してください。  
   
- 手動で新しい接続マネージャーを作成して既存のパッケージに追加するには、**デザイナーの**[制御フロー] **タブ、** [データ フロー]**タブ、および**[イベント ハンドラー]**タブに表示される**[接続マネージャー][!INCLUDE[ssIS](../../includes/ssis-md.md)] 領域を使用します。 **[接続マネージャー]** 領域で、作成する接続マネージャーの種類を選択し、[!INCLUDE[ssIS](../../includes/ssis-md.md)] デザイナーで用意されているダイアログ ボックスを使用して、接続マネージャーのプロパティを設定します。 詳細については、後の「[接続マネージャー] 領域の使用」を参照してください。  
+ 手動で新しい接続マネージャーを作成して既存のパッケージに追加するには、 **デザイナーの** [制御フロー] **タブ、** [データ フロー] **タブ、および** [イベント ハンドラー] **タブに表示される** [接続マネージャー][!INCLUDE[ssIS](../../includes/ssis-md.md)] 領域を使用します。 **[接続マネージャー]** 領域で、作成する接続マネージャーの種類を選択し、[!INCLUDE[ssIS](../../includes/ssis-md.md)] デザイナーで用意されているダイアログ ボックスを使用して、接続マネージャーのプロパティを設定します。 詳細については、後の「[接続マネージャー] 領域の使用」を参照してください。  
   
  パッケージに接続マネージャーを追加すると、タスク、Foreach ループ コンテナー、変換元、変換、および変換先で使用できます。 詳細については、「[Integration Services タスク](../../integration-services/control-flow/integration-services-tasks.md)」、「[Foreach ループ コンテナー](../../integration-services/control-flow/foreach-loop-container.md)」、および「[データ フロー](../../integration-services/data-flow/data-flow.md)」を参照してください。  
   
 ### <a name="using-the-connection-managers-area"></a>[接続マネージャー] 領域の使用  
- 接続マネージャーは、**デザイナーの**[制御フロー] **タブ、** [データ フロー]**タブ、または**[イベント ハンドラー][!INCLUDE[ssIS](../../includes/ssis-md.md)] タブがアクティブなときに作成できます。  
+ 接続マネージャーは、 **デザイナーの** [制御フロー] **タブ、** [データ フロー] **タブ、または** [イベント ハンドラー][!INCLUDE[ssIS](../../includes/ssis-md.md)] タブがアクティブなときに作成できます。  
   
- 次の図は、**デザイナーの**[制御フロー]**タブ上にある**[接続マネージャー][!INCLUDE[ssIS](../../includes/ssis-md.md)] 領域を示しています。  
+ 次の図は、 **デザイナーの** [制御フロー] **タブ上にある** [接続マネージャー][!INCLUDE[ssIS](../../includes/ssis-md.md)] 領域を示しています。  
   
  ![パッケージの制御フロー デザイナーのスクリーンショット](../../integration-services/connection-manager/media/samplecontrolflow.gif "パッケージの制御フロー デザイナーのスクリーンショット")    
   
@@ -199,7 +199,7 @@ ms.locfileid: "91720813"
   
 1.  [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)]で、 [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] プロジェクトを開きます。  
   
-2.  **ソリューション エクスプローラー**で **[接続マネージャー]** を右クリックし、 **[新しい接続マネージャー]** をクリックします。  
+2.  **ソリューション エクスプローラー** で **[接続マネージャー]** を右クリックし、 **[新しい接続マネージャー]** をクリックします。  
   
 3.  **[SSIS 接続マネージャーの追加]** ダイアログ ボックスで、接続マネージャーの種類を選択し、 **[追加]** をクリックします。  
   

@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: ''
-ms.openlocfilehash: 107e25f9d4307532e4d1bd6d413e05347fc5209b
-ms.sourcegitcommit: c4d6804bde7eaf72d9233d6d43f77d77d1b17c4e
+ms.openlocfilehash: ddb0c0ac0c1afd4e4a3f94504256fa787dceaf9d
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91624739"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100080014"
 ---
 # <a name="type-mapping-with-polybase"></a>PolyBase を使用した型マッピング
 
@@ -28,7 +28,7 @@ PolyBase を使用して外部テーブルを作成する場合、データ型�
 外部データ ソース内のファイルを参照する外部のテーブルでは、列と型の定義は、外部ファイルの正確なスキーマにマップする必要があります。 Hadoop/Hive に格納されているデータを参照するデータの種類を定義する場合は、SQL、および Hive のデータ型の間では、次のマッピングを使用し、そこから選択するときに、SQL のデータ型に型をキャストします。 型には、特にそれ以外の場合に記されていない、Hive のすべてのバージョンが含まれます。
 
 > [!NOTE]  
-> SQL Server では、いずれの変換でも Hive の *infinity*のデータ値をサポートしていません。 PolyBase はデータ型変換エラーで失敗します。
+> SQL Server では、いずれの変換でも Hive の *infinity* のデータ値をサポートしていません。 PolyBase はデータ型変換エラーで失敗します。
 
 ## <a name="hadoop-type-mapping-reference"></a>Hadoop 型マッピング リファレンス
 
@@ -57,7 +57,7 @@ PolyBase を使用して外部テーブルを作成する場合、データ型�
 | decimal       | Decimal                   | decimal        | BigDecimalWritable    | Hive0.11 以降が適用されます。 |
 
 <!--SQL Server 2019-->
-::: moniker range=">= sql-server-ver15 || =sqlallproducts-allversions"
+::: moniker range=">= sql-server-ver15 "
 
 ## <a name="oracle-type-mapping-reference"></a>Oracle 型マッピング リファレンス
 

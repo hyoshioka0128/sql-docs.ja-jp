@@ -1,12 +1,12 @@
 ---
-description: dm_exec_requests (Transact-sql)
-title: dm_exec_requests (Transact-sql) |Microsoft Docs
+description: sys.dm_exec_requests (Transact-sql)
+title: sys.dm_exec_requests (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 10/01/2019
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_exec_requests_TSQL
 - sys.dm_exec_requests
@@ -20,15 +20,15 @@ ms.assetid: 4161dc57-f3e7-4492-8972-8cfb77b29643
 author: pmasl
 ms.author: pelopes
 ms.reviewer: sstein
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 375dc6e15f8bf592ff3d5d9e8f9388f188008d3b
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: b3ff96f67611b41db3e1cf1e827ff2577305a24d
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88489970"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "100342935"
 ---
-# <a name="sysdm_exec_requests-transact-sql"></a>dm_exec_requests (Transact-sql)
+# <a name="sysdm_exec_requests-transact-sql"></a>sys.dm_exec_requests (Transact-sql)
 
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
@@ -39,7 +39,7 @@ ms.locfileid: "88489970"
 |session_id|**smallint**|この要求が関連付けられているセッションの ID。 NULL 値は許可されません。|  
 |request_id|**int**|要求の ID。 セッションのコンテキスト内で一意です。 NULL 値は許可されません。|  
 |start_time|**datetime**|要求が到着したときのタイムスタンプ。 NULL 値は許可されません。|  
-|status|**nvarchar(30)**|要求の状態。 DLL は、次のいずれかの場所に置くことができます。<br /><br /> バックグラウンド<br />実行中<br />実行可能<br />休止中<br />Suspended<br /><br /> NULL 値は許可されません。|  
+|status|**nvarchar(30)**|要求の状態。 DLL は、次のいずれかの場所に置くことができます。<br /><br /> 背景<br />実行中<br />実行可能<br />休止中<br />Suspended<br /><br /> NULL 値は許可されません。|  
 |command|**nvarchar(32)**|現在処理中のコマンドの種類。 一般的なコマンドの種類には次のものがあります。<br /><br /> SELECT<br />INSERT<br />UPDATE<br />DELETE<br />BACKUP LOG<br />BACKUP DATABASE<br />DBCC<br />FOR<br /><br /> 要求のテキストを取得するには、対応する sql_handle と共に、要求に対して sys.dm_exec_sql_text を使用します。 内部システムプロセスは、実行するタスクの種類に基づいて、コマンドを設定します。 タスクには次のものが含まれます。<br /><br /> LOCK MONITOR<br />CHECKPOINTLAZY<br />WRITER<br /><br /> NULL 値は許可されません。|  
 |sql_handle|**varbinary(64)**|クエリが含まれているバッチまたはストアドプロシージャを一意に識別するトークンです。 NULL 値が許可されます。| 
 |statement_start_offset|**int**|現在実行中のバッチまたは保存されたオブジェクトに対して現在実行中のステートメントの開始位置を、0で始まるバイト単位で示します。 、、および動的管理関数と共に使用して、 `sql_handle` `statement_end_offset` `sys.dm_exec_sql_text` 要求に対して現在実行中のステートメントを取得できます。 NULL 値が許可されます。|  
@@ -49,7 +49,7 @@ ms.locfileid: "88489970"
 |user_id|**int**|要求を送信したユーザーの ID。 NULL 値は許可されません。|  
 |connection_id|**uniqueidentifier**|要求を受信した接続の ID。 NULL 値が許可されます。|  
 |blocking_session_id|**smallint**|要求をブロックしているセッションの ID。 この列が NULL または0に等しい場合は、要求がブロックされていないか、ブロックしているセッションのセッション情報が使用できない (または識別できません)。<br /><br /> -2 = ブロックしているリソースは、孤立した分散トランザクションが所有しています。<br /><br /> -3 = ブロックしているリソースは、遅延復旧トランザクションが所有しています。<br /><br /> -4 = 内部ラッチの状態遷移のため、ブロックしているラッチの所有者のセッション ID を現時点で特定できませんでした。|  
-|wait_type|**nvarchar(60)**|要求が現在ブロックされている場合の待機の種類。 NULL 値が許可されます。<br /><br /> 待機の種類の詳細については、「 [sys. dm_os_wait_stats &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql.md)」を参照してください。|  
+|wait_type|**nvarchar(60)**|要求が現在ブロックされている場合の待機の種類。 NULL 値が許可されます。<br /><br /> 待機の種類の詳細については、「 [sys.dm_os_wait_stats &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql.md)」を参照してください。|  
 |wait_time|**int**|要求が現在ブロックされている場合の現時点での待機時間 (ミリ秒単位)。 NULL 値は許可されません。|  
 |last_wait_type|**nvarchar(60)**|要求がブロックされていた場合の最後の待機の種類。 NULL 値は許可されません。|  
 |wait_resource|**nvarchar (256)**|要求が現在ブロックされている場合の現在待機中のリソース。 NULL 値は許可されません。|  
@@ -90,12 +90,12 @@ ms.locfileid: "88489970"
 |query_hash|**binary (8)**|クエリで計算され、同様のロジックを持つクエリを識別するために使用される、バイナリのハッシュ値です。 クエリ ハッシュを使用して、リテラル値だけが異なるクエリの全体的なリソース使用率を決定できます。|  
 |query_plan_hash|**binary (8)**|クエリ実行プランで計算され、同様のクエリ実行プランを識別するために使用される、バイナリのハッシュ値です。 クエリ プラン ハッシュを使用して、同様の実行プランを持つクエリの累積コストを確認できます。|  
 |statement_sql_handle|**varbinary(64)**|**適用対象**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降。<br /><br /> 個々のクエリの SQL ハンドル。<br /><br />データベースに対してクエリストアが有効になっていない場合、この列は NULL になります。 |  
-|statement_context_id|**bigint**|**適用対象**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降。<br /><br /> Query_context_settings の外部キー (省略可能)。<br /><br />データベースに対してクエリストアが有効になっていない場合、この列は NULL になります。 |  
-|dop |**int** |**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降。<br /><br /> クエリの並列処理の次数。 |  
-|parallel_worker_count |**int** |**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降。<br /><br /> 並列クエリの場合は、予約済みの並列ワーカーの数。  |  
-|external_script_request_id |**uniqueidentifier** |**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降。<br /><br /> 現在の要求に関連付けられている外部スクリプト要求 ID。 |  
-|is_resumable |**bit** |**適用対象**: [!INCLUDE[sssqlv14-md](../../includes/sssqlv14-md.md)] 以降。<br /><br /> 要求が再開可能なインデックス操作であるかどうかを示します。 |  
-|page_resource |**binary (8)** |**適用対象**: [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)]<br /><br /> `wait_resource`列にページが含まれている場合は、ページリソースの8バイトの16進数表現。 詳細については、「 [sys. fn_PageResCracker](../../relational-databases/system-functions/sys-fn-pagerescracker-transact-sql.md)」を参照してください。 |  
+|statement_context_id|**bigint**|**適用対象**: [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以降。<br /><br /> Sys.query_context_settings するオプションの外部キー。<br /><br />データベースに対してクエリストアが有効になっていない場合、この列は NULL になります。 |  
+|dop |**int** |**適用対象**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降。<br /><br /> クエリの並列処理の次数。 |  
+|parallel_worker_count |**int** |**適用対象**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降。<br /><br /> 並列クエリの場合は、予約済みの並列ワーカーの数。  |  
+|external_script_request_id |**uniqueidentifier** |**適用対象**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降。<br /><br /> 現在の要求に関連付けられている外部スクリプト要求 ID。 |  
+|is_resumable |**bit** |**適用対象**: [!INCLUDE[sssql17-md](../../includes/sssql17-md.md)] 以降。<br /><br /> 要求が再開可能なインデックス操作であるかどうかを示します。 |  
+|page_resource |**binary (8)** |**適用対象**: [!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)]<br /><br /> `wait_resource`列にページが含まれている場合は、ページリソースの8バイトの16進数表現。 詳細については、「 [sys.fn_PageResCracker](../../relational-databases/system-functions/sys-fn-pagerescracker-transact-sql.md)」を参照してください。 |  
 |page_server_reads|**bigint**|**適用対象**: Azure SQL Database ハイパースケール<br /><br /> この要求によって実行されたページサーバーの読み取り回数。 NULL 値は許可されません。|  
 | &nbsp; | &nbsp; | &nbsp; |
 
@@ -107,7 +107,7 @@ ms.locfileid: "88489970"
 ## <a name="permissions"></a>アクセス許可
 ユーザーが `VIEW SERVER STATE` サーバーに対する権限を持っている場合、ユーザーにはのインスタンスで実行中のすべてのセッションが表示されます [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 。それ以外の場合、ユーザーには現在のセッションのみが表示されます。 `VIEW SERVER STATE` Azure SQL Database で許可することはできません `sys.dm_exec_requests` 。したがって、は常に現在の接続に限定されます。
 
-Always On シナリオでは、セカンダリレプリカが **読み取り目的のみ**に設定されている場合、セカンダリへの接続では、を追加することによって、接続文字列パラメーターでアプリケーションの目的を指定する必要があり `applicationintent=readonly` ます。 そうしないと、 `sys.dm_exec_requests` 権限が存在する場合でも、可用性グループ内のデータベースに対するのアクセス確認は成功しません `VIEW SERVER STATE` 。
+Always-On シナリオでは、セカンダリレプリカが **読み取り目的のみ** に設定されている場合、セカンダリへの接続では、接続文字列パラメーターでを追加することによってアプリケーションの目的を指定する必要があり `applicationintent=readonly` ます。 そうしないと、 `sys.dm_exec_requests` 権限が存在する場合でも、可用性グループ内のデータベースに対するのアクセス確認は成功しません `VIEW SERVER STATE` 。
 
   
 ## <a name="examples"></a>例  
@@ -130,14 +130,14 @@ GO
 
 ### <a name="b-finding-all-locks-that-a-running-batch-is-holding"></a>B. 実行中のバッチが保持しているすべてのロックを検索する
 
-次の例では、 **dm_exec_requests** を照会して、興味深いバッチを見つけて、出力からコピーします `transaction_id` 。
+次の例では、 **sys.dm_exec_requests** クエリを行い、興味のあるバッチを見つけて、 `transaction_id` 出力からコピーします。
 
 ```sql
 SELECT * FROM sys.dm_exec_requests;  
 GO
 ```
 
-次に、ロック情報を検索するには、 `transaction_id` システム関数 **sys. dm_tran_locks**と共にコピーされたを使用します。  
+次に、ロック情報を検索するには、 `transaction_id` システム関数 **sys.dm_tran_locks** でコピーしたを使用します。  
 
 ```sql
 SELECT * FROM sys.dm_tran_locks
@@ -148,7 +148,7 @@ GO
 
 ### <a name="c-finding-all-currently-blocked-requests"></a>C. 現在ブロックされているすべての要求を検索しています
 
-次の例では、 **sys. dm_exec_requests** を照会して、ブロックされた要求に関する情報を検索します。  
+次の例では、 **sys.dm_exec_requests** クエリを行って、ブロックされた要求に関する情報を検索します。  
 
 ```sql
 SELECT session_id ,status ,blocking_session_id  
@@ -187,14 +187,14 @@ FROM sys.dm_exec_requests AS req
 GO
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [動的管理ビューと動的管理関数](~/relational-databases/system-dynamic-management-views/system-dynamic-management-views.md)     
 [実行関連の動的管理ビューおよび関数](../../relational-databases/system-dynamic-management-views/execution-related-dynamic-management-views-and-functions-transact-sql.md)      
-[dm_os_memory_clerks](../../relational-databases/system-dynamic-management-views/sys-dm-os-memory-clerks-transact-sql.md)     
-[dm_os_sys_info](../../relational-databases/system-dynamic-management-views/sys-dm-os-sys-info-transact-sql.md)     
-[dm_exec_query_memory_grants](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-memory-grants-transact-sql.md)    
-[dm_exec_query_plan](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-transact-sql.md)    
-[dm_exec_sql_text](../../relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql.md)      
+[sys.dm_os_memory_clerks](../../relational-databases/system-dynamic-management-views/sys-dm-os-memory-clerks-transact-sql.md)     
+[sys.dm_os_sys_info](../../relational-databases/system-dynamic-management-views/sys-dm-os-sys-info-transact-sql.md)     
+[sys.dm_exec_query_memory_grants](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-memory-grants-transact-sql.md)    
+[sys.dm_exec_query_plan](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-plan-transact-sql.md)    
+[sys.dm_exec_sql_text](../../relational-databases/system-dynamic-management-views/sys-dm-exec-sql-text-transact-sql.md)      
 [SQL Server、SQL Statistics オブジェクト](../../relational-databases/performance-monitor/sql-server-sql-statistics-object.md)     
 [クエリ処理アーキテクチャ ガイド](../../relational-databases/query-processing-architecture-guide.md#DOP)       
 [スレッドおよびタスクのアーキテクチャ ガイド](../../relational-databases/thread-and-task-architecture-guide.md)    

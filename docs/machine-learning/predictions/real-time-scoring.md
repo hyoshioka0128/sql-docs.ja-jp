@@ -8,13 +8,13 @@ ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: e6809a66ce7f5fd425ce9bfeb2b1fea919c4dfaa
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 19f9f1c6cfc293bfba0d44e34e0a30bf386bdb3d
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956933"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470963"
 ---
 # <a name="real-time-scoring-with-sp_rxpredict-in-sql-server"></a>SQL Server での sp_rxPredict を使用したリアルタイム スコアリング
 [!INCLUDE[sqlserver2016](../../includes/applies-to-version/sqlserver2016.md)]
@@ -163,7 +163,7 @@ ms.locfileid: "91956933"
 
 ## <a name="example"></a>例
 
-このセクションでは、**リアルタイム**予測のモデルを準備し保存するために必要な手順について説明し、R で T-SQL から関数を呼び出す方法の例を示します。
+このセクションでは、**リアルタイム** 予測のモデルを準備し保存するために必要な手順について説明し、R で T-SQL から関数を呼び出す方法の例を示します。
 
 ### <a name="step-1-prepare-and-save-the-model"></a>手順 1. モデルを構築して保存する
 

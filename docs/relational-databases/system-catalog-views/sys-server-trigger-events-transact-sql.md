@@ -1,13 +1,13 @@
 ---
 description: sys.server_trigger_events (Transact-SQL)
-title: server_trigger_events (Transact-sql) |Microsoft Docs
+title: sys.server_trigger_events (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.server_trigger_events_TSQL
 - server_trigger_events_TSQL
@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.server_trigger_events catalog view
 ms.assetid: be7d8a59-3c00-4f1b-b4b0-3dcd5572e002
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: f379520d948e2b384cd43eac734fed9470c623c6
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: b18217ea444862555c10f4954dab004e0b7a1b55
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542462"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99198547"
 ---
 # <a name="sysserver_trigger_events-transact-sql"></a>sys.server_trigger_events (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "89542462"
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
-|**継承された列**||[Server_events](../../relational-databases/system-catalog-views/sys-server-events-transact-sql.md)からすべての列を継承します。|  
+|**継承された列**||[Sys.server_events](../../relational-databases/system-catalog-views/sys-server-events-transact-sql.md)からすべての列を継承します。|  
 |**is_first**|**bit**|トリガーは、このイベントに対して最初に起動するようにマークされています。|  
 |**is_last**|**bit**|トリガーは、このイベントに対して最後に起動されるようにマークされています。|  
   

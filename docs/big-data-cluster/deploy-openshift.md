@@ -9,12 +9,12 @@ ms.date: 06/22/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: aa838fc8920469921063ebdface6680e3bc5a3bf
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+ms.openlocfilehash: 5bcff7203d3bf9e224d6557c4c2af6a47fb0af12
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91892492"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100047282"
 ---
 # <a name="deploy-big-data-clusters-2019-on-openshift-on-premises-and-azure-red-hat-openshift"></a>オンプレミスの OpenShift および Azure Red Hat OpenShift に [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]をデプロイする
 
@@ -37,7 +37,7 @@ SQL Server 2019 CU5 では、OpenShift での SQL Server ビッグ データ ク
 > [!IMPORTANT]
 > 以下の前提条件は、これらのクラスター レベル オブジェクトを作成するための十分なアクセス許可を持つ OpenShift クラスター管理者 (クラスター管理者クラスター ロール) によって実行される必要があります。 OpenShift でのクラスター ロールの詳細については、「[Using RBAC to define and apply permissions](https://docs.openshift.com/container-platform/4.4/authentication/using-rbac.html)」 (アクセス許可を定義して適用するための RBAC の使用) を参照してください。
 
-1. OpenShift の `pidsLimit` 設定が、SQL Server のワークロードに対応するように更新されていることを確認します。 OpenShift の既定値は、ワークロードのような運用環境には低すぎます。 `4096` 以上の値を指定することをお勧めしますが、最適な値は SQL Server での "`max worker threads`" の設定と、OpenShift ホスト ノード上の CPU プロセッサの数によって決まります。 
+1. OpenShift の `pidsLimit` 設定が、SQL Server のワークロードに対応するように更新されていることを確認します。 OpenShift の既定値は、ワークロードのような運用環境には低すぎます。 少なくとも `4096` で開始しますが、最適な値は SQL Server での `max worker threads` の設定と、OpenShift ホスト ノード上の CPU プロセッサの数によって決まります。 
     - OpenShift クラスターに対する `pidsLimit` を更新する方法については、[こちらの手順]( https://github.com/openshift/machine-config-operator/blob/master/docs/ContainerRuntimeConfigDesign.md)を参照してください。 `4.3.5` より前のバージョンの OpenShift には欠陥があり、更新した値が反映されないことに注意してください。 必ず、OpenShift を最新バージョンにアップグレードしてください。 
     - 環境および予定されている SQL Server ワークロードに応じた最適な値を計算するには、次の推定と例を使用できます。
 
@@ -49,7 +49,13 @@ SQL Server 2019 CU5 では、OpenShift での SQL Server ビッグ データ ク
     > [!NOTE]
     > 他のプロセス (例: バックアップ、CLR、フルテキスト、SQLAgent) によってもオーバーヘッドが加わるので、推定値にバッファーを追加します。
 
-2. アタッチされた [`bdc-scc.yaml`](#bdc-sccyaml-file) を使用して、カスタム セキュリティ コンテキスト制約 (SCC) を作成します。
+1. カスタム セキュリティ コンテキスト制約 (SCC) [`bdc-scc.yaml`](#bdc-sccyaml-file) をダウンロードします。
+
+    ```console
+    curl https://raw.githubusercontent.com/microsoft/sql-server-samples/master/samples/features/sql-big-data-cluster/deployment/openshift/bdc-scc.yaml -o bdc-scc.yaml
+    ```
+
+1. SCC をクラスターに適用します。
 
     ```console
     oc apply -f bdc-scc.yaml
@@ -104,7 +110,7 @@ SQL Server 2019 CU5 では、OpenShift での SQL Server ビッグ データ ク
    azdata bdc config init --source openshift-dev-test --target custom-openshift
    ```
 
-   ARO へのデプロイの場合は、`aro-` プロファイルのいずれかを使用することをお勧めします。それの `serviceType` と `storageClass` には、この環境に適した既定値が設定されています。 次に例を示します。
+   ARO へのデプロイの場合は、`aro-` プロファイルのいずれかを使用して開始します。それには、この環境に適した `serviceType` と `storageClass` の既定値が含まれます。 次に例を示します。
 
    ```console
    azdata bdc config init --source aro-dev-test --target custom-openshift
@@ -129,19 +135,19 @@ SQL Server 2019 CU5 では、OpenShift での SQL Server ビッグ データ ク
 
 1. デプロイが正常に完了したら、ログインして外部のクラスター エンドポイントの一覧を表示することができます。
 
-```console
-   azdata login -n mssql-cluster
-   azdata bdc endpoint list
-```
+   ```console
+      azdata login -n mssql-cluster
+      azdata bdc endpoint list
+   ```
 
 ## <a name="openshift-specific-settings-in-the-deployment-configuration-files"></a>デプロイ構成ファイルでの OpenShift 固有の設定
 
 SQL Server 2019 CU5 では、ポッドとノードのメトリックのコレクションを制御する 2 つの機能スイッチが導入されました。 これらのパラメーターは、OpenShift 用の組み込みプロファイルでは既定で `false` に設定されています。これは、監視コンテナーでは[特権付きセキュリティ コンテキスト](https://www.openshift.com/blog/managing-sccs-in-openshift)が必要であるためです。これにより、BDC がデプロイされる名前空間に対するセキュリティ制約の一部が緩和されます。
 
 ```json
-    "security": {
-      "allowNodeMetricsCollection": false,
-      "allowPodMetricsCollection": false
+    "security": {
+      "allowNodeMetricsCollection": false,
+      "allowPodMetricsCollection": false
 }
 ```
 
@@ -164,47 +170,9 @@ ARO での既定のストレージ クラスの名前は managed-premium です 
 
 ## <a name="bdc-sccyaml-file"></a>`bdc-scc.yaml` ファイル
 
-```yaml
-apiVersion: security.openshift.io/v1
-kind: SecurityContextConstraints
-metadata:
-  annotations:
-    kubernetes.io/description: SQL Server BDC custom scc is based on 'nonroot' scc plus additional capabilities.
-  generation: 2
-  name: bdc-scc
-allowHostDirVolumePlugin: false
-allowHostIPC: false
-allowHostNetwork: false
-allowHostPID: false
-allowHostPorts: false
-allowPrivilegeEscalation: true
-allowPrivilegedContainer: false
-allowedCapabilities:
-  - SETUID
-  - SETGID
-  - CHOWN
-  - SYS_PTRACE
-defaultAddCapabilities: null
-fsGroup:
-  type: RunAsAny
-readOnlyRootFilesystem: false
-requiredDropCapabilities:
-  - KILL
-  - MKNOD
-runAsUser:
-  type: MustRunAsNonRoot
-seLinuxContext:
-  type: MustRunAs
-supplementalGroups:
-  type: RunAsAny
-volumes:
-  - configMap
-  - downwardAPI
-  - emptyDir
-  - persistentVolumeClaim
-  - projected
-  - secret
-```
+このデプロイの SCC ファイルは次のとおりです。
+
+:::code language="yaml" source="../../sql-server-samples/samples/features/sql-big-data-cluster/deployment/openshift/bdc-scc.yaml":::
 
 ## <a name="next-steps"></a>次のステップ
 

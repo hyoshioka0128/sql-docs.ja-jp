@@ -9,12 +9,12 @@ ms.custom: ''
 ms.technology: integration-services
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 03be806b29fa46c04b38bab822c848f96a0c516d
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: ba99a313c4d446bdb07030355d7efce0f2d8e862
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88477217"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100336316"
 ---
 # <a name="run-an-ssis-package-with-c-code-in-a-net-app"></a>.NET アプリで C# コードを使用して SSIS パッケージを実行する
 

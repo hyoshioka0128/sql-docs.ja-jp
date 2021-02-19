@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - FilterGroupEnum
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: b22e725e-84bd-4286-a070-290c278c3783
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 1d9fdf420ee3b550bebfe394bf6722623307384a
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 27b8b217287f3c623fc626de1cb46dcc2eed5394
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88972993"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100024598"
 ---
 # <a name="filtergroupenum"></a>FilterGroupEnum
 レコード [セット](./recordset-object-ado.md)からフィルター選択するレコードのグループを指定します。  

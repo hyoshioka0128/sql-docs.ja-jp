@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - ADOStreamConstruction
@@ -16,17 +16,17 @@ helpviewer_keywords:
 ms.assetid: 92f5a939-3e1a-4b14-a9dd-90e6ce2dec74
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: f6e32b076fa0faa43a3dff46aed66bcadaa2f1ae
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: a13cf110fe4b7bd13ad5ce69da23794f5e6d76f9
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88976163"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100035642"
 ---
 # <a name="adostreamconstruction-interface"></a>ADOStreamConstruction インターフェイス
-**ADOStreamConstruction**インターフェイスは、C/c + + アプリケーションの OLE DB **ISTREAM**オブジェクトから ADO**ストリーム**オブジェクトを構築するために使用されます。  
+**ADOStreamConstruction** インターフェイスは、C/c + + アプリケーションの OLE DB **ISTREAM** オブジェクトから ADO **ストリーム** オブジェクトを構築するために使用されます。  
   
-## <a name="properties"></a>プロパティ  
+## <a name="properties"></a>Properties  
   
 |プロパティ|説明|  
 |-|-|  
@@ -48,7 +48,7 @@ ms.locfileid: "88976163"
     adoStr.CreateInstance(__uuidof(Stream));  
     ```  
   
-2.  **ストリーム**オブジェクトの**IADOStreamConstruction**インターフェイスに対してクエリを実行します。  
+2.  **ストリーム** オブジェクトの **IADOStreamConstruction** インターフェイスに対してクエリを実行します。  
   
     ```  
     adoStreamConstructionPtr adoStrConstruct=NULL;  
@@ -56,7 +56,7 @@ ms.locfileid: "88976163"
                          (void**)&adoStrConstruct);  
     ```  
   
- `IADOStreamConstruction::get_Stream`プロパティメソッドを呼び出して、ADO **Stream**オブジェクトの OLE DB **IStream**オブジェクトを設定します。  
+ `IADOStreamConstruction::get_Stream`プロパティメソッドを呼び出して、ADO **Stream** オブジェクトの OLE DB **IStream** オブジェクトを設定します。  
   
 ```  
 IUnknown *pUnk=NULL;  
@@ -64,7 +64,7 @@ pRowset->QueryInterface(IID_IUnknown, (void**)&pUnk);
 adoStrConstruct->put_Stream(pUnk);  
 ```  
   
- 結果の `adoStr` オブジェクトは、OLE DB **IStream**オブジェクトから構築された ADO**ストリーム**オブジェクトを表します。  
+ 結果の `adoStr` オブジェクトは、OLE DB **IStream** オブジェクトから構築された ADO **ストリーム** オブジェクトを表します。  
   
 ## <a name="requirements"></a>必要条件  
  **バージョン:** ADO 2.0 以降のバージョン  

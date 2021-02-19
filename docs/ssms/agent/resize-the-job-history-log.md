@@ -18,13 +18,13 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 01/19/2017
-monikerRange: = azuresqldb-mi-current || >= sql-server-2016 || = sqlallproducts-allversions
-ms.openlocfilehash: 122f94d8eab17caf22d532c1dd81fec31c334205
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+monikerRange: = azuresqldb-mi-current || >= sql-server-2016
+ms.openlocfilehash: 8eb8f92d5420f55da487f9ba7f96a9a7b7a7547c
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92037835"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97472283"
 ---
 # <a name="resize-the-job-history-log"></a>Resize the Job History Log
 
@@ -65,7 +65,7 @@ ms.locfileid: "92037835"
 
 **時間に基づいてジョブ履歴ログのサイズを変更するには:**
 
-1. **オブジェクト エクスプローラー**で、 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion_md.md)]のインスタンスに接続し、そのインスタンスを展開します。  
+1. **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion_md.md)]のインスタンスに接続し、そのインスタンスを展開します。  
 
 2. **[SQL Server エージェント]** を右クリックし、 **[プロパティ]** を選択します。
 

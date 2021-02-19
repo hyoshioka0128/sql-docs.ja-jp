@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - servers_TSQL
 - sys.servers_TSQL
@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.servers catalog view
 ms.assetid: 4e774ed9-4e83-4726-9f1d-8efde8f9feff
-author: markingmyname
-ms.author: maghan
-monikerRange: =azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017
-ms.openlocfilehash: a3befa2740bd11fcd88233cef3000deec0d7006e
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017
+ms.openlocfilehash: a37a592866c8fcfdc12e5b84657bc7fa7166ee81
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91809328"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99237888"
 ---
 # <a name="sysservers-transact-sql"></a>sys. servers (Transact-sql)
 [!INCLUDE [SQL Server - ASDBMI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -38,14 +38,14 @@ ms.locfileid: "91809328"
 |**server_id**|**int**|リンクサーバーのローカル ID。|  
 |**name**|**sysname**|**Server_id** = 0 の場合、返される値はサーバー名です。<br /><br /> **Server_id** > 0 の場合、返される値はリンクサーバーのローカル名になります。|  
 |**product**|**sysname**|リンクサーバーの製品名。 値 "SQL Server" は、の別のインスタンスを示し [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。|  
-|**provider**|**sysname**|リンク サーバー接続用の OLE DB プロバイダー名です。<br /><br />以降では [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 、値 "SQLNCLI" は既定で [Microsoft OLE DB Driver for SQL SERVER (MSOLEDBSQL)](../../connect/oledb/oledb-driver-for-sql-server.md) にマップされます。 以前のバージョンでは、値 "SQLNCLI" は [SQL Server Native Client OLE DB プロバイダー (SQLNCLI11)](../../relational-databases/native-client/sql-server-native-client.md)にマップされていました。|  
+|**provider**|**sysname**|リンク サーバー接続用の OLE DB プロバイダー名です。<br /><br />以降では [!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] 、値 "SQLNCLI" は既定で [Microsoft OLE DB Driver for SQL SERVER (MSOLEDBSQL)](../../connect/oledb/oledb-driver-for-sql-server.md) にマップされます。 以前のバージョンでは、値 "SQLNCLI" は [SQL Server Native Client OLE DB プロバイダー (SQLNCLI11)](../../relational-databases/native-client/sql-server-native-client.md)にマップされていました。|  
 |**data_source**|**nvarchar (4000)**|データソース接続プロパティを OLE DB します。|  
 |**location**|**nvarchar (4000)**|OLE DB 場所接続プロパティです。 None の場合は NULL です。|  
 |**provider_string**|**nvarchar (4000)**|OLE DB プロバイダー文字列接続プロパティです。<br /><br /> は、呼び出し元がアクセス許可を持っていない限り NULL です `ALTER ANY LINKED SERVER` 。|  
 |**catalog**|**sysname**|カタログ接続プロパティを OLE DB します。 None の場合は NULL です。|  
 |**connect_timeout**|**int**|接続タイムアウト (秒単位)、0 (なしの場合)。|  
 |**query_timeout**|**int**|クエリタイムアウト (秒単位)。存在しない場合は0です。|  
-|**is_linked**|**bit**|0 = **sp_addserver**を使用して追加された古い形式のサーバーであり、RPC と分散トランザクションの動作が異なります。<br /><br /> 1 の場合、標準リンク サーバーです。|  
+|**is_linked**|**bit**|0 = **sp_addserver** を使用して追加された古い形式のサーバーであり、RPC と分散トランザクションの動作が異なります。<br /><br /> 1 の場合、標準リンク サーバーです。|  
 |**is_remote_login_enabled**|**bit**|RPC オプションは、このサーバーの受信リモートログインを有効にするように設定されています。|  
 |**is_rpc_out_enabled**|**bit**|(このサーバーからの) 発信 RPC が有効です。|  
 |**is_data_access_enabled**|**bit**|サーバーで分散クエリが有効になっています。|  
@@ -60,10 +60,10 @@ ms.locfileid: "91809328"
 |**is_nonsql_subscriber**|**bit**|サーバーは SQL Server 以外のレプリケーション サブスクライバーです。|  
 |**is_remote_proc_transaction_promotion_enabled**|**bit**|1の場合、リモートストアドプロシージャを呼び出すと分散トランザクションが開始され、トランザクションは MS DTC に参加します。 詳細については、「 [sp_serveroption &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-serveroption-transact-sql.md)からデータにアクセスする方法について説明します。|  
 |**modify_date**|**datetime**|サーバー情報が前回変更された日付です。|  
-|**is_rda_server**|**bit**|**適用対象:** 以降 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 。<br /><br />サーバーはリモートデータアーカイブの有効化 (stretch 対応) です。 詳細については、「 [Enable Stretch Database on the server](../../sql-server/stretch-database/enable-stretch-database-for-a-database.md#EnableTSQLServer)」を参照してください。|
+|**is_rda_server**|**bit**|**適用対象:** 以降 [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 。<br /><br />サーバーはリモートデータアーカイブの有効化 (stretch 対応) です。 詳細については、「 [Enable Stretch Database on the server](../../sql-server/stretch-database/enable-stretch-database-for-a-database.md#EnableTSQLServer)」を参照してください。|
   
 ## <a name="permissions"></a>アクセス許可  
- **Provider_string**の値は、呼び出し元が ALTER ANY LINKED SERVER 権限を持っていない限り、常に NULL になります。  
+ **Provider_string** の値は、呼び出し元が ALTER ANY LINKED SERVER 権限を持っていない限り、常に NULL になります。  
   
  ローカルサーバーを表示するためにアクセス許可は必要ありません (**server_id** = 0)。  
   
@@ -72,7 +72,7 @@ ms.locfileid: "91809328"
  既定のログインマッピングが削除された場合、リンクされたログインまたはリモートログインとして明示的に追加されたユーザーのみが、ログインがあるリンクサーバーまたはリモートサーバーを表示できます。  既定のログインマッピングの後、すべてのリンクサーバーとリモートサーバーを表示するには、次のアクセス許可が必要です。  
   
 - `ALTER ANY LINKED SERVER` または `ALTER ANY LOGIN ON SERVER`  
-- **Setupadmin**または**sysadmin**固定サーバーロールのメンバーシップ  
+- **Setupadmin** または **sysadmin** 固定サーバーロールのメンバーシップ  
   
 ## <a name="see-also"></a>参照  
  [カタログ ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)   

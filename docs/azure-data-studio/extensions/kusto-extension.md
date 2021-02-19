@@ -8,17 +8,17 @@ author: markingmyname
 ms.author: maghan
 ms.reviewer: jukoesma
 ms.custom: ''
-ms.date: 09/22/2020
-ms.openlocfilehash: c6e4dd8869c9f26adb34c5acb965241ff9a2198e
-ms.sourcegitcommit: 9774e2cb8c07d4f6027fa3a5bb2852e4396b3f68
+ms.date: 10/29/2020
+ms.openlocfilehash: 15b2dc331a1387039c79cbab164682f00981c591
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92098701"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100052033"
 ---
 # <a name="kusto-kql-extension-for-azure-data-studio-preview"></a>Azure Data Studio 用の Kusto (KQL) 拡張機能 (プレビュー)
 
-[Azure Data Studio](../what-is.md) 用の Kusto (KQL) 拡張機能を使用すると、[Azure Data Explorer](/azure/data-explorer/data-explorer-overview) クラスターに接続してクエリを実行できます。
+[Azure Data Studio](../what-is-azure-data-studio.md) 用の Kusto (KQL) 拡張機能を使用すると、[Azure Data Explorer](/azure/data-explorer/data-explorer-overview) クラスターに接続してクエリを実行できます。
 
 ユーザーは、KQL クエリを記述して実行したり、IntelliSense を備えた [Kusto カーネル](../notebooks/notebooks-kusto-kernel.md)を使ってたノートブックを作成したりできるようになりました。
 
@@ -55,7 +55,7 @@ Azure Data Studio に Kusto (KQL) 拡張機能をインストールするには�
 
 [Azure portal](https://ms.portal.azure.com/#home) で対象の Azure Data Explorer クラスターを検索し、そのクラスターの URI を見つけます。
 
-:::image type="content" source="media/kusto-extension/kusto-extension-adx-cluster-uri.png" alt-text="Kusto 拡張機能":::
+:::image type="content" source="media/kusto-extension/kusto-extension-adx-cluster-uri.png" alt-text="URI":::
 
 一方で、*help.kusto.windows.net* クラスターを使用してすぐに開始することができます。
 
@@ -82,7 +82,7 @@ Azure Data Studio に Kusto (KQL) 拡張機能をインストールするには�
     7. **[名前 (省略可能)]** は空白のままにします。
         1. このフィールドを使用すると、サーバーに別名を付けることができます。
 
-    :::image type="content" source="media/kusto-extension/kusto-extension-connection-details.png" alt-text="Kusto 拡張機能":::
+    :::image type="content" source="media/kusto-extension/kusto-extension-connection-details.png" alt-text="接続の詳細情報":::
 
 ## <a name="how-to-query-an-azure-data-explorer-database-in-azure-data-studio"></a>Azure Data Studio で Azure Data Explorer データベースに対してクエリを実行する方法
 
@@ -120,23 +120,21 @@ Kusto 拡張機能の設定を変更するには、次の手順に従います�
 
 拡張機能の設定は次のようになります。
 
-:::image type="content" source="media/kusto-extension/kusto-extension-settings.png" alt-text="Kusto 拡張機能":::
+:::image type="content" source="media/kusto-extension/kusto-extension-settings.png" alt-text="Kusto (KQL) 拡張機能の設定":::
 
 ## <a name="sanddance-visualization"></a>SandDance 視覚化
 
 Azure Data Studio で [SandDance 拡張機能](sanddance-extension.md)を Kusto (KQL) とともに使用すると、リッチな対話型の視覚化も実現できます。 KQL クエリの結果セットから **[ビジュアライザー]** ボタンを選択して [SandDance](https://sanddance.js.org/) を起動します。
 
-:::image type="content" source="media/kusto-extension/kusto-extension-sanddance-demo.gif" alt-text="Kusto 拡張機能":::
+:::image type="content" source="media/kusto-extension/kusto-extension-sanddance-demo.gif" alt-text="SandDance 視覚化":::
 
 ## <a name="known-issues"></a>既知の問題
 
 | 詳細 | 回避策 |
 |---------|------------|
-| [再読み込みが動作しない場合の Kusto 接続ビューレット](https://github.com/microsoft/azuredatastudio/issues/12475)。 | 該当なし |
-| [自動的に再接続できません](https://github.com/microsoft/azuredatastudio/issues/11830)。 | Azure Data Explorer クラスターを切断し、再接続します。 |
-| [Kusto クラスターの更新は、正しく再接続されていないようです](https://github.com/microsoft/azuredatastudio/issues/11824)。 | Azure Data Explorer クラスターを切断し、再接続します。 |
-| [クラスターに接続するには、データベースではなくクラスター ダッシュボードを起動する必要があります](https://github.com/microsoft/azuredatastudio/issues/12549) | 該当なし |
-| Azure Data クラスター データベース内の各テーブルには、**10 を受け取る**ではなく、**上位 1000 を選択する**オプションしかありません。 | 該当なし |
+| [Kusto ノートブックにおいて、保存された別名接続でデータベース接続を変更すると、コード セルの実行時エラー後にスタックする](https://github.com/microsoft/azuredatastudio/issues/12384) | ノートブックを閉じて再度開き、そのデータベースを含む適切なクラスターに接続します |
+| [Kusto ノートブックにおいて、未保存の別名接続でのデータベース接続の変更が機能しない](https://github.com/microsoft/azuredatastudio/issues/12843) |接続ビューレットから新しい接続を作成し、それを別名で保存します。 次に、新しいノートブックを作成し、新しく保存した接続に接続します | 
+| [Kusto ノートブックにおいて、新しい ADX 接続を作成するときにデータベースのドロップダウンが設定されない](https://github.com/microsoft/azuredatastudio/issues/12666) | 接続ビューレットから新しい接続を作成し、それを別名で保存します。 次に、新しいノートブックを作成し、新しく保存した接続に接続します |
 
 製品チームにフィードバックを提供するために、[機能の要求](https://github.com/microsoft/azuredatastudio/issues/new?assignees=&labels=&template=feature_request.md&title=)を提出できます。  
 製品チームにフィードバックを提供するために、[バグ](https://github.com/microsoft/azuredatastudio/issues/new?assignees=&labels=&template=bug_report.md&title=)を提出できます。

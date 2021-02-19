@@ -2,7 +2,7 @@
 title: コンカレンシー制御について
 description: SQL Server 用 JDBC Driver でマルチユーザー アプリケーションを開発するときのコンカレンシー制御とデータベース整合性の維持方法について説明します。
 ms.custom: ''
-ms.date: 08/12/2019
+ms.date: 12/08/2020
 ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 98b7dabe-9b12-4e1d-adeb-e5b5cb0c96f3
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 9350c62c29acce5e56d60cfcd1fa854a7e2414cd
-ms.sourcegitcommit: 129f8574eba201eb6ade1f1620c6b80dfe63b331
+ms.openlocfilehash: c44f52697fa8048a8c7db2286c3e69114f658152
+ms.sourcegitcommit: 7f76975c29d948a9a3b51abce564b9c73d05dcf0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87435304"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96900945"
 ---
 # <a name="understanding-concurrency-control"></a>コンカレンシー制御について
 [!INCLUDE[Driver_JDBC_Download](../../includes/driver_jdbc_download.md)]
@@ -24,7 +24,7 @@ ms.locfileid: "87435304"
   コンカレンシー制御とは、複数のユーザーが同時に行を更新しているときにデータベースの整合性を維持するために使用される、さまざまな手法を表します。 不適切なコンカレンシーは、ダーティ リード、ファントム読み取り、反復不能読み取りなどの問題につながります。 [!INCLUDE[jdbcNoVersion](../../includes/jdbcnoversion_md.md)] は、これらの問題を解決するために [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によって使用されるすべてのコンカレンシー手法へのインターフェイスを提供します。  
   
 > [!NOTE]  
->  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のコンカレンシーの詳細については、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] オンライン ブックの「コンカレント データ アクセスの管理」を参照してください。  
+>  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のコンカレンシーの詳細については、「[同時実行データ アクセスの管理](../../relational-databases/sql-server-transaction-locking-and-row-versioning-guide.md#managing-concurrent-data-access)」を参照してください。  
   
 ## <a name="remarks"></a>解説  
  JDBC ドライバーは、以下に示すコンカレンシーの種類をサポートしています。  

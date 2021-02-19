@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.system_parameters
 - sys.system_parameters_TSQL
@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.system_parameters catalog view
 ms.assetid: 0d135c5f-68b5-4009-a0da-35e6abfee0ff
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 59d3c5a9a59e668b7a2a4cfdf5761775c58a731d
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 7faa5cae17bb738b3ef7b02df8633a8c8f53cef7
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89537340"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99182455"
 ---
 # <a name="syssystem_parameters-transact-sql"></a>sys.system_parameters (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -40,14 +40,14 @@ ms.locfileid: "89537340"
 |**parameter_id**|**int**|パラメーターの ID。 は、オブジェクト内で一意です。 オブジェクトがスカラー関数の場合、 **parameter_id** = 0 は戻り値を表します。|  
 |**system_type_id**|**tinyint**|パラメーターのシステム型の ID。|  
 |**user_type_id**|**int**|ユーザーによって定義されたパラメーターの型の ID。<br /><br /> 型の名前を返すには、この列の [型](../../relational-databases/system-catalog-views/sys-types-transact-sql.md) のカタログビューに結合します。|  
-|**max_length**|**smallint**|パラメーターの最大長 (バイト単位)。 列のデータ型が **varchar (max)**、 **nvarchar (max)**、 **varbinary (max)**、または **xml**の場合、の値は-1 になります。|  
+|**max_length**|**smallint**|パラメーターの最大長 (バイト単位)。 列のデータ型が **varchar (max)**、 **nvarchar (max)**、 **varbinary (max)**、または **xml** の場合、の値は-1 になります。|  
 |**有効桁数 (precision)**|**tinyint**|数値ベースの場合のパラメーターの有効桁数。それ以外の場合は0です。|  
 |**scale**|**tinyint**|数値ベースの場合はパラメーターの小数点以下桁数。それ以外の場合は0です。|  
 |**is_output**|**bit**|1 = パラメーターは output (または return) です。それ以外の場合は0です。|  
 |**is_cursor_ref**|**bit**|1 = パラメーターはカーソル参照パラメーターです。|  
-|**has_default_value**|**bit**|1 = パラメーターには既定値があります。<br /><br /> [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は、このカタログビュー内の CLR オブジェクトの既定値のみを保持します。したがって、オブジェクトの場合、この列の値は常に0になり [!INCLUDE[tsql](../../includes/tsql-md.md)] ます。 オブジェクトのパラメーターの既定値を表示するに [!INCLUDE[tsql](../../includes/tsql-md.md)] は、 [sql_modules](../../relational-databases/system-catalog-views/sys-sql-modules-transact-sql.md)カタログビューの**定義**列に対してクエリを実行するか、 [OBJECT_DEFINITION](../../t-sql/functions/object-definition-transact-sql.md)システム関数を使用します。|  
-|**is_xml_document**|**bit**|1 = コンテンツは完全な XML ドキュメントです。<br /><br /> 0 = コンテンツがドキュメントフラグメントであるか、列のデータ型が **xml**ではありません。|  
-|**default_value**|**sql_variant**|**Has_default_value**が1の場合、この列の値はパラメーターの既定値になります。それ以外の場合は NULL。|  
+|**has_default_value**|**bit**|1 = パラメーターには既定値があります。<br /><br /> [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は、このカタログビュー内の CLR オブジェクトの既定値のみを保持します。したがって、オブジェクトの場合、この列の値は常に0になり [!INCLUDE[tsql](../../includes/tsql-md.md)] ます。 オブジェクトのパラメーターの既定値を表示するに [!INCLUDE[tsql](../../includes/tsql-md.md)] は、 [sys.sql_modules](../../relational-databases/system-catalog-views/sys-sql-modules-transact-sql.md)カタログビューの **定義** 列に対してクエリを実行するか、 [OBJECT_DEFINITION](../../t-sql/functions/object-definition-transact-sql.md)システム関数を使用します。|  
+|**is_xml_document**|**bit**|1 = コンテンツは完全な XML ドキュメントです。<br /><br /> 0 = コンテンツがドキュメントフラグメントであるか、列のデータ型が **xml** ではありません。|  
+|**default_value**|**sql_variant**|**Has_default_value** が1の場合、この列の値はパラメーターの既定値になります。それ以外の場合は NULL。|  
 |**xml_collection_id**|**int**|パラメーターのデータ型が **xml** で xml が型指定されている場合は0以外の値。 値は、パラメーターの検証 XML スキーマ名前空間を含むコレクションの ID です。<br /><br /> 0 = XML スキーマコレクションがありません。|  
   
 ## <a name="permissions"></a>アクセス許可  
@@ -58,6 +58,6 @@ ms.locfileid: "89537340"
  [カタログ ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)   
  [SQL Server システムカタログに対するクエリについてよく寄せられる質問](../../relational-databases/system-catalog-views/querying-the-sql-server-system-catalog-faq.md)   
  [Transact-sql&#41;&#40;のパラメーター ](../../relational-databases/system-catalog-views/sys-parameters-transact-sql.md)   
- [all_parameters &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-all-parameters-transact-sql.md)  
+ [sys.all_parameters &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-all-parameters-transact-sql.md)  
   
   

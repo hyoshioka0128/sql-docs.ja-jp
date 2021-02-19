@@ -6,18 +6,18 @@ ms.date: 04/04/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: supportability
-ms.topic: language-reference
+ms.topic: reference
 helpviewer_keywords:
 - 21879 (Database Engine error)
 ms.assetid: fcfab735-05ca-423a-89f1-fdee7e2ed8c0
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: d543c3bd25fb8a4eec99c4c5cd3e1b11fbae5a90
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 68ae3fd91948c5c90e8e17bde3ca57193553977f
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88332478"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99196385"
 ---
 # <a name="mssqlserver_21879"></a>MSSQLSERVER_21879
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -44,7 +44,7 @@ ms.locfileid: "88332478"
   
     -   **sp_validate_redirected_publisher** がユーザーによって明示的に呼び出された場合、接続にはユーザーが実行している Windows ログインが使用されます。  
   
-    -   **sp_validate_redirected_** publisher がレプリケーション エージェントによって **sp_get_redirected_publisher** から呼び出された場合、エージェントに関連付けられている Windows ログインが使用されます。  
+    -   **sp_validate_redirected_publisher** がレプリケーション エージェントによって **sp_get_redirected_publisher** から呼び出された場合、エージェントに関連付けられている Windows ログインが使用されます。  
   
 エラー 21879 は、リダイレクトされた対象のパブリッシャーで認識されないログインを使用して **sp_validate_redirected_publisher** が呼び出されたことを示している可能性があります。  
   

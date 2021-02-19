@@ -1,20 +1,22 @@
 ---
+title: SSMS を使用して SSIS プロジェクトを配置する
 description: SQL Server Management Studio (SSMS) を使用して SSIS プロジェクトを配置する
-title: SSMS で SSIS プロジェクトを配置する | Microsoft Docs
-ms.date: 05/21/2018
 ms.topic: quickstart
 ms.prod: sql
-ms.prod_service: integration-services
-ms.custom: ''
 ms.technology: integration-services
+f1_keywords:
+- sql13.swb.deploymentwizard.deploymentsettings.f1
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 47cce068cada1a40ec3fda76013ec428ef5d7e11
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.reviewer: ''
+ms.custom: ''
+ms.date: 05/21/2018
+ms.openlocfilehash: 3749daf45eb51cda3e37d2bd3d31105fcb23c1c2
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92195201"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100354219"
 ---
 # <a name="deploy-an-ssis-project-with-sql-server-management-studio-ssms"></a>SQL Server Management Studio (SSMS) を使用して SSIS プロジェクトを配置する
 

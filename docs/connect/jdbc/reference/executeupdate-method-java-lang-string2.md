@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
 ms.technology: connectivity
-ms.topic: conceptual
+ms.topic: reference
 apiname:
 - SQLServerPreparedStatement.executeUpdate (java.lang.String)
 apilocation:
@@ -16,12 +16,12 @@ apitype: Assembly
 ms.assetid: 91ecb1cd-001d-4ac9-9ae8-5db05c3c2959
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: fcfb5f6bf2c8697b4463b6726b844bd883e05c19
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 39ef10b030e96ca7d419977c56e9ca6388fb8e0c
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88437614"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100038562"
 ---
 # <a name="executeupdate-method-javalangstring"></a>executeUpdate (java.lang.String) メソッド
 
@@ -36,7 +36,7 @@ public final int executeUpdate(java.lang.String sql)
 #### <a name="parameters"></a>パラメーター
 *sql*
 
-SQL ステートメントを含む**文字列**です。
+SQL ステートメントを含む **文字列** です。
 
 ## <a name="return-value"></a>戻り値
 影響を受けた行数を示す **int** です。DDL ステートメントを使用している場合は 0 です。

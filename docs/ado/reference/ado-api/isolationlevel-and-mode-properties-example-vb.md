@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 3382fd41-0aa1-4091-97d3-624403111e07
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 4fe64eda02cf769ba12b5cafb86df6f3514da7de
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 942d96e4547654eb08d0a21b2c886bae77d046ed
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88990783"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100020582"
 ---
 # <a name="isolationlevel-and-mode-properties-example-vb"></a>IsolationLevel と Mode プロパティの例 (VB)
 この例では、 [Mode](./mode-property-ado.md) プロパティを使用して排他接続を開き、 [IsolationLevel](./isolationlevel-property.md) プロパティを使用して、他のトランザクションと分離して実行されるトランザクションを開きます。  

@@ -5,20 +5,20 @@ ms.custom: seo-lt-2019
 ms.date: 05/17/2016
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 helpviewer_keywords:
 - Availability Groups [SQL Server], about
 - Availability Groups [SQL Server], Transact-SQL statements
 ms.assetid: 184d0a81-2259-4db9-9d0d-01aac0b502c8
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: b61b7a4bd994283bbed79d3e41a3b1c94052d015
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: acbc954f076359f4a0a4517f459876fe3c9ff549
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85900726"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100342367"
 ---
 # <a name="transact-sql-statements-for-always-on-availability-groups"></a>Always On 可用性グループの Transact-SQL ステートメント
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]

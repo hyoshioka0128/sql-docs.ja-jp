@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sp_helpsort_TSQL
 - sp_helpsort
@@ -18,13 +18,13 @@ helpviewer_keywords:
 ms.assetid: 2a88d079-3755-43cb-8a54-97d0114149e6
 author: markingmyname
 ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: a55c2206d8a065f0e34c68ae06f0a1bd6baee462
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: ad9597ce9219ebe927a4cab233a6bcb462767ccd
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89538738"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99189548"
 ---
 # <a name="sp_helpsort-transact-sql"></a>sp_helpsort (Transact-sql)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -46,7 +46,7 @@ sp_helpsort
 ## <a name="result-sets"></a>結果セット  
  サーバーの既定の照合順序を返します。  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  のインスタンスが、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 以前ののインストールと互換性があるように指定された照合順序でインストールされている場合 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 、 **sp_helpsort** は空白の結果を返します。 この動作が発生した場合、`SELECT SERVERPROPERTY ('Collation');` のように、SERVERPROPERTY オブジェクトに対してクエリを実行して、照合順序を決定できます。  
   
 ## <a name="permissions"></a>アクセス許可  

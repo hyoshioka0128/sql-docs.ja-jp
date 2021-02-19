@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: 9dbe5a21-9335-4f8b-85fd-9da83df79946
 author: markingmyname
 ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: a433fbfe50e2a673ab29595729f7c8b83f9444ae
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 4b57082f1ce4f76e191c0237e80f404199a9ac4a
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89538217"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97462643"
 ---
 # <a name="changing-the-schema-of-a-system-versioned-temporal-table"></a>システム バージョン管理されたテンポラル テーブルのスキーマを変更する
 
@@ -58,7 +58,7 @@ ALTER TABLE dbo.Department
 
 ### <a name="important-remarks"></a>重要な解説
 
-- テンポラル テーブルのスキーマを変更するには、現在のテーブルおよび履歴テーブルの**CONTROL** 権限が必要です。
+- テンポラル テーブルのスキーマを変更するには、現在のテーブルおよび履歴テーブルの **CONTROL** 権限が必要です。
 - **ALTER TABLE** 操作中は、システムが両方のテーブルのスキーマ ロックを保持します。
 - 指定したスキーマ変更は、適切に (変更の種類に応じて) 履歴テーブルに反映されます。
 - NULL 値を許容しない列を追加する、または既存の列を NULL 値を許容しない列に変更する場合、既存の行に既定値を指定する必要があります。 システムは同じ値で追加の既定値を生成し、その既定値を履歴テーブルに適用します。 **DEFAULT** を空でないテーブルに追加すると、(メタデータの操作がある) [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Enterprise Edition 以外のすべてのエディション上でのデータ操作のサイズは 1 つになります。
@@ -67,13 +67,13 @@ ALTER TABLE dbo.Department
 - 新しい NOT NULL の列でテーブルを拡張すると、テーブルのすべての列がシステムから自動的に生成されるため、履歴テーブルの既定の制約が削除されることを考慮してください。
 - システムでバージョン管理されたテンポラル テーブルの場合、ONLINE オプション (**WITH (ONLINE = ON**) は **ALTER TABLE ALTER COLUMN** に影響を与えません。 ONLINE オプションに指定された値に関係なく、ALTER 列はオンラインとしては実行されません。
 - **ALTER COLUMN** を使用して、期間の列の **IsHidden** プロパティを変更できます。
-- 次のスキーマ変更の **ALTER** を直接使用することはできません。 これらの種類の変更には、 **SYSTEM_VERSIONING = OFF**を設定します。
+- 次のスキーマ変更の **ALTER** を直接使用することはできません。 これらの種類の変更には、 **SYSTEM_VERSIONING = OFF** を設定します。
 
   - 計算列を追加する
   - **IDENTITY** 列を追加する
-  - 履歴テーブルが **DATA_COMPRESSION = PAGE** または **DATA_COMPRESSION = ROW**(履歴テーブルの既定値) に設定されている場合に、 **SPARSE** 列を追加する、または既存の列を **SPARSE**に変更する
-  - **COLUMN_SET**を追加する
-  - **ROWGUIDCOL** 列を追加する、または既存の列を **ROWGUIDCOL**に変更する
+  - 履歴テーブルが **DATA_COMPRESSION = PAGE** または **DATA_COMPRESSION = ROW**(履歴テーブルの既定値) に設定されている場合に、 **SPARSE** 列を追加する、または既存の列を **SPARSE** に変更する
+  - **COLUMN_SET** を追加する
+  - **ROWGUIDCOL** 列を追加する、または既存の列を **ROWGUIDCOL** に変更する
 
 **SYSTEM_VERSIONING = OFF** の設定が継続して必要な場合に ( **IDENTITY** 列を追加して)、スキーマを変更する例を次に示します。 この例では、データの整合性チェックを無効にしています。 同時実行データの変更が発生しないときに、トランザクション内でスキーマ変更が行われる場合、このチェックは必要ありません。
 

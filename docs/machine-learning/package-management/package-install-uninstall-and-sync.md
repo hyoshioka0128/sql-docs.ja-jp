@@ -7,14 +7,13 @@ ms.date: 06/13/2019
 ms.topic: how-to
 author: garyericson
 ms.author: garye
-ms.reviewer: davidph
-monikerRange: =sql-server-2017||=sqlallproducts-allversions
-ms.openlocfilehash: c09f79fafca4c16048817f3ee2524f214cb13d49
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+monikerRange: =sql-server-2017
+ms.openlocfilehash: 72f10f291041f44c0598d40b21ca0bfe379a42d4
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956623"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100073894"
 ---
 # <a name="r-package-synchronization-for-sql-server"></a>SQL Server の R パッケージの同期
 [!INCLUDE [SQL Server 2017 only](../../includes/applies-to-version/sqlserver2017-only.md)]
@@ -66,9 +65,9 @@ SQL Server 2017 に含まれるバージョンの RevoScaleR には、パッケ�
 
 + 関数の呼び出し元は、パッケージ管理ロールの **rpkgs-shared** または **rpkgs-private** のメンバーである必要があります。
 
-+ **共有**とマークされたパッケージを同期するには、その関数を実行しているユーザーが **rpkgs-shared** ロールのメンバーシップを持っている必要があります。また、移動されるパッケージは共有スコープ ライブラリにインストールされている必要があります。
++ **共有** とマークされたパッケージを同期するには、その関数を実行しているユーザーが **rpkgs-shared** ロールのメンバーシップを持っている必要があります。また、移動されるパッケージは共有スコープ ライブラリにインストールされている必要があります。
 
-+ **プライベート**とマークされたパッケージを同期するには、パッケージの所有者または管理者が関数を実行する必要があります。また、パッケージはプライベートである必要があります。
++ **プライベート** とマークされたパッケージを同期するには、パッケージの所有者または管理者が関数を実行する必要があります。また、パッケージはプライベートである必要があります。
 
 + 他のユーザーの代わりにパッケージを同期するには、所有者が **db_owner** データベース ロールのメンバーである必要があります。
 
@@ -84,9 +83,9 @@ SQL Server 2017 に含まれるバージョンの RevoScaleR には、パッケ�
 
 3. スコープ引数を使用して、同期するパッケージを指定します。
 
-    **プライベート** スコープを使用する場合は、指定された所有者が所有するパッケージのみが同期されます。 **共有**スコープを指定した場合、データベース内のすべての非プライベート パッケージが同期されます。 
+    **プライベート** スコープを使用する場合は、指定された所有者が所有するパッケージのみが同期されます。 **共有** スコープを指定した場合、データベース内のすべての非プライベート パッケージが同期されます。 
     
-    **プライベート**または**共有**スコープのいずれも指定せずに関数を実行すると、すべてのパッケージが同期されます。
+    **プライベート** または **共有** スコープのいずれも指定せずに関数を実行すると、すべてのパッケージが同期されます。
 
 4. コマンドが正常に実行された場合は、指定されたスコープと所有者を使用して、ファイル システム内の既存のパッケージがデータベースに追加されます。
 

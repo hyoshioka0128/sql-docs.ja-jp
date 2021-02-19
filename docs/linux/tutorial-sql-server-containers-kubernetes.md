@@ -9,12 +9,12 @@ ms.date: 09/01/2020
 ms.topic: tutorial
 ms.prod: sql
 ms.technology: linux
-ms.openlocfilehash: c8563738c8d1465c6573ca2a92f0839f54c8e29c
-ms.sourcegitcommit: 43b92518c5848489d03c68505bd9905f8686cbc0
+ms.openlocfilehash: 53d63320bc72b0c5f0e1891b67fd41b81d46458e
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92155104"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100337301"
 ---
 # <a name="deploy-a-sql-server-container-in-kubernetes-with-azure-kubernetes-services-aks"></a>Azure Kubernetes Services (AKS) を使用して Kubernetes に SQL Server コンテナーを配置する
 
@@ -66,7 +66,7 @@ Kubernetes クラスターで SA パスワードを作成します。 Kubernetes
 
 次のコマンドでは、SA アカウントのパスワードが作成されます。
 
-   ```azurecli
+   ```console
    kubectl create secret generic mssql --from-literal=SA_PASSWORD="MyC0m9l&xP@ssw0rd"
    ```  
 
@@ -111,7 +111,7 @@ Kubernetes クラスターで、[永続ボリューム](https://kubernetes.io/do
 
 1. Kubernetes で永続ボリューム要求を作成します。
 
-   ```azurecli
+   ```console
    kubectl apply -f <Path to pvc.yaml file>
    ```
 
@@ -123,7 +123,7 @@ Kubernetes クラスターで、[永続ボリューム](https://kubernetes.io/do
 
 1. 永続ボリューム要求を確認します。
 
-   ```azurecli
+   ```console
    kubectl describe pvc <PersistentVolumeClaim>
    ```
 
@@ -131,7 +131,7 @@ Kubernetes クラスターで、[永続ボリューム](https://kubernetes.io/do
 
    前のステップでは、永続ボリューム要求に `mssql-data` という名前が指定されています。 永続ボリューム要求に関するメタデータを表示するには、次のコマンドを実行します。
 
-   ```azurecli
+   ```console
    kubectl describe pvc mssql-data
    ```
 
@@ -145,7 +145,7 @@ Kubernetes クラスターで、[永続ボリューム](https://kubernetes.io/do
 
 1. 永続ボリュームを確認します。
 
-   ```azurecli
+   ```console
    kubectl describe pv
    ```
 
@@ -244,7 +244,7 @@ Kubernetes クラスターで、[永続ボリューム](https://kubernetes.io/do
 
 1. 配置を作成します。
 
-   ```azurecli
+   ```console
    kubectl apply -f <Path to sqldeployment.yaml file>
    ```
 
@@ -265,7 +265,7 @@ Kubernetes クラスターで、[永続ボリューム](https://kubernetes.io/do
 
 1. サービスが実行されていることを確認します。 次のコマンドを実行します。
 
-   ```azurecli
+   ```console
    kubectl get services 
    ```
 
@@ -281,13 +281,13 @@ Kubernetes クラスターで、[永続ボリューム](https://kubernetes.io/do
 
 1. 次のコマンドを実行する方法でも、コンテナーが非ルートとして実行されていることを確認できます。
 
-    ```azurecli
+    ```console
     kubectl.exe exec <name of SQL POD> -it -- /bin/bash 
     ```
 
     次に 'whoami' を実行します。mssql としてユーザー名が表示されるはずです。 これは非ルート ユーザーです。
 
-    ```azurecli
+    ```console
     whoami
     ```
 
@@ -320,7 +320,7 @@ Kubernetes クラスターで、[永続ボリューム](https://kubernetes.io/do
 
 1. SQL Server が実行されているポッドの一覧を表示します。
 
-   ```azurecli
+   ```console
    kubectl get pods
    ```
 
@@ -328,7 +328,7 @@ Kubernetes クラスターで、[永続ボリューム](https://kubernetes.io/do
 
 1. ポッドを削除します。
 
-   ```azurecli
+   ```console
    kubectl delete pod mssql-deployment-0
    ```
 

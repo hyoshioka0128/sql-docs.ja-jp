@@ -7,21 +7,21 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
 - object catalog views [SQL Server]
 - catalog views [SQL Server], objects
 ms.assetid: e8670a6b-e15c-4126-8d2d-c9cfb968a12d
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 811ab46ce472f91aeab40c48ff11ce584f3cabb7
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 0dac0e964aa965918c95eaa7e3fd951db2dd67ac
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91810148"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99194548"
 ---
 # <a name="object-catalog-views-transact-sql"></a>オブジェクトカタログビュー (Transact-sql)
 

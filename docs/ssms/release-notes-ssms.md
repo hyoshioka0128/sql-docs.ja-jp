@@ -10,13 +10,13 @@ author: dzsquared
 ms.author: drskwier
 ms.reviewer: maghan
 ms.custom: seo-lt-2019
-ms.date: 09/28/2020
-ms.openlocfilehash: 7115c3c36f79b35fbb66d39ec530b320d7929c0e
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+ms.date: 12/17/2020
+ms.openlocfilehash: 2e1d3faf6d17417ea1f4a134778ddd9342441231
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92039156"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596862"
 ---
 # <a name="release-notes-for-sql-server-management-studio-ssms"></a>SQL Server Management Studio (SSMS) のリリース ノート
 
@@ -24,29 +24,208 @@ ms.locfileid: "92039156"
 
 この記事では、SSMS の現在と以前のバージョンの更新、機能強化、およびバグの修正に関する詳細を提供します。
 
-<!--
-The latest ## H2 section of this Release Notes article has been reformatted to match the new standard.
-The new standard replaces the use of bullet lists with the 2-column markdown table format.
-Please use the new 2-column table format going forward.
-And please do include the final blank row of "| &nbsp;| &nbsp;|".
-
-The ## H2 titles are also being shortened, by the removal of unnecessary repetitive strings.
-In this case, "## SSMS 17.9" is being shortened to "## 17.9" (as one standard actual example).
-Also, we are appending the 'Month yyyy.'
-
-Also, this file has been renamed to the new standard, which calls for the file name to be with "release-notes-[techAreaName].md."
-The old name for this file was 'sql-server-management-studio-changelog-ssms.md'.
-But today the new file name is 'release-notes-ssms.md' (still in 'docs/ssms/').
-
-Thank you.
-GeneMi. 2019/04/02.
--->
-
 ## <a name="current-ssms-release"></a>現在の SSMS リリース
+
+### <a name="188"></a>18.8
+
+![ダウンロード](media/download-icon.png) [SSMS 18.8 をダウンロードする](download-sql-server-management-studio-ssms.md)
+
+- リリース番号:18.8
+- ビルド番号:15.0.18369.0
+- リリース日: 2020 年 12 月 17 日
+
+[簡体中国語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x804) | [繁体中国語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x404) | [英語 (米国)](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x409) | [フランス語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x40c) | [ドイツ語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x407) | [イタリア語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x410) | [日本語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x411) | [韓国語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x412) | [ポルトガル語 (ブラジル)](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x416) | [ロシア語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x419) | [スペイン語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x40a)
+
+SSMS 18.8 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の以前のバージョンが必要な場合は、[以前のリリースの SSMS](release-notes-ssms.md#previous-ssms-releases) を参照してください。
+
+#### <a name="whats-new-in-188"></a>18.8 の新機能
+
+[!INCLUDE [ssms-ads-install](../includes/ssms-azure-data-studio-install.md)]
+
+| [新しい項目] | 詳細 |
+|----------|---------|
+| Azure Data Studio のインストールの統合 | SSMS をインストールすると Azure Data Studio 1.25.1 がインストールされる。 |
+| Analysis Services | Power BI Premium Gen2 ワークスペースのサポートを追加。 |
+| 監査 | EXTERNAL_MONITOR と "演算子監査" のサポートを追加。  詳細については、構成に関する[ドキュメント](/azure/azure-sql/managed-instance/auditing-configure)を参照してください。 |
+| Integration Services | SSIS IR を作成しているときに SSISDB の作成が省略可能になるよう IR 作成ウィザードを改善 |
+
+#### <a name="bug-fixes-in-188"></a>18.8 でのバグ修正
+
+| New Item | 詳細 |
+|----------|---------|
+| アクセシビリティ | [ProgressReport] ダイアログのナレーターに影響を及ぼしている問題を修正 |
+| 利用状況モニター | [アクティブなコストの高いクエリ] グリッドの [クエリ テキストの編集] コンテキスト メニューが機能しない問題を修正 |
+| Always Encrypted | SSMS でランタイム エラー ("クラスが見つからない") がスローされる問題を修正 |
+| 高 DPI/スケーリング | [ProgressReport] ダイアログの 4k 表示を改善 |
+| 高 DPI/スケーリング | Integration Services の [New Schedule-  Package]\(新しいスケジュール - パッケージ\) フォームでの問題を修正 |
+| SSMS 全般 |  bigint のサイズを超える IDENTITY シードまたは ID の増分値がある列のプロパティを表示しようとすると、SSMS でエラーがスローされる場合がある問題を修正。
+| SSMS 全般 | 表示されるはずでなかったメニュー項目 [Projects Export Templates…]\(プロジェクト テンプレートのエクスポート…\) によって引き起こされる SSMS のクラッシュを修正 |
+| SSMS 全般 | フォルダー内のバックアップを列挙するときに SSMS がクラッシュする可能性がある問題を修正 |
+| SSMS 全般 | クエリの結果を表示しているときに、SSMS がハンドルおよびメモリをリークする原因となった問題に対処 |
+| SSMS 全般 | 特定の種類の列 (SQL 2014 以降の UniqueIdentifier、SQL 2017 以降の VarCharMax/NVarCharMax/VarBinaryMax) でユーザーがクラスター化された列ストア インデックスを作成できなかった問題を修正 |
+| SSMS 全般 | "結果グリッド" の XML 列の並べ替えが機能していなかった、長く未解決であった問題を修正。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/32890930)を参照してください |
+| SSMS 全般 | "メモリ最適化オブジェクトを含むデータベースで変更の追跡がサポートされない" ことに関する警告が SSMS で誤って表示されていた問題を修正。 |
+| スクリプト生成ウィザード | SQL Server 2014 以前でデータベース オブジェクトが列挙されるバグを引き起こしていた問題を修正。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035-sql-server/suggestions/41885587)を参照してください。 |
+| レプリケーション ツール | SQL レプリケーション モニターで自動接続設定が守られていなかったため、ユーザーが毎回手動で再接続するよう強いられていた問題を修正。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/40394743)を参照してください |
+| SMO/スクリプト作成 | SQL Azure DB の暗号化ビューで [スクリプトの生成...] の使用を試行するときの問題を修正 |
+| XEvent の UI | 他のアプリケーションから SSMS に切り替えるときに SSMS のクラッシュを引き起こす可能性がある問題を修正。 |
+| XEvent の UI | 追加の引用符による XEvent 作成のバグの原因となった 18.7 からの改善が適用されなくなった。 "*この変更は一時的なものであり、後続のリリースではこの改善がバグが付随しない状態で再度適用されます。* " |
+
+#### <a name="known-issues-188"></a>既知の問題 (18.8)
+
+| New Item | 詳細 | 回避策 |
+|----------|---------|------------|
+| Analysis Services | msmdpump.dll 経由で SSAS に接続するときのエラー。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035-sql-server/suggestions/40144696)を参照してください。 | 該当なし |
+| Analysis Services | 場合によっては、アップグレード セットアップを使用しているときに、SSMS のアップグレード後に DAX エディターを開こうとすると、"オブジェクトのインスタンスにオブジェクトが設定されていません" というエラーが発生することがまれにあります。 | SQL Server Management Studio をアンインストールして再インストールします。  再インストールしても解決しない場合は、SSMS のすべてのインスタンスを閉じ、バックアップしてから `%AppData%\Microsoft\SQL Server Management Studio` と `%LocalAppData%\Microsoft\SQL Server Management Studio` を削除します。 |
+| SSMS 全般 | 新しい [サーバー監査の仕様] ダイアログにより、SSMS がアクセス違反エラーでクラッシュする場合があります。 | 該当なし |
+| SSMS 全般 | SMO を使用する SSMS 拡張機能は、新しい SSMS 固有の SMO v161 パッケージを対象とするように再コンパイルする必要があります。 https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects.SSMS/ で新しいバージョンが利用できるようになりました </br></br> 以前の 160 バージョンの Microsoft.SqlServer.SqlManagementObjects パッケージに対してコンパイルされた拡張機能は、引き続き機能します。 | 該当なし |
+| Integration Services | Integration Services でパッケージをインポートまたはエクスポートするとき、または Azure-SSIS Integration Runtime でパッケージをエクスポートするときに、スクリプト タスク/コンポーネントを含むパッケージのスクリプトが失われます。 | フォルダー "C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\CommonExtensions\MSBuild" を削除します。 |
+| Integration Services | Integration Services へのリモート接続が新しいオペレーティング システムで、"The specified service does not exist as an installed service." (指定されたサービスはインストールされたサービスとして存在しません。) で 失敗する場合があります。 | Integration Services に関連するレジストリの場所を Computer\HKEY_CLASSES_ROOT\AppID & Computer\HKEY_CLASSES_ROOT\ WOW6432Node\AppID の下とこれらのハイブ内で特定し、接続しようとしている Integration Services の特定のバージョンについて 'LocalService' という名前のレジストリ キーの名前を 'LocalService_A' に変更します。 |
+
+
+他の既知の問題について、および製品チームにフィードバックを提供するには、[SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035-sql-server)を参照できます。
+
+## <a name="previous-ssms-releases"></a>以前のリリースの SSMS
+
+[!INCLUDE[ssms-connect-aazure-ad](../includes/ssms-connect-azure-ad.md)]
+
+以前のバージョンの SSMS をダウンロードするには、関連セクションでダウンロード リンクを選択します。
+
+| SSMS のバージョン | ビルド番号 | リリース日 |
+|--------------|--------------|--------------|
+| [18.7.1](#1871) | 15.0.18358.0 | 2020 年 10 月 27 日 |
+| [18.7](#187) | 15.0.18357.0 | 2020 年 10 月 20 日 |
+| [18.6](#186) | 15.0.18338.0 | 2020 年 7 月 22 日 |
+| [18.5.1](#1851) | 15.0.18333.0 | 2020 年 6 月 9 日 |
+| [18.5](#185) | 15.0.18330.0 | 2020 年 4 月 7 日 |
+| [18.4](#184) | 15.0.18206.0 | 2019 年 11 月 4 日 |
+| [18.3.1](#1831) | 15.0.18183.0 | 2019 年 10 月 2 日 |
+| [18.2](#182) | 15.0.18142.0 | 2019 年 7 月 25 日 |
+| [18.1](#181) | 15.0.18131.0 | 2019 年 6 月 11 日 |
+| [18.0](#180) | 15.0.18118.0 | 2019 年 4 月 24 日 |
+| [17.9.1](#1791) | 14.0.17289.0 | 2018 年 11 月 21 日 |
+| [16.5.3](#1653) | 13.0.16106.4 | 2017 年 1 月 30 日 |
+
+### <a name="1871"></a>18.7.1
+
+![ダウンロード](media/download-icon.png) [SSMS 18.7 をダウンロードする](https://go.microsoft.com/fwlink/?linkid=2147207)
+
+- リリース番号:18.7.1
+- ビルド番号:15.0.18358.0
+- リリース日: 2020 年 10 月 27 日
+
+[簡体中国語](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x804) | [繁体中国語](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x404) | [英語 (米国)](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x409) | [フランス語](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x40c) | [ドイツ語](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x407) | [イタリア語](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x410) | [日本語](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x411) | [韓国語](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x412) | [ポルトガル語 (ブラジル)](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x416) | [ロシア語](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x419) | [スペイン語](https://go.microsoft.com/fwlink/?linkid=2147207&clcid=0x40a)
+
+SSMS 18.7 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の以前のバージョンが必要な場合は、[以前のリリースの SSMS](release-notes-ssms.md#previous-ssms-releases) を参照してください。
+
+#### <a name="whats-new-in-1871"></a>18.7.1 の新機能
+
+[!INCLUDE [ssms-ads-install](../includes/ssms-azure-data-studio-install.md)]
+
+
+#### <a name="bug-fixes-in-1871"></a>18.7.1 でのバグ修正
+
+| New Item | 詳細 |
+|----------|---------|
+| クエリ ストア | クエリ ストアのオブジェクト エクスプローラー ノードを右クリックするとスローされるエラーを修正しました。 |
+
+
+#### <a name="known-issues-1871"></a>既知の問題 (18.7.1)
+
+| New Item | 詳細 | 回避策 |
+|----------|---------|------------|
+| Analysis Services | msmdpump.dll 経由で SSAS に接続するときのエラー。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035-sql-server/suggestions/40144696)を参照してください。 | 該当なし |
+| Analysis Services | 場合によっては、アップグレード セットアップを使用しているときに、SSMS のアップグレード後に DAX エディターを開こうとすると、"オブジェクトのインスタンスにオブジェクトが設定されていません" というエラーが発生することがまれにあります。 | この問題を解決するには、SSMS をアンインストールしてから再インストールします。 |
+| DAX クエリ エディター | DAX クエリ エディターを開くと、"オブジェクトのインスタンスにオブジェクトが設定されていません" というエラーが発生する | SQL Server Management Studio をアンインストールして再インストールします。  再インストールしても解決しない場合は、SSMS のすべてのインスタンスを閉じ、バックアップしてから `%AppData%\Microsoft\SQL Server Management Studio` と `%LocalAppData%\Microsoft\SQL Server Management Studio` を削除します。 |
+| SSMS 全般 | 新しい [サーバー監査の仕様] ダイアログにより、SSMS がアクセス違反エラーでクラッシュする場合があります。 | 該当なし |
+| SSMS 全般 | SMO を使用する SSMS 拡張機能は、新しい SSMS 固有の SMO v161 パッケージを対象とするように再コンパイルする必要があります。 https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects.SSMS/ で新しいバージョンが利用できるようになりました </br></br> 以前の 160 バージョンの Microsoft.SqlServer.SqlManagementObjects パッケージに対してコンパイルされた拡張機能は、引き続き機能します。 | 該当なし |
+| スクリプト生成ウィザード | SQL Server 2014 以前では、データベース オブジェクトを列挙しようとすると、ウィザードが失敗します。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035-sql-server/suggestions/41885587)を参照してください。 | SSMS 18.6 を使用して、SQL 2014 以前用のスクリプト生成ウィザードでオブジェクトを選択します。 |
+| Integration Services | Integration Services でパッケージをインポートまたはエクスポートするとき、または Azure-SSIS Integration Runtime でパッケージをエクスポートするときに、スクリプト タスク/コンポーネントを含むパッケージのスクリプトが失われます。 | フォルダー "C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\CommonExtensions\MSBuild" を削除します。 |
+| Integration Services | Integration Services へのリモート接続が新しいオペレーティング システムで、"The specified service does not exist as an installed service." (指定されたサービスはインストールされたサービスとして存在しません。) で 失敗する場合があります。 | Integration Services に関連するレジストリの場所を Computer\HKEY_CLASSES_ROOT\AppID & Computer\HKEY_CLASSES_ROOT\ WOW6432Node\AppID の下とこれらのハイブ内で特定し、接続しようとしている Integration Services の特定のバージョンについて 'LocalService' という名前のレジストリ キーの名前を 'LocalService_A' に変更します。 |
+| オブジェクト エクスプローラー | [Azure Synapse Analytics サーバーレス SQL プール](/azure/synapse-analytics/sql/on-demand-workspace-overview)に関連するエンジンの変更により、18.7 より前の SSMS のリリースでは、オブジェクト エクスプローラーに破壊的変更があります。 | Azure Synapse Analytics サーバーレス SQL プールと共に SSMS でオブジェクト エクスプローラーを引き続き利用するには、SSMS 18.7 以降を使用する必要があります。 |
+
+### <a name="187"></a>18.7
+
+![ダウンロード](media/download-icon.png) [SSMS 18.7 をダウンロードする](https://go.microsoft.com/fwlink/?linkid=2146265)
+
+- リリース番号:18.7
+- ビルド番号:15.0.18357.0
+- リリース日: 2020 年 10 月 20 日
+
+[簡体中国語](https://go.microsoft.com/fwlink/?linkid=2146265&clcid=0x804) | [繁体中国語](https://go.microsoft.com/fwlink/?linkid=2146265&clcid=0x404) | [英語 (米国)](https://go.microsoft.com/fwlink/?linkid=2146265&clcid=0x409) | [フランス語](https://go.microsoft.com/fwlink/?linkid=2146265&clcid=0x40c) | [ドイツ語](https://go.microsoft.com/fwlink/?linkid=2146265&clcid=0x407) | [イタリア語](https://go.microsoft.com/fwlink/?linkid=2146265&clcid=0x410) | [日本語](https://go.microsoft.com/fwlink/?linkid=2146265&clcid=0x411) | [韓国語](https://go.microsoft.com/fwlink/?linkid=2146265&clcid=0x412) | [ポルトガル語 (ブラジル)](https://go.microsoft.com/fwlink/?linkid=2146265&clcid=0x416) | [ロシア語](https://go.microsoft.com/fwlink/?linkid=2146265&clcid=0x419) | [スペイン語](https://go.microsoft.com/fwlink/?linkid=2146265&clcid=0x40a)
+
+SSMS 18.7 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の以前のバージョンが必要な場合は、[以前のリリースの SSMS](release-notes-ssms.md#previous-ssms-releases) を参照してください。
+
+#### <a name="whats-new-in-187"></a>18.7 の新機能
+
+[!INCLUDE [ssms-ads-install](../includes/ssms-azure-data-studio-install.md)]
+
+| [新しい項目] | 詳細 |
+|----------|---------|
+| Azure Data Studio のインストールの統合 | SSMS をインストールすると Azure Data Studio もインストールされます。 |
+| Always Encrypted | 新しい HSM エンドポイントを認識するには、SSMS をアップグレードする必要があります。 これは、新しい AKV プロバイダー NugetPackage を使用することによって行われます。 |
+| フラット ファイルのインポート | 既定で 300 行を学習することにより、データ型の予測が改善されました。 |
+| フラット ファイルのインポート | 列が TinyInt として宣言されません。これは SmallInt である必要があります。 |
+| フラット ファイルのインポート | データのインポートでエラーが発生した場合に、DW テーブルが適切にクリーンアップされるように改善されました。 |
+| [リソース ガバナー] | 10 進値のサポートが追加されました。 |
+| プラン表示 | PREDICT 演算子が追加されました。 |
+| XEvent の UI | wait_type 名を使用して拡張イベントをスクリプト化する機能が追加されました。 バージョンのアップグレード中にキー値が変更されるため、ユーザーは wait_type フィルター述語で map_key の代わりに map_value 列の値を使用することを求めています。 解決策:チェックボックスが追加され、wait_type フィルター述語の値に map_value と map_key のどちらかを選択するオプションがユーザーに提供されました。 |
+
+#### <a name="bug-fixes-in-187"></a>18.7 でのバグ修正
+
+| New Item | 詳細 |
+|----------|---------|
+| アクセシビリティ | DW に対してクエリを実行するときにポップアップ表示される [The following settings are not supported by the database]\(次の設定はデータベースでサポートされていません\) ウィンドウのボタンのタブ順序が固定されました。 |
+| アクセシビリティ | インポートおよびエクスポート ウィザード: 高 DPI モードでは、ページ レイアウトが正しくありません。 |
+| 利用状況モニター | [プロセス] タブを開いたときに利用状況モニターが一時停止するという問題が修正されました。[SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/37050118)を参照してください。 |
+| Always On 可用性グループ | 読み取りスケール可用性グループのフェールオーバーが機能しないという問題が修正されました。 |
+| Analysis Services | AS 表形式モデルのシナリオで、PowerQuery コンポーネントが 2.84.982 に更新されました。 |
+| Analysis Services | msmdpump.dll 経由で SSAS に接続しようとするとエラーとなる可能性のある問題が修正されました。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035-sql-server/suggestions/40144696)を参照してください。 |
+| バックアップ/復元 | SQL 2016 以前で [接続のプロパティの表示] を選択したときに HostDistribution prop が見つからないという SMO エラーが発生する問題が修正されました。 |
+| データベース デザイナー | 10 進数を処理するときに SSMS がクラッシュする原因となる問題が修正されました。 |
+| データベース ダイアグラム | [テーブルの追加] ダイアログが正しく表示されていないデータベース ダイアグラムを使用するときに、SSMS がクラッシュまたは応答を停止する原因となるおそれのある問題が修正されました。 |
+| データベース ミラーリング | ミラーの構成が失敗する原因となる問題が修正されました。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035-sql-server/suggestions/32897281)を参照してください。 |
+| SSMS 全般 | Azure SQL DB に接続しようとすると数秒かかる可能性があるという問題が修正されました (ユーザー データベースでの SQL ログイン)。 |
+| SSMS 全般 | キャプチャされたデッドロック (.xdl ファイル) が SSMS で処理または表示されないという問題が修正されました。 |
+| SSMS 全般 | SQL Server 2008 R2 以下でエラー ログ設定を開こうとすると、ErrorLogSizeKb プロパティが見つからないために失敗するという問題が修正されました。 |
+| SSMS 全般 | [Azure Synapse Analytics サーバーレス SQL プール](/azure/synapse-analytics/sql/on-demand-workspace-overview)のサポートに関する全般的な修正と改善が行われました。 |
+| フラット ファイルのインポート | ファイルが別のアプリケーションによって使用されている可能性があることがウィザードで検出されず、エラーがスローされるという問題が修正されました。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/40761574)を参照してください。 |
+| データ層アプリケーションのインポート/エクスポート | bacpac をインポートするときの既定のサービス レベルが Standard S0 に修正されました (Azure portal および SqlPackage.exe の動作と同じ)。 |
+| フラット ファイルのインポート | ファイルが別のアプリケーションによって使用されている可能性があることがウィザードで検出されず、エラーがスローされるという問題が修正されました。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/40761574)を参照してください。 |
+| Integration Services | 異なるサブスクリプションの名前が同じである場合に、IR 作成ウィザードおよびジョブ移行ウィザードで Azure サブスクリプションのコンボ ボックス項目が重複するという問題が修正されました。 |
+| Integration Services | IR 作成ウィザードで [接続] ボタンを有効にできない場合があるという問題が修正されました。 |
+| Integration Services | [パラメーター値の設定] ダイアログの [Use Environment variable]\(環境変数を使用する\) コンボ ボックスの項目が順序どおりではないという問題が修正されました。 |
+| Intellisense | クエリの実行時に発生する可能性のある、SSMS でのクラッシュが修正されました。 |
+| Intellisense | 読み取り専用ルーティング用に構成された可用性グループにユーザーが接続しているときに IntelliSense が動作しないという問題が修正されました。 |
+| リンク サーバー | CONTROL SERVER 権限を持つユーザー (sysadmin ロールではない) がリンク サーバーを追加できないという問題が修正されました。 |
+| ログ ビューアー | VIEW SERVER STATE 権限を持つユーザーが SQL Server のエラー ログを表示できないという問題が修正されました。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/32899204)を参照してください。 |
+| オブジェクト エクスプローラー | オブジェクト エクスプローラーの一部のノード ("ポリシー管理"、"拡張イベント" など) で **[PowerShell の起動]** メニューを選択したときに、PowerShell が正常に起動しないという問題が修正されました。 |
+| [登録済みサーバー] | 中央管理サーバーを登録しようとすると SSMS がクラッシュするという問題が修正されました。 |
+| [登録済みサーバー] | 登録済みサーバーから Azure Data Studio を起動するメニュー項目が見つからないという問題が修正されました。 |
+| Reports | パフォーマンス ダッシュボードでサブリンク ( **[コストの高いクエリ]** など) に移動しようとしたときに、リンクが機能しないという問題が修正されました。 この問題は、英語以外のバージョンのほとんどの SSMS でよく発生していました。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/41454499)を参照してください。 |
+| プラン表示 | 検索ノードを使用してテキストを検索するときに SSMS がクラッシュする原因となる問題が修正されました。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/40421650)を参照してください。 |
+| プラン表示 | [メモリ許可] ヒント行に KB サフィックスが追加されました。 |
+| 脆弱性評価 | 脆弱性評価のベースラインを設定しようとしたときに SSMS でエラーがスローされる原因となる問題が修正されました。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/40578565)を参照してください。 |
+| XEvent の UI | F1 キーを押してもドキュメントの正しいページが表示されないという問題が修正されました。 |
+| XEvent の UI | サロゲート ペアを使用してエンコードされたテキストを含むテキストがヒントに正しく表示されない場合の、XEvent ビューアーのログが修正されました。 |
+
+#### <a name="known-issues-187"></a>既知の問題 (18.7)
+
+| New Item | 詳細 | 回避策 |
+|----------|---------|------------|
+| Analysis Services | msmdpump.dll 経由で SSAS に接続するときのエラー。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035-sql-server/suggestions/40144696)を参照してください。 | 該当なし |
+| Analysis Services | 場合によっては、アップグレード セットアップを使用しているときに、SSMS のアップグレード後に DAX エディターを開こうとすると、"オブジェクトのインスタンスにオブジェクトが設定されていません" というエラーが発生することがまれにあります。 | この問題を解決するには、SSMS をアンインストールしてから再インストールします。 |
+| SSMS 全般 | 新しい [サーバー監査の仕様] ダイアログにより、SSMS がアクセス違反エラーでクラッシュする場合があります。 | 該当なし |
+| SSMS 全般 | SMO を使用する SSMS 拡張機能は、新しい SSMS 固有の SMO v161 パッケージを対象とするように再コンパイルする必要があります。 https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects.SSMS/ で新しいバージョンが利用できるようになりました </br></br> 以前の 160 バージョンの Microsoft.SqlServer.SqlManagementObjects パッケージに対してコンパイルされた拡張機能は、引き続き機能します。 | 該当なし |
+| スクリプト生成ウィザード | SQL Server 2014 以前では、データベース オブジェクトを列挙しようとすると、ウィザードが失敗します。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035-sql-server/suggestions/41885587)を参照してください。 | SSMS 18.6 を使用して、SQL 2014 以前用のスクリプト生成ウィザードでオブジェクトを選択します。 |
+| Integration Services | Integration Services でパッケージをインポートまたはエクスポートするとき、または Azure-SSIS Integration Runtime でパッケージをエクスポートするときに、スクリプト タスク/コンポーネントを含むパッケージのスクリプトが失われます。 対処法:フォルダー "C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\CommonExtensions\MSBuild" を削除します。 | 該当なし |
+| Integration Services | Integration Services へのリモート接続が新しいオペレーティング システムで、"The specified service does not exist as an installed service." (指定されたサービスはインストールされたサービスとして存在しません。) で 失敗する場合があります。 対処法:Integration Services に関連するレジストリの場所を Computer\HKEY_CLASSES_ROOT\AppID & Computer\HKEY_CLASSES_ROOT\ WOW6432Node\AppID の下とこれらのハイブ内で特定し、接続しようとしている Integration Services の特定のバージョンについて 'LocalService' という名前のレジストリ キーの名前を 'LocalService_A' に変更します。 | 該当なし |
+| オブジェクト エクスプローラー | [Azure Synapse Analytics サーバーレス SQL プール](/azure/synapse-analytics/sql/on-demand-workspace-overview)に関連するエンジンの変更により、18.7 より前の SSMS のリリースでは、オブジェクト エクスプローラーに破壊的変更があります。 | Azure Synapse Analytics サーバーレス SQL プールと共に SSMS でオブジェクト エクスプローラーを引き続き利用するには、SSMS 18.7 以降が必要です。 |
+| クエリ ストア | クエリ ストアのオブジェクト エクスプローラー ノードを右クリックすると、エラーがスローされます。 | ノードを展開し、個々の子オプションを右クリックして、項目に直接アクセスします。 |
 
 ### <a name="186"></a>18.6
 
-- ダウンロード:[SSMS 18.6 のダウンロード](download-sql-server-management-studio-ssms.md)
+![ダウンロード](media/download-icon.png) [SSMS 18.6 をダウンロードする](https://go.microsoft.com/fwlink/?linkid=2135491)
 
 - リリース番号:18.6
 - ビルド番号:15.0.18338.0
@@ -54,9 +233,7 @@ GeneMi. 2019/04/02.
 
 [簡体中国語](https://go.microsoft.com/fwlink/?linkid=2135491&clcid=0x804) | [繁体中国語](https://go.microsoft.com/fwlink/?linkid=2135491&clcid=0x404) | [英語 (米国)](https://go.microsoft.com/fwlink/?linkid=2135491&clcid=0x409) | [フランス語](https://go.microsoft.com/fwlink/?linkid=2135491&clcid=0x40c) | [ドイツ語](https://go.microsoft.com/fwlink/?linkid=2135491&clcid=0x407) | [イタリア語](https://go.microsoft.com/fwlink/?linkid=2135491&clcid=0x410) | [日本語](https://go.microsoft.com/fwlink/?linkid=2135491&clcid=0x411) | [韓国語](https://go.microsoft.com/fwlink/?linkid=2135491&clcid=0x412) | [ポルトガル語 (ブラジル)](https://go.microsoft.com/fwlink/?linkid=2135491&clcid=0x416) | [ロシア語](https://go.microsoft.com/fwlink/?linkid=2135491&clcid=0x419) | [スペイン語](https://go.microsoft.com/fwlink/?linkid=2135491&clcid=0x40a)
 
-SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の以前のバージョンが必要な場合は、[以前のリリースの SSMS](release-notes-ssms.md#previous-ssms-releases) を参照してください。
-
-### <a name="whats-new-in-186"></a>18.6 の新機能
+#### <a name="whats-new-in-186"></a>18.6 の新機能
 
 | [新しい項目] | 詳細 |
 |----------|---------|
@@ -67,23 +244,23 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | フラット ファイルのインポート | 固定幅ファイルと、.csv/.tsv ファイルのファイルの種類の検出のサポートが追加され、それらがそれぞれ csv/tsv ファイルとして解析されるようになりました。 |
 | Integration Services | Azure-SSIS IR のパッケージ ストアから SSIS パッケージを実行するための Azure SQL Managed Instance エージェント ジョブのサポートが追加されました。 |
 | SMO/スクリプト作成 | [Azure Synapse Analytics](/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is) (旧称 SQL Azure DW) でのスクリプト動的データ マスクのサポートが追加されました。 |
-| SMO/スクリプト作成 | [Azure Synapse Analytics](/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is) (旧称 SQL DW) でのセキュリティ ポリシーのスクリプト作成のサポートが追加されました。 |
+| SMO/スクリプト作成 | [Azure Synapse Analytics](/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is) でのセキュリティ ポリシーのスクリプト作成のサポートが追加されました。 |
 
-### <a name="bug-fixes-in-186"></a>18.6 でのバグ修正
+#### <a name="bug-fixes-in-186"></a>18.6 でのバグ修正
 
 | New Item | 詳細 |
 |----------|---------|
-| アクセシビリティ | **データベースの全般プロパティ ページ**で、アクセシビリティのために境界線の色が調整されました (グリッドと名前ボックスの周囲の境界線が、コントラストを > 3:1 に設定して濃くなりました)。 |
+| アクセシビリティ | **データベースの全般プロパティ ページ** で、アクセシビリティのために境界線の色が調整されました (グリッドと名前ボックスの周囲の境界線が、コントラストを > 3:1 に設定して濃くなりました)。 |
 | アクセシビリティ | ナレーターを更新するためのクエリ実行の処理が追加されました (コンピューターに NetFx 4.8 以上がインストールされている必要があります)。 |
 | Always Encrypted | CMK がエンクレーブ対応である場合でも、 *[新しい列暗号化キー]* ダイアログで CEK がエンクレーブ対応でないと示される問題が修正されました。 |
 | Analysis Services | 未処理の例外を発生させていた可能性のある Analysis Services パーティションの表示の問題が修正されました。 |
-| **データベース ダイアグラム** | 既存のダイアグラムの破損と SSMS のクラッシュの両方を引き起こす**データベース ダイアグラム**の長い間未解決だった問題が修正されました。 SSMS 18.0 から 18.5.1 を使用してダイアグラムを作成または保存し、そのダイアグラムに *テキスト注釈*が含まれている場合、どのバージョンの SSMS でもそのダイアグラムを開くことができなくなります。 この修正により、SSMS 18.6 で、SSMS 17.9.1 以前で作成されたダイアグラムを開いて保存できます。 SSMS 17.9.1 以前のリリースで、SSMS 18.6 によって保存された後のダイアグラムを開くこともできます。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/37992649)を参照してください。 |
+| **データベース ダイアグラム** | 既存のダイアグラムの破損と SSMS のクラッシュの両方を引き起こす **データベース ダイアグラム** の長い間未解決だった問題が修正されました。 SSMS 18.0 から 18.5.1 を使用してダイアグラムを作成または保存し、そのダイアグラムに *テキスト注釈* が含まれている場合、どのバージョンの SSMS でもそのダイアグラムを開くことができなくなります。 この修正により、SSMS 18.6 で、SSMS 17.9.1 以前で作成されたダイアグラムを開いて保存できます。 SSMS 17.9.1 以前のリリースで、SSMS 18.6 によって保存された後のダイアグラムを開くこともできます。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/37992649)を参照してください。 |
 | データ分類 | データ分類ペインのレコメンデーション パネルに列名が表示されない問題が修正されました。 |
 | SSMS 全般 | データベースのプロパティの *[サイズ]* と *[使用可能領域]* に SQL Azure DB (Hyperscale サービス レベル) の正しくない値が表示される問題が修正されました。 |
 | SSMS 全般 | データベースのプロパティの "サイズ" に SQL Azure DB のデータベースの実際のサイズではなく最大サイズが表示される問題が修正されました (注: DW の場合は、引き続き最大サイズが表示されます)。 |
 | SSMS 全般 | SSMS の 3 つの一般的なハングの原因が解決されました。 |
-| SSMS 全般 | SSMS 接続ダイアログのエントリ (サーバー/ユーザー/パスワード) を*忘れる*ことに関連するいくつかの問題が修正されました。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/40256401)と [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/40015519)を参照してください。 |
-| SSMS 全般 | **[統計のプロパティ]** ダイアログで、 **[この列の統計を更新する]** チェックボックスをオンにして、 **[OK]** を選択しても効果がない問題が修正されました。 統計が更新されず、アクションをスクリプト化しようとすると、*スクリプトを作成するアクションはありません*メッセージが生成されます。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/37799992)を参照してください。 |
+| SSMS 全般 | SSMS 接続ダイアログのエントリ (サーバー/ユーザー/パスワード) を *忘れる* ことに関連するいくつかの問題が修正されました。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/40256401)と [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/40015519)を参照してください。 |
+| SSMS 全般 | **[統計のプロパティ]** ダイアログで、 **[この列の統計を更新する]** チェックボックスをオンにして、 **[OK]** を選択しても効果がない問題が修正されました。 統計が更新されず、アクションをスクリプト化しようとすると、*スクリプトを作成するアクションはありません* メッセージが生成されます。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/37799992)を参照してください。 |
 | SSMS 全般 | [CVE-2020-1455](https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-1455) に関連する問題が対処されました。 | 
 | データ層アプリケーションのインポート/エクスポート | bacpac ファイルのインポート時に SSMS がエラーをスローしていた問題が修正されました。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/40229137)を参照してください。 |
 | Integration Services | ユーザーが SSMS バージョン 18.4 以前を使用して Azure SQL Managed Instance で SSIS パッケージを実行するときに、SQL エージェント ジョブ ステップを編集できないというバグが修正されました。 |
@@ -105,29 +282,9 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | Integration Services | Integration Services でパッケージをインポートまたはエクスポートするとき、または Azure-SSIS Integration Runtime でパッケージをエクスポートするときに、スクリプト タスク/コンポーネントを含むパッケージのスクリプトが失われます。 対処法:フォルダー "C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\CommonExtensions\MSBuild" を削除します。 | 該当なし|
 | Integration Services | Integration Services へのリモート接続が新しいオペレーティング システムで、"The specified service does not exist as an installed service." (指定されたサービスはインストールされたサービスとして存在しません。) で 失敗する場合があります。 対処法:Integration Services に関連するレジストリの場所を Computer\HKEY_CLASSES_ROOT\AppID & Computer\HKEY_CLASSES_ROOT\ WOW6432Node\AppID の下とこれらのハイブ内で特定し、接続しようとしている Integration Services の特定のバージョンについて 'LocalService' という名前のレジストリ キーの名前を 'LocalService_A' に変更します。 | 該当なし|
 
-他の既知の問題について、および製品チームにフィードバックを提供するには、[SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035-sql-server)を参照できます。
-
-## <a name="previous-ssms-releases"></a>以前のリリースの SSMS
-
-[!INCLUDE[ssms-connect-aazure-ad](../includes/ssms-connect-azure-ad.md)]
-
-以前のバージョンの SSMS をダウンロードするには、関連セクションでダウンロード リンクを選択します。
-
-| SSMS のバージョン | ビルド番号 | リリース日 |
-|--------------|--------------|-------------------|
-| [18.5.1](#1851) | 15.0.18333.0 | 2020 年 6 月 9 日 |
-| [18.5](#185) | 15.0.18330.0 | 2020 年 4 月 7 日 |
-| [18.4](#184) | 15.0.18206.0 | 2019 年 11 月 4 日 |
-| [18.3.1](#1831) | 15.0.18183.0 | 2019 年 10 月 2 日 |
-| [18.2](#182) | 15.0.18142.0 | 2019 年 7 月 25 日 |
-| [18.1](#181) | 15.0.18131.0 | 2019 年 6 月 11 日 |
-| [18.0](#180) | 15.0.18118.0 | 2019 年 4 月 24 日 |
-| [17.9.1](#1791) | 14.0.17289.0 | 2018 年 11 月 21 日 |
-| [16.5.3](#1653) | 13.0.16106.4 | 2017 年 1 月 30 日 |
-
 ### <a name="1851"></a>18.5.1
 
-- ダウンロード:[SSMS 18.5.1 のダウンロード](https://go.microsoft.com/fwlink/?linkid=2132606)
+![ダウンロード](media/download-icon.png) [SSMS 18.5.1 をダウンロードする](https://go.microsoft.com/fwlink/?linkid=2132606)
 
 - リリース番号:18.5.1
 - ビルド番号:15.0.18333.0
@@ -135,7 +292,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 
 [簡体中国語](https://go.microsoft.com/fwlink/?linkid=2132606&clcid=0x804) | [繁体中国語](https://go.microsoft.com/fwlink/?linkid=2132606&clcid=0x404) | [英語 (米国)](https://go.microsoft.com/fwlink/?linkid=2132606&clcid=0x409) | [フランス語](https://go.microsoft.com/fwlink/?linkid=2132606&clcid=0x40c) | [ドイツ語](https://go.microsoft.com/fwlink/?linkid=2132606&clcid=0x407) | [イタリア語](https://go.microsoft.com/fwlink/?linkid=2132606&clcid=0x410) | [日本語](https://go.microsoft.com/fwlink/?linkid=2132606&clcid=0x411) | [韓国語](https://go.microsoft.com/fwlink/?linkid=2132606&clcid=0x412) | [ポルトガル語 (ブラジル)](https://go.microsoft.com/fwlink/?linkid=2132606&clcid=0x416) | [ロシア語](https://go.microsoft.com/fwlink/?linkid=2132606&clcid=0x419) | [スペイン語](https://go.microsoft.com/fwlink/?linkid=2132606&clcid=0x40a)
 
-### <a name="bug-fixes-in-1851"></a>18.5.1 でのバグ修正
+#### <a name="bug-fixes-in-1851"></a>18.5.1 でのバグ修正
 
 | New Item | 詳細 |
 |----------|---------|
@@ -144,20 +301,26 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | Analysis Services | ユーザーが SSAS 2017 以前のバージョンに対してセル データ アクセス許可でクエリを実行できない問題が修正されました。 |
 | SSMS 全般 | [テーブル デザイナー - テーブル デザイナー グリッドで Tab キーを試したときのビープ音が修正されました](https://feedback.azure.com/forums/908035/suggestions/40318435) |
 
-### <a name="known-issues-1851"></a>既知の問題 18.5.1
+#### <a name="known-issues-1851"></a>既知の問題 (18.5.1)
 
-| 新しい項目 | 詳細 | 回避策 | |----------|---------||-----------| | SSMS 全般 | ダイアグラム デザインに既存のダイアグラムを破損させる既知のバグがあります。 たとえば、SSMS 17.9.1 でダイアグラム デザインを作成してから、SSMS 18.x でそれを更新/保存し、さらに後で 17.9.1 でそれを開こうとします。 詳細については、[SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/37992649)を参照してください。 | N/A | | SSMS 全般 | 新しい [サーバー監査の仕様] ダイアログにより、SSMS がアクセス違反エラーでクラッシュする場合があります。 | N/A || | SMO/スクリプト | SMO を使用した SSMS 拡張機能は、新しい SMO v160 を対象として再コンパイルする必要があります。 | N/A | | Integration Services | Integration Services でパッケージをインポートまたはエクスポートするとき、または Azure-SSIS Integration Runtime でパッケージをエクスポートするときに、スクリプト タスク/コンポーネントを含むパッケージに対するスクリプトが失われます。 回避策: | フォルダー"C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\CommonExtensions\MSBuild" を削除します。 |
+| New Item | 詳細 | 回避策 |
+|----------|---------|------------|
+| SSMS 全般 | ダイアグラム デザインに既存のダイアグラムを破損させる既知のバグがあります。 たとえば、SSMS 17.9.1 でダイアグラム デザインを作成してから、SSMS 18.x でそれを更新/保存し、さらに後で 17.9.1 でそれを開こうとします。 詳細については、[SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/37992649)を参照してください。 | 該当なし |
+| SSMS 全般 | 新しい [サーバー監査の仕様] ダイアログにより、SSMS がアクセス違反エラーでクラッシュする場合があります。 | 該当なし ||
+| SMO/スクリプト作成 | SMO を使用した SSMS 拡張機能は、新しい SMO v160 を対象として再コンパイルする必要があります。 | 該当なし |
+| Integration Services | Integration Services でパッケージをインポートまたはエクスポートするとき、または Azure-SSIS Integration Runtime でパッケージをエクスポートするときに、スクリプト タスク/コンポーネントを含むパッケージのスクリプトが失われます。 対応策 : | フォルダー "C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\CommonExtensions\MSBuild" を削除します。 |
 
 ### <a name="185"></a>18.5
 
 ![ダウンロード](media/download-icon.png) [SSMS 18.5 をダウンロードする](https://go.microsoft.com/fwlink/?linkid=2125901)
+
 - リリース番号:18.5
 - ビルド番号:15.0.18330.0
 - リリース日: 2020 年 4 月 7 日
 
 [簡体中国語](https://go.microsoft.com/fwlink/?linkid=2125901&clcid=0x804) | [繁体中国語](https://go.microsoft.com/fwlink/?linkid=2125901&clcid=0x404) | [英語 (米国)](https://go.microsoft.com/fwlink/?linkid=2125901&clcid=0x409) | [フランス語](https://go.microsoft.com/fwlink/?linkid=2125901&clcid=0x40c) | [ドイツ語](https://go.microsoft.com/fwlink/?linkid=2125901&clcid=0x407) | [イタリア語](https://go.microsoft.com/fwlink/?linkid=2125901&clcid=0x410) | [日本語](https://go.microsoft.com/fwlink/?linkid=2125901&clcid=0x411) | [韓国語](https://go.microsoft.com/fwlink/?linkid=2125901&clcid=0x412) | [ポルトガル語 (ブラジル)](https://go.microsoft.com/fwlink/?linkid=2125901&clcid=0x416) | [ロシア語](https://go.microsoft.com/fwlink/?linkid=2125901&clcid=0x419) | [スペイン語](https://go.microsoft.com/fwlink/?linkid=2125901&clcid=0x40a)
 
-### <a name="whats-new-in-185"></a>18.5 の新機能
+#### <a name="whats-new-in-185"></a>18.5 の新機能
 
 | [新しい項目] | 詳細 |
 |----------|---------|
@@ -174,11 +337,11 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | SMO/スクリプト作成 | View オブジェクトに新しい DwMaterializedViewDistribution プロパティが追加されました。 |
 | SMO/スクリプト作成 | "*機能制限*" のサポートが削除されました (このプレビュー機能は SQL Azure と SQL オンプレミスから削除されています)。 |
 | SMO/スクリプト作成 | スクリプト生成ウィザードの保存先として *Notebook* が追加されました。 |
-| SMO/スクリプト作成 | *SQL On Demand* のサポートが追加されました。 |
+| SMO/スクリプト作成 | *Azure Synapse Analytics サーバーレス SQL プール* のサポートが追加されました。 |
 | SMO/スクリプト作成 | [SQL Assessment API](../tools/sql-assessment-api/sql-assessment-api-overview.md) - Platform、Name、および engineEdition フィールドに、通常のコンマで区切られた一覧を含めることができるようになりました (*platform*:\[*Windows*, *Linux*\])。正規表現も使用できます (*platform*: *\/Windows\|Linux\/* )
 | SMO/スクリプト作成 | [SQL Assessment API](../tools/sql-assessment-api/sql-assessment-api-overview.md) - 13 個の評価規則が追加されました。 詳細については、[GitHub](https://github.com/microsoft/sql-server-samples/tree/master/samples/manage/sql-assessment-api) にアクセスしてください。 |
 
-### <a name="bug-fixes-in-185"></a>18.5 でのバグの修正
+#### <a name="bug-fixes-in-185"></a>18.5 でのバグの修正
 
 | New Item | 詳細 |
 |----------|---------|
@@ -197,9 +360,9 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | SSMS 全般 | MSODBC および MSOLEDB ドライバーのバージョンを更新します。 |
 | SSMS 全般 | SSMS でのハングとクラッシュに関する、少なくとも 2 つの一般的な原因が対処されました。 |
 | SSMS 全般 | [参照] ボタンを選択すると " *[復元] ダイアログ*" がハングするもう 1 つのケースも対処されました。 |
-| SSMS 全般 | SQL On Demand の "*新しいデータベース GUI*" を修正しました。 |
-| SSMS 全般 | SQL On Demand の *[New External Table...]\(新しい外部テーブル...\)* テンプレートと *[New External Data Source...]\(新しい外部データ ソース...\)* テンプレートを修正しました。 |
-| SSMS 全般 | SQL On Demand のデータベースのプロパティ、接続のプロパティ、レポートの非表示と名前の変更を修正しました。 |
+| SSMS 全般 | Azure Synapse Analytics サーバーレス SQL プール用の "*新しいデータベース GUI*" を修正しました。 |
+| SSMS 全般 | Azure Synapse Analytics サーバーレス SQL プールの *[New External Table...]\(新しい外部テーブル...\)* テンプレートと *[New External Data Source...]\(新しい外部データ ソース...\)* テンプレートを修正しました。 |
+| SSMS 全般 | Azure Synapse Analytics サーバーレス SQL プールのデータベースのプロパティ、接続のプロパティ、レポートの非表示と名前の変更を修正しました。 |
 | SSMS 全般 | Always Encrypted: 新しいエンクレーブ対応キーを選択したときにキー名のドロップダウンが読み取り専用になる問題を修正しました。 |
 | SSMS 全般 | 2 つの "*その他のカテゴリ*" が表示されていた "*データベースのプロパティのオプション*" グリッドをクリーンアップしました。 |
 | SSMS 全般 | スクロール バーが "データベースのプロパティのオプション" グリッドの中央から開始された問題を修正しました。 |
@@ -226,7 +389,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | SQL エージェント | [ジョブ ステップ] ページのタブ オーダーを修正しました。 |
 | SQL エージェント | [ジョブ ステップ] ページでの [次へ] ボタンと [前へ] ボタンの位置が逆になり、論理的な順序に配置されました。 |
 | SQL エージェント | UI が省略されないようにジョブ スケジュール ウィンドウを調整しました。 |
-| SMO/スクリプト作成 | SQL On Demand のデータベース スクリプト作成を修正しました。 |
+| SMO/スクリプト作成 | Azure Synapse Analytics サーバーレス SQL プールのデータベース スクリプト作成を修正しました。 |
 | SMO/スクリプト作成 | SqlOnDemand のスクリプト作成が修正される、明示的な sqlvariant キャスト (SqlOnDemand に対して無効な T-SQL) を削除しました。 |
 | SMO/スクリプト作成 | SQL Azure のインデックスに対する FILLFACTOR がスキップされた問題を修正しました。 |
 | SMO/スクリプト作成 | 外部オブジェクトのスクリプト作成に関連する問題を修正した。 |
@@ -234,7 +397,10 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | SMO/スクリプト作成 | [SQL Assessment API](../tools/sql-assessment-api/sql-assessment-api-overview.md) - XTPHashAvgChainBuckets ルールの間違ったヘルプ リンク。 |
 | XEvent の UI | グリッド内の項目がホバー時に選択される問題を修正しました。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/38262124)と [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035-sql-server/suggestions/37873921)を参照してください。 |
 
-### <a name="known-issues-185"></a>既知の問題 (18.5)
+#### <a name="known-issues-185"></a>既知の問題 (18.5)
+
+| New Item | 詳細 | 回避策 |
+|----------|---------|------------|
 
 - マシン A 上で実行されている SSMS から作成されたデータベース ダイアグラムは、マシン B からは変更できません (SSMS がクラッシュします)。 詳細については、[SQL Server ユーザー フィードバック 37992649](https://feedback.azure.com/forums/908035/suggestions/37992649) を参照してください。
 
@@ -263,7 +429,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | クエリ ストア | 新しいカスタム キャプチャ ポリシーのサポートが追加されました。 |
 | クエリ ストア | **[クエリ ストア]** の **[データベースのプロパティ]** オプションに **[Wait Statistics Capture Mode]\(待機統計取り込みモード\)** を追加しました。 |
 | SMO/スクリプト作成 | SQL DW で具体化されたビューのスクリプトをサポートします。 |
-| SMO/スクリプト作成 | *SQL On Demand* のサポートが追加されました。 |
+| SMO/スクリプト作成 | *Azure Synapse Analytics サーバーレス SQL プール* のサポートが追加されました。 |
 | SMO/スクリプト作成 | [SQL Assessment API](../tools/sql-assessment-api/sql-assessment-api-overview.md) - 50 個の評価規則が追加されました (GitHub の詳細を参照)。 |
 | SMO/スクリプト作成 | [SQL Assessment API](../tools/sql-assessment-api/sql-assessment-api-overview.md) - ルールの条件に基になる計算式と比較が追加されました。 |
 | SMO/スクリプト作成 | [SQL Assessment API](../tools/sql-assessment-api/sql-assessment-api-overview.md) - RegisteredServer オブジェクトのサポートが追加されました。 |
@@ -365,7 +531,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 
 [簡体中国語](https://go.microsoft.com/fwlink/?linkid=2099720&clcid=0x804) | [繁体中国語](https://go.microsoft.com/fwlink/?linkid=2099720&clcid=0x404) | [英語 (米国)](https://go.microsoft.com/fwlink/?linkid=2099720&clcid=0x409) | [フランス語](https://go.microsoft.com/fwlink/?linkid=2099720&clcid=0x40c) | [ドイツ語](https://go.microsoft.com/fwlink/?linkid=2099720&clcid=0x407) | [イタリア語](https://go.microsoft.com/fwlink/?linkid=2094583&clcid=0x410) | [日本語](https://go.microsoft.com/fwlink/?linkid=2099720&clcid=0x411) | [韓国語](https://go.microsoft.com/fwlink/?linkid=2099720&clcid=0x412) | [ポルトガル語 (ブラジル)](https://go.microsoft.com/fwlink/?linkid=2099720&clcid=0x416) | [ロシア語](https://go.microsoft.com/fwlink/?linkid=2099720&clcid=0x419) | [スペイン語](https://go.microsoft.com/fwlink/?linkid=2099720&clcid=0x40a)
 
-### <a name="whats-new-in-182"></a>18.2 の新機能
+#### <a name="whats-new-in-182"></a>18.2 の新機能
 
 | New Item | 詳細 |
 |----------|---------|
@@ -393,7 +559,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | SSMS 全般 | 一部の色オプション *([テキスト エディター] > [エディターのタブとステータス バー])* が保存されない問題を修正しました。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/37924165)を参照してください
 | SSMS 全般 | 接続ダイアログで、 *[Azure Active Directory - Universal with MFA のサポート]* を *[Azure Active Directory - Universal with MFA]* に置き換えました (機能は同じですが、混乱を軽減するため)。 |
 | SSMS 全般 | Azure SQL Database を作成するときに正しい既定値を使用するように SSMS を更新しました。 |
-| SSMS 全般 | サーバーが [SQL Linux コンテナー](../linux/quickstart-install-connect-docker.md)の場合に [[サーバーの登録]](register-servers/register-servers.md) のノードからユーザーが *PowerShell を起動*できなかった問題を修正しました。 |
+| SSMS 全般 | サーバーが [SQL Linux コンテナー](../linux/quickstart-install-connect-docker.md)の場合に [[サーバーの登録]](register-servers/register-servers.md) のノードからユーザーが *PowerShell を起動* できなかった問題を修正しました。 |
 | フラット ファイルのインポート | SSMS 18.0 から 18.1 にアップグレードした後に *[フラット ファイルのインポート]* が機能しなかった問題を修正しました。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/37912636)を参照してください |
 | フラット ファイルのインポート | Unicode 文字のヘッダーを持つ .csv ファイルの場合に "*フラット ファイルのインポート ウィザードで重複または無効な列*" が報告されていた問題を修正しました。 |
 | オブジェクト エクスプローラー | SQL Express に接続したときに一部のメニュー項目 (たとえば、SQL サーバーの "*インポートおよびエクスポート ウィザード*") が見つからないか無効になる問題を修正しました。 詳細については、[SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035/suggestions/37500016)を参照してください。 |
@@ -478,7 +644,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | プラン表示 | 新しいプラン表示要素 *SpillOccurred* をプラン表示スキーマに追加しました。 |
 | プラン表示 | リモートの読み取り (*ActualPageServerReads*、*ActualPageServerReadAheads*、*ActualLobPageServerReads*、*ActualLobPageServerReadAheads*) をプラン表示スキーマに追加しました。 |
 | SMO/スクリプト作成 | グラフではないテーブルのスクリプト作成中のエッジ制約のクエリを回避します。 |
-| SMO/スクリプト作成 | *データ分類*を使用した列のスクリプト作成時の機密分類に関する制約を削除しました。 |
+| SMO/スクリプト作成 | *データ分類* を使用した列のスクリプト作成時の機密分類に関する制約を削除しました。 |
 | SMO/スクリプト作成 | データ生成時にグラフ テーブルでの "スクリプトの生成" が失敗する問題を修正しました。 詳細については、[SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035-sql-server/suggestions/32898466)を参照してください。 |
 | SMO/スクリプト作成 | EnumObjects() メソッドでシノニムのスキーマ名が取り込まれない問題を修正しました。 |
 | SMO/スクリプト作成 | UIConnectionInfo.LoadFromStream() で (パスワードが指定されていない場合に) *AdvancedOptions* セクションが読み込まれない問題を修正しました。 |
@@ -511,7 +677,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 
 | [新しい項目]| 詳細|
 | :-------| :------|
-|SQL Server 2019 のサポート|SSMS 18.0 は、SQL Server 2019 (compatLevel 150). を完全に*認識*する最初のリリースです。|
+|SQL Server 2019 のサポート|SSMS 18.0 は、SQL Server 2019 (compatLevel 150). を完全に *認識* する最初のリリースです。|
 |SQL Server 2019 のサポート|SQL Server 2019 および SQL Managed Instance での "BATCH_STARTED_GROUP" と "BATCH_COMPLETED_GROUP" のサポート。|
 |SQL Server 2019 のサポート|SMO:UDF のインライン化のサポートが追加されました。|
 |SQL Server 2019 のサポート|GraphDB:Graph TC Sequence のプラン表示にフラグが追加されます。|
@@ -556,7 +722,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 |データ分類|SMO に新機能 'データ分類' が追加されました。 Column オブジェクトで新たに公開されたプロパティ:SensitivityLabelName、SensitivityLabelId、SensitivityInformationTypeName、SensitivityInformationTypeId、IsClassified (読み取り専用)。 詳細については、「[ADD SENSITIVITY CLASSIFICATION (Transact-SQL)](../t-sql/statements/add-sensitivity-classification-transact-sql.md)」を参照してください。|
 |データ分類|[データ分類] ポップアップに新しい [Classification Report]\(分類レポート\) メニュー項目が追加されました。|
 |データ分類| 推奨事項が更新されました。|
-|データベース互換性レベルのアップグレード|***[データベース名]*** > ***[タスク]*** > ***[データベースのアップグレード]*** に新しいオプションを追加しました。 これにより、ユーザーに次のプロセスをガイドする、新しい**クエリ調整アシスタント (QTA)** が開始されます。データベースの互換性レベルをアップグレードする前にパフォーマンスのベースラインを収集する。 目的のデータベース互換性レベルにアップグレードする。  同じワークロードを介してパフォーマンス データの 2 番目の受け渡しを収集する。 ワークロードの低下を検出し、ワークロードのパフォーマンスを改善するためのテスト済みのレコメンデーションを提供する。  これは、「[クエリ ストアの使用シナリオ](../relational-databases/performance/query-store-usage-scenarios.md#CEUpgrade)」に記載されているデータベースのアップグレード プロセスに似ていますが、最後の手順 (QTA はレコメンデーションを生成するために以前の正常起動時の状態に依存しない) が異なります。|
+|データベース互換性レベルのアップグレード|**_[データベース名]_ *>* _[タスク]_ *>* _[データベースのアップグレード]_ *の順に新しいオプションを追加しました。これにより、ユーザーに次のプロセスをガイドする、新しい* クエリ調整アシスタント (QTA)** が開始されます。データベースの互換性レベルをアップグレードする前にパフォーマンスのベースラインを収集する。 目的のデータベース互換性レベルにアップグレードする。  同じワークロードを介してパフォーマンス データの 2 番目の受け渡しを収集する。 ワークロードの低下を検出し、ワークロードのパフォーマンスを改善するためのテスト済みのレコメンデーションを提供する。  これは、「[クエリ ストアの使用シナリオ](../relational-databases/performance/query-store-usage-scenarios.md#CEUpgrade)」に記載されているデータベースのアップグレード プロセスに似ていますが、最後の手順 (QTA はレコメンデーションを生成するために以前の正常起動時の状態に依存しない) が異なります。|
 |データ層アプリケーションのウィザード|グラフ テーブルを使用したデータ層アプリケーションのインポート/エクスポートのサポートが追加されました。|
 |フラット ファイルのインポート ウィザード|インポートで列の名前が変更された可能性があることをユーザーに通知するロジックが追加されました。|
 |Integration Services (SSIS)|顧客が Azure Government クラウド内にある Azure-SSIS IR で SSIS パッケージをスケジュールできるようにするためのサポートが追加されました。|
@@ -595,8 +761,8 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 
 #### <a name="bug-fixes-in-180"></a>18.0 でのバグの修正
 
-| [新しい項目]| 詳細|
-| :-------| :------|
+| [新しい項目] | 詳細|
+|----------|--------|
 |クラッシュとフリーズ|GDI オブジェクトに関連する一般的な SSMS クラッシュの原因を修正しました。|
 |クラッシュとフリーズ|[Script as Create/Update/Drop]\(作成/更新/ドロップとしてスクリプト化\) を選択したときの停止とパフォーマンス低下の一般的な原因を修正しました (SMO オブジェクトの不要なフェッチを削除しました)。|
 |クラッシュとフリーズ|ADAL トレースが有効なときに MFA を使用して Azure SQL Database に接続すると、システムが応答を停止する問題を修正しました。|
@@ -718,7 +884,7 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 |SMO|SMO の Azure データベースが、文字列のすべての比較で、データベースに指定された照合順序を使用する代わりに、大文字と小文字が区別される照合順序を既定としていた問題を修正しました。|
 |SSMS エディター|"SQL システム テーブル" の問題を修正しました。この問題で、既定の色を復元すると、既定の緑色ではなく、ライム グリーン色に変わり、白い背景では読みにくくなります。 詳細については、「[Restoring wrong default color for SQL System Table](https://feedback.azure.com/forums/908035-sql-server/suggestions/32896906)」 (SQL システム テーブルの不適切な既定の色を復元する) を参照してください。 この問題は、英語以外のバージョンの SSMS では引き続き発生します。|
 |SSMS エディター|Azure Active Directory (Azure AD) 認証を使用して Azure SQLDW に接続したときに IntelliSense が動作しない問題を修正しました。|
-|SSMS エディター|ユーザーが**マスター** データベースへのアクセス権を持たない場合の Azure の IntelliSense が修正されました。|
+|SSMS エディター|ユーザーが **マスター** データベースへのアクセス権を持たない場合の Azure の IntelliSense が修正されました。|
 |SSMS エディター|ターゲット データベースの照合順序で大文字と小文字が区別されているときに破損した "テンポラル テーブル" が作成されるコード スニペットを修正しました。|
 |SSMS エディター|新しい TRANSLATE 関数が、Intellisense によって認識されるようになりました。 詳細については、[https://feedback.azure.com/forums/908035-sql-server/suggestions/32898430](https://feedback.azure.com/forums/908035-sql-server/suggestions/32898430) を参照してください。 |
 |SSMS エディター|組み込み関数 FORMAT の Intellisense が改善されました。 詳細については、[https://feedback.azure.com/forums/908035-sql-server/suggestions/32898676](https://feedback.azure.com/forums/908035-sql-server/suggestions/32898676) を参照してください。 |
@@ -739,7 +905,8 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 
 #### <a name="deprecated-and-removed-features-in-180"></a>18.0 で非推奨とされた、または削除された機能
 
-非推奨とされた、または削除された機能
+SSMS バージョン 18.0 の非推奨の機能と削除された機能を次に示します。
+
 - T-SQL デバッガー
 - データベース ダイアグラム
 - 次のツールは、SSMS でインストールされなくなりました。
@@ -772,8 +939,8 @@ SSMS 18.6 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 
 ![ダウンロード](media/download-icon.png) [SSMS 17.9.1 をダウンロードする](https://go.microsoft.com/fwlink/?linkid=2043154&clcid=0x409)
 
-- リリース番号:17.9.1  
-- ビルド番号:14.0.17289.0  
+- リリース番号:17.9.1
+- ビルド番号:14.0.17289.0
 - リリース日: 2018 年 11 月 21 日
 
 #### <a name="bug-fixes-in-1791"></a>17.9.1 でのバグの修正
@@ -823,29 +990,29 @@ SSMS のインストールで問題があり、標準のアンインストール
 
 #### <a name="bug-fixes-in-1653"></a>16.5.3 でのバグの修正
 
-* SSMS 16.5.2 で、テーブルに複数のスパース列がある場合に 'Table' ノードが拡張される原因となっていた問題が修正されました。
+- SSMS 16.5.2 で、テーブルに複数のスパース列がある場合に 'Table' ノードが拡張される原因となっていた問題が修正されました。
 
-* ユーザーは、SSIS カタログに、Microsoft Dynamics AX/CRM Online のリソースに接続される OData 接続マネージャーを含む SSIS パッケージを展開できます。 詳細については、「[OData 接続マネージャー](../integration-services/connection-manager/odata-connection-manager.md)」を参照してください。
+- ユーザーは、SSIS カタログに、Microsoft Dynamics AX/CRM Online のリソースに接続される OData 接続マネージャーを含む SSIS パッケージを展開できます。 詳細については、「[OData 接続マネージャー](../integration-services/connection-manager/odata-connection-manager.md)」を参照してください。
 
-* 関連付けられていないオブジェクトで既存のテーブルに対して Always Encrypted を構成すると、エラーが発生して実行できない ( [Connect ID 3103181](https://connect.microsoft.com/SQLServer/feedback/details/3103181/setting-up-always-encrypted-on-an-existing-table-fails-with-errors-on-unrelated-objects) を参照)。
+- 関連付けられていないオブジェクトで既存のテーブルに対して Always Encrypted を構成すると、エラーが発生して実行できない ( [Connect ID 3103181](https://connect.microsoft.com/SQLServer/feedback/details/3103181/setting-up-always-encrypted-on-an-existing-table-fails-with-errors-on-unrelated-objects) を参照)。
 
-* 複数のスキーマを持つ既存のデータベースに対して Always Encrypted を構成できない ( [Connect ID 3109591](https://connect.microsoft.com/SQLServer/feedback/details/3109591/sql-server-2016-always-encrypted-against-existing-database-with-multiple-schemas-doesnt-work) を参照)。
+- 複数のスキーマを持つ既存のデータベースに対して Always Encrypted を構成できない ( [Connect ID 3109591](https://connect.microsoft.com/SQLServer/feedback/details/3109591/sql-server-2016-always-encrypted-against-existing-database-with-multiple-schemas-doesnt-work) を参照)。
 
-* データベースにシステム ビューを参照するビューが含まれているため、Always Encrypted の暗号化された列ウィザードでエラーが発生する ( [Connect ID 3111925](https://connect.microsoft.com/SQLServer/feedback/details/3111925/sql-server-2016-always-encrypted-encrypted-column-wizard-failed-task-failed-due-to-following-error-cannot-save-package-to-file-the-model-has-build-blocking-errors) を参照)。
+- データベースにシステム ビューを参照するビューが含まれているため、Always Encrypted の暗号化された列ウィザードでエラーが発生する ( [Connect ID 3111925](https://connect.microsoft.com/SQLServer/feedback/details/3111925/sql-server-2016-always-encrypted-encrypted-column-wizard-failed-task-failed-due-to-following-error-cannot-save-package-to-file-the-model-has-build-blocking-errors) を参照)。
 
-* Always Encrypted を使用して暗号化する場合、暗号化が正しく処理されていない状態でモジュールを更新するとエラーが発生する。
+- Always Encrypted を使用して暗号化する場合、暗号化が正しく処理されていない状態でモジュールを更新するとエラーが発生する。
 
-* *[最近使用した項目を開く]* メニューに、最近保存したファイルが表示されない ( [Connect ID 3113288](https://connect.microsoft.com/SQLServer/feedback/details/3113288/ssms-2016-open-recent-menu-doesnt-show-recently-saved-files) を参照)。
+- *[最近使用した項目を開く]* メニューに、最近保存したファイルが表示されない ( [Connect ID 3113288](https://connect.microsoft.com/SQLServer/feedback/details/3113288/ssms-2016-open-recent-menu-doesnt-show-recently-saved-files) を参照)。
 
-* テーブルのインデックスを右クリックすると SSMS の動作が遅くなる (リモート (インターネット) 接続経由の場合)。 [Connect ID 3114074](https://connect.microsoft.com/SQLServer/feedback/details/3114074/ssms-slow-when-right-clicking-an-index-for-a-table-over-a-remote-internet-connection) を参照)。
+- テーブルのインデックスを右クリックすると SSMS の動作が遅くなる (リモート (インターネット) 接続経由の場合)。 [Connect ID 3114074](https://connect.microsoft.com/SQLServer/feedback/details/3114074/ssms-slow-when-right-clicking-an-index-for-a-table-over-a-remote-internet-connection) を参照)。
 
-* SQL デザイナーのスクロール バーの問題が修正されました ( [Connect ID 3114856](https://connect.microsoft.com/SQLServer/feedback/details/3114856/bug-in-scrollbar-on-sql-desginer-in-ssms-2016) を参照)。
+- SQL デザイナーのスクロール バーの問題が修正されました ( [Connect ID 3114856](https://connect.microsoft.com/SQLServer/feedback/details/3114856/bug-in-scrollbar-on-sql-desginer-in-ssms-2016) を参照)。
 
-* テーブルのコンテキスト メニューがすぐに応答を停止する
+- テーブルのコンテキスト メニューがすぐに応答を停止する
 
-* SSMS で利用状況モニターの例外がスローされ、クラッシュする場合がある ( [Connect ID 697527](https://connect.microsoft.com/SQLServer/feedback/details/697527/) を参照)。
+- SSMS で利用状況モニターの例外がスローされ、クラッシュする場合がある ( [Connect ID 697527](https://connect.microsoft.com/SQLServer/feedback/details/697527/) を参照)。
 
-* ".NET ランタイムの内部エラーにより、処理が中止されました。IP 71AF8579 (71AE0000)、終了コード 80131506" という内容のエラーで SSMS 2016 がクラッシュする。
+- ".NET ランタイムの内部エラーにより、処理が中止されました。IP 71AF8579 (71AE0000)、終了コード 80131506" という内容のエラーで SSMS 2016 がクラッシュする。
 
 ## <a name="additional-downloads"></a>追加のダウンロード
 

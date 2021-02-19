@@ -10,12 +10,12 @@ ms.date: 12/13/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: d92479dbc8cc705e263b0828926bc2a5e86312b6
-ms.sourcegitcommit: 7345e4f05d6c06e1bcd73747a4a47873b3f3251f
+ms.openlocfilehash: f89450293597c28afb8db519f1c06d9d0b566046
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88778451"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100043482"
 ---
 # <a name="submit-spark-jobs-on-sql-server-big-data-cluster-in-visual-studio-code"></a>SQL Server ビッグ データ クラスター上の Visual Studio Code で Spark ジョブを送信する
 
@@ -28,7 +28,7 @@ Spark & Hive Tools は、Windows、Linux、macOS など、Visual Studio Code で
 
 この記事の手順を完了するには、次の項目が必要です。
 
-- SQL Server ビッグ データ クラスター。 [[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]](https://docs.microsoft.com/sql/big-data-cluster/big-data-cluster-overview?view=sqlallproducts-allversions)に関するページを参照してください。
+- SQL Server ビッグ データ クラスター。 [[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]](https://docs.microsoft.com/sql/big-data-cluster/big-data-cluster-overview)に関するページを参照してください。
 - [Visual Studio Code](https://code.visualstudio.com/)。
 - [Mono](https://www.mono-project.com/docs/getting-started/install/)。 Mono は、Linux と macOS の場合にのみ必要です。
 - [Visual Studio Code 用に PySpark の対話型の環境を設定します](/azure/hdinsight/set-up-pyspark-interactive-environment)。
@@ -256,4 +256,4 @@ Spark & Hive for Visual Studio Code は次の機能をサポートしていま�
 3. **[OUTPUT]\(出力\)** ビューを確認します。  
 
 ## <a name="next-steps"></a>次のステップ
-SQL Server ビッグ データ クラスターと関連するシナリオの詳細については、「[[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]](https://docs.microsoft.com/sql/big-data-cluster/big-data-cluster-overview?view=sqlallproducts-allversions)」を参照してください。
+SQL Server ビッグ データ クラスターと関連するシナリオの詳細については、「[[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]](https://docs.microsoft.com/sql/big-data-cluster/big-data-cluster-overview)」を参照してください。

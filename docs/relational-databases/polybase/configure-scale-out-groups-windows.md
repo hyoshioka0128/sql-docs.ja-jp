@@ -8,13 +8,13 @@ ms.topic: tutorial
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: ''
-monikerRange: '>= sql-server-2016 || =sqlallproducts-allversions'
-ms.openlocfilehash: ddf0fe7b4f3f14963291d8ae930d7d680c374cb2
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+monikerRange: '>= sql-server-2016'
+ms.openlocfilehash: 99129e6b52be36b1eb729bfda6056ec1010e7198
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91892142"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100351861"
 ---
 # <a name="configure-polybase-scale-out-groups-on-windows"></a>Windows 上で PolyBase スケールアウト グループを構成する
 
@@ -52,7 +52,7 @@ ms.locfileid: "91892142"
   
    - PQTH4A-CMP02  
   
-2. ドメイン アカウント:*PQTH4A\PolyBaseUse*r  
+2. ドメイン アカウント:*PQTH4A\PolyBaseUse* r  
 
 ## <a name="install-sql-server-with-polybase-on-all-machines"></a>すべてのマシンに、PolyBase を使用する SQL Server をインストールする
 
@@ -60,11 +60,11 @@ ms.locfileid: "91892142"
   
 2. [機能の選択] ページで、 **[外部データ用 PolyBase クエリ サービス]** を選択します。
   
-3. [サーバーの構成] ページで、SQL Server PolyBase エンジンと SQL Server PolyBase Data Movement サービス用に**ドメイン アカウント** PQTH4A\PolyBaseUser を使用します。
+3. [サーバーの構成] ページで、SQL Server PolyBase エンジンと SQL Server PolyBase Data Movement サービス用に **ドメイン アカウント** PQTH4A\PolyBaseUser を使用します。
   
 4. [PolyBase の構成] ページで、 **[PolyBase スケール アウト グループの一部として、SQL Server インスタンスを使用します]** オプションを選択します。 これにより、ファイアウォールが開かれて、PolyBase サービスへの着信接続が許可されます。 ヘッド ノードが名前付きインスタンスの場合は、ヘッド ノードの Windows ファイアウォールに SQL Server ポートを手動で追加する必要があります。また、ヘッド ノードで SQL Browser を開始します。
   
-5. セットアップが完了したら、 **services.msc**を実行します。 SQL Server、PolyBase エンジン、および PolyBase データ移動サービスが実行されていることを確認します。
+5. セットアップが完了したら、 **services.msc** を実行します。 SQL Server、PolyBase エンジン、および PolyBase データ移動サービスが実行されていることを確認します。
   
    ![PolyBase サービス](../../relational-databases/polybase/media/polybase-services.png "PolyBase サービス")  
   

@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: ca2bb295-b7f6-49c3-91ed-0ad4c39f89d5
 author: MightyPen
 ms.author: genemi
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 28658f7f420976efe51d84a86123fe037965ab48
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 6e458356777d9dfb6784491ae4dbdca6482b943f
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91868012"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97465583"
 ---
 # <a name="event-tracing-for-windows-target"></a>Event Tracing for Windows ターゲット
 
@@ -48,7 +48,7 @@ ms.locfileid: "91868012"
  ETW ターゲットは、外部 ETW コントローラー (たとえば Logman.exe) からのコントロールをサポートしません。 ETW トレースを生成するには、ETW ターゲットを使用してイベント セッションを作成する必要があります。 詳細については、「 [CREATE EVENT SESSION &#40;Transact-SQL&#41;](../../t-sql/statements/create-event-session-transact-sql.md)」を参照してください。  
   
 > [!NOTE]  
->  ETW ターゲットを有効にすると、XE_DEFAULT_ETW_SESSION という名前の ETW セッションが作成されます。 XE_DEFAULT_ETW_SESSION という名前のセッションが既に存在する場合は、既存のセッションのプロパティを変更せずに使用されます。 XE_DEFAULT_ETW_SESSION はすべての [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のインスタンス間で共有されます。 XE_DEFAULT_ETW_SESSION を開始した後に停止する場合は、Logman ツールなどの ETW コントローラーを使用する必要があります。 たとえば、コマンド プロンプトで **logman stop XE_DEFAULT_ETW_SESSION -ets**コマンドを実行できます。  
+>  ETW ターゲットを有効にすると、XE_DEFAULT_ETW_SESSION という名前の ETW セッションが作成されます。 XE_DEFAULT_ETW_SESSION という名前のセッションが既に存在する場合は、既存のセッションのプロパティを変更せずに使用されます。 XE_DEFAULT_ETW_SESSION はすべての [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のインスタンス間で共有されます。 XE_DEFAULT_ETW_SESSION を開始した後に停止する場合は、Logman ツールなどの ETW コントローラーを使用する必要があります。 たとえば、コマンド プロンプトで **logman stop XE_DEFAULT_ETW_SESSION -ets** コマンドを実行できます。  
   
  次の表では、ETW ターゲットの構成に使用できるオプションについて説明します。  
   

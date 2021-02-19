@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - fn_get_audit_file_TSQL
 - sys.fn_get_audit_file_TSQL
@@ -19,15 +19,15 @@ helpviewer_keywords:
 - sys.fn_get_audit_file function
 - fn_get_audit_file function
 ms.assetid: d6a78d14-bb1f-4987-b7b6-579ddd4167f5
-author: rothja
-ms.author: jroth
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current||=azure-sqldw-latest
-ms.openlocfilehash: 6b631c6a8139304bd716e4eb1f3969de706f31d6
-ms.sourcegitcommit: 968969b62bc158b9843aba5034c9d913519bc4a7
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current||=azure-sqldw-latest
+ms.openlocfilehash: 013586570ce43b8270ae2613c05ced8bc9bdc48b
+ms.sourcegitcommit: c83c17e44b5e1e3e2a3b5933c2a1c4afb98eb772
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91753765"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100525216"
 ---
 # <a name="sysfn_get_audit_file-transact-sql"></a>sys.fn_get_audit_file (Transact-sql)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]    
@@ -54,9 +54,9 @@ fn_get_audit_file ( file_pattern,
   
     -   **\<path>\\\*** -指定された場所にあるすべての監査ファイルを収集します。  
   
-    -   ** \<path> \ LOGINSAUDIT_ {GUID}***-指定した名前と GUID のペアを持つすべての監査ファイルを収集します。  
+    -   **\<path> \ LOGINSAUDIT_ {GUID}***-指定した名前と GUID のペアを持つすべての監査ファイルを収集します。  
   
-    -   ** \<path> \ LOGINSAUDIT_ {GUID} (_m)** 、特定の監査ファイルを収集します。  
+    -   **\<path> \ LOGINSAUDIT_ {GUID} (_m)** 、特定の監査ファイルを収集します。  
   
  - **Azure SQL Database**:
  
@@ -64,7 +64,7 @@ fn_get_audit_file ( file_pattern,
  
       - **\<Storage_endpoint\>/\<Container\>/\<ServerName\>/\<DatabaseName\>/** -特定のデータベースのすべての監査ファイル (blob) を収集します。    
       
-      - ** \<Storage_endpoint\> / \<Container\> / \<ServerName\> / \<DatabaseName\> / \<AuditName\> / \<CreationDate\> / \<FileName\> . xel** -特定の監査ファイル (blob) を収集します。
+      - **\<Storage_endpoint\> / \<Container\> / \<ServerName\> / \<DatabaseName\> / \<AuditName\> / \<CreationDate\> / \<FileName\> . xel** -特定の監査ファイル (blob) を収集します。
   
 > [!NOTE]  
 >  ファイル名のパターンがないパスを渡すとエラーが発生します。  
@@ -73,13 +73,13 @@ fn_get_audit_file ( file_pattern,
  監査レコードの読み取りを開始する監査ファイルセット内の特定のファイルのパスと名前を指定します。 種類は **nvarchar (260)** です。  
   
 > [!NOTE]  
->  *Initial_file_name*引数には、有効なエントリが含まれているか、または default | を含んでいる必要があります。NULL 値。  
+>  *Initial_file_name* 引数には、有効なエントリが含まれているか、または default | を含んでいる必要があります。NULL 値。  
   
  *audit_record_offset*  
  Initial_file_name に対して指定されたファイルを持つ既知の場所を指定します。 この引数を使用した場合、関数は、指定されたオフセットの直後にあるバッファーの最初のレコードから読み取りを開始します。  
   
 > [!NOTE]  
->  *Audit_record_offset*引数には、有効なエントリが含まれているか、または default | を含んでいる必要があります。NULL 値。 型は **bigint**です。  
+>  *Audit_record_offset* 引数には、有効なエントリが含まれているか、または default | を含んでいる必要があります。NULL 値。 型は **bigint** です。  
   
 ## <a name="tables-returned"></a>返されるテーブル  
  次の表に、この関数から返される監査ファイルの内容を示します。  
@@ -103,8 +103,8 @@ fn_get_audit_file ( file_pattern,
 | event_time | **datetime2** | 監査可能なアクションが発生した日時。 NULL 値は許可されません。 |  
 | file_name | **varchar(260)** | レコードの送信元の監査ログファイルのパスと名前。 NULL 値は許可されません。 |
 | is_column_permission | **bit** | 列レベルのアクセス許可であるかどうかを示すフラグ。 NULL 値は許可されません。 Permission_bitmask が0の場合は0を返します。<br /> 1 = true<br /> 0 = false |
-| object_id | **int** | 監査が発生したエンティティの ID。 これには、次の内容が含まれます。<br /> サーバー オブジェクト<br /> データベース<br /> データベース オブジェクト<br /> スキーマ オブジェクト<br /> NULL 値は許可されません。 エンティティがサーバー自体である場合、または監査がオブジェクト レベルで実行されない場合は 0 を返します。 たとえば、認証などの場合です。 |  
-| object_name | **sysname** | 監査が発生したエンティティの名前。 これには、次の内容が含まれます。<br /> サーバー オブジェクト<br /> データベース<br /> データベース オブジェクト<br /> スキーマ オブジェクト<br /> NULL 値が許可されます。 エンティティがサーバー自体である場合、または監査がオブジェクト レベルで実行されない場合は NULL を返します。 たとえば、認証などの場合です。 |
+| object_id | **int** | 監査が発生したエンティティの ID。 次に例を示します。<br /> サーバー オブジェクト<br /> データベース<br /> データベース オブジェクト<br /> スキーマ オブジェクト<br /> NULL 値は許可されません。 エンティティがサーバー自体である場合、または監査がオブジェクト レベルで実行されない場合は 0 を返します。 たとえば、認証などの場合です。 |  
+| object_name | **sysname** | 監査が発生したエンティティの名前。 次に例を示します。<br /> サーバー オブジェクト<br /> データベース<br /> データベース オブジェクト<br /> スキーマ オブジェクト<br /> NULL 値が許可されます。 エンティティがサーバー自体である場合、または監査がオブジェクト レベルで実行されない場合は NULL を返します。 たとえば、認証などの場合です。 |
 | permission_bitmask | **varbinary(16)** | 一部のアクションでは、権限の許可、拒否、または取り消しを示します。 |
 | response_rows | **bigint** | **適用対象**: AZURE SQL DATABASE と SQL Managed Instance<br /><br /> 結果セットで返される行の数。 |  
 | schema_name | **sysname** | アクションが発生したスキーマ コンテキスト。 NULL 値が許可されます。 スキーマの外部で発生する監査の場合は NULL を返します。 |  
@@ -115,7 +115,7 @@ fn_get_audit_file ( file_pattern,
 | server_principal_name | **sysname** | 現在のログイン。 NULL 値が許可されます。 |  
 | server_principal_sid | **varbinary** | 現在のログイン SID。 NULL 値が許可されます。 |  
 | session_id | **smallint** | イベントが発生したセッションの ID。 NULL 値は許可されません。 |  
-| session_server_principal_name | **sysname** | セッションのサーバープリンシパル。 NULL 値が許可されます。 |  
+| session_server_principal_name | **sysname** | セッションのサーバープリンシパル。 NULL 値が許可されます。 明示的または暗黙的なコンテキストスイッチが存在した場合に SQL Server のインスタンスに接続されていた元のログインの id を返します。|  
 | statement | **nvarchar (4000)** | TSQL ステートメント (存在する場合)。 NULL 値が許可されます。 該当しない場合は NULL を返します。 |  
 | 成功 | **bit** | イベントをトリガーしたアクションが成功したかどうかを示します。 NULL 値は許可されません。 ログイン イベント以外のすべてのイベントで、操作ではなく、権限チェックが成功したか失敗したかのみを報告します。<br /> 1 = 成功 (success)<br /> 0 = 失敗 |
 | target_database_principal_id | **int** | 許可、拒否、取り消し操作が実行されるデータベース プリンシパル。 NULL 値は許可されません。 該当しない場合は0を返します。 |  
@@ -124,13 +124,14 @@ fn_get_audit_file ( file_pattern,
 | target_server_principal_name | **sysname** | アクションの対象ログイン。 NULL 値が許可されます。 該当しない場合は NULL を返します。 |  
 | target_server_principal_sid | **varbinary** | 対象ログインのセキュリティ ID。 NULL 値が許可されます。 該当しない場合は NULL を返します。 |  
 | transaction_id | **bigint** | **適用対象**: SQL Server のみ (2016 以降)<br /><br /> 1つのトランザクションで複数の監査イベントを識別するための一意の識別子 |  
-| user_defined_event_id | **smallint** | **適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降、Azure SQL Database および SQL Managed Instance<br /><br /> **Sp_audit_write**に引数として渡されたユーザー定義イベント id。 システムイベント (既定値) の場合は**NULL** 、ユーザー定義イベントの場合は0以外。 詳細については、「 [sp_audit_write &#40;transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-audit-write-transact-sql.md)」を参照してください。 |  
-| user_defined_information | **nvarchar (4000)** | **適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降、Azure SQL Database および SQL Managed Instance<br /><br /> **Sp_audit_write**ストアドプロシージャを使用して、監査ログに記録する必要のある追加情報を記録するために使用します。 |  
+| user_defined_event_id | **smallint** | **適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降、Azure SQL Database および SQL Managed Instance<br /><br /> **Sp_audit_write** に引数として渡されたユーザー定義イベント id。 システムイベント (既定値) の場合は **NULL** 、ユーザー定義イベントの場合は0以外。 詳細については、「 [sp_audit_write &#40;transact-sql&#41;](../../relational-databases/system-stored-procedures/sp-audit-write-transact-sql.md)」を参照してください。 |  
+| user_defined_information | **nvarchar (4000)** | **適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降、Azure SQL Database および SQL Managed Instance<br /><br /> **Sp_audit_write** ストアドプロシージャを使用して、監査ログに記録する必要のある追加情報を記録するために使用します。 |  
 
   
 ## <a name="remarks"></a>解説  
- **Fn_get_audit_file**に渡された*file_pattern*引数が、存在しないパスまたはファイルを参照している場合、またはファイルが監査ファイルでない場合は、 **MSG_INVALID_AUDIT_FILE**エラーメッセージが返されます。  
-  
+- **Fn_get_audit_file** に渡された *file_pattern* 引数が、存在しないパスまたはファイルを参照している場合、またはファイルが監査ファイルでない場合は、 **MSG_INVALID_AUDIT_FILE** エラーメッセージが返されます。  
+- **APPLICATION_LOG**、 **SECURITY_LOG**、または **EXTERNAL_MONITOR** オプションを使用して監査を作成する場合、 **fn_get_audit_file** は使用できません。
+
 ## <a name="permissions"></a>アクセス許可
 
 - **SQL Server**: **CONTROL Server** 権限が必要です。  
@@ -139,7 +140,7 @@ fn_get_audit_file ( file_pattern,
   - 非サーバー管理者は、現在のデータベースからの監査ログにのみアクセスできます。
   - 上記の条件を満たしていない blob はスキップされます (スキップされた blob の一覧がクエリ出力メッセージに表示されます)。関数は、アクセスが許可されている blob からのログのみを返します。  
   
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
 - **SQL Server**
 
@@ -159,7 +160,7 @@ fn_get_audit_file ( file_pattern,
   GO  
   ```  
 
-  この例では、上記と同じファイルから読み取りますが、追加の T-sql 句 (関数によって返される監査レコードをフィルター処理するために、**TOP**句、 **ORDER BY**句、 **WHERE** 句) を使用します。
+  この例では、上記と同じファイルから読み取りますが、追加の T-sql 句 (関数によって返される監査レコードをフィルター処理するために、**TOP** 句、 **ORDER BY** 句、 **WHERE** 句) を使用します。
   
   ```  
   SELECT TOP 10 * FROM sys.fn_get_audit_file ('https://mystorage.blob.core.windows.net/sqldbauditlogs/ShiraServer/MayaDB/SqlDbAuditing_Audit/2017-07-14/10_45_22_173_1.xel',default,default)
@@ -179,7 +180,7 @@ fn_get_audit_file ( file_pattern,
 
 Azure SQL Database 監査の設定の詳細については、「 [SQL Database 監査の概要](/azure/sql-database/sql-database-auditing)」を参照してください。
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CREATE SERVER AUDIT &#40;Transact-SQL&#41;](../../t-sql/statements/create-server-audit-transact-sql.md)   
  [ALTER SERVER AUDIT &#40;Transact-SQL&#41;](../../t-sql/statements/alter-server-audit-transact-sql.md)   
  [DROP SERVER AUDIT &#40;Transact-SQL&#41;](../../t-sql/statements/drop-server-audit-transact-sql.md)   

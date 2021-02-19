@@ -10,15 +10,15 @@ ms.topic: conceptual
 helpviewer_keywords:
 - Database Engine [SQL Server], installing
 ms.assetid: d0876e7f-aa52-4dd7-bd5c-029e2ffded5f
-author: MashaMSFT
-ms.author: mathoma
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 6a895fb07d21fe7411fc019d5320dc9d2f6037cb
-ms.sourcegitcommit: 43b92518c5848489d03c68505bd9905f8686cbc0
+author: cawrites
+ms.author: chadam
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: 76ccb8e197303695af12b306e4974899226bd1a3
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92155017"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100336375"
 ---
 # <a name="install-sql-server-database-engine"></a>SQL Server データベース エンジンのインストール
 
@@ -39,15 +39,15 @@ ms.locfileid: "92155017"
   
 -   [SQL Server レプリケーション](../../relational-databases/replication/sql-server-replication.md) (オプションのコンポーネント)  
 
-::: moniker range=">=sql-server-ver15||=sqlallproducts-allversions" 
+::: moniker range=">=sql-server-ver15"
 -   [Machine Learning Services](../../machine-learning/install/sql-machine-learning-services-windows-install.md) (R と Python) および[言語拡張機能](../..//language-extensions/install/windows-java.md) (Java) (オプションのコンポーネント)
 ::: moniker-end
 
-::: monikerRange=">=sql-server-2017 <=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2017 <=sql-server-2017"
 -   [Machine Learning Services (データベース内)](../../machine-learning/install/sql-machine-learning-services-windows-install.md) (R と Python) (オプションのコンポーネント)
 ::: moniker-end
 
-::: monikerRange=">=sql-server-2016 <=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2016 <=sql-server-2016"
 -   [R Services (データベース内)](../../machine-learning/install/sql-r-services-windows-install.md) (オプションのコンポーネント)
 ::: moniker-end
 

@@ -15,13 +15,13 @@ ms.assetid: 38276438-40b1-43ce-9aae-6805be6d9332
 author: markingmyname
 ms.author: maghan
 ms.reviewer: ''
-monikerRange: = azuresqldb-mi-current || >= sql-server-2016 || = sqlallproducts-allversions
-ms.openlocfilehash: 880286e2ffa649316aa3c92c37f4bca461d62d4b
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+monikerRange: = azuresqldb-mi-current || >= sql-server-2016
+ms.openlocfilehash: 2dd854780c892da693b4f3950a88524a961a5fb2
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92037922"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97402578"
 ---
 # <a name="job-categories---manage-job-categories"></a>[ジョブ カテゴリ] - [ジョブ カテゴリの管理]
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -52,4 +52,4 @@ ms.locfileid: "92037922"
   
 #### <a name="to-access-the-job-categories-dialog-box"></a>[ジョブ カテゴリ] ダイアログ ボックスにアクセスするには  
   
-1.  **オブジェクト エクスプローラー**で、 **[SQL Server エージェント]** を展開し、 **[ジョブ]** を右クリックして、 **[ジョブ カテゴリの管理]** をクリックします。  
+1.  **オブジェクト エクスプローラー** で、 **[SQL Server エージェント]** を展開し、 **[ジョブ]** を右クリックして、 **[ジョブ カテゴリの管理]** をクリックします。  

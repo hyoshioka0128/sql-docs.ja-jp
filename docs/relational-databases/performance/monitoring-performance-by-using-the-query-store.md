@@ -12,15 +12,15 @@ helpviewer_keywords:
 - Query Store
 - Query Store, described
 ms.assetid: e06344a4-22a5-4c67-b6c6-a7060deb5de6
-author: julieMSFT
-ms.author: jrasnick
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current||=azure-sqldw-latest
-ms.openlocfilehash: 5b3a9151d07599661445eb3dfa20c9ef432e0719
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current||=azure-sqldw-latest
+ms.openlocfilehash: c8a836f1a8daf2b4b6a9d5b76156191799013484
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87243433"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100341712"
 ---
 # <a name="monitoring-performance-by-using-the-query-store"></a>クエリのストアを使用した、パフォーマンスの監視
 
@@ -31,11 +31,11 @@ ms.locfileid: "87243433"
 Azure [!INCLUDE[ssSDS](../../includes/sssds-md.md)] におけるクエリ ストアの運用について詳しくは、「[Azure SQL Database でクエリ ストアを運用する](best-practice-with-the-query-store.md#Insight)」をご覧ください。
 
 > [!IMPORTANT]
-> [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] の Just In Time ワークロード分析情報のためにクエリ ストアを使用している場合は、[KB 4340759](https://support.microsoft.com/help/4340759) におけるパフォーマンスのスケーラビリティの修正を、できるだけ早くインストールするよう計画します。
+> [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] の Just In Time ワークロード分析情報のためにクエリ ストアを使用している場合は、[KB 4340759](https://support.microsoft.com/help/4340759) におけるパフォーマンスのスケーラビリティの修正を、できるだけ早くインストールするよう計画します。
 
 ## <a name="enabling-the-query-store"></a><a name="Enabling"></a> クエリのストアを有効にする
 
- クエリ ストアは、新しい SQL Server と Azure Synapse Analytics (SQL DW) データベースでは既定で有効ではなく、新しい Azure SQL Database データベースでは既定で有効です。
+ クエリ ストアは、新しい SQL Server と Azure Synapse Analytics データベースでは既定で有効ではなく、新しい Azure SQL Database データベースでは既定で有効です。
 
 ### <a name="use-the-query-store-page-in-ssmanstudiofull"></a>[!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] の [クエリ ストア] ページを使う
 
@@ -75,7 +75,7 @@ SET QUERY_STORE = ON (OPERATION_MODE = READ_WRITE);
 >
 > 既定では、ネイティブ コンパイルされるストアド プロシージャのデータがクエリ ストアで収集されることはありません。 ネイティブ コンパイルされるストアド プロシージャのデータを収集するには、[sys.sp_xtp_control_query_exec_stats](../../relational-databases/system-stored-procedures/sys-sp-xtp-control-query-exec-stats-transact-sql.md) を使用してください。
 
-**待機統計**は、[!INCLUDE[ssde_md](../../includes/ssde_md.md)] のパフォーマンスのトラブルシューティングに役立つもう 1 つの情報源です。 長い間、待機統計はインスタンス レベルでしか使うことができず、待機を特定のクエリにバックトラックするのは困難でした。 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 以降、待機状態を追跡するディメンションがクエリ ストアに含まれます。次の例では、クエリ ストアで待機状態の収集が有効になります。
+**待機統計** は、[!INCLUDE[ssde_md](../../includes/ssde_md.md)] のパフォーマンスのトラブルシューティングに役立つもう 1 つの情報源です。 長い間、待機統計はインスタンス レベルでしか使うことができず、待機を特定のクエリにバックトラックするのは困難でした。 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 以降、待機状態を追跡するディメンションがクエリ ストアに含まれます。次の例では、クエリ ストアで待機状態の収集が有効になります。
 
 ```sql
 SET QUERY_STORE = ON ( WAIT_STATS_CAPTURE_MODE = ON );
@@ -93,9 +93,9 @@ SET QUERY_STORE = ON ( WAIT_STATS_CAPTURE_MODE = ON );
 
 クエリ ストアには 3 つのストアが含まれます。
 
-- **プラン ストア**は、実行プラン情報の保存用です。
-- **ランタイム統計ストア**は、実行統計情報の保存用です
-- **待機統計ストア**は、待機統計情報の保存用です
+- **プラン ストア** は、実行プラン情報の保存用です。
+- **ランタイム統計ストア** は、実行統計情報の保存用です
+- **待機統計ストア** は、待機統計情報の保存用です
 
 クエリのためにプラン ストア内に格納できる一意のプラン数は、 **max_plans_per_query** 構成オプションによって制限されています。 パフォーマンスを向上させるために、この情報はストアに非同期的に書き込まれます。 領域使用量を最小にするため、ランタイム統計情報ストアのランタイム実行統計情報は、一定の時間枠で集計されます。 これらのストア内の情報は、クエリのストアのカタログ ビューに対してクエリを実行することによって表示できます。
 
@@ -128,7 +128,7 @@ INNER JOIN sys.query_store_query_text AS Txt
 
 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 以降では、クエリごとの時系列の待機統計情報をクエリ ストアで使用できます。
 
-クエリ ストアでは、待機の種類が**待機カテゴリ**に組み合わされます。 待機カテゴリから待機の種類へのマッピングは、[sys.query_store_wait_stats &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-query-store-wait-stats-transact-sql.md#wait-categories-mapping-table) で使用できます。
+クエリ ストアでは、待機の種類が **待機カテゴリ** に組み合わされます。 待機カテゴリから待機の種類へのマッピングは、[sys.query_store_wait_stats &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-query-store-wait-stats-transact-sql.md#wait-categories-mapping-table) で使用できます。
 
 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] v18 以降では、 **[クエリ待機統計]** を選択して **[クエリ待機統計]** ペインを開きます。 [クエリ待機統計] ペインには、クエリ ストアで上位の待機カテゴリを含む棒グラフが表示されます。 上部のドロップダウンを使用して、待機時間の集計条件を選択します (平均、最大、最小、標準偏差、**合計** (既定値))。
 
@@ -140,7 +140,7 @@ INNER JOIN sys.query_store_query_text AS Txt
 
 上部のドロップダウン ボックスを使用して、選択した待機カテゴリのさまざまな待機時間条件に基づいてクエリをフィルター処理します (平均、最大、最小、標準偏差、**合計**(既定値))。 プランを選択して、グラフィカルなクエリ プランを表示します。 ソース クエリの表示、クエリ プランの強制と強制解除、表示の更新に使用できるボタンが用意されています。
 
-**待機カテゴリ**では、異なる待機種類が性質の類似性によってバケットに組み合わされます。 問題の解決に必要なフォローアップ分析は待機カテゴリによって異なりますが、同じカテゴリの待機種類からは非常によく似たトラブルシューティング エクスペリエンスが得られ、待機の先頭に影響受けたクエリを提供することは、このような調査の大部分を正常に完了するために不足している部分です。
+**待機カテゴリ** では、異なる待機種類が性質の類似性によってバケットに組み合わされます。 問題の解決に必要なフォローアップ分析は待機カテゴリによって異なりますが、同じカテゴリの待機種類からは非常によく似たトラブルシューティング エクスペリエンスが得られ、待機の先頭に影響受けたクエリを提供することは、このような調査の大部分を正常に完了するために不足している部分です。
 
 クエリ ストアに待機カテゴリが導入される前後でのワークロードの詳細情報の取得方法の例を次に示します。
 
@@ -233,7 +233,7 @@ INNER JOIN sys.query_store_query_text AS Txt
 :::row-end:::
 :::row:::
     :::column:::
-        [sp_query_store_remove_plan &#40;Transct-SQL&#41;](../../relational-databases/system-stored-procedures/sp-query-store-remove-plan-transct-sql.md)
+        [sp_query_store_remove_plan &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-query-store-remove-plan-transct-sql.md)
     :::column-end:::
     :::column:::
         [sp_query_store_remove_query &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/sp-query-store-remove-query-transact-sql.md)
@@ -241,11 +241,13 @@ INNER JOIN sys.query_store_query_text AS Txt
 :::row-end:::
 :::row:::
     :::column:::
-        sp_query_store_consistency_check &#40;Transct-SQL&#41;
+        sp_query_store_consistency_check &#40;Transact-SQL&#41;<sup>1</sup>
     :::column-end:::
     :::column:::
     :::column-end:::
 :::row-end:::
+
+<sup>1</sup> 極端なシナリオでは、クエリ ストアが内部エラーのためにエラー状態になることがあります。 SQL Server 2017 (14.x) 以降では、影響を受けたデータベース内で sp_query_store_consistency_check ストアド プロシージャを実行することで、クエリ ストアを復旧させることができます。 actual_state_desc 列の詳細については、「[sys.database_query_store_options](../../relational-databases/system-catalog-views/sys-database-query-store-options-transact-sql.md)」を参照してください。
 
 ## <a name="key-usage-scenarios"></a><a name="Scenarios"></a> 基本的な使用シナリオ
 
@@ -643,7 +645,7 @@ EXEC sp_query_store_force_plan @query_id = 48, @plan_id = 49;
 
 #### <a name="a-namectp23-plan-forcing-support-for-fast-forward-and-static-cursors"></a><a name="ctp23"><a/> 高速順方向カーソルと静的カーソルのサポートを強制するプラン
 
-[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降および Azure SQL Database (すべてのデプロイ モデル) では、クエリ ストアにおいて、高速順方向カーソルおよび [!INCLUDE[tsql](../../includes/tsql-md.md)] と API の静的カーソルに対してクエリ実行プランを強制する機能がサポートされます。 強制は、`sp_query_store_force_plan` か [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] クエリ ストア レポートの利用によりサポートされます。
+[!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] 以降および Azure SQL Database (すべてのデプロイ モデル) では、クエリ ストアにおいて、高速順方向カーソルおよび [!INCLUDE[tsql](../../includes/tsql-md.md)] と API の静的カーソルに対してクエリ実行プランを強制する機能がサポートされます。 強制は、`sp_query_store_force_plan` か [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] クエリ ストア レポートの利用によりサポートされます。
 
 ### <a name="remove-plan-forcing-for-a-query"></a>クエリに対するプランの強制を解除する
 

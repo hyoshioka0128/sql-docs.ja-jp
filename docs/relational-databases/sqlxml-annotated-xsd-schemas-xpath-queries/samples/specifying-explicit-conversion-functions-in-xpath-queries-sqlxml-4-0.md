@@ -16,13 +16,13 @@ ms.assetid: 1111cb5d-2bd9-4bdb-8de2-dc0e47452dd6
 author: MightyPen
 ms.author: genemi
 ms.custom: seo-lt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: c831a87004b410eeb5545fc98ce21ccee601f49d
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 279863e3dee632201c9f931b9eb02ea85bfc287c
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85773004"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97430498"
 ---
 # <a name="specifying-explicit-conversion-functions-in-xpath-queries-sqlxml-40"></a>XPath クエリでの明示変換関数の指定 (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -33,19 +33,19 @@ ms.locfileid: "85773004"
 ### <a name="a-use-the-number-explicit-conversion-function"></a>A. number() 明示変換関数を使用する  
  **Number ()** 関数は、引数を数値に変換します。  
   
- **ContactID**の値が数値以外の場合、次のクエリは**ContactID**を数値に変換し、値4と比較します。 次に、クエリは **\<Employee>** コンテキストノードのすべての子要素を返します。 **ContactID**属性の数値は4です。  
+ **ContactID** の値が数値以外の場合、次のクエリは **ContactID** を数値に変換し、値4と比較します。 次に、クエリは **\<Employee>** コンテキストノードのすべての子要素を返します。 **ContactID** 属性の数値は4です。  
   
 ```  
 /child::Contact[number(attribute::ContactID)= 4]  
 ```  
   
- **属性**軸 (@) へのショートカットを指定できます。また、**子**軸が既定値であるため、クエリから省略できます。  
+ **属性** 軸 (@) へのショートカットを指定できます。また、**子** 軸が既定値であるため、クエリから省略できます。  
   
 ```  
 /Contact[number(@ContactID) = 4]  
 ```  
   
- 関係用語では、クエリは**ContactID**が4の従業員を返します。  
+ 関係用語では、クエリは **ContactID** が4の従業員を返します。  
   
 ##### <a name="to-test-the-xpath-query-against-the-mapping-schema"></a>マッピング スキーマに対して XPath クエリをテストするには  
   
@@ -69,7 +69,7 @@ ms.locfileid: "85773004"
   
 3.  SQLXML 4.0 テスト スクリプト (sqlxml4test.vbs) を作成し、それを使用してテンプレートを実行します。  
   
-     詳細については、「ADO を使用した[SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
+     詳細については、「ADO を使用した [SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
   
  このテンプレート実行の結果セットは次のとおりです。  
   
@@ -79,16 +79,16 @@ ms.locfileid: "85773004"
 </ROOT>  
 ```  
   
-### <a name="b-use-the-string-explicit-conversion-function"></a>B: string() 明示変換関数を使用する  
+### <a name="b-use-the-string-explicit-conversion-function"></a>B. string() 明示変換関数を使用する  
  **String ()** 関数は、引数を文字列に変換します。  
   
- 次のクエリでは、 **ContactID**を文字列に変換し、文字列値 "4" と比較します。 このクエリは、 **\<Employee>** コンテキストノードのすべての子要素を返します。文字列値が "4" の**ContactID**が返されます。  
+ 次のクエリでは、 **ContactID** を文字列に変換し、文字列値 "4" と比較します。 このクエリは、 **\<Employee>** コンテキストノードのすべての子要素を返します。文字列値が "4" の **ContactID** が返されます。  
   
 ```  
 /child::Contact[string(attribute::ContactID)="4"]  
 ```  
   
- **属性**軸 (@) へのショートカットを指定できます。また、**子**軸が既定値であるため、クエリから省略できます。  
+ **属性** 軸 (@) へのショートカットを指定できます。また、**子** 軸が既定値であるため、クエリから省略できます。  
   
 ```  
 /Contact[string(@ContactID)="4"]  
@@ -118,7 +118,7 @@ ms.locfileid: "85773004"
   
 3.  SQLXML 4.0 テスト スクリプト (sqlxml4test.vbs) を作成し、それを使用してテンプレートを実行します。  
   
-     詳細については、「ADO を使用した[SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
+     詳細については、「ADO を使用した [SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
   
  このテンプレートを実行した場合の結果セットは次のとおりです。  
   

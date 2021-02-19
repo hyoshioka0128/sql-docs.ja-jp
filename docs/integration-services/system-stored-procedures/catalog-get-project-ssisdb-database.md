@@ -11,12 +11,12 @@ ms.topic: language-reference
 ms.assetid: f263c9e4-a7db-4888-a458-70ae99b1f729
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: d26de0736fc41d3b39f0f6c3e149b044c538ba41
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: a39f9b085c5d37a16207760a83064ede4cedb290
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88495397"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100342222"
 ---
 # <a name="catalogget_project-ssisdb-database"></a>catalog.get_project (SSISDB データベース)
 

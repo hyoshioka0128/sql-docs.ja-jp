@@ -5,21 +5,21 @@ ms.custom: seo-lt-2019
 ms.date: 05/17/2016
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 f1_keywords:
 - sql13.swb.newagwizard.listeners.f1
 - sql13.swb.addreplicawizard.specifyreplicas.f1
 - sql13.swb.newagwizard.specifyreplicas.f1
 ms.assetid: 2d90fc12-a67b-4bd0-b0ab-899b73017196
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: ea049ce576949df930aabafafb67adf56fe96c5c
-ms.sourcegitcommit: 2f868a77903c1f1c4cecf4ea1c181deee12d5b15
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 4a0c17cc7e7118ec2ac39e861741dcadaa892a93
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671098"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100342423"
 ---
 # <a name="specify-replicas-page-new-availability-group-wizard-add-replica-wizard"></a>[レプリカの指定] ページ (新しい可用性グループ ウィザード:レプリカの追加ウィザード)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "91671098"
   
 |タブ|簡単な説明|  
 |---------|-----------------------|  
-|[レプリカ](#ReplicasTab)|このタブを使用して、セカンダリ レプリカを現在ホストしている、またはホストする予定である [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] の各インスタンスを指定します。 現在接続しているサーバー インスタンスでプライマリ レプリカをホストする必要があることに注意してください。<br /><br /> 他のタブに進む前に、 **[レプリカ]** タブですべてのレプリカを指定してください。<br/><br/> クラスター タイプが **NONE** の場合、**自動フェールオーバー**は無効になります。 SQL Server は、可用性グループがクラスターに含まれないときに、手動フェールオーバーのみをサポートします。 <br/><br/> クラスター タイプが EXTERNAL の場合、フェールオーバー モードは **External** です。 <br/><br/> レプリカを追加するときは、新しいレプリカすべてが、既存のレプリカと同じオペレーティング システムの種類でホストされている必要があります。 <br/><br/>レプリカを追加するとき、プライマリ レプリカが WSFC にある場合、セカンダリ レプリカは同じクラスターに含まれていなければなりません。|
+|[レプリカ](#ReplicasTab)|このタブを使用して、セカンダリ レプリカを現在ホストしている、またはホストする予定である [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] の各インスタンスを指定します。 現在接続しているサーバー インスタンスでプライマリ レプリカをホストする必要があることに注意してください。<br /><br /> 他のタブに進む前に、 **[レプリカ]** タブですべてのレプリカを指定してください。<br/><br/> クラスター タイプが **NONE** の場合、**自動フェールオーバー** は無効になります。 SQL Server は、可用性グループがクラスターに含まれないときに、手動フェールオーバーのみをサポートします。 <br/><br/> クラスター タイプが EXTERNAL の場合、フェールオーバー モードは **External** です。 <br/><br/> レプリカを追加するときは、新しいレプリカすべてが、既存のレプリカと同じオペレーティング システムの種類でホストされている必要があります。 <br/><br/>レプリカを追加するとき、プライマリ レプリカが WSFC にある場合、セカンダリ レプリカは同じクラスターに含まれていなければなりません。|
 |[エンドポイント](#EndpointsTab)|このタブを使用して、既存の任意のデータベース ミラーリング エンドポイントを検証します。また、サービス アカウントが Windows 認証を使用しているサーバー インスタンスでエンドポイントが不足している場合は、エンドポイントを自動的に作成します。|  
 |[バックアップの設定](#BackupPreferencesTab)|このタブを使用して、可用性グループ全体についてバックアップの設定を指定し、各可用性レプリカのバックアップ優先順位を指定します。|  
 |[リスナー](#Listener)|このタブ (使用可能な場合) を使用して、可用性グループ リスナーを作成します。 既定では、リスナーは作成されません。<br /><br /> このタブは、 [!INCLUDE[ssAoNewAgWiz](../../../includes/ssaonewagwiz-md.md)]を実行している場合のみ使用できます。<br/><br/>クラスター タイプが EXTERNAL または NONE のいずれかの場合、DHCP は無効です。 |  

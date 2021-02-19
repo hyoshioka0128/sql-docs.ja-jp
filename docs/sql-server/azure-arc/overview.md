@@ -5,16 +5,16 @@ description: Azure Arc 対応 SQL Server を使用して SQL Server のインス
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mikeray
-ms.date: 10/07/2020
+ms.date: 12/08/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.custom: references_regions
-ms.openlocfilehash: 59a3dab4136749f85e1f752ee823f8815080fd76
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+ms.openlocfilehash: 4acc04883d4e4fcc0933078b81dcb8be2a45be89
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91987988"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100023266"
 ---
 # <a name="azure-arc-enabled-sql-server-preview"></a>Azure Arc 対応 SQL Server (プレビュー)
 
@@ -43,8 +43,9 @@ Azure Arc 対応 SQL Server は、Windows または Linux オペレーティン�
 
 ### <a name="required-permissions"></a>必要なアクセス許可
 
-SQL Server インスタンスとホスティングを Azure Arc に接続するには、次の操作を実行する特権のあるアカウントが必要です。
-   * Microsoft.AzureData/*
+SQL Server インスタンスとホスト マシンを Azure Arc に接続するには、次の操作を実行する特権のあるアカウントが必要です。
+   * Microsoft.AzureArcData/sqlServerInstances/read
+   * Microsoft.AzureArcData/sqlServerInstances/write
    * Microsoft.HybridCompute/machines/read
    * Microsoft.HybridCompute/machines/write
    * Microsoft.GuestConfiguration/guestConfigurationAssignments/read
@@ -59,6 +60,10 @@ Azure Arc で SQL サーバー インスタンスとマシンを構成する前�
 
 Connected Machine エージェントに必要な[ネットワーク構成、トランスポート層セキュリティ、およびリソース プロバイダー](/azure/azure-arc/servers/agent-overview#prerequisites)を確認します。
 
+SQL Server インスタンスを Azure Arc に接続するには、リソース プロバイダー `Microsoft.AzureArcData` が必要です。リソース プロバイダーの登録手順については、「[前提条件](connect.md#prerequisites)」セクションを参照してください。
+
+SQL Server インスタンスが既に Azure Arc に接続されている場合は、次の手順に従って、既存の **SQL Server - Azure Arc** リソースを新しい名前空間に移行します。
+
 ### <a name="supported-azure-regions"></a>サポート対象の Azure リージョン
 
 パブリック プレビューは、次のリージョンで使用できます。
@@ -71,7 +76,7 @@ Connected Machine エージェントに必要な[ネットワーク構成、ト�
 - 西ヨーロッパ
 - 英国南部
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 - [SQL Server を Azure Arc に接続する](connect.md)
 - [オンデマンド SQL 評価を使用して、環境の正常性チェックを定期的に行うように SQL Server インスタンスを構成する](assess.md)

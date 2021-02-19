@@ -19,13 +19,13 @@ ms.assetid: d17b8278-da58-4576-95b4-7a92772566d8
 author: MightyPen
 ms.author: genemi
 ms.custom: seo-lt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: aabd650308ecab085b121bb5ac8f5253b681a92c
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 81bbefa0969cd4408ed0fbb21a2a035ddde5508e
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85773033"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97413824"
 ---
 # <a name="specifying-axes-in-xpath-queries-sqlxml-40"></a>XPath クエリ内での軸の指定 (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -72,7 +72,7 @@ ms.locfileid: "85773033"
   
 3.  SQLXML 4.0 テスト スクリプト (sqlxml4test.vbs) を作成し、それを使用してテンプレートを実行します。  
   
-     詳細については、「ADO を使用した[SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
+     詳細については、「ADO を使用した [SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
   
  テンプレートを実行して得られる結果セットの一部を次に示します。  
   
@@ -86,16 +86,16 @@ ms.locfileid: "85773033"
 </ROOT>  
 ```  
   
-### <a name="b-retrieve-grandchildren-of-the-context-node"></a>B: コンテキスト ノードの孫を取得する  
+### <a name="b-retrieve-grandchildren-of-the-context-node"></a>B. コンテキスト ノードの孫を取得する  
  次の XPath クエリでは、 **\<Order>** コンテキストノードの子要素のすべての子要素を選択し **\<Customer>** ます。  
   
 ```  
 /child::Customer/child::Order  
 ```  
   
- このクエリで `child` は、は軸で、は `Customer` `Order` ノードテストです ( **\<element>** **\<element>** ノードが**子**軸のプライマリノードであるため、Customer と Order がノードである場合、これらのノードテストは TRUE になります)。 一致するノードごとに **\<Customer>** 、一致 **\<Orders>** するノードが結果に追加されます。 **\<Order>** 結果セットにのみが返されます。  
+ このクエリで `child` は、は軸で、は `Customer` `Order` ノードテストです ( **\<element>** **\<element>** ノードが **子** 軸のプライマリノードであるため、Customer と Order がノードである場合、これらのノードテストは TRUE になります)。 一致するノードごとに **\<Customer>** 、一致 **\<Orders>** するノードが結果に追加されます。 **\<Order>** 結果セットにのみが返されます。  
   
- **子**軸が既定値です。 そのため、クエリは次のように指定できます。  
+ **子** 軸が既定値です。 そのため、クエリは次のように指定できます。  
   
 ```  
 /Customer/Order  
@@ -123,7 +123,7 @@ ms.locfileid: "85773033"
   
 3.  SQLXML 4.0 テスト スクリプト (sqlxml4test.vbs) を作成し、それを使用してテンプレートを実行します。  
   
-     詳細については、「ADO を使用した[SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
+     詳細については、「ADO を使用した [SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
   
  テンプレートを実行して得られる結果セットの一部を次に示します。  
   
@@ -164,14 +164,14 @@ ms.locfileid: "85773033"
   
  XPath クエリがとして指定されている場合 `Customer/Order/OrderDetail` 、クエリは一致する各ノードから **\<Customer>** その要素に移動し **\<Order>** ます。 また、一致するノードごとに **\<Order>** 、クエリによってノードが結果に追加され **\<OrderDetail>** ます。 **\<OrderDetail>** 結果セットにのみが返されます。  
   
-### <a name="c-use--to-specify-the-parent-axis"></a>C: .. を使用して  parent 軸を指定する  
- 次のクエリでは、 **\<Order>** **\<Customer>** **CustomerID**属性値が1である親要素を持つすべての要素を取得します。 このクエリでは、述語の**子**軸を使用して、要素の親を検索し **\<Order>** ます。  
+### <a name="c-use--to-specify-the-parent-axis"></a>C. .. を使用して  parent 軸を指定する  
+ 次のクエリでは、 **\<Order>** **\<Customer>** **CustomerID** 属性値が1である親要素を持つすべての要素を取得します。 このクエリでは、述語の **子** 軸を使用して、要素の親を検索し **\<Order>** ます。  
   
 ```  
 /child::Customer/child::Order[../@CustomerID="1"]  
 ```  
   
- **子**軸は既定の軸です。 そのため、クエリは次のように指定できます。  
+ **子** 軸は既定の軸です。 そのため、クエリは次のように指定できます。  
   
 ```  
 /Customer/Order[../@CustomerID="1"]  
@@ -208,7 +208,7 @@ ms.locfileid: "85773033"
   
 3.  SQLXML 4.0 テスト スクリプト (sqlxml4test.vbs) を作成し、それを使用してテンプレートを実行します。  
   
-     詳細については、「ADO を使用した[SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
+     詳細については、「ADO を使用した [SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
   
  テンプレートを実行して得られる結果セットの一部を次に示します。  
   
@@ -248,8 +248,8 @@ ms.locfileid: "85773033"
 </ROOT>  
 ```  
   
-### <a name="d-specify-the-attribute-axis"></a>D: attribute 軸を指定する  
- 次の XPath クエリでは、 **\<Customer>** **CustomerID**属性値が1のコンテキストノードのすべての子要素を選択します。  
+### <a name="d-specify-the-attribute-axis"></a>D. attribute 軸を指定する  
+ 次の XPath クエリでは、 **\<Customer>** **CustomerID** 属性値が1のコンテキストノードのすべての子要素を選択します。  
   
 ```  
 /child::Customer[attribute::CustomerID="1"]  
@@ -285,7 +285,7 @@ ms.locfileid: "85773033"
   
 3.  SQLXML 4.0 テスト スクリプト (sqlxml4test.vbs) を作成し、それを使用してテンプレートを実行します。  
   
-     詳細については、「ADO を使用した[SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
+     詳細については、「ADO を使用した [SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
   
  テンプレートを実行して得られる結果セットの一部を次に示します。  
   

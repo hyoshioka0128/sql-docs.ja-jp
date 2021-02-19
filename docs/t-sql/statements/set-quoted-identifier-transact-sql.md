@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - QUOTED_IDENTIFIER_TSQL
 - SET_QUOTED_IDENTIFIER_TSQL
@@ -23,15 +23,15 @@ helpviewer_keywords:
 - ISO delimited identifiers rules
 - SET QUOTED_IDENTIFIER statement
 ms.assetid: 10f66b71-9241-4a3a-9292-455ae7252565
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 5d1b7d5af0f47367ba1c31cc8bf220adc5fc1123
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 09ee4a1b7aa284b49661af669bf2f51eb1edfd4e
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91957033"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99161107"
 ---
 # <a name="set-quoted_identifier-transact-sql"></a>SET QUOTED_IDENTIFIER (Transact-SQL)
 
@@ -44,7 +44,7 @@ ms.locfileid: "91957033"
 ## <a name="syntax"></a>構文
 
 ```syntaxsql
--- Syntax for SQL Server, Azure SQL Database and SQL on-demand (preview) in Azure Synapse Analytics
+-- Syntax for SQL Server, Azure SQL Database and serverless SQL pool in Azure Synapse Analytics
 
 SET QUOTED_IDENTIFIER { ON | OFF }
 ```

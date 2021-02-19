@@ -15,15 +15,15 @@ helpviewer_keywords:
 - sys.dm_geo_replication_links dynamic management view
 - dm_geo_replication_links dynamic management view
 ms.assetid: 58911798-1d60-4f28-87ab-2def2bfc3de7
-author: markingmyname
-ms.author: maghan
-monikerRange: = azuresqldb-current || = sqlallproducts-allversions
-ms.openlocfilehash: 568cda98a1bbb55e5c4f3e07bd53592ff642f0bd
-ms.sourcegitcommit: 968969b62bc158b9843aba5034c9d913519bc4a7
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: = azuresqldb-current
+ms.openlocfilehash: f10f318ebba5627957f1555b5979e8993f6f5e02
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91753694"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98093904"
 ---
 # <a name="sysgeo_replication_links-azure-sql-database"></a>sys.geo_replication_links (Azure SQL Database)
 
@@ -34,8 +34,8 @@ ms.locfileid: "91753694"
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
 |database_id|**int**|データベースビュー内の現在のデータベースの ID。|  
-|start_date|**datetimeoffset**|データベースレプリケーションが開始されたときの地域 SQL Database データセンターでの UTC 時刻|  
-|modify_date|**datetimeoffset**|リージョン SQL Database データセンターでの UTC 時刻 (データベースの geo レプリケーションが完了したとき)。 この時点で、新しいデータベースがプライマリデータベースと同期されます。 .|  
+|start_date|**datetimeoffset**|データベースレプリケーションが開始されたときの地域 SQL Database データセンターでの UTC 時刻。|  
+|modify_date|**datetimeoffset**|リージョン SQL Database データセンターでの UTC 時刻 (データベースの geo レプリケーションが完了したとき)。 この時点で、新しいデータベースがプライマリデータベースと同期されます。|  
 |link_guid|**uniqueidentifier**|Geo レプリケーションリンクの一意の ID。|  
 |partner_server|**sysname**|Geo レプリケートされたデータベースを含む SQL Database サーバーの名前。|  
 |partner_database|**sysname**|リンクされた SQL Database サーバー上の geo レプリケートされたデータベースの名前。|  

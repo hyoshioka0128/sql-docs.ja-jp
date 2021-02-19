@@ -8,17 +8,17 @@ ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: murshedz
 ms.reviewer: martinle
-monikerRange: '>= aps-pdw-2016-au7 || = sqlallproducts-allversions'
-ms.openlocfilehash: 8642f27a329da8819acf0ab99a648c4979ed40d0
-ms.sourcegitcommit: e042272a38fb646df05152c676e5cbeae3f9cd13
+monikerRange: '>= aps-pdw-2016-au7'
+ms.openlocfilehash: 656b1592dd50567f59744e39c24be7d93b5b220f
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74401452"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100052833"
 ---
 # <a name="appliance-feature-switches"></a>アプライアンスの機能スイッチ
 
-[**機能の切り替え**] ページには、Analytics PLATFORM System AU7 以降で導入されている機能スイッチに関する情報が表示されます。 この構成ページを使用して、Analytics Platform System の機能と設定を更新または有効/無効にします。
+[ **機能の切り替え** ] ページには、Analytics PLATFORM System AU7 以降で導入されている機能スイッチに関する情報が表示されます。 この構成ページを使用して、Analytics Platform System の機能と設定を更新または有効/無効にします。
 
 > [!NOTE]
 > 機能スイッチの値を変更するには、サービスを再起動する必要があります。
@@ -27,7 +27,7 @@ ms.locfileid: "74401452"
 
 ## <a name="autostatsenabled"></a>AutoStatsEnabled
 
-自動統計機能を制御します。 AU7 にアップグレードすると、この機能スイッチは既定で true に設定されます。 アップグレード後に作成されたすべてのデータベースは、統計の自動作成と非同期更新を継承します。 既存のデータベースの場合、データベース管理者は[ALTER database (Parallel Data Warehouse)](../t-sql/statements/alter-database-transact-sql.md?tabs=sqlpdw)で自動統計を有効にすることができます。 統計の詳細については、「[統計](../relational-databases/statistics/statistics.md)」を参照してください。
+自動統計機能を制御します。 AU7 にアップグレードすると、この機能スイッチは既定で true に設定されます。 アップグレード後に作成されたすべてのデータベースは、統計の自動作成と非同期更新を継承します。 既存のデータベースの場合、データベース管理者は [ALTER database (Parallel Data Warehouse)](../t-sql/statements/alter-database-transact-sql.md?tabs=sqlpdw)で自動統計を有効にすることができます。 統計の詳細については、「 [統計](../relational-databases/statistics/statistics.md)」を参照してください。
 
 ## <a name="maxdopforinsertqueries"></a>MaxDOPForInsertQueries
 
@@ -35,7 +35,7 @@ ms.locfileid: "74401452"
 
 ## <a name="optimizecommonsubexpressions"></a>OptimizeCommonSubExpressions
 
-では、SQL クエリオプティマイザーで共通部分式のデータ移動が行われなくなるため、クエリのパフォーマンスが向上します。 この機能の詳細については、[こちら](common-sub-expression-elimination.md)を参照してください。
+では、SQL クエリオプティマイザーで共通部分式のデータ移動が行われなくなるため、クエリのパフォーマンスが向上します。 この機能の詳細については、 [こちら](common-sub-expression-elimination.md)を参照してください。
 
 ## <a name="usecatalogqueries"></a>UseCatalogQueries
 

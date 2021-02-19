@@ -7,18 +7,18 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 ms.assetid: 764d8f91-957b-4037-997b-a9b6b533c504
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 6c319d0e7e67605f09954e88434842be9b8ae1df
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: f683825863a66a14fa715ce507469be218d100f3
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92195465"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100023145"
 ---
 # <a name="-scope-resolution-transact-sql"></a>:: (スコープ解決) (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2012-xxxx-xxxx-xxx_md](../../includes/tsql-appliesto-ss2012-xxxx-xxxx-xxx-md.md)]

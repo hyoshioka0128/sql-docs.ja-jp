@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -15,18 +15,18 @@ helpviewer_keywords:
 ms.assetid: edd0a01c-1a1b-4b91-9966-2529e244abae
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: abb37d28eb40b139a8ea77d13ab24687cab45eb4
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 4488dcdc6d656e3ad058fb45cc6d3cb4e0b10459
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91722503"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100053283"
 ---
 # <a name="converttostring-method-example-vbscript"></a>ConvertToString メソッドの例 (VBScript)
 > [!IMPORTANT]
 >  Windows 8 と windows Server 2012 以降では、RDS サーバーコンポーネントが Windows オペレーティングシステムに含まれなくなりました (詳細については、「Windows 8 および [Windows server 2012 の互換性に関するクックブック](https://www.microsoft.com/download/details.aspx?id=27416) 」を参照してください)。 RDS クライアントコンポーネントは、今後のバージョンの Windows では削除される予定です。 新規の開発作業ではこの機能を使用しないようにし、現在この機能を使用しているアプリケーションは修正することを検討してください。 RDS を使用するアプリケーションは、 [WCF Data Service](/dotnet/framework/wcf/)に移行する必要があります。  
   
- 次の例では、 **RDSServer DataFactory ConvertToString**メソッドを使用して、**レコードセット**を MIME エンコードされた文字列に変換する方法を示します。 次に、文字列を **レコードセット**に戻す方法を示します。 次のコードを切り取ってメモ帳などのテキストエディターに貼り付け、 **ConvertToString.htm**として保存します。  
+ 次の例では、 **RDSServer DataFactory ConvertToString** メソッドを使用して、**レコードセット** を MIME エンコードされた文字列に変換する方法を示します。 次に、文字列を **レコードセット** に戻す方法を示します。 次のコードを切り取ってメモ帳などのテキストエディターに貼り付け、 **ConvertToString.htm** として保存します。  
   
 ```  
 <!-- BeginConvertToStringVBS -->  

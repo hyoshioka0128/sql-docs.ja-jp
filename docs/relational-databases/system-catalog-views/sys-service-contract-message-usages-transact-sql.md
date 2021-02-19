@@ -1,13 +1,13 @@
 ---
 description: sys.service_contract_message_usages (Transact-SQL)
-title: service_contract_message_usages (Transact-sql) |Microsoft Docs
+title: sys.service_contract_message_usages (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/03/2017
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - service_contract_message_usages_TSQL
 - sys.service_contract_message_usages
@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.service_contract_message_usages catalog view
 ms.assetid: f783e662-126c-4595-8e22-f9d05191f5d0
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 43767305ac23b5ae4074e36fe2c3256d2fe12fd7
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 33677382cd6dcf71bc6da8525747712fe8b83721
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539564"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99161382"
 ---
 # <a name="sysservice_contract_message_usages-transact-sql"></a>sys.service_contract_message_usages (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

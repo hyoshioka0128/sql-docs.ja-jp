@@ -20,14 +20,14 @@ helpviewer_keywords:
 - database restores [SQL Server], scenarios
 - accelerated database recovery
 ms.assetid: e985c9a6-4230-4087-9fdb-de8571ba5a5f
-author: mashamsft
-ms.author: mathoma
-ms.openlocfilehash: 5157ab86adbbea5b6e9fa1bdb14264f5418ac07b
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: edc2a92b260e85c2de1ff5b4fc1758748643d174
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91810706"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100346759"
 ---
 # <a name="restore-and-recovery-overview-sql-server"></a>復元と復旧の概要 (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -87,15 +87,15 @@ ms.locfileid: "91810706"
 -   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、ファイルまたはページを復元する場合、復元操作中にデータベース内の他のデータをオンラインのままにすることができます。  
 
 ## <a name="recovery-and-the-transaction-log"></a><a name="TlogAndRecovery"></a> 復旧とトランザクション ログ
-ほとんどの復元シナリオでは、トランザクション ログ バックアップを適用し、オンラインにするデータベースのために [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] で**復旧プロセス**を実行できるようにする必要があります。 復旧とは、トランザクション的に一貫した (クリーンな) 状態で各データベースを開始させるために、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で使用されるプロセスです。
+ほとんどの復元シナリオでは、トランザクション ログ バックアップを適用し、オンラインにするデータベースのために [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] で **復旧プロセス** を実行できるようにする必要があります。 復旧とは、トランザクション的に一貫した (クリーンな) 状態で各データベースを開始させるために、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で使用されるプロセスです。
 
 フェールオーバーやその他のクリーンでないシャットダウンが発生した場合、データベースは一部の変更がバッファー キャッシュからデータ ファイルに書き込まれない状態になる場合があり、未完了のトランザクションによる変更がデータ ファイル内に存在している可能性もあります。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスが開始されると、各データベースの復旧が実行されます。これは 3 つのフェーズで構成され、最後の[データベース チェックポイント](../../relational-databases/logs/database-checkpoints-sql-server.md)に基づいています。
 
--   **分析フェーズ**では、最後のチェックポイントを決定するためにトランザクション ログが分析され、ダーティ ページ テーブル (DPT) とアクティブなトランザクション テーブル (ATT) が作成されます。 DPT には、このデータベースがシャットダウンされたときにダーティだったページのレコードが含まれています。 ATT には、このデータベースがクリーンにシャットダウンされなかったときにアクティブだったトランザクションのレコードが含まれています。
+-   **分析フェーズ** では、最後のチェックポイントを決定するためにトランザクション ログが分析され、ダーティ ページ テーブル (DPT) とアクティブなトランザクション テーブル (ATT) が作成されます。 DPT には、このデータベースがシャットダウンされたときにダーティだったページのレコードが含まれています。 ATT には、このデータベースがクリーンにシャットダウンされなかったときにアクティブだったトランザクションのレコードが含まれています。
 
--   **再実行フェーズ**では、データベースがシャットダウンされたときにデータ ファイルに書き込まれていない可能性がある、ログに記録されたすべての変更がロールフォワードされます。 データベース全体の復旧を成功させるために必要な[最小ログ シーケンス番号](../../relational-databases/sql-server-transaction-log-architecture-and-management-guide.md#minlsn) (minLSN) は DPT 内にあり、すべてのダーティ ページで必要な再実行操作の開始がマークされます。 このフェーズでは、[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] によって、コミットされたトランザクションに属するすべてのダーティ ページがディスクに書き込まれます。
+-   **再実行フェーズ** では、データベースがシャットダウンされたときにデータ ファイルに書き込まれていない可能性がある、ログに記録されたすべての変更がロールフォワードされます。 データベース全体の復旧を成功させるために必要な[最小ログ シーケンス番号](../../relational-databases/sql-server-transaction-log-architecture-and-management-guide.md#minlsn) (minLSN) は DPT 内にあり、すべてのダーティ ページで必要な再実行操作の開始がマークされます。 このフェーズでは、[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] によって、コミットされたトランザクションに属するすべてのダーティ ページがディスクに書き込まれます。
 
--   **元に戻すフェーズ**では、ATT 内にある未完了のトランザクションがロールバックされ、データベースの整合性が確保されます。 ロールバック後、データベースはオンラインになり、そのデータベースにそれ以上のトランザクション ログ バックアップを適用できなくなります。
+-   **元に戻すフェーズ** では、ATT 内にある未完了のトランザクションがロールバックされ、データベースの整合性が確保されます。 ロールバック後、データベースはオンラインになり、そのデータベースにそれ以上のトランザクション ログ バックアップを適用できなくなります。
 
 各データベース復旧ステージの進行状況に関する情報は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の[エラー ログ](../../tools/configuration-manager/viewing-the-sql-server-error-log.md)に記録されます。 データベース復旧の進行状況は、拡張イベントを使って追跡することもできます。 詳細については、ブログ記事「[データベース復旧の進行状況のための新しい拡張イベント](/archive/blogs/sql_server_team/new-extended-events-for-database-recovery-progress)」をご覧ください。
 
@@ -113,9 +113,9 @@ ms.locfileid: "91810706"
 |-----------------------|-------------------------|---------------------------------|---------------------------|  
 |データの復旧|完全な復旧 (ログが使用可能な場合)。|一部データ損失の可能性。|最新の完全バックアップまたは差分バックアップ以降のデータが損失。|  
 |ポイントインタイム リストア|ログ バックアップに含まれる任意の時点。|ログ バックアップに一括ログ記録された変更が含まれている場合は不可。|サポートされていません。|  
-|File restore **\***|完全にサポートされます。|場合によりサポートされます。 **\*\***|読み取り専用セカンダリ ファイルの場合のみ使用可能です。|  
-|Page restore **\***|完全にサポートされます。|場合によりサポートされます。 **\*\***|[なし] :|  
-|段階的な (ファイル グループ レベルの) 部分復元 **\***|完全にサポートされます。|場合によりサポートされます。 **\*\***|読み取り専用セカンダリ ファイルの場合のみ使用可能です。|  
+|ファイル復元 * *\** _|完全にサポートされます。|場合によりサポートされます。_ *\*\** *|読み取り専用セカンダリ ファイルの場合のみ使用可能です。|  
+|ページ復元 * *\** _|完全にサポートされます。|場合によりサポートされます。_ *\*\** *|[なし] :|  
+|段階的な (ファイル グループ レベルの) 部分復元 * *\** _|完全にサポートされます。|場合によりサポートされます。_ *\*\** *|読み取り専用セカンダリ ファイルの場合のみ使用可能です。|  
   
  **\*** の Enterprise Edition でのみ使用できます。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]  
   
@@ -179,9 +179,9 @@ ms.locfileid: "91810706"
 -   [復旧アドバイザー: SSMS を使用して分割バックアップを作成/復元する](/archive/blogs/managingsql/recovery-advisor-using-ssms-to-createrestore-split-backups)  
 
 ## <a name="accelerated-database-recovery"></a><a name="adr"></a> 高速データベース復旧
-[高速データベース復旧](/azure/sql-database/sql-database-accelerated-database-recovery/)は [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] で利用できます。 高速データベース復旧では、[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] の[復旧プロセス](#TlogAndRecovery)の再設計により、データベースの可用性が大幅に向上します (長時間トランザクションが存在する場合は特に)。 高速データベース復旧が有効にされたデータベースでは、フェールオーバーまたは他のクリーンではないシャットダウンの後の復旧プロセスが、非常に速く完了します。 高速データベース復旧を有効にした場合、取り消された長時間トランザクションのロールバックも非常に速く完了します。
+[高速データベース復旧](/azure/sql-database/sql-database-accelerated-database-recovery/)は [!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] で利用できます。 高速データベース復旧では、[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] の[復旧プロセス](#TlogAndRecovery)の再設計により、データベースの可用性が大幅に向上します (長時間トランザクションが存在する場合は特に)。 高速データベース復旧が有効にされたデータベースでは、フェールオーバーまたは他のクリーンではないシャットダウンの後の復旧プロセスが、非常に速く完了します。 高速データベース復旧を有効にした場合、取り消された長時間トランザクションのロールバックも非常に速く完了します。
 
-[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] では、次の構文を使用して、データベースごとに高速データベース復旧を有効にできます。
+[!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] では、次の構文を使用して、データベースごとに高速データベース復旧を有効にできます。
 
 ```sql
 ALTER DATABASE <db_name> SET ACCELERATED_DATABASE_RECOVERY = ON;

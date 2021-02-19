@@ -13,17 +13,17 @@ helpviewer_keywords:
 ms.assetid: 0b7bd2a1-544c-42ba-8e7b-4822f34d7b64
 author: stevestein
 ms.author: sstein
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 654dbae04bbc69fa257b288f6b130c6b17f75ace
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: d7c7e339afa580f81a834021670cc81fc61ab8ea
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91809220"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99161907"
 ---
 # <a name="create-views"></a>ビューの作成
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
-  [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] では、 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] または [!INCLUDE[tsql](../../includes/tsql-md.md)]を使用して、ビューを作成できます。 ビューは、次の目的で使用できます。  
+  [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] では、 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] または [!INCLUDE[tsql](../../includes/tsql-md.md)]を使用して、ビューを作成できます。 ビューは、次の目的で使用できます。  
   
 -   各ユーザーのデータベースに対する認識を特化、簡素化、およびカスタマイズする。  
   
@@ -61,7 +61,7 @@ ms.locfileid: "91809220"
   
 #### <a name="to-create-a-view-by-using-the-query-and-view-designer"></a>クエリおよびビュー デザイナーを使用してビューを作成するには  
   
-1.  **オブジェクト エクスプローラー**で、新しいビューを作成するデータベースを展開します。  
+1.  **オブジェクト エクスプローラー** で、新しいビューを作成するデータベースを展開します。  
   
 2.  **[ビュー]** フォルダーを右クリックし、**[新しいビュー]** をクリックします。  
   
@@ -69,11 +69,11 @@ ms.locfileid: "91809220"
   
 4.  **[追加]** をクリックし、 **[閉じる]** をクリックします。  
   
-5.  **ダイアグラム ペイン**で、新しいビューに含める列またはその他の要素を選択します。  
+5.  **ダイアグラム ペイン** で、新しいビューに含める列またはその他の要素を選択します。  
   
-6.  **抽出条件ペイン**で、列の追加の並べ替え条件またはフィルター条件を選択します。  
+6.  **抽出条件ペイン** で、列の追加の並べ替え条件またはフィルター条件を選択します。  
   
-7.  **ファイル** メニューの **view name**_の保存_をクリックします。  
+7.  **ファイル** メニューの **view name**_の保存_ をクリックします。  
   
 8.  **[名前の選択]** ダイアログ ボックスで、新しいビューの名前を入力し、 **[OK]** をクリックします。  
 
@@ -83,7 +83,7 @@ ms.locfileid: "91809220"
   
 #### <a name="to-create-a-view"></a>ビューを作成するには  
   
-1.  **オブジェクト エクスプローラー**で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)]のインスタンスに接続します。  
+1.  **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)]のインスタンスに接続します。  
   
 2.  [標準] ツール バーの **[新しいクエリ]** をクリックします。  
   

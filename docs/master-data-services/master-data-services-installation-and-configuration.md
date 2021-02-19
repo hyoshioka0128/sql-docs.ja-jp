@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.assetid: f6cd850f-b01b-491f-972c-f966b9fe4190
 author: lrtoyou1223
 ms.author: lle
-ms.openlocfilehash: 4df36b6012cd6cbe0f2570bb678ebff02fa21dd5
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: 630ee8396c3f4f64e7eee5335484299f5bebfd42
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92195811"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100350705"
 ---
 # <a name="master-data-services-installation-and-configuration"></a>マスター データ サービスのイントールと構成
 
@@ -74,7 +74,7 @@ ms.locfileid: "92195811"
   
      ![Windows Server 2012 タスクバーのサーバーマネージャーのアイコン](../master-data-services/media/mds-windowsservertaskbar-servermanagericon.png "Windows Server 2012 タスクバーのサーバーマネージャーのアイコン")  
   
-5.  **サーバー マネージャー**で、 **[管理]** メニューの **[役割と機能の追加]** をクリックします。  
+5.  **サーバー マネージャー** で、 **[管理]** メニューの **[役割と機能の追加]** をクリックします。  
    
      ![[サーバー管理] の [役割と機能の追加] メニューコマンド](../master-data-services/media/mds-servermanagerdashboard-addrolesfeaturesmenu.png "[サーバー管理] の [役割と機能の追加] メニューコマンド")  
   
@@ -130,11 +130,11 @@ ms.locfileid: "92195811"
   
 3.  [ **データベースサーバー** ] ページで、SQL Server インスタンスを指定します。 
 
-    >  [!INCLUDE[sqlv15](../includes/sssqlv15-md.md)] SQL Server Managed Instance のサポートを追加します。 **SQL Server インスタンス**の値をマネージインスタンスのホストに設定します。 たとえば、「 `xxxxxx.xxxxxx.database.windows.net` 」のように入力します。
+    >  [!INCLUDE[sqlv15](../includes/sssql19-md.md)] SQL Server Managed Instance のサポートを追加します。 **SQL Server インスタンス** の値をマネージインスタンスのホストに設定します。 たとえば、`xxxxxx.xxxxxx.database.windows.net` のようにします。
 
 4. 認証の **種類** を選択し、[ **接続のテスト** ] をクリックして、選択した認証の種類の資格情報を使用してデータベースに接続できることを確認します。 **[次へ]** をクリックします。
 
-    >[!INCLUDE[sqlv15](../includes/sssqlv15-md.md)]でマネージインスタンスに接続するには、次のいずれかの認証の種類を使用します。
+    >[!INCLUDE[sqlv15](../includes/sssql19-md.md)]でマネージインスタンスに接続するには、次のいずれかの認証の種類を使用します。
     >
     >- Azure Active Directory 統合認証: **現在のユーザー– Active Directory 統合**
     >- SQL Server 認証: **SQL Server アカウント**。
@@ -160,7 +160,7 @@ ms.locfileid: "92195811"
 
 7. データベースが作成され、構成されたら、**[完了]** をクリックします。  
   
-     **データベースの作成ウィザード**の設定の詳細については、「[データベースの作成ウィザード (マスター データ サービス構成マネージャー)](../master-data-services/create-database-wizard-master-data-services-configuration-manager.md)」を参照してください。  
+     **データベースの作成ウィザード** の設定の詳細については、「[データベースの作成ウィザード (マスター データ サービス構成マネージャー)](../master-data-services/create-database-wizard-master-data-services-configuration-manager.md)」を参照してください。  
   
 7.  の [ **データベースの構成** ] ページで、 [!INCLUDE[ssMDScfgmgr](../includes/ssmdscfgmgr-md.md)] [データベースの **選択**] をクリックします。  
   
@@ -183,7 +183,7 @@ ms.locfileid: "92195811"
   
 11. **[アプリケーション プール]** セクションで、次のいずれかを実行します。  
   
-    -   **管理者アカウント**データベースに対して、手順 5 で入力したのと同じユーザー名を入力し、パスワードを入力して、 **[OK]** をクリックします。  
+    -   **管理者アカウント** データベースに対して、手順 5 で入力したのと同じユーザー名を入力し、パスワードを入力して、 **[OK]** をクリックします。  
   
          **もしくは**  
   
@@ -194,6 +194,9 @@ ms.locfileid: "92195811"
         ![mds_2016ConfigManager_WebConfig_CreateWebApplication](../master-data-services/media/mds-2016configmanager-webconfig-createwebapplication.png)   
   
      **[Web アプリケーションの作成]** ダイアログ ボックスの詳細については、「[[Web アプリケーションの作成] ダイアログ ボックス (マスター データ サービス構成マネージャー)](../master-data-services/create-web-application-dialog-box-master-data-services-configuration-manager.md)」を参照してください。  
+
+    > [!NOTE] 
+    >  ドメインが [2020 ldap チャネルバインドと Windows の ldap 署名要件を](https://support.microsoft.com/en-us/help/4520412/2020-ldap-channel-binding-and-ldap-signing-requirements-for-windows)実装している場合。 "Active Directory で資格情報を検証できませんでした。" という問題が表示されます。 ドメインアカウントを使用してアプリケーションプールを作成する場合。 回避策として、ドメインユーザーではなく、 **ローカルコンピューターユーザー** を使用します。 これにより、Active Directory による資格情報のチェックを省略できます。 Web アプリケーションを作成した後、 **インターネットインフォメーションサービス (IIS) マネージャー** で id をドメインユーザーに変更できます。
   
 12. **[Web アプリケーション]** ボックスの **[Web 構成]** ページで、作成したアプリケーションをクリックして、 **[アプリケーションとデータベースの関連付け]** セクションで  **[選択]** をクリックします。  
   
@@ -204,7 +207,7 @@ ms.locfileid: "92195811"
      ![mds_2016ConfigManager_WebConfig_Completed](../master-data-services/media/mds-2016configmanager-webconfig-completed.png)  
  
      
-15. **[適用]** をクリックします。 **[構成の完了]** メッセージ ボックスが表示されます。 メッセージ ボックスで **[OK]** をクリックして、Web アプリケーションを起動します。 Web サイトのアドレスは、https://*server name* / *web application*/です。 
+15. **[Apply]** をクリックします。 **[構成の完了]** メッセージ ボックスが表示されます。 メッセージ ボックスで **[OK]** をクリックして、Web アプリケーションを起動します。 Web サイトのアドレスは、https://*server name* / *web application*/です。 
 
 
 ![mds_2016ConfigurationComplete_MessageBox](../master-data-services/media/mds-2016configurationcomplete-messagebox.png) 

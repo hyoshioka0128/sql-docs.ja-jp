@@ -14,10 +14,10 @@ f1_keywords:
 author: chugugrace
 ms.author: chugu
 ms.openlocfilehash: 6e09a6cdf6f8d863e57d2de0749e29b33c989eea
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.sourcegitcommit: c5078791a07330a87a92abb19b791e950672e198
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "91719547"
 ---
 # <a name="sap-bw-connection-manager"></a>SAP BW 接続マネージャー
@@ -30,7 +30,7 @@ ms.locfileid: "91719547"
 > [!IMPORTANT]  
 >  Microsoft Connector 1.1 for SAP BW に関するドキュメントでは、SAP Netweaver BW 環境について理解していることを前提としています。 SAP Netweaver BW の詳細または SAP Netweaver BW オブジェクトやプロセスを構成する方法については、SAP のマニュアルを参照してください。  
   
- SAP BW 接続マネージャーをパッケージに追加する場合、接続マネージャーの **ConnectionManagerType** プロパティを **SAPBI**に設定します。  
+ SAP BW 接続マネージャーをパッケージに追加する場合、接続マネージャーの **ConnectionManagerType** プロパティを **SAPBI** に設定します。  
   
 ## <a name="configuring-the-sap-bw-connection-manager"></a>SAP BW 接続マネージャーの構成  
  SAP BW 接続マネージャーは、次の方法で構成できます。  

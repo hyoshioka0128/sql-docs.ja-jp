@@ -4,11 +4,11 @@ ms.service: sql
 ms.topic: include
 ms.date: 07/20/2020
 ms.author: mikeray
-ms.openlocfilehash: e34f82f19350ae6ae1819d358ac8f5565593cd0c
-ms.sourcegitcommit: fb8724fb99c46ecf3a6d7b02a743af9b590402f0
+ms.openlocfilehash: 9c1af5a4e40d9fa8718a7b3673def7aad4c98258
+ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "86548743"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100018954"
 ---
 Azure SQL Managed Instance

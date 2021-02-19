@@ -24,13 +24,13 @@ ms.assetid: 38e8488f-2669-4cea-b9c3-5f394a663678
 author: markingmyname
 ms.author: maghan
 ms.reviewer: ''
-monikerRange: = azuresqldb-mi-current || >= sql-server-2016 || = sqlallproducts-allversions
-ms.openlocfilehash: 5e275d0465f436e20ac590e40a001fb8c335a573
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+monikerRange: = azuresqldb-mi-current || >= sql-server-2016
+ms.openlocfilehash: 770f6c82bfdafb20d826ae11b52ada0a0b1a5702
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92033042"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97478863"
 ---
 # <a name="operators"></a>オペレーター
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -89,7 +89,7 @@ ms.locfileid: "92033042"
   
 -   **net sendnotification**  
   
-    この方法では、 **net send** コマンドを使用して、オペレーターにメッセージを送信します。 **net send**では、ネットワーク メッセージの受信者 (コンピューターまたはユーザー) を指定します。  
+    この方法では、 **net send** コマンドを使用して、オペレーターにメッセージを送信します。 **net send** では、ネットワーク メッセージの受信者 (コンピューターまたはユーザー) を指定します。  
   
     > [!NOTE]  
     > **net send** コマンドでは、Microsoft Windows Messenger を使用します。 警告を正しく送信するには、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] を実行しているコンピューターと、オペレーターが使用しているコンピューターの両方で、このサービスを実行する必要があります。  
@@ -118,7 +118,7 @@ ms.locfileid: "92033042"
   
 -   ポケットベル通知機能を使用する場合は、サードパーティによるポケットベルとメール間のソフトウェアとハードウェアが必要です。  
   
--   **net send**を使用するには、指定のコンピューターにオペレーターがログオンしており、そのコンピューターで Windows Messenger からのメッセージの受信が許可されている必要があります。  
+-   **net send** を使用するには、指定のコンピューターにオペレーターがログオンしており、そのコンピューターで Windows Messenger からのメッセージの受信が許可されている必要があります。  
   
 ## <a name="related-tasks"></a>Related Tasks  
   

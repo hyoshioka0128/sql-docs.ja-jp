@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: dddd707e-bfb1-44ff-937b-a84c5e5d1a94
 author: markingmyname
 ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 2686ba2c5ac8e4db03f49a1d090ed8de1066b2c7
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: c486e78d8cd05d4af130626586e8a9817ab779a1
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550951"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97464493"
 ---
 # <a name="stopping-system-versioning-on-a-system-versioned-temporal-table"></a>システム バージョン管理されたテンポラル テーブルでシステム バージョン管理を停止する
 
@@ -25,7 +25,7 @@ ms.locfileid: "89550951"
 [!INCLUDE [sqlserver2016-asdb-asdbmi](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi.md)]
 
 
-一時的または永続的に、テンポラル テーブルでバージョン管理を停止する場合があります。 その場合は、 **SYSTEM_VERSIONING** 句を **OFF**に設定します。
+一時的または永続的に、テンポラル テーブルでバージョン管理を停止する場合があります。 その場合は、 **SYSTEM_VERSIONING** 句を **OFF** に設定します。
 
 ## <a name="setting-system_versioning--off"></a>SYSTEM_VERSIONING = OFF を設定する
 
@@ -37,12 +37,12 @@ ms.locfileid: "89550951"
 
 ### <a name="important-remarks"></a>重要な解説
 
-- **SYSTEM_VERSIONING = OFF** の間、履歴テーブルでは更新の取得が**停止**します。
-- **SYSTEM_VERSIONING = OFF** を設定するか、**SYSTEM_TIME** 期間を削除すると、**テンポラル テーブル**でデータが失われません。
+- **SYSTEM_VERSIONING = OFF** の間、履歴テーブルでは更新の取得が **停止** します。
+- **SYSTEM_VERSIONING = OFF** を設定するか、**SYSTEM_TIME** 期間を削除すると、**テンポラル テーブル** でデータが失われません。
 - **SYSTEM_VERSIONING = OFF** を設定し、 **SYSTEM_TIME** 期間を削除しない場合、システムでは挿入および更新操作ごとに期間列が引き続き更新されます。 現在のテーブルでの削除は永続的なものになります。
 - 期間列を完全に削除するには、 **SYSTEM_TIME** 期間を削除します。
-- **SYSTEM_VERSIONING = OFF**を設定すると、十分な権限を持つすべてのユーザーが、履歴テーブルのスキーマおよび内容を変更したり、履歴テーブルを完全に削除したりできます。
-- **SYSTEM_TIME** の参照など、テンポラル クエリ拡張を使用して SCHEMABINDING で作成された他のオブジェクトがある場合、**SYSTEM_VERSIONING = OFF** を設定することはできません。 この制限により、**SYSTEM_VERSIONING = OFF**を設定した場合にこれらのオブジェクトが失敗するのを防ぐことができます。
+- **SYSTEM_VERSIONING = OFF** を設定すると、十分な権限を持つすべてのユーザーが、履歴テーブルのスキーマおよび内容を変更したり、履歴テーブルを完全に削除したりできます。
+- **SYSTEM_TIME** の参照など、テンポラル クエリ拡張を使用して SCHEMABINDING で作成された他のオブジェクトがある場合、**SYSTEM_VERSIONING = OFF** を設定することはできません。 この制限により、**SYSTEM_VERSIONING = OFF** を設定した場合にこれらのオブジェクトが失敗するのを防ぐことができます。
 
 ### <a name="permanently-remove-system_versioning"></a>SYSTEM_VERSIONING を完全に削除する
 
@@ -57,7 +57,7 @@ DROP PERIOD FOR SYSTEM_TIME;
 
 ### <a name="temporarily-remove-system_versioning"></a>SYSTEM_VERSIONING を一時的に削除する
 
-次に、システム バージョン管理を **OFF**に設定する必要がある操作を示します。
+次に、システム バージョン管理を **OFF** に設定する必要がある操作を示します。
 
 - 履歴から不要なデータを削除する (**DELETE** または **TRUNCATE**)
 - バージョン管理を行わずに現在のテーブルからデータを削除する (**DELETE**、 **TRUNCATE**)

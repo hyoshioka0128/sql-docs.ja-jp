@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -16,15 +16,15 @@ helpviewer_keywords:
 - collations [SQL Server], Windows collations
 - Collation Designator
 ms.assetid: acceef84-2c68-46e2-a021-be019b7ab14e
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 04f3a63fd156968cbe27b5d9b4e86baf1a2ad110
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 2fa047e5ef018109352972f3ae139c6eff2c1b93
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89538028"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "100349954"
 ---
 # <a name="windows-collation-name-transact-sql"></a>Windows 照合順序名 (Transact-SQL)
 
@@ -38,10 +38,10 @@ ms.locfileid: "89538028"
 
 ```syntaxsql
 <Windows_collation_name> :: =
-CollationDesignator_<ComparisonStyle>
+<CollationDesignator>_<ComparisonStyle>
 
 <ComparisonStyle> :: =
-{ CaseSensitivity_AccentSensitivity [ _KanatypeSensitive ] [ _WidthSensitive ] [ _VariationSelectorSensitive ] 
+{ <CaseSensitivity>_<AccentSensitivity> [ _<KanatypeSensitive> ] [ _<WidthSensitive> ] [ _<VariationSelectorSensitive> ] 
 }
 | { _UTF8 }
 | { _BIN | _BIN2 }
@@ -75,12 +75,12 @@ Windows 照合順序で使用される基本照合順序規則を指定します
 このオプションを省略すると、文字幅が区別されません。**WS** を指定すると、文字幅が区別されます。
 
 *VariationSelectorSensitivity*  
-- **適用対象**:[!INCLUDE[ssSQL15](../../includes/sssqlv14-md.md)] 以降 
+- **適用対象**:[!INCLUDE[sssql17-md](../../includes/sssql17-md.md)] 以降 
 
 - このオプションを省略すると、異体字セレクターが区別されません。**VSS** を指定すると、異体字セレクターが区別されます。
 
 **UTF8**  
-- **適用対象**:[!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降   
+- **適用対象**:[!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] 以降   
 
 - 対象となるデータ型で UTF-8 のエンコードが使用されるように指定します。 詳細については、「 [Collation and Unicode Support](../../relational-databases/collations/collation-and-unicode-support.md)」を参照してください。
 
@@ -134,7 +134,7 @@ Windows 照合順序と [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)
 SELECT * FROM sys.fn_helpcollations() WHERE [name] NOT LIKE N'SQL%';
 ```
 
-次の表に、[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] でサポートされるすべての Windows 照合順序を示します。
+次の表に、[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] でサポートされるすべての Windows 照合順序を示します。
 
 |Windows ロケール|照合順序バージョン 100|照合順序バージョン 90|
 |--------------------|---------------------------|--------------------------|
@@ -248,7 +248,7 @@ SELECT * FROM sys.fn_helpcollations() WHERE [name] NOT LIKE N'SQL%';
 - [照合順序と Unicode のサポート](../../relational-databases/collations/collation-and-unicode-support.md)
 - [ALTER TABLE](../../t-sql/statements/alter-table-transact-sql.md)
 - [定数](../../t-sql/data-types/constants-transact-sql.md)
-- [CREATE DATABASE](../../t-sql/statements/create-database-transact-sql.md?view=sql-server-2017)
+- [CREATE DATABASE](../../t-sql/statements/create-database-transact-sql.md)
 - [CREATE TABLE](../../t-sql/statements/create-table-transact-sql.md)
 - [DECLARE @local_variable](../../t-sql/language-elements/declare-local-variable-transact-sql.md)
 - [テーブル](../../t-sql/data-types/table-transact-sql.md)

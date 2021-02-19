@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: 60e5d6f6-a26d-4bba-aada-42e382bbcd38
 author: markingmyname
 ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: a29b6a050779cdf61d97833d49ad9854cac4e484
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 244a625cb41d05f0d2f7cf61e8d6631a85dc8a4e
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89521669"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97462563"
 ---
 # <a name="temporal-table-security"></a>テンポラル テーブル セキュリティ
 
@@ -63,19 +63,19 @@ SYSTEM_VERSIONING がオンに設定されているとき、スキーマ変更�
 
 | 特徴量 | 新しい履歴テーブルを作成する | 既存の履歴テーブルを再利用する |
 | ------- | ------------------------ | ---------------------------- |
-|必要な権限|データベースの**CREATE TABLE** 権限<br /><br /> 現行テーブルと履歴テーブルが作成されるスキーマの**ALTER** 権限|データベースの**CREATE TABLE** 権限<br /><br /> 現行テーブルが作成されるスキーマの**ALTER** 権限<br /><br /> テンポラル テーブルを作成する**CONTROL** ステートメントの一部として指定される履歴テーブルの **CONTROL** 権限|
+|必要な権限|データベースの **CREATE TABLE** 権限<br /><br /> 現行テーブルと履歴テーブルが作成されるスキーマの **ALTER** 権限|データベースの **CREATE TABLE** 権限<br /><br /> 現行テーブルが作成されるスキーマの **ALTER** 権限<br /><br /> テンポラル テーブルを作成する **CONTROL** ステートメントの一部として指定される履歴テーブルの **CONTROL** 権限|
 |Audit|監査により、ユーザーが 2 つのオブジェクトを作成しようとしたことが示されます。 データベースにテーブルを作成する権限がないため、あるいはどちらかのテーブルのスキーマを変更する権限がないため、操作が失敗することがあります。|監査により、テンポラル テーブルが作成されたことが示されます。 データベースにテーブルを作成する権限がないため、テンポラル テーブルのスキーマを変更する権限がないため、あるいは履歴テーブルに対する権限がないため、操作が失敗することがあります。|
 
 ## <a name="security-of-the-alter-temporal-table-set-system_versioning-onoff-statement"></a>ALTER Temporal TABLE SET (SYSTEM_VERSIONING オン/オフ) ステートメントのセキュリティ
 
 | 特徴量 | 新しい履歴テーブルを作成する | 既存の履歴テーブルを再利用する |
 | ------- | ------------------------ | ---------------------------- |
-|必要な権限|データベースの**CONTROL** 権限<br /><br /> データベースの**CREATE TABLE** 権限<br /><br /> 履歴テーブルが作成されるスキーマの**ALTER** 権限|変更される元のテーブルの**CONTROL** 権限<br /><br /> **ALTER TABLE** ステートメントの一部として指定される履歴テーブルの **CONTROL** 権限|
+|必要な権限|データベースの **CONTROL** 権限<br /><br /> データベースの **CREATE TABLE** 権限<br /><br /> 履歴テーブルが作成されるスキーマの **ALTER** 権限|変更される元のテーブルの **CONTROL** 権限<br /><br /> **ALTER TABLE** ステートメントの一部として指定される履歴テーブルの **CONTROL** 権限|
 |Audit|監査により、テンポラル テーブルが変更され、同時に履歴テーブルが作成されたことが示されます。 データベースにテーブルを作成する権限がないため、履歴テーブルのスキーマを変更する権限がないため、あるいはテンポラル テーブルを変更する権限がないため、操作が失敗することがあります。|監査により、テンポラル テーブルが変更されたが、操作には履歴テーブルへのアクセス許可が必要であったことが示されます。 履歴テーブルに対する権限がないため、あるいは現行テーブルに対する権限がないため、操作が失敗することがあります。|
 
 ## <a name="security-of-select-statement"></a>SELECT ステートメントのセキュリティ
 
-履歴テーブルに影響を与えない**SELECT** ステートメントの **SELECT** 権限は変更されません。 履歴テーブルに影響を与える **SELECT** ステートメントについては、現行テーブルと履歴テーブルの両方で **SELECT** 権限が必要になります。
+履歴テーブルに影響を与えない **SELECT** ステートメントの **SELECT** 権限は変更されません。 履歴テーブルに影響を与える **SELECT** ステートメントについては、現行テーブルと履歴テーブルの両方で **SELECT** 権限が必要になります。
 
 ## <a name="see-also"></a>参照
 

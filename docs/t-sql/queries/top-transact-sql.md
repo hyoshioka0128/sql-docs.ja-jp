@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - TOP_TSQL
 - TOP
@@ -21,18 +21,18 @@ helpviewer_keywords:
 ms.assetid: da983c0a-06c5-4cf8-a6a4-7f9d66f34f2c
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 5795e27e7ff97de361161d4f703d8691b3c8405e
-ms.sourcegitcommit: 8f062015c2a033f5a0d805ee4adabbe15e7c8f94
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: d007bd92518d4ce5f898c400bad53f09d2e93642
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91227196"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99237790"
 ---
 # <a name="top-transact-sql"></a>TOP (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] で、クエリの結果セットとして返される行を、指定した行の数または割合に制限します。 TOP と ORDER BY 句を使用すると、結果セットは並べ替えられた行の先頭の *N* 行に制限されます。 それ以外の場合、TOP では特定の順序になっていない先頭の *N* 行が返されます。 この句を使用して、SELECT ステートメントから返される行の数を指定します。 または、TOP を使用して、INSERT、UPDATE、MERGE、DELETE ステートメントによって影響を受ける行数を指定します。  
+[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] で、クエリの結果セットとして返される行を、指定した行の数または割合に制限します。 TOP と ORDER BY 句を使用すると、結果セットは並べ替えられた行の先頭の *N* 行に制限されます。 それ以外の場合、TOP では特定の順序になっていない先頭の *N* 行が返されます。 この句を使用して、SELECT ステートメントから返される行の数を指定します。 または、TOP を使用して、INSERT、UPDATE、MERGE、DELETE ステートメントによって影響を受ける行数を指定します。  
   
 ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -80,10 +80,10 @@ SELECT ステートメントでは、必ず ORDER BY 句と TOP 句を使用し�
 -   クエリ オプティマイザーでは、クエリを最適化する際に、TOP 句または FETCH 句の *expression* の値を SELECT ステートメントの一部として認識できます。 SET ROWCOUNT はクエリを実行するステートメントの外部で使用するので、その値をクエリ プランで認識することはできません。  
   
 ## <a name="compatibility-support"></a>互換性サポート  
-下位互換性のため、SELECT ステートメントではかっこは省略可能です。 SELECT ステートメントの TOP では常にかっこを使用することをお勧めします。 そうすることで、かっこが必要な INSERT、UPDATE、MERGE、DELETE ステートメントとの一貫性を保つことができます。 
+下位互換性のために、式が整数の定数の場合、SELECT ステートメントではかっこは省略可能です。 SELECT ステートメントの TOP では常にかっこを使用することをお勧めします。 そうすることで、かっこが必要な INSERT、UPDATE、MERGE、DELETE ステートメントとの一貫性を保つことができます。 
   
 ## <a name="interoperability"></a>相互運用性  
-TOP 式は、トリガーによって実行される可能性があるステートメントには影響しません。 トリガーによって**挿入**および**削除**されたテーブルからは、INSERT、UPDATE、MERGE、または DELETE ステートメントによって実際に影響を受けた行のみが返されます。 たとえば、TOP 句が含まれる INSERT ステートメントの結果として INSERT TRIGGER が起動されるような場合です。  
+TOP 式は、トリガーによって実行される可能性があるステートメントには影響しません。 トリガーによって **挿入** および **削除** されたテーブルからは、INSERT、UPDATE、MERGE、または DELETE ステートメントによって実際に影響を受けた行のみが返されます。 たとえば、TOP 句が含まれる INSERT ステートメントの結果として INSERT TRIGGER が起動されるような場合です。  
   
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、ビューを使用した行の更新が可能です。 ビュー定義に TOP 句を含めることができるので、更新のために行が TOP 式の要件を満たさなくなると、特定の行がビューに表示されなくなる場合があります。  
   

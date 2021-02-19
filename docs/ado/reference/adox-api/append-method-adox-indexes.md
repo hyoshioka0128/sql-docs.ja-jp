@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - Indexes::Append
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 6695769f-275b-4b70-81bd-1a5f7d74926c
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 00b37055efe15f204049d02c337b54c228468419
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: feb259809798e3260e4e201c4658bfbc1455f168
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88985513"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100050543"
 ---
 # <a name="append-method-adox-indexes"></a>Append メソッド (ADOX Indexes)
 新しい [Index](./index-object-adox.md) オブジェクトを [Indexes](./indexes-collection-adox.md) コレクションに追加します。  
@@ -38,10 +38,10 @@ Indexes.Append Index [,Columns]
  追加する **インデックス** オブジェクト、または作成および追加するインデックスの名前。  
   
  *[列]*  
- 省略可能。 インデックスを作成する列の名前を指定する **バリアント** 値です (複数可)。 *Columns*パラメーターは、[列](./column-object-adox.md)オブジェクトまたはオブジェクトの[Name](./name-property-adox.md)プロパティの値に対応します。  
+ 任意。 インデックスを作成する列の名前を指定する **バリアント** 値です (複数可)。 *Columns* パラメーターは、[列](./column-object-adox.md)オブジェクトまたはオブジェクトの [Name](./name-property-adox.md)プロパティの値に対応します。  
   
 ## <a name="remarks"></a>解説  
- *Columns*パラメーターには、列名または列名の配列のいずれかを指定できます。  
+ *Columns* パラメーターには、列名または列名の配列のいずれかを指定できます。  
   
  プロバイダーがインデックスの作成をサポートしていない場合、エラーが発生します。  
   

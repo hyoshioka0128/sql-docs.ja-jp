@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-data-warehouse, database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - PERCENT_RANK_TSQL
 - PERCENT_RANK
@@ -19,18 +19,18 @@ helpviewer_keywords:
 ms.assetid: e361c2d4-c01f-4da4-8e89-1ddc724a2629
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 40422b7ea89dd6a62ea3f59f3d08d8eb48107a98
-ms.sourcegitcommit: 197a6ffb643f93592edf9e90b04810a18be61133
+monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 385d607f24c981bb3ee32ab434e7256ed685140d
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91380793"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99237335"
 ---
 # <a name="percent_rank-transact-sql"></a>PERCENT_RANK (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa](../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
 
-  [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] の行のグループ内の行の相対的な順位を計算します。 PERCENT_RANK を使用して、クエリの結果セットまたはパーティション内の値の相対的な位置を評価します。 PERCENT_RANK は CUME_DIST 関数に似ています。  
+  [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] の行のグループ内の行の相対的な順位を計算します。 PERCENT_RANK を使用して、クエリの結果セットまたはパーティション内の値の相対的な位置を評価します。 PERCENT_RANK は CUME_DIST 関数に似ています。  
   
 ## <a name="syntax"></a>構文  
   

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.system_views_TSQL
 - system_views
@@ -18,19 +18,19 @@ dev_langs:
 helpviewer_keywords:
 - sys.system_views catalog view
 ms.assetid: a526c410-e7b5-4075-8103-e1f3c6837c3c
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 45f2b39e809ac5df7ff2bb84d60d60d2cfec30dd
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: e0dcaebcf38e4aa3b1cbee41d5528f8d10a991cf
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545006"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99189280"
 ---
 # <a name="syssystem_views-transact-sql"></a>sys.system_views (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  に付属しているシステムビューごとに1行の値を格納 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] します。 すべてのシステムビューは、 **sys** または **INFORMATION_SCHEMA**という名前のスキーマに含まれています。  
+  に付属しているシステムビューごとに1行の値を格納 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] します。 すべてのシステムビューは、 **sys** または **INFORMATION_SCHEMA** という名前のスキーマに含まれています。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

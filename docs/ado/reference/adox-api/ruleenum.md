@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - RuleEnum
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 738fd3ff-3daf-483d-a0b9-88bef1be54c1
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 66367d872e27629f1bf437961b99908d0c42e9f2
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: b1c00531161702fb15b55d0f8112c2424f38e52f
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88983373"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100049772"
 ---
 # <a name="ruleenum"></a>RuleEnum
 [キー](./key-object-adox.md)が削除されたときに従うルールを指定します。  

@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 94f1ac93-e778-4a40-a85e-94bce5316ac7
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 16fe01770c486287ff2a188a9c682ffc1e230452
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 4ba7cd56544e1bb7a171e864b908a7ffdacbf093
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88983523"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100049802"
 ---
 # <a name="procedures-delete-method-example-vb"></a>Procedures Delete メソッドの例 (VB)
 次のコード[は、プロシージャコレクションの](./procedures-collection-adox.md) [delete](./delete-method-adox-collections.md)メソッドを使用してプロシージャを削除する方法を示しています。  

@@ -4,17 +4,17 @@ description: SQL Server で可用性グループのデータ ストリームが�
 ms.custom: ''
 ms.date: 06/22/2016
 ms.prod: sql
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 ms.assetid: 7632769c-b246-4766-886f-7c60ec540be8
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: 635a9534f12d8ac48eaa0c331371ac2875577a91
-ms.sourcegitcommit: 2f868a77903c1f1c4cecf4ea1c181deee12d5b15
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 86e85a392a57eb4782be21becb8c06fa405516b5
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91670405"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100337918"
 ---
 # <a name="tune-compression-for-availability-group"></a>可用性グループの圧縮の調整
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]

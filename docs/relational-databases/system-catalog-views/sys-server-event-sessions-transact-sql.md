@@ -1,13 +1,13 @@
 ---
 description: sys.server_event_sessions (Transact-SQL)
-title: server_event_sessions (Transact-sql) |Microsoft Docs
+title: sys.server_event_sessions (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - server_event_sessions
 - server_event_sessions_TSQL
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sys.server_event_sessions catalog view
 - xe
 ms.assetid: 796f3093-6a3e-4d67-8da6-b9810ae9ef5b
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: e97bffc2aff0a5c1fc176747ac965ce296d5b914
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 4eaa06349d7266fa44cecd69cbc7c56733e1a44f
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551392"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99211647"
 ---
 # <a name="sysserver_event_sessions-transact-sql"></a>sys.server_event_sessions (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

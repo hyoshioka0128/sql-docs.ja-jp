@@ -17,15 +17,15 @@ helpviewer_keywords:
 - database mirroring [SQL Server], metadata
 - users [SQL Server], orphaned
 ms.assetid: 11eefa97-a31f-4359-ba5b-e92328224133
-author: MikeRayMSFT
-ms.author: mikeray
-monikerRange: '>= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || = sqlallproducts-allversions'
-ms.openlocfilehash: 435cc59989b8a06ac651ccc93f73bdfebec3946d
-ms.sourcegitcommit: a5398f107599102af7c8cda815d8e5e9a367ce7e
+author: cawrites
+ms.author: chadam
+monikerRange: '>= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016'
+ms.openlocfilehash: 105fc8245fa216396117ed32c55aa0b2821f6c0c
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92006258"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97477143"
 ---
 # <a name="troubleshoot-orphaned-users-sql-server"></a>孤立したユーザーのトラブルシューティング (SQL Server)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -105,7 +105,7 @@ WITH PASSWORD = '<use_a_strong_password_here>',
 SID = <SID>;  
 ```  
   
- **マスター**に既に存在するログインに孤立ユーザーをマッピングするには、ログイン名を指定し、ユーザー データベースで [ALTER USER](../../t-sql/statements/alter-user-transact-sql.md) ステートメントを実行します。  
+ **マスター** に既に存在するログインに孤立ユーザーをマッピングするには、ログイン名を指定し、ユーザー データベースで [ALTER USER](../../t-sql/statements/alter-user-transact-sql.md) ステートメントを実行します。  
   
 ```  
 ALTER USER <user_name> WITH Login = <login_name>;  

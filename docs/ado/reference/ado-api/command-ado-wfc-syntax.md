@@ -7,19 +7,19 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 helpviewer_keywords:
 - Command collection [ADO], ADO/WFC syntax
 ms.assetid: 39d0aa06-03ac-4c9a-8400-83947756ef99
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: b9a79d343458969fcfdc72979f1b413f9b2a8742
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 74f8dd8f3836159aedbaf23c6abb4c1f6557932b
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88975243"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100034892"
 ---
 # <a name="command-ado---wfc-syntax"></a>Command (ADO - WFC 構文)
 ## <a name="package-commswfcdata"></a>パッケージ com.. wfc. データ  
@@ -45,9 +45,9 @@ public int executeUpdate(Object[] parameters, int options)
 public int executeUpdate()  
 ```  
   
- **Executeupdate**メソッドは、特定のパラメーターを使用して基になる ADO **execute**メソッドを呼び出す特殊なケースメソッドです。 **Executeupdate**メソッドでは、**レコードセット**オブジェクトの戻りがサポートされていないため、 **execute**メソッドの*options*パラメーターは**AdoEnums.Executeoptions**を使用して変更されます。 **Execute**メソッドが完了すると、更新された*RecordsAffected*パラメーターが**executeupdate**メソッドに戻されます。このメソッドは、最後に**int**として返されます。  
+ **Executeupdate** メソッドは、特定のパラメーターを使用して基になる ADO **execute** メソッドを呼び出す特殊なケースメソッドです。 **Executeupdate** メソッドでは、**レコードセット** オブジェクトの戻りがサポートされていないため、 **execute** メソッドの *options* パラメーターは **AdoEnums.Executeoptions** を使用して変更されます。 **Execute** メソッドが完了すると、更新された *RecordsAffected* パラメーターが **executeupdate** メソッドに戻されます。このメソッドは、最後に **int** として返されます。  
   
-### <a name="properties"></a>プロパティ  
+### <a name="properties"></a>Properties  
   
 ```  
 public com.ms.wfc.data.Connection getActiveConnection()  

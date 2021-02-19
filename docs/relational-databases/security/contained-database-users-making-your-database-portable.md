@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: e57519bb-e7f4-459b-ba2f-fd42865ca91d
 author: VanMSFT
 ms.author: vanto
-monikerRange: =azuresqldb-current||>=sql-server-2016||=azure-sqldw-latest||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: decbd12174f6000a44a3cfd95b145c70de10740c
-ms.sourcegitcommit: a5398f107599102af7c8cda815d8e5e9a367ce7e
+monikerRange: =azuresqldb-current||>=sql-server-2016||=azure-sqldw-latest||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 9215ac429ff45d80a2ba1ea7d913a63ab49e34e7
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92004665"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97480953"
 ---
 # <a name="contained-database-users---making-your-database-portable"></a>包含データベース ユーザー - データベースの可搬性を確保する
 
@@ -114,7 +114,7 @@ WHERE name='Test'
   
 - [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]では、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のインスタンスに対して包含データベース ユーザーを有効にする必要があります。 詳細については、[包含データベース認証サーバー構成オプション](../../database-engine/configure-windows/contained-database-authentication-server-configuration-option.md)を参照してください。  
 - 包含データベース ユーザーとログインの名前が重複しない場合は、アプリケーションで共存させることができます。  
-- **name1** という名前のログインが master データベースに存在し、なおかつ **name1**という名前の包含データベース ユーザーを作成した場合、接続文字列でデータベース名を指定すると、そのデータベースに接続するときのログイン コンテキストよりも、データベース ユーザーのコンテキストが優先されます。 つまり、包含データベース ユーザーは、同じ名前のログインに優先します。  
+- **name1** という名前のログインが master データベースに存在し、なおかつ **name1** という名前の包含データベース ユーザーを作成した場合、接続文字列でデータベース名を指定すると、そのデータベースに接続するときのログイン コンテキストよりも、データベース ユーザーのコンテキストが優先されます。 つまり、包含データベース ユーザーは、同じ名前のログインに優先します。  
 - [!INCLUDE[ssSDS](../../includes/sssds-md.md)] では、包含データベース ユーザーの名前を、サーバーの管理者アカウントと同じ名前にすることはできません。  
 - [!INCLUDE[ssSDS](../../includes/sssds-md.md)] サーバーの管理者アカウントは、包含データベース ユーザーにできません。 サーバー管理者は、包含データベース ユーザーを作成し、管理するための十分な権限を持っています。 サーバー管理者は、ユーザー データベースの包含データベース ユーザーに権限を付与できます。  
 - 包含データベース ユーザーはデータベース レベル プリンシパルであるため、使用するすべてのデータベースで包含データベース ユーザーを作成する必要があります。 ID はデータベースに限定され、同じサーバー内の別のデータベースで同じ名前とパスワードを持つユーザーとは完全に独立しています。  

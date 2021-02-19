@@ -13,13 +13,13 @@ helpviewer_keywords:
 ms.assetid: 85c623ca-4656-4d70-a9db-ee4d897cd214
 author: stevestein
 ms.author: sstein
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 5f636cfad5425ec24a41984ddf3b650439b5c13a
-ms.sourcegitcommit: 331b8495e4ab37266945c81ff5b93d250bdaa6da
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: debd09257826c625e6eee4d71a81cdb455683f3e
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88646363"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100344273"
 ---
 # <a name="create-primary-keys"></a>主キーの作成
 
@@ -49,7 +49,7 @@ ms.locfileid: "88646363"
 ### <a name="to-create-a-primary-key"></a>主キーを作成するには
 
 1. オブジェクト エクスプローラーで、UNIQUE 制約を追加するテーブルを右クリックし **、[デザイン]** をクリックします。
-2. **テーブル デザイナー**で、主キーとして定義するデータベース列の行セレクターをクリックします。 複数列を選択する場合は、Ctrl キーを押しながら、他の列の行セレクターをクリックします。
+2. **テーブル デザイナー** で、主キーとして定義するデータベース列の行セレクターをクリックします。 複数列を選択する場合は、Ctrl キーを押しながら、他の列の行セレクターをクリックします。
 3. 列の行セレクターを右クリックし、 **[主キーの設定]** をクリックします。
 
 > [!CAUTION]

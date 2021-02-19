@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: 5d745f22-9c6b-4e11-8c62-bc50e9a8bf38
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: =azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions
-ms.openlocfilehash: 2b3e66bbfa13af7c6f06e39346c68273c9f7a58a
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-mi-current||>=sql-server-2016
+ms.openlocfilehash: f4c10ff531c0a687bebb270c118c451ce489786a
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85783124"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97480973"
 ---
 # <a name="snapshot-replication"></a>スナップショット レプリケーション
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -63,7 +63,7 @@ ms.locfileid: "85783124"
  ![スナップショット レプリケーション コンポーネントとデータ フロー](../../relational-databases/replication/media/snapshot.gif "スナップショット レプリケーション コンポーネントとデータ フロー")  
   
 ##  <a name="snapshot-agent"></a><a name="SnapshotAgent"></a> スナップショット エージェント  
- マージ レプリケーションの場合は、スナップショット エージェントが起動するたびにスナップショットが生成されます。 トランザクション レプリケーションでは、スナップショットの生成はパブリケーション プロパティ **immediate_sync**の設定で決まります。 プロパティが TRUE に設定されていると (パブリケーションの新規作成ウィザードを使用する際の既定の設定)、スナップショット エージェントを実行するたびにスナップショットが生成され、いつでもスナップショットをサブスクライバーに適用できます。 プロパティが FALSE に設定されていると ( **sp_addpublication**を使用する場合の既定の設定)、最後にスナップショット エージェントを実行してから新しいサブスクリプションが追加された場合にのみスナップショットが生成されます。サブスクライバーは、スナップショット エージェントが完了するまで同期することはできません。  
+ マージ レプリケーションの場合は、スナップショット エージェントが起動するたびにスナップショットが生成されます。 トランザクション レプリケーションでは、スナップショットの生成はパブリケーション プロパティ **immediate_sync** の設定で決まります。 プロパティが TRUE に設定されていると (パブリケーションの新規作成ウィザードを使用する際の既定の設定)、スナップショット エージェントを実行するたびにスナップショットが生成され、いつでもスナップショットをサブスクライバーに適用できます。 プロパティが FALSE に設定されていると ( **sp_addpublication** を使用する場合の既定の設定)、最後にスナップショット エージェントを実行してから新しいサブスクリプションが追加された場合にのみスナップショットが生成されます。サブスクライバーは、スナップショット エージェントが完了するまで同期することはできません。  
   
  スナップショット エージェントは以下の手順を実行します。  
   
@@ -104,6 +104,6 @@ ms.locfileid: "85783124"
   
 2.  パブリッシャー上の **sysmergeschemachange** テーブルを調べ、サブスクライバーで適用する必要のある新しいスナップショットがあるかどうかを判断します。  
   
-3.  新しいスナップショットを利用できる場合、 **sysmergeschemachange**で指定された位置のスナップショット ファイルをサブスクリプション データベースに適用します。  
+3.  新しいスナップショットを利用できる場合、 **sysmergeschemachange** で指定された位置のスナップショット ファイルをサブスクリプション データベースに適用します。  
   
   

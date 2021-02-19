@@ -1,13 +1,13 @@
 ---
-description: foreign_key_columns (Transact-sql)
-title: foreign_key_columns (Transact-sql) |Microsoft Docs
+description: sys.foreign_key_columns (Transact-sql)
+title: sys.foreign_key_columns (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/15/2017
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.foreign_key_columns
 - foreign_key_columns
@@ -18,17 +18,17 @@ dev_langs:
 helpviewer_keywords:
 - sys.foreign_key_columns catalog view
 ms.assetid: 7247f065-5441-4bcf-9f25-c84a03290dc6
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 67b53a6321cffdd7a396e9faa252efce2c8100e0
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 772fa12d0660e2de0ba0930ecf2198c384426ed2
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89546881"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99191525"
 ---
-# <a name="sysforeign_key_columns-transact-sql"></a>foreign_key_columns (Transact-sql)
+# <a name="sysforeign_key_columns-transact-sql"></a>sys.foreign_key_columns (Transact-sql)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   外部キーを構成する列または列のセットごとに1行の値を格納します。  
@@ -36,7 +36,7 @@ ms.locfileid: "89546881"
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
 |**constraint_object_id**|**int**|外部キー制約の ID。|  
-|**constraint_column_id**|**int**|外部キーを構成する*1* つまたは複数の列の ID (n = 列の数) です。|  
+|**constraint_column_id**|**int**|外部キーを構成する *1* つまたは複数の列の ID (n = 列の数) です。|  
 |**parent_object_id**|**int**|参照元のオブジェクトである、制約の親の ID。|  
 |**parent_column_id**|**int**|参照元の列である、親列の ID です。|  
 |**referenced_object_id**|**int**|候補キーを持つ、参照先のオブジェクトの ID。|  

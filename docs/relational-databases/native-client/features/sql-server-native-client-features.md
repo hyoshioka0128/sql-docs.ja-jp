@@ -15,12 +15,13 @@ helpviewer_keywords:
 ms.assetid: 7bb32865-5afb-41ab-98b4-3fa545ee8953
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: ec878229524d048969acbf3ca1af7cca4e318084
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: d192f469759ae57d01f4789aef887f4cbb60adca
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86008996"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97462103"
 ---
 # <a name="sql-server-native-client-features"></a>SQL Server Native Client の機能
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -44,9 +45,9 @@ ms.locfileid: "86008996"
  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client で XML データ型をサポートする方法について説明します。XML データ型とは、XML ベースのデータ型で、列の型、変数の型、パラメーターの型、または関数の戻り値の型として使用できます。  
   
  [ユーザー定義型の使用](../../../relational-databases/native-client/features/using-user-defined-types.md)  
- [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]Native Client がユーザー定義型 (UDT) をサポートする方法について説明します。 UDT を使用すると、オブジェクトやカスタムデータ構造をデータベースに格納できるため、SQL 型システムが拡張され [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] ます。  
+ [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]Native Client が User-Defined 型 (UDT) をサポートする方法について説明します。 UDT を使用すると、オブジェクトやカスタムデータ構造をデータベースに格納できるため、SQL 型システムが拡張さ [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] れます。  
   
- [大きな値をとるデータ型の使用](../../../relational-databases/native-client/features/using-large-value-types.md)  
+ [大きな値の型の使用](../../../relational-databases/native-client/features/using-large-value-types.md)  
  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client で大きな値のデータ型をサポートする方法について説明します。大きな値のデータ型とは、ラージ オブジェクト (LOB) データ型のことです。  
   
  [プログラムによるパスワードの変更](../../../relational-databases/native-client/features/changing-passwords-programmatically.md)  
@@ -79,19 +80,19 @@ ms.locfileid: "86008996"
  [SQL Server Native Client におけるスパース列のサポート](../../../relational-databases/native-client/features/sparse-columns-support-in-sql-server-native-client.md)  
  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client によるスパース列のサポートについて説明します。  
   
- [日付と時刻の機能強化](../../../relational-databases/native-client/features/date-and-time-improvements.md)  
+ [日付と時刻の強化機能](../../../relational-databases/native-client/features/date-and-time-improvements.md)  
  日付と時刻のデータ型のために [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client に追加されたサポートについて説明します。  
   
  [メタデータの検出](../../../relational-databases/native-client/features/metadata-discovery.md)  
  [!INCLUDE[ssSQL11](../../../includes/sssql11-md.md)] で行われたメタデータ検出の機能強化について説明します。  
   
  [SQL Server Native Client 11.0 での UTF-16 のサポート](../../../relational-databases/native-client/features/utf-16-support-in-sql-server-native-client-11-0.md)  
- [!INCLUDE[ssSQL11](../../../includes/sssql11-md.md)] で導入された動作の変更について説明します。 列の結果または出力パラメーターをバインドするときに固定長バッファーを指定し、終端文字の前にバッファーに書き込まれる**wchar**文字がサロゲートペアの上位サロゲートコードポイントである場合、および次の**wchar**文字が下位サロゲートコードポイントである場合、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client はバッファーに上位サロゲートコードポイントを追加しません。  
+ [!INCLUDE[ssSQL11](../../../includes/sssql11-md.md)] で導入された動作の変更について説明します。 列の結果または出力パラメーターをバインドするときに固定長バッファーを指定し、終端文字の前にバッファーに書き込まれる **wchar** 文字がサロゲートペアの上位サロゲートコードポイントである場合、および次の **wchar** 文字が下位サロゲートコードポイントである場合、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client はバッファーに上位サロゲートコードポイントを追加しません。  
   
  [SQL Server Native Client の HADR サポート](../../../relational-databases/native-client/features/sql-server-native-client-support-for-high-availability-disaster-recovery.md)  
  [!INCLUDE[ssSQL11](../../../includes/sssql11-md.md)] に追加された高可用性のディザスター リカバリー機能をアプリケーションで利用するための構成方法について説明します。  
   
- [拡張イベントログの診断情報へのアクセス](../../../relational-databases/native-client/features/accessing-diagnostic-information-in-the-extended-events-log.md)  
+ [拡張イベント ログの診断情報へのアクセス](../../../relational-databases/native-client/features/accessing-diagnostic-information-in-the-extended-events-log.md)  
  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client の機能強化とリング バッファーおよび XEvent ログの診断情報にアクセスできるデータ トレースについて説明します。  
   
  [SQL Server Native Client における LocalDB のサポート](../../../relational-databases/native-client/features/sql-server-native-client-support-for-localdb.md)  
@@ -100,7 +101,7 @@ ms.locfileid: "86008996"
 ## <a name="see-also"></a>参照  
  [SQL Server Native Client プログラミング](../../../relational-databases/native-client/sql-server-native-client-programming.md)   
  [ODBC の操作方法に関するトピック](../../../relational-databases/native-client-odbc-how-to/odbc-how-to-topics.md)   
- [OLE DB 方法に関するトピック](../../../relational-databases/native-client-ole-db-how-to/ole-db-how-to-topics.md)   
+ [OLE DB の使用法に関するトピック](../../../relational-databases/native-client-ole-db-how-to/ole-db-how-to-topics.md)   
  [SQL Server Native Client のインストール](../../../relational-databases/native-client/applications/installing-sql-server-native-client.md)  
   
   

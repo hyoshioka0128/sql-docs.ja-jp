@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ce83b966-474b-4f57-8eb9-370996dfc5c0
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: d757b2df05bd4f376bb7c6744fa75ac5453f83f6
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: e6fcbbcd93ac77863e967539fa27a1a9f01f0158
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88983583"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100053857"
 ---
 # <a name="procedures-append-method-example-vb"></a>Procedures Append メソッドの例 (VB)
 次のコードは、 [Command](../ado-api/command-object-ado.md) オブジェクトと [Procedures](./procedures-collection-adox.md) collection [Append](./append-method-adox-procedures.md) メソッドを使用して、基になるデータソースに新しいプロシージャを作成する方法を示しています。  

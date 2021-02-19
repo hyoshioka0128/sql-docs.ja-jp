@@ -7,12 +7,12 @@ ms.prod: reporting-services
 ms.prod_service: reporting-services-sharepoint
 ms.topic: conceptual
 ms.date: 09/15/2017
-ms.openlocfilehash: 429933e4491a7e0f7382e5ca8faa3b6ae26f3c82
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+ms.openlocfilehash: 78d7265398cab553a9378fecc54b25a32d36e84d
+ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91891602"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97489832"
 ---
 # <a name="claims-to-windows-token-service-c2wts-and-reporting-services"></a>Claims to Windows Token Service (C2WTS) と Reporting Services
 
@@ -31,7 +31,7 @@ SQL Server Reporting Services SharePoint モードで SharePoint ファームの
 
 1. RSWindowsNegotiate 認証タイプを使用するために SSRS サービス アカウントを決定し、SPN を設定し、rsreportserver.config ファイルを更新して、Kerberos 認証用の Reporting Services (ネイティブ モード) インスタンスを構成します。 [レポート サーバーのサービス プリンシパル名 (SPN) の登録](../report-server/register-a-service-principal-name-spn-for-a-report-server.md)
 
-2. [C2WTS の構成に必要な手順](?view=sql-server-2017#steps-needed-to-configure-c2wts)に従います
+2. [C2WTS の構成に必要な手順](#steps-needed-to-configure-c2wts)に従います
  
 
 ## <a name="sharepoint-mode-integration"></a>SharePoint モードの統合
@@ -54,7 +54,7 @@ Kerberos の制約付き委任を使用する環境では、SharePoint Server �
    
     * [SharePoint サーバーの全体管理] > [セキュリティ] > [サービス アカウントの構成] > [Windows サービス - Claims to Windows Token Service] から、マネージド アカウントを使用するための C2WTS サービスを構成します
 
-    C2WTS を使用する各サーバーのローカルの Administrators グループに C2WTS サービス アカウントを追加します。 **レポート ビューアー Web パーツ**の場合は Web Front End (WFE) サーバーです。 **SharePoint 統合モード**の場合は、Reporting Services サービスが実行されているアプリケーション サーバーです。
+    C2WTS を使用する各サーバーのローカルの Administrators グループに C2WTS サービス アカウントを追加します。 **レポート ビューアー Web パーツ** の場合は Web Front End (WFE) サーバーです。 **SharePoint 統合モード** の場合は、Reporting Services サービスが実行されているアプリケーション サーバーです。
     * [ローカル ポリシー] > [ユーザー権利の割り当て] のローカル セキュリティ ポリシーで、C2WTS アカウントに次のアクセス許可を付与します。
         * オペレーティング システムの一部として機能
         * 認証後にクライアントを借用する
@@ -66,13 +66,13 @@ Kerberos の制約付き委任を使用する環境では、SharePoint Server �
     アカウントには、プロトコル遷移を使用した制限付き委任に加え、通信に必要なサービス (SQL Server Database Engine、SQL Server Analysis Services など) に委任するアクセス許可も必要です。 委任を構成するには、Active Directory ユーザーとコンピューターのスナップインを使用できます。また、ドメイン管理者である必要があります。
 
     > [!IMPORTANT]
-    > C2WTS サービス アカウントにどのような設定を構成するとしても、[委任] タブで、使用されているメイン サービス アカウントと同じにする必要があります。 **レポート ビューアー Web パーツ**の場合は、SharePoint Web アプリケーションのサービス アカウントです。 **SharePoint 統合モード**の場合は、Reporting Services サービス アカウントです。
+    > C2WTS サービス アカウントにどのような設定を構成するとしても、[委任] タブで、使用されているメイン サービス アカウントと同じにする必要があります。 **レポート ビューアー Web パーツ** の場合は、SharePoint Web アプリケーションのサービス アカウントです。 **SharePoint 統合モード** の場合は、Reporting Services サービス アカウントです。
     >
     > たとえば、C2WTS サービス アカウントを SQL Service に委任できるようにした場合、SharePoint 統合モードの Reporting Services サービス アカウントでも同様にする必要があります。
 
     * 各サービス アカウントを右クリックして、プロパティ ダイアログを開きます。 ダイアログで **[委任]** タブをクリックします。
 
-        委任タブは、オブジェクトにサービス プリンシパル名 (SPN) が割り当てられている場合にのみ表示されます。 C2WTS では、C2WTS アカウントに SPN は必要ありませんが、SPN がない場合は、 **[委任]** タブは表示されません。 制約付き委任を構成する別の方法として、 **ADSIEdit**などのユーティリティを使用するという方法もあります。
+        委任タブは、オブジェクトにサービス プリンシパル名 (SPN) が割り当てられている場合にのみ表示されます。 C2WTS では、C2WTS アカウントに SPN は必要ありませんが、SPN がない場合は、 **[委任]** タブは表示されません。 制約付き委任を構成する別の方法として、 **ADSIEdit** などのユーティリティを使用するという方法もあります。
 
     * 委任タブで重要な構成オプションは、次のとおりです。
 
@@ -82,9 +82,9 @@ Kerberos の制約付き委任を使用する環境では、SharePoint Server �
     * **[追加]** を選択して、委任するサービスを追加します。
 
     * **[ユーザーまたはコンピューター...&#42;]** を選択し、サービスをホストするアカウントを入力します。 たとえば、SQL Server が *sqlservice* というアカウントで実行されている場合は、`sqlservice` と入力します。 
-      **レポート ビューアー Web パーツ**の場合は、Reporting Services (ネイティブ モード) インスタンスのサービス アカウントです。
+      **レポート ビューアー Web パーツ** の場合は、Reporting Services (ネイティブ モード) インスタンスのサービス アカウントです。
 
-    * サービス一覧を選択します。 そのアカウントで使用できる SPN が表示されます。 そのアカウントのサービス一覧が表示されない場合は、サービスがないか、別のアカウントのサービスの可能性があります。 SPN の調整には、SetSPN ユーティリティを使用できます。 **レポート ビューアー Web パーツ**の場合は、「[レポート ビューアー Web パーツの構成](?view=sql-server-2017#report-viewer-native-mode-web-part-configuration)」で構成した http SPN が表示されます。
+    * サービス一覧を選択します。 そのアカウントで使用できる SPN が表示されます。 そのアカウントのサービス一覧が表示されない場合は、サービスがないか、別のアカウントのサービスの可能性があります。 SPN の調整には、SetSPN ユーティリティを使用できます。 **レポート ビューアー Web パーツ** の場合は、「[レポート ビューアー Web パーツの構成](#report-viewer-native-mode-web-part-configuration)」で構成した http SPN が表示されます。
 
     * [OK] を選択してダイアログを閉じます。
 

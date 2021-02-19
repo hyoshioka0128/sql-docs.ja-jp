@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.systypes_TSQL
 - systypes_TSQL
@@ -19,15 +19,15 @@ helpviewer_keywords:
 - sys.systypes compatibility view
 - systypes system table
 ms.assetid: 1b0b1d0c-5f7b-470b-bd52-8bfa922d7889
-author: rothja
-ms.author: jroth
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6b5e4f2d0974889d0ce4158648b2fc44692926b9
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 7f00dab371048ed8a1b39cb702897ce5f481c377
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88375228"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99160652"
 ---
 # <a name="syssystypes-transact-sql"></a>sys.sysの型 (Transact-sql)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -47,12 +47,12 @@ ms.locfileid: "88375228"
 |**xprec**|**tinyint**|サーバーで使用される内部精度。 クエリでは使用されません。|  
 |**xscale**|**tinyint**|内部スケール。サーバーで使用されます。 クエリでは使用されません。|  
 |**tdefault**|**int**|このデータ型の整合性チェックが含まれているストアドプロシージャの ID。|  
-|**domain**|**int**|このデータ型の整合性チェックが含まれているストアドプロシージャの ID。|  
-|**uid**|**smallint**|型の所有者のスキーマ ID です。<br /><br /> [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の前のバージョンからアップグレードしたデータベースの場合、スキーマ ID は所有者のユーザー ID と同じです。<br /><br /> 重要次のいずれかの DDL ステートメントを使用する場合は、sys.sys** \* 型ではなく、sys カタログビューを使用する必要があります。 \* \* \* ** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [sys.types](../../relational-databases/system-catalog-views/sys-types-transact-sql.md) **sys.systypes**<br /><br /> 型に対する ALTER AUTHORIZATION<br /><br /> CREATE TYPE<br /><br /> ユーザーおよびロールの数が32767を超えた場合、オーバーフローまたは NULL を返します。|  
+|**領域**|**int**|このデータ型の整合性チェックが含まれているストアドプロシージャの ID。|  
+|**uid**|**smallint**|型の所有者のスキーマ ID です。<br /><br /> [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の前のバージョンからアップグレードしたデータベースの場合、スキーマ ID は所有者のユーザー ID と同じです。<br /><br /> 重要次のいずれかの DDL ステートメントを使用する場合は、sys.sys **\* 型ではなく、sys カタログビューを使用する必要があります。 \* \* \*** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [](../../relational-databases/system-catalog-views/sys-types-transact-sql.md) <br /><br /> 型に対する ALTER AUTHORIZATION<br /><br /> CREATE TYPE<br /><br /> ユーザーおよびロールの数が32767を超えた場合、オーバーフローまたは NULL を返します。|  
 |**確保**|**smallint**|[!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]|  
 |**collationid**|**int**|文字ベースの場合、 **collationid** は現在のデータベースの照合順序の id です。それ以外の場合は NULL になります。|  
 |**usertype**|**smallint**|ユーザー型の ID です。 データ型の数が32767を超えた場合、オーバーフローまたは NULL を返します。|  
-|**変動**|**bit**|可変長データ型です。<br /><br /> 1 = True<br /><br /> 0 = False|  
+|**variable**|**bit**|可変長データ型です。<br /><br /> 1 = True<br /><br /> 0 = False|  
 |**allownulls**|**bit**|このデータ型の既定の null 値の許容属性を示します。 [CREATE TABLE](../../t-sql/statements/create-table-transact-sql.md)または[ALTER TABLE](../../t-sql/statements/alter-table-transact-sql.md)を使用して null 値を許容する場合、この既定値はによってオーバーライドされます。|  
 |**type**|**tinyint**|物理記憶データ型です。|  
 |**printfmt**|**varchar(255)**|[!INCLUDE[ssInternalOnly](../../includes/ssinternalonly-md.md)]|  

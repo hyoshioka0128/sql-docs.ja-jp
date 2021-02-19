@@ -13,14 +13,14 @@ helpviewer_keywords:
 - creating plan guides
 - plan guides [SQL Server]. creating
 ms.assetid: e1ad78bb-4857-40ea-a0c6-dcf5c28aef2f
-author: julieMSFT
-ms.author: jrasnick
-ms.openlocfilehash: 46a3cc2e95093a9d4d3a69f1b5ca0e1eddb38d21
-ms.sourcegitcommit: 9470c4d1fc8d2d9d08525c4f811282999d765e6e
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: b8f96167fff7c5d36209d43eedbbd53bc1daffee
+ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86457354"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96505326"
 ---
 # <a name="create-a-new-plan-guide"></a>新しいプラン ガイドの作成
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -29,7 +29,7 @@ ms.locfileid: "86457354"
 プラン ガイドは固定クエリ プランまたはクエリ ヒントをクエリに適用します。
   
 ##  <a name="limitations-and-restrictions"></a><a name="Restrictions"></a> 制限事項と制約事項  
--   sp_create_plan_guide の引数は、表示される順序で指定する必要があります。 **sp_create_plan_guide**のパラメーターに値を指定する場合、パラメーター名はすべて明示的に指定するか、すべて指定しないかのいずれかにする必要があります。 たとえば、 **@name =** を指定する場合は、 **@stmt =** 、 **@type =** なども指定する必要があります。 同様に、 **@name =** を省略してパラメーター値だけを指定する場合は、その他のパラメーター名も省略し、値だけを指定する必要があります。 引数の名前は、構文を理解しやすくするための説明目的のものです。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、指定したパラメーター名と、その名前が使用されている位置にあるパラメーターの名前が一致しているかどうかは確認されません。  
+-   sp_create_plan_guide の引数は、表示される順序で指定する必要があります。 **sp_create_plan_guide** のパラメーターに値を指定する場合、パラメーター名はすべて明示的に指定するか、すべて指定しないかのいずれかにする必要があります。 たとえば、 **@name =** を指定する場合は、 **@stmt =** 、 **@type =** なども指定する必要があります。 同様に、 **@name =** を省略してパラメーター値だけを指定する場合は、その他のパラメーター名も省略し、値だけを指定する必要があります。 引数の名前は、構文を理解しやすくするための説明目的のものです。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、指定したパラメーター名と、その名前が使用されている位置にあるパラメーターの名前が一致しているかどうかは確認されません。  
   
 -   同一のクエリとバッチまたはモジュールに対し、複数の OBJECT または SQL プラン ガイドを作成できます。 ただし、有効にできるプラン ガイドは常に 1 つだけです。  
   
@@ -49,7 +49,7 @@ ms.locfileid: "86457354"
   
 4.  **[ステートメント]** ボックスに、プラン ガイドの適用対象の [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントを入力します。  
   
-5.  **[スコープの種類]** ボックスの一覧で、 [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントが存在するエンティティの種類を選択します。 これは [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントとプラン ガイドを照合するコンテキストを示します。 選択できる値は、 **OBJECT**、 **SQL**、および **TEMPLATE**です。  
+5.  **[スコープの種類]** ボックスの一覧で、 [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントが存在するエンティティの種類を選択します。 これは [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントとプラン ガイドを照合するコンテキストを示します。 選択できる値は、 **OBJECT**、 **SQL**、および **TEMPLATE** です。  
   
 6.  **[スコープのバッチ]** ボックスに、 [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントを含むバッチ テキストを入力します。 バッチ テキストには、`USE`*database* ステートメントを含めることはできません。 **[スコープのバッチ]** ボックスは、スコープの種類として **[SQL]** を選択した場合にのみ利用できます。 スコープの種類が SQL であるとき、[スコープのバッチ] ボックスに何も入力しなかった場合、バッチ テキストの値は、 **[ステートメント]** ボックスと同じ値に設定されます。  
   
@@ -61,7 +61,7 @@ ms.locfileid: "86457354"
   
    パラメーターは、次の条件のいずれかを満たす場合にのみ適用されます。  
   
-   -   スコープの種類が **SQL** または **TEMPLATE**の場合。 **TEMPLATE**の場合、パラメーターを NULL にすることはできません。  
+   -   スコープの種類が **SQL** または **TEMPLATE** の場合。 **TEMPLATE** の場合、パラメーターを NULL にすることはできません。  
   
    -   [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントが sp_executesql を使用して送信され、パラメーターの値が指定されている場合、または [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] が内部でステートメントをパラメーター化した後に送信する場合。  
   
@@ -72,7 +72,7 @@ ms.locfileid: "86457354"
 ![plan_guide](../../relational-databases/performance/media/plan-guide.png)  
 
 ##  <a name="create-a-plan-guide-using-t-sql"></a><a name="TsqlProcedure"></a> T-SQL を使用してプラン ガイドを作成する  
-1.  **オブジェクト エクスプローラー**で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)]のインスタンスに接続します。  
+1.  **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDE](../../includes/ssde-md.md)]のインスタンスに接続します。  
   
 2.  [標準] ツール バーの **[新しいクエリ]** をクリックします。  
   

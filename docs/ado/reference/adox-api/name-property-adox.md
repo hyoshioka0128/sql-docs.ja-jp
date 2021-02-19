@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - _Table::PutName
@@ -42,23 +42,23 @@ helpviewer_keywords:
 ms.assetid: 81b92baf-b6b9-4f4e-9f33-4503795518cd
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: dd3a9fd328ce332c409d613ad468b96f0b94d31e
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 51373d1eee3613366c39bd3d18a9f479a0d046c6
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88983913"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100053996"
 ---
 # <a name="name-property-adox"></a>Name プロパティ (ADOX)
 オブジェクトの名前を示します。  
   
 ## <a name="settings-and-return-values"></a>設定と戻り値  
- **文字列**値を設定または返します。  
+ **文字列** 値を設定または返します。  
   
 ## <a name="remarks"></a>解説  
  名前はコレクション内で一意である必要はありません。  
   
- **Name**プロパティは、[列](./column-object-adox.md)、[グループ](./group-object-adox.md)、[キー](./key-object-adox.md)、[インデックス](./index-object-adox.md)、[テーブル](./table-object-adox.md)、および[ユーザー](./user-object-adox.md)オブジェクトに対して読み取り/書き込みが可能です。 **Name**プロパティは、[カタログ](./catalog-object-adox.md)、[プロシージャ](./procedure-object-adox.md)、および[ビュー](./view-object-adox.md)オブジェクトでは読み取り専用です。  
+ **Name** プロパティは、[列](./column-object-adox.md)、[グループ](./group-object-adox.md)、[キー](./key-object-adox.md)、[インデックス](./index-object-adox.md)、[テーブル](./table-object-adox.md)、および [ユーザー](./user-object-adox.md)オブジェクトに対して読み取り/書き込みが可能です。 **Name** プロパティは、[カタログ](./catalog-object-adox.md)、[プロシージャ](./procedure-object-adox.md)、および [ビュー](./view-object-adox.md)オブジェクトでは読み取り専用です。  
   
  読み取り/書き込みオブジェクト (**列**、 **グループ**、 **キー**、 **インデックス**、 **テーブル** 、 **ユーザー** オブジェクト) の場合、既定値は空の文字列 ("") になります。  
   

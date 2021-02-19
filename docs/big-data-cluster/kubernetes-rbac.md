@@ -5,16 +5,16 @@ description: この記事では、SQL Server ビッグ データ クラスター
 author: mihaelablendea
 ms.author: mihaelab
 ms.reviewer: mikeray
-ms.date: 08/04/2020
+ms.date: 02/11/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 79ea97a0824d7213f0758d75f8b552372bba51c2
-ms.sourcegitcommit: a4ee6957708089f7d0dda15668804e325b8a240c
+ms.openlocfilehash: f8759714fe2846a86f53a4974960b511f4b4c3dd
+ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879044"
+ms.lasthandoff: 02/13/2021
+ms.locfileid: "100343889"
 ---
 # <a name="kubernetes-rbac-model--impact-on-users-and-service-accounts-managing-bdc"></a>Kubernetes RBAC モデルと BDC を管理するユーザーおよびサービス アカウントへの影響
 
@@ -25,7 +25,7 @@ ms.locfileid: "87879044"
 
 ## <a name="role-required-for-deployment"></a>デプロイに必要なロール
 
-BDC では、サービス アカウント (`sa-mssql-controller` や `master` など) を使用して、クラスター ポッド、サービス、高可用性、監視などのプロビジョニングを調整します。BDC のデプロイが開始されると (たとえば、`azdata bdc create`)、`azdata` によって以下が行われます。
+BDC では、サービス アカウント (`sa-mssql-controller` や `master` など) を使用して、クラスター ポッド、サービス、高可用性、監視などのプロビジョニングを調整します。BDC のデプロイが開始されると (たとえば、`azdata bdc create`)、[!INCLUDE [azure-data-cli-azdata](../includes/azure-data-cli-azdata.md)] によって以下が行われます。
 
 1. 指定された名前空間が存在するかどうかが確認されます。
 2. 存在しない場合は作成され、`MSSQL_CLUSTER` ラベルが適用されます。
@@ -33,7 +33,7 @@ BDC では、サービス アカウント (`sa-mssql-controller` や `master` �
 4. クラスター レベルのアクセス許可ではなく、名前空間またはプロジェクトに対する完全なアクセス許可を持つ `<namespaced>-admin` ロールが作成されます。
 5. そのロールに対して、そのサービス アカウントのロールの割り当てが作成されます。
 
-これらの手順が完了すると、コントロール プレーン ポッドがプロビジョニングされ、サービス アカウントによって残りのビッグ データ クラスターがデプロイされます。  
+これらの手順が完了すると、コントロール プレーン ポッドがプロビジョニングされ、サービス アカウントによって残りのビッグ データ クラスターがデプロイされます。  
 
 そのため、デプロイするユーザーには次のアクセス許可が必要です。
 
@@ -62,6 +62,7 @@ SQL Server 2019 CU5 以降、ポッドとノードのメトリックを収集す
      resources:
      - pods
      - nodes/stats
+     - nodes/proxy
      verbs:
      - get
    ---
@@ -93,11 +94,11 @@ SQL Server 2019 CU5 以降、ポッドとノードのメトリックを収集す
 これらの設定は、`control.json` デプロイ構成ファイルのセキュリティ セクションでカスタマイズできます。
 
 ```json
-  "security": {
-    …
-    "allowNodeMetricsCollection": false,
-    "allowPodMetricsCollection": false
-  }
+  "security": {
+    …
+    "allowNodeMetricsCollection": false,
+    "allowPodMetricsCollection": false
+  }
 ```
 
 これらの設定が `false` に設定されている場合、BDC デプロイのワークフローでは、サービス アカウント、クラスター ロール、および Telegraf のバインディングの作成が試行されます。
@@ -105,7 +106,7 @@ SQL Server 2019 CU5 以降、ポッドとノードのメトリックを収集す
 ## <a name="default-service-account-usage-from-within-a-bdc-pod"></a>BDC ポッド内からの既定のサービス アカウントの使用
 
 より厳密なセキュリティ モデルのために、SQL Server 2019 CU5 では、BDC ポッド内における既定の Kubernetes サービス アカウント用の既定の資格情報によるマウントが無効になりました。 これは、CU5 以降のバージョンで、新しいデプロイとアップデートされたデプロイの両方に適用されます。
-ポッド内の資格情報トークンを使用し、Kubernetes API サーバーにアクセスできます。アクセス許可のレベルは、Kubernetes 承認ポリシー設定によって異なります。 特定の用途で以前の CU5 動作に戻す必要がある場合、CU6 では、デプロイ時にのみ自動マウントをオンにできる新しい機能スイッチが導入されています。 これを行うには、control.json 構成デプロイ ファイルを使用し、*automountServiceAccountToken* を *true* に設定します。 `azdata` CLI を使用して次のコマンドを実行し、*control.json* カスタム構成ファイル内のこの設定を更新します。 
+ポッド内の資格情報トークンを使用し、Kubernetes API サーバーにアクセスできます。アクセス許可のレベルは、Kubernetes 承認ポリシー設定によって異なります。 特定の用途で以前の CU5 動作に戻す必要がある場合、CU6 では、デプロイ時にのみ自動マウントをオンにできる新しい機能スイッチが導入されています。 これを行うには、control.json 構成デプロイ ファイルを使用し、*automountServiceAccountToken* を *true* に設定します。 [!INCLUDE [azure-data-cli-azdata](../includes/azure-data-cli-azdata.md)] を使用して次のコマンドを実行し、*control.json* カスタム構成ファイル内のこの設定を更新します。 
 
 ``` bash
 azdata bdc config replace -c custom-bdc/control.json -j "$.security.automountServiceAccountToken=true"

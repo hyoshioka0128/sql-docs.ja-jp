@@ -14,17 +14,17 @@ helpviewer_keywords:
 ms.assetid: 9696fb05-e9e8-4836-b359-d4de0be0eeb2
 author: stevestein
 ms.author: sstein
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a810d032a2668e217d6776bb3fbab7fe40b79e91
-ms.sourcegitcommit: 75f767c7b1ead31f33a870fddab6bef52f99906b
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: ef7b62123195fbc514350e2e600c3e5c1e5f88b1
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87332573"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97479143"
 ---
 # <a name="ole-automation-return-codes-and-error-information"></a>OLE オートメーションのリターン コードとエラー情報
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
-  OLE オートメーション システム ストアド プロシージャでは、 **int** のリターン コードが返されます。これは、基になる OLE オートメーション操作から返される HRESULT です。 HRESULT 0 は成功を示しています。 0 以外の HRESULT は、0x800*nnnnn*という 16 進数形式の OLE エラー コードですが、ストアド プロシージャのリターン コードで **int** 値として返された場合、HRESULT の形式は 214*nnnnnnn*になります。  
+  OLE オートメーション システム ストアド プロシージャでは、 **int** のリターン コードが返されます。これは、基になる OLE オートメーション操作から返される HRESULT です。 HRESULT 0 は成功を示しています。 0 以外の HRESULT は、0x800 *nnnnn* という 16 進数形式の OLE エラー コードですが、ストアド プロシージャのリターン コードで **int** 値として返された場合、HRESULT の形式は 214 *nnnnnnn* になります。  
   
  たとえば、sp_OACreate に SQLDMO.Xyzzy などの無効なオブジェクト名を渡すと、このプロシージャでは HRESULT が **int** 値 2147221005 として返されます。これは、16 進数形式では 0x800401f3 です。  
   
@@ -78,7 +78,7 @@ SELECT @BinVariable AS BinaryValue,
 GO  
 ```  
   
- 次のサンプル ストアド プロシージャ **sp_displayoaerrorinfo** を使用すると、いずれかの OLE オートメーション プロシージャから 0 以外の HRESULT リターン コードが返された場合に OLE オートメーション エラー情報を表示できます。 このサンプル ストアド プロシージャでは **HexToChar**を使用しています。  
+ 次のサンプル ストアド プロシージャ **sp_displayoaerrorinfo** を使用すると、いずれかの OLE オートメーション プロシージャから 0 以外の HRESULT リターン コードが返された場合に OLE オートメーション エラー情報を表示できます。 このサンプル ストアド プロシージャでは **HexToChar** を使用しています。  
   
 ```  
 CREATE PROCEDURE dbo.sp_DisplayOAErrorInfo  

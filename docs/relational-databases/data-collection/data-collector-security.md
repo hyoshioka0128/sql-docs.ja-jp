@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: e75d6975-641e-440a-a642-cb39a583359a
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: 8ff53ca4e4118b105eabac256663a8b052e218fa
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: a61b6d819fd014183c68485b1b9a8f0a7c362598
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88429054"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100343678"
 ---
 # <a name="data-collector-security"></a>データ コレクターのセキュリティ
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -31,7 +31,7 @@ ms.locfileid: "88429054"
  ここでは、データ コレクションの全般的なセキュリティと、ユーザーがデータ コレクターを構成および使用したり、管理データ ウェアハウスに関連するタスクを実行したりするために必要なロールについて説明します。  
   
 ## <a name="general-security"></a>全般的なセキュリティ  
- データ コレクターは、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]の文書化されている標準に従ってインストールされます。  
+ データ コレクターは、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]の文書化されている標準に従ってインストールされます。  
   
 ### <a name="network-security"></a>ネットワークのセキュリティ  
  対象のインスタンス、構成サーバーに関連付けられているリレーショナル インスタンス、実行中のコレクション セット、および管理データ ウェアハウスをホストするサーバーの間で、秘密情報がやり取りされる可能性があります。  
@@ -72,7 +72,7 @@ ms.locfileid: "88429054"
     > [!NOTE]  
     >  データ コレクターのために作成されるプロキシでは、 **dc_admin** にアクセスを許可して、プロキシを必要とするジョブ ステップでプロキシを作成したり使用したりできるようにする必要があります。  
   
--   **dc_operator**。 **dc_admin** のメンバーは、 **dc_operator**に与えられている権限を継承します。  
+-   **dc_operator**。 **dc_admin** のメンバーは、 **dc_operator** に与えられている権限を継承します。  
   
 ### <a name="dc_operator-role"></a>dc_operator ロール  
  **dc_operator** ロールのメンバーには、読み取りと更新のアクセス権が与えられます。 このロールは、コレクション セットの実行と構成に関連する操作タスクをサポートします。 このロールのメンバーが実行できる操作を以下に示します。  

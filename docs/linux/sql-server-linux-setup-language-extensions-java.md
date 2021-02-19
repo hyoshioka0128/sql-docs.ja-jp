@@ -1,86 +1,45 @@
 ---
-title: Linux 上に SQL Server の Java 言語拡張機能をインストールする
-titleSuffix: ''
+title: Linux 上に Java 言語拡張をインストールする
+titleSuffix: SQL Server Language Extensions
 description: Red Hat、Ubuntu、SUSE Linux 上に SQL Server の Java 言語拡張機能をインストールする方法について学習します。
-author: cawrites
-ms.author: chadam
-ms.reviewer: vanto
+author: dphansen
+ms.author: davidph
 manager: cgronlun
-ms.date: 02/03/2020
-ms.topic: conceptual
+ms.date: 11/12/2020
+ms.topic: how-to
 ms.prod: sql
 ms.technology: language-extensions
-monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 100ef62ce2c87fa642a8c1ef9ef6307a6d9b9103
-ms.sourcegitcommit: 43b92518c5848489d03c68505bd9905f8686cbc0
+monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15'
+ms.openlocfilehash: a98eed7109a45958864e85822bbb69de4767a85d
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92155589"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100073933"
 ---
-# <a name="install-sql-server-java-language-extensions-on-linux"></a>Linux 上に SQL Server の Java 言語拡張機能をインストールする 
+# <a name="install-sql-server-java-language-extension-on-linux"></a>Linux 上に SQL Server の Java 言語拡張をインストールする
 
 [!INCLUDE [SQL Server 2019 - Linux](../includes/applies-to-version/sqlserver2019-linux.md)]
 
-言語拡張は、データベース エンジンに対するアドオンです。 [データベース エンジンと言語拡張を同時にインストールする](#install-all)ことは可能ですが、コンポーネントを追加する前に問題を解決できるように、まずは SQL Server データベースエンジンをインストールして構成することをお勧めします。 
+SQL Server の [Java 言語拡張機能](../language-extensions/java-overview.md)コンポーネントを Linux にインストールする方法について説明します。 Java 言語拡張機能は、[SQL Server 言語拡張機能](../language-extensions/language-extensions-overview.md)の一部であり、データベース エンジンへのアドオンです。 
 
-この記事の手順に従って、Java の言語拡張をインストールします。
-
-Java 拡張機能のパッケージは、SQL Server Linux ソース リポジトリに配置されています。 データベース エンジンのインストールのためにソース リポジトリを既に構成している場合は、同じリポジトリ登録を使用して **mssql-server-extensibility-java** パッケージ インストール コマンドを実行できます。
-
-また、言語拡張は Linux コンテナー上でもサポートされます。 言語拡張には、ビルド済みのコンテナーは付属していませんが、[GitHub 上で入手できるサンプル テンプレート](https://github.com/Microsoft/mssql-docker/tree/master/linux/preview/examples/mssql-mlservices)を使用して、SQL Server コンテナーから作成できます。
-
-言語拡張と [Machine Learning Services](../machine-learning/index.yml) は、SQL Server ビッグ データ クラスターには既定でインストールされます。 ビッグ データ クラスターを使用する場合、この記事の手順を行う必要はありません。 詳細については、[ビッグ データ クラスターでの Machine Learning Services (Python および R) の使用](../big-data-cluster/machine-learning-services.md)に関するページを参照してください。
-
-## <a name="uninstall-preview-version"></a>プレビュー バージョンをアンインストールする
-
-プレビュー リリース (Community Technical Preview (CTP) またはリリース候補 (RC)) をインストールしている場合は、SQL Server 2019 をインストールする前に、このバージョンをアンインストールして以前のすべてのパッケージを削除することをお勧めします。 複数のバージョンのサイド バイ サイド インストールはサポートされていません。また、パッケージ一覧は、最新のいくつかのプレビュー (CTP/RC) リリースで変更されています。
-
-### <a name="1-confirm-package-installation"></a>1.パッケージのインストールを確認する
-
-最初の手順として、状況に応じて以前のインストールの存在をチェックします。 次のファイルは既存のインストールを示します。checkinstallextensibility.sh、exthost、launchpad です。
-
-```bash
-ls /opt/microsoft/mssql/bin
-```
-
-### <a name="2-uninstall-previous-ctprc-packages"></a>2.以前の CTP/RC パッケージをアンインストールする
-
-最下位のパッケージ レベルでアンインストールを行います。 より下位のパッケージに依存しているアップストリーム パッケージがすべて、自動的にアンインストールされます。
-
-  + Java 統合の場合、**mssql-server-extensibility-java** を削除します。
-
-次の表に、パッケージを削除するためのコマンドを示します。
-
-| プラットフォーム  | パッケージの削除コマンド | 
-|-----------|----------------------------|
-| RHEL  | `sudo yum remove mssql-server-extensibility-java` |
-| SLES  | `sudo zypper remove mssql-server-extensibility-java` |
-| Ubuntu    | `sudo apt-get remove mssql-server-extensibility-java`|
-
-### <a name="3-install-sql-server-2019"></a>3.SQL Server 2019 をインストールする
-
-この記事の手順を使用して、お使いのオペレーティング システムに最上位のパッケージ レベルでインストールを行います。
-
-OS 固有の一連のインストール手順ごとに、"*最上位のパッケージ レベル*" は、完全なパッケージ セットに対応した**例 1 - 完全なインストール**か、実行可能なインストールに必要なパッケージの最小数に対応した**例 2 - 最小限のインストール**のどちらかになります。
-
-1. Linux ディストリビューション用のパッケージ マネージャーと構文を使用して、インストール コマンドを実行します。 
-
-   + [RedHat](#RHEL)
-   + [Ubuntu](#ubuntu)
-   + [SUSE](#suse)
+[データベース エンジンと言語拡張を同時にインストールする](#install-all)ことは可能ですが、コンポーネントを追加する前に問題を解決できるように、まずは SQL Server データベースエンジンをインストールして構成することをお勧めします。
 
 ## <a name="prerequisites"></a>前提条件
 
 + Linux バージョンは、必ず [SQL Server によってサポートされます](sql-server-linux-release-notes-2019.md#supported-platforms)が、Docker エンジンは含まれていません。 サポートされているバージョンは次のとおりです。
 
    + [Red Hat Enterprise Linux (RHEL)](quickstart-install-connect-red-hat.md)
-
    + [SUSE Enterprise Linux Server](quickstart-install-connect-suse.md)
-
    + [Ubuntu](quickstart-install-connect-ubuntu.md)
 
 + T-SQL コマンドを実行するためのツールを用意しておく必要があります。 インストール後の構成および検証には、クエリ エディターが必要です。 Linux 上で実行される無料ダウンロードの [Azure Data Studio](../azure-data-studio/download-azure-data-studio.md?view=sql-server-2017&preserve-view=true#get-azure-data-studio-for-linux) をお勧めします。
+
++ Java 拡張機能のパッケージは、SQL Server Linux ソース リポジトリに配置されています。 データベース エンジンのインストールのためにソース リポジトリを既に構成している場合は、同じリポジトリ登録を使用して **mssql-server-extensibility-java** パッケージ インストール コマンドを実行できます。
+
++ また、言語拡張は Linux コンテナー上でもサポートされます。 言語拡張には、ビルド済みのコンテナーは付属していませんが、[GitHub 上で入手できるサンプル テンプレート](https://github.com/Microsoft/mssql-docker/tree/master/linux/preview/examples/mssql-mlservices)を使用して、SQL Server コンテナーから作成できます。
+
++ 言語拡張と [Machine Learning Services](../machine-learning/index.yml) は、SQL Server ビッグ データ クラスターには既定でインストールされます。 ビッグ データ クラスターを使用する場合、この記事の手順を行う必要はありません。 詳細については、[ビッグ データ クラスターでの Machine Learning Services (Python および R) の使用](../big-data-cluster/machine-learning-services.md)に関するページを参照してください。
 
 ## <a name="package-list"></a>パッケージ一覧
 
@@ -93,7 +52,7 @@ OS 固有の一連のインストール手順ごとに、"*最上位のパッケ
 
 <a name="RHEL"></a>
 
-## <a name="install-language-extensions"></a>言語拡張をインストールする
+## <a name="install-java-language-extension"></a>Java 言語拡張機能をインストールする
 
 **mssql-server-extensibility-java** をインストールすることによって、Linux 上に言語拡張と Java をインストールできます。 **mssql-server-extensibility-java** をインストールすると、JRE 11 がまだインストールされていない場合は、パッケージによって自動的にインストールされます。 また、JVM パスが JRE_HOME という環境変数に追加されます。
 
@@ -218,38 +177,37 @@ Java 機能の統合には、ライブラリは含まれませんが、`grep -r 
 
 <a name="install-all"></a>
 
-## <a name="full-install-of-sql-server-and-language-extensions"></a>SQL Server および言語拡張の完全なインストール
+## <a name="full-install-of-sql-server-and-java-language-extension"></a>SQL Server と Java 言語拡張機能の完全なインストール
 
-データベース エンジンをインストールするコマンドに Java パッケージとパラメーターを付加すると、1 つの手順でデータベース エンジンと言語拡張をインストールして構成できます。
+データベース エンジンをインストールするコマンドに Java パッケージとパラメーターを付加すると、1 つの手順でデータベース エンジンと Java 言語拡張機能をインストールして構成できます。
 
 1. データベース エンジンに加えて、言語拡張機能を含めたコマンド ラインを指定します。
 
-  Java 拡張機能は、データベース エンジンのインストールに追加できます。
+    Java 拡張機能は、データベース エンジンのインストールに追加できます。
 
-  ```bash
-  sudo yum install -y mssql-server mssql-server-extensibility-java 
-  ```
+    ```bash
+    sudo yum install -y mssql-server mssql-server-extensibility-java 
+    ```
 
-3. ライセンス契約に同意し、インストール後の構成を完了します。 このタスクには、**mssql-conf** ツールを使用します。
+1. ライセンス契約に同意し、インストール後の構成を完了します。 このタスクには、**mssql-conf** ツールを使用します。
 
-  ```bash
-  sudo /opt/mssql/bin/mssql-conf setup
-  ```
+    ```bash
+    sudo /opt/mssql/bin/mssql-conf setup
+    ```
 
-  データベース エンジンのライセンス契約に同意し、エディションを選択して、管理者パスワードを設定するように求められます。 
+    データベース エンジンのライセンス契約に同意し、エディションを選択して、管理者パスワードを設定するように求められます。 
 
-4. 求められた場合は、サービスを再起動します。
+1. 求められた場合は、サービスを再起動します。
 
-  ```bash
-  sudo systemctl restart mssql-server.service
-  ```
+    ```bash
+    sudo systemctl restart mssql-server.service
+    ```
 
 ## <a name="unattended-installation"></a>自動実行インストール
 
-データベース エンジンの[無人インストール](./sql-server-linux-setup.md#unattended)を使用して、mssql-server-extensibility-java 用のパッケージを追加します。
+データベース エンジンの [無人インストール](./sql-server-linux-setup.md#unattended)を使用して、**mssql-server-extensibility-java** 用のパッケージを追加します。
 
 <a name="offline-install"></a>
-
 
 ## <a name="offline-installation"></a>オフライン インストール
 
@@ -260,7 +218,7 @@ Java 機能の統合には、ライブラリは含まれませんが、`grep -r 
 
 #### <a name="download-site"></a>ダウンロード サイト
 
-[https://packages.microsoft.com/](https://packages.microsoft.com/) からパッケージをダウンロードできます。 Java 用のパッケージはすべて、データベース エンジンのパッケージと併置されています。 
+[https://packages.microsoft.com/](https://packages.microsoft.com/) からパッケージをダウンロードできます。 Java 用のすべてのパッケージは、データベース エンジンのパッケージと併置されています。
 
 #### <a name="redhat7-paths"></a>RedHat/7 パス
 
@@ -276,17 +234,15 @@ Java 機能の統合には、ライブラリは含まれませんが、`grep -r 
 
 #### <a name="suse12-paths"></a>SUSE/12 パス
 
-
 |Package|ダウンロード場所|
 |--|----|
 | mssql/extensibility-java パッケージ | [https://packages.microsoft.com/sles/12/mssql-server-2019/](https://packages.microsoft.com/sles/12/mssql-server-2019/) |
 
 #### <a name="package-list"></a>パッケージ一覧
-
 使用する拡張機能に応じて、特定の言語に必要なパッケージをダウンロードします。 正確なファイル名にはサフィックス内のプラットフォーム情報が含まれますが、以下のファイル名では、取得するファイルを十分に判断できる程度に近いものにしておく必要があります。
 
 ```
-# Core packages 
+# Core packages
 mssql-server-15.0.1000
 mssql-server-extensibility-15.0.1000
 
@@ -296,20 +252,20 @@ mssql-server-extensibility-java-15.0.1000
 
 ## <a name="limitations"></a>制限事項
 
-+ 現時点では、暗黙の認証は Linux 上では使用できません。つまり、データやその他のリソースにアクセスするために、実行中の Java からサーバーへ接続することはできません。
+現時点では、暗黙の認証は Linux 上では使用できません。つまり、データやその他のリソースにアクセスするために、実行中の Java からサーバーへ接続することはできません。
 
 ### <a name="resource-governance"></a>リソース管理
 
-外部リソース プールに対する[リソースのガバナンス](../t-sql/statements/create-external-resource-pool-transact-sql.md)では、Linux と Windows 間に一致がありますが、[sys.dm_resource_governor_external_resource_pools](../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-external-resource-pools.md) の統計では、現在は Linux 上に異なるユニットがあります。 
- 
-| 列名   | 説明 | Linux 上の値 | 
+外部リソース プールに対する[リソースのガバナンス](../t-sql/statements/create-external-resource-pool-transact-sql.md)では、Linux と Windows 間に一致がありますが、[sys.dm_resource_governor_external_resource_pools](../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-external-resource-pools.md) の統計では、現在は Linux 上に異なるユニットがあります。
+
+| 列名   | 説明 | Linux 上の値 |
 |---------------|--------------|---------------|
 |peak_memory_kb | リソース プールに使用されているメモリの最大量。 | Linux では、この統計は CGroups メモリ サブシステムから提供され、値は memory.max_usage_in_bytes になります |
-|write_io_count | Resource Governor の統計がリセットされてから発行された書き込み IO の合計。 | Linux では、この統計は CGroups blkio サブシステムから提供され、書き込み行での値は blkio.throttle.io_serviced になります | 
-|read_io_count | Resource Governor の統計がリセットされてから発行された読み取り IO の合計。 | Linux では、この統計は CGroups blkio サブシステムから提供され、読み取り行での値は blkio.throttle.io_serviced になります | 
+|write_io_count | Resource Governor の統計がリセットされてから発行された書き込み IO の合計。 | Linux では、この統計は CGroups blkio サブシステムから提供され、書き込み行での値は blkio.throttle.io_serviced になります |
+|read_io_count | Resource Governor の統計がリセットされてから発行された読み取り IO の合計。 | Linux では、この統計は CGroups blkio サブシステムから提供され、読み取り行での値は blkio.throttle.io_serviced になります |
 |total_cpu_kernel_ms | Resource Governor の統計がリセットされてからの累積 CPU ユーザー カーネル時間 (ミリ秒単位)。 | Linux では、この統計は CGroups cpuacct サブシステムから提供され、ユーザー行での値は cpuacct.stat になります |  
-|total_cpu_user_ms | Resource Governor の統計がリセットされてからの累積 CPU ユーザー時間 (ミリ秒単位)。| Linux では、この統計は CGroups cpuacct サブシステムから提供され、システム行での値は cpuacct.stat になります | 
-|active_processes_count | 要求の時点で実行されている外部プロセスの数。| Linux では、この統計は CGroups pids サブシステムから提供され、値は pids.current になります | 
+|total_cpu_user_ms | Resource Governor の統計がリセットされてからの累積 CPU ユーザー時間 (ミリ秒単位)。| Linux では、この統計は CGroups cpuacct サブシステムから提供され、システム行での値は cpuacct.stat になります |
+|active_processes_count | 要求の時点で実行されている外部プロセスの数。| Linux では、この統計は CGroups pids サブシステムから提供され、値は pids.current になります |
 
 ## <a name="next-steps"></a>次のステップ
 

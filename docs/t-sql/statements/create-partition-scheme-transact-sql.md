@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - CREATE PARTITION SCHEME
 - SCHEME
@@ -27,14 +27,14 @@ helpviewer_keywords:
 - partitioned tables [SQL Server], filegroups
 - mapping partitions [SQL Server]
 ms.assetid: 5b21c53a-b4f4-4988-89a2-801f512126e4
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: ea6018e34db8ddc07a1e30cec6089994e402b9e6
-ms.sourcegitcommit: 3efd8bbf91f4f78dce3a4ac03348037d8c720e6a
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 079bd2ee428b706230e8d4283355603a09300d3d
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91024551"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99188560"
 ---
 # <a name="create-partition-scheme-transact-sql"></a>CREATE PARTITION SCHEME (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -160,9 +160,11 @@ TO (test1fg, test2fg, test3fg, test4fg, test5fg)
   
  パーティション関数 `myRangePF4` を変更してパーティションを追加すると、ファイル グループ `test5fg` は新たに作成されたパーティションを受け取ります。  
 
-### <a name="e-creating-a-partition-scheme-only-on-primary---only-primary-is-supported-for-sqldbesa"></a>E. PRIMARY でのみパーティション スキームを作成する - [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] では、PRIMARY のみがサポートされています
+### <a name="e-creating-a-partition-scheme-only-on-primary"></a>E. PRIMARY にのみパーティション構成を作成する
 
- 次の例では、テーブルまたはインデックスを 4 つのパーティションに分割するパーティション関数を作成します。 すべてのパーティションが PRIMARY ファイル グループに作成されることを指定するパーティション構成が作成されます。  
+ Azure [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] では、ファイルとファイル グループの追加はサポートされていませんが、PRIMARY ファイル グループのみをパーティション分割するテーブルのパーティション分割はサポートされています。 
+
+次の例では、テーブルまたはインデックスを 4 つのパーティションに分割するパーティション関数を作成します。 すべてのパーティションが PRIMARY ファイル グループに作成されることを指定するパーティション構成が作成されます。  
   
 ```sql  
 CREATE PARTITION FUNCTION myRangePF1 (INT)  

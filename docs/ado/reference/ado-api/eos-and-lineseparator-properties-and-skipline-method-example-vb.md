@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 77ce3042-9ebc-44ba-a4ff-0f1b1fd4a9c4
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: a6c4bf73832513a09960d221be42c879a3755e29
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: e918ba6744075052934e9715c50c190f5efd7896
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88973770"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100034232"
 ---
 # <a name="eos-and-lineseparator-properties-and-skipline-method-example-vb"></a>EOS および LineSeparator プロパティと SkipLine メソッドの例 (VB)
 この例では、テキストストリームを一度に1行ずつ操作する方法を示します。 既定のキャリッジリターン/ラインフィード (**Adcrlf**) から単なるラインフィード (**adcrlf**) または復帰 (**adcrlf**) に行区切り記号を変更した場合の結果を示します。  

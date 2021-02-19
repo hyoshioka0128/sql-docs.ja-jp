@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -15,14 +15,14 @@ helpviewer_keywords:
 - isolation levels [SQL Server], metadata access
 - hints [SQL Server], locking
 ms.assetid: 02bb71fa-1e92-4782-a9cf-6e256cc1f3ea
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: f9c3d400f67f42f206c9b6924f3d2ea90445d023
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: c25e28f6cea11fc690e984edecf0256d26405bda
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88467561"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99182240"
 ---
 # <a name="transaction-isolation-levels"></a>トランザクション分離レベル
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

@@ -8,13 +8,13 @@ ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: e3204c5ba30831f0355113f7882727decad08866
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 314520a54bb9052fb091932b63b9cf4c817a0f16
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92195086"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470503"
 ---
 # <a name="score-new-data-sql-server-and-revoscaler-tutorial"></a>新しいデータのスコア付け (SQL Server と RevoScaleR のチュートリアル)
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -86,7 +86,7 @@ ms.locfileid: "92195086"
   
     - *predVarNames* パラメーターにより、結果が保存される変数が指定されます。 ここで、新しい変数の `ccFraudLogitScore` を渡します。
   
-    - *rxPredict* の **type** パラメーターで、予測の計算方法を定義します。 応答変数のスケールに基づいてスコアを生成するには、キーワード **応答** を指定します。 または、キーワード **リンク**を使用して、基になるリンク関数に基づいてスコアを生成します。この場合、予測はロジスティック スケールを使用して作成されます。
+    - *rxPredict* の **type** パラメーターで、予測の計算方法を定義します。 応答変数のスケールに基づいてスコアを生成するには、キーワード **応答** を指定します。 または、キーワード **リンク** を使用して、基になるリンク関数に基づいてスコアを生成します。この場合、予測はロジスティック スケールを使用して作成されます。
 
 6. 少し時間をおいて Management Studio でテーブルの一覧を更新すると、新しいテーブルとそのデータを確認することができます。
 
@@ -116,7 +116,7 @@ ms.locfileid: "92195086"
         connectionString = sqlConnString)
     ```
 
-     この例を見ると、 **RxSqlServerData** データ ソース オブジェクトを使用して SQL クエリ、関数、またはストアド プロシージャに基づいて任意のデータセットを定義し、それを R コードで使用するのが簡単だということがわかります。 この変数には実際の値は格納されず、データ ソースの定義のみが格納されます。 **rxImport**など関数で使用する場合にのみ、このクエリを実行して値を生成します。
+     この例を見ると、 **RxSqlServerData** データ ソース オブジェクトを使用して SQL クエリ、関数、またはストアド プロシージャに基づいて任意のデータセットを定義し、それを R コードで使用するのが簡単だということがわかります。 この変数には実際の値は格納されず、データ ソースの定義のみが格納されます。 **rxImport** など関数で使用する場合にのみ、このクエリを実行して値を生成します。
       
 2. [rxImport](/machine-learning-server/r-reference/revoscaler/rximport) 関数を呼び出して、コンピューティング コンテキスト全体で共有できるデータ フレームに値を配置します。
   

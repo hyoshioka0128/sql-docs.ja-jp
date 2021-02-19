@@ -8,13 +8,13 @@ ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 20506baeb0a22e4e32fd1c4b24a7d00f4493b6d5
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 3e71b33eb08fd386232e992e9b47da7b5057aa32
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956535"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98170724"
 ---
 # <a name="manage-python-and-r-workloads-with-resource-governor-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services でリソース ガバナーを使用して Python と R のワークロードを管理する
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -36,7 +36,7 @@ Python および R の機械学習アルゴリズムは、多くのコンピュ�
  
 既定では、外部プロセスでは、ローカル サーバー上の合計ホスト メモリの最大 20% が使用されます。 既定のリソース プールを変更して、サーバー全体の変更を加えることができます。外部プロセスで使用できるようにする容量を R と Python のプロセスで使用できるように設定できます。
 
-必要に応じて、関連するワークロード グループと分類子を使用してカスタムの**外部リソース プール**を作成し、特定のプログラム、ホスト、またはその他の条件によって送信された要求のリソース割り当てを決定することもできます。 外部リソース プールは、[!INCLUDE[sssql15-md](../../includes/sssql15-md.md)] に導入された種類のリソース プールです。データベース エンジン外部の R および Python のプロセスの管理に役立ちます。
+必要に応じて、関連するワークロード グループと分類子を使用してカスタムの **外部リソース プール** を作成し、特定のプログラム、ホスト、またはその他の条件によって送信された要求のリソース割り当てを決定することもできます。 外部リソース プールは、[!INCLUDE[sssql15-md](../../includes/sssql16-md.md)] に導入された種類のリソース プールです。データベース エンジン外部の R および Python のプロセスの管理に役立ちます。
 
 1. [リソース ガバナンスを有効にします](../../relational-databases/resource-governor/enable-resource-governor.md) (既定ではオフになっています)。
 
@@ -54,7 +54,7 @@ Python および R の機械学習アルゴリズムは、多くのコンピュ�
 
 ## <a name="processes-under-resource-governance"></a>リソース ガバナンスのプロセス
   
- *外部リソース プール*を使用して、次の実行可能ファイルによって使用されるリソースをデータベース エンジン インスタンスで管理できます。
+ *外部リソース プール* を使用して、次の実行可能ファイルによって使用されるリソースをデータベース エンジン インスタンスで管理できます。
 
 + SQL Server からローカルで呼び出したときまたは SQL Server でリモート コンピューティング コンテキストとしてリモートで呼び出したときには Rterm.exe
 + SQL Server からローカルで呼び出したときまたは SQL Server でリモート コンピューティング コンテキストとしてリモートで呼び出したときには Python.exe

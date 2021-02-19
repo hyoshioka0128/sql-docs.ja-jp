@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - dm_db_xtp_object_stats_TSQL
 - sys.dm_db_xtp_object_stats
@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_db_xtp_object_stats dynamic management view
 ms.assetid: 07300b59-3cab-4d3e-8138-5ea8f584f88f
-author: markingmyname
-ms.author: maghan
-monikerRange: =azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: f6d6c0d191022099e027b29a5be1b34b592da31f
-ms.sourcegitcommit: 32135463a8494d9ed1600a58f51819359e3c09dc
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 08dd84ba3c832ac60cd0a1a8a7ca15c4377ff361
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91834121"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99108649"
 ---
 # <a name="sysdm_db_xtp_object_stats-transact-sql"></a>sys.dm_db_xtp_object_stats (Transact-SQL)
 [!INCLUDE[sql-asdb-asdbmi](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
@@ -49,7 +49,7 @@ ms.locfileid: "91834121"
 |row_delete_attempts|**bigint**|コミットされたトランザクションと中止されたトランザクションの両方によって、前回のデータベースの再起動以降にテーブルから削除された行の数。|  
 |write_conflicts|**bigint**|前回データベースが再起動されてから発生した書き込み競合の数。|  
 |unique_constraint_violations|**bigint**|前回のデータベースの再起動以降に発生した unique 制約違反の数。|  
-|object_address|**varbinary (8)**|内部使用のみです。|  
+|object_address|**varbinary (8)**|内部使用のみ。|  
   
 ## <a name="permissions"></a>アクセス許可  
  現在のデータベースに対する VIEW DATABASE STATE 権限が必要です。  

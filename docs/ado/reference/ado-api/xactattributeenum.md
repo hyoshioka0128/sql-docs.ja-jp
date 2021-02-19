@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - XactAttributeEnum
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: e7dcecd3-7dc7-445c-b922-f700c3067fbc
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: bb2a1391e813fd80c394bd685eff07e06015dd5b
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: e741ec0e5458218ddb6dc3a46c3a098acf482611
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88987693"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100056027"
 ---
 # <a name="xactattributeenum"></a>XactAttributeEnum
 [接続](./connection-object-ado.md)オブジェクトのトランザクション属性を指定します。  

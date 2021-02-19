@@ -17,13 +17,13 @@ helpviewer_keywords:
 ms.assetid: 655e709b-346b-469c-bddc-a5a0238d07e0
 author: rothja
 ms.author: jroth
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: cad1def690f9ebf0803f25e83300d3790d6ef4c9
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 247b3deec1e5f5d14fafc1d29475a5087c57e40b
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91809383"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596821"
 ---
 # <a name="tutorial-getting-started-with-the-database-engine"></a>チュートリアル : データベース エンジンの概要
 [!INCLUDE [SQL Server Azure SQL Database](../includes/applies-to-version/sql-asdb.md)]
@@ -49,6 +49,5 @@ ms.locfileid: "91809383"
 -   [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)]. [!INCLUDE[ssManStudio](../includes/ssmanstudio-md.md)] のインストールについては、「[SQL Server Management Studio のダウンロード](../ssms/download-sql-server-management-studio-ssms.md)」をご覧ください。  
   
 ## <a name="see-also"></a>参照  
-[チュートリアル:SQL Server Management Studio](../ssms/quickstarts/connect-query-sql-server.md)  
-  
+[チュートリアル:SQL Server Management Studio](../ssms/quickstarts/ssms-connect-query-sql-server.md)  
   

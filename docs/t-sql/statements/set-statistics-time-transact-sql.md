@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - SET_STATISTICS_TIME_TSQL
 - SET STATISTICS TIME
@@ -23,14 +23,14 @@ helpviewer_keywords:
 - compile times [SQL Server]
 - execution processing time [SQL Server]
 ms.assetid: eec2e1cd-a29d-4cf3-a271-be9d61506f15
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: abde67780d0eff93a791a2b48654ba712dea6859
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 1c9c45ce9e387ab9ccfc7355d9b087b12bbacb56
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539810"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99206918"
 ---
 # <a name="set-statistics-time-transact-sql"></a>SET STATISTICS TIME (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -53,7 +53,7 @@ SET STATISTICS TIME { ON | OFF }
   
  SET STATISTICS TIME は、解析時ではなく実行時に設定されます。  
   
- Microsoft [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は、**簡易プーリング**構成オプションを有効にしたときに起動されるファイバー モードでは正確な統計情報を提供できません。  
+ Microsoft [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は、**簡易プーリング** 構成オプションを有効にしたときに起動されるファイバー モードでは正確な統計情報を提供できません。  
   
  **sysprocesses** テーブル内の **cpu** 列が更新されるのは、SET STATISTICS TIME が ON の状態でクエリが実行されたときだけです。 SET STATISTICS TIME が OFF の場合は、**0** が返されます。  
   

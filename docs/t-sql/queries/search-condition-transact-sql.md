@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - search
 - Search Condition
@@ -37,13 +37,13 @@ helpviewer_keywords:
 ms.assetid: 09974469-c5d2-4be8-bc5a-78e404660b2c
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 55a88376c7c12870455b2d575ffcb0da601c0dda
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 5842596b33544192604f9a2c5ea8b231dc4a6b97
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92187769"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100347549"
 ---
 # <a name="search-condition-transact-sql"></a>検索条件 (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -173,7 +173,7 @@ ms.locfileid: "92187769"
  [ NOT ] LIKE  
  後続の文字列が、パターン照合で使用されます。 詳細については、「[LIKE &#40;Transact-SQL&#41;](../../t-sql/language-elements/like-transact-sql.md)」を参照してください。  
   
- ESCAPE **'***escape_ character***'**  
+ ESCAPE **'** _escape_ character_ *_'_*  
  ワイルドカードとして機能するのではなく、ワイルドカード文字そのものを文字列内で検索できます。 *escape_character* は、ワイルドカード文字の前に付けてこの特別な使用方法を示す文字です。  
   
  [ NOT ] BETWEEN  

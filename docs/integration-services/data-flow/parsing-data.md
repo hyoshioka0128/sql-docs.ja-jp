@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 8893ea9d-634c-4309-b52c-6337222dcb39
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: eba3e72558433acab3ba1a0edc3cd921b15281bd
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 905c5988860aef1a2e495bb17d98a48eaf91c5ce
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88457354"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98594834"
 ---
 # <a name="parsing-data"></a>データの解析
 
@@ -198,12 +198,11 @@ ms.locfileid: "88457354"
   
 3.  **[入力および出力]** ペインで、高速解析を有効にする列をクリックします。  
   
-4.  [プロパティ] ウィンドウで **[カスタム プロパティ]** ノードを展開し、 **FastParse** プロパティを **True**に設定します。  
+4.  [プロパティ] ウィンドウで **[カスタム プロパティ]** ノードを展開し、 **FastParse** プロパティを **True** に設定します。  
   
 5.  **[OK]** をクリックします。  
 
 ## <a name="standard-parse"></a>標準解析
 標準解析は、ロケール依存型の解析ルーチンのセットであり、Oleaut32.dll と Ole2dsip.dll で使用できるオートメーション データ型変換の API が提供する、すべてのデータ型変換がサポートされています。 標準解析は、OLE DB 解析 API に相当します。  
   
- 標準解析は、各言語のデータのデータ型変換をサポートしており、データ形式が高速解析でサポートされていない場合に使用する必要があります。 オートメーション データ型変換 API の詳細については、 [MSDN ライブラリ](https://go.microsoft.com/fwlink/?LinkId=79427)にある「データ型変換 API」を参照してください。 
- 
+ 標準解析は、各言語のデータのデータ型変換をサポートしており、データ形式が高速解析でサポートされていない場合に使用する必要があります。 オートメーション データ型変換 API の詳細については、 [MSDN ライブラリ](/documentation/)にある「データ型変換 API」を参照してください。 

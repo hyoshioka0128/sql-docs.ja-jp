@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: b682bcc3-04b3-42b0-86f4-c17e0cd29baf
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 7a8a6eb8fb9d6be9433e11f641c6b29367680ba5
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: dd523383e69d27b3a9c57b4ce99e4be3bc6a1d13
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88988643"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100040392"
 ---
 # <a name="stayinsync-property-example-vb"></a>StayInSync プロパティの例 (VB)
 この例では、 [StayInSync](./stayinsync-property.md) プロパティを使用して、階層 [レコードセット](./recordset-object-ado.md)内の行へのアクセスを容易にする方法を示します。  
   
- 外側のループでは、各作成者の姓、州、および id が表示されます。 各行の追加された**レコードセット**は、 [Fields](./fields-collection-ado.md)コレクションから取得され、親**レコードセット**が新しい行に移動するたびに、 **StayInSync**プロパティによって自動的に**rstTitleAuthor**に割り当てられます。 内側のループでは、追加されたレコードセットの各行に4つのフィールドが表示されます。  
+ 外側のループでは、各作成者の姓、州、および id が表示されます。 各行の追加された **レコードセット** は、 [Fields](./fields-collection-ado.md)コレクションから取得され、親 **レコードセット** が新しい行に移動するたびに、 **StayInSync** プロパティによって自動的に **rstTitleAuthor** に割り当てられます。 内側のループでは、追加されたレコードセットの各行に4つのフィールドが表示されます。  
   
 ```  
 'BeginStayInSyncVB  

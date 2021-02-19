@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: 07abef8a-28e8-4a66-927c-c9a5b8c938ef
 author: nahk-ivanov
 ms.author: alexiva
-ms.openlocfilehash: 2dbcef29550276241cb638b6224914e43e2e88ec
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+ms.openlocfilehash: 67c772195ea4b2a2ab29c08219f77d04a5d6833c
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91988467"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100069317"
 ---
 # <a name="working-with-ssma-projects-db2tosql"></a>SSMA プロジェクトの使用 (DB2ToSQL)
 DB2 データベースをに移行するには [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 、最初に SSMA プロジェクトを作成します。 プロジェクトは、次の情報を含むファイルです。  
@@ -28,7 +28,7 @@ DB2 データベースをに移行するには [!INCLUDE[ssNoVersion](../../incl
   
 -   プロジェクト設定。  
   
-プロジェクトを開くと、そのプロジェクトは DB2 およびから切断され [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。 これにより、オフラインで作業できるようになります。 への再接続の詳細について [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は、「 [SQL Server &#40;DB2eToSQL&#41;への接続 ](../../ssma/db2/connecting-to-sql-server-db2etosql.md)」を参照してください。  
+プロジェクトを開くと、そのプロジェクトは DB2 およびから切断され [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。 これにより、オフラインで作業できるようになります。 への再接続の詳細について [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は、「 [SQL Server &#40;DB2ToSQL&#41;への接続 ](../../ssma/db2/connecting-to-sql-server-db2tosql.md)」を参照してください。  
   
 ## <a name="reviewing-default-project-settings"></a>既定のプロジェクト設定の確認  
 SSMA には、データベースオブジェクトの変換と読み込み、データの移行、SSMA と DB2 およびの同期を行うための設定がいくつか含まれてい [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。 既定の設定は、多くのユーザーに適しています。 ただし、新しい SSMA プロジェクトを作成する前に、設定を確認する必要があります。 必要に応じて、すべての新しいプロジェクトで使用される既定の設定を変更できます。  
@@ -121,4 +121,4 @@ DB2 データベースからにデータを移行するには [!INCLUDE[ssNoVers
 ## <a name="see-also"></a>参照  
 [DB2 データベースを SQL Server &#40;DB2ToSQL&#41;に移行する ](../../ssma/db2/migrating-db2-databases-to-sql-server-db2tosql.md)  
 [DB2 データベースへの接続 &#40;DB2ToSQL&#41;](../../ssma/db2/connecting-to-db2-database-db2tosql.md)  
-[SQL Server &#40;DB2eToSQL&#41;に接続しています ](../../ssma/db2/connecting-to-sql-server-db2etosql.md)  
+[SQL Server &#40;DB2ToSQL&#41;に接続しています ](../../ssma/db2/connecting-to-sql-server-db2tosql.md)  

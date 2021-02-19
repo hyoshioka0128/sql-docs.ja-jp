@@ -5,32 +5,32 @@ description: この 4 部構成のチュートリアル シリーズのパート
 ms.prod: sql
 ms.technology: machine-learning
 ms.topic: tutorial
-author: cawrites
-ms.author: chadam
+author: dphansen
+ms.author: davidph
 ms.reviewer: garye, davidph
 ms.date: 05/21/2020
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: 0be451ea14a6eec98872b3c21b16c5065d02f85f
-ms.sourcegitcommit: 9b41725d6db9957dd7928a3620fe4db41eb51c6e
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: e1929f0db9fb1d70fc8c370297d2d6f1c4e74513
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88178733"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100348079"
 ---
 # <a name="tutorial-prepare-data-to-train-a-predictive-model-in-r-with-sql-machine-learning"></a>チュートリアル:SQL 機械学習を使用して R で予測モデルをトレーニングするためのデータを準備する
 [!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
 
-::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15"
 この 4 部構成のチュートリアル シリーズのパート 2 では、R を使用してデータベースからデータを準備します。このシリーズの後半では、このデータを利用し、SQL Server Machine Learning Services またはビッグ データ クラスターを使用して R で予測モデルをトレーニングしてデプロイします。
 ::: moniker-end
-::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2017"
 この 4 部構成のチュートリアル シリーズのパート 2 では、R を使用してデータベースからデータを準備します。このシリーズの後半では、このデータを利用して、SQL Server Machine Learning Services を使用して R で予測モデルをトレーニングしてデプロイします。
 ::: moniker-end
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 この 4 部構成のチュートリアル シリーズのパート 2 では、R を使用してデータベースからデータを準備します。このシリーズの後半では、このデータを利用して、SQL Server R Services を使用して R で予測モデルをトレーニングしてデプロイします。
 ::: moniker-end
-::: moniker range="=azuresqldb-mi-current||=sqlallproducts-allversions"
+::: moniker range="=azuresqldb-mi-current"
 この 4 部構成のチュートリアル シリーズのパート 2 では、R を使用してデータベースからデータを準備します。このシリーズの後半では、このデータを利用して、Azure SQL Managed Instance の Machine Learning Services で R の予測モデルのトレーニングおよびデプロイを行います。
 ::: moniker-end
 

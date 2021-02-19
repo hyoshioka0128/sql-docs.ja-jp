@@ -11,18 +11,18 @@ ms.topic: conceptual
 ms.assetid: 2f82db01-da7e-4a7d-8bc0-48b245e6f768
 author: MightyPen
 ms.author: genemi
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: e4ab5daed36d446f60229ec11600e106b28b36ad
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 9711cebcaab12cd0c665591612b56aefd8f0cfbb
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91869143"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "100351266"
 ---
 # <a name="implementing-a-case-expression-in-a-natively-compiled-stored-procedure"></a>ネイティブ コンパイル ストアド プロシージャに CASE 式を実装する
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
-**適用対象:** [!INCLUDE[ssSDSFull_md](../../includes/sssdsfull-md.md)] および [!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] 以降の SQL Server
+**適用対象:** [!INCLUDE[ssSDSFull_md](../../includes/sssdsfull-md.md)] および [!INCLUDE [sssql17-md](../../includes/sssql17-md.md)] 以降の SQL Server
 
 CASE 式は、ネイティブ コンパイル T-SQL モジュールでサポートされています。 次の例では、クエリで CASE 式を使用する方法を示します。 
 
@@ -45,9 +45,9 @@ EXEC dbo.usp_SOHOnlineOrderResult
 GO  
 ``` 
 
-**適用対象:** [!INCLUDE[ssSQL14-md](../../includes/ssSQL14-md.md)] および [!INCLUDE[ssSQL15-md](../../includes/ssSQL15-md.md)] 以降の SQL Server
+**適用対象:** [!INCLUDE[ssSQL14-md](../../includes/ssSQL14-md.md)] および [!INCLUDE[ssSQL15-md](../../includes/sssql16-md.md)] 以降の SQL Server
 
-  CASE 式は、ネイティブ コンパイル T-SQL モジュールでサポートされて*いません*。 次のサンプルは、ネイティブ コンパイル ストアド プロシージャに CASE 式の機能を実装する方法を示しています。  
+  CASE 式は、ネイティブ コンパイル T-SQL モジュールでサポートされて *いません*。 次のサンプルは、ネイティブ コンパイル ストアド プロシージャに CASE 式の機能を実装する方法を示しています。  
   
  コード サンプルでは、テーブル変数を使用して、単一の結果セットを作成します。 この方法は、データ行の追加コピーを作成する必要があるため、限られた行数を処理する場合にのみ推奨されます。  
   

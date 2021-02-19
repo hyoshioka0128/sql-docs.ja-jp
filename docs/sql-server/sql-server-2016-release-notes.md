@@ -13,13 +13,13 @@ helpviewer_keywords:
 ms.assetid: c64077a2-bec8-4c87-9def-3dbfb1ea1fb6
 author: rothja
 ms.author: jroth
-monikerRange: = sql-server-2016 || = sqlallproducts-allversions
-ms.openlocfilehash: 19f906960bc31346f21e4afed436ff10517adebf
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+monikerRange: = sql-server-2016
+ms.openlocfilehash: dad7665ffa825a80aa6bcb3050b04a96060c3f65
+ms.sourcegitcommit: f30b5f61c514437ea58acc5769359c33255b85b5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91985808"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99076044"
 ---
 # <a name="sql-server-2016-release-notes"></a>SQL Server 2016 リリース ノート
 [!INCLUDE [SQL Server 2016](../includes/applies-to-version/sqlserver2016.md)]  
@@ -59,8 +59,8 @@ SQL Server 2016 SP2 にはサポートと診断に関連する改善が含まれ
 |---|---|---|
 |可用性グループ内のデータベースでの完全な DTC サポート   |   可用性グループの一部であるデータベースでの複数データベース間トランザクションは現在 SQL Server 2016 でサポートされていません。 SQL Server 2016 SP2 では、可用性グループ データベースでの分散トランザクションの完全なサポートを導入しています。   |      |
 |TempDB の暗号化の状態を正確に反映するための sys.database の is_encrypted 列の更新   |   すべてのユーザー データベースの暗号化をオフにし、SQL Server を再起動した後でも、TempDB の sys.databases の is_encrypted 列の値は 1 です。 この状況では TempDB が暗号化されないため、この値が 0 になることが予想されます。 SQL Server 2016 SP2 以降では、sys.databases.is_encrypted で TempDB の暗号化の状態が正確に反映されます。   |      |
-|検証済みのクローンとバックアップを生成するための新しい DBCC CLONEDATABASE オプション   |   SQL Server 2016 SP2 では、DBCC CLONEDATABASE によって、検証済みのクローンの作成、またはバックアップ クローンの作成という 2 つのオプションを使用できるようになります。 WITH VERIFY_CLONEDB オプションによってクローン データベースが作成されると、実稼働環境で Microsoft によってサポートされる一貫性のあるデータベース クローンが作成され、検証されます。 クローンが検証されるかどうかを検証する新しいプロパティ SELECT DATABASEPROPERTYEX('clone_database_name', 'IsVerifiedClone') が導入されています。 クローンが BACKUP_CLONEDB オプションで作成されると、顧客が簡単にクローンを別のサーバーに移動したり、トラブルシューティングのために Microsoft カスタマー サポート (CSS) に送信したりできるように、データ ファイルと同じフォルダーにバックアップが生成されます。   |      |
-|DBCC CLONEDATABASE の Service Broker (SSB) のサポート   |   SSB オブジェクトのスクリプト作成を許可するように、DBCC CLONEDATABASE コマンドが拡張されました。   |   [KB4092075](https://support.microsoft.com/help/4092075)   |
+|検証済みのクローンとバックアップを生成するための新しい DBCC CLONEDATABASE オプション   |   SQL Server 2016 SP2 では、DBCC CLONEDATABASE によって、検証済みのクローンの作成、またはバックアップ クローンの生成という 2 つのオプションを使用できるようになります。 WITH VERIFY_CLONEDB オプションによってクローン データベースが作成されると、実稼働環境で Microsoft によってサポートされる一貫性のあるデータベース クローンが作成され、検証されます。 クローンが検証されるかどうかを検証する新しいプロパティ SELECT DATABASEPROPERTYEX('clone_database_name', 'IsVerifiedClone') が導入されています。 クローンが BACKUP_CLONEDB オプションで作成されると、顧客が簡単にクローンを別のサーバーに移動したり、トラブルシューティングのために Microsoft カスタマー サポート (CSS) に送信したりできるように、データ ファイルと同じフォルダーにバックアップが生成されます。   |      |
+|DBCC CLONEDATABASE の Service Broker (SSB) のサポート   |   SSB オブジェクトのスクリプト作成を許可するように、DBCC CLONEDATABASE コマンドが拡張されました。   |      |
 |TempDB のバージョン ストア領域の使用量を監視する新しい DMV   |   TempDB のバージョン ストア使用量の監視が可能になるように、SQL Server 2016 SP2 に新しい sys.dm_tran_version_store_space_usage の DMV が導入されました。 運用サーバーでの実行時にパフォーマンスのオーバーヘッドを発生させることなく、データベースごとのバージョン ストア使用量の要件に基づいて DBA で TempDB のサイズを事前に計画できるようになりました。   |      |
 |レプリケーション エージェントの完全なダンプのサポート | 現在は、レプリケーション エージェントがハンドルされない例外に遭遇すると、既定により例外の現象のミニ ダンプが作成されます。 これにより、未処理の例外の問題のトラブルシューティングが非常に難しくなっています。 今回の変更では新しいレジストリ キーが導入され、レプリケーション エージェントの完全なダンプが作成できるようになっています。   |      |
 |可用性グループのルーティング読み取りエラーの拡張イベントの機能強化   |   以前は、ルーティング リストが存在する場合、read_only_rout_fail の xEvent が起動していましたが、ルーティング リストのどのサーバーも、接続に使用できませんでした。 SQL Server 2016 SP2 には、トラブルシューティングに役立つ追加情報と、xEvent が起動するコード ポイントの拡張も含まれます。   |      |
@@ -86,7 +86,7 @@ SQL Server 2016 SP2 にはサポートと診断に関連する改善が含まれ
 | |バッチモード演算子を伴うデッドロックで SyncPoint リソースに属性が追加されたことで、XML デッドロック グラフが改善されました。| |
 |一部のレプリケーション エージェント プロファイルのパラメーターの動的な読み込み   |   レプリケーション エージェントの現在の実装では、エージェント プロファイル パラメーターの変更には、必ずエージェントの停止と再起動が必要です。 この機能強化により、レプリケーション エージェントを再起動しなくてもパラメーターが動的に再読み込みされるようになりました。   |      |
 
-![horizontal-bar.png](media/horizontal-bar.png)
+![水平方向に伸びるバーのスクリーンショット。](media/horizontal-bar.png)
 
 ## <a name="sql-server-2016-service-pack-1-sp1"></a><a name="bkmk_2016sp1"></a>SQL Server 2016 Service Pack 1 (SP1)
 ![info_tip](../sql-server/media/info-tip.png) SQL Server 2016 SP1 には、SQL Server 2016 RTM CU3 までの累積的な更新プログラムがすべて含まれ、セキュリティ更新プログラム MS16-136 も含まれます。 2016 年 11 月 8 日にリリースされた最新の累積的な更新プログラム CU3 とセキュリティ更新プログラム MS16-136 までを含む、SQL Server 2016 の累積的な更新プログラムで提供された解決策のロールアップが含まれています。
@@ -134,7 +134,7 @@ SQL Server 2016 SP1 のインストールでは、インストール後に再起
 - [SQL Server 2016 Service Pack 1 リリース情報](https://support.microsoft.com/kb/3182545)
 - ![info_tip](../sql-server/media/info-tip.png) [!INCLUDE[ssNoVersion_md](../includes/ssnoversion-md.md)] のサービス パックを含む、サポートされているすべてのバージョンのリンクと情報がまとめられている [SQL Server Update Center](../database-engine/install-windows/latest-updates-for-microsoft-sql-server.md)
 
-![horizontal-bar.png](media/horizontal-bar.png)
+![水平方向に伸びるもう 1 つのバーのスクリーンショット。](media/horizontal-bar.png)
 
 ##  <a name="sql-server-2016-release---general-availability-ga"></a><a name="bkmk_2016_ga"></a>SQL Server 2016 Release - 一般公開 (GA)
 -   [データベース エンジン (GA)](#bkmk_ga_instalpatch)
@@ -153,13 +153,13 @@ SQL Server 2016 SP1 のインストールでは、インストール後に再起
 
     1.  該当する *vcredist_\*exe* をダウンロードします。
     1.  データベース エンジンのすべてのインスタンスで SQL Server サービスを停止します。
-    1.  **KB 3138367**をインストールします。
+    1.  **KB 3138367** をインストールします。
     1.  コンピューターを再起動します。
 
 
  - [KB 3164398 - SQL Server 2016 MSVCRT の必須コンポーネントの重要な更新プログラム](https://support.microsoft.com/kb/3164398)をインストールします。
 
-    **KB 3164398**を使用する場合、SQL Server のインストール中、Microsoft Update の実行時、または Microsoft ダウンロード センターからインストールできます。
+    **KB 3164398** を使用する場合、SQL Server のインストール中、Microsoft Update の実行時、または Microsoft ダウンロード センターからインストールできます。
 
     - **SQL Server 2016 のインストール中:** SQL Server セットアップを実行するコンピューターからインターネットにアクセスできる場合、SQL Server セットアップにより、SQL Server インストール全体の一部として更新プログラムが調べられます。 更新を承認すると、インストール中にセットアップによりバイナリがダウンロードされて更新されます。
 
@@ -207,7 +207,7 @@ SQL Server 2016 SP1 のインストールでは、インストール後に再起
 
 
 ###  <a name="product-documentation-ga"></a><a name="bkmk_ga_docs"></a> 製品ドキュメント (GA)
- **問題およびユーザーへの影響:** SQL Server 2016 のドキュメントのダウンロード可能なバージョンはまだありません。 ヘルプ ライブラリ マネージャーを使って **オンラインからコンテンツをインストール**しようとすると、SQL Server 2012 および SQL Sever 2014 のドキュメントは表示されますが、SQL Server 2016 のドキュメントのオプションはありません。
+ **問題およびユーザーへの影響:** SQL Server 2016 のドキュメントのダウンロード可能なバージョンはまだありません。 ヘルプ ライブラリ マネージャーを使って **オンラインからコンテンツをインストール** しようとすると、SQL Server 2012 および SQL Sever 2014 のドキュメントは表示されますが、SQL Server 2016 のドキュメントのオプションはありません。
 
  **対処法:** 次のいずれかの回避策を使用してください。
 

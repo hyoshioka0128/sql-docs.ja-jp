@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - Connection::InfoMessage
@@ -17,15 +17,15 @@ helpviewer_keywords:
 ms.assetid: 468c87dd-e3bc-4084-9941-94d10743d4e9
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 8695dc364a649dff204fcd689ab4722f19e125b9
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 68121629c35c6924304e81d9401dcbd53b51ddb9
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88990803"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100020649"
 ---
 # <a name="infomessage-event-ado"></a>InfoMessage イベント (ADO)
-**Connectionevent**操作中に警告が発生するたびに、 **infomessage**イベントが呼び出されます。  
+**Connectionevent** 操作中に警告が発生するたびに、 **infomessage** イベントが呼び出されます。  
   
 ## <a name="syntax"></a>構文  
   
@@ -44,7 +44,7 @@ InfoMessage pError, adStatus, pConnection
  このイベントが返される前に、このパラメーターを **adStatusUnwantedEvent** に設定して、後続の通知が行われないようにします。  
   
  *pConnection*  
- [接続](./connection-object-ado.md)オブジェクトです。 警告が発生した接続。 たとえば、接続オブジェクトを開いたり、**接続**で[コマンド](./command-object-ado.md)を**実行したり**すると、警告が発生することがあります。  
+ [接続](./connection-object-ado.md)オブジェクトです。 警告が発生した接続。 たとえば、接続オブジェクトを開いたり、**接続** で [コマンド](./command-object-ado.md)を **実行したり** すると、警告が発生することがあります。  
   
 ## <a name="see-also"></a>参照  
  [ADO Events モデルの例 (VC + +)](./ado-events-model-example-vc.md)   

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: replication
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - IHpublishercolumns
 - IHpublishercolumns_TSQL
@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - IHpublishercolumns system table
 ms.assetid: a5347750-224c-40d9-ae12-57e7213b7db9
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 49d4da72bc68d375b7c918768b656e025c4dc6f2
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 7a8ebd3801794a4c674f04fc621277eb441cc51a
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89524996"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99201712"
 ---
 # <a name="ihpublishercolumns-transact-sql"></a>IHpublishercolumns (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **IHpublishercolumns**システムテーブルは、パブリッシャーに格納されているメタデータを表します。 このテーブルには、現在のディストリビューターを使用して SQL Server 以外のパブリッシャーからレプリケートされた列ごとに1つの行が含まれています。 **IHpublishercolumns**のデータ型情報は、データのパブリッシュ元である非 SQL Server データベース管理システム (DBMS) に固有です。 このテーブルは、ディストリビューションデータベースに格納されます。  
+  **IHpublishercolumns** システムテーブルは、パブリッシャーに格納されているメタデータを表します。 このテーブルには、現在のディストリビューターを使用して SQL Server 以外のパブリッシャーからレプリケートされた列ごとに1つの行が含まれています。 **IHpublishercolumns** のデータ型情報は、データのパブリッシュ元である非 SQL Server データベース管理システム (DBMS) に固有です。 このテーブルは、ディストリビューションデータベースに格納されます。  
   
 ## <a name="definition"></a>定義  
   

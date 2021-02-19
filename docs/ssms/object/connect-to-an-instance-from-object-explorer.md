@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 9803a8a0-a8f1-4b65-87b8-989b06850194
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 700944b707416a89d16b5ce53eee471692779870
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+ms.openlocfilehash: de873f30e435a1513e8e642cf5e3a97641e147d6
+ms.sourcegitcommit: 80701484b8f404316d934ad2a85fd773e26ca30c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92037655"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93243754"
 ---
 # <a name="connect-to-a-sql-server-or-azure-sql-database"></a>SQL Server または Azure SQL Database への接続
 
@@ -27,33 +27,33 @@ ms.locfileid: "92037655"
   
 ## <a name="connecting-to-a-server"></a>サーバーへの接続  
 
-1. **オブジェクト エクスプローラー**で、**[接続]、[データベース エンジン]** の順にクリックします。
+1. **オブジェクト エクスプローラー** で、 **[接続]、[データベース エンジン]** の順にクリックします。
 
-   ![connect](../media/connect-to-server/connect-db-engine.png)
+   ![接続する](../media/connect-to-server/connect-db-engine.png)
 
-1. [**サーバーへの接続**] フォームに必要事項を入力し、[**接続**] をクリックします。
+1. [ **サーバーへの接続** ] フォームに必要事項を入力し、[ **接続** ] をクリックします。
 
    ![[サーバーに接続]](../media/connect-to-server/connect.png)
 
-1. Azure SQL Server に接続する場合は、サインインしてファイアウォール規則を作成するように求めるメッセージが表示される場合があります。 [**サインイン**] をクリックします (メッセージが表示されない場合は、下記の手順 6 に進みます)。
+1. Azure SQL Server に接続する場合は、サインインしてファイアウォール規則を作成するように求めるメッセージが表示される場合があります。 [ **サインイン** ] をクリックします (メッセージが表示されない場合は、下記の手順 6 に進みます)。
 
-   ![ファイアウォール](../media/connect-to-server/firewall-rule-sign-in.png)
+   ![[新しいファイアウォール規則] ダイアログ ボックスのスクリーンショット。[サインイン] オプションにコールアウトが付いています。](../media/connect-to-server/firewall-rule-sign-in.png)
 
 1. サインインが正常に終了すると、フォームには特定の IP アドレスが既に設定された状態となります。 IP アドレスが頻繁に変更になる場合は、特定の範囲へのアクセス権を付与するのが簡単です。環境に応じて最適なオプションを選択してください。 
 
-   ![ファイアウォール](../media/connect-to-server/new-firewall-rule.png)
+   ![[新しいファイアウォール規則] ダイアログ ボックスのスクリーンショット。[Add my client IP address]\(クライアント IP アドレスの追加\) オプションが選択され、[OK] オプションにコールアウトが付いています。](../media/connect-to-server/new-firewall-rule.png)
 
-1. ファイアウォール規則を作成して、サーバーに接続するには、[**OK**] をクリックします。
+1. ファイアウォール規則を作成して、サーバーに接続するには、[ **OK** ] をクリックします。
 
-1. 接続が正常に行われると、**オブジェクト エクスプローラー**にサーバー表示されます。
+1. 接続が正常に行われると、 **オブジェクト エクスプローラー** にサーバー表示されます。
 
-   ![connected](../media/connect-to-server/connected.png)
+   ![サーバーが正常に接続されたことを示すオブジェクト エクスプローラーのスクリーンショット。](../media/connect-to-server/connected.png)
 
 ## <a name="next-steps"></a>次の手順
 
 [テーブルの設計、作成、更新](../visual-db-tools/design-tables-visual-database-tools.md)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [SQL Server Management Studio (SSMS)](../sql-server-management-studio-ssms.md)  
 [SQL Server Management Studio (SSMS) のダウンロード](../download-sql-server-management-studio-ssms.md)

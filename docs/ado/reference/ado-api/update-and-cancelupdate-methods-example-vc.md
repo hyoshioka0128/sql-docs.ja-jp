@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: cc59d23a-2f38-42f9-8b65-ed89009e87ec
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 9d8277ab358c7eb90737f4da5a0f118d3b087150
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 1149356cb1e90c607f48c8156b15c664d9091826
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88988113"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100056308"
 ---
 # <a name="update-and-cancelupdate-methods-example-vc"></a>Update および CancelUpdate メソッドの例 (VC++)
 この例では、 [更新](./update-method.md) メソッドと [CancelUpdate](./cancelupdate-method-ado.md) メソッドの組み合わせを示します。  

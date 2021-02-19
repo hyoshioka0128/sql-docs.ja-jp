@@ -8,13 +8,13 @@ ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 7dbb9e32c1b5f68334ae1ccab17a85c23c069112
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: d9bfe9ec4f81ca61bacbb4dc3526ea5b7a1a87f7
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92192622"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100272963"
 ---
 # <a name="tutorial-sql-development-for-r-data-scientists"></a>チュートリアル:R データ サイエンティスト向けの SQL 開発
 [!INCLUDE [SQL Server 2016](../../includes/applies-to-version/sqlserver2016.md)]
@@ -25,7 +25,7 @@ R コード、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] デー�
 
 この例は、販売キャンペーンに対する顧客の反応の予測やイベントでの支出や出席の予測など、あらゆる種類の実際の問題に合わせて拡張できます。 このモデルはストアド プロシージャから呼び出すことができるため、アプリケーションに簡単に埋め込むことができます。
 
-このチュートリアルは、R 開発者に [!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)] を紹介する目的で設計されているため、可能な場合には R が使用されています。 ただしこれは、各タスクにとって必ずしも R が最適なツールであるという意味ではありません。 多くの場合、特にデータ集計と機能エンジニアリングについては、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の方が優れたパフォーマンスを示す可能性があります。  このようなタスクでは、特に [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]の新機能 (メモリ最適化列ストア インデックスなど) のメリットが得られます。 可能な最適化については、レッスンの中でご紹介します。
+このチュートリアルは、R 開発者に [!INCLUDE[rsql_productname](../../includes/rsql-productname-md.md)] を紹介する目的で設計されているため、可能な場合には R が使用されています。 ただしこれは、各タスクにとって必ずしも R が最適なツールであるという意味ではありません。 多くの場合、特にデータ集計と機能エンジニアリングについては、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の方が優れたパフォーマンスを示す可能性があります。  このようなタスクでは、特に [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]の新機能 (メモリ最適化列ストア インデックスなど) のメリットが得られます。 可能な最適化については、レッスンの中でご紹介します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -72,7 +72,7 @@ R コード、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] デー�
 SQL Server にパッケージをインストールするには、いくつかのオプションがあります。 たとえば、SQL Server では [R パッケージ管理](../package-management/install-additional-r-packages-on-sql-server.md)機能が用意されています。これにより、データベース管理者はパッケージ リポジトリを作成し、ユーザーが独自のパッケージをインストールするための権限をユーザーに割り当てることができます。 ただし、コンピューターの管理者の場合は、正しいライブラリにインストールする場合に限り、R を使用して新しいパッケージをインストールできます。
 
 > [!NOTE]
-> サーバー上には、求められたとしてもユーザー ライブラリをインストール**しないでください**。 ユーザー ライブラリをインストールすると、SQL Server インスタンスでパッケージを見つけることも、実行することもできなくなります。 詳細については、[SQL Server に新しい R パッケージをインストールする](../package-management/install-additional-r-packages-on-sql-server.md)に関するページを参照してください。
+> サーバー上には、求められたとしてもユーザー ライブラリをインストール **しないでください**。 ユーザー ライブラリをインストールすると、SQL Server インスタンスでパッケージを見つけることも、実行することもできなくなります。 詳細については、[SQL Server に新しい R パッケージをインストールする](../package-management/install-additional-r-packages-on-sql-server.md)に関するページを参照してください。
 
 1. [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] コンピューターで、**管理者権限で** RGui.exe を開きます。  既定値を使用して SQL Server R Services をインストールした場合、Rgui.exe は C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES\bin\x64 にあります。
 

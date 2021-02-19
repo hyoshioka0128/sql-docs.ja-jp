@@ -7,19 +7,19 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 helpviewer_keywords:
 - Cancel method [RDS]
 ms.assetid: 560b5b3d-fba9-4275-8920-9c3e186134f7
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 24f72c16e1c27d070bcc52fc29c6599cc11c737e
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 5c3c1c78d69db0ceba435c91f13172a5ee77a697
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91722693"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100049552"
 ---
 # <a name="cancel-method-rds"></a>Cancel メソッド (RDS)
 保留中の非同期メソッド呼び出しの実行を取り消します。  
@@ -35,7 +35,7 @@ RDS.DataControl.Cancel
 ```  
   
 ## <a name="remarks"></a>解説  
- **Cancel**を呼び出すと、 [ReadyState](./readystate-property-rds.md)が自動的に**Adcreadystateloaded**に設定され、[レコードセット](../ado-api/recordset-object-ado.md)は空になります。  
+ **Cancel** を呼び出すと、 [ReadyState](./readystate-property-rds.md)が自動的に **Adcreadystateloaded** に設定され、[レコードセット](../ado-api/recordset-object-ado.md)は空になります。  
   
 ## <a name="applies-to"></a>適用対象  
  [DataControl オブジェクト (RDS)](./datacontrol-object-rds.md)  

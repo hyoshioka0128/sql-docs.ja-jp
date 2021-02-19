@@ -8,13 +8,13 @@ ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: 5af17aa003de878a79d6c7a5b9710851b8655d0b
-ms.sourcegitcommit: 9774e2cb8c07d4f6027fa3a5bb2852e4396b3f68
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: f90c1b004dae28f98b1b7f250cf16e0ed0d2ae5b
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92098831"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470863"
 ---
 # <a name="create-a-stored-procedure-using-sqlrutils"></a>sqlrutils を使用してストアド プロシージャを作成する
 [!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "92098831"
 - 論理
 - raw
 
-入力の種類が上記の種類でない場合は、シリアル化し、 *raw*として関数に渡す必要があります。 その場合、関数に入力を逆シリアル化するコードを含める必要もあります。
+入力の種類が上記の種類でない場合は、シリアル化し、 *raw* として関数に渡す必要があります。 その場合、関数に入力を逆シリアル化するコードを含める必要もあります。
 
 ### <a name="outputs"></a>出力
 
@@ -119,7 +119,7 @@ StoredProcedure (foosql, sp_rsample, queryinput, sqloutput, filePath = "C:\\Temp
 ストアド プロシージャは R を使用して登録できます。または、T-SQL で CREATE PROCEDURE ステートメントを実行できます。
 
 - T-SQL の使用。  T-SQL に慣れている場合は、SQL Server Management Studio (または SQL DDL コマンドを実行できるその他のクライアント) を開き、`StoredProcedure` 関数によって準備されたコードを使用して CREATE PROCEDURE ステートメントを実行します。
-- R の使用。まだ R 環境にいる場合は、`registerStoredProcedure`sqlrutils**で** 関数を使用して、ストアド プロシージャをデータベースに登録できます。
+- R の使用。まだ R 環境にいる場合は、`registerStoredProcedure`sqlrutils **で** 関数を使用して、ストアド プロシージャをデータベースに登録できます。
 
   たとえば、次の R 呼び出しを行うと、**sqlConnStr** で定義されているインスタンスとデータベースで、ストアド プロシージャ *sp_rsample* を登録できます。
 
@@ -228,7 +228,7 @@ myetl1function <- function() {
 
 > [!NOTE]
 > 
-> コードの一部として明示的に ODBC 接続を開く必要はありませんが、 **sqlrutils**を使用するには引き続き ODBC 接続が必要になります。
+> コードの一部として明示的に ODBC 接続を開く必要はありませんが、 **sqlrutils** を使用するには引き続き ODBC 接続が必要になります。
 
 ## <a name="see-also"></a>参照
 

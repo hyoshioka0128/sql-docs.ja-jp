@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 594c51cb-1157-4417-802b-d91b875ba020
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 9c313233cfa82e5f3213366f9680ef3a4c567a5d
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 2ee99725aeb4eadab7df8323bb1ffcd0ce901551
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88972923"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100024186"
 ---
 # <a name="find-method-example-vc"></a>Find メソッドの例 (VC++)
 この例では、 [レコードセット](./recordset-object-ado.md) オブジェクトの [Find](./find-method-ado.md) メソッドを使用して、 **Pubs** データベース内のビジネスタイトルの数を検索し、カウントします。 この例では、基になるプロバイダーが同様の機能をサポートしていないと想定しています。  

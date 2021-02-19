@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.sysmembers_TSQL
 - sysmembers
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sysmembers system table
 - sys.sysmembers compatibility view
 ms.assetid: ceb18341-f985-4849-ac83-21d67ab7b980
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 9d528e9479b5a193baccf6ccf26c327f53016fd6
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 03ff7e062326746e6ae2e2c4bfedcf79ebc6d865
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88399328"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99149354"
 ---
 # <a name="syssysmembers-transact-sql"></a>sys.sysメンバー (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

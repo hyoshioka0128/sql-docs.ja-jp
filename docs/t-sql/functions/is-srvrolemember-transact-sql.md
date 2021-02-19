@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - IS_SRVROLEMEMBER_TSQL
 - IS_SRVROLEMEMBER
@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 3241a44a-6958-415b-b8b7-2a1207c36ab3
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: c956e6a17340e371b7135dcd22f73e2b3165a20d
-ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
+ms.openlocfilehash: 4a3832b4f9e250c2ff3368d0a94dbf77843f16a5
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91117083"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100350388"
 ---
 # <a name="is_srvrolemember-transact-sql"></a>IS_SRVROLEMEMBER (Transact-SQL)
 
@@ -45,7 +45,7 @@ IS_SRVROLEMEMBER ( 'role' [ , 'login' ] )
 
 ## <a name="arguments"></a>引数
  **'** *role* **'**  
- 確認するサーバー ロールの名前です。 *role* は **sysname**です。  
+ 確認するサーバー ロールの名前です。 *role* は **sysname** です。  
   
  *role* の有効な値は、ユーザー定義サーバー ロールと、次の固定サーバー ロールです。  
 

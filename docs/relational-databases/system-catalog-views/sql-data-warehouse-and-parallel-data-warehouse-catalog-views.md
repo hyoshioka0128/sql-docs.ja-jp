@@ -11,14 +11,14 @@ dev_langs:
 ms.assetid: ef6f58e2-0162-4bb2-951a-a786da7453e4
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest || = sqlallproducts-allversions'
+monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
 ms.custom: seo-dt-2019
-ms.openlocfilehash: 8ff25c5988b3e989be11758591af1f69f778b72f
-ms.sourcegitcommit: 76ab3b57718341c6057613c9bd38cf82fb17786e
+ms.openlocfilehash: 326d2c6f29f89af63037a0ca3d9e5111b83c828d
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92059580"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97643404"
 ---
 # <a name="azure-synapse-analytics-and-parallel-data-warehouse-catalog-views"></a>Azure Synapse Analytics と Parallel Data Warehouse のカタログ ビュー
 
@@ -65,11 +65,11 @@ ms.locfileid: "92059580"
 
  次のカタログビューはにのみ適用され [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] ます。
 
- [sys.pdw_materialized_view_column_distribution_properties &#40;Transact-SQL&#41;](./sys-pdw-materialized-view-column-distribution-properties-transact-sql.md?view=azure-sqldw-latest) 
+ [sys.pdw_materialized_view_column_distribution_properties &#40;Transact-SQL&#41;](./sys-pdw-materialized-view-column-distribution-properties-transact-sql.md?view=azure-sqldw-latest&preserve-view=true) 
 
- [sys.pdw_materialized_view_distribution_properties &#40;Transact-SQL&#41;](./sys-pdw-materialized-view-distribution-properties-transact-sql.md?view=azure-sqldw-latest) 
+ [sys.pdw_materialized_view_distribution_properties &#40;Transact-SQL&#41;](./sys-pdw-materialized-view-distribution-properties-transact-sql.md?view=azure-sqldw-latest&preserve-view=true) 
 
- [sys.pdw_materialized_view_mappings &#40;transact-sql&#41;](./sys-pdw-materialized-view-mappings-transact-sql.md?view=azure-sqldw-latest) (プレビュー)
+ [sys.pdw_materialized_view_mappings &#40;transact-sql&#41;](./sys-pdw-materialized-view-mappings-transact-sql.md?view=azure-sqldw-latest&preserve-view=true) (プレビュー)
 
  [sys.pdw_permanent_table_mappings &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-pdw-permanent-table-mappings-transact-sql.md)
 
@@ -77,7 +77,7 @@ ms.locfileid: "92059580"
   
  [sys.workload_management_workload_classifiers &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-workload-management-workload-classifiers-transact-sql.md)
   
- [sys.workload_management_workload_groups &#40;Transact-sql&#41;](./sys-workload-management-workload-groups-transact-sql.md?view=azure-sqldw-latest)
+ [sys.workload_management_workload_groups &#40;Transact-sql&#41;](./sys-workload-management-workload-groups-transact-sql.md?view=azure-sqldw-latest&preserve-view=true)
 
 ## <a name="sspdw-catalog-views"></a>[!INCLUDE[ssPDW](../../includes/sspdw-md.md)] カタログ ビュー
 

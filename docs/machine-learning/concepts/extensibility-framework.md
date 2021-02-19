@@ -7,15 +7,14 @@ ms.date: 07/14/2020
 ms.topic: conceptual
 author: garyericson
 ms.author: garye
-ms.reviewer: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 053639f8ff25d50e7cad9c05d82cfcac6a0ee071
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: beb02a4741ccef20b4c412c05489d8047b1475e3
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956538"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471313"
 ---
 # <a name="extensibility-architecture-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services の機能拡張アーキテクチャ 
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -46,17 +45,17 @@ ms.locfileid: "91956538"
 
 このアーキテクチャは、外部スクリプトが SQL Server とは別のプロセスで実行されるが、コンポーネントによって SQL Server のデータと操作に対する要求のチェーンが内部で管理されるように設計されています。 SQL Server のバージョンに応じて、サポートされている言語拡張機能には、[R](extension-r.md)、[Python](extension-python.md)、および Java や .NET などのサードパーティ言語が含まれます。
 
-  ***Windows のコンポーネント アーキテクチャ:***
+  ***Windows のコンポーネント アーキテクチャ:** _
   
   ![Windows のコンポーネント アーキテクチャ](../media/generic-architecture-windows.png "コンポーネント アーキテクチャ")
   
-  ***Linux のコンポーネント アーキテクチャ:***
+  _*_Linux のコンポーネント アーキテクチャ:_*_
 
   ![Linux のコンポーネント アーキテクチャ](../media/generic-architecture-linux.png "コンポーネント アーキテクチャ")
   
-コンポーネントには**スタート パッド** サービスが含まれています。これは、インタープリターとライブラリを読み込むための外部ランタイムおよびライブラリ固有のロジックを呼び出すために使用されます。 ランチャーにより、言語ランタイムと独自のモジュールが読み込まれます。 たとえば、コードに RevoScaleR 関数が含まれている場合、RevoScaleR インタープリターが読み込まれます。 **BxlServer** および **SQL サテライト**により、SQL Server との通信とデータ転送が管理されます。 
+コンポーネントには _ *スタート パッド** サービスが含まれています。これは、インタープリターとライブラリを読み込むための外部ランタイムおよびライブラリ固有のロジックを呼び出すために使用されます。 ランチャーにより、言語ランタイムと独自のモジュールが読み込まれます。 たとえば、コードに RevoScaleR 関数が含まれている場合、RevoScaleR インタープリターが読み込まれます。 **BxlServer** および **SQL サテライト** により、SQL Server との通信とデータ転送が管理されます。 
 
-Linux の場合、SQL では**スタート パッド** サービスを使用して、ユーザーごとに個別のスタート パッド プロセスとの通信が行われます。
+Linux の場合、SQL では **スタート パッド** サービスを使用して、ユーザーごとに個別のスタート パッド プロセスとの通信が行われます。
 
 <a name="launchpad"></a>
 
@@ -85,7 +84,7 @@ Linux では、1 つのデータベース エンジン インスタンスのみ�
 
 実際には BxlServer は、SQL Server と連携してデータの転送とタスクの管理を行う言語ランタイム環境に付随するものです。 BXL とは、バイナリ交換言語の略で、SQL Server と外部プロセスの間でデータを効率的に移動するために使用されるデータ形式を指します。 BxlServer は、Microsoft R Client や Microsoft R Server などの関連製品の重要な部分でもあります。
 
-**SQL サテライト**は、データベース エンジンに含まれる機能拡張 API で、C または C++ を使用して実装された外部コードまたは外部ランタイムをサポートしています。
+**SQL サテライト** は、データベース エンジンに含まれる機能拡張 API で、C または C++ を使用して実装された外部コードまたは外部ランタイムをサポートしています。
 
 BxlServer は、次のタスクに SQL サテライトを使用します。
 

@@ -9,12 +9,12 @@ metadata:
   author: MashaMSFT
   ms.author: mathoma
   ms.date: 07/25/2020
-  ms.openlocfilehash: cb486b531f5ed186ee278f4bb175c54959aafa50
-  ms.sourcegitcommit: 22102f25db5ccca39aebf96bc861c92f2367c77a
+  ms.openlocfilehash: 77799aabb15567bea43ffa37d554962296650175
+  ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 10/16/2020
-  ms.locfileid: "92115575"
+  ms.lasthandoff: 02/10/2021
+  ms.locfileid: "100078683"
 landingContent:
 - title: モジュール 1:SQL Server on Linux の概要
   linkLists:
@@ -53,7 +53,7 @@ landingContent:
     - text: ツールの概要
       url: ../tools/overview-sql-tools.md
     - text: Azure Data Studio (ツール)
-      url: ../azure-data-studio/what-is.md
+      url: ../azure-data-studio/what-is-azure-data-studio.md
     - text: Channel 9 - クロスプラットフォーム SQL ツール (オプション)
       url: https://channel9.msdn.com/events/Connect/2016/173?term=SQL%20on%20linux&lang-en=true
 - title: モジュール 4:SQL Server on Linux の構成

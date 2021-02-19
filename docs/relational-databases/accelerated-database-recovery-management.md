@@ -1,7 +1,7 @@
 ---
 description: 高速データベース復旧を管理する
 title: 高速データベース復旧を管理する | Microsoft Docs
-ms.date: 08/12/2019
+ms.date: 02/02/2021
 ms.prod: sql
 ms.prod_service: backup-restore
 ms.technology: backup-restore
@@ -12,13 +12,13 @@ helpviewer_keywords:
 author: mashamsft
 ms.author: mathoma
 ms.reviewer: kfarlee
-monikerRange: '>=sql-server-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: c7e8912a4f057f895b73c0b76ad1f4ac02d46d1b
-ms.sourcegitcommit: 6d9b6eb2437e780c7881cc516e03c1182fb6892e
+monikerRange: '>=sql-server-ver15'
+ms.openlocfilehash: 28ab5d23e4a2dc3168a9682424b3cb11a8e0b70e
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90565077"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100062211"
 ---
 # <a name="manage-accelerated-database-recovery"></a>高速データベース復旧を管理する
 
@@ -26,7 +26,7 @@ ms.locfileid: "90565077"
 
 ## <a name="enabling-and-controlling-adr"></a>ADR の有効化と制御
 
-[!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] では ADR は既定でオフになっており、DDL 構文を使用して制御できます。
+[!INCLUDE[sql-server-2019](../includes/sssql19-md.md)] では ADR は既定でオフになっており、DDL 構文を使用して制御できます。
 ```sql
 ALTER DATABASE [DB] SET ACCELERATED_DATABASE_RECOVERY = {ON | OFF}
 [(PERSISTENT_VERSION_STORE_FILEGROUP = { filegroup name }) ];
@@ -118,7 +118,30 @@ PVS は、ベースラインより大幅に大きいか、データベース サ
 
    アクティブなトランザクションがあると、PVS を消去できません。
 
-1. データベースが可用性グループに含まれる場合、`secondary_low_water_mark` を確認してください。 これは `sys.dm_hadr_database_replica_states` によって報告される `low_water_mark_for_ghosts` と同じです。 `sys.dm_hadr_database_replica_states` を問い合わせ、いずれかのレプリカでこの値が隠されていないか確認します。これも PVS の消去を妨げるためです。
-1. `min_transaction_timestamp` (あるいは、オンライン PVS の消去が妨げられている場合は `online_index_min_transaction_timestamp`) を確認し、それに基づいて列 `transaction_sequence_num` の `sys.dm_tran_active_snapshot_database_transactions` を確認し、古いスナップショット トランザクションが PVS の消去を妨げているセッションを見つけます。
-1. 上記のいずれも該当しない場合、中止となったトランザクションによって消去が妨げられていることになります。 `aborted_version_cleaner_last_start_time` と `aborted_version_cleaner_last_end_time` を確認し、中止となったトランザクションの消去が完了しているかを確認します。 中止となったトランザクションの消去が完了した後は、`oldest_aborted_transaction_id` の値が上位に移動するはずです。
-1. 中止となったトランザクションが最近、正常に完了しなかった場合、エラー ログを確認し、`VersionCleaner` の問題を報告しているメッセージがないか確認します。
+2. データベースが可用性グループに含まれる場合、`secondary_low_water_mark` を確認してください。 これは `sys.dm_hadr_database_replica_states` によって報告される `low_water_mark_for_ghosts` と同じです。 `sys.dm_hadr_database_replica_states` を問い合わせ、いずれかのレプリカでこの値が隠されていないか確認します。これも PVS の消去を妨げるためです。
+3. `min_transaction_timestamp` (あるいは、オンライン PVS の消去が妨げられている場合は `online_index_min_transaction_timestamp`) を確認し、それに基づいて列 `transaction_sequence_num` の `sys.dm_tran_active_snapshot_database_transactions` を確認し、古いスナップショット トランザクションが PVS の消去を妨げているセッションを見つけます。
+4. 上記のいずれも該当しない場合、中止となったトランザクションによって消去が妨げられていることになります。 `aborted_version_cleaner_last_start_time` と `aborted_version_cleaner_last_end_time` を確認し、中止となったトランザクションの消去が完了しているかを確認します。 中止となったトランザクションの消去が完了した後は、`oldest_aborted_transaction_id` の値が上位に移動するはずです。
+5. 中止となったトランザクションが最近、正常に完了しなかった場合、エラー ログを確認し、`VersionCleaner` の問題を報告しているメッセージがないか確認します。
+
+トラブルシューティングの支援として、以下のサンプル クエリをお使いください。
+
+```sql
+SELECT pvss.persistent_version_store_size_kb / 1024. / 1024 AS persistent_version_store_size_gb,
+       pvss.online_index_version_store_size_kb / 1024. / 1024 AS online_index_version_store_size_gb,
+       pvss.current_aborted_transaction_count,
+       pvss.aborted_version_cleaner_start_time,
+       pvss.aborted_version_cleaner_end_time,
+       dt.database_transaction_begin_time AS oldest_transaction_begin_time,
+       asdt.session_id AS active_transaction_session_id,
+       asdt.elapsed_time_seconds AS active_transaction_elapsed_time_seconds
+FROM sys.dm_tran_persistent_version_store_stats AS pvss
+LEFT JOIN sys.dm_tran_database_transactions AS dt
+ON pvss.oldest_active_transaction_id = dt.transaction_id
+   AND
+   pvss.database_id = dt.database_id
+LEFT JOIN sys.dm_tran_active_snapshot_database_transactions AS asdt
+ON pvss.min_transaction_timestamp = asdt.transaction_sequence_num
+   OR
+   pvss.online_index_min_transaction_timestamp = asdt.transaction_sequence_num
+WHERE pvss.database_id = DB_ID();
+```

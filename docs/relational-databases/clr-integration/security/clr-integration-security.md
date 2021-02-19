@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 05d7a471-c5d5-4730-b903-e4edc8157bb4
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: b0f5c1ba58efb8fddcf5375d2a38fbf9f227f43f
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: 7774d83d959bccea3a1de1d7d0a06660d52c191b
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92196871"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641909"
 ---
 # <a name="clr-integration-security"></a>CLR 統合のセキュリティ
 
@@ -55,7 +55,7 @@ ms.locfileid: "92196871"
   
  マネージド メソッドが別のアセンブリに含まれるクラスのメソッドを起動する際に生じる問題について説明します。  
   
- [アプリケーション ドメインと CLR 統合のセキュリティ](/previous-versions/sql/2014/database-engine/dev-guide/allowing-partially-trusted-callers?view=sql-server-2014)  
+ [アプリケーション ドメインと CLR 統合のセキュリティ](/previous-versions/sql/2014/database-engine/dev-guide/allowing-partially-trusted-callers?view=sql-server-2014&preserve-view=true)  
  アセンブリがアプリケーション ドメインに読み込まれるしくみを説明します。  
   
 ## <a name="see-also"></a>参照  

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: ''
 ms.technology: connectivity
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - transitioning states [ODBC], connection
 - connection transitions [ODBC]
@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 6b6e1a47-4a52-41c8-bb9e-7ddeae09913e
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: a5f7fecf0ad25311e9d96f4db8554c1cdbf24e91
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 57135740af1c8b7a4b8637b33adacf280c025e6d
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88339448"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100071766"
 ---
 # <a name="connection-transitions"></a>接続の遷移
 ODBC 接続の状態は次のとおりです。  
   
-|州|説明|  
+|状態|説明|  
 |-----------|-----------------|  
 |C0|未割り当ての環境、未割り当ての接続|  
 |C1|割り当て済みの環境、未割り当ての接続|  
@@ -54,7 +54,7 @@ ODBC 接続の状態は次のとおりです。
   
  [4] この行は、 *Handletype* が SQL_HANDLE_DESC されたときの遷移を示しています。  
   
- [5] 有効なハンドルをポイントする*OutputHandlePtr*で**SQLAllocHandle**を呼び出すと、そのハンドルの前の内容に関係なく、そのハンドルが上書きされ、ODBC ドライバーで問題が発生する可能性があります。 ODBC アプリケーションプログラミングでは、 * \* OutputHandlePtr*に対して定義されているものと同じアプリケーション変数を使用して**SQLAllocHandle**を2回呼び出すことはできません。これを再割り当てする前に、 **sqlfreehandle**を呼び出してハンドルを解放します。 このような方法で ODBC ハンドルを上書きすると、ODBC ドライバーの一部で動作が不安定になったりエラーが発生したりする可能性があります。  
+ [5] 有効なハンドルをポイントする *OutputHandlePtr* で **SQLAllocHandle** を呼び出すと、そのハンドルの前の内容に関係なく、そのハンドルが上書きされ、ODBC ドライバーで問題が発生する可能性があります。 ODBC アプリケーションプログラミングでは、 *\* OutputHandlePtr* に対して定義されているものと同じアプリケーション変数を使用して **SQLAllocHandle** を2回呼び出すことはできません。これを再割り当てする前に、 **sqlfreehandle** を呼び出してハンドルを解放します。 このような方法で ODBC ハンドルを上書きすると、ODBC ドライバーの一部で動作が不安定になったりエラーが発生したりする可能性があります。  
   
 ## <a name="sqlbrowseconnect"></a>SQLBrowseConnect  
   
@@ -145,9 +145,9 @@ ODBC 接続の状態は次のとおりです。
 |--------------------|------------------------|----------------------|----------------------|----------------------|----------------------|------------------------|  
 |(IH)|(IH)|(IH)|(IH)|(IH)|--[1] C6 [2] C6 [3]|--|  
   
- [1] 接続が自動コミットモードであり、実行されたステートメントがカーソルの*cursor* *指定*(SELECT ステートメントなど) ではありませんでした。または、接続が手動コミットモードであり、実行されたステートメントはトランザクションを開始しませんでした。  
+ [1] 接続が自動コミットモードであり、実行されたステートメントがカーソルの *指定*(SELECT ステートメントなど) ではありませんでした。または、接続が手動コミットモードであり、実行されたステートメントはトランザクションを開始しませんでした。  
   
- [2] 接続が自動コミットモードになりました。実行されたステートメントは、 *カーソル*の *指定* (select ステートメントなど) でした。  
+ [2] 接続が自動コミットモードになりました。実行されたステートメントは、 *カーソル* の *指定* (select ステートメントなど) でした。  
   
  [3] 接続が手動コミットモードであり、データソースがトランザクションを開始しました。  
   

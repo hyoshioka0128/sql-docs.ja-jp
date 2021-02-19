@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: aa366d98-8c7a-4189-bdd8-1d663b243d33
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: dd933007e37f193b9574999137ebd75371f8dda9
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: fa1900c084fd28ca93d9dcf9c89329f6896ea344
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88984453"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100050092"
 ---
 # <a name="getpermissions-and-setpermissions-methods-example-vb"></a>GetPermissions および SetPermissions メソッドの例 (VB)
 この例では、 [Getpermissions](./getpermissions-method-adox.md) メソッドと [SetPermissions](./setpermissions-method-adox.md) メソッドを示します。 次のコードでは、Orders テーブルへのフルアクセスが管理者ユーザーに与えられます。  

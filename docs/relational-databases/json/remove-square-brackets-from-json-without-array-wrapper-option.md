@@ -12,16 +12,16 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: jroth
 ms.custom: seo-dt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: f4580a7c3a566ba14f5cf20e177760751a451791
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: a89834561766af4458ea8242b1d8dcd0ad5d430e
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88490909"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97483364"
 ---
 # <a name="remove-square-brackets-from-json---without_array_wrapper-option"></a>WITHOUT_ARRAY_WRAPPER オプションを使用して JSON から角かっこを削除する
-[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
+[!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sqlserver2016-asdb.md)]
 
 既定で **FOR JSON** 句の JSON 出力を囲んでいる角かっこを削除するには、 **WITHOUT_ARRAY_WRAPPER** オプションを指定します。 単一要素の配列の代わりに、単一の JSON オブジェクトを出力として生成するには、このオプションと単一行の結果を使います。
 
@@ -37,7 +37,7 @@ SELECT 2015 as year, 12 as month, 15 as day
 FOR JSON PATH, WITHOUT_ARRAY_WRAPPER 
 ```  
 
- **WITHOUT_ARRAY_WRAPPER** オプションを使用した**結果**  
+ **WITHOUT_ARRAY_WRAPPER** オプションを使用した **結果**  
   
 ```json  
 {
@@ -47,7 +47,7 @@ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER
 } 
 ```  
   
- **WITHOUT_ARRAY_WRAPPER** オプションを使わない**結果** (既定)  
+ **WITHOUT_ARRAY_WRAPPER** オプションを使わない **結果** (既定)  
   
 ```json  
 [{
@@ -69,7 +69,7 @@ ORDER BY ModifiedDate
 FOR JSON PATH, WITHOUT_ARRAY_WRAPPER 
 ```  
   
- **WITHOUT_ARRAY_WRAPPER** オプションを使用した**結果**  
+ **WITHOUT_ARRAY_WRAPPER** オプションを使用した **結果**  
   
 ```json  
 {
@@ -87,7 +87,7 @@ FOR JSON PATH, WITHOUT_ARRAY_WRAPPER
 } 
 ```  
   
- **WITHOUT_ARRAY_WRAPPER** オプションを使わない**結果** (既定)  
+ **WITHOUT_ARRAY_WRAPPER** オプションを使わない **結果** (既定)  
   
 ```json  
 [{

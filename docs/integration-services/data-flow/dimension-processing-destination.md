@@ -22,11 +22,11 @@ ms.assetid: 4c49bb95-7259-42f4-a785-bb6aaf5f8566
 author: chugugrace
 ms.author: chugu
 ms.openlocfilehash: 67a93e031afddb7533cea5251c4882da2760fbfe
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.sourcegitcommit: 192f6a99e19e66f0f817fdb1977f564b2aaa133b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92195398"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96123498"
 ---
 # <a name="dimension-processing-destination"></a>ディメンション処理変換先
 
@@ -101,7 +101,7 @@ ms.locfileid: "92195398"
   
 ### <a name="options"></a>オプション  
  **[既定のエラー構成を使用する]**  
- 既定の [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] エラー処理を使用するかどうかを指定します。 既定では、この値は **True**です。  
+ 既定の [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)] エラー処理を使用するかどうかを指定します。 既定では、この値は **True** です。  
   
  **[キー エラー アクション]**  
  許容されないキー値を持つレコードを処理する方法を指定します。  
@@ -138,7 +138,7 @@ ms.locfileid: "92195398"
 |**ReportAndStop**|エラーを報告して処理を停止します。|  
   
  **[重複キー]**  
- 重複キーのエラーに対する操作を指定します。 既定では、この値は **IgnoreError**です。  
+ 重複キーのエラーに対する操作を指定します。 既定では、この値は **IgnoreError** です。  
   
 |値|説明|  
 |-----------|-----------------|  
@@ -147,7 +147,7 @@ ms.locfileid: "92195398"
 |**ReportAndStop**|エラーを報告して処理を停止します。|  
   
  **[不明な種類に変換された NULL キー]**  
- NULL キーが **UnknownMember** 値に変換された場合に実行する操作を指定します。 既定では、この値は **IgnoreError**です。  
+ NULL キーが **UnknownMember** 値に変換された場合に実行する操作を指定します。 既定では、この値は **IgnoreError** です。  
   
 |値|説明|  
 |-----------|-----------------|  

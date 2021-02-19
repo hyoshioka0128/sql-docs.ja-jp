@@ -4,22 +4,37 @@ description: 各リリースの Sybase (SybaseToSQL) の SQL Server Migration As
 author: nahk-ivanov
 ms.prod: sql
 ms.custom: ''
-ms.date: 9/28/2020
+ms.date: 12/17/2020
 ms.reviewer: ''
 ms.technology: ssma
 ms.topic: conceptual
 ms.assetid: 2be0cf8d-6dbe-443a-abbd-036249922205
 ms.author: alexiva
-ms.openlocfilehash: fdbe37ddb915e64c5f947a64078e574a8eed8bbd
-ms.sourcegitcommit: b93beb4f03aee2c1971909cb1d15f79cd479a35c
+ms.openlocfilehash: e63eea932696ca0304443722b40518017ae43485
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91497796"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100065047"
 ---
 # <a name="whats-new-in-ssma-for-sap-ase-sybasetosql"></a>SSMA for SAP ASE の新機能 (SybaseToSQL)
 
 この記事では、各リリースでの SAP ASE (旧称 SSMA for Sybase) の変更 (SSMA) の SQL Server Migration Assistant を示します。
+
+## <a name="ssma-v816"></a>SSMA v 8.16
+
+SSMA for SAP ASE の v 8.16 リリースには、次の変更が含まれています。
+
+* レガシパーサーのサポートを削除する
+* データベースから更新されていないオブジェクトの問題を修正します
+
+## <a name="ssma-v815"></a>SSMA v 8.15
+
+SSMA for SAP ASE の v 8.15 リリースには、いくつかのユーザー補助機能の強化に加えて、次の変更が含まれています。
+
+* 改良評価レポートを最新のブラウザーで動作させる
+* Azure AD 認証にデータベースによって提供される権限を使用する
+* ファイルから読み込まれたステートメントの名前付けを改善する
 
 ## <a name="ssma-v814"></a>SSMA v 8.14
 
@@ -73,7 +88,7 @@ SSMA for SAP ASE のバージョン8.7 リリースでは、グラフィカル�
 
 ユーザビリティとパフォーマンスを向上させるために設計された一連の修正に加えて、SSMA for SAP ASE のリリースは、ユーザーが変換されたコードで SSMA の拡張プロパティを省略できるようにする設定を追加することによって強化されています。
 
-Ssma for SAP ASE でこの設定を利用するには、[**ツール**] [プロジェクト] [  >  **設定**]  >  **[全般**  >  **変換**] に移動し、[その**他**] の [**拡張プロパティを省略**] 設定の値を **[はい]** に更新します。
+Ssma for SAP ASE でこの設定を利用するには、[**ツール**] [プロジェクト] [  >  **設定**]  >  **[全般**  >  **変換**] に移動し、[その **他**] の [**拡張プロパティを省略**] 設定の値を **[はい]** に更新します。
 
 ![拡張プロパティの設定を省略する](../sybase/media/ssma-omit-extended-properties.png)
 
@@ -299,7 +314,7 @@ SSMA for Sybase の2010年7月のリリースは、次のように追加され�
 
 * SQL Server 2008 R2 への移行のサポート。
 * コマンドライン実行用の新しい SSMA コンソールアプリケーション。
-* サーバー側とクライアント側の両方のデータ移行エンジンを使用したデータ移行のサポート。
+* Server-Side と Client-Side の両方のデータ移行エンジンを使用したデータ移行のサポート。
 * データ移行での "カスタム SELECT" ステートメントのサポート。
 * Sybase ASE 15.0.3 と15.5 からの移行のサポート。
 
@@ -341,7 +356,7 @@ SSMA for Sybase の2006年11月のリリースには、次の変更が含まれ�
   * のユーザーメッセージエラー番号 `RAISERROR` 。
   * `UPDATE` 未解決の識別子を含むステートメント。
 * 新しい移行オプションが追加されました。このオプションを使用すると、SSMA が日付範囲外の日付をどのように処理するかを指定でき [!INCLUDE [ssNoVersion](../../includes/ssnoversion-md.md)] ます。
-* [ **Sql** ] タブに、書式設定された**sql**設定が追加されました。これにより、コードの読みやすさが向上します。
+* [ **Sql** ] タブに、書式設定された **sql** 設定が追加されました。これにより、コードの読みやすさが向上します。
 * バグの修正 (次を含む):
   * SSMA で `LOCK TABLE <table> IN { SHARED | EXCLUSIVE } MODE` `TABLOCK` は、またはヒントを `TABLOCKX` テーブルの後続のクエリに追加することによって、ステートメントを変換するようになりました `SELECT` 。
   * 文字式でバイナリ型を使用するときに、必要なキャストが追加されるようになりました。

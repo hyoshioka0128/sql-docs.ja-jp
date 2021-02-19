@@ -18,13 +18,13 @@ ms.assetid: c75d0d4b-4008-4e71-9a9d-cee2a566bd3b
 author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: edb5d6b73305b9acc840c2f34461c3056a3b9cbd
-ms.sourcegitcommit: a5398f107599102af7c8cda815d8e5e9a367ce7e
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: ef973df188c8df74ccddb2415094afb4e25c399c
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92006474"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100345392"
 ---
 # <a name="transparent-data-encryption-tde"></a>Transparent Data Encryption (TDE)
 
@@ -227,7 +227,7 @@ CREATE DATABASE ENCRYPTION KEY、ALTER DATABASE ENCRYPTION KEY、DROP DATABASE E
 
 データベースで TDE を有効にするには、[!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] で暗号化スキャンを行う必要があります。 スキャンによって、データ ファイルからバッファー プールに各ページが読み取られ、暗号化されたページがディスクに書き戻されます。
 
-暗号化スキャンをより詳細に制御できるように、[!INCLUDE[sql-server-2019](../../../includes/sssqlv15-md.md)] には、suspend および resume 構文を含む、TDE スキャンが導入されています。 システムのワークロードが大きい場合や、ビジネス クリティカルな時間に、スキャンを一時停止し、後でスキャンを再開することができます。
+暗号化スキャンをより詳細に制御できるように、[!INCLUDE[sql-server-2019](../../../includes/sssql19-md.md)] には、suspend および resume 構文を含む、TDE スキャンが導入されています。 システムのワークロードが大きい場合や、ビジネス クリティカルな時間に、スキャンを一時停止し、後でスキャンを再開することができます。
 
 TDE 暗号化のスキャンを一時停止するには、次の構文を使用します。
 
@@ -314,7 +314,7 @@ TDE を使用してデータベースを暗号化する場合、バッファー 
 
 ## <a name="tde-and-in-memory-oltp"></a>TDE とインメモリ OLTP
 
-インメモリ OLTP オブジェクトを含むデータベースで、TDE を有効にすることができます。 [!INCLUDE[ssSQL15](../../../includes/sssql15-md.md)] と [!INCLUDE[ssSDSfull](../../../includes/sssdsfull-md.md)] では、TDE を有効した場合、インメモリ OLTP ログ レコードとデータが暗号化されます。 [!INCLUDE[ssSQL14](../../../includes/sssql14-md.md)] では、TDE を有効した場合、インメモリ OLTP ログ レコードは暗号化されますが、MEMORY_OPTIMIZED_DATA ファイル グループのファイルは暗号化されません。
+インメモリ OLTP オブジェクトを含むデータベースで、TDE を有効にすることができます。 [!INCLUDE[sssql16-md](../../../includes/sssql16-md.md)] と [!INCLUDE[ssSDSfull](../../../includes/sssdsfull-md.md)] では、TDE を有効した場合、インメモリ OLTP ログ レコードとデータが暗号化されます。 [!INCLUDE[ssSQL14](../../../includes/sssql14-md.md)] では、TDE を有効した場合、インメモリ OLTP ログ レコードは暗号化されますが、MEMORY_OPTIMIZED_DATA ファイル グループのファイルは暗号化されません。
 
 ## <a name="related-tasks"></a>関連タスク
 

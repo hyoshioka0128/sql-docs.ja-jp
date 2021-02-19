@@ -8,14 +8,13 @@ ms.date: 08/06/2019
 ms.topic: how-to
 author: garyericson
 ms.author: garye
-ms.reviewer: davidph
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: 632b380b1935d380661903f18d56fe09aa9eff77
-ms.sourcegitcommit: 8f062015c2a033f5a0d805ee4adabbe15e7c8f94
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: e7480b4d31685be402c98892557ddfb5f7db0ab5
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91227147"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470983"
 ---
 # <a name="tips-for-using-r-packages"></a>R パッケージを使用するためのヒント
 
@@ -37,11 +36,11 @@ R パッケージは、他の複数のパッケージに依存していること
 
 [CRAN](https://cran.r-project.org/) や [Bioconductor](https://www.bioconductor.org/) など、R パッケージには複数のソースがあります。 R 言語の公式サイト (<https://www.r-project.org/>) には、このようなリソースの多くが掲載されています。 Microsoft は、オープンソース R ([MRO](https://mran.microsoft.com/)) やその他のパッケージの配布用に [MRAN](https://mran.microsoft.com/open) を提供しています。 多くのパッケージは GitHub に公開されており、開発者はそこでソース コードを入手できます。
 
-::: moniker range=">=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2016"
 R パッケージは複数のコンピューティング プラットフォームで動作します。 インストールするバージョンが Windows バイナリであることを確認してください。
 ::: moniker-end
 
-::: moniker range=">=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-linux-ver15"
 R パッケージは複数のコンピューティング プラットフォームで動作します。 インストールするバージョンが Linux バイナリであることを確認してください。
 ::: moniker-end
 
@@ -91,9 +90,9 @@ SQL Server に R パッケージをインストールする方法の詳細につ
 
 ## <a name="see-also"></a>参照
 
-::: moniker range="<=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="<=sql-server-2017"
 + [R ツールを使用してパッケージをインストールする](install-r-packages-standard-tools.md)
 ::: moniker-end
-::: moniker range=">sql-server-2017||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions"
+::: moniker range=">sql-server-2017||>=sql-server-linux-ver15||=azuresqldb-mi-current"
 + [sqlmlutils で新しい R パッケージをインストールする](install-additional-r-packages-on-sql-server.md)
 ::: moniker-end

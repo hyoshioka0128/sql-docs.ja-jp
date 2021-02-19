@@ -6,7 +6,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: jrasnick
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - STRING_SPLIT
 - STRING_SPLIT_TSQL
@@ -17,13 +17,13 @@ helpviewer_keywords:
 ms.assetid: 3273dbf3-0b4f-41e1-b97e-b4f67ad370b9
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: = azuresqldb-current||=azure-sqldw-latest||>= sql-server-2016 || >= sql-server-linux-2017 || = sqlallproducts-allversions
-ms.openlocfilehash: a1251ed1fa5d3fc7a520259fdfc360ac5b5fb22c
-ms.sourcegitcommit: 197a6ffb643f93592edf9e90b04810a18be61133
+monikerRange: = azuresqldb-current||=azure-sqldw-latest||>= sql-server-2016 || >= sql-server-linux-2017
+ms.openlocfilehash: 472da04cc9a93a8f7846927ad9ae4595766e9116
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91379781"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99207892"
 ---
 # <a name="string_split-transact-sql"></a>STRING_SPLIT (Transact-SQL)
 
@@ -36,6 +36,9 @@ ms.locfileid: "91379781"
 STRING_SPLIT は、互換性レベル 130 以上にする必要があります。 レベルが 130 未満の場合、SQL Server から STRING_SPLIT 関数を検出できません。
 
 データベースの互換性レベルを変更するには、「[データベースの互換性レベルの表示または変更](../../relational-databases/databases/view-or-change-the-compatibility-level-of-a-database.md)」を参照してください。
+
+> [!NOTE]
+> Azure Synapse Analytics の STRING_SPLIT に、互換性の構成は必要ありません。
 
 ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
@@ -50,10 +53,10 @@ STRING_SPLIT ( string , separator )
 ## <a name="arguments"></a>引数
 
  *string*  
- 任意の文字型 (**nvarchar**、**varchar**、**nchar**、**char** など) の[式](../../t-sql/language-elements/expressions-transact-sql.md)です。  
+ 任意の文字型 (**nvarchar**、**varchar**、**nchar**、**char** など) の [式](../../t-sql/language-elements/expressions-transact-sql.md)です。  
   
  *separator*  
- 任意の文字型の 1 文字の[式](../../t-sql/language-elements/expressions-transact-sql.md)です (**nvarchar(1)** 、**varchar(1)** 、**nchar(1)** 、**char(1)** など)。連結する部分文字列の区切り文字として使用されます。  
+ 任意の文字型の 1 文字の [式](../../t-sql/language-elements/expressions-transact-sql.md)です (**nvarchar(1)** 、**varchar(1)** 、**nchar(1)** 、**char(1)** など)。連結する部分文字列の区切り文字として使用されます。  
   
 ## <a name="return-types"></a>戻り値の型  
 
@@ -63,7 +66,7 @@ STRING_SPLIT ( string , separator )
 
 **STRING_SPLIT** には、部分文字列を区切った文字列と、区切り記号や区切りとして使用される 1 文字を入力します。 STRING_SPLIT では、行に部分文字列が含まれる、単一列テーブルが出力されます。 出力列の名前は **value** です。
 
-出力行には任意の順序を指定できます。 この順序が入力文字列の部分文字列の順序と一致するかどうかは保証_されません_。 SELECT ステートメントで ORDER BY 句 (`ORDER BY value`) を使用して、最終的な並べ替え順序をオーバーライドできます。
+出力行には任意の順序を指定できます。 この順序が入力文字列の部分文字列の順序と一致するかどうかは保証 _されません_。 SELECT ステートメントで ORDER BY 句 (`ORDER BY value`) を使用して、最終的な並べ替え順序をオーバーライドできます。
 
 0x0000 (**char(0)** ) の Windows 照合順序で未定義の文字は、STRING_SPLIT に含めることができません。
 

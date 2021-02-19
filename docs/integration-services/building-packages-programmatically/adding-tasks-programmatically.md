@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 5d4652d5-228c-4238-905c-346dd8503fdf
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 1a14261bb60eece1497594a6aa70b46748ed8cd1
-ms.sourcegitcommit: 827ad02375793090fa8fee63cc372d130f11393f
+ms.openlocfilehash: 1650323cede5f91401faa97e820917b2549d5050
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89480804"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100355114"
 ---
 # <a name="adding-tasks-programmatically"></a>プログラムによるタスクの追加
 

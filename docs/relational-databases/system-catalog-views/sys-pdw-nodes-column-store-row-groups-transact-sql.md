@@ -6,30 +6,30 @@ ms.date: 08/05/2020
 ms.prod: sql
 ms.technology: data-warehouse
 ms.reviewer: ''
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 ms.assetid: 17a4c925-d4b5-46ee-9cd6-044f714e6f0e
 author: ronortloff
 ms.author: rortloff
-monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest || = sqlallproducts-allversions'
-ms.openlocfilehash: c08303bd13b96089ac2b9e0f82c83a992ec83e63
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
+ms.openlocfilehash: d4b9ea267b0dbf23ff304dc7632a2fdc742d37dc
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92038301"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99186576"
 ---
 # <a name="syspdw_nodes_column_store_row_groups-transact-sql"></a>sys.pdw_nodes_column_store_row_groups (Transact-sql)
 [!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
 
-  では、管理者がでシステム管理を決定できるように、セグメント単位でクラスター化列ストアインデックス情報が提供され [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] ます。 **sys.pdw_nodes_column_store_row_groups** には、物理的に格納された行の総数 (削除済みとしてマークされている行を含む) と、削除済みとしてマークされた行の数の列があります。 **Sys.pdw_nodes_column_store_row_groups**を使用して、削除された行の割合が高く、再構築が必要な行グループを特定します。  
+  では、管理者がでシステム管理を決定できるように、セグメント単位でクラスター化列ストアインデックス情報が提供され [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] ます。 **sys.pdw_nodes_column_store_row_groups** には、物理的に格納された行の総数 (削除済みとしてマークされている行を含む) と、削除済みとしてマークされた行の数の列があります。 **Sys.pdw_nodes_column_store_row_groups** を使用して、削除された行の割合が高く、再構築が必要な行グループを特定します。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
 |**object_id**|**int**|基になるテーブルの ID。 これは、[制御] ノードの論理テーブルの object_id ではなく、計算ノードの物理テーブルです。 たとえば、object_id が、sys. テーブルの object_id と一致しません。<br /><br /> テーブルと結合するには、sys.pdw_index_mappings を使用します。|  
-|**index_id**|**int**|*Object_id*テーブルのクラスター化列ストアインデックスの ID。|  
-|**partition_number**|**int**|行グループ *row_group_id*を保持するテーブルパーティションの ID。 *Partition_number*を使用して、この DMV を sys パーティションに参加させることができます。|  
+|**index_id**|**int**|*Object_id* テーブルのクラスター化列ストアインデックスの ID。|  
+|**partition_number**|**int**|行グループ *row_group_id* を保持するテーブルパーティションの ID。 *Partition_number* を使用して、この DMV を sys パーティションに参加させることができます。|  
 |**row_group_id**|**int**|この行グループの ID。 これは、パーティション内で一意です。|  
 |**dellta_store_hobt_id**|**bigint**|デルタ行グループの hobt_id で、行グループの種類がデルタではない場合は NULL。 デルタ行グループとは、新しいレコードを受け入れる読み取り/書き込み行グループのことです。 デルタ行グループの状態は **OPEN** です。 デルタ行グループは、行ストア形式のままであり、列ストア形式に圧縮されていません。|  
 |**state**|**tinyint**|State_description に関連付けられている ID 番号。<br /><br /> 1 = OPEN <br /><br /> 2 = CLOSED <br /><br /> 3 = 圧縮|  
@@ -40,14 +40,14 @@ ms.locfileid: "92038301"
 |**pdw_node_id**|**int**|ノードの一意の ID [!INCLUDE[ssSDW](../../includes/sssdw-md.md)] 。|  
 |**distribution_id**|**int**|ディストリビューションの一意の ID。|
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  クラスター化または非クラスター化列ストアインデックスを持つ各テーブルの列ストア行グループごとに1行の値を返します。  
   
- **Sys.pdw_nodes_column_store_row_groups**を使用して、行グループに含まれる行の数と行グループのサイズを決定します。  
+ **Sys.pdw_nodes_column_store_row_groups** を使用して、行グループに含まれる行の数と行グループのサイズを決定します。  
   
- 行グループ内の削除済みの行の数が合計行数に対して占める割合が高くなると、テーブルの効率が低下します。 テーブルのサイズが小さくなるよう列ストア インデックスを再構築して、テーブルを読み取るために必要なディスク I/O を削減します。 列ストアインデックスを再構築するには、 **ALTER index**ステートメントの**rebuild**オプションを使用します。  
+ 行グループ内の削除済みの行の数が合計行数に対して占める割合が高くなると、テーブルの効率が低下します。 テーブルのサイズが小さくなるよう列ストア インデックスを再構築して、テーブルを読み取るために必要なディスク I/O を削減します。 列ストアインデックスを再構築するには、 **ALTER index** ステートメントの **rebuild** オプションを使用します。  
   
- 更新可能な列ストアは、まず、行ストア形式の、 **開い** ている行グループに新しいデータを挿入します。これは、デルタテーブルと呼ばれることもあります。  開いている行グループがいっぱいになると、その状態は **CLOSED**に変わります。 閉じた行グループは、組ムーバーによって列ストア形式に圧縮され、状態が **圧縮**に変わります。  組ムーバーは、定期的にウェイクアップし、列ストア行グループに圧縮できる閉じた行グループがあるかどうかを確認するバックグラウンドプロセスです。  また、組ムーバーは、すべての行が削除された行グループの割り当てを解除します。 割り当てが解除された行グループは、 **廃止**済みとしてマークされます。 組ムーバーをすぐに実行するには、 **ALTER INDEX**ステートメントの**再構成**オプションを使用します。  
+ 更新可能な列ストアは、まず、行ストア形式の、 **開い** ている行グループに新しいデータを挿入します。これは、デルタテーブルと呼ばれることもあります。  開いている行グループがいっぱいになると、その状態は **CLOSED** に変わります。 閉じた行グループは、組ムーバーによって列ストア形式に圧縮され、状態が **圧縮** に変わります。  組ムーバーは、定期的にウェイクアップし、列ストア行グループに圧縮できる閉じた行グループがあるかどうかを確認するバックグラウンドプロセスです。  また、組ムーバーは、すべての行が削除された行グループの割り当てを解除します。 割り当てが解除された行グループは、 **廃止** 済みとしてマークされます。 組ムーバーをすぐに実行するには、 **ALTER INDEX** ステートメントの **再構成** オプションを使用します。  
   
  列ストア行グループは、いっぱいになると圧縮され、新しい行の受け入れを停止します。 圧縮されたグループから行が削除されると、削除された行は、保持されますが、削除済みとしてマークされます。 圧縮されたグループに対する更新は、圧縮されたグループからの削除、および OPEN 状態のグループへの挿入として実装されます。  
   
@@ -76,6 +76,7 @@ JOIN sys.pdw_nodes_indexes AS NI
 JOIN sys.pdw_nodes_column_store_row_groups AS CSRowGroups  
     ON CSRowGroups.object_id = NI.object_id   
     AND CSRowGroups.pdw_node_id = NI.pdw_node_id  
+    AND CSRowGroups.distribution_id = NI.distribution_id
     AND CSRowGroups.index_id = NI.index_id      
 WHERE total_rows > 0
 --WHERE t.name = '<table_name>'   

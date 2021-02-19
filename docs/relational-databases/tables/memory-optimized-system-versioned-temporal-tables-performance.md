@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: 2e110984-7703-4806-a24b-b41e8c3018c6
 author: markingmyname
 ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 5c4b159f41f998155d4013413e69346ab0c4a239
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 6a81d2b397418a934e51a7e9e0f8491d10e0cdba
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89516970"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97462593"
 ---
 # <a name="memory-optimized-system-versioned-temporal-tables-performance"></a>システムでバージョン管理されたメモリ最適化テンポラル テーブルのパフォーマンス
 
@@ -30,7 +30,7 @@ ms.locfileid: "89516970"
 - 既存の非テンポラル テーブルにシステム バージョン管理を追加すると、履歴テーブルが自動的に更新されるため、更新操作および削除操作のパフォーマンスに影響が及ぶ可能性があります。
 - 更新操作および削除操作はすべて内部のメモリ最適化履歴テーブルに記録されるため、ワークロードでこれらの 2 つの操作が大量に使用される場合に予期しない量のメモリ消費が発生する可能性があります。 したがって、以下のことをお勧めします。
 
-  - 領域をクリーンアップして利用可能な RAM を増やすために、現在のテーブルに対する大量の削除操作を実行しない。 データの削除は、 [sp_xtp_flush_temporal_history](../../relational-databases/system-stored-procedures/temporal-table-sp-xtp-flush-temporal-history.md)を手動で呼び出してデータ フラッシュを途中で実行しながら複数のバッチに分けて実行するか、または **SYSTEM_VERSIONING = OFF**のときに実行することを検討してください。
+  - 領域をクリーンアップして利用可能な RAM を増やすために、現在のテーブルに対する大量の削除操作を実行しない。 データの削除は、 [sp_xtp_flush_temporal_history](../../relational-databases/system-stored-procedures/temporal-table-sp-xtp-flush-temporal-history.md)を手動で呼び出してデータ フラッシュを途中で実行しながら複数のバッチに分けて実行するか、または **SYSTEM_VERSIONING = OFF** のときに実行することを検討してください。
   - 一度に大量のテーブルの更新を実行しない。そのような操作を実行すると、非テンポラル メモリ最適化テーブルの更新操作と比較して 2 倍の量のメモリが消費される場合があります。 メモリ消費量が 2 倍になる状態は一時的なものです。これは、定期的にデータ フラッシュ タスクが実行され、計画された境界内の内部ステージング テーブルのメモリ消費量が安定状態 (現在のテンポラル テーブルのメモリ使用量の約 10%) に保たれるためです。 大量の更新を実行するときは、複数のバッチに分けて実行するか、**SYSTEM_VERSIONING = OFF** のときに実行してください (更新を使用して、新しく追加された列の既定値を設定するなど)。
 
 - データ フラッシュ タスクのアクティブ化の期間は構成できませんが、 [sp_xtp_flush_temporal_history](../../relational-databases/system-stored-procedures/temporal-table-sp-xtp-flush-temporal-history.md)のときに実行することを検討してください。

@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - Procedures
@@ -17,22 +17,22 @@ helpviewer_keywords:
 ms.assetid: dc7a38e1-93b9-4034-9af2-ff419e8fb2a3
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: b3f98420fc85cabd2ccc584817ac6ca9a9203081
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 8285f74a4c5702e21dc2cd34e86be11ee4fc93a0
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88983573"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100049822"
 ---
 # <a name="procedures-collection-adox"></a>Procedures コレクション (ADOX)
 カタログのすべての [プロシージャ](./procedure-object-adox.md) オブジェクトを格納します。  
   
 ## <a name="remarks"></a>解説  
- **Procedures**コレクションの[Append](./append-method-adox-procedures.md)メソッドは、ADOX で一意です。 次のようにすることができます。  
+ **Procedures** コレクションの [Append](./append-method-adox-procedures.md)メソッドは、ADOX で一意です。 次の操作を行うことができます。  
   
--   **追加**メソッドを使用して、新しいプロシージャをコレクションに追加します。  
+-   **追加** メソッドを使用して、新しいプロシージャをコレクションに追加します。  
   
- その他のプロパティとメソッドは、ADO コレクションの標準です。 次のようにすることができます。  
+ その他のプロパティとメソッドは、ADO コレクションの標準です。 次の操作を行うことができます。  
   
 -   [項目](../ado-api/item-property-ado.md)プロパティを使用して、コレクション内のプロシージャにアクセスします。  
   

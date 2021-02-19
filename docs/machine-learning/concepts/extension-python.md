@@ -8,13 +8,13 @@ ms.topic: conceptual
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 8ed1adfff31afc57f50e6b5e0757370b152cd544
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15'
+ms.openlocfilehash: da47f54b73faf9507e5c815526bb14d1aa6d8396
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956519"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471293"
 ---
 # <a name="python-language-extension-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services の Python 言語拡張機能
 [!INCLUDE [SQL Server 2017 and later](../../includes/applies-to-version/sqlserver2017.md)]
@@ -70,7 +70,7 @@ SQL Server の "内部で" Python を実行する場合は、Python スクリプ
 ![script-in-db-python](../../machine-learning/python/media/script-in-db-python2.png)
 
 1. ストアド プロシージャに渡されたパラメーター `@language='Python'` によって、Python ランタイムに対する要求が示されます。 この要求は SQL Server からスタート パッド サービスに送信されます。
-Linux の場合、SQL では**スタート パッド** サービスを使用して、ユーザーごとに個別のスタート パッド プロセスとの通信が行われます。 詳細については、[機能拡張アーキテクチャの図](extensibility-framework.md#architecture-diagram)を参照してください。
+Linux の場合、SQL では **スタート パッド** サービスを使用して、ユーザーごとに個別のスタート パッド プロセスとの通信が行われます。 詳細については、[機能拡張アーキテクチャの図](extensibility-framework.md#architecture-diagram)を参照してください。
 2. スタート パッド サービスによって適切なランチャーが起動されます (この場合は PythonLauncher)。
 3. PythonLauncher によって外部の Python35 プロセスが開始されます。
 4. BxlServer と Python ランタイムとの連携により、データ交換や、作業結果の保存が管理されます。

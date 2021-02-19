@@ -10,12 +10,12 @@ ms.author: maghan
 ms.reviewer: “”
 ms.custom: seo-lt-2019
 ms.date: 04/26/2017
-ms.openlocfilehash: fd971797825b0af5b98ab498ce96549aad468e0c
-ms.sourcegitcommit: b860fe41b873977649dca8c1fd5619f294c37a58
+ms.openlocfilehash: c469770ab64401498b35038f7b20e6f245793804
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/29/2020
-ms.locfileid: "85518982"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100020745"
 ---
 # <a name="how-to-install-and-manage-feature-extensions"></a>方法:機能拡張のインストールと管理
 
@@ -37,7 +37,7 @@ ms.locfileid: "85518982"
 |拡張機能の種類|コマンド ライン サービス|インストール フォルダー|  
 |------------------|------------------------|------------------|  
 |SQL Server の単体テストのカスタム テスト条件|MSBuild または MSTest を使用して、Visual Studio 2013 の開発者コマンド プロンプトなどのコマンド ライン ツールから単体テストを実行できます。|Visual Studio 内で実行する場合と同じです。|  
-|ビルド コントリビューター<br /><br />配置コントリビューター|[SqlPackage.exe](../tools/sqlpackage.md)。または、データベース プロジェクトをビルドするときに MSBuild のターゲットの配置または公開を使用します。|MSBuild:Visual Studio 内で実行する場合と同じです。<br /><br />[SqlPackage.exe](../tools/sqlpackage.md):Visual Studio ディレクトリ内にある場合は、上記と同じです。<br /><br />SqlPackage.exe と他の DacFx DLL がそのディレクトリ以外の場所にある場合、機能拡張は同じディレクトリか、C:\Program Files (x86)\\MicrosoftSQL Server\120\DAC\bin\Extensions 内に配置する必要があります。|  
+|ビルド コントリビューター<br /><br />配置コントリビューター|[SqlPackage.exe](../tools/sqlpackage/sqlpackage.md)。または、データベース プロジェクトをビルドするときに MSBuild のターゲットの配置または公開を使用します。|MSBuild:Visual Studio 内で実行する場合と同じです。<br /><br />[SqlPackage.exe](../tools/sqlpackage/sqlpackage.md):Visual Studio ディレクトリ内にある場合は、上記と同じです。<br /><br />SqlPackage.exe と他の DacFx DLL がそのディレクトリ以外の場所にある場合、機能拡張は同じディレクトリか、C:\Program Files (x86)\\MicrosoftSQL Server\120\DAC\bin\Extensions 内に配置する必要があります。|  
 |静的コード分析ルール|MSBuild を使用して、プロジェクトをビルドし、静的コード分析を実行できます。<br /><br />また、作成したアプリケーションから、CodeAnalysisService API を使用してコード分析を実行することもできます。 この場合、機能拡張のルックアップ ルールは、SqlPackage.exe を使用する場合と同様に機能します。|ビルド コントリビューターと配置コントリビューターで同じフォルダーが使用されます|  
   
 > [!NOTE]  

@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
 ms.assetid: ''
-monikerRange: '>= sql-server-2017 || = sqlallproducts-allversions'
-ms.openlocfilehash: ac19c1c8e0dfc2e8a8cf4711400eb3c5cb29b5f2
-ms.sourcegitcommit: 610e3ebe21ac6575850a29641a32f275e71557e3
+monikerRange: '>= sql-server-2017'
+ms.openlocfilehash: d19971ffb5a8be19448212157c46a969e25af557
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91784829"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471593"
 ---
 # <a name="configure-sql-server-always-on-availability-group-on-windows-and-linux-cross-platform"></a>Windows 上と Linux 上で SQL Server の Always On 可用性グループを構成する (クロスプラットフォーム)
 
@@ -69,7 +69,7 @@ AG を作成する手順は、読み取りスケール ワークロード用に 
 
    次の図に、この手順全体を示します。
 
-   ![Linux 上で可用性グループを有効にする](./media/sql-server-linux-availability-group-cross-platform/2-sqlserver-linux-set-hadr.png)
+   ![コマンドが表示されている Git Bash ウィンドウのスクリーンショット。](./media/sql-server-linux-availability-group-cross-platform/2-sqlserver-linux-set-hadr.png)
 
 1. 両方のサーバーで hosts ファイルを構成するか、DNS にサーバー名を登録します。
 
@@ -110,7 +110,7 @@ AG を作成する手順は、読み取りスケール ワークロード用に 
 
    次の図では、証明書とキーに対して所有権とグループが正しく設定されています。
 
-   ![Linux 上で可用性グループを有効にする](./media/sql-server-linux-availability-group-cross-platform/3-cert-key-owner-group.png)
+   ![/var/opt/mssql/data フォルダーの .cer と .pvk が表示されている Git Bash ウィンドウのスクリーンショット。](./media/sql-server-linux-availability-group-cross-platform/3-cert-key-owner-group.png)
 
 
 1. セカンダリ レプリカで、データベース ログインとパスワードを作成し、マスター キーを作成します。

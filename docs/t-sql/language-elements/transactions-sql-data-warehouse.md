@@ -12,13 +12,13 @@ dev_langs:
 ms.assetid: 87e5e593-a121-4428-9d3c-3af876224e35
 author: ronortloff
 ms.author: rortloff
-monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest || = sqlallproducts-allversions'
-ms.openlocfilehash: 5a8b1aa27a301d67df200967b6cba36f042a7f75
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
+ms.openlocfilehash: 7f22305a8b264b97675fed8949e11fa23f42b42f
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92038896"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97464193"
 ---
 # <a name="transactions-azure-synapse-analytics"></a>トランザクション (Azure Synapse Analytics)
 

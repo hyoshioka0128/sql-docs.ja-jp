@@ -11,18 +11,18 @@ ms.topic: conceptual
 ms.assetid: d2546e40-fdfc-414b-8196-76ed1f124bf5
 author: MightyPen
 ms.author: genemi
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 8914f495767e6942b12f5c4dd7b61fd4a6a5bebf
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 6ed83ee45844bd7299ca58eeeeed95849d0399f8
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85735030"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100353658"
 ---
 # <a name="scalar-user-defined-functions-for-in-memory-oltp"></a>インメモリ OLTP でのユーザー定義のスカラー関数
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
-  [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]で、ネイティブ コンパイル済みのスカラー ユーザー定義関数を作成および削除できます。 これらのユーザー定義関数を変更することもできます。 ネイティブ コンパイルでは、Transact-SQL でのユーザー定義関数の評価のパフォーマンスが向上します。  
+  [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)]で、ネイティブ コンパイル済みのスカラー ユーザー定義関数を作成および削除できます。 これらのユーザー定義関数を変更することもできます。 ネイティブ コンパイルでは、Transact-SQL でのユーザー定義関数の評価のパフォーマンスが向上します。  
   
  ネイティブ コンパイル済みのスカラー ユーザー定義関数を変更する際には、操作が実行されて新しいバージョンの関数がコンパイルされる間、アプリケーションを引き続き使用できます。  
   

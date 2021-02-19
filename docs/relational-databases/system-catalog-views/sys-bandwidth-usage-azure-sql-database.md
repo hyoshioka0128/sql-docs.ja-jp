@@ -1,11 +1,11 @@
 ---
 description: sys.bandwidth_usage (Azure SQL Database)
-title: bandwidth_usage (Azure SQL Database) |Microsoft Docs
+title: sys.bandwidth_usage (Azure SQL Database) |Microsoft Docs
 ms.custom: ''
 ms.date: 01/28/2019
 ms.service: sql-database
 ms.reviewer: ''
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - bandwidth_usage
 - sys.bandwidth_usage
@@ -19,13 +19,13 @@ helpviewer_keywords:
 ms.assetid: 43ed8435-f059-4907-b5c0-193a258b394a
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: = azuresqldb-current || = sqlallproducts-allversions
-ms.openlocfilehash: d39486a513e012fc53e66c408145bbf148696ff2
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: = azuresqldb-current
+ms.openlocfilehash: fcf2ac0f0336a7567987d056d0a568d6892b5d1e
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88402528"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100338905"
 ---
 # <a name="sysbandwidth_usage-azure-sql-database"></a>sys.bandwidth_usage (Azure SQL Database)
 
@@ -34,11 +34,11 @@ ms.locfileid: "88402528"
 > [!NOTE]
 > これは、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] V11. * * にのみ適用されます。  
   
- ** [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] V11 データベースサーバー**の各データベースによって使用されるネットワーク帯域幅に関する情報を返します。 指定のデータベースに対して返される各行は、1 時間にわたる 1 つの方向とクラスの使用状況をまとめたものです。  
+ **[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] V11 データベースサーバー** の各データベースによって使用されるネットワーク帯域幅に関する情報を返します。 指定のデータベースに対して返される各行は、1 時間にわたる 1 つの方向とクラスの使用状況をまとめたものです。  
   
  **このは、では非推奨とされました [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 。**  
   
- **Bandwidth_usage**ビューには、次の列が含まれています。  
+ **Sys.bandwidth_usage** ビューには、次の列があります。  
   
 |列名|説明|  
 |-----------------|-----------------|  
@@ -57,7 +57,7 @@ ms.locfileid: "88402528"
   
 ### <a name="external-and-internal-classes"></a>外部クラスと内部クラス
 
- 特定の時点で使用される各データベースについて、bandwidth_usage ビューは、クラスと帯域幅の使用状況の方向を示す行を返します **。** 次の例は、指定されたデータベースに対して公開される可能性があるデータを示しています。 この例では、時刻は 2012-04-21 17:00:00 になっています。これは、ピーク タイムの時間帯における発生時刻です。 データベース名は Db1 です。 この例では、次のように、 **bandwidth_usage** は、受信方向と送信方向、外部クラスと内部クラスの4つの組み合わせすべてに対して行を返しました。  
+ **Sys.bandwidth_usage** ビューは、特定の時点で使用される各データベースについて、クラスと帯域幅の使用状況の方向を示す行を返します。 次の例は、指定されたデータベースに対して公開される可能性があるデータを示しています。 この例では、時刻は 2012-04-21 17:00:00 になっています。これは、ピーク タイムの時間帯における発生時刻です。 データベース名は Db1 です。 この例では、次のように、 **sys.bandwidth_usage** は、受信方向と送信方向の4つの組み合わせすべて、および外部クラスと内部クラスの行を返しました。  
   
 |time|database_name|方向|class|time_period|数量|  
 |----------|--------------------|---------------|-----------|------------------|--------------|  

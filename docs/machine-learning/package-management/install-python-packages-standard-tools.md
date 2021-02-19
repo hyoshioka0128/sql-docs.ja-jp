@@ -7,14 +7,13 @@ ms.date: 01/21/2020
 ms.topic: how-to
 author: garyericson
 ms.author: garye
-ms.reviewer: davidph
-monikerRange: =sql-server-2017||=sqlallproducts-allversions
-ms.openlocfilehash: 8b2e61640c03af160985d9e65262eb3da600c3c2
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+monikerRange: =sql-server-2017
+ms.openlocfilehash: 37d7f95f4140e0cab778ac4864757fbe75b1ff0c
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956693"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100082633"
 ---
 # <a name="install-packages-with-python-tools-on-sql-server"></a>Python ツールを使用して SQL Server 上にパッケージをインストールする
 [!INCLUDE [SQL Server 2017 only](../../includes/applies-to-version/sqlserver2017-only.md)]

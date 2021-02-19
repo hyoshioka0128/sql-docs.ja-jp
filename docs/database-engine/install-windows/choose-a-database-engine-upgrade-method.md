@@ -8,15 +8,15 @@ ms.reviewer: ''
 ms.technology: install
 ms.topic: conceptual
 ms.assetid: 5e57a427-2e88-4ef6-b142-4ccad97bcecc
-author: MashaMSFT
-ms.author: mathoma
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: fd4acadbf94f45c1b155d10a70a376ea11c326e4
-ms.sourcegitcommit: 2f868a77903c1f1c4cecf4ea1c181deee12d5b15
+author: cawrites
+ms.author: chadam
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: 185e718e1b131398f81fe782c4d5fcb843489c3a
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91670506"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100347839"
 ---
 # <a name="choose-a-database-engine-upgrade-method"></a>データベース エンジンのアップグレード方法の選択
 [!INCLUDE [SQL Server -Windows Only](../../includes/applies-to-version/sql-windows-only.md)]
@@ -38,7 +38,7 @@ SQL Server の以前のリリースから [!INCLUDE[ssDE](../../includes/ssde-md
 >   - [Azure で SQL Server オプションを選択する](/azure/azure-sql/azure-sql-iaas-vs-paas-what-is-overview)  
   
 ## <a name="upgrade-in-place"></a>インプレース アップグレード  
- このアプローチでは、SQL Server セットアップ プログラムは、既存の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ビットを新しい [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] ビットで置き換えて、既存の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インストールをアップグレードし、次に各システム データベースとユーザー データベースをアップグレードします。  インプレース アップグレード アプローチは最も簡単ですが、ある程度のダウンタイムを必要とし、フォールバックが必要な場合にフォールバックに時間がかかるため、すべてのシナリオでサポートされるわけではありません。 インプレース アップグレードがサポートされるシナリオとサポートされないシナリオの詳細については、「 [サポートされているバージョンとエディションのアップグレード](../../database-engine/install-windows/supported-version-and-edition-upgrades-2017.md)」を参照してください。  
+ このアプローチでは、SQL Server セットアップ プログラムは、既存の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ビットを新しい [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] ビットで置き換えて、既存の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インストールをアップグレードし、次に各システム データベースとユーザー データベースをアップグレードします。  インプレース アップグレード アプローチは最も簡単ですが、ある程度のダウンタイムを必要とし、フォールバックが必要な場合にフォールバックに時間がかかるため、すべてのシナリオでサポートされるわけではありません。 インプレース アップグレードがサポートされるシナリオとサポートされないシナリオの詳細については、「 [サポートされているバージョンとエディションのアップグレード](../../database-engine/install-windows/supported-version-and-edition-upgrades-version-15.md)」を参照してください。  
   
  このアプローチは、次のシナリオでよく使われます。  
   
@@ -86,10 +86,10 @@ SQL Server の以前のリリースから [!INCLUDE[ssDE](../../includes/ssde-md
  たとえば、このアプローチは、次をアップグレードする場合に使用できます。  
   
 -   サポートされていないオペレーティング システムへの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインストール。    
--   [!INCLUDE[ss2016](../../includes/sssql15-md.md)] 以降は x86 インストールをサポートしていないため、SQL Server の x86 インストール。   
+-   [!INCLUDE[ss2016](../../includes/sssql16-md.md)] 以降は x86 インストールをサポートしていないため、SQL Server の x86 インストール。   
 -   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 新しいハードウェアや新しいバージョンのオペレーティング システムへ。    
 -   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 。   
--   [!INCLUDE[ss2016](../../includes/sssql15-md.md)] 以降は SQL Server 2005 のインプレース アップグレードをサポートしていないため、SQL Server 2005。 詳細については、「[SQL Server 2005 からアップグレードしますか?](../../sql-server/end-of-support/sql-server-end-of-life-overview.md)」を参照してください。
+-   [!INCLUDE[ss2016](../../includes/sssql16-md.md)] 以降は SQL Server 2005 のインプレース アップグレードをサポートしていないため、SQL Server 2005。 詳細については、「[SQL Server 2005 からアップグレードしますか?](../../sql-server/end-of-support/sql-server-end-of-life-overview.md)」を参照してください。
 
   
 新規インストール アップグレードに必要な手順は、アタッチされたストレージを使用するか、または SAN ストレージを使用するかどうかによってやや異なります。  

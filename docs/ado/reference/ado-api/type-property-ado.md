@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - _Parameter::Type
@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 8a4c079f-9f4f-4545-801d-85983b8db71e
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 9f4dcfd3c22363ab4950e03844647f990a34f4d5
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: feb964fbc6cdd59be000e82c4a58b359cfc23d57
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88988313"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100056437"
 ---
 # <a name="type-property-ado"></a>Type プロパティ (ADO)
 [パラメーター](./parameter-object.md)、[フィールド](./field-object.md)、または[プロパティ](./property-object-ado.md)オブジェクトの操作の種類またはデータ型を示します。  
@@ -31,7 +31,7 @@ ms.locfileid: "88988313"
  [DataTypeEnum](./datatypeenum.md)値を設定または返します。  
   
 ## <a name="remarks"></a>解説  
- **Parameter**オブジェクトの場合、 **Type**プロパティは読み取り/書き込み可能です。 [レコード](./record-object-ado.md)の[フィールド](./fields-collection-ado.md)コレクションに追加された新しい**フィールド**オブジェクトの場合は、**フィールド**の [[値](./value-property-ado.md)] プロパティが指定され、データプロバイダーが**フィールド**コレクションの[Update](./update-method.md)メソッドを呼び出して新しい**フィールド**を正常に追加した後にのみ、「読み取り/書き込み専用」と**入力**します。  
+ **Parameter** オブジェクトの場合、 **Type** プロパティは読み取り/書き込み可能です。 [レコード](./record-object-ado.md)の [フィールド](./fields-collection-ado.md)コレクションに追加された新しい **フィールド** オブジェクトの場合は、**フィールド** の [[値](./value-property-ado.md)] プロパティが指定され、データプロバイダーが **フィールド** コレクションの [Update](./update-method.md)メソッドを呼び出して新しい **フィールド** を正常に追加した後にのみ、「読み取り/書き込み専用」と **入力** します。  
   
  他のすべてのオブジェクトについては、 **Type** プロパティは読み取り専用です。  
   

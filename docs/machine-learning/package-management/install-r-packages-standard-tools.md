@@ -7,14 +7,13 @@ ms.date: 11/20/2019
 ms.topic: how-to
 author: garyericson
 ms.author: garye
-ms.reviewer: davidph
-monikerRange: =sql-server-2016||=sql-server-2017||=sqlallproducts-allversions
-ms.openlocfilehash: 55e02294fcf59b4dc8d826f468b21ff8718492ef
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+monikerRange: =sql-server-2016||=sql-server-2017
+ms.openlocfilehash: e54df6240cf1bf4dcaee7813eaf614a84c31a0f6
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956680"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100082623"
 ---
 # <a name="install-packages-with-r-tools"></a>R ツールを使用してパッケージをインストールする
 
@@ -25,7 +24,7 @@ ms.locfileid: "91956680"
 標準の R ツールの他に、次のものを使用して R パッケージをインストールできます。
 
 + [RevoScaleR](install-r-packages-with-revoscaler.md)
-::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2017"
 + [T-SQL](install-r-packages-with-tsql.md) (CREATE EXTERNAL LIBRARY)
 ::: moniker-end
 
@@ -36,13 +35,13 @@ ms.locfileid: "91956680"
 
 + R パッケージ ライブラリは SQL Server インスタンスの Program Files フォルダー内にあります。既定では、このフォルダーにインストールするには管理者権限が必要です。 詳細については、[パッケージ ライブラリの場所](../package-management/r-package-information.md#default-r-library-location)に関するページを参照してください。
 
-  ::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+  ::: moniker range="=sql-server-2017"
   管理者以外のユーザーは、RevoScaleR 9.0.1 以降または CREATE EXTERNAL LIBRARY を使用してパッケージをインストールできます。 **dbo_owner** ユーザー、または CREATE EXTERNAL LIBRARY 権限を持つユーザーは、現在のデータベースに R パッケージをインストールできます。 詳細については、次を参照してください。
   + [RevoScaleR を使用して R パッケージをインストールする](install-r-packages-with-revoscaler.md)
   + [T-SQL (CREATE EXTERNAL LIBRARY) を使用して SQL Server に R パッケージをインストールする](install-r-packages-with-tsql.md)
   ::: moniker-end
 
-  ::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+  ::: moniker range="=sql-server-2016"
   管理者以外のユーザーは、RevoScaleR 9.0.1 以降を使用してパッケージをインストールできます。 **dbo_owner** ユーザーは、現在のデータベースに R パッケージをインストールできます。 詳細については、「[RevoScaleR を使用して R パッケージをインストールする](install-r-packages-with-revoscaler.md)」を参照してください。
   ::: moniker-end
 
@@ -57,13 +56,13 @@ SQL Server からインターネットにアクセスできる場合は、標準
 
 1. インスタンス ライブラリの場所を特定し (「[R パッケージ情報の取得](../package-management/r-package-information.md)」を参照)、R ツールがインストールされているフォルダーに移動します。
 
-   ::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+   ::: moniker range="=sql-server-2016"
    たとえば、SQL Server の既定のインスタンスの既定のパスは次のようになります。
 
    `C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES\bin\x64\`
    ::: moniker-end
 
-   ::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+   ::: moniker range="=sql-server-2017"
    たとえば、SQL Server の既定のインスタンスの既定のパスは次のようになります。
 
    `C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\R_SERVICES\bin\x64\`
@@ -88,13 +87,13 @@ ZIP ファイルが SQL Server インスタンス上にある場合は、標準�
 
 1. インスタンス ライブラリの場所を特定し (「[R パッケージ情報の取得](../package-management/r-package-information.md)」を参照)、R ツールがインストールされているフォルダーに移動します。 
 
-   ::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+   ::: moniker range="=sql-server-2016"
    たとえば、SQL Server の既定のインスタンスの既定のパスは次のようになります。
 
    `C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\R_SERVICES\bin\x64\`
    ::: moniker-end
 
-   ::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+   ::: moniker range="=sql-server-2017"
    たとえば、SQL Server の既定のインスタンスの既定のパスは次のようになります。
 
    `C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\R_SERVICES\bin\x64\`

@@ -2,7 +2,7 @@
 title: Always Encrypted サーバー構成オプションのエンクレーブの種類を構成する | Microsoft Docs
 description: Always Encrypted でセキュリティで保護されたエンクレーブを有効または無効にする方法について説明します。 エンクレーブが正しく初期化されているかどうかを確認する方法について説明します。
 ms.custom: ''
-ms.date: 09/24/2018
+ms.date: 01/15/2021
 ms.prod: sql
 ms.prod_service: security
 ms.reviewer: ''
@@ -10,21 +10,21 @@ ms.technology: configuration
 ms.topic: conceptual
 author: jaszymas
 ms.author: jaszymas
-monikerRange: '>= sql-server-ver15 || = sqlallproducts-allversions'
-ms.openlocfilehash: 39ad6bdc8911a0596d619f6d6a68de07d733dd6f
-ms.sourcegitcommit: dacd9b6f90e6772a778a3235fb69412662572d02
+monikerRange: '>= sql-server-ver15'
+ms.openlocfilehash: a35a08152dcb1c551c493ac88b0073f07e1280dd
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86279418"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100059497"
 ---
 # <a name="configure-the-enclave-type-for-always-encrypted-server-configuration-option"></a>Always Encrypted サーバー構成オプションのエンクレーブの種類を構成する
 
 [!INCLUDE [sqlserver2019-windows-only](../../includes/applies-to-version/sqlserver2019-windows-only.md)]
 
-この記事では、セキュリティで保護されたエンクレーブが設定された Always Encrypted でセキュリティで保護されたエンクレーブを有効または無効にする方法について説明します。 詳細については、「[セキュア エンクレーブを使用する Always Encrypted](../../relational-databases/security/encryption/always-encrypted-enclaves.md)」を参照してください。
+この記事では、セキュリティで保護されたエンクレーブが設定された Always Encrypted でセキュリティで保護されたエンクレーブを有効または無効にする方法について説明します。 詳細については、「[セキュリティで保護されたエンクレーブが設定された Always Encrypted](../../relational-databases/security/encryption/always-encrypted-enclaves.md)」と「[SQL Server でセキュリティで保護されたエンクレーブを構成する](../../relational-databases/security/encryption/always-encrypted-enclaves-configure-enclave-type.md)」を参照してください。
 
-**列暗号化エンクレーブの種類**サーバー構成オプションを使うと、Always Encrypted に使用されるセキュリティで保護されたエンクレーブの種類を制御できます。 次のいずれかの値にオプションを設定できます。  
+**列暗号化エンクレーブの種類** サーバー構成オプションを使うと、Always Encrypted に使用されるセキュリティで保護されたエンクレーブの種類を制御できます。 次のいずれかの値にオプションを設定できます。  
   
 |値|説明|  
 |-------------------|-----------------| 
@@ -32,7 +32,7 @@ ms.locfileid: "86279418"
 |1|**仮想化ベースのセキュリティ (VBS)** 。 [!INCLUDE[ssDE](../../includes/ssde-md.md)] により、仮想化ベースのセキュリティ (VBS) エンクレーブの初期化が試みられます。
 
 > [!IMPORTANT]
-> **列暗号化エンクレーブの種類**の変更は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスを再起動するまで反映されません。
+> **列暗号化エンクレーブの種類** の変更は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスを再起動するまで反映されません。
    
 [sys.configurations (Transact-SQL)](../../relational-databases/system-catalog-views/sys-configurations-transact-sql.md) ビューを使うことで、構成されているエンクレーブの種類の値と、現在有効なエンクレーブの種類の値を確認できます。 
 

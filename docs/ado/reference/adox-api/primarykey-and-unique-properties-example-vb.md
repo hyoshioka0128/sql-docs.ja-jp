@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -16,15 +16,15 @@ helpviewer_keywords:
 ms.assetid: f536acac-06ea-4b39-bfba-ee9902b01615
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: d857dfca2b690b06f43b9be50520b4530645128f
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 4d73c47228292df199aaaaf0d93026c2a6f587e6
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88983673"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100053906"
 ---
 # <a name="primarykey-and-unique-properties-example-vb"></a>PrimaryKey および Unique プロパティの例 (VB)
-この例では、[インデックス](./index-object-adox.md)の[PrimaryKey](./primarykey-property-adox.md)および[Unique](./unique-property-adox.md)プロパティを示します。 このコードでは、2つの列を持つ新しいテーブルを作成します。 **PrimaryKey**および**Unique**プロパティを使用して、重複する値が許可されない主キーを1つの列に設定します。  
+この例では、[インデックス](./index-object-adox.md)の[PrimaryKey](./primarykey-property-adox.md)および[Unique](./unique-property-adox.md)プロパティを示します。 このコードでは、2つの列を持つ新しいテーブルを作成します。 **PrimaryKey** および **Unique** プロパティを使用して、重複する値が許可されない主キーを1つの列に設定します。  
   
 ```  
 ' BeginPrimaryKeyVB  

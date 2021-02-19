@@ -5,17 +5,17 @@ ms.custom: seo-lt-2019
 ms.date: 06/14/2017
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 ms.assetid: 57801bcc-4d51-4ffc-8454-b9cb6eddbfe0
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 5a8407d450b653c8476b152904c586996f53d55a
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+ms.openlocfilehash: c233940c1ffa016d2f09761480cb1ad697f3fb87
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85882347"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100355103"
 ---
 # <a name="useful-tools-for-troubleshooting"></a>トラブルシューティングに役立つツール
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sysprotects
 - sys.sysprotects_TSQL
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sys.sysprotects compatibility view
 - sysprotects system table
 ms.assetid: 49c9658d-fb51-4c77-94a0-fba699b0102d
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 811bdae3c05bbb934a6f135269147c8678fa7654
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 764007fdbe5148b7077c8f9ffdab9c3e77244ef1
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88482066"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99158510"
 ---
 # <a name="syssysprotects-transact-sql"></a>sys.sysによる保護 (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

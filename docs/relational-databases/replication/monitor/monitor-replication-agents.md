@@ -20,13 +20,13 @@ helpviewer_keywords:
 ms.assetid: d06ed24f-82d7-4b9e-9e40-cc9780476a71
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: =azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions
-ms.openlocfilehash: 67710fa8ef1a0e3e79797140abd1f4f2ec751287
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+monikerRange: =azuresqldb-mi-current||>=sql-server-2016
+ms.openlocfilehash: ddaa4698033f06db589ca550f39d434173e012e7
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86918709"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97477843"
 ---
 # <a name="monitor-replication-agents"></a>レプリケーション エージェントの監視
 [!INCLUDE[sql-asdbmi](../../../includes/applies-to-version/sql-asdbmi.md)]
@@ -75,7 +75,7 @@ ms.locfileid: "86918709"
   
     -   必要に応じてエージェントを開始または停止します。  
   
-    -   **[監視]** をクリックして **レプリケーション モニター**を起動します。  
+    -   **[監視]** をクリックして **レプリケーション モニター** を起動します。  
   
 5.  **[閉じる]** をクリックします。  
   
@@ -95,9 +95,9 @@ ms.locfileid: "86918709"
   
     -   必要に応じてエージェントを開始または停止します。  
   
-    -   プッシュ サブスクリプションの場合、 **[監視]** をクリックして **レプリケーション モニター**を起動します。  
+    -   プッシュ サブスクリプションの場合、 **[監視]** をクリックして **レプリケーション モニター** を起動します。  
   
-    -   プル サブスクリプションの場合、 **[ジョブ履歴の表示]** をクリックして **ログ ファイル ビューアー**を起動します。エージェント ログからの出力が表示されます。  
+    -   プル サブスクリプションの場合、 **[ジョブ履歴の表示]** をクリックして **ログ ファイル ビューアー** を起動します。エージェント ログからの出力が表示されます。  
   
 6.  **[閉じる]** をクリックします。  
   
@@ -115,7 +115,7 @@ ms.locfileid: "86918709"
   
     -   必要に応じてエージェントを開始または停止します。  
   
-    -   **[ジョブ履歴の表示]** をクリックして **ログ ファイル ビューアー**を起動します。エージェント ログからの出力が表示されます。  
+    -   **[ジョブ履歴の表示]** をクリックして **ログ ファイル ビューアー** を起動します。エージェント ログからの出力が表示されます。  
   
 5.  **[閉じる]** をクリックします。  
   

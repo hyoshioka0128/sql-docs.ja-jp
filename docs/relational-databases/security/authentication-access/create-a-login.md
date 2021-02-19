@@ -23,18 +23,18 @@ helpviewer_keywords:
 ms.assetid: fb163e47-1546-4682-abaa-8c9494e9ddc7
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 77b94fa9994a42dd11b6fa5a54fffd222e87feb2
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: bc69ec8ee89cf994c61450804887b8c60388291f
+ms.sourcegitcommit: 38e055eda82d293bf5fe9db14549666cf0d0f3c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91867442"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99250927"
 ---
 # <a name="create-a-login"></a>ログインの作成
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  このトピックでは、 [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)] または [!INCLUDE[ssSDS](../../../includes/sssds-md.md)] を使用して、 [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)] または [!INCLUDE[tsql](../../../includes/tsql-md.md)]にログインを作成する方法について説明します ログインとは、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]のインスタンスに接続しようとしている人またはプロセスの ID を指します。  
+  このトピックでは、 [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)] または [!INCLUDE[ssSDS](../../../includes/sssds-md.md)] を使用して、 [!INCLUDE[ssManStudioFull](../../../includes/ssmanstudiofull-md.md)] または [!INCLUDE[tsql](../../../includes/tsql-md.md)]にログインを作成する方法について説明します ログインとは、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]のインスタンスに接続しようとしている人またはプロセスの ID を指します。  
   
 ##  <a name="background"></a><a name="Background"></a> 背景情報  
  ログインは、セキュリティ プリンシパル、またはセキュリティで保護されたシステムで認証できるエンティティです。 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]に接続するためには、ユーザーにログインが必要です。 Windows プリンシパル (ドメイン ユーザーや Windows ドメイン グループなど) に基づいてログインを作成することも、Windows プリンシパルに基づかないログイン ( [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] ログインなど) を作成することもできます。  
@@ -147,7 +147,7 @@ ms.locfileid: "91867442"
  ログインにマップするデータベース ユーザーを指定します。 既定では、データベース ユーザーの名前はログインと同じになります。  
   
  **[既定のスキーマ]**  
- ユーザーの既定のスキーマを指定します。 ユーザーが最初に作成されるときの既定のスキーマは、 **dbo**です。 存在しない既定のスキーマを指定することもできます。 Windows グループ、証明書、非対称キーにマップされるユーザーに対して既定のスキーマを指定することはできません。  
+ ユーザーの既定のスキーマを指定します。 ユーザーが最初に作成されるときの既定のスキーマは、 **dbo** です。 存在しない既定のスキーマを指定することもできます。 Windows グループ、証明書、非対称キーにマップされるユーザーに対して既定のスキーマを指定することはできません。  
   
  **[_database_name_ では guest アカウントが有効]**  
  選択したデータベースで guest アカウントが有効かどうかを示す読み取り専用属性です。 guest アカウントを有効または無効にするには、guest アカウントの **[ログインのプロパティ]** ダイアログ ボックスの **[状態]** ページを使用します。  
@@ -230,7 +230,7 @@ ms.locfileid: "91867442"
 ##  <a name="create-a-login-using-windows-authentication-using-t-sql"></a><a name="TsqlProcedure"></a> Windows 認証と T-SQL を使用してログインを作成する  
   
  
-1.  **オブジェクト エクスプローラー**で、 [!INCLUDE[ssDE](../../../includes/ssde-md.md)]のインスタンスに接続します。  
+1.  **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDE](../../../includes/ssde-md.md)]のインスタンスに接続します。  
   
 2.  [標準] ツール バーの **[新しいクエリ]** をクリックします。  
   
@@ -246,7 +246,7 @@ ms.locfileid: "91867442"
   
 ## <a name="create-a-login-using-sql-server-authentication-using-t-sql"></a>SQL Server 認証と T-SQL を使用してログインを作成する
   
-1.  **オブジェクト エクスプローラー**で、 [!INCLUDE[ssDE](../../../includes/ssde-md.md)]のインスタンスに接続します。  
+1.  **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDE](../../../includes/ssde-md.md)]のインスタンスに接続します。  
   
 2.  [標準] ツール バーの **[新しいクエリ]** をクリックします。  
   

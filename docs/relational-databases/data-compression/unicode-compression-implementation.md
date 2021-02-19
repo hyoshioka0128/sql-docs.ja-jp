@@ -12,15 +12,15 @@ helpviewer_keywords:
 - Unicode data compression
 - compression [SQL Server], Unicode data
 ms.assetid: 44e69e60-9b35-43fe-b9c7-8cf34eaea62a
-author: MikeRayMSFT
-ms.author: mikeray
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 4c78ac0d04681c7c7fcefd708480fddbe721b5fe
-ms.sourcegitcommit: 9470c4d1fc8d2d9d08525c4f811282999d765e6e
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: f78e0bbe469861251c95a0d7fc382be4ed333dd0
+ms.sourcegitcommit: 38e055eda82d293bf5fe9db14549666cf0d0f3c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86457484"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99251117"
 ---
 # <a name="unicode-compression-implementation"></a>Unicode 圧縮の実装
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "86457484"
 >  行内に格納される場合であっても、 **nvarchar(max)** データでは Unicode 圧縮がサポートされません。 ただし、このデータ型ではページ圧縮の利点を得ることができます。  
   
 ## <a name="upgrading-from-earlier-versions-of-sql-server"></a>以前のバージョンの SQL Server からのアップグレード  
- [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースを [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] にアップグレードした場合、圧縮されているか圧縮されていないかにかかわらず、データベース オブジェクトに対して Unicode 圧縮に関連する変更は加えられません。 データベースのアップグレード後、オブジェクトには次のような影響があります。  
+ [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースを [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] にアップグレードした場合、圧縮されているか圧縮されていないかにかかわらず、データベース オブジェクトに対して Unicode 圧縮に関連する変更は加えられません。 データベースのアップグレード後、オブジェクトには次のような影響があります。  
   
 -   オブジェクトが圧縮されていない場合、何も変更は加えられず、オブジェクトは以前と同様に機能します。  
   

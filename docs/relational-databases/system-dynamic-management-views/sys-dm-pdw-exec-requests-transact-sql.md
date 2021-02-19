@@ -6,19 +6,19 @@ ms.date: 11/05/2019
 ms.prod: sql
 ms.technology: data-warehouse
 ms.reviewer: ''
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 ms.assetid: 390225cc-23e8-4051-a5f6-221e33e4c0b4
 author: XiaoyuMSFT
 ms.author: xiaoyul
-monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest || = sqlallproducts-allversions'
-ms.openlocfilehash: f62aebfe079ed8a701301ca7d5d3a5c70127407a
-ms.sourcegitcommit: 22e97435c8b692f7612c4a6d3fe9e9baeaecbb94
+monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
+ms.openlocfilehash: 44dc108960c3fe8cda9e632802185f0472eb0373
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92678899"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99142687"
 ---
 # <a name="sysdm_pdw_exec_requests-transact-sql"></a>sys.dm_pdw_exec_requests (Transact-sql)
 
@@ -39,34 +39,34 @@ ms.locfileid: "92678899"
 |label|**nvarchar (255)**|いくつかの SELECT クエリステートメントに関連付けられているオプションのラベル文字列。|' A-z '、' A-z '、' 0-9 '、' _ ' を含む任意の文字列。|  
 |error_id|**nvarchar (36)**|要求に関連付けられているエラーの一意の ID (存在する場合)。|「 [Sys.dm_pdw_errors &#40;transact-sql&#41;」を ](../../relational-databases/system-dynamic-management-views/sys-dm-pdw-errors-transact-sql.md)参照してください。エラーが発生しなかった場合は、NULL に設定します。|  
 |database_id|**int**|明示的なコンテキストによって使用されるデータベースの識別子 (たとえば、DB_X を使用します)。|「 [Transact-sql&#41;&#40;](../../relational-databases/system-catalog-views/sys-databases-transact-sql.md)の ID」を参照してください。|  
-|command|**nvarchar (4000)**|ユーザーによって送信された要求の完全なテキストを保持します。|任意の有効なクエリまたは要求テキスト。 4000バイトを超えるクエリは切り捨てられます。|  
+|コマンドを使用します|**nvarchar (4000)**|ユーザーによって送信された要求の完全なテキストを保持します。|任意の有効なクエリまたは要求テキスト。 4000バイトを超えるクエリは切り捨てられます。|  
 |resource_class|**nvarchar (20)**|この要求に使用するワークロードグループ。 |静的リソース クラス</br>staticrc10</br>staticrc20</br>staticrc30</br>staticrc40</br>staticrc50</br>staticrc60</br>staticrc70</br>staticrc80</br>            </br>動的リソース クラス</br>SmallRC</br>MediumRC</br>LargeRC</br>XLargeRC|
-|importance|**nvarchar(128)**|要求を実行するときの重要度を設定します。  これは、このワークロードグループでの要求の相対的な重要度であり、共有リソースの複数のワークロードグループにまたがっています。  分類子で指定された重要度は、ワークロードグループの重要度の設定よりも優先されます。</br>適用対象:Azure SQL Data Warehouse|NULL</br>low</br>below_normal</br>標準 (既定値)</br>above_normal</br>high|
-|group_name|**sysname** |リソースを利用する要求の場合、group_name は、要求が実行されているワークロードグループの名前です。  要求でリソースが使用されない場合、group_name は null になります。</br>適用対象:Azure SQL Data Warehouse|
+|importance|**nvarchar(128)**|要求を実行するときの重要度を設定します。  これは、このワークロードグループでの要求の相対的な重要度であり、共有リソースの複数のワークロードグループにまたがっています。  分類子で指定された重要度は、ワークロードグループの重要度の設定よりも優先されます。</br>適用対象:Azure Synapse Analytics|NULL</br>low</br>below_normal</br>標準 (既定値)</br>above_normal</br>high|
+|group_name|**sysname** |リソースを利用する要求の場合、group_name は、要求が実行されているワークロードグループの名前です。  要求でリソースが使用されない場合、group_name は null になります。</br>適用対象:Azure Synapse Analytics|
 |classifier_name|**sysname**|リソースを利用する要求の場合、リソースの割り当てに使用される分類子の名前と重要度。||
-|resource_allocation_percentage|**decimal (5, 2)**|要求に割り当てられたリソースの割合。</br>適用対象:Azure SQL Data Warehouse|
-|result_cache_hit|**int**|完了したクエリで結果セットキャッシュが使用されたかどうかを詳細に表示します。  </br>適用対象:Azure SQL Data Warehouse| 1 = 結果セットのキャッシュヒット </br> 0 = 結果セットのキャッシュミス </br> 負の整数値 = 結果セットのキャッシュが使用されなかった理由。  詳細については、「解説」を参照してください。|
+|resource_allocation_percentage|**decimal (5, 2)**|要求に割り当てられたリソースの割合。</br>適用対象:Azure Synapse Analytics|
+|result_cache_hit|**int**|完了したクエリで結果セットキャッシュが使用されたかどうかを詳細に表示します。  </br>適用対象:Azure Synapse Analytics| 1 = 結果セットのキャッシュヒット </br> 0 = 結果セットのキャッシュミス </br> 負の整数値 = 結果セットのキャッシュが使用されなかった理由。  詳細については、「解説」を参照してください。|
 |client_correlation_id|**nvarchar (255)**|クライアントセッションのオプションのユーザー定義名。  セッションに対してを設定するには、sp_set_session_context ' client_correlation_id '、' ' を呼び出し <CorrelationIDName> ます。  を実行して `SELECT SESSION_CONTEXT(N'client_correlation_id')` 値を取得します。|
 ||||
 
-## <a name="remarks"></a>解説 
+## <a name="remarks"></a>コメント 
  このビューで保持される最大行数の詳細については、「 [容量制限](/azure/sql-data-warehouse/sql-data-warehouse-service-capacity-limits#metadata) 」トピックの「メタデータ」セクションを参照してください。
 
 Result_cache_hit 列の負の整数値は、適用されているすべての理由のビットマップ値で、クエリの結果セットをキャッシュすることはできません。  この列は [|(ビットごとの OR)](../../t-sql/language-elements/bitwise-or-transact-sql.md) 次の1つまたは複数の値の積。  
   
-|[値]            |説明  |  
+|値            |説明  |  
 |-----------------|-----------------|  
 |**1**|結果セットのキャッシュヒット|  
-|**0x00** ( **0** )|結果セットのキャッシュミス|  
-|-**0x01** ( **-1** )|結果セットのキャッシュがデータベースで無効になっています。|  
-|-**0x02** ( **-2** )|結果セットのキャッシュは、セッションで無効になっています。 | 
-|-**0x04** ( **-4** )|クエリのデータソースがないため、結果セットのキャッシュが無効になっています。|  
-|-**0x08** ( **-8** )|行レベルのセキュリティ述語により、結果セットのキャッシュが無効になっています。|  
-|-**0x10** ( **-16** )|クエリでシステムテーブル、一時テーブル、または外部テーブルが使用されているため、結果セットのキャッシュが無効になっています。|  
-|-**0x20** ( **-32** )|クエリにはランタイム定数、ユーザー定義関数、または非決定的関数が含まれているので、結果セットのキャッシュは無効になっています。|  
-|-**0x40** ( **-64** )|結果セットのキャッシュは、推定結果セットのサイズが 10 GB >ため、無効になっています。|  
-|-**0x80** ( **-128** ) |結果セットに大きなサイズ (>64 kb) の行が含まれているため、結果セットのキャッシュが無効になっています。|  
-|-**0x100** ( **-256** ) |詳細な動的データマスクが使用されているため、結果セットのキャッシュが無効になっています。|  
+|**0x00** (**0**)|結果セットのキャッシュミス|  
+|-**0x01** (**-1**)|結果セットのキャッシュがデータベースで無効になっています。|  
+|-**0x02** (**-2**)|結果セットのキャッシュは、セッションで無効になっています。 | 
+|-**0x04** (**-4**)|クエリのデータソースがないため、結果セットのキャッシュが無効になっています。|  
+|-**0x08** (**-8**)|行レベルのセキュリティ述語により、結果セットのキャッシュが無効になっています。|  
+|-**0x10** (**-16**)|クエリでシステムテーブル、一時テーブル、または外部テーブルが使用されているため、結果セットのキャッシュが無効になっています。|  
+|-**0x20** (**-32**)|クエリにはランタイム定数、ユーザー定義関数、または非決定的関数が含まれているので、結果セットのキャッシュは無効になっています。|  
+|-**0x40**(**-64**)|結果セットのキャッシュは、推定結果セットのサイズが 10 GB >ため、無効になっています。|  
+|-**0x80**(**-128**) |結果セットに大きなサイズ (>64 kb) の行が含まれているため、結果セットのキャッシュが無効になっています。|  
+|-**0x100**(**-256**) |詳細な動的データマスクが使用されているため、結果セットのキャッシュが無効になっています。|  
 
 ## <a name="permissions"></a>アクセス許可
 
@@ -81,4 +81,4 @@ Result_cache_hit 列の負の整数値は、適用されているすべての理
   
 ## <a name="see-also"></a>参照
 
- [SQL Data Warehouse および並列データウェアハウスの動的管理ビュー &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sql-and-parallel-data-warehouse-dynamic-management-views.md)
+ [Azure Synapse Analytics と並列データウェアハウスの動的管理ビュー &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sql-and-parallel-data-warehouse-dynamic-management-views.md)

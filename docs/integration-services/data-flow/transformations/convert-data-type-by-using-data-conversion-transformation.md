@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4aabbe4f-7666-4672-865a-9627bd25fbfd
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 55585698aaeddc5147455bda61b14eac695071fe
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 9056c9d657d1d5f4c9b24004c0ce70a2d32ed6e2
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88477761"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100350733"
 ---
 # <a name="convert-data-type-with-data-conversion-transformation"></a>データ変換の変換を使用してデータ型を変換する
 

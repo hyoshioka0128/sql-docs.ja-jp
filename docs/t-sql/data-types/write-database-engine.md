@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - Write_TSQL
 - Write
@@ -18,17 +18,17 @@ helpviewer_keywords:
 ms.assetid: 7c554334-d2d9-4eae-a4ae-097aa4020e1a
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: eb08d6f4d10a5cdf0047022185e24828b3ae37b5
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+ms.openlocfilehash: aba1271dd68224d237595a81d61b23d8db38b7c7
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92037455"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99211488"
 ---
 # <a name="write-database-engine"></a>Write (データベース エンジン)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
-書き込み のバイナリ表現を書き込みます **SqlHierarchyId** を渡されたに **BinaryWriter**です。 書き込み [!INCLUDE[tsql](../../includes/tsql-md.md)]を使用して呼び出すことができない です。 代わりに、CAST または CONVERT を使用してください。
+書き込み のバイナリ表現を書き込みます **SqlHierarchyId** を渡されたに **BinaryWriter** です。 書き込み [!INCLUDE[tsql](../../includes/tsql-md.md)]を使用して呼び出すことができない です。 代わりに、CAST または CONVERT を使用してください。
   
 ## <a name="syntax"></a>構文  
   
@@ -46,7 +46,7 @@ void Write( BinaryWriter w )
 **CLR の戻り値の型: void**
   
 ## <a name="remarks"></a>解説  
-書き込み [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]内部で使用される 必要な場合など**からデータを読み込むときに、 hierarchyid** 列です。 Write は、**hierarchyid** と **varbinary**間で変換が行われる場合も呼び出されます。
+書き込み [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]内部で使用される 必要な場合など **からデータを読み込むときに、 hierarchyid** 列です。 Write は、**hierarchyid** と **varbinary** 間で変換が行われる場合も呼び出されます。
   
 ## <a name="examples"></a>例  
   

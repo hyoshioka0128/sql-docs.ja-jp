@@ -4,11 +4,11 @@ ms.service: sql
 ms.topic: include
 ms.date: 07/20/2020
 ms.author: mikeray
-ms.openlocfilehash: 7fc83de797785e60d9704ab5cafd079839e5f76e
-ms.sourcegitcommit: 29a2be59c56f8a4b630af47760ef38d2bf56a3eb
+ms.openlocfilehash: 83310f3d3c748e265f6374d4fdc2447d88f65c58
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "86899553"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100019683"
 ---
 Azure Data Factory の SSIS 統合ランタイム

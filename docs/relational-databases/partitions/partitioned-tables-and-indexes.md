@@ -2,7 +2,7 @@
 description: パーティション テーブルとパーティション インデックス
 title: パーティション テーブルとパーティション インデックス | Microsoft Docs
 ms.custom: ''
-ms.date: 01/20/2016
+ms.date: 1/5/2021
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: ''
@@ -16,20 +16,20 @@ helpviewer_keywords:
 ms.assetid: cc5bf181-18a0-44d5-8bd7-8060d227c927
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: e02e5e2e6449a1c8c62072d0cd5a86d44cdf22ce
-ms.sourcegitcommit: a5398f107599102af7c8cda815d8e5e9a367ce7e
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 8a8f1575cab349c6c501f6aa98509e8595efeb77
+ms.sourcegitcommit: 04d101fa6a85618b8bc56c68b9c006b12147dbb5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92006002"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99049133"
 ---
 # <a name="partitioned-tables-and-indexes"></a>パーティション テーブルとパーティション インデックス
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
-  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、テーブルおよびインデックスのパーティション分割をサポートします。 パーティション テーブルとパーティション インデックスのデータは、必要に応じてデータベース内の複数のファイル グループに分散できるように、複数の単位に分割されます。 行のグループが各パーティションにマップされるように、データは行方向にパーティション分割されます。 1 つのインデックスまたはテーブルのすべてのパーティションは、同じデータベース内に存在する必要があります。 データに対するクエリまたは更新の実行時は、テーブルやインデックスが 1 つの論理エンティティとして扱われます。 [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] SP1 より前では、パーティション テーブルとパーティション インデックスは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のすべてのエディションで使用できるわけではありません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の各エディションでサポートされる機能の一覧については、「[Editions and Supported Features for SQL Server 2016](../../sql-server/editions-and-components-of-sql-server-2016.md)」 (SQL Server 2016 のエディションとサポートされる機能) を参照してください。  
+  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、テーブルおよびインデックスのパーティション分割をサポートします。 パーティション テーブルとパーティション インデックスのデータは、必要に応じてデータベース内の複数のファイル グループに分散できるように、複数の単位に分割されます。 行のグループが各パーティションにマップされるように、データは行方向にパーティション分割されます。 1 つのインデックスまたはテーブルのすべてのパーティションは、同じデータベース内に存在する必要があります。 データに対するクエリまたは更新の実行時は、テーブルやインデックスが 1 つの論理エンティティとして扱われます。 [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] SP1 より前では、パーティション テーブルとパーティション インデックスは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のすべてのエディションで使用できるわけではありません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の各エディションでサポートされる機能の一覧については、「[Editions and Supported Features for SQL Server 2016](../../sql-server/editions-and-components-of-sql-server-2016.md)」 (SQL Server 2016 のエディションとサポートされる機能) を参照してください。  
   
 > [!IMPORTANT]  
-> [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] では、既定で最大 15,000 個のパーティションをサポートします。 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以前のバージョンでは、パーティションの数は既定で 1,000 に制限されていました。 x86 ベースのシステムでは、パーティション数が 1,000 を超えるテーブルまたはインデックスを作成できますが、サポートされていません。  
+> [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] では、既定で最大 15,000 個のパーティションをサポートします。 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以前のバージョンでは、パーティションの数は既定で 1,000 に制限されていました。  
   
 ## <a name="benefits-of-partitioning"></a>パーティション分割の利点  
  大きなテーブルやインデックスをパーティション分割することで、次のような管理上およびパフォーマンス上の利点が得られます。  
@@ -55,9 +55,12 @@ ms.locfileid: "92006002"
   
 ### <a name="partition-scheme"></a>パーティション構成 
 パーティション関数のパーティションを一連のファイル グループにマップするデータベース オブジェクト。 パーティションを別々のファイル グループに配置する主な理由は、パーティションのバックアップ操作を個別に実行できるようにすることです。 これは、バックアップを個別のファイル グループで実行できるからです。  
+
+> [!NOTE]
+> Azure [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] では、プライマリ ファイル グループのみがサポートされています。  
   
 ### <a name="partitioning-column"></a>パーティション分割列  
-パーティション関数が、テーブルまたはインデックスをパーティション分割するために使用するテーブルまたはインデックスの列。 パーティション関数に参加する計算列は、明示的に PERSISTED とマークされている必要があります。 **timestamp**型を除き、インデックス列として使用できるすべてのデータ型をパーティション分割列として使用できます。 **ntext**、 **text**、 **image**、 **xml**、 **varchar(max)** 、 **nvarchar(max)** 、または **varbinary(max)** データ型を指定することはできません。 また、Microsoft .NET Framework 共通言語ランタイム (CLR) ユーザー定義型の列とエイリアス データ型の列を指定することはできません。  
+パーティション関数が、テーブルまたはインデックスをパーティション分割するために使用するテーブルまたはインデックスの列。 パーティション関数に参加する計算列は、明示的に PERSISTED とマークされている必要があります。 **timestamp** 型を除き、インデックス列として使用できるすべてのデータ型をパーティション分割列として使用できます。 **ntext**、 **text**、 **image**、 **xml**、 **varchar(max)** 、 **nvarchar(max)** 、または **varbinary(max)** データ型を指定することはできません。 また、Microsoft .NET Framework 共通言語ランタイム (CLR) ユーザー定義型の列とエイリアス データ型の列を指定することはできません。  
   
 ### <a name="aligned-index"></a>固定されたインデックス  
 対応するテーブルと同じパーティション構成に基づいて構築されたインデックス。 テーブルとインデックスが固定されている状態では、両者のパーティション構造を保ったまま [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] がパーティションをすばやく効率的に切り替えることができます。 ベース テーブルに固定させるために、インデックスを同じ名前のパーティション関数に加える必要はありません。 ただし、インデックスとベース テーブルのパーティション関数が次の点で基本的に同じでなければなりません。
@@ -66,13 +69,13 @@ ms.locfileid: "92006002"
  3. パーティションに同じ境界値が定義されている。  
 
 #### <a name="partitioning-clustered-indexes"></a>クラスター化インデックスのパーティション分割
-クラスター化インデックスをパーティション分割するときは、クラスター化キーにパーティション分割列を含める必要があります。 一意でないクラスター化インデックスをパーティション分割するとき、クラスター化キーでパーティション分割列を明示的に指定しない場合は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の既定動作によりクラスター化インデックスのキーの一覧にパーティション分割列が追加されます。 クラスター化インデックスが一意である場合、クラスター化インデックス キーにパーティション分割列を含めるように明示的に指定する必要があります。        
+クラスター化インデックスをパーティション分割するときは、クラスター化キーにパーティション分割列を含める必要があります。 一意でないクラスター化インデックスをパーティション分割するとき、クラスター化キーでパーティション分割列を明示的に指定しない場合は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の既定動作によりクラスター化インデックスのキーの一覧にパーティション分割列が追加されます。 クラスター化インデックスが一意である場合、クラスター化インデックス キーにパーティション分割列を含めるように明示的に指定する必要があります。 クラスター化インデックスとインデックス アーキテクチャの詳細については、「[クラスター化インデックスのデザイン ガイドライン](../../relational-databases/sql-server-index-design-guide.md#Clustered)」を参照してください。       
 
 #### <a name="partitioning-nonclustered-indexes"></a>非クラスター化インデックスのパーティション分割
-一意の非クラスター化インデックスをパーティション分割するときは、インデックス キーにパーティション分割列を含める必要があります。 一意でない非クラスター化インデックスをパーティション分割するときは、ベース テーブルにインデックスを固定するため、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の既定動作によりパーティション分割列がインデックスの非キー (付加) 列として追加されます。 既にパーティション分割列がインデックスに存在している場合、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は追加を行いません。 
+一意の非クラスター化インデックスをパーティション分割するときは、インデックス キーにパーティション分割列を含める必要があります。 一意でない非クラスター化インデックスをパーティション分割するときは、ベース テーブルにインデックスを固定するため、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の既定動作によりパーティション分割列がインデックスの非キー (付加) 列として追加されます。 既にパーティション分割列がインデックスに存在している場合、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] は追加を行いません。 非クラスター化インデックスとインデックス アーキテクチャの詳細については、「[非クラスター化インデックスのデザイン ガイドライン](../../relational-databases/sql-server-index-design-guide.md#Nonclustered)」を参照してください。
 
 ### <a name="non-aligned-index"></a>固定されていないインデックス  
-対応するパーティション テーブルから個別に分割されたインデックス。 つまり、インデックスのパーティション構成が異なっているか、インデックスがベース テーブルとは別のファイル グループに配置されています。 次のような場合、固定されていないパーティション インデックスをデザインすると便利です。  
+対応するパーティション テーブルから個別に分割されたインデックス。 つまり、インデックスのパーティション構成が異なっているか、インデックスがベース テーブルとは別のファイル グループに配置されています。 次のような場合は、配置されていないパーティション インデックスを設計すると便利です。  
 -   ベース テーブルがパーティション分割されていない。  
 -   インデックス キーが一意であり、テーブルのパーティション分割列を含んでいない。  
 -   異なる結合列を使用して多くのテーブルが併置されている結合にベース テーブルを加える。  

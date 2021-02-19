@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: d21b5cf1-3724-43f7-bc96-5097df0677b4
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 03dd345e2b7fc3be27b9bd1c61f3d252d7afb229
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 3b3c006da487774a8de01ccf9a9b8cd12d9ca15f
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91867811"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97465123"
 ---
 # <a name="sqlsetconnectattr"></a>SQLSetConnectAttr
 
@@ -75,7 +75,7 @@ ms.locfileid: "91867811"
 |SQL_COPT_SS_USER_DATA|接続前/接続後|  
 |SQL_COPT_SS_WARN_ON_CP_ERROR|以前|  
   
- 同じセッション、データベース、または [!INCLUDE[tsql](../../includes/tsql-md.md)] の状態に対して接続前の属性および同等の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] コマンドを使用すると、予期しない動作が発生する場合があります。 たとえば、次のように入力します。  
+ 同じセッション、データベース、または [!INCLUDE[tsql](../../includes/tsql-md.md)] の状態に対して接続前の属性および同等の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] コマンドを使用すると、予期しない動作が発生する場合があります。 たとえば、  
   
 ```  
 SQLSetConnectAttr(SQL_COPT_SS_QUOTED_IDENT, SQL_QI_ON) // turn ON via attribute  
@@ -97,7 +97,7 @@ SQLSetConnectAttr(SQL_ATTR_CURRENT_CATALOG, ...) // restores to pre-connect attr
 
 <a name="sqlcoptssapplicationintent"></a>
 ## <a name="sql_copt_ss_application_intent"></a>SQL_COPT_SS_APPLICATION_INTENT  
- アプリケーションがサーバーに接続するときのワークロードのタイプを宣言します。 使用できる値は、 **Readonly** と **ReadWrite**です。 次に例を示します。  
+ アプリケーションがサーバーに接続するときのワークロードのタイプを宣言します。 使用できる値は、 **Readonly** と **ReadWrite** です。 次に例を示します。  
   
 ```  
 SQLSetConnectAttr(hdbc, SQL_COPT_SS_APPLICATION_INTENT, TEXT("Readonly"), SQL_NTS)  
@@ -133,7 +133,7 @@ SQLSetConnectAttr(hdbc, SQL_COPT_SS_APPLICATION_INTENT, TEXT("Readonly"), SQL_NT
 
 <a name="sqlcoptssbrowseserver"></a>
 ## <a name="sql_copt_ss_browse_server"></a>SQL_COPT_SS_BROWSE_SERVER  
- この属性は、 **SQLBrowseConnect**によって返される結果セットをカスタマイズするために使用されます。 SQL_COPT_SS_BROWSE_SERVER では、 **SQLBrowseConnect** が情報を返す対象のサーバー名を指定します。  
+ この属性は、 **SQLBrowseConnect** によって返される結果セットをカスタマイズするために使用されます。 SQL_COPT_SS_BROWSE_SERVER では、 **SQLBrowseConnect** が情報を返す対象のサーバー名を指定します。  
   
 |値|説明|  
 |-----------|-----------------|  
@@ -242,11 +242,11 @@ SQLSetConnectAttr(hdbc, SQL_COPT_SS_MULTISUBNET_FAILOVER, SQL_IS_ON, SQL_IS_INTE
 
 <a name="sqlcoptssperfdatalog"></a>
 ## <a name="sql_copt_ss_perf_data_log"></a>SQL_COPT_SS_PERF_DATA_LOG  
- SQL_COPT_SS_PERF_DATA_LOG 属性は、パフォーマンス データの記録に使用するログ ファイル名を割り当てます。 ログ ファイル名は、アプリケーションのコンパイル方法に応じて、ANSI または Unicode 形式の、NULL で終わる文字列になります。 *Stringlength*引数は SQL_NTS である必要があります。  
+ SQL_COPT_SS_PERF_DATA_LOG 属性は、パフォーマンス データの記録に使用するログ ファイル名を割り当てます。 ログ ファイル名は、アプリケーションのコンパイル方法に応じて、ANSI または Unicode 形式の、NULL で終わる文字列になります。 *Stringlength* 引数は SQL_NTS である必要があります。  
 
 <a name="sqlcoptssperfdatalognow"></a>
 ## <a name="sql_copt_ss_perf_data_log_now"></a>SQL_COPT_SS_PERF_DATA_LOG_NOW  
- SQL_COPT_SS_PERF_DATA_LOG_NOW 属性は、ドライバーに対して、統計ログのエントリをディスクに書き込むように指定します。 *Stringlength*引数は SQL_NTS である必要があります。  
+ SQL_COPT_SS_PERF_DATA_LOG_NOW 属性は、ドライバーに対して、統計ログのエントリをディスクに書き込むように指定します。 *Stringlength* 引数は SQL_NTS である必要があります。  
 
 <a name="sqlcoptssperfquery"></a>
 ## <a name="sql_copt_ss_perf_query"></a>SQL_COPT_SS_PERF_QUERY  
@@ -265,7 +265,7 @@ SQLSetConnectAttr(hdbc, SQL_COPT_SS_MULTISUBNET_FAILOVER, SQL_IS_ON, SQL_IS_INTE
 
 <a name="sqlcoptssperfquerylog"></a>
 ## <a name="sql_copt_ss_perf_query_log"></a>SQL_COPT_SS_PERF_QUERY_LOG  
- SQL_COPT_SS_PERF_QUERY_LOG 属性は、実行時間の長いクエリのデータを記録するログ ファイル名を割り当てます。 ログ ファイル名は、アプリケーションのコンパイル方法に応じて、ANSI または Unicode 形式の、NULL で終わる文字列になります。 *Stringlength*引数は、SQL_NTS または文字列の長さ (バイト単位) である必要があります。  
+ SQL_COPT_SS_PERF_QUERY_LOG 属性は、実行時間の長いクエリのデータを記録するログ ファイル名を割り当てます。 ログ ファイル名は、アプリケーションのコンパイル方法に応じて、ANSI または Unicode 形式の、NULL で終わる文字列になります。 *Stringlength* 引数は、SQL_NTS または文字列の長さ (バイト単位) である必要があります。  
 
 <a name="sqlcoptsspreservecursors"></a>
 ## <a name="sql_copt_ss_preserve_cursors"></a>SQL_COPT_SS_PRESERVE_CURSORS  
@@ -273,8 +273,8 @@ SQLSetConnectAttr(hdbc, SQL_COPT_SS_MULTISUBNET_FAILOVER, SQL_IS_ON, SQL_IS_INTE
   
 |値|説明|  
 |-----------|-----------------|  
-|SQL_PC_OFF|既定値。 **SQLEndTran**を使用してトランザクションをコミットまたはロールバックすると、カーソルは閉じられます。|  
-|SQL_PC_ON|非同期モードで静的カーソルまたはキーセットカーソルを使用している場合を除き、 **SQLEndTran**を使用してトランザクションをコミットまたはロールバックしても、カーソルは閉じられません。 カーソルのデータ設定が完了していないときにロールバックが行われると、そのカーソルは閉じられます。|  
+|SQL_PC_OFF|既定値。 **SQLEndTran** を使用してトランザクションをコミットまたはロールバックすると、カーソルは閉じられます。|  
+|SQL_PC_ON|非同期モードで静的カーソルまたはキーセットカーソルを使用している場合を除き、 **SQLEndTran** を使用してトランザクションをコミットまたはロールバックしても、カーソルは閉じられません。 カーソルのデータ設定が完了していないときにロールバックが行われると、そのカーソルは閉じられます。|  
 
 <a name="sqlcoptssquotedident"></a>
 ## <a name="sql_copt_ss_quoted_ident"></a>SQL_COPT_SS_QUOTED_IDENT  
@@ -287,7 +287,7 @@ SQLSetConnectAttr(hdbc, SQL_COPT_SS_MULTISUBNET_FAILOVER, SQL_IS_ON, SQL_IS_INTE
 
 <a name="sqlcoptsstranslate"></a>
 ## <a name="sql_copt_ss_translate"></a>SQL_COPT_SS_TRANSLATE  
- SQL_COPT_SS_TRANSLATE 属性を指定すると、MBCS データを交換するときに、ドライバーによってクライアントとサーバーのコード ページ間で文字が変換されます。 属性は、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] **char**、 **varchar**、および**text**列に格納されているデータのみに影響します。  
+ SQL_COPT_SS_TRANSLATE 属性を指定すると、MBCS データを交換するときに、ドライバーによってクライアントとサーバーのコード ページ間で文字が変換されます。 属性は、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] **char**、 **varchar**、および **text** 列に格納されているデータのみに影響します。  
   
 |値|説明|  
 |-----------|-----------------|  

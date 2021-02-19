@@ -12,10 +12,10 @@ ms.assetid: d9422412-8a3d-45ae-af7f-072c902a09ba
 author: chugugrace
 ms.author: chugu
 ms.openlocfilehash: cc1bddc579ccce64b4068fd2a5235481fc7b7629
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.sourcegitcommit: c5078791a07330a87a92abb19b791e950672e198
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "92193202"
 ---
 # <a name="map-columns-to-composite-domains"></a>複合ドメインへの列のマップ

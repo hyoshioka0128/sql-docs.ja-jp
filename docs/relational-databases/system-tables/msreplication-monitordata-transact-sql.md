@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: replication
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - MSreplication_monitordata_TSQL
 - MSreplication_monitordata
@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSreplication_monitordata system table
 ms.assetid: 843d3ffd-a1ef-4fd5-a744-c2252199793e
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: dde16569f96619778a3a3cd6a246f58482b9947d
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 56129415a5595bacc8c975297847d093144dde1b
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540891"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99199088"
 ---
 # <a name="msreplication_monitordata-transact-sql"></a>MSreplication_monitordata (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSreplication_monitordata**テーブルには、レプリケーションモニターによって使用されるキャッシュデータと、監視対象のサブスクリプションごとに1行のデータが含まれています。 このテーブルは、ディストリビューションデータベースに格納されます。  
+  **MSreplication_monitordata** テーブルには、レプリケーションモニターによって使用されるキャッシュデータと、監視対象のサブスクリプションごとに1行のデータが含まれています。 このテーブルは、ディストリビューションデータベースに格納されます。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

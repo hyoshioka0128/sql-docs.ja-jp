@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - SQL_VARIANT_PROPERTY_TSQL
 - SQL_VARIANT_PROPERTY
@@ -19,13 +19,13 @@ helpviewer_keywords:
 ms.assetid: 50e5c1d9-4e95-4ed0-9c92-435c872a399e
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 9e77393d7c16034d90dc443a6c8750e798e22909
-ms.sourcegitcommit: ae474d21db4f724523e419622ce79f611e956a22
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 00510ffb5bda7fd19b0806dd7a7b2dc1373c8354
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92255263"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99198301"
 ---
 # <a name="sql_variant_property-transact-sql"></a>SQL_VARIANT_PROPERTY (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -56,9 +56,9 @@ SQL_VARIANT_PROPERTY ( expression , property )
 |**BaseType**|以下のような [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のデータ型です。<br /><br /> **bigint**<br /><br /> **[バイナリ]**<br /><br /> **bit**<br /><br /> **char**<br /><br /> **date**<br /><br /> **datetime**<br /><br /> **datetime2**<br /><br /> **datetimeoffset**<br /><br /> **decimal**<br /><br /> **float**<br /><br /> **int**<br /><br /> **money**<br /><br /> **nchar**<br /><br /> **numeric**<br /><br /> **nvarchar**<br /><br /> **real**<br /><br /> **smalldatetime**<br /><br /> **smallint**<br /><br /> **smallmoney**<br /><br /> **time**<br /><br /> **tinyint**<br /><br /> **uniqueidentifier**<br /><br /> **varbinary**<br /><br /> **varchar**|**sysname**<br /><br /> NULL = 入力は無効です。|  
 |**[精度]**|数値基本データ型の桁数です。<br /><br /> **date** = 10<br /><br /> **datetime** = 23<br /><br /> **datetime2** = 27<br /><br /> **datetime2** (s) = 19 when s = 0, else s + 20<br /><br /> **datetimeoffset** = 34<br /><br /> **datetimeoffset** (s) = 26 when s = 0, else s + 27<br /><br /> **smalldatetime** = 16<br /><br /> **time** = 16<br /><br /> **time** (s) = 8 when s = 0, else s + 9<br /><br /> **float** = 53<br /><br /> **real** = 24<br /><br /> **decimal** および **numeric** = 18<br /><br /> **decimal** (p,s) および **numeric** (p,s) = p<br /><br /> **money** = 19<br /><br /> **smallmoney** = 10<br /><br /> **bigint** = 19<br /><br /> **int** = 10<br /><br /> **smallint** = 5<br /><br /> **tinyint** = 3<br /><br /> **bit** = 1<br /><br /> その他のすべてのデータ型 = 0|**int**<br /><br /> NULL = 入力は無効です。|  
 |**スケール**|数値基本データ型の小数点の右側の桁数です。<br /><br /> **decimal** および **numeric** = 0<br /><br /> **decimal** (p,s) および **numeric** (p,s) = s<br /><br /> **money** および **smallmoney** = 4<br /><br /> **datetime** = 3<br /><br /> **datetime2** = 7<br /><br /> **datetime2** (s) = s (0 - 7)<br /><br /> **datetimeoffset** = 7<br /><br /> **datetimeoffset** (s) = s (0 - 7)<br /><br /> **time** = 7<br /><br /> **time** (s) = s (0 - 7)<br /><br /> その他のすべての型 = 0|**int**<br /><br /> NULL = 入力は無効です。|  
-|**TotalBytes**|メタデータと値のデータの両方を保持するのに必要なバイト数です。 この情報は、 **sql_variant** 列内のデータの最大サイズをチェックする上で役に立ちます。 値が 900 を超える場合は、インデックスを作成できません。|**int**<br /><br /> NULL = 入力は無効です。|  
+|**TotalBytes**|メタデータと値のデータの両方を保持するのに必要なバイト数です。 この情報は、**sql_variant** 列内のデータの最大サイズをチェックする上で役に立ちます。 値が 900 を超える場合は、インデックスを作成できません。|**int**<br /><br /> NULL = 入力は無効です。|  
 |**Collation**|特定の **sql_variant** 値の照合順序を表します。|**sysname**<br /><br /> NULL = 入力は無効です。|  
-|**MaxLength**|データ型の最大データ長 (バイト単位) です。 たとえば、 **nvarchar(** 50 **)** の **MaxLength** は 100、 **int** の **MaxLength** は 4 です。|**int**<br /><br /> NULL = 入力は無効です。|  
+|**MaxLength**|データ型の最大データ長 (バイト単位) です。 たとえば、**nvarchar(** 50 **)** の **MaxLength** は 100、**int** の **MaxLength** は 4 です。|**int**<br /><br /> NULL = 入力は無効です。|  
   
 ## <a name="return-types"></a>戻り値の型  
  **sql_variant**  

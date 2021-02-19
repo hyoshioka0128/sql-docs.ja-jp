@@ -12,10 +12,10 @@ ms.assetid: 749afb64-3567-4dc9-8431-783d650c25db
 author: chugugrace
 ms.author: chugu
 ms.openlocfilehash: 8d62e20117bf23511a1d261142a3618dcbd5095a
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.sourcegitcommit: c5078791a07330a87a92abb19b791e950672e198
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "92195334"
 ---
 # <a name="sap-bw-source"></a>SAP BW 転送元
@@ -111,7 +111,7 @@ ms.locfileid: "92195334"
   
     -   **[E - 抽出のみ]** オプションでは、要求 ID を指定します。  
   
--   文字列変換のルールを指定します (たとえば、すべての文字列を SAP Netweaver BW システムが Unicode であるかどうかに応じて変換するか、 **varchar** または **nvarchar**に変換するかどうか)。  
+-   文字列変換のルールを指定します (たとえば、すべての文字列を SAP Netweaver BW システムが Unicode であるかどうかに応じて変換するか、 **varchar** または **nvarchar** に変換するかどうか)。  
   
 -   選択したオプションを使用して、抽出するデータをプレビューします。  
   

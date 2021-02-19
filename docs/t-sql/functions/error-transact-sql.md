@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - '@@ERROR'
 - '@@ERROR_TSQL'
@@ -18,15 +18,15 @@ helpviewer_keywords:
 - errors [SQL Server], Transact-SQL
 - error numbers [SQL Server]
 ms.assetid: c8b43477-b6c0-49bf-a608-394a0b6cc7a2
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 93fe08c7dcba1b9c45f9dfabd0c360b3db2c152f
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: dc76f13d9d6589d89c8d12ac2674d6aac9ee756b
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88366258"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99174469"
 ---
 # <a name="x40x40error-transact-sql"></a>&#x40;&#x40;ERROR (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -46,7 +46,7 @@ ms.locfileid: "88366258"
 ## <a name="return-types"></a>戻り値の型
  整数 (integer)  
   
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>解説  
  直前の [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントでエラーが発生しなかった場合は、0 が返されます。  
   
  直前のステートメントでエラーが発生した場合は、エラー番号が返されます。 エラーが sys.messages カタログ ビューのエラーであった場合、そのエラーに対応する sys.messages.message_id 列の値が @@ERROR に含まれます。 @@ERROR エラー番号に関連付けられているテキストは、sys.messages で表示できます。  
@@ -171,7 +171,7 @@ GO
 ```  
 
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [TRY...CATCH &#40;Transact-SQL&#41;](../../t-sql/language-elements/try-catch-transact-sql.md)   
  [ERROR_LINE &#40;Transact-SQL&#41;](../../t-sql/functions/error-line-transact-sql.md)   
  [ERROR_MESSAGE &#40;Transact-SQL&#41;](../../t-sql/functions/error-message-transact-sql.md)   

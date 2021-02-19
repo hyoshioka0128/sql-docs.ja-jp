@@ -5,7 +5,7 @@ ms.custom: seo-lt-2019
 ms.date: 01/09/2019
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: article
 helpviewer_keywords:
 - connection access to availability replicas
@@ -17,25 +17,25 @@ helpviewer_keywords:
 ms.assetid: ''
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 691b3c495db0280b2ae1f50b2d877677c66dc768
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15'
+ms.openlocfilehash: 5694ab7203b0285c4ef275fa3d5c3b70463b0ba5
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91866552"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100060023"
 ---
 # <a name="secondary-to-primary-replica-readwrite-connection-redirection-always-on-availability-groups"></a>セカンダリ レプリカからプライマリ レプリカへの読み取り/書き込み接続のリダイレクト (Always On 可用性グループ)
 
 [!INCLUDE[appliesto](../../../includes/applies-to-version/sqlserver2019.md)]
 
-[!INCLUDE[sssqlv15-md](../../../includes/sssqlv15-md.md)] CTP 2.0 では、"*Always On 可用性グループに対するセカンダリ レプリカからプライマリ レプリカへの読み取り/書き込み接続のリダイレクト*" が導入されています。 すべてのオペレーティング システム プラットフォームで、読み取り/書き込み接続のリダイレクトを利用できます。 接続文字列に指定されたターゲット サーバーに関係なく、クライアント アプリケーションの接続先をプライマリ レプリカにすることができます。 
+[!INCLUDE[sssql19-md](../../../includes/sssql19-md.md)] CTP 2.0 では、"*Always On 可用性グループに対するセカンダリ レプリカからプライマリ レプリカへの読み取り/書き込み接続のリダイレクト*" が導入されています。 すべてのオペレーティング システム プラットフォームで、読み取り/書き込み接続のリダイレクトを利用できます。 接続文字列に指定されたターゲット サーバーに関係なく、クライアント アプリケーションの接続先をプライマリ レプリカにすることができます。 
 
 たとえば、接続文字列内の接続先がセカンダリ レプリカであるとします。 可用性グループ (AG) の構成と接続文字列の設定によって、接続をプライマリ レプリカに自動的にリダイレクトできます。 
 
 ## <a name="use-cases"></a>ユース ケース
 
-[!INCLUDE[sssqlv15-md](../../../includes/sssqlv15-md.md)] より前のバージョンでは、プライマリ レプリカへのユーザー トラフィックは、AG リスナーおよび対応するクラスター リソースによってリダイレクトされ、フェールオーバー後に再接続されるようになっています。 [!INCLUDE[sssqlv15-md](../../../includes/sssqlv15-md.md)] では、この AG リスナー機能は引き続きサポートされますが、リスナーを含めることができないシナリオのためにレプリカの接続のリダイレクトが追加されています。 次に例を示します。
+[!INCLUDE[sssql19-md](../../../includes/sssql19-md.md)] より前のバージョンでは、プライマリ レプリカへのユーザー トラフィックは、AG リスナーおよび対応するクラスター リソースによってリダイレクトされ、フェールオーバー後に再接続されるようになっています。 [!INCLUDE[sssql19-md](../../../includes/sssql19-md.md)] では、この AG リスナー機能は引き続きサポートされますが、リスナーを含めることができないシナリオのためにレプリカの接続のリダイレクトが追加されています。 次に例を示します。
 
 * SQL Server の可用性グループに統合されているクラスター テクノロジでは、リスナーに似た機能が提供されない 
 * 構成が複雑になり、エラーが発生しがちであり、複数のコンポーネントが関係するせいでトラブルシューティングが困難な、クラウドや Pacemaker を使用するマルチサブネット フローティング IP のようなマルチサブネット構成である
@@ -52,7 +52,7 @@ ms.locfileid: "91866552"
 
 読み取り/書き込み接続を構成するには、AG を作成するときに、プライマリ レプリカに対して `READ_WRITE_ROUTING_URL` を設定する必要があります。 
 
-[!INCLUDE[sssqlv15-md](../../../includes/sssqlv15-md.md)] では、`<add_replica_option>` 仕様に `READ_WRITE_ROUTING_URL` が追加されています。 次のトピックを参照してください。 
+[!INCLUDE[sssql19-md](../../../includes/sssql19-md.md)] では、`<add_replica_option>` 仕様に `READ_WRITE_ROUTING_URL` が追加されています。 次のトピックを参照してください。 
 
 * [CREATE AVAILABILITY GROUP](../../../t-sql/statements/create-availability-group-transact-sql.md)
 * [ALTER AVAILABILITY GROUP](../../../t-sql/statements/alter-availability-group-transact-sql.md)
@@ -67,7 +67,7 @@ ms.locfileid: "91866552"
 |`ApplicationIntent=ReadWrite`<br/> Default|接続失敗|接続失敗|接続成功<br/>読み取り成功<br/>書き込み失敗|
 |`ApplicationIntent=ReadOnly`|接続失敗|接続成功|接続成功
 
-上の表に示した既定の動作は、[!INCLUDE[sssqlv15-md](../../../includes/sssqlv15-md.md)] より前のバージョンの SQL Server と同じです。 
+上の表に示した既定の動作は、[!INCLUDE[sssql19-md](../../../includes/sssql19-md.md)] より前のバージョンの SQL Server と同じです。 
 
 ### <a name="primary_roleread_write_routing_url-set"></a>PRIMARY_ROLE(READ_WRITE_ROUTING_URL) が設定されている 
 

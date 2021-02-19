@@ -17,13 +17,13 @@ ms.assetid: 9928cff5-62ac-42aa-96bf-2e09a1df0bc3
 author: MightyPen
 ms.author: genemi
 ms.custom: seo-lt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 06d56d0537bfda3a2ce44033a30d0f8e429fc0c4
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: a5650365557417f34fb0f446afd77ddad97e1e72
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85773011"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97413602"
 ---
 # <a name="specifying-boolean-operators-in-xpath-queries-sqlxml-40"></a>XPath クエリ内での論理演算子の指定 (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -32,19 +32,19 @@ ms.locfileid: "85773011"
 ## <a name="examples"></a>例  
   
 ### <a name="a-specify-the-or-boolean-operator"></a>A. OR 論理演算子を指定する  
- この XPath クエリでは、 **\<Customer>** **CustomerID**属性値が13または31のコンテキストノードの子要素が返されます。  
+ この XPath クエリでは、 **\<Customer>** **CustomerID** 属性値が13または31のコンテキストノードの子要素が返されます。  
   
 ```  
 /child::Customer[attribute::CustomerID="13" or attribute::CustomerID="31"]  
 ```  
   
- **属性**軸 (@) へのショートカットを指定できます。また、**子**軸が既定値であるため、省略できます。  
+ **属性** 軸 (@) へのショートカットを指定できます。また、**子** 軸が既定値であるため、省略できます。  
   
 ```  
 /Customer[@CustomerID="13" or @CustomerID="31"]  
 ```  
   
- 述語では、 `attribute` は軸で、 `CustomerID` はノードテストです。これは**CustomerID** 、 **\<attribute>** **\<attribute>** ノードが**属性**軸のプライマリノードであるため、CustomerID がノードの場合は TRUE になります。 述語は、要素をフィルター処理 **\<Customer>** し、述語に指定された条件を満たす要素のみを返します。  
+ 述語では、 `attribute` は軸で、 `CustomerID` はノードテストです。これは 、 **\<attribute>** **\<attribute>** ノードが **属性** 軸のプライマリノードであるため、CustomerID がノードの場合は TRUE になります。 述語は、要素をフィルター処理 **\<Customer>** し、述語に指定された条件を満たす要素のみを返します。  
   
 ##### <a name="to-test-the-xpath-queries-against-the-mapping-schema"></a>マッピングスキーマに対して XPath クエリをテストするには  
   
@@ -68,7 +68,7 @@ ms.locfileid: "85773011"
   
 3.  SQLXML 4.0 テスト スクリプト (sqlxml4test.vbs) を作成し、それを使用してテンプレートを実行します。  
   
-     詳細については、「ADO を使用した[SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
+     詳細については、「ADO を使用した [SQLXML 4.0 クエリの実行](../../../relational-databases/sqlxml/using-ado-to-execute-sqlxml-4-0-queries.md)」を参照してください。  
   
  このテンプレートを実行した場合の結果セットは次のとおりです。  
   

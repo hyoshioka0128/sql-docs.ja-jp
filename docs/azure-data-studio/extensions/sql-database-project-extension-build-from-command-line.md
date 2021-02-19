@@ -9,22 +9,22 @@ ms.author: drskwier
 ms.reviewer: maghan, sstein
 ms.custom: ''
 ms.date: 08/07/2020
-ms.openlocfilehash: a6849f13f8182285749c7a95801ee111e7ba0130
-ms.sourcegitcommit: c4d6804bde7eaf72d9233d6d43f77d77d1b17c4e
+ms.openlocfilehash: 8f8fd9745391d4fb85a12fa2136e4d3db0b797de
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91624679"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100040327"
 ---
 # <a name="build-a-database-project-from-command-line"></a>コマンド ラインからデータベース プロジェクトをビルドする
 
-Azure Data Studio 用の SQL Database プロジェクト拡張機能では、[データベース プロジェクトをビルドする](sql-database-project-extension-build.md)ためのグラフィカル ユーザー インターフェイスが提供されていますが、Windows、macOS、Linux 環境では、コマンド ラインのビルド エクスペリエンスも使用できます。 この記事では、コマンド ラインで SQL プロジェクトをビルドして DACPAC を作成するために必要な前提条件と構文について説明します。
+Azure Data Studio 用の SQL Database プロジェクト拡張機能 (プレビュー) では、[データベース プロジェクトをビルドする](sql-database-project-extension-build.md)ためのグラフィカル ユーザー インターフェイスが提供されていますが、Windows、macOS、Linux 環境では、コマンド ラインのビルド エクスペリエンスも使用できます。 この記事では、コマンド ラインで SQL プロジェクトをビルドして DACPAC を作成するために必要な前提条件と構文について説明します。
 
 ## <a name="prerequisites"></a>前提条件
 
 1. [Azure Data Studio の SQL データベース プロジェクトの拡張機能](sql-database-project-extension.md)のインストールと構成。
 
-2. SQL Database プロジェクト用の Azure Data Studio 拡張機能でサポートされているすべてのプラットフォームでコマンド ラインから SQL データベース プロジェクトをビルドするには、次の .NET Core DLL とターゲット ファイル `Microsoft.Data.Tools.Schema.SqlTasts.targets` が必要です。 これらのファイルは、Azure Data Studio インターフェイスで実行された最初のビルドの間に拡張機能によって作成され、`BuildDirectory` の下の拡張機能のフォルダーに配置されます。  たとえば、Linux では、これらのファイルは `~\.azuredatastudio\extensions\microsoft.sql-database-projects-x.x.x\BuildDirectory\` に配置されます。  これら 10 個のファイルを新しいアクセス可能なフォルダーにコピーするか、場所を記録しておきます。  このドキュメントでは、この場所を `DotNet Core build folder` と呼びます。
+2. SQL Database プロジェクト用の Azure Data Studio 拡張機能でサポートされているすべてのプラットフォームでコマンド ラインから SQL データベース プロジェクトをビルドするには、次の .NET Core DLL とターゲット ファイル `Microsoft.Data.Tools.Schema.SqlTasks.targets` が必要です。 これらのファイルは、Azure Data Studio インターフェイスで実行された最初のビルドの間に拡張機能によって作成され、`BuildDirectory` の下の拡張機能のフォルダーに配置されます。  たとえば、Linux では、これらのファイルは `~\.azuredatastudio\extensions\microsoft.sql-database-projects-x.x.x\BuildDirectory\` に配置されます。  これら 10 個のファイルを新しいアクセス可能なフォルダーにコピーするか、場所を記録しておきます。  このドキュメントでは、この場所を `DotNet Core build folder` と呼びます。
 
     - Microsoft.Data.Tools.Schema.Sql.dll
     - Microsoft.Data.Tools.Schema.Tasks.Sql.dll

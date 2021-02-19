@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - Key
@@ -16,24 +16,24 @@ helpviewer_keywords:
 ms.assetid: 55f116fe-4d56-4892-bffe-0cdd6fc727c9
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: d8b2f37dd12f7243f2c5fcb8e577dc35e350c6a9
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: b0e2cdd3dcb1d6d0772e1b7508bee8063089a4e3
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88984053"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100054077"
 ---
 # <a name="key-object-adox"></a>Key オブジェクト (ADOX)
 データベーステーブルの主キー、外部キー、または一意キーフィールドを表します。  
   
 ## <a name="remarks"></a>解説  
- 次のコードでは、新しい **キー**が作成されます。  
+ 次のコードでは、新しい **キー** が作成されます。  
   
 ```  
 Dim obj As New Key  
 ```  
   
- **キー**オブジェクトのプロパティとコレクションを使用すると、次のことができます。  
+ **キー** オブジェクトのプロパティとコレクションを使用すると、次のことができます。  
   
 -   [Name](./name-property-adox.md)プロパティを使用してキーを識別します。  
   

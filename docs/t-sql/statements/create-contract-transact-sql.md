@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - CONTRACT_TSQL
 - CREATE_CONTRACT_TSQL
@@ -20,14 +20,14 @@ helpviewer_keywords:
 - contracts [Service Broker], creating
 - message types [Service Broker], contracts
 ms.assetid: 494cbfa6-8e93-4161-a64d-90d681915211
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 63c809cdc5b676e87b50e13b7ba67a9577e66e6a
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 7cf2fa8811bad953b14810e3119a4841c9ec8f1f
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89549393"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99192753"
 ---
 # <a name="create-contract-transact-sql"></a>CREATE CONTRACT (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -64,13 +64,13 @@ CREATE CONTRACT contract_name
  コントラクトの一部として含まれる、メッセージ型の名前です。  
   
  SENT BY  
- 指定したメッセージ型のメッセージを送信できるエンドポイントを指定します。 コントラクトには、サービスが特定のメッセージ交換で使用できるメッセージが記録されています。 各メッセージ交換は、2 つのエンドポイントの間で行われます。1 つは*発信側*エンドポイントで、メッセージ交換を開始するサービスです。もう 1 つは*発信先*エンドポイントで、発信側のメッセージの送信先となるサービスです。  
+ 指定したメッセージ型のメッセージを送信できるエンドポイントを指定します。 コントラクトには、サービスが特定のメッセージ交換で使用できるメッセージが記録されています。 各メッセージ交換は、2 つのエンドポイントの間で行われます。1 つは *発信側* エンドポイントで、メッセージ交換を開始するサービスです。もう 1 つは *発信先* エンドポイントで、発信側のメッセージの送信先となるサービスです。  
   
  INITIATOR  
- メッセージ交換の発信側だけが、指定したメッセージ型のメッセージを送信できることを示します。 メッセージ交換を開始するサービスをメッセージ交換の*発信側*といいます。  
+ メッセージ交換の発信側だけが、指定したメッセージ型のメッセージを送信できることを示します。 メッセージ交換を開始するサービスをメッセージ交換の *発信側* といいます。  
   
  TARGET  
- メッセージ交換のターゲットだけが、指定したメッセージ型のメッセージを送信できることを示します。 別のサービスによって開始されたメッセージ交換を受け入れるサービスをメッセージ交換の*発信先*といいます。  
+ メッセージ交換のターゲットだけが、指定したメッセージ型のメッセージを送信できることを示します。 別のサービスによって開始されたメッセージ交換を受け入れるサービスをメッセージ交換の *発信先* といいます。  
   
  ANY  
  指定した型のメッセージを、発信側と発信先の両方から送信できることを示します。  

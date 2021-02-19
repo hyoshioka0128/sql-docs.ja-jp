@@ -21,12 +21,12 @@ helpviewer_keywords:
 ms.assetid: 593b5961-4bfa-4ce1-9531-a251c34e89d3
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: b68f0dc3ac5b5591dc556c81bc083a62aa8d4606
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: d6e84b1f0293680d593a2427b9d95e72c36fedff
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92195238"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100347825"
 ---
 # <a name="using-variables-in-the-script-task"></a>スクリプト タスクでの変数の使用
 

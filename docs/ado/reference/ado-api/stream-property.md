@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - ADOStreamConstruction::GetStream
@@ -20,15 +20,15 @@ helpviewer_keywords:
 ms.assetid: 4a44f9f6-0265-4c00-8def-d85b6af923b1
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 1903644370172e716de78bc49a68af03a742c125
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 21ae22283af2dff79094e87dc51f25cb359a6ff4
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88988513"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100020307"
 ---
 # <a name="stream-property"></a>Stream プロパティ
-**ADOStreamConstruction**オブジェクトからの OLE DB**ストリーム**オブジェクトを取得します。値の設定もできます。  
+**ADOStreamConstruction** オブジェクトからの OLE DB **ストリーム** オブジェクトを取得します。値の設定もできます。  
   
  読み取りと書き込みが可能です。  
   

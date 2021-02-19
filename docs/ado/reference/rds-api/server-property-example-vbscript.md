@@ -7,7 +7,7 @@ ms.date: 01/19/2017
 ms.reviewer: ''
 ms.prod: sql
 ms.prod_service: connectivity
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0fe57af9-a4d0-4986-a2e3-beaa4d26ed58
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: e078fcd743094e3b0f469f4e0d82dd1eb021bb76
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 85fbdc115a8b021020ca31f04e11a84fddbb827e
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91724251"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100049182"
 ---
 # <a name="server-property-example-vbscript"></a>Server プロパティの例 (VBScript)
 > [!IMPORTANT]
@@ -90,7 +90,7 @@ body {
 <!-- EndServerDesignVBS -->  
 ```  
   
- 次の例は、RDS の必要なパラメーターを設定する方法を示して **います。** 実行時に DataControl。 この例をテストするには、このコードを切り取って通常の ASP ドキュメントに貼り付け、 **ServerRuntimeVBS**という名前を付けます。 ASP スクリプトによってサーバーが識別されます。  
+ 次の例は、RDS の必要なパラメーターを設定する方法を示して **います。** 実行時に DataControl。 この例をテストするには、このコードを切り取って通常の ASP ドキュメントに貼り付け、 **ServerRuntimeVBS** という名前を付けます。 ASP スクリプトによってサーバーが識別されます。  
   
 ```  
 <!-- BeginServerRuntimeVBS -->  

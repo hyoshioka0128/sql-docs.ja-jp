@@ -13,13 +13,13 @@ ms.reviewer: vanto
 ms.topic: conceptual
 ms.date: 11/06/2019
 ms.author: jaszymas
-monikerRange: = azuresqldb-current || = azure-sqldw-latest || = sqlallproducts-allversions
-ms.openlocfilehash: d19b9d31caf45a5438bf03fcab675ad9ebe5cf71
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: = azuresqldb-current || = azure-sqldw-latest
+ms.openlocfilehash: 033346cf1d00d1f2acbd6b8de0796027c80814a7
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91867944"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100345368"
 ---
 # <a name="common-errors-for-transparent-data-encryption-with-customer-managed-keys-in-azure-key-vault"></a>Azure Key Vault のカスタマー マネージド キーを使った透過的なデータ暗号化に関する一般的なエラー
 
@@ -34,7 +34,7 @@ Azure Key Vault のカスタマー マネージド キーを使用するよう�
 
 アクセスできないデータベースがもう必要ない場合は、すぐに削除してコストを抑えることができます。 Azure Key Vault キーへのアクセスが復元され、データベースがオンラインに戻るまで、データベースに対する他のすべての操作は許可されません。 カスタマー マネージド キーで暗号化されたデータベースにアクセスできない間は、サーバーで TDE のオプションをカスタマー マネージド キーからサービス マネージド キーに変更することもできません。 これは、TDE 保護機能へのアクセス許可が取り消されているときに、データを不正アクセスから保護するために必要です。 
 
-データベースにアクセスできない期間が 8 時間を超えると、自動修復は行われなくなります。 この期間の後に必要な Azure Key Vault のキー アクセスが復元された場合は、キーへのアクセスを手動で再検証して、データベースをオンラインに戻す必要があります。 この状況でデータベースをオンラインに戻す場合は、データベースのサイズによってはかなり時間がかかることがあります。 データベースがオンラインに戻ると、[フェールオーバー グループ](/azure/sql-database/sql-database-auto-failover-group)、PITR 履歴、タグなどの以前に構成した設定は**失われます**。 そのため、基になっている Key Vault のキー アクセスの問題にできる限り早く気付き、対処できるように、[アクション グループ](/azure/azure-monitor/platform/action-groups)を使用して通知システムを実装することをお勧めします。 
+データベースにアクセスできない期間が 8 時間を超えると、自動修復は行われなくなります。 この期間の後に必要な Azure Key Vault のキー アクセスが復元された場合は、キーへのアクセスを手動で再検証して、データベースをオンラインに戻す必要があります。 この状況でデータベースをオンラインに戻す場合は、データベースのサイズによってはかなり時間がかかることがあります。 データベースがオンラインに戻ると、[フェールオーバー グループ](/azure/sql-database/sql-database-auto-failover-group)、PITR 履歴、タグなどの以前に構成した設定は **失われます**。 そのため、基になっている Key Vault のキー アクセスの問題にできる限り早く気付き、対処できるように、[アクション グループ](/azure/azure-monitor/platform/action-groups)を使用して通知システムを実装することをお勧めします。 
 
 ## <a name="common-errors-causing-databases-to-become-inaccessible"></a>データベースにアクセスできなくなる原因となる一般的なエラー
 
@@ -68,17 +68,17 @@ Key Vault による TDE を使用しているときに発生する問題のほ�
 
 次のコマンドレットまたはコマンドを使用して、論理 SQL Server インスタンスに ID が割り当てられていることを確認します。
 
-- Azure PowerShell:[Get-AzureRMSqlServer](/powershell/module/AzureRM.Sql/Get-AzureRmSqlServer?view=azurermps-6.13.0) 
+- Azure PowerShell:[Get-AzureRMSqlServer](/powershell/module/AzureRM.Sql/Get-AzureRmSqlServer) 
 
-- Azure CLI: [az-sql-server-show](/cli/azure/sql/server?view=azure-cli-latest#az-sql-server-show)
+- Azure CLI: [az-sql-server-show](/cli/azure/sql/server#az-sql-server-show)
 
 **軽減策**
 
 次のコマンドレットまたはコマンドを使用して、論理 SQL Server インスタンス用の Azure AD ID (AppId) を構成します。
 
-- Azure PowerShell:`-AssignIdentity` オプションを指定した [Set-AzureRmSqlServer](/powershell/module/azurerm.sql/set-azurermsqlserver?view=azurermps-6.13.0)。
+- Azure PowerShell:`-AssignIdentity` オプションを指定した [Set-AzureRmSqlServer](/powershell/module/azurerm.sql/set-azurermsqlserver)。
 
-- Azure CLI: `--assign_identity` オプションを指定した [az sql server update](/cli/azure/sql/server?view=azure-cli-latest#az-sql-server-update)。
+- Azure CLI: `--assign_identity` オプションを指定した [az sql server update](/cli/azure/sql/server#az-sql-server-update)。
 
 Azure portal では、キー コンテナーに移動してから、 **[アクセス ポリシー]** に移動します。 以下の手順を実行します。 
 
@@ -103,9 +103,9 @@ Azure portal では、キー コンテナーに移動してから、 **[アク�
 
 1. 次のコマンドレットまたはコマンドを使用して、特定の論理 SQL Server インスタンスのキー URI を取得します。
 
-    - Azure PowerShell:[Get-AzureRmSqlServerKeyVaultKey](/powershell/module/azurerm.sql/get-azurermsqlserverkeyvaultkey?view=azurermps-6.13.0)
+    - Azure PowerShell:[Get-AzureRmSqlServerKeyVaultKey](/powershell/module/azurerm.sql/get-azurermsqlserverkeyvaultkey)
 
-    - Azure CLI: [az-sql-server-tde-key-show](/cli/azure/sql/server/tde-key?view=azure-cli-latest#az-sql-server-tde-key-show) 
+    - Azure CLI: [az-sql-server-tde-key-show](/cli/azure/sql/server/tde-key#az-sql-server-tde-key-show) 
 
 1. キー URI を使用して、キー コンテナーを識別します。
 

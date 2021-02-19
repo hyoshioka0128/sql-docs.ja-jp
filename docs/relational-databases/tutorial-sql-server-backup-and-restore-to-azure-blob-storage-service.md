@@ -2,27 +2,35 @@
 title: クイック スタート:Azure Blob Storage サービスへのバックアップと復元
 description: 'クイック スタート: Azure Blob Storage サービスにバックアップを書き込み、このサービスから復元する方法について説明します。 Azure Blob コンテナーを作成し、バックアップを書き込み、復元します。'
 ms.custom: seo-dt-2019
-ms.date: 04/09/2018
+ms.date: 12/21/2020
 ms.prod: sql
-ms.prod_service: database-engine
+ms.technology: backup-restore
+ms.prod_service: backup-restore
 ms.reviewer: ''
-ms.technology: performance
 ms.topic: quickstart
-ms.assetid: 9e1d94ce-2c93-45d1-ae2a-2a7d1fa094c4
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: a0fffe198adc37a9cabe232d5509e9df1652013b
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: d27f53f80c8f987106f90816a4566339d777e6f6
+ms.sourcegitcommit: bb54e4c9dd8c97365b7a96dfcd557b8b86d06978
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91809109"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97736900"
 ---
 # <a name="quickstart-sql-backup-and-restore-to-azure-blob-storage-service"></a>クイック スタート:Azure Blob Storage サービスへの SQL のバックアップと復元
-[!INCLUDE[tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md.md](../includes/tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md.md)]
+
+[!INCLUDE [sqlserver2016-asdbmi](../includes/applies-to-version/sqlserver2016-asdbmi.md)]
+
 このクイックスタートでは、Azure Blob Storage サービスへのバックアップの書き込みと、Azure Blob Storage サービスからの復元を実行する方法について学習できます。  この記事では、Azure BLOB コンテナーを作成し、Blob service にバックアップを書き込んだ後、復元を実行する方法について説明します。
+
+> [!NOTE]
+> SQL Server 2012 SP1 CU2 には、Azure Blob Storage へのバックアップのサポートが導入されています。 SQL Server 2014 以前では、このクイックスタートの記事で説明されている Shared Access Signature (SAS) はサポートされていません。
+>
+> SQL Server 2014 以前の場合は、[チュートリアル:チュートリアル: Microsoft Azure Blob Storage への SQL Server 2014 のバックアップと復元](/previous-versions/sql/2014/relational-databases/backup-restore/sql-server-backup-to-url)。
+>
   
-## <a name="prerequisites"></a>前提条件  
+## <a name="prerequisites"></a>前提条件
+
 このクイックスタートを完了するには、[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] のバックアップと復元の概念および T-SQL 構文についての知識が必要です。  Azure ストレージ アカウント、SQL Server Management Studio (SSMS)、および SQL Server または Azure SQL Managed Instance が実行されているサーバーへのアクセスが必要です。 また、BACKUP コマンドと RESTORE コマンドの実行に使用するアカウントは、**alter any credential** 権限を持つ **db_backup operator** データベース ロールに属している必要があります。 
 
 - 無料の [Azure アカウント](https://azure.microsoft.com/offers/ms-azr-0044p/)を取得する。
@@ -53,7 +61,7 @@ ms.locfileid: "91809109"
 
 1. [SQL Server Management Studio (SSMS)](../ssms/download-sql-server-management-studio-ssms.md) を起動し、SQL Server インスタンスに接続します。
 1. **[新しいクエリ]** ウィンドウを開きます。 
-1. 次の Transact-SQL (T-SQL) コードを実行して、テスト データベースを作成します。 新しいデータベースを表示するには、**オブジェクト エクスプローラー**の **[データベース]** ノードを最新の情報に更新します。 SQL Managed Instance 上に新しく作成されたデータベースでは自動的に TDE が有効になっているので、続行するにはそれを無効にする必要があります。 
+1. 次の Transact-SQL (T-SQL) コードを実行して、テスト データベースを作成します。 新しいデータベースを表示するには、**オブジェクト エクスプローラー** の **[データベース]** ノードを最新の情報に更新します。 SQL Managed Instance 上に新しく作成されたデータベースでは自動的に TDE が有効になっているので、続行するにはそれを無効にする必要があります。 
 
 ```sql
 USE [master]
@@ -98,7 +106,7 @@ GO
 
 次の手順に従って、SQL Server Management Studio の GUI を使用して資格情報を作成します。 または、[プログラムで](tutorial-use-azure-blob-storage-service-with-sql-server-2016.md#2---create-a-sql-server-credential-using-a-shared-access-signature)資格情報を作成することもできます。 
 
-1. [SQL Server Management Studio(SSMS)](../ssms/download-sql-server-management-studio-ssms.md) の**オブジェクト エクスプローラー**で、 **[データベース]** ノードを展開します。
+1. [SQL Server Management Studio(SSMS)](../ssms/download-sql-server-management-studio-ssms.md) の **オブジェクト エクスプローラー** で、 **[データベース]** ノードを展開します。
 1. 新しい `SQLTestDB` データベースを右クリックして、 **[タスク]** をポイントし、 **[バックアップ...]** を選択して、**データベースのバックアップ** ウィザードを起動します。 
 1. **[バックアップ先]** ドロップダウンから **[URL]** を選択し、 **[追加]** を選択して、 **[バックアップ先の選択]** ダイアログ ボックスを開きます。 
 
@@ -106,18 +114,18 @@ GO
 
 1. **[バックアップ先の選択]** ダイアログ ボックスで **[新しいコンテナー]** を選択して、 **[Microsoft サブスクリプションへの接続]** ウィンドウを開きます。 
 
-   ![バックアップ先](media/tutorial-sql-server-backup-and-restore-to-azure-blob-storage-service/select-backup-destination.png)
+   ![[新しいコンテナー] オプションが選択された [バックアップ先の選択] ダイアログ ウィンドウのスクリーンショット。](media/tutorial-sql-server-backup-and-restore-to-azure-blob-storage-service/select-backup-destination.png)
 
 1. **[サインイン]** を選択して Azure portal にサインインし、サインイン プロセスを続けます。 
-1. ドロップダウンからお使いの**サブスクリプション**を選択します。 
-1. ドロップダウンからお使いの**ストレージ アカウント**を選択します。 
+1. ドロップダウンからお使いの **サブスクリプション** を選択します。 
+1. ドロップダウンからお使いの **ストレージ アカウント** を選択します。 
 1. ドロップダウンから、前に作成したコンテナーを選択します。 
 1. **[資格情報の作成]** を選択して、*Shared Access Signature (SAS)* を生成します。  **この値は、復元に必要なため、保存しておいてください。**
 
    ![資格情報の作成](media/tutorial-sql-server-backup-and-restore-to-azure-blob-storage-service/create-credential.png)
 
 1. **[OK]** を選択して、 **[Microsoft サブスクリプションへの接続]** ウィンドウを閉じます。 これにより、 **[バックアップ先の選択] *ダイアログ ボックスに "* Azure ストレージ コンテナー**" の値が設定されます。 **[OK]** を選択して、選択したストレージ コンテナーを選択し、ダイアログ ボックスを閉じます。 
-1. この時点で、次のセクションのステップ 4 に進んでデータベースのバックアップを作成するか、または Transact-SQL を使用してデータベースをバックアップする場合は**データベースのバックアップ** ウィザードを閉じることができます。 
+1. この時点で、次のセクションのステップ 4 に進んでデータベースのバックアップを作成するか、または Transact-SQL を使用してデータベースをバックアップする場合は **データベースのバックアップ** ウィザードを閉じることができます。 
 
 
 ## <a name="back-up-database"></a>データベースをバックアップする
@@ -125,7 +133,7 @@ GO
 
 # <a name="ssms"></a>[SSMS](#tab/SSMS)
 
-1. **データベースのバックアップ** ウィザードを閉じた場合は、[SQL Server Management Studio(SSMS)](../ssms/download-sql-server-management-studio-ssms.md) の**オブジェクト エクスプローラー**で、 **[データベース]** ノードを展開します。
+1. **データベースのバックアップ** ウィザードを閉じた場合は、[SQL Server Management Studio(SSMS)](../ssms/download-sql-server-management-studio-ssms.md) の **オブジェクト エクスプローラー** で、 **[データベース]** ノードを展開します。
 1. 新しい `SQLTestDB` データベースを右クリックして、 **[タスク]** をポイントし、 **[バックアップ...]** を選択して、**データベースのバックアップ** ウィザードを起動します。 
 1. **[バックアップ先]** ドロップダウンから **[URL]** を選択し、 **[追加]** を選択して、 **[バックアップ先の選択]** ダイアログ ボックスを開きます。 
 
@@ -163,7 +171,7 @@ GO
 
 # <a name="ssms"></a>[SSMS](#tab/SSMS)
 
-1. **オブジェクト エクスプローラー**で **[データベース]** ノードを展開し、`SQLTestDB` データベースを右クリックして [削除] を選択し、**オブジェクトの削除**ウィザードを起動します。 
+1. **オブジェクト エクスプローラー** で **[データベース]** ノードを展開し、`SQLTestDB` データベースを右クリックして [削除] を選択し、**オブジェクトの削除** ウィザードを起動します。 
 1. マネージド インスタンスで **[OK]** を選択して、データベースを削除します。 オンプレミスの場合は、 **[既存の接続を閉じる]** の横のチェック ボックスをオンにしてから **[OK]** を選択して、データベースを削除します。 
 
 # <a name="transact-sql"></a>[Transact-SQL](#tab/tsql)
@@ -195,7 +203,7 @@ GO
 
 # <a name="ssms"></a>[SSMS](#tab/SSMS)
 
-1. SQL Server Management Studio の**オブジェクト エクスプローラー**で **[データベース]** ノードを右クリックし、 **[データベースの復元]** を選択します。 
+1. SQL Server Management Studio の **オブジェクト エクスプローラー** で **[データベース]** ノードを右クリックし、 **[データベースの復元]** を選択します。 
 1. **[デバイス]** を選択し、省略記号 [...] を選択してデバイスを選択します。 
 
    ![デバイスの復元の選択](media/tutorial-sql-server-backup-and-restore-to-azure-blob-storage-service/select-restore-device.png)
@@ -206,7 +214,7 @@ GO
 
 1. ドロップダウンからコンテナーを選択し、資格情報を作成するときに保存した Shared Access Signature (SAS) を貼り付けます。 
 
-   ![バックアップ先](media/tutorial-sql-server-backup-and-restore-to-azure-blob-storage-service/restore-from-container.png)
+   ![[Shared Access Signature] フィールドが入力された [バックアップ ファイルの場所を選択] ダイアログ ボックスのスクリーンショット。](media/tutorial-sql-server-backup-and-restore-to-azure-blob-storage-service/restore-from-container.png)
 
 1. **[OK]** を選択して、バックアップ ファイルの場所を選択します。 
 1. **[コンテナー]** を展開し、バックアップ ファイルが存在するコンテナーを選択します。 
@@ -214,12 +222,12 @@ GO
 
    ![ファイルの復元の選択](media/tutorial-sql-server-backup-and-restore-to-azure-blob-storage-service/select-restore-file.png)
 
-1. **[OK]** を選択すると **[バックアップ デバイスの選択]** ダイアログ ボックスが閉じます。 
-1. **[OK]** を選択してデータベースを復元します。 
+1. **[OK]** を選択すると **[バックアップ デバイスの選択]** ダイアログ ボックスが閉じます。
+1. **[OK]** を選択してデータベースを復元します。
 
 # <a name="transact-sql"></a>[Transact-SQL](#tab/tsql)
 
-Azure Blob Storage からオンプレミスのデータベースを復元するには、独自のストレージ アカウントを使用するように次の Transact-SQL コマンドを変更した後、新しいクエリ ウィンドウで実行します。 
+Azure Blob Storage からオンプレミスのデータベースを復元するには、独自のストレージ アカウントを使用するように次の Transact-SQL コマンドを変更した後、新しいクエリ ウィンドウで実行します。
 
 ```sql
 USE [master]

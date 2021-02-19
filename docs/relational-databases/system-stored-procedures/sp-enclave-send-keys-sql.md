@@ -9,7 +9,7 @@ ms.reviewer: vanto
 ms.suite: sql
 ms.technology: system-objects
 ms.tgt_pltfrm: ''
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sp_enclave_send_keys
 - sp_enclave_send_keys_TSQL
@@ -19,13 +19,13 @@ helpviewer_keywords:
 - sp_enclave_send_keys
 author: jaszymas
 ms.author: jaszymas
-monikerRange: '>= sql-server-ver15 || = sqlallproducts-allversions'
-ms.openlocfilehash: 09409a3c3b71a668d897d50d6bb22e51f21e51d8
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>= sql-server-ver15'
+ms.openlocfilehash: f7730c1f019c55cd307a5bb0be2c55580403457c
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88447198"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100075023"
 ---
 # <a name="sp_enclave_send_keys-transact-sql"></a>sp_enclave_send_keys (Transact-SQL)
 [!INCLUDE [sqlserver2019-windows-only](../../includes/applies-to-version/sqlserver2019-windows-only.md)]
@@ -75,4 +75,4 @@ EXEC sp_enclave_send_keys;
  
 - [セキュリティで保護されたエンクレーブ列が設定された Always Encrypted でのインデックスの作成と使用](../security/encryption/always-encrypted-enclaves-create-use-indexes.md)
 
-- [チュートリアル: ランダム化された暗号化を使用してエンクレーブ対応の列にインデックスを作成して使用する](../security/tutorial-creating-using-indexes-on-enclave-enabled-columns-using-randomized-encryption.md)
+- [チュートリアル:ランダム化された暗号化を使用してエンクレーブ対応の列でインデックスを作成して使用する](../security/tutorial-creating-using-indexes-on-enclave-enabled-columns-using-randomized-encryption.md)

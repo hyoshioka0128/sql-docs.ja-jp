@@ -15,13 +15,13 @@ ms.assetid: 914cb152-09f5-4b08-b35d-71940e4e9986
 author: MightyPen
 ms.author: genemi
 ms.custom: seo-lt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 788dd201372524b85ce3cd13d998f5f09a1ca287
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 1846a3db3194a81ce1d1522ac175e3988d3d3d23
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85724688"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97462933"
 ---
 # <a name="annotation-interpretation---sqlrelationship-and-key-ordering-rule"></a>注釈の解釈 - sql:relationship とキーの順序付けルール
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -61,7 +61,7 @@ ms.locfileid: "85724688"
 </xsd:schema>  
 ```  
   
- **\<Customer>** 要素ノードがスコープ内に入ると、XML 一括読み込みでは顧客レコードが生成されます。 このレコードは、XML 一括読み込みが読み取られるまで保持さ **\</Customer>** れます。 要素ノードの処理では、 **\<Order>** XML 一括読み込みでは、 **\<sql:relationship>** **\<Customer>** **\<Order>** **customerid**属性が指定されていないため、親要素から custorder テーブルの customerid 外部キー列の値を取得するために使用されます。 つまり、要素を定義する際には、 **\<Customer>** を指定する前に、スキーマで**CustomerID**属性を指定する必要があり **\<sql:relationship>** ます。 それ以外の場合、 **\<Order>** 要素がスコープ内に入ると、Xml 一括読み込みでは CustOrder テーブルのレコードが生成されます。また、Xml 一括読み込みが終了タグに達すると、 **\</Order>** [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] CustomerID 外部キー列の値なしでレコードがに送信されます。  
+ **\<Customer>** 要素ノードがスコープ内に入ると、XML 一括読み込みでは顧客レコードが生成されます。 このレコードは、XML 一括読み込みが読み取られるまで保持さ **\</Customer>** れます。 要素ノードの処理では、 **\<Order>** XML 一括読み込みでは、 **\<sql:relationship>** **\<Customer>** **\<Order>** **customerid** 属性が指定されていないため、親要素から custorder テーブルの customerid 外部キー列の値を取得するために使用されます。 つまり、要素を定義する際には、 **\<Customer>** を指定する前に、スキーマで **CustomerID** 属性を指定する必要があり **\<sql:relationship>** ます。 それ以外の場合、 **\<Order>** 要素がスコープ内に入ると、Xml 一括読み込みでは CustOrder テーブルのレコードが生成されます。また、Xml 一括読み込みが終了タグに達すると、 **\</Order>** [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] CustomerID 外部キー列の値なしでレコードがに送信されます。  
   
  この例のスキーマを SampleSchema.xml として保存します。  
   

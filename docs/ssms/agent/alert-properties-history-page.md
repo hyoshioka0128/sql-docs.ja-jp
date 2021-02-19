@@ -1,8 +1,6 @@
 ---
-description: '[警告のプロパティ] ([履歴] ページ)'
 title: '[警告のプロパティ] ([履歴] ページ)'
-ms.custom: seo-lt-2019
-ms.date: 01/19/2017
+description: '[警告のプロパティ] ([履歴] ページ)'
 ms.prod: sql
 ms.prod_service: sql-tools
 ms.technology: ssms
@@ -13,13 +11,15 @@ ms.assetid: f5359f5c-93a3-4a4a-8286-e9fe6f0196c7
 author: markingmyname
 ms.author: maghan
 ms.reviewer: ''
-monikerRange: = azuresqldb-mi-current || >= sql-server-2016 || = sqlallproducts-allversions
-ms.openlocfilehash: a97862543bfb4daa3a78a3d4ea7828fe8b36ab37
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+ms.custom: seo-lt-2019
+ms.date: 01/19/2017
+monikerRange: = azuresqldb-mi-current || >= sql-server-2016
+ms.openlocfilehash: 4dd7bce8b5894ab272250ae68b74ff7a0eac2b1a
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92036669"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878972"
 ---
 # <a name="alert-properties-history-page"></a>[警告のプロパティ] ([履歴] ページ)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

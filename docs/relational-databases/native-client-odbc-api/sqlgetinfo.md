@@ -14,20 +14,20 @@ helpviewer_keywords:
 ms.assetid: f6215bac-ed3d-4c36-86d5-d56ffbc106aa
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 0d98baf95cbc3efac8c5bf36b53b6e0d88097e3a
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 5eb5e2ea9c7fc354ec414ecd95cd090f6cd406f1
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91810988"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97485124"
 ---
 # <a name="sqlgetinfo"></a>SQLGetInfo
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  この表は、 **SQLGetInfo**によって返される値を示しています。 返される値は、接続先サーバーのバージョン番号によって異なる場合があります。  
+  この表は、 **SQLGetInfo** によって返される値を示しています。 返される値は、接続先サーバーのバージョン番号によって異なる場合があります。  
   
- **SQLGetInfo** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ネイティブクライアントの Sqlgetinfo は、 **SQLGetInfo** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] **sqlgetinfo**が SQL_KEYWORDS でバッファー長が0の場合に、ODBC ドライバー (SQLSRV32.DLL) の sqlgetinfo とは異なります。  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client ドライバーは SQL_SUCCESS を返しますが、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ODBC ドライバーは SQL_SUCCESS_WITH_INFO を返します。  ただし、出力キーワード文字列よりも小さい0以外のバッファー長を指定して呼び出された場合、Native Client の **SQLGetInfo** は [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] SQL_SUCCESS_WITH_INFO と SQLState 01004 を返します。  
+  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ネイティブクライアントの Sqlgetinfo は、  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] **sqlgetinfo** が SQL_KEYWORDS でバッファー長が0の場合に、ODBC ドライバー (SQLSRV32.DLL) の sqlgetinfo とは異なります。  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client ドライバーは SQL_SUCCESS を返しますが、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ODBC ドライバーは SQL_SUCCESS_WITH_INFO を返します。  ただし、出力キーワード文字列よりも小さい0以外のバッファー長を指定して呼び出された場合、Native Client の **SQLGetInfo** は [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] SQL_SUCCESS_WITH_INFO と SQLState 01004 を返します。  
   
 |fInfoType|rgbInfoValue|  
 |---------------|------------------|  
@@ -56,7 +56,7 @@ ms.locfileid: "91810988"
 |SQL_CONVERT_BINARY|SQL_CVT_CHAR、SQL_CVT_NUMERIC、SQL_CVT_DECIMAL、SQL_CVT_INTEGER、SQL_CVT_SMALLINT、SQL_CVT_VARCHAR、SQL_CVT_BINARY、SQL_CVT_VARBINARY、SQL_CVT_TINYINT、SQL_CVT_LONGVARBINARY、SQL_CVT_WCHAR、SQL_CVT_WVARCHAR|  
 |SQL_CONVERT_BIT|SQL_CVT_CHAR、SQL_CVT_NUMERIC、SQL_CVT_DECIMAL、SQL_CVT_INTEGER、SQL_CVT_SMALLINT、SQL_CVT_FLOAT、SQL_CVT_REAL、SQL_CVT_VARCHAR、SQL_CVT_BINARY、SQL_CVT_VARBINARY、SQL_CVT_BIT、SQL_CVT_TINYINT、SQL_CVT_WCHAR、SQL_CVT_WVARCHAR|  
 |SQL_CONVERT_CHAR|SQL_CVT_CHAR、SQL_CVT_NUMERIC、SQL_CVT_DECIMAL、SQL_CVT_INTEGER、SQL_CVT_SMALLINT、SQL_CVT_FLOAT、SQL_CVT_REAL、SQL_CVT_VARCHAR、SQL_CVT_LONGVARCHAR、SQL_CVT_BINARY、SQL_CVT_VARBINARY、SQL_CVT_BIT、SQL_CVT_TINYINT、SQL_CVT_TIMESTAMP、SQL_CVT_LONGVARBINARY、SQL_CVT_WCHAR、SQL_CVT_WLONGVARCHAR、SQL_CVT_WVARCHAR|  
-|SQL_CONVERT_DATE|ODBC SQL_TYPE_DATE データ型の変換ではサポートされません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Native CLIENT odbc ドライバーでは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] odbc 型 SQL_TYPE_TIMESTAMP として**datetime**データ型がサポートされています。 この表の「SQL_CONVERT_TIMESTAMP」を参照してください。|  
+|SQL_CONVERT_DATE|ODBC SQL_TYPE_DATE データ型の変換ではサポートされません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Native CLIENT odbc ドライバーでは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] odbc 型 SQL_TYPE_TIMESTAMP として **datetime** データ型がサポートされています。 この表の「SQL_CONVERT_TIMESTAMP」を参照してください。|  
 |SQL_CONVERT_DECIMAL|SQL_CVT_CHAR、SQL_CVT_NUMERIC、SQL_CVT_DECIMAL、SQL_CVT_INTEGER、SQL_CVT_SMALLINT、SQL_CVT_FLOAT、SQL_CVT_REAL、SQL_CVT_VARCHAR、SQL_CVT_BINARY、SQL_CVT_VARBINARY、SQL_CVT_BIT、SQL_CVT_TINYINT、SQL_CVT_WCHAR、SQL_CVT_WVARCHAR|  
 |SQL_CONVERT_DOUBLE|ODBC SQL_DOUBLE データ型の変換ではサポートされません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Native CLIENT odbc ドライバーでは、odbc の SQL_DOUBLE データ型を SQL_FLOAT としてサポートしています。 この表の「SQL_CONVERT_FLOAT」を参照してください。|  
 |SQL_CONVERT_FLOAT|SQL_CVT_CHAR、SQL_CVT_NUMERIC、SQL_CVT_DECIMAL、SQL_CVT_INTEGER、SQL_CVT_SMALLINT、SQL_CVT_FLOAT、SQL_CVT_REAL、SQL_CVT_VARCHAR、SQL_CVT_BIT、SQL_CVT_TINYINT、SQL_CVT_WCHAR、SQL_CVT_WVARCHAR|  
@@ -69,7 +69,7 @@ ms.locfileid: "91810988"
 |SQL_CONVERT_NUMERIC|SQL_CVT_CHAR、SQL_CVT_NUMERIC、SQL_CVT_DECIMAL、SQL_CVT_INTEGER、SQL_CVT_SMALLINT、SQL_CVT_FLOAT、SQL_CVT_REAL、SQL_CVT_VARCHAR、SQL_CVT_BINARY、SQL_CVT_VARBINARY、SQL_CVT_BIT、SQL_CVT_TINYINT、SQL_CVT_WCHAR、SQL_CVT_WVARCHAR|  
 |SQL_CONVERT_REAL|SQL_CVT_CHAR、SQL_CVT_NUMERIC、SQL_CVT_DECIMAL、SQL_CVT_INTEGER、SQL_CVT_SMALLINT、SQL_CVT_FLOAT、SQL_CVT_REAL、SQL_CVT_VARCHAR、SQL_CVT_BIT、SQL_CVT_TINYINT、SQL_CVT_WCHAR、SQL_CVT_WVARCHAR|  
 |SQL_CONVERT_SMALLINT|SQL_CVT_CHAR、SQL_CVT_NUMERIC、SQL_CVT_DECIMAL、SQL_CVT_INTEGER、SQL_CVT_SMALLINT、SQL_CVT_FLOAT、SQL_CVT_REAL、SQL_CVT_VARCHAR、SQL_CVT_BINARY、SQL_CVT_VARBINARY、SQL_CVT_BIT、SQL_CVT_TINYINT、SQL_CVT_WCHAR、SQL_CVT_WVARCHAR|  
-|SQL_CONVERT_TIME|ODBC SQL_TYPE_TIME データ型の変換ではサポートされません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Native CLIENT odbc ドライバーでは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] odbc 型 SQL_TYPE_TIMESTAMP として**datetime**データ型がサポートされています。 この表の「SQL_CONVERT_TIMESTAMP」を参照してください。|  
+|SQL_CONVERT_TIME|ODBC SQL_TYPE_TIME データ型の変換ではサポートされません。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Native CLIENT odbc ドライバーでは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] odbc 型 SQL_TYPE_TIMESTAMP として **datetime** データ型がサポートされています。 この表の「SQL_CONVERT_TIMESTAMP」を参照してください。|  
 |SQL_CONVERT_TIMESTAMP|SQL_CVT_CHAR、SQL_CVT_VARCHAR、SQL_CVT_BINARY、SQL_CVT_VARBINARY、SQL_CVT_TIMESTAMP、SQL_CVT_WCHAR、SQL_CVT_WVARCHAR|  
 |SQL_CONVERT_TINYINT|SQL_CVT_CHAR、SQL_CVT_NUMERIC、SQL_CVT_DECIMAL、SQL_CVT_INTEGER、SQL_CVT_SMALLINT、SQL_CVT_FLOAT、SQL_CVT_REAL、SQL_CVT_VARCHAR、SQL_CVT_BINARY、SQL_CVT_VARBINARY、SQL_CVT_BIT、SQL_CVT_TINYINT、SQL_CVT_WCHAR、SQL_CVT_WVARCHAR|  
 |SQL_CONVERT_VARBINARY|SQL_CVT_CHAR、SQL_CVT_NUMERIC、SQL_CVT_DECIMAL、SQL_CVT_INTEGER、SQL_CVT_SMALLINT、SQL_CVT_VARCHAR、SQL_CVT_BINARY、SQL_CVT_VARBINARY、SQL_CVT_TINYINT、SQL_CVT_LONGVARBINARY、SQL_CVT_WCHAR、SQL_CVT_WVARCHAR|  

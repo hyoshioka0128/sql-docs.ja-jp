@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - varchar
 - varchar_TSQL
@@ -24,19 +24,19 @@ helpviewer_keywords:
 ms.assetid: 282cd982-f4fb-4b22-b2df-9e8478f13f6a
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 6fcc2f6593a7fc7a72c80ee3fe271cdb392ee747
-ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: a54d7e0abbbb15379f83a13fc0e604b6d087326d
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91115387"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99236388"
 ---
 # <a name="char-and-varchar-transact-sql"></a>char および varchar (Transact-SQL)
 
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-固定サイズ (**char**)、または可変サイズ (**varchar**) の文字データ型です。 [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降、UTF-8 が有効になっている照合順序を使用する場合、これらのデータ型には [Unicode](../../relational-databases/collations/collation-and-unicode-support.md#Unicode_Defn) 文字データの全範囲が格納され、[UTF-8](https://www.wikipedia.org/wiki/UTF-8) 文字エンコードが使用されます。 UTF-8 が無効の照合順序を指定する場合、これらのデータ型には、対応するその照合順序のコード ページでサポートされている文字のサブセットのみが格納されます。
+固定サイズ (**char**)、または可変サイズ (**varchar**) の文字データ型です。 [!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] 以降、UTF-8 が有効になっている照合順序を使用する場合、これらのデータ型には [Unicode](../../relational-databases/collations/collation-and-unicode-support.md#Unicode_Defn) 文字データの全範囲が格納され、[UTF-8](https://www.wikipedia.org/wiki/UTF-8) 文字エンコードが使用されます。 UTF-8 が無効の照合順序を指定する場合、これらのデータ型には、対応するその照合順序のコード ページでサポートされている文字のサブセットのみが格納されます。
 
 ## <a name="arguments"></a>引数
 
@@ -46,7 +46,7 @@ ms.locfileid: "91115387"
 
 ## <a name="remarks"></a>解説
 
-一般的な誤解として、[CHAR(*n*) および VARCHAR(*n*)](../../t-sql/data-types/char-and-varchar-transact-sql.md) では *n* によって文字数が定義されると考えられています。 実際には、[CHAR(*n*) および VARCHAR(*n*)](../../t-sql/data-types/char-and-varchar-transact-sql.md) では、*n* によって文字長が**バイト** (0-8,000) で定義されます。 *n* は、格納できる文字数を定義しません。 これは、[NCHAR(*n*) および NVARCHAR(*n*)](../../t-sql/data-types/nchar-and-nvarchar-transact-sql.md) の定義と同様です。
+一般的な誤解として、[CHAR(*n*) および VARCHAR(*n*)](../../t-sql/data-types/char-and-varchar-transact-sql.md) では *n* によって文字数が定義されると考えられています。 実際には、[CHAR(*n*) および VARCHAR(*n*)](../../t-sql/data-types/char-and-varchar-transact-sql.md) では、*n* によって文字長が **バイト** (0-8,000) で定義されます。 *n* は、格納できる文字数を定義しません。 これは、[NCHAR(*n*) および NVARCHAR(*n*)](../../t-sql/data-types/nchar-and-nvarchar-transact-sql.md) の定義と同様です。
 この誤解が生じるのは、1 バイト エンコードを使用すると、CHAR と VARCHAR の格納サイズが *n* バイトとなり、文字の数も *n* となるためです。 しかしながら、[UTF-8](https://www.wikipedia.org/wiki/UTF-8) などのマルチバイト エンコードの場合、より高い Unicode 範囲 (128-1,114,111) では 1 文字に 2 バイト以上が使用されることになります。 たとえば、CHAR(10) として定義された列では、[!INCLUDE[ssde_md](../../includes/ssde_md.md)]で格納できる文字は、1 バイト エンコード (Unicode 範囲 0-127) を使用する文字は 10 個ですが、マルチバイト エンコード (Unicode 範囲 128-1,114,111) を使用する場合は 10 個未満です。 Unicode の格納と文字の範囲の詳細については、「[UTF-8 と UTF-16 でのストレージの相違点](../../relational-databases/collations/collation-and-unicode-support.md#storage_differences)」を参照してください。
 
 データ定義または変数宣言ステートメントで *n* を指定しないと、既定の長さは 1 になります。 CAST 関数および CONVERT 関数で *n* を指定しないと、既定の長さは 30 になります。
@@ -56,11 +56,11 @@ COLLATE 句で特定の照合順序を指定しない限り、**char** 型また
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のマルチバイト エンコードには以下が含まれます。
 
 - 一部の東アジア言語に向けた 2 バイト文字セット (DBCS)。コード ページ 936 および 950 (中国語)、932 (日本語)、または 949 (韓国語) を使用します。
-- コード ページ 65001 を使用する UTF 8。 **適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降)
+- コード ページ 65001 を使用する UTF 8。 **適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] 以降)
 
 複数言語をサポートするサイトがある場合:
 
-- [!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] 以降、Unicode をサポートして文字変換の問題を最小限に抑えるために、UTF-8 が有効になっている照合順序の使用を検討してください。
+- [!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] 以降、Unicode をサポートして文字変換の問題を最小限に抑えるために、UTF-8 が有効になっている照合順序の使用を検討してください。
 - 下位バージョンの [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] を使用する場合、文字変換の問題を最小限に抑えるために、Unicode の **nchar** データ型または **nvarchar** データ型を使用することを検討してください。
 
 **char** 型または **varchar** 型を使用する場合は、次のことをお勧めします。
@@ -84,7 +84,7 @@ CREATE TABLE または ALTER TABLE 実行時に SET ANSI_PADDING が OFF に設�
 > [!NOTE]
 > コード ページ変換は **char** および **varchar** データ型に対してはサポートされていますが、**text** データ型に対してはサポートされていません。 以前のバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] と同様に、コード ページの変換中のデータの損失は報告されません。
 
-近似の**数値**データ型に変換される文字式には、オプションで指数表記を含めることができます。 この表記は、オプションでプラス (+) またはマイナス (-) 記号、次いで数字が続く、小文字の e または大文字の E です。
+近似の **数値** データ型に変換される文字式には、オプションで指数表記を含めることができます。 この表記は、オプションでプラス (+) またはマイナス (-) 記号、次いで数字が続く、小文字の e または大文字の E です。
 
 文字式を正確な **numeric** 型に変換する場合、その文字式は、数字と小数点から構成されている必要があります。必要に応じて、プラス記号 (+) またはマイナス記号 (-) を付けることができます。 先頭の空白は無視されます。 123,456.00 の千の区切り記号など、コンマ区切りの記号は、文字列内で使用できません。
 

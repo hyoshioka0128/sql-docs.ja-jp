@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - COLUMNPROPERTY
 - COLUMNPROPERTY_TSQL
@@ -18,14 +18,14 @@ helpviewer_keywords:
 - parameters [SQL Server], properties
 - COLUMNPROPERTY function
 ms.assetid: 2408c264-6eca-4120-bb71-df043c7c2792
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: a6cd108efb12e459c8114c6b65e344d06f403367
-ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 914de62168c17f39f926eddade21d67085b52f39
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91114901"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100270669"
 ---
 # <a name="columnproperty-transact-sql"></a>COLUMNPROPERTY (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -57,7 +57,7 @@ COLUMNPROPERTY ( id , column , property )
 |**AllowsNull**|NULL 値を許可します。|1:TRUE<br /><br /> 0:FALSE<br /><br /> NULL: 無効な入力|  
 |**ColumnId**|**sys.columns.column_id** に対応する列の ID 値です。|列 ID<br /><br /> **注:** 複数の列に対してクエリを実行する場合、列の ID 値の順序にギャップが生じることがあります。|  
 |**FullTextTypeColumn**|*column* のドキュメント型情報を保持する、テーブル内の TYPE COLUMN。|この関数の 2 番目のパラメーターとして渡される列名の式の、フルテキストの TYPE COLUMN の ID。|  
-|**GeneratedAlwaysType**|システムによって生成された列の値です。 **sys.columns.generated_always_type** に対応します|**適用対象**: [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降。<br /><br /> 0: 常に生成されなかった<br /><br /> 1: 行の先頭として常に生成された<br /><br /> 2: 行の終わりに常に生成された|  
+|**GeneratedAlwaysType**|システムによって生成された列の値です。 **sys.columns.generated_always_type** に対応します|**適用対象**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降。<br /><br /> 0: 常に生成されなかった<br /><br /> 1: 行の先頭として常に生成された<br /><br /> 2: 行の終わりに常に生成された|  
 |**IsColumnSet**|列は列セットです。 詳細については、「 [列セットの使用](../../relational-databases/tables/use-column-sets.md)」を参照してください。|1:TRUE<br /><br /> 0:FALSE<br /><br /> NULL: 無効な入力|  
 |**IsComputed**|列は計算列です。|1:TRUE<br /><br /> 0:FALSE<br /><br /> NULL: 無効な入力|  
 |**IsCursorType**|プロシージャ パラメーターは CURSOR 型です。|1:TRUE<br /><br /> 0:FALSE<br /><br /> NULL: 無効な入力|  

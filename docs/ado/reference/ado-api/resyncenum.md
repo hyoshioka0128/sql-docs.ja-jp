@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - ResyncEnum
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: d3df2c90-e570-4c40-a79a-25b3448a009c
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 0c98c0b0bae307f57e5a77c7ca4ac6b473f4d149
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: db02c56f55b577c9f74a42f43abc9a1957311c0d
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88989463"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100040752"
 ---
 # <a name="resyncenum"></a>ResyncEnum
 再 [同期](./resync-method.md)の呼び出しによって基になる値を上書きするかどうかを指定します。  

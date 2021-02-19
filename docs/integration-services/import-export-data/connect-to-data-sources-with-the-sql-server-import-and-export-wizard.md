@@ -11,11 +11,11 @@ ms.assetid: fd726506-54b7-433b-bf70-3642235b7b31
 author: chugugrace
 ms.author: chugu
 ms.openlocfilehash: 7d8738fb22682ad4a6f432187998663c4c8282cd
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.sourcegitcommit: 192f6a99e19e66f0f817fdb1977f564b2aaa133b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92195906"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96122830"
 ---
 # <a name="connect-to-data-sources-with-the-sql-server-import-and-export-wizard"></a>SQL Server インポートおよびエクスポート ウィザードを使用してデータ ソースに接続する
 
@@ -24,7 +24,7 @@ ms.locfileid: "92195906"
 
 このセクションのトピックでは、SQL Server インポートおよびエクスポート ウィザードを実行するときに、よく使用されるさまざまなデータ ソースに接続する方法を説明します。 ウィザードの **[データ ソースの選択]** ページと **[変換先の選択]** ページにデータ ソースの接続情報を入力する必要があります。
 
-このセクションのトピックでは、ウィザードの **[データ ソースの選択]** ページと **[変換先の選択]** ページから**データ ソースへの接続**方法についてのみ説明します。 他のものをお探しの場合は、「[関連タスクとコンテンツ](#related)」を参照してください。
+このセクションのトピックでは、ウィザードの **[データ ソースの選択]** ページと **[変換先の選択]** ページから **データ ソースへの接続** 方法についてのみ説明します。 他のものをお探しの場合は、「[関連タスクとコンテンツ](#related)」を参照してください。
 
 ## <a name="connect-to-a-commonly-used-data-source"></a>一般的に使用されるデータ ソースへの接続
 次のよく使用されるデータ ソースへの接続の詳細については、該当するリンクをクリックしてください。

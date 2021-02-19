@@ -7,28 +7,29 @@ ms.topic: conceptual
 f1_keywords:
 - sql.data.tools.design.table.scriptpanel
 - sql.data.tools.design.table.context.view
+- Microsoft.Data.Relational.Design.PW.RelationshipsDescriptor.OnDelete
 ms.assetid: 9c9479c1-9bfc-4039-837e-e53fce67723d
 author: markingmyname
 ms.author: maghan
 ms.reviewer: “”
 ms.custom: seo-lt-2019
 ms.date: 02/09/2017
-ms.openlocfilehash: 3364df5dd6336023af7316be12150b878f2c9eb9
-ms.sourcegitcommit: b860fe41b873977649dca8c1fd5619f294c37a58
+ms.openlocfilehash: a055bd1f8de41686e1c3477e3e4810e78d6b5025
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/29/2020
-ms.locfileid: "85518782"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100018312"
 ---
 # <a name="how-to-create-database-objects-using-table-designer"></a>方法:テーブル デザイナーを使用してデータベース オブジェクトを作成する
 
-**SQL Server オブジェクト エクスプローラー**の新しい **[SQL Server]** ノードは視覚的に SSMS とよく似ていますが、それだけではなく、SSMS で提供されるものとよく似た機能を持つコンテキスト メニューを使用して、新しいオブジェクトを作成することもできます。  
+**SQL Server オブジェクト エクスプローラー** の新しい **[SQL Server]** ノードは視覚的に SSMS とよく似ていますが、それだけではなく、SSMS で提供されるものとよく似た機能を持つコンテキスト メニューを使用して、新しいオブジェクトを作成することもできます。  
   
 たとえば、 **[データベース]** ノードの下に、新しいデータベースを作成できます。 同様に、特定のデータベースを選択し、新しいテーブル デザイナーを使用して、テーブル定義および関連するプログラミング オブジェクトを即座に作成または編集できます。 テーブル デザイナーをスクリプト ペインに切り替えて、そのテーブルを定義するスクリプトを直接編集することもできます。  
   
 ### <a name="to-create-a-new-database"></a>新しいデータベースを作成するには  
   
-1.  **SQL Server オブジェクト エクスプローラー**の **[SQL Server]** ノードの下で、接続されているサーバー インスタンスを展開します。  
+1.  **SQL Server オブジェクト エクスプローラー** の **[SQL Server]** ノードの下で、接続されているサーバー インスタンスを展開します。  
   
 2.  **[データベース]** ノードを右クリックし、 **[新しいデータベースの追加]** をクリックします。  
   

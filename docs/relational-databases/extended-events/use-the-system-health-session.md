@@ -15,13 +15,13 @@ helpviewer_keywords:
 ms.assetid: 1e1fad43-d747-4775-ac0d-c50648e56d78
 author: MightyPen
 ms.author: genemi
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: d58b32c64ff8114b21f815617ce2daa8b54fc242
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: f157320744b80593264225be72d42d6f08ba398f
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85756799"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97481323"
 ---
 # <a name="use-the-system_health-session"></a>system_health セッションの使用
 
@@ -48,7 +48,7 @@ system_health セッションは、既定で [!INCLUDE[ssNoVersion](../../includ
   
 -   プリエンプティブ待機のために長時間待機しているすべてのセッションの *callstack*、*sql_text*、および *session_id*。 待機時間は、待機の種類によって異なります。 プリエンプティブ待機とは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] が外部の API 呼び出しを待機している状態です。  
   
--   CLR の割り当てと仮想の割り当ての失敗に対する*呼び出し履歴*と *session_id*。  
+-   CLR の割り当てと仮想の割り当ての失敗に対する *呼び出し履歴* と *session_id*。  
   
 -   メモリ ブローカー、スケジューラ モニター、メモリ ノード OOM、セキュリティ、接続性に関するリング バッファー イベント。  
   

@@ -11,18 +11,18 @@ ms.topic: quickstart
 ms.assetid: e1328615-6b59-4473-8a8d-4f360f73187d
 author: MikeRayMSFT
 ms.author: mikeray
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 05ca5334dd7f83ac31c8e118cad983b25d049b03
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: dbc0867b71cadb33b1eb9174132b2031134a72f0
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91863911"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99236939"
 ---
 # <a name="get-started-with-columnstore-for-real-time-operational-analytics"></a>列ストアを使用したリアルタイム運用分析の概要
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
-  [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] にはリアルタイム運用分析が導入されており、同じデータベース テーブル上で分析ワークロードと OLTP ワークロードの両方を同時に実行できます。 分析をリアルタイムで実行するだけでなく、ETL やデータ ウェアハウスも不要になります。  
+  [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] にはリアルタイム運用分析が導入されており、同じデータベース テーブル上で分析ワークロードと OLTP ワークロードの両方を同時に実行できます。 分析をリアルタイムで実行するだけでなく、ETL やデータ ウェアハウスも不要になります。  
   
 ## <a name="real-time-operational-analytics-explained"></a>説明されているリアルタイム運用分析  
  従来、企業は運用 (OLTP) ワークロードと分析ワークロード用に別個のシステムを保有していました。 このようなシステムでは、抽出、変換、読み込み (ETL) ジョブにより、データを運用ストアから分析ストアに定期的に移動します。 分析データは通常、分析クエリを専門的に実行するデータ ウェアハウスやデータ マートに格納されています。 今まではこのソリューションが標準でしたが、主に 3 つの課題を抱えています。  

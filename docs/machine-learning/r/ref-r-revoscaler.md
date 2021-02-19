@@ -7,13 +7,13 @@ ms.date: 07/14/2020
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 0095984a9358f742147e84e69847ab32781cab07
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 87d4fbcfa114b9f80f19495b3d3728c2dd7678ac
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956887"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470833"
 ---
 # <a name="revoscaler-r-package-in-sql-server-machine-learning-services"></a>RevoScaleR (SQL Server Machine Learning Services の R パッケージ)
 
@@ -49,7 +49,7 @@ RevoScaleR は、分散データ サイエンスのプラットフォームと�
 
 ## <a name="1-data-source-and-compute"></a>1 - データ ソースと計算
 
-**RevoScaleR** には、データ ソースを作成したり、場所、つまり、計算が実行される場所である*計算コンテキスト*を設定したりするための関数が含まれています。 データ ソース オブジェクトは、接続文字列と一緒に必要な一連のデータを指定するコンテナーです。テーブル、ビュー、またはクエリとして定義されます。 ストアド プロシージャの呼び出しはサポートされていません。 SQL Server シナリオに関連する関数を次の表に示します。
+**RevoScaleR** には、データ ソースを作成したり、場所、つまり、計算が実行される場所である *計算コンテキスト* を設定したりするための関数が含まれています。 データ ソース オブジェクトは、接続文字列と一緒に必要な一連のデータを指定するコンテナーです。テーブル、ビュー、またはクエリとして定義されます。 ストアド プロシージャの呼び出しはサポートされていません。 SQL Server シナリオに関連する関数を次の表に示します。
 
 SQL Server と R では、場合によっては異なるデータ型が使用されます。 SQL のデータ型と R のデータ型の対応表が必要であれば、[R と SQL のデータ型マッピング](r-libraries-and-data-types.md) ページを参照してください。
 

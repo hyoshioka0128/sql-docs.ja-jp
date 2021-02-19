@@ -9,13 +9,13 @@ ms.topic: conceptual
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: mikeray
-monikerRange: '>= sql-server-linux-ver15 || >= sql-server-ver15 || =sqlallproducts-allversions'
-ms.openlocfilehash: 51dbde0144f26171994638d50659192ca31400ee
-ms.sourcegitcommit: bf8cf755896a8c964774a438f2bd461a2a648c22
+monikerRange: '>= sql-server-linux-ver15 || >= sql-server-ver15'
+ms.openlocfilehash: e9cdd3692c32b57917e6db0e358c22f9c0dcd15a
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88216687"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100351839"
 ---
 # <a name="configure-polybase-to-access-external-data-with-odbc-generic-types"></a>ODBC ジェネリック型の外部データにアクセスするための PolyBase の構成
 

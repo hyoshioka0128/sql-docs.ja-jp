@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - Table::Indexes
@@ -17,22 +17,22 @@ helpviewer_keywords:
 ms.assetid: 184cf536-455c-42be-bf1c-a5c25bade961
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: daea070c8bd39d6208404f119578773382078634
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 8b8873cf8815fc6ffac1afbd9f6e003ee792d61f
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88984193"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100054107"
 ---
 # <a name="indexes-collection-adox"></a>Indexes コレクション (ADOX)
 テーブルのすべての [Index](./index-object-adox.md) オブジェクトを格納します。  
   
 ## <a name="remarks"></a>解説  
- **Indexes**コレクションの[Append](./append-method-adox-indexes.md)メソッドは、ADOX で一意です。 次のようにすることができます。  
+ **Indexes** コレクションの [Append](./append-method-adox-indexes.md)メソッドは、ADOX で一意です。 次の操作を行うことができます。  
   
--   **追加**メソッドを使用して、新しいインデックスをコレクションに追加します。  
+-   **追加** メソッドを使用して、新しいインデックスをコレクションに追加します。  
   
- その他のプロパティとメソッドは、ADO コレクションの標準です。 次のようにすることができます。  
+ その他のプロパティとメソッドは、ADO コレクションの標準です。 次の操作を行うことができます。  
   
 -   [Item](../ado-api/item-property-ado.md)プロパティを使用して、コレクション内のインデックスにアクセスします。  
   

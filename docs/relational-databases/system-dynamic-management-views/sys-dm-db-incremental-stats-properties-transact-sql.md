@@ -1,12 +1,12 @@
 ---
 description: sys.dm_db_incremental_stats_properties (Transact-SQL)
-title: dm_db_incremental_stats_properties (Transact-sql) |Microsoft Docs
+title: sys.dm_db_incremental_stats_properties (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 12/18/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_db_incremental_stats_properties
 - sys.dm_db_incremental_stats_properties_TSQL
@@ -17,21 +17,21 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_db_incremental_stats_properties
 ms.assetid: aa0db893-34d1-419c-b008-224852e71307
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: caa090c1835c34bd2d1da6d6b3bcb6caa4077217
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 578d55bc9f80a4586993b2b5a2011934f66c0cee
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89544811"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99180609"
 ---
 # <a name="sysdm_db_incremental_stats_properties-transact-sql"></a>sys.dm_db_incremental_stats_properties (Transact-SQL)
 [!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]
 
   現在の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベース内にある指定されたデータベース オブジェクト (テーブル) について、増分統計のプロパティを返します。 `sys.dm_db_incremental_stats_properties` (パーティション番号を含む) の使用方法は、非増分統計に使用される `sys.dm_db_stats_properties` と似ています。 
   
-  この機能は [!INCLUDE[ssSQL14_md](../../includes/sssql14-md.md)] 、Service pack 2 および [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] service pack 1 で導入されました。
+  この機能は [!INCLUDE[ssSQL14_md](../../includes/sssql14-md.md)] 、Service pack 2 および [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] service pack 1 で導入されました。
   
 ## <a name="syntax"></a>構文  
   
@@ -41,10 +41,10 @@ sys.dm_db_incremental_stats_properties (object_id, stats_id)
   
 ## <a name="arguments"></a>引数  
  *object_id*  
- 増分統計のプロパティが要求された、現在のデータベース内にあるオブジェクトの ID です。 *object_id* は **int**です。  
+ 増分統計のプロパティが要求された、現在のデータベース内にあるオブジェクトの ID です。 *object_id* は **int** です。  
   
  *stats_id*  
- 指定された *object_id*の統計情報の ID です。 統計 ID は、 [sys.stats](../../relational-databases/system-catalog-views/sys-stats-transact-sql.md) 動的管理ビューから取得できます。 *stats_id* は **int**です。  
+ 指定された *object_id* の統計情報の ID です。 統計 ID は、 [sys.stats](../../relational-databases/system-catalog-views/sys-stats-transact-sql.md) 動的管理ビューから取得できます。 *stats_id* は **int** です。  
   
 ## <a name="table-returned"></a>返されるテーブル  
   
@@ -91,5 +91,5 @@ SELECT * FROM sys.dm_db_incremental_stats_properties (object_id('PartitionTable'
  [sys.stats &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-stats-transact-sql.md)   
  [オブジェクト関連の動的管理ビューおよび関数 &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/object-related-dynamic-management-views-and-functions-transact-sql.md)   
  [動的管理ビューと動的管理関数 &#40;Transact-SQL&#41;](~/relational-databases/system-dynamic-management-views/system-dynamic-management-views.md)  
- [dm_db_stats_properties](../../relational-databases/system-dynamic-management-views/sys-dm-db-stats-properties-transact-sql.md)   
+ [sys.dm_db_stats_properties](../../relational-databases/system-dynamic-management-views/sys-dm-db-stats-properties-transact-sql.md)   
  [sys.dm_db_stats_histogram (Transact-SQL)](../../relational-databases/system-dynamic-management-views/sys-dm-db-stats-histogram-transact-sql.md) 

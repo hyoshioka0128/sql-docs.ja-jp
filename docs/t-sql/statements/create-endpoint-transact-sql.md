@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - ENDPOINT
 - CREATE ENDPOINT
@@ -30,14 +30,14 @@ helpviewer_keywords:
 - SERVICE_BROKER option
 - Availability Groups [SQL Server], endpoint
 ms.assetid: 6405e7ec-0b5b-4afd-9792-1bfa5a2491f6
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 93d44d07f8a6ba1be36e390e85991183fc749c01
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 6f92bac093c72ccf93f4db8f8251fe3b9b8027d1
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539852"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99234283"
 ---
 # <a name="create-endpoint-transact-sql"></a>CREATE ENDPOINT (Transact-SQL)
 
@@ -201,7 +201,7 @@ FOR DATABASE_MIRRORING (
  必要に応じて、エンドポイントで使用される暗号化の形式を、ALGORITHM 引数を使用して次のように指定できます。  
   
  **AES**  
- エンドポイントで AES アルゴリズムを使用する必要があることを指定します。 これは [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降の既定値です。  
+ エンドポイントで AES アルゴリズムを使用する必要があることを指定します。 これは [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降の既定値です。  
   
  RC4  
  エンドポイントで RC4 アルゴリズムを使用する必要があることを指定します。 これは [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] までの既定値です。  

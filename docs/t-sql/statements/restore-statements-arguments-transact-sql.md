@@ -1,27 +1,26 @@
 ---
 description: RESTORE ステートメントの引数 (Transact-SQL)
-title: RESTORE の引数 (Transact-SQL) | Microsoft Docs
+title: RESTORE の引数 (Transact-SQL)
 ms.custom: ''
 ms.date: 08/08/2018
 ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
 - RESTORE statement, arguments
 - RESTORE statement
-ms.assetid: 4bfe5734-3003-4165-afd4-b1131ea26e2b
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 49394aa04c726d015bbff3ea31a06ec47ffd64d4
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: c07e6ba84a511d81e1fb17718552a0ca2738271a
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88478774"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99236241"
 ---
 # <a name="restore-statements---arguments-transact-sql"></a>RESTORE ステートメントの引数 (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -255,7 +254,7 @@ CREDENTIAL
  Microsoft Azure Blob ストレージ サービスからバックアップを復元する場合にのみ使用されます。  
   
 > [!NOTE]  
->  [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] SP1 CU2 から [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] の場合、URL からの復元時にのみ、1 つのデバイスから復元できます。 URL からの復元時に複数のデバイスから復元するには、[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から[現在のバージョン](https://go.microsoft.com/fwlink/p/?LinkId=299658)を使用する必要があります。また、Shared Access Signature (SAS) トークンを使用する必要があります。 詳細については、「[Microsoft Azure への SQL Server マネージド バックアップを有効にする](../../relational-databases/backup-restore/enable-sql-server-managed-backup-to-microsoft-azure.md)」と「[Simplifying creation of SQL Credentials with Shared Access Signature ( SAS ) tokens on Azure Storage with PowerShell](https://docs.microsoft.com/archive/blogs/sqlcat/simplifying-creation-of-sql-credentials-with-shared-access-signature-sas-tokens-on-azure-storage-with-powershell)」 (PowerShell を使用する Azure ストレージにおける Shared Access Signature (SAS) トークンでの SQL 資格情報の作成の簡素化) を参照してください。  
+>  [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] SP1 CU2 から [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] の場合、URL からの復元時にのみ、1 つのデバイスから復元できます。 URL からの復元時に複数のデバイスから復元するには、[!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降を使用する必要があります。また、Shared Access Signature (SAS) トークンを使用する必要があります。 詳細については、「[Microsoft Azure への SQL Server マネージド バックアップを有効にする](../../relational-databases/backup-restore/enable-sql-server-managed-backup-to-microsoft-azure.md)」と「[Simplifying creation of SQL Credentials with Shared Access Signature ( SAS ) tokens on Azure Storage with PowerShell](/archive/blogs/sqlcat/simplifying-creation-of-sql-credentials-with-shared-access-signature-sas-tokens-on-azure-storage-with-powershell)」 (PowerShell を使用する Azure ストレージにおける Shared Access Signature (SAS) トークンでの SQL 資格情報の作成の簡素化) を参照してください。  
   
  REPLACE  
  **サポートしているステートメント:** [RESTORE](../../t-sql/statements/restore-statements-transact-sql.md)  
@@ -572,7 +571,7 @@ KEEP_REPLICATION は、ログ配布と共に動作するようにレプリケー
 |---------------|-----------------------------------------|  
 |RESTORE|既定のバックアップ セット ファイル番号は 1 です。 1 つの RESTORE ステートメントでは、1 つのバックアップ セットの FILE オプションのみが許可されます。 ここではバックアップ セットを順序どおり指定することが重要です。|  
 |RESTORE FILELISTONLY|既定のバックアップ セット ファイル番号は 1 です。|  
-|RESTORE HEADERONLY|既定では、メディア セット内のすべてのバックアップ セットが処理されます。 RESTORE HEADERONLY の結果セットでは、メディア セット内における**位置**など、各バックアップ セットに関する情報が返されます。 特定のバックアップ セットの情報が返されるようにするには、その位置番号を FILE オプションの *backup_set_file_number* 値として使用します。<br /><br /> 注:テープ メディアの場合、RESTORE HEADER では、読み込まれているテープのバックアップ セットのみが処理されます。|  
+|RESTORE HEADERONLY|既定では、メディア セット内のすべてのバックアップ セットが処理されます。 RESTORE HEADERONLY の結果セットでは、メディア セット内における **位置** など、各バックアップ セットに関する情報が返されます。 特定のバックアップ セットの情報が返されるようにするには、その位置番号を FILE オプションの *backup_set_file_number* 値として使用します。<br /><br /> 注:テープ メディアの場合、RESTORE HEADER では、読み込まれているテープのバックアップ セットのみが処理されます。|  
 |RESTORE VERIFYONLY|既定の *backup_set_file_number* は 1 です。|  
   
 > [!NOTE]  
@@ -636,6 +635,3 @@ KEEP_REPLICATION は、ログ配布と共に動作するようにレプリケー
  [RESTORE VERIFYONLY &#40;Transact-SQL&#41;](../../t-sql/statements/restore-statements-verifyonly-transact-sql.md)   
  [SQL Server データベースのバックアップと復元](../../relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases.md)   
  [FILESTREAM &#40;SQL Server&#41;](../../relational-databases/blob/filestream-sql-server.md)  
-  
-  
-

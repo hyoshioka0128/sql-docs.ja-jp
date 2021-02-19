@@ -7,25 +7,25 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 ms.assetid: 5ff02a32-e8d3-479c-ae8b-07581e41f5f8
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 41b99ede74cb7e8213fb50e95f1a9160b4d947af
-ms.sourcegitcommit: 8f062015c2a033f5a0d805ee4adabbe15e7c8f94
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: abe6b791139a4fbc110b4aeb43e0de267a927e96
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91226913"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99235994"
 ---
 # <a name="queries"></a>クエリ
 
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  データ操作言語 (DML) は、[!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] および SQL Database でデータを取得して操作するために使用される用語の集まりです。 そのほとんどは、[!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] と [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] でも動作します (詳細については個々のステートメントを確認してください)。 DML ステートメントを使用すると、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースに対してデータの追加、変更、クエリ、または削除を実行できます。  
+  データ操作言語 (DML) は、[!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] および SQL Database でデータを取得して操作するために使用される用語の集まりです。 そのほとんどは、[!INCLUDE[ssSDW](../../includes/sssdwfull-md.md)] と [!INCLUDE[ssPDW](../../includes/sspdw-md.md)] でも動作します (詳細については個々のステートメントを確認してください)。 DML ステートメントを使用すると、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースに対してデータの追加、変更、クエリ、または削除を実行できます。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
  次の表は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で使用する DML ステートメントを示しています。  

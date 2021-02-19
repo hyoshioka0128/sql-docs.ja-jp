@@ -5,23 +5,23 @@ ms.prod: sql
 ms.technology: machine-learning-services
 ms.date: 09/30/2020
 ms.topic: how-to
-author: cawrites
-ms.author: chadam
-monikerRange: =sql-server-2016||=sql-server-2017||=sqlallproducts-allversions
-ms.openlocfilehash: 2036fda1d483bdfb04a205f5a2e3bf6d86119b1b
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+author: dphansen
+ms.author: davidph
+monikerRange: =sql-server-2016||=sql-server-2017
+ms.openlocfilehash: 7cdf5b2d0c223130245604f5b27674a714ab4d8a
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956730"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100082388"
 ---
 # <a name="upgrade-python-and-r-runtime-with-binding-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services でバインドを使用して Python および R ランタイムをアップグレードする
 [!INCLUDE [SQL Server 2016 and 2017](../../includes/applies-to-version/sqlserver2016-2017-only.md)]
 
-この記事では**バインド**と呼ばれるインストール プロセスを使用して、[SQL Server 2016 R Services](../r/sql-server-r-services.md) または [SQL Server 2017 Machine Learning Services](../sql-server-machine-learning-services.md) で R または Python ランタイムをアップグレードする方法について説明します。 [Microsoft Machine Learning Server](/machine-learning-server) に "*バインドする*" ことで、[より新しいバージョンの Python および R](#version-map) を入手できます。
+この記事では **バインド** と呼ばれるインストール プロセスを使用して、[SQL Server 2016 R Services](../r/sql-server-r-services.md) または [SQL Server 2017 Machine Learning Services](../sql-server-machine-learning-services.md) で R または Python ランタイムをアップグレードする方法について説明します。 [Microsoft Machine Learning Server](/machine-learning-server) に "*バインドする*" ことで、[より新しいバージョンの Python および R](#version-map) を入手できます。
 
 > [!IMPORTANT]
-> この記事では、*バインド*と呼ばれる、R および Python ランタイムをアップグレードする古い方法について説明します。 **SQL Server 2016 Services Pack (SP) 2 の累積的な更新プログラム (CU) 14 以降**または **SQL Server 2017 の累積的更新プログラム (CU) 22 以降**をインストールしている場合は、代わりに[既定の R または Python 言語ランタイムを新しいバージョンに変更する](change-default-language-runtime-version.md)方法をご覧ください。
+> この記事では、*バインド* と呼ばれる、R および Python ランタイムをアップグレードする古い方法について説明します。 **SQL Server 2016 Services Pack (SP) 2 の累積的な更新プログラム (CU) 14 以降** または **SQL Server 2017 の累積的更新プログラム (CU) 22 以降** をインストールしている場合は、代わりに [既定の R または Python 言語ランタイムを新しいバージョンに変更する](change-default-language-runtime-version.md)方法をご覧ください。
 
 ## <a name="what-is-binding"></a>バインドとは
 
@@ -40,7 +40,7 @@ ms.locfileid: "91956730"
 > [!NOTE]
 > バインドは、SQL Server のインスタンスにバインドされている、データベース内インスタンスにのみ適用されます。 この場合、スタンドアロン インストールにはバインドは必要ありません。
 
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 **SQL Server 2016 のバインドに関する考慮事項**
 
 SQL Server 2016 R Services のお客様の場合は、バインドによって次が提供されます。
@@ -58,7 +58,7 @@ SQL Server 2016 R Services のお客様の場合は、バインドによって�
 
 バインドを行っても、最新バージョンの R または Anaconda は保証されません。 Microsoft Machine Learning Server にバインドすると、セットアップを通じてインストールされる R または Python のバージョンを入手できますが、これは Web 上で入手できる最新バージョンではない可能性があります。
 
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 [**SQL Server 2016 R Services**](../install/sql-r-services-windows-install.md)
 
 コンポーネント |最初のリリース | [Microsoft R Server 9.0.1](/machine-learning-server/install/r-server-install-windows) | [Microsoft R Server 9.1](/machine-learning-server/install/r-server-install-windows) | [Machine Learning Server 9.2.1](/machine-learning-server/install/machine-learning-server-windows-install) | [Machine Learning Server 9.3](/machine-learning-server/install/machine-learning-server-windows-install) |  [Machine Learning Server 9.4.7](/machine-learning-server/install/machine-learning-server-windows-install)
@@ -71,7 +71,7 @@ R 上の Microsoft R Open (MRO) | R 3.2.2     | R 3.3.2   |R 3.3.3   | R 3.4.1  
 [olapR](/machine-learning-server/r-reference/olapr/olapr) | 該当なし | 1.0 |  1.0 |  1.0 |  1.0 | 1.0 |
 ::: moniker-end
 
-::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2017"
 [**SQL Server 2017 Machine Learning Services**](../install/sql-machine-learning-services-windows-install.md)
 
 コンポーネント |最初のリリース | Machine Learning Server 9.3 | Machine Learning Server 9.4.7 |
@@ -138,7 +138,7 @@ Python 3.5 上の Anaconda 4.2  | 4.2/3.5.2 | 4.2/3.5.2 |
 
 1. フォルダーを解凍し、MLSWIN93 の下にある ServerSetup.exe を起動します。
 
-1. **インストールを構成する**で、アップグレードするコンポーネントを確認して、互換性のあるインスタンスの一覧をレビューします。
+1. **インストールを構成する** で、アップグレードするコンポーネントを確認して、互換性のあるインスタンスの一覧をレビューします。
 
 1. **[ライセンス契約]** ページで、 **[次の使用条件に同意します]** を選択して Machine Learning Server のライセンス使用条件に同意します。 
 

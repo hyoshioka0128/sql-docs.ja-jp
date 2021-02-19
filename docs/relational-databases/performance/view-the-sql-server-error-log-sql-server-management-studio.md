@@ -14,14 +14,14 @@ helpviewer_keywords:
 - logs [SQL Server], SQL Server error logs
 - logs [SQL Server], viewing
 ms.assetid: 55f468ba-146c-4ab3-95cd-d35d051afd12
-author: julieMSFT
-ms.author: jrasnick
-ms.openlocfilehash: 54aa4b48837f171406edbbe4cbadcacf5b910a99
-ms.sourcegitcommit: 9470c4d1fc8d2d9d08525c4f811282999d765e6e
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 4727287f27190ad865cf0ebe6142d674730dbc46
+ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86458054"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96504876"
 ---
 # <a name="view-the-sql-server-error-log-in-sql-server-management-studio-ssms"></a>SQL Server Management Studio (SSMS) で SQL Server エラー ログを表示する
 
@@ -30,7 +30,7 @@ ms.locfileid: "86458054"
 
 ## <a name="view-the-logs"></a>ログを表示する
 
-1. SQL Server Management Studio で **[オブジェクト エクスプローラー]** を選択します。 **オブジェクト エクスプローラー**を開くには、F8 キーを押します。 または、上部メニューで **[表示]** 、 **[オブジェクト エクスプローラー]** の順に選択します。
+1. SQL Server Management Studio で **[オブジェクト エクスプローラー]** を選択します。 **オブジェクト エクスプローラー** を開くには、F8 キーを押します。 または、上部メニューで **[表示]** 、 **[オブジェクト エクスプローラー]** の順に選択します。
     
     ![Object_Explorer](../../relational-databases/performance/media/object-explorer.png) 
 
@@ -42,7 +42,7 @@ ms.locfileid: "86458054"
 
     ![View_SQLServer_Log_SSMS](../../relational-databases/performance/media/view-sqlserver-log-ssms.png) 
  
-5. **ログ ファイル ビューアー**でログの一覧が表示されます (少し時間がかかることがあります)。
+5. **ログ ファイル ビューアー** でログの一覧が表示されます (少し時間がかかることがあります)。
 
   ## <a name="see-also"></a>参照
   詳細については、[MSSQLTips.com](https://www.mssqltips.com/) の参考になる投稿「[Identify location of the SQL Server Error Log file](https://www.mssqltips.com/sqlservertip/2506/identify-location-of-the-sql-server-error-log-file/)」(SQL Server エラー ログ ファイルの場所を探す) を参照してください。

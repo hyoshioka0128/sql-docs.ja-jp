@@ -1,7 +1,7 @@
 ---
 title: Reporting Services と Power View のブラウザー サポート | Microsoft Docs
 description: SQL Server Reporting Services、ReportViewer コントロール、Power View. の管理と表示にサポートされているブラウザーのバージョンについて説明します。
-ms.date: 07/02/2017
+ms.date: 01/28/2021
 ms.prod: reporting-services
 ms.prod_service: reporting-services-native
 ms.technology: reporting-services
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 48a75bbb-0029-4c43-891d-dc8f4fc0ebe1
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: a8bae1b0ae40d9895cedc094cf4a31386199f5e1
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+ms.openlocfilehash: e246db4f2a7b2a94ce17f8a48acf05b16aebbdf4
+ms.sourcegitcommit: 04d101fa6a85618b8bc56c68b9c006b12147dbb5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91891232"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99049022"
 ---
 # <a name="browser-support-for-reporting-services-and-power-view"></a>Reporting Services と Power View のブラウザー サポート
 
@@ -83,7 +83,7 @@ SQL Server Reporting Services、ReportViewer コントロール、Power View. �
 
  **(+)** 最新公開リリース バージョン
 
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 
  [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)]に統合されている SharePoint 製品を使用している場合は、「  [SharePoint 2016 でブラウザー サポートを計画する](https://technet.microsoft.com//library/cc263526\(v=office.16\).aspx)」を参照してください。
 
@@ -95,8 +95,8 @@ SQL Server Reporting Services、ReportViewer コントロール、Power View. �
 
 |**ブラウザーの種類**|**サポート**|**ブラウザーの既定値**|**サーバーの既定値**|
 |----------------------|------------------|-------------------------|------------------------|
-|**Microsoft Edge** (+)|ネゴシエート、Kerberos、NTLM、基本|ネゴシエート|はい。 Edge の既定の認証設定を使用します。|
-|**[Microsoft Internet Explorer]**|ネゴシエート、Kerberos、NTLM、基本|ネゴシエート|はい。 Internet Explorer の既定の認証設定を使用します。|
+|**Microsoft Edge** (+)|ネゴシエート、NTLM、基本|ネゴシエート|はい。 Edge の既定の認証設定を使用します。|
+|**[Microsoft Internet Explorer]**|ネゴシエート、NTLM、基本|ネゴシエート|はい。 Internet Explorer の既定の認証設定を使用します。|
 |**Google Chrome**(+)|ネゴシエート、NTLM、基本|ネゴシエート|はい。 Chrome の既定の認証設定を使用します。|
 |**Mozilla Firefox**(+)|NTLM、基本|NTLM|はい。 Firefox の既定の認証設定を使用します。|
 |**Apple Safari**(+)|NTLM、基本|Basic|はい。 Safari の既定の認証設定を使用します。|
@@ -147,7 +147,7 @@ SQL Server Reporting Services、ReportViewer コントロール、Power View. �
 
  **(+)** 最新公開リリース バージョン
 
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 
  SharePoint 2016 のブラウザー サポートの詳細については、「 [SharePoint 2013 でブラウザー サポートを計画する](https://technet.microsoft.com//library/cc263526\(v=office.16\).aspx)」を参照してください。
 

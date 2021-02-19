@@ -13,12 +13,12 @@ ms.assetid: ''
 author: lilgreenbird
 ms.author: v-susanh
 manager: kenvh
-ms.openlocfilehash: ed1e16aac4de3277906d00c2b1a0f4458418cc95
-ms.sourcegitcommit: 7eb80038c86acfef1d8e7bfd5f4e30e94aed3a75
+ms.openlocfilehash: 31510c4fbe4291168753809c227650951592e1e6
+ms.sourcegitcommit: 644223c40af7168f9d618526e9f4cd24e115d1db
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92081771"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96328042"
 ---
 # <a name="using-ntlm-authentication-to-connect-to-sql-server"></a>NTLM 認証を使用して SQL Server に接続する
 
@@ -84,7 +84,7 @@ try (Connection c = ds.getConnection(); Statement s = c.createStatement();
 > [!NOTE]  
 > serverSpn 接続属性は、Microsoft JDBC Driver 4.2 以降でのみサポートされています。
 
-> 6\.2 リリースより前の JDBC driver では、**serverSpn** を明示的に設定する必要があります。 6\.2 リリースの場合、ドライバーは既定で **Serverspn** を構築でき ますが、 **serverspn**を明示的に使用することもできます。
+> 6\.2 リリースより前の JDBC driver では、**serverSpn** を明示的に設定する必要があります。 6\.2 リリースの場合、ドライバーは既定で **Serverspn** を構築でき ますが、 **serverspn** を明示的に使用することもできます。
 
 ## <a name="security-risks"></a>セキュリティ リスク
 
@@ -101,7 +101,7 @@ SSL 暗号化を使用した接続の詳細については、以下を参照し�
 - [SSL 暗号化を使用した接続](../../connect/jdbc/connecting-with-ssl-encryption.md)
 
 > [!NOTE]
-> 7\.4 リリースでは、拡張保護と暗号化の**両方**を有効にすることはサポートされていません。
+> 7\.4 リリースでは、拡張保護と暗号化の **両方** を有効にすることはサポートされていません。
 
 ## <a name="see-also"></a>関連項目
 

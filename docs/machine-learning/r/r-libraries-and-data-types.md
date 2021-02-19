@@ -8,13 +8,13 @@ ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: d10d65f8be4ff8e53cbfad795f1e515a22eada71
-ms.sourcegitcommit: 9774e2cb8c07d4f6027fa3a5bb2852e4396b3f68
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: 08d4948ac89f3771c264f9d24d692ca023fa57c1
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92098861"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470893"
 ---
 # <a name="data-type-mappings-between-r-and-sql-server"></a>R と SQL Server の間のデータ型マッピング
 [!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
@@ -66,7 +66,7 @@ SQL Server の特定のインスタンスに関連付けられている R のバ
 
 [SQL Server 型システム](../../t-sql/data-types/data-types-transact-sql.md)でサポートされるデータ型のカテゴリのうち、次の型は R コードに渡されるときに問題が発生する可能性があります。
 
-+ SQL 型システムに関する記事の**その他**のセクションに示されているデータ型: **カーソル**、**タイムスタンプ**、**hierarchyid**、**一意識別子**、**sql_variant**、**xml**、**テーブル**
++ SQL 型システムに関する記事の **その他** のセクションに示されているデータ型: **カーソル**、**タイムスタンプ**、**hierarchyid**、**一意識別子**、**sql_variant**、**xml**、**テーブル**
 + すべての空間型
 + **image**
 
@@ -75,14 +75,14 @@ SQL Server の特定のインスタンスに関連付けられている R のバ
 + **datetimeoffset** 以外のほとんどの datetime 型は機能します。
 + ほとんどの数値データ型はサポートされますが、**money** と **smallmoney** については、変換が失敗することがあります。
 + **varchar** はサポートされますが、SQL Server では原則として Unicode を使用するため、可能な場合には **nvarchar** とその他の Unicode テキスト データ型の使用をお勧めします。
-+ RevoScaleR ライブラリの先頭に rx が付く関数は、SQL バイナリ データ型 (**バイナリ**と **varbinary**) を処理できますが、ほとんどのシナリオでは、これらの型に対して特別な処理が必要になります。 R コードの大部分は、バイナリ列で動作しません。
++ RevoScaleR ライブラリの先頭に rx が付く関数は、SQL バイナリ データ型 (**バイナリ** と **varbinary**) を処理できますが、ほとんどのシナリオでは、これらの型に対して特別な処理が必要になります。 R コードの大部分は、バイナリ列で動作しません。
 
   
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のデータ型について詳しくは、「[データ型 &#40;Transact-SQL&#41;](../../t-sql/data-types/data-types-transact-sql.md)」をご覧ください
 
 ## <a name="changes-in-data-types-between-sql-server-versions"></a>SQL Server バージョン間でのデータ型の変更
 
-Microsoft SQL Server 2016 以降では、データ型変換とその他のいくつかの操作の改善が行われています。 これらの改善のほとんどでは、浮動小数点型を処理する場合の精度が向上し、従来の**日時**型に対する操作が若干変更されています。
+Microsoft SQL Server 2016 以降では、データ型変換とその他のいくつかの操作の改善が行われています。 これらの改善のほとんどでは、浮動小数点型を処理する場合の精度が向上し、従来の **日時** 型に対する操作が若干変更されています。
 
 これらの改善は、データベース互換性レベル 130 またはそれ以降を使用する場合に既定ですべて使用可能になります。 ただし、別の互換性レベルを使用しているか、以前のバージョンを使用してデータベースに接続する場合は、数値またはその他の結果の精度が異なる可能性があります。 
 

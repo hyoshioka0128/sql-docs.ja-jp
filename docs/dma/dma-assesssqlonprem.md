@@ -15,12 +15,12 @@ ms.assetid: ''
 author: rajeshsetlem
 ms.author: rajpo
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 5c0ddd9aa7c89f7f77212155a0b85089c34087d9
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: c88a289e21e7cd70980763474e82b7dd6cbd49c2
+ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91726302"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97489519"
 ---
 # <a name="perform-a-sql-server-migration-assessment-with-data-migration-assistant"></a>Data Migration Assistant を使用した SQL Server 移行評価の実行
 
@@ -35,9 +35,9 @@ ms.locfileid: "91726302"
 
 2. ソースとターゲットのサーバーの種類を設定します。
 
-    オンプレミスの SQL Server インスタンスを最新のオンプレミスの SQL Server インスタンスにアップグレードする場合、または Azure VM でホストされている SQL Server にアップグレードする場合は、ソースとターゲットのサーバーの種類を **SQL Server**に設定します。 Azure SQL Database に移行している場合は、代わりに対象サーバーの種類を **Azure SQL Database**に設定します。
+    オンプレミスの SQL Server インスタンスを最新のオンプレミスの SQL Server インスタンスにアップグレードする場合、または Azure VM でホストされている SQL Server にアップグレードする場合は、ソースとターゲットのサーバーの種類を **SQL Server** に設定します。 Azure SQL Database に移行している場合は、代わりに対象サーバーの種類を **Azure SQL Database** に設定します。
 
-3. **Create** をクリックしてください。
+3. **[作成]** をクリックします。
 
    ![評価を作成する](../dma/media/dma-assesssqlonprem/new-assessment.png)
 
@@ -125,23 +125,23 @@ ms.locfileid: "91726302"
 
 2. [ **オプション** ] ページで選択したターゲット SQL Server バージョンでサポートされているすべての互換性レベルで、互換性の問題を確認します。
 
-互換性の問題を確認するには、影響を受けるオブジェクト、その詳細、および **重大な変更**、 **動作の変更**、および **非推奨の機能**で特定されたすべての問題に対する修正プログラムを分析します。
+互換性の問題を確認するには、影響を受けるオブジェクト、その詳細、および **重大な変更**、 **動作の変更**、および **非推奨の機能** で特定されたすべての問題に対する修正プログラムを分析します。
 
 ![評価結果の表示](../dma/media/dma-assesssqlonprem/review-results.png)
 
 同様に、 **パフォーマンス**、 **ストレージ**、 **セキュリティ** の各領域で、機能の推奨事項を確認することもできます。
 
-機能に関する推奨事項は、インメモリ OLTP、列ストア、Stretch Database、Always Encrypted、動的データマスク、Transparent Data Encryption などのさまざまな機能に対応しています。
+機能に関する推奨事項は、In-Memory OLTP、列ストア、Stretch Database、Always Encrypted、動的データマスク、Transparent Data Encryption など、さまざまな種類の機能に対応しています。
 
 ![機能に関する推奨事項の表示](../dma/media/dma-assesssqlonprem/feature-recommendations.png)
 
-Azure SQL Database の場合、評価によって、移行のブロックの問題と機能のパリティの問題が発生します。特定のオプションを選択して、両方のカテゴリの結果を確認します。
+Azure SQL Database の場合、評価によって、移行のブロックの問題と機能のパリティの問題が発生します。 特定のオプションを選択して、両方のカテゴリの結果を確認します。
 
-- **SQL Server 機能のパリティ**カテゴリは、一連の推奨事項、Azure で利用可能な別のアプローチ、および手順の軽減を提供します。 これは、移行プロジェクトでこの作業を計画するのに役立ちます。
+- **SQL Server 機能のパリティ** カテゴリは、一連の推奨事項、Azure で利用可能な別のアプローチ、および手順の軽減を提供します。 これは、移行プロジェクトでこの作業を計画するのに役立ちます。
 
   ![SQL Server 機能のパリティに関する情報の表示](../dma/media/dma-assesssqlonprem/sql-feature-parity.png)
 
-- **互換性の問題**カテゴリには、オンプレミスの SQL Server データベースを Azure SQL データベースに移行できない部分的にサポートされている機能やサポートされていない機能があります。その後、これらの問題に対処するための推奨事項を提供します。
+- **互換性の問題** カテゴリには、オンプレミスの SQL Server データベースを Azure SQL データベースに移行できない部分的にサポートされている機能やサポートされていない機能があります。 その後、これらの問題に対処するための推奨事項を提供します。
 
   ![互換性の問題の表示](../dma/media/dma-assesssqlonprem/compatibility-issues.png)
 
@@ -151,7 +151,7 @@ Azure SQL Database の場合、評価によって、移行のブロックの問�
 
 これにより、Azure Migrate hub プロジェクトで統合された結果を表示できるようになります。
 
-ターゲット準備評価の詳細なステップバイステップガイダンスについては、 [こちら](./dma-assess-sql-data-estate-to-sqldb.md?view=sql-server-2017)を参照してください。
+ターゲット準備評価の詳細なステップバイステップガイダンスについては、 [こちら](./dma-assess-sql-data-estate-to-sqldb.md)を参照してください。
 
    ![結果を Azure Migrate にアップロードする](../dma/media/dma-assesssqlonprem/upload-to-azure-migrate.png)
 

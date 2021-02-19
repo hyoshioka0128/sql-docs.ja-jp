@@ -11,12 +11,12 @@ ms.topic: language-reference
 ms.assetid: 1b38e8e3-c560-4b6e-b60e-bfd7cfcd4fdf
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: fea0c2df2ec25493e09214289802824ffe5f93ba
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: f1fee927b37a29f575e2b20c09de5a8f465e4ab4
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88430244"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100347813"
 ---
 # <a name="functions---dm_execution_performance_counters"></a>関数 - dm_execution_performance_counters
 
@@ -64,14 +64,18 @@ dm_execution_performance_counters [ @execution_id = ] execution_id
 |counter_name|**nvarchar(128)**|カウンターの名前。|値の「**解説**」セクションを参照してください。|  
 |counter_value|**BigInt**|カウンターによって返される値です。||  
   
-## <a name="example"></a>例  
+## <a name="examples"></a>例  
+
+### <a name="a-return-statistics-for-a-running-execution"></a>A. 実行中の実行の統計を返す
+
  次の例では、ID が 34 である処理中の実行の統計を関数で返します。  
   
 ```sql
 select * from [catalog].[dm_execution_performance_counters] (34)  
 ```  
   
-## <a name="example"></a>例  
+### <a name="b-return-statistics-for-all-running-executions"></a>B. 実行中のすべての実行の統計を返す
+
  次の例では、権限に応じて、[!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] サーバーで処理中のすべての実行の統計を関数で返します。  
   
 ```sql

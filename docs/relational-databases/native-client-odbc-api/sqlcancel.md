@@ -13,18 +13,18 @@ helpviewer_keywords:
 ms.assetid: d4c965ae-c1ac-4e9d-b4b9-32b561401106
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 86f50105acb4c506b6ecb937ff0f302f32b24bb3
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 8c6215abca068aa221d13303f53de3aa70ba11b5
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91811144"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97473893"
 ---
 # <a name="sqlcancel"></a>SQLCancel
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  [SQLCancel](../../odbc/reference/syntax/sqlcancel-function.md)のトピックでは、ODBC 2.x では、ステートメントに対して処理が実行されていないときにアプリケーションが**SQLCancel**を呼び出した場合、 **SQLCancel**は**SQLFreeStmt**と同じ効果を**SQL_CLOSE**持つということを示しています。この動作は、完全な場合にのみ定義され、アプリケーションは**SQLFreeStmt**または**sqlcloを**呼び出してカーソルを閉じる必要があります。 ただし、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client アプリケーションが ODBC API バージョンを 3.5. x 以降に設定している場合でも、 **SQLCancel** 関数では odbc 2.x の動作が使用されます。  
+  [SQLCancel](../../odbc/reference/syntax/sqlcancel-function.md)のトピックでは、ODBC 2.x では、ステートメントに対して処理が実行されていないときにアプリケーションが **SQLCancel** を呼び出した場合、 **SQLCancel** は **SQLFreeStmt** と同じ効果を **SQL_CLOSE** 持つということを示しています。この動作は、完全な場合にのみ定義され、アプリケーションは **SQLFreeStmt** または **sqlcloを** 呼び出してカーソルを閉じる必要があります。 ただし、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client アプリケーションが ODBC API バージョンを 3.5. x 以降に設定している場合でも、 **SQLCancel** 関数では odbc 2.x の動作が使用されます。  
   
 ## <a name="see-also"></a>参照  
  [SQLCancel](../../odbc/reference/syntax/sqlcancel-function.md)   

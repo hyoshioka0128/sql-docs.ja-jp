@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: 941369bd-cd4d-4a64-8e42-724d9a866eb7
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 81676553e506725ff8d3b02e14c113442a40629c
-ms.sourcegitcommit: 6d53ecfdc463914f045c20eda96da39dec22acca
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: 8b2ecbb27f56d77ce57a1f5b996b171d5ada2038
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88900549"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100349873"
 ---
 # <a name="client-protocols---shared-memory-properties-protocol-tab"></a>クライアント プロトコル - [共有メモリのプロパティ] ダイアログ ボックス ([プロトコル] タブ)
 [!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]

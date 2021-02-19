@@ -7,18 +7,18 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - ADO, reference
 ms.assetid: bfd96a4b-c913-45aa-9e4c-ec86ac364f3a
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 12bc8aa9075ad92d7ee9fe84a62b735b29fa0ee3
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: f92a888cc5d965a5d4459b52e6d9ff6c5053b411
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88976683"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100035822"
 ---
 # <a name="ado-api-reference"></a>ADO の API リファレンス
 ADO ドキュメントのこのセクションには、各 ADO オブジェクト、コレクション、プロパティ、動的プロパティ、メソッド、イベント、および列挙に関するトピックが含まれています。 また、Microsoft Visual C++ および Windows Foundation Classes (WFC) で使用される ADO 構文インデックスの一覧も含まれています。  

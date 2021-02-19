@@ -9,12 +9,12 @@ ms.author: hanqin
 ms.reviewer: maghan
 ms.custom: ''
 ms.date: 10/14/2020
-ms.openlocfilehash: 8284300858be0dc8bcbf8bdf8f381e839fd7ae96
-ms.sourcegitcommit: 76ab3b57718341c6057613c9bd38cf82fb17786e
+ms.openlocfilehash: bccf25686c397266a4cee3c44819b08ee301569b
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92060882"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100040128"
 ---
 # <a name="preview-features-in-azure-data-studio"></a>Azure Data Studio のプレビュー機能
 
@@ -32,7 +32,7 @@ Azure Data Studio の新機能と機能強化は、一般公開 (GA) される�
 
 プレビュー機能は、設定でいつでも有効または無効にすることができます。
 
-1. 左下隅にある**歯車**アイコンを選択し、コンテキスト メニューから **[設定]** を選択します。 [設定] タブが開きます。
+1. 左下隅にある **歯車** アイコンを選択し、コンテキスト メニューから **[設定]** を選択します。 [設定] タブが開きます。
 
    ![ADS で設定にアクセスするための歯車アイコン](./media/settings/open-settings-menu.png)
 
@@ -77,7 +77,7 @@ Azure Data Studio の新機能と機能強化は、一般公開 (GA) される�
 ### <a name="first-party-extensions-in-preview"></a>プレビュー段階のファーストパーティ拡張機能
 
 * SQL Server 用の管理パック
-* Azure SQL Data Warehouse Insights
+* Azure Synapse Analytics Insights
 * 中央管理サーバー
 * Database Administration Tool Extensions for Windows
 * Kusto
@@ -97,4 +97,4 @@ Azure Data Studio の新機能と機能強化は、一般公開 (GA) される�
 
 ## <a name="next-steps"></a>次のステップ
 
-* [Azure Data Studio](what-is.md)
+* [Azure Data Studio](what-is-azure-data-studio.md)

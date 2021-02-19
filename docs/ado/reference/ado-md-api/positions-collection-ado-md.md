@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - Axis::Positions
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 5b9e7545-cf30-464d-80ef-5c99c8306bab
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: bf3e0d66d5b483e065fee725dc9a46d12a6a03ac
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 1cd3a431884f314c814b2d7060ae506cb6c18d71
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88986033"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100050903"
 ---
 # <a name="positions-collection-ado-md"></a>Positions コレクション (ADO MD)
 軸上の点を定義する [位置](./position-object-ado-md.md) オブジェクトを格納します。  

@@ -8,13 +8,13 @@ ms.prod_service: reporting-services-native
 ms.technology: tools
 ms.topic: conceptual
 ms.date: 10/19/2020
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: e8bb8de8d13a9b7696bb6505363b15d38cd35994
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: ed31e889e195cffb828f5e04e131ffd2cb71fa84
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92194278"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97466663"
 ---
 # <a name="server-properties-advanced-page---power-bi-report-server--reporting-services"></a>[サーバーのプロパティ] の [詳細設定] ページ - Power BI Report Server と Reporting Services
 
@@ -122,7 +122,7 @@ ms.locfileid: "92194278"
 (Power BI レポート サーバーのみ) 有効にすると、Power BI レポートには、Microsoft がホストするコンテンツ配信ネットワーク (CDN) から最新の認定カスタム ビジュアルが読み込まれます。 サーバーからインターネット リソースにアクセスできない場合は、このオプションをオフにすることができます。 この場合、サーバーに発行されたレポートからカスタム ビジュアルが読み込まれます。 既定値は **True** です。  
 
 ###  <a name="enableclientprinting"></a>EnableClientPrinting  
-レポート サーバーからのダウンロードに RSClientPrint ActiveX コントロールが使用可能かどうかを示します。 有効値は **true** および **false**です。 既定値は **true** です。 このコントロールに必要な追加設定に関する詳細については、「 [Reporting Services のクライアント側印刷機能の有効化と無効化](../../reporting-services/report-server/enable-and-disable-client-side-printing-for-reporting-services.md)」を参照してください。  
+レポート サーバーからのダウンロードに RSClientPrint ActiveX コントロールが使用可能かどうかを示します。 有効値は **true** および **false** です。 既定値は **true** です。 このコントロールに必要な追加設定に関する詳細については、「 [Reporting Services のクライアント側印刷機能の有効化と無効化](../../reporting-services/report-server/enable-and-disable-client-side-printing-for-reporting-services.md)」を参照してください。  
 
 ### <a name="enablecustomvisuals"></a>EnableCustomVisuals 
 (Power BI Report Server のみ) Power BI カスタム ビジュアルの表示を有効にします。 値は True と False です。 *既定値は True です。*  
@@ -131,7 +131,7 @@ ms.locfileid: "92194278"
 レポート実行のログ記録が有効になっているかどうかを示します。 既定値は **true** です。 レポート サーバー実行ログの詳細については、「 [レポート サーバー ExecutionLog と ExecutionLog3 ビュー](../../reporting-services/report-server/report-server-executionlog-and-the-executionlog3-view.md)」を参照してください。  
 
 ### <a name="enableintegratedsecurity"></a>EnableIntegratedSecurity
-Windows 統合セキュリティをレポート データ ソース接続でサポートするかどうかを決定します。 既定値は **True**です。 有効な値は次のとおりです。
+Windows 統合セキュリティをレポート データ ソース接続でサポートするかどうかを決定します。 既定値は **True** です。 有効な値は次のとおりです。
 
 |値|説明|
 |---------|---------|
@@ -155,13 +155,13 @@ Windows 統合セキュリティをレポート データ ソース接続でサ�
 (Power BI Report Server のみ) ユーザーが Power BI Report Server 上の Power BI ビジュアルから基になるデータをエクスポートできるかどうかを示します。 True の値は、機能が有効になっていることを示します。
 
 ### <a name="enableremoteerrors"></a>EnableRemoteErrors
-リモート コンピューターからレポートを要求したユーザーに返されるエラー メッセージに、外部エラー情報 (レポート データ ソースに関するエラー情報など) を含めます。 有効値は **true** および **false**です。 既定値は **false** です。 詳細については、「[リモート エラーの有効化 (Reporting Services)](../../reporting-services/report-server/enable-remote-errors-reporting-services.md)」を参照してください。  
+リモート コンピューターからレポートを要求したユーザーに返されるエラー メッセージに、外部エラー情報 (レポート データ ソースに関するエラー情報など) を含めます。 有効値は **true** および **false** です。 既定値は **false** です。 詳細については、「[リモート エラーの有効化 (Reporting Services)](../../reporting-services/report-server/enable-remote-errors-reporting-services.md)」を参照してください。  
 
 ### <a name="enabletestconnectiondetailederrors"></a>EnableTestConnectionDetailedErrors
-ユーザーがレポート サーバーを使用してデータ ソース接続をテストする際に、クライアント コンピューターに詳細なエラー メッセージを送信するかどうかを指定します。 既定値は **true** です。 このオプションを **false**に設定した場合は、一般的なエラー メッセージだけが送信されます。
+ユーザーがレポート サーバーを使用してデータ ソース接続をテストする際に、クライアント コンピューターに詳細なエラー メッセージを送信するかどうかを指定します。 既定値は **true** です。 このオプションを **false** に設定した場合は、一般的なエラー メッセージだけが送信されます。
 
 ###  <a name="executionlogdayskept"></a>ExecutionLogDaysKept  
-レポート実行情報を実行ログに保持する日数。 このプロパティの有効値は、 **-1** - **2**、**147**、**483**、**647**です。 値が **-1** の場合、エントリは実行ログ テーブルから削除されません。 既定値は **60**です。  
+レポート実行情報を実行ログに保持する日数。 このプロパティの有効値は、 **-1** - **2**、**147**、**483**、**647** です。 値が **-1** の場合、エントリは実行ログ テーブルから削除されません。 既定値は **60** です。  
 
 > [!NOTE]
 > **0 の値を設定すると、実行ログからすべてのエントリが "** *削除*" されます。 値が **-1** の場合、実行ログのエントリは保持され、それらは削除されません。
@@ -185,7 +185,7 @@ Windows 統合セキュリティをレポート データ ソース接続でサ�
 (Power BI Report Server のみ) 未使用のモデルがメモリから削除される頻度を分単位で設定します。 *既定値は 60 です。*
 
 ###  <a name="myreportsrole"></a>MyReportsRole  
-ユーザーの個人用レポート フォルダーに、セキュリティ ポリシーを作成する際に使用するロールの名前。 既定値は **My Reports Role**です。  
+ユーザーの個人用レポート フォルダーに、セキュリティ ポリシーを作成する際に使用するロールの名前。 既定値は **My Reports Role** です。  
 
 ### <a name="officeaccesstokenexpirationseconds"></a>OfficeAccessTokenExpirationSeconds 
 (Power BI Report Server、Reporting Services 2019 以降のみ) Office アクセス トークンの有効期限を秒単位で設定します。 *既定値は 60 です。*
@@ -194,7 +194,7 @@ Windows 統合セキュリティをレポート データ ソース接続でサ�
 (Power BI Report Server のみ) Excel ブックを表示するための Office Online Server インスタンスのアドレスを設定します。
 
 ### <a name="rdlxreporttimetout"></a>RDLXReportTimetout
-RDLX レポート *(SharePoint Server の Power View レポート)* レポート サーバーの名前空間で管理されるすべてのレポートに対する、処理タイムアウト値 (秒単位)。 この値はレポート レベルでオーバーライドできます。 このプロパティを設定すると、レポート サーバーは指定された時間が経過した後、レポートの処理を停止しようとします。 有効値は **-1** ～ **2**、**147**、**483**、**647**です。 値に **-1**を設定すると、名前空間内のレポートが処理中にタイムアウトしません。 既定値は **1800**です。
+RDLX レポート *(SharePoint Server の Power View レポート)* レポート サーバーの名前空間で管理されるすべてのレポートに対する、処理タイムアウト値 (秒単位)。 この値はレポート レベルでオーバーライドできます。 このプロパティを設定すると、レポート サーバーは指定された時間が経過した後、レポートの処理を停止しようとします。 有効値は **-1** ～ **2**、**147**、**483**、**647** です。 値に **-1** を設定すると、名前空間内のレポートが処理中にタイムアウトしません。 既定値は **1800** です。
 
 ### <a name="requireintune"></a>RequireIntune
 (Power BI Report Server、Reporting Services 2017 以降のみ) Intune で Power BI モバイル アプリを介して組織のレポートにアクセスすることを必須にします。 *既定値は False です。*
@@ -206,7 +206,7 @@ RDLX レポート *(SharePoint Server の Power View レポート)* レポート
 (Power BI Report Server のみ) AS モデルが埋め込まれた Power BI レポートに対してスケジュールされた更新のデータ更新のタイムアウト (分単位)。 既定値は 120 分です。
 
 ### <a name="sessiontimeout"></a>SessionTimeout
-セッションがアクティブな状態になっている期間 (秒単位)。 既定値は **600**です。  
+セッションがアクティブな状態になっている期間 (秒単位)。 既定値は **600** です。  
 
 ### <a name="sharepointintegratedmode"></a>SharePointIntegratedMode
 この読み取り専用プロパティは、サーバー モードを示します。 この値が False の場合、レポート サーバーはネイティブ モードで実行されます。  
@@ -218,7 +218,7 @@ RDLX レポート *(SharePoint Server の Power View レポート)* レポート
 Web ポータルのページ タイトルに表示されるレポート サーバー サイトの名前。 既定値は [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] です。 このプロパティには空の文字列を指定できます。 最大長は 8,000 文字です。  
 
 ### <a name="snapshotcompression"></a>SnapshotCompression
-スナップショットの圧縮方法を定義します。 既定値は **SQL**です。 有効な値は次のとおりです。
+スナップショットの圧縮方法を定義します。 既定値は **SQL** です。 有効な値は次のとおりです。
 
 |値|説明|
 |---------|---------|
@@ -227,19 +227,19 @@ Web ポータルのページ タイトルに表示されるレポート サー�
 |**すべて**|すべてのストレージ オプションのスナップショットが圧縮されます。このオプションには、レポート サーバー データベースやファイル システムが含まれます。|
 
 ### <a name="storedparameterslifetime"></a>StoredParametersLifetime
-保存したパラメーターを保持できる最大日数を指定します。 有効値は **-1**、 **+1** ～ **2,147,483,647**です。 既定値は **180** 日です。  
+保存したパラメーターを保持できる最大日数を指定します。 有効値は **-1**、 **+1** ～ **2,147,483,647** です。 既定値は **180** 日です。  
 
 ### <a name="storedparametersthreshold"></a>StoredParametersThreshold
-レポート サーバーが保存できるパラメーター値の最大数を指定します。 有効値は **-1**、 **+1** ～ **2,147,483,647**です。 既定値は **1500**です。  
+レポート サーバーが保存できるパラメーター値の最大数を指定します。 有効値は **-1**、 **+1** ～ **2,147,483,647** です。 既定値は **1500** です。  
 
 ### <a name="supportedhyperlinkschemes"></a>SupportedHyperlinkSchemes 
 (Power BI Report Server 2019 年 1 月、Reporting Services 2019 以降のみ) 表示できるハイパーリンク アクションで定義できる URI スキームのコンマ区切りの一覧を設定するか、"&ast;" を設定してすべてのハイパーリンク スキームを有効にします。 たとえば、"http,https" を設定すると、"https://www. contoso.com” へのハイパーリンクは許可されますが、“mailto:bill@contoso.com” または “javascript:window.open(‘ www.contoso.com’, ‘_blank’)” へのハイパーリンクは削除されます。 既定値は “&ast;” です。
 
 ### <a name="systemreporttimeout"></a>SystemReportTimeout
-レポート サーバー名前空間で管理されているすべてのレポートの既定のレポート処理タイムアウト値 (秒単位)。 この値はレポート レベルでオーバーライドできます。 このプロパティを設定すると、レポート サーバーは指定された時間が経過した後、レポートの処理を停止しようとします。 有効値は **-1** ～ **2**、**147**、**483**、**647**です。 値に **-1**を設定すると、名前空間内のレポートが処理中にタイムアウトしません。 既定値は **1800**です。  
+レポート サーバー名前空間で管理されているすべてのレポートの既定のレポート処理タイムアウト値 (秒単位)。 この値はレポート レベルでオーバーライドできます。 このプロパティを設定すると、レポート サーバーは指定された時間が経過した後、レポートの処理を停止しようとします。 有効値は **-1** ～ **2**、**147**、**483**、**647** です。 値に **-1** を設定すると、名前空間内のレポートが処理中にタイムアウトしません。 既定値は **1800** です。  
 
 ### <a name="systemsnapshotlimit"></a>SystemSnapshotLimit
-レポートに格納されるスナップショットの最大数。 有効値は **-1** ～ **2**、**147**、**483**、**647**です。 値が **-1**の場合、スナップショットに制限はありません。  
+レポートに格納されるスナップショットの最大数。 有効値は **-1** ～ **2**、**147**、**483**、**647** です。 値が **-1** の場合、スナップショットに制限はありません。  
 
 ### <a name="timerinitialdelayseconds"></a>TimerInitialDelaySeconds
 (Power BI Report Server、Reporting Services 2017 以降のみ) 初期時間の遅延時間 (秒単位) を設定します。 *既定値は 60 です。*

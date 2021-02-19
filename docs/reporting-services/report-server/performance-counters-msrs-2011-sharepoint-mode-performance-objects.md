@@ -16,13 +16,13 @@ helpviewer_keywords:
 ms.assetid: 70bf6980-7845-4ab5-8b2a-ebf526d811a6
 author: maggiesMSFT
 ms.author: maggies
-monikerRange: '>=sql-server-2016 <=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 01ec0494fa258aed08c723869efb414600eb8359
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+monikerRange: '>=sql-server-2016 <=sql-server-2016'
+ms.openlocfilehash: 95742efced8c5b5704863d2582c6ca80c5b227e7
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91988728"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97440484"
 ---
 # <a name="performance-counters-msrs-2011-sharepoint-mode-performance-objects"></a>パフォーマンス カウンター MSRS 2011 SharePoint モード パフォーマンス オブジェクト
   このトピックでは、 **SharePoint モード配置の一部である** MSRS 2011 Web Service SharePoint Mode **と** MSRS 2011 Windows Service SharePoint Mode [!INCLUDE[ssRSCurrent](../../includes/ssrscurrent-md.md)] パフォーマンス オブジェクトのパフォーマンス カウンターについて説明します。  
@@ -94,7 +94,7 @@ ms.locfileid: "91988728"
 |**Cache Misses/Sec**|キャッシュからレポートを返すことに失敗した 1 秒あたりの要求数。 このカウンターは、キャッシュに使用するリソース (ディスクまたはメモリ) が十分であるかどうかを判断する場合に使用します。|  
 |**Cache Misses/Sec (Semantic Models)**|キャッシュからモデルを返すことに失敗した 1 秒あたりの要求数。 このカウンターは、キャッシュに使用するリソース (ディスクまたはメモリ) が十分であるかどうかを判断する場合に使用します。|  
 |**Delivers/Sec**|1 秒間に任意の配信拡張機能からレポートが配信される回数です。|  
-|**Events/Sec**|1 秒間に処理されるイベントの数です。 監視対象のイベントには、 **SnapshotUpdated** や **TimedSubscription**があります。|  
+|**Events/Sec**|1 秒間に処理されるイベントの数です。 監視対象のイベントには、 **SnapshotUpdated** や **TimedSubscription** があります。|  
 |**First Session Requests/Sec**|1 秒あたりに作成された新しいレポート実行セッションの数。|  
 |**Memory Cache Hits/Sec**|メモリ内キャッシュからレポートが取得される 1 秒あたりの回数。 *メモリ内キャッシュ* は、CPU メモリにレポートを格納するキャッシュの一部です。 メモリ内キャッシュが使用されると、レポート サーバーでは、キャッシュ済みコンテンツに対して [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] へのクエリが実行されません。|  
 |**Memory Cache Misses/Sec**|メモリ内キャッシュからレポートが取得できない 1 秒あたりの回数です。|  

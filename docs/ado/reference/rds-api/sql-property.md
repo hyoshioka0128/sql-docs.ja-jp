@@ -7,19 +7,19 @@ ms.date: 01/19/2017
 ms.reviewer: ''
 ms.prod: sql
 ms.prod_service: connectivity
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 helpviewer_keywords:
 - SQL property [RDS]
 ms.assetid: e0dabf23-a159-4fe5-a962-3df544a21f5c
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 325f739e55bcb2b7d3e7440e9906fad341c01078
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: c293915a847a150719754c1df0f9389be3efb863
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91724198"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100052913"
 ---
 # <a name="sql-property"></a>SQL プロパティ
 [レコードセット](../ado-api/recordset-object-ado.md)を取得するために使用するクエリ文字列を示します。  

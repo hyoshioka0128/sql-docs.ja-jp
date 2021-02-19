@@ -20,10 +20,10 @@ ms.assetid: c1e81ad6-628b-46d4-9b09-d2866517b6ca
 author: chugugrace
 ms.author: chugu
 ms.openlocfilehash: 1dfeeecf62ad33ab5d2d66e0fdf454f89036d047
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.sourcegitcommit: c5078791a07330a87a92abb19b791e950672e198
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "92193829"
 ---
 # <a name="integration-services-ssis-variables"></a>Integration Services (SSIS) の変数
@@ -91,7 +91,7 @@ ms.locfileid: "92193829"
  変数の説明を指定します。  
   
  **EvaluateAsExpression**    
- このプロパティを **True**に設定すると、指定された式を使用して変数の値が設定されます。  
+ このプロパティを **True** に設定すると、指定された式を使用して変数の値が設定されます。  
   
  **式**    
  変数に割り当てられる式を指定します。  
@@ -103,10 +103,10 @@ ms.locfileid: "92193829"
  [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] には、**User** および **System** という 2 つの名前空間が用意されています。 既定では、カスタム変数は **User** 名前空間に属し、システム変数は **System** 名前空間に属します。 ユーザー定義変数用に追加の名前空間を作成し、 **User** 名前空間の名前を変更することはできますが、 **System** 名前空間の名前を変更したり、変数を **System** 名前空間に追加したり、システム変数を別の名前空間に割り当てたりすることはできません。  
   
 **RaiseChangedEvent**  
- このプロパティを **True**に設定すると、変数の値が変更された場合に **OnVariableValueChanged** イベントが発生します。  
+ このプロパティを **True** に設定すると、変数の値が変更された場合に **OnVariableValueChanged** イベントが発生します。  
   
  **ReadOnly**  
- このプロパティを **False**に設定すると、変数は読み取り/書き込み用となります。  
+ このプロパティを **False** に設定すると、変数は読み取り/書き込み用となります。  
   
 **スコープ**    
  > [!NOTE]  
@@ -119,15 +119,15 @@ ms.locfileid: "92193829"
 **[IncludeInDebugDump]**  
  変数値がデバッグ ダンプ ファイルに含まれるかどうかを示します。  
   
- ユーザー定義変数およびシステム変数の場合、 **[InclueInDebugDump]** オプションの既定値は **true**です。  
+ ユーザー定義変数およびシステム変数の場合、 **[InclueInDebugDump]** オプションの既定値は **true** です。  
   
  ただし、ユーザー定義変数に関しては、次の条件に該当する場合、システムによって **[IncludeInDebugDump]** オプションが **false** にリセットされます。  
   
--   **EvaluateAsExpression** 変数のプロパティが **true**に設定されている場合は、 **IncludeInDebugDump** オプションが **false**にリセットされます。  
+-   **EvaluateAsExpression** 変数のプロパティが **true** に設定されている場合は、 **IncludeInDebugDump** オプションが **false** にリセットされます。  
   
-     式のテキストを変数値としてデバッグ ダンプ ファイルに含めるには、 **[IncludeInDebugDump]** オプションを **true**に設定します。  
+     式のテキストを変数値としてデバッグ ダンプ ファイルに含めるには、 **[IncludeInDebugDump]** オプションを **true** に設定します。  
   
--   変数のデータ型が文字列に変更された場合は、 **[IncludeInDebugDump]** オプションが **false**にリセットされます。  
+-   変数のデータ型が文字列に変更された場合は、 **[IncludeInDebugDump]** オプションが **false** にリセットされます。  
   
  **[IncludeInDebugDump]** オプションが **false** にリセットされると、ユーザーが選択した値をオーバーライドする場合があります。  
   
@@ -159,7 +159,7 @@ ms.locfileid: "92193829"
   
  **データ フロー式** 変数を使用して、派生列変換と条件分割変換で列に値を設定するための式や、データ行を各種の変換出力に送るための式に値を提供します。 たとえば、式 `@varSalutation + LastName`は、 `VarSalutation` 変数の値と `LastName` 列を連結します。 式 `Income < @HighIncome` は、`Income` 列の値が `HighIncome` 変数の値よりも小さいデータ行を出力に送信します。 詳細については、「[派生列変換](../integration-services/data-flow/transformations/derived-column-transformation.md)」、「[条件分割変換](../integration-services/data-flow/transformations/conditional-split-transformation.md)」、および「[Integration Services (SSIS) の式](../integration-services/expressions/integration-services-ssis-expressions.md)」を参照してください。  
   
- **優先順位制約の式** 優先順位制約で制約付き実行可能ファイルを実行するかどうかを決定するために使用する値を提供します。 これらの式は、実行結果 (成功、失敗、完了) と組み合わせて使用することも、実行結果の代わりに使用することもできます。 たとえば、式 `@varMax > @varMin`が **true**に評価される場合、実行可能ファイルは実行されます。 詳細については、「 [優先順位制約に式を追加する](./control-flow/precedence-constraints.md)」を参照してください。  
+ **優先順位制約の式** 優先順位制約で制約付き実行可能ファイルを実行するかどうかを決定するために使用する値を提供します。 これらの式は、実行結果 (成功、失敗、完了) と組み合わせて使用することも、実行結果の代わりに使用することもできます。 たとえば、式 `@varMax > @varMin`が **true** に評価される場合、実行可能ファイルは実行されます。 詳細については、「 [優先順位制約に式を追加する](./control-flow/precedence-constraints.md)」を参照してください。  
   
  **パラメーターおよびリターン コード** 入力パラメーターに値を提供したり、出力パラメーターおよびリターン コードの値を格納したりします。 そのためには、変数をパラメーターおよび戻り値にマップします。 たとえば、変数 `varProductId` を 23 に設定して SQL ステートメント `SELECT * from Production.Product WHERE ProductID = ?`を実行すると、 `ProductID` が 23 である製品が取得されます。 詳細については、「 [SQL 実行タスク](../integration-services/control-flow/execute-sql-task.md) 」と「 [SQL 実行タスクのパラメーターとリターン コード](./control-flow/execute-sql-task.md)」を参照してください。  
   
@@ -261,15 +261,15 @@ ms.locfileid: "92193829"
   
  **[プロパティ]** ウィンドウを使用してユーザー定義変数に式を設定する場合:  
   
--   変数の値は、Value プロパティまたは Expression プロパティによって設定できます。 既定では、EvaluateAsExpression プロパティが **False** に設定されており、Value プロパティによって変数の値が設定されます。 式を使用して値を設定するには、EvaluateAsExpression を **True**に設定してから、Expression プロパティで式を指定します。 Value プロパティには、自動的に式の評価結果が設定されます。  
+-   変数の値は、Value プロパティまたは Expression プロパティによって設定できます。 既定では、EvaluateAsExpression プロパティが **False** に設定されており、Value プロパティによって変数の値が設定されます。 式を使用して値を設定するには、EvaluateAsExpression を **True** に設定してから、Expression プロパティで式を指定します。 Value プロパティには、自動的に式の評価結果が設定されます。  
   
--   ValueType プロパティには、Value プロパティの値のデータ型が含まれます。 Value が式によって設定される場合、ValueType は、式の評価結果と互換性があるデータ型に自動的に更新されます。 たとえば、Value に 0 が含まれ、ValueType プロパティに **Int32** が含まれる場合に Expression を GETDATE() に設定すると、Value には現在の日付と時間が含まれ、ValueType は **DateTime**に設定されます。  
+-   ValueType プロパティには、Value プロパティの値のデータ型が含まれます。 Value が式によって設定される場合、ValueType は、式の評価結果と互換性があるデータ型に自動的に更新されます。 たとえば、Value に 0 が含まれ、ValueType プロパティに **Int32** が含まれる場合に Expression を GETDATE() に設定すると、Value には現在の日付と時間が含まれ、ValueType は **DateTime** に設定されます。  
   
 -   変数の **[プロパティ]** ウィンドウからは **[式ビルダー]** ダイアログ ボックスを開くことができます。 このツールを使用すると、式の作成、検証、および評価を行うことができます。 詳しくは、「[式ビルダー](../integration-services/expressions/expression-builder.md)」と「[Integration Services &#40;SSIS&#41; の式](../integration-services/expressions/integration-services-ssis-expressions.md)」をご覧ください。  
   
  **[変数]** ウィンドウを使用してユーザー定義変数に式を設定する場合:  
   
--   式を使用して変数値を設定するには、最初に変数のデータ型が式の評価結果と互換性があることを確認してから、 **[変数]** ウィンドウの **[式]** 列に式を指定します。 **[プロパティ]** ウィンドウの EvaluateAsExpression プロパティが自動的に **True**に設定されます。  
+-   式を使用して変数値を設定するには、最初に変数のデータ型が式の評価結果と互換性があることを確認してから、 **[変数]** ウィンドウの **[式]** 列に式を指定します。 **[プロパティ]** ウィンドウの EvaluateAsExpression プロパティが自動的に **True** に設定されます。  
   
 -   変数に式を割り当てると、変数の横に特別なアイコン マーカーが表示されます。 この特別なアイコン マーカーは、式が設定されている接続マネージャーおよびタスクの横にも表示されます。  
   

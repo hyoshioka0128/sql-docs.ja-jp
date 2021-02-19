@@ -1,13 +1,13 @@
 ---
 description: sys.fn_MSxe_read_event_stream (Transact-SQL)
-title: fn_MSxe_read_event_stream (Transact-sql) |Microsoft Docs
+title: sys.fn_MSxe_read_event_stream (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - fn_MSxe_read_event_stream_TSQL
 - sys.fn_MSxe_read_event_stream_TSQL
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - sys.fn_MSxe_read_event_stream
 - fn_MSxe_read_event_stream
 ms.assetid: 5edb1162-625a-41e0-8ec9-1edc8ab9a74a
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: f3d88e33f814c341c5a5a96c1ec8a56362ab5887
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: dc8eff18237f4796d36812cf0afee363effcbf99
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88427784"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99201925"
 ---
 # <a name="sysfn_msxe_read_event_stream-transact-sql"></a>sys.fn_MSxe_read_event_stream (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

@@ -4,11 +4,11 @@ ms.service: sql
 ms.topic: include
 ms.date: 07/24/2020
 ms.author: mikeray
-ms.openlocfilehash: c89125ac4eab04c7310874fec9d3302ceaa47159
-ms.sourcegitcommit: df1f0f2dfb9452f16471e740273cd1478ff3100c
+ms.openlocfilehash: 5a3dadba6acec7c4ce6e66e1e098dd644629ab46
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87394022"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100019362"
 ---
 [!INCLUDE [Applies to](../../includes/applies-md.md)] [!INCLUDE [PDW](_pdw.md)] 

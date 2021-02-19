@@ -1,13 +1,13 @@
 ---
-description: server_events (Transact-sql)
-title: server_events (Transact-sql) |Microsoft Docs
+description: sys.server_events (Transact-sql)
+title: sys.server_events (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - server_events_TSQL
 - sys.server_events_TSQL
@@ -18,16 +18,16 @@ dev_langs:
 helpviewer_keywords:
 - sys.server_events catalog view
 ms.assetid: 996f6c9b-6426-4847-95d9-6b77541422be
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: f451456320e7248f48be5a9b7233f1a6cf5b2968
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 350da163f64c09276cd57ebbf6c2c63b4e2e022c
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551383"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99188048"
 ---
-# <a name="sysserver_events-transact-sql"></a>server_events (Transact-sql)
+# <a name="sysserver_events-transact-sql"></a>sys.server_events (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   サーバー レベルのイベント通知またはサーバー レベルの DDL トリガーが起動されるイベントごとに 1 行のデータを保持します。 列 **object_id** と **型** は、サーバーイベントを一意に識別します。  

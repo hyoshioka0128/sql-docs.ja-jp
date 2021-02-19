@@ -1,12 +1,12 @@
 ---
 description: sys.dm_hadr_availability_replica_cluster_nodes (Transact-SQL)
-title: dm_hadr_availability_replica_cluster_nodes (Transact-sql) |Microsoft Docs
+title: sys.dm_hadr_availability_replica_cluster_nodes (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - dm_hadr_availability_replica_cluster_nodes
 - sys.dm_hadr_availability_replica_cluster_nodes_TSQL
@@ -19,14 +19,14 @@ helpviewer_keywords:
 - Availability Groups [SQL Server], WSFC clusters
 - sys.dm_hadr_availability_replica_cluster_nodes dynamic management view
 ms.assetid: dbd7e416-badd-4332-a45c-438aa0145a99
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 7a63fea89f2457a3b2e033b9cbfef3def46afe0e
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 053b2f9778b6da8765690ccd91a00c9d3ea57a44
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550264"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100354157"
 ---
 # <a name="sysdm_hadr_availability_replica_cluster_nodes-transact-sql"></a>sys.dm_hadr_availability_replica_cluster_nodes (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

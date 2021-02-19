@@ -7,21 +7,21 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
 - linked servers [SQL Server], catalog views
 - catalog views [SQL Server], linked servers
 ms.assetid: 06d53a67-7804-4f1f-8201-3e42dc48ba79
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: afcdfdd9822af8380269e65ddb0f095dde74db67
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 75fb941426d0a5c5cc1a051e56e08470f31ed3d9
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91807434"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99194563"
 ---
 # <a name="linked-servers-catalog-views-transact-sql"></a>リンク サーバーのカタログ ビュー (Transact-SQL)
 [!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]

@@ -11,19 +11,16 @@ ms.topic: language-reference
 ms.assetid: e604a382-95c8-4764-b268-742eb5c6d4cf
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 7aa744bd7dd3d0330dc3e996b2af90d500be9d55
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 4028247051220e1e45d054e400da050601254fb2
+ms.sourcegitcommit: 868c60aa3a76569faedd9b53187e6b3be4997cc9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88495317"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99835857"
 ---
 # <a name="catalogcatalog_properties-ssisdb-database"></a>catalog.catalog_properties (SSISDB データベース)
 
 [!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
-
-
-[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] カタログのプロパティを表示します。  
   
@@ -48,7 +45,7 @@ ms.locfileid: "88495317"
 |**VALIDATION_TIMEOUT**|検証が、このプロパティで指定された秒数で完了しなかった場合、検証は停止します。|  
 |**SERVER_CUSTOMIZED_LOGGING_LEVEL**|[!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] サーバーの既定のカスタマイズされたログ記録レベル。 カスタマイズされたログ記録レベルを作成していない場合、このプロパティがビューに表示されない可能性があります。|
 |**SERVER_LOGGING_LEVEL**|[!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] サーバーの既定のログ記録レベル。|
-|**SERVER_OPERATION_ENCRYPTION_LEVEL**|値が 1 (`PER_EXECUTION`) の場合、*実行*のたびに証明書と対称キーが作成されます。これらは機密性の高い実行パラメーターと実行ログを保護するために使用されます。 値が 2 (`PER_PROJECT`) の場合、*プロジェクト*ごとに証明書と対称キーが 1 回作成されます。 このプロパティの詳細については、SSIS ストアド プロシージャ [catalog.cleanup_server_log](../system-stored-procedures/catalog-cleanup-server-log.md#remarks) の「解説」を参照してください。|
+|**SERVER_OPERATION_ENCRYPTION_LEVEL**|値が 1 (`PER_EXECUTION`) の場合、*実行* のたびに証明書と対称キーが作成されます。これらは機密性の高い実行パラメーターと実行ログを保護するために使用されます。 値が 2 (`PER_PROJECT`) の場合、*プロジェクト* ごとに証明書と対称キーが 1 回作成されます。 このプロパティの詳細については、SSIS ストアド プロシージャ [catalog.cleanup_server_log](../system-stored-procedures/catalog-cleanup-server-log.md#remarks) の「解説」を参照してください。|
 |**VERSION_CLEANUP_ENABLED**|値が `TRUE` の場合は、プロジェクト バージョンの **MAX_PROJECT_VERSIONS** 番号のみがカタログに格納され、その他のプロジェクト バージョンは削除されます。 値が **FALSE** の場合は、すべてのプロジェクトのバージョンがカタログに格納されます。 注: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ジョブでは操作のクリーンアップを実行します。|
 |||
   

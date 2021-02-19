@@ -9,12 +9,12 @@ ms.date: 04/17/2018
 ms.author: murshedz
 ms.reviewer: martinle
 ms.custom: seo-dt-2019
-ms.openlocfilehash: 6bc64949b0e636a6c64e7b0ef576613f6e02c5c2
-ms.sourcegitcommit: 7345e4f05d6c06e1bcd73747a4a47873b3f3251f
+ms.openlocfilehash: b67460528da7cac2e7d3d2d10dfbb4719b08d77f
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88777721"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97638071"
 ---
 # <a name="monitor-loads-into-parallel-data-warehouse"></a>並列データウェアハウスへの負荷を監視する
 Analytics Platform System (APS) 管理コンソールまたは並列データウェアハウス (PDW)[システムビュー](/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-reference-tsql-system-views)を使用して、アクティブおよび最近の[dwloader](dwloader.md)の読み込みを監視します。 
@@ -49,7 +49,7 @@ For the permissions to grant, see "Use All of the Admin Console" in [Grant Permi
   
 -   [sys.dm_pdw_exec_requests](../relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql.md)  
   
--   [sys.pdw_loader_run_stages](../relational-databases/system-catalog-views/sys-pdw-loader-run-stages-transact-sql.md?view=aps-pdw-2016-au7)  
+-   [sys.pdw_loader_run_stages](../relational-databases/system-catalog-views/sys-pdw-loader-run-stages-transact-sql.md?view=aps-pdw-2016-au7&preserve-view=true)  
   
 -   [sys.pdw_loader_backup_runs](../relational-databases/system-catalog-views/sys-pdw-loader-backup-runs-transact-sql.md)  
   
@@ -58,7 +58,7 @@ For the permissions to grant, see "Use All of the Admin Console" in [Grant Permi
 ### <a name="to-monitor-loads-by-using-system-views"></a>システムビューを使用して負荷を監視するには  
 SQL Server PDW ビューを使用してアクティブおよび最近の読み込みを監視するには、次の手順に従います。 使用されるシステムビューごとに、ビューによって返される列と可能性のある値の詳細については、そのビューのドキュメントを参照してください。  
   
-1.  `request_id`このビューの列でローダーコマンドラインを見つけることにより、 [dm_pdw_exec_requests](../relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql.md)ビューでの読み込みのを検索し `command` ます。  
+1.  `request_id`このビューの列にあるローダーコマンドラインを検索して、 [sys.dm_pdw_exec_requests](../relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql.md)ビューで読み込みのを検索し `command` ます。  
   
     たとえば、次のコマンドは、コマンドテキストと現在の状態、およびを返し `request_id` ます。  
   
@@ -66,7 +66,7 @@ SQL Server PDW ビューを使用してアクティブおよび最近の読み�
     SELECT request_id, status, command FROM sys.dm_pdw_exec_requests;  
     ```  
   
-2.  を使用し `request_id` て、 [pdw_loader_run_stages](../relational-databases/system-catalog-views/sys-pdw-loader-run-stages-transact-sql.md) 、および [sys. pdw_loader_backup_run_details](../relational-databases/system-catalog-views/sys-pdw-loader-backup-run-details-transact-sql.md) ビューを使用して、読み込みに関する追加情報を取得します。 たとえば、次のクエリでは、 `run_id` 負荷の開始時刻、終了時刻、および実行時間に関する情報と、処理された行数に関する情報が返されます。  
+2.  `request_id` [Sys.pdw_loader_run_stages](../relational-databases/system-catalog-views/sys-pdw-loader-run-stages-transact-sql.md) 、 [sys.pdw_loader_backup_run_details](../relational-databases/system-catalog-views/sys-pdw-loader-backup-run-details-transact-sql.md)ビューを使用して、負荷に関する追加情報を取得するには、を使用します。 たとえば、次のクエリでは、 `run_id` 負荷の開始時刻、終了時刻、および実行時間に関する情報と、処理された行数に関する情報が返されます。  
   
     ```sql  
     SELECT lbr.run_id,   

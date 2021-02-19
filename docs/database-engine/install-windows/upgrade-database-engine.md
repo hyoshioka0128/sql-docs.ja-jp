@@ -12,27 +12,27 @@ helpviewer_keywords:
 - compatibility levels [SQL Server], after upgrade
 - Database Engine [SQL Server], upgrading
 ms.assetid: 3c036813-36cf-4415-a0c9-248d0a433859
-author: MashaMSFT
-ms.author: mathoma
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 492f663e09f8883d1994d1ee5af2c0ed9acbb111
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: cawrites
+ms.author: chadam
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: 4db158cf3e5e007ce1dade79dc49f3d34dace78f
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85748570"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100341826"
 ---
 # <a name="upgrade-database-engine"></a>データベース エンジンのアップグレード
 
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
   
-  このセクションの記事は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベース エンジンを [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の以前のリリースから [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] にアップグレードするときに役立ちます。  
+  このセクションの記事は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベース エンジンを [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の以前のリリースから [!INCLUDE[sssql19-md](../../includes/sssql19-md.md)] にアップグレードするときに役立ちます。  
   
 1.  [データベース エンジンのアップグレード方法の選択](../../database-engine/install-windows/choose-a-database-engine-upgrade-method.md)。 アップグレードを開始する前に、さまざまなアップグレード方法を理解する必要があります。 この記事では、アップグレードの方法と各アップグレード方法で実行する手順について説明します。  
   
 2.  [データベース エンジンのアップグレード計画の策定およびテスト](../../database-engine/install-windows/plan-and-test-the-database-engine-upgrade-plan.md)。 アップグレードの方法を確認した後、環境に合ったアップグレード方法を開発し、既存の環境をアップグレードする前にアップグレード方法をテストします。 この記事では、アップグレード計画の開発とテストの方法について説明します。  
   
-3.  [データベース エンジンのアップグレードの完了](../../database-engine/install-windows/complete-the-database-engine-upgrade.md)。 データベース エンジンを [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] にアップグレードし、データベースがオンラインになった後、新しいバックアップの作成、データベース機能のアップグレードによる新しい機能の有効化、フルテキスト カタログの再設定など、追加の手順を実行する必要があります。 この記事では、これらの手順について説明します。  
+3.  [データベース エンジンのアップグレードの完了](../../database-engine/install-windows/complete-the-database-engine-upgrade.md)。 データベース エンジンをアップグレードし、データベースがオンラインになった後、新しいバックアップの作成、データベース機能のアップグレードによる新しい機能の有効化、フルテキスト カタログの再設定など、追加の手順を行う必要があります。 この記事では、これらの手順について説明します。  
   
 4.  [データベース互換性レベル](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md#compatibility-levels-and-database-engine-upgrades)をアップグレードします (**適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] と [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)])。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] または [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] の新しいバージョンでデータベースがオンラインになった後に行う手順の 1 つに、データベース互換性レベルを変更し、データベース機能モードをアップグレードして新しい機能を有効にするという作業があります。 これは手動で行うか、クエリ調整アシスタントで行うことができます。 
 

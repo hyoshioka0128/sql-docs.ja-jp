@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - CREATE_SEARCH_PROPERTY_LIST_TSQL
 - CREATE SEARCH
@@ -23,14 +23,14 @@ helpviewer_keywords:
 - search property lists [SQL Server], creating
 - CREATE SEARCH PROPERTY LIST statement
 ms.assetid: 5440cbb8-3403-4d27-a2f9-8e1f5a1bc12b
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 22ae11a8e37109e7ba90e2b02e9e4351510f9ae7
-ms.sourcegitcommit: 5f3e0eca9840db20038f0362e5d88a84ff3424af
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 31e938250b543fbb6bb3e3443138677f8ee3befd
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92344078"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99192694"
 ---
 # <a name="create-search-property-list-transact-sql"></a>CREATE SEARCH PROPERTY LIST (Transact-SQL)
 [!INCLUDE [SQL Server Azure SQL Database ](../../includes/applies-to-version/sql-asdb.md)]
@@ -55,12 +55,12 @@ CREATE SEARCH PROPERTY LIST new_list_name
  新しい検索プロパティ リストの名前を指定します。 *new_list_name* は最大 128 文字の識別子です。 *new_list_name* は、現在のデータベース内のすべてのプロパティ リストの中で一意であり、識別子の規則に準拠している必要があります。 *new_list_name* は、フルテキスト インデックスが作成されるときに使用されます。  
   
  *database_name*  
- *source_list_name* で指定したプロパティ リストが置かれているデータベースの名前です。 指定しない場合、 *database_name* は現在のデータベースに設定されます。  
+ *source_list_name* で指定したプロパティ リストが置かれているデータベースの名前です。 指定しない場合、*database_name* は現在のデータベースに設定されます。  
   
- *database_name* には、既存のデータベース名を指定する必要があります。 現在の接続のログインは、 *database_name* で指定したデータベースの既存のユーザー ID に関連付ける必要があります。 また、データベースで要求される[権限](#Permissions)を持っている必要があります。  
+ *database_name* には、既存のデータベース名を指定する必要があります。 現在の接続のログインは、*database_name* で指定したデータベースの既存のユーザー ID に関連付ける必要があります。 また、データベースで要求される[権限](#Permissions)を持っている必要があります。  
   
  *source_list_name*  
- 新しいプロパティ リストが、 *database_name* の既存のプロパティ リストをコピーして作成されることを指定します。 *source_list_name* が存在しない場合、CREATE SEARCH PROPERTY LIST はエラーが発生して失敗します。 *source_list_name* の検索プロパティが、 *new_list_name* によって継承されます。  
+ 新しいプロパティ リストが、*database_name* の既存のプロパティ リストをコピーして作成されることを指定します。 *source_list_name* が存在しない場合、CREATE SEARCH PROPERTY LIST はエラーが発生して失敗します。 *source_list_name* の検索プロパティが、*new_list_name* によって継承されます。  
   
  AUTHORIZATION *owner_name*  
  プロパティ リストを所有するユーザーまたはロールの名前を指定します。 *owner_name* に現在のユーザーがメンバーとなっているロールの名前を指定するか、現在のユーザーが *owner_name* に対する IMPERSONATE 権限を持っている必要があります。 このオプションを指定しない場合は、所有権は現在のユーザーに与えられます。  

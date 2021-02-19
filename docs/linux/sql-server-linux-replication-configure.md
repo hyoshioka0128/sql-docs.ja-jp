@@ -11,19 +11,19 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.technology: linux
 titleSuffix: SQL Server on Linux
-monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 0c4a22b43650292055a7b1c48b9408b4d8e85f6c
-ms.sourcegitcommit: 610e3ebe21ac6575850a29641a32f275e71557e3
+monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15'
+ms.openlocfilehash: 911446480834b9ff8b51ce806729f2771d28d84f
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91785052"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100346492"
 ---
 # <a name="configure-sql-server-replication-on-linux"></a>Linux 上で SQL Server レプリケーションを構成する
 
 [!INCLUDE [SQL Server - Linux](../includes/applies-to-version/sql-linux.md)]
 
-[!INCLUDE[SQL Server 2019](../includes/sssqlv15-md.md)] では、SQL Server on Linux インスタンス用の SQL Server レプリケーションが導入されています。
+[!INCLUDE[SQL Server 2019](../includes/sssql19-md.md)] では、SQL Server on Linux インスタンス用の SQL Server レプリケーションが導入されています。
 
 レプリケーションの詳細については、[SQL Server レプリケーションのドキュメント](../relational-databases/replication/sql-server-replication.md)を参照してください。
 
@@ -75,7 +75,7 @@ SQL Server Management Studio (SSMS) または Transact-SQL ストアド プロ�
 
 1. **[レプリケーション]** を右クリックし、**[ディストリビューションを構成する]** をクリックします。
 
-1. **ディストリビューションの構成ウィザード**で次の手順を行います。
+1. **ディストリビューションの構成ウィザード** で次の手順を行います。
 
 ### <a name="create-publication-and-articles"></a>パブリケーションとアーティクルを作成する
 
@@ -83,7 +83,7 @@ SQL Server Management Studio (SSMS) または Transact-SQL ストアド プロ�
 
 1. オブジェクト エクスプローラーで、 **[レプリケーション]**  >  **[ローカル パブリケーション]** >  **[新しいパブリケーション]** の順にクリックします。
 
-1. **パブリケーションの新規作成ウィザード**の指示に従って、レプリケーションの種類と、パブリケーションに属するアーティクルを構成します。
+1. **パブリケーションの新規作成ウィザード** の指示に従って、レプリケーションの種類と、パブリケーションに属するアーティクルを構成します。
 
 ### <a name="configure-the-subscription"></a>サブスクリプションを構成する
 

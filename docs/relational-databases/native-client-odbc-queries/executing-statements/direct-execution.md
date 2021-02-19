@@ -16,13 +16,13 @@ helpviewer_keywords:
 ms.assetid: fa36e1af-ed98-4abc-97c1-c4cc5d227b29
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: c55dd59c86c5a46ef409f607e109264859210f8c
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 0fd85df31856668e4f3cafacbe8a90157b7310b3
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88486826"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97438385"
 ---
 # <a name="direct-execution"></a>直接実行
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "88486826"
   
  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] では、マルチユーザー環境で通常実行されるステートメントに関して、直接実行のパフォーマンスが大幅に向上します。また、通常、SQL ステートメントの実行にパラメーター マーカーを指定して SQLExecDirect を使用すると、準備実行に近い効率を得ることができます。  
   
- のインスタンスに接続されている場合 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] NATIVE Client ODBC ドライバーは、 [sp_executesql](../../../relational-databases/system-stored-procedures/sp-executesql-transact-sql.md) を使用して、 **SQLExecDirect**で指定された SQL ステートメントまたはバッチを転送します。 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] には、 **sp_executesql** で実行された SQL ステートメントまたはバッチが、既にメモリに存在する実行プランを生成したステートメントまたはバッチと一致するかどうかをすばやく判断するロジックがあります。 一致する場合、[!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] は新しいプランをコンパイルしないで、単に既存のプランを再利用します。 これは、多くのユーザーがいるシステムで **SQLExecDirect** を使用して実行される一般的に実行される SQL ステートメントが、以前のバージョンののストアドプロシージャでしか使用できなかった、プラン再利用の多くの利点を活用できることを意味し [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] ます。  
+ のインスタンスに接続されている場合 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] NATIVE Client ODBC ドライバーは、 [sp_executesql](../../../relational-databases/system-stored-procedures/sp-executesql-transact-sql.md) を使用して、 **SQLExecDirect** で指定された SQL ステートメントまたはバッチを転送します。 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] には、 **sp_executesql** で実行された SQL ステートメントまたはバッチが、既にメモリに存在する実行プランを生成したステートメントまたはバッチと一致するかどうかをすばやく判断するロジックがあります。 一致する場合、[!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] は新しいプランをコンパイルしないで、単に既存のプランを再利用します。 これは、多くのユーザーがいるシステムで **SQLExecDirect** を使用して実行される一般的に実行される SQL ステートメントが、以前のバージョンののストアドプロシージャでしか使用できなかった、プラン再利用の多くの利点を活用できることを意味し [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] ます。  
   
  実行プランを再利用することで得られる利点は、複数のユーザーが同じ SQL ステートメントやバッチを実行しているときにのみ効果があります。 異なるクライアントが実行する SQL ステートメントを可能な限り統一の取れたステートメントにして、実行プランの再利用を可能にするために、次のコーディング規則に従ってください。  
   
@@ -43,7 +43,7 @@ ms.locfileid: "88486826"
   
 -   アプリケーション接続では、できる限り、接続オプションとステートメント オプションの共通のセットを使用します。 あるオプションのセット (ANSI_NULLS など) を使用する接続に対して生成される実行プランは、別のオプションのセットを使用する接続には再利用されません。 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client ODBC ドライバーと [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] Native Client OLE DB プロバイダーは、どちらもこれらのオプションに同じ既定値を使用します。  
   
- **SQLExecDirect**で実行されたすべてのステートメントがこれらの規則を使用してコード化されている場合、では、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 営業案件が発生したときに実行プランを再利用  
+ **SQLExecDirect** で実行されたすべてのステートメントがこれらの規則を使用してコード化されている場合、では、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 営業案件が発生したときに実行プランを再利用  
   
 ## <a name="see-also"></a>参照  
  [ODBC&#41;&#40;のステートメントの実行 ](../../../relational-databases/native-client-odbc-queries/executing-statements/executing-statements-odbc.md)  

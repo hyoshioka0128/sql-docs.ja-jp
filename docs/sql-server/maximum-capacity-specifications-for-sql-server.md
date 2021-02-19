@@ -21,12 +21,12 @@ helpviewer_keywords:
 ms.assetid: 13e95046-0e76-4604-b561-d1a74dd824d7
 ms.author: mikeray
 author: MikeRayMSFT
-ms.openlocfilehash: 81a36f15a68d3b122a0ba7651c11bfb22fbfa2e2
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+ms.openlocfilehash: b4f0e4ed75e992095cff1f9ae315e3036ba7ef90
+ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91988558"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98766225"
 ---
 # <a name="maximum-capacity-specifications-for-sql-server"></a>SQL Server の最大容量仕様
 
@@ -56,7 +56,7 @@ ms.locfileid: "91988558"
 |外部キーごとのバイト数|900||
 |主キーごとのバイト数|900||
 |行ごとのバイト数|8,060|[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 行オーバーフロー ストレージがサポートされています。これにより、可変長列の行外への移動が可能になります。 行外に押し出された可変長列については、メイン レコードに 24 バイトのルートだけが格納されます。 この機能を使用すると、以前のリリースの [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] よりも効果的に高い制限を課すことができます。 詳細については、[大量の行のサポート](../relational-databases/pages-and-extents-architecture-guide.md#large-row-support)に関する記事を参照してください。|
-|メモリ最適化テーブル内の行ごとのバイト数|8,060|[!INCLUDE[ssSQL15](../includes/sssql15-md.md)] から、メモリ最適化テーブルで行外ストレージがサポートされます。 テーブル内のすべての列の最大サイズが 8,060 バイトを超える場合、可変長列が行外に押し出されます。このアクションはコンパイル時の決定です。 行外に保存された列用に、8 バイトの参照だけが行内に保存されます。 詳細については、「 [メモリ最適化テーブルのテーブルと行のサイズ](../relational-databases/in-memory-oltp/table-and-row-size-in-memory-optimized-tables.md)」を参照してください。|
+|メモリ最適化テーブル内の行ごとのバイト数|8,060|[!INCLUDE[ssSQL15](../includes/sssql16-md.md)] から、メモリ最適化テーブルで行外ストレージがサポートされます。 テーブル内のすべての列の最大サイズが 8,060 バイトを超える場合、可変長列が行外に押し出されます。このアクションはコンパイル時の決定です。 行外に保存された列用に、8 バイトの参照だけが行内に保存されます。 詳細については、「 [メモリ最適化テーブルのテーブルと行のサイズ](../relational-databases/in-memory-oltp/table-and-row-size-in-memory-optimized-tables.md)」を参照してください。|
 |ストアド プロシージャのソース テキスト内のバイト数|バッチ サイズまたは 250 MB のいずれか小さい方||
 |`varchar(max) `、`varbinary(max)`、`xml`、`text`、または `image` 列ごとのバイト数|2^31-1||
 |`ntext` または `nvarchar(max)` 列ごとの文字数|2^30-1||
@@ -83,7 +83,7 @@ ms.locfileid: "91988558"
 |テーブルごとの外部キー テーブル参照数|発信 = 253。 着信 = 10,000。|制限については、「 [Create Foreign Key Relationships](../relational-databases/tables/create-foreign-key-relationships.md)」を参照してください。|
 |識別子長 (文字数)|128||
 |コンピューターごとのインスタンス数|スタンドアロン サーバー上に 50 個のインスタンス。<br /><br />ストレージとして共有クラスター ディスクを使用する場合は、25 個のフェールオーバー クラスター インスタンス。<br/><br/>ストレージ オプションとして SMB ファイル共有を使用する場合は、50 個のフェールオーバー クラスター インスタンス。||
-|メモリ最適化テーブルごとのインデックス|[!INCLUDE[ssSQL17](../includes/ssSQL17-md.md)] 以降および [!INCLUDE[ssSDSFull](../includes/ssSDSFull-md.md)] では 999<br/>[!INCLUDE[ssSQL14](../includes/ssSQL14-md.md)] および [!INCLUDE[ssSQL15](../includes/ssSQL15-md.md)] では 8||
+|メモリ最適化テーブルごとのインデックス|[!INCLUDE[ssSQL17](../includes/ssSQL17-md.md)] 以降および [!INCLUDE[ssSDSFull](../includes/ssSDSFull-md.md)] では 999<br/>[!INCLUDE[ssSQL14](../includes/ssSQL14-md.md)] および [!INCLUDE[ssSQL15](../includes/sssql16-md.md)] では 8||
 |SQL ステートメントが含まれた文字列の長さ (バッチ サイズ)|65,536 (ネットワーク パケットのサイズ)|ネットワーク パケット サイズとは、アプリケーションとリレーショナル [!INCLUDE[ssDE](../includes/ssde-md.md)]の間の通信に使用される表形式データ ストリーム (TDS) パケットのサイズです。 既定のパケット サイズは 4 KB であり、network packet size 構成オプションによって制御されます。|
 |接続ごとのロック数|サーバーごとの最大ロック数||
 |のインスタンスごとのロック数 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]|メモリのみによって制限されます。|これは静的ロック割り当てに対する値です。 動的ロックの場合は、メモリのみによって制限されます。|
@@ -122,7 +122,7 @@ ms.locfileid: "91988558"
 |データベースごとのログ ファイル数|1|
 |コンピューターごとのボリューム数|3|
 
-<sup>*</sup>[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] ユーティリティでサポートされる [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] のマネージド インスタンスの最大数は、サーバーのハードウェア構成によって異なる場合があります。 概要情報については、「 [SQL Server ユーティリティの機能とタスク](../relational-databases/manage/sql-server-utility-features-and-tasks.md)」を参照してください。 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] ユーティリティ コントロール ポイントは、 [!INCLUDE[ssCurrent](../includes/sscurrent-md.md)]のすべてのエディションで使用できるわけではありません。 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)]の各エディションでサポートされる機能の一覧については、「 [SQL Server 2016 の各エディションがサポートする機能](./editions-and-components-of-sql-server-2016.md)」を参照してください。
+<sup>*</sup>[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] ユーティリティでサポートされる [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] のマネージド インスタンスの最大数は、サーバーのハードウェア構成によって異なる場合があります。 概要情報については、「 [SQL Server ユーティリティの機能とタスク](../relational-databases/manage/sql-server-utility-features-and-tasks.md)」を参照してください。 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] ユーティリティ コントロール ポイントは、 [!INCLUDE[ssnoversion](../includes/ssnoversion-md.md)]のすべてのエディションで使用できるわけではありません。 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] の各エディションでサポートされる機能の一覧については、[SQL Server 2019 のエディションでサポートされる機能](./editions-and-components-of-sql-server-version-15.md)、[SQL Server 2017 のエディションでサポートされる機能](./editions-and-components-of-sql-server-2017.md)、および [SQL Server 2016 のエディションでサポートされる機能](./editions-and-components-of-sql-server-2016.md)に関するページを参照してください。
 
 ## <a name="ssnoversion-data-tier-application-objects"></a>[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] データ層アプリケーション オブジェクト
 

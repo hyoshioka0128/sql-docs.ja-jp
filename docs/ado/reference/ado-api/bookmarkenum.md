@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - BookmarkEnum
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 55d273c4-ccee-48ef-ba90-8893d04313c8
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 6dcdb4b6366c3e787abdde04f7a88a51417e2aec
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 1b1df8ab6cd76425115a1c13f259ac6ac1399216
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88975753"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100035513"
 ---
 # <a name="bookmarkenum"></a>BookmarkEnum
 操作の開始位置を示すブックマークを指定します。  

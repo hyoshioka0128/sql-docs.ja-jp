@@ -5,19 +5,19 @@ ms.custom: seodec18
 ms.date: 05/17/2016
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: how-to
 ms.assetid: 14d16bfd-228c-4870-b463-a283facda965
-author: MashaMSFT
-ms.author: mathoma
+author: cawrites
+ms.author: chadam
 manager: erikre
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 2c56b8595955caef35d5ff1e591eed417a831a48
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: 1bcb05458c8e8792975606382e7a1cd24de628a3
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91726563"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100338491"
 ---
 # <a name="analysis-services-with-always-on-availability-groups"></a>Analysis Services と Always On 可用性グループ
 
@@ -128,7 +128,7 @@ ms.locfileid: "91726563"
   
 2.  接続マネージャーで、プロバイダーには、表形式のデータ ストリーム (TDS) プロトコルをサポートするプロバイダーを選択します。 SQL Server Native Client 11.0 は、このプロトコルをサポートしています。  
   
-3.  接続マネージャーで、[サーバー名] に *可用性グループ リスナー*の名前を入力し、グループで使用可能なデータベースを選択します。  
+3.  接続マネージャーで、[サーバー名] に *可用性グループ リスナー* の名前を入力し、グループで使用可能なデータベースを選択します。  
   
      可用性グループ リスナーは、読み取り/書き込み要求の場合はクライアント接続をプライマリ レプリカにリダイレクトし、接続文字列内で読み取りを目的と指定している場合はセカンダリ レプリカにリダイレクトします。 フェールオーバー中にレプリカ ロールが変化する (プライマリがセカンダリになり、セカンダリがプライマリになる) ため、リスナーを常に指定してそれに従ってクライアント接続がリダイレクトされるようにする必要があります。  
   
@@ -167,7 +167,7 @@ ms.locfileid: "91726563"
   
 4.  ソリューションを配置し、完了したらトレースを停止します。  
   
-     トレース ウィンドウには、アプリケーション **Microsoft SQL Server Analysis Services**からのイベントが表示されます。 セカンダリ レプリカをホストしているサーバー インスタンスのデータベースからデータを取得する **SELECT** ステートメントが表示されます (リスナー経由でセカンダリ レプリカに接続された場合)。  
+     トレース ウィンドウには、アプリケーション **Microsoft SQL Server Analysis Services** からのイベントが表示されます。 セカンダリ レプリカをホストしているサーバー インスタンスのデータベースからデータを取得する **SELECT** ステートメントが表示されます (リスナー経由でセカンダリ レプリカに接続された場合)。  
   
 #### <a name="step-2-perform-a-planned-failover-to-test-the-configuration"></a>手順 2. 計画されたフェールオーバーを実行して構成をテストする  
   
@@ -216,7 +216,7 @@ ms.locfileid: "91726563"
   
  読み取り可能なセカンダリ レプリカに常時アクセスするように接続を構成している場合、プライマリ レプリカへの READWRITE 接続を使用する新しい接続を構成する必要があります。  
   
- そのために、Analysis Services モデルに追加のデータ ソースを作成して、読み取りと書き込みの接続をサポートします。 追加のデータ ソースを作成するとき、読み取り専用接続で指定したものと同じリスナー名とデータベースを使用しますが、 **Application Intent**を修正しないで、READWRITE 接続をサポートする既定値を保持します。 読み取りと書き込みのデータ ソースに基づいたデータ ソース ビューに新しいファクトまたはディメンション テーブルを追加し、新しいテーブルへの書き戻しを有効にできます。  
+ そのために、Analysis Services モデルに追加のデータ ソースを作成して、読み取りと書き込みの接続をサポートします。 追加のデータ ソースを作成するとき、読み取り専用接続で指定したものと同じリスナー名とデータベースを使用しますが、 **Application Intent** を修正しないで、READWRITE 接続をサポートする既定値を保持します。 読み取りと書き込みのデータ ソースに基づいたデータ ソース ビューに新しいファクトまたはディメンション テーブルを追加し、新しいテーブルへの書き戻しを有効にできます。  
   
 ## <a name="see-also"></a>参照  
  [可用性グループ リスナー、クライアント接続、およびアプリケーションのフェールオーバー &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/listeners-client-connectivity-application-failover.md)   

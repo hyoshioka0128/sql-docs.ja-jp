@@ -16,18 +16,18 @@ helpviewer_keywords:
 ms.assetid: 36af59d7-ce96-4a02-8598-ffdd78cdc948
 author: stevestein
 ms.author: sstein
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: ee26ff95b5317d65e71fbdb91e39a2d56e9f5f95
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: cd8b60ec5b302183fdb1a0713e71568821dae2fe
+ms.sourcegitcommit: 00be343d0f53fe095a01ea2b9c1ace93cdcae724
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85756343"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98813095"
 ---
 # <a name="contained-databases"></a>包含データベース
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
-  " *包含データベース* " は、他のデータベース、およびデータベースをホストする [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスから分離されたデータベースです。  [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] では、ユーザーは 4 つの方法でインスタンスからデータベースを分離できます。  
+  " *包含データベース* " は、他のデータベース、およびデータベースをホストする [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスから分離されたデータベースです。  [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] では、ユーザーは 4 つの方法でインスタンスからデータベースを分離できます。  
   
 -   データベースを表すメタデータの多くはデータベースに保持されます (master データベースのメタデータを保持する代わりに、またはそれに加えて保持されます)。  
   
@@ -37,7 +37,7 @@ ms.locfileid: "85756343"
   
 -   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 環境 (DMV の XEvents など) は、包含情報をレポートおよび操作できます。  
   
- データベースへのメタデータの格納など、部分的包含データベースの一部の機能はすべての [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] データベースに適用されます。 データベース レベル認証やカタログ照合順序など、部分的包含データベースの一部の利点を使用可能にするには、あらかじめこれらを有効にしておく必要があります。 部分的包含は、 **CREATE DATABASE** ステートメントと **ALTER DATABASE** ステートメントを使用するか、 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]を使用して有効にします。 部分的データベース包含を有効にする方法の詳細については、「 [Migrate to a Partially Contained Database](../../relational-databases/databases/migrate-to-a-partially-contained-database.md)」をご覧ください。  
+ データベースへのメタデータの格納など、部分的包含データベースの一部の機能はすべての [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] データベースに適用されます。 データベース レベル認証やカタログ照合順序など、部分的包含データベースの一部の利点を使用可能にするには、あらかじめこれらを有効にしておく必要があります。 部分的包含は、 **CREATE DATABASE** ステートメントと **ALTER DATABASE** ステートメントを使用するか、 [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]を使用して有効にします。 部分的データベース包含を有効にする方法の詳細については、「 [Migrate to a Partially Contained Database](../../relational-databases/databases/migrate-to-a-partially-contained-database.md)」をご覧ください。  
   
 ##  <a name="partially-contained-database-concepts"></a><a name="Concepts"></a> 部分的包含データベースの概念  
  完全包含データベースには、すべての設定と、データベースを定義するために必要なメタデータが含まれており、データベースがインストールされている [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] のインスタンスに対する構成上の依存関係がありません。 以前のバージョンの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]では、データベースを [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスから分離するのには時間がかかる場合があり、データベースと [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のインスタンス間の関係に関する詳細な知識が必要でした。 部分的包含データベースを使用すると、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスと他のデータベースからデータベースを簡単に分離できるようになります。  
@@ -56,7 +56,7 @@ ms.locfileid: "85756343"
  データベース境界を越える要素。  
   
  非包含データベース  
- 包含が **NONE**に設定されているデータベース。 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] より前のバージョンのすべてのデータベースは、非包含です。 既定では、 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降のすべてのデータベースの包含は **NONE**に設定されています。  
+ 包含が **NONE** に設定されているデータベース。 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] より前のバージョンのすべてのデータベースは、非包含です。 既定では、 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降のすべてのデータベースの包含は **NONE** に設定されています。  
   
  部分的包含データベース  
  部分的包含データベースは、データベース境界を越えることが許可される包含データベースです。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] には、包含の境界をいつ超えるかを判断する機能が含まれています。  
@@ -80,12 +80,12 @@ ms.locfileid: "85756343"
  データベース境界  
  部分的包含データベースはデータベースの機能をインスタンスの機能から分離するので、これらの 2 つの要素間には " *データベース境界*" と呼ばれる、明確に定義された区分線があります。  
   
- データベース境界の内側は *データベース モデル*で、ここではデータベースが開発および管理されます。 データベース内にあるエンティティの例としては、 **sys.tables**のようなシステム テーブル、パスワードを持つ包含データベース ユーザー、2 部構成の名前で参照されている現在のデータベース内のユーザー テーブルなどがあります。  
+ データベース境界の内側は *データベース モデル* で、ここではデータベースが開発および管理されます。 データベース内にあるエンティティの例としては、 **sys.tables** のようなシステム テーブル、パスワードを持つ包含データベース ユーザー、2 部構成の名前で参照されている現在のデータベース内のユーザー テーブルなどがあります。  
   
- データベース境界の外側は " *管理モデル*" で、ここではインスタンスレベルの機能と管理が扱われます。 データベース境界の外にあるエンティティの例としては、 **sys.endpoints**のようなシステム テーブル、ログインにマップされているユーザー、3 部構成の名前で参照されている他のデータベース内のユーザー テーブルなどがあります。  
+ データベース境界の外側は " *管理モデル*" で、ここではインスタンスレベルの機能と管理が扱われます。 データベース境界の外にあるエンティティの例としては、 **sys.endpoints** のようなシステム テーブル、ログインにマップされているユーザー、3 部構成の名前で参照されている他のデータベース内のユーザー テーブルなどがあります。  
   
 ##  <a name="containment"></a><a name="containment"></a> 包含  
- 全体がデータベース内に存在しているユーザー エンティティは、 *包含*であると見なされます。 データベースの外部に存在していたり、データベースの外部の機能とのやり取りに依存しているすべてのエンティティは、 *非包含*と見なされます。  
+ 全体がデータベース内に存在しているユーザー エンティティは、 *包含* であると見なされます。 データベースの外部に存在していたり、データベースの外部の機能とのやり取りに依存しているすべてのエンティティは、 *非包含* と見なされます。  
   
  一般に、ユーザー エンティティは、以下の包含のカテゴリのいずれかに分類されます。  
   
@@ -99,7 +99,7 @@ ms.locfileid: "85756343"
  非包含オブジェクトまたは機能に関する情報を取得するには、[sys.dm_db_uncontained_entities](../../relational-databases/system-dynamic-management-views/sys-dm-db-uncontained-entities-transact-sql.md) ビューおよび [sys.sql_modules &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-sql-modules-transact-sql.md) ビューを使用します。 データベースの要素の包含状態を確認することにより、包含を昇格させるためにどのオブジェクトまたは機能を置き換えたり変更したりする必要があるかを判断できます。  
   
 > [!IMPORTANT]  
->  一部のオブジェクトでは、既定の包含設定が **NONE**であるため、このビューは偽陽性の結果を返す場合があります。  
+>  一部のオブジェクトでは、既定の包含設定が **NONE** であるため、このビューは偽陽性の結果を返す場合があります。  
   
  部分的包含データベースの動作と非包含データベースの動作の違いが最も明らかなのが、照合順序の場合です。 照合順序の問題の詳細については、「 [Contained Database Collations](../../relational-databases/databases/contained-database-collations.md)」をご覧ください。  
   
@@ -128,15 +128,13 @@ ms.locfileid: "85756343"
 ##  <a name="limitations"></a><a name="Limitations"></a> 制限事項  
  部分的包含データベースでは、以下の機能は許可されません。  
   
--   部分的包含データベースは、レプリケーション、変更データ キャプチャ、または変更の追跡を使用できません。  
+-   レプリケーション、変更データ キャプチャ、または変更の追跡。  
   
 -   番号付きプロシージャ  
   
 -   照合順序の変更を伴う、組み込み関数に依存するスキーマ バインド オブジェクト。  
   
--   オブジェクト、列、記号、または型への参照など、照合順序の変更によるバインドの変更。  
-  
--   レプリケーション、変更データ キャプチャ、および変更の追跡。  
+-   オブジェクト、列、記号、または型への参照など、照合順序の変更によるバインドの変更。
   
 > [!WARNING]  
 >  一時ストアド プロシージャは、現在許可されています。 一時ストアド プロシージャは包含関係に違反するので、将来のバージョンの包含データベースではサポートされない予定です。  

@@ -8,13 +8,13 @@ ms.topic: troubleshooting
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 1a9a7dc3b4df2738d775cbb08ef8a7c547ec21aa
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 28dcbe177f5bc91ea73170978e2da9022154976f
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92196336"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470663"
 ---
 # <a name="common-r-scripting-errors-in-sql-server"></a>SQL Server での一般的な R スクリプト エラー
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -61,7 +61,7 @@ R スクリプトは次のいくつかの理由により、SQL Server のコン�
 
 その理由は、R Services に対して作成されるワーカー アカウントに、サーバーに接続するためのアクセス許可がないためです。 そのため、ODBC 呼び出しをユーザーに代わって実行することはできません。 この問題は SQL ログインでは発生しません。SQL ログインでは、資格情報が R クライアントから SQL Server インスタンスに明示的に渡され、次に ODBC に渡されるためです。 ただし、SQL ログインを使用すると、Windows 認証を使用した場合よりも安全性が低くなります。
 
-リモートで開始されるスクリプトから Windows 資格情報を安全に渡すには、SQL Server が資格情報をエミュレートする必要があります。 このプロセスは _暗黙の認証_と呼ばれます。 これを機能させるには、SQL Server コンピューターで R スクリプトまたは Python スクリプトを実行するワーカー アカウントに適切なアクセス許可が必要です。
+リモートで開始されるスクリプトから Windows 資格情報を安全に渡すには、SQL Server が資格情報をエミュレートする必要があります。 このプロセスは _暗黙の認証_ と呼ばれます。 これを機能させるには、SQL Server コンピューターで R スクリプトまたは Python スクリプトを実行するワーカー アカウントに適切なアクセス許可が必要です。
 
 1. R コードを実行するインスタンスで管理者として [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] を開きます。
 

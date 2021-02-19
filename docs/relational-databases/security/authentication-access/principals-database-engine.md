@@ -29,13 +29,13 @@ helpviewer_keywords:
 ms.assetid: 3f7adbf7-6e40-4396-a8ca-71cbb843b5c2
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 0ae2f5840120a24cbb0a1c0426c70e36084bd407
-ms.sourcegitcommit: a5398f107599102af7c8cda815d8e5e9a367ce7e
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: e0fe888ab35d160b99d99823d8be5eb91388b779
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92004806"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97463153"
 ---
 # <a name="principals-database-engine"></a>プリンシパル (データベース エンジン)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -85,7 +85,7 @@ ms.locfileid: "92004806"
  これらのプリンシパル アカウントのパスワードは、Microsoft に発行された証明書に基づくので、管理者は変更できません。
   
 ## <a name="the-guest-user"></a>guest ユーザー  
- 各データベースには、 `guest`の動作から変更されています。 データベースにはアクセスできるが、データベース内のユーザー アカウントは持っていないユーザーは、 `guest` ユーザーに許可された権限を継承します。 `guest` ユーザーを削除することはできませんが、 CONNECT 権限を取り消すことで無効にすることはできます。 CONNECT 権限を取り消すには、`master` または `tempdb` 以外のデータベース内で `REVOKE CONNECT FROM GUEST;` を実行します。  
+ 各データベースには、 `guest`の動作から変更されています。 データベースにはアクセスできるが、データベース内のユーザー アカウントは持っていないユーザーは、 `guest` ユーザーに許可された権限を継承します。 `guest` ユーザーは消去することはできませんが、その CONNECT 権限を取り消すことで無効にすることはできます。 CONNECT 権限を取り消すには、`master` または `tempdb` 以外のデータベース内で `REVOKE CONNECT FROM GUEST;` を実行します。  
   
   
 ## <a name="related-tasks"></a>Related Tasks  

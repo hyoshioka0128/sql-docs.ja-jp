@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - CursorLocationEnum
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: acb255ff-1734-4b70-89bb-aef862b4c63b
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 206d9da9130c0dce78e0f8748bf3ace8634dab44
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: e6e504948e2aaf76c52d424945f76373bb38697a
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88974423"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100034542"
 ---
 # <a name="cursorlocationenum"></a>CursorLocationEnum
 カーソルサービスの場所を指定します。  

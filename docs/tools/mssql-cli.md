@@ -10,13 +10,13 @@ ms.author: maghan
 ms.reviewer: alayu, sstein, maghan
 ms.custom: tools|mssql-cli
 ms.date: 02/22/2018
-monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017
-ms.openlocfilehash: 03bc52a6f8941bbc8d04f8f795876b0ca664f08c
-ms.sourcegitcommit: 6c2232c4d2c1ce5710296ce97b909f5ed9787f66
+monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017
+ms.openlocfilehash: 1514c776944b66757a23baf06bb5169f66171f2d
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84462286"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100033522"
 ---
 # <a name="mssql-cli-command-line-query-tool-for-sql-server-preview"></a>SQL Server 用 mssql-cli コマンドライン クエリ ツール (プレビュー)
 

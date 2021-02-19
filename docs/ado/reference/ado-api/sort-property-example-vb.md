@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: fc2fd40b-65d6-4023-90a3-90c9a88ef6cf
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 47cae7b3aabda7192467bf4dd746ac9a083b404a
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 577ceb894804987ef6ad8b949b9c7d0e8b603180
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88989033"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100040582"
 ---
 # <a name="sort-property-example-vb"></a>Sort プロパティの例 (VB)
-この例では、[レコードセット](./recordset-object-ado.md)オブジェクトの[Sort](./sort-property.md)プロパティを使用して、 ***Pubs***データベースの***Authors***テーブルから派生した**レコードセット**の行を並べ替えます。 セカンダリユーティリティルーチンによって各行が出力されます。  
+この例では、[レコードセット](./recordset-object-ado.md)オブジェクトの [Sort](./sort-property.md)プロパティを使用して、 **_ _Pubs_ データベースの _Authors_*_ テーブル*** から派生した **レコードセット** の行を並べ替えます。 セカンダリユーティリティルーチンによって各行が出力されます。  
   
 ```  
 'BeginSortVB  
@@ -104,7 +104,7 @@ End Sub
 'EndSortVB  
 ```  
   
- これは、指定されたタイトルと、指定された **レコードセット**の内容を出力するセカンダリユーティリティルーチンです。  
+ これは、指定されたタイトルと、指定された **レコードセット** の内容を出力するセカンダリユーティリティルーチンです。  
   
 ```  
 Attribute VB_Name = "Sort"  

@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 499679bd-287b-487d-bdfb-3803abffec1c
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 757c410982f43258f25729f5e88a5705c1ca814d
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 289cee12f65511cf64a68837043eacb37d2f2763
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88983493"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100054847"
 ---
 # <a name="procedures-refresh-method-example-vb"></a>Procedures Refresh メソッドの例 (VB)
-次のコードは、[カタログ](./catalog-object-adox.md)の[プロシージャ](./procedures-collection-adox.md)コレクションを更新する方法を示しています。 これは、**カタログ**からの[プロシージャ](./procedure-object-adox.md)オブジェクトにアクセスする前に必要です。  
+次のコードは、[カタログ](./catalog-object-adox.md)の[プロシージャ](./procedures-collection-adox.md)コレクションを更新する方法を示しています。 これは、**カタログ** からの [プロシージャ](./procedure-object-adox.md)オブジェクトにアクセスする前に必要です。  
   
 ```  
 ' BeginProceduresRefreshVB  

@@ -21,11 +21,11 @@ ms.assetid: 6bc8cbe2-46af-4f7b-93d6-86779313c9d7
 author: chugugrace
 ms.author: chugu
 ms.openlocfilehash: b70fe92da0c7efb0e59dbc89505ad623cad64432
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.sourcegitcommit: 192f6a99e19e66f0f817fdb1977f564b2aaa133b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92196456"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96127247"
 ---
 # <a name="data-mining-model-training-destination"></a>データ マイニング モデル トレーニング変換先
 
@@ -68,7 +68,7 @@ ms.locfileid: "92196456"
  使用できるマイニング構造の一覧から選択するか、 **[新規作成]** をクリックして新しいマイニング構造を作成します。  
   
  **[新規作成]**  
- **データ マイニング ウィザード**を使用して、新しいマイニング構造とマイニング モデルを作成します。  
+ **データ マイニング ウィザード** を使用して、新しいマイニング構造とマイニング モデルを作成します。  
   
  **[マイニング モデル]**  
  選択したマイニング構造に関連付けられているマイニング モデルの一覧を表示します。  

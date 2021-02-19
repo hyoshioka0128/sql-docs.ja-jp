@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: owend
 ms.reviewer: owend
 author: minewiskan
-ms.openlocfilehash: 7d2a604bd27145b839476c75ea443d680e78c464
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: 878d189aba259e5b69f5c27dbbc8b80b3f7f880b
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92196988"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642979"
 ---
 # <a name="mdx-data-definition---create-member"></a>MDX データ操作 - CREATE MEMBER
 
@@ -47,18 +47,18 @@ CREATE [ SESSION ] [HIDDDEN] [ CALCULATED ] MEMBER CURRENTCUBE | Cube_Name.Membe
  *Property_Value*  
  計算されるメンバープロパティの値を定義する有効なスカラー式です。  
   
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>解説  
  CREATE MEMBER ステートメントでは、セッション全体で使用できる計算されるメンバーを定義します。そのため、セッション中に複数のクエリで使用できます。 詳細については、「 [MDX&#41;&#40;の Session-Scoped 計算されるメンバーの作成 ](/analysis-services/multidimensional-models/mdx/mdx-calculated-members-session-scoped-calculated-members)」を参照してください。  
   
  また、1つのクエリで使用するために、計算されるメンバーを定義することもできます。 1 つのクエリに限定される計算されるメンバーを定義するには、SELECT ステートメントで WITH 句を使用します。 詳細については、「 [MDX&#41;&#40;の Query-Scoped 計算されるメンバーの作成 ](/analysis-services/multidimensional-models/mdx/mdx-calculated-members-query-scoped-calculated-members)」を参照してください。  
   
- *Property_Name* は、標準またはオプションの計算されるメンバーのプロパティを参照できます。 標準メンバープロパティについては、このトピックの後半で説明します。 **セッション**値のない CREATE MEMBER を使用して作成された計算されるメンバーには、セッションスコープがあります。 さらに、計算されるメンバーの定義内の文字列は、二重引用符で区切られます。 これは OLE DB で定義されたメソッドとは異なります。これは、文字列を単一引用符で区切る必要があることを指定します。  
+ *Property_Name* は、標準またはオプションの計算されるメンバーのプロパティを参照できます。 標準メンバープロパティについては、このトピックの後半で説明します。 **セッション** 値のない CREATE MEMBER を使用して作成された計算されるメンバーには、セッションスコープがあります。 さらに、計算されるメンバーの定義内の文字列は、二重引用符で区切られます。 これは OLE DB で定義されたメソッドとは異なります。これは、文字列を単一引用符で区切る必要があることを指定します。  
   
  現在接続されているキューブ以外のキューブを指定すると、エラーが発生します。 したがって、現在のキューブを示すには、キューブ名の代わりに CURRENTCUBE を使用する必要があります。  
   
  OLE DB によって定義されるメンバープロパティの詳細については、OLE DB のドキュメントを参照してください。  
   
-## <a name="scope"></a>スコープ  
+## <a name="scope"></a>Scope  
  計算されるメンバーは、次の表に示すいずれかのスコープ内で発生する可能性があります。  
   
  クエリ スコープ  
@@ -114,8 +114,8 @@ WHERE ProfitRatio
 |-------------------------|-------------|  
 |SOLVE_ORDER|計算されるメンバーがもう 1 つの他の計算されるメンバーを参照する場合 (つまり、計算されるメンバーが互いに交差する場合) に、計算されるメンバーが解決される順序です。|  
 |FORMAT_STRING|クライアントアプリケーションがセル値を表示するときに使用できる Office スタイルの書式指定文字列。|  
-|表示|計算されるメンバーがスキーマ行セットに表示されるかどうかを示す値です。 表示される計算されるメンバーは、 [Add演算メンバー](../mdx/addcalculatedmembers-mdx.md) 関数を使用してセットに追加できます。 0以外の値は、計算されるメンバーが表示されることを示します。 このプロパティの既定値が *表示*されます。<br /><br /> 表示されない計算されるメンバー (この値がゼロに設定されている場合) は、一般に、より複雑な計算されるメンバーの中間手順として使用されます。 これらの計算されるメンバーは、メジャーなど、他の種類のメンバーによって参照することもできます。|  
-|NON_EMPTY_BEHAVIOR|空のセルを解決するときの計算されるメンバーの動作を決定するために使用されるメジャーまたはセットです。<br /><br /> 警告このプロパティは非推奨とされます。 ** \* \* \* \* ** これを設定しないでください。 詳細については、「 [SQL Server 2014 の非推奨の Analysis Services 機能](/previous-versions/sql/2014/analysis-services/deprecated-analysis-services-features-in-sql-server-2014?view=sql-server-2014) 」を参照してください。|  
+|表示|計算されるメンバーがスキーマ行セットに表示されるかどうかを示す値です。 表示される計算されるメンバーは、 [Add演算メンバー](../mdx/addcalculatedmembers-mdx.md) 関数を使用してセットに追加できます。 0以外の値は、計算されるメンバーが表示されることを示します。 このプロパティの既定値が *表示* されます。<br /><br /> 表示されない計算されるメンバー (この値がゼロに設定されている場合) は、一般に、より複雑な計算されるメンバーの中間手順として使用されます。 これらの計算されるメンバーは、メジャーなど、他の種類のメンバーによって参照することもできます。|  
+|NON_EMPTY_BEHAVIOR|空のセルを解決するときの計算されるメンバーの動作を決定するために使用されるメジャーまたはセットです。<br /><br /> 警告このプロパティは非推奨とされます。 **\* \* \* \*** これを設定しないでください。 詳細については、「 [SQL Server 2014 の非推奨の Analysis Services 機能](/previous-versions/sql/2014/analysis-services/deprecated-analysis-services-features-in-sql-server-2014?view=sql-server-2014&preserve-view=true) 」を参照してください。|  
 |キャプション|メンバーのキャプションとしてクライアント アプリケーションが使用する文字列です。|  
 |DISPLAY_FOLDER|クライアントアプリケーションがメンバーを表示するために使用する表示フォルダーのパスを識別する文字列。 フォルダー レベルの区切り記号は、クライアント アプリケーションによって定義されます。 によって提供されるツールとクライアントで [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)] は、円記号 ( \\ ) がレベルの区切り記号です。 定義されたメンバーで複数の表示フォルダーを指定するには、セミコロン (;) を使用してフォルダーを区切ります。|  
 |ASSOCIATED_MEASURE_GROUP|このメンバーが関連付けられているメジャー グループの名前です。|  

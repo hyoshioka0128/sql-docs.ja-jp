@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - IS_ROLEMEMBER
 - IS_ROLEMEMBER_TSQL
@@ -20,13 +20,13 @@ helpviewer_keywords:
 ms.assetid: 73efa688-ae91-4014-98bc-1cabe47321f7
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 856265d1ba66eb2cfae29b12ec23b432cb4c8e3f
-ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: fe767dab30645db9f34090e6182f60329f049b74
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91116722"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99207993"
 ---
 # <a name="is_rolemember-transact-sql"></a>IS_ROLEMEMBER (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -45,7 +45,7 @@ IS_ROLEMEMBER ( 'role' [ , 'database_principal' ] )
 
 ## <a name="arguments"></a>引数
  **'** *role* **'**  
- 確認するデータベース ロールの名前を指定します。 *role* は **sysname**です。  
+ 確認するデータベース ロールの名前を指定します。 *role* は **sysname** です。  
   
  **'** *database_principal* **'**  
  確認するデータベース ユーザー、データベース ロール、またはアプリケーション ロールの名前です。 *database_principal* は **sysname**, 、既定値は NULL です。 値を指定しない場合、結果は現在の実行コンテキストに基づきます。 パラメーターに "NULL" という語が含まれていると、NULL が返されます。  
@@ -55,8 +55,8 @@ IS_ROLEMEMBER ( 'role' [ , 'database_principal' ] )
   
 |戻り値|説明|  
 |------------------|-----------------|  
-|0|*database_principal* のメンバーではない *ロール*です。|  
-|1|*database_principal* のメンバーである *ロール*です。|  
+|0|*database_principal* のメンバーではない *ロール* です。|  
+|1|*database_principal* のメンバーである *ロール* です。|  
 |NULL|*database_principal* または *ロール* が有効でないか、ロールのメンバーシップを表示する権限がありません。|  
   
 ## <a name="remarks"></a>解説  

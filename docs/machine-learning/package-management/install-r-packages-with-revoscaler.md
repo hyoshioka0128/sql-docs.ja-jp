@@ -7,14 +7,13 @@ ms.date: 11/20/2019
 ms.topic: how-to
 author: garyericson
 ms.author: garye
-ms.reviewer: davidph
-monikerRange: =sql-server-2016||=sql-server-2017||=sqlallproducts-allversions
-ms.openlocfilehash: e68c51930cae4762723f098089d0913792748c61
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+monikerRange: =sql-server-2016||=sql-server-2017
+ms.openlocfilehash: 99750753f7b74070ecb3bc8217d72b91255a0962
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956679"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100082613"
 ---
 # <a name="use-revoscaler-to-install-r-packages"></a>RevoScaleR を使用して R パッケージをインストールする
 
@@ -22,7 +21,7 @@ ms.locfileid: "91956679"
 
 この記事では、[RevoScaleR](../r/ref-r-revoscaler.md) (バージョン 9.0.1 以降) 関数を使用して、Machine Learning Services または R Services を使って SQL Server に R パッケージをインストールする方法について説明します。 RevoScaleR 関数を使用すると、リモートの管理者以外のユーザーが、サーバーに直接アクセスせずに SQL Server にパッケージをインストールできます。
 
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 > [!NOTE]
 > SQL Server R Services のお客様が RevoScaleR パッケージ管理機能を利用するには、[コンポーネントをアップグレード](../install/upgrade-r-and-python.md)する必要があります。 パッケージのバージョンと内容を取得する方法については、「[R パッケージ情報の取得](../package-management/r-package-information.md)」を参照してください。
 ::: moniker-end
@@ -48,9 +47,9 @@ ms.locfileid: "91956679"
 
 + サーバーとデータベースに接続して、R コマンドを実行する権限がある。 また、データベース ロールのメンバーで、指定したインスタンスとデータベースにパッケージをインストールできる。
 
-  + **共有スコープ**のパッケージは、指定したデータベースの `rpkgs-shared` ロールに属しているユーザーがインストールできます。 このロールのユーザーはすべて、共有パッケージをアンインストールできます。
+  + **共有スコープ** のパッケージは、指定したデータベースの `rpkgs-shared` ロールに属しているユーザーがインストールできます。 このロールのユーザーはすべて、共有パッケージをアンインストールできます。
 
-  + **非公開スコープ**のパッケージは、データベースの `rpkgs-private` ロールに属しているすべてのユーザーがインストールできます。 ただし、ユーザーが表示およびアンインストールできるのは自分のパッケージのみです。
+  + **非公開スコープ** のパッケージは、データベースの `rpkgs-private` ロールに属しているすべてのユーザーがインストールできます。 ただし、ユーザーが表示およびアンインストールできるのは自分のパッケージのみです。
 
   + データベース所有者は、共有または非公開パッケージを操作できます。
 
@@ -111,7 +110,7 @@ connStr <- "Driver=SQL Server;Server=myserver.financeweb.contoso.com;Database=Fi
 
 ### <a name="get-package-path-on-a-remote-sql-server-compute-context"></a>リモート SQL Server 計算コンテキストにあるパッケージ パスを取得する
 
-この例では、計算コンテキスト **にある**RevoScaleR`sqlcc` パッケージのパスを取得します。
+この例では、計算コンテキスト **にある** RevoScaleR`sqlcc` パッケージのパスを取得します。
 
 ```R
 sqlPackagePaths <- rxFindPackage(package = "RevoScaleR", computeContext = sqlcc)
@@ -127,7 +126,7 @@ print(sqlPackagePaths)
 
 ### <a name="get-locations-for-multiple-packages"></a>複数のパッケージの場所を取得する
 
-次の例では、計算コンテキスト **にある**RevoScaleR**および**lattice`sqlcc` パッケージのパスを取得します。 複数のパッケージに関する情報を取得するには、パッケージ名を含む文字列ベクトルを渡します。
+次の例では、計算コンテキスト **にある** RevoScaleR **および** lattice`sqlcc` パッケージのパスを取得します。 複数のパッケージに関する情報を取得するには、パッケージ名を含む文字列ベクトルを渡します。
 
 ```R
 packagePaths <- rxFindPackage(package = c("RevoScaleR", "lattice"), computeContext = sqlcc)

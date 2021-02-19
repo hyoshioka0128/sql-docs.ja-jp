@@ -1,13 +1,13 @@
 ---
-description: resource_governor_external_resource_pools (Transact-sql)
-title: resource_governor_external_resource_pools (Transact-sql) |Microsoft Docs
+description: sys.resource_governor_external_resource_pools (Transact-sql)
+title: sys.resource_governor_external_resource_pools (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 11/13/2017
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.resource_governor_external_resource_pools
 - sys.resource_governor_external_resource_pools_TSQL
@@ -17,18 +17,18 @@ helpviewer_keywords:
 - sys.resource_governor_external_resource_pools
 - resource_governor_external_resource_pools
 ms.assetid: 75063e36-a91b-496f-9936-88f3d57bd447
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 24b51d8970e9609e486c3a5623ba914aee5e64bd
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 3ed2b14aab2e7eef20d1998848eed9c78864f682
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89550467"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99203420"
 ---
-# <a name="sysresource_governor_external_resource_pools-transact-sql"></a>resource_governor_external_resource_pools (Transact-sql)
+# <a name="sysresource_governor_external_resource_pools-transact-sql"></a>sys.resource_governor_external_resource_pools (Transact-sql)
 [!INCLUDE [sqlserver2016](../../includes/applies-to-version/sqlserver2016.md)]
-**適用対象:** [!INCLUDE[sssql15-md](../../includes/sssql15-md.md)][!INCLUDE[rsql-productname-md](../../includes/rsql-productname-md.md)]および [!INCLUDE[sssql17-md](../../includes/sssql17-md.md)][!INCLUDE[rsql-productnamenew-md](../../includes/rsql-productnamenew-md.md)]
+**適用対象:** [!INCLUDE[sssql15-md](../../includes/sssql16-md.md)][!INCLUDE[rsql-productname-md](../../includes/rsql-productname-md.md)]および [!INCLUDE[sssql17-md](../../includes/sssql17-md.md)][!INCLUDE[rsql-productnamenew-md](../../includes/rsql-productnamenew-md.md)]
 
 に格納されている外部リソースプール構成を返し [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。 ビューの各行によって、プールの構成が決まります。
   
@@ -55,7 +55,7 @@ VIEW SERVER STATE 権限が必要です。
 
 [リソース ガバナー](../../relational-databases/resource-governor/resource-governor.md)
 
-[dm_resource_governor_resource_pool_affinity &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-resource-pool-affinity-transact-sql.md)
+[sys.dm_resource_governor_resource_pool_affinity &#40;Transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-resource-governor-resource-pool-affinity-transact-sql.md)
 
 [external scripts enabled サーバー構成オプション](../../database-engine/configure-windows/external-scripts-enabled-server-configuration-option.md)
 

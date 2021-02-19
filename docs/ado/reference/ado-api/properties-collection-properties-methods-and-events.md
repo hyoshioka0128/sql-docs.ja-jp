@@ -7,21 +7,21 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - Properties collection [ADO], members
 ms.assetid: 03dc1e08-5f03-49e5-8596-76b306b931bd
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 8a22b73e26abf9aa6e3058556aee760e7df34c47
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: e11c3949c53fac54252961eaa2e2745887a2b665
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88990003"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100040932"
 ---
 # <a name="properties-collection-properties-methods-and-events"></a>Properties コレクションのプロパティ、メソッド、およびイベント
-## <a name="properties"></a>プロパティ  
+## <a name="properties"></a>Properties  
  [Count プロパティ](./count-property-ado.md)  
   
  [Item プロパティ](./item-property-ado.md)  

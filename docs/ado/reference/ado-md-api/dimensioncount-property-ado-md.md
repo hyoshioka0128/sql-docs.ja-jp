@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - Axis::DimensionCount
@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 87929cbc-9c38-491a-8616-62d45c51e299
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 45fabecbd6efa54fc7bf3dbde9a5a0fe10e253b9
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: b3e9636cbdc723acef4f22dc3cbe0fe1c7eeb339
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88986853"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100054766"
 ---
 # <a name="dimensioncount-property-ado-md"></a>DimensionCount プロパティ (ADO MD)
 [軸](./axis-object-ado-md.md)上のディメンションの数を示します。  

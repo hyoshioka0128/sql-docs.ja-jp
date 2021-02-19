@@ -10,13 +10,13 @@ ms.technology: install
 ms.topic: conceptual
 author: randomnote1
 ms.author: dareist
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 5a9770cd648fe804ee973878adee27b2d55080d0
-ms.sourcegitcommit: 2f868a77903c1f1c4cecf4ea1c181deee12d5b15
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: a1105db9984a8ff52485247e6699c578ec350986
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671065"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100061447"
 ---
 # <a name="install-sql-server-with-powershell-desired-state-configuration"></a>PowerShell Desired State Configuration での SQL Server をインストールする
 
@@ -44,10 +44,10 @@ ms.locfileid: "91671065"
 
 ## <a name="install-the-sqlserverdsc-dsc-resource"></a>SqlServerDsc DSC リソースのインストール
 
-[SqlServerDsc](https://www.powershellgallery.com/packages/SqlServerDsc) DSC リソースは、[Install-Module](/powershell/module/powershellget/Install-Module?view=powershell-5.1) コマンドレットを使用して [PowerShell Gallery](https://www.powershellgallery.com/) からダウンロードします。 
+[SqlServerDsc](https://www.powershellgallery.com/packages/SqlServerDsc) DSC リソースは、[Install-Module](/powershell/module/powershellget/Install-Module) コマンドレットを使用して [PowerShell Gallery](https://www.powershellgallery.com/) からダウンロードします。 
 
 > [!NOTE]
-> このモジュールをインストールするには、PowerShell が**管理者として**実行されていることを確認します。
+> このモジュールをインストールするには、PowerShell が **管理者として** 実行されていることを確認します。
 
 ```PowerShell
 Install-Module -Name SqlServerDsc
@@ -114,7 +114,7 @@ DSC に SQL Server をインストールする方法を指示するために、*
 
 **SqlSetup** で利用できるパラメーターの完全な一覧と説明は、[SqlServerDsc GitHub リポジトリ](https://github.com/PowerShell/SqlServerDsc/tree/master#sqlsetup)で入手できます。
 
-**SqlSetup** リソースでは、SQL Server のみがインストールされ、適用される設定は**保持されません**。 例として、インストール時に **SQLSysAdminAccounts** を指定した場合があります。 管理者は **sysadmin** ロールのサインインの追加または削除することができます。 ただし、**SqlSetup** リソースは影響を受けません。 DSC に **sysadmin** ロールのメンバーシップを適用する必要がある場合は、[SqlServerRole](https://github.com/PowerShell/SqlServerDsc/tree/master#sqlserverrole) リソースを使用します。
+**SqlSetup** リソースでは、SQL Server のみがインストールされ、適用される設定は **保持されません**。 例として、インストール時に **SQLSysAdminAccounts** を指定した場合があります。 管理者は **sysadmin** ロールのサインインの追加または削除することができます。 ただし、**SqlSetup** リソースは影響を受けません。 DSC に **sysadmin** ロールのメンバーシップを適用する必要がある場合は、[SqlServerRole](https://github.com/PowerShell/SqlServerDsc/tree/master#sqlserverrole) リソースを使用します。
 
 #### <a name="finish-configuration"></a>構成の完了
 

@@ -8,13 +8,13 @@ ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: 3badcbfeb967f76cef945bf3ebe108c44825772e
-ms.sourcegitcommit: 9774e2cb8c07d4f6027fa3a5bb2852e4396b3f68
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: 56a52c3245d364bd1b111dbe5fedbda9da48e493
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92098871"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470953"
 ---
 # <a name="convert-r-code-for-execution-in-sql-server-in-database-instances"></a>SQL Server (データベース内) のインスタンスで実行するために R コードを変換する
 [!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
@@ -71,7 +71,7 @@ R コードを R Studio または別の環境から SQL Server に移動する�
 
 + データ移動を回避するために、可能な限り、プライマリ入力データを SQL クエリとして定義します。
 
-+ ストアド プロシージャで R を実行する場合は、複数の**スカラー**入力をパススルーできます。 出力で使用するパラメーターについては、**OUTPUT** キーワードを追加します。 
++ ストアド プロシージャで R を実行する場合は、複数の **スカラー** 入力をパススルーできます。 出力で使用するパラメーターについては、**OUTPUT** キーワードを追加します。 
 
   たとえば、次のスカラー入力 `@model_name` には、モデル名が含まれています。これは、結果の独自の列にも出力されます。
 
@@ -103,7 +103,7 @@ R コードを R Studio または別の環境から SQL Server に移動する�
 
 ### <a name="improve-performance-and-security"></a>パフォーマンスとセキュリティを向上させる
 
-::: moniker range=">=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2016||>=sql-server-linux-ver15"
 + 予測または中間結果をファイルに書き込むことは避けてください。 データ移動を避けるために、予測はテーブルに書き込みます。
 ::: moniker-end
 
@@ -117,7 +117,7 @@ R コードを R Studio または別の環境から SQL Server に移動する�
 
 + セットベースの計算では、R コードではなく T-SQL を使用する方法を探します。
 
-  ::: moniker range=">=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+  ::: moniker range=">=sql-server-2016||>=sql-server-linux-ver15"
   たとえば、次の R ソリューションは、ユーザー定義の T-SQL 関数と R が同じ特徴エンジニアリング タスクをどのように実行できるかを示しています。[データ サイエンスのエンドツーエンド チュートリアル](../tutorials/walkthrough-data-science-end-to-end-walkthrough.md)。
   ::: moniker-end
 
@@ -169,6 +169,6 @@ SQL Server への R ソリューションの展開方法の例については、
 
 + [R チュートリアル:二項分類を使用して NYC タクシーの料金を予測する](../tutorials/r-taxi-classification-introduction.md)
 
-::: moniker range=">=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2016||>=sql-server-linux-ver15"
 + [エンドツーエンドのデータ サイエンス ソリューション](../tutorials/walkthrough-data-science-end-to-end-walkthrough.md) - R と T-SQL での特徴エンジニアリングの比較が含まれています
 ::: moniker-end

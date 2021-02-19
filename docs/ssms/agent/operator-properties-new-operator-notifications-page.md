@@ -13,13 +13,13 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 01/19/2017
-monikerRange: = azuresqldb-mi-current || >= sql-server-2016 || = sqlallproducts-allversions
-ms.openlocfilehash: e8df9091a470672acb3a52e13c1e8f62bf478bbe
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+monikerRange: = azuresqldb-mi-current || >= sql-server-2016
+ms.openlocfilehash: 7201a76acbca92060a90ebbc4cf881a774821571
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92038235"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97472323"
 ---
 # <a name="operator-properties---new-operator-notifications-page"></a>オペレーターのプロパティ - [新しいオペレーター] ([通知] ページ)
 
@@ -52,7 +52,7 @@ ms.locfileid: "92038235"
 電子メールをポケット ベルに送信することによって、このオペレーターに通知します。  
   
 **Net send**  
-**net send**を使用してこのオペレーターに通知します。  
+**net send** を使用してこのオペレーターに通知します。  
   
 ## <a name="see-also"></a>参照  
 [オペレーター](../../ssms/agent/operators.md)  

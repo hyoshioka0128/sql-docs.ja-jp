@@ -6,19 +6,19 @@ ms.date: 03/14/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: supportability
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - Hash Warning event class
 ms.assetid: cb93c620-4be9-4362-8bf0-af3f2048bdaf
 author: stevestein
 ms.author: sstein
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: c4a39dcf3f4d9023b85d05a5368a979a8dc1ee5e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 3353313a9ee65ab1de34fa8c1e90517950eed0e9
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88428494"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99199922"
 ---
 # <a name="hash-warning-event-class"></a>Hash Warning イベント クラス
 [!INCLUDE [SQL Server - ASDB](../../includes/applies-to-version/sql-asdb.md)]
@@ -44,7 +44,7 @@ ms.locfileid: "88428494"
 >  *猶予ハッシュ結合* および *再帰的ハッシュ結合* という用語は、ハッシュの保留を表すためにも使用されます。  
   
 > [!IMPORTANT]  
->  クエリ オプティマイザーが実行プランを生成するときに Hash Warning イベントが発生している場所を特定するには、トレースで Showplan イベント クラスも収集する必要があります。 ノード ID を返さない Showplan Text イベント クラスと Showplan Text (Unencoded) イベント クラスを除く、任意の Showplan イベント クラスを選択できます。 Showplans のノード ID で、クエリ オプティマイザーがクエリ実行プランの生成時に実行する各操作が特定されます。 これらの操作は *オペレーター*と呼ばれ、Showplan の各オペレーターにはノード ID があります。 Hash Warning イベントの ObjectID 列は Showplan のノード ID に対応するので、エラーの原因であるオペレーターつまり操作を判別できます。  
+>  クエリ オプティマイザーが実行プランを生成するときに Hash Warning イベントが発生している場所を特定するには、トレースで Showplan イベント クラスも収集する必要があります。 ノード ID を返さない Showplan Text イベント クラスと Showplan Text (Unencoded) イベント クラスを除く、任意の Showplan イベント クラスを選択できます。 Showplans のノード ID で、クエリ オプティマイザーがクエリ実行プランの生成時に実行する各操作が特定されます。 これらの操作は *オペレーター* と呼ばれ、Showplan の各オペレーターにはノード ID があります。 Hash Warning イベントの ObjectID 列は Showplan のノード ID に対応するので、エラーの原因であるオペレーターつまり操作を判別できます。  
   
 ## <a name="hash-warning-event-class-data-columns"></a>Hash Warning イベント クラスのデータ列  
   

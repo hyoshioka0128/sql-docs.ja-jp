@@ -7,19 +7,19 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 helpviewer_keywords:
 - DataSpace object [RDS], members
 ms.assetid: c4a1f2e7-19ff-465e-9d9a-275ac0f4dc6a
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 4ad561c6819854839c47444588c851c387481139
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 29a1fc44f8cc99c13bc72fed63e0ca353fff03b1
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91720913"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100053193"
 ---
 # <a name="dataspace-object-rds-properties-methods-and-events"></a>DataSpace オブジェクト (RDS) のプロパティ、メソッド、およびイベント
 > [!IMPORTANT]
@@ -31,7 +31,7 @@ ms.locfileid: "91720913"
 ## <a name="methods"></a>メソッド  
  [CreateObject メソッド (RDS)](./createobject-method-rds.md)  
   
-## <a name="events"></a>events  
+## <a name="events"></a>イベント  
  [なし] :  
   
 ## <a name="see-also"></a>参照  

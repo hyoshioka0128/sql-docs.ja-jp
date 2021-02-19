@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: machine-learning-services
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sp_execute_external_script_TSQL
 - sys.sp_execute_external_script
@@ -20,52 +20,52 @@ helpviewer_keywords:
 ms.assetid: de4e1fcd-0e1a-4af3-97ee-d1becc7f04df
 author: dphansen
 ms.author: davidph
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: 7953c9aafda19182395311b7adc648c04d5c1f39
-ms.sourcegitcommit: 43b92518c5848489d03c68505bd9905f8686cbc0
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: f7c407416b8181864e7cc2fecdc4c95f97ab03cc
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92155078"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100355249"
 ---
 # <a name="sp_execute_external_script-transact-sql"></a>sp_execute_external_script (Transact-SQL)
 [!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
 
-::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
-**Sp_execute_external_script**ストアドプロシージャは、プロシージャへの入力引数として指定されたスクリプトを実行し、 [Machine Learning Services](../../machine-learning/sql-server-machine-learning-services.md)および[言語拡張](../../language-extensions/language-extensions-overview.md)と共に使用されます。 
+::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15"
+**Sp_execute_external_script** ストアドプロシージャは、プロシージャへの入力引数として指定されたスクリプトを実行し、 [Machine Learning Services](../../machine-learning/sql-server-machine-learning-services.md)および [言語拡張](../../language-extensions/language-extensions-overview.md)と共に使用されます。 
 
 Machine Learning Services の場合、 [Python](../../machine-learning/concepts/extension-python.md) と [R](../../machine-learning/concepts/extension-r.md) はサポートされている言語です。 言語拡張の場合、Java はサポートされていますが、 [CREATE EXTERNAL Language](../../t-sql/statements/create-external-language-transact-sql.md)を使用して定義する必要があります。
 
-**Sp_execute_external_script**を実行するには、まず Machine Learning Services または言語拡張機能をインストールする必要があります。 詳細については、Windows および[linux](../../linux/sql-server-linux-setup-machine-learning.md)[に SQL Server Machine Learning Services (Python および R) をインストール](../../machine-learning/install/sql-machine-learning-services-windows-install.md)するか、windows および[Linux](../../linux/sql-server-linux-setup-language-extensions-java.md)[に SQL Server 言語拡張機能をインストール](../../language-extensions/install/windows-java.md)してください。
+**Sp_execute_external_script** を実行するには、まず Machine Learning Services または言語拡張機能をインストールする必要があります。 詳細については、Windows および[linux](../../linux/sql-server-linux-setup-machine-learning.md)[に SQL Server Machine Learning Services (Python および R) をインストール](../../machine-learning/install/sql-machine-learning-services-windows-install.md)するか、windows および[Linux](../../linux/sql-server-linux-setup-language-extensions-java.md)[に SQL Server 言語拡張機能をインストール](../../language-extensions/install/windows-java.md)してください。
 ::: moniker-end
 
-::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
-**Sp_execute_external_script**ストアドプロシージャは、プロシージャへの入力引数として指定されたスクリプトを実行し、SQL Server 2017 で[Machine Learning Services](../../machine-learning/sql-server-machine-learning-services.md)と共に使用されます。
+::: moniker range="=sql-server-2017"
+**Sp_execute_external_script** ストアドプロシージャは、プロシージャへの入力引数として指定されたスクリプトを実行し、SQL Server 2017 で [Machine Learning Services](../../machine-learning/sql-server-machine-learning-services.md)と共に使用されます。
 
 Machine Learning Services の場合、 [Python](../../machine-learning/concepts/extension-python.md) と [R](../../machine-learning/concepts/extension-r.md) はサポートされている言語です。
 
-**Sp_execute_external_script**を実行するには、まず Machine Learning Services をインストールする必要があります。 詳細については、「 [Install SQL Server Machine Learning Services (Python および R) On Windows](../../machine-learning/install/sql-machine-learning-services-windows-install.md)」を参照してください。
+**Sp_execute_external_script** を実行するには、まず Machine Learning Services をインストールする必要があります。 詳細については、「 [Install SQL Server Machine Learning Services (Python および R) On Windows](../../machine-learning/install/sql-machine-learning-services-windows-install.md)」を参照してください。
 ::: moniker-end
 
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
-**Sp_execute_external_script**ストアドプロシージャは、プロシージャへの入力引数として指定されたスクリプトを実行し、SQL Server 2016 の[R Services](../../machine-learning/r/sql-server-r-services.md)と共に使用されます。
+::: moniker range="=sql-server-2016"
+**Sp_execute_external_script** ストアドプロシージャは、プロシージャへの入力引数として指定されたスクリプトを実行し、SQL Server 2016 の [R Services](../../machine-learning/r/sql-server-r-services.md)と共に使用されます。
 
 R Services の場合、サポートされている言語は  [r](../../machine-learning/concepts/extension-r.md) です。
 
-**Sp_execute_external_script**を実行するには、最初に R Services をインストールする必要があります。 詳細については、「 [Install SQL Server Machine Learning Services (Python および R) On Windows](../../machine-learning/install/sql-r-services-windows-install.md)」を参照してください。
+**Sp_execute_external_script** を実行するには、最初に R Services をインストールする必要があります。 詳細については、「 [Install SQL Server Machine Learning Services (Python および R) On Windows](../../machine-learning/install/sql-r-services-windows-install.md)」を参照してください。
 ::: moniker-end
 
-::: moniker range="=azuresqldb-mi-current||=sqlallproducts-allversions"
-**Sp_execute_external_script**ストアドプロシージャは、プロシージャへの入力引数として指定されたスクリプトを実行し、 [Azure SQL Managed Instance の Machine Learning Services](/azure/azure-sql/managed-instance/machine-learning-services-overview)と共に使用されます。
+::: moniker range="=azuresqldb-mi-current"
+**Sp_execute_external_script** ストアドプロシージャは、プロシージャへの入力引数として指定されたスクリプトを実行し、 [Azure SQL Managed Instance の Machine Learning Services](/azure/azure-sql/managed-instance/machine-learning-services-overview)と共に使用されます。
 
 Machine Learning Services の場合、 [Python](../../machine-learning/concepts/extension-python.md) と [R](../../machine-learning/concepts/extension-r.md) はサポートされている言語です。
 
-**Sp_execute_external_script**を実行するには、まず Machine Learning Services を有効にする必要があります。 詳細については、 [AZURE SQL Managed Instance ドキュメントの Machine Learning Services](/azure/azure-sql/managed-instance/machine-learning-services-overview)を参照してください。
+**Sp_execute_external_script** を実行するには、まず Machine Learning Services を有効にする必要があります。 詳細については、 [AZURE SQL Managed Instance ドキュメントの Machine Learning Services](/azure/azure-sql/managed-instance/machine-learning-services-overview)を参照してください。
 ::: moniker-end
 
 ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
 
-::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=azuresqldb-mi-current"
 ## <a name="syntax"></a>構文
 
 ```
@@ -82,7 +82,7 @@ sp_execute_external_script
     [ , @parameter1 = 'value1' [ OUT | OUTPUT ] [ ,...n ] ]
 ```
 ::: moniker-end
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 ## <a name="syntax-for-sql-server-2017-and-earlier"></a>SQL Server 2017 以前の構文
 
 ```
@@ -99,33 +99,33 @@ sp_execute_external_script
 ::: moniker-end
 
 ## <a name="arguments"></a>引数
- ** \@ language** = N '*language*'  
-::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
- スクリプト言語を示します。 *言語* は **sysname**です。 有効な値は、 **R**、 **Python**、および [CREATE EXTERNAL language](../../t-sql/statements/create-external-language-transact-sql.md) (Java など) で定義されている任意の言語です。
+ **\@ language** = N '*language*'  
+::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15"
+ スクリプト言語を示します。 *言語* は **sysname** です。 有効な値は、 **R**、 **Python**、および [CREATE EXTERNAL language](../../t-sql/statements/create-external-language-transact-sql.md) (Java など) で定義されている任意の言語です。
 ::: moniker-end
-::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
- スクリプト言語を示します。 *言語* は **sysname**です。 SQL Server 2017 では、有効な値は **R** および **Python**です。
+::: moniker range="=sql-server-2017"
+ スクリプト言語を示します。 *言語* は **sysname** です。 SQL Server 2017 では、有効な値は **R** および **Python** です。
 ::: moniker-end
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
- スクリプト言語を示します。 *言語* は **sysname**です。 SQL Server 2016 では、有効な値は **R**のみです。
+::: moniker range="=sql-server-2016"
+ スクリプト言語を示します。 *言語* は **sysname** です。 SQL Server 2016 では、有効な値は **R** のみです。
 ::: moniker-end
-::: moniker range="=azuresqldb-mi-current||=sqlallproducts-allversions"
- スクリプト言語を示します。 *言語* は **sysname**です。 Azure SQL Managed Instance では、有効な値は **R** および **Python**です。
+::: moniker range="=azuresqldb-mi-current"
+ スクリプト言語を示します。 *言語* は **sysname** です。 Azure SQL Managed Instance では、有効な値は **R** および **Python** です。
 ::: moniker-end
 
- ** \@ スクリプト**= N '*script*' 外部言語スクリプトがリテラルまたは変数入力として指定されています。 *スクリプト* は **nvarchar (max)** です。  
+ **\@ スクリプト**= N '*script*' 外部言語スクリプトがリテラルまたは変数入力として指定されています。 *スクリプト* は **nvarchar (max)** です。  
 
-`[ @input_data_1 =  N'input_data_1' ]` 外部スクリプトによって使用される入力データをクエリの形式で指定し [!INCLUDE[tsql](../../includes/tsql-md.md)] ます。 *Input_data_1*のデータ型は**nvarchar (max)** です。
+`[ @input_data_1 =  N'input_data_1' ]` 外部スクリプトによって使用される入力データをクエリの形式で指定し [!INCLUDE[tsql](../../includes/tsql-md.md)] ます。 *Input_data_1* のデータ型は **nvarchar (max)** です。
 
-`[ @input_data_1_name = N'input_data_1_name' ]` によって定義されたクエリを表すために使用する変数の名前を指定し @input_data_1 ます。 外部スクリプトの変数のデータ型は、言語によって異なります。 R の場合、入力変数はデータフレームです。 Python の場合、入力は表形式である必要があります。 *input_data_1_name* は **sysname**です。  既定値は *Inputdataset*です。  
+`[ @input_data_1_name = N'input_data_1_name' ]` によって定義されたクエリを表すために使用する変数の名前を指定し @input_data_1 ます。 外部スクリプトの変数のデータ型は、言語によって異なります。 R の場合、入力変数はデータフレームです。 Python の場合、入力は表形式である必要があります。 *input_data_1_name* は **sysname** です。  既定値は *Inputdataset* です。  
 
-::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15"
 `[ @input_data_1_order_by_columns = N'input_data_1_order_by_columns' ]` パーティションごとのモデルを構築するために使用されます。 結果セットの順序付けに使用する列の名前を指定します。たとえば、製品名を使用します。 外部スクリプトの変数のデータ型は、言語によって異なります。 R の場合、入力変数はデータフレームです。 Python の場合、入力は表形式である必要があります。
 
 `[ @input_data_1_partition_by_columns = N'input_data_1_partition_by_columns' ]` パーティションごとのモデルを構築するために使用されます。 地理的領域や日付など、データのセグメント化に使用する列の名前を指定します。 外部スクリプトの変数のデータ型は、言語によって異なります。 R の場合、入力変数はデータフレームです。 Python の場合、入力は表形式である必要があります。 
 ::: moniker-end
 
-`[ @output_data_1_name =  N'output_data_1_name' ]`[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]ストアドプロシージャの呼び出しの完了時に返されるデータを含む外部スクリプト内の変数の名前を指定します。 外部スクリプトの変数のデータ型は、言語によって異なります。 R の場合、出力はデータフレームである必要があります。 Python の場合、出力はパンダのデータフレームである必要があります。 *output_data_1_name* は **sysname**です。  既定値は *Outputdataset*です。  
+`[ @output_data_1_name =  N'output_data_1_name' ]`[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]ストアドプロシージャの呼び出しの完了時に返されるデータを含む外部スクリプト内の変数の名前を指定します。 外部スクリプトの変数のデータ型は、言語によって異なります。 R の場合、出力はデータフレームである必要があります。 Python の場合、出力はパンダのデータフレームである必要があります。 *output_data_1_name* は **sysname** です。  既定値は *Outputdataset* です。  
 
 `[ @parallel = 0 | 1 ]` パラメーターを1に設定して、R スクリプトの並列実行を有効にし `@parallel` ます。 このパラメーターの既定値は 0 (並列処理なし) です。 `@parallel = 1`と出力がクライアントコンピューターに直接ストリーミングされている場合は、 `WITH RESULT SETS` 句が必要であり、出力スキーマを指定する必要があります。  
 
@@ -137,21 +137,21 @@ sp_execute_external_script
   
 `[ @parameter1 = 'value1' [ OUT | OUTPUT ] [ ,...n ] ]` 外部スクリプトによって使用される入力パラメーターの値の一覧です。  
 
-## <a name="remarks"></a>解説
+## <a name="remarks"></a>Remarks
 
 > [!IMPORTANT]
 > クエリツリーは SQL machine learning によって制御され、ユーザーはクエリに対して任意の操作を実行できません。
 
-::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15"
 サポートされている言語で記述されたスクリプトを実行するには、 **sp_execute_external_script** を使用します。 サポートされている言語は、Machine Learning Services で使用される **Python** と **R** 、および言語拡張機能で使用される [CREATE EXTERNAL language](../../t-sql/statements/create-external-language-transact-sql.md) (Java など) で定義されているすべての言語です。
 ::: moniker-end
-::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2017"
 サポートされている言語で記述されたスクリプトを実行するには、 **sp_execute_external_script** を使用します。 サポートされている言語は SQL Server 2017 Machine Learning Services の **Python** および **R** です。
 ::: moniker-end
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 サポートされている言語で記述されたスクリプトを実行するには、 **sp_execute_external_script** を使用します。 サポートされている言語は SQL Server 2016 R Services の **r** のみです。
 ::: moniker-end
-::: moniker range="=azuresqldb-mi-current||=sqlallproducts-allversions"
+::: moniker range="=azuresqldb-mi-current"
 サポートされている言語で記述されたスクリプトを実行するには、 **sp_execute_external_script** を使用します。 サポートされている言語は、Azure SQL Managed Instance Machine Learning Services の **Python** と **R** です。
 ::: moniker-end
 
@@ -159,7 +159,7 @@ sp_execute_external_script
 
 結果セットを返すだけでなく、出力パラメーターを使用してスカラー値を返すこともできます。
 
-::: moniker range=">=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2016||>=sql-server-linux-ver15"
 外部リソースプールを構成することによって、外部スクリプトによって使用されるリソースを制御できます。 詳細については、「[CREATE EXTERNAL RESOURCE POOL &#40;Transact-SQL&#41;](../../t-sql/statements/create-external-resource-pool-transact-sql.md)」を参照してください。 ワークロードに関する情報は、リソースガバナーのカタログビュー、DMV の、およびカウンターから取得できます。 詳細については、「 [Resource Governor カタログビュー &#40;transact-sql&#41;](../../relational-databases/system-catalog-views/resource-governor-catalog-views-transact-sql.md)」、 [Resource Governor 関連する動的管理ビュー &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/resource-governor-related-dynamic-management-views-transact-sql.md)、および [SQL Server External Scripts オブジェクト](../../relational-databases/performance-monitor/sql-server-external-scripts-object.md)」を参照してください。  
 ::: moniker-end
 
@@ -167,12 +167,12 @@ sp_execute_external_script
 
 [Sys.dm_external_script_requests](../../relational-databases/system-dynamic-management-views/sys-dm-external-script-requests.md)と[sys.dm_external_script_execution_stats](../../relational-databases/system-dynamic-management-views/sys-dm-external-script-execution-stats.md)を使用してスクリプトの実行を監視します。
 
-::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15"
 ### <a name="parameters-for-partition-modeling"></a>パーティションモデリングのパラメーター
 
 パーティション分割されたデータでのモデリングを可能にする2つの追加パラメーターを設定できます。この場合、パーティションは、指定した1つ以上の列に基づいて作成され、スクリプトの実行中にのみ使用される論理パーティションにデータセットを分割します。 年齢、性別、地域、日付、または時刻の繰り返し値を含む列は、パーティション分割されたデータセットに適したいくつかの例です。
 
-2つのパラメーター **input_data_1_partition_by_columns** と **input_data_1_order_by_columns**で、2番目のパラメーターを使用して結果セットを並べ替えます。 パラメーターは、 `sp_execute_external_script` すべてのパーティションに対して1回実行される外部スクリプトを使用して、入力として渡されます。 詳細と例については、「 [チュートリアル: パーティションベースのモデルを作成する](../../machine-learning/tutorials/r-tutorial-create-models-per-partition.md)」を参照してください。
+2つのパラメーター **input_data_1_partition_by_columns** と **input_data_1_order_by_columns** で、2番目のパラメーターを使用して結果セットを並べ替えます。 パラメーターは、 `sp_execute_external_script` すべてのパーティションに対して1回実行される外部スクリプトを使用して、入力として渡されます。 詳細と例については、「 [チュートリアル: パーティションベースのモデルを作成する](../../machine-learning/tutorials/r-tutorial-create-models-per-partition.md)」を参照してください。
 
 を指定することにより、スクリプトを並列で実行でき `@parallel=1` ます。 入力クエリを並列化できる場合は、 `@parallel=1` 引数の一部としてをに設定する必要があり `sp_execute_external_script` ます。 既定では、クエリオプティマイザーは `@parallel=1` 256 行を超えるテーブルで動作しますが、これを明示的に処理する場合、このスクリプトにはパラメーターがデモンストレーションとして含まれます。
 
@@ -189,7 +189,7 @@ sp_execute_external_script
 > [!NOTE]  
 > ストリーミングと並列処理は、Enterprise Edition でのみサポートされています。 標準エディションのクエリには、エラーを発生させることなくパラメーターを含めることができますが、パラメーターが無効になり、R スクリプトが1つのプロセスで実行されます。  
   
-## <a name="restrictions"></a>制限  
+## <a name="restrictions"></a>制約  
 
 ### <a name="data-types"></a>データ型
 
@@ -217,13 +217,13 @@ sp_execute_external_script
 
 ### <a name="restrictions-specific-to-r"></a>R に固有の制限事項
 
-入力に、R の許容範囲の値に適合しない **datetime** 値が含まれている場合、値は **NA**に変換されます。 SQL machine learning では、R 言語でサポートされているよりも広い範囲の値が許可されるため、この方法が必要になります。
+入力に、R の許容範囲の値に適合しない **datetime** 値が含まれている場合、値は **NA** に変換されます。 SQL machine learning では、R 言語でサポートされているよりも広い範囲の値が許可されるため、この方法が必要になります。
 
-Float 値 (たとえば、、 `+Inf` 、 `-Inf` `NaN` ) は、両方の言語で IEEE 754 が使用されている場合でも、SQL machine learning ではサポートされません。 現在の動作では、値が直接 SQL に送信されます。その結果、SQL クライアントからエラーがスローされます。 そのため、これらの値は **NULL**に変換されます。
+Float 値 (たとえば、、 `+Inf` 、 `-Inf` `NaN` ) は、両方の言語で IEEE 754 が使用されている場合でも、SQL machine learning ではサポートされません。 現在の動作では、値が直接 SQL に送信されます。その結果、SQL クライアントからエラーがスローされます。 そのため、これらの値は **NULL** に変換されます。
 
 ## <a name="permissions"></a>アクセス許可
 
-**すべての外部スクリプトデータベースの実行**権限が必要です。  
+**すべての外部スクリプトデータベースの実行** 権限が必要です。  
 
 ## <a name="examples"></a>使用例
 
@@ -288,7 +288,7 @@ GO
 
 Python コードで使用される列見出しは SQL Server に出力されません。したがって、SQL で使用する列の名前とデータ型を指定するには、WITH RESULT ステートメントを使用します。
 
-::: moniker range=">=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2016||>=sql-server-linux-ver15"
 ### <a name="c-generate-an-r-model-based-on-data-from-sql-server"></a>C. SQL Server からのデータに基づいて R モデルを生成する  
 
 次の例では、 **sp_execute_external_script** を使用して、虹彩モデルを生成し、モデルを返すストアドプロシージャを作成します。  

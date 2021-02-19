@@ -5,32 +5,32 @@ description: この 4 部構成のチュートリアル シリーズのパート
 ms.prod: sql
 ms.technology: machine-learning
 ms.topic: tutorial
-author: cawrites
-ms.author: chadam
+author: dphansen
+ms.author: davidph
 ms.reviewer: garye, davidph
 ms.date: 05/21/2020
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: 4c6ea97c242df2fc22e1b7a0a9d0d828e8f3859a
-ms.sourcegitcommit: 9b41725d6db9957dd7928a3620fe4db41eb51c6e
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: 0ae6a293ab1e7e888a83ceb3216e8ef74aa9f95a
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88178757"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100348073"
 ---
 # <a name="tutorial-create-a-predictive-model-in-r-with-sql-machine-learning"></a>チュートリアル:SQL 機械学習を使用して R で予測モデルを作成する
 [!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
 
-::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15"
 この 4 部構成のチュートリアル シリーズのパート 3 では、R で予測モデルをトレーニングします。このシリーズの次のパートでは、Machine Learning Services またはビッグ データ クラスターを使用して、このモデルを SQL Server データベースにデプロイします。
 ::: moniker-end
-::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2017"
 この 4 部構成のチュートリアル シリーズのパート 3 では、R で予測モデルをトレーニングします。このシリーズの次のパートでは、Machine Learning Services を使用して、このモデルを SQL Server データベースにデプロイします。
 ::: moniker-end
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 この 4 部構成のチュートリアル シリーズのパート 3 では、R で予測モデルをトレーニングします。このシリーズの次のパートでは、SQL Server R Services を使用して、このモデルをデータベースにデプロイします。
 ::: moniker-end
-::: moniker range="=azuresqldb-mi-current||=sqlallproducts-allversions"
+::: moniker range="=azuresqldb-mi-current"
 この 4 部構成のチュートリアル シリーズのパート 3 では、R で予測モデルをトレーニングします。このシリーズの次のパートでは、Machine Learning Services を使用して、このモデルを Azure SQL Managed Instance データベースにデプロイします。
 ::: moniker-end
 
@@ -49,7 +49,7 @@ ms.locfileid: "88178757"
 
 ## <a name="prerequisites"></a>前提条件
 
-このチュートリアル シリーズのパート 3 は、[**パート 1** ](r-predictive-model-introduction.md)の前提条件を満たし、[**パート 2** ](r-predictive-model-prepare-data.md)の手順を完了していることを前提としています。
+このチュートリアル シリーズのパート 3 は、[**パート 1**](r-predictive-model-introduction.md)の前提条件を満たし、[**パート 2**](r-predictive-model-prepare-data.md)の手順を完了していることを前提としています。
 
 ## <a name="train-two-models"></a>2 つのモデルをトレーニングする
 

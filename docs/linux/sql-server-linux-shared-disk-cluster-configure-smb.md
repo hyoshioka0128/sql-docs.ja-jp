@@ -8,12 +8,12 @@ ms.date: 08/28/2017
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
-ms.openlocfilehash: b57aec5c6abc9bbeb6928c5310a3217957d2d02b
-ms.sourcegitcommit: 610e3ebe21ac6575850a29641a32f275e71557e3
+ms.openlocfilehash: 6cc84164c2829d2cf6d5e66f40fd13921fdb105b
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91784900"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100346319"
 ---
 # <a name="configure-failover-cluster-instance---smb---sql-server-on-linux"></a>フェールオーバー クラスター インスタンスの構成 - SMB - SQL Server on Linux
 
@@ -30,7 +30,7 @@ SMB を正常に使用するためのヒントと注意事項を次に示しま�
 - SMB 共有は高可用性である必要があります。
 - SMB 共有にセキュリティが適切に設定されている必要があります。 /etc/samba/smb.conf の例を次に示します。ここで、SQLData1 は共有の名前です。
 
-![05-smbsource][1]
+![SQLData1 が共有の名前であることを示すスクリーンショット。][1]
 
 ## <a name="instructions"></a>Instructions
 

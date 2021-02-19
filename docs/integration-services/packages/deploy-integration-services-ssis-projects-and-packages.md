@@ -19,12 +19,12 @@ f1_keywords:
 ms.assetid: bea8ce8d-cf63-4257-840a-fc9adceade8c
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 90fdfd4a64d77d3fa51ef7dc4c39ccf11b1fb9f3
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: 5ee14ee789174ad12db2cea297202fc63ee68d66
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92196373"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100346948"
 ---
 # <a name="deploy-integration-services-ssis-projects-and-packages"></a>Integration Services (SSIS) プロジェクトとパッケージの配置
 
@@ -55,7 +55,7 @@ ms.locfileid: "92196373"
 |データベース エンジンでは CLR 統合が必要です。|データベース エンジンでは CLR 統合は不要です。|  
 |環境固有のパラメーター値は、環境変数に格納されます。|環境固有の構成値は、構成ファイルに格納されます。|  
 |カタログ内のプロジェクトとパッケージは、実行前にサーバー上で検証できます。 SQL Server Management Studio、ストアド プロシージャ、またはマネージド コードを使用して検証を実行できます。|パッケージは実行の直前に検証されます。 dtExec またはマネージド コードを使用してパッケージを検証することもできます。|  
-|パッケージは、データベース エンジンで実行を開始することで実行されます。 プロジェクト識別子、明示的なパラメーター値 (オプション)、および環境参照 (オプション) は、開始前に実行に割り当てられます。<br /><br /> **dtExec**を使用してパッケージを実行することもできます。|パッケージは、 **dtExec** および **DTExecUI** 実行ユーティリティを使用して実行されます。 適切な構成が、コマンド プロンプトの引数で指定されます (オプション)。|  
+|パッケージは、データベース エンジンで実行を開始することで実行されます。 プロジェクト識別子、明示的なパラメーター値 (オプション)、および環境参照 (オプション) は、開始前に実行に割り当てられます。<br /><br /> **dtExec** を使用してパッケージを実行することもできます。|パッケージは、 **dtExec** および **DTExecUI** 実行ユーティリティを使用して実行されます。 適切な構成が、コマンド プロンプトの引数で指定されます (オプション)。|  
 |実行時に、パッケージによって生成されたイベントが自動的にキャプチャされ、カタログに保存されます。 Transact-SQL ビューを使用して、これらのイベントに対してクエリを実行できます。|実行時に、パッケージによって生成されたイベントは自動的にキャプチャされません。 イベントをキャプチャするには、パッケージにログ プロバイダーを追加する必要があります。|  
 |パッケージは、個別の Windows プロセスで実行されます。|パッケージは、個別の Windows プロセスで実行されます。|  
 |SQL Server エージェントを使用してパッケージ実行がスケジュールされます。|SQL Server エージェントを使用してパッケージ実行がスケジュールされます。|  
@@ -124,7 +124,7 @@ System.ComponentModel.Win32Exception: A required privilege is not held by the cl
   
              ウィザードの **[変換先の選択]** ページで、既存のファイルを選択するか、新規ファイルを作成することができます。  
   
-             プロジェクトの変換時にパッケージ ファイルをアップグレードするには、 **Integration Services プロジェクト変換ウィザード** を [!INCLUDE[vsprvs](../../includes/vsprvs-md.md)]から実行します。 プロジェクトの変換とは別にパッケージ ファイルをアップグレードするには、 **Integration Services プロジェクト変換ウィザード** を [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] から実行してから、 **SSIS パッケージ アップグレード ウィザード**を実行します。 パッケージ ファイルを個別にアップグレードする場合は、必ず変更を保存します。 保存しないと、プロジェクトをプロジェクトの配置モデルに変換するときに、パッケージに対する未保存の変更が変換されません。  
+             プロジェクトの変換時にパッケージ ファイルをアップグレードするには、 **Integration Services プロジェクト変換ウィザード** を [!INCLUDE[vsprvs](../../includes/vsprvs-md.md)]から実行します。 プロジェクトの変換とは別にパッケージ ファイルをアップグレードするには、 **Integration Services プロジェクト変換ウィザード** を [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] から実行してから、 **SSIS パッケージ アップグレード ウィザード** を実行します。 パッケージ ファイルを個別にアップグレードする場合は、必ず変更を保存します。 保存しないと、プロジェクトをプロジェクトの配置モデルに変換するときに、パッケージに対する未保存の変更が変換されません。  
   
      パッケージのアップグレードの詳細については、「 [Integration Services パッケージのアップグレード](../../integration-services/install-windows/upgrade-integration-services-packages.md) 」および「 [SSIS パッケージ アップグレード ウィザードを使用した Integration Services パッケージのアップグレード](../../integration-services/install-windows/upgrade-integration-services-packages-using-the-ssis-package-upgrade-wizard.md)」を参照してください。  
   
@@ -144,7 +144,7 @@ System.ComponentModel.Win32Exception: A required privilege is not held by the cl
   
 ###  <a name="to-deploy-a-project-to-the-integration-services-server"></a><a name="deploy"></a> Integration Services サーバーにプロジェクトを配置するには  
   
-1.  [!INCLUDE[vsprvs](../../includes/vsprvs-md.md)]でプロジェクトを開き、 **[プロジェクト]** メニューの **[配置]** を選択して、 **Integration Services 配置ウィザード**を起動します。  
+1.  [!INCLUDE[vsprvs](../../includes/vsprvs-md.md)]でプロジェクトを開き、 **[プロジェクト]** メニューの **[配置]** を選択して、 **Integration Services 配置ウィザード** を起動します。  
   
      or  
   
@@ -152,7 +152,7 @@ System.ComponentModel.Win32Exception: A required privilege is not held by the cl
   
      or  
   
-     コマンド プロンプトで、 **%ProgramFiles%\Microsoft SQL Server\130\DTS\Binn** にある **isdeploymentwizard.exe**を実行します。 64 ビット コンピューターの場合、 **%ProgramFiles(x86)%\Microsoft SQL Server\130\DTS\Binn**に 32 ビット バージョンのツールもあります。  
+     コマンド プロンプトで、 **%ProgramFiles%\Microsoft SQL Server\130\DTS\Binn** にある **isdeploymentwizard.exe** を実行します。 64 ビット コンピューターの場合、 **%ProgramFiles(x86)%\Microsoft SQL Server\130\DTS\Binn** に 32 ビット バージョンのツールもあります。  
   
 2.  **[ソースの選択]** ページで、 **[プロジェクト配置ファイル]** をクリックして、プロジェクトの配置ファイルを選択します。  
   
@@ -167,7 +167,7 @@ System.ComponentModel.Win32Exception: A required privilege is not held by the cl
   
 ###  <a name="deploy-packages-by-using-the-integration-services-deployment-wizard"></a><a name="DeployWizard"></a> Integration Services 配置ウィザードを使用してパッケージを配置する  
   
-1.  コマンド プロンプトで、 **%ProgramFiles%\Microsoft SQL Server\130\DTS\Binn** にある **isdeploymentwizard.exe**を実行します。 64 ビット コンピューターの場合、 **%ProgramFiles(x86)%\Microsoft SQL Server\130\DTS\Binn**に 32 ビット バージョンのツールもあります。  
+1.  コマンド プロンプトで、 **%ProgramFiles%\Microsoft SQL Server\130\DTS\Binn** にある **isdeploymentwizard.exe** を実行します。 64 ビット コンピューターの場合、 **%ProgramFiles(x86)%\Microsoft SQL Server\130\DTS\Binn** に 32 ビット バージョンのツールもあります。  
   
 2.  **[ソースの選択]** ページで、 **[パッケージ配置モデル]** に切り替えます。 次に、配置対象のパッケージが含まれるフォルダーを選択し、パッケージを構成します。  
   
@@ -278,7 +278,7 @@ static void Main()
 2.  プロジェクトとすべてのパッケージの互換性テストが成功した場合は、 **[OK]** をクリックしてパッケージを変換します。  
   
 > [!NOTE]
-> プロジェクトをプロジェクト配置モデルに変換するには、**Integration Services プロジェクト変換ウィザード**を使用します。 詳細については、「 [Integration Services プロジェクトの変換ウィザード](deploy-integration-services-ssis-projects-and-packages.md)」を参照してください。  
+> プロジェクトをプロジェクト配置モデルに変換するには、**Integration Services プロジェクト変換ウィザード** を使用します。 詳細については、「 [Integration Services プロジェクトの変換ウィザード](deploy-integration-services-ssis-projects-and-packages.md)」を参照してください。  
 
 ## <a name="integration-services-deployment-wizard"></a>Integration Services 配置ウィザード
   **Integration Services 配置ウィザード** は次の 2 つの配置モデルをサポートしています。
@@ -329,7 +329,7 @@ static void Main()
 
  **Integration Services 配置ウィザード** の **[ソースの選択]** ページには、 **配置モデル** に **[パッケージ配置]** オプションを選択した場合、パッケージ配置モデルに固有の設定が表示されます。  
   
- ソース パッケージを選択するには、**[参照]** ボタンをクリックして、パッケージを含む**フォルダー**を選択するか、**[パッケージ フォルダーのパス]** テキストボックスにフォルダー パスを入力して、ページの下部にある **[更新]** ボタンをクリックします。 これで、リスト ボックスに指定したフォルダー内のすべてのパッケージが表示されます。 既定では、すべてのパッケージが選択されます。 サーバーに配置するパッケージを選択するには、最初の列の **チェックボックス** をクリックします。  
+ ソース パッケージを選択するには、**[参照]** ボタンをクリックして、パッケージを含む **フォルダー** を選択するか、**[パッケージ フォルダーのパス]** テキストボックスにフォルダー パスを入力して、ページの下部にある **[更新]** ボタンをクリックします。 これで、リスト ボックスに指定したフォルダー内のすべてのパッケージが表示されます。 既定では、すべてのパッケージが選択されます。 サーバーに配置するパッケージを選択するには、最初の列の **チェックボックス** をクリックします。  
   
  **[ステータス]** と **[メッセージ]** 列を参照して、パッケージの状態を確認します。 ステータスが **[準備完了]** または **[警告]** に設定されている場合は、配置ウィザードは配置プロセスをブロックしません。 ステータスが **[エラー]** に設定されている場合は、ウィザードは選択したパッケージの配置には進みません。 詳細な警告メッセージまたはエラー メッセージを表示するには、**[メッセージ]** 列のリンクをクリックします。  
   

@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: f1b73932-4570-4a8a-baa0-0f229d9c32ee
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 40309d4743aae5944d508962e7409de8a29a704a
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 6d4337c24d50ec1971edf759e9568e190ceaebbd
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91867932"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97473493"
 ---
 # <a name="uses-of-odbc-table-valued-parameters"></a>ODBC テーブル値パラメーターの使用
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -57,7 +57,7 @@ ms.locfileid: "91867932"
   
  テーブル値パラメーターとその列は、前の「複数行のバッファーに完全にバインドされるテーブル値パラメーター」で説明したとおりにバインドされますが、テーブル値パラメーター自体の長さのインジケーターは、SQL_DATA_AT_EXEC に設定されます。 ドライバーは、実行時データパラメーターの通常の方法で SQLExecute または SQLExecuteDirect に応答します。つまり、SQL_NEED_DATA を返します。 ドライバーがテーブル値パラメーターのデータを受け入れる準備が整うと、SQLParamData は SQLBindParameter の *Parametervalueptr* の値を返します。  
   
- アプリケーションでは、テーブル値パラメーターとして SQLPutData を使用して、テーブル値パラメーターの構成列のデータを使用できるかどうかを示します。 SQLPutData がテーブル値パラメーターに対して呼び出される場合、 *DataPtr* は常に null である必要があります。また、 *StrLen_or_Ind* は、テーブル値パラメーターのバッファーに指定された配列のサイズ (SQLBindParameter の *columnsize* パラメーター) 以下である必要があります。 0 はテーブル値パラメーターの行がなくなったことを示すため、ドライバーはプロシージャの次の実パラメーターの処理に進みます。 *StrLen_or_Ind*が0でない場合、ドライバーはテーブル値パラメーターではないパラメーターと同じ方法でテーブル値パラメーターを構成する列を処理します。各テーブル値パラメーターの列は、実際のデータ長、SQL_NULL_DATA を指定することも、長さ/インジケーターバッファーを使用して実行時にデータを指定することもできます。 文字またはバイナリ値を部分的に渡すときに、通常どおり SQLPutData を繰り返し呼び出すことで、テーブル値パラメーターの列の値を渡すことができます。  
+ アプリケーションでは、テーブル値パラメーターとして SQLPutData を使用して、テーブル値パラメーターの構成列のデータを使用できるかどうかを示します。 SQLPutData がテーブル値パラメーターに対して呼び出される場合、 *DataPtr* は常に null である必要があります。また、 *StrLen_or_Ind* は、テーブル値パラメーターのバッファーに指定された配列のサイズ (SQLBindParameter の *columnsize* パラメーター) 以下である必要があります。 0 はテーブル値パラメーターの行がなくなったことを示すため、ドライバーはプロシージャの次の実パラメーターの処理に進みます。 *StrLen_or_Ind* が0でない場合、ドライバーはテーブル値パラメーターではないパラメーターと同じ方法でテーブル値パラメーターを構成する列を処理します。各テーブル値パラメーターの列は、実際のデータ長、SQL_NULL_DATA を指定することも、長さ/インジケーターバッファーを使用して実行時にデータを指定することもできます。 文字またはバイナリ値を部分的に渡すときに、通常どおり SQLPutData を繰り返し呼び出すことで、テーブル値パラメーターの列の値を渡すことができます。  
   
  テーブル値パラメーターのすべての列が処理されたら、ドライバーはテーブル値パラメーターに戻り、テーブル値パラメーターのデータの次の行を処理します。 したがって、実行時データのテーブル値パラメーターの場合、バインドされたパラメーターを順番にスキャンする通常の方法には従いません。 バインドされたテーブル値パラメーターは、SQLPutData が0に等しい *StrLen_Or_IndPtr* 呼び出されるまでポーリングされます。このとき、ドライバーはテーブル値パラメーターの列をスキップし、次の実際のストアドプロシージャパラメーターに移動します。  SQLPutData が1以上のインジケーター値を渡すと、ドライバーは、バインドされたすべての行と列の値を持つまで、テーブル値パラメーターの列と行を順番に処理します。 その後、ドライバーはテーブル値パラメーターに戻ります。 テーブル値パラメーターのテーブル値パラメーターのトークンを受信してから、テーブル値パラメーターの Sqlparamdata (hstmt, NULL, n) を呼び出す場合、アプリケーションでは、サーバーに渡される次の行に対して、テーブル値パラメーターの構成列データとインジケーターバッファーの内容を設定する必要があります。  
   

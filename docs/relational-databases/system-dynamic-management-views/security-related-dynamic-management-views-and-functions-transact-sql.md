@@ -1,27 +1,27 @@
 ---
-description: セキュリティ関連の動的管理ビューおよび関数 (Transact-sql)
-title: セキュリティ関連の動的管理ビューおよび関数 (Transact-sql) |Microsoft Docs
+description: 動的管理ビューおよび関数の Security-Related (Transact-sql)
+title: Security-Related の動的管理ビューおよび関数 (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/20/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
 - security dynamic management views
 ms.assetid: 450d131c-773a-4e05-ab96-3837b6c33aae
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 27154a0f6711d50f0ce44737bb64c3d7aa82b885
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: db333672f9fed1fe1743ec437ce984f75bb2debc
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89546648"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99158132"
 ---
-# <a name="security-related-dynamic-management-views-and-functions-transact-sql"></a>セキュリティ関連の動的管理ビューおよび関数 (Transact-sql)
+# <a name="security-related-dynamic-management-views-and-functions-transact-sql"></a>動的管理ビューおよび関数の Security-Related (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   ここでは、次の動的管理オブジェクトについて説明します。  

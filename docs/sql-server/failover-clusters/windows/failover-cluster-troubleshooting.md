@@ -5,21 +5,21 @@ ms.custom: ''
 ms.date: 10/21/2015
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: failover-cluster-instance
 ms.topic: how-to
 helpviewer_keywords:
 - troublshooting, failover clustering
 - failover clustering, troubleshooting
 - cluster troubleshooting
 ms.assetid: 84012320-5a7b-45b0-8feb-325bf0e21324
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: f9c54984eb8d1c94176929579043f979aa518672
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 2891ecf2eb217691159c4afc1203faef8816a108
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91988308"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642778"
 ---
 # <a name="failover-cluster-troubleshooting"></a>フェールオーバー クラスターのトラブルシューティング
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -127,9 +127,9 @@ ms.locfileid: "91988308"
   
  **解決策 3:** 名前付きパイプで接続するには、SQL Server 構成マネージャーを使用して別名を作成し、適切なコンピューターに接続します。 たとえば、2 つのノード (**Node A** および **Node B**) から成るクラスター、および既定のインスタンスを使用するフェールオーバー クラスター インスタンス (**Virtsql**) がある場合、次の手順に従って、オフラインのネットワーク名リソースがあるサーバーに接続できます。  
   
-1.  クラスター アドミニストレーターを使用して、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] インスタンスを含むグループが実行されているノードを特定します。 この例では、 **Node A**です。  
+1.  クラスター アドミニストレーターを使用して、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] インスタンスを含むグループが実行されているノードを特定します。 この例では、 **Node A** です。  
   
-2.  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] net start **を使用して、そのコンピューターの**サービスを開始します。 **net start**の使用方法については、「 [手動による SQL Server の起動](https://msdn.microsoft.com/library/ms191193\(v=sql.105\).aspx)」を参照してください。  
+2.  [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] net start **を使用して、そのコンピューターの** サービスを開始します。 **net start** の使用方法については、「 [手動による SQL Server の起動](https://msdn.microsoft.com/library/ms191193\(v=sql.105\).aspx)」を参照してください。  
   
 3.  **Node A** で [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] SQL Server 構成マネージャーを起動します。サーバーがリッスンしているパイプ名を確認します。 パイプ名は \\\\.\\$$\VIRTSQL\pipe\sql\query のように表示されます。  
   

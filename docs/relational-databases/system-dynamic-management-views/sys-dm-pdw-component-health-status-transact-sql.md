@@ -8,15 +8,15 @@ ms.technology: data-warehouse
 ms.reviewer: ''
 ms.topic: conceptual
 ms.assetid: 68cc3f7a-693c-4d5d-a76b-455352af8d7f
-author: markingmyname
-ms.author: maghan
-monikerRange: '>= aps-pdw-2016 || = sqlallproducts-allversions'
-ms.openlocfilehash: 25c3a68f023397b08d61ba58acb2a829c218cffa
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>= aps-pdw-2016'
+ms.openlocfilehash: 51883c9ea851e25cdf3e58b1d4c47c8112440b43
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92035413"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98097530"
 ---
 # <a name="sysdm_pdw_component_health_status-transact-sql"></a>sys.dm_pdw_component_health_status (Transact-sql)
 [!INCLUDE [pdw](../../includes/applies-to-version/pdw.md)]

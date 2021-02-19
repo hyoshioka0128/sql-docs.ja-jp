@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: 9cf6c5ff-4548-401a-b3ec-084f47ff0eb8
 author: markingmyname
 ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: b63ebe7f73561408e464d73b29101c42ac111480
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 77c9d57563fb926a777a20edc89e8dbde7bf204d
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91867301"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97465413"
 ---
 # <a name="calling-natively-compiled-stored-procedures-from-data-access-applications"></a>データ アクセス アプリケーションからのネイティブ コンパイル ストアド プロシージャの呼び出し
 
@@ -33,7 +33,7 @@ ms.locfileid: "91867301"
 
 ### <a name="sqlclient"></a>SqlClient
 
-- SqlClient の場合、*準備*実行と*直接*実行の区別はありません。 `CommandType = CommandType.StoredProcedure` で SqlCommand を使用してストアド プロシージャを実行します。
+- SqlClient の場合、*準備* 実行と *直接* 実行の区別はありません。 `CommandType = CommandType.StoredProcedure` で SqlCommand を使用してストアド プロシージャを実行します。
 
 - SqlClient では、準備された RPC プロシージャ呼び出しはサポートされません。
 

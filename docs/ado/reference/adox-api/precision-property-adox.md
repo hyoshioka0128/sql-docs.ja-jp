@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - _Column::put_Precision
@@ -20,18 +20,18 @@ helpviewer_keywords:
 ms.assetid: 0e0ecbbf-d7de-49d4-a128-5a519ecd54ba
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 4f0126da4e68ee84d9a8f155ee1dc50a89ab4646
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: f98cc2ee59e7b3e0c873a6bc48c3234148543484
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88983713"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100053900"
 ---
 # <a name="precision-property-adox"></a>Precision プロパティ (ADOX)
 [列](./column-object-adox.md)のデータ値の最大有効桁数を示します。  
   
 ## <a name="settings-and-return-values"></a>設定と戻り値  
- [Type](./type-property-column-adox.md)プロパティが数値型の場合に、列のデータ値の最大有効桁数である**Long**型の値を設定して返します。 その他のすべてのデータ型では、**有効桁数**は無視されます。  
+ [Type](./type-property-column-adox.md)プロパティが数値型の場合に、列のデータ値の最大有効桁数である **Long** 型の値を設定して返します。 その他のすべてのデータ型では、**有効桁数** は無視されます。  
   
 ## <a name="remarks"></a>解説  
  既定値はゼロ (**0**) です。  

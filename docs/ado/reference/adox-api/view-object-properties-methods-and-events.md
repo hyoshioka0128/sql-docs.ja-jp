@@ -7,21 +7,21 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - View object [ADOX], members
 ms.assetid: 02b5ba88-cacd-4a68-881b-974824ea4a04
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: fa3655079f6d7b9db3753296ac87d835e7e045c6
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: fd584e39a14d286684518d83dba81e038ac7cedd
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88982973"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100053393"
 ---
 # <a name="view-object-properties-methods-and-events"></a>View オブジェクトのプロパティ、メソッド、およびイベント
-## <a name="properties"></a>プロパティ  
+## <a name="properties"></a>Properties  
  [Command プロパティ](./command-property-adox.md)  
   
  [DateCreated プロパティ](./datecreated-property-adox.md)  

@@ -9,12 +9,12 @@ ms.author: maggies
 ms.reviewer: ''
 ms.custom: seo-lt-2019, seo-mmd-2019
 ms.date: 01/04/2020
-ms.openlocfilehash: ee2e8a95155cd235210acecee2a5ca15b5ae79c8
-ms.sourcegitcommit: fe59f8dc27fd633f5dfce54519d6f5dcea577f56
+ms.openlocfilehash: fdbf12310fb46add3ce9e3240d7c249028eda606
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91935267"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100057297"
 ---
 # <a name="configure-a-report-server-database-connection-report-server-configuration-manager"></a>レポート サーバー データベース接続の構成 (レポート サーバーの構成マネージャー)
 
@@ -91,7 +91,7 @@ ms.locfileid: "91935267"
   
 [!INCLUDE[ssDE](../../includes/ssde-md.md)] のインスタンスが Windows 認証用に構成されており、レポート サーバー コンピューターと同じドメインまたは信頼関係のあるドメインにある場合、 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] 構成ツールで接続プロパティとして管理するサービス アカウントまたはドメイン ユーザー アカウントを使用するように接続を構成できます。 データベース サーバーが別のドメインにある場合、またはワークグループ セキュリティを使用している場合は、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベース ログインを使用するように接続を構成する必要があります。 この場合、必ず接続を暗号化してください。  
 
-::: moniker range=">=sql-server-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15"
 
 > [!NOTE]
 > Azure SQL Managed Instance を使用してレポート サーバー データベースをホストする場合、サポートされている資格情報の種類は SQL Server 認証だけです。 また、Managed Instance ではレポート サーバー インスタンスをホストできないことにご注意ください。
@@ -120,7 +120,7 @@ Windows 統合セキュリティを使用すると、レポート サーバー �
 
 - **ReportServer** データベースに対する **public** ロールおよび **RSExecRole** ロール。  
 
-- **master** データベース、 **msdb**データベース、および **ReportServerTempDB**データベースに対する **RSExecRole** ロール。  
+- **master** データベース、 **msdb** データベース、および **ReportServerTempDB** データベースに対する **RSExecRole** ロール。  
 
 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] 構成ツールを使用して接続を作成または変更するときには、これらの権限が自動的に与えられます。 rsconfig ユーティリティを使用しており、接続に別のアカウントを指定する場合は、その新しいアカウント用に [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ログインを更新する必要があります。 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] 構成ツールでスクリプト ファイルを作成して、レポート サーバー用の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ログインを更新することもできます。  
 

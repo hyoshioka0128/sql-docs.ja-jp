@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - PersistFormatEnum
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: ebe1a2ab-e9f1-43a2-8f94-b190c9613d70
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: c8c4f917b9c2874e945a3ff523c0d6593386a619
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 0d5968d9193f8e083982703664abf29ade2c864c
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88990083"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100041022"
 ---
 # <a name="persistformatenum"></a>PersistFormatEnum
 [レコードセット](./recordset-object-ado.md)を保存する形式を指定します。  

@@ -9,13 +9,13 @@ ms.custom: ''
 ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: '>= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017 || = sqlallproducts-allversions'
-ms.openlocfilehash: cd724e9caf8f104e366e34b7f64f6461681620b0
-ms.sourcegitcommit: bf5acef60627f77883249bcec4c502b0205300a4
+monikerRange: '>= aps-pdw-2016 || = azuresqldb-current || = azure-sqldw-latest || >= sql-server-2016 || >= sql-server-linux-2017'
+ms.openlocfilehash: fc749f636a4d1b7b2e737e54d9ecd9418321c548
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88200310"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100082556"
 ---
 # <a name="sql-server-docs-navigation-guide"></a>SQL Server ドキュメント ナビゲーション ガイド
 
@@ -23,7 +23,7 @@ ms.locfileid: "88200310"
 
 ## <a name="hub-page"></a>ハブ ページ
 
-SQL Server のハブ ページは、[https://aka.ms/sqldocs](https://aka.ms/sqldocs) にあり、関連する SQL Server コンテンツを検索するためのエントリポイントです。
+SQL Server のハブ ページは、[https://aka.ms/sqldocs](../index.yml?WT.mc_id=akams) にあり、関連する SQL Server コンテンツを検索するためのエントリポイントです。
 
 SQL Server 技術ドキュメント セット内の各ページの上部にあるヘッダーにある **[SQL ドキュメント]** を選択すると、いつでもこのページに戻ることができます。 
 
@@ -31,7 +31,7 @@ SQL Server 技術ドキュメント セット内の各ページの上部にあ�
 
 ## <a name="offline-documentation"></a>オフライン ドキュメント
 
-SQL Server のドキュメントをオフライン システムで表示するには、2 つのオプションがあります。 SQL Server 技術ドキュメントを使用中にいつでも PDF を作成できます。または、[SQL Server のオフラインのヘルプ ビューアー](sql-server-help-installation.md)を使用してオフラインのコンテンツをダウンロードできます。 
+SQL Server のドキュメントをオフライン システムで表示するには、2 つのオプションがあります。 SQL Server 技術ドキュメントを使用中にいつでも PDF を作成できます。または、[SQL Server のオフラインのヘルプ ビューアー](./sql-server-offline-documentation.md)を使用してオフラインのコンテンツをダウンロードできます。 
 
 PDF を作成する場合は、すべての目次の下部にある **[Download PDF]\(PDF をダウンロード\)** リンクを選択します。
 

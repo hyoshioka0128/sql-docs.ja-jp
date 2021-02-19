@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 5ae69ddf-27c3-467c-9af1-c89ec383f661
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 0306e266f48259d0a7cc68a455116ec5a5ce847f
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: aa24cbdbafa67af73e3b1ee97592b42f6ac86d59
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92196486"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100347514"
 ---
 # <a name="cdc-flow-components"></a>CDC フロー コンポーネント
 
@@ -25,9 +25,9 @@ ms.locfileid: "92196486"
 
   SSIS 開発者は、Microsoft [!INCLUDE[ssISCurrent](../../includes/ssiscurrent-md.md)] 用 Attunity 変更データ キャプチャ (CDC) コンポーネントを使用すると、CDC を操作し、CDC パッケージの複雑さを軽減できます。  
   
- SSIS CDC コンポーネントは、ソース テーブルが同じ [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] データベースか Oracle データベース (Oracle CDC Service for [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] の使用時) である場合に、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]CDC 機能を使用できるようにデザインされています。 パーティション テーブルがサポートされます。  
+ SSIS CDC コンポーネントは、ソース テーブルが同じ [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] データベースか Oracle データベース (Oracle CDC Service for [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] の使用時) である場合に、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]CDC 機能を使用できるようにデザインされています。 パーティション テーブルがサポートされます。  
   
- このコンポーネントには、SSIS パッケージの変更データの読み取りと処理を効率化する、制御フロー コンポーネントとデータ フロー コンポーネントがあります。 これらのコンポーネントは Microsoft [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]のコンポーネント ライブラリに追加できますが、個別にインストールする必要があります。  
+ このコンポーネントには、SSIS パッケージの変更データの読み取りと処理を効率化する、制御フロー コンポーネントとデータ フロー コンポーネントがあります。 これらのコンポーネントは Microsoft [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]のコンポーネント ライブラリに追加できますが、個別にインストールする必要があります。  
   
  次のコンポーネントが Attunity 変更データ キャプチャ (CDC) コンポーネントです。  
   
@@ -44,7 +44,7 @@ ms.locfileid: "92196486"
 ## <a name="installation"></a>インストール  
  このセクションでは、CDC Components for Microsoft [!INCLUDE[ssISCurrent](../../includes/ssiscurrent-md.md)]のインストール手順について説明します。  
   
- SSIS 用の CDC コンポーネントは、MicrosoftÂ® Change Data Capture Designer and Service for Oracle by Attunity for Microsoft SQL ServerÂ® に同梱されています。 このダウンロードは、SQL Server の Feature Pack の一部です。 [SQL Server 2016 Feature Pack の Web ページ](https://go.microsoft.com/fwlink/?LinkId=746297)から、Feature Pack のコンポーネントをダウンロードします。  
+ SSIS 用の CDC コンポーネントは、MicrosoftÂ® Change Data Capture Designer and Service for Oracle by Attunity for Microsoft SQL ServerÂ® に同梱されています。 このダウンロードは、SQL Server の Feature Pack の一部です。 [SQL Server 2016 Feature Pack の Web ページ](https://www.microsoft.com/download/details.aspx?id=56833)から、Feature Pack のコンポーネントをダウンロードします。  
   
 ### <a name="version-support"></a>バージョンのサポート
 
@@ -62,7 +62,7 @@ SSIS の CDC コンポーネントは、次のオペレーティング システ
 -   Windows Server 2016
   
 ### <a name="running-the-installation-program"></a>インストール プログラムの実行  
- インストール ウィザードを実行する前に、必ず [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)][!INCLUDE[ssBIDevStudio](../../includes/ssbidevstudio-md.md)] を閉じてください。 そのうえでインストール ウィザードの指示に従います。  
+ インストール ウィザードを実行する前に、必ず [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)][!INCLUDE[ssBIDevStudio](../../includes/ssbidevstudio-md.md)] を閉じてください。 そのうえでインストール ウィザードの指示に従います。  
   
 ### <a name="restart-ssis-service"></a>SSIS サービスの再起動 
 CDC コンポーネントをインストールしたら、SQL [!INCLUDE[ssBIDevStudio](../../includes/ssbidevstudio-md.md)]でのパッケージの開発時にコンポーネントが正常に機能するように、SSIS サービスを再起動する必要があります。  
@@ -70,21 +70,21 @@ CDC コンポーネントをインストールしたら、SQL [!INCLUDE[ssBIDevS
 コンポーネントをインストールすると、メッセージが表示されます。 メッセージが表示されたら **[はい]** をクリックします。  
   
 ### <a name="uninstalling-the-microsoft-cdc-components"></a>Microsoft CDC コンポーネントのアンインストール  
- CDC ソース、CDC スプリッター、または CDC 制御タスクをアンインストールするには、アンインストール ウィザードを使用します。 パッケージの開発に [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)][!INCLUDE[ssBIDevStudio](../../includes/ssbidevstudio-md.md)] を使用している場合は、アンインストール ウィザードの実行前に [!INCLUDE[ssBIDevStudio](../../includes/ssbidevstudio-md.md)] を閉じる必要があります。  
+ CDC ソース、CDC スプリッター、または CDC 制御タスクをアンインストールするには、アンインストール ウィザードを使用します。 パッケージの開発に [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)][!INCLUDE[ssBIDevStudio](../../includes/ssbidevstudio-md.md)] を使用している場合は、アンインストール ウィザードの実行前に [!INCLUDE[ssBIDevStudio](../../includes/ssbidevstudio-md.md)] を閉じる必要があります。  
   
 ## <a name="benefits"></a>メリット  
- SSIS 開発者は、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)][!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] コンポーネント用の CDC コンポーネントを使用して、変更データを処理する SSIS パッケージを簡単に構築できます。 これらのコンポーネントは、CDC に対処し、CDC パッケージの複雑さを軽減する SSIS 開発者の能力を高めます。  
+ SSIS 開発者は、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)][!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] コンポーネント用の CDC コンポーネントを使用して、変更データを処理する SSIS パッケージを簡単に構築できます。 これらのコンポーネントは、CDC に対処し、CDC パッケージの複雑さを軽減する SSIS 開発者の能力を高めます。  
   
  SSIS CDC コンポーネントを使用すると、レプリケーション、データ ウェアハウスの読み込み、OLAP の緩やかに変化するディメンションの更新、変更の監査などの目的で処理しやすい形で変更データを提供できます。 後で行う処理の種類は、SSIS 開発者が決定します。  
   
- SSIS CDC コンポーネントは、同じ [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] データベース内の変更テーブルで [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] CDC 機能を使用できるようにデザインされています。  
+ SSIS CDC コンポーネントは、同じ [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] データベース内の変更テーブルで [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] CDC 機能を使用できるようにデザインされています。  
   
 ## <a name="getting-started-with-the-change-data-capture-components"></a>Change Data Capture コンポーネントの概要  
  一般的な CDC パッケージでは、テーブルのグループに対する変更を処理します。 この種類の CDC パッケージの基本的な制御フローを以下の図に示します。 このパッケージは、トリクル フィード処理パッケージと呼ばれます。  
   
  ![パッケージの制御フローを処理するトリクル フィード](../../integration-services/data-flow/media/tricklefeedprocessing.gif "パッケージの制御フローを処理するトリクル フィード")  
   
- この [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)][!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] 制御フローには、2 つの CDC 制御タスクとデータ フロー タスクが含まれています。 **Get CDC Processing Range** (CDC 処理範囲の取得) という最初のタスクでは、 **Process Changes**(変更の処理) というデータ フロー タスクで処理される変更の LSN 範囲を設定します。 この範囲は、前回のパッケージ実行時に処理されて永続的なストアに保存された内容に基づいて設定されます。  
+ この [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)][!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] 制御フローには、2 つの CDC 制御タスクとデータ フロー タスクが含まれています。 **Get CDC Processing Range** (CDC 処理範囲の取得) という最初のタスクでは、 **Process Changes**(変更の処理) というデータ フロー タスクで処理される変更の LSN 範囲を設定します。 この範囲は、前回のパッケージ実行時に処理されて永続的なストアに保存された内容に基づいて設定されます。  
   
  CDC 制御タスクの使用の詳細については、「 [CDC Control Task](../../integration-services/control-flow/cdc-control-task.md) 」と「 [CDC Control Task Editor](../control-flow/cdc-control-task.md)」を参照してください。  
   
@@ -142,13 +142,13 @@ CDC コンポーネントをインストールしたら、SQL [!INCLUDE[ssBIDevS
  このセクションでは、SSIS での CDC コンポーネントの使用に関連するセキュリティ上の注意点について説明します。  
   
 ### <a name="access-authorization-to-change-data"></a>変更データへのアクセスの承認  
- トリクル フィード更新パッケージには、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] CDC 関数へのアクセスが必要です。 既定では、このアクセスは、 **db_owner** 固定データベース ロールのメンバーに許可されます。 **db_owner** は強力なロールなので、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] でキャプチャ インスタンスを定義する際には、各キャプチャ インスタンスにゲーティング セキュリティ ロールを関連付け、SSIS CDC パッケージがはるかに制限の厳しいユーザーを変更の処理に使用できるようにすることをお勧めします。  
+ トリクル フィード更新パッケージには、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] CDC 関数へのアクセスが必要です。 既定では、このアクセスは、 **db_owner** 固定データベース ロールのメンバーに許可されます。 **db_owner** は強力なロールなので、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] でキャプチャ インスタンスを定義する際には、各キャプチャ インスタンスにゲーティング セキュリティ ロールを関連付け、SSIS CDC パッケージがはるかに制限の厳しいユーザーを変更の処理に使用できるようにすることをお勧めします。  
   
 ### <a name="access-to-cdc-database-current-lsn"></a>CDC データベースの現在の LSN へのアクセス  
- 変更の処理用に開始 LSN にマーキングするための CDC 制御タスク操作では、CDC データベースの現在の LSN を検出できる必要があります。 コンポーネントでは、マスター データベースのプロシージャ **sp_replincrementlsn** を利用することで LSN が検出されます。 このプロシージャの実行権限を、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] CDC データベースに接続するために使用されるログインに付与する必要があります。  
+ 変更の処理用に開始 LSN にマーキングするための CDC 制御タスク操作では、CDC データベースの現在の LSN を検出できる必要があります。 コンポーネントでは、マスター データベースのプロシージャ **sp_replincrementlsn** を利用することで LSN が検出されます。 このプロシージャの実行権限を、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] CDC データベースに接続するために使用されるログインに付与する必要があります。  
   
 ### <a name="access-to-cdc-states-table"></a>CDC 状態テーブルへのアクセス  
- CDC 状態テーブルは、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] CDC データベースへの接続に使用されるログインで更新できる必要のある CDC 状態を自動的に保持するために使用されます。 このテーブルを作成するのは SSIS 開発者なので、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] データベースの作成と管理タスクの実行を許可するユーザーとして、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] システム管理者を設定してください。 また、CDC 対応データベースを扱う [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] システム管理者には、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] CDC のテクノロジと実装に関する知識が必要です。  
+ CDC 状態テーブルは、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] CDC データベースへの接続に使用されるログインで更新できる必要のある CDC 状態を自動的に保持するために使用されます。 このテーブルを作成するのは SSIS 開発者なので、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] データベースの作成と管理タスクの実行を許可するユーザーとして、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] システム管理者を設定してください。 また、CDC 対応データベースを扱う [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] システム管理者には、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] CDC のテクノロジと実装に関する知識が必要です。  
   
 ## <a name="grouping-tables-for-cdc-processing"></a>CDC 処理用のテーブルのグループ化  
  データベース プロジェクトの規模は、テーブルが数個のものから数千個のものまで、さまざまです。 初期読み込みパッケージと CDC パッケージをデザインする際には、効率を高め、管理しやすくするために、テーブルをより小さなグループに分けることをお勧めします。 このセクションでは、小さいグループ (各グループ内のテーブルは、初期読み込みの後、グループとして更新される) へのテーブルの並べ替えに関係する各種考慮事項を示します。  

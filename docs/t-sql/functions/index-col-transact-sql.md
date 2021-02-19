@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - INDEX_COL_TSQL
 - INDEX_COL
@@ -20,14 +20,14 @@ helpviewer_keywords:
 - column names [SQL Server]
 - names [SQL Server], columns
 ms.assetid: 4db1fb3b-e46f-43fb-b269-a5b6e8b39ed0
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: e84cc199c94775a38268ab486712c5f5982bdb26
-ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 2419e111870e5dda5cc241ec82f328c162e8b801
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91115456"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99181239"
 ---
 # <a name="index_col-transact-sql"></a>INDEX_COL (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -56,7 +56,7 @@ INDEX_COL ( '[ database_name . [ schema_name ] .| schema_name ]
  テーブルまたはインデックス付きビューのスキーマです。 *table_or_view_name* 単一引用符で区切る必要があるあり、データベース名とスキーマ名で完全に修飾することができます。  
   
  *index_id*  
- インデックスの ID です。 *index_ID* は** int**です。  
+ インデックスの ID です。 *index_ID* は **int** です。  
   
  *key_id*  
  インデックス キー列の位置です。 *key_ID* is **int**.  

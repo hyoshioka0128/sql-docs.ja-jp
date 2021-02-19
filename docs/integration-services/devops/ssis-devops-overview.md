@@ -9,20 +9,20 @@ ms.custom: ''
 ms.technology: integration-services
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 1cc68be44a45ece8ad844585162b0cff651ae487
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: f44c8c3677f76ebc96b6e0385aa839a9e20aa2f8
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92194085"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100030610"
 ---
 # <a name="sql-server-integration-services-ssis-devops-tools-azure-devops-extension"></a>SQL Server Integration Services (SSIS) DevOps ツール Azure DevOps 拡張機能
 
 [SSIS DevOps Tools](https://marketplace.visualstudio.com/items?itemName=SSIS.ssis-devops-tools) 拡張機能は **Azure DevOps** Marketplace で入手できます。
 
-**Azure DevOps** 組織がない場合、まず、[Azure Pipelines](/azure/devops/pipelines/get-started/pipelines-sign-up?view=azure-devops) に新規登録し、[次の手順](/azure/devops/marketplace/overview?tabs=browser&view=azure-devops#add-an-extension)で **SSIS DevOps ツール**拡張機能を追加します。
+**Azure DevOps** 組織がない場合、まず、[Azure Pipelines](/azure/devops/pipelines/get-started/pipelines-sign-up?view=azure-devops&preserve-view=true) に新規登録し、[次の手順](/azure/devops/marketplace/overview?tabs=browser&view=azure-devops&preserve-view=true#add-an-extension)で **SSIS DevOps ツール** 拡張機能を追加します。
 
-**SSIS DevOps ツール**には、**SSIS Build** タスク、**SSIS Deploy** リリース タスク、および **SSIS Catalog Configuration タスク**が含まれています。
+**SSIS DevOps ツール** には、**SSIS Build** タスク、**SSIS Deploy** リリース タスク、および **SSIS Catalog Configuration タスク** が含まれています。
 
 - **[SSIS Build](#ssis-build-task)** タスクでは、プロジェクト デプロイ モデルまたはパッケージ デプロイ モデルでの dtproj ファイルのビルドがサポートされます。
 
@@ -58,13 +58,13 @@ ms.locfileid: "92194085"
 
 #### <a name="output-path"></a>[出力パス]
 
-[ビルド成果物の公開タスク](/azure/devops/pipelines/tasks/utility/publish-build-artifacts?view=azure-devops)によってビルド成果物として公開できるビルド結果を保存するための個別フォルダーのパス。
+[ビルド成果物の公開タスク](/azure/devops/pipelines/tasks/utility/publish-build-artifacts?view=azure-devops&preserve-view=true)によってビルド成果物として公開できるビルド結果を保存するための個別フォルダーのパス。
 
 ### <a name="limitations-and-known-issues"></a>制限事項と既知の問題
 
 - SSIS Build タスクは Visual Studio と、ビルド エージェントで必須となる SSIS デザイナーに依存します。 そのため、パイプラインで SSIS Build タスクを実行するには、Microsoft によってホストされるエージェントに **vs2017-win2016** を選択するか、自己ホスト エージェントに Visual Studio と SSIS デザイナー (VS2017 + SSDT2017 または VS2019 + SSIS Projects 拡張機能) をインストールする必要があります。
 
-- 面倒な設定の要らないコンポーネント (SSIS Azure Feature Pack やその他のサードパーティ コンポーネント) を利用して SSIS プロジェクトをビルドするには、パイプライン エージェントが実行されているコンピューターにそのようなコンポーネントをインストールする必要があります。  Microsoft によってホストされるエージェントの場合、[PowerShell Script タスク](/azure/devops/pipelines/tasks/utility/powershell?view=azure-devops)または [Command Line Script タスク](/azure/devops/pipelines/tasks/utility/command-line?view=azure-devops)を追加してコンポーネントをダウンロードし、インストールしてから SSIS Build タスクを実行できます。 次に示すのは、Azure Feature Pack をインストールするための PowerShell のサンプル スクリプトです。 
+- 面倒な設定の要らないコンポーネント (SSIS Azure Feature Pack やその他のサードパーティ コンポーネント) を利用して SSIS プロジェクトをビルドするには、パイプライン エージェントが実行されているコンピューターにそのようなコンポーネントをインストールする必要があります。  Microsoft によってホストされるエージェントの場合、[PowerShell Script タスク](/azure/devops/pipelines/tasks/utility/powershell?view=azure-devops&preserve-view=true)または [Command Line Script タスク](/azure/devops/pipelines/tasks/utility/command-line?view=azure-devops&preserve-view=true)を追加してコンポーネントをダウンロードし、インストールしてから SSIS Build タスクを実行できます。 次に示すのは、Azure Feature Pack をインストールするための PowerShell のサンプル スクリプトです。 
 
 ```powershell
 wget -Uri https://download.microsoft.com/download/E/E/0/EE0CB6A0-4105-466D-A7CA-5E39FA9AB128/SsisAzureFeaturePack_2017_x86.msi -OutFile AFP.msi
@@ -172,7 +172,7 @@ SSIS カタログ構成 JSON ファイルのソース。 [ファイル パス] �
 
 SSIS カタログ構成 JSON ファイルのパス。 このプロパティは、構成ファイル ソースとして [ファイル パス] を選択した場合にのみ表示されます。
 
-構成 JSON ファイルで[パイプライン変数](/azure/devops/pipelines/process/variables)を使用するには、このタスクの前に [File Transform タスク](/azure/devops/pipelines/tasks/utility/file-transform?view=azure-devops)を追加して、構成値をパイプライン変数に置き換える必要があります。 詳細については、「[JSON 変数置換](/azure/devops/pipelines/tasks/transforms-variable-substitution?tabs=Classic&view=azure-devops#json-variable-substitution)」を参照してください。
+構成 JSON ファイルで[パイプライン変数](/azure/devops/pipelines/process/variables)を使用するには、このタスクの前に [File Transform タスク](/azure/devops/pipelines/tasks/utility/file-transform?view=azure-devops&preserve-view=true)を追加して、構成値をパイプライン変数に置き換える必要があります。 詳細については、「[JSON 変数置換](/azure/devops/pipelines/tasks/transforms-variable-substitution?tabs=Classic&view=azure-devops&preserve-view=true#json-variable-substitution)」を参照してください。
 
 #### <a name="inline-configuration-json"></a>インライン構成 JSON
 
@@ -344,6 +344,12 @@ SSIS カタログ構成のインライン JSON。 このプロパティは、構
 |sensitive|環境変数の値が機微であるかどうか。|有効な入力は次のとおりです。 <br> *true* <br> *false*|
 
 ## <a name="release-notes"></a>リリース ノート
+
+### <a name="version-103"></a>バージョン 1.0.3
+
+リリース日:2020 年 10 月 21 日
+
+- SSIS Deploy タスクと SSIS Catalog Configuration タスクに接続文字列サフィックスを指定できます。
 
 ### <a name="version-102"></a>バージョン 1.0.2
 

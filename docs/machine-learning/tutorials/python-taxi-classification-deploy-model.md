@@ -9,13 +9,13 @@ ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||>=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: 7c67f28d8cefb03edc2a12b97657d4054359727c
-ms.sourcegitcommit: 9b41725d6db9957dd7928a3620fe4db41eb51c6e
+monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||>=azuresqldb-mi-current'
+ms.openlocfilehash: 4e101a017197d83217a574ca6521dd60328f536a
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88180335"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470333"
 ---
 # <a name="python-tutorial-run-predictions-using-python-embedded-in-a-stored-procedure"></a>Python のチュートリアル:ストアド プロシージャに埋め込まれた Python を使用した予測の実行
 [!INCLUDE [SQL Server 2017 SQL MI](../../includes/applies-to-version/sqlserver2017-asdbmi.md)]
@@ -52,7 +52,7 @@ ms.locfileid: "88180335"
 + 使用するモデルの正確な名前は、ストアド プロシージャへの入力パラメーターとして提供されます。 ストアド プロシージャは、ストアド プロシージャの SELECT ステートメントを使用して、データベーステーブル `nyc_taxi_models`.table から、シリアル化されたモデルを読み込みます。
 + シリアル化されたモデルは、Python を使用して`mod`さらに処理するために、Python 変数に格納されます。
 + スコア付けが必要な新しいケースは、`@input_data_1` で指定された [!INCLUDE[tsql](../../includes/tsql-md.md)] クエリから取得されます。 クエリ データが読み取られると、行が既定のデータ フレーム `InputDataSet`に保存されます。
-+ どちらのストアド プロシージャも、`sklearn` の関数を使用して精度メトリック (曲線の下の領域) を計算します。 AUC などの精度メトリックは、ターゲットラベル (_チップ_列) も指定する場合にのみ生成できます。 予測には、ターゲット ラベル (変数 `y`) は必要ありませんが、精度メトリックの計算には必要です。
++ どちらのストアド プロシージャも、`sklearn` の関数を使用して精度メトリック (曲線の下の領域) を計算します。 AUC などの精度メトリックは、ターゲットラベル (_チップ_ 列) も指定する場合にのみ生成できます。 予測には、ターゲット ラベル (変数 `y`) は必要ありませんが、精度メトリックの計算には必要です。
 
   したがって、スコア付けされるデータのターゲット ラベルがない場合は、ストアド プロシージャを変更して、AUC の計算を削除し、特徴 (ストアド プロシージャの変数 `X`) からチップを得る確率のみを返すことができます。
 
@@ -60,7 +60,7 @@ ms.locfileid: "88180335"
 
 次の T-SQL ステートメントを実行して、ストアド プロシージャを作成します。 このストアド プロシージャによって、そのパッケージに固有の関数が使用されるため、scikit-learn パッケージに基づくモデルが必要です。
 
-入力を含むデータフレームは、ロジスティック回帰モデルの`predict_proba`関数`mod`に渡されます。 `predict_proba`関数（`probArray = mod.predict_proba(X)`）は、(金額を問わず) チップを得えられる確率を表す**浮動**を返します。
+入力を含むデータフレームは、ロジスティック回帰モデルの`predict_proba`関数`mod`に渡されます。 `predict_proba`関数（`probArray = mod.predict_proba(X)`）は、(金額を問わず) チップを得えられる確率を表す **浮動** を返します。
 
 ```sql
 DROP PROCEDURE IF EXISTS PredictTipSciKitPy;
@@ -338,7 +338,7 @@ GO
 
 ### <a name="generate-scores-from-models"></a>モデルからスコアを生成する
 
-ストアド プロシージャが作成されれば、どちらのモデルに基づいても簡単にスコアを生成できます。 新しい**クエリ** ウィンドウを開き、ストアド プロシージャを呼び出します。機能列のそれぞれにパラメーターを入力または貼り付けます。 値は次の機能に利用され、次の順序で並んでいます。
+ストアド プロシージャが作成されれば、どちらのモデルに基づいても簡単にスコアを生成できます。 新しい **クエリ** ウィンドウを開き、ストアド プロシージャを呼び出します。機能列のそれぞれにパラメーターを入力または貼り付けます。 値は次の機能に利用され、次の順序で並んでいます。
 
 + *passenger_count*
 + *trip_distance*

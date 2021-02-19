@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - WITHOUT_LOGIN_TSQL
 - CREATE_USER_TSQL
@@ -29,13 +29,13 @@ helpviewer_keywords:
 ms.assetid: 01de7476-4b25-4d58-85b7-1118fe64aa80
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 43214b8f1e0b81b75c34c33b8b8b7df53bdd8d03
-ms.sourcegitcommit: bd3a135f061e4a49183bbebc7add41ab11872bae
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 6943409b7a0406a7012374b0c8a0ee7142550fe0
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92300527"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99237070"
 ---
 # <a name="create-user-transact-sql"></a>CREATE USER (Transact-SQL)
 
@@ -177,7 +177,7 @@ CREATE USER user_name
 
 ## <a name="arguments"></a>引数
  *user_name*  
- データベース内でユーザーを識別する名前を指定します。 *user_name* は、 **sysname** です。 半角 128 文字まで指定できます。 Windows プリンシパルに基づいてユーザーを作成する場合、別のユーザー名を指定しないと、Windows プリンシパル名がユーザー名になります。  
+ データベース内でユーザーを識別する名前を指定します。 *user_name* は、**sysname** です。 半角 128 文字まで指定できます。 Windows プリンシパルに基づいてユーザーを作成する場合、別のユーザー名を指定しないと、Windows プリンシパル名がユーザー名になります。  
   
  LOGIN *login_name*  
  作成するデータベース ユーザーのログインを指定します。 *login_name* は、サーバーで有効なログインである必要があります。 Windows プリンシパルに基づくログイン (ユーザーまたはグループ) か、または [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 認証を使用したログインを指定できます。 この SQL Server ログインをデータベースに対して入力すると、データベースでは、作成されるデータベース ユーザーの名前と ID が取得されます。 Windows プリンシパルからマップされたログインを作成する場合は、 **[** _\<domainName\>_ **\\** _\<loginName\>_ **]** という形式を使用します。 例については、「[構文の概要](#SyntaxSummary)」を参照してください。  
@@ -187,11 +187,11 @@ CREATE USER user_name
  WITH DEFAULT_SCHEMA = *schema_name*  
  このデータベース ユーザー用のオブジェクトの名前を解決するときに、サーバーで最初に検索されるスキーマを指定します。  
   
- ' *windows_principal* '  
- データベース ユーザーを作成する Windows プリンシパルを指定します。 *windows_principal* には、Windows ユーザーまたは Windows グループを指定できます。 *windows_principal* がログインを持たない場合でも、ユーザーは作成されます。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] に接続するときに、 *windows_principal* がログインを持たない場合、ログインを持つ Windows グループのメンバーシップを介して [!INCLUDE[ssDE](../../includes/ssde-md.md)] で Windows プリンシパルを認証するか、または接続文字列で包含データベースを初期カタログとして指定する必要があります。 Windows プリンシパルからユーザーを作成する場合は、 **[** _\<domainName\>_ **\\** _\<loginName\>_ **]** という形式を使用します。 例については、「[構文の概要](#SyntaxSummary)」を参照してください。 Active Directory ユーザーに基づくユーザーは、21 文字未満の名前に制限されます。
+ '*windows_principal*'  
+ データベース ユーザーを作成する Windows プリンシパルを指定します。 *windows_principal* には、Windows ユーザーまたは Windows グループを指定できます。 *windows_principal* がログインを持たない場合でも、ユーザーは作成されます。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] に接続するときに、*windows_principal* がログインを持たない場合、ログインを持つ Windows グループのメンバーシップを介して [!INCLUDE[ssDE](../../includes/ssde-md.md)] で Windows プリンシパルを認証するか、または接続文字列で包含データベースを初期カタログとして指定する必要があります。 Windows プリンシパルからユーザーを作成する場合は、 **[** _\<domainName\>_ **\\** _\<loginName\>_ **]** という形式を使用します。 例については、「[構文の概要](#SyntaxSummary)」を参照してください。 Active Directory ユーザーに基づくユーザーは、21 文字未満の名前に制限されます。
   
- ' *Azure_Active_Directory_principal* '  
- **適用対象** : [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]、[!INCLUDE[ssSDW_md](../../includes/sssdw-md.md)]。  
+ '*Azure_Active_Directory_principal*'  
+ **適用対象**: [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]、[!INCLUDE[ssSDW_md](../../includes/sssdw-md.md)]。  
   
  データベース ユーザーが作成される Azure Active Directory のプリンシパルを指定します。 *Azure_Active_Directory_principal* には、Azure Active Directory ユーザー、Azure Active Directory グループ、Azure Active Directory アプリケーションを指定できます。 (Azure Active Directory ユーザーは、[!INCLUDE[ssSDS](../../includes/sssds-md.md)] に Windows 認証ログインを持つことはできません。データベース ユーザーのみです)。接続文字列では、初期カタログとして、包含データベースを指定する必要があります。
 
@@ -202,14 +202,14 @@ CREATE USER user_name
   - `CREATE USER [bob@contoso.com] FROM EXTERNAL PROVIDER;`  
   - `CREATE USER [alice@fabrikam.onmicrosoft.com] FROM EXTERNAL PROVIDER;`
 
-- Azure AD のグループと Azure AD アプリケーション用の Azure AD オブジェクトの DisplayName。 " *看護師* " セキュリティ グループがあった場合は、次を使用します。  
+- Azure AD のグループと Azure AD アプリケーション用の Azure AD オブジェクトの DisplayName。 "*看護師*" セキュリティ グループがあった場合は、次を使用します。  
   
   - `CREATE USER [Nurses] FROM EXTERNAL PROVIDER;`  
   
  詳細については、[Azure Active Directory 認証を使用した SQL Database への接続](/azure/azure-sql/database/authentication-aad-overview)に関するページを参照してください。  
   
-WITH PASSWORD = ' *password* '  
- **適用対象** : [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降、[!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
+WITH PASSWORD = '*password*'  
+ **適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降、[!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
   
  包含データベースでのみ使用できます。 作成するユーザーのパスワードを指定します。 [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降では、保存されたパスワード情報は salt 化パスワードの SHA-512 を使用して計算されます。  
   
@@ -217,17 +217,17 @@ WITHOUT LOGIN
  ユーザーを既存のログインにマップしません。  
   
 CERTIFICATE *cert_name*  
- **適用対象** : [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降、[!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
+ **適用対象**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降、[!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
   
  作成するデータベース ユーザーの証明書を指定します。  
   
 ASYMMETRIC KEY *asym_key_name*  
- **適用対象** : [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降、[!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
+ **適用対象**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降、[!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
   
  作成するデータベース ユーザーの非対称キーを指定します。  
   
 DEFAULT_LANGUAGE = *{ NONE \| \<lcid> \| \<language name> \| \<language salias> }*  
- **適用対象** : [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降、[!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
+ **適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降、[!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)]。  
   
  新しいユーザーの既定の言語を指定します。 ユーザーに対して既定の言語を指定した場合、データベースの既定の言語を後で変更しても、ユーザーの既定の言語は指定した言語のままになります。 既定の言語を指定しない場合、データベースの既定の言語がユーザーの既定の言語として使用されます。 ユーザーに対して既定の言語を指定しない場合、データベースの既定の言語を後で変更すると、ユーザーの既定の言語はデータベースの新しい既定の言語に変更されます。  
   
@@ -235,12 +235,12 @@ DEFAULT_LANGUAGE = *{ NONE \| \<lcid> \| \<language name> \| \<language salias> 
 >  *DEFAULT_LANGUAGE* は包含データベース ユーザーにのみ使用します。  
   
 SID = *sid*  
- **適用対象** : [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降。  
+ **適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降。  
   
  包含データベースにパスワード ([!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 認証) を持つユーザーに対してのみ適用されます。 新しいデータベース ユーザーの SID を指定します。 このオプションを選択しない場合は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によって SID が自動的に割り当てられます。 複数のデータベースで同じ ID (SID) を持つユーザーを作成するには SID パラメーターを使用します。 これは、Always On フェールオーバーの準備のために、複数のデータベースにユーザーを作成する場合に役立ちます。 ユーザーの SID を特定するには、sys.database_principals でクエリを実行します。  
   
 ALLOW_ENCRYPTED_VALUE_MODIFICATIONS = [ ON | **OFF** ]  
- **適用対象** : [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降、[!INCLUDE[ssSDS](../../includes/sssds-md.md)]。  
+ **適用対象**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降、[!INCLUDE[ssSDS](../../includes/sssds-md.md)]。  
   
  一括コピー操作でのサーバーの暗号化メタデータ チェックを抑制します。 これによりユーザーは、データを暗号化解除することなく、テーブルまたはデータベース間で暗号化データを一括コピーできます。 既定値は OFF です。  
   
@@ -252,7 +252,7 @@ ALLOW_ENCRYPTED_VALUE_MODIFICATIONS = [ ON | **OFF** ]
   
  既定のスキーマは、このデータベース ユーザー用のオブジェクトの名前を解決するときに、サーバーで最初に検索されるスキーマになります。 特に指定しない限り、このデータベース ユーザーによって作成されたオブジェクトの所有者になるのは、既定のスキーマです。  
   
- ユーザーに既定のスキーマが設定されている場合は、その既定のスキーマが使用されます。 ユーザーに既定のスキーマが指定されておらず、そのユーザーが所属しているグループに既定のスキーマが指定されている場合は、グループの既定のスキーマが使用されます。 ユーザーに既定のスキーマが指定されておらず、そのユーザーが複数のグループに所属している場合、ユーザーの既定のスキーマは、最も小さい principle_id と明示的に設定された既定のスキーマを持つ Windows グループのスキーマになります。 (利用可能な既定のスキーマのいずれかを、使用するスキーマとして明示的に選択することはできません。)ユーザーに対する既定のスキーマを決定できない場合は、 **dbo** スキーマが使用されます。  
+ ユーザーに既定のスキーマが設定されている場合は、その既定のスキーマが使用されます。 ユーザーに既定のスキーマが指定されておらず、そのユーザーが所属しているグループに既定のスキーマが指定されている場合は、グループの既定のスキーマが使用されます。 ユーザーに既定のスキーマが指定されておらず、そのユーザーが複数のグループに所属している場合、ユーザーの既定のスキーマは、最も小さい principle_id と明示的に設定された既定のスキーマを持つ Windows グループのスキーマになります。 (利用可能な既定のスキーマのいずれかを、使用するスキーマとして明示的に選択することはできません。)ユーザーに対する既定のスキーマを決定できない場合は、**dbo** スキーマが使用されます。  
   
  DEFAULT_SCHEMA は、このオプションが指すスキーマが作成されていなくても設定できます。  
   
@@ -277,7 +277,7 @@ SQL Managed Instance でサーバーレベルの Azure AD ログインを作成�
 
 `CREATE USER [AAD_principal] FROM LOGIN [Azure AD login]`
 
-SQL Managed Instance データベースでユーザーを作成するとき、login_name が既存の Azure AD ログインに一致する必要があります。一致しない場合、 **FROM EXTERNAL PROVIDER** 句を使用したとき、マスター データベースのログインなしで Azure AD ユーザーのみが作成されます。 たとえば、このコマンドでは、包含ユーザーが作成されます。
+SQL Managed Instance データベースでユーザーを作成するとき、login_name が既存の Azure AD ログインに一致する必要があります。一致しない場合、**FROM EXTERNAL PROVIDER** 句を使用したとき、マスター データベースのログインなしで Azure AD ユーザーのみが作成されます。 たとえば、このコマンドでは、包含ユーザーが作成されます。
 
 `CREATE USER [bob@contoso.com] FROM EXTERNAL PROVIDER`
   
@@ -298,7 +298,7 @@ SQL Managed Instance データベースでユーザーを作成するとき、lo
   
 **データベースで認証されるユーザー**  
   
- 包含データベースでのみ使用できるユーザーに関して使用できる構文を次に示します。 作成されるユーザーは、 **master** データベース内のどのログインにも関連付けられません。 既定のスキーマおよび言語オプションは除外しています。  
+ 包含データベースでのみ使用できるユーザーに関して使用できる構文を次に示します。 作成されるユーザーは、**master** データベース内のどのログインにも関連付けられません。 既定のスキーマおよび言語オプションは除外しています。  
   
 > [!IMPORTANT]  
 >  この構文では、データベースへのアクセス許可と[!INCLUDE[ssDE](../../includes/ssde-md.md)]への新しいアクセス許可がユーザーに与えられます。  
@@ -309,7 +309,7 @@ SQL Managed Instance データベースでユーザーを作成するとき、lo
   
 **master にログインのない Windows プリンシパルに基づくユーザー**  
   
- Windows グループを介して [!INCLUDE[ssDE](../../includes/ssde-md.md)] にアクセスできる一方で、 **master** にログインを持たないユーザーが使用できる構文を次に示します。 この構文は、あらゆる種類のデータベースで使用できます。 既定のスキーマおよび言語オプションは除外しています。  
+ Windows グループを介して [!INCLUDE[ssDE](../../includes/ssde-md.md)] にアクセスできる一方で、**master** にログインを持たないユーザーが使用できる構文を次に示します。 この構文は、あらゆる種類のデータベースで使用できます。 既定のスキーマおよび言語オプションは除外しています。  
   
  この構文は master 内のログインに基づくユーザーの構文と似ていますが、このカテゴリのユーザーは master 内にログインを持ちません。 ユーザーは、Windows グループ ログインを介して[!INCLUDE[ssDE](../../includes/ssde-md.md)]にアクセスする許可が与えられている必要があります。  
   
@@ -380,7 +380,7 @@ GO
 ### <a name="c-creating-a-database-user-from-a-certificate"></a>C. 証明書からデータベース ユーザーを作成する  
  次の例では、証明書 `JinghaoLiu` からデータベース ユーザー `CarnationProduction50` を作成します。  
   
-**適用対象** : [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降。  
+**適用対象**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降。  
   
 ```sql  
 USE AdventureWorks2012;  
@@ -419,7 +419,7 @@ GO
 ### <a name="e-creating-a-contained-database-user-with-password"></a>E. パスワードを持つ包含データベース ユーザーを作成する  
  次の例では、パスワードを持つ包含データベース ユーザーを作成します。 この例は、包含データベースでのみ実行できます。  
   
-**適用対象** : [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降。 この例は DEFAULT_LANGUAGE が削除された場合に [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] で機能します。  
+**適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降。 この例は DEFAULT_LANGUAGE が削除された場合に [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] で機能します。  
   
 ```sql  
 USE AdventureWorks2012 ;  
@@ -434,7 +434,7 @@ GO
 ### <a name="f-creating-a-contained-database-user-for-a-domain-login"></a>F. ドメイン ログインのための包含データベース ユーザーを作成する  
  次の例では、Contoso という名前のドメインの Fritz という名前のログインに対する包含データベース ユーザーを作成します。 この例は、包含データベースでのみ実行できます。  
   
-**適用対象** : [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降。  
+**適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降。  
   
 ```sql  
 USE AdventureWorks2012 ;  
@@ -446,7 +446,7 @@ GO
 ### <a name="g-creating-a-contained-database-user-with-a-specific-sid"></a>G. 特定の SID を持つ包含データベース ユーザーを作成する  
  次の例では、CarmenW という名前の、SQL Server 認証を使用する包含データベース ユーザーを作成します。 この例は、包含データベースでのみ実行できます。  
   
-**適用対象** : [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降。  
+**適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降。  
   
 ```sql  
 USE AdventureWorks2012 ;  
@@ -458,7 +458,7 @@ CREATE USER CarmenW WITH PASSWORD = 'a8ea v*(Rd##+'
 ### <a name="h-creating-a-user-to-copy-encrypted-data"></a>H. 暗号化されたデータをコピーするためのユーザーを作成する  
  以下の例では、Always Encrypted 機能によって保護されたデータを、暗号化された列を含む一連のテーブルから、(同じまたは異なるデータベースに) 暗号化された列を持つ別の一連のテーブルにコピーできるユーザーを作成します。  詳細については、「[Always Encrypted で保護された機微なデータの移行](../../relational-databases/security/encryption/migrate-sensitive-data-protected-by-always-encrypted.md)」を参照してください。  
   
-**適用対象** : [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降、[!INCLUDE[ssSDS](../../includes/sssds-md.md)]。  
+**適用対象**: [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降、[!INCLUDE[ssSDS](../../includes/sssds-md.md)]。  
   
 ```sql  
 CREATE USER [Chin]   
@@ -479,7 +479,7 @@ GO
 ```
 
 > [!IMPORTANT]
-> Azure AD ログインから **USER** を作成するとき、 **LOGIN** から同じ *login_name* として *user_name* を指定します。
+> Azure AD ログインから **USER** を作成するとき、**LOGIN** から同じ *login_name* として *user_name* を指定します。
 
 グループである Azure AD ログインからグループとして Azure AD ユーザーを作成できます。
 

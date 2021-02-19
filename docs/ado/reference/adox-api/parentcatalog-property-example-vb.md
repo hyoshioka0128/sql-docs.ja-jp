@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 448bc850-7584-4c5f-89f3-5f4fee88b259
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 6910ac229d309360676f83f855664ab368459ce0
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 5f728bb18f57d8f30cf4d576e651f8a20bc385ad
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88983823"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100049872"
 ---
 # <a name="parentcatalog-property-example-vb"></a>ParentCatalog プロパティの例 (VB)
-次のコードは、カタログにテーブルを追加する前に、 [ParentCatalog](./parentcatalog-property-adox.md) プロパティを使用してプロバイダー固有のプロパティにアクセスする方法を示しています。 プロパティは **autoincrement**で、Microsoft Jet データベースに autoincrement フィールドが作成されます。  
+次のコードは、カタログにテーブルを追加する前に、 [ParentCatalog](./parentcatalog-property-adox.md) プロパティを使用してプロバイダー固有のプロパティにアクセスする方法を示しています。 プロパティは **autoincrement** で、Microsoft Jet データベースに autoincrement フィールドが作成されます。  
   
 ```  
 ' BeginCreateAutoIncrColumnVB  

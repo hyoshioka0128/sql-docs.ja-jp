@@ -10,13 +10,13 @@ ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: 22695214f9f3b375d285a8b3bb03bc1471535b17
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: 25cc9c7c93786dcc0d88e8bcd152196c17bf91c7
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92192377"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100347312"
 ---
 # <a name="iris-demo-data-for-python-and-r-tutorials-with-sql-machine-learning"></a>SQL 機械学習が含まれる Python および R チュートリアル用のアヤメのデモ データ
 [!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
@@ -31,7 +31,7 @@ ms.locfileid: "92192377"
 
 ## <a name="create-the-database"></a>データベースの作成
 
-1. SQL Server Management Studio を開始し、新しい**クエリ** ウィンドウを開きます。  
+1. SQL Server Management Studio を開始し、新しい **クエリ** ウィンドウを開きます。  
 
 2. このプロジェクトに対して新しいデータベースを作成し、新しいデータベースを使用するように、**クエリ** ウィンドウのコンテキストを変更します。
 

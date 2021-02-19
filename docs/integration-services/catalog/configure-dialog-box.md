@@ -15,12 +15,12 @@ f1_keywords:
 ms.assetid: 10183c8d-b1be-420f-972a-96ea97d4f4d8
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: cdbcc9b0a03b0afefe56152dc6b29c7ae59ea4cc
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 0d37b0c08debbd108645c697d53f9136c2a729d1
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88395008"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100354982"
 ---
 # <a name="configure-dialog-box"></a>[構成] ダイアログ ボックス
 

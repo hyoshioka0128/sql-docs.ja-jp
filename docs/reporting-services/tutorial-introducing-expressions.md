@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: 2d05ef4c-5f91-48b2-8795-f0a201a0b3cc
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 7ebb428a12bc75f3c61793918dde0594da531ed2
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+ms.openlocfilehash: 938ac8fc2e006bc74aab59955374f1b012b66b68
+ms.sourcegitcommit: fc24f7ecc155d97e789676fffe55e45840fcb088
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87248541"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98620278"
 ---
 # <a name="tutorial-introducing-expressions"></a>チュートリアル:式の概要
 [!INCLUDE[ssRBnoversion_md](../includes/ssrbnoversion.md)] のこのチュートリアルでは、 [!INCLUDE[ssRSnoversion_md](../includes/ssrsnoversion-md.md)] 強力かつ柔軟性のあるページネーション付きのレポートを作成するために、式と共に一般的な関数や演算子を使用します。 
@@ -25,7 +25,7 @@ ms.locfileid: "87248541"
   
 この図に、ここで作成するレポートと同様のレポートを示します。  
   
-![report-builder-expression-tutorial-in-browser](../reporting-services/media/report-builder-expression-tutorial-in-browser.png) 
+![式が使用されているレポート ビルダー レポートのスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-in-browser.png) 
   
 このチュートリアルの推定所要時間:30 分。  
   
@@ -92,7 +92,7 @@ ms.locfileid: "87248541"
   
 10. クエリ デザイナーのツール バーで、 **[実行]** ( **!** ) をクリックします。 結果セットには、23 行のデータが表示されます。列はFirstName、LastName、StateProvince、CountryRegionID、Gender、YTDPurchase、LastPurchase です。  
 
-    ![report-builder-expression-tutorial-query-as-text](../reporting-services/media/report-builder-expression-tutorial-query-as-text.png)
+    ![[新しいテーブル/マトリックス] ウィザードの [クエリのデザイン] ステップのスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-query-as-text.png)
   
 11. **[次へ]** をクリックします。  
   
@@ -113,13 +113,13 @@ ms.locfileid: "87248541"
   
     これでもう YTDPurchase には合計が適用されていません。  
     
-    ![report-builder-expression-not-sum](../reporting-services/media/report-builder-expression-not-sum.png)
+    ![オフにする準備ができている [合計] オプションを示す [値] の一覧のスクリーンショット。](../reporting-services/media/report-builder-expression-not-sum.png)
   
 15. **[次へ]** をクリックします。  
   
 16. **[レイアウトの選択]** ページで、既定の設定をすべてそのまま選択し、 **[次へ]** をクリックします。  
 
-    ![report-builder-expression-tutorial-choose-layout](../reporting-services/media/report-builder-expression-tutorial-choose-layout.png)
+    ![[新しいテーブル/マトリックス] ウィザードの [レイアウトの選択] ステップのスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-choose-layout.png)
   
 17. **[完了]** をクリックします。  
   
@@ -141,7 +141,7 @@ ms.locfileid: "87248541"
   
 2.  **[DataSet1]** を右クリックし、 **[データセットのプロパティ]** をクリックします。  
 
-    ![report-builder-expression-tutorial-rename-dataset](../reporting-services/media/report-builder-expression-tutorial-rename-dataset.png)
+    ![レポート ビルダーで [データセットのプロパティ] にアクセスする方法を示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-rename-dataset.png)
   
 3.  **[名前]** ボックスに「 **Expressions**」と入力します。  
   
@@ -154,13 +154,13 @@ ms.locfileid: "87248541"
   
     **[StateProvince]** 列の左側に、新しい列が追加されます。 
     
-    ![report-builder-expression-tutorial-insert-column](../reporting-services/media/report-builder-expression-tutorial-insert-column.png) 
+    ![レポートに左の列を挿入する方法を示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-insert-column.png) 
   
 2.  新しい列のヘッダーをクリックし、「 **Name**」と入力します。  
   
 3.  **[Name]** 列のデータ セルを右クリックし、 **[式]** をクリックします。  
 
-    ![report-builder-expression-tutorial-insert-expression](../reporting-services/media/report-builder-expression-tutorial-insert-expression.png)
+    ![レポートに式を挿入する方法を示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-insert-expression.png)
   
 4.  **[式]** ダイアログ ボックスで、 **[共通の関数]** を展開し、 **[テキスト]** をクリックします。  
   
@@ -168,7 +168,7 @@ ms.locfileid: "87248541"
   
     **Left** 関数が式に追加されます。  
     
-    ![report-builder-expression-tutorial-left-function](../reporting-services/media/report-builder-expression-tutorial-left-function.png)
+    ![式に Left 関数を追加する方法を示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-left-function.png)
   
 6.  **[カテゴリ]** ボックスの一覧の **[フィールド (Expressions)]** をクリックします。  
   
@@ -186,7 +186,7 @@ ms.locfileid: "87248541"
   
     完成した式は `=Left(Fields!FirstName.Value, 1) &". "& Fields!LastName.Value`です。  
     
-    ![report-builder-expression-tutorial-complete-name-expression](../reporting-services/media/report-builder-expression-tutorial-complete-name-expression.png)
+    ![式に LastName 値を追加する方法を示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-complete-name-expression.png)
   
 11. [!INCLUDE[clickOK](../includes/clickok-md.md)]  
   
@@ -201,11 +201,11 @@ ms.locfileid: "87248541"
   
 2.  **[Last Purchase]** 列のデータ セルを選択し、 **[ホーム]** タブの **[数値]** セクションで **[日付]** を選択します。  
 
-    ![report-builder-expression-tutorial-date-format](../reporting-services/media/report-builder-expression-tutorial-date-format.png)
+    ![日付に Last Purchase 列を設定する方法を示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-date-format.png)
   
 3.  **[数値]** セクションでもう一度、 **[プレースホルダーのスタイル]** の隣にある矢印をクリックし、 **[サンプルの値]** を選択します。 
 
-    ![report-builder-expression-tutorial-sample-values](../reporting-services/media/report-builder-expression-tutorial-sample-values.png)
+    ![レポート ビルダーの [サンプルの値] オプションを示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-sample-values.png)
 
     これで選択した書式設定のサンプルを表示できます。 
   
@@ -219,13 +219,13 @@ ms.locfileid: "87248541"
 
 2. **[ホーム]** タブの **[段落]** セクションで、 **[左]** を選択します。 
 
-    ![report-builder-expression-tutorial-format-headings](../reporting-services/media/report-builder-expression-tutorial-format-headings.png)
+    ![レポート ビルダーでヘッダーの書式を設定する方法を示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-format-headings.png)
 
 3. **[実行]** をクリックして、レポートをプレビューします。 
 
 レポートのここまでの完成状態はこのようになります。日付、通貨、列のヘッダーが書式設定されています。
 
-![report-builder-expression-tutorial-preview-formatted](../reporting-services/media/report-builder-expression-tutorial-preview-formatted.png)
+![書式設定されたレポートのプレビューを示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-preview-formatted.png)
 
   
 ## <a name="4-use-color-to-display-gender"></a><a name="Gender"></a>4.色を使用して性別を表示する  
@@ -248,11 +248,11 @@ ms.locfileid: "87248541"
   
      四角形がセルに追加されます。  
      
-     ![report-builder-expression-tutorial-insert-rectangle](../reporting-services/media/report-builder-expression-tutorial-insert-rectangle.png)
+     ![四角形を挿入する方法を示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-insert-rectangle.png)
   
 2. **M/F** と **Name** の間の分割線をドラッグし、 **M/F** 列を狭くします。
 
-    ![report-builder-expression-tutorial-narrow-column](../reporting-services/media/report-builder-expression-tutorial-narrow-column.png)
+    ![列を狭くする方法を示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-narrow-column.png)
   
 ### <a name="to-use-color-to-show-gender"></a>色を使用して性別を示すには  
   
@@ -272,7 +272,7 @@ ms.locfileid: "87248541"
 
 8. **[カテゴリ]** ボックスの一覧で **[定数]** をクリックし、 **[値]** ボックスの一覧で **[コーンフラワー ブルー]** をクリックします。
 
-    ![report-builder-expression-tutorial-color-expression-cornflower-blue](../reporting-services/media/report-builder-expression-tutorial-color-expression-cornflower-blue.png)
+    ![色を使用して性別を表す方法を示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-color-expression-cornflower-blue.png)
 
 9. その後にコンマを入力します。 
   
@@ -286,13 +286,13 @@ ms.locfileid: "87248541"
   
     完成した式は `=Switch(Fields!Gender.Value ="Male", "CornflowerBlue",Fields!Gender.Value ="Female","Tomato")`です。  
     
-    ![report-builder-expression-tutorial-color-expression-complete](../reporting-services/media/report-builder-expression-tutorial-color-expression-complete.png)
+    ![[式] ダイアログ ボックスの完全な式を示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-color-expression-complete.png)
   
 12. **[OK]** をクリックします。さらに **[OK]** をクリックし、 **[四角形のプロパティ]** ダイアログ ボックスを閉じます。  
   
 14. **[実行]** をクリックして、レポートをプレビューします。  
 
-    ![report-builder-expression-tutorial-preview-m-f-column](../reporting-services/media/report-builder-expression-tutorial-preview-m-f-column.png)
+    ![M/F 列でのプレビューを示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-preview-m-f-column.png)
 
 ### <a name="to-format-the-color-rectangles"></a>色の四角形の書式を設定するには
 
@@ -304,11 +304,11 @@ ms.locfileid: "87248541"
     - BorderStyle = 実線
     - BorderWidth = 5pt
     
-    ![report-builder-expression-tutorial-format-m-f-column](../reporting-services/media/report-builder-expression-tutorial-format-m-f-column.png)
+    ![M/F 列の色の四角形の書式を設定する方法を示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-format-m-f-column.png)
 
 18. **[実行]** をクリックし、レポートを再びプレビューします。 今度は色のブロックの周りに空白が表示されます。
 
-    ![report-builder-expression-tutorial-preview-formatted-m-f-column](../reporting-services/media/report-builder-expression-tutorial-preview-formatted-m-f-column.png)  
+    ![M/F 列で書式設定された四角形のプレビューを示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-preview-formatted-m-f-column.png)  
   
 ## <a name="5-look-up-the-countryregion-name"></a><a name="Lookup"></a>5.CountryRegion 名を参照する  
 このセクションでは、CountryRegion データセットを作成し、 **Lookup** 関数を使用して、国/地域の識別子の代わりに国/地域の名前を表示します。  
@@ -319,7 +319,7 @@ ms.locfileid: "87248541"
   
 2.  レポート データ ペインで、 **[新規作成]** をクリックし、 **[データセット]** をクリックします。  
   
-3.  [**データセットのプロパティ] で **[レポートに埋め込まれたデータセットを使用します]** をクリックします。  
+3.  **[データセットのプロパティ]** で **[レポートに埋め込まれたデータセットを使用します]** をクリックします。  
   
 4.  **[データ ソース]** ボックスの一覧の [ExpressionsDataSource] をクリックします。  
   
@@ -358,7 +358,7 @@ ms.locfileid: "87248541"
   
 ### <a name="to-look-up-values-in-the-countryregion-dataset"></a>CountryRegion データセット内の値を参照するには  
   
-1.  **[Country Region ID]** 列ヘッダーをクリックし、テキストの**ID** を削除し、**Country Region** にします。  
+1.  **[Country Region ID]** 列ヘッダーをクリックし、テキストの **ID** を削除し、**Country Region** にします。  
   
 2.  **[Country Region]** 列のデータ セルを右クリックし、 **[式]** をクリックします。  
   
@@ -414,7 +414,7 @@ ms.locfileid: "87248541"
   
     完成した式は `=DateDiff("d", Fields!LastPurchase.Value, Now)`です。  
     
-    ![report-builder-expression-tutorial-date-since-last-purchase](../reporting-services/media/report-builder-expression-tutorial-date-since-last-purchase.png)
+    ![前回の購入以降の日付の完全な式を示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-date-since-last-purchase.png)
   
 17. [!INCLUDE[clickOK](../includes/clickok-md.md)]  
 
@@ -441,7 +441,7 @@ ms.locfileid: "87248541"
   
 2.  アイコン セットの **[指向性]** グループ内で、3 つの灰色の矢印のセットをクリックします。  
 
-    ![report-builder-expression-tutorial-select-indicator](../reporting-services/media/report-builder-expression-tutorial-select-indicator.png)
+    ![インジケーターを追加する方法を示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-select-indicator.png)
   
 3.  [!INCLUDE[clickOK](../includes/clickok-md.md)]  
   
@@ -473,7 +473,7 @@ ms.locfileid: "87248541"
   
 17. 下矢印のある行で、 **[開始]** 値のボックスの右にある **[fx]** ボタンをクリックします。  
 
-    ![report-builder-expression-tutorial-indicator-start](../reporting-services/media/report-builder-expression-tutorial-indicator-start.png)
+    ![[開始] テキスト ボックスの横にある [fx] ボタンを選択する方法を示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-indicator-start.png)
   
 18. **[式]** ダイアログ ボックスで、 **[共通の関数]** を展開し、 **[数学]** をクリックします。  
   
@@ -497,7 +497,7 @@ ms.locfileid: "87248541"
   
 32. 水平矢印のある行をクリックし、 **[削除]** をクリックします。  
 
-    ![report-builder-expression-tutorial-delete-indicator-state](../reporting-services/media/report-builder-expression-tutorial-delete-indicator-state.png)
+    ![インジケーターを削除する方法を示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-delete-indicator-state.png)
     
     これで矢印は 2 つだけになりました。上矢印または下矢印です。
   
@@ -513,7 +513,7 @@ ms.locfileid: "87248541"
   
 38. **[実行]** をクリックして、レポートをプレビューします。  
 
-    ![report-builder-expression-tutorial-preview-indicator](../reporting-services/media/report-builder-expression-tutorial-preview-indicator.png)
+    ![すべての新しいインジケーターが含まれる + or - AVG Sales 列のプレビューを示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-preview-indicator.png)
   
 ## <a name="8-make-a-banded-report"></a><a name="GreenBar"></a>8.縞模様のレポートを作成する  
 レポートを読む人がレポート内で 1 行おきに適用する色を指定し、レポートを縞模様にできるようにパラメーターを作成します。  
@@ -524,7 +524,7 @@ ms.locfileid: "87248541"
   
 2.  **レポート データ** ペインで、 **[パラメーター]** を右クリックし、 **[パラメーターの追加]** をクリックします。  
 
-    ![report-builder-expression-tutorial-add-parameter](../reporting-services/media/report-builder-expression-tutorial-add-parameter.png)
+    ![パラメーターを追加する方法を示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-add-parameter.png)
   
     **[レポート パラメーターのプロパティ]** ダイアログ ボックスが表示されます。  
   
@@ -558,7 +558,7 @@ ms.locfileid: "87248541"
   
 18. **[値]** ボックスに「 **Pink**」と入力します。  
 
-    ![report-builder-expression-tutorial-parameter-available](../reporting-services/media/report-builder-expression-tutorial-parameter-available.png)
+    ![[このパラメーターに使用できる値を選択してください] ステップが示されている [レポート パラメーターのプロパティ] ダイアログ ボックスのスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-parameter-available.png)
   
 19. [!INCLUDE[clickOK](../includes/clickok-md.md)]  
   
@@ -566,7 +566,7 @@ ms.locfileid: "87248541"
   
 1.   独自の背景色を持つ **[M/F]** 列のセルを除き、データ行のすべてのセルを選択します。  
 
-     ![report-builder-expression-tutorial-select-banded](../reporting-services/media/report-builder-expression-tutorial-select-banded.png)
+     ![データ行で選択されたセルを示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-select-banded.png)
   
 4.  プロパティ ペインで、 **[BackgroundColor]** をクリックします。 
 
@@ -576,7 +576,7 @@ ms.locfileid: "87248541"
   
 5.  下矢印をクリックし、 **[式]** をクリックします。  
 
-    ![report-builder-expression-tutorial-banded-color-property](../reporting-services/media/report-builder-expression-tutorial-banded-color-property.png)
+    ![式と BackgroundColor を関連付ける方法を示す [プロパティ] ボックスのスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-banded-color-property.png)
   
 6.  **[式]** ダイアログ ボックスで、 **[共通の関数]** を展開し、 **[プログラム フロー]** をクリックします。  
   
@@ -592,7 +592,7 @@ ms.locfileid: "87248541"
   
     完成した式は `=IIF(RowNumber(Nothing) MOD 2, Parameters!RowColor.Value, "White")`です。  
     
-    ![report-builder-expression-tutorial-banded-color-expressn](../reporting-services/media/report-builder-expression-tutorial-banded-color-expressn.png)
+    ![完成した縞模様の色の式を示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-banded-color-expressn.png)
   
 24. [!INCLUDE[clickOK](../includes/clickok-md.md)]  
   
@@ -604,13 +604,13 @@ ms.locfileid: "87248541"
   
 3.  **[色の選択]** ボックスの一覧で、レポートの白以外の縞の色を選択します。  
     
-    ![report-builder-expression-tutorial-select-color](../reporting-services/media/report-builder-expression-tutorial-select-color.png)
+    ![白以外の縞の色を選択する方法を示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-select-color.png)
   
 4.  **[レポートの表示]** をクリックします。  
   
     選択した背景色が 1 行おきに適用された状態でレポートが表示されます。 
     
-    ![report-builder-expression-tutorial-preview-banded](../reporting-services/media/report-builder-expression-tutorial-preview-banded.png) 
+    ![色が交互に表示された行のプレビューを示すスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-preview-banded.png) 
   
 ## <a name="optional-add-a-report-title"></a><a name="Title"></a>(省略可能) レポート タイトルを追加する  
 レポートにタイトルを追加します。  
@@ -652,7 +652,7 @@ ms.locfileid: "87248541"
 
 これで [!INCLUDE[ssRSnoversion_md](../includes/ssrsnoversion-md.md)] Web ポータルでレポートが表示されます。
 
-![report-builder-expression-tutorial-final-in-browser](../reporting-services/media/report-builder-expression-tutorial-final-in-browser.png)
+![各式が表示されている完成した新しいレポートのスクリーンショット。](../reporting-services/media/report-builder-expression-tutorial-final-in-browser.png)
 
    
 ## <a name="see-also"></a>参照  

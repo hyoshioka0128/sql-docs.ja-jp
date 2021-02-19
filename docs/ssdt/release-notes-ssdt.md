@@ -11,13 +11,13 @@ ms.author: drskwier
 ms.reviewer: maghan
 ms.custom: seo-lt-2019
 ms.date: 12/15/2019
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||=azuresqldb-mi-current'
-ms.openlocfilehash: f142a872688d28befefcffebfcdeb75976072863
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=azuresqldb-mi-current'
+ms.openlocfilehash: 8a13f35c56ab73e3bb984bbdc2c2e27c2d769356
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91987858"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99236798"
 ---
 # <a name="release-notes-for-sql-server-data-tools-ssdt"></a>SQL Server Data Tools (SSDT) リリース ノート
 
@@ -44,6 +44,35 @@ GeneMi , 2019/03/22.
 
 P.S.  there's no need to keep this large HTML comment indefinitely.
 -->
+
+## <a name="1597nbsp-ssdt-for-vs-2017"></a>15.9.7、VS 2017 用 &nbsp; SSDT
+
+_リリース済み:_ &nbsp; 2021 年 1 月 5 日  
+_ビルド番号:_ &nbsp; 14.0.16228.0  
+_Visual Studio 2017 用 SSDT。_
+
+### <a name="whats-new"></a>新機能
+
+| New Item | 詳細 |
+|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Integration Services (SSIS) | IR 作成ウィザードの SSISDB の作成をオプションにします。 |
+| Integration Services (SSIS) | 異なるサブスクリプションの名前が同じである場合に、IR 作成ウィザードおよび Azure 対応プロジェクト ウィザードで Azure サブスクリプションのコンボ ボックス項目が重複するという問題を修正しました。 |
+| Integration Services (SSIS) | IR 作成ウィザードで [接続] ボタンを有効にできない場合があるという問題が修正されました。 |
+| Integration Services (SSIS) | 異なるサブスクリプションの名前が同じである場合に、IR 作成ウィザードおよび Azure 対応プロジェクト ウィザードで Azure サブスクリプションのコンボ ボックス項目が重複するという問題を修正しました。 |
+| Integration Services (SSIS) | 現在のロケールがドイツの場合に、スクリプト コンポーネントの bufferwrapper.cs の下にある自動生成されたコードによって余計な二重引用符が追加される問題を修正しました。 |
+| Integration Services (SSIS) | ターゲット サーバーのバージョンが SQL Server 2012、2014、2016 の場合、[WSDL のダウンロード] ボタンが表示されない問題を修正しました。 |
+| Integration Services (SSIS) | メモリ不足の例外が原因で大規模なプロジェクトのビルドが失敗することがある問題を修正しました。 |
+| Integration Services (SSIS) | パッケージ配置モデルでファイル システムまたは MSDB にコピーとして保存するときに、パッケージがプロジェクトの現在のターゲット サーバー バージョンにダウングレードされない問題を修正しました。 |
+| Integration Services (SSIS) | "No such interface" (該当するインターフェイスがありません) エラーが原因でディメンション処理変換先が機能しない問題を修正しました。 |
+| Integration Services (SSIS) | アクセシビリティと高 DPI に関連するいくつかの問題を修正しました。 |
+
+### <a name="known-issues"></a>既知の問題
+
+| 既知の問題 | 詳細 |
+| :---------- | :------ |
+| ExecuteOutOfProcess が True に設定されていると、SSIS パッケージ実行タスクはデバッグをサポートしません。 | この問題はデバッグにのみ該当します。 DTExec.exe または SSIS カタログを介した保存、展開、実行は影響を受けません。 |
+| &nbsp; | &nbsp; |
+
 
 ## <a name="1596nbsp-ssdt-for-vs-2017"></a>15.9.6、VS&nbsp;2017 用 SSDT
 
@@ -291,7 +320,7 @@ _Visual Studio 2017 用 SSDT。_
 
 **SSIS:**
 
-1. [!INCLUDE[sql-server-2019](../includes/sssqlv15-md.md)] のサポートが追加されます。
+1. [!INCLUDE[sql-server-2019](../includes/sssql19-md.md)] のサポートが追加されます。
 2. SQL Server 2012 のサポートが削除されます。
 
 ### <a name="known-issues"></a>既知の問題:
@@ -755,16 +784,16 @@ _SQL Server 2017 までのサポート。_
     - PowerQuery での例示による列の追加
     - 1400 モデルでのデータ アクセス オプション (M エンジンによって使われるモデル レベルのプロパティ)
         - 高速結合の有効化 (既定値は false です。true に設定すると、マッシュアップ エンジンはデータを結合するときにデータ ソースのプライバシー レベルを無視します)
-        - 従来のリダイレクトの有効化 (既定値は false です。true に設定すると、マッシュアップ エンジンは安全ではない可能性のある HTTP リダイレクトに従います。  たとえば、HTTPS から HTTP URI へのリダイレクト)  
-        - エラー値を null として返します (既定値は false です。true にすると、セル レベルのエラーが null として返されます。 false の場合、セルにエラーが含まれると例外が発生します)  
+        - 従来のリダイレクトの有効化 (既定値は false です。true に設定すると、マッシュアップ エンジンは安全ではない可能性のある HTTP リダイレクトに従います。    たとえば、HTTPS から HTTP URI へのリダイレクト)  
+        - エラー値を null として返します (既定値は false です。true にすると、セル レベルのエラーが null として返されます。 false の場合、セルにエラーが含まれると例外が発生します)  
     - PowerQuery を使う追加データ ソース (ファイル データ ソース)
-        - Excel 
-        - テキスト/CSV 
-        - xml 
-        - Json 
-        - Folder 
-        - Access データベース 
-        - Azure Blob Storage 
+        - Excel 
+        - テキスト/CSV 
+        - xml 
+        - Json 
+        - Folder 
+        - Access データベース 
+        - Azure Blob Storage 
     - ローカライズされた PowerQuery ユーザー インターフェイス
 - DAX エディター ツール ウィンドウ
     - SSDT の [表示] > [その他のウィンドウ] メニューで利用可能な DAX 編集エクスペリエンスがメジャー、計算列、詳細行の式に関して改良されました
@@ -873,24 +902,24 @@ SqlPackage の発行アクションとスクリプト アクションには、2 
 DacFx に 2 つの新しい API、DacServices.Publish() と DacServices.Script() が追加されました。 これらは、発行 + スクリプト + レポートの各アクションを 1 回の操作で実行できるようサポートします。 使用例:
 
 ```
-DacServices service = new DacServices(connectionString);
-using(DacPackage package = DacPackage.Load(@"C:\My\db.dacpac")) {
-var options = new PublishOptions() {
-    GenerateDeploymentScript = true, // Should a deployment script be created?
-    GenerateDeploymentReport = true, // Should an xml deploy report be created?
-    DatabaseScriptPath = @"C:\My\OutputScript.sql", // optional path to save script to
-    MasterDbScriptPath = @"C:\My\OutputScript_Master.sql", // optional path to save master script to
-    DeployOptions = new DacDeployOptions()
+DacServices service = new DacServices(connectionString);
+using(DacPackage package = DacPackage.Load(@"C:\My\db.dacpac")) {
+var options = new PublishOptions() {
+    GenerateDeploymentScript = true, // Should a deployment script be created?
+    GenerateDeploymentReport = true, // Should an xml deploy report be created?
+    DatabaseScriptPath = @"C:\My\OutputScript.sql", // optional path to save script to
+    MasterDbScriptPath = @"C:\My\OutputScript_Master.sql", // optional path to save master script to
+    DeployOptions = new DacDeployOptions()
 };
 
-// Call publish and receive deployment script & report in the results
-PublishResult result = service.Publish(package, "TargetDb", options);
+// Call publish and receive deployment script & report in the results
+PublishResult result = service.Publish(package, "TargetDb", options);
 Console.WriteLine(result.DatabaseScript);
 Console.WriteLine(result.MasterDbScript);
 Console.WriteLine(result.DeploymentReport);
 
-// Call script and receive deployment script & report in results
-result = service.Script(package, "TargetDb", options);
+// Call script and receive deployment script & report in results
+result = service.Script(package, "TargetDb", options);
 Console.WriteLine(result.DatabaseScript);
 Console.WriteLine(result.MasterDbScript);
 Console.WriteLine(result.DeploymentReport);
@@ -925,7 +954,7 @@ SSAS 表形式デザイナーの DAX パーサーにおいて、大きな DAX �
 
 **統合サービス**
 
-* 接続のバグ  [1608896](https://connect.microsoft.com/SQLServer/feedback/details/1608896/move-multiple-integration-service-package-tasks) の修正:複数の統合サービス パッケージのタスクの移動
+* 接続のバグ [1608896](https://connect.microsoft.com/SQLServer/feedback/details/1608896/move-multiple-integration-service-package-tasks) の修正: 複数の統合サービス パッケージのタスクの移動
 
 ## <a name="164-ssdt-for-vs-2015"></a>16.4、VS 2015 用 SSDT
 
@@ -935,7 +964,7 @@ _SQL Server 2016 の場合。_
 
 **新機能**
 
-SqlPackage.exe および Data-Tier Application Framework (DacFx) API でスキーマ比較がサポートされるようになりました。 詳しくは、「 [Schema Compare in SqlPackage and the Data-Tier Application Framework](/archive/blogs/ssdt/schema-compare-in-sqlpackage-and-the-data-tier-application-framework-dacfx)」(SqlPackage および Data-Tier Application Framework におけるスキーマ比較) をご覧ください。
+SqlPackage.exe および Data-Tier Application Framework (DacFx) API でスキーマ比較がサポートされるようになりました。 詳しくは、「[Schema Compare in SqlPackage and the Data-Tier Application Framework](/archive/blogs/ssdt/schema-compare-in-sqlpackage-and-the-data-tier-application-framework-dacfx)」(SqlPackage および Data-Tier Application Framework におけるスキーマ比較) をご覧ください。
 
 **Analysis Services - SSDT テーブル (SSAS) 統合のワークスペース モード**
 

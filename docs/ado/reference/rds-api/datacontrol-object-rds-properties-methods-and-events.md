@@ -7,18 +7,18 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - DataControl object [ADO], members
 ms.assetid: 9a8f9b0c-8452-4e95-a561-cfc4b7165c5e
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: e06e79a750c962355f8b0374a8e33c61cd6ae5a4
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 4c820b3df9be713a1a060fbcd3ddcb81c6d00fe2
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91721123"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100053253"
 ---
 # <a name="datacontrol-object-rds-properties-methods-and-events"></a>DataControl オブジェクト (RDS) のプロパティ、メソッド、およびイベント
 > [!IMPORTANT]
@@ -70,7 +70,7 @@ ms.locfileid: "91721123"
   
  [SubmitChanges メソッド (RDS)](./submitchanges-method-rds.md)  
   
-## <a name="events"></a>events  
+## <a name="events"></a>イベント  
  [onError イベント (RDS)](./onerror-event-rds.md)  
   
  [onReadyStateChange イベント (RDS)](./onreadystatechange-event-rds.md)  

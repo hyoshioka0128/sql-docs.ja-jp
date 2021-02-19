@@ -19,11 +19,11 @@ ms.assetid: 667419f2-74fb-4b50-b963-9197d1368cda
 author: chugugrace
 ms.author: chugu
 ms.openlocfilehash: aa3a520812d2b28e67b5b863d4480d7d01afaa57
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.sourcegitcommit: 192f6a99e19e66f0f817fdb1977f564b2aaa133b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91728083"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96130094"
 ---
 # <a name="excel-connection-manager"></a>Excel 接続マネージャー
 
@@ -37,7 +37,7 @@ ms.locfileid: "91728083"
 
  Excel 接続マネージャーをパッケージに追加するときに、 [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] により、実行時に Excel 接続として解決される接続マネージャーを作成し、接続マネージャーのプロパティを設定して、接続マネージャーをパッケージの **Connections** コレクションに追加します。  
   
- 接続マネージャーの **ConnectionManagerType** プロパティは、 **EXCEL**に設定されます。  
+ 接続マネージャーの **ConnectionManagerType** プロパティは、 **EXCEL** に設定されます。  
   
 ## <a name="configure-the-excel-connection-manager"></a>Excel 接続マネージャーの構成  
  Excel 接続マネージャーは、次の方法で構成できます。  

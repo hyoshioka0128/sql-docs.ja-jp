@@ -15,13 +15,13 @@ helpviewer_keywords:
 ms.assetid: f4686f6f-c224-4f07-a7cb-92f4dd483158
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: =azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions
-ms.openlocfilehash: ee448df6c962596b146c3c933406a23063873d96
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+monikerRange: =azuresqldb-mi-current||>=sql-server-2016
+ms.openlocfilehash: 0f339c2be8c7424134ba76fabbed1105d447a621
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86919948"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97479593"
 ---
 # <a name="publishing-stored-procedure-execution-in-transactional-replication"></a>トランザクション レプリケーションにおけるパブリッシング ストアド プロシージャの実行
 [!INCLUDE[sql-asdbmi](../../../includes/applies-to-version/sql-asdbmi.md)]
@@ -58,7 +58,7 @@ EXEC give_raise
 -   レプリケーション Transact-SQL プログラミング: [sp_addarticle &#40;Transact-SQL&#41;](../../../relational-databases/system-stored-procedures/sp-addarticle-transact-sql.md) を実行し、パラメーター `@type` に対して値 "serializable proc exec" (推奨) または "proc exec" を指定します。 アーティクルの定義の詳細については、「[Define an Article](../../../relational-databases/replication/publish/define-an-article.md)」 (アーティクルの定義) を参照してください。  
   
 ## <a name="modifying-the-procedure-at-the-subscriber"></a>サブスクライバーでのプロシージャの変更  
- 既定では、パブリッシャー上のストアド プロシージャの定義は各サブスクライバーに反映されます。 ただし、サブスクライバーでストアド プロシージャを変更することもできます。 これは、パブリッシャーとサブスクライバーで異なるロジックを実行する場合に便利です。 たとえば、2 つの関数を持つパブリッシャー上のストアド プロシージャ、 **sp_big_delete**を考えてみます。このストアド プロシージャはレプリケートされたテーブル **big_table1** から 100 万行を削除し、レプリケートされていないテーブル **big_table2**を更新します。 ネットワーク リソースの需要を削減するには、 **sp_big_delete**をパブリッシュすることによって、100 万行の削除をストアド プロシージャとして反映する方が効率的です。 サブスクライバーでは、100 万行だけを削除し、 **big_table2** への更新を実行しないように **sp_big_delete**を変更できます。  
+ 既定では、パブリッシャー上のストアド プロシージャの定義は各サブスクライバーに反映されます。 ただし、サブスクライバーでストアド プロシージャを変更することもできます。 これは、パブリッシャーとサブスクライバーで異なるロジックを実行する場合に便利です。 たとえば、2 つの関数を持つパブリッシャー上のストアド プロシージャ、 **sp_big_delete** を考えてみます。このストアド プロシージャはレプリケートされたテーブル **big_table1** から 100 万行を削除し、レプリケートされていないテーブル **big_table2** を更新します。 ネットワーク リソースの需要を削減するには、 **sp_big_delete** をパブリッシュすることによって、100 万行の削除をストアド プロシージャとして反映する方が効率的です。 サブスクライバーでは、100 万行だけを削除し、 **big_table2** への更新を実行しないように **sp_big_delete** を変更できます。  
   
 > [!NOTE]  
 >  既定では、パブリッシャーで ALTER PROCEDURE を使用して行われたすべての変更はサブスクライバーに反映されます。 これを防ぐには、ALTER PROCEDURE を実行する前に、スキーマの変更の反映を無効にしてください。 スキーマ変更の詳細については、「[パブリケーション データベースでのスキーマの変更](../../../relational-databases/replication/publish/make-schema-changes-on-publication-databases.md)」を参照してください。  

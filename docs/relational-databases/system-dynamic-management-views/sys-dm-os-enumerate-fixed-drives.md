@@ -1,12 +1,12 @@
 ---
-description: dm_os_enumerate_fixed_drives (Transact-sql)
-title: dm_os_enumerate_fixed_drives (Transact-sql) |Microsoft Docs
+description: sys.dm_os_enumerate_fixed_drives (Transact-sql)
+title: sys.dm_os_enumerate_fixed_drives (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 09/18/2019
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_os_enumerate_fixed_drives
 - sys.dm_os_enumerate_fixed_drives_TSQL
@@ -15,16 +15,16 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_os_enumerate_fixed_drives dynamic management view
 ms.assetid: 2e27489e-cf69-4a89-9036-77723ac3de66
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: c35d783b8db1abe5803a34dd1a4c401444897207
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 0f6989a0b79ce409489c120d1fdfbe70a9ccbeb6
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539317"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100338832"
 ---
-# <a name="sysdm_os_enumerate_fixed_drives-transact-sql"></a>dm_os_enumerate_fixed_drives (Transact-sql)
+# <a name="sysdm_os_enumerate_fixed_drives-transact-sql"></a>sys.dm_os_enumerate_fixed_drives (Transact-sql)
 
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 

@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: pochiraju
 ms.author: rajpo
 ms.reviewer: mathoma
-ms.openlocfilehash: 2e3490f1a381bbe3a27f9860df2884c759387c39
-ms.sourcegitcommit: 71d2389cf27156fa0404a6e6f65fb7a61c40789a
+ms.openlocfilehash: 18428e87d1c769d10a4d1acbf0033c739db09d0d
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636092"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100017062"
 ---
 # <a name="configure-distributed-replay-for-database-experimentation-assistant"></a>Database Experimentation Assistant の分散再生を構成する
 
@@ -91,7 +91,7 @@ Database Experimentation Assistant (DEA) は、SQL Server インストールの�
 
     分散再生コントローラーのログは、C:\Program Files (x86) \Microsoft SQL Server \Tools\DReplayClient\Log. にあります。 \<version\> ログには、クライアントが自身をコントローラーに登録できるかどうかが示されます。
 
-    構成が成功した場合、ログには**コントローラー <コントローラー名 \> に登録さ**れているメッセージが表示されます。
+    構成が成功した場合、ログには **コントローラー <コントローラー名 \> に登録さ** れているメッセージが表示されます。
 
 構成オプションの詳細については、「 [Configure 分散再生](../tools/distributed-replay/configure-distributed-replay.md)」を参照してください。
 
@@ -99,7 +99,7 @@ Database Experimentation Assistant (DEA) は、SQL Server インストールの�
 
 分散再生管理ツールを使用すると、分散再生が環境内で適切に機能しているかどうかをすばやくテストできます。 構成のテストは、複数のクライアントコンピューターがコントローラーに登録されている環境で特に役立ちます。 管理ツールを入手するには、SQL Server Management Studio (SSMS) のインストールが必要になる場合があります。
 
-1. SSMS のインストール場所に移動し、分散再生管理ツール dreplay.exe とそれに依存するコンポーネントを探します。
+1. SSMS のインストール場所に移動し、分散再生管理ツール dreplay.exe とそれに依存するコンポーネントを探します。 現時点では、 [ssms 17](../ssms/release-notes-ssms.md#1791) は dreplay.exe を含む ssms の最新リリースです。
 2. コマンドプロンプトで、を実行 `dreplay.exe status -f 1` します。
 
 前の手順が成功した場合、コンソール出力は、コントローラーがクライアントを状態で認識できることを示してい `READY` ます。
@@ -108,7 +108,7 @@ Database Experimentation Assistant (DEA) は、SQL Server インストールの�
 
 分散再生にリモートでアクセスするには、ドメインまたは仮想ネットワーク内に表示されているポートを開く必要があります。
 
-1. **[セキュリティが強化**された**Windows ファイアウォール**] を開きます。
+1. **[セキュリティが強化** された **Windows ファイアウォール**] を開きます。
 2. [ **受信の規則**] にアクセスします。
 3. プログラム C:\Program Files (x86) \Microsoft SQL Server\Tools\DReplayController\DReplayController.exe 用の新しい受信ファイアウォール規則を作成 \<version\> します。
 4. DReplayController.exe のすべてのポートに対するドメインレベルのアクセスを許可して、コントローラーサービスとリモートで通信できるようにします。

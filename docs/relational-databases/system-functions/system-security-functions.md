@@ -7,18 +7,18 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 ms.assetid: fa2c95df-1211-4330-adc6-9657e1a113e8
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 812dd0fe08c4195571c827ec82d3e599732d0ff2
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: db6d913f6422161f0ff7760200d563c4bb599a04
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88427744"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99187330"
 ---
 # <a name="system-security-functions"></a>システムセキュリティ関数
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

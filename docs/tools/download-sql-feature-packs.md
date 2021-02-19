@@ -11,12 +11,12 @@ ms.author: maghan
 ms.reviewer: mikeray
 ms.custom: seo-lt-2019
 ms.date: 12/15/2019
-ms.openlocfilehash: 44d46bd260b1f59b9d1bcffd4a7bfb6ea46c248c
-ms.sourcegitcommit: a9f16d7819ed0e2b7ad8f4a7d4d2397437b2bbb2
+ms.openlocfilehash: 81f53aca0de017f4fdd05d5c8b365e741daa784d
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88713750"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100349503"
 ---
 # <a name="download-sql-server-extended-features-and-tools"></a>SQL Server の拡張機能とツールのダウンロード
 
@@ -28,7 +28,7 @@ ms.locfileid: "88713750"
 
 | 機能 | 説明 |
 |----|-----|
-| [Analysis Services クライアント ライブラリ](https://go.microsoft.com/fwlink/?LinkID=853574) |Microsoft Analysis Services クライアント ライブラリは、アプリケーション プログラミング インターフェイス (API) をカプセル化して、Microsoft SQL Server Analysis Services 2005 以降、Microsoft Azure Analysis Services、Microsoft Power BI との間で要求と応答の認証と交換を行います。<br><br> Microsoft Analysis Services クライアント ライブラリには、次のセットアップ パッケージが含まれます。 </br> Microsoft Analysis Services ADOMD.NET </br> Microsoft Analysis Services OLE DB プロバイダー (MSOLAP) </br> Microsoft 分析管理オブジェクト (AMO) |
+| [Analysis Services クライアント ライブラリ](/analysis-services/client-libraries) |Microsoft Analysis Services クライアント ライブラリは、アプリケーション プログラミング インターフェイス (API) をカプセル化して、Microsoft SQL Server Analysis Services 2005 以降、Microsoft Azure Analysis Services、Microsoft Power BI との間で要求と応答の認証と交換を行います。<br><br> Microsoft Analysis Services クライアント ライブラリには、次のセットアップ パッケージが含まれます。 </br> Microsoft Analysis Services ADOMD.NET </br> Microsoft Analysis Services OLE DB プロバイダー (MSOLAP) </br> Microsoft 分析管理オブジェクト (AMO) |
 | [NuGetAnalysisSrvs](https://www.nuget.org/profiles/NuGetAnalysisSrvs) | Analysis Services 用 NuGet |
 |||
 
@@ -44,13 +44,13 @@ ms.locfileid: "88713750"
 | 機能 | 説明 |
 |----|-----|
 | [SQL Server 用 Command Line Utilities](https://www.microsoft.com/download/details.aspx?id=52680) | SQLCMD ユーティリティを使用すると、SQL Server インスタンスに接続でき、これらのインスタンスから Transact-SQL バッチを送信したり、行セット情報を出力したりできます。 |
-| [SQL Server 用 Drivers for PHP](https://aka.ms/downloadmsphpsql) | Microsoft SQL Server 用 Drivers for PHP は PHP 拡張機能であり、これによって PHP スクリプトから SQL Server データの読み取りおよび書き込みが可能になります。 |
-| [JDBC Driver for SQL Server](https://aka.ms/downloadmssqljdbc) | Microsoft JDBC Driver for SQL Server を使用すると、任意の Java アプリケーション、アプリケーション サーバー、Java 対応アプレットから、SQL Server にアクセスできます。|
+| [SQL Server 用 Drivers for PHP](../connect/php/download-drivers-php-sql-server.md) | Microsoft SQL Server 用 Drivers for PHP は PHP 拡張機能であり、これによって PHP スクリプトから SQL Server データの読み取りおよび書き込みが可能になります。 |
+| [JDBC Driver for SQL Server](../connect/jdbc/download-microsoft-jdbc-driver-for-sql-server.md) | Microsoft JDBC Driver for SQL Server を使用すると、任意の Java アプリケーション、アプリケーション サーバー、Java 対応アプレットから、SQL Server にアクセスできます。|
 | [SQL Server Data-Tier Application Framework](https://www.microsoft.com/download/details.aspx?id=56508) | SQL Server Data-tier Application (DAC) Framework は、.NET Framework をベースにしたコンポーネントであり、データベースの開発と管理に必要なアプリケーション ライフサイクル サービスを提供します。 |
 | [SQL Server セマンティック言語統計](../relational-databases/search/install-and-configure-semantic-search.md) | セマンティック言語統計データベースは、Microsoft SQL Server の統計的セマンティック検索機能に必要なコンポーネントです。 |
 | [SQL Server 共有管理オブジェクト](../relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide.md) | SQL Server 管理オブジェクト (SMO) は .NET Framework のオブジェクト モデルです。ソフトウェア開発者は SMO を使用して、SQL Server のオブジェクトおよびサービスを管理するクライアント側アプリケーションを作成できます。 |
 | [System CLR Types](https://go.microsoft.com/fwlink/?linkid=2108808) | SQL Server System CLR Types パッケージには、SQL Server の geometry 型、geography 型、および階層 ID 型を実装するコンポーネントが含まれています。 **注: このコンポーネントを使用するには、[Windows インストーラー 4.5](https://go.microsoft.com/fwlink/?LinkId=123373) も必要です**。 |
-| [Windows PowerShell Extensions for Microsoft SQL Server](../database-engine/install-windows/install-sql-server-powershell.md?view=sql-server-2017) | Microsoft Windows PowerShell Extensions for SQL Server には、SQL Server インスタンスの管理用 PowerShell スクリプトを管理者および開発者が作成するためのプロバイダーとコマンドレットのセットが含まれています。 |
+| [Windows PowerShell Extensions for Microsoft SQL Server](../database-engine/install-windows/install-sql-server-powershell.md) | Microsoft Windows PowerShell Extensions for SQL Server には、SQL Server インスタンスの管理用 PowerShell スクリプトを管理者および開発者が作成するためのプロバイダーとコマンドレットのセットが含まれています。 |
 |||
 
 ## <a name="database-engine"></a>データベース エンジン
@@ -112,8 +112,8 @@ ms.locfileid: "88713750"
 ## <a name="see-also"></a>参照
 
 - [SQL Server Management Studio のドキュメント](../ssms/download-sql-server-management-studio-ssms.md)
-- [Azure Data Studio](../azure-data-studio/download-azure-data-studio.md?view=sql-server-ver15)
-- [追加の更新プログラムとサービス パック](../database-engine/install-windows/latest-updates-for-microsoft-sql-server.md?view=sql-server-ver15)
+- [Azure Data Studio](../azure-data-studio/download-azure-data-studio.md)
+- [追加の更新プログラムとサービス パック](../database-engine/install-windows/latest-updates-for-microsoft-sql-server.md)
 - [SQL Server Data Tools (SSDT) のダウンロード](../ssdt/download-sql-server-data-tools-ssdt.md)
 
 [!INCLUDE[contribute-to-content](../includes/paragraph-content/contribute-to-content.md)]

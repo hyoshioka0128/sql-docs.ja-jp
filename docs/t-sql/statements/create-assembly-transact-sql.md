@@ -21,15 +21,15 @@ helpviewer_keywords:
 - CREATE ASSEMBLY statement
 - assemblies [CLR integration], creating
 ms.assetid: d8d1d245-c2c3-4325-be52-4fc1122c2079
-author: markingmyname
-ms.author: maghan
-monikerRange: =azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017
-ms.openlocfilehash: badcd52070da65122e113116be763c903b3e509a
-ms.sourcegitcommit: bd3a135f061e4a49183bbebc7add41ab11872bae
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017
+ms.openlocfilehash: 13b639ace60f98ce9ab55cc0280130131f6851ca
+ms.sourcegitcommit: a9e982e30e458866fcd64374e3458516182d604c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92300161"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98098409"
 ---
 # <a name="create-assembly-transact-sql"></a>CREATE ASSEMBLY (Transact-SQL)
 [!INCLUDE[tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md](../../includes/tsql-appliesto-ss2008-asdbmi-xxxx-xxx-md.md )]
@@ -107,7 +107,7 @@ FROM { <client_assembly_specifier> | <assembly_bits> [ ,...n ] }
 >   
 >  アセンブリで、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンス外のリソースにアクセスする場合は、EXTERNAL_ACCESS を使用することをお勧めします。 EXTERNAL_ACCESS アセンブリでは SAFE アセンブリの信頼性とスケーラビリティによる保護が提供されますが、セキュリティの観点からは、このアセンブリは UNSAFE アセンブリと類似しています。 EXTERNAL_ACCESS アセンブリ内のコードは、明示的に呼び出し元の権限を借用しない限り、既定により [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] サービス アカウントの下で実行され、外部リソースにアクセスします。 したがって、EXTERNAL_ACCESS アセンブリを作成する権限は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] サービス アカウントの下でコードを実行しても安全であると考えられる、信頼できるログインに対してのみ許可してください。 権限借用の詳細については、「[CLR 統合のセキュリティ](../../relational-databases/clr-integration/security/clr-integration-security.md)」を参照してください。  
 >   
->  UNSAFE を指定した場合、アセンブリのコードでは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] プロセス領域に対して自由な操作を実行できるので、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の堅牢性が脅かされる可能性があります。 UNSAFE アセンブリでは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] または共通言語ランタイムのいずれかのセキュリティ システムが妨害されるおそれもあります。 UNSAFE 権限は、信頼性の高いアセンブリに対してのみ許可してください。 UNSAFE アセンブリを作成または変更できるのは、 **sysadmin** 固定サーバー ロールのメンバーだけです。  
+>  UNSAFE を指定した場合、アセンブリのコードでは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] プロセス領域に対して自由な操作を実行できるので、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の堅牢性が脅かされる可能性があります。 UNSAFE アセンブリでは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] または共通言語ランタイムのいずれかのセキュリティ システムが妨害されるおそれもあります。 UNSAFE 権限は、信頼性の高いアセンブリに対してのみ許可してください。 UNSAFE アセンブリを作成または変更できるのは、**sysadmin** 固定サーバー ロールのメンバーだけです。  
   
  アセンブリの権限セットの詳細については、「[アセンブリのデザイン](../../relational-databases/clr-integration/assemblies-designing.md)」をご覧ください。  
   
@@ -154,7 +154,7 @@ FROM { <client_assembly_specifier> | <assembly_bits> [ ,...n ] }
   
  PERMISSION_SET = EXTERNAL_ACCESS を指定する場合、サーバーに対する **EXTERNAL ACCESS ASSEMBLY** 権限が必要です。 PERMISSION_SET = UNSAFE を指定する場合、サーバーに対する **UNSAFE ASSEMBLY** 権限が必要です。  
   
- アップロードするアセンブリによって参照されているアセンブリがデータベース内に存在する場合、ユーザーは、この参照先となるアセンブリの所有者である必要があります。 ファイル パスを使ってアセンブリをアップロードするには、現在のユーザーは、Windows 認証済みログインであるか、 **sysadmin** 固定サーバー ロールのメンバーであることが必要です。 CREATE ASSEMBLY を実行するユーザーの Windows ログインには、共有フォルダーおよびステートメントに読み込まれるファイルに対する読み取り権限が与えられている必要があります。  
+ アップロードするアセンブリによって参照されているアセンブリがデータベース内に存在する場合、ユーザーは、この参照先となるアセンブリの所有者である必要があります。 ファイル パスを使ってアセンブリをアップロードするには、現在のユーザーは、Windows 認証済みログインであるか、**sysadmin** 固定サーバー ロールのメンバーであることが必要です。 CREATE ASSEMBLY を実行するユーザーの Windows ログインには、共有フォルダーおよびステートメントに読み込まれるファイルに対する読み取り権限が与えられている必要があります。  
 
 ### <a name="permissions-with-clr-strict-security"></a>CLR の厳密なセキュリティによるアクセス許可    
 `CLR strict security` が有効になっている場合に CLR アセンブリを作成するには、次のアクセス許可が必要です。
@@ -170,7 +170,7 @@ FROM { <client_assembly_specifier> | <assembly_bits> [ ,...n ] }
   
 ### <a name="example-a-creating-an-assembly-from-a-dll"></a>例 A:dll からアセンブリを作成する  
   
-**適用対象** : [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降。  
+**適用対象**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降。  
   
  次の例では、[!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] サンプルがローカル コンピューターの既定の場所にインストールされており、HelloWorld.csproj サンプル アプリケーションがコンパイルされていることを前提としています。 詳細については、「[Hello World サンプル](/previous-versions/sql/sql-server-2016/ff878250(v=sql.130))」を参照してください。  
   
@@ -185,7 +185,7 @@ WITH PERMISSION_SET = SAFE;
   
 ### <a name="example-b-creating-an-assembly-from-assembly-bits"></a>例 B:アセンブリのビットからアセンブリを作成する  
   
-**適用対象** : [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降。  
+**適用対象**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降。  
   
  アセンブリ ビットを (完全性または有効ではない) サンプル ビットに置き換えます。  
   

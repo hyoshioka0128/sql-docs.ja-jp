@@ -7,19 +7,19 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - ADO MD, objects
 - objects [ADO MD]
 ms.assetid: 2a32e873-3282-4520-a7ed-89493f1da80e
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: a75672db242d5b7388eb625bc028728c8522b11c
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 489228bb44322c6db39c3ced8b1854749c36deeb
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88987433"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100055857"
 ---
 # <a name="ado-md-objects"></a>ADO MD オブジェクト
 
@@ -44,10 +44,10 @@ ms.locfileid: "88987433"
   
  これらのオブジェクト間のリレーションシップは、 [ADO MD オブジェクトモデル](./ado-md-object-model.md)で示されています。  
   
- 多くの ADO MD オブジェクトを対応するコレクションに含めることができます。 たとえば、 [CubeDef](./cubedef-object-ado-md.md)オブジェクトは、**カタログ**の[cubedefs](./cubedefs-collection-ado-md.md)コレクションに含めることができます。 詳細については、「 [ADO MD コレクション](./ado-md-collections.md)」を参照してください。  
+ 多くの ADO MD オブジェクトを対応するコレクションに含めることができます。 たとえば、 [CubeDef](./cubedef-object-ado-md.md)オブジェクトは、**カタログ** の [cubedefs](./cubedefs-collection-ado-md.md)コレクションに含めることができます。 詳細については、「 [ADO MD コレクション](./ado-md-collections.md)」を参照してください。  
   
 ## <a name="see-also"></a>参照  
- [ADO MD API リファレンス](./ado-md-object-model.md?view=sql-server-ver15)   
+ [ADO MD API リファレンス](./ado-md-object-model.md)   
  [ADO MD コード例](./ado-md-code-examples.md)   
  [ADO MD コレクション](./ado-md-collections.md)   
  [ADO MD 列挙定数](./ado-md-enumerated-constants.md)   

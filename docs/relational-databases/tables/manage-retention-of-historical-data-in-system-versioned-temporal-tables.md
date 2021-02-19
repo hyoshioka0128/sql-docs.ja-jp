@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: 7925ebef-cdb1-4cfe-b660-a8604b9d2153
 author: markingmyname
 ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 322f977207bb593ddc6a4c8c78fae7621bd2aad4
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 2e37f8234a1b8ee2ab72c76a423ea72ac9d3f14a
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91810685"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99235826"
 ---
 # <a name="manage-retention-of-historical-data-in-system-versioned-temporal-tables"></a>システム バージョン管理されたテンポラル テーブルの履歴データの保有期間管理
 
@@ -51,9 +51,9 @@ ms.locfileid: "91810685"
 ## <a name="using-stretch-database-approach"></a>Stretch Database 手法の利用
 
 > [!NOTE]
-> Stretch Database 手法の利用は [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] にのみ適用され、[!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] には適用されません。
+> Stretch Database 手法の利用は [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] にのみ適用され、[!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] には適用されません。
 
-[Stretch Database](../../sql-server/stretch-database/stretch-database.md) の [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] では、履歴データが Azure に透過的に移行されます。 セキュリティ強化のために、SQL Server の [Always Encrypted](../security/encryption/always-encrypted-database-engine.md) 機能で移行中のデータを暗号化できます。 また、 [行レベルのセキュリティ](../../relational-databases/security/row-level-security.md) やその他の高度な SQL Server セキュリティ機能を Temporal/Stretch Database と共に使用し、データを保護できます。
+[Stretch Database](../../sql-server/stretch-database/stretch-database.md) の [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] では、履歴データが Azure に透過的に移行されます。 セキュリティ強化のために、SQL Server の [Always Encrypted](../security/encryption/always-encrypted-database-engine.md) 機能で移行中のデータを暗号化できます。 また、 [行レベルのセキュリティ](../../relational-databases/security/row-level-security.md) やその他の高度な SQL Server セキュリティ機能を Temporal/Stretch Database と共に使用し、データを保護できます。
 
 Stretch Database 手法の利用では、一時的な履歴テーブルの一部または全部を Azure にストレッチできます。SQL Server は履歴データを Azure に通知なしで移行します。 履歴テーブルのストレッチを有効にしても、データ変更や一時的なクエリ実行で、テンポラル テーブルの操作が変わることはありません。
 
@@ -66,11 +66,11 @@ Stretch Database 手法の利用では、一時的な履歴テーブルの一部
 > [!NOTE]
 > Stretch Database はデータを Azure に移行します。 そのため、Azure アカウントとサブスクリプションを請求のために用意する必要があります。 無料の試用版 Azure アカウントを入手するには、[1 か月間の無料試用版](https://azure.microsoft.com/pricing/free-trial/)をクリックしてください。
 
-一時的な履歴テーブルの Stretch は Stretch ウィザードまたは Transact-SQL で構成できます。システム バージョン管理を **オン**に設定しているとき、一時的な履歴テーブルのストレッチを有効にできます。 現行テーブルはストレッチできません。ストレッチする意味がないためです。
+一時的な履歴テーブルの Stretch は Stretch ウィザードまたは Transact-SQL で構成できます。システム バージョン管理を **オン** に設定しているとき、一時的な履歴テーブルのストレッチを有効にできます。 現行テーブルはストレッチできません。ストレッチする意味がないためです。
 
 ### <a name="using-the-stretch-wizard-to-stretch-the-entire-history-table"></a>Stretch ウィザードを利用し、履歴テーブル全体をストレッチする
 
-初心者にとって最も簡単な方法は、Stretch ウィザードを利用して、データベース全体でストレッチを有効にし、Stretch ウィザード内で一時的な履歴テーブルを選択することです (この例では、本来であれば空のデータベースで、Department テーブルをシステム バージョン管理のテンポラル テーブルとして構成しているものと想定しています)。 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]では一時的な履歴テーブル自体を右クリックし、[Stretch] をクリックすることはできません。
+初心者にとって最も簡単な方法は、Stretch ウィザードを利用して、データベース全体でストレッチを有効にし、Stretch ウィザード内で一時的な履歴テーブルを選択することです (この例では、本来であれば空のデータベースで、Department テーブルをシステム バージョン管理のテンポラル テーブルとして構成しているものと想定しています)。 [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)]では一時的な履歴テーブル自体を右クリックし、[Stretch] をクリックすることはできません。
 
 1. データベースを右クリックし、 **[タスク]** をポイントし、 **[Stretch]** をポイントします。それから、 **[有効化]** をクリックしてウィザードを起動します。
 2. **[テーブルの選択]** ウィンドウで、一時的な履歴テーブルのチェック ボックスを選択し、[次へ] をクリックします。
@@ -180,7 +180,7 @@ COMMIT ;
 
 次はデータを 6 か月維持する初回パーティション分割構成の図です。
 
-![パーティション分割](../../relational-databases/tables/media/partitioning.png "パーティション分割")
+![データを 6 か月維持する初回パーティション分割構成を示す図。](../../relational-databases/tables/media/partitioning.png "パーティション分割")
 
 > [!NOTE]
 > パーティション分割を構成するとき、RANGE LEFT または RANGE RIGHT を利用するときのパフォーマンス上の違いについては、下の「テーブル パーティション分割におけるパフォーマンス上の考慮事項」を参照してください。
@@ -189,7 +189,7 @@ COMMIT ;
 
 次の図は、定期パーティション保守管理タスクの例です (下に詳しい手順があります)。
 
-![パーティション分割 2](../../relational-databases/tables/media/partitioning2.png "パーティション分割 2")
+![定期的パーティション保守管理タスクを示す図。](../../relational-databases/tables/media/partitioning2.png "パーティション分割 2")
 
 定期パーティション保守管理タスクの詳しい手順:
 
@@ -323,7 +323,7 @@ COMMIT TRANSACTION
 
 最初に RANGE LEFT オプションと RANGE RIGHT オプションの意味を図で説明します。
 
-![パーティション分割 3](../../relational-databases/tables/media/partitioning3.png "パーティション分割 3")
+![RANGE LEFT と RANGE RIGHT のオプションを示す図。](../../relational-databases/tables/media/partitioning3.png "パーティション分割 3")
 
 パーティション関数を RANGE LEFT として定義すると、指定値はパーティションの上位境界になります。 RANGE RIGHT を利用するとき、指定値はパーティションの下位境界になります。 MERGE RANGE 操作でパーティション関数定義から境界を削除するとき、基礎となる実装は、境界を含むパーティションも削除します。 そのパーティションが空ではない場合、MERGE RANGE 操作の結果となるパーティションにデータが移動します。
 
@@ -336,7 +336,7 @@ COMMIT TRANSACTION
 
 ## <a name="using-custom-cleanup-script-approach"></a>カスタム クリーンアップ スクリプト手法の利用
 
-Stretch Database とテーブル パーティション分割を利用する手法が実行できない場合、3 番目の手法は、カスタム クリーンアップ スクリプトを利用して履歴テーブルからデータを削除することになります。 履歴テーブルからデータを削除することは、 **SYSTEM_VERSIONING = OFF**のときにのみ可能です。 データの不整合を回避するために、保守管理の時間枠内 (データを変更するワークロードがアクティブではないとき) か、トランザクション (他のワークロードが効果的にブロックされる) 内でクリーンアップを実行します。 この操作には、現行テーブルと履歴テーブルの **CONTROL** 権限が必要になります。
+Stretch Database とテーブル パーティション分割を利用する手法が実行できない場合、3 番目の手法は、カスタム クリーンアップ スクリプトを利用して履歴テーブルからデータを削除することになります。 履歴テーブルからデータを削除することは、 **SYSTEM_VERSIONING = OFF** のときにのみ可能です。 データの不整合を回避するために、保守管理の時間枠内 (データを変更するワークロードがアクティブではないとき) か、トランザクション (他のワークロードが効果的にブロックされる) 内でクリーンアップを実行します。 この操作には、現行テーブルと履歴テーブルの **CONTROL** 権限が必要になります。
 
 通常のアプリケーションとユーザー クエリを最小限ブロックするには、トランザクション内でクリーンアップ スクリプトを実行するとき、遅延ありで、データの小規模なまとまりを削除します。 削除されるデータ チャンクごとのサイズについては、あらゆるシナリオに最適なサイズというものはありませんが、1 回のトランザクションで 10,000 行以上を削除すると、大幅な影響が現れる可能性があります。
 
@@ -344,7 +344,7 @@ Stretch Database とテーブル パーティション分割を利用する手�
 
 次の図は、実行中のワークロードに対する影響を抑えるように、1 つのテーブルのクリーンアップ ロジックを調整する方法を示しています。
 
-![CustomCleanUpScriptDiagram](../../relational-databases/tables/media/customcleanupscriptdiagram.png "CustomCleanUpScriptDiagram")
+![実行中のワークロードに対する影響を抑えるように、1 つのテーブルのクリーンアップ ロジックをどのように調整するかを示す図。](../../relational-databases/tables/media/customcleanupscriptdiagram.png "CustomCleanUpScriptDiagram")
 
 プロセスの実装については、上位のガイドラインがあります。 クリーンアップ ロジックを毎日実行するようにスケジュールし、データ クリーンアップが必要なすべてのテンポラル テーブルに繰り返して起用します。 SQL Server Agent または別のツールを利用し、このプロセスをスケジュールします。
 
@@ -494,7 +494,7 @@ ON T1.history_table_id = T2.object_id WHERE T1.temporal_type = 2
 
 ### <a name="how-sql-database-deletes-aged-rows"></a>SQL Database によって期限切れの行が削除されるしくみ
 
-クリーンアップ プロセスは、履歴テーブルのインデックスのレイアウトに依存します。 *有限の保持期間ポリシーを構成できるのはクラスター化インデックス (B ツリーまたは列ストア) を使っている履歴テーブルだけである*ことに注意する必要があります。 有限の保有期間を持つすべてのテンポラル テーブルの期限切れデータをクリーンアップするために、バックグラウンド タスクが作成されます。 行ストア (B ツリー) クラスター化インデックスのクリーンアップ ロジックは、データベース ログと I/O サブシステムへの負荷を最小限に抑えるため、小さいチャンク (最大 10 K) で期限切れの行を削除します。 クリーンアップ ロジックは必要な B ツリー インデックスを利用しますが、保有期間より古い行の削除の順序は確実には保証できません。 そのため、"*アプリケーションではクリーンアップ順序に依存しないでください*"。
+クリーンアップ プロセスは、履歴テーブルのインデックスのレイアウトに依存します。 *有限の保持期間ポリシーを構成できるのはクラスター化インデックス (B ツリーまたは列ストア) を使っている履歴テーブルだけである* ことに注意する必要があります。 有限の保有期間を持つすべてのテンポラル テーブルの期限切れデータをクリーンアップするために、バックグラウンド タスクが作成されます。 行ストア (B ツリー) クラスター化インデックスのクリーンアップ ロジックは、データベース ログと I/O サブシステムへの負荷を最小限に抑えるため、小さいチャンク (最大 10 K) で期限切れの行を削除します。 クリーンアップ ロジックは必要な B ツリー インデックスを利用しますが、保有期間より古い行の削除の順序は確実には保証できません。 そのため、"*アプリケーションではクリーンアップ順序に依存しないでください*"。
 
 クラスター化列ストアのクリーンアップ タスクは、行グループ全体を一度に削除します (通常、各グループには 100 万行が含まれます)。これは非常に効率的であり、履歴データが速いペースで生成されているときは特にそうです。
 

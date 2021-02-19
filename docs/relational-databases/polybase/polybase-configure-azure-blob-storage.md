@@ -1,21 +1,21 @@
 ---
 title: 外部データへのアクセス:Azure Blob Storage - PolyBase
 description: この記事では、SQL Server インスタンス上の PolyBase と Azure Blob Storage を使用します。 PolyBase は、外部テーブルとデータのインポート/エクスポートのアドホック クエリに適しています。
-ms.date: 12/13/2019
+ms.date: 12/02/2020
 ms.prod: sql
 ms.technology: polybase
 ms.topic: conceptual
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: ''
-monikerRange: '>= sql-server-2016 || =sqlallproducts-allversions'
+monikerRange: '>= sql-server-2016'
 ms.custom: seo-dt-2019, seo-lt-2019
-ms.openlocfilehash: eb9e04b48a6eb6894e3ef8f8227d573443934ab4
-ms.sourcegitcommit: 58158eda0aa0d7f87f9d958ae349a14c0ba8a209
+ms.openlocfilehash: 5363cabdce211884ae9e0f998fcde3056700d7a2
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80215873"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100073656"
 ---
 # <a name="configure-polybase-to-access-external-data-in-azure-blob-storage"></a>Azure Blob Storage 上の外部データにアクセスするように PolyBase を構成する
 
@@ -44,7 +44,7 @@ PolyBase をインストールしていない場合は、「[PolyBase のイン�
    GO
    ```  
 
-2. **services.msc** を使用して SQL Server を再起動する必要があります。 SQL Server を再起動すると、次のサービスが再起動します。  
+2. **services.msc** を使用して SQL Server を再起動します。 SQL Server を再起動すると、次のサービスが再起動します。  
 
    - SQL Server PolyBase Data Movement Service  
    - SQL Server PolyBase エンジン  
@@ -55,7 +55,7 @@ PolyBase をインストールしていない場合は、「[PolyBase のイン�
 
 Hadoop データ ソース内のデータのクエリを実行するには、Transact-SQL クエリで使用する外部テーブルを定義する必要があります。 次の手順では、外部テーブルを構成する方法を説明します。
 
-1. データベースにマスター キーを作成します。 これは、資格情報のシークレットの暗号化に必須です。
+1. データベースにマスター キーを作成します。 資格情報シークレットを暗号化するには、マスター キーが必要です。
 
    ```sql
    CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'S0me!nfo';  
@@ -127,7 +127,7 @@ PolyBase が適している機能には、次の 3 つがあります。
 
 ### <a name="ad-hoc-queries"></a>アドホック クエリ  
 
-次のアドホック クエリでは、Hadoop データを結合します。 時速 35 マイルを越えて走行している顧客を選択し、SQL Server に格納されている構造化された顧客データと Hadoop に格納されている車両センサー データを結合します。  
+次のアドホック クエリでは、Hadoop データを結合します。 時速 35 マイルを越えて走行している顧客を選択し、Hadoop に格納されている車両センサー データを使用して SQL Server に格納されている構造化された顧客データに結合します。  
 
 ```sql  
 SELECT DISTINCT Insured_Customers.FirstName,Insured_Customers.LastName,
@@ -158,7 +158,7 @@ CREATE CLUSTERED COLUMNSTORE INDEX CCI_FastCustomers ON Fast_Customers;
 
 ### <a name="exporting-data"></a>データのエクスポート  
 
-次のクエリは、SQL Server から Azure Blob Storage にデータをエクスポートします。 これを行うには、先に PolyBase のエクスポートを有効にする必要があります。 データをエクスポートする前に、エクスポート先の外部テーブルを作成します。
+次のクエリは、SQL Server から Azure Blob Storage にデータをエクスポートします。 まず、PolyBase エクスポートを有効にします。 次に、データをエクスポートする前に、エクスポート先の外部テーブルを作成します。
 
 ```sql
 -- Enable INSERT into external table  
@@ -186,6 +186,8 @@ SELECT T.* FROM Insured_Customers T1 JOIN CarSensor_Data T2
 ON (T1.CustomerKey = T2.CustomerKey)  
 WHERE T2.YearMeasured = 2009 and T2.Speed > 40;  
 ```  
+
+この方法を使った PolyBase エクスポートでは、複数のファイルが作成される場合があります。
 
 ## <a name="view-polybase-objects-in-ssms"></a>SSMS での PolyBase オブジェクトの表示  
 

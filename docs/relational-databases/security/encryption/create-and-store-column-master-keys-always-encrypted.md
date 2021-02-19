@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: 856e8061-c604-4ce4-b89f-a11876dd6c88
 author: jaszymas
 ms.author: jaszymas
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: c08fb0c0fc82d252e87847562957705e03e30512
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: c9a0dfad97e37325c0990bb8c1786a63a5bf897a
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91867823"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97479363"
 ---
 # <a name="create-and-store-column-master-keys-for-always-encrypted"></a>Always Encrypted の列マスター キーを作成して保存する
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -30,7 +30,7 @@ ms.locfileid: "91867823"
 
 Always Encrypted は、Always Encrypted の列マスター キーを格納するための複数のキー ストアをサポートしています。 サポートされるキー ストアは、使用しているドライバーとバージョンによって異なります。
 
-キー ストアでは 2 つの大きなカテゴリを考慮する必要があります。 *ローカル キー ストア*と、 *集中型キー ストア*です。
+キー ストアでは 2 つの大きなカテゴリを考慮する必要があります。 *ローカル キー ストア* と、 *集中型キー ストア* です。
 
 ###  <a name="local-or-centralized-key-store"></a>ローカル キー ストアと集中型キー ストアとは?
 

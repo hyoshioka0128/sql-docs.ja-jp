@@ -4,22 +4,39 @@ description: 各リリースの SQL Server Migration Assistant (SSMA) for Oracle
 author: nahk-ivanov
 ms.prod: sql
 ms.custom: ''
-ms.date: 9/28/2020
+ms.date: 12/17/2020
 ms.reviewer: ''
 ms.technology: ssma
 ms.topic: conceptual
 ms.assetid: f305ebb6-7393-4a43-abb3-6332b739d690
 ms.author: alexiva
-ms.openlocfilehash: 23bd7c70522d1d691e4670c43bb7f07b5534c379
-ms.sourcegitcommit: a5398f107599102af7c8cda815d8e5e9a367ce7e
+ms.openlocfilehash: 4dc76c57f7194c1ee96bd091d674b793dad29faa
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92005743"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100081880"
 ---
 # <a name="whats-new-in-ssma-for-oracle-oracletosql"></a>SSMA for Oracle の新機能 (OracleToSQL)
 
 この記事では、各リリースでの Oracle の変更の SQL Server Migration Assistant (SSMA) を示します。
+
+## <a name="ssma-v816"></a>SSMA v 8.16
+
+SSMA for Oracle の v 8.16 リリースには、次の変更が含まれています。
+
+* Id 列のサポートを追加する
+* レガシパーサーのサポートを削除する
+* データベースから更新されていないオブジェクトの問題を修正します
+
+## <a name="ssma-v815"></a>SSMA v 8.15
+
+SSMA for Oracle の v 8.15 リリースには、いくつかのユーザー補助機能の強化に加えて、次の変更が含まれています。
+
+* `%type`属性と属性の完全な型指定を使用する設定を追加します `%rowtype`
+* 改良評価レポートを最新のブラウザーで動作させる
+* Azure AD 認証にデータベースによって提供される権限を使用する
+* ファイルから読み込まれたステートメントの名前付けを改善する
 
 ## <a name="ssma-v814"></a>SSMA v 8.14
 
@@ -101,7 +118,7 @@ SSMA for Oracle のバージョン8.7 リリースでは、グラフィカルユ
 
 ユーザビリティとパフォーマンスの向上を目的とした一連の修正に加えて、SSMA for Oracle のリリースは、ユーザーが変換されたコードで SSMA 拡張プロパティを省略できるようにする設定を追加することによって強化されています。
 
-Ssma for Oracle でこの設定を利用するには、[**ツール**] [プロジェクト] [設定] [全般変換] の順に移動し、[その  >  **Project Settings**  >  **General**  >  **Conversion****他**] の [**拡張プロパティを省略**する] 設定の値を **[はい]** に更新します。
+Ssma for Oracle でこの設定を利用するには、[**ツール**] [プロジェクト] [設定] [全般変換] の順に移動し、[その  >    >    >  **他**] の [**拡張プロパティを省略** する] 設定の値を **[はい]** に更新します。
 
 ![拡張プロパティの設定を省略する](../oracle/media/ssma-omit-extended-properties.png)
 
@@ -234,7 +251,7 @@ SSMA for Oracle のバージョン7.7 リリースには、次の変更が含ま
 * SSMA for Oracle は、品質と変換のメトリックを向上させる対象の修正によって強化されています。
 * 一般的な要求に基づいて、SSMA for Oracle の32ビットバージョンが返されます。 以前の実装と比較して (v2.0 より前)、インストーラーパッケージは2つありますが、サイドバイサイドでインストールすることはできません。 そのため、使用している接続コンポーネントに基づいて、最適なバージョンを選択する必要があります。 可能であれば、常に64ビットバージョンを使用することをお勧めします。
 * SQL Server 2017 のサポートが、Linux でサポートされている Oracle 拡張パック (新しいリモートインストールオプション) で公式になりました。 テスト担当者とサーバー側のデータ移行機能はサポートされていないため、Linux にインストールされている場合は拡張パックの機能が制限されていることに注意してください。
-* Ssma for Oracle では、具体化されたビューを通常のテーブルとして移行できます ([**プロジェクト設定**の同期] の設定で構成でき  ->  **Synchronization**  ->  ます)。具体化された**ビューのバッキングテーブルを検出**します。
+* Ssma for Oracle では、具体化されたビューを通常のテーブルとして移行できます ([**プロジェクト設定** の同期] の設定で構成でき  ->    ->  ます)。具体化された **ビューのバッキングテーブルを検出** します。
 
 ## <a name="ssma-v76"></a>SSMA v1.0
 

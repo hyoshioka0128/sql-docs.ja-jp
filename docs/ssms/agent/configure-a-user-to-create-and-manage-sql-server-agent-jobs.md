@@ -16,13 +16,13 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 01/19/2017
-monikerRange: = azuresqldb-mi-current || >= sql-server-2016 || = sqlallproducts-allversions
-ms.openlocfilehash: cbe9bfd3727e90b330ea894ba3e2fdc590486a29
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+monikerRange: = azuresqldb-mi-current || >= sql-server-2016
+ms.openlocfilehash: 33a2a8e5eee76214f9d7fdf3cedd8baaf4eeaa8b
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92035675"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97440443"
 ---
 # <a name="configure-a-user-to-create-and-manage-sql-server-agent-jobs"></a>Configure a User to Create and Manage SQL Server Agent Jobs
 
@@ -50,19 +50,19 @@ ms.locfileid: "92035675"
 ## <a name="using-sql-server-management-studio"></a><a name="SSMS"></a>SQL Server Management Studio の使用  
 **SQL ログインまたは msdb ロールを SQL Server エージェント固定データベース ロールに追加するには**  
   
-1.  **オブジェクト エクスプローラー**で、サーバーを展開します。  
+1.  **オブジェクト エクスプローラー** で、サーバーを展開します。  
   
 2.  **[セキュリティ]** を展開し、 **[ログイン]** を展開します。  
   
 3.  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェント固定データベース ロールに追加するログインを右クリックし、 **[プロパティ]** をクリックします。  
   
-4.  **[ログインのプロパティ]** ダイアログ ボックスの **[ユーザー マッピング]** ページで、 **msdb**を含む行を選択します。  
+4.  **[ログインのプロパティ]** ダイアログ ボックスの **[ユーザー マッピング]** ページで、 **msdb** を含む行を選択します。  
   
 5.  **[データベース ロールのメンバーシップ: msdb]** で、該当する [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェント固定データベース ロールのチェック ボックスをオンにします。  
   
 **SQL Server エージェント ジョブ ステップを作成および管理できるようにプロキシ アカウントを構成するには**  
   
-1.  **オブジェクト エクスプローラー**で、サーバーを展開します。  
+1.  **オブジェクト エクスプローラー** で、サーバーを展開します。  
   
 2.  **[SQL Server エージェント]** を展開します。  
   

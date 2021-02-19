@@ -7,13 +7,13 @@ ms.date: 03/05/2020
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
-monikerRange: '>=sql-server-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 4a4f32c73d1fdf0cd47caaa031321eaa0ef52092
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+monikerRange: '>=sql-server-ver15'
+ms.openlocfilehash: ace298ff0e69ef3e3ee964c15d894280d6ef1b99
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956743"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100082391"
 ---
 # <a name="sql-server-2019-on-windows-isolation-changes-for-machine-learning-services"></a>Windows 上の SQL Server 2019:Machine Learning Services の分離の変更
 [!INCLUDE [SQL Server 2019 - Windows only](../../includes/applies-to-version/sqlserver2019-windows-only.md)]
@@ -58,7 +58,7 @@ AppContainers への移行の一環として、AppContainer SID に基づく新�
 
 既定では、外部の Python および R スクリプトには、作業ディレクトリに対する読み取りアクセス許可のみが与えられます。 
 
-ご利用の Python または R スクリプトで他の任意のディレクトリへのアクセス権が必要な場合は、**NT Service\MSSQLLaunchpad** サービス ユーザー アカウントおよびこのディレクトリ上の **ALL APPLICATION PACKAGES** に**読み取りおよび実行**アクセス許可または**書き込み**アクセス許可を付与する必要があります。
+ご利用の Python または R スクリプトで他の任意のディレクトリへのアクセス権が必要な場合は、**NT Service\MSSQLLaunchpad** サービス ユーザー アカウントおよびこのディレクトリ上の **ALL APPLICATION PACKAGES** に **読み取りおよび実行** アクセス許可または **書き込み** アクセス許可を付与する必要があります。
 
 アクセス権を付与するには、次の手順に従います。
 
@@ -77,7 +77,7 @@ AppContainers への移行の一環として、AppContainer SID に基づく新�
 
 ## <a name="implied-authentication"></a>暗黙の認証
 
-以前と同様に、スクリプトまたはコードが、信頼されている認証を使用してデータまたはリソースを取得するために SQL Server に接続する必要がある場合、*暗黙の認証*には追加の構成が必要です。 追加の構成では、複数のワーカー アカウントではなく、単一の SQL Server Launchpad サービス アカウントが唯一のメンバーである **SQLRUserGroup** のためのデータベース ログインを作成する必要があります。 このタスクの詳細については、「[データベース ユーザーとして SQLRUserGroup を追加する](../security/create-a-login-for-sqlrusergroup.md)」を参照してください。
+以前と同様に、スクリプトまたはコードが、信頼されている認証を使用してデータまたはリソースを取得するために SQL Server に接続する必要がある場合、*暗黙の認証* には追加の構成が必要です。 追加の構成では、複数のワーカー アカウントではなく、単一の SQL Server Launchpad サービス アカウントが唯一のメンバーである **SQLRUserGroup** のためのデータベース ログインを作成する必要があります。 このタスクの詳細については、「[データベース ユーザーとして SQLRUserGroup を追加する](../security/create-a-login-for-sqlrusergroup.md)」を参照してください。
 
 
 ## <a name="symbolic-link-created-by-setup"></a>セットアップによって作成されたシンボリック リンク

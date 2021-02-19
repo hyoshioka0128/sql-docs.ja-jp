@@ -10,13 +10,13 @@ ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
 titleSuffix: SQL Server on Linux
-monikerRange: '>=sql-server-2017||>=sql-server-linux-2017||=sqlallproducts-allversions'
-ms.openlocfilehash: 0a11581be84e9e9864c1709242b9897160403468
-ms.sourcegitcommit: 610e3ebe21ac6575850a29641a32f275e71557e3
+monikerRange: '>=sql-server-2017||>=sql-server-linux-2017'
+ms.openlocfilehash: 825fec3eeb0abbfacd4bb5f1311e13b6f99189e6
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91785024"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100346463"
 ---
 # <a name="configure-replication-with-t-sql"></a>T-SQL を使用してレプリケーションを構成する
 
@@ -45,7 +45,7 @@ ms.locfileid: "91785024"
    「[SSMS を使用して SQL Server on Linux を管理する](./sql-server-linux-manage-ssms.md)」を参照してください。
 
    >[!NOTE]
-   >[!INCLUDE[SQL Server 2017](../includes/sssqlv14-md.md)] ([CU18](https://support.microsoft.com/help/4527377)) 以降では、SQL Server on Linux のインスタンス用の SQL Server レプリケーションがサポートされています。
+   >[!INCLUDE[SQL Server 2017](../includes/sssql17-md.md)] ([CU18](https://support.microsoft.com/help/4527377)) 以降では、SQL Server on Linux のインスタンス用の SQL Server レプリケーションがサポートされています。
 
 ## <a name="detailed-steps"></a>詳細な手順
 

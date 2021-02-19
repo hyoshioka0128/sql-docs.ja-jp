@@ -32,13 +32,13 @@ ms.assetid: a9efbbde-ed2b-4929-acc1-261acaaed19d
 author: MightyPen
 ms.author: genemi
 ms.custom: seo-lt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 2e4a307dc619477cdc7006fcbd6060a86133bd8e
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: bc5414ba64ec7a801cf279a4735a2f8e85cd3731
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85751753"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97461733"
 ---
 # <a name="sql-server-xml-bulk-load-object-model-sqlxml-40"></a>SQL Server XML 一括読み込みオブジェクト モデル (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -48,7 +48,7 @@ ms.locfileid: "85751753"
  実行  
  パラメーターとして渡されるスキーマ ファイルとデータ ファイル (またはストリーム) を使用して、データの一括読み込みを行います。  
   
-## <a name="properties"></a>Properties  
+## <a name="properties"></a>プロパティ  
  BulkLoad  
  一括読み込みを実行するかどうかを指定します。 このプロパティは、スキーマのみを生成する場合に便利です (以降の SchemaGen、SGDropTables、SGUseID の各プロパティを参照してください)。一括読み込みは実行されません。 このプロパティはブール値をとります。 このプロパティを TRUE に設定すると、XML 一括読み込みが行われます。 FALSE に設定すると、XML 一括読み込みは行われません。  
   
@@ -60,7 +60,7 @@ ms.locfileid: "85751753"
  このプロパティを TRUE に設定すると、XML 一括読み込みで挿入される値ごとに制約がチェックされ、制約違反があるとエラーが発生します。  
   
 > [!NOTE]  
->  このプロパティを FALSE のままにしておくには、対象テーブルに対する**ALTER TABLE**権限が必要です。 詳細については、「[ALTER TABLE &#40;Transact-SQL&#41;](../../../t-sql/statements/alter-table-transact-sql.md)」を参照してください。  
+>  このプロパティを FALSE のままにしておくには、対象テーブルに対する **ALTER TABLE** 権限が必要です。 詳細については、「[ALTER TABLE &#40;Transact-SQL&#41;](../../../t-sql/statements/alter-table-transact-sql.md)」を参照してください。  
   
  既定値は FALSE です。 FALSE に設定した場合、XML 一括読み込みでは挿入操作中、制約が無視されます。 現在の実装では、マッピング スキーマの主キーと外部キーのリレーションシップの順序でテーブルを定義する必要があります。 つまり、主キーが設定されているテーブルは、外部キーが設定されている対応テーブルよりも前に定義する必要があります。このように定義しない場合、XML 一括読み込みは失敗します。  
   
@@ -87,7 +87,7 @@ ms.locfileid: "85751753"
  TRUE に設定した場合は、挿入操作中、トリガーが通常どおり起動されます。  
   
 > [!NOTE]  
->  このプロパティを FALSE のままにしておくには、対象テーブルに対する**ALTER TABLE**権限が必要です。 詳細については、「[ALTER TABLE &#40;Transact-SQL&#41;](../../../t-sql/statements/alter-table-transact-sql.md)」を参照してください。  
+>  このプロパティを FALSE のままにしておくには、対象テーブルに対する **ALTER TABLE** 権限が必要です。 詳細については、「[ALTER TABLE &#40;Transact-SQL&#41;](../../../t-sql/statements/alter-table-transact-sql.md)」を参照してください。  
   
  ID 配布が実行されている場合は、このオプションは適用されず、トリガーはオンのままになる点に注意してください。 これに該当するのは、親が ID フィールドで、その値が生成時に子に指定されるリレーションシップが定義されており、かつ `KeepIdentity=False` の場合です。  
   
@@ -111,7 +111,7 @@ ms.locfileid: "85751753"
  このプロパティの値は、一括読み込みの対象となるすべての列に適用されます。 既定値は TRUE です。  
   
 > [!NOTE]  
->  このプロパティを TRUE のままにするには、対象テーブルに対する**ALTER TABLE**権限が必要です。 この権限がない場合は、値を FALSE に設定する必要があります。 詳細については、「[ALTER TABLE &#40;Transact-SQL&#41;](../../../t-sql/statements/alter-table-transact-sql.md)」を参照してください。  
+>  このプロパティを TRUE のままにするには、対象テーブルに対する **ALTER TABLE** 権限が必要です。 この権限がない場合は、値を FALSE に設定する必要があります。 詳細については、「[ALTER TABLE &#40;Transact-SQL&#41;](../../../t-sql/statements/alter-table-transact-sql.md)」を参照してください。  
   
  KeepNulls  
  列に対応する属性または子要素が XML ドキュメントに見つからない場合に、その列に使用する値を指定します。 このプロパティはブール値をとります。 このプロパティを TRUE に設定すると、XML 一括読み込みでは列に NULL 値が割り当てられます。 サーバーで列の既定値が設定されている場合でも、その既定値は割り当てられません。 このプロパティの値は、一括読み込みの対象となるすべての列に適用されます。  
@@ -121,7 +121,7 @@ ms.locfileid: "85751753"
  SchemaGen  
  一括読み込み操作の前に、必要なテーブルを作成するかどうかを指定します。 このプロパティはブール値をとります。 このプロパティを TRUE に設定すると、マッピング スキーマで指定されているテーブルが作成されます (データベースは存在している必要があります)。 データベース内に1つ以上のテーブルが既に存在する場合、SGDropTables プロパティは、これらの既存のテーブルを削除して再作成するかどうかを決定します。  
   
- SchemaGen プロパティの既定値は FALSE です。 SchemaGen では、新しく作成されたテーブルに PRIMARY KEY 制約は作成されません。 ただし、SchemaGen では、マッピングスキーマで**sql: relationship**と**sql: キーフィールド**の注釈が一致しているかどうか、およびキーフィールドが1つの列で構成されている場合に、データベースに外部キー制約が作成されます。  
+ SchemaGen プロパティの既定値は FALSE です。 SchemaGen では、新しく作成されたテーブルに PRIMARY KEY 制約は作成されません。 ただし、SchemaGen では、マッピングスキーマで **sql: relationship** と **sql: キーフィールド** の注釈が一致しているかどうか、およびキーフィールドが1つの列で構成されている場合に、データベースに外部キー制約が作成されます。  
   
  SchemaGen プロパティを TRUE に設定すると、XML 一括読み込みでは次のことが行われることに注意してください。  
   
@@ -135,12 +135,12 @@ ms.locfileid: "85751753"
  既定値は FALSE です。  
   
  SGUseID  
- テーブルの作成時に PRIMARY KEY 制約を作成するときに、 **id**型として識別されるマッピングスキーマの属性を使用できるかどうかを指定します。 このプロパティは、SchemaGen プロパティが TRUE に設定されている場合に使用します。 SGUseID が TRUE の場合、SchemaGen ユーティリティは、 **dt: type = "id"** が主キー列として指定されている属性を使用し、テーブルの作成時に適切な primary key 制約を追加します。  
+ テーブルの作成時に PRIMARY KEY 制約を作成するときに、 **id** 型として識別されるマッピングスキーマの属性を使用できるかどうかを指定します。 このプロパティは、SchemaGen プロパティが TRUE に設定されている場合に使用します。 SGUseID が TRUE の場合、SchemaGen ユーティリティは、 **dt: type = "id"** が主キー列として指定されている属性を使用し、テーブルの作成時に適切な primary key 制約を追加します。  
   
  既定値は FALSE です。  
   
  TempFilePath  
- XML 一括読み込みで、読み込んだデータ用の一時ファイルを作成するファイル パスを指定します。 (このプロパティは、Transaction プロパティが TRUE に設定されている場合にのみ役立ちます)。[!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]XML 一括読み込みに使用するアカウントにこのパスへのアクセス権があることを確認する必要があります。 このプロパティを設定しない場合、XML 一括読み込みでは、TEMP 環境変数で指定された場所に一時ファイルが格納されます。  
+ XML 一括読み込みで、読み込んだデータ用の一時ファイルを作成するファイル パスを指定します。 (このプロパティは、Transaction プロパティが TRUE に設定されている場合にのみ役立ちます)。 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] XML 一括読み込みに使用するアカウントにこのパスへのアクセス権があることを確認する必要があります。 このプロパティを設定しない場合、XML 一括読み込みでは、TEMP 環境変数で指定された場所に一時ファイルが格納されます。  
   
  トランザクション  
  一括読み込みをトランザクションとして実行するよう指定します。この場合、一括読み込みが失敗するとロールバックが実行されます。 このプロパティはブール値をとります。 このプロパティを TRUE に設定すると、一括読み込みはトランザクション コンテキストで実行されます。 TempFilePath プロパティは、Transaction が TRUE に設定されている場合にのみ役立ちます。  

@@ -8,13 +8,13 @@ ms.date: 10/09/2020
 ms.topic: reference
 ms.prod: sql
 ms.technology: language-extensions
-monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 3cc4e75f044476579859443b6a7407d01c3e92ea
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15'
+ms.openlocfilehash: 21099123d8065fad63e1526a3377f1904aed87b4
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956863"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100016529"
 ---
 # <a name="extensibility-framework-api-for-sql-server"></a>SQL Server 用の機能拡張フレームワーク API
 [!INCLUDE [SQL Server 2019 and later](../../includes/applies-to-version/sqlserver2019.md)]
@@ -453,12 +453,12 @@ SQLRETURN GetOutputParam(
 インターフェイスのバージョンを取得します。
 この関数からは、拡張機能のインターフェイスのバージョンを表す整数が返されます。 サポートされる値:
 1. バージョン 1 は初期 API バージョンです。 SQL Server 2019 RTM でサポートされています。
-1. バージョン 2 では InstallExternalLibrary と UninstallExternalLibrary API のサポートが追加され、SQL Server 2019 CU3 からサポートされています。                            
+1. バージョン 2 では InstallExternalLibrary と UninstallExternalLibrary API のサポートが追加され、SQL Server 2019 CU3 からサポートされています。                            
 
 ### <a name="syntax"></a>構文
 
 ```cpp
-SQLUSMALLINT GetInterfaceVersion();
+SQLUSMALLINT GetInterfaceVersion();
 ```
 
 ## <a name="cleanupsession"></a>CleanupSession

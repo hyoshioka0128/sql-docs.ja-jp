@@ -7,21 +7,21 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
 - keywords [SQL Server], control-of-flow language
 - control-of-flow language [SQL Server], keywords listed
 ms.assetid: 1115a779-484a-4f32-bcd2-d8f0675945b7
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 0229be825cfb465c12fd5e19f18d83517554c57b
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: f22976606649a6495dff437d3829bff999ee8ced
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88445488"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99208767"
 ---
 # <a name="control-of-flow"></a>フロー制御言語
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

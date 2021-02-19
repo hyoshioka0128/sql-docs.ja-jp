@@ -16,15 +16,15 @@ helpviewer_keywords:
 - errors [SQL Server], Setup
 - logs [SQL Server], Setup
 ms.assetid: 9d77af64-9084-4375-908a-d90f99535062
-author: MashaMSFT
-ms.author: mathoma
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 68efda5b93663c2980e10f49c9b8592d08ee02d6
-ms.sourcegitcommit: 2f868a77903c1f1c4cecf4ea1c181deee12d5b15
+author: cawrites
+ms.author: chadam
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: 86e9ebb91c2be1c39652d939ebea3a7574ec0c6c
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91670228"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100353801"
 ---
 # <a name="view-and-read-sql-server-setup-log-files"></a>SQL Server セットアップ ログ ファイルの表示と読み取り
 
@@ -44,7 +44,7 @@ SQL Server のセットアップでは、既定で、 **\%programfiles%\Microsof
    | **無人インストールの場合** | %temp%\sqlsetup*.log |
 
 
- ![setup-bootstrap-example.png](media/view-and-read-sql-server-setup-log-files/setup-bootstrap-example.png)
+ ![Setup Bootstrap フォルダーの ConfigurationFiles.ini ファイルの検索場所を示すスクリーンショット。](media/view-and-read-sql-server-setup-log-files/setup-bootstrap-example.png)
 
  >[!NOTE]
  > パス *nnn* の数字は、インストールされる SQL のバージョンに相当します。 上記の画像では、SQL 2017 がインストールされ、フォルダーは 140 です。 SQL 2016 の場合、フォルダーは 130 になり、SQL 2014 の場合、フォルダーは 120 になります。
@@ -144,4 +144,4 @@ SystemConfigurationCheck_Report.htm は %programfiles%\\[!INCLUDE[msCoName](../.
 [!INCLUDE[get-help-options](../../includes/paragraph-content/get-help-options.md)]
   
 ## <a name="see-also"></a>関連項目  
- [SQL Server 2017 のインストール](../../database-engine/install-windows/install-sql-server.md)
+ [SQL Server 2019 のインストール](../../database-engine/install-windows/install-sql-server.md)

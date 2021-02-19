@@ -13,14 +13,14 @@ ms.assetid: 7db79165-8bcc-4be6-8d40-12d44deda79f
 author: pmasl
 ms.author: pelopes
 ms.reviewer: mikeray
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
 ms.custom: seo-lt-2019
-ms.openlocfilehash: c916bcaa0ff0a3fb294038df30e65e7f53f367aa
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+ms.openlocfilehash: 518d5479b1b07c13ab0613aaf2dc68f1431cb16b
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91867457"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97460055"
 ---
 # <a name="find-property-set-guids-and-property-integer-ids-for-search-properties"></a>検索プロパティのプロパティ セット GUID およびプロパティ整数 ID の取得
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -70,7 +70,7 @@ ms.locfileid: "91867457"
 -   32 ビット バージョンの場合は、 `C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin`にあります。  
   
 ##  <a name="finding-values-for-a-search-property-from-a-windows-property-description"></a><a name="propdesc"></a> Windows プロパティの説明からの検索プロパティの値の入手  
- よく知られた Windows 検索プロパティについては、プロパティの説明 ( **propertyDescription** ) の **formatID** 属性および**propID**属性から必要な情報を入手できます。  
+ よく知られた Windows 検索プロパティについては、プロパティの説明 ( **propertyDescription** ) の **formatID** 属性および **propID** 属性から必要な情報を入手できます。  
   
  次の例では、一般的なマイクロソフト プロパティの関連する部分 (この例では、 `System.Author` ) を示します。 `formatID` 属性はプロパティ セット GUID の `F29F85E0-4FF9-1068-AB91-08002B27B3D9`を指定し、 `propID` 属性は、プロパティの整数 ID `4.` を指定します。 `name` 属性は、Windows の正規のプロパティ名である `System.Author`を示すことに注意してください (この例では、関係のない列プロパティ説明部分を省略しています)。  
   

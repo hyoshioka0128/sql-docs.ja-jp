@@ -16,19 +16,19 @@ helpviewer_keywords:
 - lightweight query profiling
 - lightweight profiling
 ms.assetid: 07f8f594-75b4-4591-8c29-d63811d7753e
-author: julieMSFT
-ms.author: jrasnick
-ms.openlocfilehash: fe6467cbe5cc915b876b9efa6b8afd9ff59e2bbd
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 588b51b156681750b071915decb4960f9238c407
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91890783"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99236466"
 ---
 # <a name="live-query-statistics"></a>[ライブ クエリ統計]
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
-[!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] では、アクティブ クエリのライブ実行プランを表示できます。 このライブ クエリ プランでは、[クエリ プラン演算子](../../relational-databases/showplan-logical-and-physical-operators-reference.md)間の制御フローとして、クエリ実行プロセスをリアルタイムで洞察できます。 ライブ クエリ プランには、全体的なクエリ進捗状況と演算子レベルのランタイム実行統計が表示されます。生成された行の数、経過時間、演算子の進捗状況などです。このデータはクエリの完了を待つことなくリアルタイムで利用できるため、これらの実行統計はクエリ パフォーマンス問題のデバッグで非常に役立ちます この機能は [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] 以降のバージョンで使用できますが、[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] でも動作します。  
+[!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] では、アクティブ クエリのライブ実行プランを表示できます。 このライブ クエリ プランでは、[クエリ プラン演算子](../../relational-databases/showplan-logical-and-physical-operators-reference.md)間の制御フローとして、クエリ実行プロセスをリアルタイムで洞察できます。 ライブ クエリ プランには、全体的なクエリ進捗状況と演算子レベルのランタイム実行統計が表示されます。生成された行の数、経過時間、演算子の進捗状況などです。このデータはクエリの完了を待つことなくリアルタイムで利用できるため、これらの実行統計はクエリ パフォーマンス問題のデバッグで非常に役立ちます この機能は [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] 以降のバージョンで使用できますが、[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] でも動作します。  
 
 > [!NOTE]
 > 内部的には、ライブ クエリ統計では、[sys.dm_exec_query_profiles](../../relational-databases/system-dynamic-management-views/sys-dm-exec-query-profiles-transact-sql.md) DMV を利用します。
@@ -65,7 +65,7 @@ ms.locfileid: "91890783"
 ## <a name="permissions"></a>アクセス許可  
 **[ライブ クエリ統計]** 結果ページに値を設定するにはデータベース レベルの `SHOWPLAN` アクセス許可が必要です。クエリを実行するには必要なすべてのアクセス許可が必要です。
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] でライブ統計を表示するには、サーバーレベルの `VIEW SERVER STATE` アクセス許可が必要です。  
-[!INCLUDE[ssSDS](../../includes/sssds-md.md)] の Premium 階層でライブ統計を表示するには、データベースの `VIEW DATABASE STATE` アクセス許可が必要です。 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] の Standard 階層と Basic 階層でライブ統計を表示するには、**サーバー管理者**または **Azure Active Directory 管理者**のアカウントが必要です。
+[!INCLUDE[ssSDS](../../includes/sssds-md.md)] の Premium 階層でライブ統計を表示するには、データベースの `VIEW DATABASE STATE` アクセス許可が必要です。 [!INCLUDE[ssSDS](../../includes/sssds-md.md)] の Standard 階層と Basic 階層でライブ統計を表示するには、**サーバー管理者** または **Azure Active Directory 管理者** のアカウントが必要です。
   
 ## <a name="see-also"></a>参照  
  [実行プラン](../../relational-databases/performance/execution-plans.md)    

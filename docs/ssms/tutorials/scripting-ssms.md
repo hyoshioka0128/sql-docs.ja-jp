@@ -6,10 +6,6 @@ ms.technology: ssms
 ms.prod_service: sql-tools
 ms.topic: tutorial
 keywords: SQL Server, SSMS, SQL Server Management Studio, スクリプト, スクリプト作成
-author: markingmyname
-ms.author: maghan
-ms.reviewer: sstein
-ms.date: 03/13/2018
 helpviewer_keywords:
 - projects [SQL Server Management Studio], tutorials
 - source controls [SQL Server Management Studio], tutorials
@@ -19,12 +15,16 @@ helpviewer_keywords:
 - solutions [SQL Server Management Studio], tutorials
 - SQL Server Management Studio [SQL Server], tutorials
 - scripts [SQL Server], SQL Server Management Studio
-ms.openlocfilehash: a2fe23c032c9e11d31586b25064c2ede386fa3e5
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+author: markingmyname
+ms.author: maghan
+ms.reviewer: sstein
+ms.date: 03/13/2018
+ms.openlocfilehash: 92f2d7c06116ef9c97fbf03c7849dd8ffef9dbf6
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92038963"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100075873"
 ---
 # <a name="script-objects-in-sql-server-management-studio"></a>SQL Server Management Studio でオブジェクトのスクリプトを作成する
 
@@ -37,7 +37,7 @@ ms.locfileid: "92038963"
 > * ストアド プロシージャ
 > * 拡張イベント
 
-**オブジェクト エクスプローラー**内のオブジェクトをスクリプトするには、そのオブジェクトを右クリックし、 **[Script Object As]\(オブジェクトをスクリプト化\)** オプションを選択します。 このチュートリアルでは、そのプロセスについて説明します。
+**オブジェクト エクスプローラー** 内のオブジェクトをスクリプトするには、そのオブジェクトを右クリックし、 **[Script Object As]\(オブジェクトをスクリプト化\)** オプションを選択します。 このチュートリアルでは、そのプロセスについて説明します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -195,7 +195,7 @@ SSMS の GUI を使用してタスクを完了するたびに、タスクに対�
 
 5. ストアド プロシージャ **dbo.uspGetBillOfMaterials** を右クリックし、 >  **[ストアド プロシージャをスクリプト化]**  >  **[削除および作成]**  >  **[新しいクエリ エディター ウィンドウ]** の順に選択します。
 
-    ![ストアド プロシージャのスクリプトを作成する](media/scripting-ssms/scriptstoredprocedure.PNG)
+    ![ストアド プロシージャのスクリプトを作成する](media/scripting-ssms/script-stored-procedure.png)
 
 ## <a name="script-extended-events"></a>拡張イベントのスクリプトを作成する
 
@@ -215,7 +215,7 @@ SSMS の GUI を使用してタスクを完了するたびに、タスクに対�
 
 6. **[新しいクエリ エディター ウィンドウ]** でセッションの新しい名前を *system_health* から *system_health2* に変更します。 **[実行]** を選択してクエリを実行します。
 
-7. **オブジェクト エクスプローラー**で **[セッション]** を右クリックします。 **[更新]** を選択すると、新しい拡張イベント セッションが表示されます。 セッションの横にある緑色のアイコンは、セッションが実行中であることを示します。 赤色のアイコンは、セッションが停止していることを示します。
+7. **オブジェクト エクスプローラー** で **[セッション]** を右クリックします。 **[更新]** を選択すると、新しい拡張イベント セッションが表示されます。 セッションの横にある緑色のアイコンは、セッションが実行中であることを示します。 赤色のアイコンは、セッションが停止していることを示します。
 
     ![新しい拡張イベント セッション](media/scripting-ssms/newxevent.png)
 
@@ -226,7 +226,7 @@ SSMS の GUI を使用してタスクを完了するたびに、タスクに対�
 
 SSMS に慣れ親しむには、実践的な経験を積むのが最も効果的です。 以下の "*チュートリアル*" と "*操作方法*" に関する記事は、SSMS 内で使用できるさまざまな機能を使用するのに役立ちます。 以下の記事では、SSMS のコンポーネントを管理する方法と、頻繁に使用する機能にアクセスする方法が説明されています。
 
-* [インスタンスに接続してクエリを実行する](../quickstarts/connect-query-sql-server.md)
+* [インスタンスに接続してクエリを実行する](../quickstarts/ssms-connect-query-sql-server.md)
 * [SSMS でテンプレートを使用する](../template/templates-ssms.md)
 * [SSMS を構成する](ssms-configuration.md)
 * [SSMS を使用するための追加のヒントとテクニック](ssms-tricks.md)

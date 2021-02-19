@@ -9,18 +9,18 @@ ms.date: 04/17/2018
 ms.author: murshedz
 ms.reviewer: martinle
 ms.custom: seo-dt-2019
-ms.openlocfilehash: c4cdbd3a640e49bc9a43e30d4bf98cff7bf71194
-ms.sourcegitcommit: 67befbf7435f256e766bbce6c1de57799e1db9ad
+ms.openlocfilehash: d8f4145b85d505ccdf1d0fe26b22f2cdf02d9e90
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92523827"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641495"
 ---
 # <a name="install-sql-server-operations-manager-scom-management-packs-for-analytics-platform-system"></a>Analytics Platform System 用 SQL Server Operations Manager (SCOM) 管理パックをインストールする
 SQL Server PDW 用の System Center Operations Manager (SCOM) 管理パックをダウンロードしてインストールするには、次の手順に従います。 SCOM から SQL Server PDW を監視するには、管理パックが必要です。  
   
 ## <a name="before-you-begin"></a><a name="BeforeBegin"></a>はじめに  
-**必要条件**  
+**前提条件**  
   
 System Center Operations Manager をインストールして実行する必要があります。 SQL Server PDW 2012 では System Center Operations Manager 2007 R2、System Center Operations Manager 2012、または System Center Operations Manager 2012 Service Pack 1 が必要です。  
   
@@ -29,7 +29,7 @@ APS PDW ワークロードの場合は、 [Microsoft Analytics Platform System �
   
 アプライアンス管理については、 [SQL Server アプライアンスベース管理パック](/previous-versions/system-center/packs/gg602398(v=technet.10))をダウンロードしてください。  
   
-APS を使用していない PDW の旧バージョンについては、[Microsoft SQL Server 2012 並列データウェアハウスアプライアンス用の System Center 監視パック](./download-and-apply-microsoft-updates.md?view=aps-pdw-2016-au7)をダウンロードしてください。  
+APS を使用していない PDW の旧バージョンについては、[Microsoft SQL Server 2012 並列データウェアハウスアプライアンス用の System Center 監視パック](./download-and-apply-microsoft-updates.md?view=aps-pdw-2016-au7&preserve-view=true)をダウンロードしてください。  
   
 <!-- MISSING LINKS - For the HDInsight workload, download the [System Center Management Pack for HDInsight](https://go.microsoft.com/fwlink/?LinkId=390208).  -->
   

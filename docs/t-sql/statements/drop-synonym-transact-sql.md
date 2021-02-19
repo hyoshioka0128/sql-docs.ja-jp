@@ -1,13 +1,13 @@
 ---
 description: DROP SYNONYM (Transact-SQL)
-title: DROP SYNONYM (Transact-SQL) | Microsoft Docs
+title: DROP SYNONYM (Transact-SQL)
 ms.custom: ''
 ms.date: 07/26/2017
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DROP SYNONYM
 - DROP_SYNONYM_TSQL
@@ -19,15 +19,14 @@ helpviewer_keywords:
 - removing synonyms
 - DROP SYNONYM statement
 - dropping synonyms
-ms.assetid: 23578932-e4de-4c39-a5a0-ce45139c4269
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: af16b7921358a12b87e9ab2ddbd6acaefee47d13
-ms.sourcegitcommit: 197a6ffb643f93592edf9e90b04810a18be61133
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: a156c4c5bda031b079df53fa3f3796d271b62a1b
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91379664"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99236210"
 ---
 # <a name="drop-synonym-transact-sql"></a>DROP SYNONYM (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -46,7 +45,7 @@ DROP SYNONYM [ IF EXISTS ] [ schema. ] synonym_name
 
 ## <a name="arguments"></a>引数
  *IF EXISTS*  
-**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から[現在のバージョン](https://go.microsoft.com/fwlink/p/?LinkId=299658)まで)
+**適用対象**: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] から [現在のバージョン](/troubleshoot/sql/general/determine-version-edition-update-level)まで)。
   
  条件付きでは既に存在する場合にのみ、シノニムを削除します。  
   
@@ -90,5 +89,3 @@ GO
 ## <a name="see-also"></a>参照  
  [CREATE SYNONYM &#40;Transact-SQL&#41;](../../t-sql/statements/create-synonym-transact-sql.md)   
  [EVENTDATA &#40;Transact-SQL&#41;](../../t-sql/functions/eventdata-transact-sql.md)  
-  
-  

@@ -17,13 +17,13 @@ helpviewer_keywords:
 ms.assetid: c900e30d-2fd3-4d5f-98ee-7832f37e79d1
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 65e1196ec8ea240f2e8a9210657a60f967e4b7c5
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: d29cae171cad8f0da3c53a708112167a0a17f749
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88490462"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97463063"
 ---
 # <a name="sequence-numbers"></a>シーケンス番号
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "88490462"
   
  行の挿入時に生成される ID 列値とは異なり、アプリケーションは、 [NEXT VALUE FOR](../../t-sql/functions/next-value-for-transact-sql.md) 関数を呼び出すことにより、行を挿入する前に次のシーケンス番号を取得できます。 番号がテーブルに挿入されない場合でも、シーケンス番号は、NEXT VALUE FOR が呼び出されたときに割り当てられます。 NEXT VALUE FOR 関数は、テーブル定義内の列の既定値として使用できます。 一度に複数のシーケンス番号の範囲を取得するには、 [sp_sequence_get_range](../../relational-databases/system-stored-procedures/sp-sequence-get-range-transact-sql.md) を使用します。  
   
- シーケンスは、任意の整数データ型として定義できます。 シーケンスのデータ型を指定しなかった場合、既定で **bigint**型が使用されます。  
+ シーケンスは、任意の整数データ型として定義できます。 シーケンスのデータ型を指定しなかった場合、既定で **bigint** 型が使用されます。  
   
 ## <a name="using-sequences"></a>シーケンスの使用  
  シーケンスは、次のシナリオで ID 列の代わりに使用します。  

@@ -7,21 +7,21 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - error object [ADO], members
 ms.assetid: cd69e4b7-82bf-4ffc-bc53-c535ba20161f
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 1a37fb2ed117a5d5db71061d323bb16c590984e7
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 12e55b2f2847d4ae90967b01d8e394ea0e31a527
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88973695"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100034212"
 ---
 # <a name="error-object-properties-methods-and-events"></a>Error オブジェクトのプロパティ、メソッド、およびイベント
-## <a name="properties"></a>プロパティ  
+## <a name="properties"></a>Properties  
  [Description プロパティ](../../../ado/reference/ado-api/description-property.md)  
   
  [HelpContext、HelpFile プロパティ](../../../ado/reference/ado-api/helpcontext-helpfile-properties.md)  

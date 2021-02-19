@@ -9,13 +9,13 @@ ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2017||=azuresqldb-current||>=sql-server-linux-2017||=azuresqldb-mi-current||=azure-sqldw-latest||=sqlallproducts-allversions'
-ms.openlocfilehash: 9d8f65baaec3038431455712d64803459a96e45c
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+monikerRange: '>=sql-server-2017||=azuresqldb-current||>=sql-server-linux-2017||=azuresqldb-mi-current||=azure-sqldw-latest'
+ms.openlocfilehash: 842daa6574dc660346733e7b74b539eba5c7f7b0
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956963"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97471033"
 ---
 # <a name="native-scoring-using-the-predict-t-sql-function-with-sql-machine-learning"></a>SQL 機械学習で PREDICT T-SQL 関数を使用したネイティブ スコアリング
 
@@ -60,13 +60,13 @@ ms.locfileid: "91956963"
 | Azure SQL Edge | はい | いいえ |
 | Azure Synapse Analytics | はい | いいえ |
 
-::: moniker range="=azuresqldb-mi-current||=azure-sqldw-latest||=sqlallproducts-allversions"
+::: moniker range="=azuresqldb-mi-current||=azure-sqldw-latest"
 ### <a name="onnx-models"></a>ONNX モデル
 
 このモデルは、[Open Neural Network Exchange (ONNX)](https://onnx.ai/get-started.html) モデル形式である必要があります。
 ::: moniker-end
 
-::: moniker range=">=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current||=azuresqldb-current||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current||=azuresqldb-current"
 ### <a name="revoscale-models"></a>RevoScale モデル
 
 モデルは、[RevoScaleR](../r/ref-r-revoscaler.md) または [revoscalepy](../python/ref-py-revoscalepy.md) パッケージを使用し、下に一覧表示されているサポートされる **rx** アルゴリズムのいずれかを使用して、事前にトレーニングされている必要があります。
@@ -106,7 +106,7 @@ MicrosoftML または microsoftml からのアルゴリズムを使用する必�
 ::: moniker-end
 
 ## <a name="examples"></a>例
-::: moniker range="=azuresqldb-mi-current||=azure-sqldw-latest||=sqlallproducts-allversions"
+::: moniker range="=azuresqldb-mi-current||=azure-sqldw-latest"
 ### <a name="predict-with-an-onnx-model"></a>ONNX モデルを使用した PREDICT
 
 この例では、ネイティブ スコアリングに `dbo.models` テーブルに格納されている ONNX モデルを使用する方法を示しています。
@@ -145,7 +145,7 @@ FROM PREDICT(MODEL = @model, DATA = predict_input, RUNTIME=ONNX) WITH (variable1
 > **PREDICT** によって返される列と値は、モデルの種類によって異なる場合があるため、**WITH** 句を使用して、返されるデータのスキーマを定義する必要があります。
 ::: moniker-end
 
-::: moniker range=">=sql-server-2017||=azuresqldb-mi-current||>=sql-server-linux-2017||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2017||=azuresqldb-mi-current||>=sql-server-linux-2017"
 ### <a name="predict-with-revoscale-model"></a>RevoScale モデルによる PREDICT
 
 この例では、R で **RevoScaleR** を使用してモデルを作成してから、T-SQL からリアルタイムの予測関数を呼び出しています。
@@ -169,7 +169,7 @@ CREATE TABLE iris_rx_data (
 GO
 ```
 
-次のステートメントを使用して、データ テーブルに**アヤメ** データセットのデータを設定します。
+次のステートメントを使用して、データ テーブルに **アヤメ** データセットのデータを設定します。
 
 ```sql
 INSERT INTO iris_rx_data ("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width" , "Species")
@@ -221,7 +221,7 @@ FROM ml_models;
 
 #### <a name="step-2-run-predict-on-the-model"></a>手順 2. モデルで PREDICT を実行する
 
-次の単純な PREDICT ステートメントでは、**ネイティブ スコアリング**関数を使用して、デシジョン ツリー モデルから分類を取得します。 指定した属性に基づいてアヤメの種類、花弁の長さと幅が予測されます。
+次の単純な PREDICT ステートメントでは、**ネイティブ スコアリング** 関数を使用して、デシジョン ツリー モデルから分類を取得します。 指定した属性に基づいてアヤメの種類、花弁の長さと幅が予測されます。
 
 ```sql
 DECLARE @model varbinary(max) = (

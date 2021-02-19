@@ -7,19 +7,19 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 helpviewer_keywords:
 - Connect property [ADO]
 ms.assetid: dbad5e77-b213-4eb8-aecf-d60f203fdb59
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 5387745648b4aafa1db9964a8b82d8aa403e8473
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: 288efb8a2af9896e731bd0248967d1aaadcb2992
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91722513"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100049502"
 ---
 # <a name="connect-property-rds"></a>Connect プロパティ (RDS)
 クエリおよび更新操作の実行元のデータベース名を示します。  

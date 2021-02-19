@@ -18,19 +18,19 @@ helpviewer_keywords:
 - restoring transaction logs [SQL Server], restoring backups
 - transaction log restores [SQL Server], SQL Server Management Studio
 ms.assetid: 1de2b888-78a6-4fb2-a647-ba4bf097caf3
-author: MikeRayMSFT
-ms.author: mikeray
-ms.openlocfilehash: ffd2fd146d585b49579910d5876ba5268e4237f7
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: f4f4e5448a01ce9e4d644aec6dd50eaea2c31297
+ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85717952"
+ms.lasthandoff: 02/13/2021
+ms.locfileid: "100346774"
 ---
 # <a name="restore-a-transaction-log-backup-sql-server"></a>トランザクション ログ バックアップの復元 (SQL Server)
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  このトピックでは、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] で [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] または [!INCLUDE[tsql](../../includes/tsql-md.md)]を使用して、トランザクション ログ バックアップを復元する方法について説明します。  
+  このトピックでは、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] で [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] または [!INCLUDE[tsql](../../includes/tsql-md.md)]を使用して、トランザクション ログ バックアップを復元する方法について説明します。  
   
  **このトピックの内容**  
   
@@ -163,7 +163,7 @@ ms.locfileid: "85717952"
   
     -   **[復元するデータベースへのアクセスを制限する (WITH RESTRICTED_USER)]**  
   
-         復元するデータベースの使用を、 **db_owner**、 **dbcreator**、または **sysadmin**のメンバーだけに制限します。  
+         復元するデータベースの使用を、 **db_owner**、 **dbcreator**、または **sysadmin** のメンバーだけに制限します。  
   
          このオプションをチェックすることは、 **RESTORE** ステートメントで [!INCLUDE[tsql](../../includes/tsql-md.md)]**RESTRICTED_USER** オプションを使用することと同じです。  
   
@@ -255,7 +255,7 @@ GO
 RESTORE LOG AdventureWorks2012  
    FROM AdventureWorks2012_log  
    WITH FILE = 1,  
-   WITH NORECOVERY;  
+   NORECOVERY;  
 GO  
 RESTORE DATABASE AdventureWorks2012  
    WITH RECOVERY;  
@@ -278,12 +278,12 @@ GO
 RESTORE LOG AdventureWorks2012  
    FROM AdventureWorks2012_log  
    WITH FILE = 2,  
-   WITH NORECOVERY;  
+   NORECOVERY;  
 GO  
 RESTORE LOG AdventureWorks2012  
    FROM AdventureWorks2012_log  
    WITH FILE = 3,  
-   WITH NORECOVERY;  
+   NORECOVERY;  
 GO  
 RESTORE DATABASE AdventureWorks2012  
    WITH RECOVERY;  

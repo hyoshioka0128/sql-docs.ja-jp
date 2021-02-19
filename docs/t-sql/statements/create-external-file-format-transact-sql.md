@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-data-warehouse, pdw, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - CREATE EXTERNAL FILE FORMAT
 - CREATE_EXTERNAL_FILE_FORMAT
@@ -18,15 +18,15 @@ helpviewer_keywords:
 - External, file format
 - PolyBase, external file format
 ms.assetid: abd5ec8c-1a0e-4d38-a374-8ce3401bc60c
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 4f979bc7b5dd8a3a3e67c499480003c45a8c4ebd
-ms.sourcegitcommit: ae474d21db4f724523e419622ce79f611e956a22
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 0f8297477ee7c5671ea78f5de5776bcee89a2fb7
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92255779"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100350849"
 ---
 # <a name="create-external-file-format-transact-sql"></a>CREATE EXTERNAL FILE FORMAT (Transact-SQL)
 [!INCLUDE [sqlserver2016-asdbmi-asa-pdw](../../includes/applies-to-version/sqlserver2016-asdbmi-asa-pdw.md)]
@@ -37,7 +37,7 @@ Hadoop、Azure Blob Storage、Azure Data Lake Store に格納される外部デ�
   
 - 区切りテキスト  
   
-- Hive RCFile  
+- Hive RCFile - Azure Synapse Analytics には適用されません。
   
 - Hive ORC
   
@@ -69,7 +69,7 @@ WITH (
 {  
     FIELD_TERMINATOR = field_terminator  
     | STRING_DELIMITER = string_delimiter 
-    | First_Row = integer -- ONLY AVAILABLE SQL DW
+    | First_Row = integer -- ONLY AVAILABLE FOR AZURE SYNAPSE ANALYTICS
     | DATE_FORMAT = datetime_format  
     | USE_TYPE_DEFAULT = { TRUE | FALSE } 
     | Encoding = {'UTF8' | 'UTF16'} 
@@ -257,7 +257,7 @@ PolyBase の読み込みの間にすべてのファイルで最初に読み取�
   
 テーブルに関する注意事項:  
   
--   年、月、日は、さまざまな形式と順序で指定できます。 表では、 **ymd** 形式のみを示します。 月は、1 または 2 桁の数字、または 3 つの文字で指定できます。 日は、1 または 2 桁の数字で指定できます。 年は、2 または 4 桁の数字で指定できます。
+-   年、月、日は、さまざまな形式と順序で指定できます。 表では、**ymd** 形式のみを示します。 月は、1 または 2 桁の数字、または 3 つの文字で指定できます。 日は、1 または 2 桁の数字で指定できます。 年は、2 または 4 桁の数字で指定できます。
   
 -   ミリ秒 (fffffff) は、必須ではありません。
   
@@ -413,7 +413,7 @@ WITH (
     DATA_COMPRESSION = 'org.apache.hadoop.io.compress.SnappyCodec'  
 );  
 ```  
-### <a name="e-create-a-delimited-text-file-skipping-header-row-azure-sql-dw-only"></a>E. 区切りテキスト ファイルのスキップ ヘッダー行を作成する (Azure SQL DW のみ)
+### <a name="e-create-a-delimited-text-file-skipping-header-row-azure-synapse-analytics-only"></a>E. 区切りテキスト ファイルのスキップ ヘッダー行を作成する (Azure Synapse Analytics のみ)
  この例では、ヘッダー行が 1 つの CSV ファイルの外部ファイル形式を作成します。 
   
 ```sql  

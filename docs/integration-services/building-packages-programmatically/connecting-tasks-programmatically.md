@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 23668e88-cef4-4009-a9cf-38e607eab7a2
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 8fbe6beb6556db9e5dfddc6f63e6922a34ae6fe5
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 554d6550e73b93e94d192cf66b1209aaa1b27292
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88457785"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100355067"
 ---
 # <a name="connecting-tasks-programmatically"></a>プログラムによるタスクの接続
 

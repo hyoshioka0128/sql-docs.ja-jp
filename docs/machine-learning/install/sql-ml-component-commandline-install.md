@@ -3,18 +3,18 @@ title: コマンド プロンプトからのインストール
 description: SQL Server コマンド ライン セットアップを実行して、Python と R を備えた Machine Learning Services を SQL Server データベース エンジン インスタンスに追加します。
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 10/12/2020
+ms.date: 01/07/2021
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: cd9e1e261790c301ceac8198a76fbe2906c8ccf6
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 9b0bf3444ab09cbbbb4aa8eca225dfa9964898c3
+ms.sourcegitcommit: d681796e8c012eca2d9629d3b816749e9f50f868
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956768"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98005327"
 ---
 # <a name="install-sql-server-machine-learning-services-with-r-and-python-from-the-command-line"></a>R と Python を備えた SQL Server Machine Learning Services をコマンド ラインからインストールする
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -37,11 +37,11 @@ ms.locfileid: "91956768"
 
 ## <a name="command-line-arguments"></a>コマンド ライン引数
 
-ライセンス条項の契約と同様に、FEATURES 引数は必須です。 
+ライセンス条項の契約と同様に、 **/FEATURES** 引数は必須です。 
 
-コマンド プロンプトを使用してインストールする場合、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、/Q パラメーターを使用した非表示モード、または /QS パラメーターを使用した簡易非表示モードがサポートされます。 /QS スイッチでは、進捗状況のみが表示され、入力はできません。また、該当する場合でもエラー メッセージは表示されません。 /QS パラメーターは、/Action=install を指定した場合にのみサポートされます。
+コマンド プロンプトを使用してインストールするときは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] により、 **/Q** パラメーターを使用した非表示モード、または **/QS** パラメーターを使用した簡易非表示モードがサポートされます。 **/QS** スイッチを使用すると、進捗状況のみが表示され、入力はできません。また、該当する場合でもエラー メッセージは表示されません。 **/QS** パラメーターは、 **/Action=install** を指定した場合にのみサポートされます。
 
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 | 引数 | 説明 |
 |-----------|-------------|
 | /FEATURES = AdvancedAnalytics | In-Database バージョンをインストールします:SQL Server R Services (In-Database)。  |
@@ -52,7 +52,7 @@ ms.locfileid: "91956768"
 | /MRCACHEDIRECTORY | オフライン セットアップでは、R コンポーネントの CAB ファイルを含んだフォルダーを設定します。 |
 ::: moniker-end
 
-::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2017"
 | 引数 | 説明 |
 |-----------|-------------|
 | /FEATURES = AdvancedAnalytics | In-Database バージョンをインストールします:SQL Server Machine Learning Services (In-Database)。  |
@@ -67,13 +67,13 @@ ms.locfileid: "91956768"
 | /MPYCACHEDIRECTORY | 将来利用するために予約されています。 インターネットに接続されていないコンピューターへのインストール用に、%TEMP% を使って Python コンポーネントの CAB ファイルを格納します。 |
 ::: moniker-end
 
-::: moniker range=">=sql-server-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15"
 | 引数 | 説明 |
 |-----------|-------------|
 | /FEATURES = AdvancedAnalytics | In-Database バージョンをインストールします:SQL Server Machine Learning Services (In-Database)。  |
 | /FEATURES = SQL_INST_MR | AdvancedAnalytics と組み合わせて使用します。 Microsoft R Open や R の専用パッケージなど、(In-Database) R 機能をインストールします。 |
 | /FEATURES = SQL_INST_MPY | AdvancedAnalytics と組み合わせて使用します。 Anaconda や Python の専用パッケージなど、(In-Database) Python 機能をインストールします。 |
-| /FEATURES = SQL_INST_MJAVA | AdvancedAnalytics と組み合わせて使用します。 Open JRE など、(In-Database) Java 機能をインストールします。 |
+| /FEATURES = SQL_INST_MJAVA | AdvancedAnalytics と組み合わせて使用します。 Open JRE など、(In-Database) Java 機能をインストールします。 [SQL Server Java 言語拡張](../../language-extensions/install/windows-java.md)に該当します。|
 | /FEATURES = SQL_SHARED_MR | スタンドアロン バージョンの R 機能をインストールします:SQL Server Machine Learning Server (スタンドアロン)。 スタンドアロン サーバーは、データベース エンジンのインスタンスにバインドされない "共有機能" です。|
 | /FEATURES = SQL_SHARED_MPY | スタンドアロン バージョンの Python 機能をインストールします:SQL Server Machine Learning Server (スタンドアロン)。 スタンドアロン サーバーは、データベース エンジンのインスタンスにバインドされない "共有機能" です。|
 | /IACCEPTROPENLICENSETERMS  | オープンソースの R コンポーネントを使用するためのライセンス条項に同意したことを示します。 |
@@ -92,7 +92,7 @@ ms.locfileid: "91956768"
 > [!IMPORTANT]
 > インストール後も、追加の構成手順が 2 つ残っています。 これらのタスクを実行するまで、統合は完了しません。 手順については、[インストール後のタスク](#post-install)に関する記事をご覧ください。
 
-::: moniker range=">=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2017"
 ### <a name="sql-server-machine-learning-services-database-engine-advanced-analytics-with-python-and-r"></a>SQL Server Machine Learning Services: Python および R を使用したデータベース エンジンと高度な分析
 
 データベース エンジンのインスタンスの同時インストール用に、インスタンス名と管理者 (Windows) ログインを指定します。 コア コンポーネントと言語コンポーネントをインストールするための機能に加えて、すべてのライセンス条項への同意も含めます。
@@ -120,7 +120,7 @@ Setup.exe /qs /ACTION=Install /FEATURES=SQLEngine,ADVANCEDANALYTICS,SQL_INST_MPY
 ```
 ::: moniker-end
 
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 ### <a name="sql-server-r-services-database-engine-and-advanced-analytics-with-r"></a>SQL Server R Services: R を使用したデータベース エンジンと高度な分析
 
 データベース エンジンのインスタンスの同時インストール用に、インスタンス名と管理者 (Windows) ログインを指定します。 コア コンポーネントと言語コンポーネントをインストールするための機能に加えて、すべてのライセンス条項への同意も含めます。
@@ -141,13 +141,13 @@ In-Database インストールにのみ適用されます。
 インストールを完了するには、さらに 2 つのタスクが必要です。
 
 
-::: moniker range=">=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2017"
 1. データベース エンジン サービスを再起動します。
 
 1. SQL Server Machine Learning Services:機能を使用する前に、外部スクリプトを有効にする必要があります。 次の手順として、[SQL Server Machine Learning Services (In-Database) のインストール](sql-machine-learning-services-windows-install.md)に関する記事に記載されている手順に従ってください。 
 ::: moniker-end
 
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 1. データベース エンジン サービスを再起動します。
 
 1. SQL Server R Services:機能を使用する前に、外部スクリプトを有効にする必要があります。 次の手順として、[SQL Server R Services (In-Database) のインストール](sql-r-services-windows-install.md)に関する記事に記載されている手順に従ってください。 
@@ -177,7 +177,7 @@ Setup.exe /q /ACTION=Install /FEATURES=SQLEngine,ADVANCEDANALYTICS,SQL_INST_MR,S
 
 スタンドアロン サーバーは、データベース エンジンのインスタンスにバインドされない "共有機能" です。 スタンドアロン サーバーをインストールするための有効な構文を、以下の例に示します。
 
-::: moniker range=">=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-2017"
 SQL Server Machine Learning Server では、スタンドアロン サーバー上で Python と R がサポートされています。
 
 ```cmd
@@ -185,7 +185,7 @@ Setup.exe /q /ACTION=Install /FEATURES=SQL_SHARED_MR,SQL_SHARED_MPY
 /IACCEPTROPENLICENSETERMS /IACCEPTPYTHONLICENSETERMS /IACCEPTSQLSERVERLICENSETERMS
 ```
 ::: moniker-end
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 SQL Server R Server は R のみです。
 
 ```cmd

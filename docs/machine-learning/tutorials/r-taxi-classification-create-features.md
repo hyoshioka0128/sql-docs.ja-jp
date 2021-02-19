@@ -4,18 +4,18 @@ titleSuffix: SQL machine learning
 description: 全 5 回からなるこのチュートリアル シリーズの第 3 回では、T-SQL 関数を使用し、SQL 機械学習でサンプル データから特徴を作成し、保存します。
 ms.prod: sql
 ms.technology: machine-learning
-ms.date: 07/30/2020
+ms.date: 10/15/2020
 ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||>=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: 25f61771524d170ade9914605916c6f2cffc6d3b
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||>=azuresqldb-mi-current'
+ms.openlocfilehash: 0dfba9b2e9178d0b389d812881d27341fde7c208
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92193704"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100347788"
 ---
 # <a name="r-tutorial-create-data-features"></a>R チュートリアル:データの機能の作成
 [!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
@@ -40,11 +40,11 @@ ms.locfileid: "92193704"
 
 ## <a name="about-feature-engineering"></a>機能エンジニアリングについて
 
-データ探索を何度か行うと、データからインサイトが収集されているので、 *機能エンジニアリング*に移ることができます。 生データから意味のある特徴を作成するこのプロセスは、分析モデルを作成するための重要な手順です。
+データ探索を何度か行うと、データからインサイトが収集されているので、 *機能エンジニアリング* に移ることができます。 生データから意味のある特徴を作成するこのプロセスは、分析モデルを作成するための重要な手順です。
 
 このデータセットでは、距離の値は報告されたメーター距離に基づいており、必ずしも地理的距離や実際の走行距離を示す距離を表しているとは限りません。 そのため、ソースである NYC タクシー データセットの座標を利用し、乗車地点と降車地点の間の直接距離を計算する必要があります。 カスタム [関数で](https://en.wikipedia.org/wiki/Haversine_formula) Haversine 式 [!INCLUDE[tsql](../../includes/tsql-md.md)] を利用し、この計算を実行できます。
 
-1 つ目のカスタム T-SQL 関数、 _fnCalculateDistance_を利用し、Haversine 式で距離を計算し、2 つ目のカスタム T-SQL 関数、 _fnEngineerFeatures_を利用し、すべての機能を含むテーブルを作成します。
+1 つ目のカスタム T-SQL 関数、 _fnCalculateDistance_ を利用し、Haversine 式で距離を計算し、2 つ目のカスタム T-SQL 関数、 _fnEngineerFeatures_ を利用し、すべての機能を含むテーブルを作成します。
 
 全体的なプロセスは次のとおりです。
 
@@ -60,7 +60,7 @@ ms.locfileid: "92193704"
   
 1. [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)]で、 **[プログラミング]**、 **[関数]** 、 **[スカラー値関数]** の順に展開します。   
 
-2. _fnCalculateDistance_を右クリックし、 **[変更]** を選択し、新しいクエリ ウィンドウで [!INCLUDE[tsql](../../includes/tsql-md.md)] スクリプトを開きます。
+2. _fnCalculateDistance_ を右クリックし、 **[変更]** を選択し、新しいクエリ ウィンドウで [!INCLUDE[tsql](../../includes/tsql-md.md)] スクリプトを開きます。
   
    ```sql
    CREATE FUNCTION [dbo].[fnCalculateDistance] (@Lat1 float, @Long1 float, @Lat2 float, @Long2 float)  
@@ -92,9 +92,9 @@ ms.locfileid: "92193704"
 
 ## <a name="generate-the-features-using-_fnengineerfeatures_"></a>_fnEngineerFeatures を使用して機能を生成する_
 
-モデルのトレーニングに使用できるテーブルに計算値を追加するには、別の関数 _fnEngineerFeatures_を使用します。 この新しい関数は、以前に作成した T-SQL 関数 _fnCalculateDistance_を呼び出して、乗車場所と降車場所の距離を直接取得します。 
+モデルのトレーニングに使用できるテーブルに計算値を追加するには、別の関数 _fnEngineerFeatures_ を使用します。 この新しい関数は、以前に作成した T-SQL 関数 _fnCalculateDistance_ を呼び出して、乗車場所と降車場所の距離を直接取得します。 
 
-1. カスタム T-SQL 関数、 _fnEngineerFeatures_のコードを再確認します。この関数は、このチュートリアルの一環として自動的に作成されているはずです。
+1. カスタム T-SQL 関数、 _fnEngineerFeatures_ のコードを再確認します。この関数は、このチュートリアルの一環として自動的に作成されているはずです。
   
    ```sql
    CREATE FUNCTION [dbo].[fnEngineerFeatures] (  

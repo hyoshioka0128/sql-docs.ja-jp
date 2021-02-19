@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sp_cursor_execute
 - sp_cursor_execute_TSQL
@@ -18,13 +18,13 @@ helpviewer_keywords:
 ms.assetid: 2009acd3-0d92-435a-a8fb-057e50dc7146
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 49b5548d149640b7e9d78b38c70c22fd6c5ae163
-ms.sourcegitcommit: a5398f107599102af7c8cda815d8e5e9a367ce7e
+monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: c263bd8a5daea840eb0c83825cf8e702d43c0359
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92005609"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99188010"
 ---
 # <a name="sp_execute-transact-sql"></a>sp_execute (Transact-sql)
 [!INCLUDE [sql-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdbmi-asa-pdw.md)]
@@ -50,7 +50,7 @@ sp_execute handle OUTPUT
  追加のパラメーターを使用することを示します。 *bound_param* は、プロシージャの追加パラメーターを示すために、任意のデータ型の入力値を呼び出す必須のパラメーターです。  
   
 > [!NOTE]  
->  *bound_param*は、sp_prepare*params*値によって行われた宣言と一致する必要があり、 * @name = value*または*value*の形式で指定できます。  
+>  *bound_param* は、sp_prepare *params* 値によって行われた宣言と一致する必要があり、 *@name = value* または *value* の形式で指定できます。  
   
 ## <a name="see-also"></a>参照  
  [システム ストアド プロシージャ &#40;Transact-SQL&#41;](../../relational-databases/system-stored-procedures/system-stored-procedures-transact-sql.md)   

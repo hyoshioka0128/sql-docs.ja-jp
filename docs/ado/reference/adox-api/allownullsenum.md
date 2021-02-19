@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - AllowNullsEnum
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 6acf3689-1a7f-4379-9d7f-df452ccbac27
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: c2d21b4a7e4de67e45210f11598a7cf3a2a99b9e
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: c91de05e128468135d846aaa588624295a584b04
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88985543"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100050563"
 ---
 # <a name="allownullsenum"></a>AllowNullsEnum
 Null 値を持つレコードのインデックスを作成するかどうかを指定します。  

@@ -13,13 +13,13 @@ helpviewer_keywords:
 ms.assetid: eb507065-ac58-4f18-8601-e5b7f44213ab
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: ad927941169f7f93f43a534535f80449682c9d60
-ms.sourcegitcommit: 4b775a3ce453b757c7435cc2a4c9b35d0c5a8a9e
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: ea1d2300b2ff2431d58b8fb2d6139ecad130a965
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87472537"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97432418"
 ---
 # <a name="sql-injection"></a>SQL インジェクション
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -95,7 +95,7 @@ SELECT * FROM OrdersTable WHERE ShipCity = 'Redmond';drop table OrdersTable--'
 |**;**|クエリの区切り記号。|  
 |**'** の基本構成の更新を依頼してください。|文字データ文字列の区切り記号。|  
 |**--**|文字データ文字列の区切り記号。<br />。|  
-|**/\*** ... **\*/**|コメントの区切り記号。 **/\*** と **\*/** の間にあるテキストについては、サーバーによる評価は行われません。|  
+|**/\**_ ... _*\*/**|コメントの区切り記号。 **/\**と*\*/** の間にあるテキストについては、サーバーによる評価は行われません。|  
 |**xp_**|`xp_cmdshell`など、カタログ拡張ストアド プロシージャ名の先頭に使用します。|  
   
 ### <a name="use-type-safe-sql-parameters"></a>Type-Safe SQL パラメーターの使用  

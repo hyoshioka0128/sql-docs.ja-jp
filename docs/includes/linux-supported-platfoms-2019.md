@@ -5,19 +5,19 @@ ms.technology: linux
 ms.topic: include
 ms.date: 06/22/2020
 ms.author: vanto
-ms.openlocfilehash: f8a9409f01f7dd8f7b9097a4b838bde1350db30c
-ms.sourcegitcommit: d973b520f387b568edf1d637ae37d117e1d4ce32
+ms.openlocfilehash: 0b73bba1694e7ef90ada6ce1e44a197ffa751234
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85215776"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100063829"
 ---
 ## <a name="supported-platforms"></a>サポートされているプラットフォーム
 
 | プラットフォーム | ファイル システム | インストール ガイド | 取得 |
 |-----|-----|-----|-----|
-| Red Hat Enterprise Linux 7.3 から 7.8、または 8.0 から 8.2 のサーバー | XFS または EXT4 | [インストール ガイド](../linux/quickstart-install-connect-red-hat.md) | [RHEL 8.0 を取得する](https://access.redhat.com/products/red-hat-enterprise-linux/evaluation) |
-| SUSE Enterprise Linux Server v12 SP2、SP3、SP4、または SP5 | XFS または EXT4 | [インストール ガイド](../linux/quickstart-install-connect-suse.md) | [SLES v12 を取得する](https://www.suse.com/products/server) |
+| Red Hat Enterprise Linux 7.3 から 7.8、または 8.0 から 8.3 のサーバー | XFS または EXT4 | [インストール ガイド](../linux/quickstart-install-connect-red-hat.md) | [RHEL 8.0 を取得する](https://access.redhat.com/products/red-hat-enterprise-linux/evaluation) |
+| SUSE Enterprise Linux Server v12 SP2 - SP5 | XFS または EXT4 | [インストール ガイド](../linux/quickstart-install-connect-suse.md) | [SLES v12 を取得する](https://www.suse.com/products/server) |
 | Ubuntu 16.04 LTS、18.04 LTS | XFS または EXT4 | [インストール ガイド](../linux/quickstart-install-connect-ubuntu.md) | [Ubuntu 18.04 を入手する](http://releases.ubuntu.com/bionic/) |
 | Windows、Mac、または Linux 上の Docker エンジン 1.8+ | 該当なし | [インストール ガイド](../linux/quickstart-install-connect-docker.md) | [Docker を取得する](https://www.docker.com/get-started) |
 

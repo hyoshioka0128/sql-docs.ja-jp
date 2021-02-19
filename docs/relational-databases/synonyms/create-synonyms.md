@@ -14,17 +14,17 @@ helpviewer_keywords:
 ms.assetid: fedfa7a5-d0b6-4e2b-90f4-a08122958e33
 author: markingmyname
 ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: f5c4d25ed48715c9317ebe0df37ee4d2779abe10
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 47da9230787a74198314c335e0227a54f38c1561
+ms.sourcegitcommit: 38e055eda82d293bf5fe9db14549666cf0d0f3c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551600"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99250190"
 ---
 # <a name="create-synonyms"></a>シノニムの作成
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
-  このトピックでは、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] で [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] または [!INCLUDE[tsql](../../includes/tsql-md.md)]を使用して、シノニムを作成する方法について説明します。  
+  このトピックでは、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] で [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] または [!INCLUDE[tsql](../../includes/tsql-md.md)]を使用して、シノニムを作成する方法について説明します。  
   
  **このトピックの内容**  
   
@@ -49,7 +49,7 @@ ms.locfileid: "89551600"
   
 #### <a name="to-create-a-synonym"></a>シノニムを作成するには  
   
-1.  **オブジェクト エクスプローラー**で、新しいビューを作成するデータベースを展開します。  
+1.  **オブジェクト エクスプローラー** で、新しいビューを作成するデータベースを展開します。  
   
 2.  **[シノニム]** フォルダーを右クリックし、**[新しいシノニム...]** をクリックします。  
   

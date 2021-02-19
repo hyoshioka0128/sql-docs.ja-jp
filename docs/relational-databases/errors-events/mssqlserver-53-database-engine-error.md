@@ -1,12 +1,12 @@
 ---
 title: MSSQLSERVER_53 | Microsoft Docs
-description: SQL Server クライアントがサーバーに接続できません。 エラーの説明と、考えられる解決策をご確認ください。
+description: SQL Server クライアントがサーバーに接続できません。 エラー 53 の説明と、考えられる解決策をご確認ください。
 ms.custom: ''
 ms.date: 04/04/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: supportability
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - "53"
 helpviewer_keywords:
@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 1234f5a2-b3d1-425a-b29f-480fa792305f
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: eb84c9bc2f1aaa213d09137141298dc9e81adc48
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 84f29b85aab41852163a0b64fce1edfdd6ec7a22
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85716961"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99198055"
 ---
 # <a name="mssqlserver_53"></a>MSSQLSERVER_53
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

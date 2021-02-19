@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 5a007b9a-be11-4fba-96db-6252993f97b8
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 8a726c8156d8ed9dcfa2b10e53190b099f67af98
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: a0e37323dad52723681754e105efa244258fc2f7
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88984943"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100054347"
 ---
 # <a name="command-and-commandtext-properties-example-vc"></a>Command プロパティおよび CommandText プロパティの例 (VC++)
 次のコードは、 [Command](./command-property-adox.md) プロパティを使用してプロシージャのテキストを更新する方法を示しています。  

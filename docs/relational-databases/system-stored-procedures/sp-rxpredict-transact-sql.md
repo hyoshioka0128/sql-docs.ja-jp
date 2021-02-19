@@ -5,7 +5,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: machine-learning-services
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sp_rxPredict
 - sp_rxPredict_TSQL
@@ -15,20 +15,20 @@ helpviewer_keywords:
 - sp_rxPredict procedure
 author: dphansen
 ms.author: davidph
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 625157885fa4494f4d8c70da5bea8ac70472d3b5
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: 3bca21ddf2674fd8eccbe9ca2df635623e56201e
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91809485"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100063667"
 ---
 # <a name="sp_rxpredict"></a>sp_rxPredict  
 [!INCLUDE [SQL Server 2016 Windows only](../../includes/applies-to-version/sqlserver2016-windows-only.md)]
 
 SQL Server データベースにバイナリ形式で格納されている機械学習モデルで構成される、指定された入力の予測値を生成します。
 
-R と Python の機械学習モデルのスコア付けをほぼリアルタイムで提供します。 `sp_rxPredict`は、RevoScaleR および Microsoft Ml の R 関数のラッパーとして提供されているストアドプロシージャ、 `rxPredict` および[revoscalepy](/machine-learning-server/python-reference/revoscalepy/revoscalepy-package)と[microsoft ml](/machine-learning-server/python-reference/microsoftml/microsoftml-package)の[rx_predict](/machine-learning-server/python-reference/revoscalepy/rx-predict) Python 関数[RevoScaleR](/r-server/r-reference/revoscaler/revoscaler)のためのものです。 [MicrosoftML](/r-server/r-reference/microsoftml/microsoftml-package) これは C++ で記述され、スコアリング操作専用に最適化されています。
+R と Python の機械学習モデルのスコア付けをほぼリアルタイムで提供します。 `sp_rxPredict`は、RevoScaleR および Microsoft Ml の R 関数のラッパーとして提供されているストアドプロシージャ、 `rxPredict` および[revoscalepy](/machine-learning-server/python-reference/revoscalepy/revoscalepy-package)と[microsoft ml](/machine-learning-server/python-reference/microsoftml/microsoftml-package)の[rx_predict](/machine-learning-server/python-reference/revoscalepy/rx-predict) Python 関数[](/r-server/r-reference/revoscaler/revoscaler)のためのものです。 [](/r-server/r-reference/microsoftml/microsoftml-package) これは C++ で記述され、スコアリング操作専用に最適化されています。
 
 モデルは R または Python を使用して作成する必要がありますが、シリアル化され、ターゲットデータベースエンジンインスタンスでバイナリ形式で格納されると、R または Python の統合がインストールされていない場合でも、そのデータベースエンジンのインスタンスから使用できます。 詳細については、「 [sp_rxPredict を使用したリアルタイムのスコアリング](../../machine-learning/predictions/real-time-scoring.md)」を参照してください。
 
@@ -53,18 +53,18 @@ sp_rxPredict  ( @model, @input )
 スコア列、および入力データソースのすべてのパススルー列が返されます。
 アルゴリズムがそのような値の生成をサポートしている場合は、信頼区間などの追加のスコア列を返すことができます。
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>解説
 
 ストアドプロシージャを使用できるようにするには、インスタンスで SQLCLR が有効になっている必要があります。
 
 > [!NOTE]
-> このオプションの enabing には、セキュリティ上の影響があります。 サーバーで SQLCLR が有効になっていない場合は、 [TRANSACT-SQL PREDICT](../../t-sql/queries/predict-transact-sql.md?view=sql-server-2017) 関数などの代替の実装を使用します。
+> このオプションを有効にすると、セキュリティに影響があります。 サーバーで SQLCLR が有効になっていない場合は、 [TRANSACT-SQL PREDICT](../../t-sql/queries/predict-transact-sql.md?view=sql-server-2017&preserve-view=true) 関数などの代替の実装を使用します。
 
 ユーザーは、 `EXECUTE` データベースに対する権限が必要です。
 
 ### <a name="supported-algorithms"></a>サポートされているアルゴリズム
 
-モデルを作成してトレーニングするには、R または Python に対してサポートされているアルゴリズムのいずれかを使用します。 [SQL Server Machine Learning Services (r または python)](../../machine-learning/sql-server-machine-learning-services.md)、 [SQL Server 2016 R Services](../../machine-learning/r/sql-server-r-services.md)、 [SQL Server Machine Learning Server (スタンドアロン)](../../machine-learning/r/r-server-standalone.md)、または [SQL Server 2016 R Server (スタンドアロン)](../../machine-learning/r/r-server-standalone.md?view=sql-server-2016)によって提供されます。
+モデルを作成してトレーニングするには、R または Python に対してサポートされているアルゴリズムのいずれかを使用します。 [SQL Server Machine Learning Services (r または python)](../../machine-learning/sql-server-machine-learning-services.md)、 [SQL Server 2016 R Services](../../machine-learning/r/sql-server-r-services.md)、 [SQL Server Machine Learning Server (スタンドアロン)](../../machine-learning/r/r-server-standalone.md)、または [SQL Server 2016 R Server (スタンドアロン)](../../machine-learning/r/r-server-standalone.md?view=sql-server-2016&preserve-view=true)によって提供されます。
 
 #### <a name="r-revoscaler-models"></a>R: RevoScaleR モデル
 
@@ -135,7 +135,7 @@ EXEC sp_rxPredict @model = @model,
 @inputData = N'SELECT * FROM data';
 ```
 
-* \@ Inputdata*の入力データには、有効な SQL クエリに加えて、格納されているモデルの列と互換性のある列が含まれている必要があります。
+*\@ Inputdata* の入力データには、有効な SQL クエリに加えて、格納されているモデルの列と互換性のある列が含まれている必要があります。
 
 `sp_rxPredict` でサポートされている .NET 列の型は、double、float、short、ushort、long、ulong、および string のみです。 リアルタイムスコアリングに使用する前に、入力データでサポートされていない型を除外することが必要になる場合があります。 
 

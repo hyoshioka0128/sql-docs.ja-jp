@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: 041b428f-781d-4628-9f34-4d697894e61e
 author: MightyPen
 ms.author: genemi
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 8eabca1300e3937d4b1a1f48531c9cc09b1978dd
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 078dc8fd820e5b93830964933c2641e677134f4a
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91867098"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97485254"
 ---
 # <a name="plan-your-adoption-of-in-memory-oltp-features-in-sql-server"></a>SQL Server でのインメモリ OLTP 機能の採用計画
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -104,7 +104,7 @@ Azure SQL データベースのクラウド サービスでホストされてい
 
 SSDT で管理される、.dacpac ファイルを使用してデータベースのインプレース更新を行うことができます。 SSDT では、.dacpac ファイルにエンコードされているスキーマの変更を指定できます。
 
-*Database*型の Visual Studio プロジェクト コンテキストで .dacpac ファイルを操作します。
+*Database* 型の Visual Studio プロジェクト コンテキストで .dacpac ファイルを操作します。
 
 - [データ層アプリケーション](../../relational-databases/data-tier-applications/data-tier-applications.md) と .dacpac ファイル
 
@@ -226,7 +226,7 @@ IDENTITY 列を再シードするために[DBCC CHECKIDENT](../../t-sql/database
 
 #### <a name="nonclustered-columnstore-indexes"></a>非クラスター化列ストア インデックス
 
-メモリ最適化テーブルは、 *オンライン トランザクション処理* (つまり、 *OLTP*) と呼ばれるパラダイムにおいて、一般的なビジネス トランザクション データの高スループットを提供します。 列ストア インデックスは、集計と同様の処理 ( *分析*と呼ばれる) の高スループットを提供します。 OLTP と分析の両方のニーズを満たすために使用できるこれまでの最良の方法は、データの大量移動を行うテーブルと、ある程度のデータ重複を伴うテーブルを個別に使用する方法でした。 現在は、より簡単な **ハイブリッド ソリューション** を利用して、メモリ最適化テーブルに列ストア インデックスを作成することができます。
+メモリ最適化テーブルは、 *オンライン トランザクション処理* (つまり、 *OLTP*) と呼ばれるパラダイムにおいて、一般的なビジネス トランザクション データの高スループットを提供します。 列ストア インデックスは、集計と同様の処理 ( *分析* と呼ばれる) の高スループットを提供します。 OLTP と分析の両方のニーズを満たすために使用できるこれまでの最良の方法は、データの大量移動を行うテーブルと、ある程度のデータ重複を伴うテーブルを個別に使用する方法でした。 現在は、より簡単な **ハイブリッド ソリューション** を利用して、メモリ最適化テーブルに列ストア インデックスを作成することができます。
 
 
 - [列ストア インデックス](../../relational-databases/indexes/columnstore-indexes-overview.md) は、クラスター化インデックスとしても、ディスク ベース テーブルに作成することができます。 ただし、メモリ最適化テーブルで列ストア インデックスをクラスター化することはできません。

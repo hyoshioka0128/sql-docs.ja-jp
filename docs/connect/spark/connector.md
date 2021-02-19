@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: rajmera3
 ms.author: raajmera
 ms.reviewer: mikeray
-ms.openlocfilehash: 059ecfb25389de1be0f8636a868e81e621e57bac
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+ms.openlocfilehash: 15a4bdb66ea87f85337540adfec4b5e175b1c55b
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91867235"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100058127"
 ---
 # <a name="apache-spark-connector-sql-server--azure-sql"></a>Apache Spark コネクタ:SQL Server および Azure SQL
 
@@ -25,7 +25,7 @@ SQL Server と Azure SQL 用の Apache Spark コネクタは、パフォーマ�
 
 [Apache Spark](https://spark.apache.org/) は、"大規模なデータ処理のための統合された分析エンジン" です。
 
-Maven 座標 (`com.microsoft.azure:spark-mssql-connector:1.0.0`) を使用して、コネクタをプロジェクトにインポートできます。 また、ソースからコネクタを作成することも、GitHub のリリース セクションから jar をダウンロードすることもできます。 コネクタの最新情報については、[SQL Spark コネクタの GitHub リポジトリ](https://github.com/microsoft/sql-spark-connector)に関する記事をご覧ください。
+[Maven](https://search.maven.org/search?q=spark-mssql-connector) からコネクタを取得できます。 コネクタをインポートするには、座標 `com.microsoft.azure:spark-mssql-connector:<latest version>` を使用します。 また、ソースからコネクタを作成することも、GitHub のリリース セクションから jar をダウンロードすることもできます。 コネクタの最新情報については、[SQL Spark コネクタの GitHub リポジトリ](https://github.com/microsoft/sql-spark-connector)に関する記事をご覧ください。
 
 ## <a name="supported-features"></a>サポートされている機能
 
@@ -44,7 +44,7 @@ Maven 座標 (`com.microsoft.azure:spark-mssql-connector:1.0.0`) を使用して
 | Azure SQL Databases                  | サポートされています                       |
 
 > [!NOTE]
-> このコネクタでの Azure Synapse Analytics (Azure SQL DW) の使用はテストされていません。 動作する場合もありますが、意図しない結果になる可能性があります。
+> このコネクタでの Azure Synapse Analytics の使用はテストされていません。 動作する場合もありますが、意図しない結果になる可能性があります。
 
 ### <a name="supported-options"></a>サポートされるオプション
 SQL Server と Azure SQL 用の Apache Spark コネクタは、こちらで定義されているオプションをサポートしています:[SQL DataSource JDBC](https://spark.apache.org/docs/latest/sql-data-sources-jdbc.html)

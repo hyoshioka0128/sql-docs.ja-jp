@@ -8,13 +8,13 @@ ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 661ce31839d08b36e7a51f1d09965b68e5350317
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 1830c441e51465f9c7cf7eab7ca503eadd677caf
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92193646"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100272973"
 ---
 # <a name="deploy-the-r-model-and-use-it-in-sql-server-walkthrough"></a>R モデルを配置して SQL Server で使用する (チュートリアル)
 [!INCLUDE [SQL Server 2016](../../includes/applies-to-version/sqlserver2016.md)]
@@ -24,8 +24,8 @@ ms.locfileid: "92193646"
 この記事では、スコアリングでモデルを使用する最も一般的な 2 つの方法について説明します。
 
 > [!div class="checklist"]
-> * 複数の予測を生成する**バッチ スコアリング モード**
-> * 一度に 1 つの予測を生成する**個別スコアリング モード**
+> * 複数の予測を生成する **バッチ スコアリング モード**
+> * 一度に 1 つの予測を生成する **個別スコアリング モード**
 
 ## <a name="batch-scoring"></a>バッチ スコアリング
 
@@ -230,4 +230,4 @@ ms.locfileid: "92193646"
 + [データ サイエンスのシナリオとソリューション テンプレート](data-science-scenarios-and-solution-templates.md)
 + [高度な分析 (データベース内)](r-taxi-classification-introduction.md)
 + [Machine Learning Server に関するハウツー ガイド](/machine-learning-server/r/how-to-introduction)
-+ [Machine Learning Server のその他のリソース](//machine-learning-server/resources-more)
++ [Machine Learning Server のその他のリソース](/machine-learning-server/resources-more)

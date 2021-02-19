@@ -13,13 +13,13 @@ helpviewer_keywords:
 ms.assetid: c6b5c852-37d2-48d0-a8ad-e43bb80d6514
 author: MladjoA
 ms.author: mlandzic
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: ddc0df0e6949ed429d415940fe9fda4263d3190a
-ms.sourcegitcommit: a5398f107599102af7c8cda815d8e5e9a367ce7e
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 7399b65d5816b3d0051da3c641c165ba87bacf45
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92006343"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97482963"
 ---
 # <a name="create-construct-and-query-geometry-instances"></a>geometry インスタンスの作成、構築、およびクエリ
 [!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
@@ -178,7 +178,7 @@ ms.locfileid: "92006343"
   
   
 ###  <a name="number-of-points"></a><a name="number"></a> 点の数  
- 空でないすべての **geometry** インスタンスは *点*で構成されています。 これらの点は、ジオメトリが描画される平面の X 座標と Y 座標を表します **geometry** には、インスタンスの点に対するクエリを実行するための組み込みメソッドが数多く用意されています。  
+ 空でないすべての **geometry** インスタンスは *点* で構成されています。 これらの点は、ジオメトリが描画される平面の X 座標と Y 座標を表します **geometry** には、インスタンスの点に対するクエリを実行するための組み込みメソッドが数多く用意されています。  
   
  **インスタンスを構成する点の数を取得するには**  
  [STNumPoints &#40;geometry データ型&#41;](../../t-sql/spatial-geometry/stnumpoints-geometry-data-type.md)  
@@ -206,7 +206,7 @@ ms.locfileid: "92006343"
   
   
 ###  <a name="dimension"></a><a name="dimension"></a> [ディメンション]  
- 空でない **geometry** インスタンスの次元は、0 次元、1 次元、2 次元のいずれかになります。 0 次元の **ジオメトリ**( **Point** や **MultiPoint**など) には長さや面積はありません。 1 次元のオブジェクト ( **LineString、CircularString、CompoundCurve**、 **MultiLineString**など) には長さがあります。 2 次元のインスタンス ( **Polygon**、 **CurvePolygon**、 **MultiPolygon**など) には面積と長さがあります。 空のインスタンスの次元は -1 としてレポートされます。 **GeometryCollection** でレポートされる面積は、その内容の型によって異なります。  
+ 空でない **geometry** インスタンスの次元は、0 次元、1 次元、2 次元のいずれかになります。 0 次元の **ジオメトリ**( **Point** や **MultiPoint** など) には長さや面積はありません。 1 次元のオブジェクト ( **LineString、CircularString、CompoundCurve**、 **MultiLineString** など) には長さがあります。 2 次元のインスタンス ( **Polygon**、 **CurvePolygon**、 **MultiPolygon** など) には面積と長さがあります。 空のインスタンスの次元は -1 としてレポートされます。 **GeometryCollection** でレポートされる面積は、その内容の型によって異なります。  
   
  **インスタンスの次元を取得するには**  
  [STDimension](../../t-sql/spatial-geometry/stdimension-geometry-data-type.md)  
@@ -219,14 +219,14 @@ ms.locfileid: "92006343"
   
   
 ###  <a name="empty"></a><a name="empty"></a> 空  
- _空_の **geometry** インスタンスには点はありません。 空の **LineString, CircularString**、 **CompoundCurve**、および **MultiLineString** インスタンスの長さは 0 です。 空の **Polygon**、 **CurvePolygon**、および **MultiPolygon** インスタンスの面積は 0 です。  
+ _空_ の **geometry** インスタンスには点はありません。 空の **LineString, CircularString**、 **CompoundCurve**、および **MultiLineString** インスタンスの長さは 0 です。 空の **Polygon**、 **CurvePolygon**、および **MultiPolygon** インスタンスの面積は 0 です。  
   
  **インスタンスが空かどうかを調べるには**  
  [STIsEmpty](../../t-sql/spatial-geometry/stisempty-geometry-data-type.md)。  
   
   
 ###  <a name="simple"></a><a name="simple"></a> Simple  
- インスタンスの **geometry** が *単純*であるためには、次の両方の要件が満たされている必要があります。  
+ インスタンスの **geometry** が *単純* であるためには、次の両方の要件が満たされている必要があります。  
   
 -   インスタンスの各図形が終点以外で自己交差していてはいけない。  
   
@@ -266,7 +266,7 @@ SELECT @g.STBoundary().ToString();
  [STBoundary](../../t-sql/spatial-geometry/stboundary-geometry-data-type.md)  
    
 ###  <a name="envelope"></a><a name="envelope"></a> エンベロープ  
- *geometry* インスタンスの **エンベロープ** ( *境界ボックス*とも呼ばれます) とは、インスタンスの最小および最大の (X,Y) 座標によって形成される軸に沿った四角形です。  
+ *geometry* インスタンスの **エンベロープ** ( *境界ボックス* とも呼ばれます) とは、インスタンスの最小および最大の (X,Y) 座標によって形成される軸に沿った四角形です。  
   
  **インスタンスのエンベロープを取得するには**  
  [STEnvelope](../../t-sql/spatial-geometry/stenvelope-geometry-data-type.md)  

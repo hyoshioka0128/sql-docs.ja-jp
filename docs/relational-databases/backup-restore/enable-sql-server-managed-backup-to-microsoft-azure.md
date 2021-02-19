@@ -9,14 +9,14 @@ ms.reviewer: ''
 ms.technology: backup-restore
 ms.topic: conceptual
 ms.assetid: 68ebb53e-d5ad-4622-af68-1e150b94516e
-author: MikeRayMSFT
-ms.author: mikeray
-ms.openlocfilehash: 30c53bedf4f5946088e35c94e8902554c6da0049
-ms.sourcegitcommit: fb8724fb99c46ecf3a6d7b02a743af9b590402f0
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 554bb3164902afa909556ea6836335fdd76dd79a
+ms.sourcegitcommit: 5a1ed81749800c33059dac91b0e18bd8bb3081b1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92439475"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96126972"
 ---
 # <a name="enable-sql-server-managed-backup-to-azure"></a>Azure への SQL Server マネージド バックアップを有効にする
 
@@ -110,7 +110,7 @@ SQL 資格情報の作成に使用するコンテナーの URL と SAS を記録
   
 ## <a name="enable-managed-backup-to-azure"></a>Azure へのマネージド バックアップを有効にする
   
-1.  **SAS URL の SQL 資格情報を作成する** : SAS トークンを使用して、BLOB コンテナーの URL の SQL 資格情報を作成します。 SQL Server Management Studio で、次の Transact-SQL クエリを使用して、次の例に基づいて BLOB コンテナーの資格情報を作成します。  
+1.  **SAS URL の SQL 資格情報を作成する**: SAS トークンを使用して、BLOB コンテナーの URL の SQL 資格情報を作成します。 SQL Server Management Studio で、次の Transact-SQL クエリを使用して、次の例に基づいて BLOB コンテナーの資格情報を作成します。  
   
     ```sql  
     CREATE CREDENTIAL [https://managedbackupstorage.blob.core.windows.net/backupcontainer]   

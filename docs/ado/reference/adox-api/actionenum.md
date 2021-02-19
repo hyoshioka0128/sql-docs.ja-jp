@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - ActionEnum
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: f948febd-c885-4621-823b-421e116fec4e
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 02422de45f3e0ec28901678528468dc72f021549
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: fd2104a3b334da02e9bceee3ef191baac1d66cab
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88985923"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100050793"
 ---
 # <a name="actionenum"></a>ActionEnum
 [SetPermissions](./setpermissions-method-adox.md)が呼び出されたときに実行されるアクションの種類を指定します。  

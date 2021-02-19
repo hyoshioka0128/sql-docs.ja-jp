@@ -6,19 +6,19 @@ ms.date: 03/07/2017
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 f1_keywords:
 - sql13.swb.dbmmonitor.setwarningthreshold.f1
 ms.assetid: 17f93147-e7d9-4092-b4c2-c11b38051171
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 1d94a2c804f67657581f5ead059e6951f410e05f
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: c5433b64027311fbf98b8c62bd8d25d1fbc3fdfb
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85789640"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100352248"
 ---
 # <a name="set-warning-thresholds"></a>[警告しきい値の設定]
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -32,7 +32,7 @@ ms.locfileid: "85789640"
   
 ## <a name="options"></a>Options  
  *サーバー インスタンスと接続状態*  
- パートナー サーバー インスタンスの名前が *SYSTEM***\\***INSTANCE_NAME* という形式で表示されます。 既定のサーバー インスタンスの場合、システム名だけが表示されます。  
+ パートナー サーバー インスタンスの名前が *SYSTEM* **\\** _INSTANCE_NAME_ という形式で表示されます。 既定のサーバー インスタンスの場合、システム名だけが表示されます。  
   
  このフィールドには、該当のサーバー インスタンスに対して現在モニターが接続されているかどうかも示されます。 次の接続ステータスがあります。  
   

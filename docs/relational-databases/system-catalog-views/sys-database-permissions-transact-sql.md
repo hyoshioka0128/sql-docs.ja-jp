@@ -1,13 +1,13 @@
 ---
-description: database_permissions (Transact-sql)
-title: database_permissions (Transact-sql) |Microsoft Docs
+description: sys.database_permissions (Transact-sql)
+title: sys.database_permissions (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 08/11/2017
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - database_permissions
 - sys.database_permissions_TSQL
@@ -20,15 +20,15 @@ helpviewer_keywords:
 ms.assetid: c1e261f8-6cb0-4759-b5f1-5ec233602655
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: dc503cec67334a95a7e5e06e19a3b6eb722e27f6
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: a488dcf39ecf3ab0fa6e82264245d38f163f8ed6
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88469978"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99209474"
 ---
-# <a name="sysdatabase_permissions-transact-sql"></a>database_permissions (Transact-sql)
+# <a name="sysdatabase_permissions-transact-sql"></a>sys.database_permissions (Transact-sql)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   データベースに含まれている、権限ごとまたは列例外の権限ごとに 1 行のデータを返します。 列権限が、対応するオブジェクトレベルの権限とは異なる場合、列権限ごとに行が存在します。 列権限が対応するオブジェクト権限と同じ場合、その行は存在せず、適用されている権限はオブジェクトの権限です。  
@@ -40,13 +40,13 @@ ms.locfileid: "88469978"
 |-----------------|---------------|-----------------|  
 |**class**|**tinyint**|権限が存在するクラスを識別します。<br /><br /> 0 = データベース<br />1 = オブジェクトまたは列<br />3 = スキーマ<br />4 = データベースプリンシパル<br />5 = アセンブリ-以降 **に適用さ** [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] れます。<br />6 = 型<br />10 = XML スキーマコレクション- <br />                      **適用対象**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降。<br />15 = メッセージの種類: 以降 **に適用さ** [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] れます。<br />16 = サービスコントラクト-以降 **に適用さ** [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] れます。<br />17 = サービス-以降 **に適用さ** [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] れます。<br />18 = リモートサービスバインド-以降 **に適用さ** [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] れます。<br />19 = ルート: 以降 **に適用さ** [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] れます。<br />23 = フルテキストカタログ: 以降 **に適用さ** [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] れます。<br />24 = 対称キー-以降 **に適用さ** [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] れます。<br />25 = 証明書-以降 **に適用さ** [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] れます。<br />26 = 非対称キー-以降 **に適用さ** [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] れます。|  
 |**class_desc**|**nvarchar(60)**|権限が存在するクラスの説明です。<br /><br /> DATABASE<br /><br /> OBJECT_OR_COLUMN<br /><br /> SCHEMA<br /><br /> DATABASE_PRINCIPAL<br /><br /> ASSEMBLY<br /><br /> TYPE<br /><br /> XML_SCHEMA_COLLECTION<br /><br /> MESSAGE_TYPE<br /><br /> SERVICE_CONTRACT<br /><br /> SERVICE<br /><br /> REMOTE_SERVICE_BINDING<br /><br /> ROUTE<br /><br /> FULLTEXT_CATALOG<br /><br /> SYMMETRIC_KEYS<br /><br /> CERTIFICATE<br /><br /> ASYMMETRIC_KEY|  
-|**major_id**|**int**|権限が存在する対象の ID。クラスに従って解釈されます。 通常、 **major_id** は、クラスが表すものに適用される id の種類にすぎません。 <br /><br /> 0 = データベース自体 <br /><br /> >0 = ユーザーオブジェクトのオブジェクト Id <br /><br /> \<0 = システムオブジェクトのオブジェクト Id |  
+|**major_id**|**int**|権限が存在する対象の ID。クラスに従って解釈されます。 通常、 **major_id** は、クラスが表すものに適用される id の種類にすぎません。 <br /><br /> 0 = データベース自体 <br /><br /> >0 = ユーザーオブジェクトの Object-IDs <br /><br /> \<0 = システムオブジェクトの Object-IDs |  
 |**minor_id**|**int**|権限が存在することを示すセカンダリ ID。クラスに従って解釈されます。 多くの場合、オブジェクトのクラスに使用できるサブカテゴリがないため、 **minor_id** は0になります。 それ以外の場合は、テーブルの列 ID です。|  
 |**grantee_principal_id**|**int**|権限が許可されるデータベースプリンシパル ID。|  
 |**grantor_principal_id**|**int**|これらのアクセス許可の権限の許可のあるデータベースプリンシパル ID。|  
 |**type**|**char (4)**|データベース権限の種類。 権限の種類の一覧については、次の表を参照してください。|  
 |**permission_name**|**nvarchar(128)**|アクセス許可の名前。|  
-|**状態**|**char (1)**|アクセス許可の状態:<br /><br /> D = 拒否<br /><br /> R = 取り消し<br /><br /> G = 許可<br /><br /> W = 許可の許可オプション|  
+|**state**|**char(1)**|アクセス許可の状態:<br /><br /> D = 拒否<br /><br /> R = 取り消し<br /><br /> G = 許可<br /><br /> W = 許可の許可オプション|  
 |**state_desc**|**nvarchar(60)**|権限の状態の説明。<br /><br /> DENY<br /><br /> REVOKE<br /><br /> GRANT<br /><br /> GRANT_WITH_GRANT_OPTION|  
 
 ## <a name="database-permissions"></a>データベース権限   
@@ -110,7 +110,7 @@ ms.locfileid: "88469978"
 |CRVW|CREATE VIEW|DATABASE|  
 |CRXS|**適用対象**: [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] 以降。<br /><br /> CREATE XML SCHEMA COLLECTION|DATABASE|  
 |DABO |ADMINISTER DATABASE BULK OPERATIONS | DATABASE |
-|DL|Del|データベース、オブジェクト、スキーマ|  
+|DL|DELETE|データベース、オブジェクト、スキーマ|  
 |EAES |EXECUTE ANY EXTERNAL SCRIPT |DATABASE |
 |EX|EXECUTE|ASSEMBLY、DATABASE、OBJECT、SCHEMA、TYPE、XML SCHEMA COLLECTION|  
 |IM|IMPERSONATE|User|  
@@ -140,7 +140,7 @@ ms.locfileid: "88469978"
  次のクエリは、データベースプリンシパルに対して明示的に許可または拒否されている権限を一覧表示します。  
   
 > [!IMPORTANT]  
->  固定データベースロールの権限は、sys. database_permissions には表示されません。 そのため、データベースプリンシパルには、ここに記載されていない追加のアクセス許可がある場合があります。  
+>  固定データベースロールの権限は、sys.database_permissions には表示されません。 そのため、データベースプリンシパルには、ここに記載されていない追加のアクセス許可がある場合があります。  
   
 ```  
 SELECT pr.principal_id, pr.name, pr.type_desc,   
@@ -151,7 +151,7 @@ JOIN sys.database_permissions AS pe
 ```  
   
 ### <a name="b-listing-permissions-on-schema-objects-within-a-database"></a>B: データベース内のスキーマオブジェクトに対する権限を一覧表示する  
- 次のクエリでは、sys. database_principals と sys. database_permissions を、特定のスキーマオブジェクトに対して許可または拒否されている権限を一覧表示するために、sys. オブジェクトと sys スキーマに結合します。  
+ 次のクエリでは、特定のスキーマオブジェクトに対して許可または拒否されるアクセス許可を一覧表示するために、sys.database_principals と sys.database_permissions を sys に結合しています。  
   
 ```  
 SELECT pr.principal_id, pr.name, pr.type_desc,   

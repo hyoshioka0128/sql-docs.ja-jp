@@ -1,13 +1,13 @@
 ---
-description: server_triggers (Transact-sql)
-title: server_triggers (Transact-sql) |Microsoft Docs
+description: sys.server_triggers (Transact-sql)
+title: sys.server_triggers (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - server_triggers
 - sys.server_triggers_TSQL
@@ -18,16 +18,16 @@ dev_langs:
 helpviewer_keywords:
 - sys.server_triggers catalog view
 ms.assetid: 25926ff4-9271-45bf-bc32-d5d3344bd47a
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 6850c9d406dd461f967d8297dcd5a49fdb5c3993
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: c3a2f51fc2041555184c3893d1671a18ba527a6f
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89545045"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99200824"
 ---
-# <a name="sysserver_triggers-transact-sql"></a>server_triggers (Transact-sql)
+# <a name="sysserver_triggers-transact-sql"></a>sys.server_triggers (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   TR または TA の object_type を持つ、すべてのサーバーレベルの DDL トリガーのセットを格納します。 CLR トリガーの場合は、アセンブリを **master** データベースに読み込む必要があります。 すべてのサーバーレベルの DDL トリガー名は、1つのグローバルスコープに存在します。  

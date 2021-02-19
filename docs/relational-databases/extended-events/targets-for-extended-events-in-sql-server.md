@@ -10,13 +10,13 @@ ms.topic: conceptual
 ms.assetid: 47c64144-4432-4778-93b5-00496749665b
 author: MightyPen
 ms.author: genemi
-monikerRange: =azuresqldb-current||=azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017
-ms.openlocfilehash: 45f347cb606773ad5e568a8d443bbe010e1a3fd1
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =azuresqldb-current||=azuresqldb-mi-current||>=sql-server-2016||>=sql-server-linux-2017
+ms.openlocfilehash: ee107ed1d1e9fe7ec7aa8b40c87c71750b5cdf99
+ms.sourcegitcommit: 3e2421ae45a8e9fa57fb590a5d1a5566721ea74a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91868774"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98921399"
 ---
 # <a name="targets-for-extended-events-in-sql-server"></a>SQL Server の拡張イベントのターゲット
 
@@ -82,7 +82,7 @@ SQL Server の拡張イベントは、Event Tracing for Windows (ETW) と連携�
 - [拡張イベントを使用したシステムの使用状況の監視](../../relational-databases/extended-events/monitor-system-activity-using-extended-events.md)
 
 
-この ETW ターゲットは受信したデータを *同期的* に処理しますが、ほとんどのターゲットは *非同期的*に処理します。
+この ETW ターゲットは受信したデータを *同期的* に処理しますが、ほとんどのターゲットは *非同期的* に処理します。
 
 > [!NOTE]
 > Azure SQL Database では、`etw_classic_sync_target target` はサポートされません。
@@ -104,7 +104,7 @@ event_counter ターゲットは、指定された各イベントが発生した
 
 - 受信したデータを *同期的* に処理します。
     - event_counter は処理がほとんどない単純なターゲットなので、同期処理でもかまいません。
-    - データベース エンジンは、処理が遅く、データベース エンジンのパフォーマンスが低下する可能性のあるターゲットからは切断します。 これは、ほとんどのターゲットが *非同期*処理である理由の 1 つです。
+    - データベース エンジンは、処理が遅く、データベース エンジンのパフォーマンスが低下する可能性のあるターゲットからは切断します。 これは、ほとんどのターゲットが *非同期* 処理である理由の 1 つです。
 
 
 #### <a name="example-output-captured-by-event_counter"></a>event_counter によってキャプチャされる出力の例
@@ -151,7 +151,7 @@ CREATE EVENT SESSION [event_counter_1]
 
 - 指定したファイル名をプレフィックスとして使用し、その後に日時に基づく長い整数と、.xel 拡張子が付加されます。
 
-::: moniker range="= azuresqldb-current || = azuresqldb-mi-current || = sqlallproducts-allversions"
+::: moniker range="= azuresqldb-current || = azuresqldb-mi-current "
 
 > [!NOTE]
 > Azure SQL Database でサポートされるのは、Azure Blob Storage に `xel` ファイルを格納することのみです。 
@@ -232,7 +232,7 @@ SELECT f.*
 ```
 
 
-SQL Server **2014**では、次のような SELECT でデータを取得します。 SQL Server 2014 より後では、.xem ファイルは使われなくなっています。
+SQL Server **2014** では、次のような SELECT でデータを取得します。 SQL Server 2014 より後では、.xem ファイルは使われなくなっています。
 
 
 ```
@@ -252,7 +252,7 @@ SELECT f.*
 #### <a name="data-stored-in-the-event_file-target"></a>event_file ターゲットに格納されているデータ
 
 
-SQL Server 2016 で **sys.fn_xe_file_target_read_file**に SELECT を使用した結果を次に示します。
+SQL Server 2016 で **sys.fn_xe_file_target_read_file** に SELECT を使用した結果を次に示します。
 
 
 ```
@@ -279,8 +279,8 @@ D5149520-6282-11DE-8A39-0800200C9A66   03FDA7D0-91BA-45F8-9875-8B6DD0B8E9F2   lo
 
 **source_type** パラメーターは、histogram ターゲットを制御するためのキーです。
 
-- **source_type=0** - *イベント フィールド*のデータを収集します。
-- **source_type=1** - *アクション*のデータを収集します。
+- **source_type=0** - *イベント フィールド* のデータを収集します。
+- **source_type=1** - *アクション* のデータを収集します。
     - 1 が既定値です。
 
 
@@ -289,12 +289,12 @@ D5149520-6282-11DE-8A39-0800200C9A66   03FDA7D0-91BA-45F8-9875-8B6DD0B8E9F2   lo
 - たとえば、slots=59 は 64 に切り上げられます。
 
 
-### <a name="action-example-for-histogram"></a>histogram の*アクション* の例
+### <a name="action-example-for-histogram"></a>histogram の *アクション* の例
 
 
-次の CREATE EVENT SESSION ステートメントの TARGET...SET 句では、ターゲット パラメーターとして **source_type=1**を指定しています。 1 は、histogram ターゲットがアクションを追跡することを意味します。
+次の CREATE EVENT SESSION ステートメントの TARGET...SET 句では、ターゲット パラメーターとして **source_type=1** を指定しています。 1 は、histogram ターゲットがアクションを追跡することを意味します。
 
-この例では、EVENT...ACTION 句は **sqlos.system_thread_id**というターゲットの 1 つのアクションだけを提供します。 TARGET...SET 句では、 **source=N'sqlos.system_thread_id'** と割り当てられています。
+この例では、EVENT...ACTION 句は **sqlos.system_thread_id** というターゲットの 1 つのアクションだけを提供します。 TARGET...SET 句では、 **source=N'sqlos.system_thread_id'** と割り当てられています。
 
 - 複数のソース アクションを追跡するには、CREATE EVENT SESSION ステートメントに histogram ターゲットを追加します。
 
@@ -361,7 +361,7 @@ sqlserver      create_dump_single_thread   Create mini dump for the current thre
 ### <a name="event-field-example-for-histogram"></a>histogram のイベント *フィールド* の例
 
 
-次の例では、 **source_type=0**を設定します。 **source=** に割り当てられる値は、アクションではなくイベント フィールドです。
+次の例では、 **source_type=0** を設定します。 **source=** に割り当てられる値は、アクションではなくイベント フィールドです。
 
 
 
@@ -542,7 +542,7 @@ sqlserver      lock_acquired   2016-08-05 12:45:47.9980000   InMemTest2      0  
 ```
 
 
-ペアになっていない lock_acquired イベントの行には、ロックを取得する T-SQL テキスト **sqlserver.sql_text**が含まれる場合があります。 表示が多くなるので示してはありません。
+ペアになっていない lock_acquired イベントの行には、ロックを取得する T-SQL テキスト **sqlserver.sql_text** が含まれる場合があります。 表示が多くなるので示してはありません。
 
 
 <a name="h2_target_ring_buffer"></a>
@@ -671,7 +671,7 @@ SELECT から取得する内容は XML 形式の文字列です。 このテス�
 ```
 
 
-上の XML を取得するには、イベント セッションがアクティブになっている間に次の SELECT を発行します。 アクティブな XML データが、システム ビュー **sys.dm_xe_session_targets**から取得されます。
+上の XML を取得するには、イベント セッションがアクティブになっている間に次の SELECT を発行します。 アクティブな XML データが、システム ビュー **sys.dm_xe_session_targets** から取得されます。
 
 
 ```sql

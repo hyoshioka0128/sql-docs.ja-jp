@@ -2,7 +2,7 @@
 title: SQL Server、Database Replica | Microsoft Docs
 description: Always On 可用性グループのセカンダリ データベースに関するパフォーマンス カウンターが含まれる SQLServer:Database Replica パフォーマンス オブジェクトについて説明します。
 ms.custom: ''
-ms.date: 08/24/2016
+ms.date: 01/13/2021
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
@@ -14,19 +14,19 @@ helpviewer_keywords:
 - performance counters [SQL Server], AlwaysOn Availability Groups
 - Availability Groups [SQL Server], performance counters
 ms.assetid: a5f6bdce-2b13-4924-aaeb-b50b57d624d8
-author: julieMSFT
-ms.author: jrasnick
-ms.openlocfilehash: 280fae3d260995a15a7baa9e40a861cb2cfdecc4
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 0544531bf30bc99781c51b7664f4f5a756f5b00f
+ms.sourcegitcommit: 04d101fa6a85618b8bc56c68b9c006b12147dbb5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91892232"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99049197"
 ---
 # <a name="sql-server-database-replica"></a>SQL Server、データベース レプリカ
 
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
-  **SQLServer:Database Replica** パフォーマンス オブジェクトには、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]の AlwaysOn 可用性グループのセカンダリ データベースに関する情報を報告するパフォーマンス カウンターが含まれています。 このオブジェクトは、セカンダリ レプリカをホストする [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスでのみ有効です。  
+  **SQLServer:Database Replica** パフォーマンス オブジェクトには、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]の AlwaysOn 可用性グループのセカンダリ データベースに関する情報を報告するパフォーマンス カウンターが含まれています。 このオブジェクトは、セカンダリ レプリカをホストする [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスでのみ有効です。  
   
 |カウンター名|説明|表示|  
 |------------------|-----------------|--------------|  
@@ -42,7 +42,7 @@ ms.locfileid: "91892232"
 |**Redo Bytes Remaining**|元に戻すフェーズを完了するために再実行されるログの残量 (KB 単位)。|セカンダリ レプリカ|  
 |**再適用バイト数/秒**|セカンダリ データベースで最近 1 秒間に再実行されたログ レコードの量。|セカンダリ レプリカ|  
 |**Total Log requiring undo**|元に戻す必要のあるログの合計 KB 数。|セカンダリ レプリカ|  
-|**Transaction Delay**|現在の全トランザクションに対する終了していないコミットの確認を待機中に生じた遅延 (ミリ秒単位)。 *Mirrored Write Transaction/sec* で割ると、*平均の Transaction Delay* が得られます。 詳細については、「[SQL Server 2012 AlwaysOn – Part 12 – Performance Aspects and Performance Monitoring II](/archive/blogs/saponsqlserver/sql-server-2012-alwayson-part-12-performance-aspects-and-performance-monitoring-ii)」 (SQL Server 2012 AlwaysOn – パート 12 – パフォーマンスの性質およびパフォーマンスの監視 II) を参照してください。|プライマリ レプリカ|  
+|**Transaction Delay**|現在のすべてのトランザクションに対する終了していないコミットの確認を待機中に生じた遅延の合計 (ミリ秒単位)。 *Mirrored Write Transaction/sec* で割ると、*平均の Transaction Delay* が得られます。 詳細については、「[SQL Server 2012 AlwaysOn – Part 12 – Performance Aspects and Performance Monitoring II](/archive/blogs/saponsqlserver/sql-server-2012-alwayson-part-12-performance-aspects-and-performance-monitoring-ii)」 (SQL Server 2012 AlwaysOn – パート 12 – パフォーマンスの性質およびパフォーマンスの監視 II) を参照してください。|プライマリ レプリカ|  
   
 ## <a name="see-also"></a>参照
   

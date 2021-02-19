@@ -5,24 +5,24 @@ ms.custom: seo-lt-2019
 ms.date: 05/17/2016
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 f1_keywords:
 - sql13.swb.newagwizard.specifyagname.f1
 - sql13.swb.adddatabasewizard.specifyagname.f1
 ms.assetid: dcb6374d-becb-4c6c-b88c-5a8273f8aa38
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: 202493fb2ee8a05408f82927f82f2b696aa19331
-ms.sourcegitcommit: f7ac1976d4bfa224332edd9ef2f4377a4d55a2c9
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 82671e390d67faf6a7059a0d4c267dd744b5a936
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85883087"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "100352570"
 ---
 # <a name="specify-availability-group-options-page-for-an-always-on-availability-group"></a>Always On 可用性グループの [可用性グループ オプションの指定] ページ
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
-  このトピックでは、 **[可用性グループ名の指定]** ページのオプションについて説明します。 このトピックの対象は、 [!INCLUDE[ssAoNewAgWiz](../../../includes/ssaonewagwiz-md.md)] の [!INCLUDE[ssAoAddDbWiz](../../../includes/ssaoadddbwiz-md.md)] と [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)]の両方です。  
+  このトピックでは、 **[可用性グループ名の指定]** ページのオプションについて説明します。 このトピックの対象は、 [!INCLUDE[ssAoNewAgWiz](../../../includes/ssaonewagwiz-md.md)] の [!INCLUDE[ssAoAddDbWiz](../../../includes/ssaoadddbwiz-md.md)] と [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)]の両方です。  
   
 ##  <a name="specify-availability-group-options"></a><a name="PageOptions"></a> 可用性グループ オプションの指定  
  **[可用性グループ名]**  
@@ -36,11 +36,11 @@ ms.locfileid: "85883087"
 
    * **EXTERNAL**
       
-      可用性グループが、高可用性とディザスター リカバリーのために、Linux 上の Pacemaker などの外部クラスター テクノロジで管理されている [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] のインスタンスでホストされているときに使用します。 [!INCLUDE[sssqlv14](../../../includes/sssqlv14-md.md)] 以降に適用されます。
+      可用性グループが、高可用性とディザスター リカバリーのために、Linux 上の Pacemaker などの外部クラスター テクノロジで管理されている [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] のインスタンスでホストされているときに使用します。 [!INCLUDE[sssql14](../../../includes/sssql17-md.md)] 以降に適用されます。
 
    * **NONE**
       
-      可用性グループが、読み取りのスケールと負荷分散のために、クラスター テクノロジで管理されていない [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] のインスタンスでホストされているときに使用します。 [!INCLUDE[sssqlv14](../../../includes/sssqlv14-md.md)] 以降に適用されます。 
+      可用性グループが、読み取りのスケールと負荷分散のために、クラスター テクノロジで管理されていない [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] のインスタンスでホストされているときに使用します。 [!INCLUDE[sssql14](../../../includes/sssql17-md.md)] 以降に適用されます。 
  
    **データベース レベルの正常性検出**: このボックスをオンにすると、可用性グループのデータベース レベルの正常性検出 (DB_FAILOVER) オプションが有効になります。 何らかの問題が発生し、データベースがオンライン状態でなくなると、このデータベース正常性検出によって検知され、可用性グループの自動フェールオーバーがトリガーされます。 [SQL Server の AlwaysOn データベースの正常性検出フェールオーバー オプション](sql-server-always-on-database-health-detection-failover-option.md)に関するページをご覧ください。
 

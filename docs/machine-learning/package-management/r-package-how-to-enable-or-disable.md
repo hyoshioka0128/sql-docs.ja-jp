@@ -7,14 +7,13 @@ ms.date: 06/13/2019
 ms.topic: how-to
 author: garyericson
 ms.author: garye
-ms.reviewer: davidph
-monikerRange: =sql-server-2016||=sql-server-2017||=sqlallproducts-allversions
-ms.openlocfilehash: 19fe9aaaa29f4b9d3e4454aa131e0ed6c261b557
-ms.sourcegitcommit: 9b41725d6db9957dd7928a3620fe4db41eb51c6e
+monikerRange: =sql-server-2016||=sql-server-2017
+ms.openlocfilehash: 728dc656d3fdb94abae0a5c2c0e2665af2c4807c
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88178927"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100073926"
 ---
 # <a name="enable-or-disable-remote-package-management-for-sql-server"></a>SQL Server のパッケージのリモート管理を有効または無効にする
 [!INCLUDE [SQL Server 2016 and 2017 only](../../includes/applies-to-version/sqlserver2016-2017-only.md)]

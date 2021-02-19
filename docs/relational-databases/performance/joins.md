@@ -15,15 +15,15 @@ helpviewer_keywords:
 - joins [SQL Server], about joins
 - join hints [SQL Server]
 ms.assetid: bfc97632-c14c-4768-9dc5-a9c512f4b2bd
-author: julieMSFT
-ms.author: jrasnick
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: c672ae4cf447f60f486eaaca8a50a1d79c3cd4b4
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 0716c686698745e5dae851f17844e49b5cab0872
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91726013"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100348027"
 ---
 # <a name="joins-sql-server"></a>結合 (SQL Server)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -60,7 +60,7 @@ ms.locfileid: "91726013"
 -   FULL [ OUTER ] JOIN
 -   CROSS JOIN
 
-**内部結合**は、`FROM` 句または `WHERE` 句のどちらを使用しても指定できます。 **外部結合**と**クロス結合**は、`FROM` 句でのみ指定できます。 結合条件は、検索条件 `WHERE` と `HAVING` を使用して、`FROM` 句で参照されたベース テーブルからどの行を選択するかを指定します。    
+**内部結合** は、`FROM` 句または `WHERE` 句のどちらを使用しても指定できます。 **外部結合** と **クロス結合** は、`FROM` 句でのみ指定できます。 結合条件は、検索条件 `WHERE` と `HAVING` を使用して、`FROM` 句で参照されたベース テーブルからどの行を選択するかを指定します。    
 
 `FROM` 句で結合条件を指定すると、`WHERE` 句で他の検索条件が指定された場合に区別しやすくなります。結合を指定する場合、FROM 句で指定することをお勧めします。 簡略化された ISO `FROM` 句の結合構文は次のとおりです。
 
@@ -111,11 +111,11 @@ WHERE pv.BusinessEntityID=v.BusinessEntityID
     AND Name LIKE N'F%';
 ```
 
-結合の `SELECT` リストは、結合されたテーブル内のすべての列を参照することも、一部の列だけを参照することもできます。 `SELECT` リストには、結合したすべてのテーブルの列を含める必要はありません。 たとえば、3 つのテーブルを結合した場合、1 つのテーブルだけを使用して残りの 2 つのテーブルの一方から 3 番目のテーブルにブリッジできます。中央のテーブルの列を選択リストで参照する必要はありません。 これは、**反準結合**とも呼ばれます。  
+結合の `SELECT` リストは、結合されたテーブル内のすべての列を参照することも、一部の列だけを参照することもできます。 `SELECT` リストには、結合したすべてのテーブルの列を含める必要はありません。 たとえば、3 つのテーブルを結合した場合、1 つのテーブルだけを使用して残りの 2 つのテーブルの一方から 3 番目のテーブルにブリッジできます。中央のテーブルの列を選択リストで参照する必要はありません。 これは、**反準結合** とも呼ばれます。  
 
 結合条件では、通常は等値比較演算子 (=) を使用します。ただし、他の述語と同様に他の比較演算子や関係演算子も指定できます。 詳しくは、「[比較演算子 &#40;Transact-SQL&#41;](../../t-sql/language-elements/comparison-operators-transact-sql.md)」および「[WHERE &#40;Transact-SQL&#41;](../../t-sql/queries/where-transact-sql.md)」をご覧ください。  
 
-つまり、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で結合を処理する場合、クエリ オプティマイザーによって、複数の候補の中から最も効率的な結合の処理方法が選択されます。 これには、最も効率的な物理結合の種類、テーブルが結合される順序をそれぞれ選択することや、[!INCLUDE[tsql](../../includes/tsql-md.md)] 構文で直接表現できない論理結合操作の種類 (**準結合**や**反準結合**など) を使用することも含まれます。 各結合の物理的実行には何種類もの最適化を使用できるので、その実行を確実に予測することはできません。 準結合と反準結合の詳細については、「[プラン表示の論理操作と物理操作のリファレンス](../../relational-databases/showplan-logical-and-physical-operators-reference.md)」を参照してください。  
+つまり、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で結合を処理する場合、クエリ オプティマイザーによって、複数の候補の中から最も効率的な結合の処理方法が選択されます。 これには、最も効率的な物理結合の種類、テーブルが結合される順序をそれぞれ選択することや、[!INCLUDE[tsql](../../includes/tsql-md.md)] 構文で直接表現できない論理結合操作の種類 (**準結合** や **反準結合** など) を使用することも含まれます。 各結合の物理的実行には何種類もの最適化を使用できるので、その実行を確実に予測することはできません。 準結合と反準結合の詳細については、「[プラン表示の論理操作と物理操作のリファレンス](../../relational-databases/showplan-logical-and-physical-operators-reference.md)」を参照してください。  
 
 結合条件で使用する複数の列間で名前やデータ型が同じである必要はありません。 ただし、データ型が同じでない場合、それらは互換性があるもの、または [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] が暗黙的に変換できるものである必要があります。 データ型を暗黙的に変換できない場合、結合条件は `CAST` 関数を使用してデータ型を明示的に変換する必要があります。 明示的な変換と暗黙的な変換について詳しくは、「[データ型の変換 &#40;データベース エンジン&#41;](../../t-sql/data-types/data-type-conversion-database-engine.md)」をご覧ください。    
 
@@ -157,7 +157,7 @@ Merge Join 操作は、標準の操作または多対多操作のいずれかに
 
 ハッシュ結合では、非正規化の使用を減らすことができます。 通常、非正規化は、結合演算を減らすことにより、パフォーマンスを向上させるときに使用します。ただし、不整合な更新など、データの冗長性が発生するおそれがあります。 ハッシュ結合では、非正規化の必要性が減少します。 ハッシュ結合では、列方向のパーティション分割 (単一テーブルの列グループを異なるファイルまたはインデックスに格納することを表します) を物理データベース デザインに利用できます。     
 
-ハッシュ結合には、**ビルド**入力と**プローブ**入力という 2 つの入力があります。 クエリ オプティマイザーでは、2 つの入力のうち小さい方がビルド入力になるように、ロールを割り当てます。    
+ハッシュ結合には、**ビルド** 入力と **プローブ** 入力という 2 つの入力があります。 クエリ オプティマイザーでは、2 つの入力のうち小さい方がビルド入力になるように、ロールを割り当てます。    
 
 ハッシュ結合は多種多様な集合の照合操作に使用されます。ハッシュ結合を使用できるのは、Inner Join、Left Outer Join、Right Outer Join、Full Outer Join、Left Semi Join、Right Semi Join、Intersect、Union、Diff です。 また、ハッシュ結合の派生形では、重複の削除やグループ化を行うことができます (`SUM(salary) GROUP BY department` など)。 このような変更では、ビルドとプローブの両方のロールに 1 つの入力しか使用しません。   
 
@@ -191,7 +191,7 @@ Merge Join 操作は、標準の操作または多対多操作のいずれかに
 ハッシュの保留について詳しくは、「[Hash Warning イベント クラス](../../relational-databases/event-classes/hash-warning-event-class.md)」をご覧ください。    
 
 ## <a name="understanding-adaptive-joins"></a><a name="adaptive"></a> アダプティブ結合について
-[バッチ モード](../../relational-databases/query-processing-architecture-guide.md#batch-mode-execution) アダプティブ結合機能を使用すると、最初の入力のスキャンが**終わる**まで、[ハッシュ結合](#hash)方法または[ネステッド ループ](#nested_loops)結合方法のどちらを選ぶかを、遅延することができます。 アダプティブ結合演算子は、入れ子になったループ プランに切り替えるタイミングを決定するために使われるしきい値を定義します。 したがって、クエリ プランでは、再コンパイルを行わなくても、実行中により適切な結合方法に動的に切り替えることができます。 
+[バッチ モード](../../relational-databases/query-processing-architecture-guide.md#batch-mode-execution) アダプティブ結合機能を使用すると、最初の入力のスキャンが **終わる** まで、[ハッシュ結合](#hash)方法または [ネステッド ループ](#nested_loops)結合方法のどちらを選ぶかを、遅延することができます。 アダプティブ結合演算子は、入れ子になったループ プランに切り替えるタイミングを決定するために使われるしきい値を定義します。 したがって、クエリ プランでは、再コンパイルを行わなくても、実行中により適切な結合方法に動的に切り替えることができます。 
 
 > [!TIP]
 > 大小の結合入力スキャンが頻繁に切り替わるワークロードの場合、この機能から最もメリットがあります。

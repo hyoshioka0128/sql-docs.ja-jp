@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - LockTypeEnum
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: d2894eaf-4450-4ace-aa51-c8b875fd3010
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 26cbe4b13e855949b617804311bd283cf44f2ef3
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: b141a5cd21e73208772c617ddb6e8c0a7e0d5a85
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88990683"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100041813"
 ---
 # <a name="locktypeenum"></a>LockTypeEnum
 編集中にレコードに適用されるロックの種類を指定します。  

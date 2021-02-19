@@ -8,11 +8,11 @@ ms.topic: include
 ms.date: 11/19/2019
 ms.author: maggies
 ms.custom: include file
-ms.openlocfilehash: 60d56f5374878e182373ec48246fde915e58eaf5
-ms.sourcegitcommit: 5c28603dd51d907544ebf8a50b678675d5414eaf
+ms.openlocfilehash: ede61b77e332a0f8b415199c9ef8f6b076736502
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80502133"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100065533"
 ---
- ![はい](media/yes-icon.png)SQL Server Reporting Services (2019 以降)
+ :::image type="icon" source="media/yes-icon.png":::SQL Server Reporting Services (2019 以降)

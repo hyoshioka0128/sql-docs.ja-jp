@@ -15,18 +15,18 @@ ms.assetid: ''
 author: rajeshsetlem
 ms.author: rajpo
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 9aae42b92c6d7d9bb5c26c84e49c49a8cde6bc57
-ms.sourcegitcommit: 67befbf7435f256e766bbce6c1de57799e1db9ad
+ms.openlocfilehash: 4c59fb5228ef46a693e343716d1e58e56c042a53
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92523879"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100061557"
 ---
 # <a name="assess-the-readiness-of-a-sql-server-data-estate-migrating-to-azure-sql-database-using-the-data-migration-assistant"></a>Data Migration Assistant を使用して Azure SQL Database に移行する SQL Server のデータ資産の準備状況を評価する
 
 1つのサービスとしてのプラットフォーム (PaaS) オファリングは、膨大な数の SQL Server インスタンスと数千のデータベースを Azure SQL Database に移行しています。 このプロセスを可能な限り合理化するには、移行に関する相対的な準備を十分に理解しておく必要があります。 完全に準備されているサーバーやデータベースや、移行の準備を行うために最小限の労力を必要とするサーバーやデータベースを含む、低負荷の果物を特定すると、作業が容易になり、加速します。
 
-この記事では、 [Data Migration Assistant](./dma-overview.md?view=sql-server-2017) を利用して準備結果を要約し、 [Azure Migrate](https://portal.azure.com/?feature.customPortal=false#blade/Microsoft_Azure_Migrate/AmhResourceMenuBlade/overview) ハブに表示するための詳細な手順について説明します。
+この記事では、 [Data Migration Assistant](./dma-overview.md) を利用して準備結果を要約し、 [Azure Migrate](https://portal.azure.com/?feature.customPortal=false#blade/Microsoft_Azure_Migrate/AmhResourceMenuBlade/overview) ハブに表示するための詳細な手順について説明します。
 
 >
 > [!VIDEO https://channel9.msdn.com/Shows/Data-Exposed/Data-Migration-Assistant/player?WT.mc_id=dataexposed-c9-niner]
@@ -46,7 +46,7 @@ Azure Migrate のプロジェクトは、評価または移行しようとして
 
    ![Azure Migrate-評価の開始](../dma/media//dma-assess-sql-data-estate-to-sqldb/dms-azure-migrate-hub-assess.png)
 
-4. [ **データベース**] の [ **はじめ**に] で、[ **ツールの追加**] を選択します。
+4. [ **データベース**] の [ **はじめ** に] で、[ **ツールの追加**] を選択します。
 
    ![Azure Migrate-ツールの追加](../dma/media//dma-assess-sql-data-estate-to-sqldb/dms-azure-migrate-add-tools.png)
 
@@ -75,7 +75,7 @@ Azure Migrate のプロジェクトは、評価または移行しようとして
 
     ![Azure Migrate-[評価ツール] タブの選択](../dma/media//dma-assess-sql-data-estate-to-sqldb/dms-azure-migrate-select-assessment-tool.png)
 
-9. [ **移行ツールの選択** ] タブの **Azure Migrate: [データベースの移行** ] が、追加する移行ツールとして表示されます。 移行ツールを現在必要としていない場合は、 **今すぐ移行ツールの追加をスキップ**します。 **[次へ]** を選択します。
+9. [ **移行ツールの選択** ] タブの **Azure Migrate: [データベースの移行** ] が、追加する移行ツールとして表示されます。 移行ツールを現在必要としていない場合は、 **今すぐ移行ツールの追加をスキップ** します。 **[次へ]** を選択します。
 
     ![Azure Migrate-[移行ツール] タブの選択](../dma/media//dma-assess-sql-data-estate-to-sqldb/dms-azure-migrate-select-migration-tool.png)
 
@@ -96,12 +96,12 @@ Azure Migrate のプロジェクトは、評価または移行しようとして
 
 ### <a name="create-an-assessment"></a>評価を作成する
 
-1. 左側でアイコンを選択 **+** し、[評価]**プロジェクトタイプ**を選択します。
+1. 左側でアイコンを選択 **+** し、[評価]**プロジェクトタイプ** を選択します。
 2. プロジェクト名を指定し、移行元サーバーと移行先サーバーの種類を選択します。
 
-    オンプレミスの SQL Server インスタンスを SQL Server の新しいバージョンまたは Azure VM でホストされている SQL Server にアップグレードする場合は、ソースとターゲットのサーバーの種類を **SQL Server**に設定します。 Azure SQL Database (PaaS) ターゲット準備の評価については、対象サーバーの種類を **AZURE SQL Managed Instance** に設定します。
+    オンプレミスの SQL Server インスタンスを SQL Server の新しいバージョンまたは Azure VM でホストされている SQL Server にアップグレードする場合は、ソースとターゲットのサーバーの種類を **SQL Server** に設定します。 Azure SQL Database (PaaS) ターゲット準備の評価については、対象サーバーの種類を **AZURE SQL Managed Instance** に設定します。
 
-3. **[作成]** を選択します。
+3. **［作成］** を選択します
 
    ![Azure Migrate-Data Migration Assistant インターフェイス](../dma/media//dma-assess-sql-data-estate-to-sqldb/dms-dma-interface.png)
 
@@ -144,7 +144,7 @@ Azure Migrate のプロジェクトは、評価または移行しようとして
 
 ## <a name="view-target-readiness-assessment-results"></a>ターゲットの準備の評価結果を表示する
 
-1. Azure portal にサインインし、Azure migrate を検索して、select **Azure Migrate**を検索します。
+1. Azure portal にサインインし、Azure migrate を検索して、select **Azure Migrate** を検索します。
 
    ![Azure Migrate-Azure portal サービス検索](../dma/media//dma-assess-sql-data-estate-to-sqldb/dms-azure-migrate-portal-search.png)
 
@@ -158,8 +158,8 @@ Azure Migrate のプロジェクトは、評価または移行しようとして
 
    ![Azure Migrate-準備の結果を確認する](../dma/media//dma-assess-sql-data-estate-to-sqldb/dms-azure-migrate-review-readiness.png)
 
-    評価された**データベースインスタンス**: これまでに評価された SQL Server インスタンスの数。
-    **評価**されたデータベース: 1 つ以上の SQL Server インスタンスで評価されたデータベースの総数: **SQL Database の準備ができて**いるデータベースの数: Azure SQL Database (PaaS) に移行する準備ができているデータベースの数。
+    評価された **データベースインスタンス**: これまでに評価された SQL Server インスタンスの数。
+    **評価** されたデータベース: 1 つ以上の SQL Server インスタンスで評価されたデータベースの総数: **SQL Database の準備ができて** いるデータベースの数: Azure SQL Database (PaaS) に移行する準備ができているデータベースの数。
     **AZURE SQL VM の準備ができているデータベース**: データベースの数は、Azure SQL Database (PaaS) に1つ以上の移行ブロックを構成しますが、Azure SQL Server vm に移行する準備ができています。
 
 3. [評価された **データベースインスタンス** ] を選択して SQL Server インスタンスレベルビューに移動します。

@@ -1,6 +1,6 @@
 ---
-description: SQL Server Native Client で OLE DB テーブル値パラメーターのスキーマ行セットが変更されました
-title: スキーマ行セット、OLE DB テーブル値パラメーター
+description: で OLE DB Table-Valued パラメーターのスキーマ行セットが変更されました SQL Server Native Client
+title: スキーマ行セット、OLE DB Table-Valued パラメーター
 ms.custom: ''
 ms.date: 03/06/2017
 ms.prod: sql
@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 581e3ead-53db-44da-8718-f3fc4b5108f1
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: d68366d87fdee64096ebca492b318c711fd2b038
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: a5daac97d996eee396607fb62b19fe4352f3995f
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88482608"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97469263"
 ---
-# <a name="schema-rowsets-changed-for-ole-db-table-valued-parameters-in-sql-server-native-client"></a>SQL Server Native Client で OLE DB テーブル値パラメーターのスキーマ行セットが変更されました
+# <a name="schema-rowsets-changed-for-ole-db-table-valued-parameters-in-sql-server-native-client"></a>で OLE DB Table-Valued パラメーターのスキーマ行セットが変更されました SQL Server Native Client
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   テーブル値パラメーターをサポートするために変更または追加されたスキーマ行セットは次のとおりです。  

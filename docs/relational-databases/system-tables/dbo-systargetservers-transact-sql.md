@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - dbo.systargetservers_TSQL
 - dbo.systargetservers
@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - systargetservers system table
 ms.assetid: 479d1314-be37-4d19-ac9c-419fc9110e53
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 6ecf738591688ba3ad25c58f6b77dabec5df73b2
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 6c89bf252a4e06db5f0398f9553d1f8190071c12
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89538319"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99207259"
 ---
 # <a name="dbosystargetservers-transact-sql"></a>dbo.systargetservers (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

@@ -10,13 +10,13 @@ ms.topic: conceptual
 ms.assetid: e000a1d8-a049-4542-bfeb-943fd6ab3969
 author: MladjoA
 ms.author: mlandzic
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: f117b284799ba4849131254b90a018a397824e7b
-ms.sourcegitcommit: a5398f107599102af7c8cda815d8e5e9a367ce7e
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 24be57e6e964fea4ddb0f050480dbe79353ddcd2
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92006330"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97459985"
 ---
 # <a name="curvepolygon"></a>CurvePolygon
 [!INCLUDE [SQL Server Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "92006330"
 ### <a name="accepted-instances"></a>許容されるインスタンス  
  **CurvePolygon** インスタンスが許容されるためには、空であるか、または許容される円弧リングのみを含んでいる必要があります。 許容される円弧リングは、次の要件を満たしています。  
   
-1.  許容される **LineString**、 **CircularString**または **CompoundCurve** インスタンスです。 許容されるインスタンスの詳細については、「 [LineString](../../relational-databases/spatial/linestring.md)」、「 [CircularString](../../relational-databases/spatial/circularstring.md)」、および「 [CompoundCurve](../../relational-databases/spatial/compoundcurve.md)」を参照してください。  
+1.  許容される **LineString**、 **CircularString** または **CompoundCurve** インスタンスです。 許容されるインスタンスの詳細については、「 [LineString](../../relational-databases/spatial/linestring.md)」、「 [CircularString](../../relational-databases/spatial/circularstring.md)」、および「 [CompoundCurve](../../relational-databases/spatial/compoundcurve.md)」を参照してください。  
   
 2.  4 つ以上の点があること。  
   
@@ -131,7 +131,7 @@ DECLARE @g geometry = 'CURVEPOLYGON(CIRCULARSTRING(2 4, 4 2, 6 4, 4 6, 2 4))'
 ```  
   
 ### <a name="c-instantiating-a-geography-instance-with-a-curvepolygon"></a>C. CurvePolygon を使用して geography インスタンスをインスタンス化する  
- このコード スニペットは、 **geography** を使用して **CurvePolygon**インスタンスを宣言およびインスタンス化する方法を示しています。  
+ このコード スニペットは、 **geography** を使用して **CurvePolygon** インスタンスを宣言およびインスタンス化する方法を示しています。  
   
 ```sql  
 DECLARE @g geography = 'CURVEPOLYGON(CIRCULARSTRING(-122.358 47.653, -122.348 47.649, -122.348 47.658, -122.358 47.658, -122.358 47.653))';  

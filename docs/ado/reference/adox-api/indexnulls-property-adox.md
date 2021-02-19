@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - _Index::get_IndexNulls
@@ -20,18 +20,18 @@ helpviewer_keywords:
 ms.assetid: 313b0bf7-3f37-4823-8fca-bd9c80e078a7
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 055b873866758c4aede2a3f6364eb99036159427
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: afbcf86674cf5addb8e09e1599987470660c691c
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88984153"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100054097"
 ---
 # <a name="indexnulls-property-adox"></a>IndexNulls プロパティ (ADOX)
 インデックスフィールドに null 値を持つレコードのインデックスエントリがあるかどうかを示します。  
   
 ## <a name="settings-and-return-values"></a>設定と戻り値  
- [Allownullsenum](./allownullsenum.md)値を設定して返します。 既定値は **Adindexnullsdisallow**です。  
+ [Allownullsenum](./allownullsenum.md)値を設定して返します。 既定値は **Adindexnullsdisallow** です。  
   
 ## <a name="remarks"></a>解説  
  このプロパティは、既にコレクションに追加されている [インデックス](./index-object-adox.md) オブジェクトでは読み取り専用です。  

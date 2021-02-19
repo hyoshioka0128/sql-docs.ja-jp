@@ -9,31 +9,31 @@ ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: 07b2cf5a77199f64d89d8dd61f8ec89268d759c5
-ms.sourcegitcommit: 9b41725d6db9957dd7928a3620fe4db41eb51c6e
+monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: e80e3414271d520b5fd74d4a943a173a1ecdbfac
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88173409"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470403"
 ---
 # <a name="python-tutorial-prepare-data-to-train-a-linear-regression-model-with-sql-machine-learning"></a>Python のチュートリアル:SQL 機械学習で線形回帰モデルをトレーニングするためのデータを準備する
 [!INCLUDE [SQL Server 2017 SQL MI](../../includes/applies-to-version/sqlserver2017-asdbmi.md)]
 
-::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15"
 この 4 部構成のチュートリアル シリーズの第 2 部では、Python を使用してデータベースからデータを準備します。 このシリーズの後半では、本データを使用して、ビッグ データ クラスター上の SQL Server Machine Learning Services を使用して Python で線形回帰モデルをトレーニングし、デプロイします。
 ::: moniker-end
-::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2017"
 この 4 部構成のチュートリアル シリーズの第 2 部では、Python を使用してデータベースからデータを準備します。 このシリーズの後半では、本データを使用して、SQL Server Machine Learning Services とともに Python で線形回帰モデルをトレーニングし、デプロイします。
 ::: moniker-end
-::: moniker range="=azuresqldb-mi-current||=sqlallproducts-allversions"
+::: moniker range="=azuresqldb-mi-current"
 この 4 部構成のチュートリアル シリーズの第 2 部では、Python を使用してデータベースからデータを準備します。 このシリーズの後半では、本データを使用して、Azure SQL Managed Instance Machine Learning Services とともに Python で線形回帰モデルをトレーニングし、デプロイします。
 ::: moniker-end
 
 この記事では、次の方法について学習します。
 
 > [!div class="checklist"]
-> * データベースから **pandas**データ フレームにデータを読み込む
+> * データベースから **pandas** データ フレームにデータを読み込む
 > * いくつかの列を削除して Python でデータを準備する
 
 [第 1 部](python-ski-rental-linear-regression.md)では、サンプル データベースを復元する方法を学習しました。
@@ -101,7 +101,7 @@ Data frame:      Year  Month  Day  RentalCount  WeekDay  Holiday  Snow
 
 このチュートリアル シリーズの第 2 部では、次の手順を完了しました。
 
-* データベースから **pandas**データ フレームにデータを読み込む
+* データベースから **pandas** データ フレームにデータを読み込む
 * いくつかの列を削除して Python でデータを準備する
 
 TutorialDB データベースのデータを使用する機械学習モデルをトレーニングするには、このチュートリアル シリーズのパート 3 に従ってください。

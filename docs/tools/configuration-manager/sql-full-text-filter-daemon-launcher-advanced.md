@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: d0be29c2-19df-4882-9832-2efdbefb4b89
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 552546b473611dd67f921829b3673deef950aa3c
-ms.sourcegitcommit: 6d53ecfdc463914f045c20eda96da39dec22acca
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: c35edee11bd981b49d57ee1f5bbd179183023405
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88901076"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100346008"
 ---
 # <a name="sql-full-text-filter-daemon-launcher-advanced"></a>SQL フルテキスト フィルター デーモン ランチャー (詳細設定)
 [!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]

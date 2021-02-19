@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - Value
@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 70dc5cff-0b05-456d-b86b-2686fe4e7ce6
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 473b80e5ea7116dfbf6cd90079036bce1b9905ef
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 58196cf713a857a2c5f6a1922a4346db66d49d1a
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88985953"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100050823"
 ---
 # <a name="value-property-ado-md"></a>Value プロパティ (ADO MD)
 現在の [セル](./cell-object-ado-md.md)の値を示します。  

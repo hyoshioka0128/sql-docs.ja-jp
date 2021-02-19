@@ -1,13 +1,13 @@
 ---
-description: edge_constraints (Transact-sql)
-title: edge_constraints (Transact-sql) |Microsoft Docs
+description: sys.edge_constraints (Transact-sql)
+title: sys.edge_constraints (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 09/17/2018
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.edge_constraints
 - edge_constraints
@@ -21,14 +21,14 @@ ms.assetid: 0f782d2f-7126-46ab-85b7-bcba44862231
 author: shkale-msft
 ms.author: shkale
 monikerRange: '>=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 7ceea1b9ad0c7995240187518522633de4ace1c9
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 878e4ae3d17682701c576a22bc7031c443233d28
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88377838"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100066028"
 ---
-# <a name="sysedge_constraints-transact-sql"></a>edge_constraints (Transact-sql)
+# <a name="sysedge_constraints-transact-sql"></a>sys.edge_constraints (Transact-sql)
 [!INCLUDE[sqlserver2019](../../includes/applies-to-version/sqlserver2019.md)]
 
 エッジ制約であるオブジェクトごとに1行のレコードを格納します。 

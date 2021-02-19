@@ -13,18 +13,18 @@ helpviewer_keywords:
 ms.assetid: 8cb24263-e97d-4e4d-9429-6cf494a4d5eb
 author: jaszymas
 ms.author: jaszymas
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 200f10a76629eb94e1e9fc1b3e1c29811d9e7f67
-ms.sourcegitcommit: f3321ed29d6d8725ba6378d207277a57cb5fe8c2
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: f97dbd4425b990cd2ec433afa817081683b38f45
+ms.sourcegitcommit: 38e055eda82d293bf5fe9db14549666cf0d0f3c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "86005571"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99251417"
 ---
 # <a name="create-a-database-master-key"></a>データベース マスター キーの作成
 
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
-このトピックでは、 [!INCLUDE[ssCurrent](../../../includes/sscurrent-md.md)] で [!INCLUDE[tsql](../../../includes/tsql-md.md)]を使用してデータベース マスター キーを作成する方法について説明します。
+このトピックでは、 [!INCLUDE[ssnoversion](../../../includes/ssnoversion-md.md)] で [!INCLUDE[tsql](../../../includes/tsql-md.md)]を使用してデータベース マスター キーを作成する方法について説明します。
 
 ## <a name="security"></a>セキュリティ
 
@@ -37,7 +37,7 @@ ms.locfileid: "86005571"
 ### <a name="to-create-a-database-master-key"></a>データベース マスター キーを作成するには
 
 1. データベースに格納するマスター キーのコピーを暗号化するためのパスワードを指定します。
-2. **オブジェクト エクスプローラー**で、 [!INCLUDE[ssDE](../../../includes/ssde-md.md)]のインスタンスに接続します。
+2. **オブジェクト エクスプローラー** で、 [!INCLUDE[ssDE](../../../includes/ssde-md.md)]のインスタンスに接続します。
 3. **[システム データベース]** を展開し、`master` を右クリックして、 **[新しいクエリ]** をクリックします。
 4. 次の例をコピーしてクエリ ウィンドウに貼り付け、 **[実行]** をクリックします。
 

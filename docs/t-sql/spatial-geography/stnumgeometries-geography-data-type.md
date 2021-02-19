@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - STNumGeometries (geography Data Type)
 - STNumGeometries_TSQL
@@ -18,17 +18,17 @@ helpviewer_keywords:
 ms.assetid: 6ae7fac2-62f1-420f-9fc9-a09606be9605
 author: MladjoA
 ms.author: mlandzic
-ms.openlocfilehash: fab670e6a334b121850a218cad3c57a9c67def33
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 21dfb949f48d8717062cc2df6abb7ac3d30c7d23
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88459029"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99202118"
 ---
 # <a name="stnumgeometries-geography-data-type"></a>STNumGeometries (geography データ型)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
-  **geography** インスタンスを構成する**ジオメトリ**の数を返します。  
+  **geography** インスタンスを構成する **ジオメトリ** の数を返します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -48,7 +48,7 @@ ms.locfileid: "88459029"
  このメソッドは、**geography** インスタンスが **MultiPoint**、**MultiLineString**、**MultiPolygon**、**GeometryCollection** インスタンスではない場合に 1 を返し、**geography** インスタンスが空の場合に 0 を返します。  
   
 ## <a name="examples"></a>例  
- `MultiPoint` インスタンスを作成し、`STNumGeometries()` を使用して**ジオメトリ**の数を確認する例を次に示します。  
+ `MultiPoint` インスタンスを作成し、`STNumGeometries()` を使用して **ジオメトリ** の数を確認する例を次に示します。  
   
 ```  
 DECLARE @g geography;  

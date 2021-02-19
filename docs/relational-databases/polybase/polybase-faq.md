@@ -1,19 +1,19 @@
 ---
 title: PolyBase のよく寄せられる質問 |Microsoft Docs
 description: PolyBase とリンク サーバーを比較して、ビッグ データ クラスターの PolyBase とスタンドアロン インスタンスの PolyBase を比較します。 PolyBase 2019 の新機能について説明します。
-ms.date: 04/23/2019
+ms.date: 12/02/2020
 ms.prod: sql
 ms.technology: polybase
 ms.topic: conceptual
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: mikeray
-ms.openlocfilehash: 5083228cc44b859faec866eca7d36aae9626e8fa
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 2e0f89137327deada6307147f8bd83a28f23e6a0
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85760445"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100351825"
 ---
 # <a name="frequently-asked-questions"></a>よく寄せられる質問
 
@@ -36,7 +36,7 @@ ms.locfileid: "85760445"
 
 ## <a name="whats-new-in-polybase-2019"></a>PolyBase 2019 の新機能 
 
-[!INCLUDE[sssqlv15](../../includes/sssqlv15-md.md)] の PolyBase は、さまざまな大規模なデータ ソースからデータを読み取ることができるようになりました。 これらの外部データ ソースのデータは、SQL Server で外部テーブルとして保存できます。 PolyBase では、ODBC ジェネリック型を除くこれらの外部データ ソースへのプッシュ ダウン計算もサポートします。
+[!INCLUDE[sssql19](../../includes/sssql19-md.md)] の PolyBase は、さまざまな大規模なデータ ソースからデータを読み取ることができるようになりました。 これらの外部データ ソースのデータは、SQL Server で外部テーブルとして格納できます。 PolyBase により、ODBC ジェネリック型を除くこれらの外部データ ソースへのプッシュ ダウン計算もサポートされます。
 
 ### <a name="compatible-data-sources"></a>互換性のあるデータ ソース
 
@@ -51,17 +51,17 @@ ms.locfileid: "85760445"
 
 ## <a name="polybase-in-big-data-clusters-vs-polybase-in-stand-alone-instances"></a>ビッグ データ クラスターの PolyBase とスタンドアロン インスタンスの PolyBase
 
-次の表では、[!INCLUDE[sssqlv15](../../includes/sssqlv15-md.md)] のスタンドアロン インストールと [!INCLUDE[sssqlv15](../../includes/sssqlv15-md.md)] のビッグ データ クラスターで使用できる PolyBase の機能について説明します。
+次の表では、[!INCLUDE[sssql19](../../includes/sssql19-md.md)] のスタンドアロン インストールと [!INCLUDE[sssql19](../../includes/sssql19-md.md)] のビッグ データ クラスターで使用できる PolyBase の機能について説明します。
 
 |機能 |ビッグ データ クラスター|スタンドアロン インスタンス|
 |--------------------------|--------------------------|---------|   
-|SQL Server、Oracle、Teradata、Mongo DB に対する外部データ ソースを作成する |X|X |
+|SQL Server、Oracle、Teradata、Mongo DB に対する外部データ ソースを作成する |X|X|
 |互換性のあるサードパーティ製 ODBC ドライバーを使用して外部データ ソースを作成する | | X|
 |HADOOP データ ソースに対する外部データ ソースを作成する | X| X|
 |Azure Blob Storage に対する外部データ ソースを作成する | X| X|
 |SQL Server データ プールに外部テーブルを作成する | X| |
 |SQL Server ストレージ プールに外部テーブルを作成する | X| |
-|クエリの実行をスケールアウトする | X| X|
+|クエリの実行をスケールアウトする | X| X (Windows のみ) |
 
 > [!NOTE]
->この表では、最新の [!INCLUDE[sssqlv15](../../includes/sssqlv15-md.md)] CTP で利用できる機能については説明されていません。 使用可能な機能については、リリース ノートをご覧ください。 ODBC ジェネリック コネクタを使用した接続の詳細については、[ODBC ジェネリック型を構成するためのハウツー ガイド](polybase-configure-odbc-generic.md)の記事をご覧ください。
+>この表では、最新の [!INCLUDE[sssql19](../../includes/sssql19-md.md)] CTP で利用できる機能については説明されていません。 使用可能な機能については、リリース ノートをご覧ください。 ODBC ジェネリック コネクタを使用した接続の詳細については、[ODBC ジェネリック型を構成するためのハウツー ガイド](polybase-configure-odbc-generic.md)の記事をご覧ください。

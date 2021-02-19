@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 17df2a83-4166-4df8-8c17-0a33aaac8582
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: b68a1937bff74767134568152d62ac8ffe032057
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 03dcc015001b349f5456521cc0622cd639835a14
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88982823"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100053353"
 ---
 # <a name="views-delete-method-example-vb"></a>Views Delete メソッドの例 (VB)
 次のコードは、 [delete](./delete-method-adox-collections.md) メソッドを使用して、カタログからビューを削除する方法を示しています。  

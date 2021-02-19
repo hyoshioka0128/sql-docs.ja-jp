@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d34dfd26-9ca7-4c9c-a918-396f05fecca9
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: ace4d981f4b777f9d495c8f257df6473b5636cdd
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 6688f0e5681167f0637a259d0539f3327361120d
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88989473"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100051583"
 ---
 # <a name="resync-method-example-vc"></a>Resync メソッドの例 (VC++)
 この例では、再 [同期](./resync-method.md) メソッドを使用して、静的レコードセット内のデータを更新する方法を示します。  

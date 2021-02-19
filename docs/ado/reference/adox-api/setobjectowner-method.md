@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - _Catalog::SetObjectOwner
@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: e5170a37-9d6e-43db-bfb6-9b6631fa3048
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: d021d91f89032146cb87516e6d5dd486de946378
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 2d75966ce8d5c1f9fddea9c09ff254eca9106e62
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88983323"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100053807"
 ---
 # <a name="setobjectowner-method"></a>SetObjectOwner メソッド
 [カタログ](./catalog-object-adox.md)内のオブジェクトの所有者を指定します。  
@@ -39,13 +39,13 @@ Catalog.SetObjectOwner ObjectName, ObjectType, OwnerName [,ObjectTypeId]
  所有者を指定するオブジェクトの名前を示す **文字列** 値です。  
   
  *ObjectType*  
- Owner 型を指定する[Objecttypeenum](./objecttypeenum.md)定数の1つである**Long**値。  
+ Owner 型を指定する [Objecttypeenum](./objecttypeenum.md)定数の1つである **Long** 値。  
   
  *OwnerName*  
- オブジェクトを所有する[ユーザー](./user-object-adox.md)または[グループ](./group-object-adox.md)の[名前](./name-property-adox.md)を指定する**文字列**値。  
+ オブジェクトを所有する [ユーザー](./user-object-adox.md)または [グループ](./group-object-adox.md)の [名前](./name-property-adox.md)を指定する **文字列** 値。  
   
  *ObjectTypeId*  
- 省略可能。 OLE DB 仕様で定義されていないプロバイダーオブジェクト型の GUID を示す **バリアント** 値です。 *ObjectType*が**Adpermobjproviderspecific**に設定されている場合、このパラメーターは必須です。それ以外の場合は使用されません。  
+ 任意。 OLE DB 仕様で定義されていないプロバイダーオブジェクト型の GUID を示す **バリアント** 値です。 *ObjectType* が **Adpermobjproviderspecific** に設定されている場合、このパラメーターは必須です。それ以外の場合は使用されません。  
   
 ## <a name="remarks"></a>解説  
  プロバイダーがオブジェクトの所有者の指定をサポートしていない場合、エラーが発生します。  

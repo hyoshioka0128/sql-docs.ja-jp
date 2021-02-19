@@ -13,15 +13,15 @@ helpviewer_keywords:
 - CE (cardinality estimator)
 - estimating cardinality
 ms.assetid: baa8a304-5713-4cfe-a699-345e819ce6df
-author: julieMSFT
-ms.author: jrasnick
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: e6ae3d6eaeab58e1352c14ba5ee90b47d500b974
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 4d1af8a21bd8dc4ac0df08c45665ed37e74f7ef5
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91891002"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99237690"
 ---
 # <a name="cardinality-estimation-sql-server"></a>カーディナリティ推定 (SQL Server)
 
@@ -64,8 +64,8 @@ ms.locfileid: "91891002"
 
 以降の更新プログラムは [!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] 以上 (互換性レベルが 120 以上) に含まれています。 レベル 120 以上の CE 更新プログラムには、最新のデータ ウェアハウスおよび OLTP ワークロードで適切に機能する更新された前提条件とアルゴリズムが組み込まれています。 CE 120 以降では、CE 70 の前提条件から次のモデル前提条件が変更されました。
 
--  **非依存性**が**相関関係**になります:異なる列の値の組み合わせは必ずしも独立していません。 これはより実際のデータ クエリと似ている可能性があります。
--  **単純なコンテインメント**は**ベース コンテインメント**になります:ユーザーは存在しないデータをクエリする可能性があります。 たとえば、2 つのテーブル間の等価結合では、ベース テーブル ヒストグラムを使用して結合の選択度を推定した後、述語選択度を考慮します。
+-  **非依存性** が **相関関係** になります:異なる列の値の組み合わせは必ずしも独立していません。 これはより実際のデータ クエリと似ている可能性があります。
+-  **単純なコンテインメント** は **ベース コンテインメント** になります:ユーザーは存在しないデータをクエリする可能性があります。 たとえば、2 つのテーブル間の等価結合では、ベース テーブル ヒストグラムを使用して結合の選択度を推定した後、述語選択度を考慮します。
   
 **互換性レベル:** [COMPATIBILITY_LEVEL](../../t-sql/statements/alter-database-transact-sql-compatibility-level.md) に次の [!INCLUDE[tsql](../../includes/tsql-md.md)] コードを使用して、データベースが特定のレベルであることを確認します。  
 
@@ -98,16 +98,16 @@ WHERE name = 'LEGACY_CARDINALITY_ESTIMATION';
 GO
 ```  
  
-また、[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] SP1 以降の場合は、[クエリ ヒント](../../t-sql/queries/hints-transact-sql-query.md#use_hint) `USE HINT ('FORCE_LEGACY_CARDINALITY_ESTIMATION')` になります。
+また、[!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] SP1 以降の場合は、[クエリ ヒント](../../t-sql/queries/hints-transact-sql-query.md#use_hint) `USE HINT ('FORCE_LEGACY_CARDINALITY_ESTIMATION')` になります。
  
- ```sql  
+ ```sql  
 SELECT CustomerId, OrderAddedDate  
 FROM OrderTable  
 WHERE OrderAddedDate >= '2016-05-01'
-OPTION (USE HINT ('FORCE_LEGACY_CARDINALITY_ESTIMATION'));  
+OPTION (USE HINT ('FORCE_LEGACY_CARDINALITY_ESTIMATION'));  
 ```
  
-**クエリ ストア:** [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] から導入されたクエリ ストアは、クエリのパフォーマンスを確認する場合に便利なツールです。 クエリ ストアを有効にすると、[!INCLUDE[ssManStudio](../../includes/ssManStudio-md.md)] の**オブジェクト エクスプローラー**で、データベース ノード以下に**クエリ ストア** ノードが表示されます。  
+**クエリ ストア:** [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] から導入されたクエリ ストアは、クエリのパフォーマンスを確認する場合に便利なツールです。 クエリ ストアを有効にすると、[!INCLUDE[ssManStudio](../../includes/ssManStudio-md.md)] の **オブジェクト エクスプローラー** で、データベース ノード以下に **クエリ ストア** ノードが表示されます。  
   
 ```sql  
 ALTER DATABASE <yourDatabase>  
@@ -195,11 +195,11 @@ GO
   
     -   **推定される行の数**。  
   
-    -   **I/O の推定コスト**と、行数の予測ではなく、実際のパフォーマンスを含む *推定* プロパティ。  
+    -   **I/O の推定コスト** と、行数の予測ではなく、実際のパフォーマンスを含む *推定* プロパティ。  
   
     -   **論理操作** と **物理操作**。 *並列処理* は有効な値です。  
   
-    -   **実際の実行モード**。 *バッチ* は、 *行*より適切で、有効な値です。  
+    -   **実際の実行モード**。 *バッチ* は、 *行* より適切で、有効な値です。  
   
 9. 行の推定数と行の実際の数とを比較します。 CE は 1% (前後)、または 10% 程度、不正確ですか?  
   
@@ -243,7 +243,7 @@ CE 120 以降で効果の低いクエリ プランが、クエリで生成され
   
 クエリ ストアでは、特定のクエリ プランを使用するようシステムを強制するさまざまな方法を示します。  
   
-- **sp_query_store_force_plan**を実行します。  
+- **sp_query_store_force_plan** を実行します。  
   
 - [!INCLUDE[ssManStudio](../../includes/ssManStudio-md.md)] で、 **[クエリ ストア]** ノードを展開し、 **[トップ リソース コンシューマー ノード]** を右クリックして、 **[トップ リソース コンシューマー ノードの表示]** をクリックします。 **[プランの強制]** と **[プランを強制しない]** というラベルのボタンが表示されます。  
   

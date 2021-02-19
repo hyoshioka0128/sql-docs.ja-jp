@@ -10,12 +10,12 @@ ms.author: maghan
 ms.reviewer: “”
 ms.custom: seo-lt-2019
 ms.date: 04/26/2017
-ms.openlocfilehash: b0cf5e6c46add1ce49b4d95f6eebe1feb2fb496f
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+ms.openlocfilehash: e9ceb447b078f7219d2fadec2dee4274a74190e9
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91987768"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100066827"
 ---
 # <a name="using-msdeploy-with-dbsqlpackage-provider"></a>dbSqlPackage プロバイダーでの MSDeploy の使用
 
@@ -29,7 +29,7 @@ ms.locfileid: "91987768"
   
 -   **Script**: 公開操作によって実行されるスクリプトに対応する Transact\-SQL スクリプトを作成します。  
   
-DACFx について詳しくは、[https://msdn.microsoft.com/library/microsoft.sqlserver.dac.aspx](/dotnet/api/microsoft.sqlserver.dac) または [SqlPackage.exe](../tools/sqlpackage.md) (DACFx コマンド ライン ツール) の DACFx マネージド API のドキュメントをご覧ください。  
+DACFx について詳しくは、[https://msdn.microsoft.com/library/microsoft.sqlserver.dac.aspx](/dotnet/api/microsoft.sqlserver.dac) または [SqlPackage.exe](../tools/sqlpackage/sqlpackage.md) (DACFx コマンド ライン ツール) の DACFx マネージド API のドキュメントをご覧ください。  
   
 > [!IMPORTANT]  
 > dbSqlPackage のプロバイダー機能は、Visual Studio の次回メジャー リリースから削除される予定です。 Web Deploy を使用してデータベースの公開を処理する方法については、「[増分データベース公開のための dbDacFx プロバイダー (英語)](https://www.iis.net/learn/publish/using-web-deploy/dbdacfx-provider-for-incremental-database-publishing)」を参照してください。  

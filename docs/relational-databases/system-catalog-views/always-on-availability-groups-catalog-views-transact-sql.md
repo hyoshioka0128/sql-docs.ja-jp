@@ -7,21 +7,21 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
 - catalog views [SQL Server], AlwaysOn Availability Groups
 - YY
 ms.assetid: ff53e873-8ff6-4628-af84-4ec52fa4951c
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: ea913109a9d981d0f59a7143746bda022edccf97
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: d341425b680fc6baa233a20d2be57988b2c9b85d
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551543"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100068204"
 ---
 # <a name="always-on-availability-groups-catalog-views-transact-sql"></a>Always On 可用性グループのカタログビュー (Transact-sql)
 [!INCLUDE[appliesto-ss-xxxx-xxxx-xxx-md](../../includes/appliesto-ss-xxxx-xxxx-xxx-md.md)]
@@ -54,7 +54,7 @@ ms.locfileid: "89551543"
   
 ## <a name="see-also"></a>参照  
  [sys. databases (Transact-sql)](sys-databases-transact-sql.md)   
- [database_mirroring_endpoints (Transact-sql)](sys-database-mirroring-endpoints-transact-sql.md)   
+ [sys.database_mirroring_endpoints (Transact-sql)](sys-database-mirroring-endpoints-transact-sql.md)   
  [AlwaysOn 可用性グループ (SQL Server)](../../database-engine/availability-groups/windows/always-on-availability-groups-sql-server.md)   
  [可用性グループの監視 (Transact-sql)](../../database-engine/availability-groups/windows/monitor-availability-groups-transact-sql.md)   
  [Always On 可用性グループの動的管理ビューおよび関数 (Transact-sql)](../system-dynamic-management-views/always-on-availability-groups-dynamic-management-views-functions.md)  

@@ -10,13 +10,13 @@ ms.topic: conceptual
 ms.assetid: bf4c4922-80b3-4be3-bf71-228247f97004
 author: rothja
 ms.author: jroth
-monikerRange: = sql-server-2016 || = sqlallproducts-allversions
-ms.openlocfilehash: 623c0e6b5a1bafa033ddc9a6fd34a1911d6ecf5b
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+monikerRange: = sql-server-2016
+ms.openlocfilehash: 5881a0c5d3e4a9ce17a2f8ead0656ce549d41064
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91988538"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100081138"
 ---
 # <a name="sql-server-2014-release-notes"></a>SQL Server 2014 リリース ノート
 [!INCLUDE[tsql-appliesto-ss2014-xxxx-xxxx-xxx-md](../includes/tsql-appliesto-ss2014-xxxx-xxxx-xxx-md.md)]
@@ -77,14 +77,14 @@ SQL Server 2014 SP2 には、SQL Server 2014 SP1 CU7 以降にリリースされ
 SQL Server 2014 SP1 には、SQL Server 2014 CU 1 から CU 5 までで提供された修正プログラム、および SQL Server 2012 SP2 で以前に出荷された修正プログラムのロールアップが含まれます。
 
 > [!NOTE]
-> お使いの SQL Server インスタンスで SSISDB カタログが有効になっていて、SP1 にアップグレードするときにインストール エラーが発生する場合は、「[Error 912 or 3417 when you install SQL Server 2014 SP1](https://support.microsoft.com/help/3018269/error-912-or-3417-when-you-install-sql-server-2014-sp1-build-12-0-4050/)」(SQL Server 2014 SP1 をインストールするときのエラー 912 または 3417) でのこの問題に関する説明に従ってください。
+> お使いの SQL Server インスタンスで SSISDB カタログが有効になっていて、SP1 にアップグレードするときにインストール エラーが発生する場合は、「[Error 912 or 3417 when you install SQL Server 2014 SP1](https://support.microsoft.com/topic/kb3018269-error-912-or-3417-when-you-install-sql-server-2014-sp1-build-12-0-4050-0-7f34525c-d517-6399-a31b-e7033db13706)」(SQL Server 2014 SP1 をインストールするときのエラー 912 または 3417) でのこの問題に関する説明に従ってください。
 
 ### <a name="download-pages-and-more-information-for-sp1"></a>SP1 のダウンロード ページと詳細情報
 
 - [Microsoft SQL Server 2014 用 Service Pack 1 のダウンロード](https://www.microsoft.com/download/details.aspx?id=46694)
 - [SQL Server 2014 Service Pack 1 がリリースされました – 更新](/archive/blogs/sqlreleaseservices/sql-server-2014-service-pack-1-has-released-updated)
 - [Microsoft SQL Server 2014 SP1 Express](https://www.microsoft.com/download/details.aspx?id=42299)
-- [Microsoft SQL Server 2014 SP1 Feature Pack](https://www.microsoft.com/download/details.aspx?id=46696)
+- [Microsoft SQL Server 2014 SP1 Feature Pack](https://www.microsoft.com/download/details.aspx?id=46694)
 
 
 ## <a name="before-you-install-sql-server-2014-rtm"></a>SQL Server 2014 RTM をインストールする前に
@@ -114,7 +114,7 @@ SQL Server 2014 SP1 には、SQL Server 2014 CU 1 から CU 5 までで提供さ
 #### <a name="incorrect-version-of-streaminsight-client-on-sql-server-2014-mediaisocab"></a>SQL Server 2014 メディア/ISO/CAB 上の不正なバージョンの StreamInsight クライアント  
 SQL Server の media/ISO/CAB (StreamInsight\\\<Architecture\>\\\<Language ID\>) 上に間違ったバージョンの StreamInsight.msi および StreamInsightClient.msi があります。  
   
-**対処法:** [SQL Server 2014 Feature Pack のダウンロード ページ](https://go.microsoft.com/fwlink/?LinkID=306709)から正しいバージョンをダウンロードしてインストールします。  
+**対処法:** [SQL Server 2014 Feature Pack のダウンロード ページ](https://www.microsoft.com/download/details.aspx?id=57474)から正しいバージョンをダウンロードしてインストールします。  
   
 ### <a name="product-documentation-rtm"></a><a name="ProdDoc"></a>製品ドキュメント RTM
   
@@ -270,7 +270,7 @@ DATEPART(weekday, @d)
 #### <a name="register-through-ssms-adds-dac-meta-data-with-mismatched-instance-ids"></a>SSMS を使用して登録を行うと、不一致のインスタンス ID を持つ DAC メタデータが追加される  
 **問題:** SQL Server Management Studio を使用してデータ層アプリケーション パッケージ (.dacpac) を登録または削除すると、sysdac* テーブルが正しく更新されず、データベースに対して dacpac 履歴のクエリを実行できません。  sysdac_history_internal と sysdac_instances_internal の instance_id が一致せず、結合が許可されません。  
   
-**対処法:** この問題は、[データ層アプリケーション フレームワーク](https://www.microsoft.com/download/details.aspx?id=42295)の Feature Pack の再配布で修正されています。  更新プログラムを適用した後、すべての新しい履歴エントリは sysdac_instances_internal テーブル内の instance_id の一覧に含まれる値を使用します。  
+**対処法:** この問題は、[データ層アプリケーション フレームワーク](https://www.microsoft.com/download/details.aspx?id=100297)の Feature Pack の再配布で修正されています。  更新プログラムを適用した後、すべての新しい履歴エントリは sysdac_instances_internal テーブル内の instance_id の一覧に含まれる値を使用します。  
   
 instance_id の値の不一致という問題が既に発生している場合は、不一致の値を修正する唯一の方法は、MSDB データベースへ書き込む特権を持つユーザーとしてサーバーに接続し、instance_id の値を更新して一致させることです。  同じデータベースから複数の登録イベントと登録解除イベントが発生する場合は、時刻と日付を参照し、どのレコードが現在の instance_id の値と一致しているかを確認する必要があります。  
   
@@ -359,7 +359,7 @@ Azure サブネットを含め、可用性グループのレプリカをホス�
   
 **対処法:**  
   
-1.  [!INCLUDE[ssSQL11SP1](../includes/sssql11sp1-md.md)] Feature Pack から MSOLAP.5 プロバイダーをダウンロードします。 Excel Services を実行しているアプリケーション サーバーにプロバイダーをインストールします。 詳細については、「[Microsoft SQL Server 2012 SP1 Feature Pack](https://www.microsoft.com/download/details.aspx?id=35580)」の「Microsoft Analysis Services OLE DB Provider for Microsoft SQL Server 2012 SP1」を参照してください。  
+1.  [!INCLUDE[ssSQL11SP1](../includes/sssql11sp1-md.md)] Feature Pack から MSOLAP.5 プロバイダーをダウンロードします。 Excel Services を実行しているアプリケーション サーバーにプロバイダーをインストールします。 詳細については、「[Microsoft SQL Server 2012 SP1 Feature Pack](https://www.microsoft.com/download/details.aspx?id=35575)」の「Microsoft Analysis Services OLE DB Provider for Microsoft SQL Server 2012 SP1」を参照してください。  
   
 2.  MSOLAP.5 を信頼できるプロバイダーとして SharePoint Excel Services に登録します。 詳細については、「 [Excel Services で信頼できるデータ プロバイダーとして MSOLAP.5 を追加](/analysis-services/power-pivot-for-sharepoint-ssas?viewFallbackFrom=sql-server-ver15)」を参照してください。  
   
@@ -374,7 +374,7 @@ Azure サブネットを含め、可用性グループのレプリカをホス�
   
 **対処法:**  
   
-1.  [!INCLUDE[ssSQL11SP1](../includes/sssql11sp1-md.md)] Feature Pack から MSOLAP.5 プロバイダーをダウンロードします。 Excel Services を実行しているアプリケーション サーバーにプロバイダーをインストールします。 詳細については、「[Microsoft SQL Server 2012 SP1 Feature Pack](https://www.microsoft.com/download/details.aspx?id=35580)」の「Microsoft Analysis Services OLE DB Provider for Microsoft SQL Server 2012 SP1」を参照してください。  
+1.  [!INCLUDE[ssSQL11SP1](../includes/sssql11sp1-md.md)] Feature Pack から MSOLAP.5 プロバイダーをダウンロードします。 Excel Services を実行しているアプリケーション サーバーにプロバイダーをインストールします。 詳細については、「[Microsoft SQL Server 2012 SP1 Feature Pack](https://www.microsoft.com/download/details.aspx?id=35575)」の「Microsoft Analysis Services OLE DB Provider for Microsoft SQL Server 2012 SP1」を参照してください。  
   
 2.  MSOLAP.5 を信頼できるプロバイダーとして SharePoint Excel Services に登録します。 詳細については、「 [Excel Services で信頼できるデータ プロバイダーとして MSOLAP.5 を追加](/analysis-services/power-pivot-for-sharepoint-ssas?viewFallbackFrom=sql-server-ver15)」を参照してください。  
   
@@ -411,7 +411,7 @@ Azure サブネットを含め、可用性グループのレプリカをホス�
 #### <a name="sql-server-2014-upgrade-advisor-reports-irrelevant-upgrade-issues-for-sql-server-reporting-services"></a>SQL Server 2014 アップグレード アドバイザーが SQL Server Reporting Services に関係のないアップグレードの問題点を報告する  
 **問題:** SQL Server 2014 メディアに収録されている SQL Server アップグレード アドバイザー (SSUA) が SQL Server Reporting Services サーバーを分析するときに、不適切な複数のエラーを報告します。  
   
-**対処法:** この問題は、[SSUA 用の SQL Server 2014 Feature Pack](https://go.microsoft.com/fwlink/?LinkID=306709) の一部として提供される SQL Server アップグレード アドバイザーで解決できます。  
+**対処法:** この問題は、[SSUA 用の SQL Server 2014 Feature Pack](https://www.microsoft.com/download/details.aspx?id=57474) の一部として提供される SQL Server アップグレード アドバイザーで解決できます。  
   
 #### <a name="sql-server-2014-upgrade-advisor-reports-an-error-when-analyzing-sql-server-integration-services-server"></a>SQL Server 2014 アップグレード アドバイザーで SQL Server Integration Services サーバーを分析するときにエラーが報告される  
 **問題:** SQL Server 2014 メディアに収録されている SQL Server Upgrade Advisor (SSUA) により、SQL Server Integration Services サーバーを分析するときにエラーが報告されます。  ユーザーに対して表示されるエラーは、次のようなものです。  
@@ -422,6 +422,6 @@ The assembly information is "Microsoft.SqlServer.ManagedDTS, Version=11.0.0.0,
 Culture=neutral, PublicKeyToken=89845dcd8080cc91  
 ```  
   
-**対処法:** この問題は、[SSUA 用の SQL Server 2014 Feature Pack](https://go.microsoft.com/fwlink/?LinkID=306709) の一部として提供される SQL Server アップグレード アドバイザーで解決できます。  
+**対処法:** この問題は、[SSUA 用の SQL Server 2014 Feature Pack](https://www.microsoft.com/download/details.aspx?id=57474) の一部として提供される SQL Server アップグレード アドバイザーで解決できます。  
   
 [!INCLUDE[get-help-options](../includes/paragraph-content/get-help-options.md)]

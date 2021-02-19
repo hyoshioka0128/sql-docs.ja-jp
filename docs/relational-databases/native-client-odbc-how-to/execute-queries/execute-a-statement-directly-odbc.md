@@ -13,13 +13,13 @@ helpviewer_keywords:
 ms.assetid: b690f9de-66e1-4ee5-ab6a-121346fb5f85
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: bf661d045b24c3844513356a2cdd081c05ff2620
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 96acd03e9caed3660801c3097ab1133dc47d075e
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91867922"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97467733"
 ---
 # <a name="execute-a-statement-directly-odbc"></a>ステートメントの直接実行 (ODBC)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -87,7 +87,7 @@ ms.locfileid: "91867922"
   
 6.  実行時データ入力パラメーターが使用されている場合、 [SQLExecDirect](../../../odbc/reference/syntax/sqlexecdirect-function.md) は SQL_NEED_DATA を返します。 [Sqlparamdata](../../../odbc/reference/syntax/sqlparamdata-function.md)と[sqlparamdata](../../../relational-databases/native-client-odbc-api/sqlputdata.md)を使用して、データをチャンク単位で送信します。  
   
- **メモ**列方向と行方向のバインドは、通常、 [SQLPrepare 関数](../../../odbc/reference/syntax/sqlprepare-function.md)と[SQLExecDirect](../../../odbc/reference/syntax/sqlexecdirect-function.md)ではなく[sqlexecute](../../../odbc/reference/syntax/sqlexecute-function.md)と組み合わせて使用されます。  
+ **メモ** 列方向と行方向のバインドは、通常、 [SQLPrepare 関数](../../../odbc/reference/syntax/sqlprepare-function.md)と [SQLExecDirect](../../../odbc/reference/syntax/sqlexecdirect-function.md)ではなく [sqlexecute](../../../odbc/reference/syntax/sqlexecute-function.md)と組み合わせて使用されます。  
   
 ## <a name="see-also"></a>参照  
  [クエリの実行方法に関するトピック &#40;ODBC&#41;](../../../relational-databases/native-client-odbc-how-to/execute-queries/executing-queries-how-to-topics-odbc.md)  

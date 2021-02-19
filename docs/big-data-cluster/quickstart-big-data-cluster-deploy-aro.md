@@ -9,12 +9,12 @@ ms.date: 06/22/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 2c0b42a27fcb49835c33b45ee73a9d31151a5e28
-ms.sourcegitcommit: ae474d21db4f724523e419622ce79f611e956a22
+ms.openlocfilehash: d53950d277b245b405420af2c28fa7666ba653dd
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92257162"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100044123"
 ---
 # <a name="use-a-python-script-to-deploy-a-sql-server-big-data-cluster-on-azure-red-hat-openshift-aro"></a>python スクリプトを使用して SQL Server ビッグ データ クラスターを Azure Red Hat OpenShift (ARO) に展開する
 
@@ -44,7 +44,7 @@ ms.locfileid: "92257162"
 
 このスクリプトでは、ARO クラスターの作成を自動化するために Azure CLI を使用します。 スクリプトを実行する前に、少なくとも 1 回は Azure CLI を使用して Azure アカウントにログインする必要があります。 コマンド プロンプトで次のコマンドを実行します。
 
-```terminal
+```azurecli
 az login
 ```
 
@@ -58,7 +58,7 @@ az login
 
 1. 以下を使用してスクリプトを実行します。
 
-```terminal
+```console
 python deploy-sql-big-data-aro.py
 ```
 
@@ -80,9 +80,9 @@ Azure で [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nov
 > [!WARNING]
 > 次の手順では、ARO クラスターを破棄します。これにより、SQL Server ビッグ データ クラスターも削除されます。 保持するデータベースまたは HDFS データがある場合は、そのデータをバックアップしてからクラスターを削除してください。
 
-次の Azure CLI コマンドを実行して、Azure のビッグ データ クラスターと ARO サービスを削除します (`<resource group name>` は、展開スクリプトで指定した **Azure リソース グループ**に置き換えます)。
+次の Azure CLI コマンドを実行して、Azure のビッグ データ クラスターと ARO サービスを削除します (`<resource group name>` は、展開スクリプトで指定した **Azure リソース グループ** に置き換えます)。
 
-```terminal
+```azurecli
 az group delete -n <resource group name>
 ```
 
@@ -94,7 +94,7 @@ az group delete -n <resource group name>
 #
 # Prerequisites: 
 # 
-# Azure CLI (https://docs.microsoft.com/en-us/cli/azure/install-azure-cli), Azure Data CLI (`azdata`) (https://docs.microsoft.com/en-us/sql/big-data-cluster/deploy-install-azdata?view=sql-server-ver15), oc CLI (https://www.openshift.com/blog/installing-oc-tools-windows)
+# Azure CLI (https://docs.microsoft.com/en-us/cli/azure/install-azure-cli), Azure Data CLI (`azdata`) (https://docs.microsoft.com/en-us/sql/big-data-cluster/deploy-install-azdata), oc CLI (https://www.openshift.com/blog/installing-oc-tools-windows)
 #
 # Run `az login` at least once BEFORE running this script
 #

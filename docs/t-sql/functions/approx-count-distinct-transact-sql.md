@@ -7,20 +7,20 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - APPROX_COUNT_DISTINCT
 dev_langs:
 - TSQL
 author: joesackmsft
 ms.author: josack
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 4e980e97adc29cda45dbedb0640f46d0a444c4b2
-ms.sourcegitcommit: 1126792200d3b26ad4c29be1f561cf36f2e82e13
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: c041986f79779c5eeeeb6a1a11b7f77abfe5eebe
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90076737"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100270660"
 ---
 # <a name="approx_count_distinct-transact-sql"></a>APPROX_COUNT_DISTINCT (Transact-SQL)
 
@@ -40,7 +40,7 @@ APPROX_COUNT_DISTINCT ( expression )
 
 ## <a name="arguments"></a>引数
 *式 (expression)*  
-**image**、**sql_variant**、**ntext**、**text** を除く、任意の型の[式](../../t-sql/language-elements/expressions-transact-sql.md)です。 
+**image**、**sql_variant**、**ntext**、**text** を除く、任意の型の [式](../../t-sql/language-elements/expressions-transact-sql.md)です。 
 
 ## <a name="return-types"></a>戻り値の型
  **bigint**  

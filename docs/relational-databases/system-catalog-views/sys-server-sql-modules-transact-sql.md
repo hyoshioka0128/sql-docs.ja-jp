@@ -1,13 +1,13 @@
 ---
-description: server_sql_modules (Transact-sql)
-title: server_sql_modules (Transact-sql) |Microsoft Docs
+description: sys.server_sql_modules (Transact-sql)
+title: sys.server_sql_modules (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 06/10/2016
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.server_sql_modules
 - sys.server_sql_modules_TSQL
@@ -18,16 +18,16 @@ dev_langs:
 helpviewer_keywords:
 - sys.server_sql_modules catalog view
 ms.assetid: 9ef9a8b9-c470-4a61-b0c4-ee24ad871d63
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 7f74b41384c2aa42c26623fa69ef35c74f49eab3
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 4113ba2be9e77d964d9b9bbfa9ae35f71e6adf8f
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539583"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99172607"
 ---
-# <a name="sysserver_sql_modules-transact-sql"></a>server_sql_modules (Transact-sql)
+# <a name="sysserver_sql_modules-transact-sql"></a>sys.server_sql_modules (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   TR 型のサーバーレベルのトリガーの SQL モジュールのセットを格納します。 このリレーションは sys.server_triggers に結合できます。 組 (object_id) はリレーションのキーです。  

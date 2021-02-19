@@ -1,21 +1,21 @@
 ---
 description: sys.database_event_sessions (Azure SQL Database)
-title: database_event_sessions (Azure SQL Database) |Microsoft Docs
+title: sys.database_event_sessions (Azure SQL Database) |Microsoft Docs
 ms.custom: ''
 ms.date: 03/14/2017
 ms.service: sql-database
 ms.reviewer: ''
-ms.topic: language-reference
+ms.topic: reference
 ms.assetid: 02c2cd71-d35e-4d4c-b844-92b240f768f4
-author: markingmyname
-ms.author: maghan
-monikerRange: = azuresqldb-current || = sqlallproducts-allversions
-ms.openlocfilehash: a07eab4d6636acaecda5aa2be495c3db70156822
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: = azuresqldb-current
+ms.openlocfilehash: 0d7bfe1e91dd011863ae6e867aba48dbe4491c2a
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89537420"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99210309"
 ---
 # <a name="sysdatabase_event_sessions-azure-sql-database"></a>sys.database_event_sessions (Azure SQL Database)
 [!INCLUDE[Azure SQL Database Azure SQL Managed Instance](../../includes/applies-to-version/asdb-asdbmi.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "89537420"
   
 ||  
 |-|  
-|**に適用さ**れます: [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] 、、およびそれ以降のすべてのバージョン。|  
+|**に適用さ** れます: [!INCLUDE[sqldbesa](../../includes/sqldbesa-md.md)] 、、およびそれ以降のすべてのバージョン。|  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

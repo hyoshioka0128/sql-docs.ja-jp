@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - STBuffer (geometry Data Type)
 - STBuffer_TSQL
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: ca6bf2dc-1d38-4503-b87e-f2ea033d36ba
 author: MladjoA
 ms.author: mlandzic
-ms.openlocfilehash: 7644e25159a7df28d2de51d5e1a08a0e1b36ef05
-ms.sourcegitcommit: bd3a135f061e4a49183bbebc7add41ab11872bae
+ms.openlocfilehash: 787612ae8cdb2cc5751818c31f111831e4013cbf
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92300380"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99187220"
 ---
 # <a name="stbuffer-geometry-data-type"></a>STBuffer (geometry データ型)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -49,9 +49,9 @@ ms.locfileid: "92300380"
  CLR 戻り値の型: **SqlGeometry**  
   
 ## <a name="remarks"></a>注釈  
- `STBuffer()` は、 *tolerance* = distance \* .001 と *relative* = **false** を指定して [BufferWithTolerance](../../t-sql/spatial-geometry/bufferwithtolerance-geometry-data-type.md) と同様の方法でバッファーを計算します。  
+ `STBuffer()` は、*tolerance* = distance \* .001 と *relative* = **false** を指定して [BufferWithTolerance](../../t-sql/spatial-geometry/bufferwithtolerance-geometry-data-type.md) と同様の方法でバッファーを計算します。  
   
- *distance* > 0 のときは、 **Polygon** または **MultiPolygon** インスタンスが返されます。  
+ *distance* > 0 のときは、**Polygon** または **MultiPolygon** インスタンスが返されます。  
   
 > [!NOTE]  
 >  distance は **float** であるため、非常に小さな値は計算においてゼロと同一視されることがあります。  その場合、呼び出し元の **geometry** インスタンスのコピーが返されます。  「[float と real &#40;Transact-SQL&#41;](../../t-sql/data-types/float-and-real-transact-sql.md)」を参照してください。  
@@ -163,7 +163,7 @@ ms.locfileid: "92300380"
  SELECT @g.STBuffer(1.6).ToString();
  ```  
   
- 最初の 2 つの **SELECT** ステートメントでは、 *distance* が (1 1) と (1 4) の 2 つの地点の距離の 1/2 以下であるため、`MultiPolygon` インスタンスが返されます。 3 番目の **SELECT** ステートメントでは、(1 1) と (1 4) の 2 つの地点のバッファーに格納されたインスタンスが重なるため、`Polygon` インスタンスが返されます。  
+ 最初の 2 つの **SELECT** ステートメントでは、*distance* が (1 1) と (1 4) の 2 つの地点の距離の 1/2 以下であるため、`MultiPolygon` インスタンスが返されます。 3 番目の **SELECT** ステートメントでは、(1 1) と (1 4) の 2 つの地点のバッファーに格納されたインスタンスが重なるため、`Polygon` インスタンスが返されます。  
   
 ## <a name="see-also"></a>関連項目  
  [BufferWithTolerance &#40;geometry データ型&#41;](../../t-sql/spatial-geometry/bufferwithtolerance-geometry-data-type.md)   

@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.assetid: e8db82f0-50ed-4531-9209-940006ed34cb
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: ba85689470e29ee45390f6f59ad44ec222cdf945
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+ms.openlocfilehash: 6b1685a4d93d14b3cd49a4c9a4a031943a5b9f7e
+ms.sourcegitcommit: 80701484b8f404316d934ad2a85fd773e26ca30c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91864059"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93243836"
 ---
 # <a name="lesson-1-connecting-to-the-database-engine"></a>レッスン 1:データベース エンジンへの接続
 [!INCLUDE[sqlserver](../includes/applies-to-version/sqlserver.md)]
@@ -44,7 +44,7 @@ ms.locfileid: "91864059"
 - 以前のバージョンの Windows では、 **[スタート]** ボタンをクリックし、 **[すべてのプログラム]** 、[ [!INCLUDE[ssCurrentUI](../includes/sscurrentui-md.md)]] の順にポイントして、 **[SQL Server Management Studio]** をクリックします。  
 
 ##### <a name="to-start-sql-server-configuration-manager"></a>SQL Server 構成マネージャーを起動するには  
-- 現在のバージョンの Windows では、 **[スタート]** ページで「 **Configuration Manager**] の順にポイントして、 **[SQL Server *&lt;バージョン&gt;* Configuration Manager**から無料でダウンロードできます。   
+- 現在のバージョンの Windows では、 **[スタート]** ページで「 **Configuration Manager** ] の順にポイントして、 **[SQL Server *&lt;バージョン&gt;* Configuration Manager** から無料でダウンロードできます。   
 - 以前のバージョンの Windows では、 **[スタート]** ボタンをクリックし、 **[すべてのプログラム]** 、[ [!INCLUDE[ssCurrentUI](../includes/sscurrentui-md.md)]]、 **[構成ツール]** の順にポイントして、 **[SQL Server 構成マネージャー]** をクリックします。  
 
 ## <a name="connecting-with-management-studio"></a><a name="connect"></a>Management Studio を使用した接続  
@@ -73,13 +73,13 @@ ms.locfileid: "91864059"
 1.  [!INCLUDE[ssManStudio](../includes/ssmanstudio-md.md)]の **[ファイル]** メニューの **[オブジェクト エクスプローラーを接続]** をクリックします。 
 - **[サーバーへの接続]** ダイアログ ボックスが開きます。 **[サーバーの種類]** ボックスに、最後に使用したコンポーネントの種類が表示されます。  
 
-2.  **データベース エンジン**を選択します。
+2.  **データベース エンジン** を選択します。
 
-![オブジェクト エクスプ ローラー](../relational-databases/media/object-explorer.png)
+![オブジェクト エクスプローラーの [接続] ドロップダウン リストで [データベースエンジン] オプションが強調表示されているスクリーンショット。](../relational-databases/media/object-explorer.png)
 
-3.  **[サーバー名]** ボックスに、 [!INCLUDE[ssDE](../includes/ssde-md.md)]インスタンスの名前を入力します。 SQL Server の既定のインスタンスでは、サーバー名はコンピューター名です。 SQL Server の名前付きインスタンスでは、**ACCTG_SRVR\SQLEXPRESS** のように、 _\<computer_name\>_ **\\** _\<instance_name\>_ の形式でサーバー名を指定します。 次のスクリーン ショットは、"PracticeComputer" という名前のコンピューター上の、既定の (名前のない) [!INCLUDE[ssNoVersion_md](../includes/ssnoversion-md.md)]インスタンスへの接続を示しています。 Windows にログオンしているユーザーは、Contoso ドメインの Mary です。 Windows 認証を使用する場合は、ユーザー名を変更することはできません。 
+3.  **[サーバー名]** ボックスに、 [!INCLUDE[ssDE](../includes/ssde-md.md)]インスタンスの名前を入力します。 SQL Server の既定のインスタンスでは、サーバー名はコンピューター名です。 SQL Server の名前付きインスタンスでは、 **ACCTG_SRVR\SQLEXPRESS** のように、 _\<computer_name\>_ **\\** _\<instance_name\>_ の形式でサーバー名を指定します。 次のスクリーン ショットは、"PracticeComputer" という名前のコンピューター上の、既定の (名前のない) [!INCLUDE[ssNoVersion_md](../includes/ssnoversion-md.md)]インスタンスへの接続を示しています。 Windows にログオンしているユーザーは、Contoso ドメインの Mary です。 Windows 認証を使用する場合は、ユーザー名を変更することはできません。 
 
-![connect-to-server](../relational-databases/media/connect-to-server.png)
+![[サーバー名] テキスト ボックスが強調表示されている [サーバーへの接続] ダイアログ ボックスのスクリーンショット。](../relational-databases/media/connect-to-server.png)
 
 4.  **[Connect]** をクリックします。
 
@@ -98,7 +98,7 @@ ms.locfileid: "91864059"
 
 2.  **[全般]** ページの **[ログイン名]** ボックスに、次の形式で Windows ログインを入力します。 `<domain>\\<login>`
 
-![new-login](../relational-databases/media/new-login.png)
+![[ログイン名] テキスト ボックスが強調表示された [ログイン - 新規作成] ダイアログ ボックスのスクリーンショット。](../relational-databases/media/new-login.png)
 
 3.  **[既定のデータベース]** ボックスで、[ [!INCLUDE[ssSampleDBobject](../includes/sssampledbobject-md.md)] ] が有効な場合はこれを選択します。 有効でない場合は **[master]** を選択します。  
 4.  **[サーバー ロール]** ページで、新しいログインを管理者として設定する場合は **[sysadmin]** をクリックします。管理者として設定しない場合は空白にします。  

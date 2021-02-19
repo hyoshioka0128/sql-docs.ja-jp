@@ -22,13 +22,13 @@ ms.assetid: f7b4d37b-d6d3-4ac3-b2fd-a0b534a924e4
 author: MightyPen
 ms.author: genemi
 ms.custom: seo-lt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 6780a99b5bca826a9e92890ebe317f32c93300fc
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: fff8833c03658b5d55ba96ba27f7b1779944bd77
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85724730"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97479303"
 ---
 # <a name="annotation-interpretation---other-annotations"></a>注釈の解釈 - 他の注釈
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -44,7 +44,7 @@ ms.locfileid: "85724730"
  XML 一括読み込みでは、この注釈はサポートされません。 たとえば、XML データ入力に URL を指定することはできません。また、XML 一括読み込みで、指定した場所からデータを読み込んでデータベースに格納することはできません。  
   
  **sql:is-mapping-schema**  
- XML 一括読み込みでは、この注釈はサポートされません。また、 **sql: id**もサポートされません。  
+ XML 一括読み込みでは、この注釈はサポートされません。また、 **sql: id** もサポートされません。  
   
 > [!NOTE]  
 >  XML 一括読み込みでは、インライン マッピング スキーマはサポートされません。  
@@ -52,7 +52,7 @@ ms.locfileid: "85724730"
  **sql:key-fields**  
  XML 一括読み込みでは、この注釈は常に無視されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [SQLXML 4.0 &#40;の注釈の解釈&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/bulk-load-xml/annotation-interpretation-sqlxml-4-0.md)  
   
   

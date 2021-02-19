@@ -24,13 +24,13 @@ helpviewer_keywords:
 ms.assetid: ae30dd1d-06ae-452b-9618-8fd8cd7ba074
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: ba7ad5c6c822bff351c09d264b25310e8ca51990
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: dabf2e0c4fe2f23ad5dee576c73a2bafdb67a8be
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88425134"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97464953"
 ---
 # <a name="connecting-to-a-data-source-odbc"></a>データ ソースへの接続 (ODBC)
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -46,12 +46,12 @@ ms.locfileid: "88425134"
  使用できるさまざまな接続文字列オプションなど、データソースへの接続の作成の詳細については、「 [SQL Server Native Client での接続文字列キーワードの使用](../../relational-databases/native-client/applications/using-connection-string-keywords-with-sql-server-native-client.md)」を参照してください。  
   
 ## <a name="sqlconnect"></a>SQLConnect  
- **SQLConnect** は最も単純な接続関数です。 この関数は、データ ソース名、ユーザー ID、パスワードの 3 つのパラメーターを受け取ります。 この3つのパラメーターに、データベースへの接続に必要なすべての情報が含まれている場合は、 **SQLConnect** を使用します。 これを行うには、 **sqldatasources**; を使用してデータソースの一覧を作成します。データソース、ユーザー ID、およびパスワードの入力をユーザーに求めます。次に、 **SQLConnect**を呼び出します。  
+ **SQLConnect** は最も単純な接続関数です。 この関数は、データ ソース名、ユーザー ID、パスワードの 3 つのパラメーターを受け取ります。 この3つのパラメーターに、データベースへの接続に必要なすべての情報が含まれている場合は、 **SQLConnect** を使用します。 これを行うには、 **sqldatasources**; を使用してデータソースの一覧を作成します。データソース、ユーザー ID、およびパスワードの入力をユーザーに求めます。次に、 **SQLConnect** を呼び出します。  
   
- **SQLConnect** では、データソース名、ユーザー ID、およびパスワードを使用してデータソースに接続することができ、odbc データソースには odbc ドライバーが接続を確立するために必要な他のすべての情報が含まれていることを前提としています。 [SQLDriverConnect](../../relational-databases/native-client-odbc-api/sqldriverconnect.md)や[SQLBrowseConnect](../../relational-databases/native-client-odbc-api/sqlbrowseconnect.md)とは異なり、 **SQLConnect**は接続文字列を使用しません。  
+ **SQLConnect** では、データソース名、ユーザー ID、およびパスワードを使用してデータソースに接続することができ、odbc データソースには odbc ドライバーが接続を確立するために必要な他のすべての情報が含まれていることを前提としています。 [SQLDriverConnect](../../relational-databases/native-client-odbc-api/sqldriverconnect.md)や [SQLBrowseConnect](../../relational-databases/native-client-odbc-api/sqlbrowseconnect.md)とは異なり、 **SQLConnect** は接続文字列を使用しません。  
   
 ## <a name="sqldriverconnect"></a>SQLDriverConnect  
- **SQLDriverConnect** は、データソース名、ユーザー ID、およびパスワードよりも多くの情報が必要な場合に使用します。 **SQLDriverConnect**のパラメーターの1つは、ドライバー固有の情報を含む接続文字列です。 次の理由により、 **SQLConnect**の代わりに**SQLDriverConnect**を使用できます。  
+ **SQLDriverConnect** は、データソース名、ユーザー ID、およびパスワードよりも多くの情報が必要な場合に使用します。 **SQLDriverConnect** のパラメーターの1つは、ドライバー固有の情報を含む接続文字列です。 次の理由により、 **SQLConnect** の代わりに **SQLDriverConnect** を使用できます。  
   
 -   接続時にドライバー固有の情報を指定する場合  
   
@@ -59,20 +59,20 @@ ms.locfileid: "88425134"
   
 -   ODBC データ ソースを使用せずに接続する場合  
   
- **SQLDriverConnect**接続文字列には、ODBC ドライバーによってサポートされるすべての接続情報を指定する一連のキーワードと値のペアが含まれています。 各ドライバーでは、ドライバーでサポートされるすべての接続情報を表すドライバー固有のキーワード以外に、標準の ODBC キーワード (DSN、FILEDSN, DRIVER、UID、PWD、および SAVEFILE) をサポートします。 **SQLDriverConnect** は、データソースを使用せずに接続するために使用できます。 たとえば、のインスタンスに対して "DSN レス" 接続を作成するように設計されたアプリケーションは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ログイン ID、パスワード、ネットワークライブラリ、接続先のサーバー名、および使用する既定のデータベースを定義する接続文字列を使用して **SQLDriverConnect** を呼び出すことができます。  
+ **SQLDriverConnect** 接続文字列には、ODBC ドライバーによってサポートされるすべての接続情報を指定する一連のキーワードと値のペアが含まれています。 各ドライバーでは、ドライバーでサポートされるすべての接続情報を表すドライバー固有のキーワード以外に、標準の ODBC キーワード (DSN、FILEDSN, DRIVER、UID、PWD、および SAVEFILE) をサポートします。 **SQLDriverConnect** は、データソースを使用せずに接続するために使用できます。 たとえば、のインスタンスに対して "DSN レス" 接続を作成するように設計されたアプリケーションは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ログイン ID、パスワード、ネットワークライブラリ、接続先のサーバー名、および使用する既定のデータベースを定義する接続文字列を使用して **SQLDriverConnect** を呼び出すことができます。  
   
- **SQLDriverConnect**を使用する場合、必要な接続情報をユーザーに確認するには、次の2つのオプションがあります。  
+ **SQLDriverConnect** を使用する場合、必要な接続情報をユーザーに確認するには、次の2つのオプションがあります。  
   
 -   アプリケーション ダイアログ ボックス  
   
-     接続情報の入力を求めるアプリケーションダイアログボックスを作成し、NULL ウィンドウハンドルと*Drivercompletion*を SQL_DRIVER_NOPROMPT に設定して**SQLDriverConnect**を呼び出すことができます。 このようにパラメーターを設定すると、ODBC ドライバー独自のダイアログ ボックスが開かれなくなります。 この方法は、アプリケーションでユーザー インターフェイスを制御することが重要な場合に使用します。  
+     接続情報の入力を求めるアプリケーションダイアログボックスを作成し、NULL ウィンドウハンドルと *Drivercompletion* を SQL_DRIVER_NOPROMPT に設定して **SQLDriverConnect** を呼び出すことができます。 このようにパラメーターを設定すると、ODBC ドライバー独自のダイアログ ボックスが開かれなくなります。 この方法は、アプリケーションでユーザー インターフェイスを制御することが重要な場合に使用します。  
   
 -   ドライバー ダイアログ ボックス  
   
      アプリケーションをコーディングして、有効なウィンドウハンドルを **SQLDriverConnect** に渡し、 *drivercompletion* パラメーターを SQL_DRIVER_COMPLETE、SQL_DRIVER_PROMPT、または SQL_DRIVER_COMPLETE_REQUIRED に設定できます。 この場合、ドライバーがダイアログ ボックスを生成して、ユーザーに接続情報を要求します。 この方法を使用すると、アプリケーション コードが簡素化されます。  
   
 ## <a name="sqlbrowseconnect"></a>SQLBrowseConnect  
- **SQLBrowseConnect**は、 **SQLDriverConnect**のように、接続文字列を使用します。 ただし、 **SQLBrowseConnect**を使用すると、アプリケーションは実行時にデータソースと繰り返して完全な接続文字列を作成できます。 この方法を使用すると、アプリケーションで次の 2 つのことを行えます。  
+ **SQLBrowseConnect** は、 **SQLDriverConnect** のように、接続文字列を使用します。 ただし、 **SQLBrowseConnect** を使用すると、アプリケーションは実行時にデータソースと繰り返して完全な接続文字列を作成できます。 この方法を使用すると、アプリケーションで次の 2 つのことを行えます。  
   
 -   アプリケーション独自のダイアログ ボックスを作成して目的の情報を要求できるので、アプリケーションのユーザー インターフェイスで制御できます。  
   
@@ -80,9 +80,9 @@ ms.locfileid: "88425134"
   
      たとえば、ユーザーは最初にネットワークを介してサーバーを参照して、サーバーを選択します。次に、そのサーバーを介して、ドライバーがアクセスできるデータベースを参照するといった手順です。  
   
- **SQLBrowseConnect**が成功した接続を完了すると、 **SQLDriverConnect**への後続の呼び出しで使用できる接続文字列が返されます。  
+ **SQLBrowseConnect** が成功した接続を完了すると、 **SQLDriverConnect** への後続の呼び出しで使用できる接続文字列が返されます。  
   
- [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Native CLIENT ODBC ドライバーは、 **SQLConnect**、 **SQLDriverConnect**、または**SQLBrowseConnect**が正常に実行された場合、常に SQL_SUCCESS_WITH_INFO を返します。 SQL_SUCCESS_WITH_INFO 取得した後に ODBC アプリケーションが **SQLGetDiagRec** を呼び出すと、次のメッセージが表示されます。  
+ [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Native CLIENT ODBC ドライバーは、 **SQLConnect**、 **SQLDriverConnect**、または **SQLBrowseConnect** が正常に実行された場合、常に SQL_SUCCESS_WITH_INFO を返します。 SQL_SUCCESS_WITH_INFO 取得した後に ODBC アプリケーションが **SQLGetDiagRec** を呼び出すと、次のメッセージが表示されます。  
   
  5701  
  このメッセージは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] が、ユーザーのコンテキストをデータ ソースで定義されている既定のデータベースに登録したことを示します。または、データ ソースに既定のデータベースが定義されていない場合は、接続で使用したログイン ID に対して定義されている既定のデータベースに登録したことを示します。  

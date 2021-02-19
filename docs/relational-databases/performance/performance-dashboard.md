@@ -2,9 +2,9 @@
 title: パフォーマンス ダッシュボード | Microsoft Docs
 description: SQL Server や Azure SQL Managed Instance に分析情報を短時間で提供する SQL Server Management Studio パフォーマンス ダッシュボードについて学習します。
 ms.custom: ''
-ms.date: 12/14/2019
+ms.date: 11/13/2020
 ms.prod: sql
-ms.reviewer: ''
+ms.reviewer: wiassaf
 ms.technology: performance
 ms.topic: conceptual
 helpviewer_keywords:
@@ -15,12 +15,12 @@ ms.assetid: 07f8f594-75b4-4591-8c29-d63811d7753e
 author: pelopes
 ms.author: pelopes
 manager: amitban
-ms.openlocfilehash: 61abc33a31948bca020f4a6cf7c9539ae0546af5
-ms.sourcegitcommit: 21bedbae28840e2f96f5e8b08bcfc794f305c8bc
+ms.openlocfilehash: 5d1afb7d96f42ecb33f57353a2abcfc24725e51e
+ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87863389"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100347714"
 ---
 # <a name="performance-dashboard"></a>パフォーマンス ダッシュボード
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -76,10 +76,11 @@ ms.locfileid: "87863389"
 
 **[待機]** レポートでは、アイドル待機とスリープ待機のすべてが除外されます。 待機の詳細については、「[sys.dm_os_wait_stats &#40;Transact-SQL&#41; ](../../relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql.md)」および[待機とキューを使用した SQL Server 2005 のパフォーマンス チューニング](https://download.microsoft.com/download/4/7/a/47a548b9-249e-484c-abd7-29f31282b04d/performance_tuning_waits_queues.doc)に関する記事を参照してください。
 
-基になる DMV 内のデータがクリアされたために [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] が再起動すると、 **[コストの高いクエリ]** レポートはリセットされます。 [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降、コストの高いクエリに関する詳細情報はクエリ ストアで見つけることができます。 
+基になる DMV 内のデータがクリアされたために [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] が再起動すると、 **[コストの高いクエリ]** レポートはリセットされます。 [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降、コストの高いクエリに関する詳細情報はクエリ ストアで見つけることができます。 
+
 
 > [!NOTE]
-> パフォーマンス ダッシュボードは最初に、[SQL Server 2005](https://techcommunity.microsoft.com/t5/SQL-Server-Support/SQL-Server-2005-Performance-Dashboard-Reports/ba-p/315415) 向けのスタンドアロン ダウンロードとしてリリースされ、その後、[SQL Server 2012](https://www.microsoft.com/download/details.aspx?id=29063) 向けに更新されました。
+> パフォーマンス ダッシュボードは最初に、[SQL Server 2005](https://techcommunity.microsoft.com/t5/SQL-Server-Support/SQL-Server-2005-Performance-Dashboard-Reports/ba-p/315415) 向けのスタンドアロン ダウンロードとしてリリースされ、その後、[SQL Server 2012](https://www.microsoft.com/download/details.aspx?id=29063) 向けに更新されました。 レポートに含まれるテキストへのクリップボード アクセスは SQL Server Management Studio のレポート レンダラーでサポートされていませんが、テキストにはスタンドアロン レポートを使用してアクセスできます。  レポートからクエリ テキストをコピーする必要がある場合は、スタンドアロン レポートをダウンロードしてください。
 
 ## <a name="permissions"></a>アクセス許可  
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 上では、`VIEW SERVER STATE` および `ALTER TRACE` アクセス許可が必要です。 [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] 上では、データベース内の `VIEW DATABASE STATE` アクセス許可が必要です。

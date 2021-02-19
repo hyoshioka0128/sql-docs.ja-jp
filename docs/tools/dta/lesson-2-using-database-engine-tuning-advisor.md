@@ -13,12 +13,12 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-lt-2019
 ms.date: 03/01/2017
-ms.openlocfilehash: bd60220151fb8f389ac7c82c1bdb0f10cf46bba1
-ms.sourcegitcommit: a9f16d7819ed0e2b7ad8f4a7d4d2397437b2bbb2
+ms.openlocfilehash: d261cbabe0e5bdb22db537a10ef259b9b9d39e6c
+ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88713810"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97489912"
 ---
 # <a name="lesson-2-using-database-engine-tuning-advisor"></a>レッスン 2: データベース エンジン チューニング アドバイザーの使用
 
@@ -32,10 +32,10 @@ ms.locfileid: "88713810"
 
 - [SQL Server Management Studio](../../ssms/download-sql-server-management-studio-ssms.md) をインストールします。
 - [SQL Server 2017 Developer Edition](https://www.microsoft.com/sql-server/sql-server-downloads) をインストールします。
-- [AdventureWorks2017 サンプル データベース](../../samples/adventureworks-install-configure.md?view=sql-server-2017)をダウンロードします。
+- [AdventureWorks2017 サンプル データベース](../../samples/adventureworks-install-configure.md)をダウンロードします。
 
 
-SSMS でデータベースを復元する手順については、[データベースの復元](../../relational-databases/backup-restore/restore-a-database-backup-using-ssms.md?view=sql-server-2017)に関するページをご覧ください。
+SSMS でデータベースを復元する手順については、[データベースの復元](../../relational-databases/backup-restore/restore-a-database-backup-using-ssms.md)に関するページをご覧ください。
 
   >[!NOTE]
   > このチュートリアルは、SQL Server Management Studio の使用と基本的なデータベース管理タスクに慣れているユーザーを対象としています。 
@@ -69,7 +69,7 @@ SSMS でデータベースを復元する手順については、[データベ�
   
 3.  データベース エンジン チューニング アドバイザー GUI の右側ペインにある **[全般]** タブで、 **[セッション名]** に「**MySession**」と入力します。 
   
-4.  **ワークロード**に対して **[ファイル]** を選択し、双眼鏡アイコンを選択して、**ワークロード ファイルを参照**します。 手順 1 で保存した **MyScript.sql** ファイルを見つけます。  
+4.  **ワークロード** に対して **[ファイル]** を選択し、双眼鏡アイコンを選択して、**ワークロード ファイルを参照** します。 手順 1 で保存した **MyScript.sql** ファイルを見つけます。  
 
    ![以前に保存したスクリプトの検索](media/dta-tutorials/dta-script.png)
   

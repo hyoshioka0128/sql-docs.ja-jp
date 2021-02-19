@@ -13,12 +13,12 @@ ms.author: maghan
 ms.reviewer: ''
 ms.custom: seo-dt-2019
 ms.date: 03/01/2017
-ms.openlocfilehash: 4f6f001aa71a5ae2fd397fae2d89bdd951956987
-ms.sourcegitcommit: a9f16d7819ed0e2b7ad8f4a7d4d2397437b2bbb2
+ms.openlocfilehash: 735176a4fbb92d91d446f47492b2ddaa11098b2e
+ms.sourcegitcommit: 3bd188e652102f3703812af53ba877cce94b44a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88713830"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97489392"
 ---
 # <a name="lesson-1-basic-navigation-in-database-engine-tuning-advisor-dta"></a>レッスン 1:データベース エンジン チューニング アドバイザー (DTA) での基本操作
 
@@ -32,10 +32,10 @@ ms.locfileid: "88713830"
 
 - [SQL Server Management Studio](../../ssms/download-sql-server-management-studio-ssms.md) をインストールします。
 - [SQL Server 2017 Developer Edition](https://www.microsoft.com/sql-server/sql-server-downloads) をインストールします。
-- [AdventureWorks2017 サンプル データベース](../../samples/adventureworks-install-configure.md?view=sql-server-2017)をダウンロードします。
+- [AdventureWorks2017 サンプル データベース](../../samples/adventureworks-install-configure.md)をダウンロードします。
 
 
-SSMS でデータベースを復元する手順については、[データベースの復元](../../relational-databases/backup-restore/restore-a-database-backup-using-ssms.md?view=sql-server-2017)に関するページをご覧ください。
+SSMS でデータベースを復元する手順については、[データベースの復元](../../relational-databases/backup-restore/restore-a-database-backup-using-ssms.md)に関するページをご覧ください。
 
   >[!NOTE]
   > このチュートリアルは、SQL Server Management Studio の使用と基本的なデータベース管理タスクに慣れているユーザーを対象としています。 
@@ -44,7 +44,7 @@ SSMS でデータベースを復元する手順については、[データベ�
 ## <a name="launch-database-tuning-advisor"></a>データベース チューニング アドバイザーを起動する 
 まず、データベース エンジン チューニング アドバイザー (DTA) のグラフィカル ユーザー インターフェイス (GUI) を開きます。 初回起動時には、 **sysadmin** 固定サーバー ロールのメンバーがデータベース エンジン チューニング アドバイザーを起動し、アプリケーションを初期化する必要があります。 初期化が完了すると、 **db_owner** 固定データベース ロールのメンバーがデータベース エンジン チューニング アドバイザーを使用し、所有するデータベースをチューニングできるようになります。 データベース エンジン チューニング アドバイザーの初期化の詳細については、「 [データベース エンジン チューニング アドバイザーの起動および使用](../../relational-databases/performance/start-and-use-the-database-engine-tuning-advisor.md)」を参照してください。  
   
-1. SQL Server Management Studio (SSMS) を起動します。 Windows の **[スタート] メニュー**で、 **[すべてのプログラム]** をポイントし、 **[SQL Server Management Studio]** を見つけます。 
+1. SQL Server Management Studio (SSMS) を起動します。 Windows の **[スタート] メニュー** で、 **[すべてのプログラム]** をポイントし、 **[SQL Server Management Studio]** を見つけます。 
 2. SSMS が開いたら、 **[ツール]** メニューを選択し、 **[データベース チューニング アドバイザー]** を選択します。 
 
   ![SSMS から DTA を起動する](media/dta-tutorials/launch-dta.png)
@@ -79,7 +79,7 @@ SSMS でデータベースを復元する手順については、[データベ�
   
     -   データベースの一覧と **[全般]** タブのテーブルに表示できるフォントを確認するには、 **[フォント変更]** をクリックします。このオプションで選択したフォントは、データベース エンジン チューニング アドバイザーの推奨設定グリッドおよびチューニング実行後のレポートにも使用されます。 既定ではシステム フォントが使用されます。  
   
-    -   **[最近使用した項目の一覧に表示する項目数]** には、 **1** ～ **10**の値を設定できます。 このオプションでは、 **[ファイル]** メニューの **[最新のセッション]** または **[最近使ったファイル]** をクリックしたときに表示される最大項目数を設定します。 既定では **4**に設定されています。  
+    -   **[最近使用した項目の一覧に表示する項目数]** には、 **1** ～ **10** の値を設定できます。 このオプションでは、 **[ファイル]** メニューの **[最新のセッション]** または **[最近使ったファイル]** をクリックしたときに表示される最大項目数を設定します。 既定では **4** に設定されています。  
   
     -   **[最後のチューニング オプションを保存する]** チェック ボックスをオンにした場合、既定では、最後のチューニング セッションで指定したチューニング オプションが次のチューニング セッションで使用されます。 データベース エンジン チューニング アドバイザーの既定のチューニング オプションを使用するには、このチェック ボックスをオフにします。 既定では、このオプションはオンになっています。  
   

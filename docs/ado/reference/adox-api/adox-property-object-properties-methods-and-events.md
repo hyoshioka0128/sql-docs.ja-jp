@@ -7,21 +7,21 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - Property object [ADOX], members
 ms.assetid: 640780dc-5733-4f0c-9c11-6f43c1db5901
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 6b7a5ac4579d264e1597a222235b9017a20f91cd
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: a241ab26dfe174087b450f0af04f01263c99afe4
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88985563"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100050573"
 ---
 # <a name="adox-property-object-properties-methods-and-events"></a>ADOX Property オブジェクトのプロパティ、メソッド、およびイベント
-## <a name="properties"></a>プロパティ  
+## <a name="properties"></a>Properties  
  [Attributes プロパティ (ADOX)](./attributes-property-adox.md)  
   
  [Name プロパティ (ADOX)](./name-property-adox.md)  

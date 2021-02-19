@@ -12,12 +12,12 @@ f1_keywords:
 author: Lingxi-Li
 ms.author: lingxl
 ms.reviewer: maghan
-ms.openlocfilehash: 27ee71393bfbad6c824de25bd95c9ca465cf2a51
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: fa8a96c25a0030743b761c78883670a80b2d9a26
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88496080"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100346585"
 ---
 # <a name="azure-data-lake-store-file-system-task"></a>Azure Data Lake Store ファイル システム タスク
 

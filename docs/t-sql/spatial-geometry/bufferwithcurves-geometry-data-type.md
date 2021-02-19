@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -15,13 +15,13 @@ helpviewer_keywords:
 ms.assetid: 8ffaba3f-d2dd-4e57-9f41-3ced9f14b600
 author: MladjoA
 ms.author: mlandzic
-monikerRange: =azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 9a3a8ff7006a2ac48f8b357cd820d0c47e162885
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 18691c1a3e02d93d7c98a6b290672af5c77f15c6
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88427074"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100347528"
 ---
 # <a name="bufferwithcurves-geometry-data-type"></a>BufferWithCurves (geometry データ型)
 [!INCLUDE[sql-asdb-asdbmi](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
@@ -57,7 +57,7 @@ SQL Server 戻り値の型: **geometry**
 ## <a name="remarks"></a>注釈  
  次の図には、このメソッドによって返される geometry インスタンスの例を示しています。  
   
- ![BufferedCurve](../../t-sql/spatial-geometry/media/bufferedcurve.gif)
+ ![このメソッドによって返される geometry インスタンスの例を示すスクリーンショット。](../../t-sql/spatial-geometry/media/bufferedcurve.gif)
   
  次の表に、さまざまな distance 値に対して返される結果を示します。  
   

@@ -9,26 +9,25 @@ ms.date: 05/21/2020
 ms.topic: tutorial
 author: garyericson
 ms.author: garye
-ms.reviewer: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: 144463853d677ee61e2d860caf975275dcd0a607
-ms.sourcegitcommit: 9b41725d6db9957dd7928a3620fe4db41eb51c6e
+monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: a397e23c9e2bc4e297efe7d85a1822a3056daf0a
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88173443"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100349077"
 ---
 # <a name="python-tutorial-build-a-model-to-categorize-customers-with-sql-machine-learning"></a>Python のチュートリアル:SQL 機械学習を使用して顧客を分類するモデルを構築する
 [!INCLUDE [SQL Server 2017 SQL MI](../../includes/applies-to-version/sqlserver2017-asdbmi.md)]
 
-::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15||>=sql-server-linux-ver15"
 この 4 部構成のチュートリアル シリーズのパート 3 では、クラスタリングを実行するために、Python で K-Means モデルをビルドします。 このシリーズの次のパートでは、SQL Server Machine Learning Services またはビッグ データ クラスターを使用して、このモデルをデータベースにデプロイします。
 ::: moniker-end
-::: moniker range="=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2017"
 この 4 部構成のチュートリアル シリーズのパート 3 では、クラスタリングを実行するために、Python で K-Means モデルをビルドします。 このシリーズの次のパートでは、SQL Server Machine Learning Services を使用して、このモデルをデータベースにデプロイします。
 ::: moniker-end
-::: moniker range="=azuresqldb-mi-current||=sqlallproducts-allversions"
+::: moniker range="=azuresqldb-mi-current"
 この 4 部構成のチュートリアル シリーズのパート 3 では、クラスタリングを実行するために、Python で K-Means モデルをビルドします。 このシリーズの次の部では、Azure SQL Managed Instance Machine Learning Services を使用し、データベースにこのモデルをデプロイします。
 ::: moniker-end
 
@@ -47,7 +46,7 @@ ms.locfileid: "88173443"
 
 ## <a name="prerequisites"></a>前提条件
 
-* このチュートリアルのパート 3 は、[**パート 1** ](python-clustering-model.md)の前提条件を満たし、[**パート 2** ](python-clustering-model-prepare-data.md)の手順を完了していることを前提としています。
+* このチュートリアルのパート 3 は、[**パート 1**](python-clustering-model.md)の前提条件を満たし、[**パート 2**](python-clustering-model-prepare-data.md)の手順を完了していることを前提としています。
 
 ## <a name="define-the-number-of-clusters"></a>クラスターの数を定義する
 

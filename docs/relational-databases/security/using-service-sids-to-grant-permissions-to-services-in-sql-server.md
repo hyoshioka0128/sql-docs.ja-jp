@@ -8,12 +8,12 @@ ms.date: 05/02/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
-ms.openlocfilehash: ab9af4d073cbec00736bab6a24817502d353ffd8
-ms.sourcegitcommit: 2b6760408de3b99193edeccce4b92a2f9ed5bcc6
+ms.openlocfilehash: 9d0c008c3fa5df37ddb2658607d1966a3e1b3164
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92175931"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100077536"
 ---
 # <a name="using-service-sids-to-grant-permissions-to-services-in-sql-server"></a>サービスの SID を使用して SQL Server のサービスにアクセス許可を付与する
 
@@ -105,7 +105,7 @@ GO
   > [!NOTE]
   > サービス SID ログインを削除したり、sysadmin サーバー ロールから削除したりすると、SQL Server データベース エンジンに接続する SQL Server のさまざまなコンポーネントで問題が発生する可能性があります。 問題の一部を次に示します。
   > - SQL Server エージェントが SQL Server サービスを開始できなくなったり、接続できなくなる
-  > - SQL Server セットアップ プログラムで、次のマイクロソフトサポート技術情報記事に記載されている問題が発生する: https://support.microsoft.com/help/955813/you-may-be-unable-to-restart-the-sql-server-agent-service-after-you-re
+  > - SQL Server セットアップ プログラムで、次のマイクロソフトサポート技術情報記事に記載されている問題が発生する: https://mskb.pkisolutions.com/kb/955813
   >
   > SQL Server の既定のインスタンスの場合は、次の Transact-SQL コマンドを使用してサービス SID を追加することにより、この状況を修正できます。
   >

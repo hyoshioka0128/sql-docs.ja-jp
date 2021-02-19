@@ -14,18 +14,18 @@ helpviewer_keywords:
 ms.assetid: 395245ba-0372-43ec-b9a4-a29410d85a6d
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 31355856b10e0ec1213655b2968dfbf3ad511fe9
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 44412d332bdf3c6c35740cfcca091ce73a84c66b
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91811020"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97465133"
 ---
 # <a name="sqlgetdiagfield"></a>SQLGetDiagField
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Native CLIENT ODBC ドライバーでは、 **SQLGetDiagField**用に次の追加の診断フィールドが指定されています。 これらのフィールドでは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] アプリケーションに関する各種エラー報告がサポートされます。また、これらのフィールドは、接続されている ODBC 接続ハンドルや ODBC ステートメント ハンドルで生成されるすべての診断レコードで使用できます。 これらのフィールドは、sqlncli.h で定義されています。  
+  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Native CLIENT ODBC ドライバーでは、 **SQLGetDiagField** 用に次の追加の診断フィールドが指定されています。 これらのフィールドでは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] アプリケーションに関する各種エラー報告がサポートされます。また、これらのフィールドは、接続されている ODBC 接続ハンドルや ODBC ステートメント ハンドルで生成されるすべての診断レコードで使用できます。 これらのフィールドは、sqlncli.h で定義されています。  
   
 |診断レコードのフィールド|説明|  
 |------------------------------|-----------------|  
@@ -63,7 +63,7 @@ ms.locfileid: "91811020"
 |SQL_DIAG_DFC_SS_DROP_TRIGGER|DROP TRIGGER ステートメント|  
 |SQL_DIAG_DFC_SS_DUMP_DATABASE|BACKUP DATABASE ステートメントまたは DUMP DATABASE ステートメント|  
 |SQL_DIAG_DFC_SS_DUMP_TABLE|DUMP TABLE ステートメント|  
-|SQL_DIAG_DFC_SS_DUMP_TRANSACTION|BACKUP TRANSACTION ステートメントまたは DUMP TRANSACTION ステートメント。 **Chkpt. 上の trunc**の場合、CHECKPOINT ステートメントにも返されます。 データベースオプションは on です。|  
+|SQL_DIAG_DFC_SS_DUMP_TRANSACTION|BACKUP TRANSACTION ステートメントまたは DUMP TRANSACTION ステートメント。 **Chkpt. 上の trunc** の場合、CHECKPOINT ステートメントにも返されます。 データベースオプションは on です。|  
 |SQL_DIAG_DFC_SS_GOTO|GOTO 流れ制御ステートメント|  
 |SQL_DIAG_DFC_SS_INSERT_BULK|INSERT BULK ステートメント|  
 |SQL_DIAG_DFC_SS_KILL|KILL ステートメント|  

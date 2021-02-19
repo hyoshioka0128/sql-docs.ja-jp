@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -16,14 +16,14 @@ helpviewer_keywords:
 - ALTER DATABASE statement, database mirroring
 - database mirroring [SQL Server], Transact-SQL
 ms.assetid: 27a032ef-1cf6-4959-8e67-03d28c4b3465
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 05d2abb4b471722b035fda1b0101b8111285f1f1
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 9cc62063acd35bd9e561117556dfa2208930df21
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89541455"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99171701"
 ---
 # <a name="alter-database-transact-sql-database-mirroring"></a>ALTER DATABASE (Transact-SQL) データベース ミラーリング
 
@@ -134,7 +134,7 @@ RESUME: 中断状態のデータベース ミラーリング セッションを�
 
 SAFETY { FULL | OFF }: トランザクションの安全性のレベルを設定します。 SAFETY は、プリンシパル サーバー上でのみ指定できます。
 
-既定値は FULL です。 SAFETY が FULL の場合、データベース ミラーリング セッションは*高い安全性モード*で同期的に実行されます。 OFF の場合は、データベース ミラーリング セッションは*高パフォーマンス モード*で非同期的に実行されます。
+既定値は FULL です。 SAFETY が FULL の場合、データベース ミラーリング セッションは *高い安全性モード* で同期的に実行されます。 OFF の場合は、データベース ミラーリング セッションは *高パフォーマンス モード* で非同期的に実行されます。
 
 高い安全性モードの動作は、次のように部分的にミラーリング監視に依存します。
 
@@ -234,6 +234,6 @@ GO
 
 ## <a name="see-also"></a>参照
 
-- [CREATE DATABASE](../../t-sql/statements/create-database-transact-sql.md?view=sql-server-2017)
+- [CREATE DATABASE](../../t-sql/statements/create-database-transact-sql.md)
 - [DATABASEPROPERTYEX](../../t-sql/functions/databasepropertyex-transact-sql.md)
 - [sys.database_mirroring_witnesses](../../relational-databases/system-catalog-views/database-mirroring-witness-catalog-views-sys-database-mirroring-witnesses.md)

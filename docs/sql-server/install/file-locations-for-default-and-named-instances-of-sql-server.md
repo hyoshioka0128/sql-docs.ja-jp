@@ -8,14 +8,14 @@ ms.reviewer: ''
 ms.technology: install
 ms.topic: conceptual
 ms.assetid: 463c570e-9f75-4653-b3b8-4d61753b0013
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 69458d99f5c7a594915c2539b57e01102df1042e
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 053f8519ab8d75659dc9073c11fcc940cacdc1d9
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91988110"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100341144"
 ---
 # <a name="file-locations-for-default-and-named-instances-of-sql-server"></a>SQL Server の既定のインスタンスおよび名前付きインスタンスのファイルの場所
 [!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
@@ -40,9 +40,9 @@ ms.locfileid: "91988110"
 
 |Version|\*nnn*|{nn}|
 |-----|-----|--------|
-|[!INCLUDE[ssqlv15](../../includes/sssqlv15-md.md)]| 150| 15| 
-|[!INCLUDE[ssqlv14](../../includes/sssqlv14-md.md)]| 140| 14| 
-|[!INCLUDE[ssqlv13](../../includes/sssql15-md.md)]| 130| 13 | 
+|[!INCLUDE[ssqlv15](../../includes/sssql19-md.md)]| 150| 15| 
+|[!INCLUDE[ssqlv14](../../includes/sssql17-md.md)]| 140| 14| 
+|[!INCLUDE[ssqlv13](../../includes/sssql16-md.md)]| 130| 13 | 
 |[!INCLUDE[ssqlv12](../../includes/sssql14-md.md)]  | 120|12 | 
 |[!INCLUDE[sssql11](../../includes/sssql11-md.md)] | 110|11 | 
   
@@ -59,14 +59,14 @@ ms.locfileid: "91988110"
   
  このリリースの [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] における既定のインスタンス ID の例を次に示します。  
   
--   [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] の既定のインスタンスの場合: MSSQL\{nn}.MSSQLSERVER。  
+-   [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] の既定のインスタンスの場合: MSSQL\{nn}.MSSQLSERVER。  
   
 -   [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Analysis Services の既定のインスタンスの場合: MSAS\{nn}.MSSQLSERVER。  
   
--   "MyInstance" という名前の [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] インスタンスの場合: MSSQL\{nn}.MyInstance。  
+-   "MyInstance" という名前の [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] インスタンスの場合: MSSQL\{nn}.MyInstance。  
   
 
- [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] および [!INCLUDE[ssDE](../../includes/ssde-md.md)] を含み、名前が "MyInstance" で、インストール先が既定のディレクトリである [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)]の名前付きインスタンスの場合、ディレクトリ構造は次のようになります。  
+ [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] および [!INCLUDE[ssDE](../../includes/ssde-md.md)] を含み、名前が "MyInstance" で、インストール先が既定のディレクトリである [!INCLUDE[ssASnoversion](../../includes/ssasnoversion-md.md)]の名前付きインスタンスの場合、ディレクトリ構造は次のようになります。  
   
 -   C:\Program Files\Microsoft SQL Server\MSSQL\{nn}.MyInstance\  
   
@@ -123,7 +123,7 @@ ms.locfileid: "91988110"
 > [!WARNING]
 > \Program Files\\[!INCLUDE[msCoName](../../includes/msconame-md.md)][!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]\ フォルダーがアクセス許可の制限により保護されていることを確認してください。  
   
-ファイルの場所の既定のドライブは *systemdrive*で、通常は C ドライブです。子機能のインストール パスは、親機能のインストール パスと同じになります。  
+ファイルの場所の既定のドライブは *systemdrive* で、通常は C ドライブです。子機能のインストール パスは、親機能のインストール パスと同じになります。  
   
 <sup>1</sup> 1 つのインストール パスが [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] とクライアント コンポーネントの間で共有されます。 1 つのコンポーネントのインストール パスを変更すると、他のコンポーネントのパスも変更されます。 後続のインストールでは、最初のインストールと同じ場所にコンポーネントがインストールされます。  
   

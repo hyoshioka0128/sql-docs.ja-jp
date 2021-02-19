@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f2fb2d57-6884-42ef-a18c-2673ba9b85c0
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 220fd291c8846a53342229dd6769fe913ff56a2d
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: dc86aa6f9a8f7e6e79845a0969c52a3fe8a90b40
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88987603"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100055997"
 ---
 # <a name="ado-md-code-examples-in-visual-basic-scripting-edition"></a>Visual Basic Scripting Edition での ADO MD コード例
 次の例では、microsoft インターネットインフォメーションサーバー4.0 用の Microsoft Active Server Pages (ASP) が必要です。  

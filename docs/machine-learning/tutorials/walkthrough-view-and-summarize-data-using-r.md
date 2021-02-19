@@ -8,13 +8,13 @@ ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 7e48e25444acc2f84794afc487c95bdd5af64f30
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 676fd125bf148a5139de1ecee7145c523ee6b4e0
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92195074"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100272943"
 ---
 # <a name="view-and-summarize-sql-server-data-using-r-walkthrough"></a>R を使用した SQL Server データの表示と集計 (チュートリアル)
 [!INCLUDE [SQL Server 2016](../../includes/applies-to-version/sqlserver2016.md)]
@@ -59,7 +59,7 @@ ms.locfileid: "92195074"
 
     通常は、R コードにパスワードが保存されないように、可能であれば、Windows 認証の使用をお勧めします。
 
-3. 新しい*計算コンテキスト*の作成で使用する変数を定義します。 計算コンテキスト オブジェクトを作成したら、それを使用して SQL Server インスタンスで R コードを実行できます。
+3. 新しい *計算コンテキスト* の作成で使用する変数を定義します。 計算コンテキスト オブジェクトを作成したら、それを使用して SQL Server インスタンスで R コードを実行できます。
 
     ```R
     sqlShareDir <- paste("C:\\AllShare\\",Sys.getenv("USERNAME"),sep="")
@@ -67,7 +67,7 @@ ms.locfileid: "92195074"
     sqlConsoleOutput <- FALSE
     ```
 
-    - ワークステーションと [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] コンピューター間で双方向に R オブジェクトをシリアル化する際、R では、一時ディレクトリが使用されます。 *sqlShareDir*として使用されるローカル ディレクトリを指定するか、既定のものをそのまま利用できます。
+    - ワークステーションと [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] コンピューター間で双方向に R オブジェクトをシリアル化する際、R では、一時ディレクトリが使用されます。 *sqlShareDir* として使用されるローカル ディレクトリを指定するか、既定のものをそのまま利用できます。
   
     - *sqlWait* を利用し、R にサーバーからの結果を待機させるかどうかを指示します。  待機するジョブと待機しないジョブの詳細については、[Microsoft R で RevoScaleR を使用した分散コンピューティングと並列コンピューティング](/r-server/r/how-to-revoscaler-distributed-computing)に関するページを参照してください。
   
@@ -79,7 +79,7 @@ ms.locfileid: "92195074"
     sqlcc <- RxInSqlServer(connectionString = connStr, shareDir = sqlShareDir, wait = sqlWait, consoleOutput = sqlConsoleOutput)
     ```
 
-5. 既定では、計算コンテキストはローカルです。つまり、*アクティブな計算コンテキスト*を明示的に設定する必要があります。
+5. 既定では、計算コンテキストはローカルです。つまり、*アクティブな計算コンテキスト* を明示的に設定する必要があります。
 
     ```R
     rxSetComputeContext(sqlcc)
@@ -92,7 +92,7 @@ ms.locfileid: "92195074"
 
 ## <a name="create-a-data-source-using-rxsqlserver"></a>RxSqlServer を使用してデータ ソースを作成する
 
-RevoScaleR や RevoScaleR などの Microsoft R ライブラリを使用する場合、*データ ソース*は、RevoScaleR 関数を使用して作成するオブジェクトです。 データ ソース オブジェクトでは、モデルのトレーニングや特徴の抽出などのタスクに使用するデータのセットを指定します。 SQL Server を含むさまざまなソースからデータを取得できます。 現在サポートされているソースの一覧については、「[RxDataSource](/r-server/r-reference/revoscaler/rxdatasource)」を参照してください。
+RevoScaleR や RevoScaleR などの Microsoft R ライブラリを使用する場合、*データ ソース* は、RevoScaleR 関数を使用して作成するオブジェクトです。 データ ソース オブジェクトでは、モデルのトレーニングや特徴の抽出などのタスクに使用するデータのセットを指定します。 SQL Server を含むさまざまなソースからデータを取得できます。 現在サポートされているソースの一覧については、「[RxDataSource](/r-server/r-reference/revoscaler/rxdatasource)」を参照してください。
 
 以前に、接続文字列を定義し、その情報を R 変数に保存しました。 この接続情報を再利用して、取得するデータを指定できます。
 

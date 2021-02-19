@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: 799c80fd-c561-4912-8562-9229076dfd19
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 043e8e62174f286ad229485ecce4e4db0990557a
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: e338ba67bdd2535f54e4678b4ff013c768571da8
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91868450"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97465103"
 ---
 # <a name="sqlsetstmtattr"></a>SQLSetStmtAttr
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -49,7 +49,7 @@ ms.locfileid: "91868450"
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Native Client ODBC ドライバーは、次のドライバー固有のステートメント属性もサポートします。  
   
 ### <a name="sql_sopt_ss_cursor_options"></a>SQL_SOPT_SS_CURSOR_OPTIONS  
- カーソルでのドライバー固有のパフォーマンス オプションを使用するかどうかを指定します。 これらのオプションが設定されている場合、 [SQLGetData](../../relational-databases/native-client-odbc-api/sqlgetdata.md)は許可されません。 既定の設定は SQL_CO_OFF です。 *Valueptr*値の型は SQLLEN です。  
+ カーソルでのドライバー固有のパフォーマンス オプションを使用するかどうかを指定します。 これらのオプションが設定されている場合、 [SQLGetData](../../relational-databases/native-client-odbc-api/sqlgetdata.md)は許可されません。 既定の設定は SQL_CO_OFF です。 *Valueptr* 値の型は SQLLEN です。  
   
 |*Valueptr* 値|説明|  
 |----------------------|-----------------|  
@@ -63,17 +63,17 @@ ms.locfileid: "91868450"
  Select リストに **text**、 **ntext**、または **image** 列が含まれている場合、高速順方向専用カーソルは動的カーソルに変換され、 **SQLGetData** は許可されます。  
   
 ### <a name="sql_sopt_ss_defer_prepare"></a>SQL_SOPT_SS_DEFER_PREPARE  
- SQL_SOPT_SS_DEFER_PREPARE 属性は、ステートメントを直ちに準備するか、 **Sqlexecute**、 [SQLDescribeCol](../../relational-databases/native-client-odbc-api/sqldescribecol.md) 、または [SQLDescribeParam](../../relational-databases/native-client-odbc-api/sqldescribeparam.md) が実行されるまで遅延させるかを決定します。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 7.0 以前のバージョンでは、このプロパティは無視されます (準備は遅延されません)。 *Valueptr*値の型は SQLLEN です。  
+ SQL_SOPT_SS_DEFER_PREPARE 属性は、ステートメントを直ちに準備するか、 **Sqlexecute**、 [SQLDescribeCol](../../relational-databases/native-client-odbc-api/sqldescribecol.md) 、または [SQLDescribeParam](../../relational-databases/native-client-odbc-api/sqldescribeparam.md) が実行されるまで遅延させるかを決定します。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 7.0 以前のバージョンでは、このプロパティは無視されます (準備は遅延されません)。 *Valueptr* 値の型は SQLLEN です。  
   
 |*Valueptr* 値|説明|  
 |----------------------|-----------------|  
-|SQL_DP_ON|既定値。 [SQLPrepare 関数](../../odbc/reference/syntax/sqlprepare-function.md)を呼び出した後、 **sqlexecute**が呼び出されるか、メタプロパティ操作 (**SQLDescribeCol**または**SQLDescribeParam**) が実行されるまで、ステートメントの準備は遅延されます。|  
-|SQL_DP_OFF|**SQLPrepare**が実行されるとすぐに、ステートメントが準備されます。|  
+|SQL_DP_ON|既定値。 [SQLPrepare 関数](../../odbc/reference/syntax/sqlprepare-function.md)を呼び出した後、 **sqlexecute** が呼び出されるか、メタプロパティ操作 (**SQLDescribeCol** または **SQLDescribeParam**) が実行されるまで、ステートメントの準備は遅延されます。|  
+|SQL_DP_OFF|**SQLPrepare** が実行されるとすぐに、ステートメントが準備されます。|  
   
 ### <a name="sql_sopt_ss_regionalize"></a>SQL_SOPT_SS_REGIONALIZE  
  ステートメント レベルのデータ変換を決定します。 この属性を設定すると、日付、時刻、通貨の値を文字列値に変換する際に、ドライバーはクライアントのロケール設定を使用します。 この場合の変換は、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ネイティブ データ型から文字列への変換のみです。  
   
- *Valueptr*値の型は SQLLEN です。  
+ *Valueptr* 値の型は SQLLEN です。  
   
 |*Valueptr* 値|説明|  
 |----------------------|-----------------|  
@@ -83,20 +83,20 @@ ms.locfileid: "91868450"
  地域別の変換の設定は、通貨、数値、日付、および時刻のデータ型に適用されます。 変換の設定は、通貨、数値、日付、または時刻の値を文字列に変換するときの出力変換にのみ適用されます。  
   
 > [!NOTE]  
->  ステートメント オプション SQL_SOPT_SS_REGIONALIZE が有効な場合、ドライバーは現在のユーザーのロケール レジストリ設定を使用します。 アプリケーションが **Setthreadlocale**を呼び出すなどして、現在のスレッドのロケールを設定している場合、ドライバーはそのロケールを優先しません。  
+>  ステートメント オプション SQL_SOPT_SS_REGIONALIZE が有効な場合、ドライバーは現在のユーザーのロケール レジストリ設定を使用します。 アプリケーションが **Setthreadlocale** を呼び出すなどして、現在のスレッドのロケールを設定している場合、ドライバーはそのロケールを優先しません。  
   
  データ ソースの地域別の動作を変更すると、アプリケーション エラーが発生することがあります。 日付文字列を解析し、ODBC の定義に従った形式の日付文字列を受け付けるアプリケーションは、地域別の動作の値を変更することによって、悪影響を受ける可能性があります。  
   
 ### <a name="sql_sopt_ss_textptr_logging"></a>SQL_SOPT_SS_TEXTPTR_LOGGING  
- SQL_SOPT_SS_TEXTPTR_LOGGING 属性は、 **テキスト** または **イメージ** データを含む列に対する操作のログ記録を切り替えます。 *Valueptr*値の型は SQLLEN です。  
+ SQL_SOPT_SS_TEXTPTR_LOGGING 属性は、 **テキスト** または **イメージ** データを含む列に対する操作のログ記録を切り替えます。 *Valueptr* 値の型は SQLLEN です。  
   
 |*Valueptr* 値|説明|  
 |----------------------|-----------------|  
-|SQL_TL_OFF|**テキスト**および**イメージ**データに対して実行される操作のログ記録を無効にします。|  
-|SQL_TL_ON|既定値。 **テキスト**および**イメージ**データに対して実行される操作のログ記録を有効にします。|  
+|SQL_TL_OFF|**テキスト** および **イメージ** データに対して実行される操作のログ記録を無効にします。|  
+|SQL_TL_ON|既定値。 **テキスト** および **イメージ** データに対して実行される操作のログ記録を有効にします。|  
   
 ### <a name="sql_sopt_ss_hidden_columns"></a>SQL_SOPT_SS_HIDDEN_COLUMNS  
- [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の SELECT FOR BROWSE ステートメントで非表示にされた列を結果セットに公開します。 既定では、ドライバーはこのような列を公開しません。 *Valueptr*値の型は SQLLEN です。  
+ [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の SELECT FOR BROWSE ステートメントで非表示にされた列を結果セットに公開します。 既定では、ドライバーはこのような列を公開しません。 *Valueptr* 値の型は SQLLEN です。  
   
 |*Valueptr* 値|説明|  
 |----------------------|-----------------|  
@@ -118,7 +118,7 @@ ms.locfileid: "91868450"
  `service=mySSBService;local database=mydb`  
   
 ### <a name="sql_sopt_ss_querynotification_timeout"></a>SQL_SOPT_SS_QUERYNOTIFICATION_TIMEOUT  
- クエリ通知をアクティブのままにしておく秒数を指定します。 既定値は432000秒 (5 日) です。 *Valueptr*値の型は SQLLEN です。  
+ クエリ通知をアクティブのままにしておく秒数を指定します。 既定値は432000秒 (5 日) です。 *Valueptr* 値の型は SQLLEN です。  
   
 ### <a name="sql_sopt_ss_param_focus"></a>SQL_SOPT_SS_PARAM_FOCUS  
  SQL_SOPT_SS_PARAM_FOCUS 属性は、後続の SQLBindParameter、SQLGetDescField、SQLSetDescField、SQLGetDescRec、および SQLSetDescRec の呼び出しのフォーカスを指定します。  
@@ -134,10 +134,10 @@ ms.locfileid: "91868450"
   
 |*Valueptr* 値|説明|  
 |----------------------|-----------------|  
-|SQL_SS_NAME_SCOPE_TABLE|既定値。<br /><br /> テーブル値パラメーターを使用する場合は、実際のテーブルのメタデータが返される必要があることを示します。<br /><br /> スパース列機能を使用する場合、SQLColumns は、スパース **column_set**のメンバーではない列のみを返します。|  
+|SQL_SS_NAME_SCOPE_TABLE|既定値。<br /><br /> テーブル値パラメーターを使用する場合は、実際のテーブルのメタデータが返される必要があることを示します。<br /><br /> スパース列機能を使用する場合、SQLColumns は、スパース **column_set** のメンバーではない列のみを返します。|  
 |SQL_SS_NAME_SCOPE_TABLE_TYPE|アプリケーションが実際のテーブルではなくテーブル型のメタデータを必要としていること (テーブル型のメタデータが返される必要があること) を示します。 その後、アプリケーションはテーブル値パラメーターの TYPE_NAME を *TableName* パラメーターとして渡します。|  
 |SQL_SS_NAME_SCOPE_EXTENDED|スパース列機能を使用する場合、 **column_set** のメンバーシップに関係なく、sqlcolumns はすべての列を返します。|  
-|SQL_SS_NAME_SCOPE_SPARSE_COLUMN_SET|スパース列機能を使用する場合、SQLColumns は、スパース **column_set**のメンバーである列のみを返します。|  
+|SQL_SS_NAME_SCOPE_SPARSE_COLUMN_SET|スパース列機能を使用する場合、SQLColumns は、スパース **column_set** のメンバーである列のみを返します。|  
 |SQL_SS_NAME_SCOPE_DEFAULT|SQL_SS_NAME_SCOPE_TABLE と同等です。|  
   
  SS_TYPE_CATALOG_NAME と SS_TYPE_SCHEMA_NAME は、 *CatalogName* パラメーターと *SchemaName* パラメーターでそれぞれ使用され、テーブル値パラメーターのカタログとスキーマを識別します。 テーブル値パラメーターのメタデータの取得が完了すると、アプリケーションによって、SQL_SOPT_SS_NAME_SCOPE は既定値 SQL_SS_NAME_SCOPE_TABLE に設定し直す必要があります。  

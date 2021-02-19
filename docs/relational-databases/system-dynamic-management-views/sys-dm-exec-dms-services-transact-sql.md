@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - DM_EXEC_DMS_SERVICES_TSQL
 - SYS.DM_EXEC_DMS_SERVICES_TSQL
@@ -20,15 +20,15 @@ helpviewer_keywords:
 - dm_exec_dms_services management view
 - sys.dm_exec_dms_services management view
 ms.assetid: 6ac47eef-4293-46b8-8555-07a614837504
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 11c2b3a3212d803356a543bea84de4ef7d3a68d2
-ms.sourcegitcommit: 32135463a8494d9ed1600a58f51819359e3c09dc
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: cb0aa5e1c4e99ed65c82a53f7701229d0e9a625c
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91834549"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99160047"
 ---
 # <a name="sysdm_exec_dms_services-transact-sql"></a>sys.dm_exec_dms_services (Transact-sql)
 [!INCLUDE [sqlserver2016-asa-pdw](../../includes/applies-to-version/sqlserver2016-asa-pdw.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "91834549"
 |列名|データ型|説明|Range|  
 |-----------------|---------------|-----------------|-----------|  
 |dms_core_id|`int`|DMS コアに関連付けられている一意の数値 id。 このビューのキー。|一意の ID。|  
-|compute_node_id|`int`|この DMS サービスが実行されているノードの ID|[Transact-sql&#41;&#40;sys.dm_exec_compute_nodes](../../relational-databases/system-dynamic-management-views/sys-dm-exec-compute-nodes-transact-sql.md)の*compute_node_id*を参照してください。|  
+|compute_node_id|`int`|この DMS サービスが実行されているノードの ID|[Transact-sql&#41;&#40;sys.dm_exec_compute_nodes](../../relational-databases/system-dynamic-management-views/sys-dm-exec-compute-nodes-transact-sql.md)の *compute_node_id* を参照してください。|  
 |status|`nvarchar(32)`|DMS サービスの現在の状態||
 |compute_pool_id|`int`|プールの一意の識別子。|
 

@@ -1,5 +1,5 @@
 ---
-title: dm_db_xtp_checkpoint_stats (Transact-sql) |Microsoft Docs
+title: sys.dm_db_xtp_checkpoint_stats (Transact-sql) |Microsoft Docs
 description: 現在のデータベースのインメモリ OLTP チェックポイント操作に関する統計を返します。 SQL Server のバージョンごとにこのビューがどのように異なるかを説明します。
 ms.custom: ''
 ms.date: 03/20/2017
@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: in-memory-oltp
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - dm_db_xtp_checkpoint_stats
 - dm_db_xtp_checkpoint_stats_TSQL
@@ -18,20 +18,20 @@ dev_langs:
 helpviewer_keywords:
 - sys.dm_db_xtp_checkpoint_stats dynamic management view
 ms.assetid: 8d0b18ca-db4d-4376-9905-3e4457727c46
-author: markingmyname
-ms.author: maghan
-monikerRange: =azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 66532a6ed19dc3a7929fe7d5638fa850c893d119
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: b99081c2e62aa45789cdb7bc890f6b7fbd51cd67
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89542319"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99236063"
 ---
 # <a name="sysdm_db_xtp_checkpoint_stats-transact-sql"></a>sys.dm_db_xtp_checkpoint_stats (Transact-SQL)
 [!INCLUDE[sql-asdb-asdbmi](../../includes/applies-to-version/sql-asdb-asdbmi.md)]
 
-  現在のデータベースのインメモリ OLTP チェックポイント操作に関する統計を返します。 データベースにインメモリ OLTP オブジェクトが存在しない場合、は空の結果セットを返します。  
+  現在のデータベースのインメモリ OLTP チェックポイント操作に関する統計を返します。 データベースに In-Memory OLTP オブジェクトがない場合、は空の結果セットを返します。  
   
  詳細については、「[インメモリ OLTP &#40;インメモリ最適化&#41;](../../relational-databases/in-memory-oltp/in-memory-oltp-in-memory-optimization.md)」を参照してください。  
   
@@ -42,8 +42,8 @@ SELECT * FROM sys.dm_db_xtp_checkpoint_stats;
   
 **[!INCLUDE[ssSQL14](../../includes/sssql14-md.md)] は、より新しいバージョンとは大幅に異なります。 [SQL Server 2014](#bkmk_2014)のトピックでは、この点について説明します。**
   
-## <a name="sssql15-and-later"></a>[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)] 以降  
- 次の表では、で始まるの列について説明し `sys.dm_db_xtp_checkpoint_stats` **[!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]** ます。  
+## <a name="sssql16-md-and-later"></a>[!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] 以降  
+ 次の表では、で始まるの列について説明し `sys.dm_db_xtp_checkpoint_stats` **[!INCLUDE[sssql16-md](../../includes/sssql16-md.md)]** ます。  
   
 |列名|種類|説明|  
 |-----------------|----------|-----------------|  
@@ -92,15 +92,15 @@ SELECT * FROM sys.dm_db_xtp_checkpoint_stats;
 |log_to_process_in_bytes|**bigint**|スレッドの現在のログシーケンス番号 (LSN) とログの末尾との間のログバイト数。|  
 |total_log_blocks_processed|**bigint**|サーバーの起動後に処理されたログブロックの合計数。|  
 |total_log_records_processed|**bigint**|サーバーが起動した後で処理されたログ レコードの合計数。|  
-|xtp_log_records_processed|**bigint**|サーバーの起動以降に処理されたインメモリ OLTP ログレコードの合計数。|  
+|xtp_log_records_processed|**bigint**|サーバーの起動以降に処理された OLTP ログレコード In-Memory 総数。|  
 |total_wait_time_in_ms|**bigint**|累積待機時間 (ミリ秒)。|  
 |waits_for_io|**bigint**|ログ IO の待機の数。|  
 |io_wait_time_in_ms|**bigint**|ログ IO の待機に費やされた累積時間。|  
 |waits_for_new_log|**bigint**|新しいログが生成されるのを待機する回数。|  
 |new_log_wait_time_in_ms|**bigint**|新しいログの待機に費やされた累積時間。|  
-|log_generated_since_last_checkpoint_in_bytes|**bigint**|前回のインメモリ OLTP チェックポイント以降に生成されたログの量。|  
-|ms_since_last_checkpoint|**bigint**|最後のインメモリ OLTP チェックポイントからの経過時間 (ミリ秒)。|  
-|checkpoint_lsn|**数値 (38)**|最後に完了したインメモリ OLTP チェックポイントに関連付けられている復旧ログシーケンス番号 (LSN)。|  
+|log_generated_since_last_checkpoint_in_bytes|**bigint**|最後に In-Memory OLTP チェックポイント以降に生成されたログの量。|  
+|ms_since_last_checkpoint|**bigint**|最後に In-Memory OLTP チェックポイントからの経過時間 (ミリ秒)。|  
+|checkpoint_lsn|**数値 (38)**|最後に完了した In-Memory OLTP チェックポイントに関連付けられている復旧ログシーケンス番号 (LSN)。|  
 |current_lsn|**数値 (38)**|現在処理中のログレコードの LSN。|  
 |end_of_log_lsn|**数値 (38)**|ログの末尾の LSN。|  
 |task_address|**varbinary (8)**|SOS_Task のアドレス。 追加の情報を得るには、sys.dm_os_tasks と組み合わせます。|  

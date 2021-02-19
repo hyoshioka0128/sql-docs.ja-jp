@@ -5,7 +5,7 @@ ms.custom: seo-lt-2019
 ms.date: 01/19/2019
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: availability-groups
 ms.topic: conceptual
 helpviewer_keywords:
 - AlwaysOn
@@ -14,14 +14,14 @@ helpviewer_keywords:
 - High Availability
 - SQL Server
 ms.assetid: d74afd28-25c3-48a1-bc3f-e353bee615c2
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: 25103e53ab29e9a19872ea1563f98607f3821b67
-ms.sourcegitcommit: 2f868a77903c1f1c4cecf4ea1c181deee12d5b15
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 1d0abb2a078c9dd2e7f540ee05b70b60dd756a34
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91669910"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97639160"
 ---
 # <a name="availability-group-database-level-health-detection-failover-option"></a>可用性グループのデータベース レベルの正常性検出フェールオーバー オプション
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -37,15 +37,15 @@ SQL Server 2016 以降、Always On 可用性グループを構成するときに
 
 ### <a name="enabling-database-level-health-detection"></a>データベース レベルの正常性検出の有効化
 
-データベースの正常性オプションは一般的に推奨されるオプションですが、以前のバージョンにおける既定の設定との下位互換性を維持するために、**既定でオフ**になっています。
+データベースの正常性オプションは一般的に推奨されるオプションですが、以前のバージョンにおける既定の設定との下位互換性を維持するために、**既定でオフ** になっています。
 
 データベース レベルの正常性検出の設定を有効にする方法はいくつかあります。
 
-1. SQL Server Management Studio で、SQL Server データベース エンジンに接続します。 オブジェクト エクスプ ローラー ウィンドウを使用して、AlwaysOn 高可用性ノードを右クリックし、**新しい可用性グループ ウィザード**を実行します。 [名前の指定] ページで **[データベース レベルの正常性検出]** チェック ボックスをオンします。 続けて、ウィザードの残りのページに情報を入力します。
+1. SQL Server Management Studio で、SQL Server データベース エンジンに接続します。 オブジェクト エクスプ ローラー ウィンドウを使用して、AlwaysOn 高可用性ノードを右クリックし、**新しい可用性グループ ウィザード** を実行します。 [名前の指定] ページで **[データベース レベルの正常性検出]** チェック ボックスをオンします。 続けて、ウィザードの残りのページに情報を入力します。
 
    ![AlwaysOn/データベース正常性のチェック ボックスをオンにする](../../../database-engine/availability-groups/windows/media/always-on-enable-database-health-checkbox.png)
 
-2. SQL Server Management Studio で既存の可用性グループの**プロパティ**を表示します。 SQL Server に接続します。 オブジェクト エクスプローラー ウィンドウを使用して、AlwaysOn 高可用性ノードを展開します。 可用性グループを展開します。 可用性グループを右クリックし、[プロパティ] を選択します。 **[データベース レベルの正常性検出]** オプションをオンにして、[OK] をクリックするか、[スクリプト] をクリックして変更します。
+2. SQL Server Management Studio で既存の可用性グループの **プロパティ** を表示します。 SQL Server に接続します。 オブジェクト エクスプローラー ウィンドウを使用して、AlwaysOn 高可用性ノードを展開します。 可用性グループを展開します。 可用性グループを右クリックし、[プロパティ] を選択します。 **[データベース レベルの正常性検出]** オプションをオンにして、[OK] をクリックするか、[スクリプト] をクリックして変更します。
 
    ![AlwaysOn/AG プロパティ/データベース レベルの正常性検出](../../../database-engine/availability-groups/windows/media/always-on-ag-properties-database-level-health-detection.png)
 

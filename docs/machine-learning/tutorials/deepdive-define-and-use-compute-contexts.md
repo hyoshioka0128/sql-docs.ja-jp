@@ -8,13 +8,13 @@ ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 7bf4385405c227fb337dda910c3f1ef158eff223
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 074597a032fbcaa8231dfea22d567204cb079f58
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92195144"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470553"
 ---
 # <a name="define-and-use-compute-contexts-sql-server-and-revoscaler-tutorial"></a>コンピューティング コンテキストの定義と使用 (SQL Server と RevoScaleR のチュートリアル)
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -79,7 +79,7 @@ SQL Server コンピューティング コンテキストを作成する **RxInS
     dir.create(sqlShareDir, recursive = TRUE)
     ```
 
-4. **RxInSqlServer** コンストラクターに引数を渡して、*コンピューティング コンテキスト オブジェクト*を作成します。
+4. **RxInSqlServer** コンストラクターに引数を渡して、*コンピューティング コンテキスト オブジェクト* を作成します。
 
     ```R
     sqlCompute <- RxInSqlServer(  

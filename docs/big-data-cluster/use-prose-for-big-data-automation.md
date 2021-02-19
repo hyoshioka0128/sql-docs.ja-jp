@@ -5,22 +5,24 @@ description: この記事では、Azure Data Studio の PROSE コード アク�
 author: dphansen
 ms.author: davidph
 ms.reviewer: mihaelab
-ms.date: 12/06/2018
+ms.date: 10/12/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: machine-learning-bdc
-ms.openlocfilehash: 9768c406ca94cd16e8e9075bd5247434b8359d5c
-ms.sourcegitcommit: c7f40918dc3ecdb0ed2ef5c237a3996cb4cd268d
+ms.openlocfilehash: c8423d8a08264255df02d6a9a2ea544a89dbbad3
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91725763"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100043535"
 ---
 # <a name="data-wrangling-using-prose-code-accelerator"></a>PROSE コード アクセラレータを使用したデータ ラングリング
 
 [!INCLUDE[SQL Server 2019](../includes/applies-to-version/sqlserver2019.md)]
 
-PROSE コード アクセラレータでは、データ ラングリング タスク用の読み取り可能な Python コードが生成されます。 Azure Data Studio 内のノートブックで作業するときに、生成されたコードと手書きコードをシームレスに混在させることができます。 この記事では、コード アクセラレータの使用方法の概要について説明します。
+PROSE コード アクセラレータでは、データ ラングリング タスク用の読み取り可能な Python コードが生成されます。 Azure Data Studio 内のノートブックで作業するときに、生成されたコードと手書きのコードを混在させることができます。
+
+この記事では、コード アクセラレータの使用方法の概要について説明します。
 
  > [!NOTE]
  > Program Synthesis using Examples (PROSE ともいう) は、AI を使用して人間が判読できるコードを生成する Microsoft テクノロジです。 これは、ユーザーの意図とデータを分析し、いくつかの候補プログラムを生成し、順位付けアルゴリズムを使用して最適なプログラムを選択することによって行われます。 PROSE テクノロジの詳細については、[PROSE のホームページ](https://microsoft.github.io/prose/)を参照してください。
@@ -41,9 +43,11 @@ import prose.codeaccelerator as cx
 
 ## <a name="reading-data-from-a-file-to-a-dataframe"></a>ファイルからデータフレームへのデータの読み取り
 
-多くの場合、ファイルをデータフレームに読み取るには、ファイルの内容を調べ、データ読み込みライブラリに渡す正しいパラメーターを特定する必要があります。 ファイルの複雑さによっては、正しいパラメーターを識別するために複数の反復処理が必要になる場合があります。
+ファイルをデータフレームに読み取るには、ファイルの内容を調べ、データ読み込みライブラリに渡す正しいパラメーターを特定する必要があります。
 
-PROSE コード アクセラレータでは、データ ファイルの構造を分析し、ファイルを読み込むコードを自動的に生成することで、この問題を解決します。 ほとんどの場合、生成されたコードでデータが正しく解析されます。 場合によっては、ニーズに合わせてコードの調整が必要になることがあります。
+ファイルの複雑さによっては、正しいパラメーターを識別するために複数の反復処理が必要になる場合があります。
+
+PROSE コード アクセラレータでは、データ ファイルの構造を分析し、ファイルを読み込むコードを自動的に生成することで、この問題を解決します。 通常は、生成されたコードによってデータが正しく解析されます。 場合によっては、ニーズに合わせてコードの調整が必要になることがあります。
 
 次の例を確認してください。
 
@@ -90,9 +94,9 @@ def read_file(file):
 
 ## <a name="fixing-data-types-in-a-dataframe"></a>データフレームでのデータ型の修正
 
-一般に、pandas や pyspark データフレームのデータ型は正しくありません。 多くの場合、これは、列に非準拠の値がいくつかあることが原因で発生します。 その結果、整数はフロートまたは文字列として読み取られ、日付は文字列として読み取られます。 データ型を手動で修正するために必要な作業は、列の数に比例します。
+一般に、pandas や pyspark データフレームのデータ型は正しくありません。 正しくないデータ型は、列に非準拠の値がいくつかあることが原因で発生します。 その結果、整数はフロートまたは文字列として読み取られ、日付は文字列として読み取られます。 データ型を手動で修正するために必要な作業は、列の数に比例します。
 
-このような状況では、`DetectTypesBuilder` を使用できます。 これによりデータが分析され、データ型はブラックボックス方式で修正されるのではなく、データ型を修正するためのコードが生成されます。 このコードは開始点として機能します。 これを確認、使用、または必要に応じて変更することができます。
+このような状況では、`DetectTypesBuilder` を使用できます。 それによって、データが分析され、データ型を修正するコードが生成されます。 このコードは開始点として機能します。 これを確認、使用、または必要に応じて変更することができます。
 
 ```python
 import prose.codeaccelerator as cx
@@ -110,7 +114,7 @@ builder.learn().code()
 
 ## <a name="identifying-patterns-in-strings"></a>文字列でのパターンの識別
 
-もう 1 つの一般的なシナリオは、クリーニングまたはグループ化の目的で文字列の列のパターンを検出することです。 たとえば、日付が複数の異なる形式の日付列があるとします。 値を標準化するために、正規表現を使用して条件付きステートメントを記述することが必要な場合があります。
+p.
 
 
 |行|名前                      |BirthDate      |

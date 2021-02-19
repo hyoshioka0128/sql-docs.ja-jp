@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - ConnectOptionEnum
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: bff07eeb-dee3-4e4e-9b2d-d56061ea744d
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: b924acf0f41ead3025197bade8bcc2d459508f2a
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: e159309a0fb1875851ff6ae0a7bf56ade908bafd
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88974693"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100026077"
 ---
 # <a name="connectoptionenum"></a>ConnectOptionEnum
 接続の確立後に (同期的に)、またはそれ以前 (非同期) に[接続](./connection-object-ado.md)オブジェクトの[Open](./open-method-ado-connection.md)メソッドを返すかどうかを指定します。  

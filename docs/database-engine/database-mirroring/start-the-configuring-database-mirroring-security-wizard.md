@@ -6,7 +6,7 @@ ms.date: 03/07/2017
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - database mirroring [SQL Server], security
@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 1c846950-0a2d-45df-b0d5-193e455f7cd5
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: dd7bdb74f679f32132361aac5c2b751b9bda9494
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: f3cb4e183bdc9213186b05b6e86e26e5b4ac54e9
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85756464"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100352269"
 ---
 # <a name="start-the-configuring-database-mirroring-security-wizard"></a>データベース ミラーリング セキュリティ構成ウィザードの起動
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

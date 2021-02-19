@@ -4,16 +4,16 @@ description: このチュートリアルでは、SQL Server の言語拡張を�
 author: dphansen
 ms.author: davidph
 ms.date: 11/05/2019
-ms.topic: conceptual
+ms.topic: tutorial
 ms.prod: sql
 ms.technology: language-extensions
-monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: bc69f01a3cc05f1f1b128ac7ed9fd99d84c7e757
-ms.sourcegitcommit: 43b92518c5848489d03c68505bd9905f8686cbc0
+monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15'
+ms.openlocfilehash: 6502be49b2076e8f6d89bdd88695f24b65dc79ae
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92155043"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100075193"
 ---
 # <a name="tutorial-search-for-a-string-using-regular-expressions-regex-in-java"></a>チュートリアル:Java での正規表現 (regex) を使用した文字列の検索
 [!INCLUDE [SQL Server 2019 and later](../../includes/applies-to-version/sqlserver2019.md)]
@@ -277,7 +277,7 @@ Java コードを実行するユーザーには、その特定の言語を外部
 6. 「**ALL APPLICATION PACKAGES**」と入力し、名前を確認し、[OK] をクリックして追加します。 
     名前が解決されない場合は、[場所] の手順を再実行します。 SID は、お使いのコンピューターに対してローカルです。
 
-両方のセキュリティ ID に、フォルダーおよび **pkg** サブ フォルダーに対する**読み取りと実行**のアクセス許可があることを確認します。
+両方のセキュリティ ID に、フォルダーおよび **pkg** サブ フォルダーに対する **読み取りと実行** のアクセス許可があることを確認します。
 
 <a name="call-method"></a>
 
@@ -321,7 +321,7 @@ GO
 
 + クラスをコンパイルするときに、**pkg** サブ フォルダーには、3 つのクラスのすべてのコンパイル済みコードが含まれている必要があります。
 
-+ 外部ライブラリを使用していない場合は、外部プロセスを実行しているセキュリティ ID にご自分のコードに対する読み取りおよび実行のアクセス許可があることを確かめるために、**ルート**から **pkg** サブ フォルダーまでの*各*フォルダーのアクセス許可を確認します。
++ 外部ライブラリを使用していない場合は、外部プロセスを実行しているセキュリティ ID にご自分のコードに対する読み取りおよび実行のアクセス許可があることを確かめるために、**ルート** から **pkg** サブ フォルダーまでの *各* フォルダーのアクセス許可を確認します。
 
 ## <a name="next-steps"></a>次のステップ
 

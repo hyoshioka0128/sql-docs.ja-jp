@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: e1d03d74-2572-4a55-afd6-7edf0bc28bdb
 author: MightyPen
 ms.author: genemi
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 42f9feb302418cd42cd49cd53dc866dbdccc2301
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 8d1dfd8b3d09adb4c3fdb0ad0d2bd02b1044f69a
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91867684"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "100351257"
 ---
 # <a name="in-memory-oltp-and-memory-optimization"></a>インメモリ OLTP とメモリ最適化
 
@@ -37,7 +37,7 @@ SQL Server 上のインメモリ OLTP について説明し、パフォーマン
  
  [!INCLUDE[hek_2](../../includes/hek-2-md.md)] は、トランザクション処理のパフォーマンスを向上させる [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] テクノロジであることに注意してください。 報告と分析クエリのパフォーマンスを向上させる [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] テクノロジについては、「 [列ストア インデックスの説明](../../relational-databases/indexes/columnstore-indexes-overview.md)」を参照してください。
   
- [!INCLUDE[ssSQL15](../../includes/sssql15-md.md)]、[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]、および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] では、インメモリ OLTP はいくつかの機能強化が行われています。 データベース アプリケーションの移行を容易にできるように、Transact-SQL の表層が拡大されています。 アプリケーションのメンテナンスを容易にできるように、メモリ最適化テーブルとネイティブ コンパイル ストアド プロシージャの ALTER 操作を実行するためのサポートが追加されています。
+ [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)]、[!INCLUDE[ssSQL17](../../includes/sssql17-md.md)]、および [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] では、インメモリ OLTP はいくつかの機能強化が行われています。 データベース アプリケーションの移行を容易にできるように、Transact-SQL の表層が拡大されています。 アプリケーションのメンテナンスを容易にできるように、メモリ最適化テーブルとネイティブ コンパイル ストアド プロシージャの ALTER 操作を実行するためのサポートが追加されています。
   
 > [!NOTE]  
 >  **お試しください**  
@@ -56,7 +56,7 @@ SQL Server 上のインメモリ OLTP について説明し、パフォーマン
 |[インメモリ OLTP のコード サンプル](./sample-database-for-in-memory-oltp.md)|メモリ最適化テーブルを作成して使用する方法を示すコード例が記載されています。|  
 |[メモリ最適化テーブル](./sample-database-for-in-memory-oltp.md)|メモリ最適化テーブルの概要を示します。|  
 |[メモリ最適化テーブル変数](./faster-temp-table-and-table-variable-by-using-memory-optimization.md)|tempdb の使用を減らすために、従来のテーブル変数の代わりにメモリ最適化テーブル変数を使用する方法を示すコード例です。|  
-|[メモリ最適化テーブルのインデックス](/sql/relational-databases/in-memory-oltp/indexes-for-memory-optimized-tables)|メモリ最適化インデックスを示します。|  
+|[メモリ最適化テーブルのインデックス](./indexes-for-memory-optimized-tables.md)|メモリ最適化インデックスを示します。|  
 |[ネイティブ コンパイル ストアド プロシージャ](./a-guide-to-query-processing-for-memory-optimized-tables.md)|ネイティブ コンパイル ストアド プロシージャについて説明します。|  
 |[インメモリ OLTP のメモリ管理](/previous-versions/sql/sql-server-2016/dn465872(v=sql.130))|システムのメモリ使用量について説明し、メモリ使用量を管理する方法を示します。|  
 |[メモリ最適化オブジェクト用ストレージの作成と管理](../../relational-databases/in-memory-oltp/creating-and-managing-storage-for-memory-optimized-objects.md)|メモリ最適化テーブルでのトランザクションに関する情報を格納するデータ ファイルとデルタ ファイルについて説明します。|  
@@ -71,7 +71,7 @@ SQL Server 上のインメモリ OLTP について説明し、パフォーマン
 
 このセクションでは、SQL Server 上のインメモリ OLTP に関する情報を含むその他の Web サイトへのリンクを紹介します。
 
-- [インメモリ OLTP について説明し、パフォーマンス上の利点を示す**動画**](#anchorname-17minute-video)
+- [インメモリ OLTP について説明し、パフォーマンス上の利点を示す **動画**](#anchorname-17minute-video)
 
 - [インメモリ OLTP パフォーマンス デモ v1.0](https://github.com/Microsoft/sql-server-samples/releases/tag/in-memory-oltp-demo-v1.0)
 
@@ -89,7 +89,7 @@ SQL Server 上のインメモリ OLTP について説明し、パフォーマン
 
 - _動画のタイトル:_ &nbsp; **SQL Server 2016 のインメモリ OLTP**
 - _公開日:_ &nbsp; 2019-03-10 (`YouTube.com` 上)。
-- _期間:_ &nbsp; 17:32 &nbsp; &nbsp; (ビデオへのリンクについては、次の[**インデックス**](#anchorname-index-17minute-video)に関する記事を参照してください。)
+- _期間:_ &nbsp; 17:32 &nbsp; &nbsp; (ビデオへのリンクについては、次の [**インデックス**](#anchorname-index-17minute-video)に関する記事を参照してください。)
 - _ホスト元:_ &nbsp; SQL Server のシニア プログラム マネージャーである Jos de Bruijn
 
 ### <a name="demo-can-be-downloaded"></a>デモをダウンロードできます
@@ -136,4 +136,3 @@ SQL Server 上のインメモリ OLTP について説明し、パフォーマン
 
 ## <a name="see-also"></a>関連項目  
  [データベース機能](../databases/databases.md)  
-  

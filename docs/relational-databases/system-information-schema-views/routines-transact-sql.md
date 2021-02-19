@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - ROUTINES_TSQL
 - ROUTINES
@@ -19,13 +19,13 @@ helpviewer_keywords:
 ms.assetid: c75561b2-c9a1-48a1-9afa-a5896b6454cf
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: aad968588ff8e7ed454b35d74ce992cae0f9d836
-ms.sourcegitcommit: 968969b62bc158b9843aba5034c9d913519bc4a7
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 25ea15fd105733e04dd571dc925df394b1520d47
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91753994"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99192092"
 ---
 # <a name="routines-transact-sql"></a>ROUTINES (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -40,10 +40,10 @@ ms.locfileid: "91753994"
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
 |SPECIFIC_CATALOG|**nvarchar (** 128 **)**|カタログ固有の名前。 この名前は ROUTINE_CATALOG と同じです。|  
-|SPECIFIC_SCHEMA|**nvarchar (** 128 **)**|スキーマ固有の名前。<br /><br /> 重要オブジェクトのスキーマを決定するために INFORMATION_SCHEMA ビューを使用しないでください。 ** \* \* \* \* ** INFORMATION_SCHEMA ビューは、オブジェクトのメタデータのサブセットのみを表します。 オブジェクトのスキーマを調べる唯一の信頼性のある方法は、sys.objects カタログ ビューに対するクエリを実行する方法です。|  
+|SPECIFIC_SCHEMA|**nvarchar (** 128 **)**|スキーマ固有の名前。<br /><br /> 重要オブジェクトのスキーマを決定するために INFORMATION_SCHEMA ビューを使用しないでください。 **\* \* \* \*** INFORMATION_SCHEMA ビューは、オブジェクトのメタデータのサブセットのみを表します。 オブジェクトのスキーマを調べる唯一の信頼性のある方法は、sys.objects カタログ ビューに対するクエリを実行する方法です。|  
 |SPECIFIC_NAME|**nvarchar (** 128 **)**|カタログ固有の名前。 この名前は ROUTINE_NAME と同じです。|  
 |ROUTINE_CATALOG|**nvarchar (** 128 **)**|関数のカタログの名前。|  
-|ROUTINE_SCHEMA|**nvarchar (** 128 **)**|関数を含むスキーマの名前。<br /><br /> 重要オブジェクトのスキーマを決定するために INFORMATION_SCHEMA ビューを使用しないでください。 ** \* \* \* \* ** INFORMATION_SCHEMA ビューは、オブジェクトのメタデータのサブセットのみを表します。 オブジェクトのスキーマを調べる唯一の信頼性のある方法は、sys.objects カタログ ビューに対するクエリを実行する方法です。|  
+|ROUTINE_SCHEMA|**nvarchar (** 128 **)**|関数を含むスキーマの名前。<br /><br /> 重要オブジェクトのスキーマを決定するために INFORMATION_SCHEMA ビューを使用しないでください。 **\* \* \* \*** INFORMATION_SCHEMA ビューは、オブジェクトのメタデータのサブセットのみを表します。 オブジェクトのスキーマを調べる唯一の信頼性のある方法は、sys.objects カタログ ビューに対するクエリを実行する方法です。|  
 |ROUTINE_NAME|**nvarchar (** 128 **)**|関数の名前です。|  
 |ROUTINE_TYPE|**nvarchar (** 20 **)**|ストアドプロシージャのプロシージャと関数の関数を返します。|  
 |MODULE_CATALOG|**nvarchar (** 128 **)**|NULL。 将来使用するために予約されています。|  
@@ -53,8 +53,8 @@ ms.locfileid: "91753994"
 |UDT_SCHEMA|**nvarchar (** 128 **)**|NULL。 将来使用するために予約されています。|  
 |UDT_NAME|**nvarchar (** 128 **)**|NULL。 将来使用するために予約されています。|  
 |DATA_TYPE|**nvarchar (** 128 **)**|関数の戻り値のデータ型。 テーブル値関数の場合、 **テーブル** を返します。|  
-|CHARACTER_MAXIMUM_LENGTH|**int**|戻り値のデータ型が文字型の場合の最大文字数。<br /><br /> **xml**と大きな値の型のデータの場合は-1。|  
-|CHARACTER_OCTET_LENGTH|**int**|戻り値の型が文字型の場合は、バイト単位の最大長。<br /><br /> **xml**と大きな値の型のデータの場合は-1。|  
+|CHARACTER_MAXIMUM_LENGTH|**int**|戻り値のデータ型が文字型の場合の最大文字数。<br /><br /> **xml** と大きな値の型のデータの場合は-1。|  
+|CHARACTER_OCTET_LENGTH|**int**|戻り値の型が文字型の場合は、バイト単位の最大長。<br /><br /> **xml** と大きな値の型のデータの場合は-1。|  
 |COLLATION_CATALOG|**nvarchar (** 128 **)**|常に NULL が返されます。|  
 |COLLATION_SCHEMA|**nvarchar (** 128 **)**|常に NULL が返されます。|  
 |COLLATION_NAME|**nvarchar (** 128 **)**|戻り値の照合順序名。 非文字型の場合、は NULL を返します。|  
@@ -64,7 +64,7 @@ ms.locfileid: "91753994"
 |NUMERIC_PRECISION|**smallint**|戻り値の数値の有効桁数。 数値以外の型の場合、は NULL を返します。|  
 |NUMERIC_PRECISION_RADIX|**smallint**|戻り値の数値の有効桁数の基数。 数値型でない場合、は NULL を返します。|  
 |NUMERIC_SCALE|**smallint**|戻り値の小数点以下桁数。 数値型でない場合、は NULL を返します。|  
-|DATETIME_PRECISION|**smallint**|戻り値が **datetime**型の場合の秒の小数部の有効桁数。 その他の場合は NULL が返されます。|  
+|DATETIME_PRECISION|**smallint**|戻り値が **datetime** 型の場合の秒の小数部の有効桁数。 その他の場合は NULL が返されます。|  
 |INTERVAL_TYPE|**nvarchar (** 30 **)**|NULL。 将来使用するために予約されています。|  
 |INTERVAL_PRECISION|**smallint**|NULL。 将来使用するために予約されています。|  
 |TYPE_UDT_CATALOG|**nvarchar (** 128 **)**|NULL。 将来使用するために予約されています。|  

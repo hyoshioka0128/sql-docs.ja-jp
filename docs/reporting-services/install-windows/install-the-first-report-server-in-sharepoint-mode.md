@@ -7,13 +7,13 @@ ms.prod_service: reporting-services-sharepoint
 ms.topic: conceptual
 author: maggiesMSFT
 ms.author: maggies
-monikerRange: '>=sql-server-2016 <=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 3ccffdc3beca07d53302b7a7dceff0e30bbb6331
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+monikerRange: '>=sql-server-2016 <=sql-server-2016'
+ms.openlocfilehash: 36b68809377492e3643ebc7c60e0b2111d52f638
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91891222"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97484244"
 ---
 # <a name="install-the-first-report-server-in-sharepoint-mode"></a>SharePoint モードでの最初のレポート サーバーのインストール
 
@@ -72,7 +72,7 @@ ms.locfileid: "91891222"
  この手順では、SharePoint モードの Reporting Services レポート サーバーと、SharePoint 製品用の Reporting Services アドインをインストールします。 コンピューターに既にインストールされている内容によっては、次の手順で説明するインストール ページの一部は表示されない場合があります。  
  
  > [!IMPORTANT]
- > SharePoint 2016 の場合、Reporting Services のインストール先の SharePoint サーバーは、**ユーザー定義**のサーバー ロールを持っている必要があります。 Reporting Services の展開は、**ユーザー定義**のロールでない SharePoint サーバーでも成功します。しかし、次回の SharePoint メンテナンス期間に、MinRole は、SharePoint 統合モードの Reporting Services が他のどの SharePoint サーバー ロールもサポートしていないことを検出するため、Reporting Services サービスを停止します。 Reporting Services サービス アプリケーションは、**ユーザー定義**のロールのみをサポートします。
+ > SharePoint 2016 の場合、Reporting Services のインストール先の SharePoint サーバーは、**ユーザー定義** のサーバー ロールを持っている必要があります。 Reporting Services の展開は、**ユーザー定義** のロールでない SharePoint サーバーでも成功します。しかし、次回の SharePoint メンテナンス期間に、MinRole は、SharePoint 統合モードの Reporting Services が他のどの SharePoint サーバー ロールもサポートしていないことを検出するため、Reporting Services サービスを停止します。 Reporting Services サービス アプリケーションは、**ユーザー定義** のロールのみをサポートします。
  
  > [!NOTE]
  > Power Pivot サービスも SharePoint 2016 上にインストールする予定の場合は、Reporting Services をインストールする前にインストールしてください。 Power Pivot サービスは、**カスタム** ロールの SharePoint サーバーにのみインストールできます。
@@ -143,7 +143,7 @@ ms.locfileid: "91891222"
   
      **[次へ]** を選択します。  
   
-     ![rs_SetupFeatureSelection_SharePoint_with_circles](../../reporting-services/install-windows/media/rs-setupfeatureselection-sharepoint-with-circles.png)
+     ![[機能の選択] ページのスクリーンショット。[Reporting Services - SharePoint] オプションと [SharePoint 製品用 Reporting Services アドイン] オプションが選択されています。](../../reporting-services/install-windows/media/rs-setupfeatureselection-sharepoint-with-circles.png)
   
 9. データベース エンジン サービスを選択した場合は、 **[インスタンスの構成]** ページで **MSSQLSERVER** の既定のインスタンスを受け入れて、 **[次へ]** をクリックします。  
   
@@ -160,7 +160,7 @@ ms.locfileid: "91891222"
     > [!NOTE]
     > SQL Server のインストールが完了したら、このトピックの他のセクションに従って SharePoint 環境を構成します。 これには、Reporting Services 共有サービスのインストールと、Reporting Services サービス アプリケーションの作成が含まれます。  
   
-     ![ssRS-2016-setup-configuration](../../reporting-services/install-windows/media/ssrs-2016-setup-configuration.png)
+     ![[Reporting Services SharePoint Integrated Mode]\(Reporting Services の SharePoint 統合モード\) セクションのスクリーンショット。[インストールのみ] オプションが選択され、コールアウトが付いています。](../../reporting-services/install-windows/media/ssrs-2016-setup-configuration.png)
   
 13. 警告があればそれを確認し、このページで停止する場合は、 **[機能構成ルール]** ページで **[次へ]** を選びます。  
   
@@ -193,13 +193,13 @@ ms.locfileid: "91891222"
     > [!NOTE]
     > SharePoint コマンドは、標準の Windows PowerShell ウィンドウでは認識されません。 **[SharePoint 管理シェル]** を使います。  
   
-4.  次の PowerShell コマンドを実行して、Reporting Services SharePoint サービスをインストールします。 コマンドが正常に完了すると、管理シェルの表示が改行されます。 コマンドが正常に完了しても、管理シェルに**メッセージは表示されません** 。  
+4.  次の PowerShell コマンドを実行して、Reporting Services SharePoint サービスをインストールします。 コマンドが正常に完了すると、管理シェルの表示が改行されます。 コマンドが正常に完了しても、管理シェルに **メッセージは表示されません** 。  
   
     ```  
     Install-SPRSService  
     ```  
   
-5.  次の PowerShell コマンドを実行して、Reporting Services サービス プロキシをインストールします。 コマンドが正常に完了すると、管理シェルの表示が改行されます。 コマンドが正常に完了しても、管理シェルに**メッセージは表示されません** 。  
+5.  次の PowerShell コマンドを実行して、Reporting Services サービス プロキシをインストールします。 コマンドが正常に完了すると、管理シェルの表示が改行されます。 コマンドが正常に完了しても、管理シェルに **メッセージは表示されません** 。  
   
     ```  
     Install-SPRSServiceProxy  
@@ -241,7 +241,7 @@ ms.locfileid: "91891222"
 3.  [新規作成] メニューで、 **[SQL Server Reporting Services サービス アプリケーション]** を選びます。  
   
     > [!IMPORTANT]  
-    >  Reporting Services オプションが一覧に表示されない場合は、**Reporting Services 共有サービスがインストールされていない**ことを示しています。 前のセクションの、PowerShell コマンドレットを使って Reporting Services サービスをインストールする方法を確認してください。  
+    >  Reporting Services オプションが一覧に表示されない場合は、**Reporting Services 共有サービスがインストールされていない** ことを示しています。 前のセクションの、PowerShell コマンドレットを使って Reporting Services サービスをインストールする方法を確認してください。  
   
 4.  **[SQL Server Reporting Services サービス アプリケーションの作成]** ページで、アプリケーションの名前を入力します。 複数の Reporting Services サービス アプリケーションを作成する場合は、わかりやすい名前または名前付け規則を使用すると、管理および運用操作を体系化できます。  
   
@@ -275,7 +275,7 @@ ms.locfileid: "91891222"
   
 #### <a name="to-activate-or-verify-the-power-view-site-collection-feature"></a>Power View のサイト コレクション機能をアクティブ化または確認するには  
   
-1.  次の手順は、SharePoint 2013 の場合に、SharePoint サイトが 2013 の **体験版**用に構成されていることを前提としています。  
+1.  次の手順は、SharePoint 2013 の場合に、SharePoint サイトが 2013 の **体験版** 用に構成されていることを前提としています。  
   
      ブラウザーで目的の SharePoint サイトを開きます。 たとえば https://\<servername>/sites/bi です  
   

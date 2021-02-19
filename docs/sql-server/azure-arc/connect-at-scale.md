@@ -8,12 +8,12 @@ ms.reviewer: mikeray
 ms.date: 09/10/2020
 ms.topic: conceptual
 ms.prod: sql
-ms.openlocfilehash: 36d4581756cd89e016658f8e415aaec6fbe9a35b
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+ms.openlocfilehash: b78c76504cb9ffb76b62c1867630760fe52cf22c
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91988008"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100063187"
 ---
 # <a name="connect-sql-server-instances-to-azure-arc-at-scale"></a>SQL Server インスタンスを大規模に Azure Arc に接続する
 
@@ -79,10 +79,10 @@ Connected Machine エージェントをインストールして構成するた�
 
 各ターゲット マシンには、[Azure CLI がインストールされている](/cli/azure/install-azure-cli)必要があります。 サービス プリンシパルの資格情報が提供されており、他のユーザーがまだサインインしていない場合は、登録スクリプトにより、その資格情報で自動的に Azure へのサインインが行われます。 複数の Linux マシン上の SQL Server インスタンスに接続するには、次の手順を使用します。
 
-1. ['az ad sp create-for-rbac'](/cli/azure/ad/sp.md#az_ad_sp_create_for_rbac) コマンドを使用して、サービス プリンシパルを作成します。 
+1. ['az ad sp create-for-rbac'](/cli/azure/ad/sp#az_ad_sp_create_for_rbac) コマンドを使用して、サービス プリンシパルを作成します。
 
    ```azurecli-interactive
-   az ad sp create-for-rbac --name <your service principal name> --role <your custom role name>    
+   az ad sp create-for-rbac --name <your service principal name> --role <your custom role name>
    ```
 
    ```output

@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: ba79137a-cb72-4bf3-a650-e11d02cfce10
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: b46daa7c59e39c4482dbf91e2f3303793a51773b
-ms.sourcegitcommit: 6d53ecfdc463914f045c20eda96da39dec22acca
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: b0b7f20f3761a3e39a3899a919d400f339c8285e
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88901580"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97481553"
 ---
 # <a name="sql-server-browser-properties-advanced-tab"></a>[SQL Server Browser のプロパティ] ダイアログ ボックス ([詳細設定] タブ)
 [!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "88901580"
  **[はい]** に設定した場合、重大な障害が発生したときに、ワトソン博士プログラムによって [!INCLUDE[msCoName](../../includes/msconame-md.md)] またはエラー サーバーに情報が転送されます。 エラー報告の詳細については、オンライン ブックの「エラー レポートと使用状況レポートの設定」を検索してください。  
   
  **インスタンス ID**  
- この [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェント インスタンスを使用した [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスが表示されます。 既定のインスタンスは **MSSQL10_50.MSSQLSERVER**です。  
+ この [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] エージェント インスタンスを使用した [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスが表示されます。 既定のインスタンスは **MSSQL10_50.MSSQLSERVER** です。  
   
 ## <a name="see-also"></a>参照  
  [SQL Server Browser サービス](../../tools/configuration-manager/sql-server-browser-service.md)  

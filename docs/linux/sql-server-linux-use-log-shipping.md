@@ -7,12 +7,12 @@ ms.date: 07/01/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
-ms.openlocfilehash: 80f1dedefc2808da0c32eaee2d559496defca051
-ms.sourcegitcommit: 22102f25db5ccca39aebf96bc861c92f2367c77a
+ms.openlocfilehash: 9385bcc04935c90ff060201d38e676b6da226e33
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92115801"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100346213"
 ---
 # <a name="get-started-with-log-shipping-on-linux"></a>Linux でのログ配布の概要
 
@@ -20,8 +20,7 @@ ms.locfileid: "92115801"
 
 SQL Server のログ配布は、プライマリ サーバーのデータベースが 1 つ以上のセカンダリ サーバーにレプリケートされる HA 構成です。 簡単に言うと、ソース データベースのバックアップがセカンダリ サーバーに復元されます。 その後、プライマリ サーバーではトランザクション ログのバックアップが定期的に作成され、セカンダリ サーバーでそれらが復元されて、データベースのセカンダリ コピーが更新されます。 
 
-  ![ログ配布](https://preview.ibb.co/hr5Ri5/logshipping.png)
-
+  ![ログ配布のワークフローを示す図。](https://preview.ibb.co/hr5Ri5/logshipping.png)
 
 この図で説明されているように、ログ配布セッションには次のステップが含まれます。
 

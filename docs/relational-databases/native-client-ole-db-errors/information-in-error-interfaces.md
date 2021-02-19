@@ -18,20 +18,20 @@ helpviewer_keywords:
 ms.assetid: 4620f03f-1193-43e7-ba19-ad022737d300
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 90120272c94731f6ac2ba3f692c8a8c83ed3f129
-ms.sourcegitcommit: 7eb80038c86acfef1d8e7bfd5f4e30e94aed3a75
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 63ed78e916c9cb5250c9c1c500ef65fca0fc7617
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92081981"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97433280"
 ---
 # <a name="information-in-ole-db-defined-error-interfaces"></a>OLE DB 定義のエラーインターフェイスの情報
 [!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Native Client OLE DB プロバイダーは、OLE DB 定義されたエラーインターフェイス**IErrorInfo**、 **Ierrorrecords**、 **ISQLErrorInfo**でエラーと状態に関する情報を報告します。  
+  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Native Client OLE DB プロバイダーは、OLE DB 定義されたエラーインターフェイス **IErrorInfo**、 **Ierrorrecords**、 **ISQLErrorInfo** でエラーと状態に関する情報を報告します。  
   
- [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Native Client OLE DB プロバイダーは、次のように**IErrorInfo**メンバー関数をサポートしています。  
+ [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Native Client OLE DB プロバイダーは、次のように **IErrorInfo** メンバー関数をサポートしています。  
   
 |メンバー関数|説明|  
 |---------------------|-----------------|  
@@ -41,14 +41,14 @@ ms.locfileid: "92081981"
 |**GetHelpFile**|サポートされていません。 常に NULL が返されます。|  
 |**GetSource**|文字列 "Microsoft SQL Server Native Client" を返します。|  
   
- [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Native Client OLE DB プロバイダーは、次のように、コンシューマーが使用できる**Ierrorrecords**メンバー関数をサポートしています。  
+ [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Native Client OLE DB プロバイダーは、次のように、コンシューマーが使用できる **Ierrorrecords** メンバー関数をサポートしています。  
   
 |メンバー関数|説明|  
 |---------------------|-----------------|  
 |**GetBasicErrorInfo**|エラーに関する基本情報を ERRORINFO 構造体に設定します。 ERRORINFO 構造体には、エラーの HRESULT 戻り値およびエラーが適用されるプロバイダーとインターフェイスを特定するメンバーが含まれます。|  
 |**GetCustomErrorObject**|**ISQLErrorInfo** インターフェイスと [ISQLServerErrorInfo](../native-client-ole-db-interfaces/isqlservererrorinfo-geterrorinfo-ole-db.md) インターフェイスの参照を返します。|  
 |**GetErrorInfo**|**IErrorInfo** インターフェイスの参照を返します。|  
-|**GetErrorParameters**|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Native Client OLE DB プロバイダーは、 **GetErrorParameters**を介してコンシューマーにパラメーターを返しません。|  
+|**GetErrorParameters**|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]Native Client OLE DB プロバイダーは、 **GetErrorParameters** を介してコンシューマーにパラメーターを返しません。|  
 |**GetRecordCount**|使用できるエラー レコードの数を返します。|  
   
  Native Client OLE DB プロバイダーでは、次のように [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] **ISQLErrorInfo:: GetSQLInfo** パラメーターがサポートされています。  

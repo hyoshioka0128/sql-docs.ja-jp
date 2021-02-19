@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - CHECKSUM_AGG
 - CHECKSUM_AGG_TSQL
@@ -18,14 +18,14 @@ helpviewer_keywords:
 - CHECKSUM_AGG function
 - groups [SQL Server], checksum values
 ms.assetid: cdede70c-4eb5-4c92-98ab-b07787ab7222
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: a423fefd8acfa2e917605955658f18c0a55c77d7
-ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 9c55c317575e56f1a633033f7088a69231f21325
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91114926"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99202168"
 ---
 # <a name="checksum_agg-transact-sql"></a>CHECKSUM_AGG (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -53,7 +53,7 @@ DISTINCT
 整数[式](../../t-sql/language-elements/expressions-transact-sql.md)です。 `CHECKSUM_AGG` では、サブクエリまたは集計関数の使用は許可されません。
   
 ## <a name="return-types"></a>戻り値の型
-すべてのチェックサムを返します *式* 値としての **int**です。
+すべてのチェックサムを返します *式* 値としての **int** です。
   
 ## <a name="remarks"></a>注釈  
 `CHECKSUM_AGG` は、テーブルの変更を検出できます。

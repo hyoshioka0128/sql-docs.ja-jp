@@ -9,12 +9,12 @@ ms.author: alayu
 ms.reviewer: alayu, maghan
 ms.custom: ''
 ms.date: 08/28/2020
-ms.openlocfilehash: 5d9138a5d02008cc173bc7f0b64d354d67112d3b
-ms.sourcegitcommit: 63aef5a96905f0b026322abc9ccb862ee497eebe
+ms.openlocfilehash: 37875ecc79d471d1e7226337cec65c3323e19875
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91364089"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100052063"
 ---
 # <a name="create-a-jupyter-book-extension"></a>Jupyter Book 拡張機能を作成する
 
@@ -50,14 +50,14 @@ Azure Data Studio は Visual Studio Code と同じフレームワーク上に構
 
 - `$PATH` にインストールされ、利用できる [Node.js](https://nodejs.org)。 Node.js には、拡張機能ジェネレーターのインストールに使用される [npm](https://www.npmjs.com/) (Node.js パッケージ マネージャー) が含まれています。
 - 拡張機能に変更を加えたり、拡張機能をデバッグしたりするための [Visual Studio Code](https://code.visualstudio.com)。
-- 確実に `azuredatastudio` をパスに含めます。 Windows の場合、setup.exe で **[Add to Path]\(パスに追加\)** オプションを選択します。 Mac または Linux の場合、**[PATH 内に 'azuredatastudio' コマンドをインストールします]** オプションを実行します。
+- 確実に `azuredatastudio` をパスに含めます。 Windows の場合、setup.exe で **[Add to Path]\(パスに追加\)** オプションを選択します。 Mac または Linux の場合、Azure Data Studio のコマンド パレットから **[PATH 内に 'azuredatastudio' コマンドをインストールします]** を実行します。
 
 ## <a name="install-the-extension-generator"></a>拡張機能ジェネレーターをインストールする
 
 拡張機能作成のプロセスを簡単にするため、Yeoman を利用して[拡張機能ジェネレーター](https://www.npmjs.com/package/generator-azuredatastudio)を構築しました。 これをインストールするには、コマンド プロンプトから次のコマンドを実行します。
 
 ```console
-`npm install -g yo generator-azuredatastudio`
+npm install -g yo generator-azuredatastudio
 ```
 
 ## <a name="create-your-extension"></a>拡張機能を作成する
@@ -151,7 +151,7 @@ export function activate(context: vscode.ExtensionContext) {
 他者と共有するには、拡張機能を 1 つのファイルにパッケージ化する必要があります。 拡張機能は、Azure Data Studio 拡張機能マーケットプレースに公開することも、チームまたはコミュニティと共有することもできます。 この手順を行うには、別の npm パッケージをコマンド ラインからインストールする必要があります。
 
 ```console
-`npm install -g vsce`
+npm install -g vsce
 ```
 
 `README.md` ファイルを好みに合わせて編集します。 次に、拡張機能のベース ディレクトリに移動し、`vsce package` を実行します。 必要に応じてリポジトリを拡張機能とリンクすることも、それなしで続行することもできます。 1 つ追加するには、`package.json` ファイルに同様の行を追加します。

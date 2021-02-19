@@ -3,21 +3,21 @@ title: カスタム レポートを使用したスクリプトの監視
 description: SQL Server Management Studio (SSMS) のカスタム レポートを使用して、外部スクリプト (Python と R) の実行、使用されたリソース、問題の診断、SQL Server Machine Learning Services のパフォーマンスの調整を監視します。
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 09/17/2019
+ms.date: 10/14/2020
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 94ca6070ec0b4558ab907f6945ac57dc9bc9ab5f
-ms.sourcegitcommit: 9122251ab8bbd46ea3c699e741d6842c995195fa
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=azuresqldb-mi-current'
+ms.openlocfilehash: e0c3874177691832bd6fa66f81c3fe94c726ff76
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91847372"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100337080"
 ---
 # <a name="monitor-python-and-r-script-execution-using-custom-reports-in-sql-server-management-studio"></a>SQL Server Management Studio のカスタムレポートを使用して Python および R のスクリプトの実行を監視する
-[!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
+[!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
 
 [SQL Server Management Studio (SSMS)](../../ssms/download-sql-server-management-studio-ssms.md) のカスタム レポートを使用して、外部スクリプト (Python と R) の実行、使用されたリソース、問題の診断、[SQL Server Machine Learning Services](../sql-server-machine-learning-services.md) のパフォーマンスの調整を監視します。
 
@@ -40,6 +40,11 @@ SQL Server Management Studio のレポートの詳細については、「[Manag
 これらのレポートを使用するには、次の手順を実行します。
 
 1. GitHub から SQL Server Machine Learning Services の [SSMS カスタム レポート](https://github.com/Microsoft/sql-server-samples/tree/master/samples/features/machine-learning-services/ssms-custom-reports)をダウンロードします。
+
+   ::: moniker range="=azuresqldb-mi-current"
+   >[!NOTE]
+   > カスタム レポート **ML Services - Configure Instance** は、Azure SQL Managed Instance ではサポートされていません。
+   ::: moniker-end
 
 2. Management Studio へのレポートのコピー
 

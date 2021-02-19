@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - Procedure::Command
@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: bcc9146f-586f-4e69-9c10-863440c9cffa
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 73224966d9cab18253c18dd4f8bb183cd3381f76
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: c21daefed73bd93bf0c0adc15e24b7648979ea09
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88984913"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100050242"
 ---
 # <a name="command-property-adox"></a>Command プロパティ (ADOX)
 プロシージャを作成または実行するために使用できる ADO [コマンド](../ado-api/command-object-ado.md) オブジェクトを指定します。  

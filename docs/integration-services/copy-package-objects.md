@@ -17,11 +17,11 @@ ms.assetid: 99b85e5c-d6bd-4e7c-afe4-51f6ce151c2f
 author: chugugrace
 ms.author: chugu
 ms.openlocfilehash: 9d19b63fe653700839f4ea3443fc0676890fdcc9
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.sourcegitcommit: 192f6a99e19e66f0f817fdb1977f564b2aaa133b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92194910"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96127394"
 ---
 # <a name="copy-package-objects"></a>パッケージ オブジェクトをコピーする
 

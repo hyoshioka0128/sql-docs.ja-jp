@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - RecordStatusEnum
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 506fdd70-4452-4e83-95d5-c94311988dfa
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: e4d2ad74187ef6be146be04f63e634bbdf3de9f5
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 4facc7f958c6fe8eab09c6889a54c63deb664ac0
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88989673"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100051713"
 ---
 # <a name="recordstatusenum"></a>RecordStatusEnum
 バッチ更新やその他の一括操作に関して、レコードの [状態](./status-property-ado-recordset.md) を指定します。  

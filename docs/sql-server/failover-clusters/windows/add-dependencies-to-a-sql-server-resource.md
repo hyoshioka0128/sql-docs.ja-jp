@@ -6,7 +6,7 @@ ms.custom: seo-lt-2019
 ms.date: 03/14/2017
 ms.prod: sql
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: failover-cluster-instance
 ms.topic: how-to
 helpviewer_keywords:
 - resource dependencies [SQL Server]
@@ -14,14 +14,14 @@ helpviewer_keywords:
 - clusters [SQL Server], dependencies
 - dependencies [SQL Server], clustering
 ms.assetid: 25dbb751-139b-4c8e-ac62-3ec23110611f
-author: MashaMSFT
-ms.author: mathoma
-ms.openlocfilehash: 402fd3d816145c182520317ab61e65493bfb4149
-ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: f9582167d337ed9a06f95030f4c68857a4abd389
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91117219"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97642857"
 ---
 # <a name="add-dependencies-to-a-sql-server-resource"></a>SQL Server リソースへの依存関係の追加
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]

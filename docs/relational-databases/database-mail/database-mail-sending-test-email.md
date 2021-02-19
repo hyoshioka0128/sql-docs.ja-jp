@@ -14,12 +14,12 @@ helpviewer_keywords:
 - Database Mail [SQL Server], components
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: b715e65e4dfaa623f56b0caa2a78b03231819deb
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 58b9594c7069347f7e458a5a375bdaf2e2d29103
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88494538"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100272353"
 ---
 # <a name="send-a-test-email-with-database-mail"></a>データベース メールでテスト メールを送信する  
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]

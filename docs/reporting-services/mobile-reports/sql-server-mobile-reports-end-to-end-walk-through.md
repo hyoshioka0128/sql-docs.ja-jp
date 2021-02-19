@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: e198575e-b154-4342-b944-2bf19ec49bfd
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 5fc718243db6a816fb2a0593131362007facce89
-ms.sourcegitcommit: 6c2232c4d2c1ce5710296ce97b909f5ed9787f66
+ms.openlocfilehash: df09e4168790a4607de19348f50e76a4fbd0f383
+ms.sourcegitcommit: d8cdbb719916805037a9167ac4e964abb89c3909
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84462356"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98596537"
 ---
 # <a name="sql-server-mobile-reports-end-to-end-walk-through"></a>SQL Server モバイル レポート: エンド ツー エンドのチュートリアル
 [!INCLUDE[PRODUCT_NAME](../../includes/ss-mobilereptpub-long.md)] Web ポータル上の [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] で任意の画面サイズのモバイル レポートを作成し、Power BI モバイル アプリで表示するチュートリアル。
@@ -34,12 +34,12 @@ ms.locfileid: "84462356"
   
 * データ ソースと KPI を作成し、データセットとモバイル レポートをパブリッシュするには、[Reporting Services のネイティブ モード レポート サーバー](../install-windows/install-reporting-services-native-mode-report-server.md)へのアクセスが必要です。  
 * 共有データセットを作成するには、[レポート ビルダー](../install-windows/install-report-builder.md)をインストールします。  
-* モバイル レポートを作成するには、 [SQL Server Mobile Report Publisher をインストールします](https://go.microsoft.com/fwlink/?LinkId=717766)。  
+* モバイル レポートを作成するには、 [SQL Server Mobile Report Publisher をインストールします](../reporting-services-features-and-tasks-ssrs.md)。  
 * [AdventureWorks サンプル データベース](https://github.com/Microsoft/sql-server-samples/releases)。  
-*  または、[Microsoft SQL Server サンプル](../../sample/microsoft-sql-server-samples.md) ページから使用可能な、World Wide Importers サンプル データベース。
+*  または、[Microsoft SQL Server サンプル](../../samples/sql-samples-where-are.md) ページから使用可能な、World Wide Importers サンプル データベース。
 * 結果を表示するには: 
   *   [Power BI サービスにサインアップする](https://go.microsoft.com/fwlink/?LinkID=513879) および
-  *  iOS、Android フォン、Windows 10 デバイスなどのモバイル デバイスに[Power BI モバイル アプリをダウンロードする](https://docs.microsoft.com/power-bi/consumer/mobile/mobile-apps-for-mobile-devices)  
+  *  iOS、Android フォン、Windows 10 デバイスなどのモバイル デバイスに[Power BI モバイル アプリをダウンロードする](/power-bi/consumer/mobile/mobile-apps-for-mobile-devices)  
 
   
 ## <a name="create-a-shared-data-source"></a>共有データ ソースの作成  
@@ -115,7 +115,7 @@ Reporting Services でサポートされるデータ ソースのいずれもか
      
 5. 必要な集計を選択します。 KPI は 1 つの数値のみを表示できます。フィールドが集計されると、その数値が表示されます。
 
-   ![reporting-services-kpi-pick-aggregation](../../reporting-services/mobile-reports/media/reporting-services-kpi-pick-aggregation.png)
+   ![[平均] の [集計] セクションを示す [AWSalesYTD からフィールドを選択する] セクションのスクリーンショット](../../reporting-services/mobile-reports/media/reporting-services-kpi-pick-aggregation.png)
 
 6. **[OK]** をクリックします。
 
@@ -135,7 +135,7 @@ Reporting Services でサポートされるデータ ソースのいずれもか
     
 ## <a name=""></a><a name="create-mobile-report">Reporting Services モバイル レポートの作成</a>  
    
-Reporting Services モバイル レポートを作成するには、 [SQL Server Mobile Report Publisher をインストールする](https://go.microsoft.com/fwlink/?LinkId=717766)か、 [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] Web ポータルから起動します。 
+Reporting Services モバイル レポートを作成するには、 [SQL Server Mobile Report Publisher をインストールする](../reporting-services-features-and-tasks-ssrs.md)か、 [!INCLUDE[ssRSnoversion_md](../../includes/ssrsnoversion-md.md)] Web ポータルから起動します。 
 
 [!INCLUDE[PRODUCT_NAME](../../includes/ss-mobilereptpub-short.md)]を初めて開く場合は、モバイル レポートを作成できる空白のキャンバスが表示されます。 最初にビジュアルを作成することで開始したり、データで開始したりできます。 最初にビジュアルを作成する場合、 [!INCLUDE[PRODUCT_NAME](../../includes/ss-mobilereptpub-short.md)] はレポートに関連付けられているシミュレートされたデータを自動的に生成し、ビジュアルの選択内容を変更すると動的に変更します。 自身で実行してみてください。   
   
@@ -188,7 +188,7 @@ Reporting Services モバイル レポートを作成するには、 [SQL Server
    *  **[サイズが表すもの]** 、 **[色が表すもの]** 、および **[カスタム中央値]** は、数値フィールドである必要があります。 
    *  **[グループ化]** はカテゴリであり、テキスト フィールドです。
    
-   ![ssrs-mobile-report-data-properties](../../reporting-services/mobile-reports/media/ssrs-mobile-report-data-properties.png)
+   ![[データ プロパティ] セクションのスクリーンショット。](../../reporting-services/mobile-reports/media/ssrs-mobile-report-data-properties.png)
    
 6. **[プレビュー]** を選択し、ツリー マップのデータが更新されたことを確認します。  
 
@@ -202,17 +202,17 @@ Reporting Services モバイル レポートを作成するには、 [SQL Server
 
    **[ビジュアルのプロパティ]** では、既定は **[大きい値が適当]** であり、 **[差分ラベル]** は **[ターゲットの比率]** であることに注意してください。 既定の **[範囲停止]** を変更することはできますが、ここでは変更する必要はありません。
 
-   ![ssrs-mobile-report-donut-visual-properties](../../reporting-services/mobile-reports/media/ssrs-mobile-report-donut-visual-properties.png)
+   ![モバイル レポートのドーナツ ビジュアルのプロパティの [範囲の設定] セクションのスクリーンショット。](../../reporting-services/mobile-reports/media/ssrs-mobile-report-donut-visual-properties.png)
    
 3. **[データ]** タブで、データを含むテーブルを選択し、 **[主要な値]** フィールドと **[比較対象値]** で比較するフィールドを選択します。
 
 4. 別の集計を選択し、 **[主要な値]** で 1 つの数値と **[比較対象値]** で 1 つの数値を作成することができます。 既定では合計です。
 
-   ![ssrs-mobile-report-donut-sum](../../reporting-services/mobile-reports/media/ssrs-mobile-report-donut-sum.png)
+   ![[オプション] または [比較対象値] のスクリーンショット。](../../reporting-services/mobile-reports/media/ssrs-mobile-report-donut-sum.png)
 
 5. **[プレビュー]** を選択し、外観を確認します。 
 
-   ![ssrs-mobile-report-donut-preview](../../reporting-services/mobile-reports/media/ssrs-mobile-report-donut-preview.png)
+   ![モバイル レポートのドーナツのプレビューのスクリーンショット。](../../reporting-services/mobile-reports/media/ssrs-mobile-report-donut-preview.png)
 
 ## <a name="add-a-selection-list-as-a-filter"></a>選択一覧をフィルターとして追加する
 
@@ -220,11 +220,11 @@ Reporting Services モバイル レポートを作成するには、 [SQL Server
 
 1. **[レイアウト]** タブで、選択一覧をツリー マップの右にドラッグし、右下隅をドラッグし、2 つ分の正方形の幅、キャンバスと同じ高さの 5 つ分の正方形に調整します。 
 
-   ![ssrs-mobile-report-selection-list](../../reporting-services/mobile-reports/media/ssrs-mobile-report-selection-list.png)
+   ![モバイル レポートの選択リストのスクリーンショット。](../../reporting-services/mobile-reports/media/ssrs-mobile-report-selection-list.png)
 
 2. **[データ]** タブの **[データ プロパティ]** で、 **[キー]** と **[ラベル]** を、フィルター処理するデータのフィールドに設定します。
 
-   ![ssrs-mobile-report-selection-list-data-properties](../../reporting-services/mobile-reports/media/ssrs-mobile-report-selection-list-data-properties.png)
+   ![モバイル レポートの選択リストの [データ プロパティ] セクションのスクリーンショット。](../../reporting-services/mobile-reports/media/ssrs-mobile-report-selection-list-data-properties.png)
    
 ## <a name="create-a-mobile-report-for-phones"></a>電話用モバイル レポートを作成する  
   
@@ -303,8 +303,6 @@ KPI とモバイル レポートは、Reporting Services Web ポータルにあ�
   
 ## <a name="see-also"></a>参照  
  
--  iOS と Android デバイス上の [Power BI モバイル アプリでオンプレミスのレポート サーバーのモバイル レポートと KPI](https://docs.microsoft.com/power-bi/consumer/mobile/mobile-app-ssrs-kpis-mobile-on-premises-reports) を表示する
+-  iOS と Android デバイス上の [Power BI モバイル アプリでオンプレミスのレポート サーバーのモバイル レポートと KPI](/power-bi/consumer/mobile/mobile-app-ssrs-kpis-mobile-on-premises-reports) を表示する
 -  [Windows 10 デバイス上の Power BI モバイル アプリでオンプレミスのレポート サーバーのモバイル レポートと KPI を表示する](https://powerbi.microsoft.com/documentation/powerbi-mobile-win10-kpis-mobile-reports/)    
   
-   
-

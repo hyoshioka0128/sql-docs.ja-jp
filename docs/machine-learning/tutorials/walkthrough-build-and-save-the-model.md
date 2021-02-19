@@ -8,13 +8,13 @@ ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 3a0a37da48ed367a3fc735e9bc6d805cfd5bfff3
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 1974c58ad2adbad3b7e136ffa36ffa88b5783fc6
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92196251"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97470053"
 ---
 # <a name="build-an-r-model-and-save-to-sql-server-walkthrough"></a>R モデルを構築して SQL Server に保存する (チュートリアル)
 [!INCLUDE [SQL Server 2016](../../includes/applies-to-version/sqlserver2016.md)]
@@ -203,7 +203,7 @@ GO
 
 ## <a name="deploy-the-model"></a>モデルをデプロイする
 
-モデルを構築した後、それが正常に実行されていることを確かめたら、おそらく、組織内のユーザーまたはユーザーがモデルを利用できるサイトにデプロイしたり、定期的にモデルを再トレーニングしたり再調整したりすることができます。 このプロセスは、モデルの*運用*と呼ばれることがあります。 SQL Server では、ストアド プロシージャに R コードを埋め込むことによって運用が実現されます。 コードはプロシージャ内に存在するので、SQL Server に接続できる任意のアプリケーションから呼び出すことができます。
+モデルを構築した後、それが正常に実行されていることを確かめたら、おそらく、組織内のユーザーまたはユーザーがモデルを利用できるサイトにデプロイしたり、定期的にモデルを再トレーニングしたり再調整したりすることができます。 このプロセスは、モデルの *運用* と呼ばれることがあります。 SQL Server では、ストアド プロシージャに R コードを埋め込むことによって運用が実現されます。 コードはプロシージャ内に存在するので、SQL Server に接続できる任意のアプリケーションから呼び出すことができます。
 
 外部アプリケーションからモデルを呼び出すには、実稼働に使用されるデータベースにモデルを保存する必要があります。 トレーニングしたモデルは、**varbinary(max)** 型の 1 列にバイナリ形式で保存されます。
 
@@ -223,7 +223,7 @@ GO
     modelbinstr=paste(modelbin, collapse="");
     ```
 
-2. **RODBC**を使用して ODBC 接続を開きます。 パッケージが既に読み込まれている場合は、RODBC への呼び出しを省略できます。
+2. **RODBC** を使用して ODBC 接続を開きます。 パッケージが既に読み込まれている場合は、RODBC への呼び出しを省略できます。
 
     ```R
     library(RODBC);

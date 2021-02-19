@@ -16,13 +16,13 @@ helpviewer_keywords:
 ms.assetid: cd253a17-0c85-42b4-912c-690169ebe799
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: =azuresqldb-mi-current||>=sql-server-2016||=sqlallproducts-allversions
-ms.openlocfilehash: 8c3f1c186774b803794315644c5c8aa9f8cef7ce
-ms.sourcegitcommit: c8e1553ff3fdf295e8dc6ce30d1c454d6fde8088
+monikerRange: =azuresqldb-mi-current||>=sql-server-2016
+ms.openlocfilehash: 0b9717a6c71d5aef31dae428a67de37e9d9188ca
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86918278"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97416982"
 ---
 # <a name="compare-differences-between-replicated-tables-replication-programming"></a>レプリケート テーブル間の違いを比較する (レプリケーション プログラミング)
 [!INCLUDE[sql-asdbmi](../../../includes/applies-to-version/sql-asdbmi.md)]
@@ -67,7 +67,7 @@ ms.locfileid: "86918278"
   
     -   (省略可) **-o** に、結果の出力先ファイルの名前とパスを指定します。  
   
-    -   (省略可) 結果を挿入するサブスクリプション データベース内のテーブルを **-et**に指定します。 テーブルが既に存在する場合は、 **-dt** を指定して、最初にテーブルを削除します。  
+    -   (省略可) 結果を挿入するサブスクリプション データベース内のテーブルを **-et** に指定します。 テーブルが既に存在する場合は、 **-dt** を指定して、最初にテーブルを削除します。  
   
     -   (省略可) サブスクライバー側のデータをパブリッシャー側のデータと一致するように修正するための **ファイルを生成する場合は、** -f [!INCLUDE[tsql](../../../includes/tsql-md.md)] を使用します。 各ファイルの **ステートメントの数を指定するには、** -df [!INCLUDE[tsql](../../../includes/tsql-md.md)] を使用します。  
   

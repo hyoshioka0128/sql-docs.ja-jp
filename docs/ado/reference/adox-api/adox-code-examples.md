@@ -7,18 +7,18 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - ADOX code examples
 ms.assetid: 438e4369-f7e8-4dca-a709-dd501a3ca83f
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 0065eec7fc990f536e40969193ccb9aa1b5317d3
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: bdbe605934d065565d4f912284ea1d0301e651a6
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88985753"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100050653"
 ---
 # <a name="adox-code-examples"></a>ADOX のコード例
 ADOX のオブジェクト、メソッド、プロパティ、およびイベントの使用方法については、次のコード例を参照してください。  

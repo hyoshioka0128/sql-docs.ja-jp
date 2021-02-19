@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - GetPathLocator
 - GetPathLocator_TSQL
@@ -16,14 +16,14 @@ dev_langs:
 helpviewer_keywords:
 - GetPathLocator function
 ms.assetid: 78b7e220-445b-4fdf-811b-7253f4f2b058
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 2551dfbb7d71b33542f4bc6fd8087c10f974e45b
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: fbdf65d45374fe9c85adaade284ac6a8aab65dbf
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88464764"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99207454"
 ---
 # <a name="getpathlocator-transact-sql"></a>GetPathLocator (Transact-sql)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

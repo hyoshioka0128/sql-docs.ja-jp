@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: fa0d84e2-4c21-432c-aa7c-23517da75253
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 2ed406e7bb91f18149b0d42db90ed248de0d86c8
-ms.sourcegitcommit: f0772f614482e0b3cde3609e178689ce62ca3a19
+ms.openlocfilehash: 651abd2ca0261deae83d77a15b88840499dce957
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84535444"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97482236"
 ---
 # <a name="reporting-services-report-server-native-mode"></a>Reporting Services Report Server (Native Mode)
   ネイティブ モード用に構成されたレポート サーバーは、 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)]コンポーネントのみを通じてすべての処理機能と管理機能を提供するアプリケーション サーバーとして実行されます。  
@@ -52,7 +52,7 @@ ms.locfileid: "84535444"
   
 -   データベースをホストする [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] インスタンスのデータベース管理者権限。  
 
-::: moniker range="=sql-server-2016||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016"
 
 -   [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] をドメイン コントローラーにインストールする場合は、ドメイン管理者のアクセス許可が必要です。  
 
@@ -80,7 +80,7 @@ ms.locfileid: "84535444"
   
 -   レポート処理のスケジュールを設定し、要求時に実行できるレポート処理とキャッシュから読み込まれるレポート処理を指定することにより、サーバーに対するレポート処理の要求を分散させます。  
   
- 管理タスクを実行するための権限は、**システム管理者** と **コンテンツ マネージャー**という、事前定義された 2 つのロールを通じて提供されます。 レポート サーバーのコンテンツを効率よく管理するためには、両方のロールに割り当てられている必要があります。 詳細については、「[ロールとアクセス許可 &#40;Reporting Services&#41;](../../reporting-services/security/roles-and-permissions-reporting-services.md)」を参照してください。  
+ 管理タスクを実行するための権限は、**システム管理者** と **コンテンツ マネージャー** という、事前定義された 2 つのロールを通じて提供されます。 レポート サーバーのコンテンツを効率よく管理するためには、両方のロールに割り当てられている必要があります。 詳細については、「[ロールとアクセス許可 &#40;Reporting Services&#41;](../../reporting-services/security/roles-and-permissions-reporting-services.md)」を参照してください。  
   
  レポート サーバーのコンテンツを管理するためのツールには、[!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] や Web ポータルなどがあります。 [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] では、既定値を設定したり、各機能を有効化することができます。 Web ポータルを使って、レポート サーバーのアイテムおよび操作へのユーザー アクセスを許可したり、レポートをはじめとする各種のコンテンツを表示および使用したり、すべての共有アイテムとレポート配信機能を表示および使用したりできます。  
   

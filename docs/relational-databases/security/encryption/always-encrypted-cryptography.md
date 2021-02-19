@@ -12,13 +12,13 @@ helpviewer_keywords:
 ms.assetid: ae8226ff-0853-4716-be7b-673ce77dd370
 author: jaszymas
 ms.author: jaszymas
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 2cc6c779f441934e76108a71445078386dc4d567
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 0da1e6ba00c86bbc391d098ab7cf8b9b218d60e1
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91866918"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100344384"
 ---
 # <a name="always-encrypted-cryptography"></a>Always Encrypted による暗号
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -33,7 +33,9 @@ ms.locfileid: "91866918"
  列暗号化キー (CEK) は、CMK によって保護されているコンテンツ暗号化キー (たとえば、データを保護するために使用されるキー) です。  
   
  すべての [!INCLUDE[msCoName](../../../includes/msconame-md.md)] CMK ストア プロバイダーでは、RSA-OAEP (RSA with Optimal Asymmetric Encryption Padding) を使用して CEK が暗号化されます。 Microsoft Cryptography API がサポートされているキー ストア プロバイダー:.NET Framework の Next Generation (CNG) ([SqlColumnEncryptionCngProvider クラス](/dotnet/api/system.data.sqlclient.sqlcolumnencryptioncngprovider)) では、RFC 8017 のセクション A.2.1 で指定されている既定のパラメーターが使用されます。 これらの既定パラメーターでは、SHA-1 のハッシュ関数と、SHA-1 による MGF1 のマスク生成関数が使用されます。 他のすべてのキー ストア プロバイダーでは、SHA-256 が使用されます。 
-  
+
+Always Encrypted では内部的に、FIPS 140-2 検証済み暗号化モジュールが使用されます。 
+
 ## <a name="data-encryption-algorithm"></a>データ暗号化のアルゴリズム  
  Always Encrypted では **AEAD_AES_256_CBC_HMAC_SHA_256** アルゴリズムを使用して、データベース内のデータを暗号化します。  
   
@@ -44,7 +46,7 @@ ms.locfileid: "91866918"
  **AEAD_AES_256_CBC_HMAC_SHA_256** は、以下の手順を使用して指定されたプレーンテキストの暗号化テキストの値を計算します。  
   
 ### <a name="step-1-generating-the-initialization-vector-iv"></a>手順 1:初期化ベクター (IV) の生成  
- Always Encrypted では、以下の 2 種類の **AEAD_AES_256_CBC_HMAC_SHA_256**がサポートされています。  
+ Always Encrypted では、以下の 2 種類の **AEAD_AES_256_CBC_HMAC_SHA_256** がサポートされています。  
   
 -   ランダム化  
   

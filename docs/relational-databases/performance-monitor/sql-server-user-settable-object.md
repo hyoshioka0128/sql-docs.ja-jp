@@ -12,14 +12,14 @@ helpviewer_keywords:
 - User Settable object
 - SQLServer:User Settable
 ms.assetid: 633de3ef-533c-4f0c-9c7b-c105129d8e94
-author: julieMSFT
-ms.author: jrasnick
-ms.openlocfilehash: f61f4013c02148485994ebcb5b579c0d0ef78b2b
-ms.sourcegitcommit: 9470c4d1fc8d2d9d08525c4f811282999d765e6e
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 980a7161eba7cc40da6de3f2c4172df7e2349c78
+ms.sourcegitcommit: 0e0cd9347c029e0c7c9f3fe6d39985a6d3af967d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86458634"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96505566"
 ---
 # <a name="sql-server-user-settable-object"></a>SQL Server: User Settable オブジェクト
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -40,11 +40,11 @@ ms.locfileid: "86458634"
   
 |Query カウンターのインスタンス|説明|  
 |-----------------------------|-----------------|  
-|**ユーザー カウンター 1**|**sp_user_counter1**を使用して定義します。|  
-|**ユーザー カウンター 2**|**sp_user_counter2**を使用して定義します。|  
-|**ユーザー カウンター 3**|**sp_user_counter3**を使用して定義します。|  
+|**ユーザー カウンター 1**|**sp_user_counter1** を使用して定義します。|  
+|**ユーザー カウンター 2**|**sp_user_counter2** を使用して定義します。|  
+|**ユーザー カウンター 3**|**sp_user_counter3** を使用して定義します。|  
 |...||  
-|**ユーザー カウンター 10**|**sp_user_counter10**を使用して定義します。|  
+|**ユーザー カウンター 10**|**sp_user_counter10** を使用して定義します。|  
   
  ユーザー カウンターのストアド プロシージャを使用するには、カウンターの新しい値を示す 1 つの整数パラメーターを指定して、独自のアプリケーションからそのストアド プロシージャを実行します。 たとえば、 **ユーザー カウンター 1** の値を 10 に設定するには、次の Transact-SQL ステートメントを実行します。  
   

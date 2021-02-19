@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - Level::UniqueName
@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 5b977956-e252-4861-8425-f1aaf6b80130
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 0b8b598c62d87fe515adc0557bf9a2888625eaa7
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 09b1f851dc73673d3cb10b6365c56628bdb1525b
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88985963"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100050863"
 ---
 # <a name="uniquename-property-ado-md"></a>UniqueName プロパティ (ADO MD)
 現在のオブジェクトの明確な名前を示します。  

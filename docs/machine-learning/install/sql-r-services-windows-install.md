@@ -8,14 +8,14 @@ ms.date: 08/06/2020
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
-ms.custom: contperfq4
-monikerRange: =sql-server-2016||=sqlallproducts-allversions
-ms.openlocfilehash: 1aa6fee67871e705f915f72a178ee4d0e4c562e6
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+ms.custom: contperf-fy20q4
+monikerRange: =sql-server-2016
+ms.openlocfilehash: 56efa5151e4d72019cb126c69e3d3138829dbbd2
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956771"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100082453"
 ---
 # <a name="install-sql-server-2016-r-services"></a>SQL Server 2016 R Services のインストール
 
@@ -95,7 +95,7 @@ SQL Server の前提条件としてインストールされる特定のバージ
 
 ## <a name="set-environment-variables"></a>環境変数の設定
 
-R 機能の統合のみの場合、**MKL_CBWR** 環境変数を設定して、Intel Math Kernel Library (MKL) 計算からの[一貫した出力を保証](https://software.intel.com/articles/introduction-to-the-conditional-numerical-reproducibility-cnr)する必要があります。
+R 機能の統合のみの場合、**MKL_CBWR** 環境変数を設定して、Intel Math Kernel Library (MKL) 計算からの [一貫した出力を保証](https://software.intel.com/articles/introduction-to-the-conditional-numerical-reproducibility-cnr)する必要があります。
 
 1. コントロール パネルで、 **[システムとセキュリティ]**  >  **[システム]**  >  **[システムの詳細設定]**  >  **[環境変数]** の順にクリックします。
 
@@ -110,7 +110,7 @@ R 機能の統合のみの場合、**MKL_CBWR** 環境変数を設定して、In
 
 ##  <a name="enable-script-execution"></a>スクリプトの実行を有効にする
 
-1. [SQL Server Management Studio (SSMS)](../../ssms/download-sql-server-management-studio-ssms.md) または [Azure Data Studio](../../azure-data-studio/what-is.md) を開きます。
+1. [SQL Server Management Studio (SSMS)](../../ssms/download-sql-server-management-studio-ssms.md) または [Azure Data Studio](../../azure-data-studio/what-is-azure-data-studio.md) を開きます。
 
 1. R Services をインストールしたインスタンスに接続し、 **[新しいクエリ]** をクリックしてクエリ ウィンドウを開き、次のコマンドを実行します。
 
@@ -147,7 +147,7 @@ R 機能の統合のみの場合、**MKL_CBWR** 環境変数を設定して、In
 
     この時点で、**run_value** が 1 に設定されている必要があります。
 
-1. SQL Server 構成マネージャーを開き、**SQL Server Launchpad サービス**が実行されていることを確認します。 R がインストールされているすべてのデータベース エンジンのインスタンスに対して 1 つのサービスがある必要があります。 サービスの詳細については、[機能拡張フレームワーク](../concepts/extensibility-framework.md)に関するページを参照してください。
+1. SQL Server 構成マネージャーを開き、**SQL Server Launchpad サービス** が実行されていることを確認します。 R がインストールされているすべてのデータベース エンジンのインスタンスに対して 1 つのサービスがある必要があります。 サービスの詳細については、[機能拡張フレームワーク](../concepts/extensibility-framework.md)に関するページを参照してください。
 
 1. Launchpad が実行されている場合は、外部スクリプト ランタイムが SQL Server と通信できることを確認するため、単純な R を実行できる必要があります。
 

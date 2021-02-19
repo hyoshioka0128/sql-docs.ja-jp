@@ -6,7 +6,7 @@ ms.date: 03/06/2017
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
-ms.technology: high-availability
+ms.technology: database-mirroring
 ms.topic: conceptual
 helpviewer_keywords:
 - cryptography [SQL Server], database mirroring
@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 7329a575-be29-46e0-abc6-1344db37920c
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: a4711df54f96487447ed543945bd863a4bc7b598
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: 78db0b212c0aaf2706f54478b59039b68ced9ec1
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85735143"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100352296"
 ---
 # <a name="set-up-an-encrypted-mirror-database"></a>暗号化されたミラー データベースの設定
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

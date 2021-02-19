@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: 47a882b7-efe5-4ee6-bef4-06118eb56903
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: a62e0e1c47cd6df4d2d5e4f28b35294af694a824
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+ms.openlocfilehash: 8be94f5ae47a7b7545cd553299673c823993402a
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87243273"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100062987"
 ---
 # <a name="lesson-1-creating-a-sample-subscriber-database"></a>レッスン 1:サンプル サブスクライバー データベースの作成
 

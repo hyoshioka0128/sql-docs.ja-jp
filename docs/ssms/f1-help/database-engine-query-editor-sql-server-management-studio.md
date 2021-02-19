@@ -6,13 +6,13 @@ ms.prod_service: sql-tools
 ms.technology: ssms
 ms.topic: conceptual
 f1_keywords:
-- sql13.swb.tsqlquery.f1
-- sql13.swb.tsqlresults.f1
 - sql13.swb.query.advanced.f1
 - sql13.swb.query.ansi.f1
 - sql13.swb.query.general.f1
-- sql13.swb.query.general.f1
+- sql13.swb.query.grid.f1
 - sql13.swb.sqleditors.multiserverresultssettings
+- sql13.swb.tsqlquery.f1
+- sql13.swb.tsqlresults.f1
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -41,14 +41,14 @@ ms.assetid: 05cfae9b-96d5-4a35-a098-0bc3a548bcfc
 author: markingmyname
 ms.author: maghan
 ms.reviewer: ''
-ms.custom: seo-lt-2019, contperfq1
+ms.custom: seo-lt-2019, contperf-fy21q1
 ms.date: 08/28/2020
-ms.openlocfilehash: 219ebb8a431b997951b22d443877dfb751665384
-ms.sourcegitcommit: 5f3e0eca9840db20038f0362e5d88a84ff3424af
+ms.openlocfilehash: 87fd12a17b86a47e6fec1b235ae9e9a21fde6e45
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92344068"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878960"
 ---
 # <a name="sql-server-management-studio-ssms-query-editor"></a>SQL Server Management Studio (SSMS) クエリ エディター
 
@@ -94,7 +94,7 @@ SSMS のエディターは、一般的なアーキテクチャを共有します
 
 選択されているコードを実行します。コードが選択されていない場合は、すべてのクエリ エディター コードを実行します。
 
-F5 キーを押すか、[コンテキスト メニュー](#execute-using-the-context-menu)から選択してクエリを**実行**することもできます。
+F5 キーを押すか、[コンテキスト メニュー](#execute-using-the-context-menu)から選択してクエリを **実行** することもできます。
 
 ### <a name="cancel-executing-query-using-the-editor-toolbar"></a>エディター ツール バーを使用した [クエリ実行のキャンセル]
 
@@ -158,7 +158,7 @@ Alt + Break キー押して、実行中のクエリをキャンセルするこ�
 
 ### <a name="results-to-file-using-the-editor-toolbar"></a>エディター ツール バーを使用した [結果をファイルに出力]
 
-クエリを実行したときに、 **[結果の保存]** ダイアログ ボックスが開きます。 ファイルを保存するフォルダーを **[保存先]** で選択します。 **[ファイル名]** にファイルの名前を入力し、 **[保存]** を選択して、拡張子 .rpt を持つ**レポート** ファイルとしてクエリ結果を保存します。 詳細設定オプションを指定するには、 **[保存]** ボタンの下向き矢印を選択し、 **[エンコード付きで保存]** を選択します。
+クエリを実行したときに、 **[結果の保存]** ダイアログ ボックスが開きます。 ファイルを保存するフォルダーを **[保存先]** で選択します。 **[ファイル名]** にファイルの名前を入力し、 **[保存]** を選択して、拡張子 .rpt を持つ **レポート** ファイルとしてクエリ結果を保存します。 詳細設定オプションを指定するには、 **[保存]** ボタンの下向き矢印を選択し、 **[エンコード付きで保存]** を選択します。
 
 結果をテキストで返すには、Ctrl + Shift + F キーを押すか、[コンテキスト メニュー](#results-using-the-context-menu)から選択することもできます。
 
@@ -188,7 +188,7 @@ Ctrl + K キーを押してから Ctrl + U キーを押しても、行をコメ�
 
 ## <a name="context-menu"></a>コンテキスト メニュー
 
-コンテキスト メニューにアクセスするには、クエリ エディター内の任意の場所で*右クリック*します。 コンテキスト メニュー内のオプションは、SQL エディター ツール バーと同様です。 コンテキスト メニューでは、 **[接続]** および **[実行]** と同じオプションが表示されますが、 **[スニペットの挿入]** や **[ブロックの挿入]** などの他のオプションも表示されます。
+コンテキスト メニューにアクセスするには、クエリ エディター内の任意の場所で *右クリック* します。 コンテキスト メニュー内のオプションは、SQL エディター ツール バーと同様です。 コンテキスト メニューでは、 **[接続]** および **[実行]** と同じオプションが表示されますが、 **[スニペットの挿入]** や **[ブロックの挿入]** などの他のオプションも表示されます。
 
 ![オプション](media/database-engine-query-editor-sql-server-management-studio/context-menu.png)
 
@@ -264,7 +264,7 @@ Microsoft データベース エンジン チューニング アドバイザー 
 
 - **[結果をグリッドに表示]** - クエリ結果を 1 つまたは複数のグリッドとして **[結果]** ウィンドウに表示します。
 
-- **[結果をファイルに出力]** - クエリを実行したときに、 **[結果の保存]** ダイアログ ボックスが開きます。 ファイルを保存するフォルダーを **[保存先]** で選択します。 **[ファイル名]** にファイルの名前を入力し、 **[保存]** を選択して、拡張子 .rpt を持つ**レポート** ファイルとしてクエリ結果を保存します。 詳細設定オプションを指定するには、 **[保存]** ボタンの下向き矢印を選択し、 **[エンコード付きで保存]** を選択します。
+- **[結果をファイルに出力]** - クエリを実行したときに、 **[結果の保存]** ダイアログ ボックスが開きます。 ファイルを保存するフォルダーを **[保存先]** で選択します。 **[ファイル名]** にファイルの名前を入力し、 **[保存]** を選択して、拡張子 .rpt を持つ **レポート** ファイルとしてクエリ結果を保存します。 詳細設定オプションを指定するには、 **[保存]** ボタンの下向き矢印を選択し、 **[エンコード付きで保存]** を選択します。
 
 ### <a name="properties-window-using-the-context-menu"></a>コンテキスト メニューを使用したプロパティ ウィンドウ
 

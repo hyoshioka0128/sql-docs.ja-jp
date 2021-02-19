@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: 40e0e749-260c-4cfc-a848-444d30c09d85
 author: markingmyname
 ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 84adfac47c755bccee6603a632dfa44aa2c151b2
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 7e5de0ea599650792feef01508c1eed54aed68c6
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91867360"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97465433"
 ---
 # <a name="atomic-blocks-in-native-procedures"></a>ネイティブ プロシージャの ATOMIC ブロック
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -132,20 +132,20 @@ GO
 ## <a name="session-settings"></a>セッションの設定  
  ATOMIC ブロックのセッション設定は、ストアド プロシージャのコンパイル時に固定されます。 一部の設定は **BEGIN ATOMIC** で指定できますが、その他の設定は常に同じ値に固定されます。  
   
- **BEGIN ATOMIC**では以下のオプションは必須です。  
+ **BEGIN ATOMIC** では以下のオプションは必須です。  
   
 |必須の設定|説明|  
 |----------------------|-----------------|  
-|**TRANSACTION ISOLATION LEVEL**|サポートされる値は **SNAPSHOT**、 **REPEATABLEREAD**、 **SERIALIZABLE**です。|  
+|**TRANSACTION ISOLATION LEVEL**|サポートされる値は **SNAPSHOT**、 **REPEATABLEREAD**、 **SERIALIZABLE** です。|  
 |**LANGUAGE**|日付と時刻の形式とシステム メッセージが決まります。 [sys.syslanguages &#40;Transact-SQL&#41;](../../relational-databases/system-compatibility-views/sys-syslanguages-transact-sql.md) のすべての言語とエイリアスがサポートされます。|  
   
  次の設定は省略可能です。  
   
 |省略可能な設定|説明|  
 |----------------------|-----------------|  
-|**DATEFORMAT**|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のすべての日付形式がサポートされています。 指定した場合、**DATEFORMAT** は **LANGUAGE**に関連付けられた既定の日付形式をオーバーライドします。|  
-|**DATEFIRST**|指定した場合、**DATEFIRST** は **LANGUAGE**に関連付けられた既定をオーバーライドします。|  
-|**DELAYED_DURABILITY**|サポートされている値は、 **OFF** と **ON**です。<br /><br /> [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によるトランザクションのコミットには、完全持続性、既定値、または遅延持続性が適用されます。詳細については、「[Control Transaction Durability](../../relational-databases/logs/control-transaction-durability.md)」 (トランザクションの持続性の制御) を参照してください。|  
+|**DATEFORMAT**|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のすべての日付形式がサポートされています。 指定した場合、**DATEFORMAT** は **LANGUAGE** に関連付けられた既定の日付形式をオーバーライドします。|  
+|**DATEFIRST**|指定した場合、**DATEFIRST** は **LANGUAGE** に関連付けられた既定をオーバーライドします。|  
+|**DELAYED_DURABILITY**|サポートされている値は、 **OFF** と **ON** です。<br /><br /> [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] によるトランザクションのコミットには、完全持続性、既定値、または遅延持続性が適用されます。詳細については、「[Control Transaction Durability](../../relational-databases/logs/control-transaction-durability.md)」 (トランザクションの持続性の制御) を参照してください。|  
   
  次の SET オプションには、すべてのネイティブ コンパイル ストアド プロシージャのすべての ATOMIC ブロックについて同じシステム既定値が設定されます。  
   

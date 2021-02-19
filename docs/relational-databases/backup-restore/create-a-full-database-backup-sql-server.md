@@ -13,20 +13,20 @@ helpviewer_keywords:
 - backups [SQL Server], creating
 - database backups [SQL Server], SQL Server Management Studio
 ms.assetid: 586561fc-dfbb-4842-84f8-204a9100a534
-author: MikeRayMSFT
-ms.author: mikeray
-ms.openlocfilehash: d534efe7cf6de24acad83604b7ed6e42efa9ce6f
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 3eb0b33f2891c8f48d63b4446d31c1918fcb7aab
+ms.sourcegitcommit: f30b5f61c514437ea58acc5769359c33255b85b5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91809278"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99076114"
 ---
 # <a name="create-a-full-database-backup"></a>データベースの完全バックアップの作成
 
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-このトピックでは、 [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)] で [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]、 [!INCLUDE[tsql](../../includes/tsql-md.md)]、または PowerShell を使用して、データベースの完全バックアップを作成する方法について説明します。
+このトピックでは、 [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)] で [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]、 [!INCLUDE[tsql](../../includes/tsql-md.md)]、または PowerShell を使用して、データベースの完全バックアップを作成する方法について説明します。
 
 Azure Blob Storage サービスへの SQL Server のバックアップについては、「[Windows Azure BLOB ストレージ サービスを使用した SQL Server のバックアップと復元](../../relational-databases/backup-restore/sql-server-backup-and-restore-with-microsoft-azure-blob-storage-service.md)」および「[SQL Server Backup to URL](../../relational-databases/backup-restore/sql-server-backup-to-url.md)」を参照してください。
 
@@ -60,7 +60,7 @@ Azure Blob Storage サービスへの SQL Server のバックアップについ�
 > [!NOTE]
 > [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] を使用してバックアップ タスクを指定する場合、 **[スクリプト]** ボタンをクリックしてスクリプトの保存先を選択することにより、対応する [!INCLUDE[tsql](../../includes/tsql-md.md)] [BACKUP](../../t-sql/statements/backup-transact-sql.md) スクリプトを生成できます。
 
-1. **オブジェクト エクスプローラー**で適切な [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] のインスタンスに接続した後、サーバー ツリーを展開します。
+1. **オブジェクト エクスプローラー** で適切な [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] のインスタンスに接続した後、サーバー ツリーを展開します。
 
 1. **[データベース]** を展開し、ユーザー データベースを選択するか、または **[システム データベース]** を展開してシステム データベースを選択します。
 
@@ -93,7 +93,7 @@ Azure Blob Storage サービスへの SQL Server のバックアップについ�
 
 - データベースの完全バックアップを作成したら、[データベースの差分バックアップ](create-a-differential-database-backup-sql-server.md)または[トランザクション ログ バックアップ](back-up-a-transaction-log-sql-server.md)を作成できます。
 
-- (省略可能) **[コピーのみのバックアップ]** チェック ボックスをオンにして、コピーのみのバックアップを作成することもできます。 *コピーのみのバックアップ*は、従来の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] バックアップのシーケンスから独立した [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] バックアップです。 詳細については、「[コピーのみのバックアップ &#40;SQL Server&#41;](../../relational-databases/backup-restore/copy-only-backups-sql-server.md)」を参照してください。 コピーのみのバックアップは、 **[差分]** バックアップの種類には使用できません。
+- (省略可能) **[コピーのみのバックアップ]** チェック ボックスをオンにして、コピーのみのバックアップを作成することもできます。 *コピーのみのバックアップ* は、従来の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] バックアップのシーケンスから独立した [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] バックアップです。 詳細については、「[コピーのみのバックアップ &#40;SQL Server&#41;](../../relational-databases/backup-restore/copy-only-backups-sql-server.md)」を参照してください。 コピーのみのバックアップは、 **[差分]** バックアップの種類には使用できません。
 
 - URL にバックアップする場合は、 **[メディア オプション]** ページで、 **[メディアに上書きします]** が無効にされます。
 
@@ -136,7 +136,7 @@ GO
 
 この例では、`SQLTestDB` データベースを既定のバックアップ場所にあるディスクにバックアップします。
 
-1. **オブジェクト エクスプローラー**で適切な [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] のインスタンスに接続した後、サーバー ツリーを展開します。
+1. **オブジェクト エクスプローラー** で適切な [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] のインスタンスに接続した後、サーバー ツリーを展開します。
 
 1. **[データベース]** を展開して `SQLTestDB`を右クリックし、 **[タスク]** をポイントしてから **[バックアップ]** をクリックします。
 
@@ -150,7 +150,7 @@ GO
 
 この例では、ご自分で選択した場所にあるディスクに `SQLTestDB` データベースがバックアップされます。
 
-1. **オブジェクト エクスプローラー**で適切な [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] のインスタンスに接続した後、サーバー ツリーを展開します。
+1. **オブジェクト エクスプローラー** で適切な [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] のインスタンスに接続した後、サーバー ツリーを展開します。
 
 1. **[データベース]** を展開して `SQLTestDB`を右クリックし、 **[タスク]** をポイントしてから **[バックアップ]** をクリックします。
 
@@ -172,11 +172,11 @@ GO
 
 この例では、`SQLTestDB` データベースを暗号化して既定のバックアップ場所にバックアップします。
 
-1. **オブジェクト エクスプローラー**で適切な [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] のインスタンスに接続した後、サーバー ツリーを展開します。
+1. **オブジェクト エクスプローラー** で適切な [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] のインスタンスに接続した後、サーバー ツリーを展開します。
 
 1. **[データベース]** 、 **[システム データベース]** の順に展開し、`master` を右クリックして **[新しいクエリ]** をクリックします。これにより、ご利用の `SQLTestDB` データベースに接続した状態でクエリ ウィンドウが開きます。
 
-1. 次のコマンドを実行して、`master` データベース内に[**データベース マスター キー**](../../relational-databases/security/encryption/create-a-database-master-key.md)と[**証明書**](../../t-sql/statements/create-certificate-transact-sql.md)を作成します。  
+1. 次のコマンドを実行して、`master` データベース内に [**データベース マスター キー**](../../relational-databases/security/encryption/create-a-database-master-key.md)と [**証明書**](../../t-sql/statements/create-certificate-transact-sql.md)を作成します。  
 
    ```sql
    -- Create the master key
@@ -190,7 +190,7 @@ GO
    WITH SUBJECT = 'Backup Cert', EXPIRY_DATE = '20201031';  
    ```
 
-1. **オブジェクト エクスプローラー**の **[データベース]** ノードで、`SQLTestDB` を右クリックし、 **[タスク]** をポイントしてから **[バックアップ]** をクリックします。
+1. **オブジェクト エクスプローラー** の **[データベース]** ノードで、`SQLTestDB` を右クリックし、 **[タスク]** をポイントしてから **[バックアップ]** をクリックします。
 
 1. **[メディア オプション]** ページの **[メディアを上書きする]** セクションで、 **[新しいメディア セットにバックアップし、すべての既存のバックアップ セットを消去する]** をオンにします。
 
@@ -210,7 +210,7 @@ GO
 
 ストレージ アカウントに Azure BLOB コンテナーがない場合は、続行する前に作成してください。 詳細については、「[汎用ストレージアカウントの作成](/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal)」と「[コンテナーを作成する](/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container)」を参照してください。
 
-1. **オブジェクト エクスプローラー**で適切な [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] のインスタンスに接続した後、サーバー ツリーを展開します。
+1. **オブジェクト エクスプローラー** で適切な [!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] のインスタンスに接続した後、サーバー ツリーを展開します。
 
 1. **[データベース]** を展開して `SQLTestDB`を右クリックし、 **[タスク]** をポイントしてから **[バックアップ]** をクリックします。
 
@@ -377,7 +377,7 @@ GO
 
 #### <a name="a-full-backup-local"></a>A. 完全バックアップ (ローカル)
 
-次の例では、 `<myDatabase>` データベースの完全なバックアップを、サーバー インスタンス `Computer\Instance`の既定のバックアップ場所に作成します。 オプションで、この例では **-BackupAction Database**を指定します。
+次の例では、 `<myDatabase>` データベースの完全なバックアップを、サーバー インスタンス `Computer\Instance`の既定のバックアップ場所に作成します。 オプションで、この例では **-BackupAction Database** を指定します。
 
 完全な構文とその他の例については、「[Backup-SqlDatabase](/powershell/module/sqlserver/backup-sqldatabase)」を参照してください。
 

@@ -13,17 +13,17 @@ f1_keywords:
 ms.assetid: a70656cb-21c9-4489-be77-ccd396747e3b
 author: MashaMSFT
 ms.author: mathoma
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions
-ms.openlocfilehash: 5e557028d035ae9e04f52eedfdef10d66d3ba2d7
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016
+ms.openlocfilehash: 26d32a2fcf2e516236cb0bfba91e240e956dab5f
+ms.sourcegitcommit: 38e055eda82d293bf5fe9db14549666cf0d0f3c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88493855"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99250570"
 ---
 # <a name="subscriber-types"></a>サブスクライバーの種類
 [!INCLUDE[sql-asdb](../../includes/applies-to-version/sql-asdb.md)]
-  マージ レプリケーションを使用すると、パブリケーションがサポートする必要があるサブスクライバーの種類を指定することができます。 サブスクライバーの種類を選択することで、パブリケーションが使用できる機能を決定する *パブリケーションの互換性レベル*が設定されます。  
+  マージ レプリケーションを使用すると、パブリケーションがサポートする必要があるサブスクライバーの種類を指定することができます。 サブスクライバーの種類を選択することで、パブリケーションが使用できる機能を決定する *パブリケーションの互換性レベル* が設定されます。  
   
  パブリケーション スナップショットが作成された後は、パブリケーションの互換性レベルは、 **[パブリケーションのプロパティ]** ダイアログ ボックスの **[全般]** ページ上で高く (より制限) することができますが、互換性レベルを低くすることはできません。  
 
@@ -32,7 +32,7 @@ ms.locfileid: "88493855"
 ## <a name="options"></a>オプション  
  このパブリケーションでサポートする必要がある各サブスクライバーの種類を選択します。  
   
- [!INCLUDE[ssCurrent](../../includes/sscurrent-md.md)]  
+ [!INCLUDE[ssnoversion](../../includes/ssnoversion-md.md)]  
  パブリケーションはすべての機能を使用することができます。  
   
  [!INCLUDE[ssEW](../../includes/ssew-md.md)]  

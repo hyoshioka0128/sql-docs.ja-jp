@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - VB
 helpviewer_keywords:
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: c07862b5-e466-46bd-910b-59ac96709cb9
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 28e47e8f74eba5fce8315da884486512663c1d71
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 2e7883597e0a2872b16d37ae60881af6de3c2159
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88976073"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100035612"
 ---
 # <a name="appendchunk-and-getchunk-methods-example-vb"></a>AppendChunk および GetChunk メソッドの例 (VB)
 この例では、 [Appendchunk](./appendchunk-method-ado.md) メソッドと [GetChunk](./getchunk-method-ado.md) メソッドを使用して、イメージフィールドに別のレコードのデータを格納します。  

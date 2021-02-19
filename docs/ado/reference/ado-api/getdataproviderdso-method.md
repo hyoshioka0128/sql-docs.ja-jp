@@ -7,18 +7,18 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - GetDataProviderDSO Method [ADO]
 ms.assetid: 5a4c6bd5-0c79-4f81-a977-0561392d8d50
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 85e701cb7ce725aa9afa9d682467c1a97f5dd378
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 6994b3c5466622a32ad0d17e1a00424396d39ebc
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88972903"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100021224"
 ---
 # <a name="getdataproviderdso-method"></a>GetDataProviderDSO メソッド
 基になる OLE DB データソースオブジェクトをシェイププロバイダーから取得します。  

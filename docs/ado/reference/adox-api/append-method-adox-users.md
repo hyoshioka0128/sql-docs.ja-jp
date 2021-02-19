@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - Users::raw_Append
@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: b80bc5d5-78ca-4f75-956b-2ac658029cc7
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 14b0c573b3ccf8a03b1c2f6513cdac67303fb4bf
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 6df2a76aa32ceec8e77bf27424345fc6bae52233
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88985433"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100050473"
 ---
 # <a name="append-method-adox-users"></a>Append メソッド (ADOX Users)
 新しい [ユーザー](./user-object-adox.md) オブジェクトを [Users](./users-collection-adox.md) コレクションに追加します。  
@@ -35,19 +35,19 @@ Users.Append User[,Password]
 ```  
   
 #### <a name="parameters"></a>パラメーター  
- *ユーザー*  
- 追加する**ユーザー**オブジェクトまたは作成して追加するユーザーの名前を含む**バリアント**値。  
+ *User*  
+ 追加する **ユーザー** オブジェクトまたは作成して追加するユーザーの名前を含む **バリアント** 値。  
   
  *パスワード*  
- 省略可能。 ユーザーのパスワードを含む **文字列** 値です。 *Password*パラメーターは、**ユーザー**オブジェクトの[ChangePassword](./changepassword-method-adox.md)メソッドによって指定された値に対応します。  
+ 任意。 ユーザーのパスワードを含む **文字列** 値です。 *Password* パラメーターは、**ユーザー** オブジェクトの [ChangePassword](./changepassword-method-adox.md)メソッドによって指定された値に対応します。  
   
 ## <a name="remarks"></a>解説  
- [カタログ](./catalog-object-adox.md)の**ユーザー**コレクションは、すべてのカタログのユーザーを表します。 [グループ](./group-object-adox.md)の**ユーザー**コレクションは、特定のグループのメンバーシップを持つユーザーのみを表します。  
+ [カタログ](./catalog-object-adox.md)の **ユーザー** コレクションは、すべてのカタログのユーザーを表します。 [グループ](./group-object-adox.md)の **ユーザー** コレクションは、特定のグループのメンバーシップを持つユーザーのみを表します。  
   
  プロバイダーがユーザーの作成をサポートしていない場合、エラーが発生します。  
   
 > [!NOTE]
->  **ユーザー**オブジェクトを**グループ**オブジェクトの**users**コレクションに追加する前に、追加する**ユーザーオブジェクトが****カタログ**の**users**コレクションに既に存在[している](./name-property-adox.md)必要があります。  
+>  **ユーザー** オブジェクトを **グループ** オブジェクトの **users** コレクションに追加する前に、追加する **ユーザーオブジェクトが****カタログ** の **users** コレクションに既に存在 [している](./name-property-adox.md)必要があります。  
   
 ## <a name="applies-to"></a>適用対象  
  [Users コレクション (ADOX)](./users-collection-adox.md)  

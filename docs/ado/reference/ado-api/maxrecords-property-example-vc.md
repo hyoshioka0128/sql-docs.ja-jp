@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: af6b399b-e546-4de5-9cd1-5a6e0ec7ddc7
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 612ec3cd9e2fbdfba40fd554d52558c8c14baba6
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 8f74ae0e10c13dd4cd972284139623ad865c6dee
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88990613"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100043962"
 ---
 # <a name="maxrecords-property-example-vc"></a>MaxRecords プロパティの例 (VC++)
-この例では、 [MaxRecords](./maxrecords-property-ado.md)プロパティを使用して、***タイトル***テーブルに最も高価な10個のタイトルを含む[レコードセット](./recordset-object-ado.md)を開きます。  
+この例では、 [MaxRecords](./maxrecords-property-ado.md)プロパティを使用して、***タイトル*** テーブルに最も高価な10個のタイトルを含む [レコードセット](./recordset-object-ado.md)を開きます。  
   
 ## <a name="example"></a>例  
   

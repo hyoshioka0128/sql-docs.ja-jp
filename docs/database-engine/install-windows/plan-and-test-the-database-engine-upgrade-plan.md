@@ -8,15 +8,15 @@ ms.technology: install
 ms.reviewer: ''
 ms.topic: conceptual
 ms.assetid: 19c5b725-7400-4881-af8f-fd232ca28234
-author: MashaMSFT
-ms.author: mathoma
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: 93fa8a3fa6346a9e93f8caae43aecc0ba49bb763
-ms.sourcegitcommit: 2f868a77903c1f1c4cecf4ea1c181deee12d5b15
+author: cawrites
+ms.author: chadam
+monikerRange: '>=sql-server-2016'
+ms.openlocfilehash: 7a6311f79aa87d93ee980cf4d0c8d00352b14687
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671035"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100353052"
 ---
 # <a name="plan-and-test-the-database-engine-upgrade-plan"></a>データベース エンジンのアップグレード計画の策定およびテスト
 
@@ -27,8 +27,9 @@ ms.locfileid: "91671035"
 ## <a name="release-notes-and-known-upgrade-issues"></a>リリース ノートとアップグレードの既知の問題  
  [!INCLUDE[ssDE](../../includes/ssde-md.md)] をアップグレードする前に次を確認してください。
 
+- [SQL Server 2019 リリース ノート](../../sql-server/sql-server-version-15-release-notes.md)
 - [SQL Server 2017 リリース ノート](../../sql-server/sql-server-2017-release-notes.md) 
-- [SQL Server 2016 リリース ノート](../../sql-server/sql-server-2016-release-notes.md) 
+- [SQL Server 2016 リリース ノート](../../sql-server/sql-server-2016-release-notes.md)
 - 「[SQL Server データベース エンジンの旧バージョンとの互換性](../discontinued-database-engine-functionality-in-sql-server.md)」の記事。  
   
 ## <a name="pre-upgrade-planning-checklist"></a>アップグレード前の計画チェックリスト  
@@ -38,7 +39,7 @@ ms.locfileid: "91671035"
   
 -   **現在の環境:** 現在の環境を調査して、使用されている [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] コンポーネントと、実際の環境に接続されているクライアントを把握します。  
   
-    -   **クライアント プロバイダー:** アップグレード中はクライアントごとにプロバイダーを更新する必要はありませんが、更新してもかまいません。 [!INCLUDE[sql14](../../includes/sssql14-md.md)] 以前からアップグレードする場合、次の [!INCLUDE[sql15](../../includes/sssql15-md.md)] 機能では、追加機能を利用するために更新されたプロバイダー、またはクライアントごとに更新されたプロバイダーが必要です。  
+    -   **クライアント プロバイダー:** アップグレード中はクライアントごとにプロバイダーを更新する必要はありませんが、更新してもかまいません。 [!INCLUDE[sql14](../../includes/sssql14-md.md)] 以前からアップグレードする場合、次の [!INCLUDE[sql15](../../includes/sssql16-md.md)] 機能では、追加機能を利用するために更新されたプロバイダー、またはクライアントごとに更新されたプロバイダーが必要です。  
   
        -   [Always Encrypted &#40;データベース エンジン&#41;](../../relational-databases/security/encryption/always-encrypted-database-engine.md)  
   

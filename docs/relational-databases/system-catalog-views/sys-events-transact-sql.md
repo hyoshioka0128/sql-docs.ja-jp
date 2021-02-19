@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.events_TSQL
 - sys.events
@@ -18,15 +18,15 @@ dev_langs:
 helpviewer_keywords:
 - sys.events catalog view
 ms.assetid: f245a97a-80fc-43fb-a6e4-139420c9a47a
-author: markingmyname
-ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 1e1e9ec35cc93b27179565131cedebd4226e7b6d
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: c4bbf0027af329447b818235a76190259dcd9987
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551499"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99203844"
 ---
 # <a name="sysevents-transact-sql"></a>sys. events (Transact-sql)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "89551499"
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
-|**object_id**|**int**|トリガーまたはイベント通知の ID。 この値は、 **型**と共に、行を一意に識別します。|  
+|**object_id**|**int**|トリガーまたはイベント通知の ID。 この値は、 **型** と共に、行を一意に識別します。|  
 |**type**|**int**|トリガーを起動させるイベントです。|  
 |**type_desc**|**nvarchar(60)**|トリガーを起動するイベントの説明。|  
 |**is_trigger_event**|**bit**|1 = トリガーイベント。<br /><br /> 0 = 通知イベント。|  

@@ -2,12 +2,12 @@
 description: sys.dm_resource_governor_resource_pools_history_ex (Transact-sql)
 title: sys.dm_resource_governor_resource_pools_history_ex (Transact-sql) |Microsoft Docs
 ms.custom: ''
-ms.date: 03/27/2019
+ms.date: 01/05/2021
 ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.resource_governor
 - sys.resource_governor_TSQL
@@ -20,20 +20,20 @@ helpviewer_keywords:
 ms.assetid: ''
 author: joesackmsft
 ms.author: josack
-monikerRange: =azuresqldb-current||=sqlallproducts-allversions
-ms.openlocfilehash: 1cbc5d23a7c7843a2186cd951fd5bb16079489d3
-ms.sourcegitcommit: 32135463a8494d9ed1600a58f51819359e3c09dc
+monikerRange: =azuresqldb-current
+ms.openlocfilehash: 79e6e53f1fa177fbff0a5e9eff31c99e89700bcb
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91834326"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100078243"
 ---
 # <a name="sysdm_resource_governor_resource_pools_history_ex-transact-sql"></a>sys.dm_resource_governor_resource_pools_history_ex (Transact-sql)
 
 [!INCLUDE[appliesto-xx-asdb-xxxx-xxx-md](../../includes/appliesto-xx-asdb-xxxx-xxx-md.md)]
 
-Azure SQL Database のリソースプール統計の最後の32分 (合計 128) の20秒間隔でスナップショットを返します。  
-  
+各行は、Azure SQL Database のリソースプール統計の定期的なスナップショットを表します。 スナップショットは、データベースエンジンの起動時と、それ以降は数秒ごとに実行されます。 現在のスナップショットと前のスナップショットの間の間隔は異なる場合があり、列に表示され `duration_ms` ます。 利用可能な最新のスナップショットが返されます。各リソースプールについて最大128のスナップショットが返されます。
+
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
 |**pool_id**|INT|リソースプールの ID。 NULL 値は許可されません。
@@ -104,7 +104,7 @@ Azure SQL Database のリソースプール統計の最後の32分 (合計 128) 
 
 このビューには VIEW SERVER STATE 権限が必要です。
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>解説
 
 ユーザーは、この動的管理ビューにアクセスして、ユーザーワークロードプールと Azure SQL Database インスタンスのシステム内部プールについて、ほぼリアルタイムのリソース消費を監視できます。
 

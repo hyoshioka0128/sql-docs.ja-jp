@@ -1,12 +1,12 @@
 ---
 title: CASE (Transact-SQL)
 description: CASE 関数の Transact-SQL リファレンス。 CASE では、条件の一覧が評価され、特定の結果が返されます。
-ms.date: 06/28/2017
+ms.date: 01/26/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - CASE_TSQL
 - CASE
@@ -18,15 +18,15 @@ helpviewer_keywords:
 - comparing expressions
 - searched CASE expression
 ms.assetid: 658039ec-8dc2-4251-bc82-30ea23708cee
-author: rothja
-ms.author: jroth
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: e3662722ae800aa078fe5ba58567d2c55efbb613
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+author: cawrites
+ms.author: chadam
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 5647234be5f758f1b4ff27f2f11e5338d67635da
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92187647"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100352379"
 ---
 # <a name="case-transact-sql"></a>CASE (Transact-SQL)
 
@@ -49,7 +49,7 @@ ms.locfileid: "92187647"
 ## <a name="syntax"></a>構文  
   
 ```syntaxsql
--- Syntax for SQL Server and Azure SQL Database  
+-- Syntax for SQL Server, Azure SQL Database and Azure Synapse Analytics
   
 --Simple CASE expression:   
 CASE input_expression   
@@ -65,7 +65,7 @@ END
 ```  
   
 ```syntaxsql
--- Syntax for Azure Synapse Analytics and Parallel Data Warehouse  
+-- Syntax for Parallel Data Warehouse  
   
 CASE  
      WHEN when_expression THEN result_expression [ ...n ]   
@@ -77,13 +77,13 @@ END
 
 ## <a name="arguments"></a>引数  
  *input_expression*  
- 単純 CASE 形式を使用した場合に評価される式です。 *input_expression* は任意の有効な[式](../../t-sql/language-elements/expressions-transact-sql.md)です。  
+ 単純 CASE 形式を使用した場合に評価される式です。 *input_expression* は任意の有効な [式](../../t-sql/language-elements/expressions-transact-sql.md)です。  
   
  WHEN *when_expression*  
  単純 CASE 形式を使用した場合に *input_expression* と比較される単純式です。 *when_expression* は任意の有効な式です。 *input_expression* と各 *when_expression* のデータ型は同一であるか、暗黙的な変換によって同一の型になる必要があります。  
   
  THEN *result_expression*  
- *input_expression* = *when_expression* が TRUE に評価されるとき、または *Boolean_expression* が TRUE に評価されるときに返される式です。 *result_expression* は任意の有効な[式](../../t-sql/language-elements/expressions-transact-sql.md)です。  
+ *input_expression* = *when_expression* が TRUE に評価されるとき、または *Boolean_expression* が TRUE に評価されるときに返される式です。 *result_expression* は任意の有効な [式](../../t-sql/language-elements/expressions-transact-sql.md)です。  
   
  ELSE *else_result_expression*  
  比較操作の評価がいずれも TRUE でなかった場合に返される式です。 この引数を省略し、比較操作のいずれも TRUE でなかった場合、CASE は NULL を返します。 *else_result_expression* は任意の有効な式です。 *else_result_expression* とすべての *result_expression* のデータ型は同一であるか、暗黙的な変換によって同一の型になる必要があります。  

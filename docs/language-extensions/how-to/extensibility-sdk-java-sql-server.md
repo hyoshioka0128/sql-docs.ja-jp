@@ -5,16 +5,15 @@ ms.prod: sql
 ms.technology: language-extensions
 ms.date: 11/05/2019
 ms.topic: conceptual
-author: nelgson
-ms.author: negust
-ms.reviewer: dphansen
-monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: 175c96e19c0a15cd2e995c527f869a6f8a2ca7ab
-ms.sourcegitcommit: 9b41725d6db9957dd7928a3620fe4db41eb51c6e
+author: dphansen
+ms.author: davidph
+monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15'
+ms.openlocfilehash: 153ea1440b3a56eabd98533600de1620c9d6cb93
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88173575"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100072646"
 ---
 # <a name="microsoft-extensibility-sdk-for-java-for-sql-server"></a>SQL Server 用の Microsoft Extensibility SDK for Java
 [!INCLUDE [SQL Server 2019 and later](../../includes/applies-to-version/sqlserver2019.md)]

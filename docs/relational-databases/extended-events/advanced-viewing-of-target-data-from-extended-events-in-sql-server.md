@@ -11,13 +11,13 @@ ms.assetid: b2e839d7-1872-46d9-b7b7-6dcb3984829f
 author: MightyPen
 ms.author: genemi
 ms.custom: seo-lt-2019
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 225de42adb409ef908544bb51c4d523452554838
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: f6bfcd07a238c94938793d3c25769057eb058fde
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91869317"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97465633"
 ---
 # <a name="advanced-viewing-of-target-data-from-extended-events-in-sql-server"></a>SQL Server での拡張イベントからのターゲット データの詳細表示
 
@@ -290,7 +290,7 @@ SSMS 表示フィルターは、次のとおりです。
 
 拡張イベントのツール バーの **[グループ化]** ボタンをクリックすると、ある特定の列を基準に表示データをグループ化できるダイアログが開きます。 次のスクリーン ショットは、*name* 列によるグループ化に使用されているダイアログを示しています。
 
-![ツール バー > [グループ化] ボタンをクリックすると表示される [グループ化] ダイアログ](../../relational-databases/extended-events/media/xevents-ssms-ui53-grouping.png)
+![[グループ化] が選択されたツール バーと [グループ化] ダイアログ ボックスを示すスクリーンショット。](../../relational-databases/extended-events/media/xevents-ssms-ui53-grouping.png)
 
 グループ化が完了すると、表示の外観が次のように新しくなります。
 
@@ -301,13 +301,13 @@ SSMS 表示フィルターは、次のとおりです。
 #### <a name="d42-aggregation"></a>D.4.2 集計
 
 
-表示データがグループ化されたら、他の列のデータを集計できるようになります。  次のスクリーン ショットは、グループ化されたデータが *count*を基準に集計されていることを示しています。
+表示データがグループ化されたら、他の列のデータを集計できるようになります。  次のスクリーン ショットは、グループ化されたデータが *count* を基準に集計されていることを示しています。
 
-![ツール バー > [集計] ボタンをクリックすると表示される [集計] ダイアログ](../../relational-databases/extended-events/media/xevents-ssms-ui51-aggregdialogcount.png)
+![[集計] が選択されたツール バーと [集計] ダイアログ ボックスを示すスクリーンショット。](../../relational-databases/extended-events/media/xevents-ssms-ui51-aggregdialogcount.png)
 
 集計が完了すると、表示の外観が次のように新しくなります。
 
-![ツール バー > [集計] ボタンをクリックすると表示される [集計] ダイアログ](../../relational-databases/extended-events/media/xevents-ssms-ui52-aggregnewdisplay.png)
+![COUNT 値が追加されたことを示す表示のスクリーンショット。](../../relational-databases/extended-events/media/xevents-ssms-ui52-aggregnewdisplay.png)
 
 
 

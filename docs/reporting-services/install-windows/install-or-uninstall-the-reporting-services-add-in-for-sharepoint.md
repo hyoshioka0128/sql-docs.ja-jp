@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.assetid: c2804a9a-08ea-4f4a-805d-a2c19c68733d
 author: maggiesMSFT
 ms.author: maggies
-monikerRange: '>=sql-server-2016 <=sql-server-2016||=sqlallproducts-allversions'
-ms.openlocfilehash: fc01d1323d3145b16c9a6317509e72715f5a12ce
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+monikerRange: '>=sql-server-2016 <=sql-server-2016'
+ms.openlocfilehash: b4c8232909187894df11b7b1198fdb3416fbd1e4
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91890858"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97425487"
 ---
 # <a name="install-or-uninstall-the-reporting-services-add-in-for-sharepoint-ssrs"></a>SharePoint 用 Reporting Services アドイン (SSRS) のインストールまたはアンインストール
 
@@ -84,7 +84,7 @@ Rssharepoint.msi /?
 ###  <a name="files-only-installation"></a><a name="bkmk_files_only_installation"></a> ファイルのみのインストール  
  インストールのカスタム アクション フェーズをスキップしてファイルをインストールするには、SKIPCA オプションを指定してコマンド ラインから rssharepoint.msi を実行します。  
   
-1.  **管理者権限を使用して**コマンド プロンプトを開きます。  
+1.  **管理者権限を使用して** コマンド プロンプトを開きます。  
   
 2.  次のコマンドを実行します。  
   
@@ -101,7 +101,7 @@ Rssharepoint.msi /?
   
 2.  カスタム アクションの実行可能ファイルを実行します。  
   
-    1.  ファイル **rsCustomAction.exe**を含むフォルダーに移動します。 このファイルは、アドインのファイルのみのインストールを実行することで、コンピューターにコピーされます。 **rsCustomAction.exe** は **%Temp%** ディレクトリにあります。 ファイルに移動するには、コマンド プロンプトから次のように入力します。  
+    1.  ファイル **rsCustomAction.exe** を含むフォルダーに移動します。 このファイルは、アドインのファイルのみのインストールを実行することで、コンピューターにコピーされます。 **rsCustomAction.exe** は **%Temp%** ディレクトリにあります。 ファイルに移動するには、コマンド プロンプトから次のように入力します。  
   
          **CD %temp%** 。  
   
@@ -123,7 +123,7 @@ Rssharepoint.msi /?
   
  サイレント インストールを行うには、次の手順を実行します。  
   
-1.  **管理者権限を使用して**コマンド プロンプトを開きます。  
+1.  **管理者権限を使用して** コマンド プロンプトを開きます。  
   
 2.  次のコマンドを実行します。  
   
@@ -166,7 +166,7 @@ Rssharepoint.msi /?
 ### <a name="uninstall-from-the-command-line"></a>コマンドラインからアンインストールする  
  アドインをコマンド ラインからアンインストールするには、次の手順を実行します。  
   
-1.  **管理者権限を使用して**コマンド プロンプトを開きます。  
+1.  **管理者権限を使用して** コマンド プロンプトを開きます。  
   
 2.  次のコマンドを実行します。  
   
@@ -179,7 +179,7 @@ Rssharepoint.msi /?
 ### <a name="uninstall-the-add-in-from-the-local-server-only"></a>ローカル サーバーのみからのアドインのアンインストール  
  前に説明したアドインのアンインストール方法では、 [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] の機能とオブジェクトがファームから削除されます。 マルチサーバー ファームにおいて、ローカル コンピューターからのみアドインをアンインストールして、SharePoint ファームは稼働させておく場合は、次の手順を実行します。  
   
-1.  **管理者権限を使用して**コマンド プロンプトを開きます。  
+1.  **管理者権限を使用して** コマンド プロンプトを開きます。  
   
 2.  次のコマンドを実行します。  
   
@@ -191,7 +191,7 @@ Rssharepoint.msi /?
   
  SharePoint から [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] の機能の登録を解除するが、後で使用するためにファイルをディスクに残しておくには、次の手順を実行します。  
   
-1.  **管理者権限を使用して**コマンド プロンプトを開きます。  
+1.  **管理者権限を使用して** コマンド プロンプトを開きます。  
   
 2.  次のコマンドを実行します。  
   
@@ -204,7 +204,7 @@ Rssharepoint.msi /?
 ##  <a name="how-to-repair-rssharepointmsi-from-the-command-line"></a><a name="bkmk_repair"></a> コマンド ラインから rssharepoint.msi を修復する方法  
  コマンド ラインを使用して [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] アドインを修復またはアンインストールするには、次の手順を実行します。  
   
-1.  **管理者権限を使用して**コマンド プロンプトを開きます。  
+1.  **管理者権限を使用して** コマンド プロンプトを開きます。  
   
 2.  次のコマンドを実行します。  
   

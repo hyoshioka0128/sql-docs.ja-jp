@@ -16,13 +16,13 @@ helpviewer_keywords:
 ms.assetid: 4ca7f7eb-6b3f-4c73-ac63-88afa8570b61
 author: markingmyname
 ms.author: maghan
-monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 2e98180b877fb81c5d32f908a2f8e9cdc131a45a
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 7d556721c3fcd0b52e202f17bd07eb1781b58867
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91868609"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97463043"
 ---
 # <a name="disconnecting-from-an-instance-of-sql-server"></a>SQL Server のインスタンスからの切断
 [!INCLUDE [SQL Server ASDB, ASDBMI, ASDW ](../../../includes/applies-to-version/sql-asdb-asdbmi-asa.md)]
@@ -30,7 +30,7 @@ ms.locfileid: "91868609"
   [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 管理オブジェクト (SMO) オブジェクトを手動で閉じたり切断する処理は必要ありません。 接続を開いたり閉じたりする操作は、必要に応じて行われます。  
   
 ## <a name="connection-pooling"></a>接続のプール  
- [Connect](/previous-versions/sql/sql-server-2014/ms199449(v=sql.120))メソッドを呼び出すと、接続は自動的には解放されません。 接続プールへの接続を解放するには、 [Disconnect](/previous-versions/sql/sql-server-2014/ms199428(v=sql.120)) メソッドを明示的に呼び出す必要があります。 また、プールされていない接続を要求することもできます。 これを行うには、 [NonPooledConnection](/previous-versions/sql/sql-server-2014/ms214357(v=sql.120)) <xref:Microsoft.SqlServer.Management.Smo.Server.ConnectionContext%2A> [serverconnection](/previous-versions/sql/sql-server-2014/ms218641(v=sql.120))オブジェクトを参照するプロパティの nonpooledconnection プロパティを設定します。  
+ [Connect](/previous-versions/sql/sql-server-2014/ms199449(v=sql.120))メソッドを呼び出すと、接続は自動的には解放されません。 接続プールへの接続を解放するには、 [Disconnect](/previous-versions/sql/sql-server-2014/ms199428(v=sql.120)) メソッドを明示的に呼び出す必要があります。 また、プールされていない接続を要求することもできます。 これを行うには、 [](/previous-versions/sql/sql-server-2014/ms214357(v=sql.120)) <xref:Microsoft.SqlServer.Management.Smo.Server.ConnectionContext%2A> [serverconnection](/previous-versions/sql/sql-server-2014/ms218641(v=sql.120))オブジェクトを参照するプロパティの nonpooledconnection プロパティを設定します。  
   
 ## <a name="disconnecting-from-an-instance-of-sql-server-for-rmo"></a>RMO の SQL Server のインスタンスからの切断  
  RMO を使ったプログラミングでサーバー接続を閉じる方法は、SMO とは若干異なります。  

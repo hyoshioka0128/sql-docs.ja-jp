@@ -7,7 +7,7 @@ ms.prod_service: database-engine, sql-database
 ms.reviewer: ''
 ms.custom: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - AT TIME ZONE
 - AT_TIME_ZONE_TSQL
@@ -16,13 +16,13 @@ helpviewer_keywords:
 ms.assetid: 311f682f-7f1b-43b6-9ea0-24e36b64f73a
 author: VanMSFT
 ms.author: vanto
-monikerRange: = azuresqldb-current||=azure-sqldw-latest||>= sql-server-2016||>= sql-server-linux-2017||= sqlallproducts-allversions
-ms.openlocfilehash: e1175043f0367a4553c15dce6e627a64e3a5e195
-ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
+monikerRange: = azuresqldb-current||=azure-sqldw-latest||>= sql-server-2016||>= sql-server-linux-2017
+ms.openlocfilehash: 391e045d078b2735411c51db73948e416f9e4ea5
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91115925"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99159684"
 ---
 # <a name="at-time-zone-transact-sql"></a>AT TIME ZONE (Transact-SQL)
 
@@ -90,7 +90,7 @@ inputdate AT TIME ZONE timezone
   
     ```
 
-- 時計が遅れていると、現地時刻の 2 時間が重なり、1 時間になります。  その場合、時計変更の*前*に、重なる時間間隔に属する時点がオフセットで表されます。  
+- 時計が遅れていると、現地時刻の 2 時間が重なり、1 時間になります。  その場合、時計変更の *前* に、重なる時間間隔に属する時点がオフセットで表されます。  
   
     ```sql
     /*  

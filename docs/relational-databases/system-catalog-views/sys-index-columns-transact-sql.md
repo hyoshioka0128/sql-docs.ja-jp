@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.index_columns
 - sys.index_columns_TSQL
@@ -18,31 +18,31 @@ dev_langs:
 helpviewer_keywords:
 - sys.index_columns catalog view
 ms.assetid: 211471aa-558a-475c-9b94-5913c143ed12
-author: markingmyname
-ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: e77661ec4ddd9a53a5279dd433d20ab58e4263d0
-ms.sourcegitcommit: a5398f107599102af7c8cda815d8e5e9a367ce7e
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 49c9c757049e3e0c2c93d5c45720ea9080670c12
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92006532"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99191459"
 ---
 # <a name="sysindex_columns-transact-sql"></a>sys.index_columns (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
-  **Sys**インデックスまたは順序なしテーブル (ヒープ) の一部である列ごとに1行の値を格納します。  
+  **Sys** インデックスまたは順序なしテーブル (ヒープ) の一部である列ごとに1行の値を格納します。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
 |**object_id**|**int**|インデックスが定義されているオブジェクトの ID。|  
 |**index_id**|**int**|列が定義されているインデックスの ID です。|  
-|**index_column_id**|**int**|インデックス列の ID。 **index_column_id** は **index_id**内でのみ一意です。|  
-|**column_id**|**int**|**Object_id**内の列の ID。<br /><br /> 0 = 非クラスター化インデックス内の行識別子 (RID) です。<br /><br /> **column_id** は **object_id**内でのみ一意です。|  
+|**index_column_id**|**int**|インデックス列の ID。 **index_column_id** は **index_id** 内でのみ一意です。|  
+|**column_id**|**int**|**Object_id** 内の列の ID。<br /><br /> 0 = 非クラスター化インデックス内の行識別子 (RID) です。<br /><br /> **column_id** は **object_id** 内でのみ一意です。|  
 |**key_ordinal**|**tinyint**|一連のキー列内での 1 から始まる序数です。<br /><br /> 0 = キー列ではないか、XML インデックス、列ストア インデックス、または空間インデックスです。<br /><br /> 注: 基になる列が比較できないため、XML インデックスまたは空間インデックスをキーにすることはできません。つまり、値を並べ替えることはできません。|  
 |**partition_ordinal**|**tinyint**|パーティション分割列のセット内での序数 (1 から始まる)。 クラスター化列ストア インデックスには、最大で 1 個のパーティション分割列を含めることができます。<br /><br /> 0 = パーティション分割列ではありません。|  
 |**is_descending_key**|**bit**|1 = インデックスキー列には、降順の並べ替え方向があります。<br /><br /> 0 = インデックスキー列に昇順の並べ替え方向があるか、列が列ストアまたはハッシュインデックスの一部です。|  
-|**is_included_column**|**bit**|1 = 列は、CREATE INDEX INCLUDE 句を使用してインデックスに追加された非キー列です。または、列が列ストアインデックスの一部です。<br /><br /> 0 = 列は付加列ではありません。<br /><br /> クラスター化キーの一部であるために暗黙的に追加された列は **sys.index_columns**には記載されていません。<br /><br /> パーティション分割列であるために暗黙的に追加された列は、0として返されます。| 
+|**is_included_column**|**bit**|1 = 列は、CREATE INDEX INCLUDE 句を使用してインデックスに追加された非キー列です。または、列が列ストアインデックスの一部です。<br /><br /> 0 = 列は付加列ではありません。<br /><br /> クラスター化キーの一部であるために暗黙的に追加された列は **sys.index_columns** には記載されていません。<br /><br /> パーティション分割列であるために暗黙的に追加された列は、0として返されます。| 
 |**column_store_order_ordinal**</br> 適用対象: Azure Synapse Analytics (プレビュー)|**tinyint**|順序付けられたクラスター化列ストアインデックスの順序列のセット内での序数 (1 から始まる)。|
   
 ## <a name="permissions"></a>アクセス許可

@@ -8,12 +8,12 @@ ms.date: 11/04/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
-ms.openlocfilehash: 96c58159a020ba11708b12a4e5732438044b3291
-ms.sourcegitcommit: 22102f25db5ccca39aebf96bc861c92f2367c77a
+ms.openlocfilehash: 31f391360636bb27bf346ee76614c409738347e2
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92115736"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100347320"
 ---
 # <a name="configure-usage--diagnostic-data-collection-for-sql-server-on-linux"></a>SQL Server on Linux の使用状況と診断データの収集を構成する
 
@@ -83,7 +83,7 @@ Docker 上で使用状況と診断データの収集を無効にするには、D
 
 ::: moniker-end
 <!--SQL Server 2019 on Linux-->
-::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 || =sqlallproducts-allversions"
+::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
 
 1. `[telemetry]` および `customerfeedback = false` という行を含む `mssql.conf` ファイルをホスト ディレクトリに追加します。
 
@@ -176,7 +176,7 @@ Docker 上で Local Audit を有効にするには、Docker で[データを保�
 
 ::: moniker-end
 <!--SQL Server 2019 on Linux-->
-::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 || =sqlallproducts-allversions"
+::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
 
 1. 新しい Local Audit ログのターゲット ディレクトリは、コンテナーに格納されます。 マシン上のホスト ディレクトリに新しい Local Audit ログのターゲット ディレクトリを作成します。 次の例では、新しい **/audit** ディレクトリを作成します。
 

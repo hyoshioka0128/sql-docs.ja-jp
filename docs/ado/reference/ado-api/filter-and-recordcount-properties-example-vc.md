@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -16,15 +16,15 @@ helpviewer_keywords:
 ms.assetid: b71346cb-3b09-4b8c-a600-976171a1c336
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 4d01d2acc51b89fbe1100e535c9aada7dcb8a603
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 3771ecab9a598c0cd3e40f316ce00ba95cbce2f6
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88973013"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100024608"
 ---
 # <a name="filter-and-recordcount-properties-example-vc"></a>Filter プロパティと RecordCount プロパティの例 (VC + +)
-この例では、 [Filter](./filter-property.md)プロパティを使用して、既存の**レコードセット**に適用された指定の条件に基づいて新しい[レコードセット](./recordset-object-ado.md)を開きます。 この例では、 [RecordCount](./recordcount-property-ado.md) プロパティを使用して、2つのレコード **セット**内のレコードの数を表示しています。 このプロシージャを実行するには、FilterField 関数が必要です。  
+この例では、 [Filter](./filter-property.md)プロパティを使用して、既存の **レコードセット** に適用された指定の条件に基づいて新しい [レコードセット](./recordset-object-ado.md)を開きます。 この例では、 [RecordCount](./recordcount-property-ado.md) プロパティを使用して、2つのレコード **セット** 内のレコードの数を表示しています。 このプロシージャを実行するには、FilterField 関数が必要です。  
   
 ## <a name="example"></a>例  
   

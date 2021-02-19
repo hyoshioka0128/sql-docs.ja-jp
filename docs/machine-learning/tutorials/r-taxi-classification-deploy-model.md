@@ -4,18 +4,18 @@ titleSuffix: SQL machine learning
 description: 全 5 回からなるこのチュートリアル シリーズの第 5 回では、SQL 機械学習を利用し、T-SQL 関数と共に SQL ストアド プロシージャに組み込まれた R スクリプトを運用化します。
 ms.prod: sql
 ms.technology: machine-learning
-ms.date: 07/30/2020
+ms.date: 10/15/2020
 ms.topic: tutorial
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||>=azuresqldb-mi-current||=sqlallproducts-allversions'
-ms.openlocfilehash: d5132b0616dd223e195f47b1333308a920fb2572
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||>=azuresqldb-mi-current'
+ms.openlocfilehash: a3c46e719f4889ee53c98e671bd9569193b86e2a
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92196278"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100349064"
 ---
 # <a name="r-tutorial-run-predictions-in-sql-stored-procedures"></a>R チュートリアル:SQL ストアド プロシージャで予測を実行する
 [!INCLUDE [SQL Server 2016 SQL MI](../../includes/applies-to-version/sqlserver2016-asdbmi.md)]
@@ -44,39 +44,39 @@ ms.locfileid: "92196278"
 
 ## <a name="basic-scoring"></a>基本のスコアリング
 
-ストアド プロシージャ **RxPredict** は、ストアド プロシージャで RevoScaleR rxPredict 呼び出しをラップするための基本的な構文を示しています。
+ストアド プロシージャ **RPredict** は、ストアド プロシージャで `PREDICT` 呼び出しをラップするための基本構文を示します。
 
 ```sql
-CREATE PROCEDURE [dbo].[RxPredict] (@model varchar(250), @inquery nvarchar(max))
+CREATE PROCEDURE [dbo].[RPredict] (@model varchar(250), @inquery nvarchar(max))
 AS 
 BEGIN 
 
 DECLARE @lmodel2 varbinary(max) = (SELECT model FROM nyc_taxi_models WHERE name = @model);  
 EXEC sp_execute_external_script @language = N'R',
   @script = N' 
-    mod <- unserialize(as.raw(model)); 
-    print(summary(mod)) 
-    OutputDataSet<-rxPredict(modelObject = mod, data = InputDataSet, outData = NULL, predVarNames = "Score", type = "response", writeModelVars = FALSE, overwrite = TRUE); 
-    str(OutputDataSet) 
-    print(OutputDataSet) 
-    ', 
-  @input_data_1 = @inquery, 
+    mod <- unserialize(as.raw(model));
+    print(summary(mod))
+    OutputDataSet <- data.frame(predict(mod, InputDataSet, type = "response"));
+    str(OutputDataSet)
+    print(OutputDataSet)
+    ',
+  @input_data_1 = @inquery,
   @params = N'@model varbinary(max)',
   @model = @lmodel2 
-  WITH RESULT SETS ((Score float));
+  WITH RESULT SETS (("Score" float));
 END
 GO
 ```
 
 + SELECT ステートメントは、シリアル化されたモデルをデータベースから取得し、R を利用してさらに処理するために R 変数 `mod` にモデルを保存します。
 
-+ スコア付けの新しいケースは、ストアド プロシージャの最初のパラメーター、`@inquery`で指定された [!INCLUDE[tsql](../../includes/tsql-md.md)] クエリから取得されます。 クエリ データが読み取られると、行が既定のデータ フレーム `InputDataSet`に保存されます。 このデータ フレームは [RevoScaleR](/machine-learning-server/r-reference/revoscaler/revoscaler) の [rxPredict](/machine-learning-server/r-reference/revoscaler/rxpredict) 関数に渡され、スコアが生成されます。
++ スコア付けの新しいケースは、ストアド プロシージャの最初のパラメーター、`@inquery`で指定された [!INCLUDE[tsql](../../includes/tsql-md.md)] クエリから取得されます。 クエリ データが読み取られると、行が既定のデータ フレーム `InputDataSet`に保存されます。 このデータ フレームは [PREDICT](../../t-sql/queries/predict-transact-sql.md) 関数に渡され、これによりスコアが生成されます。
   
-  `OutputDataSet<-rxPredict(modelObject = mod, data = InputDataSet, outData = NULL, predVarNames = "Score", type = "response", writeModelVars = FALSE, overwrite = TRUE);`
+  `OutputDataSet <- data.frame(predict(mod, InputDataSet, type = "response"));`
   
   data.frame には 1 つの行を含めることができるため、一括または 1 回のスコア付けに同じコードを利用できます。
   
-+ `rxPredict` 関数により返される値は、ドライバーに任意の金額のチップが与えられる確率を表す **float** です。
++ `PREDICT` 関数により返される値は、ドライバーに任意の金額のチップが与えられる確率を表す **float** です。
 
 ## <a name="batch-scoring-a-list-of-predictions"></a>バッチ スコアリング (予測の一覧)
 
@@ -101,16 +101,16 @@ GO
    **サンプルの結果**
 
    ```text
-   passenger_count   trip_time_in_secs    trip_distance  dropoff_datetime   direct_distance
-   1  283 0.7 2013-03-27 14:54:50.000   0.5427964547
-   1  289 0.7 2013-02-24 12:55:29.000   0.3797099614
-   1  214 0.7 2013-06-26 13:28:10.000   0.6970098661
+   passenger_count   trip_time_in_secs    trip_distance  dropoff_datetime          direct_distance
+   1                 283                  0.7            2013-03-27 14:54:50.000   0.5427964547
+   1                 289                  0.7            2013-02-24 12:55:29.000   0.3797099614
+   1                 214                  0.7            2013-06-26 13:28:10.000   0.6970098661
    ```
 
-2. [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] で **RxPredictBatchOutput** というストアド プロシージャを作成します。
+2. [!INCLUDE[ssManStudio](../../includes/ssmanstudio-md.md)] で **RPredictBatchOutput** という名前のストアド プロシージャを作成します。
 
    ```sql
-   CREATE PROCEDURE [dbo].[RxPredictBatchOutput] (@model varchar(250), @inquery nvarchar(max))
+   CREATE PROCEDURE [dbo].[RPredictBatchOutput] (@model varchar(250), @inquery nvarchar(max))
    AS
    BEGIN
    DECLARE @lmodel2 varbinary(max) = (SELECT model FROM nyc_taxi_models WHERE name = @model);
@@ -119,7 +119,7 @@ GO
      @script = N'
        mod <- unserialize(as.raw(model));
        print(summary(mod))
-       OutputDataSet<-rxPredict(modelObject = mod, data = InputDataSet, outData = NULL, predVarNames = "Score", type = "response", writeModelVars = FALSE, overwrite = TRUE);
+       OutputDataSet <- data.frame(predict(mod, InputDataSet, type = "response"));
        str(OutputDataSet)
        print(OutputDataSet)
      ',
@@ -138,13 +138,12 @@ GO
    SET @query_string='SELECT TOP 10 a.passenger_count as passenger_count, a.trip_time_in_secs AS trip_time_in_secs, a.trip_distance AS trip_distance, a.dropoff_datetime AS dropoff_datetime, dbo.fnCalculateDistance(pickup_latitude, pickup_longitude, dropoff_latitude,dropoff_longitude) AS direct_distance FROM  (SELECT medallion, hack_license, pickup_datetime, passenger_count,trip_time_in_secs,trip_distance, dropoff_datetime, pickup_latitude, pickup_longitude, dropoff_latitude, dropoff_longitude FROM nyctaxi_sample  )a   LEFT OUTER JOIN (SELECT medallion, hack_license, pickup_datetime FROM nyctaxi_sample TABLESAMPLE (70 percent) REPEATABLE (98052))b ON a.medallion=b.medallion AND a.hack_license=b.hack_license AND a.pickup_datetime=b.pickup_datetime WHERE b.medallion is null'
    
    -- Call the stored procedure for scoring and pass the input data
-   EXEC [dbo].[RxPredictBatchOutput] @model = 'RxTrainLogit_model', @inquery = @query_string;
+   EXEC [dbo].[RPredictBatchOutput] @model = 'RTrainLogit_model', @inquery = @query_string;
    ```
   
 このストアド プロシージャは、上位 10 の各乗車の予測を表す一連の値を返します。 ただし、上位の乗車は、比較的短い乗車距離の一人の乗客でもあり、その場合、ドライバーがチップを得られる可能性はほとんどありません。
 
 > [!TIP]
-> 
 > "チップあり" と "チップなし" の結果のみを返すのではなく、予測の確率スコアを返し、WHERE 句を _Score_ 列の値に適用します。0.5 や 0.7 などのしきい値を使用すると、スコアを "チップを得る確率が高い" または "チップを得る確率が低い" として分類することもできます。 この手順はストアド プロシージャに含まれていませんが、導入は簡単です。
 
 ## <a name="single-row-scoring-of-multiple-inputs"></a>複数の入力による単一行のスコア付け
@@ -155,10 +154,10 @@ GO
   
 外部アプリケーションからストアド プロシージャを呼び出す場合は、データが R モデルの要件と一致していることを確認してください。 場合によっては、入力データを R データ型にキャストまたは変換できなければなりません。あるいは、データ型やデータ長を検証する必要があります。
 
-1. **RxPredictSingleRow** ストアド プロシージャを作成します。
+1. ストアド プロシージャ **RPredictSingleRow** を作成します。
   
    ```sql
-   CREATE PROCEDURE [dbo].[RxPredictSingleRow] @model varchar(50), @passenger_count int = 0, @trip_distance float = 0, @trip_time_in_secs int = 0, @pickup_latitude float = 0, @pickup_longitude float = 0, @dropoff_latitude float = 0, @dropoff_longitude float = 0
+   CREATE PROCEDURE [dbo].[RPredictSingleRow] @model varchar(50), @passenger_count int = 0, @trip_distance float = 0, @trip_time_in_secs int = 0, @pickup_latitude float = 0, @pickup_longitude float = 0, @dropoff_latitude float = 0, @dropoff_longitude float = 0
    AS
    BEGIN
    DECLARE @inquery nvarchar(max) = N'SELECT * FROM [dbo].[fnEngineerFeatures](@passenger_count, @trip_distance, @trip_time_in_secs,  @pickup_latitude, @pickup_longitude, @dropoff_latitude, @dropoff_longitude)';
@@ -168,7 +167,7 @@ GO
      @script = N'  
        mod <- unserialize(as.raw(model));  
        print(summary(mod));  
-       OutputDataSet<-rxPredict(modelObject = mod, data = InputDataSet, outData = NULL, predVarNames = "Score", type = "response", writeModelVars = FALSE, overwrite = TRUE);  
+       OutputDataSet <- data.frame(predict(mod, InputDataSet, type = "response"));
        str(OutputDataSet);
        print(OutputDataSet); 
        ',  
@@ -183,7 +182,7 @@ GO
    新しい **クエリ** ウィンドウを開き、ストアド プロシージャを呼び出して、各パラメーターの値を指定します。 パラメーターは、モデルで使用される特徴列を表し、必須です。
 
    ```sql
-   EXEC [dbo].[RxPredictSingleRow] @model = 'RxTrainLogit_model',
+   EXEC [dbo].[RPredictSingleRow] @model = 'RTrainLogit_model',
    @passenger_count = 1,
    @trip_distance = 2.5,
    @trip_time_in_secs = 631,
@@ -196,7 +195,7 @@ GO
    または、ストアド プロシージャの [パラメーターでサポー](../../relational-databases/stored-procedures/specify-parameters.md)トされている短い形式を使用します。
   
    ```sql
-   EXEC [dbo].[RxPredictSingleRow] 'RxTrainLogit_model', 1, 2.5, 631, 40.763958,-73.973373, 40.782139,-73.977303
+   EXEC [dbo].[RPredictSingleRow] 'RTrainLogit_model', 1, 2.5, 631, 40.763958,-73.973373, 40.782139,-73.977303
    ```
 
 3. この結果は、これらの上位 10 の乗車ではチップが与えられる確率が低い (ゼロ) ことを示しています。これは、すべてが比較的短い乗車距離の一人の乗客であるためです。

@@ -14,16 +14,16 @@ helpviewer_keywords:
 ms.assetid: ''
 author: shkale-msft
 ms.author: shkale
-monikerRange: =azuresqldb-current||>=sql-server-2017||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: d676d32426678720f76de1ff04c355a54998dd1e
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: ab08692b1e221e589cc6283e2800a695044f79b7
+ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88408738"
+ms.lasthandoff: 02/13/2021
+ms.locfileid: "100351416"
 ---
 # <a name="sql-graph-architecture"></a>SQL グラフのアーキテクチャ  
-[!INCLUDE[sqlserver2017-asdb](../../includes/applies-to-version/sqlserver2017-asdb.md)]
+[!INCLUDE[sqlserver2017-asdb](../../includes/applies-to-version/sqlserver2017-asdb-asdbmi.md)]
 
 SQL Graph の設計方法について説明します。 基本を理解することで、他の SQL グラフの記事を理解しやすくなります。
  
@@ -31,7 +31,7 @@ SQL Graph の設計方法について説明します。 基本を理解するこ
 ユーザーは、データベースごとに1つのグラフを作成できます。 グラフは、ノードテーブルとエッジテーブルのコレクションです。 ノードテーブルまたはエッジテーブルは、データベース内の任意のスキーマで作成できますが、すべて1つの論理グラフに属します。 ノードテーブルは、類似した種類のノードのコレクションです。 たとえば、ユーザーノードテーブルには、グラフに属するすべての Person ノードが格納されます。 同様に、エッジテーブルは同様のエッジのコレクションです。 たとえば、友人のエッジテーブルには、人物を別の人に接続するすべてのエッジが含まれています。 ノードとエッジはテーブルに格納されるため、通常のテーブルでサポートされている操作のほとんどは、ノードテーブルまたはエッジテーブルでサポートされています。 
  
  
-![sql-グラフ-アーキテクチャ](../../relational-databases/graphs/media/sql-graph-architecture.png "Sql graph データベースのアーキテクチャ")   
+![SQL Graph データベースアーキテクチャを示す図。](../../relational-databases/graphs/media/sql-graph-architecture.png "Sql graph データベースのアーキテクチャ")   
 
 図 1: SQL Graph データベースのアーキテクチャ
  
@@ -56,7 +56,7 @@ SQL Graph の設計方法について説明します。 基本を理解するこ
 
 図2は、ノードテーブルとエッジテーブルがデータベースにどのように格納されるかを示しています。 
 
-![個人-友人-テーブル](../../relational-databases/graphs/media/person-friends-tables.png "Person ノードと友人のエッジテーブル")   
+![ノードとエッジテーブルの表示を示す図。](../../relational-databases/graphs/media/person-friends-tables.png "Person ノードと友人のエッジテーブル")   
 
 図 2: ノードとエッジテーブルの表示
 
@@ -150,7 +150,7 @@ SQL Graph の設計方法について説明します。 基本を理解するこ
 |タスク   |関連記事  |ノート
 |---  |---  |---  |
 |INSERT |[INSERT &#40;Transact-SQL&#41;](../../t-sql/statements/insert-sql-graph.md)|ノードテーブルへの挿入は、リレーショナルテーブルへの挿入と同じです。 列の値 `$node_id` が自動的に生成されます。 列または列に値を挿入しようとすると `$node_id` `$edge_id` 、エラーが発生します。 `$from_id`エッジテーブルに挿入するときに、ユーザーが列と列の値を指定する必要があり `$to_id` ます。 `$from_id` と `$to_id` は、 `$node_id` 指定されたエッジが接続するノードの値です。  |
-|Del | [DELETE &#40;Transact-SQL&#41;](../../t-sql/statements/delete-transact-sql.md)|ノードまたはエッジテーブルからのデータは、リレーショナルテーブルから削除するのと同じ方法で削除できます。 ただし、このリリースでは、ノードを削除しても、削除されたノードを指し、エッジのカスケード削除がサポートされないようにするための制約はありません。 ノードが削除されるたびに、グラフの整合性を維持するために、そのノードに接続しているすべてのエッジも削除されることをお勧めします。  |
+|DELETE | [DELETE &#40;Transact-SQL&#41;](../../t-sql/statements/delete-transact-sql.md)|ノードまたはエッジテーブルからのデータは、リレーショナルテーブルから削除するのと同じ方法で削除できます。 ただし、このリリースでは、ノードを削除しても、削除されたノードを指し、エッジのカスケード削除がサポートされないようにするための制約はありません。 ノードが削除されるたびに、グラフの整合性を維持するために、そのノードに接続しているすべてのエッジも削除されることをお勧めします。  |
 |UPDATE |[UPDATE &#40;Transact-SQL&#41;](../../t-sql/queries/update-transact-sql.md)  |ユーザー定義列の値は、UPDATE ステートメントを使用して更新できます。 内部グラフ列、、、およびを更新する `$node_id` `$edge_id` `$from_id` `$to_id` ことはできません。  |
 |MERGE |[MERGE &#40;Transact-SQL&#41;](../../t-sql/statements/merge-transact-sql.md)  |`MERGE` ステートメントは、ノードまたはエッジテーブルでサポートされています。  |
 

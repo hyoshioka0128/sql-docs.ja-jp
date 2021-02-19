@@ -1,12 +1,12 @@
 ---
-description: dm_tran_version_store_space_usage (Transact-sql)
-title: dm_tran_version_store_space_usage (Transact-sql) |Microsoft Docs
+description: sys.dm_tran_version_store_space_usage (Transact-sql)
+title: sys.dm_tran_version_store_space_usage (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 04/24/2018
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - sys.dm_tran_version_store_space_usage_TSQL
 - sys.dm_tran_version_store_space_usage
@@ -20,22 +20,22 @@ ms.assetid: 7ab44517-0351-4f91-bdd9-7cf940f03c51
 author: savjani
 ms.author: pariks
 manager: ajayj
-monikerRange: '>=sql-server-2017||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: b3e40c6fd2ce7da44c2d6e347c7bcc0729ab0236
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: adea8474945b0f4e6ebd317f44a9b6367181ebad
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88322968"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100079253"
 ---
-# <a name="sysdm_tran_version_store_space_usage-transact-sql"></a>dm_tran_version_store_space_usage (Transact-sql)
+# <a name="sysdm_tran_version_store_space_usage-transact-sql"></a>sys.dm_tran_version_store_space_usage (Transact-sql)
 [!INCLUDE[tsql-appliesto-2016sp2-asdb-xxxx-xxx-md](../../includes/tsql-appliesto-2016sp2-asdb-xxxx-xxx-md.md)]
 
-各データベースのバージョンストアレコードで使用される tempdb 内の領域の合計を表示するテーブルを返します。 **dm_tran_version_store_space_usage** は、個別のバージョンストアレコード間を移動せず、データベースごとに tempdb で使用される集計バージョンストアの領域を返すため、効率的で実行コストがかかりません。
+各データベースのバージョンストアレコードで使用される tempdb 内の領域の合計を表示するテーブルを返します。 **sys.dm_tran_version_store_space_usage** は、個々のバージョンストアレコード間を移動せず、データベースごとに tempdb で使用される集計バージョンストア領域を返すため、効率的で実行コストがかかりません。
   
 バージョン管理された各レコードは、追跡情報や状態情報と共に、バイナリデータとして格納されます。 データベース テーブル内のレコードと同様、バージョン ストア レコードは 8,192 バイトのページに格納されます。 レコードが 8,192 バイトを超える場合は、2 つのレコードに分割されます。  
   
-バージョン付きのレコードはバイナリとして格納されるため、異なるデータベースからの異なる照合順序に関する問題はありません。 SQL Server インスタンス内のデータベースのバージョンストアの使用領域に基づいて、tempdb のサイズを監視および計画するには、 **dm_tran_version_store_space_usage** を使用します。
+バージョン付きのレコードはバイナリとして格納されるため、異なるデータベースからの異なる照合順序に関する問題はありません。 **Sys.dm_tran_version_store_space_usage** を使用すると、SQL Server インスタンス内のデータベースのバージョンストアの使用領域に基づいて、tempdb のサイズを監視および計画できます。
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

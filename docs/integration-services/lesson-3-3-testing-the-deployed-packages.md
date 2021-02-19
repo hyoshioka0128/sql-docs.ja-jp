@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.assetid: 9159da3f-c9ca-4015-9e85-3bf4373a1349
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: f6c7fed5c20d9025be9ad9bce060d6fa83de378a
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 96a06d721c1ccbb4ce254705ceb676c1c338b68a
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88472034"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100354937"
 ---
 # <a name="lesson-3-3---testing-the-deployed-packages"></a>レッスン 3-3 - 配置したパッケージのテスト
 
@@ -27,7 +27,7 @@ ms.locfileid: "88472034"
   
 [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] の他のチュートリアルでは、 [!INCLUDE[ssBIDevStudioFull](../includes/ssbidevstudiofull-md.md)][デバッグ] [!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)]メニューの **[デバッグ開始]** オプションを使用して、 **の配置環境である** でパッケージを実行しました。 今度は別の方法でパッケージを実行します。  
   
-[!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] には、テスト環境と運用環境でパッケージを実行するときに使用できるコマンド プロンプト ユーティリティ **dtexec** やパッケージ実行ユーティリティなどのツールが付属しています。 パッケージ実行ユーティリティは、 **dtexec**を基に構築されたグラフィカル ツールです。 この 2 つのツールはパッケージを即座に実行します。 さらに、 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] には、SQL Server エージェントのジョブの一工程としてパッケージの実行をスケジュールするように設計された SQL Server エージェントのサブシステムがあります。  
+[!INCLUDE[ssISnoversion](../includes/ssisnoversion-md.md)] には、テスト環境と運用環境でパッケージを実行するときに使用できるコマンド プロンプト ユーティリティ **dtexec** やパッケージ実行ユーティリティなどのツールが付属しています。 パッケージ実行ユーティリティは、 **dtexec** を基に構築されたグラフィカル ツールです。 この 2 つのツールはパッケージを即座に実行します。 さらに、 [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] には、SQL Server エージェントのジョブの一工程としてパッケージの実行をスケジュールするように設計された SQL Server エージェントのサブシステムがあります。  
   
 パッケージ実行ユーティリティは、配置したパッケージを実行するために使用します。 パッケージはそのままの状態で使用されるため、ダイアログ ボックスのページで情報を更新する必要はありません。 パッケージ実行ユーティリティで最初に表示される [全般] ページからパッケージを実行します。 必要に応じて、他のページもクリックして、各パッケージに関する情報を表示できます。  
   

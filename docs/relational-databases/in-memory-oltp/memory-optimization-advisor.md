@@ -14,13 +14,13 @@ f1_keywords:
 ms.assetid: 181989c2-9636-415a-bd1d-d304fc920b8a
 author: MightyPen
 ms.author: genemi
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 4d5d881ff7628c094b8d6880406650387c0cff48
-ms.sourcegitcommit: 4d370399f6f142e25075b3714e5c2ce056b1bfd0
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 0626ff511e504a4718a426ae9b1ca85c674ab5f0
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91868574"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97473873"
 ---
 # <a name="memory-optimization-advisor"></a>メモリ最適化アドバイザー
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "91868574"
  移行方法については、「[In-Memory OLTP - Common Workload Patterns and Migration Considerations](/previous-versions/dn673538(v=msdn.10))」(インメモリ OLTP - 一般的なワークロード パターンと移行に関する考慮事項) を参照してください。  
   
 ## <a name="walkthrough-using-the-memory-optimization-advisor"></a>メモリ最適化アドバイザーの使用に関するチュートリアル  
- **オブジェクト エクスプローラー**で、変換するテーブルを右クリックし、 **[メモリ最適化アドバイザー]** を選択します。 これにより、 **テーブルのメモリ最適化アドバイザー**のようこそページが表示されます。  
+ **オブジェクト エクスプローラー** で、変換するテーブルを右クリックし、 **[メモリ最適化アドバイザー]** を選択します。 これにより、 **テーブルのメモリ最適化アドバイザー** のようこそページが表示されます。  
   
 ### <a name="memory-optimization-checklist"></a>メモリ最適化のチェック リスト  
  **テーブルのメモリ最適化アドバイザー** のようこそページで **[次へ]** をクリックすると、メモリ最適化のチェック リストが表示されます。 メモリ最適化テーブルでは、ディスク ベース テーブルのすべての機能がサポートされているわけではありません。 メモリ最適化のチェック リストでは、メモリ最適化テーブルと互換性のない機能がディスク ベース テーブルで使用されているかどうかが報告されます。 **テーブルのメモリ最適化アドバイザー** では、インメモリ OLTP の使用へ移行できるようにディスク ベース テーブルが変更されるわけではありません。 移行を続行する前に、それらの変更を行う必要があります。 **テーブルのメモリ最適化アドバイザー** では、非互換性が検出されるたびに、ディスク ベース テーブルの変更に役立つ情報へのリンクが表示されます。  
@@ -99,7 +99,7 @@ ms.locfileid: "91868574"
   
  主キーが存在せず、テーブルを持続性のないテーブルに移行している場合、この画面は表示されません。  
   
- テキスト列 ( **char**、 **nchar**、 **varchar**、および **nvarchar**型の列) の場合は、適切な照合順序を選択する必要があります。 インメモリ OLTP でサポートされているのは、メモリ最適化テーブルの列の BIN2 照合順序のみで、補助文字を使用した照合順序はサポートされていません。 サポートされている照合順序と、照合順序を変更した場合に考えられる影響については、「 [Collations and Code Pages](./introduction-to-memory-optimized-tables.md) 」を参照してください。  
+ テキスト列 ( **char**、 **nchar**、 **varchar**、および **nvarchar** 型の列) の場合は、適切な照合順序を選択する必要があります。 インメモリ OLTP でサポートされているのは、メモリ最適化テーブルの列の BIN2 照合順序のみで、補助文字を使用した照合順序はサポートされていません。 サポートされている照合順序と、照合順序を変更した場合に考えられる影響については、「 [Collations and Code Pages](./introduction-to-memory-optimized-tables.md) 」を参照してください。  
   
  主キーの構成可能なパラメーターは次のとおりです。  
   

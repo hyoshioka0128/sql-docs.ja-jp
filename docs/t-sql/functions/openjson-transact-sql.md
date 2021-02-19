@@ -5,7 +5,7 @@ ms.custom: ''
 ms.date: 06/03/2020
 ms.prod: sql
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - OPENJSON
 - OPENJSON_TSQL
@@ -16,14 +16,14 @@ helpviewer_keywords:
 ms.assetid: 233d0877-046b-4dcc-b5da-adeb22f78531
 author: jovanpop-msft
 ms.author: jovanpop
-ms.reviewer: jroth
-monikerRange: = azuresqldb-current||= azure-sqldw-latest||>= sql-server-2016||>= sql-server-linux-2017||= sqlallproducts-allversions
-ms.openlocfilehash: 93113a42ca267f9d5c241636dfbf49aa8e75ae90
-ms.sourcegitcommit: cc23d8646041336d119b74bf239a6ac305ff3d31
+ms.reviewer: chadam
+monikerRange: = azuresqldb-current||= azure-sqldw-latest||>= sql-server-2016||>= sql-server-linux-2017
+ms.openlocfilehash: b29315567520dff0d4700aeb476279bf6cfe24b7
+ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91117076"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "100340638"
 ---
 # <a name="openjson-transact-sql"></a>OPENJSON (Transact-SQL)
 
@@ -109,7 +109,7 @@ SELECT * FROM OpenJson(@json);
 
 *jsonExpression* 内のオブジェクトまたは配列を参照する省略可能な JSON パス式です。 **OPENJSON** は、指定された位置で JSON テキストをシークし、参照先のフラグメントのみを解析します。 詳細については、「[JSON パス式 &#40;SQL Server&#41;](../../relational-databases/json/json-path-expressions-sql-server.md)」を参照してください。
 
-[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] と [!INCLUDE[ssSDSfull_md](../../includes/sssdsfull-md.md)] では、*path* の値として変数を指定できます。
+[!INCLUDE [sssql17-md](../../includes/sssql17-md.md)] と [!INCLUDE[ssSDSfull_md](../../includes/sssdsfull-md.md)] では、*path* の値として変数を指定できます。
   
 次の例では、*path* を指定することで、入れ子になったオブジェクトを返します。  
 
@@ -146,7 +146,7 @@ JSON の式のプロパティを持つパスの手順を照合に使用する比
 
 *colName*。出力列の名前。  
   
-**OPENJSON** は既定では、列の名前を使用して、JSON テキストのプロパティと一致します。 たとえば、*name*の列をスキーマを指定する場合、OPENJSON は JSON テキストには、"name"プロパティを使用して、この列を作成しようとします。 使用して、この既定のマッピングをオーバーライドすることができます、  *column_path* 引数。  
+**OPENJSON** は既定では、列の名前を使用して、JSON テキストのプロパティと一致します。 たとえば、*name* の列をスキーマを指定する場合、OPENJSON は JSON テキストには、"name"プロパティを使用して、この列を作成しようとします。 使用して、この既定のマッピングをオーバーライドすることができます、  *column_path* 引数。  
   
 *type*  
 出力列のデータ型。  
@@ -225,7 +225,7 @@ OPENJSON 関数によって返される列は、WITH オプションによって
 1. OPENJSON を既定のスキーマで呼び出した場合 (つまり、WITH 句に明示的にスキーマを指定しない場合)、関数は、次の列を持つテーブルを返します。  
     1.  **[キー]** 指定したプロパティの名前か、指定した配列内の要素のインデックスを含む nvarchar (4000) 値。 キー列は BIN2 照合順序を持っています。  
     2.  **値**。 プロパティの値を含む、nvarchar (max) 値です。 [値] 列では、その照合順序を継承 *jsonExpression* から。
-    3.  **[種類]** 。 値の型を含む int 値。 **型**の列には、既定のスキーマを OPENJSON を使用する場合にのみが返されます。 型の列では、次の values. のことがあります。  
+    3.  **[種類]** 。 値の型を含む int 値。 **型** の列には、既定のスキーマを OPENJSON を使用する場合にのみが返されます。 型の列では、次の values. のことがあります。  
   
         |型の列の値|JSON データ型|  
         |------------------------------|--------------------|  
@@ -291,7 +291,7 @@ WHERE product.productTypeID IN (1,2,3,4)
   
 ### <a name="example-2---merge-properties-from-two-json-objects"></a>例 3 - 2 つの JSON オブジェクトからのマージ プロパティ
 
-次の例では、2 つの JSON オブジェクトのすべてのプロパティの和集合を選択します。 2 つのオブジェクトでは、重複する*name*プロパティがあります。 例では、キーの値を使って、結果から重複する行を除外しています。  
+次の例では、2 つの JSON オブジェクトのすべてのプロパティの和集合を選択します。 2 つのオブジェクトでは、重複する *name* プロパティがあります。 例では、キーの値を使って、結果から重複する行を除外しています。  
   
 ```sql  
 DECLARE @json1 NVARCHAR(MAX),@json2 NVARCHAR(MAX)

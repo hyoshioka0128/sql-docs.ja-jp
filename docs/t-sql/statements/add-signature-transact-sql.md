@@ -3,7 +3,7 @@ description: ADD SIGNATURE (Transact-SQL)
 title: ADD SIGNATURE (Transact-SQL)
 ms.prod: sql
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - ADD SIGNATURE
 - ADD_SIGNATURE_TSQL
@@ -18,18 +18,18 @@ ms.author: vanto
 ms.reviewer: ''
 ms.custom: ''
 ms.date: 06/10/2020
-ms.openlocfilehash: 0f0ed0ee3619abae19df06879fbfd1d60b22a0b0
-ms.sourcegitcommit: ac9feb0b10847b369b77f3c03f8200c86ee4f4e0
+ms.openlocfilehash: 95bfeb321f43fb860bbbeecb32ac18ec221e5067
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90688429"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99194692"
 ---
 # <a name="add-signature-transact-sql"></a>ADD SIGNATURE (Transact-SQL)
 
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
 
-ストアド プロシージャ、関数、アセンブリ、またはトリガーにデジタル署名を追加します。 また、ストアド プロシージャ、関数、アセンブリ、またはトリガーに副署名を追加します。
+ストアド プロシージャ、関数、アセンブリ、または DML トリガーにデジタル署名を追加します。 また、ストアド プロシージャ、関数、アセンブリ、または DML トリガーに副署名を追加します。
 
 ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
 
@@ -83,7 +83,7 @@ ADD [ COUNTER ] SIGNATURE TO module_class::module_name
 > [!CAUTION]
 > モジュールの署名は権限の許可のみに使用し、権限の拒否または取り消しには使用しないでください。  
   
- インライン テーブル値関数には署名できません。  
+ データ定義言語 (DDL) トリガーとインライン テーブル値関数に署名することはできません。  
   
  署名に関する情報は、sys.crypt_properties カタログ ビューで確認できます。  
   

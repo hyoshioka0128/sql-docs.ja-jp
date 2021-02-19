@@ -11,19 +11,16 @@ ms.topic: language-reference
 ms.assetid: 07a9a163-4787-40f7-b371-ac5c6cb4b095
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: e307babfd703b83758a6d1d3c7de3e6f62b00119
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 1d3d9c223a4d415b9bfd28ed4c202570141c1f1f
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88495238"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100347369"
 ---
 # <a name="catalogexecution_component_phases"></a>catalog.execution_component_phases 
 
 [!INCLUDE[sqlserver-ssis](../../includes/applies-to-version/sqlserver-ssis.md)]
-
-
-[!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
   各実行フェーズでデータ フロー コンポーネントが費やした時間を表示します。  
   

@@ -5,6 +5,8 @@ ms.date: 04/23/2019
 ms.prod: sql
 ms.technology: polybase
 ms.topic: conceptual
+f1_keywords:
+- sql13.swb.polybasescaleoutcluster.page.f1
 helpviewer_keywords:
 - PolyBase
 - PolyBase, scale-out groups
@@ -13,13 +15,13 @@ ms.assetid: c7810135-4d63-4161-93ab-0e75e9d10ab5
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: ''
-monikerRange: '>= sql-server-2016 || =sqlallproducts-allversions'
-ms.openlocfilehash: b636a615544cdf3ab642e34b1d02c59db2e11872
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+monikerRange: '>= sql-server-2016'
+ms.openlocfilehash: c7c2594dfd40ff952c28cf203e05f37c789b3d06
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91892512"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100076663"
 ---
 # <a name="polybase-scale-out-groups"></a>PolyBase スケールアウト グループ
 
@@ -29,15 +31,15 @@ PolyBase を使用するスタンドアロンの SQL Server インスタンス�
   
 「 [PolyBase の概要](./polybase-guide.md) 」および「 [PolyBase ガイド](../../relational-databases/polybase/polybase-guide.md)」を参照してください。
   
-![PolyBase スケールアウト グループ](../../relational-databases/polybase/media/polybase-scale-out-groups.png "PolyBase スケールアウト グループ")  
+![PolyBase スケールアウト グループを示す図。](../../relational-databases/polybase/media/polybase-scale-out-groups.png "PolyBase スケールアウト グループ")  
   
 ## <a name="head-node"></a>ヘッド ノード  
 
-ヘッド ノードには、PolyBase クエリの送信先の SQL Server インスタンスが含まれています。 各 PolyBase グループは、ヘッド ノードを 1 つだけ保持できます。 ヘッド ノードは、SQL Server インスタンス上の SQL データベース エンジン、PolyBase エンジン、および PolyBase データ移動サービスの論理グループです。
+ヘッド ノードには、PolyBase クエリの送信先の SQL Server インスタンスが含まれています。 各 PolyBase グループは、ヘッド ノードを 1 つだけ保持できます。 ヘッド ノードは、SQL Server インスタンス上の SQL Server データベース エンジン、PolyBase エンジン、および PolyBase データ移動サービスの論理グループです。 SQL Server 2017 および SQL Server 2016 では、ヘッド ノードは Enterprise Edition である必要があります。 SQL Server 2019 以降では、PolyBase ヘッド ノードは Enterprise または Standard Edition のいずれかを使用できます。
   
-## <a name="compute-node"></a>コンピューティング ノード  
+## <a name="compute-node"></a>コンピューティング ノード
 
-コンピューティング ノードには、外部データに対するスケールアウト クエリ処理を支援する SQL Server インスタンスが含まれています。 コンピューティング ノードは、SQL Server インスタンス上の SQL Server と PolyBase データ移動サービスの論理グループです。 PolyBase グループは、複数のコンピューティング ノードを保持できます。 ヘッド ノードとコンピューティング ノードはすべて、同じバージョンの SQL Server を実行する必要があります。
+コンピューティング ノードには、外部データに対するスケールアウト クエリ処理を支援する SQL Server インスタンスが含まれています。 コンピューティング ノードは、SQL Server インスタンス上の SQL Server と PolyBase データ移動サービスの論理グループです。 PolyBase グループは、複数のコンピューティング ノードを保持できます。 ヘッド ノードとコンピューティング ノードはすべて、同じバージョンの SQL Server を実行する必要があります。 SQL Server 2016 の最初のリリースでは、計算ノードを Enterprise または Standard Edition のいずれかにすることができました。 SQL Server 2016 SP1 以降では、SQL Server のすべてのエディションを計算ノードにすることができます。
 
 ## <a name="scale-out-reads"></a>スケールアウト読み取り
 
@@ -48,7 +50,7 @@ PolyBase を使用するスタンドアロンの SQL Server インスタンス�
 > [!NOTE]
 >  これは Hadoop を介したスケールアウト読み取りとは異なります。 
 
-![PolyBase スケールアウト グループ](../../relational-databases/polybase/media/polybase-scale-out-groups2.png "PolyBase スケールアウト グループ")
+![PolyBase スケールアウト読み取り](../../relational-databases/polybase/media/polybase-scale-out-groups2.png "PolyBase スケールアウト グループ")
   
 ## <a name="distributed-query-processing"></a>分散クエリ処理  
 

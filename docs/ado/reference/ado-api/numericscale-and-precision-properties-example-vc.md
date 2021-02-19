@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/20/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -16,15 +16,15 @@ helpviewer_keywords:
 ms.assetid: 55d91ba8-4d80-4df6-af8e-060a19ddc138
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: fbca744c17ffd3dfa9b84b679e9efeaf0d27ad9a
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 982c266811743a65f717e02ac4ca3612db6ca3f8
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88990393"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100041513"
 ---
 # <a name="numericscale-and-precision-properties-example-vc"></a>NumericScale および Precision プロパティの例 (VC++)
-この例では、 [numericscale](./numericscale-property-ado.md)プロパティと[precision](./precision-property-ado.md)プロパティを使用して、 ***Pubs***データベースの***割引***テーブルのフィールドの数値の小数点以下桁数と有効桁数を表示します。  
+この例では、 [numericscale](./numericscale-property-ado.md)プロパティと [precision](./precision-property-ado.md)プロパティを使用して、_ *_Pubs_** データベースの ***割引** _ テーブルのフィールドの数値の小数点以下桁数と有効桁数を表示します。  
   
 ```cpp
 // BeginNumericScaleCpp.cpp  

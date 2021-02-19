@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - COLUMNS
 - COLUMNS_TSQL
@@ -19,20 +19,20 @@ helpviewer_keywords:
 ms.assetid: bbf7ac4a-7444-4351-a590-a9f71e0bc495
 author: markingmyname
 ms.author: maghan
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: f4f49fe215279782a5f2e8df8fe501e0619f4bd2
-ms.sourcegitcommit: 968969b62bc158b9843aba5034c9d913519bc4a7
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 510409a417ff35edb932b0689f6cfb17967ce171
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91753633"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99210269"
 ---
 # <a name="columns-transact-sql"></a>COLUMNS (Transact-sql)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
 
   現在のデータベースの現在のユーザーがアクセスできる列ごとに1行のデータを返します。  
   
- これらのビューから情報を取得するには、 **INFORMATION_SCHEMA**_.view_name_の完全修飾名を指定します。  
+ これらのビューから情報を取得するには、 **INFORMATION_SCHEMA**_.view_name_ の完全修飾名を指定します。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
@@ -44,13 +44,13 @@ ms.locfileid: "91753633"
 |**COLUMN_DEFAULT**|**nvarchar (** 4000 **)**|列の既定値です。|  
 |**IS_NULLABLE**|**varchar (** 3 **)**|列に NULL 値が許容されるかどうかを指定します。 この列が NULL を許容する場合、この列は YES を返します。 その他の場合は NO が返されます。|  
 |**DATA_TYPE**|**nvarchar (** 128 **)**|システムにより提供されるデータ型。|  
-|**CHARACTER_MAXIMUM_LENGTH**|**int**|バイナリ データ、文字データ、またはテキストおよびイメージ データの最大文字列長。<br /><br /> **xml**と大きな値の型のデータの場合は-1。 その他の場合は NULL が返されます。 詳細については、「[データ型 &#40;Transact-SQL&#41;](../../t-sql/data-types/data-types-transact-sql.md)」を参照してください。|  
-|**CHARACTER_OCTET_LENGTH**|**int**|バイナリ データ、文字データ、またはテキストおよびイメージ データの最大バイト長。<br /><br /> **xml**と大きな値の型のデータの場合は-1。 その他の場合は NULL が返されます。|  
+|**CHARACTER_MAXIMUM_LENGTH**|**int**|バイナリ データ、文字データ、またはテキストおよびイメージ データの最大文字列長。<br /><br /> **xml** と大きな値の型のデータの場合は-1。 その他の場合は NULL が返されます。 詳細については、「[データ型 &#40;Transact-SQL&#41;](../../t-sql/data-types/data-types-transact-sql.md)」を参照してください。|  
+|**CHARACTER_OCTET_LENGTH**|**int**|バイナリ データ、文字データ、またはテキストおよびイメージ データの最大バイト長。<br /><br /> **xml** と大きな値の型のデータの場合は-1。 その他の場合は NULL が返されます。|  
 |**NUMERIC_PRECISION**|**tinyint**|数値データの概数、正確な数値データ、整数データ、または通貨データの有効桁数。 その他の場合は NULL が返されます。|  
 |**NUMERIC_PRECISION_RADIX**|**smallint**|数値データの概数、正確な数値データ、整数データ、または通貨データの有効桁数の基数。 その他の場合は NULL が返されます。|  
 |**NUMERIC_SCALE**|**int**|数値データの概数、正確な数値データ、整数データ、または通貨データの桁数。 その他の場合は NULL が返されます。|  
-|**DATETIME_PRECISION**|**smallint**|**Datetime**および ISO **interval**データ型のサブタイプコード。 その他のデータ型に対しては NULL が返されます。|  
-|**CHARACTER_SET_CATALOG**|**nvarchar (** 128 **)**|**Master**を返します。 列が文字データまたは **テキスト** データ型の場合、文字セットが存在するデータベースを示します。 その他の場合は NULL が返されます。|  
+|**DATETIME_PRECISION**|**smallint**|**Datetime** および ISO **interval** データ型のサブタイプコード。 その他のデータ型に対しては NULL が返されます。|  
+|**CHARACTER_SET_CATALOG**|**nvarchar (** 128 **)**|**Master** を返します。 列が文字データまたは **テキスト** データ型の場合、文字セットが存在するデータベースを示します。 その他の場合は NULL が返されます。|  
 |**CHARACTER_SET_SCHEMA**|**nvarchar (** 128 **)**|常に NULL が返されます。|  
 |**CHARACTER_SET_NAME**|**nvarchar (** 128 **)**|この列が文字データまたは **テキスト** データ型の場合、文字セットの一意の名前を返します。 その他の場合は NULL が返されます。|  
 |**COLLATION_CATALOG**|**nvarchar (** 128 **)**|常に NULL が返されます。|  
@@ -60,7 +60,7 @@ ms.locfileid: "91753633"
 |**DOMAIN_SCHEMA**|**nvarchar (** 128 **)**|列がユーザー定義データ型の場合、この列はユーザー定義データ型のスキーマの名前を返します。 その他の場合は NULL が返されます。<br /><br /> **&#42;&#42; の重要な &#42;&#42;** データ型のスキーマを決定するために INFORMATION_SCHEMA ビューを使用しないでください。 型のスキーマを検索する唯一の信頼性のある方法は、TYPEPROPERTY 関数を使用することです。|  
 |**DOMAIN_NAME**|**nvarchar (** 128 **)**|列がユーザー定義データ型の場合、この列はユーザー定義データ型の名前になります。 その他の場合は NULL が返されます。|  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
  INFORMATION_SCHEMA の **ORDINAL_POSITION** 列 **。列** ビューは、COLUMNS_UPDATED 関数によって返される列のビットパターンと互換性がありません。 COLUMNS_UPDATED と互換性のあるビットパターンを取得するには、INFORMATION_SCHEMA に対してクエリを実行するときに、COLUMNPROPERTY システム関数の **ColumnID** プロパティを参照する必要があり **ます。列** ビュー。 次に例を示します。  
   
 ```  

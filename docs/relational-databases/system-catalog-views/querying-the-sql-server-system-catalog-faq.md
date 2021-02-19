@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 helpviewer_keywords:
@@ -17,14 +17,14 @@ helpviewer_keywords:
 - system catalogs [SQL Server], example queries
 - catalog views [SQL Server], frequently asked questions
 ms.assetid: ca202580-c37e-4ccd-9275-77ce79481f64
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 346ae709b81c1d5f3892a7e7b5acfd98c3ff7d3b
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 523db89e98e2c95bac3231efa6843f21b8ae1216
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89539787"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99200973"
 ---
 # <a name="querying-the-sql-server-system-catalog-faq"></a>SQL Server システム カタログに対するクエリに関してよく寄せられる質問
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "89539787"
 ##  <a name="frequently-asked-questions"></a><a name="_TOP"></a> よく寄せられる質問  
  以下のセクションでは、よく寄せられる質問をカテゴリ別に示します。  
   
-### <a name="data-types"></a>データの種類  
+### <a name="data-types"></a>データ型  
   
 -   [指定されたテーブルの列のデータ型を検索操作方法には、](#_FAQ7)  
   
@@ -780,7 +780,7 @@ GO
 ###  <a name="how-do-i-find-the-views-transact-sql-functions-and-transact-sql-stored-procedures-that-depend-on-a-specified-clr-user-defined-type-or-alias-type"></a><a name="_FAQ26"></a> 指定した CLR ユーザー定義型または別名型に依存するビュー、Transact-sql 関数、および Transact-sql ストアドプロシージャを検索操作方法には、以下を参照してください。  
  次のクエリの `<database_name>` を有効な名前に置き換え、`<schema_name.data_type_name>` をスキーマ修飾の CLR ユーザー定義型または別名型の有効な名前に置き換えてから、クエリを実行します。  
   
- 関数またはプロシージャで定義されているパラメーターは、暗黙的にスキーマにバインドされます。 したがって、CLR ユーザー定義型または別名型に依存するパラメーターは、 [sql_dependencies](../../relational-databases/system-catalog-views/sys-sql-dependencies-transact-sql.md) カタログビューを使用して表示できます。 プロシージャとトリガーはスキーマバインドされていません。 つまり、プロシージャやトリガーの本体で定義されている式と、CLR ユーザー定義型または別名型の間の依存関係は保守されません。 CLR ユーザー定義型または別名型に依存する式を持つスキーマバインドビューおよびスキーマバインドユーザー定義関数は、 **sql_dependencies** カタログビューで保持されます。 型と CLR 関数と CLR プロシージャの間の依存関係は保持されません。  
+ 関数またはプロシージャで定義されているパラメーターは、暗黙的にスキーマにバインドされます。 したがって、CLR ユーザー定義型または別名型に依存するパラメーターは、 [sys.sql_dependencies](../../relational-databases/system-catalog-views/sys-sql-dependencies-transact-sql.md) カタログビューを使用して表示できます。 プロシージャとトリガーはスキーマバインドされていません。 つまり、プロシージャやトリガーの本体で定義されている式と、CLR ユーザー定義型または別名型の間の依存関係は保守されません。 CLR ユーザー定義型または別名型に依存する式を持つスキーマバインドビューおよびスキーマバインドユーザー定義関数は、 **sys.sql_dependencies** カタログビューで保持されます。 型と CLR 関数と CLR プロシージャの間の依存関係は保持されません。  
   
  次のクエリは、指定された CLR ユーザー定義型または別名型に関して、ビュー、[!INCLUDE[tsql](../../includes/tsql-md.md)] 関数、および [!INCLUDE[tsql](../../includes/tsql-md.md)] ストアド プロシージャ内でスキーマにバインドされた依存関係をすべて返します。  
   

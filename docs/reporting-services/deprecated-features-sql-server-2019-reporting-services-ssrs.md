@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: 3876c01e-f81d-4cce-9104-5106a8c369e6
 author: maggiesMSFT
 ms.author: maggies
-monikerRange: '>= sql-server-ver15 || = sqlallproducts-allversions'
-ms.openlocfilehash: d3e48ab45f34e583dbbeca883a64d04dc965b018
-ms.sourcegitcommit: 5da46e16b2c9710414fe36af9670461fb07555dc
+monikerRange: '>= sql-server-ver15'
+ms.openlocfilehash: 0491d5ee88b7e7476b51bcdef4a08fc1c354ef7a
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89283819"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100065534"
 ---
 # <a name="deprecated-features-in-sql-server-2019-reporting-services"></a>SQL Server 2019 Reporting Services で非推奨の機能
 

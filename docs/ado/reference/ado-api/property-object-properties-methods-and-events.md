@@ -7,21 +7,21 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - Property object [ADO], members
 ms.assetid: 21f67a7d-6273-4648-9abd-2236650efa4c
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 82d223aa70a866ea18c4415b8285ed20d3042b69
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: f76709524369fe3c9acfddbccf3220cf0a5eb445
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88989963"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100040912"
 ---
 # <a name="property-object-properties-methods-and-events"></a>Property オブジェクトのプロパティ、メソッド、およびイベント
-## <a name="properties"></a>プロパティ  
+## <a name="properties"></a>Properties  
  [Attributes プロパティ](./attributes-property-ado.md)  
   
  [Name プロパティ](./name-property-ado.md)  

@@ -347,11 +347,11 @@
         - name: レポート サーバーのパフォーマンスの監視
           href: ../reporting-services/report-server/monitoring-report-server-performance.md
           items:
-            - name: MSRS 2011 Web Service と MSRS 2011 Windows Service パフォーマンス オブジェクトのパフォーマンス カウンター (ネイティブ モード)
+            - name: パフォーマンス カウンター、MSRS 2016 Web Service および MSRS 2016 Windows Service パフォーマンス オブジェクト (ネイティブ モード)
               href: ../reporting-services/report-server/performance-counters-msrs-2011-web-service-performance-objects.md
-            - name: MSRS 2011 Web Service SharePoint Mode と MSRS 2011 Windows Service SharePoint Mode パフォーマンス オブジェクトのパフォーマンス カウンター (SharePoint モード)
+            - name: パフォーマンス カウンター、MSRS 2016 Web Service SharePoint Mode および MSRS 2016 Windows Service SharePoint Mode パフォーマンス オブジェクト
               href: ../reporting-services/report-server/performance-counters-msrs-2011-sharepoint-mode-performance-objects.md
-            - name: 'ReportServer:Service と ReportServerSharePoint:Service パフォーマンス オブジェクトのパフォーマンス カウンター'
+            - name: 'パフォーマンス カウンター、ReportServer:Service および ReportServerSharePoint:Service パフォーマンス オブジェクト'
               href: ../reporting-services/report-server/performance-counters-reportserver-service-performance-objects.md
         - name: レポート処理プロパティの設定
           href: ../reporting-services/report-server/set-report-processing-properties.md
@@ -415,8 +415,6 @@
       href: ../reporting-services/report-server-sharepoint/high-availability-reporting-services.md
     - name: RDL サンドボックスの有効化と無効化
       href: ../reporting-services/report-server-sharepoint/enable-and-disable-rdl-sandboxing.md
-    - name: サブジェクト代替名を使用するように Reporting Services を構成する
-      href: ../reporting-services/report-server-sharepoint/configure-reporting-services-to-use-a-subject-alternative-name.md
 - name: SharePoint サイトのレポート ビューアー Web パーツ
   href: ../reporting-services/report-server-sharepoint/report-viewer-web-part-sharepoint-site.md
   items:
@@ -1267,6 +1265,8 @@
               href: ../reporting-services/security/set-permissions-for-report-server-items-on-a-sharepoint-site.md
     - name: ネイティブ モードのレポート サーバーでの SSL 接続の構成
       href: ../reporting-services/security/configure-ssl-connections-on-a-native-mode-report-server.md
+    - name: サブジェクト代替名を使用するように Reporting Services を構成する
+      href: ../reporting-services/report-server-sharepoint/configure-reporting-services-to-use-a-subject-alternative-name.md
 - name: レポートのサブスクリプション
   items:
     - name: SSRS のスケジュールの概要

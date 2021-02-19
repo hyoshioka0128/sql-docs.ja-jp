@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: d4b073c4-4238-41fc-a258-4e114216e185
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: d915b70f3f17c1be5c87361ab2810a82d18d6525
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+ms.openlocfilehash: b85dc4949e363a8e62ca3d992a04365f7ce414f8
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92192443"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100353016"
 ---
 # <a name="access-control-for-sensitive-data-in-packages"></a>パッケージ内の機微なデータへのアクセス制御
 
@@ -42,7 +42,7 @@ ms.locfileid: "92192443"
 >  このトピックで説明する保護レベルに加えて、固定データベース レベル ロールを使用して、 [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] サーバーに保存されているパッケージを保護できます。  
   
 ## <a name="definition-of-sensitive-information"></a>機密情報の定義  
- [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] パッケージでは、以下の情報が *機微*として定義されます。  
+ [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] パッケージでは、以下の情報が *機微* として定義されます。  
   
 -   接続文字列のパスワード部。 すべてを暗号化するオプションを選択した場合は、接続文字列全体が機微であると見なされます。  
   
@@ -74,18 +74,18 @@ ms.locfileid: "92192443"
 ## <a name="protection-level-setting-and-the-ssisdb-catalog"></a>保護レベルの設定と SSISDB カタログ  
  SSISDB カタログは、 **ServerStorage** 保護レベルを使用します。 [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] プロジェクトを [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] サーバーに配置する場合、カタログは自動的にパッケージのデータと機微な値を暗号化します。 また、ユーザーがデータを取得するときには、自動的に暗号化を解除します。  
   
- [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] サーバーからファイル システムにプロジェクト (.ispac ファイル) をエクスポートすると、保護レベルが自動的に **EncryptSensitiveWithUserKey**に変更されます。 **で** Integration Services プロジェクトのインポート ウィザード [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)]を使用してプロジェクトをインポートする場合、 **[プロパティ]** ウィンドウの **[ProtectionLevel]** プロパティには **EncryptSensitiveWithUserKey**の値が表示されます。  
+ [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] サーバーからファイル システムにプロジェクト (.ispac ファイル) をエクスポートすると、保護レベルが自動的に **EncryptSensitiveWithUserKey** に変更されます。 **で** Integration Services プロジェクトのインポート ウィザード [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)]を使用してプロジェクトをインポートする場合、 **[プロパティ]** ウィンドウの **[ProtectionLevel]** プロパティには **EncryptSensitiveWithUserKey** の値が表示されます。  
   
 ## <a name="protection-level-setting-based-on-package-life-cycle"></a>パッケージのライフ サイクルに基づく保護レベルの設定  
  [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)] で初めて [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] パッケージを開発するときは、パッケージの保護レベルを設定します。 パッケージの保護レベルは、後でパッケージを配置するとき、 [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] の [!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)]からインポートまたはエクスポートするとき、または [!INCLUDE[ssBIDevStudioFull](../../includes/ssbidevstudiofull-md.md)] から [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]、 [!INCLUDE[ssIS](../../includes/ssis-md.md)] パッケージ ストア、またはファイル システムにコピーするときに、更新できます。 たとえば、作成したパッケージをユーザー キー保護レベル オプションの 1 つを指定してコンピューターに保存している場合、通常はそのパッケージを他のユーザーに渡すときに保護レベルを変更します。そのままでは、相手ユーザーがパッケージを開くことができません。  
   
  通常、次に示す手順に従って保護レベルを変更します。  
   
-1.  開発中は、パッケージの保護レベルを既定値である **EncryptSensitiveWithUserKey**のままにします。 この設定により、開発者のみがパッケージの機密情報を参照できるようになります。 また、 **EncryptAllWithUserKey**または **DontSaveSensitive**を使用することもできます。  
+1.  開発中は、パッケージの保護レベルを既定値である **EncryptSensitiveWithUserKey** のままにします。 この設定により、開発者のみがパッケージの機密情報を参照できるようになります。 また、 **EncryptAllWithUserKey** または **DontSaveSensitive** を使用することもできます。  
   
-2.  パッケージを配置する時点で、開発者のユーザー キーに依存しない保護レベルに変更する必要があります。 したがって、通常は、 **EncryptSensitiveWithPassword**または **EncryptAllWithPassword**を選択する必要があります。 運用環境の運用チームも知っている一時的な複雑なパスワードを割り当てて、パッケージを暗号化します。  
+2.  パッケージを配置する時点で、開発者のユーザー キーに依存しない保護レベルに変更する必要があります。 したがって、通常は、 **EncryptSensitiveWithPassword** または **EncryptAllWithPassword** を選択する必要があります。 運用環境の運用チームも知っている一時的な複雑なパスワードを割り当てて、パッケージを暗号化します。  
   
-3.  パッケージが運用環境に配置されたら、運用チームは、チーム メンバーだけが知っている複雑なパスワードを割り当てて、配置されたパッケージを再度暗号化できます。 また、 **EncryptSensitiveWithUserKey** または **EncryptAllWithUserKey**を選択し、パッケージを実行するアカウントのローカルの資格情報を使用して、配置されたパッケージを暗号化することもできます。  
+3.  パッケージが運用環境に配置されたら、運用チームは、チーム メンバーだけが知っている複雑なパスワードを割り当てて、配置されたパッケージを再度暗号化できます。 また、 **EncryptSensitiveWithUserKey** または **EncryptAllWithUserKey** を選択し、パッケージを実行するアカウントのローカルの資格情報を使用して、配置されたパッケージを暗号化することもできます。  
 
 ## <a name="set-or-change-the-protection-level-of-packages"></a><a name="set_protection"></a> パッケージの保護レベルを設定または変更する
   パッケージの内容やパッケージに含まれているパスワードなどの機密データへのアクセスを制御するには、 **ProtectionLevel** プロパティの値を設定します。 プロジェクトをビルドするには、プロジェクトに含まれるパッケージの保護レベルがプロジェクトと同じである必要があります。 **ProtectionLevel** プロパティ設定をプロジェクトで変更する場合は、パッケージのプロパティ設定を手動で更新する必要があります。  

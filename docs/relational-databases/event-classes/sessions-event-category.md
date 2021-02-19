@@ -6,7 +6,7 @@ ms.date: 03/01/2017
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: supportability
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - Sessions event category [SQL Server]
 - SQL Server event classes, Sessions event category
@@ -14,13 +14,13 @@ helpviewer_keywords:
 ms.assetid: 61881d22-381d-407e-8c43-a07ba94389f6
 author: stevestein
 ms.author: sstein
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 3a52fd24dded5190d89597027f88c495a5bbf514
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: fb92933dc21b04111cb52c5af8aab733cdfb76c0
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88329688"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99151480"
 ---
 # <a name="sessions-event-category"></a>Sessions イベント カテゴリ
 [!INCLUDE [SQL Server - ASDB](../../includes/applies-to-version/sql-asdb.md)]

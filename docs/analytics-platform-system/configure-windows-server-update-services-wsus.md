@@ -9,12 +9,12 @@ ms.date: 04/17/2018
 ms.author: murshedz
 ms.reviewer: martinle
 ms.custom: seo-dt-2019
-ms.openlocfilehash: 6882700208e165464261f236cadd00b30503b81f
-ms.sourcegitcommit: 197a6ffb643f93592edf9e90b04810a18be61133
+ms.openlocfilehash: 06ac0126bb12668654c04e6a82b20ca551dd925e
+ms.sourcegitcommit: a49a66dbda0cb16049e092b49c8318ac3865af3c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91379580"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983062"
 ---
 # <a name="configure-windows-server-update-services-wsus-in-analytics-platform-system"></a>Analytics Platform System での Windows Server Update Services (WSUS) の構成
 ここでは、Windows Server Update Services (WSUS) 構成ウィザードを使用して、Analytics Platform System 用に WSUS を構成する手順について説明します。 ソフトウェア更新プログラムをアプライアンスに適用する前に、WSUS を構成する必要があります。 WSUS はアプライアンスの VMM 仮想マシンに既にインストールされています。  
@@ -29,7 +29,7 @@ WSUS を構成するには、次のことを行う必要があります。
   
 -   Analytics Platform System アプライアンスのドメイン管理者アカウントのログイン情報を取得します。  
   
--   **管理コンソール**にアクセスし、アプライアンスの状態情報を表示するためのアクセス許可を持つ Analytics Platform システムログインが必要です。  
+-   **管理コンソール** にアクセスし、アプライアンスの状態情報を表示するためのアクセス許可を持つ Analytics Platform システムログインが必要です。  
   
 -   Microsoft Update から直接更新を同期するのではなく、アップストリーム WSUS サーバーから更新プログラムを同期する予定がある場合は、アップストリーム WSUS サーバーの IP アドレスを確認します。 アップストリーム WSUS サーバーが匿名接続を許可し、SSL をサポートするように設定されていることを確認します。  
   
@@ -39,7 +39,7 @@ WSUS を構成するには、次のことを行う必要があります。
   
 ## <a name="to-configure-windows-server-update-services-wsus"></a>Windows Server Update Services を構成するには (WSUS)  
   
-1.  **管理コンソール**にログインします。 [ **アプライアンスの状態** ] タブで、[ **クラスター** ] および [ **ネットワーク** ] 列がすべてのノードに対して緑色 (または **n**) で表示されていることを確認します。 **アプライアンスの状態**にあるすべてのノードの状態インジケーターを確認します。  
+1.  **管理コンソール** にログインします。 [ **アプライアンスの状態** ] タブで、[ **クラスター** ] および [ **ネットワーク** ] 列がすべてのノードに対して緑色 (または **n**) で表示されていることを確認します。 **アプライアンスの状態** にあるすべてのノードの状態インジケーターを確認します。  
   
     -   緑色または NA インジケーターで続行することは安全です。  
   
@@ -53,7 +53,7 @@ WSUS を構成するには、次のことを行う必要があります。
   
     #### <a name="to-launch-the-configuration-wizard"></a>構成ウィザードを起動するには  
   
-    1.  **サーバーマネージャーダッシュボード**で、[**ツール**] メニューの [ **Windows Server Update Services**] をクリックします。  
+    1.  **サーバーマネージャーダッシュボード** で、[**ツール**] メニューの [ **Windows Server Update Services**] をクリックします。  
   
     2.  [ **Update Services** ] ウィンドウの左側のウィンドウで、仮想マシンの管理ノードサーバー (**_appliance_domain_**) をクリックして展開し、[**オプション**] をクリックします。  
   
@@ -69,7 +69,7 @@ WSUS を構成するには、次のことを行う必要があります。
   
         ![WSUS: 作業を開始する準備](./media/configure-windows-server-update-services-wsus/WSUS_Wiz2.png "WSUS_Wiz2")  
   
-    6.  [ **Microsoft Update 向上プログラムに参加** します] ページで、[ **はい、Microsoft Update 向上プログラムに参加**します] を選択し、[ **次へ**] をクリックします。  
+    6.  [ **Microsoft Update 向上プログラムに参加** します] ページで、[ **はい、Microsoft Update 向上プログラムに参加** します] を選択し、[ **次へ**] をクリックします。  
   
         ![WSUS: 向上プログラム](./media/configure-windows-server-update-services-wsus/WSUS_Wiz3.png "WSUS_Wiz3")  
   
@@ -97,7 +97,7 @@ WSUS を構成するには、次のことを行う必要があります。
   
         ![WSUS: WSUS SSL からの上流サーバーの同期](./media/configure-windows-server-update-services-wsus/WSUS_Wiz4c.png "WSUS_Wiz4c")  
   
-    3.  これがレプリカ サーバーの場合は、**[これはアップストリーム サーバーのレプリカです]** チェック ボックスをオンにします。 [ **更新情報の同期時に SSL を使用** する] と [ **アップストリームサーバーのレプリカ] の**両方を選択できます。  
+    3.  これがレプリカ サーバーの場合は、**[これはアップストリーム サーバーのレプリカです]** チェック ボックスをオンにします。 [ **更新情報の同期時に SSL を使用** する] と [ **アップストリームサーバーのレプリカ] の** 両方を選択できます。  
   
         ![WSUS: 上流サーバーのレプリカ](./media/configure-windows-server-update-services-wsus/WSUS_Wiz4d.png "WSUS_Wiz4d")  
   
@@ -129,7 +129,7 @@ WSUS を構成するには、次のことを行う必要があります。
   
 7.  言語を選択します。  
   
-    [ **次の言語でのみ更新プログラムをダウンロード**する] を選択します。  
+    [ **次の言語でのみ更新プログラムをダウンロード** する] を選択します。  
   
     [ **英語**] を選択し、[ **次へ**] をクリックします。  
   
@@ -145,7 +145,7 @@ WSUS を構成するには、次のことを行う必要があります。
   
     選択した更新プログラムをすべて選択解除します。  
   
-    **SQL Server 2012**、 **SQL Server 2014**、 **Windows Server 2012 r2**、および**System Center 2012 R2-Virtual Machine Manager**を選択し、[**次へ**] をクリックします。  
+    **SQL Server 2012**、 **SQL Server 2014**、 **windows Server 2012 R2**、 **system Center 2012 R2-Virtual Machine Manager**、 **windows Server 2016**、および **System center 2016-Virtual Machine Manager** を選択し、[**次へ**] をクリックします。  
   
 9. [分類] を選択します。  
   
@@ -154,9 +154,9 @@ WSUS を構成するには、次のことを行う必要があります。
   
     以前に選択したすべての更新プログラムを選択解除します。  
   
-    分析プラットフォームシステムアプライアンス用に同期する更新プログラムの [ **重要な更新** プログラムと **セキュリティ更新プログラム** ] を選択し、[ **次へ**] をクリックします。  
+    分析プラットフォームシステムアプライアンス用に同期する更新プログラムの [ **重要な更新** プログラム、 **セキュリティ更新** プログラム、および更新プログラムの **ロールアップ** ] を選択し、[ **次へ**] をクリックします。  
   
-    ![分類の選択](./media/configure-windows-server-update-services-wsus/SQL_Server_PDW_WSUSChooseClassifications.png "SQL_Server_PDW_WSUSChooseClassifications")  
+    ![分類の選択](./media/configure-windows-server-update-services-wsus/sql-server-pdw-wsus-choose-classifications.png "sql-server-pdw-[分類]")  
   
 10. 同期スケジュールを構成します。  
   
@@ -166,7 +166,7 @@ WSUS を構成するには、次のことを行う必要があります。
   
 11. 初期同期を開始します。  
   
-    [ **初期同期を開始**します] を選択し、[ **次へ**] をクリックします。  
+    [ **初期同期を開始** します] を選択し、[ **次へ**] をクリックします。  
   
 12. 完了。  
   
@@ -200,6 +200,6 @@ Analytics Platform System の WSUS を構成した後、次の手順ではアプ
   
     ![コンピューターのグループ メンバーシップの設定](./media/configure-windows-server-update-services-wsus/SQL_Server_PDW_WSUSSetComputerGroupMembership.png "SQL_Server_PDW_WSUSSetComputerGroupMembership")  
   
-6.  新しいコンピューターグループを選択し、その **状態** を [ **任意**] に変更して、[最新の情報に **更新**] をクリックします。 これで、すべてのコンピューターがこのグループに割り当てられ、右側のウィンドウに表示されます。 **このノードがまだステータスを報告していない**などの警告がノードに表示されると、通常は安全です。  
+6.  新しいコンピューターグループを選択し、その **状態** を [ **任意**] に変更して、[最新の情報に **更新**] をクリックします。 これで、すべてのコンピューターがこのグループに割り当てられ、右側のウィンドウに表示されます。 **このノードがまだステータスを報告していない** などの警告がノードに表示されると、通常は安全です。  
   
     ![[状態] を [任意] に変更し、[更新] をクリックします。](./media/configure-windows-server-update-services-wsus/SQL_Server_PDW_WSUSChangeStatusAnyRefresh.png "SQL_Server_PDW_WSUSChangeStatusAnyRefresh")  

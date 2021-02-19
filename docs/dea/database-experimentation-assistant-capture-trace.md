@@ -12,12 +12,12 @@ ms.topic: conceptual
 author: pochiraju
 ms.author: rajpo
 ms.reviewer: mathoma
-ms.openlocfilehash: 67b427e7d1d73b072ce2ec319bfc3cbcbbcfddf9
-ms.sourcegitcommit: 71d2389cf27156fa0404a6e6f65fb7a61c40789a
+ms.openlocfilehash: 9bc1dafd5242dc4be8a9a2947465ed48a01fcb8d
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636102"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100042422"
 ---
 # <a name="capture-a-trace-in-database-experimentation-assistant"></a>Database Experimentation Assistant でトレースをキャプチャする
 
@@ -43,7 +43,7 @@ SQL Server のクエリキャッシュは、評価結果に影響を与える可
         > [!NOTE]
         > トレースファイルへのファイルパスは、SQL Server を実行しているコンピューター上にある必要があります。 SQL Server サービスが特定のアカウントに対して設定されていない場合、トレースファイルを書き込むために、指定したフォルダーに対する書き込みアクセス許可がサービスに必要な場合があります。
 
-3. **[はい、手動でバックアップ**を作成しました] を選択してバックアップを実行したことを確認します。 チェック ボックスをオンにします。
+3. **[はい、手動でバックアップ** を作成しました] を選択してバックアップを実行したことを確認します。 チェック ボックスをオンにします。
 
 4. [ **キャプチャの詳細**] で、次の情報を入力または選択します。
 
@@ -133,19 +133,19 @@ DEA を使用すると、サーバー内のすべてのデータベースまた�
 
 - SQL Server を実行しているコンピューターの名前が有効です。 確認するには、SQL Server Management Studio (SSMS) を使用して SQL Server を実行しているコンピューターに接続します。
 - ファイアウォールの構成により、SQL Server を実行しているコンピューターへの接続がブロックされることはありません。
-- ユーザーには、 [再生 FAQ](./database-experimentation-assistant-replay-trace.md?view=sql-server-ver15#frequently-asked-questions-about-trace-replay)に記載されているアクセス許可があります。
+- ユーザーには、 [再生 FAQ](./database-experimentation-assistant-replay-trace.md#frequently-asked-questions-about-trace-replay)に記載されているアクセス許可があります。
 - トレース名は、標準のロールオーバー規則 (Capture 1) に従っていません \_ 。 代わりに、Capture 1a や Capture1 などのトレース名を試してください \_ 。
 
 表示される可能性のあるエラーとその解決策を次に示します。
 
-|考えられるエラー|ソリューション|  
+|考えられるエラー|解決策|  
 |---|---|  
 |ターゲット SQL Server でトレースを開始できません。必要なアクセス許可があるかどうか、および指定されたトレースファイルパスに対する書き込みアクセス権が SQL Server アカウントにあるかどうかを確認してください。 Sql エラーコード (53)|DEA ツールを実行するユーザーは、SQL Server を実行しているコンピューターにアクセスできる必要があります。 ユーザーに sysadmin ロールが割り当てられている必要があります。|  
 |ターゲット SQL Server でトレースを開始できません。必要なアクセス許可があるかどうか、および指定されたトレースファイルパスに対する書き込みアクセス権が SQL Server アカウントにあるかどうかを確認してください。 Sql エラーコード (19062)|指定されたトレースパスが存在しないか、フォルダーに SQL Server サービスを実行しているアカウント (NETWORK SERVICE など) に対する書き込みアクセス許可がありません。 パスが存在し、トレースを開始するために必要なアクセス許可を持っている必要があります。|  
 |現在、DEA トレースが対象サーバーで実行されています。|アクティブなトレースは、既に対象サーバーで実行されています。 サーバー全体のトレースが既に実行されている場合、新しいトレースを開始することはできません。|  
 |キャプチャトレース用に要求されたデータベースを開くことができません。 このエラーは、データベース名が正しくないことが原因である可能性があります。|指定されたデータベースが存在しないか、現在のユーザーがアクセスできません。 正しいデータベース名を使用してください。|  
 
-*Sql エラーコード*というラベルの他のエラーが表示された場合は、詳細な説明について[データベースエンジンエラー](../relational-databases/errors-events/database-engine-events-and-errors.md)を参照してください。
+*Sql エラーコード* というラベルの他のエラーが表示された場合は、詳細な説明について [データベースエンジンエラー](../relational-databases/errors-events/database-engine-events-and-errors.md)を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

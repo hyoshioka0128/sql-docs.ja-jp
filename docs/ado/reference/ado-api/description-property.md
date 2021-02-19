@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - Error::Description
@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 4b5d6790-6c29-42aa-bf78-d9cfb8ad7965
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: 7060810eba49ad5e1b9385a090788690b43e07eb
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: 7181bffdad12291c08bf4fb5c6a00b4b1b2a6cc5
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88973913"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100034312"
 ---
 # <a name="description-property"></a>Description プロパティ
 [エラー](../../../ado/reference/ado-api/error-object.md)オブジェクトについて説明します。  
@@ -32,9 +32,9 @@ ms.locfileid: "88973913"
  エラーの説明を含む **文字列** 値を返します。  
   
 ## <a name="remarks"></a>解説  
- **Description**プロパティを使用して、エラーの簡単な説明を取得します。 このプロパティを表示して、処理できない、または処理したくないエラーをユーザーに通知します。 文字列は、ADO またはプロバイダーから取得されます。  
+ **Description** プロパティを使用して、エラーの簡単な説明を取得します。 このプロパティを表示して、処理できない、または処理したくないエラーをユーザーに通知します。 文字列は、ADO またはプロバイダーから取得されます。  
   
- プロバイダーは、ADO に特定のエラーテキストを渡す役割を担います。 ADO は、受信したプロバイダーエラーまたは警告ごとに [エラー](../../../ado/reference/ado-api/error-object.md) オブジェクトを **エラーコレクションに** 追加します。 **エラー**コレクションを列挙して、プロバイダーが成功したエラーをトレースします。  
+ プロバイダーは、ADO に特定のエラーテキストを渡す役割を担います。 ADO は、受信したプロバイダーエラーまたは警告ごとに [エラー](../../../ado/reference/ado-api/error-object.md) オブジェクトを **エラーコレクションに** 追加します。 **エラー** コレクションを列挙して、プロバイダーが成功したエラーをトレースします。  
   
 ## <a name="applies-to"></a>適用対象  
  [Error オブジェクト](../../../ado/reference/ado-api/error-object.md)  

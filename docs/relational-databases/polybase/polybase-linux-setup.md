@@ -9,13 +9,13 @@ ms.date: 8/18/2020
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
-monikerRange: '>= sql-server-linux-ver15 || >= sql-server-ver15 || =sqlallproducts-allversions'
-ms.openlocfilehash: 6bed37e6fe0451e45e9d99fd9c15d03d12a30a4b
-ms.sourcegitcommit: 19ae05bc69edce1e3b3d621d7fdd45ea5f74969d
+monikerRange: '>= sql-server-linux-ver15 || >= sql-server-ver15'
+ms.openlocfilehash: 85beab1eb4d256c0433678ca34a8ac2627ebfb52
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88564652"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100062257"
 ---
 # <a name="install-polybase-on-linux"></a>Linux への PolyBase のインストール
 

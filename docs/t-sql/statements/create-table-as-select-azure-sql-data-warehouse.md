@@ -5,19 +5,19 @@ ms.custom: ''
 ms.date: 10/07/2016
 ms.service: sql-data-warehouse
 ms.reviewer: ''
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 ms.assetid: d1e08f88-64ef-4001-8a66-372249df2533
 author: julieMSFT
 ms.author: jrasnick
-monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest || = sqlallproducts-allversions'
-ms.openlocfilehash: 0ab6f4ff4d5681d0dfeb30ded57447ddbb8b24a0
-ms.sourcegitcommit: bd3a135f061e4a49183bbebc7add41ab11872bae
+monikerRange: '>= aps-pdw-2016 || = azure-sqldw-latest'
+ms.openlocfilehash: 9597182b2266ef67878a5d55b96ce731278d9d36
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92300545"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99204918"
 ---
 # <a name="create-table-as-select-azure-synapse-analytics"></a>CREATE TABLE AS SELECT (Azure Synapse Analytics)
 [!INCLUDE[applies-to-version/asa-pdw](../../includes/applies-to-version/asa-pdw.md)]
@@ -125,7 +125,7 @@ SELECT ステートメントは、CTAS と CREATE TABLE の基本的な違いで
 <a name="permissions-bk"></a>  
   
 ## <a name="permissions"></a>アクセス許可  
-CTAS には、 *select_criteria* で参照されるすべてのオブジェクトに対する `SELECT` 権限が必要です。
+CTAS には、*select_criteria* で参照されるすべてのオブジェクトに対する `SELECT` 権限が必要です。
 
 テーブルを作成する権限については、CREATE TABLE の「[権限](./create-table-azure-sql-data-warehouse.md#Permissions)」を参照してください。 
   
@@ -142,7 +142,7 @@ CTAS には、 *select_criteria* で参照されるすべてのオブジェク�
 
 CTAS では [SET ROWCOUNT &#40;Transact-SQL&#41;](../../t-sql/statements/set-rowcount-transact-sql.md) の効果はありません。 同様の動作を実現するには、[TOP &#40;Transact-SQL&#41;](../../t-sql/queries/top-transact-sql.md) を使用します。  
  
-詳細については、CREATE TABLE の「[制限事項と制約](https://msdn.microsoft.com/library/mt203953/#LimitationsRestrictions)」を参照してください。
+詳細については、CREATE TABLE の「[制限事項と制約](./create-table-azure-sql-data-warehouse.md#LimitationsRestrictions)」を参照してください。
 
 <a name="locking-behavior-bk"></a>
   
@@ -848,4 +848,3 @@ OPTION (MAXDOP 1);
  [DROP EXTERNAL TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/drop-external-table-transact-sql.md)   
  [ALTER TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/alter-table-transact-sql.md)   
  [ALTER EXTERNAL TABLE &#40;Transact-SQL&#41;](./create-external-table-transact-sql.md)  
-  

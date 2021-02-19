@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 dev_langs:
 - C++
@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: affc847c-a533-4c8a-bdff-3682fdb5df5f
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: ad07d0539ffffa63193721064a1d1e0c21ba210c
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: ed161654a2a2c0e112281294b41c826c299e9344
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88989793"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100051803"
 ---
 # <a name="recordset-ado-for-visual-c-syntax"></a>Recordset (Visual C++ 構文用の ADO)
 ## <a name="methods"></a>メソッド  

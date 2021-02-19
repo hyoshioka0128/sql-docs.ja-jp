@@ -9,12 +9,12 @@ ms.date: 04/17/2018
 ms.author: murshedz
 ms.reviewer: martinle
 ms.custom: seo-dt-2019
-ms.openlocfilehash: f80767ef3b371260e916aef386dd1c8dbc755586
-ms.sourcegitcommit: 7345e4f05d6c06e1bcd73747a4a47873b3f3251f
+ms.openlocfilehash: dc6b582895a684386ed2d14b0c31612dcd0a47d1
+ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88777731"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97641568"
 ---
 # <a name="transparent-data-encryption"></a>透過的なデータ暗号化
 セキュリティで保護されたシステムの設計、機密資産の暗号化、データベース サーバーに対するファイアウォールの構築などの、データベースを保護するいくつかの対策を講じることができます。 ただし、物理メディア (ドライブやバックアップテープなど) が盗まれた場合は、悪意のある人物がデータベースを復元またはアタッチしてデータを参照するだけで済みます。 解決策の 1 つは、データベース内の機密データを暗号化し、データの暗号化に使用されるキーを証明書で保護することです。 これにより、キーを持たない人物によるデータの使用を防止できますが、このような保護は事前に計画する必要があります。  
@@ -42,7 +42,7 @@ TDE を使用するには、次の手順を実行します。 最初の3つの�
   
 1.  マスターキーを master データベースに作成します。  
   
-2.  **Sp_pdw_database_encryption**を使用して、SQL Server PDW で tde を有効にします。 この操作では、一時データベースを変更して、将来の一時データを確実に保護します。一時テーブルを持つアクティブなセッションがある場合は、この操作を実行しようとすると失敗します。 **sp_pdw_database_encryption** は、pdw システムログでユーザーデータのマスキングを有効にします。 (PDW システムログでのユーザーデータのマスキングの詳細については、「 [sp_pdw_log_user_data_masking](../relational-databases/system-stored-procedures/sp-pdw-log-user-data-masking-sql-data-warehouse.md)」を参照してください)。  
+2.  **Sp_pdw_database_encryption** を使用して、SQL Server PDW で tde を有効にします。 この操作では、一時データベースを変更して、将来の一時データを確実に保護します。一時テーブルを持つアクティブなセッションがある場合は、この操作を実行しようとすると失敗します。 **sp_pdw_database_encryption** は、pdw システムログでユーザーデータのマスキングを有効にします。 (PDW システムログでのユーザーデータのマスキングの詳細については、「 [sp_pdw_log_user_data_masking](../relational-databases/system-stored-procedures/sp-pdw-log-user-data-masking-sql-data-warehouse.md)」を参照してください)。  
   
 3.  [Sp_pdw_add_network_credentials](../relational-databases/system-stored-procedures/sp-pdw-add-network-credentials-sql-data-warehouse.md)を使用して、証明書のバックアップが格納される共有への認証と書き込みが可能な資格情報を作成します。 目的のストレージサーバーの資格情報が既に存在する場合は、既存の資格情報を使用できます。  
   
@@ -142,7 +142,7 @@ TDE に関連するメタデータを表示するには、 `CONTROL SERVER` ア�
 ## <a name="considerations"></a>考慮事項  
 データベース暗号化操作の再暗号化スキャンが実行されている間は、データベースに対するメンテナンス操作が無効になります。  
   
-データベースの暗号化の状態を確認するには、 **dm_pdw_nodes_database_encryption_keys** 動的管理ビューを使用します。 詳細については、この記事の前の方の「 *カタログビューと動的管理ビュー* 」を参照してください。  
+データベース暗号化の状態を確認するには、[動的管理ビューの **sys.dm_pdw_nodes_database_encryption_keys** ] を使用します。 詳細については、この記事の前の方の「 *カタログビューと動的管理ビュー* 」を参照してください。  
   
 ### <a name="restrictions"></a>制限  
 `CREATE DATABASE ENCRYPTION KEY`、、 `ALTER DATABASE ENCRYPTION KEY` `DROP DATABASE ENCRYPTION KEY` 、またはステートメントでは、次の操作は許可されません `ALTER DATABASE...SET ENCRYPTION` 。  
@@ -197,7 +197,7 @@ SELECT TOP 1 encryption_state
 データベース暗号化キーを変更する前にトランザクション ログに書き込まれたデータは、以前のデータベース暗号化キーで暗号化されます。  
   
 ### <a name="pdw-activity-logs"></a>PDW アクティビティログ  
-SQL Server PDW は、トラブルシューティングを目的とした一連のログを保持します。 (これは、トランザクションログ、SQL Server エラーログ、または Windows イベントログではないことに注意してください)。これらの PDW アクティビティログには、完全なステートメントをクリアテキストで含めることができ、その一部にはユーザーデータを含めることができます。 一般的な例として、 **INSERT** ステートメントと **UPDATE** ステートメントがあります。 **Sp_pdw_log_user_data_masking**を使用すると、ユーザーデータのマスキングを明示的に有効または無効にすることができます。 SQL Server PDW の暗号化を有効にすると、PDW アクティビティログ内のユーザーデータのマスクが自動的にオンになり、保護されます。 **sp_pdw_log_user_data_masking** は、tde を使用しない場合にステートメントをマスクするためにも使用できますが、Microsoft サポートチームが問題を分析する能力を大幅に削減するため、この方法はお勧めしません。  
+SQL Server PDW は、トラブルシューティングを目的とした一連のログを保持します。 (これは、トランザクションログ、SQL Server エラーログ、または Windows イベントログではないことに注意してください)。これらの PDW アクティビティログには、完全なステートメントをクリアテキストで含めることができ、その一部にはユーザーデータを含めることができます。 一般的な例として、 **INSERT** ステートメントと **UPDATE** ステートメントがあります。 **Sp_pdw_log_user_data_masking** を使用すると、ユーザーデータのマスキングを明示的に有効または無効にすることができます。 SQL Server PDW の暗号化を有効にすると、PDW アクティビティログ内のユーザーデータのマスクが自動的にオンになり、保護されます。 **sp_pdw_log_user_data_masking** は、tde を使用しない場合にステートメントをマスクするためにも使用できますが、Microsoft サポートチームが問題を分析する能力を大幅に削減するため、この方法はお勧めしません。  
   
 ### <a name="transparent-data-encryption-and-the-tempdb-system-database"></a>Transparent Data Encryption と tempdb システム データベース  
 [Sp_pdw_database_encryption](../relational-databases/system-stored-procedures/sp-pdw-database-encryption-sql-data-warehouse.md)を使用して暗号化が有効になっている場合、tempdb システムデータベースは暗号化されます。 これは、すべてのデータベースで TDE を使用する前に必要です。 これにより、SQL Server PDW の同じインスタンスで暗号化されていないデータベースのパフォーマンスが低下する可能性があります。  
@@ -207,12 +207,12 @@ SQL Server PDW は、トラブルシューティングを目的とした一連�
   
 システムは、ユーザーの介入を必要とせずに (パスワードの入力など)、キーにアクセスできます。 証明書が使用できない場合は、適切な証明書が使用可能になるまで DEK の暗号化を解除できないことを示すエラーが出力されます。  
   
-あるアプライアンスから別のアプライアンスにデータベースを移動する場合、その ' DEK ' を保護するために使用される証明書は、移行先サーバーで最初に復元する必要があります。 その後、データベースを通常どおり復元できます。 詳細については、標準の SQL Server のドキュメントを参照してください。 [TDE で保護されたデータベースを別の SQL Server に移動](../relational-databases/security/encryption/move-a-tde-protected-database-to-another-sql-server.md?view=sql-server-ver15)します。  
+あるアプライアンスから別のアプライアンスにデータベースを移動する場合、その ' DEK ' を保護するために使用される証明書は、移行先サーバーで最初に復元する必要があります。 その後、データベースを通常どおり復元できます。 詳細については、標準の SQL Server のドキュメントを参照してください。 [TDE で保護されたデータベースを別の SQL Server に移動](../relational-databases/security/encryption/move-a-tde-protected-database-to-another-sql-server.md)します。  
   
 DEKs の暗号化に使用される証明書は、それらを使用するデータベースバックアップが存在する限り保持する必要があります。 証明書のバックアップには証明書の秘密キーが含まれている必要があります。秘密キーがないと、データベースの復元に証明書を使用できないためです。 これらの証明書の秘密キーのバックアップは別のファイルに保存され、証明書の復元用に指定する必要があるパスワードによって保護されます。  
   
 ## <a name="restoring-the-master-database"></a>Master データベースの復元  
-Master データベースは、ディザスターリカバリーの一環として、 **Dwconfig**を使用して復元できます。  
+Master データベースは、ディザスターリカバリーの一環として、 **Dwconfig** を使用して復元できます。  
   
 -   制御ノードが変更されていない場合、つまり、master データベースのバックアップが作成されたのとは異なるアプライアンスに master データベースが復元された場合、DMK とすべての証明書は追加の操作なしで読み取り可能になります。  
   
@@ -246,7 +246,7 @@ Master データベースは、ディザスターリカバリーの一環とし�
   
 アップグレード時に、ユーザーデータベースが暗号化されていて、DMK パスワードが指定されていない場合、アップグレード操作は失敗します。 置換中に、DMK が存在するときに正しいパスワードが指定されていない場合、操作は DMK の回復手順をスキップします。 他のすべての手順は、[VM の置換] アクションの最後に完了します。ただし、追加の手順が必要であることを示すために、操作は最後に失敗を報告します。 セットアップログ ( **\ProgramData\Microsoft\Microsoft SQL Server Parallel Data Warehouse\100\Logs\Setup \\<タイムスタンプ> のセットアップ**) で、最後の近くに次の警告が表示されます。  
   
-`*** WARNING \*\*\* DMK is detected in master database, but could not be recovered automatically! The DMK password was either not provided or is incorrect!`
+`**_ WARNING \_\*\* DMK is detected in master database, but could not be recovered automatically! The DMK password was either not provided or is incorrect!`
   
 次のステートメントを PDW で手動で実行し、DMK を回復するためにアプライアンスを再起動します。  
   

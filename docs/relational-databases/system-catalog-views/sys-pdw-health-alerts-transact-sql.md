@@ -10,13 +10,13 @@ ms.topic: conceptual
 ms.assetid: 49c01e5f-ee47-41a0-871d-35a759f50851
 author: ronortloff
 ms.author: rortloff
-monikerRange: '>= aps-pdw-2016 || = sqlallproducts-allversions'
-ms.openlocfilehash: e2e265a7905313a988a15fb29de0a8c86b397ac8
-ms.sourcegitcommit: 22dacedeb6e8721e7cdb6279a946d4002cfb5da3
+monikerRange: '>= aps-pdw-2016'
+ms.openlocfilehash: fcdb396016c58f82f3e67f08af2b5489adb40731
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92036754"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97472943"
 ---
 # <a name="syspdw_health_alerts-transact-sql"></a>sys.pdw_health_alerts (Transact-sql)
 [!INCLUDE [pdw](../../includes/applies-to-version/pdw.md)]
@@ -30,7 +30,7 @@ ms.locfileid: "92036754"
 |alert_name|**nvarchar (255)**|アラートの名前。|NOT NULL|  
 |state|**nvarchar(32)**|アラートの状態。|NOT NULL<br /><br /> 指定できる値<br /><br /> 操作<br /><br /> 'NonOperational'<br /><br /> Degraded<br /><br /> 障害|  
 |severity|**nvarchar(32)**|アラートの重大度。|NOT NULL<br /><br /> 指定できる値<br /><br /> 専用<br /><br /> 要する<br /><br /> エラー|  
-|type|**nvarchar(32)**|アラートの種類。|NOT NULL<br /><br /> 指定できる値<br /><br /> StatusChange-デバイスの状態が変更されました。<br /><br /> しきい値-値がしきい値を超えました。|  
+|型|**nvarchar(32)**|アラートの種類。|NOT NULL<br /><br /> 指定できる値<br /><br /> StatusChange-デバイスの状態が変更されました。<br /><br /> しきい値-値がしきい値を超えました。|  
 |description|**nvarchar (4000)**|アラートの説明。|NOT NULL|  
 |condition|**nvarchar (255)**|Type = Threshold の場合に使用します。 アラートのしきい値の計算方法を定義します。|NULL|  
 |status|**nvarchar(32)**|Alert status|NULL|  

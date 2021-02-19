@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.assetid: 86cbd39f-6dac-409a-9ce1-7dd54403f84b
 author: nahk-ivanov
 ms.author: alexiva
-ms.openlocfilehash: 5b833a97fceeaf09b5eb6ffb86ac3abeb06e6bb0
-ms.sourcegitcommit: a41e1f4199785a2b8019a419a1f3dcdc15571044
+ms.openlocfilehash: cd55ac5432784cb3af727fb923397fa9717dab40
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91987919"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100017802"
 ---
 # <a name="migrating-db2-data-into-sql-server-db2tosql"></a>DB2 データの SQL Server への移行 (DB2ToSQL)
 変換されたオブジェクトとを正常に同期したら [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 、DB2 からにデータを移行でき [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。  
@@ -28,7 +28,7 @@ ms.locfileid: "91987919"
   
 -   このダイアログボックスを使用すると、移行バッチサイズ、テーブルロック、制約チェック、null 値処理、id 値の処理などのオプションを設定できます。 プロジェクトの移行設定の詳細については、「 [プロジェクトの設定 (移行)](./project-settings-migration-db2tosql.md)」を参照してください。  
   
--   [**プロジェクトの設定**] ダイアログボックスの**移行エンジン**を使用すると、ユーザーは2種類のデータ移行エンジンを使用して移行プロセスを実行できます。  
+-   [**プロジェクトの設定**] ダイアログボックスの **移行エンジン** を使用すると、ユーザーは2種類のデータ移行エンジンを使用して移行プロセスを実行できます。  
   
     1.  クライアント側のデータ移行エンジン  
   
@@ -41,7 +41,7 @@ ms.locfileid: "91987919"
 -   [ **プロジェクトの設定**] で、[ **クライアント側のデータ移行エンジン** ] オプションが設定されています。  
   
     > [!NOTE]  
-    > **クライアント側のデータ移行エンジン**は ssma アプリケーション内に存在するため、拡張パックの可用性には依存しません。  
+    > **クライアント側のデータ移行エンジン** は ssma アプリケーション内に存在するため、拡張パックの可用性には依存しません。  
   
 **サーバー側のデータ移行:**  
   
@@ -72,7 +72,7 @@ ms.locfileid: "91987919"
   
     **クライアント側のデータ移行:**  
   
-    -   **クライアント側のデータ移行**を実行するには、[**プロジェクトの設定**] ダイアログボックスで [**クライアント側のデータ移行エンジン**] オプションを選択します。  
+    -   **クライアント側のデータ移行** を実行するには、[**プロジェクトの設定**] ダイアログボックスで [**クライアント側のデータ移行エンジン**] オプションを選択します。  
   
     **サーバー側のデータ移行:**  
   
@@ -82,7 +82,7 @@ ms.locfileid: "91987919"
   
         2.  SQL Server エージェントサービスは SQL Server のインスタンスで実行されています。  
   
-    -   **サーバー側のデータ移行**を実行するには、[**プロジェクトの設定**] ダイアログボックスで [**サーバー側のデータ移行エンジン**] オプションを選択します。  
+    -   **サーバー側のデータ移行** を実行するには、[**プロジェクトの設定**] ダイアログボックスで [**サーバー側のデータ移行エンジン**] オプションを選択します。  
   
 4.  DB2 メタデータエクスプローラーで [ **スキーマ** ] を右クリックし、[ **データの移行**] をクリックします。 また、個々のオブジェクトまたはオブジェクトのカテゴリのデータを移行することもできます。オブジェクトまたはその親フォルダーを右クリックします。[ **データの移行** ] オプションを選択します。  
   
@@ -91,7 +91,7 @@ ms.locfileid: "91987919"
   
 5.  [ **DB2 への接続** ] ダイアログボックスで、接続の資格情報を入力し、[ **接続**] をクリックします。 DB2 への接続の詳細については、「 [Db2 データベースへの接続 &#40;DB2ToSQL](../../ssma/db2/connecting-to-db2-database-db2tosql.md) 」を参照してください&#41;  
   
-    ターゲットデータベースに接続するには、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [ **SQL Server への接続** ] ダイアログボックスに接続資格情報を入力し、[ **接続**] をクリックします。 への接続の詳細につい [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ては、「 [SQL Server への接続](./connecting-to-sql-server-db2etosql.md)」を参照してください。  
+    ターゲットデータベースに接続するには、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] [ **SQL Server への接続** ] ダイアログボックスに接続資格情報を入力し、[ **接続**] をクリックします。 への接続の詳細につい [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ては、「 [SQL Server への接続](./connecting-to-sql-server-db2tosql.md)」を参照してください。  
   
     メッセージが [ **出力** ] ウィンドウに表示されます。 移行が完了すると、 **データ移行レポート** が表示されます。 データが移行されなかった場合は、エラーが含まれている行をクリックし、[ **詳細**] をクリックします。 レポートの作成が完了したら、[ **閉じる**] をクリックします。 データ移行レポートの詳細については、「[データ移行レポート (SSMA Common)](../sybase/data-migration-report-sybasetosql.md) 」を参照してください。  
   

@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.assetid: ec081d42-57e4-43c7-9e1c-317ba8f23437
 author: markingmyname
 ms.author: maghan
-monikerRange: =azuresqldb-current||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 8df54961057d12191e732fc4f3ec287f9bd32ef9
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 31aaceb646bf735731317177f579df638da1b5c9
+ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89523689"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97426620"
 ---
 # <a name="temporal-table-system-consistency-checks"></a>テンポラル テーブルのシステム一貫性のチェック
 
@@ -29,7 +29,7 @@ ms.locfileid: "89523689"
 
 ## <a name="system-consistency-checks"></a>システムの一貫性のチェック
 
-**SYSTEM_VERSIONING** を **ON**に設定する前に、履歴テーブルと現行テーブルに対し、一連のチェックが実行されます。 これらのチェックは、スキーマ チェックおよびデータ チェックにグループ化されます (履歴テーブルが空でない場合)。 また、システムではランタイムの一貫性チェックも実行されます。
+**SYSTEM_VERSIONING** を **ON** に設定する前に、履歴テーブルと現行テーブルに対し、一連のチェックが実行されます。 これらのチェックは、スキーマ チェックおよびデータ チェックにグループ化されます (履歴テーブルが空でない場合)。 また、システムではランタイムの一貫性チェックも実行されます。
 
 ### <a name="schema-check"></a>スキーマのチェック
 
@@ -37,7 +37,7 @@ ms.locfileid: "89523689"
 
 1. 現行テーブルと履歴テーブルの双方の列名と列数が同じです。
 2. 現行テーブルと履歴テーブルのそれぞれの列のデータ型が一致しています。
-3. 期間列が **NOT NULL**に設定されています。
+3. 期間列が **NOT NULL** に設定されています。
 4. 現行テーブルには主キーの制約がありますが、履歴テーブルには主キーの制約がありません。
 5. 履歴テーブルに、 **IDENTITY** 列が定義されていません。
 6. 履歴テーブルにトリガーが定義されていません。

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - GO
 - GO_TSQL
@@ -18,14 +18,14 @@ helpviewer_keywords:
 - ending batches [SQL Server]
 - GO command
 ms.assetid: b2ca6791-3a07-4209-ba8e-2248a92dd738
-author: rothja
-ms.author: jroth
-ms.openlocfilehash: 6b342052d848597a7422adf5594e25a2b799c7b3
-ms.sourcegitcommit: cfa04a73b26312bf18d8f6296891679166e2754d
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: 527a67471c502eaaabe57751f61bdd81db8ea752
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92193276"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99200479"
 ---
 # <a name="sql-server-utilities-statements---go"></a>SQL Server のユーティリティのステートメント - GO
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

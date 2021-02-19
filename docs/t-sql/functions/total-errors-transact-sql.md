@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - '@@TOTAL_ERRORS'
 - '@@TOTAL_ERRORS_TSQL'
@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: 09e62428-ee0e-4ef5-b969-da9d255f1199
 author: julieMSFT
 ms.author: jrasnick
-ms.openlocfilehash: 851909caa64e8391275d5908f49e652bf1d993ec
-ms.sourcegitcommit: 197a6ffb643f93592edf9e90b04810a18be61133
+ms.openlocfilehash: 55c3752ecc2f515e8309b753b578d989081233e4
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91380257"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99158679"
 ---
 # <a name="x40x40total_errors-transact-sql"></a>&#x40;&#x40;TOTAL_ERRORS (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -50,7 +50,7 @@ ms.locfileid: "91380257"
  **integer**  
   
 ## <a name="remarks"></a>注釈  
- この関数によって、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で発生したすべての書き込みエラーが返されるわけではありません。 致命的ではない書き込みエラーが発生した場合は、サーバー自身によって処理されることがあり、これはエラーとして扱われません。 いくつか含むレポートを表示する [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] など、エラーの合計数の統計情報の実行 **sp_monitor**です。  
+ この関数によって、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で発生したすべての書き込みエラーが返されるわけではありません。 致命的ではない書き込みエラーが発生した場合は、サーバー自身によって処理されることがあり、これはエラーとして扱われません。 いくつか含むレポートを表示する [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] など、エラーの合計数の統計情報の実行 **sp_monitor** です。  
   
 ## <a name="examples"></a>例  
  次の例では、現在のシステム上の日付と時刻において、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で発生したエラー数を示します。  

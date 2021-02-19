@@ -7,15 +7,14 @@ ms.date: 07/14/2020
 ms.topic: conceptual
 author: garyericson
 ms.author: garye
-ms.reviewer: davidph
-ms.custom: contperfq1, seo-lt-2019
-monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15||=sqlallproducts-allversions'
-ms.openlocfilehash: f51998b722748bdfe51b773e251de88c8cac07a2
-ms.sourcegitcommit: afb02c275b7c79fbd90fac4bfcfd92b00a399019
+ms.custom: contperf-fy21q1, seo-lt-2019
+monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
+ms.openlocfilehash: 63138dbd9ef2acd45dfc508bac20bd6694d49d90
+ms.sourcegitcommit: cb8e2ce950d8199470ff1259c9430f0560f0dc1d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91956526"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97878889"
 ---
 # <a name="security-architecture-for-the-extensibility-framework-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services の機能拡張フレームワークに関するセキュリティ アーキテクチャ
 
@@ -39,7 +38,7 @@ SQL Server での機能拡張の主要概念とコンポーネントの詳細に
 
 SQL Server のデータベース ログインとロールのデータ セキュリティ モデルは、外部スクリプトにまで拡張されています。 SQL Server データを使用する外部スクリプトまたはコンピューティング コンテキストとして SQL Server で実行される外部スクリプトを実行する場合、SQL Server ログインまたは Windows ユーザー アカウントが必要です。 クエリを実行するアクセス許可を持つデータベース ユーザーは、外部スクリプトから同じデータにアクセスできます。
 
-ログインまたはユーザー アカウントによって、外部スクリプトの要件に応じて、複数レベルのアクセスを必要とする場合のある*セキュリティ プリンシパル*が特定されます。
+ログインまたはユーザー アカウントによって、外部スクリプトの要件に応じて、複数レベルのアクセスを必要とする場合のある *セキュリティ プリンシパル* が特定されます。
 
 + 外部スクリプトが有効になっているデータベースにアクセスするためのアクセス許可。
 + テーブルなどのセキュリティで保護されたオブジェクトからデータを読み取るためのアクセス許可。
@@ -73,11 +72,11 @@ SQL Server のデータベース ログインとロールのデータ セキュ�
 
 <a name="launchpad"></a>
 
-::: moniker range="=sql-server-2016||=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016||=sql-server-2017"
 
 ## <a name="services-used-in-external-processing-launchpad"></a>外部処理で使用されるサービス (スタート パッド)
 
-機能拡張フレームワークによって、SQL Server のインストールで[サービスの一覧](../../database-engine/configure-windows/configure-windows-service-accounts-and-permissions.md#Service_Details)に次の新しい NT サービスが追加されます:[**SQL Server Launchpad (MSSSQLSERVER)** ](extensibility-framework.md#launchpad)。
+機能拡張フレームワークによって、SQL Server のインストールで [サービスの一覧](../../database-engine/configure-windows/configure-windows-service-accounts-and-permissions.md#Service_Details)に次の新しい NT サービスが追加されます:[**SQL Server Launchpad (MSSSQLSERVER)**](extensibility-framework.md#launchpad)。
 
 データベース エンジンでは、SQL Server **スタート パッド** サービスを使用して、外部スクリプト セッションが別個のプロセスとしてインスタンス化されます。 
 このプロセスは低い特権のアカウントで実行されます。 このアカウントは、SQL Server、スタート パッド自体、およびストアド プロシージャまたはホスト クエリの実行に使用されたユーザー ID とは異なります。 スクリプトを、低い特権のアカウント下の別のプロセスで実行することは、SQL Server での外部スクリプトのセキュリティおよび分離モデルの基礎です。
@@ -89,11 +88,11 @@ SQL Server のデータベース ログインとロールのデータ セキュ�
 
 ::: moniker-end
 
-::: moniker range=">=sql-server-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15"
 
 ## <a name="services-used-in-external-processing-launchpad"></a>外部処理で使用されるサービス (スタート パッド)
 
-機能拡張フレームワークによって、SQL Server のインストールで[サービスの一覧](../../database-engine/configure-windows/configure-windows-service-accounts-and-permissions.md#Service_Details)に次の新しい NT サービスが追加されます:[**SQL Server スタート パッド (MSSSQLSERVER)** ](extensibility-framework.md#launchpad)。
+機能拡張フレームワークによって、SQL Server のインストールで [サービスの一覧](../../database-engine/configure-windows/configure-windows-service-accounts-and-permissions.md#Service_Details)に次の新しい NT サービスが追加されます:[**SQL Server スタート パッド (MSSSQLSERVER)**](extensibility-framework.md#launchpad)。
 
 データベース エンジンでは、SQL Server **スタート パッド** サービスを使用して、外部スクリプト セッションが別個のプロセスとしてインスタンス化されます。 
 プロセスはスタート パッドのユーザー ID で実行されますが、AppContainer 内に含められるという制限が追加されます。 スクリプトを、AppContainer 下の別のプロセスで実行することは、SQL Server での外部スクリプトのセキュリティおよび分離モデルの基礎です。
@@ -105,7 +104,7 @@ SQL Server のデータベース ログインとロールのデータ セキュ�
 
 ::: moniker-end
 
-::: moniker range=">=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-linux-ver15"
 
 ## <a name="services-used-in-external-processing"></a>外部処理で使用されるサービス
 
@@ -119,7 +118,7 @@ SQL Server のデータベース ログインとロールのデータ セキュ�
 
 <a name="sqlrusergroup"></a>
 
-::: moniker range="=sql-server-2016||=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016||=sql-server-2017"
 
 ## <a name="identities-used-in-processing-sqlrusergroup"></a>処理で使用される ID (SQLRUserGroup)
 
@@ -129,7 +128,7 @@ SQL Server のデータベース ログインとロールのデータ セキュ�
 
 + ユーザー アカウント プールのサイズは静的であり、既定値は 20 です。これにより、20 の同時セッションがサポートされます。 同時に起動できる外部ランタイム セッションの数は、このユーザー アカウント プールのサイズによって制限されます。 
 
-+ プール内のワーカー アカウント名の形式は、SQLInstanceName*nn* です。 たとえば、既定のインスタンスの場合、**SQLRUserGroup** には、MSSQLSERVER01、MSSQLSERVER02 (MSSQLSERVER20 まで以後同様) という名前のアカウントが含まれます。
++ プール内のワーカー アカウント名の形式は、SQLInstanceName *nn* です。 たとえば、既定のインスタンスの場合、**SQLRUserGroup** には、MSSQLSERVER01、MSSQLSERVER02 (MSSQLSERVER20 まで以後同様) という名前のアカウントが含まれます。
 
 並列化されたタスクでは、追加のアカウントは使用されません。 たとえば、ユーザーが並列処理を使用するスコアリング タスクを実行する場合、同じワーカー アカウントがすべてのスレッドで再利用されます。 Machine Learning を頻繁に使用する場合、外部スクリプトの実行に使用するアカウントの数を増やすことができます。 詳細については、「[SQL Server Machine Learning Services での外部スクリプトの同時実行のスケーリング](../../machine-learning/administration/scale-concurrent-execution-external-scripts.md)」を参照してください。
 
@@ -149,7 +148,7 @@ SQL Server の機密性の高いリソースを保護するために、**SQLRUse
 
 ::: moniker-end
 
-::: moniker range=">=sql-server-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15"
 
 ## <a name="appcontainer-isolation"></a>AppContainer の分離
 
@@ -159,18 +158,18 @@ AppContainer は、SQL Server に実装されているため、内部メカニ�
 
 ## <a name="identity-mapping"></a>ID のマッピング
 
-セッションを開始すると、呼び出し元のユーザーの ID がスタート パッドによって**AppContainer** にマップされます。
+セッションを開始すると、呼び出し元のユーザーの ID がスタート パッドによって **AppContainer** にマップされます。
 
 > [!Note]
 > SQL Server 2019 以降では、**SQLRUserGroup** には、複数のワーカー アカウントではなく、1 つの SQL Server スタート パッド サービス アカウントとなったメンバーが 1 つだけ用意されます。
 
 ::: moniker-end
 
-::: moniker range=">=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-linux-ver15"
 
 ## <a name="identity-mapping"></a>ID のマッピング
 
-**スタート パッド** (ダブル 'D' - [mssql-launchpadd](extensibility-framework.md#launchpad)) デーモンでは、"スタート パッド GUID" フォルダーとサテライト証明書を使用して、呼び出し元ユーザーの ID が別の**スタート パッド** (シングル 'D') プロセスにマップされます。 これらのスタート パッド GUID フォルダーは `/var/opt/mssql-extensibility/data/` の下に作成されます。 スタート パッド プロセスでは、この証明書を使用して SQL に対する認証が実行され、スタート パッド GUID フォルダーの下に各セッション GUID 用の一時フォルダーが作成されます。 サテライト (R、Python、または ExtHost) プロセスには、スタート パッド GUID フォルダー、その下の証明書、およびそのセッション GUID フォルダーへのアクセス権があります。
+**スタート パッド** (ダブル 'D' - [mssql-launchpadd](extensibility-framework.md#launchpad)) デーモンでは、"スタート パッド GUID" フォルダーとサテライト証明書を使用して、呼び出し元ユーザーの ID が別の **スタート パッド** (シングル 'D') プロセスにマップされます。 これらのスタート パッド GUID フォルダーは `/var/opt/mssql-extensibility/data/` の下に作成されます。 スタート パッド プロセスでは、この証明書を使用して SQL に対する認証が実行され、スタート パッド GUID フォルダーの下に各セッション GUID 用の一時フォルダーが作成されます。 サテライト (R、Python、または ExtHost) プロセスには、スタート パッド GUID フォルダー、その下の証明書、およびそのセッション GUID フォルダーへのアクセス権があります。
 
 次の SQL スクリプトでは、スタート パッドのフォルダーの内容が出力されます。
 
@@ -190,7 +189,7 @@ print(system("ls -al /var/opt/mssql-extensibility/data/*/*"))
 
 <a name="implied-authentication"></a>
 
-::: moniker range="=sql-server-2016||=sql-server-2017||=sqlallproducts-allversions"
+::: moniker range="=sql-server-2016||=sql-server-2017"
 
 ## <a name="implied-authentication-loopback-requests"></a>暗黙の認証 (ループバック要求)
 
@@ -210,7 +209,7 @@ print(system("ls -al /var/opt/mssql-extensibility/data/*/*"))
 
 ::: moniker-end
 
-::: moniker range=">=sql-server-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-ver15"
 
 ## <a name="implied-authentication-loopback-requests"></a>暗黙の認証 (ループバック要求)
 
@@ -228,7 +227,7 @@ print(system("ls -al /var/opt/mssql-extensibility/data/*/*"))
 
 ::: moniker-end
 
-::: moniker range=">=sql-server-linux-ver15||=sqlallproducts-allversions"
+::: moniker range=">=sql-server-linux-ver15"
 
 ## <a name="implied-authentication-loopback-requests"></a>暗黙の認証 (ループバック要求)
 
@@ -250,7 +249,7 @@ print(system("ls -al /var/opt/mssql-extensibility/data/*/*"))
 
 [透過的なデータ暗号化 (TDE)](../../relational-databases/security/encryption/transparent-data-encryption.md) は、外部スクリプト ランタイムとの間で送受信されるデータに対してはサポートされません。 これは、外部プロセスが SQL Server プロセスの外部で実行されるためです。 このため、外部ランタイムによって使用されるデータは、データベース エンジンの暗号化機能によって保護されません。 この動作は、データベースからデータを読み取り、コピーを作成する、SQL Server コンピューターで実行される他のクライアントと同様です。
 
-このため、TDE は、外部スクリプトで使用するデータ、ディスクに保存されるデータ、または保存される中間結果のいずれにも適用**されません**。 ただし、Windows BitLocker 暗号化や、ファイルまたはフォルダー レベルで適用されるサード パーティ暗号化など、その他の種類の暗号化は引き続き適用されます。
+このため、TDE は、外部スクリプトで使用するデータ、ディスクに保存されるデータ、または保存される中間結果のいずれにも適用 **されません**。 ただし、Windows BitLocker 暗号化や、ファイルまたはフォルダー レベルで適用されるサード パーティ暗号化など、その他の種類の暗号化は引き続き適用されます。
 
 [Always Encrypted](../../relational-databases/security/encryption/overview-of-key-management-for-always-encrypted.md) の場合、外部ランタイムは暗号化キーにアクセスできません。 そのため、スクリプトにデータを送信できません。
 

@@ -1,13 +1,13 @@
 ---
 description: sys.column_store_segments (Transact-SQL)
-title: column_store_segments (Transact-sql) |Microsoft Docs
+title: sys.column_store_segments (Transact-sql) |Microsoft Docs
 ms.custom: ''
 ms.date: 09/24/2020
 ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - column_store_segments
 - sys.column_store_segments_TSQL
@@ -18,14 +18,14 @@ dev_langs:
 helpviewer_keywords:
 - sys.column_store_segments catalog view
 ms.assetid: 1253448c-2ec9-4900-ae9f-461d6b51b2ea
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 3957a13e4d3e7f5eff32b0417e65d33a573e5510
-ms.sourcegitcommit: 63aef5a96905f0b026322abc9ccb862ee497eebe
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.openlocfilehash: 4a4aa951ac82857f16b4866ed581c883ffcda7bb
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91364199"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99203449"
 ---
 # <a name="syscolumn_store_segments-transact-sql"></a>sys.column_store_segments (Transact-SQL)
 [!INCLUDE[sqlserver](../../includes/applies-to-version/sqlserver.md)]
@@ -51,7 +51,7 @@ ms.locfileid: "91364199"
 |**null_value**|**bigint**|NULL を表すために使用される値。|  
 |**on_disk_size**|**bigint**|セグメントのサイズ (バイト単位)。|  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>コメント  
 列ストアセグメントのエンコードの種類は、 [!INCLUDE[ssde_md](../../includes/ssde_md.md)] セグメントデータを分析することで、最も低いストレージコストを実現することを目標として、によって選択されます。 データがほぼ異なる場合、は [!INCLUDE[ssde_md](../../includes/ssde_md.md)] 値ベースのエンコードを使用します。 データがほとんど異なる場合、では [!INCLUDE[ssde_md](../../includes/ssde_md.md)] ハッシュベースのエンコードが使用されます。 文字列ベースのエンコーディングと値ベースのエンコードのどちらを選択するかは、格納されるデータの型 (文字列データまたはバイナリデータ) に関連します。 すべてのエンコーディングは、可能であれば、ビットパックと実行時間のエンコーディングを利用します。
  
 ## <a name="permissions"></a>アクセス許可  
@@ -81,8 +81,8 @@ GO
  [カタログ ビュー &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/catalog-views-transact-sql.md)   
  [SQL Server システムカタログに対するクエリについてよく寄せられる質問](../../relational-databases/system-catalog-views/querying-the-sql-server-system-catalog-faq.md)   
  [sys.columns (Transact-SQL)](../../relational-databases/system-catalog-views/sys-columns-transact-sql.md)   
- [all_columns &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-all-columns-transact-sql.md)   
- [computed_columns &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-computed-columns-transact-sql.md)   
+ [sys.all_columns &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-all-columns-transact-sql.md)   
+ [sys.computed_columns &#40;Transact-sql&#41;](../../relational-databases/system-catalog-views/sys-computed-columns-transact-sql.md)   
  [列ストア インデックス ガイド](~/relational-databases/indexes/columnstore-indexes-overview.md)    
  [sys.column_store_dictionaries &#40;Transact-SQL&#41;](../../relational-databases/system-catalog-views/sys-column-store-dictionaries-transact-sql.md)  
   

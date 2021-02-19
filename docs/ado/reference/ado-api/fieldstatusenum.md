@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - FieldStatusEnum
@@ -16,17 +16,17 @@ helpviewer_keywords:
 ms.assetid: e06da1e2-303f-41b2-a3b0-61e233da152c
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: d30c0bc3508c364b7a0d52f23ccb52d11e06f8d5
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: eab778d35ac9d5f1b5cefa4fdd7001a4772dc56d
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88973093"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100035072"
 ---
 # <a name="fieldstatusenum"></a>FieldStatusEnum
 [フィールドオブジェクト](./field-object.md)の[状態](./status-property-ado-field.md)を指定します。  
   
- **Adfieldpending \* **値は、状態が設定される原因となった操作を示し、他のステータス値と組み合わせることができます。  
+ **Adfieldpending \*** 値は、状態が設定される原因となった操作を示し、他のステータス値と組み合わせることができます。  
   
 |定数|値|説明|  
 |--------------|-----------|-----------------|  
@@ -46,10 +46,10 @@ ms.locfileid: "88973093"
 |**adFieldOK**|0|既定値。 フィールドが正常に追加または削除されたことを示します。|  
 |**adFieldOutOfSpace**|22|移動またはコピー操作を完了するのに十分な記憶域スペースをプロバイダーが取得できないことを示します。|  
 |**adFieldPendingChange**|0x40000|フィールドが削除された後、別のデータ型で再追加されたか、以前に **adFieldOK** の状態だったフィールドの値が変更されたことを示します。 フィールドの最終形式では、 [Update](./update-method.md)メソッドが呼び出された後に[フィールド](./fields-collection-ado.md)コレクションが変更されます。|  
-|**adFieldPendingDelete**|0x20000|**削除**操作によって状態が設定されたことを示します。 フィールドは、 **Update**メソッドが呼び出された後に、**フィールド**コレクションから削除するようにマークされています。|  
-|**adFieldPendingInsert**|0x10000|**追加**操作によって状態が設定されたことを示します。 **フィールド**は、 **Update**メソッドが呼び出された後に**フィールド**コレクションに追加されるようにマークされています。|  
+|**adFieldPendingDelete**|0x20000|**削除** 操作によって状態が設定されたことを示します。 フィールドは、 **Update** メソッドが呼び出された後に、**フィールド** コレクションから削除するようにマークされています。|  
+|**adFieldPendingInsert**|0x10000|**追加** 操作によって状態が設定されたことを示します。 **フィールド** は、 **Update** メソッドが呼び出された後に **フィールド** コレクションに追加されるようにマークされています。|  
 |**adFieldPendingUnknown**|0x80000|フィールドの状態を設定する原因となった操作をプロバイダーが判別できないことを示します。|  
-|**adFieldPendingUnknownDelete**|0x100000|プロバイダーが、フィールドの状態を設定する原因となった操作を判別できないこと、および**更新**メソッドが呼び出された後**にフィールドがフィールドコレクションから**削除されることを示します。|  
+|**adFieldPendingUnknownDelete**|0x100000|プロバイダーが、フィールドの状態を設定する原因となった操作を判別できないこと、および **更新** メソッドが呼び出された後 **にフィールドがフィールドコレクションから** 削除されることを示します。|  
 |**adFieldPermissionDenied**|9|読み取り専用として定義されているため、フィールドを変更できないことを示します。|  
 |**adFieldReadOnly**|24|データソース内のフィールドが読み取り専用として定義されていることを示します。|  
 |**adFieldResourceExists**|19|オブジェクトが既に送信先 URL に存在し、オブジェクトを上書きできないため、プロバイダーが操作を実行できなかったことを示します。|  

@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine, sql-database, sql-data-warehouse, pdw
 ms.reviewer: ''
 ms.technology: system-objects
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - database_principals
 - database_principals_TSQL
@@ -20,13 +20,13 @@ helpviewer_keywords:
 ms.assetid: 8cb239e9-eb8c-4109-9cec-0d35de95fa0e
 author: VanMSFT
 ms.author: vanto
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: f23d179e0a3864d9408ab24571270007eff6254e
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: da1fff5e32ff60e17414cea92c48ec517de97bbc
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91810786"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99159897"
 ---
 # <a name="sysdatabase_principals-transact-sql"></a>sys.database_principals (Transact-sql)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -49,10 +49,10 @@ ms.locfileid: "91810786"
 |**authentication_type_desc**|**nvarchar(60)**|**適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降。<br /><br /> 認証の種類の説明。 使用可能な値とその説明を次に示します。<br /><br /> なし: 認証なし<br />インスタンス: インスタンス認証<br />データベース: データベース認証<br />WINDOWS: Windows 認証<br />外部: Azure Active Directory 認証|  
 |**default_language_name**|**sysname**|**適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降。<br /><br /> このプリンシパルの既定の言語を示します。|  
 |**default_language_lcid**|**int**|**適用対象**: [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)] 以降。<br /><br /> このプリンシパルの既定の LCID を示します。|  
-|**allow_encrypted_value_modifications**|**bit**|**適用対象**: [!INCLUDE[ssSQL15_md](../../includes/sssql15-md.md)] 以降、[!INCLUDE[ssSDS_md](../../includes/sssds-md.md)]。<br /><br /> 一括コピー操作でのサーバーの暗号化メタデータ チェックを抑制します。 これにより、データの暗号化を解除することなく、テーブルまたはデータベース間で Always Encrypted を使用して暗号化されたデータを一括コピーできます。 既定値は OFF です。 |      
+|**allow_encrypted_value_modifications**|**bit**|**適用対象**: [!INCLUDE[ssSQL15_md](../../includes/sssql16-md.md)] 以降、[!INCLUDE[ssSDS_md](../../includes/sssds-md.md)]。<br /><br /> 一括コピー操作でのサーバーの暗号化メタデータ チェックを抑制します。 これにより、データの暗号化を解除することなく、テーブルまたはデータベース間で Always Encrypted を使用して暗号化されたデータを一括コピーできます。 既定値は OFF です。 |      
   
-## <a name="remarks"></a>注釈  
- *PasswordLastSetTime*プロパティは、SQL Server のサポートされているすべての構成で使用できますが、その他のプロパティは SQL Server が Windows Server 2003 以降で実行されており、CHECK_POLICY と CHECK_EXPIRATION の両方が有効になっている場合にのみ使用できます。 詳細については、「 [パスワードポリシー](../../relational-databases/security/password-policy.md) 」を参照してください。
+## <a name="remarks"></a>コメント  
+ *PasswordLastSetTime* プロパティは、SQL Server のサポートされているすべての構成で使用できますが、その他のプロパティは SQL Server が Windows Server 2003 以降で実行されており、CHECK_POLICY と CHECK_EXPIRATION の両方が有効になっている場合にのみ使用できます。 詳細については、「 [パスワードポリシー](../../relational-databases/security/password-policy.md) 」を参照してください。
 Principal_id の値は、プリンシパルが削除された場合に再利用される可能性があるため、常に増加するとは限りません。
   
 ## <a name="permissions"></a>アクセス許可  

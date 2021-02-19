@@ -24,12 +24,12 @@ helpviewer_keywords:
 ms.assetid: 3d71df39-126b-4c8e-bd77-128bbd5b0887
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 630fea974e83507984cae8a4ec2b7938fc551d25
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 14392191ab3d11165f75f1637c2fb3330aa886ad
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88425284"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100346910"
 ---
 # <a name="execute-package-utility-dtexecui"></a>パッケージ実行ユーティリティ (dtexecui)
 
@@ -56,7 +56,7 @@ ms.locfileid: "88425284"
   
 ### <a name="to-open-the-execute-package-utility-at-the-command-prompt"></a>コマンド プロンプトでパッケージ実行ユーティリティを開くには  
   
--   コマンド プロンプト ウィンドウで、 **dtexecui**を実行します。  
+-   コマンド プロンプト ウィンドウで、 **dtexecui** を実行します。  
   
  ここでは、 **[パッケージ実行ユーティリティ]** ダイアログ ボックスのページについて説明します。  
   

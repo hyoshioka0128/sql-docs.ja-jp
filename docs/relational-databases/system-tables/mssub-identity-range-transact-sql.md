@@ -7,7 +7,7 @@ ms.prod: sql
 ms.prod_service: database-engine
 ms.reviewer: ''
 ms.technology: replication
-ms.topic: language-reference
+ms.topic: reference
 f1_keywords:
 - MSsub_identity_range_TSQL
 - MSsub_identity_range
@@ -16,19 +16,19 @@ dev_langs:
 helpviewer_keywords:
 - MSsub_identity_range system table
 ms.assetid: 26e20d28-14ed-44fc-af3b-4de386de4bb8
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: b694526e1ccff9dce5dcdba7d3e1ac85d7449a74
-ms.sourcegitcommit: dd36d1cbe32cd5a65c6638e8f252b0bd8145e165
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: b57fc0593298e38f6db8969e742127c007411246
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89540198"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99156798"
 ---
 # <a name="mssub_identity_range-transact-sql"></a>MSsub_identity_range (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
 
-  **MSsub_identity_range**テーブルでは、サブスクリプションの id 範囲管理がサポートされています。 このテーブルは、subscription データベースに保存されます。  
+  **MSsub_identity_range** テーブルでは、サブスクリプションの id 範囲管理がサポートされています。 このテーブルは、subscription データベースに保存されます。  
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  

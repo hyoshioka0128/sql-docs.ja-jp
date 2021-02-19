@@ -14,18 +14,18 @@ helpviewer_keywords:
 ms.assetid: 1a4e2ce5-f627-4c81-8960-6a9968cefda2
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: c82c4e4f5b1f1af6194ff409a684ca239881487a
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+ms.openlocfilehash: b9220519a926ca75a00843dba54dfad797064aee
+ms.sourcegitcommit: 52252e8b4c9b50d3915aecd3135e8901d345e7e2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85765406"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97599849"
 ---
 # <a name="accessing-the-current-transaction"></a>現在のトランザクションへのアクセス
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
-  で実行される共通言語ランタイム (CLR) コードが入力された時点でトランザクションがアクティブである場合、トランザクションは、system.object [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] クラスを介して公開され**System.Transactions.Transaction**ます。 現在のトランザクションにアクセスするには、 **transaction. current**プロパティを使用します。 ほとんどの場合、トランザクションに明示的にアクセスする必要はありません。 データベース接続の場合、ADO.NET は、 **Open**メソッドが呼び出されたときに**トランザクション**を自動的に確認します。また、接続文字列で**参加**キーワードが false に設定されていない限り、そのトランザクションに透過的に接続を参加させます。  
+  で実行される共通言語ランタイム (CLR) コードが入力された時点でトランザクションがアクティブである場合、トランザクションは、system.object [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] クラスを介して公開されます。 現在のトランザクションにアクセスするには、 **transaction. current** プロパティを使用します。 ほとんどの場合、トランザクションに明示的にアクセスする必要はありません。 データベース接続の場合、ADO.NET は、 **Open** メソッドが呼び出されたときに **トランザクション** を自動的に確認します。また、接続文字列で **参加** キーワードが false に設定されていない限り、そのトランザクションに透過的に接続を参加させます。  
   
- 次のシナリオでは、**トランザクション**オブジェクトを直接使用することができます。  
+ 次のシナリオでは、 **トランザクション** オブジェクトを直接使用することができます。  
   
 -   自動参加が行われないリソースや、何かの理由で初期化中に参加しなかったリソースを参加させる場合。  
   
@@ -42,13 +42,13 @@ ms.locfileid: "85765406"
 ## <a name="canceling-an-external-transaction"></a>外部トランザクションのキャンセル  
  外部トランザクションは、次の方法でマネージド プロシージャまたは関数からキャンセルできます。  
   
--   マネージド プロシージャまたは関数は、出力パラメーターを使用して値を返すことができます。 呼び出し元のプロシージャは、 [!INCLUDE[tsql](../../includes/tsql-md.md)] 返された値を確認し、必要に応じて**ROLLBACK TRANSACTION**を実行できます。  
+-   マネージド プロシージャまたは関数は、出力パラメーターを使用して値を返すことができます。 呼び出し元のプロシージャは、 [!INCLUDE[tsql](../../includes/tsql-md.md)] 返された値を確認し、必要に応じて **ROLLBACK TRANSACTION** を実行できます。  
   
--   マネージド プロシージャまたは関数は、カスタムの例外をスローできます。 呼び出し元のプロシージャは、 [!INCLUDE[tsql](../../includes/tsql-md.md)] try/catch ブロックでマネージプロシージャまたは関数によってスローされた例外をキャッチし、 **ROLLBACK TRANSACTION**を実行できます。  
+-   マネージド プロシージャまたは関数は、カスタムの例外をスローできます。 呼び出し元のプロシージャは、 [!INCLUDE[tsql](../../includes/tsql-md.md)] try/catch ブロックでマネージプロシージャまたは関数によってスローされた例外をキャッチし、 **ROLLBACK TRANSACTION** を実行できます。  
   
 -   マネージプロシージャまたは関数は、特定の条件が満たされた場合に、Rollback メソッドを呼び出すことにより、現在のトランザクションを取り消すことができます **。**  
   
- マネージプロシージャまたは関数内で呼び出された場合、**トランザクションロールバック**メソッドは、あいまいなエラーメッセージで例外をスローし、try/catch ブロックでラップできます。 表示されるエラー メッセージは、たとえば次のようになります。  
+ マネージプロシージャまたは関数内で呼び出された場合、 **トランザクションロールバック** メソッドは、あいまいなエラーメッセージで例外をスローし、try/catch ブロックでラップできます。 エラーメッセージは次のようになります。  
   
 ```  
 Msg 3994, Level 16, State 1, Procedure uspRollbackFromProc, Line 0  
@@ -65,7 +65,7 @@ The context transaction which was active before entering user defined routine, t
  この例外も想定されるもので、実行を継続するには、トリガーを起動するアクションを実行する [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントでの try/catch ブロックが必要です。 この 2 つの例外がスローされますが、トランザクションはロールバックされ、変更はコミットされません。  
   
 ### <a name="example"></a>例  
- 次に示すのは、 **Transaction ロール**バックメソッドを使用してマネージプロシージャからロールバックされるトランザクションの例です。 マネージコードの**Rollback**メソッドの前後の try/catch ブロックに注意してください。 [!INCLUDE[tsql](../../includes/tsql-md.md)] スクリプトは、アセンブリおよびマネージド ストアド プロシージャを作成します。 **EXEC uspRollbackFromProc**ステートメントが try/catch ブロックにラップされていることに注意してください。これにより、マネージプロシージャの実行が終了したときにスローされる例外がキャッチされます。  
+ 次に示すのは、 **Transaction ロール** バックメソッドを使用してマネージプロシージャからロールバックされるトランザクションの例です。 マネージコードの **Rollback** メソッドの前後の try/catch ブロックに注意してください。 [!INCLUDE[tsql](../../includes/tsql-md.md)] スクリプトは、アセンブリおよびマネージド ストアド プロシージャを作成します。 **EXEC uspRollbackFromProc** ステートメントが try/catch ブロックにラップされていることに注意してください。これにより、マネージプロシージャの実行が終了したときにスローされる例外がキャッチされます。  
   
 ```csharp  
 using System;  
@@ -201,7 +201,7 @@ DROP ASSEMBLY TestProcs;
 Go  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [CLR 統合とトランザクション](../../relational-databases/clr-integration-data-access-transactions/clr-integration-and-transactions.md)  
   
   

@@ -7,18 +7,18 @@ ms.prod: sql
 ms.prod_service: sql-database
 ms.reviewer: ''
 ms.technology: t-sql
-ms.topic: language-reference
+ms.topic: reference
 dev_langs:
 - TSQL
 ms.assetid: 0a6e4985-9601-4877-942a-cf53f6932958
-author: markingmyname
-ms.author: maghan
-ms.openlocfilehash: 0c260e732041a22e3b00d6c2c7bf962b770a263f
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+author: cawrites
+ms.author: chadam
+ms.openlocfilehash: c9f553b70ffc28bf01f7c2e4f545f29ba4073c8d
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88479724"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99184019"
 ---
 # <a name="data-type-functions-transact-sql"></a>データ型関数 (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]

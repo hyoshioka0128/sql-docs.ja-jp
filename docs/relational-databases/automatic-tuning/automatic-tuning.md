@@ -17,20 +17,20 @@ helpviewer_keywords:
 ms.assetid: ''
 author: jovanpop-msft
 ms.author: jovanpop
-monikerRange: =azuresqldb-current||>=sql-server-2017||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 65fc7918a3e8064310757a2875e62d6e001f750c
-ms.sourcegitcommit: 04cf7905fa32e0a9a44575a6f9641d9a2e5ac0f8
+monikerRange: =azuresqldb-current||>=sql-server-2017||>=sql-server-linux-2017||=azuresqldb-mi-current
+ms.openlocfilehash: 9c01a9e02576d666c39df13dc6e7e01f6d622a7d
+ms.sourcegitcommit: f29f74e04ba9c4d72b9bcc292490f3c076227f7c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91808518"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98169874"
 ---
 # <a name="automatic-tuning"></a>自動チューニング
 [!INCLUDE[sqlserver2017-asdb](../../includes/applies-to-version/sqlserver2017-asdb.md)]
 
 自動チューニングは、潜在的なクエリ パフォーマンスの問題に関する洞察を提供し、解決策を推奨して、特定された問題を自動的に解決するデータベース機能です。
 
-で導入された自動チューニングは [!INCLUDE[sssqlv14-md](../../includes/sssqlv14-md.md)] 、潜在的なパフォーマンスの問題が検出されるたびに通知を行い、是正措置を適用したり、パフォーマンスの問題を自動的に修正したりできるようにし [!INCLUDE[ssde_md](../../includes/ssde_md.md)] ます。 自動チューニングを [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 使用すると、 **クエリ実行プランの選択の回帰**によって発生するパフォーマンスの問題を特定し、修正することができます。 また、自動チューニングでは [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] 、必要なインデックスを作成し、未使用のインデックスを削除します。 クエリ実行プランの詳細については、「 [実行プラン](../../relational-databases/performance/execution-plans.md)」を参照してください。
+で導入された自動チューニングは [!INCLUDE[sssqlv14-md](../../includes/sssqlv14-md.md)] 、潜在的なパフォーマンスの問題が検出されるたびに通知を行い、是正措置を適用したり、パフォーマンスの問題を自動的に修正したりできるようにし [!INCLUDE[ssde_md](../../includes/ssde_md.md)] ます。 自動チューニングを [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 使用すると、 **クエリ実行プランの選択の回帰** によって発生するパフォーマンスの問題を特定し、修正することができます。 また、自動チューニングでは [!INCLUDE[ssazure_md](../../includes/ssazure_md.md)] 、必要なインデックスを作成し、未使用のインデックスを削除します。 クエリ実行プランの詳細については、「 [実行プラン](../../relational-databases/performance/execution-plans.md)」を参照してください。
 
 は、 [!INCLUDE[ssDEnoversion](../../includes/ssdenoversion-md.md)] データベースで実行されるクエリを監視し、ワークロードのパフォーマンスを自動的に向上させます。 には、 [!INCLUDE[ssde_md](../../includes/ssde_md.md)] データベースをワークロードに動的に適合させることによって、クエリのパフォーマンスを自動的に調整して向上させることができるインテリジェンスメカニズムが組み込まれています。 次の2つの自動チューニング機能を使用できます。
 
@@ -99,7 +99,7 @@ SET AUTOMATIC_TUNING ( FORCE_LAST_GOOD_PLAN = ON );
 
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] クエリストアのパフォーマンスを監視し、問題を修正するために必要なすべてのビューと手順について説明します。
 
-では [!INCLUDE[sssql15-md](../../includes/sssql15-md.md)] 、クエリストアシステムビューを使用して、プラン選択の回帰を見つけることができます。 以降では、によって、 [!INCLUDE[sssqlv14-md](../../includes/sssqlv14-md.md)] [!INCLUDE[ssde_md](../../includes/ssde_md.md)] プランの選択の回帰の可能性が検出され、 [sys.dm_db_tuning_recommendations &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-tuning-recommendations-transact-sql.md) DMV で適用される推奨の操作が示されます。 DMV には、問題に関する情報、問題の重要度、および特定されたクエリ、低下したプランの ID、比較の基準として使用されたプランの ID、および [!INCLUDE[tsql_md](../../includes/tsql-md.md)] 問題を解決するために実行できるステートメントなどの詳細が表示されます。
+では [!INCLUDE[sssql15-md](../../includes/sssql16-md.md)] 、クエリストアシステムビューを使用して、プラン選択の回帰を見つけることができます。 以降では、によって、 [!INCLUDE[sssqlv14-md](../../includes/sssqlv14-md.md)] [!INCLUDE[ssde_md](../../includes/ssde_md.md)] プランの選択の回帰の可能性が検出され、 [sys.dm_db_tuning_recommendations &#40;transact-sql&#41;](../../relational-databases/system-dynamic-management-views/sys-dm-db-tuning-recommendations-transact-sql.md) DMV で適用される推奨の操作が示されます。 DMV には、問題に関する情報、問題の重要度、および特定されたクエリ、低下したプランの ID、比較の基準として使用されたプランの ID、および [!INCLUDE[tsql_md](../../includes/tsql-md.md)] 問題を解決するために実行できるステートメントなどの詳細が表示されます。
 
 | type | description | DATETIME | score | details | ... |
 | --- | --- | --- | --- | --- | --- |
@@ -138,7 +138,7 @@ CROSS APPLY OPENJSON (Details, '$.planForceDetails')
 
 [!INCLUDE[ssresult-md](../../includes/ssresult-md.md)]     
 
-| reason | score | script | クエリ \_ id | 現在のプラン \_ id | 推奨されるプラン \_ id | 推定 \_ ゲイン | エラーが発生し \_ やすい
+| reason | score | スクリプト | クエリ \_ id | 現在のプラン \_ id | 推奨されるプラン \_ id | 推定 \_ ゲイン | エラーが発生し \_ やすい
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | CPU 時間が3ミリ秒から46ミリ秒に変更されました | 36 | EXEC sp \_ クエリ \_ ストア \_ force \_ プラン 12, 17; | 12 | 28 | 17 | 11.59 | 0
 

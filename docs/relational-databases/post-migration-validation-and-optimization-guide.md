@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 11f8017e-5bc3-4bab-8060-c16282cfbac1
 author: pelopes
 ms.author: harinid
-ms.openlocfilehash: 5324b953f70a9f0f64a4988c50ae02d1653d94f5
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+ms.openlocfilehash: 397e5b7acd88f8e10dea05ce3ab2dc2f7dd105c2
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91891132"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100350649"
 ---
 # <a name="post-migration-validation-and-optimization-guide"></a>移行後の検証および最適化ガイド
 
@@ -44,7 +44,7 @@ ms.locfileid: "91891132"
 
 [データベース互換性レベル](../relational-databases/databases/view-or-change-the-compatibility-level-of-a-database.md)をソース バージョンに変更して、次の図に示すように推奨されるアップグレードのワークフローに従います。
 
-![query-store-usage-5](../relational-databases/performance/media/query-store-usage-5.png "query-store-usage-5")  
+![推奨されるアップグレード ワークフローを示す図。](../relational-databases/performance/media/query-store-usage-5.png "query-store-usage-5")  
 
 このトピックの詳細については、「[SQL Server 2016 へのアップグレード中にパフォーマンスの安定性を維持する](../relational-databases/performance/query-store-usage-scenarios.md#CEUpgrade)」を参照してください。
 
@@ -94,7 +94,7 @@ ms.locfileid: "91891132"
 > [!NOTE]
 > [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] から [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] への移行で、移行元の [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] にこの問題が存在していた場合、[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] の新しいバージョンにそのまま移行したのでは、このシナリオには対処できません。
 
-[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] クエリ オプティマイザーは、コンパイル時に認識されている情報のみを考慮することができます。 ワークロードが実行時にのみ認識できる述語に依存する場合は、不適切なプランの選択が増える可能性があります。 高品質のプランでは、述語は **SARGable** (**S**earch **Arg**ument**able**: 検索引数化可能 ) である必要があります。
+[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] クエリ オプティマイザーは、コンパイル時に認識されている情報のみを考慮することができます。 ワークロードが実行時にのみ認識できる述語に依存する場合は、不適切なプランの選択が増える可能性があります。 高品質のプランでは、述語は **SARGable** (**S** earch **Arg** ument **able**: 検索引数化可能 ) である必要があります。
 
 SARGable ではない述語の例を次に示します。
 -   VARCHAR から NVARCHAR、INT から VARCHAR のような暗黙的なデータ変換。 実際の実行プランで実行時の CONVERT_IMPLICIT 警告を探します。 型を変換すると、精度が失われるをこともあります。

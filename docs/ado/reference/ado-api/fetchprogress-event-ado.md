@@ -7,7 +7,7 @@ ms.technology: ado
 ms.custom: ''
 ms.date: 01/19/2017
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 apitype: COM
 f1_keywords:
 - FetchProgress
@@ -17,15 +17,15 @@ helpviewer_keywords:
 ms.assetid: 301716fd-81fc-40eb-8a04-221ef7ab410e
 author: rothja
 ms.author: jroth
-ms.openlocfilehash: b84b963f42c83191c613dbb4849288fc862df474
-ms.sourcegitcommit: 18a98ea6a30d448aa6195e10ea2413be7e837e94
+ms.openlocfilehash: fa10ddcef5adfd340d2cbd690ff54d8ab62f35ff
+ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88973333"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100034072"
 ---
 # <a name="fetchprogress-event-ado"></a>FetchProgress イベント (ADO)
-**Fetchprogress**イベントは、[レコードセット](../../../ado/reference/ado-api/recordset-object-ado.md)に現在取得されている行の数を報告するために、長い非同期操作中に定期的に呼び出されます。  
+**Fetchprogress** イベントは、[レコードセット](../../../ado/reference/ado-api/recordset-object-ado.md)に現在取得されている行の数を報告するために、長い非同期操作中に定期的に呼び出されます。  
   
 ## <a name="syntax"></a>構文  
   
@@ -48,7 +48,7 @@ FetchProgress Progress, MaxProgress, adStatus, pRecordset
  レコードを取得する対象のオブジェクトである **レコードセット** オブジェクト。  
   
 ## <a name="remarks"></a>解説  
- 子**レコードセット**で**fetchprogress**を使用する場合は、 *Progress*および*maxprogress*パラメーターの値が基になる[Cursor Service](../../../ado/guide/appendixes/microsoft-cursor-service-for-ole-db-ado-service-component.md)行セットから派生することに注意してください。 返される値は、現在のチャプター内のレコード数だけでなく、基になる行セット内のレコードの合計数を表します。  
+ 子 **レコードセット** で **fetchprogress** を使用する場合は、 *Progress* および *maxprogress* パラメーターの値が基になる [Cursor Service](../../../ado/guide/appendixes/microsoft-cursor-service-for-ole-db-ado-service-component.md)行セットから派生することに注意してください。 返される値は、現在のチャプター内のレコード数だけでなく、基になる行セット内のレコードの合計数を表します。  
   
 > [!NOTE]
 >  Microsoft Visual Basic で **Fetchprogress** を使用するには Visual Basic 6.0 以降が必要です。  

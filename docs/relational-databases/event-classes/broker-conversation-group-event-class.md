@@ -6,19 +6,19 @@ ms.date: 05/24/2019
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: supportability
-ms.topic: conceptual
+ms.topic: reference
 helpviewer_keywords:
 - Broker:Conversation Group event class
 ms.assetid: 6595bef6-9d40-42eb-a934-735622dd23fb
 author: stevestein
 ms.author: sstein
-monikerRange: '>=sql-server-2016||=sqlallproducts-allversions||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 68afde98f2e219cacf20175bfa0cb71ad7afa90a
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+monikerRange: '>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: 4d36986b1971e595f43300d7d37d536a4d5eaa8b
+ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88410128"
+ms.lasthandoff: 01/30/2021
+ms.locfileid: "99187449"
 ---
 # <a name="brokerconversation-group-event-class"></a>Broker:Conversation Group イベント クラス
 
@@ -33,7 +33,7 @@ ms.locfileid: "88410128"
 |**ApplicationName**|**nvarchar**|[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]のインスタンスへの接続を作成したクライアント アプリケーションの名前。 この列には、プログラムの表示名ではなく、アプリケーションによって渡された値が格納されます。|10|はい|  
 |**ClientProcessID**|**int**|クライアント アプリケーションが実行されているプロセスに対し、ホスト コンピューターによって割り当てられた ID。 クライアントでクライアント プロセス ID が指定されると、このデータ列が作成されます。|9|はい|  
 |**DatabaseID**|**int**|USE *database* ステートメントで指定されたデータベースの ID、または特定のインスタンスについて USE *database* ステートメントが実行されていない場合は既定のデータベースの ID となります。 [!INCLUDE[ssSqlProfiler](../../includes/sssqlprofiler-md.md)] では、 **ServerName** データ列がトレースにキャプチャされ、そのサーバーが利用可能な場合、データベースの名前が表示されます。 データベースに対応する値は、DB_ID 関数を使用して特定します。|3|はい|  
-|**EventClass**|**int**|キャプチャされたイベント クラスの種類。 **Broker:Conversation Group** の場合は、常に **136**です。|27|いいえ|  
+|**EventClass**|**int**|キャプチャされたイベント クラスの種類。 **Broker:Conversation Group** の場合は、常に **136** です。|27|いいえ|  
 |**EventSequence**|**int**|このイベントのシーケンス番号。|51|いいえ|  
 |**EventSubClass**|**nvarchar**|イベント サブクラスの種類です。各イベント クラスについての詳細な情報を提供します。 この列には次の値が含まれます。<br /><br /> **Create**。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で、新しいメッセージ交換グループが作成されました。<br /><br /> **[削除]** 。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] で、メッセージ交換グループが削除されました。|21|はい|  
 |**GUID**|**uniqueidentifier**|このイベントが示すメッセージ交換グループのメッセージ交換グループ ID。|54|いいえ|  
