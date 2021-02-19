@@ -56,7 +56,7 @@ ms.locfileid: "92194624"
 
   [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] [!INCLUDE[ssISnoversion](../../../includes/ssisnoversion-md.md)] のオブジェクト モデルでは、ほとんどのデータ フロー オブジェクトには共通するプロパティがありますが、それ以外にも、多くのデータ フロー オブジェクトにはオブジェクト固有のカスタム プロパティがあります。 カスタム プロパティにアクセスできるのは実行時のみで、このプロパティに関する説明は、『[!INCLUDE[ssISnoversion](../../../includes/ssisnoversion-md.md)] マネージド プログラミング リファレンス マニュアル』には記載されていません。  
   
- ここでは、さまざまなデータ フローの変換のカスタム プロパティを一覧で示し、それぞれについて説明します。 データ フロー オブジェクトの大部分との共通プロパティについては、「 [Common Properties](../set-the-properties-of-a-data-flow-component.md)」を参照してください。  
+ ここでは、さまざまなデータ フローの変換のカスタム プロパティを一覧で示し、それぞれについて説明します。 データ フロー オブジェクトの大部分との共通プロパティについては、「[共通プロパティ](../set-the-properties-of-a-data-flow-component.md)」を参照してください。  
   
  変換のプロパティの一部は、プロパティ式を使用して設定できます。 詳細については、「[式を使って設定できるデータ フロー プロパティ](/previous-versions/sql/sql-server-2016/ms136104(v=sql.130))」をご覧ください。  
   
@@ -110,14 +110,14 @@ ms.locfileid: "92194624"
 |AutoExtendFactor|Integer|集計の際にメモリを拡張できる割合を 1 ～ 100% の範囲で指定する値。 このプロパティの既定値は **25**です。|  
 |CountDistinctKeys|Integer|集計で書き込むことのできる個別カウントの正確な数を指定する値。 CountDistinctScale 値が指定されている場合、CountDistinctKeys の値が優先されます。|  
 |CountDistinctScale|Integer (列挙)|集計でカウントできる、列の個別の値の概数を表す値。 このプロパティの値は、次のいずれか 1 つです。<br /><br /> **Low** (1): キー値の数が最大 500,000 個であることを示します。<br /><br /> **Medium** (2): キー値の数が最大 5,000,000 個であることを示します。<br /><br /> **High** (3): キー値の数が 25,000,000 個以上であることを示します。<br /><br /> **Unspecified** (0): CountDistinctScale の値を使用しないことを示します。 **Unspecified** (0) オプションを使用すると、大規模なデータセットを処理する際のパフォーマンスに影響する場合があります。|  
-|[キー]|Integer|集計で書き込まれる、GROUP BY キーの正確な数を指定する値。 KeyScalevalue が指定されている場合、Keys の値が優先されます。|  
+|Keys|Integer|集計で書き込まれる、GROUP BY キーの正確な数を指定する値。 KeyScalevalue が指定されている場合、Keys の値が優先されます。|  
 |KeyScale|Integer (列挙)|集計で書き込むことができる、GROUP BY キーの概数を表す値。 このプロパティの値は、次のいずれか 1 つです。<br /><br /> **Low** (1): キー値の数が最大 500,000 個であることを示します。<br /><br /> **Medium** (2): キー値の数が最大 5,000,000 個であることを示します。<br /><br /> **High** (3): キー値の数が 25,000,000 個以上であることを示します。<br /><br /> **Unspecified** (0): KeyScale の値が使用されないことを示します。|  
   
  次の表は、集計変換の出力のカスタム プロパティを示しています。 すべてのプロパティは読み取り/書き込み可能です。  
   
 |プロパティ|データ型|説明|  
 |--------------|---------------|-----------------|  
-|[キー]|Integer|集計で書き込むことができる、GROUP BY キーの正確な数を指定する値。 KeyScale の値が指定されている場合、Keys の値が優先されます。|  
+|Keys|Integer|集計で書き込むことができる、GROUP BY キーの正確な数を指定する値。 KeyScale の値が指定されている場合、Keys の値が優先されます。|  
 |KeyScale|Integer (列挙)|集計で書き込むことができる、GROUP BY キーの概数を表す値。 このプロパティの値は、次のいずれか 1 つです。<br /><br /> **Low** (1): キー値の数が最大 500,000 個であることを示します。<br /><br /> **Medium** (2): キー値の数が最大 5,000,000 個であることを示します。<br /><br /> **High** (3): キー値の数が 25,000,000 個以上であることを示します。<br /><br /> **Unspecified** (0): KeyScale の値が使用されないことを示します。|  
   
  次の表は、集計変換の出力列のカスタム プロパティを示しています。 すべてのプロパティは読み取り/書き込み可能です。  
@@ -183,7 +183,7 @@ ms.locfileid: "92194624"
 |プロパティ|データ型|説明|  
 |--------------|---------------|-----------------|  
 |EvaluationOrder|Integer|条件分割変換が評価する条件の一覧の中での、出力に関連付けられた条件の位置を指定する値。 条件は、最小値から最大値まで順に評価されます。|  
-|式|String|条件分割変換が評価する条件を表す式。 列は系列 ID で示されます。|  
+|Expression|String|条件分割変換が評価する条件を表す式。 列は系列 ID で示されます。|  
 |FriendlyExpression|String|条件分割変換が評価する条件を表す式。 列はその名前で示されます。<br /><br /> このプロパティの値は、プロパティ式を使用して指定することができます。|  
 |IsDefaultOut|Boolean|出力が既定の出力かどうかを示す値。|  
   
@@ -211,12 +211,12 @@ ms.locfileid: "92194624"
   
 |プロパティ|データ型|説明|  
 |--------------|---------------|-----------------|  
-|FastParse|Boolean|列の解析に、 [!INCLUDE[ssISnoversion](../../../includes/ssisnoversion-md.md)] が提供するロケール非依存型の高速な解析ルーチンを使用するか、またはロケール依存型の標準的な解析ルーチンを使用するかを示す値。 このプロパティの既定値は **False**です。 詳細については、「[データの解析](../parsing-data.md) 」および「[標準解析](../parsing-data.md)」を参照してください。 .<br /><br /> 注:このプロパティは、**データ変換変換エディター**では使用できませんが、**詳細エディター**を使用して設定できます。|  
+|FastParse|Boolean|列の解析に、 [!INCLUDE[ssISnoversion](../../../includes/ssisnoversion-md.md)] が提供するロケール非依存型の高速な解析ルーチンを使用するか、またはロケール依存型の標準的な解析ルーチンを使用するかを示す値。 このプロパティの既定値は **False**です。 詳細については、「[高速解析](../parsing-data.md) 」および「[標準解析](../parsing-data.md)」を参照してください。 .<br /><br /> 注:このプロパティは、**データ変換変換エディター**では使用できませんが、**詳細エディター**を使用して設定できます。|  
 |SourceInputColumnLineageId|Integer|出力列のソースである入力列の **LineageID** 。|  
   
  データ変換の変換の入力、入力列、および出力には、カスタム プロパティがありません。  
   
- 詳細については、「 [Data Conversion Transformation](../../../integration-services/data-flow/transformations/data-conversion-transformation.md)」を参照してください。  
+ 詳細については、「[データ変換の変換](../../../integration-services/data-flow/transformations/data-conversion-transformation.md)」を参照してください。  
   
 ##  <a name="data-mining-query-transformation-custom-properties"></a><a name="dmquery"></a> データ マイニング クエリ変換のカスタム プロパティ  
  データ マイニング クエリ変換には、カスタム プロパティと、すべてのデータ フロー コンポーネントとの共通プロパティの両方があります。  
@@ -235,7 +235,7 @@ ms.locfileid: "92194624"
   
  データ マイニング クエリ変換の入力、入力列、出力、および出力列には、カスタム プロパティがありません。  
   
- 詳細については、「 [Data Mining Query Transformation](../../../integration-services/data-flow/transformations/data-mining-query-transformation.md)」を参照してください。  
+ 詳細については、「[データ マイニング クエリ変換](../../../integration-services/data-flow/transformations/data-mining-query-transformation.md)」を参照してください。  
   
 ##  <a name="derived-column-transformation-custom-properties"></a><a name="derived"></a> 派生列変換のカスタム プロパティ  
  コンポーネント レベルでは、派生列変換はすべてのデータ フロー コンポーネントとの共通プロパティのみを持ちます。  
@@ -244,12 +244,12 @@ ms.locfileid: "92194624"
   
 |プロパティ|データ型|説明|  
 |--------------|---------------|-----------------|  
-|式|String|条件分割変換が評価する条件を表す式。 列は、その列の **LineageID** プロパティで示されます。|  
+|Expression|String|条件分割変換が評価する条件を表す式。 列は、その列の **LineageID** プロパティで示されます。|  
 |FriendlyExpression|String|条件分割変換が評価する条件を表す式。 列はその名前で示されます。<br /><br /> このプロパティの値は、プロパティ式を使用して指定することができます。|  
   
  派生列変換の入力および出力には、カスタム プロパティがありません。  
   
- 詳細については、「 [派生列変換](../../../integration-services/data-flow/transformations/derived-column-transformation.md)」を参照してください。  
+ 詳細については、「[派生列変換](../../../integration-services/data-flow/transformations/derived-column-transformation.md)」を参照してください。  
   
 ##  <a name="export-column-transformation-custom-properties"></a><a name="extract"></a> 列エクスポート変換のカスタム プロパティ  
  コンポーネント レベルでは、列エクスポート変換はすべてのデータ フロー コンポーネントとの共通プロパティのみを持ちます。  
@@ -265,7 +265,7 @@ ms.locfileid: "92194624"
   
  列エクスポート変換の入力、出力、および出力列には、カスタム プロパティがありません。  
   
- 詳細については、「 [Export Column Transformation](../../../integration-services/data-flow/transformations/export-column-transformation.md)」を参照してください。  
+ 詳細については、「[Export Column Transformation](../../../integration-services/data-flow/transformations/export-column-transformation.md)」を参照してください。  
   
 ##  <a name="import-column-transformation-custom-properties"></a><a name="insert"></a> 列インポート変換のカスタム プロパティ  
  コンポーネント レベルでは、列インポート変換はすべてのデータ フロー コンポーネントとの共通プロパティのみを持ちます。  
@@ -279,7 +279,7 @@ ms.locfileid: "92194624"
   
  列インポート変換の入力、出力、および出力列には、カスタム プロパティがありません。  
   
- 詳細については、「 [Import Column Transformation](../../../integration-services/data-flow/transformations/import-column-transformation.md)」を参照してください。  
+ 詳細については、「[列インポート変換](../../../integration-services/data-flow/transformations/import-column-transformation.md)」を参照してください。  
   
 ##  <a name="fuzzy-grouping-transformation-custom-properties"></a><a name="fgroup"></a> あいまいグループ化変換のカスタム プロパティ  
  あいまいグループ化変換には、カスタム プロパティと、すべてのデータ フロー コンポーネントとの共通プロパティの両方があります。  
@@ -288,7 +288,7 @@ ms.locfileid: "92194624"
   
 |プロパティ|データ型|説明|  
 |--------------|---------------|-----------------|  
-|区切り記号|String|変換が使用するトークン区切り記号。 既定の区切り記号には以下の文字が含まれます。スペース ( )、コンマ (,)、ピリオド (.)、セミコロン (;)、コロン (:)、ハイフン (-)、二重引用符 (")、単一引用符 (')、アンパサンド (&)、スラッシュ (/)、円記号 (\\)、アット マーク (@)、感嘆符 (!)、疑問符 (?)、左かっこ (()、右かっこ ())、小なり (\<), greater than (>)、大なり (>)、左角かっこ ([)、右角かっこ (])、左中かっこ ({)、右中かっこ (})、パイプ文字 (&#124;)、シャープ記号 (#)、アスタリスク (*)、キャレット (^)、およびパーセント (%)。|  
+|Delimiters|String|変換が使用するトークン区切り記号。 既定の区切り記号には以下の文字が含まれます。スペース ( )、コンマ (,)、ピリオド (.)、セミコロン (;)、コロン (:)、ハイフン (-)、二重引用符 (")、単一引用符 (')、アンパサンド (&)、スラッシュ (/)、円記号 (\\)、アット マーク (@)、感嘆符 (!)、疑問符 (?)、左かっこ (()、右かっこ ())、小なり (\<), greater than (>)、大なり (>)、左角かっこ ([)、右角かっこ (])、左中かっこ ({)、右中かっこ (})、パイプ文字 (&#124;)、シャープ記号 (#)、アスタリスク (*)、キャレット (^)、およびパーセント (%)。|  
 |Exhaustive|Boolean|各入力レコードを、他のすべての入力レコードと比較するかどうかを指定する値。 値 **True** は、主としてデバッグ目的で設定されます。 このプロパティの既定値は **False**です。<br /><br /> 注:このプロパティは、**あいまいグループ化変換エディター**では使用できませんが、**詳細エディター**を使用して設定できます。|  
 |MaxMemoryUsage|Integer|変換で使用される最大メモリ容量。 このプロパティの既定値は **0**で、動的なメモリの使用が許可されることを示します。<br /><br /> このプロパティの値は、プロパティ式を使用して指定することができます。<br /><br /> 注:このプロパティは、**あいまいグループ化変換エディター**では使用できませんが、**詳細エディター**を使用して設定できます。|  
 |MinSimilarity|Double|重複部分を識別するために変換が使用する、類似性のしきい値。0 ～ 1 の間の値で表します。  このプロパティの既定値は 0.8 です。|  
@@ -298,7 +298,7 @@ ms.locfileid: "92194624"
 |プロパティ|データ型|説明|  
 |--------------|---------------|-----------------|  
 |ExactFuzzy|Integer (列挙)|あいまい一致または完全一致のどちらを変換が実行するかを指定する値。 有効な値は **Exact** および **Fuzzy**です。 このプロパティの既定値は **Fuzzy**です。|  
-|FuzzyComparisonFlags|Integer (列挙)|変換が列の文字列データを比較する方法を指定する値。 このプロパティの値は、次のいずれか 1 つです。<br /><br /> **FullySensitive**<br /><br /> **IgnoreCase**<br /><br /> **IgnoreKanaType**<br /><br /> **IgnoreNonSpace**<br /><br /> **IgnoreSymbols**<br /><br /> **IgnoreWidth**<br /><br /> <br /><br /> 詳しくは、「 [比較、文字列データ](../../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。|  
+|FuzzyComparisonFlags|Integer (列挙)|変換が列の文字列データを比較する方法を指定する値。 このプロパティの値は、次のいずれか 1 つです。<br /><br /> **FullySensitive**<br /><br /> **IgnoreCase**<br /><br /> **IgnoreKanaType**<br /><br /> **IgnoreNonSpace**<br /><br /> **IgnoreSymbols**<br /><br /> **IgnoreWidth**<br /><br /> <br /><br /> 詳しくは、「[比較、文字列データ](../../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。|  
 |LeadingTrailingNumeralsSignificant|Integer (列挙)|数字の有意性を指定する値。 このプロパティの値は、次のいずれか 1 つです。<br /><br /> **NumeralsNotSpecial** (0): 数字の意味を考慮しない場合に使用します。<br /><br /> **LeadingNumeralsSignificant** (1): 先頭の数字を考慮する場合に使用します。<br /><br /> **TrailingNumeralsSignificant** (2): 末尾の数字を考慮する場合に使用します。<br /><br /> **LeadingAndTrailingNumeralsSignificant** (3): 先頭および末尾の数字の両方を考慮する場合に使用します。|  
 |MinSimilarity|Double|列の結合に使用される類似性のしきい値。0 ～ 1 の間の値で指定します。 しきい値より大きい行のみ、一致していると見なされます。|  
 |ToBeCleaned|Boolean|重複部分を識別するためにこの列が使用されるかどうか、つまり、グループ化の対象となる列かどうかを指定する値。 このプロパティの既定値は **False**です。|  
@@ -307,12 +307,12 @@ ms.locfileid: "92194624"
   
 |プロパティ名|データ型|説明|  
 |-------------------|---------------|-----------------|  
-|[列の型]|Integer (列挙)|出力列の型を識別する値。 このプロパティの値は、次のいずれか 1 つです。<br /><br /> **Undefined** (0)<br /><br /> **KeyIn** (1)<br /><br /> **KeyOut** (2)<br /><br /> **Similarity** (3)<br /><br /> **ColumnSimilarity** (4)<br /><br /> **PassThru** (5)<br /><br /> **Canonical**(6)|  
+|ColumnType|Integer (列挙)|出力列の型を識別する値。 このプロパティの値は、次のいずれか 1 つです。<br /><br /> **Undefined** (0)<br /><br /> **KeyIn** (1)<br /><br /> **KeyOut** (2)<br /><br /> **Similarity** (3)<br /><br /> **ColumnSimilarity** (4)<br /><br /> **PassThru** (5)<br /><br /> **Canonical**(6)|  
 |InputID|Integer|対応する入力列の **LineageID** 。|  
   
  あいまいグループ化変換の入力および出力には、カスタム プロパティがありません。  
   
- 詳細については、「 [Fuzzy Grouping Transformation](../../../integration-services/data-flow/transformations/fuzzy-grouping-transformation.md)」を参照してください。  
+ 詳細については、「[あいまいグループ化変換](../../../integration-services/data-flow/transformations/fuzzy-grouping-transformation.md)」を参照してください。  
   
 ##  <a name="fuzzy-lookup-transformation-custom-properties"></a><a name="flookup"></a> あいまい参照変換のカスタム プロパティ  
  あいまい参照変換には、カスタム プロパティと、すべてのデータ フロー コンポーネントとの共通プロパティの両方があります。  
@@ -322,7 +322,7 @@ ms.locfileid: "92194624"
 |プロパティ|データ型|説明|  
 |--------------|---------------|-----------------|  
 |CopyReferenceTable|Boolean|あいまい参照のインデックスの構築および以降の参照用に、参照テーブルのコピーを作成するかどうかを指定する値。 このプロパティの既定値は **True**です。|  
-|区切り記号|String|列の値をトークンにする際に使用される区切り記号。 既定の区切り記号には以下の文字が含まれます。スペース ( )、コンマ (,)、ピリオド (.)、セミコロン (;)、コロン (:)、ハイフン (-)、二重引用符 (")、単一引用符 (')、アンパサンド (&)、スラッシュ (/)、円記号 (\\)、アット マーク (@)、感嘆符 (!)、疑問符 (?)、左かっこ (()、右かっこ ())、小なり (\<), greater than (>)、大なり (>)、左角かっこ ([)、右角かっこ (])、左中かっこ ({)、右中かっこ (})、パイプ文字 (&#124;)。 シャープ記号 (#)、アスタリスク (*)、キャレット (^)、およびパーセント (%)。|  
+|Delimiters|String|列の値をトークンにする際に使用される区切り記号。 既定の区切り記号には以下の文字が含まれます。スペース ( )、コンマ (,)、ピリオド (.)、セミコロン (;)、コロン (:)、ハイフン (-)、二重引用符 (")、単一引用符 (')、アンパサンド (&)、スラッシュ (/)、円記号 (\\)、アット マーク (@)、感嘆符 (!)、疑問符 (?)、左かっこ (()、右かっこ ())、小なり (\<), greater than (>)、大なり (>)、左角かっこ ([)、右角かっこ (])、左中かっこ ({)、右中かっこ (})、パイプ文字 (&#124;)。 シャープ記号 (#)、アスタリスク (*)、キャレット (^)、およびパーセント (%)。|  
 |DropExistingMatchIndex|Boolean|MatchIndexOptions の値が ReuseExistingIndex に設定されていない場合に、MatchIndexName で指定された一致インデックスを削除するかどうかを指定する値。 このプロパティの既定値は、 **True**です。|  
 |Exhaustive|Boolean|各入力レコードを、他のすべての入力レコードと比較するかどうかを指定する値。 値 **True** は、主としてデバッグ目的で設定されます。 このプロパティの既定値は **False**です。<br /><br /> 注:このプロパティは、**あいまい参照変換エディター**では使用できませんが、**詳細エディター**を使用して設定できます。|  
 |MatchIndexName|String|一致インデックスの名前。 一致インデックスは、変換が使用するインデックスを作成して保存するテーブルです。 一致インデックスが再使用される場合、MatchIndexName は再使用するインデックスを示します。 MatchIndexName は、有効な [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] 識別子名である必要があります。 たとえば、名前にスペースが含まれる場合は、角かっこで囲む必要があります。|  
@@ -338,7 +338,7 @@ ms.locfileid: "92194624"
   
 |プロパティ|データ型|説明|  
 |--------------|---------------|-----------------|  
-|FuzzyComparisonFlags|Integer|変換が列の文字列データを比較する方法を指定する値。 詳しくは、「 [比較、文字列データ](../../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。|  
+|FuzzyComparisonFlags|Integer|変換が列の文字列データを比較する方法を指定する値。 詳しくは、「[比較、文字列データ](../../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。|  
 |FuzzyComparisonFlagsEx|Integer (列挙)|どの拡張比較フラグを変換が使用するかを指定する値。 有効な値は **MapExpandLigatures**、 **MapFoldCZone**、 **MapFoldDigits**、 **MapPrecomposed**、および NoMapping です。 **NoMapping** は、他のフラグと組み合わせて使用することはできません。|  
 |JoinToReferenceColumn|String|列と結合される参照テーブル内の列の名前を指定する値。|  
 |JoinType|Integer|あいまい一致または完全一致のどちらを変換が実行するかを指定する値。 このプロパティの既定値は **Fuzzy**です。 完全結合型を表す整数値は **1** で、あいまい結合型を表す値は **2**です。|  
@@ -351,13 +351,13 @@ ms.locfileid: "92194624"
   
 |プロパティ|データ型|説明|  
 |--------------|---------------|-----------------|  
-|[列の型]|Integer (列挙)|変換が出力に追加する列の、出力列の型を指定する値。 このプロパティの値は、次のいずれか 1 つです。<br /><br /> **Undefined** (0)<br /><br /> **Similarity** (1)<br /><br /> **Confidence** (2)<br /><br /> **ColumnSimilarity** (3)|  
+|ColumnType|Integer (列挙)|変換が出力に追加する列の、出力列の型を指定する値。 このプロパティの値は、次のいずれか 1 つです。<br /><br /> **Undefined** (0)<br /><br /> **Similarity** (1)<br /><br /> **Confidence** (2)<br /><br /> **ColumnSimilarity** (3)|  
 |CopyFromReferenceColumn|String|参照テーブル内の列のうち、出力列の値を提供する列の名前を指定する値。|  
 |SourceInputColumnLineageId|Integer|この出力列に値を提供する入力列を指定する値。|  
   
  あいまい参照変換の入力および出力には、カスタム プロパティがありません。  
   
- 詳細については、「 [Fuzzy Lookup Transformation](../../../integration-services/data-flow/transformations/fuzzy-lookup-transformation.md)」を参照してください。  
+ 詳細については、「[あいまい参照変換](../../../integration-services/data-flow/transformations/fuzzy-lookup-transformation.md)」を参照してください。  
   
 ##  <a name="lookup-transformation-custom-properties"></a><a name="lookup"></a> 参照変換のカスタム プロパティ  
  参照変換には、カスタム プロパティと、すべてのデータ フロー コンポーネントとの共通プロパティの両方があります。  
@@ -391,7 +391,7 @@ ms.locfileid: "92194624"
   
  参照変換の入力および出力には、カスタム プロパティがありません。  
   
- 詳細については、「 [Lookup Transformation](../../../integration-services/data-flow/transformations/lookup-transformation.md)」を参照してください。  
+ 詳細については、「[参照変換](../../../integration-services/data-flow/transformations/lookup-transformation.md)」を参照してください。  
   
 ##  <a name="merge-join-transformation-custom-properties"></a><a name="mjoin"></a> マージ結合変換のカスタム プロパティ  
  マージ結合変換には、カスタム プロパティと、すべてのデータ フロー コンポーネントとの共通プロパティの両方があります。  
@@ -413,7 +413,7 @@ ms.locfileid: "92194624"
   
  マージ結合変換の入力、入力列、および出力には、カスタム プロパティがありません。  
   
- 詳細については、「 [Merge Join Transformation](../../../integration-services/data-flow/transformations/merge-join-transformation.md)」を参照してください。  
+ 詳細については、「[マージ結合変換](../../../integration-services/data-flow/transformations/merge-join-transformation.md)」を参照してください。  
   
 ##  <a name="ole-db-command-transformation-custom-properties"></a><a name="oledbcmd"></a> OLE DB コマンド変換のカスタム プロパティ  
  OLE DB コマンド変換には、カスタム プロパティと、すべてのデータ フロー コンポーネントとの共通プロパティの両方があります。  
@@ -434,7 +434,7 @@ ms.locfileid: "92194624"
   
  OLE DB コマンド変換の入力、入力列、出力、および出力列には、カスタム プロパティがありません。  
   
- 詳細については、「 [OLE DB Command Transformation](../../../integration-services/data-flow/transformations/ole-db-command-transformation.md)」を参照してください。  
+ 詳細については、「[OLE DB コマンド変換](../../../integration-services/data-flow/transformations/ole-db-command-transformation.md)」を参照してください。  
   
 ##  <a name="percentage-sampling-transformation-custom-properties"></a><a name="percent"></a> 比率サンプリング変換のカスタム プロパティ  
  比率サンプリング変換には、カスタム プロパティと、すべてのデータ フロー コンポーネントとの共通プロパティの両方があります。  
@@ -454,7 +454,7 @@ ms.locfileid: "92194624"
   
  比率サンプリング変換の入力、入力列、および出力列には、カスタム プロパティがありません。  
   
- 詳細については、「 [Percentage Sampling Transformation](../../../integration-services/data-flow/transformations/percentage-sampling-transformation.md)」を参照してください。  
+ 詳細については、「[比率サンプリング変換](../../../integration-services/data-flow/transformations/percentage-sampling-transformation.md)」を参照してください。  
   
 ##  <a name="pivot-transformation-custom-properties"></a><a name="pivot"></a> ピボット変換のカスタム プロパティ  
  次の表は、ピボット変換のカスタム コンポーネントのプロパティを示しています。  
@@ -476,7 +476,7 @@ ms.locfileid: "92194624"
 |PivotKeyValue|String|PivotUsage プロパティの値によってピボット キーとしてマークされた列に設定できる値のうちの 1 つ。<br /><br /> このプロパティの値は、プロパティ式を使用して指定することができます。|  
 |SourceColumn|Integer|ピボットされた値または -1 を含む入力列の **LineageID** 。 この値に -1 を指定すると、ピボット操作でその列が使用されないことを示します。|  
   
- 詳細については、「 [Pivot Transformation](../../../integration-services/data-flow/transformations/pivot-transformation.md)」を参照してください。  
+ 詳細については、「[ピボット変換](../../../integration-services/data-flow/transformations/pivot-transformation.md)」を参照してください。  
   
 ##  <a name="row-count-transformation-custom-properties"></a><a name="rowcount"></a> 行数変換のカスタム プロパティ  
  行数変換には、カスタム プロパティと、すべてのデータ フロー コンポーネントとの共通プロパティの両方があります。  
@@ -489,7 +489,7 @@ ms.locfileid: "92194624"
   
  行数変換の入力、入力列、出力、および出力列には、カスタム プロパティがありません。  
   
- 詳細については、「 [Row Count Transformation](../../../integration-services/data-flow/transformations/row-count-transformation.md)」を参照してください。  
+ 詳細については、「[行数変換](../../../integration-services/data-flow/transformations/row-count-transformation.md)」を参照してください。  
   
 ##  <a name="row-sampling-transformation-custom-properties"></a><a name="rowsamp"></a> 行サンプリング変換のカスタム プロパティ  
  行サンプリング変換には、カスタム プロパティと、すべてのデータ フロー コンポーネントとの共通プロパティの両方があります。  
@@ -515,7 +515,7 @@ ms.locfileid: "92194624"
   
  行サンプリング変換の入力および入力列には、カスタム プロパティがありません。  
   
- 詳細については、「 [Row Sampling Transformation](../../../integration-services/data-flow/transformations/row-sampling-transformation.md)」を参照してください。  
+ 詳細については、「[行サンプリング変換](../../../integration-services/data-flow/transformations/row-sampling-transformation.md)」を参照してください。  
   
 ##  <a name="script-component-custom-properties"></a><a name="script"></a> スクリプト コンポーネントのカスタム プロパティ  
  スクリプト コンポーネントには、カスタム プロパティと、すべてのデータ フロー コンポーネントとの共通プロパティの両方があります。 スクリプト コンポーネントの機能が変換元、変換、または変換先のいずれの場合でも、同じカスタム プロパティを使用できます。  
@@ -524,12 +524,12 @@ ms.locfileid: "92194624"
   
 |プロパティ名|データ型|説明|  
 |-------------------|---------------|-----------------|  
-|[ReadOnlyVariables]|String|スクリプト コンポーネントが読み取り専用でアクセスできる変数の、コンマ区切りの一覧。|  
-|[ReadWriteVariables]|String|スクリプト コンポーネントが読み取り/書き込みアクセスできる変数の、コンマ区切りの一覧。|  
+|ReadOnlyVariables|String|スクリプト コンポーネントが読み取り専用でアクセスできる変数の、コンマ区切りの一覧。|  
+|ReadWriteVariables|String|スクリプト コンポーネントが読み取り/書き込みアクセスできる変数の、コンマ区切りの一覧。|  
   
  スクリプトの開発者がカスタム プロパティを作成しない限り、スクリプト コンポーネントの入力、入力列、出力、および出力列には、カスタム プロパティがありません。  
   
- 詳細については、「 [Script Component](../../../integration-services/data-flow/transformations/script-component.md)」を参照してください。  
+ 詳細については、「[スクリプト コンポーネント](../../../integration-services/data-flow/transformations/script-component.md)」を参照してください。  
   
 ##  <a name="slowly-changing-dimension-transformation-custom-properties"></a><a name="scd"></a> 緩やかに変化するディメンション変換のカスタム プロパティ  
  緩やかに変化するディメンション変換には、カスタム プロパティと、すべてのデータ フロー コンポーネントとの共通プロパティの両方があります。  
@@ -551,7 +551,7 @@ ms.locfileid: "92194624"
   
 |プロパティ|データ型|説明|  
 |--------------|---------------|-----------------|  
-|[列の型]|Integer (列挙)|列の更新の種類。 値は次のとおりです。**Changing Attribute** (2)、**Fixed Attribute** (4)、**Historical Attribute** (3)、**Key** (1)、**Other** (0)。|  
+|ColumnType|Integer (列挙)|列の更新の種類。 値は次のとおりです。**Changing Attribute** (2)、**Fixed Attribute** (4)、**Historical Attribute** (3)、**Key** (1)、**Other** (0)。|  
   
  緩やかに変化するディメンション変換の入力、出力、および出力列には、カスタム プロパティがありません。  
   
