@@ -51,14 +51,14 @@ ms.locfileid: "92193218"
 ## <a name="configuration-of-the-derived-column-transformation"></a>派生列変換の構成  
  派生列変換は、次の方法で構成できます。  
   
--   各入力列または変更する新しい列に対し、式を設定します。 詳細については、「 [Integration Services (SSIS) 式](../../../integration-services/expressions/integration-services-ssis-expressions.md)に評価されるまでそのワークフローを繰り返します。  
+-   各入力列または変更する新しい列に対し、式を設定します。 詳細については、「[Integration Services (SSIS) 式](../../../integration-services/expressions/integration-services-ssis-expressions.md)に評価されるまでそのワークフローを繰り返します。  
   
     > [!NOTE]  
     >  派生列変換によって上書きされる入力列を式が参照する場合、その式は派生した値ではなく、列の元の値を使用します。  
   
--   データ型が **文字列**の場合に結果を新しい列に追加するには、コード ページを指定します。 詳しくは、「 [Comparing String Data](../../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。  
+-   データ型が **文字列**の場合に結果を新しい列に追加するには、コード ページを指定します。 詳しくは、「[比較、文字列データ](../../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。  
   
- 派生列変換には、FriendlyExpression カスタム プロパティがあります。 このプロパティは、パッケージの読み込み時にプロパティ式で更新できます。 詳細については、「 [パッケージでプロパティ式を使用する](../../../integration-services/expressions/use-property-expressions-in-packages.md)」および「 [変換のカスタム プロパティ](../../../integration-services/data-flow/transformations/transformation-custom-properties.md)」を参照してください。  
+ 派生列変換には、FriendlyExpression カスタム プロパティがあります。 このプロパティは、パッケージの読み込み時にプロパティ式で更新できます。 詳細については、「[パッケージでプロパティ式を使用する](../../../integration-services/expressions/use-property-expressions-in-packages.md)」および「[変換のカスタム プロパティ](../../../integration-services/data-flow/transformations/transformation-custom-properties.md)」を参照してください。  
   
  この変換は、1 つの入力、1 つの標準出力、および 1 つのエラー出力をとります。  
   
@@ -102,7 +102,7 @@ ms.locfileid: "92193218"
  **関連トピック**: [Integration Services &#40;SSIS&#41; の式](../../../integration-services/expressions/integration-services-ssis-expressions.md)、[ &#40;SSIS の式&#41;](../../../integration-services/expressions/operators-ssis-expression.md)、[ &#40;SSIS の式&#41;](../../../integration-services/expressions/functions-ssis-expression.md)  
   
  **[データ型]**  
- 新しい列にデータを追加すると、 **[派生列変換エディター]** ダイアログ ボックスによって自動的に式が評価され、データ型が適切に設定されます。 この列の値は読み取り専用です。 詳細については、「 [Integration Services Data Types](../../../integration-services/data-flow/integration-services-data-types.md)」を参照してください。  
+ 新しい列にデータを追加すると、 **[派生列変換エディター]** ダイアログ ボックスによって自動的に式が評価され、データ型が適切に設定されます。 この列の値は読み取り専用です。 詳細については、「[Integration Services Data Types](../../../integration-services/data-flow/integration-services-data-types.md)」を参照してください。  
   
  **[データ型]**  
  新しい列にデータを追加すると、 **[派生列変換エディター]** ダイアログ ボックスによって自動的に式が評価され、文字列データに対する列の長さが設定されます。 この列の値は読み取り専用です。  
@@ -120,4 +120,4 @@ ms.locfileid: "92193218"
  [[エラー出力の構成]](../error-handling-in-data.md) ダイアログ ボックスを使用して、エラーの処理方法を指定します。  
   
 ## <a name="related-content"></a>関連コンテンツ  
- social.technet.microsoft.com の技術記事「 [SSIS 式の例](https://go.microsoft.com/fwlink/?LinkId=220761)」
+ social.technet.microsoft.com の技術記事「[SSIS 式の例](https://go.microsoft.com/fwlink/?LinkId=220761)」
