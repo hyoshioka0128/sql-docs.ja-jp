@@ -34,33 +34,33 @@ ms.locfileid: "92192668"
   
  この変換を使用すると、パッケージで次の種類のデータ変換を実行できます。  
   
--   データ型を変更します。 詳細については、「 [Integration Services Data Types](../../../integration-services/data-flow/integration-services-data-types.md)」を参照してください。  
+-   データ型を変更します。 詳細については、「[Integration Services Data Types](../../../integration-services/data-flow/integration-services-data-types.md)」を参照してください。  
   
     > [!NOTE]  
     >  date データ型または datetime データ型にデータを変換する場合、ロケール設定で別の形式が指定されている場合でも、出力列の日付は ISO 形式になります。  
   
 -   文字列データの列の長さ、および数値データの有効桁数と小数点以下桁数を設定します。 詳しくは、「[有効桁数、小数点以下桁数、および長さ &#40;Transact-SQL&#41;](../../../t-sql/data-types/precision-scale-and-length-transact-sql.md)」をご覧ください。  
   
--   コード ページを指定します。 詳しくは、「 [Comparing String Data](../../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。  
+-   コード ページを指定します。 詳しくは、「[比較、文字列データ](../../../integration-services/data-flow/comparing-string-data.md)」をご覧ください。  
   
     > [!NOTE]  
     >  文字列データ型の 2 つの列間でコピーを行う場合、それらの列のコード ページは同じである必要があります。  
   
- 文字列データの出力列の長さが、対応する入力列の長さよりも短い場合、出力データは切り捨てられます。 詳細については、「 [データのエラー処理](../../../integration-services/data-flow/error-handling-in-data.md)」を参照してください。  
+ 文字列データの出力列の長さが、対応する入力列の長さよりも短い場合、出力データは切り捨てられます。 詳細については、「[データのエラー処理](../../../integration-services/data-flow/error-handling-in-data.md)」を参照してください。  
   
  この変換は、1 つの入力、1 つの出力、および 1 つのエラー出力をとります。  
   
 ## <a name="related-tasks"></a>関連タスク  
- プロパティを設定するには [!INCLUDE[ssIS](../../../includes/ssis-md.md)] デザイナーから行うか、またはプログラムによって設定します。 SSIS デザイナーでのデータ変換の変換の使用については、「[データ変換の変換を使用してデータを別のデータ型に変換する](../../../integration-services/data-flow/transformations/convert-data-type-by-using-data-conversion-transformation.md)」を参照してください。 プログラムによるこの変換のプロパティの設定については、「 [共通プロパティ](../set-the-properties-of-a-data-flow-component.md) 」および「 [変換のカスタム プロパティ](../../../integration-services/data-flow/transformations/transformation-custom-properties.md)」をご覧ください。  
+ プロパティを設定するには [!INCLUDE[ssIS](../../../includes/ssis-md.md)] デザイナーから行うか、またはプログラムによって設定します。 SSIS デザイナーでのデータ変換の変換の使用については、「[データ変換の変換を使用してデータを別のデータ型に変換する](../../../integration-services/data-flow/transformations/convert-data-type-by-using-data-conversion-transformation.md)」を参照してください。 プログラムによるこの変換のプロパティの設定については、「[共通プロパティ](../set-the-properties-of-a-data-flow-component.md) 」および「[変換のカスタム プロパティ](../../../integration-services/data-flow/transformations/transformation-custom-properties.md)」をご覧ください。  
   
 ## <a name="related-content"></a>関連コンテンツ  
- blogs.msdn.com のブログ「 [SSIS 2008 のデータ型の変換手法間のパフォーマンス比較](https://techcommunity.microsoft.com/t5/datacat/performance-comparison-between-data-type-conversion-techniques/ba-p/305035)」  
+ blogs.msdn.com のブログ「[SSIS 2008 のデータ型の変換手法間のパフォーマンス比較](https://techcommunity.microsoft.com/t5/datacat/performance-comparison-between-data-type-conversion-techniques/ba-p/305035)」  
   
 ## <a name="data-conversion-transformation-editor"></a>データ変換変換エディター
   **[データ変換変換エディター]** ダイアログ ボックスを使用すると、変換対象の列や列の変換先のデータ型を選択したり、変換属性を設定したりできます。  
   
 > [!NOTE]  
->  データ変換の変換の出力列の **FastParse** プロパティは、 **[データ変換変換エディター]** ではアクセスできませんが、 **[詳細エディター]** を使用して設定できます。 このプロパティの詳細については、「 [変換のカスタム プロパティ](../../../integration-services/data-flow/transformations/transformation-custom-properties.md)」の「データ変換の変換」を参照してください。  
+>  データ変換の変換の出力列の **FastParse** プロパティは、 **[データ変換変換エディター]** ではアクセスできませんが、 **[詳細エディター]** を使用して設定できます。 このプロパティの詳細については、「[変換のカスタム プロパティ](../../../integration-services/data-flow/transformations/transformation-custom-properties.md)」の「データ変換の変換」を参照してください。  
   
 ### <a name="options"></a>オプション  
  **使用できる入力列**  
@@ -73,7 +73,7 @@ ms.locfileid: "92192668"
  それぞれの新しい列の別名を入力します。 既定では、入力列の名前の後に " **のコピー** " が追加された別名になりますが、固有のわかりやすい名前を選択することもできます。  
   
  **[データ型]**  
- 一覧から利用可能なデータ型を選択します。 詳細については、「 [Integration Services Data Types](../../../integration-services/data-flow/integration-services-data-types.md)」を参照してください。  
+ 一覧から利用可能なデータ型を選択します。 詳細については、「[Integration Services Data Types](../../../integration-services/data-flow/integration-services-data-types.md)」を参照してください。  
   
  **[データ型]**  
  文字列データの列の長さを設定します。  
