@@ -49,7 +49,7 @@ ms.locfileid: "92195947"
   あいまい参照変換では、データの標準化、データの修正、不足している値の提供など、データのクリーン タスクを実行します。  
   
 > [!NOTE]  
->  パフォーマンスやメモリの制限など、あいまい参照変換に関する詳細については、ホワイト ペーパー「 [SQL Server Integration Services 2005 のあいまい参照とあいまいグループ化](/previous-versions/sql/sql-server-2005/administrator/ms345128(v=sql.90))」を参照してください。  
+>  パフォーマンスやメモリの制限など、あいまい参照変換に関する詳細については、ホワイト ペーパー「[SQL Server Integration Services 2005 のあいまい参照とあいまいグループ化](/previous-versions/sql/sql-server-2005/administrator/ms345128(v=sql.90))」を参照してください。  
   
  あいまい参照変換は、あいまい一致を使用するという点が参照変換とは異なります。 参照変換では、等結合を使用して、参照テーブル内の一致レコードを検索します。 返されるのは、一致レコードを少なくとも 1 つ含むレコードと、一致レコードがないレコードです。 これに対して、あいまい参照変換では、あいまい一致を使用して、参照テーブル内の 1 つ以上の類似一致を返します。  
   
@@ -59,7 +59,7 @@ ms.locfileid: "92195947"
   
  この変換は 1 つの入力と 1 つの出力をとります。  
   
- あいまい一致に使用できるのは、**DT_WSTR** データ型および **DT_STR** データ型の入力列のみです。 完全一致では、 **DT_TEXT****DT_NTEXT****DT_IMAGE** を除くすべての DTS データ型を使用できます。 詳細については、「 [Integration Services Data Types](../../../integration-services/data-flow/integration-services-data-types.md)」を参照してください。 入力と参照テーブルの結合に使用される列のデータ型には、互換性が必要です。 たとえば、DTS の **DT_WSTR** データ型の列と、[!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] **nvarchar** データ型の列の結合は有効ですが、**DT_WSTR** データ型の列と、**int** データ型の列の結合は無効です。  
+ あいまい一致に使用できるのは、**DT_WSTR** データ型および **DT_STR** データ型の入力列のみです。 完全一致では、 **DT_TEXT**、**DT_NTEXT**、**DT_IMAGE** を除くすべての DTS データ型を使用できます。 詳細については、「[Integration Services Data Types](../../../integration-services/data-flow/integration-services-data-types.md)」を参照してください。 入力と参照テーブルの結合に使用される列のデータ型には、互換性が必要です。 たとえば、DTS の **DT_WSTR** データ型の列と、[!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] **nvarchar** データ型の列の結合は有効ですが、**DT_WSTR** データ型の列と、**int** データ型の列の結合は無効です。  
   
  この変換は、使用する最大メモリ量、行比較アルゴリズム、および変換で使用するインデックス テーブルと参照テーブルのキャッシュを指定することにより、カスタマイズできます。  
   
@@ -112,9 +112,9 @@ ms.locfileid: "92195947"
  SQL の TRUNCATE TABLE コマンドでは、DELETE トリガーは起動されません。 TRUNCATE TABLE コマンドが参照テーブルに対して使用されると、参照テーブルと一致インデックスが同期されなくなり、あいまい参照変換が失敗します。 一致インデックス テーブルを維持するトリガーが参照テーブルに組み込まれている場合は、TRUNCATE TABLE コマンドではなく、SQL の DELETE コマンドを使用してください。  
   
 > [!NOTE]  
->  **[あいまい参照変換エディター]** ダイアログ ボックスの **[参照テーブル]** タブで **[保存されたインデックスを維持する]** を選択すると、変換ではマネージド ストアド プロシージャを使用してインデックスを維持します。 これらのマネージド ストアド プロシージャは、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]の共通言語ランタイム (CLR) 統合機能を使用します。 既定では、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] の CLR 統合は無効です。 **[保存されたインデックスを維持する]** 機能を使用するには、CLR 統合を有効にする必要があります。 詳細については、「 [CLR 統合の有効化](../../../relational-databases/clr-integration/clr-integration-enabling.md)」を参照してください。  
+>  **あいまい参照変換エディター** ダイアログ ボックスの **参照テーブル** タブで **保存されたインデックスを維持する** を選択すると、変換ではマネージド ストアド プロシージャを使用してインデックスを維持します。 これらのマネージド ストアド プロシージャは、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]の共通言語ランタイム (CLR) 統合機能を使用します。 既定では、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] の CLR 統合は無効です。 **保存されたインデックスを維持する** 機能を使用するには、CLR 統合を有効にする必要があります。 詳細については、「[CLR 統合の有効化](../../../relational-databases/clr-integration/clr-integration-enabling.md)」を参照してください。  
 >   
->  **[保存されたインデックスを維持する]** オプションは CLR 統合を必要とするため、この機能を使用できるのは、CLR 統合が有効になっている [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] のインスタンスの参照テーブルを選択した場合だけです。  
+>  **保存されたインデックスを維持する** オプションは CLR 統合を必要とするため、この機能を使用できるのは、CLR 統合が有効になっている [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] のインスタンスの参照テーブルを選択した場合だけです。  
   
 ## <a name="row-comparison"></a>行の比較  
  あいまい参照変換を構成する際には、参照テーブル内の一致するレコードの検索に使用する比較アルゴリズムを指定できます。 Exhaustive プロパティを **True** に設定すると、変換に入力されたすべての行が参照テーブルのすべての行と比較されます。 この比較アルゴリズムを使用すると、より正確な結果が生成されますが、参照テーブルの行の数が少ない場合を除けば、処理により多くの時間がかかるようになります。 Exhaustive プロパティを **True** に設定すると、参照テーブル全体がメモリに読み込まれます。 パフォーマンス上の問題を回避するため、パッケージの開発中は、Exhaustive プロパティを **True** に設定することをお勧めします。  
@@ -132,59 +132,59 @@ ms.locfileid: "92195947"
 ## <a name="configuring-the-fuzzy-lookup-transformation"></a>あいまい参照変換の設定  
  プロパティを設定するには [!INCLUDE[ssIS](../../../includes/ssis-md.md)] デザイナーから行うか、またはプログラムによって設定します。  
   
- **[詳細エディター]** ダイアログ ボックスまたはプログラムで設定できるプロパティの詳細については、次のトピックのいずれかを参照してください。  
+ **詳細エディター** ダイアログ ボックスまたはプログラムで設定できるプロパティの詳細については、次のトピックのいずれかを参照してください。  
   
--   [Common Properties](../set-the-properties-of-a-data-flow-component.md)  
+-   [共通プロパティ](../set-the-properties-of-a-data-flow-component.md)  
   
 -   [変換のカスタム プロパティ](../../../integration-services/data-flow/transformations/transformation-custom-properties.md)  
   
-## <a name="related-tasks"></a>Related Tasks  
- データ フロー コンポーネントのプロパティの設定方法の詳細については、「 [データ フロー コンポーネントのプロパティを設定する](../../../integration-services/data-flow/set-the-properties-of-a-data-flow-component.md)」を参照してください。  
+## <a name="related-tasks"></a>関連タスク  
+ データ フロー コンポーネントのプロパティの設定方法の詳細については、「[データ フロー コンポーネントのプロパティを設定する](../../../integration-services/data-flow/set-the-properties-of-a-data-flow-component.md)」を参照してください。  
   
-## <a name="fuzzy-lookup-transformation-editor-reference-table-tab"></a>[あいまい参照変換エディター] ([参照テーブル] タブ)
-  **[あいまい参照変換エディター]** ダイアログ ボックスの **[参照テーブル]** タブを使用すると、参照に使用する変換元テーブルとインデックスを指定できます。 参照データ ソースは [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] データベースのテーブルである必要があります。  
-  
-> [!NOTE]  
->  あいまい参照変換では、参照テーブルの作業用コピーが作成されます。 以降に説明するインデックスは、通常の [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] インデックスではなく、特別なテーブルを使用してこの作業用テーブルに作成されるものです。 **[保存されたインデックスを維持する]** を選択しないと、既存の変換元テーブルは変更されません。 この場合、参照テーブルに加えられた変更に基づいて作業用テーブルと参照インデックス テーブルを更新するトリガーが、参照テーブルに作成されます。  
+## <a name="fuzzy-lookup-transformation-editor-reference-table-tab"></a>あいまい参照変換エディター ([参照テーブル] タブ)
+  **あいまい参照変換エディター** ダイアログ ボックスの **参照テーブル** タブを使用すると、参照に使用する変換元テーブルとインデックスを指定できます。 参照データ ソースは [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] データベースのテーブルである必要があります。  
   
 > [!NOTE]  
->  あいまい参照変換の **Exhaustive** プロパティおよび **MaxMemoryUsage** プロパティは、 **[あいまい参照変換エディター]** ではアクセスできませんが、 **[詳細エディター]** を使用して設定できます。 さらに、 **MaxOutputMatchesPerInput** の 100 より大きい値は、 **[詳細エディター]** でのみ指定できます。 これらのプロパティの詳細については、「 [変換のカスタム プロパティ](../../../integration-services/data-flow/transformations/transformation-custom-properties.md)」の「あいまい参照変換」を参照してください。  
+>  あいまい参照変換では、参照テーブルの作業用コピーが作成されます。 以降に説明するインデックスは、通常の [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] インデックスではなく、特別なテーブルを使用してこの作業用テーブルに作成されるものです。 **保存されたインデックスを維持する** を選択しないと、既存の変換元テーブルは変更されません。 この場合、参照テーブルに加えられた変更に基づいて作業用テーブルと参照インデックス テーブルを更新するトリガーが、参照テーブルに作成されます。  
+  
+> [!NOTE]  
+>  あいまい参照変換の **Exhaustive** プロパティおよび **MaxMemoryUsage** プロパティは、 **あいまい参照変換エディター** ではアクセスできませんが、 **詳細エディター** を使用して設定できます。 さらに、 **MaxOutputMatchesPerInput** の 100 より大きい値は、 **詳細エディター** でのみ指定できます。 これらのプロパティの詳細については、「[変換のカスタム プロパティ](../../../integration-services/data-flow/transformations/transformation-custom-properties.md)」の「あいまい参照変換」を参照してください。  
   
 ### <a name="options"></a>オプション  
- **[キャッシュなし]**  
- 一覧から既存の OLE DB 接続マネージャーを選択するか、 **[新規作成]** をクリックして新しい接続を作成します。  
+ **キャッシュなし**  
+ 一覧から既存の OLE DB 接続マネージャーを選択するか、 **新規作成** をクリックして新しい接続を作成します。  
   
- **[新規作成]**  
- **[OLE DB 接続マネージャーの構成]** ダイアログ ボックスを使用して、新しい接続を作成します。  
+ **新規作成**  
+ **OLE DB 接続マネージャーの構成** ダイアログ ボックスを使用して、新しい接続を作成します。  
   
- **[新しいインデックスを生成する]**  
+ **新しいインデックスを生成する**  
  参照に使用する新しいインデックスを作成するように指定します。  
   
- **[参照テーブル名]**  
+ **参照テーブル名**  
  参照テーブルとして使用する既存のテーブルを選択します。  
   
- **[新しいインデックスを保存する]**  
+ **新しいインデックスを保存する**  
  新しい参照インデックスを保存する場合に、このオプションを選択します。  
   
- **[新しいインデックス名]**  
+ **新しいインデックス名**  
  新しい参照インデックスを保存するように指定した場合、そのインデックスの名前を入力します。  
   
- **[保存されたインデックスを維持する]**  
+ **保存されたインデックスを維持する**  
  新しい参照インデックスを保存するように指定した場合、そのインデックスを [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] でも維持するかどうかを指定します。  
   
 > [!NOTE]  
->  **[あいまい参照変換エディター]** ダイアログ ボックスの **[参照テーブル]** タブで **[保存されたインデックスを維持する]** を選択すると、変換ではマネージド ストアド プロシージャを使用してインデックスを維持します。 これらのマネージド ストアド プロシージャは、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]の共通言語ランタイム (CLR) 統合機能を使用します。 既定では、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] の CLR 統合は無効です。 **[保存されたインデックスを維持する]** 機能を使用するには、CLR 統合を有効にする必要があります。 詳細については、「 [CLR 統合の有効化](../../../relational-databases/clr-integration/clr-integration-enabling.md)」を参照してください。  
+>  **あいまい参照変換エディター** ダイアログ ボックスの **参照テーブル** タブで **保存されたインデックスを維持する** を選択すると、変換ではマネージド ストアド プロシージャを使用してインデックスを維持します。 これらのマネージド ストアド プロシージャは、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]の共通言語ランタイム (CLR) 統合機能を使用します。 既定では、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] の CLR 統合は無効です。 **保存されたインデックスを維持する** 機能を使用するには、CLR 統合を有効にする必要があります。 詳細については、「[CLR 統合の有効化](../../../relational-databases/clr-integration/clr-integration-enabling.md)」を参照してください。  
 >   
->  **[保存されたインデックスを維持する]** オプションは CLR 統合を必要とするため、この機能を使用できるのは、CLR 統合が有効になっている [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] のインスタンスの参照テーブルを選択した場合だけです。  
+>  **保存されたインデックスを維持する** オプションは CLR 統合を必要とするため、この機能を使用できるのは、CLR 統合が有効になっている [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] のインスタンスの参照テーブルを選択した場合だけです。  
   
- **[既存のインデックスを使用する]**  
+ **既存のインデックスを使用する**  
  参照に既存のインデックスを使用するように指定します。  
   
- **[既存のインデックスの名前]**  
+ **既存のインデックスの名前**  
  以前に作成した参照インデックスを一覧から選択します。  
   
-## <a name="fuzzy-lookup-transformation-editor-columns-tab"></a>[あいまい参照変換エディター] ([列] タブ)
-  **[あいまい参照変換エディター]** ダイアログ ボックスの **[列]** タブを使用すると、入力列および出力列のプロパティを設定できます。  
+## <a name="fuzzy-lookup-transformation-editor-columns-tab"></a>あいまい参照変換エディター (列 タブ)
+  **あいまい参照変換エディター** ダイアログ ボックスの **列** タブを使用すると、入力列および出力列のプロパティを設定できます。  
   
 ### <a name="options"></a>オプション  
  **使用できる入力列**  
@@ -193,33 +193,33 @@ ms.locfileid: "92195947"
  **名前**  
  使用可能な入力列の名前が表示されます。  
   
- **[パススルー]**  
+ **パススルー**  
  変換先の出力に入力列を含めるかどうかを指定します。  
   
  **使用できる参照列**  
  チェック ボックスを使用して、あいまい参照操作を実行する列を選択します。  
   
  **参照列**  
- 使用できる参照テーブル列の一覧から参照列を選択します。 選択内容が **[使用できる参照列]** テーブルのチェック ボックスに反映されます。 **[使用できる参照列]** テーブルの列を選択すると、返される一致行ごとに参照テーブル列の値を含む出力列が作成されます。  
+ 使用できる参照テーブル列の一覧から参照列を選択します。 選択内容が **使用できる参照列** テーブルのチェック ボックスに反映されます。 **使用できる参照列** テーブルの列を選択すると、返される一致行ごとに参照テーブル列の値を含む出力列が作成されます。  
   
- **[出力の別名]**  
+ **出力の別名**  
  各参照列の出力の別名を入力します。 既定では、参照列の名前に数値のインデックス値が追加されます。一意のわかりやすい名前を付けることもできます。  
   
-## <a name="fuzzy-lookup-transformation-editor-advanced-tab"></a>[あいまい参照変換エディター] ([詳細設定] タブ)
-  **[あいまい参照変換エディター]** ダイアログ ボックスの **[詳細設定]** タブを使用すると、あいまい参照のパラメーターを設定できます。  
+## <a name="fuzzy-lookup-transformation-editor-advanced-tab"></a>あいまい参照変換エディター (詳細設定 タブ)
+  **あいまい参照変換エディター** ダイアログ ボックスの **詳細設定** タブを使用すると、あいまい参照のパラメーターを設定できます。  
   
 ### <a name="options"></a>オプション  
- **[参照ごとの出力に対する最大一致数]**  
+ **参照ごとの出力に対する最大一致数**  
  変換で返される、各入力行の一致の最大数を指定します。 既定値は **1** です。  
   
- **[類似性のしきい値]**  
+ **類似性のしきい値**  
  スライダーを使用して、コンポーネント レベルの類似性のしきい値を設定します。 値を 1 に近づけるほど、参照元の値と参照先の値との類似性が高くなければ一致しないと見なされます。 しきい値を大きくすると、照合の対象となるレコードが少なくなるため、照合の速度が向上します。  
   
- **[トークン区切り記号]**  
+ **トークン区切り記号**  
  列の値をトークンにする際に使用される区切り記号を指定します。  
   
 ## <a name="see-also"></a>関連項目  
  [参照変換](../../../integration-services/data-flow/transformations/lookup-transformation.md)   
- [Fuzzy Grouping Transformation](../../../integration-services/data-flow/transformations/fuzzy-grouping-transformation.md)   
+ [あいまいグループ化変換](../../../integration-services/data-flow/transformations/fuzzy-grouping-transformation.md)   
  [Integration Services の変換](../../../integration-services/data-flow/transformations/integration-services-transformations.md)  
   
