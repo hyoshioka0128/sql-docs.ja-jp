@@ -40,7 +40,7 @@ ms.locfileid: "100348975"
   
 -   一括挿入タスクで [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] テーブルまたはビューに転送できるのは、テキスト ファイルのデータのみです。 一括挿入タスクを使用して他のデータベース管理システム (DBMS) からデータを転送するには、データをコピー元からテキスト ファイルにエクスポートし、そのテキスト ファイルから [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] テーブルまたはビューにインポートする必要があります。  
   
--   コピー先は、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースのテーブルまたはビューである必要があります。 コピー先のテーブルまたはビューに既にデータがある場合、一括挿入タスクが実行されると新しいデータが既存のデータに追加されます。 データを置換する場合は、一括挿入タスクを実行する前に、DELETE または TRUNCATE ステートメントを実行する SQL 実行タスクを実行します。 詳細については、「 [SQL 実行タスク](../../integration-services/control-flow/execute-sql-task.md)」を参照してください。  
+-   コピー先は、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースのテーブルまたはビューである必要があります。 コピー先のテーブルまたはビューに既にデータがある場合、一括挿入タスクが実行されると新しいデータが既存のデータに追加されます。 データを置換する場合は、一括挿入タスクを実行する前に、DELETE または TRUNCATE ステートメントを実行する SQL 実行タスクを実行します。 詳細については、「[SQL 実行タスク](../../integration-services/control-flow/execute-sql-task.md)」を参照してください。  
   
 -   一括挿入タスク オブジェクトではフォーマット ファイルを使用できます。 **bcp** ユーティリティを使用して作成したフォーマット ファイルを使用する場合、一括挿入タスクでフォーマット ファイルのパスを指定できます。 一括挿入タスクでは、XML および XML 以外のフォーマット ファイルの両方がサポートされます。 フォーマット ファイルの使用方法の詳細は、「[データのインポートまたはエクスポート用のフォーマット ファイル &#40;SQL Server&#41;](../../relational-databases/import-export/format-files-for-importing-or-exporting-data-sql-server.md)」を参照してください。  
   
@@ -108,7 +108,7 @@ ms.locfileid: "100348975"
   
 -   <xref:Microsoft.SqlServer.Dts.Tasks.BulkInsertTask.BulkInsertTask>  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
  [タスクまたはコンテナーのプロパティを設定する](./add-or-delete-a-task-or-a-container-in-a-control-flow.md)  
   
 ## <a name="related-content"></a>関連コンテンツ  
