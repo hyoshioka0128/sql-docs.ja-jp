@@ -126,7 +126,7 @@ ms.locfileid: "99049133"
 ## <a name="behavior-changes-in-statistics-computation-during-partitioned-index-operations"></a>パーティション インデックス操作中の統計計算での動作の変更  
  [!INCLUDE[ssSQL11](../../includes/sssql11-md.md)]以降では、パーティション インデックスが作成または再構築された場合、テーブル内のすべての行をスキャンして統計を作成することはできません。 代わりに、クエリ オプティマイザーが既定のサンプリング アルゴリズムを使用して統計を生成します。 パーティション インデックスでデータベースをアップグレードした後で、これらのインデックスのヒストグラム データに違いが見つかる場合があります。 この動作の変更はクエリ パフォーマンスに影響しない可能性があります。 テーブル内のすべての行をスキャンしてパーティション インデックスの統計を作成するには、`FULLSCAN` 句で `CREATE STATISTICS` または `UPDATE STATISTICS` を使用します。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
   
 |タスク|トピック|  
 |-|-|   
