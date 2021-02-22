@@ -75,7 +75,7 @@ ms.locfileid: "97478183"
   
 -   SORT_IN_TEMPDB を OFF に設定した場合は、最終テーブルを格納するのに十分な空き領域が出力先のファイル グループに必要です。 最終テーブルには、すべてのインデックスの構造が含まれます。 テーブルとインデックスのエクステントの連続性は空き領域が多いほど向上します。  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
  [CREATE INDEX &#40;Transact-SQL&#41;](../../t-sql/statements/create-index-transact-sql.md)  
   
  [インデックスの再編成と再構築](../../relational-databases/indexes/reorganize-and-rebuild-indexes.md)  
