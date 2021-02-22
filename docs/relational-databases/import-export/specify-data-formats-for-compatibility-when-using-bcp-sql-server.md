@@ -106,7 +106,7 @@ bcp AdventureWorks.HumanResources.myTeam out myTeam.txt -T
 >  文字形式やネイティブ形式など、ファイル保存形式に 1 つのデータ形式を使用するデータ ファイルの場合は、 **format** オプションを使用することで、データをエクスポートまたはインポートしなくても、フォーマット ファイルをすばやく作成できます。 この方法は簡単で、XML フォーマット ファイルと XML 以外のフォーマット ファイルのどちらも作成できるという利点があります。 詳細については、「[フォーマット ファイルの作成 &#40;SQL Server&#41;](../../relational-databases/import-export/create-a-format-file-sql-server.md)」をご覧ください。  
   
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
   
 -   [bcp を使用したファイル ストレージ型の指定 &#40;SQL Server&#41;](../../relational-databases/import-export/specify-file-storage-type-by-using-bcp-sql-server.md)  
   
