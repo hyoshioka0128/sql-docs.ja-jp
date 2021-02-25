@@ -79,7 +79,7 @@ FROM sys.dm_exec_connections
 WHERE session_id = @@SPID;  
 ```  
   
-## <a name="related-tasks"></a>Related Tasks  
+## <a name="related-tasks"></a>関連タスク  
  [SQL Server インスタンスへのログイン &#40;コマンド プロンプト&#41;](../../database-engine/configure-windows/log-in-to-an-instance-of-sql-server-command-prompt.md)  
   
  以下のリソースは、接続の問題に関するトラブルシューティングに役立ちます。  
