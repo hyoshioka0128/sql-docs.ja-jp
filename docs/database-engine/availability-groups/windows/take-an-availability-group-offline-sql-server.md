@@ -37,7 +37,7 @@ ms.locfileid: "100342373"
 ##  <a name="recommendations"></a><a name="Recommendations"></a> 推奨事項  
  可用性グループをオフラインにする前に、可用性グループ リスナーを削除します。 詳細については、「 [可用性グループ リスナーの削除 &#40;SQL Server&#41;](../../../database-engine/availability-groups/windows/remove-an-availability-group-listener-sql-server.md)への OS のアップグレードで使用することです。  
   
-##  <a name="permissions"></a><a name="Permissions"></a> Permissions  
+##  <a name="permissions"></a><a name="Permissions"></a> 権限  
  可用性グループの ALTER AVAILABILITY GROUP 権限、CONTROL AVAILABILITY GROUP 権限、ALTER ANY AVAILABILITY GROUP 権限、または CONTROL SERVER 権限が必要です。  
   
 ##  <a name="using-transact-sql"></a><a name="TsqlProcedure"></a> Transact-SQL の使用  
