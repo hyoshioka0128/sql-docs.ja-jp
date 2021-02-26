@@ -116,7 +116,7 @@ ms.locfileid: "100353894"
   
  ![プライマリ レプリカ構成がフェールオーバーに与える影響](../../../database-engine/availability-groups/windows/media/aoag-failoversetexample.gif "プライマリ レプリカ構成がフェールオーバーに与える影響")  
   
-##  <a name="automatic-failover"></a><a name="AutomaticFailover"></a> Automatic Failover  
+##  <a name="automatic-failover"></a><a name="AutomaticFailover"></a> 自動フェールオーバー  
  自動フェールオーバーでは、プライマリ レプリカが使用できなくなった後で、対応するセカンダリ レプリカが自動的にプライマリ ロールに移行します。 セカンダリ レプリカをホストするノードに対して、プライマリ レプリカをホストする WSFC ノードがローカルである場合、自動フェールオーバーが最適です。 これには、データ同期はコンピューター間のメッセージ待機時間が短いときに最も効果的であること、およびクライアント接続をローカルに保持できるという理由があります。  
   
  **このセクションの内容**  
