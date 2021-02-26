@@ -47,7 +47,7 @@ ms.locfileid: "100355119"
   
  これらの構成タスクの詳細については、[補足情報: 可用性グループを作成した後](#FollowUp)に関する情報 (このトピックで後述) を参照してください。  
   
-##  <a name="permissions"></a><a name="Permissions"></a> Permissions  
+##  <a name="permissions"></a><a name="Permissions"></a> 権限  
  **sysadmin** 固定サーバー ロールのメンバーシップと、CREATE AVAILABILITY GROUP サーバー権限、ALTER ANY AVAILABILITY GROUP 権限、CONTROL SERVER 権限のいずれかが必要です。  
   
 ##  <a name="using-the-new-availability-group-dialog-box-sql-server-management-studio"></a><a name="SSMSProcedure"></a> [新しい可用性グループ] ダイアログ ボックスの使用 (SQL Server Management Studio)  
