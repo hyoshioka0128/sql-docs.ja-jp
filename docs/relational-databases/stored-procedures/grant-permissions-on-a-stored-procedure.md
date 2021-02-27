@@ -46,7 +46,7 @@ ms.locfileid: "99250302"
   
 ###  <a name="security"></a><a name="Security"></a> セキュリティ  
   
-####  <a name="permissions"></a><a name="Permissions"></a> Permissions  
+####  <a name="permissions"></a><a name="Permissions"></a> アクセス許可  
  権限の許可者 (または AS オプションで指定されたプリンシパル) は、GRANT OPTION によって与えられた権限を保持しているか、権限が暗黙的に与えられる上位の権限を保持している必要があります。 プロシージャが属しているスキーマに対する ALTER 権限、またはプロシージャに対する CONTROL 権限が必要です。 詳細については、「 [GRANT (オブジェクトの権限の許可) &#40;Transact-SQL&#41;](../../t-sql/statements/grant-object-permissions-transact-sql.md)を使用して、ストアド プロシージャに対する権限を許可する方法について説明します。  
   
 ##  <a name="using-sql-server-management-studio"></a><a name="SSMSProcedure"></a> SQL Server Management Studio の使用  
