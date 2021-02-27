@@ -64,7 +64,7 @@ ms.locfileid: "99250751"
   
 ###  <a name="security"></a><a name="Security"></a> セキュリティ  
   
-####  <a name="permissions"></a><a name="Permissions"></a> Permissions  
+####  <a name="permissions"></a><a name="Permissions"></a> アクセス許可  
  データベースに対する **ALTER ANY ROLE** アクセス許可、ロールに対する **ALTER** アクセス許可、または **db_securityadmin** のメンバーシップが必要です。  
   
 ##  <a name="using-sql-server-management-studio"></a><a name="SSMSProcedure"></a> SQL Server Management Studio の使用  
