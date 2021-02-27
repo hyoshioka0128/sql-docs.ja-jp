@@ -47,9 +47,9 @@ ms.locfileid: "99236437"
 ### <a name="selecting-the-type-of-user"></a>ユーザーの種類の選択  
  **ログインまたはログインにマップされていないユーザー**  
   
- [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]を初めて使用する場合は、作成するユーザーの種類を決定するのが難しい可能性があります。 まず、データベースにアクセスする必要があるユーザーまたはグループがログインを持っているかどうかを確認します。 master データベース内のログインは、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] を管理するユーザー、および [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]のインスタンスで複数またはすべてのデータベースにアクセスする必要があるユーザーにとっては一般的です。 ここでは、 **ログインを持つ SQL ユーザー** を作成します。 データベース ユーザーは、ログインの ID として、データベースへの接続時に使用されます。 データベース ユーザーとログインには同じ名前を使用できますが、必ずしもその必要はありません。 このトピックは、既存のログインが [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]に存在することを前提としています。 ログインの作成方法の詳細については、「 [ログインの作成](../../../relational-databases/security/authentication-access/create-a-login.md)」を参照してください。  
+ [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]を初めて使用する場合は、作成するユーザーの種類を決定するのが難しい可能性があります。 まず、データベースにアクセスする必要があるユーザーまたはグループがログインを持っているかどうかを確認します。 master データベース内のログインは、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] を管理するユーザー、および [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]のインスタンスで複数またはすべてのデータベースにアクセスする必要があるユーザーにとっては一般的です。 ここでは、 **ログインを持つ SQL ユーザー** を作成します。 データベース ユーザーは、ログインの ID として、データベースへの接続時に使用されます。 データベース ユーザーとログインには同じ名前を使用できますが、必ずしもその必要はありません。 このトピックは、既存のログインが [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]に存在することを前提としています。 ログインの作成方法の詳細については、「[ログインの作成](../../../relational-databases/security/authentication-access/create-a-login.md)」を参照してください。  
   
- データベースにアクセスする必要があるユーザーまたはグループがログインを持っていない場合、かつ 1 つまたは複数のデータベースにだけアクセスする必要がある場合は、 **Windows ユーザー** または **パスワードを持つ SQL ユーザー** を作成します。 このユーザーは包含データベース ユーザーとも呼ばれ、master データベース内のログインに関連付けられません。 これは、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]のインスタンス間でデータベースを簡単に移動できるようにするときに最適な選択肢です。 [!INCLUDE[sssql16-md](../../../includes/sssql16-md.md)]でこのオプションを使用するには、管理者は最初に [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]用の包含データベースを有効にし、データベースの包含を有効にする必要があります。 詳細については、「 [包含データベース ユーザー - データベースの可搬性を確保する](../../../relational-databases/security/contained-database-users-making-your-database-portable.md)」を参照してください。  
+ データベースにアクセスする必要があるユーザーまたはグループがログインを持っていない場合、かつ 1 つまたは複数のデータベースにだけアクセスする必要がある場合は、 **Windows ユーザー** または **パスワードを持つ SQL ユーザー** を作成します。 このユーザーは包含データベース ユーザーとも呼ばれ、master データベース内のログインに関連付けられません。 これは、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]のインスタンス間でデータベースを簡単に移動できるようにするときに最適な選択肢です。 [!INCLUDE[sssql16-md](../../../includes/sssql16-md.md)]でこのオプションを使用するには、管理者は最初に [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]用の包含データベースを有効にし、データベースの包含を有効にする必要があります。 詳細については、「[包含データベース ユーザー - データベースの可搬性を確保する](../../../relational-databases/security/contained-database-users-making-your-database-portable.md)」を参照してください。  
   
 > **重要:** 包含データベース ユーザーとして接続するときには、接続文字列の一部としてデータベースの名前を指定する必要があります。 [!INCLUDE[ssManStudio](../../../includes/ssmanstudio-md.md)]でデータベースを指定するには、 **[接続先]** ダイアログ ボックスで **[オプション]** をクリックし、 **[接続プロパティ]** タブをクリックします。  
   
@@ -64,7 +64,7 @@ ms.locfileid: "99236437"
   
  セキュリティ プリンシパルとして、ユーザーには権限を許可することができます。 ユーザーのスコープはデータベースです。 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]のインスタンス上の特定のデータベースに接続するには、データベース ユーザーにログインをマップする必要があります。 データベース内の権限を許可したり拒否したりする際に、その対象となるのは、ログインではなく、データベース ユーザーです。  
   
-##  <a name="permissions"></a><a name="Permissions"></a> Permissions  
+##  <a name="permissions"></a><a name="Permissions"></a> アクセス許可  
  データベースに対する **ALTER ANY USER** 権限が必要です。  
   
 ##  <a name="create-a-user-with-ssms"></a><a name="SSMSProcedure"></a> SSMS でユーザーを作成する  
@@ -136,7 +136,7 @@ ms.locfileid: "99236437"
      オブジェクトの拡張プロパティを表示または指定します。 各拡張プロパティは、オブジェクトに関連付けられたメタデータの名前/値ペアで構成されています。  
   
      **省略記号 (...)**  
-     **[値]** の後ろにある省略記号 **[...]** をクリックすると、 **[拡張プロパティの値]** ダイアログ ボックスが開きます。 ここでは、より大きなテキスト ボックスを使用して拡張プロパティの値を入力または表示できます。 詳細については、「 [拡張プロパティの値ダイアログ ボックス](../../databases/value-for-extended-property-dialog-box.md)」を参照してください。  
+     **[値]** の後ろにある省略記号 **[...]** をクリックすると、 **[拡張プロパティの値]** ダイアログ ボックスが開きます。 ここでは、より大きなテキスト ボックスを使用して拡張プロパティの値を入力または表示できます。 詳細については、「[拡張プロパティの値ダイアログ ボックス](../../databases/value-for-extended-property-dialog-box.md)」を参照してください。  
   
      **削除**  
      選択されている拡張プロパティを削除します。  
