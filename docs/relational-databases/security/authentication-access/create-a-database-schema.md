@@ -40,7 +40,7 @@ ms.locfileid: "98766184"
   
 ###  <a name="security"></a><a name="Security"></a> セキュリティ  
   
-####  <a name="permissions"></a><a name="Permissions"></a> Permissions  
+####  <a name="permissions"></a><a name="Permissions"></a> アクセス許可  
   
 -   データベースに対する CREATE SCHEMA 権限が必要です。  
   
