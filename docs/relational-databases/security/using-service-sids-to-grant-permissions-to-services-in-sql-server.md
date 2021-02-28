@@ -33,7 +33,7 @@ SQL Server では、特定のサービスにアクセス許可を直接付与で
 > [!TIP]
 > エラー `Login failed for user 'NT AUTHORITY\SYSTEM'` が返された場合は、目的のサービスに対してサービス SID が存在すること、SQL Server 内でサービス SID ログインが作成されていること、SQL Server 内でサービス SID に適切なアクセス許可が付与されていることを確認します。
 
-## <a name="security"></a>Security
+## <a name="security"></a>セキュリティ
 
 ### <a name="eliminate-service-accounts"></a>サービス アカウントを不要にする
 
