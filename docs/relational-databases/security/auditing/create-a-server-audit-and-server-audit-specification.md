@@ -35,7 +35,7 @@ ms.locfileid: "99250123"
   
      [制限事項と制約事項](#Restrictions)  
   
-     [Security](#Security)  
+     [セキュリティ](#Security)  
   
 -   **次のものを使用してサーバー監査およびサーバー監査の仕様を作成するには:**  
   
