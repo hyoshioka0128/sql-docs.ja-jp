@@ -33,7 +33,7 @@ ms.locfileid: "99250197"
 
 この記事の例は、AdventureWorks2017 に対して検証済みです。 サンプル データベースを取得するには、「[AdventureWorks サンプル データベース](../../../samples/adventureworks-install-configure.md)」を参照してください。
 
-## <a name="security"></a>Security  
+## <a name="security"></a>セキュリティ  
   
 ### <a name="permissions"></a>アクセス許可  
 
