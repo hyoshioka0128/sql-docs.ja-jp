@@ -36,7 +36,7 @@ ms.locfileid: "99250319"
   
      [制限事項と制約事項](#Restrictions)  
   
-     [Security](#Security)  
+     [セキュリティ](#Security)  
   
 -   **資格情報を作成する方法:**  
   
