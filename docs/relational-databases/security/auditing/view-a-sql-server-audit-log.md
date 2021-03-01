@@ -30,7 +30,7 @@ ms.locfileid: "99250354"
   
 -   **作業を開始する準備:**  
   
-     [Security](#Security)  
+     [セキュリティ](#Security)  
   
 -   **SQL Server 監査ログを表示する方法:**  
   
