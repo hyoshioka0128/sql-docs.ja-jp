@@ -28,7 +28,7 @@ ms.locfileid: "91811043"
   
      [制限事項と制約事項](#Restrictions)  
   
-     [Security](#Security)  
+     [セキュリティ](#Security)  
   
 -   **ユーティリティ コントロール ポイントを削除する方法:**  
   
@@ -47,7 +47,7 @@ ms.locfileid: "91811043"
   
 ###  <a name="security"></a><a name="Security"></a> セキュリティ  
   
-####  <a name="permissions"></a><a name="Permissions"></a> Permissions  
+####  <a name="permissions"></a><a name="Permissions"></a> アクセス許可  
  このプロシージャは、 **sysadmin** 権限を持つユーザーが実行する必要があります。この権限は、UCP の作成に必要な権限と同じです。  
   
 ##  <a name="using-transact-sql"></a><a name="TsqlProcedure"></a> Transact-SQL の使用  
