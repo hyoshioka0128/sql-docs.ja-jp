@@ -35,7 +35,7 @@ ms.locfileid: "99250768"
   
      [制限事項と制約事項](#Restrictions)  
   
-     [Security](#Security)  
+     [セキュリティ](#Security)  
   
 -   **新しいサーバー ロールを作成する方法:**  
   
