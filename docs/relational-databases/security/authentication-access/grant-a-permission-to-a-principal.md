@@ -31,7 +31,7 @@ ms.locfileid: "99250198"
   
      [制限事項と制約事項](#Restrictions)  
   
-     [Security](#Security)  
+     [セキュリティ](#Security)  
   
 -   **プリンシパルに権限を与える方法:**  
   
