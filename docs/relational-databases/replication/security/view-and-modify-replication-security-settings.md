@@ -35,7 +35,7 @@ ms.locfileid: "99250637"
   
      [制限事項と制約事項](#Restrictions)  
   
-     [Security](#Security)  
+     [セキュリティ](#Security)  
   
 -   **レプリケーションのセキュリティ設定を表示および変更するために使用するもの:**  
   
@@ -58,7 +58,7 @@ ms.locfileid: "99250637"
 ###  <a name="security"></a><a name="Security"></a> セキュリティ  
  セキュリティ上の理由から、レプリケーション ストアド プロシージャによって返される結果セットでは、パスワードの実際の値はマスクされます。  
   
-####  <a name="permissions"></a><a name="Permissions"></a> Permissions  
+####  <a name="permissions"></a><a name="Permissions"></a> アクセス許可  
   
 ##  <a name="using-sql-server-management-studio"></a><a name="SSMSProcedure"></a> SQL Server Management Studio の使用  
  次のダイアログ ボックスでセキュリティ設定を表示および変更します。  
