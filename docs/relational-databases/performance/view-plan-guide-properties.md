@@ -30,7 +30,7 @@ ms.locfileid: "98766480"
   
 -   **作業を開始する準備:**  
   
-     [Security](#Security)  
+     [セキュリティ](#Security)  
   
 -   **以下を使用してプラン ガイドのプロパティを表示するには:**  
   
@@ -42,7 +42,7 @@ ms.locfileid: "98766480"
   
 ###  <a name="security"></a><a name="Security"></a> セキュリティ  
   
-####  <a name="permissions"></a><a name="Permissions"></a> Permissions  
+####  <a name="permissions"></a><a name="Permissions"></a> アクセス許可  
  カタログ ビューでのメタデータの表示が、ユーザーが所有しているかそのユーザーが権限を許可されている、セキュリティ保護可能なメタデータに制限されます。  
   
 ##  <a name="using-sql-server-management-studio"></a><a name="SSMSProcedure"></a> SQL Server Management Studio の使用  
