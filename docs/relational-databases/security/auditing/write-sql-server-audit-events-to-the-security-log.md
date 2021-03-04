@@ -49,7 +49,7 @@ Windows の監査ポリシーは、Windows セキュリティ ログに書き込
   
 ###  <a name="security"></a><a name="Security"></a> セキュリティ  
   
-####  <a name="permissions"></a><a name="Permissions"></a> Permissions  
+####  <a name="permissions"></a><a name="Permissions"></a> アクセス許可  
  これらの設定を行うには、Windows 管理者である必要があります。  
   
 ##  <a name="to-configure-the-audit-object-access-setting-in-windows-using-auditpol"></a><a name="auditpolAccess"></a> auditpol を使用して Windows のオブジェクト アクセスの監査の設定を行うには  
