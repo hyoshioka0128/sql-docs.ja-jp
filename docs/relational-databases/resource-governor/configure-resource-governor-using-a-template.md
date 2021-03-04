@@ -30,7 +30,7 @@ ms.locfileid: "96504866"
 ##  <a name="before-you-begin"></a><a name="BeforeYouBegin"></a> はじめに  
  次の手順に従って、リソース プールおよびそのプールのワークロード グループを作成するテンプレートを開いて変更します。 また、このテンプレートを使用すると、既定のグループまたは作成したワークロード グループへの新しい接続をルーティングするための、ユーザー定義の分類子関数を作成できます。  
   
-###  <a name="permissions"></a><a name="Permissions"></a> Permissions  
+###  <a name="permissions"></a><a name="Permissions"></a> アクセス許可  
  テンプレートでリソース ガバナーの [!INCLUDE[tsql](../../includes/tsql-md.md)] ステートメントを使用するには、CONTROL SERVER 権限が必要です。  
   
 ##  <a name="configure-resource-governor-using-a-template"></a><a name="ConfRGTemplate"></a> テンプレートを使用してリソース ガバナーを構成する  
