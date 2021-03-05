@@ -32,7 +32,7 @@ ms.locfileid: "92194414"
 ##  <a name="benefits-of-using-database-mail"></a><a name="Benefits"></a>データベース メールの使用の利点  
  データベース メールは、信頼性、スケーラビリティ、セキュリティ、およびサポート性を念頭に置いて設計されています。  
   
-### <a name="reliability"></a>[信頼性]  
+### <a name="reliability"></a>信頼性  
   
 -   データベース メールでは、標準的な簡易メール転送プロトコル (SMTP) を使用してメールを送信します。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]を実行するコンピューターに拡張 MAPI クライアントをインストールしなくても、データベース メールを使用できます。  
   
@@ -52,7 +52,7 @@ ms.locfileid: "92194414"
   
 -   64 ビット互換性: データベース メールは、 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]の 64 ビット インストールで完全にサポートされています。  
   
-### <a name="security"></a>Security  
+### <a name="security"></a>セキュリティ  
   
 -   既定でオフ: [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]の外部からのアクセスを縮小するために、データベース メールのストアド プロシージャは既定で無効になっています。  
   
