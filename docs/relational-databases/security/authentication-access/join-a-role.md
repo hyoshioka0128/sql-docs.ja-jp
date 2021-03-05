@@ -46,7 +46,7 @@ ms.locfileid: "99250751"
   
      [制限事項と制約事項](#Restrictions)  
   
-     [Security](#Security)  
+     [セキュリティ](#Security)  
   
 -   **ログインおよびデータベース ユーザーにロールを割り当てるために使用するもの:**  
   
