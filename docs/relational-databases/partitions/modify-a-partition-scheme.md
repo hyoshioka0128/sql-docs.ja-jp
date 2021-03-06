@@ -28,7 +28,7 @@ ms.locfileid: "99049106"
   
      [制限事項と制約事項](#Restrictions)  
   
-     [Security](#Security)  
+     [セキュリティ](#Security)  
   
 -   **以下を使用してパーティション テーブルまたはパーティション インデックスを作成するには:**  
   
@@ -46,7 +46,7 @@ ms.locfileid: "99049106"
   
 ###  <a name="security"></a><a name="Security"></a> セキュリティ  
   
-####  <a name="permissions"></a><a name="Permissions"></a> Permissions  
+####  <a name="permissions"></a><a name="Permissions"></a> アクセス許可  
  次の権限を使って ALTER PARTITION SCHEME を実行できます。  
   
 -   ALTER ANY DATASPACE 権限。 この権限は、既定では **sysadmin** 固定サーバー ロール、 **db_owner** 固定データベース ロール、および **db_ddladmin** 固定データベース ロールのメンバーに与えられています。  
