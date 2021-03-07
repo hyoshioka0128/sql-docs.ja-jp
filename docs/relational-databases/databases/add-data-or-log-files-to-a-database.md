@@ -36,7 +36,7 @@ ms.locfileid: "98813140"
   
      [制限事項と制約事項](#Restrictions)  
   
-     [Security](#Security)  
+     [セキュリティ](#Security)  
   
 -   **以下を使用してデータ ファイルまたはログ ファイルをデータベースに追加するには:**  
   
