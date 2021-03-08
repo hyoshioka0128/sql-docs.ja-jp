@@ -29,7 +29,7 @@ ms.locfileid: "99184264"
   
      [制限事項と制約事項](#Restrictions)  
   
-     [Security](#Security)  
+     [セキュリティ](#Security)  
   
 -   **ユーザー定義関数を変更する方法:**  
   
@@ -50,7 +50,7 @@ ms.locfileid: "99184264"
   
 ###  <a name="security"></a><a name="Security"></a> セキュリティ  
   
-####  <a name="permissions"></a><a name="Permissions"></a> Permissions  
+####  <a name="permissions"></a><a name="Permissions"></a> アクセス許可  
  関数またはスキーマに対する ALTER 権限が必要です。 関数でユーザー定義型が指定されている場合は、その型に対する EXECUTE 権限が必要です。  
   
 ##  <a name="using-sql-server-management-studio"></a><a name="SSMSProcedure"></a> SQL Server Management Studio の使用  
