@@ -36,9 +36,9 @@ ms.locfileid: "92192736"
   
  次の変換は、文字列比較を含むことができる式を使用します。  
   
--   条件分割変換は、式の内部で文字列比較を使用し、データ行を送信する出力を決定できます。 詳細については、「 [Conditional Split Transformation](../../integration-services/data-flow/transformations/conditional-split-transformation.md)」を参照してください。  
+-   条件分割変換は、式の内部で文字列比較を使用し、データ行を送信する出力を決定できます。 詳細については、「[条件分割変換](../../integration-services/data-flow/transformations/conditional-split-transformation.md)」を参照してください。  
   
--   派生列変換は、式の内部で文字列比較を使用し、新しい列の値を生成できます。 詳細については、「 [派生列変換](../../integration-services/data-flow/transformations/derived-column-transformation.md)」を参照してください。  
+-   派生列変換は、式の内部で文字列比較を使用し、新しい列の値を生成できます。 詳細については、「[派生列変換](../../integration-services/data-flow/transformations/derived-column-transformation.md)」を参照してください。  
   
  変数、変数マッピング、および優先順位制約でも、文字列比較を含めた式を使用できます。 式の詳細については、「[Integration Services &#40;SSIS&#41; の式](../../integration-services/expressions/integration-services-ssis-expressions.md)」を参照してください。  
   
