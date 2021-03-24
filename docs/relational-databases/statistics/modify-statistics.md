@@ -29,7 +29,7 @@ ms.locfileid: "99250274"
   
 -   **作業を開始する準備:**  
   
-     [Security](#Security)  
+     [セキュリティ](#Security)  
   
 -   **統計を変更するために使用するもの:**  
   
@@ -41,7 +41,7 @@ ms.locfileid: "99250274"
   
 ###  <a name="security"></a><a name="Security"></a> セキュリティ  
   
-####  <a name="permissions"></a><a name="Permissions"></a> Permissions  
+####  <a name="permissions"></a><a name="Permissions"></a> 権限  
  以下の条件が必要です:  
   
 -   ユーザーは、テーブルまたはビューに対する ALTER 権限が必要です。  
