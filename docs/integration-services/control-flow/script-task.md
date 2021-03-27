@@ -41,9 +41,9 @@ ms.locfileid: "100348273"
   
 -   指定されたファイルが空かどうか、またはそれらのファイルに含まれている行数を判断し、その情報に基づいて、パッケージ内の制御フローを調整します。 たとえば、ファイル内の行数が 0 行の場合は、変数の値が 0 に設定され、値を評価する優先順位制約で、ファイル システム タスクによるファイルのコピーが回避されます。  
   
- スクリプトを使用してセット内のデータ行ごとに同じ作業を行う必要がある場合は、スクリプト タスクではなく、スクリプト コンポーネントを使用します。 たとえば、郵送料が妥当かどうかを評価し、極端に高いデータ行や極端に安いデータ行をスキップする場合は、スクリプト コンポーネントを使用します。 詳細については、「 [Script Component](../../integration-services/data-flow/transformations/script-component.md)」を参照してください。  
+ スクリプトを使用してセット内のデータ行ごとに同じ作業を行う必要がある場合は、スクリプト タスクではなく、スクリプト コンポーネントを使用します。 たとえば、郵送料が妥当かどうかを評価し、極端に高いデータ行や極端に安いデータ行をスキップする場合は、スクリプト コンポーネントを使用します。 詳細については、「[スクリプト コンポーネント](../../integration-services/data-flow/transformations/script-component.md)」を参照してください。  
   
- 複数のパッケージで 1 つのスクリプトを使用する場合は、スクリプト タスクを使用せず、カスタム タスクを記述することをお勧めします。 詳細については、「 [カスタム タスクの開発](../../integration-services/extending-packages-custom-objects/task/developing-a-custom-task.md)」を参照してください。  
+ 複数のパッケージで 1 つのスクリプトを使用する場合は、スクリプト タスクを使用せず、カスタム タスクを記述することをお勧めします。 詳細については、「[カスタム タスクの開発](../../integration-services/extending-packages-custom-objects/task/developing-a-custom-task.md)」を参照してください。  
   
  スクリプト タスクがパッケージにとって適切な選択である場合、タスクが使用するスクリプトを開発して、タスク自体を構成する必要があります。  
   
@@ -75,7 +75,7 @@ ms.locfileid: "100348273"
   
 |ログ エントリ|説明|  
 |---------------|-----------------|  
-|**ScriptTaskLogEntry**|スクリプト内でのログ記録の実装結果を報告します。 タスクは、 **Dts** オブジェクトの **Log** メソッドを呼び出すたびにログ エントリを書き込みます。 タスクは、これらのエントリをコードの実行時に書き込みます。 詳細については、「 [スクリプト タスクでのログ記録](../../integration-services/extending-packages-scripting/task/logging-in-the-script-task.md)」を参照してください。|  
+|**ScriptTaskLogEntry**|スクリプト内でのログ記録の実装結果を報告します。 タスクは、 **Dts** オブジェクトの **Log** メソッドを呼び出すたびにログ エントリを書き込みます。 タスクは、これらのエントリをコードの実行時に書き込みます。 詳細については、「[スクリプト タスクでのログ記録](../../integration-services/extending-packages-scripting/task/logging-in-the-script-task.md)」を参照してください。|  
   
  [!INCLUDE[ssIS](../../includes/ssis-md.md)] デザイナーで設定できるプロパティの詳細については、次のトピックを参照してください。  
   
@@ -97,7 +97,7 @@ ms.locfileid: "100348273"
 ## <a name="script-task-editor-general-page"></a>[スクリプト タスク エディター] \([全般] ページ)
   **[スクリプト タスク エディター]** ダイアログ ボックスの **[全般]** ページを使用すると、スクリプト タスクの名前と説明を入力できます。  
   
- スクリプト タスクの詳細については、「 [Script Task](../../integration-services/control-flow/script-task.md) 」および「 [スクリプト タスク エディターでのスクリプト タスクの構成](../../integration-services/extending-packages-scripting/task/configuring-the-script-task-in-the-script-task-editor.md)」を参照してください。 スクリプト タスクのプログラミングの詳細については、「 [Extending the Package with the Script Task](../../integration-services/extending-packages-scripting/task/extending-the-package-with-the-script-task.md)」を参照してください。  
+ スクリプト タスクの詳細については、「[スクリプト タスク](../../integration-services/control-flow/script-task.md) 」および「[スクリプト タスク エディターでのスクリプト タスクの構成](../../integration-services/extending-packages-scripting/task/configuring-the-script-task-in-the-script-task-editor.md)」を参照してください。 スクリプト タスクのプログラミングの詳細については、「[スクリプト タスクによるパッケージの拡張](../../integration-services/extending-packages-scripting/task/extending-the-package-with-the-script-task.md)」を参照してください。  
   
 ### <a name="options"></a>オプション  
  **Name**  
@@ -115,7 +115,7 @@ ms.locfileid: "100348273"
 > [!NOTE]  
 >  [!INCLUDE[ssISversion10](../../includes/ssisversion10-md.md)] およびそれ以降のバージョンでは、すべてのスクリプトがプリコンパイル済みです。 以前のバージョンでは、 **PrecompileScriptIntoBinaryCode** プロパティを設定して、スクリプトを事前コンパイルするかどうかを指定していました。  
   
- スクリプト タスクの詳細については、「 [Script Task](../../integration-services/control-flow/script-task.md) 」および「 [スクリプト タスク エディターでのスクリプト タスクの構成](../../integration-services/extending-packages-scripting/task/configuring-the-script-task-in-the-script-task-editor.md)」を参照してください。 スクリプト タスクのプログラミングの詳細については、「 [Extending the Package with the Script Task](../../integration-services/extending-packages-scripting/task/extending-the-package-with-the-script-task.md)」を参照してください。  
+ スクリプト タスクの詳細については、「[スクリプト タスク](../../integration-services/control-flow/script-task.md) 」および「[スクリプト タスク エディターでのスクリプト タスクの構成](../../integration-services/extending-packages-scripting/task/configuring-the-script-task-in-the-script-task-editor.md)」を参照してください。 スクリプト タスクのプログラミングの詳細については、「[スクリプト タスクによるパッケージの拡張](../../integration-services/extending-packages-scripting/task/extending-the-package-with-the-script-task.md)」を参照してください。  
   
 ### <a name="options"></a>オプション  
  **[ScriptLanguage]**  
@@ -123,7 +123,7 @@ ms.locfileid: "100348273"
   
  タスクのスクリプトを作成した後に、 **[ScriptLanguage]** プロパティの値を変更することはできません。  
   
- スクリプト タスクの既定のスクリプト言語を設定するには、 **[オプション]** ダイアログ ボックスの **[全般]** ページにある **[スクリプト言語]** オプションを使用します。 詳細については、「 [General Page]()」を参照してください。  
+ スクリプト タスクの既定のスクリプト言語を設定するには、 **[オプション]** ダイアログ ボックスの **[全般]** ページにある **[スクリプト言語]** オプションを使用します。 詳細については、「[General Page]()」を参照してください。  
   
  **EntryPoint**  
  スクリプト タスクのコードのエントリ ポイントとして [!INCLUDE[ssISnoversion](../../includes/ssisnoversion-md.md)] ランタイムが呼び出すメソッドを指定します。 指定するメソッドは、[!INCLUDE[msCoName](../../includes/msconame-md.md)] [!INCLUDE[vsprvs](../../includes/vsprvs-md.md)] Tools for Applications (VSTA) プロジェクトの ScriptMain クラスに存在する必要があります。ScriptMain クラスは、スクリプト テンプレートによって生成される既定のクラスです。  
@@ -147,5 +147,5 @@ ms.locfileid: "100348273"
   
 ## <a name="related-content"></a>関連コンテンツ  
   
--   shareourideas.com の技術記事「 [配信通知付きで電子メールを送信する方法 (C#)](https://go.microsoft.com/fwlink/?LinkId=237625)」  
+-   shareourideas.com の技術記事「[配信通知付きで電子メールを送信する方法 (C#)](https://go.microsoft.com/fwlink/?LinkId=237625)」  
   
