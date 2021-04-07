@@ -5,16 +5,16 @@ description: azdata コマンドのリファレンス記事です。
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: d29ac23842c8aae84ed92d37022c5f67420f42d4
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 138fb6ae901102d5d2c27ae616dfaa2aec226ee0
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100052263"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556471"
 ---
 # <a name="azdata"></a>azdata
 
@@ -26,16 +26,16 @@ ms.locfileid: "100052263"
 
 |command|説明|
 | --- | --- |
-|[azdata notebook](reference-azdata-notebook.md) | ターミナルからノートブックを表示、実行、管理するコマンドです。 |
-|[azdata extension](reference-azdata-extension.md) | CLI 拡張機能を管理および更新します。 |
-|[azdata arc](reference-azdata-arc.md) | Azure データ サービス向け Azure Arc を使用するためのコマンド。 |
-|[azdata app](reference-azdata-app.md) | アプリケーションを作成、削除、実行、および管理します。 |
-|[azdata bdc](reference-azdata-bdc.md) | SQL Server ビッグ データ クラスターを選択、管理、および操作します。 |
-|[azdata sql](reference-azdata-sql.md) | SQL DB CLI により、ユーザーは T-SQL を使用して SQL Server を操作できます。 |
+|[azdata postgres](reference-azdata-postgres.md) | Postgres のクエリ ランナーと対話型シェル。 |
 [azdata login](#azdata-login) | クラスターのコントローラー エンドポイントにログインし、その名前空間をアクティブなコンテキストとして設定します。 ログイン時にパスワードを使用するには、AZDATA_PASSWORD 環境変数を設定する必要があります。
 [azdata logout](#azdata-logout) | クラスターからログアウトします。
 |[azdata context](reference-azdata-context.md) | コンテキスト管理コマンド。 |
-|[azdata postgres](reference-azdata-postgres.md) | Postgres のクエリ ランナーと対話型シェル。 |
+|[azdata arc](reference-azdata-arc.md) | Azure データ サービス向け Azure Arc を使用するためのコマンド。 |
+|[azdata bdc](reference-azdata-bdc.md) | SQL Server ビッグ データ クラスターを選択、管理、および操作します。 |
+|[azdata notebook](reference-azdata-notebook.md) | ターミナルからノートブックを表示、実行、管理するコマンドです。 |
+|[azdata app](reference-azdata-app.md) | アプリケーションを作成、削除、実行、および管理します。 |
+|[azdata sql](reference-azdata-sql.md) | SQL DB CLI により、ユーザーは T-SQL を使用して SQL Server を操作できます。 |
+|[azdata extension](reference-azdata-extension.md) | CLI 拡張機能を管理および更新します。 |
 ## <a name="azdata-login"></a>azdata login
 クラスターが展開されると、展開中にコントローラー エンドポイントが一覧表示されます。これをログインに使用する必要があります。  コントローラー エンドポイントがわからない場合は、システム上の <user home>/.kube/config の既定の場所にクラスターの kube 構成を配置してログインするか、KUBECONFIG 環境変数を使用する (つまり KUBECONFIG=path/to/.kube/config をエクスポートする) ことをお勧めします。ログインすると、このクラスターの名前空間がアクティブなコンテキストに設定されます。
 ```bash
@@ -53,7 +53,7 @@ azdata login [--auth]
 ### <a name="examples"></a>例
 基本認証を使用してログインします。
 ```bash
-azdata login --auth basic --username johndoe --endpoint https://<ip or domain name>:30080            
+azdata login --auth basic --username johndoe --endpoint https://<ip or domain name>:30080
 ```
 Active directory を使用してログインします。
 ```bash

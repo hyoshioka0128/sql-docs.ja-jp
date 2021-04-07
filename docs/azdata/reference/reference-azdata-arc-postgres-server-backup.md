@@ -5,16 +5,16 @@ description: azdata arc postgres server backup コマンドのリファレンス
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 00519fa62e0813bc25cee6599cd2faca9ed1489d
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 3f07009577054d4eaa6336a7268d5ca6b0ccc085
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100052653"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556915"
 ---
 # <a name="azdata-arc-postgres-server-backup"></a>azdata arc postgres server backup
 
@@ -149,4 +149,5 @@ JMESPath クエリ文字列。 詳細と例については、[http://jmespath.or
 他の **azdata** コマンドの詳細については、[azdata リファレンス](reference-azdata.md)に関するページを参照してください。 
 
 **azdata** ツールをインストールする方法の詳細については、「[azdata のインストール](..\install\deploy-install-azdata.md)」を参照してください。
+
 

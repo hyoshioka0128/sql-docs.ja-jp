@@ -1,25 +1,25 @@
 ---
 title: 一般的な R スクリプトのエラー
-description: この記事では、SQL Server で R コードを実行する際に発生する可能性があるいくつかの一般的なスクリプト エラーについて説明します。
+description: この記事では、SQL Server Machine Learning Services で R スクリプトを実行するときに発生する可能性のあるいくつかの一般的なスクリプト エラーについて説明します。
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 05/31/2018
+ms.date: 03/31/2021
 ms.topic: troubleshooting
 author: dphansen
 ms.author: davidph
-ms.custom: seo-lt-2019
+ms.custom: contperf-fy21q3
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
-ms.openlocfilehash: 0f9f086ec09830e65f85ca2df5232e8b401cb9eb
-ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
+ms.openlocfilehash: ac6f6ed7acd07ee4f2b399550948b124f217876b
+ms.sourcegitcommit: 2db7412d30722f198cbafcd683bd4da206b33996
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102186417"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099979"
 ---
-# <a name="common-r-scripting-errors-in-sql-server"></a>SQL Server での一般的な R スクリプト エラー
+# <a name="common-r-script-errors-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services での一般的な R スクリプトのエラー
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
-この記事では、SQL Server で R コードを実行する際のいくつかの一般的なスクリプト エラーについて説明します。 この一覧がすべてではありません。 パッケージは多数あり、同じパッケージのバージョンによってエラーが異なる場合があります。
+この記事では、[SQL Server Machine Learning Services](../sql-server-machine-learning-services.md) で R スクリプトを実行する際の一般的なスクリプト エラーについて説明します。 この一覧がすべてではありません。 パッケージは多数あり、同じパッケージのバージョンによってエラーが異なる場合があります。
 
 ## <a name="valid-script-fails-in-t-sql-or-in-stored-procedures"></a>T-SQL またはストアド プロシージャで有効なスクリプトが失敗する
 
@@ -90,13 +90,9 @@ remove('name1', 'name2', ...)
 
 削除する変数が複数ある場合は、リストに一時変数の名前を保存し、そのリストでガベージ コレクションを定期的に実行することをお勧めします。
 
-
-
 ## <a name="next-steps"></a>次のステップ
 
-[Machine Learning Services のトラブルシューティングと既知の問題](machine-learning-troubleshooting-overview.md)
-
-[機械学習のトラブルシューティングのためのデータ収集](data-collection-ml-troubleshooting-process.md)
+[SQL Server Machine Learning Services のトラブルシューティングのためにデータを収集する](data-collection-ml-troubleshooting-process.md)
 
 [SQL Server Machine Learning Services のインストール](../install/sql-machine-learning-services-windows-install.md)
 

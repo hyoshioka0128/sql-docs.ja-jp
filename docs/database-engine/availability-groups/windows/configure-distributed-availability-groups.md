@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.assetid: f7c7acc5-a350-4a17-95e1-e689c78a0900
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 94eec1c8490a1827b27953adef2e79c45ff5efd8
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 6d15cbae85beb9f500e4abed4db53d13dfc969cc
+ms.sourcegitcommit: 14f2051d329b69a7b5ff7bce1d136cf7f25bb219
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100342442"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106232219"
 ---
 # <a name="configure-an-always-on-distributed-availability-group"></a>Always On 分散型可用性グループの構成  
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -281,7 +281,7 @@ ALTER AVAILABILITY GROUP [distributedag]
 GO  
 ```
 
-手動シード処理を使用してフォワーダーにデータベースを作成する場合は、グローバル プライマリから完全バックアップとトランザクション ログ バックアップを実行し、それらを NONRECOVERY オプションを指定してフォワーダーに復元します。 例:
+手動シード処理を使用してフォワーダーにデータベースを作成する場合は、グローバル プライマリから完全バックアップとトランザクション ログ バックアップを実行し、それらを NORECOVERY オプションを指定してフォワーダーに復元します。 例:
 
 グローバル プライマリでバックアップするには、次のようにします。 
 

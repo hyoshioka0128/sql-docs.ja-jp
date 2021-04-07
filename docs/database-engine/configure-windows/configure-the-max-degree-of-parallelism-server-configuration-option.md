@@ -1,7 +1,7 @@
 ---
-title: max degree of parallelism サーバー構成オプションの構成 | Microsoft Docs
+title: max degree of parallelism サーバー構成オプションの構成
 description: max degree of parallelism (MAXDOP) オプションについて説明します。 これを使用して、並列プラン実行で SQL Server によって使用されるプロセッサの数を制限する方法について説明します。
-ms.date: 02/12/2020
+ms.date: 03/27/2021
 ms.prod: sql
 ms.prod_service: high-availability
 ms.reviewer: ''
@@ -13,16 +13,15 @@ helpviewer_keywords:
 - number of processors for parallel queries
 - max degree of parallelism option
 - MaxDop
-ms.assetid: 86b65bf1-a6a1-4670-afc0-cdfad1558032
-author: markingmyname
-ms.author: maghan
+author: WilliamDAssafMSFT
+ms.author: wiassaf
 ms.custom: contperf-fy20q4
-ms.openlocfilehash: 4006ad1707d30d0a9147056ddfff8b71ae7643e1
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: 67e081682482bf4fbe3c85f0667f40a0d61b1e81
+ms.sourcegitcommit: a7af7bead92044595556b8687e640a0eab0bc455
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99236964"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106179912"
 ---
 # <a name="configure-the-max-degree-of-parallelism-server-configuration-option"></a>max degree of parallelism サーバー構成オプションの構成
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -30,7 +29,8 @@ ms.locfileid: "99236964"
   このトピックでは、[!INCLUDE[ssManStudioFull](../../includes/ssmanstudiofull-md.md)] または [!INCLUDE[tsql](../../includes/tsql-md.md)] を使用して、SQL Server の **max degree of parallelism (MAXDOP)** サーバー構成オプションを構成する方法について説明します。 複数のマイクロプロセッサまたは CPU が搭載されたコンピューターで [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスを実行されている場合、並列処理を使用できるかどうかが[!INCLUDE[ssde_md](../../includes/ssde_md.md)]によって検出されます。 並列処理の次数に基づいて、並列プランの実行ごとに、1 つのステートメントを実行するために使用されるプロセッサの数が設定されます。 **max degree of parallelism** オプションを使用すると、並列プラン実行で使用するプロセッサの数を制限できます。 **並列処理の最大限度 (MAXDOP)** によって設定される制限の詳細については、このページの「[考慮事項](#Considerations)」セクションを参照してください。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では、クエリ、インデックス データ定義言語 (DDL) の操作、並列挿入、オンライン列変更、並行統計コレクション、静的およびキーセット ドリブン カーソルの作成の場合に並列実行プランが検討されます。
 
 > [!NOTE]
-> [!INCLUDE [sssql19-md](../../includes/sssql19-md.md)] では、利用できるプロセッサの数に基づいてインストール プロセスの間に MAXDOP サーバー構成オプションを設定するための自動推奨事項が導入されています。 セットアップのユーザー インターフェイスでは、推奨設定を受け入れることも、独自の値を入力することもできます。 詳細については、「[[データベース エンジンの構成] - [MAXDOP] ページ](../../sql-server/install/instance-configuration.md#maxdop)」を参照してください。
+> [!INCLUDE [sssql19-md](../../includes/sssql19-md.md)] では、利用できるプロセッサの数に基づいてインストール プロセスの間に MAXDOP サーバー構成オプションを設定するための自動推奨事項が導入されています。 セットアップのユーザー インターフェイスでは、推奨設定を受け入れることも、独自の値を入力することもできます。 詳細については、「[[データベース エンジンの構成] - [MAXDOP] ページ](../../sql-server/install/instance-configuration.md#maxdop)」を参照してください。<BR>
+ただし、Azure SQL では、新しい単一データベースとエラスティック プール データベースの既定の MAXDOP 設定は 8 です。 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] の MAXDOP の詳細については、「[Azure SQL Database での並列処理の最大限度 (MAXDOP) の構成](/azure/azure-sql/database/configure-max-degree-of-parallelism)」を参照してください。
 
 ##  <a name="before-you-begin"></a><a name="BeforeYouBegin"></a> はじめに  
   

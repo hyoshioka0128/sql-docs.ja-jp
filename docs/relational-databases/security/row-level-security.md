@@ -17,12 +17,12 @@ helpviewer_keywords:
 author: VanMSFT
 ms.author: vanto
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: cce49516f92db523dfd25f8ea651ab217ef13619
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 7006fbf0570aea7c942f7e904144cb72658b7903
+ms.sourcegitcommit: a7af7bead92044595556b8687e640a0eab0bc455
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104739942"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106179922"
 ---
 # <a name="row-level-security"></a>行レベルのセキュリティ
 
@@ -533,6 +533,152 @@ DROP SECURITY POLICY Security.SalesFilter;
 DROP TABLE Sales;
 DROP FUNCTION Security.fn_securitypredicate;
 DROP SCHEMA Security;
+```
+
+### <a name="d-scenario-for-using-a-lookup-table-for-the-security-predicate"></a><a name="Lookup"></a> D. セキュリティ述語にルックアップ テーブルを使用する場合のシナリオ
+
+この例では、ファクト テーブルでユーザー識別子を指定するのではなく、ユーザー識別子とフィルター処理される値の間のリンクにルックアップ テーブルを使用します。 3 人のユーザーが作成され、6 行のファクト テーブルと 2 行のルックアップ テーブルが作成され、設定されます。 次に、インラインのテーブル値関数が作成されます。これにより、ファクト テーブルがルックアップが結合され、ユーザー識別子と、テーブルのセキュリティ ポリシーが取得されます。 さらにこの例では、select ステートメントがさまざまなユーザーに対してどのようにフィルター処理されるかが示されます。  
+  
+別のアクセス機能を示す 3 つのユーザー アカウントを作成します。  
+
+```sql  
+CREATE USER Manager WITHOUT LOGIN;  
+CREATE USER Sales1 WITHOUT LOGIN;  
+CREATE USER Sales2 WITHOUT LOGIN;  
+```
+
+データを保持するためのサンプル スキーマとファクト テーブルを作成します。  
+
+```sql
+CREATE SCHEMA Sample;
+
+CREATE TABLE Sample.Sales  
+    (  
+    OrderID int,  
+    Product varchar(10),  
+    Qty int 
+    );    
+```
+
+ ファクト テーブルに 6 行のデータを入力します。  
+
+```sql
+INSERT INTO Sample.Sales VALUES (1, 'Valve', 5);
+INSERT INTO Sample.Sales VALUES (2, 'Wheel', 2);
+INSERT INTO Sample.Sales VALUES (3, 'Valve', 4);
+INSERT INTO Sample.Sales VALUES (4, 'Bracket', 2);
+INSERT INTO Sample.Sales VALUES (5, 'Wheel', 5);
+INSERT INTO Sample.Sales VALUES (6, 'Seat', 5);
+-- View the 6 rows in the table  
+SELECT * FROM Sample.Sales;
+```
+
+ルックアップ データ (この場合は Salesrep と Product のリレーションシップ) を保持するテーブルを作成します。  
+
+```sql
+CREATE TABLE Sample.Lk_Salesman_Product
+  ( Salesrep sysname, 
+    Product varchar(10)
+  ) ;
+```
+
+ ルックアップ テーブルにサンプル データを入力し、1 つの製品を各営業担当者にリンクします。  
+
+```sql
+INSERT INTO Sample.Lk_Salesman_Product VALUES ('Sales1', 'Valve');
+INSERT INTO Sample.Lk_Salesman_Product VALUES ('Sales2', 'Wheel');
+-- View the 2 rows in the table
+SELECT * FROM Sample.Lk_Salesman_Product;
+```
+
+各ユーザーに、ファクト テーブルに対する読み取りアクセス権を付与します。  
+
+```sql
+GRANT SELECT ON Sample.Sales TO Manager;  
+GRANT SELECT ON Sample.Sales TO Sales1;  
+GRANT SELECT ON Sample.Sales TO Sales2;  
+```
+
+新しいスキーマと、インライン テーブル値関数を作成します。 この関数から 1 が返されるのは、ユーザーがファクト テーブル Sales に対してクエリを実行し、テーブル Lk_Salesman_Product の SalesRep 列が、ファクト テーブルの Product 列に結合されたときにクエリ (`@SalesRep = USER_NAME()`) を実行したユーザーと同じである場合、またはクエリを実行したユーザーが Manager ユーザー (`USER_NAME() = 'Manager'`) である場合です。
+
+```sql
+CREATE SCHEMA Security ;
+
+CREATE FUNCTION Security.fn_securitypredicate
+         (@Product AS varchar(10))
+RETURNS TABLE
+WITH SCHEMABINDING
+AS 
+           RETURN ( SELECT 1 as Result
+                     FROM Sample.Sales f
+            INNER JOIN Sample.Lk_Salesman_Product s
+                     ON s.Product = f.Product
+            WHERE ( f.product = @Product
+                    AND s.SalesRep = USER_NAME() )
+                 OR USER_NAME() = 'Manager'
+                   ) ;
+ 
+```
+
+フィルター述語として関数を追加するセキュリティ ポリシーを作成します。 状態を ON に設定してポリシーを有効にする必要があります。
+
+```sql
+CREATE SECURITY POLICY SalesFilter 
+ADD FILTER PREDICATE Security.fn_securitypredicate(Product)
+ON Sample.Sales
+WITH (STATE = ON) ;
+```
+
+fn_securitypredicate 関数に対する SELECT 権限を許可する 
+```sql
+GRANT SELECT ON security.fn_securitypredicate TO Manager;  
+GRANT SELECT ON security.fn_securitypredicate TO Sales1;  
+GRANT SELECT ON security.fn_securitypredicate TO Sales2;  
+```
+
+各ユーザーとして Sales テーブルから選択されたフィルター述語を今すぐテストしてみましょう。
+
+```sql
+EXECUTE AS USER = 'Sales1'; 
+SELECT * FROM Sample.Sales;
+-- This will return just the rows for Product 'Valve' (as specified for ‘Sales1’ in the Lk_Salesman_Product table above)
+REVERT;
+
+EXECUTE AS USER = 'Sales2'; 
+SELECT * FROM Sample.Sales;
+-- This will return just the rows for Product 'Wheel' (as specified for ‘Sales2’ in the Lk_Salesman_Product table above)
+REVERT; 
+
+EXECUTE AS USER = 'Manager'; 
+SELECT * FROM Sample.Sales;
+-- This will return all rows with no restrictions
+REVERT;
+```
+
+マネージャーには、6 つの行すべてが表示されるはずです。 Sales1 と Sales2 のユーザーには、それぞれの売上のみ表示されます。
+
+セキュリティ ポリシーを変更してポリシーを無効にします。
+
+```sql
+ALTER SECURITY POLICY SalesFilter  
+WITH (STATE = OFF);  
+```
+
+これで、Sales1 と Sales2 のユーザーに 6 つの行すべてが表示されます。
+
+リソースをクリーンアップする SQL データベースに接続します
+
+```sql
+DROP USER Sales1;
+DROP USER Sales2;
+DROP USER Manager;
+
+DROP SECURITY POLICY SalesFilter;
+DROP FUNCTION Security.fn_securitypredicate;
+DROP TABLE Sample.Sales;
+DROP TABLE Sample.Lk_Salesman_Product;
+DROP SCHEMA Security; 
+DROP SCHEMA Sample;
 ```
 
 ## <a name="see-also"></a>参照

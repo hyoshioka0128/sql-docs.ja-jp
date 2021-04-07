@@ -5,16 +5,16 @@ description: Azure Arc 対応 SQL Server を使用して SQL Server のインス
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mikeray
-ms.date: 12/08/2020
+ms.date: 04/06/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.custom: references_regions
-ms.openlocfilehash: 4acc04883d4e4fcc0933078b81dcb8be2a45be89
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 664cf371e9ceb1dc59814b80099d5e3b93e2cd68
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100023266"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557545"
 ---
 # <a name="azure-arc-enabled-sql-server-preview"></a>Azure Arc 対応 SQL Server (プレビュー)
 
@@ -76,7 +76,7 @@ SQL Server インスタンスが既に Azure Arc に接続されている場合�
 - 西ヨーロッパ
 - 英国南部
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - [SQL Server を Azure Arc に接続する](connect.md)
 - [オンデマンド SQL 評価を使用して、環境の正常性チェックを定期的に行うように SQL Server インスタンスを構成する](assess.md)

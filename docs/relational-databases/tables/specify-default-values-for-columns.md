@@ -15,12 +15,12 @@ ms.assetid: 64514aed-b846-407b-992e-cf813f9a1a91
 author: stevestein
 ms.author: sstein
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: dc4f26877483a1213b1c5ecd3363dd1ba0c75fee
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 6d2b28058cbc44c89d9434e43d500fc1ee601792
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104738102"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054615"
 ---
 # <a name="specify-default-values-for-columns"></a>列の既定値の指定
 
@@ -45,6 +45,9 @@ ms.locfileid: "104738102"
 - 数値の既定値を入力するには、引用符で囲まずに番号を入力します。
 
 - オブジェクトまたは関数を入力するには、引用符で囲まずにオブジェクト名または関数名を入力します。
+
+> [!NOTE]
+> Azure Synapse Analytics では、既定の制約に使用できるのは定数だけです。 式は、既定の制約には使用できません。
 
 ### <a name="security-permissions"></a><a name="Security"></a> セキュリティのアクセス許可
 

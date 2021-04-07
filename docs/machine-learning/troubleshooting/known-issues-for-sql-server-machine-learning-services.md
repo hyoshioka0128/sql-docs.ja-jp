@@ -3,20 +3,20 @@ title: Python と R に関する既知の問題
 description: この記事では、SQL Server Machine Learning Services および SQL Server 2016 R Services で提供される Python および R コンポーネントでの既知の問題または制限事項について説明します。
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 10/13/2020
+ms.date: 03/31/2021
 ms.topic: troubleshooting
 author: dphansen
 ms.author: davidph
-ms.custom: contperf-fy20q4
+ms.custom: contperf-fy21q3
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
-ms.openlocfilehash: 51d729bcdb25900af855e7429e953ee44dc1388b
-ms.sourcegitcommit: 108bc8e576a116b261c1cc8e4f55d0e0713d402c
+ms.openlocfilehash: 3d81fea3cb2dcd7937dd752cf0fdfee899c1f94c
+ms.sourcegitcommit: 2db7412d30722f198cbafcd683bd4da206b33996
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98766306"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099985"
 ---
-# <a name="known-issues-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services での既知の問題
+# <a name="known-issues-for-python-and-r-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services での Python と R に関する既知の問題
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
 この記事では、[SQL Server Machine Learning Services](../sql-server-machine-learning-services.md) および [SQL Server 2016 R Services](../r/sql-server-r-services.md) で提供される Python および R コンポーネントでの既知の問題または制限事項について説明します。
@@ -99,7 +99,7 @@ SQL Server 2016 では、クライアント上の R ライブラリがサーバ�
 
 SQL Server のサービス リリースをインストールすると常に、SQL Server R Services でインストールされる R のバージョンは更新されます。 確実に最新バージョンの R コンポーネントを使用するためには、すべてのサービス パックをインストールしてください。
 
-Microsoft R Client 9.0.0 との互換性を確保するには、この[サポート記事](https://support.microsoft.com/kb/3210262)で説明されている更新プログラムをインストールします。
+Microsoft R Client 9.0.0 との互換性を確保するには、この[サポート記事](https://web.archive.org/web/20190415073655/https://support.microsoft.com/en-us/help/3210262/fix-version-of-r-client-is-incompatible-with-the-microsoft-r-server-ve)で説明されている更新プログラムをインストールします。
 
 R パッケージに関する問題を回避するには、モダン ライフサイクル サポート ポリシーを使用するようにサービス契約を変更することで、サーバーにインストールされている R ライブラリのバージョンをアップグレードすることもできます。詳細については、[次のセクション](#bkmk_sqlbindr)を参照してください。 そのようにすると、SQL Server でインストールされる R のバージョンは、Machine Learning Server (旧称 Microsoft R Server) の更新と同じスケジュールで更新されます。
 
@@ -127,7 +127,7 @@ SQL Server 2017 のプレリリース版をインターネットにアクセス�
 
 **適用対象:** SQL Server 2017 と Python
 
-### <a name="warning-of-incompatible-version-when-you-connect-to-an-older-version-of-sql-server-r-services-from-a-client-by-using-sssqlv14_md"></a><a name="bkmk_sqlbindr"></a>[!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] を使用してクライアントから古いバージョンの SQL Server R Services に接続すると、互換性のないバージョンであることが警告される
+### <a name="warning-of-incompatible-version-when-you-connect-to-an-older-version-of-sql-server-r-services-from-a-client-by-using-sssql17-md"></a><a name="bkmk_sqlbindr"></a>[!INCLUDE [sssql17-md](../../includes/sssql17-md.md)] を使用してクライアントから古いバージョンの SQL Server R Services に接続すると、互換性のないバージョンであることが警告される
 
 SQL Server 2016 のコンピューティング コンテキストで R コードを実行すると、次のエラーが表示される場合があります。
 
@@ -135,7 +135,7 @@ SQL Server 2016 のコンピューティング コンテキストで R コード
 
 このメッセージは、次のいずれかに該当する場合に表示されます。
 
-+ [!INCLUDE[ssSQLv14_md](../../includes/sssqlv14-md.md)] のセットアップ ウィザードを使用して、クライアント コンピューターに Microsoft R Server (スタンドアロン) をインストールした。
++ [!INCLUDE [sssql17-md](../../includes/sssql17-md.md)] のセットアップ ウィザードを使用して、クライアント コンピューターに Microsoft R Server (スタンドアロン) をインストールした。
 + [別の Windows インストーラー](/machine-learning-server/install/r-server-install-windows)を使用して、Microsoft R Server をインストールした。
 
 サーバーとクライアントで確実に同じバージョンが使用されるようにするには、Microsoft R Server 9.0 以降のリリースでサポートされている "_バインド_" を使用して、SQL Server 2016 インスタンスの R コンポーネントをアップグレードすることが必要な場合があります。 お使いの R Services のバージョンでアップグレードがサポートされているかどうかを判断するには、[SqlBindR.exe を用いた R Services のインスタンスのアップグレード](../install/upgrade-r-and-python.md)に関する記事を参照してください。
@@ -390,7 +390,7 @@ SQL でサポートされているデータ型の一部を R で使用できま�
 
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] から R/Python に varchar 列で Unicode データを渡すと、文字列が破損する可能性があります。 これは、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] の照合順序でのこれらの Unicode 文字列に対するエンコードが、R/Python で使用される既定の UTF-8 エンコードと一致しない可能性があるためです。 
 
-[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] から R/Python に ASCII 以外の文字列データを送るには、UTF-8 エンコード ([!INCLUDE[sql-server-2019](../../includes/sssqlv15-md.md)] で使用可能) を使用するか、nvarchar 型を使用します。
+[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] から R/Python に ASCII 以外の文字列データを送るには、UTF-8 エンコード ([!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] で使用可能) を使用するか、nvarchar 型を使用します。
 
 ### <a name="13-only-one-value-of-type-raw-can-be-returned-from-sp_execute_external_script"></a>13.`sp_execute_external_script` からは `raw` 型の値を 1 つしか返せない
 
@@ -754,4 +754,4 @@ SQLite ODBC ドライバーのリビジョン 0.92 は、RevoScaleR と互換性
 
 ## <a name="next-steps"></a>次のステップ
 
-[SQL Server での機械学習のトラブルシューティング](machine-learning-troubleshooting-overview.md)
+[SQL Server Machine Learning Services のトラブルシューティングのためにデータを収集する](data-collection-ml-troubleshooting-process.md)

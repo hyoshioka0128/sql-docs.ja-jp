@@ -25,12 +25,12 @@ helpviewer_keywords:
 author: VanMSFT
 ms.author: vanto
 ms.reviewer: vanto
-ms.openlocfilehash: 933ce305104358f56246b2c31fd8fe52a07b03ed
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 5211d0b1ce2a20643c2256e5e86f97eeec214171
+ms.sourcegitcommit: 2db7412d30722f198cbafcd683bd4da206b33996
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100348153"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106100005"
 ---
 # <a name="editions-and-supported-features-of-sql-server-2019-on-linux"></a>SQL Server 2019 on Linux のエディションとサポートされる機能
 
@@ -231,8 +231,8 @@ Developer Edition では引き続き、[SQL Server 分散再生](../tools/distri
 | &nbsp; | 管理対象のバックアップ |
 | **高可用性** | データベース ミラーリング  |
 | **Security** | 拡張キー管理 |
-| &nbsp; | リンク サーバーに対する AD 認証 | 
-| &nbsp; | 可用性グループに対する AD 認証 (AG) | 
+| &nbsp; | リンク サーバーに対する AD 認証 |
+| &nbsp; | 可用性グループ (AG) エンドポイントに対する AD 認証 |
 | **サービス** | SQL Server Browser |
 | &nbsp; | SQL Server R サービス<sup>1</sup> |
 | &nbsp; | StreamInsight |

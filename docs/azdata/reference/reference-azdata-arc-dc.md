@@ -5,16 +5,16 @@ description: azdata arc dc コマンドのリファレンス記事です。
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: b223b3b69ba3eda1be5f882b4cabd868c345b20c
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 1f1464d84655b942f294f71af53cf55b226372c5
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100049012"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557435"
 ---
 # <a name="azdata-arc-dc"></a>azdata arc dc
 
@@ -37,48 +37,13 @@ ms.locfileid: "100049012"
 ## <a name="azdata-arc-dc-create"></a>azdata arc dc create
 データ コントローラーを作成します。システムに Kube 構成と環境変数 ['AZDATA_USERNAME', 'AZDATA_PASSWORD'] が必要です。
 ```bash
-azdata arc dc create --namespace -ns 
-                     --name -n  
-                     
---connectivity-mode  
-                     
---resource-group -g  
-                     
---location -l  
-                     
---subscription -s  
-                     
-[--profile-name]  
-                     
-[--path -p]  
-                     
-[--storage-class -sc]
+azdata arc dc create 
 ```
 ### <a name="examples"></a>使用例
 データ コントローラーの配置。
 ```bash
 azdata arc dc create
 ```
-### <a name="required-parameters"></a>必須のパラメーター
-#### `--namespace -ns`
-データ コントローラーを配置する Kubernetes 名前空間。 既に存在する場合は、それが使用されます。 存在しない場合は、最初に作成が試みられます。
-#### `--name -n`
-データ コントローラーの名前。
-#### `--connectivity-mode`
-データ コントローラーが動作する Azure への間接的または直接的な接続。
-#### `--resource-group -g`
-データ コントローラー リソースを追加する Azure リソース グループ。
-#### `--location -l`
-データ コントローラーのメタデータを格納する Azure の場所 (例: eastus)。
-#### `--subscription -s`
-データ コントローラー リソースを追加する Azure サブスクリプション ID。
-### <a name="optional-parameters"></a>省略可能のパラメーター
-#### `--profile-name`
-既存の構成プロファイルの名前。 使用できるオプションを表示するには、`azdata arc dc config list` を実行します。 次のいずれかです: ["azure-arc-aks-premium-storage"、"azure-arc-ake"、"azure-arc-openshift"、"azure-arc-gke"、"azure-arc-aks-default-storage"、"azure-arc-kubeadm"、"azure-arc-eks"、"azure-arc-azure-openshift"、"azure-arc-aks-hci"]。
-#### `--path -p`
-使用するカスタム構成プロファイルが格納されているディレクトリへのパス。 カスタム構成プロファイルを作成するには、`azdata arc dc config init` を実行します。
-#### `--storage-class -sc`
-データとログの永続ボリュームを必要とするすべてのデータ コントローラー ポッドに対するすべてのそのボリュームに使用するストレージ クラス。
 ### <a name="global-arguments"></a>グローバル引数
 #### `--debug`
 すべてのデバッグ ログを表示するようにログの詳細レベルを上げます。
@@ -93,24 +58,13 @@ JMESPath クエリ文字列。 詳細と例については、[http://jmespath.or
 ## <a name="azdata-arc-dc-delete"></a>azdata arc dc delete
 データ コントローラーを削除します。Kube 構成がシステムに必要です。
 ```bash
-azdata arc dc delete --name -n 
-                     --namespace -ns  
-                     
-[--force -f]
+azdata arc dc delete 
 ```
 ### <a name="examples"></a>使用例
 データ コントローラーの配置。
 ```bash
 azdata arc dc delete
 ```
-### <a name="required-parameters"></a>必須のパラメーター
-#### `--name -n`
-データ コントローラー名。
-#### `--namespace -ns`
-データ コントローラーが存在している Kubernetes 名前空間。
-### <a name="optional-parameters"></a>省略可能のパラメーター
-#### `--force -f`
-データ コントローラーを強制的に削除します。
 ### <a name="global-arguments"></a>グローバル引数
 #### `--debug`
 すべてのデバッグ ログを表示するようにログの詳細レベルを上げます。
@@ -125,19 +79,8 @@ JMESPath クエリ文字列。 詳細と例については、[http://jmespath.or
 ## <a name="azdata-arc-dc-export"></a>azdata arc dc export
 メトリック、ログ、または使用状況をファイルにエクスポートします。
 ```bash
-azdata arc dc export --type -t 
-                     --path -p  
-                     
-[--force -f]
+azdata arc dc export 
 ```
-### <a name="required-parameters"></a>必須のパラメーター
-#### `--type -t`
-エクスポートするデータの種類。 オプション: logs、metrics、usage。
-#### `--path -p`
-エクスポート対象のファイルのファイル名を含む完全パスまたは相対パス。
-### <a name="optional-parameters"></a>省略可能のパラメーター
-#### `--force -f`
-出力ファイルを強制的に作成します。 同じパスにある既存のファイルを上書きします。
 ### <a name="global-arguments"></a>グローバル引数
 #### `--debug`
 すべてのデバッグ ログを表示するようにログの詳細レベルを上げます。
@@ -152,12 +95,8 @@ JMESPath クエリ文字列。 詳細と例については、[http://jmespath.or
 ## <a name="azdata-arc-dc-upload"></a>azdata arc dc upload
 データ コントローラーからエクスポートされたデータ ファイルを Azure にアップロードします。
 ```bash
-azdata arc dc upload --path -p 
-                     
+azdata arc dc upload 
 ```
-### <a name="required-parameters"></a>必須のパラメーター
-#### `--path -p`
-アップロード対象のファイルのファイル名を含む完全パスまたは相対パス。
 ### <a name="global-arguments"></a>グローバル引数
 #### `--debug`
 すべてのデバッグ ログを表示するようにログの詳細レベルを上げます。

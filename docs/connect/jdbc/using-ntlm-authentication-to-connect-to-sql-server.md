@@ -2,7 +2,7 @@
 title: NTLM 認証を使用して SQL Server に接続する
 description: JDBC ドライバーで NTLM 認証を使用して SQL データベースの接続を確立する方法について説明します。
 ms.custom: ''
-ms.date: 08/12/2019
+ms.date: 03/31/2021
 ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: v-daenge
@@ -13,18 +13,18 @@ ms.assetid: ''
 author: lilgreenbird
 ms.author: v-susanh
 manager: kenvh
-ms.openlocfilehash: a0d58875603781f4959ee8d10cb683c98bd884c1
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: eac4f363cd289695b92bfbdc02bcfe9b167f77d2
+ms.sourcegitcommit: ebe81e2daa544f41c8ababb66a91c218ad0c2a0a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837472"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106177083"
 ---
 # <a name="using-ntlm-authentication-to-connect-to-sql-server"></a>NTLM 認証を使用して SQL Server に接続する
 
 [!INCLUDE[Driver_JDBC_Download](../../includes/driver_jdbc_download.md)]
 
-[!INCLUDE[jdbcNoVersion](../../includes/jdbcnoversion_md.md)] では、アプリケーションで **authenticationScheme** 接続プロパティを使用して、NTLM v2 認証を使用してデータベースに接続することを示すことができます。 
+[!INCLUDE[jdbcNoVersion](../../includes/jdbcnoversion_md.md)] では、アプリケーションで **authenticationScheme** 接続プロパティを使用して、NTLM v2 認証を使用してデータベースに接続することを示すことができます。
 
 NTLM 認証には、次のプロパティも使用されます。
 
@@ -33,17 +33,17 @@ NTLM 認証には、次のプロパティも使用されます。
 - **password = password**
 - **integratedSecurity = true**
 
-**domain** 以外のプロパティは必須です。**NTLM** authenticationScheme プロパティが使用されている場合、どれかが不足していると、ドライバーによってエラーがスローされます。 
+**domain** 以外のプロパティは必須です。**NTLM** authenticationScheme プロパティが使用されている場合、どれかが不足していると、ドライバーによってエラーがスローされます。
 
-接続プロパティの詳細については、「[接続プロパティの設定](../../connect/jdbc/setting-the-connection-properties.md)」を参照してください。 Microsoft NTLM 認証プロトコルの詳細については、[Microsoft NTLM](/windows/desktop/SecAuthN/microsoft-ntlm) に関するページを参照してください。
+接続プロパティの詳細については、「[接続プロパティの設定](setting-the-connection-properties.md)」を参照してください。 Microsoft NTLM 認証プロトコルの詳細については、[Microsoft NTLM](/windows/desktop/SecAuthN/microsoft-ntlm) に関するページを参照してください。
 
 ## <a name="remarks"></a>解説
 
-NTLM 認証の動作を制御する、SQL Server 設定の詳細については、[ネットワーク セキュリティ:LAN Manager 認証レベル](/windows/security/threat-protection/security-policy-settings/network-security-lan-manager-authentication-level)に関するページを参照してください。 
+NTLM 認証の動作を制御する、SQL Server 設定の詳細については、[ネットワーク セキュリティ:LAN Manager 認証レベル](/windows/security/threat-protection/security-policy-settings/network-security-lan-manager-authentication-level)に関するページを参照してください。
 
 ## <a name="logging"></a>ログ記録
 
-NTLM 認証をサポートするために、新しいロガー com.microsoft.sqlserver.jdbc.internals.NTLMAuthentication が追加されました。 詳細については、「[ドライバー操作のトレース](../../connect/jdbc/tracing-driver-operation.md)」を参照してください。
+NTLM 認証をサポートするために、新しいロガー com.microsoft.sqlserver.jdbc.internals.NTLMAuthentication が追加されました。 詳細については、「[ドライバー操作のトレース](tracing-driver-operation.md)」を参照してください。
 
 ## <a name="datasource"></a>DataSource
 
@@ -81,28 +81,28 @@ try (Connection c = ds.getConnection(); Statement s = c.createStatement();
 
 - [クライアント接続でのサービス プリンシパル名 (SPN) のサポート](../../relational-databases/native-client/features/service-principal-name-spn-support-in-client-connections.md)
 
-> [!NOTE]  
+> [!NOTE]
 > serverSpn 接続属性は、Microsoft JDBC Driver 4.2 以降でのみサポートされています。
 
 > 6\.2 リリースより前の JDBC driver では、**serverSpn** を明示的に設定する必要があります。 6\.2 リリースの場合、ドライバーは既定で **Serverspn** を構築でき ますが、 **serverspn** を明示的に使用することもできます。
 
 ## <a name="security-risks"></a>セキュリティ リスク
 
-NTLM プロトコルは、さまざまな脆弱性を持つ古い認証プロトコルであり、セキュリティ上のリスクがあります。 比較的弱い暗号方式に基づいており、さまざまな攻撃に対して脆弱です。 Kerberos に置き換えられます。これは、より安全で推奨されます。 NTLM 認証は、セキュリティで保護された信頼できる環境、または Kerberos を使用できない場合にのみ使用してください。
+NTLM プロトコルは、さまざまな脆弱性を持つ古い認証プロトコルであり、セキュリティ上のリスクがあります。 これは脆弱な暗号スキームに基づいており、攻撃に対して脆弱です。 NTLM は、より安全で推奨される Kerberos に置き換えられました。 NTLM 認証は、セキュリティで保護された信頼できる環境、または Kerberos を使用できない場合にのみ使用してください。
 
-[!INCLUDE[jdbcNoVersion](../../includes/jdbcnoversion_md.md)] では、NTLM v2 のみサポートされています。これは、元の v1 プロトコルよりもセキュリティが強化されています。 拡張保護を有効にするか、SSL 暗号化を使用して、セキュリティを強化することもお勧めします。 
+[!INCLUDE[jdbcNoVersion](../../includes/jdbcnoversion_md.md)] では、NTLM v2 のみサポートされています。これは、元の v1 プロトコルよりもセキュリティが強化されています。 拡張保護を有効にするか、TLS 暗号化を使用して、セキュリティを強化することもお勧めします。
 
 拡張保護を有効にする方法の詳細については、以下を参照してください。
 
 - [拡張保護を使用したデータベース エンジンへの接続](../../database-engine/configure-windows/connect-to-the-database-engine-using-extended-protection.md)
 
-SSL 暗号化を使用した接続の詳細については、以下を参照してください。
+暗号化を使用した接続の詳細については、以下を参照してください。
 
-- [SSL 暗号化を使用した接続](../../connect/jdbc/connecting-with-ssl-encryption.md)
+- [暗号化を使用した接続](connecting-with-ssl-encryption.md)
 
 > [!NOTE]
 > 7\.4 リリースでは、拡張保護と暗号化の **両方** を有効にすることはサポートされていません。
 
 ## <a name="see-also"></a>関連項目
 
-[JDBC ドライバーによる SQL Server への接続](../../connect/jdbc/connecting-to-sql-server-with-the-jdbc-driver.md)
+[JDBC ドライバーによる SQL Server への接続](connecting-to-sql-server-with-the-jdbc-driver.md)

@@ -5,16 +5,16 @@ description: azdata arc resource-kind コマンドのリファレンス記事で
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: b13ab0788b0cef102fa5388492ef8ad12836c138
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 5c5fb49777adcc3aa8daa99e8ac28342300d0bb7
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100052603"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556853"
 ---
 # <a name="azdata-arc-resource-kind"></a>azdata arc resource-kind
 
@@ -52,21 +52,13 @@ JMESPath クエリ文字列。 詳細と例については、[http://jmespath.or
 ## <a name="azdata-arc-resource-kind-get"></a>azdata arc resource-kind get
 Arc resource-kind のテンプレート ファイルを取得します。
 ```bash
-azdata arc resource-kind get --kind -k 
-                             [--dest -d]
+azdata arc resource-kind get 
 ```
 ### <a name="examples"></a>使用例
 Arc resource-kind の CRD テンプレート ファイルを取得するコマンド例です。
 ```bash
 azdata arc resource-kind get --kind sqldb
 ```
-### <a name="required-parameters"></a>必須のパラメーター
-#### `--kind -k`
-テンプレート ファイルを使用する arc のリソースの種類。
-### <a name="optional-parameters"></a>省略可能のパラメーター
-#### `--dest -d`
-テンプレート ファイルを配置するディレクトリ。
-`template`
 ### <a name="global-arguments"></a>グローバル引数
 #### `--debug`
 すべてのデバッグ ログを表示するようにログの詳細レベルを上げます。

@@ -31,12 +31,12 @@ ms.assetid: f76fbd84-df59-4404-806b-8ecb4497c9cc
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azure-sqldw-latest||=azuresqldb-mi-current
-ms.openlocfilehash: ffc1d15b32bb24d01dfb9a6e0797959561d1b4dc
-ms.sourcegitcommit: c242f423cc3b776c20268483cfab0f4be54460d4
+ms.openlocfilehash: 76a3bc33b441db74961939be543f1fcf44639017
+ms.sourcegitcommit: a7af7bead92044595556b8687e640a0eab0bc455
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105551498"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106179902"
 ---
 # <a name="alter-database-set-options-transact-sql"></a>ALTER DATABASE の SET オプション (Transact-SQL)
 
@@ -1224,7 +1224,7 @@ MINUTES
 データベースの状態が変更されるときに、未完了のトランザクションをいつロールバックするかを指定します。 データベースがロックされている場合に終了句を省略すると、ALTER DATABASE ステートメントが無限に待機します。 指定できる終了句は 1 つのみであり、SET 句の後に指定します。
 
 > [!NOTE]
-> すべてのデータベース オプションで WITH \<termination> 句が使用できるわけではありません。 詳細については、この記事の「解説」セクションの「[オプションの設定](#SettingOptions)」にある表をご覧ください。
+> すべてのデータベース オプションで WITH \<termination> 句が使用できるわけではありません。 詳細については、この記事の「解説」セクションの「[オプションの設定](#SettingOptions)」にある表を参照してください。
 
 ROLLBACK AFTER *number* [SECONDS] | ROLLBACK IMMEDIATE     
 指定した秒数の後、または直ちにロールバックするかどうかを指定します。 *number* は **int** 型です。

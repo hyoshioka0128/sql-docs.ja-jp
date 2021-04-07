@@ -473,8 +473,8 @@ items:
                 href: big-data-cluster/reference-open-source-software.md
               - name: デプロイされるリソース
                 href: big-data-cluster/concept-architecture-pods.md
-          - name: BDC パートナー
-            href: sql-server/partner-big-data-cluster.md
+              - name: BDC パートナー
+                href: sql-server/partner-big-data-cluster.md
           - name: 展開リファレンス
             items:
               - name: 展開構成フォーム
@@ -487,78 +487,6 @@ items:
                 href: big-data-cluster/reference-config-master-instance.md
               - name: Apache Spark と Apache Hadoop
                 href: big-data-cluster/reference-config-spark-hadoop.md
-          - name: Azure Data CLI リファレンス
-            items:
-              - name: Azure データ CLI
-                items:
-                  - name: azdata
-                    href: azdata/reference/reference-azdata.md
-                  - name: ノートブック
-                    href: azdata/reference/reference-azdata-notebook.md
-                  - name: sql
-                    href: azdata/reference/reference-azdata-sql.md
-              - name: アプリ配置
-                items:
-                  - name: app
-                    href: azdata/reference/reference-azdata-app.md
-                  - name: アプリ テンプレート
-                    href: azdata/reference/reference-azdata-app-template.md
-              - name: クラスター
-                items:
-                  - name: bdc
-                    href: azdata/reference/reference-azdata-bdc.md
-                  - name: bdc app
-                    href: azdata/reference/reference-azdata-bdc-app.md
-                  - name: bdc app status
-                    href: azdata/reference/reference-azdata-bdc-app-status.md
-                  - name: bdc の構成
-                    href: azdata/reference/reference-azdata-bdc-config.md
-                  - name: bdc コントロール
-                    href: azdata/reference/reference-azdata-bdc-control.md
-                  - name: bdc コントロールの状態
-                    href: azdata/reference/reference-azdata-bdc-control-status.md
-                  - name: bdc のデバッグ
-                    href: azdata/reference/reference-azdata-bdc-debug.md
-                  - name: bdc エンドポイント
-                    href: azdata/reference/reference-azdata-bdc-endpoint.md
-                  - name: bdc gateway
-                    href: azdata/reference/reference-azdata-bdc-gateway.md
-                  - name: bdc ゲートウェイの設定
-                    href: azdata/reference/reference-azdata-bdc-gateway-settings.md
-                  - name: bdc gateway status
-                    href: azdata/reference/reference-azdata-bdc-gateway-status.md
-                  - name: bdc hdfs
-                    href: azdata/reference/reference-azdata-bdc-hdfs.md
-                  - name: bdc hdfs encryption zone
-                    href: azdata/reference/reference-azdata-bdc-hdfs-encryption-zone.md
-                  - name: bdc hdfs key
-                    href: azdata/reference/reference-azdata-bdc-hdfs-key.md
-                  - name: bdc hdfs のマウント
-                    href: azdata/reference/reference-azdata-bdc-hdfs-mount.md
-                  - name: bdc hdfs の設定
-                    href: azdata/reference/reference-azdata-bdc-hdfs-settings.md
-                  - name: bdc hdfs status
-                    href: azdata/reference/reference-azdata-bdc-hdfs-status.md
-                  - name: bdc settings
-                    href: azdata/reference/reference-azdata-bdc-settings.md
-                  - name: bdc spark
-                    href: azdata/reference/reference-azdata-bdc-spark.md
-                  - name: bdc spark バッチ
-                    href: azdata/reference/reference-azdata-bdc-spark-batch.md
-                  - name: bdc spark セッション
-                    href: azdata/reference/reference-azdata-bdc-spark-session.md
-                  - name: bdc spark の設定
-                    href: azdata/reference/reference-azdata-bdc-spark-settings.md
-                  - name: bdc spark ステートメント
-                    href: azdata/reference/reference-azdata-bdc-spark-statement.md
-                  - name: bdc spark status
-                    href: azdata/reference/reference-azdata-bdc-spark-status.md
-                  - name: bdc sql
-                    href: azdata/reference/reference-azdata-bdc-sql.md
-                  - name: bdc sql の設定
-                    href: azdata/reference/reference-azdata-bdc-sql-settings.md
-                  - name: bdc の状態
-                    href: azdata/reference/reference-azdata-bdc-status.md
   - name: ビジネス継続性
     items:
       - name: 概要
@@ -10380,6 +10308,118 @@ items:
             href: sql-server/partner-dev-sql-server.md
   - name: リファレンス
     items:
+      - name: Azure Data CLI azcli
+        items:
+          - name: azdata
+            href: azdata/reference/reference-azdata.md
+          - name: context
+            href: azdata/reference/reference-azdata-context.md
+          - name: 拡張機能
+            href: azdata/reference/reference-azdata-extension.md
+          - name: ノートブック
+            href: azdata/reference/reference-azdata-notebook.md
+          - name: postgres
+            href: azdata/reference/reference-azdata-postgres.md
+          - name: sql
+            href: azdata/reference/reference-azdata-sql.md
+          - name: ビッグ データ クラスター
+            items:
+              - name: app
+                href: azdata/reference/reference-azdata-app.md
+              - name: アプリ テンプレート
+                href: azdata/reference/reference-azdata-app-template.md
+              - name: bdc
+                href: azdata/reference/reference-azdata-bdc.md
+              - name: bdc app
+                href: azdata/reference/reference-azdata-bdc-app.md
+              - name: bdc app status
+                href: azdata/reference/reference-azdata-bdc-app-status.md
+              - name: bdc の構成
+                href: azdata/reference/reference-azdata-bdc-config.md
+              - name: bdc コントロール
+                href: azdata/reference/reference-azdata-bdc-control.md
+              - name: bdc コントロールの状態
+                href: azdata/reference/reference-azdata-bdc-control-status.md
+              - name: bdc のデバッグ
+                href: azdata/reference/reference-azdata-bdc-debug.md
+              - name: bdc エンドポイント
+                href: azdata/reference/reference-azdata-bdc-endpoint.md
+              - name: bdc gateway
+                href: azdata/reference/reference-azdata-bdc-gateway.md
+              - name: bdc ゲートウェイの設定
+                href: azdata/reference/reference-azdata-bdc-gateway-settings.md
+              - name: bdc gateway status
+                href: azdata/reference/reference-azdata-bdc-gateway-status.md
+              - name: bdc hdfs
+                href: azdata/reference/reference-azdata-bdc-hdfs.md
+              - name: bdc hdfs encryption zone
+                href: azdata/reference/reference-azdata-bdc-hdfs-encryption-zone.md
+              - name: bdc hdfs key
+                href: azdata/reference/reference-azdata-bdc-hdfs-key.md
+              - name: bdc hdfs のマウント
+                href: azdata/reference/reference-azdata-bdc-hdfs-mount.md
+              - name: bdc hdfs の設定
+                href: azdata/reference/reference-azdata-bdc-hdfs-settings.md
+              - name: bdc hdfs status
+                href: azdata/reference/reference-azdata-bdc-hdfs-status.md
+              - name: bdc settings
+                href: azdata/reference/reference-azdata-bdc-settings.md
+              - name: bdc spark
+                href: azdata/reference/reference-azdata-bdc-spark.md
+              - name: bdc spark バッチ
+                href: azdata/reference/reference-azdata-bdc-spark-batch.md
+              - name: bdc spark セッション
+                href: azdata/reference/reference-azdata-bdc-spark-session.md
+              - name: bdc spark の設定
+                href: azdata/reference/reference-azdata-bdc-spark-settings.md
+              - name: bdc spark ステートメント
+                href: azdata/reference/reference-azdata-bdc-spark-statement.md
+              - name: bdc spark status
+                href: azdata/reference/reference-azdata-bdc-spark-status.md
+              - name: bdc sql
+                href: azdata/reference/reference-azdata-bdc-sql.md
+              - name: bdc sql の設定
+                href: azdata/reference/reference-azdata-bdc-sql-settings.md
+              - name: bdc の状態
+                href: azdata/reference/reference-azdata-bdc-status.md
+          - name: Azure Arc 対応データ サービス
+            items:
+              - name: 円弧
+                href: azdata/reference/reference-azdata-arc.md
+              - name: arc dc
+                href: azdata/reference/reference-azdata-arc-dc.md
+              - name: arc dc config
+                href: azdata/reference/reference-azdata-arc-dc-config.md
+              - name: arc dc debug
+                href: azdata/reference/reference-azdata-arc-dc-debug.md
+              - name: arc dc endpoint
+                href: azdata/reference/reference-azdata-arc-dc-endpoint.md
+              - name: arc dc status
+                href: azdata/reference/reference-azdata-arc-dc-status.md
+              - name: arc postgres
+                href: azdata/reference/reference-azdata-arc-postgres.md
+              - name: arc postgres backup
+                href: azdata/reference/reference-azdata-arc-postgres-backup.md
+              - name: arc postgres endpoint
+                href: azdata/reference/reference-azdata-arc-postgres-endpoint.md
+              - name: arc postgres server
+                href: azdata/reference/reference-azdata-arc-postgres-server.md
+              - name: arc postgres server backup
+                href: azdata/reference/reference-azdata-arc-postgres-server-backup.md
+              - name: arc postgres server config
+                href: azdata/reference/reference-azdata-arc-postgres-server-config.md
+              - name: arc resource
+                href: azdata/reference/reference-azdata-arc-resource.md
+              - name: arc resource kind
+                href: azdata/reference/reference-azdata-arc-resource-kind.md
+              - name: arc sql
+                href: azdata/reference/reference-azdata-arc-sql.md
+              - name: arc sql endpoint
+                href: azdata/reference/reference-azdata-arc-sql-endpoint.md
+              - name: arc sql mi
+                href: azdata/reference/reference-azdata-arc-sql-mi.md
+              - name: arc sql mi config
+                href: azdata/reference/reference-azdata-arc-sql-mi-config.md
       - name: データベースのサンプル
         items:
           - name: 概要

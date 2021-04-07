@@ -14,12 +14,12 @@ ms.assetid: 051af34e-bb5b-403e-bd33-007dc02eef7b
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 51e1253eb44d49285a30e8a0ec77ddf6caae7cba
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: 99c7cd242a1983c387a4bce41504fa88df45d6da
+ms.sourcegitcommit: e4b71e5d432a29b6c76ea457b00aa0abd4b6c77f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104750432"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106273497"
 ---
 # <a name="getting-started-with-database-engine-permissions"></a>データベース エンジンの権限の概要
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -100,7 +100,7 @@ AUTHORIZATION  PERMISSION  ON  SECURABLE::NAME  TO  PRINCIPAL;
   
 -   `AUTHORIZATION` は、 `GRANT`型、 `REVOKE` 型、または `DENY`型のいずれかである必要があります。  
   
--   `PERMISSION` は許可または禁止されるアクションを確立します。 [!INCLUDE[sssql16-md](../../../includes/sssql16-md.md)] では、230 の権限を指定できます。 [!INCLUDE[ssSDS](../../../includes/sssds-md.md)] の権限の数が少なくなっています。 権限は、「[アクセス許可 &#40;データベース エンジン&#41;](../../../relational-databases/security/permissions-database-engine.md)」のトピックと以下のチャートで確認できます。  
+-   `PERMISSION` は許可または禁止されるアクションを確立します。 アクセス許可の正確な数は、SQL Server と SQL Database で異なります。 権限は、「[アクセス許可 &#40;データベース エンジン&#41;](../../../relational-databases/security/permissions-database-engine.md)」のトピックと以下のチャートで確認できます。  
   
 -   `ON SECURABLE::NAME` は、セキュリティ保護可能な型 (サーバー、サーバー オブジェクト、データベース、データベース オブジェクト) とその名前です。 一部の権限は、不明瞭でありコンテキストで不適切であるため、 `ON SECURABLE::NAME` を必要としません。 たとえば、`CREATE TABLE` の権限は `ON SECURABLE::NAME` 句を必要としません。 (たとえば `GRANT CREATE TABLE TO Mary;` は Mary にテーブルの作成を許可します)。  
   
@@ -110,6 +110,12 @@ AUTHORIZATION  PERMISSION  ON  SECURABLE::NAME  TO  PRINCIPAL;
   
 ```  
 GRANT UPDATE ON OBJECT::Production.Parts TO PartsTeam;  
+```  
+
+ 次の grant ステートメントの例では、`UPDATE` のアクセス許可を `Production` スキーマに付与します。また、それによって、このスキーマに含まれるすべてのテーブルまたはビューに対するアクセス許可を `ProductionTeam` という名前のロールに付与しています。これは、個々のオブジェクトレベルでアクセス許可を付与するよりも効果的で手ごろなアプローチです。
+  
+```  
+GRANT UPDATE ON SCHEMA::Production TO ProductionTeam;  
 ```  
   
  権限をセキュリティ プリンシパル (ログイン、ユーザー、ロール) に付与するには、 `GRANT` ステートメント使用します。 権限を明示的に拒否するには、  `DENY` コマンドを使用します。 以前に付与または拒否された権限を削除するには、 `REVOKE` ステートメントを使用します。 権限は累積的であるため、ユーザーはユーザー、ログイン、すべてのグループ メンバーシップに付与された権限をすべて受け取ります。ただし、権限の拒否はすべての付与をオーバーライドします。  
@@ -154,10 +160,12 @@ GRANT CONTROL ON DATABASE::SalesDB TO Ted;
 ```  
   
 ## <a name="grant-the-least-permission"></a>最小限の権限の付与  
- 上に示した最初の権限 (`GRANT SELECT ON OBJECT::Region TO Ted;`) が最も詳細であり、 `SELECT`を付与する最小のステートメントです。 下位のオブジェクトに対する権限はありません。 可能な限り最小の権限を付与することをお勧めしますが、付与システムの簡略化のためには高いレベルで付与するほうが適切です。 このため、Ted がスキーマ全体への権限を必要とする場合、 `SELECT` をテーブルまたはビュー レベルで複数回付与するのではなく、 `SELECT` をスキーマ レベルで 1 回付与します。 データベースの設計は、戦略の成功に大きく関わってきます。 一意の権限を必要とするオブジェクトが単一のスキーマに含まれるようにデータベースを設計する際には、この戦略が最適です。  
+ 上に示した最初の権限 (`GRANT SELECT ON OBJECT::Region TO Ted;`) が最も詳細であり、 `SELECT`を付与する最小のステートメントです。 下位のオブジェクトに対する権限はありません。 常に可能な限り最小限のアクセス許可を付与することは良い原則ですが ([最小限の特権の原則の詳細についてはこちら](https://techcommunity.microsoft.com/t5/azure-sql/security-the-principle-of-least-privilege-polp/ba-p/2067390)を参照してください)、同時に (それとは矛盾しますが) より高いレベルで付与して、付与システムを簡略化するようにしてください。 このため、Ted がスキーマ全体への権限を必要とする場合、 `SELECT` をテーブルまたはビュー レベルで複数回付与するのではなく、 `SELECT` をスキーマ レベルで 1 回付与します。 データベースの設計は、戦略の成功に大きく関わってきます。 一意の権限を必要とするオブジェクトが単一のスキーマに含まれるようにデータベースを設計する際には、この戦略が最適です。  
+ 
+ > [!TIP]  
+>  データベースとそのオブジェクトを設計するときは、最初から、誰が、またはどのアプリケーションがどのオブジェクトにアクセスするかを計画し、それに基づいてオブジェクト、つまりテーブルだけでなく、ビュー、関数、ストアド プロシージャなどを、できるだけアクセスの種類のバケットに従ってスキーマに配置します。 このアプローチの詳細については、Andreas Wolter によるこのブログ投稿「[Schema-design for SQL Server: recommendations for Schema design with security in mind (SQL Server のスキーマ設計: セキュリティを考慮したスキーマ設計の推奨事項)](http://andreas-wolter.com/en/schema-design-for-sql-server-recommendations-for-schema-design-with-security-in-mind/)」を参照してください。 
   
-## <a name="list-of-permissions"></a>権限の一覧  
- [!INCLUDE[sssql16-md](../../../includes/sssql16-md.md)] には 230 の権限があります。 [!INCLUDE[ssSQL14](../../../includes/sssql14-md.md)] には 219 の権限があります。 [!INCLUDE[ssSQL11](../../../includes/sssql11-md.md)] には 214 の権限があります。 [!INCLUDE[ssKilimanjaro](../../../includes/sskilimanjaro-md.md)] には 195 の権限があります。 [!INCLUDE[ssSDS](../../../includes/sssds-md.md)]、 [!INCLUDE[ssDW](../../../includes/ssdw-md.md)]、 [!INCLUDE[ssAPS](../../../includes/ssaps-md.md)] にはそれぞれ、 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)]に適用されない権限が含まれているものの、データベース エンジンの一部のみを公開しているため、権限の数が少なくなっています。 
+## <a name="diagramm-of-permissions"></a>アクセス許可の図  
  
  [!INCLUDE[database-engine-permissions](../../../includes/paragraph-content/database-engine-permissions.md)]
  

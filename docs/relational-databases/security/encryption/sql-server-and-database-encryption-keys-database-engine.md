@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 15c0a5e8-9177-484c-ae75-8c552dc0dac0
 author: jaszymas
 ms.author: jaszymas
-ms.openlocfilehash: ac91abe799eb914d2a544d6f9fad598545a920c4
-ms.sourcegitcommit: 38e055eda82d293bf5fe9db14549666cf0d0f3c0
+ms.openlocfilehash: 0ffb2adad7c1c5e74cc96e7baa5e4f37a2818674
+ms.sourcegitcommit: 14f2051d329b69a7b5ff7bce1d136cf7f25bb219
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99251147"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106232159"
 ---
 # <a name="sql-server-and-database-encryption-keys-database-engine"></a>SQL Server とデータベースの暗号化キー (データベース エンジン)
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
@@ -58,7 +58,7 @@ ms.locfileid: "99251147"
 -   複数のサーバーが 1 つのデータベースとそのデータベースの暗号化を解除するキーの両方を共有する場合は、サーバー スケールアウト配置に対してサーバー インスタンスを追加または削除します。  
   
 ## <a name="important-security-information"></a>重要なセキュリティ情報  
- サービス マスター キーで保護されているオブジェクトにアクセスするには、そのキーの作成に使用された [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] サービス アカウント、またはコンピューター アカウントのいずれかが必要です。 つまり、コンピューターはキーが作成されたシステムに関連付けられています。 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] サービス アカウント *または* コンピューター アカウントを変更しても、キーにアクセスできなくなることはありません。 ただし、両方を変更するとサービス マスター キーにはアクセスできなくなります。 この 2 つのアカウントが一方しかない状態でサービス マスター キーにアクセスできなくなると、元のキーで暗号化されたデータとオブジェクトは暗号化解除できなくなります。  
+ サービス マスター キーで保護されているオブジェクトにアクセスするには、そのキーの作成に使用された [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] サービス アカウント、またはコンピューター アカウントのいずれかが必要です。 つまり、キーが作成されたシステムに関連付けられているコンピューター アカウントです。 [!INCLUDE[ssNoVersion](../../../includes/ssnoversion-md.md)] サービス アカウント *または* コンピューター アカウントを変更しても、キーにアクセスできなくなることはありません。 ただし、両方を変更するとサービス マスター キーにはアクセスできなくなります。 この 2 つのアカウントが一方しかない状態でサービス マスター キーにアクセスできなくなると、元のキーで暗号化されたデータとオブジェクトは暗号化解除できなくなります。  
   
  サービス マスター キーで保護されている接続は、サービス マスター キーがないと復元できません。  
   

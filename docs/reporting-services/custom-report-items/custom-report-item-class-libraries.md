@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: f18c5d8f-1d6b-4f0b-8657-c14896c2ce0d
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: f30b581c67eb161bd0d221b9a4aa341d90ab7148
-ms.sourcegitcommit: ff82f3260ff79ed860a7a58f54ff7f0594851e6b
+ms.openlocfilehash: d5d58066e16788dcba313bba82e77504c8394a75
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "80216948"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105981128"
 ---
 # <a name="custom-report-item-class-libraries"></a>カスタム レポート アイテムのクラス ライブラリ
   カスタム レポート アイテムは、**Microsoft.ReportDesigner** 名前空間のクラスを使用します。 カスタム レポート アイテムを実装する際に使用するクラスは、2 つの主なカテゴリに分類できます。1 つは、カスタム レポート アイテム インフラストラクチャをサポートするためにデザインされた独自のクラス、もう 1 つは、関連するレポート定義言語 (RDL) 要素の機能をカプセル化するマネージド ラッパー クラスです。 これらのクラスの使用方法のコード サンプルについては、「[SQL Server Reporting Services Product Samples](https://go.microsoft.com/fwlink/?LinkId=177889)」 (SQL Server Reporting Services の製品サンプル) を参照してください。  
@@ -33,7 +33,7 @@ ms.locfileid: "80216948"
   
 #### <a name="public-properties"></a>パブリック プロパティ  
   
-|||  
+|プロパティ|説明|  
 |-|-|  
 |**名前**|カスタム レポート アイテムの名前|  
 |**Type**|カスタム レポート アイテムの種類。|  
@@ -43,14 +43,14 @@ ms.locfileid: "80216948"
 |**Width**|カスタム レポート アイテム コントロールの幅|  
 |**Report**|レポート レベルのプロパティ (レポートのデータセットの一覧など) のコンテナー|  
 |**AltReportItem**|カスタム レポート アイテムの実行時コントロールがサポートされていない場合に使用される代替レポート アイテム オブジェクト|  
-|**Style**|カスタム レポート アイテムのスタイルのプロパティ|  
+|**スタイル**|カスタム レポート アイテムのスタイルのプロパティ|  
 |**Adornment**|コントロールのインタラクティブな編集のために使用される装飾ウィンドウ|  
-|**Site**|コンポーネントの **ISite**|  
+|**サイト**|コンポーネントの **ISite**|  
 |**DesignerVerbCollection**|コントロールのショートカット メニューのカスタム動詞の配列|  
   
 #### <a name="public-methods"></a>パブリック メソッド  
   
-|||  
+|メソッド|説明|  
 |-|-|  
 |**BeginEdit**|コントロールのインタラクティブな編集をアクティブにします。|  
 |**DoDefaultAction**|コントロールをダブルクリックしたとき、またはコントロールに対して Enter キーを押したときに呼び出されます。|  
@@ -62,11 +62,11 @@ ms.locfileid: "80216948"
 |**OnPaint**|**Paint** イベントに応答して呼び出されます。|  
   
 ### <a name="microsoftreportdesignercustomreportitemattribute"></a>Microsoft.ReportDesigner.CustomReportItemAttribute  
- この属性は、カスタム レポート アイテムの種類を識別するために使用されます。 この名前は、レポート デザイナー構成ファイルの **ReportItem** 要素の \<**名前**> 属性の値と一致している必要があります。  
+ この属性は、カスタム レポート アイテムの種類を識別するために使用されます。 この名前は、レポート デザイナー構成ファイルの **ReportItem** 要素の \<**Name**> 属性の値と一致している必要があります。  
   
 #### <a name="public-methods"></a>パブリック メソッド  
   
-|||  
+|メソッド|説明|  
 |-|-|  
 |**CustomReportItemAttribute**|CustomReportItemAttribute オブジェクトを構築します。|  
   
@@ -75,7 +75,7 @@ ms.locfileid: "80216948"
   
 #### <a name="public-methods"></a>パブリック メソッド  
   
-|||  
+|メソッド|説明|  
 |-|-|  
 |**LocalizedNameAttribute**|LocalizedNameAttribute オブジェクトを構築します。|  
   
@@ -84,11 +84,11 @@ ms.locfileid: "80216948"
   
 #### <a name="public-methods"></a>パブリック メソッド  
   
-|||  
+|メソッド|説明|  
 |-|-|  
 |**OnShow**|**Adornment** がアクティブになると呼び出されます。|  
 |**OnHide**|**Adornment** が非アクティブになると呼び出されます。|  
-|**Paint**|**Paint** イベントに応答して呼び出されます。|  
+|**ペイント**|**Paint** イベントに応答して呼び出されます。|  
 |**OnDragEnter**<br /><br /> **OnDragOver**<br /><br /> **OnDragLeave**<br /><br /> **OnDragDrop**|オブジェクトを **Adornment** にドラッグすると呼び出されます。|  
   
 ### <a name="microsoftreportdesigneradornerservice"></a>Microsoft.ReportDesigner.AdornerService  
@@ -96,7 +96,7 @@ ms.locfileid: "80216948"
   
 #### <a name="public-properties"></a>パブリック プロパティ  
   
-|||  
+|プロパティ|説明|  
 |-|-|  
 |**AdornerWindowBounds**|Adorner ウィンドウの境界|  
 |**AdornerWindowRegion**|Adorner ウィンドウの領域|  
@@ -104,7 +104,7 @@ ms.locfileid: "80216948"
   
 #### <a name="public-methods"></a>パブリック メソッド  
   
-|||  
+|メソッド|説明|  
 |-|-|  
 |**ComponentRectInDesignerFrame**|デザイナー フレームの座標に変換されたコンポーネントの境界を返します。|  
 |**InvalidateAdorner**|Adorner ウィンドウを無効にします。|  
@@ -115,7 +115,7 @@ ms.locfileid: "80216948"
   
 #### <a name="public-methods"></a>パブリック メソッド  
   
-|||  
+|メソッド|説明|  
 |-|-|  
 |**EditValue**|式エディターを呼び出して、渡されたオブジェクト値で初期化します。|  
   
@@ -124,7 +124,7 @@ ms.locfileid: "80216948"
   
 #### <a name="public-properties"></a>パブリック プロパティ  
   
-|||  
+|プロパティ|説明|  
 |-|-|  
 |**DataSetName**|ドロップされるフィールドを含むデータセットの名前|  
 |**Fields**|削除されるフィールドのコレクション (**Microsoft.ReportDesigner.Field**)|  

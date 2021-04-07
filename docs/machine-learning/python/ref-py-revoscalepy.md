@@ -8,12 +8,12 @@ ms.topic: how-to
 author: dphansen
 ms.author: davidph
 monikerRange: '>=sql-server-2017||>=sql-server-linux-ver15'
-ms.openlocfilehash: 1fcaa82829b35926e2707dda792ac2c376241650
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 15f526feb973387c0f1bcd5bc4e6de0019a5774e
+ms.sourcegitcommit: 0b37eb7aef2f358f80867cd13830dd6683da8d85
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97470933"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105980937"
 ---
 # <a name="revoscalepy-python-package-in-sql-server-machine-learning-services"></a>revoscalepy (SQL Server Machine Learning Services の Python パッケージ)
 [!INCLUDE [SQL Server 2017 and later](../../includes/applies-to-version/sqlserver2017.md)]
@@ -92,7 +92,7 @@ SQL Server と Python では、場合によっては異なるデータ型が使�
 
 | 機能| 説明|
 | ------- | ---------- |
-| [rx_predict](/machine-learning-server/python-reference/revoscalepy/rx-predict) | トレーニング済みのモデルから予測を生成する|) | トレーニング済みのモデルから予測を生成します。リアルタイムのスコアリングに使用できます。 |
+| [rx_predict](/machine-learning-server/python-reference/revoscalepy/rx-predict) | トレーニング済みのモデルから予測を生成します。リアルタイムのスコアリングに使用できます。 |
 |[rx_predict_default](/machine-learning-server/python-reference/revoscalepy/rx-predict-default) | rx_lin_mod and rx_logit オブジェクトを利用し、予測値と残余を計算します。 |
 |[rx_predict_rx_dforest](/machine-learning-server/python-reference/revoscalepy/rx-predict-rx-dforest) | rx_dforest または rx_btrees オブジェクトからデータ セットの予測値または調整値を計算します。 |
 |[rx_predict_rx_dtree](/machine-learning-server/python-reference/revoscalepy/rx-predict-rx-dtree) | rx_dtree オブジェクトからデータ セットの予測値または調整値を計算します。 |

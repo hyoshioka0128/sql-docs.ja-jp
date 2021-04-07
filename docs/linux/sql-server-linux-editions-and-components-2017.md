@@ -25,12 +25,12 @@ helpviewer_keywords:
 author: VanMSFT
 ms.author: vanto
 ms.reviewer: vanto
-ms.openlocfilehash: 299155fad92a34b79c7a1a7c0a4d1ad0f86111ea
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: fe15c32e5536aee8135e0a32e9365ed01dc40c8e
+ms.sourcegitcommit: 2db7412d30722f198cbafcd683bd4da206b33996
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100348166"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099959"
 ---
 # <a name="editions-and-supported-features-of-sql-server-2017-on-linux"></a>Linux 上の SQL Server 2017 のエディションとサポートされる機能
 
@@ -233,8 +233,8 @@ Developer Edition では引き続き、[SQL Server 分散再生](../tools/distri
 | &nbsp; | 管理対象のバックアップ |
 | **高可用性** | データベース ミラーリング  |
 | **Security** | 拡張キー管理 |
-| &nbsp; | リンク サーバーに対する AD 認証 | 
-| &nbsp; | 可用性グループに対する AD 認証 (AG) | 
+| &nbsp; | リンク サーバーに対する AD 認証 |
+| &nbsp; | 可用性グループ (AG) エンドポイントに対する AD 認証 |
 | **サービス** | SQL Server Browser |
 | &nbsp; | SQL Server R サービス |
 | &nbsp; | StreamInsight |

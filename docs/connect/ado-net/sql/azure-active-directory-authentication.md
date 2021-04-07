@@ -1,7 +1,7 @@
 ---
 title: SqlClient での Azure Active Directory 認証の使用
 description: サポートされている Azure Active Directory 認証モードを使用して、SqlClient で Azure SQL データ ソースに接続する方法について説明します
-ms.date: 11/20/2020
+ms.date: 03/30/2021
 dev_langs:
 - csharp
 ms.prod: sql
@@ -11,12 +11,12 @@ ms.topic: conceptual
 author: karinazhou
 ms.author: v-jizho2
 ms.reviewer: v-daenge
-ms.openlocfilehash: c57c2d10854ed902a6230eafc3a912cd0508c989
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 8ad08c0799f53b2746c621bb1c16a41fe38b7e14
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101836001"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054480"
 ---
 # <a name="using-azure-active-directory-authentication-with-sqlclient"></a>SqlClient での Azure Active Directory 認証の使用
 
@@ -254,7 +254,7 @@ Active Directory 認証中、クライアント アプリケーションは次�
 
 ## <a name="support-for-a-custom-sql-authentication-provider"></a>カスタム SQL 認証プロバイダーのサポート
 
-柔軟性の向上により、クライアント アプリケーションでは、`ActiveDirectoryAuthenticationProvider` クラスを使用する代わりに、Active Directory 認証用に独自のプロバイダーを使用することもできます。 カスタム認証プロバイダーは、オーバーライドされたメソッドを含む `SqlAuthenticationProvider` のサブクラスである必要があります。 
+柔軟性の向上により、クライアント アプリケーションでは、`ActiveDirectoryAuthenticationProvider` クラスを使用する代わりに、Active Directory 認証用に独自のプロバイダーを使用することもできます。 カスタム認証プロバイダーは、オーバーライドされたメソッドを含む `SqlAuthenticationProvider` のサブクラスである必要があります。 さらに、既存の 1 つ以上の `Active Directory*` 認証方法をオーバーライドして、カスタム プロバイダーを登録する必要があります。
 
 次の例は、`Active Directory Device Code Flow` 認証用に新しい認証プロバイダーを使用する方法を示しています。
 

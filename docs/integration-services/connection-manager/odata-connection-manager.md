@@ -14,12 +14,12 @@ f1_keywords:
 - sql13.dts.designer.odataconnectionmanager.f1
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: 7d02fbd8a7029a794b933053bec5f676646eced1
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 8ff62a8b8ac44d18b57d7e9c98a27164bc455753
+ms.sourcegitcommit: f5de0340c61202e743d9b301e514b95c0660a8e4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100338422"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106098201"
 ---
 # <a name="odata-connection-manager"></a>OData 接続マネージャー
 
@@ -62,12 +62,17 @@ Microsoft Dynamics AX Online または Microsoft Dynamics CRM Online に接続�
 ## <a name="odata-connection-manager-properties"></a>OData 接続マネージャーのプロパティ  
  次の一覧で、OData 接続マネージャーのプロパティについて説明します。  
   
-|プロパティ|説明|  
-|-|-|  
-|url|サービス ドキュメントに対応する URL。|  
-|UserName|認証に使用するユーザー名 (必要な場合)。|  
-|Password|認証に使用するパスワード (必要な場合)。|  
-|ConnectionString|接続マネージャーの他のプロパティが含まれます。|  
+|プロパティ|既定値|説明|  
+|-|-|-|
+|キープ アライブ|False|Web 要求を送信するときの "Keep-Alive" ヘッダーの値。|
+|最大受信メッセージ サイズ|4TB|Web 要求を送信するときの最大受信メッセージ サイズ (バイト単位)。|
+|再試行の回数|5|Web 要求を送信するときの再試行回数。|
+|再試行のスリープ|100|Web 要求を送信するときの再試行のためのスリープ時間 (ミリ秒単位)。|
+|タイムアウト|600|Web 要求を送信するときのタイムアウト (秒単位)。|
+|url||サービス ドキュメントに対応する URL。|  
+|UserName||認証に使用するユーザー名 (必要な場合)。|  
+|Password||認証に使用するパスワード (必要な場合)。|  
+|ConnectionString||接続マネージャーの他のプロパティが含まれます。|  
   
 ## <a name="odata-connection-manager-editor"></a>[OData 接続マネージャー エディター]
   **[OData 接続マネージャー エディター]** ダイアログ ボックスを使用して、OData データ ソースへの接続を追加するか、既存の接続を編集します。  

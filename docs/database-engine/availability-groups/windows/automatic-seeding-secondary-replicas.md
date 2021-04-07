@@ -2,7 +2,7 @@
 title: セカンダリ レプリカの自動シード処理
 description: 自動シード処理を使用して、SQL 2016 以降で Always On 可用性グループの一部としてセカンダリ レプリカを初期化する自動シード処理の方法について説明します。
 ms.custom: seo-lt-2019
-ms.date: 11/27/2018
+ms.date: 03/05/2021
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: availability-groups
@@ -12,19 +12,19 @@ helpviewer_keywords:
 ms.assetid: ''
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 75aa499fff65f9b7bf6ab10b6cdc501c172fbc03
-ms.sourcegitcommit: 370cab80fba17c15fb0bceed9f80cb099017e000
+ms.openlocfilehash: aff27fc13795c83ac196a2f4ae431bb6d459bca2
+ms.sourcegitcommit: 14f2051d329b69a7b5ff7bce1d136cf7f25bb219
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97644377"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106232209"
 ---
 # <a name="use-automatic-seeding-to-initialize-a-secondary-replica-for-an-always-on-availability-group"></a>自動シード処理を使用して、Always On 可用性グループのセカンダリ レプリカを初期化する
 [!INCLUDE [SQL Server](../../../includes/applies-to-version/sqlserver.md)]
 
 SQL Server 2012 および 2014 では、SQL Server Always On 可用性グループでセカンダリ レプリカを初期化する唯一の方法はバックアップ、コピー、および復元を使用することです。 SQL Server 2016 では、セカンダリ レプリカを初期化するための *自動シード処理* という新機能が導入されています。 自動シード処理ではログ ストリーム トランスポートを使用して、VDI を使用するバックアップを、構成済みのエンドポイントを使用する可用性グループの各データベースのセカンダリ レプリカにストリーミングします。 この新機能は、可用性グループの最初の作成時やデータベースの追加時に使用できます。 自動シード処理は、Always On 可用性グループをサポートする SQL Server のすべてのエディションで、従来の可用性グループと[分散型可用性グループ](distributed-availability-groups.md)の両方で使用できます。
 
-## <a name="security"></a>Security
+## <a name="security"></a>セキュリティ
 
 セキュリティのアクセス許可は、初期化されるレプリカの種類によって異なります。
 
@@ -34,7 +34,7 @@ SQL Server 2012 および 2014 では、SQL Server Always On 可用性グルー�
 
 ## <a name="performance-and-transaction-log-impact-on-the-primary-replica"></a>プライマリ レプリカへのパフォーマンスおよびトランザクション ログの影響
 
-自動シード処理は、データベースのサイズ、ネットワーク速度、およびプライマリ レプリカとセカンダリ レプリカの間の距離に応じて、セカンダリ レプリカを初期化するのに実用的である場合とそうでない場合があります。 以下に例を示します。
+自動シード処理は、データベースのサイズ、ネットワーク速度、およびプライマリ レプリカとセカンダリ レプリカの間の距離に応じて、セカンダリ レプリカを初期化するのに実用的である場合とそうでない場合があります。 次に例を示します。
 
 * データベース サイズが 5 TB である。
 * ネットワーク速度が 1Gb/秒である。
@@ -230,7 +230,7 @@ GO
 
 次の表に、自動シード処理に関連する拡張イベントを示します。
 
-|Name|説明|
+|名前|説明|
 |----|-----------|
 |hadr_db_manager_seeding_request_msg|シード処理要求メッセージ。|
 |hadr_physical_seeding_backup_state_change|物理シード処理のバックアップ側の状態変更。|
@@ -247,7 +247,7 @@ GO
 |hadr_automatic_seeding_failure|自動シード処理操作が失敗するときに発生します。|
 |hadr_automatic_seeding_timeout|自動シード処理操作がタイムアウトになるときに発生します。|
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [ALTER AVAILABILITY GROUP (Transact-SQL)](../../../t-sql/statements/alter-availability-group-transact-sql.md)
 

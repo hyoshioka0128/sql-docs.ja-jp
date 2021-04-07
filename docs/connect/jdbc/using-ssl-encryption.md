@@ -1,8 +1,8 @@
 ---
-description: 暗号化の使用
+description: SQL データベース接続で TLS 暗号化を使用してセキュリティで保護された通信チャネルを確立する方法について説明します。
 title: 暗号化の使用
-ms.custom: Learn how to establish secure communication channels using TLS encryption with your SQL database connections.
-ms.date: 09/12/2019
+ms.custom: ''
+ms.date: 03/31/2021
 ms.prod: sql
 ms.prod_service: connectivity
 ms.reviewer: vanto
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 8e566243-2f93-4b21-8065-3c8336649309
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 86a36cec5930630c00501796e9c2340106cfa6c9
-ms.sourcegitcommit: e700497f962e4c2274df16d9e651059b42ff1a10
+ms.openlocfilehash: 85407549aba05de1acae7108ab2fc14212c954cf
+ms.sourcegitcommit: ebe81e2daa544f41c8ababb66a91c218ad0c2a0a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88414578"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106176933"
 ---
 # <a name="using-encryption"></a>暗号化の使用
 
@@ -30,19 +30,19 @@ ms.locfileid: "88414578"
   
 TLS 暗号化を有効にすると、[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] のインスタンスとアプリケーション間でネットワーク送信されるデータのセキュリティが強化されます。 ただし、暗号化を有効にすると、パフォーマンスが低下します。  
   
-このセクションの各トピックでは、[!INCLUDE[jdbcNoVersion](../../includes/jdbcnoversion_md.md)] で TLS 暗号化をサポートするしくみについて説明します。これには、新しい接続プロパティと、クライアント側でトラスト ストアを構成する方法についての説明が含まれます。  
+このセクションの記事では、[!INCLUDE[jdbcNoVersion](../../includes/jdbcnoversion_md.md)] で TLS 暗号化をサポートするしくみについて説明します。これには、新しい接続プロパティと、クライアント側でトラスト ストアを構成する方法についての説明が含まれます。  
   
 > [!NOTE]  
 > TLS 証明書を検証するには、**hostNameInCertificate** 接続プロパティが推奨されます。  
 
 ## <a name="in-this-section"></a>このセクションの内容  
 
-| トピック                                                                                                        | 説明                                                                                                                                           |
-| ------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [暗号化のサポートについて](../../connect/jdbc/understanding-ssl-support.md)                                 | [!INCLUDE[jdbcNoVersion](../../includes/jdbcnoversion_md.md)] で TLS 暗号化をサポートするしくみについて説明します。                                              |
-| [暗号化を使用した接続](../../connect/jdbc/connecting-with-ssl-encryption.md)                       | 新しい TLS 固有の接続プロパティを使用して [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースに接続する方法について説明します。 |
-| [暗号化のためのクライアントの構成](../../connect/jdbc/configuring-the-client-for-ssl-encryption.md) | クライアント側で既定のトラスト ストアを構成する方法と、クライアント コンピューターのトラスト ストアにプライベート証明書をインポートする方法について説明します。   |
-  
+| [アーティクル] | 説明 |
+| ----- | ----------- |
+| [暗号化のサポートについて](understanding-ssl-support.md) | [!INCLUDE[jdbcNoVersion](../../includes/jdbcnoversion_md.md)] で TLS 暗号化をサポートするしくみについて説明します。 |
+| [暗号化を使用した接続](connecting-with-ssl-encryption.md) | 新しい TLS 固有の接続プロパティを使用して [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] データベースに接続する方法について説明します。 |
+| [暗号化のためのクライアントの構成](configuring-the-client-for-ssl-encryption.md) | クライアント側で既定のトラスト ストアを構成する方法と、クライアント コンピューターのトラスト ストアにプライベート証明書をインポートする方法について説明します。 |
+
 ## <a name="see-also"></a>参照
 
-[JDBC ドライバー アプリケーションのセキュリティ保護](../../connect/jdbc/securing-jdbc-driver-applications.md)  
+[JDBC ドライバー アプリケーションのセキュリティ保護](securing-jdbc-driver-applications.md)

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 574e326f-0520-4003-bdf1-62d92c3db457
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: f64cbc7b054f6e60285b3a34921e3219ddd507ff
-ms.sourcegitcommit: d56a834269132a83e5fe0a05b033936776cda8bb
+ms.openlocfilehash: 7fa4598fc332a2f84a02b428e786ed381e388a1e
+ms.sourcegitcommit: a7af7bead92044595556b8687e640a0eab0bc455
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91529333"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106179882"
 ---
 # <a name="understanding-xa-transactions"></a>XA トランザクションについて
 
@@ -63,7 +63,7 @@ ms.locfileid: "91529333"
 > JDBC 分散トランザクション コンポーネントは、JDBC Driver のインストール先の xa ディレクトリに含まれます。 これらのコンポーネントには、xa_install.sql および sqljdbc_xa.dll のファイルが含まれます。 さまざまなクライアントで JDBC ドライバーのさまざまなバージョンがある場合、サーバーで最新の sqljdbc_xa.dll を使用することをお勧めします。  
 
 > [!NOTE]  
-> JDBC XA 分散トランザクション コンポーネントは、SQL Server 2017 (累積的更新プログラム 16 以降) および SQL Server 2019 の SQL Server エンジンに含まれており、システム ストアド プロシージャを使用して有効または無効にできます。
+> JDBC XA 分散トランザクション コンポーネントは、SQL Server 2017 (累積的更新プログラム 16 以降) および SQL Server 2019 の SQL Server エンジンに含まれており、システム ストアド プロシージャを使用して有効または無効にできます。 ドライバーの sqjdbc_xa.dll は必須ではないため、これらのサーバー バージョンではなく、サーバー コンポーネントを有効にすることをお勧めします。
 > JDBC ドライバーを使用して XA 分散トランザクションを実行するために必要なコンポーネントを有効にするには、次のストアド プロシージャを実行します。
 >
 > EXEC sp_sqljdbc_xa_install

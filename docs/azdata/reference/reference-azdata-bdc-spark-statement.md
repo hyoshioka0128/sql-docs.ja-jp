@@ -5,16 +5,16 @@ description: azdata bdc spark statement コマンドのリファレンス記事�
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 9f911c8d9e2a7f39d02e84c03d772a0390a388c7
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 5b789129ea562c5f56850c424db01910108d2474
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100048792"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557170"
 ---
 # <a name="azdata-bdc-spark-statement"></a>azdata bdc spark statement
 
@@ -39,7 +39,7 @@ azdata bdc spark statement list --session-id -i
 ### <a name="examples"></a>例
 セッションのすべてのステートメントを一覧表示します。
 ```bash
-azdata bdc spark statement list --session-id 0
+azdata spark statement list --session-id 0
 ```
 ### <a name="required-parameters"></a>必須のパラメーター
 #### `--session-id -i`
@@ -64,7 +64,7 @@ azdata bdc spark statement create --session-id -i
 ### <a name="examples"></a>例
 ステートメントを実行します。
 ```bash
-azdata bdc spark statement create --session-id 0 --code "2+2"
+azdata spark statement create --session-id 0 --code "2+2"
 ```
 ### <a name="required-parameters"></a>必須のパラメーター
 #### `--session-id -i`
@@ -91,7 +91,7 @@ azdata bdc spark statement info --session-id -i
 ### <a name="examples"></a>例
 セッション ID が 0、ステートメント ID が 0 のステートメント情報を取得します。
 ```bash
-azdata bdc spark statement info --session-id 0 --statement-id 0
+azdata spark statement info --session-id 0 --statement-id 0
 ```
 ### <a name="required-parameters"></a>必須のパラメーター
 #### `--session-id -i`
@@ -118,7 +118,7 @@ azdata bdc spark statement cancel --session-id -i
 ### <a name="examples"></a>例
 ステートメントをキャンセルします。
 ```bash
-azdata bdc spark statement cancel --session-id 0 --statement-id 0
+azdata spark statement cancel --session-id 0 --statement-id 0
 ```
 ### <a name="required-parameters"></a>必須のパラメーター
 #### `--session-id -i`

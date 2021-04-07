@@ -1,25 +1,25 @@
 ---
-title: Launchpad サービスに関する問題のトラブルシューティング
-description: この記事では、SQL Server Trusted Launchpad サービスの開始を妨げるさまざまな問題のトラブルシューティングの指針を示します。これには、構成の問題または変更や、不足するネットワーク プロトコルなどが含まれます。
+title: Python および R スクリプトの Launchpad のトラブルシューティング
+description: この記事では、SQL Server Launchpad サービスの開始を妨げるさまざまな問題のトラブルシューティングの指針を示します。これには、構成の問題または変更や、不足するネットワーク プロトコルなどが含まれます。 Launchpad サービスでは、R および Python の外部スクリプト実行がサポートされています。
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 07/30/2019
+ms.date: 03/31/2021
 ms.topic: troubleshooting
 author: dphansen
 ms.author: davidph
-ms.custom: seo-lt-2019
+ms.custom: contperf-fy21q3
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
-ms.openlocfilehash: b57fdb3abd3482d6a395e1e6690f2e628a2a3e9e
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: b015e4181f8d8cfe9388c609f749dc5979463d3a
+ms.sourcegitcommit: 2db7412d30722f198cbafcd683bd4da206b33996
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97470683"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099964"
 ---
-# <a name="troubleshoot-issues-with-launchpad-service-and-external-script-execution-in-sql-server"></a>SQL Server での Launchpad サービスと外部スクリプト実行に関する問題のトラブルシューティング
+# <a name="troubleshoot-issues-with-launchpad-service-executing-python-and-r-scripts-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services で Python および R スクリプトを実行する Launchpad サービスに関する問題のトラブルシューティング
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
-この記事では、SQL Server Trusted Launchpad サービスに関連する問題のトラブルシューティング ガイダンスを提供します。 Launchpad サービスでは、R および Python の外部スクリプト実行がサポートされています。 構成の問題または変更や、不足するネットワーク プロトコルなどの複数の問題により、Launchpad が起動しないことがあります。  
+この記事では、[Machine Learning Services](../sql-server-machine-learning-services.md) で使用される [SQL Server Launchpad サービス](../security/sql-server-launchpad-service-account.md)に関連する問題のトラブルシューティングのガイダンスを提供します。 Launchpad サービスでは、R および Python の外部スクリプト実行がサポートされています。 構成の問題または変更や、不足するネットワーク プロトコルなどの複数の問題により、Launchpad が起動しないことがあります。  
 
 ## <a name="determine-whether-launchpad-is-running"></a>Launchpad が実行されているかどうかを判断する
 
@@ -233,8 +233,6 @@ R をインストールするボリュームが短いファイル名に対応し
 ::: moniker-end
 
 ## <a name="next-steps"></a>次のステップ
-
-[Machine Learning Services のトラブルシューティングと既知の問題](machine-learning-troubleshooting-overview.md)
 
 [機械学習のトラブルシューティングのためのデータ収集](data-collection-ml-troubleshooting-process.md)
 

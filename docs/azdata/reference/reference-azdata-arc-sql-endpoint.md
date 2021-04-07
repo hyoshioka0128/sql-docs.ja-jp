@@ -2,14 +2,19 @@
 title: azdata arc sql endpoint リファレンス
 titleSuffix: SQL Server big data clusters
 description: azdata arc sql endpoint コマンドに関するリファレンス記事です。
+author: MikeRayMSFT
+ms.author: mikeray
+ms.reviewer: seanw
+ms.date: 04/06/2021
+ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 190bc4360d8f8cd35f0ceda04887a1fc912243e3
-ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
+ms.openlocfilehash: 13ff758f200bd675bc21c020b9c957fb286ecfd6
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/13/2021
-ms.locfileid: "100342528"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556841"
 ---
 # <a name="azdata-arc-sql-endpoint"></a>azdata arc sql endpoint
 
@@ -18,7 +23,8 @@ ms.locfileid: "100342528"
 以下の記事では、**azdata** ツールの **sql** コマンドに関するリファレンスを提供します。 他の **azdata** コマンドの詳細については、[azdata リファレンス](reference-azdata.md)に関するページを参照してください。
 
 ## <a name="commands"></a>コマンド
-|コマンド|説明|
+
+|command|説明|
 | --- | --- |
 [azdata arc sql endpoint list](#azdata-arc-sql-endpoint-list) | SQL エンドポイントを一覧表示します。
 ## <a name="azdata-arc-sql-endpoint-list"></a>azdata arc sql endpoint list
@@ -43,7 +49,7 @@ azdata arc sql endpoint list -n sqlmi1
 #### `--output -o`
 出力形式。  使用できる値: json、jsonc、table、tsv。  既定値: json。
 #### `--query -q`
-JMESPath クエリ文字列。 詳細と例については、[http://jmespath.org/](http://jmespath.org/) を参照してください。
+JMESPath クエリ文字列。 詳細と例については、[http://jmespath.org/](http://jmespath.org) を参照してください。
 #### `--verbose`
 ログの詳細レベルを上げます。 詳細なデバッグ ログを表示するには --debug を使います。
 
@@ -52,3 +58,4 @@ JMESPath クエリ文字列。 詳細と例については、[http://jmespath.or
 他の **azdata** コマンドの詳細については、[azdata リファレンス](reference-azdata.md)に関するページを参照してください。 
 
 **azdata** ツールをインストールする方法の詳細については、「[azdata のインストール](..\install\deploy-install-azdata.md)」を参照してください。
+

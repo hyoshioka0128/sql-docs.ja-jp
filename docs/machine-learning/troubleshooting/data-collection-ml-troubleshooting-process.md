@@ -1,26 +1,26 @@
 ---
-title: SQL 機械学習のトラブルシューティングのためのデータ収集
-description: 問題を自分で、または Microsoft カスタマー サポートの支援を受けながら解決しようとするときに、必要なデータの収集方法について説明します。
+title: Python と R のトラブルシューティングのためにデータを収集する
+description: SQL Server Machine Learning Services の問題を、自力で、または Microsoft カスタマー サポートを利用して解決するときに、必要なデータを収集する方法について説明します。
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 07/01/2020
+ms.date: 03/31/2021
 ms.topic: troubleshooting
 author: dphansen
 ms.author: davidph
-ms.custom: seo-lt-2019
+ms.custom: contperf-fy21q3
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
-ms.openlocfilehash: 3bb4aa40995db27909162f791ddfbdb3701bb0fb
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 8744bc74846760da36c242dd2bb37d0b78ff3e00
+ms.sourcegitcommit: 2db7412d30722f198cbafcd683bd4da206b33996
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97470653"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099953"
 ---
-# <a name="collect-data-to-troubleshoot-sql-machine-learning"></a>SQL 機械学習のトラブルシューティングのためにデータを収集する
+# <a name="collect-data-to-troubleshoot-python-and-r-scripts-with-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services を使用して Python および R スクリプトのトラブルシューティングのためにデータを収集する
 
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
 
-この記事では、SQL 機械学習の問題を解決しようとするときに、必要なデータの収集方法について説明します。 このデータは、自分自身で問題を解決しているか、Microsoft カスタマー サポートの支援を受けるかに関係なく、役立つ可能性があります。
+この記事では、[SQL Server Machine Learning Services](../sql-server-machine-learning-services.md) の問題を解決する際に必要なデータを収集する方法について説明します。 このデータは、自分自身で問題を解決しているか、Microsoft カスタマー サポートの支援を受けるかに関係なく、役立つ可能性があります。
 
 ## <a name="sql-server-version-and-edition"></a>SQL Server のバージョンおよびエディション
 
@@ -302,4 +302,4 @@ SQL Server プロセスとその機能に必要なすべてのフォルダーを
 
 ## <a name="see-also"></a>関連項目
 
-[SQL Server での機械学習のトラブルシューティング](machine-learning-troubleshooting-overview.md)
+[SQL Server での機械学習のトラブルシューティング](common-issues-external-script-execution.md)

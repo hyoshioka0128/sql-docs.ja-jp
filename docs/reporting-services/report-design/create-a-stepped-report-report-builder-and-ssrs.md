@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.assetid: 5933c4f0-c713-4ecb-b521-ff46c9c63fff
 author: maggiesMSFT
 ms.author: maggies
-ms.openlocfilehash: 03deafdc14c527caef5cfaeb0517b1aa16f92f9e
-ms.sourcegitcommit: 02b22274da4a103760a376c4ddf26c4829018454
+ms.openlocfilehash: fdd804467607b8b6cb38731b3ffc83a5fec639a2
+ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84681541"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106054255"
 ---
 # <a name="create-a-stepped-report-report-builder-and-ssrs"></a>階段状レポートの作成 (レポート ビルダーおよび SSRS)
 階段状レポートは  [!INCLUDE[ssRSnoversion](../../includes/ssrsnoversion-md.md)] の改ページ調整されたレポートで、次の例に示すように、親グループとその下でインデントされた詳細行または子グループが、同じ列内に表示されます。  
@@ -63,11 +63,11 @@ ms.locfileid: "84681541"
   
     2.  プロパティ ペインの **[配置]** で、 **[余白]** のプロパティを展開します。  
   
-    3.  **[左]** に、新しい余白の値 ( **.5in**など) を入力します。 指定された値の余白分、セル内のテキストがインデント設定されます。 余白の既定値は 2 ポイントです。 余白のプロパティの有効な値として、0 (ゼロ) 以上の正の数の後に、サイズ指定子を入力します。  
+    3.  **[左]** に、新しい余白の値 ( **.5in** など) を入力します。 指定された値の余白分、セル内のテキストがインデント設定されます。 余白の既定値は 2 ポイントです。 余白のプロパティの有効な値として、0 (ゼロ) 以上の正の数の後に、サイズ指定子を入力します。  
   
          サイズ指定子は次のとおりです。  
   
-        |||  
+        |指定子|説明|  
         |-|-|  
         |**in**|インチ (1 インチ = 2.54 cm)|  
         |**cm**|センチメートル|  
