@@ -2,7 +2,7 @@
 description: PolyBase の機能と制限事項
 title: PolyBase の機能と制限事項
 descriptions: This article summarizes PolyBase features available for SQL Server products and services. It lists T-SQL operators supported for pushdown and known limitations.
-ms.date: 03/23/2021
+ms.date: 04/06/2021
 ms.prod: sql
 ms.technology: polybase
 ms.topic: conceptual
@@ -10,12 +10,12 @@ author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: ''
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a7741d5966007fdadbc3d96e659e967085fc7734
-ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
+ms.openlocfilehash: 4bfb81324da4bb224e8c2e83fd6e62584bb44819
+ms.sourcegitcommit: d8cbbeffa3faa110e02056ff97dc7102b400ffb3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106054142"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107003906"
 ---
 # <a name="polybase-features-and-limitations"></a>PolyBase の機能と制限事項
 
@@ -64,8 +64,8 @@ PolyBase の主な機能と、これらの機能を利用できる製品を一�
 - `GREATEST`
 - `LEAST`
 - `PARSE`
-- `FORMAT` 
-- `TRIM`
+
+`FORMAT` および `TRIM` 構文のプッシュダウン サポートは、[!INCLUDE[sssql19-md](../../includes/sssql19-md.md)] CU10 で導入されました。
 
 詳細については、「[PolyBase でのプッシュダウン計算](polybase-pushdown-computation.md)」を参照してください。
 
