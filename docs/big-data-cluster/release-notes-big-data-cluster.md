@@ -5,16 +5,16 @@ description: この記事では、SQL Server ビッグ データ クラスター
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: mihaelab
-ms.date: 02/11/2021
+ms.date: 04/06/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: c4cb10ac3ba1e0fd8b437e7f0509dc16cc72d854
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: fc7be52b08bd0e2fa2ad162dcbe2399aef9483e7
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837069"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557565"
 ---
 # <a name="sql-server-2019-big-data-clusters-release-notes"></a>SQL Server 2019 ビッグ データ クラスターのリリース ノート
 
@@ -64,6 +64,7 @@ ms.locfileid: "101837069"
 
 | リリース <sup>1</sup> | BDC のバージョン | [!INCLUDE [azure-data-cli-azdata](../includes/azure-data-cli-azdata.md)] バージョン <sup>2</sup> | リリース日 |
 |--|--|--|--|
+| [CU10](#cu10) |  15.0.4123.1 | 20.3.2    | 2021-04-06 |
 | [CU9](#cu9) |  15.0.4102.2 | 20.3.0    | 2021-02-11 |
 | [CU8-GDR](#cu8-gdr) | 15.0.4083.2  | 20.2.6    | 2021-01-12 |
 | [CU8](#cu8)     | 15.0.4073.23 | 20.2.2    | 2020-10-19 |
@@ -82,6 +83,23 @@ ms.locfileid: "101837069"
 ## <a name="how-to-install-updates"></a>更新プログラムのインストール方法
 
 更新プログラムをインストールする方法については、「[[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]をアップグレードする方法](deployment-upgrade.md)」を参照してください。
+
+## <a name="cu10-april-2021"></a><a id="cu10"></a> CU10 (2021 年 4 月)
+
+これは SQL Server 2019 の Cumulative Update 10 (CU10) リリースです。
+
+|パッケージ バージョン | イメージ タグ |
+|-----|-----|
+|15.0.4123.1|[2019-CU10-ubuntu-20.04]|
+
+SQL Server ビッグ データ クラスター用の SQL Server 2019 CU10 には、次の重要な機能が含まれています。
+
+- Ubuntu 16.04 から Ubuntu 20.04 に基本イメージをアップグレードしました。
+   > [!CAUTION]
+   > Ubuntu 20.04 には、より厳密なセキュリティ要件があります。BDC を使用して SQL Server 2017 より前の SQL Server インスタンスに接続するときに、問題が発生することがあります。 詳細については、「[SQL Server 2016 以前のリモート インスタンスへの接続に失敗する](#failed-to-connect-to-remote-instance-of-sql-server-2016-or-older)」を参照してください。
+- Hadoop KMS コンポーネントの高可用性サポート。
+- リソーススコープでの SQL Server ネットワークとプロセス アフィニティの追加構成設定。 「[マスター プールのリソース スコープの設定](reference-config-bdc-overview.md#master-pool-resource-scope-settings)」を参照してください。
+- [BDC クラスタースコープ設定](reference-config-bdc-overview.md#bdc-cluster-scope-settings)を使用した Spark 関連コンテナーのリソース管理。
 
 ## <a name="cu9-february-2021"></a><a id="cu9"></a> CU9 (2021 年 2 月)
 
@@ -220,6 +238,19 @@ SQL Server 2019 一般配布リリース 1 (GDR1) で [!INCLUDE[big-data-cluster
 [!INCLUDE [sql-server-servicing-updates-version-15](../includes/sql-server-servicing-updates-version-15.md)]
 
 ## <a name="known-issues"></a>既知の問題
+
+### <a name="failed-to-connect-to-remote-instance-of-sql-server-2016-or-older"></a>SQL Server 2016 以前のリモート インスタンスへの接続に失敗する
+
+- **影響を受けるリリース**: CU10
+- **問題およびユーザーへの影響**: BDC CU10 で PolyBase を使用して、SHA1 アルゴリズムを使用して作成されたチャネル暗号化の証明書を使用している既存の SQL Server インスタンスに接続すると、次のエラーが発生することがあります。     
+
+> `Msg 105082, Level 16, State 1, Line 1`
+> `105082;Generic ODBC error: [Microsoft][ODBC Driver 17 for SQL Server]SSL Provider: An existing connection was forcibly closed by the remote host.`
+> `Additional error <2>: ErrorMsg: [Microsoft][ODBC Driver 17 for SQL Server]Client unable to establish connection, SqlState: 08001, NativeError: 10054 Additional error <3>: ErrorMsg: [Microsoft][ODBC Driver 17 for SQL Server]`
+> `Invalid connection string attribute, SqlState: 01S00, NativeError: 0 .`
+
+- **解決方法**: Ubuntu 20.04 のセキュリティ要件は、以前の基本イメージ バージョンより強化されているため、SHA1 アルゴリズムを使用する証明書に対してリモート接続は許可されません。 SQL Server リリース2005 から 2016 の既定の自己署名証明書では、SHA1 アルゴリズムが使用されていました。 [SQL Server 2017 で自己署名証明書に加えられた変更](https://techcommunity.microsoft.com/t5/sql-server-support/changes-to-hashing-algorithm-for-self-signed-certificate-in-sql/ba-p/319026)の詳細については、こちらのブログ記事を参照してください。 リモート SQL Server インスタンスで、112 ビット以上のセキュリティ (SHA256 など) を使用するアルゴリズムを使用して作成された証明書を使用してください。 運用環境では、証明機関から信頼された証明書を取得することをお勧めします。 テスト目的のため、自己署名証明書を使用することもできます。 自己署名証明書を作成するには、[Powershell コマンドレット New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) または [certreq コマンド](/windows-server/administration/windows-commands/certreq_1)に関するページを参照してください。 リモート SQL Server インスタンスに新しい証明書をインストールする手順については、「[データベースエンジンへの暗号化接続の有効化](/sql/database-engine/configure-windows/enable-encrypted-connections-to-the-database-engine.md)」を参照してください。
+
 
 ### <a name="partial-loss-of-logs-collected-in-elasticsearch-upon-rollback"></a>Elasticsearch で収集されたログのロールバック時における部分的な損失
 
@@ -433,10 +464,9 @@ SQL Server 2019 一般配布リリース 1 (GDR1) で [!INCLUDE[big-data-cluster
 
 - **問題およびユーザーへの影響**:SQL Server マスター インスタンスが Active Directory 認証モードになっている場合、外部テーブルのうち少なくとも 1 つがストレージプール内にある場合に外部テーブルからのみ選択され、別の外部テーブルに挿入されるクエリでは、次のように返されます。
 
-   ```
-   Msg 7320, Level 16, State 102, Line 1
-   Cannot execute the query "Remote Query" against OLE DB provider "SQLNCLI11" for linked server "SQLNCLI11". Only domain logins can be used to query Kerberized storage pool.
-   ```
+> `Msg 7320, Level 16, State 102, Line 1`
+> `Cannot execute the query "Remote Query" against OLE DB provider "SQLNCLI11" for linked server "SQLNCLI11". Only domain logins can be used to query Kerberized storage pool.`
+   
 
 - **回避策**:次のいずれかの方法でクエリを変更します。 ストレージ プール テーブルをローカル テーブルに結合するか、最初にローカル テーブルに挿入し、ローカル テーブルからデータを読み取ってデータ プールに挿入します。
 
@@ -445,6 +475,7 @@ SQL Server 2019 一般配布リリース 1 (GDR1) で [!INCLUDE[big-data-cluster
 - **問題およびユーザーへの影響**:HA 構成では、暗号化に使用されるマスター キーがレプリカごとに違うため、暗号化が有効になっているデータベースをフェールオーバー後に使用することはできません。 
 
 - **回避策**:この問題の回避策はありません。 修正が適用されるまでは、この構成では暗号化を有効にしないことをお勧めします。
+
 
 ## <a name="next-steps"></a>次のステップ
 

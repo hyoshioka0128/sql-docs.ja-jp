@@ -5,16 +5,16 @@ description: azdata bdc config コマンドのリファレンス記事です。
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 28c9820cd147d5ce4b93fe7605a1f36187f4dfd7
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 9a4ebb83a1accb82359a2fc62cf1122de53656f2
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100048932"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557325"
 ---
 # <a name="azdata-bdc-config"></a>azdata bdc config
 
@@ -56,7 +56,7 @@ azdata bdc config init --source aks-dev-test --target custom
 #### `--path -p`
 構成プロファイルが配置される場所のファイル パス。既定値は <cwd>/custom です。
 #### `--source -s`
-構成プロファイルのソース: ['openshift-prod', 'aks-dev-test-ha', 'aro-dev-test-ha', 'aks-dev-test', 'kubeadm-prod', 'aro-dev-test', 'openshift-dev-test', 'kubeadm-dev-test']
+構成プロファイルのソース: ['aro-dev-test-ha'、'openshift-prod'、'aro-dev-test'、'openshift-dev-test'、'kubeadm-dev-test'、'kubeadm-prod'、'aks-dev-test-ha'、'aks-dev-test']
 #### `--force -f`
 ターゲット ファイルを強制的に上書きします。
 #### `--accept-eula -a`
@@ -91,7 +91,7 @@ azdata bdc config list --config-profile aks-dev-test
 ```
 ### <a name="optional-parameters"></a>省略可能なパラメーター
 #### `--config-profile -c`
-既定の構成プロファイル: ['openshift-prod', 'aks-dev-test-ha', 'aro-dev-test-ha', 'aks-dev-test', 'kubeadm-prod', 'aro-dev-test', 'openshift-dev-test', 'kubeadm-dev-test']
+既定の構成プロファイル: ['aro-dev-test-ha'、'openshift-prod'、'aro-dev-test'、'openshift-dev-test'、'kubeadm-dev-test'、'kubeadm-prod'、'aks-dev-test-ha'、'aks-dev-test']
 #### `--type -t`
 表示する構成の種類。
 #### `--accept-eula -a`

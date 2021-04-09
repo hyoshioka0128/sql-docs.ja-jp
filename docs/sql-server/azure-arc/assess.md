@@ -4,15 +4,15 @@ description: Azure Arc 対応 SQL Server インスタンスでオンデマンド
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mikeray
-ms.date: 09/10/2020
+ms.date: 04/06/2021
 ms.topic: conceptual
 ms.prod: sql
-ms.openlocfilehash: 2fb25ca30a3b55bfcedb470addad8680f4914e2f
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: f1fcf571b491a4efc5759c10c4243f3b6b5ed135
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100063294"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556415"
 ---
 # <a name="configure-sql-assessment-on-an-azure-arc-enabled-sql-server-instance"></a>Azure Arc 対応 SQL Server インスタンスで SQL Assessment を構成する
 
@@ -20,7 +20,10 @@ SQL Assessment には、SQL Server の構成を評価するためのメカニズ
 
 ## <a name="prerequisites"></a>前提条件
 
-* SQL Server インスタンスが Azure Arc に接続されていること。手順については、「[SQL Server を Azure Arc に接続する](connect.md)」の記事をご覧ください。
+* Windows ベースの SQL Server インスタンスが Azure Arc に接続されていること。手順に従って、[SQL Server インスタンスを Arc 対応の SQL Server にオンボード](connect.md)します。
+   
+   > [!NOTE]
+   > 現在、オンデマンド SQL Assessment は、Windows マシンで実行されている SQL Server に限定されています。
 
 * マシンに Microsoft Monitoring Agent (MMA) 拡張機能がインストールされ、構成されていること。 手順については、[MMA のインストール](configure-advanced-data-security.md#install-microsoft-monitoring-agent-mma)に関する記事をご覧ください。 [Log Analytics エージェント](/azure/azure-monitor/platform/log-analytics-agent)に関する記事からも詳細情報を入手することができます。
 

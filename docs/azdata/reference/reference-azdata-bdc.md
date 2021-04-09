@@ -5,16 +5,16 @@ description: azdata bdc コマンドのリファレンス記事です。
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: f10ba617642d42b4b1d091374305c5f97ba1b474
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 42a14ddd634ea31db608b6c68f9f3b8638984cc3
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100052323"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556472"
 ---
 # <a name="azdata-bdc"></a>azdata bdc
 
@@ -26,8 +26,6 @@ ms.locfileid: "100052323"
 
 |command|説明|
 | --- | --- |
-[azdata bdc spark](reference-azdata-bdc-spark.md) | Spark コマンドを使用してセッション、ステートメント、およびバッチを作成および管理することで、ユーザーは Spark システムと対話できます。
-[azdata bdc hdfs](reference-azdata-bdc-hdfs.md) | HDFS モジュールには、HDFS ファイル システムにアクセスするコマンドが用意されています。
 [azdata bdc create](#azdata-bdc-create) | ビッグ データ クラスターを作成します。
 [azdata bdc delete](#azdata-bdc-delete) | ビッグ データ クラスターを削除します。
 [azdata bdc upgrade](#azdata-bdc-upgrade) | SQL Server ビッグ データ クラスターの各コンテナーにデプロイされているイメージを更新します。
@@ -41,6 +39,9 @@ ms.locfileid: "100052323"
 [azdata bdc spark](reference-azdata-bdc-spark.md) | Spark サービス コマンド。
 [azdata bdc gateway](reference-azdata-bdc-gateway.md) | ゲートウェイ サービス コマンド。
 [azdata bdc app](reference-azdata-bdc-app.md) | アプリ サービス コマンド。
+[azdata bdc settings](reference-azdata-bdc-settings.md) | BDC 設定コマンド。
+[azdata bdc hdfs](reference-azdata-bdc-hdfs.md) | HDFS モジュールには、HDFS ファイル システムにアクセスするコマンドが用意されています。
+[azdata bdc spark](reference-azdata-bdc-spark.md) | Spark コマンドを使用してセッション、ステートメント、およびバッチを作成および管理することで、ユーザーは Spark システムと対話できます。
 ## <a name="azdata-bdc-create"></a>azdata bdc create
 SQL Server ビッグ データ クラスターを作成します。Kubernetes の構成と環境変数 ['AZDATA_USERNAME', 'AZDATA_PASSWORD'] がシステムに必要です。
 ```bash
@@ -74,7 +75,7 @@ azdata bdc create --accept-eula yes --config-profile aks-dev-test --force
 #### `--name -n`
 ビッグ データ クラスターの名前。kubernetes 名前空間に使用されます。
 #### `--config-profile -c`
-クラスターの展開に使用されるビッグ データ クラスター構成プロファイル: ['openshift-prod', 'aks-dev-test-ha', 'aro-dev-test-ha', 'aks-dev-test', 'kubeadm-prod', 'aro-dev-test', 'openshift-dev-test', 'kubeadm-dev-test']
+クラスターの展開に使用されるビッグ データ クラスター構成プロファイル: ['aro-dev-test-ha'、'openshift-prod'、'aro-dev-test'、'openshift-dev-test'、'kubeadm-dev-test'、'kubeadm-prod'、'aks-dev-test-ha'、'aks-dev-test']
 #### `--accept-eula -a`
 Do you accept the license terms? (ライセンス条項に同意しますか?) [yes/no]. ([はい/いいえ]。) この引数を使用しない場合は、環境変数 ACCEPT_EULA を 'yes' に設定できます。 azdata のライセンス条項については、 https://aka.ms/eula-azdata-en を参照してください。
 #### `--node-label -l`
@@ -132,7 +133,9 @@ azdata bdc upgrade --name -n
                    
 [--stability-threshold -s]  
                    
-[--component-timeout -p]
+[--component-timeout -p]  
+                   
+[--force -f]
 ```
 ### <a name="examples"></a>例
 同じリポジトリからの新しいイメージ タグ "cu2" への BDC のアップグレード。
@@ -161,6 +164,8 @@ azdata bdc upgrade -t cu2 --controller-timeout=30 --component-timeout=40 --stabi
 アップグレード後、安定とマークされるまで待機する分数。
 #### `--component-timeout -p`
 (コントローラーのアップグレード後に) アップグレードを一時停止する前にアップグレードの各フェーズが完了するまで待機する分数。
+#### `--force -f`
+存在する場合、アップグレードを開始する前に、クラスターの正常性チェックを無視します。
 ### <a name="global-arguments"></a>グローバル引数
 #### `--debug`
 すべてのデバッグ ログを表示するようにログの詳細レベルを上げます。

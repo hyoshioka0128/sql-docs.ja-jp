@@ -2,23 +2,29 @@
 title: azdata bdc settings のリファレンス
 titleSuffix: SQL Server big data clusters
 description: azdata bdc sql settings コマンドのリファレンス記事。
+author: MikeRayMSFT
+ms.author: mikeray
+ms.reviewer: seanw
+ms.date: 04/06/2021
+ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 37688a962fc17679a1a642af1b83609d2b8f480a
-ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
+ms.openlocfilehash: 22562417eceb524bdafc9485f725712b202771e9
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/13/2021
-ms.locfileid: "100342493"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557173"
 ---
 # <a name="azdata-bdc-settings"></a>azdata bdc settings
 
 [!INCLUDE [azure-data-cli-azdata](../../includes/azure-data-cli-azdata.md)] への適用
 
-以下の記事では、**azdata** ツールの **sql** コマンドに関するリファレンスを提供します。 他の **azdata** コマンドの詳細については、[azdata リファレンス](reference-azdata.md)に関するページを参照してください。
+次の記事では、**azdata** ツール内のクラスター スコープの **settings** コマンドのリファレンスを提供します。 他の **azdata** コマンドの詳細については、[azdata リファレンス](reference-azdata.md)に関するページを参照してください。
 
 ## <a name="commands"></a>コマンド
-|コマンド|説明|
+
+|command|説明|
 | --- | --- |
 [azdata bdc settings set](#azdata-bdc-settings-set) | クラスタースコープの設定を行います。
 [azdata bdc settings apply](#azdata-bdc-settings-apply) | 保留中の設定変更を BDC に適用します。
@@ -47,7 +53,7 @@ azdata bdc settings set --settings bdc.telemetry.customerFeedback=false
 #### `--output -o`
 出力形式。  使用できる値: json、jsonc、table、tsv。  既定値: json。
 #### `--query -q`
-JMESPath クエリ文字列。 詳細と例については、[http://jmespath.org/](http://jmespath.org/) を参照してください。
+JMESPath クエリ文字列。 詳細と例については、[http://jmespath.org/](http://jmespath.org) を参照してください。
 #### `--verbose`
 ログの詳細レベルを上げます。 詳細なデバッグ ログを表示するには --debug を使います。
 ## <a name="azdata-bdc-settings-apply"></a>azdata bdc settings apply
@@ -76,7 +82,7 @@ azdata bdc settings apply --force
 #### `--output -o`
 出力形式。  使用できる値: json、jsonc、table、tsv。  既定値: json。
 #### `--query -q`
-JMESPath クエリ文字列。 詳細と例については、[http://jmespath.org/](http://jmespath.org/) を参照してください。
+JMESPath クエリ文字列。 詳細と例については、[http://jmespath.org/](http://jmespath.org) を参照してください。
 #### `--verbose`
 ログの詳細レベルを上げます。 詳細なデバッグ ログを表示するには --debug を使います。
 ## <a name="azdata-bdc-settings-cancel-apply"></a>azdata bdc settings cancel-apply
@@ -105,7 +111,7 @@ azdata bdc settings cancel-apply --force
 #### `--output -o`
 出力形式。  使用できる値: json、jsonc、table、tsv。  既定値: json。
 #### `--query -q`
-JMESPath クエリ文字列。 詳細と例については、[http://jmespath.org/](http://jmespath.org/) を参照してください。
+JMESPath クエリ文字列。 詳細と例については、[http://jmespath.org/](http://jmespath.org) を参照してください。
 #### `--verbose`
 ログの詳細レベルを上げます。 詳細なデバッグ ログを表示するには --debug を使います。
 ## <a name="azdata-bdc-settings-show"></a>azdata bdc settings show
@@ -153,7 +159,7 @@ azdata bdc settings show –filter-option=pending --recursive
 #### `--output -o`
 出力形式。  使用できる値: json、jsonc、table、tsv。  既定値: json。
 #### `--query -q`
-JMESPath クエリ文字列。 詳細と例については、[http://jmespath.org/](http://jmespath.org/) を参照してください。
+JMESPath クエリ文字列。 詳細と例については、[http://jmespath.org/](http://jmespath.org) を参照してください。
 #### `--verbose`
 ログの詳細レベルを上げます。 詳細なデバッグ ログを表示するには --debug を使います。
 ## <a name="azdata-bdc-settings-revert"></a>azdata bdc settings revert
@@ -182,7 +188,7 @@ azdata bdc settings revert --force
 #### `--output -o`
 出力形式。  使用できる値: json、jsonc、table、tsv。  既定値: json。
 #### `--query -q`
-JMESPath クエリ文字列。 詳細と例については、[http://jmespath.org/](http://jmespath.org/) を参照してください。
+JMESPath クエリ文字列。 詳細と例については、[http://jmespath.org/](http://jmespath.org) を参照してください。
 #### `--verbose`
 ログの詳細レベルを上げます。 詳細なデバッグ ログを表示するには --debug を使います。
 

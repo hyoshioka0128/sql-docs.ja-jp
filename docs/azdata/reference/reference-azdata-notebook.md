@@ -5,16 +5,16 @@ description: azdata notebook コマンドのリファレンス記事です。
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: ece761617495c2d4b5d002541ac2d3838ec58d6f
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: b01486a0892abfb50dc4a9d67126da66a6cea5b7
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100048712"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557025"
 ---
 # <a name="azdata-notebook"></a>azdata notebook
 
@@ -48,7 +48,7 @@ azdata notebook view --path "/home/me/notebooks/demo_notebook.ipynb" --stop-on-e
 表示するノートブックのパス。
 ### <a name="optional-parameters"></a>省略可能なパラメーター
 #### `--continue-on-error -c`
-ノートブックの出力で見つかったセル エラーを無視して、その他のセルの表示を継続します。  既定の動作では、エラーの発生時に停止します。  停止すると、エラーが発生した最初のセルがわかりやすくなります。
+ノートブックの出力で見つかったセル エラーを無視して、その他のセルの表示を継続します。 既定の動作では、エラーの発生時に停止します。  停止すると、エラーが発生した最初のセルがわかりやすくなります。
 ### <a name="global-arguments"></a>グローバル引数
 #### `--debug`
 すべてのデバッグ ログを表示するようにログの詳細レベルを上げます。
@@ -74,7 +74,9 @@ azdata notebook run --path -p
                     
 [--clear -c]  
                     
-[--timeout -t]
+[--timeout -t]  
+                    
+[--env -e]
 ```
 ### <a name="examples"></a>例
 ノートブックを実行します。
@@ -98,6 +100,9 @@ azdata notebook run --path "/home/me/notebooks/demo_notebook.ipynb"
 #### `--timeout -t`
 実行が完了するまで待機する秒数。 値 -1 は、無期限に待機することを示します。
 `600`
+#### `--env -e`
+環境の名前。
+`base`
 ### <a name="global-arguments"></a>グローバル引数
 #### `--debug`
 すべてのデバッグ ログを表示するようにログの詳細レベルを上げます。

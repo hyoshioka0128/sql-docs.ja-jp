@@ -5,16 +5,16 @@ description: azdata arc sql コマンドのリファレンス記事です。
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 199bff19ef24626f3ff55a1d10f123183674e571
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 9381c331c3c092c3ecf6f3adee0ecc6343c415b5
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100052563"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557395"
 ---
 # <a name="azdata-arc-sql"></a>azdata arc sql
 
@@ -27,6 +27,7 @@ ms.locfileid: "100052563"
 |command|説明|
 | --- | --- |
 [azdata arc sql mi](reference-azdata-arc-sql-mi.md) | SQL マネージド インスタンスを作成、削除、および管理します。
+[azdata arc sql endpoint](reference-azdata-arc-sql-endpoint.md) | SQL エンドポイントを表示および管理します。
 
 ## <a name="next-steps"></a>次のステップ
 

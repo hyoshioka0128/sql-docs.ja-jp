@@ -5,16 +5,16 @@ description: azdata bdc hdfs コマンドの参照記事。
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: ed57027a0fa7a2f5003c67cafb5a7bb8eb3d876b
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 27f27123d5b39efdc4c607a119858048dfc87859
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100052423"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556705"
 ---
 # <a name="azdata-bdc-hdfs"></a>azdata bdc hdfs
 
@@ -26,6 +26,10 @@ ms.locfileid: "100052423"
 
 |command|説明|
 | --- | --- |
+[azdata bdc hdfs status](reference-azdata-bdc-hdfs-status.md) | HDFS サービスの状態コマンド。
+[azdata bdc hdfs settings](reference-azdata-bdc-hdfs-settings.md) | hdfs サービスの BDC 設定コマンド。
+[azdata bdc hdfs encryption-zone](reference-azdata-bdc-hdfs-encryption-zone.md) | HDFS で暗号化ゾーンを管理します。
+[azdata bdc hdfs key](reference-azdata-bdc-hdfs-key.md) | Hadoop 暗号化ゾーン キーを管理します。
 [azdata bdc hdfs shell](#azdata-bdc-hdfs-shell) | HDFS シェルは、HDFS ファイル システムのための単純な対話型のコマンド シェルです。
 [azdata bdc hdfs ls](#azdata-bdc-hdfs-ls) | 指定されたファイルまたはディレクトリの状態を一覧表示します。
 [azdata bdc hdfs exists](#azdata-bdc-hdfs-exists) | ファイルまたはディレクトリが存在するかどうかを判定します。  存在する場合は True を、それ以外の場合は False を返します。
@@ -39,7 +43,6 @@ ms.locfileid: "100052423"
 [azdata bdc hdfs chown](#azdata-bdc-hdfs-chown) | 指定されたファイルの所有者またはグループを変更します。
 [azdata bdc hdfs cp](#azdata-bdc-hdfs-cp) | ローカル コンピューターと HDFS の間でファイルまたはディレクトリをコピーします。
 [azdata bdc hdfs mount](reference-azdata-bdc-hdfs-mount.md) | HDFS 内のリモート ストアのマウントを管理します。
-[azdata bdc hdfs status](reference-azdata-bdc-hdfs-status.md) | HDFS サービスの状態コマンド。
 ## <a name="azdata-bdc-hdfs-shell"></a>azdata bdc hdfs shell
 HDFS シェルは、HDFS ファイル システムのための単純な対話型のコマンド シェルです。
 ```bash

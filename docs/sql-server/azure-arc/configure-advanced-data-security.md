@@ -5,15 +5,15 @@ description: Azure Arc が有効な SQL Server インスタンスの高度なデ
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mikeray
-ms.date: 09/10/2020
+ms.date: 04/06/2021
 ms.topic: conceptual
 ms.prod: sql
-ms.openlocfilehash: 2d7cdc1a04cfa8f3a1697eed68913f92174f972b
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: e80c146c1f1fc1d40293e5ce12fb170bfd413f09
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100063227"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556375"
 ---
 # <a name="configure-advanced-data-security-for-azure-arc-enabled-sql-server-instance"></a>Azure Arc が有効な SQL Server インスタンスの高度なデータ セキュリティを構成する
 
@@ -21,9 +21,13 @@ ms.locfileid: "100063227"
 
 ## <a name="prerequisites"></a>前提条件
 
-* SQL Server インスタンスが Arc 対応の SQL Server にオンボードされていること。 次の手順に従って、[SQL Server インスタンスを Arc 対応の SQL Server にオンボード](connect.md)します。
+* Windows ベースの SQL Server インスタンスが Azure Arc に接続されていること。手順に従って、[SQL Server インスタンスを Arc 対応の SQL Server にオンボード](connect.md)します。
+
+   > [!NOTE]
+   > 現在、Azure Defender は Windows マシンで実行されている SQL Server に限定されています。
 
 * ご自分のユーザー アカウントに [Security Center ロール (RBAC)](/azure/security-center/security-center-permissions) の 1 つが割り当てられていること
+
 
 ## <a name="create-a-log-analytics-workspace"></a>Log Analytics ワークスペースを作成する
 

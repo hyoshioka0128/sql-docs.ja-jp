@@ -5,16 +5,16 @@ description: azdata context コマンドのリファレンス記事です。
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 689457bc99856b3f5b9b071dd68b2bf4f283096f
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 3d7f09126ed0c3475718c8182a27b6b49b2f379b
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100048722"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557065"
 ---
 # <a name="azdata-context"></a>azdata context
 
@@ -59,19 +59,30 @@ JMESPath クエリ文字列。 詳細と例については、[http://jmespath.or
 #### `--verbose`
 ログの詳細レベルを上げます。 詳細なデバッグ ログを表示するには --debug を使います。
 ## <a name="azdata-context-delete"></a>azdata context delete
-アクティブなコンテキストを削除した場合、ユーザーは新しいアクティブなコンテキストを設定する必要があります。 設定または削除できるコンテキストを表示するには、`azdata context list` を使用します
+アクティブなコンテキストを削除した場合、ユーザーは新しいアクティブなコンテキストを設定する必要があります。 設定または削除できるコンテキストを表示するには、`azdata context list` を使用します。 複数のコンテキスト名前空間に一致する名前空間が指定されている場合は、そのコンテキストを削除するために、一意性のためにすべての [--namespace --username --endpoint] を指定する必要があります。
 ```bash
 azdata context delete --namespace -ns 
+                      [--endpoint -e]  
                       
+[--username -u]
 ```
 ### <a name="examples"></a>例
-ユーザー プロファイルから contextNamespace を削除します。
+一意の名前空間に基づいて、ユーザー プロファイルのコンテキストを削除します。
 ```bash
-azdata context delete -n contextNamespace
+azdata context delete --namespace contextNamespace
+```
+名前空間、ユーザー名、およびコントローラーのエンドポイントに基づいて、ユーザー プロファイルのコンテキストを削除します。
+```bash
+azdata context set --namespace contextNamespace --username johndoe --endpoint https://<ip or domain name>:30080
 ```
 ### <a name="required-parameters"></a>必須のパラメーター
 #### `--namespace -ns`
 削除するコンテキストの名前空間。
+### <a name="optional-parameters"></a>省略可能のパラメーター
+#### `--endpoint -e`
+クラスター コントローラーのエンドポイント "https://host:port"。
+#### `--username -u`
+アカウント ユーザー。
 ### <a name="global-arguments"></a>グローバル引数
 #### `--debug`
 すべてのデバッグ ログを表示するようにログの詳細レベルを上げます。
@@ -84,19 +95,30 @@ JMESPath クエリ文字列。 詳細と例については、[http://jmespath.or
 #### `--verbose`
 ログの詳細レベルを上げます。 詳細なデバッグ ログを表示するには --debug を使います。
 ## <a name="azdata-context-set"></a>azdata context set
-設定できるコンテキストを表示するには、`azdata context list` を使用します。 コンテキストが表示されない場合は、`azdata login` を使用してログインし、ユーザー プロファイルにコンテキストを作成する必要があります。 ログインしたコンテキストが、アクティブなコンテキストになります。 複数のエンティティにログインした場合は、このコマンドを使用してアクティブなコンテキストを切り替えることができます。 現在アクティブなコンテキストを表示するには、`azdata context list --active` を使用します
+設定できるコンテキストを表示するには、`azdata context list` を使用します。 コンテキストが表示されない場合は、`azdata login` を使用してログインし、ユーザー プロファイルにコンテキストを作成する必要があります。 ログインしたコンテキストが、アクティブなコンテキストになります。 複数のエンティティにログインした場合は、このコマンドを使用してアクティブなコンテキストを切り替えることができます。 現在アクティブなコンテキストを表示するには、`azdata context list --active` を使用します。 複数のコンテキスト名前空間に一致する名前空間が指定されている場合は、アクティブなコンテキストを設定するために、一意性のためにすべての [--namespace --username --endpoint] を指定する必要があります。
 ```bash
 azdata context set --namespace -ns 
+                   [--endpoint -e]  
                    
+[--username -u]
 ```
 ### <a name="examples"></a>例
-contextNamespace をユーザー プロファイルでのアクティブなコンテキストとして設定します。
+一意の名前空間に基づいて、ユーザー プロファイルのアクティブなコンテキストを設定します。
 ```bash
-azdata context set -n contextNamespace
+azdata context set --namespace contextNamespace
+```
+名前空間、ユーザー名、およびコントローラーのエンドポイントに基づいて、ユーザー プロファイルのアクティブなコンテキストを設定します。
+```bash
+azdata context set --namespace contextNamespace --username johndoe --endpoint https://<ip or domain name>:30080     
 ```
 ### <a name="required-parameters"></a>必須のパラメーター
 #### `--namespace -ns`
 設定するコンテキストの名前空間。
+### <a name="optional-parameters"></a>省略可能のパラメーター
+#### `--endpoint -e`
+クラスター コントローラーのエンドポイント "https://host:port"。
+#### `--username -u`
+アカウント ユーザー。
 ### <a name="global-arguments"></a>グローバル引数
 #### `--debug`
 すべてのデバッグ ログを表示するようにログの詳細レベルを上げます。

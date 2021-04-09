@@ -5,16 +5,16 @@ description: azdata arc postgres server config コマンドに関するリファ
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: b67b301d23607d7e30751299b8cec5ca972d5cf5
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 78fb2373652c03e28ad51d222bf81f4cd4263457
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100048992"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557415"
 ---
 # <a name="azdata-arc-postgres-server-config"></a>azdata arc postgres server config
 
@@ -26,27 +26,27 @@ ms.locfileid: "100048992"
 
 |command|説明|
 | --- | --- |
-[azdata arc postgres server config init](#azdata-arc-postgres-server-config-init) | PostgreSQL サーバー グループの CRD および仕様ファイルを初期化します。
+[azdata arc postgres server config init](#azdata-arc-postgres-server-config-init) | Azure Arc 対応 PostgreSQL Hyperscale サーバー グループの CRD と仕様ファイルを初期化します。
 [azdata arc postgres server config add](#azdata-arc-postgres-server-config-add) | 構成ファイル内の json パスの値を追加します。
 [azdata arc postgres server config remove](#azdata-arc-postgres-server-config-remove) | 構成ファイル内の json パスの値を削除します。
 [azdata arc postgres server config replace](#azdata-arc-postgres-server-config-replace) | 構成ファイル内の json パスの値を置き換えます。
 [azdata arc postgres server config patch](#azdata-arc-postgres-server-config-patch) | json 修正プログラム ファイルに基づいて、構成ファイルに修正プログラムを適用します。
 ## <a name="azdata-arc-postgres-server-config-init"></a>azdata arc postgres server config init
-PostgreSQL サーバー グループの CRD および仕様ファイルを初期化します。
+Azure Arc 対応 PostgreSQL Hyperscale サーバー グループの CRD と仕様ファイルを初期化します。
 ```bash
 azdata arc postgres server config init --path -p 
-                                       [--engine-version -ev]
+                                       []
 ```
-### <a name="examples"></a>使用例
-PostgreSQL サーバー グループの CRD および仕様ファイルを初期化します。
+### <a name="examples"></a>例
+Azure Arc 対応 PostgreSQL Hyperscale サーバー グループの CRD と仕様ファイルを初期化します。
 ```bash
 azdata arc postgres server config init --path ./template
 ```
 ### <a name="required-parameters"></a>必須のパラメーター
 #### `--path -p`
-PostgreSQL サーバー グループの CRD および仕様の書き込み先とするパス。
+Azure Arc 対応 PostgreSQL Hyperscale サーバー グループの CRD と仕様を書き込む先のパス。
 ### <a name="optional-parameters"></a>省略可能のパラメーター
-#### `--engine-version -ev`
+#### <a name=""></a>``
 11 または 12 にする必要があります。 既定値は 12 です。
 ### <a name="global-arguments"></a>グローバル引数
 #### `--debug`

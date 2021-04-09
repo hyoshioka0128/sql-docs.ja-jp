@@ -5,16 +5,16 @@ description: azdata arc postgres コマンドのリファレンス記事です�
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: d9e05ab1873947eb7023c0290ea35de21c8a91c3
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 9fcd8263b1d9c65f83a2263e460ca09ce6176697
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100048972"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557375"
 ---
 # <a name="azdata-arc-postgres"></a>azdata arc postgres
 
@@ -26,9 +26,9 @@ ms.locfileid: "100048972"
 
 |command|説明|
 | --- | --- |
-[azdata arc postgres server](reference-azdata-arc-postgres-server.md) | PostgreSQL サーバー グループを管理します。
-[azdata arc postgres backup](reference-azdata-arc-postgres-backup.md) | PostgreSQL サーバー グループのバックアップを管理します。
-[azdata arc postgres endpoint](reference-azdata-arc-postgres-endpoint.md) | PostgreSQL サーバー グループのエンドポイントを管理します。
+[azdata arc postgres server](reference-azdata-arc-postgres-server.md) | Azure Arc 対応 PostgreSQL Hyperscale サーバー グループを管理します。
+[azdata arc postgres endpoint](reference-azdata-arc-postgres-endpoint.md) | Azure Arc 対応 PostgreSQL Hyperscale サーバー グループのエンドポイントを管理します。
+[azdata arc postgres backup](reference-azdata-arc-postgres-backup.md) | Azure Arc 対応 PostgreSQL Hyperscale サーバー グループのバックアップを管理します。
 
 ## <a name="next-steps"></a>次のステップ
 

@@ -5,15 +5,15 @@ description: この記事では、サービス プリンシパルを使用して
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mikeray
-ms.date: 09/10/2020
+ms.date: 04/06/2021
 ms.topic: conceptual
 ms.prod: sql
-ms.openlocfilehash: b78c76504cb9ffb76b62c1867630760fe52cf22c
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: f7f3c6f2169338c8105dbeba6197576365c71e14
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100063187"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556335"
 ---
 # <a name="connect-sql-server-instances-to-azure-arc-at-scale"></a>SQL Server インスタンスを大規模に Azure Arc に接続する
 

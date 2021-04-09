@@ -4,20 +4,39 @@ description: 最新のリリース ノート
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mikeray
-ms.date: 12/08/2020
+ms.date: 04/06/2021
 ms.topic: conceptual
 ms.prod: sql
-ms.openlocfilehash: f53731685f5ba1723ebdd8d20064342808205566
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 96239b337ed917b74effc58ac4e55b67b568a9e4
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100070307"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557535"
 ---
 # <a name="release-notes---azure-arc-enabled-sql-server-preview"></a>リリース ノート ‐ Azure Arc 対応 SQL Server (プレビュー)
 
 > [!NOTE]
 > この記事で紹介しているテクノロジはプレビュー機能であり、「[Microsoft Azure プレビューの追加利用規約](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)」に従うことを条件として提供されます。
+
+## <a name="april-2021"></a>2021 年 4 月
+
+### <a name="breaking-change"></a>互換性に影響する変更点
+
+破壊的変更はありません
+
+### <a name="other-changes"></a>その他の変更点
+
+新しいプロパティ *LicenseType* が **SQL Server - Azure Arc** リソースの種類に追加されました。 これは、SQL Server インスタンスにライセンスが必要かどうかを示します。 プロパティには、次のいずれかの値を設定できます。
+
+| **Value** | **説明** |
+|:--|:--|
+|有料|SQL インスタンスで SQL Server の Enterprise、Standard、または Web エディションが使用されていることを示します|
+|Free|SQL インスタンスで SQL Server の Express または Developer エディションが使用されていることを示します|
+|HADR|SQL インスタンスが可用性グループ内のレプリカであることを示します。 ソフトウェア アシュアランスの対象になっている場合は、ライセンスを必要としない可能性があります。 詳細については、[SQL Server 商用ライセンスの利用条件](https://www.microsoft.com/licensing/terms/productoffering/SQLServer/EAEAS)を参照してください。
+
+> [!NOTE]
+> 既存の **SQL Server - Azure Arc** リソースの場合、このプロパティには *Null* 値が表示されます。 Azure Arc 対応 SQL Server が一般公開された後、適切な値で自動的に更新されます。
 
 ## <a name="december-2020"></a>2020 年 12 月
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: SrinivasSQLMS
 ms.author: skandi
 ms.reviewer: hristins
-ms.openlocfilehash: b8df5a92b5fb851e2a39c310c97d450d525542e4
-ms.sourcegitcommit: 851f47e27512651f809540b77bfbd09e6ddb5362
+ms.openlocfilehash: 9e972268049d6605388df053436e9e129ea9adcd
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "105937779"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106557579"
 ---
 # <a name="latest-updates-for-microsoft-sql-server"></a>Microsoft SQL Server の最新の更新プログラム
 
@@ -29,7 +29,7 @@ ms.locfileid: "105937779"
 
 |製品のバージョン   | 最新の Service Pack |  最新の GDR | 最新の累積的な更新プログラム | CU のリリース日 | 一般的なガイダンス  |
 |--|--|--|--|--|--|
-|SQL Server 2019|該当なし|[KB 4583458](https://support.microsoft.com/help/4583458)|CU 9 [(KB 5000642)](https://support.microsoft.com/help/5000642)|2/11/2021|[SQL Server 2019 のインストール](./install-sql-server.md)|
+|SQL Server 2019|該当なし|[KB 4583458](https://support.microsoft.com/help/4583458)|CU 10 [(KB 5001090)](https://support.microsoft.com/help/5001090)|2021 年 4 月 6 日|[SQL Server 2019 のインストール](./install-sql-server.md)|
 |SQL Server 2017|該当なし|[KB 4583456](https://support.microsoft.com/help/4583456)|CU 23 [(KB 5000685)](https://support.microsoft.com/help/5000685)|2/24/2021|[SQL Server 2017 のインストール](./install-sql-server.md)|
 |SQL Server 2016|SP2 [(KB 4052908)](https://support.microsoft.com/help/4052908)|[KB 4583460](https://support.microsoft.com/help/4583460)|CU 17 [(KB 5001092)](https://support.microsoft.com/kb/5001092)|2021/3/29|[SQL Server 2016 のインストール](./install-sql-server.md)|
 |SQL Server 2016|SP1 [(KB 3182545)](https://support.microsoft.com/help/3182545/sql-server-2016-service-pack-1-release-information)|[KB 4505219](https://support.microsoft.com/help/4505219)|CU 15 + GDR [(KB 4505221)](https://support.microsoft.com/help/4505221)|2019/7/9|[SQL Server 2016 のインストール](./install-sql-server.md)|

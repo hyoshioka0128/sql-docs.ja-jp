@@ -31,12 +31,12 @@ helpviewer_keywords:
 ms.assetid: 41b9962c-0c71-4227-80a0-08fdc19f5fe4
 author: VanMSFT
 ms.author: vanto
-ms.openlocfilehash: f248f7a26dee135cbb68d7d0660ea8e467f76d15
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 194ce3acd5db4643053cde4b42bf5c0115ff9a37
+ms.sourcegitcommit: 8f40e427c867b9d2e9e7dde43f9546fb4d907c4f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99207663"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106506647"
 ---
 # <a name="output-clause-transact-sql"></a>OUTPUT 句 (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -318,7 +318,8 @@ DROP TABLE dbo.table1;
 ## <a name="examples"></a>例  
   
 ### <a name="a-using-output-into-with-a-simple-insert-statement"></a>A. OUTPUT INTO を単純な INSERT ステートメントと共に使用する  
- 次の例では、`ScrapReason` テーブルに 1 行を挿入し、`OUTPUT` 句を使用してステートメントの結果を `@MyTableVar``table` 変数に返します。 `ScrapReasonID` 列が IDENTITY プロパティで定義されているため、`INSERT` ステートメントではこの列の値を指定していません。 ただし、[!INCLUDE[ssDE](../../includes/ssde-md.md)] によってこの列用に生成された値が、`OUTPUT` 句で `inserted.ScrapReasonID` 列に返されます。  
+ 次の例では、`ScrapReason` テーブルに 1 行を挿入し、`OUTPUT` 句を使用してステートメントの結果を `@MyTableVar` テーブル変数に返します。 `ScrapReasonID` 列が IDENTITY プロパティで定義されているため、`INSERT` ステートメントではこの列の値を指定していません。 ただし、[!INCLUDE[ssDE](../../includes/ssde-md.md)] によってこの列用に生成された値が、`OUTPUT` 句で `inserted.ScrapReasonID` 列に返されます。  
+
   
 ```sql
 USE AdventureWorks2012;
@@ -393,7 +394,8 @@ GO
 ```
 
 ### <a name="d-using-output-into-to-return-an-expression"></a>D. OUTPUT INTO を使用して式を返す  
- 次の例は例 C を基に構築され、更新後の `VacationHours` の値と更新が適用される前の `VacationHours` の値の差として、`OUTPUT` 句の中で式を定義しています。 この式の値は、`VacationHoursDifference` 列の `@MyTableVar``table` 変数に返されます。  
+ 次の例は例 C を基に構築され、更新後の `VacationHours` の値と更新が適用される前の `VacationHours` の値の差として、`OUTPUT` 句の中で式を定義しています。 この式の値は、`VacationHoursDifference` 列の `@MyTableVar` テーブル変数に返されます。  
+
   
 ```sql
 USE AdventureWorks2012;  
@@ -492,7 +494,8 @@ GO
 ```
   
 ### <a name="g-using-output-into-with-a-large-object-data-type"></a>G. OUTPUT INTO をラージ オブジェクト データ型と共に使用する  
- 次の例では、`DocumentSummary` テーブル内の `nvarchar(max)` 列である `Production.Document` の部分的な値を、`.WRITE` 句を使用して更新します。 置換する語、既存データ内で置換される語の開始位置 (オフセット)、置換する文字数 (長さ) を指定することにより、`components` という語が、`features` という語で置換されます。 またこの例では、`OUTPUT` 句を使用して、`DocumentSummary` 列の前イメージと後イメージを `@MyTableVar``table` 変数に返します。 `DocumentSummary` 列の完全な前イメージと後イメージが返される点に注意してください。  
+ 次の例では、`DocumentSummary` テーブル内の `nvarchar(max)` 列である `Production.Document` の部分的な値を、`.WRITE` 句を使用して更新します。 置換する語、既存データ内で置換される語の開始位置 (オフセット)、置換する文字数 (長さ) を指定することにより、`components` という語が、`features` という語で置換されます。 この例では、`OUTPUT` 句を使用して、`DocumentSummary` 列の前と後のイメージを `@MyTableVar` テーブル変数に返します。 `DocumentSummary` 列の完全な前イメージと後イメージが返される点に注意してください。  
+
   
 ```sql
 USE AdventureWorks2012;
@@ -604,7 +607,8 @@ GO
 ```
   
 ### <a name="j-using-output-and-output-into-in-a-single-statement"></a>J. OUTPUT と OUTPUT INTO を単一のステートメント内で使用する  
- 次の例では、`ProductProductPhoto` テーブルの行を、`FROM` ステートメントの `DELETE` 句内で定義された検索条件に基づいて削除します。 `OUTPUT INTO` 句は削除するテーブルの各列 (`deleted.ProductID`、`deleted.ProductPhotoID`) と、`Product` テーブルの列を、`@MyTableVar``table` 変数に返します。 `Product` テーブルは、削除する行を指定するために `FROM` 句内で使用します。 `OUTPUT` 句は、`deleted.ProductID` 列、`deleted.ProductPhotoID` 列、および `ProductProductPhoto` テーブルから行を削除した日付と時刻を、呼び出し元アプリケーションに返します。  
+ 次の例では、`ProductProductPhoto` テーブルの行を、`FROM` ステートメントの `DELETE` 句内で定義された検索条件に基づいて削除します。 `OUTPUT INTO` 句は削除するテーブルの各列 (`deleted.ProductID`、`deleted.ProductPhotoID`) と、`Product` テーブルの列を、`@MyTableVar` テーブル変数に返します。 `Product` テーブルは、削除する行を指定するために `FROM` 句内で使用します。 `OUTPUT` 句は、`deleted.ProductID` 列、`deleted.ProductPhotoID` 列、および `ProductProductPhoto` テーブルから行を削除した日付と時刻を、呼び出し元アプリケーションに返します。  
+
   
 ```sql
 USE AdventureWorks2012;

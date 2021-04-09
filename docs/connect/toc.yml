@@ -136,6 +136,17 @@
               href: ../connect/ado-net/common-schema-collections.md
             - name: SQL Server スキーマ コレクション
               href: ../connect/ado-net/sql-server-schema-collections.md
+        - name: 構成可能な再試行ロジック
+          href: ../connect/ado-net/configurable-retry-logic.md
+          items:
+            - name: はじめに
+              href: ../connect/ado-net/configurable-retry-logic-sqlclient-introduction.md
+            - name: 内部プロバイダー
+              href: ../connect/ado-net/internal-retry-logic-providers-sqlclient.md
+            - name: コアとなる API
+              href: ../connect/ado-net/configurable-retry-logic-core-apis-sqlclient.md
+            - name: 構成ファイル
+              href: ../connect/ado-net/configurable-retry-logic-config-file-sqlclient.md
         - name: DbProviderFactories
           href: ../connect/ado-net/dbproviderfactories.md
           items:

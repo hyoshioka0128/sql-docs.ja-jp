@@ -5,16 +5,16 @@ description: azdata arc コマンドのリファレンス記事です。
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: a1690d6aff65586cbbc221cbc39b2a8b7b84747f
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: abaf9584337221388675568b9ba07c39afec911f
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100048922"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556796"
 ---
 # <a name="azdata-arc"></a>azdata arc
 
@@ -30,7 +30,7 @@ ms.locfileid: "100048922"
 [azdata arc dc](reference-azdata-arc-dc.md) | データ コントローラーを作成、削除、管理します。
 [azdata arc resource-kind](reference-azdata-arc-resource-kind.md) | お使いのクラスターで、カスタム リソースを定義およびテンプレート化する resource-kind コマンドです。
 [azdata arc resource](reference-azdata-arc-resource.md) | お使いのクラスターでカスタム リソースを作成および管理するリソース コマンドです。
-[azdata arc postgres](reference-azdata-arc-postgres.md) | PostgreSQL サーバー グループを作成、削除、管理します。
+[azdata arc postgres](reference-azdata-arc-postgres.md) | Azure Arc 対応 PostgreSQL Hyperscale サーバー グループを作成、削除、管理します。
 
 ## <a name="next-steps"></a>次のステップ
 

@@ -5,16 +5,16 @@ description: azdata arc sql mi コマンドのリファレンス記事です。
 author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: seanw
-ms.date: 09/22/2020
+ms.date: 04/06/2021
 ms.topic: reference
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 6a3d561f6b09ca6720a70a067e5985fbc96dceb1
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 2b6a8d15233198dbcdd3aad064e5f7668f39eaef
+ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100048952"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106556816"
 ---
 # <a name="azdata-arc-sql-mi"></a>azdata arc sql mi
 
@@ -37,6 +37,8 @@ SQL マネージド インスタンスのパスワードを設定するには、
 ```bash
 azdata arc sql mi create --name -n 
                          [--path]  
+                         
+[--replicas]  
                          
 [--cores-limit -cl]  
                          
@@ -64,8 +66,6 @@ azdata arc sql mi create --name -n
                          
 [--no-external-endpoint]  
                          
-[--dev]  
-                         
 [--no-wait]
 ```
 ### <a name="examples"></a>使用例
@@ -73,12 +73,18 @@ SQL マネージド インスタンスを作成します。
 ```bash
 azdata arc sql mi create -n sqlmi1
 ```
+HA シナリオで、3 つのレプリカを持つ SQL マネージド インスタンスを作成します。
+```bash
+azdata arc sql mi create -n sqlmi2 --replicas 3
+```
 ### <a name="required-parameters"></a>必須のパラメーター
 #### `--name -n`
 SQL マネージド インスタンスの名前。
 ### <a name="optional-parameters"></a>省略可能のパラメーター
 #### `--path`
 SQL マネージド インスタンスの json ファイルに対する src ファイルへのパス。
+#### `--replicas`
+高可用性の目的でデプロイされるレプリカの数。 使用できる値は '3' または '1' で、既定値は '1' です。
 #### `--cores-limit -cl`
 マネージド インスタンスのコア数の制限 (整数)。
 #### `--cores-request -cr`
@@ -86,7 +92,7 @@ SQL マネージド インスタンスの json ファイルに対する src フ�
 #### `--memory-limit -ml`
 マネージド インスタンスの容量の制限 (整数)。
 #### `--memory-request -mr`
-メモリの GB 量を示す整数としての、マネージド インスタンスの容量に対する要求。
+マネージド インスタンスの容量に対する要求 (GB 単位の整数のメモリー量)。
 #### `--storage-class-data -scd`
 データ (.mdf) に使用するストレージ クラス。 値を指定しないと、ストレージ クラスは指定されず、その結果、Kubernetes によって既定のストレージ クラスが使用されます。
 #### `--storage-class-logs -scl`
@@ -105,8 +111,6 @@ SQL マネージド インスタンスの json ファイルに対する src フ�
 バックアップに使用するストレージ ボリュームのサイズを示す正の数値と、その後の Ki (キロバイト)、Mi (メガバイト)、または Gi (ギガバイト)。
 #### `--no-external-endpoint`
 指定した場合、外部サービスは作成されません。 それ以外の場合、データ コントローラーと同じサービスの種類を使用して外部サービスが作成されます。
-#### `--dev`
-これを指定した場合、それは dev インスタンスと見なされ、課金されません。
 #### `--no-wait`
 指定した場合、コマンドは戻る前に、インスタンスが準備完了状態になるのを待機しません。
 ### <a name="global-arguments"></a>グローバル引数
@@ -134,8 +138,6 @@ azdata arc sql mi edit --name -n
                        
 [--memory-request -mr]  
                        
-[--dev]  
-                       
 [--no-wait]
 ```
 ### <a name="examples"></a>使用例
@@ -156,9 +158,7 @@ SQL マネージド インスタンスの json ファイルに対する src フ�
 #### `--memory-limit -ml`
 マネージド インスタンスの容量の制限 (整数)。
 #### `--memory-request -mr`
-メモリの GB 量を示す整数としての、マネージド インスタンスの容量に対する要求。
-#### `--dev`
-これを指定した場合、それは dev インスタンスと見なされ、課金されません。
+マネージド インスタンスの容量に対する要求 (GB 単位の整数のメモリー量)。
 #### `--no-wait`
 指定した場合、コマンドは戻る前に、インスタンスが準備完了状態になるのを待機しません。
 ### <a name="global-arguments"></a>グローバル引数
