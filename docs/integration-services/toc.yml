@@ -22,7 +22,7 @@
           href: ../integration-services/ssis-quickstart-deploy-ssms.md
         - name: Transact-SQL を使用した配置 (SSMS)
           href: ../integration-services/ssis-quickstart-deploy-tsql-ssms.md
-        - name: Transact-SQL を使用した配置 (VS コード)
+        - name: Transact-SQL を使用した配置 (VS Code)
           href: ../integration-services/ssis-quickstart-deploy-tsql-vscode.md
         - name: コマンド プロンプトからの配置
           href: ../integration-services/ssis-quickstart-deploy-cmdline.md
@@ -36,7 +36,7 @@
           href: ../integration-services/ssis-quickstart-run-ssms.md
         - name: Transact-SQL を使用しての実行 (SSMS)
           href: ../integration-services/ssis-quickstart-run-tsql-ssms.md
-        - name: Transact-SQL を使用しての実行 (VS コード)
+        - name: Transact-SQL を使用しての実行 (VS Code)
           href: ../integration-services/ssis-quickstart-run-tsql-vscode.md
         - name: コマンド プロンプトからの実行
           href: ../integration-services/ssis-quickstart-run-cmdline.md
