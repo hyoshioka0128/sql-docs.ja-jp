@@ -12,12 +12,12 @@ helpviewer_keywords: ''
 author: joesackmsft
 ms.author: josack
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 40a2ba2ff9e3955c09a8d8529a67ec3275e17222
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: c849330ea3a252a3cf0f9926098c66b993c6cd4b
+ms.sourcegitcommit: 8050df4db7a3a76e4fa03e5c79dcb49031defed7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100338967"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107210976"
 ---
 # <a name="intelligent-query-processing-in-sql-databases"></a>SQL データベースでのインテリジェントなクエリ処理
 
@@ -52,20 +52,27 @@ ALTER DATABASE [WideWorldImportersDW] SET COMPATIBILITY_LEVEL = 150;
 | [テーブル変数の遅延コンパイル](#table-variable-deferred-compilation) | あり (互換性レベル 150 未満)| あり ([!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] 以降、互換性レベル 150 未満)|固定推定値ではなく、最初のコンパイルで発生したテーブル変数の実際のカーディナリティを使用します。|
 
 ## <a name="batch-mode-adaptive-joins"></a>バッチ モード適応型結合
+
+**適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sssql17-md](../../includes/sssql17-md.md)] 以降)、[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)]
+
 バッチ モード適応型結合機能を使うと、最初の入力のスキャンが **終わる** まで、[ハッシュ結合方法または入れ子になったループ結合](../../relational-databases/performance/joins.md)方法のどちらを選ぶかを、単一のキャッシュされたプランを使用して遅延することができます。 アダプティブ結合演算子は、入れ子になったループ プランに切り替えるタイミングを決定するために使われるしきい値を定義します。 したがって、実行中により適切な結合方法に動的に切り替えることができます。
 
 互換性レベルを変更せずにアダプティブ結合を無効にする方法など、詳細については、「[アダプティブ結合について](../../relational-databases/performance/joins.md#adaptive)」を参照してください。
 
 ## <a name="batch-mode-memory-grant-feedback"></a>バッチ モード メモリ許可フィードバック
+
+**適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sssql17-md](../../includes/sssql17-md.md)] 以降)、[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 
+
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] でのクエリの実行プランには、実行に最低限必要なメモリと、すべての行をメモリに収めるのに最適なメモリ許可サイズが含まれます。 メモリ許可サイズが正しくない場合、パフォーマンスが低下します。 メモリ許可が多すぎると、メモリが無駄になり、コンカレンシーが制限されます。 メモリ許可が少なすぎると、負荷の高いディスクへの書き込みが発生する原因になります。 繰り返されるワークロードを処理することにより、バッチ モード メモリ許可フィードバックはクエリに実際に必要なメモリ量を再計算し、キャッシュされたプランの許可値を更新します。 同じクエリ ステートメントを実行するとき、クエリは、修正されたメモリ許可サイズを使うことで、コンカレンシーに影響を与える過剰なメモリ許可を減らし、負荷の高いディスクへの書き込みが発生する過少なメモリ許可を修正します。
 次のグラフでは、バッチ モード アダプティブ メモリ許可フィードバックを使用する 1 つの例を示します。 最初のクエリ実行の場合、ディスクへの書き込みが多いため所要時間は "**88 秒**" でした。   
 
 ```sql
 DECLARE @EndTime datetime = '2016-09-22 00:00:00.000';
 DECLARE @StartTime datetime = '2016-09-15 00:00:00.000';
+
 SELECT TOP 10 hash_unique_bigint_id
 FROM dbo.TelemetryDS
-WHERE Timestamp BETWEEN @StartTime and @EndTime
+WHERE Timestamp BETWEEN @StartTime AND @EndTime
 GROUP BY hash_unique_bigint_id
 ORDER BY MAX(max_elapsed_time_microsec) DESC;
 ```
@@ -172,6 +179,9 @@ OPTION (USE HINT ('DISABLE_ROW_MODE_MEMORY_GRANT_FEEDBACK'));
 USE HINT クエリ ヒントは、データベース スコープ構成またはトレース フラグ設定に優先します。
 
 ## <a name="interleaved-execution-for-mstvfs"></a>MSTVF のインターリーブ実行
+
+**適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ([!INCLUDE[sssql17-md](../../includes/sssql17-md.md)] 以降)、[!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 
+
 インターリーブ実行では、関数に基づく実際の行数を使用して、より正確なダウンストリーム クエリ プランを決定します。 複数ステートメントのテーブル値関数 (MSTVF) の詳細については、「[テーブル値関数](../../relational-databases/user-defined-functions/create-user-defined-functions-database-engine.md#TVF)」を参照してください。
 
 インターリーブ実行は、単一クエリ実行の最適化フェーズと実行フェーズの間の一方向境界を変更し、修正されたカーディナリティ推定に基づいてプランが適応できるようにします。 最適化中に、インターリーブ実行の候補を検出した場合 (現在は **複数ステートメント テーブル値関数 (MSTVF)** )、最適化を一時停止し、該当するサブツリーを実行し、正確なカーディナリティの推定をキャプチャし、ダウンストリームの演算に対する最適化を再開します。   

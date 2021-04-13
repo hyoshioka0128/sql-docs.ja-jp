@@ -7,12 +7,12 @@ ms.date: 04/06/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
-ms.openlocfilehash: eaaef67cc2e0d57345fbac4b2920d56a42e0088b
-ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
+ms.openlocfilehash: 8e9282c271b8ab781e8fa9c47c50ab1957368b85
+ms.sourcegitcommit: 09122d02fc3d86c6028366653337c083da8a3f4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106556845"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107072400"
 ---
 # <a name="release-notes-for-sql-server-2019-on-linux"></a>Linux 上の SQL Server 2019 のリリース ノート
 
@@ -73,13 +73,13 @@ CU リポジトリ (mssql-server-2019) を構成済みの場合は、新規イ�
 > [!NOTE]
 > CU1 以降では、Red Hat 用のオフライン パッケージのインストール リンクが RHEL 8 パッケージを指しています。 RHEL 7 パッケージをお探しの場合は、ダウンロード パス <https://packages.microsoft.com/rhel/7/mssql-server-2019/> を参照してください。
 >
-> **Ubuntu 18.04** は、CU3 以降の SQL Server 2019 でサポートされるようになりました。 Ubuntu 用のオフライン パッケージのインストール リンクは、Ubuntu 18.04 パッケージを指しています。 Ubuntu 16.04 パッケージをお探しの場合は、ダウンロード パス <https://packages.microsoft.com/ubuntu/16.04/mssql-server-2019/pool/main/m/> を参照してください。
+> **Ubuntu 20.04** は、CU10 以降の SQL Server 2019 でサポートされるようになりました。 Ubuntu 用のオフライン パッケージのインストール リンクは、Ubuntu 20.04 パッケージを指しています。 Ubuntu 18.04 パッケージをお探しの場合は、ダウンロード パス <https://packages.microsoft.com/ubuntu/18.04/mssql-server-2019/pool/main/m/> を参照してください
 
 | Package | パッケージ バージョン | ダウンロード |
 |-----|-----|-----|
 | Red Hat RPM パッケージ | 15.0.4123.1-5 | [エンジン RPM パッケージ](https://packages.microsoft.com/rhel/8/mssql-server-2019/mssql-server-15.0.4123.1-5.x86_64.rpm)</br>[高可用性 RPM パッケージ](https://packages.microsoft.com/rhel/8/mssql-server-2019/mssql-server-ha-15.0.4123.1-5.x86_64.rpm)</br>[フルテキスト検索 RPM パッケージ](https://packages.microsoft.com/rhel/8/mssql-server-2019/mssql-server-fts-15.0.4123.1-5.x86_64.rpm)</br>[拡張機能 RPM パッケージ](https://packages.microsoft.com/rhel/8/mssql-server-2019/mssql-server-extensibility-15.0.4123.1-5.x86_64.rpm)</br>[Java 拡張機能 RPM パッケージ](https://packages.microsoft.com/rhel/8/mssql-server-2019/mssql-server-extensibility-java-15.0.4123.1-5.x86_64.rpm)</br>[PolyBase RPM パッケージ](https://packages.microsoft.com/rhel/8/mssql-server-2019/mssql-server-polybase-15.0.4123.1-5.x86_64.rpm)|
 | SLES RPM パッケージ | 15.0.4123.1-5 | [mssql-server エンジン RPM パッケージ](https://packages.microsoft.com/sles/12/mssql-server-2019/mssql-server-15.0.4123.1-5.x86_64.rpm)</br>[高可用性 RPM パッケージ](https://packages.microsoft.com/sles/12/mssql-server-2019/mssql-server-ha-15.0.4123.1-5.x86_64.rpm)</br>[フルテキスト検索 RPM パッケージ](https://packages.microsoft.com/sles/12/mssql-server-2019/mssql-server-fts-15.0.4123.1-5.x86_64.rpm)</br>[拡張機能 RPM パッケージ](https://packages.microsoft.com/sles/12/mssql-server-2019/mssql-server-extensibility-15.0.4123.1-5.x86_64.rpm)</br>[Java 拡張機能 RPM パッケージ](https://packages.microsoft.com/sles/12/mssql-server-2019/mssql-server-extensibility-java-15.0.4123.1-5.x86_64.rpm)</br>[PolyBase RPM パッケージ](https://packages.microsoft.com/sles/12/mssql-server-2019/mssql-server-polybase-15.0.4123.1-5.x86_64.rpm)|
-| Ubuntu 18.04 Debian パッケージ | 15.0.4123.1-5 | [エンジン Debian パッケージ](https://packages.microsoft.com/ubuntu/18.04/mssql-server-2019/pool/main/m/mssql-server/mssql-server_15.0.4123.1-5_amd64.deb)</br>[高可用性 Debian パッケージ](https://packages.microsoft.com/ubuntu/18.04/mssql-server-2019/pool/main/m/mssql-server-ha/mssql-server-ha_15.0.4123.1-5_amd64.deb)</br>[フルテキスト検索 Debian パッケージ](https://packages.microsoft.com/ubuntu/18.04/mssql-server-2019/pool/main/m/mssql-server-fts/mssql-server-fts_15.0.4123.1-5_amd64.deb)</br>[拡張機能 Debian パッケージ](https://packages.microsoft.com/ubuntu/18.04/mssql-server-2019/pool/main/m/mssql-server-extensibility/mssql-server-extensibility_15.0.4123.1-5_amd64.deb)</br>[Java 拡張機能 Debian パッケージ](https://packages.microsoft.com/ubuntu/18.04/mssql-server-2019/pool/main/m/mssql-server-extensibility-java/mssql-server-extensibility-java_15.0.4123.1-5_amd64.deb)</br>[PolyBase RPM パッケージ](https://packages.microsoft.com/ubuntu/18.04/mssql-server-2019/pool/main/m/mssql-server-polybase/mssql-server-polybase_15.0.4123.1-5_amd64.deb)|
+| Ubuntu 20.04 Debian パッケージ | 15.0.4123.1-5 | [エンジン Debian パッケージ](https://packages.microsoft.com/ubuntu/20.04/mssql-server-2019/pool/main/m/mssql-server/mssql-server_15.0.4123.1-5_amd64.deb)</br>[高可用性 Debian パッケージ](https://packages.microsoft.com/ubuntu/20.04/mssql-server-2019/pool/main/m/mssql-server-ha/mssql-server-ha_15.0.4123.1-5_amd64.deb)</br>[フルテキスト検索 Debian パッケージ](https://packages.microsoft.com/ubuntu/20.04/mssql-server-2019/pool/main/m/mssql-server-fts/mssql-server-fts_15.0.4123.1-5_amd64.deb)</br>[拡張機能 Debian パッケージ](https://packages.microsoft.com/ubuntu/20.04/mssql-server-2019/pool/main/m/mssql-server-extensibility/mssql-server-extensibility_15.0.4123.1-5_amd64.deb)</br>[Java 拡張機能 Debian パッケージ](https://packages.microsoft.com/ubuntu/20.04/mssql-server-2019/pool/main/m/mssql-server-extensibility-java/mssql-server-extensibility-java_15.0.4123.1-5_amd64.deb)</br>[PolyBase RPM パッケージ](https://packages.microsoft.com/ubuntu/20.04/mssql-server-2019/pool/main/m/mssql-server-polybase/mssql-server-polybase_15.0.4123.1-5_amd64.deb)|
 
 ## <a name="cu9-february-2021"></a><a id="cu9"></a> CU9 (2021 年 2 月)
 

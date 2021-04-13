@@ -15,12 +15,12 @@ ms.assetid: ''
 author: s-r-k
 ms.author: karam
 monikerRange: =azuresqldb-current||>=sql-server-ver15||>=sql-server-linux-ver15
-ms.openlocfilehash: 2ccdf4c7ca7aaec272a517aff0a7e336ae6791ad
-ms.sourcegitcommit: ebe81e2daa544f41c8ababb66a91c218ad0c2a0a
+ms.openlocfilehash: d2e984e4e170ffd48643f532c03e89599e39a663
+ms.sourcegitcommit: 8050df4db7a3a76e4fa03e5c79dcb49031defed7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "106177120"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107210931"
 ---
 # <a name="scalar-udf-inlining"></a>スカラー UDF のインライン化
 
@@ -140,7 +140,7 @@ UDF 内のロジックの複雑さによっては、結果として得られる�
     - `DECLARE`、`SET`:変数の宣言と代入。
     - `SELECT`:単一または複数の変数代入を含む SQL クエリ <sup>1</sup>。
     - `IF`/`ELSE`:任意の入れ子レベルでの分岐。
-    - `RETURN`:1 つまたは複数の return ステートメント。
+    - `RETURN`:1 つまたは複数の return ステートメント。 [!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] CU5 以降では、UDF に、インライン展開で考慮すべき 1 つの RETURN ステートメントのみを含めることができます <sup>6</sup>。
     - `UDF`:入れ子になった、または再帰関数呼び出し <sup>2</sup>。
     - その他:`EXISTS`、`ISNULL` などの関係演算。
 - UDF で、時間に依存する組み込み関数 (`GETDATE()` など) または副作用のある組み込み関数 <sup>3</sup> (`NEWSEQUENTIALID()` など) が呼び出されていない。

@@ -2,7 +2,7 @@
 title: Windows ファイアウォールの構成
 description: ファイアウォールを経由して SQL Server のインスタンスへのアクセスを許可するように Windows ファイアウォールを構成する方法。
 ms.custom: contperf-fy21q3
-ms.date: 03/26/2021
+ms.date: 04/07/2021
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: install
@@ -23,12 +23,12 @@ helpviewer_keywords:
 ms.assetid: f55c6a0e-b6bd-4803-b51a-f3a419803024
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 5f16ca40ec73ab02b539d19a4e271d3a08ccc2c7
-ms.sourcegitcommit: 2f971c85d87623c0aed1612406130d840e7bdb2e
+ms.openlocfilehash: ca3e3ae4255fc1815e690ef633350b33e4725ed9
+ms.sourcegitcommit: 09122d02fc3d86c6028366653337c083da8a3f4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "105744499"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107072434"
 ---
 # <a name="configure-the-windows-firewall-to-allow-sql-server-access"></a>Configure the Windows Firewall to Allow SQL Server Access
 [!INCLUDE [SQL Server Windows Only - ASDBMI ](../../includes/applies-to-version/sql-windows-only-asdbmi.md)]
@@ -98,6 +98,16 @@ ms.locfileid: "105744499"
     -   [Netsh コマンドの構文、コンテキスト、および書式設定](/windows-server/networking/technologies/netsh/netsh-contexts)    
     -   ["netsh firewall" コンテキストの代わりに "netsh advfirewall firewall" コンテキストを使用して、Windows Server 2008 および Windows Vista で Windows ファイアウォールの動作を制御する方法](https://support.microsoft.com/kb/947709)    
 
+-   **PowerShell**
+
+    次の例を参照して、SQL Server 既定のインスタンスと SQL Server Browser サービスに TCP ポート 1433 と UDP ポート 1434 を開きます。
+    
+    ```powershell
+    New-NetFirewallRule -DisplayName "SQLServer default instance" -Direction Inbound -LocalPort 1433 -Protocol TCP -Action Allow
+    New-NetFirewallRule -DisplayName "SQLServer Browser service" -Direction Inbound -LocalPort 1434 -Protocol UDP -Action Allow
+    ```
+    
+    詳細については、「[New-NetFirewallRule](/powershell/module/netsecurity/new-netfirewallrule)」を参照してください。
     
 - **Linux の場合**:Linux では、アクセスするサービスに関連付けられたポートを開く必要もあります。 Linux の異なるディストリビューションと異なるファイアウォールには、独自のプロシージャがあります。 2 つの例については、[Red Hat での SQL Server](../../linux/quickstart-install-connect-red-hat.md) に関するページと [SUSE での SQL Server](../../linux/quickstart-install-connect-suse.md) に関するページを参照してください。 
   

@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: c0bdd3de-3be0-455c-898a-98d4660e7ce3
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 09db4d47afee6795b403542c8442cc9d74724f4b
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: bb6e7351bedf62dc358222adf8d27468d7e49c1e
+ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99200698"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107298843"
 ---
 # <a name="sp_dropdistpublisher-transact-sql"></a>sp_dropdistpublisher (Transact-sql)
 [!INCLUDE [SQL Server SQL MI](../../includes/applies-to-version/sql-asdbmi.md)]
@@ -41,6 +41,9 @@ sp_dropdistpublisher [ @publisher = ] 'publisher'
   
 ## <a name="arguments"></a>引数  
 `[ @publisher = ] 'publisher'` 削除するパブリッシャーを示します。 *publisher* は **sysname** で、既定値はありません。  
+ 
+> [!NOTE]
+> SQL Server パブリッシャーがカスタムポートを使用して構成されている場合は、そのようなパブリッシャーをディストリビューターで削除するときに、ではなくパブリッシャーサーバーの名前を指定し `<Hostname>,<PortNumber>` ます。 
   
 `[ @no_checks = ] no_checks` パブリッシャーがディストリビューターとしてサーバーをアンインストールしたかどうかを **sp_dropdistpublisher** に確認するかどうかを指定します。 *no_checks* は **ビット**,、既定値は **0** です。  
   
@@ -57,7 +60,7 @@ sp_dropdistpublisher [ @publisher = ] 'publisher'
 ## <a name="return-code-values"></a>リターン コードの値  
  **0** (成功) または **1** (失敗)  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>解説  
  **sp_dropdistpublisher** は、すべての種類のレプリケーションで使用されます。  
   
  Oracle パブリッシャーを削除できない場合は、パブリッシャーを削除できないと **sp_dropdistpublisher** によってエラーが返され、パブリッシャーのディストリビューターオブジェクトが削除されます。  

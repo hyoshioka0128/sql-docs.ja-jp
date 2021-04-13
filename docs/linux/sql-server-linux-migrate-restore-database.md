@@ -4,17 +4,17 @@ description: このチュートリアルでは、Windows で SQL Server デー�
 author: VanMSFT
 ms.author: vanto
 ms.reviewer: vanto
-ms.date: 08/16/2017
+ms.date: 04/08/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
 ms.assetid: 9ac64d1a-9fe5-446e-93c3-d17b8f55a28f
-ms.openlocfilehash: 2ae765c8bc1f274ab9b9f62978a85b5f09f6ca58
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 23a575bfabdd16f30007a8b70d84a568f45b8d3e
+ms.sourcegitcommit: 8050df4db7a3a76e4fa03e5c79dcb49031defed7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100349082"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107210838"
 ---
 # <a name="migrate-a-sql-server-database-from-windows-to-linux-using-backup-and-restore"></a>バックアップと復元を使用して SQL Server データベースを Windows から Linux に移行する
 
@@ -53,11 +53,11 @@ Windows でデータベースのバックアップ ファイルを作成する�
 
 1. オブジェクト エクスプローラーで、 **[データベース]** を展開します。
 
-1. 対象のデータベースを右クリックし、 **[タスク]** を選択して、 **[バックアップ...]** をクリックします。
+1. 対象のデータベースを右クリックし、**[タスク]** を選択して、**[バックアップ...]** をクリックします。
 
    ![SSMS を使用してバックアップ ファイルを作成する](./media/sql-server-linux-migrate-restore-database/ssms-create-backup.png)
 
-1. **[Backup Up Database]\(データベースのバックアップ\)** ダイアログで、 **[バックアップの種類]** が **[Full]\(完全\)** であり、 **[バックアップ先]** が **[ディスク]** であることを確認します。 ファイルの名前と場所を記録しておきます。 たとえば、SQL Server 2016 では、**YourDB** という名前のデータベースの既定のバックアップ パスは `C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\Backup\YourDB.bak` になります。
+1. **[Backup Up Database]\(データベースのバックアップ\)** ダイアログで、**[バックアップの種類]** が **[Full]\(完全\)** であり、**[バックアップ先]** が **[ディスク]** であることを確認します。 ファイルの名前と場所を記録しておきます。 たとえば、SQL Server 2016 では、**YourDB** という名前のデータベースの既定のバックアップ パスは `C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\Backup\YourDB.bak` になります。
 
 1. **[OK]** をクリックしてデータベースをバックアップします。
 
@@ -103,7 +103,7 @@ Windows でデータベースのバックアップ ファイルを作成する�
 
 ## <a name="move-the-backup-file-before-restoring"></a>復元する前にバックアップ ファイルを移動する
 
-この時点で、バックアップ ファイルは Linux サーバー上のユーザーのホーム ディレクトリにあります。 SQL Server にデータベースを復元する前に、 **/var/opt/mssql** のサブディレクトリにバックアップを配置する必要があります。
+この時点で、バックアップ ファイルは Linux サーバー上のユーザーのホーム ディレクトリにあります。 SQL Server にデータベースを復元する前に、 **/var/opt/mssql** のサブディレクトリにバックアップを配置する必要があります。これは、`mssql` ユーザーと `mssql` グループが所有しているためです。 既定のバックアップ場所の変更を検討している場合は、「[mssql-conf での構成](sql-server-linux-configure-mssql-conf.md#backupdir)」の記事を参照してください。
 
 1. 同じ Windows Bash セッションで、**ssh** を使ってターゲット Linux コンピューターにリモート接続します。 次の例では、ユーザー **user1** として Linux コンピューター **192.0.2.9** に接続しています。
 
@@ -144,7 +144,7 @@ Windows でデータベースのバックアップ ファイルを作成する�
 > [!NOTE]
 > 次の手順では、**sqlcmd** ツールを使います。 SQL Server ツールをインストールしていない場合は、[Linux への SQL Server コマンドライン ツールのインストール](sql-server-linux-setup-tools.md)に関する記事を参照してください。
 
-1. 同じターミナルで、**sqlcmd** を起動します。 次の例では、**SA** ユーザーを使ってローカル SQL Server インスタンスに接続します。 プロンプトが表示されてからパスワードを入力するか、 **-P** パラメーターを追加してパスワードを指定します。
+1. 同じターミナルで、**sqlcmd** を起動します。 次の例では、**SA** ユーザーを使ってローカル SQL Server インスタンスに接続します。 プロンプトが表示されてからパスワードを入力するか、**-P** パラメーターを追加してパスワードを指定します。
 
    ```bash
    sqlcmd -S localhost -U SA
@@ -219,7 +219,7 @@ Windows でデータベースのバックアップ ファイルを作成する�
 
 1. リモート **ssh** セッションでの作業が終わったら、「`exit`」と入力します。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 このチュートリアルでは、Windows 上でデータベースをバックアップし、SQL Server が実行されている Linux サーバーにそれを移動する方法について学習しました。 以下の方法を学習しました。
 > [!div class="checklist"]

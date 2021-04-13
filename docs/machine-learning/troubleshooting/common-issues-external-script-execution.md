@@ -3,18 +3,18 @@ title: Python および R スクリプトの Launchpad のトラブルシュー�
 description: この記事では、SQL Server Launchpad サービスの開始を妨げるさまざまな問題のトラブルシューティングの指針を示します。これには、構成の問題または変更や、不足するネットワーク プロトコルなどが含まれます。 Launchpad サービスでは、R および Python の外部スクリプト実行がサポートされています。
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 03/31/2021
+ms.date: 04/08/2021
 ms.topic: troubleshooting
 author: dphansen
 ms.author: davidph
 ms.custom: contperf-fy21q3
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
-ms.openlocfilehash: b015e4181f8d8cfe9388c609f749dc5979463d3a
-ms.sourcegitcommit: 2db7412d30722f198cbafcd683bd4da206b33996
+ms.openlocfilehash: f015c9793cb4f5577b2ad3943eff5fafa002cd26
+ms.sourcegitcommit: 14b97028da137f872a0a35cfe9d5a639a2d116a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106099964"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107219544"
 ---
 # <a name="troubleshoot-issues-with-launchpad-service-executing-python-and-r-scripts-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services で Python および R スクリプトを実行する Launchpad サービスに関する問題のトラブルシューティング
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -23,7 +23,7 @@ ms.locfileid: "106099964"
 
 ## <a name="determine-whether-launchpad-is-running"></a>Launchpad が実行されているかどうかを判断する
 
-1. **[サービス]** パネル (services.msc) を開きます。 または、コマンド ラインで「**Sqlservermanager13.msc**」または「**SQLServerManager14**」と入力して、[SQL Server 構成マネージャー](../../relational-databases/sql-server-configuration-manager.md)を開きます。
+1. [[SQL Server 構成マネージャー]](../../relational-databases/sql-server-configuration-manager.md) を開きます。 コマンド ラインで、「**SQLServerManager13.msc**」、「**SQLServerManager14.msc**」、または **SQLServerManager15.msc**」と入力します。
 
 2. Launchpad が実行されているサービス アカウントをメモします。 R または Python が有効になっている各インスタンスには、Launchpad サービスの独自のインスタンスが必要です。 たとえば、名前付きインスタンスのサービスは、_MSSQLLaunchpad$InstanceName_ のようになります。
 

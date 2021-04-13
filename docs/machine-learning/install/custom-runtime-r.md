@@ -3,19 +3,19 @@ title: R カスタム ランタイムをインストールする
 description: 言語拡張機能を使用して SQL Server 用の R カスタム ランタイムをインストールする方法について説明します。 Python カスタム ランタイムは機械学習スクリプトを実行できます。
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 03/16/2021
+ms.date: 04/07/2021
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: contperf-fy21q3
 zone_pivot_groups: sqlml-platforms
 monikerRange: '>=sql-server-ver15||>=sql-server-linux-ver15'
-ms.openlocfilehash: b6262e5ac3d7090516c1a62661583a64bb6ccbc9
-ms.sourcegitcommit: e4b71e5d432a29b6c76ea457b00aa0abd4b6c77f
+ms.openlocfilehash: 120672163959f3360254edd64d1a5c4aba1bdd2a
+ms.sourcegitcommit: 09122d02fc3d86c6028366653337c083da8a3f4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2021
-ms.locfileid: "106273473"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107072381"
 ---
 # <a name="install-an-r-custom-runtime-for-sql-server"></a>SQL Server 用の R カスタム ランタイムをインストールする
 
@@ -62,7 +62,7 @@ SQL Server で外部 R スクリプトを実行するための R カスタム �
 
 ## <a name="enable-external-script"></a>外部スクリプトを有効にする
 
-Python 外部スクリプトは、ストアド プロシージャ [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) を使用して実行できます。
+R 外部スクリプトは、ストアド プロシージャ [sp_execute_external_script](../../relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql.md) を使用して実行できます。
 
 外部スクリプトを有効にするには、[Azure Data Studio](../../azure-data-studio/what-is-azure-data-studio.md) を使用して次のステートメントを実行します。
 
@@ -84,6 +84,10 @@ print(file.path(R.home("bin"), "R"));
 print(R.version);
 print("Hello RExtension!");'
 ```
+
+::: zone pivot="platform-windows"
+[!INCLUDE [R custom runtime - Windows - known issues](includes/custom-runtime-r-windows-known-issues.md)]
+::: zone-end
 
 ::: zone pivot="platform-linux-rhel"
 [!INCLUDE [R custom runtime - Linux - RHEL known issues](includes/custom-runtime-r-linux-known-issues-rhel.md)]

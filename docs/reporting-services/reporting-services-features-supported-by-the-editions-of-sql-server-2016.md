@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: maggiesMSFT
 ms.author: maggies
 ms.date: 12/16/2019
-ms.openlocfilehash: bbb3196349c648b955e5d27bf1d5fcfdadb9085f
-ms.sourcegitcommit: 216f377451e53874718ae1645a2611cdb198808a
+ms.openlocfilehash: a818db1a2bc8626f19bd3f98abdbb721ccbd74b1
+ms.sourcegitcommit: 09122d02fc3d86c6028366653337c083da8a3f4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87246661"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107072401"
 ---
 # <a name="sql-server-reporting-services-features-supported-by-editions"></a>SQL Server の各エディションでサポートされる SQL Server Reporting Services の機能
 
@@ -37,31 +37,31 @@ Evaluation Edition および Developer Edition でサポートされている機
 |モバイル レポートと分析|はい||||はい|  
 |サポートされているカタログ データベースの [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] エディション|Standard 以上|Standard 以上|Web|Express|Standard 以上|  
 |サポートされているデータ ソースの [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] エディション|すべての   [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] エディション|すべての [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] エディション|Web|Express|すべての [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] エディション|  
-|レポート サーバー|はい|はい|はい|はい|はい|  
-|レポート デザイナー|はい|はい|はい|はい|はい|  
-|レポート デザイナー Web ポータル|はい|はい|はい|はい|はい|  
-|ロール ベース セキュリティ|はい|はい|はい|はい|はい|  
-|Excel、PowerPoint、Word、PDF、およびイメージへのエクスポート|はい|はい|はい|はい|はい|  
-|強化されたゲージとグラフ|はい|はい|はい|はい|はい|  
-|[!INCLUDE[sspowerbi](../includes/sspowerbi-md.md)] ダッシュボードへのレポート アイテムのピン留め|はい|はい|はい|はい|はい|  
-|カスタム認証|はい|はい|はい||はい|  
-|データ フィードとしてのレポート|はい|はい|はい|はい|はい|  
-|モデルのサポート|はい|はい|はい||はい|  
-|ロールベースのセキュリティのカスタム ロールの作成|はい|はい|||はい|  
-|モデル アイテムのセキュリティ|はい|はい|||はい|  
-|無限クリック スルー|はい|はい|||はい|  
-|共有コンポーネント ライブラリ|はい|はい|||はい|  
-|電子メールおよびファイル共有のサブスクリプションとスケジュール設定|はい|はい|||はい|  
-|レポート履歴、実行スナップショット、およびキャッシュ|はい|はい|||はい|  
-|SharePoint 統合<sup>2</sup>|はい|はい|||はい|  
-|リモートおよび非 SQL データ ソースのサポート<sup>1</sup>|はい|はい|||はい|  
-|データ ソース、配信およびレンダリング、RDCE の拡張性|はい|はい|||はい|  
+|レポート サーバー|はい|Yes|Yes|Yes|はい|  
+|レポート デザイナー|はい|Yes|Yes|Yes|はい|  
+|レポート デザイナー Web ポータル|はい|Yes|Yes|Yes|はい|  
+|ロール ベース セキュリティ|はい|Yes|Yes|Yes|はい|  
+|Excel、PowerPoint、Word、PDF、およびイメージへのエクスポート|はい|Yes|Yes|Yes|はい|  
+|強化されたゲージとグラフ|はい|Yes|Yes|Yes|はい|  
+|[!INCLUDE[sspowerbi](../includes/sspowerbi-md.md)] ダッシュボードへのレポート アイテムのピン留め|はい|Yes|Yes|Yes|はい|  
+|カスタム認証|はい|Yes|Yes||はい|  
+|データ フィードとしてのレポート|はい|Yes|Yes|Yes|はい|  
+|モデルのサポート|はい|Yes|Yes||はい|  
+|ロールベースのセキュリティのカスタム ロールの作成|はい|Yes|||はい|  
+|モデル アイテムのセキュリティ|はい|Yes|||はい|  
+|無限クリック スルー|はい|Yes|||はい|  
+|共有コンポーネント ライブラリ|はい|Yes|||はい|  
+|電子メールおよびファイル共有のサブスクリプションとスケジュール設定|はい|Yes|||はい|  
+|レポート履歴、実行スナップショット、およびキャッシュ|はい|Yes|||はい|  
+|SharePoint 統合<sup>2</sup>|はい|Yes|||はい|  
+|リモートおよび非 SQL データ ソースのサポート<sup>1</sup>|はい|Yes|||はい|  
+|データ ソース、配信およびレンダリング、RDCE の拡張性|はい|Yes|||はい|  
 |カスタム ブランド化|はい||||はい|  
 |データ ドリブン レポートのサブスクリプション|はい||||はい|  
 |スケール アウト配置 (Web ファーム)|はい||||はい|  
 |警告<sup>2</sup> (SSRS 2016) |はい||||はい|  
 |Power View<sup>2</sup> (SSRS 2016) |はい||||はい| 
-|コメント<sup>3</sup> |はい|はい|はい|はい|はい|  
+|コメント<sup>3</sup> |はい|Yes|Yes|Yes|はい|  
 
  <sup>1</sup> SQL Server Reporting Services (SSRS) でサポートされるデータ ソースの詳細については、「[Reporting Services でサポートされるデータ ソース (SSRS)](../reporting-services/report-data/data-sources-supported-by-reporting-services-ssrs.md)」を参照してください。  
   
@@ -73,7 +73,7 @@ Evaluation Edition および Developer Edition でサポートされている機
 > SQL Server Express with Tools および SQL Server Express では、SQL Server Reporting Services はサポートされていません。
   
 ## <a name="edition-requirements-for-the-report-server-database"></a>レポート サーバー データベースのエディションの要件
- レポート サーバー データベースを作成するときは、SQL Server [!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] のすべてのエディションでデータベースをホストできるわけではないことに注意してください。 次の表に、SQL Server [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] の特定のエディションで使用できる [!INCLUDE[ssDE](../includes/ssde-md.md)] のエディションを示します。  
+ レポート サーバー データベースを作成するときは、[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] のすべてのエディションでデータベースをホストできるわけではないことに注意してください。 次の表に、SQL Server [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)] の特定のエディションで使用できる [!INCLUDE[ssDE](../includes/ssde-md.md)] のエディションを示します。  
   
 |[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Reporting Services のエディション|データベースをホストするために使用するデータベース エンジン インスタンスのエディション|  
 |----------------------------------------------------------------------|---------------------------------------------------------------------------|  
@@ -89,7 +89,7 @@ Evaluation Edition および Developer Edition でサポートされている機
 |ツール名|Enterprise|Standard|Web|Express with Advanced Services|Developer|  
 |---------------|----------------|--------------|------------------------|-------------|---------------| 
 | Power BI Report Server、 **.pbix** 用に最適化された Power BI Desktop | はい (ソフトウェア アシュアランスあり) | | | | はい |
-|[!INCLUDE[ssRBnoversion](../includes/ssrbnoversion.md)]、 **.rdl**、 **.rds**|はい|はい|はい|はい|はい|  
+|[!INCLUDE[ssRBnoversion](../includes/ssrbnoversion.md)]、 **.rdl**、 **.rds**|はい|Yes|Yes|Yes|はい|  
 |[!INCLUDE[SS_MobileReptPub_Long](../includes/ss-mobilereptpub-long.md)]、 **.rsmobile**|はい||||はい|  
 |モバイル デバイス (iOS、Windows 10、Android) 用 Power BI アプリ、 **.rsmobile**|はい||||はい|  
   

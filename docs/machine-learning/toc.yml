@@ -259,9 +259,9 @@ items:
       - name: 配置
         items:
           - name: ストアド プロシージャを使用して運用化する
-            href: ../machine-learning/r/operationalizing-your-r-code.md
-          - name: SQL Server 用の R コードを変換する
-            href: ../machine-learning/r/converting-r-code-for-use-in-sql-server.md
+            href: ../machine-learning/deploy/operationalizing-your-r-code.md
+          - name: SQL Server の R/Python コードを変更する
+            href: ../machine-learning/deploy/modify-r-python-code-to-run-in-sql-server.md
       - name: 予測
         items:
           - name: PREDICT T-SQL でのネイティブ スコアリング
@@ -370,8 +370,6 @@ items:
         href: ../sql-server/sql-server-2014-release-notes.md?toc=../toc.json
       - name: トラブルシューティング
         items:
-          - name: トラブルシューティングの概要
-            href: ../machine-learning/troubleshooting/machine-learning-troubleshooting-overview.md
           - name: 既知の問題
             href: ../machine-learning/troubleshooting/known-issues-for-sql-server-machine-learning-services.md
           - name: トラブルシューティングのためにデータを収集する

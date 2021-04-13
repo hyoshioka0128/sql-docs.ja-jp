@@ -23,13 +23,13 @@ author: dzsquared
 ms.author: drskwier
 ms.reviewer: maghan
 ms.custom: seo-lt-2019
-ms.date: 3/16/2021
-ms.openlocfilehash: 671e531cbcd63ee9774cb02d5548c8e1075be84d
-ms.sourcegitcommit: efce0ed7d1c0ab36a4a9b88585111636134c0fbb
+ms.date: 4/9/2021
+ms.openlocfilehash: 5d8f10c86aa21bfc0ccbb36ddad11cfee027fc3a
+ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104833852"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107298866"
 ---
 # <a name="download-sql-server-management-studio-ssms"></a>SQL Server Management Studio (SSMS) のダウンロード
 
@@ -38,9 +38,6 @@ ms.locfileid: "104833852"
 SQL Server Management Studio (SSMS) は、SQL Server から Azure SQL Database まで、SQL インフラストラクチャを管理するための統合環境です。 SSMS には、SQL Server とデータベースのインスタンスを構成、監視、および管理するためのツールが備わっています。 SSMS を使用して、ご利用のアプリケーションで使われるデータ層コンポーネントを配置、監視、アップグレードしたり、クエリとスクリプトを作成したりすることができます。
 
 SSMS を使用すると、データベースとデータ ウェアハウスがローカル コンピューターやクラウドなど、どこにあっても、クエリ、設計、および管理ができます。
-
-> [!NOTE]
-> 次のフィードバック アンケートを完了して、使用している Azure SQL 製品の未来を形成します: https://aka.ms/AzureSQLSurvey
 
 ## <a name="download-ssms"></a>SSMS のダウンロード
 

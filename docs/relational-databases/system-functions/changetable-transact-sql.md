@@ -20,12 +20,12 @@ ms.assetid: d405fb8d-3b02-4327-8d45-f643df7f501a
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 2de815ad24a41604f18d0083a800df3a56feb021
-ms.sourcegitcommit: ca81fc9e45fccb26934580f6d299feb0b8ec44b7
+ms.openlocfilehash: 42c0327cd409f4a9649f147e1be6536de85ecaa0
+ms.sourcegitcommit: 8050df4db7a3a76e4fa03e5c79dcb49031defed7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102186634"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107210940"
 ---
 # <a name="changetable-transact-sql"></a>CHANGETABLE (Transact-SQL)
 [!INCLUDE [SQL Server SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -73,7 +73,7 @@ CHANGETABLE (
  主キーの値を指定します。 複数の主キー列がある場合は、 *column_name* リストに表示される列と同じ順序で値を指定する必要があります。  
 
  FORCESEEK   
- **適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (以降 [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] SP2 CU16 [!INCLUDE[sssql19-md](../../includes/sssql19-md.md)] )、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 、および [!INCLUDE[ssSDSMIfull](../../includes/sssdsmifull-md.md)]    
+ **適用対象:** [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] (以降 [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] SP2 CU16 and [!INCLUDE[sssql19-md](../../includes/sssql19-md.md)] CU9)、 [!INCLUDE[ssSDSfull](../../includes/sssdsfull-md.md)] 、および [!INCLUDE[ssSDSMIfull](../../includes/sssdsmifull-md.md)]    
  
  *Table_name* にアクセスするためにシーク操作を強制的に使用する省略可能なパラメーター。 多くの行が変更されていない場合は、 *table_name* にアクセスするためにスキャン操作を使用することもできます。 スキャン操作でパフォーマンスの問題が発生した場合は、パラメーターを使用し `FORCESEEK` ます。
 
@@ -112,7 +112,7 @@ CHANGETABLE (
 |SYS_CHANGE_CONTEXT|**varbinary (128)**|INSERT、UPDATE、DELETE の各ステートメントの一部として WITH 句を使用することによってオプションで指定できる変更のコンテキスト情報です。|  
 |\<primary key column value>|ユーザーテーブルの列と同じ|追跡対象テーブルの主キー値。 これらの値は、ユーザーテーブル内の各行を一意に識別します。|  
   
-## <a name="remarks"></a>解説  
+## <a name="remarks"></a>注釈  
  CHANGETABLE 関数は、クエリの FROM 句の中でテーブルとして使用されるのが一般的です。  
   
 ## <a name="changetablechanges"></a>CHANGETABLE(CHANGES...)  
@@ -201,7 +201,7 @@ WHERE
         0);  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [変更追跡関数 &#40;Transact-SQL&#41;](../../relational-databases/system-functions/change-tracking-functions-transact-sql.md)   
  [データ変更の追跡 &#40;SQL Server&#41;](../../relational-databases/track-changes/track-data-changes-sql-server.md)   
  [CHANGE_TRACKING_IS_COLUMN_IN_MASK &#40;Transact-sql&#41;](../../relational-databases/system-functions/change-tracking-is-column-in-mask-transact-sql.md)   
