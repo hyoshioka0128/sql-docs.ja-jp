@@ -41,7 +41,7 @@ Azure Data Studio には、Git ソース管理マネージャー (SCM) が付属
 
 ## <a name="working-with-git-repositories"></a>Git リポジトリの操作
 
-Azure Data Studio は、VS Code から Git 実装を継承していますが、追加の SCM プロバイダーについては、現在サポートしていません。 リポジトリを開くか、初期化した後に Git を操作する方法の詳細については、[VS コードでの Git のサポート](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support)に関する記事を参照してください。
+Azure Data Studio は、VS Code から Git 実装を継承していますが、追加の SCM プロバイダーについては、現在サポートしていません。 リポジトリを開くか、初期化した後に Git を操作する方法の詳細については、[VS Code での Git のサポート](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support)に関する記事を参照してください。
 
 ## <a name="additional-resources"></a>その他のリソース
 
