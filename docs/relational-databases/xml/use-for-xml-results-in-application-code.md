@@ -17,14 +17,14 @@ helpviewer_keywords:
 - XML data islands [SQL Server]
 - data islands [SQL Server]
 ms.assetid: 41ae67bd-ece9-49ea-8062-c8d658ab4154
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 430c7118d4185f123973c0ca7b00b02fb8ba39a9
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: fa42eca0883961376dbab3707b61c7d31135459e
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85775543"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107487135"
 ---
 # <a name="use-for-xml-results-in-application-code"></a>アプリケーション コードでの FOR XML の結果の使用
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -205,7 +205,7 @@ ms.locfileid: "85775543"
   
 1.  指定した接続文字列変数 strConn の内容に基づいて SQL Server への接続を開くために、**SqlConnection** が使用されます。  
   
-2.  次に、データ アダプターとして**SqlDataAdapter** が使用されます。また、FOR XML クエリを実行するために、SQL 接続および指定した SQL クエリ文字列を使用します。  
+2.  次に、データ アダプターとして **SqlDataAdapter** が使用されます。また、FOR XML クエリを実行するために、SQL 接続および指定した SQL クエリ文字列を使用します。  
   
 3.  クエリの実行後、 **SqlDataAdapter.Fill** メソッドが呼び出され、FOR XML クエリの出力をデータセットに設定するために、 **DataSet** のインスタンスである MyDataSet が渡されます。  
   

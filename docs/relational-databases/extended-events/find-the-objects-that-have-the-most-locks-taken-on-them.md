@@ -13,16 +13,16 @@ helpviewer_keywords:
 - extended events [SQL Server], locks
 - objects [SQL Server], locks
 ms.assetid: fcbadbda-c91c-43f0-a1b5-601e40110e07
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 ms.custom: seo-lt-2019
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 522017d6ced6039cd7e5b9a30cf60404eee9249a
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: ec4ecbd7df48a0f182559cbd6e7a0538c302d865
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97465503"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107490044"
 ---
 # <a name="find-the-objects-that-have-the-most-locks-taken-on-them"></a>ロックの大半を取得しているオブジェクトを見つける
 
@@ -106,7 +106,7 @@ ms.locfileid: "97465503"
 > [!NOTE]
 > 上記の Transact-SQL コードの例は、オンプレミスの SQL Server で実行されますが、"_Azure SQL Database では完全には実行されない_" 可能性があります。 この例で、`ADD EVENT sqlserver.lock_acquired` など、イベントに直接関係している中核の部分は、Azure SQL Database でも機能します。 ただし、`sys.server_event_sessions` などの予備項目は、例を実行するために `sys.database_event_sessions` のように、対応する Azure SQL Database に編集する必要があります。
 > オンプレミスの SQL Server と Azure SQL Database のこれらの軽微な違いの詳細については、次の記事を参照してください。
-> - [Azure SQL Database での拡張イベント](/azure/sql-database/sql-database-xevent-db-diff-from-svr#transact-sql-differences)
+> - [Azure SQL データベースでの拡張イベント](/azure/sql-database/sql-database-xevent-db-diff-from-svr#transact-sql-differences)
 > - [拡張イベントをサポートするシステム オブジェクト](xevents-references-system-objects.md)
 
 上記の Transact-SQL スクリプトのステートメント実行が完了すると、クエリ エディターの **[結果]** タブに次の列が表示されます。

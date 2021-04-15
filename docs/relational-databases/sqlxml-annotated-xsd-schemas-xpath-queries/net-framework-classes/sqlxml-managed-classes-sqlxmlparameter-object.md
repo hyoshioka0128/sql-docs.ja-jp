@@ -32,7 +32,7 @@ ms.locfileid: "107491724"
  Name  
  パラメーターの名前。 コマンドをパラメーターとして渡すことができます。 SqlXmlCommand オブジェクトの CreateParameter メソッドを呼び出すと、parameter オブジェクトが作成されます。  
   
- [値]  
+ 値  
  パラメーターの値。 実際のサンプルについては、「 [SQL クエリの実行 &#40;SQLXML マネージクラス&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/net-framework-classes/executing-sql-queries-sqlxml-managed-classes.md)」を参照してください。  
   
 ## <a name="see-also"></a>参照  

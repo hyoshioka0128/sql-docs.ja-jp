@@ -20,14 +20,14 @@ helpviewer_keywords:
 - XML schema collections [SQL Server]
 - schema collections [SQL Server], about XML schema collections
 ms.assetid: 659d41aa-ccec-4554-804a-722a96ef25c2
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 2db7f06f0e68b1a03bf4b2a205666fcf90a58d32
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: 15173fe3de1f3f82c5e70d0e5d8b302e380016d9
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85729772"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107486706"
 ---
 # <a name="xml-schema-collections-sql-server"></a>XML スキーマ コレクション (SQL Server)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -43,7 +43,7 @@ ms.locfileid: "85729772"
   
  クエリ処理エンジンでも、型の確認、クエリの最適化、およびデータの変更にスキーマが使用されます。  
   
- また SQL Server では、型指定された **xml**の場合、XML インスタンスを検証するために関連付けられた XML スキーマ コレクションが使用されます。 XML インスタンスがスキーマを使ってコンパイルされると、そのデータベースはインスタンスを型情報と共にシステムに格納できます。 それ以外の場合は、インスタンスを拒否します。  
+ また SQL Server では、型指定された **xml** の場合、XML インスタンスを検証するために関連付けられた XML スキーマ コレクションが使用されます。 XML インスタンスがスキーマを使ってコンパイルされると、そのデータベースはインスタンスを型情報と共にシステムに格納できます。 それ以外の場合は、インスタンスを拒否します。  
   
  固有の関数 XML_SCHEMA_NAMESPACE を使用して、データベースに格納されているスキーマ コレクションを取得できます。 詳細については、「 [格納されている XML スキーマ コレクションの表示](../../relational-databases/xml/view-a-stored-xml-schema-collection.md)」を参照してください。  
   
@@ -191,7 +191,7 @@ WHERE    XSC.name = 'myCollection'
 SELECT XML_SCHEMA_NAMESPACE (N'dbo', N'myCollection')  
 ```  
   
- **XML_SCHEMA_NAMESPACE()** の 3 番目の引数として対象になる名前空間を指定することで、コレクション内の個別の XML スキーマを **xml**データ型のインスタンスとして取得できます。 次の例を参照してください。  
+ **XML_SCHEMA_NAMESPACE()** の 3 番目の引数として対象になる名前空間を指定することで、コレクション内の個別の XML スキーマを **xml** データ型のインスタンスとして取得できます。 次の例を参照してください。  
   
 ### <a name="example-output-a-specified-schema-from-an-xml-schema-collection"></a>例:XML スキーマ コレクションからの指定したスキーマの出力  
  次のステートメントを実行すると、リレーショナル スキーマ dbo の XML スキーマ コレクション "myCollection" から、"_架空の_" ターゲット名前空間 https/\/www.microsoft.com/was-books で XML スキーマが出力されます。  

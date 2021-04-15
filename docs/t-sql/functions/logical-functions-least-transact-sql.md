@@ -2,7 +2,7 @@
 description: 論理関数 - LEAST (Transact-SQL)
 title: LEAST (Transact-SQL)
 ms.custom: ''
-ms.date: 04/09/2021
+ms.date: 04/14/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.technology: t-sql
@@ -17,12 +17,12 @@ helpviewer_keywords:
 author: jmsteen
 ms.author: josteen
 ms.reviewer: wiassaf
-ms.openlocfilehash: 3cf385d37d416032c197ce7205c961dd4d53f84c
-ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
+ms.openlocfilehash: ec8ac611a7d2903a47dc9a800843c5f6f97b6ec8
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107300498"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107492448"
 ---
 # <a name="logical-functions---least-transact-sql"></a>論理関数 - LEAST (Transact-SQL)
 [!INCLUDE [asdb-asdbmi](../../includes/applies-to-version/asdb-asdbmi.md)]
@@ -80,14 +80,14 @@ LEAST ( expression1 [ ,...expressionN ] )
  戻り値の型のスケールは、最も優先順位の高いデータ型の引数のスケールによって決まります。 
  
 ```sql 
-SELECT LEAST ( '6.62', 3.1415, N'7' ) AS Least; 
+SELECT LEAST ( '6.62', 3.1415, N'7' ) AS LeastVal; 
 GO 
 ```  
   
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
   
 ```  
-Least 
+LeastVal 
 ------- 
  3.1415 
 
@@ -99,14 +99,14 @@ Least
  次の例では、入力される文字定数のリストから最小値が返されます。  
   
 ```sql  
-SELECT LEAST ('Glacier', N'Joshua Tree', 'Mount Rainier') AS Least;  
+SELECT LEAST ('Glacier', N'Joshua Tree', 'Mount Rainier') AS LeastString;  
 GO  
 ```  
   
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
   
 ```  
-Least 
+LeastString 
 ------------- 
 Glacier 
 
@@ -122,8 +122,8 @@ USE AdventureWorks2019;
 GO 
 
 SELECT sp.SalesQuota, sp.SalesYTD, sp.SalesLastYear 
-      , LEAST(sp.SalesQuota, sp.SalesYTD, sp.SalesLastYear) AS Least 
-FROM sales.SalesPerson AS sp 
+      , LEAST(sp.SalesQuota, sp.SalesYTD, sp.SalesLastYear) AS Sales 
+FROM Sales.SalesPerson AS sp 
 WHERE sp.SalesYTD < 3000000; 
 GO  
   
@@ -132,7 +132,7 @@ GO
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
   
 ```  
-SalesQuota            SalesYTD              SalesLastYear         Least 
+SalesQuota            SalesYTD              SalesLastYear         Sales 
 --------------------- --------------------- --------------------- --------------------- 
                  NULL           559697.5639                 .0000                 .0000 
           250000.0000          1453719.4653          1620276.8966           250000.0000 
@@ -155,19 +155,19 @@ SalesQuota            SalesYTD              SalesLastYear         Least
  この例では、`LEAST` を使用して、`WHERE` 句の述語内にあるローカル変数のリストの最小値を決定します。 
   
 ```sql  
-CREATE TABLE studies (    
-    Variable varchar(10) NOT NULL,    
+CREATE TABLE dbo.studies (    
+    VarX varchar(10) NOT NULL,    
     Correlation decimal(4, 3) NULL 
 ); 
 
-INSERT INTO studies VALUES ('Var1', 0.2), ('Var2', 0.825), ('Var3', 0.61); 
+INSERT INTO dbo.studies VALUES ('Var1', 0.2), ('Var2', 0.825), ('Var3', 0.61); 
 GO 
 
 DECLARE @PredictionA DECIMAL(2,1) = 0.7;  
 DECLARE @PredictionB DECIMAL(3,1) = 0.65;  
 
-SELECT Variable, Correlation  
-FROM studies 
+SELECT VarX, Correlation  
+FROM dbo.studies 
 WHERE Correlation < LEAST(@PredictionA, @PredictionB); 
 GO 
 ```  
@@ -175,7 +175,7 @@ GO
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
   
 ```  
-Variable   Correlation 
+VarX   Correlation 
 ---------- ----------- 
 Var1              .200 
 Var3              .610 
@@ -188,18 +188,18 @@ Var3              .610
  この例では、`LEAST` を使用して、列、定数、および変数を含むリストの最小値を決定します。 
   
 ```sql  
-CREATE TABLE products (    
-    prod_id int IDENTITY(1,1),    
+CREATE TABLE dbo.products (    
+    prod_id INT IDENTITY(1,1),    
     listprice smallmoney NULL 
 ); 
 
-INSERT INTO products VALUES (14.99), (49.99), (24.99); 
+INSERT INTO dbo.products VALUES (14.99), (49.99), (24.99); 
 GO 
 
 DECLARE @PriceX smallmoney = 19.99;  
 
 SELECT LEAST(listprice, 40, @PriceX) as LeastPrice  
-FROM products;
+FROM dbo.products;
 GO 
 ```  
   

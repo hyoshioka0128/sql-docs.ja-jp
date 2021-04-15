@@ -11,18 +11,18 @@ ms.topic: conceptual
 helpviewer_keywords:
 - CDATA directive
 ms.assetid: 949071e6-787f-480d-bb86-3ac16a027af1
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 1e0c768d68c1bf7bb8d5c08b3967b4172fbdca36
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: 3f6c23fc5c42bd9e04d37b1e193660f92f003288
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85632623"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107488598"
 ---
 # <a name="example-specifying-the-cdata-directive"></a>例:CDATA ディレクティブの指定
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
-  **CDATA**ディレクティブが指定されている場合、含まれているデータはエンティティとしてエンコードされず、CDATA セクションに配置されます。 **CDATA** 属性は、無名でなければなりません。  
+  **CDATA** ディレクティブが指定されている場合、含まれているデータはエンティティとしてエンコードされず、CDATA セクションに配置されます。 **CDATA** 属性は、無名でなければなりません。  
   
  次のクエリでは、製品モデルの概要説明を CDATA セクションに配置しています。  
   
