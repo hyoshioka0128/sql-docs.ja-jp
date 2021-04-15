@@ -11,17 +11,17 @@ f1_keywords:
 - sql11.ssms.XeNewEventSession.Targets.f1
 - sql11.ssms.XeNewEventSession.Advanced.f1
 ms.assetid: 7bb78b25-3433-4edb-a2ec-c8b2fa58dea1
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 ms.reviewer: maghan
 ms.date: 04/16/2020
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 37fdafe41500e8b146aed8e9840ee3027cc86281
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 9459b2a2b01670a0c6201586597ba02eb1218853
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97481383"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107492398"
 ---
 # <a name="quickstart-extended-events-in-sql-server"></a>クイック スタート:SQL Server の拡張イベント
 
@@ -250,7 +250,7 @@ event_session_address  5
 event_session_id       5
 is_trigger_event       4
 trace_event_id         3
-**_/
+***/
 ```
 
 <a name="select-the-full-results-xml-37"/>
@@ -260,7 +260,7 @@ trace_event_id         3
 SSMS で、次の T-SQL SELECT を実行し、各行が 1 つのイベントの発生に関するデータを提供する結果を返します。 CAST AS XML は、結果を見やすく表示します。
 
 > [!NOTE]
-> イベント システムによって常に、ユーザーが指定した _.xel* event_fil ファイル名に long 型の数値が付加されます。 ファイルから次の SELECT を実行するには、事前にシステムによって付与された完全名をコピーして、SELECT 内に貼り付ける必要があります。
+> イベント システムは常に指定した *.xel* event_file ファイル名に long 型の値を付加します。 ファイルから次の SELECT を実行するには、事前にシステムによって付与された完全名をコピーして、SELECT 内に貼り付ける必要があります。
 
 ```sql
 SELECT

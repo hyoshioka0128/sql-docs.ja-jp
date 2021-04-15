@@ -12,15 +12,15 @@ helpviewer_keywords:
 - annotations [SQLXML]
 - DiffGrams [SQLXML], about DiffGrams
 ms.assetid: 1902d67f-baf3-46e6-a36c-b24b5ba6f8ea
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 66a58dfb19cf8f53f775bac663d5ba3e6147711b
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 187c3bab080050c518f34e4c184849ce1b2d6e95
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97414985"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107490540"
 ---
 # <a name="introduction-to-diffgrams-in-sqlxml-40"></a>SQLXML 4.0 の DiffGram の概要
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -62,7 +62,7 @@ ms.locfileid: "97414985"
 ## <a name="diffgram-annotations"></a>DiffGram 注釈  
  これらの注釈は、DiffGram 名前空間 **"urn: schema-01"** で定義されています。  
   
- **id**  
+ **ID**  
  この属性は、とブロックの要素をペアにするために使用され **\<before>** **\<DataInstance>** ます。  
   
  **hasChanges**  

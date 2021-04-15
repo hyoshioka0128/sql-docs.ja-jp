@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 5bcb4df7-6df3-4f2b-9207-b97b5addf2a6
 author: MashaMSFT
 ms.author: mathoma
-ms.openlocfilehash: 8352706512e71a5cba3a0b22befe2b7416d276bc
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 6938d04f853f61fbb07a9cde443e286ba6bc5e98
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99209348"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107491234"
 ---
 # <a name="sp_change_log_shipping_secondary_primary-transact-sql"></a>sp_change_log_shipping_secondary_primary (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -56,7 +56,7 @@ sp_change_log_shipping_secondary_primary
   
 `[ @backup_destination_directory = ] 'backup_destination_directory'` バックアップファイルのコピー先となるセカンダリサーバー上のディレクトリ。 *backup_destination_directory* は **nvarchar (500)** であり、NULL にすることはできません。  
   
-`[ @file_retention_period = ] 'file_retention_period'` 履歴を保持する時間の長さを分単位で指定します。 *history_retention_period* は **int**,、既定値は NULL です。 値が指定されていない場合は、14420の値が使用されます。  
+`[ @file_retention_period = ] 'file_retention_period'` バックアップファイルを保持する時間の長さを分単位で指定します。 *file_retention_period* は **int**,、既定値は NULL です。 値が指定されていない場合は、14420の値が使用されます。  
   
 `[ @monitor_server_security_mode = ] 'monitor_server_security_mode'` 監視サーバーへの接続に使用されるセキュリティモード。  
   

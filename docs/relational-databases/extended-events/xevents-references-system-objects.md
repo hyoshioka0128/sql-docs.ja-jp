@@ -7,15 +7,15 @@ ms.prod_service: database-engine, sql-database
 ms.reviewer: jukoesma
 ms.technology: xevents
 ms.topic: reference
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: ef31edf367eacd41135bb4db9a58cd8ba4950de8
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 901f06bd930064810d8c186ba8e5c92a1c21d1c7
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100346720"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107492355"
 ---
 # <a name="system-objects-that-support-extended-events"></a>拡張イベントをサポートするシステム オブジェクト
 
@@ -65,7 +65,7 @@ ms.locfileid: "100346720"
 
 ## <a name="azure-sql-database-and-extended-events"></a>Azure SQL Database と拡張イベント
 
-- [Azure SQL Database での拡張イベント](/azure/sql-database/sql-database-xevent-db-diff-from-svr)
+- [Azure SQL データベースでの拡張イベント](/azure/sql-database/sql-database-xevent-db-diff-from-svr)
 
 - [sys.database_event_session_targets (Azure SQL Database)](../system-catalog-views/sys-database-event-session-targets-azure-sql-database.md)
 

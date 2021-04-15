@@ -6,16 +6,16 @@ author: cloudmelon
 ms.author: melqin
 ms.reviewer: mikeray
 ms.metadata: seo-lt-2019
-ms.date: 12/13/2019
+ms.date: 04/13/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 9d475edb720d329d5fb52f7bd75c055fc3a8494a
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 7e7489166a8fca7476b1ff756bfedcdc4e933629
+ms.sourcegitcommit: 1d49ec23d994b225e7f4b5179e7a0f561a8ff63c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100047962"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107387626"
 ---
 # <a name="how-to-deploy-an-app-on-sql-server-big-data-clusters"></a>SQL Server ビッグ データ クラスターにアプリを展開する方法
 
@@ -23,23 +23,9 @@ ms.locfileid: "100047962"
 
 アプリケーションを SQL Server ビッグ データ クラスター (BDC) に展開すると、クラスターの計算機能などの多くの利点を活用できるだけでなく、クラスターで使用可能なデータにアクセスすることもできます。 アプリはデータが存在するのと同じクラスターに配置されるため、パフォーマンスが劇的に向上します。
 
-この記事では、SQL Server ビッグ データ クラスター内でアプリケーションとして R および Python スクリプトを展開して管理する方法について説明します。
+アプリケーションは [!INCLUDE [azure-data-cli-azdata](../includes/azure-data-cli-azdata.md)] を使用してデプロイおよび管理されます。 
 
-## <a name="whats-new-and-improved"></a>新機能と強化された機能
-
-- クラスターとアプリを管理する 1 つのコマンドライン ユーティリティ。
-- アプリの展開が簡単になり、さらに仕様ファイルを細かく制御できるようになりました。
-- ホストされるアプリケーションの種類が増えました (SQL Server Integration Services (SSIS) と MLeap)。
-- アプリケーションの展開を管理する [Visual Studio Code 拡張機能](app-deployment-extension.md)。
-
-アプリケーションは [!INCLUDE [azure-data-cli-azdata](../includes/azure-data-cli-azdata.md)] を使用してデプロイおよび管理されます。 この記事では、コマンド ラインからアプリを展開する方法の例を示します。 Visual Studio Code でこれを使用する方法については、[Visual Studio Code 拡張機能](app-deployment-extension.md)に関する記事を参照してください。
-
-サポートされているアプリの種類は次のとおりです。
-
-- **Python** - データ エンジニア、データ サイエンティスト、DevOps エンジニアなどのさまざまなペルソナにとって最も人気のある一般的なプログラミング言語の 1 つです。データ ラングリング、自動化、プロトタイプ作成などのさまざまなシナリオがある程度サポートされています。また、さまざまなビジネス要件に対応するために、Flask や Django などの Web 開発フレームワークと連携して機能するエンタープライズ レベルのアプリケーションのプログラミングに使用されることが増えています。  
-- **R** - データ エンジニアリングおよびデータ サイエンティスト向けのもう 1 つの一般的なプログラミング言語です。 Python と比較すると、R は統計的計算やグラフィックに特化したプログラミング言語です。  
-- **SQL Server Integration Services (SSIS)** - ETL パッケージを構築およびデバッグするための高パフォーマンスのデータ統合ソリューションです。データ変換サービスパッケージ ファイル形式 (DTSX) が使用されます。これは、データベース間でのデータの移行と外部データ ソースの統合の処理手順が格納された XML ベースのファイル形式です。   
-- **MLeap** - 共通のシリアル化形式であり、SparkML パイプラインなどを実行およびシリアル化するために必要なすべてのものが提供されます。これを実行時に読み込んで、ほぼリアルタイムでデータの近くで ML スコアリング タスクを処理できます。  
+この記事では、SQL Server ビッグ データ クラスター内のコマンド ラインからアプリを展開する方法の例を示します。 Visual Studio Code でこれを使用する方法については、[Visual Studio Code 拡張機能](app-deployment-extension.md)に関する記事を参照してください。
 
 ## <a name="prerequisites"></a>前提条件
 

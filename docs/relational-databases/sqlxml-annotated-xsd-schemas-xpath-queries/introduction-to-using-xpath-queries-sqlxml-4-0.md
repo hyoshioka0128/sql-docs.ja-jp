@@ -12,16 +12,16 @@ helpviewer_keywords:
 - W3C XPath specification
 - XPath queries [SQLXML], functionality
 ms.assetid: 01050a8e-0ccc-4a02-a4eb-b48be5c3f4f3
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 ms.custom: seo-lt-2019
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 2e69adfb9fcd75592f25595c70741864ba4493af
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 2efd6f59cf0a853fbb357c930ba24d6e4889a2e2
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97415051"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107491831"
 ---
 # <a name="introduction-to-using-xpath-queries-sqlxml-40"></a>XPath クエリの使用について (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -64,7 +64,7 @@ ms.locfileid: "97415051"
   
      W3C XPath 仕様では、エラー状態は定義されていません。 ノードの選択に失敗した XPath クエリでは、空のノード セットが返されます。 SQLXML 4.0 では、さまざまな種類のエラー メッセージが返されます。  
   
--   **ドキュメントの順序**  
+-   **ドキュメント順**  
   
      SQL XML 4.0 では、ドキュメント序数が必ずしも決まっていません。 そのため、ドキュメントの順序 ( **次の例** を含む) を使用する数値述語と軸は実装されていません。  
   
@@ -92,7 +92,7 @@ ms.locfileid: "97415051"
 ## <a name="supported-functionality"></a>サポートされる機能  
  次の表は、SQLXML 4.0 で実装されている XPath 言語の機能です。  
   
-|特徴|Item|サンプル クエリへのリンク|  
+|機能|Item|サンプル クエリへのリンク|  
 |-------------|----------|----------------------------|  
 |軸|**属性**、 **子**、 **親**、および **自己** 軸|[XPath クエリでの軸の指定 &#40;SQLXML 4.0&#41;](../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/samples/specifying-axes-in-xpath-queries-sqlxml-4-0.md)|  
 |連続する述語や入れ子になった述語など、ブール値を使用する述語||[XPath クエリでの算術演算子の指定 &#40;SQLXML 4.0&#41;](../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/samples/specifying-arithmetic-operators-in-xpath-queries-sqlxml-4-0.md)|  
@@ -106,7 +106,7 @@ ms.locfileid: "97415051"
 ## <a name="unsupported-functionality"></a>サポートされていない機能  
  次の表は、SQLXML 4.0 で実装されていない XPath 言語の機能です。  
   
-|特徴|Item|  
+|機能|Item|  
 |-------------|----------|  
 |軸|**先祖**、 **先祖、また** は self、 **子孫**、 **子孫、または自己 (//)**、 **次** の **兄弟**、 **名前空間**、 **先行**、 **前の兄弟**|  
 |数値を使用する述語||  
