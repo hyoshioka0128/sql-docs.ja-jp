@@ -9,12 +9,12 @@ ms.author: drskwier
 ms.reviewer: maghan
 ms.custom: ''
 ms.date: 12/15/2020
-ms.openlocfilehash: b49359ea35a5fbd0f8ffd51606c0ae17f14c9eac
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 58375b6512c259d07dd25fb10d539421162997c0
+ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100048406"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107298725"
 ---
 # <a name="sql-database-projects-extension-preview"></a>SQL Database プロジェクトの拡張機能 (プレビュー)
 
@@ -23,21 +23,20 @@ SQL Database プロジェクトの拡張機能 (プレビュー) は、プロジ
 
 ## <a name="features"></a>特徴
 
-1. 接続されたデータベースからプロジェクトを作成します。
-2. 空のプロジェクトを新しく作成します。
-3. [Azure Data Studio](sql-database-project-extension-getting-started.md) または [SQL Server Data Tools](../../ssdt/sql-server-data-tools.md) で以前に作成されたプロジェクトを開きます。
-4. プロジェクトのテーブル、ビュー、ストアド プロシージャ、またはカスタム スクリプトを追加または削除してプロジェクトを編集します。
-5. フォルダー内のファイルまたはスクリプトを整理します。
-6. システム データベースまたはユーザー DACPAC への参照を追加します。
-7. 1 つのプロジェクトをビルドします。
-8. 1 つのプロジェクトをデプロイします。
-9. デプロイ プロファイルから接続の詳細 (SQL Windows 認証) と SQLCMD 変数を読み込みます。
+- 新しい空のプロジェクト、または接続されたデータベースからプロジェクトを作成します。
+- [Azure Data Studio](sql-database-project-extension-getting-started.md) または [SQL Server Data Tools](../../ssdt/sql-server-data-tools.md) で以前に作成されたプロジェクトを開きます。
+- プロジェクトでオブジェクト (テーブル、ビュー、ストアド プロシージャ)、またはカスタム スクリプトを追加または削除してプロジェクトを編集します。
+- フォルダー内のファイルまたはスクリプトを整理します。
+- システム データベースまたはユーザー DACPAC への参照を追加します。
+- 1 つのプロジェクトをビルドします。
+- 1 つのプロジェクトをデプロイします。
+- デプロイ プロファイルから接続の詳細 (SQL Windows 認証) と SQLCMD 変数を読み込みます。
 
 Azure Data Studio での SQL Database Projects 拡張機能の概要については、次の 10 分間の短いビデオをご覧ください。
 
 > [!VIDEO https://channel9.msdn.com/Shows/Data-Exposed/Build-SQL-Database-Projects-Easily-in-Azure-Data-Studio/player?WT.mc_id=dataexposed-c9-niner]
 
-## <a name="install-the-sql-database-projects-extension"></a>SQL Database プロジェクトの拡張機能をインストールする
+## <a name="installation"></a>インストール
 
 1. 拡張機能マネージャーを開いて、使用可能な拡張機能にアクセスします。  そのためには、拡張機能アイコンを選択するか、 **[表示]** メニューの **[拡張機能]** を選択します。
 2. 拡張機能の検索ボックスに名前の一部または全部を入力して、"*SQL Database プロジェクト*" の拡張機能を特定します。 使用可能な拡張機能を選択すると、その詳細が表示されます。
@@ -53,6 +52,19 @@ Azure Data Studio での SQL Database Projects 拡張機能の概要について
 
    > [!NOTE]
    > すべての機能を使用するには、SQL Database プロジェクトの拡張機能と共に [Schema Compare の拡張機能](schema-compare-extension.md)をインストールすることをお勧めします。
+
+## <a name="net-core-sdk"></a>.NET Core SDK
+プロジェクトのビルド機能には .NET Core SDK が必要であり、拡張機能でそれを検出できない場合は、.NET Core SDK をインストールするように求められます。  .NET Core SDK (v3.1 以降) は、[https://dotnet.microsoft.com/download/dotnet-core/3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1) からダウンロードしてインストールできます。
+
+以前にインストールした .NET Core SDK は、最低限必要なバージョンを下回る可能性があり、SQL Database プロジェクトの拡張機能では使用できません。  .NET SDK の[現在インストールされているバージョンを確認する](https://docs.microsoft.com/dotnet/core/install/how-to-detect-installed-versions)場合は、ターミナルを開き、次のコマンドを実行します。
+
+```dotnetcli
+dotnet --list-sdks
+```
+
+サポートされていない .NET Core SDK バージョンでは、次のようなエラー メッセージが発生する可能性があります。
+- `error MSB4018: The "SqlBuildTask" task failed unexpectedly.`
+- ` error MSB4018: System.TypeInitializationException: The type initializer for 'SqlSchemaModelStaticState' threw an exception. ---> System.IO.FileNotFoundException: Could not load file or assembly 'System.Runtime, Version=4.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'. The system cannot find the file specified. [c:\Users\ .sqlproj]_` (存在しないファイルのリンクでは、閉じ角かっこが一致しません)
 
 ## <a name="known-limitations"></a>既知の制限事項
 

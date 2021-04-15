@@ -13,12 +13,12 @@ ms.prod_service: linux
 ms.assetid: 82737f18-f5d6-4dce-a255-688889fdde69
 monikerRange: '>= sql-server-linux-2017 || >= sql-server-2017'
 zone_pivot_groups: cs1-command-shell
-ms.openlocfilehash: d72587194cae2d7f45ffd02610be614db359a087
-ms.sourcegitcommit: 14f2051d329b69a7b5ff7bce1d136cf7f25bb219
+ms.openlocfilehash: 4d2dccb2567d374f5ca5011f973adfcdc5b3067b
+ms.sourcegitcommit: d8cbbeffa3faa110e02056ff97dc7102b400ffb3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "106232169"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107003849"
 ---
 # <a name="quickstart-run-sql-server-container-images-with-docker"></a>クイック スタート:Docker を使用して SQL Server コンテナー イメージを実行する
 [!INCLUDE [SQL Server - Linux](../includes/applies-to-version/sql-linux.md)]
@@ -39,7 +39,8 @@ ms.locfileid: "106232169"
 ::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
 
 > [!NOTE]
-> SQL Server 2019 CU3 以降では、Ubuntu 18.04 がサポートされています。
+> - SQL Server 2019 CU3 以降では、Ubuntu 18.04 がサポートされています。
+> - SQL Server 2019 CU10 以降では、Ubuntu 20.04 がサポートされています。
 
 このクイック スタートでは、Docker を使用して SQL Server 2019 コンテナー イメージ [mssql-server-linux](https://hub.docker.com/r/microsoft/mssql-server) をプルして実行します。 次に、**sqlcmd** と接続して最初のデータベースを作成し、クエリを実行します。
 
@@ -48,7 +49,7 @@ ms.locfileid: "106232169"
 
 ::: moniker-end
 
-このイメージは、Ubuntu 18.04 に基づく Linux で実行されている SQL Server で構成されます。 イメージは Linux の Docker エンジン 1.8+ または Mac/Windows 用 Docker で使用することができます。 このクイックスタートでは特に、**Linux** イメージで SQL Server を使用することを中心に取り上げます。 Windows イメージについては言及しませんが、[mssql-server-windows-developer Docker Hub ページ](https://hub.docker.com/r/microsoft/mssql-server-windows-developer/)で詳細を確認できます。
+このイメージは、Ubuntu 20.04 に基づく Linux で実行されている SQL Server で構成されます。 イメージは Linux の Docker エンジン 1.8+ または Mac/Windows 用 Docker で使用することができます。 このクイックスタートでは特に、**Linux** イメージで SQL Server を使用することを中心に取り上げます。 Windows イメージについては言及しませんが、[mssql-server-windows-developer Docker Hub ページ](https://hub.docker.com/r/microsoft/mssql-server-windows-developer/)で詳細を確認できます。
 
 ## <a name="prerequisites"></a><a id="requirements"></a> 前提条件
 

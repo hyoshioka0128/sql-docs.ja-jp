@@ -3,18 +3,18 @@ title: Ubuntu:Linux 上に SQL Server をインストールする
 description: このクイックスタートでは、Ubuntu に SQL Server 2017 または SQL Server 2019 をインストールしてから、sqlcmd を使用してデータベースを作成してクエリを実行する方法を示します。
 author: VanMSFT
 ms.author: vanto
-ms.date: 07/15/2020
+ms.date: 04/07/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.custom: seo-lt-2019
 ms.technology: linux
 ms.assetid: 31c8c92e-12fe-4728-9b95-4bc028250d85
-ms.openlocfilehash: 11adcb6d14675952e19fcc37994614348fdae70c
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 4d96b75d35af95f646ba41864ee9df846642338f
+ms.sourcegitcommit: d8cbbeffa3faa110e02056ff97dc7102b400ffb3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100339169"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107003918"
 ---
 # <a name="quickstart-install-sql-server-and-create-a-database-on-ubuntu"></a>クイック スタート:Ubuntu に SQL Server をインストールし、データベースを作成する
 [!INCLUDE [SQL Server - Linux](../includes/applies-to-version/sql-linux.md)]
@@ -33,7 +33,10 @@ ms.locfileid: "100339169"
 <!--SQL Server 2019 on Linux-->
 ::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
 
-このクイックスタートでは、Ubuntu 16.04 または 18.04 に SQL Server 2019 をインストールします。 次に、**sqlcmd** と接続して最初のデータベースを作成し、クエリを実行します。
+このクイックスタートでは、Ubuntu 16.04、18.04、または 20.04 に SQL Server 2019 をインストールします。 次に、**sqlcmd** と接続して最初のデータベースを作成し、クエリを実行します。
+
+> [!NOTE]
+> Ubuntu 20.04 は SQL Server 2019 CU10 以降でサポートされています。
 
 > [!TIP]
 > このチュートリアルには、ユーザー入力とインターネット接続が必要です。 無人またはオフラインのインストール手順について関心をお持ちの場合は、[SQL Server on Linux のインストール ガイダンス](sql-server-linux-setup.md)に関する記事を参照してください。 サポートされているプラットフォームの一覧については、Microsoft の[リリース ノート](sql-server-linux-release-notes-2019.md)を参照してください。
@@ -64,9 +67,9 @@ Ubuntu 16.04 または 18.04 マシンには、**少なくとも 2 GB** のメ�
 <!--SQL Server 2019 on Linux-->
 ::: moniker range=">= sql-server-linux-ver15 || >= sql-server-ver15 "
 
-Ubuntu 16.04 または 18.04 マシンには、**少なくとも 2 GB** のメモリが必要です。
+Ubuntu 16.04、18.04、または 20.04 マシンには、**少なくとも 2 GB** のメモリが必要です。
 
-ご自分のマシンに Ubuntu 18.04 をインストールするには、<http://releases.ubuntu.com/bionic/> にアクセスします。 Azure で Ubuntu 仮想マシンを作成することもできます。 「[Azure CLI を使用した Linux VM の作成と管理](/azure/virtual-machines/linux/tutorial-manage-vm)」を参照してください。
+ご自分のマシンに Ubuntu 20.04 をインストールするには、<https://releases.ubuntu.com/20.04/> にアクセスします。 Azure で Ubuntu 仮想マシンを作成することもできます。 「[Azure CLI を使用した Linux VM の作成と管理](/azure/virtual-machines/linux/tutorial-manage-vm)」を参照してください。
 
 > [!NOTE]
 > 現時点では、Windows 10 用の [Windows Subsystem for Linux](/windows/wsl/about) はインストール先としてサポートされていません。
@@ -157,7 +160,7 @@ Ubuntu 上で SQL Server を構成するには、ターミナルで次のコマ�
 ## <a name="install-sql-server"></a><a id="install"></a>SQL Server をインストールする
 
 > [!NOTE]
-> SQL Server 2019 の次のコマンドは、Ubuntu 18.04 リポジトリをポイントします。 Ubuntu 16.04 を使用している場合は、次のパスを `/ubuntu/18.04/` ではなく `/ubuntu/16.04/` に変更します。
+> SQL Server 2019 の次のコマンドでは、Ubuntu 20.04 のリポジトリが参照されています。 Ubuntu 18.04 または 16.04 を使用している場合は、次のパスを `/ubuntu/20.04/` ではなく `/ubuntu/18.04/` または `/ubuntu/16.04/` に変更します。
 
 Ubuntu 上で SQL Server を構成するには、ターミナルで次のコマンドを実行して **mssql-server** パッケージをインストールします。
 
@@ -179,6 +182,12 @@ Ubuntu 上で SQL Server を構成するには、ターミナルで次のコマ�
    
    ```bash
    sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/18.04/mssql-server-2019.list)"
+   ```
+
+   Ubuntu 20.04 の場合:
+   
+   ```bash
+   sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/20.04/mssql-server-2019.list)"
    ```
 
 3. 次のコマンドを実行して SQL Server をインストールします。
@@ -233,6 +242,12 @@ Ubuntu 上で SQL Server を構成するには、ターミナルで次のコマ�
    
    ```bash
    curl https://packages.microsoft.com/config/ubuntu/18.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
+   ```
+
+   Ubuntu 20.04 の場合:
+   
+   ```bash
+   curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
    ```
 
 1. ソース一覧を更新し、unixODBC 開発者パッケージを使用してインストール コマンドを実行します。 詳細については、「[Microsoft ODBC Driver for SQL Server をインストールする (Linux)](../connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server.md)」を参照してください。

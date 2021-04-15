@@ -9,12 +9,12 @@ ms.date: 02/19/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 9417444a1c9d28181529ace79b6dcff6162b7f2d
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 2b24a1ddf61d297759e23e0b0d27e8d8c6ead171
+ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101837035"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107298735"
 ---
 # <a name="deploy-sql-server-big-data-cluster-in-active-directory-mode"></a>Active Directory モードで SQL Server ビッグ データ クラスターを展開する
 
@@ -242,7 +242,7 @@ azdata bdc config replace -c custom-prod-kubeadm/control.json -j "$.security.act
 
 ## <a name="verify-reverse-dns-entry-for-domain-controller"></a>ドメイン コントローラーの逆引き DNS エントリを確認する
 
-ドメイン コントローラー自体の逆引き DNS エントリ (PTR レコード) が DNS サーバーに登録されていることを確認します。 これは、ドメイン コントローラーでドメイン名の `nslookup` を実行し、ドメイン名がドメイン コントローラー IP アドレスで解決されるかを調べることで確認できます。
+ドメイン コントローラー自体の逆引き DNS エントリ (PTR レコード) が DNS サーバーに登録されていることを確認します。 これは、ドメイン コントローラーの IP アドレスの `nslookup` を実行して、それがドメイン コントローラーの FQDN に解決されるかを調べることで確認できます。
 
 ## <a name="known-issues-and-limitations"></a>既知の問題と制限事項
 

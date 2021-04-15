@@ -1,7 +1,7 @@
 ---
 title: SqlClient の AppContext スイッチ
-description: SqlClient 内で提供されている AppContext スイッチの使用方法について説明します。
-ms.date: 06/15/2020
+description: SqlClient で使用できる AppContext スイッチと、それらを使用して一部の既定の動作を変更する方法について説明します。
+ms.date: 03/24/2021
 dev_langs:
 - csharp
 ms.prod: sql
@@ -11,12 +11,12 @@ ms.topic: conceptual
 author: johnnypham
 ms.author: v-jopha
 ms.reviewer: v-daenge
-ms.openlocfilehash: aa6de0ff33b0d6a70ef14a42f5def3f3c6a20482
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 6ff171065f69ded313d96fd5156cc42daef37a35
+ms.sourcegitcommit: d8cbbeffa3faa110e02056ff97dc7102b400ffb3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101836019"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107003768"
 ---
 # <a name="appcontext-switches-in-sqlclient"></a>SqlClient の AppContext スイッチ
 
@@ -53,7 +53,8 @@ AppContext.SetSwitch("Switch.Microsoft.Data.SqlClient.UseManagedNetworkingOnWind
 
 [!INCLUDE [appliesto-netfx-xxxx-xxxx-md](../../includes/appliesto-netfx-xxxx-xxxx-md.md)]
 
-透過的なネットワーク IP の解決 (TNIR) は、既存の MultiSubnetFailover 機能の改訂です。 TNIR は、ホスト名の解決された最初の IP が応答せず、ホスト名に複数の IP が関連付けられている場合に、ドライバーの接続シーケンスに影響を及ぼします。 TNIR は、MultiSubnetFailover と連動して、次の 3 つの接続シーケンスを提供します。<br />
+透過的なネットワーク IP の解決 (TNIR) は、既存の MultiSubnetFailover 機能の改訂です。 TNIR は、ホスト名の解決された最初の IP が応答せず、ホスト名に複数の IP が関連付けられている場合に、ドライバーの接続シーケンスに影響を及ぼします。 TNIR は、MultiSubnetFailover と連動して、次の 3 つの接続シーケンスを提供します。
+
 * 0:1 つの IP が試行され、その後にすべての IP が並列で試行されます
 * 1:すべての IP が並列で試行されます
 * 2:すべての IP が 1 つずつ試行されます
@@ -71,7 +72,7 @@ TransparentNetworkIPResolution は既定では有効になっています。 Mul
 AppContext.SetSwitch("Switch.Microsoft.Data.SqlClient.DisableTNIRByDefaultInConnectionString", true);
 ```
 
-これらのプロパティの設定方法の詳細については、「[SqlConnection.ConnectionString プロパティ](/dotnet/api/microsoft.data.sqlclient.sqlconnection.connectionstring)」を参照してください。 
+これらのプロパティの設定方法の詳細については、「[SqlConnection.ConnectionString プロパティ](/dotnet/api/microsoft.data.sqlclient.sqlconnection.connectionstring)」を参照してください。
 
 ## <a name="enable-a-minimum-timeout-during-login"></a>ログイン中に最小タイムアウトを有効にする
 
@@ -92,6 +93,18 @@ AppContext.SetSwitch("Switch.Microsoft.Data.SqlClient.UseOneSecFloorInTimeoutCal
 ```csharp
 AppContext.SetSwitch("Switch.Microsoft.Data.SqlClient.MakeReadAsyncBlocking", false);
 ```
+
+## <a name="enable-configurable-retry-logic"></a>構成可能な再試行ロジックを有効にする
+
+[!INCLUDE [appliesto-netfx-netcore-netst-md](../../includes/appliesto-netfx-netcore-netst-md.md)]
+
+既定では、構成可能な再試行ロジックは無効になっています。 この機能を有効にするには、アプリケーションの起動時に AppContext スイッチ **Switch.Microsoft.Data.SqlClient.EnableRetryLogic** を `true` に設定します。 このスイッチは、接続またはコマンドに再試行プロバイダーが割り当てられている場合でも必要です。
+
+```csharp
+AppContext.SetSwitch("Switch.Microsoft.Data.SqlClient.EnableRetryLogic", false);
+```
+
+* 構成ファイルを使用してこのスイッチを有効にする方法の詳細については、「[安全スイッチを有効にする](configurable-retry-logic-config-file-sqlclient.md#enable-safety-switch)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
 

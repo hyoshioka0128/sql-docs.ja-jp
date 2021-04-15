@@ -11,12 +11,12 @@ ms.topic: conceptual
 author: karinazhou
 ms.author: v-jizho2
 ms.reviewer: v-daenge
-ms.openlocfilehash: 8ad08c0799f53b2746c621bb1c16a41fe38b7e14
-ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
+ms.openlocfilehash: fa1d074cde0585b89e7f339c7c6cbd7114b603dd
+ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106054480"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107298775"
 ---
 # <a name="using-azure-active-directory-authentication-with-sqlclient"></a>SqlClient での Azure Active Directory 認証の使用
 
@@ -170,7 +170,7 @@ Azure リソースの "*マネージド ID*" は、以前にマネージド サ�
 
 **Microsoft.Data.SqlClient** 2.1.0 以降、ドライバーでは、マネージド ID を使用してアクセス トークンを取得することによる Azure SQL Database、Azure Synapse Analytics、および Azure SQL Managed Instance への認証がサポートされています。 この認証を使用するには、接続文字列で `Active Directory Managed Identity`、`Active Directory MSI` のいずれかを指定します。パスワードは必要ありません。 
 
-このモードで `SqlConnection` の `Credential` プロパティを設定することはできません。 ユーザー割り当てマネージド ID の場合は、ユーザー名を指定する必要があります。 
+このモードで `SqlConnection` の `Credential` プロパティを設定することはできません。 ユーザー割り当てのマネージド ID の場合、マネージド ID のオブジェクト ID を指定する必要があります。 
 
 次の例は、システム割り当てマネージド ID で `Active Directory Managed Identity` 認証を使用する方法を示しています。
 
@@ -194,7 +194,7 @@ using (SqlConnection conn = new SqlConnection(ConnectionString2)) {
 
 ```c#
 // For user-assigned managed identity
-// Use your own server, database, and user ID.
+// Use your own values for Server, Database, and User Id.
 string ConnectionString1 = @"Server=demo.database.windows.net; Authentication=Active Directory Managed Identity; User Id=ObjectIdOfManagedIdentity; Database=testdb";
 
 using (SqlConnection conn = new SqlConnection(ConnectionString1)) {

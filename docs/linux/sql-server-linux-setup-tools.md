@@ -4,18 +4,18 @@ titleSuffix: SQL Server
 description: SQL Server コマンドライン ツール、Microsoft ODBC ドライバー、およびそれらの依存関係を Linux にインストールする方法について説明します。
 author: VanMSFT
 ms.author: vanto
-ms.date: 06/30/2020
+ms.date: 04/07/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.custom: sqlfreshmay19
 ms.technology: linux
 ms.assetid: eff8e226-185f-46d4-a3e3-e18b7a439e63
-ms.openlocfilehash: 36508869b30688e7a87035b50a7a06ca1e2a083a
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 436bf5fc0f069a9712d4eb45e51d994ec91cda22
+ms.sourcegitcommit: d8cbbeffa3faa110e02056ff97dc7102b400ffb3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100346350"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107003903"
 ---
 # <a name="install-sqlcmd-and-bcp-the-sql-server-command-line-tools-on-linux"></a>Linux に SQL Server コマンドライン ツール sqlcmd および bcp をインストールする
 
@@ -97,7 +97,10 @@ ms.locfileid: "100346350"
 次の手順を使用して、Ubuntu に **mssql-tools** をインストールします。
 
 > [!NOTE]
-> Ubuntu 18.04 は SQL Server 2019 CU3 以降でサポートされています。 Ubuntu 18.04 を使用している場合は、リポジトリのパスを `/ubuntu/16.04` から `/ubuntu/18.04` に変更します。
+>
+> - Ubuntu 18.04 は SQL Server 2019 CU3 以降でサポートされています。
+> - Ubuntu 20.04 は SQL Server 2019 CU10 以降でサポートされています。
+> - Ubuntu 20.04 を使用している場合は、リポジトリのパスを `/ubuntu/16.04` から `/ubuntu/20.04` に変更します。
 
 1. パブリック リポジトリの GPG キーをインポートします。
 

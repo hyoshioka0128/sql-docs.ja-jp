@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
 zone_pivot_groups: ld2-linux-distribution
-ms.openlocfilehash: d284a049cb1266dc33c30657f3d86e8421825868
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: d32bd886cdea6d64cee893ca76d83c4a5f74a7a2
+ms.sourcegitcommit: d8cbbeffa3faa110e02056ff97dc7102b400ffb3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100340394"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "107003888"
 ---
 # <a name="configure-repositories-for-installing-and-upgrading-sql-server-on-linux"></a>SQL Server on Linux のインストールとアップグレードを行うためのリポジトリを構成する
 
@@ -158,7 +158,10 @@ sudo rm -rf /etc/yum.repos.d/mssql-server.repo
 必要に応じて、古いリポジトリを削除します。 以前に構成したリポジトリの種類に基づいて、次のいずれかのコマンドを使います。
 
 > [!NOTE]
-> SQL Server 2019 CU3 および SQL Server 2017 CU20 以降では、Ubuntu 18.04 がサポートされています。 Ubuntu 16.04 を使用している場合は、次のパスを `/ubuntu/18.04` ではなく `/ubuntu/16.04` に変更し、正しい[ディストリビューション コード名](https://releases.ubuntu.com/)を使用してください。
+>
+> - SQL Server 2019 CU10 以降では、Ubuntu 20.04 がサポートされています。
+> - SQL Server 2019 CU3 および SQL Server 2017 CU20 以降では、Ubuntu 18.04 がサポートされています。
+> - Ubuntu 16.04 を使用している場合は、次のパスを `/ubuntu/18.04` ではなく `/ubuntu/16.04` に変更し、正しい[ディストリビューション コード名](https://releases.ubuntu.com/)を使用してください。
 
 | リポジトリ | 削除するコマンド |
 |---|---|
@@ -210,9 +213,10 @@ SQL Server のインストールとアップグレードのために使用する
 SQL Server のインストールとアップグレードのために使用する新しいリポジトリを構成します。
 
 > [!NOTE]
-> SQL Server 2019 CU3 および SQL Server 2017 CU20 以降では、Ubuntu 18.04 がサポートされています。 次のコマンドでは、Ubuntu 18.04 リポジトリが参照されています。
 >
-> Ubuntu 16.04 を使用している場合は、次のパスを `/ubuntu/18.04` ではなく `/ubuntu/16.04` に変更します。
+> - SQL Server 2019 CU10 以降では、Ubuntu 20.04 がサポートされています
+> - SQL Server 2019 CU3 および SQL Server 2017 CU20 以降では、Ubuntu 18.04 がサポートされています。
+> - 次のコマンドでは、Ubuntu 18.04 リポジトリが参照されています。 Ubuntu 16.04 を使用している場合は、次のパスを `/ubuntu/18.04` ではなく `/ubuntu/16.04` に変更します。
 
 1. パブリック リポジトリの GPG キーをインポートします。
 

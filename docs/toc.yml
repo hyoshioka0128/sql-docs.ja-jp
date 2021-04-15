@@ -113,7 +113,7 @@ items:
                     href: big-data-cluster/notebooks-deploy.md
       - name: 概念
         items:
-          - name: アプリケーションの展開
+          - name: アプリケーション プール
             href: big-data-cluster/concept-application-deployment.md
           - name: コントローラー
             href: big-data-cluster/concept-controller.md

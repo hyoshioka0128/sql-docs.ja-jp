@@ -9,12 +9,12 @@ author: dphansen
 ms.author: davidph
 ms.custom: contperf-fy21q3
 monikerRange: '>=sql-server-2016||>=sql-server-linux-ver15'
-ms.openlocfilehash: f015c9793cb4f5577b2ad3943eff5fafa002cd26
-ms.sourcegitcommit: 14b97028da137f872a0a35cfe9d5a639a2d116a8
+ms.openlocfilehash: a40d27751406214fade453e6fb91b937adb72775
+ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2021
-ms.locfileid: "107219544"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107298861"
 ---
 # <a name="troubleshoot-issues-with-launchpad-service-executing-python-and-r-scripts-in-sql-server-machine-learning-services"></a>SQL Server Machine Learning Services で Python および R スクリプトを実行する Launchpad サービスに関する問題のトラブルシューティング
 [!INCLUDE [SQL Server 2016 and later](../../includes/applies-to-version/sqlserver2016.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "107219544"
 
 ## <a name="check-the-launchpad-service-account"></a>Launchpad のサービス アカウントを確認する
 
-既定のサービス アカウントは、"NT Service\$SQL2016" や "NT Service\$SQL2017" になります。 最後の部分は、SQL インスタンス名によって異なる場合があります。
+既定のサービス アカウントは、"NT Service\$SQL2016"、"NT Service\$SQL2017"または "NT Service\$SQL2019" になります。 最後の部分は、SQL インスタンス名によって異なる場合があります。
 
 Launchpad サービス (Launchpad.exe) は、低い特権のサービス アカウントを使用して実行されます。 ただし、R と Python を起動してデータベース インスタンスと通信するには、Launchpad サービス アカウントに次のユーザー権限が必要です。
 

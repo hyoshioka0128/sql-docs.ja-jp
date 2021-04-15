@@ -9,18 +9,21 @@ ms.date: 11/04/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: a2836a6966727c0c2d27b363048f2e1dcd6afa49
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: f122f52553ae6cabc153560be3a341cc6482a73a
+ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100052115"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107298785"
 ---
 # <a name="data-persistence-with-sql-server-big-data-cluster-in-kubernetes"></a>Kubernetes の SQL Server ビッグ データ クラスターでのデータ永続化
 
 [!INCLUDE[SQL Server 2019](../includes/applies-to-version/sqlserver2019.md)]
 
 [永続ボリューム](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)では、Kubernetes のストレージ向けのプラグイン モデルが提供されます。 このモデルでは、ストレージの提供方法は、その使用方法から抽象化されます。 そのため、独自の高可用性ストレージを利用して、SQL Server ビッグ データ クラスターに接続できます。 これにより、必要としているストレージの種類、可用性、およびパフォーマンスを完全に制御できます。 Kubernetes では、Azure ディスクとファイル、ネットワーク ファイル システム (NFS)、ローカル ストレージなどの[さまざまな種類のストレージ ソリューション](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner)がサポートされます。
+
+> [!IMPORTANT]
+> マネージド Kubernetes サービス (AKS または ARO) のいずれかを使用して Azure にビッグ データ クラスターをデプロイする場合は、アプリケーションのワークロード要件に応じた制限があり、対応が必要になる可能性があることに注意してください。 たとえば、Azure マネージド ディスクを使用するボリュームは、現在、ゾーン冗長リソースではありません。 ボリュームをゾーン間で接続することはできず、ターゲット ポッドをホストする特定のノードと同じゾーンに併置する必要があります。 このような場合は、SQL Server ビッグ データ クラスターで利用できる追加の高可用性ソリューションを使用することをお勧めします。 Azure Kubernetes サービスと可用性ゾーンの詳細については、[こちら](/azure/aks/availability-zones)を参照してください。
 
 ## <a name="configure-persistent-volumes"></a>永続ボリュームを構成する
 

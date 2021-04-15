@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 97b3119b-e43e-447a-bbfb-0b5499e2fefe
 author: markingmyname
 ms.author: maghan
-ms.openlocfilehash: 13359a3d3588e238ef0b78ed5bfe5148fb447dae
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 69664cef88dcc41179c947a4725d4a44e196bb86
+ms.sourcegitcommit: 52dd1719d7b63581b1d34b755bf9d077c0fc6c44
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99189539"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107373021"
 ---
 # <a name="sp_update_schedule-transact-sql"></a>sp_update_schedule (Transact-SQL)
 [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -104,10 +104,10 @@ sp_update_schedule
 |値|説明 (単位)|  
 |-----------|--------------------------|  
 |**1**|First|  
-|**2**|秒|  
+|**2**|Second|  
 |**4**|Third|  
 |**8**|4 番目|  
-|**16**|Last (最後へ)|  
+|**16**|末尾|  
   
 `[ @freq_recurrence_factor = ] freq_recurrence_factor` ジョブのスケジュールされた実行の間隔を週または月単位で指定します。 *freq_recurrence_factor* は *freq_type* が **8**、 **16**、または **32** の場合にのみ使用されます。 *freq_recurrence_factor* は **int**,、既定値は **0** です。  
   
@@ -128,7 +128,7 @@ sp_update_schedule
 ## <a name="return-code-values"></a>リターン コードの値  
  **0** (成功) または **1** (失敗)  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>解説  
  スケジュールを使用するすべてのジョブは、直ちに新しい設定を使用します。 ただし、スケジュールを変更しても、現在実行中のジョブは停止されません。  
   
 ## <a name="permissions"></a>アクセス許可  
