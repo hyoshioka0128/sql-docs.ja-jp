@@ -22,14 +22,14 @@ helpviewer_keywords:
 - XML [SQL Server], OPENXML statement
 - element-centric mapping [SQL Server]
 ms.assetid: 060126fc-ed0f-478f-830a-08e418d410dc
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 6acc03c2412ac33337236efba130344cc9f91c9e
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: e7509d21d05ac25b0988e59b95677d2046b20eb2
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85753700"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107487797"
 ---
 # <a name="openxml-sql-server"></a>OPENXML (SQLServer)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "85753700"
   
  OPENXML を使用できるのは、行セット プロバイダー、ビュー、または OPENROWSET をソースとして指定できる SELECT ステートメントおよび SELECT INTO ステートメントです。 OPENXML の構文の詳細については、「 [OPENXML &#40;Transact-SQL&#41;](../../t-sql/functions/openxml-transact-sql.md)」を参照してください。  
   
- OPENXML を使用して XML ドキュメントに対するクエリを記述するには、最初に **sp_xml_preparedocument**を呼び出す必要があります。 このプロシージャは XML ドキュメントを解析し、使用準備が整った解析後のドキュメントへのハンドルを返します。 解析後のドキュメントは、XML ドキュメント内のさまざまなノードを DOM (ドキュメント オブジェクト モデル) ツリーで表現したものです。 このドキュメント ハンドルは OPENXML に渡されます。 OPENXML では渡されたパラメーターを基にドキュメントの行セット ビューを用意します。  
+ OPENXML を使用して XML ドキュメントに対するクエリを記述するには、最初に **sp_xml_preparedocument** を呼び出す必要があります。 このプロシージャは XML ドキュメントを解析し、使用準備が整った解析後のドキュメントへのハンドルを返します。 解析後のドキュメントは、XML ドキュメント内のさまざまなノードを DOM (ドキュメント オブジェクト モデル) ツリーで表現したものです。 このドキュメント ハンドルは OPENXML に渡されます。 OPENXML では渡されたパラメーターを基にドキュメントの行セット ビューを用意します。  
   
 > [!NOTE]  
 >  **sp_xml_preparedocument** では、SQL 用に更新された MSXML パーサー (Msxmlsql.dll) が使用されます。 このバージョンの MSXML パーサーは、MSXML Version 2.6 との後方互換性を維持したまま [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] もサポートするように設計されました。  
@@ -118,7 +118,7 @@ EXEC sp_xml_removedocument @docHandle;
 ### <a name="xpath-expression-to-identify-the-nodes-to-be-processed-rowpattern"></a>処理するノードを特定するための XPath 式 (rowpattern)  
  *rowpattern* として指定する XPath 式で、XML ドキュメントに含まれる一連のノードを特定します。 *rowpattern* によって特定される各ノードが、OPENXML で生成される行セット内の 1 行に相当します。  
   
- XPath 式で特定するノードは、XML ドキュメント内のどの XML ノードでもかまいません。 XML ドキュメント内の一連の要素を *rowpattern* で特定すると、特定した要素ノードごとに 1 行の行セットが形成されます。 たとえば、 *rowpattern* の結果が属性になる場合は、 *rowpattern*によって選択された属性ノードごとに行が作成されます。  
+ XPath 式で特定するノードは、XML ドキュメント内のどの XML ノードでもかまいません。 XML ドキュメント内の一連の要素を *rowpattern* で特定すると、特定した要素ノードごとに 1 行の行セットが形成されます。 たとえば、 *rowpattern* の結果が属性になる場合は、 *rowpattern* によって選択された属性ノードごとに行が作成されます。  
   
 ### <a name="description-of-the-rowset-to-be-generated"></a>生成される行セットの説明  
  OPENXML では行セット スキーマを使用して、結果の行セットを生成します。 行セット スキーマを指定するときは、次の方法を使用できます。  
@@ -164,7 +164,7 @@ EXEC sp_xml_removedocument @docHandle;
  列に ColPattern が指定されていない場合、行セットの列は、 *flags* パラメーターで指定したマッピングに基づいて、同じ名前の XML ノードにマップされます。 一方、ColPattern が WITH 句のスキーマ指定の一部として指定されている場合は、 *flags* パラメーターで指定したマッピングが上書きされます。  
   
 ### <a name="mapping-between-the-rowset-columns-and-the-xml-nodes"></a>行セット列と XML ノード間のマッピング  
- OPENXML ステートメントでは、必要に応じて、 *rowpattern*で特定される XML ノードと行セットの列の間のマッピングの種類 (属性中心、要素中心など) を指定できます。 この情報は、XML ノードと行セットの列の間で変換を行うときに使用されます。  
+ OPENXML ステートメントでは、必要に応じて、 *rowpattern* で特定される XML ノードと行セットの列の間のマッピングの種類 (属性中心、要素中心など) を指定できます。 この情報は、XML ノードと行セットの列の間で変換を行うときに使用されます。  
   
  マッピングの指定方法は 2 種類で、それらを同時に指定することもできます。  
   
@@ -174,9 +174,9 @@ EXEC sp_xml_removedocument @docHandle;
   
 -   *ColPattern* パラメーターを使用する方法  
   
-     *ColPattern*は XPath 式であり、WITH 句で *SchemaDeclaration* の一部として指定されます。 *ColPattern* で指定されるマッピングは、 *flags* パラメーターで指定されるマッピングを上書きします。  
+     *ColPattern* は XPath 式であり、WITH 句で *SchemaDeclaration* の一部として指定されます。 *ColPattern* で指定されるマッピングは、 *flags* パラメーターで指定されるマッピングを上書きします。  
   
-     *ColPattern* でマッピングの種類 (属性中心、要素中心など) を指定できます。ここでの指定は、 *flags*による既定のマッピングを上書きしたり、拡張したりするものです。  
+     *ColPattern* でマッピングの種類 (属性中心、要素中心など) を指定できます。ここでの指定は、 *flags* による既定のマッピングを上書きしたり、拡張したりするものです。  
   
      *ColPattern* は次の場合に指定します。  
   

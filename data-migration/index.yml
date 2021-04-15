@@ -6,6 +6,7 @@ metadata:
   title: Azure データベースの移行ガイド | Microsoft Docs
   description: 'お使いのデータ資産を、SQL Server、Azure SQL Database、Azure SQL Managed Instance、Azure Database、Azure Cosmos DB、Azure VM 上の SQL Server および Azure Synapse Analytics に移行し、最新化する詳細な手順を説明します。 '
   ms.topic: hub-page
+  ms.technology: migration-guide
 conceptualContent:
   items:
     - title: SQL Server から
@@ -13,7 +14,7 @@ conceptualContent:
         - text: SQL Server (アップグレード)
           url: /sql/database-engine/install-windows/upgrade-sql-server
           itemType: how-to-guide
-        - text: Azure SQL Database
+        - text: Azure SQL データベース
           url: /azure/azure-sql/migration-guides/database/sql-server-to-sql-database-overview
           itemType: how-to-guide
         - text: Azure SQL Managed Instance
@@ -33,7 +34,7 @@ conceptualContent:
         - text: SQL Server
           url: /sql/sql-server/migrate/guides/oracle-to-sql-server
           itemType: how-to-guide
-        - text: Azure SQL Database
+        - text: Azure SQL データベース
           url: /azure/azure-sql/migration-guides/database/oracle-to-sql-database-guide
           itemType: how-to-guide
         - text: Azure SQL Managed Instance
@@ -50,7 +51,7 @@ conceptualContent:
         - text: SQL Server
           url: /sql/sql-server/migrate/guides/db2-to-sql-server
           itemType: how-to-guide
-        - text: Azure SQL Database
+        - text: Azure SQL データベース
           url: /azure/azure-sql/migration-guides/database/db2-to-sql-database-guide
           itemType: how-to-guide
         - text: Azure SQL Managed Instance
@@ -64,7 +65,7 @@ conceptualContent:
         - text: SQL Server
           url: /sql/sql-server/migrate/guides/access-to-sql-server
           itemType: how-to-guide
-        - text: Azure SQL Database
+        - text: Azure SQL データベース
           url: /azure/azure-sql/migration-guides/database/access-to-sql-database-guide
           itemType: how-to-guide
     - title: MySQL から
@@ -83,7 +84,7 @@ conceptualContent:
         - text: SQL Server
           url: /sql/sql-server/migrate/guides/sap-ase-to-sql-server
           itemType: how-to-guide
-        - text: Azure SQL Database
+        - text: Azure SQL データベース
           url: /azure/azure-sql/migration-guides/database/sap-ase-to-sql-database
           itemType: how-to-guide
     - title: オープンソース

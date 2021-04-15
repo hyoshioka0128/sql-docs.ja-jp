@@ -8,16 +8,16 @@ ms.reviewer: ''
 ms.technology: xevents
 ms.topic: tutorial
 ms.assetid: 04521d7f-588c-4259-abc2-1a2857eb05ec
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 ms.custom: seo-lt-2019
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 2dc811a3e3217c3aa6bf2d9a006cfd1ff0c7796b
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: da83f31fde5d1234a4c6dc1402a439782c4bdda1
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97481473"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107489912"
 ---
 # <a name="selects-and-joins-from-system-views-for-extended-events-in-sql-server"></a>SQL Server の拡張イベントに対するシステム ビューからの SELECT と JOIN
 
@@ -675,7 +675,7 @@ SELECT  --C.5
 
 
 ```
-/**_  5 sampled rows from the actual 153 rows returned.
+/***  5 sampled rows from the actual 153 rows returned.
     NOTE:  'resource_type' under 'Column'.
 
 Package     Object          Object-Type   O--C   Column          Column-Type-Name     Column-Type   Column-Value   C--M   Map-Value        Map-Key
@@ -689,7 +689,7 @@ sqlserver   lock_deadlock   event         o--c   resource_type   lock_resource_t
 Therefore, on your CREATE EVENT SESSION statement, in its ADD EVENT WHERE clause,
 you could put:
     WHERE( ... resource_type = 6 ...)  -- Meaning:  6 = PAGE.
-_*_/
+***/
 ```
 
 
@@ -700,7 +700,7 @@ _*_/
 
 次の SELECT は、ターゲットのすべてのパラメーターを返します。 各パラメーターには、必須かどうかを示すタグが付けられます。 パラメーターに割り当てる値によって、ターゲットの動作が変わります。
 
-- WHERE 句の項目 object_type = 'customizable' にご注意ください。
+- WHERE 句の項目 *object_type = 'customizable'* に注意してください。
 - また、 *o.name =* の WHERE 句の値を編集する必要があります。
 
 
@@ -754,7 +754,7 @@ package0   event_file   lazy_create_blob     boolean              Not_mandatory 
 package0   event_file   max_file_size        uint64               Not_mandatory   Maximum file size in MB
 package0   event_file   max_rollover_files   uint32               Not_mandatory   Maximum number of files to retain
 package0   event_file   metadatafile         unicode_string_ptr   Not_mandatory   Not used
-**_/
+***/
 ```
 
 
@@ -766,7 +766,7 @@ package0   event_file   metadatafile         unicode_string_ptr   Not_mandatory 
 この DMV SELECT は、アクティブなイベント セッションのターゲットからデータ行を返します。 データは XML にキャストされており、返されたセルをクリックして SSMS で簡単に表示できます。
 
 - イベント セッションが停止すると、この SELECT はゼロ行を返します。
-- s.name = の WHERE 句の値を編集する必要があります。
+- *s.name =* の WHERE 句の値を編集する必要があります。
 
 
 ```sql
