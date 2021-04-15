@@ -15,14 +15,14 @@ helpviewer_keywords:
 - FOR XML clause, syntax
 - FOR XML clause, ROOT directive
 ms.assetid: df19ecbf-d28e-4e9c-aaa3-700f8bbd3be4
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 1364b5b8c7f0a95c9e3710082feae10defc37dd7
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: aaefcc5f69721feeb6fb0ea0d9429241c0f386ef
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85661978"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107489012"
 ---
 # <a name="basic-syntax-of-the-for-xml-clause"></a>FOR XML 句の基本構文
 
@@ -31,7 +31,7 @@ ms.locfileid: "85661978"
 FOR XML モードには、RAW、AUTO、EXPLICIT、または PATH を使用できます。 このモードにより、結果の XML の構造が決まります。  
   
 > [!IMPORTANT]  
-> FOR XML オプションに対する **XMLDATA** ディレクティブは、**非推奨**です。 RAW モードと AUTO モードの場合は、XSD 世代を使用してください。 EXPLICIT モードでは、XMLDATA ディレクティブに代わる機能はありません。 [!INCLUDE[ssNoteDepFutureAvoid](../../includes/ssnotedepfutureavoid-md.md)]
+> FOR XML オプションに対する **XMLDATA** ディレクティブは、**非推奨** です。 RAW モードと AUTO モードの場合は、XSD 世代を使用してください。 EXPLICIT モードでは、XMLDATA ディレクティブに代わる機能はありません。 [!INCLUDE[ssNoteDepFutureAvoid](../../includes/ssnotedepfutureavoid-md.md)]
 
 ## <a name="syntax"></a>構文
 

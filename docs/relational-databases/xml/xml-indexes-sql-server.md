@@ -32,14 +32,14 @@ helpviewer_keywords:
 - PROPERTY index
 - XML indexes [SQL Server], creating
 ms.assetid: f5c9209d-b3f3-4543-b30b-01365a5e7333
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 8f5ab347d15e0363411640431f4d833f38e13234
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: d9e7d5a233b3f93d3588c70dd233db44c275719c
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85729783"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107486599"
 ---
 # <a name="xml-indexes-sql-server"></a>XML インデックス (SQL Server)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]

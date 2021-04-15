@@ -5,7 +5,7 @@ description: この記事では、SQL Server 2016 のさまざまなエディシ
 ms.custom:
 - seo-lt-2019
 - sqlfreshmay19
-ms.date: 07/22/2020
+ms.date: 03/26/2021
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: release-landing
@@ -34,15 +34,14 @@ helpviewer_keywords:
 - editions [SQL Server], about edition options
 - Setup [SQL Server]
 - CPSA
-ms.assetid: e5186f02-dd91-47d0-8fa4-de3f41c76903
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 49d32254b0faaf9dea2ae4c31f7e3548179e75a7
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: 2aba19045e3a981f9d21cfb1a960ad2041ea97eb
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99236606"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107486622"
 ---
 # <a name="editions-and-supported-features-of-sql-server-2016"></a>SQL Server 2016 の各エディションとサポートされている機能
 [!INCLUDE [SQL Server 2016](../includes/applies-to-version/sqlserver2016.md)]  
@@ -184,7 +183,7 @@ Developer Edition は引き続き [SQL Server Distributed Replay](../tools/distr
 |テーブルとインデックスのパーティション分割|はい|はい <sup>2</sup>|はい <sup>2</sup>|はい <sup>2</sup>|はい <sup>2</sup>|  
 |データ圧縮|はい|はい <sup>2</sup>|はい <sup>2</sup>|はい <sup>2</sup>|はい <sup>2</sup>|
 |[リソース ガバナー]|はい|いいえ|いいえ|いいえ|いいえ|  
-|パーティション テーブルの並列処理|はい|いいえ|いいえ|いいえ|いいえ|
+|パーティション テーブルの並列処理|はい|はい <sup>2</sup>|はい <sup>2</sup>|はい <sup>2</sup>|はい <sup>2</sup>|  
 |複数の Filestream コンテナー|はい|はい <sup>2</sup>|はい <sup>2</sup>|はい <sup>2</sup>|はい <sup>2</sup>|
 |NUMA 対応のラージ ページ メモリとバッファー配列の割り当て|はい|いいえ <sup>4</sup>|いいえ|いいえ|いいえ|
 |バッファー プール拡張|はい|はい|いいえ|いいえ|いいえ|

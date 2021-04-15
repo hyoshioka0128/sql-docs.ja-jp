@@ -9,14 +9,14 @@ ms.reviewer: ''
 ms.technology: xml
 ms.topic: conceptual
 ms.assetid: 598ecdcd-084b-4032-81b2-eed6ae9f5d44
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: ec99528c375126e06bc48ac7b241df98f62952a4
-ms.sourcegitcommit: 75f767c7b1ead31f33a870fddab6bef52f99906b
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: c8b0fd1e26def618b9645f9de65dfe8a255892f5
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87331953"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107487541"
 ---
 # <a name="selective-xml-indexes-sxi"></a>選択的 XML インデックス (SXI)
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -171,9 +171,9 @@ FOR
   
  特定の行でサポートされる NULL 以外の列の最大数は、列内のデータのサイズによって決まります。  
   
--   最良の場合、すべての列の型が **bit**のとき、1024 の NULL 以外の列がサポートされます。  
+-   最良の場合、すべての列の型が **bit** のとき、1024 の NULL 以外の列がサポートされます。  
   
--   最悪の場合、すべての列が **varchar**型のラージ オブジェクトのとき、236 の NULL 以外の列のみがサポートされます。  
+-   最悪の場合、すべての列が **varchar** 型のラージ オブジェクトのとき、236 の NULL 以外の列のみがサポートされます。  
   
  選択的 XML インデックスは、インデックスが設定されているすべてのノード パスに対して、内部的に 1 列から 4 列を使用します。 インデックスを設定できるノードの総数は、インデックス付きパス内のデータの実際のサイズに応じて、60 から数千になります。  
   

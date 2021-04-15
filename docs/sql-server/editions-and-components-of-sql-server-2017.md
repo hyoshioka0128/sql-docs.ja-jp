@@ -3,7 +3,7 @@ title: エディションとサポートされる機能
 titleSuffix: SQL Server 2017
 description: この記事では、SQL Server 2017 のさまざまなエディションでサポートされている機能について説明します。これらは、さまざまなパフォーマンス、ランタイム、および価格の要件に対応しています。
 ms.custom: seo-lt-2019
-ms.date: 12/13/2019
+ms.date: 03/26/2021
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: release-landing
@@ -35,12 +35,12 @@ ms.assetid: ''
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>= sql-server-2017'
-ms.openlocfilehash: 1d0918500cdb7e5bf7a21222ad77299092eb8ac1
-ms.sourcegitcommit: 295b9dfc758471ef7d238a2b0f92f93e34acbb1b
+ms.openlocfilehash: 424ace2224083de04cf99791f51cfb29b1e61530
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/31/2021
-ms.locfileid: "106054483"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107491288"
 ---
 # <a name="editions-and-supported-features-of-sql-server-2017"></a>SQL Server 2017 の各エディションとサポートされている機能
 [!INCLUDE[SQL Server 2017](../includes/applies-to-version/sqlserver2017.md)]
@@ -136,7 +136,7 @@ Developer Edition は引き続き [SQL Server Distributed Replay](../tools/distr
 |[!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)] のインスタンスごとのバッファー プールの最大メモリ|オペレーティング システムの最大容量|128 GB|64 GB|1410 MB|1410 MB|
 |[!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)] のインスタンスごとの列ストア セグメント キャッシュの最大メモリ|メモリ制限なし| 32 GB| 16 GB| 352 MB| 352 MB|  
 |[!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)] のデータベースごとの最大メモリ最適化データ サイズ|メモリ制限なし| 32 GB| 16 GB| 352 MB| 352 MB|  
-|利用可能な最大メモリ サイズ ( [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)]のインスタンスごと)|オペレーティング システムの最大容量|テーブル: 16 GB<br /><br /> MOLAP: 64 GB|該当なし|なし|該当なし|  
+|利用可能な最大メモリ サイズ ( [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)]のインスタンスごと)|オペレーティング システムの最大容量|テーブル: 16 GB<br /><br /> MOLAP: 64 GB|該当なし|該当なし|該当なし|  
 |利用可能な最大メモリ サイズ ( [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)]のインスタンスごと)|オペレーティング システムの最大容量|64 GB|64 GB|4 GB|該当なし|
 |リレーショナル データベースの最大サイズ|524 PB|524 PB|524 PB|10 GB|10 GB|  
   
@@ -189,7 +189,7 @@ Developer Edition は引き続き [SQL Server Distributed Replay](../tools/distr
 |テーブルとインデックスのパーティション分割|はい|はい|はい|はい|はい|  
 |データ圧縮|はい|はい|はい|はい|はい|
 |[リソース ガバナー]|はい|いいえ|いいえ|いいえ|いいえ|  
-|パーティション テーブルの並列処理|はい|いいえ|いいえ|いいえ|いいえ|
+|パーティション テーブルの並列処理|はい|はい|はい|はい|はい|  
 |複数の Filestream コンテナー|はい|はい|はい|はい|はい|
 |NUMA 対応のラージ ページ メモリとバッファー配列の割り当て|はい|いいえ|いいえ|いいえ|いいえ|
 |バッファー プール拡張|はい|はい|いいえ|いいえ|いいえ|

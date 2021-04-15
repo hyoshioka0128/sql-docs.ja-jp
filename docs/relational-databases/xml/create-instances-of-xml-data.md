@@ -18,14 +18,14 @@ helpviewer_keywords:
 - XML [SQL Server], generating instances
 - white space [XML in SQL Server]
 ms.assetid: dbd6c06f-db6e-44a7-855a-6a55bf374907
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 4dc776e09639a67ef93e1778dd152761ed5a0bfc
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: a0078fe1981b30db78e60ba56ba6fb760c8b7f82
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91891582"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107488904"
 ---
 # <a name="create-instances-of-xml-data"></a>XML データのインスタンスの作成
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -42,7 +42,7 @@ ms.locfileid: "91891582"
 -   一括読み込みを使用する。  
   
 ## <a name="type-casting-string-and-binary-instances"></a>文字列インスタンスとバイナリ インスタンスの型キャスト  
- [ [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] n **][** var **]** char **、** [n]text **、** varbinary **、** image **などの**の文字列データ型は、 **xml** データ型にキャスト (CAST) または変換 (CONVERT) することにより、 **xml** データ型に解析できます。 型指定されていない XML は、正しい形式かどうかが確認されます。 **xml** 型に関連付けられたスキーマがある場合は、検証も行われます。 詳細については、「 [型指定された XML と型指定されていない XML の比較](../../relational-databases/xml/compare-typed-xml-to-untyped-xml.md)」を参照してください。  
+ [ [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] n **][** var **]** char **、** [n]text **、** varbinary **、** image **などの** の文字列データ型は、 **xml** データ型にキャスト (CAST) または変換 (CONVERT) することにより、 **xml** データ型に解析できます。 型指定されていない XML は、正しい形式かどうかが確認されます。 **xml** 型に関連付けられたスキーマがある場合は、検証も行われます。 詳細については、「 [型指定された XML と型指定されていない XML の比較](../../relational-databases/xml/compare-typed-xml-to-untyped-xml.md)」を参照してください。  
   
  XML ドキュメントは、UTF-8、UTF-16、windows-1252 など、さまざまなエンコードを使用してエンコードできます。 ここでは、文字列およびバイナリの元のデータ型と XML ドキュメントのエンコード間の相互作用における規則、およびパーサーの動作に関する規則を概説します。  
   
@@ -52,7 +52,7 @@ ms.locfileid: "91891582"
   
  **varbinary** の内容は、XML パーサーに直接渡されるコードポイント ストリームとして処理されます。 このため、XML ドキュメントまたは XML フラグメントに、BOM またはその他のエンコード情報をインラインで指定する必要があります。 XML パーサーは、ストリームからのみエンコード方法を判断します。 つまり、UTF-16 でエンコードされた XML には UTF-16 BOM を指定する必要があり、BOM やエンコード宣言のない XML インスタンスは UTF-8 として解釈されます。  
   
- XML ドキュメントのエンコードが事前にわからないために、XML にキャストする前に XML データではなく文字列データまたはバイナリ データとしてデータが渡される場合は、そのデータを **varbinary**として処理することをお勧めします。 たとえば、OpenRowset() を使用して XML ファイルからデータを読み取る場合、次のように、そのデータを **varbinary(max)** 値として読み取るように指定してください。  
+ XML ドキュメントのエンコードが事前にわからないために、XML にキャストする前に XML データではなく文字列データまたはバイナリ データとしてデータが渡される場合は、そのデータを **varbinary** として処理することをお勧めします。 たとえば、OpenRowset() を使用して XML ファイルからデータを読み取る場合、次のように、そのデータを **varbinary(max)** 値として読み取るように指定してください。  
   
 ```  
 select CAST(x as XML)   

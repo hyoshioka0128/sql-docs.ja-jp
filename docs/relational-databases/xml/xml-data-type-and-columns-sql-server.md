@@ -9,14 +9,14 @@ ms.reviewer: ''
 ms.technology: xml
 ms.topic: conceptual
 ms.assetid: 00db8f21-7d4b-4347-ae43-3a7c314d2fa1
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 0a23431727b25135751693d1dbec68b6377dcd4e
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: e05a14e95020606b6474cc582ebc61235a6009c4
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85729792"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107486845"
 ---
 # <a name="xml-data-type-and-columns-sql-server"></a>XML データ型と列 (SQL Server)
 
@@ -169,7 +169,7 @@ ms.locfileid: "85729792"
   
 -   **sql_variant** インスタンスのサブタイプとしては使用できません。  
   
--   **text** または **ntext**にキャストしたり、変換することはできません。 代わりに **varchar(max)** または **nvarchar(max)** を使用します。  
+-   **text** または **ntext** にキャストしたり、変換することはできません。 代わりに **varchar(max)** または **nvarchar(max)** を使用します。  
   
 -   比較や並べ替えはできません。 したがって、 **xml** データ型は GROUP BY ステートメント内では使用できません。  
   

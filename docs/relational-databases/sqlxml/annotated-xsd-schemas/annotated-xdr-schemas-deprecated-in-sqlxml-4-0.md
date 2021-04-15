@@ -14,15 +14,15 @@ helpviewer_keywords:
 - annotated XDR schemas
 - schemas [SQLXML]
 ms.assetid: 874c6dca-8a0c-4a2e-891c-ba6e326154d2
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: a3d658cc67b7c9cacb999714455cd8de78bac50b
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: c5f491fa517dab4d1dc06912995c0bc8e9b1ee06
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97459942"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107491397"
 ---
 # <a name="annotated-xdr-schemas-deprecated-in-sqlxml-40"></a>注釈付き XDR スキーマ (SQLXML 4.0 では非推奨)
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]

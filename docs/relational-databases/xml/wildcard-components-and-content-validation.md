@@ -12,14 +12,14 @@ helpviewer_keywords:
 - wildcard components [XML]
 - content validation [XML]
 ms.assetid: ffa7d974-3645-446c-8425-f0b22b6b060a
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: e1fac8a7a0e7eafc4b3bb04809ad51ee2f1b970e
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: d89150453d767dcdaff998e65ee8efa452e14820
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85729825"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107486598"
 ---
 # <a name="wildcard-components-and-content-validation"></a>ワイルドカード コンポーネントと内容検証
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "85729825"
 -   **lax** 値は、スキーマ定義が有効な要素と属性だけを検証することを指定します。  
   
 ## <a name="lax-validation-and-xsanytype-elements"></a>lax 検証と xs:anyType 要素  
- XML スキーマの仕様では、 **anyType** 型の要素には **lax** 検証が使用されています。 [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] では lax 検証をサポートしていなかったので、 **anyType**型の要素にも strict 検証が適用されていました。 [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)]からは lax 検証がサポートされるようになったため、 **anyType** 型の要素の内容は lax 検証を使用して検証されます。  
+ XML スキーマの仕様では、 **anyType** 型の要素には **lax** 検証が使用されています。 [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] では lax 検証をサポートしていなかったので、 **anyType** 型の要素にも strict 検証が適用されていました。 [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)]からは lax 検証がサポートされるようになったため、 **anyType** 型の要素の内容は lax 検証を使用して検証されます。  
   
  次の例は、lax 検証を示しています。 スキーマ要素 `e` は **anyType** 型です。 この例では、型指定された **xml** 変数を作成し、 **anyType** 型の要素の lax 検証を示します。  
   

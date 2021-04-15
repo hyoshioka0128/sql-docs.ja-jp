@@ -14,14 +14,14 @@ helpviewer_keywords:
 - FOR XML AUTO mode
 - AUTO FOR XML mode
 ms.assetid: 7140d656-1d42-4f01-a533-5251429f4450
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: f77aaefd763a1902c1cd4e4be1dbf78e5f85a19a
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: 33782432e7fef693cec31c13e631d1c84826a033
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85758495"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107487236"
 ---
 # <a name="use-auto-mode-with-for-xml"></a>FOR XML での AUTO モードの使用
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -125,7 +125,7 @@ FOR XML AUTO, ELEMENTS
   
  このクエリでは、\<Cust> 要素の作成時に CustomerID の値が行ごとに比較されます。これは、CustomerID がテーブルの主キーであるためです。 CustomerID がテーブルの主キーとして識別されない場合、列のすべての値 (このクエリでは CustomerID、CustomerType) が行ごとに比較されます。 値が異なる場合は、新しい \<Cust> 要素が XML に追加されます。  
   
- これらの列の値を比較するとき、比較するいずれかの列が **text**型、 **ntext**型、 **image**型、または **xml**型の場合は、FOR XML では値が同じ場合でも値が異なると想定され比較されません。 これは、ラージ オブジェクトの比較がサポートされていないためです。 選択した行ごとに、要素が結果に追加されます。 **(n)varchar(max)** 型および **varbinary(max)** 型の列は比較されることに注意してください。  
+ これらの列の値を比較するとき、比較するいずれかの列が **text** 型、 **ntext** 型、 **image** 型、または **xml** 型の場合は、FOR XML では値が同じ場合でも値が異なると想定され比較されません。 これは、ラージ オブジェクトの比較がサポートされていないためです。 選択した行ごとに、要素が結果に追加されます。 **(n)varchar(max)** 型および **varbinary(max)** 型の列は比較されることに注意してください。  
   
  集計列や計算列の場合と同様に、SELECT 句内の列を FROM 句内で識別されるいずれかのテーブルと関連付けることができない場合、その列がリストに見つかった時点で最も深い入れ子レベルの XML ドキュメントに追加されます。 このような列が SELECT 句内の最初の列の場合は、最上位の要素に追加されます。  
   

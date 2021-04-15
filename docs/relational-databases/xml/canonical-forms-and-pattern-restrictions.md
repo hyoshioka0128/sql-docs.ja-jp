@@ -12,14 +12,14 @@ helpviewer_keywords:
 - pattern restrictions
 - canonical forms
 ms.assetid: 088314ec-7d0b-4a05-8a33-f35da5bfe59c
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 1e6042ae1a63b61cd47fa42470c0707877625c5a
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: 1d6ed73c10ba71db4afb438a858075735104d098
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85775623"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107491182"
 ---
 # <a name="canonical-forms-and-pattern-restrictions"></a>正規の形式とパターン制限
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -29,9 +29,9 @@ ms.locfileid: "85775623"
   
  [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ではこれを回避するために、再挿入できない値を含む XML ドキュメントはすべて、正規の形式がパターン制限に違反しているという理由で拒否します。 たとえば、値 "33.000" は、"33 **.0+" というパターン制限が指定されている** xs:decimal\\からの派生型に対して有効であると判断されません。 "33.000" はこのパターンに準拠していますが、正規の形式である "33" がパターンに違反しているためです。  
   
- したがって、プリミティブ型の **boolean**、 **decimal**、 **float**、 **double**、 **dateTime**、 **time**、 **date**、 **hexBinary**、および **base64Binary**から派生した型にパターン ファセットを適用する場合は注意が必要です。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] から警告が発行されます。  
+ したがって、プリミティブ型の **boolean**、 **decimal**、 **float**、 **double**、 **dateTime**、 **time**、 **date**、 **hexBinary**、および **base64Binary** から派生した型にパターン ファセットを適用する場合は注意が必要です。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] から警告が発行されます。  
   
- 浮動小数点値の不正確なシリアル化にも同様の問題があります。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]で使用されている浮動小数点のシリアル化アルゴリズムにより、近い値が同じ正規表現になることがあり得ます。 ただし、浮動小数点値がシリアル化され、再挿入される際に、その値がわずかに変化することがあります。 その結果、再挿入時にその型の **enumeration**、 **minInclusive**、 **minExclusive**、 **maxInclusive**、または **maxExclusive**の各ファセットに違反する値になることがまれにあります。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ではこれを回避するために、シリアル化や再挿入を行えない `xs:float` または `xs:double` から派生した値を拒否します。  
+ 浮動小数点値の不正確なシリアル化にも同様の問題があります。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]で使用されている浮動小数点のシリアル化アルゴリズムにより、近い値が同じ正規表現になることがあり得ます。 ただし、浮動小数点値がシリアル化され、再挿入される際に、その値がわずかに変化することがあります。 その結果、再挿入時にその型の **enumeration**、 **minInclusive**、 **minExclusive**、 **maxInclusive**、または **maxExclusive** の各ファセットに違反する値になることがまれにあります。 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ではこれを回避するために、シリアル化や再挿入を行えない `xs:float` または `xs:double` から派生した値を拒否します。  
   
 ## <a name="see-also"></a>参照  
  [サーバー上の XML スキーマ コレクションの要件と制限](../../relational-databases/xml/requirements-and-limitations-for-xml-schema-collections-on-the-server.md)  

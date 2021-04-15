@@ -24,18 +24,18 @@ helpviewer_keywords:
 - XML [SQL Server], untyped
 - xml data type [SQL Server], parameters
 ms.assetid: 4bc50af9-2f7d-49df-bb01-854d080c72c7
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: a31b8e27147f0c9b06c79bf56c1b8ae34f4e8e14
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: d5be6303cb92befc15d5f5cfcc3062deb31238ab
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85775553"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107491020"
 ---
 # <a name="compare-typed-xml-to-untyped-xml"></a>型指定された XML と型指定されていない XML の比較
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
-  **xml** 型の変数、パラメーター、および列を作成できます。 必要に応じて、XML スキーマのコレクションを、 **xml** 型の変数、パラメーター、または列に関連付けることができます。 XML スキーマ コレクションを関連付けた場合、この **xml** データ型のインスタンスを *型指定されている*と呼びます。 それ以外の場合は、XML インスタンスを *型指定されていない*と呼びます。  
+  **xml** 型の変数、パラメーター、および列を作成できます。 必要に応じて、XML スキーマのコレクションを、 **xml** 型の変数、パラメーター、または列に関連付けることができます。 XML スキーマ コレクションを関連付けた場合、この **xml** データ型のインスタンスを *型指定されている* と呼びます。 それ以外の場合は、XML インスタンスを *型指定されていない* と呼びます。  
   
 ## <a name="well-formed-xml-and-the-xml-data-type"></a>適切な形式の XML と xml データ型  
  **xml** データ型には、ISO 標準の **xml** データ型が実装されています。 したがって、型指定されていない XML 列には、適切な形式の XML Version 1.0 ドキュメントを保存できるほか、テキスト ノードや任意の数の最上位要素が含まれた、いわゆる XML コンテンツ フラグメントを保存することもできます。 システムにより、データが適切な形式であることが確認されます。このとき XML スキーマに列をバインドする必要はなく、広義の適切な形式でないデータは拒否されます。 このことは、型指定されていない XML の変数やパラメーターにも該当します。  
@@ -45,7 +45,7 @@ ms.locfileid: "85775553"
   
 -   **検証制約。** 型指定された xml インスタンスが割り当てまたは変更されるときは、常に、SQL Server によってそのインスタンスが検証されます。  
   
--   **データ型情報。** スキーマでは、 **xml** データ型のインスタンス内の属性と要素の型に関する情報が提供されます。 この型情報により、インスタンスに含まれている値には、型指定されていない **xml**より正確な演算のセマンティクスが提供されます。 たとえば、10 進数の算術演算は 10 進数値では実行できますが、文字列値では実行できません。 スキーマで型情報が指定されるので、型指定された XML ストレージは、型指定されていない XML よりも大幅に小さくすることができます。  
+-   **データ型情報。** スキーマでは、 **xml** データ型のインスタンス内の属性と要素の型に関する情報が提供されます。 この型情報により、インスタンスに含まれている値には、型指定されていない **xml** より正確な演算のセマンティクスが提供されます。 たとえば、10 進数の算術演算は 10 進数値では実行できますが、文字列値では実行できません。 スキーマで型情報が指定されるので、型指定された XML ストレージは、型指定されていない XML よりも大幅に小さくすることができます。  
   
 ## <a name="choosing-typed-or-untyped-xml"></a>型指定された XML と型指定されていない XML の選択  
  次の条件に該当する場合は、型指定されていない **xml** データ型を使用してください。  
@@ -143,7 +143,7 @@ declare @x xml (DOCUMENT Production.ProductDescriptionSchemaCollection);
  サード パーティのツールを使用すると、DTD を XML スキーマ ドキュメントに変換できます。変換した XML スキーマはデータベースに読み込むことができます。  
   
 ## <a name="upgrading-typed-xml-from-sql-server-2005"></a>型指定された XML の SQL Server 2005 からのアップグレード  
- [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] では、lax 検証のサポート、 **xs:date**、 **xs:time** 、および **xs:dateTime** のインスタンス データの処理の強化、list 型と union 型のサポートの追加など、XML スキーマのサポートがいくつかの点で拡張されています。 ほとんどの場合は、アップグレードの際にこれらの変更を意識する必要はありません。 ただし、 [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] で、 **xs:date**型、 **xs:time**型、または **xs:dateTime** 型 (またはこれらのサブタイプ) の値を許可する XML スキーマ コレクションを使用していた場合は、その [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] データベースを [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]以降のバージョンにアタッチすると、以下のアップグレード手順が実行されます。  
+ [!INCLUDE[ssKatmai](../../includes/sskatmai-md.md)] では、lax 検証のサポート、 **xs:date**、 **xs:time** 、および **xs:dateTime** のインスタンス データの処理の強化、list 型と union 型のサポートの追加など、XML スキーマのサポートがいくつかの点で拡張されています。 ほとんどの場合は、アップグレードの際にこれらの変更を意識する必要はありません。 ただし、 [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] で、 **xs:date** 型、 **xs:time** 型、または **xs:dateTime** 型 (またはこれらのサブタイプ) の値を許可する XML スキーマ コレクションを使用していた場合は、その [!INCLUDE[ssVersion2005](../../includes/ssversion2005-md.md)] データベースを [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]以降のバージョンにアタッチすると、以下のアップグレード手順が実行されます。  
   
 1.  XML スキーマ コレクションに **xs:anyType**、 **xs:anySimpleType**、 **xs:date** (またはそのサブタイプ)、 **xs:time** (またはそのサブタイプ)、または **xs:dateTime** (またはそのサブタイプ) として型指定されている要素や属性、あるいはこれらの型を含む union 型または list 型の要素や属性が含まれる場合、その XML スキーマ コレクションで型指定されているすべての XML 列で、次の状況が発生します。  
   
@@ -153,9 +153,9 @@ declare @x xml (DOCUMENT Production.ProductDescriptionSchemaCollection);
   
     3.  1 年 1 月 1 日より小さい **xs:date** 値や **xs:dateTime** 値があると、インデックスが再構築されるときや、その値を含む XML データ型に対して XQuery ステートメントや XML-DML ステートメントが実行されるときに、実行時エラーが発生します。  
   
-2.  **xs:date** ファセット、 **xs:dateTime** ファセット、または XML スキーマ コレクションの既定値に負の年がある場合は、 **xs:date** 基本型または **xs:dateTime** 基本型で許可されている最も小さな値 (たとえば、 **xs:dateTime**の場合は 0001-01-01T00:00:00.0000000Z) に自動的に更新されます。  
+2.  **xs:date** ファセット、 **xs:dateTime** ファセット、または XML スキーマ コレクションの既定値に負の年がある場合は、 **xs:date** 基本型または **xs:dateTime** 基本型で許可されている最も小さな値 (たとえば、 **xs:dateTime** の場合は 0001-01-01T00:00:00.0000000Z) に自動的に更新されます。  
 
- 負の年が含まれていても、単純な SQL SELECT ステートメントを使用して XML データ型全体を取得することはできます。 負の年は、新たにサポートされた範囲内の年に置き換えるか、要素や属性の型を **xs:string**に変更することをお勧めします。  
+ 負の年が含まれていても、単純な SQL SELECT ステートメントを使用して XML データ型全体を取得することはできます。 負の年は、新たにサポートされた範囲内の年に置き換えるか、要素や属性の型を **xs:string** に変更することをお勧めします。  
   
 ## <a name="see-also"></a>参照  
  [XML データのインスタンスの作成](../../relational-databases/xml/create-instances-of-xml-data.md)   

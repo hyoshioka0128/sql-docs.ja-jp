@@ -12,16 +12,16 @@ helpviewer_keywords:
 - adExecuteStream flag
 - SQLXMLOLEDB Provider, about SQLXMLOLEDB Provider
 ms.assetid: 2e3f3817-4209-4bf4-9f46-248c95bc6f1b
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 ms.custom: seo-lt-2019
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 6b3d36e6aae398c8b480a800cdd2dc6064eb220e
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: 585874edde793c1da0f6849089fdef558b2920ca
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97462893"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107490595"
 ---
 # <a name="introduction-to-the-sqlxmloledb-provider-sqlxml-40"></a>SQLXMLOLEDB プロバイダーの概要 (SQLXML 4.0)
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -46,10 +46,10 @@ oTestCommand.Execute , , adExecuteStream
   
  SQLXMLOLEDB プロバイダーでは、次のプロバイダー固有のコマンド プロパティへのアクセスが提供されます。  
   
-|コマンド<br /><br /> property|Default<br /><br /> (ある場合)|説明|  
+|command<br /><br /> property|Default<br /><br /> (ある場合)|説明|  
 |--------------------------|----------------------------|-----------------|  
 |基本パス|""|基本ファイル パスを指定します。 基本ファイル パスは、XML Stylesheet Language (XSL) の場所またはマッピング スキーマ ファイルを指定するときに使用します。 基本ファイルパスは、xsl またはマッピングスキーマのプロパティで指定されている XSL またはマッピングスキーマファイルの相対パスを解決するためにも使用されます。<br /><br /> このプロパティを使用する例については、「 [SQLXMLOLEDB Provider&#41;&#40;XPath クエリの実行 ](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/data-access-components-provider/executing-xpath-queries-sqlxmloledb-provider.md)」を参照してください。|  
-|ClientSideXML|誤|行セットを XML に変換する処理をサーバーではなくクライアントで行う場合は、このプロパティを True に設定します。 これはパフォーマンスの負荷を中間層に移す場合に便利です。<br /><br /> このプロパティを使用する例については、「 [Sql クエリの実行 &#40;SQLXMLOLEDB provider&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/data-access-components-provider/executing-sql-queries-sqlxmloledb-provider.md) 」または「 [Sql クエリを含むテンプレートの実行」 &#40;SQLXMLOLEDB provider&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/data-access-components-provider/executing-templates-that-contain-sql-queries-sqlxmloledb-provider.md)を参照してください。|  
+|ClientSideXML|False|行セットを XML に変換する処理をサーバーではなくクライアントで行う場合は、このプロパティを True に設定します。 これはパフォーマンスの負荷を中間層に移す場合に便利です。<br /><br /> このプロパティを使用する例については、「 [Sql クエリの実行 &#40;SQLXMLOLEDB provider&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/data-access-components-provider/executing-sql-queries-sqlxmloledb-provider.md) 」または「 [Sql クエリを含むテンプレートの実行」 &#40;SQLXMLOLEDB provider&#41;](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/data-access-components-provider/executing-templates-that-contain-sql-queries-sqlxmloledb-provider.md)を参照してください。|  
 |コンテンツ タイプ||出力コンテンツの種類を返します。 これは READ ONLY プロパティです。<br /><br /> このプロパティは、コンテンツの種類 (TEXT/XML、TEXT/HTML、image/jpeg など) に関する情報をブラウザーに提供します。 このプロパティの値は、HTTP ヘッダーの一部としてブラウザーに送信される **content-type** フィールドになります。このフィールドには、本文として送信されるドキュメントの MIME の種類 (Multipurpose Internet Mail Extensions) が格納されます。|  
 |マッピング スキーマ|NULL|クライアント アプリケーションでマッピング スキーマ (XDR または XSD) に対して XPath クエリを実行する場合、このプロパティを使用してマッピング スキーマの名前を指定します。<br /><br /> パスは相対 (xyz/abc/MySchema.xml) または絶対 (C:\MyFolder\abc\MySchema.xml) パスで指定できます。<br /><br /> 相対パスが指定されている場合、ベースパスプロパティによって指定されるベースパスは、相対パスを解決するために使用されます。 "ベースパス" プロパティにパスが指定されていない場合、相対パスは現在のディレクトリに対する相対パスになります。<br /><br /> [マッピングスキーマ] プロパティの値を指定するときに、ローカルディレクトリのパスまたは URL (https://...) を指定できます。URL を指定する場合は、プロキシサーバー経由で HTTP および HTTPS サーバーにアクセスするように WinHTTP を構成する必要があります。 これには、Proxycfg.exe ユーティリティを実行します。 詳細については、MSDN ライブラリの「Using the WinHTTP Proxy Configuration Utility」(英語) を参照してください。<br /><br /> このプロパティを使用する例については、「 [SQLXMLOLEDB Provider&#41;&#40;XPath クエリの実行 ](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/data-access-components-provider/executing-xpath-queries-sqlxmloledb-provider.md)」を参照してください。|  
 |namespaces||名前空間を使用する XPath クエリを実行できるようにします。 このプロパティを使用する例については、「 [SQLXMLOLEDB Provider&#41;&#40;名前空間を使用した XPath クエリの実行 ](../../../relational-databases/sqlxml-annotated-xsd-schemas-xpath-queries/data-access-components-provider/executing-xpath-queries-with-namespaces-sqlxmloledb-provider.md)」を参照してください。|  

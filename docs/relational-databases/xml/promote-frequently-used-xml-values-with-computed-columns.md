@@ -11,15 +11,15 @@ helpviewer_keywords:
 - promoting properties [XML in SQL Server]
 - property promotion [XML in SQL Server]
 ms.assetid: f5111896-c2fd-4209-b500-f2baa45489ad
-author: MightyPen
-ms.author: genemi
+author: rothja
+ms.author: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: c5881835f6a415b47825181d7d5a74ec24677e3c
-ms.sourcegitcommit: 783b35f6478006d654491cb52f6edf108acf2482
+ms.openlocfilehash: 15bbb0bc454c8069bdb77750b45de6db2260b280
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91891942"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107487787"
 ---
 # <a name="promote-frequently-used-xml-values-with-computed-columns"></a>計算列を使用した使用頻度の高い XML 値の昇格
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -80,7 +80,7 @@ WHERE  ISBN = '0-7356-1588-2'
   
 -   プロパティ テーブルを管理するためのトリガーを XML 列に作成します。 トリガー内では次のいずれかを行うことができます。  
   
-    -   **nodes()** 、 **value()** などの **xml**データ型のメソッドを使用して、プロパティ テーブルの行を挿入および削除します。  
+    -   **nodes()** 、 **value()** などの **xml** データ型のメソッドを使用して、プロパティ テーブルの行を挿入および削除します。  
   
     -   CLR (共通言語ランタイム) でストリーミング テーブル値関数を作成し、プロパティ テーブルの行を挿入および削除します。  
   
