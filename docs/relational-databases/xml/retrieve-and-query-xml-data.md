@@ -12,14 +12,14 @@ helpviewer_keywords:
 - XML data [SQL Server], retrieving
 - XML instance retrieval
 ms.assetid: 24a28760-1225-42b3-9c89-c9c0332d9c51
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 86f908d6aa221b2c69be3d8960efac929cbf5306
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: b5258fc958e4aab815637e5e3f884e64ae73344e
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85738396"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107487543"
 ---
 # <a name="retrieve-and-query-xml-data"></a>XML データの取得および XML データに対するクエリの実行
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]
@@ -42,7 +42,7 @@ FROM T1
   
  結果は `<doc/>`です。  
   
- `<?xml version='1.0'?>`などの XML 宣言は、XML データを **xml** データ型インスタンスに格納するときに保持されません。 これは仕様です。 XML 宣言 () とその属性 (version/encoding/stand-alone) は、データを **xml**型に変換すると失われます。 XML 宣言は、XML パーサーが使用するディレクティブとして扱われます。 XML データは、ucs-2 として内部的に保存されます。 XML インスタンスのその他すべての PI は保持されます。  
+ `<?xml version='1.0'?>`などの XML 宣言は、XML データを **xml** データ型インスタンスに格納するときに保持されません。 これは仕様です。 XML 宣言 () とその属性 (version/encoding/stand-alone) は、データを **xml** 型に変換すると失われます。 XML 宣言は、XML パーサーが使用するディレクティブとして扱われます。 XML データは、ucs-2 として内部的に保存されます。 XML インスタンスのその他すべての PI は保持されます。  
   
   
 ### <a name="order-of-attributes"></a>属性の順序  

@@ -2,7 +2,7 @@
 description: 論理関数 - GREATEST (Transact-SQL)
 title: GREATEST (Transact-SQL)
 ms.custom: ''
-ms.date: 04/09/2021
+ms.date: 04/14/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database
 ms.technology: t-sql
@@ -17,12 +17,12 @@ helpviewer_keywords:
 author: jmsteen
 ms.author: josteen
 ms.reviewer: wiassaf
-ms.openlocfilehash: 6f6fa1a411c25452351a19257181a364d63c08a7
-ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
+ms.openlocfilehash: 37f7ce71fc6ea9aedd2b8d92e9a19c6f844a02d6
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107300506"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107492466"
 ---
 # <a name="logical-functions---greatest-transact-sql"></a>論理関数 - GREATEST (Transact-SQL)
 [!INCLUDE [asdb-asdbmi](../../includes/applies-to-version/asdb-asdbmi.md)]
@@ -80,14 +80,14 @@ GREATEST ( expression1 [ ,...expressionN ] )
  戻り値の型のスケールは、最も優先順位の高いデータ型の引数のスケールによって決まります。 
  
 ```sql 
-SELECT GREATEST ( '6.62', 3.1415, N'7' ) AS Greatest; 
+SELECT GREATEST ( '6.62', 3.1415, N'7' ) AS GreatestVal; 
 GO 
 ```  
   
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
   
 ```  
-Greatest 
+GreatestVal 
 -------- 
   7.0000 
 
@@ -99,14 +99,14 @@ Greatest
  次の例では、入力される文字定数のリストから最大値が返されます。  
   
 ```sql  
-SELECT GREATEST ('Glacier', N'Joshua Tree', 'Mount Rainier') AS Greatest;  
+SELECT GREATEST ('Glacier', N'Joshua Tree', 'Mount Rainier') AS GreatestString;  
 GO  
 ```  
   
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
   
 ```  
-Greatest 
+GreatestString 
 ------------- 
 Mount Rainier 
 
@@ -122,8 +122,8 @@ USE AdventureWorks2019;
 GO 
 
 SELECT sp.SalesQuota, sp.SalesYTD, sp.SalesLastYear 
-      , GREATEST(sp.SalesQuota, sp.SalesYTD, sp.SalesLastYear) AS Greatest 
-FROM sales.SalesPerson AS sp 
+      , GREATEST(sp.SalesQuota, sp.SalesYTD, sp.SalesLastYear) AS Sales 
+FROM Sales.SalesPerson AS sp 
 WHERE sp.SalesYTD < 3000000; 
 GO  
   
@@ -132,7 +132,7 @@ GO
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
   
 ```  
-SalesQuota            SalesYTD              SalesLastYear         Greatest 
+SalesQuota            SalesYTD              SalesLastYear         Sales 
 
 --------------------- --------------------- --------------------- --------------------- 
                  NULL           559697.5639                 .0000           559697.5639 
@@ -156,19 +156,19 @@ SalesQuota            SalesYTD              SalesLastYear         Greatest
  この例では、`GREATEST` を使用して、`WHERE` 句の述語内にあるローカル変数のリストの最大値を決定します。 
   
 ```sql  
-CREATE TABLE studies (    
-    Variable varchar(10) NOT NULL,    
+CREATE TABLE dbo.studies (    
+    VarX varchar(10) NOT NULL,    
     Correlation decimal(4, 3) NULL 
 ); 
 
-INSERT INTO studies VALUES ('Var1', 0.2), ('Var2', 0.825), ('Var3', 0.61); 
+INSERT INTO dbo.studies VALUES ('Var1', 0.2), ('Var2', 0.825), ('Var3', 0.61); 
 GO 
 
 DECLARE @PredictionA DECIMAL(2,1) = 0.7;  
 DECLARE @PredictionB DECIMAL(3,1) = 0.65;  
 
-SELECT Variable, Correlation  
-FROM studies 
+SELECT VarX, Correlation  
+FROM dbo.studies 
 WHERE Correlation > GREATEST(@PredictionA, @PredictionB); 
 GO 
 ```  
@@ -176,7 +176,7 @@ GO
  [!INCLUDE[ssResult](../../includes/ssresult-md.md)]  
   
 ```  
-Variable   Correlation 
+VarX   Correlation 
 ---------- ----------- 
 Var2              .825 
 
@@ -188,18 +188,18 @@ Var2              .825
  この例では、`GREATEST` を使用して、列、定数、および変数を含むリストの最大値を決定します。 
   
 ```sql  
-CREATE TABLE products (    
+CREATE TABLE dbo.products (    
     prod_id int IDENTITY(1,1),    
     listprice smallmoney NULL 
 ); 
 
-INSERT INTO products VALUES (14.99), (49.99), (24.99); 
+INSERT INTO dbo.products VALUES (14.99), (49.99), (24.99); 
 GO 
 
 DECLARE @PriceX smallmoney = 19.99;  
 
 SELECT GREATEST(listprice, 0, @PriceX) as GreatestPrice  
-FROM products;
+FROM dbo.products;
 GO 
 ```  
   
