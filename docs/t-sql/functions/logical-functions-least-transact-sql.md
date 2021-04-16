@@ -17,15 +17,15 @@ helpviewer_keywords:
 author: jmsteen
 ms.author: josteen
 ms.reviewer: wiassaf
-ms.openlocfilehash: ec8ac611a7d2903a47dc9a800843c5f6f97b6ec8
-ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
+ms.openlocfilehash: 88d54f6ebc98712aa02ce29ff9b2922629a95f10
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107492448"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107560798"
 ---
 # <a name="logical-functions---least-transact-sql"></a>論理関数 - LEAST (Transact-SQL)
-[!INCLUDE [asdb-asdbmi](../../includes/applies-to-version/asdb-asdbmi.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-svrless-poolonly](../../includes/applies-to-version/sql-asdb-asdbmi-asa-svrless-poolonly.md)]
 
  この関数は、1 つまたは複数の式のリストから最小値を返します。 
 

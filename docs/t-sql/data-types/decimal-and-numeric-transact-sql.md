@@ -23,12 +23,12 @@ ms.assetid: 9d862a90-e6b7-4692-8605-92358dccccdf
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: a0ff8f34468e4186700d6942cbbfcbf5d6f2b09b
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: d500ae0f43a39dfc4ced79a0389bc9ca15accd60
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104747722"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107561113"
 ---
 # <a name="decimal-and-numeric-transact-sql"></a>decimal 型と numeric 型 (Transact-SQL)
 [!INCLUDE [sql-asdb-asdbmi-asa-pdw](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
@@ -41,9 +41,6 @@ ms.locfileid: "104747722"
   
 p (precision)  
 格納される 10 進数の桁数の最大合計数。 この数には、小数点の左側と右側の両方が含まれます。 有効桁数の値は、1 - 38 (最大有効桁数) にする必要があります。 既定の有効桁数は 18 です。
-  
-> [!NOTE]  
->  Informatica では、有効桁数と小数点以下桁数の指定に関係なく、16 の有効桁数のみサポートされます。  
   
 *s* (scale)  
 小数点の右側の保存される桁数です。 この数値が *p* から差し引かれ、小数点の左側の最大桁数が判別されます。 小数点以下桁数は、0 から *p* の範囲の値である必要があり、有効桁数が指定されている場合にのみ指定できます。 既定の小数点以下桁数は 0 です。したがって、0 <= *s* \<= *p* です。 ストレージの最大サイズは有効桁数によって異なります。

@@ -17,15 +17,16 @@ helpviewer_keywords:
 author: jmsteen
 ms.author: josteen
 ms.reviewer: wiassaf
-ms.openlocfilehash: 37f7ce71fc6ea9aedd2b8d92e9a19c6f844a02d6
-ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
+ms.openlocfilehash: 8913fc9447049fb02b0ee6c04cee3f3715a37fb6
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/14/2021
-ms.locfileid: "107492466"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107560827"
 ---
 # <a name="logical-functions---greatest-transact-sql"></a>論理関数 - GREATEST (Transact-SQL)
-[!INCLUDE [asdb-asdbmi](../../includes/applies-to-version/asdb-asdbmi.md)]
+[!INCLUDE [sql-asdb-asdbmi-asa-svrless-poolonly](../../includes/applies-to-version/sql-asdb-asdbmi-asa-svrless-poolonly.md)]
+
 
  この関数は、1 つまたは複数の式のリストから最大値を返します。 
   

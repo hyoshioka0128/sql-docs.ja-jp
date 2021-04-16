@@ -21,12 +21,12 @@ ms.assetid: 7d78bf17-6c64-4166-bd0b-9e9e20992136
 author: VanMSFT
 ms.author: vanto
 monikerRange: '>=aps-pdw-2016||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: b30e7adeb6ad09417b9ab02cb01610774d09a148
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: e9ef1a38eded0512041b3e7e1da81047518fd052
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99159047"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107561087"
 ---
 # <a name="sysserver_permissions-transact-sql"></a>sys.server_permissions (Transact-SQL)
 [!INCLUDE [sql-asdbmi-pdw](../../includes/applies-to-version/sql-asdbmi-pdw.md)]
@@ -35,15 +35,15 @@ ms.locfileid: "99159047"
   
 |列名|データ型|説明|  
 |-----------------|---------------|-----------------|  
-|**class**|**tinyint**|権限が存在するリソースのクラスの識別子。<br /><br /> 100 = サーバー<br /><br /> 101 = サーバープリンシパル<br /><br /> 105 = エンドポイント|  
-|**class_desc**|**nvarchar(60)**|権限が存在するクラスの説明です。 次のいずれかの値です。<br /><br /> **SERVER**<br /><br /> **SERVER_PRINCIPAL**<br /><br /> **終点**|  
+|**class**|**tinyint**|権限が存在するリソースのクラスの識別子。<br /><br /> 100 = サーバー<br /><br /> 101 = サーバープリンシパル<br /><br /> 105 = エンドポイント<br /><br /> 108 = 可用性グループ|  
+|**class_desc**|**nvarchar(60)**|権限が存在するクラスの説明です。 次のいずれかの値です。<br /><br /> **SERVER**<br /><br /> **SERVER_PRINCIPAL**<br /><br /> **終点**<br /><br /> **AVAILABILITY GROUP**|  
 |**major_id**|**int**|権限が存在するセキュリティ保護可能なリソースの ID。クラスに基づいて解釈されます。 ほとんどの場合、これはクラスが表すものに適用される ID の種類にすぎません。 標準以外のリソースに対する解釈は、次のようになります。<br /><br /> 100 = 常に0|  
 |**minor_id**|**int**|権限が存在するセカンダリ ID。クラスに従って解釈されます。|  
 |**grantee_principal_id**|**int**|権限が付与されているサーバープリンシパル ID。|  
 |**grantor_principal_id**|**int**|サーバープリンシパル-これらのアクセス許可の権限の許可の付与の ID。|  
 |**type**|**char (4)**|サーバー権限の種類。 権限の種類の一覧については、次の表を参照してください。|  
 |**permission_name**|**nvarchar(128)**|アクセス許可の名前。|  
-|**state**|**char(1)**|アクセス許可の状態:<br /><br /> D = 拒否<br /><br /> R = 取り消し<br /><br /> G = 許可<br /><br /> W = grant With Grant option|  
+|**状態**|**char(1)**|アクセス許可の状態:<br /><br /> D = 拒否<br /><br /> R = 取り消し<br /><br /> G = 許可<br /><br /> W = grant With Grant option|  
 |**state_desc**|**nvarchar(60)**|権限の状態の説明。<br /><br /> DENY<br /><br /> REVOKE<br /><br /> GRANT<br /><br /> GRANT_WITH_GRANT_OPTION|  
   
 |アクセス許可の種類|アクセス許可名|適用されるセキュリティ保護可能なリソース|  

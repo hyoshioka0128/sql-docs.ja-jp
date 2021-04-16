@@ -17,12 +17,12 @@ helpviewer_keywords:
 author: VanMSFT
 ms.author: vanto
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 7006fbf0570aea7c942f7e904144cb72658b7903
-ms.sourcegitcommit: a7af7bead92044595556b8687e640a0eab0bc455
+ms.openlocfilehash: 6d650a8313a98bcbb44b28c5797c02e48f57a4f9
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "106179922"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107561100"
 ---
 # <a name="row-level-security"></a>行レベルのセキュリティ
 
@@ -188,41 +188,45 @@ RLS では、2 種類のセキュリティ述語をサポートしています�
 
 ```sql  
 CREATE USER Manager WITHOUT LOGIN;  
-CREATE USER Sales1 WITHOUT LOGIN;  
-CREATE USER Sales2 WITHOUT LOGIN;  
+CREATE USER SalesRep1 WITHOUT LOGIN;  
+CREATE USER SalesRep2 WITHOUT LOGIN;
+GO
 ```
 
 データを保持するテーブルを作成します。  
 
 ```sql
-CREATE TABLE Sales  
+CREATE SCHEMA Sales
+GO
+CREATE TABLE Sales.Orders 
     (  
     OrderID int,  
-    SalesRep sysname,  
-    Product varchar(10),  
-    Qty int  
+    SalesRep nvarchar(50),  
+    Product nvarchar(50),  
+    Quantity smallint  
     );  
 ```
 
  そのテーブルに、各営業担当者の 3 つの注文を表示する、6 つのデータ行を設定します。  
 
 ```sql
-INSERT INTO Sales VALUES (1, 'Sales1', 'Valve', 5);
-INSERT INTO Sales VALUES (2, 'Sales1', 'Wheel', 2);
-INSERT INTO Sales VALUES (3, 'Sales1', 'Valve', 4);
-INSERT INTO Sales VALUES (4, 'Sales2', 'Bracket', 2);
-INSERT INTO Sales VALUES (5, 'Sales2', 'Wheel', 5);
-INSERT INTO Sales VALUES (6, 'Sales2', 'Seat', 5);
+INSERT INTO Sales.Orders  VALUES (1, 'SalesRep1', 'Valve', 5);
+INSERT INTO Sales.Orders  VALUES (2, 'SalesRep1', 'Wheel', 2);
+INSERT INTO Sales.Orders  VALUES (3, 'SalesRep1', 'Valve', 4);
+INSERT INTO Sales.Orders  VALUES (4, 'SalesRep2', 'Bracket', 2);
+INSERT INTO Sales.Orders  VALUES (5, 'SalesRep2', 'Wheel', 5);
+INSERT INTO Sales.Orders  VALUES (6, 'SalesRep2', 'Seat', 5);
 -- View the 6 rows in the table  
-SELECT * FROM Sales;
+SELECT * FROM Sales.Orders;
 ```
 
 各ユーザーに、テーブルに対する読み取りアクセス権を付与します。  
 
 ```sql
-GRANT SELECT ON Sales TO Manager;  
-GRANT SELECT ON Sales TO Sales1;  
-GRANT SELECT ON Sales TO Sales2;  
+GRANT SELECT ON Sales.Orders TO Manager;  
+GRANT SELECT ON Sales.Orders TO SalesRep1;  
+GRANT SELECT ON Sales.Orders TO SalesRep2; 
+GO
 ```
 
 新しいスキーマと、インライン テーブル値関数を作成します。 SalesRep 列内の行がクエリを実行しているユーザーと同じである場合 (`@SalesRep = USER_NAME()`)、またはクエリを実行しているユーザーがマネージャー ユーザーである場合 (`USER_NAME() = 'Manager'`)、関数は 1 を返します
@@ -231,44 +235,47 @@ GRANT SELECT ON Sales TO Sales2;
 CREATE SCHEMA Security;  
 GO  
   
-CREATE FUNCTION Security.fn_securitypredicate(@SalesRep AS sysname)  
+CREATE FUNCTION Security.tvf_securitypredicate(@SalesRep AS nvarchar(50))  
     RETURNS TABLE  
 WITH SCHEMABINDING  
 AS  
-    RETURN SELECT 1 AS fn_securitypredicate_result
+    RETURN SELECT 1 AS tvf_securitypredicate_result
 WHERE @SalesRep = USER_NAME() OR USER_NAME() = 'Manager';  
+GO
 ```
 
 フィルター述語として関数を追加するセキュリティ ポリシーを作成します。 状態を ON に設定してポリシーを有効にする必要があります。
 
 ```sql
 CREATE SECURITY POLICY SalesFilter  
-ADD FILTER PREDICATE Security.fn_securitypredicate(SalesRep)
-ON dbo.Sales  
+ADD FILTER PREDICATE Security.tvf_securitypredicate(SalesRep)
+ON Sales.Orders
 WITH (STATE = ON);  
+GO
 ```
 
 fn_securitypredicate 関数に対する SELECT 権限を許可する 
 ```sql
-GRANT SELECT ON security.fn_securitypredicate TO Manager;  
-GRANT SELECT ON security.fn_securitypredicate TO Sales1;  
-GRANT SELECT ON security.fn_securitypredicate TO Sales2;  
+GRANT SELECT ON Security.tvf_securitypredicate TO Manager;  
+GRANT SELECT ON Security.tvf_securitypredicate TO SalesRep1;  
+GRANT SELECT ON Security.tvf_securitypredicate TO SalesRep1;  
+
 ```
 
 各ユーザーとして Sales テーブルから選択されたフィルター述語を今すぐテストしてみましょう。
 
 ```sql
-EXECUTE AS USER = 'Sales1';  
-SELECT * FROM Sales;
+EXECUTE AS USER = 'SalesRep1';  
+SELECT * FROM Sales.Orders;
 REVERT;  
   
-EXECUTE AS USER = 'Sales2';  
-SELECT * FROM Sales;
+EXECUTE AS USER = 'SalesRep2';  
+SELECT * FROM Sales.Orders;
 REVERT;  
   
 EXECUTE AS USER = 'Manager';  
-SELECT * FROM Sales;
-REVERT;  
+SELECT * FROM Sales.Orders;
+REVERT; 
 ```
 
 マネージャーには、6 つの行すべてが表示されるはずです。 Sales1 と Sales2 のユーザーには、それぞれの売上のみ表示されます。
@@ -285,14 +292,15 @@ WITH (STATE = OFF);
 リソースをクリーンアップする SQL データベースに接続します
 
 ```sql
-DROP USER Sales1;
-DROP USER Sales2;
+DROP USER SalesRep1;
+DROP USER SalesRep2;
 DROP USER Manager;
 
 DROP SECURITY POLICY SalesFilter;
-DROP TABLE Sales;
-DROP FUNCTION Security.fn_securitypredicate;
+DROP TABLE Sales.Orders;
+DROP FUNCTION Security.tvf_securitypredicate;
 DROP SCHEMA Security;
+DROP SCHEMA Sales;
 ```
 
 ### <a name="b-scenarios-for-using-row-level-security-on-an-azure-synapse-external-table"></a><a name="external"></a> B. Azure Synapse 外部テーブルに対して行レベルのセキュリティを使用する場合のシナリオ
