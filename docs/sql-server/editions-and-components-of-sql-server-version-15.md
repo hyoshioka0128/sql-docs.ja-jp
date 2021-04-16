@@ -1,8 +1,8 @@
 ---
 description: " の各エディションとサポートされる機能[!INCLUDE[sssql19-md](../includes/sssql19-md.md)]"
-title: SQL Server 2019 の各エディションとサポートされている機能 | Microsoft Docs
+title: SQL Server 2019 の各エディションとサポートされている機能
 ms.custom: ''
-ms.date: 11/04/2019
+ms.date: 03/26/2021
 ms.prod: sql
 ms.reviewer: ''
 ms.technology: release-landing
@@ -34,12 +34,12 @@ ms.assetid: ''
 author: MikeRayMSFT
 ms.author: mikeray
 monikerRange: '>= sql-server-ver15'
-ms.openlocfilehash: 98b630f4471d35259db609a5bf1740ff96b8d604
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 4647098fb9b0e5a006b222d81ad0be88ff480cba
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100336176"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107486705"
 ---
 # <a name="editions-and-supported-features-of-sssql19-md"></a> の各エディションとサポートされる機能[!INCLUDE[sssql19-md](../includes/sssql19-md.md)]
 
@@ -133,7 +133,7 @@ Developer Edition により、引き続き [[!INCLUDE[ssNoVersion](../includes/s
 |[!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)] のインスタンスごとのバッファー プールの最大メモリ|オペレーティング システムの最大容量|128 <nobr/>GB|64 <nobr/>GB|1410 <nobr/>MB|1410<nobr/> MB|
 |[!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)] のインスタンスごとの列ストア セグメント キャッシュの最大メモリ|メモリ制限なし| 32 <nobr/>GB| 16 <nobr/>GB| 352 <nobr/>MB| 352 <nobr/>MB|
 |[!INCLUDE[ssDEnoversion](../includes/ssdenoversion-md.md)] のデータベースごとの最大メモリ最適化データ サイズ|メモリ制限なし| 32 <nobr/>GB| 16 <nobr/>GB| 352 <nobr/>MB| 352 <nobr/>MB|
-|利用可能な最大メモリ サイズ ( [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)]のインスタンスごと)|オペレーティング システムの最大容量|16 <nobr/>GB<sup>2</sup><br /><br /> 64 <nobr/>GB<sup>3</sup>|該当なし|N/A|該当なし|
+|利用可能な最大メモリ サイズ ( [!INCLUDE[ssASnoversion](../includes/ssasnoversion-md.md)]のインスタンスごと)|オペレーティング システムの最大容量|16 <nobr/>GB<sup>2</sup><br /><br /> 64 <nobr/>GB<sup>3</sup>|該当なし|該当なし|該当なし|
 |利用可能な最大メモリ サイズ ( [!INCLUDE[ssRSnoversion](../includes/ssrsnoversion-md.md)]のインスタンスごと)|オペレーティング システムの最大容量|64 <nobr/>GB|64 <nobr/>GB|4 <nobr/>GB|該当なし|
 |リレーショナル データベースの最大サイズ|524 <nobr/> PB|524 <nobr/> PB|524 <nobr/> PB|10 <nobr/>GB|10 <nobr/>GB|
 
@@ -147,11 +147,11 @@ Developer Edition により、引き続き [[!INCLUDE[ssNoVersion](../includes/s
 
 |機能|Enterprise|Standard|Web|Express with<br/>Advanced Services|高速|
 |-------|:--------:|:------:|:-:|--------------------------------:|:-----:|
-|Server Core サポート<sup>1</sup>|はい|はい|はい|はい|はい|
-|ログ配布|はい|はい|はい|いいえ|いいえ|
+|Server Core サポート<sup>1</sup>|はい|Yes|Yes|Yes|はい|
+|ログ配布|はい|Yes|はい|いいえ|いいえ|
 |データベース ミラーリング|はい|はい<sup>2</sup>|○<sup>3</sup>|○<sup>3</sup>|○<sup>3</sup>|
 |バックアップ圧縮|はい|はい|いいえ|いいえ|いいえ|
-|データベース スナップショット|はい|はい|はい|はい|はい|
+|データベース スナップショット|はい|Yes|Yes|Yes|はい|
 |Always On フェールオーバー クラスター インスタンス<sup>4</sup>|はい|はい|いいえ|いいえ|いいえ|
 |Always On 可用性グループ<sup>5</sup>|はい|いいえ|いいえ|いいえ|いいえ|
 |基本的な可用性グループ<sup>6</sup>|いいえ|はい|いいえ|いいえ|いいえ|
@@ -161,12 +161,12 @@ Developer Edition により、引き続き [[!INCLUDE[ssNoVersion](../includes/s
 |再開可能なオンライン インデックス再構築|はい|いいえ|いいえ|いいえ|いいえ|
 |オンラインのスキーマ変更|はい|いいえ|いいえ|いいえ|いいえ|
 |高速復旧|はい|いいえ|いいえ|いいえ|いいえ|
-|高速データベース復旧|はい|はい|はい|いいえ|いいえ|
+|高速データベース復旧|はい|Yes|はい|いいえ|いいえ|
 |ミラー化バックアップ|はい|いいえ|いいえ|いいえ|いいえ|
 |ホット アド メモリと CPU|はい|いいえ|いいえ|いいえ|いいえ|
-|データベース復旧アドバイザー|はい|はい|はい|はい|はい|
+|データベース復旧アドバイザー|はい|Yes|Yes|Yes|はい|
 |暗号化されたバックアップ|はい|はい|いいえ|いいえ|いいえ|
-|Windows Azure へのハイブリッド バックアップ (URL へのバックアップ)|はい|はい|はい|いいえ|いいえ|
+|Windows Azure へのハイブリッド バックアップ (URL へのバックアップ)|はい|Yes|はい|いいえ|いいえ|
 |クラスターレス可用性グループ <sup>5、6</sup>|はい|はい|いいえ|いいえ|いいえ|
 |ディザスター リカバリー用フェールオーバー サーバー<sup>7</sup>|はい|はい|いいえ|いいえ|いいえ|
 |高可用性用フェールオーバー サーバー<sup>7</sup>|はい|はい|いいえ|いいえ|いいえ|
@@ -190,36 +190,36 @@ Developer Edition により、引き続き [[!INCLUDE[ssNoVersion](../includes/s
 
 |機能|Enterprise|Standard|Web|Express with<br/>Advanced Services|Express|
 |------:|:--------:|:------:|:-:|:-------------------------------:|:------:|
-|列ストア<sup>1</sup> <sup>2</sup>|はい|はい|はい|はい|はい|
-|クラスター化列ストア インデックス内のラージ オブジェクト バイナリ|はい|はい|はい|はい|はい|
+|列ストア<sup>1</sup> <sup>2</sup>|はい|Yes|Yes|Yes|はい|
+|クラスター化列ストア インデックス内のラージ オブジェクト バイナリ|はい|Yes|Yes|Yes|はい|
 |オンライン非クラスター化列ストア インデックスの再構築|はい|いいえ|いいえ|いいえ|いいえ|
-|メモリ内データベース: インメモリ OLTP<sup>1</sup>|はい|はい|はい|○<sup>3</sup>|はい|
+|メモリ内データベース: インメモリ OLTP<sup>1</sup>|はい|Yes|はい|○<sup>3</sup>|はい|
 |メモリ内データベース: ハイブリッド バッファー プール|はい|はい|いいえ|いいえ|いいえ|
 |メモリ内データベース: メモリ最適化 tempdb メタデータ|はい|いいえ|いいえ|いいえ|いいえ|
-|メモリ内データベース: 永続メモリのサポート|はい|はい|はい|はい|はい|
-|Stretch Database|はい|はい|はい|はい|はい|
+|メモリ内データベース: 永続メモリのサポート|はい|Yes|Yes|Yes|はい|
+|Stretch Database|はい|Yes|Yes|Yes|はい|
 |複数インスタンスのサポート|50|50|50|50|50|
-|テーブルとインデックスのパーティション分割|はい|はい|はい|はい|はい|
-|データ圧縮|はい|はい|はい|はい|はい|
+|テーブルとインデックスのパーティション分割|はい|Yes|Yes|Yes|はい|
+|データ圧縮|はい|Yes|Yes|Yes|はい|
 |リソース ガバナー|はい|いいえ|いいえ|いいえ|いいえ|
-|パーティション テーブルの並列処理|はい|いいえ|いいえ|いいえ|いいえ|
-|複数の Filestream コンテナー|はい|はい|はい|はい|はい|
+|パーティション テーブルの並列処理|はい|Yes|Yes|Yes|Yes|
+|複数の Filestream コンテナー|はい|Yes|Yes|Yes|はい|
 |NUMA 対応のラージ ページ メモリとバッファー配列の割り当て|はい|いいえ|いいえ|いいえ|いいえ|
 |バッファー プール拡張|はい|はい|いいえ|いいえ|いいえ|
 |I/O リソース管理|はい|いいえ|いいえ|いいえ|いいえ|
 |先行読み取り|はい|いいえ|いいえ|いいえ|いいえ|
 |拡張スキャン|はい|いいえ|いいえ|いいえ|いいえ|
-|遅延持続性|はい|はい|はい|はい|はい|
+|遅延持続性|はい|Yes|Yes|Yes|はい|
 |インテリジェント データベース: 自動チューニング|はい|いいえ|いいえ|いいえ|いいえ|
 |インテリジェント データベース: 行ストアのバッチ モード <sup>1</sup>|はい|いいえ|いいえ|いいえ|いいえ|
 |インテリジェント データベース: 行モード メモリ許可フィードバック|はい|いいえ|いいえ|いいえ|いいえ|
-|インテリジェント データベース: 個別の概算数|はい|はい|はい|はい|はい|
-|インテリジェント データベース: テーブル変数の遅延コンパイル|はい|はい|はい|はい|はい|
-|インテリジェント データベース: スカラー UDF のインライン化|はい|はい|はい|はい|はい|
+|インテリジェント データベース: 個別の概算数|はい|Yes|Yes|Yes|はい|
+|インテリジェント データベース: テーブル変数の遅延コンパイル|はい|Yes|Yes|Yes|はい|
+|インテリジェント データベース: スカラー UDF のインライン化|はい|Yes|Yes|Yes|はい|
 |バッチ モード アダプティブ結合|はい|いいえ|いいえ|いいえ|いいえ|
 |バッチ モード メモリ許可フィードバック|はい|いいえ|いいえ|いいえ|いいえ|
-|複数ステートメントのテーブル値関数のインターリーブ実行|はい|はい|はい|はい|はい|
-|一括挿入の機能強化|はい|はい|はい|はい|はい|
+|複数ステートメントのテーブル値関数のインターリーブ実行|はい|Yes|Yes|Yes|はい|
+|一括挿入の機能強化|はい|Yes|Yes|Yes|はい|
 
 <sup>1</sup> インメモリ OLTP データ サイズおよび列ストア セグメント キャッシュは、「[スケールの制限](#Cross-BoxScaleLimits)」セクションでエディションごとに指定されているメモリ量に制限されます。 [バッチ モード](../relational-databases/query-processing-architecture-guide.md#batch-mode-execution)操作の並列処理の度合い (DOP) は、[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Standard Edition では 2 DOP、[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Web Edition および Express Edition では 1 DOP に制限されます。 これは、ディスク ベース テーブルとメモリ最適化テーブルで作成された列ストア インデックスに当てはまります。
 
@@ -231,18 +231,18 @@ Developer Edition により、引き続き [[!INCLUDE[ssNoVersion](../includes/s
 
 |機能|Enterprise|Standard|Web|Express with<br/>Advanced Services|Express|
 |-------|:--------:|:------:|:-:|:-----:|:-----------------------:|:-----:|
-|行レベルのセキュリティ|はい|はい|はい|はい|はい|
-|Always Encrypted|はい|はい|はい|はい|はい|
-|セキュリティで保護されたエンクレーブが設定された Always Encrypted|はい|はい|はい|はい|はい|
-|動的データ マスク|はい|はい|はい|はい|はい|
-|サーバー監査|はい|はい|はい|はい|はい|
-|データベース監査|はい|はい|はい|はい|はい|
-|透過的なデータベースの暗号化|はい|はい|はい|いいえ|いいえ|
+|行レベルのセキュリティ|はい|Yes|Yes|Yes|はい|
+|Always Encrypted|はい|Yes|Yes|Yes|はい|
+|セキュリティで保護されたエンクレーブが設定された Always Encrypted|はい|Yes|Yes|Yes|はい|
+|動的データ マスク|はい|Yes|Yes|Yes|はい|
+|サーバー監査|はい|Yes|Yes|Yes|はい|
+|データベース監査|はい|Yes|Yes|Yes|はい|
+|透過的なデータベースの暗号化|はい|Yes|はい|いいえ|いいえ|
 |拡張キー管理|はい|はい|いいえ|いいえ|いいえ|
-|ユーザー定義ロール|はい|はい|はい|はい|はい|
-|包含データベース|はい|はい|はい|はい|はい|
+|ユーザー定義ロール|はい|Yes|Yes|Yes|はい|
+|包含データベース|はい|Yes|Yes|Yes|はい|
 |バックアップの暗号化|はい|はい|いいえ|いいえ|いいえ|
-|データの分類と監査|はい|はい|はい|はい|はい|
+|データの分類と監査|はい|Yes|Yes|Yes|はい|
 
 ## <a name="replication"></a><a name="Replication"></a> レプリケーション
 
@@ -253,7 +253,7 @@ Developer Edition により、引き続き [[!INCLUDE[ssNoVersion](../includes/s
 |Oracle パブリッシュ|はい|いいえ|いいえ|いいえ|いいえ|
 |ピア ツー ピア トランザクション レプリケーション|はい|いいえ|いいえ|いいえ|いいえ|
 |スナップショット レプリケーション|はい|はい|可<sup>1</sup>|可<sup>1</sup>|可<sup>1</sup>|
-|[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 変更の追跡|はい|はい|はい|はい|はい|
+|[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] 変更の追跡|はい|Yes|Yes|Yes|はい|
 |トランザクション レプリケーション|はい|はい|可<sup>1</sup>|可<sup>1</sup>|可<sup>1</sup>|
 |Azure へのトランザクション レプリケーション|はい|はい|いいえ|いいえ|いいえ|
 |トランザクション レプリケーションの更新可能サブスクリプション|はい|はい|いいえ|いいえ|いいえ|
@@ -264,17 +264,17 @@ Developer Edition により、引き続き [[!INCLUDE[ssNoVersion](../includes/s
 
 |機能|Enterprise|Standard|Web|Express with Advanced Services|Express|
 |-------|:--------:|:------:|:-:|:----------------------------:|:-----:|
-|SQL 管理オブジェクト (SMO)|はい|はい|はい|はい|はい|
-|SQL Assessment API|はい|はい|はい|はい|はい|
-|SQL 脆弱性評価 |はい|はい|はい|はい|はい|
-|SQL 構成マネージャー|はい|はい|はい|はい|はい|
-|SQL CMD (コマンド プロンプト ツール)|はい|はい|はい|はい|はい|
-|分散再生 - 管理ツール|はい|はい|はい|はい|いいえ|
-|分散再生 - クライアント|はい|はい|はい|いいえ|いいえ|
+|SQL 管理オブジェクト (SMO)|はい|Yes|Yes|Yes|はい|
+|SQL Assessment API|はい|Yes|Yes|Yes|はい|
+|SQL 脆弱性評価 |はい|Yes|Yes|Yes|はい|
+|SQL 構成マネージャー|はい|Yes|Yes|Yes|はい|
+|SQL CMD (コマンド プロンプト ツール)|はい|Yes|Yes|Yes|はい|
+|分散再生 - 管理ツール|はい|Yes|Yes|はい|いいえ|
+|分散再生 - クライアント|はい|Yes|はい|いいえ|いいえ|
 |分散再生 - コントローラー|可<sup>1</sup>|はい<sup>2</sup>|はい<sup>2</sup>|いいえ|いいえ|
 |SQL Profiler|はい|はい|いいえ<sup>3</sup>|いいえ<sup>3</sup>|いいえ<sup>3</sup>|
-|[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] エージェント|はい|はい|はい|いいえ|いいえ|
-|Microsoft System Center Operations Manager 管理パック|はい|はい|はい|いいえ|いいえ|
+|[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] エージェント|はい|Yes|はい|いいえ|いいえ|
+|Microsoft System Center Operations Manager 管理パック|はい|Yes|はい|いいえ|いいえ|
 |データベース チューニング アドバイザー (DTA)|はい|はい<sup>4</sup>|はい<sup>4</sup>|いいえ|いいえ|
 
 <sup>1</sup> 最大 16 クライアント
@@ -291,18 +291,18 @@ Developer Edition により、引き続き [[!INCLUDE[ssNoVersion](../includes/s
 |-------|:--------:|:------:|:-:|:-------------------------------:|:-----:|
 |ユーザー インスタンス|いいえ|いいえ|いいえ|はい|はい|
 |LocalDB|いいえ|いいえ|いいえ|はい|いいえ|
-|専用管理者接続|はい|はい|はい|可<sup>1</sup>|可<sup>1</sup>|
-|SysPrep のサポート <sup>2</sup>|はい|はい|はい|はい|はい|
-|PowerShell スクリプティングのサポート<sup>3</sup>|はい|はい|はい|はい|はい|
-|データ層アプリケーション コンポーネントの操作のサポート - 抽出、配置、アップグレード、削除|はい|はい|はい|はい|はい|
-|ポリシー オートメーション (変更時とスケジュールに基づいて確認)|はい|はい|はい|いいえ|いいえ|
-|パフォーマンス データ コレクター|はい|はい|はい|いいえ|いいえ|
-|複数インスタンス管理でマネージド インスタンスとして登録できる|はい|はい|はい|いいえ|いいえ|
-|標準的なパフォーマンス レポート|はい|はい|はい|いいえ|いいえ|
-|プラン ガイドおよびプラン ガイドの固定計画|はい|はい|はい|いいえ|いいえ|
-|NOEXPAND ヒントを使用したインデックス付きビューの直接クエリ|はい|はい|はい|はい|はい|
+|専用管理者接続|はい|Yes|はい|可<sup>1</sup>|可<sup>1</sup>|
+|SysPrep のサポート <sup>2</sup>|はい|Yes|Yes|Yes|はい|
+|PowerShell スクリプティングのサポート<sup>3</sup>|はい|Yes|Yes|Yes|はい|
+|データ層アプリケーション コンポーネントの操作のサポート - 抽出、配置、アップグレード、削除|はい|Yes|Yes|Yes|はい|
+|ポリシー オートメーション (変更時とスケジュールに基づいて確認)|はい|Yes|はい|いいえ|いいえ|
+|パフォーマンス データ コレクター|はい|Yes|はい|いいえ|いいえ|
+|複数インスタンス管理でマネージド インスタンスとして登録できる|はい|Yes|はい|いいえ|いいえ|
+|標準的なパフォーマンス レポート|はい|Yes|はい|いいえ|いいえ|
+|プラン ガイドおよびプラン ガイドの固定計画|はい|Yes|はい|いいえ|いいえ|
+|NOEXPAND ヒントを使用したインデックス付きビューの直接クエリ|はい|Yes|Yes|Yes|はい|
 |SQL Server Analysis Services の直接クエリ|はい|はい|いいえ|いいえ|はい|
-|インデックス付きビューの自動メンテナンス|はい|はい|はい|いいえ|いいえ|
+|インデックス付きビューの自動メンテナンス|はい|Yes|はい|いいえ|いいえ|
 |分散パーティション ビュー|はい|いいえ|いいえ|いいえ|いいえ|
 |並列インデックス操作|はい|いいえ|いいえ|いいえ|いいえ|
 |クエリ オプティマイザーによる自動的なインデックス付きのビュー使用|はい|いいえ|いいえ|いいえ|いいえ|
@@ -310,7 +310,7 @@ Developer Edition により、引き続き [[!INCLUDE[ssNoVersion](../includes/s
 |[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] ユーティリティ コントロール ポイント|はい|いいえ|いいえ|いいえ|いいえ|
 |バッファー プール拡張|はい|はい|いいえ|いいえ|いいえ|
 |ビッグ データ クラスターのマスター インスタンス|はい|はい|いいえ|いいえ|いいえ|
-|互換性証明書|はい|はい|はい|はい|はい|
+|互換性証明書|はい|Yes|Yes|Yes|はい|
 
 <sup>1</sup> トレース フラグを使用
 
@@ -322,40 +322,40 @@ Developer Edition により、引き続き [[!INCLUDE[ssNoVersion](../includes/s
 
 |機能|Enterprise|Standard|Web|Express with<br/>Advanced Services|Express|
 |-------|:--------:|:------:|:-:|:-------------------------------:|:-----:|
-|Microsoft Visual Studio の統合|はい|はい|はい|はい|はい|
-|Intellisense (Transact-SQL および MDX)|はい|はい|はい|はい|はい|
-|[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Data Tools (SSDT)|はい|はい|はい|はい|いいえ|
+|Microsoft Visual Studio の統合|はい|Yes|Yes|Yes|はい|
+|Intellisense (Transact-SQL および MDX)|はい|Yes|Yes|Yes|はい|
+|[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Data Tools (SSDT)|はい|Yes|Yes|はい|いいえ|
 |MDX 編集、デバッグ、およびデザイン ツール|はい|はい|いいえ|いいえ|いいえ|
 
 ## <a name="programmability"></a><a name="Programmability"></a> Programmability
 
 |機能|Enterprise|Standard|Web|Express with<br/>Advanced Services|高速
 |-------|:--------:|:------:|:-:|:-------------------------------:|:-----:|
-|基本的な R 統合<sup>1</sup>|はい|はい|はい|はい|いいえ|
+|基本的な R 統合<sup>1</sup>|はい|Yes|Yes|はい|いいえ|
 |高度な R 統合<sup>2</sup>|はい|いいえ|いいえ|いいえ|いいえ|
-|基本的な Python 統合|はい|はい|はい|はい|いいえ|
+|基本的な Python 統合|はい|Yes|Yes|はい|いいえ|
 |高度な Python 統合|はい|いいえ|いいえ|いいえ|いいえ|
 |Machine Learning Server (スタンドアロン)|はい|いいえ|いいえ|いいえ|いいえ|
 |PolyBase コンピューティング ノード|はい|○<sup>3</sup>|○<sup>3</sup>|○<sup>3</sup>|○<sup>3</sup> |
 |PolyBase ヘッド ノード<sup>4</sup>|はい|はい|いいえ|いいえ|いいえ|
-|JSON|はい|はい|はい|はい|はい|
-|クエリ ストア|はい|はい|はい|はい|はい|
-|テンポラル|はい|はい|はい|はい|はい|
-|共通言語ランタイム (CLR) 統合|はい|はい|はい|はい|はい|
-|Java 言語ランタイム統合|はい|はい|はい|はい|はい|
-|ネイティブ XML サポート|はい|はい|はい|はい|はい|
-|XML インデックスの作成|はい|はい|はい|はい|はい|
-|MERGE と UPSERT の機能|はい|はい|はい|はい|はい|
-|FILESTREAM のサポート|はい|はい|はい|はい|はい|
-|FileTable|はい|はい|はい|はい|はい|
-|日付および時刻データ型|はい|はい|はい|はい|はい|
-|国際化サポート|はい|はい|はい|はい|はい|
-|フルテキストおよびセマンティック検索|はい|はい|はい|はい|いいえ|
-|クエリ内の言語指定|はい|はい|はい|はい|いいえ|
+|JSON|はい|Yes|Yes|Yes|はい|
+|クエリ ストア|はい|Yes|Yes|Yes|はい|
+|テンポラル|はい|Yes|Yes|Yes|はい|
+|共通言語ランタイム (CLR) 統合|はい|Yes|Yes|Yes|はい|
+|Java 言語ランタイム統合|はい|Yes|Yes|Yes|はい|
+|ネイティブ XML サポート|はい|Yes|Yes|Yes|はい|
+|XML インデックスの作成|はい|Yes|Yes|Yes|はい|
+|MERGE と UPSERT の機能|はい|Yes|Yes|Yes|はい|
+|FILESTREAM のサポート|はい|Yes|Yes|Yes|はい|
+|FileTable|はい|Yes|Yes|Yes|はい|
+|日付および時刻データ型|はい|Yes|Yes|Yes|はい|
+|国際化サポート|はい|Yes|Yes|Yes|はい|
+|フルテキストおよびセマンティック検索|はい|Yes|Yes|はい|いいえ|
+|クエリ内の言語指定|はい|Yes|Yes|はい|いいえ|
 |Service Broker (メッセージング)|はい|はい|いいえ<sup>5</sup>|いいえ<sup>5</sup>|いいえ<sup>5</sup>|
-|Transact-SQL エンドポイント|はい|はい|はい|いいえ|いいえ|
-|グラフ|はい|はい|はい|はい|はい|
-|UTF-8 のサポート|はい|はい|はい|はい|はい|
+|Transact-SQL エンドポイント|はい|Yes|はい|いいえ|いいえ|
+|グラフ|はい|Yes|Yes|Yes|はい|
+|UTF-8 のサポート|はい|Yes|Yes|Yes|はい|
 
 <sup>1</sup> 基本的な統合は 2 コアとメモリ内データ セットに制限されます。
 
@@ -401,17 +401,17 @@ Developer Edition により、引き続き [[!INCLUDE[ssNoVersion](../includes/s
 
 |機能名|Enterprise|Standard|Web|Express with<br/>Advanced Services|Express|
 |-------------|:-------:|:------:|:-:|:-------------------------------:|:-----:|
-|空間インデックス|はい|はい|はい|はい|はい|
-|平面データ型と測地データ型|はい|はい|はい|はい|はい|
-|高度な空間的なライブラリ|はい|はい|はい|はい|はい|
-|業界標準の空間データ形式のインポート/エクスポート|はい|はい|はい|はい|はい|
+|空間インデックス|はい|Yes|Yes|Yes|はい|
+|平面データ型と測地データ型|はい|Yes|Yes|Yes|はい|
+|高度な空間的なライブラリ|はい|Yes|Yes|Yes|はい|
+|業界標準の空間データ形式のインポート/エクスポート|はい|Yes|Yes|Yes|はい|
 
 ## <a name="additional-database-services"></a><a name="ADS"></a> その他のデータベース サービス
 
 |機能名|Enterprise|Standard|Web|Express with<br/>Advanced Services|Express|
 |------------|:--------:|:------:|:-:|:-------------------------------:|:-----:|
-|[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Migration Assistant|はい|はい|はい|はい|はい|
-|データベース メール|はい|はい|はい|いいえ|いいえ|
+|[!INCLUDE[ssNoVersion](../includes/ssnoversion-md.md)] Migration Assistant|はい|Yes|Yes|Yes|はい|
+|データベース メール|はい|Yes|はい|いいえ|いいえ|
 
 ## <a name="other-components"></a><a name="Other"></a> その他のコンポーネント
 

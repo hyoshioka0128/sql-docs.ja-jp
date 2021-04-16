@@ -11,14 +11,14 @@ ms.topic: conceptual
 helpviewer_keywords:
 - names [SQL Server], columns with
 ms.assetid: c994e089-4cfc-4e9b-b7fc-e74f6014b51a
-author: MightyPen
-ms.author: genemi
-ms.openlocfilehash: 14bc7706a7e3f562b2a3f4f01d8ab08a3684d313
-ms.sourcegitcommit: da88320c474c1c9124574f90d549c50ee3387b4c
+author: rothja
+ms.author: jroth
+ms.openlocfilehash: 659a5efefed4347948ac59af9b0063e8d31c7813
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85775558"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107488960"
 ---
 # <a name="columns-with-a-name"></a>名前のある列
 
@@ -113,7 +113,7 @@ FOR XML PATH;
 ```  
   
 ## <a name="column-name-does-not-start-with-an-at-sign--and-contains-a-slash-mark-"></a>列名がアット マーク (\@) で始まらず、スラッシュ (/) を含む場合  
- 列名がアット マーク (\@) で始まらず、スラッシュ (/) を含んでいる場合、列名は XML 階層を示します。 たとえば、列名を "Name1/Name2/Name3.../Name***n*** " とすると、Name***i*** は、i = 1 の場合は現在の行要素の入れ子である要素を表し、それ以外の場合は Name***i-1***要素の下にある要素を表します。 Name***n*** が '\@' で始まる場合は、Name***n-1*** 要素の属性にマップされます。  
+ 列名がアット マーク (\@) で始まらず、スラッシュ (/) を含んでいる場合、列名は XML 階層を示します。 たとえば、列名が "Name1/Name2/Name3.../Name***n** _ " の場合、それぞれの Name_ *_i_* _ は、現在の行要素 (i=1) で入れ子になっているか、名前が Name_ *_i-1_* _の要素の下にある要素名を表します。Name_*_n_* _ が '\@' で始まる場合、それは Name_ *_n-1_* 要素の属性にマップされます。  
   
  たとえば次のクエリは、従業員の ID と名前を返します。従業員名は、First、Middle、および Last から構成される複合型の要素 EmpName で表現されます。  
   

@@ -9,12 +9,12 @@ ms.technology: security
 ms.topic: how-to
 author: rupp29
 ms.author: arupp
-ms.openlocfilehash: 3a674994d7028a8f4455c26d6f705b9da7b5ee08
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 53e0a4957fdb3f60f63d82c2ba89b3a98af16887
+ms.sourcegitcommit: 9142bb6b80ce22eeda516b543b163eb9918bc72e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100018685"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107492103"
 ---
 # <a name="sql-server-connector-error-and-information-logging"></a>SQL Server コネクタのエラーと情報のログ記録
 
@@ -71,7 +71,7 @@ SQL Server コネクタ (バージョン: 1.0.5.0、日付: 2020 年 9 月) を�
 
 **システム要件** - サポートされている SQL Server バージョン:
 
-- SQL Server 2019 RTM Enterprise 64 ビット
+- SQL Server 2019 RTM Enterprise または Standard 64 ビット
 - SQL Server 2017 RTM Enterprise 64 ビット
 - SQL Server 2016 RTM Enterprise 64 ビット
 - SQL Server 2014 RTM Enterprise 64 ビット
