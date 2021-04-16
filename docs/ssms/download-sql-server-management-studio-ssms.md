@@ -23,13 +23,13 @@ author: dzsquared
 ms.author: drskwier
 ms.reviewer: maghan
 ms.custom: seo-lt-2019
-ms.date: 4/9/2021
-ms.openlocfilehash: 5d8f10c86aa21bfc0ccbb36ddad11cfee027fc3a
-ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
+ms.date: 4/15/2021
+ms.openlocfilehash: 2f51332f7aed45a6e53b7b765525457bb315713b
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107298866"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107561018"
 ---
 # <a name="download-sql-server-management-studio-ssms"></a>SQL Server Management Studio (SSMS) のダウンロード
 
@@ -43,17 +43,17 @@ SSMS を使用すると、データベースとデータ ウェアハウスが�
 
 :::image type="icon" source="media/download-icon.png" border="false"::: **[SQL Server Management Studio (SSMS) のダウンロード](https://aka.ms/ssmsfullsetup)**
 
-SSMS 18.8 は、最新の一般提供 (GA) バージョンの SSMS です。 以前の GA バージョンの SSMS 18 がインストールされている場合は、SSMS 18.8 をインストールするとそれが 18.8 にアップグレードされます。
+SSMS 18.9 は、最新の一般提供 (GA) バージョンの SSMS です。 以前の GA バージョンの SSMS 18 がインストールされている場合は、SSMS 18.9 をインストールするとそれが 18.9 にアップグレードされます。
 
 [!INCLUDE [ssms-ads-install](../includes/ssms-azure-data-studio-install.md)]
 
-- リリース番号:18.8
-- ビルド番号:15.0.18369.0
-- リリース日: 2020 年 12 月 17 日
+- リリース番号: 18.9
+- ビルド番号: 15.0.18382.0
+- リリース日: 2021 年 4 月 15 日
 
 コメントや提案がある場合、または問題を報告する場合、SSMS チームに連絡する最適な方法は [SQL Server ユーザー フィード](https://aka.ms/sqlfeedback)にあります。
 
-SSMS 18.x のインストールでは、17.x 以前のバージョンの SSMS がアップグレードまたは置き換えられることはありません。 SSMS 18.x は以前のバージョンとは別にサイド バイ サイドでインストールされるので、両方のバージョンを使用できます。 ただし、"*プレビュー*" 版の SSMS 18.x がインストールされている場合は、それをアンインストールしてから SSMS 18.8 をインストールする必要があります。 プレビュー版がインストールされているかどうかを確認するには、 **[ヘルプ]、[バージョン情報]** の順に移動します。
+SSMS 18.x のインストールでは、17.x 以前のバージョンの SSMS がアップグレードまたは置き換えられることはありません。 SSMS 18.x は以前のバージョンとは別にサイド バイ サイドでインストールされるので、両方のバージョンを使用できます。 ただし、"*プレビュー*" 版の SSMS 18.x がインストールされている場合は、それをアンインストールしてから SSMS 18.9 をインストールする必要があります。 プレビュー版がインストールされているかどうかを確認するには、 **[ヘルプ]、[バージョン情報]** の順に移動します。
 
 コンピューターに SSMS のサイド バイ サイドのインストールが含まれている場合は、特定のニーズに応じて適切なバージョンを起動してください。 最新バージョンには、**Microsoft SQL Server Management Studio 18** というラベルが付いています。
 
@@ -62,8 +62,8 @@ SSMS 18.x のインストールでは、17.x 以前のバージョンの SSMS �
 
 SSMS の今回のリリースは、次の言語でインストールできます。
 
-SQL Server Management Studio 18.8:  
-[簡体中国語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x804) | [繁体中国語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x404) | [英語 (米国)](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x409) | [フランス語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x40c) | [ドイツ語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x407) | [イタリア語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x410) | [日本語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x411) | [韓国語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x412) | [ポルトガル語 (ブラジル)](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x416) | [ロシア語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x419) | [スペイン語](https://go.microsoft.com/fwlink/?linkid=2151644&clcid=0x40a)
+SQL Server Management Studio 18.9:  
+[簡体中国語](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x804) | [繁体中国語](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x404) | [英語 (米国)](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x409) | [フランス語](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x40c) | [ドイツ語](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x407) | [イタリア語](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x410) | [日本語](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x411) | [韓国語](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x412) | [ポルトガル語 (ブラジル)](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x416) | [ロシア語](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x419) | [スペイン語](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x40a)
 
 
 > [!TIP]
@@ -76,7 +76,7 @@ SQL Server Management Studio 18.8:
 
 このリリースの新機能の詳細については、「[SSMS リリース ノート](release-notes-ssms.md)」を参照してください。
 
-このリリースには、[既知の問題](release-notes-ssms.md#known-issues-188)がいくつかあります。
+このリリースには、[既知の問題](release-notes-ssms.md#known-issues-189)がいくつかあります。
 
 ## <a name="previous-versions"></a>以前のバージョン
 
