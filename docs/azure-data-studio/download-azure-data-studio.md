@@ -8,13 +8,13 @@ author: yualan
 ms.author: alayu
 ms.reviewer: maghan
 ms.custom: seodec18
-ms.date: 3/17/2021
-ms.openlocfilehash: 0a88fcbdd027215b8ce1bcd6242f48833ec0c6b2
-ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
+ms.date: 4/16/2021
+ms.openlocfilehash: 57af4f64252e0ebefddca34d01dac315e7e460fe
+ms.sourcegitcommit: 554497d604e0c63c055bf6d572d92fdadb027dbf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104610821"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107571344"
 ---
 # <a name="download-and-install-azure-data-studio"></a>Azure Data Studio のダウンロードとインストール
 
@@ -26,9 +26,9 @@ Azure Data Studio では、IntelliSense、コード スニペット、ソース�
 
 | プラットフォーム | ダウンロード | リリース日 | Version |
 |----------|----------|--------------|---------|
-| Windows | [ユーザー インストーラー (推奨)](https://go.microsoft.com/fwlink/?linkid=2157460)<br>[システム インストーラー](https://go.microsoft.com/fwlink/?linkid=2157459)<br>[.zip](https://go.microsoft.com/fwlink/?linkid=2157458) | 2021 年 3 月 17 日 | 1.27.0 |
-| macOS | [.zip](https://go.microsoft.com/fwlink/?linkid=2157456) | 2021 年 3 月 17 日 | 1.27.0 |
-| Linux | [.deb](https://go.microsoft.com/fwlink/?linkid=2157352)<br>[.rpm](https://go.microsoft.com/fwlink/?linkid=2157248)<br>[.tar.gz](https://go.microsoft.com/fwlink/?linkid=2157353) | 2021 年 3 月 17 日 | 1.27.0 |
+| Windows | [ユーザー インストーラー (推奨)](https://go.microsoft.com/fwlink/?linkid=2160781)<br>[システム インストーラー](https://go.microsoft.com/fwlink/?linkid=2160780)<br>[.zip](https://go.microsoft.com/fwlink/?linkid=2160923) | 2021 年 4 月 15 日 | 1.28.0 |
+| macOS | [.zip](https://go.microsoft.com/fwlink/?linkid=2160874) | 2021 年 4 月 15 日 | 1.28.0 |
+| Linux | [.deb](https://go.microsoft.com/fwlink/?linkid=2160876)<br>[.rpm](https://go.microsoft.com/fwlink/?linkid=2160875)<br>[.tar.gz](https://go.microsoft.com/fwlink/?linkid=2160782) | 2021 年 4 月 15 日 | 1.28.0 |
 
 **最新リリースに関する詳細については、[リリース ノート](./release-notes-azure-data-studio.md)をご覧ください。**
 
@@ -42,32 +42,32 @@ Azure Data Studio のこのリリースには、標準の Windows インスト�
 
 **ユーザー インストーラー** (推奨)
 
-1. [Windows 用の Azure Data Studio "*ユーザー*" インストーラー](https://go.microsoft.com/fwlink/?linkid=2157460)をダウンロードして実行します。
+1. [Windows 用の Azure Data Studio "*ユーザー*" インストーラー](https://go.microsoft.com/fwlink/?linkid=2160781)をダウンロードして実行します。
 2. Azure Data Studio アプリを起動します。
 
 **システム インストーラー**
 
-1. [Windows 用の Azure Data Studio "*システム*" インストーラー](https://go.microsoft.com/fwlink/?linkid=2157459) をダウンロードして実行します。
+1. [Windows 用の Azure Data Studio "*システム*" インストーラー](https://go.microsoft.com/fwlink/?linkid=2160780) をダウンロードして実行します。
 2. Azure Data Studio アプリを起動します。
 
 **zip ファイル**
 
-1. [Windows 用の Azure Data Studio.zip](https://go.microsoft.com/fwlink/?linkid=2157458) をダウンロードします。
+1. [Windows 用の Azure Data Studio.zip](https://go.microsoft.com/fwlink/?linkid=2160923) をダウンロードします。
 2. ダウンロードしたファイルを参照して抽出します。
 3. `\azuredatastudio-windows\azuredatastudio.exe` を実行します。
 
 ## <a name="get-azure-data-studio-for-macos"></a>Azure Data Studio for macOS を取得する
 
-1. [Azure Data Studio for macOS](https://go.microsoft.com/fwlink/?linkid=2157456) をダウンロードします。
+1. [Azure Data Studio for macOS](https://go.microsoft.com/fwlink/?linkid=2160874) をダウンロードします。
 2. zip のコンテンツを展開するには、ダブルクリックします。
 3. Azure Data Studio を *スタート パッド* で使用できるようにするには、*Azure Data Studio.app* を *[アプリケーション]* フォルダーにドラッグします。
 
 ## <a name="get-azure-data-studio-for-linux"></a>Linux 用の Azure Data Studio を取得する
 
 1. インストーラーのいずれか、または tar.gz アーカイブを使用することで、Linux 用の Azure Data Studio をダウンロードします。
-    - [.deb](https://go.microsoft.com/fwlink/?linkid=2157352)
-    - [.rpm](https://go.microsoft.com/fwlink/?linkid=2157248)
-    - [.tar.gz](https://go.microsoft.com/fwlink/?linkid=2157353)
+    - [.deb](https://go.microsoft.com/fwlink/?linkid=2160876)
+    - [.rpm](https://go.microsoft.com/fwlink/?linkid=2160875)
+    - [.tar.gz](https://go.microsoft.com/fwlink/?linkid=2160782)
 1. ファイルを抽出して Azure Data Studio を起動するには、新しいターミナル ウィンドウを開いて次のコマンドを入力します。
 
    **Debian のインストール:**

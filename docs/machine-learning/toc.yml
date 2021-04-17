@@ -258,8 +258,6 @@ items:
             href: ../machine-learning/r/r-libraries-and-data-types.md
       - name: 配置
         items:
-          - name: ストアド プロシージャを使用して運用化する
-            href: ../machine-learning/deploy/operationalizing-your-r-code.md
           - name: SQL Server の R/Python コードを変更する
             href: ../machine-learning/deploy/modify-r-python-code-to-run-in-sql-server.md
       - name: 予測
