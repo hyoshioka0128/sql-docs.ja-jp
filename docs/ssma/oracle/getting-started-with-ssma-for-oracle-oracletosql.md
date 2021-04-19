@@ -1,5 +1,5 @@
 ---
-title: SSMA for Oracle (OracleToSQL) を使用したはじめに |Microsoft Docs
+title: SSMA for Oracle インターフェイスを調べる
 description: Oracle インストールプロセスの SQL Server Migration Assistant (SSMA) について説明し、SSMA ユーザーインターフェイスについて理解を深めます。
 ms.prod: sql
 ms.custom: ''
@@ -14,14 +14,14 @@ ms.assetid: df79664c-972e-4bef-865a-ce609789fee7
 author: nahk-ivanov
 ms.author: alexiva
 manager: alexiva
-ms.openlocfilehash: ce9d4908113daddf51707b4b7a80c4085defc228
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 87e4f35fbb9b7a8979a501260e180a63ec31bddc
+ms.sourcegitcommit: 3bb5ea67dc0d369b921f1bee4ffd4317aba2253c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100076723"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107720451"
 ---
-# <a name="getting-started-with-ssma-for-oracle-oracletosql"></a>SSMA for Oracle 入門 (OracleToSQL)
+# <a name="explore-ssma-for-oracle-interface"></a>SSMA for Oracle インターフェイスを調べる
 [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] Oracle 用の Migration Assistant (SSMA) を使用すると、Oracle データベーススキーマをスキーマに簡単に変換し [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] 、その結果のスキーマをにアップロード [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] し、oracle からにデータを移行することができ [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] ます。  
   
 このトピックでは、インストールプロセスについて説明した後、SSMA ユーザーインターフェイスについて理解することができます。  
