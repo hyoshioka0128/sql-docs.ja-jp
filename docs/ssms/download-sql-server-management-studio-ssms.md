@@ -23,13 +23,13 @@ author: dzsquared
 ms.author: drskwier
 ms.reviewer: maghan
 ms.custom: seo-lt-2019
-ms.date: 4/15/2021
-ms.openlocfilehash: 2f51332f7aed45a6e53b7b765525457bb315713b
-ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
+ms.date: 4/16/2021
+ms.openlocfilehash: 64cb42f2999c11c68b10418d05316861cda5f4fe
+ms.sourcegitcommit: a177a1e17200400a70f1d61b737481c83249e9a3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107561018"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107584100"
 ---
 # <a name="download-sql-server-management-studio-ssms"></a>SQL Server Management Studio (SSMS) のダウンロード
 
@@ -41,11 +41,13 @@ SSMS を使用すると、データベースとデータ ウェアハウスが�
 
 ## <a name="download-ssms"></a>SSMS のダウンロード
 
-:::image type="icon" source="media/download-icon.png" border="false"::: **[SQL Server Management Studio (SSMS) のダウンロード](https://aka.ms/ssmsfullsetup)**
+:::image type="icon" source="media/download-icon.png" border="false"::: **[SQL Server Management Studio (SSMS) 18.8 のダウンロード](https://aka.ms/ssmsfullsetup)**
+
+
+> [!IMPORTANT]
+> SSMS 18.9 には、IntelliSense に関連する既知の問題が含まれています。候補から列名が省略され、列名の下にエラー インジケーターが誤って表示されます。 修正プログラム リリースはまもなく利用可能になり、SSMS の既定のインストール バージョンは SSMS 18.8 (15.0.18369.0) のままになります。 SSMS 18.9 のダウンロードに関心がある場合は、以下を参照してください。
 
 SSMS 18.9 は、最新の一般提供 (GA) バージョンの SSMS です。 以前の GA バージョンの SSMS 18 がインストールされている場合は、SSMS 18.9 をインストールするとそれが 18.9 にアップグレードされます。
-
-[!INCLUDE [ssms-ads-install](../includes/ssms-azure-data-studio-install.md)]
 
 - リリース番号: 18.9
 - ビルド番号: 15.0.18382.0
@@ -57,6 +59,7 @@ SSMS 18.x のインストールでは、17.x 以前のバージョンの SSMS �
 
 コンピューターに SSMS のサイド バイ サイドのインストールが含まれている場合は、特定のニーズに応じて適切なバージョンを起動してください。 最新バージョンには、**Microsoft SQL Server Management Studio 18** というラベルが付いています。
 
+[!INCLUDE [ssms-ads-install](../includes/ssms-azure-data-studio-install.md)]
 
 ## <a name="available-languages"></a>使用できる言語
 
