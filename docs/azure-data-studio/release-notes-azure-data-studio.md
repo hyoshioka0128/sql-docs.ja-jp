@@ -8,17 +8,29 @@ author: yualan
 ms.author: alayu
 ms.reviewer: maghan
 ms.custom: seodec18
-ms.date: 3/17/2021
-ms.openlocfilehash: 4cc6431ec73a002c015b8aac0dfe19b726cb354f
-ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
+ms.date: 4/16/2021
+ms.openlocfilehash: 71ef9a0947e1a1d8a9d239d93d5902f37e748091
+ms.sourcegitcommit: 554497d604e0c63c055bf6d572d92fdadb027dbf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104610701"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107571334"
 ---
 # <a name="release-notes-for-azure-data-studio"></a>Azure Data Studio のリリース ノート
 
 **[最新リリースのダウンロードとインストール](./download-azure-data-studio.md)**
+
+## <a name="april-2021"></a>2021 年 4 月
+
+2021 年 4 月 16 日 &nbsp; / &nbsp; バージョン: 1.28.0
+
+&nbsp;
+
+| Change | 詳細 |
+| ------ | ------- |
+| 拡張機能の更新 | [SQLDatabaseProjects](extensions/sql-database-project-extension.md) </br> [SchemaCompare](extensions/schema-compare-extension.md) <br/> [Kusto (KQL)](extensions/kusto-extension.md) </br> [MachineLearning](extensions/machine-learning-extension.md)|
+| Notebook の新機能 | [ノートブックの追加] と [ノートブックの削除] コマンドを追加しました |
+| バグの修正 | 修正の全一覧については、[GitHub のバグと問題](https://github.com/microsoft/azuredatastudio/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%22April+2021+Release%22)に関するページを参照してください。 |
 
 ## <a name="march-2021"></a>2021 年 3 月
 

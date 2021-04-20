@@ -1,146 +1,156 @@
-- name: Oracle
+- name: 概要
   href: sql-server-migration-assistant-for-oracle-oracletosql.md
-- name: SSMA の新機能
-  href: what-s-new-in-ssma-for-oracle-oracletosql.md
-- name: SSMA のインストール
-  href: installing-ssma-for-oracle-oracletosql.md
-- name: 作業の開始
-  href: getting-started-with-ssma-for-oracle-oracletosql.md
-- name: SQL Server への Oracle HR スキーマの変換
-  href: sql-server-linux-convert-from-oracle.md
-- name: 著作権情報
-  href: legal-notice-ssma-for-oracle.md
-- name: Oracle クライアントの SSMA のインストール
-  href: installing-ssma-for-oracle-client-oracletosql.md
-- name: SSMA GUI の新機能
-  href: new-gui-features-in-ssma-for-oracle-oracletosql.md
-- name: テスト ケースの実行
-  href: running-test-cases-oracletosql.md
-- name: メニュー コマンドやその他のショートカット キー
-  href: menu-commands-and-other-shortcut-keys-oracle-to-sql.md
-- name: テスト リポジトリの使用
-  href: using-test-repositories-oracletosql.md
-- name: 変数値ファイルの作成
-  href: creating-variable-value-files-oracletosql.md
-- name: 移行されたデータベース オブジェクトのテスト
-  href: testing-migrated-database-objects-oracletosql.md
-- name: SSMA プロジェクトでの作業
-  href: working-with-ssma-projects-oracletosql.md
-- name: Oracle データベースへの接続
-  href: connecting-to-oracle-database-oracletosql.md
-- name: SQL Server への Oracle データの移行
-  href: migrating-oracle-data-into-sql-server-oracletosql.md
-- name: Oracle スキーマの変換
-  href: converting-oracle-schemas-oracletosql.md
-- name: データ移行レポート
-  href: data-migration-report-oracletosql.md
-- name: レポートの生成
-  href: generating-reports-oracletosql.md
-- name: 高度なオブジェクトの選択
-  href: advanced-object-selection-oracletosql.md
-- name: サンプルのコンソール スクリプト ファイルの操作
-  href: working-with-the-sample-console-script-files-oracletosql.md
-- name: SSMA コンソールのコマンド ライン オプション
-  href: command-line-options-in-ssma-console-oracletosql.md
-- name: ショートカット キー
-  href: shortcut-keys-oracle-to-sql.md
-- name: SQL Server への変換されたデータベース オブジェクトの読み込み
-  href: loading-converted-database-objects-into-sql-server-oracletosql.md
-- name: プロジェクト オプションの設定
-  href: setting-project-options-oracletosql.md
-- name: バックアップの管理
-  href: managing-backups-oracletosql.md
-- name: メタデータの保存
-  href: save-metadata-oracletosql.md
-- name: 呼び出し順序のカスタマイズ
-  href: customizing-calls-order-oracletosql.md
-- name: データの移行設定
-  href: data-migration-settings-oracletosql.md
-- name: テスト ケースのレポートの表示
-  href: viewing-test-case-reports-oracletosql.md
-- name: パスワードの管理
-  href: managing-passwords-oracletosql.md
-- name: SSMA for Oracle コンポーネントの削除
-  href: removing-ssma-for-oracle-components-oracletosql.md
-- name: データベースからの更新
-  href: refresh-from-database-oracletosql.md
-- name: SSMA コンソールの実行
-  href: executing-the-ssma-console-oracletosql.md
-- name: 型のマッピングの編集
-  href: edit-type-mapping-oracletosql.md
-- name: SSMA for Oracle コンソール入門
-  href: getting-started-with-ssma-for-oracle-console-oracletosql.md
-- name: スクリプト ファイルの作成
-  href: creating-script-files-oracletosql.md
-- name: 影響を受けるオブジェクトの選択と構成
-  href: selecting-and-configuring-affected-objects-oracletosql.md
-- name: SQL Server への接続
-  href: connect-to-sql-server-oracletosql.md
-- name: SSMA for Oracle コンソールの操作
-  href: working-with-ssma-for-oracle-console-oracletosql.md
-- name: 変換のための Oracle Schemas へのアクセス
-  href: assessing-oracle-schemas-for-conversion-oracletosql.md
-- name: テスト ケースの初期化
-  href: initializing-test-cases-oracletosql.md
-- name: SQL Server での SSMA コンポーネントのインストール
-  href: installing-ssma-components-on-sql-server-oracletosql.md
-- name: テスト ケースの準備の終了
-  href: finishing-test-case-preparation-oracletosql.md
-- name: テスト対象のオブジェクトの選択と構成
-  href: selecting-and-configuring-objects-to-test-oracletosql.md
-- name: Oracle への接続
-  href: connect-to-oracle-oracletosql.md
-- name: テスト ケースの作成
-  href: creating-test-cases-oracletosql.md
-- name: トラブルシューティング
-  href: troubleshooting-oracletosql.md
-- name: SQL Server への Oracle データベースの移行
-  href: migrating-oracle-databases-to-sql-server-oracletosql.md
-- name: SQL Server への接続
-  href: connecting-to-sql-server-oracletosql.md
-- name: 評価レポート
-  href: assessment-report-oracletosql.md
-- name: '[新しいプロジェクト]'
-  href: new-project-oracletosql.md
-- name: ユーザー インターフェイス リファレンス
-  href: user-interface-reference-oracletosql.md
-- name: SQL Server スキーマへの Oracle スキーマのマッピング
-  href: mapping-oracle-schemas-to-sql-server-schemas-oracletosql.md
-- name: Oracle と SQL Server のデータ型のマッピング
-  href: mapping-oracle-and-sql-server-data-types-oracletosql.md
-- name: サーバー接続ファイルの作成
-  href: creating-the-server-connection-files-oracletosql.md
-- name: Oracle パッケージ変数のエミュレーション
-  href: emulate-package-variables.md
-- name: CLR UDT を使用したレコードとコレクションのエミュレーション
-  href: emulate-records-collections-via-clr.md
-- name: 付録 - 1
-  href: appendix-1-oracletosql.md
-- name: '[プロジェクトの設定]'
+- name: 新機能
   items:
-    - name: 変換
-      href: project-settings-conversion-oracletosql.md
-    - name: システム オブジェクトの読み込み
-      href: project-settings-loading-system-objects-oracletosql.md
-    - name: Synchronization
-      href: project-settings-synchronization-oracletosql.md
-    - name: GUI
-      href: project-settings-gui-oracletosql.md
-    - name: 型のマッピング
-      href: project-settings-type-mapping-oracletosql.md
-    - name: 移行
-      href: project-settings-migration-oracletosql.md
-- name: グローバル設定
+    - name: SSMA の新機能
+      href: what-s-new-in-ssma-for-oracle-oracletosql.md
+    - name: SSMA GUI の新機能
+      href: new-gui-features-in-ssma-for-oracle-oracletosql.md
+- name: SSMA for Oracle のインストール
   items:
-    - name: テスト担当者
-      href: global-settings-tester-oracletosql.md
-    - name: エディター
-      href: global-settings-editor-oracletosql.md
-    - name: ログ記録
-      href: global-settings-logging-oracletosql.md
-    - name: ダイアログ
-      href: global-settings-dialogs-oracletosql.md
-    - name: '[出力ウィンドウ]'
-      href: global-settings-output-window-oracletosql.md
-- name: 変換メッセージ
-  href: messages/toc.yml
+    - name: SSMA For Oracle のインストール
+      href: installing-ssma-for-oracle-oracletosql.md
+    - name: Oracle クライアントの SSMA のインストール
+      href: installing-ssma-for-oracle-client-oracletosql.md
+    - name: SQL Server での SSMA コンポーネントのインストール
+      href: installing-ssma-components-on-sql-server-oracletosql.md
+    - name: SSMA インターフェイスの詳細
+      href: getting-started-with-ssma-for-oracle-oracletosql.md
+    - name: SSMA for Oracle コンポーネントの削除
+      href: removing-ssma-for-oracle-components-oracletosql.md
+- name: Oracle Database の移行
+  items:
+    - name: SQL Server への Oracle データベースの移行
+      href: migrating-oracle-databases-to-sql-server-oracletosql.md
+    - name: SSMA プロジェクトでの作業
+      href: working-with-ssma-projects-oracletosql.md
+    - name: プロジェクト オプションの設定
+      href: setting-project-options-oracletosql.md
+    - name: Oracle と SQL Server のデータ型のマッピング
+      href: mapping-oracle-and-sql-server-data-types-oracletosql.md
+    - name: Oracle データベースへの接続
+      href: connecting-to-oracle-database-oracletosql.md
+    - name: SQL Server への接続
+      href: connecting-to-sql-server-oracletosql.md
+    - name: SQL Server スキーマへの Oracle スキーマのマッピング
+      href: mapping-oracle-schemas-to-sql-server-schemas-oracletosql.md
+    - name: 変換のための Oracle Schemas へのアクセス
+      href: assessing-oracle-schemas-for-conversion-oracletosql.md
+    - name: Oracle スキーマの変換
+      href: converting-oracle-schemas-oracletosql.md
+    - name: SQL Server への変換されたデータベース オブジェクトの読み込み
+      href: loading-converted-database-objects-into-sql-server-oracletosql.md
+    - name: SQL Server への Oracle データの移行
+      href: migrating-oracle-data-into-sql-server-oracletosql.md
+    - name: SQL Server への Oracle HR スキーマの変換
+      href: sql-server-linux-convert-from-oracle.md
+- name: 移行されたデータベース オブジェクトの検証
+  items:
+    - name: 移行されたデータベース オブジェクトのテスト
+      href: testing-migrated-database-objects-oracletosql.md
+    - name: テスト ケースの作成
+      href: creating-test-cases-oracletosql.md
+    - name: テスト ケースの初期化
+      href: initializing-test-cases-oracletosql.md
+    - name: テスト対象のオブジェクトの選択と構成
+      href: selecting-and-configuring-objects-to-test-oracletosql.md
+    - name: 影響を受けるオブジェクトの選択と構成
+      href: selecting-and-configuring-affected-objects-oracletosql.md
+    - name: 呼び出し順序のカスタマイズ
+      href: customizing-calls-order-oracletosql.md
+    - name: テスト ケースの準備の終了
+      href: finishing-test-case-preparation-oracletosql.md
+    - name: テスト ケースの実行
+      href: running-test-cases-oracletosql.md
+    - name: テスト ケースのレポートの表示
+      href: viewing-test-case-reports-oracletosql.md
+    - name: テスト リポジトリの使用
+      href: using-test-repositories-oracletosql.md
+    - name: バックアップの管理
+      href: managing-backups-oracletosql.md
+- name: SSMA for Oracle コンソール
+  items:
+    - name: SSMA for Oracle コンソールの操作
+      href: working-with-ssma-for-oracle-console-oracletosql.md
+    - name: SSMA for Oracle コンソール入門
+      href: getting-started-with-ssma-for-oracle-console-oracletosql.md
+    - name: SSMA コンソールのコマンド ライン オプション
+      href: command-line-options-in-ssma-console-oracletosql.md
+    - name: スクリプト ファイルの作成
+      href: creating-script-files-oracletosql.md
+    - name: 変数値ファイルの作成
+      href: creating-variable-value-files-oracletosql.md
+    - name: サーバー接続ファイルの作成
+      href: creating-the-server-connection-files-oracletosql.md
+    - name: SSMA コンソールの実行
+      href: executing-the-ssma-console-oracletosql.md
+    - name: サンプルのコンソール スクリプト ファイルの操作
+      href: working-with-the-sample-console-script-files-oracletosql.md
+    - name: パスワードの管理
+      href: managing-passwords-oracletosql.md
+    - name: レポートの生成
+      href: generating-reports-oracletosql.md
+    - name: トラブルシューティング
+      href: troubleshooting-oracletosql.md
+    - name: 付録 - 1
+      href: appendix-1-oracletosql.md
+- name: リファレンス
+  items:
+    - name: 一般的な変換エラー
+      href: messages/toc.yml
+    - name: ユーザー インターフェイス リファレンス
+      items:
+        - name: ユーザー インターフェイス リファレンス
+          href: user-interface-reference-oracletosql.md
+        - name: 高度なオブジェクトの選択
+          href: advanced-object-selection-oracletosql.md
+        - name: 評価レポート
+          href: assessment-report-oracletosql.md
+        - name: Oracle への接続
+          href: connect-to-oracle-oracletosql.md
+        - name: SQL Server への接続
+          href: connect-to-sql-server-oracletosql.md
+        - name: データ移行レポート
+          href: data-migration-report-oracletosql.md
+        - name: データの移行設定
+          href: data-migration-settings-oracletosql.md
+        - name: 型のマッピングの編集
+          href: edit-type-mapping-oracletosql.md
+        - name: グローバル設定
+          items:
+            - name: テスト担当者
+              href: global-settings-tester-oracletosql.md
+            - name: エディター
+              href: global-settings-editor-oracletosql.md
+            - name: ログ記録
+              href: global-settings-logging-oracletosql.md
+            - name: ダイアログ
+              href: global-settings-dialogs-oracletosql.md
+            - name: '[出力ウィンドウ]'
+              href: global-settings-output-window-oracletosql.md
+        - name: '[新しいプロジェクト]'
+          href: new-project-oracletosql.md
+        - name: '[プロジェクトの設定]'
+          items:
+            - name: 変換
+              href: project-settings-conversion-oracletosql.md
+            - name: システム オブジェクトの読み込み
+              href: project-settings-loading-system-objects-oracletosql.md
+            - name: Synchronization
+              href: project-settings-synchronization-oracletosql.md
+            - name: GUI
+              href: project-settings-gui-oracletosql.md
+            - name: 型のマッピング
+              href: project-settings-type-mapping-oracletosql.md
+            - name: 移行
+              href: project-settings-migration-oracletosql.md
+        - name: データベースからの更新
+          href: refresh-from-database-oracletosql.md
+        - name: メタデータの保存
+          href: save-metadata-oracletosql.md
+    - name: Oracle パッケージ変数のエミュレーション
+      href: emulate-package-variables.md
+    - name: CLR UDT を使用したレコードとコレクションのエミュレーション
+      href: emulate-records-collections-via-clr.md
+    - name: メニュー コマンドやその他のショートカット キー
+      href: menu-commands-and-other-shortcut-keys-oracle-to-sql.md

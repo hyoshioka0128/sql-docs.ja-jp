@@ -2,7 +2,7 @@
 title: Azure Active Directory 認証を利用した接続
 description: Microsoft JDBC Driver for SQL Server で Azure Active Directory 認証機能を使用する Java アプリケーションを開発する方法について説明します。
 ms.custom: ''
-ms.date: 01/29/2021
+ms.date: 04/14/2021
 ms.reviewer: ''
 ms.prod: sql
 ms.prod_service: connectivity
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 9c9d97be-de1d-412f-901d-5d9860c3df8c
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: cbcf01d51ef4abe344b66529d72476a7d1385bbc
-ms.sourcegitcommit: 33f0f190f962059826e002be165a2bef4f9e350c
+ms.openlocfilehash: 80162239e6ef9b47f57c8dd0634bb28457c727c7
+ms.sourcegitcommit: a177a1e17200400a70f1d61b737481c83249e9a3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99168727"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107583967"
 ---
 # <a name="connecting-using-azure-active-directory-authentication"></a>Azure Active Directory 認証を利用した接続
 
@@ -58,13 +58,14 @@ Microsoft JDBC Driver for SQL Server で Azure Active Directory 認証をサポ�
 * Azure リソースのシステム割り当て済みマネージド ID またはユーザー割り当て済みマネージド ID、あるいはマネージド ID が属しているグループのいずれかを表す包含データベース ユーザーは、ターゲット データベースに存在する必要があり、CONNECT 権限を持っている必要があります。
 
 その他の認証モードの場合は、以下のコンポーネントをクライアント コンピューターにインストールする必要があります。
-* Java 7 以上
+* Java 8 以上
 * SQL Server 用 Microsoft JDBC Driver 6.0 (またはそれ以降)
-* アクセス トークン ベースの認証モードを使用している場合に、この記事の例を実行するには、[microsoft-authentication-library-for-java](https://github.com/AzureAD/microsoft-authentication-library-for-java) とその依存関係が必要です。 詳細については、「[アクセス トークンを使用した接続](#connecting-using-access-token)」セクションを参照してください。
-* **ActiveDirectoryPassword** 認証モードを使用している場合は、[microsoft-authentication-library-for-java](https://github.com/AzureAD/microsoft-authentication-library-for-java) とその依存関係が必要です。 詳細については、「[ActiveDirectoryPassword 認証モードを使用した接続](#connecting-using-activedirectorypassword-authentication-mode)」セクションを参照してください。
-* **ActiveDirectoryIntegrated** モードを使用している場合は、[microsoft-authentication-library-for-java](https://github.com/AzureAD/microsoft-authentication-library-for-java) とその依存関係が必要です。 詳細については、「[ActiveDirectoryIntegrated 認証モードを使用した接続](#connecting-using-activedirectoryintegrated-authentication-mode)」セクションを参照してください。
-* **ActiveDirectoryInteractive** モードを使用している場合は、[microsoft-authentication-library-for-java](https://github.com/AzureAD/microsoft-authentication-library-for-java) とその依存関係が必要です。 詳細については、「[ActiveDirectoryInteractive 認証モードを使用した接続](#connecting-using-activedirectoryinteractive-authentication-mode)」セクションを参照してください。
-* **ActiveDirectoryServicePrincipal** モードを使用している場合は、[microsoft-authentication-library-for-java](https://github.com/AzureAD/microsoft-authentication-library-for-java) とその依存関係が必要です。 詳細については、「[ActiveDirectoryServicePrincipal 認証モードを使用した接続]()#connecting-using-activedirectoryserviceprincipal-authentication-mode」セクションを参照してください。
+* アクセス トークンを使用する認証モードを使用している場合、この記事の例の実行には、[Java 用 Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-java) と JDBC ドライバー 9.1 以上のこれの依存関係、または [Java 用 Microsoft Azure Active Directory Authentication Library (ADAL)](https://github.com/AzureAD/azure-activedirectory-library-for-java) と JDBC ドライバー 9.1 以前のドライバー バージョンのこれの依存関係が必要です。 詳細については、「[アクセス トークンを使用した接続](#connecting-using-access-token)」セクションを参照してください。
+
+* **ActiveDirectoryPassword** の認証モードを使用している場合、[Java 用 Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-java) と JDBC ドライバー 9.1 以上のこれの依存関係、または [Java 用 Microsoft Azure Active Directory Authentication Library (ADAL)](https://github.com/AzureAD/azure-activedirectory-library-for-java) と JDBC ドライバー 9.1 以前のドライバー バージョンのこれの依存関係が必要です。 詳細については、「[ActiveDirectoryPassword 認証モードを使用した接続](#connecting-using-activedirectorypassword-authentication-mode)」セクションを参照してください。
+* **ActiveDirectoryIntegrated** モードを使用している場合、[Java 用 Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-java) と JDBC ドライバー 9.1 以上のこれの依存関係、または [Java 用 Microsoft Azure Active Directory Authentication Library (ADAL)](https://github.com/AzureAD/azure-activedirectory-library-for-java) と JDBC ドライバー 9.1 以前のドライバー バージョンのこれの依存関係が必要です。 詳細については、「[ActiveDirectoryIntegrated 認証モードを使用した接続](#connecting-using-activedirectoryintegrated-authentication-mode)」セクションを参照してください。
+* **ActiveDirectoryInteractive** モードを使用している場合、[Java 用 Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-java) と JDBC ドライバー 9.1 以上のこれの依存関係、または [Java 用 Microsoft Azure Active Directory Authentication Library (ADAL)](https://github.com/AzureAD/azure-activedirectory-library-for-java) と JDBC ドライバー 9.1 以前のドライバー バージョンのこれの依存関係が必要です。 詳細については、「[ActiveDirectoryInteractive 認証モードを使用した接続](#connecting-using-activedirectoryinteractive-authentication-mode)」セクションを参照してください。
+* **ActiveDirectoryServicePrincipal** モードを使用している場合、[Java 用 Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-java) と JDBC ドライバー 9.1 以上のこれの依存関係、または [Java 用 Microsoft Azure Active Directory Authentication Library (ADAL)](https://github.com/AzureAD/azure-activedirectory-library-for-java) とこれの依存関係が必要です。 詳細については、[ActiveDirectoryServicePrincipal 認証モードを使用した接続](#connecting-using-activedirectoryserviceprincipal-authentication-mode)に関するセクションを参照してください。
 
 
 ## <a name="connecting-using-activedirectorymsi-authentication-mode"></a>ActiveDirectoryMSI 認証モードを使用した接続
@@ -124,7 +125,7 @@ You have successfully logged on as: <your Managed Identity username>
 
 次の例では、`authentication=ActiveDirectoryIntegrated` モードの使用方法を示します。 Azure Active Directory とフェデレーションされているドメインに参加しているコンピューターで、この例を実行します。 Azure AD ユーザーを表す包含データベース ユーザー、または属しているグループの 1 つがデータベースに存在している必要があり、CONNECT 権限を持っている必要があります。 
 
-例をビルドして実行する前に、(例を実行する) クライアント コンピューターに、[azure-activedirectory-library-for-java ライブラリ](https://github.com/AzureAD/azure-activedirectory-library-for-java) とその依存関係をダウンロードし、それらを Java ビルド パスに含めます
+この例をビルドおよび実行する前に、(この例を実行する) クライアント コンピューターに、[Java 用 Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-java) と JDBC ドライバー 9.1 以上のこれの依存関係、または [Java 用 Microsoft Azure Active Directory Authentication Library (ADAL)](https://github.com/AzureAD/azure-activedirectory-library-for-java) と JDBC ドライバー 9.1 以前のドライバー バージョンのこれの依存関係をダウンロードし、それらを Java ビルド パスに含めます。
 
 例を実行する前に、以下の行のサーバーとデータベースの名前を、ご利用のサーバーとデータベースの名前に置き換えます。
 
@@ -226,7 +227,7 @@ Kerberos ドメイン コントローラーのクエリを実行するための�
 次の例では、`authentication=ActiveDirectoryPassword` モードの使用方法を示します。
 
 例をビルドして実行する前に、次のようにします。
-1.  (例を実行する) クライアント コンピューターに、[azure-activedirectory-library-for-java ライブラリ](https://github.com/AzureAD/azure-activedirectory-library-for-java)とその依存関係をダウンロードし、それらを Java ビルド パスに含めます
+1.  (この例を実行する) クライアント コンピューターに、[Java 用 Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-java) と JDBC ドライバー 9.1 以上のこれの依存関係、または [Java 用 Microsoft Azure Active Directory Authentication Library (ADAL)](https://github.com/AzureAD/azure-activedirectory-library-for-java) と JDBC ドライバー 9.1 以前のドライバー バージョンのこれの依存関係をダウンロードし、それらを Java ビルド パスに含めます。
 2.  次のコード行を見つけて、サーバーとデータベースの名前を、実際のサーバーとデータベースの名前に置き換えます。
     ```java
     ds.setServerName("aad-managed-demo.database.windows.net"); // replace 'aad-managed-demo' with your server name
@@ -279,7 +280,7 @@ You have successfully logged on as: <your user name>
 次の例では、`authentication=ActiveDirectoryInteractive` モードの使用方法を示します。
 
 例をビルドして実行する前に、次のようにします。
-1.  (例を実行する) クライアント コンピューターに、[azure-activedirectory-library-for-java ライブラリ](https://github.com/AzureAD/azure-activedirectory-library-for-java)とその依存関係をダウンロードし、それらを Java ビルド パスに含めます
+1.  (この例を実行する) クライアント コンピューターに、[Java 用 Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-java) と JDBC ドライバー 9.1 以上のこれの依存関係、または [Java 用 Microsoft Azure Active Directory Authentication Library (ADAL)](https://github.com/AzureAD/azure-activedirectory-library-for-java) と JDBC ドライバー 9.1 以前のドライバー バージョンのこれの依存関係をダウンロードし、それらを Java ビルド パスに含めます。
 2.  次のコード行を見つけて、サーバーとデータベースの名前を、実際のサーバーとデータベースの名前に置き換えます。
     ```java
     ds.setServerName("aad-managed-demo.database.windows.net"); // replace 'aad-managed-demo' with your server name
@@ -341,7 +342,7 @@ You have successfully logged on as: <your user name>
 次の例では、`authentication=ActiveDirectoryServicePrincipal` モードの使用方法を示します。
 
 例をビルドして実行する前に、次のようにします。
-1.  (例を実行する) クライアント コンピューターに、[azure-activedirectory-library-for-java ライブラリ](https://github.com/AzureAD/azure-activedirectory-library-for-java)とその依存関係をダウンロードし、それらを Java ビルド パスに含めます
+1.  (この例を実行する) クライアント コンピューターに、[Java 用 Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-java) と JDBC ドライバー 9.1 以上のこれの依存関係、または [Java 用 Microsoft Azure Active Directory Authentication Library (ADAL)](https://github.com/AzureAD/azure-activedirectory-library-for-java) と JDBC ドライバー 9.1 以前のドライバー バージョンのこれの依存関係をダウンロードし、それらを Java ビルド パスに含めます。
 2.  次のコード行を見つけて、サーバーとデータベースの名前を、実際のサーバーとデータベースの名前に置き換えます。
     ```java
     ds.setServerName("aad-managed-demo.database.windows.net"); // replace 'aad-managed-demo' with your server name
@@ -420,7 +421,7 @@ You have successfully logged on as: <your user name>
     CREATE USER [mytokentest] FROM EXTERNAL PROVIDER
     ```
 
-3.  (例を実行する) クライアント コンピューターに、[microsoft-authentication-library-for-java](https://github.com/AzureAD/microsoft-authentication-library-for-java) ライブラリとその依存関係をダウンロードし、それらを Java ビルド パスに含めます。 microsoft-authentication-library-for-java は、この特定の例を実行する場合にのみ必要であることに注意してください。 この例では、このライブラリの API を使用して、Azure AD からアクセス トークンを取得します。 アクセス トークンが既にある場合は、この手順をスキップできます。 また、アクセス トークンを取得する例でセクションを削除する必要もあることに注意してください。
+3.  (この例を実行する) クライアント コンピューターに、[Java 用 Microsoft Authentication Library (MSAL)](https://github.com/AzureAD/microsoft-authentication-library-for-java) ライブラリと JDBC ドライバー 9.1 以上のこれの依存関係、または [Java 用 Microsoft Azure Active Directory Authentication Library (ADAL)](https://github.com/AzureAD/azure-activedirectory-library-for-java) と JDBC ドライバー 9.1 以前のドライバー バージョンのこれの依存関係をダウンロードし、それらを Java ビルド パスに含めます。 microsoft-authentication-library-for-java は、この特定の例を実行する場合にのみ必要であることに注意してください。 この例では、このライブラリの API を使用して、Azure AD からアクセス トークンを取得します。 アクセス トークンが既にある場合は、この手順をスキップできます。 また、アクセス トークンを取得する例でセクションを削除する必要もあることに注意してください。
 
 次の例では、STS URL、クライアント ID、クライアント シークレット、サーバー、データベース名を実際の値に置き換えます。
 

@@ -17,12 +17,12 @@ ms.assetid: 54757c91-615b-468f-814b-87e5376a960f
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: cfda09e184933ae537cdf3b4c6430e6d6d4b20fc
-ms.sourcegitcommit: 524a0f0cc9533188f4b14d2e78ba1cfe816b3b9a
+ms.openlocfilehash: dd6d698d27922e90ce95dbdc406c0ced8f3a58e1
+ms.sourcegitcommit: a177a1e17200400a70f1d61b737481c83249e9a3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2021
-ms.locfileid: "105633152"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107584055"
 ---
 # <a name="always-encrypted"></a>Always Encrypted
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -118,7 +118,7 @@ Always Encrypted による暗号化アルゴリズムの詳細については、
 |選択されたデータベース列内にあるデータを暗号化する|はい|はい|いいえ|
 
 > [!NOTE]
-> [セキュリティで保護されたエンクレーブが設定された Always Encrypted](always-encrypted-enclaves.md) ([!INCLUDE[sql-server-2019](../../../includes/sssql19-md.md)] で導入) では、Trasact-SQL を使用した既存データの暗号化がサポートされます。 また、暗号化操作対象のデータの外部にあるデータを移動する必要もなくなります。
+> [セキュリティで保護されたエンクレーブが設定された Always Encrypted](always-encrypted-enclaves.md) ([!INCLUDE[sql-server-2019](../../../includes/sssql19-md.md)] で導入) では、Trasact-SQL を使用した既存データの暗号化がサポートされます。 これでは、データの暗号化に、データベースを外部に移動する必要もなくなります。
 
 > [!NOTE]
 > 必ず、データベースをホストするコンピューターと異なるコンピューターで、キー プロビジョニングまたはデータ暗号化ツールを実行してください。 そうしないと、機密データやキーがサーバー環境に漏れ、Always Encrypted を使用する利点が少なくなる可能性があります。  
@@ -217,7 +217,7 @@ Always Encrypted の構成の詳細については、以下を参照してくだ
   
 |シナリオ|<code>ALTER ANY COLUMN MASTER KEY</code>|<code>ALTER ANY COLUMN ENCRYPTION KEY</code>|<code>VIEW ANY COLUMN MASTER KEY DEFINITION</code>|<code>VIEW ANY COLUMN ENCRYPTION KEY DEFINITION</code>|  
 |--------------|-----------------------------------|---------------------------------------|---------------------------------------------|-------------------------------------------------|  
-|キー管理 (データベース内のキーの作成/変更/確認)|X|x|x|X|  
+|キー管理 (データベース内のキーの作成/変更/確認)|X|X|X|X|  
 |暗号化された列のクエリ|||X|X|  
   
  **重要な注意点:**  

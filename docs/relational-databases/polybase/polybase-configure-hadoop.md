@@ -1,5 +1,5 @@
 ---
-title: 外部データへのアクセス:Hadoop - PolyBase
+title: '外部データへのアクセス: Hadoop - PolyBase'
 description: この記事では、SQL Server インスタンス上の PolyBase と Hardoop を使用します。 PolyBase は、外部テーブルとデータのインポート/エクスポートのアドホック クエリに適しています。
 ms.date: 12/13/2019
 ms.prod: sql
@@ -10,12 +10,12 @@ ms.author: mikeray
 ms.reviewer: ''
 monikerRange: '>= sql-server-2016'
 ms.custom: seo-dt-2019
-ms.openlocfilehash: 1124d05dc57697d9e27757dad2b4fee842a22a5a
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 3b56ae68b582916debfdaf4696823422940887f3
+ms.sourcegitcommit: 554497d604e0c63c055bf6d572d92fdadb027dbf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100351802"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107571375"
 ---
 # <a name="configure-polybase-to-access-external-data-in-hadoop"></a>Hadoop 内の外部データにアクセスするように PolyBase を構成する
 
@@ -37,8 +37,10 @@ ms.locfileid: "100351802"
 - PolyBase は、Hortonworks Data Platform (HDP) と Cloudera Distributed Hadoop (CDH) の 2 つの Hadoop プロバイダーをサポートしています。 Hadoop では、新規リリースについて "Major.Minor.Version" パターンを採用しており、サポートされているメジャーおよびマイナー リリース内のすべてのバージョンがサポートされています。 次の Hadoop プロバイダーがサポートされています。
 
   - Linux 上の Hortonworks HDP 1.3、2.1 - 2.6、3.0
-  - Windows Server 上の Hortonworks HDP 1.3、2.1 - 2.3
+  - Window Server 上の Hortonworks HDP 1.3、2.1-2.3、3.1<sup>*</sup>
   - Linux 上の Cloudera CDH 4.3、5.1 - 5.5、5.9 - 5.13
+
+   <sup>*</sup> Hortonworks HDB 3.1 では SQL Server 2019 CU9 (15.0.4102) 以降が必要です。
 
 > [!NOTE]
 > PolyBase では、SQL Server 2016 SP1 CU7 および SQL Server 2017 CU3 以降の Hadoop 暗号化ゾーンがサポートされています。 [PolyBase スケールアウト グループ](polybase-scale-out-groups.md)を使用する場合は、すべての計算ノードを、Hadoop 暗号化ゾーンがサポートされたビルド上に配置にする必要があります。

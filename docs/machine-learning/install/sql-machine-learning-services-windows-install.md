@@ -3,24 +3,24 @@ title: Windows へのインストール
 description: Windows に SQL Server Machine Learning Services をインストールする方法について説明します。 Machine Learning Services を使用して、データベース内で Python または R スクリプトを実行できます。
 ms.prod: sql
 ms.technology: machine-learning-services
-ms.date: 02/17/2021
+ms.date: 04/15/2021
 ms.topic: how-to
 author: dphansen
 ms.author: davidph
 ms.custom: seo-lt-2019
 monikerRange: '>=sql-server-2017'
-ms.openlocfilehash: d209daa0932068b41974c7e3597980b15657b1b2
-ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
+ms.openlocfilehash: d1a8a96131a9b5287837efb33bbca1c95eedc5a9
+ms.sourcegitcommit: 554497d604e0c63c055bf6d572d92fdadb027dbf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104611212"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107571364"
 ---
 # <a name="install-sql-server-machine-learning-services-python-and-r-on-windows"></a>Windows に SQL Server Machine Learning Services (Python と R) をインストールする
 
 [!INCLUDE [SQL Server 2017 and later](../../includes/applies-to-version/sqlserver2017.md)]
 
-Windows に SQL Server Machine Learning Services をインストールする方法について説明します。 Machine Learning Services を使用して、データベース内で Python または R スクリプトを実行できます。
+Windows に [SQL Server Machine Learning Services](../sql-server-machine-learning-services.md) をインストールする方法について説明します。 Machine Learning Services を使用して、データベース内で Python または R スクリプトを実行できます。
 
 ## <a name="pre-install-checklist"></a><a name="bkmk_prereqs"> </a> インストール前のチェックリスト
 
