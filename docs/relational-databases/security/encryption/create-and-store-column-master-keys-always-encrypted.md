@@ -12,12 +12,12 @@ ms.assetid: 856e8061-c604-4ce4-b89f-a11876dd6c88
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: c9a0dfad97e37325c0990bb8c1786a63a5bf897a
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: a3c59b19c952659e0630abb5ebbfa34f8a5dfbd3
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97479363"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107561118"
 ---
 # <a name="create-and-store-column-master-keys-for-always-encrypted"></a>Always Encrypted の列マスター キーを作成して保存する
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -45,7 +45,14 @@ Always Encrypted が有効なクライアント ドライバーは Always Encryp
 利用可能な組み込みのプロバイダーは、選択されているドライバー、ドライバーのバージョン、オペレーティング システムによって異なります。  追加設定なしでサポートされるキー ストアがどれか、ドライバーがカスタム キー ストアのプロバイダーをサポートしているかどうかを判断するには、Always Encrypted のドキュメントでお使いのドライバーについて確認してください ([Always Encrypted を使用したアプリケーションの開発](always-encrypted-client-development.md)」)。
 
 ### <a name="which-key-stores-are-supported-in-sql-tools"></a>SQL ツールではどのキー ストアがサポートされていますか?
-SQL Server Management Studio および SqlServer PowerShell モジュールでは、Azure Key Vault、Windows 証明書ストア、および Cryptography Next Generation (CNG) API または Cryptography API (CAPI) を提供するキー ストアに格納されている列マスター キーのみが、サポートされています。 
+SQL Server Management Studio、Azure Data Studio および SqlServer PowerShell モジュールでは、以下に格納されている列マスター キーがサポートされています。
+
+- Azure Key Vault のキー コンテナーおよび[マネージド HSM](https://docs.microsoft.com/azure/key-vault/managed-hsm/overview)。
+  > [!NOTE]
+  > マネージド HSM では、SSMS 18.9 以降と SqlServer PowerShell モジュール バージョン 21.1.18235 以降が必要です。 Azure Data Studio では現在、マネージド HSM はサポートされていません。
+
+- Windows 証明書ストア。
+- Cryptography Next Generation (CNG) API または Cryptography API (CAPI) を提供するハードウェア セキュリティ モジュールなどのキー ストア。
 
 ## <a name="creating-column-master-keys-in-windows-certificate-store"></a>Windows 証明書ストアで列マスター キーを作成する    
 
@@ -99,58 +106,87 @@ SSMS を使用し、Windows 証明書ストアに Always Encrypted キーを格�
 5.  **[証明書スナップイン]** ダイアログ ボックスで **[コンピューター アカウント]** をクリックし、 **[完了]** をクリックします。
 6.  **[スタンドアロン スナップインの追加]** ダイアログ ボックスで **[閉じる]** をクリックします。
 7.  **[スナップインの追加と削除]** ダイアログ ボックスで **[OK]** をクリックします。
-8.  **[証明書]** スナップインで、 **[証明書] > [個人]** フォルダーで証明書を探し、その証明書を右クリックします。次に **[すべてのタスク]** をポイントし、 **[秘密キーの管理]** をクリックします。
+8.  **[証明書]** スナップインで、**[証明書] > [個人]** フォルダーで証明書を探し、その証明書を右クリックします。次に **[すべてのタスク]** をポイントし、 **[秘密キーの管理]** をクリックします。
 9.  **[セキュリティ]** ダイアログ ボックスで、必要に応じてユーザー アカウントの読み取りアクセス許可を追加します。
 
 ## <a name="creating-column-master-keys-in-azure-key-vault"></a>Azure Key Vault で列マスター キーを作成する
 
-Azure Key Vault は、暗号化キーやシークレットの保護に役立ちます。特に、アプリケーションが Azure でホストされている場合、Always Encrypted の列マスター キーの格納には便利なオプションです。 [Azure Key Vault](/azure/key-vault/general/overview)でキーを作成するには、 [Azure サブスクリプション](https://azure.microsoft.com/free/) および Azure Key Vault が必要です。
+Azure Key Vault は、暗号化キーやシークレットの保護に役立ちます。特に、アプリケーションが Azure でホストされている場合、Always Encrypted の列マスター キーの格納に便利なオプションです。 [Azure Key Vault](/azure/key-vault/general/overview)でキーを作成するには、 [Azure サブスクリプション](https://azure.microsoft.com/free/) および Azure Key Vault が必要です。 キーは、キー コンテナーまたは[マネージド HSM](https://docs.microsoft.com/azure/key-vault/managed-hsm/overview) に格納できます。 有効な列マスター キーにするには、Azure Key Vault で管理されるキーが RSA キーである必要があります。
 
-### <a name="using-powershell"></a>PowerShell の使用
+### <a name="using-azure-cli-portal-or-powershell"></a>Azure CLI、ポータルまたは PowerShell の使用
 
-次の例は、新しい Azure Key Vault とキーを作成し、目的のユーザーにアクセス許可を付与しています。
+キー コンテナーでのキーの作成方法については、以下を参照してください。
+- [クイック スタート:Azure CLI を使用して Azure Key Vault との間でキーの設定と取得を行う](https://docs.microsoft.com/azure/key-vault/keys/quick-create-cli)
+- [クイック スタート:Azure PowerShell を使用して Azure Key Vault との間でキーの設定と取得を行う](https://docs.microsoft.com/azure/key-vault/keys/quick-create-powershell)
+- [クイック スタート:Azure portal を使用して Azure Key Vault との間でキーの設定と取得を行う](https://docs.microsoft.com/azure/key-vault/keys/quick-create-portal)
 
-```
-# Create a column master key in Azure Key Vault.
-Connect-AzAccount
-$SubscriptionId = "<Azure subscription ID>"
-$resourceGroup = "<resource group name>"
-$azureLocation = "<key vault location>"
-$akvName = "<key vault name>"
-$akvKeyName = "<column master key name>"
-$azureCtx = Set-AzContext -SubscriptionId $SubscriptionId # Sets the context for the below cmdlets to the specified subscription.
-New-AzResourceGroup -Name $resourceGroup -Location $azureLocation # Creates a new resource group - skip, if you desire group already exists.
-New-AzKeyVault -VaultName $akvName -ResourceGroupName $resourceGroup -Location $azureLocation -SKU premium # Creates a new key vault - skip if your vault already exists.
-Set-AzKeyVaultAccessPolicy -VaultName $akvName -ResourceGroupName $resourceGroup -PermissionsToKeys get, create, delete, list, update, import, backup, restore, wrapKey, unwrapKey, sign, verify -UserPrincipalName $azureCtx.Account
-$akvKey = Add-AzKeyVaultKey -VaultName $akvName -Name $akvKeyName -Destination HSM
-```
+マネージド HSM でのキーの作成方法については、以下を参照してください。
+- [Azure CLI を使用してマネージド HSM を管理する](https://docs.microsoft.com/azure/key-vault/managed-hsm/key-management)
 
-### <a name="using-sql-server-management-studio-ssms"></a>SQL Server Management Studio (SSMS) の使用
+### <a name="sql-server-management-studio-ssms"></a>SQL Server Management Studio (SSMS)
 
-SSMS を使用して Azure Key Vault で列マスター キーを作成する方法について詳しくは、「[SQL Server Management Studio を使用して Always Encrypted キーをプロビジョニングする](configure-always-encrypted-keys-using-ssms.md)」をご覧ください。
-SSMS を使用し、Azure Key Vault に Always Encrypted キーを格納するためのチュートリアルは、「 [Always Encrypted - データベース暗号化を使用して SQL Database で機密データを保護し、Windows 証明書ストアで暗号化キーを格納する](/azure/azure-sql/database/always-encrypted-azure-key-vault-configure)」を参照してください。
+SSMS を使用して Azure Key Vault でキー コンテナーまたはマネージド HSM に列マスター キーを作成する方法について詳しくは、「[SQL Server Management Studio を使用して Always Encrypted キーをプロビジョニングする](configure-always-encrypted-keys-using-ssms.md)」をご覧ください。
+SSMS を使用し、キー コンテナーに Always Encrypted キーを格納するステップバイステップのチュートリアルについては、「[Always Encrypted ウィザード チュートリアル (Azure Key Vault)](/azure/azure-sql/database/always-encrypted-azure-key-vault-configure)」を参照してください。
 
 ### <a name="making-azure-key-vault-keys-available-to-applications-and-users"></a>Azure Key Vault のキーをアプリケーションとユーザーが使用できるようにする
 
-Azure Key Vault のキーを列のマスター キーとして使用する場合、アプリケーションが Azure を認証し、アプリケーションの ID がキー コンテナーに対する次の権限を持っている必要があります: *get*、*unwrapKey*、*verify*。 
+暗号化された列にアクセスするには、アプリケーションから Azure Key Vault にアクセスできる必要があります。また、列を保護する列暗号化キーの暗号化を解除するには、列マスター キーに対する特定の権限が必要です。
 
-Azure Key Vault に格納されている列マスター キーで保護されている列暗号化キーをプロビジョニングするには、 *get*、 *unwrapKey*、 *wrapKey*、 *sign*、および *verify* の権限が必要です。 さらに、Azure Key Vault に新しいキーを作成するには *create* の権限、Key Vault の内容を一覧するには *list* の権限が必要です。
+Always Encrypted のキーを管理するには、Azure Key Vault で列マスター キーを一覧表示および作成する権限と、キーを使用して暗号化操作を実行する権限が必要です。
 
-#### <a name="using-powershell"></a>PowerShell の使用
+#### <a name="key-vaults"></a>キー コンテナー
 
-Azure Key Vault 内の実際のキーへのユーザーおよびアプリケーションによるアクセスを有効にするには、コンテナーのアクセス ポリシーを設定する必要があります ([Set-AzKeyVaultAccessPolicy](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy))。
+列マスター キーをキー コンテナーに格納し、承認にロールのアクセス許可を使用している場合:
 
-```
-$vaultName = "<vault name>"
-$resourceGroupName = "<resource group name>"
-$userPrincipalName = "<user to grant access to>"
-$clientId = "<client Id>"
+* アプリケーションの ID は、キー コンテナーに対して次のデータ プレーン アクションを許可するロールのメンバーである必要があります。 
 
-# grant users permissions to the keys:
-Set-AzKeyVaultAccessPolicy -VaultName $vaultName -ResourceGroupName $resourceGroupName -PermissionsToKeys create,get,wrapKey,unwrapKey,sign,verify,list -UserPrincipalName $userPrincipalName
-# grant applications permissions to the keys:
-Set-AzKeyVaultAccessPolicy  -VaultName $vaultName  -ResourceGroupName $resourceGroupName -ServicePrincipalName $clientId -PermissionsToKeys get,wrapKey,unwrapKey,sign,verify,list
-```
+  - Microsoft.KeyVault/vaults/keys/decrypt/action
+  - Microsoft.KeyVault/vaults/keys/read
+  - Microsoft.KeyVault/vaults/keys/verify/action 
+  
+  アプリケーションに必要な権限を付与する最も簡単な方法は、その ID を [Key Vault Crypto ユーザー](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#key-vault-crypto-user) ロールに追加することです。 また、必要な権限を含むカスタム ロールを作成することもできます。
+* Always Encrypted のキーを管理するユーザーは、キー コンテナーに対して次のデータ プレーン アクションを許可するロールのメンバーである必要があります。 
+  - Microsoft.KeyVault/vaults/keys/create/action
+  - Microsoft.KeyVault/vaults/keys/decrypt/action
+  - Microsoft.KeyVault/vaults/keys/encrypt/action
+  - Microsoft.KeyVault/vaults/keys/read
+  - Microsoft.KeyVault/vaults/keys/sign/action
+  - Microsoft.KeyVault/vaults/keys/verify/action
+  
+  ユーザーに必要な権限を付与する最も簡単な方法は、ユーザーを [Key Vault Crypto ユーザー](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#key-vault-crypto-user) ロールに追加することです。  また、必要な権限を含むカスタム ロールを作成することもできます。
+
+列マスター キーをキー コンテナーに格納し、承認にアクセス ポリシーを使用している場合:
+
+* アプリケーションの ID には、キー コンテナーに対する次のアクセス ポリシーのアクセス許可が必要です: *get*、*unwrapKey*、および *verify*。
+* Always Encrypted のキーを管理するユーザーには、キー コンテナーに対する次のアクセス ポリシーのアクセス許可が必要です: *create*、*get*、*list*、*sign*、*unwrapKey*、*wrapKey*、*verify*。
+
+キー コンテナーの認証と承認を構成する方法に関する一般的な情報については、「[セキュリティ プリンシパルが Key Vault にアクセスすることを承認する](https://docs.microsoft.com/azure/key-vault/general/authentication#authorize-a-security-principal-to-access-key-vault)」を参照してください。
+
+#### <a name="managed-hsms"></a>マネージド HSM
+
+アプリケーションの ID は、マネージド HSM に対して次のデータ プレーン アクションを許可するロールのメンバーである必要があります。 
+
+- Microsoft.KeyVault/managedHsm/keys/decrypt/action
+- Microsoft.KeyVault/managedHsm/keys/read/action
+- Microsoft.KeyVault/managedHsm/keys/verify/action
+
+Microsoft では、上記のアクセス許可のみを含むカスタム ロールを作成することをお勧めします。
+
+Always Encrypted のキーを管理するユーザーは、キーに対して次のデータ プレーン アクションを許可するロールのメンバーである必要があります。 
+
+- Microsoft.KeyVault/managedHsm/keys/create/action
+- Microsoft.KeyVault/managedHsm/keys/decrypt/action
+- Microsoft.KeyVault/managedHsm/keys/encrypt/action
+- Microsoft.KeyVault/managedHsm/keys/read
+- icrosoft.KeyVault/managedHsm/keys/sign/action
+- Microsoft.KeyVault/managedHsm/keys/verify/action
+
+ユーザーに上記の権限を付与する最も簡単な方法は、ユーザーを Managed HSM 暗号化ユーザー ロールに追加することです。 また、必要な権限を含むカスタム ロールを作成することもできます。
+
+マネージド HSM のアクセス制御の詳細については、以下を参照してください。
+
+- [Managed HSM のアクセス制御](https://docs.microsoft.com/azure/key-vault/managed-hsm/access-control)
+- [Managed HSM のローカル RBAC の組み込みロール](https://docs.microsoft.com/azure/key-vault/managed-hsm/built-in-roles#permitted-operations)。
 
 ## <a name="creating-column-master-keys-in-hardware-security-modules-using-cng"></a>CNG を使用してハードウェア セキュリティ モジュールに列マスター キーを作成する
 

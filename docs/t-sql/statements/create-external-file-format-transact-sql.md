@@ -2,7 +2,7 @@
 description: CREATE EXTERNAL FILE FORMAT (Transact-SQL)
 title: CREATE EXTERNAL FILE FORMAT (Transact-SQL)
 ms.custom: ''
-ms.date: 02/23/2021
+ms.date: 04/13/2021
 ms.prod: sql
 ms.prod_service: synapse-analytics, pdw, sql-database
 ms.reviewer: ''
@@ -20,17 +20,18 @@ helpviewer_keywords:
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 monikerRange: '>=aps-pdw-2016||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017'
-ms.openlocfilehash: 82bd61e91a36b2e8e71061be770dd70c64430270
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+ms.openlocfilehash: b0587fac57e0989a06a9b00826b1c5e594aa8cf1
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104750192"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107560966"
 ---
 # <a name="create-external-file-format-transact-sql"></a>CREATE EXTERNAL FILE FORMAT (Transact-SQL)
 [!INCLUDE [sqlserver2016-asa-pdw](../../includes/applies-to-version/sqlserver2016-asa-pdw.md)]
 
 Hadoop、Azure Blob Storage、Azure Data Lake Store に格納される外部データを定義する、または外部ストリームに関連付けられている入力および出力ストリーム用の外部ファイル形式オブジェクトを作成します。 外部ファイル形式の作成は、外部テーブルを作成するための前提条件です。 外部ファイル形式を作成することで、外部テーブルによって参照されるデータの実際のレイアウトを指定します。  
+外部テーブルの作成については、「[CREATE EXTERNAL TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/create-external-table-transact-sql.md)」をご覧ください。
   
 次のファイル形式がサポートされています。
   
@@ -38,14 +39,12 @@ Hadoop、Azure Blob Storage、Azure Data Lake Store に格納される外部デ�
   
 - Hive RCFile - Azure Synapse Analytics には適用されません。
   
-- Hive ORC
+- Hive ORC - Azure Synapse Analytics には適用されません。
   
 - Parquet
 
-- JSON - Azure SQL Edge にのみ適用されます。
+- JSON - Azure SQL Edge にのみ適用されます。 OPENROWSET を使用して他のプラットフォームで JSON データをインポートする方法については、「[JSON ドキュメントの SQL Server へのインポート](../../relational-databases/json/import-json-documents-into-sql-server.md)」または「[Azure Synapse Analytics でサーバーレス SQL プールを使用して JSON ファイルのクエリを実行する](/azure/synapse-analytics/sql/query-json-files)」を参照してください。
 
-外部テーブルの作成については、「[CREATE EXTERNAL TABLE &#40;Transact-SQL&#41;](../../t-sql/statements/create-external-table-transact-sql.md)」をご覧ください。
-  
  ![トピック リンク アイコン](../../database-engine/configure-windows/media/topic-link.gif "トピック リンク アイコン") [Transact-SQL 構文表記規則](../../t-sql/language-elements/transact-sql-syntax-conventions-transact-sql.md)  
   
 ## <a name="syntax"></a>構文

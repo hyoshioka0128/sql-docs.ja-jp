@@ -25,12 +25,12 @@ helpviewer_keywords:
 ms.assetid: a3d55df7-b4e4-43f3-a14b-056cba36ab98
 author: MikeRayMSFT
 ms.author: mikeray
-ms.openlocfilehash: 1a2878025e3b5b6aa8d303ebf94e7215c5590992
-ms.sourcegitcommit: 8dc7e0ececf15f3438c05ef2c9daccaac1bbff78
+ms.openlocfilehash: 0f632ce5847e2924a2d418e2f4fffe381ac6ee3d
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/13/2021
-ms.locfileid: "100344077"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107560978"
 ---
 # <a name="create-availability-group-transact-sql"></a>CREATE AVAILABILITY GROUP (Transact-SQL)
 
@@ -385,10 +385,10 @@ AUTOMATED_BACKUP_PREFERENCE **=** { PRIMARY \| SECONDARY_ONLY \| SECONDARY \| NO
   
  \<ag_name> 分散可用性グループの半分を占める可用性グループの名前を指定します。  
   
- LISTENER **='** TCP **://** _system-address_ **:** _port_ **'**  
+ LISTENER_URL **='** TCP **://** _system-address_ **:** _port_ **'**  
  可用性グループに関連付けられているリスナーの URL パスを指定します。  
   
- LISTENER 句は必須です。  
+ LISTENER_URL 句は必須です。  
   
  **'** TCP **://** _system-address_ **:** _port_ **'**  
  可用性グループに関連付けられているリスナーの URL を指定します。 URL のパラメーターは次のとおりです。  

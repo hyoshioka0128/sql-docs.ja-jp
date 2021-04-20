@@ -11,12 +11,12 @@ ms.topic: conceptual
 author: jaszymas
 ms.author: jaszymas
 monikerRange: '>= sql-server-ver15'
-ms.openlocfilehash: e28b6d18b5fe466aa239164b18ebdfe5fef0895c
-ms.sourcegitcommit: 8ca4b1398e090337ded64840bcb8d6c92d65c29e
+ms.openlocfilehash: 8a2039b4444c69a35793cb248ceb4553a7c698ce
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98534761"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107560952"
 ---
 # <a name="provision-enclave-enabled-keys"></a>エンクレーブ対応キーをプロビジョニングする
 
@@ -112,7 +112,7 @@ New-SqlColumnEncryptionKey -Name $cekName  -InputObject $database -ColumnMasterK
 ```
 
 ### <a name="example---provision-enclave-enabled-keys-using-azure-key-vault"></a>例 - Azure Key Vault を使用してエンクレーブ対応キーをプロビジョニングする
-次のエンドツーエンドの例では、Azure Key Vault に列マスター キーを格納して、エンクレーブ対応キーをプロビジョニングする方法を示します。 スクリプトは、「[Azure Key Vault 例 (役割の分離なし)](configure-always-encrypted-keys-using-powershell.md#azure-key-vault-without-role-separation-example)」の例が基になっています。 エンクレーブ対応のキーとエンクレーブ対応ではないキーのワークフローでの 2 つの違いに注意することが重要です。 
+以下のエンドツーエンドの例では、Azure Key Vault のキー コンテナーに列マスター キーを格納して、エンクレーブ対応キーをプロビジョニングする方法を示します。 スクリプトは、「[Azure Key Vault 例 (役割の分離なし)](configure-always-encrypted-keys-using-powershell.md#azure-key-vault-without-role-separation-example)」の例が基になっています。 エンクレーブ対応のキーとエンクレーブ対応ではないキーのワークフローでの 2 つの違いに注意することが重要です。 
 - 次のスクリプトの [**New-SqlCertificateStoreColumnMasterKeySettings**](/powershell/module/sqlserver/new-sqlcertificatestorecolumnmasterkeysettings) では、`-AllowEnclaveComputations` パラメーターを使用して、新しい列マスター キーがエンクレーブ対応にされています。 
 - 次のスクリプトでは、[**New-SqlAzureKeyVaultColumnMasterKeySettings**](/powershell/module/sqlserver/new-sqlazurekeyvaultcolumnmasterkeysettings) コマンドレットを呼び出す前に、[**Add-SqlAzureAuthenticationContext**](/powershell/module/sqlserver/add-sqlazureauthenticationcontext) コマンドレットを呼び出して、Azure にサインインします。 `-AllowEnclaveComputations` パラメーターを指定すると、**New-SqlAzureKeyVaultColumnMasterKeySettings** によって Azure Key Vault が呼び出され、列マスター キーのプロパティへの署名が行われるため、最初に Azure にサインインする必要があります。
 

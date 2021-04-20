@@ -12,12 +12,12 @@ ms.assetid: 827e509e-3c4f-4820-aa37-cebf0f7bbf80
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 26b598865668ce5fb10e34eb9558fe018a7c60a8
-ms.sourcegitcommit: f30b5f61c514437ea58acc5769359c33255b85b5
+ms.openlocfilehash: 738ca49728a320f6df001b51afd1ed11d2b7cfb4
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99075894"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107560929"
 ---
 # <a name="using-always-encrypted-with-the-net-framework-data-provider-for-sql-server"></a>Always Encrypted と .NET Framework Data Provider for SQL Server を使用する
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -315,7 +315,10 @@ cmd.ExecuteNonQuery();
 
 ### <a name="using-azure-key-vault-provider"></a>Azure Key Vault プロバイダーを使用する
 
-Azure Key Vault は、特にアプリケーションが Azure でホストされている場合、Always Encrypted の列マスター キーの格納と管理に便利なオプションです。 .NET Framework Data Provider for SQL Server には、Azure Key Vault の組み込み列マスター キー ストア プロバイダーは含まれませんが、アプリケーションと容易に統合できる NuGet パッケージとして使用できます。 詳細については、「 [Always Encrypted - Protect sensitive data in SQL Database with data encryption and store your encryption keys in the Azure Key Vault (Always Encrypted - データ暗号化によって SQL データベースの機密データを保護し、Azure Key Vault に暗号化キーを格納する)](/azure/azure-sql/database/always-encrypted-azure-key-vault-configure)」を参照してください。
+Azure Key Vault は、特にアプリケーションが Azure でホストされている場合、Always Encrypted の列マスター キーの格納と管理に便利なオプションです。 .NET Framework Data Provider for SQL Server には、Azure Key Vault の組み込み列マスター キー ストア プロバイダーは含まれませんが、アプリケーションと容易に統合できる NuGet パッケージとして使用できます。 詳細については、次の情報を参照してください。
+
+- [Microsoft.SqlServer.Management.AlwaysEncrypted.AzureKeyVaultProvider](https://www.nuget.org/packages/Microsoft.SqlServer.Management.AlwaysEncrypted.AzureKeyVaultProvider/)
+- [Always Encrypted - データ暗号化によって SQL データベースの機密データを保護し、Azure Key Vault に暗号化キーを格納する](/azure/azure-sql/database/always-encrypted-azure-key-vault-configure)
 
 ### <a name="implementing-a-custom-column-master-key-store-provider"></a>カスタム列マスター キー ストア プロバイダーを実装する
 

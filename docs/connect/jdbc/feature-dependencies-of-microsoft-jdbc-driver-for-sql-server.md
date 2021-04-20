@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.assetid: 939a8773-2583-49a4-bf00-6b892fbe39dc
 author: David-Engel
 ms.author: v-daenge
-ms.openlocfilehash: 61542eafadc26a96c01204472c6fd78997787f15
-ms.sourcegitcommit: 9413ddd8071da8861715c721b923e52669a921d8
+ms.openlocfilehash: 04aee97ef2b43363001f44fd43191c7c1b08f189
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101836959"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107560814"
 ---
 # <a name="feature-dependencies-of-the-microsoft-jdbc-driver-for-sql-server"></a>Microsoft JDBC Driver for SQL Server の機能の依存関係
 
@@ -94,7 +94,7 @@ ms.locfileid: "101836959"
 
 ### <a name="working-with-the-azure-key-vault-provider"></a>Azure Key Vault プロバイダーの操作:
 
-- JDBC ドライバー バージョン 9.2.1 - 依存関係のバージョン: Azure-keyvault (バージョン 4.2.1)、Azure-identity (バージョン 1.1.3)、およびそれらの依存関係 ([サンプル アプリケーション](azure-key-vault-sample-version-9.2.md))
+- JDBC ドライバー バージョン 9.2.1 - 依存関係のバージョン: Azure-security-keyvault-keys (バージョン 4.2.1)、Azure-identity (バージョン 1.1.3)、およびそれらの依存関係 ([サンプル アプリケーション](azure-key-vault-sample-version-9.2.md))
 - JDBC ドライバー バージョン 8.4.1 - 依存関係のバージョン:Azure-Keyvault (バージョン 1.2.4)、Adal4j (バージョン 1.6.5)、Client-Runtime-for-AutoRest (1.7.4)、およびそれらの依存関係 ([サンプル アプリケーション](azure-key-vault-sample-version-7.0.md))
 - JDBC ドライバー バージョン 8.2.2 - 依存関係のバージョン:Azure-Keyvault (バージョン 1.2.2)、Adal4j (バージョン 1.6.4)、Client-Runtime-for-AutoRest (1.7.0)、およびそれらの依存関係 ([サンプル アプリケーション](azure-key-vault-sample-version-7.0.md))
 - JDBC ドライバー バージョン 7.4.1 - 依存関係のバージョン:Azure-Keyvault (バージョン 1.2.1)、Adal4j (バージョン 1.6.4)、Client-Runtime-for-AutoRest (1.6.10)、およびそれらの依存関係 ([サンプル アプリケーション](azure-key-vault-sample-version-7.0.md))

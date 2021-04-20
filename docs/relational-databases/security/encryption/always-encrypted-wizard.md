@@ -17,12 +17,12 @@ ms.assetid: 68daddc9-ce48-49aa-917f-6dec86ad5af5
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: bedf502949e206b45bf7e1e332962c8c093d1bcb
-ms.sourcegitcommit: b1cec968b919cfd6f4a438024bfdad00cf8e7080
+ms.openlocfilehash: b5cf7d89314b795db6bfeabb7bf6b0c86d8f3e8d
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99236696"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107560974"
 ---
 # <a name="configure-column-encryption-using-always-encrypted-wizard"></a>Always Encrypted ウィザードを使用して列暗号化を構成する
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -54,13 +54,7 @@ PowerShell を使用することをお勧めします
  - Always Encrypted でサポートされる暗号化の種類について詳しくは、「[明確な暗号化またはランダム化された暗号化の選択](always-encrypted-database-engine.md#selecting--deterministic-or-randomized-encryption)」をご覧ください。
  
  ## <a name="permissions"></a>アクセス許可
-ウィザードを使って暗号化操作を実行するには、**VIEW ANY COLUMN MASTER KEY DEFINITION** および **VIEW ANY COLUMN ENCRYPTION KEY DEFINITION** のアクセス許可が必要です。 また、キーが保持されているキー ストア内にある、使用している列マスター キーにアクセスするためのアクセス許可も必要です。
-- **証明書ストア – ローカル コンピューター** - 列マスター キーとして使用される証明書への読み取りアクセス権を持っているか、コンピューターの管理者である必要があります。
-- **Azure Key Vault** - 列マスター キーが格納されている資格情報コンテナーに対する get、unwrapKey、および verify の権限が必要です。
-- **キー ストア プロバイダー (CNG)** - キー ストアまたはキーを使用する際には、ストアと KSP の構成に応じて、必要な権限と資格情報を入力するよう求められる場合があります。
-- **暗号化サービス プロバイダー (CAPI)** - キー ストアまたはキーを使用する際には、ストアと CSP の構成に応じて、必要な権限と資格情報を入力するよう求められる場合があります。
-
-さらに、ウィザードを使用して新しいキーを作成する場合は、「[[新しい列マスター キー] ダイアログを使用して列マスター キーをプロビジョニングする](configure-always-encrypted-keys-using-ssms.md#provision-column-master-keys-with-the-new-column-master-key-dialog)」および「[[新しい列の暗号化キー] ダイアログを使用して列の暗号化キーをプロビジョニングする](configure-always-encrypted-keys-using-ssms.md#provision-column-encryption-keys-with-the-new-column-encryption-key-dialog)」の一覧で示されている追加のアクセス許可が必要です。
+ウィザードを使って暗号化操作を実行するには、**VIEW ANY COLUMN MASTER KEY DEFINITION** および **VIEW ANY COLUMN ENCRYPTION KEY DEFINITION** のアクセス許可が必要です。 また、列マスター キーを作成し、それにアクセスして使用するためのキー ストアのアクセス許可も必要です。 キー ストアのアクセス許可の詳細については、「[Always Encrypted の列マスター キーを作成して保存する](create-and-store-column-master-keys-always-encrypted.md)」に移動し、キー ストアに関連するセクションを見つけてください。
 
 ## <a name="open-the-always-encrypted-wizard"></a>Always Encrypted ウィザードを開く
 3 つの異なるレベルでウィザードを起動できます。 

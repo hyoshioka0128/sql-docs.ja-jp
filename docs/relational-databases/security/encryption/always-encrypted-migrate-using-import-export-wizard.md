@@ -15,12 +15,12 @@ ms.assetid: 29816a41-f105-4414-8be1-070675d62e84
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 234dabee531f85b4e3f8a687067dee9f91c96b33
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: a31b2bcc5c704de1a1f066ce7063e6604aba8d75
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100345493"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107560994"
 ---
 # <a name="migrate-data-to-or-from-columns-using-always-encrypted-with-sql-server-import-and-export-wizard"></a>SQL Server インポートおよびエクスポート ウィザードで Always Encrypted を使用して列間でデータを移行する 
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -68,15 +68,7 @@ SQL Server インポートおよびエクスポート ウィザード内の次�
 
 ## <a name="permissions-for-encrypting-or-decrypting-data-during-migration"></a>移行中にデータを暗号化または暗号化解除するためのアクセス許可
 
-SQL Server のソース データベースまたは宛先データベースに格納されたデータを暗号化または暗号化解除するには、ソース データベースで *VIEW ANY COLUMN MASTER KEY DEFINITION* 権限と *VIEW ANY COLUMN ENCRYPTION KEY DEFINITION* 権限が必要です。
-
-暗号化または暗号化解除するデータを格納する列に対して構成された列マスター キーへのアクセス権も必要です。
-
-- **証明書ストア – ローカル コンピューター** - 列マスター キーとして使用される証明書への読み取りアクセス権を持っているか、コンピューターの管理者である必要があります。
-- **Azure Key Vault** - 列マスター キーが格納されている資格情報コンテナーに対する _get_、_unwrapKey_、および _verify_ の権限が必要です。
-- **キー ストア プロバイダー (CNG)** - キー ストアまたはキーを使用する際に入力を求められる可能性がある必要な権限と資格情報は、ストアと KSP の構成によって異なります。
-- **暗号化サービス プロバイダー (CAPI)** - キー ストアまたはキーを使用する際に入力を求められる可能性がある必要な権限と資格情報は、ストアと CSP の構成によって異なります。
-詳細については、 [列マスター キーの作成と格納 (Always Encrypted)](../../../relational-databases/security/encryption/create-and-store-column-master-keys-always-encrypted.md) を参照してください。
+SQL Server のソース データベースまたは宛先データベースに格納されたデータを暗号化または暗号化解除するには、ソース データベースで *VIEW ANY COLUMN MASTER KEY DEFINITION* 権限と *VIEW ANY COLUMN ENCRYPTION KEY DEFINITION* 権限が必要です。 列マスター キーにアクセスして使用するには、キー ストアのアクセス許可も必要です。 キーの管理操作に必要なキー ストアのアクセス許可の詳細については、「[Always Encrypted の列マスター キーを作成して保存する](create-and-store-column-master-keys-always-encrypted.md)」に移動し、キー ストアに関するセクションを見つけてください。
 
 ## <a name="next-steps"></a>次の手順
 - [SQL Server Management Studio で Always Encrypted を使用した列のクエリを実行する](always-encrypted-query-columns-ssms.md)

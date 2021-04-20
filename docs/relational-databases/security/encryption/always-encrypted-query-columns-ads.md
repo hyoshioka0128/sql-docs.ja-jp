@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 826832a9653c0f3966a2919f7e32beaa938ae6d5
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 85481fccf1d29902c38f49136f7dbd78bab550d7
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100345462"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107560937"
 ---
 # <a name="query-columns-using-always-encrypted-with-azure-data-studio"></a>Azure Data Studio で Always Encrypted を使用した列のクエリを実行する
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -43,7 +43,7 @@ ms.locfileid: "100345462"
 ### <a name="prerequisites"></a>前提条件
 - Azure Data Studio バージョン 17.1 以降。
 - 列マスター キーと、クエリの実行対象の列を保護するキーに関するメタデータにアクセスできる必要があります。 詳しくは、以下の「[暗号化された列にクエリを実行するためのアクセス許可](#permissions-for-querying-encrypted-columns)」を参照してください。
-- 列マスター キーは、Windows 証明書ストアまたは Azure Key Vault に格納する必要があります。 Azure Data Studio はその他のキー ストアをサポートしていません。
+- 列マスター キーは、Azure Key Vault のキー コンテナーまたは Windows 証明書ストアに格納する必要があります。 Azure Data Studio では他のキー ストアはサポートされていません。また、Azure Key Vault の[マネージド HSM](https://docs.microsoft.com/azure/key-vault/managed-hsm/overview) に格納されている列マスター キーはサポートされていません。
 
 ### <a name="steps"></a>手順
 1.  データを取得および暗号化解除する `SELECT` クエリの実行元のクエリ ウィンドウのデータベース接続に対して Always Encrypted を有効にします。 これにより、[Microsoft .NET Data Provider for SQL Server](../../../connect/ado-net/sql/sqlclient-support-always-encrypted.md) (Azure Data Studio で使用) は、クエリの結果セット内の暗号化された列の暗号化を解除するよう指示されます。 以下の「[データベース接続での Always Encrypted の有効化と無効化](#enabling-and-disabling-always-encrypted-for-a-database-connection)」を参照してください。
@@ -60,7 +60,7 @@ SSN が `Patients` テーブルで暗号化された列であると仮定して�
 ### <a name="prerequisites"></a>前提条件
 - Azure Data Studio バージョン 18.1 以降。
 - 列マスター キーと、クエリの実行対象の列を保護するキーに関するメタデータにアクセスできる必要があります。 詳しくは、以下の「[暗号化された列にクエリを実行するためのアクセス許可](#permissions-for-querying-encrypted-columns)」を参照してください。
-- 列マスター キーは、Windows 証明書ストアまたは Azure Key Vault に格納する必要があります。 Azure Data Studio はその他のキー ストアをサポートしていません。
+- 列マスター キーは、Azure Key Vault のキー コンテナーまたは Windows 証明書ストアに格納する必要があります。 Azure Data Studio では他のキー ストアはサポートされていません。また、Azure Key Vault の[マネージド HSM](https://docs.microsoft.com/azure/key-vault/managed-hsm/overview) に格納されている列マスター キーはサポートされていません。
 
 ### <a name="steps"></a>手順
 1. データを取得および暗号化解除する `SELECT` クエリの実行元のクエリ ウィンドウのデータベース接続に対して Always Encrypted を有効にします。 これにより、[Microsoft .NET Data Provider for SQL Server](../../../connect/ado-net/sql/sqlclient-support-always-encrypted.md) (Azure Data Studio によって使用されます) は、暗号化された列をターゲットとするクエリ パラメーターを暗号化し、暗号化された列から取得した結果を復号化するように指示されます。 以下の「[データベース接続での Always Encrypted の有効化と無効化](#enabling-and-disabling-always-encrypted-for-a-database-connection)」を参照してください。 
@@ -77,12 +77,7 @@ SSN が `Patients` テーブルで暗号化された列であると仮定して�
 
 暗号化された列に対してクエリ (暗号化テキストでデータを取得するクエリを含む) を実行するには、データベースの **VIEW ANY COLUMN MASTER KEY DEFINITION** 権限と **VIEW ANY COLUMN ENCRYPTION KEY DEFINITION** 権限が必要です。
 
-これらの権限に加え、クエリ結果を暗号化解除する場合や、(Transact-SQL 変数をパラメーター化することで生成される) クエリ パラメーターを暗号化する場合には、ターゲット列を保護する列マスター キーにアクセスする必要もあります。
-
-- **証明書ストア - ローカル コンピューター:** 列マスター キーとして使用される証明書への **読み取り** アクセス権を持っているか、コンピューターの管理者である必要があります。   
-- **Azure Key Vault:** 列マスター キーが格納されているキー コンテナーに対する **get**、**unwrapKey**、および **verify** の権限が必要です。
-
-詳細については、 [列マスター キーの作成と格納 (Always Encrypted)](../../../relational-databases/security/encryption/create-and-store-column-master-keys-always-encrypted.md) を参照してください。
+上記の権限に加え、クエリ結果の暗号化を解除する場合や、(Transact-SQL 変数をパラメーター化することで生成される) クエリ パラメーターを暗号化する場合には、ターゲット列を保護する列マスター キーにアクセスして使用するためのキー ストアのアクセス許可も必要です。 キー ストアのアクセス許可の詳細については、「[Always Encrypted の列マスター キーを作成して保存する](create-and-store-column-master-keys-always-encrypted.md)」に移動し、キー ストアに関連するセクションを見つけてください。
 
 ## <a name="enabling-and-disabling-always-encrypted-for-a-database-connection"></a>データベース接続での Always Encrypted の有効化と無効化   
 

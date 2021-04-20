@@ -16,12 +16,12 @@ ms.assetid: 29816a41-f105-4414-8be1-070675d62e84
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 249e0d2bc53083839787543723fc16dc11a4ff57
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 9137726ecd04a56f5b5e55fd6e8dcf33407c9e86
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100340134"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107561042"
 ---
 # <a name="rotate-always-encrypted-keys-using-sql-server-management-studio"></a>SQL Server Management Studio を使用して Always Encrypted キーを交換する
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -29,6 +29,9 @@ ms.locfileid: "100340134"
 この記事では、[SQL Server Management Studio (SSMS)](../../../ssms/download-sql-server-management-studio-ssms.md) を使用して、Always Encrypted の列マスター キーと列暗号化キーを交換するためのタスクについて説明します。
 
 推奨されるベスト プラクティスやセキュリティ上の重要な考慮事項など、Always Encrypted のキー管理の概要については、「[Always Encrypted のキー管理の概要](../../../relational-databases/security/encryption/overview-of-key-management-for-always-encrypted.md)」をご覧ください。
+
+> [!NOTE]
+> Azure Key Vault の[マネージド HSM](https://docs.microsoft.com/azure/key-vault/managed-hsm/overview) に格納されている列マスター キーを使用するには、SSMS 18.9 以降のバージョンが必要です。
 
 <a name="rotatecmk"></a>
 ## <a name="rotate-column-master-keys"></a>列マスター キーの交換 
@@ -103,13 +106,7 @@ SQL Server Management Studio では、 [ALTER COLUMN ENCRYPTION KEY (Transact-SQ
 - **ALTER ANY COLUMN MASTER KEY** - 新しい列マスター キーのメタデータを作成し、古い列マスター キーのメタデータを削除するのに必要です。
 - **ALTER ANY COLUMN ENCRYPTION KEY** - 列暗号化キーのメタデータを変更するのに必要です (新しい暗号化された値の追加)。
 
-また、キー ストアにある古い列マスター キーと新しい列マスター キーの両方にアクセスできることも必要です。 キー ストアにアクセスして、列マスター キーを使用するには、キー ストアとキーの両方、またはそのいずれかに対する権限が必要な場合があります。
-- **証明書ストア – ローカル コンピューター** - 列マスター キーとして使用される証明書への読み取りアクセス権を持っているか、コンピューターの管理者である必要があります。
-- **Azure Key Vault** - 列マスター キーが格納されている資格情報コンテナーに対する *create*、*get*、*unwrapKey*、*wrapKey*、*sign*、および *verify* 権限が必要です。
-- **キー ストア プロバイダー (CNG)** - キー ストアまたはキーを使用する際には、ストアと KSP の構成に応じて、必要な権限と資格情報を入力するよう求められる場合があります。
-- **暗号化サービス プロバイダー (CAPI)** - キー ストアまたはキーを使用する際には、ストアと CSP の構成に応じて、必要な権限と資格情報を入力するよう求められる場合があります。
-
-詳細については、「[Always Encrypted の列マスター キーの作成と保存](../../../relational-databases/security/encryption/create-and-store-column-master-keys-always-encrypted.md)」をご覧ください。
+また、キー ストアにある古い列マスター キーと新しい列マスター キーの両方にアクセスできるキー ストアのアクセス許可も必要です。 キーの管理操作に必要なキー ストアのアクセス許可の詳細については、「[Always Encrypted の列マスター キーを作成して保存する](create-and-store-column-master-keys-always-encrypted.md)」に移動し、キー ストアに関するセクションを見つけてください。
 
 <a name="rotatecek"></a> 
 ## <a name="rotate-column-encryption-keys"></a>列暗号化キーの交換
@@ -134,13 +131,7 @@ SQL Server Management Studio では、 [ALTER COLUMN ENCRYPTION KEY (Transact-SQ
 列暗号化キーを回転するために必要なデータベース権限:**ALTER ANY COLUMN MASTER KEY** - 新しい自動生成の列暗号化キーを使用する場合に必要です (新しい列マスター キーとその新しいメタデータも生成されます)。
 **ALTER ANY COLUMN ENCRYPTION KEY** - 新しい列暗号化キーのメタデータを追加するのに必要です。
 
-また、新しい列暗号化キーと古い列暗号化キーの両方の列マスター キーにアクセスできることも必要です。 キー ストアにアクセスして、列マスター キーを使用するには、キー ストアとキーの両方、またはそのいずれかに対する権限が必要な場合があります。
-- **証明書ストア – ローカル コンピューター** - 列マスター キーとして使用される証明書への読み取りアクセス権を持っているか、コンピューターの管理者である必要があります。
-- **Azure Key Vault** - 列マスター キーが格納されている資格情報コンテナーに対する get、unwrapKey、および verify の権限が必要です。
-- **キー ストア プロバイダー (CNG)** - キー ストアまたはキーを使用する際には、ストアと KSP の構成に応じて、必要な権限と資格情報を入力するよう求められる場合があります。
-- **暗号化サービス プロバイダー (CAPI)** - キー ストアまたはキーを使用する際には、ストアと CSP の構成に応じて、必要な権限と資格情報を入力するよう求められる場合があります。
-
-詳細については、「[Always Encrypted の列マスター キーの作成と保存](../../../relational-databases/security/encryption/create-and-store-column-master-keys-always-encrypted.md)」をご覧ください。
+また、新しいおよび古い列暗号化キーの両方の列マスター キーにアクセスできるキー ストアのアクセス許可も必要です。 キーの管理操作に必要なキー ストアのアクセス許可の詳細については、「[Always Encrypted の列マスター キーを作成して保存する](create-and-store-column-master-keys-always-encrypted.md)」に移動し、キー ストアに関するセクションを見つけてください。
 
 ## <a name="next-steps"></a>次の手順
 - [SQL Server Management Studio で Always Encrypted を使用した列のクエリを実行する](always-encrypted-query-columns-ssms.md)

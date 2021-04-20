@@ -2,7 +2,7 @@
 title: PowerShell を使用して Always Encrypted キーをプロビジョニングする | Microsoft Docs
 description: SqlServer PowerShell モジュールを使用して Always Encrypted キーをプロビジョニングし、暗号化キーとデータベースに対するアクセス制御を提供する方法について説明します。
 ms.custom: ''
-ms.date: 06/26/2019
+ms.date: 04/15/2021
 ms.prod: sql
 ms.reviewer: vanto
 ms.technology: security
@@ -11,12 +11,12 @@ ms.assetid: 3bdf8629-738c-489f-959b-2f5afdaf7d61
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 4bb1e019f6f14d0a8525bb669cfa2502f870d254
-ms.sourcegitcommit: 62c7b972db0ac28e3ae457ce44a4566ebd3bbdee
+ms.openlocfilehash: ba27f7d538dffd3454088130243767a6b13d5582
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103231530"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107561070"
 ---
 # <a name="provision-always-encrypted-keys-using-powershell"></a>PowerShell を使用して Always Encrypted キーをプロビジョニングする
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -80,7 +80,7 @@ New-SqlColumnEncryptionKey -Name $cekName  -InputObject $database -ColumnMasterK
 
 ## <a name="azure-key-vault-without-role-separation-example"></a>Azure Key Vault 例 (役割の分離なし)
 
-このスクリプトは、Azure Key Vault をプロビジョニングして構成し、Azure Key Vault で列マスター キーを生成し、列の暗号化キーを生成して暗号化し、Azure SQL データベースでキー メタデータを作成する方法を端から端まで例示しています。
+このスクリプトは、Azure Key Vault でキー コンテナーをプロビジョニングして構成し、そのキー コンテナーで列マスター キーを生成し、列の暗号化キーを生成して暗号化し、Azure SQL データベースでキー メタデータを作成する方法を端から端まで例示しています。
 
 
 ```powershell

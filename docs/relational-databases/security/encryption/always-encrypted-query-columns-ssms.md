@@ -13,12 +13,12 @@ ms.assetid: 29816a41-f105-4414-8be1-070675d62e84
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: ff7924bf1262ee29977d16548b6548c112bc8b5d
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: d7ad39aeedd62011c660ae2c7f67a385bc8c3710
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100345454"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107561003"
 ---
 # <a name="query-columns-using-always-encrypted-with-sql-server-management-studio"></a>SQL Server Management Studio で Always Encrypted を使用した列のクエリを実行する
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -27,6 +27,9 @@ ms.locfileid: "100345454"
 - 暗号化された列に格納された暗号化テキスト値を取得する。 
 - 暗号化された列に格納されたプレーンテキスト値を取得する。   
 - 暗号化された列をターゲットとするプレーンテキスト値を送信する (たとえば、`INSERT` または `UPDATE` ステートメントや、`WHERE` ステートメントの `SELECT` 句のルックアップ パラメーターとして)。
+
+> [!NOTE]
+> Azure Key Vault の[マネージド HSM](https://docs.microsoft.com/azure/key-vault/managed-hsm/overview) に格納されている列マスター キーを使用するには、SSMS 18.9 以降のバージョンが必要です。
 
 ## <a name="retrieving-ciphertext-values-stored-in-encrypted-columns"></a>暗号化された列に格納された暗号化テキスト値の取得    
 暗号化された列に格納されているデータの暗号化テキストを取得する SELECT クエリの実行では (データの暗号化の解除なし)、データを保護する列マスター キーへのアクセス権は必要ありません。 SSMS で暗号化テキストとして暗号化された列から値を取得するには、次のようにします。
@@ -69,14 +72,7 @@ SSN が `char(11)` テーブルで暗号化された `Patients` 列であると�
 
 暗号化テキストのデータを取得するクエリを含め、暗号化された列でクエリを実行するには、データベースでの `VIEW ANY COLUMN MASTER KEY DEFINITION` と `VIEW ANY COLUMN ENCRYPTION KEY DEFINITION` の権限が必要です。
 
-これらの権限に加え、クエリ結果を暗号化解除する場合や、(Transact-SQL 変数をパラメーター化することで生成される) クエリ パラメーターを暗号化する場合には、ターゲット列を保護する列マスター キーにアクセスする必要もあります。
-
-- **証明書ストア - ローカル コンピューター** 列マスター キーとして使用される証明書への `Read` アクセス権を持っているか、コンピューターの管理者である必要があります。   
-- **Azure Key Vault** 列マスター キーが格納されている資格情報コンテナーに対する `get`、 `unwrapKey`、および `verify` の権限が必要です。
-- **キー ストア プロバイダー (KSP)** キー ストアまたはキーを使用するときに入力を求められる可能性がある必要な権限と資格情報は、ストアと KSP の構成によって異なります。   
-- **暗号化サービス プロバイダー (CSP)** キー ストアまたはキーを使用するときに入力を求められる可能性がある必要な権限と資格情報は、ストアと CSP の構成によって異なります。
-
-詳細については、 [列マスター キーの作成と格納 (Always Encrypted)](../../../relational-databases/security/encryption/create-and-store-column-master-keys-always-encrypted.md) を参照してください。
+上記の権限に加え、クエリ結果の暗号化を解除する場合や、(Transact-SQL 変数をパラメーター化することで生成される) クエリ パラメーターを暗号化する場合には、ターゲット列を保護する列マスター キーにアクセスして使用するためのキー ストアのアクセス許可も必要です。 キー ストアのアクセス許可の詳細については、「[Always Encrypted の列マスター キーを作成して保存する](create-and-store-column-master-keys-always-encrypted.md)」に移動し、キー ストアに関連するセクションを見つけてください。
 
 ## <a name="enabling-and-disabling-always-encrypted-for-a-database-connection"></a><a name="en-dis"></a> データベース接続での Always Encrypted の有効化と無効化   
 SSMS でデータベースに接続する場合は、データベース接続について Always Encrypted を有効または無効にすることができます。 既定では、Always Encrypted は無効になっています。 

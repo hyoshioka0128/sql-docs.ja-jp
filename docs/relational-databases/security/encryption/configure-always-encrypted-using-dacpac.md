@@ -13,12 +13,12 @@ ms.assetid: 29816a41-f105-4414-8be1-070675d62e84
 author: jaszymas
 ms.author: jaszymas
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: cae5c4c74f5fc4f6df9b62b1ad985b469aa528ce
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: b8edf13f2ab18e67ba3f599ce8a1a0c285b88968
+ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100345422"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107561033"
 ---
 # <a name="configure-column-encryption-using-always-encrypted-with-a-dac-package"></a>DAC パッケージでの Always Encrypted を使用した列暗号化の構成 
 [!INCLUDE [SQL Server Azure SQL Database](../../../includes/applies-to-version/sql-asdb.md)]
@@ -51,14 +51,7 @@ DACPAC またはターゲット データベースで Always Encrypted がセッ
 
 *ALTER ANY COLUMN MASTER KEY*、 *ALTER ANY COLUMN ENCRYPTION KEY*、 *VIEW ANY COLUMN MASTER KEY DEFINITION*、 *VIEW ANY COLUMN ENCRYPTION KEY DEFINITION*
 
-アップグレード操作によってデータ暗号化操作がトリガーされる場合、影響を受ける列に対して構成された列マスター キーにアクセスできることも必要です。
-
-- **証明書ストア – ローカル コンピューター** - 列マスター キーとして使用される証明書への読み取りアクセス権を持っているか、コンピューターの管理者である必要があります。
-- **Azure Key Vault** - 列マスター キーが格納されている資格情報コンテナーに対する *create*、*get*、*unwrapKey*、*wrapKey*、*sign*、および *verify* 権限が必要です。
-- **キー ストア プロバイダー (CNG)** - キー ストアまたはキーを使用する際には、ストアと KSP の構成に応じて、必要な権限と資格情報を入力するよう求められる場合があります。
-- **暗号化サービス プロバイダー (CAPI)** - キー ストアまたはキーを使用する際には、ストアと CSP の構成に応じて、必要な権限と資格情報を入力するよう求められる場合があります。
-
-詳細については、 [列マスター キーの作成と格納 (Always Encrypted)](../../../relational-databases/security/encryption/create-and-store-column-master-keys-always-encrypted.md) を参照してください。 
+アップグレード操作によってデータ暗号化操作がトリガーされる場合は、列マスタ ーキーにアクセスして使用するためのキー ストアのアクセス許可も必要です。 キー ストアのアクセス許可の詳細については、「[Always Encrypted の列マスター キーを作成して保存する](create-and-store-column-master-keys-always-encrypted.md)」に移動し、キー ストアに関連するセクションを見つけてください。
 
  
 ## <a name="next-steps"></a>次の手順
