@@ -6,20 +6,29 @@ author: cloudmelon
 ms.author: melqin
 ms.reviewer: mikeray
 ms.metadata: seo-lt-2019
-ms.date: 04/06/2021
+ms.date: 04/16/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 75a7d58a25e7027450b53d1ce387635847bfdfe2
-ms.sourcegitcommit: 554497d604e0c63c055bf6d572d92fdadb027dbf
+ms.openlocfilehash: 80fe3abcb2656dd2202b42ca7d67362a813d8044
+ms.sourcegitcommit: 708b3131db2e542b1d461d17dec30d673fd5f0fd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107571324"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107729092"
 ---
-# <a name="check-out-cluster-logs--with-kibana-dashboard"></a>Kibana ダッシュボードを使用してクラスター ログを確認する
+# <a name="check-out-cluster-logs-with-kibana-dashboard"></a>Kibana ダッシュボードを使用してクラスター ログを確認する
 
-この記事では、[!INCLUDE[ssbigdataclusters-ss-nover](../includes/ssbigdataclusters-ss-nover.md)]内でアプリケーションを監視する方法について説明します。
+この記事では、[!INCLUDE[ssbigdataclusters-ss-nover](../includes/ssbigdataclusters-ss-nover.md)] 内でアプリケーションのログを視覚化する方法について説明します。 [!INCLUDE[ssbigdataclusters-ss-nover](../includes/ssbigdataclusters-ss-nover.md)] ではオープンソースのログ プロセッサとフォワーダーである Fluent Bit が使用されます。 Fluent Bit は、クラスター内のビッグ データ クラスター コンポーネントからログをフェッチして、[エラスティック スタック Elasticsearch](https://azure.microsoft.com/overview/linux-on-azure/elastic/) に格納します。 Kibana ダッシュボードから、関心のあるログを視覚化し、検索することができます。
+
+## <a name="logs-stored-in-elasticsearch"></a>Elasticsearch に格納されているログ
+
+Elasticsearch に格納されているビッグ データ クラスター関連のログには、SQL Server、Spark、HDFS、プラットフォーム サービスなど、すべてのサービスの標準出力とエラー ログが含まれています。 
+
+これらのログは、Kibana ダッシュボードのコンポーネントで検索できます。 'kubernetes_container_name'、'kubernetes_pod_name'、'log_filename'、'service_name' などのフィルターを使用すると、ビッグ データ クラスター コントローラーや SQL Server のログ、さまざまなポッドやサービスからのログなど、すべてのログをすばやく視覚化できます。 
+
+具体的には、コントローラー ログには、'service_name: controller' でフィルター処理することによって、クラスター展開とクラスター イベントの状態とプロセスが記録されます。 AD モードで [!INCLUDE[ssbigdataclusters-ss-nover](../includes/ssbigdataclusters-ss-nover.md)] を調べる場合は、セキュリティサポート ログが非常に役に立つ可能性があります。ビッグ データ クラスターがオンプレミスの Active Directory (AD) ドメイン コントローラーから AD トークンを取得するプロセス中のイベントが記録されます。これにアクセスするには、コントローラー ログを 'service_name: secsupp' でフィルター処理します。
+
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -53,8 +62,8 @@ Kibana ダッシュボードへのリンク:
 > [!NOTE]
 > 古い Microsoft Edge ブラウザーには、Kibana との互換性がありません。ダッシュボードを正しく表示するには、Edge chromium ベースのブラウザーを使用する必要があります。 サポートされていないブラウザーを使用してダッシュボードを読み込むと、空のページが表示されます。[Kibana でサポートされているブラウザー](https://www.elastic.co/support/matrix#matrix_browsers)に関するページを参照してください。
 
+
+
 ## <a name="next-steps"></a>次のステップ
 
 [!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ss-nover.md)]の詳細については、「[[!INCLUDE[big-data-clusters-2019](../includes/ssbigdataclusters-ver15.md)]とは](big-data-cluster-overview.md)」を参照してください。
-
-
