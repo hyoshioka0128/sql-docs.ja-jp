@@ -2,7 +2,7 @@
 description: PolyBase の機能と制限事項
 title: PolyBase の機能と制限事項
 descriptions: This article summarizes PolyBase features available for SQL Server products and services. It lists T-SQL operators supported for pushdown and known limitations.
-ms.date: 04/06/2021
+ms.date: 04/19/2021
 ms.prod: sql
 ms.technology: polybase
 ms.topic: conceptual
@@ -10,12 +10,12 @@ author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: ''
 monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: 4bfb81324da4bb224e8c2e83fd6e62584bb44819
-ms.sourcegitcommit: d8cbbeffa3faa110e02056ff97dc7102b400ffb3
+ms.openlocfilehash: 7ad508f4d745468a194ca95769439845887f2d1f
+ms.sourcegitcommit: 708b3131db2e542b1d461d17dec30d673fd5f0fd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "107003906"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107729126"
 ---
 # <a name="polybase-features-and-limitations"></a>PolyBase の機能と制限事項
 
@@ -43,61 +43,6 @@ PolyBase の主な機能と、これらの機能を利用できる製品を一�
 <sup>*</sup> [!INCLUDE[sssql17-md](../../includes/sssql17-md.md)] で導入されています。「[Azure BLOB ストレージのデータに一括アクセスする例](../import-export/examples-of-bulk-access-to-data-in-azure-blob-storage.md)」をご覧ください。
 
 
-## <a name="syntax-that-prevents-pushdown"></a>プッシュダウンを防止する構文
-
-次の T-SQL 関数または構文を実行すると、プッシュダウン計算ができなくなります。
-
-- `AT TIME ZONE`
-- `CONCAT_WS`
-- `TRANSLATE`
-- `RAND`
-- `CHECKSUM`
-- `BINARY_CHECKSUM`
-- `ISJSON`
-- `JSON_VALUE`
-- `JSON_QUERY`
-- `JSON_MODIFY`
-- `NEWID`
-- `STRING_ESCAPE`
-- `COMPRESS`
-- `DECOMPRESS`
-- `GREATEST`
-- `LEAST`
-- `PARSE`
-
-`FORMAT` および `TRIM` 構文のプッシュダウン サポートは、[!INCLUDE[sssql19-md](../../includes/sssql19-md.md)] CU10 で導入されました。
-
-詳細については、「[PolyBase でのプッシュダウン計算](polybase-pushdown-computation.md)」を参照してください。
-
-## <a name="pushdown-computation-supported-by-t-sql-operators"></a>T-SQL 演算子でサポートされるプッシュダウン計算
-
-[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] および APS では、すべての T-SQL 演算子を Hadoop クラスターにプッシュダウンできるわけではありません。 この表は、サポートされているすべての演算子と、サポートされていない演算子のサブセットを一覧表示しています。
-
-|**演算子の種類** |**Hadoop にプッシュ可能** |**Blob Storage にプッシュ可能** | 
-|---------|---------|---------|
-|列のプロジェクション|はい|いいえ|
-|述語|はい|いいえ|
-|集計|部分的\*|いいえ|
-|外部テーブル間の結合|いいえ|いいえ|
-|外部テーブルとローカル テーブル間の結合|いいえ|いいえ|
-|並べ替え|いいえ|いいえ|
-
-\*部分的な集計は、データが [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] に到達した後に、最終的な集計を行う必要があることを意味します。 ただし、集計の一部は、Hadoop で発生します。 これは、超並列処理システムで一般的な集計の計算方法です。  
-
-#### <a name="hadoop-pushdown-support"></a>Hadoop プッシュダウンのサポート
-
-Hadoop プロバイダーでは、以下がサポートされています。
-
-| **集計**                  | **フィルター (バイナリの比較)** | 
-|-----------------------------------|---------------------------------| 
-| Count_Big                         | NotEqual                        | 
-| SUM                               | LessThan                        | 
-| 平均                               | LessOrEqual                     | 
-| Max                               | GreaterOrEqual                  | 
-| Min                               | GreaterThan                     | 
-| Approx_Count_Distinct             | Is                              | 
-|                                   | IsNot                           | 
-|                                   |                                 | 
 
 ## <a name="known-limitations"></a>既知の制限事項
 
@@ -113,6 +58,8 @@ PolyBase には次の制限事項があります。
 
 - transactional = true の Hive テーブルを使用している場合、PolyBase は Hive テーブルのディレクトリにあるデータにアクセスできません。
 
+- PolyBase サービスが正常に機能するには、SQL Server サービスで TCP/IP ネットワーク プロトコルを有効にする必要があります。 また、TCP/IP プロトコルの構成設定 **[すべて受信待ち]** が **[いいえ]** に設定されている場合は、TCP/IP プロパティの **[IPAll]** の **[TCP 動的ポート]** または **[TCP ポート]** のどちらかに正しいリスナー ポートのエントリが残っている必要があります。 これが必要なのは、PolyBase サービスによる SQL Server エンジンのリスナー ポートの解決方法によるものです。
+
 <!--SQL Server 2016-->
 ::: moniker range="= sql-server-2016 "
 
@@ -122,4 +69,4 @@ PolyBase には次の制限事項があります。
 
 ## <a name="next-steps"></a>次のステップ
 
-PolyBase の詳細については、「[PolyBase とは](polybase-guide.md)」をご覧ください。
+PolyBase の詳細については、「[PolyBase によるデータ仮想化の概要](polybase-guide.md)」を参照してください。

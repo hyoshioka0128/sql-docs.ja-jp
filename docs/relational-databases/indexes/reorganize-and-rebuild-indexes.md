@@ -1,8 +1,8 @@
 ---
-title: 断片化されたインデックスの検出と解決 | Microsoft Docs
+title: 断片化されたインデックスの検出と解決
 description: この記事では、インデックスの断片化が発生するしくみ、断片化の量を検出する方法、T-SQL と SQL Server Management Studio を利用してインデックス断片化を解決するためのベスト オプションを判断する方法について説明します。
 ms.custom: ''
-ms.date: 03/19/2020
+ms.date: 04/15/2021
 ms.prod: sql
 ms.prod_service: database-engine, sql-database, synapse-analytics, pdw
 ms.technology: table-view-index
@@ -27,22 +27,24 @@ helpviewer_keywords:
 - index defragmenting [SQL Server]
 - LOB data [SQL Server], defragmenting
 - clustered indexes, defragmenting
-ms.assetid: a28c684a-c4e9-4b24-a7ae-e248808b31e9
 author: pmasl
 ms.author: mikeray
-monikerRange: '>=aps-pdw-2016||=azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
-ms.openlocfilehash: d322c728d9118cca544584e22e0e7f83f2154776
-ms.sourcegitcommit: 0310fdb22916df013eef86fee44e660dbf39ad21
+monikerRange: '>=aps-pdw-2016||=azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current'
+ms.openlocfilehash: ae12478e495589f2c87ac4d3a2ebb924f173f7dd
+ms.sourcegitcommit: 3bb5ea67dc0d369b921f1bee4ffd4317aba2253c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/20/2021
-ms.locfileid: "104755142"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107720488"
 ---
 # <a name="resolve-index-fragmentation-by-reorganizing-or-rebuilding-indexes"></a>インデックスを再構成または再構築することでインデックス断片化を解決する
 
-[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-asa-pdw.md)]
+[!INCLUDE[SQL Server Azure SQL Database Synapse Analytics PDW ](../../includes/applies-to-version/sql-asdb-asdbmi-pdw.md)]
 
 この記事では、インデックス断片化が発生するしくみと、クエリのパフォーマンスにそれが与える影響について説明します。 [インデックスに存在する断片化の量](#detecting-the-amount-of-fragmentation)を判断したら、自分で選択したツールで Transact-SQL コマンドを実行するか、SQL Server Management Studio を使用して[インデックスを再構成する](#reorganize-an-index)か、[再構築する](#rebuild-an-index)ことでインデックスをデフラグできます。
+
+> [!Note]
+> この記事の情報は、[!INCLUDE[ssazuresynapse_md](../../includes/ssazuresynapse_md.md)] の専用 SQL プールには適用されません。 [!INCLUDE[ssazuresynapse_md](../../includes/ssazuresynapse_md.md)] の専用 SQL プールのインデックス メンテナンスの詳細については、「[[!INCLUDE[ssazuresynapse_md](../../includes/ssazuresynapse_md.md)] での専用 SQL プール テーブルのインデックス作成](/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-tables-index)」を参照してください。
 
 ## <a name="index-fragmentation-overview"></a>インデックスの断片化の概要
 
@@ -413,10 +415,6 @@ ALTER INDEX ALL ON HumanResources.Employee
 
 [!INCLUDE[ssSQL17](../../includes/sssql17-md.md)] までは、クラスター化列ストア インデックスの再構築はオフライン操作です。 データベース エンジンでは、再構築が行われている間、テーブルまたはパーティションを排他的にロックする必要があります。 `NOLOCK`、READ COMMITTED スナップショット分離 (RCSI)、またはスナップショット分離を使用しているときでも、再構築の間は、データはオフラインになり使用できません。
 [!INCLUDE[sql-server-2019](../../includes/sssql19-md.md)] 以降では、`ONLINE = ON` オプションを使用してクラスター化列ストア インデックスを再構築できます。
-
-順序付けされたクラスター化列ストア インデックスを使用する Azure Synapse Analytics (旧称 [!INCLUDE[ssSDW](../../includes/sssdw-md.md)]) テーブルの場合、`ALTER INDEX REBUILD` では TempDB を使用してデータが再度並べ替えられます。 再構築操作中に TempDB を監視します。 TempDB 領域がさらに必要な場合は、データ ウェアハウスをスケールアップします。 インデックスの再構築が完了したら、スケール ダウンで戻します。
-
-順序付けされたクラスター化列ストア インデックスを使用する Azure Synapse Analytics (旧称 [!INCLUDE[ssSDW](../../includes/sssdw-md.md)]) テーブルの場合、`ALTER INDEX REORGANIZE` によってデータが再度並べ替えられることはありません。 データを再度並べ替えるには `ALTER INDEX REBUILD` を使用します。
 
 ## <a name="using-index-rebuild-to-recover-from-hardware-failures"></a>INDEX REBUILD を使用してハードウェア障害から復旧する
 

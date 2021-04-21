@@ -2,7 +2,7 @@
 description: PolyBase でのプッシュダウン計算
 title: PolyBase でのプッシュダウン計算
 dexcription: Enable pushdown computation to improve performance of queries on your Hadoop cluster. You can select a subset of rows/columns in an external table for pushdown.
-ms.date: 03/09/2021
+ms.date: 04/19/2021
 ms.prod: sql
 ms.technology: polybase
 ms.topic: conceptual
@@ -10,12 +10,12 @@ author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: ''
 monikerRange: '>= sql-server-2016||>=sql-server-linux-ver15'
-ms.openlocfilehash: 872d23ca6c908bae5e238a50aad76c52ff4bca26
-ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
+ms.openlocfilehash: ea91e9968f4e47ea394f6bb02d362d93da82ab94
+ms.sourcegitcommit: 708b3131db2e542b1d461d17dec30d673fd5f0fd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105103889"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107729199"
 ---
 # <a name="pushdown-computations-in-polybase"></a>PolyBase でのプッシュダウン計算
 
@@ -38,20 +38,35 @@ ms.locfileid: "105103889"
 
 | Data Source      | 結合  | プロジェクション | 集計 | フィルタ   | 統計 |
 |------------------|--------|-------------|--------------|-----------|------------|
-| **汎用 ODBC** | Yes    | Yes         | Yes          | Yes       | Yes        |  
-| **Oracle**       | Yes    | Yes         | Yes          | Yes       | Yes        |
-| **[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]**   | Yes    | Yes         | Yes          | Yes       | はい        |
-| **Teradata**     | はい    | Yes         | Yes          | Yes       | Yes        |  
-| **MongoDB**      | **いいえ** | Yes         | Yes          | Yes       | Yes        |
-| **Hadoop\** _     | _ *いいえ** | Yes         | \*一部\*     | \*一部\*  | Yes        |  
+| **汎用 ODBC** | Yes    | はい         | はい          | はい       | Yes        |  
+| **Oracle**       | Yes    | はい         | はい          | はい       | はい        |
+| **[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)]**   | はい    | はい         | はい          | はい       | はい        |
+| **Teradata**     | はい    | はい         | はい          | はい       | Yes        |  
+| **MongoDB**      | **いいえ** | Yes         | はい          | はい       | Yes        |
+| **Hadoop\** _     | _ *いいえ** | Yes         | \*一部\*     | \*一部\*  | はい        |  
+| **Azure Blob Storage** | いいえ | いいえ | いいえ | いいえ | はい |
 |                  |
 
 \* PolyBase では現在、Hortonworks Data Platform (HDP) と Cloudera Distributed Hadoop (CDH) の 2 つの Hadoop プロバイダーがサポートされています。 プッシュダウン計算の観点からは、この 2 つの機能に違いはありません。
 
-\*\* Hadoop のプッシュダウン機能のサポートの詳細については、「[T-SQL 演算子でサポートされるプッシュダウン計算](polybase-versioned-feature-summary.md#pushdown-computation-supported-by-t-sql-operators)」を参照してください。
+**Hadoop プロバイダーでは、以下がサポートされています。
+
+| **集計**                  | **フィルター (バイナリの比較)** | 
+|-----------------------------------|---------------------------------| 
+| Count_Big                         | NotEqual                        | 
+| SUM                               | LessThan                        | 
+| 平均                               | LessOrEqual                     | 
+| Max                               | GreaterOrEqual                  | 
+| Min                               | GreaterThan                     | 
+| Approx_Count_Distinct             | Is                              | 
+|                                   | IsNot                           | 
+|                                   |                                 | 
+
+集計によっては、必ずデータが [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] に到達した後に発生します。 ただし、集計の一部は、Hadoop で発生します。 これは、超並列処理システムで一般的な集計の計算方法です。  
+
 
 > [!NOTE]
-> T-SQL 構文によってプッシュダウン計算はブロックできます。 詳細については、「[プッシュダウンを防ぐ構文](polybase-versioned-feature-summary.md#syntax-that-prevents-pushdown)」を参照してください。
+> T-SQL 構文によってプッシュダウン計算はブロックできます。 詳細については、「[プッシュダウンを防ぐ構文](polybase-pushdown-computation.md#syntax-that-prevents-pushdown)」を参照してください。
 
 ## <a name="key-beneficial-scenarios-of-pushdown-computation"></a>プッシュダウン計算の主な有益シナリオ
 
@@ -108,6 +123,68 @@ SELECT * FROM customer
 WHERE customer.account_balance <= 200000 
     AND customer.zipcode BETWEEN 92656 AND 92677;
 ```
+### <a name="supported-functions-for-pushdown"></a>プッシュダウンでサポートされている関数
+
+[!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] では述語のプッシュダウンに次の関数を使用することができます。
+
+文字列関数
+- `CONCAT`
+- `DATALENGTH`
+- `LEN`
+- `LIKE`
+- `LOWER`
+- `LTRIM`
+- `RTRIM`
+- `SUBSTRING`
+- `UPPER`
+
+数学関数
+- `ABS`
+- `ACOS`
+- `ASIN`
+- `ATAN`
+- `CEILING`
+- `COS`
+- `EXP`
+- `FLOOR`
+- `POWER`
+- `SIGN`
+- `SIN`
+- `SQRT`
+- `TAN`
+
+一般関数
+- `COALESCE`
+- `NULLIF`
+
+日付と時刻の関数
+- `DATEADD`
+- `DATEDIFF`
+- `DATEPART`
+
+## <a name="syntax-that-prevents-pushdown"></a>プッシュダウンを防止する構文
+
+次の T-SQL 関数または構文を実行すると、プッシュダウン計算ができなくなります。
+
+- `AT TIME ZONE`
+- `CONCAT_WS`
+- `TRANSLATE`
+- `RAND`
+- `CHECKSUM`
+- `BINARY_CHECKSUM`
+- `ISJSON`
+- `JSON_VALUE`
+- `JSON_QUERY`
+- `JSON_MODIFY`
+- `NEWID`
+- `STRING_ESCAPE`
+- `COMPRESS`
+- `DECOMPRESS`
+- `GREATEST`
+- `LEAST`
+- `PARSE`
+
+`FORMAT` および `TRIM` 構文のプッシュダウン サポートは、[!INCLUDE[sssql19-md](../../includes/sssql19-md.md)] CU10 で導入されました。
 
 ## <a name="examples"></a>例
 
@@ -129,4 +206,4 @@ OPTION (DISABLE EXTERNALPUSHDOWN);
 
 ## <a name="next-steps"></a>次のステップ
 
-PolyBase の詳細については、「[PolyBase とは](polybase-guide.md)」をご覧ください。
+PolyBase の詳細については、「[PolyBase によるデータ仮想化の概要](polybase-guide.md)」を参照してください

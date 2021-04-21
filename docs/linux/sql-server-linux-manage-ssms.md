@@ -3,17 +3,17 @@ title: SSMS を使用して SQL Server on Linux を管理する
 description: この記事では、SQL Server Management Studio について説明します。これは、SQL Server のコンポーネントを構成、管理、開発し、それらのコンポーネントへアクセスするための統合環境です。
 author: VanMSFT
 ms.author: vanto
-ms.date: 05/21/2018
+ms.date: 04/16/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: linux
 ms.assetid: b2fcf858-21c3-462a-8d49-50c85647d092
-ms.openlocfilehash: 758c4e8165efd9fd24a979bfd3a1390e88b765ce
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 3767a5b45edcc9f2690fbfb29e4f87c923e5d529
+ms.sourcegitcommit: 3bb5ea67dc0d369b921f1bee4ffd4317aba2253c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100345646"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107720471"
 ---
 # <a name="use-sql-server-management-studio-on-windows-to-manage-sql-server-on-linux"></a>Windows で SQL Server Management Studio を使用して SQL Server on Linux を管理する
 
@@ -59,9 +59,11 @@ SQL Server を操作する際には、常に最新版の SQL Server Management S
    |-----|-----|
    | **サーバーの種類** | 既定値はデータベース エンジンです。この値は変更しないでください。 |
    | **サーバー名** | ターゲットの Linux SQL Server マシンの名前、またはその IP アドレスとポートを `IP,port` の形式で入力します。 |
-   | **認証** | SQL Server on Linux の場合は、 **[SQL Server 認証]** を使用します。 |
-   | **Login** | サーバー上のデータベースへのアクセス権を持つユーザーの名前 (たとえば、セットアップ中に作成された既定の **SA** アカウント) を入力します。 |
-   | **パスワード** | 指定したユーザーのパスワードを入力します (**SA** アカウントの場合は、セットアップ時に作成したものを入力します)。 |
+   | **認証** | SQL Server on Linux では、お使いの環境に設定されている認証方法を使用します。 既定では **SQL Server 認証** がセットアップされます。 |
+   | **ログイン**<sup>1</sup> | サーバー上のデータベースへのアクセス権を持つユーザーの名前 (たとえば、セットアップ中に作成された既定の **SA** アカウント) を入力します。 |
+   | **パスワード**<sup>1</sup> | 指定したユーザーのパスワードを入力します (**SA** アカウントの場合は、セットアップ時に作成したものを入力します)。 |
+
+   <sup>1</sup> **ログイン** と **パスワード** は **SQL Server 認証** でのみ使用できます
 
     ![SQL Server Management Studio:SQL Database サーバーへの接続](./media/sql-server-linux-manage-ssms/connect.png)
 

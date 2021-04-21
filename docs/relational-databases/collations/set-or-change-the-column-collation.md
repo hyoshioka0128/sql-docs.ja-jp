@@ -14,12 +14,12 @@ ms.assetid: d7a9638b-717c-4680-9b98-8849081e08be
 author: stevestein
 ms.author: sstein
 monikerRange: =azuresqldb-current||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 3f408175a59484aa162c0db654ebf4b1d5656901
-ms.sourcegitcommit: 1a544cf4dd2720b124c3697d1e62ae7741db757c
+ms.openlocfilehash: a96458ffbe5330c4d2ee2e2f7a13f0e8062ac6c7
+ms.sourcegitcommit: 708b3131db2e542b1d461d17dec30d673fd5f0fd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97460585"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107729210"
 ---
 # <a name="set-or-change-the-column-collation"></a>列の照合順序の設定または変更
 [!INCLUDE [SQL Server Azure SQL Database](../../includes/applies-to-version/sql-asdb.md)]

@@ -1,7 +1,7 @@
 ---
 title: Reporting Services のリリース ノート (2017 以降) | Microsoft Docs
 description: バージョン 2017 以降の SQL Server Reporting Services (SSRS) での変更点の詳細について説明します。
-ms.date: 10/11/2020
+ms.date: 04/19/2021
 ms.prod: reporting-services
 ms.prod_service: reporting-services-native
 ms.technology: reporting-services
@@ -10,12 +10,12 @@ ms.reviewer: maggies
 author: casualoak
 ms.author: rhys
 monikerRange: '>=sql-server-2017'
-ms.openlocfilehash: ccf46bca321f3b23b1cd9216aa122e2202ff8c24
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: bc30abf40efd2e47a1ab66e3558d2afac15cf24f
+ms.sourcegitcommit: 708b3131db2e542b1d461d17dec30d673fd5f0fd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100031164"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107729114"
 ---
 # <a name="release-notes-for-sql-server-reporting-services-ssrs-2017-and-later"></a>SQL Server Reporting Services (SSRS) 2017 以降のリリース ノート
 
@@ -52,6 +52,15 @@ We are "standardizing" all our 'Release Notes' style articles:
 GeneMi, DevOps = 1467988 (MsEng > TechnicalContent) , 2019/03/19
 -->
 ## <a name="sql-server-2019-reporting-services"></a>SQL Server 2019 Reporting Services
+
+## <a name="15075454810-2021047"></a>15.0.7545.4810、2021/04/7 
+*(製品バージョン: 15.0.1102.896)*
+
+| 修正された問題 | 詳細 |
+| :---------- | :------ |
+| MHTML にエクスポートされたときにスクリーン リーダーが Tablix の余分な行と列を読み取るイシューを修正しました  | &nbsp; |
+| Teradata ベースのデータソースに NULL 値があるイシューを修正しました  | &nbsp; |
+| 古い HTML DOCTYPE を使用する SSRS MHTML レンダラーのイシューを修正しました | &nbsp; |
 
 ## <a name="15075454810-20200831"></a>15.0.7545.4810、2020 年 8 月 31 日 
 " *(製品バージョン: 15.0.1102.861)* "

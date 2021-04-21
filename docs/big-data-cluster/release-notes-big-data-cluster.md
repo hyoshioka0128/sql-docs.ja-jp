@@ -9,12 +9,12 @@ ms.date: 04/06/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: fc7be52b08bd0e2fa2ad162dcbe2399aef9483e7
-ms.sourcegitcommit: 7e5414d8005e7b07e537417582fb4132b5832ded
+ms.openlocfilehash: 53bebeea835c240f3e055002063b8488e0c79d9c
+ms.sourcegitcommit: 708b3131db2e542b1d461d17dec30d673fd5f0fd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "106557565"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107729119"
 ---
 # <a name="sql-server-2019-big-data-clusters-release-notes"></a>SQL Server 2019 ビッグ データ クラスターのリリース ノート
 
@@ -39,9 +39,11 @@ ms.locfileid: "106557565"
 
 |プラットフォーム|ホスト OS|サポートされているバージョン|
 |---------|---------|---------|
-|Kubernetes|Ubuntu|16.04|
+|Kubernetes|Ubuntu|16.04、20.04<sup>*</sup>|
 |Kubernetes|Red Hat Enterprise Linux|7.3、7.4、7.5、7.6|
 |OpenShift|Red Hat Enterprise Linux または CoreOS |[OpenShift のリリース ノート](https://docs.openshift.com/container-platform/4.3/release_notes/ocp-4-3-release-notes.html#ocp-4-3-about-this-release)を参照してください|
+
+<sup>*</sup>SQL Server 2019 の累積的な更新プログラム 10 (CU10) リリースから開始しています。 
 
 ### <a name="sql-server-editions"></a>SQL Server のエディション
 

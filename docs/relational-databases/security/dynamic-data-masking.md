@@ -10,12 +10,12 @@ ms.topic: conceptual
 author: VanMSFT
 ms.author: vanto
 monikerRange: =azuresqldb-current||=azure-sqldw-latest||>=sql-server-2016||>=sql-server-linux-2017||=azuresqldb-mi-current
-ms.openlocfilehash: 128cc9ea3313a12bfe4fc6da7cdcf2139c2dfc9b
-ms.sourcegitcommit: 17f05be5c08cf9a503a72b739da5ad8be15baea5
+ms.openlocfilehash: 5cda89b5d7ae6fdf3c549581e76749304c8ae812
+ms.sourcegitcommit: 3bb5ea67dc0d369b921f1bee4ffd4317aba2253c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105103799"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107720464"
 ---
 # <a name="dynamic-data-masking"></a>動的なデータ マスキング
 [!INCLUDE [SQL Server 2016 ASDB, ASDBMI, ASDW ](../../includes/applies-to-version/sqlserver2016-asdb-asdbmi-asa.md)]
@@ -31,7 +31,7 @@ ms.locfileid: "105103799"
 * DDM には、フル マスク関数と部分マスク関数、および数値データ用のランダム マスクがあります。
 * 単純な [!INCLUDE[tsql_md](../../includes/tsql-md.md)] コマンドで、マスクを定義し、管理します。
 
-動的データ マスクの目的は、アクセスすべきではないユーザーがデータを閲覧することを防ぎ、デリケートなデータの公開を制限することにあります。 動的データ マスクは、ユーザーが直接データベースに接続し、徹底的なクエリを実行して、デリケートなデータの漏えいを防ぐことを目的としてはいません。 動的データ マスクは、その他の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] セキュリティ機能 (監査、暗号化、行レベルのセキュリティなど) を補完します。データベース内のデリケートなデータの保護をより強化するために、セキュリティ機能と連携して動的データ マスクを使用することをお勧めします。  
+動的データ マスクの目的は、アクセスすべきではないユーザーがデータを閲覧することを防ぎ、デリケートなデータの公開を制限することにあります。 動的データ マスクは、ユーザーが直接データベースに接続し、徹底的なクエリを実行して、デリケートなデータの漏えいを防ぐことを目的としてはいません。 動的データ マスクは、その他の [!INCLUDE[ssNoVersion](../../includes/ssnoversion-md.md)] セキュリティ機能 (監査、暗号化、行レベルのセキュリティなど) を補完します。データベース内の機密データの保護をより強化するために、これを連携して使用することをお勧めします。  
   
 動的データ マスクは [!INCLUDE[sssql16-md](../../includes/sssql16-md.md)] と [!INCLUDE[ssSDSFull](../../includes/sssdsfull-md.md)]で使用できます。 [!INCLUDE[tsql](../../includes/tsql-md.md)] をコマンドを使用して構成します。 Azure portal で動的データ マスクを構成する方法の詳細については、[SQL Database 動的データ マスクの使用 (Azure ポータル)](/azure/azure-sql/database/dynamic-data-masking-overview)に関するページを参照してください。  
   
@@ -91,6 +91,8 @@ WHERE is_masked = 1;
  **UNMASK** アクセス許可のないユーザーの場合、非推奨とされている **READTEXT**、 **UPDATETEXT**、および **WRITETEXT** ステートメントは、動的データ マスク用に構成された列で適切に動作しません。 
  
  動的データ マスクの追加は基になっているテーブルでのスキーマ変更として実装されるため、依存関係を持つ列では実行できません。 この制限を回避するには、最初に依存関係を削除してから、動的データ マスクを追加した後、依存関係を再作成します。 たとえば、依存関係がその列に依存するインデックスによるものである場合は、インデックスを削除し、マスクを追加してから、依存するインデックスを再作成します。
+ 
+データ マスキング関数が定義されている列を参照する式を射影するたびに、式もマスクされます。 参照される列をマスクするために使用される関数 (既定、電子メール、ランダム、カスタム文字列) に関係なく、結果として得られる式は常に既定の関数でマスクされます。
  
 
 ## <a name="security-note-bypassing-masking-using-inference-or-brute-force-techniques"></a>セキュリティに関する注意:推論またはブルートフォース手法を使用してマスクをバイパスする

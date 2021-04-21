@@ -11,12 +11,12 @@ author: MikeRayMSFT
 ms.author: mikeray
 ms.reviewer: ''
 monikerRange: '>= sql-server-2016'
-ms.openlocfilehash: 6a8f7bffd47e5159c0a048a3783f3ea6647bc097
-ms.sourcegitcommit: bf7577b3448b7cb0e336808f1112c44fa18c6f33
+ms.openlocfilehash: 65b5257e25a6f39a2a25bc63a0569b036b942923
+ms.sourcegitcommit: 708b3131db2e542b1d461d17dec30d673fd5f0fd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104610925"
+ms.lasthandoff: 04/19/2021
+ms.locfileid: "107729302"
 ---
 # <a name="install-polybase-on-windows"></a>Windows への PolyBase のインストール
 
@@ -36,8 +36,7 @@ SQL Server の試用版は [SQL Server 評価版ソフトウェア](https://www.
   
 - 推奨:16-GB 以上の RAM。
    
-- PolyBase が正常に機能するには、TCP/IP を有効にする必要があります。 TCP/IP は、Developer Edition と Express Edition を除く SQL Server のすべてのエディションで、既定で有効です。 Developer Edition および Express Edition で PolyBase が正常に機能するためには、TCP/IP 接続を有効にする必要があります。 「[サーバー ネットワーク プロトコルの有効化または無効化](../../database-engine/configure-windows/enable-or-disable-a-server-network-protocol.md)」を参照してください。
-
+- PolyBase サービスが正常に機能するには、SQL Server サービスで TCP/IP ネットワーク プロトコルを有効にする必要があります。 TCP/IP は、Developer Edition と Express Edition を除く SQL Server のすべてのエディションで、既定で有効です。 Developer Edition および Express Edition で PolyBase が正常に機能するためには、TCP/IP 接続を有効にする必要があります。 「[サーバー ネットワーク プロトコルの有効化または無効化](../../database-engine/configure-windows/enable-or-disable-a-server-network-protocol.md)」を参照してください。 また、TCP/IP プロトコルの構成設定 **[すべて受信待ち]** が **[いいえ]** に設定されている場合は、TCP/IP プロパティの **[IPAll]** の **[TCP 動的ポート]** または **[TCP ポート]** のどちらかに正しいリスナー ポートのエントリが残っている必要があります。 これが必要なのは、PolyBase サービスによる SQL Server エンジンのリスナー ポートの解決方法によるものです。
 
 >[!NOTE] 
 > PolyBase は各マシンで 1 つの SQL Server インスタンスにのみインストールできます。
