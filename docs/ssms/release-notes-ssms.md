@@ -9,13 +9,13 @@ ms.assetid: 3dc76cc1-3b4c-4719-8296-f69ec1b476f9
 author: dzsquared
 ms.author: drskwier
 ms.reviewer: maghan
-ms.date: 04/15/2021
-ms.openlocfilehash: 1d1978d9af6363f86b95adc63701666fa7b1ae9a
-ms.sourcegitcommit: 233be9adaee3d19b946ce15cfcb2323e6e178170
+ms.date: 04/16/2021
+ms.openlocfilehash: 7494e75ba87bee67d14fe68fe9d9da0021f2711b
+ms.sourcegitcommit: a177a1e17200400a70f1d61b737481c83249e9a3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "107561008"
+ms.lasthandoff: 04/17/2021
+ms.locfileid: "107584095"
 ---
 # <a name="release-notes-for-sql-server-management-studio-ssms"></a>SQL Server Management Studio (SSMS) のリリース ノート
 
@@ -27,9 +27,12 @@ ms.locfileid: "107561008"
 
 ## <a name="current-ssms-release"></a>現在の SSMS リリース
 
-### <a name="189"></a>18.9
+:::image type="icon" source="media/download-icon.png" border="false"::: **[SQL Server Management Studio (SSMS) 18.8 のダウンロード](https://aka.ms/ssmsfullsetup)**
 
-![ダウンロード](media/download-icon.png) [SSMS 18.9 をダウンロードする](download-sql-server-management-studio-ssms.md)
+> [!IMPORTANT]
+> SSMS 18.9 には、IntelliSense に関連する既知の問題が含まれています。候補から列名が省略され、列名の下にエラー インジケーターが誤って表示されます。 修正プログラム リリースはまもなく利用可能になり、SSMS の既定のインストール バージョンは SSMS 18.8 (15.0.18369.0) のままになります。 SSMS 18.9 のダウンロードに関心がある場合は、以下を参照してください。
+
+### <a name="189"></a>18.9
 
 - リリース番号: 18.9
 - ビルド番号: 15.0.18382.0
@@ -39,9 +42,8 @@ ms.locfileid: "107561008"
 
 SSMS 18.9 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の以前のバージョンが必要な場合は、[以前のリリースの SSMS](release-notes-ssms.md#previous-ssms-releases) を参照してください。
 
-#### <a name="whats-new-in-189"></a>18.9 の新機能
 
-[!INCLUDE [ssms-ads-install](../includes/ssms-azure-data-studio-install.md)]
+#### <a name="whats-new-in-189"></a>18.9 の新機能
 
 | [新しい項目] | 詳細 |
 |----------|---------|
@@ -104,6 +106,7 @@ SSMS 18.9 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | SSMS 全般 | 新しい [サーバー監査の仕様] ダイアログにより、SSMS がアクセス違反エラーでクラッシュする場合があります。 | .Net Framework 4.8 for Windows 10 バージョン 1809 以降の修正は 7 月 21 日に行われます。 以前のバージョンは、8 月の第 2 火曜日に更新されます。  |
 | SSMS 全般 | SMO を使用する SSMS 拡張機能は、新しい SSMS 固有の SMO v161 パッケージを対象とするように再コンパイルする必要があります。 https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects.SSMS/ で新しいバージョンが利用できるようになりました </br></br> 以前の 160 バージョンの Microsoft.SqlServer.SqlManagementObjects パッケージに対してコンパイルされた拡張機能は、引き続き機能します。 | 該当なし |
 | Integration Services | Integration Services でパッケージをインポートまたはエクスポートするとき、または Azure-SSIS Integration Runtime でパッケージをエクスポートするときに、スクリプト タスク/コンポーネントを含むパッケージのスクリプトが失われます。 | フォルダー "C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\CommonExtensions\MSBuild" を削除します。 |
+| IntelliSense | 候補から列名が省略され、列名の下にエラー インジケーターが誤って表示されます。 |
 
 
 他の既知の問題について、および製品チームにフィードバックを提供するには、[SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035-sql-server)を参照できます。
