@@ -14,12 +14,12 @@ ms.reviewer: vanto
 ms.topic: conceptual
 ms.date: 11/06/2019
 monikerRange: = azuresqldb-current || = azure-sqldw-latest
-ms.openlocfilehash: fc9ebc3ba93e6f9bd8bf045ab87d2ab3e8e08bdf
-ms.sourcegitcommit: cfffd03fe39b04034fa8551165476e53c4bd3c3b
+ms.openlocfilehash: 449dd02281e294b7959924249298607b7bf25588
+ms.sourcegitcommit: b3788a0e1fff06a6c3954d1060855398ad41b81f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2021
-ms.locfileid: "107298805"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107879242"
 ---
 # <a name="common-errors-for-transparent-data-encryption-with-customer-managed-keys-in-azure-key-vault"></a>Azure Key Vault のカスタマー マネージド キーを使った透過的なデータ暗号化に関する一般的なエラー
 
@@ -70,7 +70,7 @@ Key Vault による TDE を使用しているときに発生する問題のほ�
 
 - Azure PowerShell:[Get-AzureRMSqlServer](/powershell/module/AzureRM.Sql/Get-AzureRmSqlServer) 
 
-- Azure CLI: [az-sql-server-show](/cli/azure/sql/server#az-sql-server-show)
+- Azure CLI: [az-sql-server-show](/cli/azure/sql/server#az_sql_server_show)
 
 **軽減策**
 
@@ -78,7 +78,7 @@ Key Vault による TDE を使用しているときに発生する問題のほ�
 
 - Azure PowerShell:`-AssignIdentity` オプションを指定した [Set-AzureRmSqlServer](/powershell/module/azurerm.sql/set-azurermsqlserver)。
 
-- Azure CLI: `--assign_identity` オプションを指定した [az sql server update](/cli/azure/sql/server#az-sql-server-update)。
+- Azure CLI: `--assign_identity` オプションを指定した [az sql server update](/cli/azure/sql/server#az_sql_server_update)。
 
 Azure portal では、キー コンテナーに移動してから、 **[アクセス ポリシー]** に移動します。 以下の手順を実行します。 
 
@@ -105,7 +105,7 @@ Azure portal では、キー コンテナーに移動してから、 **[アク�
 
     - Azure PowerShell:[Get-AzureRmSqlServerKeyVaultKey](/powershell/module/azurerm.sql/get-azurermsqlserverkeyvaultkey)
 
-    - Azure CLI: [az-sql-server-tde-key-show](/cli/azure/sql/server/tde-key#az-sql-server-tde-key-show) 
+    - Azure CLI: [az-sql-server-tde-key-show](/cli/azure/sql/server/tde-key#az_sql_server_tdekey_show) 
 
 1. キー URI を使用して、キー コンテナーを識別します。
 

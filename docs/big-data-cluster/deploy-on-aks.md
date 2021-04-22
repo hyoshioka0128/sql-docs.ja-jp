@@ -10,12 +10,12 @@ ms.date: 12/13/2019
 ms.topic: conceptual
 ms.prod: sql
 ms.technology: big-data-cluster
-ms.openlocfilehash: 2021cf90230bd22de775cef164336f9e31631991
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: d98eb31e4502ed319e00069cc979154bdc391839
+ms.sourcegitcommit: b3788a0e1fff06a6c3954d1060855398ad41b81f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100038802"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107879232"
 ---
 # <a name="configure-azure-kubernetes-service-for-sql-server-big-data-cluster-deployments"></a>SQL Server ビッグ データ クラスターの展開のために Azure Kubernetes Service を構成する
 
@@ -149,7 +149,7 @@ Azure リソース グループは、Azure リソースが展開され管理さ�
 
 ## <a name="connect-to-the-cluster"></a>クラスターに接続する
 
-1. kubectl を構成して Kubernetes クラスターに接続するには、[az aks get-credentials](/cli/azure/aks#az-aks-get-credentials) コマンドを実行します。 この手順では、資格情報をダウンロードし、それらを使用するために kubectl CLI を構成します。
+1. kubectl を構成して Kubernetes クラスターに接続するには、[az aks get-credentials](/cli/azure/aks#az_aks_get_credentials) コマンドを実行します。 この手順では、資格情報をダウンロードし、それらを使用するために kubectl CLI を構成します。
 
    ```azurecli
    az aks get-credentials --resource-group=sqlbdcgroup --name kubcluster
