@@ -10,12 +10,12 @@ ms.technology: backup-restore
 ms.topic: conceptual
 author: cawrites
 ms.author: chadam
-ms.openlocfilehash: 36fbf9ac4010797561e0852b96b6df6fd85b640d
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 88be6fc91876368bc96bf66bdd350fb783eef4ef
+ms.sourcegitcommit: 241b503472b01ed0119f13c578b0c32c39f5e07c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100347299"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107754990"
 ---
 # <a name="sql-server-back-up-applications---volume-shadow-copy-service-vss-and-sql-writer"></a>SQL Server バックアップ アプリケーション - ボリューム シャドウ コピー サービス (VSS) と SQL ライター
  [!INCLUDE [SQL Server](../../includes/applies-to-version/sqlserver.md)]
@@ -61,7 +61,7 @@ VSS によって、これらのパーティ間の調整が行われます。
 
 ## <a name="about-sql-writer"></a>SQL ライターについて
 
-SQL ライターは、SQL Server によって提供される VSS ライターです。 それでは、VSS と SQL Server の相互作用が処理されます。 SQL ライターは、スタンドアロン サービスとして SQL Server に付属しており、SQL Server のインストールの一部としてインストールされます。 既定では、SQL ライターは無効になっています。 サーバー コンピューターで実行するには、明示的に有効にする必要があります。
+SQL ライターは、SQL Server によって提供される VSS ライターです。 それでは、VSS と SQL Server の相互作用が処理されます。 SQL ライターは、スタンドアロン サービスとして SQL Server に付属しており、SQL Server のインストールの一部としてインストールされます。
 
 VSS スナップショット バックアップ操作での SQL ライターの役割は次のとおりです。 
 
@@ -80,15 +80,14 @@ SQL ライター サービスは、SQL Server のインストールの一部と�
   > [!NOTE]
   > SQL ライター サービスを正しく動作させるには、ローカル システム アカウントが SQL Server インスタンスの "sa" ロールから削除されていないことを確認することが重要です。
 
-### <a name="enabling-and-starting-sql-writer"></a>SQL ライターの有効化と開始
+### <a name="re-enabling-and-starting-sql-writer"></a>SQL ライターの再有効化と開始
 
-SQL ライターを開始して使用するには、次のようにする必要があります。
+SQL ライターは既定で有効で、自動的に開始されます。 この構成を変更した場合に設定を既定に戻すには、次の操作を行います。
 
 SQL ライター サービスは、このサービスを "自動" としてマークすることにより有効にできます。 コントロール パネルからサービスを開くには、[スタート] ボタンをクリックし、[コントロール パネル] をクリックし、[管理ツール] をダブルクリックして、[サービス] をダブルクリックします。 [サービス] ペインで、SQL ライター サービスをダブルクリックし、[スタートアップの種類] プロパティを [自動] に変更します。
 
-また、前述のサービス プロパティ画面で [サービスの状態] プロパティの [開始] ボタンを選択して、サービスを開始する必要もあります。
+その後、前述のサービス プロパティ画面の [サービスの状態] プロパティの [開始] ボタンを選択し、サービスを開始します。
 
-便利なように、SQL ライター サービスでは、初めて開始するときにこれらの変更が自動的に行われます。
 
   > [!NOTE]
   > SQL Server Express のインスタンスがインストールされていて、アプリケーションでユーザー インスタンス機能が使用されている場合、SQL Server によって SQL ライターが自動的に開始されることがあります。 これは、VSS のバックアップ操作中に、これらのユーザー インスタンスの列挙を容易にするために行われます。 

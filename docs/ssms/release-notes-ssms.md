@@ -9,13 +9,13 @@ ms.assetid: 3dc76cc1-3b4c-4719-8296-f69ec1b476f9
 author: dzsquared
 ms.author: drskwier
 ms.reviewer: maghan
-ms.date: 04/16/2021
-ms.openlocfilehash: 7494e75ba87bee67d14fe68fe9d9da0021f2711b
-ms.sourcegitcommit: a177a1e17200400a70f1d61b737481c83249e9a3
+ms.date: 04/20/2021
+ms.openlocfilehash: 76b6f89023ab7126f6775f207fbcd335e8563e07
+ms.sourcegitcommit: 241b503472b01ed0119f13c578b0c32c39f5e07c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2021
-ms.locfileid: "107584095"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107755002"
 ---
 # <a name="release-notes-for-sql-server-management-studio-ssms"></a>SQL Server Management Studio (SSMS) のリリース ノート
 
@@ -27,20 +27,80 @@ ms.locfileid: "107584095"
 
 ## <a name="current-ssms-release"></a>現在の SSMS リリース
 
-:::image type="icon" source="media/download-icon.png" border="false"::: **[SQL Server Management Studio (SSMS) 18.8 のダウンロード](https://aka.ms/ssmsfullsetup)**
+:::image type="icon" source="media/download-icon.png" border="false"::: **[SQL Server Management Studio (SSMS) 18.9.1 のダウンロード](https://aka.ms/ssmsfullsetup)**
 
-> [!IMPORTANT]
-> SSMS 18.9 には、IntelliSense に関連する既知の問題が含まれています。候補から列名が省略され、列名の下にエラー インジケーターが誤って表示されます。 修正プログラム リリースはまもなく利用可能になり、SSMS の既定のインストール バージョンは SSMS 18.8 (15.0.18369.0) のままになります。 SSMS 18.9 のダウンロードに関心がある場合は、以下を参照してください。
+
+SSMS の最新の一般提供 (GA) リリースは、SSMS 18.9.1 です。 SSMS の以前のバージョンが必要な場合は、[以前のリリースの SSMS](release-notes-ssms.md#previous-ssms-releases) を参照してください。
+
+### <a name="1891"></a>18.9.1
+
+- リリース番号: 18.9.1
+- ビルド番号: 15.0.18384.0
+- リリース日: 2021 年 4 月 20 日
+
+[簡体中国語](https://go.microsoft.com/fwlink/?linkid=2161193&clcid=0x804) | [繁体中国語](https://go.microsoft.com/fwlink/?linkid=2161193&clcid=0x404) | [英語 (米国)](https://go.microsoft.com/fwlink/?linkid=2161193&clcid=0x409) | [フランス語](https://go.microsoft.com/fwlink/?linkid=2161193&clcid=0x40c) | [ドイツ語](https://go.microsoft.com/fwlink/?linkid=2161193&clcid=0x407) | [イタリア語](https://go.microsoft.com/fwlink/?linkid=2161193&clcid=0x410) | [日本語](https://go.microsoft.com/fwlink/?linkid=2161193&clcid=0x411) | [韓国語](https://go.microsoft.com/fwlink/?linkid=2161193&clcid=0x412) | [ポルトガル語 (ブラジル)](https://go.microsoft.com/fwlink/?linkid=2161193&clcid=0x416) | [ロシア語](https://go.microsoft.com/fwlink/?linkid=2161193&clcid=0x419) | [スペイン語](https://go.microsoft.com/fwlink/?linkid=2161193&clcid=0x40a)
+
+
+#### <a name="whats-new-in-1891"></a>18.9.1 の新機能
+
+| [新しい項目] | 詳細 |
+|----------|---------|
+| Azure Data Studio のインストールの統合 | Azure Data Studio 1.28.0 は、SSMS をインストールするとインストールされます。 |
+
+#### <a name="bug-fixes-in-1891"></a>18.9.1 でのバグ修正
+
+| New Item | 詳細 |
+|----------|---------|
+| IntelliSense | 候補から列名が省略され、列名の下にエラー インジケーターが誤って表示される問題を修正しました。 [SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035-sql-server/suggestions/43176843) |
+
+
+#### <a name="known-issues-1891"></a>既知の問題 (18.9.1)
+
+| New Item | 詳細 | 回避策 |
+|----------|---------|------------|
+| Analysis Services | 場合によっては、アップグレード セットアップを使用しているときに、SSMS のアップグレード後に DAX エディターを開こうとすると、"オブジェクトのインスタンスにオブジェクトが設定されていません" というエラーが発生することがまれにあります。 | SQL Server Management Studio をアンインストールして再インストールします。  再インストールしても解決しない場合は、SSMS のすべてのインスタンスを閉じ、バックアップしてから `%AppData%\Microsoft\SQL Server Management Studio` と `%LocalAppData%\Microsoft\SQL Server Management Studio` を削除します。 |
+| SSMS 全般 | 新しい [サーバー監査の仕様] ダイアログにより、SSMS がアクセス違反エラーでクラッシュする場合があります。 | .Net Framework 4.8 for Windows 10 バージョン 1809 以降の修正は 7 月 21 日に行われます。 以前のバージョンは、8 月の第 2 火曜日に更新されます。  |
+| SSMS 全般 | SMO を使用する SSMS 拡張機能は、新しい SSMS 固有の SMO v161 パッケージを対象とするように再コンパイルする必要があります。 https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects.SSMS/ で新しいバージョンが利用できるようになりました </br></br> 以前の 160 バージョンの Microsoft.SqlServer.SqlManagementObjects パッケージに対してコンパイルされた拡張機能は、引き続き機能します。 | 該当なし |
+| Integration Services | Integration Services でパッケージをインポートまたはエクスポートするとき、または Azure-SSIS Integration Runtime でパッケージをエクスポートするときに、スクリプト タスク/コンポーネントを含むパッケージのスクリプトが失われます。 | フォルダー "C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\CommonExtensions\MSBuild" を削除します。 |
+
+
+他の既知の問題について、および製品チームにフィードバックを提供するには、[SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035-sql-server)を参照できます。
+
+## <a name="previous-ssms-releases"></a>以前のリリースの SSMS
+
+以前のバージョンの SSMS をダウンロードするには、関連セクションでダウンロード リンクを選択します。
+
+| SSMS のバージョン | ビルド番号 | リリース日 |
+|--------------|--------------|--------------|
+| [18.9](#189) | 15.0.18382.0 | 2021 年 4 月 15 日 |
+| [18.8](#188) | 15.0.18369.0 | 2020 年 12 月 17 日 |
+| [18.7.1](#1871) | 15.0.18358.0 | 2020 年 10 月 27 日 |
+| [18.7](#187) | 15.0.18357.0 | 2020 年 10 月 20 日 |
+| [18.6](#186) | 15.0.18338.0 | 2020 年 7 月 22 日 |
+| [18.5.1](#1851) | 15.0.18333.0 | 2020 年 6 月 9 日 |
+| [18.5](#185) | 15.0.18330.0 | 2020 年 4 月 7 日 |
+| [18.4](#184) | 15.0.18206.0 | 2019 年 11 月 4 日 |
+| [18.3.1](#1831) | 15.0.18183.0 | 2019 年 10 月 2 日 |
+| [18.2](#182) | 15.0.18142.0 | 2019 年 7 月 25 日 |
+| [18.1](#181) | 15.0.18131.0 | 2019 年 6 月 11 日 |
+| [18.0](#180) | 15.0.18118.0 | 2019 年 4 月 24 日 |
+| [17.9.1](#1791) | 14.0.17289.0 | 2018 年 11 月 21 日 |
+| [16.5.3](#1653) | 13.0.16106.4 | 2017 年 1 月 30 日 |
+
 
 ### <a name="189"></a>18.9
+
+![ダウンロード](media/download-icon.png) [SSMS 18.9 をダウンロードする](https://go.microsoft.com/fwlink/?linkid=2160964)
+
+> [!IMPORTANT]
+> SSMS 18.9 には、IntelliSense に関連する既知の問題が含まれています。候補から列名が省略され、列名の下にエラー インジケーターが誤って表示されます。 修正プログラム リリース (18.9.1) が用意されました。 SSMS 18.9 のダウンロードに関心がある場合は、以下を参照してください。
+
 
 - リリース番号: 18.9
 - ビルド番号: 15.0.18382.0
 - リリース日: 2021 年 4 月 15 日
 
 [簡体中国語](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x804) | [繁体中国語](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x404) | [英語 (米国)](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x409) | [フランス語](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x40c) | [ドイツ語](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x407) | [イタリア語](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x410) | [日本語](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x411) | [韓国語](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x412) | [ポルトガル語 (ブラジル)](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x416) | [ロシア語](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x419) | [スペイン語](https://go.microsoft.com/fwlink/?linkid=2160964&clcid=0x40a)
-
-SSMS 18.9 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の以前のバージョンが必要な場合は、[以前のリリースの SSMS](release-notes-ssms.md#previous-ssms-releases) を参照してください。
 
 
 #### <a name="whats-new-in-189"></a>18.9 の新機能
@@ -108,28 +168,6 @@ SSMS 18.9 は SSMS の最新の一般提供 (GA) リリースです。 SSMS の�
 | Integration Services | Integration Services でパッケージをインポートまたはエクスポートするとき、または Azure-SSIS Integration Runtime でパッケージをエクスポートするときに、スクリプト タスク/コンポーネントを含むパッケージのスクリプトが失われます。 | フォルダー "C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\CommonExtensions\MSBuild" を削除します。 |
 | IntelliSense | 候補から列名が省略され、列名の下にエラー インジケーターが誤って表示されます。 |
 
-
-他の既知の問題について、および製品チームにフィードバックを提供するには、[SQL Server ユーザー フィードバック](https://feedback.azure.com/forums/908035-sql-server)を参照できます。
-
-## <a name="previous-ssms-releases"></a>以前のリリースの SSMS
-
-以前のバージョンの SSMS をダウンロードするには、関連セクションでダウンロード リンクを選択します。
-
-| SSMS のバージョン | ビルド番号 | リリース日 |
-|--------------|--------------|--------------|
-| [18.8](#188) | 15.0.18369.0 | 2020 年 12 月 17 日 |
-| [18.7.1](#1871) | 15.0.18358.0 | 2020 年 10 月 27 日 |
-| [18.7](#187) | 15.0.18357.0 | 2020 年 10 月 20 日 |
-| [18.6](#186) | 15.0.18338.0 | 2020 年 7 月 22 日 |
-| [18.5.1](#1851) | 15.0.18333.0 | 2020 年 6 月 9 日 |
-| [18.5](#185) | 15.0.18330.0 | 2020 年 4 月 7 日 |
-| [18.4](#184) | 15.0.18206.0 | 2019 年 11 月 4 日 |
-| [18.3.1](#1831) | 15.0.18183.0 | 2019 年 10 月 2 日 |
-| [18.2](#182) | 15.0.18142.0 | 2019 年 7 月 25 日 |
-| [18.1](#181) | 15.0.18131.0 | 2019 年 6 月 11 日 |
-| [18.0](#180) | 15.0.18118.0 | 2019 年 4 月 24 日 |
-| [17.9.1](#1791) | 14.0.17289.0 | 2018 年 11 月 21 日 |
-| [16.5.3](#1653) | 13.0.16106.4 | 2017 年 1 月 30 日 |
 
 ### <a name="188"></a>18.8
 

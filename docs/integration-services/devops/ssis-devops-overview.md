@@ -1,7 +1,7 @@
 ---
 title: SQL Server Integration Services DevOps 概要 | Microsoft Docs
 description: SSIS DevOps ツールで SSIS CICD をビルドする方法について説明します。
-ms.date: 12/06/2019
+ms.date: 4/21/2021
 ms.topic: conceptual
 ms.prod: sql
 ms.prod_service: integration-services
@@ -9,12 +9,12 @@ ms.custom: ''
 ms.technology: integration-services
 author: chugugrace
 ms.author: chugu
-ms.openlocfilehash: f44c8c3677f76ebc96b6e0385aa839a9e20aa2f8
-ms.sourcegitcommit: 917df4ffd22e4a229af7dc481dcce3ebba0aa4d7
+ms.openlocfilehash: 54b94201d6e77f2d51e711129e0aabc7a59bd6c0
+ms.sourcegitcommit: 241b503472b01ed0119f13c578b0c32c39f5e07c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100030610"
+ms.lasthandoff: 04/20/2021
+ms.locfileid: "107754973"
 ---
 # <a name="sql-server-integration-services-ssis-devops-tools-azure-devops-extension"></a>SQL Server Integration Services (SSIS) DevOps ツール Azure DevOps 拡張機能
 
@@ -75,6 +75,26 @@ cat log.txt
 ```
 
 - 保護レベルの **EncryptSensitiveWithPassword** と **EncryptAllWithPassword** は SSIS Build タスクではサポートされていません。 コードベースのいずれの SSIS プロジェクトでもこの 2 つの保護レベルが使用されていないことを確認してください。使用されている場合、SSIS Build タスクの実行中、応答が停止し、タイムアウトになります。
+
+## <a name="ssis-build-task-version-1-preview"></a>SSIS ビルド タスク バージョン 1.* (プレビュー)
+
+バージョン 1.* の機能強化:
+
+- Visual Studio と SSIS デザイナーの依存関係を削除します。 ビルド タスクは、Windows OS と .NET framework 4.6.2 以上で、Microsoft がホストするエージェントまたは自己ホスト型エージェントで実行できます。
+
+- 面倒な設定の要らないコンポーネントをインストールする必要はありません。
+
+- 保護レベル EncryptionWithPassword および EncryptionAllWithPassword がサポートされています。
+
+### <a name="version-1-only-properties"></a>バージョン 1.* のみのプロパティ
+
+#### <a name="project-password"></a>プロジェクトのパスワード
+
+SSIS プロジェクトとそのパッケージのパスワード。 この引数は、SSIS プロジェクトとパッケージの保護レベルが EncryptSensitiveWithPassword または EncryptAllWithPassword の場合にのみ有効です。 パッケージ配置モデルでは、この引数で指定されたのと同じパスワードが、すべてのパッケージで共有される必要があります。
+
+#### <a name="strip-sensitive-data"></a>機密データの削除
+
+この値が true である場合、SSIS プロジェクトの保護レベルを DontSaveSensitve に変換します。 保護レベルが EncryptSensitiveWithPassword または EncryptAllWithPassword の場合は、引数 Project Password を正しく設定する必要があります。 このオプションは、プロジェクト配置モデルに対してのみ有効です。
 
 ## <a name="ssis-deploy-task"></a>SSIS Deploy タスク
 
@@ -152,6 +172,18 @@ SSIS Deploy タスクでは、現在、次のシナリオはサポートされ�
 - SSIS カタログで環境を構成する。
 - 多要素認証 (MFA) のみが許可される Azure SQL Server または Azure SQL マネージド インスタンスに ispac をデプロイする。
 - MSDB または SSIS パッケージ ストアにパッケージをデプロイする。
+
+## <a name="ssis-deploy-task-version-1-preview"></a>SSIS Deploy タスク バージョン 1.* (プレビュー)
+
+バージョン 1.* の機能強化:
+
+- 保護レベル EncryptionWithPassword および EncryptionAllWithPassword がサポートされています。
+
+### <a name="version-1-only-properties"></a>バージョン 1.* のみのプロパティ
+
+#### <a name="project-password"></a>プロジェクトのパスワード
+
+ISPAC または DTSX ファイルを復号化するためのパスワード。 この引数は、保護レベルが EncryptSensitiveWithPassword または EncryptAllWithPassword の場合にのみ有効です。
 
 ## <a name="ssis-catalog-configuration-task"></a>SSIS Catalog Configuration タスク
 
@@ -294,7 +326,7 @@ SSIS カタログ構成のインライン JSON。 このプロパティは、構
 
 ##### <a name="folder-attributes"></a>フォルダー属性
 
-|プロパティ  |説明  |メモ  |
+|プロパティ  |説明  |Notes  |
 |---------|---------|---------|
 |name  |カタログ フォルダーの名前。|フォルダーが存在しない場合は作成されます。|
 |description|カタログ フォルダーの説明。|*null* の値はスキップされます。|
@@ -303,7 +335,7 @@ SSIS カタログ構成のインライン JSON。 このプロパティは、構
 
 ##### <a name="project-attributes"></a>プロジェクト属性
 
-|プロパティ  |説明  |メモ  |
+|プロパティ  |説明  |Notes  |
 |---------|---------|---------|
 |name|プロジェクトの名前。 |プロジェクトが親フォルダーに存在しない場合、プロジェクト オブジェクトはスキップされます。|
 |parameters|パラメーター オブジェクトの配列です。 各オブジェクトには、パラメーターの構成情報が含まれています。|パラメーター オブジェクトのスキーマについては、「*パラメーター属性*」を参照してください。|
@@ -311,7 +343,7 @@ SSIS カタログ構成のインライン JSON。 このプロパティは、構
 
 ##### <a name="parameter-attributes"></a>パラメーター属性
 
-|プロパティ  |説明  |メモ  |
+|プロパティ  |説明  |Notes  |
 |---------|---------|---------|
 |name|パラメーターの名前。|<li>パラメーターには、プロジェクト パラメーターまたはパッケージ パラメーターを使用できます。 <li>存在しない場合は、パラメーターはスキップされます。 <li>パラメーターが接続マネージャー プロパティの場合、名前は **CM.\<Connection Manager Name>.\<Property Name>** の形式である必要があります。 |
 |container|パラメーターのコンテナー。|<li>パラメーターがプロジェクト パラメーターの場合、*container* はプロジェクト名である必要があります。 <li>パッケージ パラメーターの場合、*container* は、拡張子が **.dtsx** のパッケージ名である必要があります。|
@@ -327,7 +359,7 @@ SSIS カタログ構成のインライン JSON。 このプロパティは、構
 
 ##### <a name="environment-attributes"></a>環境属性
 
-|プロパティ  |説明  |メモ  |
+|プロパティ  |説明  |Notes  |
 |---------|---------|---------|
 |name|環境の名前。|環境が存在しない場合は作成されます。|
 |description|環境の説明。|*null* の値はスキップされます。|
@@ -335,7 +367,7 @@ SSIS カタログ構成のインライン JSON。 このプロパティは、構
 
 ##### <a name="variable-attributes"></a>変数属性
 
-|プロパティ  |説明  |メモ  |
+|プロパティ  |説明  |Notes  |
 |---------|---------|---------|
 |name|環境変数の名前。|環境変数が存在しない場合は作成されます。|
 |type|環境変数のデータ型。|有効な型は次のとおりです。 <br> *boolean* <br> *byte* <br> *datetime* <br> decimal <br> *double* <br> *int16* <br> *int32* <br> *int64* <br> *sbyte* <br> *single* <br> *string* <br> *uint32* <br> *uint64*|
@@ -344,6 +376,17 @@ SSIS カタログ構成のインライン JSON。 このプロパティは、構
 |sensitive|環境変数の値が機微であるかどうか。|有効な入力は次のとおりです。 <br> *true* <br> *false*|
 
 ## <a name="release-notes"></a>リリース ノート
+
+### <a name="version-104"></a>バージョン 1.0.4
+
+リリース日: 2021 年 4 月 21 日
+
+- SSIS ビルド タスク バージョン 1.* (プレビュー)
+    - Visual Studio と SSIS デザイナーの依存関係を削除します。 ビルド タスクは、Windows OS と .NET framework 4.6.2 以上で、Microsoft がホストするエージェントまたは自己ホスト型エージェントで実行できます。
+    - 面倒な設定の要らないコンポーネントをインストールする必要はありません。
+    - 保護レベル EncryptionWithPassword および EncryptionAllWithPassword がサポートされています。
+- SSIS Deploy タスク バージョン 1.* (プレビュー)
+    - 保護レベル EncryptionWithPassword および EncryptionAllWithPassword がサポートされています。
 
 ### <a name="version-103"></a>バージョン 1.0.3
 
