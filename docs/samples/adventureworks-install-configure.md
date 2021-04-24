@@ -78,15 +78,15 @@ SQL Server Management Studio でデータベースを復元するには、次の
    :::image type="content" source="media/adventureworks-install-configure/restore-db-ssms.png" alt-text="オブジェクトエクスプローラーでデータベースを右クリックし、[データベースの復元] を選択して、データベースを復元する方法を示すスクリーンショット。":::
 
 
-1. [ **デバイス** ] を選択し、省略記号 **(...)** を選択してデバイスを選択します。 
-1. [ **追加** ] を選択し、 `.bak` 最近この場所に移動したファイルを選択します。 この場所にファイルを移動したが、ウィザードで表示できない場合は、通常、アクセス許可の問題が SQL Server か、このフォルダー内のこのファイルに対するアクセス許可が SQL Server にサインインしているユーザーがいないことを示しています。 
-1. [ **OK]** を選択して、データベースのバックアップの選択を確認し、 **[バックアップデバイスの選択** ] ウィンドウを閉じます。 
-1. [ **ファイル** ] タブを確認し **て、復元** の場所とファイル名が **データベースの復元** ウィザードの目的の場所とファイル名と一致していることを確認します。 
+1. [**デバイス**] を選択し、省略記号 **(...)** を選択してデバイスを選択します。 
+1. [**追加**] を選択し、 `.bak` 最近この場所に移動したファイルを選択します。 この場所にファイルを移動したが、ウィザードで表示できない場合は、通常、アクセス許可の問題が SQL Server か、このフォルダー内のこのファイルに対するアクセス許可が SQL Server にサインインしているユーザーがいないことを示しています。 
+1. [**OK**] を選択して、データベースのバックアップの選択を確認し、 **[バックアップデバイスの選択**] ウィンドウを閉じます。 
+1. [**ファイル**] タブを確認し **て、復元** の場所とファイル名が **データベースの復元** ウィザードの目的の場所とファイル名と一致していることを確認します。 
 1. **[OK]** を選択してデータベースを復元します。 
 
    :::image type="content" source="media/adventureworks-install-configure/restore-db-wizard-ssms.png" alt-text="復元するバックアップセットが強調表示されている [データベースの復元] ウィンドウと、[OK] オプションが表示されたスクリーンショット。":::
 
-SQL Server データベースの復元の詳細については、「 [SSMS を使用したデータベースバックアップの復元](../relational-databases/backup-restore/restore-a-database-backup-using-ssms.md)」を参照してください。
+SQL Server データベースの復元の詳細については、「[SSMS を使用したデータベースバックアップの復元](../relational-databases/backup-restore/restore-a-database-backup-using-ssms.md)」を参照してください。
 
 # <a name="transact-sql-t-sql"></a>[Transact-SQL (T-SQL)](#tab/tsql)
 
@@ -129,7 +129,7 @@ Azure Data Studio でデータベースを復元するには、次の手順を�
     `C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\Backup`.
 
 1. Azure Data Studio Studio を開き、SQL Server インスタンスに接続します。
-1. サーバーを右クリックし、[ **管理**] を選択します。
+1. サーバーを右クリックし、[**管理**] を選択します。
 
    :::image type="content" source="media/adventureworks-install-configure/ads-manage.png" alt-text="[管理] オプションが強調表示されている Azure Data Studio を示すスクリーンショット。":::
 
@@ -137,9 +137,9 @@ Azure Data Studio でデータベースを復元するには、次の手順を�
 
    :::image type="content" source="media/adventureworks-install-configure/ads-restore-database.png" alt-text="上部のメニューから [復元] を選択して、データベースを復元します。":::
 
-1. [ **全般** ] タブで、[ **ソース**] の一覧に表示される値を入力します。
-    1. [ **復元元**] で、[ *バックアップファイル*] を選択します。
-    1. [ **バックアップファイルのパス**] で、.bak ファイルを保存した場所を選択します。 
+1. [**全般** ] タブで、[**ソース**] の一覧に表示される値を入力します。
+    1. [**復元元**] で、[*バックアップファイル*] を選択します。
+    1. [**バックアップファイルのパス**] で、.bak ファイルを保存した場所を選択します。 
     
    :::image type="content" source="media/adventureworks-install-configure/ads-source.png" alt-text="バックアップファイルのパスを選択してください":::
     
@@ -147,7 +147,7 @@ Azure Data Studio でデータベースを復元するには、次の手順を�
 
    :::image type="content" source="media/adventureworks-install-configure/ads-destination-restore-plan.png" alt-text="バックアップファイルのパスを選択すると、残りのフィールドは自動設定されます。":::
 
-1. [ **復元** ] を選択して、データベースを復元します。 
+1. [**復元**] を選択して、データベースを復元します。 
 
    :::image type="content" source="media/adventureworks-install-configure/ads-restore.png" alt-text="準備ができたら、[復元] を選択してデータベースを復元します。":::
 
@@ -157,7 +157,7 @@ Azure Data Studio でデータベースを復元するには、次の手順を�
 
 サンプル Azure SQL Database データを表示するには、2つのオプションがあります。 新しいデータベースを作成するときにサンプルを使用することも、SQL Server Management Studio (SSMS) を使用して SQL Server から直接 Azure にデータベースをデプロイすることもできます。
 
-代わりに Azure SQL Managed Instance のサンプルデータを取得するには、「 [sql Managed Instance に対して World Wide インポーターを復元](/azure/azure-sql/managed-instance/restore-sample-database-quickstart)する」を参照してください。 
+代わりに Azure SQL Managed Instance のサンプルデータを取得するには、「[sql Managed Instance に対して World Wide インポーターを復元](/azure/azure-sql/managed-instance/restore-sample-database-quickstart)する」を参照してください。 
 
 ### <a name="deploy-new-sample-database"></a>新しいサンプルデータベースのデプロイ
 
@@ -166,14 +166,14 @@ Azure SQL Database で新しいデータベースを作成する場合は、空�
 サンプルデータベースを使用して新しいデータベースを作成するには、次の手順に従います。 
 
 1. Azure portal に接続します。
-1. ナビゲーションウィンドウの左上にある [ **リソースの作成** ] を選択します。 
-1. [ **データベース** ] を選択し、[ **SQL Database**] を選択します。 
+1. ナビゲーションウィンドウの左上にある [**リソースの作成**] を選択します。 
+1. [**データベース**] を選択し、[**SQL Database**] を選択します。 
 1. 要求された情報を入力して、データベースを作成します。 
 1. [**追加設定**] タブで、[**データソース**] の下の既存のデータとして [**サンプル**] を選択します。 
 
    :::image type="content" source="media/adventureworks-install-configure/deploy-sample-to-azure.png" alt-text="Azure SQL Database を作成するときに、Azure portal の [追加設定] タブでデータソースとして [サンプル] を選択します。":::
 
-1. [ **作成** ] を選択して、AdventureWorksLT データベースの復元されたコピーである新しい SQL Database を作成します。 
+1. [**作成**] を選択して、AdventureWorksLT データベースの復元されたコピーである新しい SQL Database を作成します。 
 
 
 ### <a name="deploy-database-from-sql-server"></a>SQL Server からデータベースを配置する
